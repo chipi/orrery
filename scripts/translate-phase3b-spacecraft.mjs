@@ -18,195 +18,1237 @@ import { fileURLToPath } from 'url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const I18N_ROOT = join(ROOT, 'static', 'data', 'i18n');
-const LOCALES = ['ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN'];
+const LOCALES = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
 
 const CATEGORIES = {
-  dawn: 'orbiter', giotto: 'orbiter', juice: 'orbiter', bepicolombo: 'orbiter',
-  messenger: 'orbiter', 'blue-moon-mk1': 'lander', clementine: 'orbiter',
-  'pioneer-11': 'orbiter', ulysses: 'orbiter', 'vega-1': 'orbiter',
-  'vega-2': 'orbiter', 'venera-13': 'lander',
+  dawn: 'orbiter',
+  giotto: 'orbiter',
+  juice: 'orbiter',
+  bepicolombo: 'orbiter',
+  messenger: 'orbiter',
+  'blue-moon-mk1': 'lander',
+  clementine: 'orbiter',
+  'pioneer-11': 'orbiter',
+  ulysses: 'orbiter',
+  'vega-1': 'orbiter',
+  'vega-2': 'orbiter',
+  'venera-13': 'lander',
 };
 
 const OVERLAYS = {
   dawn: {
-    ar: { tagline: 'المركبة الوحيدة التي دارت حول عالمين خارجيين — Vesta ثم Ceres بفضل الدفع الأيوني', description: 'مهمة Discovery من ناسا مدعومة بثلاثة محركات أيونية تعمل بالزينون من نوع NSTAR التي أنتجت 11 كم/ث من الدلتا-V الكافية لدخول مدار Vesta والهروب ثم الإبحار ثلاث سنوات ودخول مدار Ceres. رسمت كلا الجسمين بدقة غير مسبوقة. انتهت المهمة في 2018 بعد نفاد وقود الهيدرازين.', best_known_for: 'المركبة الوحيدة التي دارت حول عالمين خارجيين — Vesta وCeres' },
-    de: { tagline: 'Einzige Sonde, die zwei extraterrestrische Welten umkreist hat — Vesta dann Ceres per Ionenantrieb', description: 'NASA-Discovery-Mission mit drei NSTAR-Xenon-Ionentriebwerken, die die 11 km/s Gesamtdelta-V lieferten, um in einen Vesta-Orbit einzutreten, wieder zu entkommen, drei Jahre zu reisen und in einen Ceres-Orbit einzutreten. Beide Körper wurden in beispielloser Detailtiefe kartiert. Mission endete 2018 nach Erschöpfung des Hydrazintreibstoffs.', best_known_for: 'Einzige Sonde im Orbit um zwei extraterrestrische Welten — Vesta + Ceres' },
-    es: { tagline: 'Única nave en orbitar dos mundos extraterrestres — Vesta y luego Ceres mediante propulsión iónica', description: 'Misión Discovery de la NASA impulsada por tres propulsores iónicos de xenón NSTAR que produjeron los 11 km/s de delta-V total necesarios para entrar en órbita de Vesta, escapar, viajar tres años y entrar en órbita de Ceres. Cartografió ambos cuerpos con un detalle sin precedentes. La misión terminó en 2018 al agotarse el propelente de hidracina.', best_known_for: 'Única nave en orbitar dos mundos extraterrestres — Vesta y Ceres' },
-    fr: { tagline: 'Seule sonde à orbiter autour de deux mondes extraterrestres — Vesta puis Cérès grâce à la propulsion ionique', description: "Mission Discovery de la NASA propulsée par trois moteurs ioniques au xénon NSTAR qui ont produit les 11 km/s de delta-V total nécessaires pour entrer en orbite autour de Vesta, s'en échapper, croiser trois ans et entrer en orbite autour de Cérès. A cartographié les deux corps avec un détail sans précédent. Mission terminée en 2018 à l'épuisement de l'hydrazine.", best_known_for: 'Seule sonde à orbiter autour de deux mondes extraterrestres — Vesta + Cérès' },
-    hi: { tagline: 'दो बाहरी दुनिया की कक्षा में जाने वाला एकमात्र अंतरिक्षयान — आयन प्रणोदन से Vesta और फिर Ceres', description: 'NASA की Discovery-वर्ग मिशन, तीन NSTAR क्सेनॉन आयन प्रणोदक चालित जिन्होंने Vesta की कक्षा में जाने, बाहर निकलने, तीन साल यात्रा करने और Ceres की कक्षा में जाने के लिए कुल 11 किमी/सेकंड का डेल्टा-V उत्पन्न किया। दोनों पिंडों का अभूतपूर्व विवरण से मानचित्रण किया। हाइड्राज़ीन समाप्त होने पर 2018 में मिशन समाप्त।', best_known_for: 'दो बाहरी दुनिया की कक्षा में जाने वाला एकमात्र अंतरिक्षयान — Vesta + Ceres' },
-    it: { tagline: 'Unica sonda ad aver orbitato attorno a due mondi extraterrestri — Vesta poi Cerere con propulsione ionica', description: 'Missione Discovery NASA alimentata da tre propulsori ionici a xeno NSTAR che hanno prodotto gli 11 km/s di delta-V totale necessari per entrare in orbita attorno a Vesta, fuggire, viaggiare tre anni ed entrare in orbita attorno a Cerere. Ha mappato entrambi i corpi con un dettaglio senza precedenti. Missione conclusa nel 2018 con l\'esaurimento dell\'idrazina.', best_known_for: 'Unica sonda ad aver orbitato attorno a due mondi extraterrestri — Vesta + Cerere' },
-    ja: { name: 'ドーン', tagline: '二つの地球外世界を周回した唯一の探査機 — イオン推進でベスタ、続いてケレス', description: 'NASA ディスカバリー級ミッション。三基の NSTAR キセノンイオン推進器が、ベスタ周回・脱出・3 年航行・ケレス周回に必要な合計 11 km/s の Δv を生み出した。両天体を前例のない詳細で地図化。ヒドラジン枯渇により 2018 年に運用終了。', best_known_for: '二つの地球外世界を周回した唯一の探査機 — ベスタ、ケレス' },
-    ko: { name: '돈', tagline: '두 외계 천체를 모두 공전한 유일한 탐사선 — 이온 추진으로 베스타 이후 케레스', description: 'NASA 디스커버리급 임무. NSTAR 제논 이온 추력기 세 기로 베스타 진입·이탈·3년 항행·케레스 진입에 필요한 합계 11 km/s의 Δv를 만들어 냈다. 두 천체를 전례 없는 해상도로 지도화. 히드라진 소진으로 2018년 임무 종료.', best_known_for: '두 외계 천체를 모두 공전한 유일한 탐사선 — 베스타 + 케레스' },
-    nl: { tagline: 'Enige sonde die twee buitenaardse werelden heeft omcirkeld — Vesta dan Ceres met ionenaandrijving', description: "NASA Discovery-missie aangedreven door drie NSTAR xenon-ionenmotoren die de 11 km/s totale delta-V leverden om in een Vesta-baan te komen, te ontsnappen, drie jaar te reizen en in een Ceres-baan te komen. Bracht beide hemellichamen met ongekend detail in kaart. Missie eindigde in 2018 toen de hydrazine op was.", best_known_for: 'Enige sonde die twee buitenaardse werelden omcirkelde — Vesta + Ceres' },
-    'pt-BR': { tagline: 'Única sonda a orbitar dois mundos extraterrestres — Vesta e depois Ceres por propulsão iônica', description: 'Missão Discovery da NASA impulsionada por três propulsores iônicos de xenônio NSTAR que produziram os 11 km/s de delta-V total necessários para entrar em órbita de Vesta, escapar, cruzar três anos e entrar em órbita de Ceres. Mapeou ambos os corpos em detalhe sem precedentes. Missão encerrada em 2018 com o esgotamento da hidrazina.', best_known_for: 'Única sonda a orbitar dois mundos extraterrestres — Vesta + Ceres' },
-    ru: { tagline: 'Единственный аппарат, побывавший на орбите двух внеземных тел — Vesta и затем Ceres на ионных двигателях', description: 'Миссия NASA класса Discovery с тремя ксеноновыми ионными двигателями NSTAR, давшими суммарный Δv 11 км/с, нужный для выхода на орбиту Vesta, ухода с неё, трёхлетнего перелёта и выхода на орбиту Ceres. Оба тела отсняты с беспрецедентной детализацией. Миссия завершена в 2018 году после исчерпания гидразина.', best_known_for: 'Единственный аппарат на орбитах двух внеземных тел — Vesta + Ceres' },
-    'sr-Cyrl': { tagline: 'Једина сонда која је кружила око два ванземаљска света — Vesta па Ceres јонским погоном', description: 'НАСА Discovery мисија са три NSTAR ксенон јонска мотора који су произвели 11 km/s укупног делта-V потребног за улазак у орбиту око Vesta, излазак, трогодишњи пут и улазак у орбиту око Ceres. Оба тела мапирана су детаљно као никад раније. Мисија завршена 2018. када је хидразин потрошен.', best_known_for: 'Једина сонда у орбити два ванземаљска света — Vesta + Ceres' },
-    'zh-CN': { name: '黎明号', tagline: '唯一一艘环绕过两颗地外天体的航天器 — 凭借离子推进先到 Vesta，再到 Ceres', description: 'NASA Discovery 级任务，依靠三台 NSTAR 氙离子推进器提供了进入 Vesta 轨道、再脱离、巡航三年、进入 Ceres 轨道所需的总计 11 km/s Δv。以前所未有的细节绘制了两颗天体。2018 年因肼推进剂耗尽而结束任务。', best_known_for: '唯一一艘环绕两颗地外天体的航天器 — Vesta 与 Ceres' },
+    ar: {
+      tagline: 'المركبة الوحيدة التي دارت حول عالمين خارجيين — Vesta ثم Ceres بفضل الدفع الأيوني',
+      description:
+        'مهمة Discovery من ناسا مدعومة بثلاثة محركات أيونية تعمل بالزينون من نوع NSTAR التي أنتجت 11 كم/ث من الدلتا-V الكافية لدخول مدار Vesta والهروب ثم الإبحار ثلاث سنوات ودخول مدار Ceres. رسمت كلا الجسمين بدقة غير مسبوقة. انتهت المهمة في 2018 بعد نفاد وقود الهيدرازين.',
+      best_known_for: 'المركبة الوحيدة التي دارت حول عالمين خارجيين — Vesta وCeres',
+    },
+    de: {
+      tagline:
+        'Einzige Sonde, die zwei extraterrestrische Welten umkreist hat — Vesta dann Ceres per Ionenantrieb',
+      description:
+        'NASA-Discovery-Mission mit drei NSTAR-Xenon-Ionentriebwerken, die die 11 km/s Gesamtdelta-V lieferten, um in einen Vesta-Orbit einzutreten, wieder zu entkommen, drei Jahre zu reisen und in einen Ceres-Orbit einzutreten. Beide Körper wurden in beispielloser Detailtiefe kartiert. Mission endete 2018 nach Erschöpfung des Hydrazintreibstoffs.',
+      best_known_for: 'Einzige Sonde im Orbit um zwei extraterrestrische Welten — Vesta + Ceres',
+    },
+    es: {
+      tagline:
+        'Única nave en orbitar dos mundos extraterrestres — Vesta y luego Ceres mediante propulsión iónica',
+      description:
+        'Misión Discovery de la NASA impulsada por tres propulsores iónicos de xenón NSTAR que produjeron los 11 km/s de delta-V total necesarios para entrar en órbita de Vesta, escapar, viajar tres años y entrar en órbita de Ceres. Cartografió ambos cuerpos con un detalle sin precedentes. La misión terminó en 2018 al agotarse el propelente de hidracina.',
+      best_known_for: 'Única nave en orbitar dos mundos extraterrestres — Vesta y Ceres',
+    },
+    fr: {
+      tagline:
+        'Seule sonde à orbiter autour de deux mondes extraterrestres — Vesta puis Cérès grâce à la propulsion ionique',
+      description:
+        "Mission Discovery de la NASA propulsée par trois moteurs ioniques au xénon NSTAR qui ont produit les 11 km/s de delta-V total nécessaires pour entrer en orbite autour de Vesta, s'en échapper, croiser trois ans et entrer en orbite autour de Cérès. A cartographié les deux corps avec un détail sans précédent. Mission terminée en 2018 à l'épuisement de l'hydrazine.",
+      best_known_for: 'Seule sonde à orbiter autour de deux mondes extraterrestres — Vesta + Cérès',
+    },
+    hi: {
+      tagline:
+        'दो बाहरी दुनिया की कक्षा में जाने वाला एकमात्र अंतरिक्षयान — आयन प्रणोदन से Vesta और फिर Ceres',
+      description:
+        'NASA की Discovery-वर्ग मिशन, तीन NSTAR क्सेनॉन आयन प्रणोदक चालित जिन्होंने Vesta की कक्षा में जाने, बाहर निकलने, तीन साल यात्रा करने और Ceres की कक्षा में जाने के लिए कुल 11 किमी/सेकंड का डेल्टा-V उत्पन्न किया। दोनों पिंडों का अभूतपूर्व विवरण से मानचित्रण किया। हाइड्राज़ीन समाप्त होने पर 2018 में मिशन समाप्त।',
+      best_known_for: 'दो बाहरी दुनिया की कक्षा में जाने वाला एकमात्र अंतरिक्षयान — Vesta + Ceres',
+    },
+    it: {
+      tagline:
+        'Unica sonda ad aver orbitato attorno a due mondi extraterrestri — Vesta poi Cerere con propulsione ionica',
+      description:
+        "Missione Discovery NASA alimentata da tre propulsori ionici a xeno NSTAR che hanno prodotto gli 11 km/s di delta-V totale necessari per entrare in orbita attorno a Vesta, fuggire, viaggiare tre anni ed entrare in orbita attorno a Cerere. Ha mappato entrambi i corpi con un dettaglio senza precedenti. Missione conclusa nel 2018 con l'esaurimento dell'idrazina.",
+      best_known_for:
+        'Unica sonda ad aver orbitato attorno a due mondi extraterrestri — Vesta + Cerere',
+    },
+    ja: {
+      name: 'ドーン',
+      tagline: '二つの地球外世界を周回した唯一の探査機 — イオン推進でベスタ、続いてケレス',
+      description:
+        'NASA ディスカバリー級ミッション。三基の NSTAR キセノンイオン推進器が、ベスタ周回・脱出・3 年航行・ケレス周回に必要な合計 11 km/s の Δv を生み出した。両天体を前例のない詳細で地図化。ヒドラジン枯渇により 2018 年に運用終了。',
+      best_known_for: '二つの地球外世界を周回した唯一の探査機 — ベスタ、ケレス',
+    },
+    ko: {
+      name: '돈',
+      tagline: '두 외계 천체를 모두 공전한 유일한 탐사선 — 이온 추진으로 베스타 이후 케레스',
+      description:
+        'NASA 디스커버리급 임무. NSTAR 제논 이온 추력기 세 기로 베스타 진입·이탈·3년 항행·케레스 진입에 필요한 합계 11 km/s의 Δv를 만들어 냈다. 두 천체를 전례 없는 해상도로 지도화. 히드라진 소진으로 2018년 임무 종료.',
+      best_known_for: '두 외계 천체를 모두 공전한 유일한 탐사선 — 베스타 + 케레스',
+    },
+    nl: {
+      tagline:
+        'Enige sonde die twee buitenaardse werelden heeft omcirkeld — Vesta dan Ceres met ionenaandrijving',
+      description:
+        'NASA Discovery-missie aangedreven door drie NSTAR xenon-ionenmotoren die de 11 km/s totale delta-V leverden om in een Vesta-baan te komen, te ontsnappen, drie jaar te reizen en in een Ceres-baan te komen. Bracht beide hemellichamen met ongekend detail in kaart. Missie eindigde in 2018 toen de hydrazine op was.',
+      best_known_for: 'Enige sonde die twee buitenaardse werelden omcirkelde — Vesta + Ceres',
+    },
+    'pt-BR': {
+      tagline:
+        'Única sonda a orbitar dois mundos extraterrestres — Vesta e depois Ceres por propulsão iônica',
+      description:
+        'Missão Discovery da NASA impulsionada por três propulsores iônicos de xenônio NSTAR que produziram os 11 km/s de delta-V total necessários para entrar em órbita de Vesta, escapar, cruzar três anos e entrar em órbita de Ceres. Mapeou ambos os corpos em detalhe sem precedentes. Missão encerrada em 2018 com o esgotamento da hidrazina.',
+      best_known_for: 'Única sonda a orbitar dois mundos extraterrestres — Vesta + Ceres',
+    },
+    ru: {
+      tagline:
+        'Единственный аппарат, побывавший на орбите двух внеземных тел — Vesta и затем Ceres на ионных двигателях',
+      description:
+        'Миссия NASA класса Discovery с тремя ксеноновыми ионными двигателями NSTAR, давшими суммарный Δv 11 км/с, нужный для выхода на орбиту Vesta, ухода с неё, трёхлетнего перелёта и выхода на орбиту Ceres. Оба тела отсняты с беспрецедентной детализацией. Миссия завершена в 2018 году после исчерпания гидразина.',
+      best_known_for: 'Единственный аппарат на орбитах двух внеземных тел — Vesta + Ceres',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Једина сонда која је кружила око два ванземаљска света — Vesta па Ceres јонским погоном',
+      description:
+        'НАСА Discovery мисија са три NSTAR ксенон јонска мотора који су произвели 11 km/s укупног делта-V потребног за улазак у орбиту око Vesta, излазак, трогодишњи пут и улазак у орбиту око Ceres. Оба тела мапирана су детаљно као никад раније. Мисија завршена 2018. када је хидразин потрошен.',
+      best_known_for: 'Једина сонда у орбити два ванземаљска света — Vesta + Ceres',
+    },
+    'zh-CN': {
+      name: '黎明号',
+      tagline: '唯一一艘环绕过两颗地外天体的航天器 — 凭借离子推进先到 Vesta，再到 Ceres',
+      description:
+        'NASA Discovery 级任务，依靠三台 NSTAR 氙离子推进器提供了进入 Vesta 轨道、再脱离、巡航三年、进入 Ceres 轨道所需的总计 11 km/s Δv。以前所未有的细节绘制了两颗天体。2018 年因肼推进剂耗尽而结束任务。',
+      best_known_for: '唯一一艘环绕两颗地外天体的航天器 — Vesta 与 Ceres',
+    },
   },
   giotto: {
-    ar: { tagline: 'أول صور قريبة لنواة مذنب — مرّ على بعد 596 كم من مذنب هالي بسرعة 68 كم/ث في 1986', description: "أول مسبار للفضاء العميق لـ ESA. هيكل أسطواني دوار محمي بدرع Whipple مضاد للغبار، بُني حول كاميرا Halley Multicolour إضافة إلى 9 أدوات أخرى من 11 دولة أوروبية وناسا واليابان. أقرب اقتراب من 1P/Halley في 1986-03-14 على بعد 596 كم — صدمة غبار قبل 14 ثانية أحدثت انحرافاً للمحور وقطعاً للاتصال بالكاميرا. أُعيد تفعيله 1992 لتحليق على بعد 200 كم من المذنب Grigg-Skjellerup.", best_known_for: 'أول صور قريبة لنواة مذنب — 596 كم من هالي، 1986-03-14' },
-    de: { tagline: 'Erste Nahaufnahmen eines Kometenkerns — flog 1986 in 596 km Abstand mit 68 km/s am Halley vorbei', description: 'ESAs erste Deep-Space-Sonde. Drehstabilisierter trommelförmiger Bus, geschützt durch einen Whipple-Schild aus Kevlar und Aluminium, gebaut um die Halley Multicolour Camera plus 9 weitere Instrumente von 11 europäischen Ländern, NASA und Japan. Engste Annäherung an 1P/Halley am 14.03.1986 auf 596 km — ein 100-mg-Staubeinschlag 14 Sekunden vor der größten Annäherung verstellte die Drehachse und unterbrach den Kamerakontakt. 1990 reaktiviert und 1992 in 200 km Abstand am Kometen Grigg-Skjellerup vorbeigeführt.', best_known_for: 'Erste Nahaufnahmen eines Kometenkerns — 596 km am Halley, 14.03.1986' },
-    es: { tagline: 'Primeras imágenes en primer plano de un núcleo cometario — pasó a 596 km del Halley a 68 km/s en 1986', description: 'Primera sonda de espacio profundo de la ESA. Bus tipo tambor estabilizado por rotación, protegido por un escudo Whipple de Kevlar y aluminio, construido en torno a la Halley Multicolour Camera y 9 instrumentos más aportados por 11 países europeos, la NASA y Japón. Mayor aproximación a 1P/Halley el 14-03-1986 a 596 km — un impacto de polvo de 100 mg 14 segundos antes del paso más cercano desplazó el eje de rotación y cortó el contacto con la cámara. Reactivada en 1990 para un sobrevuelo a 200 km del cometa Grigg-Skjellerup en 1992.', best_known_for: 'Primeras imágenes cercanas de un núcleo cometario — 596 km del Halley, 14-03-1986' },
-    fr: { tagline: 'Premières images rapprochées du noyau d\'une comète — passée à 596 km de Halley à 68 km/s en 1986', description: "Première sonde de l'espace lointain de l'ESA. Bus en tambour stabilisé par rotation, protégé par un bouclier Whipple en Kevlar + aluminium, construit autour de la Halley Multicolour Camera et de 9 autres instruments fournis par 11 pays européens, la NASA et le Japon. Plus grande proximité de 1P/Halley le 14/03/1986 à 596 km — un impact de poussière de 100 mg 14 secondes avant le plus près a déplacé l'axe de rotation et coupé le contact caméra. Réactivée en 1990 pour un survol à 200 km de la comète Grigg-Skjellerup en 1992.", best_known_for: 'Premières images rapprochées du noyau d\'une comète — 596 km de Halley, 14/03/1986' },
-    hi: { tagline: 'धूमकेतु के केंद्रक की पहली नज़दीकी छवियाँ — 1986 में हैली से 596 किमी की दूरी पर 68 किमी/सेकंड पर उड़ा', description: 'ESA का पहला गहरे अंतरिक्ष का प्रोब। केवलर + एल्युमिनियम के Whipple शील्ड से सुरक्षित स्पिन-स्थिर ड्रम बस, Halley Multicolour Camera और 11 यूरोपीय देशों, NASA और जापान द्वारा योगदान किए गए 9 अन्य उपकरणों के साथ बनाया गया। 14-03-1986 को 1P/Halley के 596 किमी निकटतम पहुँच — निकटतम पहुँच से 14 सेकंड पहले 100 mg धूल टकराव ने स्पिन अक्ष को हिला दिया और कैमरा संपर्क टूट गया। 1990 में पुनः सक्रिय कर 1992 में Grigg-Skjellerup धूमकेतु से 200 किमी की दूरी पर उड़ान भरी।', best_known_for: 'धूमकेतु के केंद्रक की पहली नज़दीकी छवियाँ — हैली से 596 किमी, 14-03-1986' },
-    it: { tagline: 'Prime immagini ravvicinate di un nucleo cometario — passò a 596 km dal Halley a 68 km/s nel 1986', description: "Prima sonda nello spazio profondo dell'ESA. Bus a tamburo stabilizzato in rotazione, protetto da uno scudo Whipple in Kevlar + alluminio, costruito attorno alla Halley Multicolour Camera e altri 9 strumenti forniti da 11 paesi europei, NASA e Giappone. Massimo avvicinamento a 1P/Halley il 14/03/1986 a 596 km — un impatto di polvere da 100 mg 14 secondi prima del passaggio più vicino ha spostato l'asse di rotazione e interrotto il contatto con la camera. Riattivata nel 1990 per un sorvolo a 200 km della cometa Grigg-Skjellerup nel 1992.", best_known_for: 'Prime immagini ravvicinate del nucleo di una cometa — 596 km dal Halley, 14/03/1986' },
-    ja: { name: 'ジオット', tagline: '彗星核を初めて至近距離で撮影 — 1986 年、ハレー彗星から 596 km を秒速 68 km で通過', description: 'ESA 初の深宇宙探査機。スピン安定型ドラム状機体は Kevlar とアルミの Whipple バンパーで防護され、ハレー多色カメラを中心に 11 のヨーロッパ諸国、NASA、日本が提供した 10 機器を搭載した。1P/Halley への最接近は 1986 年 3 月 14 日、596 km — 最接近 14 秒前の 100 mg のダスト衝突がスピン軸を狂わせカメラ通信が途絶。1990 年に再起動し、1992 年に彗星 Grigg-Skjellerup を 200 km で再フライバイ。', best_known_for: '彗星核を初めて至近撮影 — ハレー 596 km、1986 年 3 月 14 日' },
-    ko: { name: '조토', tagline: '혜성 핵의 첫 근접 영상 — 1986년 핼리 혜성에서 596 km를 초속 68 km로 비행', description: 'ESA 최초의 심우주 탐사선. 회전 안정형 드럼 본체는 케블라/알루미늄 휘플 실드로 보호되었으며, 핼리 다색 카메라와 11개 유럽 국가, NASA, 일본이 제공한 9개 기기를 중심으로 제작되었다. 1986년 3월 14일 1P/Halley에서 596 km까지 최근접 — 최근접 14초 전 100 mg 먼지 충돌로 회전축이 흔들리고 카메라 통신이 끊겼다. 1990년 재가동되어 1992년 Grigg-Skjellerup 혜성을 200 km에서 다시 비행.', best_known_for: '혜성 핵의 첫 근접 영상 — 핼리 596 km, 1986년 3월 14일' },
-    nl: { tagline: 'Eerste close-ups van een komeetkern — vloog in 1986 op 596 km langs Halley met 68 km/s', description: 'ESA\'s eerste deep-space sonde. Spinning drumvormige bus beschermd door een Whipple-stofschild van Kevlar en aluminium, gebouwd rond de Halley Multicolour Camera plus 9 andere instrumenten geleverd door 11 Europese landen, NASA en Japan. Dichtste nadering van 1P/Halley op 14-03-1986 op 596 km — een stofinslag van 100 mg, 14 seconden voor de dichtste nadering, verstoorde de tolas en brak het cameracontact. In 1990 heractiveerd voor een 200 km-flyby van komeet Grigg-Skjellerup in 1992.', best_known_for: 'Eerste close-ups van een komeetkern — 596 km van Halley, 14-03-1986' },
-    'pt-BR': { tagline: 'Primeiras imagens próximas do núcleo de um cometa — passou a 596 km do Halley a 68 km/s em 1986', description: 'Primeira sonda de espaço profundo da ESA. Barramento em tambor estabilizado por rotação, protegido por um escudo Whipple de Kevlar + alumínio, construído em torno da Halley Multicolour Camera mais 9 instrumentos fornecidos por 11 países europeus, NASA e Japão. Maior aproximação a 1P/Halley em 14-03-1986 a 596 km — um impacto de poeira de 100 mg, 14 segundos antes da maior aproximação, deslocou o eixo de rotação e cortou o contato com a câmara. Reativada em 1990 para um sobrevoo a 200 km do cometa Grigg-Skjellerup em 1992.', best_known_for: 'Primeiras imagens próximas do núcleo de um cometa — 596 km do Halley, 14-03-1986' },
-    ru: { tagline: 'Первые крупные планы кометного ядра — в 1986-м прошёл в 596 км от кометы Галлея со скоростью 68 км/с', description: 'Первый дальнокосмический зонд ESA. Закрученная барабанная конструкция, защищённая кевларово-алюминиевым экраном Уиппла; основной прибор — Halley Multicolour Camera плюс ещё 9 инструментов от 11 европейских стран, NASA и Японии. Минимальное расстояние до 1P/Halley — 596 км 14.03.1986 — удар 100-мг пылинки за 14 секунд до сближения сбил ось вращения и оборвал связь с камерой. Реактивирован в 1990-м и в 1992-м прошёл в 200 км от кометы Григга—Скьеллерупа.', best_known_for: 'Первые крупные планы кометного ядра — 596 км от Галлея, 14.03.1986' },
-    'sr-Cyrl': { tagline: 'Прве крупни планови језгра комете — 1986. прошао на 596 km од комете Халеј брзином 68 km/s', description: 'Прва ESA дубокосвемирска сонда. Окретно стабилизована бубњаста конструкција заштићена Whipple штитом од Kevlar-а и алуминијума, са Halley Multicolour Camera-ом и 9 других инструмената које су обезбедиле 11 европских земаља, НАСА и Јапан. Најближи прилаз 1P/Halley-у 14.03.1986. на 596 km — судар прашине од 100 mg 14 секунди пре најближег прилаза избацио је осу ротације и прекинуо везу са камером. Реактивиран 1990. и 1992. поново прошао на 200 km од комете Grigg-Skjellerup.', best_known_for: 'Прве крупни планови језгра комете — 596 km од Халеја, 14.03.1986' },
-    'zh-CN': { name: '乔托', tagline: '首次近距离拍摄彗核 — 1986 年以 68 km/s 的速度从哈雷彗星 596 km 处掠过', description: 'ESA 首颗深空探测器。自旋稳定的鼓形本体由 Kevlar/铝 Whipple 防尘罩保护，主载荷为哈雷多色相机，另有由 11 个欧洲国家、NASA 与日本提供的 9 件仪器。1986 年 3 月 14 日最接近 1P/Halley 时距离 596 km — 最接近前 14 秒一颗 100 mg 尘粒撞击使自旋轴偏移、相机通信中断。1990 年再次激活，1992 年又在 200 km 处掠过格里格-斯凯勒鲁普彗星。', best_known_for: '首次近距离拍摄彗核 — 距哈雷 596 km，1986 年 3 月 14 日' },
+    ar: {
+      tagline: 'أول صور قريبة لنواة مذنب — مرّ على بعد 596 كم من مذنب هالي بسرعة 68 كم/ث في 1986',
+      description:
+        'أول مسبار للفضاء العميق لـ ESA. هيكل أسطواني دوار محمي بدرع Whipple مضاد للغبار، بُني حول كاميرا Halley Multicolour إضافة إلى 9 أدوات أخرى من 11 دولة أوروبية وناسا واليابان. أقرب اقتراب من 1P/Halley في 1986-03-14 على بعد 596 كم — صدمة غبار قبل 14 ثانية أحدثت انحرافاً للمحور وقطعاً للاتصال بالكاميرا. أُعيد تفعيله 1992 لتحليق على بعد 200 كم من المذنب Grigg-Skjellerup.',
+      best_known_for: 'أول صور قريبة لنواة مذنب — 596 كم من هالي، 1986-03-14',
+    },
+    de: {
+      tagline:
+        'Erste Nahaufnahmen eines Kometenkerns — flog 1986 in 596 km Abstand mit 68 km/s am Halley vorbei',
+      description:
+        'ESAs erste Deep-Space-Sonde. Drehstabilisierter trommelförmiger Bus, geschützt durch einen Whipple-Schild aus Kevlar und Aluminium, gebaut um die Halley Multicolour Camera plus 9 weitere Instrumente von 11 europäischen Ländern, NASA und Japan. Engste Annäherung an 1P/Halley am 14.03.1986 auf 596 km — ein 100-mg-Staubeinschlag 14 Sekunden vor der größten Annäherung verstellte die Drehachse und unterbrach den Kamerakontakt. 1990 reaktiviert und 1992 in 200 km Abstand am Kometen Grigg-Skjellerup vorbeigeführt.',
+      best_known_for: 'Erste Nahaufnahmen eines Kometenkerns — 596 km am Halley, 14.03.1986',
+    },
+    es: {
+      tagline:
+        'Primeras imágenes en primer plano de un núcleo cometario — pasó a 596 km del Halley a 68 km/s en 1986',
+      description:
+        'Primera sonda de espacio profundo de la ESA. Bus tipo tambor estabilizado por rotación, protegido por un escudo Whipple de Kevlar y aluminio, construido en torno a la Halley Multicolour Camera y 9 instrumentos más aportados por 11 países europeos, la NASA y Japón. Mayor aproximación a 1P/Halley el 14-03-1986 a 596 km — un impacto de polvo de 100 mg 14 segundos antes del paso más cercano desplazó el eje de rotación y cortó el contacto con la cámara. Reactivada en 1990 para un sobrevuelo a 200 km del cometa Grigg-Skjellerup en 1992.',
+      best_known_for:
+        'Primeras imágenes cercanas de un núcleo cometario — 596 km del Halley, 14-03-1986',
+    },
+    fr: {
+      tagline:
+        "Premières images rapprochées du noyau d'une comète — passée à 596 km de Halley à 68 km/s en 1986",
+      description:
+        "Première sonde de l'espace lointain de l'ESA. Bus en tambour stabilisé par rotation, protégé par un bouclier Whipple en Kevlar + aluminium, construit autour de la Halley Multicolour Camera et de 9 autres instruments fournis par 11 pays européens, la NASA et le Japon. Plus grande proximité de 1P/Halley le 14/03/1986 à 596 km — un impact de poussière de 100 mg 14 secondes avant le plus près a déplacé l'axe de rotation et coupé le contact caméra. Réactivée en 1990 pour un survol à 200 km de la comète Grigg-Skjellerup en 1992.",
+      best_known_for:
+        "Premières images rapprochées du noyau d'une comète — 596 km de Halley, 14/03/1986",
+    },
+    hi: {
+      tagline:
+        'धूमकेतु के केंद्रक की पहली नज़दीकी छवियाँ — 1986 में हैली से 596 किमी की दूरी पर 68 किमी/सेकंड पर उड़ा',
+      description:
+        'ESA का पहला गहरे अंतरिक्ष का प्रोब। केवलर + एल्युमिनियम के Whipple शील्ड से सुरक्षित स्पिन-स्थिर ड्रम बस, Halley Multicolour Camera और 11 यूरोपीय देशों, NASA और जापान द्वारा योगदान किए गए 9 अन्य उपकरणों के साथ बनाया गया। 14-03-1986 को 1P/Halley के 596 किमी निकटतम पहुँच — निकटतम पहुँच से 14 सेकंड पहले 100 mg धूल टकराव ने स्पिन अक्ष को हिला दिया और कैमरा संपर्क टूट गया। 1990 में पुनः सक्रिय कर 1992 में Grigg-Skjellerup धूमकेतु से 200 किमी की दूरी पर उड़ान भरी।',
+      best_known_for: 'धूमकेतु के केंद्रक की पहली नज़दीकी छवियाँ — हैली से 596 किमी, 14-03-1986',
+    },
+    it: {
+      tagline:
+        'Prime immagini ravvicinate di un nucleo cometario — passò a 596 km dal Halley a 68 km/s nel 1986',
+      description:
+        "Prima sonda nello spazio profondo dell'ESA. Bus a tamburo stabilizzato in rotazione, protetto da uno scudo Whipple in Kevlar + alluminio, costruito attorno alla Halley Multicolour Camera e altri 9 strumenti forniti da 11 paesi europei, NASA e Giappone. Massimo avvicinamento a 1P/Halley il 14/03/1986 a 596 km — un impatto di polvere da 100 mg 14 secondi prima del passaggio più vicino ha spostato l'asse di rotazione e interrotto il contatto con la camera. Riattivata nel 1990 per un sorvolo a 200 km della cometa Grigg-Skjellerup nel 1992.",
+      best_known_for:
+        'Prime immagini ravvicinate del nucleo di una cometa — 596 km dal Halley, 14/03/1986',
+    },
+    ja: {
+      name: 'ジオット',
+      tagline: '彗星核を初めて至近距離で撮影 — 1986 年、ハレー彗星から 596 km を秒速 68 km で通過',
+      description:
+        'ESA 初の深宇宙探査機。スピン安定型ドラム状機体は Kevlar とアルミの Whipple バンパーで防護され、ハレー多色カメラを中心に 11 のヨーロッパ諸国、NASA、日本が提供した 10 機器を搭載した。1P/Halley への最接近は 1986 年 3 月 14 日、596 km — 最接近 14 秒前の 100 mg のダスト衝突がスピン軸を狂わせカメラ通信が途絶。1990 年に再起動し、1992 年に彗星 Grigg-Skjellerup を 200 km で再フライバイ。',
+      best_known_for: '彗星核を初めて至近撮影 — ハレー 596 km、1986 年 3 月 14 日',
+    },
+    ko: {
+      name: '조토',
+      tagline: '혜성 핵의 첫 근접 영상 — 1986년 핼리 혜성에서 596 km를 초속 68 km로 비행',
+      description:
+        'ESA 최초의 심우주 탐사선. 회전 안정형 드럼 본체는 케블라/알루미늄 휘플 실드로 보호되었으며, 핼리 다색 카메라와 11개 유럽 국가, NASA, 일본이 제공한 9개 기기를 중심으로 제작되었다. 1986년 3월 14일 1P/Halley에서 596 km까지 최근접 — 최근접 14초 전 100 mg 먼지 충돌로 회전축이 흔들리고 카메라 통신이 끊겼다. 1990년 재가동되어 1992년 Grigg-Skjellerup 혜성을 200 km에서 다시 비행.',
+      best_known_for: '혜성 핵의 첫 근접 영상 — 핼리 596 km, 1986년 3월 14일',
+    },
+    nl: {
+      tagline:
+        'Eerste close-ups van een komeetkern — vloog in 1986 op 596 km langs Halley met 68 km/s',
+      description:
+        "ESA's eerste deep-space sonde. Spinning drumvormige bus beschermd door een Whipple-stofschild van Kevlar en aluminium, gebouwd rond de Halley Multicolour Camera plus 9 andere instrumenten geleverd door 11 Europese landen, NASA en Japan. Dichtste nadering van 1P/Halley op 14-03-1986 op 596 km — een stofinslag van 100 mg, 14 seconden voor de dichtste nadering, verstoorde de tolas en brak het cameracontact. In 1990 heractiveerd voor een 200 km-flyby van komeet Grigg-Skjellerup in 1992.",
+      best_known_for: 'Eerste close-ups van een komeetkern — 596 km van Halley, 14-03-1986',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeiras imagens próximas do núcleo de um cometa — passou a 596 km do Halley a 68 km/s em 1986',
+      description:
+        'Primeira sonda de espaço profundo da ESA. Barramento em tambor estabilizado por rotação, protegido por um escudo Whipple de Kevlar + alumínio, construído em torno da Halley Multicolour Camera mais 9 instrumentos fornecidos por 11 países europeus, NASA e Japão. Maior aproximação a 1P/Halley em 14-03-1986 a 596 km — um impacto de poeira de 100 mg, 14 segundos antes da maior aproximação, deslocou o eixo de rotação e cortou o contato com a câmara. Reativada em 1990 para um sobrevoo a 200 km do cometa Grigg-Skjellerup em 1992.',
+      best_known_for:
+        'Primeiras imagens próximas do núcleo de um cometa — 596 km do Halley, 14-03-1986',
+    },
+    ru: {
+      tagline:
+        'Первые крупные планы кометного ядра — в 1986-м прошёл в 596 км от кометы Галлея со скоростью 68 км/с',
+      description:
+        'Первый дальнокосмический зонд ESA. Закрученная барабанная конструкция, защищённая кевларово-алюминиевым экраном Уиппла; основной прибор — Halley Multicolour Camera плюс ещё 9 инструментов от 11 европейских стран, NASA и Японии. Минимальное расстояние до 1P/Halley — 596 км 14.03.1986 — удар 100-мг пылинки за 14 секунд до сближения сбил ось вращения и оборвал связь с камерой. Реактивирован в 1990-м и в 1992-м прошёл в 200 км от кометы Григга—Скьеллерупа.',
+      best_known_for: 'Первые крупные планы кометного ядра — 596 км от Галлея, 14.03.1986',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Прве крупни планови језгра комете — 1986. прошао на 596 km од комете Халеј брзином 68 km/s',
+      description:
+        'Прва ESA дубокосвемирска сонда. Окретно стабилизована бубњаста конструкција заштићена Whipple штитом од Kevlar-а и алуминијума, са Halley Multicolour Camera-ом и 9 других инструмената које су обезбедиле 11 европских земаља, НАСА и Јапан. Најближи прилаз 1P/Halley-у 14.03.1986. на 596 km — судар прашине од 100 mg 14 секунди пре најближег прилаза избацио је осу ротације и прекинуо везу са камером. Реактивиран 1990. и 1992. поново прошао на 200 km од комете Grigg-Skjellerup.',
+      best_known_for: 'Прве крупни планови језгра комете — 596 km од Халеја, 14.03.1986',
+    },
+    'zh-CN': {
+      name: '乔托',
+      tagline: '首次近距离拍摄彗核 — 1986 年以 68 km/s 的速度从哈雷彗星 596 km 处掠过',
+      description:
+        'ESA 首颗深空探测器。自旋稳定的鼓形本体由 Kevlar/铝 Whipple 防尘罩保护，主载荷为哈雷多色相机，另有由 11 个欧洲国家、NASA 与日本提供的 9 件仪器。1986 年 3 月 14 日最接近 1P/Halley 时距离 596 km — 最接近前 14 秒一颗 100 mg 尘粒撞击使自旋轴偏移、相机通信中断。1990 年再次激活，1992 年又在 200 km 处掠过格里格-斯凯勒鲁普彗星。',
+      best_known_for: '首次近距离拍摄彗核 — 距哈雷 596 km，1986 年 3 月 14 日',
+    },
   },
   juice: {
-    ar: { tagline: 'مهمة ESA الرئيسية إلى المشتري — أول مركبة تدخل مدار قمر جاليلي (Ganymede، 2034)', description: 'مستكشف الأقمار الجليدية لكوكب المشتري (JUICE). أُطلق في 2023-04-14 على Ariane 5 ECA+ من كورو لرحلة 8.5 سنوات عبر Earth-Venus-Earth-Earth ليصل إلى المشتري في يوليو 2031. هناك يقوم بـ ~35 تحليقة قرب Europa و Ganymede و Callisto قبل دخول مدار Ganymede في 2034 — أول مركبة على الإطلاق تدور حول قمر غير قمر الأرض. عشرة أدوات بما في ذلك رادار اختراق الجليد RIME.', best_known_for: 'ESA إلى المشتري — أول مركبة تدور حول قمر جاليلي (Ganymede)، 2031-2034' },
-    de: { tagline: 'ESAs Jupiter-Flaggschiff — erster Orbiter um einen Galileischen Mond (Ganymed, 2034)', description: 'Jupiter Icy Moons Explorer. Gestartet am 14.04.2023 mit einer Ariane 5 ECA+ aus Kourou auf einer 8,5-jährigen Reise über Earth-Venus-Earth-Earth-Schwungholmanöver zur Jupiter-Ankunft im Juli 2031. Im Jupitersystem führt JUICE ~35 Vorbeiflüge an Europa, Ganymed und Kallisto durch, bevor er 2034 in einen Ganymed-Orbit eintritt — das erste Raumfahrzeug überhaupt, das einen anderen Mond als den Erdmond umkreist. Zehn-Instrumente-Nutzlast inkl. Eis-durchdringendem Radar RIME.', best_known_for: 'ESA-Jupiter-Flaggschiff — erster Orbiter um einen Galileischen Mond (Ganymed), 2031-2034' },
-    es: { tagline: 'Buque insignia europeo a Júpiter — primera nave en orbitar una luna galileana (Ganímedes, 2034)', description: 'Explorador de las lunas heladas de Júpiter. Lanzado el 14-04-2023 en un Ariane 5 ECA+ desde Kourou para un crucero de 8,5 años con asistencias gravitatorias Tierra-Venus-Tierra-Tierra hasta la llegada a Júpiter en julio de 2031. En el sistema joviano, JUICE realiza ~35 sobrevuelos de Europa, Ganímedes y Calisto antes de entrar en órbita de Ganímedes en 2034 — la primera nave en orbitar una luna distinta de la Luna terrestre. Carga útil de diez instrumentos, incluido el radar penetrador de hielo RIME.', best_known_for: 'Buque insignia europeo a Júpiter — primera nave en orbitar una luna galileana (Ganímedes), 2031-2034' },
-    fr: { tagline: 'Vaisseau amiral européen vers Jupiter — premier orbiteur autour d\'une lune galiléenne (Ganymède, 2034)', description: "Explorateur des lunes glacées de Jupiter. Lancé le 14/04/2023 sur Ariane 5 ECA+ depuis Kourou pour une croisière de 8,5 ans via des assistances gravitationnelles Terre-Vénus-Terre-Terre jusqu'à l'arrivée à Jupiter en juillet 2031. Dans le système jovien, JUICE effectue ~35 survols d'Europe, Ganymède et Callisto avant d'entrer en orbite autour de Ganymède en 2034 — premier engin à orbiter une lune autre que celle de la Terre. Charge utile de dix instruments dont le radar pénétrant de glace RIME.", best_known_for: 'Vaisseau amiral européen vers Jupiter — premier orbiteur autour d\'une lune galiléenne (Ganymède), 2031-2034' },
-    hi: { tagline: 'ESA का बृहस्पति प्रमुख — किसी गैलिलियन चंद्रमा (Ganymede, 2034) की कक्षा में जाने वाला पहला अंतरिक्षयान', description: 'बृहस्पति बर्फीले चंद्रमा अन्वेषक। 14-04-2023 को कूरू से Ariane 5 ECA+ पर लॉन्च हुआ, जुलाई 2031 में बृहस्पति पहुँचने के लिए Earth-Venus-Earth-Earth गुरुत्वाकर्षण सहायताओं के माध्यम से 8.5-वर्ष की क्रूज़ यात्रा। बृहस्पति प्रणाली में JUICE Europa, Ganymede और Callisto के लगभग 35 फ्लाईबाई करता है, फिर 2034 में Ganymede की कक्षा में प्रवेश करता है — पृथ्वी के अलावा किसी चंद्रमा की कक्षा में जाने वाला पहला अंतरिक्षयान। बर्फ-भेदी रडार RIME सहित दस उपकरण।', best_known_for: 'ESA बृहस्पति प्रमुख — गैलिलियन चंद्रमा (Ganymede) की कक्षा में पहला अंतरिक्षयान, 2031-2034' },
-    it: { tagline: 'Ammiraglia ESA per Giove — primo orbiter attorno a una luna galileiana (Ganimede, 2034)', description: "Esploratore delle lune ghiacciate di Giove. Lanciato il 14/04/2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con assistenze gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Carico di dieci strumenti incluso il radar penetrante di ghiaccio RIME.", best_known_for: 'Ammiraglia ESA per Giove — primo orbiter attorno a una luna galileiana (Ganimede), 2031-2034' },
-    ja: { name: 'JUICE', tagline: 'ESA の木星フラッグシップ — ガリレオ衛星（Ganymede、2034 年）を周回する初の探査機', description: '木星氷衛星探査機。2023 年 4 月 14 日に Ariane 5 ECA+ でクールーから打ち上げ、Earth-Venus-Earth-Earth スイングバイで 8.5 年かけて 2031 年 7 月に木星到着。木星圏では Europa・Ganymede・Callisto を計約 35 回フライバイした後、2034 年に Ganymede 周回軌道へ — 地球以外の衛星を周回する史上初の探査機となる。氷貫通レーダー RIME を含む 10 機器搭載。', best_known_for: 'ESA 木星フラッグシップ — ガリレオ衛星周回の史上初探査機（Ganymede）、2031〜2034' },
-    ko: { name: '주스', tagline: 'ESA 목성 기함 — 갈릴레이 위성(가니메데, 2034) 궤도에 들어가는 최초의 탐사선', description: '목성 얼음 위성 탐사선. 2023년 4월 14일 쿠루에서 Ariane 5 ECA+로 발사되어 Earth-Venus-Earth-Earth 중력보조를 거쳐 2031년 7월 목성 도착까지 8.5년간 항해한다. 목성계에서 약 35회의 유로파·가니메데·칼리스토 근접 통과를 수행한 뒤 2034년 가니메데 궤도에 진입 — 지구의 달 이외 위성을 공전하는 사상 최초의 탐사선이 된다. 얼음 투과 레이더 RIME 등 10개 기기 탑재.', best_known_for: 'ESA 목성 기함 — 갈릴레이 위성(가니메데) 궤도 최초 탐사선, 2031〜2034' },
-    nl: { tagline: 'ESA Jupiter-vlaggenschip — eerste orbiter rond een Galilei-maan (Ganymedes, 2034)', description: "Jupiter Icy Moons Explorer. Gelanceerd op 14-04-2023 met een Ariane 5 ECA+ vanuit Kourou voor een cruise van 8,5 jaar via Aarde-Venus-Aarde-Aarde-zwaartekrachtsondersteuning, met Jupiter-aankomst in juli 2031. In het Jupiter-systeem voert JUICE ~35 flybys uit van Europa, Ganymedes en Callisto voor het in 2034 binnentreden van een Ganymedes-baan — het eerste ruimtevaartuig ooit dat een andere maan dan die van de Aarde omcirkelt. Tien instrumenten waaronder de ijs-penetrerende radar RIME.", best_known_for: 'ESA Jupiter-vlaggenschip — eerste orbiter rond een Galilei-maan (Ganymedes), 2031-2034' },
-    'pt-BR': { tagline: 'Nave-almirante europeia para Júpiter — primeiro orbitador a uma lua galileana (Ganimedes, 2034)', description: 'Explorador das luas geladas de Júpiter. Lançado em 14-04-2023 num Ariane 5 ECA+ desde Kourou para um cruzeiro de 8,5 anos via assistências gravitacionais Terra-Vênus-Terra-Terra até a chegada a Júpiter em julho de 2031. No sistema joviano, JUICE realiza ~35 sobrevoos de Europa, Ganimedes e Calisto antes de entrar em órbita de Ganimedes em 2034 — primeira espaçonave a orbitar uma lua que não a Lua terrestre. Carga útil de dez instrumentos incluindo o radar penetrador de gelo RIME.', best_known_for: 'Nave-almirante ESA para Júpiter — primeiro orbitador em volta de uma lua galileana (Ganimedes), 2031-2034' },
-    ru: { tagline: 'Флагман ESA к Юпитеру — первый аппарат на орбите галилеева спутника (Ганимед, 2034)', description: 'Jupiter Icy Moons Explorer. Запущен 14.04.2023 с Ariane 5 ECA+ из Куру на 8,5-летний перелёт через гравитационные манёвры Земля-Венера-Земля-Земля; прибытие к Юпитеру в июле 2031. В системе Юпитера выполнит ~35 пролётов мимо Европы, Ганимеда и Каллисто, после чего в 2034 году выйдет на орбиту Ганимеда — первым в истории аппарат на орбите спутника, не считая Луны. На борту 10 приборов, включая ледовой радар RIME.', best_known_for: 'Флагман ESA к Юпитеру — первый аппарат на орбите галилеева спутника (Ганимед), 2031-2034' },
-    'sr-Cyrl': { tagline: 'ESA-ин Јупитерски бродоводитељ — први орбитер око Галилејевог сателита (Ганимед, 2034)', description: 'Истраживач Јупитерових ледених сателита. Лансиран 14.04.2023. на Ariane 5 ECA+ из Куруа, на 8,5-годишњи пут преко Земља-Венера-Земља-Земља гравитационих пращова до доласка на Јупитер у јулу 2031. У систему Јупитера JUICE спроводи ~35 пролаза покрај Европе, Ганимеда и Калиста пре уласка у орбиту Ганимеда 2034 — прва свемирска летелица у орбити неког другог месеца осим Месеца Земље. Носи 10 инструмената укључујући ледобијуни радар RIME.', best_known_for: 'ESA-ин Јупитерски бродоводитељ — први орбитер око Галилејевог сателита (Ганимед), 2031-2034' },
-    'zh-CN': { name: '木星冰月探测器', tagline: 'ESA 木星旗舰 — 首个进入伽利略卫星（Ganymede，2034）轨道的探测器', description: '木星冰卫星探测器。2023 年 4 月 14 日在库鲁由 Ariane 5 ECA+ 发射，经地-金-地-地引力借力进行 8.5 年航行，2031 年 7 月抵达木星。在木星系内将完成约 35 次对 Europa、Ganymede、Callisto 的近距离飞掠，于 2034 年进入 Ganymede 轨道 — 史上首颗环绕除地球之外卫星运行的探测器。携带十件仪器，包括冰穿透雷达 RIME。', best_known_for: 'ESA 木星旗舰 — 首颗环绕伽利略卫星运行的探测器（Ganymede），2031-2034' },
+    ar: {
+      tagline: 'مهمة ESA الرئيسية إلى المشتري — أول مركبة تدخل مدار قمر جاليلي (Ganymede، 2034)',
+      description:
+        'مستكشف الأقمار الجليدية لكوكب المشتري (JUICE). أُطلق في 2023-04-14 على Ariane 5 ECA+ من كورو لرحلة 8.5 سنوات عبر Earth-Venus-Earth-Earth ليصل إلى المشتري في يوليو 2031. هناك يقوم بـ ~35 تحليقة قرب Europa و Ganymede و Callisto قبل دخول مدار Ganymede في 2034 — أول مركبة على الإطلاق تدور حول قمر غير قمر الأرض. عشرة أدوات بما في ذلك رادار اختراق الجليد RIME.',
+      best_known_for: 'ESA إلى المشتري — أول مركبة تدور حول قمر جاليلي (Ganymede)، 2031-2034',
+    },
+    de: {
+      tagline:
+        'ESAs Jupiter-Flaggschiff — erster Orbiter um einen Galileischen Mond (Ganymed, 2034)',
+      description:
+        'Jupiter Icy Moons Explorer. Gestartet am 14.04.2023 mit einer Ariane 5 ECA+ aus Kourou auf einer 8,5-jährigen Reise über Earth-Venus-Earth-Earth-Schwungholmanöver zur Jupiter-Ankunft im Juli 2031. Im Jupitersystem führt JUICE ~35 Vorbeiflüge an Europa, Ganymed und Kallisto durch, bevor er 2034 in einen Ganymed-Orbit eintritt — das erste Raumfahrzeug überhaupt, das einen anderen Mond als den Erdmond umkreist. Zehn-Instrumente-Nutzlast inkl. Eis-durchdringendem Radar RIME.',
+      best_known_for:
+        'ESA-Jupiter-Flaggschiff — erster Orbiter um einen Galileischen Mond (Ganymed), 2031-2034',
+    },
+    es: {
+      tagline:
+        'Buque insignia europeo a Júpiter — primera nave en orbitar una luna galileana (Ganímedes, 2034)',
+      description:
+        'Explorador de las lunas heladas de Júpiter. Lanzado el 14-04-2023 en un Ariane 5 ECA+ desde Kourou para un crucero de 8,5 años con asistencias gravitatorias Tierra-Venus-Tierra-Tierra hasta la llegada a Júpiter en julio de 2031. En el sistema joviano, JUICE realiza ~35 sobrevuelos de Europa, Ganímedes y Calisto antes de entrar en órbita de Ganímedes en 2034 — la primera nave en orbitar una luna distinta de la Luna terrestre. Carga útil de diez instrumentos, incluido el radar penetrador de hielo RIME.',
+      best_known_for:
+        'Buque insignia europeo a Júpiter — primera nave en orbitar una luna galileana (Ganímedes), 2031-2034',
+    },
+    fr: {
+      tagline:
+        "Vaisseau amiral européen vers Jupiter — premier orbiteur autour d'une lune galiléenne (Ganymède, 2034)",
+      description:
+        "Explorateur des lunes glacées de Jupiter. Lancé le 14/04/2023 sur Ariane 5 ECA+ depuis Kourou pour une croisière de 8,5 ans via des assistances gravitationnelles Terre-Vénus-Terre-Terre jusqu'à l'arrivée à Jupiter en juillet 2031. Dans le système jovien, JUICE effectue ~35 survols d'Europe, Ganymède et Callisto avant d'entrer en orbite autour de Ganymède en 2034 — premier engin à orbiter une lune autre que celle de la Terre. Charge utile de dix instruments dont le radar pénétrant de glace RIME.",
+      best_known_for:
+        "Vaisseau amiral européen vers Jupiter — premier orbiteur autour d'une lune galiléenne (Ganymède), 2031-2034",
+    },
+    hi: {
+      tagline:
+        'ESA का बृहस्पति प्रमुख — किसी गैलिलियन चंद्रमा (Ganymede, 2034) की कक्षा में जाने वाला पहला अंतरिक्षयान',
+      description:
+        'बृहस्पति बर्फीले चंद्रमा अन्वेषक। 14-04-2023 को कूरू से Ariane 5 ECA+ पर लॉन्च हुआ, जुलाई 2031 में बृहस्पति पहुँचने के लिए Earth-Venus-Earth-Earth गुरुत्वाकर्षण सहायताओं के माध्यम से 8.5-वर्ष की क्रूज़ यात्रा। बृहस्पति प्रणाली में JUICE Europa, Ganymede और Callisto के लगभग 35 फ्लाईबाई करता है, फिर 2034 में Ganymede की कक्षा में प्रवेश करता है — पृथ्वी के अलावा किसी चंद्रमा की कक्षा में जाने वाला पहला अंतरिक्षयान। बर्फ-भेदी रडार RIME सहित दस उपकरण।',
+      best_known_for:
+        'ESA बृहस्पति प्रमुख — गैलिलियन चंद्रमा (Ganymede) की कक्षा में पहला अंतरिक्षयान, 2031-2034',
+    },
+    it: {
+      tagline:
+        'Ammiraglia ESA per Giove — primo orbiter attorno a una luna galileiana (Ganimede, 2034)',
+      description:
+        "Esploratore delle lune ghiacciate di Giove. Lanciato il 14/04/2023 su Ariane 5 ECA+ da Kourou per una crociera di 8,5 anni con assistenze gravitazionali Terra-Venere-Terra-Terra fino all'arrivo a Giove a luglio 2031. Nel sistema gioviano JUICE compie ~35 flyby di Europa, Ganimede e Callisto prima di entrare in orbita attorno a Ganimede nel 2034 — primo veicolo in assoluto a orbitare una luna diversa dalla Luna terrestre. Carico di dieci strumenti incluso il radar penetrante di ghiaccio RIME.",
+      best_known_for:
+        'Ammiraglia ESA per Giove — primo orbiter attorno a una luna galileiana (Ganimede), 2031-2034',
+    },
+    ja: {
+      name: 'JUICE',
+      tagline: 'ESA の木星フラッグシップ — ガリレオ衛星（Ganymede、2034 年）を周回する初の探査機',
+      description:
+        '木星氷衛星探査機。2023 年 4 月 14 日に Ariane 5 ECA+ でクールーから打ち上げ、Earth-Venus-Earth-Earth スイングバイで 8.5 年かけて 2031 年 7 月に木星到着。木星圏では Europa・Ganymede・Callisto を計約 35 回フライバイした後、2034 年に Ganymede 周回軌道へ — 地球以外の衛星を周回する史上初の探査機となる。氷貫通レーダー RIME を含む 10 機器搭載。',
+      best_known_for:
+        'ESA 木星フラッグシップ — ガリレオ衛星周回の史上初探査機（Ganymede）、2031〜2034',
+    },
+    ko: {
+      name: '주스',
+      tagline: 'ESA 목성 기함 — 갈릴레이 위성(가니메데, 2034) 궤도에 들어가는 최초의 탐사선',
+      description:
+        '목성 얼음 위성 탐사선. 2023년 4월 14일 쿠루에서 Ariane 5 ECA+로 발사되어 Earth-Venus-Earth-Earth 중력보조를 거쳐 2031년 7월 목성 도착까지 8.5년간 항해한다. 목성계에서 약 35회의 유로파·가니메데·칼리스토 근접 통과를 수행한 뒤 2034년 가니메데 궤도에 진입 — 지구의 달 이외 위성을 공전하는 사상 최초의 탐사선이 된다. 얼음 투과 레이더 RIME 등 10개 기기 탑재.',
+      best_known_for: 'ESA 목성 기함 — 갈릴레이 위성(가니메데) 궤도 최초 탐사선, 2031〜2034',
+    },
+    nl: {
+      tagline: 'ESA Jupiter-vlaggenschip — eerste orbiter rond een Galilei-maan (Ganymedes, 2034)',
+      description:
+        'Jupiter Icy Moons Explorer. Gelanceerd op 14-04-2023 met een Ariane 5 ECA+ vanuit Kourou voor een cruise van 8,5 jaar via Aarde-Venus-Aarde-Aarde-zwaartekrachtsondersteuning, met Jupiter-aankomst in juli 2031. In het Jupiter-systeem voert JUICE ~35 flybys uit van Europa, Ganymedes en Callisto voor het in 2034 binnentreden van een Ganymedes-baan — het eerste ruimtevaartuig ooit dat een andere maan dan die van de Aarde omcirkelt. Tien instrumenten waaronder de ijs-penetrerende radar RIME.',
+      best_known_for:
+        'ESA Jupiter-vlaggenschip — eerste orbiter rond een Galilei-maan (Ganymedes), 2031-2034',
+    },
+    'pt-BR': {
+      tagline:
+        'Nave-almirante europeia para Júpiter — primeiro orbitador a uma lua galileana (Ganimedes, 2034)',
+      description:
+        'Explorador das luas geladas de Júpiter. Lançado em 14-04-2023 num Ariane 5 ECA+ desde Kourou para um cruzeiro de 8,5 anos via assistências gravitacionais Terra-Vênus-Terra-Terra até a chegada a Júpiter em julho de 2031. No sistema joviano, JUICE realiza ~35 sobrevoos de Europa, Ganimedes e Calisto antes de entrar em órbita de Ganimedes em 2034 — primeira espaçonave a orbitar uma lua que não a Lua terrestre. Carga útil de dez instrumentos incluindo o radar penetrador de gelo RIME.',
+      best_known_for:
+        'Nave-almirante ESA para Júpiter — primeiro orbitador em volta de uma lua galileana (Ganimedes), 2031-2034',
+    },
+    ru: {
+      tagline:
+        'Флагман ESA к Юпитеру — первый аппарат на орбите галилеева спутника (Ганимед, 2034)',
+      description:
+        'Jupiter Icy Moons Explorer. Запущен 14.04.2023 с Ariane 5 ECA+ из Куру на 8,5-летний перелёт через гравитационные манёвры Земля-Венера-Земля-Земля; прибытие к Юпитеру в июле 2031. В системе Юпитера выполнит ~35 пролётов мимо Европы, Ганимеда и Каллисто, после чего в 2034 году выйдет на орбиту Ганимеда — первым в истории аппарат на орбите спутника, не считая Луны. На борту 10 приборов, включая ледовой радар RIME.',
+      best_known_for:
+        'Флагман ESA к Юпитеру — первый аппарат на орбите галилеева спутника (Ганимед), 2031-2034',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'ESA-ин Јупитерски бродоводитељ — први орбитер око Галилејевог сателита (Ганимед, 2034)',
+      description:
+        'Истраживач Јупитерових ледених сателита. Лансиран 14.04.2023. на Ariane 5 ECA+ из Куруа, на 8,5-годишњи пут преко Земља-Венера-Земља-Земља гравитационих пращова до доласка на Јупитер у јулу 2031. У систему Јупитера JUICE спроводи ~35 пролаза покрај Европе, Ганимеда и Калиста пре уласка у орбиту Ганимеда 2034 — прва свемирска летелица у орбити неког другог месеца осим Месеца Земље. Носи 10 инструмената укључујући ледобијуни радар RIME.',
+      best_known_for:
+        'ESA-ин Јупитерски бродоводитељ — први орбитер око Галилејевог сателита (Ганимед), 2031-2034',
+    },
+    'zh-CN': {
+      name: '木星冰月探测器',
+      tagline: 'ESA 木星旗舰 — 首个进入伽利略卫星（Ganymede，2034）轨道的探测器',
+      description:
+        '木星冰卫星探测器。2023 年 4 月 14 日在库鲁由 Ariane 5 ECA+ 发射，经地-金-地-地引力借力进行 8.5 年航行，2031 年 7 月抵达木星。在木星系内将完成约 35 次对 Europa、Ganymede、Callisto 的近距离飞掠，于 2034 年进入 Ganymede 轨道 — 史上首颗环绕除地球之外卫星运行的探测器。携带十件仪器，包括冰穿透雷达 RIME。',
+      best_known_for: 'ESA 木星旗舰 — 首颗环绕伽利略卫星运行的探测器（Ganymede），2031-2034',
+    },
   },
   bepicolombo: {
-    ar: { tagline: 'مهمة Mercury مزدوجة المركبات بين ESA و JAXA — تنفصل إلى MPO + Mio عند الوصول 2026', description: 'مهمة مشتركة بين ESA و JAXA. أُطلقت 2018-10-20 على Ariane 5 ECA. تحمل Mercury Transfer Module (MTM، أيوني-كهربائي) المكدس عبر رحلة طولها 7 سنوات (1 Earth + 2 Venus + 6 Mercury) قبل إدخاله مدار Mercury أواخر 2026. عند الوصول ينفصل المداران: MPO (ESA، 11 أداة) في مدار قطبي 480 × 1500 كم لرسم خرائط السطح والتركيب والجاذبية والغلاف الخارجي؛ Mio (JAXA، 5 أدوات) في مدار قطبي 590 × 11 640 كم لدراسة الغلاف المغناطيسي والبلازما.', best_known_for: 'مهمة Mercury مزدوجة بين ESA و JAXA — MPO + Mio يصلان 2026' },
-    de: { tagline: 'Doppelorbiter-Mission von ESA + JAXA zum Merkur — trennt sich 2026 bei der Ankunft in MPO + Mio', description: 'Gemeinsame ESA-+-JAXA-Mission. Gestartet am 20.10.2018 mit einer Ariane 5 ECA. Das Mercury Transfer Module (MTM, Ionenelektrik) trägt den Stapel auf einer 7-jährigen Vorbeiflugreise (1 Earth + 2 Venus + 6 Mercury) bis zur Mercury-Orbit-Einschuss Ende 2026. Bei Ankunft trennen sich die beiden Wissenschaftsorbiter: ESAs MPO (Mercury Planetary Orbiter, 11 Instrumente) in polarer 480 × 1500 km-Bahn für Oberflächenzusammensetzung, Topographie, Gravitation und Exosphäre; JAXAs Mio (5 Instrumente) in polarer 590 × 11 640 km-Bahn für Magnetosphäre und Plasma.', best_known_for: 'ESA-+-JAXA-Doppelorbiter-Mission zum Merkur — MPO + Mio Ankunft 2026' },
-    es: { tagline: 'Misión Mercurio de doble orbitador ESA + JAXA — se separa en MPO + Mio al llegar en 2026', description: 'Misión conjunta ESA + JAXA. Lanzada el 20-10-2018 en un Ariane 5 ECA. El Mercury Transfer Module (MTM, iónico-eléctrico) lleva la pila en un crucero de 7 años con sobrevuelos (1 Tierra + 2 Venus + 6 Mercurio) hasta la inserción en órbita mercuriana a finales de 2026. Al llegar, los dos orbitadores científicos se separan: el MPO de ESA (Mercury Planetary Orbiter, 11 instrumentos) en órbita polar 480 × 1500 km para composición de superficie, topografía, gravedad y exosfera; el Mio de JAXA (5 instrumentos) en órbita polar 590 × 11 640 km para magnetosfera y plasma.', best_known_for: 'Misión Mercurio de doble orbitador ESA + JAXA — MPO + Mio en 2026' },
-    fr: { tagline: 'Mission Mercure à double orbiteur ESA + JAXA — se sépare en MPO + Mio à l\'arrivée en 2026', description: "Mission conjointe ESA + JAXA. Lancée le 20/10/2018 sur Ariane 5 ECA. Le Mercury Transfer Module (MTM, ionique-électrique) emporte la pile sur une croisière de 7 ans (1 Terre + 2 Vénus + 6 Mercure) jusqu'à l'insertion en orbite mercurienne fin 2026. À l'arrivée, les deux orbiteurs scientifiques se séparent : MPO d'ESA (Mercury Planetary Orbiter, 11 instruments) en orbite polaire 480 × 1500 km pour composition de surface, topographie, gravité et exosphère ; Mio de JAXA (5 instruments) en orbite polaire 590 × 11 640 km pour la magnétosphère et le plasma.", best_known_for: 'Mission Mercure à double orbiteur ESA + JAXA — MPO + Mio en 2026' },
-    hi: { tagline: 'ESA + JAXA की संयुक्त बुध मिशन — 2026 में आगमन पर MPO + Mio में अलग होगा', description: 'ESA + JAXA संयुक्त मिशन। 20-10-2018 को Ariane 5 ECA पर लॉन्च। Mercury Transfer Module (MTM, आयन-इलेक्ट्रिक) स्टैक को 7 साल की क्रूज़ (1 Earth + 2 Venus + 6 Mercury गुरुत्वाकर्षण सहायता) पर ले जाता है, 2026 के अंत में बुध की कक्षा में प्रवेश। आगमन पर दो विज्ञान कक्षक अलग होते हैं: ESA का MPO (11 उपकरण) 480 × 1500 किमी ध्रुवीय कक्षा में, सतह की संरचना/स्थलाकृति/गुरुत्व/बहिर्मंडल के लिए; JAXA का Mio (5 उपकरण) 590 × 11 640 किमी ध्रुवीय कक्षा में, चुंबकमंडल और प्लाज्मा के लिए।', best_known_for: 'ESA + JAXA संयुक्त बुध मिशन — 2026 में MPO + Mio आगमन' },
-    it: { tagline: 'Missione Mercurio a doppio orbiter ESA + JAXA — si separa in MPO + Mio all\'arrivo nel 2026', description: "Missione congiunta ESA + JAXA. Lanciata il 20/10/2018 su Ariane 5 ECA. Il Mercury Transfer Module (MTM, ionico-elettrico) trasporta lo stack in una crociera di 7 anni (1 Terra + 2 Venere + 6 Mercurio) fino all'inserimento in orbita mercuriana a fine 2026. All'arrivo, i due orbiter scientifici si separano: l'MPO dell'ESA (11 strumenti) in orbita polare 480 × 1500 km per composizione di superficie, topografia, gravità ed esosfera; Mio della JAXA (5 strumenti) in orbita polare 590 × 11 640 km per magnetosfera e plasma.", best_known_for: 'Missione Mercurio a doppio orbiter ESA + JAXA — MPO + Mio nel 2026' },
-    ja: { name: 'ベピコロンボ', tagline: 'ESA・JAXA 共同の水星 2 機ミッション — 2026 年到着時に MPO と Mio に分離', description: 'ESA + JAXA 共同ミッション。2018 年 10 月 20 日 Ariane 5 ECA で打ち上げ。Mercury Transfer Module（イオン電気推進）が、地球 1 回・金星 2 回・水星 6 回のスイングバイで 7 年かけて 2026 年末の水星周回投入まで運ぶ。到着時に 2 機が分離：ESA の MPO（水星惑星周回機、11 機器）は 480 × 1500 km の極軌道で表面組成・地形・重力・外気圏を観測、JAXA の Mio（5 機器）は 590 × 11 640 km の極軌道で磁気圏・プラズマを観測する。', best_known_for: 'ESA・JAXA 共同の水星 2 機ミッション — 2026 年 MPO + Mio 到着' },
-    ko: { name: '베피콜롬보', tagline: 'ESA + JAXA 공동 수성 2기 미션 — 2026년 도착 시 MPO와 Mio로 분리', description: 'ESA + JAXA 공동 임무. 2018년 10월 20일 Ariane 5 ECA로 발사. 수성 전이 모듈(MTM, 이온-전기 추진)이 지구 1회·금성 2회·수성 6회 스윙바이로 7년 항해하여 2026년 말 수성 궤도에 진입한다. 도착 시 두 과학 궤도선이 분리된다: ESA의 MPO(11개 기기)는 480 × 1500 km 극궤도에서 표면 조성·지형·중력·외기권을, JAXA의 Mio(5개 기기)는 590 × 11 640 km 극궤도에서 자기권과 플라즈마를 관측한다.', best_known_for: 'ESA + JAXA 공동 수성 2기 미션 — 2026년 MPO + Mio 도착' },
-    nl: { tagline: 'ESA + JAXA dubbele-orbiter Mercurius-missie — splitst zich bij aankomst in 2026 in MPO + Mio', description: 'Gezamenlijke ESA + JAXA missie. Gelanceerd op 20-10-2018 met een Ariane 5 ECA. De Mercury Transfer Module (MTM, ion-elektrisch) draagt de stack op een cruise van 7 jaar (1 Aarde + 2 Venus + 6 Mercurius zwaartekrachtsondersteuning) tot Mercurius-baaninsteek eind 2026. Bij aankomst splitsen de twee wetenschaps-orbiters: ESA\'s MPO (Mercury Planetary Orbiter, 11 instrumenten) in een polaire 480 × 1500 km-baan voor oppervlaktecompositie, topografie, zwaartekracht en exosfeer; JAXA\'s Mio (5 instrumenten) in een polaire 590 × 11 640 km-baan voor magnetosfeer en plasma.', best_known_for: 'ESA + JAXA dubbele-orbiter Mercurius-missie — MPO + Mio aankomst 2026' },
-    'pt-BR': { tagline: 'Missão de duplo orbitador a Mercúrio ESA + JAXA — separa-se em MPO + Mio na chegada em 2026', description: 'Missão conjunta ESA + JAXA. Lançada em 20-10-2018 num Ariane 5 ECA. O Mercury Transfer Module (MTM, iônico-elétrico) leva a pilha num cruzeiro de 7 anos (1 Terra + 2 Vênus + 6 Mercúrio) até a inserção em órbita mercuriana no final de 2026. Na chegada, os dois orbitadores científicos se separam: o MPO da ESA (Mercury Planetary Orbiter, 11 instrumentos) em órbita polar de 480 × 1500 km para composição de superfície, topografia, gravidade e exosfera; Mio da JAXA (5 instrumentos) em órbita polar de 590 × 11 640 km para magnetosfera e plasma.', best_known_for: 'Missão de duplo orbitador Mercúrio ESA + JAXA — MPO + Mio em 2026' },
-    ru: { tagline: 'Совместная миссия ESA + JAXA к Меркурию из двух орбитеров — на прибытии в 2026 году разделится на MPO + Mio', description: 'Совместная миссия ESA + JAXA. Запущена 20.10.2018 на Ariane 5 ECA. Модуль межпланетного перелёта (MTM, ионно-электрический) ведёт связку 7 лет, используя гравитационные манёвры (1 Земля, 2 Венеры, 6 Меркуриев), до выхода на орбиту Меркурия в конце 2026 года. На прибытии два научных орбитера разделяются: MPO ESA (11 приборов) выходит на полярную орбиту 480 × 1500 км для исследования состава, рельефа, гравитации и экзосферы; Mio JAXA (5 приборов) — на полярную 590 × 11 640 км для магнитосферы и плазмы.', best_known_for: 'Совместная ESA + JAXA миссия к Меркурию из двух орбитеров — MPO + Mio в 2026' },
-    'sr-Cyrl': { tagline: 'ESA + JAXA заједничка двоорбитерска мисија ка Меркуру — раздваја се на MPO + Mio при доласку 2026', description: 'Заједничка мисија ESA + JAXA. Лансирана 20.10.2018. на Ariane 5 ECA. Mercury Transfer Module (MTM, јонско-електрични) носи слог на 7-годишњем путу (1 Земља + 2 Венере + 6 Меркура) до уласка у Меркурову орбиту крајем 2026. При доласку се два научна орбитера раздвајају: ESA-ин MPO (11 инструмената) у поларној орбити 480 × 1500 km за састав површине, топографију, гравитацију и егзосферу; JAXA-ин Mio (5 инструмената) у поларној орбити 590 × 11 640 km за магнетосферу и плазму.', best_known_for: 'ESA + JAXA двоорбитерска мисија ка Меркуру — MPO + Mio долазак 2026' },
-    'zh-CN': { name: '贝皮可伦坡', tagline: 'ESA + JAXA 联合的水星双轨道器任务 — 2026 年抵达时分离为 MPO + Mio', description: 'ESA + JAXA 联合任务。2018-10-20 由 Ariane 5 ECA 发射。Mercury Transfer Module（MTM，离子电推进）携带组合体经 1 地球 + 2 金星 + 6 水星借力飞掠的 7 年巡航，于 2026 年末进入水星轨道。抵达后两个科学轨道器分离：ESA 的 MPO（水星行星轨道器，11 件仪器）进入 480 × 1500 km 极轨，研究表面成分、地形、重力与外逸层；JAXA 的 Mio（5 件仪器）进入 590 × 11 640 km 极轨，研究磁层与等离子体。', best_known_for: 'ESA + JAXA 联合水星双轨道器任务 — MPO + Mio 2026 年抵达' },
+    ar: {
+      tagline: 'مهمة Mercury مزدوجة المركبات بين ESA و JAXA — تنفصل إلى MPO + Mio عند الوصول 2026',
+      description:
+        'مهمة مشتركة بين ESA و JAXA. أُطلقت 2018-10-20 على Ariane 5 ECA. تحمل Mercury Transfer Module (MTM، أيوني-كهربائي) المكدس عبر رحلة طولها 7 سنوات (1 Earth + 2 Venus + 6 Mercury) قبل إدخاله مدار Mercury أواخر 2026. عند الوصول ينفصل المداران: MPO (ESA، 11 أداة) في مدار قطبي 480 × 1500 كم لرسم خرائط السطح والتركيب والجاذبية والغلاف الخارجي؛ Mio (JAXA، 5 أدوات) في مدار قطبي 590 × 11 640 كم لدراسة الغلاف المغناطيسي والبلازما.',
+      best_known_for: 'مهمة Mercury مزدوجة بين ESA و JAXA — MPO + Mio يصلان 2026',
+    },
+    de: {
+      tagline:
+        'Doppelorbiter-Mission von ESA + JAXA zum Merkur — trennt sich 2026 bei der Ankunft in MPO + Mio',
+      description:
+        'Gemeinsame ESA-+-JAXA-Mission. Gestartet am 20.10.2018 mit einer Ariane 5 ECA. Das Mercury Transfer Module (MTM, Ionenelektrik) trägt den Stapel auf einer 7-jährigen Vorbeiflugreise (1 Earth + 2 Venus + 6 Mercury) bis zur Mercury-Orbit-Einschuss Ende 2026. Bei Ankunft trennen sich die beiden Wissenschaftsorbiter: ESAs MPO (Mercury Planetary Orbiter, 11 Instrumente) in polarer 480 × 1500 km-Bahn für Oberflächenzusammensetzung, Topographie, Gravitation und Exosphäre; JAXAs Mio (5 Instrumente) in polarer 590 × 11 640 km-Bahn für Magnetosphäre und Plasma.',
+      best_known_for: 'ESA-+-JAXA-Doppelorbiter-Mission zum Merkur — MPO + Mio Ankunft 2026',
+    },
+    es: {
+      tagline:
+        'Misión Mercurio de doble orbitador ESA + JAXA — se separa en MPO + Mio al llegar en 2026',
+      description:
+        'Misión conjunta ESA + JAXA. Lanzada el 20-10-2018 en un Ariane 5 ECA. El Mercury Transfer Module (MTM, iónico-eléctrico) lleva la pila en un crucero de 7 años con sobrevuelos (1 Tierra + 2 Venus + 6 Mercurio) hasta la inserción en órbita mercuriana a finales de 2026. Al llegar, los dos orbitadores científicos se separan: el MPO de ESA (Mercury Planetary Orbiter, 11 instrumentos) en órbita polar 480 × 1500 km para composición de superficie, topografía, gravedad y exosfera; el Mio de JAXA (5 instrumentos) en órbita polar 590 × 11 640 km para magnetosfera y plasma.',
+      best_known_for: 'Misión Mercurio de doble orbitador ESA + JAXA — MPO + Mio en 2026',
+    },
+    fr: {
+      tagline:
+        "Mission Mercure à double orbiteur ESA + JAXA — se sépare en MPO + Mio à l'arrivée en 2026",
+      description:
+        "Mission conjointe ESA + JAXA. Lancée le 20/10/2018 sur Ariane 5 ECA. Le Mercury Transfer Module (MTM, ionique-électrique) emporte la pile sur une croisière de 7 ans (1 Terre + 2 Vénus + 6 Mercure) jusqu'à l'insertion en orbite mercurienne fin 2026. À l'arrivée, les deux orbiteurs scientifiques se séparent : MPO d'ESA (Mercury Planetary Orbiter, 11 instruments) en orbite polaire 480 × 1500 km pour composition de surface, topographie, gravité et exosphère ; Mio de JAXA (5 instruments) en orbite polaire 590 × 11 640 km pour la magnétosphère et le plasma.",
+      best_known_for: 'Mission Mercure à double orbiteur ESA + JAXA — MPO + Mio en 2026',
+    },
+    hi: {
+      tagline: 'ESA + JAXA की संयुक्त बुध मिशन — 2026 में आगमन पर MPO + Mio में अलग होगा',
+      description:
+        'ESA + JAXA संयुक्त मिशन। 20-10-2018 को Ariane 5 ECA पर लॉन्च। Mercury Transfer Module (MTM, आयन-इलेक्ट्रिक) स्टैक को 7 साल की क्रूज़ (1 Earth + 2 Venus + 6 Mercury गुरुत्वाकर्षण सहायता) पर ले जाता है, 2026 के अंत में बुध की कक्षा में प्रवेश। आगमन पर दो विज्ञान कक्षक अलग होते हैं: ESA का MPO (11 उपकरण) 480 × 1500 किमी ध्रुवीय कक्षा में, सतह की संरचना/स्थलाकृति/गुरुत्व/बहिर्मंडल के लिए; JAXA का Mio (5 उपकरण) 590 × 11 640 किमी ध्रुवीय कक्षा में, चुंबकमंडल और प्लाज्मा के लिए।',
+      best_known_for: 'ESA + JAXA संयुक्त बुध मिशन — 2026 में MPO + Mio आगमन',
+    },
+    it: {
+      tagline:
+        "Missione Mercurio a doppio orbiter ESA + JAXA — si separa in MPO + Mio all'arrivo nel 2026",
+      description:
+        "Missione congiunta ESA + JAXA. Lanciata il 20/10/2018 su Ariane 5 ECA. Il Mercury Transfer Module (MTM, ionico-elettrico) trasporta lo stack in una crociera di 7 anni (1 Terra + 2 Venere + 6 Mercurio) fino all'inserimento in orbita mercuriana a fine 2026. All'arrivo, i due orbiter scientifici si separano: l'MPO dell'ESA (11 strumenti) in orbita polare 480 × 1500 km per composizione di superficie, topografia, gravità ed esosfera; Mio della JAXA (5 strumenti) in orbita polare 590 × 11 640 km per magnetosfera e plasma.",
+      best_known_for: 'Missione Mercurio a doppio orbiter ESA + JAXA — MPO + Mio nel 2026',
+    },
+    ja: {
+      name: 'ベピコロンボ',
+      tagline: 'ESA・JAXA 共同の水星 2 機ミッション — 2026 年到着時に MPO と Mio に分離',
+      description:
+        'ESA + JAXA 共同ミッション。2018 年 10 月 20 日 Ariane 5 ECA で打ち上げ。Mercury Transfer Module（イオン電気推進）が、地球 1 回・金星 2 回・水星 6 回のスイングバイで 7 年かけて 2026 年末の水星周回投入まで運ぶ。到着時に 2 機が分離：ESA の MPO（水星惑星周回機、11 機器）は 480 × 1500 km の極軌道で表面組成・地形・重力・外気圏を観測、JAXA の Mio（5 機器）は 590 × 11 640 km の極軌道で磁気圏・プラズマを観測する。',
+      best_known_for: 'ESA・JAXA 共同の水星 2 機ミッション — 2026 年 MPO + Mio 到着',
+    },
+    ko: {
+      name: '베피콜롬보',
+      tagline: 'ESA + JAXA 공동 수성 2기 미션 — 2026년 도착 시 MPO와 Mio로 분리',
+      description:
+        'ESA + JAXA 공동 임무. 2018년 10월 20일 Ariane 5 ECA로 발사. 수성 전이 모듈(MTM, 이온-전기 추진)이 지구 1회·금성 2회·수성 6회 스윙바이로 7년 항해하여 2026년 말 수성 궤도에 진입한다. 도착 시 두 과학 궤도선이 분리된다: ESA의 MPO(11개 기기)는 480 × 1500 km 극궤도에서 표면 조성·지형·중력·외기권을, JAXA의 Mio(5개 기기)는 590 × 11 640 km 극궤도에서 자기권과 플라즈마를 관측한다.',
+      best_known_for: 'ESA + JAXA 공동 수성 2기 미션 — 2026년 MPO + Mio 도착',
+    },
+    nl: {
+      tagline:
+        'ESA + JAXA dubbele-orbiter Mercurius-missie — splitst zich bij aankomst in 2026 in MPO + Mio',
+      description:
+        "Gezamenlijke ESA + JAXA missie. Gelanceerd op 20-10-2018 met een Ariane 5 ECA. De Mercury Transfer Module (MTM, ion-elektrisch) draagt de stack op een cruise van 7 jaar (1 Aarde + 2 Venus + 6 Mercurius zwaartekrachtsondersteuning) tot Mercurius-baaninsteek eind 2026. Bij aankomst splitsen de twee wetenschaps-orbiters: ESA's MPO (Mercury Planetary Orbiter, 11 instrumenten) in een polaire 480 × 1500 km-baan voor oppervlaktecompositie, topografie, zwaartekracht en exosfeer; JAXA's Mio (5 instrumenten) in een polaire 590 × 11 640 km-baan voor magnetosfeer en plasma.",
+      best_known_for: 'ESA + JAXA dubbele-orbiter Mercurius-missie — MPO + Mio aankomst 2026',
+    },
+    'pt-BR': {
+      tagline:
+        'Missão de duplo orbitador a Mercúrio ESA + JAXA — separa-se em MPO + Mio na chegada em 2026',
+      description:
+        'Missão conjunta ESA + JAXA. Lançada em 20-10-2018 num Ariane 5 ECA. O Mercury Transfer Module (MTM, iônico-elétrico) leva a pilha num cruzeiro de 7 anos (1 Terra + 2 Vênus + 6 Mercúrio) até a inserção em órbita mercuriana no final de 2026. Na chegada, os dois orbitadores científicos se separam: o MPO da ESA (Mercury Planetary Orbiter, 11 instrumentos) em órbita polar de 480 × 1500 km para composição de superfície, topografia, gravidade e exosfera; Mio da JAXA (5 instrumentos) em órbita polar de 590 × 11 640 km para magnetosfera e plasma.',
+      best_known_for: 'Missão de duplo orbitador Mercúrio ESA + JAXA — MPO + Mio em 2026',
+    },
+    ru: {
+      tagline:
+        'Совместная миссия ESA + JAXA к Меркурию из двух орбитеров — на прибытии в 2026 году разделится на MPO + Mio',
+      description:
+        'Совместная миссия ESA + JAXA. Запущена 20.10.2018 на Ariane 5 ECA. Модуль межпланетного перелёта (MTM, ионно-электрический) ведёт связку 7 лет, используя гравитационные манёвры (1 Земля, 2 Венеры, 6 Меркуриев), до выхода на орбиту Меркурия в конце 2026 года. На прибытии два научных орбитера разделяются: MPO ESA (11 приборов) выходит на полярную орбиту 480 × 1500 км для исследования состава, рельефа, гравитации и экзосферы; Mio JAXA (5 приборов) — на полярную 590 × 11 640 км для магнитосферы и плазмы.',
+      best_known_for:
+        'Совместная ESA + JAXA миссия к Меркурию из двух орбитеров — MPO + Mio в 2026',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'ESA + JAXA заједничка двоорбитерска мисија ка Меркуру — раздваја се на MPO + Mio при доласку 2026',
+      description:
+        'Заједничка мисија ESA + JAXA. Лансирана 20.10.2018. на Ariane 5 ECA. Mercury Transfer Module (MTM, јонско-електрични) носи слог на 7-годишњем путу (1 Земља + 2 Венере + 6 Меркура) до уласка у Меркурову орбиту крајем 2026. При доласку се два научна орбитера раздвајају: ESA-ин MPO (11 инструмената) у поларној орбити 480 × 1500 km за састав површине, топографију, гравитацију и егзосферу; JAXA-ин Mio (5 инструмената) у поларној орбити 590 × 11 640 km за магнетосферу и плазму.',
+      best_known_for: 'ESA + JAXA двоорбитерска мисија ка Меркуру — MPO + Mio долазак 2026',
+    },
+    'zh-CN': {
+      name: '贝皮可伦坡',
+      tagline: 'ESA + JAXA 联合的水星双轨道器任务 — 2026 年抵达时分离为 MPO + Mio',
+      description:
+        'ESA + JAXA 联合任务。2018-10-20 由 Ariane 5 ECA 发射。Mercury Transfer Module（MTM，离子电推进）携带组合体经 1 地球 + 2 金星 + 6 水星借力飞掠的 7 年巡航，于 2026 年末进入水星轨道。抵达后两个科学轨道器分离：ESA 的 MPO（水星行星轨道器，11 件仪器）进入 480 × 1500 km 极轨，研究表面成分、地形、重力与外逸层；JAXA 的 Mio（5 件仪器）进入 590 × 11 640 km 极轨，研究磁层与等离子体。',
+      best_known_for: 'ESA + JAXA 联合水星双轨道器任务 — MPO + Mio 2026 年抵达',
+    },
   },
   messenger: {
-    ar: { tagline: 'أول مركبة دارت حول Mercury — استخدمت 6 مساعدات جاذبية لمدة 6.6 سنوات قبل إدخالها المدار في 2011', description: 'مهمة Discovery من ناسا (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). أُطلقت 2004-08-03 على Delta II 7925H-9.5. استخدمت رحلة 6.6 سنوات 6 مساعدات جاذبية (Earth، 2 Venus، 3 Mercury) لتفقد ~5 كم/ث من الطاقة الشمسية. إدخالها مدار Mercury في 2011-03-18. الاكتشافات: جليد ماء في الفوهات القطبية المظللة دائماً، مواد عضوية داكنة عند القطبين، إزاحة المجال المغناطيسي عن مركز الكوكب. اصطدمت بسطح Mercury في 2015-04-30 بعد نفاد وقودها.', best_known_for: 'أول مركبة دارت حول Mercury — 4 سنوات من رسم الخرائط، انتهت باصطدام مُتحكم به 2015-04-30' },
-    de: { tagline: 'Erster Merkur-Orbiter — 6 Planet-Schwungholmanöver über 6,6 Jahre vor Einschuss 2011', description: 'NASA-Discovery-Mission „MErcury Surface, Space ENvironment, GEochemistry, and Ranging". Gestartet am 03.08.2004 mit einer Delta II 7925H-9.5. Die 6,6-jährige Reise nutzte 6 Schwungholmanöver (1 Erde, 2 Venus, 3 Merkur), um ~5 km/s heliocentrische Energie zu verlieren. Merkur-Orbit-Einschuss am 18.03.2011. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, organikreiches dunkles Material an den Polen, gegen das Planetenzentrum versetztes Magnetfeld. Schlug am 30.04.2015 nach Erschöpfung des Treibstoffs auf Merkur auf.', best_known_for: 'Erster Merkur-Orbiter — 4 Jahre Kartierung, beendet durch kontrollierten Einschlag 30.04.2015' },
-    es: { tagline: 'Primer orbitador de Mercurio — 6 asistencias gravitatorias planetarias en 6,6 años antes de la inserción en 2011', description: 'Misión Discovery de la NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanzada el 03-08-2004 en un Delta II 7925H-9.5. El crucero de 6,6 años usó 6 asistencias gravitatorias (1 Tierra, 2 Venus, 3 Mercurio) para perder ~5 km/s de energía heliocéntrica. Inserción en órbita mercuriana el 18-03-2011. Descubrimientos: hielo de agua en cráteres polares permanentemente en sombra, material oscuro rico en orgánicos en los polos, campo magnético desplazado del centro del planeta. Impactó Mercurio el 30-04-2015 tras agotar el propelente.', best_known_for: 'Primer orbitador de Mercurio — 4 años cartografiando el planeta, fin en impacto controlado 30-04-2015' },
-    fr: { tagline: 'Premier orbiteur de Mercure — 6 assistances gravitationnelles planétaires sur 6,6 ans avant insertion en 2011', description: "Mission Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lancée le 03/08/2004 sur Delta II 7925H-9.5. La croisière de 6,6 ans a utilisé 6 assistances gravitationnelles (1 Terre, 2 Vénus, 3 Mercure) pour perdre ~5 km/s d'énergie héliocentrique. Insertion en orbite mercurienne le 18/03/2011. Découvertes : glace d'eau dans des cratères polaires en ombre permanente, matériaux sombres riches en organiques aux pôles, champ magnétique décalé du centre planétaire. A impacté Mercure le 30/04/2015 après épuisement du propergol.", best_known_for: 'Premier orbiteur de Mercure — 4 ans de cartographie, fin par impact contrôlé 30/04/2015' },
-    hi: { tagline: 'पहला बुध कक्षक — 2011 में प्रवेश से पहले 6.6 साल में 6 ग्रह गुरुत्वाकर्षण सहायताएँ', description: 'NASA Discovery मिशन (MErcury Surface, Space ENvironment, GEochemistry, and Ranging)। 03-08-2004 को Delta II 7925H-9.5 पर लॉन्च। 6.6-वर्ष की क्रूज़ ने ~5 किमी/सेकंड सूर्यकेन्द्रित ऊर्जा खोने के लिए 6 गुरुत्वाकर्षण सहायताएँ (1 Earth, 2 Venus, 3 Mercury) उपयोग कीं। 18-03-2011 को बुध कक्षा में प्रवेश। खोजें: स्थायी छाया वाले ध्रुवीय गड्ढों में पानी की बर्फ, ध्रुवों पर कार्बनिक-समृद्ध गहरा पदार्थ, ग्रह केंद्र से विस्थापित चुंबकीय क्षेत्र। 30-04-2015 को प्रणोदक समाप्त होने के बाद बुध पर टकराव।', best_known_for: 'पहला बुध कक्षक — 4 साल मानचित्रण, 30-04-2015 नियंत्रित प्रभाव में अंत' },
-    it: { tagline: 'Primo orbiter di Mercurio — 6 assistenze gravitazionali planetarie in 6,6 anni prima dell\'inserimento nel 2011', description: "Missione Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanciata il 03/08/2004 su Delta II 7925H-9.5. La crociera di 6,6 anni ha usato 6 assistenze gravitazionali (1 Terra, 2 Venere, 3 Mercurio) per perdere ~5 km/s di energia eliocentrica. Inserimento in orbita mercuriana il 18/03/2011. Scoperte: ghiaccio d'acqua in crateri polari in ombra permanente, materiale scuro ricco di organici ai poli, campo magnetico spostato dal centro planetario. Ha impattato Mercurio il 30/04/2015 dopo aver esaurito il propellente.", best_known_for: 'Primo orbiter di Mercurio — 4 anni di mappatura, fine in impatto controllato 30/04/2015' },
-    ja: { name: 'メッセンジャー', tagline: '初の水星周回機 — 2011 年の周回投入までに 6.6 年で 6 回の惑星スイングバイ', description: 'NASA ディスカバリー級 MErcury Surface, Space ENvironment, GEochemistry, and Ranging ミッション。2004 年 8 月 3 日に Delta II 7925H-9.5 で打ち上げ。6.6 年の航行で地球 1 回・金星 2 回・水星 3 回のスイングバイを使い ~5 km/s の太陽中心エネルギーを削減。2011 年 3 月 18 日に水星周回軌道に投入。永久影の極クレーターでの水氷、極部の有機物に富む暗黒物質、惑星中心からずれた磁場などを発見。2015 年 4 月 30 日に推進剤枯渇で水星表面に衝突。', best_known_for: '初の水星周回機 — 4 年間の地図化、2015 年 4 月 30 日制御衝突で終了' },
-    ko: { name: '메신저', tagline: '최초의 수성 궤도선 — 2011년 진입까지 6.6년간 6회의 행성 중력보조', description: 'NASA 디스커버리급 MErcury Surface, Space ENvironment, GEochemistry, and Ranging 임무. 2004년 8월 3일 Delta II 7925H-9.5로 발사. 6.6년 항해 동안 6회의 중력보조(지구 1회·금성 2회·수성 3회)로 약 5 km/s의 태양중심 에너지를 줄였다. 2011년 3월 18일 수성 궤도 진입. 영구 그늘 극지방 분화구의 물 얼음, 극지방의 유기물 풍부 어두운 물질, 행성 중심에서 어긋난 자기장 등을 발견. 추진제 소진 후 2015년 4월 30일 수성에 충돌.', best_known_for: '최초의 수성 궤도선 — 4년 매핑, 2015년 4월 30일 제어 충돌로 종료' },
-    nl: { tagline: 'Eerste Mercurius-orbiter — 6 planetaire zwaartekrachtsondersteuningen over 6,6 jaar voor inschieting in 2011', description: 'NASA Discovery-missie (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Gelanceerd op 03-08-2004 met een Delta II 7925H-9.5. De cruise van 6,6 jaar gebruikte 6 zwaartekrachtsondersteuningen (1 Aarde, 2 Venus, 3 Mercurius) om ~5 km/s heliocentrische energie te verliezen. Mercurius-baaninschieting op 18-03-2011. Ontdekkingen: waterijs in permanent beschaduwde poolkraters, organisch-rijk donker materiaal aan de polen, magneetveld verschoven vanaf het planeetmiddelpunt. Stortte op 30-04-2015 op Mercurius na uitputting van het stuwstof.', best_known_for: 'Eerste Mercurius-orbiter — 4 jaar kartering, einde door gecontroleerde inslag 30-04-2015' },
-    'pt-BR': { tagline: 'Primeiro orbitador de Mercúrio — 6 assistências gravitacionais planetárias em 6,6 anos antes da inserção em 2011', description: 'Missão Discovery da NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lançada em 03-08-2004 num Delta II 7925H-9.5. O cruzeiro de 6,6 anos usou 6 assistências gravitacionais (1 Terra, 2 Vênus, 3 Mercúrio) para perder ~5 km/s de energia heliocêntrica. Inserção em órbita mercuriana em 18-03-2011. Descobertas: gelo de água em crateras polares permanentemente sombreadas, material escuro rico em orgânicos nos polos, campo magnético deslocado do centro planetário. Impactou Mercúrio em 30-04-2015 após esgotar o propelente.', best_known_for: 'Primeiro orbitador de Mercúrio — 4 anos mapeando, fim em impacto controlado 30-04-2015' },
-    ru: { tagline: 'Первый аппарат на орбите Меркурия — 6,6 года и 6 гравитационных манёвров перед выходом на орбиту в 2011', description: 'Миссия NASA Discovery «MErcury Surface, Space ENvironment, GEochemistry, and Ranging». Запущена 03.08.2004 на Delta II 7925H-9.5. За 6,6-летний перелёт совершила 6 гравитационных манёвров (1 Земля, 2 Венеры, 3 Меркурия), сбросив ~5 км/с гелиоцентрической энергии. Выход на орбиту Меркурия 18.03.2011. Открытия: водяной лёд в постоянно тенистых полярных кратерах, тёмный материал с большим содержанием органики у полюсов, смещённое от центра планеты магнитное поле. 30.04.2015 столкнулась с Меркурием после исчерпания топлива.', best_known_for: 'Первый аппарат на орбите Меркурия — 4 года картографирования, завершён управляемым ударом 30.04.2015' },
-    'sr-Cyrl': { tagline: 'Прва летелица у орбити Меркура — 6 планетарних гравитационих пращова кроз 6,6 година пре уласка 2011', description: 'НАСА Discovery мисија „MErcury Surface, Space ENvironment, GEochemistry, and Ranging". Лансирана 03.08.2004. на Delta II 7925H-9.5. Крстарење од 6,6 година користило је 6 гравитационих пращова (1 Земља, 2 Венере, 3 Меркура) за смањење ~5 km/s хелиоцентричне енергије. Улазак у орбиту Меркура 18.03.2011. Открића: водени лед у трајно осенченим поларним кратерима, тамна материја богата органским једињењима на половима, магнетско поље помакнуто од центра планете. Ударила у Меркур 30.04.2015. након искориштеног горива.', best_known_for: 'Прва летелица у орбити Меркура — 4 године мапирања, завршена контролисаним ударом 30.04.2015' },
-    'zh-CN': { name: '信使号', tagline: '首颗水星轨道器 — 2011 年入轨前以 6.6 年完成 6 次行星借力', description: 'NASA Discovery 级 MErcury Surface, Space ENvironment, GEochemistry, and Ranging 任务。2004-08-03 由 Delta II 7925H-9.5 发射。6.6 年巡航通过 6 次借力（地球 1、金星 2、水星 3）削减约 5 km/s 的日心能量。2011-03-18 进入水星轨道。发现：永久阴影极区陨石坑内有水冰、极区富含有机物的暗色物质、磁场偏离行星中心。2015-04-30 推进剂耗尽后撞击水星表面。', best_known_for: '首颗水星轨道器 — 4 年制图，2015-04-30 受控撞击结束' },
+    ar: {
+      tagline:
+        'أول مركبة دارت حول Mercury — استخدمت 6 مساعدات جاذبية لمدة 6.6 سنوات قبل إدخالها المدار في 2011',
+      description:
+        'مهمة Discovery من ناسا (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). أُطلقت 2004-08-03 على Delta II 7925H-9.5. استخدمت رحلة 6.6 سنوات 6 مساعدات جاذبية (Earth، 2 Venus، 3 Mercury) لتفقد ~5 كم/ث من الطاقة الشمسية. إدخالها مدار Mercury في 2011-03-18. الاكتشافات: جليد ماء في الفوهات القطبية المظللة دائماً، مواد عضوية داكنة عند القطبين، إزاحة المجال المغناطيسي عن مركز الكوكب. اصطدمت بسطح Mercury في 2015-04-30 بعد نفاد وقودها.',
+      best_known_for:
+        'أول مركبة دارت حول Mercury — 4 سنوات من رسم الخرائط، انتهت باصطدام مُتحكم به 2015-04-30',
+    },
+    de: {
+      tagline:
+        'Erster Merkur-Orbiter — 6 Planet-Schwungholmanöver über 6,6 Jahre vor Einschuss 2011',
+      description:
+        'NASA-Discovery-Mission „MErcury Surface, Space ENvironment, GEochemistry, and Ranging". Gestartet am 03.08.2004 mit einer Delta II 7925H-9.5. Die 6,6-jährige Reise nutzte 6 Schwungholmanöver (1 Erde, 2 Venus, 3 Merkur), um ~5 km/s heliocentrische Energie zu verlieren. Merkur-Orbit-Einschuss am 18.03.2011. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, organikreiches dunkles Material an den Polen, gegen das Planetenzentrum versetztes Magnetfeld. Schlug am 30.04.2015 nach Erschöpfung des Treibstoffs auf Merkur auf.',
+      best_known_for:
+        'Erster Merkur-Orbiter — 4 Jahre Kartierung, beendet durch kontrollierten Einschlag 30.04.2015',
+    },
+    es: {
+      tagline:
+        'Primer orbitador de Mercurio — 6 asistencias gravitatorias planetarias en 6,6 años antes de la inserción en 2011',
+      description:
+        'Misión Discovery de la NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanzada el 03-08-2004 en un Delta II 7925H-9.5. El crucero de 6,6 años usó 6 asistencias gravitatorias (1 Tierra, 2 Venus, 3 Mercurio) para perder ~5 km/s de energía heliocéntrica. Inserción en órbita mercuriana el 18-03-2011. Descubrimientos: hielo de agua en cráteres polares permanentemente en sombra, material oscuro rico en orgánicos en los polos, campo magnético desplazado del centro del planeta. Impactó Mercurio el 30-04-2015 tras agotar el propelente.',
+      best_known_for:
+        'Primer orbitador de Mercurio — 4 años cartografiando el planeta, fin en impacto controlado 30-04-2015',
+    },
+    fr: {
+      tagline:
+        'Premier orbiteur de Mercure — 6 assistances gravitationnelles planétaires sur 6,6 ans avant insertion en 2011',
+      description:
+        "Mission Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lancée le 03/08/2004 sur Delta II 7925H-9.5. La croisière de 6,6 ans a utilisé 6 assistances gravitationnelles (1 Terre, 2 Vénus, 3 Mercure) pour perdre ~5 km/s d'énergie héliocentrique. Insertion en orbite mercurienne le 18/03/2011. Découvertes : glace d'eau dans des cratères polaires en ombre permanente, matériaux sombres riches en organiques aux pôles, champ magnétique décalé du centre planétaire. A impacté Mercure le 30/04/2015 après épuisement du propergol.",
+      best_known_for:
+        'Premier orbiteur de Mercure — 4 ans de cartographie, fin par impact contrôlé 30/04/2015',
+    },
+    hi: {
+      tagline: 'पहला बुध कक्षक — 2011 में प्रवेश से पहले 6.6 साल में 6 ग्रह गुरुत्वाकर्षण सहायताएँ',
+      description:
+        'NASA Discovery मिशन (MErcury Surface, Space ENvironment, GEochemistry, and Ranging)। 03-08-2004 को Delta II 7925H-9.5 पर लॉन्च। 6.6-वर्ष की क्रूज़ ने ~5 किमी/सेकंड सूर्यकेन्द्रित ऊर्जा खोने के लिए 6 गुरुत्वाकर्षण सहायताएँ (1 Earth, 2 Venus, 3 Mercury) उपयोग कीं। 18-03-2011 को बुध कक्षा में प्रवेश। खोजें: स्थायी छाया वाले ध्रुवीय गड्ढों में पानी की बर्फ, ध्रुवों पर कार्बनिक-समृद्ध गहरा पदार्थ, ग्रह केंद्र से विस्थापित चुंबकीय क्षेत्र। 30-04-2015 को प्रणोदक समाप्त होने के बाद बुध पर टकराव।',
+      best_known_for: 'पहला बुध कक्षक — 4 साल मानचित्रण, 30-04-2015 नियंत्रित प्रभाव में अंत',
+    },
+    it: {
+      tagline:
+        "Primo orbiter di Mercurio — 6 assistenze gravitazionali planetarie in 6,6 anni prima dell'inserimento nel 2011",
+      description:
+        "Missione Discovery NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lanciata il 03/08/2004 su Delta II 7925H-9.5. La crociera di 6,6 anni ha usato 6 assistenze gravitazionali (1 Terra, 2 Venere, 3 Mercurio) per perdere ~5 km/s di energia eliocentrica. Inserimento in orbita mercuriana il 18/03/2011. Scoperte: ghiaccio d'acqua in crateri polari in ombra permanente, materiale scuro ricco di organici ai poli, campo magnetico spostato dal centro planetario. Ha impattato Mercurio il 30/04/2015 dopo aver esaurito il propellente.",
+      best_known_for:
+        'Primo orbiter di Mercurio — 4 anni di mappatura, fine in impatto controllato 30/04/2015',
+    },
+    ja: {
+      name: 'メッセンジャー',
+      tagline: '初の水星周回機 — 2011 年の周回投入までに 6.6 年で 6 回の惑星スイングバイ',
+      description:
+        'NASA ディスカバリー級 MErcury Surface, Space ENvironment, GEochemistry, and Ranging ミッション。2004 年 8 月 3 日に Delta II 7925H-9.5 で打ち上げ。6.6 年の航行で地球 1 回・金星 2 回・水星 3 回のスイングバイを使い ~5 km/s の太陽中心エネルギーを削減。2011 年 3 月 18 日に水星周回軌道に投入。永久影の極クレーターでの水氷、極部の有機物に富む暗黒物質、惑星中心からずれた磁場などを発見。2015 年 4 月 30 日に推進剤枯渇で水星表面に衝突。',
+      best_known_for: '初の水星周回機 — 4 年間の地図化、2015 年 4 月 30 日制御衝突で終了',
+    },
+    ko: {
+      name: '메신저',
+      tagline: '최초의 수성 궤도선 — 2011년 진입까지 6.6년간 6회의 행성 중력보조',
+      description:
+        'NASA 디스커버리급 MErcury Surface, Space ENvironment, GEochemistry, and Ranging 임무. 2004년 8월 3일 Delta II 7925H-9.5로 발사. 6.6년 항해 동안 6회의 중력보조(지구 1회·금성 2회·수성 3회)로 약 5 km/s의 태양중심 에너지를 줄였다. 2011년 3월 18일 수성 궤도 진입. 영구 그늘 극지방 분화구의 물 얼음, 극지방의 유기물 풍부 어두운 물질, 행성 중심에서 어긋난 자기장 등을 발견. 추진제 소진 후 2015년 4월 30일 수성에 충돌.',
+      best_known_for: '최초의 수성 궤도선 — 4년 매핑, 2015년 4월 30일 제어 충돌로 종료',
+    },
+    nl: {
+      tagline:
+        'Eerste Mercurius-orbiter — 6 planetaire zwaartekrachtsondersteuningen over 6,6 jaar voor inschieting in 2011',
+      description:
+        'NASA Discovery-missie (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Gelanceerd op 03-08-2004 met een Delta II 7925H-9.5. De cruise van 6,6 jaar gebruikte 6 zwaartekrachtsondersteuningen (1 Aarde, 2 Venus, 3 Mercurius) om ~5 km/s heliocentrische energie te verliezen. Mercurius-baaninschieting op 18-03-2011. Ontdekkingen: waterijs in permanent beschaduwde poolkraters, organisch-rijk donker materiaal aan de polen, magneetveld verschoven vanaf het planeetmiddelpunt. Stortte op 30-04-2015 op Mercurius na uitputting van het stuwstof.',
+      best_known_for:
+        'Eerste Mercurius-orbiter — 4 jaar kartering, einde door gecontroleerde inslag 30-04-2015',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeiro orbitador de Mercúrio — 6 assistências gravitacionais planetárias em 6,6 anos antes da inserção em 2011',
+      description:
+        'Missão Discovery da NASA (MErcury Surface, Space ENvironment, GEochemistry, and Ranging). Lançada em 03-08-2004 num Delta II 7925H-9.5. O cruzeiro de 6,6 anos usou 6 assistências gravitacionais (1 Terra, 2 Vênus, 3 Mercúrio) para perder ~5 km/s de energia heliocêntrica. Inserção em órbita mercuriana em 18-03-2011. Descobertas: gelo de água em crateras polares permanentemente sombreadas, material escuro rico em orgânicos nos polos, campo magnético deslocado do centro planetário. Impactou Mercúrio em 30-04-2015 após esgotar o propelente.',
+      best_known_for:
+        'Primeiro orbitador de Mercúrio — 4 anos mapeando, fim em impacto controlado 30-04-2015',
+    },
+    ru: {
+      tagline:
+        'Первый аппарат на орбите Меркурия — 6,6 года и 6 гравитационных манёвров перед выходом на орбиту в 2011',
+      description:
+        'Миссия NASA Discovery «MErcury Surface, Space ENvironment, GEochemistry, and Ranging». Запущена 03.08.2004 на Delta II 7925H-9.5. За 6,6-летний перелёт совершила 6 гравитационных манёвров (1 Земля, 2 Венеры, 3 Меркурия), сбросив ~5 км/с гелиоцентрической энергии. Выход на орбиту Меркурия 18.03.2011. Открытия: водяной лёд в постоянно тенистых полярных кратерах, тёмный материал с большим содержанием органики у полюсов, смещённое от центра планеты магнитное поле. 30.04.2015 столкнулась с Меркурием после исчерпания топлива.',
+      best_known_for:
+        'Первый аппарат на орбите Меркурия — 4 года картографирования, завершён управляемым ударом 30.04.2015',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Прва летелица у орбити Меркура — 6 планетарних гравитационих пращова кроз 6,6 година пре уласка 2011',
+      description:
+        'НАСА Discovery мисија „MErcury Surface, Space ENvironment, GEochemistry, and Ranging". Лансирана 03.08.2004. на Delta II 7925H-9.5. Крстарење од 6,6 година користило је 6 гравитационих пращова (1 Земља, 2 Венере, 3 Меркура) за смањење ~5 km/s хелиоцентричне енергије. Улазак у орбиту Меркура 18.03.2011. Открића: водени лед у трајно осенченим поларним кратерима, тамна материја богата органским једињењима на половима, магнетско поље помакнуто од центра планете. Ударила у Меркур 30.04.2015. након искориштеног горива.',
+      best_known_for:
+        'Прва летелица у орбити Меркура — 4 године мапирања, завршена контролисаним ударом 30.04.2015',
+    },
+    'zh-CN': {
+      name: '信使号',
+      tagline: '首颗水星轨道器 — 2011 年入轨前以 6.6 年完成 6 次行星借力',
+      description:
+        'NASA Discovery 级 MErcury Surface, Space ENvironment, GEochemistry, and Ranging 任务。2004-08-03 由 Delta II 7925H-9.5 发射。6.6 年巡航通过 6 次借力（地球 1、金星 2、水星 3）削减约 5 km/s 的日心能量。2011-03-18 进入水星轨道。发现：永久阴影极区陨石坑内有水冰、极区富含有机物的暗色物质、磁场偏离行星中心。2015-04-30 推进剂耗尽后撞击水星表面。',
+      best_known_for: '首颗水星轨道器 — 4 年制图，2015-04-30 受控撞击结束',
+    },
   },
   'blue-moon-mk1': {
-    ar: { tagline: 'مركبة Blue Origin القمرية الأولى من نوعها — مرحلة واحدة هيدروجين/أكسجين، ~3 طن إلى السطح', description: 'مركبة كرايوجينية مرحلة واحدة مبنية حول محرك BE-7 الذي يعمل بـ LH₂ / LOX. Mk1 سلف الشحن الوحيد لـ Mk2 المأهول الأكبر بكثير (Artemis HLS)؛ كلاهما يشاركان في الدفع BE-7 وبنية إعادة الاستخدام القائمة على الهيدروجين. تنطلق على New Glenn — رائد Mk1 طار على رحلة NG-1 الأولى في 2025-01-16. توصل Mk1 ما يصل إلى ~3000 كجم إلى السطح القمري؛ Mk2 المأهول هو ثاني مركبة هبوط Artemis للأمريكيين بعد Starship HLS.', best_known_for: 'مركبة Blue Origin القمرية للشحن — دفع BE-7 هيدروجيني، ~3 طن للسطح، NASA CLPS' },
-    de: { tagline: 'Blue Origins erste Generation lunarer Frachtländer — einstufiges H₂/O₂-Fahrzeug, ~3 t zur Oberfläche', description: 'Einstufiger kryogener Lander um das LH₂ / LOX BE-7-Triebwerk. Mk1 ist der Nur-Fracht-Vorläufer der viel grösseren bemannten Mk2-Variante (Artemis HLS); beide teilen die BE-7-Antriebs- und wasserstoffbasierte Wiederverwendungsarchitektur. Startet auf Blue Origins New Glenn — der Mk1-Pfadfinder flog am 16.01.2025 die NG-1-Erstflugmission. Mk1 liefert bis zu ~3000 kg an die Mondoberfläche; die bemannte Mk2-Variante verankerte den HLS-Vertrag von 2023 als zweiter Artemis-Lander neben SpaceX Starship HLS.', best_known_for: 'Blue Origin lunarer Frachtlander — BE-7-Wasserstoff, ~3 t zur Oberfläche, NASA CLPS' },
-    es: { tagline: 'Primer aterrizador lunar de carga de Blue Origin — vehículo monoetapa H₂/O₂, ~3 t a la superficie', description: 'Aterrizador criogénico monoetapa construido en torno al motor BE-7 LH₂ / LOX. Mk1 es el precursor solo de carga del Mk2 tripulado mucho mayor (Artemis HLS); ambos comparten la propulsión BE-7 y la arquitectura de reutilización basada en hidrógeno. Se lanza en el New Glenn de Blue Origin — el pionero Mk1 voló en la misión inaugural NG-1 el 16-01-2025. Mk1 entrega hasta ~3000 kg a la superficie lunar; el derivado tripulado Mk2 ancló el contrato HLS adjudicado por la NASA en 2023 como segundo aterrizador Artemis junto a SpaceX Starship HLS.', best_known_for: 'Aterrizador lunar de carga de Blue Origin — propulsión BE-7 hidrógeno, ~3 t a la superficie, NASA CLPS' },
-    fr: { tagline: 'Premier atterrisseur lunaire cargo de Blue Origin — véhicule monoétage H₂/O₂, ~3 t à la surface', description: "Atterrisseur cryogénique monoétage construit autour du moteur BE-7 LH₂ / LOX. Mk1 est le précurseur cargo-seulement du Mk2 habité bien plus grand (Artemis HLS) ; les deux partagent la propulsion BE-7 et l'architecture de réutilisation à hydrogène. Lancé sur New Glenn de Blue Origin — le pionnier Mk1 a volé sur le vol inaugural NG-1 le 16/01/2025. Mk1 livre jusqu'à ~3000 kg à la surface lunaire ; le dérivé habité Mk2 a ancré le contrat HLS attribué par la NASA en 2023 comme second atterrisseur Artemis aux côtés de SpaceX Starship HLS.", best_known_for: 'Atterrisseur lunaire cargo de Blue Origin — propulsion BE-7 hydrogène, ~3 t à la surface, NASA CLPS' },
-    hi: { tagline: 'Blue Origin का पहला-पीढ़ी का चंद्र कार्गो लैंडर — एकल-चरण H₂/O₂ वाहन, सतह तक ~3 टन', description: 'LH₂ / LOX BE-7 इंजन के चारों ओर बनाया गया एकल-चरण क्रायोजेनिक लैंडर। Mk1 कहीं अधिक बड़े Mk2 चालक दल वाले Artemis HLS संस्करण का केवल-कार्गो पूर्ववर्ती है; दोनों BE-7 प्रणोदन और हाइड्रोजन-आधारित पुन: प्रयोज्यता वास्तुकला साझा करते हैं। Blue Origin के New Glenn पर लॉन्च — Mk1 पथप्रदर्शक 16-01-2025 को NG-1 की पहली उड़ान पर सवार हुआ। Cargo Mk1 चंद्र सतह तक ~3000 किलोग्राम तक पहुँचाता है; चालक दल Mk2 व्युत्पन्न ने 2023 में NASA द्वारा प्रदान किए गए HLS अनुबंध को SpaceX Starship HLS के साथ दूसरे Artemis-युग के मानव लैंडर के रूप में सुरक्षित किया।', best_known_for: 'Blue Origin चंद्र कार्गो लैंडर — BE-7 हाइड्रोजन प्रणोदन, सतह तक ~3 टन, NASA CLPS' },
-    it: { tagline: 'Primo lander lunare cargo di Blue Origin — veicolo monostadio H₂/O₂, ~3 t alla superficie', description: "Lander criogenico monostadio costruito attorno al motore BE-7 LH₂ / LOX. Mk1 è il precursore solo cargo del molto più grande Mk2 con equipaggio (Artemis HLS); entrambi condividono la propulsione BE-7 e l'architettura di riutilizzo a idrogeno. Lanciato sul New Glenn di Blue Origin — il pioniere Mk1 ha volato sul volo inaugurale NG-1 il 16/01/2025. Mk1 cargo consegna fino a ~3000 kg alla superficie lunare; il derivato Mk2 con equipaggio ha ancorato il contratto HLS assegnato dalla NASA nel 2023 come secondo lander Artemis insieme a SpaceX Starship HLS.", best_known_for: 'Lander lunare cargo di Blue Origin — propulsione BE-7 idrogeno, ~3 t alla superficie, NASA CLPS' },
-    ja: { name: 'ブルー・ムーン Mk1', tagline: 'Blue Origin の第一世代月貨物ランダー — 単段水素／酸素機、月面に約 3 トン', description: 'LH₂／LOX の BE-7 エンジンを中心に設計された単段クライオジェニックランダー。Mk1 は、はるかに大型の有人 Mk2（Artemis HLS）バージョンの貨物専用前駆機；両機とも BE-7 推進と水素ベースの再使用アーキテクチャを共有する。Blue Origin の New Glenn で打ち上げ — Mk1 パスファインダーは 2025 年 1 月 16 日の NG-1 初飛行に搭乗した。貨物 Mk1 は月面に最大 ~3000 kg を届ける；有人 Mk2 派生型は SpaceX Starship HLS と並ぶ 2 番目の Artemis 世代の有人ランダーとして NASA から 2023 年に契約を獲得した。', best_known_for: 'Blue Origin 月貨物ランダー — BE-7 水素推進、月面に約 3 トン、NASA CLPS' },
-    ko: { name: '블루 문 Mk1', tagline: '블루 오리진의 1세대 달 화물 착륙선 — 단일 단계 수소/산소 차량, 표면에 ~3 톤', description: 'LH₂ / LOX BE-7 엔진을 중심으로 설계된 단일 단계 극저온 착륙선. Mk1은 훨씬 더 큰 유인 Mk2(Artemis HLS) 버전의 화물 전용 전구체이며, 두 가지 모두 BE-7 추진 및 수소 기반 재사용 아키텍처를 공유합니다. 블루 오리진의 New Glenn에서 발사됩니다. Mk1 시범 발사는 2025년 1월 16일 NG-1 첫 비행에서 진행되었습니다. 화물 Mk1은 달 표면에 최대 ~3000 kg을 전달합니다. 유인 Mk2 파생 모델은 2023년 NASA에서 SpaceX Starship HLS와 함께 두 번째 Artemis 시대의 유인 착륙선 계약을 받았습니다.', best_known_for: '블루 오리진 달 화물 착륙선 — BE-7 수소 추진, 표면에 ~3 톤, NASA CLPS' },
-    nl: { tagline: 'Blue Origin\'s eerste-generatie lunaire vrachtlander — eenstaps H₂/O₂ voertuig, ~3 t naar het oppervlak', description: "Eenstaps cryogene lander gebouwd rond de LH₂ / LOX BE-7 motor. Mk1 is de alleen-vracht voorloper van de veel grotere bemande Mk2 (Artemis HLS); beide delen de BE-7 aandrijving en op waterstof gebaseerde herbruikbaarheids-architectuur. Lanceert op Blue Origin's New Glenn — de Mk1 voorloper vloog op de inaugurele NG-1 vlucht op 16-01-2025. Vracht Mk1 levert tot ~3000 kg aan het maanoppervlak; de bemande Mk2 afgeleide verankerde het HLS contract dat NASA in 2023 toekende als tweede Artemis-tijdperk bemande lander naast SpaceX Starship HLS.", best_known_for: 'Blue Origin lunaire vrachtlander — BE-7 waterstof aandrijving, ~3 t naar het oppervlak, NASA CLPS' },
-    'pt-BR': { tagline: 'Primeiro módulo lunar de carga da Blue Origin — veículo de um estágio H₂/O₂, ~3 t à superfície', description: 'Módulo de pouso criogênico de um único estágio construído em torno do motor BE-7 LH₂ / LOX. Mk1 é o precursor apenas para carga da Mk2 tripulada (Artemis HLS) muito maior; ambos compartilham a propulsão BE-7 e a arquitetura de reutilização baseada em hidrogênio. Lançado no New Glenn da Blue Origin — o piloto Mk1 voou no voo inaugural NG-1 em 16-01-2025. Cargo Mk1 entrega até ~3000 kg à superfície lunar; o derivado tripulado Mk2 ancorou o contrato HLS concedido pela NASA em 2023 como segundo módulo lunar tripulado da era Artemis ao lado do SpaceX Starship HLS.', best_known_for: 'Módulo lunar de carga da Blue Origin — propulsão BE-7 hidrogênio, ~3 t à superfície, NASA CLPS' },
-    ru: { tagline: 'Лунный грузовой посадочный модуль Blue Origin первого поколения — одностепенной H₂/O₂, ~3 т на поверхность', description: 'Одноступенчатый криогенный посадочный модуль на двигателе BE-7 (LH₂ / LOX). Mk1 — грузовой предшественник гораздо более крупного пилотируемого Mk2 (Artemis HLS); оба используют двигатель BE-7 и водородную многоразовую архитектуру. Запускается на ракете New Glenn Blue Origin — первопроходец Mk1 полетел на первом полёте NG-1 16.01.2025. Грузовая Mk1 доставляет до ~3000 кг на лунную поверхность; пилотируемое производное Mk2 закрепило за Blue Origin контракт HLS, присуждённый NASA в 2023 году в качестве второго пилотируемого лунного посадочного модуля эры Artemis наряду с SpaceX Starship HLS.', best_known_for: 'Лунный грузовой модуль Blue Origin — BE-7 водород, ~3 т на поверхность, NASA CLPS' },
-    'sr-Cyrl': { tagline: 'Лунарни товарни лендер Blue Origin прве генерације — једностепено H₂/O₂ возило, ~3 t на површину', description: 'Једностепени криогени лендер изграђен око LH₂ / LOX BE-7 мотора. Mk1 је претеча искључиво за товар знатно већег пилотираног Mk2 (Artemis HLS) варијанте; обе деле BE-7 погон и архитектуру вишекратне употребе на бази водоника. Лансира се на Blue Origin-овом New Glenn-у — Mk1 пилот је летио на инаугурационом NG-1 лету 16.01.2025. Cargo Mk1 испоручује до ~3000 kg на лунарну површину; пилотирани Mk2 дериват је учврстио Artemis HLS уговор који је НАСА доделила 2023. као други пилотирани лендер ере Артемис уз SpaceX Starship HLS.', best_known_for: 'Blue Origin лунарни товарни лендер — BE-7 водоник, ~3 t на површину, NASA CLPS' },
-    'zh-CN': { name: '蓝月号 Mk1', tagline: '蓝色起源第一代月球货运着陆器 — 单级氢氧推进，~3 吨送至表面', description: '围绕 LH₂ / LOX BE-7 发动机设计的单级低温着陆器。Mk1 是更大的载人 Mk2（Artemis HLS）型号的纯货运前身；两者共享 BE-7 推进与基于氢的可重复使用架构。由蓝色起源的 New Glenn 发射 — Mk1 先驱于 2025-01-16 搭载首飞 NG-1 任务。Cargo Mk1 可将最多约 3000 kg 送至月球表面；载人 Mk2 衍生型在 2023 年获得 NASA HLS 合同，与 SpaceX Starship HLS 并列为第二个 Artemis 时代载人着陆器。', best_known_for: '蓝色起源月球货运着陆器 — BE-7 氢推进，~3 吨至表面，NASA CLPS' },
+    ar: {
+      tagline:
+        'مركبة Blue Origin القمرية الأولى من نوعها — مرحلة واحدة هيدروجين/أكسجين، ~3 طن إلى السطح',
+      description:
+        'مركبة كرايوجينية مرحلة واحدة مبنية حول محرك BE-7 الذي يعمل بـ LH₂ / LOX. Mk1 سلف الشحن الوحيد لـ Mk2 المأهول الأكبر بكثير (Artemis HLS)؛ كلاهما يشاركان في الدفع BE-7 وبنية إعادة الاستخدام القائمة على الهيدروجين. تنطلق على New Glenn — رائد Mk1 طار على رحلة NG-1 الأولى في 2025-01-16. توصل Mk1 ما يصل إلى ~3000 كجم إلى السطح القمري؛ Mk2 المأهول هو ثاني مركبة هبوط Artemis للأمريكيين بعد Starship HLS.',
+      best_known_for:
+        'مركبة Blue Origin القمرية للشحن — دفع BE-7 هيدروجيني، ~3 طن للسطح، NASA CLPS',
+    },
+    de: {
+      tagline:
+        'Blue Origins erste Generation lunarer Frachtländer — einstufiges H₂/O₂-Fahrzeug, ~3 t zur Oberfläche',
+      description:
+        'Einstufiger kryogener Lander um das LH₂ / LOX BE-7-Triebwerk. Mk1 ist der Nur-Fracht-Vorläufer der viel grösseren bemannten Mk2-Variante (Artemis HLS); beide teilen die BE-7-Antriebs- und wasserstoffbasierte Wiederverwendungsarchitektur. Startet auf Blue Origins New Glenn — der Mk1-Pfadfinder flog am 16.01.2025 die NG-1-Erstflugmission. Mk1 liefert bis zu ~3000 kg an die Mondoberfläche; die bemannte Mk2-Variante verankerte den HLS-Vertrag von 2023 als zweiter Artemis-Lander neben SpaceX Starship HLS.',
+      best_known_for:
+        'Blue Origin lunarer Frachtlander — BE-7-Wasserstoff, ~3 t zur Oberfläche, NASA CLPS',
+    },
+    es: {
+      tagline:
+        'Primer aterrizador lunar de carga de Blue Origin — vehículo monoetapa H₂/O₂, ~3 t a la superficie',
+      description:
+        'Aterrizador criogénico monoetapa construido en torno al motor BE-7 LH₂ / LOX. Mk1 es el precursor solo de carga del Mk2 tripulado mucho mayor (Artemis HLS); ambos comparten la propulsión BE-7 y la arquitectura de reutilización basada en hidrógeno. Se lanza en el New Glenn de Blue Origin — el pionero Mk1 voló en la misión inaugural NG-1 el 16-01-2025. Mk1 entrega hasta ~3000 kg a la superficie lunar; el derivado tripulado Mk2 ancló el contrato HLS adjudicado por la NASA en 2023 como segundo aterrizador Artemis junto a SpaceX Starship HLS.',
+      best_known_for:
+        'Aterrizador lunar de carga de Blue Origin — propulsión BE-7 hidrógeno, ~3 t a la superficie, NASA CLPS',
+    },
+    fr: {
+      tagline:
+        'Premier atterrisseur lunaire cargo de Blue Origin — véhicule monoétage H₂/O₂, ~3 t à la surface',
+      description:
+        "Atterrisseur cryogénique monoétage construit autour du moteur BE-7 LH₂ / LOX. Mk1 est le précurseur cargo-seulement du Mk2 habité bien plus grand (Artemis HLS) ; les deux partagent la propulsion BE-7 et l'architecture de réutilisation à hydrogène. Lancé sur New Glenn de Blue Origin — le pionnier Mk1 a volé sur le vol inaugural NG-1 le 16/01/2025. Mk1 livre jusqu'à ~3000 kg à la surface lunaire ; le dérivé habité Mk2 a ancré le contrat HLS attribué par la NASA en 2023 comme second atterrisseur Artemis aux côtés de SpaceX Starship HLS.",
+      best_known_for:
+        'Atterrisseur lunaire cargo de Blue Origin — propulsion BE-7 hydrogène, ~3 t à la surface, NASA CLPS',
+    },
+    hi: {
+      tagline: 'Blue Origin का पहला-पीढ़ी का चंद्र कार्गो लैंडर — एकल-चरण H₂/O₂ वाहन, सतह तक ~3 टन',
+      description:
+        'LH₂ / LOX BE-7 इंजन के चारों ओर बनाया गया एकल-चरण क्रायोजेनिक लैंडर। Mk1 कहीं अधिक बड़े Mk2 चालक दल वाले Artemis HLS संस्करण का केवल-कार्गो पूर्ववर्ती है; दोनों BE-7 प्रणोदन और हाइड्रोजन-आधारित पुन: प्रयोज्यता वास्तुकला साझा करते हैं। Blue Origin के New Glenn पर लॉन्च — Mk1 पथप्रदर्शक 16-01-2025 को NG-1 की पहली उड़ान पर सवार हुआ। Cargo Mk1 चंद्र सतह तक ~3000 किलोग्राम तक पहुँचाता है; चालक दल Mk2 व्युत्पन्न ने 2023 में NASA द्वारा प्रदान किए गए HLS अनुबंध को SpaceX Starship HLS के साथ दूसरे Artemis-युग के मानव लैंडर के रूप में सुरक्षित किया।',
+      best_known_for:
+        'Blue Origin चंद्र कार्गो लैंडर — BE-7 हाइड्रोजन प्रणोदन, सतह तक ~3 टन, NASA CLPS',
+    },
+    it: {
+      tagline:
+        'Primo lander lunare cargo di Blue Origin — veicolo monostadio H₂/O₂, ~3 t alla superficie',
+      description:
+        "Lander criogenico monostadio costruito attorno al motore BE-7 LH₂ / LOX. Mk1 è il precursore solo cargo del molto più grande Mk2 con equipaggio (Artemis HLS); entrambi condividono la propulsione BE-7 e l'architettura di riutilizzo a idrogeno. Lanciato sul New Glenn di Blue Origin — il pioniere Mk1 ha volato sul volo inaugurale NG-1 il 16/01/2025. Mk1 cargo consegna fino a ~3000 kg alla superficie lunare; il derivato Mk2 con equipaggio ha ancorato il contratto HLS assegnato dalla NASA nel 2023 come secondo lander Artemis insieme a SpaceX Starship HLS.",
+      best_known_for:
+        'Lander lunare cargo di Blue Origin — propulsione BE-7 idrogeno, ~3 t alla superficie, NASA CLPS',
+    },
+    ja: {
+      name: 'ブルー・ムーン Mk1',
+      tagline: 'Blue Origin の第一世代月貨物ランダー — 単段水素／酸素機、月面に約 3 トン',
+      description:
+        'LH₂／LOX の BE-7 エンジンを中心に設計された単段クライオジェニックランダー。Mk1 は、はるかに大型の有人 Mk2（Artemis HLS）バージョンの貨物専用前駆機；両機とも BE-7 推進と水素ベースの再使用アーキテクチャを共有する。Blue Origin の New Glenn で打ち上げ — Mk1 パスファインダーは 2025 年 1 月 16 日の NG-1 初飛行に搭乗した。貨物 Mk1 は月面に最大 ~3000 kg を届ける；有人 Mk2 派生型は SpaceX Starship HLS と並ぶ 2 番目の Artemis 世代の有人ランダーとして NASA から 2023 年に契約を獲得した。',
+      best_known_for: 'Blue Origin 月貨物ランダー — BE-7 水素推進、月面に約 3 トン、NASA CLPS',
+    },
+    ko: {
+      name: '블루 문 Mk1',
+      tagline: '블루 오리진의 1세대 달 화물 착륙선 — 단일 단계 수소/산소 차량, 표면에 ~3 톤',
+      description:
+        'LH₂ / LOX BE-7 엔진을 중심으로 설계된 단일 단계 극저온 착륙선. Mk1은 훨씬 더 큰 유인 Mk2(Artemis HLS) 버전의 화물 전용 전구체이며, 두 가지 모두 BE-7 추진 및 수소 기반 재사용 아키텍처를 공유합니다. 블루 오리진의 New Glenn에서 발사됩니다. Mk1 시범 발사는 2025년 1월 16일 NG-1 첫 비행에서 진행되었습니다. 화물 Mk1은 달 표면에 최대 ~3000 kg을 전달합니다. 유인 Mk2 파생 모델은 2023년 NASA에서 SpaceX Starship HLS와 함께 두 번째 Artemis 시대의 유인 착륙선 계약을 받았습니다.',
+      best_known_for: '블루 오리진 달 화물 착륙선 — BE-7 수소 추진, 표면에 ~3 톤, NASA CLPS',
+    },
+    nl: {
+      tagline:
+        "Blue Origin's eerste-generatie lunaire vrachtlander — eenstaps H₂/O₂ voertuig, ~3 t naar het oppervlak",
+      description:
+        "Eenstaps cryogene lander gebouwd rond de LH₂ / LOX BE-7 motor. Mk1 is de alleen-vracht voorloper van de veel grotere bemande Mk2 (Artemis HLS); beide delen de BE-7 aandrijving en op waterstof gebaseerde herbruikbaarheids-architectuur. Lanceert op Blue Origin's New Glenn — de Mk1 voorloper vloog op de inaugurele NG-1 vlucht op 16-01-2025. Vracht Mk1 levert tot ~3000 kg aan het maanoppervlak; de bemande Mk2 afgeleide verankerde het HLS contract dat NASA in 2023 toekende als tweede Artemis-tijdperk bemande lander naast SpaceX Starship HLS.",
+      best_known_for:
+        'Blue Origin lunaire vrachtlander — BE-7 waterstof aandrijving, ~3 t naar het oppervlak, NASA CLPS',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeiro módulo lunar de carga da Blue Origin — veículo de um estágio H₂/O₂, ~3 t à superfície',
+      description:
+        'Módulo de pouso criogênico de um único estágio construído em torno do motor BE-7 LH₂ / LOX. Mk1 é o precursor apenas para carga da Mk2 tripulada (Artemis HLS) muito maior; ambos compartilham a propulsão BE-7 e a arquitetura de reutilização baseada em hidrogênio. Lançado no New Glenn da Blue Origin — o piloto Mk1 voou no voo inaugural NG-1 em 16-01-2025. Cargo Mk1 entrega até ~3000 kg à superfície lunar; o derivado tripulado Mk2 ancorou o contrato HLS concedido pela NASA em 2023 como segundo módulo lunar tripulado da era Artemis ao lado do SpaceX Starship HLS.',
+      best_known_for:
+        'Módulo lunar de carga da Blue Origin — propulsão BE-7 hidrogênio, ~3 t à superfície, NASA CLPS',
+    },
+    ru: {
+      tagline:
+        'Лунный грузовой посадочный модуль Blue Origin первого поколения — одностепенной H₂/O₂, ~3 т на поверхность',
+      description:
+        'Одноступенчатый криогенный посадочный модуль на двигателе BE-7 (LH₂ / LOX). Mk1 — грузовой предшественник гораздо более крупного пилотируемого Mk2 (Artemis HLS); оба используют двигатель BE-7 и водородную многоразовую архитектуру. Запускается на ракете New Glenn Blue Origin — первопроходец Mk1 полетел на первом полёте NG-1 16.01.2025. Грузовая Mk1 доставляет до ~3000 кг на лунную поверхность; пилотируемое производное Mk2 закрепило за Blue Origin контракт HLS, присуждённый NASA в 2023 году в качестве второго пилотируемого лунного посадочного модуля эры Artemis наряду с SpaceX Starship HLS.',
+      best_known_for:
+        'Лунный грузовой модуль Blue Origin — BE-7 водород, ~3 т на поверхность, NASA CLPS',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Лунарни товарни лендер Blue Origin прве генерације — једностепено H₂/O₂ возило, ~3 t на површину',
+      description:
+        'Једностепени криогени лендер изграђен око LH₂ / LOX BE-7 мотора. Mk1 је претеча искључиво за товар знатно већег пилотираног Mk2 (Artemis HLS) варијанте; обе деле BE-7 погон и архитектуру вишекратне употребе на бази водоника. Лансира се на Blue Origin-овом New Glenn-у — Mk1 пилот је летио на инаугурационом NG-1 лету 16.01.2025. Cargo Mk1 испоручује до ~3000 kg на лунарну површину; пилотирани Mk2 дериват је учврстио Artemis HLS уговор који је НАСА доделила 2023. као други пилотирани лендер ере Артемис уз SpaceX Starship HLS.',
+      best_known_for:
+        'Blue Origin лунарни товарни лендер — BE-7 водоник, ~3 t на површину, NASA CLPS',
+    },
+    'zh-CN': {
+      name: '蓝月号 Mk1',
+      tagline: '蓝色起源第一代月球货运着陆器 — 单级氢氧推进，~3 吨送至表面',
+      description:
+        '围绕 LH₂ / LOX BE-7 发动机设计的单级低温着陆器。Mk1 是更大的载人 Mk2（Artemis HLS）型号的纯货运前身；两者共享 BE-7 推进与基于氢的可重复使用架构。由蓝色起源的 New Glenn 发射 — Mk1 先驱于 2025-01-16 搭载首飞 NG-1 任务。Cargo Mk1 可将最多约 3000 kg 送至月球表面；载人 Mk2 衍生型在 2023 年获得 NASA HLS 合同，与 SpaceX Starship HLS 并列为第二个 Artemis 时代载人着陆器。',
+      best_known_for: '蓝色起源月球货运着陆器 — BE-7 氢推进，~3 吨至表面，NASA CLPS',
+    },
   },
   clementine: {
-    ar: { tagline: 'مركبة قمرية مشتركة بين BMDO وناسا — أول خريطة طيف متعدد عالمية للقمر وأول دليل رادار ثنائي على جليد الماء القطبي', description: 'رسمياً تجربة برنامج علوم الفضاء العميق (DSPSE). ابتكرتها منظمة الدفاع الصاروخي الباليستي (سلف القيادة الفضائية لـ USSF) لإثبات الحساسات خفيفة الوزن في ظروف الفضاء العميق، مع تعاون ناسا في علم القمر والكويكبات. أُطلقت 1994-01-25 على Titan IIG من Vandenberg. دخلت مدار قمري قطبي 1994-02-19 لمدة 71 يوماً من الرسم. تجربة الرادار الثنائي وجدت أصداء معززة في فوهة Shackleton الجنوبية متوافقة مع الجليد، قبل 15 سنة من LCROSS.', best_known_for: 'أول خريطة طيف متعدد عالمية كاملة للقمر وأول إشارة على جليد قطبي — 1994' },
-    de: { tagline: 'Gemeinsamer BMDO + NASA-Mondorbiter — erste vollständige multispektrale Mondkarte und erster bistatischer Radar-Hinweis auf polares Wassereis', description: 'Offiziell das Deep Space Program Science Experiment (DSPSE). Vom Ballistic Missile Defense Organization (Vorgänger des USSF Space Systems Command) konzipiert, um leichte Sensoren unter Deep-Space-Bedingungen zu qualifizieren, mit NASA-Kooperation für Mond- und Asteroidenwissenschaft. Gestartet am 25.01.1994 mit einer Titan IIG aus Vandenberg. Trat am 19.02.1994 in eine lunare Polarbahn ein für 71 Tage Kartierung. Das bistatische Radarexperiment fand am südpolaren Shackleton-Krater verstärkte Echos, die mit Wassereis konsistent sind — 15 Jahre vor LCROSS.', best_known_for: 'Erste vollständige multispektrale Mondkarte und erster Hinweis auf polares Wassereis — 1994' },
-    es: { tagline: 'Orbitador lunar conjunto BMDO + NASA — primer mapa multiespectral global y primera evidencia por radar biestático de hielo de agua polar', description: 'Oficialmente el Deep Space Program Science Experiment (DSPSE). Concebido por la Ballistic Missile Defense Organization (precursora del Space Systems Command de la USSF) para calificar sensores ligeros en condiciones de espacio profundo, con colaboración de la NASA en ciencia lunar y de asteroides. Lanzado el 25-01-1994 en un Titan IIG desde Vandenberg, entró en órbita polar lunar el 19-02-1994 para 71 días de cartografía. El experimento de radar biestático encontró ecos potenciados en el cráter Shackleton del polo sur compatibles con hielo de agua, 15 años antes de LCROSS.', best_known_for: 'Primer mapa multiespectral global de la Luna y primera pista de hielo polar — 1994' },
-    fr: { tagline: 'Orbiteur lunaire commun BMDO + NASA — première carte multispectrale globale et premier indice radar bistatique de glace polaire', description: "Officiellement le Deep Space Program Science Experiment (DSPSE). Conçu par la Ballistic Missile Defense Organization (précurseur du Space Systems Command de l'USSF) pour qualifier des capteurs légers en conditions d'espace lointain, avec la collaboration de la NASA pour la science lunaire et astéroïdale. Lancé le 25/01/1994 sur Titan IIG depuis Vandenberg, entré en orbite polaire lunaire le 19/02/1994 pour 71 jours de cartographie. L'expérience radar bistatique a trouvé des échos renforcés au cratère Shackleton du pôle sud compatibles avec de la glace d'eau, 15 ans avant LCROSS.", best_known_for: 'Première carte multispectrale globale de la Lune et premier indice de glace polaire — 1994' },
-    hi: { tagline: 'BMDO + NASA संयुक्त चंद्र कक्षक — पहला वैश्विक मल्टीस्पेक्ट्रल मानचित्र और पहला बाइस्टैटिक रडार ध्रुवीय जल बर्फ प्रमाण', description: 'आधिकारिक तौर पर Deep Space Program Science Experiment (DSPSE)। Ballistic Missile Defense Organization (USSF Space Systems Command के पूर्ववर्ती) द्वारा गहरे अंतरिक्ष की स्थितियों में हल्के सेंसर को योग्य बनाने के लिए परिकल्पित, चंद्र + क्षुद्रग्रह विज्ञान पर NASA सहयोग के साथ। 25-01-1994 को Vandenberg से Titan IIG पर लॉन्च हुआ। 19-02-1994 को चंद्र ध्रुवीय कक्षा में प्रवेश किया, 71 दिन का मानचित्रण। बाइस्टैटिक रडार प्रयोग ने दक्षिण-ध्रुवीय Shackleton क्रेटर पर पानी की बर्फ के अनुरूप बढ़ी हुई गूँज पाई — LCROSS से 15 साल पहले।', best_known_for: 'चंद्रमा का पहला पूर्ण वैश्विक मल्टीस्पेक्ट्रल मानचित्र और ध्रुवीय जल बर्फ का पहला संकेत — 1994' },
-    it: { tagline: 'Orbiter lunare congiunto BMDO + NASA — prima mappa multispettrale globale e prima evidenza radar bistatica di ghiaccio polare', description: "Ufficialmente il Deep Space Program Science Experiment (DSPSE). Concepito dalla Ballistic Missile Defense Organization (predecessore del Space Systems Command della USSF) per qualificare sensori leggeri in condizioni di spazio profondo, con la collaborazione della NASA sulla scienza lunare e degli asteroidi. Lanciato il 25/01/1994 su Titan IIG da Vandenberg, è entrato in orbita polare lunare il 19/02/1994 per 71 giorni di mappatura. L'esperimento radar bistatico ha trovato echi rafforzati al cratere Shackleton del polo sud compatibili con ghiaccio d'acqua, 15 anni prima di LCROSS.", best_known_for: 'Prima mappa multispettrale globale della Luna e primo indizio di ghiaccio polare — 1994' },
-    ja: { name: 'クレメンタイン', tagline: 'BMDO・NASA 共同の月周回機 — 月の世界初の完全マルチスペクトル地図と極水氷の最初のバイスタティックレーダー証拠', description: '正式には Deep Space Program Science Experiment（DSPSE）。Ballistic Missile Defense Organization（USSF Space Systems Command の前身）が深宇宙環境で軽量センサーを試験することを目的に考案し、NASA が月・小惑星科学で協力した。1994 年 1 月 25 日に Vandenberg から Titan IIG で打ち上げ。1994 年 2 月 19 日に月の極軌道に入り、71 日間の地図化を実施。バイスタティックレーダー実験では南極 Shackleton クレーターで水氷と整合する強化されたエコーを検出 — LCROSS の 15 年前。', best_known_for: '月の世界初の完全マルチスペクトル地図と極水氷の初の手がかり — 1994' },
-    ko: { name: '클레멘타인', tagline: 'BMDO + NASA 공동 달 궤도선 — 달의 첫 글로벌 다스펙트럼 지도와 극지 물 얼음의 첫 양 안테나 레이더 증거', description: '공식적으로 Deep Space Program Science Experiment(DSPSE). 탄도미사일방어조직(USSF 우주시스템사령부 전신)이 심우주 환경에서 경량 센서를 검증하기 위해 구상했으며 NASA가 달·소행성 과학에서 협력했다. 1994년 1월 25일 Vandenberg에서 Titan IIG로 발사. 1994년 2월 19일 달 극궤도에 진입하여 71일간 매핑. 양 안테나 레이더 실험은 남극 Shackleton 분화구에서 물 얼음과 일치하는 강화된 에코를 발견했는데 — LCROSS보다 15년 앞섰다.', best_known_for: '달의 첫 완전 글로벌 다스펙트럼 지도와 극지 물 얼음의 첫 단서 — 1994' },
-    nl: { tagline: 'Gezamenlijke BMDO + NASA maanorbiter — eerste volledige multispectrale maankaart en eerste bistatisch radar-bewijs voor polair waterijs', description: 'Officieel het Deep Space Program Science Experiment (DSPSE). Bedacht door de Ballistic Missile Defense Organization (voorganger van het USSF Space Systems Command) om lichte sensoren in diep-ruimte omstandigheden te kwalificeren, met NASA-samenwerking voor maan- en planetoïdewetenschap. Gelanceerd op 25-01-1994 met een Titan IIG vanaf Vandenberg, kwam op 19-02-1994 in een lunar polaire baan voor 71 dagen kartering. Het bistatische radarexperiment vond versterkte echoes bij de zuidpolaire Shackleton-krater consistent met waterijs, 15 jaar vóór LCROSS.', best_known_for: 'Eerste volledige globale multispectrale maankaart en eerste hint van polair waterijs — 1994' },
-    'pt-BR': { tagline: 'Orbitador lunar conjunto BMDO + NASA — primeiro mapa multiespectral global e primeira evidência por radar biestático de gelo polar', description: 'Oficialmente o Deep Space Program Science Experiment (DSPSE). Concebido pela Ballistic Missile Defense Organization (precursora do Space Systems Command da USSF) para qualificar sensores leves em condições de espaço profundo, com colaboração da NASA em ciência lunar e de asteroides. Lançado em 25-01-1994 num Titan IIG de Vandenberg, entrou em órbita polar lunar em 19-02-1994 para 71 dias de mapeamento. O experimento de radar biestático encontrou ecos reforçados na cratera Shackleton do polo sul compatíveis com gelo de água, 15 anos antes de LCROSS.', best_known_for: 'Primeiro mapa multiespectral global da Lua e primeira pista de gelo polar — 1994' },
-    ru: { tagline: 'Совместный БМDO + NASA лунный орбитер — первая глобальная мультиспектральная карта Луны и первое би-статическое радарное свидетельство полярного водяного льда', description: 'Официально Deep Space Program Science Experiment (DSPSE). Задуман BMDO (предшественник Космического командования USSF) для квалификации лёгких датчиков в условиях дальнего космоса, с участием NASA в лунно-астероидной науке. Запущен 25.01.1994 на Titan IIG с Ванденберга. Вышел на лунную полярную орбиту 19.02.1994 для 71 дня картографирования. Эксперимент бистатического радара обнаружил усиленные эхо в южнополярном кратере Шеклтона, совместимые с водяным льдом — за 15 лет до LCROSS.', best_known_for: 'Первая полная глобальная мультиспектральная карта Луны и первый намёк на полярный водяной лёд — 1994' },
-    'sr-Cyrl': { tagline: 'Заједнички BMDO + НАСА лунарни орбитер — прва глобална мултиспектрална мапа Месеца и први бистатички радарски доказ поларног воденог леда', description: 'Званично Deep Space Program Science Experiment (DSPSE). Замислила га је Ballistic Missile Defense Organization (претеча USSF Space Systems Command-а) ради квалификације лаких сензора у условима дубокок свемира, уз НАСА сарадњу у лунарној и астероидној науци. Лансиран 25.01.1994. на Titan IIG из Ванденберга, ушао у лунарну поларну орбиту 19.02.1994. за 71 дан мапирања. Експеримент бистатичког радара пронашао је појачане одјеке у јужно-поларном Шеклтоновом кратеру у складу са воденим ледом — 15 година пре LCROSS.', best_known_for: 'Прва потпуна глобална мултиспектрална мапа Месеца и први наговештај поларног воденог леда — 1994' },
-    'zh-CN': { name: '克莱门汀号', tagline: 'BMDO + NASA 联合月球轨道器 — 首张月球完整多光谱全图与首个双基地雷达极区水冰证据', description: '正式名称 Deep Space Program Science Experiment（DSPSE）。由弹道导弹防御组织（USSF 太空系统司令部前身）构想，以验证轻型传感器在深空环境下的能力，并与 NASA 在月球与小行星科学方面合作。1994-01-25 在范登堡由 Titan IIG 发射，1994-02-19 进入月球极轨，进行 71 天测绘。双基地雷达实验在南极 Shackleton 陨石坑发现与水冰一致的增强回波 — 比 LCROSS 早 15 年。', best_known_for: '首张月球完整多光谱全图与首个极区水冰线索 — 1994' },
+    ar: {
+      tagline:
+        'مركبة قمرية مشتركة بين BMDO وناسا — أول خريطة طيف متعدد عالمية للقمر وأول دليل رادار ثنائي على جليد الماء القطبي',
+      description:
+        'رسمياً تجربة برنامج علوم الفضاء العميق (DSPSE). ابتكرتها منظمة الدفاع الصاروخي الباليستي (سلف القيادة الفضائية لـ USSF) لإثبات الحساسات خفيفة الوزن في ظروف الفضاء العميق، مع تعاون ناسا في علم القمر والكويكبات. أُطلقت 1994-01-25 على Titan IIG من Vandenberg. دخلت مدار قمري قطبي 1994-02-19 لمدة 71 يوماً من الرسم. تجربة الرادار الثنائي وجدت أصداء معززة في فوهة Shackleton الجنوبية متوافقة مع الجليد، قبل 15 سنة من LCROSS.',
+      best_known_for: 'أول خريطة طيف متعدد عالمية كاملة للقمر وأول إشارة على جليد قطبي — 1994',
+    },
+    de: {
+      tagline:
+        'Gemeinsamer BMDO + NASA-Mondorbiter — erste vollständige multispektrale Mondkarte und erster bistatischer Radar-Hinweis auf polares Wassereis',
+      description:
+        'Offiziell das Deep Space Program Science Experiment (DSPSE). Vom Ballistic Missile Defense Organization (Vorgänger des USSF Space Systems Command) konzipiert, um leichte Sensoren unter Deep-Space-Bedingungen zu qualifizieren, mit NASA-Kooperation für Mond- und Asteroidenwissenschaft. Gestartet am 25.01.1994 mit einer Titan IIG aus Vandenberg. Trat am 19.02.1994 in eine lunare Polarbahn ein für 71 Tage Kartierung. Das bistatische Radarexperiment fand am südpolaren Shackleton-Krater verstärkte Echos, die mit Wassereis konsistent sind — 15 Jahre vor LCROSS.',
+      best_known_for:
+        'Erste vollständige multispektrale Mondkarte und erster Hinweis auf polares Wassereis — 1994',
+    },
+    es: {
+      tagline:
+        'Orbitador lunar conjunto BMDO + NASA — primer mapa multiespectral global y primera evidencia por radar biestático de hielo de agua polar',
+      description:
+        'Oficialmente el Deep Space Program Science Experiment (DSPSE). Concebido por la Ballistic Missile Defense Organization (precursora del Space Systems Command de la USSF) para calificar sensores ligeros en condiciones de espacio profundo, con colaboración de la NASA en ciencia lunar y de asteroides. Lanzado el 25-01-1994 en un Titan IIG desde Vandenberg, entró en órbita polar lunar el 19-02-1994 para 71 días de cartografía. El experimento de radar biestático encontró ecos potenciados en el cráter Shackleton del polo sur compatibles con hielo de agua, 15 años antes de LCROSS.',
+      best_known_for:
+        'Primer mapa multiespectral global de la Luna y primera pista de hielo polar — 1994',
+    },
+    fr: {
+      tagline:
+        'Orbiteur lunaire commun BMDO + NASA — première carte multispectrale globale et premier indice radar bistatique de glace polaire',
+      description:
+        "Officiellement le Deep Space Program Science Experiment (DSPSE). Conçu par la Ballistic Missile Defense Organization (précurseur du Space Systems Command de l'USSF) pour qualifier des capteurs légers en conditions d'espace lointain, avec la collaboration de la NASA pour la science lunaire et astéroïdale. Lancé le 25/01/1994 sur Titan IIG depuis Vandenberg, entré en orbite polaire lunaire le 19/02/1994 pour 71 jours de cartographie. L'expérience radar bistatique a trouvé des échos renforcés au cratère Shackleton du pôle sud compatibles avec de la glace d'eau, 15 ans avant LCROSS.",
+      best_known_for:
+        'Première carte multispectrale globale de la Lune et premier indice de glace polaire — 1994',
+    },
+    hi: {
+      tagline:
+        'BMDO + NASA संयुक्त चंद्र कक्षक — पहला वैश्विक मल्टीस्पेक्ट्रल मानचित्र और पहला बाइस्टैटिक रडार ध्रुवीय जल बर्फ प्रमाण',
+      description:
+        'आधिकारिक तौर पर Deep Space Program Science Experiment (DSPSE)। Ballistic Missile Defense Organization (USSF Space Systems Command के पूर्ववर्ती) द्वारा गहरे अंतरिक्ष की स्थितियों में हल्के सेंसर को योग्य बनाने के लिए परिकल्पित, चंद्र + क्षुद्रग्रह विज्ञान पर NASA सहयोग के साथ। 25-01-1994 को Vandenberg से Titan IIG पर लॉन्च हुआ। 19-02-1994 को चंद्र ध्रुवीय कक्षा में प्रवेश किया, 71 दिन का मानचित्रण। बाइस्टैटिक रडार प्रयोग ने दक्षिण-ध्रुवीय Shackleton क्रेटर पर पानी की बर्फ के अनुरूप बढ़ी हुई गूँज पाई — LCROSS से 15 साल पहले।',
+      best_known_for:
+        'चंद्रमा का पहला पूर्ण वैश्विक मल्टीस्पेक्ट्रल मानचित्र और ध्रुवीय जल बर्फ का पहला संकेत — 1994',
+    },
+    it: {
+      tagline:
+        'Orbiter lunare congiunto BMDO + NASA — prima mappa multispettrale globale e prima evidenza radar bistatica di ghiaccio polare',
+      description:
+        "Ufficialmente il Deep Space Program Science Experiment (DSPSE). Concepito dalla Ballistic Missile Defense Organization (predecessore del Space Systems Command della USSF) per qualificare sensori leggeri in condizioni di spazio profondo, con la collaborazione della NASA sulla scienza lunare e degli asteroidi. Lanciato il 25/01/1994 su Titan IIG da Vandenberg, è entrato in orbita polare lunare il 19/02/1994 per 71 giorni di mappatura. L'esperimento radar bistatico ha trovato echi rafforzati al cratere Shackleton del polo sud compatibili con ghiaccio d'acqua, 15 anni prima di LCROSS.",
+      best_known_for:
+        'Prima mappa multispettrale globale della Luna e primo indizio di ghiaccio polare — 1994',
+    },
+    ja: {
+      name: 'クレメンタイン',
+      tagline:
+        'BMDO・NASA 共同の月周回機 — 月の世界初の完全マルチスペクトル地図と極水氷の最初のバイスタティックレーダー証拠',
+      description:
+        '正式には Deep Space Program Science Experiment（DSPSE）。Ballistic Missile Defense Organization（USSF Space Systems Command の前身）が深宇宙環境で軽量センサーを試験することを目的に考案し、NASA が月・小惑星科学で協力した。1994 年 1 月 25 日に Vandenberg から Titan IIG で打ち上げ。1994 年 2 月 19 日に月の極軌道に入り、71 日間の地図化を実施。バイスタティックレーダー実験では南極 Shackleton クレーターで水氷と整合する強化されたエコーを検出 — LCROSS の 15 年前。',
+      best_known_for: '月の世界初の完全マルチスペクトル地図と極水氷の初の手がかり — 1994',
+    },
+    ko: {
+      name: '클레멘타인',
+      tagline:
+        'BMDO + NASA 공동 달 궤도선 — 달의 첫 글로벌 다스펙트럼 지도와 극지 물 얼음의 첫 양 안테나 레이더 증거',
+      description:
+        '공식적으로 Deep Space Program Science Experiment(DSPSE). 탄도미사일방어조직(USSF 우주시스템사령부 전신)이 심우주 환경에서 경량 센서를 검증하기 위해 구상했으며 NASA가 달·소행성 과학에서 협력했다. 1994년 1월 25일 Vandenberg에서 Titan IIG로 발사. 1994년 2월 19일 달 극궤도에 진입하여 71일간 매핑. 양 안테나 레이더 실험은 남극 Shackleton 분화구에서 물 얼음과 일치하는 강화된 에코를 발견했는데 — LCROSS보다 15년 앞섰다.',
+      best_known_for: '달의 첫 완전 글로벌 다스펙트럼 지도와 극지 물 얼음의 첫 단서 — 1994',
+    },
+    nl: {
+      tagline:
+        'Gezamenlijke BMDO + NASA maanorbiter — eerste volledige multispectrale maankaart en eerste bistatisch radar-bewijs voor polair waterijs',
+      description:
+        'Officieel het Deep Space Program Science Experiment (DSPSE). Bedacht door de Ballistic Missile Defense Organization (voorganger van het USSF Space Systems Command) om lichte sensoren in diep-ruimte omstandigheden te kwalificeren, met NASA-samenwerking voor maan- en planetoïdewetenschap. Gelanceerd op 25-01-1994 met een Titan IIG vanaf Vandenberg, kwam op 19-02-1994 in een lunar polaire baan voor 71 dagen kartering. Het bistatische radarexperiment vond versterkte echoes bij de zuidpolaire Shackleton-krater consistent met waterijs, 15 jaar vóór LCROSS.',
+      best_known_for:
+        'Eerste volledige globale multispectrale maankaart en eerste hint van polair waterijs — 1994',
+    },
+    'pt-BR': {
+      tagline:
+        'Orbitador lunar conjunto BMDO + NASA — primeiro mapa multiespectral global e primeira evidência por radar biestático de gelo polar',
+      description:
+        'Oficialmente o Deep Space Program Science Experiment (DSPSE). Concebido pela Ballistic Missile Defense Organization (precursora do Space Systems Command da USSF) para qualificar sensores leves em condições de espaço profundo, com colaboração da NASA em ciência lunar e de asteroides. Lançado em 25-01-1994 num Titan IIG de Vandenberg, entrou em órbita polar lunar em 19-02-1994 para 71 dias de mapeamento. O experimento de radar biestático encontrou ecos reforçados na cratera Shackleton do polo sul compatíveis com gelo de água, 15 anos antes de LCROSS.',
+      best_known_for:
+        'Primeiro mapa multiespectral global da Lua e primeira pista de gelo polar — 1994',
+    },
+    ru: {
+      tagline:
+        'Совместный БМDO + NASA лунный орбитер — первая глобальная мультиспектральная карта Луны и первое би-статическое радарное свидетельство полярного водяного льда',
+      description:
+        'Официально Deep Space Program Science Experiment (DSPSE). Задуман BMDO (предшественник Космического командования USSF) для квалификации лёгких датчиков в условиях дальнего космоса, с участием NASA в лунно-астероидной науке. Запущен 25.01.1994 на Titan IIG с Ванденберга. Вышел на лунную полярную орбиту 19.02.1994 для 71 дня картографирования. Эксперимент бистатического радара обнаружил усиленные эхо в южнополярном кратере Шеклтона, совместимые с водяным льдом — за 15 лет до LCROSS.',
+      best_known_for:
+        'Первая полная глобальная мультиспектральная карта Луны и первый намёк на полярный водяной лёд — 1994',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Заједнички BMDO + НАСА лунарни орбитер — прва глобална мултиспектрална мапа Месеца и први бистатички радарски доказ поларног воденог леда',
+      description:
+        'Званично Deep Space Program Science Experiment (DSPSE). Замислила га је Ballistic Missile Defense Organization (претеча USSF Space Systems Command-а) ради квалификације лаких сензора у условима дубокок свемира, уз НАСА сарадњу у лунарној и астероидној науци. Лансиран 25.01.1994. на Titan IIG из Ванденберга, ушао у лунарну поларну орбиту 19.02.1994. за 71 дан мапирања. Експеримент бистатичког радара пронашао је појачане одјеке у јужно-поларном Шеклтоновом кратеру у складу са воденим ледом — 15 година пре LCROSS.',
+      best_known_for:
+        'Прва потпуна глобална мултиспектрална мапа Месеца и први наговештај поларног воденог леда — 1994',
+    },
+    'zh-CN': {
+      name: '克莱门汀号',
+      tagline: 'BMDO + NASA 联合月球轨道器 — 首张月球完整多光谱全图与首个双基地雷达极区水冰证据',
+      description:
+        '正式名称 Deep Space Program Science Experiment（DSPSE）。由弹道导弹防御组织（USSF 太空系统司令部前身）构想，以验证轻型传感器在深空环境下的能力，并与 NASA 在月球与小行星科学方面合作。1994-01-25 在范登堡由 Titan IIG 发射，1994-02-19 进入月球极轨，进行 71 天测绘。双基地雷达实验在南极 Shackleton 陨石坑发现与水冰一致的增强回波 — 比 LCROSS 早 15 年。',
+      best_known_for: '首张月球完整多光谱全图与首个极区水冰线索 — 1994',
+    },
   },
   'pioneer-11': {
-    ar: { tagline: 'أول مركبة تصل إلى Saturn — تحليق Jupiter 1974، ثم مساعدة الجاذبية إلى Saturn 1979، قبل Cassini بـ 22 سنة', description: 'مسبار دوار يعمل بـ RTG (~259 كجم)، شقيق Pioneer 10 بنفس الحافلة ولوحة Pioneer Plaque. أُطلق 1973-04-06 على Atlas SLV-3D Centaur D-1A + Star-37E من Cape Canaveral LC-36B. تحليق Jupiter 1974-12-03 على بعد 43 000 كم — أقرب اقتراب أي Pioneer، عاد بأول صور للمنطقة القطبية ومساعدة الجاذبية اللازمة للوصول إلى Saturn. لقاء Saturn 1979-09-01 على بعد 21 000 كم من قمم السحب — أول صور تفصيلية لنظام الحلقات. استمرت الملاحظات الخارجية حتى آخر اتصال 1995-11-24. الآن ~93 AU من الشمس متجهة نحو Aquila.', best_known_for: 'أول مركبة تصل إلى Saturn — تحليق 1979-09-01، شقيق Pioneer 10' },
-    de: { tagline: 'Erste Sonde, die Saturn erreichte — Jupiter-Vorbeiflug 1974, Saturn 1979 via Schwungholmanöver, 22 Jahre vor Cassini', description: 'Drehstabilisierte RTG-betriebene Sonde (~259 kg), Schwester von Pioneer 10 mit demselben Bus und der Pioneer Plaque. Gestartet am 06.04.1973 mit einer Atlas SLV-3D Centaur D-1A + Star-37E aus Cape Canaveral LC-36B. Jupiter-Vorbeiflug am 03.12.1974 in 43 000 km — die engste Pioneer-Begegnung, lieferte die ersten Polarregion-Bilder und das Schwungholmanöver für Saturn. Saturn-Begegnung am 01.09.1979 in 21 000 km von den Wolkenobergrenzen — erste Detailbilder des Ringsystems. Beobachtungen der Heliosphäre bis zum letzten Kontakt am 24.11.1995. Inzwischen ~93 AU von der Sonne, in Richtung Aquila.', best_known_for: 'Erste Sonde, die Saturn erreichte — Vorbeiflug 01.09.1979, Geschwister von Pioneer 10' },
-    es: { tagline: 'Primera nave en encontrarse con Saturno — sobrevuelo de Júpiter en 1974 y luego asistencia gravitatoria a Saturno en 1979', description: 'Sonda estabilizada por rotación con RTG (~259 kg), hermana de Pioneer 10 con el mismo bus y la Pioneer Plaque. Lanzada el 06-04-1973 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cape Canaveral LC-36B. Sobrevuelo de Júpiter el 03-12-1974 a 43 000 km — el más cercano de cualquier Pioneer, devolvió las primeras imágenes de la región polar y la asistencia gravitatoria necesaria para llegar a Saturno. Encuentro con Saturno el 01-09-1979 a 21 000 km de los topes de nubes — primeras imágenes detalladas del sistema de anillos. Continuó observaciones de la heliosfera hasta el último contacto el 24-11-1995. Ahora a ~93 UA del Sol, hacia Aquila.', best_known_for: 'Primera nave en encontrarse con Saturno — sobrevuelo 01-09-1979, hermana de Pioneer 10' },
-    fr: { tagline: 'Première sonde à rencontrer Saturne — survol de Jupiter en 1974 puis assistance gravitationnelle vers Saturne en 1979', description: "Sonde stabilisée par rotation et alimentée par RTG (~259 kg), sœur de Pioneer 10 avec le même bus et la Pioneer Plaque. Lancée le 06/04/1973 sur Atlas SLV-3D Centaur D-1A + Star-37E depuis Cape Canaveral LC-36B. Survol de Jupiter le 03/12/1974 à 43 000 km — le plus proche de toute rencontre Pioneer, a renvoyé les premières images de la région polaire et l'assistance gravitationnelle nécessaire pour atteindre Saturne. Rencontre avec Saturne le 01/09/1979 à 21 000 km du sommet des nuages — premières images détaillées du système d'anneaux. Observations de l'héliosphère poursuivies jusqu'au dernier contact le 24/11/1995. Maintenant à ~93 UA du Soleil, en direction d'Aquila.", best_known_for: 'Première sonde à rencontrer Saturne — survol 01/09/1979, sœur de Pioneer 10' },
-    hi: { tagline: 'Saturn से मिलने वाला पहला अंतरिक्षयान — 1974 में Jupiter फ्लाईबाई, फिर 1979 में Saturn तक गुरुत्वाकर्षण सहायता', description: 'RTG से चलने वाली स्पिन-स्थिर प्रोब (~259 किग्रा), Pioneer 10 की बहन जो उसी बस और Pioneer Plaque के साथ। 06-04-1973 को Cape Canaveral LC-36B से Atlas SLV-3D Centaur D-1A + Star-37E पर लॉन्च। 03-12-1974 को Jupiter फ्लाईबाई 43 000 किमी पर — किसी भी Pioneer का सबसे निकट सामना, ध्रुवीय क्षेत्र की पहली छवियाँ और Saturn तक पहुँचने के लिए आवश्यक गुरुत्वाकर्षण सहायता दी। 01-09-1979 को Saturn मुठभेड़ 21 000 किमी पर — रिंग सिस्टम की पहली विस्तृत छवियाँ। 24-11-1995 को अंतिम संपर्क तक हीलियोस्फियर के अवलोकन जारी रखे। अब सूर्य से ~93 AU, Aquila की ओर।', best_known_for: 'Saturn से मिलने वाला पहला अंतरिक्षयान — 01-09-1979 फ्लाईबाई, Pioneer 10 की बहन' },
-    it: { tagline: 'Prima sonda a incontrare Saturno — sorvolo di Giove 1974 poi assistenza gravitazionale a Saturno 1979', description: "Sonda stabilizzata in rotazione e alimentata da RTG (~259 kg), sorella di Pioneer 10 con lo stesso bus e la Pioneer Plaque. Lanciata il 06/04/1973 su Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral LC-36B. Sorvolo di Giove il 03/12/1974 a 43 000 km — il più ravvicinato di qualsiasi Pioneer, ha restituito le prime immagini della regione polare e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 01/09/1979 a 21 000 km dalle cime delle nubi — prime immagini dettagliate del sistema di anelli. Continuò le osservazioni dell'eliosfera fino all'ultimo contatto il 24/11/1995. Ora a ~93 UA dal Sole, verso Aquila.", best_known_for: 'Prima sonda a incontrare Saturno — sorvolo 01/09/1979, sorella di Pioneer 10' },
-    ja: { name: 'パイオニア 11', tagline: '初めて Saturn に到達した探査機 — 1974 年木星フライバイ後、1979 年に木星重力で Saturn へ', description: 'RTG 電源・スピン安定の探査機（~259 kg）。同じバスと Pioneer Plaque を共有する Pioneer 10 の姉妹機。1973 年 4 月 6 日に Cape Canaveral LC-36B から Atlas SLV-3D Centaur D-1A + Star-37E で打ち上げ。1974 年 12 月 3 日に木星を 43 000 km で通過 — Pioneer シリーズ最接近で、初の極域画像と土星到達に必要な重力支援を獲得。1979 年 9 月 1 日に土星を 21 000 km で接近 — 環システムの初詳細画像。1995 年 11 月 24 日の最終通信までヘリオスフィア観測を継続。現在は太陽から ~93 AU、Aquila 方向へ。', best_known_for: '初めて Saturn に到達した探査機 — 1979-09-01 フライバイ、Pioneer 10 の姉妹機' },
-    ko: { name: '파이어니어 11', tagline: '토성에 도달한 최초의 탐사선 — 1974년 목성 비행, 1979년 토성 도착(목성 중력보조)', description: 'RTG 동력 회전 안정형 탐사선(~259 kg). 같은 본체와 Pioneer Plaque를 공유하는 Pioneer 10의 자매기. 1973년 4월 6일 Cape Canaveral LC-36B에서 Atlas SLV-3D Centaur D-1A + Star-37E로 발사. 1974년 12월 3일 목성을 43 000 km로 통과 — Pioneer 시리즈 중 최근접, 최초 극지방 이미지와 토성 도달을 위한 중력보조 확보. 1979년 9월 1일 토성을 21 000 km로 접근 — 고리 시스템의 첫 상세 이미지. 1995년 11월 24일 마지막 교신까지 헬리오스피어 관측 지속. 현재 태양으로부터 ~93 AU, Aquila 방향.', best_known_for: '토성에 도달한 최초의 탐사선 — 1979-09-01 비행, Pioneer 10의 자매기' },
-    nl: { tagline: 'Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via zwaartekrachtsondersteuning', description: "Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtsondersteuning nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AU van de Zon, op weg naar Aquila.", best_known_for: 'Eerste sonde die Saturnus bereikte — flyby 01-09-1979, zus van Pioneer 10' },
-    'pt-BR': { tagline: 'Primeira sonda a encontrar Saturno — sobrevoo de Júpiter em 1974 e assistência gravitacional a Saturno em 1979', description: 'Sonda estabilizada por rotação e alimentada por RTG (~259 kg), irmã de Pioneer 10 com o mesmo barramento e a Pioneer Plaque. Lançada em 06-04-1973 num Atlas SLV-3D Centaur D-1A + Star-37E de Cape Canaveral LC-36B. Sobrevoo de Júpiter em 03-12-1974 a 43 000 km — o mais próximo de qualquer encontro Pioneer, devolveu as primeiras imagens da região polar e a assistência gravitacional necessária para chegar a Saturno. Encontro com Saturno em 01-09-1979 a 21 000 km dos topos das nuvens — primeiras imagens detalhadas do sistema de anéis. Continuou observações da heliosfera até o último contato em 24-11-1995. Agora a ~93 UA do Sol, em direção a Aquila.', best_known_for: 'Primeira sonda a encontrar Saturno — sobrevoo 01-09-1979, irmã de Pioneer 10' },
-    ru: { tagline: 'Первый аппарат, достигший Сатурна — пролёт Юпитера в 1974, далее гравитационный манёвр к Сатурну в 1979', description: 'Закрученный РИТЭГ-зонд (~259 кг), сестра Pioneer 10 с тем же шасси и Pioneer Plaque. Запущен 06.04.1973 на Atlas SLV-3D Centaur D-1A + Star-37E с Cape Canaveral LC-36B. Пролёт Юпитера 03.12.1974 на 43 000 км — самый близкий из встреч Pioneer, дал первые изображения полярного региона и гравитационный манёвр для Сатурна. Встреча с Сатурном 01.09.1979 на 21 000 км от верхушек облаков — первые детальные изображения системы колец. Наблюдения гелиосферы до последнего сигнала 24.11.1995. Сейчас ~93 AU от Солнца, в направлении созвездия Орла.', best_known_for: 'Первый аппарат, достигший Сатурна — пролёт 01.09.1979, сестра Pioneer 10' },
-    'sr-Cyrl': { tagline: 'Прва сонда која је стигла до Сатурна — пролаз Јупитера 1974, затим гравитациона помоћ ка Сатурну 1979', description: 'Окретно стабилизована РТГ-погоњена сонда (~259 kg), сестра Pioneer 10 са истим шасијом и Pioneer Plaque. Лансирана 06.04.1973. на Atlas SLV-3D Centaur D-1A + Star-37E са Cape Canaveral LC-36B. Пролаз Јупитера 03.12.1974. на 43 000 km — најближи Pioneer сусрет, донео прве слике поларне регије и гравитациону помоћ за Сатурн. Сусрет са Сатурном 01.09.1979. на 21 000 km од врхова облака — прве детаљне слике система прстенова. Наставила хелиосферска посматрања до последњег контакта 24.11.1995. Сада ~93 AU од Сунца, ка сазвежђу Орла.', best_known_for: 'Прва сонда која је стигла до Сатурна — пролаз 01.09.1979, сестра Pioneer 10' },
-    'zh-CN': { name: '先驱者 11 号', tagline: '首颗抵达土星的航天器 — 1974 年木星飞越，1979 年借木星引力达土星', description: 'RTG 供电的自旋稳定探测器（~259 kg），与 Pioneer 10 共用相同总线和先驱者镀金板，是其姊妹机。1973-04-06 由 Cape Canaveral LC-36B 的 Atlas SLV-3D Centaur D-1A + Star-37E 发射。1974-12-03 以 43 000 km 飞越木星 — Pioneer 系列中最近距离，返回首批极区影像并获取奔向土星所需的引力借力。1979-09-01 在 21 000 km 处接近土星云顶 — 首批环系统详细影像。1995-11-24 最后一次通信前持续观测日球层。现距太阳 ~93 AU，朝向天鹰座。', best_known_for: '首颗抵达土星的航天器 — 1979-09-01 飞越，Pioneer 10 姊妹机' },
+    ar: {
+      tagline:
+        'أول مركبة تصل إلى Saturn — تحليق Jupiter 1974، ثم مساعدة الجاذبية إلى Saturn 1979، قبل Cassini بـ 22 سنة',
+      description:
+        'مسبار دوار يعمل بـ RTG (~259 كجم)، شقيق Pioneer 10 بنفس الحافلة ولوحة Pioneer Plaque. أُطلق 1973-04-06 على Atlas SLV-3D Centaur D-1A + Star-37E من Cape Canaveral LC-36B. تحليق Jupiter 1974-12-03 على بعد 43 000 كم — أقرب اقتراب أي Pioneer، عاد بأول صور للمنطقة القطبية ومساعدة الجاذبية اللازمة للوصول إلى Saturn. لقاء Saturn 1979-09-01 على بعد 21 000 كم من قمم السحب — أول صور تفصيلية لنظام الحلقات. استمرت الملاحظات الخارجية حتى آخر اتصال 1995-11-24. الآن ~93 AU من الشمس متجهة نحو Aquila.',
+      best_known_for: 'أول مركبة تصل إلى Saturn — تحليق 1979-09-01، شقيق Pioneer 10',
+    },
+    de: {
+      tagline:
+        'Erste Sonde, die Saturn erreichte — Jupiter-Vorbeiflug 1974, Saturn 1979 via Schwungholmanöver, 22 Jahre vor Cassini',
+      description:
+        'Drehstabilisierte RTG-betriebene Sonde (~259 kg), Schwester von Pioneer 10 mit demselben Bus und der Pioneer Plaque. Gestartet am 06.04.1973 mit einer Atlas SLV-3D Centaur D-1A + Star-37E aus Cape Canaveral LC-36B. Jupiter-Vorbeiflug am 03.12.1974 in 43 000 km — die engste Pioneer-Begegnung, lieferte die ersten Polarregion-Bilder und das Schwungholmanöver für Saturn. Saturn-Begegnung am 01.09.1979 in 21 000 km von den Wolkenobergrenzen — erste Detailbilder des Ringsystems. Beobachtungen der Heliosphäre bis zum letzten Kontakt am 24.11.1995. Inzwischen ~93 AU von der Sonne, in Richtung Aquila.',
+      best_known_for:
+        'Erste Sonde, die Saturn erreichte — Vorbeiflug 01.09.1979, Geschwister von Pioneer 10',
+    },
+    es: {
+      tagline:
+        'Primera nave en encontrarse con Saturno — sobrevuelo de Júpiter en 1974 y luego asistencia gravitatoria a Saturno en 1979',
+      description:
+        'Sonda estabilizada por rotación con RTG (~259 kg), hermana de Pioneer 10 con el mismo bus y la Pioneer Plaque. Lanzada el 06-04-1973 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cape Canaveral LC-36B. Sobrevuelo de Júpiter el 03-12-1974 a 43 000 km — el más cercano de cualquier Pioneer, devolvió las primeras imágenes de la región polar y la asistencia gravitatoria necesaria para llegar a Saturno. Encuentro con Saturno el 01-09-1979 a 21 000 km de los topes de nubes — primeras imágenes detalladas del sistema de anillos. Continuó observaciones de la heliosfera hasta el último contacto el 24-11-1995. Ahora a ~93 UA del Sol, hacia Aquila.',
+      best_known_for:
+        'Primera nave en encontrarse con Saturno — sobrevuelo 01-09-1979, hermana de Pioneer 10',
+    },
+    fr: {
+      tagline:
+        'Première sonde à rencontrer Saturne — survol de Jupiter en 1974 puis assistance gravitationnelle vers Saturne en 1979',
+      description:
+        "Sonde stabilisée par rotation et alimentée par RTG (~259 kg), sœur de Pioneer 10 avec le même bus et la Pioneer Plaque. Lancée le 06/04/1973 sur Atlas SLV-3D Centaur D-1A + Star-37E depuis Cape Canaveral LC-36B. Survol de Jupiter le 03/12/1974 à 43 000 km — le plus proche de toute rencontre Pioneer, a renvoyé les premières images de la région polaire et l'assistance gravitationnelle nécessaire pour atteindre Saturne. Rencontre avec Saturne le 01/09/1979 à 21 000 km du sommet des nuages — premières images détaillées du système d'anneaux. Observations de l'héliosphère poursuivies jusqu'au dernier contact le 24/11/1995. Maintenant à ~93 UA du Soleil, en direction d'Aquila.",
+      best_known_for: 'Première sonde à rencontrer Saturne — survol 01/09/1979, sœur de Pioneer 10',
+    },
+    hi: {
+      tagline:
+        'Saturn से मिलने वाला पहला अंतरिक्षयान — 1974 में Jupiter फ्लाईबाई, फिर 1979 में Saturn तक गुरुत्वाकर्षण सहायता',
+      description:
+        'RTG से चलने वाली स्पिन-स्थिर प्रोब (~259 किग्रा), Pioneer 10 की बहन जो उसी बस और Pioneer Plaque के साथ। 06-04-1973 को Cape Canaveral LC-36B से Atlas SLV-3D Centaur D-1A + Star-37E पर लॉन्च। 03-12-1974 को Jupiter फ्लाईबाई 43 000 किमी पर — किसी भी Pioneer का सबसे निकट सामना, ध्रुवीय क्षेत्र की पहली छवियाँ और Saturn तक पहुँचने के लिए आवश्यक गुरुत्वाकर्षण सहायता दी। 01-09-1979 को Saturn मुठभेड़ 21 000 किमी पर — रिंग सिस्टम की पहली विस्तृत छवियाँ। 24-11-1995 को अंतिम संपर्क तक हीलियोस्फियर के अवलोकन जारी रखे। अब सूर्य से ~93 AU, Aquila की ओर।',
+      best_known_for:
+        'Saturn से मिलने वाला पहला अंतरिक्षयान — 01-09-1979 फ्लाईबाई, Pioneer 10 की बहन',
+    },
+    it: {
+      tagline:
+        'Prima sonda a incontrare Saturno — sorvolo di Giove 1974 poi assistenza gravitazionale a Saturno 1979',
+      description:
+        "Sonda stabilizzata in rotazione e alimentata da RTG (~259 kg), sorella di Pioneer 10 con lo stesso bus e la Pioneer Plaque. Lanciata il 06/04/1973 su Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral LC-36B. Sorvolo di Giove il 03/12/1974 a 43 000 km — il più ravvicinato di qualsiasi Pioneer, ha restituito le prime immagini della regione polare e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 01/09/1979 a 21 000 km dalle cime delle nubi — prime immagini dettagliate del sistema di anelli. Continuò le osservazioni dell'eliosfera fino all'ultimo contatto il 24/11/1995. Ora a ~93 UA dal Sole, verso Aquila.",
+      best_known_for:
+        'Prima sonda a incontrare Saturno — sorvolo 01/09/1979, sorella di Pioneer 10',
+    },
+    ja: {
+      name: 'パイオニア 11',
+      tagline:
+        '初めて Saturn に到達した探査機 — 1974 年木星フライバイ後、1979 年に木星重力で Saturn へ',
+      description:
+        'RTG 電源・スピン安定の探査機（~259 kg）。同じバスと Pioneer Plaque を共有する Pioneer 10 の姉妹機。1973 年 4 月 6 日に Cape Canaveral LC-36B から Atlas SLV-3D Centaur D-1A + Star-37E で打ち上げ。1974 年 12 月 3 日に木星を 43 000 km で通過 — Pioneer シリーズ最接近で、初の極域画像と土星到達に必要な重力支援を獲得。1979 年 9 月 1 日に土星を 21 000 km で接近 — 環システムの初詳細画像。1995 年 11 月 24 日の最終通信までヘリオスフィア観測を継続。現在は太陽から ~93 AU、Aquila 方向へ。',
+      best_known_for: '初めて Saturn に到達した探査機 — 1979-09-01 フライバイ、Pioneer 10 の姉妹機',
+    },
+    ko: {
+      name: '파이어니어 11',
+      tagline: '토성에 도달한 최초의 탐사선 — 1974년 목성 비행, 1979년 토성 도착(목성 중력보조)',
+      description:
+        'RTG 동력 회전 안정형 탐사선(~259 kg). 같은 본체와 Pioneer Plaque를 공유하는 Pioneer 10의 자매기. 1973년 4월 6일 Cape Canaveral LC-36B에서 Atlas SLV-3D Centaur D-1A + Star-37E로 발사. 1974년 12월 3일 목성을 43 000 km로 통과 — Pioneer 시리즈 중 최근접, 최초 극지방 이미지와 토성 도달을 위한 중력보조 확보. 1979년 9월 1일 토성을 21 000 km로 접근 — 고리 시스템의 첫 상세 이미지. 1995년 11월 24일 마지막 교신까지 헬리오스피어 관측 지속. 현재 태양으로부터 ~93 AU, Aquila 방향.',
+      best_known_for: '토성에 도달한 최초의 탐사선 — 1979-09-01 비행, Pioneer 10의 자매기',
+    },
+    nl: {
+      tagline:
+        'Eerste sonde die Saturnus bereikte — Jupiter-flyby 1974 en daarna Saturnus 1979 via zwaartekrachtsondersteuning',
+      description:
+        'Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtsondersteuning nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AU van de Zon, op weg naar Aquila.',
+      best_known_for: 'Eerste sonde die Saturnus bereikte — flyby 01-09-1979, zus van Pioneer 10',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeira sonda a encontrar Saturno — sobrevoo de Júpiter em 1974 e assistência gravitacional a Saturno em 1979',
+      description:
+        'Sonda estabilizada por rotação e alimentada por RTG (~259 kg), irmã de Pioneer 10 com o mesmo barramento e a Pioneer Plaque. Lançada em 06-04-1973 num Atlas SLV-3D Centaur D-1A + Star-37E de Cape Canaveral LC-36B. Sobrevoo de Júpiter em 03-12-1974 a 43 000 km — o mais próximo de qualquer encontro Pioneer, devolveu as primeiras imagens da região polar e a assistência gravitacional necessária para chegar a Saturno. Encontro com Saturno em 01-09-1979 a 21 000 km dos topos das nuvens — primeiras imagens detalhadas do sistema de anéis. Continuou observações da heliosfera até o último contato em 24-11-1995. Agora a ~93 UA do Sol, em direção a Aquila.',
+      best_known_for:
+        'Primeira sonda a encontrar Saturno — sobrevoo 01-09-1979, irmã de Pioneer 10',
+    },
+    ru: {
+      tagline:
+        'Первый аппарат, достигший Сатурна — пролёт Юпитера в 1974, далее гравитационный манёвр к Сатурну в 1979',
+      description:
+        'Закрученный РИТЭГ-зонд (~259 кг), сестра Pioneer 10 с тем же шасси и Pioneer Plaque. Запущен 06.04.1973 на Atlas SLV-3D Centaur D-1A + Star-37E с Cape Canaveral LC-36B. Пролёт Юпитера 03.12.1974 на 43 000 км — самый близкий из встреч Pioneer, дал первые изображения полярного региона и гравитационный манёвр для Сатурна. Встреча с Сатурном 01.09.1979 на 21 000 км от верхушек облаков — первые детальные изображения системы колец. Наблюдения гелиосферы до последнего сигнала 24.11.1995. Сейчас ~93 AU от Солнца, в направлении созвездия Орла.',
+      best_known_for: 'Первый аппарат, достигший Сатурна — пролёт 01.09.1979, сестра Pioneer 10',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Прва сонда која је стигла до Сатурна — пролаз Јупитера 1974, затим гравитациона помоћ ка Сатурну 1979',
+      description:
+        'Окретно стабилизована РТГ-погоњена сонда (~259 kg), сестра Pioneer 10 са истим шасијом и Pioneer Plaque. Лансирана 06.04.1973. на Atlas SLV-3D Centaur D-1A + Star-37E са Cape Canaveral LC-36B. Пролаз Јупитера 03.12.1974. на 43 000 km — најближи Pioneer сусрет, донео прве слике поларне регије и гравитациону помоћ за Сатурн. Сусрет са Сатурном 01.09.1979. на 21 000 km од врхова облака — прве детаљне слике система прстенова. Наставила хелиосферска посматрања до последњег контакта 24.11.1995. Сада ~93 AU од Сунца, ка сазвежђу Орла.',
+      best_known_for: 'Прва сонда која је стигла до Сатурна — пролаз 01.09.1979, сестра Pioneer 10',
+    },
+    'zh-CN': {
+      name: '先驱者 11 号',
+      tagline: '首颗抵达土星的航天器 — 1974 年木星飞越，1979 年借木星引力达土星',
+      description:
+        'RTG 供电的自旋稳定探测器（~259 kg），与 Pioneer 10 共用相同总线和先驱者镀金板，是其姊妹机。1973-04-06 由 Cape Canaveral LC-36B 的 Atlas SLV-3D Centaur D-1A + Star-37E 发射。1974-12-03 以 43 000 km 飞越木星 — Pioneer 系列中最近距离，返回首批极区影像并获取奔向土星所需的引力借力。1979-09-01 在 21 000 km 处接近土星云顶 — 首批环系统详细影像。1995-11-24 最后一次通信前持续观测日球层。现距太阳 ~93 AU，朝向天鹰座。',
+      best_known_for: '首颗抵达土星的航天器 — 1979-09-01 飞越，Pioneer 10 姊妹机',
+    },
   },
   ulysses: {
-    ar: { tagline: 'أول مركبة ترصد قطبي الشمس من فوق وتحت دائرة الكسوف — مساعدة جاذبية المشتري 1992', description: 'مهمة شمسية / مغناطيسية مشتركة ESA + NASA، بناها Dornier بمساهمات علمية أمريكية. أُطلقت 1990-10-06 من STS-41 Discovery + IUS + PAM-S على مسار عالي الطاقة مباشر إلى المشتري — الطريقة الوحيدة لإخراج مركبة من مستوى الكسوف. تحليق المشتري 1992-02-08 صرف المركبة إلى مدار شمسي بانحراف 80° (1.3 × 5.4 AU، دورة 6.2 سنة) — أول وحيدة مركبة على الإطلاق تطير فوق قطبي الشمس. ثلاث مدارات قطبية أعطتنا البنية ثلاثية الأبعاد للورقة الحالية الشمسية، الرياح الشمسية القطبية الأسرع، والسجل الوحيد متعدد العقود. انتهت 2009.', best_known_for: 'وحيدة مركبة طارت فوق قطبي الشمس — ESA / NASA مشتركة، 1990-2009' },
-    de: { tagline: 'Erste Sonde, die die Sonnenpole von oberhalb und unterhalb der Ekliptik beobachtete — Jupiter-Schwung 1992', description: 'Gemeinsame ESA + NASA Sonnen- / Heliosphären-Mission, gebaut von Dornier mit US-wissenschaftlichen Beiträgen. Gestartet am 06.10.1990 von STS-41 Discovery + IUS + PAM-S auf einer hochenergetischen Direktbahn nach Jupiter — der einzige Weg, eine Sonde aus der Ekliptik zu werfen. Jupiter-Vorbeiflug am 08.02.1992 lenkte die Sonde in eine 80°-Inklination heliozentrische Bahn (1,3 × 5,4 AU, 6,2-Jahr-Periode) — die erste und immer noch einzige Sonde, die über die Sonnenpole flog. Drei vollständige Polarbahnen gaben uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren / langsameren äquatorialen Sonnenwind und den einzigen mehrjahrzehntigen Bericht. Mission endete 2009.', best_known_for: 'Einzige Sonde, die über die Sonnenpole flog — gemeinsam ESA / NASA, 1990-2009' },
-    es: { tagline: 'Primera nave en observar los polos del Sol desde arriba y abajo de la eclíptica — asistencia gravitatoria de Júpiter 1992', description: 'Misión solar / heliosférica conjunta ESA + NASA, construida por Dornier con contribución científica estadounidense. Lanzada el 06-10-1990 desde STS-41 Discovery + IUS + PAM-S en una trayectoria de alta energía directa a Júpiter — la única forma de sacar una nave del plano eclíptico sin delta-v prohibitivo. El sobrevuelo de Júpiter el 08-02-1992 desvió la nave a una órbita heliocéntrica de 80° de inclinación (1,3 × 5,4 UA, período de 6,2 años) — la primera y aún única nave en sobrevolar los polos del Sol. Tres órbitas polares completas nos dieron la estructura 3D de la lámina de corriente heliosférica, el viento solar polar más rápido / ecuatorial más lento y el único registro multidecadal. La misión terminó en 2009.', best_known_for: 'Única nave en sobrevolar los polos del Sol — conjunta ESA / NASA, 1990-2009' },
-    fr: { tagline: 'Première sonde à observer les pôles du Soleil au-dessus et en-dessous de l\'écliptique — assistance gravitationnelle Jupiter 1992', description: "Mission solaire / héliosphérique conjointe ESA + NASA, construite par Dornier avec contribution scientifique américaine. Lancée le 06/10/1990 depuis STS-41 Discovery + IUS + PAM-S sur une trajectoire à haute énergie directe vers Jupiter — la seule manière d'envoyer une sonde hors du plan écliptique. Le survol de Jupiter le 08/02/1992 a dévié la sonde sur une orbite héliocentrique inclinée à 80° (1,3 × 5,4 UA, période de 6,2 ans) — première et toujours seule sonde à survoler les pôles du Soleil. Trois orbites polaires complètes nous ont donné la structure 3D de la nappe de courant héliosphérique, le vent solaire polaire plus rapide / équatorial plus lent et le seul enregistrement multi-décennal. Mission terminée en 2009.", best_known_for: 'Seule sonde à survoler les pôles du Soleil — conjointe ESA / NASA, 1990-2009' },
-    hi: { tagline: 'सूर्य के ध्रुवों को क्रांतिवृत्त के ऊपर और नीचे से देखने वाला पहला अंतरिक्षयान — 1992 बृहस्पति गुरुत्व सहायता', description: 'अमेरिकी वैज्ञानिक योगदान के साथ Dornier द्वारा निर्मित संयुक्त ESA + NASA सौर / हीलियोस्फियरिक मिशन। 06-10-1990 को STS-41 Discovery + IUS + PAM-S से सीधे बृहस्पति की उच्च-ऊर्जा प्रक्षेपवक्र पर लॉन्च — क्रांतिवृत्त तल से बाहर अंतरिक्षयान भेजने का एकमात्र तरीका। 08-02-1992 बृहस्पति फ्लाईबाई ने अंतरिक्षयान को 80°-झुकाव हीलियोसेन्ट्रिक कक्षा (1.3 × 5.4 AU, 6.2-वर्ष काल) में मोड़ा — सूर्य के ध्रुवों के ऊपर उड़ने वाला पहला और अब तक एकमात्र अंतरिक्षयान। तीन पूर्ण ध्रुवीय कक्षाओं ने हमें हीलियोस्फियरिक धारा शीट की 3D संरचना दी। मिशन 2009 में समाप्त।', best_known_for: 'सूर्य के ध्रुवों के ऊपर उड़ने वाला एकमात्र अंतरिक्षयान — संयुक्त ESA / NASA, 1990-2009' },
-    it: { tagline: 'Prima sonda a osservare i poli del Sole da sopra e sotto l\'eclittica — assistenza gravitazionale di Giove 1992', description: "Missione solare / eliosferica congiunta ESA + NASA, costruita da Dornier con contributo scientifico statunitense. Lanciata il 06/10/1990 da STS-41 Discovery + IUS + PAM-S su una traiettoria ad alta energia diretta a Giove — l'unico modo per espellere una sonda dal piano dell'eclittica. Il sorvolo di Giove l'08/02/1992 ha deflesso la sonda in un'orbita eliocentrica inclinata di 80° (1,3 × 5,4 UA, periodo di 6,2 anni) — prima e ancora unica sonda a sorvolare i poli del Sole. Tre orbite polari complete ci hanno dato la struttura 3D del foglio di corrente eliosferico, il vento solare polare più veloce / equatoriale più lento e l'unico record pluridecennale. Missione terminata nel 2009.", best_known_for: 'Unica sonda a sorvolare i poli del Sole — congiunta ESA / NASA, 1990-2009' },
-    ja: { name: 'ユリシーズ', tagline: '黄道面の上下から太陽の極を観測した唯一の探査機 — 1992 年の木星スイングバイ', description: '米国の科学的貢献を伴う ESA + NASA 共同の太陽／太陽圏ミッションで、Dornier が製作。1990 年 10 月 6 日に STS-41 Discovery + IUS + PAM-S から木星に向け高エネルギー直行軌道で打ち上げ — 黄道面外に探査機を放り出す唯一の方法だった。1992 年 2 月 8 日の木星スイングバイで 80° 傾斜の太陽周回軌道（1.3 × 5.4 AU、周期 6.2 年）に投入され、太陽の極上を飛んだ史上初・現在も唯一の探査機となった。3 度の完全な極周回観測で、太陽圏電流シートの 3D 構造、極部の速い／赤道部の遅い太陽風、極コロナホールの数十年記録を得た。2009 年運用終了。', best_known_for: '太陽の極上を飛んだ唯一の探査機 — ESA／NASA 共同、1990〜2009' },
-    ko: { name: '율리시스', tagline: '황도면 위아래에서 태양 극을 관측한 최초의 탐사선 — 1992년 목성 중력보조', description: '미국 과학적 기여를 받은 ESA + NASA 공동 태양/태양권 임무로, Dornier가 제작. 1990년 10월 6일 STS-41 Discovery + IUS + PAM-S에서 목성을 향한 고에너지 직행 궤도로 발사 — 황도면 외로 탐사선을 보내는 유일한 방법이었다. 1992년 2월 8일 목성 비행이 탐사선을 80° 경사 태양중심 궤도(1.3 × 5.4 AU, 6.2년 주기)로 굴절시켜 태양 극을 비행한 사상 최초이자 유일한 탐사선이 되었다. 세 차례 완전한 극궤도 관측으로 태양권 전류층의 3D 구조, 빠른 극지/느린 적도 태양풍, 수십 년 극지 코로나홀 기록을 얻었다. 2009년 임무 종료.', best_known_for: '태양 극을 비행한 유일한 탐사선 — ESA/NASA 공동, 1990-2009' },
-    nl: { tagline: 'Eerste sonde die de zonnepolen vanaf boven en onder de ecliptica observeerde — Jupiter-zwaartekrachtsondersteuning 1992', description: 'Gezamenlijke ESA + NASA zon- / heliosfeer-missie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 06-10-1990 vanaf STS-41 Discovery + IUS + PAM-S op een hoog-energetisch direct traject naar Jupiter — de enige manier om een sonde uit het ecliptica-vlak te slingeren zonder prohibitieve delta-V. Jupiter-flyby op 08-02-1992 boog de sonde af in een 80°-hellingsbaan om de Zon (1,3 × 5,4 AU, periode 6,2 jaar) — de eerste en nog steeds enige sonde die over de zonnepolen vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige meerjarendekkende record. Missie eindigde in 2009.', best_known_for: 'Enige sonde die over de zonnepolen vloog — gezamenlijk ESA / NASA, 1990-2009' },
-    'pt-BR': { tagline: 'Primeira sonda a observar os polos do Sol por cima e por baixo da eclíptica — assistência gravitacional de Júpiter 1992', description: 'Missão solar / heliosférica conjunta ESA + NASA, construída pela Dornier com contribuição científica americana. Lançada em 06-10-1990 do STS-41 Discovery + IUS + PAM-S numa trajetória de alta energia direta a Júpiter — a única forma de lançar uma sonda para fora do plano eclíptico. O sobrevoo de Júpiter em 08-02-1992 desviou a sonda para uma órbita heliocêntrica com inclinação de 80° (1,3 × 5,4 UA, período de 6,2 anos) — a primeira e ainda única sonda a sobrevoar os polos do Sol. Três órbitas polares completas nos deram a estrutura 3D da folha de corrente heliosférica, o vento solar polar mais rápido / equatorial mais lento e o único registro de várias décadas. Missão encerrada em 2009.', best_known_for: 'Única sonda a sobrevoar os polos do Sol — conjunta ESA / NASA, 1990-2009' },
-    ru: { tagline: 'Первый аппарат, наблюдавший солнечные полюса сверху и снизу плоскости эклиптики — гравитационный манёвр Юпитера 1992', description: 'Совместная миссия ESA + NASA в области солнечной/гелиосферной физики; построена Dornier с американскими научными приборами. Запущен 06.10.1990 со STS-41 Discovery + IUS + PAM-S на высокоэнергетической прямой траектории к Юпитеру — единственный способ выбросить аппарат из плоскости эклиптики. Гравитационный манёвр Юпитера 08.02.1992 перевёл аппарат на гелиоцентрическую орбиту с наклонением 80° (1.3 × 5.4 а.е., период 6.2 года) — первый и до сих пор единственный аппарат, пролетевший над полюсами Солнца. Три полных полярных оборота дали нам 3D-структуру гелиосферного токового слоя, быстрый полярный/медленный экваториальный солнечный ветер и единственную многолетнюю запись поведения полярных корональных дыр. Миссия закончилась в 2009.', best_known_for: 'Единственный аппарат, пролетевший над солнечными полюсами — ESA / NASA совместно, 1990-2009' },
-    'sr-Cyrl': { tagline: 'Прва сонда која је посматрала Сунчеве полове изнад и испод еклиптике — Јупитерска гравитациона помоћ 1992', description: 'Заједничка ESA + НАСА сунчева / хелиосферска мисија, коју је направио Dornier са америчким научним доприносима. Лансирана 06.10.1990. са STS-41 Discovery + IUS + PAM-S на високоенергијску директну путању ка Јупитеру — једини начин да се сонда избаци из равни еклиптике. Јупитерски пролаз 08.02.1992. скренуо је сонду у хелиоцентричну орбиту нагнуту 80° (1.3 × 5.4 АU, период 6.2 године) — прва и још увек једина сонда која је прелетела изнад Сунчевих полова. Три потпуне поларне орбите дале су нам 3D структуру хелиосферског струјног листа, бржи поларни / спорији екваторски сунчев ветар и једини вишедеценијски запис понашања поларних коронарних рупа. Мисија завршена 2009.', best_known_for: 'Једина сонда која је прелетела изнад Сунчевих полова — ESA / НАСА заједно, 1990-2009' },
-    'zh-CN': { name: '尤利西斯号', tagline: '首颗在黄道面之上和之下观测太阳两极的航天器 — 1992 年木星引力借力', description: '由 Dornier 建造、美国提供科学仪器的 ESA + NASA 联合太阳/日球层任务。1990-10-06 从 STS-41 Discovery + IUS + PAM-S 发射，沿高能直达木星轨道 — 这是把航天器抛出黄道面的唯一方法。1992-02-08 木星飞越使航天器进入 80° 倾角日心轨道（1.3 × 5.4 AU，周期 6.2 年） — 史上首颗也是目前唯一一颗飞越太阳两极的航天器。三圈完整极轨观测让我们得到日球层电流片的 3D 结构、极区更快/赤道更慢的太阳风、以及完整太阳活动周期内极冕洞行为的唯一多十年记录。2009 年任务结束。', best_known_for: '飞越太阳两极的唯一航天器 — ESA / NASA 联合，1990-2009' },
+    ar: {
+      tagline: 'أول مركبة ترصد قطبي الشمس من فوق وتحت دائرة الكسوف — مساعدة جاذبية المشتري 1992',
+      description:
+        'مهمة شمسية / مغناطيسية مشتركة ESA + NASA، بناها Dornier بمساهمات علمية أمريكية. أُطلقت 1990-10-06 من STS-41 Discovery + IUS + PAM-S على مسار عالي الطاقة مباشر إلى المشتري — الطريقة الوحيدة لإخراج مركبة من مستوى الكسوف. تحليق المشتري 1992-02-08 صرف المركبة إلى مدار شمسي بانحراف 80° (1.3 × 5.4 AU، دورة 6.2 سنة) — أول وحيدة مركبة على الإطلاق تطير فوق قطبي الشمس. ثلاث مدارات قطبية أعطتنا البنية ثلاثية الأبعاد للورقة الحالية الشمسية، الرياح الشمسية القطبية الأسرع، والسجل الوحيد متعدد العقود. انتهت 2009.',
+      best_known_for: 'وحيدة مركبة طارت فوق قطبي الشمس — ESA / NASA مشتركة، 1990-2009',
+    },
+    de: {
+      tagline:
+        'Erste Sonde, die die Sonnenpole von oberhalb und unterhalb der Ekliptik beobachtete — Jupiter-Schwung 1992',
+      description:
+        'Gemeinsame ESA + NASA Sonnen- / Heliosphären-Mission, gebaut von Dornier mit US-wissenschaftlichen Beiträgen. Gestartet am 06.10.1990 von STS-41 Discovery + IUS + PAM-S auf einer hochenergetischen Direktbahn nach Jupiter — der einzige Weg, eine Sonde aus der Ekliptik zu werfen. Jupiter-Vorbeiflug am 08.02.1992 lenkte die Sonde in eine 80°-Inklination heliozentrische Bahn (1,3 × 5,4 AU, 6,2-Jahr-Periode) — die erste und immer noch einzige Sonde, die über die Sonnenpole flog. Drei vollständige Polarbahnen gaben uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren / langsameren äquatorialen Sonnenwind und den einzigen mehrjahrzehntigen Bericht. Mission endete 2009.',
+      best_known_for:
+        'Einzige Sonde, die über die Sonnenpole flog — gemeinsam ESA / NASA, 1990-2009',
+    },
+    es: {
+      tagline:
+        'Primera nave en observar los polos del Sol desde arriba y abajo de la eclíptica — asistencia gravitatoria de Júpiter 1992',
+      description:
+        'Misión solar / heliosférica conjunta ESA + NASA, construida por Dornier con contribución científica estadounidense. Lanzada el 06-10-1990 desde STS-41 Discovery + IUS + PAM-S en una trayectoria de alta energía directa a Júpiter — la única forma de sacar una nave del plano eclíptico sin delta-v prohibitivo. El sobrevuelo de Júpiter el 08-02-1992 desvió la nave a una órbita heliocéntrica de 80° de inclinación (1,3 × 5,4 UA, período de 6,2 años) — la primera y aún única nave en sobrevolar los polos del Sol. Tres órbitas polares completas nos dieron la estructura 3D de la lámina de corriente heliosférica, el viento solar polar más rápido / ecuatorial más lento y el único registro multidecadal. La misión terminó en 2009.',
+      best_known_for: 'Única nave en sobrevolar los polos del Sol — conjunta ESA / NASA, 1990-2009',
+    },
+    fr: {
+      tagline:
+        "Première sonde à observer les pôles du Soleil au-dessus et en-dessous de l'écliptique — assistance gravitationnelle Jupiter 1992",
+      description:
+        "Mission solaire / héliosphérique conjointe ESA + NASA, construite par Dornier avec contribution scientifique américaine. Lancée le 06/10/1990 depuis STS-41 Discovery + IUS + PAM-S sur une trajectoire à haute énergie directe vers Jupiter — la seule manière d'envoyer une sonde hors du plan écliptique. Le survol de Jupiter le 08/02/1992 a dévié la sonde sur une orbite héliocentrique inclinée à 80° (1,3 × 5,4 UA, période de 6,2 ans) — première et toujours seule sonde à survoler les pôles du Soleil. Trois orbites polaires complètes nous ont donné la structure 3D de la nappe de courant héliosphérique, le vent solaire polaire plus rapide / équatorial plus lent et le seul enregistrement multi-décennal. Mission terminée en 2009.",
+      best_known_for:
+        'Seule sonde à survoler les pôles du Soleil — conjointe ESA / NASA, 1990-2009',
+    },
+    hi: {
+      tagline:
+        'सूर्य के ध्रुवों को क्रांतिवृत्त के ऊपर और नीचे से देखने वाला पहला अंतरिक्षयान — 1992 बृहस्पति गुरुत्व सहायता',
+      description:
+        'अमेरिकी वैज्ञानिक योगदान के साथ Dornier द्वारा निर्मित संयुक्त ESA + NASA सौर / हीलियोस्फियरिक मिशन। 06-10-1990 को STS-41 Discovery + IUS + PAM-S से सीधे बृहस्पति की उच्च-ऊर्जा प्रक्षेपवक्र पर लॉन्च — क्रांतिवृत्त तल से बाहर अंतरिक्षयान भेजने का एकमात्र तरीका। 08-02-1992 बृहस्पति फ्लाईबाई ने अंतरिक्षयान को 80°-झुकाव हीलियोसेन्ट्रिक कक्षा (1.3 × 5.4 AU, 6.2-वर्ष काल) में मोड़ा — सूर्य के ध्रुवों के ऊपर उड़ने वाला पहला और अब तक एकमात्र अंतरिक्षयान। तीन पूर्ण ध्रुवीय कक्षाओं ने हमें हीलियोस्फियरिक धारा शीट की 3D संरचना दी। मिशन 2009 में समाप्त।',
+      best_known_for:
+        'सूर्य के ध्रुवों के ऊपर उड़ने वाला एकमात्र अंतरिक्षयान — संयुक्त ESA / NASA, 1990-2009',
+    },
+    it: {
+      tagline:
+        "Prima sonda a osservare i poli del Sole da sopra e sotto l'eclittica — assistenza gravitazionale di Giove 1992",
+      description:
+        "Missione solare / eliosferica congiunta ESA + NASA, costruita da Dornier con contributo scientifico statunitense. Lanciata il 06/10/1990 da STS-41 Discovery + IUS + PAM-S su una traiettoria ad alta energia diretta a Giove — l'unico modo per espellere una sonda dal piano dell'eclittica. Il sorvolo di Giove l'08/02/1992 ha deflesso la sonda in un'orbita eliocentrica inclinata di 80° (1,3 × 5,4 UA, periodo di 6,2 anni) — prima e ancora unica sonda a sorvolare i poli del Sole. Tre orbite polari complete ci hanno dato la struttura 3D del foglio di corrente eliosferico, il vento solare polare più veloce / equatoriale più lento e l'unico record pluridecennale. Missione terminata nel 2009.",
+      best_known_for: 'Unica sonda a sorvolare i poli del Sole — congiunta ESA / NASA, 1990-2009',
+    },
+    ja: {
+      name: 'ユリシーズ',
+      tagline: '黄道面の上下から太陽の極を観測した唯一の探査機 — 1992 年の木星スイングバイ',
+      description:
+        '米国の科学的貢献を伴う ESA + NASA 共同の太陽／太陽圏ミッションで、Dornier が製作。1990 年 10 月 6 日に STS-41 Discovery + IUS + PAM-S から木星に向け高エネルギー直行軌道で打ち上げ — 黄道面外に探査機を放り出す唯一の方法だった。1992 年 2 月 8 日の木星スイングバイで 80° 傾斜の太陽周回軌道（1.3 × 5.4 AU、周期 6.2 年）に投入され、太陽の極上を飛んだ史上初・現在も唯一の探査機となった。3 度の完全な極周回観測で、太陽圏電流シートの 3D 構造、極部の速い／赤道部の遅い太陽風、極コロナホールの数十年記録を得た。2009 年運用終了。',
+      best_known_for: '太陽の極上を飛んだ唯一の探査機 — ESA／NASA 共同、1990〜2009',
+    },
+    ko: {
+      name: '율리시스',
+      tagline: '황도면 위아래에서 태양 극을 관측한 최초의 탐사선 — 1992년 목성 중력보조',
+      description:
+        '미국 과학적 기여를 받은 ESA + NASA 공동 태양/태양권 임무로, Dornier가 제작. 1990년 10월 6일 STS-41 Discovery + IUS + PAM-S에서 목성을 향한 고에너지 직행 궤도로 발사 — 황도면 외로 탐사선을 보내는 유일한 방법이었다. 1992년 2월 8일 목성 비행이 탐사선을 80° 경사 태양중심 궤도(1.3 × 5.4 AU, 6.2년 주기)로 굴절시켜 태양 극을 비행한 사상 최초이자 유일한 탐사선이 되었다. 세 차례 완전한 극궤도 관측으로 태양권 전류층의 3D 구조, 빠른 극지/느린 적도 태양풍, 수십 년 극지 코로나홀 기록을 얻었다. 2009년 임무 종료.',
+      best_known_for: '태양 극을 비행한 유일한 탐사선 — ESA/NASA 공동, 1990-2009',
+    },
+    nl: {
+      tagline:
+        'Eerste sonde die de zonnepolen vanaf boven en onder de ecliptica observeerde — Jupiter-zwaartekrachtsondersteuning 1992',
+      description:
+        'Gezamenlijke ESA + NASA zon- / heliosfeer-missie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 06-10-1990 vanaf STS-41 Discovery + IUS + PAM-S op een hoog-energetisch direct traject naar Jupiter — de enige manier om een sonde uit het ecliptica-vlak te slingeren zonder prohibitieve delta-V. Jupiter-flyby op 08-02-1992 boog de sonde af in een 80°-hellingsbaan om de Zon (1,3 × 5,4 AU, periode 6,2 jaar) — de eerste en nog steeds enige sonde die over de zonnepolen vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige meerjarendekkende record. Missie eindigde in 2009.',
+      best_known_for:
+        'Enige sonde die over de zonnepolen vloog — gezamenlijk ESA / NASA, 1990-2009',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeira sonda a observar os polos do Sol por cima e por baixo da eclíptica — assistência gravitacional de Júpiter 1992',
+      description:
+        'Missão solar / heliosférica conjunta ESA + NASA, construída pela Dornier com contribuição científica americana. Lançada em 06-10-1990 do STS-41 Discovery + IUS + PAM-S numa trajetória de alta energia direta a Júpiter — a única forma de lançar uma sonda para fora do plano eclíptico. O sobrevoo de Júpiter em 08-02-1992 desviou a sonda para uma órbita heliocêntrica com inclinação de 80° (1,3 × 5,4 UA, período de 6,2 anos) — a primeira e ainda única sonda a sobrevoar os polos do Sol. Três órbitas polares completas nos deram a estrutura 3D da folha de corrente heliosférica, o vento solar polar mais rápido / equatorial mais lento e o único registro de várias décadas. Missão encerrada em 2009.',
+      best_known_for: 'Única sonda a sobrevoar os polos do Sol — conjunta ESA / NASA, 1990-2009',
+    },
+    ru: {
+      tagline:
+        'Первый аппарат, наблюдавший солнечные полюса сверху и снизу плоскости эклиптики — гравитационный манёвр Юпитера 1992',
+      description:
+        'Совместная миссия ESA + NASA в области солнечной/гелиосферной физики; построена Dornier с американскими научными приборами. Запущен 06.10.1990 со STS-41 Discovery + IUS + PAM-S на высокоэнергетической прямой траектории к Юпитеру — единственный способ выбросить аппарат из плоскости эклиптики. Гравитационный манёвр Юпитера 08.02.1992 перевёл аппарат на гелиоцентрическую орбиту с наклонением 80° (1.3 × 5.4 а.е., период 6.2 года) — первый и до сих пор единственный аппарат, пролетевший над полюсами Солнца. Три полных полярных оборота дали нам 3D-структуру гелиосферного токового слоя, быстрый полярный/медленный экваториальный солнечный ветер и единственную многолетнюю запись поведения полярных корональных дыр. Миссия закончилась в 2009.',
+      best_known_for:
+        'Единственный аппарат, пролетевший над солнечными полюсами — ESA / NASA совместно, 1990-2009',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Прва сонда која је посматрала Сунчеве полове изнад и испод еклиптике — Јупитерска гравитациона помоћ 1992',
+      description:
+        'Заједничка ESA + НАСА сунчева / хелиосферска мисија, коју је направио Dornier са америчким научним доприносима. Лансирана 06.10.1990. са STS-41 Discovery + IUS + PAM-S на високоенергијску директну путању ка Јупитеру — једини начин да се сонда избаци из равни еклиптике. Јупитерски пролаз 08.02.1992. скренуо је сонду у хелиоцентричну орбиту нагнуту 80° (1.3 × 5.4 АU, период 6.2 године) — прва и још увек једина сонда која је прелетела изнад Сунчевих полова. Три потпуне поларне орбите дале су нам 3D структуру хелиосферског струјног листа, бржи поларни / спорији екваторски сунчев ветар и једини вишедеценијски запис понашања поларних коронарних рупа. Мисија завршена 2009.',
+      best_known_for:
+        'Једина сонда која је прелетела изнад Сунчевих полова — ESA / НАСА заједно, 1990-2009',
+    },
+    'zh-CN': {
+      name: '尤利西斯号',
+      tagline: '首颗在黄道面之上和之下观测太阳两极的航天器 — 1992 年木星引力借力',
+      description:
+        '由 Dornier 建造、美国提供科学仪器的 ESA + NASA 联合太阳/日球层任务。1990-10-06 从 STS-41 Discovery + IUS + PAM-S 发射，沿高能直达木星轨道 — 这是把航天器抛出黄道面的唯一方法。1992-02-08 木星飞越使航天器进入 80° 倾角日心轨道（1.3 × 5.4 AU，周期 6.2 年） — 史上首颗也是目前唯一一颗飞越太阳两极的航天器。三圈完整极轨观测让我们得到日球层电流片的 3D 结构、极区更快/赤道更慢的太阳风、以及完整太阳活动周期内极冕洞行为的唯一多十年记录。2009 年任务结束。',
+      best_known_for: '飞越太阳两极的唯一航天器 — ESA / NASA 联合，1990-2009',
+    },
   },
   'vega-1': {
-    ar: { tagline: 'مهمة سوفياتية مزدوجة Venus + Halley — مركبة هبوط على طراز Venera + أول بالون كوكبي، ثم تحليق على Halley', description: 'أول مركبة في الأرمادا الدولية لـ Halley. أُطلقت 1984-12-15 على Proton-K / D-1 من Baikonur. حملت الحافلة الطائرة بوزن 4920 كجم وحدة هبوط بوزن ~1500 كجم انفصلت لوصول Venus 1985-06-11 — هبطت المركبة عند 7.5°N، 177.8°E لمدة 56 دقيقة من علم السطح، بينما طاف أول بالون هيليوم بين الكواكب في طبقة السحب على ارتفاع 54 كم لمدة 46 ساعة. تابعت الحافلة الطائرة ولتقت Halley 1986-03-06 على بعد 8889 كم — أول مواجهة Halley للأرمادا، وفّرت بيانات الاستهداف التي استخدمها Giotto الأوروبي بعد 8 أيام.', best_known_for: 'مهمة سوفياتية مزدوجة Venus + Halley — أول بالون كوكبي، أول تحليق Halley' },
-    de: { tagline: 'Sowjetische Venus + Halley-Doppelmission — Venera-Lander + erster interplanetarer Ballon, dann Halley-Vorbeiflug', description: 'Erstes Raumfahrzeug der internationalen Halley-Armada. Gestartet am 15.12.1984 mit einer Proton-K / D-1 von Baikonur. Der 4920 kg Vorbeiflug-Bus trug ein ~1500 kg Abstiegsmodul, das für die Venus-Ankunft am 11.06.1985 trennte — der Lander landete bei 7,5°N, 177,8°E für 56 Minuten Oberflächenwissenschaft, während ein erstmaliger Helium-Ballon-Aerostat 46 Stunden lang in 54 km Höhe in der Wolkenschicht trieb. Der Vorbeiflug-Bus setzte seine 9-monatige Reise fort und begegnete Halley am 06.03.1986 in 8889 km — der erste Halley-Vorbeiflug der Armada, lieferte die Zieldaten für ESAs Giotto 8 Tage später.', best_known_for: 'Sowjetische Venus + Halley-Doppelmission — erster interplanetarer Ballon, erster Halley-Vorbeiflug' },
-    es: { tagline: 'Misión soviética doble Venus + Halley — aterrizador estilo Venera y primer globo interplanetario, luego sobrevuelo de Halley', description: 'Primera nave de la armada internacional Halley. Lanzada el 15-12-1984 en un Proton-K / D-1 desde Baikonur. El bus de sobrevuelo de 4920 kg llevaba un módulo de descenso de ~1500 kg que se separó para la llegada a Venus el 11-06-1985 — el aterrizador tocó a 7,5°N, 177,8°E durante 56 minutos de ciencia de superficie, mientras un aerostato de helio inédito flotó en la capa de nubes a 54 km de altitud durante 46 horas. El bus continuó su crucero de 9 meses y encontró el cometa 1P/Halley el 06-03-1986 a 8889 km — el primer encuentro Halley de la armada, proporcionando los datos de apuntamiento que Giotto de ESA usó 8 días después.', best_known_for: 'Misión soviética doble Venus + Halley — primer globo interplanetario, primer sobrevuelo de Halley' },
-    fr: { tagline: 'Mission soviétique double Vénus + Halley — atterrisseur style Venera + premier ballon interplanétaire, puis survol de Halley', description: "Premier engin de l'armada internationale de Halley. Lancée le 15/12/1984 sur Proton-K / D-1 depuis Baïkonour. Le bus de survol de 4920 kg portait un module de descente de ~1500 kg qui s'est séparé pour l'arrivée vénusienne du 11/06/1985 — l'atterrisseur a touché à 7,5°N, 177,8°E pendant 56 minutes de science de surface, tandis qu'un aérostat hélium premier dans son genre a flotté dans la couche nuageuse à 54 km d'altitude pendant 46 heures. Le bus de survol a poursuivi sa croisière de 9 mois et a rencontré la comète 1P/Halley le 06/03/1986 à 8889 km — premier rendez-vous Halley de l'armada, fournissant les données de visée que Giotto d'ESA a utilisées 8 jours plus tard.", best_known_for: 'Mission soviétique double Vénus + Halley — premier ballon interplanétaire, premier survol de Halley' },
-    hi: { tagline: 'सोवियत Venus + Halley धूमकेतु डबल मिशन — Venera-शैली लैंडर + पहला अंतरग्रहीय गुब्बारा, फिर Halley फ्लाईबाई', description: 'अंतर्राष्ट्रीय Halley आर्मडा का पहला अंतरिक्षयान। 15-12-1984 को Baikonur से Proton-K / D-1 पर लॉन्च। 4920 किग्रा फ्लाईबाई बस ने ~1500 किग्रा डिसेंट मॉड्यूल ले गया जो Venus आगमन 1985-06-11 के लिए अलग हुआ — लैंडर 7.5°N, 177.8°E पर 56 मिनट सतह विज्ञान के लिए छू गया, जबकि पहले प्रकार का हीलियम-भरा बैलून एयरोस्टैट 54 किमी ऊँचाई पर बादल डेक में 46 घंटे तक तैरता रहा। फ्लाईबाई बस ने अपनी 9-महीने की क्रूज़ जारी रखी और 1986-03-06 को 8889 किमी पर धूमकेतु 1P/Halley से मुलाकात की — आर्मडा का पहला Halley मुठभेड़, जिसने 8 दिन बाद ESA के Giotto के लिए टार्गेटिंग डेटा प्रदान किया।', best_known_for: 'सोवियत Venus + Halley डबल मिशन — पहला अंतरग्रहीय गुब्बारा, पहला Halley फ्लाईबाई' },
-    it: { tagline: 'Doppia missione sovietica Venere + Halley — lander tipo Venera + primo pallone interplanetario, poi sorvolo di Halley', description: "Prima sonda dell'armata internazionale di Halley. Lanciata il 15/12/1984 su Proton-K / D-1 da Baikonur. Il bus di sorvolo da 4920 kg portava un modulo di discesa da ~1500 kg che si è separato per l'arrivo a Venere l'11/06/1985 — il lander è atterrato a 7,5°N, 177,8°E per 56 minuti di scienza di superficie, mentre un aerostato a elio inedito ha galleggiato nello strato nuvoloso a 54 km di altitudine per 46 ore. Il bus di sorvolo ha continuato la sua crociera di 9 mesi e ha incontrato la cometa 1P/Halley il 06/03/1986 a 8889 km — primo incontro Halley dell'armata, fornendo i dati di puntamento che Giotto dell'ESA ha usato 8 giorni dopo.", best_known_for: 'Doppia missione sovietica Venere + Halley — primo pallone interplanetario, primo sorvolo di Halley' },
-    ja: { name: 'ベガ 1', tagline: 'ソ連の金星＋ハレー彗星二重ミッション — Venera 系着陸機＋史上初の惑星間気球、その後ハレーをフライバイ', description: 'ハレー国際艦隊の最初の機体。1984 年 12 月 15 日に Proton-K／D-1 でバイコヌールから打ち上げ。4920 kg のフライバイ機体は ~1500 kg の降下モジュールを搭載し、1985 年 6 月 11 日の金星到着で分離 — 着陸機は北緯 7.5°、東経 177.8° に着陸して 56 分の表面科学を実施。同時に史上初のヘリウム気球エアロスタットが高度 54 km の雲層に 46 時間漂い、風速と大気構造を観測した。フライバイ機体は 9 か月の航行を続け、1986 年 3 月 6 日に 8889 km でハレー彗星 1P/Halley と遭遇 — 艦隊初のハレー観測で、8 日後の ESA Giotto による至近接近のための照準データを提供。', best_known_for: 'ソ連の金星＋ハレー二重ミッション — 史上初の惑星間気球、艦隊初のハレーフライバイ' },
-    ko: { name: '베가 1', tagline: '소비에트 금성 + 핼리 혜성 이중 임무 — Venera 식 착륙선 + 행성간 최초의 풍선, 이후 핼리 비행', description: '국제 핼리 함대의 첫 우주선. 1984년 12월 15일 Proton-K / D-1로 바이코누르에서 발사. 4920 kg 비행 모선은 ~1500 kg 강하 모듈을 탑재하여 1985년 6월 11일 금성 도착 시 분리 — 착륙선은 7.5°N, 177.8°E에 착륙해 56분간 표면 과학을 수행했고, 동시에 헬륨 풍선 에어로스탯이 고도 54 km 구름층에서 46시간 동안 표류하며 풍속·대기 구조를 추적했다. 비행 모선은 9개월 항해를 계속해 1986년 3월 6일 8889 km에서 핼리 혜성 1P/Halley와 조우 — 함대 최초의 핼리 만남으로, 8일 뒤 ESA Giotto의 근접 비행을 위한 조준 데이터를 제공했다.', best_known_for: '소비에트 금성 + 핼리 이중 임무 — 행성간 최초의 풍선, 함대 최초의 핼리 비행' },
-    nl: { tagline: 'Sovjet Venus + Halley dubbele missie — Venera-stijl lander + eerste interplanetaire ballon, daarna Halley-flyby', description: 'Eerste ruimtevaartuig van de internationale Halley-armada. Gelanceerd op 15-12-1984 met Proton-K / D-1 vanaf Baikonoer. De 4920 kg flyby-bus droeg een ~1500 kg afdaalmodule die zich scheidde voor Venus-aankomst op 11-06-1985 — de lander landde op 7,5°N, 177,8°E voor 56 minuten oppervlaktewetenschap, terwijl een primaire heliumballon-aerostat 46 uur in de wolkenlaag op 54 km hoogte zweefde. De flyby-bus zette zijn 9-maandse cruise voort en ontmoette komeet 1P/Halley op 06-03-1986 op 8889 km — eerste Halley-ontmoeting van de armada, die de richtgegevens leverde die ESA\'s Giotto 8 dagen later gebruikte.', best_known_for: 'Sovjet Venus + Halley dubbele missie — eerste interplanetaire ballon, eerste Halley-flyby' },
-    'pt-BR': { tagline: 'Missão soviética dupla Vênus + Halley — sonda estilo Venera + primeiro balão interplanetário, depois sobrevoo de Halley', description: 'Primeira espaçonave da armada internacional Halley. Lançada em 15-12-1984 num Proton-K / D-1 de Baikonur. O barramento de sobrevoo de 4920 kg levou um módulo de descida de ~1500 kg que se separou para a chegada a Vênus em 11-06-1985 — a sonda tocou em 7,5°N, 177,8°E por 56 minutos de ciência de superfície, enquanto um aerostato de hélio inédito flutuou na camada de nuvens a 54 km de altitude por 46 horas. O barramento continuou seu cruzeiro de 9 meses e encontrou o cometa 1P/Halley em 06-03-1986 a 8889 km — primeiro encontro Halley da armada, fornecendo os dados de mira que Giotto da ESA usou 8 dias depois.', best_known_for: 'Missão soviética dupla Vênus + Halley — primeiro balão interplanetário, primeiro sobrevoo de Halley' },
-    ru: { name: 'Вега-1', tagline: 'Советская двойная миссия Венера + Галлей — посадочный аппарат типа «Венера» + первый межпланетный аэростат, затем пролёт Галлея', description: 'Первый аппарат международной армады Галлея. Запущен 15.12.1984 на «Протон-К / Д-1» с Байконура. Пролётная ступень массой 4920 кг несла ~1500-кг спускаемый аппарат, отделившийся для прилёта к Венере 11.06.1985 — посадочный аппарат сел в точке 7.5°N, 177.8°E и проработал 56 минут на поверхности, тогда как первый в мире межпланетный гелиевый аэростат дрейфовал в облачном слое на высоте 54 км в течение 46 часов, отслеживая скорости ветра и структуру атмосферы. Пролётная ступень продолжила 9-месячный перелёт и встретилась с кометой 1P/Галлея 06.03.1986 на 8889 км — первая встреча с Галлеем в армаде, обеспечив целеуказание для Giotto ESA через 8 дней.', best_known_for: 'Советская двойная миссия Венера + Галлей — первый межпланетный аэростат, первый пролёт Галлея' },
-    'sr-Cyrl': { tagline: 'Совјетска двострука мисија Венера + Халеј — лендер типа Venera + први међупланетарни балон, затим пролаз Халеја', description: 'Прва летелица међународне Халејеве армаде. Лансирана 15.12.1984. на Proton-K / Д-1 из Бајконура. Пролетна шасија масе 4920 kg носила је ~1500 kg спустни модул који се одвојио за долазак на Венеру 11.06.1985. — лендер је слетео на 7,5°N, 177,8°E за 56 минута науке површине, док је први међупланетарни хелијумски аеростат лебдео у облачком слоју на 54 km висине 46 сати, пратећи брзину ветра и атмосферску структуру. Пролетна шасија наставила је свој 9-месечни лет и срела се са кометом 1P/Halley 06.03.1986. на 8889 km — први Халејев сусрет армаде, обезбедивши циљање за ESA-ин Giotto 8 дана касније.', best_known_for: 'Совјетска двострука мисија Венера + Халеј — први међупланетарни балон, први пролаз Халеја' },
-    'zh-CN': { name: '维加 1 号', tagline: '苏联金星 + 哈雷彗星双任务 — Venera 式着陆器 + 首个星际气球，随后掠过哈雷', description: '哈雷国际舰队的第一艘飞船。1984-12-15 在拜科努尔由 Proton-K / D-1 发射。4920 kg 的飞越主舱携带约 1500 kg 的下降模块，于 1985-06-11 金星到达时分离 — 着陆器在 7.5°N、177.8°E 着陆，进行 56 分钟表面科学，同时首颗星际氦气气球在 54 km 高度云层漂浮 46 小时，追踪风速和大气结构。飞越主舱继续 9 个月航行，于 1986-03-06 在 8889 km 处与哈雷彗星 1P/Halley 相遇 — 舰队首次哈雷会合，为 8 天后 ESA Giotto 的近距接近提供瞄准数据。', best_known_for: '苏联金星 + 哈雷双任务 — 首个星际气球，舰队首次哈雷飞越' },
+    ar: {
+      tagline:
+        'مهمة سوفياتية مزدوجة Venus + Halley — مركبة هبوط على طراز Venera + أول بالون كوكبي، ثم تحليق على Halley',
+      description:
+        'أول مركبة في الأرمادا الدولية لـ Halley. أُطلقت 1984-12-15 على Proton-K / D-1 من Baikonur. حملت الحافلة الطائرة بوزن 4920 كجم وحدة هبوط بوزن ~1500 كجم انفصلت لوصول Venus 1985-06-11 — هبطت المركبة عند 7.5°N، 177.8°E لمدة 56 دقيقة من علم السطح، بينما طاف أول بالون هيليوم بين الكواكب في طبقة السحب على ارتفاع 54 كم لمدة 46 ساعة. تابعت الحافلة الطائرة ولتقت Halley 1986-03-06 على بعد 8889 كم — أول مواجهة Halley للأرمادا، وفّرت بيانات الاستهداف التي استخدمها Giotto الأوروبي بعد 8 أيام.',
+      best_known_for: 'مهمة سوفياتية مزدوجة Venus + Halley — أول بالون كوكبي، أول تحليق Halley',
+    },
+    de: {
+      tagline:
+        'Sowjetische Venus + Halley-Doppelmission — Venera-Lander + erster interplanetarer Ballon, dann Halley-Vorbeiflug',
+      description:
+        'Erstes Raumfahrzeug der internationalen Halley-Armada. Gestartet am 15.12.1984 mit einer Proton-K / D-1 von Baikonur. Der 4920 kg Vorbeiflug-Bus trug ein ~1500 kg Abstiegsmodul, das für die Venus-Ankunft am 11.06.1985 trennte — der Lander landete bei 7,5°N, 177,8°E für 56 Minuten Oberflächenwissenschaft, während ein erstmaliger Helium-Ballon-Aerostat 46 Stunden lang in 54 km Höhe in der Wolkenschicht trieb. Der Vorbeiflug-Bus setzte seine 9-monatige Reise fort und begegnete Halley am 06.03.1986 in 8889 km — der erste Halley-Vorbeiflug der Armada, lieferte die Zieldaten für ESAs Giotto 8 Tage später.',
+      best_known_for:
+        'Sowjetische Venus + Halley-Doppelmission — erster interplanetarer Ballon, erster Halley-Vorbeiflug',
+    },
+    es: {
+      tagline:
+        'Misión soviética doble Venus + Halley — aterrizador estilo Venera y primer globo interplanetario, luego sobrevuelo de Halley',
+      description:
+        'Primera nave de la armada internacional Halley. Lanzada el 15-12-1984 en un Proton-K / D-1 desde Baikonur. El bus de sobrevuelo de 4920 kg llevaba un módulo de descenso de ~1500 kg que se separó para la llegada a Venus el 11-06-1985 — el aterrizador tocó a 7,5°N, 177,8°E durante 56 minutos de ciencia de superficie, mientras un aerostato de helio inédito flotó en la capa de nubes a 54 km de altitud durante 46 horas. El bus continuó su crucero de 9 meses y encontró el cometa 1P/Halley el 06-03-1986 a 8889 km — el primer encuentro Halley de la armada, proporcionando los datos de apuntamiento que Giotto de ESA usó 8 días después.',
+      best_known_for:
+        'Misión soviética doble Venus + Halley — primer globo interplanetario, primer sobrevuelo de Halley',
+    },
+    fr: {
+      tagline:
+        'Mission soviétique double Vénus + Halley — atterrisseur style Venera + premier ballon interplanétaire, puis survol de Halley',
+      description:
+        "Premier engin de l'armada internationale de Halley. Lancée le 15/12/1984 sur Proton-K / D-1 depuis Baïkonour. Le bus de survol de 4920 kg portait un module de descente de ~1500 kg qui s'est séparé pour l'arrivée vénusienne du 11/06/1985 — l'atterrisseur a touché à 7,5°N, 177,8°E pendant 56 minutes de science de surface, tandis qu'un aérostat hélium premier dans son genre a flotté dans la couche nuageuse à 54 km d'altitude pendant 46 heures. Le bus de survol a poursuivi sa croisière de 9 mois et a rencontré la comète 1P/Halley le 06/03/1986 à 8889 km — premier rendez-vous Halley de l'armada, fournissant les données de visée que Giotto d'ESA a utilisées 8 jours plus tard.",
+      best_known_for:
+        'Mission soviétique double Vénus + Halley — premier ballon interplanétaire, premier survol de Halley',
+    },
+    hi: {
+      tagline:
+        'सोवियत Venus + Halley धूमकेतु डबल मिशन — Venera-शैली लैंडर + पहला अंतरग्रहीय गुब्बारा, फिर Halley फ्लाईबाई',
+      description:
+        'अंतर्राष्ट्रीय Halley आर्मडा का पहला अंतरिक्षयान। 15-12-1984 को Baikonur से Proton-K / D-1 पर लॉन्च। 4920 किग्रा फ्लाईबाई बस ने ~1500 किग्रा डिसेंट मॉड्यूल ले गया जो Venus आगमन 1985-06-11 के लिए अलग हुआ — लैंडर 7.5°N, 177.8°E पर 56 मिनट सतह विज्ञान के लिए छू गया, जबकि पहले प्रकार का हीलियम-भरा बैलून एयरोस्टैट 54 किमी ऊँचाई पर बादल डेक में 46 घंटे तक तैरता रहा। फ्लाईबाई बस ने अपनी 9-महीने की क्रूज़ जारी रखी और 1986-03-06 को 8889 किमी पर धूमकेतु 1P/Halley से मुलाकात की — आर्मडा का पहला Halley मुठभेड़, जिसने 8 दिन बाद ESA के Giotto के लिए टार्गेटिंग डेटा प्रदान किया।',
+      best_known_for:
+        'सोवियत Venus + Halley डबल मिशन — पहला अंतरग्रहीय गुब्बारा, पहला Halley फ्लाईबाई',
+    },
+    it: {
+      tagline:
+        'Doppia missione sovietica Venere + Halley — lander tipo Venera + primo pallone interplanetario, poi sorvolo di Halley',
+      description:
+        "Prima sonda dell'armata internazionale di Halley. Lanciata il 15/12/1984 su Proton-K / D-1 da Baikonur. Il bus di sorvolo da 4920 kg portava un modulo di discesa da ~1500 kg che si è separato per l'arrivo a Venere l'11/06/1985 — il lander è atterrato a 7,5°N, 177,8°E per 56 minuti di scienza di superficie, mentre un aerostato a elio inedito ha galleggiato nello strato nuvoloso a 54 km di altitudine per 46 ore. Il bus di sorvolo ha continuato la sua crociera di 9 mesi e ha incontrato la cometa 1P/Halley il 06/03/1986 a 8889 km — primo incontro Halley dell'armata, fornendo i dati di puntamento che Giotto dell'ESA ha usato 8 giorni dopo.",
+      best_known_for:
+        'Doppia missione sovietica Venere + Halley — primo pallone interplanetario, primo sorvolo di Halley',
+    },
+    ja: {
+      name: 'ベガ 1',
+      tagline:
+        'ソ連の金星＋ハレー彗星二重ミッション — Venera 系着陸機＋史上初の惑星間気球、その後ハレーをフライバイ',
+      description:
+        'ハレー国際艦隊の最初の機体。1984 年 12 月 15 日に Proton-K／D-1 でバイコヌールから打ち上げ。4920 kg のフライバイ機体は ~1500 kg の降下モジュールを搭載し、1985 年 6 月 11 日の金星到着で分離 — 着陸機は北緯 7.5°、東経 177.8° に着陸して 56 分の表面科学を実施。同時に史上初のヘリウム気球エアロスタットが高度 54 km の雲層に 46 時間漂い、風速と大気構造を観測した。フライバイ機体は 9 か月の航行を続け、1986 年 3 月 6 日に 8889 km でハレー彗星 1P/Halley と遭遇 — 艦隊初のハレー観測で、8 日後の ESA Giotto による至近接近のための照準データを提供。',
+      best_known_for:
+        'ソ連の金星＋ハレー二重ミッション — 史上初の惑星間気球、艦隊初のハレーフライバイ',
+    },
+    ko: {
+      name: '베가 1',
+      tagline:
+        '소비에트 금성 + 핼리 혜성 이중 임무 — Venera 식 착륙선 + 행성간 최초의 풍선, 이후 핼리 비행',
+      description:
+        '국제 핼리 함대의 첫 우주선. 1984년 12월 15일 Proton-K / D-1로 바이코누르에서 발사. 4920 kg 비행 모선은 ~1500 kg 강하 모듈을 탑재하여 1985년 6월 11일 금성 도착 시 분리 — 착륙선은 7.5°N, 177.8°E에 착륙해 56분간 표면 과학을 수행했고, 동시에 헬륨 풍선 에어로스탯이 고도 54 km 구름층에서 46시간 동안 표류하며 풍속·대기 구조를 추적했다. 비행 모선은 9개월 항해를 계속해 1986년 3월 6일 8889 km에서 핼리 혜성 1P/Halley와 조우 — 함대 최초의 핼리 만남으로, 8일 뒤 ESA Giotto의 근접 비행을 위한 조준 데이터를 제공했다.',
+      best_known_for: '소비에트 금성 + 핼리 이중 임무 — 행성간 최초의 풍선, 함대 최초의 핼리 비행',
+    },
+    nl: {
+      tagline:
+        'Sovjet Venus + Halley dubbele missie — Venera-stijl lander + eerste interplanetaire ballon, daarna Halley-flyby',
+      description:
+        "Eerste ruimtevaartuig van de internationale Halley-armada. Gelanceerd op 15-12-1984 met Proton-K / D-1 vanaf Baikonoer. De 4920 kg flyby-bus droeg een ~1500 kg afdaalmodule die zich scheidde voor Venus-aankomst op 11-06-1985 — de lander landde op 7,5°N, 177,8°E voor 56 minuten oppervlaktewetenschap, terwijl een primaire heliumballon-aerostat 46 uur in de wolkenlaag op 54 km hoogte zweefde. De flyby-bus zette zijn 9-maandse cruise voort en ontmoette komeet 1P/Halley op 06-03-1986 op 8889 km — eerste Halley-ontmoeting van de armada, die de richtgegevens leverde die ESA's Giotto 8 dagen later gebruikte.",
+      best_known_for:
+        'Sovjet Venus + Halley dubbele missie — eerste interplanetaire ballon, eerste Halley-flyby',
+    },
+    'pt-BR': {
+      tagline:
+        'Missão soviética dupla Vênus + Halley — sonda estilo Venera + primeiro balão interplanetário, depois sobrevoo de Halley',
+      description:
+        'Primeira espaçonave da armada internacional Halley. Lançada em 15-12-1984 num Proton-K / D-1 de Baikonur. O barramento de sobrevoo de 4920 kg levou um módulo de descida de ~1500 kg que se separou para a chegada a Vênus em 11-06-1985 — a sonda tocou em 7,5°N, 177,8°E por 56 minutos de ciência de superfície, enquanto um aerostato de hélio inédito flutuou na camada de nuvens a 54 km de altitude por 46 horas. O barramento continuou seu cruzeiro de 9 meses e encontrou o cometa 1P/Halley em 06-03-1986 a 8889 km — primeiro encontro Halley da armada, fornecendo os dados de mira que Giotto da ESA usou 8 dias depois.',
+      best_known_for:
+        'Missão soviética dupla Vênus + Halley — primeiro balão interplanetário, primeiro sobrevoo de Halley',
+    },
+    ru: {
+      name: 'Вега-1',
+      tagline:
+        'Советская двойная миссия Венера + Галлей — посадочный аппарат типа «Венера» + первый межпланетный аэростат, затем пролёт Галлея',
+      description:
+        'Первый аппарат международной армады Галлея. Запущен 15.12.1984 на «Протон-К / Д-1» с Байконура. Пролётная ступень массой 4920 кг несла ~1500-кг спускаемый аппарат, отделившийся для прилёта к Венере 11.06.1985 — посадочный аппарат сел в точке 7.5°N, 177.8°E и проработал 56 минут на поверхности, тогда как первый в мире межпланетный гелиевый аэростат дрейфовал в облачном слое на высоте 54 км в течение 46 часов, отслеживая скорости ветра и структуру атмосферы. Пролётная ступень продолжила 9-месячный перелёт и встретилась с кометой 1P/Галлея 06.03.1986 на 8889 км — первая встреча с Галлеем в армаде, обеспечив целеуказание для Giotto ESA через 8 дней.',
+      best_known_for:
+        'Советская двойная миссия Венера + Галлей — первый межпланетный аэростат, первый пролёт Галлея',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Совјетска двострука мисија Венера + Халеј — лендер типа Venera + први међупланетарни балон, затим пролаз Халеја',
+      description:
+        'Прва летелица међународне Халејеве армаде. Лансирана 15.12.1984. на Proton-K / Д-1 из Бајконура. Пролетна шасија масе 4920 kg носила је ~1500 kg спустни модул који се одвојио за долазак на Венеру 11.06.1985. — лендер је слетео на 7,5°N, 177,8°E за 56 минута науке површине, док је први међупланетарни хелијумски аеростат лебдео у облачком слоју на 54 km висине 46 сати, пратећи брзину ветра и атмосферску структуру. Пролетна шасија наставила је свој 9-месечни лет и срела се са кометом 1P/Halley 06.03.1986. на 8889 km — први Халејев сусрет армаде, обезбедивши циљање за ESA-ин Giotto 8 дана касније.',
+      best_known_for:
+        'Совјетска двострука мисија Венера + Халеј — први међупланетарни балон, први пролаз Халеја',
+    },
+    'zh-CN': {
+      name: '维加 1 号',
+      tagline: '苏联金星 + 哈雷彗星双任务 — Venera 式着陆器 + 首个星际气球，随后掠过哈雷',
+      description:
+        '哈雷国际舰队的第一艘飞船。1984-12-15 在拜科努尔由 Proton-K / D-1 发射。4920 kg 的飞越主舱携带约 1500 kg 的下降模块，于 1985-06-11 金星到达时分离 — 着陆器在 7.5°N、177.8°E 着陆，进行 56 分钟表面科学，同时首颗星际氦气气球在 54 km 高度云层漂浮 46 小时，追踪风速和大气结构。飞越主舱继续 9 个月航行，于 1986-03-06 在 8889 km 处与哈雷彗星 1P/Halley 相遇 — 舰队首次哈雷会合，为 8 天后 ESA Giotto 的近距接近提供瞄准数据。',
+      best_known_for: '苏联金星 + 哈雷双任务 — 首个星际气球，舰队首次哈雷飞越',
+    },
   },
   'vega-2': {
-    ar: { tagline: 'شقيق Vega 1 — ثاني مهمة سوفياتية مزدوجة Venus + Halley، مركبة هبوط + بالون ثم تحليق Halley بعد 3 أيام من Vega 1', description: 'توأم مطابق لـ Vega 1، أُطلق 1984-12-21 (6 أيام بعد Vega 1) من Baikonur على Proton-K / D-1. 4920 كجم حافلة طائرة + ~1500 كجم وحدة هبوط مع ثاني مركبة هبوط من طراز Venera + بالون هيليوم. وصول Venus 1985-06-15: هبط المركبة عند 8.5°S، 164.5°E (Aphrodite Terra)، عاد بـ 57 دقيقة من علم السطح؛ طاف البالون في طبقة السحب لمدة 46 ساعة جنباً إلى جنب مع Vega 1. تابعت الحافلة الطائرة ولتقت Halley 1986-03-09 على بعد 8030 كم — ثاني مواجهة Halley للأرمادا، بعد 3 أيام من Vega 1 و 5 أيام قبل Giotto.', best_known_for: 'شقيق Vega 1 — ثاني مهمة سوفياتية مزدوجة Venus + Halley، تحليق Halley 1986-03-09' },
-    de: { tagline: 'Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Lander + Ballon dann Halley-Vorbeiflug 3 Tage nach Vega 1', description: 'Identischer Zwilling von Vega 1, gestartet am 21.12.1984 (6 Tage nach Vega 1) von Baikonur auf Proton-K / D-1. 4920 kg Vorbeiflug-Bus + ~1500 kg Abstiegsmodul mit zweitem Venera-artigen Lander + Helium-Aerostat. Venus-Ankunft am 15.06.1985: Lander landete bei 8,5°S, 164,5°E (Aphrodite Terra), 57 Minuten Oberflächenwissenschaft; Ballon trieb 46 Stunden lang in der Wolkenschicht neben Vega 1. Der Vorbeiflug-Bus setzte fort und begegnete Halley am 09.03.1986 in 8030 km — zweiter Halley-Vorbeiflug der Armada, 3 Tage nach Vega 1 und 5 Tage vor Giotto.', best_known_for: 'Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Halley-Vorbeiflug 09.03.1986' },
-    es: { tagline: 'Hermana de Vega 1 — segunda misión doble soviética Venus + Halley, aterrizador + globo y sobrevuelo de Halley 3 días tras Vega 1', description: 'Gemela idéntica de Vega 1, lanzada el 21-12-1984 (6 días después de Vega 1) desde Baikonur en un Proton-K / D-1. Bus de sobrevuelo de 4920 kg + módulo de descenso de ~1500 kg con un segundo aterrizador estilo Venera + aerostato de helio. Llegada a Venus el 15-06-1985: el aterrizador tocó a 8,5°S, 164,5°E (Aphrodite Terra), devolviendo 57 minutos de ciencia de superficie; el globo flotó en la capa de nubes durante 46 horas junto al de Vega 1. El bus continuó y encontró Halley el 09-03-1986 a 8030 km — segundo encuentro Halley de la armada, 3 días después de Vega 1 y 5 días antes de Giotto.', best_known_for: 'Hermana de Vega 1 — segunda misión doble soviética Venus + Halley, sobrevuelo de Halley 09-03-1986' },
-    fr: { tagline: 'Sœur de Vega 1 — deuxième mission soviétique double Vénus + Halley, atterrisseur + ballon puis survol de Halley 3 jours après Vega 1', description: 'Jumelle identique de Vega 1, lancée le 21/12/1984 (6 jours après Vega 1) depuis Baïkonour sur Proton-K / D-1. Bus de survol de 4920 kg + module de descente de ~1500 kg avec un deuxième atterrisseur style Venera + aérostat hélium. Arrivée à Vénus le 15/06/1985 : atterrisseur posé à 8,5°S, 164,5°E (Aphrodite Terra), 57 minutes de science de surface ; le ballon a flotté dans la couche nuageuse pendant 46 heures aux côtés de celui de Vega 1. Le bus a continué et rencontré Halley le 09/03/1986 à 8030 km — deuxième rencontre Halley de l\'armada, 3 jours après Vega 1 et 5 jours avant Giotto.', best_known_for: 'Sœur de Vega 1 — deuxième mission soviétique double Vénus + Halley, survol de Halley 09/03/1986' },
-    hi: { tagline: 'Vega 1 की बहन — दूसरा सोवियत Venus + Halley डबल मिशन, लैंडर + गुब्बारा फिर Vega 1 के 3 दिन बाद Halley फ्लाईबाई', description: 'Vega 1 की समान जुड़वाँ, 21-12-1984 (Vega 1 के 6 दिन बाद) को Baikonur से Proton-K / D-1 पर लॉन्च। 4920 किग्रा फ्लाईबाई बस + ~1500 किग्रा डिसेंट मॉड्यूल जिसमें दूसरा Venera-शैली लैंडर + हीलियम एयरोस्टैट था। 1985-06-15 को Venus आगमन: लैंडर 8.5°S, 164.5°E (Aphrodite Terra) पर छू गया, 57 मिनट सतह विज्ञान वापस किया; गुब्बारा Vega 1 के साथ 46 घंटे बादल डेक में तैरता रहा। बस ने जारी रखा और 1986-03-09 को 8030 किमी पर Halley से मुलाकात की — आर्मडा का दूसरा Halley मुठभेड़, Vega 1 के 3 दिन बाद और Giotto के 5 दिन पहले।', best_known_for: 'Vega 1 की बहन — दूसरा सोवियत Venus + Halley डबल मिशन, 1986-03-09 Halley फ्लाईबाई' },
-    it: { tagline: 'Sorella di Vega 1 — seconda missione sovietica doppia Venere + Halley, lander + pallone poi sorvolo di Halley 3 giorni dopo Vega 1', description: "Gemella identica di Vega 1, lanciata il 21/12/1984 (6 giorni dopo Vega 1) da Baikonur su Proton-K / D-1. Bus di sorvolo da 4920 kg + modulo di discesa da ~1500 kg con secondo lander stile Venera + aerostato a elio. Arrivo a Venere il 15/06/1985: lander atterrato a 8,5°S, 164,5°E (Aphrodite Terra), 57 minuti di scienza di superficie; il pallone ha galleggiato nello strato nuvoloso per 46 ore accanto a quello di Vega 1. Il bus ha continuato e ha incontrato Halley il 09/03/1986 a 8030 km — secondo incontro Halley dell'armata, 3 giorni dopo Vega 1 e 5 giorni prima di Giotto.", best_known_for: 'Sorella di Vega 1 — seconda missione sovietica doppia Venere + Halley, sorvolo di Halley 09/03/1986' },
-    ja: { name: 'ベガ 2', tagline: 'ベガ 1 の姉妹機 — ソ連の金星＋ハレー二重ミッション 2 機目、ベガ 1 の 3 日後にハレーをフライバイ', description: 'ベガ 1 と同一型機。ベガ 1 の 6 日後の 1984 年 12 月 21 日にバイコヌールから Proton-K／D-1 で打ち上げ。4920 kg のフライバイ機体に ~1500 kg の降下モジュールを搭載し、2 機目の Venera 系着陸機とヘリウム気球エアロスタットを運んだ。1985 年 6 月 15 日金星到着：着陸機は南緯 8.5°、東経 164.5°（Aphrodite Terra 領域）に着陸し 57 分の表面科学を返信。気球はベガ 1 と並んで 46 時間雲層を漂った。フライバイ機体は航行を続け、1986 年 3 月 9 日に 8030 km でハレーに到達 — 艦隊 2 番目のハレー遭遇で、ベガ 1 の 3 日後、ESA Giotto の 5 日前。', best_known_for: 'ベガ 1 の姉妹機 — ソ連金星＋ハレー二重ミッション、1986 年 3 月 9 日のハレー観測' },
-    ko: { name: '베가 2', tagline: '베가 1의 자매기 — 소비에트 두 번째 금성 + 핼리 이중 임무, 베가 1보다 3일 뒤 핼리 비행', description: '베가 1과 동일한 쌍둥이. 베가 1보다 6일 뒤인 1984년 12월 21일 바이코누르에서 Proton-K / D-1로 발사. 4920 kg 비행 모선과 ~1500 kg 강하 모듈에 두 번째 Venera식 착륙선과 헬륨 풍선 에어로스탯을 탑재. 1985년 6월 15일 금성 도착: 착륙선이 8.5°S, 164.5°E(Aphrodite Terra)에 착륙해 57분 표면 과학을 전송했고, 풍선은 베가 1의 풍선과 함께 46시간 동안 구름층을 표류했다. 비행 모선은 계속 항해해 1986년 3월 9일 8030 km에서 핼리 혜성에 도달 — 함대 두 번째 핼리 만남으로 베가 1보다 3일 뒤, ESA Giotto보다 5일 앞섰다.', best_known_for: '베가 1의 자매기 — 소비에트 금성 + 핼리 이중 임무, 1986-03-09 핼리 비행' },
-    nl: { tagline: 'Zus van Vega 1 — tweede Sovjet Venus + Halley dubbele missie, lander + ballon en daarna Halley-flyby 3 dagen na Vega 1', description: 'Identieke tweeling van Vega 1, gelanceerd op 21-12-1984 (6 dagen na Vega 1) vanaf Baikonoer op Proton-K / D-1. 4920 kg flyby-bus + ~1500 kg afdaalmodule met een tweede Venera-stijl lander + heliumballon-aerostat. Venus-aankomst op 15-06-1985: de lander landde op 8,5°S, 164,5°E (Aphrodite Terra), 57 minuten oppervlaktewetenschap; de ballon zweefde 46 uur in de wolkenlaag naast die van Vega 1. De bus zette voort en ontmoette Halley op 09-03-1986 op 8030 km — tweede Halley-ontmoeting van de armada, 3 dagen na Vega 1 en 5 dagen voor Giotto.', best_known_for: 'Zus van Vega 1 — tweede Sovjet Venus + Halley dubbele missie, Halley-flyby 09-03-1986' },
-    'pt-BR': { tagline: 'Irmã de Vega 1 — segunda missão soviética dupla Vênus + Halley, sonda + balão e sobrevoo de Halley 3 dias após Vega 1', description: 'Gêmea idêntica de Vega 1, lançada em 21-12-1984 (6 dias depois de Vega 1) de Baikonur num Proton-K / D-1. Barramento de sobrevoo de 4920 kg + módulo de descida de ~1500 kg com segunda sonda estilo Venera + aerostato de hélio. Chegada a Vênus em 15-06-1985: a sonda tocou em 8,5°S, 164,5°E (Aphrodite Terra), retornou 57 minutos de ciência de superfície; o balão flutuou 46 horas na camada de nuvens ao lado do de Vega 1. O barramento continuou e encontrou Halley em 09-03-1986 a 8030 km — segundo encontro Halley da armada, 3 dias após Vega 1 e 5 dias antes de Giotto.', best_known_for: 'Irmã de Vega 1 — segunda missão soviética dupla Vênus + Halley, sobrevoo de Halley 09-03-1986' },
-    ru: { name: 'Вега-2', tagline: 'Сестра «Веги-1» — вторая советская двойная миссия Венера + Галлей, посадочный аппарат + аэростат, пролёт Галлея через 3 дня', description: 'Идентичный близнец «Веги-1», запущен 21.12.1984 (6 дней после «Веги-1») с Байконура на «Протон-К / Д-1». Пролётная ступень массой 4920 кг + спускаемый аппарат ~1500 кг с вторым посадочным модулем типа «Венера» и гелиевым аэростатом. Прилёт к Венере 15.06.1985: посадочный аппарат сел на 8.5°S, 164.5°E (область Aphrodite Terra), вернул 57 минут поверхностной науки; аэростат вместе с шаром «Веги-1» проработал в облачном слое 46 часов. Пролётная ступень продолжила полёт и встретилась с кометой Галлея 09.03.1986 на 8030 км — вторая встреча армады с кометой, через 3 дня после «Веги-1» и за 5 дней до Giotto.', best_known_for: 'Сестра «Веги-1» — вторая советская двойная Венера + Галлей миссия, пролёт Галлея 09.03.1986' },
-    'sr-Cyrl': { tagline: 'Сестра Веге 1 — друга совјетска двострука мисија Венера + Халеј, лендер + балон и Халејев пролаз 3 дана после Веге 1', description: 'Истоветни близанац Веге 1, лансиран 21.12.1984. (6 дана после Веге 1) са Бајконура на Proton-K / Д-1. 4920 kg пролетна шасија + ~1500 kg спустни модул са другим лендером типа Venera + хелијумски аеростат. Долазак на Венеру 15.06.1985: лендер слетео на 8,5°S, 164,5°E (Aphrodite Terra), вратио 57 минута науке површине; балон је плутао у облачком слоју 46 сати поред оног Веге 1. Пролетна шасија наставила је лет и срела се са Халејем 09.03.1986. на 8030 km — други Халејев сусрет армаде, 3 дана после Веге 1 и 5 дана пре Giotto-а.', best_known_for: 'Сестра Веге 1 — друга совјетска двострука Венера + Халеј мисија, Халејев пролаз 09.03.1986' },
-    'zh-CN': { name: '维加 2 号', tagline: '维加 1 号的姊妹机 — 苏联第二次金星 + 哈雷双任务，比维加 1 晚 3 天掠过哈雷', description: '与维加 1 号完全相同的双胞胎，1984-12-21（维加 1 后 6 天）在拜科努尔由 Proton-K / D-1 发射。4920 kg 飞越主舱 + 约 1500 kg 下降模块，载有第二台 Venera 式着陆器和氦气气球。1985-06-15 金星到达：着陆器在 8.5°S、164.5°E（Aphrodite Terra）着陆，传回 57 分钟表面科学；气球与维加 1 号气球并行在云层漂浮 46 小时。飞越主舱继续航行，于 1986-03-09 在 8030 km 处与哈雷彗星相遇 — 舰队第二次哈雷会合，比维加 1 晚 3 天、比 ESA Giotto 早 5 天。', best_known_for: '维加 1 的姊妹机 — 苏联第二次金星 + 哈雷双任务，1986-03-09 哈雷飞越' },
+    ar: {
+      tagline:
+        'شقيق Vega 1 — ثاني مهمة سوفياتية مزدوجة Venus + Halley، مركبة هبوط + بالون ثم تحليق Halley بعد 3 أيام من Vega 1',
+      description:
+        'توأم مطابق لـ Vega 1، أُطلق 1984-12-21 (6 أيام بعد Vega 1) من Baikonur على Proton-K / D-1. 4920 كجم حافلة طائرة + ~1500 كجم وحدة هبوط مع ثاني مركبة هبوط من طراز Venera + بالون هيليوم. وصول Venus 1985-06-15: هبط المركبة عند 8.5°S، 164.5°E (Aphrodite Terra)، عاد بـ 57 دقيقة من علم السطح؛ طاف البالون في طبقة السحب لمدة 46 ساعة جنباً إلى جنب مع Vega 1. تابعت الحافلة الطائرة ولتقت Halley 1986-03-09 على بعد 8030 كم — ثاني مواجهة Halley للأرمادا، بعد 3 أيام من Vega 1 و 5 أيام قبل Giotto.',
+      best_known_for:
+        'شقيق Vega 1 — ثاني مهمة سوفياتية مزدوجة Venus + Halley، تحليق Halley 1986-03-09',
+    },
+    de: {
+      tagline:
+        'Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Lander + Ballon dann Halley-Vorbeiflug 3 Tage nach Vega 1',
+      description:
+        'Identischer Zwilling von Vega 1, gestartet am 21.12.1984 (6 Tage nach Vega 1) von Baikonur auf Proton-K / D-1. 4920 kg Vorbeiflug-Bus + ~1500 kg Abstiegsmodul mit zweitem Venera-artigen Lander + Helium-Aerostat. Venus-Ankunft am 15.06.1985: Lander landete bei 8,5°S, 164,5°E (Aphrodite Terra), 57 Minuten Oberflächenwissenschaft; Ballon trieb 46 Stunden lang in der Wolkenschicht neben Vega 1. Der Vorbeiflug-Bus setzte fort und begegnete Halley am 09.03.1986 in 8030 km — zweiter Halley-Vorbeiflug der Armada, 3 Tage nach Vega 1 und 5 Tage vor Giotto.',
+      best_known_for:
+        'Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Halley-Vorbeiflug 09.03.1986',
+    },
+    es: {
+      tagline:
+        'Hermana de Vega 1 — segunda misión doble soviética Venus + Halley, aterrizador + globo y sobrevuelo de Halley 3 días tras Vega 1',
+      description:
+        'Gemela idéntica de Vega 1, lanzada el 21-12-1984 (6 días después de Vega 1) desde Baikonur en un Proton-K / D-1. Bus de sobrevuelo de 4920 kg + módulo de descenso de ~1500 kg con un segundo aterrizador estilo Venera + aerostato de helio. Llegada a Venus el 15-06-1985: el aterrizador tocó a 8,5°S, 164,5°E (Aphrodite Terra), devolviendo 57 minutos de ciencia de superficie; el globo flotó en la capa de nubes durante 46 horas junto al de Vega 1. El bus continuó y encontró Halley el 09-03-1986 a 8030 km — segundo encuentro Halley de la armada, 3 días después de Vega 1 y 5 días antes de Giotto.',
+      best_known_for:
+        'Hermana de Vega 1 — segunda misión doble soviética Venus + Halley, sobrevuelo de Halley 09-03-1986',
+    },
+    fr: {
+      tagline:
+        'Sœur de Vega 1 — deuxième mission soviétique double Vénus + Halley, atterrisseur + ballon puis survol de Halley 3 jours après Vega 1',
+      description:
+        "Jumelle identique de Vega 1, lancée le 21/12/1984 (6 jours après Vega 1) depuis Baïkonour sur Proton-K / D-1. Bus de survol de 4920 kg + module de descente de ~1500 kg avec un deuxième atterrisseur style Venera + aérostat hélium. Arrivée à Vénus le 15/06/1985 : atterrisseur posé à 8,5°S, 164,5°E (Aphrodite Terra), 57 minutes de science de surface ; le ballon a flotté dans la couche nuageuse pendant 46 heures aux côtés de celui de Vega 1. Le bus a continué et rencontré Halley le 09/03/1986 à 8030 km — deuxième rencontre Halley de l'armada, 3 jours après Vega 1 et 5 jours avant Giotto.",
+      best_known_for:
+        'Sœur de Vega 1 — deuxième mission soviétique double Vénus + Halley, survol de Halley 09/03/1986',
+    },
+    hi: {
+      tagline:
+        'Vega 1 की बहन — दूसरा सोवियत Venus + Halley डबल मिशन, लैंडर + गुब्बारा फिर Vega 1 के 3 दिन बाद Halley फ्लाईबाई',
+      description:
+        'Vega 1 की समान जुड़वाँ, 21-12-1984 (Vega 1 के 6 दिन बाद) को Baikonur से Proton-K / D-1 पर लॉन्च। 4920 किग्रा फ्लाईबाई बस + ~1500 किग्रा डिसेंट मॉड्यूल जिसमें दूसरा Venera-शैली लैंडर + हीलियम एयरोस्टैट था। 1985-06-15 को Venus आगमन: लैंडर 8.5°S, 164.5°E (Aphrodite Terra) पर छू गया, 57 मिनट सतह विज्ञान वापस किया; गुब्बारा Vega 1 के साथ 46 घंटे बादल डेक में तैरता रहा। बस ने जारी रखा और 1986-03-09 को 8030 किमी पर Halley से मुलाकात की — आर्मडा का दूसरा Halley मुठभेड़, Vega 1 के 3 दिन बाद और Giotto के 5 दिन पहले।',
+      best_known_for:
+        'Vega 1 की बहन — दूसरा सोवियत Venus + Halley डबल मिशन, 1986-03-09 Halley फ्लाईबाई',
+    },
+    it: {
+      tagline:
+        'Sorella di Vega 1 — seconda missione sovietica doppia Venere + Halley, lander + pallone poi sorvolo di Halley 3 giorni dopo Vega 1',
+      description:
+        "Gemella identica di Vega 1, lanciata il 21/12/1984 (6 giorni dopo Vega 1) da Baikonur su Proton-K / D-1. Bus di sorvolo da 4920 kg + modulo di discesa da ~1500 kg con secondo lander stile Venera + aerostato a elio. Arrivo a Venere il 15/06/1985: lander atterrato a 8,5°S, 164,5°E (Aphrodite Terra), 57 minuti di scienza di superficie; il pallone ha galleggiato nello strato nuvoloso per 46 ore accanto a quello di Vega 1. Il bus ha continuato e ha incontrato Halley il 09/03/1986 a 8030 km — secondo incontro Halley dell'armata, 3 giorni dopo Vega 1 e 5 giorni prima di Giotto.",
+      best_known_for:
+        'Sorella di Vega 1 — seconda missione sovietica doppia Venere + Halley, sorvolo di Halley 09/03/1986',
+    },
+    ja: {
+      name: 'ベガ 2',
+      tagline:
+        'ベガ 1 の姉妹機 — ソ連の金星＋ハレー二重ミッション 2 機目、ベガ 1 の 3 日後にハレーをフライバイ',
+      description:
+        'ベガ 1 と同一型機。ベガ 1 の 6 日後の 1984 年 12 月 21 日にバイコヌールから Proton-K／D-1 で打ち上げ。4920 kg のフライバイ機体に ~1500 kg の降下モジュールを搭載し、2 機目の Venera 系着陸機とヘリウム気球エアロスタットを運んだ。1985 年 6 月 15 日金星到着：着陸機は南緯 8.5°、東経 164.5°（Aphrodite Terra 領域）に着陸し 57 分の表面科学を返信。気球はベガ 1 と並んで 46 時間雲層を漂った。フライバイ機体は航行を続け、1986 年 3 月 9 日に 8030 km でハレーに到達 — 艦隊 2 番目のハレー遭遇で、ベガ 1 の 3 日後、ESA Giotto の 5 日前。',
+      best_known_for:
+        'ベガ 1 の姉妹機 — ソ連金星＋ハレー二重ミッション、1986 年 3 月 9 日のハレー観測',
+    },
+    ko: {
+      name: '베가 2',
+      tagline:
+        '베가 1의 자매기 — 소비에트 두 번째 금성 + 핼리 이중 임무, 베가 1보다 3일 뒤 핼리 비행',
+      description:
+        '베가 1과 동일한 쌍둥이. 베가 1보다 6일 뒤인 1984년 12월 21일 바이코누르에서 Proton-K / D-1로 발사. 4920 kg 비행 모선과 ~1500 kg 강하 모듈에 두 번째 Venera식 착륙선과 헬륨 풍선 에어로스탯을 탑재. 1985년 6월 15일 금성 도착: 착륙선이 8.5°S, 164.5°E(Aphrodite Terra)에 착륙해 57분 표면 과학을 전송했고, 풍선은 베가 1의 풍선과 함께 46시간 동안 구름층을 표류했다. 비행 모선은 계속 항해해 1986년 3월 9일 8030 km에서 핼리 혜성에 도달 — 함대 두 번째 핼리 만남으로 베가 1보다 3일 뒤, ESA Giotto보다 5일 앞섰다.',
+      best_known_for: '베가 1의 자매기 — 소비에트 금성 + 핼리 이중 임무, 1986-03-09 핼리 비행',
+    },
+    nl: {
+      tagline:
+        'Zus van Vega 1 — tweede Sovjet Venus + Halley dubbele missie, lander + ballon en daarna Halley-flyby 3 dagen na Vega 1',
+      description:
+        'Identieke tweeling van Vega 1, gelanceerd op 21-12-1984 (6 dagen na Vega 1) vanaf Baikonoer op Proton-K / D-1. 4920 kg flyby-bus + ~1500 kg afdaalmodule met een tweede Venera-stijl lander + heliumballon-aerostat. Venus-aankomst op 15-06-1985: de lander landde op 8,5°S, 164,5°E (Aphrodite Terra), 57 minuten oppervlaktewetenschap; de ballon zweefde 46 uur in de wolkenlaag naast die van Vega 1. De bus zette voort en ontmoette Halley op 09-03-1986 op 8030 km — tweede Halley-ontmoeting van de armada, 3 dagen na Vega 1 en 5 dagen voor Giotto.',
+      best_known_for:
+        'Zus van Vega 1 — tweede Sovjet Venus + Halley dubbele missie, Halley-flyby 09-03-1986',
+    },
+    'pt-BR': {
+      tagline:
+        'Irmã de Vega 1 — segunda missão soviética dupla Vênus + Halley, sonda + balão e sobrevoo de Halley 3 dias após Vega 1',
+      description:
+        'Gêmea idêntica de Vega 1, lançada em 21-12-1984 (6 dias depois de Vega 1) de Baikonur num Proton-K / D-1. Barramento de sobrevoo de 4920 kg + módulo de descida de ~1500 kg com segunda sonda estilo Venera + aerostato de hélio. Chegada a Vênus em 15-06-1985: a sonda tocou em 8,5°S, 164,5°E (Aphrodite Terra), retornou 57 minutos de ciência de superfície; o balão flutuou 46 horas na camada de nuvens ao lado do de Vega 1. O barramento continuou e encontrou Halley em 09-03-1986 a 8030 km — segundo encontro Halley da armada, 3 dias após Vega 1 e 5 dias antes de Giotto.',
+      best_known_for:
+        'Irmã de Vega 1 — segunda missão soviética dupla Vênus + Halley, sobrevoo de Halley 09-03-1986',
+    },
+    ru: {
+      name: 'Вега-2',
+      tagline:
+        'Сестра «Веги-1» — вторая советская двойная миссия Венера + Галлей, посадочный аппарат + аэростат, пролёт Галлея через 3 дня',
+      description:
+        'Идентичный близнец «Веги-1», запущен 21.12.1984 (6 дней после «Веги-1») с Байконура на «Протон-К / Д-1». Пролётная ступень массой 4920 кг + спускаемый аппарат ~1500 кг с вторым посадочным модулем типа «Венера» и гелиевым аэростатом. Прилёт к Венере 15.06.1985: посадочный аппарат сел на 8.5°S, 164.5°E (область Aphrodite Terra), вернул 57 минут поверхностной науки; аэростат вместе с шаром «Веги-1» проработал в облачном слое 46 часов. Пролётная ступень продолжила полёт и встретилась с кометой Галлея 09.03.1986 на 8030 км — вторая встреча армады с кометой, через 3 дня после «Веги-1» и за 5 дней до Giotto.',
+      best_known_for:
+        'Сестра «Веги-1» — вторая советская двойная Венера + Галлей миссия, пролёт Галлея 09.03.1986',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Сестра Веге 1 — друга совјетска двострука мисија Венера + Халеј, лендер + балон и Халејев пролаз 3 дана после Веге 1',
+      description:
+        'Истоветни близанац Веге 1, лансиран 21.12.1984. (6 дана после Веге 1) са Бајконура на Proton-K / Д-1. 4920 kg пролетна шасија + ~1500 kg спустни модул са другим лендером типа Venera + хелијумски аеростат. Долазак на Венеру 15.06.1985: лендер слетео на 8,5°S, 164,5°E (Aphrodite Terra), вратио 57 минута науке површине; балон је плутао у облачком слоју 46 сати поред оног Веге 1. Пролетна шасија наставила је лет и срела се са Халејем 09.03.1986. на 8030 km — други Халејев сусрет армаде, 3 дана после Веге 1 и 5 дана пре Giotto-а.',
+      best_known_for:
+        'Сестра Веге 1 — друга совјетска двострука Венера + Халеј мисија, Халејев пролаз 09.03.1986',
+    },
+    'zh-CN': {
+      name: '维加 2 号',
+      tagline: '维加 1 号的姊妹机 — 苏联第二次金星 + 哈雷双任务，比维加 1 晚 3 天掠过哈雷',
+      description:
+        '与维加 1 号完全相同的双胞胎，1984-12-21（维加 1 后 6 天）在拜科努尔由 Proton-K / D-1 发射。4920 kg 飞越主舱 + 约 1500 kg 下降模块，载有第二台 Venera 式着陆器和氦气气球。1985-06-15 金星到达：着陆器在 8.5°S、164.5°E（Aphrodite Terra）着陆，传回 57 分钟表面科学；气球与维加 1 号气球并行在云层漂浮 46 小时。飞越主舱继续航行，于 1986-03-09 在 8030 km 处与哈雷彗星相遇 — 舰队第二次哈雷会合，比维加 1 晚 3 天、比 ESA Giotto 早 5 天。',
+      best_known_for: '维加 1 的姊妹机 — 苏联第二次金星 + 哈雷双任务，1986-03-09 哈雷飞越',
+    },
   },
   'venera-13': {
-    ar: { tagline: 'أول صور ملونة لسطح Venus — صمدت 127 دقيقة في ظروف 470 °C / 89-جوي', description: 'زوج من المركبات الهبوطية السوفياتية لـ Venus (مع Venera 14). أُطلقت 1981-10-30 على Proton-K / D-1 من Baikonur. وصول Venus 1982-03-01: انفصلت كبسولة الهبوط الـ 1645 كجم من التيتانيوم من الحافلة الطائرة، دخلت الغلاف الجوي بسرعة 11.2 كم/ث، نشرت مظلة عبر الضباب العلوي، ثم تخلت عن المظلة على ارتفاع 47 كم وسقطت بحرية عبر الغلاف الجوي السفلي. هبط على السطح عند 7.5°S، 303°E (Phoebe Regio). أول صور بانورامية ملونة لسطح Venus؛ أول تحليل تركيب التربة بالأشعة السينية؛ أول تسجيلات صوتية من كوكب آخر. عملت 127 دقيقة — أبعد من الحياة المصممة 32 دقيقة.', best_known_for: 'أول صور ملونة لسطح Venus — نجاة 127 دقيقة في 470 °C / 89-جوي' },
-    de: { tagline: 'Erste Farbbilder der Venus-Oberfläche — überlebte 127 Minuten unter 470 °C / 89 bar Bedingungen', description: 'Sowjetisches Venus-Lander-Paar (mit Venera 14). Gestartet am 30.10.1981 auf Proton-K / D-1 von Baikonur. Venus-Ankunft am 01.03.1982: die 1645 kg titanene Abstiegskapsel trennte sich vom Vorbeiflug-Bus, trat mit 11,2 km/s in die Atmosphäre ein, setzte einen Fallschirm durch den oberen Dunst, warf ihn dann in 47 km Höhe ab und stürzte mit Scheibenbremse durch die untere Atmosphäre. Oberflächenlandung bei 7,5°S, 303°E (Phoebe Regio, vulkanischer Beta-Regio-Flanke) bei 7,4 m/s. Erste panoramische Farbbilder der Venus-Oberfläche; erste Röntgenfluoreszenz-Bodenkomposition (basaltisch); erste akustische Aufzeichnungen von einem anderen Planeten. Lander operierte 127 Minuten — weit jenseits der 32-Minuten-Designzeit — vor Silikon-Elektronik-Ausfall.', best_known_for: 'Erste Farbbilder der Venus-Oberfläche — 127-Minuten-Überleben bei 470 °C / 89 bar' },
-    es: { tagline: 'Primeras imágenes en color de la superficie de Venus — sobrevivió 127 minutos en 470 °C / 89 atm', description: 'Par de aterrizadores soviéticos para Venus (con Venera 14). Lanzado el 30-10-1981 en un Proton-K / D-1 desde Baikonur. Llegada a Venus el 01-03-1982: la cápsula de descenso de titanio de 1645 kg se separó del bus de sobrevuelo, entró en la atmósfera a 11,2 km/s, desplegó un paracaídas a través de la bruma superior, luego lo jettisonó a 47 km y cayó libremente con un freno de disco para el descenso terminal. Toque de superficie a 7,5°S, 303°E (Phoebe Regio, flanco volcánico de Beta Regio) a 7,4 m/s. Primeras imágenes panorámicas en color de la superficie de Venus; primer análisis de composición de suelo por fluorescencia de rayos X (basáltico, similar al basalto leucítico del fondo oceánico terrestre); primeras grabaciones acústicas de otro planeta. El aterrizador operó 127 minutos — mucho más allá de la vida diseñada de 32 minutos.', best_known_for: 'Primeras imágenes en color de la superficie de Venus — 127 minutos de supervivencia en 470 °C / 89 atm' },
-    fr: { tagline: 'Premières images couleur de la surface de Vénus — a survécu 127 minutes dans des conditions de 470 °C / 89 atm', description: "Paire d'atterrisseurs soviétiques pour Vénus (avec Venera 14). Lancée le 30/10/1981 sur Proton-K / D-1 depuis Baïkonour. Arrivée vénusienne le 01/03/1982 : la capsule de descente en titane de 1645 kg s'est séparée du bus de survol, est entrée dans l'atmosphère à 11,2 km/s, a déployé un parachute à travers la brume supérieure, l'a largué à 47 km puis a chuté librement avec un frein à disque pour la descente terminale. Touche de surface à 7,5°S, 303°E (Phoebe Regio, flanc volcanique de Beta Regio) à 7,4 m/s. Premières images panoramiques en couleur de la surface vénusienne ; première analyse de composition de sol par fluorescence X (basaltique, similaire au basalte leucitique du fond océanique terrestre) ; premiers enregistrements acoustiques d'une autre planète. L'atterrisseur a fonctionné 127 minutes — bien au-delà de la vie conçue de 32 minutes.", best_known_for: 'Premières images couleur de la surface de Vénus — 127 minutes de survie dans 470 °C / 89 atm' },
-    hi: { tagline: 'Venus की सतह की पहली रंगीन छवियाँ — 470 °C / 89-atm स्थितियों में 127 मिनट जीवित रहा', description: 'सोवियत Venus लैंडर जोड़ी (Venera 14 के साथ)। 30-10-1981 को Baikonur से Proton-K / D-1 पर लॉन्च। 1982-03-01 को Venus आगमन: 1645 किग्रा टाइटेनियम डिसेंट कैप्सूल फ्लाईबाई बस से अलग हुआ, 11.2 किमी/सेकंड पर वायुमंडल में प्रवेश किया, ऊपरी धुंध के माध्यम से पैराशूट तैनात किया, फिर इसे 47 किमी पर छोड़ दिया और टर्मिनल अवतरण के लिए डिस्क-ब्रेक के साथ निचले वायुमंडल से मुक्त रूप से गिरा। सतह स्पर्श 7.5°S, 303°E (Phoebe Regio, Beta Regio ज्वालामुखी कगार) पर 7.4 मीटर/सेकंड। Venus सतह की पहली पैनोरमिक रंगीन छवियाँ; पहला एक्स-रे फ्लोरेसेंस मिट्टी संरचना विश्लेषण (बेसाल्टिक); किसी अन्य ग्रह से पहली ध्वनिक रिकॉर्डिंग। लैंडर ने 127 मिनट काम किया — डिज़ाइन की 32-मिनट जीवन से कहीं अधिक।', best_known_for: 'Venus सतह की पहली रंगीन छवियाँ — 470 °C / 89-atm में 127 मिनट जीवित रहना' },
-    it: { tagline: 'Prime immagini a colori della superficie di Venere — sopravvissuto 127 minuti in condizioni di 470 °C / 89 atm', description: "Coppia di lander sovietici per Venere (con Venera 14). Lanciato il 30/10/1981 su Proton-K / D-1 da Baikonur. Arrivo a Venere l'01/03/1982: la capsula di discesa in titanio da 1645 kg si è separata dal bus di sorvolo, è entrata nell'atmosfera a 11,2 km/s, ha dispiegato un paracadute attraverso la foschia superiore, lo ha rilasciato a 47 km e poi è caduta liberamente con un freno a disco per la discesa terminale. Atterraggio sulla superficie a 7,5°S, 303°E (Phoebe Regio, fianco vulcanico di Beta Regio) a 7,4 m/s. Prime immagini panoramiche a colori della superficie venusiana; prima analisi di composizione del suolo per fluorescenza ai raggi X (basaltica, simile al basalto leucitico del fondo oceanico terrestre); prime registrazioni acustiche da un altro pianeta. Il lander ha operato 127 minuti — ben oltre la vita progettuale di 32 minuti.", best_known_for: 'Prime immagini a colori della superficie di Venere — 127 minuti di sopravvivenza in 470 °C / 89 atm' },
-    ja: { name: 'ベネラ 13', tagline: '金星表面の初のカラー画像 — 470 °C／89 気圧の環境で 127 分間生存', description: 'ソ連の金星着陸機ペア（Venera 14 とともに）。1981 年 10 月 30 日に Proton-K／D-1 でバイコヌールから打ち上げ。1982 年 3 月 1 日に金星到着：1645 kg のチタン製降下カプセルがフライバイ機体から分離し、11.2 km/s で大気に突入、上層もやでパラシュートを展開、47 km でパラシュートを切り離してディスクブレーキで下層大気を自由落下。着陸地点は南緯 7.5°、東経 303°（Phoebe Regio、Beta Regio 火山側面）、着地速度 7.4 m/s。金星表面の初のカラーパノラマ画像；初の X 線蛍光土壌組成分析（玄武岩質、地球海底の leucite 玄武岩に類似）；他の惑星からの初の音響記録。設計寿命 32 分を大きく超え 127 分間動作した。', best_known_for: '金星表面の初カラー画像 — 470 °C／89 気圧で 127 分の生存' },
-    ko: { name: '베네라 13', tagline: '금성 표면의 최초 컬러 영상 — 470 °C / 89 기압 환경에서 127분 생존', description: '소비에트 금성 착륙선 쌍(베네라 14와 함께). 1981년 10월 30일 바이코누르에서 Proton-K / D-1로 발사. 1982년 3월 1일 금성 도착: 1645 kg 티타늄 강하 캡슐이 비행 모선에서 분리되어 11.2 km/s로 대기에 진입, 상층 안개를 통해 낙하산을 펼친 뒤 47 km에서 낙하산을 분리하고 디스크 브레이크로 하층 대기를 자유 낙하했다. 7.5°S, 303°E(Phoebe Regio, Beta Regio 화산 측면)에 7.4 m/s로 착륙. 금성 표면의 최초 컬러 파노라마 영상, 최초 X선 형광 토양 성분 분석(현무암질, 지구 해저의 leucite 현무암과 유사), 다른 행성에서의 최초 음향 기록. 설계 수명 32분을 훨씬 넘는 127분간 작동.', best_known_for: '금성 표면의 최초 컬러 영상 — 470 °C / 89 기압에서 127분 생존' },
-    nl: { tagline: 'Eerste kleurenbeelden van het oppervlak van Venus — overleefde 127 minuten in 470 °C / 89 atm omstandigheden', description: 'Sovjet Venus-landerpaar (met Venera 14). Gelanceerd op 30-10-1981 op Proton-K / D-1 vanaf Baikonoer. Venus-aankomst op 01-03-1982: de 1645 kg titanium afdaalcapsule scheidde zich van de flyby-bus, ging de atmosfeer in op 11,2 km/s, ontplooide een parachute door de bovenste damp, gooide deze daarna af op 47 km en viel vrij door de onderste atmosfeer met een schijfrem voor terminale afdaling. Oppervlakte-aanraking op 7,5°S, 303°E (Phoebe Regio, Beta Regio vulkanische flank) op 7,4 m/s. Eerste panoramische kleurenbeelden van het Venus-oppervlak; eerste röntgenfluorescentie bodemcompositie-analyse (basaltisch, vergelijkbaar met aardse oceaanbodem leuciet-basalt); eerste akoestische opnamen van een andere planeet. De lander werkte 127 minuten — veel langer dan de ontwerpduur van 32 minuten.', best_known_for: 'Eerste kleurenbeelden van het Venus-oppervlak — 127 minuten overleven in 470 °C / 89 atm' },
-    'pt-BR': { tagline: 'Primeiras imagens coloridas da superfície de Vênus — sobreviveu 127 minutos em condições de 470 °C / 89 atm', description: 'Par soviético de sondas para Vênus (com Venera 14). Lançada em 30-10-1981 num Proton-K / D-1 de Baikonur. Chegada a Vênus em 01-03-1982: a cápsula de descida de titânio de 1645 kg se separou do barramento de sobrevoo, entrou na atmosfera a 11,2 km/s, abriu um paraquedas pela neblina superior, soltou-o a 47 km e caiu livremente pela atmosfera inferior com freio a disco para a descida terminal. Toque na superfície em 7,5°S, 303°E (Phoebe Regio, flanco vulcânico de Beta Regio) a 7,4 m/s. Primeiras imagens panorâmicas coloridas da superfície venusiana; primeira análise de composição do solo por fluorescência de raios X (basáltica, similar ao basalto leucítico do fundo oceânico terrestre); primeiras gravações acústicas de outro planeta. A sonda operou 127 minutos — muito além da vida projetada de 32 minutos.', best_known_for: 'Primeiras imagens coloridas da superfície de Vênus — 127 minutos sobrevivendo em 470 °C / 89 atm' },
-    ru: { name: 'Венера-13', tagline: 'Первые цветные изображения поверхности Венеры — 127 минут работы в условиях 470 °C / 89 атм', description: 'Советская пара посадочных аппаратов для Венеры (вместе с Венерой-14). Запущена 30.10.1981 на «Протон-К / Д-1» с Байконура. Прилёт к Венере 01.03.1982: 1645-кг титановая спускаемая капсула отделилась от пролётного аппарата, вошла в атмосферу со скоростью 11.2 км/с, раскрыла парашют в верхней дымке, сбросила его на 47 км и совершила свободное падение через нижнюю атмосферу с дисковым тормозом для финального снижения. Посадка на поверхности в точке 7.5°S, 303°E (Phoebe Regio, фланг вулкана Beta Regio) со скоростью 7.4 м/с. Первые цветные панорамные изображения поверхности Венеры; первый рентгенофлуоресцентный анализ состава грунта (базальтовый, схожий с земными океаническими лейцитовыми базальтами); первые акустические записи с другой планеты. Аппарат проработал 127 минут — намного дольше расчётных 32 минут — до отказа кремниевой электроники при 470 °C и 89 атм в углекислотной атмосфере.', best_known_for: 'Первые цветные изображения поверхности Венеры — 127 минут работы в 470 °C / 89 атм' },
-    'sr-Cyrl': { tagline: 'Прве колор слике површине Венере — преживела 127 минута у условима од 470 °C / 89 атм', description: 'Совјетски пар лендера за Венеру (са Венером-14). Лансирана 30.10.1981. на Proton-K / Д-1 из Бајконура. Долазак на Венеру 01.03.1982: 1645-kg титанска спустна капсула одвојила се од пролетне шасије, ушла у атмосферу брзином од 11.2 km/s, развила падобран кроз горњу маглу, испустила га на 47 km и слободно пала кроз доњу атмосферу са диск-кочницом за терминално спуштање. Слетање на површину у 7,5°S, 303°E (Phoebe Regio, вулкански бок Beta Regio) брзином 7,4 m/s. Прве панорамске колор слике површине Венере; прва X-зрачна флуоресцентна анализа састава тла (базалтна, слично земаљском океанском леуцитном базалту); први акустички записи са друге планете. Лендер је радио 127 минута — далеко преко пројектованих 32 минута — пре отказа силицијумске електронике у CO₂ атмосфери од 470 °C / 89 атм.', best_known_for: 'Прве колор слике површине Венере — 127 минута преживљавања у 470 °C / 89 атм' },
-    'zh-CN': { name: '金星 13 号', tagline: '金星表面的首张彩色图像 — 在 470 °C / 89 atm 环境下存活 127 分钟', description: '苏联金星着陆器双子（与金星 14 号）。1981-10-30 在拜科努尔由 Proton-K / D-1 发射。1982-03-01 抵达金星：1645 kg 钛制下降舱与飞越主舱分离，以 11.2 km/s 进入大气层，先在上层雾中展开降落伞，随后于 47 km 处抛伞、由盘式制动装置经下层大气自由下落作末段减速。在 7.5°S、303°E（Phoebe Regio，Beta Regio 火山侧翼）以 7.4 m/s 触地。首批金星表面彩色全景图像；首次 X 射线荧光土壤成分分析（玄武岩质，类似地球海底白榴石玄武岩）；首批来自其他行星的声学记录。着陆器工作 127 分钟 — 远超原 32 分钟设计寿命 — 之后硅基电子器件在 470 °C / 89 atm 的 CO₂ 环境下失效。', best_known_for: '金星表面首张彩色图像 — 470 °C / 89 atm 下存活 127 分钟' },
+    ar: {
+      tagline: 'أول صور ملونة لسطح Venus — صمدت 127 دقيقة في ظروف 470 °C / 89-جوي',
+      description:
+        'زوج من المركبات الهبوطية السوفياتية لـ Venus (مع Venera 14). أُطلقت 1981-10-30 على Proton-K / D-1 من Baikonur. وصول Venus 1982-03-01: انفصلت كبسولة الهبوط الـ 1645 كجم من التيتانيوم من الحافلة الطائرة، دخلت الغلاف الجوي بسرعة 11.2 كم/ث، نشرت مظلة عبر الضباب العلوي، ثم تخلت عن المظلة على ارتفاع 47 كم وسقطت بحرية عبر الغلاف الجوي السفلي. هبط على السطح عند 7.5°S، 303°E (Phoebe Regio). أول صور بانورامية ملونة لسطح Venus؛ أول تحليل تركيب التربة بالأشعة السينية؛ أول تسجيلات صوتية من كوكب آخر. عملت 127 دقيقة — أبعد من الحياة المصممة 32 دقيقة.',
+      best_known_for: 'أول صور ملونة لسطح Venus — نجاة 127 دقيقة في 470 °C / 89-جوي',
+    },
+    de: {
+      tagline:
+        'Erste Farbbilder der Venus-Oberfläche — überlebte 127 Minuten unter 470 °C / 89 bar Bedingungen',
+      description:
+        'Sowjetisches Venus-Lander-Paar (mit Venera 14). Gestartet am 30.10.1981 auf Proton-K / D-1 von Baikonur. Venus-Ankunft am 01.03.1982: die 1645 kg titanene Abstiegskapsel trennte sich vom Vorbeiflug-Bus, trat mit 11,2 km/s in die Atmosphäre ein, setzte einen Fallschirm durch den oberen Dunst, warf ihn dann in 47 km Höhe ab und stürzte mit Scheibenbremse durch die untere Atmosphäre. Oberflächenlandung bei 7,5°S, 303°E (Phoebe Regio, vulkanischer Beta-Regio-Flanke) bei 7,4 m/s. Erste panoramische Farbbilder der Venus-Oberfläche; erste Röntgenfluoreszenz-Bodenkomposition (basaltisch); erste akustische Aufzeichnungen von einem anderen Planeten. Lander operierte 127 Minuten — weit jenseits der 32-Minuten-Designzeit — vor Silikon-Elektronik-Ausfall.',
+      best_known_for:
+        'Erste Farbbilder der Venus-Oberfläche — 127-Minuten-Überleben bei 470 °C / 89 bar',
+    },
+    es: {
+      tagline:
+        'Primeras imágenes en color de la superficie de Venus — sobrevivió 127 minutos en 470 °C / 89 atm',
+      description:
+        'Par de aterrizadores soviéticos para Venus (con Venera 14). Lanzado el 30-10-1981 en un Proton-K / D-1 desde Baikonur. Llegada a Venus el 01-03-1982: la cápsula de descenso de titanio de 1645 kg se separó del bus de sobrevuelo, entró en la atmósfera a 11,2 km/s, desplegó un paracaídas a través de la bruma superior, luego lo jettisonó a 47 km y cayó libremente con un freno de disco para el descenso terminal. Toque de superficie a 7,5°S, 303°E (Phoebe Regio, flanco volcánico de Beta Regio) a 7,4 m/s. Primeras imágenes panorámicas en color de la superficie de Venus; primer análisis de composición de suelo por fluorescencia de rayos X (basáltico, similar al basalto leucítico del fondo oceánico terrestre); primeras grabaciones acústicas de otro planeta. El aterrizador operó 127 minutos — mucho más allá de la vida diseñada de 32 minutos.',
+      best_known_for:
+        'Primeras imágenes en color de la superficie de Venus — 127 minutos de supervivencia en 470 °C / 89 atm',
+    },
+    fr: {
+      tagline:
+        'Premières images couleur de la surface de Vénus — a survécu 127 minutes dans des conditions de 470 °C / 89 atm',
+      description:
+        "Paire d'atterrisseurs soviétiques pour Vénus (avec Venera 14). Lancée le 30/10/1981 sur Proton-K / D-1 depuis Baïkonour. Arrivée vénusienne le 01/03/1982 : la capsule de descente en titane de 1645 kg s'est séparée du bus de survol, est entrée dans l'atmosphère à 11,2 km/s, a déployé un parachute à travers la brume supérieure, l'a largué à 47 km puis a chuté librement avec un frein à disque pour la descente terminale. Touche de surface à 7,5°S, 303°E (Phoebe Regio, flanc volcanique de Beta Regio) à 7,4 m/s. Premières images panoramiques en couleur de la surface vénusienne ; première analyse de composition de sol par fluorescence X (basaltique, similaire au basalte leucitique du fond océanique terrestre) ; premiers enregistrements acoustiques d'une autre planète. L'atterrisseur a fonctionné 127 minutes — bien au-delà de la vie conçue de 32 minutes.",
+      best_known_for:
+        'Premières images couleur de la surface de Vénus — 127 minutes de survie dans 470 °C / 89 atm',
+    },
+    hi: {
+      tagline:
+        'Venus की सतह की पहली रंगीन छवियाँ — 470 °C / 89-atm स्थितियों में 127 मिनट जीवित रहा',
+      description:
+        'सोवियत Venus लैंडर जोड़ी (Venera 14 के साथ)। 30-10-1981 को Baikonur से Proton-K / D-1 पर लॉन्च। 1982-03-01 को Venus आगमन: 1645 किग्रा टाइटेनियम डिसेंट कैप्सूल फ्लाईबाई बस से अलग हुआ, 11.2 किमी/सेकंड पर वायुमंडल में प्रवेश किया, ऊपरी धुंध के माध्यम से पैराशूट तैनात किया, फिर इसे 47 किमी पर छोड़ दिया और टर्मिनल अवतरण के लिए डिस्क-ब्रेक के साथ निचले वायुमंडल से मुक्त रूप से गिरा। सतह स्पर्श 7.5°S, 303°E (Phoebe Regio, Beta Regio ज्वालामुखी कगार) पर 7.4 मीटर/सेकंड। Venus सतह की पहली पैनोरमिक रंगीन छवियाँ; पहला एक्स-रे फ्लोरेसेंस मिट्टी संरचना विश्लेषण (बेसाल्टिक); किसी अन्य ग्रह से पहली ध्वनिक रिकॉर्डिंग। लैंडर ने 127 मिनट काम किया — डिज़ाइन की 32-मिनट जीवन से कहीं अधिक।',
+      best_known_for: 'Venus सतह की पहली रंगीन छवियाँ — 470 °C / 89-atm में 127 मिनट जीवित रहना',
+    },
+    it: {
+      tagline:
+        'Prime immagini a colori della superficie di Venere — sopravvissuto 127 minuti in condizioni di 470 °C / 89 atm',
+      description:
+        "Coppia di lander sovietici per Venere (con Venera 14). Lanciato il 30/10/1981 su Proton-K / D-1 da Baikonur. Arrivo a Venere l'01/03/1982: la capsula di discesa in titanio da 1645 kg si è separata dal bus di sorvolo, è entrata nell'atmosfera a 11,2 km/s, ha dispiegato un paracadute attraverso la foschia superiore, lo ha rilasciato a 47 km e poi è caduta liberamente con un freno a disco per la discesa terminale. Atterraggio sulla superficie a 7,5°S, 303°E (Phoebe Regio, fianco vulcanico di Beta Regio) a 7,4 m/s. Prime immagini panoramiche a colori della superficie venusiana; prima analisi di composizione del suolo per fluorescenza ai raggi X (basaltica, simile al basalto leucitico del fondo oceanico terrestre); prime registrazioni acustiche da un altro pianeta. Il lander ha operato 127 minuti — ben oltre la vita progettuale di 32 minuti.",
+      best_known_for:
+        'Prime immagini a colori della superficie di Venere — 127 minuti di sopravvivenza in 470 °C / 89 atm',
+    },
+    ja: {
+      name: 'ベネラ 13',
+      tagline: '金星表面の初のカラー画像 — 470 °C／89 気圧の環境で 127 分間生存',
+      description:
+        'ソ連の金星着陸機ペア（Venera 14 とともに）。1981 年 10 月 30 日に Proton-K／D-1 でバイコヌールから打ち上げ。1982 年 3 月 1 日に金星到着：1645 kg のチタン製降下カプセルがフライバイ機体から分離し、11.2 km/s で大気に突入、上層もやでパラシュートを展開、47 km でパラシュートを切り離してディスクブレーキで下層大気を自由落下。着陸地点は南緯 7.5°、東経 303°（Phoebe Regio、Beta Regio 火山側面）、着地速度 7.4 m/s。金星表面の初のカラーパノラマ画像；初の X 線蛍光土壌組成分析（玄武岩質、地球海底の leucite 玄武岩に類似）；他の惑星からの初の音響記録。設計寿命 32 分を大きく超え 127 分間動作した。',
+      best_known_for: '金星表面の初カラー画像 — 470 °C／89 気圧で 127 分の生存',
+    },
+    ko: {
+      name: '베네라 13',
+      tagline: '금성 표면의 최초 컬러 영상 — 470 °C / 89 기압 환경에서 127분 생존',
+      description:
+        '소비에트 금성 착륙선 쌍(베네라 14와 함께). 1981년 10월 30일 바이코누르에서 Proton-K / D-1로 발사. 1982년 3월 1일 금성 도착: 1645 kg 티타늄 강하 캡슐이 비행 모선에서 분리되어 11.2 km/s로 대기에 진입, 상층 안개를 통해 낙하산을 펼친 뒤 47 km에서 낙하산을 분리하고 디스크 브레이크로 하층 대기를 자유 낙하했다. 7.5°S, 303°E(Phoebe Regio, Beta Regio 화산 측면)에 7.4 m/s로 착륙. 금성 표면의 최초 컬러 파노라마 영상, 최초 X선 형광 토양 성분 분석(현무암질, 지구 해저의 leucite 현무암과 유사), 다른 행성에서의 최초 음향 기록. 설계 수명 32분을 훨씬 넘는 127분간 작동.',
+      best_known_for: '금성 표면의 최초 컬러 영상 — 470 °C / 89 기압에서 127분 생존',
+    },
+    nl: {
+      tagline:
+        'Eerste kleurenbeelden van het oppervlak van Venus — overleefde 127 minuten in 470 °C / 89 atm omstandigheden',
+      description:
+        'Sovjet Venus-landerpaar (met Venera 14). Gelanceerd op 30-10-1981 op Proton-K / D-1 vanaf Baikonoer. Venus-aankomst op 01-03-1982: de 1645 kg titanium afdaalcapsule scheidde zich van de flyby-bus, ging de atmosfeer in op 11,2 km/s, ontplooide een parachute door de bovenste damp, gooide deze daarna af op 47 km en viel vrij door de onderste atmosfeer met een schijfrem voor terminale afdaling. Oppervlakte-aanraking op 7,5°S, 303°E (Phoebe Regio, Beta Regio vulkanische flank) op 7,4 m/s. Eerste panoramische kleurenbeelden van het Venus-oppervlak; eerste röntgenfluorescentie bodemcompositie-analyse (basaltisch, vergelijkbaar met aardse oceaanbodem leuciet-basalt); eerste akoestische opnamen van een andere planeet. De lander werkte 127 minuten — veel langer dan de ontwerpduur van 32 minuten.',
+      best_known_for:
+        'Eerste kleurenbeelden van het Venus-oppervlak — 127 minuten overleven in 470 °C / 89 atm',
+    },
+    'pt-BR': {
+      tagline:
+        'Primeiras imagens coloridas da superfície de Vênus — sobreviveu 127 minutos em condições de 470 °C / 89 atm',
+      description:
+        'Par soviético de sondas para Vênus (com Venera 14). Lançada em 30-10-1981 num Proton-K / D-1 de Baikonur. Chegada a Vênus em 01-03-1982: a cápsula de descida de titânio de 1645 kg se separou do barramento de sobrevoo, entrou na atmosfera a 11,2 km/s, abriu um paraquedas pela neblina superior, soltou-o a 47 km e caiu livremente pela atmosfera inferior com freio a disco para a descida terminal. Toque na superfície em 7,5°S, 303°E (Phoebe Regio, flanco vulcânico de Beta Regio) a 7,4 m/s. Primeiras imagens panorâmicas coloridas da superfície venusiana; primeira análise de composição do solo por fluorescência de raios X (basáltica, similar ao basalto leucítico do fundo oceânico terrestre); primeiras gravações acústicas de outro planeta. A sonda operou 127 minutos — muito além da vida projetada de 32 minutos.',
+      best_known_for:
+        'Primeiras imagens coloridas da superfície de Vênus — 127 minutos sobrevivendo em 470 °C / 89 atm',
+    },
+    ru: {
+      name: 'Венера-13',
+      tagline:
+        'Первые цветные изображения поверхности Венеры — 127 минут работы в условиях 470 °C / 89 атм',
+      description:
+        'Советская пара посадочных аппаратов для Венеры (вместе с Венерой-14). Запущена 30.10.1981 на «Протон-К / Д-1» с Байконура. Прилёт к Венере 01.03.1982: 1645-кг титановая спускаемая капсула отделилась от пролётного аппарата, вошла в атмосферу со скоростью 11.2 км/с, раскрыла парашют в верхней дымке, сбросила его на 47 км и совершила свободное падение через нижнюю атмосферу с дисковым тормозом для финального снижения. Посадка на поверхности в точке 7.5°S, 303°E (Phoebe Regio, фланг вулкана Beta Regio) со скоростью 7.4 м/с. Первые цветные панорамные изображения поверхности Венеры; первый рентгенофлуоресцентный анализ состава грунта (базальтовый, схожий с земными океаническими лейцитовыми базальтами); первые акустические записи с другой планеты. Аппарат проработал 127 минут — намного дольше расчётных 32 минут — до отказа кремниевой электроники при 470 °C и 89 атм в углекислотной атмосфере.',
+      best_known_for:
+        'Первые цветные изображения поверхности Венеры — 127 минут работы в 470 °C / 89 атм',
+    },
+    'sr-Cyrl': {
+      tagline:
+        'Прве колор слике површине Венере — преживела 127 минута у условима од 470 °C / 89 атм',
+      description:
+        'Совјетски пар лендера за Венеру (са Венером-14). Лансирана 30.10.1981. на Proton-K / Д-1 из Бајконура. Долазак на Венеру 01.03.1982: 1645-kg титанска спустна капсула одвојила се од пролетне шасије, ушла у атмосферу брзином од 11.2 km/s, развила падобран кроз горњу маглу, испустила га на 47 km и слободно пала кроз доњу атмосферу са диск-кочницом за терминално спуштање. Слетање на површину у 7,5°S, 303°E (Phoebe Regio, вулкански бок Beta Regio) брзином 7,4 m/s. Прве панорамске колор слике површине Венере; прва X-зрачна флуоресцентна анализа састава тла (базалтна, слично земаљском океанском леуцитном базалту); први акустички записи са друге планете. Лендер је радио 127 минута — далеко преко пројектованих 32 минута — пре отказа силицијумске електронике у CO₂ атмосфери од 470 °C / 89 атм.',
+      best_known_for:
+        'Прве колор слике површине Венере — 127 минута преживљавања у 470 °C / 89 атм',
+    },
+    'zh-CN': {
+      name: '金星 13 号',
+      tagline: '金星表面的首张彩色图像 — 在 470 °C / 89 atm 环境下存活 127 分钟',
+      description:
+        '苏联金星着陆器双子（与金星 14 号）。1981-10-30 在拜科努尔由 Proton-K / D-1 发射。1982-03-01 抵达金星：1645 kg 钛制下降舱与飞越主舱分离，以 11.2 km/s 进入大气层，先在上层雾中展开降落伞，随后于 47 km 处抛伞、由盘式制动装置经下层大气自由下落作末段减速。在 7.5°S、303°E（Phoebe Regio，Beta Regio 火山侧翼）以 7.4 m/s 触地。首批金星表面彩色全景图像；首次 X 射线荧光土壤成分分析（玄武岩质，类似地球海底白榴石玄武岩）；首批来自其他行星的声学记录。着陆器工作 127 分钟 — 远超原 32 分钟设计寿命 — 之后硅基电子器件在 470 °C / 89 atm 的 CO₂ 环境下失效。',
+      best_known_for: '金星表面首张彩色图像 — 470 °C / 89 atm 下存活 127 分钟',
+    },
   },
 };
 
@@ -214,7 +1256,10 @@ async function main() {
   let wrote = 0;
   for (const [spacecraft, byLocale] of Object.entries(OVERLAYS)) {
     const cat = CATEGORIES[spacecraft];
-    if (!cat) { console.warn(`?? ${spacecraft}: no category`); continue; }
+    if (!cat) {
+      console.warn(`?? ${spacecraft}: no category`);
+      continue;
+    }
     for (const locale of LOCALES) {
       const entry = byLocale[locale];
       if (!entry) {
@@ -230,4 +1275,7 @@ async function main() {
   console.log(`✓ wrote ${wrote} overlay files`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

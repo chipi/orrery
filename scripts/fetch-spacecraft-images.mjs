@@ -1,15 +1,21 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import sharp from 'sharp';
 
-const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA =
+  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
 const W = 'https://commons.wikimedia.org/wiki/Special:FilePath';
-const RATIOS = [{ id: '1x1', w: 1, h: 1 }, { id: '4x3', w: 4, h: 3 }, { id: '16x9', w: 16, h: 9 }];
+const RATIOS = [
+  { id: '1x1', w: 1, h: 1 },
+  { id: '4x3', w: 4, h: 3 },
+  { id: '16x9', w: 16, h: 9 },
+];
 
 const SPEC = JSON.parse(readFileSync('/tmp/spacecraft-images.json', 'utf8'));
 const SOURCES = JSON.parse(readFileSync('static/data/fleet-image-sources.json', 'utf8'));
 const GALLERIES = JSON.parse(readFileSync('static/data/fleet-galleries.json', 'utf8'));
 
-let ok = 0, fail = 0;
+let ok = 0,
+  fail = 0;
 for (const [spacecraft, items] of Object.entries(SPEC)) {
   const dir = `static/images/fleet-galleries/${spacecraft}`;
   mkdirSync(dir, { recursive: true });
@@ -27,19 +33,29 @@ for (const [spacecraft, items] of Object.entries(SPEC)) {
       const meta = await sharp(baseJpg).metadata();
       const { width: W2, height: H } = meta;
       for (const r of RATIOS) {
-        const target = r.w / r.h, src = W2 / H;
+        const target = r.w / r.h,
+          src = W2 / H;
         let cw, ch;
-        if (src > target) { ch = H; cw = Math.round(H * target); }
-        else { cw = W2; ch = Math.round(W2 / target); }
-        const left = Math.round((W2 - cw) / 2), top = Math.round((H - ch) / 2);
-        const out = await sharp(baseJpg).extract({ left, top, width: cw, height: ch }).jpeg({ quality: 85 }).toBuffer();
+        if (src > target) {
+          ch = H;
+          cw = Math.round(H * target);
+        } else {
+          cw = W2;
+          ch = Math.round(W2 / target);
+        }
+        const left = Math.round((W2 - cw) / 2),
+          top = Math.round((H - ch) / 2);
+        const out = await sharp(baseJpg)
+          .extract({ left, top, width: cw, height: ch })
+          .jpeg({ quality: 85 })
+          .toBuffer();
         writeFileSync(`${dir}/${slot}.${r.id}.jpg`, out);
       }
       SOURCES[`${spacecraft}/${slot}.jpg`] = { agency, sourceUrl: `${W}/${filename}` };
       saved++;
       ok++;
       // 250ms rate limit
-      await new Promise(r => setTimeout(r, 250));
+      await new Promise((r) => setTimeout(r, 250));
     } catch (e) {
       console.error(`  ✗ ${spacecraft}/${slot}: ${e.message}`);
       fail++;

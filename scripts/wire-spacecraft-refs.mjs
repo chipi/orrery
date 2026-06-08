@@ -27,9 +27,7 @@ const MISSION_REFS = {
     { id: 'new-glenn', role: 'launcher' },
     { id: 'blue-moon-mk1', role: 'spacecraft' },
   ],
-  'static/data/missions/moon/clementine.json': [
-    { id: 'clementine', role: 'spacecraft' },
-  ],
+  'static/data/missions/moon/clementine.json': [{ id: 'clementine', role: 'spacecraft' }],
   'static/data/missions/saturn/pioneer-11.json': [
     { id: 'atlas-slv-3d', role: 'launcher' },
     { id: 'pioneer-11', role: 'spacecraft' },

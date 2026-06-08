@@ -30,5 +30,11 @@
   ],
   "linked_missions": [
     "clementine"
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "clementine"
+    }
   ]
 }

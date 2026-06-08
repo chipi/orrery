@@ -475,6 +475,57 @@
     width: 100%;
     height: auto;
   }
+  /* Related-science cross-link cluster (life-in-space + space-stations
+     articles, always-on under the link tiers). The bare <h3> + <ul>
+     + <a> renders with browser defaults — huge dark heading, oversize
+     blue underlined links — which clashes with the rest of the panel.
+     Style it to match the .link-tier visual language: small Space
+     Mono header, padded chip-style anchors. */
+  .related-science {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .related-science h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: #4466ff;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+  }
+  .related-science ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .related-science li {
+    margin: 0;
+  }
+  .related-science a {
+    display: block;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-decoration: none;
+    line-height: 1.5;
+    min-height: 44px;
+    transition: all 0.15s;
+  }
+  .related-science a:hover,
+  .related-science a:focus-visible {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+  }
   .anatomy-caption {
     font-family: 'Crimson Pro', serif;
     font-style: italic;

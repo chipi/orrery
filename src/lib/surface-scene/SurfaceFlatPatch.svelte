@@ -29,10 +29,18 @@
     selected: SurfaceSite;
     config: SurfaceSceneConfig;
     traverses?: Record<string, Traverse>;
-    /** Called when the user dismisses the flat patch (Esc / back button). */
-    onClose: () => void;
+    /** km/px at the moment the sphere handed off to the flat-patch.
+     *  Used as the initial kmPerPx so the photo stays at the same
+     *  pixel scale across the transition — no jump from "sphere zoom
+     *  level X" to "flat-patch zoom level Y". Optional; falls back to
+     *  the detail-extent default when absent. */
+    entryKmPerPx?: number;
+    /** Called when the user dismisses the flat patch (Esc / back
+     *  button / wheel-out exit). Receives the current kmPerPx so the
+     *  sphere can resume at a camera distance that matches. */
+    onClose: (exitKmPerPx?: number) => void;
   }
-  let { selected, config, traverses, onClose }: Props = $props();
+  let { selected, config, traverses, entryKmPerPx, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
 
@@ -97,6 +105,15 @@
   let centroidLat = $state(0);
   let centroidLon = $state(0);
   let kmPerPx = $state(0.1); // 100 m/px default
+  /** kmPerPx the patch entered at; remembered so we can exit back to
+   *  the sphere automatically once the user wheels out past it. */
+  // initialKmPerPx kept as a state slot for the wheel handler /
+  // future "fit to view" reset gestures, even though no live consumer
+  // reads it after the 2026-06-08 wheel-out simplification.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let initialKmPerPx = 0.1;
+  void initialKmPerPx;
+  let autoExitFired = $state(false);
 
   // Layer toggles — default-on; expose chip row in template.
   let layerRegional = $state(true);
@@ -141,19 +158,16 @@
       const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
       extentKm = Math.max(extentKm, widthKm, heightKm);
     }
-    if (extentKm === 0) return 0.001;
-    const vp =
-      typeof window !== 'undefined'
-        ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
-        : 1080;
-    // Floor sized so the region's longer dimension fills ~70 % of the
-    // shorter viewport dim at deepest zoom (was 0.4 → ~40 %, which left
-    // a postage-stamp patch sitting in a sea of black at the floor
-    // when users wheeled in). 70 % keeps the markers on-screen + lets
-    // the detail patch read at a usable scale; deeper still hits the
-    // upsample warning ("approaching pixel limit") rather than another
-    // hard wall.
-    return Math.max(0.001, extentKm / (vp * 0.7));
+    if (extentKm === 0) return 0.0001;
+    // 2026-06-08: floor was sized against region_bounds (~20 km on
+    // Mars) which forced the initial kmPerPx clamp UP and left the
+    // detail patch tiny on entry. Now the floor is the source
+    // product's NATIVE resolution (or slightly past for a touch of
+    // upsample headroom) — i.e. you can wheel-in until one screen
+    // pixel = one HiRISE pixel. The "DEEPEST ZOOM" microcopy then
+    // only fires when you're actually at the source-image limit.
+    const native = config.planet === 'mars' ? 0.00025 : config.planet === 'earth' ? 0.0003 : 0.0005;
+    return native * 0.5;
   }
 
   // ─── Initialisation from selected region ───────────────────────────
@@ -170,16 +184,26 @@
     const cosLat = Math.cos((centroidLat * Math.PI) / 180);
     const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
     const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
-    const regionKm = Math.max(widthKm, heightKm);
-    // Map to ~60 % of the viewport's shorter dimension (real, not the
-    // 600 px estimate the prior implementation used — that left a Moon
-    // landing-ellipse rendering as a ~360 px patch sitting in the
-    // middle of an otherwise-black 1400-px canvas).
+    // 2026-06-08: matching the sphere's km/px at handoff was wrong —
+    // the sphere intentionally stylizes the patch to ~100× its real
+    // ground extent so the photo fills the viewport, and using its
+    // km/px in the flat-patch dropped you straight into true-scale
+    // postage stamp (the 1.5 km HiRISE patch became 30 px on a 800 px
+    // viewport). Now sized so the DETAIL patch fills ~85 % of the
+    // shorter viewport dim regardless of how the sphere arrived
+    // here. The entryKmPerPx prop is kept for the exit-camR map but
+    // intentionally unused here.
+    void widthKm;
+    void heightKm;
+    void entryKmPerPx;
+    const detailKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
     const vp =
       typeof window !== 'undefined'
         ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
         : 800;
-    kmPerPx = regionKm / (0.6 * vp);
+    kmPerPx = detailKm / (0.85 * vp);
+    initialKmPerPx = kmPerPx;
+    autoExitFired = false;
   });
 
   // Unconditionally clamp kmPerPx to the current floor on every
@@ -234,8 +258,19 @@
     drawGraticule(ctx, W, H);
 
     // Regional rectangle (CTX / LROC NAC ROI) — true ground extent.
+    // Fades out as the user zooms deep enough that the detail (HiRISE /
+    // LROC NAC ROI) layer dominates the visible area. Two overlapping
+    // image-source rectangles read as "is this one image or two?";
+    // hiding the regional once detail is the canonical view collapses
+    // it back to a single legible photo (user feedback 2026-06-08:
+    // "there are 2 overlapping images, I am expecting only one").
     if (layerRegional && selected.region_bounds) {
-      drawRegionalLayer(ctx, W, H);
+      // Full opacity — the prior regionalFadeAtZoom kicked in at the
+      // entry zoom and washed CTX down to ~15 % alpha, which is why
+      // the regional layer looked "small and barely there" surrounded
+      // by black. Now CTX stays vivid; it naturally overflows the
+      // viewport behind the HiRISE patch as the surrounding texture.
+      drawRegionalLayer(ctx, W, H, 1);
     }
 
     // Detail rectangle (HiRISE / LROC NAC closeup) — true scale, centred
@@ -293,7 +328,13 @@
     }
   }
 
-  function drawRegionalLayer(ctx: CanvasRenderingContext2D, W: number, H: number) {
+  function drawRegionalLayer(
+    ctx: CanvasRenderingContext2D,
+    W: number,
+    H: number,
+    alpha: number = 1,
+  ) {
+    if (alpha < 0.01) return;
     const rb = selected.region_bounds!;
     const tl = project(rb.lat_max, rb.lon_min, W, H);
     const br = project(rb.lat_min, rb.lon_max, W, H);
@@ -310,17 +351,17 @@
       ctx.save();
       // Slight desaturation for "regional context" feel vs the detail
       // layer which renders at full saturation.
-      ctx.globalAlpha = 0.95;
+      ctx.globalAlpha = 0.95 * alpha;
       ctx.drawImage(regionalImage, x, y, w, h);
       ctx.globalAlpha = 1;
       ctx.restore();
     } else {
       // Placeholder while image loads / when source isn't wired.
-      ctx.fillStyle = 'rgba(255, 200, 80, 0.10)';
+      ctx.fillStyle = `rgba(255, 200, 80, ${0.1 * alpha})`;
       ctx.fillRect(x, y, w, h);
     }
     // Crisp gold border (regional = gold per mockup frame 04).
-    ctx.strokeStyle = 'rgba(255, 200, 80, 0.7)';
+    ctx.strokeStyle = `rgba(255, 200, 80, ${0.7 * alpha})`;
     ctx.lineWidth = 1.5;
     ctx.strokeRect(x, y, w, h);
     // Label in corner — REGIONAL · CTX (Mars) / LROC WAC (Moon).
@@ -335,11 +376,15 @@
         : config.planet === 'earth'
           ? 'Sentinel-2 ~10 m/px'
           : 'LROC NAC 5 m/px';
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = '#ffc850';
     ctx.fillText(
       `REGIONAL · ${sourceLabel} · ${kind.replace('_', ' ').toUpperCase()}`,
       x + 6,
       y + 6,
     );
+    ctx.restore();
   }
 
   function drawDetailLayer(ctx: CanvasRenderingContext2D, W: number, H: number) {
@@ -601,11 +646,22 @@
   }
   function onWheel(e: WheelEvent) {
     e.preventDefault();
-    // Zoom about the centroid. Floor is whichever of the region or
-    // polyline extent fills 40 % of the shorter viewport dimension
-    // — keeps every marker on-screen at the deepest zoom.
-    const factor = e.deltaY > 0 ? 1.1 : 0.9;
-    const minKmPerPx = deepestZoomFloor();
+    // ANY wheel-out exits to the sphere. The flat-patch is the deep
+    // end of the zoom; "wheeling out" past the entry is the same
+    // gesture as "go back to tier 2" (user feedback 2026-06-08: "let
+    // make zoom out work to take me back to tier 2"). Wheel-in
+    // continues to zoom further into HiRISE pixels until the floor.
+    if (e.deltaY > 0) {
+      if (!autoExitFired) {
+        autoExitFired = true;
+        onClose(kmPerPx);
+      }
+      return;
+    }
+    const factor = 0.9;
+    // Floor at the source product's near-native resolution — beyond
+    // that the upsample warning already fires.
+    const minKmPerPx = Math.max(nativeKmPerPx * 0.5, deepestZoomFloor() * 0.05);
     kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 
@@ -679,9 +735,25 @@
     onwheel={onWheel}
   ></canvas>
 
-  <button class="hud-back" type="button" onclick={onClose} aria-label={m.surface_flat_back_aria()}>
+  <button
+    class="hud-back"
+    type="button"
+    onclick={() => onClose(kmPerPx)}
+    aria-label={m.surface_flat_back_aria()}
+  >
     {m.surface_flat_back_to_planet()}
   </button>
+
+  <!-- True-scale ground view context banner — tells you exactly what
+       you're looking at when you cross from the (stylized) sphere
+       into the (true-scale) flat-patch. Added back 2026-06-08 after
+       being briefly removed in the seamless-transition attempt. -->
+  <div class="hud-context-banner mono" aria-hidden="true">
+    <span class="ctx-eyebrow">TRUE-SCALE GROUND VIEW</span>
+    <span class="ctx-subline">
+      {selected.name ?? selected.id} · live orbital imagery, not a 3D model
+    </span>
+  </div>
 
   <div class="hud-layers" role="group" aria-label={m.surface_flat_layer_toggles_aria()}>
     <button
@@ -770,16 +842,20 @@
     top: 16px;
     left: 16px;
     z-index: 5;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
-    padding: 8px 14px;
+    background: rgba(5, 5, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 6px 12px;
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.08em;
     cursor: pointer;
     backdrop-filter: blur(4px);
+    transition:
+      background 120ms,
+      color 120ms,
+      border-color 120ms;
   }
   .hud-back:hover {
     background: rgba(15, 15, 35, 0.92);
@@ -872,6 +948,37 @@
     background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
     z-index: 2;
   }
+  /* True-scale ground view context banner — top-center pill. */
+  .hud-context-banner {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: rgba(5, 5, 20, 0.92);
+    border: 1px solid rgba(78, 205, 196, 0.55);
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+  }
+  .hud-context-banner .ctx-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #4ecdc4;
+  }
+  .hud-context-banner .ctx-subline {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
   /* Deepest-zoom chip — bottom-center HUD, paired with the upsample
      warning at top-center so the two read as a "pixel-limit" status row
      when both fire near the floor. */

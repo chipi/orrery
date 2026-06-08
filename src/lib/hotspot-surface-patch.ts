@@ -175,18 +175,46 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // screen-pixel-stable sizing (image 20 feedback, 2026-06-02).
   // Without that scaling the disc stays at 0.005u world size and
   // at close zoom subtends 50+ px → the screen-filling green blob.
+  // White outline ring — sits behind the green core to give it a
+  // hard contrast halo against HiRISE / LROC NAC textures. Without it
+  // the 14 px green disc was easy to lose against rough gray terrain
+  // (user feedback 2026-06-08: "when only looking at HIRISE there is
+  // no green dot anymore").
+  // Pin core + halo retained for hover-pickability + back-compat but
+  // rendered invisible. The persistent HTML crosshair overlay (in
+  // SurfaceScene's template) is now the canonical landing-site marker;
+  // it sits above the WebGL canvas at the projected site position and
+  // matches the flat-patch's canvas crosshair so the symbol stays the
+  // same across tiers (user feedback 2026-06-08: "can we have same
+  // flat-patch crosshair marker across all tiers and not have any
+  // transitions and have it always visible?").
+  const pinHalo = new THREE.Mesh(
+    new THREE.CircleGeometry(0.007, 24),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0,
+      depthTest: false,
+      depthWrite: false,
+    }),
+  );
+  pinHalo.rotation.x = -Math.PI / 2;
+  pinHalo.position.y = Z_FIGHT_OFFSET_Y + 0.0014;
+  pinHalo.userData = { siteId: input.siteId, kind: 'patch-pin-halo' };
+  pinHalo.visible = false;
+  g.add(pinHalo);
+
   const pinCore = new THREE.Mesh(
     new THREE.CircleGeometry(0.005, 16),
     new THREE.MeshBasicMaterial({
       color: 0x22c55e,
       transparent: true,
-      opacity: 0.95,
+      opacity: 0,
+      depthTest: false,
       depthWrite: false,
-      polygonOffset: true,
-      polygonOffsetFactor: -4,
-      polygonOffsetUnits: -4,
     }),
   );
+  pinCore.visible = false;
   pinCore.rotation.x = -Math.PI / 2;
   pinCore.position.y = Z_FIGHT_OFFSET_Y + 0.0015;
   pinCore.userData = { siteId: input.siteId, kind: 'patch-pin' };
@@ -288,26 +316,29 @@ export function aspectFromRegion(rb: RegionBounds | undefined): number {
 }
 
 /**
- * Build a flat patch geometry (laid in the XZ plane, normal = +Y) with
- * the requested base diameter and aspect ratio. When aspect === 1 the
- * geometry is a `CircleGeometry` (legacy circular patch); otherwise it
- * is a rectangular `PlaneGeometry` whose width × height preserves the
- * circle's area while matching the requested aspect.
+ * Build a flat patch geometry (laid in the XZ plane, normal = +Y) as a
+ * rectangular `PlaneGeometry` whose width × height preserves the
+ * reference circle's area while matching the requested aspect. The
+ * legacy circular-patch branch was removed 2026-06-08 because every
+ * surface site that goes through this builder now ships with
+ * `region_bounds`, and the near-1 aspect threshold was incorrectly
+ * catching 6 real sites (Opportunity / Curiosity / Schiaparelli on
+ * Mars; Luna 9 / Luna 16 / Apollo 12 on the Moon) whose true
+ * lon×lat extent happens to be within 1 % of square at their latitude
+ * — drawing them as circles inconsistent with their actual extent.
  *
  * Area preservation: for a unit-diameter circle, area = π/4. For a
  * rectangle with the same area and width/height = aspect, height =
- * √(π/(4·aspect)), width = aspect × height.
+ * √(π/(4·aspect)), width = aspect × height. `segments` ignored now
+ * (planes don't need a segment count) but kept in the signature so
+ * callers don't need to change.
  */
 function buildPatchGeometry(
   baseDiameter: number,
   aspect: number,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   segments: number,
 ): THREE.BufferGeometry {
-  if (Math.abs(aspect - 1) < 0.01) {
-    const g = new THREE.CircleGeometry(baseDiameter / 2, segments);
-    g.rotateX(-Math.PI / 2);
-    return g;
-  }
   const circleArea = (Math.PI / 4) * baseDiameter * baseDiameter;
   const height = Math.sqrt(circleArea / aspect);
   const width = aspect * height;

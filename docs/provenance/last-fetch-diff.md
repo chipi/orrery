@@ -1,217 +1,66 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-08T11:09:22.774Z
+Generated: 2026-06-08T14:02:23.043Z
 Script: build-image-provenance@1.0.0
-Commit: 83a9e4d656cd258dbbfc792aa8b19eb3e014ae82
-Total entries: 3840
+Commit: 1eecf1ef6b752b2f249db143c685d1a186713529
+Total entries: 4182
 
-## Added (341)
+## Added (55)
 
-- `/images/fleet-galleries/molniya/02.jpg` — PD-Old via wikimedia-commons
-- `/images/fleet-galleries/sbirs-heo/01.jpg` — PD-Old via wikimedia-commons
-- `/images/fleet-galleries/sbirs-heo/02.jpg` — PD-Old via wikimedia-commons
-- `/images/fleet-galleries/sbirs-heo/03.jpg` — PD-Old via wikimedia-commons
-- `/images/fleet-galleries/tundra-sirius/01.jpg` — CC-BY-SA-3.0 via wikimedia-commons
-- `/images/mars-sites/beagle2/01.16x9.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/beagle2/01.1x1.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/beagle2/01.4x3.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
-- `/images/mars-sites/beagle2/02.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/beagle2/02.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/beagle2/02.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/01.16x9.jpg` — PD-Old via wikimedia-commons
-- `/images/mars-sites/curiosity/01.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/01.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/02.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/02.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/02.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/03.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/03.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/03.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/04.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/04.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/04.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/05.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/curiosity/05.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/exomars-rosalind-franklin/01.16x9.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
-- `/images/mars-sites/exomars-rosalind-franklin/01.1x1.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
-- `/images/mars-sites/exomars-rosalind-franklin/01.4x3.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
-- `/images/mars-sites/hope/01.16x9.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/hope/01.1x1.jpg` — CC-BY-2.0 via wikimedia-commons
-- `/images/mars-sites/hope/01.4x3.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/hope/02.16x9.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/hope/02.1x1.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/mars-sites/hope/02.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/03.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/03.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/03.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/04.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/04.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/04.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/05.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/hope/05.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/insight/01.16x9.jpg` — PD-NASA via wikimedia-commons
-- `/images/mars-sites/insight/01.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/insight/01.4x3.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/insight/02.16x9.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/insight/02.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/insight/02.4x3.jpg` — PD-NASA via nasa-images-api
-- … 291 more
+- `/images/fleet-galleries/bepicolombo/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/bepicolombo/02.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/bepicolombo/03.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/bepicolombo/04.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/bepicolombo/05.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/blue-moon-mk1/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/blue-moon-mk1/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/blue-moon-mk1/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/blue-moon-mk1/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/clementine/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/clementine/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/clementine/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/clementine/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/clementine/05.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/dawn/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/dawn/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/dawn/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/dawn/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/dawn/05.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/giotto/01.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/giotto/02.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/giotto/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/giotto/04.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/juice/01.jpg` — CC0 via wikimedia-commons
+- `/images/fleet-galleries/juice/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/juice/03.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/juice/04.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/juice/05.jpg` — CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/messenger/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/messenger/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/messenger/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/messenger/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/messenger/05.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/pioneer-11/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/pioneer-11/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/pioneer-11/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/pioneer-11/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/ulysses/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/ulysses/02.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/ulysses/03.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/ulysses/04.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/ulysses/05.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/vega-1/01.jpg` — CC-BY-SA-2.0 via wikimedia-commons
+- `/images/fleet-galleries/vega-1/02.jpg` — CC-BY-SA-2.0 via wikimedia-commons
+- `/images/fleet-galleries/vega-1/03.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/vega-1/04.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/vega-1/05.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/vega-2/01.jpg` — PD-Old via wikimedia-commons
+- `/images/fleet-galleries/vega-2/02.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/vega-2/03.jpg` — PD-Old via wikimedia-commons
+- … 5 more
 
 ## Removed (0)
 
 
-## Changed (70)
+## Changed (0)
 
-- `/images/mars-sites/beagle2/01.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "user:geni", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Beagle_2_replica.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=beagle+2+mars+lander+esa&media_type=image&keywords=beagle2"
-- `/images/mars-sites/beagle2/02.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "user:geni", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Beagle_2_replica.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=beagle+2+mars+lander+esa&media_type=image&keywords=beagle2"
-- `/images/mars-sites/curiosity/01.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL-Caltech/Malin Space Science Systems Derivative work including grading, distortion correction, minor local adjustments and rendering from tiff-file: Julian Herzog", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:PIA16239_High-Resolution_Self-Portrait_by_Curiosity_Rover_Arm_Camera.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=curiosity+rover+mars&media_type=image&keywords=curiosity"
-- `/images/mars-sites/exomars-rosalind-franklin/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AExoMars%20rover%20panels%20(ESA378296).jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=exomars+rosalind+franklin+rover&media_type=image&keywords=exomars-rosalind-franklin"
-- `/images/mars-sites/hope/01.jpg`
-  - before — source_url: "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg"
-  - after — source_url: "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg"
-- `/images/mars-sites/hope/02.jpg`
-  - before — license_short: "CC-BY-2.0", author: "Andrea Luck from Glasgow, Scotland, United Kingdom", agency: "UAESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_-_Olympus_Mons_-_Orbit_12_-_Hope_Mission_(51575361799).png"
-  - after — license_short: "PD-NASA", author: "UAESA / NASA", agency: "UAESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=emirates+mars+mission+hope+spacecraft&media_type=image&keywords=hope-probe"
-- `/images/mars-sites/hope/03.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "BugWarp", agency: "UAESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg"
-  - after — license_short: "PD-NASA", author: "UAESA / NASA", agency: "UAESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=emirates+mars+mission+hope+spacecraft&media_type=image&keywords=hope-probe"
-- `/images/mars-sites/hope/04.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "BugWarp", agency: "UAESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg"
-  - after — license_short: "PD-NASA", author: "UAESA / NASA", agency: "UAESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=emirates+mars+mission+hope+spacecraft&media_type=image&keywords=hope-probe"
-- `/images/mars-sites/hope/05.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "BugWarp", agency: "UAESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_01_(cropped).jpg"
-  - after — license_short: "PD-NASA", author: "UAESA / NASA", agency: "UAESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=emirates+mars+mission+hope+spacecraft&media_type=image&keywords=hope-probe"
-- `/images/mars-sites/insight/01.jpg`
-  - before — author: "NASA/JPL-Caltech/Lockheed Martin", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:PIA19664-MarsInSightLander-Assembly-20150430.jpg"
-  - after — author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=insight+mars+lander&media_type=image&keywords=insight"
-- `/images/mars-sites/mangalyaan/01.jpg`
-  - before — license_short: "PD-self", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission_in_cleanroom_(1).jpg"
-  - after — license_short: "CC-BY-SA-4.0", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission.jpg"
-- `/images/mars-sites/mangalyaan/02.jpg`
-  - before — license_short: "CC-BY-2.0", author: "Justin Cowart", agency: "ISRO", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_(30055660701).png"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mangalyaan+mars+orbiter+mission&media_type=image&keywords=mangalyaan"
-- `/images/mars-sites/mangalyaan/03.jpg`
-  - before — license_short: "PD-self", author: "Indian Space Research Organisation", agency: "ISRO", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission_Spacecraft.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mangalyaan+mars+orbiter+mission&media_type=image&keywords=mangalyaan"
-- `/images/mars-sites/mangalyaan/04.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "Indian Space Research Organisation", agency: "ISRO", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mangalyaan+mars+orbiter+mission&media_type=image&keywords=mangalyaan"
-- `/images/mars-sites/mangalyaan/05.jpg`
-  - before — license_short: "PD-self", author: "Indian Space Research Organisation", agency: "ISRO", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:India_as_seen_by_Mars_Colour_Camera_(MCC)_during_the_Mars_Orbiter_Mission_(MOM)_journey_towards_Mars.png"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mangalyaan+mars+orbiter+mission&media_type=image&keywords=mangalyaan"
-- `/images/mars-sites/mariner9/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMariner%209%20-%20GPN-2000-001787.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mariner+9+mars+orbiter&media_type=image&keywords=mariner9"
-- `/images/mars-sites/mariner9/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMariner%209%20-%20GPN-2000-001787.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mariner+9+mars+orbiter&media_type=image&keywords=mariner9"
-- `/images/mars-sites/mariner9/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AOlympus%20Mons%20aurora.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mariner+9+mars+orbiter&media_type=image&keywords=mariner9"
-- `/images/mars-sites/mars-express/01.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL/Corby Waste", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Express_illustration_highlighting_MARSIS_antenna.jpg"
-  - after — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", source_url: "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_Mars_Express_and_Phobos_ESA233015.jpg"
-- `/images/mars-sites/mars-express/02.jpg`
-  - before — license_short: "PD-Old", author: "NASA / JPL-Caltech / University of Arizona", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Phobos_colour_2008.jpg"
-  - after — license_short: "PD-NASA", author: "ESA / NASA", agency: "ESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+express+orbiter+esa&media_type=image&keywords=mars-express"
-- `/images/mars-sites/mars-express/03.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Express_and_Phobos_(4400657859).jpg"
-  - after — license_short: "PD-NASA", author: "ESA / NASA", agency: "ESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+express+orbiter+esa&media_type=image&keywords=mars-express"
-- `/images/mars-sites/mars-express/04.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_Mars_Express_and_Phobos_ESA233015.jpg"
-  - after — license_short: "PD-NASA", author: "ESA / NASA", agency: "ESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+express+orbiter+esa&media_type=image&keywords=mars-express"
-- `/images/mars-sites/mars-express/05.jpg`
-  - before — license_short: "CC-BY-4.0", author: "Jackie Branc", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Olympus_Mons_-_ESA_Mars_Express.png"
-  - after — license_short: "PD-NASA", author: "ESA / NASA", agency: "ESA / NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+express+orbiter+esa&media_type=image&keywords=mars-express"
-- `/images/mars-sites/mars-odyssey/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3A2001%20Mars%20Odyssey%20-%20PIA04816.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=2001+mars+odyssey+orbiter+themis&media_type=image&keywords=mars-odyssey"
-- `/images/mars-sites/mars-odyssey/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3A2001%20Mars%20Odyssey%20-%20PIA04816.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=2001+mars+odyssey+orbiter+themis&media_type=image&keywords=mars-odyssey"
-- `/images/mars-sites/mars-odyssey/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20Odyssey%20illustration.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=2001+mars+odyssey+orbiter+themis&media_type=image&keywords=mars-odyssey"
-- `/images/mars-sites/mars-pathfinder/01.jpg`
-  - before — license_short: "PD-Old", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Pathfinder_Presidential_Panorama.jpg"
-  - after — license_short: "PD-NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+pathfinder+sojourner+rover&media_type=image&keywords=mars-pathfinder"
-- `/images/mars-sites/mars2/01.jpg`
-  - before — author: "NASA: http://photojournal.jpl.nasa.gov/catalog/PIA02004", source_url: "https://commons.wikimedia.org/wiki/File:Mars_2.jpg"
-  - after — author: "Post of Soviet Union", source_url: "https://commons.wikimedia.org/wiki/File:1972._%D0%9C%D0%B0%D1%80%D1%81-3.jpg"
-- `/images/mars-sites/mars2/02.jpg`
-  - before — license_short: "PD-Old", author: "Post of Soviet Union", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Soviet_Union-1972-Stamp-0.06._Mars_2.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+2+soviet+mars+probe&media_type=image&keywords=mars2"
-- `/images/mars-sites/mars2/03.jpg`
-  - before — license_short: "PD-Old", author: "NASA: http://photojournal.jpl.nasa.gov/catalog/PIA02004", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_2.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+2+soviet+mars+probe&media_type=image&keywords=mars2"
-- `/images/mars-sites/mars2/04.jpg`
-  - before — license_short: "PD-Old", author: "Post of Soviet Union", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:1972._%D0%9C%D0%B0%D1%80%D1%81-3.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+2+soviet+mars+probe&media_type=image&keywords=mars2"
-- `/images/mars-sites/mars3/01.jpg`
-  - before — author: "Soviet Union", source_url: "https://commons.wikimedia.org/wiki/File:Mars_3_surface_transmission.jpg"
-  - after — author: "NASA MRO, JPL, University of Arizona", source_url: "https://commons.wikimedia.org/wiki/File:Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg"
-- `/images/mars-sites/mars3/02.jpg`
-  - before — license_short: "PD-Old", author: "Post of Soviet Union", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:1972._%D0%9C%D0%B0%D1%80%D1%81-3.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+3+soviet+lander&media_type=image&keywords=mars3"
-- `/images/mars-sites/mars3/03.jpg`
-  - before — license_short: "PD-Russia", author: "NASA/JPL-Caltech/Univ. of Arizona", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+3+soviet+lander&media_type=image&keywords=mars3"
-- `/images/mars-sites/mars3/04.jpg`
-  - before — license_short: "PD-Old", author: "NASA MRO, JPL, University of Arizona", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+3+soviet+lander&media_type=image&keywords=mars3"
-- `/images/mars-sites/mars6/01.jpg`
-  - before — license_short: "PD-Old", author: "Nasa", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_6.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+6+soviet+mars+probe&media_type=image&keywords=mars6"
-- `/images/mars-sites/mars6/02.jpg`
-  - before — license_short: "PD-Old", author: "Почта СССР, scan by EugeneZelenko", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Soviet_Union-1972-Stamp-0.06._15_Years_of_Space_Age._Mars.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+6+soviet+mars+probe&media_type=image&keywords=mars6"
-- `/images/mars-sites/mars6/03.jpg`
-  - before — license_short: "PD-Old", author: "Nasa", agency: "ROSCOSMOS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_6.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+6+soviet+mars+probe&media_type=image&keywords=mars6"
-- `/images/mars-sites/maven/01.jpg`
-  - before — license_short: "PD-Old", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Preparing_MAVEN_for_Mars.jpg"
-  - after — license_short: "PD-NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=maven+mars+orbiter+nasa&media_type=image&keywords=maven"
-- `/images/mars-sites/mro/01.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL/Corby Waste", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Reconnaissance_Orbiter.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+reconnaissance+orbiter+hirise&media_type=image&keywords=mro"
-- `/images/mars-sites/mro/02.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL/Corby Waste", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Mars_Reconnaissance_Orbiter.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+reconnaissance+orbiter+hirise&media_type=image&keywords=mro"
-- `/images/mars-sites/mro/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APIA10198%20Phoenix%20Lander%20on%20Parachute.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+reconnaissance+orbiter+hirise&media_type=image&keywords=mro"
-- `/images/mars-sites/opportunity/01.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL/Cornell University, Maas Digital LLC", source_url: "https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3APIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg"
-- `/images/mars-sites/opportunity/02.jpg`
-  - before — license_short: "PD-Old", author: "NASA/JPL/Cornell University, Maas Digital LLC", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+exploration+rover+opportunity+meridiani&media_type=image&keywords=opportunity"
-- `/images/mars-sites/opportunity/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AOpportunity%20Rover%20at%20Endurance%20Crater.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+exploration+rover+opportunity+meridiani&media_type=image&keywords=opportunity"
-- `/images/mars-sites/opportunity/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=mars+exploration+rover+opportunity+meridiani&media_type=image&keywords=opportunity"
-- `/images/mars-sites/perseverance/01.jpg`
-  - before — author: "NASA/JPL-Caltech/ASU/MSSS", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg"
-  - after — author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=perseverance+rover+mars&media_type=image&keywords=perseverance"
-- `/images/mars-sites/phoenix/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APhoenix%20landed.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=phoenix+mars+lander+arctic&media_type=image&keywords=phoenix"
-- `/images/mars-sites/phoenix/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APhoenix%20landed.jpg"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=phoenix+mars+lander+arctic&media_type=image&keywords=phoenix"
-- `/images/mars-sites/phoenix/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APhoenix%20Mars%20Lander%20-%20Sublimating%20Ice.gif"
-  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=phoenix+mars+lander+arctic&media_type=image&keywords=phoenix"
-- … 20 more

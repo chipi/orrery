@@ -230,11 +230,35 @@
   // timeout so we can cancel mid-transition (e.g. user clicks back
   // while still fading in).
   let flatPatchTransitionTimer: ReturnType<typeof setTimeout> | null = null;
-  const FLAT_PATCH_FADE_MS = 600;
+  const FLAT_PATCH_FADE_MS = 220;
+  /** Sphere's current km/px at the deepest-zoom HiRISE distance.
+   *  Computed each animate frame and passed into SurfaceFlatPatch as
+   *  the entry zoom so the photo content stays at the *same pixel
+   *  scale* when the renderer hands off — no jump, no "and now I'm in
+   *  a different UI". */
+  let sphereKmPerPxAtSurface = $state(0.05);
+  /** Same idea on the way back out — when the user wheels OUT inside
+   *  the flat-patch, that component asks "what camR should the sphere
+   *  resume at to match my current zoom?". Computed at exit time from
+   *  the patch's final kmPerPx. */
+  function camRForKmPerPx(kmPerPx: number): number {
+    const vp = typeof window !== 'undefined' ? Math.max(300, window.innerHeight) : 800;
+    // Inverse of:
+    //   worldPerPx = 2 * (camR - 30) * tan(fov/2) / vp
+    //   kmPerPx   = worldPerPx * (radiusKm / planetRadius)
+    // → camR = 30 + (kmPerPx * vp * planetRadius) / (2 * tan(fov/2) * radiusKm)
+    const fovRad = 60 * (Math.PI / 180);
+    const tanHalf = Math.tan(fovRad / 2);
+    const camR = 30 + (kmPerPx * vp * 30) / (2 * tanHalf * config.radiusKm);
+    // Clamp to the sphere zoom range. 30.5 = above flat-patch trigger
+    // (so resuming from the patch always lands above the entry point);
+    // 200 matches the wheel handler's upper bound.
+    return Math.max(30.5, Math.min(200, camR));
+  }
   // Close handler — assigned inside onMount so it can bump camRTarget
   // back up past the trigger threshold (otherwise the patch would
   // immediately re-open on the next frame).
-  let closeFlatPatch: () => void = $state(() => {});
+  let closeFlatPatch: (exitKmPerPx?: number) => void = $state(() => {});
 
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
@@ -374,6 +398,22 @@
    */
   let scaleBar = $state<{ widthPx: number; label: string } | null>(null);
 
+  /** Selected site's projected screen position — drives a persistent
+   *  HTML crosshair overlay so the lander location is always marked,
+   *  no fading, no tier-based handoff. User feedback 2026-06-08: "can
+   *  we have same flat-patch crosshair marker across all tiers and
+   *  not have any transitions and have it always visible?" Updated
+   *  each animate frame; null when no site is selected or the site
+   *  faces away from the camera (back of sphere). */
+  let siteCrosshairScreen = $state<{ x: number; y: number; onScreen: boolean } | null>(null);
+  /** Mirrors the per-frame regionalOpacity computation inside the
+   *  animate loop so the template can gate the crosshair on the same
+   *  signal that fades the 3D lander out. User feedback 2026-06-08:
+   *  "yellow crosshair should show AFTER we fade out 3D lander model
+   *  and not overlap it". Initialised to 0 (wide zoom → lander
+   *  visible, crosshair hidden). */
+  let regionalOpacityForUi = $state(0);
+
   /**
    * Nation chip label + colour for the info card's site header.
    * Same shape as /mars's nationChipFor — Moon includes USSR (Luna)
@@ -461,6 +501,13 @@
     if (s) {
       selected = s;
       panelOpen = true;
+      // Picking a site is an explicit "I want to look at this" gesture,
+      // and the auto-spin makes wheel-zoom feel like you're chasing the
+      // marker. Pause the spin so the camera stays put; View3dControls'
+      // play/pause chip is bound to autoSpin so it reflects the change
+      // automatically. The user can resume spin via the chip if they
+      // want — we don't fight them.
+      autoSpin = false;
       if (options.face) faceCameraAtSite?.(s);
     }
   }
@@ -1658,10 +1705,14 @@
     // animates the camera back out and the trigger doesn't re-fire
     // on the next frame. Drive the 'leaving' phase (sphere fading
     // back in, flat patch fading out over 600 ms) before unmounting.
-    closeFlatPatch = () => {
+    closeFlatPatch = (exitKmPerPx?: number) => {
       if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
       flatPatchPhase = 'leaving';
-      camRTarget = 50;
+      // Resume the sphere at a camR that matches the user's current
+      // flat-patch zoom — no scale jump, the photo content stays the
+      // same size during the cross-fade. Fallback to 50 (the regional
+      // ramp start) if we don't have an exit zoom yet.
+      camRTarget = exitKmPerPx != null ? camRForKmPerPx(exitKmPerPx) : 50;
       flatPatchTransitionTimer = setTimeout(() => {
         flatPatchPhase = 'hidden';
         flatPatchTransitionTimer = null;
@@ -2711,6 +2762,61 @@
       // its initial 0 ("0 m altitude" forever).
       altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
 
+      // Match the flat-patch scale to the sphere scale at hand-off
+      // so the photo doesn't jump when the flat-patch component takes
+      // over. Same math the scale-bar uses below — surface distance
+      // → world units per pixel → km per pixel via the body's real
+      // radius. Smoothed (only update when change is meaningful) so
+      // the prop into SurfaceFlatPatch doesn't trigger a $effect on
+      // every imperceptible frame-to-frame jitter.
+      if (container) {
+        const surfaceDist = Math.max(0.05, camR - planetRadius);
+        const viewportH = renderer.domElement.clientHeight || window.innerHeight;
+        const worldPerPx = (2 * surfaceDist * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
+        const kmPerWorldUnit = config.radiusKm / planetRadius;
+        const kmPerPx = worldPerPx * kmPerWorldUnit;
+        if (
+          Math.abs(sphereKmPerPxAtSurface - kmPerPx) / Math.max(1e-9, sphereKmPerPxAtSurface) >
+          0.02
+        ) {
+          sphereKmPerPxAtSurface = kmPerPx;
+        }
+      }
+
+      // Persistent crosshair overlay — project the SELECTED site's
+      // lat/lon to screen coordinates so the template can pin an HTML
+      // crosshair there. Always-on, no transitions, no z-fight against
+      // the HiRISE texture (HTML sits above the WebGL canvas).
+      if (selected && selected.lat != null && selected.lon != null && container) {
+        const v = latLonToUnitSphere(selected.lat, selected.lon);
+        const worldPos = new THREE.Vector3(v.x, v.y, v.z).multiplyScalar(planetRadius);
+        planetMesh.updateMatrixWorld(true);
+        worldPos.applyMatrix4(planetMesh.matrixWorld);
+        // Visibility test: site is on the camera-facing hemisphere when
+        // the vector from camera→site points away from the site's
+        // outward normal. Avoids painting the crosshair through the
+        // planet onto the far hemisphere.
+        const camToSite = worldPos.clone().sub(camera.position).normalize();
+        const siteNormal = worldPos.clone().normalize();
+        const onFront = camToSite.dot(siteNormal) < 0;
+        const projected = worldPos.clone().project(camera);
+        const cw = container.clientWidth;
+        const ch = container.clientHeight;
+        const sx = ((projected.x + 1) / 2) * cw;
+        const sy = ((1 - projected.y) / 2) * ch;
+        const onScreen =
+          onFront &&
+          projected.z > -1 &&
+          projected.z < 1 &&
+          sx >= 0 &&
+          sx <= cw &&
+          sy >= 0 &&
+          sy <= ch;
+        siteCrosshairScreen = { x: sx, y: sy, onScreen };
+      } else if (siteCrosshairScreen !== null) {
+        siteCrosshairScreen = null;
+      }
+
       // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
       // Per-frame tier selection based on screen-projected marker size.
       // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
@@ -2760,10 +2866,38 @@
         // they stay readable. Hide entirely when promoted to Tier 2+
         // (the label is at the patch centre and visually crowds the
         // disc; /mars uses the same pattern).
+        // Regional opacity ramp hoisted up so labels can fade against
+        // it. Mirrors the formula used below for the tier-2 patch
+        // material — single source of truth for "how visible is the
+        // regional CTX/LROC patch right now?". camR 50 → ramp starts;
+        // camR 33 → fully visible.
+        const regionalFadeStartTop = 50;
+        const regionalFadeEndTop = 33;
+        const regionalOpacityTop =
+          camR >= regionalFadeStartTop
+            ? 0
+            : camR <= regionalFadeEndTop
+              ? 1
+              : 1 - (camR - regionalFadeEndTop) / (regionalFadeStartTop - regionalFadeEndTop);
+        // Publish to template state so the HTML crosshair can gate on
+        // the same signal that fades the 3D lander out.
+        if (Math.abs(regionalOpacityForUi - regionalOpacityTop) > 0.005) {
+          regionalOpacityForUi = regionalOpacityTop;
+        }
+        const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
+
         const tierByIdForLabels = new Map<string, number>();
         for (const h of hotspots) {
           tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
         }
+        // Label fade only applies to the SELECTED site's label —
+        // unselected sites keep their labels fully visible so the
+        // wider scene context is preserved while the user zooms in on
+        // one site (user feedback 2026-06-08: "you hid all the
+        // labels, and I asked only one from the site that is
+        // selected"). Tier-2 hard hide still applies to every label
+        // (those are physically inside the rectangle anyway).
+        const selectedSiteId = selected?.id;
         for (const mk of markers) {
           if (!mk.labelGroup) continue;
           const t = tierByIdForLabels.get(mk.siteId) ?? 0;
@@ -2771,8 +2905,46 @@
             mk.labelGroup.visible = false;
             continue;
           }
+          const fade = mk.siteId === selectedSiteId ? labelFade : 1;
+          if (fade < 0.01) {
+            mk.labelGroup.visible = false;
+            continue;
+          }
           mk.labelGroup.visible = true;
           mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
+          if (fade < 0.99) {
+            mk.labelGroup.traverse((obj) => {
+              if (obj instanceof THREE.Sprite) {
+                const mat = obj.material as THREE.SpriteMaterial;
+                mat.opacity = fade;
+                mat.transparent = true;
+              } else if (obj instanceof THREE.Mesh) {
+                const mat = obj.material as THREE.Material & { opacity: number };
+                if ('opacity' in mat) {
+                  mat.opacity = fade;
+                  mat.transparent = true;
+                }
+              }
+            });
+          } else {
+            // Reset to fully opaque when not fading (the user
+            // unselected this site after a partial fade).
+            mk.labelGroup.traverse((obj) => {
+              if (obj instanceof THREE.Sprite) {
+                const mat = obj.material as THREE.SpriteMaterial;
+                if (mat.opacity !== 1) {
+                  mat.opacity = 1;
+                  mat.transparent = false;
+                }
+              } else if (obj instanceof THREE.Mesh) {
+                const mat = obj.material as THREE.Material & { opacity: number };
+                if ('opacity' in mat && mat.opacity !== 1) {
+                  mat.opacity = 1;
+                  mat.transparent = false;
+                }
+              }
+            });
+          }
         }
 
         // Tier-2 detail opacity ramp. Patch is eager-built at site
@@ -2846,7 +3018,15 @@
           // way too long into the zoomed-in region." Engineering
           // model resurfaces when the user pulls back past camR=33
           // and re-mounts at panorama entry as before.
-          const lander3dFade = Math.max(0, 1 - regionalOpacity);
+          // Linear `1 - regionalOpacity` left the lander at ~50 %
+          // when the regional patch was already fully readable —
+          // user feedback 2026-06-08: "as soon as we render photo in
+          // square, I want 3D model to be gone." Steepen the fade by
+          // 4× so the lander hits 0 once the regional ramp passes
+          // 25 %, well before the photo is fully visible. The Tier-1
+          // engineering model + Tier-0 silhouette both share this
+          // fade so they leave the frame together.
+          const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
           if (h.tier1Group) {
             h.tier1Group.visible = lander3dFade > 0.01;
             h.tier1Group.traverse((obj) => {
@@ -2910,6 +3090,11 @@
           // enough to scan-read; end-dot is a tight punctuation mark.
           const pinHeightPx = 26;
           const endDotPx = 8;
+          // Patch-pin (the green landing-site disc) gets a beefier
+          // target so the locator stays readable on top of HiRISE
+          // terrain even at the deepest sphere zoom. 14 px ≈ a clear
+          // map-marker dot without dominating the rectangle.
+          const patchPinPx = 14;
           const captionWidthPx = 140;
           // Pin sprite has base scale (1, 1.5, 1) and canvas 64×96,
           // so the visible-height-to-base-Y-scale ratio is 1 (=> the
@@ -2922,12 +3107,18 @@
           // Patch-pin (green landing disc) has geometry radius 0.005u
           // (diameter 0.01u). Per-frame scale to the same screen-px
           // size as endDot so green + red read as a matched pair.
-          const patchPinScale = (endDotPx * worldPerPx) / 0.01;
+          const patchPinScale = (patchPinPx * worldPerPx) / 0.01;
+          // White halo ring's geometry radius is 0.007 → diameter 0.014.
+          // Scale so its on-screen diameter sits ~3 px wider than the
+          // green core. Read as a single locator pip, not two rings.
+          const patchPinHaloScale = ((patchPinPx + 3) * worldPerPx) / 0.014;
           for (const h of hotspots) {
             if (!h.tier2Group) continue;
             h.tier2Group.traverse((obj) => {
               if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin') {
                 obj.scale.set(patchPinScale, patchPinScale, 1);
+              } else if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin-halo') {
+                obj.scale.set(patchPinHaloScale, patchPinHaloScale, 1);
               }
             });
           }
@@ -3085,8 +3276,16 @@
         if (bestH && anyLayerVisible) {
           const site = sites.find((s) => s.id === bestH!.siteId);
           if (site) {
-            const hasRegional = !!site.hotspot_tier2_regional_source;
-            const hasDetail = !!site.hotspot_tier2_source;
+            // Only count a layer if it has BOTH a source AND is actually
+            // ramping on screen right now. Without the opacity gate the
+            // card surfaced "DETAIL VIEW · HiRISE" while the user was
+            // still in the wide CTX-only window (image 2 2026-06-08
+            // feedback: "while I am on CTX, summary of imaging also
+            // says we see HiRISE"). 5 % thresholds let the card update
+            // a hair before the layer is visibly there, which feels
+            // right perceptually.
+            const hasRegional = !!site.hotspot_tier2_regional_source && regionalOpacity > 0.05;
+            const hasDetail = !!site.hotspot_tier2_source && detailOpacity > 0.05;
             const agencyChip = nationChipFor(site);
             const layers: TierLayer[] = [];
             // Regional layer — honest per-planet attribution. Mars
@@ -3489,6 +3688,31 @@ sample      ${debugInfo.projectedPxSample}`}
     </div>
   {/if}
 
+  <!-- Persistent landing-site crosshair — same gold + cross-hair design
+       as the flat-patch view (SurfaceFlatPatch drawMarkers). Pinned to
+       the selected site's projected screen position every frame. Always
+       on top of the WebGL canvas, never fades or transitions; hidden
+       only when the flat-patch view takes over (its own canvas marker
+       continues the same shape there) or when the site faces away from
+       the camera. -->
+  {#if selected && siteCrosshairScreen && siteCrosshairScreen.onScreen && view === '3d' && !flatPatchActive && !panoramaActive && regionalOpacityForUi > 0.25}
+    <div
+      class="site-crosshair"
+      style="left: {siteCrosshairScreen.x}px; top: {siteCrosshairScreen.y}px; opacity: {Math.min(
+        1,
+        (regionalOpacityForUi - 0.25) * 4,
+      )}"
+      aria-hidden="true"
+      data-testid="site-crosshair"
+    >
+      <span class="ch-arm ch-up"></span>
+      <span class="ch-arm ch-down"></span>
+      <span class="ch-arm ch-left"></span>
+      <span class="ch-arm ch-right"></span>
+      <span class="ch-disc"></span>
+    </div>
+  {/if}
+
   <!-- Flat ground-patch view (ADR-062 / #283 Slice 4). Materialises
        when the user zooms past the threshold with a region selected.
        Owns the viewport fully while active; back gesture dismisses
@@ -3500,7 +3724,13 @@ sample      ${debugInfo.projectedPxSample}`}
       class:visible={flatPatchPhase === 'visible'}
       class:leaving={flatPatchPhase === 'leaving'}
     >
-      <SurfaceFlatPatch {selected} {config} {traverses} onClose={closeFlatPatch} />
+      <SurfaceFlatPatch
+        {selected}
+        {config}
+        {traverses}
+        entryKmPerPx={sphereKmPerPxAtSurface}
+        onClose={(exitKmPerPx) => closeFlatPatch(exitKmPerPx)}
+      />
     </div>
   {/if}
 
@@ -3547,7 +3777,7 @@ sample      ${debugInfo.projectedPxSample}`}
        reflect the on-screen km scale at the current camera zoom
        (image 21 ask, 2026-06-03). Hidden during panorama since
        ground distance is meaningless inside the inverted skybox. -->
-  {#if scaleBar && view === '3d' && !panoramaActive}
+  {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
     <div class="distance-scale" data-testid="distance-scale">
       <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
       <div class="distance-scale-label mono">{scaleBar.label}</div>
@@ -4027,7 +4257,7 @@ sample      ${debugInfo.projectedPxSample}`}
    *   over the full 600 ms with the 40 % tail when sphere is gone.
    * 'leaving': reverse. */
   .layer.flat-patch-fading {
-    transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 220ms cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
   }
   .flat-patch-wrapper {
@@ -4035,7 +4265,7 @@ sample      ${debugInfo.projectedPxSample}`}
     inset: 0;
     z-index: 4;
     opacity: 0;
-    transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 220ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .flat-patch-wrapper.visible,
   .flat-patch-wrapper.entering {
@@ -4060,6 +4290,59 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.78);
     text-transform: uppercase;
     backdrop-filter: blur(4px);
+  }
+  /* Persistent landing-site crosshair. Mirrors the gold-disc +
+     extending-arms shape of the SurfaceFlatPatch canvas marker so the
+     handoff from sphere → flat-patch reads as one continuous symbol
+     rather than two different markers cross-fading. */
+  .site-crosshair {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .site-crosshair .ch-disc {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: -6px;
+    top: -6px;
+    background: #ffd166;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+  .site-crosshair .ch-arm {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  }
+  .site-crosshair .ch-arm.ch-up {
+    left: -1px;
+    top: -22px;
+    width: 2px;
+    height: 10px;
+  }
+  .site-crosshair .ch-arm.ch-down {
+    left: -1px;
+    top: 12px;
+    width: 2px;
+    height: 10px;
+  }
+  .site-crosshair .ch-arm.ch-left {
+    left: -22px;
+    top: -1px;
+    width: 10px;
+    height: 2px;
+  }
+  .site-crosshair .ch-arm.ch-right {
+    left: 12px;
+    top: -1px;
+    width: 10px;
+    height: 2px;
   }
   .layer {
     position: absolute;

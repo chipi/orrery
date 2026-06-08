@@ -56,6 +56,10 @@
     {
       "id": "space-shuttle-orbiter",
       "role": "spacecraft"
+    },
+    {
+      "id": "ulysses",
+      "role": "payload"
     }
   ],
   "flight": {

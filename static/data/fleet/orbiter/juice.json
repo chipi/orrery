@@ -1,0 +1,39 @@
+{
+  "id": "juice",
+  "name": "JUICE",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "Airbus Defence and Space",
+  "first_flight": "2023-04-14",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "ESA's flagship Jupiter mission — Jupiter Icy Moons Explorer, the first dedicated study of Ganymede as a habitable world and the first orbiter ever to settle around a Galilean moon",
+  "credit": "Launched 2023-04-14 on an Ariane 5 ECA+ from Kourou on an 8.5-year cruise (Earth-Venus-Earth-Earth gravity-assist trajectory) to a Jupiter arrival in July 2031. Once in the Jovian system, JUICE makes ~35 flybys of Europa, Ganymede, and Callisto before entering Ganymede orbit in 2034 — the first spacecraft ever to orbit a moon other than Earth's. Ten-instrument payload includes ice-penetrating radar (RIME), submillimetre + sub-mm spectrometer, magnetometer, particle spectrometers, and a laser altimeter. Mission goals: characterise Ganymede + Callisto + Europa as potentially habitable subsurface-ocean worlds, probe the Jovian magnetosphere, and constrain Jupiter's atmosphere and gravity field.",
+  "links": [
+    {
+      "l": "Jupiter Icy Moons Explorer (JUICE) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer",
+      "t": "intro"
+    },
+    {
+      "l": "JUICE mission — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Juice",
+      "t": "intro"
+    },
+    {
+      "l": "JUICE — JPL participation (RIME instrument)",
+      "u": "https://www.jpl.nasa.gov/missions/juice-jupiter-icy-moons-explorer/",
+      "t": "core"
+    },
+    {
+      "l": "Grasset et al. (2013) — JUICE mission profile + science goals (Planetary and Space Science 78)",
+      "u": "https://doi.org/10.1016/j.pss.2012.12.002",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "juice"
+  ]
+}

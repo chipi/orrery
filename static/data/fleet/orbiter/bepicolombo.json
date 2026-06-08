@@ -1,0 +1,39 @@
+{
+  "id": "bepicolombo",
+  "name": "BepiColombo",
+  "category": "orbiter",
+  "agency": "ESA / JAXA",
+  "country": "Multi (Europe)",
+  "manufacturer": "Airbus Defence and Space / Mitsubishi Electric",
+  "first_flight": "2018-10-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Twin-orbiter joint ESA–JAXA Mercury mission — Europe + Japan's first ever Mercury orbiter, splitting into MPO + Mio at arrival in 2026 to map surface + magnetosphere from complementary orbits",
+  "credit": "Launched 2018-10-20 on an Ariane 5 ECA from Kourou. Mercury Transfer Module (MTM, ion-electric) carries the stack on a 7-year flyby cruise — 1 Earth, 2 Venus, 6 Mercury gravity assists — before Mercury orbit insertion in late 2026. At arrival the two orbiters separate: MPO (Mercury Planetary Orbiter, ESA-built, 480 × 1500 km polar orbit) carries 11 instruments for surface composition, topography, gravity, and exosphere; Mio (Mercury Magnetospheric Orbiter, JAXA-built, 590 × 11 640 km polar orbit) carries 5 instruments for the magnetosphere, plasma, and wave environment. Joint mission rationale: Mercury is the least-explored terrestrial planet; the dual-orbiter architecture covers science neither Messenger nor any single follow-up could.",
+  "links": [
+    {
+      "l": "BepiColombo — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/BepiColombo",
+      "t": "intro"
+    },
+    {
+      "l": "BepiColombo — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "intro"
+    },
+    {
+      "l": "BepiColombo / Mio — JAXA",
+      "u": "https://global.jaxa.jp/projects/sas/mmo/",
+      "t": "core"
+    },
+    {
+      "l": "Benkhoff et al. (2010) — BepiColombo science objectives (Planetary and Space Science 58)",
+      "u": "https://doi.org/10.1016/j.pss.2009.09.020",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "bepicolombo"
+  ]
+}

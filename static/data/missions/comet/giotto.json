@@ -52,6 +52,10 @@
     {
       "id": "ariane-1",
       "role": "launcher"
+    },
+    {
+      "id": "giotto",
+      "role": "spacecraft"
     }
   ],
   "flight": {

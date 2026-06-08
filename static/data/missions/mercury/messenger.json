@@ -57,6 +57,10 @@
     {
       "id": "delta-ii",
       "role": "launcher"
+    },
+    {
+      "id": "messenger",
+      "role": "spacecraft"
     }
   ],
   "flight": {

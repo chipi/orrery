@@ -52,6 +52,10 @@
     {
       "id": "ariane-5",
       "role": "launcher"
+    },
+    {
+      "id": "juice",
+      "role": "spacecraft"
     }
   ],
   "flight": {

@@ -278,7 +278,7 @@
           tier-driven external-link rails above.
         -->
         <section class="related-science">
-          <h3>{m.panel_links_core()}</h3>
+          <h3>{m.panel_related_science_heading()}</h3>
           <ul>
             <li>
               <a href="{base}/science/space-stations/pressurized-volume"
@@ -490,7 +490,10 @@
     font-family: 'Space Mono', monospace;
     font-size: 7px;
     letter-spacing: 2px;
-    color: #4466ff;
+    /* Muted accent, distinct from INTRO teal / CORE blue / DEEP gold
+       so the related-science cluster reads as a footer cross-link,
+       not a fourth link-tier. */
+    color: rgba(255, 255, 255, 0.45);
     margin: 0 0 6px;
     text-transform: uppercase;
   }

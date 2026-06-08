@@ -157,6 +157,15 @@ export interface MissionEvent {
   type: EventType;
 }
 
+/** Cross-link to a fleet entry (launcher / spacecraft / payload /
+ *  launch-site) — wired during the missions audit (commits 1063dfd22 +
+ *  1eecf1ef6 + 6a253e2e5). MissionPanel uses these to render vehicle +
+ *  payload cells as anchors to /fleet?id=<entry>. */
+export interface FleetRef {
+  id: string;
+  role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site';
+}
+
 export interface Mission extends MissionIndex {
   agency_full: string;
   departure_date: string;
@@ -168,6 +177,9 @@ export interface Mission extends MissionIndex {
   data_quality: DataQuality;
   credit: string;
   links: MissionLink[];
+  /** Cross-link to fleet entries. Optional; missions older than the
+   *  Phase 3 backfill (commits 1063dfd22 → 6a253e2e5) may not have it. */
+  fleet_refs?: FleetRef[];
   /** Editorial fields merged from locale overlay at fetch time (per ADR-017). */
   name?: string;
   type?: string;

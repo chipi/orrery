@@ -56,6 +56,23 @@
   // matches by either mission_id field (preferred) or id parity.
   let crossSite: SurfaceSite | null = $state(null);
 
+  // Cross-links to fleet entries. Wired from mission.fleet_refs (Phase
+  // 3 backfill). When present, the vehicle / payload spec cells render
+  // as anchors to /fleet?id=<entry>. Each role maps as follows:
+  //   · launcher → vehicle cell
+  //   · spacecraft → payload cell (the bus that actually goes to dest)
+  //   · payload   → payload cell (used for Shuttle-deployed deep-space
+  //                 probes like Ulysses + Galileo where the orbiter is
+  //                 the deployment vehicle and the probe is the payload)
+  let launcherRef = $derived(
+    mission?.fleet_refs?.find((r) => r.role === 'launcher')?.id ?? null,
+  );
+  let spacecraftRef = $derived(
+    mission?.fleet_refs?.find((r) => r.role === 'payload')?.id ??
+      mission?.fleet_refs?.find((r) => r.role === 'spacecraft')?.id ??
+      null,
+  );
+
   // Reset to OVERVIEW each time a different mission is selected; also
   // (re-)load the photo gallery for the new mission.
   let lastId = $state<string | null>(null);
@@ -322,11 +339,37 @@
           </div>
           <div class="cell wide">
             <div class="cell-label">{m.mp_label_vehicle()}</div>
-            <div class="cell-value">{mission.vehicle ?? '—'}</div>
+            <div class="cell-value">
+              {#if launcherRef && mission.vehicle}
+                <a
+                  class="fleet-link"
+                  href="{base}/fleet?id={launcherRef}"
+                  data-testid="mission-vehicle-fleet-link"
+                  title="Open {mission.vehicle} in /fleet"
+                >
+                  {mission.vehicle}
+                </a>
+              {:else}
+                {mission.vehicle ?? '—'}
+              {/if}
+            </div>
           </div>
           <div class="cell wide">
             <div class="cell-label">{m.mp_label_payload()}</div>
-            <div class="cell-value">{mission.payload ?? '—'}</div>
+            <div class="cell-value">
+              {#if spacecraftRef && mission.payload}
+                <a
+                  class="fleet-link"
+                  href="{base}/fleet?id={spacecraftRef}"
+                  data-testid="mission-payload-fleet-link"
+                  title="Open spacecraft in /fleet"
+                >
+                  {mission.payload}
+                </a>
+              {:else}
+                {mission.payload ?? '—'}
+              {/if}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">{m.mp_label_delta_v()}</div>
@@ -846,6 +889,22 @@
     font-size: 9px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.65);
+  }
+  .fleet-link {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition:
+      color 120ms,
+      text-decoration-color 120ms;
+  }
+  .fleet-link:hover,
+  .fleet-link:focus-visible {
+    color: #5fb7ff;
+    text-decoration-color: #5fb7ff;
+    outline: none;
   }
 
   .first {

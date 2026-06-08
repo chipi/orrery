@@ -86,6 +86,40 @@
     return (yearFrac - minYear) / span;
   }
 
+  // Greedy row-packing so markers that overlap horizontally stack vertically
+  // instead of hiding each other (e.g. Tianhe + Chinarm both 2021-04-29,
+  // Tranquility + Cupola both 2010-02-08 on STS-130, Zarya 1998-11-20 +
+  // Unity 1998-12-06 only 16 days apart). MIN_GAP is the minimum
+  // fractional separation we want between two markers before treating them
+  // as overlapping — sized so a labelled marker doesn't crowd its
+  // neighbour on a typical desktop viewport.
+  const MIN_GAP = 0.085;
+
+  type PackedItem = StripItem & { row: number };
+
+  function packRows(list: StripItem[]): PackedItem[] {
+    const rowEnd: number[] = []; // last-used t per row
+    const out: PackedItem[] = [];
+    for (const item of list) {
+      const t = tFor(item);
+      let row = 0;
+      while (row < rowEnd.length && t - rowEnd[row] < MIN_GAP) row++;
+      rowEnd[row] = t;
+      out.push({ ...item, row });
+    }
+    return out;
+  }
+
+  const packedModules: PackedItem[] = $derived(packRows(moduleItems));
+  const packedVisitors: PackedItem[] = $derived(packRows(visitorItems));
+  const moduleRowCount = $derived(
+    packedModules.reduce((max, m) => Math.max(max, m.row + 1), 1),
+  );
+  const visitorRowCount = $derived(
+    packedVisitors.reduce((max, v) => Math.max(max, v.row + 1), 1),
+  );
+  const ROW_HEIGHT = 32; // marker height + a touch of breathing room
+
   /** Canonical agency color for the launch vehicle. Falls back to the
    *  operating agency color, then a neutral grey. */
   function colorFor(item: StripItem): string {
@@ -121,9 +155,10 @@
       {/each}
     </div>
 
-    <!-- Marker rail. Two horizontal rows — modules above, visitors below. -->
-    <div class="rail rail-modules">
-      {#each moduleItems as item (item.id)}
+    <!-- Marker rail. Modules above, visitors below. Overlapping markers
+         get stacked vertically via packRows() so nothing hides anything. -->
+    <div class="rail rail-modules" style:height="{moduleRowCount * ROW_HEIGHT}px">
+      {#each packedModules as item (item.id)}
         <button
           type="button"
           class="marker"
@@ -131,6 +166,7 @@
           class:hovered={hoveredId === item.id}
           class:retired={item.status === 'RETIRED'}
           style:left="{tFor(item) * 100}%"
+          style:top="{item.row * ROW_HEIGHT + 4}px"
           style:background-color={colorFor(item)}
           aria-label="{item.name ?? item.id} ({item.launch_date}, {item.agency})"
           title="{item.name ?? item.id} · {item.launch_date} · {item.agency}"
@@ -147,14 +183,15 @@
 
     {#if visitorItems.length > 0}
       <div class="rail-divider" aria-hidden="true"></div>
-      <div class="rail rail-visitors">
-        {#each visitorItems as item (item.id)}
+      <div class="rail rail-visitors" style:height="{visitorRowCount * ROW_HEIGHT}px">
+        {#each packedVisitors as item (item.id)}
           <button
             type="button"
             class="marker marker-visitor"
             class:active={selectedId === item.id}
             class:hovered={hoveredId === item.id}
             style:left="{tFor(item) * 100}%"
+            style:top="{item.row * ROW_HEIGHT + 4}px"
             style:background-color={colorFor(item)}
             aria-label="{item.name ?? item.id} ({item.launch_date}, {item.agency})"
             title="{item.name ?? item.id} · {item.launch_date} · {item.agency}"
@@ -216,7 +253,8 @@
   }
   .rail {
     position: relative;
-    height: 44px;
+    /* height is set inline (style:height) by the component so the rail
+       grows with the number of vertically-stacked rows. */
     margin-top: 4px;
   }
   .rail-modules {
@@ -229,7 +267,7 @@
   }
   .marker {
     position: absolute;
-    top: 6px;
+    /* top is set inline (style:top) by the component for vertical stacking. */
     transform: translateX(-50%);
     min-width: 9px;
     height: 24px;

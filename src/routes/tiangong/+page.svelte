@@ -1318,8 +1318,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* Match drawer width below so HUD + module list align in a single rail. */
-    width: min(300px, calc(100vw - 24px));
+    /* Was 300px (matched drawer width); bumped to 380px so the 5-button
+       toggle row (BLUEPRINT / RESET / SPIN / MODULES / TIMELINE) fits
+       on a single visual line instead of wrapping TIMELINE underneath. */
+    width: min(380px, calc(100vw - 24px));
     pointer-events: none;
   }
   .timeline-overlay {

@@ -127,6 +127,12 @@
         "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-6",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "mars6",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -198,6 +204,10 @@
     "fleet_refs": [
       {
         "id": "viking-1",
+        "role": "spacecraft"
+      },
+      {
+        "id": "viking2-lander",
         "role": "spacecraft"
       }
     ],
@@ -289,6 +299,12 @@
         "l": "Beagle 2 found — ESA news",
         "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Beagle-2_lander_found_on_Mars",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "beagle2",
+        "role": "spacecraft"
       }
     ]
   },
@@ -666,6 +682,12 @@
         "u": "https://exploration.esa.int/web/mars/-/45084-exomars-rover",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "exomars-rosalind-franklin",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -725,6 +747,12 @@
         "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "mars3-orbiter",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -746,6 +774,12 @@
         "l": "Viking program — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Viking_program",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "viking1-orbiter",
+        "role": "spacecraft"
       }
     ]
   },
@@ -772,6 +806,12 @@
         "l": "Mars Odyssey — NASA",
         "u": "https://mars.nasa.gov/odyssey/",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "mars-odyssey",
+        "role": "spacecraft"
       }
     ]
   },

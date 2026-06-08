@@ -2626,5 +2626,89 @@
     "status": "RETIRED",
     "first_flight": "2024-05-03",
     "tagline": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25"
+  },
+  {
+    "id": "viking1-orbiter",
+    "name": "Viking 1 Orbiter",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1975-08-20",
+    "tagline": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980"
+  },
+  {
+    "id": "viking2-lander",
+    "name": "Viking 2 Lander",
+    "category": "lander",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1975-09-09",
+    "tagline": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980"
+  },
+  {
+    "id": "mars3-orbiter",
+    "name": "Mars 3 Orbiter",
+    "category": "orbiter",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1971-05-28",
+    "tagline": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature"
+  },
+  {
+    "id": "mars6",
+    "name": "Mars 6",
+    "category": "lander",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1973-08-05",
+    "tagline": "Soviet 1973 Mars lander — first direct atmospheric measurements (224 s of descent telemetry) before signal loss 148 m above surface"
+  },
+  {
+    "id": "mars-odyssey",
+    "name": "2001 Mars Odyssey",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "ACTIVE",
+    "first_flight": "2001-04-07",
+    "tagline": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet"
+  },
+  {
+    "id": "beagle2",
+    "name": "Beagle 2",
+    "category": "lander",
+    "agency": "UKSA / ESA",
+    "country": "United Kingdom",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "2003-06-02",
+    "tagline": "UK/ESA Mars lander released from Mars Express 2003-12-19. Silent on arrival; found by HiRISE 2015 — landed safely, 2 solar panels stuck"
+  },
+  {
+    "id": "exomars-rosalind-franklin",
+    "name": "Rosalind Franklin (ExoMars rover)",
+    "category": "rover",
+    "agency": "ESA",
+    "country": "Multi (ESA members)",
+    "era": "planned",
+    "epoch": "mars-era",
+    "status": "PLANNED",
+    "first_flight": "2028-10-01",
+    "tagline": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch"
   }
 ]

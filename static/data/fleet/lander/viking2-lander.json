@@ -1,0 +1,38 @@
+{
+  "id": "viking2-lander",
+  "name": "Viking 2 Lander",
+  "category": "lander",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Martin Marietta",
+  "first_flight": "1975-09-09",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Second US Mars surface lander (Utopia Planitia 1976-09-03). Twin of Viking 1 lander; ran biology, soil chemistry + meteorology until 1980",
+  "credit": "The surface half of NASA's Viking 2 mission and the second successful US Mars lander, 47 days after Viking 1. Launched 1975-09-09 on a Titan IIIE-Centaur, touched down at Utopia Planitia (47.97° N, 134.04° E) on 1976-09-03 — much further north than Viking 1, in a different plains type to broaden the science return. Ran the same instrument suite as Viking 1: a biology package (Pyrolytic Release / Labeled Release / Gas Exchange experiments looking for microbial metabolism — the famously ambiguous Labeled Release positive that remains debated), GC-MS for soil organics (none detected), facsimile cameras returning > 1,400 images, X-ray fluorescence soil chemistry, meteorology, and seismometer (one of two ever flown on Mars — unable to detect quakes through cabin noise). Operated until 1980-04-11 when batteries failed.",
+  "links": [
+    {
+      "l": "Viking 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_2",
+      "t": "intro"
+    },
+    {
+      "l": "Viking program — NASA",
+      "u": "https://science.nasa.gov/mission/viking/",
+      "t": "core"
+    },
+    {
+      "l": "Labeled Release experiment — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Labeled_release",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "viking2-lander"
+    }
+  ]
+}

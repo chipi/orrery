@@ -1,0 +1,33 @@
+{
+  "id": "beagle2",
+  "name": "Beagle 2",
+  "category": "lander",
+  "agency": "UKSA / ESA",
+  "country": "United Kingdom",
+  "manufacturer": "EADS Astrium / University of Leicester",
+  "first_flight": "2003-06-02",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "UK/ESA Mars lander released from Mars Express 2003-12-19. Silent on arrival; found by HiRISE 2015 — landed safely, 2 solar panels stuck",
+  "credit": "A 33-kg UK-led Mars lander released from ESA's Mars Express on 2003-12-19, six days before its planned 2003-12-25 landing at Isidis Planitia. Beagle 2 (named after HMS Beagle which carried Darwin) carried a clamshell payload of a Gas Analysis Package mass spectrometer for atmospheric + sub-surface volatiles, a stereo camera, a microscope, a Mössbauer + APX spectrometer pair, and a mole drill. It went silent at separation and was presumed crashed for 12 years — until 2015-01, when high-resolution HiRISE imagery from Mars Reconnaissance Orbiter clearly showed Beagle 2 sitting on the Martian surface (~5 km from its target), with two of four solar panels apparently failed to deploy, preventing the antenna from clearing the housing and from collecting enough power. So: a successful landing, an unsuccessful deployment, and a 12-year mystery solved by the same kind of imagery that LRO uses for the Moon.",
+  "links": [
+    {
+      "l": "Beagle 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Beagle_2",
+      "t": "intro"
+    },
+    {
+      "l": "Beagle 2 found on Mars — UK Space Agency / ESA press release 2015",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Beagle_2_lander_found_on_Mars",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "beagle2"
+    }
+  ]
+}

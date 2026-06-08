@@ -112,12 +112,8 @@
 
   const packedModules: PackedItem[] = $derived(packRows(moduleItems));
   const packedVisitors: PackedItem[] = $derived(packRows(visitorItems));
-  const moduleRowCount = $derived(
-    packedModules.reduce((max, m) => Math.max(max, m.row + 1), 1),
-  );
-  const visitorRowCount = $derived(
-    packedVisitors.reduce((max, v) => Math.max(max, v.row + 1), 1),
-  );
+  const moduleRowCount = $derived(packedModules.reduce((max, m) => Math.max(max, m.row + 1), 1));
+  const visitorRowCount = $derived(packedVisitors.reduce((max, v) => Math.max(max, v.row + 1), 1));
   const ROW_HEIGHT = 32; // marker height + a touch of breathing room
 
   /** Canonical agency color for the launch vehicle. Falls back to the

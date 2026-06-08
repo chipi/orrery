@@ -64,9 +64,7 @@
   //   · payload   → payload cell (used for Shuttle-deployed deep-space
   //                 probes like Ulysses + Galileo where the orbiter is
   //                 the deployment vehicle and the probe is the payload)
-  let launcherRef = $derived(
-    mission?.fleet_refs?.find((r) => r.role === 'launcher')?.id ?? null,
-  );
+  let launcherRef = $derived(mission?.fleet_refs?.find((r) => r.role === 'launcher')?.id ?? null);
   let spacecraftRef = $derived(
     mission?.fleet_refs?.find((r) => r.role === 'payload')?.id ??
       mission?.fleet_refs?.find((r) => r.role === 'spacecraft')?.id ??

@@ -3289,19 +3289,18 @@
             const agencyChip = nationChipFor(site);
             const layers: TierLayer[] = [];
             // Regional layer — honest per-planet attribution. Mars
-            // patches are 2048² JPEG crops of MRO CTX (Context
-            // Camera) mosaics: ~5-6 m/px native, served over a
-            // ~30 km square = ~15 m/px effective. Moon will fill
-            // with Chang'e 2 / LROC WAC when Phase 2 lands; until
-            // then it stays as a "placeholder" labelled row so
-            // the disagreement is visible.
+            // patches are 3072² JPEG crops of MRO CTX (Context
+            // Camera) mosaics: ~5 m/px native, ~15 km square crop.
+            // Moon patches are 3072² LROC NAC ROI mosaic crops, also
+            // ~5 m/px / ~15 km, same source URL as the detail layer
+            // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
             if (hasRegional) {
               if (config.planet === 'mars') {
                 layers.push({
                   layerLabel: 'Regional view',
                   sourceTitle: 'MRO CTX context mosaic',
                   sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
-                  resolutionText: '~15 m/px (from CTX ~5 m/px native)',
+                  resolutionText: '~5 m/px (3072² crop · ~15 km)',
                   sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
                   licenseShort: 'PD-NASA',
                   // CTX absolute georeferencing — typically ~100 m on
@@ -3310,12 +3309,18 @@
                   uncertaintyM: 100,
                 });
               } else {
+                // Moon regional layer — same LROC NAC ROI source as
+                // detail, but cropped at a wider 3072² window (~15 km).
+                // No separate Chang'e 2 / LROC WAC product needed; the
+                // NAC ROI mosaic at _5M.IMG resolution covers the
+                // full regional context with native quality.
                 layers.push({
                   layerLabel: 'Regional view',
-                  sourceTitle: 'Regional mosaic',
-                  sourceAuthor: 'TBD — placeholder until Phase 2 lands',
-                  resolutionText: 'TBD',
-                  licenseShort: 'TBD',
+                  sourceTitle: 'LROC NAC ROI regional mosaic',
+                  sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
+                  resolutionText: '~5 m/px (3072² crop · ~15 km)',
+                  sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                  licenseShort: 'PD-NASA',
                 });
               }
             }

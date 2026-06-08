@@ -19,10 +19,13 @@ import { ensureCtxMosaicTile, tileNameForLatLon, tileUrlForName } from './ctx-mo
  *      via `tileNameForLatLon`, download + extract via
  *      `ensureCtxMosaicTile` (cached on disk; one tile typically
  *      covers multiple landers in the same 4°×4° quadrant).
- *   3. Crop a 2048×2048 patch centred on (lat, lon) via the existing
+ *   3. Crop a 3072×3072 patch centred on (lat, lon) via the existing
  *      `cropRemoteRasterToLatLon(localRasterPath=...)` path. At
- *      5 m/px that's ~10.2 km × 10.2 km of ground — landing-zone
- *      regional context (Gale Crater rim, Jezero delta, etc.).
+ *      5 m/px that's ~15.4 km × 15.4 km of ground — landing-zone
+ *      regional context (Gale Crater rim, Jezero delta, etc.). Widened
+ *      from 2048² (10 km) per Marko's 2026-06-07 ask: the flat-patch
+ *      regional layer was leaving black margin on wide screens at the
+ *      zoom-out edge of the view.
  *   4. Output: static/images/hotspots/mars/<site>/tier2-ctx.jpg
  *
  * No catalog query needed — the Murray Lab mosaic is one stitched
@@ -157,7 +160,7 @@ async function fetchOneCtx(
       targetLat: site.lat,
       targetLon: site.lon,
       outputPath,
-      cropSize: 2048,
+      cropSize: 3072,
       jpegQuality: 88,
     });
     return {

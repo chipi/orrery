@@ -6,6 +6,7 @@ import { fetchMarsHotspots } from './hotspots/fetch-mars.ts';
 import { fetchMarsCtxHotspots } from './hotspots/fetch-mars-ctx.ts';
 import { fetchMarsPanoramas } from './hotspots/fetch-mars-panoramas.ts';
 import { fetchMoonHotspots } from './hotspots/fetch-moon.ts';
+import { fetchMoonRegionalHotspots } from './hotspots/fetch-moon-regional.ts';
 import { fetchMoonPanoramas } from './hotspots/fetch-moon-panoramas.ts';
 import {
   buildHiriseProvenanceEntry,
@@ -81,7 +82,7 @@ interface CliArgs {
   dryRun: boolean;
   skipScore: boolean;
   missingOnly: boolean;
-  layer: 'hirise' | 'ctx' | 'tier3' | 'lroc' | 'all';
+  layer: 'hirise' | 'ctx' | 'tier3' | 'lroc' | 'lroc-regional' | 'all';
   dest: 'mars' | 'moon' | 'all';
 }
 
@@ -104,8 +105,15 @@ function parseArgs(): CliArgs {
       out.site = args[++i];
     } else if (args[i] === '--layer' && i + 1 < args.length) {
       const v = args[++i];
-      if (v !== 'hirise' && v !== 'ctx' && v !== 'tier3' && v !== 'lroc' && v !== 'all') {
-        throw new Error(`--layer must be hirise|ctx|tier3|lroc|all (got ${v})`);
+      if (
+        v !== 'hirise' &&
+        v !== 'ctx' &&
+        v !== 'tier3' &&
+        v !== 'lroc' &&
+        v !== 'lroc-regional' &&
+        v !== 'all'
+      ) {
+        throw new Error(`--layer must be hirise|ctx|tier3|lroc|lroc-regional|all (got ${v})`);
       }
       out.layer = v;
     } else if (args[i] === '--dest' && i + 1 < args.length) {
@@ -295,6 +303,51 @@ async function main(): Promise<void> {
         .filter((e) => e !== null);
       await upsertProvenanceEntries(provenanceEntries);
       console.log(`  Provenance: ${provenanceEntries.length} LROC entries upserted`);
+    }
+  }
+
+  // Moon Tier 2a (LROC NAC regional layer) — same source, wider 3072² crop.
+  if (
+    wantMoon &&
+    moonHotspots.length > 0 &&
+    (args.layer === 'all' || args.layer === 'lroc-regional')
+  ) {
+    console.log(`\n=== Moon Tier 2a (LROC NAC regional) ===`);
+    const moonRegResult = await fetchMoonRegionalHotspots({
+      onlySite: args.site,
+      dryRun: args.dryRun,
+      missingOnly: args.missingOnly,
+    });
+    for (const f of moonRegResult.fetched) {
+      console.log(
+        `  ✓ ${f.siteId} ← ${f.productId} (${f.cropMeta.resolutionMPerPx.toFixed(2)} m/px, ${(f.cropMeta.bytes / 1024).toFixed(0)} KB)`,
+      );
+    }
+    for (const s of moonRegResult.skipped) {
+      console.log(`  · ${s.siteId} skipped — ${s.reason}`);
+    }
+    for (const fl of moonRegResult.failed) {
+      console.log(`  ✗ ${fl.siteId} FAILED — ${fl.error}`);
+    }
+    if (!args.dryRun && moonRegResult.fetched.length > 0) {
+      const moonSites = JSON.parse(await fs.readFile(MOON_SITES_PATH, 'utf-8')) as MoonSite[];
+      const siteById = new Map(moonSites.map((s) => [s.id, s]));
+      const provenanceEntries = moonRegResult.fetched
+        .map((f) => {
+          const site = siteById.get(f.siteId);
+          if (!site || site.lat == null || site.lon == null) return null;
+          return buildLrocProvenanceEntry({
+            outputPath: f.outputPath,
+            sourceUrl: f.sourceUrl,
+            productId: f.productId,
+            siteId: f.siteId,
+            centerLat: site.lat,
+            centerLon: site.lon,
+          });
+        })
+        .filter((e) => e !== null);
+      await upsertProvenanceEntries(provenanceEntries);
+      console.log(`  Provenance: ${provenanceEntries.length} LROC regional entries upserted`);
     }
   }
 

@@ -48,6 +48,10 @@ export interface LrocFetchInput {
   outputPath: string;
   /** Sidecar's hotspot_tier2_force_product_url, if any — wins over the curated map. */
   overrideUrl?: string;
+  /** Crop window size in source-resolution pixels. Default 2048 (≈10 km
+   *  at LROC NAC ROI _5M.IMG's 5 m/px native). Pass 3072 for the regional
+   *  layer (≈15 km, covers a wider chunk of landing context). */
+  cropSize?: number;
 }
 
 export interface LrocFetchResult {
@@ -160,7 +164,7 @@ export async function fetchLrocPatch(input: LrocFetchInput): Promise<LrocFetchRe
       targetLat: input.targetLat,
       targetLon: input.targetLon,
       outputPath: input.outputPath,
-      cropSize: 2048,
+      cropSize: input.cropSize ?? 2048,
       jpegQuality: 88,
     });
     return {

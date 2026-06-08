@@ -110,7 +110,6 @@
   // initialKmPerPx kept as a state slot for the wheel handler /
   // future "fit to view" reset gestures, even though no live consumer
   // reads it after the 2026-06-08 wheel-out simplification.
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let initialKmPerPx = 0.1;
   void initialKmPerPx;
   let autoExitFired = $state(false);
@@ -170,31 +169,26 @@
     return native * 0.5;
   }
 
-  // ─── Initialisation from selected region ───────────────────────────
+  // ─── Initialisation from selected site ─────────────────────────────
   $effect(() => {
-    if (!selected.region_bounds) return;
-    const rb = selected.region_bounds;
-    centroidLat = (rb.lat_min + rb.lat_max) / 2;
-    centroidLon = (rb.lon_min + rb.lon_max) / 2;
-    // Size the initial zoom so the region's longer dimension occupies
-    // ~60 % of the viewport's shorter dimension. Δlat or Δlon × cos(lat)
-    // in degrees → km via (deg × π/180 × radiusKm).
-    const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
-    const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);
-    const cosLat = Math.cos((centroidLat * Math.PI) / 180);
-    const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
-    const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
+    if (selected.lat == null || selected.lon == null) return;
+    // Centre on the site's lat/lon — not region_bounds centroid. The
+    // sphere-rendered region_bounds rectangles inherited from
+    // moon-sites.json drift up to 30 km from lat/lon for traverse
+    // sites (Apollo 17), which would sit the marker off-centre at
+    // flat-patch entry. The regional + detail layers both centre on
+    // lat/lon directly now, so the view should too.
+    centroidLat = selected.lat;
+    centroidLon = selected.lon;
     // 2026-06-08: matching the sphere's km/px at handoff was wrong —
     // the sphere intentionally stylizes the patch to ~100× its real
     // ground extent so the photo fills the viewport, and using its
     // km/px in the flat-patch dropped you straight into true-scale
     // postage stamp (the 1.5 km HiRISE patch became 30 px on a 800 px
     // viewport). Now sized so the DETAIL patch fills ~85 % of the
-    // shorter viewport dim regardless of how the sphere arrived
-    // here. The entryKmPerPx prop is kept for the exit-camR map but
+    // shorter viewport dim regardless of how the sphere arrived here.
+    // The entryKmPerPx prop is kept for the exit-camR map but
     // intentionally unused here.
-    void widthKm;
-    void heightKm;
     void entryKmPerPx;
     const detailKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
     const vp =
@@ -264,7 +258,12 @@
     // hiding the regional once detail is the canonical view collapses
     // it back to a single legible photo (user feedback 2026-06-08:
     // "there are 2 overlapping images, I am expecting only one").
-    if (layerRegional && selected.region_bounds) {
+    if (
+      layerRegional &&
+      selected.lat != null &&
+      selected.lon != null &&
+      selected.hotspot_tier2_regional_source
+    ) {
       // Full opacity — the prior regionalFadeAtZoom kicked in at the
       // entry zoom and washed CTX down to ~15 % alpha, which is why
       // the regional layer looked "small and barely there" surrounded
@@ -335,9 +334,24 @@
     alpha: number = 1,
   ) {
     if (alpha < 0.01) return;
-    const rb = selected.region_bounds!;
-    const tl = project(rb.lat_max, rb.lon_min, W, H);
-    const br = project(rb.lat_min, rb.lon_max, W, H);
+    // Regional layer ground extent — matches the fetch crop size:
+    // Mars CTX = 3072 × 5 m/px ≈ 15.4 km; Moon LROC NAC = 3072 × 5 m/px
+    // ≈ 15.4 km; Earth = 5 km placeholder. region_bounds (used by the
+    // sphere's Tier-1/2 rendering) is intentionally NOT used here —
+    // the per-site bounds vary from 1 km (mars-pathfinder) to 60 km
+    // (mars2), and stretching the fixed-extent crop to those rects
+    // either crushed it to a tiny dense thumbnail or pixelated it.
+    // Centring on lat/lon ± half-extent keeps every site's regional
+    // layer at a consistent honest 1:1 ground scale.
+    if (selected.lat == null || selected.lon == null) return;
+    const regionalExtentKm =
+      config.planet === 'mars' ? 15.4 : config.planet === 'earth' ? 5.0 : 15.4;
+    const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
+    const cosLat = Math.cos((selected.lat * Math.PI) / 180);
+    const halfLat = regionalExtentKm / 2 / kmPerDegLat;
+    const halfLon = regionalExtentKm / 2 / (kmPerDegLat * cosLat);
+    const tl = project(selected.lat + halfLat, selected.lon - halfLon, W, H);
+    const br = project(selected.lat - halfLat, selected.lon + halfLon, W, H);
     const x = tl.x;
     const y = tl.y;
     const w = br.x - tl.x;
@@ -372,10 +386,10 @@
     const kind = selected.region_kind ?? 'region';
     const sourceLabel =
       config.planet === 'mars'
-        ? 'CTX 5 m/px'
+        ? 'CTX 5 m/px · ~15 km'
         : config.planet === 'earth'
           ? 'Sentinel-2 ~10 m/px'
-          : 'LROC NAC 5 m/px';
+          : 'LROC NAC 5 m/px · ~15 km';
     ctx.save();
     ctx.globalAlpha = alpha;
     ctx.fillStyle = '#ffc850';

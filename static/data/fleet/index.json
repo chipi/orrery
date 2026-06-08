@@ -2710,5 +2710,65 @@
     "status": "PLANNED",
     "first_flight": "2028-10-01",
     "tagline": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch"
+  },
+  {
+    "id": "lunar-orbiter-1",
+    "name": "Lunar Orbiter 1",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-08-10",
+    "tagline": "First US lunar orbiter (1966-08-14). Mapped potential Apollo landing sites; took the famous \"Earthrise\" picture three months before Apollo 8"
+  },
+  {
+    "id": "lunar-orbiter-2",
+    "name": "Lunar Orbiter 2",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-11-06",
+    "tagline": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at 9 km altitude"
+  },
+  {
+    "id": "lunar-orbiter-3",
+    "name": "Lunar Orbiter 3",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1967-02-04",
+    "tagline": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world"
+  },
+  {
+    "id": "lunar-orbiter-4",
+    "name": "Lunar Orbiter 4",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1967-05-04",
+    "tagline": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions"
+  },
+  {
+    "id": "lunar-orbiter-5",
+    "name": "Lunar Orbiter 5",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1967-08-01",
+    "tagline": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations"
   }
 ]

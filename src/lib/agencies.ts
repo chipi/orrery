@@ -159,7 +159,9 @@ export const AGENCIES: AgencyInfo[] = [
   {
     short: 'ULA',
     full: 'United Launch Alliance',
-    logo: 'ula.svg',
+    // No PD/CC-BY SVG of the ULA corporate mark on Wikimedia Commons
+    // (only rocket-specific Vulcan/Delta marks). Falls back to text-only.
+    logo: null,
     aliases: ['ula', 'united launch alliance'],
   },
   {
@@ -197,7 +199,8 @@ export const AGENCIES: AgencyInfo[] = [
   {
     short: 'SpaceIL',
     full: 'SpaceIL',
-    logo: 'spaceil.svg',
+    // No SpaceIL SVG on Wikimedia Commons. Falls back to text-only.
+    logo: null,
     aliases: ['spaceil'],
   },
 

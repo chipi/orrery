@@ -1,0 +1,54 @@
+{
+  "id": "apollo10",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1969,
+  "status": "FLOWN",
+  "departure_date": "1969-05-18",
+  "arrival_date": "1969-05-21",
+  "transit_days": 3,
+  "vehicle": "Saturn V (AS-505)",
+  "payload": "42775 kg launched (CSM Charlie Brown (CSM-106) + LM Snoopy (LM-4))",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 10 mission report. Public domain. Full lunar-landing dress rehearsal — LM descended to ~15.6 km altitude.",
+  "links": [
+    {
+      "l": "Apollo 10 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_10",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 10 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-10/",
+      "t": "intro"
+    },
+    {
+      "l": "Snoopy ascent stage in heliocentric orbit — search effort",
+      "u": "https://en.wikipedia.org/wiki/Apollo_10#Snoopy",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "아폴로 9호",
+  "type": "유인 지구 궤도 · 완료",
+  "first": "최초의 유인 LM 비행 — 지구 궤도 분리 + 랑데부 시험",
+  "description": "달 착륙선(LM)의 최초 유인 비행. 지구 궤도에서 McDivitt와 Schweickart는 LM 스파이더를 CSM 검드롭에서 분리, 6시간에 걸쳐 183km까지 떨어진 후 랑데부해 재도킹 — 무엇이 잘못되어도 CSM으로 승무원을 데려올 수 있는 선택지 없이 달 랑데부 절차의 모든 단계를 시험. Schweickart는 LM 현관에서 38분 EVA를 수행, 달을 걷는 승무원들이 사용할 아폴로 EVA 우주복 + PLSS 배낭 설계를 실증. LM 하드웨어와 랑데부 절차가 검증되어 NASA는 2개월 후 아폴로 10호를 달로 보낼 준비를 마쳤다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "CSM-LM EXTRACTION",
+      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.2,
+      "label": "LM SEPARATION",
+      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "type": "info"
+    },
+    {
+      "met": 4.5,
+      "label": "EVA",
+      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "type": "info"
+    },
+    {
+      "met": 4.5,
+      "label": "RENDEZVOUS + REDOCK",
+      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "LM JETTISON",
+      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "type": "nominal"
+    },
+    {
+      "met": 10.04,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "type": "nominal"
+    }
+  ]
+}

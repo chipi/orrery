@@ -1,0 +1,56 @@
+{
+  "name": "Apollo 10",
+  "type": "HABITÉ ORBITE LUNAIRE · VOLÉ",
+  "first": "Répétition générale complète de l'alunissage — le LM descendit à ~15,6 km d'altitude",
+  "description": "La répétition générale complète du premier alunissage. Stafford et Cernan ont fait voler le LM Snoopy jusqu'à ~15,6 km d'altitude au-dessus du site d'atterrissage prévu pour Apollo 11 à Mare Tranquillitatis — chaque étape d'une approche d'atterrissage sauf l'atterrissage lui-même. Ils ont confirmé le profil de descente, le radar d'atterrissage, la trajectoire d'ascension et la procédure de rendez-vous qu'Apollo 11 utiliserait deux mois plus tard. Les réservoirs de propergol d'ascension du LM ont été délibérément sous-remplis (~50 % du nominal) pour empêcher toute tentation de tenter un atterrissage. L'étage d'ascension de Snoopy fut le seul à quitter l'orbite lunaire avec un ∆v positif — éjecté dans une orbite héliocentrique où il demeure aujourd'hui.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.6,
+      "label": "LM SEPARATION",
+      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.66,
+      "label": "CLOSEST APPROACH",
+      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "type": "info"
+    },
+    {
+      "met": 4.76,
+      "label": "ASCENT + RENDEZVOUS",
+      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.05,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "type": "nominal"
+    }
+  ]
+}

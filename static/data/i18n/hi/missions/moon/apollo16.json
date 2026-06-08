@@ -1,0 +1,74 @@
+{
+  "name": "Apollo 16",
+  "type": "मानवयुक्त लैंडर · उड़ा",
+  "first": "चंद्र हाइलैंड्स में पहला चंद्र-लैंडिंग — Descartes; John Young का \"Lunar Grand Prix\"",
+  "description": "पाँचवाँ मानवयुक्त चंद्र-लैंडिंग और गैर-मारे हाइलैंड साइट पर पहला। भूवैज्ञानिकों ने उम्मीद की थी कि Descartes ज्वालामुखीय होगा; Apollo 16 ने इसे गलत साबित किया — हर चट्टान जो वापस आई वह breccia (प्रभाव से टूटा हुआ मलबा) थी, चंद्र हाइलैंड्स को प्राचीन ज्वालामुखी के बजाय विनाशकारी प्रभावों के उत्पादों के रूप में समझ को फिर से आकार दिया। Young और Duke ने कुल 20 घंटे 14 मिनट के तीन LRV-समर्थित EVAs पूरे किए, 26.7 किमी की दूरी तय की, और 95.7 किग्रा नमूने वापस लाए (उस तिथि तक सबसे भारी Apollo संग्रह)। Young का \"Lunar Grand Prix\" — LRV का टेलीविजन प्रसारित गति परीक्षण — ~17 किमी/घंटा पर शिखर पर पहुँचा।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.3,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.79,
+      "label": "SPS ANOMALY",
+      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "type": "warning"
+    },
+    {
+      "met": 5.04,
+      "label": "TOUCHDOWN",
+      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.5,
+      "label": "FIRST HIGHLANDS EVA",
+      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "type": "info"
+    },
+    {
+      "met": 6.1,
+      "label": "LUNAR GRAND PRIX",
+      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "type": "info"
+    },
+    {
+      "met": 6.7,
+      "label": "FAR-UV CAMERA",
+      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "type": "info"
+    },
+    {
+      "met": 7.81,
+      "label": "ASCENT",
+      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 11.07,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "type": "nominal"
+    }
+  ]
+}

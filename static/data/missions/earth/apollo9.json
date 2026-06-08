@@ -1,0 +1,49 @@
+{
+  "id": "apollo9",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1969,
+  "status": "FLOWN",
+  "departure_date": "1969-03-03",
+  "arrival_date": "1969-03-03",
+  "transit_days": 0,
+  "vehicle": "Saturn V (AS-504)",
+  "payload": "42400 kg launched (CSM Gumdrop (CSM-104) + LM Spider (LM-3))",
+  "delta_v": "~9.5 km/s (to LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 9 mission report. Public domain. First crewed LM flight — Earth-orbit LM separation + rendezvous tests.",
+  "links": [
+    {
+      "l": "Apollo 9 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_9",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 9 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-9/",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

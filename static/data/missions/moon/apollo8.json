@@ -1,0 +1,50 @@
+{
+  "id": "apollo8",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1968,
+  "status": "FLOWN",
+  "departure_date": "1968-12-21",
+  "arrival_date": "1968-12-24",
+  "transit_days": 3,
+  "vehicle": "Saturn V (AS-503)",
+  "payload": "28833 kg launched (Apollo 8 CSM (CSM-103), no LM)",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 8 mission report. Public domain. First humans to leave low Earth orbit + orbit the Moon.",
+  "links": [
+    {
+      "l": "Apollo 8 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_8",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 8 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-8/",
+      "t": "intro"
+    },
+    {
+      "l": "Earthrise — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Earthrise",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

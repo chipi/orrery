@@ -8,6 +8,7 @@ import type { DestinationId } from '$lib/lambert-grid.constants';
 
 /** Every allowed `Mission.dest` / `MissionIndex.dest` value. */
 export const MISSION_CATALOG_DESTS: readonly Destination[] = [
+  'EARTH',
   'MARS',
   'MOON',
   'MERCURY',
@@ -40,6 +41,13 @@ export function missionDestToHeliocentricDestinationId(dest: Destination): Desti
   switch (dest) {
     case 'MARS':
       return 'mars';
+    case 'EARTH':
+      // Earth-orbit missions (Apollo 7/9, Mercury/Gemini/Skylab, Shuttle
+      // LEO sorties, ISS expeditions) — like MOON, /fly's heliocentric
+      // arc isn't the right view. The cislunar / Earth-centric mode
+      // handles them (see src/lib/fly-mission-apply.ts where EARTH is
+      // grouped with MOON for the cislunar branch).
+      return null;
     case 'MOON':
       return null;
     case 'MERCURY':

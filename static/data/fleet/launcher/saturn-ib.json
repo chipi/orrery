@@ -22,5 +22,8 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1968-089A",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "apollo7"
   ]
 }

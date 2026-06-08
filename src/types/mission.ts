@@ -1,4 +1,5 @@
 export type Destination =
+  | 'EARTH'
   | 'MARS'
   | 'MOON'
   | 'MERCURY'

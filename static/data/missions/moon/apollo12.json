@@ -1,0 +1,54 @@
+{
+  "id": "apollo12",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1969,
+  "status": "FLOWN",
+  "departure_date": "1969-11-14",
+  "arrival_date": "1969-11-19",
+  "transit_days": 4,
+  "vehicle": "Saturn V (AS-507)",
+  "payload": "46782 kg launched (CSM Yankee Clipper (CSM-108) + LM Intrepid (LM-6))",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 12 mission report. Public domain. Second crewed Moon landing — pinpoint touchdown 163 m from Surveyor 3.",
+  "links": [
+    {
+      "l": "Apollo 12 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_12",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 12 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-12/",
+      "t": "intro"
+    },
+    {
+      "l": "\"SCE to AUX\" — John Aaron and the Apollo 12 lightning recovery",
+      "u": "https://www.hq.nasa.gov/alsj/a12/a12LightningStrike.html",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

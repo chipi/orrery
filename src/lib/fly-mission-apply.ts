@@ -188,7 +188,11 @@ export function computeMissionApply(
   defaults: MissionApplyDefaults,
 ): MissionApplyResult {
   const { timeline, isReturnTrip } = computeTimeline(m, defaults.depFallback);
-  const isMoonMission = m.dest === 'MOON';
+  // EARTH (Earth-orbit missions: Apollo 7/9, Mercury/Gemini/Skylab, Shuttle
+  // LEO sorties, ISS expeditions) reuses the cislunar / Earth-centric view
+  // since there is no heliocentric trajectory to draw — Apollo 7 + 9 ride
+  // this branch with /fly's cislunar parametric fallback.
+  const isMoonMission = m.dest === 'MOON' || m.dest === 'EARTH';
   const activeDestination =
     missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
 

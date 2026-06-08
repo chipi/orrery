@@ -915,7 +915,7 @@
       id: m.id,
       dest: m.dest,
       status: m.status ?? 'unknown',
-      view: m.dest === 'MOON' ? 'cislunar' : 'heliocentric',
+      view: m.dest === 'MOON' || m.dest === 'EARTH' ? 'cislunar' : 'heliocentric',
     });
     // Math layer: derive every value from the Mission. See
     // $lib/fly-mission-apply for the timeline / arc / trajectory

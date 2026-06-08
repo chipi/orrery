@@ -1,0 +1,63 @@
+{
+  "id": "apollo15",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1971,
+  "status": "FLOWN",
+  "departure_date": "1971-07-26",
+  "arrival_date": "1971-07-30",
+  "transit_days": 4,
+  "vehicle": "Saturn V (AS-510)",
+  "payload": "48599 kg launched (CSM Endeavour (CSM-112) + LM Falcon (LM-10))",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 15 mission report. Public domain. First J-mission — extended stay, first Lunar Roving Vehicle, \"Genesis Rock\".",
+  "links": [
+    {
+      "l": "Apollo 15 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_15",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 15 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-15/",
+      "t": "intro"
+    },
+    {
+      "l": "Genesis Rock (sample 15415) — Smithsonian NMNH",
+      "u": "https://airandspace.si.edu/multimedia-gallery/9311hjpg",
+      "t": "core"
+    },
+    {
+      "l": "Apollo 15 Lunar Surface Journal (ALSJ)",
+      "u": "https://www.hq.nasa.gov/alsj/a15/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lrv-apollo",
+      "role": "payload"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

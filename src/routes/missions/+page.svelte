@@ -279,6 +279,14 @@
         <button
           type="button"
           class="pill"
+          class:active={destFilter === 'EARTH'}
+          role="radio"
+          aria-checked={destFilter === 'EARTH'}
+          onclick={() => setDest('EARTH')}>{m.lib_filter_dest_earth()}</button
+        >
+        <button
+          type="button"
+          class="pill"
           class:active={destFilter === 'JUPITER'}
           role="radio"
           aria-checked={destFilter === 'JUPITER'}

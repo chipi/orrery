@@ -1,0 +1,32 @@
+{
+  "name": "Apollo 7",
+  "type": "TRIPULADO ÓRBITA TERRESTRE · VOOU",
+  "first": "Primeiro voo Apollo tripulado — teste do CSM em órbita terrestre",
+  "description": "O primeiro voo Apollo tripulado, 21 meses após o incêndio do Apollo 1 (27-1-1967) que matou Grissom, White e Chaffee na plataforma. Apollo 7 verificou o reprojetado Módulo de Comando e Serviço Block II em órbita terrestre — suporte à vida, energia, propulsão (SPS disparou oito vezes), controle térmico, e a primeira transmissão de TV ao vivo do mundo a partir de uma nave tripulada americana. O voo de 10 dias 20 horas abriu o caminho para a aposta de Apollo 8 na órbita lunar dois meses depois.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

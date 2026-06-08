@@ -45,6 +45,7 @@
     },
     "dest": {
       "enum": [
+        "EARTH",
         "MARS",
         "MOON",
         "JUPITER",

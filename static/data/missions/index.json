@@ -502,5 +502,77 @@
     "year": 2023,
     "sector": "gov",
     "color": "#003247"
+  },
+  {
+    "id": "apollo7",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1968,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo9",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo8",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1968,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo10",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo12",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo14",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo15",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo16",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1972,
+    "sector": "gov",
+    "color": "#0B3D91"
   }
 ]

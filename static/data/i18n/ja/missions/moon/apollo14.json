@@ -1,0 +1,68 @@
+{
+  "name": "アポロ 14 号",
+  "type": "有人着陸機 · 飛行済み",
+  "first": "3 回目の月着陸 — アポロ 13 号が失った目標に到達；Shepard のゴルフショット",
+  "description": "3 回目の有人月着陸であり、Alan Shepard の 2 回目の飛行 — アメリカ初の宇宙飛行士であり、月面に立った 5 番目の男、47 歳で最年長の月面歩行者となった。アポロ 14 号は、アポロ 13 号の中止された着陸後の回復ミッションで、アポロ 13 号が計画していた Fra Mauro 高地の目標を引き継いだ。Shepard と Mitchell は ALSEP を展開し、合計 9 時間 23 分の 2 回の EVA を完了。EVA-2 の最後の数分間、Shepard はサンプル収集ハンドルに 6 番アイアンのゴルフクラブヘッドを即興で取り付け、2 つのゴルフボールを「何マイルも何マイルも何マイルも」打った。42 kg のサンプルを持ち帰った。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "CSM-LM DOCKING",
+      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "type": "warning"
+    },
+    {
+      "met": 3.82,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.6,
+      "label": "TOUCHDOWN",
+      "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "EVA-1",
+      "note": "Shepard + Mitchell deploy ALSEP + first lunar geology traverse on this mission.",
+      "type": "info"
+    },
+    {
+      "met": 5.4,
+      "label": "CONE CRATER + GOLF",
+      "note": "EVA-2: traverse toward Cone Crater (came up ~30 m short of rim). Final minutes — Shepard hits two golf balls with an improvised club.",
+      "type": "info"
+    },
+    {
+      "met": 5.6,
+      "label": "ASCENT",
+      "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.4,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
+      "type": "nominal"
+    }
+  ]
+}

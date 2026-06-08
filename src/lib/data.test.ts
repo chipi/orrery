@@ -85,7 +85,7 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 57 missions', async () => {
+  it('returns 56 missions', async () => {
     // v0.7 #107 Step 6 — index gained beresheet, change3, luna16,
     // luna21, schiaparelli (pre-existing JSONs registered).
     // #306 A.2 — index gained 6 missing iconic outer-system missions
@@ -94,8 +94,11 @@ describe('getMissionIndex', () => {
     // #306 global expansion 2026-06-07 — index gained 9 non-NASA
     // iconic missions (rosetta, vega-1, vega-2, venera-13, giotto,
     // ulysses, hayabusa2, bepicolombo, juice) bringing 48 → 57.
+    // 2026-06-08 missions audit H — removed inspiration-mars (Tito
+    // 2013 free-return Mars flyby concept, never funded, cancelled
+    // 2015). 57 → 56.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(57);
+    expect(missions).toHaveLength(56);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -126,9 +129,9 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 17', async () => {
+  it('MARS filter returns 16', async () => {
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(17);
+    expect(mars).toHaveLength(16);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
@@ -326,9 +329,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 57 missions merged with their en-US overlays', async () => {
+  it('returns all 56 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(57);
+    expect(list).toHaveLength(56);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -358,7 +361,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(57);
+    expect(list).toHaveLength(56);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -1,0 +1,37 @@
+{
+  "id": "buran-ok-gli",
+  "name": "Buran OK-GLI (BTS-002)",
+  "category": "crewed-spacecraft",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Molniya",
+  "first_flight": "1985-11-10",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Buran's atmospheric analog — equivalent of NASA's Enterprise. Four jet engines, 24 atmospheric test flights 1985-1988 at the Zhukovsky LII airfield. Never reached space",
+  "credit": "Officially BTS-002 (Bolshoy Tranzportnyy Samolyot — Large Transport Aircraft), nicknamed OK-GLI. Full-scale atmospheric test article for the Buran orbital programme — same outer mold-line as the flight vehicle Buran 1.01 but fitted with four AL-31 turbojet engines so it could take off under its own power from a conventional runway. 24 atmospheric flights between 1985-11-10 and 1988-04-15 at the Zhukovsky Flight Research Institute (LII) airfield validated Buran's automated landing system + flight-control software for the 1988-11-15 orbital flight. After the Buran programme cancellation OK-GLI sat at LII for years; sold to an Australian museum in 1999, then to Bahrain, finally acquired by the Technik Museum Speyer / Sinsheim in Germany where it is on display today — the Buran equivalent of NASA's Enterprise on display at the Intrepid Museum, NYC.",
+  "links": [
+    {
+      "l": "OK-GLI — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/OK-GLI",
+      "t": "intro"
+    },
+    {
+      "l": "Buran programme — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Buran_programme",
+      "t": "core"
+    },
+    {
+      "l": "OK-GLI at Technik Museum Sinsheim",
+      "u": "https://sinsheim.technik-museum.de/en/buran-space-shuttle",
+      "t": "core"
+    },
+    {
+      "l": "Buran-Energia.com — OK-GLI flight history",
+      "u": "http://www.buran-energia.com/bourane-buran/bourane-bts-002.php",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

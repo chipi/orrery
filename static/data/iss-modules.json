@@ -56,7 +56,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "endeavour"
   },
   {
     "id": "zvezda",
@@ -113,7 +114,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "atlantis"
   },
   {
     "id": "quest",
@@ -139,7 +141,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "atlantis"
   },
   {
     "id": "pirs",
@@ -196,7 +199,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "discovery"
   },
   {
     "id": "columbus",
@@ -222,7 +226,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "atlantis"
   },
   {
     "id": "kibo",
@@ -248,7 +253,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "discovery"
   },
   {
     "id": "tranquility",
@@ -274,7 +280,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "endeavour"
   },
   {
     "id": "cupola",
@@ -301,7 +308,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "endeavour"
   },
   {
     "id": "rassvet",
@@ -332,7 +340,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "atlantis"
   },
   {
     "id": "leonardo",
@@ -358,7 +367,8 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "discovery"
   },
   {
     "id": "beam",
@@ -505,6 +515,7 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "space-shuttle-stack"
+    "launch_vehicle_fleet_id": "space-shuttle-stack",
+    "launch_orbiter_fleet_id": "endeavour"
   }
 ]

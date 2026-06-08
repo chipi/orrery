@@ -109,6 +109,11 @@
       "description": "Mission IDs from missions/index.json. Curated explicitly per RFC-016 OQ-2.",
       "items": { "type": "string", "minLength": 1 }
     },
+    "linked_iss_modules": {
+      "type": "array",
+      "description": "ISS module IDs (from iss-modules.json) this entry is the reciprocal of. Used on Shuttle orbiter entries to surface which ISS modules each orbiter delivered (e.g. Endeavour → [unity, canadarm2, tranquility, cupola]).",
+      "items": { "type": "string", "minLength": 1 }
+    },
     "linked_sites": {
       "type": "array",
       "description": "Reverse pointers to surface markers / orbital objects. Populated in Phase K.",

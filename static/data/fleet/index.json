@@ -120,6 +120,18 @@
     "tagline": "Successor to Ariane 5"
   },
   {
+    "id": "atlantis",
+    "name": "Space Shuttle Atlantis",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1985-10-03",
+    "tagline": "OV-104; flew final Shuttle mission STS-135 (2011) + final Hubble servicing STS-125 + deployed Galileo + Magellan"
+  },
+  {
     "id": "atlas-lv-3b",
     "name": "Atlas LV-3B",
     "category": "launcher",
@@ -276,6 +288,18 @@
     "tagline": "Soviet shuttle; one unmanned flight, never crewed"
   },
   {
+    "id": "buran-ok-gli",
+    "name": "Buran OK-GLI (BTS-002)",
+    "category": "crewed-spacecraft",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1985-11-10",
+    "tagline": "Burans atmospheric analog (BTS-002); equivalent of NASAs Enterprise; never reached space"
+  },
+  {
     "id": "cape-canaveral-slc-40",
     "name": "Cape Canaveral SLC-40",
     "category": "launch-site",
@@ -334,6 +358,18 @@
     "status": "RETIRED",
     "first_flight": "1997-10-15",
     "tagline": "Saturn orbiter; Huygens landed on Titan"
+  },
+  {
+    "id": "challenger",
+    "name": "Space Shuttle Challenger",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1983-04-04",
+    "tagline": "OV-099; lost 73s after launch on STS-51-L 1986-01-28 with 7 crew including Christa McAuliffe"
   },
   {
     "id": "chandra",
@@ -406,6 +442,18 @@
     "status": "RETIRED",
     "first_flight": "1994-01-25",
     "tagline": "Joint BMDO + NASA lunar orbiter; first global multispectral map + hint of polar ice"
+  },
+  {
+    "id": "columbia",
+    "name": "Space Shuttle Columbia",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1981-04-12",
+    "tagline": "OV-102; first Shuttle to fly to space (STS-1, 1981-04-12); lost on STS-107 re-entry 2003-02-01"
   },
   {
     "id": "compton-gro",
@@ -516,6 +564,18 @@
     "tagline": "NASA's medium-lift planetary-science workhorse; Dawn, Messenger, MRO, Kepler"
   },
   {
+    "id": "discovery",
+    "name": "Space Shuttle Discovery",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1984-08-30",
+    "tagline": "OV-103; most-flown Shuttle (39 missions); deployed Hubble + both return-to-flight missions"
+  },
+  {
     "id": "emu",
     "name": "EMU",
     "category": "space-suit",
@@ -528,6 +588,18 @@
     "tagline": "The white US spacewalk suit — every American EVA from the Shuttle to the ISS"
   },
   {
+    "id": "endeavour",
+    "name": "Space Shuttle Endeavour",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1992-05-07",
+    "tagline": "OV-105; youngest Shuttle; built from spares to replace Challenger; first Hubble servicing + Unity + Canadarm2"
+  },
+  {
     "id": "energia",
     "name": "Energia",
     "category": "launcher",
@@ -538,6 +610,18 @@
     "status": "RETIRED",
     "first_flight": "1987",
     "tagline": "Soviet super-heavy; flew Buran once"
+  },
+  {
+    "id": "enterprise",
+    "name": "Space Shuttle Enterprise",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1969-1981",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1977-08-12",
+    "tagline": "OV-101; prototype Shuttle; 1977 atmospheric drop tests; never flew to orbit"
   },
   {
     "id": "euclid",
@@ -2362,6 +2446,18 @@
     "status": "ACTIVE",
     "first_flight": "2016-06-25",
     "tagline": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme"
+  },
+  {
+    "id": "x37b",
+    "name": "X-37B OTV",
+    "category": "crewed-spacecraft",
+    "agency": "USSF",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2010-04-22",
+    "tagline": "USSF reusable robotic spaceplane; classified multi-year orbital missions, post-Shuttle US spaceplane"
   },
   {
     "id": "xichang-lc-2",

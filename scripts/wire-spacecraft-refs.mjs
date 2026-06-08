@@ -1,5 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync } from 'fs';
 
 // Per-mission: which spacecraft + launcher refs to set
 const MISSION_REFS = {

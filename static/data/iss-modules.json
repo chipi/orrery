@@ -1,9 +1,9 @@
 [
   {
     "id": "zarya",
-    "builder": "Khrunichev State Research and Production Space Center",
+    "builder": "Khrunichev",
     "builder_country": "Russia",
-    "agency": "Roscosmos / NASA (funded)",
+    "agency": "Roscosmos / NASA",
     "launch_vehicle": "Proton-K",
     "launch_date": "1998-11-20",
     "flight_designation": "STS-88 rendezvous target",
@@ -11,7 +11,7 @@
     "length_m": 12.6,
     "year_first_of": "First ISS module in orbit",
     "status": "ACTIVE",
-    "credit": "NASA — ISS structural references",
+    "credit": "NASA — ISS structural references. Built by Khrunichev under a Boeing contract; NASA funded the ~$190M development as the first ISS element, making this a structurally Russian module on a US-funded budget.",
     "links": [
       {
         "l": "Wikipedia · Zarya",
@@ -28,7 +28,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "proton-k"
   },
   {
     "id": "unity",
@@ -54,7 +55,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "zvezda",
@@ -84,7 +86,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "proton-k"
   },
   {
     "id": "destiny",
@@ -109,7 +112,8 @@
         "u": "https://www.nasa.gov/humans-in-space/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "quest",
@@ -134,20 +138,21 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "pirs",
     "builder": "RKK Energia",
     "builder_country": "Russia",
     "agency": "Roscosmos",
-    "launch_vehicle": "Soyuz-U / Progress carrier",
+    "launch_vehicle": "Soyuz-U",
     "launch_date": "2001-09-17",
     "flight_designation": "ISS assembly",
     "mass_kg": 3580,
     "length_m": 4.9,
     "status": "RETIRED",
-    "credit": "Roscosmos / NASA archival imagery",
+    "credit": "Roscosmos / NASA archival imagery. Delivered to the ISS aboard a modified Progress M-SO1 cargo carrier launched by Soyuz-U; deorbited 2021-07-26 in a controlled re-entry to make room for the Nauka module.",
     "links": [
       {
         "l": "Wikipedia · Pirs",
@@ -164,7 +169,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "soyuz-u"
   },
   {
     "id": "harmony",
@@ -189,7 +195,8 @@
         "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "columbus",
@@ -214,7 +221,8 @@
         "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Columbus",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "kibo",
@@ -239,7 +247,8 @@
         "u": "https://humans-in-space.jaxa.jp/en/kibo/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "tranquility",
@@ -264,7 +273,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "cupola",
@@ -290,7 +300,8 @@
         "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Cupola",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "rassvet",
@@ -320,7 +331,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "leonardo",
@@ -345,7 +357,8 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   },
   {
     "id": "beam",
@@ -371,7 +384,8 @@
         "u": "https://www.nasa.gov/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "falcon-9"
   },
   {
     "id": "nauka",
@@ -401,20 +415,21 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "proton-m"
   },
   {
     "id": "prichal",
     "builder": "RKK Energia",
     "builder_country": "Russia",
     "agency": "Roscosmos",
-    "launch_vehicle": "Soyuz",
+    "launch_vehicle": "Soyuz-2.1b",
     "launch_date": "2021-11-26",
-    "flight_designation": "Progress delivery",
+    "flight_designation": "Progress M-UM",
     "mass_kg": 3560,
     "length_m": 4,
     "status": "ACTIVE",
-    "credit": "Roscosmos / NASA",
+    "credit": "Roscosmos / NASA. Delivered to the ISS via a modified Progress M-UM cargo carrier launched by Soyuz-2.1b.",
     "links": [
       {
         "l": "Wikipedia · Prichal",
@@ -431,20 +446,21 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "soyuz-2"
   },
   {
     "id": "poisk",
     "builder": "RKK Energia",
     "builder_country": "Russia",
     "agency": "Roscosmos",
-    "launch_vehicle": "Soyuz-U / Progress M-MIM2",
+    "launch_vehicle": "Soyuz-U",
     "launch_date": "2009-11-10",
     "flight_designation": "Progress M-MIM2",
     "mass_kg": 3900,
     "length_m": 4.04,
     "status": "ACTIVE",
-    "credit": "Roscosmos / NASA archival imagery",
+    "credit": "Roscosmos / NASA archival imagery. Delivered to the ISS via a modified Progress M-MIM2 cargo carrier launched by Soyuz-U.",
     "links": [
       {
         "l": "Wikipedia · Poisk",
@@ -461,11 +477,12 @@
         "u": "https://www.nasa.gov/international-space-station/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "soyuz-u"
   },
   {
     "id": "canadarm2",
-    "builder": "MDA Space (formerly MacDonald, Dettwiler)",
+    "builder": "MDA Space",
     "builder_country": "Canada",
     "agency": "CSA / NASA",
     "launch_vehicle": "Space Shuttle",
@@ -475,7 +492,7 @@
     "length_m": 17,
     "year_first_of": "Canada’s primary ISS robotics system",
     "status": "ACTIVE",
-    "credit": "CSA / NASA",
+    "credit": "CSA / NASA. Built by MDA Space (formerly MacDonald, Dettwiler and Associates / MDA) of Brampton, Ontario.",
     "links": [
       {
         "l": "Wikipedia · Canadarm2",
@@ -487,6 +504,7 @@
         "u": "https://www.asc-csa.gc.ca/eng/iss/canadarm2/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "space-shuttle-stack"
   }
 ]

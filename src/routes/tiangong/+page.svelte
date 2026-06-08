@@ -28,6 +28,7 @@
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -51,6 +52,7 @@
   let lowMemBanner = $state(false);
   let autoSpin = $state(true);
   let indexOpen = $state(false);
+  let timelineOpen = $state(false);
   let hoverLabel: HoverLabel | undefined = $state();
 
   /** Reactive mirror of the 3D scene's hovered module id so the
@@ -947,6 +949,27 @@
       {/if}
     </aside>
 
+    {#if timelineOpen}
+      <div class="timeline-overlay" data-testid="tiangong-timeline">
+        <StationTimelineStrip
+          modules={sortedModules}
+          visitors={sortedVisitors}
+          selectedId={selected?.id}
+          hoveredId={canvasHoveredId}
+          heading="Tiangong assembly timeline — modules above, visiting spacecraft below"
+          onSelect={(item) => {
+            const m = [...sortedModules, ...sortedVisitors].find((x) => x.id === item.id);
+            if (m) openModule(m);
+          }}
+          onHover={(id) => {
+            visualRef.hoveredId = id;
+            canvasHoveredId = id;
+            requestMaterialRefresh();
+          }}
+        />
+      </div>
+    {/if}
+
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
     <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
@@ -1022,6 +1045,16 @@
             title={m.tiangong_btn_modules_title()}
           >
             MODULES
+          </button>
+          <button
+            type="button"
+            class="toggle"
+            data-testid="tiangong-timeline-toggle"
+            aria-pressed={timelineOpen}
+            onclick={() => (timelineOpen = !timelineOpen)}
+            title="Chronological timeline of when each Tiangong module + visitor joined the station"
+          >
+            TIMELINE
           </button>
         </div>
       {:else}
@@ -1288,6 +1321,14 @@
     /* Match drawer width below so HUD + module list align in a single rail. */
     width: min(300px, calc(100vw - 24px));
     pointer-events: none;
+  }
+  .timeline-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    pointer-events: auto;
   }
   .hud-controls :global(button),
   .hud-controls :global(.toggle) {

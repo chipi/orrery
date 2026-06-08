@@ -286,6 +286,50 @@ export const AGENCIES: AgencyInfo[] = [
     color: '#1B9E77',
     aliases: ['planet labs', 'planet-labs', 'planet labs pbc'],
   },
+
+  // ─── Newspace launch operators surfaced via LL2 — no logo SVG yet ──
+  {
+    short: 'Rocket Lab',
+    full: 'Rocket Lab',
+    logo: null,
+    color: '#000000',
+    aliases: ['rocket lab', 'rocket lab usa'],
+  },
+  {
+    short: 'Avio',
+    full: 'Avio S.p.A',
+    logo: null,
+    color: '#003c71',
+    aliases: ['avio', 'avio s.p.a', 'avio spa'],
+  },
+  {
+    short: 'Firefly',
+    full: 'Firefly Aerospace',
+    logo: null,
+    color: '#ff6600',
+    aliases: ['firefly', 'firefly aerospace'],
+  },
+  {
+    short: 'Relativity',
+    full: 'Relativity Space',
+    logo: null,
+    color: '#5d2a86',
+    aliases: ['relativity', 'relativity space'],
+  },
+  {
+    short: 'MHI',
+    full: 'Mitsubishi Heavy Industries',
+    logo: null,
+    color: '#cc0000',
+    aliases: ['mitsubishi heavy industries', 'mhi'],
+  },
+  {
+    short: 'Astra',
+    full: 'Astra Space',
+    logo: null,
+    color: '#000000',
+    aliases: ['astra', 'astra space'],
+  },
 ];
 
 // Reverse-lookup map built once at module load.

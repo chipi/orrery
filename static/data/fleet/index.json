@@ -84,6 +84,18 @@
     "tagline": "First crewed lunar lander; Eagle, Antares, Falcon..."
   },
   {
+    "id": "ariane-1",
+    "name": "Ariane 1",
+    "category": "launcher",
+    "agency": "Arianespace",
+    "country": "Multi (Europe)",
+    "era": "1969-1981",
+    "epoch": "first-stations",
+    "status": "RETIRED",
+    "first_flight": "1979-12-24",
+    "tagline": "Europe's first independent orbital launcher; flew Giotto to Halley"
+  },
+  {
     "id": "ariane-5",
     "name": "Ariane 5",
     "category": "launcher",
@@ -118,6 +130,18 @@
     "status": "RETIRED",
     "first_flight": "1962",
     "tagline": "Lifted Mercury astronauts to orbit"
+  },
+  {
+    "id": "atlas-slv-3d",
+    "name": "Atlas SLV-3D Centaur",
+    "category": "launcher",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1969-1981",
+    "epoch": "first-stations",
+    "status": "RETIRED",
+    "first_flight": "1973-04-10",
+    "tagline": "1970s NASA outer-planet workhorse; Pioneer 10/11, Helios, Mariner 9/10"
   },
   {
     "id": "atlas-v",
@@ -430,6 +454,18 @@
     "status": "RETIRED",
     "first_flight": "2021-11-24",
     "tagline": "First planetary defense impactor (Dimorphos)"
+  },
+  {
+    "id": "delta-ii",
+    "name": "Delta II",
+    "category": "launcher",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "1989-02-14",
+    "tagline": "NASA's medium-lift planetary-science workhorse; Dawn, Messenger, MRO, Kepler"
   },
   {
     "id": "emu",
@@ -1438,6 +1474,18 @@
     "status": "ACTIVE",
     "first_flight": "2015-12-21",
     "tagline": "Current Progress generation; ISS resupply"
+  },
+  {
+    "id": "proton-k",
+    "name": "Proton-K",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR / Russia",
+    "era": "1969-1981",
+    "epoch": "first-stations",
+    "status": "RETIRED",
+    "first_flight": "1967-03-10",
+    "tagline": "Soviet / Russian heavy-lift workhorse 1967-2012; Salyut, Mir, every Venera, every Luna"
   },
   {
     "id": "proton-m",

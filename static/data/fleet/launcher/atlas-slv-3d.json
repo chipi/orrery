@@ -1,0 +1,34 @@
+{
+  "id": "atlas-slv-3d",
+  "name": "Atlas SLV-3D Centaur",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Convair / General Dynamics",
+  "first_flight": "1973-04-10",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "1970s NASA outer-planet workhorse — paired the Atlas SLV-3D booster with the high-energy Centaur D-1A upper stage to send Pioneer 10/11, Helios 1/2, Mariner 9/10, and Pioneer Venus to deep space",
+  "credit": "Stretched Atlas booster (the 'Atlas SLV-3D') with the LOX/LH₂ Centaur D-1A — the world's first hydrogen-fuelled upper stage, and the key enabler of every American Jupiter / Saturn / Helios / Mariner mission of the 1970s. Replaced the earlier SLV-3C in 1973, served through 1983 (last flight Intelsat V F-7), and was itself superseded by the Atlas G/H/I family that fed into the Atlas II of the 1990s. The Star-37E or Star-48 solid-kick stage was bolted on top for the very-high-energy trajectories that sent Pioneer 11 past Jupiter to a Saturn rendezvous.",
+  "links": [
+    {
+      "l": "Atlas SLV-3D Centaur — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Atlas-Centaur",
+      "t": "intro"
+    },
+    {
+      "l": "Centaur (rocket stage) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Centaur_(rocket_stage)",
+      "t": "core"
+    },
+    {
+      "l": "Gunter's Space Page — Atlas SLV-3D Centaur launch history",
+      "u": "https://space.skyrocket.de/doc_lau/atlas-slv3d_centaur.htm",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "pioneer-11"
+  ]
+}

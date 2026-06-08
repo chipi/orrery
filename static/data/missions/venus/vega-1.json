@@ -48,6 +48,12 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "proton-k",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
       {

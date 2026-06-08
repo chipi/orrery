@@ -1,0 +1,39 @@
+{
+  "id": "ariane-1",
+  "name": "Ariane 1",
+  "category": "launcher",
+  "agency": "Arianespace",
+  "country": "Multi (Europe)",
+  "manufacturer": "Aerospatiale / SEP",
+  "first_flight": "1979-12-24",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Europe's first independent orbital launcher — three-stage hypergolic-then-cryogenic vehicle that opened the commercial-comsat era for ESA and launched Giotto to Halley's Comet",
+  "credit": "Three-stage rocket (UH-25 / N2O4 first + second stage, LH₂ / LOX HM7 third stage) developed by the Centre national d'études spatiales (CNES) at the request of ESA after the cancelled Europa launcher line. 11 flights from Kourou between 1979-12-24 (L01, partial success) and 1986-02-22 (L11, last operational), with three failures. Carried 27 European telecom + science satellites including ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B, and ESA's Giotto Halley flyby probe (1985-07-02). Retired after Ariane 2 / 3 / 4 expanded the family upward in payload capacity; the HM7 cryogenic upper-stage technology lived on through Ariane 4 and into Ariane 5's ESC-A second stage.",
+  "links": [
+    {
+      "l": "Ariane 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ariane_1",
+      "t": "intro"
+    },
+    {
+      "l": "Arianespace — Ariane heritage",
+      "u": "https://www.arianespace.com/about-us/",
+      "t": "core"
+    },
+    {
+      "l": "ESA — Ariane history",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane",
+      "t": "core"
+    },
+    {
+      "l": "Gunter's Space Page — Ariane 1 launch history",
+      "u": "https://space.skyrocket.de/doc_lau/ariane-1.htm",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "giotto"
+  ]
+}

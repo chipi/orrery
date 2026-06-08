@@ -48,6 +48,12 @@
       "t": "deep"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "atlas-slv-3d",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
       {

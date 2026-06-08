@@ -58,6 +58,12 @@
     }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "delta-ii",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
       {

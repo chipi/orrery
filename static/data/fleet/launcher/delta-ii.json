@@ -1,0 +1,40 @@
+{
+  "id": "delta-ii",
+  "name": "Delta II",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "McDonnell Douglas / Boeing",
+  "first_flight": "1989-02-14",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "NASA's medium-lift planetary-science workhorse — 155 flights 1989-2018, including Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL, and the original GPS Block II constellation",
+  "credit": "Two- or three-stage liquid-LOX/RP-1 first stage (Rocketdyne RS-27A) with up to nine GEM-40 / GEM-46 strap-on SRBs and a Star-48B solid-kick third stage for high-energy missions. 155 launches 1989-02-14 (Navstar II-1) through 2018-09-15 (ICESat-2), with a 99.4% success rate that made it NASA's go-to for planetary probes too heavy for Pegasus and too light to justify Atlas / Delta IV. The 7000-series evolved out of the post-Challenger GPS requirement; the 7920H + Star-48B 'Delta II Heavy' variant launched Dawn (2007) and Messenger (2004). Retired after the company merged its medium-lift line into Atlas V + Falcon 9.",
+  "links": [
+    {
+      "l": "Delta II — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Delta_II",
+      "t": "intro"
+    },
+    {
+      "l": "NASA — Delta II launch service summary",
+      "u": "https://www.nasa.gov/centers/kennedy/about/information/shuttle_faq.html",
+      "t": "core"
+    },
+    {
+      "l": "Delta II Payload Planners Guide (Boeing, 2006)",
+      "u": "https://web.archive.org/web/20120920191232/http://www.ulalaunch.com/uploads/docs/Delta_II_Payload_Planners_Guide.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "Spaceflight Now — Delta II final launch (ICESat-2, 2018-09-15)",
+      "u": "https://spaceflightnow.com/2018/09/15/icesat-2-launches-on-final-delta-2-rocket/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "dawn",
+    "messenger"
+  ]
+}

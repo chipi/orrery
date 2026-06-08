@@ -48,6 +48,12 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "ariane-1",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
       {

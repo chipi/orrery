@@ -53,6 +53,12 @@
       "t": "deep"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "delta-ii",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
       {

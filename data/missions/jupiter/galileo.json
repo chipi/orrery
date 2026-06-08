@@ -25,6 +25,36 @@
       "l": "Galileo mission (NASA Solar System Exploration)",
       "u": "https://science.nasa.gov/mission/galileo/",
       "t": "core"
+    },
+    {
+      "l": "Galileo at JPL",
+      "u": "https://www.jpl.nasa.gov/missions/galileo/",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA catalog — Galileo Orbiter (1989-084B)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-084B",
+      "t": "deep"
+    },
+    {
+      "l": "Galileo Probe — atmospheric entry 1995-12-07 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/galileo_probe.html",
+      "t": "deep"
+    },
+    {
+      "l": "Europa subsurface ocean evidence — Khurana et al. 1998, Nature 395",
+      "u": "https://www.nature.com/articles/27394",
+      "t": "deep"
+    },
+    {
+      "l": "Ida + Dactyl — first asteroid moon (Belton et al. 1995, Nature 374)",
+      "u": "https://www.nature.com/articles/374785a0",
+      "t": "deep"
+    },
+    {
+      "l": "End-of-mission Jupiter disposal 2003-09-21",
+      "u": "https://solarsystem.nasa.gov/missions/galileo/in-depth/",
+      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",

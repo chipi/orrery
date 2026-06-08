@@ -1,0 +1,164 @@
+{
+  "id": "cassini",
+  "agency": "NASA / ESA / ASI",
+  "agency_full": "National Aeronautics and Space Administration (lead) / European Space Agency (Huygens probe) / Agenzia Spaziale Italiana (high-gain antenna + radar)",
+  "sector": "gov",
+  "dest": "SATURN",
+  "color": "#ffc850",
+  "year": 1997,
+  "status": "FLOWN",
+  "departure_date": "1997-10-15",
+  "arrival_date": "2004-07-01",
+  "transit_days": 2451,
+  "vehicle": "Titan IVB / Centaur",
+  "payload": "Saturn orbiter (~5712 kg dry) + Huygens descent probe (~318 kg, ESA-built, landed on Titan 2005-01-14)",
+  "delta_v": "~2 km/s (Saturn orbit insertion)",
+  "data_quality": "partial",
+  "flight_data_quality": "sparse",
+  "credit": "\u00a9 NASA / JPL-Caltech / ESA / ASI / Space Science Institute \u2014 joint U.S. / European public-domain mission. Cassini orbited Saturn for 13 years (2004-2017), completing 294 orbits and 162 close moon flybys. Highlights: Huygens landed on Titan 2005-01-14 (first soft landing in the outer solar system); discovered Enceladus's plumes 2005 (~100 geysers from the south-polar tiger stripes); resolved Saturn's hexagonal polar storm; mapped Titan's lake system via radar; first observation of seasonal change on Saturn (Cassini covered nearly half a Saturnian year). Grand Finale (2017-04-23 to 2017-09-15) \u2014 22 ring-gap orbits + atmospheric entry that destroyed the spacecraft over Saturn's cloud tops, ending the mission for planetary-protection reasons (preventing future biological contamination of Enceladus or Titan).",
+  "links": [
+    {
+      "l": "Cassini-Huygens \u2014 Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Science \u2014 Cassini mission overview",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Huygens \u2014 descent into Titan's atmosphere",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens",
+      "t": "core"
+    },
+    {
+      "l": "JPL \u2014 Grand Finale official mission archive + final image set",
+      "u": "https://solarsystem.nasa.gov/missions/cassini/mission/grand-finale/overview/",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society \u2014 Cassini retrospective",
+      "u": "https://www.planetary.org/space-missions/cassini-huygens",
+      "t": "core"
+    },
+    {
+      "l": "Porco et al. (2006) \u2014 Cassini observes the active south pole of Enceladus (Science 311)",
+      "u": "https://www.science.org/doi/10.1126/science.1123013",
+      "t": "deep"
+    },
+    {
+      "l": "NSSDCA \u2014 Cassini master catalog entry",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1997-061A",
+      "t": "deep"
+    },
+    {
+      "l": "Cassini Imaging Team (Space Science Institute) \u2014 full image archive",
+      "u": "https://www.ciclops.org/",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "cassini",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 207,
+        "type": "flyby"
+      },
+      {
+        "met_days": 808,
+        "type": "flyby"
+      },
+      {
+        "met_days": 894,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2226,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2451,
+        "type": "edl_or_oi"
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "saturn",
+      "transfer_type": "vvejga_gravity_assists",
+      "waypoints_helio_au": [
+        [
+          0,
+          0.95,
+          0,
+          0.05
+        ],
+        [
+          120,
+          0.72,
+          0.0,
+          -0.4
+        ],
+        [
+          207,
+          0.73,
+          0.0,
+          -0.5
+        ],
+        [
+          400,
+          1.4,
+          0.0,
+          0.3
+        ],
+        [
+          600,
+          1.0,
+          -0.1,
+          0.6
+        ],
+        [
+          808,
+          0.71,
+          -0.1,
+          0.35
+        ],
+        [
+          894,
+          1.0,
+          -0.1,
+          0.0
+        ],
+        [
+          1500,
+          3.5,
+          0.5,
+          0.4
+        ],
+        [
+          2226,
+          5.2,
+          1.5,
+          0.6
+        ],
+        [
+          2451,
+          9.5,
+          1.0,
+          0.6
+        ]
+      ]
+    }
+  }
+}

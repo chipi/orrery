@@ -1,0 +1,28 @@
+{
+  "id": "baikonur-200",
+  "category": "launch-site",
+  "name": "Baikonur Site 200",
+  "agency": "ROSCOSMOS",
+  "country": "Kazakhstan",
+  "manufacturer": "RKTs Progress / GKNPTs Khrunichev",
+  "first_flight": "1980-03-14",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 46.04,
+  "lon": 63.03,
+  "best_known_for": "Proton-M heavy-lift pad — Mir modules, ISS Zvezda/Zarya, GLONASS, Luna 25",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). Site 200 hosts pads PU1 (LC200/39) and PU2 (LC200/40) for Proton-K and Proton-M. Distinct from Sites 1/5 (R-7/Soyuz) and 31/6 (R-7/Soyuz).",
+  "links": [
+    {
+      "l": "Baikonur Site 200 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Baikonur_Cosmodrome_Site_200",
+      "t": "intro"
+    },
+    {
+      "l": "Proton launch sites (Russian Space Web)",
+      "u": "http://www.russianspaceweb.com/baikonur_lc200.html",
+      "t": "deep"
+    }
+  ]
+}

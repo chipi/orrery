@@ -1,0 +1,61 @@
+{
+  "id": "juice",
+  "agency": "ESA",
+  "agency_full": "European Space Agency (lead) — NASA (RIME radar antenna + UVS spectrometer) + JAXA (PEP-Hi components) + ISA (Italian Space Agency 3GM radio science + JANUS imager)",
+  "sector": "gov",
+  "dest": "JUPITER",
+  "color": "#967bdc",
+  "year": 2023,
+  "status": "ACTIVE",
+  "departure_date": "2023-04-14",
+  "arrival_date": "2031-07-21",
+  "transit_days": 3020,
+  "vehicle": "Ariane 5 ECA+",
+  "payload": "6000 kg wet (2900 kg dry) — largest interplanetary spacecraft Europe has ever built. 10 instruments: JANUS (visible), MAJIS (IR), UVS, SWI (sub-mm), GALA (laser altimeter), RIME (radar sounder, NASA), J-MAG (mag), PEP (particle), RPWI (plasma waves), 3GM (radio science). 85 m² solar arrays sized for ~5.5 AU operation.",
+  "delta_v": "~3.0 km/s (gravity-assist sequence + Jupiter orbit insertion + Ganymede orbit insertion)",
+  "data_quality": "partial",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / Airbus / instrument PIs. JUICE — JUpiter ICy moons Explorer — launched 2023-04-14 from Kourou as ESA's flagship L-class outer-system mission. The 8-year cruise is one of the most complex gravity-assist sequences ever attempted: a unique Lunar-Earth Gravity Assist (LEGA) on 2024-08-19 (first such manoeuvre ever performed), Venus 2025-08-31, Earth 2026-09-29, Earth 2029-01-18, with each pass building ΔV toward Jupiter arrival 2031-07-21. After Jupiter orbit insertion JUICE will conduct 35 close flybys of Europa, Ganymede, and Callisto over 3.5 years before manoeuvring into a dedicated Ganymede orbit on 2034-12-31 — the first spacecraft ever to orbit a moon of another planet. Primary science questions: Is there a subsurface ocean at Ganymede? What is the composition + thickness of Europa's ice shell? How do the Jovian magnetic environment + ice-shell tides interact across the three icy moons? Planned end of mission 2035 by impact on Ganymede.",
+  "links": [
+    {
+      "l": "JUICE (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Science — JUICE mission portal",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Juice",
+      "t": "intro"
+    },
+    {
+      "l": "ESA — JUICE Lunar-Earth Gravity Assist (first-ever)",
+      "u": "https://www.esa.int/Space_in_Member_States/United_Kingdom/Juice_makes_history_with_lunar-Earth_flyby",
+      "t": "core"
+    },
+    {
+      "l": "Grasset et al. (2013) — JUICE mission science rationale (Planet. Space Sci.)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0032063313000244",
+      "t": "deep"
+    },
+    {
+      "l": "NSSDCA master catalog — JUICE (2023-053A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-053A",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society — JUICE mission overview",
+      "u": "https://www.planetary.org/space-missions/juice",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 493, "type": "flyby" },
+      { "met_days": 871, "type": "flyby" },
+      { "met_days": 1265, "type": "flyby" },
+      { "met_days": 2103, "type": "flyby" },
+      { "met_days": 3020, "type": "edl_or_oi" }
+    ]
+  }
+}

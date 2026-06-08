@@ -1,0 +1,144 @@
+{
+  "id": "voyager-1",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "SATURN",
+  "color": "#6b8cff",
+  "year": 1977,
+  "status": "FLOWN",
+  "departure_date": "1977-09-05",
+  "arrival_date": "1980-11-12",
+  "transit_days": 1164,
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Planetary flyby spacecraft; three RTG modules totalling ~470 W at launch (decaying to ~250 W today)",
+  "delta_v": "~17 km/s (cumulative, Jupiter + Saturn assists)",
+  "data_quality": "partial",
+  "flight_data_quality": "sparse",
+  "credit": "\u00a9 NASA / JPL-Caltech \u2014 U.S. Government work, public domain. Voyager 1 is the most distant human-made object \u2014 about 165 AU from the Sun and travelling at ~17 km/s relative to it. Saturn is the catalogued destination because Voyager 1's mission profile ended there; its Titan flyby (1980-11-12) bent the trajectory upward out of the ecliptic plane, and after that no further planetary encounter was possible. The spacecraft crossed the heliopause on 2012-08-25 \u2014 the first human-made object to enter interstellar space. Pale Blue Dot family photograph taken 1990-02-14 from a heliocentric distance of ~6 billion km. Mission planning credit: Gary Flandro, JPL, who identified the late-1970s outer-planet alignment that made the Grand Tour possible.",
+  "links": [
+    {
+      "l": "Voyager 1 \u2014 Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voyager_1",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager mission status (NASA / JPL \u2014 live distance + signal travel time)",
+      "u": "https://voyager.jpl.nasa.gov/mission/status/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Science \u2014 Voyager mission overview",
+      "u": "https://science.nasa.gov/mission/voyager/",
+      "t": "core"
+    },
+    {
+      "l": "JPL Voyager Interstellar Mission technical overview",
+      "u": "https://voyager.jpl.nasa.gov/mission/interstellar-mission/",
+      "t": "core"
+    },
+    {
+      "l": "Pale Blue Dot \u2014 original PIA00452 caption + image at NASA Photojournal",
+      "u": "https://photojournal.jpl.nasa.gov/catalog/PIA00452",
+      "t": "core"
+    },
+    {
+      "l": "Voyager Golden Record \u2014 official NASA site",
+      "u": "https://voyager.jpl.nasa.gov/golden-record/",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society \u2014 Voyager mission profile",
+      "u": "https://www.planetary.org/space-missions/voyager",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA \u2014 Voyager 1 master catalog entry",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1977-084A",
+      "t": "deep"
+    },
+    {
+      "l": "Stone, E.C. et al. (2013) \u2014 Voyager 1 Observes Low-Energy Galactic Cosmic Rays (heliopause crossing paper, Science 341)",
+      "u": "https://www.science.org/doi/10.1126/science.1236408",
+      "t": "deep"
+    },
+    {
+      "l": "Smithsonian Air & Space Museum \u2014 Voyager engineering test model",
+      "u": "https://airandspace.si.edu/collection-objects/voyager-test-model/nasm_A19840270000",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "voyager-1",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 546,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1164,
+        "type": "flyby"
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "saturn",
+      "transfer_type": "direct_ascent_then_grand_tour",
+      "waypoints_helio_au": [
+        [
+          0,
+          0.95,
+          0,
+          0.0
+        ],
+        [
+          180,
+          2.2,
+          0.3,
+          0.0
+        ],
+        [
+          365,
+          3.4,
+          0.5,
+          0.1
+        ],
+        [
+          546,
+          5.0,
+          0.6,
+          0.2
+        ],
+        [
+          730,
+          6.5,
+          -0.2,
+          0.4
+        ],
+        [
+          950,
+          8.2,
+          -1.2,
+          0.6
+        ],
+        [
+          1164,
+          9.5,
+          -2.0,
+          0.9
+        ]
+      ]
+    }
+  }
+}

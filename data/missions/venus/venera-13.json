@@ -1,0 +1,57 @@
+{
+  "id": "venera-13",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Roscosmos / Lavochkin Association (lead spacecraft) — Soviet Academy of Sciences instruments",
+  "sector": "gov",
+  "dest": "VENUS",
+  "color": "#da4453",
+  "year": 1981,
+  "status": "FLOWN",
+  "departure_date": "1981-10-30",
+  "arrival_date": "1982-03-01",
+  "transit_days": 122,
+  "vehicle": "Proton-K / D-1",
+  "payload": "~4500 kg combined: flyby bus + 1645 kg titanium descent capsule (cameras, X-ray fluorescence soil-composition spectrometer, seismometer, soil-sampling arm with hermetic-vault drill). Designed for one of the most hostile descent environments ever attempted.",
+  "delta_v": "~1.5 km/s (Venus arrival)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© Roscosmos / Lavochkin / IKI / NASA NSSDCA archive. Venera 13 launched 1981-10-30 from Baikonur. After a 122-day cruise the descent capsule separated and braked through Venus's atmosphere using parachutes, then a final aero-brake disc; it landed 1982-03-01 at 7.5°S 303°E in the Phoebe Regio highlands. Surface conditions at touchdown: 457 °C, 89 bar, sulfuric-acid haze. Venera 13 survived 127 minutes — the longest surface survival of any Venus mission, beating its design target by nearly an hour. During that window it returned the first colour panoramic images of another planet's surface (two 180° colour panoramas), recorded the first audio from another planet's surface via wind-microphone, and used its drill + onboard XRF to determine that the landing site basalt was a weakly differentiated leucite alkaline composition. Twin spacecraft Venera 14 (launched 1981-11-04, landed 1982-03-05) performed nearly identical operations at a different site. The Venera series — Venera 4 through 16 (1967-1983) — remains the only successful surface program at Venus to date.",
+  "links": [
+    {
+      "l": "Venera 13 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera_13",
+      "t": "intro"
+    },
+    {
+      "l": "Venera program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA master catalog — Venera 13 (1981-106A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106A",
+      "t": "core"
+    },
+    {
+      "l": "Don P. Mitchell — Venera 13 / 14 colour panorama processing",
+      "u": "https://mentallandscape.com/V_Lavochkin2.htm",
+      "t": "core"
+    },
+    {
+      "l": "Surkov et al. (1983) — Venera 13 + 14 surface chemistry results (JGR)",
+      "u": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/JB088iS02p0A481",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society — Venera retrospective",
+      "u": "https://www.planetary.org/articles/every-picture-from-venus-surface-ever",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 122, "type": "edl_or_oi" }
+    ]
+  }
+}

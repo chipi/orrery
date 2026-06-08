@@ -1,0 +1,33 @@
+{
+  "id": "cape-canaveral-slc-41",
+  "name": "Cape Canaveral SLC-41",
+  "category": "launch-site",
+  "agency": "USSF",
+  "country": "USA",
+  "manufacturer": "ULA · USSF",
+  "first_flight": "1965-12-21",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 28.583,
+  "lon": -80.583,
+  "best_known_for": "Atlas V's main pad — flew every Atlas V mission including Mars Perseverance + Lucy + Starliner CFT",
+  "credit": "Fleet launch-site entry added during the LL2 cross-correlation analysis (#306 follow-up). Originally Titan III / Titan IV; rebuilt for Atlas V (2002-) and slated for Vulcan Centaur. ~95 historic launches in our manifest mapped here.",
+  "links": [
+    {
+      "l": "Cape Canaveral SLC-41 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_41",
+      "t": "intro"
+    },
+    {
+      "l": "Atlas V launch site (ULA)",
+      "u": "https://www.ulalaunch.com/about/facilities",
+      "t": "core"
+    },
+    {
+      "l": "SLC-41 historic and current operations (Space Force)",
+      "u": "https://www.spaceforce.mil/About-Us/Fact-Sheets/",
+      "t": "deep"
+    }
+  ]
+}

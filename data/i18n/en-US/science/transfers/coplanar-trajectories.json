@@ -1,0 +1,15 @@
+{
+  "title": "Why mission trajectories look flat",
+  "intro_sentence": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
+  "narrative_101": [
+    "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
+    "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
+    "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track."
+  ],
+  "body_paragraphs": [
+    "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
+    "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
+    "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go."
+  ],
+  "diagram_caption": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive."
+}

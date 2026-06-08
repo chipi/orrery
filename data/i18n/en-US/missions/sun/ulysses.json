@@ -1,0 +1,38 @@
+{
+  "name": "Ulysses",
+  "type": "SOLAR POLAR ORBITER · FLOWN",
+  "first": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
+  "description": "Joint ESA / NASA mission. Launched 1990-10-06 from STS-41 Discovery + IUS + PAM-S upper stages, Ulysses used a Jupiter gravity assist on 1992-02-08 to deflect itself ~80° out of the ecliptic — the only way to reach a near-polar Sun-relative orbit from Earth's near-equatorial orbital plane. Three full polar orbits of the Sun over 18.5 years mapped the solar wind, heliospheric magnetic field, and energetic particles at all heliographic latitudes — direct measurements that revealed how solar-wind structure varies between equatorial slow-wind regions and high-latitude fast-wind streams from coronal holes. Mission terminated 2009-06-30 when thruster hydrazine froze in the lines. Hardware remains in heliocentric polar orbit.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "STS-41 Discovery deploys Ulysses + IUS / PAM-S upper stages.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "JUPITER FLYBY",
+      "note": "Gravity assist deflects Ulysses ~80° out of the ecliptic into a polar Sun-relative orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "FIRST SOUTH POLAR PASS",
+      "note": "First-ever direct measurements of solar wind over a Sun pole.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "FIRST NORTH POLAR PASS",
+      "note": "Completion of the first full solar polar orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "MISSION END",
+      "note": "Thruster lines freeze; final command issued 2009-06-30.",
+      "type": "info"
+    }
+  ]
+}

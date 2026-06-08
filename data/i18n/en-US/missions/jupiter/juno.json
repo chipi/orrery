@@ -1,0 +1,26 @@
+{
+  "name": "Juno",
+  "type": "ORBITER \u00b7 ACTIVE",
+  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
+  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 749,
+      "label": "EARTH GRAVITY ASSIST",
+      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 1796,
+      "label": "JUPITER ORBIT INSERTION",
+      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "type": "nominal"
+    }
+  ]
+}

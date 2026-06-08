@@ -1,0 +1,59 @@
+{
+  "id": "giotto",
+  "agency": "ESA",
+  "agency_full": "European Space Agency (lead) — international consortium of European universities + institutes for the 10 onboard instruments",
+  "sector": "gov",
+  "dest": "COMET",
+  "color": "#5d9cec",
+  "year": 1985,
+  "status": "FLOWN",
+  "departure_date": "1985-07-02",
+  "arrival_date": "1986-03-14",
+  "transit_days": 255,
+  "vehicle": "Ariane 1",
+  "payload": "960 kg spin-stabilised drum-shaped probe with a layered Whipple-Kevlar dust shield (rear bumper kept the science instruments live through the 68 km/s relative-velocity dust storm of the Halley coma). 10 instruments — Halley Multicolour Camera, mass spectrometers, dust impact detectors, magnetometer, plasma instruments.",
+  "delta_v": "~1.5 km/s (Halley intercept)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / Giotto. Giotto launched 1985-07-02 from Kourou as ESA's first deep-space mission and the European pillar of the Halley armada (alongside the Soviet Vega buses + Japan's Sakigake / Suisei). Closest approach to comet 1P/Halley occurred 1986-03-14 at 596 km — the closest cometary nucleus pass ever attempted at the time. The Halley Multicolour Camera returned the first close-up images of any cometary nucleus, revealing an irregular 15×8×8 km elongated body with two main outgassing jets covering ~10% of the surface. 14 seconds before closest approach a dust impact (~1 g at 68 km/s) destabilised Giotto's spin axis and disabled the camera, but the rest of the instrument suite kept returning data through the coma transit. After surviving the encounter the spacecraft was placed in hibernation, reactivated in 1990, and conducted an Earth gravity assist on 1990-07-02 to retarget to comet 26P/Grigg-Skjellerup, achieving a second flyby on 1992-07-10 at 200 km — the closest comet flyby ever performed. Final spacecraft contact 1992-07-23; hardware remains in heliocentric orbit.",
+  "links": [
+    {
+      "l": "Giotto — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Giotto_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Science — Giotto mission overview",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA master catalog — Giotto (1985-056A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1985-056A",
+      "t": "core"
+    },
+    {
+      "l": "Reinhard (1986) — Giotto mission to comet Halley (Nature 321)",
+      "u": "https://www.nature.com/articles/321313a0",
+      "t": "deep"
+    },
+    {
+      "l": "ESA — international cooperation on the Halley armada",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto/Halley_armada",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society — Halley armada retrospective",
+      "u": "https://www.planetary.org/articles/halleys-comet-spacecraft",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 255, "type": "flyby" },
+      { "met_days": 1827, "type": "flyby" },
+      { "met_days": 2565, "type": "flyby" }
+    ]
+  }
+}

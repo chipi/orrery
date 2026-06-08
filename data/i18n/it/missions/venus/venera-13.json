@@ -1,0 +1,20 @@
+{
+  "name": "Venera 13",
+  "type": "LANDER · COMPLETATA",
+  "first": "Più lunga sopravvivenza in superficie di qualsiasi missione su Venere (127 min); prime panoramiche a colori e primo audio dalla superficie di un altro pianeta",
+  "description": "Apice del programma sovietico Venera. Venera 13 atterrò il 1/3/1982 a 7,5°S 303°E nelle terre alte di Phoebe Regio. Condizioni di superficie al touchdown: 457 °C, 89 bar, foschia di acido solforico. Il lander sopravvisse 127 minuti — superando il suo obiettivo di progetto di quasi un'ora — restituendo le prime panoramiche a colori della superficie di un altro pianeta, registrando il primo audio con microfono per il vento e usando il suo trapano per determinare che il basalto del sito di atterraggio era una composizione leucitica alcalina debolmente differenziata.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Il Proton-K / D-1 lancia Venera 13 da Baikonur su una crociera di 122 giorni.",
+      "type": "nominal"
+    },
+    {
+      "met": 122,
+      "label": "ATTERRAGGIO SUPERFICIE VENERE",
+      "note": "Atterraggio a Phoebe Regio a 7,5°S 303°E; 127 minuti di operazioni in superficie a 457 °C / 89 bar.",
+      "type": "nominal"
+    }
+  ]
+}

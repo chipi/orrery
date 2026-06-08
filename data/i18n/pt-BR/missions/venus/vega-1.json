@@ -1,0 +1,26 @@
+{
+  "name": "Vega 1",
+  "type": "SOBREVOO + ATERRISSADOR + BALÃO · CONCLUÍDA",
+  "first": "Primeiro balão aerostato implantado na atmosfera de outro planeta (Vênus, 1985)",
+  "description": "Missão soviético-ESA da armada de Halley. A Vega 1 carregou um aterrissador da linhagem Venera e um balão de hélio construído pela ESA/CNES que flutuou por 46,5 horas a 54 km de altitude na atmosfera venusiana. Após soltar o módulo de descida, o barramento usou assistência gravitacional venusiana para se redirecionar ao cometa 1P/Halley, onde conseguiu sua aproximação máxima (8890 km) em 6-3-1986 — o primeiro encontro com um núcleo cometário.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "O Proton-K / D-1 lança a Vega 1 de Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 178,
+      "label": "ENCONTRO VÊNUS",
+      "note": "O módulo de descida se separa + pousa; o balão se desdobra a 54 km de altitude por 46,5 horas.",
+      "type": "nominal"
+    },
+    {
+      "met": 446,
+      "label": "SOBREVOO HALLEY",
+      "note": "Aproximação máxima do cometa 1P/Halley a 8890 km — primeira observação de um núcleo cometário.",
+      "type": "nominal"
+    }
+  ]
+}

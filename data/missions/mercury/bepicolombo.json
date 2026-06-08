@@ -1,0 +1,66 @@
+{
+  "id": "bepicolombo",
+  "agency": "ESA / JAXA",
+  "agency_full": "European Space Agency (Mercury Planetary Orbiter + Mercury Transfer Module) / Japan Aerospace Exploration Agency (Mercury Magnetospheric Orbiter, Mio)",
+  "sector": "gov",
+  "dest": "MERCURY",
+  "color": "#fcbb6d",
+  "year": 2018,
+  "status": "ACTIVE",
+  "departure_date": "2018-10-20",
+  "arrival_date": "2026-12-05",
+  "transit_days": 2968,
+  "vehicle": "Ariane 5 ECA",
+  "payload": "4100 kg launch stack: MTM (Mercury Transfer Module, ESA — 4 ion thrusters, solar arrays) + MPO (Mercury Planetary Orbiter, ESA, 1230 kg, 11 instruments) + MIO (Mercury Magnetospheric Orbiter, JAXA, 285 kg, 5 instruments) + MOSIF sunshield. Two science orbiters separate after Mercury arrival.",
+  "delta_v": "~7.2 km/s (ion-cruise + 9 gravity assists + MOI)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / JAXA / Airbus. BepiColombo launched 2018-10-20 from Kourou — the joint Europe-Japan flagship to Mercury, named after Giuseppe (Bepi) Colombo, the Italian mathematician who designed Mariner 10's multi-flyby trajectory. The 7-year cruise uses 9 gravity assists (Earth 2020-04-10, Venus 2020-10-15, Venus 2021-08-10, then six Mercury flybys 2021–2024) plus continuous ion-electric thrust from the Mercury Transfer Module to bleed off the enormous solar-gravity gradient between Earth and Mercury orbits. Mercury orbit insertion is set for 2026-12-05, with science operations beginning early 2027 after MTM jettison and MPO + Mio separation. Primary science: Mercury's exospheric composition + dynamics, the composition of its iron-rich crust and Caloris-class large impact basins, the structure of its magnetic field + magnetospheric tail, and tests of Einstein's general relativity via radio-science range tracking through Mercury's strong solar-gravity environment. Nominal one-year mission with one-year extension authorised.",
+  "links": [
+    {
+      "l": "BepiColombo — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/BepiColombo",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Science — BepiColombo mission portal",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "intro"
+    },
+    {
+      "l": "JAXA — Mio (Mercury Magnetospheric Orbiter)",
+      "u": "https://global.jaxa.jp/projects/sas/mio/",
+      "t": "core"
+    },
+    {
+      "l": "Benkhoff et al. (2021) — BepiColombo mission overview (Space Sci. Rev.)",
+      "u": "https://link.springer.com/article/10.1007/s11214-021-00861-4",
+      "t": "deep"
+    },
+    {
+      "l": "NSSDCA master catalog — BepiColombo (2018-080A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-080A",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society — BepiColombo mission overview",
+      "u": "https://www.planetary.org/space-missions/bepicolombo",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 538, "type": "flyby" },
+      { "met_days": 727, "type": "flyby" },
+      { "met_days": 1026, "type": "flyby" },
+      { "met_days": 1133, "type": "flyby" },
+      { "met_days": 1432, "type": "flyby" },
+      { "met_days": 1819, "type": "flyby" },
+      { "met_days": 2055, "type": "flyby" },
+      { "met_days": 2294, "type": "flyby" },
+      { "met_days": 2421, "type": "flyby" },
+      { "met_days": 2968, "type": "edl_or_oi" }
+    ]
+  }
+}

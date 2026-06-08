@@ -1,0 +1,111 @@
+{
+  "id": "cassini-tour",
+  "name": "Cassini Saturn-system tour",
+  "mission_id": "cassini",
+  "parent_planet": "saturn",
+  "color": "#d2a8ff",
+  "schema_version": 1,
+  "_doc": "Saturn-anchored orbital tour for /explore PATHS layer (#306 Slice D). Cassini completed 294 orbits over 13 years (2004-2017); rather than draw every loop we sample six representative families that span the actual mission phases. Units are scene units consistent with Saturn size3=11 and Titan orbit=36 (defined in src/routes/explore/+page.svelte) — NOT raw Saturn radii. Eccentricity preserves the dramatic peri/apo ratios. Inclinations preserve the equatorial→inclined→equatorial→Grand Finale arc of the actual mission. Flybys highlight the iconic moon encounters. The whole group rides Saturn's local frame the way satellites do, so when the user zooms into Saturn the tour resolves at Saturn-system scale without any frame switch.",
+  "orbits": [
+    {
+      "id": "soi-capture",
+      "label": "SOI capture (2004-07-01)",
+      "phase": "Initial orbit insertion through the F-ring gap",
+      "semi_major_units": 60,
+      "eccentricity": 0.93,
+      "incl_deg": 0.0,
+      "raan_deg": 0,
+      "opacity": 0.5
+    },
+    {
+      "id": "tour-equatorial",
+      "label": "Prime mission — equatorial Titan-shepherded orbits",
+      "phase": "2004-2007 — most flybys of Titan, Iapetus, Phoebe",
+      "semi_major_units": 24,
+      "eccentricity": 0.6,
+      "incl_deg": 0.5,
+      "raan_deg": 35,
+      "opacity": 0.55
+    },
+    {
+      "id": "tour-inclined",
+      "label": "Equinox mission — high-inclination icy-moon survey",
+      "phase": "2008-2010 — 75° inclined orbits at Enceladus, Tethys",
+      "semi_major_units": 22,
+      "eccentricity": 0.55,
+      "incl_deg": 75.0,
+      "raan_deg": 110,
+      "opacity": 0.55
+    },
+    {
+      "id": "tour-equatorial-2",
+      "label": "Solstice mission — return to equatorial",
+      "phase": "2011-2016 — second-generation Titan flybys, ring-grazing pre-finale",
+      "semi_major_units": 26,
+      "eccentricity": 0.65,
+      "incl_deg": 8.0,
+      "raan_deg": 170,
+      "opacity": 0.5
+    },
+    {
+      "id": "ring-grazing",
+      "label": "Ring-grazing orbits (2016-12 → 2017-04)",
+      "phase": "20 orbits skimming just outside the F-ring",
+      "semi_major_units": 18,
+      "eccentricity": 0.45,
+      "incl_deg": 63.5,
+      "raan_deg": 200,
+      "opacity": 0.65
+    },
+    {
+      "id": "grand-finale",
+      "label": "Grand Finale (2017-04 → 2017-09-15)",
+      "phase": "22 orbits diving between rings and Saturn's cloud tops",
+      "semi_major_units": 13,
+      "eccentricity": 0.69,
+      "incl_deg": 63.5,
+      "raan_deg": 200,
+      "opacity": 0.95,
+      "highlight": true
+    }
+  ],
+  "flybys": [
+    {
+      "id": "titan-flyby",
+      "body": "Titan",
+      "label": "Titan close flyby (×127 in mission)",
+      "distance_units": 36,
+      "angle_deg": 35,
+      "incl_deg": 0.0,
+      "color": "#ffd33d"
+    },
+    {
+      "id": "enceladus-flyby",
+      "body": "Enceladus",
+      "label": "Enceladus plume dive (×23)",
+      "distance_units": 22,
+      "angle_deg": 110,
+      "incl_deg": 75.0,
+      "color": "#79c0ff"
+    },
+    {
+      "id": "iapetus-flyby",
+      "body": "Iapetus",
+      "label": "Iapetus ridge encounter 2007-09",
+      "distance_units": 58,
+      "angle_deg": -45,
+      "incl_deg": 0.5,
+      "color": "#a5d6a7"
+    },
+    {
+      "id": "atmospheric-entry",
+      "body": "Saturn",
+      "label": "Atmospheric entry 2017-09-15 10:32 UTC",
+      "distance_units": 11.5,
+      "angle_deg": 200,
+      "incl_deg": 63.5,
+      "color": "#f97583",
+      "marker": "diamond"
+    }
+  ]
+}

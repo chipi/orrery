@@ -1,0 +1,68 @@
+{
+  "id": "rosetta",
+  "agency": "ESA",
+  "agency_full": "European Space Agency (lead) — DLR (Philae lander) / CNES / ASI / NASA (DSN tracking + 3 instruments)",
+  "sector": "gov",
+  "dest": "COMET",
+  "color": "#fc6e51",
+  "year": 2004,
+  "status": "FLOWN",
+  "departure_date": "2004-03-02",
+  "arrival_date": "2014-08-06",
+  "transit_days": 3809,
+  "vehicle": "Ariane 5G+",
+  "payload": "Orbiter (~2900 kg dry, 11 instruments) + Philae descent lander (~100 kg, 10 instruments). Heatshield, two Earth + one Mars gravity assist, 957 days of deep-space hibernation 2011–2014.",
+  "delta_v": "~2.3 km/s (rendezvous + comet ops)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / Rosetta / NavCam / OSIRIS — CC BY-SA 3.0 IGO mission imagery. Rosetta launched 2004-03-02 from Kourou on a 10-year cruise that included Earth gravity assists (2005-03-04, 2007-11-13, 2009-11-13) and a Mars flyby (2007-02-25), with main-belt asteroid encounters at 2867 Šteins (2008-09-05) and 21 Lutetia (2010-07-10). The spacecraft hibernated 2011-06 to 2014-01 (deep-space radio silence, beyond solar-array operating range), then woke and rendezvoused with comet 67P/Churyumov–Gerasimenko 2014-08-06 — the first spacecraft ever to enter orbit around a comet. Philae detached 2014-11-12 and bounced into the shadow of a cliff after harpoon failure; it returned ~60 hours of science before its primary battery drained. Rosetta itself observed 67P through perihelion (2015-08-13) and into outbound dust decay before a controlled descent to the surface on 2016-09-30 ended the mission. Key discoveries: organics + glycine + phosphorus in comet coma; deuterium-to-hydrogen ratio that ruled out Jupiter-family comets as Earth's primary water source; first close-up imaging of cometary outgassing geometry.",
+  "links": [
+    {
+      "l": "Rosetta — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Science — Rosetta mission overview",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta",
+      "t": "intro"
+    },
+    {
+      "l": "Philae lander — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Philae_(spacecraft)",
+      "t": "core"
+    },
+    {
+      "l": "ESA — Rosetta image archive (NavCam, OSIRIS)",
+      "u": "https://imagearchives.esac.esa.int/index.php?/category/63",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA master catalog — Rosetta (2004-006A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-006A",
+      "t": "deep"
+    },
+    {
+      "l": "Altwegg et al. (2015) — D/H ratio in 67P comet water (Science 347)",
+      "u": "https://www.science.org/doi/10.1126/science.1261952",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society — Rosetta mission retrospective",
+      "u": "https://www.planetary.org/space-missions/rosetta",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 367, "type": "flyby" },
+      { "met_days": 1090, "type": "flyby" },
+      { "met_days": 1349, "type": "flyby" },
+      { "met_days": 1671, "type": "flyby" },
+      { "met_days": 2320, "type": "flyby" },
+      { "met_days": 2058, "type": "flyby" },
+      { "met_days": 3809, "type": "edl_or_oi" }
+    ]
+  }
+}

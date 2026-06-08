@@ -1,0 +1,20 @@
+{
+  "name": "Pioneer 10",
+  "type": "Scheervlucht · Voltooid",
+  "first": "Eerste ruimtevaartuig door de planetoïdengordel en eerste Jupiter-passage (04-12-1973)",
+  "description": "Pioneer 10 was de pionier — eerste sonde door de planetoïdengordel (die veel minder gevaarlijk bleek dan gevreesd), eerste die Jupiter van dichtbij in beeld bracht en eerste die de perihelium-afstand van Pluto overschreed (1983). Ze draagt de Pioneer-plaquette, ontworpen door Carl Sagan, Frank Drake en Linda Salzman Sagan — het eerste bewuste interstellaire bericht van de mensheid. Laatste succesvolle contact 23-01-2003 vanaf ~82 AE; de sonde drijft nu richting het sterrenbeeld Stier, met een nadering tot Aldebaran over ongeveer twee miljoen jaar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas-Centaur tilt Pioneer 10 op in directe klim naar Jupiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 641,
+      "label": "JUPITER DICHTSTE NADERING",
+      "note": "Scheervlucht op ~132.000 km — eerste opnamen van dichtbij van de planeet.",
+      "type": "nominal"
+    }
+  ]
+}

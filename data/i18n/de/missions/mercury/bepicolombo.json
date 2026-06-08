@@ -1,0 +1,44 @@
+{
+  "name": "BepiColombo",
+  "type": "ORBITER · AKTIV",
+  "first": "Erste gemeinsame planetare Mission von Europa und Japan; zweites Raumfahrzeug überhaupt, das Merkur umkreist (nach Messenger)",
+  "description": "Gemeinsame ESA-/JAXA-Mission zu Merkur, gestartet am 20.10.2018 — benannt nach dem italienischen Mathematiker Giuseppe (Bepi) Colombo, der die Mehrfach-Vorbeiflug-Trajektorie von Mariner 10 entwarf. Die 8-jährige Reise nutzt 9 Gravitationsassistenzen (Erde 2020, Venus 2020, Venus 2021, dann sechs Merkur-Vorbeiflüge 2021-2024) plus durchgehenden Ionenantrieb. Merkur-Orbit-Einschuss am 5.12.2026; wissenschaftliche Operationen beginnen Anfang 2027.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Ariane 5 ECA startet BepiColombo von Kourou auf seine 8-jährige Ionenfahrt nach Merkur.",
+      "type": "nominal"
+    },
+    {
+      "met": 538,
+      "label": "ERDVORBEIFLUG",
+      "note": "Einzelne Erd-Gravitationsassistenz beginnt die innersystemische Gravitationsassistenzkette.",
+      "type": "nominal"
+    },
+    {
+      "met": 727,
+      "label": "VENUSVORBEIFLUG #1",
+      "note": "Erste Venus-Gravitationsassistenz.",
+      "type": "nominal"
+    },
+    {
+      "met": 1026,
+      "label": "VENUSVORBEIFLUG #2",
+      "note": "Zweite Venus-Gravitationsassistenz beginnt die Merkur-Anflugphase.",
+      "type": "nominal"
+    },
+    {
+      "met": 1133,
+      "label": "MERKURVORBEIFLUG #1",
+      "note": "Erster von sechs Merkur-Gravitationsassistenzen.",
+      "type": "nominal"
+    },
+    {
+      "met": 2968,
+      "label": "MERKUR-ORBITEINSCHUSS",
+      "note": "MTM-Abwurf + Orbiter-Trennung; wissenschaftliche Operationen beginnen Anfang 2027.",
+      "type": "info"
+    }
+  ]
+}

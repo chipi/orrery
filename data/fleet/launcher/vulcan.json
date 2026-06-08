@@ -1,0 +1,31 @@
+{
+  "id": "vulcan",
+  "name": "Vulcan Centaur",
+  "category": "launcher",
+  "agency": "ULA",
+  "country": "USA",
+  "manufacturer": "United Launch Alliance",
+  "first_flight": "2024-01-08",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + carries Dream Chaser / Starliner",
+  "credit": "Fleet launcher entry added to wire up Vulcan launches into LauncherFlightsWidget (Option 4 follow-up to #306). VCxL/VCxS variants all map to vulcan.",
+  "links": [
+    {
+      "l": "Vulcan Centaur — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vulcan_Centaur",
+      "t": "intro"
+    },
+    {
+      "l": "Vulcan — United Launch Alliance",
+      "u": "https://www.ulalaunch.com/rockets/vulcan-centaur",
+      "t": "core"
+    },
+    {
+      "l": "Vulcan certification announcement (Space Force)",
+      "u": "https://www.spaceforce.mil/News/Article/4111330/",
+      "t": "deep"
+    }
+  ]
+}

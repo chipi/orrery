@@ -1,0 +1,38 @@
+{
+  "name": "Ulysses",
+  "type": "SOLAR-POLAR-ORBITER · BEENDET",
+  "first": "Einziges Raumfahrzeug, das je in eine hochinklinierte heliozentrische Umlaufbahn eingetreten ist; einzige direkte Messungen des Sonnenwinds in allen heliographischen Breiten",
+  "description": "Gemeinsame Mission von ESA und NASA. Gestartet am 6.10.1990 von STS-41 Discovery, nutzte Ulysses am 8.2.1992 eine Jupiter-Gravitationsassistenz, um sich selbst rund 80° aus der Ekliptik abzulenken — die einzige Möglichkeit, von der nahezu äquatorialen Erdumlaufbahn aus einen polaren sonnenbezogenen Orbit zu erreichen. Drei vollständige polare Sonnenumläufe über 18,5 Jahre kartierten den Sonnenwind, das heliosphärische Magnetfeld und die Energiepartikel in allen heliographischen Breiten. Mission beendet am 30.6.2009, als der Hydrazin-Treibstoff in den Triebwerksleitungen einfror.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "STS-41 Discovery setzt Ulysses + IUS / PAM-S Oberstufen aus.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "JUPITERVORBEIFLUG",
+      "note": "Gravitationsassistenz lenkt Ulysses ~80° aus der Ekliptik in eine polare Sonnenumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "ERSTE SÜDPOLPASSAGE",
+      "note": "Erste direkte Messungen des Sonnenwinds über einem Sonnenpol überhaupt.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "ERSTE NORDPOLPASSAGE",
+      "note": "Abschluss der ersten vollständigen polaren Sonnenumkreisung.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "MISSIONSENDE",
+      "note": "Triebwerksleitungen einfrieren; letzter Befehl am 30.6.2009 erteilt.",
+      "type": "info"
+    }
+  ]
+}

@@ -25,6 +25,41 @@
       "l": "Voyager mission status (NASA)",
       "u": "https://science.nasa.gov/mission/voyager/",
       "t": "core"
+    },
+    {
+      "l": "Voyager at JPL",
+      "u": "https://www.jpl.nasa.gov/missions/voyager-2/",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA catalog — Voyager 2 (1977-076A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1977-076A",
+      "t": "deep"
+    },
+    {
+      "l": "Neptune encounter — Smith et al. 1989, Science 246",
+      "u": "https://www.science.org/doi/10.1126/science.246.4936.1422",
+      "t": "deep"
+    },
+    {
+      "l": "Uranus encounter — Smith et al. 1986, Science 233",
+      "u": "https://www.science.org/doi/10.1126/science.233.4759.43",
+      "t": "deep"
+    },
+    {
+      "l": "Heliopause crossing 2018-11-05 — Krimigis et al. 2019, Nature Astronomy 3",
+      "u": "https://www.nature.com/articles/s41550-019-0927-4",
+      "t": "deep"
+    },
+    {
+      "l": "Voyager Golden Record contents",
+      "u": "https://voyager.jpl.nasa.gov/golden-record/whats-on-the-record/",
+      "t": "deep"
+    },
+    {
+      "l": "Voyager Interstellar Mission — current position dashboard",
+      "u": "https://voyager.jpl.nasa.gov/mission/status/",
+      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",

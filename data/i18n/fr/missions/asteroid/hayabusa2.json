@@ -1,0 +1,44 @@
+{
+  "name": "Hayabusa2",
+  "type": "RETOUR D'ÉCHANTILLONS + ATTERRISSEURS · ACTIVE (étendue)",
+  "first": "Deuxième retour d'échantillons d'astéroïde (Ryugu, 2020) ; premier cratère artificiel sur un astéroïde ; premier matériau sous-surface d'astéroïde rapporté sur Terre",
+  "description": "Suite par la JAXA de l'Hayabusa originale. Lancée le 3/12/2014, Hayabusa2 a atteint l'astéroïde géocroiseur (162173) Ryugu le 27/6/2018. Les opérations de surface 2018-2019 ont produit la première étude rapprochée soutenue d'un astéroïde de type C en tas de gravats. La capsule de retour d'échantillons a atterri au-dessus de Woomera, Australie le 5/12/2020 livrant 5,4 g de matériau intact de Ryugu — le premier échantillon d'astéroïde avec stratigraphie sous-surface. Mission étendue : survol de (98943) 2001 CC21 en juillet 2026 ; rendez-vous avec le rapide (1998 KY26) visé pour juillet 2031.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Le H-IIA 202 de Tanegashima entame la croisière de 3,5 ans vers l'astéroïde Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "SURVOL TERRESTRE",
+      "note": "L'assistance gravitationnelle terrestre phase l'orbite de rendez-vous.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "ARRIVÉE RYUGU",
+      "note": "Vol stationnaire à 20 km — début de 1,5 an d'opérations rapprochées incluant la collecte d'échantillons.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "RETOUR SUR TERRE",
+      "note": "La capsule d'échantillons se pose à Woomera, Australie avec 5,4 g de matériau de Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "SURVOL 2001 CC21",
+      "note": "Survol de mission étendue de l'astéroïde (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "RENDEZ-VOUS 1998 KY26",
+      "note": "Rendez-vous prévu avec l'astéroïde à rotation rapide (1998 KY26).",
+      "type": "info"
+    }
+  ]
+}

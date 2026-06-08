@@ -1,0 +1,26 @@
+{
+  "name": "Juno",
+  "type": "Orbiter · Attiva",
+  "first": "Primo orbiter polare di Giove; primo utilizzo di energia solare oltre la fascia degli asteroidi",
+  "description": "Juno è entrata in orbita attorno a Giove il 05-07-2016 su una traiettoria polare fortemente ellittica di 53 giorni che la porta dall'interno delle fasce di radiazione (perigiove ~4.200 km sopra le cime delle nubi) fino a oltre Callisto. Alimentata a energia solare — i suoi pannelli a tripla giunzione di ~50 m² erogano 14 kW alla Terra ma solo ~500 W a Giove, primo uso del solare a questa distanza. Ha confermato che Giove ha un nucleo roccioso diluito (senza confine netto), ha misurato la disposizione dei cicloni polari (otto tempeste circumpolari attorno a ciascun polo) e nel 2023 ha ripreso il vulcanismo di Io con un dettaglio senza precedenti. La missione estesa include sorvoli di tutte e quattro le lune galileiane fino al 2025.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 551 solleva Juno da Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 749,
+      "label": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
+      "note": "La fionda eleva l'energia eliocentrica quanto basta per raggiungere Giove.",
+      "type": "nominal"
+    },
+    {
+      "met": 1796,
+      "label": "INSERIMENTO IN ORBITA DI GIOVE",
+      "note": "Accensione del motore principale di 35 minuti pone Juno in orbita polare di Giove.",
+      "type": "nominal"
+    }
+  ]
+}

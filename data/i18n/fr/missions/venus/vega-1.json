@@ -1,0 +1,26 @@
+{
+  "name": "Vega 1",
+  "type": "SURVOL + ATTERRISSEUR + BALLON · TERMINÉE",
+  "first": "Premier ballon aérostatique déployé dans l'atmosphère d'une autre planète (Vénus, 1985)",
+  "description": "Mission soviéto-ESA de l'armada de Halley. Vega 1 emportait un atterrisseur de la lignée Venera et un ballon à hélium construit par l'ESA/CNES qui a dérivé pendant 46,5 heures à 54 km d'altitude dans l'atmosphère vénusienne. Après largage du module de descente, le bus a utilisé une assistance gravitationnelle vénusienne pour se rediriger vers la comète 1P/Halley, qu'il a survolée au plus près (8890 km) le 6/3/1986 — première rencontre avec un noyau cométaire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Le Proton-K / D-1 lance Vega 1 depuis Baïkonour.",
+      "type": "nominal"
+    },
+    {
+      "met": 178,
+      "label": "RENCONTRE VÉNUS",
+      "note": "Le module de descente se sépare + se pose ; le ballon se déploie à 54 km d'altitude pendant 46,5 heures.",
+      "type": "nominal"
+    },
+    {
+      "met": 446,
+      "label": "SURVOL HALLEY",
+      "note": "Approche maximale de la comète 1P/Halley à 8890 km — première observation d'un noyau cométaire.",
+      "type": "nominal"
+    }
+  ]
+}

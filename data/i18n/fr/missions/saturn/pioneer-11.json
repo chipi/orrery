@@ -1,0 +1,26 @@
+{
+  "name": "Pioneer 11",
+  "type": "SURVOL · VOLÉ",
+  "first": "Premier vaisseau à survoler Saturne (01-09-1979) ; a démontré l'assistance gravitationnelle qui a propulsé Voyager 2",
+  "description": "Jumeau de Pioneer 10, lancé un an plus tard. Pioneer 11 a utilisé la gravité de Jupiter pour courber sa trajectoire vers Saturne — la preuve canonique de l'assistance gravitationnelle, technique qui a permis plus tard le Grand Tour des Voyager. À Saturne, il a découvert l'anneau F et la lune Épiméthée. Porte la même plaque Pioneer que son jumeau. Signal perdu le 30-09-1995 depuis ~43 UA ; la sonde file désormais vers la constellation de l'Aigle.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas-Centaur depuis Cap Canaveral sur une trajectoire d'assistance Jupiter-Saturne.",
+      "type": "nominal"
+    },
+    {
+      "met": 606,
+      "label": "SURVOL DE JUPITER",
+      "note": "A utilisé l'assistance de Jupiter pour s'orienter vers Saturne.",
+      "type": "nominal"
+    },
+    {
+      "met": 2339,
+      "label": "APPROCHE LA PLUS PROCHE DE SATURNE",
+      "note": "Premières images rapprochées de la planète ; a découvert l'anneau F et Épiméthée.",
+      "type": "nominal"
+    }
+  ]
+}

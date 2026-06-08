@@ -1,0 +1,14 @@
+{
+  "title": "Por que as trajetórias de missão parecem planas",
+  "intro_sentence": "O Sistema Solar é um disco e o propelente é finito — então as missões não saem do disco a menos que precisem.",
+  "narrative_101": [
+    "Fique no centro do Sistema Solar e olhe para os planetas — você verá uma panqueca, não uma esfera. Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno — todos orbitam dentro de cerca de 7° do mesmo plano plano (a eclíptica). Os planetas se formaram de uma única nuvem rotativa de gás e poeira, e essa rotação colapsou tudo em um disco fino. Tudo desde então ficou nesse disco.",
+    "Agora imagine planejar uma viagem a Marte. A forma mais barata de chegar lá é um longo arco curvo que dá a volta no Sol e chega à órbita de Marte no mesmo momento em que Marte está lá. O arco mais barato fica no mesmo plano que a Terra e Marte compartilham — a eclíptica. Sair do disco para fazer um \"desvio para fora e para cima\" custa propelente que a espaçonave não pode pagar.",
+    "Então os planejadores de missão não lutam contra o disco. Eles esperam que a geometria orbital se alinhe (é o que significa \"janela de lançamento\"), apontam o foguete ao longo da eclíptica e deixam os planetas cuidarem da direção. O resultado, quando você olha para cada trajetória de espaçonave que temos, é uma pilha de curvas todas abraçando o mesmo plano — como ver carros correndo em uma pista plana."
+  ],
+  "body_paragraphs": [
+    "O preço por sair do plano é brutal. Mudar a inclinação de uma trajetória heliocêntrica em apenas 1° na velocidade orbital da Terra (~30 km/s) custa cerca de 0,5 km/s de `∆v`. Fazer a mudança de plano de 80° que a Ulysses precisava — para voar sobre os polos solares — teria custado ~38 km/s se feita com empuxo químico. Nenhum foguete real pode entregar isso. Então os engenheiros não pagam por mudanças de plano; eles projetam ao redor delas.",
+    "As assistências gravitacionais obedecem à mesma restrição. Quando uma espaçonave faz uma manobra ao redor de Júpiter ou Vênus, o planeta está na eclíptica, então o vetor de deflexão — que sempre passa pelo planeta — também mantém a trajetória perto da eclíptica. O cruzeiro de seis anos da Cassini parece um rabisco 2D na visão /explore porque cada corpo de assistência que visitou era 2D plano.",
+    "A Ulysses é a única espaçonave que quebrou o disco de propósito. Seu objetivo científico eram os polos do Sol, mas alcançá-los exigia ~80° de inclinação — quimicamente impossível. Então a missão fez a única coisa que funcionou: lançou para fora em direção a Júpiter, usou a gravidade de Júpiter como um \"foguete\" gratuito para desviar a espaçonave para fora da eclíptica, depois orbitou o Sol de polo a polo por 18 anos. O grande desvio era o caminho mais barato. Toda outra missão de espaço profundo que você vê em /explore ficou no disco porque o disco é onde estão os destinos — e onde o propelente permite que você vá."
+  ]
+}

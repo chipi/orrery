@@ -1,0 +1,44 @@
+{
+  "name": "Rosetta",
+  "type": "ORBITADOR + ATERRIZADOR · FINALIZADA",
+  "first": "Primera nave en orbitar un cometa — y aterrizar en uno (Philae, 12-11-2014)",
+  "description": "Misión insignia de la ESA para reunión con cometa. Tras un crucero de 10 años con tres asistencias gravitatorias de la Tierra, una de Marte, dos sobrevuelos de asteroides y 957 días de hibernación en el espacio profundo, Rosetta alcanzó al cometa 67P/Churyumov-Gerasimenko en agosto de 2014 y lo orbitó durante más de dos años. El módulo Philae llegó a la superficie de 67P el 12-11-2014 — el primer aterrizaje suave en un cometa. Rosetta finalizó la misión con un descenso controlado a 67P el 30-09-2016.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Ariane 5G+ lanza a Rosetta desde Kourou para el crucero de 10 años al cometa 67P.",
+      "type": "nominal"
+    },
+    {
+      "met": 367,
+      "label": "SOBREVUELO TERRESTRE #1",
+      "note": "Primera de tres asistencias gravitatorias terrestres para construir velocidad para el encuentro cometario.",
+      "type": "nominal"
+    },
+    {
+      "met": 1090,
+      "label": "SOBREVUELO MARCIANO",
+      "note": "Única asistencia gravitatoria marciana + primeras imágenes cercanas de Fobos y Marte a 250 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1671,
+      "label": "ASTEROIDE 2867 ŠTEINS",
+      "note": "Primer sobrevuelo cercano de un asteroide de tipo E.",
+      "type": "nominal"
+    },
+    {
+      "met": 2320,
+      "label": "ASTEROIDE 21 LUTETIA",
+      "note": "Sobrevuelo a 100 km de uno de los mayores asteroides del cinturón principal observados de cerca.",
+      "type": "nominal"
+    },
+    {
+      "met": 3809,
+      "label": "ENCUENTRO COMETARIO 67P",
+      "note": "Inserción en órbita alrededor del cometa 67P/Churyumov-Gerasimenko. Philae aterriza el 12-11-2014.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "vega-1",
+  "agency": "ROSCOSMOS / ESA",
+  "agency_full": "Roscosmos / Soviet Academy of Sciences (lead, IKI) — international payload from ESA / CNES / Hungary / Austria / Bulgaria / Czechoslovakia / Poland / East Germany",
+  "sector": "gov",
+  "dest": "VENUS",
+  "color": "#ed5565",
+  "year": 1984,
+  "status": "FLOWN",
+  "departure_date": "1984-12-15",
+  "arrival_date": "1985-06-11",
+  "transit_days": 178,
+  "vehicle": "Proton-K / D-1",
+  "payload": "4920 kg flyby bus + ~1500 kg descent module (Venera-type lander + first-of-kind helium balloon aerostat). Twin spacecraft Vega 1 / Vega 2 launched 6 days apart for the same Venus-then-Halley itinerary.",
+  "delta_v": "~3.6 km/s (departure + Halley intercept retarget)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© Roscosmos / IKI / international consortium. Vega 1 lifted off from Baikonur 1984-12-15 carrying a Soviet Venus lander descended from the Venera line plus an ESA / CNES-built helium aerostat (balloon) — the first balloon deployment in another planet's atmosphere. The descent module separated 1985-06-09 and entered Venus's atmosphere 1985-06-11. The balloon drifted at ~54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio network. The bus, freed of its descent mass, used Venus gravity assist to redirect to comet 1P/Halley, achieving closest approach (8890 km) on 1986-03-06 — three days ahead of Vega 2, and a week ahead of ESA's Giotto, which used Vega's flyby position fix to navigate its own 596 km Halley flyby. This made Vega 1 the first-ever spacecraft to carry science instruments to two distinct solar-system targets in a single mission.",
+  "links": [
+    {
+      "l": "Vega program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_program",
+      "t": "intro"
+    },
+    {
+      "l": "Vega 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_1",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA master catalog — Vega 1 (1984-125A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-125A",
+      "t": "core"
+    },
+    {
+      "l": "Sagdeev et al. (1986) — Vega balloon experiment overview (Science 231)",
+      "u": "https://www.science.org/doi/10.1126/science.231.4744.1407",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society — Vega / Halley armada retrospective",
+      "u": "https://www.planetary.org/articles/halleys-comet-spacecraft",
+      "t": "core"
+    },
+    {
+      "l": "ESA — international cooperation on the Halley armada",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto/Halley_armada",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 178, "type": "flyby" },
+      { "met_days": 446, "type": "flyby" }
+    ]
+  }
+}

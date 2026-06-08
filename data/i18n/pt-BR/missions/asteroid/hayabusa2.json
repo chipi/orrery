@@ -1,0 +1,44 @@
+{
+  "name": "Hayabusa2",
+  "type": "RETORNO DE AMOSTRAS + ATERRISSADORES · ATIVA (estendida)",
+  "first": "Segundo retorno de amostras de asteroide (Ryugu, 2020); primeira cratera de impacto artificial em um asteroide; primeiro material subsuperficial de asteroide trazido de volta à Terra",
+  "description": "Continuação da JAXA da Hayabusa original. Lançada em 3-12-2014, a Hayabusa2 alcançou o asteroide próximo da Terra (162173) Ryugu em 27-6-2018. As operações de superfície 2018-2019 retornaram o primeiro levantamento próximo sustentado de um asteroide de pilha de escombros tipo C. A cápsula de retorno de amostras pousou sobre Woomera, Austrália em 5-12-2020 entregando 5,4 g de material prístino de Ryugu — a primeira amostra de asteroide com estratigrafia subsuperficial. Missão estendida: sobrevoo de (98943) 2001 CC21 em julho de 2026; encontro com o rapidamente rotativo (1998 KY26) visado para julho de 2031.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "O H-IIA 202 de Tanegashima inicia o cruzeiro de 3,5 anos ao asteroide Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "SOBREVOO TERRESTRE",
+      "note": "A assistência gravitacional terrestre faseja a órbita de encontro.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "CHEGADA RYUGU",
+      "note": "Voo pairado a 20 km — início de 1,5 ano de operações próximas incluindo coleta de amostras.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "RETORNO À TERRA",
+      "note": "A cápsula de amostras pousa em Woomera, Austrália com 5,4 g de material de Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "SOBREVOO 2001 CC21",
+      "note": "Sobrevoo de missão estendida do asteroide (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "ENCONTRO 1998 KY26",
+      "note": "Encontro planejado com o asteroide de rotação rápida (1998 KY26).",
+      "type": "info"
+    }
+  ]
+}

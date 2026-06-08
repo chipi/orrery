@@ -1,0 +1,24 @@
+{
+  "id": "giotto",
+  "name": "Giotto",
+  "mission_id": "giotto",
+  "category": "completed-at-target",
+  "color": "#5d9cec",
+  "schema_version": 1,
+  "_doc": "ESA Giotto — Halley flyby 1986-03-14 at 596 km (closest cometary nucleus pass at the time). After hibernation reactivated 1990, Earth gravity assist 1990-07-02, second comet flyby at 26P/Grigg-Skjellerup on 1992-07-10 at 200 km — the closest cometary flyby ever performed. Hardware remains in heliocentric orbit. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [-0.42, 0.95, 0.05],
+  "current_distance_au": 1.04,
+  "current_distance_label": "1.04 AU · in heliocentric orbit since Grigg-Skjellerup flyby 1992-07-10",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "1985-07-02", "label": "Launch (Ariane 1)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1985-11", "x": 1.05, "y": 0.35, "z": 0.02 },
+    { "date": "1986-03-14", "label": "Halley flyby", "x": 0.96, "y": 0.32, "z": 0.05 },
+    { "date": "1987-06", "x": 1.1, "y": -0.4, "z": 0.04 },
+    { "date": "1990-07-02", "label": "Earth #1", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1991-12", "x": 0.95, "y": 0.6, "z": 0.05 },
+    { "date": "1992-07-10", "label": "Grigg-Skjellerup", "x": 1.01, "y": 0.42, "z": 0.06 },
+    { "date": "2026-06", "x": -0.42, "y": 0.95, "z": 0.05 }
+  ]
+}

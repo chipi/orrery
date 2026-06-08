@@ -1,0 +1,38 @@
+{
+  "name": "Ulysses",
+  "type": "ZONNE-POLAIRE ORBITER · VOLTOOID",
+  "first": "Enig ruimtevaartuig ooit in een hoog-inclinatie heliocentrische baan; enige directe metingen van de zonnewind op alle heliografische breedten",
+  "description": "Gezamenlijke ESA-/NASA-missie. Gelanceerd op 6-10-1990 vanaf STS-41 Discovery, gebruikte Ulysses op 8-2-1992 een Jupiter-zwaartekrachtassistentie om zichzelf ~80° uit de ecliptica af te buigen — de enige manier om een bijna-polaire zonbetrokken baan te bereiken vanaf het bijna-equatoriale baanvlak van de Aarde. Drie volledige polaire zonbanen over 18,5 jaar brachten de zonnewind, het heliosferische magneetveld en energetische deeltjes op alle heliografische breedten in kaart. Missie beëindigd op 30-6-2009 toen de hydrazine in de stuwraketleidingen bevroor.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "STS-41 Discovery ontplooit Ulysses + IUS / PAM-S bovenstrappen.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "JUPITER-SCHEERVLUCHT",
+      "note": "Zwaartekrachtassistentie buigt Ulysses ~80° uit de ecliptica naar een polaire Zonbetrokken baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "EERSTE ZUIDPOOLPASSAGE",
+      "note": "Eerste directe metingen ooit van de zonnewind boven een zonpool.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "EERSTE NOORDPOOLPASSAGE",
+      "note": "Voltooiing van de eerste volledige polaire zonsbaan.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "MISSIE-EINDE",
+      "note": "Stuwraketleidingen bevriezen; laatste commando uitgegeven op 30-6-2009.",
+      "type": "info"
+    }
+  ]
+}

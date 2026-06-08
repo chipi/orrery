@@ -1,0 +1,26 @@
+{
+  "name": "Cassini-Huygens",
+  "type": "Orbiteur + Atterrisseur · VOLÉ",
+  "first": "13 ans en orbite autour de Saturne — Huygens s'est posée sur Titan le 14-01-2005 (premier atterrissage en douceur dans le système solaire externe)",
+  "description": "Mission conjointe NASA-ESA-ASI. Après 7 ans de croisière avec assistances gravitationnelles à Vénus, Terre et Jupiter, Cassini est entrée en orbite de Saturne le 01-07-2004 et a fonctionné pendant 13 ans, accomplissant 294 orbites et 162 survols rapprochés de lunes. Elle a découvert les panaches polaires sud d'Encelade (geysers actifs de glace d'eau), cartographié au radar les lacs de méthane de Titan et résolu la tempête hexagonale polaire de Saturne. Le Grand Finale (avril–septembre 2017) a tissé 22 orbites dans l'espace entre les anneaux et les sommets nuageux, se terminant par une entrée atmosphérique contrôlée pour éviter toute contamination d'Encelade ou de Titan par des microbes terrestres.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan IVB / Centaur soulève l'ensemble Cassini-Huygens.",
+      "type": "nominal"
+    },
+    {
+      "met": 207,
+      "label": "ASSISTANCE GRAVITATIONNELLE DE VÉNUS",
+      "note": "Première de quatre assistances qui accumulent l'énergie pour l'arrivée à Saturne.",
+      "type": "nominal"
+    },
+    {
+      "met": 2451,
+      "label": "MISE EN ORBITE AUTOUR DE SATURNE",
+      "note": "Allumage du moteur principal place Cassini en orbite saturnienne, ouvrant la tournée de 13 ans.",
+      "type": "nominal"
+    }
+  ]
+}

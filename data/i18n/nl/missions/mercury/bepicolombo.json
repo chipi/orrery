@@ -1,0 +1,44 @@
+{
+  "name": "BepiColombo",
+  "type": "ORBITER · ACTIEF",
+  "first": "Eerste planetaire missie van Europa en Japan samen; tweede ruimtevaartuig ooit dat Mercurius omcirkelt (na Messenger)",
+  "description": "Gezamenlijke ESA-/JAXA-missie naar Mercurius, gelanceerd op 20-10-2018 — vernoemd naar de Italiaanse wiskundige Giuseppe (Bepi) Colombo, die het traject met meerdere scheervluchten van Mariner 10 ontwierp. De 8-jarige reis gebruikt 9 zwaartekrachtassistenties (Aarde 2020, Venus 2020, Venus 2021, daarna zes Mercurius-scheervluchten 2021-2024) plus continue ionisch-elektrische stuwkracht. Mercurius-baaninsertie op 5-12-2026; wetenschappelijke operaties beginnen begin 2027.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "De Ariane 5 ECA lanceert BepiColombo vanuit Kourou voor zijn 8-jarige ionreis naar Mercurius.",
+      "type": "nominal"
+    },
+    {
+      "met": 538,
+      "label": "AARDSCHEERVLUCHT",
+      "note": "Enkele aardse zwaartekrachtassistentie begint de zwaartekrachtassistentieketen van het binnensysteem.",
+      "type": "nominal"
+    },
+    {
+      "met": 727,
+      "label": "VENUS-SCHEERVLUCHT #1",
+      "note": "Eerste Venus-zwaartekrachtassistentie.",
+      "type": "nominal"
+    },
+    {
+      "met": 1026,
+      "label": "VENUS-SCHEERVLUCHT #2",
+      "note": "Tweede Venus-zwaartekrachtassistentie begint de Mercurius-naderingsfase.",
+      "type": "nominal"
+    },
+    {
+      "met": 1133,
+      "label": "MERCURIUS-SCHEERVLUCHT #1",
+      "note": "Eerste van zes Mercurius-zwaartekrachtassistenties.",
+      "type": "nominal"
+    },
+    {
+      "met": 2968,
+      "label": "MERCURIUS-BAANINSERTIE",
+      "note": "MTM-loslating + orbiter-scheiding; wetenschappelijke operaties beginnen begin 2027.",
+      "type": "info"
+    }
+  ]
+}

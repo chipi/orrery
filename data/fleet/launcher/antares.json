@@ -1,0 +1,31 @@
+{
+  "id": "antares",
+  "name": "Antares",
+  "category": "launcher",
+  "agency": "NorthropGrumman",
+  "country": "USA",
+  "manufacturer": "Northrop Grumman / Firefly Aerospace (for 330)",
+  "first_flight": "2013-04-21",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Workhorse for Cygnus ISS resupply through NG-19",
+  "credit": "Fleet launcher entry added to wire up Cygnus cross-references for the LauncherFlightsWidget (Option 4 follow-up to #306). Variants 110/120/130/230/230+/330 all map here; Firefly is rebuilding the first stage as Antares 330 after the Yuzhmash Mariupol assembly line went offline.",
+  "links": [
+    {
+      "l": "Antares (rocket) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Antares_(rocket)",
+      "t": "intro"
+    },
+    {
+      "l": "Antares — Northrop Grumman",
+      "u": "https://www.northropgrumman.com/space/antares-rocket",
+      "t": "core"
+    },
+    {
+      "l": "Antares 330 development with Firefly",
+      "u": "https://www.fireflyspace.com/news/firefly-aerospace-and-northrop-grumman-team-up-on-medium-launch-vehicle/",
+      "t": "deep"
+    }
+  ]
+}

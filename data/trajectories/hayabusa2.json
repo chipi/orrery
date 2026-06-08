@@ -1,0 +1,24 @@
+{
+  "id": "hayabusa2",
+  "name": "Hayabusa2",
+  "mission_id": "hayabusa2",
+  "category": "en-route",
+  "color": "#b2e066",
+  "schema_version": 1,
+  "_doc": "JAXA Hayabusa2 — Ryugu sample return 2018-2020 (returned 5.4 g of pristine C-type asteroid material 2020-12-05), extended mission to (98943) 2001 CC21 flyby in 2026-07 and rendezvous with rapidly-rotating (1998 KY26) targeted for 2031-07. Today's position is the extended-cruise trajectory tracking out from Ryugu's orbit. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [1.05, 0.65, 0.02],
+  "current_distance_au": 1.24,
+  "current_distance_label": "1.24 AU · en route to (98943) 2001 CC21 flyby 2026-07 (extended mission)",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2014-12-03", "label": "Launch (H-IIA)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2015-06", "x": 1.1, "y": 0.4, "z": 0.01 },
+    { "date": "2015-12-03", "label": "Earth flyby", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2017-06", "x": 1.15, "y": 0.55, "z": 0.02 },
+    { "date": "2018-06-27", "label": "Ryugu arrival", "x": 1.18, "y": 0.6, "z": 0.03 },
+    { "date": "2019-04-05", "label": "SCI impactor", "x": 1.15, "y": 0.7, "z": 0.04 },
+    { "date": "2020-12-05", "label": "Earth return (sample)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2026-06", "x": 1.05, "y": 0.65, "z": 0.02 }
+  ]
+}

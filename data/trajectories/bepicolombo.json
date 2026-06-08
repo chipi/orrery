@@ -1,0 +1,29 @@
+{
+  "id": "bepicolombo",
+  "name": "BepiColombo",
+  "mission_id": "bepicolombo",
+  "category": "en-route",
+  "color": "#fcbb6d",
+  "schema_version": 1,
+  "_doc": "ESA + JAXA BepiColombo — joint Mercury mission with one of the highest-ΔV planetary cruises ever flown. 9 gravity assists (Earth 2020, Venus 2020, Venus 2021, then 6 Mercury flybys 2021-2025), ion-electric thrust between, Mercury orbit insertion 2026-12-05. Today's position reflects state in early 2026 — between the final Mercury flybys and MOI. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [0.45, -0.18, 0.01],
+  "current_distance_au": 0.48,
+  "current_distance_label": "0.48 AU · en route to Mercury orbit insertion 2026-12-05",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2018-10-20", "label": "Launch (Ariane 5)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2019-08", "x": 0.95, "y": -0.4, "z": 0.0 },
+    { "date": "2020-04-10", "label": "Earth", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2020-10-15", "label": "Venus #1", "x": 0.72, "y": -0.05, "z": 0.0 },
+    { "date": "2021-08-10", "label": "Venus #2", "x": 0.72, "y": 0.05, "z": 0.0 },
+    { "date": "2021-10-01", "label": "Mercury #1", "x": 0.4, "y": 0.15, "z": 0.01 },
+    { "date": "2022-06-23", "label": "Mercury #2", "x": 0.42, "y": -0.18, "z": 0.01 },
+    { "date": "2023-06-19", "label": "Mercury #3", "x": 0.4, "y": 0.18, "z": 0.01 },
+    { "date": "2024-09-04", "label": "Mercury #4", "x": 0.42, "y": -0.15, "z": 0.01 },
+    { "date": "2024-12-01", "label": "Mercury #5", "x": 0.4, "y": 0.16, "z": 0.01 },
+    { "date": "2025-01-08", "label": "Mercury #6", "x": 0.41, "y": -0.16, "z": 0.01 },
+    { "date": "2026-06", "x": 0.45, "y": -0.18, "z": 0.01 },
+    { "date": "2026-12-05", "label": "Mercury orbit insertion", "x": 0.39, "y": 0.13, "z": 0.01 }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ulysses",
+  "name": "Ulysses",
+  "mission_id": "ulysses",
+  "category": "completed-at-target",
+  "color": "#aab2bd",
+  "schema_version": 1,
+  "_doc": "NASA + ESA Ulysses — the only spacecraft ever placed into a high-inclination heliocentric orbit (~80° from ecliptic). Used Jupiter gravity assist 1992-02-08 to deflect itself out of the ecliptic plane. Three full polar orbits of the Sun over 18.5 years (1990-2009), with first south polar pass 1994-06-26 and first north polar pass 1995-07-31. Note: the steep z-axis excursions in this path are NOT a rendering bug — Ulysses really did leave the ecliptic plane, which no other spacecraft has done. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [3.5, -1.8, -3.4],
+  "current_distance_au": 5.2,
+  "current_distance_label": "5.2 AU · mission ended 2009-06-30 (thruster lines froze) — hardware in polar heliocentric orbit",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "1990-10-06", "label": "Launch (STS-41)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1991-06", "x": 2.4, "y": 1.2, "z": 0.05 },
+    { "date": "1992-02-08", "label": "Jupiter flyby", "x": 5.2, "y": 1.8, "z": 0.15 },
+    { "date": "1993-06", "x": 3.5, "y": -0.5, "z": -1.8 },
+    { "date": "1994-06-26", "label": "South pole pass", "x": 1.5, "y": -1.4, "z": -2.1 },
+    { "date": "1995-07-31", "label": "North pole pass", "x": 1.4, "y": 0.3, "z": 1.3 },
+    { "date": "1998-06", "x": 4.8, "y": -1.0, "z": 2.0 },
+    { "date": "2001-11", "label": "South pole #2", "x": 1.6, "y": -1.5, "z": -2.0 },
+    { "date": "2007-02", "label": "South pole #3", "x": 1.6, "y": -1.4, "z": -2.0 },
+    { "date": "2009-06-30", "label": "Mission end", "x": 5.0, "y": -1.6, "z": -1.5 }
+  ]
+}

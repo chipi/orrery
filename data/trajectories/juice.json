@@ -1,0 +1,27 @@
+{
+  "id": "juice",
+  "name": "JUICE",
+  "mission_id": "juice",
+  "category": "en-route",
+  "color": "#967bdc",
+  "schema_version": 1,
+  "_doc": "ESA JUICE — JUpiter ICy moons Explorer. 8-year cruise with first-ever Lunar-Earth Gravity Assist (2024-08-19), Venus 2025-08-31, two more Earth passes (2026, 2029), Jupiter orbit insertion 2031-07-21, then Ganymede orbit 2034-12-31 — first spacecraft ever to orbit a moon of another planet. Today's position reflects cruise state as of June 2026 — past the first Venus assist, heading back toward Earth. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [0.85, 0.4, 0.02],
+  "current_distance_au": 0.94,
+  "current_distance_label": "0.94 AU · en route to Earth #2 flyby 2026-09-29 (cruise leg 2 of 5)",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2023-04-14", "label": "Launch (Ariane 5)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2023-12", "x": 1.2, "y": 0.4, "z": 0.01 },
+    { "date": "2024-08-19", "label": "Lunar-Earth flyby", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2025-02", "x": 0.9, "y": -0.4, "z": 0.02 },
+    { "date": "2025-08-31", "label": "Venus flyby", "x": 0.72, "y": -0.05, "z": 0.02 },
+    { "date": "2026-06", "x": 0.85, "y": 0.4, "z": 0.02 },
+    { "date": "2026-09-29", "label": "Earth #2", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2027-12", "x": 1.55, "y": 0.7, "z": 0.05 },
+    { "date": "2029-01-18", "label": "Earth #3", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2030-06", "x": 3.0, "y": 1.5, "z": 0.1 },
+    { "date": "2031-07-21", "label": "Jupiter orbit insertion", "x": 5.2, "y": 1.8, "z": 0.15 }
+  ]
+}

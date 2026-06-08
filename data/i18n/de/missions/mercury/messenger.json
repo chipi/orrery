@@ -1,0 +1,26 @@
+{
+  "name": "MESSENGER",
+  "type": "Orbiter · Geflogen",
+  "first": "Erste Sonde im Orbit um Merkur; erste komplette Oberflächenkarte des innersten Planeten",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Schwerkraftunterstützungen in sieben Jahren — Erde, zweimal Venus, dreimal Merkur — um am 18.03.2011 in den Merkurorbit einzuschwenken. Schutz durch Sonnenschild mit einer Seite bei 370 °C und der anderen bei -45 °C. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, bislang unbekannte geologische »Hollows«, und Bestätigung, dass Merkurs Eisenkern ~85 % des Planetenradius einnimmt (das größte Kernverhältnis im Sonnensystem). Mission endete am 30.04.2015 mit einem kontrollierten Aufprall, nachdem der Treibstoff verbraucht war.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Delta II 7925H hebt MESSENGER auf einer Sechs-Vorbeiflug-Trajektorie.",
+      "type": "nominal"
+    },
+    {
+      "met": 365,
+      "label": "ERDSCHWUNG",
+      "note": "Erste von sechs Unterstützungen, die die Bahn genug verlangsamen, um in den Merkurorbit einzutreten.",
+      "type": "nominal"
+    },
+    {
+      "met": 2419,
+      "label": "MERKUR-ORBITEINFÜGUNG",
+      "note": "Haupttriebwerk-Manöver setzt MESSENGER nach 7 Jahren Reise in den Merkurorbit.",
+      "type": "nominal"
+    }
+  ]
+}

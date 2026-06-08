@@ -1,0 +1,23 @@
+{
+  "id": "taiyuan-lc-9",
+  "category": "launch-site",
+  "name": "Taiyuan LC-9",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CASC",
+  "first_flight": "2008-09-06",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "lat": 38.849,
+  "lon": 111.608,
+  "best_known_for": "Long March 2D / 4B / 4C polar-orbit workhorse — Yaogan, Gaofen, weather sats",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). TYSC LC-9 (also called Pad 9) handles most of Taiyuan's polar/SSO launches with Long March 2D / 4B / 4C / 6A.",
+  "links": [
+    {
+      "l": "Taiyuan Satellite Launch Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Taiyuan_Satellite_Launch_Center",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Ulysses",
+  "type": "ORBITER POLARE SOLARE · COMPLETATA",
+  "first": "Unico veicolo mai posto in un'orbita eliocentrica ad alta inclinazione; uniche misurazioni dirette del vento solare a tutte le latitudini eliografiche",
+  "description": "Missione congiunta ESA / NASA. Lanciato il 6/10/1990 da STS-41 Discovery, Ulysses ha usato un'assistenza gravitazionale di Giove l'8/2/1992 per deviarsi di circa 80° fuori dall'eclittica — l'unico modo per raggiungere un'orbita quasi-polare rispetto al Sole dal piano orbitale quasi-equatoriale della Terra. Tre orbite polari complete del Sole in 18,5 anni hanno mappato il vento solare, il campo magnetico eliosferico e le particelle energetiche a tutte le latitudini eliografiche. Missione terminata il 30/6/2009 quando l'idrazina si è congelata nelle linee del propulsore.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "STS-41 Discovery dispiega Ulysses + stadi superiori IUS / PAM-S.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "SORVOLO GIOVE",
+      "note": "L'assistenza gravitazionale devia Ulysses ~80° fuori dall'eclittica in un'orbita polare rispetto al Sole.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "PRIMO PASSAGGIO POLARE SUD",
+      "note": "Prime misurazioni dirette del vento solare sopra un polo solare.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "PRIMO PASSAGGIO POLARE NORD",
+      "note": "Completamento della prima orbita solare polare completa.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "FINE MISSIONE",
+      "note": "Le linee del propulsore si congelano; comando finale emesso il 30/6/2009.",
+      "type": "info"
+    }
+  ]
+}

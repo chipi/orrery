@@ -1,0 +1,38 @@
+{
+  "name": "Ulysses",
+  "type": "ORBITADOR POLAR SOLAR · FINALIZADA",
+  "first": "Única nave que jamás haya entrado en una órbita heliocéntrica de alta inclinación; únicas mediciones directas del viento solar en todas las latitudes heliográficas",
+  "description": "Misión conjunta ESA / NASA. Lanzada el 6-10-1990 desde el STS-41 Discovery, Ulysses usó una asistencia gravitatoria de Júpiter el 8-2-1992 para desviarse unos 80° fuera de la eclíptica — la única forma de alcanzar una órbita casi polar relativa al Sol desde el plano orbital casi ecuatorial de la Tierra. Tres órbitas polares completas del Sol a lo largo de 18,5 años mapearon el viento solar, el campo magnético heliosférico y las partículas energéticas en todas las latitudes heliográficas. La misión terminó el 30-6-2009 cuando la hidracina se congeló en las líneas del propulsor.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "STS-41 Discovery despliega Ulysses + etapas superiores IUS / PAM-S.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "SOBREVUELO JÚPITER",
+      "note": "La asistencia gravitatoria desvía Ulysses ~80° fuera de la eclíptica a una órbita polar relativa al Sol.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "PRIMER PASO POLAR SUR",
+      "note": "Primeras mediciones directas del viento solar sobre un polo solar.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "PRIMER PASO POLAR NORTE",
+      "note": "Finalización de la primera órbita solar polar completa.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "FIN DE MISIÓN",
+      "note": "Las líneas del propulsor se congelan; comando final emitido el 30-6-2009.",
+      "type": "info"
+    }
+  ]
+}

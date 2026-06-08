@@ -1,0 +1,28 @@
+{
+  "id": "kourou-ela-2",
+  "category": "launch-site",
+  "name": "Kourou ELA-2",
+  "agency": "ESA",
+  "country": "France",
+  "manufacturer": "Arianespace / CNES",
+  "first_flight": "1986-03-28",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 5.232,
+  "lon": -52.776,
+  "best_known_for": "Primary Ariane 4 pad — flew every Ariane 4 mission (1988-2003)",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). ELA-2 (Ensemble de Lancement Ariane 2) was the workhorse pad of the Ariane 4 era, decommissioned in 2003. Distinct from ELA-3 (Ariane 5) and ELA-4 (Ariane 6).",
+  "links": [
+    {
+      "l": "ELA-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/ELA-2",
+      "t": "intro"
+    },
+    {
+      "l": "Centre Spatial Guyanais (CSG)",
+      "u": "https://www.cnes-csg.fr/",
+      "t": "core"
+    }
+  ]
+}

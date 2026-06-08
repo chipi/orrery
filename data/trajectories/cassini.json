@@ -1,0 +1,29 @@
+{
+  "id": "cassini",
+  "name": "Cassini-Huygens",
+  "mission_id": "cassini",
+  "category": "completed-at-target",
+  "color": "#d2a8ff",
+  "schema_version": 1,
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice D). Launch 1997-10-15 → Venus assist 1998-04-26 → Venus assist 1999-06-24 → Earth assist 1999-08-18 → Jupiter assist 2000-12-30 → Saturn orbit insertion 2004-07-01 → 13-year saturnian tour → Grand Finale ending in Saturn atmospheric entry 2017-09-15. The heliocentric VVEJGA cruise is the visual story; once at Saturn the orbiter loops are clustered too tightly for the /explore log-AU scale, so the path terminates at the Saturn arrival waypoint with the EOM date as the label. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [9.0, 1.5, 0.4],
+  "current_distance_au": 9.5,
+  "current_distance_label": "9.5 AU · in Saturn orbit 2004-2017 — disposed into Saturn's atmosphere 2017-09-15",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "1997-10-15", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1998-01", "x": 0.95, "y": -0.3, "z": 0.0 },
+    { "date": "1998-04-26", "label": "Venus #1", "x": 0.72, "y": -0.05, "z": 0.0 },
+    { "date": "1998-12", "x": 1.4, "y": 0.7, "z": 0.0 },
+    { "date": "1999-06-24", "label": "Venus #2", "x": 0.72, "y": 0.05, "z": 0.0 },
+    { "date": "1999-08-18", "label": "Earth", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2000-04", "x": 2.5, "y": 1.5, "z": 0.05 },
+    { "date": "2000-12-30", "label": "Jupiter", "x": 5.2, "y": 2.6, "z": 0.1 },
+    { "date": "2001-08", "x": 5.8, "y": 3.5, "z": 0.15 },
+    { "date": "2002-06", "x": 6.5, "y": 4.5, "z": 0.2 },
+    { "date": "2003-06", "x": 7.5, "y": 5.5, "z": 0.25 },
+    { "date": "2004-07-01", "label": "Saturn orbit insertion", "x": 8.6, "y": 4.0, "z": 0.35 },
+    { "date": "2017-09-15", "label": "Grand Finale (today)", "x": 9.0, "y": 1.5, "z": 0.4 }
+  ]
+}

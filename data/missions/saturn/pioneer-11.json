@@ -1,0 +1,124 @@
+{
+  "id": "pioneer-11",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / NASA Ames Research Center",
+  "sector": "gov",
+  "dest": "SATURN",
+  "color": "#7d5fff",
+  "year": 1973,
+  "status": "FLOWN",
+  "departure_date": "1973-04-06",
+  "arrival_date": "1979-09-01",
+  "transit_days": 2339,
+  "vehicle": "Atlas SLV-3D Centaur D-1A / TE-364-4",
+  "payload": "Outer-system flyby spacecraft; SNAP-19 RTGs (~165 W at launch); twin of Pioneer 10",
+  "delta_v": "~15 km/s (cumulative, Jupiter + Saturn assists)",
+  "data_quality": "partial",
+  "flight_data_quality": "sparse",
+  "credit": "\u00a9 NASA / Ames Research Center \u2014 U.S. Government work, public domain. First spacecraft to fly past Saturn (1979-09-01) and the first to image the planet at close range. Used Jupiter's gravity to reach Saturn, demonstrating the gravity-assist technique that would later send Voyager 2 to Uranus and Neptune. Discovered Saturn's F ring + an additional small moon (Epimetheus). Carries the same Pioneer plaque as Pioneer 10. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; spacecraft heading toward the constellation Aquila.",
+  "links": [
+    {
+      "l": "Pioneer 11 \u2014 Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Pioneer_11",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Science \u2014 Pioneer 11 mission overview",
+      "u": "https://science.nasa.gov/mission/pioneer-11/",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA \u2014 Pioneer 11 master catalog entry",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-019A",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society \u2014 Pioneer 11 mission profile",
+      "u": "https://www.planetary.org/space-missions/pioneer-11",
+      "t": "core"
+    },
+    {
+      "l": "JPL \u2014 gravity assist explanation (using Pioneer 11 as the canonical example)",
+      "u": "https://solarsystem.nasa.gov/basics/chapter4-2/",
+      "t": "core"
+    },
+    {
+      "l": "Smithsonian Air & Space \u2014 Pioneer F replica",
+      "u": "https://airandspace.si.edu/collection-objects/pioneer-test-replica/nasm_A19740027000",
+      "t": "deep"
+    }
+  ],
+  "flight": {
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 606,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2339,
+        "type": "flyby"
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "saturn",
+      "transfer_type": "earth_jupiter_saturn_assist",
+      "waypoints_helio_au": [
+        [
+          0,
+          1.0,
+          0,
+          0.0
+        ],
+        [
+          180,
+          2.1,
+          0.5,
+          0.0
+        ],
+        [
+          365,
+          3.3,
+          1.0,
+          0.1
+        ],
+        [
+          606,
+          5.2,
+          1.8,
+          0.2
+        ],
+        [
+          900,
+          6.5,
+          0.5,
+          0.4
+        ],
+        [
+          1300,
+          7.5,
+          -1.5,
+          0.8
+        ],
+        [
+          1800,
+          8.5,
+          -3.5,
+          1.3
+        ],
+        [
+          2339,
+          9.5,
+          -5.0,
+          1.6
+        ]
+      ]
+    }
+  }
+}

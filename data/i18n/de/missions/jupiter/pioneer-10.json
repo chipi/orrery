@@ -1,0 +1,20 @@
+{
+  "name": "Pioneer 10",
+  "type": "Vorbeiflug · Geflogen",
+  "first": "Erste Raumsonde durch den Asteroidengürtel und erster Vorbeiflug am Jupiter (04.12.1973)",
+  "description": "Pioneer 10 war der Wegbereiter — die erste Sonde durch den Asteroidengürtel (der sich als viel ungefährlicher erwies als befürchtet), die erste, die Jupiter aus der Nähe abbildete, und die erste, die Plutos Perihel-Entfernung überschritt (1983). Sie trägt die Pioneer-Plakette, entworfen von Carl Sagan, Frank Drake und Linda Salzman Sagan — die erste bewusste interstellare Botschaft der Menschheit. Letzter erfolgreicher Kontakt am 23.01.2003 aus ~82 AE; die Sonde driftet nun in Richtung Sternbild Stier, mit einer Annäherung an Aldebaran in etwa zwei Millionen Jahren.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas-Centaur hebt Pioneer 10 auf direktem Aufstieg zum Jupiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 641,
+      "label": "JUPITER NÄCHSTE ANNÄHERUNG",
+      "note": "Vorbeiflug bei ~132.000 km — erste Nahaufnahmen des Planeten.",
+      "type": "nominal"
+    }
+  ]
+}

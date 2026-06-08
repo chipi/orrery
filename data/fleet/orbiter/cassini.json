@@ -27,5 +27,8 @@
       "u": "https://solarsystem.nasa.gov/resources/17769/cassini-end-of-mission/",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "cassini"
   ]
 }

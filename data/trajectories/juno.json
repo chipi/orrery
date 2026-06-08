@@ -1,0 +1,27 @@
+{
+  "id": "juno",
+  "name": "Juno",
+  "mission_id": "juno",
+  "category": "active-at-target",
+  "color": "#79c0ff",
+  "schema_version": 1,
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice C). Launch 2011-08-05 → deep-space maneuver 2012 → Earth gravity assist 2013-10-09 → cruise → Jupiter orbit insertion 2016-07-05. Polar 53-day science orbits cluster too tightly for the /explore log-AU scale, so the path terminates at the Jupiter arrival waypoint with the current operational status as the today label. Juno's heliocentric cruise looped back inside Earth orbit (deep-space maneuver brought perihelion to ~0.85 AU before the Earth assist). Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [-3.5, 4.2, 0.1],
+  "current_distance_au": 5.5,
+  "current_distance_label": "5.5 AU · in polar Jupiter orbit since 2016-07-05 — extended mission through 2025",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2011-08-05", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2011-12", "x": 1.4, "y": 0.6, "z": 0.0 },
+    { "date": "2012-06", "x": 1.8, "y": 1.3, "z": 0.0 },
+    { "date": "2012-08-30", "label": "Deep-space mvr", "x": 2.0, "y": 1.6, "z": 0.0 },
+    { "date": "2013-03", "x": 1.5, "y": 1.4, "z": 0.0 },
+    { "date": "2013-10-09", "label": "Earth assist", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2014-06", "x": 1.5, "y": -1.3, "z": 0.02 },
+    { "date": "2015-06", "x": 2.8, "y": -2.5, "z": 0.05 },
+    { "date": "2016-01", "x": 3.8, "y": -3.2, "z": 0.07 },
+    { "date": "2016-07-05", "label": "Jupiter orbit insertion", "x": 4.6, "y": -3.7, "z": 0.08 },
+    { "date": "2026-06-05", "label": "Today (Jupiter orbit)", "x": -3.5, "y": 4.2, "z": 0.1 }
+  ]
+}

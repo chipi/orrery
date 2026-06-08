@@ -1,0 +1,26 @@
+{
+  "name": "MESSENGER",
+  "type": "Orbiter · Effettuata",
+  "first": "Prima sonda in orbita attorno a Mercurio; prima mappa completa della superficie del pianeta più interno",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) ha usato sei assistenze gravitazionali in sette anni — Terra, due volte Venere, tre volte Mercurio — per rallentare ed entrare in orbita attorno a Mercurio il 18-03-2011. Protetta da uno schermo solare, con un lato a 370 °C e l'altro a -45 °C. Scoperte: ghiaccio d'acqua in crateri polari permanentemente in ombra, le «hollows» geologiche prima sconosciute e la conferma che il nucleo ferroso di Mercurio occupa ~85 % del raggio planetario (il maggior rapporto di nucleo del sistema solare). La missione si è conclusa con un impatto controllato sulla superficie il 30-04-2015 una volta esaurito il propellente.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Delta II 7925H solleva MESSENGER su una traiettoria a sei sorvoli.",
+      "type": "nominal"
+    },
+    {
+      "met": 365,
+      "label": "ASSISTENZA GRAVITAZIONALE TERRESTRE",
+      "note": "Prima di sei assistenze che rallentano la traiettoria fino a permettere l'inserimento in orbita mercuriana.",
+      "type": "nominal"
+    },
+    {
+      "met": 2419,
+      "label": "INSERIMENTO IN ORBITA DI MERCURIO",
+      "note": "Accensione del motore principale pone MESSENGER in orbita attorno a Mercurio dopo sette anni di crociera.",
+      "type": "nominal"
+    }
+  ]
+}

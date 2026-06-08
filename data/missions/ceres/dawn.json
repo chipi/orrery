@@ -25,6 +25,36 @@
       "l": "Dawn mission archive (NASA)",
       "u": "https://science.nasa.gov/mission/dawn/",
       "t": "core"
+    },
+    {
+      "l": "Dawn at JPL",
+      "u": "https://www.jpl.nasa.gov/missions/dawn/",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA catalog — Dawn (2007-043A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+      "t": "deep"
+    },
+    {
+      "l": "Vesta interior structure — Russell et al. 2012, Science 336",
+      "u": "https://www.science.org/doi/10.1126/science.1219381",
+      "t": "deep"
+    },
+    {
+      "l": "Ceres bright spots = sodium carbonate — De Sanctis et al. 2016, Nature 536",
+      "u": "https://www.nature.com/articles/nature18290",
+      "t": "deep"
+    },
+    {
+      "l": "Ceres subsurface brine reservoir — Castillo-Rogez et al. 2020, Nature Astronomy 4",
+      "u": "https://www.nature.com/articles/s41550-020-1019-1",
+      "t": "deep"
+    },
+    {
+      "l": "Ion propulsion subsystem — Brophy 2011, Acta Astronautica 68",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0094576510002973",
+      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",

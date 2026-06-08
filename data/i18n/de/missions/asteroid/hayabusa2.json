@@ -1,0 +1,44 @@
+{
+  "name": "Hayabusa2",
+  "type": "PROBENRÜCKKEHR + LANDER · AKTIV (verlängert)",
+  "first": "Zweite Asteroiden-Probenrückkehr (Ryugu, 2020); erster künstlicher Einschlagkrater auf einem Asteroiden; erste tieferliegende Asteroidenproben zur Erde gebracht",
+  "description": "JAXAs Nachfolger der ursprünglichen Hayabusa. Gestartet am 3.12.2014, erreichte Hayabusa2 den erdnahen Asteroiden (162173) Ryugu am 27.6.2018. Oberflächenoperationen 2018-2019 lieferten die erste anhaltende Nahaufnahme eines Schutthaufen-C-Typ-Asteroiden. Die Probenrückkehrkapsel landete am 5.12.2020 über Woomera, Australien, und lieferte 5,4 g unberührtes Ryugu-Material — die erste Asteroidenprobe mit unterirdischer Stratigrafie. Erweiterte Mission: Vorbeiflug an (98943) 2001 CC21 im Juli 2026; Rendezvous mit dem schnell rotierenden (1998 KY26) für Juli 2031 anvisiert.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "H-IIA 202 von Tanegashima beginnt die 3,5-jährige Reise zum Asteroiden Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "ERDVORBEIFLUG",
+      "note": "Erd-Gravitationsassistenz justiert die Rendezvous-Bahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "RYUGU-ANKUNFT",
+      "note": "Schweben in 20 km — Beginn der 1,5-jährigen Annäherungsoperationen einschließlich Probenentnahme.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "ERDRÜCKKEHR",
+      "note": "Probenkapsel landet in Woomera, Australien mit 5,4 g Ryugu-Material.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "2001 CC21-VORBEIFLUG",
+      "note": "Verlängerte Mission Vorbeiflug am Asteroiden (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "1998 KY26-RENDEZVOUS",
+      "note": "Geplantes Rendezvous mit dem schnell rotierenden Asteroiden (1998 KY26).",
+      "type": "info"
+    }
+  ]
+}

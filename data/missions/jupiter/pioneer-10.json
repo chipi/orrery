@@ -1,0 +1,113 @@
+{
+  "id": "pioneer-10",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / NASA Ames Research Center",
+  "sector": "gov",
+  "dest": "JUPITER",
+  "color": "#7d5fff",
+  "year": 1972,
+  "status": "FLOWN",
+  "departure_date": "1972-03-03",
+  "arrival_date": "1973-12-04",
+  "transit_days": 641,
+  "vehicle": "Atlas SLV-3C Centaur D-1A / TE-364-4",
+  "payload": "Outer-system flyby spacecraft; first to use SNAP-19 RTGs; 25 W at launch (decaying to ~65 W of usable power; signal lost 2003)",
+  "delta_v": "~14.4 km/s (post-Jupiter heliocentric)",
+  "data_quality": "partial",
+  "flight_data_quality": "sparse",
+  "credit": "\u00a9 NASA / Ames Research Center \u2014 U.S. Government work, public domain. First spacecraft to fly past Mars's orbit, first through the asteroid belt (which we then discovered was less hazardous than feared), first to fly past Jupiter (1973-12-04), first to cross Saturn's orbit (1976), first to reach a distance from the Sun greater than Pluto's at perihelion (1983). Last successful contact 2003-01-23 from a heliocentric distance of ~82 AU; spacecraft now heading toward the constellation Taurus and the star Aldebaran (encounter in ~2 million years). Carries the Pioneer plaque \u2014 humanity's first deliberate interstellar message, designed by Carl Sagan + Frank Drake + Linda Salzman Sagan.",
+  "links": [
+    {
+      "l": "Pioneer 10 \u2014 Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Pioneer_10",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Science \u2014 Pioneer mission overview",
+      "u": "https://science.nasa.gov/mission/pioneer-10/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Ames Pioneer Project Office archive",
+      "u": "https://www.nasa.gov/ames/history/pioneer/",
+      "t": "core"
+    },
+    {
+      "l": "Pioneer 10/11 plaque \u2014 original design + symbology (Carl Sagan, 1972)",
+      "u": "https://www.planetary.org/articles/the-pioneer-plaque",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA \u2014 Pioneer 10 master catalog (full instrument list)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society \u2014 Pioneer 10 mission profile",
+      "u": "https://www.planetary.org/space-missions/pioneer-10",
+      "t": "core"
+    },
+    {
+      "l": "Hall, R. C. (1977). Lunar Impact: A History of Project Ranger \u2014 context for the Pioneer programme",
+      "u": "https://history.nasa.gov/SP-4210/pages/Cover.htm",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "pioneer-10",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 641,
+        "type": "flyby"
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "jupiter",
+      "transfer_type": "direct_ascent_then_escape",
+      "waypoints_helio_au": [
+        [
+          0,
+          1.0,
+          0,
+          0.0
+        ],
+        [
+          180,
+          2.0,
+          0.6,
+          0.0
+        ],
+        [
+          365,
+          3.2,
+          1.4,
+          0.1
+        ],
+        [
+          500,
+          4.1,
+          2.2,
+          0.2
+        ],
+        [
+          641,
+          5.2,
+          2.7,
+          0.3
+        ]
+      ]
+    }
+  }
+}

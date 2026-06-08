@@ -1,0 +1,26 @@
+{
+  "name": "Vega 1",
+  "type": "SCHEERVLUCHT + LANDER + BALLON · VOLTOOID",
+  "first": "Eerste ballonaerostaat ontplooid in de atmosfeer van een andere planeet (Venus, 1985)",
+  "description": "Sovjet-ESA-missie van het Halley-armada. Vega 1 droeg een lander uit de Venera-lijn en een door ESA/CNES gebouwde heliumballon die 46,5 uur op 54 km hoogte in de Venusatmosfeer dreef. Na afwerpen van de afdalingsmodule gebruikte de bus een Venus-zwaartekrachtassistentie om naar komeet 1P/Halley te navigeren, waar hij op 6-3-1986 de dichtste nadering (8890 km) bereikte — de eerste ontmoeting met een komeetkern.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "De Proton-K / D-1 lanceert Vega 1 vanuit Bajkonoer.",
+      "type": "nominal"
+    },
+    {
+      "met": 178,
+      "label": "VENUS-ONTMOETING",
+      "note": "De afdalingsmodule scheidt + landt; ballon ontvouwt op 54 km hoogte voor 46,5 uur.",
+      "type": "nominal"
+    },
+    {
+      "met": 446,
+      "label": "HALLEY-SCHEERVLUCHT",
+      "note": "Dichtste nadering tot komeet 1P/Halley op 8890 km — eerste waarneming van een komeetkern.",
+      "type": "nominal"
+    }
+  ]
+}

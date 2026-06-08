@@ -1,0 +1,26 @@
+{
+  "name": "Juno",
+  "type": "Orbitador · Ativa",
+  "first": "Primeira orbitadora polar de Júpiter; primeira utilização de energia solar além do cinturão de asteroides",
+  "description": "A Juno entrou em órbita de Júpiter em 05-07-2016 numa trajetória polar altamente elíptica de 53 dias que a leva do interior dos cinturões de radiação (perijove a cerca de 4.200 km acima dos topos das nuvens) até além de Calisto. Movida a energia solar — seus painéis triple-junction de cerca de 50 m² entregam 14 kW na Terra mas apenas ~500 W em Júpiter, primeiro uso de energia solar a essa distância. Confirmou que Júpiter tem um núcleo rochoso diluído (sem fronteira nítida), mediu a disposição dos ciclones polares (oito tempestades circumpolares em torno de cada polo) e em 2023 imageou o vulcanismo de Io com detalhe sem precedentes. A missão estendida inclui sobrevoos das quatro luas galileanas até 2025.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlas V 551 eleva a Juno de Cabo Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 749,
+      "label": "ASSISTÊNCIA GRAVITACIONAL TERRESTRE",
+      "note": "O estilingue eleva a energia heliocêntrica o suficiente para alcançar Júpiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 1796,
+      "label": "INSERÇÃO EM ÓRBITA DE JÚPITER",
+      "note": "Queima de 35 minutos do motor principal coloca a Juno em órbita polar de Júpiter.",
+      "type": "nominal"
+    }
+  ]
+}

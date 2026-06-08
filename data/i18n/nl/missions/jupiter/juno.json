@@ -1,0 +1,26 @@
+{
+  "name": "Juno",
+  "type": "Orbiter · Actief",
+  "first": "Eerste polaire orbiter van Jupiter; voor het eerst zonne-energie voorbij de planetoïdengordel",
+  "description": "Juno trad op 05-07-2016 in een sterk elliptische polaire baan van 53 dagen rond Jupiter, die haar van de binnenste stralingsgordels (perijove ~4.200 km boven de wolkentoppen) tot voorbij Callisto voert. Op zonne-energie — haar driestoffige zonnepanelen van ~50 m² leveren bij de Aarde 14 kW maar bij Jupiter slechts ~500 W, de eerste keer dat zonne-energie op die afstand gebruikt wordt. Bevestigde dat Jupiter een verdunde rotsachtige kern heeft (geen scherpe grens), bracht de polaire-cyclonenstructuur in kaart (acht circumpolaire stormen rond elke pool) en bracht in 2023 het vulkanisme van Io met ongekende details in beeld. Uitgebreide missie met scheervluchten van alle vier de Galileïsche manen tot 2025.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 551 tilt Juno op vanaf Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 749,
+      "label": "AARDSLINGER",
+      "note": "De zwaartekrachtsslinger verhoogt de heliocentrische energie genoeg om Jupiter te bereiken.",
+      "type": "nominal"
+    },
+    {
+      "met": 1796,
+      "label": "JUPITER-INTRACETIEMANOEUVRE",
+      "note": "Hoofdmotor-burn van 35 minuten plaatst Juno in een polaire Jupiter-baan.",
+      "type": "nominal"
+    }
+  ]
+}

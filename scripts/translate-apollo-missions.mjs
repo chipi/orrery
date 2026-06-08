@@ -739,7 +739,9 @@ async function main() {
         await readFile(p, 'utf8');
         enPath = p;
         break;
-      } catch {}
+      } catch {
+        // try next candidate path
+      }
     }
     if (!enPath) {
       console.error(`✗ ${missionId}: no en-US overlay found`);

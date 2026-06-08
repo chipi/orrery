@@ -1,0 +1,40 @@
+{
+  "id": "chandrayaan1",
+  "name": "Chandrayaan-1",
+  "category": "orbiter",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "ISRO Satellite Centre",
+  "first_flight": "2008-10-22",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+  "credit": "India's first mission beyond Earth orbit and its first to the Moon. Launched 2008-10-22 from Satish Dhawan Space Centre on a PSLV-XL, Chandrayaan-1 entered a 100-km polar lunar orbit on 2008-11-12. Carried 11 instruments from 6 countries (India, USA, UK, Germany, Sweden, Bulgaria) — most consequentially NASA's Moon Mineralogy Mapper (M3) which detected the absorption-band signature of OH/H₂O across vast swathes of the lunar surface, particularly at high latitudes (Pieters et al., 2009, Science 326). Its 35-kg Moon Impact Probe (MIP) was released 2008-11-14 and crashed into the south-polar Shackleton crater, becoming the first Indian artefact on the Moon and recording lunar atmospheric water vapour during descent. Spacecraft contact was lost 2009-08-29 after ~10 months / 3400 orbits — half of its planned 2-year mission, but the science return was already game-changing. Remains in lunar orbit, re-acquired by NASA Goldstone radar in 2017.",
+  "links": [
+    {
+      "l": "Chandrayaan-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-1",
+      "t": "intro"
+    },
+    {
+      "l": "Chandrayaan-1 — ISRO",
+      "u": "https://www.isro.gov.in/Chandrayaan_1.html",
+      "t": "core"
+    },
+    {
+      "l": "Pieters et al. (2009) — M3 detection of lunar water (Science 326)",
+      "u": "https://www.science.org/doi/10.1126/science.1178658",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "chandrayaan1"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "chandrayaan1"
+    }
+  ]
+}

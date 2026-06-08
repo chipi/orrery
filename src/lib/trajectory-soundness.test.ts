@@ -111,7 +111,10 @@ function buildMissionArcs(m: MissionFile): {
     flyby_day: depDay + flybyOffset,
     arr_day: depDay + arrOffset,
   };
-  const isMoon = json.dest === 'MOON';
+  // EARTH-orbit missions (Apollo 7/9, Mercury/Gemini/Skylab, Shuttle
+  // LEO, ISS) use the cislunar branch — same as MOON — since there is
+  // no heliocentric trajectory to draw for an Earth-orbit flight.
+  const isMoon = json.dest === 'MOON' || json.dest === 'EARTH';
 
   if (isMoon) {
     // Moon-mode: scene-unit coords divided by SCALE_3D to land in AU.
@@ -147,16 +150,23 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (16 Mars + 21 Moon + 10 outer + 5 inner — post-#306 expansion + inspiration-mars removal)`, () => {
+  it(`fixture loads expected counts (16 Mars + 27 Moon + 2 Earth + 10 outer + 5 inner — post-#306 expansion, post-inspiration-mars removal, post-Tier-A Apollo backfill)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
+    const earth = MISSIONS.filter((m) => m.destDir === 'earth');
     const outer = MISSIONS.filter((m) =>
       ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
     );
     const inner = MISSIONS.filter((m) => ['mercury', 'venus'].includes(m.destDir));
-    if (mars.length !== 16 || moon.length !== 21 || outer.length !== 10 || inner.length !== 5) {
+    if (
+      mars.length !== 16 ||
+      moon.length !== 27 ||
+      earth.length !== 2 ||
+      outer.length !== 10 ||
+      inner.length !== 5
+    ) {
       throw new Error(
-        `Expected 16 Mars + 21 Moon + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${outer.length} + ${inner.length}`,
+        `Expected 16 Mars + 27 Moon + 2 Earth + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

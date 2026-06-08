@@ -97,8 +97,11 @@ describe('getMissionIndex', () => {
     // 2026-06-08 missions audit H — removed inspiration-mars (Tito
     // 2013 free-return Mars flyby concept, never funded, cancelled
     // 2015). 57 → 56.
+    // 2026-06-08 #311 Tier A — backfilled 6 lunar Apollo missions
+    // (8, 10, 12, 14, 15, 16) + 2 LEO Apollo missions (7, 9) using
+    // the new EARTH dest. 56 → 64.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(56);
+    expect(missions).toHaveLength(64);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -107,6 +110,7 @@ describe('getMissionIndex', () => {
       expect(m.id).toBeTruthy();
       expect(m.agency).toBeTruthy();
       expect([
+        'EARTH',
         'MARS',
         'MOON',
         'MERCURY',
@@ -135,9 +139,9 @@ describe('filterMissions', () => {
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 21', async () => {
+  it('MOON filter returns 27', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(21);
+    expect(moon).toHaveLength(27);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -329,13 +333,14 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 56 missions merged with their en-US overlays', async () => {
+  it('returns all 64 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(56);
+    expect(list).toHaveLength(64);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
       expect([
+        'EARTH',
         'MARS',
         'MOON',
         'MERCURY',
@@ -361,7 +366,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(56);
+    expect(list).toHaveLength(64);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -1,0 +1,40 @@
+{
+  "id": "lro",
+  "name": "Lunar Reconnaissance Orbiter (LRO)",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA Goddard Space Flight Center",
+  "first_flight": "2009-06-18",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
+  "credit": "NASA's active flagship lunar orbiter — operating continuously since 2009-06-23. Launched 2009-06-18 with LCROSS on an Atlas V from Cape Canaveral, LRO's payload of 7 instruments has remapped every aspect of the Moon at unprecedented resolution. The Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0.5 m/pixel at 50 km altitude) has imaged every Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet and Hakuto landing site — every \"tier-2 LROC\" image in this app's /moon hotspots came from LROC NAC. LOLA (Laser Altimeter) gave the most detailed topography of any solar-system body. Diviner mapped surface temperature 10 K precision; LAMP detected widespread surface H₂O down to lunar dawn; LEND mapped neutron flux at <10 km resolution. As of 2026 still operational on extended mission, with no planned end-of-life — propellant supports operations through ~2030+.",
+  "links": [
+    {
+      "l": "Lunar Reconnaissance Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "LRO mission — NASA",
+      "u": "https://science.nasa.gov/mission/lro/",
+      "t": "core"
+    },
+    {
+      "l": "LROC image gallery (Arizona State University)",
+      "u": "https://www.lroc.asu.edu/images",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "lro"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "lro"
+    }
+  ]
+}

@@ -2530,5 +2530,101 @@
     "status": "RETIRED",
     "first_flight": "2021-05-15",
     "tagline": "First Chinese Mars rover; Tianwen-1"
+  },
+  {
+    "id": "luna10",
+    "name": "Luna 10",
+    "category": "orbiter",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-03-31",
+    "tagline": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8"
+  },
+  {
+    "id": "luna24",
+    "name": "Luna 24",
+    "category": "lander",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1976-08-09",
+    "tagline": "Last successful Soviet Moon mission — returned 170 g of Mare Crisium regolith 1976-08-22; last lunar sample return until Chang'e 5"
+  },
+  {
+    "id": "lunar-prospector",
+    "name": "Lunar Prospector",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1998-01-07",
+    "tagline": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999"
+  },
+  {
+    "id": "smart-1",
+    "name": "SMART-1",
+    "category": "orbiter",
+    "agency": "ESA",
+    "country": "Multi (ESA members)",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "2003-09-27",
+    "tagline": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03"
+  },
+  {
+    "id": "chandrayaan1",
+    "name": "Chandrayaan-1",
+    "category": "orbiter",
+    "agency": "ISRO",
+    "country": "India",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "2008-10-22",
+    "tagline": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days"
+  },
+  {
+    "id": "lro",
+    "name": "Lunar Reconnaissance Orbiter (LRO)",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "first_flight": "2009-06-18",
+    "tagline": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here"
+  },
+  {
+    "id": "change1",
+    "name": "Chang'e 1",
+    "category": "orbiter",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "2007-10-24",
+    "tagline": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon"
+  },
+  {
+    "id": "change6",
+    "name": "Chang'e 6",
+    "category": "lander",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "2011-now",
+    "epoch": "lunar-return",
+    "status": "RETIRED",
+    "first_flight": "2024-05-03",
+    "tagline": "First-ever lunar far-side sample return. Apollo basin landing 2024-06-02; 1935 g returned to Inner Mongolia 2024-06-25"
   }
 ]

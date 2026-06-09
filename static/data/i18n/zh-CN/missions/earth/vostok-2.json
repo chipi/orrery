@@ -1,0 +1,32 @@
+{
+  "name": "东方2号",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "首次完整在轨一天 — 25小时内绕地球17圈",
+  "description": "格尔曼·季托夫执行的17圈、25小时飞行 — 进入太空的第二人，也是首位在轨停留超过一天的人。1961-08-06 06:00 UTC自拜科努尔发射；以25岁10个月之龄，季托夫直到2021年(奥利弗·达门，NS-16)前一直是被送入太空最年轻的人。试验了人体对长时间微重力的反应——季托夫报告了首例太空运动病，在轨睡眠约8小时，并用手持相机拍摄了第一批地球照片。季托夫在下降途中弹射后，返回舱于1961-08-07 07:18 UTC在萨拉托夫州克拉斯尼库特附近着陆。服务舱绑带分离问题(与东方1号相同)再次发生。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EARTH PHOTOS",
+      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "type": "info"
+    },
+    {
+      "met": 0.8,
+      "label": "SLEEP",
+      "note": "First sleep period in space (~8 hours).",
+      "type": "info"
+    },
+    {
+      "met": 1.04,
+      "label": "EJECT + LAND",
+      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "vostok-2",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet Academy of Sciences / OKB-1 Korolev Bureau (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#cc4444",
+  "year": 1961,
+  "status": "FLOWN",
+  "departure_date": "1961-08-06",
+  "arrival_date": "1961-08-07",
+  "transit_days": 1,
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4731 kg launch mass; single cosmonaut",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© Roscosmos mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Vostok 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vostok_2",
+      "t": "intro"
+    },
+    {
+      "l": "Gherman Titov — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gherman_Titov",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "vostok-k",
+      "role": "launcher"
+    },
+    {
+      "id": "vostok",
+      "role": "spacecraft"
+    },
+    {
+      "id": "gagarins-start",
+      "role": "launch-site"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ボストーク 6",
+  "type": "有人地球周回 · 飛行済",
+  "first": "宇宙へ行った最初の女性 — ヴァレンチナ・テレシコワ、48周",
+  "description": "ヴァレンチナ・テレシコワによる48周回・2日23時間の飛行 — 宇宙へ行った最初の女性であり、2022年のソユーズMS-22まで唯一の単独宇宙ミッションを飛行した女性。1962年に編成された5人の女性宇宙飛行士候補から選ばれ、ガガーリンの初の軌道飛行からわずか2年後の1963-06-16 09:30 UTCに打ち上げられた。彼女のカプセルは降下方向ではなく上昇方向の軌道補正噴射を行うようにプログラムされていた — 彼女は手動で誤りを特定し、地上管制は翌日に修正された姿勢制御ソフトウェアを再アップロードした。1963-06-19 08:20 UTC、アルタイ地方バエヴォ近郊に着陸。後にテレシコワはソビエト政治の重鎮となり、26歳で軌道飛行した史上最年少女性であり続けている。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "ORBIT-CORRECTION ERROR",
+      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "type": "warning"
+    },
+    {
+      "met": 2.95,
+      "label": "EJECT + LAND",
+      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

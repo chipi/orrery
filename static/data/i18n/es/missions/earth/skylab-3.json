@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 3",
+  "type": "TRIPULACIÓN DE ESTACIÓN · VOLADA",
+  "first": "Segunda tripulación de Skylab — 59 días, desplegó el parasol de doble mástil para sustituir al original",
+  "description": "Bean, Garriott y Lousma — la segunda tripulación que vivió a bordo de Skylab, durante 59 días y 11 horas. Lanzados el 1973-07-28 a las 11:11 UTC en un Saturno IB (SA-207). A pocas horas del acoplamiento, el módulo de servicio del CSM sufrió una fuga en un propulsor de control de actitud — el CSM-119 de respaldo fue preparado en Cabo Cañaveral para una posible misión de rescate, pero la tripulación completó el vuelo de forma nominal. Garriott dirigió 305 horas de observaciones solares con los instrumentos del Apollo Telescope Mount. Tres EVA desplegaron un parasol solar de doble mástil sobre el original, repararon el paquete de giróscopos de velocidad y recuperaron cartuchos de película del ATM. Amerizaron el 1973-09-25 a las 22:19 UTC; el CSM-117 se exhibe en el Glenn Visitor Center, Cleveland.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "CSM THRUSTER LEAK",
+      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "type": "warning"
+    },
+    {
+      "met": 30,
+      "label": "TWIN-POLE SHIELD EVA",
+      "note": "Crew deployed twin-pole shield over original parasol.",
+      "type": "nominal"
+    },
+    {
+      "met": 59.46,
+      "label": "SPLASHDOWN",
+      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "神舟1号",
+  "type": "有人定格試験 · 無人 · 飛行済",
+  "first": "中国初の神舟軌道試験 — 中国の有人宇宙飛行への道を開いた",
+  "description": "神舟有人宇宙船計画の初飛行。1999-11-20 22:30 UTC、酒泉から人定格仕様の長征2F (CZ-2F) の初号機により打ち上げられた。カプセルは高度196 × 324 km、軌道傾斜角42.6°で14周回し、1999-11-21 19:41 UTCに内モンゴルの草原で回収された。生命維持装置のモックアップ、テレメトリーパッケージ、中国国旗、さらに微小重力遺伝学帰還カーゴとして種子を搭載した。中国がソ連・米国に続いて独自の有人宇宙飛行を行う決意を示し、2003年の楊利偉による神舟5号へ直結した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT",
+      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.875,
+      "label": "DE-ORBIT",
+      "note": "Service-module retro-fire over Africa.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.882,
+      "label": "RECOVERY",
+      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

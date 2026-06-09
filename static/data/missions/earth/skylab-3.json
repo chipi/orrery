@@ -1,0 +1,49 @@
+{
+  "id": "skylab-3",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1973,
+  "status": "FLOWN",
+  "departure_date": "1973-07-28",
+  "arrival_date": "1973-09-25",
+  "transit_days": 59,
+  "vehicle": "Saturn IB (SA-207)",
+  "payload": "19979 kg launch mass; CSM-117 + 3-person crew",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Skylab 3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Skylab_3",
+      "t": "intro"
+    },
+    {
+      "l": "Skylab 3 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-050A",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-ib",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "skylab",
+      "role": "station"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Inspiration4",
+  "type": "VOL LIBRE HABITÉ · VOLÉ",
+  "first": "Premier vol spatial orbital entièrement civil ; collecta 243 M$ pour le St. Jude Children's Research Hospital",
+  "description": "Jared Isaacman, Sian Proctor, Hayley Arceneaux et Chris Sembroski — le premier vol orbital intégralement habité par des personnes qui n'étaient pas des astronautes gouvernementaux professionnels. Lancés le 2021-09-15 à 00:02 UTC depuis LC-39A sur Falcon 9 B1062 (troisième vol), à bord de Crew Dragon Resilience (C207, déjà volé sur Crew-1). Atteignirent une orbite circulaire à 585 km, 51,6° d'inclinaison — l'orbite habitée la plus haute depuis les missions de service de Hubble. Sans amarrage à une station ; trois jours de vol libre, incluant la première coupole à bord (en remplacement de l'adaptateur d'amarrage). Amerrissage au large de la Floride le 2021-09-18 à 23:06 UTC. La mission collecta plus de 243 M$ pour le St. Jude Children's Research Hospital — Arceneaux est une ancienne patiente de St. Jude et la première survivante du cancer en orbite.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.05,
+      "label": "ORBIT",
+      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "CUPOLA WINDOW",
+      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "type": "info"
+    },
+    {
+      "met": 2.96,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

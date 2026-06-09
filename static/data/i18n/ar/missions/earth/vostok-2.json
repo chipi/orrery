@@ -1,0 +1,32 @@
+{
+  "name": "Vostok 2",
+  "type": "مدار أرضي مأهول · أُطلق",
+  "first": "أول يوم كامل في الفضاء — 17 مدارًا على مدى 25 ساعة",
+  "description": "رحلة غيرمان تيتوف التي امتدت 25 ساعة و17 مدارًا — ثاني إنسان في الفضاء وأول من قضى أكثر من يوم في المدار. أُطلق في 1961-08-06 الساعة 06:00 ت.ع من بايكونور؛ وفي عمر 25 سنة و10 أشهر ظل تيتوف أصغر شخص أُطلق إلى الفضاء حتى عام 2021 (أوليفر دامن، NS-16). اختبر استجابة الإنسان للجاذبية الصغرى لفترة طويلة — أبلغ تيتوف عن أول حالة دوار حركي فضائي، ونام نحو 8 ساعات في المدار، والتقط أول صور للأرض بكاميرا يدوية. هبطت الكبسولة قرب كراسني كوت، أوبلاست ساراتوف، في 1961-08-07 الساعة 07:18 ت.ع بعد أن قفز تيتوف بمظلته خلال النزول. تكررت مشكلة فصل أحزمة وحدة الخدمة (نفس مشكلة فوستوك 1).",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EARTH PHOTOS",
+      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "type": "info"
+    },
+    {
+      "met": 0.8,
+      "label": "SLEEP",
+      "note": "First sleep period in space (~8 hours).",
+      "type": "info"
+    },
+    {
+      "met": 1.04,
+      "label": "EJECT + LAND",
+      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "voskhod-1",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet Academy of Sciences / OKB-1 Korolev Bureau (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#cc4444",
+  "year": 1964,
+  "status": "FLOWN",
+  "departure_date": "1964-10-12",
+  "arrival_date": "1964-10-13",
+  "transit_days": 1,
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5320 kg launch mass; three cosmonauts (no spacesuits, no ejection seats)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© Roscosmos mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Voskhod 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voskhod_1",
+      "t": "intro"
+    },
+    {
+      "l": "Vladimir Komarov — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vladimir_Komarov",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "voskhod-11a57",
+      "role": "launcher"
+    },
+    {
+      "id": "voskhod",
+      "role": "spacecraft"
+    },
+    {
+      "id": "gagarins-start",
+      "role": "launch-site"
+    }
+  ]
+}

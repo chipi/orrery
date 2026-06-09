@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 2",
+  "type": "EQUIPAGGIO DI STAZIONE · VOLATA",
+  "first": "Prima visita con equipaggio a Skylab — riparò il modulo danneggiato e salvò il programma",
+  "description": "Conrad, Kerwin e Weitz — il primo equipaggio ad abitare la stazione spaziale statunitense Skylab. Lanciati il 1973-05-25 alle 13:00 UTC su un Saturn IB (SA-206), 11 giorni dopo che Skylab stessa era stata danneggiata al lancio (lo scudo micrometeoriti / solare si era strappato portando via un'ala solare e bloccando la seconda). L'equipaggio eseguì un salvataggio di 28 giorni: Weitz tentò (senza riuscirci) di liberare l'ala bloccata durante una EVA in piedi di 38 minuti il primo giorno, poi Conrad e Kerwin riuscirono a tagliare la cinghia di ritenuta durante una EVA di 3,5 ore al 14º giorno, ripristinando l'alimentazione. Dispiegarono attraverso la camera di equilibrio scientifica un parasole termico progettato a Marshall, riportando la temperatura della cabina da 54 °C a 24 °C. Tornarono il 1973-06-22 alle 13:50 UTC; il CSM-116 è esposto al National Air and Space Museum di Washington D.C.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.33,
+      "label": "DOCK",
+      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "EVA #2 — POWER RESTORED",
+      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.04,
+      "label": "SPLASHDOWN",
+      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Инспирејшен 4",
+  "type": "СЛОБОДНИ ЛЕТ СА ПОСАДОМ · ОБАВЉЕНО",
+  "first": "Први потпуно цивилни орбитални свемирски лет; прикупио 243 милиона долара за St. Jude Children's Research Hospital",
+  "description": "Џаред Ајзакман, Сиан Проктор, Хејли Арсено и Крис Сембрoски — први орбитални лет са посадом састављеном искључиво од људи који нису професионални владини астронаути. Лансирани 2021-09-15 у 00:02 UTC са LC-39A на Falcon 9 B1062 (трећи лет), на Crew Dragon Resilience (C207, претходно летео у Crew-1). Достигли су кружну орбиту од 585 km на нагибу од 51,6° — највишу орбиту са посадом од Хабл сервисних мисија. Без спајања са било којом станицом; три дана слободног лета укључујући прву купола на броду (уместо адаптера за спајање). Приводнили су се код обале Флориде 2021-09-18 у 23:06 UTC. Мисија је прикупила преко 243 милиона долара за St. Jude Children's Research Hospital — Арсено је бивша пацијенткиња тог болничког центра и прва особа која је преживела рак и доспела у орбиту.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.05,
+      "label": "ORBIT",
+      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "CUPOLA WINDOW",
+      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "type": "info"
+    },
+    {
+      "met": 2.96,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "shenzhou-1",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration / China Aerospace Science and Technology Corporation",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#de2910",
+  "year": 1999,
+  "status": "FLOWN",
+  "departure_date": "1999-11-20",
+  "arrival_date": "1999-11-21",
+  "transit_days": 1,
+  "vehicle": "Long March 2F",
+  "payload": "7600 kg launch mass; uncrewed Shenzhou prototype with mock-up systems",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© CNSA mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Shenzhou 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_1",
+      "t": "intro"
+    },
+    {
+      "l": "Long March 2F — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_2F",
+      "t": "core"
+    },
+    {
+      "l": "Shenzhou programme overview (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1999-061A",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "long-march-2f",
+      "role": "launcher"
+    },
+    {
+      "id": "shenzhou",
+      "role": "spacecraft"
+    },
+    {
+      "id": "jiuquan-slc-43",
+      "role": "launch-site"
+    }
+  ]
+}

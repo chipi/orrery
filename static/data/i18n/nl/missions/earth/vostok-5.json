@@ -1,0 +1,26 @@
+{
+  "name": "Vostok 5",
+  "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
+  "first": "Langste solo aardomloopvlucht — 4 dagen 23 uur, 81 omwentelingen",
+  "description": "Valeri Bykovski's vlucht van 81 omwentelingen en 4 dagen 23 uur — nog steeds de langste solo aardomloop-missie uit de geschiedenis. Gelanceerd op 1963-06-14 om 11:59 UTC; vloog de tweede helft van zijn missie samen met Vostok 6 (Teresjkova, 2 dagen later gelanceerd). De geplande 8-daagse duur werd ingekort wegens zorgen over straling van een zonnevlam en een trage baanafname. Landde op 1963-06-19 om 11:06 UTC nabij Karaganda na parachutescheiding.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "VOSTOK 6 JOIN",
+      "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
+      "type": "info"
+    },
+    {
+      "met": 4.965,
+      "label": "EJECT + LAND",
+      "note": "Landed near Karaganda 1963-06-19 11:06 UTC after 81 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

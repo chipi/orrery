@@ -1,0 +1,32 @@
+{
+  "name": "北极星·黎明",
+  "type": "载人自由飞行 · 已飞行",
+  "first": "首次商业太空行走；自阿波罗17号以来人类最高地球轨道(1408公里)",
+  "description": "贾里德·艾萨克曼(指令长)、斯科特·\"基德\"·波蒂特(驾驶员)、莎拉·吉利斯和安娜·梅农(SpaceX工程师/任务专家)。2024-09-10 09:23 UTC自LC-39A由猎鹰9号B1083发射，搭乘载人龙飞船坚韧号(C207，第三次飞行)。第1天将远地点抬升到1408公里 — 这是除阿波罗登月任务外人类飞过的最高轨道；随后将远地点降至730公里圆轨道以执行太空行走。第3天进行了首次商业太空行走：艾萨克曼和吉利斯穿着新型SpaceX太空行走服从打开的舱门出舱(无气闸 — 整个座舱对4名乘员全员暴露于真空中)，每人在真空中约花8分钟测试活动能力。从轨道测试了Starlink激光卫星间通讯链路。2024-09-15 07:36 UTC在佛罗里达海岸附近溅落。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "APOGEE BOOST",
+      "note": "Raised orbit to 1408 km apogee — highest crewed orbit since Apollo 17.",
+      "type": "info"
+    },
+    {
+      "met": 3,
+      "label": "COMMERCIAL EVA",
+      "note": "Isaacman + Gillis exited through cabin hatch into vacuum — first commercial spacewalk.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.93,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida 2024-09-15 07:36 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

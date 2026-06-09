@@ -1,0 +1,32 @@
+{
+  "name": "Shenzhou 1",
+  "type": "TEST QUALIFICATO ALL'EQUIPAGGIO · SENZA EQUIPAGGIO · VOLATA",
+  "first": "Primo test orbitale Shenzhou cinese — aprì la strada al volo umano della RPC",
+  "description": "Primo volo del programma di veicoli con equipaggio Shenzhou. Lanciato il 1999-11-20 alle 22:30 UTC da Jiuquan nel volo inaugurale del Lunga Marcia 2F (CZ-2F) certificato per uso umano. La capsula completò 14 orbite a 196 × 324 km e 42,6° di inclinazione, rientrando per il recupero nella steppa della Mongolia Interna il 1999-11-21 alle 19:41 UTC. Trasportava mock-up di hardware di supporto vitale, pacchetti di telemetria e una bandiera cinese, oltre a semi per un carico di rientro di genetica in microgravità. Sancì l'impegno della Cina a seguire URSS e USA nel volo umano indipendente; portò direttamente a Shenzhou 5 (2003) con Yang Liwei.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT",
+      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.875,
+      "label": "DE-ORBIT",
+      "note": "Service-module retro-fire over Africa.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.882,
+      "label": "RECOVERY",
+      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

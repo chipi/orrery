@@ -1,0 +1,26 @@
+{
+  "name": "보스토크 4",
+  "type": "유인 지구 궤도 · 비행 완료",
+  "first": "최초 동시 비행의 후반부 — 두 유인 우주선 간 최초의 통신",
+  "description": "파벨 포포비치의 48회 궤도 비행, 1962-08-12 08:02 UTC, 보스토크 3 발사 24시간 뒤에 발사되었다. 두 캡슐은 약 6.5 km까지 접근했고 궤도의 우주비행사들 사이에 최초로 음성 무선 통신을 주고받았다. 지상 관제가 천둥에 관한 암호 문구를 조기 종료 비상 암호로 잘못 해석하면서 포포비치는 하루 일찍 귀환 명령을 받았다 — 실제로는 일상적인 기상 관측이었다. 보스토크 3 착륙 4분 뒤인 1962-08-15 07:59 UTC 카라간다 인근에 착륙했다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1962-08-12 08:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "INTER-CRAFT VOICE",
+      "note": "First voice communication between two crewed spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 2.99,
+      "label": "EJECT + LAND",
+      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

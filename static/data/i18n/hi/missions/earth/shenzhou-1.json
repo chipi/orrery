@@ -1,0 +1,32 @@
+{
+  "name": "Shenzhou 1",
+  "type": "क्रू-योग्य परीक्षण · बिना क्रू · उड़ाया गया",
+  "first": "चीन का पहला Shenzhou कक्षीय परीक्षण — PRC के मानवयुक्त अंतरिक्ष उड़ान का रास्ता खोला",
+  "description": "Shenzhou मानवयुक्त-अंतरिक्षयान कार्यक्रम की पहली उड़ान। 1999-11-20 22:30 UTC को Jiuquan से मानव-रेटेड लॉन्ग मार्च 2F (CZ-2F) की पहली उड़ान पर प्रक्षेपित। कैप्सूल ने 196 × 324 किमी, 42.6° झुकाव पर 14 परिक्रमाएँ पूरी कीं, और 1999-11-21 19:41 UTC को इनर मंगोलिया के स्टेपी में पुनर्प्राप्ति हेतु वापस लौटी। इसमें जीवन-समर्थन का मॉक-अप हार्डवेयर, टेलीमेट्री पैकेज और एक चीनी झंडा था, साथ ही सूक्ष्म-गुरुत्व जेनेटिक्स वापसी कार्गो के लिए बीज भी थे। इसने स्वतंत्र मानवयुक्त अंतरिक्ष उड़ान में USSR / USA का अनुसरण करने की चीन की प्रतिबद्धता को चिह्नित किया; और सीधे Yang Liwei के साथ Shenzhou 5 (2003) तक ले गई।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT",
+      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.875,
+      "label": "DE-ORBIT",
+      "note": "Service-module retro-fire over Africa.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.882,
+      "label": "RECOVERY",
+      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

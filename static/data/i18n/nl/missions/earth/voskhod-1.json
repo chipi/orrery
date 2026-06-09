@@ -1,0 +1,26 @@
+{
+  "name": "Voskhod 1",
+  "type": "BEMANDE AARDOMLOOPBAAN · GEVLOGEN",
+  "first": "Eerste ruimtevlucht met meerdere bemanningsleden — drie kosmonauten in een van Vostok afgeleide capsule",
+  "description": "Eerste ruimtevlucht met drie bemanningsleden uit de geschiedenis. Komarov, Feoktistov en Jegorov vlogen van 1964-10-12 tot 1964-10-13 in een sterk aangepaste Vostok-capsule (aangeduid als Voskhod / 'Zonsopgang'). Schietstoelen werden verwijderd en het cabinedruksysteem werd opnieuw gecertificeerd zodat drie mannen in overhemd konden zitten — een propagandasoverwinning op de geplande Amerikaanse Gemini-vluchten met twee bemanningsleden, maar een wrede concessie die de bemanning zonder enige ontsnappingsmogelijkheid liet bij lancering of terugkeer. De cabineruimte was zo krap dat Komarov meldde dat hij 24 uur lang Jegorovs adem in zijn nek voelde. Ze landden op 1964-10-13 om 07:47 UTC nabij Marevka, Kazachstan, met behulp van het nieuwe vastebrandstof-retrosysteem voor zachte landing, omdat parachute-uitwerping niet mogelijk was. Terwijl ze in een baan rond de Aarde waren, werd Chroesjtsjov afgezet; de bemanning keerde terug naar een geheel ander Sovjet-leiderschap.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8,
+      "label": "KHRUSHCHEV DEPOSED",
+      "note": "Soviet leadership change occurred during the flight.",
+      "type": "info"
+    },
+    {
+      "met": 1.01,
+      "label": "LAND",
+      "note": "Soft-landing retro-rocket touchdown near Marevka 1964-10-13 07:47 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

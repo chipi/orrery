@@ -778,5 +778,125 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": true
+  },
+  {
+    "id": "shenzhou-1",
+    "agency": "CNSA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1999,
+    "sector": "gov",
+    "color": "#de2910",
+    "crewed": false
+  },
+  {
+    "id": "vostok-2",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1961,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "vostok-3",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1962,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "vostok-4",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1962,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "vostok-5",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1963,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "vostok-6",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1963,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "voskhod-1",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1964,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "skylab-2",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1973,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "skylab-3",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1973,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "skylab-4",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1973,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "inspiration4",
+    "agency": "SpaceX",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2021,
+    "sector": "private",
+    "color": "#005288",
+    "crewed": true
+  },
+  {
+    "id": "polaris-dawn",
+    "agency": "SpaceX",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2024,
+    "sector": "private",
+    "color": "#005288",
+    "crewed": true
   }
 ]

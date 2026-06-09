@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 2",
+  "type": "BEMANNTE STATIONSBESATZUNG · GEFLOGEN",
+  "first": "Erste bemannte Skylab-Mission — reparierte die beschädigte Werkstatt und rettete das Programm",
+  "description": "Conrad, Kerwin und Weitz — die erste Besatzung, die die US-Raumstation Skylab bewohnte. Gestartet am 1973-05-25 um 13:00 UTC auf einer Saturn IB (SA-206), 11 Tage nachdem Skylab selbst beim Start beschädigt worden war (der Mikrometeoroiden-/Sonnenschild riss ab und nahm einen der Solarflügel mit, während der zweite blockierte). Die Besatzung führte eine 28-tägige Rettungsmission durch: Weitz versuchte (erfolglos) am Tag 1 in einem 38-minütigen Stehausstieg, den blockierten Flügel zu befreien, danach gelang es Conrad und Kerwin am Tag 14 in einem 3,5-stündigen Außenbordeinsatz, das Halteband zu durchtrennen und die Stromversorgung wiederherzustellen. Über die wissenschaftliche Luftschleuse setzten sie einen von Marshall entwickelten Sonnenschirm als Thermoschild ein und senkten so die Kabinentemperatur von 54 °C auf 24 °C. Rückkehr am 1973-06-22 um 13:50 UTC; CSM-116 ist im National Air and Space Museum, Washington D.C., ausgestellt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.33,
+      "label": "DOCK",
+      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "EVA #2 — POWER RESTORED",
+      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.04,
+      "label": "SPLASHDOWN",
+      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

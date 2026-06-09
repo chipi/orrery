@@ -61,5 +61,8 @@
       "mission_id": "shenzhou-19",
       "flight_designation": "Shenzhou 19 (2024-10-29) · Cai + Song + Wang — current Tiangong crew (rotates with SZ-20)"
     }
+  ],
+  "linked_missions": [
+    "shenzhou-1"
   ]
 }

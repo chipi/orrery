@@ -1,0 +1,32 @@
+{
+  "name": "Vostok 2",
+  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
+  "first": "Erster Tag im All — 17 Umläufe in 25 Stunden",
+  "description": "German Titows 17-Umlauf-Flug von 25 Stunden — zweiter Mensch im All und Erster, der über einen Tag im Orbit verbrachte. Gestartet am 1961-08-06 um 06:00 UTC von Baikonur; mit 25 Jahren und 10 Monaten blieb Titow bis 2021 (Oliver Daemen, NS-16) der jüngste je ins All gestartete Mensch. Testete menschliche Reaktionen auf längere Mikrogravitation — Titow berichtete den ersten Fall von Raumkrankheit, schlief ca. 8 Stunden im Orbit und fertigte die ersten Handkamera-Erdaufnahmen an. Die Kapsel landete bei Krasny Kut, Oblast Saratow, am 1961-08-07 um 07:18 UTC, nachdem Titow während des Abstiegs ausgestiegen war. Das Trennproblem der Servicemodul-Gurte (wie bei Wostok 1) trat erneut auf.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EARTH PHOTOS",
+      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "type": "info"
+    },
+    {
+      "met": 0.8,
+      "label": "SLEEP",
+      "note": "First sleep period in space (~8 hours).",
+      "type": "info"
+    },
+    {
+      "met": 1.04,
+      "label": "EJECT + LAND",
+      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "type": "nominal"
+    }
+  ]
+}

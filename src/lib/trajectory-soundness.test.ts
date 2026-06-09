@@ -150,7 +150,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (16 Mars + 31 Moon + 12 Earth + 10 outer + 5 inner — Tier-A + Tier-F Apollo/lunar backfill + Slice A historic crewed)`, () => {
+  it(`fixture loads expected counts (16 Mars + 31 Moon + 24 Earth + 10 outer + 5 inner — Tier-A + Tier-F + Slice A + Slice B Vostok-tail/Voskhod-1/Skylab/Shenzhou-1/commercial)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -161,12 +161,12 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     if (
       mars.length !== 16 ||
       moon.length !== 31 ||
-      earth.length !== 12 ||
+      earth.length !== 24 ||
       outer.length !== 10 ||
       inner.length !== 5
     ) {
       throw new Error(
-        `Expected 16 Mars + 31 Moon + 12 Earth + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 16 Mars + 31 Moon + 24 Earth + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

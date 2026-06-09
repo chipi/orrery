@@ -1,0 +1,26 @@
+{
+  "name": "Voskhod 1",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "First multi-crew spaceflight — three cosmonauts in a Vostok-derived capsule",
+  "description": "First three-crew spaceflight in history. Komarov, Feoktistov and Yegorov flew 1964-10-12 to 1964-10-13 in a heavily modified Vostok capsule (designated Voskhod / 'Sunrise'). Ejection seats were removed and the cabin pressure system re-rated to allow three men to sit in shirtsleeves — a propaganda victory against the planned US Gemini two-crew flights, but a brutal compromise that left the crew with no escape capability during launch or re-entry. Cabin spacing was so tight Komarov reported he could feel Yegorov's breath on his neck for 24 hours. Landed 1964-10-13 07:47 UTC near Marevka, Kazakhstan, using the new soft-landing solid-rocket retro system because no parachute ejection was possible. While they were in orbit, Khrushchev was deposed; the crew returned to a fully different Soviet leadership.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8,
+      "label": "KHRUSHCHEV DEPOSED",
+      "note": "Soviet leadership change occurred during the flight.",
+      "type": "info"
+    },
+    {
+      "met": 1.01,
+      "label": "LAND",
+      "note": "Soft-landing retro-rocket touchdown near Marevka 1964-10-13 07:47 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

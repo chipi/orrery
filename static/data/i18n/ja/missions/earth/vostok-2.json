@@ -1,0 +1,32 @@
+{
+  "name": "ボストーク 2",
+  "type": "有人地球周回 · 飛行済",
+  "first": "宇宙で初めての一日 — 25時間で17周回",
+  "description": "ゲルマン・チトフによる17周回・25時間の飛行 — 宇宙へ行った2人目の人類であり、軌道で1日以上を過ごした最初の人物。1961-08-06 06:00 UTC、バイコヌールから打ち上げられた。25歳10か月のチトフは2021年(オリバー・デーメン、NS-16)まで宇宙へ送られた最年少記録を保持した。長時間の微小重力に対する人体反応を試験 — チトフは宇宙酔いの最初の症例を報告し、軌道上で約8時間眠り、初めて手持ちカメラで地球を撮影した。チトフは降下中に射出され、カプセルは1961-08-07 07:18 UTC、サラトフ州クラスヌィ・クート付近に着陸した。サービスモジュールの分離不良(ボストーク1と同じ問題)が再発した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EARTH PHOTOS",
+      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "type": "info"
+    },
+    {
+      "met": 0.8,
+      "label": "SLEEP",
+      "note": "First sleep period in space (~8 hours).",
+      "type": "info"
+    },
+    {
+      "met": 1.04,
+      "label": "EJECT + LAND",
+      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "type": "nominal"
+    }
+  ]
+}

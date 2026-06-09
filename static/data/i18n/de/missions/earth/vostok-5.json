@@ -1,0 +1,26 @@
+{
+  "name": "Vostok 5",
+  "type": "BEMANNTER ERDORBIT · GEFLOGEN",
+  "first": "Längster Solo-Erdorbitalflug — 4 Tage 23 Stunden, 81 Umläufe",
+  "description": "Waleri Bykowskis 81-Umlauf-Flug von 4 Tagen 23 Stunden — bis heute die längste Solo-Erdorbital-Mission der Geschichte. Gestartet am 1963-06-14 um 11:59 UTC; die zweite Hälfte seiner Mission flog er parallel zu Wostok 6 (Tereschkowa, zwei Tage später gestartet). Die geplante 8-Tage-Dauer wurde wegen Bedenken bezüglich der Strahlung eines Sonnenausbruchs und eines langsamen Bahnzerfalls verkürzt. Landung am 1963-06-19 um 11:06 UTC bei Karaganda nach Fallschirmtrennung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "VOSTOK 6 JOIN",
+      "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
+      "type": "info"
+    },
+    {
+      "met": 4.965,
+      "label": "EJECT + LAND",
+      "note": "Landed near Karaganda 1963-06-19 11:06 UTC after 81 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

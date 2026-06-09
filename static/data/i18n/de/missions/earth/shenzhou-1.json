@@ -1,0 +1,32 @@
+{
+  "name": "Shenzhou 1",
+  "type": "BEMANNUNGSTAUGLICHER TEST · UNBEMANNT · GEFLOGEN",
+  "first": "Chinas erster Shenzhou-Orbitaltest — öffnete den Weg zur bemannten Raumfahrt der VR China",
+  "description": "Erster Flug des bemannten Raumschiffprogramms Shenzhou. Gestartet am 1999-11-20 um 22:30 UTC von Jiuquan auf dem Erstflug der menschentauglichen Langer Marsch 2F (CZ-2F). Die Kapsel absolvierte 14 Erdumläufe auf 196 × 324 km bei 42,6° Bahnneigung und kehrte am 1999-11-21 um 19:41 UTC zur Bergung in der Steppe der Inneren Mongolei zurück. An Bord befanden sich Lebenserhaltungs-Attrappen, Telemetriepakete und eine chinesische Flagge sowie Samen für eine Mikrogravitations-Genetikrückführung. Bekräftigte Chinas Vorhaben, der UdSSR und den USA in die unabhängige bemannte Raumfahrt zu folgen; führte direkt zu Shenzhou 5 (2003) mit Yang Liwei.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT",
+      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.875,
+      "label": "DE-ORBIT",
+      "note": "Service-module retro-fire over Africa.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.882,
+      "label": "RECOVERY",
+      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 4",
+  "type": "TRIPULAÇÃO DE ESTAÇÃO · VOADA",
+  "first": "Maior permanência em Skylab — 84 dias, observou o cometa Kohoutek, disputa do dia de descanso 'greve da Skylab'",
+  "description": "Carr, Gibson e Pogue — a última e mais longa tripulação da Skylab, 84 dias 1 hora, todos novatos. Lançados em 1973-11-16 às 14:01 UTC em um Saturno IB (SA-208). Observação abrangente de recursos terrestres e solar, incluindo uma campanha completa do cometa Kohoutek entre dezembro e janeiro. A missão é mais lembrada pela 'greve da Skylab' não oficial no dia 45, quando a tripulação desligou os rádios por meio dia depois que as exigências incessantes dos controladores em terra comprimiram cada minuto acordado — a disputa levou a reformas permanentes da NASA no planejamento da linha do tempo da tripulação em missões de longa duração. Amerissaram em 1974-02-08 às 15:17 UTC, o último amerissar tripulado dos EUA até o SpaceX Crew Dragon em 2020. O CSM-118 está exposto no National Museum of the US Air Force, Dayton OH.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

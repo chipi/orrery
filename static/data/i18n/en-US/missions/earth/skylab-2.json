@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 2",
+  "type": "CREWED STATION CREW · FLOWN",
+  "first": "First crewed Skylab visit — repaired the damaged workshop and saved the programme",
+  "description": "Conrad, Kerwin and Weitz — the first crew to inhabit the US Skylab space station. Launched 1973-05-25 13:00 UTC on Saturn IB (SA-206), 11 days after Skylab itself was damaged at launch (the micrometeoroid / sun shield ripped off, taking one solar wing with it and jamming the second). The crew executed a 28-day rescue: Weitz attempted (and failed) to free the jammed wing during a 38-minute stand-up EVA on day 1, then Conrad and Kerwin successfully cut the restraining strap on a 3.5-hour EVA on day 14, restoring power. Deployed a Marshall-designed parasol thermal shield through the scientific airlock to bring cabin temperatures back from 54°C to 24°C. Returned 1973-06-22 13:50 UTC; CSM-116 displayed at the National Air and Space Museum, Washington DC.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.33,
+      "label": "DOCK",
+      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "EVA #2 — POWER RESTORED",
+      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.04,
+      "label": "SPLASHDOWN",
+      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

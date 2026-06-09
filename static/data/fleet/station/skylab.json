@@ -22,5 +22,10 @@
       "u": "https://www.nasa.gov/skylab/",
       "t": "core"
     }
+  ],
+  "linked_missions": [
+    "skylab-2",
+    "skylab-3",
+    "skylab-4"
   ]
 }

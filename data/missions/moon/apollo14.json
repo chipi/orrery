@@ -1,0 +1,54 @@
+{
+  "id": "apollo14",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1971,
+  "status": "FLOWN",
+  "departure_date": "1971-01-31",
+  "arrival_date": "1971-02-05",
+  "transit_days": 5,
+  "vehicle": "Saturn V (AS-509)",
+  "payload": "46305 kg launched (CSM Kitty Hawk (CSM-110) + LM Antares (LM-8))",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 14 mission report. Public domain. Third lunar landing — Apollo 13's lost target reached; Shepard's golf shots.",
+  "links": [
+    {
+      "l": "Apollo 14 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_14",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 14 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-14/",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 14 Lunar Surface Journal (ALSJ)",
+      "u": "https://www.hq.nasa.gov/alsj/a14/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

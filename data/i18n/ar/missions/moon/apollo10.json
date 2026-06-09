@@ -1,0 +1,56 @@
+{
+  "name": "Apollo 10",
+  "type": "مدار قمري مأهول · حُلّق",
+  "first": "بروفة الهبوط القمري الكاملة — هبط LM إلى ارتفاع ~15.6 كم",
+  "description": "البروفة الكاملة لأول هبوط قمري. حلّق Stafford و Cernan بـ LM Snoopy إلى ارتفاع ~15.6 كم فوق موقع هبوط Apollo 11 المخطط في Mare Tranquillitatis — كل خطوة من نهج الهبوط باستثناء الهبوط الفعلي. أكدوا الملف الشخصي للنزول، رادار الهبوط، مسار الصعود، وإجراء الالتقاء الذي سيستخدمه Apollo 11 بعد شهرين. خزانات وقود الصعود لـ LM كانت معبأة عمداً بأقل من المعتاد (~50%) لمنع أي إغراء بمحاولة الهبوط. مرحلة صعود Snoopy كانت الوحيدة التي غادرت المدار القمري مع ∆v إيجابية — أُلقيت في مدار شمسي حيث تبقى اليوم.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.6,
+      "label": "LM SEPARATION",
+      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.66,
+      "label": "CLOSEST APPROACH",
+      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "type": "info"
+    },
+    {
+      "met": 4.76,
+      "label": "ASCENT + RENDEZVOUS",
+      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.05,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "type": "nominal"
+    }
+  ]
+}

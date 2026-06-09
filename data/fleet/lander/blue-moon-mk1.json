@@ -1,0 +1,39 @@
+{
+  "id": "blue-moon-mk1",
+  "name": "Blue Moon Mk1",
+  "category": "lander",
+  "agency": "Blue Origin",
+  "country": "USA",
+  "manufacturer": "Blue Origin",
+  "first_flight": "2025-01-16",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Blue Origin's first-generation lunar cargo lander — single-stage hydrogen / oxygen vehicle designed to deliver ~3 tonnes of payload to the lunar surface, with NASA CLPS-funded science + commercial-cargo manifest",
+  "credit": "Single-stage cryogenic lander built around the LH₂ / LOX BE-7 engine. Mk1 is the cargo-only precursor to the much larger Mk2 crewed Artemis HLS variant; both share the BE-7 propulsion + hydrogen-based reusability architecture. Launches on Blue Origin's New Glenn — the Mk1 pathfinder rode the maiden NG-1 flight on 2025-01-16 as the Blue Ring orbital tug demo, with the first dedicated lunar-delivery flight scheduled for the NASA CLPS programme. The cargo Mk1 delivers up to ~3000 kg to the lunar surface; the crewed Mk2 derivative anchored Blue Origin's HLS contract awarded by NASA in 2023 as the second Artemis-era human lander alongside SpaceX Starship HLS.",
+  "links": [
+    {
+      "l": "Blue Moon (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Blue Moon — Blue Origin",
+      "u": "https://www.blueorigin.com/blue-moon/",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis HLS — NASA",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/human-landing-system/",
+      "t": "core"
+    },
+    {
+      "l": "Blue Origin / NASA CLPS task order",
+      "u": "https://www.nasa.gov/news-release/nasa-selects-second-blue-origin-led-team-for-artemis-lunar-lander/",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [
+    "blue-moon-mk1"
+  ]
+}

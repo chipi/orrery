@@ -1,0 +1,42 @@
+{
+  "id": "discovery",
+  "name": "Space Shuttle Discovery",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rockwell International",
+  "first_flight": "1984-08-30",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "OV-103 — third operational Shuttle, deployed Hubble (STS-31, 1990), flew both return-to-flight missions after Challenger and Columbia. 39 missions, the most of any orbiter",
+  "credit": "Third operational orbiter. First flight STS-41-D (1984-08-30) carried three commercial comsats. The most-flown Shuttle — 39 missions over 27 years, more than any other orbiter. Career highlights: STS-31 (1990-04-24) deployed the Hubble Space Telescope; STS-26 (1988-09-29) was the post-Challenger return-to-flight; STS-114 (2005-07-26) was the post-Columbia return-to-flight; STS-103 (1999-12) and STS-82 (1997-02) flew Hubble servicing missions 2 + 3A; STS-95 (1998) returned Senator John Glenn to orbit at age 77; STS-92 and STS-120 + STS-124 + STS-128 + STS-131 + STS-133 contributed to ISS assembly. Final flight STS-133 (2011-02-24) delivered the Leonardo Permanent Multipurpose Module. On display at the Steven F. Udvar-Hazy Center (Smithsonian) since 2012-04.",
+  "links": [
+    {
+      "l": "Space Shuttle Discovery — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+      "t": "intro"
+    },
+    {
+      "l": "STS-31 (Hubble deployment) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-31",
+      "t": "core"
+    },
+    {
+      "l": "Discovery at Udvar-Hazy — National Air and Space Museum",
+      "u": "https://airandspace.si.edu/explore/stories/discovery-future-museum",
+      "t": "core"
+    },
+    {
+      "l": "NASA — Discovery orbiter overview",
+      "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_iss_modules": [
+    "harmony",
+    "kibo",
+    "leonardo"
+  ]
+}

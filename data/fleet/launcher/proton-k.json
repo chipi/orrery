@@ -1,0 +1,41 @@
+{
+  "id": "proton-k",
+  "name": "Proton-K",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR / Russia",
+  "manufacturer": "Khrunichev",
+  "first_flight": "1967-03-10",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "The Soviet / Russian heavy-lift workhorse 1967-2012 — launched every Salyut + Mir + ISS Russian-segment module, every Venera + Vega Venus probe, every Luna sample-return, and every Soviet outer-planet attempt",
+  "credit": "Three-stage hypergolic vehicle (N2O4 / UDMH) with optional Blok-D / D-1 / D-2 upper stages for high-energy escape missions. 311 launches 1967-03-10 (Proton-K with Soyuz 7K-L1 lunar capsule) through 2012-03-30, with a launch cadence that anchored Soviet planetary science (Venera 9-16, Vega 1/2, Mars-2/-3/-5/-7) and the entire Mir + ISS heavy-module deployment (Zarya, Zvezda, Pirs, Poisk, Rassvet). Replaced by Proton-M (still in service through 2025+); the K + M share the first three stages but differ in avionics + payload fairing options. The Blok-D upper stage was originally developed for the cancelled N1-L3 crewed lunar architecture; finding it a use case on Proton-K kept the heavy-energy Soviet planetary line alive into the 1980s.",
+  "links": [
+    {
+      "l": "Proton-K — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proton-K",
+      "t": "intro"
+    },
+    {
+      "l": "Proton (rocket family) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proton_(rocket_family)",
+      "t": "core"
+    },
+    {
+      "l": "Gunter's Space Page — Proton-K launch history",
+      "u": "https://space.skyrocket.de/doc_lau/proton-k.htm",
+      "t": "deep"
+    },
+    {
+      "l": "RussianSpaceWeb — Proton history",
+      "u": "https://www.russianspaceweb.com/proton.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "vega-1",
+    "vega-2",
+    "venera-13"
+  ]
+}

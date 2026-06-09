@@ -1,0 +1,47 @@
+{
+  "id": "molniya",
+  "name": "Molniya",
+  "category": "constellation",
+  "agency": "Roscosmos",
+  "country": "USSR / Russia",
+  "manufacturer": "NPO Lavochkin / ISS Reshetnev",
+  "first_flight": "1965-04-23",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Russian high-latitude HEO comms — 12-hour Molniya orbit (~600 × 40,000 km) at 63.4° critical inclination, apogee locked over the Northern Hemisphere",
+  "credit": "Molniya-1 launched 1965-04-23 from Baikonur. The 12-hour HEO at 63.4° exploits J2 apsidal lock to keep apogee dwelling over high-latitude users where geostationary satellites sit too low on the horizon. The line continued through Molniya-1/2/3, Oko early-warning, and the Meridian comms successor still in service today.",
+  "links": [
+    {
+      "l": "Molniya orbit — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Molniya_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "Molniya (satellite) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Molniya_(satellite)",
+      "t": "core"
+    },
+    {
+      "l": "Meridian (satellite) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Meridian_(satellite)",
+      "t": "core"
+    },
+    {
+      "l": "Oko (satellite system) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Oko_(satellite_system)",
+      "t": "core"
+    },
+    {
+      "l": "Critical inclination — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Critical_inclination",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tundra-molniya"
+    }
+  ]
+}

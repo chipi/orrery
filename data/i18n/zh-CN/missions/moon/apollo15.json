@@ -1,0 +1,74 @@
+{
+  "name": "阿波罗 15 号",
+  "type": "载人着陆器 · 已飞行",
+  "first": "首个 J 任务 — 延长停留、首辆月球车（LRV）、\"创世石\"",
+  "description": "首个\"J 任务\"— 配备新型月球车的延长停留科学型阿波罗。LRV 让 Scott 和 Irwin 拥有 27.9 km 的探索范围（相对于阿波罗 14 号纯步行的 3.5 km），开辟了 4.5 km 山脉脚下、蜿蜒哈德利月谷边缘的壮观哈德利-亚平宁地点。三次 EVA 共 18 小时 35 分，带回 77 公斤样本，包括著名的\"创世石\"（样本 15415）— 一块 41 亿年历史的斜长岩，证实月球高地地壳的岩浆海洋起源。Scott 直播的\"锤子-羽毛同时下落\"实验在现场验证了伽利略的引力定律。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.25,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.79,
+      "label": "TOUCHDOWN",
+      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "FIRST LRV TRAVERSE",
+      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "type": "info"
+    },
+    {
+      "met": 5.5,
+      "label": "GENESIS ROCK",
+      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "type": "info"
+    },
+    {
+      "met": 6.1,
+      "label": "HAMMER-FEATHER DROP",
+      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "type": "info"
+    },
+    {
+      "met": 6.25,
+      "label": "ASCENT",
+      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "type": "nominal"
+    },
+    {
+      "met": 8.2,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "DEEP-SPACE EVA",
+      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "type": "info"
+    },
+    {
+      "met": 12.31,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "clementine",
+  "name": "Clementine",
+  "category": "orbiter",
+  "agency": "NASA / USSF",
+  "country": "USA",
+  "manufacturer": "Naval Research Laboratory",
+  "first_flight": "1994-01-25",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Joint BMDO + NASA lunar orbiter — first complete multispectral lunar map and the first evidence for water ice in permanently shadowed polar craters via bistatic radar",
+  "credit": "Officially the Deep Space Program Science Experiment (DSPSE). Conceived by the Ballistic Missile Defense Organization (forerunner of the USSF Space Systems Command) to qualify lightweight sensors in deep-space conditions, with NASA collaborating on lunar + asteroid science. Launched 1994-01-25 on a Titan IIG from Vandenberg. Entered lunar polar orbit 1994-02-19 for 71 days of mapping; the multispectral imaging set covered every square kilometre of the Moon at 100-300 m resolution and 11 wavelengths — the first complete global lunar map. The bistatic radar experiment using Clementine's transmitter + DSN ground antennas found enhanced echoes at the south-pole Shackleton crater consistent with water ice, predating LCROSS by 15 years. A failed thruster firing after lunar departure aborted the planned asteroid Geographos flyby and ended the mission 1994-05.",
+  "links": [
+    {
+      "l": "Clementine (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Clementine mission — NASA / NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/clementine.html",
+      "t": "core"
+    },
+    {
+      "l": "Nozette et al. (1996) — Bistatic radar evidence for water ice at Shackleton (Science 274)",
+      "u": "https://www.science.org/doi/10.1126/science.274.5292.1495",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "clementine"
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "clementine"
+    }
+  ]
+}

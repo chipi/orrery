@@ -13,7 +13,7 @@
       "NASA",
       "ESA",
       "JAXA",
-      "ROSCOSMOS",
+      "Roscosmos",
       "CSA"
     ],
     "launched": 1998,
@@ -151,7 +151,6 @@
     "count": 31,
     "color": "#0B3D91",
     "agencies": [
-      "USAF",
       "USSF"
     ],
     "launched": 1978,
@@ -245,7 +244,7 @@
     "count": 24,
     "color": "#003087",
     "agencies": [
-      "ROSCOSMOS"
+      "Roscosmos"
     ],
     "launched": 1982,
     "status": "ACTIVE",
@@ -502,7 +501,7 @@
     "count": 1,
     "color": "#cc4444",
     "agencies": [
-      "ROSCOSMOS"
+      "Roscosmos"
     ],
     "launched": 1966,
     "status": "RETIRED",
@@ -545,7 +544,13 @@
         "t": "intro"
       }
     ],
-    "group": "moon-orbiter"
+    "group": "moon-orbiter",
+    "fleet_refs": [
+      {
+        "id": "clementine",
+        "role": "spacecraft"
+      }
+    ]
   },
   {
     "id": "lunar-prospector",
@@ -1136,7 +1141,7 @@
     "count": 14,
     "color": "#d4a47a",
     "agencies": [
-      "Viasat / Inmarsat"
+      "Viasat"
     ],
     "launched": 1990,
     "status": "ACTIVE",
@@ -1177,7 +1182,7 @@
     "color": "#e58566",
     "agencies": [
       "Roscosmos",
-      "US Space Force",
+      "USSF",
       "Sirius XM"
     ],
     "launched": 1965,
@@ -1197,7 +1202,15 @@
     ],
     "fleet_refs": [
       {
-        "id": "tundra-molniya",
+        "id": "molniya",
+        "role": "constellation"
+      },
+      {
+        "id": "tundra-sirius",
+        "role": "constellation"
+      },
+      {
+        "id": "sbirs-heo",
         "role": "constellation"
       }
     ],

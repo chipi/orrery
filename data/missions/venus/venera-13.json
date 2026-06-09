@@ -1,10 +1,10 @@
 {
   "id": "venera-13",
-  "agency": "ROSCOSMOS",
+  "agency": "Roscosmos",
   "agency_full": "Roscosmos / Lavochkin Association (lead spacecraft) — Soviet Academy of Sciences instruments",
   "sector": "gov",
   "dest": "VENUS",
-  "color": "#da4453",
+  "color": "#cc4444",
   "year": 1981,
   "status": "FLOWN",
   "departure_date": "1981-10-30",
@@ -48,10 +48,26 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
+      "id": "venera-13",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 122, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 122,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

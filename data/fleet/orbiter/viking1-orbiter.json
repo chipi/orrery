@@ -1,0 +1,38 @@
+{
+  "id": "viking1-orbiter",
+  "name": "Viking 1 Orbiter",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA Langley Research Center / Martin Marietta",
+  "first_flight": "1975-08-20",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
+  "credit": "The orbital half of NASA's Viking 1 mission — the first US Mars orbiter and one of two near-identical Viking orbiters that returned ~50,000 surface images at 150-300 m/pixel between 1976 and 1980. Launched 1975-08-20 from Cape Canaveral on a Titan IIIE-Centaur, Viking 1 entered Mars orbit 1976-06-19; the orbiter spent a month surveying candidate landing sites before releasing the Viking 1 lander 1976-07-20 to the first successful US Mars landing at Chryse Planitia. The orbiter then continued as a science platform for nearly four more years, building the first global topographic + thermal map of Mars, surveying Phobos + Deimos, and acting as a UHF relay for the lander. Out of attitude-control gas 1980-08-07. Deliberately raised to a 357 × 33614 km park orbit that's expected to remain stable through ~2024 (decayed ~2025 per Aerospace Corp re-entry forecast).",
+  "links": [
+    {
+      "l": "Viking 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_1",
+      "t": "intro"
+    },
+    {
+      "l": "Viking program — NASA",
+      "u": "https://science.nasa.gov/mission/viking/",
+      "t": "core"
+    },
+    {
+      "l": "Viking 1 — NASA / NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "viking1-orbiter"
+    }
+  ]
+}

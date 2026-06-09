@@ -1,0 +1,32 @@
+{
+  "id": "enterprise",
+  "name": "Space Shuttle Enterprise",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rockwell International",
+  "first_flight": "1977-08-12",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "OV-101 — the prototype orbiter. Renamed from Constitution after a Star Trek fan-letter campaign. Flew the 1977 atmospheric drop-test programme but never reached orbit — converting it to flight-rated proved more expensive than building Challenger from spares",
+  "credit": "Originally called Constitution, renamed Enterprise after a fan-letter campaign tied to the Star Trek 10th anniversary. Built as a prototype for the Approach and Landing Tests (ALT) — eight captive flights and five free flights from the Shuttle Carrier Aircraft (a modified Boeing 747) over Edwards Air Force Base in 1977. First free flight 1977-08-12 piloted by Fred Haise + Gordon Fullerton — proved the orbiter could glide and land. Did NOT contain propulsion or active TPS tiles; converting Enterprise to a flight-rated vehicle was estimated heavier than building a new orbiter from structural spares, so Challenger was built instead and Enterprise was relegated to ground-test / fit-check duty. Used for vibration testing, launch-pad fit-checks at LC-39, and eventually displayed at the Smithsonian Air and Space Museum's Udvar-Hazy Center 2004-2012, then transferred to the Intrepid Sea, Air & Space Museum in NYC.",
+  "links": [
+    {
+      "l": "Space Shuttle Enterprise — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise",
+      "t": "intro"
+    },
+    {
+      "l": "Approach and Landing Tests (ALT) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Approach_and_Landing_Tests",
+      "t": "core"
+    },
+    {
+      "l": "Enterprise at Intrepid Museum (NYC)",
+      "u": "https://intrepidmuseum.org/space-shuttle-pavilion",
+      "t": "core"
+    }
+  ],
+  "linked_missions": []
+}

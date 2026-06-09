@@ -23,7 +23,9 @@
         "u": "https://en.wikipedia.org/wiki/Shenzhou_12",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-2f",
+    "fleet_id": "shenzhou"
   },
   {
     "id": "tianzhou",
@@ -49,6 +51,8 @@
         "u": "https://en.wikipedia.org/wiki/Tianzhou_2",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-7",
+    "fleet_id": "tianzhou"
   }
 ]

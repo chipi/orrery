@@ -1,0 +1,39 @@
+{
+  "id": "venera-13",
+  "name": "Venera 13",
+  "category": "lander",
+  "agency": "Roscosmos",
+  "country": "USSR / Russia",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1981-10-30",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First colour images of the Venusian surface — survived 127 minutes in 470 °C / 89-bar conditions on the surface of Venus, twice the original 32-minute design life",
+  "credit": "Soviet Venus lander pair (with Venera 14). Launched 1981-10-30 on a Proton-K / D-1 from Baikonur. Venus arrival 1982-03-01: the 1645 kg titanium descent capsule separated from the flyby bus, entered the atmosphere at 11.2 km/s, deployed a parachute through the upper haze, then jettisoned the chute at 47 km and free-fell through the lower atmosphere with a disc-brake for terminal descent. Surface touchdown at 7.5°S, 303°E (Phoebe Regio, Beta Regio volcanic flank) at 7.4 m/s. First panoramic colour images of the Venusian surface; first X-ray fluorescence soil-composition analysis (basaltic, similar to terrestrial ocean-floor leucite basalt); first acoustic recordings from another planet (microphone picked up wind + impact sounds). The lander operated 127 minutes — far beyond the 32-minute design life — before silicon-electronic failure in the 470 °C, 89-atmosphere CO₂ environment.",
+  "links": [
+    {
+      "l": "Venera 13 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera_13",
+      "t": "intro"
+    },
+    {
+      "l": "Venera 13 — NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-106A",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society — Every picture from Venus's surface ever",
+      "u": "https://www.planetary.org/articles/every-picture-from-venus-surface-ever",
+      "t": "core"
+    },
+    {
+      "l": "Don P. Mitchell — Venera 13 imagery + acoustic recordings",
+      "u": "https://mentallandscape.com/V_DigitalImages.htm",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "venera-13"
+  ]
+}

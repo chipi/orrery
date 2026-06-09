@@ -1,0 +1,40 @@
+{
+  "id": "starship",
+  "name": "Starship",
+  "category": "launcher",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2023-04-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Fully reusable super-heavy launch vehicle in development for Artemis HLS + Mars",
+  "credit": "Fleet launcher entry backfilled to wire Starship up through /plan's view-in-fleet link (was a hanging external-only row). First flight = IFT-1 (Boca Chica, 2023-04-20); successful orbital insertions began with IFT-4 (2024-06-06) per SpaceX flight history.",
+  "links": [
+    {
+      "l": "Starship — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+      "t": "intro"
+    },
+    {
+      "l": "Starship — SpaceX",
+      "u": "https://www.spacex.com/vehicles/starship/",
+      "t": "core"
+    },
+    {
+      "l": "Starship User's Guide v1.0 (SpaceX)",
+      "u": "https://www.spacex.com/media/Starship_Users_Guide_RevA.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "Artemis HLS contract award (NASA)",
+      "u": "https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "starship-demo",
+    "starship-mars-crew"
+  ]
+}

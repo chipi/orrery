@@ -1,0 +1,50 @@
+{
+  "name": "アポロ 8 号",
+  "type": "有人月周回 · 飛行済み",
+  "first": "人類初の低地球軌道離脱 + 月周回",
+  "description": "低地球軌道を離れた最初の有人ミッション、地球の重力を逃れた最初、そして月を周回した最初。1968 年 12 月 21 日、サターン V の最初の有人飛行 (AS-503) で打ち上げられたアポロ 8 号は、1968 年クリスマスイブに月周回軌道に入った。4 番目の軌道中の Anders による「Earthrise」写真は史上最も影響力のある画像の一つとなった。乗組員は約 10 億人の視聴者に生中継 TV で創世記を朗読。10 周回後、月の裏側で TEI のため SPS エンジンを点火し、1968 年 12 月 27 日に太平洋スプラッシュダウンに帰還した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.79,
+      "label": "LOI",
+      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "EARTHRISE",
+      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "type": "info"
+    },
+    {
+      "met": 3.5,
+      "label": "GENESIS READING",
+      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "type": "info"
+    },
+    {
+      "met": 3.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.13,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "type": "nominal"
+    }
+  ]
+}

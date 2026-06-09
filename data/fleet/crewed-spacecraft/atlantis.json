@@ -1,0 +1,45 @@
+{
+  "id": "atlantis",
+  "name": "Space Shuttle Atlantis",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rockwell International",
+  "first_flight": "1985-10-03",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "OV-104 — fourth operational Shuttle. Flew the final Shuttle mission STS-135 (2011-07-08 → 2011-07-21), the last Hubble servicing mission STS-125 (2009), and deployed Galileo + Magellan",
+  "credit": "Fourth operational orbiter. First flight STS-51-J (1985-10-03) was a classified DoD mission. Highlights: deployed Magellan (STS-30, 1989) and Galileo (STS-34, 1989) — the two planetary probes that opened Venus and Jupiter to long-duration observation; flew 7 of the 9 Shuttle-Mir docking missions (STS-71/74/76/79/81/84/86) between 1995 and 1997; flew the final Hubble servicing mission STS-125 (2009-05) — the only post-Columbia non-ISS-rendezvous mission ever approved (a second LON orbiter stayed on the pad in case of rescue); flew STS-135 (2011-07-08 → 2011-07-21) — the final Shuttle flight ever, delivering MPLM Raffaello to ISS. On display at Kennedy Space Center Visitor Complex since 2013-06.",
+  "links": [
+    {
+      "l": "Space Shuttle Atlantis — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+      "t": "intro"
+    },
+    {
+      "l": "STS-135 (final Shuttle flight) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-135",
+      "t": "intro"
+    },
+    {
+      "l": "STS-125 (final Hubble servicing) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-125",
+      "t": "core"
+    },
+    {
+      "l": "Atlantis at Kennedy Space Center",
+      "u": "https://www.kennedyspacecenter.com/explore-attractions/shuttle-a-ship-like-no-other/space-shuttle-atlantis",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [
+    "galileo"
+  ],
+  "linked_iss_modules": [
+    "columbus",
+    "destiny",
+    "quest",
+    "rassvet"
+  ]
+}

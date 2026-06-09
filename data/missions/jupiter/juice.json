@@ -4,7 +4,7 @@
   "agency_full": "European Space Agency (lead) — NASA (RIME radar antenna + UVS spectrometer) + JAXA (PEP-Hi components) + ISA (Italian Space Agency 3GM radio science + JANUS imager)",
   "sector": "gov",
   "dest": "JUPITER",
-  "color": "#967bdc",
+  "color": "#003247",
   "year": 2023,
   "status": "ACTIVE",
   "departure_date": "2023-04-14",
@@ -48,14 +48,42 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "ariane-5",
+      "role": "launcher"
+    },
+    {
+      "id": "juice",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 493, "type": "flyby" },
-      { "met_days": 871, "type": "flyby" },
-      { "met_days": 1265, "type": "flyby" },
-      { "met_days": 2103, "type": "flyby" },
-      { "met_days": 3020, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 493,
+        "type": "flyby"
+      },
+      {
+        "met_days": 871,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1265,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2103,
+        "type": "flyby"
+      },
+      {
+        "met_days": 3020,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

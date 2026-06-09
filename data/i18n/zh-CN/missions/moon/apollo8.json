@@ -1,0 +1,50 @@
+{
+  "name": "阿波罗 8 号",
+  "type": "载人月球轨道 · 已飞行",
+  "first": "人类首次离开低地球轨道 + 环绕月球",
+  "description": "首次离开低地球轨道、首次脱离地球引力、首次环绕月球的载人任务。1968-12-21 在土星五号首次载人飞行（AS-503）中发射，阿波罗 8 号在 1968 年圣诞夜进入月球轨道。Anders 在第四圈轨道中拍摄的\"Earthrise\"照片成为历史上最具影响力的图像之一。机组人员在直播 TV 上向约 10 亿观众朗读《创世记》。10 圈轨道后，他们在月球背面点燃 SPS 发动机执行 TEI，1968-12-27 返回太平洋溅落。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.79,
+      "label": "LOI",
+      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "EARTHRISE",
+      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "type": "info"
+    },
+    {
+      "met": 3.5,
+      "label": "GENESIS READING",
+      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "type": "info"
+    },
+    {
+      "met": 3.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.13,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "type": "nominal"
+    }
+  ]
+}

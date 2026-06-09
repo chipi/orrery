@@ -1,0 +1,50 @@
+{
+  "name": "Аполлон-8",
+  "type": "ПИЛОТИРУЕМЫЙ ОКОЛОЛУННЫЙ · ВЫПОЛНЕН",
+  "first": "Первые люди, покинувшие околоземную орбиту и облетевшие Луну",
+  "description": "Первая пилотируемая миссия, покинувшая низкую околоземную орбиту, первая, преодолевшая земную гравитацию, и первая, облетевшая Луну. Запущена 21.12.1968 на первом пилотируемом полёте Сатурна-V (AS-503), Аполлон-8 вошёл на лунную орбиту в канун Рождества 1968. Снимок «Earthrise» Андерса во время четвёртого витка стал одним из самых влиятельных изображений в истории. Экипаж читал Книгу Бытия по прямому ТВ для ~1 миллиарда зрителей. После 10 витков они запустили двигатель SPS для TEI на обратной стороне Луны, вернувшись к приводнению в Тихом океане 27.12.1968.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.79,
+      "label": "LOI",
+      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "EARTHRISE",
+      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "type": "info"
+    },
+    {
+      "met": 3.5,
+      "label": "GENESIS READING",
+      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "type": "info"
+    },
+    {
+      "met": 3.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.13,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "type": "nominal"
+    }
+  ]
+}

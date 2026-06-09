@@ -1,0 +1,47 @@
+{
+  "id": "sbirs-heo",
+  "name": "SBIRS-HEO",
+  "category": "constellation",
+  "agency": "USSF",
+  "country": "USA",
+  "manufacturer": "Northrop Grumman / Lockheed Martin",
+  "first_flight": "2006-06-28",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "US Space-Based Infrared System HEO segment — early-warning IR sensors hosted on classified Tundra-orbit platforms, complementing the GEO segment by dwelling at apogee over high latitudes",
+  "credit": "SBIRS HEO-1 launched 2006-06-28 as a hosted payload on USA-184. The HEO-segment infrared sensors dwell at apogee over the polar regions to detect missile launches from latitudes where the geostationary DSP / SBIRS-GEO sensors look at too low an angle. Successor to the DSP early-warning constellation.",
+  "links": [
+    {
+      "l": "Space-Based Infrared System — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space-Based_Infrared_System",
+      "t": "intro"
+    },
+    {
+      "l": "Tundra orbit — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tundra_orbit",
+      "t": "core"
+    },
+    {
+      "l": "SBIRS — Northrop Grumman product page",
+      "u": "https://www.northropgrumman.com/space/space-based-infrared-system-sbirs",
+      "t": "core"
+    },
+    {
+      "l": "Defense Support Program (DSP predecessor) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Defense_Support_Program",
+      "t": "core"
+    },
+    {
+      "l": "SBIRS — CSIS Missile Threat",
+      "u": "https://missilethreat.csis.org/defsys/sbirs/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tundra-molniya"
+    }
+  ]
+}

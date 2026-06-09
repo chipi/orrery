@@ -8,6 +8,7 @@
   },
   "see_in_app": [
     { "route": "/earth", "context_key": "Molniya / Tundra markers — HEO regime — show the lopsided apogee dwell" },
+    { "route": "/fleet", "context_key": "molniya / tundra-sirius / sbirs-heo — three operator fleets sharing the 63.4° critical-inclination HEO family (Russian Molniya 1965-now, Sirius XM Tundra 2000-now, US SBIRS-HEO 2006-now)" },
     { "route": "/missions", "context_key": "GTO (Geostationary Transfer Orbit) is the staging orbit nearly every commercial GEO comsat passes through" }
   ],
   "links": [

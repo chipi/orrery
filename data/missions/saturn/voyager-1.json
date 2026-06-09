@@ -4,7 +4,7 @@
   "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
   "sector": "gov",
   "dest": "SATURN",
-  "color": "#6b8cff",
+  "color": "#0B3D91",
   "year": 1977,
   "status": "FLOWN",
   "departure_date": "1977-09-05",
@@ -15,20 +15,20 @@
   "delta_v": "~17 km/s (cumulative, Jupiter + Saturn assists)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "\u00a9 NASA / JPL-Caltech \u2014 U.S. Government work, public domain. Voyager 1 is the most distant human-made object \u2014 about 165 AU from the Sun and travelling at ~17 km/s relative to it. Saturn is the catalogued destination because Voyager 1's mission profile ended there; its Titan flyby (1980-11-12) bent the trajectory upward out of the ecliptic plane, and after that no further planetary encounter was possible. The spacecraft crossed the heliopause on 2012-08-25 \u2014 the first human-made object to enter interstellar space. Pale Blue Dot family photograph taken 1990-02-14 from a heliocentric distance of ~6 billion km. Mission planning credit: Gary Flandro, JPL, who identified the late-1970s outer-planet alignment that made the Grand Tour possible.",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. Voyager 1 is the most distant human-made object — about 165 AU from the Sun and travelling at ~17 km/s relative to it. Saturn is the catalogued destination because Voyager 1's mission profile ended there; its Titan flyby (1980-11-12) bent the trajectory upward out of the ecliptic plane, and after that no further planetary encounter was possible. The spacecraft crossed the heliopause on 2012-08-25 — the first human-made object to enter interstellar space. Pale Blue Dot family photograph taken 1990-02-14 from a heliocentric distance of ~6 billion km. Mission planning credit: Gary Flandro, JPL, who identified the late-1970s outer-planet alignment that made the Grand Tour possible.",
   "links": [
     {
-      "l": "Voyager 1 \u2014 Wikipedia",
+      "l": "Voyager 1 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Voyager_1",
       "t": "intro"
     },
     {
-      "l": "Voyager mission status (NASA / JPL \u2014 live distance + signal travel time)",
+      "l": "Voyager mission status (NASA / JPL — live distance + signal travel time)",
       "u": "https://voyager.jpl.nasa.gov/mission/status/",
       "t": "intro"
     },
     {
-      "l": "NASA Science \u2014 Voyager mission overview",
+      "l": "NASA Science — Voyager mission overview",
       "u": "https://science.nasa.gov/mission/voyager/",
       "t": "core"
     },
@@ -38,32 +38,32 @@
       "t": "core"
     },
     {
-      "l": "Pale Blue Dot \u2014 original PIA00452 caption + image at NASA Photojournal",
+      "l": "Pale Blue Dot — original PIA00452 caption + image at NASA Photojournal",
       "u": "https://photojournal.jpl.nasa.gov/catalog/PIA00452",
       "t": "core"
     },
     {
-      "l": "Voyager Golden Record \u2014 official NASA site",
+      "l": "Voyager Golden Record — official NASA site",
       "u": "https://voyager.jpl.nasa.gov/golden-record/",
       "t": "core"
     },
     {
-      "l": "The Planetary Society \u2014 Voyager mission profile",
+      "l": "The Planetary Society — Voyager mission profile",
       "u": "https://www.planetary.org/space-missions/voyager",
       "t": "core"
     },
     {
-      "l": "NSSDCA \u2014 Voyager 1 master catalog entry",
+      "l": "NSSDCA — Voyager 1 master catalog entry",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1977-084A",
       "t": "deep"
     },
     {
-      "l": "Stone, E.C. et al. (2013) \u2014 Voyager 1 Observes Low-Energy Galactic Cosmic Rays (heliopause crossing paper, Science 341)",
+      "l": "Stone, E.C. et al. (2013) — Voyager 1 Observes Low-Energy Galactic Cosmic Rays (heliopause crossing paper, Science 341)",
       "u": "https://www.science.org/doi/10.1126/science.1236408",
       "t": "deep"
     },
     {
-      "l": "Smithsonian Air & Space Museum \u2014 Voyager engineering test model",
+      "l": "Smithsonian Air & Space Museum — Voyager engineering test model",
       "u": "https://airandspace.si.edu/collection-objects/voyager-test-model/nasm_A19840270000",
       "t": "deep"
     }
@@ -100,13 +100,13 @@
           0,
           0.95,
           0,
-          0.0
+          0
         ],
         [
           180,
           2.2,
           0.3,
-          0.0
+          0
         ],
         [
           365,
@@ -116,7 +116,7 @@
         ],
         [
           546,
-          5.0,
+          5,
           0.6,
           0.2
         ],
@@ -135,7 +135,7 @@
         [
           1164,
           9.5,
-          -2.0,
+          -2,
           0.9
         ]
       ]

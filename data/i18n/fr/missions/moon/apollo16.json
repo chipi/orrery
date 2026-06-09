@@ -1,0 +1,74 @@
+{
+  "name": "Apollo 16",
+  "type": "ATTERRISSEUR HABITÉ · VOLÉ",
+  "first": "Premier alunissage dans les hautes terres lunaires — Descartes ; « Lunar Grand Prix » de John Young",
+  "description": "Le cinquième alunissage habité et le premier sur un site des hautes terres non-mer. Les géologues s'attendaient à ce que Descartes soit volcanique ; Apollo 16 a réfuté cela — chaque roche rapportée était une brèche (débris fracassés par impact), remodelant la compréhension des hautes terres lunaires comme produits d'impacts catastrophiques plutôt que d'un volcanisme ancien. Young et Duke ont complété trois EVAs soutenues par le LRV totalisant 20 h 14 m, ont traversé 26,7 km, et ont rapporté 95,7 kg d'échantillons (la plus grande récolte Apollo à cette date). Le « Lunar Grand Prix » de Young — un test de vitesse télévisé du LRV — a atteint un pic de ~17 km/h.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.3,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.79,
+      "label": "SPS ANOMALY",
+      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "type": "warning"
+    },
+    {
+      "met": 5.04,
+      "label": "TOUCHDOWN",
+      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.5,
+      "label": "FIRST HIGHLANDS EVA",
+      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "type": "info"
+    },
+    {
+      "met": 6.1,
+      "label": "LUNAR GRAND PRIX",
+      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "type": "info"
+    },
+    {
+      "met": 6.7,
+      "label": "FAR-UV CAMERA",
+      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "type": "info"
+    },
+    {
+      "met": 7.81,
+      "label": "ASCENT",
+      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 11.07,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "type": "nominal"
+    }
+  ]
+}

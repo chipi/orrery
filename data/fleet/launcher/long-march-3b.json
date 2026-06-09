@@ -1,0 +1,36 @@
+{
+  "id": "long-march-3b",
+  "name": "Long March 3B",
+  "category": "launcher",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CALT (China Academy of Launch Vehicle Technology)",
+  "first_flight": "1996-02-15",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "China's GTO workhorse — Chang'e 3 / 4 lunar landers + most commercial comsats from Xichang",
+  "credit": "Fleet launcher entry backfilled to wire CZ-3B up through /plan's view-in-fleet link. First flight (1996-02-15, Intelsat 708) was a guidance-loop failure that killed villagers downrange and forced a years-long redesign — Long March 3B has since flown well over 100 successful missions and is the primary launcher for Chang'e lunar exploration.",
+  "links": [
+    {
+      "l": "Long March 3B — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_3B",
+      "t": "intro"
+    },
+    {
+      "l": "Long March family — China Aerospace Science and Technology",
+      "u": "http://www.spacechina.com/n25/n2014789/n2014804/index.html",
+      "t": "core"
+    },
+    {
+      "l": "Chang'e 3 launch (Long March 3B/E) — CNSA",
+      "u": "https://www.cnsa.gov.cn/english/n6465652/n6465653/c6810553/content.html",
+      "t": "deep"
+    },
+    {
+      "l": "Long March launch history (Wikipedia)",
+      "u": "https://en.wikipedia.org/wiki/List_of_Long_March_launches",
+      "t": "deep"
+    }
+  ]
+}

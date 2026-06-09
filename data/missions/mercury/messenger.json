@@ -4,53 +4,63 @@
   "agency_full": "National Aeronautics and Space Administration / Johns Hopkins Applied Physics Laboratory",
   "sector": "gov",
   "dest": "MERCURY",
-  "color": "#ff9966",
+  "color": "#0B3D91",
   "year": 2004,
   "status": "FLOWN",
   "departure_date": "2004-08-03",
   "arrival_date": "2011-03-18",
   "transit_days": 2419,
   "vehicle": "Delta II 7925H-9.5",
-  "payload": "Mercury orbiter; sunshade-protected (front-side 370 \u00b0C, back-side -45 \u00b0C); seven instruments including imaging, spectrometers, magnetometer, laser altimeter",
+  "payload": "Mercury orbiter; sunshade-protected (front-side 370 °C, back-side -45 °C); seven instruments including imaging, spectrometers, magnetometer, laser altimeter",
   "delta_v": "~2.3 km/s (Mercury orbit insertion)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "\u00a9 NASA / Johns Hopkins APL \u2014 U.S. Government work, public domain. MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) was the first spacecraft to orbit Mercury and the first to map its surface in full. Orbited Mercury 2011-03-18 to 2015-04-30 (~4096 orbits). Discoveries: water ice in permanently shadowed polar craters; previously unknown 'hollows' geological feature; quantified Mercury's iron core (~85 % of the planet's radius \u2014 the largest core/planet ratio in the solar system); mapped the planet's magnetic field offset from its geographic centre. Mission ended with a controlled impact onto Mercury's surface 2015-04-30 (no further fuel for orbit maintenance).",
+  "credit": "© NASA / Johns Hopkins APL — U.S. Government work, public domain. MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) was the first spacecraft to orbit Mercury and the first to map its surface in full. Orbited Mercury 2011-03-18 to 2015-04-30 (~4096 orbits). Discoveries: water ice in permanently shadowed polar craters; previously unknown 'hollows' geological feature; quantified Mercury's iron core (~85 % of the planet's radius — the largest core/planet ratio in the solar system); mapped the planet's magnetic field offset from its geographic centre. Mission ended with a controlled impact onto Mercury's surface 2015-04-30 (no further fuel for orbit maintenance).",
   "links": [
     {
-      "l": "MESSENGER \u2014 Wikipedia",
+      "l": "MESSENGER — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/MESSENGER",
       "t": "intro"
     },
     {
-      "l": "NASA Science \u2014 MESSENGER mission overview",
+      "l": "NASA Science — MESSENGER mission overview",
       "u": "https://science.nasa.gov/mission/messenger/",
       "t": "intro"
     },
     {
-      "l": "Johns Hopkins APL \u2014 MESSENGER mission home (archive)",
+      "l": "Johns Hopkins APL — MESSENGER mission home (archive)",
       "u": "https://messenger.jhuapl.edu/",
       "t": "core"
     },
     {
-      "l": "NASA Planetary Data System \u2014 MESSENGER data archive",
+      "l": "NASA Planetary Data System — MESSENGER data archive",
       "u": "https://pds-geosciences.wustl.edu/missions/messenger/",
       "t": "core"
     },
     {
-      "l": "The Planetary Society \u2014 MESSENGER retrospective",
+      "l": "The Planetary Society — MESSENGER retrospective",
       "u": "https://www.planetary.org/space-missions/messenger",
       "t": "core"
     },
     {
-      "l": "Solomon et al. (2018) \u2014 Mercury: The View After MESSENGER (Cambridge book, free PDF chapter)",
+      "l": "Solomon et al. (2018) — Mercury: The View After MESSENGER (Cambridge book, free PDF chapter)",
       "u": "https://www.cambridge.org/core/books/mercury/4D9DA827E40CF1EE2E4F1E9EE5C13D5F",
       "t": "deep"
     },
     {
-      "l": "NSSDCA \u2014 MESSENGER master catalog entry",
+      "l": "NSSDCA — MESSENGER master catalog entry",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A",
       "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "delta-ii",
+      "role": "launcher"
+    },
+    {
+      "id": "messenger",
+      "role": "spacecraft"
     }
   ],
   "flight": {
@@ -97,9 +107,9 @@
       "waypoints_helio_au": [
         [
           0,
-          1.0,
+          1,
           0,
-          0.0
+          0
         ],
         [
           180,
@@ -109,27 +119,27 @@
         ],
         [
           365,
-          1.0,
-          0.0,
-          0.0
+          1,
+          0,
+          0
         ],
         [
           600,
           0.85,
           -0.4,
-          0.0
+          0
         ],
         [
           760,
           0.72,
           -0.05,
-          0.0
+          0
         ],
         [
           998,
           0.72,
           0.1,
-          0.0
+          0
         ],
         [
           1300,
@@ -141,37 +151,37 @@
           1474,
           0.39,
           -0.1,
-          0.0
+          0
         ],
         [
           1700,
           0.55,
           0.2,
-          0.0
+          0
         ],
         [
           1858,
           0.39,
           0.05,
-          0.0
+          0
         ],
         [
           2100,
           0.5,
           -0.1,
-          0.0
+          0
         ],
         [
           2214,
           0.39,
-          0.0,
-          0.0
+          0,
+          0
         ],
         [
           2419,
           0.39,
           -0.1,
-          0.0
+          0
         ]
       ]
     }

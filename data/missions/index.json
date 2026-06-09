@@ -10,7 +10,7 @@
   },
   {
     "id": "luna9",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 1966,
@@ -37,7 +37,7 @@
   },
   {
     "id": "luna16",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 1970,
@@ -46,7 +46,7 @@
   },
   {
     "id": "luna17",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 1970,
@@ -55,7 +55,7 @@
   },
   {
     "id": "mars3",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MARS",
     "status": "FLOWN",
     "year": 1971,
@@ -78,11 +78,11 @@
     "status": "FLOWN",
     "year": 1972,
     "sector": "gov",
-    "color": "#7d5fff"
+    "color": "#0B3D91"
   },
   {
     "id": "luna21",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 1973,
@@ -96,7 +96,7 @@
     "status": "FLOWN",
     "year": 1973,
     "sector": "gov",
-    "color": "#7d5fff"
+    "color": "#0B3D91"
   },
   {
     "id": "viking1",
@@ -109,7 +109,7 @@
   },
   {
     "id": "luna24",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 1976,
@@ -123,7 +123,7 @@
     "status": "FLOWN",
     "year": 1977,
     "sector": "gov",
-    "color": "#6b8cff"
+    "color": "#0B3D91"
   },
   {
     "id": "voyager-2",
@@ -132,7 +132,7 @@
     "status": "FLOWN",
     "year": 1977,
     "sector": "gov",
-    "color": "#6b8cff"
+    "color": "#0B3D91"
   },
   {
     "id": "galileo",
@@ -141,7 +141,7 @@
     "status": "FLOWN",
     "year": 1989,
     "sector": "gov",
-    "color": "#d4a373"
+    "color": "#0B3D91"
   },
   {
     "id": "clementine",
@@ -168,7 +168,7 @@
     "status": "FLOWN",
     "year": 1997,
     "sector": "gov",
-    "color": "#ffc850"
+    "color": "#0B3D91"
   },
   {
     "id": "mars-express",
@@ -177,7 +177,7 @@
     "status": "ACTIVE",
     "year": 2003,
     "sector": "gov",
-    "color": "#003299"
+    "color": "#003247"
   },
   {
     "id": "messenger",
@@ -186,7 +186,7 @@
     "status": "FLOWN",
     "year": 2004,
     "sector": "gov",
-    "color": "#ff9966"
+    "color": "#0B3D91"
   },
   {
     "id": "new-horizons",
@@ -195,7 +195,7 @@
     "status": "FLOWN",
     "year": 2006,
     "sector": "gov",
-    "color": "#c8a98a"
+    "color": "#0B3D91"
   },
   {
     "id": "dawn",
@@ -204,7 +204,7 @@
     "status": "FLOWN",
     "year": 2007,
     "sector": "gov",
-    "color": "#7c8b9a"
+    "color": "#0B3D91"
   },
   {
     "id": "chandrayaan1",
@@ -240,7 +240,7 @@
     "status": "ACTIVE",
     "year": 2011,
     "sector": "gov",
-    "color": "#c19bff"
+    "color": "#0B3D91"
   },
   {
     "id": "change3",
@@ -276,7 +276,7 @@
     "status": "FLOWN",
     "year": 2016,
     "sector": "gov",
-    "color": "#003c71"
+    "color": "#003247"
   },
   {
     "id": "change4",
@@ -297,22 +297,13 @@
     "color": "#0B3D91"
   },
   {
-    "id": "inspiration-mars",
-    "agency": "Inspiration Mars",
-    "dest": "MARS",
-    "status": "PLANNED",
-    "year": 2018,
-    "sector": "private",
-    "color": "#8B4513"
-  },
-  {
     "id": "beresheet",
-    "agency": "SPACEIL",
+    "agency": "SpaceIL",
     "dest": "MOON",
     "status": "FLOWN",
     "year": 2019,
     "sector": "private",
-    "color": "#0038b8"
+    "color": "#0038B8"
   },
   {
     "id": "change5",
@@ -433,30 +424,30 @@
   },
   {
     "id": "venera-13",
-    "agency": "ROSCOSMOS",
+    "agency": "Roscosmos",
     "dest": "VENUS",
     "status": "FLOWN",
     "year": 1981,
     "sector": "gov",
-    "color": "#da4453"
+    "color": "#cc4444"
   },
   {
     "id": "vega-1",
-    "agency": "ROSCOSMOS / ESA",
+    "agency": "Roscosmos / ESA",
     "dest": "VENUS",
     "status": "FLOWN",
     "year": 1984,
     "sector": "gov",
-    "color": "#ed5565"
+    "color": "#cc4444"
   },
   {
     "id": "vega-2",
-    "agency": "ROSCOSMOS / ESA",
+    "agency": "Roscosmos / ESA",
     "dest": "VENUS",
     "status": "FLOWN",
     "year": 1984,
     "sector": "gov",
-    "color": "#ec87c0"
+    "color": "#cc4444"
   },
   {
     "id": "giotto",
@@ -465,7 +456,7 @@
     "status": "FLOWN",
     "year": 1985,
     "sector": "gov",
-    "color": "#5d9cec"
+    "color": "#003247"
   },
   {
     "id": "ulysses",
@@ -474,7 +465,7 @@
     "status": "FLOWN",
     "year": 1990,
     "sector": "gov",
-    "color": "#aab2bd"
+    "color": "#003247"
   },
   {
     "id": "rosetta",
@@ -483,7 +474,7 @@
     "status": "FLOWN",
     "year": 2004,
     "sector": "gov",
-    "color": "#fc6e51"
+    "color": "#003247"
   },
   {
     "id": "hayabusa2",
@@ -492,7 +483,7 @@
     "status": "ACTIVE",
     "year": 2014,
     "sector": "gov",
-    "color": "#b2e066"
+    "color": "#003087"
   },
   {
     "id": "bepicolombo",
@@ -501,7 +492,7 @@
     "status": "ACTIVE",
     "year": 2018,
     "sector": "gov",
-    "color": "#fcbb6d"
+    "color": "#003247"
   },
   {
     "id": "juice",
@@ -510,6 +501,114 @@
     "status": "ACTIVE",
     "year": 2023,
     "sector": "gov",
-    "color": "#967bdc"
+    "color": "#003247"
+  },
+  {
+    "id": "apollo7",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1968,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo9",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo8",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1968,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo10",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo12",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1969,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo14",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo15",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "apollo16",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1972,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "luna10",
+    "agency": "Roscosmos",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1966,
+    "sector": "gov",
+    "color": "#cc4444"
+  },
+  {
+    "id": "lunar-prospector",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 1998,
+    "sector": "gov",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "smart-1",
+    "agency": "ESA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#003247"
+  },
+  {
+    "id": "change1",
+    "agency": "CNSA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2007,
+    "sector": "gov",
+    "color": "#DE2910"
   }
 ]

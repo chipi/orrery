@@ -1,0 +1,32 @@
+{
+  "name": "Apollo 7",
+  "type": "EQUIPAGGIATO ORBITA TERRESTRE · VOLATO",
+  "first": "Primo volo Apollo equipaggiato — collaudo del CSM in orbita terrestre",
+  "description": "Il primo volo Apollo equipaggiato, 21 mesi dopo l'incendio di Apollo 1 (27-1-1967) che uccise Grissom, White e Chaffee sulla rampa. Apollo 7 ha verificato il riprogettato Modulo di Comando e Servizio Block II in orbita terrestre — supporto vitale, alimentazione, propulsione (SPS acceso otto volte), controllo termico, e la prima trasmissione TV dal vivo al mondo da una navicella spaziale americana equipaggiata. Il volo di 10 giorni 20 ore ha aperto la strada alla scommessa di Apollo 8 sull'orbita lunare due mesi dopo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

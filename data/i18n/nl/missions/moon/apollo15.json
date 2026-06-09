@@ -1,0 +1,74 @@
+{
+  "name": "Apollo 15",
+  "type": "BEMANDE LANDER · GEVLOGEN",
+  "first": "Eerste J-missie — verlengd verblijf, eerste Lunar Roving Vehicle, \"Genesis Rock\"",
+  "description": "De eerste \"J-missie\" — wetenschappelijke Apollo met verlengd verblijf met het nieuwe Lunar Roving Vehicle. De LRV gaf Scott + Irwin een traversbereik van 27,9 km (vs de 3,5 km alleen-lopend van Apollo 14), wat de dramatische Hadley-Apennine-locatie aan de voet van een 4,5-km bergketen en de rand van de kronkelende Hadley Rille opende. Drie EVA's van in totaal 18 u 35 m, 77 kg monsters teruggebracht, waaronder de beroemde \"Genesis Rock\" (monster 15415) — een 4,1 miljard jaar oude anorthosiet die de magma-oceaan-oorsprong van de maan-hooglandkorst bevestigt. Scott's op TV uitgezonden \"hammer-feather drop\" verifieerde Galilei's zwaartekrachtwet live.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-510) from Kennedy Space Center LC-39A 1971-07-26 13:34 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.25,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.79,
+      "label": "TOUCHDOWN",
+      "note": "Falcon lands at Hadley-Apennine 1971-07-30 22:16 UTC — first landing at a non-mare highland site.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "FIRST LRV TRAVERSE",
+      "note": "EVA-1: First Lunar Roving Vehicle deployment + 10.3 km traverse to Elbow Crater + the rim of Hadley Rille.",
+      "type": "info"
+    },
+    {
+      "met": 5.5,
+      "label": "GENESIS ROCK",
+      "note": "EVA-2: At Spur Crater, Scott + Irwin recover sample 15415 — a 4.1-billion-year-old anorthosite from the original lunar crust.",
+      "type": "info"
+    },
+    {
+      "met": 6.1,
+      "label": "HAMMER-FEATHER DROP",
+      "note": "EVA-3 / pre-ascent: Scott televises a hammer + feather dropped together; both hit the regolith simultaneously, verifying Galileo's 1589 prediction live.",
+      "type": "info"
+    },
+    {
+      "met": 6.25,
+      "label": "ASCENT",
+      "note": "Falcon lifts off after 66 h 55 m on surface. 77 kg samples + first ascent televised from the LRV-mounted camera (operated remotely by Houston).",
+      "type": "nominal"
+    },
+    {
+      "met": 8.2,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "DEEP-SPACE EVA",
+      "note": "Worden performs first-ever EVA in cislunar space (38 min at ~315 000 km from Earth) to retrieve SIM-bay film canisters.",
+      "type": "info"
+    },
+    {
+      "met": 12.31,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1971-08-07 20:46 UTC. One of three main parachutes failed to deploy fully; landing hard but safe. Recovery by USS Okinawa.",
+      "type": "warning"
+    }
+  ]
+}

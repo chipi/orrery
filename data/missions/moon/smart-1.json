@@ -1,0 +1,37 @@
+{
+  "id": "smart-1",
+  "agency": "ESA",
+  "agency_full": "European Space Agency",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#003247",
+  "year": 2003,
+  "status": "FLOWN",
+  "departure_date": "2003-09-27",
+  "arrival_date": "2004-11-15",
+  "transit_days": 415,
+  "vehicle": "Ariane 5 (shared payload)",
+  "payload": "367 kg launch mass; 1.2 kW solar-electric Hall-effect ion thruster",
+  "delta_v": "~3.9 km/s (cumulative ion-drive over 13 months)",
+  "data_quality": "good",
+  "credit": "Public domain / ESA archive. First European spacecraft to reach the Moon + first deep-space ion-drive cruise to a planetary body.",
+  "links": [
+    {
+      "l": "SMART-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SMART-1",
+      "t": "intro"
+    },
+    {
+      "l": "SMART-1 mission — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/SMART-1",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "smart-1",
+      "role": "spacecraft"
+    }
+  ]
+}

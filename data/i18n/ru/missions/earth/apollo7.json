@@ -1,0 +1,32 @@
+{
+  "name": "Аполлон-7",
+  "type": "ПИЛОТИРУЕМЫЙ ОКОЛОЗЕМНЫЙ · ВЫПОЛНЕН",
+  "first": "Первый пилотируемый полёт Аполлона — испытание CSM на околоземной орбите",
+  "description": "Первый пилотируемый полёт Аполлона, через 21 месяц после пожара Аполлона-1 (27.01.1967), убившего Гриссома, Уайта и Чаффи на стартовом столе. Аполлон-7 проверил переработанный командно-служебный модуль Block II на околоземной орбите — системы жизнеобеспечения, питания, двигательную (SPS отработал восемь раз), терморегулирования, а также первую в мире прямую телепередачу с пилотируемого американского корабля. Полёт длительностью 10 дней 20 часов открыл путь риску Аполлона-8 с выходом на лунную орбиту двумя месяцами позже.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

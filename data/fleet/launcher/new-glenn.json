@@ -1,0 +1,39 @@
+{
+  "id": "new-glenn",
+  "name": "New Glenn",
+  "category": "launcher",
+  "agency": "Blue Origin",
+  "country": "USA",
+  "manufacturer": "Blue Origin",
+  "first_flight": "2025-01-16",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
+  "credit": "Fleet launcher entry backfilled to wire New Glenn up through /plan's view-in-fleet link. First flight = NG-1 from LC-36 (2025-01-16) successfully delivered the Blue Ring pathfinder to orbit; first-stage landing attempt failed but the vehicle was certified for repeat ops. Distinct from New Shepard (Blue Origin's earlier suborbital crew launcher; lives under crewed-spacecraft).",
+  "links": [
+    {
+      "l": "New Glenn — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/New_Glenn",
+      "t": "intro"
+    },
+    {
+      "l": "New Glenn — Blue Origin",
+      "u": "https://www.blueorigin.com/new-glenn/",
+      "t": "core"
+    },
+    {
+      "l": "New Glenn Payload User's Guide (Blue Origin)",
+      "u": "https://www.blueorigin.com/new-glenn/payload-users-guide",
+      "t": "deep"
+    },
+    {
+      "l": "NG-1 maiden flight coverage (Blue Origin)",
+      "u": "https://www.blueorigin.com/news/new-glenn-completes-first-flight",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "blue-moon-mk1"
+  ]
+}

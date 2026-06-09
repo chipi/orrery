@@ -1,0 +1,32 @@
+{
+  "name": "Apollo 7",
+  "type": "मानवयुक्त पृथ्वी-कक्षा · उड़ा",
+  "first": "पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण",
+  "description": "Apollo 1 की आग (1967-01-27) के 21 महीने बाद पहली मानवयुक्त Apollo उड़ान जिसने पैड पर Grissom, White और Chaffee को मार डाला था। Apollo 7 ने पृथ्वी की कक्षा में पुनः डिज़ाइन किए गए Block II Command and Service Module की पुष्टि की — जीवन समर्थन, शक्ति, प्रणोदन (SPS आठ बार दागा), तापीय नियंत्रण, और एक मानवयुक्त अमेरिकी अंतरिक्ष यान से दुनिया का पहला लाइव टीवी प्रसारण। 10 दिन 20 घंटे की उड़ान ने दो महीने बाद Apollo 8 के चंद्र-कक्षा जुए के लिए रास्ता साफ कर दिया।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

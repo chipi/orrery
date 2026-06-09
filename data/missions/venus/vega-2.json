@@ -1,10 +1,10 @@
 {
   "id": "vega-2",
-  "agency": "ROSCOSMOS / ESA",
+  "agency": "Roscosmos / ESA",
   "agency_full": "Roscosmos / Soviet Academy of Sciences (lead, IKI) — international payload from ESA / CNES / Hungary / Austria / Bulgaria / Czechoslovakia / Poland / East Germany",
   "sector": "gov",
   "dest": "VENUS",
-  "color": "#ec87c0",
+  "color": "#cc4444",
   "year": 1984,
   "status": "FLOWN",
   "departure_date": "1984-12-21",
@@ -48,11 +48,30 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "proton-k",
+      "role": "launcher"
+    },
+    {
+      "id": "vega-2",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 176, "type": "flyby" },
-      { "met_days": 442, "type": "flyby" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 176,
+        "type": "flyby"
+      },
+      {
+        "met_days": 442,
+        "type": "flyby"
+      }
     ]
   }
 }

@@ -23,7 +23,8 @@
         "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-5"
   },
   {
     "id": "wentian",
@@ -49,7 +50,8 @@
         "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-5"
   },
   {
     "id": "mengtian",
@@ -75,21 +77,22 @@
         "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-5"
   },
   {
     "id": "chinarm",
-    "builder": "China Academy of Space Technology (CAST)",
+    "builder": "CAST",
     "builder_country": "China",
     "agency": "CMSA",
-    "launch_vehicle": "Long March 5B (with Tianhe)",
+    "launch_vehicle": "Long March 5B",
     "launch_date": "2021-04-29",
     "flight_designation": "Chinarm 10 m primary",
     "mass_kg": 738,
     "length_m": 10.2,
     "year_first_of": "First Chinese station-mounted robotic manipulator",
     "status": "ACTIVE",
-    "credit": "CMSA — Tiangong robotic arm references",
+    "credit": "CMSA — Tiangong robotic arm references. Delivered to orbit pre-attached to the Tianhe core module on Long March 5B Y2 (2021-04-29); built by the China Academy of Space Technology (CAST).",
     "links": [
       {
         "l": "Wikipedia · Chinarm",
@@ -101,6 +104,7 @@
         "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "long-march-5"
   }
 ]

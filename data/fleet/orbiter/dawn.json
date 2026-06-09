@@ -1,0 +1,39 @@
+{
+  "id": "dawn",
+  "name": "Dawn",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Orbital Sciences / JPL",
+  "first_flight": "2007-09-27",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Only spacecraft to orbit two extraterrestrial worlds — Vesta (2011-2012) then Ceres (2015-2018) via three NSTAR ion thrusters",
+  "credit": "Discovery-class mission with three NSTAR xenon ion thrusters that generated the 11 km/s of total delta-v needed to enter orbit around Vesta, escape, cruise three years, and enter orbit around Ceres. Mapped both bodies in unprecedented detail (Vesta: 5300 images at 16 m/px, southern Rheasilvia basin; Ceres: bright Cerealia Facula spots in Occator crater, ammoniated phyllosilicates, cryovolcanism at Ahuna Mons). Mission ended 2018-10-31 when reaction-control hydrazine was exhausted; spacecraft remains in a stable 35 × 4000 km orbit around Ceres.",
+  "links": [
+    {
+      "l": "Dawn (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Dawn_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Dawn — NASA mission page",
+      "u": "https://science.nasa.gov/mission/dawn/",
+      "t": "intro"
+    },
+    {
+      "l": "Dawn at Ceres — JPL mission archive",
+      "u": "https://www.jpl.nasa.gov/missions/dawn",
+      "t": "core"
+    },
+    {
+      "l": "Russell et al. (2012) — Dawn at Vesta (Science 336)",
+      "u": "https://www.science.org/doi/10.1126/science.1219381",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "dawn"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "apollo7",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1968,
+  "status": "FLOWN",
+  "departure_date": "1968-10-11",
+  "arrival_date": "1968-10-11",
+  "transit_days": 0,
+  "vehicle": "Saturn IB (AS-205)",
+  "payload": "14781 kg launched (Apollo 7 CSM (CSM-101), no LM)",
+  "delta_v": "~9.5 km/s (to LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 7 mission report. Public domain. First crewed Apollo flight — Earth-orbit CSM shakedown.",
+  "links": [
+    {
+      "l": "Apollo 7 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_7",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 7 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-7/",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-ib",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    }
+  ]
+}

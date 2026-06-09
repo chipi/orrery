@@ -4,7 +4,7 @@
   "agency_full": "European Space Agency (lead, spacecraft + 6 instruments) / National Aeronautics and Space Administration (launch + DSN + RTG power + 3 instruments)",
   "sector": "gov",
   "dest": "SUN",
-  "color": "#aab2bd",
+  "color": "#003247",
   "year": 1990,
   "status": "FLOWN",
   "departure_date": "1990-10-06",
@@ -48,13 +48,42 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "space-shuttle-orbiter",
+      "role": "spacecraft"
+    },
+    {
+      "id": "ulysses",
+      "role": "payload"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 490, "type": "flyby" },
-      { "met_days": 1359, "type": "phasing" },
-      { "met_days": 1758, "type": "phasing" },
-      { "met_days": 6845, "type": "anomaly" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 490,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1359,
+        "type": "phasing"
+      },
+      {
+        "met_days": 1758,
+        "type": "phasing"
+      },
+      {
+        "met_days": 6845,
+        "type": "anomaly"
+      }
     ]
   }
 }

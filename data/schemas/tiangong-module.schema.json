@@ -32,6 +32,11 @@
       "builder_country": { "type": "string", "minLength": 1 },
       "agency": { "type": "string", "minLength": 1 },
       "launch_vehicle": { "type": "string", "minLength": 1 },
+      "launch_vehicle_fleet_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional cross-link to a static/data/fleet/launcher/<id>.json entry — enables /tiangong → /fleet navigation for the launcher that delivered this module."
+      },
       "launch_date": { "type": "string", "format": "date" },
       "flight_designation": { "type": "string", "minLength": 1 },
       "mass_kg": { "type": "number", "exclusiveMinimum": 0 },

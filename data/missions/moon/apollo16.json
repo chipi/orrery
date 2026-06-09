@@ -1,0 +1,58 @@
+{
+  "id": "apollo16",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1972,
+  "status": "FLOWN",
+  "departure_date": "1972-04-16",
+  "arrival_date": "1972-04-19",
+  "transit_days": 3,
+  "vehicle": "Saturn V (AS-511)",
+  "payload": "48599 kg launched (CSM Casper (CSM-113) + LM Orion (LM-11))",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 16 mission report. Public domain. First Moon landing in the lunar highlands — Descartes; John Young's \"lunar Grand Prix\".",
+  "links": [
+    {
+      "l": "Apollo 16 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_16",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 16 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-16/",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 16 Lunar Surface Journal (ALSJ)",
+      "u": "https://www.hq.nasa.gov/alsj/a16/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lrv-apollo",
+      "role": "payload"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

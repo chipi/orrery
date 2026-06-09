@@ -1,0 +1,62 @@
+{
+  "name": "Apollo 12",
+  "type": "LANDER EQUIPAGGIATO · VOLATO",
+  "first": "Secondo allunaggio equipaggiato — atterraggio di precisione a 163 m da Surveyor 3",
+  "description": "Il secondo allunaggio equipaggiato. Il Saturn V fu colpito da fulmini due volte durante l'ascesa (T+36 s e T+52 s) — Bean ripristinò la navicella attraverso la famosa chiamata \"SCE to AUX\" dell'EECOM John Aaron. Conrad e Bean eseguirono un atterraggio di precisione sull'Oceano delle Tempeste entro 163 m da Surveyor 3 (atterrato dolcemente nell'aprile 1967), poi camminarono fino a Surveyor 3 e rimossero la sua telecamera + un campione della sua superficie. Dispiegarono ALSEP (il primo ALSEP, contro l'EASEP più semplice di Apollo 11) che trasmise dati per 8 anni. La missione riportò 34 kg di campioni.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-507) from Kennedy Space Center LC-39A 1969-11-14 16:22 UTC. Two lightning strikes on the stack (T+36 s, T+52 s) tripped fuel cells offline; recovered via \"SCE to AUX\" call.",
+      "type": "warning"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection — recovery from lightning strikes verified; mission GO for Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.39,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.89 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.43,
+      "label": "TOUCHDOWN",
+      "note": "Intrepid lands at Oceanus Procellarum (Statio Cognitum) 1969-11-19 06:54 UTC — within 163 m of Surveyor 3 (the most precise lunar landing yet).",
+      "type": "nominal"
+    },
+    {
+      "met": 5.58,
+      "label": "SURVEYOR 3 VISIT",
+      "note": "Conrad + Bean walk to Surveyor 3 (~163 m away), remove its TV camera + samples for return to Earth — first time a crew visited a previously-landed robotic spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 6.74,
+      "label": "ASCENT",
+      "note": "Intrepid lifts off after 31 h 31 m on surface. 34 kg of samples returned.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.93,
+      "label": "LM IMPACT",
+      "note": "Intrepid ascent stage deliberately crashed onto Moon to calibrate ALSEP seismometers. First man-made lunar impact event.",
+      "type": "info"
+    },
+    {
+      "met": 7.92,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 10.18,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in South Pacific 1969-11-24 20:58 UTC. Recovery by USS Hornet.",
+      "type": "nominal"
+    }
+  ]
+}

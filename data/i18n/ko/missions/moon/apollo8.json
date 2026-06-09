@@ -1,0 +1,50 @@
+{
+  "name": "아폴로 8호",
+  "type": "유인 달 궤도 · 완료",
+  "first": "최초로 저지구 궤도를 벗어나 달을 공전한 인류",
+  "description": "최초로 저지구 궤도를 떠나, 지구 중력을 벗어나, 달을 공전한 유인 임무. 1968-12-21에 새턴 V의 첫 유인 비행(AS-503)으로 발사, 아폴로 8호는 1968년 크리스마스 이브에 달 궤도에 진입. 네 번째 궤도 중 Anders의 \"Earthrise\" 사진은 역사상 가장 영향력 있는 이미지 중 하나가 되었다. 승무원은 약 10억 시청자에게 생방송 TV로 창세기를 낭독. 10회 공전 후 달 뒷면에서 TEI를 위해 SPS 엔진을 점화, 1968-12-27 태평양 스플래시다운으로 귀환.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.79,
+      "label": "LOI",
+      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "EARTHRISE",
+      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "type": "info"
+    },
+    {
+      "met": 3.5,
+      "label": "GENESIS READING",
+      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "type": "info"
+    },
+    {
+      "met": 3.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.13,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "type": "nominal"
+    }
+  ]
+}

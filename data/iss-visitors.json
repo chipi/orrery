@@ -33,7 +33,9 @@
         "u": "https://www.roscosmos.ru/22364/",
         "t": "deep"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "soyuz-2",
+    "fleet_id": "soyuz-ms"
   },
   {
     "id": "progress_ms",
@@ -63,7 +65,9 @@
         "u": "https://www.nasa.gov/international-space-station/space-station-research-and-technology/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "soyuz-2",
+    "fleet_id": "progress-ms"
   },
   {
     "id": "crew_dragon",
@@ -94,7 +98,9 @@
         "u": "https://www.spacex.com/vehicles/dragon/",
         "t": "deep"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "falcon-9",
+    "fleet_id": "crew-dragon"
   },
   {
     "id": "cargo_dragon",
@@ -119,20 +125,22 @@
         "u": "https://www.nasa.gov/international-space-station/commercial-resupply/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "falcon-9",
+    "fleet_id": "cargo-dragon-2"
   },
   {
     "id": "cygnus",
-    "builder": "Northrop Grumman Space Systems",
+    "builder": "Northrop Grumman",
     "builder_country": "United States",
     "agency": "Northrop Grumman",
-    "launch_vehicle": "Antares 330 (and historically Antares 230+)",
+    "launch_vehicle": "Antares 330",
     "launch_date": "2013-09-18",
     "flight_designation": "Enhanced Cygnus",
     "mass_kg": 5500,
     "length_m": 6.3,
     "status": "ACTIVE",
-    "credit": "Northrop Grumman / NASA — Cygnus program references",
+    "credit": "Northrop Grumman / NASA — Cygnus program references. Historically flew on Antares 230+ (CRS-1 through CRS-15) before transitioning to the Firefly-collaboration Antares 330 first stage in 2025.",
     "links": [
       {
         "l": "Wikipedia · Cygnus spacecraft",
@@ -144,21 +152,23 @@
         "u": "https://www.nasa.gov/humans-in-space/spaceships-and-rockets/commercial-cargo-spacecraft/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "antares",
+    "fleet_id": "cygnus-enhanced"
   },
   {
     "id": "starliner",
-    "builder": "Boeing Defense, Space & Security",
+    "builder": "Boeing",
     "builder_country": "United States",
     "agency": "Boeing",
-    "launch_vehicle": "Atlas V N22 (and future Vulcan Centaur)",
+    "launch_vehicle": "Atlas V N22",
     "launch_date": "2024-06-05",
     "flight_designation": "CST-100 Starliner (Crew Flight Test onwards)",
     "mass_kg": 13000,
     "length_m": 5.03,
     "year_first_of": "First Boeing crewed spacecraft to dock at ISS (2024)",
     "status": "ACTIVE",
-    "credit": "Boeing / NASA / ULA — Starliner program references",
+    "credit": "Boeing / NASA / ULA — Starliner program references. Currently flies on Atlas V N22 — Boeing has stated Starliner will transition to Vulcan Centaur once the Atlas V manifest is exhausted.",
     "links": [
       {
         "l": "Wikipedia · Boeing Starliner",
@@ -175,7 +185,9 @@
         "u": "https://www.boeing.com/space/starliner/",
         "t": "deep"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "atlas-v",
+    "fleet_id": "starliner"
   },
   {
     "id": "htv_x",
@@ -206,6 +218,8 @@
         "u": "https://humans-in-space.jaxa.jp/htv-x/",
         "t": "core"
       }
-    ]
+    ],
+    "launch_vehicle_fleet_id": "h3",
+    "fleet_id": "htv-x"
   }
 ]

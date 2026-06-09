@@ -1,0 +1,39 @@
+{
+  "id": "giotto",
+  "name": "Giotto",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "British Aerospace / MBB",
+  "first_flight": "1985-07-02",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First close-up images of a cometary nucleus — flew 596 km past Halley's Comet on 1986-03-14 at 68 km/s, survived the dust impacts, then went on to encounter comet Grigg-Skjellerup in 1992",
+  "credit": "ESA's first deep-space probe. Spin-stabilised drum-shaped bus protected by a Whipple-shield dust bumper (Kevlar + aluminum), built around the Halley Multicolour Camera, plus 9 other instruments contributed by 11 European countries + NASA + Japan. Closest approach to 1P/Halley was 1986-03-14T00:03 UTC at 596 km on the sunward side — the bumper survived but a 100 mg dust impact 14 seconds before closest approach offset the spin axis and broke camera contact. Recovered after the encounter, hibernated 1986-1990, then woke for a 200 km flyby of 26P/Grigg-Skjellerup on 1992-07-10 — the first time a spacecraft was reactivated for a second mission target. Final shutdown 1992-07-23.",
+  "links": [
+    {
+      "l": "Giotto (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Giotto_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Giotto — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview",
+      "t": "intro"
+    },
+    {
+      "l": "Halley armada — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto/Halley_armada",
+      "t": "core"
+    },
+    {
+      "l": "Reinhard (1986) — The Giotto encounter with comet Halley (Nature 321)",
+      "u": "https://www.nature.com/articles/321313a0",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "giotto"
+  ]
+}

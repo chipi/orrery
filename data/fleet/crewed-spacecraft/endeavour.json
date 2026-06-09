@@ -1,0 +1,43 @@
+{
+  "id": "endeavour",
+  "name": "Space Shuttle Endeavour",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rockwell International",
+  "first_flight": "1992-05-07",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "OV-105 — fifth and youngest operational Shuttle, built to replace Challenger. Flew the first Hubble servicing mission STS-61 (1993), delivered ISS Node 1 Unity, Canadarm2, and Tranquility / Cupola",
+  "credit": "Fifth and last operational orbiter, built from structural spares after the Challenger accident left NASA with only three flight-rated orbiters. Named via a national schools competition after Captain Cook's first vessel HMS Endeavour. First flight STS-49 (1992-05-07) included the first three-person EVA (to capture the stranded Intelsat VI satellite). Highlights: STS-61 (1993-12) — first Hubble servicing mission, restored Hubble's optics with COSTAR + WFPC2 replacement; STS-88 (1998-12-04) — first ISS assembly flight, delivered Node 1 Unity + the PMA mating adapters that connected to Russia's Zarya; STS-100 (2001-04) — installed Canadarm2; STS-118 (2007) — flew teacher Barbara Morgan, originally a Challenger backup; STS-130 (2010-02) — installed Tranquility + Cupola in one go; STS-134 (2011-05) — installed the AMS-02 cosmic-ray detector + final EVA crew of the Shuttle programme. On display at the California Science Center, Los Angeles, since 2012-10 (vertical stack with ET-94 + SRBs planned).",
+  "links": [
+    {
+      "l": "Space Shuttle Endeavour — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour",
+      "t": "intro"
+    },
+    {
+      "l": "STS-61 (Hubble first servicing) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-61",
+      "t": "core"
+    },
+    {
+      "l": "STS-88 (ISS first assembly) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-88",
+      "t": "core"
+    },
+    {
+      "l": "Endeavour at the California Science Center",
+      "u": "https://californiasciencecenter.org/exhibits/air-space/endeavour-the-california-story",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_iss_modules": [
+    "canadarm2",
+    "cupola",
+    "tranquility",
+    "unity"
+  ]
+}

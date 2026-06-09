@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated_at": "2026-05-17T00:00:00Z",
-  "schema_doc": "PRD-014 / RFC-017 \u2014 surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
+  "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
   "entries": {
     "apollo11": {
       "hotspot_tier_max": 3,
@@ -46,7 +46,7 @@
         "date": "1969-07-20",
         "instrument": "Hasselblad 70mm",
         "caption": "Tranquility Base, EVA-1. Buzz Aldrin photographed the LM Eagle and the U.S. flag soon after landing. Visible Hasselblad seams + chromatic stitching at the LM are part of the published mosaic.",
-        "credit_team": "NASA \u00b7 Apollo Lunar Surface Journal",
+        "credit_team": "NASA · Apollo Lunar Surface Journal",
         "real_extent_pct_vertical": 25,
         "synthetic_regions": [
           {
@@ -77,9 +77,10 @@
           "yaw_deg": -65,
           "pitch_deg": -20,
           "label": "Buzz Aldrin shadow",
-          "body": "Photographer's own shadow in the foreground \u2014 Buzz holding the Hasselblad."
+          "body": "Photographer's own shadow in the foreground — Buzz holding the Hasselblad."
         }
-      ]
+      ],
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo11/tier2-regional.jpg"
     },
     "apollo12": {
       "hotspot_tier_max": 3,
@@ -87,7 +88,8 @@
       "hotspot_tier2_source": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo12/tier2-regional.jpg"
     },
     "apollo14": {
       "hotspot_tier_max": 3,
@@ -95,7 +97,8 @@
       "hotspot_tier2_source": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo14/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo14/tier2-regional.jpg"
     },
     "apollo15": {
       "hotspot_tier_max": 3,
@@ -103,7 +106,8 @@
       "hotspot_tier2_source": "/images/hotspots/moon/apollo15/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo15/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo15/tier2-regional.jpg"
     },
     "apollo16": {
       "hotspot_tier_max": 3,
@@ -111,7 +115,8 @@
       "hotspot_tier2_source": "/images/hotspots/moon/apollo16/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo16/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo16/tier2-regional.jpg"
     },
     "apollo17": {
       "hotspot_tier_max": 3,
@@ -125,7 +130,7 @@
         "date": "1972-12-12",
         "instrument": "Hasselblad 70mm",
         "caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
-        "credit_team": "NASA \u00b7 Apollo 17 / ALSJ",
+        "credit_team": "NASA · Apollo 17 / ALSJ",
         "real_extent_pct_vertical": 40,
         "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)"
       },
@@ -149,9 +154,10 @@
           "yaw_deg": 10,
           "pitch_deg": -12,
           "label": "Lunar Roving Vehicle",
-          "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km \u2014 still the record."
+          "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
         }
-      ]
+      ],
+      "hotspot_tier2_regional_source": "/images/hotspots/moon/apollo17/tier2-regional.jpg"
     },
     "viking1-lander": {
       "hotspot_tier_max": 3,
@@ -232,7 +238,7 @@
         "sol": 4220,
         "date": "2024-06-19",
         "instrument": "Mastcam (336-image mosaic)",
-        "caption": "Curiosity at Gediz Vallis Channel \u2014 the rover's 360\u00b0 view from sol 4220 after drilling the Mammoth Lakes sample, its 41st on Mars. Robotic arm visible at left, just finished drilling; rover deck on the right; real Martian sky in the upper band; Gediz Vallis channel descending through the centre \u2014 first place pure sulfur crystals were ever found on Mars.",
+        "caption": "Curiosity at Gediz Vallis Channel — the rover's 360° view from sol 4220 after drilling the Mammoth Lakes sample, its 41st on Mars. Robotic arm visible at left, just finished drilling; rover deck on the right; real Martian sky in the upper band; Gediz Vallis channel descending through the centre — first place pure sulfur crystals were ever found on Mars.",
         "credit_team": "NASA/JPL-Caltech/MSSS",
         "nasa_id": "PIA26363",
         "real_extent_pct_vertical": 57,
@@ -256,14 +262,14 @@
           "yaw_deg": 0,
           "pitch_deg": -5,
           "label": "Gediz Vallis channel",
-          "body": "Ancient water-carved channel descending Mt. Sharp's slopes. Curiosity drilled the Mammoth Lakes sample here \u2014 first pure sulfur crystals ever found on Mars."
+          "body": "Ancient water-carved channel descending Mt. Sharp's slopes. Curiosity drilled the Mammoth Lakes sample here — first pure sulfur crystals ever found on Mars."
         },
         {
           "id": "robotic-arm",
           "yaw_deg": -90,
           "pitch_deg": -15,
           "label": "Robotic arm",
-          "body": "2 m articulated arm with the drill, brush, and APXS spectrometer \u2014 visible at left after completing the Mammoth Lakes drill on this sol."
+          "body": "2 m articulated arm with the drill, brush, and APXS spectrometer — visible at left after completing the Mammoth Lakes drill on this sol."
         },
         {
           "id": "mt-sharp-flank",
@@ -287,8 +293,8 @@
       "panorama_metadata": {
         "sol": 3,
         "date": "2021-02-21",
-        "instrument": "Mastcam-Z (142-image first 360\u00b0)",
-        "caption": "First 360\u00b0 panorama from Perseverance \u2014 three days after landing. The rover deck dominates the foreground; Jezero crater floor + the distant rim are visible above the horizon; real Martian sky in the upper bands.",
+        "instrument": "Mastcam-Z (142-image first 360°)",
+        "caption": "First 360° panorama from Perseverance — three days after landing. The rover deck dominates the foreground; Jezero crater floor + the distant rim are visible above the horizon; real Martian sky in the upper bands.",
         "credit_team": "NASA/JPL-Caltech/ASU/MSSS",
         "nasa_id": "PIA24264",
         "real_extent_pct_vertical": 63,
@@ -312,21 +318,21 @@
           "yaw_deg": 0,
           "pitch_deg": -5,
           "label": "Mastcam-Z mast",
-          "body": "The 2 m camera mast \u2014 the rover's own \"eyes\" \u2014 visible in the centre because the panorama wraps around it."
+          "body": "The 2 m camera mast — the rover's own \"eyes\" — visible in the centre because the panorama wraps around it."
         },
         {
           "id": "jezero-crater-rim",
           "yaw_deg": -100,
           "pitch_deg": 2,
           "label": "Jezero crater rim",
-          "body": "The crater wall ~2 km away; ancient delta deposits are visible at this rim's western edge \u2014 the science target Perseverance drove toward over its first year."
+          "body": "The crater wall ~2 km away; ancient delta deposits are visible at this rim's western edge — the science target Perseverance drove toward over its first year."
         },
         {
           "id": "rover-deck",
           "yaw_deg": 60,
           "pitch_deg": -40,
           "label": "Rover deck",
-          "body": "Foreground of every Mastcam-Z 360\u00b0 \u2014 solar-panel-style deck, sample-tube cache visible at right."
+          "body": "Foreground of every Mastcam-Z 360° — solar-panel-style deck, sample-tube cache visible at right."
         }
       ],
       "traverse_stop_link": "sol-38"
@@ -398,8 +404,8 @@
       "panorama_metadata": {
         "date": "1971-12-02",
         "instrument": "Panoramic facsimile",
-        "caption": "First Mars soft landing \u2014 14.5 seconds of transmitted scan data before signal lost. There is no Tier-3 panorama to render at this site (yet); the experience here is the honest-historical-artifact framing of the original fragment via the Tier-2 CTX context.",
-        "credit_team": "USSR \u00b7 Soviet Academy of Sciences",
+        "caption": "First Mars soft landing — 14.5 seconds of transmitted scan data before signal lost. There is no Tier-3 panorama to render at this site (yet); the experience here is the honest-historical-artifact framing of the original fragment via the Tier-2 CTX context.",
+        "credit_team": "USSR · Soviet Academy of Sciences",
         "real_extent_pct_vertical": 0,
         "synthetic_regions": [
           {
@@ -430,8 +436,8 @@
       "panorama_metadata": {
         "date": "2019-01-03",
         "instrument": "Terrain Camera",
-        "caption": "First panorama ever transmitted from the lunar farside. Von K\u00e1rm\u00e1n crater within South Pole\u2013Aitken Basin. Yutu-2 rover visible mid-distance; lander shadow lower-left.",
-        "credit_team": "CNSA \u00b7 CLEP / CAS",
+        "caption": "First panorama ever transmitted from the lunar farside. Von Kármán crater within South Pole–Aitken Basin. Yutu-2 rover visible mid-distance; lander shadow lower-left.",
+        "credit_team": "CNSA · CLEP / CAS",
         "real_extent_pct_vertical": 40,
         "compass_zero_direction": "lander camera +X axis"
       },
@@ -447,15 +453,15 @@
           "id": "von-karman-rim",
           "yaw_deg": 30,
           "pitch_deg": 3,
-          "label": "Von K\u00e1rm\u00e1n crater rim",
-          "body": "Inner rim of the 180 km crater inside the South Pole\u2013Aitken Basin \u2014 the Moon's largest, oldest impact structure."
+          "label": "Von Kármán crater rim",
+          "body": "Inner rim of the 180 km crater inside the South Pole–Aitken Basin — the Moon's largest, oldest impact structure."
         },
         {
           "id": "change4-shadow",
           "yaw_deg": 0,
           "pitch_deg": -15,
           "label": "Chang'e 4 lander shadow",
-          "body": "The lander's own shadow on the regolith \u2014 captured by its onboard terrain camera."
+          "body": "The lander's own shadow on the regolith — captured by its onboard terrain camera."
         }
       ]
     },
@@ -495,8 +501,8 @@
       "panorama_metadata": {
         "date": "2023-08-23",
         "instrument": "Landing Imager",
-        "caption": "Shiv Shakti Point \u2014 first panorama from the lunar south pole. Vikram lander shadow visible foreground; Pragyan rover deployed onto the regolith shortly after this image.",
-        "credit_team": "ISRO \u00b7 Chandrayaan-3 mission",
+        "caption": "Shiv Shakti Point — first panorama from the lunar south pole. Vikram lander shadow visible foreground; Pragyan rover deployed onto the regolith shortly after this image.",
+        "credit_team": "ISRO · Chandrayaan-3 mission",
         "real_extent_pct_vertical": 50,
         "compass_zero_direction": "lander imager +X"
       },
@@ -513,7 +519,7 @@
           "yaw_deg": 40,
           "pitch_deg": 5,
           "label": "South pole crater rim",
-          "body": "First successful soft-landing this close to the lunar south pole \u2014 water-ice prospect zone."
+          "body": "First successful soft-landing this close to the lunar south pole — water-ice prospect zone."
         }
       ]
     },

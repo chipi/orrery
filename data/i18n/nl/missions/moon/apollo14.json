@@ -1,0 +1,68 @@
+{
+  "name": "Apollo 14",
+  "type": "BEMANDE LANDER · GEVLOGEN",
+  "first": "Derde maanlanding — Apollo 13's verloren doel bereikt; Shepard's golfschoten",
+  "description": "De derde bemande maanlanding en Alan Shepard's tweede vlucht — wat hem zowel de eerste Amerikaan in de ruimte als de vijfde man op de Maan maakte, op 47-jarige leeftijd de oudste maanloper. Apollo 14 was de herstelmissie na Apollo 13's afgebroken landing en nam Apollo 13's beoogde doel in de Fra Mauro Highlands over. Shepard en Mitchell plaatsten ALSEP, voltooiden twee EVA's van in totaal 9 u 23 m. In de laatste minuten van EVA-2 improviseerde Shepard een zes-ijzer golfclub-kop op een monsterverzamelhandvat en sloeg twee golfballen \"miles and miles and miles\". 42 kg monsters teruggebracht.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "CSM-LM DOCKING",
+      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "type": "warning"
+    },
+    {
+      "met": 3.82,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.6,
+      "label": "TOUCHDOWN",
+      "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "EVA-1",
+      "note": "Shepard + Mitchell deploy ALSEP + first lunar geology traverse on this mission.",
+      "type": "info"
+    },
+    {
+      "met": 5.4,
+      "label": "CONE CRATER + GOLF",
+      "note": "EVA-2: traverse toward Cone Crater (came up ~30 m short of rim). Final minutes — Shepard hits two golf balls with an improvised club.",
+      "type": "info"
+    },
+    {
+      "met": 5.6,
+      "label": "ASCENT",
+      "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.4,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
+      "type": "nominal"
+    }
+  ]
+}

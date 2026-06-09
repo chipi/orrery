@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 9",
+  "type": "TRIPULADO ÓRBITA TERRESTRE · VOOU",
+  "first": "Primeiro voo tripulado do LM — testes de separação + rendezvous em órbita terrestre",
+  "description": "O primeiro voo tripulado do Módulo Lunar. Em órbita terrestre, McDivitt e Schweickart desacoplaram o LM Spider do CSM Gumdrop, voaram até 183 km de distância em seis horas, depois fizeram rendezvous e reacoplaram — cada etapa do procedimento de rendezvous lunar testada sem a opção de trazer a tripulação de volta no CSM se algo desse errado. Schweickart fez um EVA de 38 minutos no varandinho do LM, demonstrando o traje EVA + mochila PLSS Apollo que as tripulações que andariam na Lua usariam. Com o hardware do LM e os procedimentos de rendezvous verificados, NASA estava pronta para enviar Apollo 10 à Lua dois meses depois.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-504) from Kennedy Space Center LC-39A 1969-03-03 16:00 UTC — third Saturn V flight, first crewed launch carrying LM.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "CSM-LM EXTRACTION",
+      "note": "CSM Gumdrop turns around + docks with LM Spider in the SLA adapter — first crewed transposition + docking. All Apollo lunar missions repeat this maneuver.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.2,
+      "label": "LM SEPARATION",
+      "note": "McDivitt + Schweickart undock Spider, fly up to 183 km from Gumdrop over six hours. First crewed flight where the spacecraft + crew aren't both attached to a re-entry vehicle.",
+      "type": "info"
+    },
+    {
+      "met": 4.5,
+      "label": "EVA",
+      "note": "Schweickart does 38-min EVA on LM porch. Scott stand-up EVA from CSM hatch. First validation of Apollo PLSS backpack.",
+      "type": "info"
+    },
+    {
+      "met": 4.5,
+      "label": "RENDEZVOUS + REDOCK",
+      "note": "Spider rendezvous + redocks with Gumdrop, completing the lunar-procedure dress rehearsal in Earth orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "LM JETTISON",
+      "note": "Spider ascent stage jettisoned to deorbit; descent stage remained in orbit and decayed 1981.",
+      "type": "nominal"
+    },
+    {
+      "met": 10.04,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Atlantic 1969-03-13 17:00 UTC after 151 orbits. Recovery by USS Guadalcanal.",
+      "type": "nominal"
+    }
+  ]
+}

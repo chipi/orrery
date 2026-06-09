@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 8",
+  "type": "TRIPULADO ÓRBITA LUNAR · VOLÓ",
+  "first": "Primeros humanos en salir de órbita terrestre baja + orbitar la Luna",
+  "description": "La primera misión tripulada en salir de órbita terrestre baja, la primera en escapar de la gravedad terrestre, y la primera en orbitar la Luna. Lanzada el 21-12-1968 en el primer vuelo tripulado del Saturn V (AS-503), Apollo 8 entró en órbita lunar en Nochebuena de 1968. La fotografía \"Earthrise\" de Anders durante la cuarta órbita se convirtió en una de las imágenes más influyentes de la historia. La tripulación leyó del Génesis en televisión en vivo a ~1.000 millones de espectadores. 10 órbitas después, encendieron el motor SPS para TEI en el lado oculto de la Luna, regresando al amerizaje en el Pacífico el 27-12-1968.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.79,
+      "label": "LOI",
+      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.16,
+      "label": "EARTHRISE",
+      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "type": "info"
+    },
+    {
+      "met": 3.5,
+      "label": "GENESIS READING",
+      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "type": "info"
+    },
+    {
+      "met": 3.96,
+      "label": "TEI",
+      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 6.13,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "type": "nominal"
+    }
+  ]
+}

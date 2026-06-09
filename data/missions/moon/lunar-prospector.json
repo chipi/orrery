@@ -1,0 +1,42 @@
+{
+  "id": "lunar-prospector",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Ames Research Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1998,
+  "status": "FLOWN",
+  "departure_date": "1998-01-07",
+  "arrival_date": "1998-01-11",
+  "transit_days": 4,
+  "vehicle": "Athena II",
+  "payload": "296 kg dry; carried 5 science instruments",
+  "delta_v": "~4 km/s (TLI + LOI)",
+  "data_quality": "good",
+  "credit": "Public domain / NASA archive. Neutron-spectrometer hydrogen finding at both lunar poles.",
+  "links": [
+    {
+      "l": "Lunar Prospector — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunar_Prospector",
+      "t": "intro"
+    },
+    {
+      "l": "Lunar Prospector — NASA Discovery program",
+      "u": "https://science.nasa.gov/mission/lunar-prospector/",
+      "t": "core"
+    },
+    {
+      "l": "Feldman et al. (1998) — Fluxes of fast and epithermal neutrons from Lunar Prospector (Science 281)",
+      "u": "https://www.science.org/doi/10.1126/science.281.5382.1496",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "lunar-prospector",
+      "role": "spacecraft"
+    }
+  ]
+}

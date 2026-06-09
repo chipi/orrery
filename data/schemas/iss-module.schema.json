@@ -51,6 +51,16 @@
       "builder_country": { "type": "string", "minLength": 1 },
       "agency": { "type": "string", "minLength": 1 },
       "launch_vehicle": { "type": "string", "minLength": 1 },
+      "launch_vehicle_fleet_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional cross-link to a static/data/fleet/launcher/<id>.json entry — enables /iss → /fleet navigation for the launcher that delivered this module."
+      },
+      "launch_orbiter_fleet_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional cross-link to a static/data/fleet/crewed-spacecraft/<id>.json entry — the specific Space Shuttle orbiter that delivered this module (Endeavour for Unity, Atlantis for Destiny, etc.). Distinct from launch_vehicle_fleet_id which points to the generic space-shuttle-stack launcher."
+      },
       "launch_date": { "type": "string", "format": "date" },
       "flight_designation": { "type": "string", "minLength": 1 },
       "mass_kg": { "type": "number", "exclusiveMinimum": 0 },

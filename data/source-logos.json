@@ -62,6 +62,7 @@
       "name": "Blue Origin",
       "kind": "private-operator",
       "url": "https://www.blueorigin.com/",
+      "logo_path": "/logos/blue-origin.svg",
       "license_summary": "Mixed: official Blue Origin imagery used under CC BY-SA via Wikimedia Commons; partnership photographs taken by NASA staff are public domain (works of the U.S. Government)."
     },
     {
@@ -98,6 +99,7 @@
       "name": "Canadian Space Agency",
       "kind": "space-agency",
       "url": "https://www.asc-csa.gc.ca/",
+      "logo_path": "/logos/csa.svg",
       "license_summary": "Government of Canada works (CSA-NCO non-commercial reuse policy); editorial reuse with credit is permitted."
     },
     {
@@ -105,14 +107,16 @@
       "name": "NOAA",
       "kind": "space-agency",
       "url": "https://www.noaa.gov/",
+      "logo_path": "/logos/noaa.svg",
       "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). NOAA imagery is freely usable with credit."
     },
     {
       "id": "us-space-force",
       "name": "U.S. Space Force",
       "kind": "space-agency",
-      "url": "https://www.gps.gov/",
-      "license_summary": "Public domain — works of the United States Government. Outbound reference links to gps.gov for GPS constellation operations."
+      "url": "https://www.spaceforce.mil/",
+      "logo_path": "/logos/ussf.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). Operates GPS (gps.gov), SBIRS-HEO, and the Cape Canaveral / Vandenberg launch ranges."
     },
     {
       "id": "stsci",
@@ -196,6 +200,7 @@
       "name": "Boeing",
       "kind": "private-operator",
       "url": "https://www.boeing.com/",
+      "logo_path": "/logos/boeing.svg",
       "license_summary": "Outbound reference links only; no Boeing copy or imagery is redistributed in-app."
     },
     {
@@ -218,6 +223,118 @@
       "kind": "encyclopedic",
       "url": "https://thespacedevs.com/llapi",
       "license_summary": "Permissive use with attribution encouraged; used as gap-fill aggregator only."
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "kind": "private-operator",
+      "url": "https://www.aboutamazon.com/news/innovation-at-amazon/what-is-amazon-project-kuiper",
+      "logo_path": "/logos/amazon.svg",
+      "license_summary": "Outbound reference links only; no Amazon copy or imagery is redistributed in-app. Project Kuiper operator."
+    },
+    {
+      "id": "arianespace",
+      "name": "Arianespace",
+      "kind": "private-operator",
+      "url": "https://www.arianespace.com/",
+      "logo_path": "/logos/arianespace.svg",
+      "license_summary": "Outbound reference links only; Ariane / Vega launch-service provider. Some launch imagery available via ESA under CC BY-SA 3.0 IGO."
+    },
+    {
+      "id": "asi",
+      "name": "Agenzia Spaziale Italiana",
+      "kind": "space-agency",
+      "url": "https://www.asi.it/",
+      "logo_path": "/logos/asi.svg",
+      "license_summary": "Italian Space Agency works under Italian government attribution; outbound reference links only. ASI partner contributions on Cassini-Huygens (high-gain antenna + radar) and BepiColombo."
+    },
+    {
+      "id": "axiom-space",
+      "name": "Axiom Space",
+      "kind": "private-operator",
+      "url": "https://www.axiomspace.com/",
+      "logo_path": "/logos/axiom-space.svg",
+      "license_summary": "Outbound reference links only; commercial-LEO operator. AxEMU lunar EVA suit + private-astronaut Axiom Mission visits to the ISS."
+    },
+    {
+      "id": "eutelsat-oneweb",
+      "name": "Eutelsat OneWeb",
+      "kind": "private-operator",
+      "url": "https://oneweb.net/",
+      "logo_path": "/logos/eutelsat-oneweb.svg",
+      "license_summary": "Outbound reference links only; LEO broadband constellation operator (merger of UK OneWeb + French Eutelsat in 2023)."
+    },
+    {
+      "id": "intuitive-machines",
+      "name": "Intuitive Machines",
+      "kind": "private-operator",
+      "url": "https://www.intuitivemachines.com/",
+      "logo_path": "/logos/intuitive-machines.svg",
+      "license_summary": "Outbound reference links only; NASA CLPS lunar-lander contractor (IM-1 Odysseus, IM-2 Athena, IM-3)."
+    },
+    {
+      "id": "iridium",
+      "name": "Iridium Communications",
+      "kind": "private-operator",
+      "url": "https://www.iridium.com/",
+      "logo_path": "/logos/iridium.svg",
+      "license_summary": "Outbound reference links only; Iridium NEXT LEO comms constellation operator (75 satellites + spares, 2017+)."
+    },
+    {
+      "id": "ispace",
+      "name": "ispace",
+      "kind": "private-operator",
+      "url": "https://ispace-inc.com/",
+      "logo_path": "/logos/ispace.svg",
+      "license_summary": "Outbound reference links only; Japanese commercial lunar-lander operator (HAKUTO-R series)."
+    },
+    {
+      "id": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "kind": "private-operator",
+      "url": "https://www.northropgrumman.com/space/",
+      "logo_path": "/logos/northrop-grumman.svg",
+      "license_summary": "Outbound reference links only; Antares launcher + Cygnus cargo + SBIRS-HEO IR-sensor builder."
+    },
+    {
+      "id": "planet-labs",
+      "name": "Planet Labs PBC",
+      "kind": "private-operator",
+      "url": "https://www.planet.com/",
+      "logo_path": "/logos/planet-labs.svg",
+      "license_summary": "Outbound reference links only; PlanetScope + SkySat daily-Earth-imaging constellation operator (~150 + 21 satellites)."
+    },
+    {
+      "id": "ses",
+      "name": "SES",
+      "kind": "private-operator",
+      "url": "https://www.ses.com/",
+      "logo_path": "/logos/ses.svg",
+      "license_summary": "Outbound reference links only; Luxembourg-based GEO + MEO comms operator (O3b mPOWER + GEO fleet)."
+    },
+    {
+      "id": "sirius-xm",
+      "name": "Sirius XM",
+      "kind": "private-operator",
+      "url": "https://www.siriusxm.com/",
+      "logo_path": "/logos/siriusxm.svg",
+      "license_summary": "Outbound reference links only; US satellite-radio operator (Sirius FM Tundra-orbit + XM GEO fleet, merged 2008)."
+    },
+    {
+      "id": "usgs",
+      "name": "United States Geological Survey",
+      "kind": "space-agency",
+      "url": "https://www.usgs.gov/",
+      "logo_path": "/logos/usgs.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). USGS imagery + data freely usable with credit; co-operator of the Landsat Earth-observation constellation with NASA."
+    },
+    {
+      "id": "viasat",
+      "name": "Viasat",
+      "kind": "private-operator",
+      "url": "https://www.viasat.com/",
+      "logo_path": "/logos/viasat.svg",
+      "license_summary": "Outbound reference links only; satellite-broadband operator + owner of Inmarsat (acquired 2023). Operates the Inmarsat GEO L-band + Ka-band fleet."
     }
   ]
 }

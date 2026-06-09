@@ -1,0 +1,74 @@
+{
+  "name": "阿波罗 16 号",
+  "type": "载人着陆器 · 已飞行",
+  "first": "首次在月球高地登陆 — 笛卡尔；John Young 的\"月面大奖赛\"",
+  "description": "第五次载人登月，也是首次在非月海高地登陆。地质学家预期笛卡尔地区是火山形成的；阿波罗 16 号推翻了这一点 — 带回的每块岩石都是 breccia（撞击破碎的碎屑），重塑了对月球高地是灾难性撞击产物（而非古代火山活动）的理解。Young 和 Duke 完成了共 20 小时 14 分钟的三次 LRV 辅助 EVA，行驶 26.7 km，带回 95.7 公斤样本（截至当时最重的阿波罗收获）。Young 的\"月面大奖赛\"— LRV 的电视直播速度测试 — 峰值约 17 km/h。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.12,
+      "label": "TLI",
+      "note": "Trans-lunar injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.3,
+      "label": "LOI",
+      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.79,
+      "label": "SPS ANOMALY",
+      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "type": "warning"
+    },
+    {
+      "met": 5.04,
+      "label": "TOUCHDOWN",
+      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.5,
+      "label": "FIRST HIGHLANDS EVA",
+      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "type": "info"
+    },
+    {
+      "met": 6.1,
+      "label": "LUNAR GRAND PRIX",
+      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "type": "info"
+    },
+    {
+      "met": 6.7,
+      "label": "FAR-UV CAMERA",
+      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "type": "info"
+    },
+    {
+      "met": 7.81,
+      "label": "ASCENT",
+      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "TEI",
+      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 11.07,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "type": "nominal"
+    }
+  ]
+}

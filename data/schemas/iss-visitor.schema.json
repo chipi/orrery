@@ -40,6 +40,16 @@
       "builder_country": { "type": "string", "minLength": 1 },
       "agency": { "type": "string", "minLength": 1 },
       "launch_vehicle": { "type": "string", "minLength": 1 },
+      "launch_vehicle_fleet_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional cross-link to a static/data/fleet/launcher/<id>.json entry — enables /iss → /fleet navigation for the launcher of this visitor."
+      },
+      "fleet_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional cross-link to the static/data/fleet/<category>/<id>.json entry that represents this spacecraft — enables /iss visitor cards to surface the fleet entry's gallery + credit."
+      },
       "launch_date": { "type": "string", "format": "date" },
       "flight_designation": { "type": "string", "minLength": 1 },
       "mass_kg": { "type": "number", "exclusiveMinimum": 0 },

@@ -1,0 +1,39 @@
+{
+  "id": "messenger",
+  "name": "MESSENGER",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Johns Hopkins APL",
+  "first_flight": "2004-08-03",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First Mercury orbiter — used 6 planetary gravity assists (1 Earth, 2 Venus, 3 Mercury) over 6.6 years to bleed energy before orbit insertion in 2011, then mapped the planet for 4 years before impacting the surface in 2015",
+  "credit": "Discovery-class Mercury Surface, Space ENvironment, GEochemistry, and Ranging mission. Launched on a Delta II 7925H-9.5 with a Star-48B kick stage on 2004-08-03. The 6.6-year cruise used 6 gravity assists (Earth 2005-08, Venus 2006-10 + 2007-06, Mercury 2008-01 + 2008-10 + 2009-09) to lose ~5 km/s of heliocentric energy — direct Mercury orbit insertion would have required impossible delta-v. Mercury orbit insertion 2011-03-18 at 12:45 UTC; original 12-hour 200 × 15 200 km orbit later trimmed to 8-hour 200 × 10 300 km. Mission discoveries: water ice in permanently shadowed polar craters, organic-rich dark material at the poles, exosphere composition, magnetic-field offset from planet centre, abundant hollow-bottomed pits suggesting volatile loss. Impacted Mercury 2015-04-30 after exhausting propellant; left an artificial 16 m crater near the north pole.",
+  "links": [
+    {
+      "l": "MESSENGER — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/MESSENGER",
+      "t": "intro"
+    },
+    {
+      "l": "MESSENGER mission — Johns Hopkins APL",
+      "u": "https://messenger.jhuapl.edu/",
+      "t": "intro"
+    },
+    {
+      "l": "MESSENGER at Mercury — NASA",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "Solomon et al. (2018) — Mercury: The View After MESSENGER (Cambridge Press)",
+      "u": "https://www.cambridge.org/core/books/mercury/0DAB3F4F2C7F7D90F8C9C28E80AFEEF7",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "messenger"
+  ]
+}

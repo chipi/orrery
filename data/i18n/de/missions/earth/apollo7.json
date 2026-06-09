@@ -1,0 +1,32 @@
+{
+  "name": "Apollo 7",
+  "type": "BEMANNTE ERDUMLAUFBAHN · GEFLOGEN",
+  "first": "Erster bemannter Apollo-Flug — Erdumlaufbahn-CSM-Erprobung",
+  "description": "Der erste bemannte Apollo-Flug, 21 Monate nach dem Apollo-1-Brand (27.1.1967), bei dem Grissom, White und Chaffee auf der Rampe ums Leben kamen. Apollo 7 verifizierte das neu konstruierte Block-II-Command-and-Service-Module in der Erdumlaufbahn — Lebenserhaltung, Energie, Antrieb (SPS achtmal gezündet), Wärmeschutz, und die weltweit erste Live-TV-Übertragung aus einem bemannten US-Raumfahrzeug. Der 10-Tage-20-Stunden-Flug machte den Weg frei für Apollo 8s Mondumlaufbahn-Wagnis zwei Monate später.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

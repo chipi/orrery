@@ -1,0 +1,32 @@
+{
+  "name": "Apollo 7",
+  "type": "ПИЛОТИРАНИ ЗЕМЉИНА ОРБИТА · ОБАВЉЕНО",
+  "first": "Први пилотирани лет Аполо — провера CSM-а у Земљиној орбити",
+  "description": "Први пилотирани лет Аполо, 21 месец после пожара Аполо-1 (27.01.1967) који је убио Грисома, Вајта и Чафија на платформи. Аполо-7 проверио је редизајнирани Block II командни и сервисни модул у Земљиној орбити — животну подршку, енергију, погон (SPS се палио осам пута), термалну контролу и прву ТВ преноску уживо на свету са пилотираног америчког свемирског брода. Лет од 10 дана и 20 сати отворио је пут Аполо-8 коцкању са лунарном орбитом два месеца касније.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ORBIT INSERT",
+      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2,
+      "label": "FIRST LIVE TV",
+      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 10.8,
+      "label": "SPLASHDOWN",
+      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -31,7 +31,9 @@
     computePlanApply,
     type LoadedMission,
     type MissionApplyDefaults,
+    type TrajectoryOverride,
   } from '$lib/fly-mission-apply';
+  import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
   import {
     DESTINATIONS,
     R_EARTH_AU,
@@ -1045,7 +1047,7 @@
     arrLabelFallback: defaultScenarioOverlay.arr_label,
   };
 
-  function applyMissionAsLoaded(m: Mission) {
+  function applyMissionAsLoaded(m: Mission, trajectoryOverride?: TrajectoryOverride) {
     // Umami custom event — anonymous, production-host only.
     track('mission-load', {
       id: m.id,
@@ -1056,7 +1058,7 @@
     // Math layer: derive every value from the Mission. See
     // $lib/fly-mission-apply for the timeline / arc / trajectory
     // derivations and the round-trip vs one-way semantics.
-    const r = computeMissionApply(m, MISSION_APPLY_DEFAULTS);
+    const r = computeMissionApply(m, MISSION_APPLY_DEFAULTS, trajectoryOverride);
     // Write state in the same order the prior inline impl did, so
     // any reactive $effect that watched isMoonMission + outPts +
     // retPts together still sees the same end state.
@@ -1212,7 +1214,28 @@
       const m = await getMission(id, dest, locale);
       if (myLoadId !== currentLoadId) return;
       if (m) {
-        applyMissionAsLoaded(m);
+        // Optional: load the iconic-mission trajectory.json (the same
+        // labeled-waypoints file /explore's PATHS layer uses). When
+        // present, computeMissionApply uses a Catmull-Rom spline
+        // through the waypoints instead of the single Keplerian
+        // ellipse — the trajectory then actually passes through each
+        // flyby planet at the event MET. Missing → fall back.
+        let trajectoryOverride: TrajectoryOverride | undefined;
+        try {
+          const tres = await fetch(`${base}/data/trajectories/${id}.json`);
+          if (myLoadId !== currentLoadId) return;
+          if (tres.ok) {
+            const traj = (await tres.json()) as { waypoints?: TrajectoryWaypoint[] };
+            if (traj.waypoints && traj.waypoints.length >= 2) {
+              trajectoryOverride = { waypoints: traj.waypoints };
+            }
+          }
+        } catch {
+          // Silent — most non-iconic missions don't ship a
+          // trajectory.json and the spline fallback is intentional.
+        }
+        if (myLoadId !== currentLoadId) return;
+        applyMissionAsLoaded(m, trajectoryOverride);
         return;
       }
     }
@@ -1777,8 +1800,12 @@
       const aTArr = new Float32Array(totalVerts);
       for (let i = 0; i < ringCount; i++) {
         const p = pts[i];
-        // Tangent in XZ plane (the arc is planar in XZ). Central
-        // difference; endpoints fall back to forward/backward.
+        // Tangent computation uses the XZ projection (the arc's
+        // dominant plane for cross-section orientation). Y component
+        // is included in the point's world position so multi-waypoint
+        // splines that climb out of the ecliptic (Cassini → Jupiter
+        // → Saturn, Voyager → Neptune) render with the right vertical
+        // shape; the cross-section ring still sits flat to XZ.
         const prev = pts[Math.max(0, i - 1)];
         const next = pts[Math.min(ringCount - 1, i + 1)];
         const tx = next.x - prev.x;
@@ -1787,6 +1814,7 @@
         // Side vector = tangent rotated 90° in XZ.
         const sNx = -tz / tLen;
         const sNz = tx / tLen;
+        const py = (p.y ?? 0) * SCALE_3D;
         const t = i / (ringCount - 1);
         for (let r = 0; r <= radialSegs; r++) {
           const theta = (r / radialSegs) * Math.PI * 2;
@@ -1794,7 +1822,7 @@
           const sinT = Math.sin(theta);
           const idx = i * vertsPerRing + r;
           positions[idx * 3 + 0] = p.x * SCALE_3D + radius * sinT * sNx;
-          positions[idx * 3 + 1] = radius * cosT;
+          positions[idx * 3 + 1] = py + radius * cosT;
           positions[idx * 3 + 2] = p.z * SCALE_3D + radius * sinT * sNz;
           aTArr[idx] = t;
         }
@@ -3712,7 +3740,11 @@
       // Sprite glyph sits at sc.pos. No lookAt — sprites face the
       // camera by construction so the glyph is always centred on the
       // arc regardless of curvature.
-      scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      scSprite.position.set(
+        sc.pos.x * SCALE_3D,
+        (sc.pos.y ?? 0) * SCALE_3D,
+        sc.pos.z * SCALE_3D,
+      );
       // Per-mission 3D model rides the same position. Visibility +
       // arrival-hide handled by the same code path that owns scSprite
       // a few lines below; here we only update the transform.

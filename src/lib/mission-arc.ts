@@ -29,8 +29,16 @@ import {
 export const A_TRANSFER = (R_EARTH_AU + R_MARS_AU) / 2;
 export const E_TRANSFER = (R_MARS_AU - R_EARTH_AU) / (R_MARS_AU + R_EARTH_AU);
 
-/** A 2D position in the heliocentric ecliptic plane (AU). */
-export type Vec2 = { x: number; z: number };
+/** A position in heliocentric AU coordinates. The historical name is
+ *  Vec2 because the Keplerian-arc generation puts every point in the
+ *  ecliptic plane (y = 0). The optional `y` carries the out-of-plane
+ *  component for missions whose trajectory data does describe a 3D
+ *  path — Cassini's VVEJGA, Voyager's grand tour, etc., where the
+ *  spline samples carry the small inclination climb from the
+ *  `/static/data/trajectories/<id>.json` waypoints. Consumers that
+ *  don't care about Y simply read x + z; consumers that do (the
+ *  tube geometry and the spacecraft glyph) read `y ?? 0`. */
+export type Vec2 = { x: number; z: number; y?: number };
 
 /** Earth position at simulation day. Circular-orbit approximation. */
 export function earthPos(day: number): Vec2 {
@@ -291,15 +299,21 @@ export interface MissionTimeline {
 }
 
 function lerpPoint(arc: Vec2[], t: number): Vec2 {
-  if (arc.length === 0) return { x: 0, z: 0 };
-  if (arc.length === 1) return { x: arc[0].x, z: arc[0].z };
+  if (arc.length === 0) return { x: 0, y: 0, z: 0 };
+  if (arc.length === 1) return { x: arc[0].x, y: arc[0].y ?? 0, z: arc[0].z };
   const last = arc.length - 1;
   const f = Math.max(0, Math.min(1, t)) * last;
   const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
   const frac = f - i;
   const a = arc[i];
   const b = arc[i + 1];
-  return { x: a.x + (b.x - a.x) * frac, z: a.z + (b.z - a.z) * frac };
+  const ay = a.y ?? 0;
+  const by = b.y ?? 0;
+  return {
+    x: a.x + (b.x - a.x) * frac,
+    y: ay + (by - ay) * frac,
+    z: a.z + (b.z - a.z) * frac,
+  };
 }
 
 export function spacecraftPos(

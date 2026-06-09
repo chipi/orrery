@@ -1,6 +1,10 @@
 import { earthPos, returnArc, type MissionTimeline, type Vec2 } from '$lib/mission-arc';
 import { type DestinationId } from '$lib/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
+import {
+  buildSplineFromTrajectoryWaypoints,
+  type TrajectoryWaypoint,
+} from '$lib/trajectory-spline';
 import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
 import {
   buildInterplanetaryTrajectory,
@@ -183,9 +187,20 @@ function buildMissionMeta(
  * The full transition. Pass in the Mission + default fallbacks; get
  * back every value the component needs to write to $state.
  */
+/** Optional shape passed alongside the Mission when /fly has loaded
+ *  the matching /static/data/trajectories/<id>.json. When supplied,
+ *  computeMissionApply uses a Catmull-Rom spline through the labeled
+ *  waypoints instead of the single Keplerian half-ellipse — gives
+ *  grand-tour missions (Cassini's VVEJGA, Voyager's planetary tour,
+ *  etc.) a trajectory that actually passes through each flyby planet. */
+export interface TrajectoryOverride {
+  waypoints: TrajectoryWaypoint[];
+}
+
 export function computeMissionApply(
   m: Mission,
   defaults: MissionApplyDefaults,
+  trajectoryOverride?: TrajectoryOverride,
 ): MissionApplyResult {
   const { timeline, isReturnTrip } = computeTimeline(m, defaults.depFallback);
   // EARTH (Earth-orbit missions: Apollo 7/9, Mercury/Gemini/Skylab, Shuttle
@@ -221,7 +236,39 @@ export function computeMissionApply(
       });
     }
     const vInfKms = m.flight?.arrival?.v_infinity_km_s ?? null;
-    ({ outPts, retPts } = buildHelioArcs(timeline, activeDestination, isReturnTrip, vInfKms));
+    // Spline branch — when the caller has loaded the iconic-mission
+    // trajectory waypoints, build outPts from a Catmull-Rom spline
+    // through them so the path actually passes through each flyby
+    // planet at its event MET. Falls back to Keplerian when no
+    // override is supplied or the spline can't be built.
+    let splineOut: Vec2[] | null = null;
+    if (
+      trajectoryOverride &&
+      trajectoryOverride.waypoints.length >= 2 &&
+      m.departure_date
+    ) {
+      const samples = buildSplineFromTrajectoryWaypoints(
+        trajectoryOverride.waypoints,
+        m.departure_date,
+        ARC_STEPS + 1,
+      );
+      if (samples && samples.length >= 2) {
+        // Axis-swap from /explore convention to /fly convention.
+        // /explore: (x, y) = ecliptic plane, z = inclination out-of-plane.
+        // /fly:     (x, z) = ecliptic plane, y = inclination out-of-plane (Three.js Y-up).
+        // Cassini Earth (1, 0, 0) stays (1, 0, 0); Jupiter (5.2, 2.6, 0.1)
+        // becomes (5.2, 0.1, 2.6) so the path actually arcs through Jupiter's
+        // heliocentric position in /fly's frame instead of flying into a Y
+        // axis that doesn't exist.
+        splineOut = samples.map((p) => ({ x: p.x, y: p.z, z: p.y }));
+      }
+    }
+    if (splineOut) {
+      outPts = splineOut;
+      retPts = []; // grand-tour spline missions are one-way (Cassini → Saturn, Voyagers → outward)
+    } else {
+      ({ outPts, retPts } = buildHelioArcs(timeline, activeDestination, isReturnTrip, vInfKms));
+    }
   }
 
   return {

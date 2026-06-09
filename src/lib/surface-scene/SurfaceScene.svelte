@@ -125,8 +125,14 @@
      *  Promise.all's getMarsTraverse for each known rover; Moon omits
      *  this prop today (Apollo/Lunokhod paths future). */
     loadTraverses?: () => Promise<Record<string, Traverse>>;
+    /** Initial camera target in body-local lat/lon (deg). When set,
+     *  overrides the default camT=0, camP=π/4 spherical pose so the
+     *  scene loads with the camera looking at that lat/lon — used by
+     *  /earth to auto-orient toward the viewer's approximate location
+     *  (issue #315). Has no effect if a URL state pose is present. */
+    initialView?: { latDeg: number; lonDeg: number };
   }
-  let { config, loadSites, loadGallery, loadTraverses }: Props = $props();
+  let { config, loadSites, loadGallery, loadTraverses, initialView }: Props = $props();
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -1636,6 +1642,15 @@
     let camR = config.initialCamR ?? 85;
     let camP = Math.PI / 4;
     let camT = 0;
+    // Apply initialView (lat/lon → spherical θ/φ) before camR0 is
+    // snapshotted, so resetCamera() returns to the geo-oriented pose.
+    // Skipped if the route consumer didn't set initialView.
+    if (initialView) {
+      const lat = Math.max(-90, Math.min(90, initialView.latDeg));
+      const lon = ((initialView.lonDeg + 540) % 360) - 180;
+      camT = (lon * Math.PI) / 180;
+      camP = ((90 - lat) * Math.PI) / 180;
+    }
     const camR0 = camR;
     const camP0 = camP;
     const camT0 = camT;

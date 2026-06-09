@@ -20,9 +20,15 @@
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
+  import { viewerLatLon } from '$lib/viewer-location';
   import * as m from '$lib/paraglide/messages';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
+  // Auto-orient the camera toward the viewer's approximate location
+  // when /earth loads (issue #315). SSR-safe — viewerLatLon() returns
+  // null in non-browser contexts. Coarse: timezone-based, no
+  // permission, works offline.
+  const initialView = viewerLatLon() ?? undefined;
 </script>
 
 <svelte:head><title>{m.earth_page_title()}</title></svelte:head>
@@ -31,6 +37,7 @@
   config={earthSurfaceConfig}
   loadSites={getEarthLaunchSites}
   loadGallery={getEarthLaunchSiteGallery}
+  {initialView}
 />
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic

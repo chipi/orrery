@@ -440,6 +440,7 @@
           <p class="source-meta">
             {audioRows.length} episodes · text and voice attribution per PRD-016 §transparency
           </p>
+          <p class="audio-origin-disclosure">{m.audio_origin_disclosure_text()}</p>
         </div>
       </header>
 

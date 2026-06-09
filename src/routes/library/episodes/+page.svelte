@@ -122,6 +122,7 @@
   <header class="ep-index-head">
     <h1 id="ep-index-title">{m.library_episodes_h1()}</h1>
     <p class="ep-index-blurb">{m.library_episodes_intro()}</p>
+    <p class="ep-index-origin-disclosure">{m.audio_origin_disclosure_text()}</p>
     {#if loaded && provenance}
       <p class="ep-index-meta">
         {m.library_episodes_meta({

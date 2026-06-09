@@ -655,7 +655,10 @@
             type="button"
             class="header-btn minimize-btn"
             aria-label={m.audio_minimize_aria()}
-            title={m.audio_minimize_title()}
+            title={audio.tourActive
+              ? m.audio_minimize_title()
+              : 'Start the tour first — minimize collapses to the active-tour bar'}
+            disabled={!audio.tourActive}
             onclick={() => audio.toggleCompact()}
           >
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
@@ -986,10 +989,12 @@
       {/if}
     </section>
 
+    <!-- Audio-origin disclosure (Voices / Scripts attribution) moved
+         to /credits + /library/episodes per Marko's UX call — tour
+         popup keeps just the per-episode links. -->
     <footer class="origin-disclosure" aria-label={m.audio_origin_disclosure_aria()}>
-      <span>{m.audio_origin_disclosure_text()}</span>
       <span class="origin-detail"
-        >Per-episode attribution on <a href="{base}/credits">/credits</a> ·
+        ><a href="{base}/credits">Audio credits</a> ·
         <a href="{base}/library/episodes">Read transcripts</a></span
       >
     </footer>

@@ -309,63 +309,104 @@
   );
   let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
 
-  /** FlightDirectorBanner phase boundaries (arcProgress thresholds), used
-   *  to drop a gold marker on the trajectory at each phase the banner
-   *  narrates. Thresholds mirror the FD banner's own `phase` derivation
-   *  in FlightDirectorBanner.svelte — keep the two in sync. The
-   *  `arcThreshold` is the moment the FD switches INTO that phase, so
-   *  a marker placed there reads "this is where FD started talking
-   *  about <phase>". CRUISE gets a mid-cruise position (0.45) instead
-   *  of its FD-entry boundary (0.10, same as injection) because the
-   *  cruise span dominates the arc and a marker at the start would
-   *  overlap injection. */
-  interface FdPhaseBoundary {
-    id: 'departure' | 'injection' | 'cruise' | 'approach' | 'arrival';
+  /** FlightDirectorBanner stages — each stage spans an arcProgress range
+   *  (startArc → endArc) and renders as a boundary tick on the
+   *  trajectory at startArc + a labelled chip at the stage midpoint.
+   *  Stage transitions read as "this is where <next-stage> starts /
+   *  <prev-stage> ended". `arcThreshold` is the FD reveal threshold,
+   *  mirrored from FlightDirectorBanner.svelte — keep the two in sync.
+   *  INJECTION's start tick is suppressed because it coincides with the
+   *  LAUNCH anchor ring at arc 0; the ARRIVAL anchor ring covers
+   *  arc 1.0 the same way. */
+  interface FdStage {
+    id:
+      | 'injection'
+      | 'cruise'
+      | 'approach'
+      | 'arrival'
+      | 'cruise-return'
+      | 'approach-earth'
+      | 'arrival-earth';
+    /** Which arc the tickArc indexes into — outPts for outbound stages
+     *  (INJECTION → ARRIVAL at destination) and retPts for return
+     *  stages (CRUISE → ARRIVAL at Earth). Return stages only render
+     *  on round-trip missions (retPts.length > 0). */
+    leg: 'out' | 'return';
+    /** Where the diamond visually anchors on its arc (0–1 along the
+     *  arc's outPts or retPts). Sits at stage midpoints rather than
+     *  literal transitions so the diamond reads distinctly from the
+     *  LAUNCH / ARRIVAL anchor rings. */
+    tickArc: number;
+    /** Reveal threshold against the LEG-relative progress
+     *  (outboundT for `leg: 'out'`, returnT for `leg: 'return'`). */
     arcThreshold: number;
-    arcPosition: number;
     label: () => string;
   }
-  const FD_PHASE_BOUNDARIES: FdPhaseBoundary[] = [
-    {
-      id: 'departure',
-      arcThreshold: 0.0,
-      arcPosition: 0.0,
-      label: () => m.fly_fd_marker_departure(),
-    },
+  const FD_STAGES: FdStage[] = [
+    // Outbound leg — INJECTION sits at LAUNCH (no diamond, the LAUNCH
+    // ring is its visual anchor); CRUISE/APPROACH/ARRIVAL diamonds
+    // sit at each stage's START so the diamond appears at the exact
+    // point on the arc where the FD banner switches to that phase.
     {
       id: 'injection',
-      arcThreshold: 0.02,
-      // Marker sits AT the phase-entry point on the trajectory (was
-      // 0.1 to space it out from departure; user feedback 2026-06-08
-      // preferred truthful placement at the exact phase boundary +
-      // per-index label stagger to handle overlap, vs lying about
-      // where the phase actually starts).
-      arcPosition: 0.02,
+      leg: 'out',
+      tickArc: 0.0,
+      arcThreshold: 0.0,
       label: () => m.fly_fd_marker_injection(),
     },
     {
       id: 'cruise',
-      arcThreshold: 0.1,
-      arcPosition: 0.1,
+      leg: 'out',
+      tickArc: 0.03,
+      arcThreshold: 0.03,
       label: () => m.fly_fd_marker_cruise(),
     },
     {
       id: 'approach',
+      leg: 'out',
+      tickArc: 0.8,
       arcThreshold: 0.8,
-      arcPosition: 0.8,
       label: () => m.fly_fd_marker_approach(),
     },
     {
       id: 'arrival',
+      leg: 'out',
+      tickArc: 0.95,
       arcThreshold: 0.95,
-      arcPosition: 0.95,
+      label: () => m.fly_fd_marker_arrival(),
+    },
+    // Return leg — only render on round-trip missions (retPts.length
+    // > 0). The cadence mirrors the outbound: CRUISE just past Mars
+    // depart, APPROACH closing on Earth, ARRIVAL at the Earth-return
+    // ring. Reuses the same i18n keys because the semantic beat is
+    // identical.
+    {
+      id: 'cruise-return',
+      leg: 'return',
+      tickArc: 0.03,
+      arcThreshold: 0.03,
+      label: () => m.fly_fd_marker_cruise(),
+    },
+    {
+      id: 'approach-earth',
+      leg: 'return',
+      tickArc: 0.8,
+      arcThreshold: 0.8,
+      label: () => m.fly_fd_marker_approach(),
+    },
+    {
+      id: 'arrival-earth',
+      leg: 'return',
+      tickArc: 0.95,
+      arcThreshold: 0.95,
       label: () => m.fly_fd_marker_arrival(),
     },
   ];
   interface FdPhaseMarkerRender {
-    id: FdPhaseBoundary['id'];
+    id: FdStage['id'];
     label: string;
-    screen: ScreenPoint;
+    tickScreen: ScreenPoint;
+    showTick: boolean;
     revealed: boolean;
   }
   let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
@@ -414,6 +455,13 @@
   let arrMarker: THREE.Mesh | undefined;
   let depLabelSprite: THREE.Sprite | undefined;
   let arrLabelSprite: THREE.Sprite | undefined;
+  // Round-trip return anchor — third torus + label at retPts[last]
+  // (Earth on return-arrival day). Visible only when the loaded
+  // mission has a non-empty retPts geometry (round-trip / sample
+  // return / free-return). Distinct teal chrome so it doesn't read
+  // as a duplicate of the blue LAUNCH ring at Earth-on-dep.
+  let retMarker: THREE.Mesh | undefined;
+  let retLabelSprite: THREE.Sprite | undefined;
   // Moon's orbit-ring around Earth — visible only during cislunar
   // missions. Hoisted so the marker $effect can re-position it onto
   // Earth and toggle visibility per-mode.
@@ -488,13 +536,15 @@
   // until they exist. Sprites float ~6u above the marker rings so
   // they don't z-fight with the ring geometry.
   $effect(() => {
-    // Read state FIRST so Svelte 5 tracks outPts + isMoonMission as
-    // deps even on the bail-out path (refs not yet defined). Same
-    // tracking-bug shape as the arc-rebuild $effect: the initial run
-    // early-returns before reading either, so subsequent mission
+    // Read state FIRST so Svelte 5 tracks outPts + isMoonMission +
+    // retPts as deps even on the bail-out path (refs not yet defined).
+    // Same tracking-bug shape as the arc-rebuild $effect: the initial
+    // run early-returns before reading them, so subsequent mission
     // loads never re-run this effect and the markers stay invisible.
     const arc = outPts;
     const moonMode = isMoonMission;
+    const retArcLen = retPts.length;
+    void retArcLen;
     if (!depMarker || !arrMarker || !depLabelSprite || !arrLabelSprite) return;
     if (arc.length === 0) return;
     // Moon mode uses much smaller marker rings that hug the Earth and
@@ -537,6 +587,29 @@
     arrMarker.visible = true;
     depLabelSprite.visible = true;
     arrLabelSprite.visible = true;
+    // Round-trip RETURN anchor — sits at retPts[last], which is the
+    // Earth heliocentric position on the return-arrival day. Hidden
+    // unless the mission carries a return arc.
+    if (retMarker && retLabelSprite) {
+      if (retPts.length >= 2) {
+        const retLast = retPts[retPts.length - 1];
+        const retX = retLast.x * SCALE_3D;
+        const retZ = retLast.z * SCALE_3D;
+        const retGeom = retMarker.geometry as THREE.TorusGeometry;
+        if (retGeom?.parameters?.radius !== markerRadius) {
+          retMarker.geometry.dispose();
+          retMarker.geometry = new THREE.TorusGeometry(markerRadius, markerTube, 12, 64);
+          retLabelSprite.scale.set(labelW, labelH, 1);
+        }
+        retMarker.position.set(retX, 0, retZ);
+        retLabelSprite.position.set(retX, labelY, retZ);
+        retMarker.visible = true;
+        retLabelSprite.visible = true;
+      } else {
+        retMarker.visible = false;
+        retLabelSprite.visible = false;
+      }
+    }
     // Moon's orbit ring: visible in moon mode, anchored to Earth's
     // live heliocentric position so it tracks correctly through the
     // ~year-long Earth orbit even on long cislunar mission loads.
@@ -560,21 +633,42 @@
     const moonMode = isMoonMission;
     const dest = activeDestination;
     const depLabel = mission.dep_label || '—';
-    const arrLabel = mission.arr_label || '—';
+    const arrLabelData = mission.arr_label || '—';
+    const isRoundTrip = retPts.length > 0;
     if (!flyUpdaters) return;
-    // Label both ends "LAUNCH" / "ARRIVAL" to match the 2D canvas
-    // anchor labels — the destination is already implied by the arc
-    // colour (Mars-red torus etc.) and the date stamp on line 2.
-    const arrName = 'ARRIVAL';
     const arrColor = moonMode ? DESTINATION_LABEL_COLORS.moon : DESTINATION_LABEL_COLORS[dest];
-    flyUpdaters.helio.refreshLabelSprites(
-      'LAUNCH',
-      depLabel,
-      '#4b9cd3',
-      arrName,
-      arrLabel,
-      arrColor,
-    );
+    // For round-trips the ARRIVAL ring sits at the destination's
+    // flyby/arrival position while a separate RETURN ring sits at
+    // Earth-on-return-day. Override the per-mission arr_label data
+    // (which describes the mission's terminal event = Earth return)
+    // with a position-accurate "<destination> arrival" subtitle, and
+    // give the RETURN ring an "Earth arrival" subtitle. One-way
+    // missions keep the original arr_label behaviour because their
+    // arrival ring genuinely sits at the labelled point.
+    const destDisplay = dest.charAt(0).toUpperCase() + dest.slice(1);
+    const arrSubLabel = isRoundTrip ? `${destDisplay} arrival` : arrLabelData;
+    if (isRoundTrip) {
+      flyUpdaters.helio.refreshLabelSprites(
+        'LAUNCH',
+        depLabel,
+        '#4b9cd3',
+        'ARRIVAL',
+        arrSubLabel,
+        arrColor,
+        'RETURN',
+        'Earth arrival',
+        '#4b9cd3',
+      );
+    } else {
+      flyUpdaters.helio.refreshLabelSprites(
+        'LAUNCH',
+        depLabel,
+        '#4b9cd3',
+        'ARRIVAL',
+        arrSubLabel,
+        arrColor,
+      );
+    }
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -2050,36 +2144,6 @@
     scSprite.renderOrder = 999;
     scene.add(scSprite);
 
-    // Flyby ring — gold torus around Mars at closest approach
-    const flybyRing = new THREE.Mesh(
-      new THREE.TorusGeometry(4.0, 0.18, 8, 48),
-      new THREE.MeshBasicMaterial({
-        color: 0xffc850,
-        transparent: true,
-        opacity: 0.6,
-        depthWrite: false,
-      }),
-    );
-    flybyRing.rotation.x = Math.PI / 2;
-    flybyRing.visible = false;
-    scene.add(flybyRing);
-
-    // RETURN marker — cyan crosshair ring at Earth-arrival position so
-    // the user can see where the spacecraft is heading on the return
-    // leg. Visible during the return phase only (progress ≥ 0.5).
-    const returnRing = new THREE.Mesh(
-      new THREE.TorusGeometry(3.4, 0.16, 8, 48),
-      new THREE.MeshBasicMaterial({
-        color: 0x4ecdc4,
-        transparent: true,
-        opacity: 0.55,
-        depthWrite: false,
-      }),
-    );
-    returnRing.rotation.x = Math.PI / 2;
-    returnRing.visible = false;
-    scene.add(returnRing);
-
     // DEPARTURE + ARRIVAL anchor markers — fixed rings at the
     // mission's launch and landing positions. v0.1.9: scaled up
     // (radius 5u vs 3u) and given Sprite labels ("LAUNCH", "ARRIVAL")
@@ -2108,6 +2172,24 @@
     );
     arrMarker.rotation.x = Math.PI / 2;
     scene.add(arrMarker);
+    // Round-trip RETURN anchor — third torus at retPts[last] (Earth
+    // on return-arrival day). Hidden by default; the $effect below
+    // toggles visibility based on retPts.length. Same blue as LAUNCH
+    // because both rings sit at Earth — visually consistent "this is
+    // Earth" anchors, distinguished by the LAUNCH/RETURN sprite label
+    // rather than by colour.
+    retMarker = new THREE.Mesh(
+      new THREE.TorusGeometry(12, 0.25, 12, 64),
+      new THREE.MeshBasicMaterial({
+        color: 0x4b9cd3,
+        transparent: true,
+        opacity: 0.85,
+        depthWrite: false,
+      }),
+    );
+    retMarker.rotation.x = Math.PI / 2;
+    retMarker.visible = false;
+    scene.add(retMarker);
 
     // Moon's orbit ring around Earth — only visible during cislunar
     // missions. Radius = MOON_FLY_RADIUS_AU × SCALE_3D so it lines up
@@ -2169,20 +2251,30 @@
     };
     const dep = buildLabelSprite();
     const arr = buildLabelSprite();
+    const ret = buildLabelSprite();
     depLabelSprite = dep.sprite;
     arrLabelSprite = arr.sprite;
+    retLabelSprite = ret.sprite;
     const depCanvas = dep.canvas;
     const arrCanvas = arr.canvas;
+    const retCanvas = ret.canvas;
     drawLabelTexture(depCanvas, 'LAUNCH', '—', '#4b9cd3');
     drawLabelTexture(arrCanvas, 'ARRIVAL', '—', '#c1440e');
+    drawLabelTexture(retCanvas, 'RETURN', '—', '#4b9cd3');
     (depLabelSprite.material.map as THREE.Texture).needsUpdate = true;
     (arrLabelSprite.material.map as THREE.Texture).needsUpdate = true;
+    (retLabelSprite.material.map as THREE.Texture).needsUpdate = true;
+    retLabelSprite.visible = false;
     scene.add(depLabelSprite);
     scene.add(arrLabelSprite);
+    scene.add(retLabelSprite);
 
-    // Refresh callback for the LAUNCH / ARRIVAL sprite textures.
-    // Published via flyUpdaters.helio.refreshLabelSprites at end of
-    // onMount; the $effect at component scope calls it on mission swap.
+    // Refresh callback for the LAUNCH / ARRIVAL / RETURN sprite
+    // textures. Published via flyUpdaters.helio.refreshLabelSprites at
+    // the end of onMount; the $effect at component scope calls it on
+    // mission swap. Ret params are optional — passed only when the
+    // loaded mission is a round-trip (retPts.length > 0); otherwise
+    // the ret sprite stays hidden and its texture is left untouched.
     const refreshSpriteTextures = (
       depLine1: string,
       depLine2: string,
@@ -2190,6 +2282,9 @@
       arrLine1: string,
       arrLine2: string,
       arrColor: string,
+      retLine1?: string,
+      retLine2?: string,
+      retColor?: string,
     ) => {
       drawLabelTexture(depCanvas, depLine1, depLine2, depColor);
       drawLabelTexture(arrCanvas, arrLine1, arrLine2, arrColor);
@@ -2197,6 +2292,11 @@
       const arrTex = (arrLabelSprite!.material as THREE.SpriteMaterial).map;
       if (depTex) depTex.needsUpdate = true;
       if (arrTex) arrTex.needsUpdate = true;
+      if (retLine1 != null && retLine2 != null && retColor != null) {
+        drawLabelTexture(retCanvas, retLine1, retLine2, retColor);
+        const retTex = (retLabelSprite!.material as THREE.SpriteMaterial).map;
+        if (retTex) retTex.needsUpdate = true;
+      }
     };
 
     // Camera
@@ -2225,6 +2325,20 @@
     const helioAutoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
     let lastHelioSubPhase: string | null = null;
     const HELIO_CLOSEUP_R = 40;
+    // Earth return closeup distance. A previous iteration tried 30 to
+    // hug Earth more tightly, but that read as "too zoomed in" and
+    // the depart-from-Mars pull-out couldn't reach it gracefully —
+    // the Earth approach felt like a hard cut in too early. 50 keeps
+    // Earth recognisable in frame with breathing room around the
+    // RETURN ring + scene composition.
+    const HELIO_EARTH_CLOSEUP_R = 50;
+    // Approach pitch tilt — during the final 8 % of outbound/return the
+    // auto-zoom raises camP from its default cruise value (1.05 ≈ 60° off
+    // zenith) to APPROACH_P (≈ 49°) for a steeper, more cinematic descent
+    // angle on the destination. Other sub-phases target the cruise default.
+    const HELIO_CRUISE_P = 1.05;
+    const HELIO_APPROACH_P = 0.85;
+    let helioAutoZoomTargetP = HELIO_CRUISE_P;
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -2233,58 +2347,90 @@
       const earthScene = new THREE.Vector3(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
       const dPosLive = destinationPos(simDay, activeDestination);
       const destScene = new THREE.Vector3(dPosLive.x * SCALE_3D, 0, dPosLive.z * SCALE_3D);
+      // Live spacecraft scene position (AU × SCALE_3D).
+      const scScene = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      // Cruise centre = midpoint of (spacecraft, Sun). Equivalent to
+      // weighting the camera target 50 % ship, 50 % origin. Pure
+      // ship-tracking pulled the whole composition to whichever side
+      // of the Sun the ship happened to be on; the 50/50 blend keeps
+      // Sun and ship roughly equidistant from the camera target so
+      // both stay near the centre of the frame while the ship is
+      // still always in view through zoom-in / zoom-out lerps.
+      const cruiseCentreX = scScene.x * 0.5;
+      const cruiseCentreZ = scScene.z * 0.5;
 
       let sub: string;
       let centerX: number;
       let centerZ: number;
       let targetR: number;
+      let targetP = HELIO_CRUISE_P;
       if (sc.phase === 'pre-launch') {
+        // Open framed close on Earth at the same zoom level as
+        // Mars-arrival — symmetric "depart / arrive" beats so the
+        // mission reads with a cinematic arc: close on Earth → slow
+        // pull out to wide cruise → slow zoom in on Mars → flyby →
+        // slow pull out → slow zoom in on Earth on return.
         sub = 'prelaunch';
         centerX = earthScene.x;
         centerZ = earthScene.z;
-        targetR = HELIO_CLOSEUP_R;
+        targetR = HELIO_EARTH_CLOSEUP_R;
       } else if (sc.phase === 'arrived') {
         sub = 'arrived';
         // Round-trip missions end at Earth; one-way ends at destination.
         const endAtEarth = retPts.length > 0;
         centerX = endAtEarth ? earthScene.x : destScene.x;
         centerZ = endAtEarth ? earthScene.z : destScene.z;
-        targetR = HELIO_CLOSEUP_R;
+        targetR = endAtEarth ? HELIO_EARTH_CLOSEUP_R : HELIO_CLOSEUP_R;
+        targetP = HELIO_APPROACH_P;
       } else if (sc.phase === 'outbound') {
         const t = sc.progress * 2; // 0→1 across outbound
-        if (t < 0.15) {
+        if (t < 0.05) {
+          // Depart — short hold on Earth at the closeup zoom; the slow
+          // LERP then carries the pull-out into cruise over several
+          // seconds of wall-clock for a cinematic feel.
           sub = 'depart';
           centerX = earthScene.x;
           centerZ = earthScene.z;
-          targetR = HELIO_CLOSEUP_R;
-        } else if (t > 0.85) {
+          targetR = HELIO_EARTH_CLOSEUP_R;
+        } else if (t > 0.8) {
           sub = 'approach';
           centerX = destScene.x;
           centerZ = destScene.z;
           targetR = HELIO_CLOSEUP_R;
+          targetP = HELIO_APPROACH_P;
         } else {
           sub = 'cruise-out';
-          centerX = (earthScene.x + destScene.x) / 2;
-          centerZ = (earthScene.z + destScene.z) / 2;
+          centerX = cruiseCentreX;
+          centerZ = cruiseCentreZ;
           targetR = wide;
         }
       } else {
         // return
         const t = (sc.progress - 0.5) * 2; // 0→1 across return
-        if (t < 0.15) {
+        if (t < 0.05) {
+          // Depart-return — track the spacecraft as it leaves Mars,
+          // not Mars itself. Anchoring on Mars made the ship exit
+          // frame quickly as it accelerated away on the return arc
+          // (Mars stays put, ship moves). Following the ship keeps
+          // it centred while Mars drifts off naturally.
           sub = 'depart-return';
-          centerX = destScene.x;
-          centerZ = destScene.z;
+          centerX = scScene.x;
+          centerZ = scScene.z;
           targetR = HELIO_CLOSEUP_R;
-        } else if (t > 0.85) {
+        } else if (t > 0.9) {
+          // Approach-earth engages later (0.9 vs 0.8) so the camera
+          // doesn't snap to Earth too early — the closer trigger
+          // gives the final stretch of cruise more time to read
+          // before the zoom-in begins.
           sub = 'approach-earth';
           centerX = earthScene.x;
           centerZ = earthScene.z;
-          targetR = HELIO_CLOSEUP_R;
+          targetR = HELIO_EARTH_CLOSEUP_R;
+          targetP = HELIO_APPROACH_P;
         } else {
           sub = 'cruise-back';
-          centerX = (earthScene.x + destScene.x) / 2;
-          centerZ = (earthScene.z + destScene.z) / 2;
+          centerX = cruiseCentreX;
+          centerZ = cruiseCentreZ;
           targetR = wide;
         }
       }
@@ -2294,6 +2440,7 @@
       }
       helioAutoZoomTargetR = targetR;
       helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
+      helioAutoZoomTargetP = targetP;
     }
 
     const updateCam = () => {
@@ -2308,19 +2455,26 @@
         camTarget.set(((ePos.x + mPos.x) / 2) * SCALE_3D, 0, ((ePos.z + mPos.z) / 2) * SCALE_3D);
       } else {
         updateHelioAutoZoomTargets();
-        // Same dual-rate pattern as cislunar: stronger lerp during
-        // sub-phase transitions, gentle drift otherwise so the camera
-        // keeps tracking Earth/destination as they orbit.
+        // Slow cinematic lerps — at 60 fps, LERP=0.010 takes ~7 s to
+        // converge to a fresh sub-phase target; TRACK=0.006 drifts
+        // even slower for the idle steady-cam between transitions.
+        // Prior values (0.022 / 0.015) read as a snap-cut when the
+        // depart-from-Mars sub-phase pulled out to wide cruise — the
+        // pull-out lasted barely a second of wall-clock. camP is
+        // lerped in both modes so the approach pitch tilt resolves
+        // smoothly into the cruise default.
         if (helioAutoZoomActive) {
-          const LERP = 0.022;
+          const LERP = 0.01;
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
+          camP += (helioAutoZoomTargetP - camP) * LERP;
           if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
         } else {
-          const TRACK = 0.015;
+          const TRACK = 0.006;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * TRACK;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * TRACK;
+          camP += (helioAutoZoomTargetP - camP) * TRACK;
         }
       }
       camera.position.set(
@@ -2517,14 +2671,16 @@
       // Fresh mission → re-arm auto-zoom from the first phase.
       lastAutoZoomPhase = null;
       autoZoomActive = true;
-      // Heliocentric: re-arm sub-phase tracking. Start framed on Earth
-      // so the departure close-up reads immediately instead of lerping
-      // from wide.
+      // Heliocentric: re-arm sub-phase tracking. Open framed CLOSE on
+      // Earth at the same zoom level the camera will reach when it
+      // arrives at the destination — symmetric "depart / arrive"
+      // composition. From there the slow cruise LERP pulls back to
+      // the wide Sun-centred framing as the mission begins.
       lastHelioSubPhase = null;
       if (!isMoonMission) {
         const ePos = earthPos(simDay);
         camTarget.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-        camR = HELIO_CLOSEUP_R;
+        camR = HELIO_EARTH_CLOSEUP_R;
         helioAutoZoomActive = true;
       }
       updateCam();
@@ -3207,11 +3363,31 @@
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
-      // Moon-mode: re-aim the camera at the live Earth heliocentric
-      // position each frame so the Earth+Moon system stays centred as
-      // Earth orbits the Sun. Mars-mode keeps the static Sun-centred
-      // framing — early-bail to avoid the heliocentric position recompute.
-      if (isMoonMission) updateCam();
+      // Steady-cam azimuthal drift during the heliocentric cruise
+      // sub-phases — the camera slowly orbits the spacecraft (cruise
+      // centre tracks the ship) for a "tracking shot from a steady
+      // pod above the orbital plane" feel. Skipped under reduced-
+      // motion, while the user is dragging the camera, while a sub-
+      // phase transition is mid-lerp, and during Moon-mode. 0.05 rad/s
+      // ≈ a full 360° orbit every ~125 s of wall-clock — slow enough
+      // to feel like cinematography, fast enough to read as motion
+      // across the ~half-minute cruise hold.
+      if (
+        !isMoonMission &&
+        !reducedMotion &&
+        !isDrag &&
+        !helioAutoZoomActive &&
+        (lastHelioSubPhase === 'cruise-out' || lastHelioSubPhase === 'cruise-back')
+      ) {
+        camT += 0.05 * dt;
+      }
+      // Re-aim the helio camera each frame so the sub-phase auto-zoom
+      // lerps (depart → cruise → approach → arrival) actually advance —
+      // updateHelioAutoZoomTargets needs to be re-sampled with the
+      // live spacecraft + planet positions and the lerp inside updateCam
+      // has to run per-frame to converge. Moon-mode additionally needs
+      // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
+      updateCam();
 
       // Moon-mode rendering: heliocentric, same framing as Mars.
       // Sun + Earth orbit visible in the background; Earth at its
@@ -3268,18 +3444,21 @@
       // arc regardless of curvature.
       scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
 
-      // Phase-based visibility: once the spacecraft has launched, the
-      // LAUNCH marker becomes redundant clutter; once it has arrived,
-      // the ARRIVAL marker and the entire arc are mission-history —
-      // the scene "freezes" to just the planets continuing their orbits.
+      // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
+      // visible from pre-launch through the entire flight so the user
+      // can always see where the mission started and where it's going;
+      // both hide on arrival together with the trajectory line so the
+      // scene "freezes" to just the planets continuing their orbits.
       // Spacecraft sprite also hides on arrival.
       const phaseNow = sc.phase;
-      const beforeLaunch = phaseNow === 'pre-launch';
       const afterArrival = phaseNow === 'arrived';
-      if (depMarker) depMarker.visible = beforeLaunch;
-      if (depLabelSprite) depLabelSprite.visible = beforeLaunch;
+      if (depMarker) depMarker.visible = !afterArrival;
+      if (depLabelSprite) depLabelSprite.visible = !afterArrival;
       if (arrMarker) arrMarker.visible = !afterArrival;
       if (arrLabelSprite) arrLabelSprite.visible = !afterArrival;
+      const showRet = !afterArrival && retPts.length >= 2;
+      if (retMarker) retMarker.visible = showRet;
+      if (retLabelSprite) retLabelSprite.visible = showRet;
       if (outLine) outLine.visible = !afterArrival;
       if (retLine) retLine.visible = !afterArrival && retPts.length >= 2;
       scSprite.visible = !afterArrival;
@@ -3436,25 +3615,6 @@
       // space (visible because the camera is also looking at origin).
       // Hide them entirely for Moon missions — Earth + Moon meshes
       // already mark the start/end of the cislunar trajectory.
-      // Flyby + return rings now anchor to the *arc's own waypoints*
-      // (outPts at the flyby index, retPts terminus for return),
-      // instead of recomputing heliocentric Mars/Earth per frame. The
-      // previous formula made the gold ring "blink near Mars" while
-      // neither the spacecraft nor the arc was actually there — the
-      // V∞-shaped arc and Mars's live position diverge by ~0.05 AU.
-      if (outPts.length > 0) {
-        const flybyIdx = Math.floor(0.95 * (outPts.length - 1));
-        const fp = outPts[flybyIdx];
-        flybyRing.position.set(fp.x * SCALE_3D, 0, fp.z * SCALE_3D);
-      }
-      flybyRing.visible = !isMoonMission && sc.progress >= 0.45 && sc.progress <= 0.55;
-      if (retPts.length > 0) {
-        const rp = retPts[retPts.length - 1];
-        returnRing.position.set(rp.x * SCALE_3D, 0, rp.z * SCALE_3D);
-      }
-      returnRing.visible =
-        !isMoonMission && isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
-
       if (view === '3d' && container) {
         // Per-frame cislunar updates.
         const moonPos = moonEciPos(simDay);
@@ -3815,25 +3975,59 @@
           phaseMarkerScreens = [];
         }
 
-        // FlightDirectorBanner phase markers (heliocentric only — Moon
-        // missions already have the cislunar PhaseMarker pipeline). Same
-        // projection path as `interplanetaryPhaseMarkers`; positions are
-        // sampled from outPts at each boundary's arcPosition.
+        // FlightDirectorBanner stage markers (heliocentric only — Moon
+        // missions already have the cislunar PhaseMarker pipeline). Each
+        // stage projects ONE point: a diamond tick on the path at the
+        // stage's startArc — the chip's leader line ends at that
+        // diamond, so the label visually anchors to the trajectory
+        // (not to a Sun-derived midpoint). The Sun's projected position
+        // is still passed so each chip can push itself off the Sun blob.
         if (viewMode === 'heliocentric' && outPts.length >= 2 && container && factory) {
           const fdNext: FdPhaseMarkerRender[] = [];
           const cwFd = container.clientWidth;
           const chFd = container.clientHeight;
-          for (const b of FD_PHASE_BOUNDARIES) {
-            const idx = Math.max(
-              0,
-              Math.min(outPts.length - 1, Math.round(b.arcPosition * (outPts.length - 1))),
-            );
-            const pt = outPts[idx];
+          const outLastIdx = outPts.length - 1;
+          const retLastIdx = retPts.length - 1;
+          const hasReturnArc = retPts.length >= 2;
+          // Leg-relative progress (0 → 1 across each leg's own arc),
+          // used to gate stage reveal. For round-trip missions
+          // arcProgress is normalised over the WHOLE mission so an
+          // outbound-arrival threshold at 0.95 wouldn't fire until ~95%
+          // of the round-trip = deep into the return leg. Leg-relative
+          // progress keeps stage thresholds intuitive on both one-way
+          // and round-trip missions.
+          const outboundT =
+            sc.phase === 'pre-launch' ? 0 : sc.phase === 'outbound' ? sc.progress * 2 : 1;
+          const returnT =
+            sc.phase === 'pre-launch' || sc.phase === 'outbound'
+              ? 0
+              : sc.phase === 'return'
+                ? (sc.progress - 0.5) * 2
+                : 1;
+          for (const s of FD_STAGES) {
+            // Skip return-leg stages on one-way missions (no retPts).
+            if (s.leg === 'return' && !hasReturnArc) continue;
+            const arc = s.leg === 'out' ? outPts : retPts;
+            const lastIdx = s.leg === 'out' ? outLastIdx : retLastIdx;
+            const legT = s.leg === 'out' ? outboundT : returnT;
+            const tickIdx = Math.max(0, Math.min(lastIdx, Math.round(s.tickArc * lastIdx)));
+            const tickPt = arc[tickIdx];
             fdNext.push({
-              id: b.id,
-              label: b.label(),
-              screen: helioAuToScreenPx({ x: pt.x, y: 0, z: pt.z }, factory, camera, cwFd, chFd),
-              revealed: arcProgress >= b.arcThreshold,
+              id: s.id,
+              label: s.label(),
+              tickScreen: helioAuToScreenPx(
+                { x: tickPt.x * SCALE_3D, y: 0, z: tickPt.z * SCALE_3D },
+                factory,
+                camera,
+                cwFd,
+                chFd,
+              ),
+              // INJECTION hides its diamond + leader because the LAUNCH
+              // ring at the same arc position is the visual anchor.
+              // ARRIVAL-EARTH similarly suppresses its diamond because
+              // the RETURN ring at retPts[last] sits right there.
+              showTick: s.id !== 'injection' && s.id !== 'arrival-earth',
+              revealed: legT >= s.arcThreshold,
             });
           }
           fdPhaseMarkerScreens = fdNext;
@@ -3979,9 +4173,10 @@
     >
       {#each fdPhaseMarkerScreens as marker, slot (marker.id)}
         <FdPhaseMarkerLabel
-          screenX={marker.screen.x}
-          screenY={marker.screen.y}
-          onScreen={marker.screen.onScreen}
+          tickScreenX={marker.tickScreen.x}
+          tickScreenY={marker.tickScreen.y}
+          onScreen={marker.tickScreen.onScreen}
+          showTick={marker.showTick}
           label={marker.label}
           revealed={marker.revealed}
           {slot}
@@ -4422,7 +4617,11 @@
        with no alignment + the conic panel disappearing behind CAPCOM). -->
   <div class="fly-bottom-strips">
     <div class="fly-fd-anchor">
-      <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+      <FlightDirectorBanner
+        scPhase={scState.phase}
+        progress={scState.progress}
+        isRoundTrip={retPts.length > 0}
+      />
     </div>
     {#if showConicPanel}
       <div class="fly-conic-anchor">

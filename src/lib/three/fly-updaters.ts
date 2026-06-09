@@ -46,8 +46,11 @@ export interface HelioUpdater {
    *  HelioSceneHandles.setDestination so wave-B callers can address
    *  the helio updater as one typed object. */
   applyDestination(id: DestinationId): void;
-  /** Refresh the LAUNCH / ARRIVAL sprite labels (two-line texture:
-   *  role label + date stamp). Called on mission load + mode flip. */
+  /** Refresh the LAUNCH / ARRIVAL / RETURN sprite labels (two-line
+   *  texture: role label + date stamp). Called on mission load + mode
+   *  flip. RETURN triple is optional — provided only for round-trip
+   *  missions; one-way missions leave the ret sprite untouched and
+   *  hidden. */
   refreshLabelSprites(
     depName: string,
     depLabel: string,
@@ -55,6 +58,9 @@ export interface HelioUpdater {
     arrName: string,
     arrLabel: string,
     arrColor: string,
+    retName?: string,
+    retLabel?: string,
+    retColor?: string,
   ): void;
 }
 

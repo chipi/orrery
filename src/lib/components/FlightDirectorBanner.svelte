@@ -2,14 +2,18 @@
   FlightDirectorBanner — Science Lens narration on /fly that reflows
   with the simulation. Concept #3 in the science integrations roadmap.
 
-  Replaces the static ScienceLensBanner on /fly: instead of one fixed
-  blurb, the title/body/link rotate through five physics phases based
-  on the current arcProgress. Like a flight director on console.
+  Phase cadence mirrors the FD stage markers on the /fly arc
+  (FD_STAGES in src/routes/fly/+page.svelte). For a one-way mission:
+    INJECTION → CRUISE → APPROACH → ARRIVAL
+  For a round-trip mission (e.g. ORRERY-1 free return) the return leg
+  layers a second pass on top:
+    INJECTION → CRUISE → APPROACH → ARRIVAL (Mars)
+                         → CRUISE → APPROACH → ARRIVAL (Earth)
 
-  Phase boundaries are progress-based (0.0–1.0 along the arc), not
-  event-based, so it works the same on Curiosity (254-day cruise) and
-  ORRERY-1 (509-day free return). Only renders when the global Science
-  Lens toggle is on (data-science-lens="on" on <html>).
+  Phase boundaries are LEG-relative progress (0..1 across the leg's
+  own arc), not whole-mission arcProgress, so APPROACH at 0.8 fires
+  at the same point on outbound and return. Only renders when the
+  global Science Lens toggle is on.
 
   i18n: phase narration text is held in messages/en-US.json under
   fly_fd_* keys; tab/section pointers are language-neutral and live
@@ -22,109 +26,142 @@
   import * as m from '$lib/paraglide/messages.js';
   import type { ScienceTabId } from '$types/science';
 
+  type ScPhase = 'pre-launch' | 'outbound' | 'return' | 'arrived';
   type Props = {
-    /** 0..1 along the arc (0 = at departure, 1 = at arrival). */
-    arcProgress: number;
+    /** Current sc.phase from spacecraftPos — determines which leg's
+     *  progress to gate phase reveal against. */
+    scPhase: ScPhase;
+    /** sc.progress — 0..0.5 across outbound, 0.5..1 across return. */
+    progress: number;
+    /** True for round-trip missions (retPts.length > 0). When false,
+     *  the banner stops at ARRIVAL and never enters the return-leg
+     *  phases. */
+    isRoundTrip: boolean;
   };
-  let { arcProgress }: Props = $props();
+  let { scPhase, progress, isRoundTrip }: Props = $props();
 
   type Phase = {
-    id: 'departure' | 'injection' | 'cruise' | 'approach' | 'arrival';
+    id:
+      | 'injection'
+      | 'cruise'
+      | 'approach'
+      | 'arrival'
+      | 'cruise-return'
+      | 'approach-earth'
+      | 'arrival-earth';
+    /** Word shown in the eyebrow next to "FLIGHT DIRECTOR · PHASE ·".
+     *  Return-leg phases reuse the outbound display words (CRUISE,
+     *  APPROACH, ARRIVAL) so the cadence reads consistently with the
+     *  diamond chips on the arc. */
+    displayName: string;
     title: string;
     body: string;
     tab: ScienceTabId;
     section: string;
   };
 
+  // Leg-relative progress (0..1 across each leg's own arc).
+  let outboundT = $derived(
+    scPhase === 'pre-launch' ? 0 : scPhase === 'outbound' ? progress * 2 : 1,
+  );
+  let returnT = $derived(
+    scPhase === 'pre-launch' || scPhase === 'outbound'
+      ? 0
+      : scPhase === 'return'
+        ? (progress - 0.5) * 2
+        : 1,
+  );
+
+  // Phase definitions — outbound first, then return-leg counterparts
+  // reusing the same content (the physics narration is the same on
+  // both legs; the diamond + banner cadence keeps the user oriented).
+  const INJECTION: Phase = {
+    id: 'injection',
+    displayName: 'INJECTION',
+    title: m.fly_fd_phase_injection_title(),
+    body: m.fly_fd_phase_injection_body(),
+    tab: 'mission-phases',
+    section: 'trans-x-injection',
+  };
+  const CRUISE_OUT: Phase = {
+    id: 'cruise',
+    displayName: 'CRUISE',
+    title: m.fly_fd_phase_cruise_title(),
+    body: m.fly_fd_phase_cruise_body(),
+    tab: 'transfers',
+    section: 'hohmann-transfer',
+  };
+  const APPROACH_OUT: Phase = {
+    id: 'approach',
+    displayName: 'APPROACH',
+    title: m.fly_fd_phase_approach_title(),
+    body: m.fly_fd_phase_approach_body(),
+    tab: 'propulsion',
+    section: 'v-infinity',
+  };
+  const ARRIVAL_OUT: Phase = {
+    id: 'arrival',
+    displayName: 'ARRIVAL',
+    title: m.fly_fd_phase_arrival_title(),
+    body: m.fly_fd_phase_arrival_body(),
+    tab: 'mission-phases',
+    section: 'orbit-insertion',
+  };
+  const CRUISE_RETURN: Phase = {
+    ...CRUISE_OUT,
+    id: 'cruise-return',
+  };
+  const APPROACH_EARTH: Phase = {
+    ...APPROACH_OUT,
+    id: 'approach-earth',
+  };
+  const ARRIVAL_EARTH: Phase = {
+    ...ARRIVAL_OUT,
+    id: 'arrival-earth',
+  };
+
   let phase = $derived<Phase>(
-    arcProgress <= 0.02
-      ? {
-          id: 'departure',
-          title: m.fly_fd_phase_departure_title(),
-          body: m.fly_fd_phase_departure_body(),
-          tab: 'propulsion',
-          section: 'c3',
-        }
-      : arcProgress <= 0.1
-        ? {
-            id: 'injection',
-            title: m.fly_fd_phase_injection_title(),
-            body: m.fly_fd_phase_injection_body(),
-            tab: 'mission-phases',
-            section: 'trans-x-injection',
-          }
-        : arcProgress <= 0.8
-          ? {
-              id: 'cruise',
-              title: m.fly_fd_phase_cruise_title(),
-              body: m.fly_fd_phase_cruise_body(),
-              tab: 'transfers',
-              section: 'hohmann-transfer',
-            }
-          : arcProgress <= 0.95
-            ? {
-                id: 'approach',
-                title: m.fly_fd_phase_approach_title(),
-                body: m.fly_fd_phase_approach_body(),
-                tab: 'propulsion',
-                section: 'v-infinity',
-              }
-            : {
-                id: 'arrival',
-                title: m.fly_fd_phase_arrival_title(),
-                body: m.fly_fd_phase_arrival_body(),
-                tab: 'mission-phases',
-                section: 'orbit-insertion',
-              },
+    scPhase === 'outbound' || scPhase === 'pre-launch'
+      ? outboundT < 0.03
+        ? INJECTION
+        : outboundT < 0.8
+          ? CRUISE_OUT
+          : outboundT < 0.95
+            ? APPROACH_OUT
+            : ARRIVAL_OUT
+      : !isRoundTrip
+        ? ARRIVAL_OUT
+        : scPhase === 'arrived'
+          ? ARRIVAL_EARTH
+          : returnT < 0.8
+            ? CRUISE_RETURN
+            : returnT < 0.95
+              ? APPROACH_EARTH
+              : ARRIVAL_EARTH,
   );
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
-  let bannerEl: HTMLElement | null = $state(null);
-  let resizeObs: ResizeObserver | null = null;
   let expanded = $state(true);
 
-  // Publish height to --lens-banner-height so the layers panel sits
-  // cleanly below the banner. Mirrors ScienceLensBanner.
-  function publishHeight(h: number) {
-    if (typeof document === 'undefined') return;
-    document.documentElement.style.setProperty('--lens-banner-height', `${h}px`);
-  }
-  function clearHeight() {
-    if (typeof document === 'undefined') return;
-    document.documentElement.style.removeProperty('--lens-banner-height');
-  }
+  // Note: the legacy publishHeight() / --lens-banner-height logic was
+  // removed when /fly moved the FD banner into the bottom-strips
+  // layout (no longer top-anchored). Publishing the banner height
+  // there caused the top-anchored ScienceLayersPanel to lerp down by
+  // the FD banner's offsetHeight, dropping it into the canvas centre.
 
   onMount(() => {
     stop = onScienceLensChange((v) => {
       lensOn = v;
-      if (!v) clearHeight();
     });
   });
   onDestroy(() => {
     stop?.();
-    resizeObs?.disconnect();
-    clearHeight();
-  });
-
-  $effect(() => {
-    resizeObs?.disconnect();
-    resizeObs = null;
-    if (!bannerEl) {
-      clearHeight();
-      return;
-    }
-    publishHeight(bannerEl.offsetHeight);
-    resizeObs = new ResizeObserver(() => {
-      if (bannerEl) publishHeight(bannerEl.offsetHeight);
-    });
-    resizeObs.observe(bannerEl);
   });
 </script>
 
 {#if lensOn}
   <section
-    bind:this={bannerEl}
     class="banner"
     class:collapsed={!expanded}
     data-testid="flight-director-banner"
@@ -140,7 +177,7 @@
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
     </button>
     <div class="banner-eyebrow">
-      {m.fly_fd_eyebrow()} · {m.fly_fd_phase_label({ phase: phase.id.toUpperCase() })}
+      {m.fly_fd_eyebrow()} · {m.fly_fd_phase_label({ phase: phase.displayName })}
     </div>
     {#if expanded}
       <a class="banner-body-link" href="{base}/science/{phase.tab}/{phase.section}">

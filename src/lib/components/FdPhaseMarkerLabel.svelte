@@ -1,75 +1,116 @@
 <!--
-  FdPhaseMarkerLabel — gold trajectory marker for the 5 FlightDirector
-  narrative phases (departure / injection / cruise / approach / arrival).
+  FdPhaseMarkerLabel — gold trajectory stage marker for the 4 FlightDirector
+  narrative stages (injection / cruise / approach / arrival).
 
-  Unlike PhaseMarkerLabel (cislunar / interplanetary event markers, with
-  reveal-state machine + ScienceChip link), this is purely a visual cue
-  that the FD banner is announcing this phase. Markers appear as the
-  spacecraft's arcProgress crosses each phase threshold and stay visible
-  for the rest of the run.
+  Renders per stage:
+    - a small diamond tick on the path at the stage's tickArc position
+      (suppressed for INJECTION because LAUNCH ring is its anchor)
+    - a labelled chip floating directly above the diamond with a thin
+      vertical leader line. Per-slot horizontal stagger keeps adjacent
+      stages from piling chips when their tickArcs project close
+      together in screen space.
+
+  The chip-above-diamond layout is intentional: any Sun-aware push
+  pulls the chip along the sun-to-diamond axis, which makes the leader
+  visually "point at the Sun" even when it terminates at the diamond.
+  A purely vertical leader avoids that reading.
 
   Styled gold to match the FD banner chrome (same #ffc850 accent) so the
   two read as one announcement system.
 -->
 <script lang="ts">
   interface Props {
-    /** Where to position the marker (CSS px relative to its container). */
-    screenX: number;
-    screenY: number;
-    /** Hidden when the boundary projects outside the canvas. */
+    /** Diamond tick position on the path. */
+    tickScreenX: number;
+    tickScreenY: number;
+    /** Hidden when the tick projects outside the canvas. */
     onScreen: boolean;
-    /** Uppercase phase name shown in the label chip. */
+    /** True for cruise/approach/arrival; false for injection (LAUNCH ring covers it). */
+    showTick: boolean;
+    /** Uppercase stage name shown in the chip. */
     label: string;
-    /** True once arcProgress ≥ this phase's threshold. */
+    /** True once arcProgress ≥ this stage's threshold. */
     revealed: boolean;
-    /** 0-based slot — drives the per-label vertical stagger so the
-     *  5 markers don't pile their text on top of each other when the
-     *  trajectory points project close together in screen space (e.g.
-     *  zoomed-out heliocentric view where departure/injection/cruise
-     *  all crowd near the inner planets). */
+    /** 0-based slot — drives horizontal chip stagger so adjacent
+     *  stages with close-projected ticks don't pile chips on top of
+     *  each other. */
     slot?: number;
   }
-  let { screenX, screenY, onScreen, label, revealed, slot = 0 }: Props = $props();
+  let {
+    tickScreenX,
+    tickScreenY,
+    onScreen,
+    showTick,
+    label,
+    revealed,
+    slot = 0,
+  }: Props = $props();
 
-  // Stagger ~18 px per slot relative to the dot — first label sits
-  // 8 px above the dot, each subsequent one drops 18 px lower. Keeps
-  // every label paired with its own marker via a thin connector line.
-  let labelTop = $derived(-8 + slot * 18);
+  const VERT_OFFSET = 32;
+  const HORZ_STAGGER = 56;
+
+  let chipPos = $derived({
+    x: tickScreenX + (slot - 1.5) * HORZ_STAGGER,
+    y: tickScreenY - VERT_OFFSET,
+  });
+
+  let leader = $derived.by(() => {
+    const dx = chipPos.x - tickScreenX;
+    const dy = chipPos.y - tickScreenY;
+    return {
+      len: Math.hypot(dx, dy),
+      angle: Math.atan2(dy, dx),
+    };
+  });
 </script>
 
 {#if onScreen && revealed}
-  <div
-    class="fd-marker"
-    style="left: {screenX}px; top: {screenY}px;"
-    data-testid="fd-phase-marker"
-    data-fd-phase={label}
-  >
-    <span class="dot" aria-hidden="true"></span>
-    <span class="label" style="top: {labelTop}px;">{label}</span>
+  <div class="fd-marker" data-testid="fd-phase-marker" data-fd-phase={label}>
+    {#if showTick}
+      <span class="diamond" style="left: {tickScreenX}px; top: {tickScreenY}px;" aria-hidden="true"
+      ></span>
+    {/if}
+    <!-- Leader always renders: even when the diamond is suppressed
+         (INJECTION + ARRIVAL-EARTH, both anchored by the LAUNCH /
+         RETURN rings at Earth), the leader still ties the chip to
+         the underlying anchor position so the labels don't read as
+         "floating alone" in screen space. -->
+    <span
+      class="leader"
+      style="left: {tickScreenX}px; top: {tickScreenY}px; width: {leader.len}px; transform: rotate({leader.angle}rad);"
+      aria-hidden="true"
+    ></span>
+    <span class="chip" style="left: {chipPos.x}px; top: {chipPos.y}px;">{label}</span>
   </div>
 {/if}
 
 <style>
   .fd-marker {
     position: absolute;
-    transform: translate(-50%, -50%);
+    inset: 0;
     pointer-events: none;
-    z-index: 12;
     user-select: none;
     animation: fd-pop 320ms ease-out;
   }
-  .dot {
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ffc850;
-    box-shadow: 0 0 8px rgba(255, 200, 80, 0.7);
-  }
-  .label {
+  .diamond {
     position: absolute;
-    left: 12px;
-    top: -8px;
+    width: 5px;
+    height: 5px;
+    background: #ffc850;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 2px rgba(255, 200, 80, 0.65);
+    z-index: 12;
+  }
+  .leader {
+    position: absolute;
+    height: 1px;
+    background: rgba(255, 200, 80, 0.55);
+    transform-origin: 0 50%;
+    z-index: 11;
+  }
+  .chip {
+    position: absolute;
+    transform: translate(-50%, -50%);
     white-space: nowrap;
     padding: 2px 6px;
     background: rgba(8, 10, 22, 0.92);
@@ -82,15 +123,14 @@
     text-transform: uppercase;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    z-index: 13;
   }
   @keyframes fd-pop {
     from {
       opacity: 0;
-      transform: translate(-50%, -50%) scale(0.6);
     }
     to {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
     }
   }
   @media (prefers-reduced-motion: reduce) {

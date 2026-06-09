@@ -4560,7 +4560,14 @@
                more confusing than helpful). -->
           {@const vw = typeof window !== 'undefined' ? window.innerWidth : 1400}
           {@const chipX = m.state === 'active' ? vw / 2 : m.state === 'past' ? vw - 220 : 220}
-          {@const chipY = m.state === 'active' ? 130 : 220 + idx * 40}
+          <!-- Active chip is anchored at its BOTTOM (CSS transform
+               translate(-50%, -100%)) so the leader line connects to
+               the chip's bottom edge — feels natural reading "leader
+               rises from arc up to the descriptive card above the
+               canvas". chipY for the active state is therefore the
+               BOTTOM of the chip; we bump it to 280 so the ~150 px
+               active card (top at ~130) doesn't clip behind the nav. -->
+          {@const chipY = m.state === 'active' ? 280 : 220 + idx * 40}
           <span
             class="milestone-diamond"
             class:active={m.active}
@@ -5173,10 +5180,9 @@
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
-    /* Anchored at top-centre so chipX/Y refers to the chip's top
-       edge. The leader line ends at this point, so it never crosses
-       the chip body / text. The chip then extends DOWNWARD from the
-       anchor. */
+    /* Past + future chips anchor at top-centre (chipY = chip TOP);
+       active chip overrides this below to anchor at the bottom so
+       the leader line reaches the chip from below. */
     transform: translate(-50%, 0);
     padding: 6px 12px 7px;
     background: rgba(8, 10, 22, 0.94);
@@ -5215,6 +5221,10 @@
     box-shadow:
       0 6px 20px rgba(0, 0, 0, 0.55),
       0 0 0 1px rgba(94, 234, 212, 0.15);
+    /* Bottom-anchored — chipY refers to chip's bottom edge so the
+       leader line meets the chip from below, never crossing the
+       description text. */
+    transform: translate(-50%, -100%);
   }
   .milestone-label {
     color: rgba(255, 255, 255, 0.98);

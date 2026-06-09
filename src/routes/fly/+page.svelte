@@ -4558,12 +4558,18 @@
             style="left: {m.screen.x}px; top: {m.screen.y}px;"
             aria-hidden="true"
           ></span>
-          <span
-            class="milestone-leader"
-            class:active={m.active}
-            style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(chipX - m.screen.x, chipY - m.screen.y)}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
-            aria-hidden="true"
-          ></span>
+          <!-- Leader only renders for the ACTIVE chip — past chips
+               dock in the corner and don't need a line back to their
+               distant diamond (the diagonal crossing-the-screen
+               leader was visually noisy). -->
+          {#if m.active}
+            <span
+              class="milestone-leader"
+              class:active={m.active}
+              style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(chipX - m.screen.x, chipY - m.screen.y)}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
+              aria-hidden="true"
+            ></span>
+          {/if}
           <span
             class="milestone-chip"
             class:active={m.active}

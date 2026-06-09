@@ -49,6 +49,34 @@
     const clamped = Math.max(MIN_YEAR, Math.min(MAX_YEAR, year));
     return (clamped - MIN_YEAR) / (MAX_YEAR - MIN_YEAR);
   }
+
+  // ─── Vertical row-packing ────────────────────────────────────────
+  // With 68+ missions concentrated in dense year-zones (1969-76
+  // Apollo / Luna, 1989-2003 outer-system, 2009-25 Mars rovers),
+  // dots at the same year overlap when rendered on a single row.
+  // Greedy row-packing same as StationTimelineStrip.svelte: sort by
+  // year, then for each mission assign the lowest row whose last-
+  // placed item's fraction differs by ≥ MIN_GAP. Capped at 4 rows so
+  // the strip stays a fixed height; overflowing items pack onto row 3.
+  const MIN_FRAC_GAP = 0.014; // ~1.4% of the strip width → ~8px dot + gap
+  const MAX_ROWS = 4;
+
+  const packedMissions = $derived.by(() => {
+    const sorted = missions
+      .slice()
+      .sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+    const rowLastFrac: number[] = [];
+    const out: Array<{ mission: Mission; row: number }> = [];
+    for (const mission of sorted) {
+      const frac = yearToFrac(mission.year);
+      let row = 0;
+      while (row < rowLastFrac.length && frac - rowLastFrac[row] < MIN_FRAC_GAP) row++;
+      if (row >= MAX_ROWS) row = MAX_ROWS - 1;
+      rowLastFrac[row] = frac;
+      out.push({ mission, row });
+    }
+    return out;
+  });
   function fracToYear(frac: number): number {
     const clamped = Math.max(0, Math.min(1, frac));
     return Math.round(MIN_YEAR + clamped * (MAX_YEAR - MIN_YEAR));
@@ -256,18 +284,19 @@
         <span class="now-label">NOW</span>
       </div>
 
-      {#each missions as mission (mission.id)}
+      {#each packedMissions as p (p.mission.id)}
         <button
           type="button"
           class="dot"
-          class:in-range={mission.year >= fromYear && mission.year <= toYear}
-          style:left="{yearToFrac(mission.year) * 100}%"
-          style:background-color={mission.color}
-          aria-label="{mission.name ?? mission.id}, {mission.year}"
-          title="{mission.name ?? mission.id} · {mission.year}"
+          class:in-range={p.mission.year >= fromYear && p.mission.year <= toYear}
+          style:left="{yearToFrac(p.mission.year) * 100}%"
+          style:--row={p.row}
+          style:background-color={p.mission.color}
+          aria-label="{p.mission.name ?? p.mission.id}, {p.mission.year}"
+          title="{p.mission.name ?? p.mission.id} · {p.mission.year}"
           onclick={(e) => {
             e.stopPropagation();
-            if (onSelectMission) onSelectMission(mission.id);
+            if (onSelectMission) onSelectMission(p.mission.id);
           }}
         ></button>
       {/each}
@@ -381,7 +410,10 @@
   }
   .dot {
     position: absolute;
-    top: 50%;
+    /* Vertical row position: 4 rows centered on the strip's midline.
+       Row 0 → -15px, row 1 → -5px, row 2 → +5px, row 3 → +15px.
+       The --row CSS var is set inline by the each-block. */
+    top: calc(50% + (var(--row, 0) * 10px) - 15px);
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;

@@ -985,6 +985,15 @@
 
     {#if timelineOpen}
       <div class="timeline-overlay" data-testid="iss-timeline">
+        <button
+          type="button"
+          class="timeline-close"
+          aria-label="Close timeline"
+          title="Close timeline"
+          onclick={() => (timelineOpen = false)}
+        >
+          ×
+        </button>
         <StationTimelineStrip
           modules={sortedModules}
           visitors={sortedVisitors}
@@ -1373,6 +1382,38 @@
     bottom: 0;
     z-index: 5;
     pointer-events: auto;
+  }
+  /* Close-button on the timeline overlay (mirrors the module-panel
+     close affordance). Sits in the top-right of the strip so users
+     can dismiss without hunting for the TIMELINE toggle. */
+  .timeline-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 6;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .timeline-close:hover,
+  .timeline-close:focus-visible {
+    background: rgba(0, 0, 0, 0.75);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    outline: none;
   }
   .hud-controls :global(button),
   .hud-controls :global(.toggle) {

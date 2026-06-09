@@ -2432,16 +2432,6 @@
      *  Lower values get tighter; 4 hits the Voyager-style "planet
      *  fills the frame" composition. */
     const FLYBY_BODY_R_MULTIPLIER = 4;
-
-    /** Cinema-frame target — set inside updateHelioAutoZoomTargets
-     *  when the flyby sub-phase is active. The animate loop reads
-     *  this to OVERRIDE the spacecraft glyph position so the ship
-     *  visibly sits near the flyby planet during the iconic shot,
-     *  even when the trajectory math puts it AU's away (the model
-     *  arc doesn't faithfully pass through each flyby waypoint).
-     *  Null when no flyby is active — ship renders at its math-derived
-     *  position. */
-    let cinemaFlybyBody: { x: number; z: number; size: number } | null = null;
     /** Fallback camR if we couldn't resolve the flyby body. */
     const HELIO_FLYBY_R_FALLBACK = 80;
 
@@ -2548,8 +2538,6 @@
       const cruiseCentreX = scScene.x * 0.5;
       const cruiseCentreZ = scScene.z * 0.5;
 
-      // Cleared each frame, populated inside the cinema branch below.
-      cinemaFlybyBody = null;
       // Detect an active flyby window. mission.flight.events is the
       // canonical roster; type='flyby' fires the cinema sub-phase.
       // met_days are mission-relative; convert to simDay by adding
@@ -2583,19 +2571,6 @@
         const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
         const flyby =
           findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
-        // Publish the flyby body's heliocentric position so the
-        // animate loop can render the spacecraft glyph "at" the body
-        // for the duration of the cinema window. Cleared below when
-        // cinema isn't active.
-        if (flyby) {
-          const bodyAu =
-            flyby.id === ('earth' as typeof flyby.id)
-              ? earthPos(simDay)
-              : destinationPos(simDay, flyby.id);
-          cinemaFlybyBody = { x: bodyAu.x, z: bodyAu.z, size: flyby.size };
-        } else {
-          cinemaFlybyBody = null;
-        }
         // Debug exposure for the chrome-devtools-mcp verification path.
         (window as unknown as Record<string, unknown>).__flyDebug = {
           activeFlybyMet,
@@ -3737,22 +3712,12 @@
       // Sprite glyph sits at sc.pos. No lookAt — sprites face the
       // camera by construction so the glyph is always centred on the
       // arc regardless of curvature.
-      // Cinema-override: during the flyby window, place the glyph
-      // "at" the flyby planet so it visibly appears in the iconic
-      // shot. The trajectory model's math-derived sc.pos is often
-      // AU's away from the actual flyby waypoint (Cassini at MET
-      // 894 was at 2.16 AU from Sun, nowhere near Earth's 1 AU);
-      // overriding to the planet position bridges the data-vs-
-      // narrative gap. A tiny offset puts the spacecraft visibly
-      // in front of the planet rather than centred behind it.
-      if (cinemaFlybyBody) {
-        const px = cinemaFlybyBody.x * SCALE_3D + cinemaFlybyBody.size * 0.6;
-        const pz = cinemaFlybyBody.z * SCALE_3D;
-        scSprite.position.set(px, 0, pz);
-        if (scModel) scModel.position.set(px, 0, pz);
-      } else {
-        scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
-        if (scModel) scModel.position.copy(scSprite.position);
+      scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      // Per-mission 3D model rides the same position. Visibility +
+      // arrival-hide handled by the same code path that owns scSprite
+      // a few lines below; here we only update the transform.
+      if (scModel) {
+        scModel.position.copy(scSprite.position);
       }
 
       // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay

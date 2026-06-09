@@ -103,8 +103,11 @@ describe('getMissionIndex', () => {
     // 2026-06-09 #311 Tier F — backfilled 4 missing /missions counterparts
     // for Tier B fleet entries (luna10, lunar-prospector, smart-1, change1).
     // 64 → 68.
+    // 2026-06-09 Right Stuff cross-reference — added 6 Mercury crewed
+    // flights (Freedom 7, Liberty Bell 7, Friendship 7, Aurora 7,
+    // Sigma 7, Faith 7). 68 → 74.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(68);
+    expect(missions).toHaveLength(74);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -336,9 +339,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 68 missions merged with their en-US overlays', async () => {
+  it('returns all 74 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(68);
+    expect(list).toHaveLength(74);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -369,7 +372,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(68);
+    expect(list).toHaveLength(74);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -1,0 +1,28 @@
+{
+  "id": "lc-5",
+  "name": "Launch Complex 5 (LC-5)",
+  "category": "launch-site",
+  "agency": "USAF / NASA",
+  "country": "USA",
+  "manufacturer": "USAF",
+  "first_flight": "1956-07-19",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)",
+  "credit": "Cape Canaveral Launch Complex 5 hosted Redstone IRBM tests (1956-1961) before being modified for NASA's Mercury-Redstone programme. Freedom 7 (1961-05-05, Shepard, first American in space) and Liberty Bell 7 (1961-07-21, Grissom) both launched from LC-5. The pad's blockhouse — heavy reinforced concrete with thick blast-resistant glass — survives intact and is part of the Cape Canaveral Air Force Station Museum, used as a Mercury programme exhibit space. The blockhouse interior preserves the period instrument panels, including the consoles where launch teams worked through the Cuban missile crisis. Final launch 1961-07-21 — LC-5 was retired after Liberty Bell 7 when NASA shifted to LC-14 for the Atlas-Mercury flights.",
+  "links": [
+    {
+      "l": "Cape Canaveral LC-5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Force_Station_Launch_Complex_5",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "freedom-7",
+    "liberty-bell-7"
+  ],
+  "linked_sites": [],
+  "lat": 28.4378,
+  "lon": -80.5728
+}

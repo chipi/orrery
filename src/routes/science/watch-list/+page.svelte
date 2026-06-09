@@ -85,6 +85,13 @@
       cover: '/images/recommendations/films/apollo-13.jpg',
     },
     {
+      title: 'The Right Stuff',
+      creator: 'Philip Kaufman · novel by Tom Wolfe',
+      year: 1983,
+      blurb:
+        "Three and a quarter hours on the Mercury 7 + Chuck Yeager's parallel test-pilot life at Edwards. Captures why the U.S. crewed-spaceflight program took the shape it did better than any history film. The Mercury hardware + the LC-5/LC-14 pad routines are recognisably accurate. Pair with /fleet?id=mercury-capsule + the 6 Mercury missions in /missions.",
+    },
+    {
       title: 'Moon',
       creator: 'Duncan Jones',
       year: 2009,

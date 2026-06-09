@@ -2842,5 +2842,41 @@
     "status": "RETIRED",
     "first_flight": "1971-05-19",
     "tagline": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 2 weeks). Operated 1971-11-27 to 1972-08"
+  },
+  {
+    "id": "mercury-redstone",
+    "name": "Mercury-Redstone",
+    "category": "launcher",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1960-11-21",
+    "tagline": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)"
+  },
+  {
+    "id": "lc-5",
+    "name": "Launch Complex 5 (LC-5)",
+    "category": "launch-site",
+    "agency": "USAF / NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1956-07-19",
+    "tagline": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)"
+  },
+  {
+    "id": "lc-14",
+    "name": "Launch Complex 14 (LC-14)",
+    "category": "launch-site",
+    "agency": "USAF / NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1957-06-11",
+    "tagline": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)"
   }
 ]

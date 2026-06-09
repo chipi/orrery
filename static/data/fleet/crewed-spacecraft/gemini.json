@@ -30,76 +30,44 @@
   ],
   "flights": [
     {
-      "mission_id": "gemini4",
-      "flight_designation": "Gemini 4 (1965-06-03) · first US EVA",
-      "crew": [
-        {
-          "name": "James McDivitt",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Edward White",
-          "role": "EVA pilot",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "gemini-3",
+      "flight_designation": "Gemini 3 (1965-03-23) · Molly Brown · Grissom + Young — first Gemini crewed flight; 3 orbits; Young smuggled corned-beef sandwich on board"
     },
     {
-      "mission_id": "gemini7",
-      "flight_designation": "Gemini 7 (1965-12-04) · first rendezvous",
-      "crew": [
-        {
-          "name": "Frank Borman",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "James Lovell",
-          "role": "Pilot",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "gemini-4",
+      "flight_designation": "Gemini 4 (1965-06-03) · McDivitt + White — first American EVA (Ed White, 23 min); 4-day mission"
     },
     {
-      "mission_id": "gemini8",
-      "flight_designation": "Gemini 8 (1966-03-16) · first docking",
-      "crew": [
-        {
-          "name": "Neil Armstrong",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "David Scott",
-          "role": "Pilot",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "gemini-5",
+      "flight_designation": "Gemini 5 (1965-08-21) · Cooper + Conrad — 8-day duration record; first fuel-cell-powered crewed flight"
     },
     {
-      "mission_id": "gemini12",
-      "flight_designation": "Gemini 12 (1966-11-11) · last Gemini",
-      "crew": [
-        {
-          "name": "James Lovell",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Buzz Aldrin",
-          "role": "EVA pilot",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "gemini-6a",
+      "flight_designation": "Gemini 6A (1965-12-15) · Schirra + Stafford — first crewed rendezvous (with Gemini 7, within 30 cm); skipped Gemini 6 after Agena failed"
+    },
+    {
+      "mission_id": "gemini-7",
+      "flight_designation": "Gemini 7 (1965-12-04) · Borman + Lovell — 14-day endurance record (stood for years); target for Gemini 6A rendezvous"
+    },
+    {
+      "mission_id": "gemini-8",
+      "flight_designation": "Gemini 8 (1966-03-16) · Neil Armstrong + Scott — first space docking (with Agena target); emergency abort after stuck thruster spun the stack"
+    },
+    {
+      "mission_id": "gemini-9a",
+      "flight_designation": "Gemini 9A (1966-06-03) · Stafford + Cernan — Cernan EVA exhausted him + fogged faceplate, informing Apollo EVA design"
+    },
+    {
+      "mission_id": "gemini-10",
+      "flight_designation": "Gemini 10 (1966-07-18) · Young + Collins — first multi-Agena rendezvous (own Agena 10 + Gemini 8s docked Agena); Collins recovered Gemini 8 ELS"
+    },
+    {
+      "mission_id": "gemini-11",
+      "flight_designation": "Gemini 11 (1966-09-12) · Conrad + Gordon — direct-ascent first-orbit rendezvous; record-altitude 1374 km on Agena tether"
+    },
+    {
+      "mission_id": "gemini-12",
+      "flight_designation": "Gemini 12 (1966-11-11) · Lovell + Aldrin — last Gemini; 5+ hours EVA proved choreographed crew tasks were feasible; cleared Apollo EVAs"
     }
   ]
 }

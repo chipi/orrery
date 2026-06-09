@@ -30,70 +30,32 @@
   ],
   "flights": [
     {
-      "mission_id": "soyuz-ms-01",
-      "flight_designation": "Soyuz MS-01 (2016-07-07) · first MS-class crew",
-      "crew": [
-        {
-          "name": "Anatoli Ivanishin",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Takuya Onishi",
-          "role": "Flight engineer",
-          "agency": "JAXA",
-          "country": "Japan"
-        },
-        {
-          "name": "Kate Rubins",
-          "role": "Flight engineer",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "soyuz-ms-04",
+      "flight_designation": "Soyuz MS-04 (2017-04-20) · Yurchikhin + Fischer — final two-person Soyuz crew (cargo Progress arrangement during ISS US-segment shutdown)"
     },
     {
       "mission_id": "soyuz-ms-10",
-      "flight_designation": "Soyuz MS-10 (2018-10-11) · launch abort, crew survived",
-      "crew": [
-        {
-          "name": "Aleksey Ovchinin",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Nick Hague",
-          "role": "Flight engineer",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Soyuz MS-10 (2018-10-11) · Ovchinin + Hague — ABORTED at T+119 s: Soyuz-FG strap-on jettison failure; crew survived ballistic re-entry at 6.7 g; first in-flight launch abort since 1983"
+    },
+    {
+      "mission_id": "soyuz-ms-15",
+      "flight_designation": "Soyuz MS-15 (2019-09-25) · Skripochka + Meir + Mansoor — first Emirati in space (Hazza Al Mansoori, UAE)"
+    },
+    {
+      "mission_id": "soyuz-ms-19",
+      "flight_designation": "Soyuz MS-19 (2021-10-05) · Shkaplerov + Shipenko + Peresild — first feature-film shoot in space (Klim Shipenko + actress Yuliya Peresild for \"The Challenge\")"
+    },
+    {
+      "mission_id": "soyuz-ms-20",
+      "flight_designation": "Soyuz MS-20 (2021-12-08) · Misurkin + Maezawa + Hirano — Yusaku Maezawa: first Japanese space tourist; first crewed Soyuz with 2 paying passengers"
     },
     {
       "mission_id": "soyuz-ms-22",
-      "flight_designation": "Soyuz MS-22 (2022-09-21) · coolant leak, MS-23 rescue",
-      "crew": [
-        {
-          "name": "Sergey Prokopyev",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Dmitri Petelin",
-          "role": "Flight engineer",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Frank Rubio",
-          "role": "Flight engineer · longest-ever single US spaceflight",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Soyuz MS-22 (2022-09-21) · Prokopyev + Petelin + Rubio — coolant leak 2022-12-15 forced rescue mission MS-23 (uncrewed)"
+    },
+    {
+      "mission_id": "soyuz-ms-23",
+      "flight_designation": "Soyuz MS-23 (2023-02-24) · UNCREWED · launched to replace leaky MS-22; brought MS-22 crew home 2023-09-27"
     }
   ]
 }

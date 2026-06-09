@@ -30,58 +30,28 @@
   ],
   "flights": [
     {
-      "mission_id": "soyuz1",
-      "flight_designation": "Soyuz 1 (1967-04-23) · fatal",
-      "crew": [
-        {
-          "name": "Vladimir Komarov",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "soyuz-1",
+      "flight_designation": "Soyuz 1 (1967-04-23) · Vladimir Komarov — FATAL: parachute tangled at landing after 18 orbits of attitude-control failures; first in-flight cosmonaut death"
     },
     {
-      "mission_id": "soyuz4",
-      "flight_designation": "Soyuz 4/5 (1969) · first crew transfer",
-      "crew": [
-        {
-          "name": "Vladimir Shatalov",
-          "role": "Soyuz 4 commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Boris Volynov",
-          "role": "Soyuz 5 commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "soyuz-3",
+      "flight_designation": "Soyuz 3 (1968-10-26) · Georgy Beregovoy — first Soviet flight after Komarov; attempted rendezvous with uncrewed Soyuz 2 (overshot)"
     },
     {
-      "mission_id": "soyuz11",
-      "flight_designation": "Soyuz 11 (1971) · fatal · first long-duration",
-      "crew": [
-        {
-          "name": "Georgy Dobrovolsky",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Vladislav Volkov",
-          "role": "Engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Viktor Patsayev",
-          "role": "Engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "soyuz-4",
+      "flight_designation": "Soyuz 4 (1969-01-14) · Vladimir Shatalov — docked with Soyuz 5; first crew transfer between two crewed spacecraft (via EVA)"
+    },
+    {
+      "mission_id": "soyuz-5",
+      "flight_designation": "Soyuz 5 (1969-01-15) · Volynov + Khrunov + Yeliseyev — Khrunov + Yeliseyev EVA-transferred to Soyuz 4; Volynov returned solo with descent module separation failure (survived)"
+    },
+    {
+      "mission_id": "soyuz-9",
+      "flight_designation": "Soyuz 9 (1970-06-01) · Nikolayev + Sevastyanov — 18-day endurance flight; longest crewed flight to date; informed Salyut programme design"
+    },
+    {
+      "mission_id": "soyuz-11",
+      "flight_designation": "Soyuz 11 (1971-06-06) · Dobrovolsky + Volkov + Patsayev — Salyut 1 first crew (23 days); FATAL: cabin depressurised at separation; crew killed"
     }
   ]
 }

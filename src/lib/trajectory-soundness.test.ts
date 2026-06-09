@@ -161,12 +161,12 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     if (
       mars.length !== 16 ||
       moon.length !== 31 ||
-      earth.length !== 2 ||
+      earth.length !== 8 ||
       outer.length !== 10 ||
       inner.length !== 5
     ) {
       throw new Error(
-        `Expected 16 Mars + 31 Moon + 2 Earth + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 16 Mars + 31 Moon + 8 Earth + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

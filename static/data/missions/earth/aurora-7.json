@@ -1,0 +1,40 @@
+{
+  "id": "aurora-7",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Space Task Group",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1962,
+  "status": "FLOWN",
+  "departure_date": "1962-05-24",
+  "arrival_date": "1962-05-24",
+  "transit_days": 0,
+  "vehicle": "Atlas LV-3B (MA-7)",
+  "payload": "Mercury capsule #18 (1956 kg); Scott Carpenter",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Mercury mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Mercury-Atlas 7 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Atlas_7",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "atlas-lv-3b",
+      "role": "launcher"
+    },
+    {
+      "id": "mercury-capsule",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-14",
+      "role": "launch-site"
+    }
+  ]
+}

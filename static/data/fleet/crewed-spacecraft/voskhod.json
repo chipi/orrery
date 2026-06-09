@@ -30,46 +30,12 @@
   ],
   "flights": [
     {
-      "mission_id": "voskhod1",
-      "flight_designation": "Voskhod 1 (1964-10-12) · first multi-crew",
-      "crew": [
-        {
-          "name": "Vladimir Komarov",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Konstantin Feoktistov",
-          "role": "Engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Boris Yegorov",
-          "role": "Physician",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "voskhod-1",
+      "flight_designation": "Voskhod 1 (1964-10-12) · Komarov + Feoktistov + Yegorov — first three-person crewed spaceflight; no spacesuits (fit three crew in a Vostok-derived hull)"
     },
     {
-      "mission_id": "voskhod2",
-      "flight_designation": "Voskhod 2 (1965-03-18) · first spacewalk",
-      "crew": [
-        {
-          "name": "Pavel Belyayev",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Alexei Leonov",
-          "role": "EVA pilot",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "voskhod-2",
+      "flight_designation": "Voskhod 2 (1965-03-18) · Belyayev + Leonov — first EVA (Leonov, 12 min); suit ballooned, required venting; manual landing in remote Urals forest"
     }
   ]
 }

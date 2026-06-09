@@ -1,0 +1,31 @@
+{
+  "id": "mercury-redstone",
+  "name": "Mercury-Redstone",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Chrysler Corporation",
+  "first_flight": "1960-11-21",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+  "credit": "The Mercury-Redstone launch vehicle was a man-rated derivative of the U.S. Army's Redstone ballistic missile, modified at NASA Marshall Space Flight Center for the suborbital Mercury crewed missions. Single-stage liquid-propellant (LOX + alcohol), 25 metres tall, 28 tonnes of thrust. The first crewed flight was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — the first American in space, 23 days after Gagarin. Mercury-Redstone 4 / Liberty Bell 7 followed (1961-07-21, Gus Grissom). After Liberty Bell 7's hatch malfunction, NASA moved the orbital Mercury flights to the more powerful Atlas LV-3B. Final flight 1961-07-21; total 6 Mercury-Redstone vehicles built, 2 crewed flights flown.",
+  "links": [
+    {
+      "l": "Mercury-Redstone — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_Launch_Vehicle",
+      "t": "intro"
+    },
+    {
+      "l": "Project Mercury — NASA history",
+      "u": "https://www.nasa.gov/history/project-mercury/",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [
+    "freedom-7",
+    "liberty-bell-7"
+  ],
+  "linked_sites": []
+}

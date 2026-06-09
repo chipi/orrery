@@ -6,7 +6,7 @@ import { test, expect, type Page } from '@playwright/test';
  * "MISSIONS" — only the page title + heading changed).
  *
  * Covers:
- *   - 68 mission cards render
+ *   - 74 mission cards render
  *   - dest filter narrows to 16 (Mars) / 31 (Moon) / 2 (Earth) / etc
  *   - status filter narrows correctly
  *   - URL params pre-apply on load
@@ -31,12 +31,12 @@ test.describe('/missions — catalog', () => {
   test('42 mission cards render', async ({ page }) => {
     await page.goto('/missions');
     const cards = page.locator('[data-testid^="mission-card-"]');
-    await expect(cards).toHaveCount(68, { timeout: 10_000 });
+    await expect(cards).toHaveCount(74, { timeout: 10_000 });
   });
 
   test('MARS filter shows 16 cards', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await expandFilters(page);
@@ -47,7 +47,7 @@ test.describe('/missions — catalog', () => {
 
   test('MOON filter shows 31 cards', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await expandFilters(page);
@@ -72,7 +72,7 @@ test.describe('/missions — catalog', () => {
     page,
   }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await expandFilters(page);
@@ -96,7 +96,7 @@ test.describe('/missions — catalog', () => {
 
   test('clicking a card opens the MissionPanel with mission data', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
@@ -109,7 +109,7 @@ test.describe('/missions — catalog', () => {
 
   test('FLY button navigates to /fly?mission=[id]', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
@@ -137,7 +137,7 @@ test.describe('/missions — catalog', () => {
 
   test('GALLERY tab renders thumbnails for a NASA mission (v0.1.8)', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
@@ -160,7 +160,7 @@ test.describe('/missions — catalog', () => {
 test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
   test('FLIGHT tab renders for a populated mission with real C3 + ∆v', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
@@ -178,7 +178,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
 
   test('FLIGHT tab shows caveat banner for sparse-data mission', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-mars3"]').click();
@@ -194,7 +194,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
     // "unknown" — MMX + Artemis 3 were promoted to "sparse" with
     // planned-mission caveats. This test guards the unknown-data path.
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-starship-demo"]').click();
@@ -208,7 +208,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
 test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
   test('timeline strip renders with mission dots', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     // Timeline lives inside the FILTERS strip (collapsed by default
@@ -245,7 +245,7 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
 
   test('out-of-range ?from clamps to 1957', async ({ page }) => {
     await page.goto('/missions?from=1900&to=2050');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     const fromHandle = page.getByRole('slider', { name: /FROM/i });
@@ -258,7 +258,7 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
 test.describe('/missions — flight-data quality badge (v0.1.13)', () => {
   test('Curiosity card shows MEASURED badge', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(74, {
       timeout: 10_000,
     });
     const card = page.locator('[data-testid="mission-card-curiosity"]');

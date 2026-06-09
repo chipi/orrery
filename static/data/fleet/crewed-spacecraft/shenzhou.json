@@ -31,87 +31,35 @@
   "flights": [
     {
       "mission_id": "shenzhou-5",
-      "flight_designation": "Shenzhou 5 (2003-10-15) · first Chinese in space",
-      "crew": [
-        {
-          "name": "Yang Liwei",
-          "role": "Taikonaut",
-          "agency": "CMSA",
-          "country": "China"
-        }
-      ]
+      "flight_designation": "Shenzhou 5 (2003-10-15) · Yang Liwei — first Chinese citizen in space; 14 orbits / 21 hours; made China the third nation with independent crewed spaceflight"
+    },
+    {
+      "mission_id": "shenzhou-6",
+      "flight_designation": "Shenzhou 6 (2005-10-12) · Fei Junlong + Nie Haisheng — first two-person Chinese crew; 5 days / 76 orbits"
     },
     {
       "mission_id": "shenzhou-7",
-      "flight_designation": "Shenzhou 7 (2008-09-25) · first Chinese EVA",
-      "crew": [
-        {
-          "name": "Zhai Zhigang",
-          "role": "Commander · first Chinese EVA",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Liu Boming",
-          "role": "Pilot",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Jing Haipeng",
-          "role": "Pilot",
-          "agency": "CMSA",
-          "country": "China"
-        }
-      ]
+      "flight_designation": "Shenzhou 7 (2008-09-25) · Zhai + Liu + Jing — Zhai Zhigang: first Chinese EVA (22 min); deployed BX-1 nano-satellite"
     },
     {
       "mission_id": "shenzhou-9",
-      "flight_designation": "Shenzhou 9 (2012-06-16) · first Chinese woman",
-      "crew": [
-        {
-          "name": "Jing Haipeng",
-          "role": "Commander",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Liu Wang",
-          "role": "Pilot",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Liu Yang",
-          "role": "Taikonaut · first Chinese woman in space",
-          "agency": "CMSA",
-          "country": "China"
-        }
-      ]
+      "flight_designation": "Shenzhou 9 (2012-06-16) · Jing + Liu Wang + Liu Yang — Liu Yang: first Chinese woman in space; first crewed dock with Tiangong-1"
     },
     {
-      "mission_id": "shenzhou-13",
-      "flight_designation": "Shenzhou 13 (2021-10-15) · first Tiangong long-duration",
-      "crew": [
-        {
-          "name": "Zhai Zhigang",
-          "role": "Commander",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Wang Yaping",
-          "role": "Operator · first Chinese woman EVA",
-          "agency": "CMSA",
-          "country": "China"
-        },
-        {
-          "name": "Ye Guangfu",
-          "role": "Operator",
-          "agency": "CMSA",
-          "country": "China"
-        }
-      ]
+      "mission_id": "shenzhou-11",
+      "flight_designation": "Shenzhou 11 (2016-10-17) · Jing + Chen Dong — 33-day mission to Tiangong-2; longest Chinese spaceflight at the time"
+    },
+    {
+      "mission_id": "shenzhou-14",
+      "flight_designation": "Shenzhou 14 (2022-06-05) · Chen + Liu + Cai — oversaw Tiangong station assembly (Wentian + Mengtian modules)"
+    },
+    {
+      "mission_id": "shenzhou-15",
+      "flight_designation": "Shenzhou 15 (2022-11-29) · Fei + Deng + Zhang — first Tiangong six-person handover (overlap with SZ-14)"
+    },
+    {
+      "mission_id": "shenzhou-19",
+      "flight_designation": "Shenzhou 19 (2024-10-29) · Cai + Song + Wang — current Tiangong crew (rotates with SZ-20)"
     }
   ]
 }

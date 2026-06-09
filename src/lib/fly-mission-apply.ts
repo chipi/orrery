@@ -3,10 +3,8 @@ import { type DestinationId } from '$lib/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
 import {
   buildSplineFromTrajectoryWaypoints,
-  parseWaypointDateToMet,
   type TrajectoryWaypoint,
 } from '$lib/trajectory-spline';
-import { destinationPos } from '$lib/mission-arc';
 import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
 import {
   buildInterplanetaryTrajectory,
@@ -238,62 +236,23 @@ export function computeMissionApply(
       });
     }
     const vInfKms = m.flight?.arrival?.v_infinity_km_s ?? null;
-    // Spline branch — when the caller has loaded the iconic-mission
-    // trajectory waypoints, build outPts from a Catmull-Rom spline.
-    // For LABELED waypoints we replace the /explore artistic position
-    // with the planet's actual heliocentric position at that MET so
-    // the trajectory genuinely hits each flyby planet (the spacecraft
-    // glyph then meets the planet for free). Unlabeled cruise
-    // waypoints are pulled in for the spline's curvature shape and
-    // axis-swapped to /fly's frame (/explore is (x,y) horizontal · z
-    // inclination → /fly is (x,z) horizontal · y inclination).
+    // Spline branch — pass /explore's labeled waypoints through
+    // UNCHANGED so /fly renders the same 3D shape /explore shows:
+    // outer-system y values (Jupiter 2.6, Saturn 4.0) become the
+    // dramatic vertical climb in /fly's Y-up Three.js frame, matching
+    // the user's "vertical, not flat" expectation. Planet meeting at
+    // flyby happens separately — the cinema sub-phase lifts the
+    // flyby planet's mesh to the spacecraft's spline position so
+    // they coincide visually without forcing the trajectory back
+    // to the ecliptic.
     let splineOut: Vec2[] | null = null;
     if (
       trajectoryOverride &&
       trajectoryOverride.waypoints.length >= 2 &&
       m.departure_date
     ) {
-      // Pre-process: for each waypoint, compute its MET and decide
-      // whether to use its position as-is (cruise waypoint, axis-
-      // swapped) or replace it with the actual planet position at
-      // that MET (labeled waypoint = the flyby anchor).
-      const anchored: TrajectoryWaypoint[] = [];
-      for (const wp of trajectoryOverride.waypoints) {
-        const met = parseWaypointDateToMet(wp.date, m.departure_date);
-        if (isNaN(met)) continue;
-        const planet = wp.label
-          ? labelToPlanetId(wp.label)
-          : null;
-        if (planet) {
-          const realPos =
-            planet === ('earth' as DestinationId)
-              ? earthPos(timeline.dep_day + met)
-              : destinationPos(timeline.dep_day + met, planet);
-          anchored.push({
-            date: wp.date,
-            label: wp.label,
-            x: realPos.x,
-            // /fly's y is vertical out-of-plane; planet stays in ecliptic.
-            y: 0,
-            // /fly's z is the second horizontal — destinationPos returns
-            // {x, z} so we write z directly.
-            z: realPos.z,
-          });
-        } else {
-          // Cruise waypoint — axis-swap from /explore (x,y,z) to /fly
-          // (x, z=y, y=z*VERTICAL_SCALE). The z (inclination) is small;
-          // we leave VERTICAL_SCALE = 1 so the path stays close to the
-          // ecliptic where /fly's destination meshes live.
-          anchored.push({
-            date: wp.date,
-            x: wp.x,
-            y: wp.z ?? 0,
-            z: wp.y ?? 0,
-          });
-        }
-      }
       const samples = buildSplineFromTrajectoryWaypoints(
-        anchored,
+        trajectoryOverride.waypoints,
         m.departure_date,
         ARC_STEPS + 1,
       );
@@ -327,32 +286,6 @@ export function computeMissionApply(
     simSpeed: isMoonMission ? 0.4 : 7,
     missionEvents: mergeFlightEvents(m.events, m.flight?.events),
   };
-}
-
-/** Parse a /explore waypoint label like "Venus #1 — gravity assist"
- *  or "Saturn orbit insertion" to a /fly DestinationId. Returns null
- *  when no planet name appears in the label (e.g. cruise waypoints
- *  with no label). Mirrors the parser used by the flyby cinema. */
-function labelToPlanetId(
-  label: string,
-): import('$lib/lambert-grid.constants').DestinationId | null {
-  const lower = label.toLowerCase();
-  const planets: Array<import('$lib/lambert-grid.constants').DestinationId> = [
-    'mercury',
-    'venus',
-    'mars',
-    'jupiter',
-    'saturn',
-    'uranus',
-    'neptune',
-  ];
-  for (const p of planets) {
-    if (lower.includes(p)) return p;
-  }
-  if (lower.includes('earth')) {
-    return 'earth' as import('$lib/lambert-grid.constants').DestinationId;
-  }
-  return null;
 }
 
 /** Result of applying a LocalizedScenario (e.g. ORRERY DEMO free-

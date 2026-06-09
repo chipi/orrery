@@ -29,6 +29,15 @@
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
+  import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
+  import {
+    type AssemblyState,
+    ANIM_WINDOW_MS,
+    captureHomes,
+    applyAssembly,
+    currentChip,
+    buildPiecewiseMapping,
+  } from '$lib/station-assembly-anim';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -53,6 +62,159 @@
   let autoSpin = $state(true);
   let indexOpen = $state(false);
   let timelineOpen = $state(false);
+  let assemblyOpen = $state(false);
+  let assemblyPlaying = $state(false);
+  /** Scrub progress 0..1 mapped onto [startEpoch, endEpoch]. */
+  let assemblyProgress = $state(0);
+  const ASSEMBLY_DURATION_MS = 50_000;
+
+  // Synthetic phases for the 7 visiting-craft first-arrival missions —
+  // each dock fly-in is tied to a real flagship mission so the chip
+  // narrative can name it. dockEventId values become userData.animModuleId
+  // on the visiting-craft meshes by mapping `dock-<visitorId>` → visitorId.
+  type DockEvent = {
+    id: string;
+    name: string;
+    launcher: string;
+    launch_date: string;
+  };
+  const DOCK_EVENTS: DockEvent[] = [
+    {
+      id: 'dock-soyuz_ms',
+      name: 'Soyuz TM-31 — Expedition 1 first crew aboard',
+      launcher: 'Soyuz-U · Krikalev + Gidzenko + Shepherd',
+      launch_date: '2000-10-31',
+    },
+    {
+      id: 'dock-progress_ms',
+      name: 'Progress M1-3 — first ISS resupply',
+      launcher: 'Soyuz-U · uncrewed cargo to Zarya',
+      launch_date: '2000-08-06',
+    },
+    {
+      id: 'dock-crew_dragon',
+      name: 'Crew Dragon Demo-2 — first commercial crew',
+      launcher: 'Falcon 9 · Behnken + Hurley',
+      launch_date: '2020-05-30',
+    },
+    {
+      id: 'dock-cargo_dragon',
+      name: 'Cargo Dragon CRS-21 — first Cargo Dragon 2',
+      launcher: 'Falcon 9 · upgraded cargo capsule',
+      launch_date: '2020-12-06',
+    },
+    {
+      id: 'dock-cygnus',
+      name: 'Cygnus Orb-D1 — first Orbital ATK resupply',
+      launcher: 'Antares · demonstration cargo flight',
+      launch_date: '2013-09-18',
+    },
+    {
+      id: 'dock-starliner',
+      name: 'Starliner CFT — first Boeing crewed flight',
+      launcher: 'Atlas V N22 · Wilmore + Williams',
+      launch_date: '2024-06-05',
+    },
+    {
+      id: 'dock-htv_x',
+      name: 'HTV-X1 — first H3-launched resupply',
+      launcher: 'H3 · JAXA / Mitsubishi cargo successor',
+      launch_date: '2025-10-26',
+    },
+  ];
+
+  // Synthetic phases for the 11 truss-segment / main-array STS missions
+  // + 3 EVA iROSA roll-out campaigns. Ids match userData.animModuleId
+  // tags assigned to truss segGroups / wingPair Groups / iROSA Meshes in
+  // src/lib/iss-proxy-model.ts so the assembly walker animates each part
+  // in at its real installation date instead of from frame 0.
+  type TrussPhase = {
+    id: string;
+    name: string;
+    launcher: string;
+    launch_date: string;
+  };
+  const TRUSS_PHASES: TrussPhase[] = [
+    {
+      id: 'truss-z1',
+      name: 'Z1 truss + PMA-3 (STS-92)',
+      launcher:
+        'STS-92 Discovery · Wisoff + López-Alegría + Chiao + McArthur + Wakata + Duffy + Melroy',
+      launch_date: '2000-10-11',
+    },
+    {
+      id: 'truss-p6',
+      name: 'P6 truss + first solar arrays (STS-97)',
+      launcher: 'STS-97 Endeavour · arrays 4A + 4B, first ISS solar power',
+      launch_date: '2000-12-01',
+    },
+    {
+      id: 'truss-s0',
+      name: 'S0 centre truss + Mobile Transporter (STS-110)',
+      launcher: 'STS-110 Atlantis · spine of the truss assembly',
+      launch_date: '2002-04-08',
+    },
+    {
+      id: 'truss-s1',
+      name: 'S1 starboard truss (STS-112)',
+      launcher: 'STS-112 Atlantis · CETA cart + S-band radio',
+      launch_date: '2002-10-07',
+    },
+    {
+      id: 'truss-p1',
+      name: 'P1 port truss (STS-113)',
+      launcher: 'STS-113 Endeavour · matching CETA on port side',
+      launch_date: '2002-11-23',
+    },
+    {
+      id: 'truss-p3p4',
+      name: 'P3/P4 truss + solar arrays 2A + 4A (STS-115)',
+      launcher: 'STS-115 Atlantis · first post-Columbia construction flight',
+      launch_date: '2006-09-09',
+    },
+    {
+      id: 'truss-p5',
+      name: 'P5 truss spacer (STS-116)',
+      launcher: 'STS-116 Discovery · port-side spacer for outboard P6',
+      launch_date: '2006-12-09',
+    },
+    {
+      id: 'truss-s3s4',
+      name: 'S3/S4 truss + solar arrays 1A + 3A (STS-117)',
+      launcher: 'STS-117 Atlantis · matching starboard pair',
+      launch_date: '2007-06-08',
+    },
+    {
+      id: 'truss-s5',
+      name: 'S5 truss spacer (STS-118)',
+      launcher: 'STS-118 Endeavour · starboard-side spacer',
+      launch_date: '2007-08-08',
+    },
+    {
+      id: 'truss-s6',
+      name: 'S6 truss + final solar arrays 1B + 3B (STS-119)',
+      launcher: 'STS-119 Discovery · completed the 8-wing solar array',
+      launch_date: '2009-03-15',
+    },
+    {
+      id: 'truss-irosa-1',
+      name: 'iROSA arrays 2A + 4A roll-out (Expedition 65)',
+      launcher: 'EVA roll-out on existing 2A + 4A mast bases',
+      launch_date: '2021-06-25',
+    },
+    {
+      id: 'truss-irosa-2',
+      name: 'iROSA arrays 3A + 4B roll-out (Expedition 67)',
+      launcher: 'EVA roll-out continuing the upgrade',
+      launch_date: '2022-12-22',
+    },
+    {
+      id: 'truss-irosa-3',
+      name: 'iROSA arrays 1A + 1B roll-out (Expedition 69)',
+      launcher: 'EVA roll-out completing the iROSA upgrade',
+      launch_date: '2023-06-15',
+    },
+  ];
   let hoverLabel: HoverLabel | undefined = $state();
 
   /** Reactive mirror of the 3D scene's hovered module id so the
@@ -79,6 +241,20 @@
     panelOpen: boolean;
     hoveredId: string | null;
   } = { selectedId: null, panelOpen: false, hoveredId: null };
+
+  // Shared between Svelte state + the Three.js animate() closure. Updating
+  // any field on the next frame applies it in-scene — no event plumbing.
+  const assemblyRef: {
+    active: boolean;
+    playing: boolean;
+    progress: number;
+  } = { active: false, playing: false, progress: 0 };
+
+  $effect(() => {
+    assemblyRef.active = assemblyOpen;
+    assemblyRef.playing = assemblyPlaying;
+    assemblyRef.progress = assemblyProgress;
+  });
 
   let requestIssMaterialRefresh: () => void = () => {};
   let resetIssCamera: () => void = () => {};
@@ -119,6 +295,82 @@
   let sortedVisitors = $derived(
     [...visitors].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
   );
+
+  // Assembly playback bounds: every module with a launch_date contributes
+  // a phase, plus the 7 synthetic visitor dock events (first-arrival
+  // missions). Sorted by launch_epoch so the chip narrative replays the
+  // real chronology.
+  const assemblyPhases = $derived.by(() => {
+    const moduleEntries = modules
+      .filter((m) => m.launch_date)
+      .map((m) => ({
+        id: m.id,
+        name: m.name,
+        launcher: m.launch_vehicle ?? '',
+        date: m.launch_date,
+        launch_epoch: Date.parse(m.launch_date),
+        pickableId: m.id,
+      }));
+    const dockEntries = DOCK_EVENTS.map((d) => {
+      // dock-soyuz_ms → soyuz_ms; dock-crew_dragon → crew_dragon; etc.
+      const pickableId = d.id.replace(/^dock-/, '');
+      return {
+        id: d.id,
+        name: d.name,
+        launcher: d.launcher,
+        date: d.launch_date,
+        launch_epoch: Date.parse(d.launch_date),
+        pickableId,
+      };
+    });
+    // Truss + iROSA install phases — no module/visitor to highlight,
+    // so pickableId is null. Chip stays as a date narrative; click is a
+    // no-op (onChipClick falls through when find() returns undefined).
+    const trussEntries = TRUSS_PHASES.map((t) => ({
+      id: t.id,
+      name: t.name,
+      launcher: t.launcher,
+      date: t.launch_date,
+      launch_epoch: Date.parse(t.launch_date),
+      pickableId: null as string | null,
+    }));
+    return [...moduleEntries, ...dockEntries, ...trussEntries].sort(
+      (a, b) => a.launch_epoch - b.launch_epoch,
+    );
+  });
+  const assemblyBounds = $derived.by(() => {
+    if (assemblyPhases.length === 0) return { startEpoch: 0, endEpoch: 0 };
+    return {
+      startEpoch: assemblyPhases[0].launch_epoch,
+      endEpoch: assemblyPhases[assemblyPhases.length - 1].launch_epoch,
+    };
+  });
+  const assemblyNowEpoch = $derived.by(() => {
+    if (assemblyPhases.length === 0) return 0;
+    const map = buildPiecewiseMapping(
+      assemblyPhases.map((p) => p.launch_epoch),
+      ANIM_WINDOW_MS,
+    );
+    return map(assemblyProgress);
+  });
+  const assemblyChip = $derived.by(() => {
+    if (!assemblyOpen) return null;
+    const c = currentChip(assemblyPhases, assemblyNowEpoch);
+    return c
+      ? { name: c.name, launcher: c.launcher, date: c.date, pickableId: c.pickableId }
+      : null;
+  });
+
+  // While assembly is playing, mirror the active phase's pickableId into
+  // issVisualRef.hoveredId so the existing selection-styling outline
+  // lights up the corresponding part of the station (modules + craft).
+  $effect(() => {
+    if (!assemblyOpen) return;
+    const hov = assemblyChip?.pickableId ?? null;
+    issVisualRef.hoveredId = hov;
+    canvasHoveredId = hov;
+    requestIssMaterialRefresh();
+  });
 
   // Blueprint module list — derives from MODULE_BOXES (canonical 3D
   // positions) plus structural elements (truss, main solar arrays, HRS
@@ -558,14 +810,118 @@
     });
 
     const meshById = new Map<string, THREE.Mesh[]>();
+    // Animation walks Mesh AND Group. Visiting-craft Groups (Soyuz,
+    // Progress, Crew/Cargo Dragon, Cygnus, Starliner, HTV-X) are animated
+    // as a single unit so their children — including solar panels — ride
+    // along with the parent. Skip any descendant whose ancestor is
+    // already animatable to avoid the parent + children double-animating
+    // out of sync. Selection styling (meshById) still walks every
+    // pickable child Mesh.
+    const allMeshes: { mesh: THREE.Object3D; id: string; kind: 'body' | 'appendage' | 'deploy' }[] =
+      [];
     station.traverse((o) => {
+      // Selection-styling registry — every pickable Mesh, regardless of
+      // whether an ancestor is the animation root.
       if (o instanceof THREE.Mesh && o.userData.stationPickable && o.userData.moduleId) {
         const mid = o.userData.moduleId as string;
         const arr = meshById.get(mid) ?? [];
         arr.push(o);
         meshById.set(mid, arr);
       }
+      const animId = (o.userData.animModuleId ?? o.userData.moduleId) as string | undefined;
+      if (!animId) return;
+      // Skip if any ancestor already carries an animatable id — the
+      // ancestor's animation is responsible for this whole subtree.
+      let p: THREE.Object3D | null = o.parent;
+      while (p && p !== station) {
+        if (p.userData.animModuleId || p.userData.moduleId) return;
+        p = p.parent;
+      }
+      let kind: 'body' | 'appendage' | 'deploy';
+      if (o.userData.deployAxis) kind = 'deploy';
+      else if (o.userData.stationPickable) kind = 'body';
+      else kind = 'appendage';
+      allMeshes.push({ mesh: o, id: animId, kind });
     });
+    // Cache resting transforms so the assembly animation can interpolate
+    // from a "launched-from-above" pose back to home, then restore home
+    // exactly when assembly mode exits.
+    const meshHomes = captureHomes(allMeshes.map((m) => m.mesh));
+
+    // Map animModuleId → launch epoch (ms). Pulled fresh each frame from
+    // the loaded module list + the synthetic DOCK_EVENTS + TRUSS_PHASES
+    // so any change in either flows through without a separate reactive
+    // plumb. Truss / iROSA segments fly in at their real STS / EVA install
+    // dates instead of appearing from frame 0.
+    function launchEpochOf(id: string): number {
+      const dock = DOCK_EVENTS.find((d) => d.id === id);
+      if (dock) return Date.parse(dock.launch_date);
+      const truss = TRUSS_PHASES.find((t) => t.id === id);
+      if (truss) return Date.parse(truss.launch_date);
+      const item = moduleListRef.list.find((x) => x.id === id);
+      if (!item || !item.launch_date) return Number.NaN;
+      return Date.parse(item.launch_date);
+    }
+
+    let assemblyLastWall = performance.now();
+    let assemblyApplied = false;
+    function applyAssemblyToScene(_timeSec: number) {
+      if (!assemblyRef.active) {
+        if (!assemblyApplied) return; // never touched — nothing to restore
+        // Restore home transforms once on exit.
+        for (const { mesh } of allMeshes) {
+          const home = meshHomes.get(mesh);
+          if (!home) continue;
+          mesh.position.copy(home.pos);
+          mesh.scale.copy(home.scale);
+          mesh.visible = home.visible;
+        }
+        assemblyApplied = false;
+        assemblyLastWall = performance.now();
+        return;
+      }
+      // Auto-advance progress when playing. Pause holds it where the
+      // user dragged it; manual scrub is the parent's responsibility.
+      const wall = performance.now();
+      const dt = wall - assemblyLastWall;
+      assemblyLastWall = wall;
+      if (assemblyRef.playing) {
+        assemblyProgress = Math.min(1, assemblyRef.progress + dt / ASSEMBLY_DURATION_MS);
+        if (assemblyProgress >= 1) assemblyPlaying = false;
+      }
+      // Combined module + dock-event timeline. Each gets its own slice
+      // of playback so the visiting spacecraft join in chronological
+      // order with their own narrative chip + fly-in animation.
+      const mods = modules.filter((x) => x.launch_date);
+      if (mods.length === 0) return;
+      const moduleEpochs = mods.map((x) => Date.parse(x.launch_date));
+      const dockEpochs = DOCK_EVENTS.map((d) => Date.parse(d.launch_date));
+      const trussEpochs = TRUSS_PHASES.map((t) => Date.parse(t.launch_date));
+      const epochs = [...moduleEpochs, ...dockEpochs, ...trussEpochs];
+      const startEpoch = Math.min(...epochs);
+      const endEpoch = Math.max(...epochs);
+      // Piecewise mapping: equal screen-time per distinct launch event.
+      // Avoids dragging through multi-year gaps in the assembly timeline.
+      const mapEpoch = buildPiecewiseMapping(epochs, ANIM_WINDOW_MS);
+      const nowEpoch = mapEpoch(assemblyRef.progress);
+      const state: AssemblyState = {
+        active: true,
+        nowEpoch,
+        startEpoch,
+        endEpoch,
+      };
+      for (const { mesh, id, kind } of allMeshes) {
+        const home = meshHomes.get(mesh);
+        if (!home) continue;
+        const launchEpoch = launchEpochOf(id);
+        if (Number.isNaN(launchEpoch)) {
+          mesh.visible = home.visible;
+          continue;
+        }
+        applyAssembly(mesh, home, state, launchEpoch, kind);
+      }
+      assemblyApplied = true;
+    }
 
     function refreshIssMeshMaterials(timeSec: number) {
       refreshStationSelectionStyling({
@@ -764,6 +1120,7 @@
       // Sun-tracking solar arrays — slow continuous rotation around each
       // array's SADA axis (one full revolution every ~4 minutes).
       tickSunTrackingArrays(station, t);
+      applyAssemblyToScene(t);
       refreshIssMeshMaterials(t);
       controls.update();
       // ADR-073 Layer B — distance from the orbit camera to the
@@ -1019,6 +1376,74 @@
       </div>
     {/if}
 
+    {#if assemblyOpen}
+      <StationAssemblyControl
+        playing={assemblyPlaying}
+        progress={assemblyProgress}
+        startEpoch={assemblyBounds.startEpoch}
+        endEpoch={assemblyBounds.endEpoch}
+        durationMs={ASSEMBLY_DURATION_MS}
+        latestChip={assemblyChip}
+        onTogglePlay={() => {
+          // If we're paused at the very end, treat play as "restart"
+          // — clicking ▶ on a finished timeline should replay it.
+          if (!assemblyPlaying && assemblyProgress >= 0.999) {
+            assemblyProgress = 0;
+          }
+          assemblyPlaying = !assemblyPlaying;
+        }}
+        onScrub={(p) => {
+          assemblyProgress = p;
+          assemblyPlaying = false;
+        }}
+        onReset={() => {
+          assemblyProgress = 0;
+          assemblyPlaying = true;
+        }}
+        onClose={() => {
+          assemblyOpen = false;
+          assemblyPlaying = false;
+        }}
+        onChipClick={(pickableId) => {
+          // Pause playback and open the panel for the active phase's
+          // pickable target — exactly the same flow as clicking a row
+          // in the MODULES drawer.
+          assemblyPlaying = false;
+          const target = [...sortedModules, ...sortedVisitors].find((x) => x.id === pickableId);
+          if (target) openModule(target);
+        }}
+      />
+    {/if}
+
+    <!-- Edge handles: MODULES on the left edge (the modules drawer
+         actually opens at left:12px), TIMELINE on the bottom edge
+         (overlay slides up from below). Hidden in list mode where the
+         page IS the modules list. -->
+    {#if viewMode !== 'list'}
+      <button
+        type="button"
+        class="edge-handle handle-left"
+        data-testid="iss-view-toggle"
+        aria-pressed={indexOpen}
+        aria-label={m.iss_btn_modules_title()}
+        title={m.iss_btn_modules_title()}
+        onclick={() => (indexOpen = !indexOpen)}
+      >
+        <span class="handle-label">MODULES</span>
+      </button>
+      <button
+        type="button"
+        class="edge-handle handle-bottom"
+        data-testid="iss-timeline-toggle"
+        aria-pressed={timelineOpen}
+        aria-label="Toggle ISS assembly timeline"
+        title="Chronological timeline of when each module + visitor joined the ISS"
+        onclick={() => (timelineOpen = !timelineOpen)}
+      >
+        <span class="handle-label">TIMELINE</span>
+      </button>
+    {/if}
+
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
     <div class="hud-controls" role="group" aria-label={m.iss_hud_aria()}>
@@ -1088,22 +1513,21 @@
           <button
             type="button"
             class="toggle"
-            data-testid="iss-view-toggle"
-            aria-pressed={indexOpen}
-            onclick={() => (indexOpen = !indexOpen)}
-            title={m.iss_btn_modules_title()}
+            data-testid="iss-assembly-toggle"
+            aria-pressed={assemblyOpen}
+            disabled={viewMode !== '3d'}
+            onclick={() => {
+              assemblyOpen = !assemblyOpen;
+              if (assemblyOpen) {
+                assemblyProgress = 0;
+                assemblyPlaying = true;
+              } else {
+                assemblyPlaying = false;
+              }
+            }}
+            title="Watch the station's modules + visitors join in chronological order"
           >
-            MODULES
-          </button>
-          <button
-            type="button"
-            class="toggle"
-            data-testid="iss-timeline-toggle"
-            aria-pressed={timelineOpen}
-            onclick={() => (timelineOpen = !timelineOpen)}
-            title="Chronological timeline of when each module + visitor joined the ISS"
-          >
-            TIMELINE
+            ASSEMBLY
           </button>
         </div>
       {:else}
@@ -1431,6 +1855,66 @@
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
+  }
+  /* Edge handles — pinned to the .iss-root edge from which the panel
+     they open will appear. Vertical on the left edge for MODULES,
+     horizontal at the bottom for TIMELINE. position:absolute (not fixed)
+     so they ride below the global nav and don't overlap unrelated UI. */
+  .edge-handle {
+    position: absolute;
+    background: rgba(8, 10, 22, 0.82);
+    color: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+  }
+  .edge-handle:hover {
+    background: rgba(40, 50, 80, 0.92);
+    color: #fff;
+  }
+  .edge-handle:focus-visible {
+    outline: 2px solid #6fb3ff;
+    outline-offset: 2px;
+  }
+  .edge-handle[aria-pressed='true'] {
+    background: rgba(60, 110, 200, 0.85);
+    color: #fff;
+    border-color: rgba(120, 180, 255, 0.55);
+  }
+  .handle-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 110px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+  }
+  .handle-left .handle-label {
+    display: inline-block;
+    writing-mode: vertical-rl;
+  }
+  .handle-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 24px;
+    min-width: 110px;
+    padding: 0 14px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: none;
+  }
+  .handle-bottom .handle-label {
+    display: inline-block;
+    line-height: 22px;
   }
   .hint {
     font-family: 'Space Mono', monospace;

@@ -22,6 +22,58 @@ import {
   makeWingPair,
   makeTwoSectionModule,
 } from './station-geometry';
+import { buildHullDecal } from './station-decals';
+
+/**
+ * Hull decal spec — flag + text painted on each main pressurised module's
+ * cylinder so the agency / national markings read clearly in the 3D view.
+ * Mirrors the Tianhe / Wentian / Mengtian decals on /tiangong.
+ */
+type DecalSpec = { flag: 'cn' | 'us' | 'ru' | 'jp' | 'esa' | 'ca'; text: string };
+const MODULE_DECALS: Partial<Record<IssModuleMeshId, DecalSpec>> = {
+  zarya: { flag: 'ru', text: 'ЗАРЯ · ZARYA' },
+  unity: { flag: 'us', text: 'UNITY · NODE 1' },
+  zvezda: { flag: 'ru', text: 'ЗВЕЗДА · ZVEZDA' },
+  destiny: { flag: 'us', text: 'DESTINY · NASA' },
+  quest: { flag: 'us', text: 'QUEST AIRLOCK' },
+  harmony: { flag: 'us', text: 'HARMONY · NODE 2' },
+  columbus: { flag: 'esa', text: 'COLUMBUS · ESA' },
+  kibo: { flag: 'jp', text: 'きぼう · KIBO' },
+  tranquility: { flag: 'us', text: 'TRANQUILITY · NODE 3' },
+  // No decal on cupola (hemisphere) or prichal (spherical hub) — they're
+  // not cylindrical, so a flat banner blows out their bbox and breaks the
+  // proxy-model dimension tests. Both are easily recognisable from their
+  // distinctive shapes alone.
+  nauka: { flag: 'ru', text: 'НАУКА · NAUKA' },
+};
+
+function attachHullDecal(host: THREE.Mesh, radius: number, spec: DecalSpec): void {
+  // Scale the decal to the host cylinder so a small module doesn't carry
+  // a giant label and large ones don't get a sub-millimetre sticker. The
+  // host's geometry.parameters.height is its long-axis length BEFORE the
+  // parent's own scale — proxy modules are sized at scale 1, so this is
+  // the world length. Cap width at ~55% of length so the text never
+  // wraps around the cylinder's far side.
+  const cylLen = (host.geometry as THREE.CylinderGeometry).parameters?.height ?? 1.0;
+  const width = Math.min(0.6, cylLen * 0.55);
+  const height = Math.min(0.11, radius * 0.6);
+  const decal = buildHullDecal({
+    text: spec.text,
+    width,
+    height,
+    flag: spec.flag,
+    textureWidth: 768,
+    textureHeight: 128,
+  });
+  // Local frame: cylinder long axis is local-Y; +Z is radial. Mounting at
+  // (0, 0, r+ε) with rotation.z=π/2 puts the plane on the hull and lines
+  // the text up along the cylinder's long axis. The parent's own rotation
+  // (set in MODULE_BOXES) then maps that to the module's world long axis.
+  decal.position.set(0, 0, radius + 0.003);
+  decal.rotation.z = Math.PI / 2;
+  decal.userData.stationPickable = false;
+  host.add(decal);
+}
 
 export const ISS_MODULE_IDS = [
   'beam',
@@ -243,33 +295,39 @@ export function buildIssProxyStation(): THREE.Group {
 
   // Truss segment positions (Z-axis, port = -Z, starboard = +Z)
   // Real lengths from Wikipedia Integrated Truss; 1 unit ≈ 12.7 m
-  const TRUSS_SEGMENTS: { id: string; cZ: number; len: number }[] = [
-    { id: 's0', cZ: 0, len: 1.06 },
-    { id: 'p1', cZ: -1.07, len: 1.08 },
-    { id: 's1', cZ: 1.07, len: 1.08 },
-    { id: 'p3', cZ: -2.15, len: 1.08 },
-    { id: 's3', cZ: 2.15, len: 1.08 },
-    { id: 'p4', cZ: -3.23, len: 1.08 },
-    { id: 's4', cZ: 3.23, len: 1.08 },
-    { id: 'p5', cZ: -3.91, len: 0.27 },
-    { id: 's5', cZ: 3.91, len: 0.27 },
-    { id: 'p6', cZ: -4.78, len: 1.44 },
-    { id: 's6', cZ: 4.78, len: 1.44 },
+  // `phase` ties each segment to the STS mission that installed it so the
+  // /iss assembly playback can fly each segment in at its real launch date
+  // (TRUSS_PHASES in src/routes/iss/+page.svelte). P3+P4 share STS-115,
+  // S3+S4 share STS-117 — same as real hardware.
+  const TRUSS_SEGMENTS: { id: string; cZ: number; len: number; phase: string }[] = [
+    { id: 's0', cZ: 0, len: 1.06, phase: 'truss-s0' },
+    { id: 'p1', cZ: -1.07, len: 1.08, phase: 'truss-p1' },
+    { id: 's1', cZ: 1.07, len: 1.08, phase: 'truss-s1' },
+    { id: 'p3', cZ: -2.15, len: 1.08, phase: 'truss-p3p4' },
+    { id: 's3', cZ: 2.15, len: 1.08, phase: 'truss-s3s4' },
+    { id: 'p4', cZ: -3.23, len: 1.08, phase: 'truss-p3p4' },
+    { id: 's4', cZ: 3.23, len: 1.08, phase: 'truss-s3s4' },
+    { id: 'p5', cZ: -3.91, len: 0.27, phase: 'truss-p5' },
+    { id: 's5', cZ: 3.91, len: 0.27, phase: 'truss-s5' },
+    { id: 'p6', cZ: -4.78, len: 1.44, phase: 'truss-p6' },
+    { id: 's6', cZ: 4.78, len: 1.44, phase: 'truss-s6' },
   ];
 
   for (const seg of TRUSS_SEGMENTS) {
     const segGroup = buildTrussSegment(seg.cZ, seg.len, longeronMat, braceMat);
     segGroup.name = `truss_${seg.id}`;
+    segGroup.userData.animModuleId = seg.phase;
     trussGroup.add(segGroup);
   }
 
   // Z1 truss girder — short triangular lattice along Y connecting Destiny
   // zenith to S0. Built in its own group rotated 90° around X so its long
-  // axis lands along Y.
+  // axis lands along Y. First truss element installed (STS-92, 2000-10-11).
   const z1Group = buildTrussSegment(0, 0.36, longeronMat, braceMat);
   z1Group.name = 'truss_z1';
   z1Group.rotation.x = Math.PI / 2; // rotate Z-aligned segment to Y-aligned
   z1Group.position.set(0, -0.22, 0); // bridging Destiny top (Y=-0.22 below truss origin) to S0 (Y=0)
+  z1Group.userData.animModuleId = 'truss-z1';
   trussGroup.add(z1Group);
 
   // SARJ rotary joints at P3↔P4 and S3↔S4 boundaries
@@ -289,6 +347,10 @@ export function buildIssProxyStation(): THREE.Group {
     sarj.position.set(0, 0, z);
     sarj.userData.stationPickable = false;
     sarj.name = 'sarj';
+    // Port SARJ shipped with P3/P4 (STS-115); starboard SARJ shipped
+    // with S3/S4 (STS-117). Tag accordingly so each appears with its
+    // matching truss segment during assembly playback.
+    sarj.userData.animModuleId = z < 0 ? 'truss-p3p4' : 'truss-s3s4';
     setShadowFlags(sarj);
     trussGroup.add(sarj);
   }
@@ -306,6 +368,8 @@ export function buildIssProxyStation(): THREE.Group {
   mtRail.position.set(0, 0.18, 0);
   mtRail.userData.stationPickable = false;
   mtRail.name = 'mt_rail';
+  // Mobile Transporter rail was the spine that arrived with S0 (STS-110).
+  mtRail.userData.animModuleId = 'truss-s0';
   setShadowFlags(mtRail);
   trussGroup.add(mtRail);
 
@@ -329,6 +393,9 @@ export function buildIssProxyStation(): THREE.Group {
     platform.position.set(0, elc.ySign * 0.22, elc.z);
     platform.userData.stationPickable = false;
     platform.name = 'elc_platform';
+    // ELCs flew on STS-129 / 130 / 133 (2009-2011) — fold them into the
+    // last truss phase (truss-s6) so they appear once the truss is done.
+    platform.userData.animModuleId = 'truss-s6';
     setShadowFlags(platform);
     trussGroup.add(platform);
   }
@@ -350,15 +417,14 @@ export function buildIssProxyStation(): THREE.Group {
     metalness: 0.5,
     roughness: 0.5,
   });
-  const ANTENNAS: { z: number; size: number; tilt: number; mastH: number }[] = [
-    // SGANT — large Ku-band dish on Z1 (above S0 center)
-    { z: 0, size: 0.18, tilt: 0.3, mastH: 0.18 },
-    // SASA fwd — port S1 region
-    { z: -0.7, size: 0.1, tilt: -0.2, mastH: 0.12 },
-    // SASA aft — starboard S1 region
-    { z: 0.7, size: 0.1, tilt: -0.2, mastH: 0.12 },
-    // Smaller GPS antenna near P3
-    { z: -2.0, size: 0.07, tilt: 0.4, mastH: 0.1 },
+  const ANTENNAS: { z: number; size: number; tilt: number; mastH: number; phase: string }[] = [
+    // SGANT — Ku-band dish on Z1 (STS-92 brought Z1 + Ku-band hardware).
+    { z: 0, size: 0.18, tilt: 0.3, mastH: 0.18, phase: 'truss-z1' },
+    // SASA fwd / aft — flew with S0/S1 spine in 2002.
+    { z: -0.7, size: 0.1, tilt: -0.2, mastH: 0.12, phase: 'truss-s0' },
+    { z: 0.7, size: 0.1, tilt: -0.2, mastH: 0.12, phase: 'truss-s0' },
+    // GPS antenna near P3 — flew with P3/P4 (STS-115).
+    { z: -2.0, size: 0.07, tilt: 0.4, mastH: 0.1, phase: 'truss-p3p4' },
   ];
   for (const ant of ANTENNAS) {
     // Mast
@@ -368,6 +434,7 @@ export function buildIssProxyStation(): THREE.Group {
     );
     mast.position.set(0, 0.16 + ant.mastH / 2, ant.z);
     mast.userData.stationPickable = false;
+    mast.userData.animModuleId = ant.phase;
     setShadowFlags(mast);
     trussGroup.add(mast);
     // Parabolic dish — open hemisphere with flattened scale on Y
@@ -380,6 +447,7 @@ export function buildIssProxyStation(): THREE.Group {
     dish.rotation.x = ant.tilt;
     dish.userData.stationPickable = false;
     dish.name = 'truss_antenna_dish';
+    dish.userData.animModuleId = ant.phase;
     setShadowFlags(dish);
     trussGroup.add(dish);
   }
@@ -400,6 +468,7 @@ export function buildIssProxyStation(): THREE.Group {
   cetaCart.position.set(0, 0.22, -1.4);
   cetaCart.userData.stationPickable = false;
   cetaCart.name = 'ceta_cart';
+  cetaCart.userData.animModuleId = 'truss-p1'; // port CETA flew on STS-113
   setShadowFlags(cetaCart);
   trussGroup.add(cetaCart);
   // Stowed grapple fixture on the MT rail (small upright rectangle)
@@ -410,6 +479,7 @@ export function buildIssProxyStation(): THREE.Group {
   grappleStow.position.set(0, 0.25, 1.4);
   grappleStow.userData.stationPickable = false;
   grappleStow.name = 'grapple_stow';
+  grappleStow.userData.animModuleId = 'truss-s1'; // starboard CETA flew on STS-112
   setShadowFlags(grappleStow);
   trussGroup.add(grappleStow);
 
@@ -427,6 +497,10 @@ export function buildIssProxyStation(): THREE.Group {
   amsCube.position.set(0, 0.32, 1.6); // S3 zenith side
   amsCube.userData.stationPickable = false;
   amsCube.name = 'ams_02';
+  // AMS-02 was delivered on STS-134 (2011-05-16) — well after the final
+  // truss flight. Fold into the iROSA-3 phase (last entry) so it appears
+  // late in the playback when the station is otherwise complete.
+  amsCube.userData.animModuleId = 'truss-irosa-3';
   setShadowFlags(amsCube);
   trussGroup.add(amsCube);
   // AMS magnet ring on top of the cube
@@ -442,6 +516,7 @@ export function buildIssProxyStation(): THREE.Group {
   amsRing.position.set(0, 0.43, 1.6);
   amsRing.userData.stationPickable = false;
   amsRing.name = 'ams_02_ring';
+  amsRing.userData.animModuleId = 'truss-irosa-3';
   setShadowFlags(amsRing);
   trussGroup.add(amsRing);
 
@@ -472,15 +547,19 @@ export function buildIssProxyStation(): THREE.Group {
   // Anchors at outboard ends of P4/P6/S4/S6 — each carries 2 wings (fwd + aft)
   // 4 anchors total — one iROSA per anchor = 2 per side (port: P4, P6;
   // starboard: S4, S6). User-locked count per round-3 feedback.
+  // `phase` ties each wing-pair to the STS mission that carried its mast
+  // (TRUSS_PHASES on /iss); iROSAs collapse onto the last roll-out phase
+  // so all 4 overlays appear together at the end of the upgrade cycle.
   const MAIN_ARRAY_ANCHORS: {
     id: string;
     z: number;
     iROSA: { fwd: boolean; aft: boolean };
+    phase: string;
   }[] = [
-    { id: 'p6', z: -5.5, iROSA: { fwd: true, aft: false } },
-    { id: 'p4', z: -3.77, iROSA: { fwd: true, aft: false } },
-    { id: 's4', z: 3.77, iROSA: { fwd: true, aft: false } },
-    { id: 's6', z: 5.5, iROSA: { fwd: true, aft: false } },
+    { id: 'p6', z: -5.5, iROSA: { fwd: true, aft: false }, phase: 'truss-p6' },
+    { id: 'p4', z: -3.77, iROSA: { fwd: true, aft: false }, phase: 'truss-p3p4' },
+    { id: 's4', z: 3.77, iROSA: { fwd: true, aft: false }, phase: 'truss-s3s4' },
+    { id: 's6', z: 5.5, iROSA: { fwd: true, aft: false }, phase: 'truss-s6' },
   ];
 
   const wingHalfLen = 1.34; // 2.68 / 2
@@ -496,6 +575,8 @@ export function buildIssProxyStation(): THREE.Group {
     const bga = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.14, 10), bgaMat);
     bga.position.set(0, 0, anchor.z);
     bga.userData.stationPickable = false;
+    // Mast came with the same truss segment that brought its anchor.
+    bga.userData.animModuleId = anchor.phase;
     setShadowFlags(bga);
     trussGroup.add(bga);
 
@@ -504,8 +585,12 @@ export function buildIssProxyStation(): THREE.Group {
     // the truss spine). Broad face faces +Y (zenith), parallel to the
     // orbital plane — wings lie FLAT, matching canonical ISS reference
     // photos (NASA archival imagery). No tilt around X or Y.
+    // animModuleId ties this wing pair to the STS truss-installation
+    // phase that carried its mast — fly-in lands with the matching
+    // P4/P6/S4/S6 truss segment.
     const wingPair = new THREE.Group();
     wingPair.position.set(0, 0.42, anchor.z);
+    wingPair.userData.animModuleId = anchor.phase;
 
     for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;
@@ -559,13 +644,22 @@ export function buildIssProxyStation(): THREE.Group {
         // to X-normal so it matches the same direction-plane the blue
         // main wing's broad face lives in.
         irosa.rotation.y = Math.PI / 2;
-        // Centre on wing mid-point in X/Z, drop down so the top edge
-        // meets the wing level (Y=0 in wing-pair local).
-        irosa.position.set(xSign * (wingHalfLen + 0.04), -irosaHalfLen, 0);
+        // wingPair is at (0, 0.42, anchor.z) in root coords; iROSA was
+        // previously placed at (xSign*(wingHalfLen+0.04), -irosaHalfLen, 0)
+        // in wingPair-local — add the wingPair offset so root-parented
+        // placement matches the original world position exactly.
+        irosa.position.set(xSign * (wingHalfLen + 0.04), 0.42 - irosaHalfLen, anchor.z);
         setShadowFlags(irosa);
         irosa.userData.stationPickable = false;
+        // All 4 iROSAs collapse onto the final roll-out phase — the
+        // proxy model carries no per-array id, and by mid-2023 all four
+        // overlays are present on real ISS, so a single late-phase
+        // fly-in is honest. Parented to root (not wingPair) so the
+        // assembly walker treats it as an independent animatable —
+        // descendants of an animatable ancestor are skipped.
+        irosa.userData.animModuleId = 'truss-irosa-3';
         irosa.name = `irosa_${anchor.id}_${dir}`;
-        wingPair.add(irosa);
+        root.add(irosa);
       }
     }
 
@@ -692,6 +786,17 @@ export function buildIssProxyStation(): THREE.Group {
       // Tag the group itself so picking can resolve at the group level.
       group.userData.moduleId = id;
       group.userData.stationPickable = true;
+      // Hull decal — attached to the larger (first) cylinder section so it
+      // rides the module's fly-in animation. makeTwoSectionModule emits
+      // [section A (forward, larger), section B (aft, narrower), MLI band]
+      // as the first three children.
+      const decalSpec = MODULE_DECALS[id];
+      if (decalSpec) {
+        const forwardSection = group.children[0];
+        if (forwardSection instanceof THREE.Mesh) {
+          attachHullDecal(forwardSection, sections[0].r, decalSpec);
+        }
+      }
       root.add(group);
       // For accessory anchoring below, the children are pre-tagged with
       // moduleId by makeTwoSectionModule. Skip the generic-cylinder path.
@@ -726,6 +831,14 @@ export function buildIssProxyStation(): THREE.Group {
     mesh.userData.stationPickable = true;
     mesh.position.set(x, y, z);
     setShadowFlags(mesh);
+    // Hull decal — attached as a child of the cylinder so it rides the
+    // module's transform stack. Uses the cylinder's own radius for the
+    // standoff offset. Cupola / Prichal are not cylinders but the decal
+    // still reads on the spherical hull at radius offset.
+    const decalSpec = MODULE_DECALS[id];
+    if (decalSpec) {
+      attachHullDecal(mesh, radius, decalSpec);
+    }
     root.add(mesh);
 
     if (id === 'cupola') {
@@ -794,6 +907,17 @@ export function buildIssProxyStation(): THREE.Group {
   }
 
   // ── PMA structural cones (gold MLI truncated cones) ─────────────────
+  // The proxy renders PMAs at their PRESENT-DAY positions, not their
+  // launch positions: PMA-1 is the Zarya↔Unity bridge (still there);
+  // PMA-2 and PMA-3 were both eventually relocated to Harmony — PMA-2
+  // forward, PMA-3 zenith — so they should appear when Harmony arrives
+  // (STS-120, 2007-10-23), not when Unity does. Otherwise they float in
+  // empty space waiting for their current host to show up.
+  const PMA_PHASE: Record<string, string> = {
+    pma1: 'unity',
+    pma2: 'harmony',
+    pma3: 'harmony',
+  };
   for (const pma of PMAS) {
     const cone = new THREE.Mesh(
       new THREE.CylinderGeometry(pma.r * 0.7, pma.r, pma.len, 12, 1),
@@ -804,6 +928,8 @@ export function buildIssProxyStation(): THREE.Group {
     cone.position.set(pma.x, pma.y, pma.z);
     cone.userData.stationPickable = false;
     cone.name = pma.id;
+    const phase = PMA_PHASE[pma.id];
+    if (phase) cone.userData.animModuleId = phase;
     setShadowFlags(cone);
     root.add(cone);
   }
@@ -841,10 +967,16 @@ export function buildIssProxyStation(): THREE.Group {
     const radHeight = 0.85;
     const topY = -0.18; // attached just below truss (trussGroup-local Y)
     const centerY = topY - radHeight / 2;
+    // HRS radiators flew with S1 / P1 — starboard HRS on STS-112 (S1,
+    // 2002-10-07) and port HRS on STS-113 (P1, 2002-11-23). Tag the
+    // radiator + its spine + cross-bars to the matching truss phase so
+    // they appear together during assembly playback.
+    const radPhase = z < 0 ? 'truss-p1' : 'truss-s1';
     const rad = new THREE.Mesh(new THREE.BoxGeometry(radWidth, radHeight, 0.02), radiatorMat);
     rad.position.set(xSign * (radWidth / 2 + 0.18), centerY, z);
     rad.userData.stationPickable = false;
     rad.name = 'radiator';
+    rad.userData.animModuleId = radPhase;
     setShadowFlags(rad);
     trussGroup.add(rad);
 
@@ -853,6 +985,7 @@ export function buildIssProxyStation(): THREE.Group {
     spine.position.set(xSign * (radWidth / 2 + 0.18), topY - 0.02, z);
     spine.userData.stationPickable = false;
     spine.name = 'radiator_spine';
+    spine.userData.animModuleId = radPhase;
     setShadowFlags(spine);
     trussGroup.add(spine);
 
@@ -863,6 +996,7 @@ export function buildIssProxyStation(): THREE.Group {
       bar.position.set(xSign * (0.18 + i * segWidth), centerY, z);
       bar.userData.stationPickable = false;
       bar.name = 'radiator_segment';
+      bar.userData.animModuleId = radPhase;
       setShadowFlags(bar);
       trussGroup.add(bar);
     }
@@ -1753,6 +1887,9 @@ export type IssVisitorId = (typeof ISS_VISITOR_IDS)[number];
 
 interface DockedShip {
   id: IssVisitorId;
+  /** Synthetic dock-event id — fly-in date in the /iss assembly replay
+   *  is keyed off this. Mirrors the DOCK_EVENTS table in the route. */
+  dockEventId: string;
   build: () => THREE.Group;
   /** Position of the docking port on the host module. */
   port: [number, number, number];
@@ -1766,25 +1903,62 @@ function buildVisitingFleet(root: THREE.Group) {
   // US segment: Crew Dragon at Harmony forward (PMA-2), Cargo Dragon at Harmony zenith (PMA-3),
   // Cygnus at Unity nadir, HTV-X at Harmony nadir, Starliner at Harmony forward backup port.
   const fleet: DockedShip[] = [
-    // Soyuz at Rassvet nadir (Zarya nadir port)
-    { id: 'soyuz_ms', build: buildSoyuz, port: [-1.53, -0.65, 0], out: 'minusY' },
-    // Progress at Poisk zenith (Zvezda zenith port)
-    { id: 'progress_ms', build: buildProgress, port: [-2.58, 0.65, 0], out: 'plusY' },
-    // Crew Dragon at PMA-2 (Harmony forward, +X)
-    { id: 'crew_dragon', build: buildDragon.bind(null, true), port: [1.18, 0, 0], out: 'plusX' },
-    // Cargo Dragon at PMA-3 (Harmony zenith, +Y)
+    // Soyuz at Rassvet nadir — first-arrival = Soyuz TM-31 / Expedition 1.
+    {
+      id: 'soyuz_ms',
+      dockEventId: 'dock-soyuz_ms',
+      build: buildSoyuz,
+      port: [-1.53, -0.65, 0],
+      out: 'minusY',
+    },
+    // Progress at Poisk zenith — first-arrival = Progress M1-3.
+    {
+      id: 'progress_ms',
+      dockEventId: 'dock-progress_ms',
+      build: buildProgress,
+      port: [-2.58, 0.65, 0],
+      out: 'plusY',
+    },
+    // Crew Dragon at PMA-2 — first-arrival = Demo-2 (Behnken + Hurley).
+    {
+      id: 'crew_dragon',
+      dockEventId: 'dock-crew_dragon',
+      build: buildDragon.bind(null, true),
+      port: [1.18, 0, 0],
+      out: 'plusX',
+    },
+    // Cargo Dragon at PMA-3 — first-arrival = CRS-21 (first Cargo Dragon 2).
     {
       id: 'cargo_dragon',
+      dockEventId: 'dock-cargo_dragon',
       build: buildDragon.bind(null, false),
       port: [0.66, 0.6, 0],
       out: 'plusY',
     },
-    // Cygnus at Unity nadir (-Y) — historical Unity nadir berth
-    { id: 'cygnus', build: buildCygnus, port: [-0.59, -0.4, 0], out: 'minusY' },
-    // HTV-X at Harmony nadir (-Y)
-    { id: 'htv_x', build: buildHtvX, port: [0.66, -0.4, 0], out: 'minusY' },
-    // Starliner at PMA-2 backup spot (slightly offset to not overlap Crew Dragon visually)
-    { id: 'starliner', build: buildStarliner, port: [0.66, 0, 0.6], out: 'plusZ' },
+    // Cygnus at Unity nadir — first-arrival = Cygnus Orb-D1 demonstration.
+    {
+      id: 'cygnus',
+      dockEventId: 'dock-cygnus',
+      build: buildCygnus,
+      port: [-0.59, -0.4, 0],
+      out: 'minusY',
+    },
+    // HTV-X at Harmony nadir — first-arrival = HTV-X1 first H3 resupply.
+    {
+      id: 'htv_x',
+      dockEventId: 'dock-htv_x',
+      build: buildHtvX,
+      port: [0.66, -0.4, 0],
+      out: 'minusY',
+    },
+    // Starliner at Harmony starboard — first-arrival = CFT (Wilmore + Williams).
+    {
+      id: 'starliner',
+      dockEventId: 'dock-starliner',
+      build: buildStarliner,
+      port: [0.66, 0, 0.6],
+      out: 'plusZ',
+    },
   ];
   for (const ship of fleet) {
     const g = ship.build();
@@ -1796,10 +1970,12 @@ function buildVisitingFleet(root: THREE.Group) {
     else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
     g.userData.stationPickable = true;
     g.userData.moduleId = ship.id;
+    g.userData.animModuleId = ship.dockEventId;
     g.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         child.userData.stationPickable = true;
         child.userData.moduleId = ship.id;
+        child.userData.animModuleId = ship.dockEventId;
       }
     });
     root.add(g);

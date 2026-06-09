@@ -32,8 +32,13 @@
       name: string;
       launcher: string;
       date: string;
-      /** Pickable mesh id (module or visitor) the chip click should open. */
-      pickableId: string;
+      /**
+       * Pickable mesh id (module or visitor) the chip click should open.
+       * Null for synthetic phases with no clickable target — e.g. /iss
+       * truss-segment + iROSA roll-out chips, which describe an STS or
+       * EVA install date but don't map to a single panel.
+       */
+      pickableId: string | null;
     } | null;
     onTogglePlay: () => void;
     onScrub: (next: number) => void;
@@ -112,15 +117,23 @@
   {#if latestChip}
     <p class="chip" data-testid="assembly-chip">
       <span aria-hidden="true">🚀</span>
-      <button
-        type="button"
-        class="chip-name"
-        data-testid="assembly-chip-name"
-        title="Open this module's panel (pauses playback)"
-        onclick={() => onChipClick(latestChip!.pickableId)}
-      >
-        {latestChip.name}
-      </button>
+      {#if latestChip.pickableId}
+        <button
+          type="button"
+          class="chip-name"
+          data-testid="assembly-chip-name"
+          title="Open this module's panel (pauses playback)"
+          onclick={() => onChipClick(latestChip!.pickableId!)}
+        >
+          {latestChip.name}
+        </button>
+      {:else}
+        <!-- Truss / iROSA phases have no panel target — render the chip
+             name as plain text, no click affordance. -->
+        <span class="chip-name chip-name-static" data-testid="assembly-chip-name">
+          {latestChip.name}
+        </span>
+      {/if}
       <span class="sep">·</span>
       <span>{latestChip.launcher}</span>
       <span class="sep">·</span>
@@ -240,6 +253,11 @@
     outline: 2px solid #6fb3ff;
     outline-offset: 2px;
     border-radius: 2px;
+  }
+  .chip-name-static {
+    /* Truss / iROSA phases — non-clickable variant, no underline / cursor. */
+    cursor: default;
+    text-decoration: none;
   }
   .chip .sep {
     opacity: 0.55;

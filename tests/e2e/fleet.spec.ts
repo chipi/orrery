@@ -106,9 +106,10 @@ test.describe('/fleet', () => {
     await page.getByRole('radio', { name: /Lunar Era/i }).click();
     await expect(page).toHaveURL(/epoch=lunar-era/);
     const cards = page.locator('.fleet-grid .card');
-    // ~8 entries in Lunar Era epoch.
+    // ~23 entries in Lunar Era epoch after Tier B/C/D fleet backfill;
+    // keep the bound loose for future additions.
     expect(await cards.count()).toBeGreaterThanOrEqual(3);
-    expect(await cards.count()).toBeLessThanOrEqual(20);
+    expect(await cards.count()).toBeLessThanOrEqual(40);
   });
 
   test('list view fallback renders rows', async ({ page }) => {

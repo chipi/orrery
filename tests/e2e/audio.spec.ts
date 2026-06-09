@@ -111,7 +111,12 @@ test.describe('AudioOverlay smoke', () => {
     expect(src).toMatch(/curator\/pale-blue-dot\..+\.mp3$/);
   });
 
-  test('A/B variant switcher appears for episodes with two providers', async ({ page }) => {
+  // A/B variant switcher tests skipped — the voice-picker UI was unwired
+  // in commit 36c00f4d7 ("tour-first copy, two-up launchers, voice picker
+  // unwired"). The .provider-switcher / .provider-btn DOM no longer exists
+  // (only the CSS lingers in AudioOverlay.svelte). Re-enable when the
+  // picker is rewired.
+  test.skip('A/B variant switcher appears for episodes with two providers', async ({ page }) => {
     await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
     await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
 
@@ -123,7 +128,7 @@ test.describe('AudioOverlay smoke', () => {
     expect(count).toBeGreaterThanOrEqual(2); // Google + ElevenLabs at least
   });
 
-  test('clicking the inactive A/B variant swaps the audio src', async ({ page }) => {
+  test.skip('clicking the inactive A/B variant swaps the audio src', async ({ page }) => {
     await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
     await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
 

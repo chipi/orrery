@@ -84,6 +84,14 @@ export interface FlightTimelineEvent {
   met_days: number;
   type: FlightEventType;
   dv_km_s?: number;
+  /** Optional human-readable milestone label (e.g. "Venus #1 — gravity assist",
+   *  "Jupiter — closest approach", "Saturn orbit insertion"). When set, /fly
+   *  renders a teal milestone chip at the event's arc position alongside the
+   *  gold FD stage markers — distinct visual treatment because milestones are
+   *  per-mission historical narrative beats, not the 7-stage cinematic cadence.
+   *  Backfilled from /explore's labeled trajectory waypoints. Optional so
+   *  non-iconic missions stay schema-compatible. */
+  label?: string;
 }
 
 export type CislunarSourceTier = 'tier_1_analytic' | 'tier_1_5_hybrid' | 'tier_2_published';

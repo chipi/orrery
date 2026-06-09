@@ -68,27 +68,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch"
       },
       {
         "met_days": 207,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #1 — gravity assist"
       },
       {
         "met_days": 808,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #2 — gravity assist"
       },
       {
         "met_days": 894,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist"
       },
       {
         "met_days": 2226,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist"
       },
       {
         "met_days": 2451,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Saturn orbit insertion"
       }
     ],
     "interplanetary_profile": {

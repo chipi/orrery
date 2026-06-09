@@ -411,6 +411,21 @@
   }
   let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
 
+  /** Milestone overlay (#306-companion) — labeled `flight.events[]`
+   *  entries surface as teal chips on the trajectory. Distinct from
+   *  the gold FD stage markers above: FD stages are the 7-stage
+   *  cinematic cadence (INJECTION → CRUISE → APPROACH → ARRIVAL × 2
+   *  legs) shared by every mission, milestones are the per-mission
+   *  historical narrative beats backfilled from /explore's labeled
+   *  trajectory waypoints (Cassini's "Venus #1 — gravity assist",
+   *  Voyager 2's "Neptune closest approach", etc.). */
+  interface MilestoneRender {
+    label: string;
+    met_days: number;
+    screen: ScreenPoint;
+  }
+  let milestoneScreens = $state.raw<MilestoneRender[]>([]);
+
   // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
   let simSpeed = $state(7); // days/sec
   // ADR-025: reduced-motion users start paused. They can press play
@@ -4081,6 +4096,35 @@
         } else if (fdPhaseMarkerScreens.length > 0) {
           fdPhaseMarkerScreens = [];
         }
+
+        // Milestone overlay projection — labeled flight.events render
+        // as teal chips at the spacecraft's projected position at the
+        // event's MET. spacecraftPos handles both outbound + return
+        // legs and one-way vs round-trip transparently.
+        if (viewMode === 'heliocentric' && container && factory) {
+          const cwMs = container.clientWidth;
+          const chMs = container.clientHeight;
+          const msNext: MilestoneRender[] = [];
+          for (const evt of mission.flight?.events ?? []) {
+            if (!evt.label || evt.met_days == null) continue;
+            const eventSimDay = arcTimeline.dep_day + evt.met_days;
+            const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
+            msNext.push({
+              label: evt.label,
+              met_days: evt.met_days,
+              screen: helioAuToScreenPx(
+                { x: evtSc.pos.x * SCALE_3D, y: 0, z: evtSc.pos.z * SCALE_3D },
+                factory,
+                camera,
+                cwMs,
+                chMs,
+              ),
+            });
+          }
+          milestoneScreens = msNext;
+        } else if (milestoneScreens.length > 0) {
+          milestoneScreens = [];
+        }
       } else draw2d();
     };
     animate(performance.now());
@@ -4228,6 +4272,34 @@
           revealed={marker.revealed}
           {slot}
         />
+      {/each}
+    </div>
+  {/if}
+
+  <!-- Milestone overlay — labeled flight.events render as small teal
+       chips at the spacecraft's projected position at the event MET.
+       Always rendered (not lens-gated): milestones are the
+       per-mission historical narrative beats (Cassini's Venus #1,
+       Voyager's Jupiter, etc.) and shouldn't depend on the Science
+       Lens toggle. Hidden in 2D for now. -->
+  {#if view === '3d' && milestoneScreens.length > 0}
+    <div
+      class="milestone-overlay"
+      data-testid="milestone-overlay"
+      data-milestone-count={milestoneScreens.length}
+    >
+      {#each milestoneScreens as m (m.met_days + '@' + m.label)}
+        {#if m.screen.onScreen}
+          <span
+            class="milestone-chip"
+            style="left: {m.screen.x}px; top: {m.screen.y}px;"
+            data-testid="milestone-chip"
+            data-met-days={m.met_days}
+          >
+            <span class="milestone-tick" aria-hidden="true">◇</span>
+            <span class="milestone-label">{m.label}</span>
+          </span>
+        {/if}
       {/each}
     </div>
   {/if}
@@ -4734,6 +4806,43 @@
     inset: 0;
     pointer-events: none;
     z-index: 13;
+  }
+  /* Milestone overlay — labeled flight.events. Teal accent
+     distinguishes per-mission historical beats from the gold FD
+     stage cadence. Sits ABOVE FD markers (z 14) so a Cassini Venus
+     #1 chip is readable even if a CRUISE diamond projects close. */
+  .milestone-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 14;
+  }
+  .milestone-chip {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transform: translate(-50%, -100%);
+    padding: 2px 6px;
+    background: rgba(8, 10, 22, 0.92);
+    border: 1px solid rgba(45, 212, 168, 0.55);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    user-select: none;
+  }
+  .milestone-tick {
+    color: #2dd4a8;
+    font-size: 11px;
+    line-height: 1;
+  }
+  .milestone-label {
+    color: rgba(255, 255, 255, 0.92);
   }
 
   /* Bottom strips row — centered band above the timeline scrubber

@@ -228,6 +228,39 @@ spacecraft and the LAUNCH ring at Earth's position simultaneously.
 
 ---
 
+## H. Milestone overlay — labeled `flight.events[]`
+
+URL: `/fly?mission=cassini` (the first backfilled mission).
+
+Expectations:
+- Each `flight.events[]` entry that carries a `label` field renders
+  as a small teal `◇ <label>` chip at the spacecraft's projected
+  scene position at the event MET.
+- Distinct visual language from FD stage markers: teal vs gold,
+  chip-with-leading-diamond vs chip-above-leader, no reveal gating
+  (milestones always render once the event is on-screen).
+- DOM contract:
+  - Overlay container: `[data-testid="milestone-overlay"]` with
+    `data-milestone-count="<N>"`.
+  - Each chip: `[data-testid="milestone-chip"]` with
+    `data-met-days="<met>"`, contains `.milestone-tick` (◇) +
+    `.milestone-label` (text).
+
+Driving Cassini through its milestone roster:
+- Jump to MET 0 → "◇ Launch" near LAUNCH ring.
+- Jump to MET 207 → "◇ Venus #1 — gravity assist" at the spacecraft.
+- Jump to MET 808 / 894 / 2226 → Venus #2 / Earth / Jupiter chips.
+- Jump to MET 2451 → "◇ Saturn orbit insertion" at Saturn.
+
+Iconic-mission backfill status (2026-06-09):
+- ✅ Cassini (6 milestones)
+- ⏳ All 17 other iconic missions still anonymous — backfill is a
+  mechanical pass joining `/static/data/trajectories/<id>.json`
+  waypoints to `/static/data/missions/<dest>/<id>.json` events by
+  date. Tracked as a follow-up data migration.
+
+---
+
 ## Round-2 changes (2026-06-09)
 
 These are the broken items from the initial run that have been fixed

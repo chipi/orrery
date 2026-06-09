@@ -17,7 +17,10 @@ import { test, expect, type Page } from '@playwright/test';
  * trust the unit tests for the inner state machine.
  */
 
-const AUDIO_TOGGLE_SELECTOR = 'button[aria-label="Toggle audio episodes"]';
+// Select by class — the aria-label moved through "Toggle audio episodes"
+// → "Take the tour" (i18n-driven via m.nav_audio_tour_aria()); class is
+// stable across copy changes + locales.
+const AUDIO_TOGGLE_SELECTOR = 'button.audio-toggle';
 const OVERLAY_SELECTOR = '#audio-overlay';
 const FIRST_EPISODE_BUTTON = '.episode-row';
 

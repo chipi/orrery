@@ -10,7 +10,10 @@ import { test, expect, type Page } from '@playwright/test';
  * at which a stage fires without 30 + seconds of wall-clock wait.
  */
 
-const AUDIO_TOGGLE = 'button[aria-label="Toggle audio episodes"]';
+// Select by class — the aria-label moved through "Toggle audio episodes"
+// → "Take the tour" (i18n-driven via m.nav_audio_tour_aria()); class is
+// stable across copy changes + locales.
+const AUDIO_TOGGLE = 'button.audio-toggle';
 const OVERLAY = '#audio-overlay';
 
 async function startTour(page: Page) {

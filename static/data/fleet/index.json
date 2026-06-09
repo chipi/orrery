@@ -2926,5 +2926,17 @@
     "status": "RETIRED",
     "first_flight": "1966-02-26",
     "tagline": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975"
+  },
+  {
+    "id": "cape-canaveral-lc-36b",
+    "name": "Cape Canaveral Launch Complex 36B (LC-36B)",
+    "category": "launch-site",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1965-08-11",
+    "tagline": "USAF Atlas-Centaur pad — Mariner 10 (1973), Pioneer 11 (1973), Pioneer Venus, Intelsat — now Blue Origin New Glenn"
   }
 ]

@@ -2416,7 +2416,99 @@
     // are overridden.
     const FLYBY_APPROACH_DAYS = 90;
     const FLYBY_DEPART_DAYS = 40;
-    const HELIO_FLYBY_R = 80;
+    /** Camera distance multiplier vs flyby-body radius for the iconic
+     *  closeup. body.size × this = camR. Tuned so the flyby planet
+     *  fills ~30-40 % of the frame regardless of which body it is
+     *  (Mercury's 1u radius vs Jupiter's 5.5u — same screen presence).
+     *  Lower values get tighter; 4 hits the Voyager-style "planet
+     *  fills the frame" composition. */
+    const FLYBY_BODY_R_MULTIPLIER = 4;
+    /** Fallback camR if we couldn't resolve the flyby body. */
+    const HELIO_FLYBY_R_FALLBACK = 80;
+
+    const PLANET_SIZES: Record<string, number> = {
+      mercury: 1.0,
+      venus: 2.5,
+      earth: 2.6,
+      mars: 1.9,
+      jupiter: 5.5,
+      saturn: 4.8,
+      uranus: 3.4,
+      neptune: 3.4,
+    };
+
+    /** Parse the flyby body from the event's human-readable label
+     *  ("Venus #1 — gravity assist" → 'venus'). The trajectory MODEL
+     *  in /fly is a simplified Keplerian approximation that doesn't
+     *  faithfully pass through each planet's heliocentric position
+     *  at the actual flyby moment — debug check at Cassini MET 894
+     *  showed scPos = (1.28, 1.74) AU = 2.16 AU from Sun, far from
+     *  Earth's actual 1.0 AU. Parsing the label is the reliable
+     *  signal because the data layer carries the mission's narrative
+     *  truth even when the math layer doesn't. */
+    function findFlybyPlanetFromLabel(label: string | undefined):
+      | { id: import('$lib/lambert-grid.constants').DestinationId; size: number }
+      | null {
+      if (!label) return null;
+      const lower = label.toLowerCase();
+      const planets: Array<import('$lib/lambert-grid.constants').DestinationId> = [
+        'mercury',
+        'venus',
+        'mars',
+        'jupiter',
+        'saturn',
+        'uranus',
+        'neptune',
+      ];
+      for (const p of planets) {
+        if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
+      }
+      if (lower.includes('earth')) {
+        return {
+          id: 'earth' as import('$lib/lambert-grid.constants').DestinationId,
+          size: PLANET_SIZES.earth,
+        };
+      }
+      return null;
+    }
+
+    /** Fallback for missions without labeled flyby events — find the
+     *  planet the spacecraft is heliocentric-closest to. Threshold
+     *  widened to 3 AU so outer-system Voyager-style flybys still
+     *  resolve. */
+    function findClosestPlanetToShip(scPos: { x: number; z: number }):
+      | { id: import('$lib/lambert-grid.constants').DestinationId; size: number }
+      | null {
+      const CANDIDATES: import('$lib/lambert-grid.constants').DestinationId[] = [
+        'mercury',
+        'venus',
+        'mars',
+        'jupiter',
+        'saturn',
+        'uranus',
+        'neptune',
+      ];
+      let closest: import('$lib/lambert-grid.constants').DestinationId | null = null;
+      let closestSize = 1;
+      let minDist = 3.0;
+      const ePos = earthPos(simDay);
+      const dEarth = Math.hypot(scPos.x - ePos.x, scPos.z - ePos.z);
+      if (dEarth < minDist) {
+        minDist = dEarth;
+        closest = 'earth' as import('$lib/lambert-grid.constants').DestinationId;
+        closestSize = PLANET_SIZES.earth;
+      }
+      for (const id of CANDIDATES) {
+        const p = destinationPos(simDay, id);
+        const d = Math.hypot(scPos.x - p.x, scPos.z - p.z);
+        if (d < minDist) {
+          minDist = d;
+          closest = id;
+          closestSize = PLANET_SIZES[id] ?? 2.0;
+        }
+      }
+      return closest ? { id: closest, size: closestSize } : null;
+    }
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -2463,13 +2555,35 @@
       let targetP = HELIO_CRUISE_P;
 
       if (activeFlybyMet !== null) {
-        // Flyby cinema — locks closeup on spacecraft for the cinematic
-        // beat. Same approach pitch tilt as ARRIVAL so the framing
-        // reads with the same gravity-assist body language.
-        sub = `flyby-${activeFlybyMet}`;
-        centerX = scScene.x;
-        centerZ = scScene.z;
-        targetR = HELIO_FLYBY_R;
+        // Flyby cinema — iconic-photo composition. Primary signal:
+        // parse the flyby body from the event's label (Cassini's
+        // "Venus #1 — gravity assist" → Venus). Fallback for
+        // unlabeled missions: closest planet to spacecraft.
+        const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
+        const flyby =
+          findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
+        // Debug exposure for the chrome-devtools-mcp verification path.
+        (window as unknown as Record<string, unknown>).__flyDebug = {
+          activeFlybyMet,
+          flybyId: flyby?.id ?? null,
+          flybySize: flyby?.size ?? null,
+          scPos: { x: sc.pos.x, z: sc.pos.z },
+          subPhase: lastHelioSubPhase,
+        };
+        if (flyby) {
+          const bodyPos =
+            flyby.id === ('earth' as typeof flyby.id) ? earthPos(simDay) : destinationPos(simDay, flyby.id);
+          const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
+          sub = `flyby-${activeFlybyMet}-${flyby.id}`;
+          centerX = bodyScene.x;
+          centerZ = bodyScene.z;
+          targetR = flyby.size * FLYBY_BODY_R_MULTIPLIER;
+        } else {
+          sub = `flyby-${activeFlybyMet}`;
+          centerX = scScene.x;
+          centerZ = scScene.z;
+          targetR = HELIO_FLYBY_R_FALLBACK;
+        }
         targetP = HELIO_APPROACH_P;
         if (sub !== lastHelioSubPhase) {
           lastHelioSubPhase = sub;
@@ -3482,15 +3596,18 @@
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
-      // Steady-cam azimuthal drift during the heliocentric cruise
-      // sub-phases — the camera slowly orbits the spacecraft (cruise
-      // centre tracks the ship) for a "tracking shot from a steady
-      // pod above the orbital plane" feel. Skipped under reduced-
-      // motion, while the user is dragging the camera, while a sub-
-      // phase transition is mid-lerp, and during Moon-mode. 0.05 rad/s
-      // ≈ a full 360° orbit every ~125 s of wall-clock — slow enough
-      // to feel like cinematography, fast enough to read as motion
-      // across the ~half-minute cruise hold.
+      // Cinematic cruise motion — three subtle, slow oscillations
+      // layered on top of each other so the camera never feels static
+      // during long cruise spans (Voyager 2's ~12-year cruise is
+      // ~60 wall-clock minutes at 90× simSpeed; the cruise phase
+      // can't be a held shot). All skipped under reduced-motion,
+      // while the user is dragging, during a sub-phase lerp, and
+      // during Moon-mode.
+      // - Azimuthal drift: slow horizontal orbit around the target.
+      // - Zoom breathing: camR oscillates ±15 % over a 90-second wall-
+      //   clock cycle — gentle "in / out" motion.
+      // - Tilt drift: camP oscillates ±0.10 rad over a 180-second
+      //   cycle — adds elevation parallax.
       if (
         !isMoonMission &&
         !reducedMotion &&
@@ -3499,6 +3616,17 @@
         (lastHelioSubPhase === 'cruise-out' || lastHelioSubPhase === 'cruise-back')
       ) {
         camT += 0.05 * dt;
+        const t = now * 0.001; // seconds
+        // Zoom breathing — modulate around the steady-state cruise
+        // target radius. helioAutoZoomTargetR holds the cruise-wide
+        // value; we add a sinusoid on top so camR breathes.
+        const ZOOM_AMP = helioAutoZoomTargetR * 0.15;
+        const zoomOsc = Math.sin(t * (Math.PI * 2) / 90) * ZOOM_AMP;
+        camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005;
+        // Tilt drift — modulate camP around cruise default.
+        const TILT_AMP = 0.10;
+        const tiltOsc = Math.sin(t * (Math.PI * 2) / 180) * TILT_AMP;
+        camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005;
       }
       // Re-aim the helio camera each frame so the sub-phase auto-zoom
       // lerps (depart → cruise → approach → arrival) actually advance —
@@ -3534,7 +3662,11 @@
       } else {
         marsMesh.visible = true;
         sunCore.visible = true;
-        sunGlow.visible = true;
+        // Sun glow halo dominates the frame during the iconic-photo
+        // flyby cinema (the 20u additive halo overpowers a planet
+        // that fills only ~6u in radius), so hide it while a flyby
+        // sub-phase is active. Restored once cruise resumes.
+        sunGlow.visible = !lastHelioSubPhase?.startsWith('flyby-');
         earthOrbitLine.visible = true;
         helioHandles.setDestinationOrbitVisible(true);
         moonMesh.visible = false;

@@ -6,7 +6,8 @@
     "status": "FLOWN",
     "year": 1964,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "luna9",
@@ -15,7 +16,8 @@
     "status": "FLOWN",
     "year": 1966,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": true
   },
   {
     "id": "apollo11",
@@ -24,7 +26,8 @@
     "status": "FLOWN",
     "year": 1969,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo13",
@@ -33,7 +36,8 @@
     "status": "FLOWN",
     "year": 1970,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "luna16",
@@ -42,7 +46,8 @@
     "status": "FLOWN",
     "year": 1970,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "luna17",
@@ -51,7 +56,8 @@
     "status": "FLOWN",
     "year": 1970,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "mars3",
@@ -60,7 +66,8 @@
     "status": "FLOWN",
     "year": 1971,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "apollo17",
@@ -69,7 +76,8 @@
     "status": "FLOWN",
     "year": 1972,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "pioneer-10",
@@ -78,7 +86,8 @@
     "status": "FLOWN",
     "year": 1972,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "luna21",
@@ -87,7 +96,8 @@
     "status": "FLOWN",
     "year": 1973,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": true
   },
   {
     "id": "pioneer-11",
@@ -96,7 +106,8 @@
     "status": "FLOWN",
     "year": 1973,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "viking1",
@@ -105,7 +116,8 @@
     "status": "FLOWN",
     "year": 1975,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "luna24",
@@ -114,7 +126,8 @@
     "status": "FLOWN",
     "year": 1976,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "voyager-1",
@@ -123,7 +136,8 @@
     "status": "FLOWN",
     "year": 1977,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "voyager-2",
@@ -132,7 +146,8 @@
     "status": "FLOWN",
     "year": 1977,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "galileo",
@@ -141,7 +156,8 @@
     "status": "FLOWN",
     "year": 1989,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "clementine",
@@ -150,7 +166,8 @@
     "status": "FLOWN",
     "year": 1994,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "mars-pathfinder",
@@ -159,7 +176,8 @@
     "status": "FLOWN",
     "year": 1996,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "cassini",
@@ -168,7 +186,8 @@
     "status": "FLOWN",
     "year": 1997,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "mars-express",
@@ -177,7 +196,8 @@
     "status": "ACTIVE",
     "year": 2003,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "messenger",
@@ -186,7 +206,8 @@
     "status": "FLOWN",
     "year": 2004,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "new-horizons",
@@ -195,7 +216,8 @@
     "status": "FLOWN",
     "year": 2006,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "dawn",
@@ -204,7 +226,8 @@
     "status": "FLOWN",
     "year": 2007,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "chandrayaan1",
@@ -213,7 +236,8 @@
     "status": "FLOWN",
     "year": 2008,
     "sector": "gov",
-    "color": "#FF9933"
+    "color": "#FF9933",
+    "crewed": false
   },
   {
     "id": "lro",
@@ -222,7 +246,8 @@
     "status": "ACTIVE",
     "year": 2009,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "curiosity",
@@ -231,7 +256,8 @@
     "status": "ACTIVE",
     "year": 2011,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "juno",
@@ -240,7 +266,8 @@
     "status": "ACTIVE",
     "year": 2011,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "change3",
@@ -249,7 +276,8 @@
     "status": "FLOWN",
     "year": 2013,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": true
   },
   {
     "id": "mangalyaan",
@@ -258,7 +286,8 @@
     "status": "FLOWN",
     "year": 2013,
     "sector": "gov",
-    "color": "#FF9933"
+    "color": "#FF9933",
+    "crewed": false
   },
   {
     "id": "maven",
@@ -267,7 +296,8 @@
     "status": "ACTIVE",
     "year": 2013,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "schiaparelli",
@@ -276,7 +306,8 @@
     "status": "FLOWN",
     "year": 2016,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "change4",
@@ -285,7 +316,8 @@
     "status": "ACTIVE",
     "year": 2018,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": false
   },
   {
     "id": "insight",
@@ -294,7 +326,8 @@
     "status": "FLOWN",
     "year": 2018,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "beresheet",
@@ -303,7 +336,8 @@
     "status": "FLOWN",
     "year": 2019,
     "sector": "private",
-    "color": "#0038B8"
+    "color": "#0038B8",
+    "crewed": false
   },
   {
     "id": "change5",
@@ -312,7 +346,8 @@
     "status": "FLOWN",
     "year": 2020,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": false
   },
   {
     "id": "hope-probe",
@@ -321,7 +356,8 @@
     "status": "ACTIVE",
     "year": 2020,
     "sector": "gov",
-    "color": "#00833F"
+    "color": "#00833F",
+    "crewed": false
   },
   {
     "id": "perseverance",
@@ -330,7 +366,8 @@
     "status": "ACTIVE",
     "year": 2020,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "tianwen1",
@@ -339,7 +376,8 @@
     "status": "ACTIVE",
     "year": 2020,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": false
   },
   {
     "id": "chandrayaan3",
@@ -348,7 +386,8 @@
     "status": "FLOWN",
     "year": 2023,
     "sector": "gov",
-    "color": "#FF9933"
+    "color": "#FF9933",
+    "crewed": false
   },
   {
     "id": "change6",
@@ -357,7 +396,8 @@
     "status": "FLOWN",
     "year": 2024,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": false
   },
   {
     "id": "slim",
@@ -366,7 +406,8 @@
     "status": "ACTIVE",
     "year": 2024,
     "sector": "gov",
-    "color": "#003087"
+    "color": "#003087",
+    "crewed": false
   },
   {
     "id": "blue-moon-mk1",
@@ -375,7 +416,8 @@
     "status": "PLANNED",
     "year": 2025,
     "sector": "private",
-    "color": "#00264D"
+    "color": "#00264D",
+    "crewed": false
   },
   {
     "id": "artemis2",
@@ -384,7 +426,8 @@
     "status": "FLOWN",
     "year": 2026,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "mmx",
@@ -393,7 +436,8 @@
     "status": "PLANNED",
     "year": 2026,
     "sector": "gov",
-    "color": "#003087"
+    "color": "#003087",
+    "crewed": false
   },
   {
     "id": "starship-demo",
@@ -402,7 +446,8 @@
     "status": "PLANNED",
     "year": 2026,
     "sector": "private",
-    "color": "#005288"
+    "color": "#005288",
+    "crewed": true
   },
   {
     "id": "artemis3",
@@ -411,7 +456,8 @@
     "status": "PLANNED",
     "year": 2027,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "starship-mars-crew",
@@ -420,7 +466,8 @@
     "status": "PLANNED",
     "year": 2031,
     "sector": "private",
-    "color": "#005288"
+    "color": "#005288",
+    "crewed": true
   },
   {
     "id": "venera-13",
@@ -429,7 +476,8 @@
     "status": "FLOWN",
     "year": 1981,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "vega-1",
@@ -438,7 +486,8 @@
     "status": "FLOWN",
     "year": 1984,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "vega-2",
@@ -447,7 +496,8 @@
     "status": "FLOWN",
     "year": 1984,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "giotto",
@@ -456,7 +506,8 @@
     "status": "FLOWN",
     "year": 1985,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "ulysses",
@@ -465,7 +516,8 @@
     "status": "FLOWN",
     "year": 1990,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "rosetta",
@@ -474,7 +526,8 @@
     "status": "FLOWN",
     "year": 2004,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "hayabusa2",
@@ -483,7 +536,8 @@
     "status": "ACTIVE",
     "year": 2014,
     "sector": "gov",
-    "color": "#003087"
+    "color": "#003087",
+    "crewed": false
   },
   {
     "id": "bepicolombo",
@@ -492,7 +546,8 @@
     "status": "ACTIVE",
     "year": 2018,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "juice",
@@ -501,7 +556,8 @@
     "status": "ACTIVE",
     "year": 2023,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "apollo7",
@@ -510,7 +566,8 @@
     "status": "FLOWN",
     "year": 1968,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo9",
@@ -519,7 +576,8 @@
     "status": "FLOWN",
     "year": 1969,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo8",
@@ -528,7 +586,8 @@
     "status": "FLOWN",
     "year": 1968,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo10",
@@ -537,7 +596,8 @@
     "status": "FLOWN",
     "year": 1969,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo12",
@@ -546,7 +606,8 @@
     "status": "FLOWN",
     "year": 1969,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo14",
@@ -555,7 +616,8 @@
     "status": "FLOWN",
     "year": 1971,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo15",
@@ -564,7 +626,8 @@
     "status": "FLOWN",
     "year": 1971,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "apollo16",
@@ -573,7 +636,8 @@
     "status": "FLOWN",
     "year": 1972,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": true
   },
   {
     "id": "luna10",
@@ -582,7 +646,8 @@
     "status": "FLOWN",
     "year": 1966,
     "sector": "gov",
-    "color": "#cc4444"
+    "color": "#cc4444",
+    "crewed": false
   },
   {
     "id": "lunar-prospector",
@@ -591,7 +656,8 @@
     "status": "FLOWN",
     "year": 1998,
     "sector": "gov",
-    "color": "#0B3D91"
+    "color": "#0B3D91",
+    "crewed": false
   },
   {
     "id": "smart-1",
@@ -600,7 +666,8 @@
     "status": "FLOWN",
     "year": 2003,
     "sector": "gov",
-    "color": "#003247"
+    "color": "#003247",
+    "crewed": false
   },
   {
     "id": "change1",
@@ -609,6 +676,7 @@
     "status": "FLOWN",
     "year": 2007,
     "sector": "gov",
-    "color": "#DE2910"
+    "color": "#DE2910",
+    "crewed": false
   }
 ]

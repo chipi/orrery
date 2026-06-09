@@ -30,6 +30,7 @@
   let destFilter: Destination | 'ALL' = $state('ALL');
   let statusFilter: MissionStatus | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
+  let crewFilter: 'ALL' | 'CREWED' | 'UNCREWED' = $state('ALL');
   // J.1 — filter strip is collapsed by default; clicking the eyebrow
   // expands it. Resets on route mount.
   let filtersExpanded = $state(false);
@@ -53,6 +54,8 @@
           (destFilter === 'ALL' || mission.dest === destFilter) &&
           (statusFilter === 'ALL' || mission.status === statusFilter) &&
           (agencyFilter === 'ALL' || splitAgencies(mission.agency).includes(agencyFilter)) &&
+          (crewFilter === 'ALL' ||
+            (crewFilter === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
           mission.year >= fromYear &&
           mission.year <= toYear,
       )
@@ -72,6 +75,8 @@
     statusFilter =
       status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
     agencyFilter = agency ?? 'ALL';
+    const crew = url.searchParams.get('crew')?.toUpperCase();
+    crewFilter = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
     // Timeline year-window: out-of-range / non-numeric values clamp
     // to the legal bounds per ADR-027 §URL contract.
     const fromRaw = url.searchParams.get('from');
@@ -92,6 +97,7 @@
       url.searchParams.has('dest') ||
       url.searchParams.has('status') ||
       url.searchParams.has('agency') ||
+      url.searchParams.has('crew') ||
       url.searchParams.has('from') ||
       url.searchParams.has('to')
     ) {
@@ -104,6 +110,7 @@
     if (destFilter !== 'ALL') params.set('dest', destFilter);
     if (statusFilter !== 'ALL') params.set('status', statusFilter);
     if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
+    if (crewFilter !== 'ALL') params.set('crew', crewFilter);
     if (fromYear !== TIMELINE_MIN_YEAR) params.set('from', String(fromYear));
     if (toYear !== TIMELINE_MAX_YEAR) params.set('to', String(toYear));
     const qs = params.toString();
@@ -131,6 +138,11 @@
 
   function setStatus(value: MissionStatus | 'ALL') {
     statusFilter = value;
+    pushFiltersToUrl();
+  }
+
+  function setCrew(value: 'ALL' | 'CREWED' | 'UNCREWED') {
+    crewFilter = value;
     pushFiltersToUrl();
   }
 
@@ -375,6 +387,34 @@
           role="radio"
           aria-checked={statusFilter === 'PLANNED'}
           onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
+        >
+      </div>
+
+      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_crew_label()}>
+        <span class="filter-label">{m.lib_filter_crew_label()}</span>
+        <button
+          type="button"
+          class="pill"
+          class:active={crewFilter === 'ALL'}
+          role="radio"
+          aria-checked={crewFilter === 'ALL'}
+          onclick={() => setCrew('ALL')}>{m.lib_filter_crew_all()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={crewFilter === 'CREWED'}
+          role="radio"
+          aria-checked={crewFilter === 'CREWED'}
+          onclick={() => setCrew('CREWED')}>{m.lib_filter_crew_crewed()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={crewFilter === 'UNCREWED'}
+          role="radio"
+          aria-checked={crewFilter === 'UNCREWED'}
+          onclick={() => setCrew('UNCREWED')}>{m.lib_filter_crew_uncrewed()}</button
         >
       </div>
 

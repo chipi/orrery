@@ -958,9 +958,10 @@
              onerror's display:none doesn't persist into the next
              rocket selection. -->
         {#key selectedRocket.id}
+          {@const fleetId = ROCKET_FLEET_ID[selectedRocket.id] ?? selectedRocket.id}
           <figure class="rocket-photo">
             <img
-              src="{base}/images/rockets/{selectedRocket.id}.jpg"
+              src="{base}/images/fleet-galleries/{fleetId}/01.jpg"
               alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
               loading="lazy"
               onerror={(e) => {

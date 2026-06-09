@@ -143,6 +143,9 @@ export interface MissionIndex {
   year: number;
   sector: Sector;
   color: string;
+  /** True if any phase of the mission carried a crew. Derived offline
+   *  from overlay.type containing 'CREWED' via scripts/backfill-crewed-flag.mjs. */
+  crewed?: boolean;
 }
 
 export interface MissionLink {

@@ -21,15 +21,34 @@ const I18N_ROOT = join(ROOT, 'static', 'data', 'i18n', 'en-US', 'missions');
 // Belt-and-suspenders allowlist for crewed missions that may not say
 // "CREWED" in their overlay type (Mercury / Vostok-style cases).
 const KNOWN_CREWED = new Set([
-  'apollo7', 'apollo8', 'apollo9', 'apollo10', 'apollo11', 'apollo12',
-  'apollo13', 'apollo14', 'apollo15', 'apollo16', 'apollo17',
+  'apollo7',
+  'apollo8',
+  'apollo9',
+  'apollo10',
+  'apollo11',
+  'apollo12',
+  'apollo13',
+  'apollo14',
+  'apollo15',
+  'apollo16',
+  'apollo17',
 ]);
 
 const DEST_TO_DIR = {
-  EARTH: 'earth', MARS: 'mars', MOON: 'moon', MERCURY: 'mercury',
-  VENUS: 'venus', JUPITER: 'jupiter', SATURN: 'saturn', URANUS: 'uranus',
-  NEPTUNE: 'neptune', PLUTO: 'pluto', CERES: 'ceres', COMET: 'comet',
-  ASTEROID: 'asteroid', SUN: 'sun',
+  EARTH: 'earth',
+  MARS: 'mars',
+  MOON: 'moon',
+  MERCURY: 'mercury',
+  VENUS: 'venus',
+  JUPITER: 'jupiter',
+  SATURN: 'saturn',
+  URANUS: 'uranus',
+  NEPTUNE: 'neptune',
+  PLUTO: 'pluto',
+  CERES: 'ceres',
+  COMET: 'comet',
+  ASTEROID: 'asteroid',
+  SUN: 'sun',
 };
 
 async function classifyOne(missionId, dest) {
@@ -58,4 +77,7 @@ async function main() {
   console.log('✓ ' + idx.length + ' missions classified — ' + crewedCount + ' crewed');
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

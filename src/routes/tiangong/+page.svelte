@@ -14,6 +14,7 @@
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { disposeScene } from '$lib/three/dispose-object3d';
+  import { gmstRadians } from '$lib/earth-sidereal';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { STAR_FIELD } from '$lib/three-constants';
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
@@ -471,6 +472,10 @@
       earthBackdropMaterial,
     );
     earthBackdrop.position.set(0, -48, -120);
+    // Rotate the Earth backdrop to its current GMST orientation so
+    // page-load shows the actual hemisphere facing the camera at this
+    // moment in UTC (#317).
+    earthBackdrop.rotation.y = -gmstRadians();
     scene.add(earthBackdrop);
     function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
       if (cameraToBackdropUnits <= 126) {

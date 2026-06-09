@@ -15,6 +15,7 @@
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { disposeScene } from '$lib/three/dispose-object3d';
+  import { gmstRadians } from '$lib/earth-sidereal';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
@@ -504,6 +505,12 @@
       earthBackdropMaterial,
     );
     earthBackdrop.position.set(0, -48, -120);
+    // Rotate the Earth backdrop to its current GMST orientation so
+    // page-load shows the actual hemisphere facing the camera at this
+    // moment in UTC (#317). The texture's prime-meridian-up default
+    // is correct at GMST=0; subtracting the current GMST yaws it so
+    // the longitude under the camera matches local time on Earth.
+    earthBackdrop.rotation.y = -gmstRadians();
     scene.add(earthBackdrop);
     function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
       // Backdrop sphere has radius 42u. Trigger at ~3× radius (≤ 126u)

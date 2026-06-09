@@ -62,9 +62,7 @@
   const MAX_ROWS = 4;
 
   const packedMissions = $derived.by(() => {
-    const sorted = missions
-      .slice()
-      .sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+    const sorted = missions.slice().sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
     const rowLastFrac: number[] = [];
     const out: Array<{ mission: Mission; row: number }> = [];
     for (const mission of sorted) {

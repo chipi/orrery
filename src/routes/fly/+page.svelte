@@ -2339,6 +2339,18 @@
     const HELIO_CRUISE_P = 1.05;
     const HELIO_APPROACH_P = 0.85;
     let helioAutoZoomTargetP = HELIO_CRUISE_P;
+    // Flyby cinema mode — when the active mission has 'flyby' events on
+    // its flight.events roster (grand-tour outer-system missions:
+    // Voyager 1/2, Cassini, Galileo, Pioneer, etc.), the camera locks
+    // a closeup on the spacecraft inside a ±FLYBY_WINDOW window around
+    // each flyby's met_days. Outside the window the regular cruise /
+    // approach / depart sub-phases run. The spacecraft IS at the flyby
+    // planet at met_days = event.met_days, so centering on the ship at
+    // the flyby moment puts the user "at" the planet for the cinematic
+    // beat — even when the flyby body isn't itself rendered as a
+    // textured sphere (only the active destination is).
+    const FLYBY_WINDOW_DAYS = 25;
+    const HELIO_FLYBY_R = 80;
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -2359,11 +2371,46 @@
       const cruiseCentreX = scScene.x * 0.5;
       const cruiseCentreZ = scScene.z * 0.5;
 
+      // Detect an active flyby window. mission.flight.events is the
+      // canonical roster; type='flyby' fires the cinema sub-phase.
+      // met_days are mission-relative; convert to simDay by adding
+      // arcTimeline.dep_day. First matching window wins (events are
+      // monotonic so overlap is rare).
+      const flybyEvents = mission.flight?.events ?? [];
+      let activeFlybyMet: number | null = null;
+      for (const e of flybyEvents) {
+        if (e.type !== 'flyby' || e.met_days == null) continue;
+        const flybySimDay = arcTimeline.dep_day + e.met_days;
+        if (Math.abs(simDay - flybySimDay) <= FLYBY_WINDOW_DAYS) {
+          activeFlybyMet = e.met_days;
+          break;
+        }
+      }
+
       let sub: string;
       let centerX: number;
       let centerZ: number;
       let targetR: number;
       let targetP = HELIO_CRUISE_P;
+
+      if (activeFlybyMet !== null) {
+        // Flyby cinema — locks closeup on spacecraft for the cinematic
+        // beat. Same approach pitch tilt as ARRIVAL so the framing
+        // reads with the same gravity-assist body language.
+        sub = `flyby-${activeFlybyMet}`;
+        centerX = scScene.x;
+        centerZ = scScene.z;
+        targetR = HELIO_FLYBY_R;
+        targetP = HELIO_APPROACH_P;
+        if (sub !== lastHelioSubPhase) {
+          lastHelioSubPhase = sub;
+          helioAutoZoomActive = true;
+        }
+        helioAutoZoomTargetR = targetR;
+        helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
+        helioAutoZoomTargetP = targetP;
+        return;
+      }
       if (sc.phase === 'pre-launch') {
         // Open framed close on Earth at the same zoom level as
         // Mars-arrival — symmetric "depart / arrive" beats so the

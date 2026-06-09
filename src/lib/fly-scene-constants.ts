@@ -52,10 +52,16 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
  * the destination's orbit ring fills a comfortable fraction of the
  * view. Moon-mode returns a fixed Earth-Moon framing distance; all
  * other destinations scale from their semi-major axis with a floor
- * of 180u (Mars + inners would clip to too-close otherwise).
+ * of 180u (Mars + inners would clip to too-close otherwise) and a
+ * ceiling of 1600u (Saturn-scale wide framing — at greater distances
+ * the inner system collapses to a few pixels and the spacecraft is
+ * unrecognisable in screen space; outer-system missions like
+ * Voyager 2 / New Horizons keep this Saturn-level framing and the
+ * spacecraft simply flies OFF the wide-frame edge during cruise,
+ * approached only when its sub-phase zooms in on the destination).
  */
 export function cameraDistanceFor(destinationId: DestinationId, moonMode: boolean): number {
   if (moonMode) return 100;
   const orbitUnits = DESTINATIONS[destinationId].a * SCALE_3D;
-  return Math.max(180, orbitUnits * 2.0);
+  return Math.max(180, Math.min(1600, orbitUnits * 2.0));
 }

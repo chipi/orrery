@@ -75,14 +75,6 @@
       {
         "met_days": 1880,
         "type": "earth_return"
-      },
-      {
-        "met_days": 4250,
-        "type": "flyby"
-      },
-      {
-        "met_days": 6092,
-        "type": "arrival"
       }
     ]
   }

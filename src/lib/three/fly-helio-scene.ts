@@ -190,7 +190,15 @@ function buildSaturnRings(size: number): THREE.Group {
 
 export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.5, 4000);
+  // Far plane sized for the most distant supported destination —
+  // Pluto's wide framing reaches `cameraDistanceFor = max(180, a·SCALE_3D·2)
+  // = 6400u` for `a = 40 AU`, plus the Sun-to-spacecraft distance from
+  // the camera (another ~6400u). 16000u covers everything with margin
+  // and the depth-buffer precision loss is negligible because /fly
+  // never has overlapping coplanar surfaces near the far plane.
+  // Previous value 4000 clipped Neptune (Voyager 2) and Pluto
+  // (New Horizons) — the scene rendered black for those missions.
+  const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.5, 16000);
   const renderer = createSceneRenderer(opts.container);
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));

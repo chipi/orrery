@@ -73,34 +73,34 @@
         "description": "Titan IVB / Centaur lifts the 5712 kg Cassini–Huygens stack from Cape Canaveral toward a 6.7-year VVEJGA cruise — too heavy for a direct shot at Saturn, so four planetary gravity assists do the work the chemical engine cannot."
       },
       {
-        "met_days": 207,
+        "met_days": 193,
         "type": "flyby",
         "label": "Venus #1 — gravity assist",
-        "description": "First of four assists. Cassini sweeps 284 km above Venus, stealing 7 km/s of orbital velocity from the planet to raise its aphelion outward. Total mission ∆v is fixed; this exchange is what makes Saturn reachable."
+        "description": "First of four assists (1998-04-26). Cassini sweeps 284 km above Venus, stealing 7 km/s of orbital velocity from the planet to raise its aphelion outward. Total mission ∆v is fixed; this exchange is what makes Saturn reachable."
       },
       {
-        "met_days": 808,
+        "met_days": 617,
         "type": "flyby",
         "label": "Venus #2 — gravity assist",
-        "description": "Second Venus encounter, 600 km altitude, after a Deep Space Manoeuvre that re-shaped the orbit. The two Venus assists together raise the aphelion past Earth, setting up the third assist 88 days later."
+        "description": "Second Venus encounter (1999-06-24), 600 km altitude, after a Deep Space Manoeuvre that re-shaped the orbit. The two Venus assists together raise the aphelion past Earth, setting up the third assist 55 days later."
       },
       {
-        "met_days": 894,
+        "met_days": 672,
         "type": "flyby",
         "label": "Earth — gravity assist",
-        "description": "1171 km above the South Pacific — the closest planetary flyby of any outbound interplanetary mission to date. The orbit is now energetic enough to cross Jupiter's, where the final assist will deliver Saturn."
+        "description": "1171 km above the South Pacific (1999-08-18) — the closest planetary flyby of any outbound interplanetary mission to date. The orbit is now energetic enough to cross Jupiter's, where the final assist will deliver Saturn."
       },
       {
-        "met_days": 2226,
+        "met_days": 1172,
         "type": "flyby",
         "label": "Jupiter — gravity assist",
-        "description": "9.7 million km from Jupiter, simultaneous joint observation with Galileo (in Jovian orbit). Jupiter's gravity bends the trajectory the last 2.5 km/s needed to ride a Hohmann-like transfer to Saturn 3.6 years later."
+        "description": "9.7 million km from Jupiter on 2000-12-30, simultaneous joint observation with Galileo (in Jovian orbit). Jupiter's gravity bends the trajectory the last 2.5 km/s needed to ride a Hohmann-like transfer to Saturn 3.6 years later."
       },
       {
         "met_days": 2451,
         "type": "edl_or_oi",
         "label": "Saturn orbit insertion",
-        "description": "96-minute main-engine burn slows the spacecraft from 30.5 km/s hyperbolic to 23.7 km/s, capturing into a 116-day orbit. The 13-year Saturn tour begins. Huygens will release toward Titan five months later."
+        "description": "96-minute main-engine burn (2004-07-01) slows the spacecraft from 30.5 km/s hyperbolic to 23.7 km/s, capturing into a 116-day orbit. The 13-year Saturn tour begins. Huygens will release toward Titan five months later."
       }
     ],
     "interplanetary_profile": {

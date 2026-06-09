@@ -3,8 +3,10 @@ import { type DestinationId } from '$lib/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
 import {
   buildSplineFromTrajectoryWaypoints,
+  parseWaypointDateToMet,
   type TrajectoryWaypoint,
 } from '$lib/trajectory-spline';
+import { destinationPos } from '$lib/mission-arc';
 import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
 import {
   buildInterplanetaryTrajectory,
@@ -237,30 +239,66 @@ export function computeMissionApply(
     }
     const vInfKms = m.flight?.arrival?.v_infinity_km_s ?? null;
     // Spline branch — when the caller has loaded the iconic-mission
-    // trajectory waypoints, build outPts from a Catmull-Rom spline
-    // through them so the path actually passes through each flyby
-    // planet at its event MET. Falls back to Keplerian when no
-    // override is supplied or the spline can't be built.
+    // trajectory waypoints, build outPts from a Catmull-Rom spline.
+    // For LABELED waypoints we replace the /explore artistic position
+    // with the planet's actual heliocentric position at that MET so
+    // the trajectory genuinely hits each flyby planet (the spacecraft
+    // glyph then meets the planet for free). Unlabeled cruise
+    // waypoints are pulled in for the spline's curvature shape and
+    // axis-swapped to /fly's frame (/explore is (x,y) horizontal · z
+    // inclination → /fly is (x,z) horizontal · y inclination).
     let splineOut: Vec2[] | null = null;
     if (
       trajectoryOverride &&
       trajectoryOverride.waypoints.length >= 2 &&
       m.departure_date
     ) {
+      // Pre-process: for each waypoint, compute its MET and decide
+      // whether to use its position as-is (cruise waypoint, axis-
+      // swapped) or replace it with the actual planet position at
+      // that MET (labeled waypoint = the flyby anchor).
+      const anchored: TrajectoryWaypoint[] = [];
+      for (const wp of trajectoryOverride.waypoints) {
+        const met = parseWaypointDateToMet(wp.date, m.departure_date);
+        if (isNaN(met)) continue;
+        const planet = wp.label
+          ? labelToPlanetId(wp.label)
+          : null;
+        if (planet) {
+          const realPos =
+            planet === ('earth' as DestinationId)
+              ? earthPos(timeline.dep_day + met)
+              : destinationPos(timeline.dep_day + met, planet);
+          anchored.push({
+            date: wp.date,
+            label: wp.label,
+            x: realPos.x,
+            // /fly's y is vertical out-of-plane; planet stays in ecliptic.
+            y: 0,
+            // /fly's z is the second horizontal — destinationPos returns
+            // {x, z} so we write z directly.
+            z: realPos.z,
+          });
+        } else {
+          // Cruise waypoint — axis-swap from /explore (x,y,z) to /fly
+          // (x, z=y, y=z*VERTICAL_SCALE). The z (inclination) is small;
+          // we leave VERTICAL_SCALE = 1 so the path stays close to the
+          // ecliptic where /fly's destination meshes live.
+          anchored.push({
+            date: wp.date,
+            x: wp.x,
+            y: wp.z ?? 0,
+            z: wp.y ?? 0,
+          });
+        }
+      }
       const samples = buildSplineFromTrajectoryWaypoints(
-        trajectoryOverride.waypoints,
+        anchored,
         m.departure_date,
         ARC_STEPS + 1,
       );
       if (samples && samples.length >= 2) {
-        // Axis-swap from /explore convention to /fly convention.
-        // /explore: (x, y) = ecliptic plane, z = inclination out-of-plane.
-        // /fly:     (x, z) = ecliptic plane, y = inclination out-of-plane (Three.js Y-up).
-        // Cassini Earth (1, 0, 0) stays (1, 0, 0); Jupiter (5.2, 2.6, 0.1)
-        // becomes (5.2, 0.1, 2.6) so the path actually arcs through Jupiter's
-        // heliocentric position in /fly's frame instead of flying into a Y
-        // axis that doesn't exist.
-        splineOut = samples.map((p) => ({ x: p.x, y: p.z, z: p.y }));
+        splineOut = samples.map((p) => ({ x: p.x, y: p.y, z: p.z }));
       }
     }
     if (splineOut) {
@@ -289,6 +327,32 @@ export function computeMissionApply(
     simSpeed: isMoonMission ? 0.4 : 7,
     missionEvents: mergeFlightEvents(m.events, m.flight?.events),
   };
+}
+
+/** Parse a /explore waypoint label like "Venus #1 — gravity assist"
+ *  or "Saturn orbit insertion" to a /fly DestinationId. Returns null
+ *  when no planet name appears in the label (e.g. cruise waypoints
+ *  with no label). Mirrors the parser used by the flyby cinema. */
+function labelToPlanetId(
+  label: string,
+): import('$lib/lambert-grid.constants').DestinationId | null {
+  const lower = label.toLowerCase();
+  const planets: Array<import('$lib/lambert-grid.constants').DestinationId> = [
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+  ];
+  for (const p of planets) {
+    if (lower.includes(p)) return p;
+  }
+  if (lower.includes('earth')) {
+    return 'earth' as import('$lib/lambert-grid.constants').DestinationId;
+  }
+  return null;
 }
 
 /** Result of applying a LocalizedScenario (e.g. ORRERY DEMO free-

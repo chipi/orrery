@@ -46,6 +46,17 @@ export interface HelioUpdater {
    *  HelioSceneHandles.setDestination so wave-B callers can address
    *  the helio updater as one typed object. */
   applyDestination(id: DestinationId): void;
+  /** Toggle the per-mission "context planet" overlay — all 7 non-
+   *  Earth planets render at their heliocentric positions with own
+   *  orbit rings. Enabled for grand-tour missions that visit multiple
+   *  bodies (Voyager 2's 4-flyby tour, Cassini's VVEJGA, etc.). */
+  setContextPlanetsVisible(visible: boolean): void;
+  /** Swap the spacecraft glyph for the active mission's recognisable
+   *  3D silhouette. Iconic missions (Cassini, Voyager 1/2, Galileo,
+   *  New Horizons) get distinct models; others keep the generic
+   *  triangle sprite. Called from applyMissionAsLoaded on mission
+   *  swap. */
+  setSpacecraftModel(missionId: string): void;
   /** Refresh the LAUNCH / ARRIVAL / RETURN sprite labels (two-line
    *  texture: role label + date stamp). Called on mission load + mode
    *  flip. RETURN triple is optional — provided only for round-trip

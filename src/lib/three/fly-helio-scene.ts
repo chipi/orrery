@@ -71,6 +71,18 @@ export interface HelioSceneHandles {
   sunCore: THREE.Mesh;
   /** Sun additive-blending halo. */
   sunGlow: THREE.Mesh;
+  /** Context-planet meshes for every non-active planet (Mercury,
+   *  Venus, Mars, Jupiter, Saturn, Uranus, Neptune). Component updates
+   *  positions per frame via destinationPos(simDay, id). Toggled via
+   *  setContextPlanetsVisible — useful for grand-tour missions where
+   *  the user benefits from seeing every body the spacecraft visits.
+   *  Each entry is a small mesh (DEST_STYLE-sized) with a matching
+   *  orbit ring. The mesh + ring for the CURRENTLY ACTIVE destination
+   *  is hidden (the dedicated destinationMesh + destinationOrbitLine
+   *  render in its place). */
+  contextPlanets: Map<DestinationId, THREE.Mesh>;
+  contextOrbits: Map<DestinationId, THREE.LineLoop>;
+  setContextPlanetsVisible(visible: boolean): void;
   /** Earth mesh — position is updated per frame by the component
    *  from earthPos(simDay) × SCALE_3D. */
   earthMesh: THREE.Mesh;
@@ -261,6 +273,54 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const destinationMesh = buildDestinationMesh(DEST_STYLE.mars, destinationTextures.mars ?? null);
   scene.add(destinationMesh);
 
+  // Context planets — Mercury through Neptune. Each renders at its
+  // canonical DEST_STYLE size (smaller than Earth, but visible). For
+  // grand-tour missions the user benefits from seeing every planet
+  // the spacecraft visits as a flyby, not just the final destination.
+  // Hidden by default; the calling component toggles visibility based
+  // on the mission's flight.events roster. The mesh + orbit matching
+  // the currently active destination stays HIDDEN inside this group
+  // because destinationMesh + destinationOrbitLine render in its place.
+  const CONTEXT_PLANET_IDS: DestinationId[] = [
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+  ];
+  const contextPlanets = new Map<DestinationId, THREE.Mesh>();
+  const contextOrbits = new Map<DestinationId, THREE.LineLoop>();
+  let contextPlanetsGlobalVisible = false;
+  let activeDestinationId: DestinationId = 'mars';
+  for (const id of CONTEXT_PLANET_IDS) {
+    const style = DEST_STYLE[id];
+    if (!style) continue;
+    const mesh = buildDestinationMesh(style, destinationTextures[id] ?? null);
+    mesh.visible = false;
+    scene.add(mesh);
+    contextPlanets.set(id, mesh);
+    const orbit = buildOrbitRing(DESTINATIONS[id].a, style.color);
+    orbit.visible = false;
+    scene.add(orbit);
+    contextOrbits.set(id, orbit);
+  }
+
+  function applyContextVisibility(): void {
+    for (const [id, mesh] of contextPlanets) {
+      const isActiveDest = id === activeDestinationId;
+      mesh.visible = contextPlanetsGlobalVisible && !isActiveDest;
+      const orbit = contextOrbits.get(id);
+      if (orbit) orbit.visible = contextPlanetsGlobalVisible && !isActiveDest;
+    }
+  }
+
+  function setContextPlanetsVisible(visible: boolean): void {
+    contextPlanetsGlobalVisible = visible;
+    applyContextVisibility();
+  }
+
   // Saturn ring system — parented to the destination mesh so it tracks
   // Saturn's per-frame position automatically. Stays in the scene at
   // all times but toggles visibility based on the active destination
@@ -276,6 +336,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
 
   function setDestination(id: DestinationId): void {
     const style = DEST_STYLE[id] ?? DEST_STYLE.mars;
+    activeDestinationId = id;
     // Mesh geometry — dispose old, build new at the destination radius.
     destinationMesh.geometry.dispose();
     destinationMesh.geometry = new THREE.SphereGeometry(style.size, 32, 32);
@@ -300,6 +361,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     // every time so a future tuning of DEST_STYLE.saturn.size carries
     // through without a code change here.
     saturnRings.visible = id === 'saturn';
+    // Refresh context-planet visibility so the new active destination's
+    // context mesh hides (the dedicated destinationMesh covers it) and
+    // the previous one re-appears.
+    applyContextVisibility();
     opts.onDestinationChange?.(id);
   }
 
@@ -317,6 +382,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     earthMesh,
     destinationMesh,
     earthOrbitLine,
+    contextPlanets,
+    contextOrbits,
+    setContextPlanetsVisible,
     setDestination,
     setDestinationOrbitVisible,
   };

@@ -80,6 +80,7 @@
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
+  import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
@@ -640,6 +641,22 @@
         moonOrbitRing.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
       }
     }
+    // Context planets — toggle on for missions that have flyby events
+    // OR an outer-system destination (Jupiter and beyond). The grand-
+    // tour visualisation only carries value when there are multiple
+    // bodies to see along the trajectory; Mars-rover missions don't
+    // benefit. Moon missions skip entirely (cislunar scene).
+    if (flyUpdaters) {
+      const flybyCount = (mission.flight?.events ?? []).filter(
+        (e) => e.type === 'flyby',
+      ).length;
+      const outerDest = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'].includes(
+        activeDestination,
+      );
+      flyUpdaters.helio.setContextPlanetsVisible(
+        !moonMode && (flybyCount >= 1 || outerDest),
+      );
+    }
   });
 
   // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
@@ -1043,6 +1060,7 @@
     isMoonMission = r.isMoonMission;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    flyUpdaters?.helio.setSpacecraftModel(m.id);
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
     // Three.js side effects for cislunar lines + annotations — fire
@@ -1068,6 +1086,9 @@
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    // Default scenario is the ORRERY-1 demo — no dedicated spacecraft
+    // model, so this clears any previously-loaded mission model.
+    flyUpdaters?.helio.setSpacecraftModel(DEFAULT_SCENARIO_ID);
     isMoonMission = r.isMoonMission;
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
@@ -1107,6 +1128,8 @@
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    // /plan-driven entry — no mission id, clear any previous model.
+    flyUpdaters?.helio.setSpacecraftModel('');
     isMoonMission = r.isMoonMission;
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
@@ -2163,6 +2186,28 @@
     scSprite.scale.set(4, 4, 1);
     scSprite.renderOrder = 999;
     scene.add(scSprite);
+
+    // Per-mission spacecraft model — replaces the generic sprite
+    // glyph with a recognisable 3D silhouette for iconic missions.
+    // Built fresh when the mission swaps; null for missions without
+    // a dedicated builder (those keep the scSprite glyph).
+    let scModel: THREE.Group | null = null;
+    function applyMissionSpacecraftModel(missionId: string): void {
+      if (scModel) {
+        scene.remove(scModel);
+        (scModel.userData.dispose as (() => void) | undefined)?.();
+        scModel = null;
+      }
+      scModel = buildInterplanetarySpacecraft(missionId);
+      if (scModel) {
+        scModel.scale.setScalar(3.0); // tune for /fly's heliocentric scale
+        scModel.renderOrder = 999;
+        scene.add(scModel);
+      }
+    }
+    // Initial application defers to applyMissionAsLoaded — that path
+    // owns mission.id resolution; the publish below wires it through
+    // flyUpdaters so mission swaps trigger a fresh model build.
 
     // DEPARTURE + ARRIVAL anchor markers — fixed rings at the
     // mission's launch and landing positions. v0.1.9: scaled up
@@ -3510,6 +3555,16 @@
         const mPos = destinationPos(simDay, activeDestination);
         earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
         marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+        // Context planets — per-frame position updates for any non-
+        // active planet rendered for grand-tour context. Each mesh
+        // tracks its heliocentric position at simDay so the user
+        // sees Venus where Venus was when Cassini did its flybys,
+        // Jupiter where it was when Voyager 2 swung past, etc.
+        for (const [planetId, mesh] of helioHandles.contextPlanets) {
+          if (!mesh.visible) continue;
+          const p = destinationPos(simDay, planetId);
+          mesh.position.set(p.x * SCALE_3D, 0, p.z * SCALE_3D);
+        }
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -3517,6 +3572,12 @@
       // camera by construction so the glyph is always centred on the
       // arc regardless of curvature.
       scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      // Per-mission 3D model rides the same position. Visibility +
+      // arrival-hide handled by the same code path that owns scSprite
+      // a few lines below; here we only update the transform.
+      if (scModel) {
+        scModel.position.copy(scSprite.position);
+      }
 
       // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
       // visible from pre-launch through the entire flight so the user
@@ -3535,7 +3596,15 @@
       if (retLabelSprite) retLabelSprite.visible = showRet;
       if (outLine) outLine.visible = !afterArrival;
       if (retLine) retLine.visible = !afterArrival && retPts.length >= 2;
-      scSprite.visible = !afterArrival;
+      // When a per-mission 3D model is present, it becomes the primary
+      // glyph and the generic sprite hides entirely (no duplication).
+      // Otherwise the sprite remains the glyph.
+      if (scModel) {
+        scSprite.visible = false;
+        scModel.visible = !afterArrival;
+      } else {
+        scSprite.visible = !afterArrival;
+      }
 
       // Freeze playback on arrival — the planets should stop where they
       // are when the mission completes, not keep orbiting indefinitely.
@@ -4188,6 +4257,8 @@
         apsidesRecompute: recomputeApsides,
         resetCamera: helioResetCamera,
         applyDestination: applyDestinationVisuals,
+        setContextPlanetsVisible: helioHandles.setContextPlanetsVisible,
+        setSpacecraftModel: applyMissionSpacecraftModel,
         refreshLabelSprites: refreshSpriteTextures,
       },
       cislunar: {

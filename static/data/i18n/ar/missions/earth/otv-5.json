@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5 (USA-277)",
+  "type": "طائرة فضائية بدون طاقم · حلّقت",
+  "first": "USA-277 — 780 يومًا في المدار، منشأة هبوط المكوك في KSC",
+  "description": "خامس رحلة لـ X-37B، وأول إطلاق على Falcon 9 بدلاً من Atlas V — والوحيد على Falcon 9 من الكتلة 4. أُطلقت في 2017-09-07 الساعة 14:00 بالتوقيت العالمي من KSC LC-39A (تم استرداد المعزز في الميدان عند LZ-1)؛ هبطت في KSC SLF في 2019-10-27 الساعة 07:51 بالتوقيت العالمي. 780 يومًا في المدار. أول رحلة لـ X-37B إلى مدار أعلى ميلًا (54.5°) — وسعت نمط التحليق المتعقَّب علنيًا.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

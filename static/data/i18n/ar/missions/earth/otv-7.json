@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "type": "طائرة فضائية بدون طاقم · حلّقت",
+  "first": "USA-358 / USSF-52 — 434 يومًا في المدار، قاعدة فاندنبرغ الفضائية",
+  "description": "سابع رحلة لـ X-37B — الأولى إلى مدار شديد الاهليلجية (HEO) والأولى التي تُطلق على Falcon Heavy. أُطلقت في 2023-12-29 الساعة 01:07 بالتوقيت العالمي من KSC LC-39A؛ تم استرداد كلا المعززين الجانبيين عند LZ-1 / LZ-2، واستُهلك المعزز المركزي لتزويد طاقة الإدخال إلى HEO. أخذ مسار HEO الـ OTV إلى ارتفاع حزام GEO تقريبًا عند الأوج. نفذت تسلسل خروج من المدار على غرار الكبح الهوائي المتحكم به (أصدر USSF تحديثًا علنيًا للمناورة، وهو تحول متعمد نحو الشفافية بعيدًا عن الرحلات السرية السابقة). هبطت في قاعدة فاندنبرغ الفضائية في 2025-03-07 الساعة 09:22 بالتوقيت العالمي.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "type": "nominal"
+    },
+    {
+      "met": 217,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 434,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "type": "nominal"
+    }
+  ]
+}

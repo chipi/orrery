@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "type": "طائرة فضائية بدون طاقم · حلّقت",
+  "first": "USA-299 / USSF-7 — 908 يومًا في المدار، منشأة هبوط المكوك في KSC",
+  "description": "سادس رحلة لـ X-37B — الأولى تحت التسمية التنظيمية الجديدة لـ USSF؛ رقم قياسي 908 أيام في المدار (~2.5 سنوات). أُطلقت في 2020-05-17 الساعة 13:14 بالتوقيت العالمي من CCAFS SLC-41 على صاروخ أطلس V 501 AV-081؛ هبطت في KSC SLF في 2022-11-12 الساعة 10:22 بالتوقيت العالمي. حملت وحدة هوائي الترددات اللاسلكية الكهروضوئية PRAM من مختبر البحوث البحرية (تجربة لتحويل الطاقة الشمسية إلى شعاع ميكروويف بقدرة 1 واط) ومنصة نشر FalconSAT-8 التابعة لـ AFRL.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "type": "nominal"
+    },
+    {
+      "met": 454,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~390 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 908,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "type": "nominal"
+    }
+  ]
+}

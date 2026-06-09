@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-6 (USA-299, USSF-7)",
+  "type": "UNBEMANNTES RAUMFLUGZEUG · GEFLOGEN",
+  "first": "USA-299 / USSF-7 — 908 Tage im Orbit, KSC Shuttle Landing Facility",
+  "description": "Sechster X-37B-Flug — erster unter der neuen organisatorischen Bezeichnung der USSF; rekordverdächtige 908 Tage im Orbit (~2,5 Jahre). Gestartet am 2020-05-17 um 13:14 UTC von CCAFS SLC-41 auf einer Atlas V 501 AV-081; landete am 2022-11-12 um 10:22 UTC am KSC SLF. Trug das PRAM des Naval Research Laboratory (Photovoltaic RF Antenna Module — 1-W-Experiment zur Solar-Mikrowellen-Strahlübertragung) und einen AFRL-FalconSAT-8-Aussetzer.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-081) from CCAFS SLC-41 2020-05-17.",
+      "type": "nominal"
+    },
+    {
+      "met": 454,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~390 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 908,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2022-11-12.",
+      "type": "nominal"
+    }
+  ]
+}

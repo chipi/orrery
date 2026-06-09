@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "type": "मानवरहित अंतरिक्ष विमान · उड़ान भर चुका",
+  "first": "USA-261 / AFSPC-5 — कक्षा में 718 दिन, KSC शटल लैंडिंग सुविधा",
+  "description": "चौथी X-37B उड़ान। 2015-05-20 को 15:05 UTC पर CCAFS SLC-41 से एटलस V 501 AV-054 पर प्रक्षेपित; 2017-05-07 को 11:47 UTC पर केनेडी अंतरिक्ष केंद्र की शटल लैंडिंग सुविधा पर पहली OTV लैंडिंग (वही 4.6 किमी रनवे जिसे पहले स्पेस शटल ऑर्बिटर्स द्वारा उपयोग किया जाता था)। AFRL के हॉल-इफेक्ट-थ्रस्टर प्रयोग (XR-5A, आयन प्रणोदन) और NASA की मटीरियल्स एक्सपोज़र टेस्ट बेड को साथ ले गया।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~325 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 718,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -33,5 +33,43 @@
       "t": "deep"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [
+    "otv-1",
+    "otv-2",
+    "otv-3",
+    "otv-4",
+    "otv-5",
+    "otv-6",
+    "otv-7"
+  ],
+  "flights": [
+    {
+      "mission_id": "otv-1",
+      "flight_designation": "X-37B OTV-1 (USA-212) (2010-04-22) · 224d · Atlas V 501 (AV-012) · Vandenberg AFB"
+    },
+    {
+      "mission_id": "otv-2",
+      "flight_designation": "X-37B OTV-2 (USA-226) (2011-03-05) · 469d · Atlas V 501 (AV-026) · Vandenberg AFB"
+    },
+    {
+      "mission_id": "otv-3",
+      "flight_designation": "X-37B OTV-3 (USA-240) (2012-12-11) · 675d · Atlas V 501 (AV-034) · Vandenberg AFB"
+    },
+    {
+      "mission_id": "otv-4",
+      "flight_designation": "X-37B OTV-4 (USA-261, AFSPC-5) (2015-05-20) · 718d · Atlas V 501 (AV-054) · KSC Shuttle Landing Facility"
+    },
+    {
+      "mission_id": "otv-5",
+      "flight_designation": "X-37B OTV-5 (USA-277) (2017-09-07) · 780d · Falcon 9 Block 4 · KSC Shuttle Landing Facility"
+    },
+    {
+      "mission_id": "otv-6",
+      "flight_designation": "X-37B OTV-6 (USA-299, USSF-7) (2020-05-17) · 908d · Atlas V 501 (AV-081) · KSC Shuttle Landing Facility"
+    },
+    {
+      "mission_id": "otv-7",
+      "flight_designation": "X-37B OTV-7 (USA-358, USSF-52) (2023-12-29) · 434d · Falcon Heavy · Vandenberg SFB"
+    }
+  ]
 }

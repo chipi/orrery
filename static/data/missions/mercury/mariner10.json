@@ -1,0 +1,42 @@
+{
+  "id": "mariner10",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MERCURY",
+  "color": "#0B3D91",
+  "year": 1973,
+  "status": "FLOWN",
+  "departure_date": "1973-11-03",
+  "arrival_date": "1974-03-29",
+  "transit_days": 146,
+  "vehicle": "Atlas SLV-3D Centaur (AC-34)",
+  "payload": "503 kg — TV cameras, IR + UV spectrometers, magnetometer, charged-particle telescope",
+  "delta_v": "~13.7 km/s (Venus gravity-assist trajectory)",
+  "data_quality": "good",
+  "credit": "© NASA / JPL / Mariner 10 mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Mariner 10 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_10",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 10 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-085A",
+      "t": "core"
+    },
+    {
+      "l": "Mariner 10 mission archive (JPL)",
+      "u": "https://www.jpl.nasa.gov/missions/mariner-10",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "atlas-slv-3d",
+      "role": "launcher"
+    }
+  ]
+}

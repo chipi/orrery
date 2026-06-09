@@ -107,7 +107,7 @@ describe('getMissionIndex', () => {
     // flights (Freedom 7, Liberty Bell 7, Friendship 7, Aurora 7,
     // Sigma 7, Faith 7). 68 → 74.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(90);
+    expect(missions).toHaveLength(98);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -339,9 +339,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 90 missions merged with their en-US overlays', async () => {
+  it('returns all 98 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(90);
+    expect(list).toHaveLength(98);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -372,7 +372,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(90);
+    expect(list).toHaveLength(98);
   });
 
   it('count matches what filterMissions reports', async () => {

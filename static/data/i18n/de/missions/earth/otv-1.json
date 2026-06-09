@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-1 (USA-212)",
+  "type": "UNBEMANNTES RAUMFLUGZEUG · GEFLOGEN",
+  "first": "USA-212 — 224 Tage im Orbit, Vandenberg AFB",
+  "description": "Erster Flug des von Boeing gebauten X-37B-Orbital-Test-Vehicle-Programms. Gestartet am 2010-04-22 um 23:52 UTC von Cape Canaveral SLC-41 auf einer Atlas V 501 AV-012; der erste autonome orbitale Raumflugzeug-Wiedereintritt mit Landebahnoperationen seit der sowjetischen Buran 1.01 im Jahr 1988. Landete auf der Vandenberg AFB am 2010-12-03 um 09:16 UTC nach 224 Tagen. Nutzlasten und Bahnparameter sind klassifiziert.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 112,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee 410 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 224,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "type": "nominal"
+    }
+  ]
+}

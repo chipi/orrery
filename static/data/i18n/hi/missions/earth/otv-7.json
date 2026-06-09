@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "type": "मानवरहित अंतरिक्ष विमान · उड़ान भर चुका",
+  "first": "USA-358 / USSF-52 — कक्षा में 434 दिन, वैंडेनबर्ग SFB",
+  "description": "सातवीं X-37B उड़ान — अत्यधिक दीर्घवृत्ताकार (HEO) कक्षा में पहली और फाल्कन हेवी पर प्रक्षेपित पहली। 2023-12-29 को 01:07 UTC पर KSC LC-39A से प्रक्षेपित; दोनों साइड बूस्टर LZ-1 / LZ-2 पर पुनः प्राप्त किए गए, केंद्रीय कोर को HEO इंजेक्शन ऊर्जा के लिए खर्च किया गया। HEO प्रक्षेपवक्र ने अपोजी पर OTV को लगभग GEO बेल्ट की ऊंचाई तक पहुँचाया। नियंत्रित एयरोब्रेकिंग-शैली डी-ऑर्बिट अनुक्रम किया (USSF ने इस युक्ति पर एक सार्वजनिक अपडेट जारी किया, जो पहले की वर्गीकृत उड़ानों से एक जानबूझकर पारदर्शिता परिवर्तन था)। 2025-03-07 को 09:22 UTC पर वैंडेनबर्ग SFB पर उतरा।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "type": "nominal"
+    },
+    {
+      "met": 217,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 434,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "type": "nominal"
+    }
+  ]
+}

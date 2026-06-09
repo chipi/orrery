@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "type": "БЕСПИЛОТНИ СВЕМИРСКИ АВИОН · ЛЕТЕО",
+  "first": "USA-261 / AFSPC-5 — 718 дана у орбити, KSC Shuttle Landing Facility",
+  "description": "Четврти лет X-37B. Лансиран 2015-05-20 у 15:05 UTC са CCAFS SLC-41 ракетом Atlas V 501 AV-054; прво OTV слетање на Shuttle Landing Facility Кенедијевог свемирског центра (иста писта дуга 4,6 km коју су раније користили орбитери Спејс шатла) 2017-05-07 у 11:47 UTC. Носио је AFRL експеримент са потисником на Холовом ефекту (XR-5A, јонски погон) и NASA платформу за тестирање изложености материјала.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~325 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 718,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "type": "nominal"
+    }
+  ]
+}

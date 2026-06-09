@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5 (USA-277)",
+  "type": "БЕСПИЛОТНЫЙ КОСМОПЛАН · СОВЕРШИЛ ПОЛЁТ",
+  "first": "USA-277 — 780 дней на орбите, Shuttle Landing Facility KSC",
+  "description": "Пятый полёт X-37B, первый запуск на Falcon 9 вместо Atlas V — и единственный полёт X-37B на Falcon 9 Block 4. Запущен 2017-09-07 в 14:00 UTC с KSC LC-39A (первая ступень была возвращена вниз по трассе на LZ-1); приземлился на KSC SLF 2019-10-27 в 07:51 UTC. 780 дней на орбите. Первый полёт X-37B на орбиту с более высоким наклонением (54,5°) — расширяет публично отслеживаемую схему пролётов.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

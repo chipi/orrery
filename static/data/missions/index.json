@@ -898,5 +898,85 @@
     "sector": "private",
     "color": "#005288",
     "crewed": true
+  },
+  {
+    "id": "otv-1",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2010,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-2",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2011,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-3",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2012,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-4",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2015,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-5",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2017,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-6",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2020,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "otv-7",
+    "agency": "USSF",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2023,
+    "sector": "gov",
+    "color": "#1a3a8a",
+    "crewed": false
+  },
+  {
+    "id": "mariner10",
+    "agency": "NASA",
+    "dest": "MERCURY",
+    "status": "FLOWN",
+    "year": 1973,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
   }
 ]

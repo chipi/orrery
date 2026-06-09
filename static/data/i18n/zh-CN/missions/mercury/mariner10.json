@@ -1,0 +1,44 @@
+{
+  "name": "水手10号",
+  "type": "行星飞越 · 已飞行",
+  "first": "首次水星飞越；首次双行星飞越；首次引力辅助任务",
+  "description": "首个造访水星的航天器，首个飞越两颗行星的航天器，也是首个利用引力辅助到达目的地的航天器。1973-11-03 05:45 UTC由阿特拉斯SLV-3D半人马座AC-34从卡纳维拉尔角LC-36B发射。水手10号在1974-02-05飞越金星（最近距离5768公里，首次对金星云带进行紫外成像），并利用这次相遇将其近日点降至水星的轨道范围 — 太空史上首次有意为之的引力辅助轨道。完成了三次水星飞越：1974-03-29（703公里）、1974-09-21（48069公里）和1975-03-16（327公里）。对水星约45%的表面进行了成像 — 在MESSENGER（2008-2015）之前唯一可用的解析图像。发现了水星固有磁场以及稀薄的钠-氦外逸层。太阳能电池板的温度管理是一个尚未解决的任务工程难题：项目科学家通过倾斜电池板并使航天器滚转，将其温度保持在115°C以下。任务于1975-03-24结束，姿态控制氮气推进剂耗尽；该航天器被推测处于日心轨道，周期性地从水星附近经过。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 94,
+      "label": "VENUS FLYBY",
+      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "type": "nominal"
+    },
+    {
+      "met": 146,
+      "label": "MERCURY 1",
+      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "type": "nominal"
+    },
+    {
+      "met": 322,
+      "label": "MERCURY 2",
+      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "type": "nominal"
+    },
+    {
+      "met": 498,
+      "label": "MERCURY 3",
+      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "type": "nominal"
+    },
+    {
+      "met": 506,
+      "label": "PROPELLANT END",
+      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "type": "nominal"
+    }
+  ]
+}

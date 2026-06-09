@@ -92,6 +92,12 @@ export interface FlightTimelineEvent {
    *  Backfilled from /explore's labeled trajectory waypoints. Optional so
    *  non-iconic missions stay schema-compatible. */
   label?: string;
+  /** Optional 1-2 sentence description for the milestone — surfaces in /fly
+   *  as the expanded-card treatment when the milestone is "active" (within
+   *  ±15 days of the simulation time). Examples: "Venus #1 — first of four
+   *  gravity assists building velocity for Saturn. Closest approach 284 km
+   *  above the surface." Per-mission narrative copy, optional. */
+  description?: string;
 }
 
 export type CislunarSourceTier = 'tier_1_analytic' | 'tier_1_5_hybrid' | 'tier_2_published';

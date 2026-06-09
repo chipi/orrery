@@ -82,7 +82,7 @@
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
-  import type { Mission, MissionEvent } from '$types/mission';
+  import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
@@ -421,8 +421,13 @@
    *  Voyager 2's "Neptune closest approach", etc.). */
   interface MilestoneRender {
     label: string;
+    description?: string;
     met_days: number;
     screen: ScreenPoint;
+    /** True when this milestone is the LATEST one the ship has reached
+     *  (or is currently within ±15 days of). Drives the expanded-card
+     *  treatment with the description text. */
+    active: boolean;
   }
   let milestoneScreens = $state.raw<MilestoneRender[]>([]);
 
@@ -2357,14 +2362,15 @@
     // Flyby cinema mode — when the active mission has 'flyby' events on
     // its flight.events roster (grand-tour outer-system missions:
     // Voyager 1/2, Cassini, Galileo, Pioneer, etc.), the camera locks
-    // a closeup on the spacecraft inside a ±FLYBY_WINDOW window around
-    // each flyby's met_days. Outside the window the regular cruise /
-    // approach / depart sub-phases run. The spacecraft IS at the flyby
-    // planet at met_days = event.met_days, so centering on the ship at
-    // the flyby moment puts the user "at" the planet for the cinematic
-    // beat — even when the flyby body isn't itself rendered as a
-    // textured sphere (only the active destination is).
-    const FLYBY_WINDOW_DAYS = 25;
+    // a closeup on the spacecraft inside an asymmetric window around
+    // each flyby's met_days. APPROACH side widens to 90 days so the
+    // user sees the ship slowly closing on the flyby planet during
+    // the long cruise; DEPART side is shorter (40 days) so the camera
+    // pulls back into cruise before the LERP runs too long. Inside
+    // the window the regular cruise / approach / depart sub-phases
+    // are overridden.
+    const FLYBY_APPROACH_DAYS = 90;
+    const FLYBY_DEPART_DAYS = 40;
     const HELIO_FLYBY_R = 80;
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
@@ -2390,13 +2396,16 @@
       // canonical roster; type='flyby' fires the cinema sub-phase.
       // met_days are mission-relative; convert to simDay by adding
       // arcTimeline.dep_day. First matching window wins (events are
-      // monotonic so overlap is rare).
+      // monotonic so overlap is rare). The window opens 90 days
+      // BEFORE the flyby (so the user sees the slow approach) and
+      // closes 40 days AFTER.
       const flybyEvents = mission.flight?.events ?? [];
       let activeFlybyMet: number | null = null;
       for (const e of flybyEvents) {
         if (e.type !== 'flyby' || e.met_days == null) continue;
         const flybySimDay = arcTimeline.dep_day + e.met_days;
-        if (Math.abs(simDay - flybySimDay) <= FLYBY_WINDOW_DAYS) {
+        const delta = simDay - flybySimDay; // negative = approaching
+        if (delta >= -FLYBY_APPROACH_DAYS && delta <= FLYBY_DEPART_DAYS) {
           activeFlybyMet = e.met_days;
           break;
         }
@@ -2447,12 +2456,15 @@
       } else if (sc.phase === 'outbound') {
         const t = sc.progress * 2; // 0→1 across outbound
         if (t < 0.05) {
-          // Depart — short hold on Earth at the closeup zoom; the slow
-          // LERP then carries the pull-out into cruise over several
-          // seconds of wall-clock for a cinematic feel.
+          // Depart — track the spacecraft (not Earth) at the closeup
+          // zoom. Anchoring on Earth-at-dep made the camera read as
+          // "following Earth" while the ship was already accelerating
+          // away. Centering on the ship keeps the cinematic feel of
+          // "watching the launch" while the camera actually moves
+          // with the spacecraft.
           sub = 'depart';
-          centerX = earthScene.x;
-          centerZ = earthScene.z;
+          centerX = scScene.x;
+          centerZ = scScene.z;
           targetR = HELIO_EARTH_CLOSEUP_R;
         } else if (t > 0.8) {
           sub = 'approach';
@@ -4099,19 +4111,55 @@
 
         // Milestone overlay projection — labeled flight.events render
         // as teal chips at the spacecraft's projected position at the
-        // event's MET. spacecraftPos handles both outbound + return
-        // legs and one-way vs round-trip transparently.
+        // event's MET. Only milestones the ship has already REACHED
+        // (plus the one within an ±15-day "active" window) render, and
+        // we cap at the 2 most-recent past plus the active one — so
+        // the scene shows the current beat + one immediate predecessor
+        // for narrative context, not the whole roster (which would
+        // clutter the canvas for grand-tour missions like BepiColombo).
         if (viewMode === 'heliocentric' && container && factory) {
           const cwMs = container.clientWidth;
           const chMs = container.clientHeight;
-          const msNext: MilestoneRender[] = [];
+          // Asymmetric active window mirrors the flyby cinema sub-phase
+          // (90 days approaching, 40 days departing) so the milestone
+          // description appears as the ship CLOSES on the planet, peaks
+          // at the actual flyby moment, then fades a few weeks after.
+          // Matches the user mental model of "turn on a bit earlier".
+          const ACTIVE_APPROACH_DAYS = 90;
+          const ACTIVE_DEPART_DAYS = 40;
+          const MAX_PAST = 1; // show at most 1 past milestone alongside the active one
+          const currentMet = simDay - arcTimeline.dep_day;
+          const eligible: Array<{ evt: FlightTimelineEvent; isActive: boolean; isPast: boolean }> =
+            [];
           for (const evt of mission.flight?.events ?? []) {
             if (!evt.label || evt.met_days == null) continue;
-            const eventSimDay = arcTimeline.dep_day + evt.met_days;
+            const delta = currentMet - evt.met_days;
+            if (delta < -ACTIVE_APPROACH_DAYS) continue; // future, beyond approach window — hide
+            const isActive = delta >= -ACTIVE_APPROACH_DAYS && delta <= ACTIVE_DEPART_DAYS;
+            const isPast = delta > ACTIVE_DEPART_DAYS;
+            eligible.push({ evt, isActive, isPast });
+          }
+          // Take the active milestone (if any) + the most-recent past
+          // milestones up to MAX_PAST. Sort by met_days descending so
+          // the most recent comes first.
+          eligible.sort((a, b) => (b.evt.met_days ?? 0) - (a.evt.met_days ?? 0));
+          const picked: typeof eligible = [];
+          let pastCount = 0;
+          for (const e of eligible) {
+            if (e.isActive) picked.push(e);
+            else if (e.isPast && pastCount < MAX_PAST) {
+              picked.push(e);
+              pastCount++;
+            }
+          }
+          const msNext: MilestoneRender[] = [];
+          for (const { evt, isActive } of picked) {
+            const eventSimDay = arcTimeline.dep_day + evt.met_days!;
             const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
             msNext.push({
-              label: evt.label,
-              met_days: evt.met_days,
+              label: evt.label!,
+              description: evt.description,
+              met_days: evt.met_days!,
               screen: helioAuToScreenPx(
                 { x: evtSc.pos.x * SCALE_3D, y: 0, z: evtSc.pos.z * SCALE_3D },
                 factory,
@@ -4119,6 +4167,7 @@
                 cwMs,
                 chMs,
               ),
+              active: isActive,
             });
           }
           milestoneScreens = msNext;
@@ -4291,13 +4340,24 @@
       {#each milestoneScreens as m (m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
           <span
+            class="milestone-diamond"
+            class:active={m.active}
+            style="left: {m.screen.x}px; top: {m.screen.y}px;"
+            aria-hidden="true"
+          ></span>
+          <span
             class="milestone-chip"
+            class:active={m.active}
+            class:past={!m.active}
             style="left: {m.screen.x}px; top: {m.screen.y}px;"
             data-testid="milestone-chip"
             data-met-days={m.met_days}
+            data-milestone-active={m.active ? 'true' : 'false'}
           >
-            <span class="milestone-tick" aria-hidden="true">◇</span>
             <span class="milestone-label">{m.label}</span>
+            {#if m.active && m.description}
+              <span class="milestone-description">{m.description}</span>
+            {/if}
           </span>
         {/if}
       {/each}
@@ -4817,32 +4877,65 @@
     pointer-events: none;
     z-index: 14;
   }
+  .milestone-diamond {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #2dd4a8;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 3px rgba(45, 212, 168, 0.65);
+    z-index: 12;
+  }
+  .milestone-diamond.active {
+    width: 9px;
+    height: 9px;
+    background: #5eead4;
+    box-shadow:
+      0 0 8px rgba(94, 234, 212, 0.85),
+      0 0 3px rgba(255, 255, 255, 0.6);
+  }
   .milestone-chip {
     position: absolute;
     display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transform: translate(-50%, -100%);
-    padding: 2px 6px;
+    flex-direction: column;
+    gap: 3px;
+    transform: translate(-50%, calc(-100% - 12px));
+    padding: 3px 7px 4px;
     background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(45, 212, 168, 0.55);
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.92);
     font-family: 'Space Mono', monospace;
     font-size: 9px;
     letter-spacing: 1px;
-    white-space: nowrap;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     user-select: none;
   }
-  .milestone-tick {
-    color: #2dd4a8;
-    font-size: 11px;
-    line-height: 1;
+  .milestone-chip.past {
+    border: 1px solid rgba(45, 212, 168, 0.35);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+  .milestone-chip.active {
+    border: 1px solid rgba(94, 234, 212, 0.75);
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
   .milestone-label {
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .milestone-description {
+    color: rgba(255, 255, 255, 0.72);
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: normal;
   }
 
   /* Bottom strips row — centered band above the timeline scrubber

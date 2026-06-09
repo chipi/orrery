@@ -25,3 +25,6 @@
 | PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Accepted (v0.7) | curious learner, STEM student, space enthusiast, educator/journalist |
 | PRD-021 | Surface texture LOD — sphere sharpness at mid-zoom on `/mars`, `/moon`, `/earth` | Draft | curious learner, science writer, educator |
 | PRD-022 | Tier-3 panorama as spatial-context exhibit — honest source, captions, annotations, multi-pano | Draft | curious learner, educator, mission-history reader |
+| PRD-023 | /explore lens + always-on annotations — visual layer for Hill sphere, Lagrange, magnetosphere, axial tilt, planet stats | Draft | curious learner, STEM student, space enthusiast |
+| PRD-024 | /science 'planets' tab — pair every PRD-023 lens annotation with a real article | Draft | curious learner, STEM student, space enthusiast, educator |
+| PRD-025 | Forward-roadmap content update — 24 missions + ~37 fleet + ~6 updates for v0.8 (big future programs · novel approaches · newcomers) | Draft (prep for v0.8) | space enthusiast, educator/journalist, curious learner |

@@ -4408,8 +4408,18 @@
       data-testid="milestone-overlay"
       data-milestone-count={milestoneScreens.length}
     >
-      {#each milestoneScreens as m (m.met_days + '@' + m.label)}
+      {#each milestoneScreens as m, idx (m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
+          <!-- Chip docks at a fixed screen position so it never
+               overlaps the spacecraft glyph or canvas-centre
+               elements (LAUNCH text, INJECTION/CRUISE FD chips).
+               Active chip → top-centre of viewport with full
+               description; past chips → top-right corner just under
+               the HUD buttons, compact. Leader line connects chip
+               anchor to the diamond at the arc position. -->
+          {@const vw = typeof window !== 'undefined' ? window.innerWidth : 1400}
+          {@const chipX = m.active ? vw / 2 : vw - 220}
+          {@const chipY = m.active ? 130 : 220 + idx * 40}
           <span
             class="milestone-diamond"
             class:active={m.active}
@@ -4417,10 +4427,16 @@
             aria-hidden="true"
           ></span>
           <span
+            class="milestone-leader"
+            class:active={m.active}
+            style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(chipX - m.screen.x, chipY - m.screen.y)}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
+            aria-hidden="true"
+          ></span>
+          <span
             class="milestone-chip"
             class:active={m.active}
             class:past={!m.active}
-            style="left: {m.screen.x}px; top: {m.screen.y}px;"
+            style="left: {chipX}px; top: {chipY}px;"
             data-testid="milestone-chip"
             data-met-days={m.met_days}
             data-milestone-active={m.active ? 'true' : 'false'}
@@ -4680,19 +4696,44 @@
     >
       {isPlaying ? '⏸' : '▶'}
     </button>
-    <input
-      type="range"
-      min="0"
-      max="1"
-      step="0.001"
-      value={Math.max(0, Math.min(1, arcProgress))}
-      oninput={onScrub}
-      onpointerdown={onScrubStart}
-      onpointerup={onScrubEnd}
-      onpointercancel={onScrubEnd}
-      class="scrub"
-      aria-label={m.fly_scrub_label()}
-    />
+    <div class="scrub-track-wrap">
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.001"
+        value={Math.max(0, Math.min(1, arcProgress))}
+        oninput={onScrub}
+        onpointerdown={onScrubStart}
+        onpointerup={onScrubEnd}
+        onpointercancel={onScrubEnd}
+        class="scrub"
+        aria-label={m.fly_scrub_label()}
+      />
+      <!-- Milestone tick markers — clickable, jump to event MET on
+           click. Positioned proportionally between min(0%) and
+           max(100%) along the scrub track. Renders only milestones
+           that have a `label` (the same data source the floating
+           overlay uses). -->
+      {#if arcTotalDays > 0 && mission.flight?.events}
+        <div class="milestone-track" data-testid="milestone-track">
+          {#each mission.flight.events as evt (evt.met_days + '@' + (evt.label ?? ''))}
+            {#if evt.label && evt.met_days != null}
+              {@const pct = Math.max(0, Math.min(100, (evt.met_days / arcTotalDays) * 100))}
+              <button
+                type="button"
+                class="milestone-tick-button"
+                style="left: {pct}%;"
+                title="{evt.label} — MET {evt.met_days}d"
+                aria-label="{evt.label} at MET {evt.met_days} days. Click to jump."
+                onclick={() => jumpToMet(evt.met_days ?? 0)}
+                data-met-days={evt.met_days}
+              ></button>
+            {/if}
+          {/each}
+        </div>
+      {/if}
+    </div>
     <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
       {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
         <button
@@ -4965,46 +5006,61 @@
       0 0 8px rgba(94, 234, 212, 0.85),
       0 0 3px rgba(255, 255, 255, 0.6);
   }
+  .milestone-leader {
+    position: absolute;
+    height: 1px;
+    background: rgba(45, 212, 168, 0.4);
+    transform-origin: 0 50%;
+    z-index: 11;
+  }
+  .milestone-leader.active {
+    background: rgba(94, 234, 212, 0.7);
+    height: 1.5px;
+  }
   .milestone-chip {
     position: absolute;
     display: inline-flex;
     flex-direction: column;
-    gap: 3px;
-    transform: translate(-50%, calc(-100% - 12px));
-    padding: 3px 7px 4px;
-    background: rgba(8, 10, 22, 0.92);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.92);
+    gap: 5px;
+    transform: translate(-50%, -50%);
+    padding: 6px 12px 7px;
+    background: rgba(8, 10, 22, 0.94);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.95);
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     user-select: none;
   }
   .milestone-chip.past {
     border: 1px solid rgba(45, 212, 168, 0.35);
     opacity: 0.6;
     white-space: nowrap;
+    font-size: 11px;
   }
   .milestone-chip.active {
-    border: 1px solid rgba(94, 234, 212, 0.75);
-    max-width: 280px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(94, 234, 212, 0.85);
+    max-width: 360px;
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(94, 234, 212, 0.15);
   }
   .milestone-label {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.98);
     font-weight: 600;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
   }
   .milestone-description {
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.82);
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 11px;
-    line-height: 1.4;
-    letter-spacing: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
     text-transform: none;
     white-space: normal;
   }
@@ -5392,10 +5448,64 @@
     border-color: #4466ff;
     outline: none;
   }
+  .scrub-track-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
   .scrub {
     flex: 1;
     accent-color: #4466ff;
     height: 36px;
+  }
+  /* Milestone tick track sits OVER the scrubber so the ticks visually
+     mark labeled events on the timeline. Clickable — jumps simDay to
+     that event. */
+  .milestone-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 0;
+    pointer-events: none;
+  }
+  .milestone-tick-button {
+    position: absolute;
+    top: -10px;
+    width: 14px;
+    height: 20px;
+    margin-left: -7px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .milestone-tick-button::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #2dd4a8;
+    transform: rotate(45deg);
+    box-shadow: 0 0 4px rgba(45, 212, 168, 0.65);
+    transition:
+      transform 120ms,
+      box-shadow 120ms;
+  }
+  .milestone-tick-button:hover::before,
+  .milestone-tick-button:focus-visible::before {
+    transform: rotate(45deg) scale(1.6);
+    background: #5eead4;
+    box-shadow:
+      0 0 8px rgba(94, 234, 212, 0.9),
+      0 0 2px rgba(255, 255, 255, 0.7);
+  }
+  .milestone-tick-button:focus-visible {
+    outline: none;
   }
   .speed-group {
     display: flex;

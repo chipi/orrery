@@ -14,20 +14,15 @@
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
 
-  const DESTINATION_IDS: DestinationId[] = [
-    'mercury',
-    'venus',
-    'mars',
-    'vesta',
-    'ceres',
-    'psyche',
-    'jupiter',
-    'saturn',
-    'uranus',
-    'neptune',
-    'pluto',
-    'bennu',
-  ];
+  // v0.7: /plan only ships Mars. The Lambert-grid porkchop solver
+  // works for Mars only — every other destination renders an empty /
+  // misleading porkchop. Reducing the dropdown to Mars matches what
+  // we can honestly serve.
+  // v0.8 milestone: multi-destination porkchop (landing + flyby) per
+  // ADR-076 + RFC-026 + GH issue #312. Until then, FLYBY_ONLY /
+  // GRAVITY_ASSIST_CAVEAT_DESTINATIONS are dead code kept so the diff
+  // for the v0.8 re-expansion is mechanical.
+  const DESTINATION_IDS: DestinationId[] = ['mars'];
   /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
   const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
   const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [

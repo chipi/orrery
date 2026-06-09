@@ -1,0 +1,28 @@
+{
+  "id": "salyut-2",
+  "name": "Salyut 2 (OPS-1)",
+  "category": "station",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-52 (TsKBM Chelomey)",
+  "first_flight": "1973-04-03",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
+  "credit": "The first of the three Soviet military Almaz space stations — publicly called Salyut 2 to disguise its real purpose (DoD-style reconnaissance, with a 6.4-m focal-length panoramic camera and a film-return capsule). Launched 1973-04-03 on a Proton-K from Baikonur, Salyut 2 reached orbit successfully but its attitude-control system tumbled the station 11 days later (1973-04-14), and a sudden depressurisation on the 13th day rendered it unusable before any crew could be sent. The planned crew (Pavel Popovich + Yury Artyukhin) instead flew on Salyut 3 the following year. Salyut 2 reentered the atmosphere 1973-05-28 — the shortest-lived station program in history at that point. Its existence as a military station was only declassified after the Soviet Union's collapse.",
+  "links": [
+    {
+      "l": "Salyut 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Salyut_2",
+      "t": "intro"
+    },
+    {
+      "l": "Almaz program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Almaz",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": []
+}

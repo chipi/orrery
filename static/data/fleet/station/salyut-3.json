@@ -1,0 +1,33 @@
+{
+  "id": "salyut-3",
+  "name": "Salyut 3 (OPS-2)",
+  "category": "station",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-52 (TsKBM Chelomey)",
+  "first_flight": "1974-06-25",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
+  "credit": "The second Soviet military Almaz station — again publicly called Salyut 3 to mask its surveillance role. Launched 1974-06-25 on a Proton-K, Salyut 3 hosted one short crew mission (Soyuz 14, Popovich + Artyukhin, 15 days, 1974-07-03 to 1974-07-19) which exercised the station's 6.4-m Agat camera + film-return capsule. A second crew attempt (Soyuz 15, Sarafanov + Demin, 1974-08-26) failed the automatic Igla rendezvous and returned the same day. Just before deorbit on 1975-01-24, Salyut 3 reportedly test-fired its onboard 23-mm Rikhter R-23M cannon — the only known instance of a weapon firing in space (recoil was absorbed by the station's attitude-control thrusters; the round disintegrated in the atmosphere). Reentered the atmosphere 1975-01-24.",
+  "links": [
+    {
+      "l": "Salyut 3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Salyut_3",
+      "t": "intro"
+    },
+    {
+      "l": "Almaz program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Almaz",
+      "t": "core"
+    },
+    {
+      "l": "Rikhter R-23M autocannon — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rikhter_R-23",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": []
+}

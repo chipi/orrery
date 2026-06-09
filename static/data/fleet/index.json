@@ -2770,5 +2770,53 @@
     "status": "RETIRED",
     "first_flight": "1967-08-01",
     "tagline": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations"
+  },
+  {
+    "id": "salyut-2",
+    "name": "Salyut 2 (OPS-1)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1973-04-03",
+    "tagline": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days"
+  },
+  {
+    "id": "salyut-3",
+    "name": "Salyut 3 (OPS-2)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1974-06-25",
+    "tagline": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24"
+  },
+  {
+    "id": "salyut-4",
+    "name": "Salyut 4 (DOS-4)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1974-12-26",
+    "tagline": "Civilian DOS-4 station — hosted Soyuz 17 (30 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03"
+  },
+  {
+    "id": "salyut-5",
+    "name": "Salyut 5 (OPS-3)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1976-06-22",
+    "tagline": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days"
   }
 ]

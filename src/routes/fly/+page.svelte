@@ -425,10 +425,15 @@
     description?: string;
     met_days: number;
     screen: ScreenPoint;
-    /** True when this milestone is the LATEST one the ship has reached
-     *  (or is currently within ±15 days of). Drives the expanded-card
-     *  treatment with the description text. */
+    /** Legacy flag — true when state === 'active'. Kept so existing
+     *  template bindings don't break. */
     active: boolean;
+    /** 3-state visibility: 'past' = latest milestone behind us
+     *  (compact, dimmed, top-right); 'active' = currently within
+     *  ±active window (full card with description, top-centre);
+     *  'future' = next milestone ahead (compact, "NEXT" label,
+     *  top-left). */
+    state: 'past' | 'active' | 'future';
   }
   let milestoneScreens = $state.raw<MilestoneRender[]>([]);
 
@@ -2414,8 +2419,12 @@
     // pulls back into cruise before the LERP runs too long. Inside
     // the window the regular cruise / approach / depart sub-phases
     // are overridden.
-    const FLYBY_APPROACH_DAYS = 90;
-    const FLYBY_DEPART_DAYS = 40;
+    // Cinema window: camera locks closeup on the flyby body inside
+    // this window. Tightened from 90/40 → 25/25 so the cinema only
+    // engages when the ship is genuinely close to the body and the
+    // user gets cruise camera variety in the long phases between.
+    const FLYBY_APPROACH_DAYS = 25;
+    const FLYBY_DEPART_DAYS = 25;
     /** Camera distance multiplier vs flyby-body radius for the iconic
      *  closeup. body.size × this = camR. Tuned so the flyby planet
      *  fills ~30-40 % of the frame regardless of which body it is
@@ -4321,40 +4330,38 @@
         if (viewMode === 'heliocentric' && container && factory) {
           const cwMs = container.clientWidth;
           const chMs = container.clientHeight;
-          // Asymmetric active window mirrors the flyby cinema sub-phase
-          // (90 days approaching, 40 days departing) so the milestone
-          // description appears as the ship CLOSES on the planet, peaks
-          // at the actual flyby moment, then fades a few weeks after.
-          // Matches the user mental model of "turn on a bit earlier".
-          const ACTIVE_APPROACH_DAYS = 90;
-          const ACTIVE_DEPART_DAYS = 40;
-          const MAX_PAST = 1; // show at most 1 past milestone alongside the active one
+          // 3-state milestone visibility: always show "where we came
+          // from" + "where we are" + "where we're going". The user
+          // wants to know the next milestone is coming even when
+          // they're still cruising far from it.
+          const ACTIVE_APPROACH_DAYS = 30;
+          const ACTIVE_DEPART_DAYS = 20;
           const currentMet = simDay - arcTimeline.dep_day;
-          const eligible: Array<{ evt: FlightTimelineEvent; isActive: boolean; isPast: boolean }> =
-            [];
-          for (const evt of mission.flight?.events ?? []) {
-            if (!evt.label || evt.met_days == null) continue;
-            const delta = currentMet - evt.met_days;
-            if (delta < -ACTIVE_APPROACH_DAYS) continue; // future, beyond approach window — hide
-            const isActive = delta >= -ACTIVE_APPROACH_DAYS && delta <= ACTIVE_DEPART_DAYS;
-            const isPast = delta > ACTIVE_DEPART_DAYS;
-            eligible.push({ evt, isActive, isPast });
-          }
-          // Take the active milestone (if any) + the most-recent past
-          // milestones up to MAX_PAST. Sort by met_days descending so
-          // the most recent comes first.
-          eligible.sort((a, b) => (b.evt.met_days ?? 0) - (a.evt.met_days ?? 0));
-          const picked: typeof eligible = [];
-          let pastCount = 0;
-          for (const e of eligible) {
-            if (e.isActive) picked.push(e);
-            else if (e.isPast && pastCount < MAX_PAST) {
-              picked.push(e);
-              pastCount++;
+          const labeled = (mission.flight?.events ?? [])
+            .filter((e) => e.label && e.met_days != null)
+            .sort((a, b) => (a.met_days ?? 0) - (b.met_days ?? 0));
+          let latestPast: FlightTimelineEvent | null = null;
+          let nextFuture: FlightTimelineEvent | null = null;
+          const actives: FlightTimelineEvent[] = [];
+          for (const evt of labeled) {
+            const delta = currentMet - (evt.met_days ?? 0);
+            if (delta > ACTIVE_DEPART_DAYS) {
+              latestPast = evt; // overwrite — keep the MOST RECENT past
+            } else if (delta >= -ACTIVE_APPROACH_DAYS) {
+              actives.push(evt);
+            } else if (!nextFuture) {
+              nextFuture = evt; // first future encountered
             }
           }
+          const picked: Array<{
+            evt: FlightTimelineEvent;
+            state: 'past' | 'active' | 'future';
+          }> = [];
+          if (latestPast) picked.push({ evt: latestPast, state: 'past' });
+          for (const a of actives) picked.push({ evt: a, state: 'active' });
+          if (nextFuture) picked.push({ evt: nextFuture, state: 'future' });
           const msNext: MilestoneRender[] = [];
-          for (const { evt, isActive } of picked) {
+          for (const { evt, state } of picked) {
             const eventSimDay = arcTimeline.dep_day + evt.met_days!;
             const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
             msNext.push({
@@ -4368,7 +4375,8 @@
                 cwMs,
                 chMs,
               ),
-              active: isActive,
+              active: state === 'active',
+              state,
             });
           }
           milestoneScreens = msNext;
@@ -4542,16 +4550,17 @@
     >
       {#each milestoneScreens as m, idx (m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
-          <!-- Chip docks at a fixed screen position so it never
-               overlaps the spacecraft glyph or canvas-centre
-               elements (LAUNCH text, INJECTION/CRUISE FD chips).
-               Active chip → top-centre of viewport with full
-               description; past chips → top-right corner just under
-               the HUD buttons, compact. Leader line connects chip
-               anchor to the diamond at the arc position. -->
+          <!-- Three dock positions by state:
+               - active → top-centre, full description card
+               - past → top-right corner, compact, dimmed
+               - future → top-left corner just under HUD, compact,
+                 "NEXT" prefix for orientation
+               Leader line only on active (past/future float on
+               their own; the diagonal trail across the canvas was
+               more confusing than helpful). -->
           {@const vw = typeof window !== 'undefined' ? window.innerWidth : 1400}
-          {@const chipX = m.active ? vw / 2 : vw - 220}
-          {@const chipY = m.active ? 130 : 220 + idx * 40}
+          {@const chipX = m.state === 'active' ? vw / 2 : m.state === 'past' ? vw - 220 : 220}
+          {@const chipY = m.state === 'active' ? 130 : 220 + idx * 40}
           <span
             class="milestone-diamond"
             class:active={m.active}
@@ -4572,15 +4581,19 @@
           {/if}
           <span
             class="milestone-chip"
-            class:active={m.active}
-            class:past={!m.active}
+            class:active={m.state === 'active'}
+            class:past={m.state === 'past'}
+            class:future={m.state === 'future'}
             style="left: {chipX}px; top: {chipY}px;"
             data-testid="milestone-chip"
             data-met-days={m.met_days}
-            data-milestone-active={m.active ? 'true' : 'false'}
+            data-milestone-state={m.state}
           >
+            {#if m.state === 'future'}
+              <span class="milestone-prefix">NEXT</span>
+            {/if}
             <span class="milestone-label">{m.label}</span>
-            {#if m.active && m.description}
+            {#if m.state === 'active' && m.description}
               <span class="milestone-description">{m.description}</span>
             {/if}
           </span>
@@ -5181,6 +5194,20 @@
     opacity: 0.6;
     white-space: nowrap;
     font-size: 11px;
+  }
+  .milestone-chip.future {
+    border: 1px dashed rgba(45, 212, 168, 0.45);
+    opacity: 0.78;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+  .milestone-prefix {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(94, 234, 212, 0.85);
+    text-transform: uppercase;
+    margin-right: 6px;
   }
   .milestone-chip.active {
     border: 1px solid rgba(94, 234, 212, 0.85);

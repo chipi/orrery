@@ -36,15 +36,17 @@ type MeshHome = {
 };
 
 /**
- * Per-mesh home transforms. WeakMap so disposing the scene cleans up.
+ * Per-object home transforms. WeakMap so disposing the scene cleans up.
+ * Accepts any Object3D so animatable Groups (e.g. Wentian / Mengtian
+ * solar-pair Groups) get their home transform cached alongside Meshes.
  */
-export function captureHomes(meshes: THREE.Mesh[]): WeakMap<THREE.Mesh, MeshHome> {
-  const m = new WeakMap<THREE.Mesh, MeshHome>();
-  for (const mesh of meshes) {
-    m.set(mesh, {
-      pos: mesh.position.clone(),
-      scale: mesh.scale.clone(),
-      visible: mesh.visible,
+export function captureHomes(objects: THREE.Object3D[]): WeakMap<THREE.Object3D, MeshHome> {
+  const m = new WeakMap<THREE.Object3D, MeshHome>();
+  for (const o of objects) {
+    m.set(o, {
+      pos: o.position.clone(),
+      scale: o.scale.clone(),
+      visible: o.visible,
     });
   }
   return m;
@@ -55,43 +57,84 @@ function easeOutCubic(t: number): number {
   return 1 - c * c * c;
 }
 
+export type ApplyKind =
+  | 'body' // cylinder / hull mesh — flies in from above with the module
+  | 'appendage' // small fixture (dish, whip, boom) — pop in at home
+  | 'deploy'; // solar panel — telescopes outward from a per-mesh
+//                                deployAnchor along a chosen deployAxis.
+
 /**
- * Apply assembly state to a mesh — interpolates scale + position from
- * "launch site above the station" to the resting home transform across
- * the per-module ANIM_WINDOW_MS centred on `launchEpoch`.
+ * Apply assembly state to a scene object (Mesh OR Group).
  *
- * - t = (nowEpoch - launchEpoch) / ANIM_WINDOW_MS
- * - t < 0  → hidden (mesh.visible = false)
- * - 0..1   → fly-in (scale tween 0 → 1, position offset +3y → 0)
- * - t > 1  → fully visible at home transform
+ * - body: t<0 hidden, 0..1 fly-in from above (scale + y-pos), t>1 home
+ * - appendage: t<0.55 hidden, 0.55..1 scale 0→1 in place
+ * - deploy: t<0.55 hidden, 0.55..1 fold-out from userData.deployAnchor
+ *   along userData.deployAxis — only that scale axis animates, other
+ *   axes stay full, and the object's position lerps from anchor → home
+ *   so the inner edge stays glued to the module while the outer edge
+ *   extends outward (real solar-array deployment)
  */
 export function applyAssembly(
-  mesh: THREE.Mesh,
+  obj: THREE.Object3D,
   home: MeshHome,
   state: AssemblyState,
   launchEpoch: number,
+  kind: ApplyKind = 'body',
 ): void {
   if (!state.active) {
-    mesh.position.copy(home.pos);
-    mesh.scale.copy(home.scale);
-    mesh.visible = home.visible;
+    obj.position.copy(home.pos);
+    obj.scale.copy(home.scale);
+    obj.visible = home.visible;
     return;
   }
   const t = (state.nowEpoch - launchEpoch) / ANIM_WINDOW_MS;
   if (t < 0) {
-    mesh.visible = false;
+    obj.visible = false;
     return;
   }
-  mesh.visible = home.visible;
   if (t >= 1) {
-    mesh.position.copy(home.pos);
-    mesh.scale.copy(home.scale);
+    obj.visible = home.visible;
+    obj.position.copy(home.pos);
+    obj.scale.copy(home.scale);
     return;
   }
+  if (kind === 'deploy') {
+    const startFrac = 0.55;
+    if (t < startFrac) {
+      obj.visible = false;
+      return;
+    }
+    obj.visible = home.visible;
+    const localT = (t - startFrac) / (1 - startFrac);
+    const e = easeOutCubic(localT);
+    const axis = (obj.userData.deployAxis as 'x' | 'y' | 'z' | undefined) ?? 'y';
+    const anchor = (obj.userData.deployAnchor as THREE.Vector3 | undefined) ?? home.pos;
+    // Other axes stay at full home scale — only the long axis grows.
+    obj.scale.copy(home.scale);
+    obj.scale[axis] = home.scale[axis] * e;
+    // Position interpolates from the anchor (folded against module body)
+    // to the resting home centre.
+    obj.position.lerpVectors(anchor, home.pos, e);
+    return;
+  }
+  if (kind === 'appendage') {
+    const startFrac = 0.55;
+    if (t < startFrac) {
+      obj.visible = false;
+      return;
+    }
+    obj.visible = home.visible;
+    const localT = (t - startFrac) / (1 - startFrac);
+    const e = easeOutCubic(localT);
+    obj.scale.set(home.scale.x * e, home.scale.y * e, home.scale.z * e);
+    obj.position.copy(home.pos);
+    return;
+  }
+  obj.visible = home.visible;
   const e = easeOutCubic(t);
-  mesh.scale.set(home.scale.x * e, home.scale.y * e, home.scale.z * e);
+  obj.scale.set(home.scale.x * e, home.scale.y * e, home.scale.z * e);
   // Fly in from above (positive Y) — drops onto the resting position.
-  mesh.position.set(home.pos.x, home.pos.y + (1 - e) * 3, home.pos.z);
+  obj.position.set(home.pos.x, home.pos.y + (1 - e) * 3, home.pos.z);
 }
 
 /**
@@ -117,4 +160,34 @@ export function currentChip<T extends { id: string; launch_epoch: number }>(
  */
 export function fmtDate(epoch: number): string {
   return new Date(epoch).toISOString().slice(0, 10);
+}
+
+/**
+ * Build an even-spaced playback mapping over a set of launch epochs.
+ *
+ * Real launch dates are highly uneven — e.g. Tianhe → Wentian is 15
+ * months, then Wentian → Mengtian is 3 months. A linear mapping puts
+ * most playback time on the empty 15-month gap. Instead, this function
+ * gives every distinct launch event the same slice of progress, so the
+ * viewer sees one module land per ~equal chunk of playback time.
+ *
+ * Each segment maps progress [k/N, (k+1)/N] onto wall-clock dates
+ * [epoch_k - window, epoch_k + window], producing a 2×window fly-in
+ * centred on the launch event. Dates between events are skipped — the
+ * date readout will visibly jump at each segment boundary.
+ */
+export function buildPiecewiseMapping(
+  epochs: number[],
+  window: number,
+): (progress: number) => number {
+  const unique = [...new Set(epochs)].sort((a, b) => a - b);
+  if (unique.length === 0) return () => 0;
+  return (progress: number): number => {
+    const N = unique.length;
+    const clamped = Math.max(0, Math.min(1 - 1e-6, progress));
+    const segmentIdx = Math.min(N - 1, Math.floor(clamped * N));
+    const segmentProgress = clamped * N - segmentIdx;
+    const e = unique[segmentIdx];
+    return e - window + segmentProgress * window * 2;
+  };
 }

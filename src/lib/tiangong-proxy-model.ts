@@ -10,6 +10,7 @@
  * at the forward-node nadir. Solar wings outboard on each lab.
  */
 import * as THREE from 'three';
+import { buildHullDecal } from './station-decals';
 import { setShadowFlags, cylinderBetween, makeWingPair } from './station-geometry';
 
 export const TIANGONG_MODULE_IDS = ['tianhe', 'wentian', 'mengtian', 'chinarm'] as const;
@@ -194,6 +195,23 @@ export function buildTiangongProxyStation(): THREE.Group {
   tianheForward.userData.stationPickable = true;
   tianheForward.userData.moduleId = 'tianhe';
   setShadowFlags(tianheForward);
+  // Hull decal: PRC flag + 中国空间站 banner. As a child of the forward
+  // bay it rides the parent's fly-in scaling + position during the
+  // assembly animation. Local +Z = world +Z thanks to the rotation.z
+  // = π/2 leaving Z unchanged. Width along local Y so the text reads
+  // along Tianhe's long axis (world X).
+  const tianheDecal = buildHullDecal({
+    text: '中国空间站',
+    width: 0.85,
+    height: 0.16,
+    flag: 'cn',
+    textureWidth: 768,
+    textureHeight: 128,
+  });
+  tianheDecal.position.set(0, 0, tianheRadius + 0.003);
+  tianheDecal.rotation.z = Math.PI / 2;
+  tianheDecal.userData.stationPickable = false;
+  tianheForward.add(tianheDecal);
   root.add(tianheForward);
 
   // Aft resource section (narrower cylinder).
@@ -308,6 +326,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   dishMast.rotation.x = Math.PI / 2;
   setShadowFlags(dishMast);
   dishMast.userData.stationPickable = false;
+  dishMast.userData.animModuleId = 'tianhe';
   root.add(dishMast);
 
   const dish = new THREE.Mesh(
@@ -323,6 +342,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   dish.scale.set(1.0, 0.55, 1.0);
   setShadowFlags(dish);
   dish.userData.stationPickable = false;
+  dish.userData.animModuleId = 'tianhe';
   root.add(dish);
 
   // Omnidirectional whip antennas — a pair on the underside (nadir) and
@@ -346,6 +366,7 @@ export function buildTiangongProxyStation(): THREE.Group {
     }
     setShadowFlags(whip);
     whip.userData.stationPickable = false;
+    whip.userData.animModuleId = 'tianhe';
     root.add(whip);
   }
 
@@ -356,6 +377,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   rvBoom.rotation.z = Math.PI / 2;
   setShadowFlags(rvBoom);
   rvBoom.userData.stationPickable = false;
+  rvBoom.userData.animModuleId = 'tianhe';
   root.add(rvBoom);
 
   // ── Tianhe's own solar arrays — TWO pairs (4 wings total) per the
@@ -384,8 +406,9 @@ export function buildTiangongProxyStation(): THREE.Group {
   for (const mastX of tianheMastXs) {
     for (const sign of [-1, 1]) {
       const wing = new THREE.Mesh(
-        // X = depth (0.4), Y = length (2.0), Z = thin (0.01) → face ±Z
-        new THREE.BoxGeometry(0.4, 2.0, 0.01),
+        // X = depth (0.74), Y = length (2.0), Z = thin (0.01) → face ±Z.
+        // Aspect ratio 2.7:1 matches real Tianhe arrays (12.6 m × 4.65 m).
+        new THREE.BoxGeometry(0.74, 2.0, 0.01),
         tianheArrayMat.clone(),
       );
       wing.position.set(mastX, sign * (1.0 + 0.04), 0);
@@ -395,9 +418,14 @@ export function buildTiangongProxyStation(): THREE.Group {
       }
       setShadowFlags(wing);
       wing.userData.stationPickable = false;
+      wing.userData.animModuleId = 'tianhe';
       wing.userData.tracksSun = true;
       wing.userData.sadaAxis = 'y';
       wing.userData.baseRotation = 0;
+      // Deploy-unfold: panel telescopes outward along Y from the mast
+      // on Tianhe's centerline (y=0) to its full home y-coordinate.
+      wing.userData.deployAxis = 'y';
+      wing.userData.deployAnchor = new THREE.Vector3(mastX, 0, 0);
       wing.name = 'tianhe_solar_array';
       root.add(wing);
     }
@@ -427,6 +455,19 @@ export function buildTiangongProxyStation(): THREE.Group {
   wentianInboard.userData.stationPickable = true;
   wentianInboard.userData.moduleId = 'wentian';
   setShadowFlags(wentianInboard);
+  // 问天 banner on the +Z hull side of the inboard work section.
+  const wentianDecal = buildHullDecal({
+    text: '问天 · WENTIAN',
+    width: 0.85,
+    height: 0.16,
+    flag: 'cn',
+    textureWidth: 768,
+    textureHeight: 128,
+  });
+  wentianDecal.position.set(0, 0, labRadius + 0.003);
+  wentianDecal.rotation.z = Math.PI / 2;
+  wentianDecal.userData.stationPickable = false;
+  wentianInboard.add(wentianDecal);
   root.add(wentianInboard);
 
   // Wentian outboard resource section (narrower cylinder).
@@ -466,11 +507,11 @@ export function buildTiangongProxyStation(): THREE.Group {
   // along the lab's outboard +Y axis (parallel rows). ─────────────────
   const arrayTex = makeSolarArrayTexture();
   arrayTex.repeat.set(8, 1);
-  // Each individual array strip is narrower (depth 0.35), and the two
-  // pairs are separated by 0.7 along Y so they read as TWO distinct
-  // strips side-by-side at the lab tip — not one fat blob.
-  const labArrayDepth = 0.35;
-  const labArrayDy = 0.7; // centre-to-centre between the two parallel pairs
+  // Each individual array strip is ~0.6 deep, two pairs sit close at
+  // the outboard tip with a small seam between them — matches the
+  // 6:1 aspect ratio of real Wentian / Mengtian arrays (27 m × 4.6 m).
+  const labArrayDepth = 0.6;
+  const labArrayDy = 0.18; // centre-to-centre between the two parallel pairs
   for (const dy of [-labArrayDy / 2, +labArrayDy / 2]) {
     const pair = new THREE.Group();
     pair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04 + dy, 0);
@@ -478,6 +519,12 @@ export function buildTiangongProxyStation(): THREE.Group {
     pair.userData.tracksSun = true;
     pair.userData.sadaAxis = 'x';
     pair.userData.baseRotation = Math.PI / 2;
+    pair.userData.animModuleId = 'wentian';
+    // Deploy-unfold: the pair's own scale.x telescopes the two child
+    // wings outward from the Wentian outboard tip. Children deliberately
+    // do NOT carry animModuleId — they ride the parent Group's scale.
+    pair.userData.deployAxis = 'x';
+    pair.userData.deployAnchor = new THREE.Vector3(tianheLen / 2 + 0.14, wentianBaseY + labLen, 0);
     makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {
@@ -499,6 +546,19 @@ export function buildTiangongProxyStation(): THREE.Group {
   mengtianInboard.userData.stationPickable = true;
   mengtianInboard.userData.moduleId = 'mengtian';
   setShadowFlags(mengtianInboard);
+  // 梦天 banner on the +Z hull side, mirroring Wentian.
+  const mengtianDecal = buildHullDecal({
+    text: '梦天 · MENGTIAN',
+    width: 0.85,
+    height: 0.16,
+    flag: 'cn',
+    textureWidth: 768,
+    textureHeight: 128,
+  });
+  mengtianDecal.position.set(0, 0, labRadius + 0.003);
+  mengtianDecal.rotation.z = Math.PI / 2;
+  mengtianDecal.userData.stationPickable = false;
+  mengtianInboard.add(mengtianDecal);
   root.add(mengtianInboard);
 
   const mengtianOutboard = new THREE.Mesh(
@@ -530,6 +590,13 @@ export function buildTiangongProxyStation(): THREE.Group {
     pair.userData.tracksSun = true;
     pair.userData.sadaAxis = 'x';
     pair.userData.baseRotation = Math.PI / 2;
+    pair.userData.animModuleId = 'mengtian';
+    pair.userData.deployAxis = 'x';
+    pair.userData.deployAnchor = new THREE.Vector3(
+      tianheLen / 2 + 0.14,
+      -(wentianBaseY + labLen),
+      0,
+    );
     makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {
@@ -616,30 +683,43 @@ export function buildTiangongProxyStation(): THREE.Group {
   }
 
   // ── Visiting fleet ─────────────────────────────────────────────────
+  // Three docks visible in the canonical 3-spacecraft handover layout.
+  // For ADR-049 selection, all three share the panel id `moduleId` of
+  // their visitor kind (one Shenzhou panel covers both aft + zenith
+  // docks, one Tianzhou panel covers the forward cargo dock). For the
+  // /tiangong assembly-sequence animation each dock instead gets a
+  // UNIQUE `dockEventId` so it can fly in at its real dock-event date
+  // (see DOCK_EVENTS in src/routes/tiangong/+page.svelte).
   type Out = 'plusY' | 'minusY' | 'plusZ' | 'minusZ' | 'plusX' | 'minusX';
   const fleet: {
     id: TiangongVisitorId;
+    dockEventId: string;
     build: () => THREE.Group;
     port: [number, number, number];
     out: Out;
   }[] = [
-    // Shenzhou docks at Tianhe aft port (-X end), nose pointed away (-X).
-    { id: 'shenzhou', build: buildShenzhou, port: [-(tianheLen / 2 + 0.2), 0, 0], out: 'minusX' },
-    // Tianzhou docks at the forward-node forward axial port (+X end),
-    // OPPOSITE Shenzhou — the long-axis cargo/crew configuration shown
-    // in canonical CMSA station diagrams.
+    // Shenzhou aft — first crewed dock = Shenzhou 12 (2021-06-17).
+    {
+      id: 'shenzhou',
+      dockEventId: 'dock-shenzhou-12',
+      build: buildShenzhou,
+      port: [-(tianheLen / 2 + 0.2), 0, 0],
+      out: 'minusX',
+    },
+    // Tianzhou forward — first cargo dock to Tianhe = Tianzhou 2 (2021-05-29).
     {
       id: 'tianzhou',
+      dockEventId: 'dock-tianzhou-2',
       build: buildTianzhou,
       port: [tianheLen / 2 + 0.18 + tianheRadius * 1.55 + 0.25, 0, 0],
       out: 'plusX',
     },
-    // Second Shenzhou at the forward-node zenith port (+Z radial) —
-    // the canonical 3-spacecraft configuration during crew handover.
-    // Same pickable id as the aft Shenzhou; both meshes belong to the
-    // shenzhou panel (visiting-fleet pattern from /iss).
+    // Second Shenzhou at zenith — first 3-spacecraft handover =
+    // Shenzhou 15 docks atop the existing Shenzhou 14 + Tianzhou 5
+    // configuration (2022-11-29).
     {
       id: 'shenzhou',
+      dockEventId: 'dock-shenzhou-15',
       build: buildShenzhou,
       port: [tianheLen / 2 + 0.18, 0, tianheRadius * 1.55 + 0.4],
       out: 'plusZ',
@@ -656,10 +736,12 @@ export function buildTiangongProxyStation(): THREE.Group {
     else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
     g.userData.stationPickable = true;
     g.userData.moduleId = ship.id;
+    g.userData.animModuleId = ship.dockEventId;
     g.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         child.userData.stationPickable = true;
         child.userData.moduleId = ship.id;
+        child.userData.animModuleId = ship.dockEventId;
       }
     });
     root.add(g);

@@ -28,11 +28,18 @@
     endEpoch: number;
     /** Wall-clock duration of a full play-through. */
     durationMs: number;
-    latestChip: { name: string; launcher: string; date: string } | null;
+    latestChip: {
+      name: string;
+      launcher: string;
+      date: string;
+      /** Pickable mesh id (module or visitor) the chip click should open. */
+      pickableId: string;
+    } | null;
     onTogglePlay: () => void;
     onScrub: (next: number) => void;
     onReset: () => void;
     onClose: () => void;
+    onChipClick: (pickableId: string) => void;
   };
 
   let {
@@ -46,6 +53,7 @@
     onScrub,
     onReset,
     onClose,
+    onChipClick,
   }: Props = $props();
 
   const nowEpoch = $derived(startEpoch + progress * (endEpoch - startEpoch));
@@ -53,16 +61,6 @@
 </script>
 
 <div class="assembly-overlay" data-testid="station-assembly">
-  <button
-    type="button"
-    class="assembly-close"
-    aria-label="Close assembly playback"
-    title="Close assembly playback"
-    onclick={onClose}
-  >
-    ×
-  </button>
-
   <div class="assembly-row">
     <button
       type="button"
@@ -99,12 +97,30 @@
     />
 
     <span class="date" data-testid="assembly-date">{nowDate}</span>
+
+    <button
+      type="button"
+      class="assembly-close"
+      aria-label="Close assembly playback"
+      title="Close assembly playback"
+      onclick={onClose}
+    >
+      ×
+    </button>
   </div>
 
   {#if latestChip}
     <p class="chip" data-testid="assembly-chip">
       <span aria-hidden="true">🚀</span>
-      <strong>{latestChip.name}</strong>
+      <button
+        type="button"
+        class="chip-name"
+        data-testid="assembly-chip-name"
+        title="Open this module's panel (pauses playback)"
+        onclick={() => onChipClick(latestChip!.pickableId)}
+      >
+        {latestChip.name}
+      </button>
       <span class="sep">·</span>
       <span>{latestChip.launcher}</span>
       <span class="sep">·</span>
@@ -140,21 +156,22 @@
   }
 
   .assembly-close {
-    position: absolute;
-    top: 0.3rem;
-    right: 0.4rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    border: none;
-    background: transparent;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 1px solid rgba(120, 180, 255, 0.35);
+    background: rgba(20, 28, 40, 0.6);
     color: #cfe2ff;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1;
     cursor: pointer;
     border-radius: 50%;
+    flex: none;
+    display: grid;
+    place-items: center;
   }
   .assembly-close:hover {
-    background: rgba(120, 180, 255, 0.18);
+    background: rgba(120, 180, 255, 0.22);
+    color: #fff;
   }
 
   .assembly-row {
@@ -204,8 +221,25 @@
     flex-wrap: wrap;
     line-height: 1.3;
   }
-  .chip strong {
+  .chip-name {
     color: #fff;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline dotted rgba(120, 180, 255, 0.6);
+    text-underline-offset: 3px;
+  }
+  .chip-name:hover {
+    color: #cfe2ff;
+    text-decoration: underline solid rgba(160, 200, 255, 0.9);
+  }
+  .chip-name:focus-visible {
+    outline: 2px solid #6fb3ff;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
   .chip .sep {
     opacity: 0.55;

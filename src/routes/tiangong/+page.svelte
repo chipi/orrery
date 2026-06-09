@@ -37,6 +37,7 @@
     captureHomes,
     applyAssembly,
     currentChip,
+    buildPiecewiseMapping,
   } from '$lib/station-assembly-anim';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
@@ -66,7 +67,38 @@
   let assemblyPlaying = $state(false);
   /** Scrub progress 0..1 mapped onto [startEpoch, endEpoch]. */
   let assemblyProgress = $state(0);
-  const ASSEMBLY_DURATION_MS = 12_000;
+  const ASSEMBLY_DURATION_MS = 24_000;
+
+  // Synthetic phases for the 3 spacecraft docks — each dock fly-in is
+  // tied to a real CMSA mission so the chip narrative can name it.
+  // dockEventId values mirror the userData.animModuleId set in
+  // src/lib/tiangong-proxy-model.ts (see buildTiangongProxyStation).
+  type DockEvent = {
+    id: string;
+    name: string;
+    launcher: string;
+    launch_date: string;
+  };
+  const DOCK_EVENTS: DockEvent[] = [
+    {
+      id: 'dock-tianzhou-2',
+      name: 'Tianzhou 2 — first cargo to Tianhe',
+      launcher: 'Long March 7 · Wenchang',
+      launch_date: '2021-05-29',
+    },
+    {
+      id: 'dock-shenzhou-12',
+      name: 'Shenzhou 12 — first crew aboard Tianhe',
+      launcher: 'Long March 2F · Nie Haisheng + Liu Boming + Tang Hongbo',
+      launch_date: '2021-06-17',
+    },
+    {
+      id: 'dock-shenzhou-15',
+      name: 'Shenzhou 15 — first 3-spacecraft handover (6 crew aboard)',
+      launcher: 'Long March 2F · Fei Junlong + Deng Qingming + Zhang Lu',
+      launch_date: '2022-11-29',
+    },
+  ];
   let hoverLabel: HoverLabel | undefined = $state();
 
   /** Reactive mirror of the 3D scene's hovered module id so the
@@ -137,35 +169,68 @@
     };
   });
 
-  // Assembly playback bounds derived from the module list. Defined as
-  // $derived.by so $derived doesn't fight the empty-array startup window.
-  const assemblyBounds = $derived.by(() => {
-    const dated = modules.filter((m) => m.launch_date);
-    if (dated.length === 0) return { startEpoch: 0, endEpoch: 0 };
-    const epochs = dated.map((m) => Date.parse(m.launch_date));
-    return { startEpoch: Math.min(...epochs), endEpoch: Math.max(...epochs) };
-  });
-  const assemblyNowEpoch = $derived(
-    (() => {
-      const { startEpoch, endEpoch } = assemblyBounds;
-      if (endEpoch <= startEpoch) return 0;
-      const span = endEpoch - startEpoch + ANIM_WINDOW_MS * 2;
-      return startEpoch - ANIM_WINDOW_MS + assemblyProgress * span;
-    })(),
-  );
-  const assemblyChip = $derived.by(() => {
-    if (!assemblyOpen) return null;
-    const perModule = modules
-      .filter((m) => m.launch_date)
+  // Assembly playback bounds derived from the module list PLUS the
+  // synthetic dock events. Chinarm rode up pre-installed on Tianhe
+  // (same launch date) so it isn't given its own chip — the existing
+  // Tianhe chip covers both, the chinarm mesh still flies in via
+  // launchEpochOf('chinarm') in the animate loop.
+  const assemblyPhases = $derived.by(() => {
+    const moduleEntries = modules
+      .filter((m) => m.launch_date && m.id !== 'chinarm')
       .map((m) => ({
         id: m.id,
-        name: m.name,
+        name: m.id === 'tianhe' ? `${m.name} + Chinarm` : m.name,
         launcher: m.launch_vehicle ?? '',
         date: m.launch_date,
         launch_epoch: Date.parse(m.launch_date),
+        pickableId: m.id,
       }));
-    const c = currentChip(perModule, assemblyNowEpoch);
-    return c ? { name: c.name, launcher: c.launcher, date: c.date } : null;
+    const dockEntries = DOCK_EVENTS.map((d) => {
+      // dock-tianzhou-2 → tianzhou panel; dock-shenzhou-12 → shenzhou.
+      const pickableId = d.id.split('-')[1] ?? d.id;
+      return {
+        id: d.id,
+        name: d.name,
+        launcher: d.launcher,
+        date: d.launch_date,
+        launch_epoch: Date.parse(d.launch_date),
+        pickableId,
+      };
+    });
+    return [...moduleEntries, ...dockEntries].sort((a, b) => a.launch_epoch - b.launch_epoch);
+  });
+  const assemblyBounds = $derived.by(() => {
+    if (assemblyPhases.length === 0) return { startEpoch: 0, endEpoch: 0 };
+    return {
+      startEpoch: assemblyPhases[0].launch_epoch,
+      endEpoch: assemblyPhases[assemblyPhases.length - 1].launch_epoch,
+    };
+  });
+  const assemblyNowEpoch = $derived.by(() => {
+    if (assemblyPhases.length === 0) return 0;
+    const map = buildPiecewiseMapping(
+      assemblyPhases.map((p) => p.launch_epoch),
+      ANIM_WINDOW_MS,
+    );
+    return map(assemblyProgress);
+  });
+  const assemblyChip = $derived.by(() => {
+    if (!assemblyOpen) return null;
+    const c = currentChip(assemblyPhases, assemblyNowEpoch);
+    return c
+      ? { name: c.name, launcher: c.launcher, date: c.date, pickableId: c.pickableId }
+      : null;
+  });
+
+  // While assembly is playing, mirror the active phase's pickableId into
+  // visualRef.hoveredId so the existing selection-styling outline lights
+  // up the corresponding part of the station (modules + visiting craft).
+  $effect(() => {
+    if (!assemblyOpen) return;
+    const hov = assemblyChip?.pickableId ?? null;
+    visualRef.hoveredId = hov;
+    canvasHoveredId = hov;
+    requestMaterialRefresh();
   });
 
   let sortedModules = $derived(
@@ -575,25 +640,50 @@
     });
 
     const meshById = new Map<string, THREE.Mesh[]>();
-    const allMeshes: THREE.Mesh[] = [];
+    // Animation walks Mesh AND Group. Wentian/Mengtian solar pair groups
+    // and the docked spacecraft groups (Shenzhou/Tianzhou) are animated
+    // as a single unit so their children — including solar panels —
+    // ride along with the parent. Skip any descendant whose ancestor is
+    // already animatable to avoid the parent + children double-animating
+    // out of sync. Selection styling (meshById) still walks every
+    // pickable child Mesh.
+    const allMeshes: { mesh: THREE.Object3D; id: string; kind: 'body' | 'appendage' | 'deploy' }[] =
+      [];
     station.traverse((o) => {
+      // Selection-styling registry — every pickable Mesh, regardless of
+      // whether an ancestor is the animation root.
       if (o instanceof THREE.Mesh && o.userData.stationPickable && o.userData.moduleId) {
         const mid = o.userData.moduleId as string;
         const arr = meshById.get(mid) ?? [];
         arr.push(o);
         meshById.set(mid, arr);
-        allMeshes.push(o);
       }
+      const animId = (o.userData.animModuleId ?? o.userData.moduleId) as string | undefined;
+      if (!animId) return;
+      // Skip if any ancestor already carries an animatable id — the
+      // ancestor's animation is responsible for this whole subtree.
+      let p: THREE.Object3D | null = o.parent;
+      while (p && p !== station) {
+        if (p.userData.animModuleId || p.userData.moduleId) return;
+        p = p.parent;
+      }
+      let kind: 'body' | 'appendage' | 'deploy';
+      if (o.userData.deployAxis) kind = 'deploy';
+      else if (o.userData.stationPickable) kind = 'body';
+      else kind = 'appendage';
+      allMeshes.push({ mesh: o, id: animId, kind });
     });
     // Cache resting transforms so the assembly animation can interpolate
     // from a "launched-from-above" pose back to home, then restore home
     // exactly when assembly mode exits.
-    const meshHomes = captureHomes(allMeshes);
+    const meshHomes = captureHomes(allMeshes.map((m) => m.mesh));
 
-    // Map moduleId → launch epoch (ms). Refilled from the loaded module
-    // list on each frame so it tracks any list change without a separate
-    // reactive plumb. Tiangong has 4 ids; the cost is trivial.
+    // Map animModuleId → launch epoch (ms). Pulled fresh each frame from
+    // the loaded module list + the synthetic DOCK_EVENTS so any change
+    // in either flows through without a separate reactive plumb.
     function launchEpochOf(id: string): number {
+      const dock = DOCK_EVENTS.find((d) => d.id === id);
+      if (dock) return Date.parse(dock.launch_date);
       const item = moduleListRef.list.find((x) => x.id === id);
       if (!item || !item.launch_date) return Number.NaN;
       return Date.parse(item.launch_date);
@@ -605,7 +695,7 @@
       if (!assemblyRef.active) {
         if (!assemblyApplied) return; // never touched — nothing to restore
         // Restore home transforms once on exit.
-        for (const mesh of allMeshes) {
+        for (const { mesh } of allMeshes) {
           const home = meshHomes.get(mesh);
           if (!home) continue;
           mesh.position.copy(home.pos);
@@ -625,32 +715,39 @@
         assemblyProgress = Math.min(1, assemblyRef.progress + dt / ASSEMBLY_DURATION_MS);
         if (assemblyProgress >= 1) assemblyPlaying = false;
       }
-      // Module list may be empty during the first frames after mount.
-      const mods = moduleListRef.list.filter((x) => x.launch_date);
+      // Combined module + dock-event timeline. Each gets its own slice
+      // of playback so the 3 visiting spacecraft join in chronological
+      // order with their own narrative chip + fly-in animation.
+      const mods = modules.filter((x) => x.launch_date);
       if (mods.length === 0) return;
-      const epochs = mods.map((x) => Date.parse(x.launch_date));
+      const moduleEpochs = mods.map((x) => Date.parse(x.launch_date));
+      const dockEpochs = DOCK_EVENTS.map((d) => Date.parse(d.launch_date));
+      const epochs = [...moduleEpochs, ...dockEpochs];
       const startEpoch = Math.min(...epochs);
       const endEpoch = Math.max(...epochs);
-      // Buffer one ANIM_WINDOW on each side so the very first module
-      // still has a fly-in animation and the last is fully landed.
-      const span = endEpoch - startEpoch + ANIM_WINDOW_MS * 2;
-      const nowEpoch = startEpoch - ANIM_WINDOW_MS + assemblyRef.progress * span;
+      // Piecewise mapping: equal screen-time per distinct launch event.
+      // Avoids dragging through the 15-month Tianhe→Wentian dead gap.
+      const mapEpoch = buildPiecewiseMapping(epochs, ANIM_WINDOW_MS);
+      const nowEpoch = mapEpoch(assemblyRef.progress);
       const state: AssemblyState = {
         active: true,
         nowEpoch,
         startEpoch,
         endEpoch,
       };
-      for (const mesh of allMeshes) {
+      // Each mesh's id is either a module id (tianhe, wentian, mengtian,
+      // chinarm) or a synthetic dock-event id (dock-tianzhou-2,
+      // dock-shenzhou-12, dock-shenzhou-15). All four module ids + all
+      // three dock-event ids appear in launchEpochOf.
+      for (const { mesh, id, kind } of allMeshes) {
         const home = meshHomes.get(mesh);
         if (!home) continue;
-        const mid = mesh.userData.moduleId as string;
-        const launchEpoch = launchEpochOf(mid);
+        const launchEpoch = launchEpochOf(id);
         if (Number.isNaN(launchEpoch)) {
           mesh.visible = home.visible;
           continue;
         }
-        applyAssembly(mesh, home, state, launchEpoch);
+        applyAssembly(mesh, home, state, launchEpoch, kind);
       }
       assemblyApplied = true;
     }
@@ -1122,7 +1219,14 @@
         endEpoch={assemblyBounds.endEpoch}
         durationMs={ASSEMBLY_DURATION_MS}
         latestChip={assemblyChip}
-        onTogglePlay={() => (assemblyPlaying = !assemblyPlaying)}
+        onTogglePlay={() => {
+          // If we're paused at the very end, treat play as "restart"
+          // — clicking ▶ on a finished timeline should replay it.
+          if (!assemblyPlaying && assemblyProgress >= 0.999) {
+            assemblyProgress = 0;
+          }
+          assemblyPlaying = !assemblyPlaying;
+        }}
         onScrub={(p) => {
           assemblyProgress = p;
           assemblyPlaying = false;
@@ -1135,7 +1239,44 @@
           assemblyOpen = false;
           assemblyPlaying = false;
         }}
+        onChipClick={(pickableId) => {
+          // Pause playback and open the panel for the active phase's
+          // pickable target — exactly the same flow as clicking a row
+          // in the MODULES drawer.
+          assemblyPlaying = false;
+          const target = [...sortedModules, ...sortedVisitors].find((x) => x.id === pickableId);
+          if (target) openModule(target);
+        }}
       />
+    {/if}
+
+    <!-- Edge handles: MODULES on the left edge (the modules drawer
+         actually opens at left:12px), TIMELINE on the bottom edge
+         (overlay slides up from below). Hidden in list mode where the
+         page IS the modules list. -->
+    {#if viewMode !== 'list'}
+      <button
+        type="button"
+        class="edge-handle handle-left"
+        data-testid="tiangong-view-toggle"
+        aria-pressed={indexOpen}
+        aria-label={m.tiangong_btn_modules_title()}
+        title={m.tiangong_btn_modules_title()}
+        onclick={() => (indexOpen = !indexOpen)}
+      >
+        <span class="handle-label">MODULES</span>
+      </button>
+      <button
+        type="button"
+        class="edge-handle handle-bottom"
+        data-testid="tiangong-timeline-toggle"
+        aria-pressed={timelineOpen}
+        aria-label="Toggle Tiangong assembly timeline"
+        title="Chronological timeline of when each Tiangong module + visitor joined the station"
+        onclick={() => (timelineOpen = !timelineOpen)}
+      >
+        <span class="handle-label">TIMELINE</span>
+      </button>
     {/if}
 
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
@@ -1163,9 +1304,10 @@
           <span class="hint hint-docked">{m.tiangong_blueprint_view_front()}</span>
         {/if}
       </div>
-      <!-- Always 4 buttons in a single row across all non-list modes;
-           RESET + SPIN are 3D-only and grey out in 2D so the layout
-           doesn't jump between modes. -->
+      <!-- Single-row HUD: BLUEPRINT + RESET + SPIN + ASSEMBLY. TIMELINE
+           and MODULES live on their own edge-handle buttons (bottom and
+           right edges respectively) so the playback / view HUD stays
+           compact. -->
       {#if viewMode !== 'list'}
         <div class="ctrl-row">
           <button
@@ -1203,26 +1345,6 @@
             title={m.tiangong_btn_spin_title()}
           >
             {m.tiangong_btn_spin()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
-            data-testid="tiangong-view-toggle"
-            aria-pressed={indexOpen}
-            onclick={() => (indexOpen = !indexOpen)}
-            title={m.tiangong_btn_modules_title()}
-          >
-            MODULES
-          </button>
-          <button
-            type="button"
-            class="toggle"
-            data-testid="tiangong-timeline-toggle"
-            aria-pressed={timelineOpen}
-            onclick={() => (timelineOpen = !timelineOpen)}
-            title="Chronological timeline of when each Tiangong module + visitor joined the station"
-          >
-            TIMELINE
           </button>
           <button
             type="button"
@@ -1557,6 +1679,66 @@
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
+  }
+  /* Edge handles — pinned to the .tiangong-root edge from which the
+     panel they open will appear. Vertical on the left edge for MODULES,
+     horizontal at the bottom for TIMELINE. position:absolute (not fixed)
+     so they ride below the global nav and don't overlap unrelated UI. */
+  .edge-handle {
+    position: absolute;
+    background: rgba(8, 10, 22, 0.82);
+    color: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+  }
+  .edge-handle:hover {
+    background: rgba(40, 50, 80, 0.92);
+    color: #fff;
+  }
+  .edge-handle:focus-visible {
+    outline: 2px solid #6fb3ff;
+    outline-offset: 2px;
+  }
+  .edge-handle[aria-pressed='true'] {
+    background: rgba(60, 110, 200, 0.85);
+    color: #fff;
+    border-color: rgba(120, 180, 255, 0.55);
+  }
+  .handle-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 110px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+  }
+  .handle-left .handle-label {
+    display: inline-block;
+    writing-mode: vertical-rl;
+  }
+  .handle-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 24px;
+    min-width: 110px;
+    padding: 0 14px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: none;
+  }
+  .handle-bottom .handle-label {
+    display: inline-block;
+    line-height: 22px;
   }
   .hint {
     font-family: 'Space Mono', monospace;

@@ -30,6 +30,14 @@
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
+  import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
+  import {
+    type AssemblyState,
+    ANIM_WINDOW_MS,
+    captureHomes,
+    applyAssembly,
+    currentChip,
+  } from '$lib/station-assembly-anim';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -54,6 +62,11 @@
   let autoSpin = $state(true);
   let indexOpen = $state(false);
   let timelineOpen = $state(false);
+  let assemblyOpen = $state(false);
+  let assemblyPlaying = $state(false);
+  /** Scrub progress 0..1 mapped onto [startEpoch, endEpoch]. */
+  let assemblyProgress = $state(0);
+  const ASSEMBLY_DURATION_MS = 12_000;
   let hoverLabel: HoverLabel | undefined = $state();
 
   /** Reactive mirror of the 3D scene's hovered module id so the
@@ -76,6 +89,20 @@
     panelOpen: boolean;
     hoveredId: string | null;
   } = { selectedId: null, panelOpen: false, hoveredId: null };
+
+  // Shared between Svelte state + the Three.js animate() closure. Updating
+  // any field on the next frame applies it in-scene — no event plumbing.
+  const assemblyRef: {
+    active: boolean;
+    playing: boolean;
+    progress: number;
+  } = { active: false, playing: false, progress: 0 };
+
+  $effect(() => {
+    assemblyRef.active = assemblyOpen;
+    assemblyRef.playing = assemblyPlaying;
+    assemblyRef.progress = assemblyProgress;
+  });
 
   let requestMaterialRefresh: () => void = () => {};
   let resetCamera: () => void = () => {};
@@ -108,6 +135,37 @@
     return () => {
       cancelled = true;
     };
+  });
+
+  // Assembly playback bounds derived from the module list. Defined as
+  // $derived.by so $derived doesn't fight the empty-array startup window.
+  const assemblyBounds = $derived.by(() => {
+    const dated = modules.filter((m) => m.launch_date);
+    if (dated.length === 0) return { startEpoch: 0, endEpoch: 0 };
+    const epochs = dated.map((m) => Date.parse(m.launch_date));
+    return { startEpoch: Math.min(...epochs), endEpoch: Math.max(...epochs) };
+  });
+  const assemblyNowEpoch = $derived(
+    (() => {
+      const { startEpoch, endEpoch } = assemblyBounds;
+      if (endEpoch <= startEpoch) return 0;
+      const span = endEpoch - startEpoch + ANIM_WINDOW_MS * 2;
+      return startEpoch - ANIM_WINDOW_MS + assemblyProgress * span;
+    })(),
+  );
+  const assemblyChip = $derived.by(() => {
+    if (!assemblyOpen) return null;
+    const perModule = modules
+      .filter((m) => m.launch_date)
+      .map((m) => ({
+        id: m.id,
+        name: m.name,
+        launcher: m.launch_vehicle ?? '',
+        date: m.launch_date,
+        launch_epoch: Date.parse(m.launch_date),
+      }));
+    const c = currentChip(perModule, assemblyNowEpoch);
+    return c ? { name: c.name, launcher: c.launcher, date: c.date } : null;
   });
 
   let sortedModules = $derived(
@@ -517,14 +575,85 @@
     });
 
     const meshById = new Map<string, THREE.Mesh[]>();
+    const allMeshes: THREE.Mesh[] = [];
     station.traverse((o) => {
       if (o instanceof THREE.Mesh && o.userData.stationPickable && o.userData.moduleId) {
         const mid = o.userData.moduleId as string;
         const arr = meshById.get(mid) ?? [];
         arr.push(o);
         meshById.set(mid, arr);
+        allMeshes.push(o);
       }
     });
+    // Cache resting transforms so the assembly animation can interpolate
+    // from a "launched-from-above" pose back to home, then restore home
+    // exactly when assembly mode exits.
+    const meshHomes = captureHomes(allMeshes);
+
+    // Map moduleId → launch epoch (ms). Refilled from the loaded module
+    // list on each frame so it tracks any list change without a separate
+    // reactive plumb. Tiangong has 4 ids; the cost is trivial.
+    function launchEpochOf(id: string): number {
+      const item = moduleListRef.list.find((x) => x.id === id);
+      if (!item || !item.launch_date) return Number.NaN;
+      return Date.parse(item.launch_date);
+    }
+
+    let assemblyLastWall = performance.now();
+    let assemblyApplied = false;
+    function applyAssemblyToScene(_timeSec: number) {
+      if (!assemblyRef.active) {
+        if (!assemblyApplied) return; // never touched — nothing to restore
+        // Restore home transforms once on exit.
+        for (const mesh of allMeshes) {
+          const home = meshHomes.get(mesh);
+          if (!home) continue;
+          mesh.position.copy(home.pos);
+          mesh.scale.copy(home.scale);
+          mesh.visible = home.visible;
+        }
+        assemblyApplied = false;
+        assemblyLastWall = performance.now();
+        return;
+      }
+      // Auto-advance progress when playing. Pause holds it where the
+      // user dragged it; manual scrub is the parent's responsibility.
+      const wall = performance.now();
+      const dt = wall - assemblyLastWall;
+      assemblyLastWall = wall;
+      if (assemblyRef.playing) {
+        assemblyProgress = Math.min(1, assemblyRef.progress + dt / ASSEMBLY_DURATION_MS);
+        if (assemblyProgress >= 1) assemblyPlaying = false;
+      }
+      // Module list may be empty during the first frames after mount.
+      const mods = moduleListRef.list.filter((x) => x.launch_date);
+      if (mods.length === 0) return;
+      const epochs = mods.map((x) => Date.parse(x.launch_date));
+      const startEpoch = Math.min(...epochs);
+      const endEpoch = Math.max(...epochs);
+      // Buffer one ANIM_WINDOW on each side so the very first module
+      // still has a fly-in animation and the last is fully landed.
+      const span = endEpoch - startEpoch + ANIM_WINDOW_MS * 2;
+      const nowEpoch = startEpoch - ANIM_WINDOW_MS + assemblyRef.progress * span;
+      const state: AssemblyState = {
+        active: true,
+        nowEpoch,
+        startEpoch,
+        endEpoch,
+      };
+      for (const mesh of allMeshes) {
+        const home = meshHomes.get(mesh);
+        if (!home) continue;
+        const mid = mesh.userData.moduleId as string;
+        const launchEpoch = launchEpochOf(mid);
+        if (Number.isNaN(launchEpoch)) {
+          mesh.visible = home.visible;
+          continue;
+        }
+        applyAssembly(mesh, home, state, launchEpoch);
+      }
+      assemblyApplied = true;
+    }
 
     function refreshMeshMaterials(timeSec: number) {
       refreshStationSelectionStyling({
@@ -714,6 +843,7 @@
       const t = performance.now() / 1000;
       spin.tick(t, autoSpin);
       station.rotation.y = spin.value() * 0.028;
+      applyAssemblyToScene(t);
       // Sun-tracking solar arrays — slow continuous rotation around each
       // array's SADA axis (one full revolution every ~4 minutes).
       tickSunTrackingArrays(station, t);
@@ -984,6 +1114,30 @@
       </div>
     {/if}
 
+    {#if assemblyOpen}
+      <StationAssemblyControl
+        playing={assemblyPlaying}
+        progress={assemblyProgress}
+        startEpoch={assemblyBounds.startEpoch}
+        endEpoch={assemblyBounds.endEpoch}
+        durationMs={ASSEMBLY_DURATION_MS}
+        latestChip={assemblyChip}
+        onTogglePlay={() => (assemblyPlaying = !assemblyPlaying)}
+        onScrub={(p) => {
+          assemblyProgress = p;
+          assemblyPlaying = false;
+        }}
+        onReset={() => {
+          assemblyProgress = 0;
+          assemblyPlaying = true;
+        }}
+        onClose={() => {
+          assemblyOpen = false;
+          assemblyPlaying = false;
+        }}
+      />
+    {/if}
+
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
     <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
@@ -1069,6 +1223,25 @@
             title="Chronological timeline of when each Tiangong module + visitor joined the station"
           >
             TIMELINE
+          </button>
+          <button
+            type="button"
+            class="toggle"
+            data-testid="tiangong-assembly-toggle"
+            aria-pressed={assemblyOpen}
+            disabled={viewMode !== '3d'}
+            onclick={() => {
+              assemblyOpen = !assemblyOpen;
+              if (assemblyOpen) {
+                assemblyProgress = 0;
+                assemblyPlaying = true;
+              } else {
+                assemblyPlaying = false;
+              }
+            }}
+            title="Watch the station's modules join in chronological order"
+          >
+            ASSEMBLY
           </button>
         </div>
       {:else}

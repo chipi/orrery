@@ -5160,7 +5160,11 @@
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
-    transform: translate(-50%, -50%);
+    /* Anchored at top-centre so chipX/Y refers to the chip's top
+       edge. The leader line ends at this point, so it never crosses
+       the chip body / text. The chip then extends DOWNWARD from the
+       anchor. */
+    transform: translate(-50%, 0);
     padding: 6px 12px 7px;
     background: rgba(8, 10, 22, 0.94);
     border-radius: 4px;

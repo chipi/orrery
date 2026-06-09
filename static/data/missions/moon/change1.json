@@ -33,5 +33,31 @@
       "id": "change1",
       "role": "spacecraft"
     }
-  ]
+  ],
+  "flight": {
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 600,
+        "inclination_deg": 31,
+        "revs": 3
+      },
+      "tli": {
+        "dv_kms": 3.1,
+        "c3_km2_s2": -1.5
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 200,
+        "inclination_deg": 90,
+        "periselene_km": 200
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
 }

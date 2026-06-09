@@ -39,5 +39,31 @@
     "cupola",
     "tranquility",
     "unity"
+  ],
+  "flights": [
+    {
+      "mission_id": "sts-49",
+      "flight_designation": "STS-49 (1992-05-07) · first Endeavour flight; first 3-person EVA (Thuot + Hieb + Akers) — captured stranded Intelsat-VI by hand"
+    },
+    {
+      "mission_id": "sts-61",
+      "flight_designation": "STS-61 (1993-12-02) · first Hubble servicing mission (HST SM1); installed COSTAR corrective optics + WFPC2"
+    },
+    {
+      "mission_id": "sts-88",
+      "flight_designation": "STS-88 (1998-12-04) · first ISS assembly mission; delivered + attached Unity (Node 1) to Zarya"
+    },
+    {
+      "mission_id": "sts-100",
+      "flight_designation": "STS-100 (2001-04-19) · installed Canadarm2 robotic arm on ISS"
+    },
+    {
+      "mission_id": "sts-130",
+      "flight_designation": "STS-130 (2010-02-08) · installed Tranquility (Node 3) + Cupola on ISS — gave the station its iconic windows"
+    },
+    {
+      "mission_id": "sts-134",
+      "flight_designation": "STS-134 (2011-05-16) · final Endeavour flight; installed AMS-02 cosmic-ray detector on ISS"
+    }
   ]
 }

@@ -2818,5 +2818,29 @@
     "status": "RETIRED",
     "first_flight": "1976-06-22",
     "tagline": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days"
+  },
+  {
+    "id": "lc-34",
+    "name": "Launch Complex 34 (LC-34)",
+    "category": "launch-site",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1961-10-27",
+    "tagline": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11"
+  },
+  {
+    "id": "mars2-orbiter",
+    "name": "Mars 2 Orbiter",
+    "category": "orbiter",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1971-05-19",
+    "tagline": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 2 weeks). Operated 1971-11-27 to 1972-08"
   }
 ]

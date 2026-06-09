@@ -33,5 +33,30 @@
       "id": "smart-1",
       "role": "spacecraft"
     }
-  ]
+  ],
+  "flight": {
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 656,
+        "inclination_deg": 7,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 0
+      },
+      "translunar": {
+        "type": "spiral"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 470,
+        "inclination_deg": 90,
+        "periselene_km": 470
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
 }

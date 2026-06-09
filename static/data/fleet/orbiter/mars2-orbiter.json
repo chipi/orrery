@@ -1,0 +1,33 @@
+{
+  "id": "mars2-orbiter",
+  "name": "Mars 2 Orbiter",
+  "category": "orbiter",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1971-05-19",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 2 weeks). Operated 1971-11-27 to 1972-08",
+  "credit": "The orbital half of the Soviet Mars 2 mission. Launched 1971-05-19 on a Proton-K from Baikonur, Mars 2 reached Mars 1971-11-27 — just 13 days after Mariner 9 became the first Mars orbiter. Its lander attempted descent on 1971-11-27 but its parachute failed to deploy and the lander crashed (the first man-made object on Mars, but no telemetry). The orbiter half was much more successful, returning ~60 image frames + extensive measurements of the upper atmosphere, magnetic field, and surface temperatures during the same global dust storm that compromised Mariner 9's early imaging. Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors — the same instrument suite as Mars 3 Orbiter. End of mission 1972-08-22 after 362 orbits.",
+  "links": [
+    {
+      "l": "Mars 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_2",
+      "t": "intro"
+    },
+    {
+      "l": "Mars 2 — NASA / NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mars2"
+    }
+  ]
+}

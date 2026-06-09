@@ -38,5 +38,31 @@
     "harmony",
     "kibo",
     "leonardo"
+  ],
+  "flights": [
+    {
+      "mission_id": "sts-41-d",
+      "flight_designation": "STS-41-D (1984-08-30) · first Discovery flight · deployed 3 commercial comsats"
+    },
+    {
+      "mission_id": "sts-26",
+      "flight_designation": "STS-26 (1988-09-29) · post-Challenger Return-to-Flight after 32-month stand-down"
+    },
+    {
+      "mission_id": "sts-31",
+      "flight_designation": "STS-31 (1990-04-24) · deployed Hubble Space Telescope into 600 km orbit"
+    },
+    {
+      "mission_id": "sts-95",
+      "flight_designation": "STS-95 (1998-10-29) · returned John Glenn to orbit at age 77 (36 years after his 1962 Friendship 7 flight)"
+    },
+    {
+      "mission_id": "sts-114",
+      "flight_designation": "STS-114 (2005-07-26) · post-Columbia Return-to-Flight after 29-month stand-down · first test of in-orbit thermal-tile inspection / repair"
+    },
+    {
+      "mission_id": "sts-133",
+      "flight_designation": "STS-133 (2011-02-24) · final Discovery flight (39 total — most of any orbiter) · delivered Leonardo PMM to ISS"
+    }
   ]
 }

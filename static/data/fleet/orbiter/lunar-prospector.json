@@ -28,7 +28,9 @@
       "t": "deep"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "lunar-prospector"
+  ],
   "linked_sites": [
     {
       "type": "moon",

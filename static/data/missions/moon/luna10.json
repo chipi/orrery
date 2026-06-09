@@ -1,0 +1,37 @@
+{
+  "id": "luna10",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1966,
+  "status": "FLOWN",
+  "departure_date": "1966-03-31",
+  "arrival_date": "1966-04-03",
+  "transit_days": 3,
+  "vehicle": "Molniya-M (Block-L upper stage)",
+  "payload": "~1582 kg launch mass; 248 kg dedicated orbiter section",
+  "delta_v": "~3.7 km/s (TLI + LOI)",
+  "data_quality": "good",
+  "credit": "Public domain / Roscosmos archive. First spacecraft to orbit the Moon (and any body other than Earth).",
+  "links": [
+    {
+      "l": "Luna 10 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Luna_10",
+      "t": "intro"
+    },
+    {
+      "l": "Luna 10 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-027A",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "luna10",
+      "role": "spacecraft"
+    }
+  ]
+}

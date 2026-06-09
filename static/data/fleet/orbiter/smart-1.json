@@ -23,7 +23,9 @@
       "t": "core"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "smart-1"
+  ],
   "linked_sites": [
     {
       "type": "moon",

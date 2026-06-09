@@ -100,8 +100,11 @@ describe('getMissionIndex', () => {
     // 2026-06-08 #311 Tier A — backfilled 6 lunar Apollo missions
     // (8, 10, 12, 14, 15, 16) + 2 LEO Apollo missions (7, 9) using
     // the new EARTH dest. 56 → 64.
+    // 2026-06-09 #311 Tier F — backfilled 4 missing /missions counterparts
+    // for Tier B fleet entries (luna10, lunar-prospector, smart-1, change1).
+    // 64 → 68.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(64);
+    expect(missions).toHaveLength(68);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -139,9 +142,9 @@ describe('filterMissions', () => {
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 27', async () => {
+  it('MOON filter returns 31', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(27);
+    expect(moon).toHaveLength(31);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -333,9 +336,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 64 missions merged with their en-US overlays', async () => {
+  it('returns all 68 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(64);
+    expect(list).toHaveLength(68);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -366,7 +369,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(64);
+    expect(list).toHaveLength(68);
   });
 
   it('count matches what filterMissions reports', async () => {

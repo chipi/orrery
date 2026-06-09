@@ -1,0 +1,37 @@
+{
+  "id": "change1",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2007,
+  "status": "FLOWN",
+  "departure_date": "2007-10-24",
+  "arrival_date": "2007-11-07",
+  "transit_days": 14,
+  "vehicle": "Long March 3A",
+  "payload": "2350 kg launch mass; 130 kg science payload",
+  "delta_v": "~3.8 km/s (TLI + LOI)",
+  "data_quality": "good",
+  "credit": "Public domain / CNSA archive. China's first lunar mission + first object on the lunar surface.",
+  "links": [
+    {
+      "l": "Chang'e 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_1",
+      "t": "intro"
+    },
+    {
+      "l": "China Lunar Exploration Program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chinese_Lunar_Exploration_Program",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "change1",
+      "role": "spacecraft"
+    }
+  ]
+}

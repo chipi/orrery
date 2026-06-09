@@ -480,7 +480,11 @@
             </figure>
             <div class="card-body">
               <header class="card-head">
-                <span class="agency-badge" style:background-color={mission.color}>
+                <span
+                  class="agency-badge"
+                  style:background-color={mission.color}
+                  title={agencyFullName(mission.agency) ?? mission.agency}
+                >
                   {#if logoFor(mission.agency)}
                     <img
                       src={logoFor(mission.agency)}

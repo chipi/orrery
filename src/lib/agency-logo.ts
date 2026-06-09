@@ -24,4 +24,25 @@ export function agencyToLogoPaths(agency: string | undefined): string[] {
   return out;
 }
 
+/** Same as agencyToLogoPaths but pairs each path with the resolved
+ *  short + full agency names — for per-logo tooltips. */
+export interface AgencyLogoEntry {
+  path: string;
+  short: string;
+  full: string;
+}
+
+export function agencyToLogoEntries(agency: string | undefined): AgencyLogoEntry[] {
+  const out: AgencyLogoEntry[] = [];
+  const seen = new Set<string>();
+  for (const a of resolveAgencyCompound(agency)) {
+    if (!a.logo) continue;
+    const path = `${base}/logos/${a.logo}`;
+    if (seen.has(path)) continue;
+    seen.add(path);
+    out.push({ path, short: a.short, full: a.full });
+  }
+  return out;
+}
+
 export type { AgencyInfo };

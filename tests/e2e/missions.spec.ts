@@ -7,7 +7,7 @@ import { test, expect, type Page } from '@playwright/test';
  *
  * Covers:
  *   - 68 mission cards render
- *   - dest filter narrows to 17 (Mars) / 31 (Moon) / 2 (Earth) / etc
+ *   - dest filter narrows to 16 (Mars) / 31 (Moon) / 2 (Earth) / etc
  *   - status filter narrows correctly
  *   - URL params pre-apply on load
  *   - card click opens MissionPanel
@@ -34,14 +34,14 @@ test.describe('/missions — catalog', () => {
     await expect(cards).toHaveCount(68, { timeout: 10_000 });
   });
 
-  test('MARS filter shows 17 cards', async ({ page }) => {
+  test('MARS filter shows 16 cards', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
       timeout: 10_000,
     });
     await expandFilters(page);
     await page.getByRole('radio', { name: /^MARS$/i }).click();
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(17);
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(16);
     await expect(page).toHaveURL(/dest=MARS/);
   });
 
@@ -58,7 +58,7 @@ test.describe('/missions — catalog', () => {
 
   test('?dest=MARS pre-applies the filter on load (URL sharing)', async ({ page }) => {
     await page.goto('/missions?dest=MARS');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(17, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(16, {
       timeout: 10_000,
     });
     // The MARS pill should reflect the active state.
@@ -68,21 +68,24 @@ test.describe('/missions — catalog', () => {
     );
   });
 
-  test('JUPITER filter shows Galileo only (ADR-028 outer catalogue)', async ({ page }) => {
+  test('JUPITER filter shows the outer catalogue (Pioneer 10 + Galileo + Juno + JUICE)', async ({
+    page,
+  }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(68, {
       timeout: 10_000,
     });
     await expandFilters(page);
     await page.getByRole('radio', { name: /^JUPITER$/i }).click();
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(1);
+    // Pioneer 10 (1972), Galileo (1989), Juno (2011), JUICE (2023).
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(4);
     await expect(page.locator('[data-testid="mission-card-galileo"]')).toBeVisible();
     await expect(page).toHaveURL(/dest=JUPITER/);
   });
 
   test('?dest=JUPITER pre-applies the filter on load (URL sharing)', async ({ page }) => {
     await page.goto('/missions?dest=JUPITER');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(1, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(4, {
       timeout: 10_000,
     });
     await expect(page.getByRole('radio', { name: /^JUPITER$/i })).toHaveAttribute(

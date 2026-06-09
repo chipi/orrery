@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { agencyToLogoPaths } from '$lib/agency-logo';
+  import { agencyToLogoEntries } from '$lib/agency-logo';
 
   interface Props {
     agency: string | undefined;
   }
   let { agency }: Props = $props();
 
-  const paths = $derived(agencyToLogoPaths(agency));
+  const entries = $derived(agencyToLogoEntries(agency));
 </script>
 
-{#if paths.length > 0}
+{#if entries.length > 0}
   <span class="badges" aria-hidden="true">
-    {#each paths as p (p)}
-      <img src={p} alt="" class="badge" loading="lazy" decoding="async" />
+    {#each entries as e (e.path)}
+      <img src={e.path} alt="" title={e.full} class="badge" loading="lazy" decoding="async" />
     {/each}
   </span>
 {/if}

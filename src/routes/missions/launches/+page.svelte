@@ -200,6 +200,11 @@
   data-loading={loading ? 'true' : null}
   data-mode={mode}
 >
+  <a class="back-link" href="{base}/missions" data-sveltekit-preload-data="hover">
+    <span class="back-arrow" aria-hidden="true">←</span>
+    <span class="back-label">{m.launches_back_to_missions()}</span>
+  </a>
+
   <button
     type="button"
     class="filters-toggle"
@@ -377,6 +382,35 @@
     padding: 18px 22px 40px;
     max-width: 1400px;
     margin: 0 auto;
+  }
+
+  /* Back link sits above the filters strip. Matches the visual weight
+     of .filters-toggle so the two read as a vertical stack. */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition:
+      color 120ms,
+      background 120ms;
+  }
+  .back-link:hover,
+  .back-link:focus-visible {
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.04);
+    outline: none;
+  }
+  .back-arrow {
+    font-size: 14px;
+    line-height: 1;
   }
 
   /* ── Filters toggle strip + count, copied verbatim from /missions

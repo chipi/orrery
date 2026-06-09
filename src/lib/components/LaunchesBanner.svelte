@@ -10,7 +10,7 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
-  import { agencyLogo } from '$lib/agencies';
+  import { agencyLogo, agencyFullName } from '$lib/agencies';
 
   let entries: LaunchEntry[] = $state([]);
   let now = $state(new Date());
@@ -49,6 +49,7 @@
                 class="agency-logo"
                 src={logoFor(e.agency_name)}
                 alt="{e.agency_name} logo"
+                title={agencyFullName(e.agency_name) ?? e.agency_name}
                 loading="lazy"
                 decoding="async"
               />

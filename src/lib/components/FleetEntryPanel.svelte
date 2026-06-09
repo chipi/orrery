@@ -115,10 +115,41 @@
     return `${base}/earth?id=${encodeURIComponent(ls.site_id)}`;
   }
 
+  // Per-category label: landers/rovers say "Landing site"; orbiters
+  // + stations say "In <body> orbit"; the body name is the linked
+  // type (moon / mars / earth-object). Falls back to a generic
+  // "Operating site" for any future category we haven't enumerated.
+  // Per Marko's #311 Tier H ask: surface the kind of relationship,
+  // not just the link target.
+  function categoryRole(category: string | undefined): 'surface' | 'orbital' | 'generic' {
+    if (category === 'lander' || category === 'rover') return 'surface';
+    if (category === 'orbiter' || category === 'station' || category === 'observatory')
+      return 'orbital';
+    return 'generic';
+  }
+
+  function bodyLabel(type: string): string {
+    if (type === 'moon') return 'Moon';
+    if (type === 'mars') return 'Mars';
+    return 'Earth';
+  }
+
   function siteLabel(ls: FleetSiteLink): string {
-    if (ls.type === 'moon') return `Moon · ${ls.site_id}`;
-    if (ls.type === 'mars') return `Mars · ${ls.site_id}`;
-    return `Earth orbit · ${ls.site_id}`;
+    const role = categoryRole(entry?.category);
+    const body = bodyLabel(ls.type);
+    if (role === 'surface') return `Landing site · ${body} · ${ls.site_id}`;
+    if (role === 'orbital')
+      return ls.type === 'earth-object'
+        ? `In Earth orbit · ${ls.site_id}`
+        : `In ${body} orbit · ${ls.site_id}`;
+    return `${body} · ${ls.site_id}`;
+  }
+
+  function siteSectionHeading(): string {
+    const role = categoryRole(entry?.category);
+    if (role === 'surface') return 'Landing site';
+    if (role === 'orbital') return 'Operating orbit';
+    return 'Operating sites';
   }
 
   const STATUS_LABEL: Record<string, string> = {
@@ -266,7 +297,7 @@
         </dl>
 
         {#if entry.linked_sites && entry.linked_sites.length > 0}
-          <h3 class="section-h">Operating sites</h3>
+          <h3 class="section-h">{siteSectionHeading()}</h3>
           <ul class="site-list">
             {#each entry.linked_sites as ls (ls.type + ls.site_id)}
               <li>

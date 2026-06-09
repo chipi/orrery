@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "ORBITA TERRESTRE CON EQUIPAGGIO · VOLATO",
+  "first": "Prima attività extraveicolare (Leonov, 12 min, 18-03-1965)",
+  "description": "Il volo di un giorno di Pavel Belyayev e Alexei Leonov — la prima EVA della storia. Leonov trascorse 12 minuti fuori da Voskhod 2 (18-03-1965 alle 11:34 UTC), pressurizzato attraverso una camera di equilibrio Volga gonfiabile che gli ingegneri sovietici aggiunsero perché lo scafo di Voskhod non aveva spazio per una depressurizzazione completa. La tuta di Leonov si gonfiò nel vuoto, bloccandolo fuori dalla camera di equilibrio; dovette sfiatare la pressione della tuta per rientrare, aumentando il rischio di malattia da decompressione. Il rientro fu altrettanto drammatico — il sistema di atterraggio automatico fallì, e Belyayev pilotò manualmente il modulo di discesa fino a un atterraggio duro nella neve profonda degli Urali, a ~390 km fuori bersaglio; l'equipaggio sopravvisse a una notte nella foresta tra i lupi prima che gli elicotteri di soccorso arrivassero il 20-03-1965.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

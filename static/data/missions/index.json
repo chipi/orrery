@@ -738,5 +738,45 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": true
+  },
+  {
+    "id": "vostok-1",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1961,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "voskhod-2",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": true
+  },
+  {
+    "id": "apollo-1",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "PLANNED",
+    "year": 1967,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "apollo-soyuz",
+    "agency": "NASA · Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1975,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
   }
 ]

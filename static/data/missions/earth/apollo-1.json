@@ -1,0 +1,45 @@
+{
+  "id": "apollo-1",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1967,
+  "status": "PLANNED",
+  "departure_date": "1967-02-21",
+  "arrival_date": "1967-02-21",
+  "transit_days": 0,
+  "vehicle": "Saturn IB (AS-204) — never launched",
+  "payload": "Apollo CSM-012 (Block I) — burned on pad",
+  "delta_v": "0 km/s (mission cancelled before flight)",
+  "data_quality": "good",
+  "credit": "© NASA mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Apollo 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_1",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 1 — NASA",
+      "u": "https://www.nasa.gov/history/apollo-1/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-ib",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-i",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-34",
+      "role": "launch-site"
+    }
+  ]
+}

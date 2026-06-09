@@ -1,0 +1,54 @@
+{
+  "id": "apollo-soyuz",
+  "agency": "NASA · Roscosmos",
+  "agency_full": "NASA Manned Spacecraft Center + Soviet Academy of Sciences / RKK Energia",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1975,
+  "status": "FLOWN",
+  "departure_date": "1975-07-15",
+  "arrival_date": "1975-07-17",
+  "transit_days": 2,
+  "vehicle": "Saturn IB (AS-210) + Soyuz-U",
+  "payload": "Apollo CSM-111 (last Apollo CSM ever) + Soyuz 19 (modified 7K-TM); 14.4 t Apollo + 6.8 t Soyuz",
+  "delta_v": "~9.4 km/s (LEO each)",
+  "data_quality": "good",
+  "credit": "© NASA · Roscosmos mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Apollo-Soyuz Test Project — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo%E2%80%93Soyuz",
+      "t": "intro"
+    },
+    {
+      "l": "ASTP mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-soyuz/",
+      "t": "core"
+    },
+    {
+      "l": "CSM-111 at California Science Center",
+      "u": "https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "saturn-ib",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "soyuz-7k-ok",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ]
+}

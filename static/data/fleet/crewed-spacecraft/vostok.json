@@ -53,5 +53,8 @@
       "mission_id": "vostok-6",
       "flight_designation": "Vostok 6 (1963-06-16) · Valentina Tereshkova — first woman in space; flew alongside Vostok 5; 70 orbits"
     }
+  ],
+  "linked_missions": [
+    "vostok-1"
   ]
 }

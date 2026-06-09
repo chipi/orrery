@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "मानवयुक्त पृथ्वी कक्षा · उड़ान भरी",
+  "first": "पहली अंतरिक्ष-यान बाहर गतिविधि (लियोनोव, 12 मिनट, 18-03-1965)",
+  "description": "पावेल बेल्याएव + एलेक्सी लियोनोव की 1-दिवसीय उड़ान — इतिहास की पहली EVA। लियोनोव ने वोस्खोद 2 के बाहर 12 मिनट बिताए (18 मार्च 1965 को 11:34 UTC), एक फुलाने योग्य वोल्गा एयरलॉक के माध्यम से दाबयुक्त जिसे सोवियत इंजीनियरों ने जोड़ा क्योंकि वोस्खोद के पतवार में पूर्ण विसंपीडन के लिए जगह नहीं थी। निर्वात में लियोनोव का सूट फूल गया, उन्हें एयरलॉक के बाहर फँसा दिया; उन्हें फिर से प्रवेश करने के लिए सूट का दाब निकालना पड़ा, जिससे विसंपीडन-बीमारी का जोखिम बढ़ गया। पुनः-प्रवेश समान रूप से नाटकीय था — स्वचालित लैंडिंग प्रणाली विफल हो गई, और बेल्याएव ने मैन्युअल रूप से अवतरण मॉड्यूल को गहरे यूराल बर्फ में लक्ष्य से ~390 किमी दूर एक कठोर लैंडिंग पर पायलट किया; चालक दल ने भेड़ियों के बीच जंगल में रात बिताई इससे पहले कि बचाव हेलीकॉप्टर 20 मार्च 1965 को पहुँचे।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

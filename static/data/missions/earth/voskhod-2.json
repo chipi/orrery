@@ -1,0 +1,45 @@
+{
+  "id": "voskhod-2",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet Academy of Sciences / OKB-1 Korolev Bureau (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#cc4444",
+  "year": 1965,
+  "status": "FLOWN",
+  "departure_date": "1965-03-18",
+  "arrival_date": "1965-03-19",
+  "transit_days": 1,
+  "vehicle": "Voskhod (11A57)",
+  "payload": "5682 kg launch mass; Voskhod capsule + inflatable Volga airlock",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© Roscosmos mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Voskhod 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voskhod_2",
+      "t": "intro"
+    },
+    {
+      "l": "Alexei Leonov — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Alexei_Leonov",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "voskhod-11a57",
+      "role": "launcher"
+    },
+    {
+      "id": "voskhod",
+      "role": "spacecraft"
+    },
+    {
+      "id": "gagarins-start",
+      "role": "launch-site"
+    }
+  ]
+}

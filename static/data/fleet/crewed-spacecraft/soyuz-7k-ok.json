@@ -53,5 +53,8 @@
       "mission_id": "soyuz-11",
       "flight_designation": "Soyuz 11 (1971-06-06) · Dobrovolsky + Volkov + Patsayev — Salyut 1 first crew (23 days); FATAL: cabin depressurised at separation; crew killed"
     }
+  ],
+  "linked_missions": [
+    "apollo-soyuz"
   ]
 }

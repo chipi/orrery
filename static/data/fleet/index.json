@@ -2878,5 +2878,53 @@
     "status": "RETIRED",
     "first_flight": "1957-06-11",
     "tagline": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)"
+  },
+  {
+    "id": "vostok-k",
+    "name": "Vostok-K (8K72K)",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1960-12-22",
+    "tagline": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963"
+  },
+  {
+    "id": "voskhod-11a57",
+    "name": "Voskhod (11A57)",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1963-11-16",
+    "tagline": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)"
+  },
+  {
+    "id": "gagarins-start",
+    "name": "Gagarin's Start (Baikonur Site 1)",
+    "category": "launch-site",
+    "agency": "Roscosmos",
+    "country": "Kazakhstan",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1957-05-15",
+    "tagline": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-22 (2022). Retired 2019"
+  },
+  {
+    "id": "apollo-csm-block-i",
+    "name": "Apollo CSM (Block I)",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-02-26",
+    "tagline": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975"
   }
 ]

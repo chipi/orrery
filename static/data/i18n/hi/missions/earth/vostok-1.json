@@ -1,0 +1,32 @@
+{
+  "name": "Vostok 1",
+  "type": "मानवयुक्त पृथ्वी कक्षा · उड़ान भरी",
+  "first": "अंतरिक्ष में पहला मानव; पहली मानवयुक्त कक्षीय उड़ान",
+  "description": "यूरी गगारिन की 108 मिनट की एकल-कक्षा उड़ान — इतिहास की पहली मानवयुक्त अंतरिक्ष उड़ान और पृथ्वी की कक्षा में पहला मानव। 12 अप्रैल 1961 को 06:07 UTC पर बैकोनूर से Vostok-K (8K72K) प्रक्षेपक पर प्रक्षेपित; कक्षा 169 × 327 किमी, झुकाव 65°। गोलाकार अवतरण मॉड्यूल ने गगारिन को लगभग 7 किमी की ऊँचाई पर बाहर निकाला (एक तथ्य जिसे USSR ने FAI नियमों के तहत पूर्ण मानवयुक्त लैंडिंग का दावा करने के लिए वर्षों तक छुपाया)। गगारिन सेरातोव ओब्लास्ट के स्मेलोव्का में पैराशूट से उतरे; कैप्सूल अलग से उतरा और रूस के कोरोल्योव में RKK एनर्जिया संग्रहालय में प्रदर्शित है। इस उड़ान ने कोरोलेव के दशक-लंबे मिसाइल/उपग्रह कार्य को समाप्त किया और छह सप्ताह बाद अमेरिकी मानवयुक्त-अंतरिक्ष उड़ान कार्यक्रम + कैनेडी की चंद्रमा-लैंडिंग प्रतिज्ञा को प्रेरित किया।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ORBIT INSERT",
+      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.063,
+      "label": "RETROFIRE",
+      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "type": "warning"
+    },
+    {
+      "met": 0.071,
+      "label": "CREW EJECT",
+      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "阿波罗-联盟测试计划 (ASTP)",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "首次国际载人航天合作；首次美苏交会 + 对接",
+  "description": "阿波罗-联盟测试计划 — 首次国际载人航天飞行、首次美苏交会 + 对接，也是阿波罗 CSM 的最后一次飞行。阿波罗（斯塔福德 + 布兰德 + 斯雷顿）于 1975-07-15 从 LC-39B 发射；联盟 19 号（列昂诺夫 + 库巴索夫）同日从拜科努尔发射。阿波罗的对接模块（由 NASA + 罗克韦尔建造）采用了新型雌雄同体对接环（APAS），允许任一航天器为主动方 — 自那以后所有国际对接系统的先驱（和平号、ISS、天宫、龙、星际客机）。1975-07-17 ~16:00 UTC 开舱；两批机组在 44 小时对接期间通过 4 次单独的对接序列交换旗帜、礼物和联合实验。联盟号于 1975-07-21 返回；阿波罗号继续在轨道上停留 5 天后于 1975-07-24 溅落 — 史上最后一次阿波罗溅落。CSM-111 陈列于洛杉矶加利福尼亚科学中心（与奋进号并列）。ASTP 所示范的缓和时代合作为 20 年后的航天飞机-和平号计划奠定了基础。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH (Apollo)",
+      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.85,
+      "label": "DOCKING",
+      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "type": "info"
+    },
+    {
+      "met": 2,
+      "label": "JOINT OPS",
+      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.8,
+      "label": "UNDOCK",
+      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.06,
+      "label": "SPLASHDOWN (Apollo)",
+      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "type": "nominal"
+    }
+  ]
+}

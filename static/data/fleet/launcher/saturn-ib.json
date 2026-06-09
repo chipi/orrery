@@ -24,6 +24,8 @@
     }
   ],
   "linked_missions": [
+    "apollo-1",
+    "apollo-soyuz",
     "apollo7"
   ]
 }

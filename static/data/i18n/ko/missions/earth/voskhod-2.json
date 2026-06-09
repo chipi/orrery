@@ -1,0 +1,38 @@
+{
+  "name": "보스호트 2호",
+  "type": "유인 지구 궤도 · 비행 완료",
+  "first": "최초의 선외활동 (레오노프, 12분, 1965-03-18)",
+  "description": "파벨 벨랴예프와 알렉세이 레오노프의 1일간 비행 — 역사상 최초의 EVA. 레오노프는 보스호트 2호 밖에서 12분을 보냈으며 (1965-03-18 11:34 UTC), 보스호트 선체에 완전한 감압을 위한 공간이 없었기에 소련 엔지니어들이 추가한 팽창식 볼가 에어록을 통해 가압되었다. 레오노프의 우주복은 진공 상태에서 부풀어 올라 에어록 밖에 끼었으며; 그는 재진입을 위해 우주복 압력을 배출해야 했고, 이는 감압병 위험을 높였다. 재진입 역시 극적이었다 — 자동 착륙 시스템이 고장 났고, 벨랴예프는 하강 모듈을 수동으로 조종하여 목표 지점에서 약 390 km 벗어난 우랄 산맥의 깊은 눈 속에 강행 착륙시켰다; 승무원은 1965년 3월 20일 구조 헬리콥터가 도착할 때까지 늑대들이 있는 숲에서 하룻밤을 살아남았다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

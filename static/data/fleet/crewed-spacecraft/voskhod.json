@@ -37,5 +37,8 @@
       "mission_id": "voskhod-2",
       "flight_designation": "Voskhod 2 (1965-03-18) · Belyayev + Leonov — first EVA (Leonov, 12 min); suit ballooned, required venting; manual landing in remote Urals forest"
     }
+  ],
+  "linked_missions": [
+    "voskhod-2"
   ]
 }

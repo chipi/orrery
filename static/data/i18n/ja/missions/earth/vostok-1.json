@@ -1,0 +1,32 @@
+{
+  "name": "ボストーク 1 号",
+  "type": "有人地球周回 · 飛行済み",
+  "first": "人類初の宇宙飛行；初の有人軌道飛行",
+  "description": "ユーリイ・ガガーリンによる108分間の単一周回飛行 — 史上初の有人宇宙飛行であり、地球を周回した最初の人類。1961年4月12日06:07 UTCにバイコヌールからボストーク-K (8K72K) で打ち上げ；軌道169 × 327 km、傾斜角65°。球形の降下モジュールは高度約7 kmでガガーリンを射出した（USSRはFAIルールの下で完全な有人着陸を主張するため、この事実を長年隠蔽した）。ガガーリンはサラトフ州スメロフカにパラシュート降下；カプセルは別途着地し、現在はロシアのコロリョフにあるRKKエネルギア博物館に展示されている。この飛行はコロリョフの10年に及ぶミサイル/衛星開発を締めくくり、6週間後の米国有人宇宙飛行計画＋ケネディの月着陸宣言を引き起こした。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ORBIT INSERT",
+      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.063,
+      "label": "RETROFIRE",
+      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "type": "warning"
+    },
+    {
+      "met": 0.071,
+      "label": "CREW EJECT",
+      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "type": "info"
+    }
+  ]
+}

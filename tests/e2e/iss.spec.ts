@@ -56,10 +56,11 @@ test.describe('/iss', () => {
     await expect(toggle).toBeVisible({ timeout: 8_000 });
     // The toggle pins to the bottom edge of the ISS canvas — on the
     // mobile viewport the site footer's "Library" link overlaps it
-    // visually and intercepts pointer events. The button is fully
-    // interactive (Playwright's actionability check confirms visible
-    // + enabled + stable); force the click past the z-stack overlap.
-    await toggle.click({ force: true });
+    // and intercepts pointer events. `click({ force: true })` reached
+    // the button but the click also bubbled to the footer link and
+    // navigated away. Dispatch the click via DOM evaluate so only the
+    // button's onclick handler fires, skipping the pointer chain.
+    await toggle.evaluate((el) => (el as HTMLButtonElement).click());
     const strip = page.getByTestId('iss-timeline');
     await expect(strip).toBeVisible({ timeout: 3_000 });
     // At least one marker rendered (one per module + visitor; 25 total today)

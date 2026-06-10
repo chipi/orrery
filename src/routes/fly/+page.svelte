@@ -4656,7 +4656,7 @@
       data-marker-count={phaseMarkerScreens.length}
       data-on-screen-count={phaseMarkerScreens.filter((m) => m.screen.onScreen).length}
     >
-      {#each phaseMarkerScreens as marker (marker.event.type + '@' + (marker.event.met_days ?? 0))}
+      {#each phaseMarkerScreens as marker, idx (idx + '@' + marker.event.type + '@' + (marker.event.met_days ?? 0))}
         <PhaseMarkerLabel
           screenX={marker.screen.x}
           screenY={marker.screen.y}
@@ -4708,7 +4708,7 @@
       data-testid="milestone-overlay"
       data-milestone-count={milestoneScreens.length}
     >
-      {#each milestoneScreens as m, idx (m.met_days + '@' + m.label)}
+      {#each milestoneScreens as m, idx (idx + '@' + m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
           <!-- Three dock positions by state:
                - active → top-centre, full description card
@@ -5054,7 +5054,7 @@
       />
       {#if arcTotalDays > 0 && mission.flight?.events}
         <div class="milestone-track" data-testid="milestone-track">
-          {#each mission.flight.events as evt (evt.met_days + '@' + (evt.label ?? ''))}
+          {#each mission.flight.events as evt, idx (idx + '@' + evt.met_days + '@' + (evt.label ?? ''))}
             {#if evt.label && evt.met_days != null}
               {@const pct = Math.max(0, Math.min(100, (evt.met_days / arcTotalDays) * 100))}
               {@const past = (evt.met_days ?? 0) < simDay - arcTimeline.dep_day}
@@ -5210,7 +5210,7 @@
           <p class="empty">{m.fly_capcom_no_events()}</p>
         {:else}
           <ul>
-            {#each pastEvents as event (event.met + event.label)}
+            {#each pastEvents as event, idx (idx + '@' + event.met + '@' + event.label)}
               <li class="event event-{event.type}">
                 <span class="event-time">
                   {m.fly_capcom_event_at({ day: Math.round(event.met).toString() })}

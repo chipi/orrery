@@ -55,8 +55,10 @@ test.describe('/tiangong', () => {
     const toggle = page.getByTestId('tiangong-timeline-toggle');
     await expect(toggle).toBeVisible({ timeout: 8_000 });
     // Toggle pins to the bottom of the canvas; on mobile the footer's
-    // "Library" link overlaps it. Force the click past the z-stack.
-    await toggle.click({ force: true });
+    // "Library" link overlaps it and intercepts pointer events. Dispatch
+    // click via DOM evaluate so only the button's onclick handler fires
+    // (force-click bubbled to the footer link and navigated away).
+    await toggle.evaluate((el) => (el as HTMLButtonElement).click());
     const strip = page.getByTestId('tiangong-timeline');
     await expect(strip).toBeVisible({ timeout: 3_000 });
     const markers = strip.locator('button.marker');

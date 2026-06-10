@@ -9,9 +9,15 @@ import type { ConsoleMessage } from '@playwright/test';
  * overlay JSON files under `/data/i18n/<locale>/...`. A miss is
  * expected — the loader catches it via `.catch(() => null)` and falls
  * back to en-US. The browser still surfaces the 404 to the console.
- * We allow 404s only when the resource URL is under `/data/i18n/`, so
- * a missing mission patch / crew portrait / gallery image still fails.
- * See AGENTS.md §Spec-writing patterns and the
+ * /fly's mission loader (since the 2026-06 spline pass) probes
+ * `/data/trajectories/<mission-id>.json` the same way: only the
+ * iconic grand-tour missions (Cassini, Voyager 1/2, Pioneer 10/11,
+ * Galileo, etc.) ship one; everything else falls back to the
+ * Keplerian half-ellipse. The fetch is intentional + swallowed,
+ * but the browser still logs the 404.
+ * We allow 404s only when the URL is one of these known probe paths,
+ * so a missing mission patch / crew portrait / gallery image still
+ * fails. See AGENTS.md §Spec-writing patterns and the
  * `feedback_e2e_console_filter_blindspot` memory.
  */
 export function isExpectedNoise(msg: ConsoleMessage): boolean {
@@ -19,11 +25,11 @@ export function isExpectedNoise(msg: ConsoleMessage): boolean {
   const text = msg.text();
   // Browser / dev-server noise unrelated to our asset surface.
   if (/favicon|webgl warning|hot module/i.test(text)) return true;
-  // 404s only get a pass when the URL is an i18n overlay probe path —
+  // 404s only get a pass when the URL is a known intentional probe —
   // any other 404 (patch, portrait, gallery, diagram) is a real bug.
   if (/Failed to load resource|404 \(Not Found\)/.test(text)) {
     const url = msg.location()?.url ?? '';
-    return /\/data\/i18n\//.test(url);
+    return /\/data\/i18n\//.test(url) || /\/data\/trajectories\//.test(url);
   }
   return false;
 }

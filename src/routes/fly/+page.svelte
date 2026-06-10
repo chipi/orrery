@@ -3978,11 +3978,35 @@
       // Spacecraft sprite also hides on arrival.
       const phaseNow = sc.phase;
       const afterArrival = phaseNow === 'arrived';
-      if (depMarker) depMarker.visible = !afterArrival;
-      if (depLabelSprite) depLabelSprite.visible = !afterArrival;
-      if (arrMarker) arrMarker.visible = !afterArrival;
-      if (arrLabelSprite) arrLabelSprite.visible = !afterArrival;
-      const showRet = !afterArrival && retPts.length >= 2;
+      // The LAUNCH / ARRIVAL anchor rings + their date sprites are
+      // sized for the wide cruise framing. At any closeup sub-phase
+      // (helio flyby cinema, helio prelaunch / approach / depart,
+      // cislunar Moon / Earth phase closeups, Mars rover landing,
+      // any mission's tight camera moment) the rings + dates loom
+      // huge and dominate the body+ship hero composition — "the
+      // date is bigger than Saturn." Always ugly when zoomed in.
+      // Show only when the auto-camera is in a wide cruise framing.
+      const wideHelio =
+        lastHelioSubPhase === 'cruise-out' ||
+        lastHelioSubPhase === 'cruise-back' ||
+        lastHelioSubPhase === null;
+      // Cislunar wide = not in a closeup phase. lastAutoZoomPhase is
+      // normally a phase-type string (e.g., "tli_coast",
+      // "lunar_orbit_near_moon") — non-null for the whole mission.
+      // The "wide" phases (cruise + the translunar coasts) leave
+      // autoZoomTargetR at WIDE_DISTANCE; the close-up phases
+      // (LUNAR_PHASE_TYPES + EARTH_PHASE_TYPES + the proximity
+      // sentinel "_near_moon" suffix) pull the camera tight. Test
+      // the target distance directly: if the camera is still aiming
+      // at the wide framing, the rings are safe to show.
+      const wideCislunar = autoZoomTargetR >= WIDE_DISTANCE * 0.9;
+      const wideEnoughForAnchors = isMoonMission ? wideCislunar : wideHelio;
+      const showAnchors = !afterArrival && wideEnoughForAnchors;
+      if (depMarker) depMarker.visible = showAnchors;
+      if (depLabelSprite) depLabelSprite.visible = showAnchors;
+      if (arrMarker) arrMarker.visible = showAnchors;
+      if (arrLabelSprite) arrLabelSprite.visible = showAnchors;
+      const showRet = showAnchors && retPts.length >= 2;
       if (retMarker) retMarker.visible = showRet;
       if (retLabelSprite) retLabelSprite.visible = showRet;
       if (outLine) outLine.visible = !afterArrival;

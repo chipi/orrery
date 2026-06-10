@@ -1060,6 +1060,30 @@
     return events.find((e) => e.met > met) ?? null;
   });
 
+  // W3.7 — find the midpoint of the longest cruise gap between two
+  // consecutive labeled events. Returns null when no qualifying gap
+  // exists (short missions, single-event Moon flights). The midpoint
+  // is in sim-day units relative to arcTimeline.dep_day.
+  let cruiseHoldTriggerSimDay = $derived.by(() => {
+    const events = mission.flight?.events;
+    if (!events || events.length < 2) return null;
+    const mets = events
+      .filter((e) => e.met_days != null)
+      .map((e) => e.met_days as number)
+      .sort((a, b) => a - b);
+    let longestGap = 0;
+    let longestStart = 0;
+    for (let i = 1; i < mets.length; i++) {
+      const gap = mets[i] - mets[i - 1];
+      if (gap > longestGap) {
+        longestGap = gap;
+        longestStart = mets[i - 1];
+      }
+    }
+    if (longestGap < CRUISE_HOLD_MIN_GAP_DAYS) return null;
+    return arcTimeline.dep_day + longestStart + longestGap / 2;
+  });
+
   // ACTIVE EVENT row (polish-wave-2, 2026-06). Surfaces the current
   // active milestone — the one within the ±active window — out of the
   // milestoneScreens computed by the frame loop. Replaces the floating
@@ -1129,16 +1153,122 @@
   // lerping for 10 seconds of wall-clock time.
   let lastSeenPhase: 'pre-launch' | 'outbound' | 'return' | 'arrived' | null = null;
   let arrivalSnapped = false;
+  // Polish-wave-3 W3.1 — peak hold. When the spacecraft is within ±0.5
+  // sim-days of a flyby's closest-approach moment, the camera FREEZES
+  // for 2.5 wall-clock seconds: no lerp, no parallax orbit, no
+  // breathing. The body fills frame, the ship hangs in foreground, the
+  // scene "stops" so the hero moment lands as a deliberate shot
+  // instead of continuous motion. References: Cowboy Bebop Jupiter
+  // Gate hold, Cassini ring-plane crossing. The discipline of stillness
+  // — the locked-off shot the creative-direction gap analysis called
+  // out as the single biggest missing primitive.
+  let peakHoldUntil = 0;
+  // Which flyby's MET we've already armed the peak-hold for. Re-armed
+  // when the spacecraft leaves the FLYBY_PEAK_DAYS window so each flyby
+  // in a grand-tour mission (Cassini's Venus×2, Earth, Jupiter, Saturn-
+  // OI) gets its own hold beat instead of just the first one.
+  let peakHoldArmedForFlybyMet: number | null = null;
+  // Polish-wave-3 W3.2 — afterglow pull-out. The 6 wall-clock seconds
+  // following the peak hold play as a slow dolly recede: camR tweens
+  // from the held iconic-frame distance out to a wider "we touched it
+  // and now we're gone" framing. camTarget + camP stay locked at the
+  // body so the pull-out is a pure dolly, not a track. Same beat the
+  // Cassini Grand Finale animation uses: twelve silent seconds of
+  // pull-back from Saturn, no music, the discipline of restraint
+  // (creative-direction guide §5 / §7 afterglow beat).
+  const AFTERGLOW_DURATION_MS = 6000;
+  let afterglowUntil = 0;
+  let afterglowStartCamR = 0;
+  let afterglowTargetCamR = 0;
+  let afterglowCenterX = 0;
+  let afterglowCenterZ = 0;
+  let afterglowP = 0;
+  // Polish-wave-3 W3.4 — end-of-mission locked-off finale. When a one-
+  // way helio mission arrives at its destination body (Cassini at
+  // Saturn, Galileo at Jupiter, Voyager Grand Tour endings), after the
+  // arrival snap settles we lock the camera completely for 12 wall-
+  // clock seconds. At t=8 s a "MISSION END · <name>" caption fades in,
+  // at t=11 s the screen begins fading to black, reaching full black at
+  // t=12 s. References: Cassini Grand Finale animation (Wernquist),
+  // 2001 starchild closer. The discipline of restraint — the absence
+  // is the statement.
+  const FINALE_DURATION_MS = 12000;
+  const FINALE_CAPTION_FADE_IN_AT = 8000;
+  const FINALE_BLACK_FADE_IN_AT = 11000;
+  let finaleStartedAt = 0; // 0 = no active finale
+  let inMissionFinale = $state(false);
+  let finaleCaptionOpacity = $state(0);
+  let finaleBlackOpacity = $state(0);
+  // Polish-wave-3 W3.5 — UI chrome suppression during cinematic beats.
+  // True while ANY of W3.1 peak hold / W3.2 afterglow / W3.4 finale is
+  // engaged. The HUD stack, scrubber, FD banner + CAPCOM panel fade
+  // out so the audience reads the shot, not the chrome. Restored the
+  // instant the beat ends. The "discipline of NOT doing things" — when
+  // the planet is the subject, the foreground is composition only.
+  let inCinematicHeldBeat = $state(false);
+  // Polish-wave-3 W3.6 — scrubber-jump as a deliberate cut. When the
+  // user scrubs > 1 mission year of sim-days (Jupiter → Earth on
+  // Cassini), instead of running the slow cinematic LERP across the
+  // gap we fade to black for 200 ms, snap the camera to the new
+  // composition's pre-lerped target, then fade back in. The audience
+  // reads it as a real CUT, the first deliberate one in /fly. The
+  // creative guide §4 "every cut is intentional" principle starts here.
+  const CUT_FADE_OUT_MS = 100;
+  const CUT_FADE_IN_MS = 100;
+  const CUT_TOTAL_MS = CUT_FADE_OUT_MS + CUT_FADE_IN_MS;
+  const CUT_THRESHOLD_DAYS = 365;
+  let cutStartedAt = 0; // wall-clock ms when the current cut began
+  let cutBlackOpacity = $state(0);
+  // Polish-wave-3 W3.7 — Tarkovsky cruise hold. Once per mission,
+  // when sim time crosses the midpoint of the LONGEST cruise gap
+  // between consecutive labeled events (e.g. Cassini's Jupiter →
+  // Saturn 1279-day stretch), the camera locks completely for 10
+  // wall-clock seconds. Sim time freezes alongside. The patient
+  // body of the mission given dignity — Kubrick's Discovery cruise,
+  // Watanabe's Bebop transition shots, Ad Astra's Neptune solo. The
+  // discipline of stillness during the cruise, not just the hero
+  // moments. Only fires on missions with cruise gaps ≥ 200 days.
+  const CRUISE_HOLD_DURATION_MS = 10000;
+  const CRUISE_HOLD_MIN_GAP_DAYS = 200;
+  let cruiseHoldUntil = 0;
+  let cruiseHoldFired = false; // resets on jumpToMet(0) and mission load
+  let lastSeenSimDayForCruiseHold = 0;
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
+    const previousSimDay = simDay;
     simDay = mission.timeline.dep_day + metDays;
     if (isPlaying) isPlaying = false;
     camSnapUntil = performance.now() + 700;
+    // W3.3 — re-arm the pre-launch dwell when the user jumps back to
+    // MET 0 (Launch milestone). Gives them the cinematic prelaunch
+    // beat on demand instead of just a quiet snap to dep_day. Skipped
+    // for non-zero MET jumps; those want the snap behavior the
+    // camSnapUntil window already provides.
+    if (metDays === 0) {
+      launchDwellUntil = performance.now() + 4000;
+      // W3.7 — re-arm the cruise hold so it fires again on the
+      // mission replay.
+      cruiseHoldFired = false;
+    }
+    // W3.6 — deliberate cut when the jump crosses > 1 mission year.
+    // Fade-to-black overlay handles the visual cut; camSnapUntil at
+    // 700 ms gives the camera time to converge after the fade.
+    if (Math.abs(simDay - previousSimDay) > CUT_THRESHOLD_DAYS) {
+      cutStartedAt = performance.now();
+    }
   }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
+    const previousSimDay = simDay;
     simDay = arcTimeline.dep_day + t * arcTotalDays;
     camSnapUntil = performance.now() + 300;
+    // W3.6 — scrubber drag that crosses > 1 mission year also
+    // triggers the cinematic cut. Continuous-drag scrubs that drift
+    // through the year boundary in increments stay under the
+    // threshold per-event, so only big jumps fire the cut.
+    if (Math.abs(simDay - previousSimDay) > CUT_THRESHOLD_DAYS) {
+      cutStartedAt = performance.now();
+    }
   }
 
   // ─── Mission loading from URL (?mission=id) ──────────────────────
@@ -1200,7 +1330,11 @@
     // lerps in to the prelaunch composition before the clock starts.
     // Without this the ship is already accelerating away while the
     // viewer is still parsing where Earth is.
-    launchDwellUntil = performance.now() + 3500;
+    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
+    // audience sits longer with the static Earth-closeup composition (the
+    // "weight of decades of work" register from the creative-direction
+    // guide §5).
+    launchDwellUntil = performance.now() + 4000;
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1225,7 +1359,11 @@
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
-    launchDwellUntil = performance.now() + 3500;
+    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
+    // audience sits longer with the static Earth-closeup composition (the
+    // "weight of decades of work" register from the creative-direction
+    // guide §5).
+    launchDwellUntil = performance.now() + 4000;
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1267,7 +1405,11 @@
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
-    launchDwellUntil = performance.now() + 3500;
+    // W3.3 — 4-second pre-launch beat. Was 3500 ms; bumped to 4000 so the
+    // audience sits longer with the static Earth-closeup composition (the
+    // "weight of decades of work" register from the creative-direction
+    // guide §5).
+    launchDwellUntil = performance.now() + 4000;
     lastAppliedMissionId = r.appliedId;
   }
 
@@ -2886,6 +3028,13 @@
           flybySize: flyby?.size ?? null,
           scPos: { x: sc.pos.x, z: sc.pos.z },
           subPhase: lastHelioSubPhase,
+          simDay,
+          peakHoldUntil,
+          peakHoldArmedForFlybyMet,
+          peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
+          camR,
+          camTx: camTarget.x,
+          camTz: camTarget.z,
         };
         if (flyby) {
           const bodyPos =
@@ -3104,7 +3253,57 @@
         // pull-out lasted barely a second of wall-clock. camP is
         // lerped in both modes so the approach pitch tilt resolves
         // smoothly into the cruise default.
-        if (helioAutoZoomActive) {
+        // Polish-wave-3 W3.1 — the lerp keeps running during the
+        // peak-hold window. SimDay is frozen up at the animate() top,
+        // so during the hold the world stops moving while the camera
+        // converges onto the iconic-photo composition. The arc-rotate
+        // / pitch-breath in the cinema motion block IS skipped during
+        // the hold so there's no parallax sweep while we're "stopped."
+        //
+        // W3.2 — afterglow pull-out. After the hold expires, the
+        // camera slow-dollies away from the body for 6 wall-clock
+        // seconds. camR tweens from the held iconic-frame distance
+        // out to ~4.5× that distance; camTarget + camP stay locked
+        // at the converged values so the motion is a pure dolly,
+        // not a track.
+        const _nowForCine = performance.now();
+        const _isPeakHoldingFrame = _nowForCine < peakHoldUntil;
+        const _isAfterglowing = !_isPeakHoldingFrame && _nowForCine < afterglowUntil;
+        const _isCruiseHolding = _nowForCine < cruiseHoldUntil;
+        // W3.4 — finale lock. During the 12 s end-of-mission lock the
+        // camera does not move at all. Sim is already frozen by the
+        // arrived state's isPlaying=false; the camera also holds at
+        // whatever the arrival-snap landed on. Lock starts AFTER
+        // finaleStartedAt (which itself is now+1500 from the arrival
+        // transition so the snap can settle first).
+        const _isFinaleLocked =
+          finaleStartedAt > 0 &&
+          _nowForCine >= finaleStartedAt &&
+          _nowForCine < finaleStartedAt + FINALE_DURATION_MS;
+        if (_isFinaleLocked || _isCruiseHolding) {
+          // No camera update — pure locked frame. W3.4 finale +
+          // W3.7 Tarkovsky cruise hold both share the no-op semantics.
+        } else if (_isAfterglowing) {
+          if (afterglowStartCamR === 0) {
+            // First frame of afterglow — capture the converged
+            // iconic-frame composition as the recede's origin.
+            afterglowStartCamR = camR;
+            afterglowTargetCamR = camR * 4.5;
+            afterglowCenterX = camTarget.x;
+            afterglowCenterZ = camTarget.z;
+            afterglowP = camP;
+          }
+          const elapsed = AFTERGLOW_DURATION_MS - (afterglowUntil - _nowForCine);
+          const t = Math.max(0, Math.min(1, elapsed / AFTERGLOW_DURATION_MS));
+          // Ease-in-out cubic — slow start (audience lingers on the
+          // iconic frame for a beat), accelerates through the middle
+          // (the recede), eases out at the end (settles wide).
+          const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          camR = afterglowStartCamR + (afterglowTargetCamR - afterglowStartCamR) * eased;
+          camTarget.x = afterglowCenterX;
+          camTarget.z = afterglowCenterZ;
+          camP = afterglowP;
+        } else if (helioAutoZoomActive) {
           // Scrubber jumps boost the lerp rate so a Jupiter → Earth
           // hop doesn't spend 6-8 seconds in the slow cinematic lerp.
           // camSnapUntil is set by jumpToMet (700 ms) and onScrub
@@ -4020,7 +4219,65 @@
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
-      if (isPlaying && now >= launchDwellUntil) {
+      // Polish-wave-3 W3.1 — sim-time freeze during peak hold. The
+      // held composition reads as "deliberate shot" because the world
+      // stops moving for 2.5 s. Planets pause in orbit, ship stays at
+      // its waypoint. The camera lerp continues so if the user
+      // scrubbed directly onto the moment from a far framing, the
+      // lerp catches up onto the iconic-photo composition during
+      // the hold rather than the audience sitting on a wide stale
+      // frame for 2.5 s.
+      //
+      // W3.2 — afterglow pull-out. The 6 wall-clock seconds that
+      // follow the hold play as a slow dolly recede. Sim time stays
+      // frozen across the afterglow too so the world doesn't slip
+      // out from under the recede — the camera dollies back while
+      // the body holds still, the way Wernquist's Grand Finale
+      // animation pulls away from Saturn at the end of Cassini's
+      // mission.
+      const isPeakHoldingFrame = now < peakHoldUntil;
+      const isAfterglowing = !isPeakHoldingFrame && now < afterglowUntil;
+      const isCruiseHolding = now < cruiseHoldUntil;
+      // W3.7 — arm the cruise hold once when sim crosses the trigger
+      // midpoint of the longest cruise gap. Only fires while sim is
+      // actually advancing forward (not on scrub-jumps), the gap is
+      // qualifying, and we haven't already fired this mission load.
+      const cruiseTrigger = cruiseHoldTriggerSimDay;
+      if (
+        !cruiseHoldFired &&
+        cruiseTrigger != null &&
+        lastSeenSimDayForCruiseHold > 0 &&
+        lastSeenSimDayForCruiseHold < cruiseTrigger &&
+        simDay >= cruiseTrigger &&
+        simDay < cruiseTrigger + 30 // within 30 days of cross to avoid scrub-overshoots
+      ) {
+        cruiseHoldUntil = now + CRUISE_HOLD_DURATION_MS;
+        cruiseHoldFired = true;
+      }
+      lastSeenSimDayForCruiseHold = simDay;
+      const isCinematicFreeze = isPeakHoldingFrame || isAfterglowing || isCruiseHolding;
+      // W3.6 — update the cut-fade overlay. fade-out (0 → 1) over
+      // CUT_FADE_OUT_MS, fade-in (1 → 0) over CUT_FADE_IN_MS. After
+      // CUT_TOTAL_MS the cut is finished and the overlay vanishes.
+      if (cutStartedAt > 0) {
+        const cutElapsed = now - cutStartedAt;
+        if (cutElapsed < CUT_FADE_OUT_MS) {
+          cutBlackOpacity = cutElapsed / CUT_FADE_OUT_MS;
+        } else if (cutElapsed < CUT_TOTAL_MS) {
+          cutBlackOpacity = 1 - (cutElapsed - CUT_FADE_OUT_MS) / CUT_FADE_IN_MS;
+        } else {
+          cutBlackOpacity = 0;
+          cutStartedAt = 0;
+        }
+      }
+      // W3.5 — update the chrome-suppression flag every frame. Includes
+      // finale window (locked-off finale also wants the chrome gone).
+      const _finaleActive = finaleStartedAt > 0 && now < finaleStartedAt + FINALE_DURATION_MS;
+      const _wantChromeSuppressed = isCinematicFreeze || _finaleActive;
+      if (inCinematicHeldBeat !== _wantChromeSuppressed) {
+        inCinematicHeldBeat = _wantChromeSuppressed;
+      }
+      if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
@@ -4082,6 +4339,61 @@
       // static planet-centered lookup. Skipped under reduced-motion,
       // while the user is dragging, and during the initial sub-phase
       // lerp so the camera settles before the sweep starts.
+      // Polish-wave-3 W3.1 — peak-hold arming + re-arm reset.
+      // Runs EVERY frame (not gated on flyby sub-phase OR on
+      // !helioAutoZoomActive) so:
+      //   1. The reset fires when the user scrubs out of a held
+      //      flyby into launch / cruise / arrived states — otherwise
+      //      peakHoldArmedForFlybyMet stays stale and re-jumping to
+      //      the same flyby never re-arms.
+      //   2. The ARM fires the instant we're inside the ±0.5 sim-day
+      //      window of a flyby moment — even if the cinematic lerp
+      //      hasn't converged yet. Gating arming on !helioAutoZoomActive
+      //      meant the camera kept lerping right through the held
+      //      window when the previous framing was far from the new
+      //      cinema target (e.g. scrubbing from launch wide R=50 to a
+      //      flyby R=13).
+      //
+      // Source of truth for "are we in a flyby right now": parse
+      // lastHelioSubPhase (e.g. "flyby-193-venus"). __flyDebug isn't
+      // refreshed when no flyby is active — it stays stale at the
+      // previous flyby's MET — so reading from there made the reset
+      // think we were still in the prior flyby. lastHelioSubPhase IS
+      // updated every frame by updateHelioAutoZoomTargets.
+      const subFlybyMatch = lastHelioSubPhase?.match(/^flyby-(-?\d+(?:\.\d+)?)-/);
+      const currentFrameFlybyMet = subFlybyMatch ? Number(subFlybyMatch[1]) : null;
+      if (peakHoldArmedForFlybyMet != null) {
+        const sameFlyby = currentFrameFlybyMet === peakHoldArmedForFlybyMet;
+        const outsidePeakDays =
+          Math.abs(simDay - (arcTimeline.dep_day + peakHoldArmedForFlybyMet)) > FLYBY_PEAK_DAYS;
+        if (!sameFlyby || outsidePeakDays) {
+          peakHoldArmedForFlybyMet = null;
+        }
+      }
+      // Arm — independent of helioAutoZoomActive. The held composition
+      // is whatever the camera currently shows at the moment we enter
+      // the ±0.5 sim-day window; the lerp gate up in the camera lerp
+      // block freezes the lerp the moment peakHoldUntil is in the
+      // future, so the audience reads a deliberate hold even if it
+      // catches mid-lerp.
+      if (!isMoonMission && !reducedMotion && !isDrag && currentFrameFlybyMet != null) {
+        const peakHoldRadius = 0.5;
+        const inHeldWindow =
+          Math.abs(simDay - (arcTimeline.dep_day + currentFrameFlybyMet)) < peakHoldRadius;
+        if (inHeldWindow && peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
+          peakHoldUntil = performance.now() + 2500;
+          peakHoldArmedForFlybyMet = currentFrameFlybyMet;
+          // W3.2 — pre-arm the afterglow window so it kicks in the
+          // instant the hold expires. Start values get captured at
+          // hold-expiry (see lerp block) — at that point the camera
+          // has had 2.5 s to converge onto the iconic frame, so the
+          // start is the converged composition.
+          afterglowUntil = peakHoldUntil + AFTERGLOW_DURATION_MS;
+          // Clear last flyby's captured afterglow start so this flyby's
+          // afterglow re-captures fresh values when its hold expires.
+          afterglowStartCamR = 0;
+        }
+      }
       if (
         !isMoonMission &&
         !reducedMotion &&
@@ -4096,19 +4408,25 @@
         // the ship holds" cinematic — the camera-disagree principle
         // (shot-language guide P6). Without it the flyby reads as
         // static.
-        const flybyMetActive = (window as unknown as { __flyDebug?: { activeFlybyMet?: number } })
-          .__flyDebug?.activeFlybyMet;
+        const flybyMetActive = currentFrameFlybyMet;
         const inPeak =
           flybyMetActive != null &&
           Math.abs(simDay - (arcTimeline.dep_day + flybyMetActive)) < FLYBY_PEAK_DAYS;
-        camT += (inPeak ? 0.15 : 0.05) * dt;
-        // Gentle pitch breathing around the approach tilt, ±0.05 rad
-        // over a 30-second cycle — adds parallax without making the
-        // ecliptic plane swing too far.
-        const t = now * 0.001;
-        const TILT_AMP = 0.05;
-        const tiltOsc = Math.sin((t * (Math.PI * 2)) / 30) * TILT_AMP;
-        camP += (HELIO_APPROACH_P + tiltOsc - camP) * 0.008;
+        // Arming was hoisted to the frame-top block (runs every frame
+        // so it fires even mid-lerp). Here we only honour the active
+        // peakHoldUntil window to suppress the parallax arc rotation +
+        // pitch breathing — during the hold and the afterglow the
+        // camera should hold entirely still / pure-dolly, not arc.
+        if (!isCinematicFreeze) {
+          camT += (inPeak ? 0.15 : 0.05) * dt;
+          // Gentle pitch breathing around the approach tilt, ±0.05 rad
+          // over a 30-second cycle — adds parallax without making the
+          // ecliptic plane swing too far.
+          const t = now * 0.001;
+          const TILT_AMP = 0.05;
+          const tiltOsc = Math.sin((t * (Math.PI * 2)) / 30) * TILT_AMP;
+          camP += (HELIO_APPROACH_P + tiltOsc - camP) * 0.008;
+        }
       }
       // Re-aim the helio camera each frame so the sub-phase auto-zoom
       // lerps (depart → cruise → approach → arrival) actually advance —
@@ -4313,13 +4631,50 @@
       if (phaseNow === 'arrived' && !arrivalSnapped) {
         camSnapUntil = performance.now() + 1500;
         arrivalSnapped = true;
+        // W3.4 — kick off the end-of-mission locked-off finale on
+        // one-way helio missions (round-trip endings at Earth and
+        // moon-missions are handled differently and stay out of the
+        // finale path). Starts AFTER the 1.5 s arrival snap so the
+        // parked-in-orbit composition is in frame before the lock.
+        const isOneWayHelioEnd = !isMoonMission && retPts.length < 2;
+        if (isOneWayHelioEnd && finaleStartedAt === 0) {
+          finaleStartedAt = performance.now() + 1500;
+          inMissionFinale = true;
+        }
       }
       // Re-arm the snap when the user scrubs back out of arrived so a
       // subsequent re-entry into arrived triggers the snap again.
       if (phaseNow !== 'arrived' && lastSeenPhase === 'arrived') {
         arrivalSnapped = false;
+        // Re-arm the finale too. User scrubbed back into the mission;
+        // next re-entry into arrived should fire a fresh finale.
+        finaleStartedAt = 0;
+        inMissionFinale = false;
+        finaleCaptionOpacity = 0;
+        finaleBlackOpacity = 0;
       }
       lastSeenPhase = phaseNow;
+      // W3.4 — update finale state machine. After 12 s the camera
+      // remains locked but the fade-to-black is complete; the user
+      // can scrub to resume the mission.
+      if (finaleStartedAt > 0 && performance.now() >= finaleStartedAt) {
+        const elapsed = performance.now() - finaleStartedAt;
+        // Caption fade-in over 1 s starting at t=8
+        if (elapsed >= FINALE_CAPTION_FADE_IN_AT) {
+          finaleCaptionOpacity = Math.min(1, (elapsed - FINALE_CAPTION_FADE_IN_AT) / 1000);
+        }
+        // Black overlay fade-in over 1 s starting at t=11
+        if (elapsed >= FINALE_BLACK_FADE_IN_AT) {
+          finaleBlackOpacity = Math.min(1, (elapsed - FINALE_BLACK_FADE_IN_AT) / 1000);
+        }
+        // After 13 s (12 s finale + 1 s settle), drop the held flag
+        // so the rest of the scene resumes its normal pace if the
+        // user scrubs / interacts. The black overlay stays opaque
+        // until reset by the scrub-out reset above.
+        if (elapsed >= FINALE_DURATION_MS + 1000) {
+          inMissionFinale = false;
+        }
+      }
       // The LAUNCH / ARRIVAL anchor rings + their date sprites are
       // sized for the wide cruise framing. At any closeup sub-phase
       // (helio flyby cinema, helio prelaunch / approach / depart,
@@ -4856,6 +5211,33 @@
           // cinematic glow — see the Settings panel to opt back in.
           renderer.render(scene, camera);
         }
+        // Frame-end debug write. Captures state every frame
+        // independent of whether a flyby cinema is active — the
+        // mid-update __flyDebug write inside updateHelioAutoZoomTargets
+        // only runs when activeFlybyMet !== null, leaving subPhase /
+        // simDay / arming state stale at the most recent flyby across
+        // launch / cruise / arrived. This frame-end write fixes the
+        // verification path.
+        (window as unknown as Record<string, unknown>).__flyDebugFrame = {
+          simDay,
+          lastHelioSubPhase,
+          peakHoldArmedForFlybyMet,
+          peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
+          camR,
+          camTx: camTarget.x,
+          camTz: camTarget.z,
+          inMissionFinale,
+          finaleCaptionOpacity,
+          finaleBlackOpacity,
+          finaleStartedAt,
+          finaleElapsedMs: finaleStartedAt > 0 ? performance.now() - finaleStartedAt : 0,
+          cutBlackOpacity,
+          cutStartedAt,
+          cruiseHoldUntil,
+          cruiseHoldFired,
+          cruiseHoldRemainingMs: Math.max(0, cruiseHoldUntil - performance.now()),
+          cruiseHoldTriggerSimDay,
+        };
         // GH #107 — phase marker projection (3D view). Compute pixel
         // positions for every event marker against the active cislunar
         // camera + canvas size, then write the resulting
@@ -5291,11 +5673,54 @@
     <div class="load-banner" role="alert">{m.fly_load_failed()}</div>
   {/if}
 
+  <!-- W3.4 end-of-mission finale overlay. Two layers:
+         1. The MISSION END caption fades in at t=8 s into the finale
+            (4 s after the camera lock began). Centered, restrained
+            uppercase serif over the locked composition.
+         2. The fade-to-black overlay reaches full black at t=12 s and
+            stays opaque until the user scrubs out of the arrived
+            state (which resets the finale state). -->
+  {#if inMissionFinale && finaleCaptionOpacity > 0}
+    <div
+      class="finale-caption"
+      style="opacity: {finaleCaptionOpacity};"
+      data-testid="fly-finale-caption"
+      aria-live="polite"
+    >
+      <div class="finale-caption-label">MISSION END</div>
+      <div class="finale-caption-name">{mission.name}</div>
+    </div>
+  {/if}
+  {#if finaleBlackOpacity > 0}
+    <div
+      class="finale-black"
+      style="opacity: {finaleBlackOpacity};"
+      data-testid="fly-finale-black"
+      aria-hidden="true"
+    ></div>
+  {/if}
+  <!-- W3.6 scrubber-jump cut overlay. Short 200 ms fade-to-black on
+       big timeline jumps so the audience reads it as a deliberate cut,
+       not a long lerp across the system. -->
+  {#if cutBlackOpacity > 0}
+    <div
+      class="cut-black"
+      style="opacity: {cutBlackOpacity};"
+      data-testid="fly-cut-black"
+      aria-hidden="true"
+    ></div>
+  {/if}
+
   <!-- Left-side HUD stack: identity → navigation → systems. Replaces
        the previous scattered top-left/top-right/bottom-right layout
        that conflicted with the CAPCOM toggle. User-dismissible via the
        HUD toggle in the top-right row. -->
-  <div class="hud-stack" data-audio-stage="fly-hud" class:hidden={!showHud}>
+  <div
+    class="hud-stack"
+    data-audio-stage="fly-hud"
+    class:hidden={!showHud}
+    class:cinematic-hidden={inCinematicHeldBeat}
+  >
     <aside
       class="hud hud-identity"
       role="status"
@@ -5517,7 +5942,11 @@
   </div>
 
   <!-- Timeline scrubber (bottom-left) -->
-  <div class="scrubber" aria-label={m.fly_scrub_label()}>
+  <div
+    class="scrubber"
+    class:cinematic-hidden={inCinematicHeldBeat}
+    aria-label={m.fly_scrub_label()}
+  >
     <button
       type="button"
       class="play-btn"
@@ -5693,7 +6122,11 @@
   <!-- CAPCOM panel: shown when a mission is loaded AND the user hasn't
        dismissed it via the CAP toggle in the top-right row. -->
   {#if mission && showCapcom}
-    <aside class="capcom-panel" aria-label={m.fly_capcom_panel_label()}>
+    <aside
+      class="capcom-panel"
+      class:cinematic-hidden={inCinematicHeldBeat}
+      aria-label={m.fly_capcom_panel_label()}
+    >
       <!-- Static header: anomaly + comms always visible. The events
            section below scrolls independently so the most-recent
            events stay readable as the timeline accumulates. -->
@@ -5790,7 +6223,7 @@
        above the timeline scrubber, side-by-side at equal height so the
        two science overlays read as a unified pair (was bottom-left + bottom-right
        with no alignment + the conic panel disappearing behind CAPCOM). -->
-  <div class="fly-bottom-strips">
+  <div class="fly-bottom-strips" class:cinematic-hidden={inCinematicHeldBeat}>
     <div class="fly-fd-anchor">
       <FlightDirectorBanner
         scPhase={scState.phase}
@@ -6077,6 +6510,89 @@
     font-size: 9px;
     letter-spacing: 2px;
     border-radius: 4px;
+  }
+
+  /* W3.4 finale overlays. The caption hangs centered, lower-third
+     positioned so it doesn't fight the locked composition's body
+     in upper frame. The black overlay covers everything (z above
+     all the HUD chrome) so the fade reads as final. */
+  .finale-caption {
+    position: fixed;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 200ms linear;
+  }
+  .finale-caption-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: rgba(255, 200, 80, 0.85);
+    text-transform: uppercase;
+  }
+  .finale-caption-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 6px;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    text-shadow:
+      0 0 12px rgba(0, 0, 0, 0.9),
+      0 0 4px rgba(0, 0, 0, 1);
+  }
+  .finale-black {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: #000;
+    pointer-events: none;
+    transition: opacity 200ms linear;
+  }
+  /* W3.6 scrubber-jump cut overlay. Same z as the finale-black but
+     no transition — the JS drives the opacity each frame directly,
+     and we want the fade timing to be exactly the JS-controlled
+     CUT_TOTAL_MS, not lerped by CSS. */
+  .cut-black {
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    background: #000;
+    pointer-events: none;
+  }
+
+  /* W3.5 — cinematic chrome suppression. Fades the HUD stack,
+     scrubber, FD banner row, CAPCOM panel to invisible during the
+     peak hold, afterglow, and finale beats. 600 ms ease-out so the
+     fade is gentle (matches the held composition pacing) — the
+     chrome dissolving INTO the shot, not snapping out. Restored at
+     beat-end with the same 600 ms ease-in. Pointer-events also
+     disabled so the user can't accidentally click hidden chrome. */
+  .cinematic-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition:
+      opacity 600ms ease-out,
+      transform 600ms ease-out !important;
+  }
+  /* When NOT hidden, the same elements get a matching ease-in fade
+     so the transitions on/off are symmetric. The hud-stack,
+     scrubber, and bottom-strips each declare their own existing
+     transition; only override the timing for the cinematic toggle.
+     Applied via :not selector so non-cinematic state restores cleanly. */
+  .hud-stack:not(.cinematic-hidden),
+  .scrubber:not(.cinematic-hidden),
+  .capcom-panel:not(.cinematic-hidden),
+  .fly-bottom-strips:not(.cinematic-hidden) {
+    transition:
+      opacity 600ms ease-in,
+      transform 600ms ease-in;
   }
 
   .hud-stack {

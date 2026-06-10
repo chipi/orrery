@@ -120,6 +120,20 @@ export interface HelioSceneHandles {
    *  stretches along the body→anti-Sun axis (the magnetotail direction)
    *  so component calls this each frame with the body's world position. */
   updateMagnetosphereForBody: (id: DestinationId | 'earth', worldX: number, worldZ: number) => void;
+  /** Toggle the major-moon overlay — Galilean moons at Jupiter, Titan /
+   *  Enceladus / Iapetus at Saturn, the Moon at Earth, Phobos / Deimos
+   *  at Mars, Triton at Neptune. Each moon ships with a thin orbit
+   *  ring centred on its parent. */
+  setMoonsVisible: (visible: boolean) => void;
+  /** Update moon meshes + orbit-ring centres for one parent planet.
+   *  Component calls this each frame for every planet whose moons
+   *  should track. Phase angle = simDay × 2π / periodDays. */
+  updateMoonsForParent: (
+    parent: DestinationId | 'earth',
+    parentX: number,
+    parentZ: number,
+    simDay: number,
+  ) => void;
 }
 
 interface DestinationStyle {
@@ -376,6 +390,107 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     contextOrbits.set(id, orbit);
   }
 
+  // Moons + their orbit rings for the major flyby bodies — same
+  // /explore satellites pattern (PRD-026, GH #287 Slice D) compressed
+  // to /fly's smaller per-planet body radii. Each moon is a small
+  // textureless coloured sphere; each orbit is a thin line loop
+  // centred on the parent planet. Positions update per frame from
+  // simDay via an orbit-angle phase. Hidden by default; toggled on
+  // by setMoonsVisible (gated via the science-lens "moons" layer in
+  // the calling component).
+  type MoonSpec = {
+    parent: DestinationId | 'earth';
+    name: string;
+    color: number;
+    sizeUnits: number;
+    orbitUnits: number;
+    periodDays: number;
+    inclDeg: number;
+  };
+  const MOON_SYSTEM: MoonSpec[] = [
+    // Earth — the Moon. Compressed to ~3 × Earth radius (real 60 ×).
+    { parent: 'earth', name: 'Moon', color: 0xd8d8d8, sizeUnits: 0.7, orbitUnits: 7, periodDays: 27.32, inclDeg: 5.14 },
+    // Mars — Phobos + Deimos.
+    { parent: 'mars', name: 'Phobos', color: 0x9a8b7d, sizeUnits: 0.3, orbitUnits: 4, periodDays: 0.32, inclDeg: 1.08 },
+    { parent: 'mars', name: 'Deimos', color: 0xb8a89a, sizeUnits: 0.2, orbitUnits: 6, periodDays: 1.26, inclDeg: 1.79 },
+    // Jupiter — Galilean moons. Real distances 6–26 Jupiter radii;
+    // compressed to keep them inside the flyby cinema framing.
+    { parent: 'jupiter', name: 'Io', color: 0xebd28a, sizeUnits: 0.9, orbitUnits: 10, periodDays: 1.77, inclDeg: 0.05 },
+    { parent: 'jupiter', name: 'Europa', color: 0xd8d2c3, sizeUnits: 0.8, orbitUnits: 13, periodDays: 3.55, inclDeg: 0.47 },
+    { parent: 'jupiter', name: 'Ganymede', color: 0x9c8b76, sizeUnits: 1.2, orbitUnits: 17, periodDays: 7.15, inclDeg: 0.20 },
+    { parent: 'jupiter', name: 'Callisto', color: 0x6e5e4d, sizeUnits: 1.1, orbitUnits: 22, periodDays: 16.69, inclDeg: 0.28 },
+    // Saturn — Titan + Enceladus + Iapetus (the iconic three).
+    { parent: 'saturn', name: 'Titan', color: 0xc59b62, sizeUnits: 1.0, orbitUnits: 14, periodDays: 15.95, inclDeg: 0.34 },
+    { parent: 'saturn', name: 'Enceladus', color: 0xeaeaea, sizeUnits: 0.5, orbitUnits: 9, periodDays: 1.37, inclDeg: 0.02 },
+    { parent: 'saturn', name: 'Iapetus', color: 0x7a6857, sizeUnits: 0.8, orbitUnits: 20, periodDays: 79.32, inclDeg: 15.47 },
+    // Neptune — Triton (the only large one).
+    { parent: 'neptune', name: 'Triton', color: 0xcdbba6, sizeUnits: 0.9, orbitUnits: 8, periodDays: 5.88, inclDeg: 156.89 },
+  ];
+  type MoonEntry = { spec: MoonSpec; mesh: THREE.Mesh; orbit: THREE.LineLoop };
+  const moonEntries: MoonEntry[] = [];
+  for (const spec of MOON_SYSTEM) {
+    const mat = new THREE.MeshPhongMaterial({
+      color: spec.color,
+      emissive: spec.color,
+      emissiveIntensity: 0.18,
+    });
+    const mesh = new THREE.Mesh(new THREE.SphereGeometry(spec.sizeUnits, 16, 16), mat);
+    mesh.visible = false;
+    scene.add(mesh);
+    // Orbit ring — built once per moon at radius spec.orbitUnits,
+    // tinted to the moon's colour at low opacity so the parent body
+    // still reads as the dominant subject during flyby cinema.
+    const pts: THREE.Vector3[] = [];
+    for (let i = 0; i <= 96; i++) {
+      const a = (i / 96) * Math.PI * 2;
+      pts.push(new THREE.Vector3(Math.cos(a) * spec.orbitUnits, 0, Math.sin(a) * spec.orbitUnits));
+    }
+    const orbit = new THREE.LineLoop(
+      new THREE.BufferGeometry().setFromPoints(pts),
+      new THREE.LineBasicMaterial({ color: spec.color, transparent: true, opacity: 0.35 }),
+    );
+    orbit.visible = false;
+    scene.add(orbit);
+    moonEntries.push({ spec, mesh, orbit });
+  }
+  let moonsVisible = false;
+  function setMoonsVisible(on: boolean): void {
+    moonsVisible = on;
+    for (const m of moonEntries) {
+      m.mesh.visible = on;
+      m.orbit.visible = on;
+    }
+  }
+  /** Update every moon's position + orbit-ring centre for the given
+   *  parent-planet world position + a simDay phase. Component calls
+   *  this once per frame for each parent (Earth + every context
+   *  planet). Phase = (simDay × 2π / periodDays) + an arbitrary
+   *  offset per moon so they don't all align at MET 0. */
+  function updateMoonsForParent(
+    parent: DestinationId | 'earth',
+    parentX: number,
+    parentZ: number,
+    simDay: number,
+  ): void {
+    if (!moonsVisible) return;
+    for (const m of moonEntries) {
+      if (m.spec.parent !== parent) continue;
+      m.orbit.position.set(parentX, 0, parentZ);
+      // Inclination-tilt the orbit ring around the X axis so it
+      // visibly diverges from the ecliptic.
+      m.orbit.rotation.x = (m.spec.inclDeg * Math.PI) / 180;
+      // Moon mesh: ride the orbit at the current phase angle.
+      const phase =
+        ((simDay / m.spec.periodDays) * Math.PI * 2) +
+        // Deterministic per-moon offset so a fresh load doesn't
+        // line every moon up at phase 0.
+        m.spec.name.charCodeAt(0) * 0.37;
+      const x = parentX + Math.cos(phase) * m.spec.orbitUnits;
+      const z = parentZ + Math.sin(phase) * m.spec.orbitUnits;
+      m.mesh.position.set(x, 0, z);
+    }
+  }
+
   function applyContextVisibility(): void {
     for (const [id, mesh] of contextPlanets) {
       const isActiveDest = id === activeDestinationId;
@@ -617,5 +732,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     updateHillSphereForBody,
     setMagnetospheresVisible,
     updateMagnetosphereForBody,
+    setMoonsVisible,
+    updateMoonsForParent,
   };
 }

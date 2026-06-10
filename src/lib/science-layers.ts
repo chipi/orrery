@@ -37,7 +37,8 @@ export type LayerKey =
   | 'lagrange-points' // L2 — L1/L2 markers around each planet (PRD-023 Slice B)
   | 'magnetosphere' // L3 — stylised magnetic-field shell + magnetic axis (PRD-023 Slice D/E.3b)
   | 'sub-solar' // L4 — noon-longitude marker + terminator emphasis (PRD-023 Slice D)
-  | 'planet-stats'; // L5 — tactical scan overlay (GRAVITY / ATMO / ROTATION) at planet focus (PRD-023 Slice E.4)
+  | 'planet-stats' // L5 — tactical scan overlay (GRAVITY / ATMO / ROTATION) at planet focus (PRD-023 Slice E.4)
+  | 'moons'; // L6 — major moons + orbit rings around each planet (/fly + /explore)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -59,6 +60,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'magnetosphere',
   'sub-solar',
   'planet-stats',
+  'moons',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -83,6 +85,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   magnetosphere: false,
   'sub-solar': false,
   'planet-stats': false,
+  moons: false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

@@ -2142,6 +2142,12 @@
     const stopMagnetosphereLayer = onLayerChange('magnetosphere', (on) => {
       helioHandles.setMagnetospheresVisible(on);
     });
+    // Major moons overlay — Galilean at Jupiter, Titan-Enceladus-Iapetus
+    // at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at
+    // Neptune. Mirrors /explore's satellites display.
+    const stopMoonsLayer = onLayerChange('moons', (on) => {
+      helioHandles.setMoonsVisible(on);
+    });
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
@@ -3874,6 +3880,12 @@
         // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
         helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
         helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
+        helioHandles.updateMoonsForParent(
+          'earth',
+          ePos.x * SCALE_3D,
+          ePos.z * SCALE_3D,
+          simDay,
+        );
         // Context planets — per-frame position updates for any non-
         // active planet rendered for grand-tour context. Each mesh
         // tracks its heliocentric position at simDay so the user
@@ -3889,7 +3901,22 @@
           // unused (just position writes — no geometry rebuild).
           helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
           helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
+          helioHandles.updateMoonsForParent(
+            planetId,
+            p.x * SCALE_3D,
+            p.z * SCALE_3D,
+            simDay,
+          );
         }
+        // Active destination also gets moon updates so Jupiter/Saturn
+        // missions (Cassini, Juno, Voyager) show their moons at the
+        // destination they're rendering live.
+        helioHandles.updateMoonsForParent(
+          activeDestination,
+          mPos.x * SCALE_3D,
+          mPos.z * SCALE_3D,
+          simDay,
+        );
         // Active destination — its Hill sphere lives in the same
         // entries map, keyed by planet id.
         helioHandles.updateHillSphereForBody(
@@ -3965,9 +3992,29 @@
         };
         scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
         if (scModel) scModel.scale.setScalar(overrides.modelScale);
+        // Boom orientation: rotate the 3D model so its iconic-front
+        // axis faces (roughly) the camera and the long magnetometer
+        // boom angles AWAY from the planet's limb. Each builder model
+        // ships with its own default axes — Cassini's HGA dish faces
+        // +X, magnetometer boom extends along -Y. lookAt(camera)
+        // orients the model's -Z toward the camera; rotating around
+        // local Y by +π/2 brings +X (dish) to that direction. Then
+        // an additional tilt around local Z lifts the boom off the
+        // planet-ship-camera plane so it reads as a graceful sweep
+        // across the frame instead of running through the planet.
+        if (scModel) {
+          scModel.lookAt(camera.position);
+          scModel.rotateY(Math.PI / 2);
+          scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+        }
       } else {
         scSprite.scale.set(2.5, 2.5, 1);
-        if (scModel) scModel.scale.setScalar(1.5);
+        if (scModel) {
+          scModel.scale.setScalar(1.5);
+          // Cruise: reset to identity orientation so the model rides
+          // along the trajectory without the cinema-specific tilt.
+          scModel.rotation.set(0, 0, 0);
+        }
       }
 
       // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
@@ -4683,6 +4730,8 @@
         updateHillSphereForBody: helioHandles.updateHillSphereForBody,
         setMagnetospheresVisible: helioHandles.setMagnetospheresVisible,
         updateMagnetosphereForBody: helioHandles.updateMagnetosphereForBody,
+        setMoonsVisible: helioHandles.setMoonsVisible,
+        updateMoonsForParent: helioHandles.updateMoonsForParent,
         setSpacecraftModel: applyMissionSpacecraftModel,
         refreshLabelSprites: refreshSpriteTextures,
       },
@@ -4712,6 +4761,7 @@
       stopHillSphereLayer?.();
       stopLagrangeLayer?.();
       stopMagnetosphereLayer?.();
+      stopMoonsLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       el3d.removeEventListener('contextmenu', onContextMenu);
       window.removeEventListener('mousemove', onMouseMove);
@@ -5382,6 +5432,7 @@
       'hill-sphere',
       'lagrange-points',
       'magnetosphere',
+      'moons',
     ]}
     historicalFoundations={[
       { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },

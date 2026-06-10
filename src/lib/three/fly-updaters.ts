@@ -64,6 +64,15 @@ export interface HelioUpdater {
   setMagnetospheresVisible(visible: boolean): void;
   /** Update magnetosphere position + orientation per frame. */
   updateMagnetosphereForBody(id: DestinationId | 'earth', worldX: number, worldZ: number): void;
+  /** Toggle major moons + their orbit rings. */
+  setMoonsVisible(visible: boolean): void;
+  /** Update one planet's moons each frame. */
+  updateMoonsForParent(
+    parent: DestinationId | 'earth',
+    parentX: number,
+    parentZ: number,
+    simDay: number,
+  ): void;
   /** Swap the spacecraft glyph for the active mission's recognisable
    *  3D silhouette. Iconic missions (Cassini, Voyager 1/2, Galileo,
    *  New Horizons) get distinct models; others keep the generic

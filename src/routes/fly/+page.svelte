@@ -4825,14 +4825,16 @@
               : m.state === 'past'
                 ? vw - capcomClearance
                 : hudClearance}
-          <!-- Active chip is anchored at its BOTTOM (CSS transform
-               translate(-50%, -100%)) so the leader line connects to
-               the chip's bottom edge — feels natural reading "leader
-               rises from arc up to the descriptive card above the
-               canvas". chipY for the active state is therefore the
-               BOTTOM of the chip; we bump it to 280 so the ~150 px
-               active card (top at ~130) doesn't clip behind the nav. -->
-          {@const chipY = m.state === 'active' ? 280 : 220 + idx * 40}
+          <!-- Active chip used to dock top-centre but that's exactly
+               where the foreground spacecraft sits during the flyby
+               hero composition. Dock at the lower-centre instead so
+               the body + ship reading stays clear. chipY is the BOTTOM
+               edge of the chip (translate(-50%, -100%)); placing it
+               at viewport-height − 130 keeps the chip just above the
+               scrubber row. Past/future stay where they were. -->
+          {@const vh = typeof window !== 'undefined' ? window.innerHeight : 900}
+          {@const chipY =
+            m.state === 'active' ? vh - 130 : 220 + idx * 40}
           <span
             class="milestone-diamond"
             class:active={m.active}

@@ -144,6 +144,14 @@ test.describe('/plan — porkchop computes and renders', () => {
 });
 
 test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
+  // v0.7 (ADR-076) reduced /plan to Mars-only — every multi-destination
+  // test here is skipped until v0.8 restores the full destination set
+  // (RFC-026 / GH #312). Re-enable each test as the porkchop solver
+  // gains real grids for the destination it covers.
+  test.skip(
+    true,
+    'v0.7 ADR-076: /plan is Mars-only; multi-destination restoration is v0.8 (RFC-026 / GH #312)',
+  );
   test('Jupiter porkchop renders when ?dest=jupiter is set', async ({ page }) => {
     await page.goto('/plan?dest=jupiter');
     // Loading spinner clears once the pre-computed grid loads.

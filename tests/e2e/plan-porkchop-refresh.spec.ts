@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+// v0.7 (ADR-076) reduced /plan to Mars-only. The destination selector
+// no longer offers Jupiter, so this test (which selects 'jupiter' to
+// verify the porkchop re-renders) can't run until v0.8 restores the
+// multi-destination grid (RFC-026 / GH #312).
+test.skip(true, 'v0.7 ADR-076: /plan is Mars-only; multi-dest refresh is v0.8 (RFC-026 / GH #312)');
 test('porkchop refreshes when destination changes', async ({ page }) => {
   await page.goto('/plan');
   await page.waitForLoadState('networkidle');

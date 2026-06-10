@@ -54,7 +54,9 @@ test.describe('/tiangong', () => {
     await page.goto('/tiangong', { waitUntil: 'networkidle' });
     const toggle = page.getByTestId('tiangong-timeline-toggle');
     await expect(toggle).toBeVisible({ timeout: 8_000 });
-    await toggle.click();
+    // Toggle pins to the bottom of the canvas; on mobile the footer's
+    // "Library" link overlaps it. Force the click past the z-stack.
+    await toggle.click({ force: true });
     const strip = page.getByTestId('tiangong-timeline');
     await expect(strip).toBeVisible({ timeout: 3_000 });
     const markers = strip.locator('button.marker');

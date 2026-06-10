@@ -365,6 +365,7 @@
   interface FdStage {
     id:
       | 'injection'
+      | 'separation'
       | 'cruise'
       | 'approach'
       | 'arrival'
@@ -388,9 +389,24 @@
   }
   const FD_STAGES: FdStage[] = [
     // Outbound leg — INJECTION sits at LAUNCH (no diamond, the LAUNCH
-    // ring is its visual anchor); CRUISE/APPROACH/ARRIVAL diamonds
-    // sit at each stage's START so the diamond appears at the exact
-    // point on the arc where the FD banner switches to that phase.
+    // ring is its visual anchor); SEPARATION / CRUISE / APPROACH /
+    // ARRIVAL diamonds sit at each stage's START so the diamond
+    // appears at the exact point on the arc where the FD banner
+    // switches to that phase.
+    //
+    // CAPCOM cadence (polish-wave-2): the early sequence used to be
+    // INJECTION (0-3%) → straight to CRUISE. User feedback: "Launch
+    // stays for a while, real flight has separation of spaceship
+    // from rocket then some sort of acceleration." Split the early
+    // window into 3 beats:
+    //   INJECTION (0 - 0.5%): liftoff + trans-X burn
+    //   SEPARATION (0.5% - 2.5%): spacecraft separates from upper
+    //     stage, deploys solar panels + antennas, first TCM checkout
+    //   CRUISE (2.5% - 80%): long coast
+    // At sim speed 30 d/s on a Cassini-class 7-year cruise this gives
+    // ~12 days of INJECTION (~0.4 s wall-clock) → ~50 days of
+    // SEPARATION (~1.7 s wall-clock) → long cruise. Brief but
+    // perceptible CAPCOM beats instead of one slow LAUNCH label.
     {
       id: 'injection',
       leg: 'out',
@@ -399,10 +415,17 @@
       label: () => m.fly_fd_marker_injection(),
     },
     {
+      id: 'separation',
+      leg: 'out',
+      tickArc: 0.005,
+      arcThreshold: 0.005,
+      label: () => m.fly_fd_marker_separation(),
+    },
+    {
       id: 'cruise',
       leg: 'out',
-      tickArc: 0.03,
-      arcThreshold: 0.03,
+      tickArc: 0.025,
+      arcThreshold: 0.025,
       label: () => m.fly_fd_marker_cruise(),
     },
     {
@@ -907,6 +930,39 @@
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
   let met = $derived(Math.max(0, arcProgress * totalDays));
 
+  // FD-stage tick positions for the time scrubber. Each FD_STAGES
+  // entry's tickArc (0..1 along its leg) maps to a percent along the
+  // scrubber: outbound stages span 0..50% on round-trips or 0..100%
+  // on one-ways; return stages span 50..100%. Adds gold ticks on the
+  // scrubber that mirror the on-canvas gold diamonds — clicking a
+  // stage tick jumps to that stage's MET.
+  let fdScrubberTicks = $derived.by(() => {
+    if (!arcTotalDays || arcTotalDays <= 0)
+      return [] as Array<{
+        id: string;
+        label: string;
+        pct: number;
+        met_days: number;
+      }>;
+    const hasReturn = retPts.length >= 2;
+    const out = [] as Array<{ id: string; label: string; pct: number; met_days: number }>;
+    for (const s of FD_STAGES) {
+      if (s.leg === 'return' && !hasReturn) continue;
+      const legSpan = hasReturn ? 0.5 : 1;
+      const legStart = s.leg === 'out' ? 0 : 0.5;
+      const pct = (legStart + s.tickArc * legSpan) * 100;
+      // ARRIVAL on a one-way mission sits at 100% (= end of scrubber).
+      // INJECTION at 0% would overlap the play button — but its
+      // diamond is suppressed anyway (LAUNCH ring covers it), so the
+      // scrubber tick is also suppressed for that stage. Same for
+      // ARRIVAL-EARTH on round-trips.
+      if (s.id === 'injection' || s.id === 'arrival-earth') continue;
+      const met_days = (legStart + s.tickArc * legSpan) * arcTotalDays;
+      out.push({ id: s.id, label: s.label(), pct, met_days });
+    }
+    return out;
+  });
+
   // Phase I — current conic classification from heliocentric (r, v).
   // Cislunar conic state — Earth-centric classifier in km/s units,
   // updated from the animate() rAF callback when a Moon mission is
@@ -1067,6 +1123,12 @@
    *  resolves. Once the boost window expires, lerp returns to the
    *  cinematic default. */
   let camSnapUntil = 0;
+  // Tracks the last `sc.phase` we saw in the animate loop. Used to fire
+  // a one-shot camera snap when the spacecraft transitions to 'arrived'
+  // so the parked-in-orbit frame settles immediately instead of slow-
+  // lerping for 10 seconds of wall-clock time.
+  let lastSeenPhase: 'pre-launch' | 'outbound' | 'return' | 'arrived' | null = null;
+  let arrivalSnapped = false;
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     simDay = mission.timeline.dep_day + metDays;
@@ -2172,19 +2234,14 @@
     });
     // Major moons overlay — Galilean at Jupiter, Titan-Enceladus-Iapetus
     // at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at
-    // Neptune. Mirrors /explore's satellites display.
-    //
-    // /fly is itself a cinematic experience (not a science overlay), so
-    // major moons are part of the spectacle — force them ON at mount
-    // regardless of the science-lens master gate. The subscription is
-    // still wired so an explicit user toggle in the science panel can
-    // override; we run setMoonsVisible(true) AFTER subscribing so the
-    // initial subscribe-fire (which reflects the off-by-default state)
-    // is immediately re-flipped to visible.
+    // Neptune. Gated on the science-lens master toggle; hidden by
+    // default. Briefly defaulted visible during polish wave 2 — the
+    // orbit rings + moon dots read as distraction during the flyby
+    // cinema, fighting the ship-as-hero composition. Back to lens-
+    // gated: users who want moons turn the science lens on.
     const stopMoonsLayer = onLayerChange('moons', (on) => {
       helioHandles.setMoonsVisible(on);
     });
-    helioHandles.setMoonsVisible(true);
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
@@ -2347,9 +2404,17 @@
           const mat = mesh.material as THREE.MeshPhongMaterial;
           if (!mat || mat.userData?.rimPatched) return;
           mat.onBeforeCompile = (shader) => {
+            // Warm gold rim — matches real-spacecraft thermal-blanket
+            // sheen + the sun-side highlight read. Stronger than the
+            // pre-polish-wave-2 0.85 so the silhouette stands out
+            // against bright planet bodies (Saturn rings, Jupiter
+            // bands), but kept warm so the model doesn't look like
+            // a ghostly artificial-light cutout. The cool-white rim
+            // tried briefly during testing read "weird" per user
+            // feedback — backed off to warm.
             shader.uniforms.rimColor = { value: new THREE.Color(0xffd9a3) };
-            shader.uniforms.rimStrength = { value: 0.85 };
-            shader.uniforms.rimPower = { value: 2.5 };
+            shader.uniforms.rimStrength = { value: 1.25 };
+            shader.uniforms.rimPower = { value: 2.0 };
             shader.fragmentShader = shader.fragmentShader.replace(
               '#include <common>',
               `#include <common>
@@ -2919,10 +2984,45 @@
           centerZ = scScene.z;
           targetR = HELIO_EARTH_CLOSEUP_R;
         } else if (t > 0.8) {
+          // Approach — choreographed sequence across the last 20 % of
+          // outbound. The audience sees: WIDE establishing pull-out
+          // (ship + destination both in frame, trajectory visible) →
+          // slow push-in following the ship, with the camera rotating
+          // around it → LIMB-GRAZING close composition as we hand off
+          // to the OI / flyby cinema. Local progress (approachLocal)
+          // 0..1 across the window drives the framing lerp; the camT
+          // rotation rate also scales up during this window (see
+          // animate() — search `inApproachWindow`) so the camera
+          // visibly arcs around the target while it pushes in.
+          //
+          // Pre-fix history: first this centered on destScene only
+          // (planet zoomed in, ship invisible). Then biased 65 % to
+          // ship (Saturn-class missions: planet off-frame entirely).
+          // Then static midpoint framing (better, but no motion → felt
+          // dead). The choreographed lerp is the third pass and is
+          // the composition that reads as a CINEMATIC approach rather
+          // than a static frame.
           sub = 'approach';
-          centerX = destScene.x;
-          centerZ = destScene.z;
-          targetR = HELIO_CLOSEUP_R;
+          const approachLocal = Math.max(0, Math.min(1, (t - 0.8) / 0.2));
+          const destSize = PLANET_SIZES[activeDestination] ?? 0;
+          const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
+          // Wide framing at approachLocal=0: covers ship + dest with
+          // margin so the audience reads "ship and destination in
+          // same shot". Close framing at approachLocal=1: limb-grazing
+          // distance off body radius. Smoothly lerp between.
+          const wideR = shipToDestDist * 0.65 + (destSize > 0 ? destSize * 4 : HELIO_CLOSEUP_R);
+          const closeR = destSize > 0 ? destSize * FLYBY_BODY_R_MULTIPLIER : HELIO_CLOSEUP_R;
+          targetR = wideR + (closeR - wideR) * approachLocal;
+          // Center also drifts from midpoint (approachLocal=0) to
+          // limb-grazing 35/65 toward ship (approachLocal=1), tracking
+          // the audience's eye smoothly from "look at the path" to
+          // "look at the spaceship arriving."
+          const wideCenterX = (scScene.x + destScene.x) * 0.5;
+          const wideCenterZ = (scScene.z + destScene.z) * 0.5;
+          const closeCenterX = destScene.x * 0.35 + scScene.x * 0.65;
+          const closeCenterZ = destScene.z * 0.35 + scScene.z * 0.65;
+          centerX = wideCenterX + (closeCenterX - wideCenterX) * approachLocal;
+          centerZ = wideCenterZ + (closeCenterZ - wideCenterZ) * approachLocal;
           targetP = HELIO_APPROACH_P;
         } else {
           // Tighter cruise — center biased toward the ship (70/30
@@ -3956,6 +4056,24 @@
         const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
         camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005;
       }
+      // Approach sweep — slow azimuthal arc around the ship-dest
+      // midpoint during the final outbound leg. Paired with the
+      // wide → close framing lerp (see updateHelioAutoZoomTargets
+      // 'approach' branch), this gives the audience the choreographed
+      // "zoom out, zoom in, rotate, follow ship, come to planet"
+      // sequence the user asked for at the Saturn arrival.
+      if (
+        !isMoonMission &&
+        !reducedMotion &&
+        !isDrag &&
+        !helioAutoZoomActive &&
+        lastHelioSubPhase === 'approach'
+      ) {
+        // 0.08 rad/s — a touch faster than cruise (0.05) so the
+        // rotation is visibly an "arc around the destination", not
+        // just the slow cruise breathing.
+        camT += 0.08 * dt;
+      }
       // Flyby cinema sweep — slow azimuthal orbit + gentle pitch tilt
       // around the body during a flyby sub-phase. Borrows from the
       // NASA mission-art reference set (Cassini-Saturn, Juno-Jupiter,
@@ -4185,6 +4303,23 @@
       // Spacecraft sprite also hides on arrival.
       const phaseNow = sc.phase;
       const afterArrival = phaseNow === 'arrived';
+      // First-frame arrival snap. Pre-polish-wave-2 the camera spent
+      // ~10 s of wall-clock LERPing from the cruise-out wide frame
+      // toward the arrived target — user feedback "after arrival
+      // milestone is not optimal, mostly empty space in camera; last
+      // 10 s are really good but before that is not." The lerp is the
+      // last 10 s catching up. Snap once on the phase transition so
+      // the user lands directly on the parked-in-orbit composition.
+      if (phaseNow === 'arrived' && !arrivalSnapped) {
+        camSnapUntil = performance.now() + 1500;
+        arrivalSnapped = true;
+      }
+      // Re-arm the snap when the user scrubs back out of arrived so a
+      // subsequent re-entry into arrived triggers the snap again.
+      if (phaseNow !== 'arrived' && lastSeenPhase === 'arrived') {
+        arrivalSnapped = false;
+      }
+      lastSeenPhase = phaseNow;
       // The LAUNCH / ARRIVAL anchor rings + their date sprites are
       // sized for the wide cruise framing. At any closeup sub-phase
       // (helio flyby cinema, helio prelaunch / approach / depart,
@@ -4221,11 +4356,18 @@
       // When a per-mission 3D model is present, it becomes the primary
       // glyph and the generic sprite hides entirely (no duplication).
       // Otherwise the sprite remains the glyph.
+      //
+      // Pre-polish-wave-2 this hid both the model and sprite the
+      // moment phase === 'arrived'. User feedback: "at end spaceship
+      // disappears and we said we want it parked in orbit, not gone."
+      // Keep the ship visible at arrival so the final frame reads as
+      // "spacecraft is now in orbit" (Cassini at Saturn) or "returned
+      // home" (round-trip at Earth) instead of "ship gone."
       if (scModel) {
         scSprite.visible = false;
-        scModel.visible = !afterArrival;
+        scModel.visible = true;
       } else {
-        scSprite.visible = !afterArrival;
+        scSprite.visible = true;
       }
 
       // Freeze playback on arrival — the planets should stop where they
@@ -4241,7 +4383,19 @@
       // mode) and refresh gravity arrows on the spacecraft. Hidden
       // layers don't bypass this work but their geometry is invisible
       // — cheap.
-      const scWorld = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      // sc.pos.y is non-zero at intermediate flyby waypoints (polish-
+      // wave-2 spline +y offset so the path passes ABOVE the planet
+      // instead of through it). Hard-coding y=0 here meant the science-
+      // layer arrows (gravity to Sun + Earth, velocity tangent,
+      // centripetal) sat on the ecliptic plane while the spacecraft
+      // sprite + model floated above, with the offset growing
+      // visible at the peak of each intermediate flyby. Same bug
+      // as the FD-diamond y=0 projection; matching fix.
+      const scWorld = new THREE.Vector3(
+        sc.pos.x * SCALE_3D,
+        (sc.pos.y ?? 0) * SCALE_3D,
+        sc.pos.z * SCALE_3D,
+      );
       const earthWorld = earthMesh.position;
       const marsWorld = marsMesh.position;
 
@@ -5072,15 +5226,14 @@
         Polish-wave-2 (2026-06): the floating chip + leader-to-canvas
         rendering for each milestone was retired. The diagonal leader
         crossing the canvas + the tethered chip read as overlay clutter
-        on the cinematic shot — the "don't add foreground when the
-        planet/ship is the subject" principle from the creative-direction
-        guide. The active milestone now surfaces in the HUD ACTIVE row,
-        the next one in the HUD NEXT row, and the on-canvas diamond
-        pulses to correlate the chip with its anchor on the path.
+        on the cinematic shot.
 
-        data-testid `milestone-chip` is retained on the diamond span so
-        any existing harness query that just counts milestones still
-        sees the right number; the chip content moved to the HUD rows.
+        Iteration 2 (same session): a small label sits flush below each
+        diamond — no leader line, no chip box, no "ACTIVE" descriptor.
+        Just the event name in compact text, so the reading is "this
+        dot on the path = that word." The active milestone's label
+        brightens and bolds; past/future labels stay dim. The HUD
+        ACTIVE EVENT row carries the full description.
       -->
       {#each milestoneScreens as m, idx (idx + '@' + m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
@@ -5096,6 +5249,14 @@
             data-milestone-label={m.label}
             aria-hidden="true"
           ></span>
+          <span
+            class="milestone-marker-label"
+            class:active={m.state === 'active'}
+            class:past={m.state === 'past'}
+            class:future={m.state === 'future'}
+            style="left: {m.screen.x}px; top: {m.screen.y + 12}px;"
+            aria-hidden="true">{m.label}</span
+          >
         {/if}
       {/each}
     </div>
@@ -5410,6 +5571,31 @@
                 </span>
               </button>
             {/if}
+          {/each}
+        </div>
+      {/if}
+      <!-- FD stage ticks on the scrubber — small gold marks at each
+           narrative stage (separation, cruise, approach, arrival).
+           Same scrubber-jump behaviour as milestones. Mirrors the
+           on-canvas gold diamonds so the user can see the FD cadence
+           on the timeline too. -->
+      {#if arcTotalDays > 0 && fdScrubberTicks.length > 0}
+        <div class="fd-stage-track" data-testid="fd-stage-track">
+          {#each fdScrubberTicks as t (t.id)}
+            {@const past = t.met_days < simDay - arcTimeline.dep_day}
+            <button
+              type="button"
+              class="fd-stage-tick-button"
+              class:past
+              style="left: {t.pct}%;"
+              aria-label="{t.label} stage. Click to jump."
+              onclick={() => jumpToMet(t.met_days)}
+              data-fd-stage={t.id}
+            >
+              <span class="fd-stage-tooltip">
+                <span class="fd-stage-tooltip-label">{t.label}</span>
+              </span>
+            </button>
           {/each}
         </div>
       {/if}
@@ -5738,6 +5924,39 @@
     .milestone-diamond.active {
       animation: none;
     }
+  }
+  /* Milestone diamond label — small text flush below the diamond,
+     no leader / no chip box. Anchors the label to the diamond's
+     screen position so the reading is "dot = word." */
+  .milestone-marker-label {
+    position: absolute;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(45, 212, 168, 0.85);
+    text-shadow:
+      0 0 4px rgba(8, 10, 22, 0.95),
+      0 0 8px rgba(8, 10, 22, 0.85);
+    pointer-events: none;
+    user-select: none;
+    z-index: 12;
+  }
+  .milestone-marker-label.past {
+    color: rgba(45, 212, 168, 0.5);
+  }
+  .milestone-marker-label.future {
+    color: rgba(45, 212, 168, 0.7);
+  }
+  .milestone-marker-label.active {
+    color: #5eead4;
+    font-weight: 700;
+    text-shadow:
+      0 0 6px rgba(94, 234, 212, 0.55),
+      0 0 4px rgba(8, 10, 22, 1),
+      0 0 10px rgba(8, 10, 22, 0.9);
   }
   /* HUD ACTIVE EVENT row — paired with the pulsing on-canvas diamond.
      Wraps label + italic description vertically so a one-line key on
@@ -6245,6 +6464,90 @@
        auto` catch events. Pre-2026-06 this was z-2 (below .scrub),
        which is why tooltips never appeared on hover. */
     z-index: 4;
+  }
+  /* FD stage track — sits ABOVE the milestone track so the gold
+     stage marks read in front of the teal milestone marks when
+     they happen to project at the same x. Same pointer-events
+     model: track none, children auto. */
+  .fd-stage-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .fd-stage-tick-button {
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fd-stage-tick-button::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #ffc850;
+    transform: rotate(45deg);
+    box-shadow: 0 0 4px rgba(255, 200, 80, 0.85);
+    transition:
+      transform 120ms,
+      box-shadow 120ms,
+      background 120ms;
+  }
+  .fd-stage-tick-button.past::before {
+    background: rgba(255, 200, 80, 0.45);
+    box-shadow: 0 0 2px rgba(255, 200, 80, 0.3);
+  }
+  .fd-stage-tick-button:hover::before,
+  .fd-stage-tick-button:focus-visible::before {
+    transform: rotate(45deg) scale(1.5);
+    background: #ffd766;
+    box-shadow:
+      0 0 10px rgba(255, 215, 102, 0.95),
+      0 0 2px rgba(255, 255, 255, 0.7);
+  }
+  .fd-stage-tick-button:focus-visible {
+    outline: none;
+  }
+  .fd-stage-tooltip {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 9px;
+    background: rgba(15, 18, 30, 0.96);
+    border: 1px solid rgba(255, 200, 80, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+  }
+  .fd-stage-tick-button:hover .fd-stage-tooltip,
+  .fd-stage-tick-button:focus-visible .fd-stage-tooltip {
+    opacity: 1;
+  }
+  .fd-stage-tooltip-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #ffc850;
+    text-transform: uppercase;
   }
   .milestone-tick-button {
     position: absolute;

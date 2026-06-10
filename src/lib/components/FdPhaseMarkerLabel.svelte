@@ -2,16 +2,13 @@
   FdPhaseMarkerLabel — gold trajectory stage marker for the 4 FlightDirector
   narrative stages (injection / cruise / approach / arrival).
 
-  Renders one element: a small diamond tick on the path at the stage's
-  tickArc position. Suppressed for INJECTION (LAUNCH ring covers it).
-
-  Polish-wave-2 (2026-06): the leader-line + floating chip "INJECTION /
-  CRUISE / APPROACH / ARRIVAL" label was dropped. The FlightDirectorBanner
-  already names the current stage at the bottom of the canvas — the
-  on-canvas chip was a redundant tether that read as orphaned text after
-  the LAUNCH banner faded. Discipline-of-not-doing-things per the
-  cinematic creative-direction guide (don't add foreground when the
-  planet/ship is the subject). The diamond alone is enough correlation.
+  Renders a small gold diamond on the path with a label sitting flush
+  below it — no leader line, no chip box. The label hangs directly
+  under the diamond so the reading is "this dot on the path = that
+  word." Pre-polish-wave-2 a leader line tethered a boxed chip to the
+  diamond; the line crossed the canvas and the chip read as orphaned
+  text after a few seconds. The line + box are gone; only the small
+  centered label remains, anchored to the diamond's screen position.
 
   Slot prop kept for backward compat with callers; unused now.
 -->
@@ -24,7 +21,7 @@
     onScreen: boolean;
     /** True for cruise/approach/arrival; false for injection (LAUNCH ring covers it). */
     showTick: boolean;
-    /** Uppercase stage name — kept on the element as a data-attr for tests + a11y. */
+    /** Uppercase stage name. */
     label: string;
     /** True once arcProgress ≥ this stage's threshold. */
     revealed: boolean;
@@ -42,6 +39,9 @@
     style="left: {tickScreenX}px; top: {tickScreenY}px;"
     aria-hidden="true"
   ></span>
+  <span class="label" style="left: {tickScreenX}px; top: {tickScreenY + 10}px;" aria-hidden="true"
+    >{label}</span
+  >
 {/if}
 
 <style>
@@ -57,6 +57,23 @@
     user-select: none;
     animation: fd-pop 320ms ease-out;
   }
+  .label {
+    position: absolute;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    color: rgba(255, 200, 80, 0.92);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 4px rgba(8, 10, 22, 0.95),
+      0 0 8px rgba(8, 10, 22, 0.85);
+    pointer-events: none;
+    user-select: none;
+    z-index: 12;
+    animation: fd-pop 320ms ease-out;
+  }
   @keyframes fd-pop {
     from {
       opacity: 0;
@@ -66,7 +83,8 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .diamond {
+    .diamond,
+    .label {
       animation: none;
     }
   }

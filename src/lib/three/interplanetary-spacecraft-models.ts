@@ -45,14 +45,23 @@ function dispose(group: THREE.Group): void {
  */
 function buildCassini(): THREE.Group {
   const g = new THREE.Group();
-  // Bus — central body, octagonal-ish via short cylinder.
+  // Bus — central body wrapped in gold thermal blankets (the real
+  // Cassini bus was almost entirely covered in MLI gold foil — the
+  // dominant visual signature alongside the white HGA). Was BUS_GREY
+  // pre-polish-wave-2; user feedback "entire spaceship is 1 color"
+  // led to matching the real-spacecraft coloring.
   const bus = new THREE.Mesh(
     new THREE.CylinderGeometry(0.18, 0.18, 0.5, 8),
-    new THREE.MeshPhongMaterial({ color: BUS_GREY, emissive: 0x222222, emissiveIntensity: 0.4 }),
+    new THREE.MeshPhongMaterial({
+      color: GOLD_FOIL,
+      emissive: 0x6b5a26,
+      emissiveIntensity: 0.55,
+    }),
   );
   bus.rotation.z = Math.PI / 2;
   g.add(bus);
-  // HGA dish — 0.5u radius cone facing +X.
+  // HGA dish — 0.5u radius cone facing +X. White contrasts the gold
+  // bus + boom so the silhouette reads as multi-toned.
   const dish = new THREE.Mesh(
     new THREE.ConeGeometry(0.48, 0.2, 16, 1, true),
     new THREE.MeshPhongMaterial({
@@ -66,12 +75,13 @@ function buildCassini(): THREE.Group {
   dish.position.x = 0.4;
   g.add(dish);
   // Huygens probe — small disc strapped to the side of the bus.
+  // Lighter-gray skin so it reads distinct from the gold bus.
   const huygens = new THREE.Mesh(
     new THREE.CylinderGeometry(0.16, 0.16, 0.12, 12),
     new THREE.MeshPhongMaterial({
-      color: GOLD_FOIL,
-      emissive: 0x665a30,
-      emissiveIntensity: 0.6,
+      color: BUS_GREY,
+      emissive: 0x333333,
+      emissiveIntensity: 0.4,
     }),
   );
   huygens.position.set(0.05, 0.2, 0);

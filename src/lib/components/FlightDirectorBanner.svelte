@@ -43,6 +43,7 @@
   type Phase = {
     id:
       | 'injection'
+      | 'separation'
       | 'cruise'
       | 'approach'
       | 'arrival'
@@ -80,6 +81,14 @@
     displayName: 'INJECTION',
     title: m.fly_fd_phase_injection_title(),
     body: m.fly_fd_phase_injection_body(),
+    tab: 'mission-phases',
+    section: 'trans-x-injection',
+  };
+  const SEPARATION: Phase = {
+    id: 'separation',
+    displayName: 'SEPARATION',
+    title: m.fly_fd_phase_separation_title(),
+    body: m.fly_fd_phase_separation_body(),
     tab: 'mission-phases',
     section: 'trans-x-injection',
   };
@@ -122,13 +131,15 @@
 
   let phase = $derived<Phase>(
     scPhase === 'outbound' || scPhase === 'pre-launch'
-      ? outboundT < 0.03
+      ? outboundT < 0.005
         ? INJECTION
-        : outboundT < 0.8
-          ? CRUISE_OUT
-          : outboundT < 0.95
-            ? APPROACH_OUT
-            : ARRIVAL_OUT
+        : outboundT < 0.025
+          ? SEPARATION
+          : outboundT < 0.8
+            ? CRUISE_OUT
+            : outboundT < 0.95
+              ? APPROACH_OUT
+              : ARRIVAL_OUT
       : !isRoundTrip
         ? ARRIVAL_OUT
         : scPhase === 'arrived'

@@ -2520,6 +2520,39 @@
     /** Fallback camR if we couldn't resolve the flyby body. */
     const HELIO_FLYBY_R_FALLBACK = 80;
 
+    /** Per-flyby cinema overrides. Each NASA mission-art reference
+     *  composes differently — Cassini-Saturn frames the ship + rings
+     *  oblique, Galileo-Jupiter foregrounds the dish, Juno-Jupiter
+     *  hugs the limb close. These tunables let each body's flyby
+     *  pose its own composition without flattening the variations.
+     *  - spriteScale: sprite glyph size during cinema
+     *  - modelScale:  per-mission 3D model size during cinema
+     *  - toCameraR:   ship push-toward-camera as a multiple of
+     *                 the body's visual radius (1.4 = ship sits at
+     *                 ~1.0·r from the camera, well clear of the
+     *                 planet's front face) */
+    const FLYBY_OVERRIDES: Record<
+      string,
+      { spriteScale: number; modelScale: number; toCameraR: number }
+    > = {
+      // Each body composes a bit differently — references vary too
+      // (Cassini-Saturn vs Juno-Jupiter vs Pioneer-Jupiter aren't the
+      // same shot). Tune per-body until each one feels right.
+      // toCameraR is the push-toward-camera as a multiple of body
+      // radius; smaller = ship further from camera, larger on body.
+      // modelScale is the 3D-model size during cinema (cruise = 3.0).
+      mercury: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.7 },
+      venus: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.6 },
+      earth: { spriteScale: 2.8, modelScale: 2.2, toCameraR: 0.7 },
+      mars: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.7 },
+      // Gas giants are big enough to swallow a smaller ship — push
+      // model larger so the spacecraft reads alongside the body.
+      jupiter: { spriteScale: 3.0, modelScale: 2.8, toCameraR: 0.8 },
+      saturn: { spriteScale: 2.8, modelScale: 2.5, toCameraR: 0.7 },
+      uranus: { spriteScale: 2.6, modelScale: 2.2, toCameraR: 0.7 },
+      neptune: { spriteScale: 2.6, modelScale: 2.2, toCameraR: 0.7 },
+    };
+
     const PLANET_SIZES: Record<string, number> = {
       mercury: 1.0,
       venus: 2.5,
@@ -2667,8 +2700,15 @@
               : destinationPos(simDay, flyby.id);
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;
-          centerX = bodyScene.x;
-          centerZ = bodyScene.z;
+          // 3/4 cinematic composition — bias the camera target toward
+          // the spacecraft position, NOT dead-on the planet centre.
+          // The reference NASA mission-art set (Cassini-Saturn, Juno-
+          // Jupiter, Galileo-Jupiter) never frames the body in the
+          // dead centre — it sits in one corner with the ship in the
+          // foreground. Lerping the target 35 % toward the ship slides
+          // the planet over to the opposite quadrant of the frame.
+          centerX = bodyScene.x * 0.65 + scScene.x * 0.35;
+          centerZ = bodyScene.z * 0.65 + scScene.z * 0.35;
           targetR = flyby.size * FLYBY_BODY_R_MULTIPLIER;
         } else {
           sub = `flyby-${activeFlybyMet}`;
@@ -3872,9 +3912,49 @@
       // foreground accent against the body, matching the NASA mission-
       // art compositions. Outside the cinema window the ship goes
       // back to its cruise scale.
+      // Cinema also offsets the ship TOWARD the camera so the 3D
+      // model sits geometrically in front of the planet body — the
+      // hero-shot composition from the NASA mission-art reference
+      // set (Cassini-Saturn, Juno-Jupiter): ship as foreground accent,
+      // planet limb behind. Without this offset, even with the +y
+      // waypoint anchor, the camera-elevation angle could still put
+      // the model behind the planet's z-range and the planet's
+      // opaque MeshPhongMaterial occludes it.
       if (lastHelioSubPhase?.startsWith('flyby-')) {
-        scSprite.scale.set(1.5, 1.5, 1);
-        if (scModel) scModel.scale.setScalar(1.1);
+        // Push the ship toward the camera by the flyby body's radius
+        // — enough to clear the planet's front face. activeFlybyMet
+        // + flybyId tracked via __flyDebug; use the body's PLANET_SIZE
+        // for the offset magnitude. Stays inside the cinema target
+        // sphere (camR = 2.4·r), so the ship doesn't fly off-frame.
+        const flybyDbg = (
+          window as unknown as { __flyDebug?: { flybySize?: number; flybyId?: string } }
+        ).__flyDebug;
+        const bodyR = flybyDbg?.flybySize ?? 2.5;
+        const overrideCamR =
+          FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
+        const camToShip = new THREE.Vector3().subVectors(
+          camera.position,
+          scSprite.position,
+        );
+        const dist = camToShip.length();
+        if (dist > 0.01) {
+          camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
+          scSprite.position.add(camToShip);
+          if (scModel) scModel.position.copy(scSprite.position);
+        }
+        // Scale the ship to read as a foreground hero without
+        // swamping the body. Each flyby tunes its own scale via
+        // FLYBY_OVERRIDES below (Saturn arrival keeps its smaller
+        // ship-on-rings look, Jupiter takes a closer-in scale, etc.)
+        // — the variation matches the NASA reference set, which
+        // doesn't use a single universal composition.
+        const overrides = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? ''] ?? {
+          spriteScale: 1.8,
+          modelScale: 1.3,
+          toCameraR: 1.4,
+        };
+        scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
+        if (scModel) scModel.scale.setScalar(overrides.modelScale);
       } else {
         scSprite.scale.set(4, 4, 1);
         if (scModel) scModel.scale.setScalar(3.0);

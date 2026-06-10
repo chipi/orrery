@@ -36,15 +36,7 @@
      *  each other. */
     slot?: number;
   }
-  let {
-    tickScreenX,
-    tickScreenY,
-    onScreen,
-    showTick,
-    label,
-    revealed,
-    slot = 0,
-  }: Props = $props();
+  let { tickScreenX, tickScreenY, onScreen, showTick, label, revealed, slot = 0 }: Props = $props();
 
   const VERT_OFFSET = 32;
   const HORZ_STAGGER = 56;

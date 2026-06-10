@@ -103,6 +103,23 @@ export interface HelioSceneHandles {
    *  whichever line is currently active. Used by the animate loop to
    *  hide the destination ring during cislunar Moon-mode rendering. */
   setDestinationOrbitVisible: (visible: boolean) => void;
+  /** Toggle Hill sphere wireframes around every planet (Earth + the
+   *  7 context planets). Mirrors /explore (PRD-023 Slice B). */
+  setHillSpheresVisible: (visible: boolean) => void;
+  /** Toggle L1 + L2 markers around every planet, positioned along the
+   *  planet→Sun line. Mirrors /explore (PRD-023 Slice B). */
+  setLagrangePointsVisible: (visible: boolean) => void;
+  /** Update Hill sphere + L1 / L2 positions for a body given its
+   *  current world position (after SCALE_3D conversion). Component
+   *  calls this once per frame for every body it tracks. */
+  updateHillSphereForBody: (id: DestinationId | 'earth', worldX: number, worldZ: number) => void;
+  /** Toggle stylised magnetosphere shells around bodies with strong
+   *  dynamos (Earth + the four gas giants). PRD-023 Slice D. */
+  setMagnetospheresVisible: (visible: boolean) => void;
+  /** Update magnetosphere position + orientation for a body. The shell
+   *  stretches along the body→anti-Sun axis (the magnetotail direction)
+   *  so component calls this each frame with the body's world position. */
+  updateMagnetosphereForBody: (id: DestinationId | 'earth', worldX: number, worldZ: number) => void;
 }
 
 interface DestinationStyle {
@@ -253,6 +270,58 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
 
   scene.add(createStarField({ count: 2000, radius: 1500, jitter: 500, opacity: 0.7 }));
 
+  // Asteroid belt + Kuiper belt — same sampling shape as /explore so
+  // the cruise view reads the same way at a glance. Belt particles
+  // live in scene units (heliocentric AU × SCALE_3D) so they sit at
+  // their real orbital radii. Visible by default — they fade naturally
+  // when the camera is close to a planet, and read as a soft ring at
+  // cruise scales (where the user benefits most from seeing them).
+  const sampleBelt = (count: number, innerAu: number, outerAu: number, slabAu: number) => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const r = (innerAu + Math.random() * (outerAu - innerAu)) * SCALE_3D;
+      arr[i * 3] = Math.cos(a) * r;
+      arr[i * 3 + 1] = (Math.random() - 0.5) * slabAu * SCALE_3D;
+      arr[i * 3 + 2] = Math.sin(a) * r;
+    }
+    return arr;
+  };
+  // Main belt — real bounds 2.2–3.2 AU. Warm sandy palette.
+  const asteroidBeltGeo = new THREE.BufferGeometry();
+  asteroidBeltGeo.setAttribute(
+    'position',
+    new THREE.BufferAttribute(sampleBelt(1800, 2.2, 3.2, 0.1), 3),
+  );
+  const asteroidBelt = new THREE.Points(
+    asteroidBeltGeo,
+    new THREE.PointsMaterial({
+      color: 0xb8a470,
+      size: 1.0,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.5,
+    }),
+  );
+  scene.add(asteroidBelt);
+  // Kuiper belt — real bounds ~30–50 AU. Cooler bluish, sparser.
+  const kuiperBeltGeo = new THREE.BufferGeometry();
+  kuiperBeltGeo.setAttribute(
+    'position',
+    new THREE.BufferAttribute(sampleBelt(2200, 30, 50, 0.18), 3),
+  );
+  const kuiperBelt = new THREE.Points(
+    kuiperBeltGeo,
+    new THREE.PointsMaterial({
+      color: 0x9fc6e3,
+      size: 1.1,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.4,
+    }),
+  );
+  scene.add(kuiperBelt);
+
   // Earth orbit + initial destination orbit (Mars by default).
   const earthOrbitLine = buildOrbitRing(R_EARTH_AU, 0x4b9cd3);
   let destinationOrbitLine = buildOrbitRing(R_MARS_AU, 0xc1440e);
@@ -321,6 +390,162 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     applyContextVisibility();
   }
 
+  // Hill spheres + L1 / L2 markers — mirrors /explore (PRD-023 Slice B).
+  // Hill sphere = wireframe sphere at 6× the planet's visual radius,
+  // marking the gravity-dominance boundary; L1 / L2 = small gold dots
+  // along the planet→Sun line at ~Hill-radius distance. Built for every
+  // body the spacecraft might fly by (Earth + the 7 context planets)
+  // and the active destination. Hidden by default; toggled via
+  // setHillSpheresVisible / setLagrangePointsVisible, which the
+  // component wires to the science-layers panel.
+  const HILL_COLOR = 0xff66cc;
+  const LAGRANGE_COLOR = 0xffd766;
+  function buildHillSphere(planetRadius: number): THREE.LineSegments {
+    const geo = new THREE.WireframeGeometry(new THREE.SphereGeometry(planetRadius * 6, 16, 12));
+    const mat = new THREE.LineBasicMaterial({
+      color: HILL_COLOR,
+      transparent: true,
+      opacity: 0.18,
+      depthWrite: false,
+    });
+    const mesh = new THREE.LineSegments(geo, mat);
+    mesh.visible = false;
+    return mesh;
+  }
+  function buildLagrangeMarker(planetRadius: number): THREE.Mesh {
+    const geo = new THREE.SphereGeometry(Math.max(0.4, planetRadius * 0.4), 16, 16);
+    const mat = new THREE.MeshBasicMaterial({
+      color: LAGRANGE_COLOR,
+      transparent: true,
+      opacity: 0.92,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.visible = false;
+    return mesh;
+  }
+  type HillEntry = {
+    hill: THREE.LineSegments;
+    l1: THREE.Mesh;
+    l2: THREE.Mesh;
+    planetRadius: number;
+  };
+  const hillEntries = new Map<DestinationId | 'earth', HillEntry>();
+  // Earth
+  {
+    const entry: HillEntry = {
+      hill: buildHillSphere(EARTH_RADIUS),
+      l1: buildLagrangeMarker(EARTH_RADIUS),
+      l2: buildLagrangeMarker(EARTH_RADIUS),
+      planetRadius: EARTH_RADIUS,
+    };
+    scene.add(entry.hill);
+    scene.add(entry.l1);
+    scene.add(entry.l2);
+    hillEntries.set('earth', entry);
+  }
+  for (const id of CONTEXT_PLANET_IDS) {
+    const style = DEST_STYLE[id];
+    if (!style) continue;
+    const entry: HillEntry = {
+      hill: buildHillSphere(style.size),
+      l1: buildLagrangeMarker(style.size),
+      l2: buildLagrangeMarker(style.size),
+      planetRadius: style.size,
+    };
+    scene.add(entry.hill);
+    scene.add(entry.l1);
+    scene.add(entry.l2);
+    hillEntries.set(id, entry);
+  }
+  let lagrangePointsVisible = false;
+  function setHillSpheresVisible(on: boolean): void {
+    for (const entry of hillEntries.values()) entry.hill.visible = on;
+  }
+  function setLagrangePointsVisible(on: boolean): void {
+    lagrangePointsVisible = on;
+    for (const entry of hillEntries.values()) {
+      entry.l1.visible = on;
+      entry.l2.visible = on;
+    }
+  }
+  /** Update Hill sphere + L1 / L2 positions to track the given planet's
+   *  world position. L1 sits between planet and Sun (toward origin);
+   *  L2 sits on the far side. Distance = 6 × planet visual radius
+   *  (matches the Hill sphere wireframe radius, same /explore
+   *  approximation). The component calls this in its animate loop with
+   *  the live earth + destination + context positions. */
+  function updateHillSphereForBody(
+    id: DestinationId | 'earth',
+    worldX: number,
+    worldZ: number,
+  ): void {
+    const entry = hillEntries.get(id);
+    if (!entry) return;
+    entry.hill.position.set(worldX, 0, worldZ);
+    if (!lagrangePointsVisible) return;
+    const r = Math.hypot(worldX, worldZ);
+    if (r < 1e-6) return;
+    const ux = worldX / r;
+    const uz = worldZ / r;
+    const offset = entry.planetRadius * 6;
+    entry.l1.position.set(worldX - ux * offset, 0, worldZ - uz * offset);
+    entry.l2.position.set(worldX + ux * offset, 0, worldZ + uz * offset);
+  }
+
+  // Magnetosphere shells — same /explore palette (PRD-023 Slice D).
+  // Only bodies with significant dynamos get one: Earth + the four gas
+  // giants. Each shell is a stretched ellipsoid (4× planet radius,
+  // scaled 1:0.7:2.4 — long axis runs along the body→anti-Sun line
+  // each frame, so the magnetotail trails away from the Sun naturally).
+  const MAGNETOSPHERE_BODIES = new Set<DestinationId | 'earth'>([
+    'earth',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+  ]);
+  type MagEntry = { mesh: THREE.Mesh; planetRadius: number };
+  const magEntries = new Map<DestinationId | 'earth', MagEntry>();
+  for (const id of MAGNETOSPHERE_BODIES) {
+    const planetRadius = id === 'earth' ? EARTH_RADIUS : DEST_STYLE[id]?.size;
+    if (planetRadius == null) continue;
+    const geo = new THREE.SphereGeometry(planetRadius * 4, 24, 16);
+    const mat = new THREE.MeshBasicMaterial({
+      color: id === 'jupiter' ? 0xff66dd : 0x66ddff,
+      transparent: true,
+      opacity: 0.08,
+      side: THREE.BackSide,
+      depthWrite: false,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.scale.set(1, 0.7, 2.4);
+    mesh.visible = false;
+    scene.add(mesh);
+    magEntries.set(id, { mesh, planetRadius });
+  }
+  function setMagnetospheresVisible(on: boolean): void {
+    for (const entry of magEntries.values()) entry.mesh.visible = on;
+  }
+  /** Update magnetosphere position + orientation so its long axis runs
+   *  along the body→anti-Sun line (the magnetotail direction). */
+  function updateMagnetosphereForBody(
+    id: DestinationId | 'earth',
+    worldX: number,
+    worldZ: number,
+  ): void {
+    const entry = magEntries.get(id);
+    if (!entry) return;
+    entry.mesh.position.set(worldX, 0, worldZ);
+    // Orient the stretched axis (Z, the 2.4× scale axis) along the
+    // anti-Sun direction. Rotation around Y aligns the local +Z with
+    // the world vector from the Sun (origin) through the body.
+    const angle = Math.atan2(worldZ, worldX);
+    // Three.js sphere's local +Z points along the geometry's pole. We
+    // rotate so local +Z aligns with (worldX, worldZ) — gives the
+    // magnetotail a "swept back from the Sun" feel.
+    entry.mesh.rotation.set(0, -angle + Math.PI / 2, 0);
+  }
+
   // Saturn ring system — parented to the destination mesh so it tracks
   // Saturn's per-frame position automatically. Stays in the scene at
   // all times but toggles visibility based on the active destination
@@ -387,5 +612,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     setContextPlanetsVisible,
     setDestination,
     setDestinationOrbitVisible,
+    setHillSpheresVisible,
+    setLagrangePointsVisible,
+    updateHillSphereForBody,
+    setMagnetospheresVisible,
+    updateMagnetosphereForBody,
   };
 }

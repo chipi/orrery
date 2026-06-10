@@ -336,6 +336,18 @@
                 "minimum": 0,
                 "maximum": 20,
                 "description": "Optional \u2206v for this event in km/s. Used by HUD to annotate burns (e.g., 'TLI \u2014 3.07 km/s'). Per ADR-058."
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80,
+                "description": "Editorial chip label shown over the /fly milestone overlay (e.g., 'Venus #1 \u2014 gravity assist'). Falls back to a humanised event-type when omitted."
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600,
+                "description": "Editorial 1\u20132 sentence flavour text shown when the milestone is active. Optional; the /fly chip collapses to label-only when absent."
               }
             }
           }

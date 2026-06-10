@@ -73,13 +73,7 @@ export function parseWaypointDateToMet(dateStr: string, depDay: string): number 
  * implicitly via uniform parameterisation since our segments span
  * roughly comparable MET intervals.
  */
-function catmullRom(
-  p0: number,
-  p1: number,
-  p2: number,
-  p3: number,
-  t: number,
-): number {
+function catmullRom(p0: number, p1: number, p2: number, p3: number, t: number): number {
   const t2 = t * t;
   const t3 = t2 * t;
   return (

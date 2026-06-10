@@ -51,6 +51,19 @@ export interface HelioUpdater {
    *  orbit rings. Enabled for grand-tour missions that visit multiple
    *  bodies (Voyager 2's 4-flyby tour, Cassini's VVEJGA, etc.). */
   setContextPlanetsVisible(visible: boolean): void;
+  /** Toggle Hill sphere wireframes around every planet. PRD-023 Slice B. */
+  setHillSpheresVisible(visible: boolean): void;
+  /** Toggle L1 + L2 markers around every planet. PRD-023 Slice B. */
+  setLagrangePointsVisible(visible: boolean): void;
+  /** Update Hill sphere + L1/L2 positions for a body given its current
+   *  world position (scene units, post-SCALE_3D). Called once per
+   *  frame for every planet the scene tracks. */
+  updateHillSphereForBody(id: DestinationId | 'earth', worldX: number, worldZ: number): void;
+  /** Toggle stylised magnetosphere shells around bodies with significant
+   *  dynamos (Earth + the four gas giants). PRD-023 Slice D. */
+  setMagnetospheresVisible(visible: boolean): void;
+  /** Update magnetosphere position + orientation per frame. */
+  updateMagnetosphereForBody(id: DestinationId | 'earth', worldX: number, worldZ: number): void;
   /** Swap the spacecraft glyph for the active mission's recognisable
    *  3D silhouette. Iconic missions (Cassini, Voyager 1/2, Galileo,
    *  New Horizons) get distinct models; others keep the generic

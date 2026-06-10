@@ -101,7 +101,6 @@
     logScaleLength,
     BODY_MASS_KG,
     buildCoastLine,
-    integrateCoast,
     classifyConic,
   } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
@@ -244,6 +243,10 @@
   //    minimal for casual users.
   let showHud = $state(true);
   let showCapcom = $state(true);
+  /** Wall-clock ms timestamp until which the sim holds at MET 0 after a
+   *  mission load. Lets the camera lerp from its previous framing to the
+   *  prelaunch composition before the clock starts. 0 = no hold. */
+  let launchDwellUntil = 0;
   let showFlightDirector = $state(true);
   let showLayersPanel = $state(true);
   let showConicPanel = $state(true);
@@ -301,9 +304,46 @@
   // derive from flight.events + the heliocentric trajectory, mirroring
   // the cislunar pipeline.
   let interplanetaryTrajectory: InterplanetaryTrajectory | null = $state(null);
-  let interplanetaryPhaseMarkers: InterplanetaryPhaseMarker[] = $derived.by(() =>
-    !isMoonMission ? phaseMarkerAuPositions(mission.flight?.events, interplanetaryTrajectory) : [],
-  );
+  let interplanetaryPhaseMarkers: InterplanetaryPhaseMarker[] = $derived.by(() => {
+    if (isMoonMission) return [];
+    const events = mission.flight?.events;
+    if (!events || events.length === 0) return [];
+    // Spline path: when /fly has built outPts from the labeled
+    // trajectory.json waypoints, every milestone sits at a specific
+    // index along that spline (t = met_days / transit_days). Lerping
+    // outPts gives the diamond the EXACT position the spacecraft will
+    // pass through, so diamond + ship + planet mesh coincide at the
+    // flyby moment. Falls back to the raw interplanetary trajectory
+    // for missions without an outPts spline (Hohmann-only).
+    const totalDays = arcTimeline.arr_day - arcTimeline.dep_day;
+    if (outPts.length >= 2 && totalDays > 0) {
+      const out: InterplanetaryPhaseMarker[] = [];
+      for (const e of events) {
+        if (typeof e.met_days !== 'number') continue;
+        const tRaw = e.met_days / totalDays;
+        const t = Math.max(0, Math.min(1, tRaw));
+        const last = outPts.length - 1;
+        const f = t * last;
+        const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+        const frac = f - i;
+        const a = outPts[i];
+        const b = outPts[i + 1];
+        const ay = a.y ?? 0;
+        const by = b.y ?? 0;
+        out.push({
+          event: e,
+          posAu: {
+            x: a.x + (b.x - a.x) * frac,
+            y: ay + (by - ay) * frac,
+            z: a.z + (b.z - a.z) * frac,
+          },
+          scienceRef: null,
+        });
+      }
+      return out;
+    }
+    return phaseMarkerAuPositions(events, interplanetaryTrajectory);
+  });
   /** True when the mission should render phase markers — Moon path
    *  (cislunar) OR Mars/outer-system path (interplanetary). The two
    *  branches are mutually exclusive: a mission is one or the other. */
@@ -654,15 +694,11 @@
     // bodies to see along the trajectory; Mars-rover missions don't
     // benefit. Moon missions skip entirely (cislunar scene).
     if (flyUpdaters) {
-      const flybyCount = (mission.flight?.events ?? []).filter(
-        (e) => e.type === 'flyby',
-      ).length;
+      const flybyCount = (mission.flight?.events ?? []).filter((e) => e.type === 'flyby').length;
       const outerDest = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'].includes(
         activeDestination,
       );
-      flyUpdaters.helio.setContextPlanetsVisible(
-        !moonMode && (flybyCount >= 1 || outerDest),
-      );
+      flyUpdaters.helio.setContextPlanetsVisible(!moonMode && (flybyCount >= 1 || outerDest));
     }
   });
 
@@ -1081,6 +1117,11 @@
     simDay = r.timeline.dep_day;
     simSpeed = r.simSpeed;
     missionEvents = r.missionEvents;
+    // Launch dwell — hold MET 0 for ~3.5 s wall-clock so the camera
+    // lerps in to the prelaunch composition before the clock starts.
+    // Without this the ship is already accelerating away while the
+    // viewer is still parsing where Earth is.
+    launchDwellUntil = performance.now() + 3500;
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1105,6 +1146,7 @@
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
+    launchDwellUntil = performance.now() + 3500;
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1146,6 +1188,7 @@
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
+    launchDwellUntil = performance.now() + 3500;
     lastAppliedMissionId = r.appliedId;
   }
 
@@ -2088,6 +2131,17 @@
       periMarker.visible = on;
       apoMarker.visible = on;
     });
+    // Hill sphere + Lagrange L1 / L2 overlays — wireframe shells + gold
+    // markers around every planet. Mirrors /explore (PRD-023 Slice B).
+    const stopHillSphereLayer = onLayerChange('hill-sphere', (on) => {
+      helioHandles.setHillSpheresVisible(on);
+    });
+    const stopLagrangeLayer = onLayerChange('lagrange-points', (on) => {
+      helioHandles.setLagrangePointsVisible(on);
+    });
+    const stopMagnetosphereLayer = onLayerChange('magnetosphere', (on) => {
+      helioHandles.setMagnetospheresVisible(on);
+    });
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
@@ -2455,11 +2509,14 @@
     const FLYBY_DEPART_DAYS = 25;
     /** Camera distance multiplier vs flyby-body radius for the iconic
      *  closeup. body.size × this = camR. Tuned so the flyby planet
-     *  fills ~30-40 % of the frame regardless of which body it is
-     *  (Mercury's 1u radius vs Jupiter's 5.5u — same screen presence).
-     *  Lower values get tighter; 4 hits the Voyager-style "planet
-     *  fills the frame" composition. */
-    const FLYBY_BODY_R_MULTIPLIER = 4;
+     *  dominates the frame and the spacecraft glyph reads as a
+     *  foreground hero against it, matching the NASA mission-art
+     *  references (Cassini-Saturn, Galileo-Jupiter, Juno-Jupiter):
+     *  ship in foreground, body partially in frame, dramatic 3/4
+     *  angle. 2.4 puts the body at ~50 % of frame height — large
+     *  enough that the limb reads as planet surface, small enough
+     *  that the ship glyph still has space around it. */
+    const FLYBY_BODY_R_MULTIPLIER = 2.4;
     /** Fallback camR if we couldn't resolve the flyby body. */
     const HELIO_FLYBY_R_FALLBACK = 80;
 
@@ -2483,9 +2540,9 @@
      *  Earth's actual 1.0 AU. Parsing the label is the reliable
      *  signal because the data layer carries the mission's narrative
      *  truth even when the math layer doesn't. */
-    function findFlybyPlanetFromLabel(label: string | undefined):
-      | { id: import('$lib/lambert-grid.constants').DestinationId; size: number }
-      | null {
+    function findFlybyPlanetFromLabel(
+      label: string | undefined,
+    ): { id: import('$lib/lambert-grid.constants').DestinationId; size: number } | null {
       if (!label) return null;
       const lower = label.toLowerCase();
       const planets: Array<import('$lib/lambert-grid.constants').DestinationId> = [
@@ -2513,9 +2570,10 @@
      *  planet the spacecraft is heliocentric-closest to. Threshold
      *  widened to 3 AU so outer-system Voyager-style flybys still
      *  resolve. */
-    function findClosestPlanetToShip(scPos: { x: number; z: number }):
-      | { id: import('$lib/lambert-grid.constants').DestinationId; size: number }
-      | null {
+    function findClosestPlanetToShip(scPos: {
+      x: number;
+      z: number;
+    }): { id: import('$lib/lambert-grid.constants').DestinationId; size: number } | null {
       const CANDIDATES: import('$lib/lambert-grid.constants').DestinationId[] = [
         'mercury',
         'venus',
@@ -2557,14 +2615,10 @@
       // Live spacecraft scene position (AU × SCALE_3D).
       const scScene = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
       // Cruise centre = midpoint of (spacecraft, Sun). Equivalent to
-      // weighting the camera target 50 % ship, 50 % origin. Pure
-      // ship-tracking pulled the whole composition to whichever side
-      // of the Sun the ship happened to be on; the 50/50 blend keeps
-      // Sun and ship roughly equidistant from the camera target so
-      // both stay near the centre of the frame while the ship is
-      // still always in view through zoom-in / zoom-out lerps.
-      const cruiseCentreX = scScene.x * 0.5;
-      const cruiseCentreZ = scScene.z * 0.5;
+      // weighting the camera target — the cruise sub-phase now picks
+      // its own ship-biased centre (see cruise-out / cruise-back blocks
+      // below), so the 50/50 midpoint that lived here is no longer
+      // needed.
 
       // Detect an active flyby window. mission.flight.events is the
       // canonical roster; type='flyby' fires the cinema sub-phase.
@@ -2597,8 +2651,7 @@
         // "Venus #1 — gravity assist" → Venus). Fallback for
         // unlabeled missions: closest planet to spacecraft.
         const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
-        const flyby =
-          findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
+        const flyby = findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
         // Debug exposure for the chrome-devtools-mcp verification path.
         (window as unknown as Record<string, unknown>).__flyDebug = {
           activeFlybyMet,
@@ -2609,7 +2662,9 @@
         };
         if (flyby) {
           const bodyPos =
-            flyby.id === ('earth' as typeof flyby.id) ? earthPos(simDay) : destinationPos(simDay, flyby.id);
+            flyby.id === ('earth' as typeof flyby.id)
+              ? earthPos(simDay)
+              : destinationPos(simDay, flyby.id);
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;
           centerX = bodyScene.x;
@@ -2669,10 +2724,21 @@
           targetR = HELIO_CLOSEUP_R;
           targetP = HELIO_APPROACH_P;
         } else {
+          // Tighter cruise — center biased toward the ship (70/30
+          // ship vs Sun) and distance scaled to where the ship
+          // actually is, so the spacecraft stays recognisable
+          // instead of becoming a sub-pixel dot in a wide frame.
+          // For outer-system missions the cap at wide × 0.65 keeps
+          // the framing inside the destination orbit so the ship
+          // doesn't fly OFF the edge during the long mid-cruise
+          // span. Cinematic drift + zoom breathing layer on top
+          // (see cruise-motion block in animate()).
           sub = 'cruise-out';
-          centerX = cruiseCentreX;
-          centerZ = cruiseCentreZ;
-          targetR = wide;
+          const shipDistAu = Math.hypot(sc.pos.x, sc.pos.z);
+          const tightR = Math.max(140, shipDistAu * SCALE_3D * 1.3 + 80);
+          centerX = scScene.x * 0.7;
+          centerZ = scScene.z * 0.7;
+          targetR = Math.min(wide * 0.65, tightR);
         }
       } else {
         // return
@@ -2698,10 +2764,14 @@
           targetR = HELIO_EARTH_CLOSEUP_R;
           targetP = HELIO_APPROACH_P;
         } else {
+          // Same ship-biased tight framing as cruise-out, applied to
+          // the inbound leg so round-trip missions get matching shots.
           sub = 'cruise-back';
-          centerX = cruiseCentreX;
-          centerZ = cruiseCentreZ;
-          targetR = wide;
+          const shipDistAu = Math.hypot(sc.pos.x, sc.pos.z);
+          const tightR = Math.max(140, shipDistAu * SCALE_3D * 1.3 + 80);
+          centerX = scScene.x * 0.7;
+          centerZ = scScene.z * 0.7;
+          targetR = Math.min(wide * 0.65, tightR);
         }
       }
       if (sub !== lastHelioSubPhase) {
@@ -3629,7 +3699,7 @@
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
-      if (isPlaying) {
+      if (isPlaying && now >= launchDwellUntil) {
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
@@ -3658,12 +3728,39 @@
         // target radius. helioAutoZoomTargetR holds the cruise-wide
         // value; we add a sinusoid on top so camR breathes.
         const ZOOM_AMP = helioAutoZoomTargetR * 0.15;
-        const zoomOsc = Math.sin(t * (Math.PI * 2) / 90) * ZOOM_AMP;
+        const zoomOsc = Math.sin((t * (Math.PI * 2)) / 90) * ZOOM_AMP;
         camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005;
         // Tilt drift — modulate camP around cruise default.
-        const TILT_AMP = 0.10;
-        const tiltOsc = Math.sin(t * (Math.PI * 2) / 180) * TILT_AMP;
+        const TILT_AMP = 0.1;
+        const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
         camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005;
+      }
+      // Flyby cinema sweep — slow azimuthal orbit + gentle pitch tilt
+      // around the body during a flyby sub-phase. Borrows from the
+      // NASA mission-art reference set (Cassini-Saturn, Juno-Jupiter,
+      // Galileo-Jupiter): the body holds frame while the camera arcs
+      // around it, giving the moment a "hero shot" feel instead of a
+      // static planet-centered lookup. Skipped under reduced-motion,
+      // while the user is dragging, and during the initial sub-phase
+      // lerp so the camera settles before the sweep starts.
+      if (
+        !isMoonMission &&
+        !reducedMotion &&
+        !isDrag &&
+        !helioAutoZoomActive &&
+        lastHelioSubPhase?.startsWith('flyby-')
+      ) {
+        // Slow horizontal orbit around the body — same 0.05 rad/s
+        // tempo as cruise so the eye reads it as continuous motion
+        // rather than a sub-phase mode flip.
+        camT += 0.05 * dt;
+        // Gentle pitch breathing around the approach tilt, ±0.05 rad
+        // over a 30-second cycle — adds parallax without making the
+        // ecliptic plane swing too far.
+        const t = now * 0.001;
+        const TILT_AMP = 0.05;
+        const tiltOsc = Math.sin((t * (Math.PI * 2)) / 30) * TILT_AMP;
+        camP += (HELIO_APPROACH_P + tiltOsc - camP) * 0.008;
       }
       // Re-aim the helio camera each frame so the sub-phase auto-zoom
       // lerps (depart → cruise → approach → arrival) actually advance —
@@ -3724,6 +3821,9 @@
         const mPos = destinationPos(simDay, activeDestination);
         earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
         marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+        // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
+        helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
+        helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
         // Context planets — per-frame position updates for any non-
         // active planet rendered for grand-tour context. Each mesh
         // tracks its heliocentric position at simDay so the user
@@ -3733,18 +3833,32 @@
           if (!mesh.visible) continue;
           const p = destinationPos(simDay, planetId);
           mesh.position.set(p.x * SCALE_3D, 0, p.z * SCALE_3D);
+          // Hill sphere + Lagrange overlays follow the planet; they
+          // hide via setHillSpheresVisible / setLagrangePointsVisible
+          // when the lens layer is off, so this update is cheap when
+          // unused (just position writes — no geometry rebuild).
+          helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
+          helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
         }
+        // Active destination — its Hill sphere lives in the same
+        // entries map, keyed by planet id.
+        helioHandles.updateHillSphereForBody(
+          activeDestination,
+          mPos.x * SCALE_3D,
+          mPos.z * SCALE_3D,
+        );
+        helioHandles.updateMagnetosphereForBody(
+          activeDestination,
+          mPos.x * SCALE_3D,
+          mPos.z * SCALE_3D,
+        );
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
       // Sprite glyph sits at sc.pos. No lookAt — sprites face the
       // camera by construction so the glyph is always centred on the
       // arc regardless of curvature.
-      scSprite.position.set(
-        sc.pos.x * SCALE_3D,
-        (sc.pos.y ?? 0) * SCALE_3D,
-        sc.pos.z * SCALE_3D,
-      );
+      scSprite.position.set(sc.pos.x * SCALE_3D, (sc.pos.y ?? 0) * SCALE_3D, sc.pos.z * SCALE_3D);
       // Per-mission 3D model rides the same position. Visibility +
       // arrival-hide handled by the same code path that owns scSprite
       // a few lines below; here we only update the transform.
@@ -3807,22 +3921,28 @@
       if (marsSoI.visible) marsSoI.position.copy(marsWorld);
       if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);
 
-      // Coast preview: integrate forward from current (r, v). Velocity
-      // estimated by finite-difference between two adjacent simDays so
-      // the result reflects the spacecraft's actual current motion on
-      // the planned arc (which is itself a coast outside burn windows).
-      if (coastLine.visible) {
-        const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
-        const r0 = { x: sc.pos.x, y: 0, z: sc.pos.z };
-        const v0 = {
-          x: (sc1.x - sc.pos.x) / 0.5,
-          y: 0,
-          z: (sc1.z - sc.pos.z) / 0.5,
-        };
-        const auPositions = integrateCoast(r0, v0, 200, 80);
-        const scenePositions = new Float32Array(auPositions.length);
-        for (let i = 0; i < auPositions.length; i++) {
-          scenePositions[i] = auPositions[i] * SCALE_3D;
+      // Coast preview: walk FORWARD along outPts from the current
+      // spacecraft position to the arc terminus. Previously this drew
+      // a Keplerian conic projected from current (r, v) — physically
+      // correct as "what happens with no further help", but for grand-
+      // tour missions (Cassini, Voyager) the conic diverges hard from
+      // the multi-waypoint spline because the spline ASSUMES the
+      // future gravity assists land. The conic doesn't model them, so
+      // the predicted line looped around the Sun while the actual
+      // trajectory bent outward at each flyby — visually contradicting
+      // the rendered tube. Forward-walking outPts shows the same
+      // planned path the spacecraft is committed to.
+      if (coastLine.visible && outPts.length >= 2) {
+        const total = arcTimeline.arr_day - arcTimeline.dep_day;
+        const t = total > 0 ? Math.max(0, Math.min(1, (simDay - arcTimeline.dep_day) / total)) : 0;
+        const startIdx = Math.floor(t * (outPts.length - 1));
+        const samples = outPts.length - startIdx;
+        const scenePositions = new Float32Array(samples * 3);
+        for (let i = 0; i < samples; i++) {
+          const p = outPts[startIdx + i];
+          scenePositions[i * 3] = p.x * SCALE_3D;
+          scenePositions[i * 3 + 1] = (p.y ?? 0) * SCALE_3D;
+          scenePositions[i * 3 + 2] = p.z * SCALE_3D;
         }
         const geom = coastLine.geometry as THREE.BufferGeometry;
         geom.setAttribute('position', new THREE.BufferAttribute(scenePositions, 3));
@@ -4430,6 +4550,11 @@
         resetCamera: helioResetCamera,
         applyDestination: applyDestinationVisuals,
         setContextPlanetsVisible: helioHandles.setContextPlanetsVisible,
+        setHillSpheresVisible: helioHandles.setHillSpheresVisible,
+        setLagrangePointsVisible: helioHandles.setLagrangePointsVisible,
+        updateHillSphereForBody: helioHandles.updateHillSphereForBody,
+        setMagnetospheresVisible: helioHandles.setMagnetospheresVisible,
+        updateMagnetosphereForBody: helioHandles.updateMagnetosphereForBody,
         setSpacecraftModel: applyMissionSpacecraftModel,
         refreshLabelSprites: refreshSpriteTextures,
       },
@@ -4456,6 +4581,9 @@
       stopCoastLayerCislunar?.();
       stopApsidesLayer?.();
       stopApsidesLayerCislunar?.();
+      stopHillSphereLayer?.();
+      stopLagrangeLayer?.();
+      stopMagnetosphereLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       el3d.removeEventListener('contextmenu', onContextMenu);
       window.removeEventListener('mousemove', onMouseMove);
@@ -4591,7 +4719,18 @@
                their own; the diagonal trail across the canvas was
                more confusing than helpful). -->
           {@const vw = typeof window !== 'undefined' ? window.innerWidth : 1400}
-          {@const chipX = m.state === 'active' ? vw / 2 : m.state === 'past' ? vw - 220 : 220}
+          <!-- HUD column ~236 px wide (left:16 + width:220) when shown;
+               CAPCOM column ~336 px wide (width:320 + right:16) when
+               shown. The chip is centre-anchored (translate(-50%, 0))
+               so chipX must include half the chip width (~130 px). -->
+          {@const hudClearance = showHud ? 236 + 140 : 220}
+          {@const capcomClearance = showCapcom ? 336 + 140 : 220}
+          {@const chipX =
+            m.state === 'active'
+              ? vw / 2
+              : m.state === 'past'
+                ? vw - capcomClearance
+                : hudClearance}
           <!-- Active chip is anchored at its BOTTOM (CSS transform
                translate(-50%, -100%)) so the leader line connects to
                the chip's bottom edge — feels natural reading "leader
@@ -4614,7 +4753,10 @@
             <span
               class="milestone-leader"
               class:active={m.active}
-              style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(chipX - m.screen.x, chipY - m.screen.y)}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
+              style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(
+                chipX - m.screen.x,
+                chipY - m.screen.y,
+              )}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
               aria-hidden="true"
             ></span>
           {/if}
@@ -4887,6 +5029,16 @@
       {isPlaying ? '⏸' : '▶'}
     </button>
     <div class="scrub-track-wrap">
+      <!-- Custom-styled track underneath the (transparent) native input.
+           The native input still owns drag + click interactions for
+           accessibility; the styled track + progress fill render the
+           visual. YouTube-style: chapter dots sit ON the track at each
+           milestone's MET, the fill grows behind them as the mission
+           plays, and the label appears in a clean tooltip card on hover
+           (no zigzag, no escaping the row). -->
+      <div class="scrub-visual" aria-hidden="true">
+        <div class="scrub-fill" style="width: {Math.max(0, Math.min(1, arcProgress)) * 100}%"></div>
+      </div>
       <input
         type="range"
         min="0"
@@ -4900,25 +5052,26 @@
         class="scrub"
         aria-label={m.fly_scrub_label()}
       />
-      <!-- Milestone tick markers — clickable, jump to event MET on
-           click. Positioned proportionally between min(0%) and
-           max(100%) along the scrub track. Renders only milestones
-           that have a `label` (the same data source the floating
-           overlay uses). -->
       {#if arcTotalDays > 0 && mission.flight?.events}
         <div class="milestone-track" data-testid="milestone-track">
           {#each mission.flight.events as evt (evt.met_days + '@' + (evt.label ?? ''))}
             {#if evt.label && evt.met_days != null}
               {@const pct = Math.max(0, Math.min(100, (evt.met_days / arcTotalDays) * 100))}
+              {@const past = (evt.met_days ?? 0) < simDay - arcTimeline.dep_day}
               <button
                 type="button"
                 class="milestone-tick-button"
+                class:past
                 style="left: {pct}%;"
-                title="{evt.label} — MET {evt.met_days}d"
                 aria-label="{evt.label} at MET {evt.met_days} days. Click to jump."
                 onclick={() => jumpToMet(evt.met_days ?? 0)}
                 data-met-days={evt.met_days}
-              ></button>
+              >
+                <span class="milestone-tooltip">
+                  <span class="milestone-tooltip-label">{evt.label}</span>
+                  <span class="milestone-tooltip-met">MET {evt.met_days}d</span>
+                </span>
+              </button>
             {/if}
           {/each}
         </div>
@@ -5087,7 +5240,24 @@
     body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
     tab="transfers"
     section="transfer-ellipse"
-    available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+    available={[
+      'hover',
+      'soi',
+      'gravity',
+      'velocity',
+      'centripetal',
+      'apsides',
+      'coast',
+      'conics',
+      'hill-sphere',
+      'lagrange-points',
+      'magnetosphere',
+    ]}
+    historicalFoundations={[
+      { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
+      { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
+      { tab: 'transfers', section: 'lambert-problem', label: 'Lambert · arc problem, 1761' },
+    ]}
   />
 {/if}
 
@@ -5664,15 +5834,81 @@
     position: relative;
     display: flex;
     align-items: center;
-  }
-  .scrub {
-    flex: 1;
-    accent-color: #4466ff;
     height: 36px;
   }
-  /* Milestone tick track sits OVER the scrubber so the ticks visually
-     mark labeled events on the timeline. Clickable — jumps simDay to
-     that event. */
+  /* Native input owns drag/click interactions but renders transparent
+     so the styled .scrub-visual underneath shows through. Keeps full
+     a11y + touch handling without fighting browser-default range styling. */
+  .scrub {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .scrub::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 6px;
+  }
+  .scrub::-moz-range-track {
+    background: transparent;
+    height: 6px;
+  }
+  .scrub::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #2dd4a8;
+    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    cursor: pointer;
+    margin-top: -3px;
+  }
+  .scrub::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #2dd4a8;
+    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    cursor: pointer;
+  }
+  .scrub:focus-visible {
+    outline: none;
+  }
+  /* Styled track + fill, layered behind the input. Pointer events
+     disabled so the native input still receives clicks/drags. */
+  .scrub-visual {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 6px;
+    margin-top: -3px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .scrub-fill {
+    height: 100%;
+    background: linear-gradient(to right, #2dd4a8, #5eead4);
+    border-radius: 3px;
+    transition: width 90ms linear;
+  }
+  /* Milestone tick track sits OVER the styled track so dots align
+     with the chapter MET positions. Each marker is a small filled
+     circle on the bar; hover lifts a tooltip card above with the
+     full label + MET. */
   .milestone-track {
     position: absolute;
     left: 0;
@@ -5680,12 +5916,13 @@
     top: 50%;
     height: 0;
     pointer-events: none;
+    z-index: 2;
   }
   .milestone-tick-button {
     position: absolute;
-    top: -10px;
+    top: -7px;
     width: 14px;
-    height: 20px;
+    height: 14px;
     margin-left: -7px;
     padding: 0;
     background: transparent;
@@ -5698,25 +5935,69 @@
   }
   .milestone-tick-button::before {
     content: '';
-    width: 6px;
-    height: 6px;
-    background: #2dd4a8;
-    transform: rotate(45deg);
-    box-shadow: 0 0 4px rgba(45, 212, 168, 0.65);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ffc850;
+    box-shadow: 0 0 5px rgba(255, 200, 80, 0.85);
     transition:
       transform 120ms,
-      box-shadow 120ms;
+      box-shadow 120ms,
+      background 120ms;
+  }
+  .milestone-tick-button.past::before {
+    background: rgba(255, 200, 80, 0.55);
+    box-shadow: 0 0 3px rgba(255, 200, 80, 0.4);
   }
   .milestone-tick-button:hover::before,
   .milestone-tick-button:focus-visible::before {
-    transform: rotate(45deg) scale(1.6);
-    background: #5eead4;
+    transform: scale(1.45);
+    background: #ffd766;
     box-shadow:
-      0 0 8px rgba(94, 234, 212, 0.9),
+      0 0 10px rgba(255, 215, 102, 0.95),
       0 0 2px rgba(255, 255, 255, 0.7);
   }
   .milestone-tick-button:focus-visible {
     outline: none;
+  }
+  .milestone-tooltip {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    background: rgba(15, 18, 30, 0.96);
+    border: 1px solid rgba(255, 200, 80, 0.5);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+  .milestone-tick-button:hover .milestone-tooltip,
+  .milestone-tick-button:focus-visible .milestone-tooltip {
+    opacity: 1;
+  }
+  .milestone-tooltip-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .milestone-tooltip-met {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: rgba(255, 200, 80, 0.85);
+    letter-spacing: 0.05em;
   }
   .speed-group {
     display: flex;

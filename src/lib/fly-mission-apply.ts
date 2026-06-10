@@ -1,8 +1,15 @@
-import { earthPos, returnArc, type MissionTimeline, type Vec2 } from '$lib/mission-arc';
+import {
+  destinationPos,
+  earthPos,
+  returnArc,
+  type MissionTimeline,
+  type Vec2,
+} from '$lib/mission-arc';
 import { type DestinationId } from '$lib/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
 import {
   buildSplineFromTrajectoryWaypoints,
+  parseWaypointDateToMet,
   type TrajectoryWaypoint,
 } from '$lib/trajectory-spline';
 import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
@@ -236,25 +243,59 @@ export function computeMissionApply(
       });
     }
     const vInfKms = m.flight?.arrival?.v_infinity_km_s ?? null;
-    // Spline branch — pass /explore's labeled waypoints through
-    // UNCHANGED so /fly renders the same 3D shape /explore shows:
-    // outer-system y values (Jupiter 2.6, Saturn 4.0) become the
-    // dramatic vertical climb in /fly's Y-up Three.js frame, matching
-    // the user's "vertical, not flat" expectation. Planet meeting at
-    // flyby happens separately — the cinema sub-phase lifts the
-    // flyby planet's mesh to the spacecraft's spline position so
-    // they coincide visually without forcing the trajectory back
-    // to the ecliptic.
+    // Spline branch — replace LABELED waypoints (Launch, Venus #1,
+    // Earth, Jupiter, Saturn etc.) with the actual heliocentric
+    // position of the matched planet at that MET, so the trajectory
+    // anchors land ON the real planet positions. The spacecraft glyph
+    // + milestone diamond + planet mesh then all coincide at flyby
+    // moments — acceptance criteria from the iterative debug session.
+    // CRUISE waypoints (the unlabeled in-between control points) stay
+    // raw from /explore for shape — their large y values give the
+    // trajectory its 3D climb between the ecliptic-anchored flybys.
     let splineOut: Vec2[] | null = null;
-    if (
-      trajectoryOverride &&
-      trajectoryOverride.waypoints.length >= 2 &&
-      m.departure_date
-    ) {
+    if (trajectoryOverride && trajectoryOverride.waypoints.length >= 2 && m.departure_date) {
+      const remapped: TrajectoryWaypoint[] = trajectoryOverride.waypoints.map((wp) => {
+        const planet = wp.label ? labelToPlanetId(wp.label) : null;
+        if (!planet) return wp; // cruise waypoint — use /explore data raw
+        const met = parseWaypointDateToMet(wp.date, m.departure_date!);
+        if (isNaN(met)) return wp;
+        const realPos =
+          planet === ('earth' as DestinationId)
+            ? earthPos(timeline.dep_day + met)
+            : destinationPos(timeline.dep_day + met, planet);
+        return {
+          date: wp.date,
+          label: wp.label,
+          x: realPos.x,
+          y: 0,
+          z: realPos.z,
+        };
+      });
+      // Drop any post-arrival waypoints (Cassini's Grand Finale at MET
+      // 7269 is in the trajectory file but the mission arc proper ends
+      // at SOI MET 2451). Without this clamp, the spline spans MET 0
+      // → 7269 while spacecraftPos's t parameter maps 0..1 over MET
+      // 0..2451 (arr_day - dep_day), so outPts[39] (where the ship
+      // looks up its position at t≈0.08) is at spline-MET ~568 not
+      // MET 193 — every planet anchor drifts further outboard than
+      // it should. transit_days is the canonical arrival MET.
+      const arrMet = m.transit_days ?? 0;
+      const inMission = remapped.filter((wp) => {
+        const met = parseWaypointDateToMet(wp.date, m.departure_date!);
+        return !isNaN(met) && met <= arrMet + 1;
+      });
+      // Sample density: 500 points across the mission so the linear
+      // lerpPoint between adjacent samples doesn't miss the planet
+      // anchors. With 97 samples (the Keplerian-arc default), a 2451-
+      // day Cassini mission has samples 25 days apart — Venus at
+      // MET 193 falls between samples at 178 and 204, and the lerp
+      // overshoots/undershoots Venus's actual position. 500 samples
+      // = 4.9 days/sample, so the lerp lands within a few fractions
+      // of an AU of every waypoint.
       const samples = buildSplineFromTrajectoryWaypoints(
-        trajectoryOverride.waypoints,
+        inMission.length >= 2 ? inMission : remapped,
         m.departure_date,
-        ARC_STEPS + 1,
+        500,
       );
       if (samples && samples.length >= 2) {
         splineOut = samples.map((p) => ({ x: p.x, y: p.y, z: p.z }));
@@ -286,6 +327,27 @@ export function computeMissionApply(
     simSpeed: isMoonMission ? 0.4 : 7,
     missionEvents: mergeFlightEvents(m.events, m.flight?.events),
   };
+}
+
+/** Parse a /explore waypoint label like "Venus #1 — gravity assist"
+ *  or "Saturn orbit insertion" to a /fly DestinationId. Returns null
+ *  when no planet name appears (e.g. unlabeled cruise waypoints). */
+function labelToPlanetId(label: string): DestinationId | null {
+  const lower = label.toLowerCase();
+  const planets: DestinationId[] = [
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+  ];
+  for (const p of planets) {
+    if (lower.includes(p)) return p;
+  }
+  if (lower.includes('earth') || lower.includes('launch')) return 'earth' as DestinationId;
+  return null;
 }
 
 /** Result of applying a LocalizedScenario (e.g. ORRERY DEMO free-

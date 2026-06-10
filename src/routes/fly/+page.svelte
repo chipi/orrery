@@ -2270,7 +2270,7 @@
         depthTest: false, // always render on top of arc tube
       }),
     );
-    scSprite.scale.set(4, 4, 1);
+    scSprite.scale.set(2.5, 2.5, 1);
     scSprite.renderOrder = 999;
     scene.add(scSprite);
 
@@ -2287,7 +2287,7 @@
       }
       scModel = buildInterplanetarySpacecraft(missionId);
       if (scModel) {
-        scModel.scale.setScalar(3.0); // tune for /fly's heliocentric scale
+        scModel.scale.setScalar(1.5); // halved from 3.0 — the prior
         scModel.renderOrder = 999;
         scene.add(scModel);
       }
@@ -2508,15 +2508,17 @@
     const FLYBY_APPROACH_DAYS = 25;
     const FLYBY_DEPART_DAYS = 25;
     /** Camera distance multiplier vs flyby-body radius for the iconic
-     *  closeup. body.size × this = camR. Tuned so the flyby planet
-     *  dominates the frame and the spacecraft glyph reads as a
-     *  foreground hero against it, matching the NASA mission-art
-     *  references (Cassini-Saturn, Galileo-Jupiter, Juno-Jupiter):
-     *  ship in foreground, body partially in frame, dramatic 3/4
-     *  angle. 2.4 puts the body at ~50 % of frame height — large
-     *  enough that the limb reads as planet surface, small enough
-     *  that the ship glyph still has space around it. */
-    const FLYBY_BODY_R_MULTIPLIER = 2.4;
+     *  closeup. body.size × this = camR. Pulled back to 5.0 — the
+     *  earlier 2.4 had the camera so close to the body that the
+     *  ship couldn't be pushed toward the camera without its long-
+     *  axis booms crossing the near-clip plane (camera ended up
+     *  INSIDE the spacecraft model and rendered as clipped slivers).
+     *  At 5.0 the planet still fills ~40 % of frame width (40 % wide
+     *  matches the proportions in the Pioneer-Jupiter / Galileo-
+     *  Jupiter reference shots), and there's actual room for the
+     *  ship to sit in foreground space without intersecting the
+     *  camera position. */
+    const FLYBY_BODY_R_MULTIPLIER = 5.0;
     /** Fallback camR if we couldn't resolve the flyby body. */
     const HELIO_FLYBY_R_FALLBACK = 80;
 
@@ -2535,22 +2537,30 @@
       string,
       { spriteScale: number; modelScale: number; toCameraR: number }
     > = {
-      // Each body composes a bit differently — references vary too
-      // (Cassini-Saturn vs Juno-Jupiter vs Pioneer-Jupiter aren't the
-      // same shot). Tune per-body until each one feels right.
-      // toCameraR is the push-toward-camera as a multiple of body
-      // radius; smaller = ship further from camera, larger on body.
-      // modelScale is the 3D-model size during cinema (cruise = 3.0).
-      mercury: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.7 },
-      venus: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.6 },
-      earth: { spriteScale: 2.8, modelScale: 2.2, toCameraR: 0.7 },
-      mars: { spriteScale: 2.5, modelScale: 2.0, toCameraR: 0.7 },
-      // Gas giants are big enough to swallow a smaller ship — push
-      // model larger so the spacecraft reads alongside the body.
-      jupiter: { spriteScale: 3.0, modelScale: 2.8, toCameraR: 0.8 },
-      saturn: { spriteScale: 2.8, modelScale: 2.5, toCameraR: 0.7 },
-      uranus: { spriteScale: 2.6, modelScale: 2.2, toCameraR: 0.7 },
-      neptune: { spriteScale: 2.6, modelScale: 2.2, toCameraR: 0.7 },
+      // With camera 5× body radius back, there is real room to put
+      // the ship in foreground space. Each composition tunes its own
+      // numbers — references vary (Cassini-Saturn vs Juno-Jupiter
+      // vs Pioneer-Jupiter aren't the same shot).
+      //
+      //   spriteScale: sprite glyph size (cruise default = 2.5)
+      //   modelScale:  per-mission 3D-model size (cruise default = 1.5)
+      //   toCameraR:   push-toward-camera as a multiple of body radius;
+      //                higher = ship closer to camera, lower = ship
+      //                closer to planet. With FLYBY_BODY_R_MULTIPLIER=5
+      //                a value of 0.5 puts the ship at 4.5×r from the
+      //                camera (well clear of even Cassini's longest
+      //                magnetometer-boom extent at modelScale=1.0).
+      mercury: { spriteScale: 1.5, modelScale: 1.0, toCameraR: 0.5 },
+      venus: { spriteScale: 1.5, modelScale: 1.0, toCameraR: 0.5 },
+      earth: { spriteScale: 1.6, modelScale: 1.1, toCameraR: 0.5 },
+      mars: { spriteScale: 1.5, modelScale: 1.0, toCameraR: 0.5 },
+      // Gas giants — bigger body radius means the absolute camera
+      // distance is bigger too, so the ship can carry slightly more
+      // intrinsic scale before its booms catch the camera plane.
+      jupiter: { spriteScale: 2.2, modelScale: 1.8, toCameraR: 0.5 },
+      saturn: { spriteScale: 1.9, modelScale: 1.5, toCameraR: 0.5 },
+      uranus: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
+      neptune: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
     };
 
     const PLANET_SIZES: Record<string, number> = {
@@ -3956,8 +3966,8 @@
         scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
         if (scModel) scModel.scale.setScalar(overrides.modelScale);
       } else {
-        scSprite.scale.set(4, 4, 1);
-        if (scModel) scModel.scale.setScalar(3.0);
+        scSprite.scale.set(2.5, 2.5, 1);
+        if (scModel) scModel.scale.setScalar(1.5);
       }
 
       // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay

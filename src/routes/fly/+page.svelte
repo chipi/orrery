@@ -1052,14 +1052,23 @@
    * a snap, even outside reduced-motion (reduced-motion users get the
    * same behaviour; the sim was already paused for them).
    */
+  /** Wall-clock ms timestamp until which the camera should converge
+   *  fast on its sub-phase target. Set by jumpToMet / onScrub so a
+   *  scrubber jump across the system (Jupiter → Earth, say) doesn't
+   *  spend 6-8 seconds in a slow lerp before the destination shot
+   *  resolves. Once the boost window expires, lerp returns to the
+   *  cinematic default. */
+  let camSnapUntil = 0;
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     simDay = mission.timeline.dep_day + metDays;
     if (isPlaying) isPlaying = false;
+    camSnapUntil = performance.now() + 700;
   }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
     simDay = arcTimeline.dep_day + t * arcTotalDays;
+    camSnapUntil = performance.now() + 300;
   }
 
   // ─── Mission loading from URL (?mission=id) ──────────────────────
@@ -2295,6 +2304,46 @@
       if (scModel) {
         scModel.scale.setScalar(1.5); // halved from 3.0 — the prior
         scModel.renderOrder = 999;
+        // Rim-light injection — the single biggest "cinematic
+        // spacecraft" upgrade per the shot-language guide (T6).
+        // Brighten grazing-angle pixels with a warm tint so the
+        // model reads as a silhouette with a glowing edge instead
+        // of a flat-lit diagram. Implemented via onBeforeCompile
+        // patching the existing MeshPhongMaterial fragment shader
+        // — adds a Fresnel term to emissive intensity at minimal
+        // perf cost. Walks every Mesh child since the builder
+        // packs the bus + dish + boom as separate meshes.
+        scModel.traverse((obj) => {
+          const mesh = obj as THREE.Mesh;
+          if (!mesh.isMesh) return;
+          const mat = mesh.material as THREE.MeshPhongMaterial;
+          if (!mat || mat.userData?.rimPatched) return;
+          mat.onBeforeCompile = (shader) => {
+            shader.uniforms.rimColor = { value: new THREE.Color(0xffd9a3) };
+            shader.uniforms.rimStrength = { value: 0.85 };
+            shader.uniforms.rimPower = { value: 2.5 };
+            shader.fragmentShader = shader.fragmentShader.replace(
+              '#include <common>',
+              `#include <common>
+              uniform vec3 rimColor;
+              uniform float rimStrength;
+              uniform float rimPower;`,
+            );
+            shader.fragmentShader = shader.fragmentShader.replace(
+              '#include <emissivemap_fragment>',
+              `#include <emissivemap_fragment>
+              {
+                vec3 viewDir = normalize(-vViewPosition);
+                vec3 nrm = normalize(normal);
+                float rim = 1.0 - max(dot(viewDir, nrm), 0.0);
+                rim = pow(rim, rimPower) * rimStrength;
+                totalEmissiveRadiance += rimColor * rim;
+              }`,
+            );
+          };
+          mat.userData = { ...(mat.userData ?? {}), rimPatched: true };
+          mat.needsUpdate = true;
+        });
         scene.add(scModel);
       }
     }
@@ -2511,8 +2560,19 @@
     // this window. Tightened from 90/40 → 25/25 so the cinema only
     // engages when the ship is genuinely close to the body and the
     // user gets cruise camera variety in the long phases between.
-    const FLYBY_APPROACH_DAYS = 25;
-    const FLYBY_DEPART_DAYS = 25;
+    // Asymmetric Freytag pacing — approach < peak-included < depart,
+    // matching the cinematic guide T4. Real flybys have a brief
+    // closest-approach moment then a long afterglow as the spacecraft
+    // recedes. Symmetric 25/25 felt like a video-game cutscene; this
+    // 20/30 split + sim-speed dilation during peak (see animate loop)
+    // stretches the closest-approach moment in screen time without
+    // touching physics. JPL's Cassini end-of-mission lingers ten beats
+    // after the burn; we do the same in proportion.
+    const FLYBY_APPROACH_DAYS = 20;
+    const FLYBY_DEPART_DAYS = 30;
+    /** Peak window — the closest-approach beat. Inside this window
+     *  sim-speed gets dilated so the moment stretches in screen time. */
+    const FLYBY_PEAK_DAYS = 4;
     /** Camera distance multiplier vs flyby-body radius for the iconic
      *  closeup. body.size × this = camR. Pulled back to 5.0 — the
      *  earlier 2.4 had the camera so close to the body that the
@@ -2564,7 +2624,12 @@
       // distance is bigger too, so the ship can carry slightly more
       // intrinsic scale before its booms catch the camera plane.
       jupiter: { spriteScale: 2.2, modelScale: 1.8, toCameraR: 0.5 },
-      saturn: { spriteScale: 1.9, modelScale: 1.5, toCameraR: 0.5 },
+      // Saturn's ring system extends well beyond the planet's visual
+      // radius — at the default 0.5 push, Cassini reads tiny against
+      // the rings. Bump the model scale + push the ship harder toward
+      // camera so the spacecraft re-takes hero status; the rings sit
+      // as a dramatic mid-frame backdrop instead of swallowing the ship.
+      saturn: { spriteScale: 2.4, modelScale: 2.4, toCameraR: 0.7 },
       uranus: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
       neptune: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
     };
@@ -2679,7 +2744,12 @@
       const flybyEvents = mission.flight?.events ?? [];
       let activeFlybyMet: number | null = null;
       for (const e of flybyEvents) {
-        if (e.type !== 'flyby' || e.met_days == null) continue;
+        // Treat both pure flybys AND the orbital-insertion / EDL event
+        // as cinema triggers — Saturn-OI for Cassini, Mars EDL for
+        // Curiosity etc. should compose with the same ship-as-hero
+        // tuning as a flyby (the only difference is the trajectory
+        // ends there instead of continuing).
+        if ((e.type !== 'flyby' && e.type !== 'edl_or_oi') || e.met_days == null) continue;
         const flybySimDay = arcTimeline.dep_day + e.met_days;
         const delta = simDay - flybySimDay; // negative = approaching
         if (delta >= -FLYBY_APPROACH_DAYS && delta <= FLYBY_DEPART_DAYS) {
@@ -2716,15 +2786,17 @@
               : destinationPos(simDay, flyby.id);
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;
-          // 3/4 cinematic composition — bias the camera target toward
-          // the spacecraft position, NOT dead-on the planet centre.
-          // The reference NASA mission-art set (Cassini-Saturn, Juno-
-          // Jupiter, Galileo-Jupiter) never frames the body in the
-          // dead centre — it sits in one corner with the ship in the
-          // foreground. Lerping the target 35 % toward the ship slides
-          // the planet over to the opposite quadrant of the frame.
-          centerX = bodyScene.x * 0.65 + scScene.x * 0.35;
-          centerZ = bodyScene.z * 0.65 + scScene.z * 0.35;
+          // Limb-grazing composition — bias the camera target 65 % toward
+          // the spacecraft position (was 35 %). This pushes the planet
+          // CENTRE off-frame so the planet LIMB arcs across the rule-of-
+          // thirds line. The hero of the frame becomes the curving limb
+          // + the spacecraft silhouetted against it, matching the
+          // Cassini-Saturn / Juno-Jupiter / Pioneer-Jupiter compositions
+          // where the body fills one half of the frame and curves out of
+          // view rather than sitting whole in the centre. Shot-language
+          // guide §P5 + T3 — "containment kills awe."
+          centerX = bodyScene.x * 0.35 + scScene.x * 0.65;
+          centerZ = bodyScene.z * 0.35 + scScene.z * 0.65;
           targetR = flyby.size * FLYBY_BODY_R_MULTIPLIER;
         } else {
           sub = `flyby-${activeFlybyMet}`;
@@ -2860,7 +2932,14 @@
         // lerped in both modes so the approach pitch tilt resolves
         // smoothly into the cruise default.
         if (helioAutoZoomActive) {
-          const LERP = 0.01;
+          // Scrubber jumps boost the lerp rate so a Jupiter → Earth
+          // hop doesn't spend 6-8 seconds in the slow cinematic lerp.
+          // camSnapUntil is set by jumpToMet (700 ms) and onScrub
+          // (300 ms) — during those windows we converge at 8 × the
+          // cruise rate. Outside the window the slow rate restores
+          // for in-flight cinematic transitions.
+          const inSnapWindow = performance.now() < camSnapUntil;
+          const LERP = inSnapWindow ? 0.08 : 0.01;
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
@@ -3806,10 +3885,19 @@
         !helioAutoZoomActive &&
         lastHelioSubPhase?.startsWith('flyby-')
       ) {
-        // Slow horizontal orbit around the body — same 0.05 rad/s
-        // tempo as cruise so the eye reads it as continuous motion
-        // rather than a sub-phase mode flip.
-        camT += 0.05 * dt;
+        // Parallax orbit — camera arcs around the body during the
+        // flyby cinema. Default 0.05 rad/s during approach + depart;
+        // boosted 3× during the FLYBY_PEAK_DAYS window (closest-
+        // approach beat). The boost creates the "camera moves while
+        // the ship holds" cinematic — the camera-disagree principle
+        // (shot-language guide P6). Without it the flyby reads as
+        // static.
+        const flybyMetActive = (window as unknown as { __flyDebug?: { activeFlybyMet?: number } })
+          .__flyDebug?.activeFlybyMet;
+        const inPeak =
+          flybyMetActive != null &&
+          Math.abs(simDay - (arcTimeline.dep_day + flybyMetActive)) < FLYBY_PEAK_DAYS;
+        camT += (inPeak ? 0.15 : 0.05) * dt;
         // Gentle pitch breathing around the approach tilt, ±0.05 rad
         // over a 30-second cycle — adds parallax without making the
         // ecliptic plane swing too far.
@@ -3880,12 +3968,7 @@
         // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
         helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
         helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
-        helioHandles.updateMoonsForParent(
-          'earth',
-          ePos.x * SCALE_3D,
-          ePos.z * SCALE_3D,
-          simDay,
-        );
+        helioHandles.updateMoonsForParent('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D, simDay);
         // Context planets — per-frame position updates for any non-
         // active planet rendered for grand-tour context. Each mesh
         // tracks its heliocentric position at simDay so the user
@@ -3901,12 +3984,7 @@
           // unused (just position writes — no geometry rebuild).
           helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
           helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
-          helioHandles.updateMoonsForParent(
-            planetId,
-            p.x * SCALE_3D,
-            p.z * SCALE_3D,
-            simDay,
-          );
+          helioHandles.updateMoonsForParent(planetId, p.x * SCALE_3D, p.z * SCALE_3D, simDay);
         }
         // Active destination also gets moon updates so Jupiter/Saturn
         // missions (Cassini, Juno, Voyager) show their moons at the
@@ -3967,12 +4045,8 @@
           window as unknown as { __flyDebug?: { flybySize?: number; flybyId?: string } }
         ).__flyDebug;
         const bodyR = flybyDbg?.flybySize ?? 2.5;
-        const overrideCamR =
-          FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
-        const camToShip = new THREE.Vector3().subVectors(
-          camera.position,
-          scSprite.position,
-        );
+        const overrideCamR = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
+        const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
         const dist = camToShip.length();
         if (dist > 0.01) {
           camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
@@ -4917,8 +4991,7 @@
                at viewport-height − 130 keeps the chip just above the
                scrubber row. Past/future stay where they were. -->
           {@const vh = typeof window !== 'undefined' ? window.innerHeight : 900}
-          {@const chipY =
-            m.state === 'active' ? vh - 130 : 220 + idx * 40}
+          {@const chipY = m.state === 'active' ? vh - 130 : 220 + idx * 40}
           <span
             class="milestone-diamond"
             class:active={m.active}

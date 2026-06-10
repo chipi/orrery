@@ -41,8 +41,11 @@ describe('science-layers — config', () => {
     // (Local Group billboards on /explore — GH #86); 14th–17th
     // added 2026-06-03 by PRD-023 Slice B — Hill sphere + Lagrange
     // points + magnetosphere + sub-solar (#301). 18th added same
-    // day by Slice E.4 — planet-stats tactical-scan overlay.
-    expect(LAYER_ORDER.length).toBe(18);
+    // day by Slice E.4 — planet-stats tactical-scan overlay. 19th
+    // added 2026-06-10 by the /fly cinematic polish wave — `moons`
+    // toggles major-moon overlays + orbit rings around the gas
+    // giants (Galilean / Saturnian / Earth / Mars / Triton).
+    expect(LAYER_ORDER.length).toBe(19);
   });
 });
 

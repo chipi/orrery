@@ -243,9 +243,23 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // (New Horizons) — the scene rendered black for those missions.
   const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.5, 16000);
   const renderer = createSceneRenderer(opts.container);
+  // ACES Filmic tone mapping — handles HDR Sun → SDR display the way
+  // every cinematic space animation does. Single highest-impact line
+  // for "cinematic feel" with zero performance cost. See
+  // docs/guides/fly-cinematic-shot-language.md §T7 for the wider post
+  // stack we'll layer on top in subsequent waves.
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
-  scene.add(new THREE.AmbientLight(0x111133, 0.8));
+  // HemisphereLight replaces the prior AmbientLight(0x111133, 0.8) —
+  // ambient fill at non-zero intensity flattens shadow contrast (the
+  // #1 amateur-CG tell per the shot-language guide). Hemisphere at
+  // intensity 0.08 keeps the shadow side legible without erasing the
+  // single-Sun direction. Sky-side gets a faint deep-space tint;
+  // ground-side near-black so the underside doesn't pick up an
+  // unphysical glow.
+  scene.add(new THREE.HemisphereLight(0x08101a, 0x000000, 0.08));
 
   // Texture loader shared by Sun + Earth + every destination body.
   const texLoader = new THREE.TextureLoader();
@@ -282,7 +296,48 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   );
   scene.add(sunGlow);
 
-  scene.add(createStarField({ count: 2000, radius: 1500, jitter: 500, opacity: 0.7 }));
+  // Background = three layered star populations instead of the single
+  // sparse field. Cinematic space frames are NOT pure black — they have
+  // depth + structure (zodiacal light, galactic plane gradient). See
+  // shot-language guide P1 + T8. Until we ship a baked cubemap, fake
+  // the same effect with three Three.Points layers at different sizes.
+  //   - Dim background field — many small stars (the "void")
+  //   - Bright sparse field — fewer big stars (foreground sparkle)
+  //   - Milky Way band — stars concentrated near the ecliptic plane,
+  //     compressed in y so they form a sky-spanning belt
+  scene.add(createStarField({ count: 1500, radius: 1500, jitter: 500, size: 0.9, opacity: 0.55 }));
+  scene.add(createStarField({ count: 300, radius: 1400, jitter: 600, size: 1.6, opacity: 0.95 }));
+  // Milky Way band — same uniform-sphere sample then squashed in y by
+  // 0.18 so the points cluster around the equatorial plane. Tinted a
+  // touch warmer (galactic-plane dust) and slightly higher opacity so
+  // it reads as a soft belt across the void.
+  {
+    const COUNT = 1200;
+    const RADIUS = 1450;
+    const JIT = 350;
+    const sp = new Float32Array(COUNT * 3);
+    for (let i = 0; i < COUNT; i++) {
+      const r = RADIUS + Math.random() * JIT;
+      const t = Math.random() * Math.PI * 2;
+      const p = Math.acos(2 * Math.random() - 1);
+      sp[i * 3] = r * Math.sin(p) * Math.cos(t);
+      sp[i * 3 + 1] = r * Math.sin(p) * Math.sin(t) * 0.18; // squash to band
+      sp[i * 3 + 2] = r * Math.cos(p);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(sp, 3));
+    const mw = new THREE.Points(
+      geo,
+      new THREE.PointsMaterial({
+        color: 0xf0e8d8,
+        size: 1.2,
+        sizeAttenuation: false,
+        transparent: true,
+        opacity: 0.45,
+      }),
+    );
+    scene.add(mw);
+  }
 
   // Asteroid belt + Kuiper belt — same sampling shape as /explore so
   // the cruise view reads the same way at a glance. Belt particles
@@ -409,22 +464,110 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   };
   const MOON_SYSTEM: MoonSpec[] = [
     // Earth — the Moon. Compressed to ~3 × Earth radius (real 60 ×).
-    { parent: 'earth', name: 'Moon', color: 0xd8d8d8, sizeUnits: 0.7, orbitUnits: 7, periodDays: 27.32, inclDeg: 5.14 },
+    {
+      parent: 'earth',
+      name: 'Moon',
+      color: 0xd8d8d8,
+      sizeUnits: 0.7,
+      orbitUnits: 7,
+      periodDays: 27.32,
+      inclDeg: 5.14,
+    },
     // Mars — Phobos + Deimos.
-    { parent: 'mars', name: 'Phobos', color: 0x9a8b7d, sizeUnits: 0.3, orbitUnits: 4, periodDays: 0.32, inclDeg: 1.08 },
-    { parent: 'mars', name: 'Deimos', color: 0xb8a89a, sizeUnits: 0.2, orbitUnits: 6, periodDays: 1.26, inclDeg: 1.79 },
+    {
+      parent: 'mars',
+      name: 'Phobos',
+      color: 0x9a8b7d,
+      sizeUnits: 0.3,
+      orbitUnits: 4,
+      periodDays: 0.32,
+      inclDeg: 1.08,
+    },
+    {
+      parent: 'mars',
+      name: 'Deimos',
+      color: 0xb8a89a,
+      sizeUnits: 0.2,
+      orbitUnits: 6,
+      periodDays: 1.26,
+      inclDeg: 1.79,
+    },
     // Jupiter — Galilean moons. Real distances 6–26 Jupiter radii;
     // compressed to keep them inside the flyby cinema framing.
-    { parent: 'jupiter', name: 'Io', color: 0xebd28a, sizeUnits: 0.9, orbitUnits: 10, periodDays: 1.77, inclDeg: 0.05 },
-    { parent: 'jupiter', name: 'Europa', color: 0xd8d2c3, sizeUnits: 0.8, orbitUnits: 13, periodDays: 3.55, inclDeg: 0.47 },
-    { parent: 'jupiter', name: 'Ganymede', color: 0x9c8b76, sizeUnits: 1.2, orbitUnits: 17, periodDays: 7.15, inclDeg: 0.20 },
-    { parent: 'jupiter', name: 'Callisto', color: 0x6e5e4d, sizeUnits: 1.1, orbitUnits: 22, periodDays: 16.69, inclDeg: 0.28 },
+    {
+      parent: 'jupiter',
+      name: 'Io',
+      color: 0xebd28a,
+      sizeUnits: 0.9,
+      orbitUnits: 10,
+      periodDays: 1.77,
+      inclDeg: 0.05,
+    },
+    {
+      parent: 'jupiter',
+      name: 'Europa',
+      color: 0xd8d2c3,
+      sizeUnits: 0.8,
+      orbitUnits: 13,
+      periodDays: 3.55,
+      inclDeg: 0.47,
+    },
+    {
+      parent: 'jupiter',
+      name: 'Ganymede',
+      color: 0x9c8b76,
+      sizeUnits: 1.2,
+      orbitUnits: 17,
+      periodDays: 7.15,
+      inclDeg: 0.2,
+    },
+    {
+      parent: 'jupiter',
+      name: 'Callisto',
+      color: 0x6e5e4d,
+      sizeUnits: 1.1,
+      orbitUnits: 22,
+      periodDays: 16.69,
+      inclDeg: 0.28,
+    },
     // Saturn — Titan + Enceladus + Iapetus (the iconic three).
-    { parent: 'saturn', name: 'Titan', color: 0xc59b62, sizeUnits: 1.0, orbitUnits: 14, periodDays: 15.95, inclDeg: 0.34 },
-    { parent: 'saturn', name: 'Enceladus', color: 0xeaeaea, sizeUnits: 0.5, orbitUnits: 9, periodDays: 1.37, inclDeg: 0.02 },
-    { parent: 'saturn', name: 'Iapetus', color: 0x7a6857, sizeUnits: 0.8, orbitUnits: 20, periodDays: 79.32, inclDeg: 15.47 },
+    {
+      parent: 'saturn',
+      name: 'Titan',
+      color: 0xc59b62,
+      sizeUnits: 1.0,
+      orbitUnits: 14,
+      periodDays: 15.95,
+      inclDeg: 0.34,
+    },
+    {
+      parent: 'saturn',
+      name: 'Enceladus',
+      color: 0xeaeaea,
+      sizeUnits: 0.5,
+      orbitUnits: 9,
+      periodDays: 1.37,
+      inclDeg: 0.02,
+    },
+    {
+      parent: 'saturn',
+      name: 'Iapetus',
+      color: 0x7a6857,
+      sizeUnits: 0.8,
+      orbitUnits: 20,
+      periodDays: 79.32,
+      inclDeg: 15.47,
+    },
     // Neptune — Triton (the only large one).
-    { parent: 'neptune', name: 'Triton', color: 0xcdbba6, sizeUnits: 0.9, orbitUnits: 8, periodDays: 5.88, inclDeg: 156.89 },
+    {
+      parent: 'neptune',
+      name: 'Triton',
+      color: 0xcdbba6,
+      sizeUnits: 0.9,
+      orbitUnits: 8,
+      periodDays: 5.88,
+      inclDeg: 156.89,
+    },
   ];
   type MoonEntry = { spec: MoonSpec; mesh: THREE.Mesh; orbit: THREE.LineLoop };
   const moonEntries: MoonEntry[] = [];
@@ -481,7 +624,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       m.orbit.rotation.x = (m.spec.inclDeg * Math.PI) / 180;
       // Moon mesh: ride the orbit at the current phase angle.
       const phase =
-        ((simDay / m.spec.periodDays) * Math.PI * 2) +
+        (simDay / m.spec.periodDays) * Math.PI * 2 +
         // Deterministic per-moon offset so a fresh load doesn't
         // line every moon up at phase 0.
         m.spec.name.charCodeAt(0) * 0.37;

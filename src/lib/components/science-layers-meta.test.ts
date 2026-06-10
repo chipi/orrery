@@ -39,6 +39,7 @@ const HARDCODED_IN_COMPONENT = new Set([
   'magnetosphere',
   'sub-solar',
   'planet-stats',
+  'moons',
 ]);
 
 function paraglideKey(layer: string): string {

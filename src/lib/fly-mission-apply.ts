@@ -276,8 +276,7 @@ export function computeMissionApply(
         // the planet sits on its orbit.
         const label = wp.label ?? '';
         const isLaunch = /^launch/i.test(label);
-        const isFinalArrival =
-          /insertion|orbit insertion|arrival|edl|edl_or_oi/i.test(label);
+        const isFinalArrival = /insertion|orbit insertion|arrival|edl|edl_or_oi/i.test(label);
         const isIntermediateFlyby = !isLaunch && !isFinalArrival;
         // Planet visual radii (mirror of DEST_STYLE in fly-helio-scene)
         // — kept here so the math layer doesn't import Three.js.
@@ -291,9 +290,7 @@ export function computeMissionApply(
           uranus: 3.4 / 80,
           neptune: 3.4 / 80,
         };
-        const offsetY = isIntermediateFlyby
-          ? 1.5 * (FLYBY_RADIUS_AU[planet] ?? 0.03)
-          : 0;
+        const offsetY = isIntermediateFlyby ? 1.5 * (FLYBY_RADIUS_AU[planet] ?? 0.03) : 0;
         return {
           date: wp.date,
           label: wp.label,

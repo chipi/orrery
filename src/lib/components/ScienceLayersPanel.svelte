@@ -90,6 +90,7 @@
     magnetosphere: false,
     'sub-solar': false,
     'planet-stats': false,
+    moons: false,
   });
 
   let stops: Array<() => void> = [];
@@ -217,6 +218,12 @@
           description:
             'Floating overlay with surface gravity, atmospheric pressure, and rotation period. Visible only at planet focus.',
           learn: { tab: 'planets', section: 'planetary-stats' },
+        };
+      case 'moons':
+        return {
+          label: 'Moons',
+          description:
+            'Major moons + orbit rings around each planet (Galilean at Jupiter, Titan/Enceladus/Iapetus at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at Neptune).',
         };
     }
   }

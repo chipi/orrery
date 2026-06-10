@@ -588,8 +588,8 @@
     // proportional sense of distance between Earth and the Moon —
     // the 0.6u heliocentric radius read as a fat sausage. Same scale
     // factor re-applies to dep / arr markers + label sprites below.
-    const outRadius = isMoonMission ? 0.25 : 0.6;
-    const retRadius = isMoonMission ? 0.2 : 0.5;
+    const outRadius = isMoonMission ? 0.25 : 0.35;
+    const retRadius = isMoonMission ? 0.2 : 0.3;
     outLine.geometry.dispose();
     outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outArc, outRadius);
     retLine.geometry.dispose();
@@ -3864,6 +3864,20 @@
       // a few lines below; here we only update the transform.
       if (scModel) {
         scModel.position.copy(scSprite.position);
+      }
+      // During flyby cinema the camera is tight on the planet (camR =
+      // 2.4 × body radius). The default 4×4 sprite + 3.0 model scale
+      // are sized for cruise — at flyby they swamp the planet and
+      // look 'cartoonish'. Scale down so the ship reads as a
+      // foreground accent against the body, matching the NASA mission-
+      // art compositions. Outside the cinema window the ship goes
+      // back to its cruise scale.
+      if (lastHelioSubPhase?.startsWith('flyby-')) {
+        scSprite.scale.set(1.5, 1.5, 1);
+        if (scModel) scModel.scale.setScalar(1.1);
+      } else {
+        scSprite.scale.set(4, 4, 1);
+        if (scModel) scModel.scale.setScalar(3.0);
       }
 
       // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay

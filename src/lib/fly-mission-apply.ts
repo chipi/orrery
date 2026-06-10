@@ -263,11 +263,42 @@ export function computeMissionApply(
           planet === ('earth' as DestinationId)
             ? earthPos(timeline.dep_day + met)
             : destinationPos(timeline.dep_day + met, planet);
+        // Spline goes CLOSE TO the planet on a flyby, not THROUGH it.
+        // Launch + final-arrival anchors stay at the planet centre
+        // (ship starts on Earth, ends on Saturn). Intermediate flybys
+        // get a small +y offset so the trajectory tube + ship glyph
+        // pass just above the planet's mesh — matches what the
+        // reference NASA mission-art compositions show (Cassini-Venus,
+        // Galileo-Jupiter etc. — close pass, not coincident).
+        // Magnitude: 1.5 × planet visual radius (in scene units →
+        // AU via SCALE_3D=80). Direction: +y (above ecliptic) — a
+        // fixed convention that reads naturally regardless of where
+        // the planet sits on its orbit.
+        const label = wp.label ?? '';
+        const isLaunch = /^launch/i.test(label);
+        const isFinalArrival =
+          /insertion|orbit insertion|arrival|edl|edl_or_oi/i.test(label);
+        const isIntermediateFlyby = !isLaunch && !isFinalArrival;
+        // Planet visual radii (mirror of DEST_STYLE in fly-helio-scene)
+        // — kept here so the math layer doesn't import Three.js.
+        const FLYBY_RADIUS_AU: Record<string, number> = {
+          mercury: 1.0 / 80,
+          venus: 2.5 / 80,
+          earth: 2.6 / 80,
+          mars: 1.9 / 80,
+          jupiter: 5.5 / 80,
+          saturn: 4.8 / 80,
+          uranus: 3.4 / 80,
+          neptune: 3.4 / 80,
+        };
+        const offsetY = isIntermediateFlyby
+          ? 1.5 * (FLYBY_RADIUS_AU[planet] ?? 0.03)
+          : 0;
         return {
           date: wp.date,
           label: wp.label,
           x: realPos.x,
-          y: 0,
+          y: offsetY,
           z: realPos.z,
         };
       });

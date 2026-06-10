@@ -24,6 +24,7 @@
   import { classifyConicEarth } from '$lib/fly-conics-earth';
   import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
   import { buildHelioScene } from '$lib/three/fly-helio-scene';
+  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
   import type { FlyUpdaters } from '$lib/three/fly-updaters';
   import {
     computeMissionApply,
@@ -1003,6 +1004,13 @@
     return events.find((e) => e.met > met) ?? null;
   });
 
+  // ACTIVE EVENT row (polish-wave-2, 2026-06). Surfaces the current
+  // active milestone — the one within the ±active window — out of the
+  // milestoneScreens computed by the frame loop. Replaces the floating
+  // on-canvas chip with an HUD line; the pulsing diamond on the path
+  // is the graphic correlation. Null when no milestone is active.
+  let activeMilestone = $derived(milestoneScreens.find((m) => m.state === 'active') ?? null);
+
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
@@ -1314,9 +1322,20 @@
     // historical-Mars arcs, science overlays) stay in this component
     // for now — extracted in wave B as the per-frame updater factory.
     // ──────────────────────────────────────────────────────────────
+    // Resolve graphics quality tier — auto-detect (cached from prior
+    // session) or read user choice or URL override. Drives every
+    // gross knob (pixelRatio, bloom on/off, sphere segments, particle
+    // counts) so a single dial demotes the whole pipeline gracefully
+    // on a low-end GPU. See src/lib/quality/quality-tier.ts.
+    const quality = resolveQualitySync($page.url);
+    // Kick off detect-gpu in the background; the result populates
+    // localStorage so the NEXT page load can resolve the right tier
+    // synchronously. First-ever visit gets a `medium` baseline.
+    void kickOffBackgroundDetect();
     const helioHandles = buildHelioScene({
       container,
       aspect: container.clientWidth / container.clientHeight,
+      quality,
       // 2026-06-06 — give /fly the same /explore-grade body imagery for
       // Sun + Earth + every destination. 2K throughout (camera here
       // sits closer than /explore but bodies are compressed, so 2K
@@ -2154,9 +2173,18 @@
     // Major moons overlay — Galilean at Jupiter, Titan-Enceladus-Iapetus
     // at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at
     // Neptune. Mirrors /explore's satellites display.
+    //
+    // /fly is itself a cinematic experience (not a science overlay), so
+    // major moons are part of the spectacle — force them ON at mount
+    // regardless of the science-lens master gate. The subscription is
+    // still wired so an explicit user toggle in the science panel can
+    // override; we run setMoonsVisible(true) AFTER subscribing so the
+    // initial subscribe-fire (which reflects the off-by-default state)
+    // is immediately re-flipped to visible.
     const stopMoonsLayer = onLayerChange('moons', (on) => {
       helioHandles.setMoonsVisible(on);
     });
+    helioHandles.setMoonsVisible(true);
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
@@ -2570,6 +2598,15 @@
     // after the burn; we do the same in proportion.
     const FLYBY_APPROACH_DAYS = 20;
     const FLYBY_DEPART_DAYS = 30;
+    /** Approach window for orbit-insertion events specifically (Cassini at
+     *  Saturn, Voyager Jupiter SOI, etc.) — arrivals get a longer ramp
+     *  than gravity-assist flybys so the camera has wall-clock time to
+     *  close in from cruise distance to the iconic-photo composition
+     *  before the spacecraft reaches the body. Pre-polish-wave-2 both
+     *  used FLYBY_APPROACH_DAYS and the camera couldn't converge in
+     *  time at default sim speed, producing the "we see Saturn but
+     *  not the flight" complaint. */
+    const OI_APPROACH_DAYS = 40;
     /** Peak window — the closest-approach beat. Inside this window
      *  sim-speed gets dilated so the moment stretches in screen time. */
     const FLYBY_PEAK_DAYS = 4;
@@ -2629,7 +2666,10 @@
       // the rings. Bump the model scale + push the ship harder toward
       // camera so the spacecraft re-takes hero status; the rings sit
       // as a dramatic mid-frame backdrop instead of swallowing the ship.
-      saturn: { spriteScale: 2.4, modelScale: 2.4, toCameraR: 0.7 },
+      // Polish-wave-2 (2026-06): toCameraR bumped 0.7 → 0.9 so Cassini
+      // is unambiguously in foreground space, the way Wernquist's
+      // Grand Finale illustrations frame it.
+      saturn: { spriteScale: 2.4, modelScale: 2.4, toCameraR: 0.9 },
       uranus: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
       neptune: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
     };
@@ -2752,7 +2792,10 @@
         if ((e.type !== 'flyby' && e.type !== 'edl_or_oi') || e.met_days == null) continue;
         const flybySimDay = arcTimeline.dep_day + e.met_days;
         const delta = simDay - flybySimDay; // negative = approaching
-        if (delta >= -FLYBY_APPROACH_DAYS && delta <= FLYBY_DEPART_DAYS) {
+        // OI events use a wider lead-in window so the camera has time
+        // to converge to the cinematic composition before the burn.
+        const approachWindow = e.type === 'edl_or_oi' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
+        if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
           activeFlybyMet = e.met_days;
           break;
         }
@@ -2828,9 +2871,39 @@
         sub = 'arrived';
         // Round-trip missions end at Earth; one-way ends at destination.
         const endAtEarth = retPts.length > 0;
-        centerX = endAtEarth ? earthScene.x : destScene.x;
-        centerZ = endAtEarth ? earthScene.z : destScene.z;
-        targetR = endAtEarth ? HELIO_EARTH_CLOSEUP_R : HELIO_CLOSEUP_R;
+        if (endAtEarth) {
+          centerX = earthScene.x;
+          centerZ = earthScene.z;
+          targetR = HELIO_EARTH_CLOSEUP_R;
+        } else {
+          // One-way mission arriving at the destination — Cassini at
+          // Saturn, Galileo at Jupiter, Juno at Jupiter, Voyager Grand
+          // Tour etc. Pre-polish-wave-2 this targeted destScene at
+          // HELIO_CLOSEUP_R, which framed the planet alone with the
+          // spacecraft sitting AT the centre — read as "crashed into
+          // the planet" because the ship disappeared behind the body.
+          //
+          // Keep the iconic-photo composition that the flyby cinema
+          // built up to: bias the camera target 65% toward the ship,
+          // size the camera distance off the destination body radius.
+          // The ship's final waypoint sits slightly above the body in
+          // scene space (the spline +y offset for arrival), so this
+          // composition reads as "in orbit / docked" — the spacecraft
+          // hangs in foreground with the body filling one half of frame
+          // behind it. Matches the Cassini Grand Finale illustration
+          // grammar (Wernquist's "the mission ends here, but here is
+          // composed").
+          const destSize = PLANET_SIZES[activeDestination] ?? 0;
+          if (destSize > 0) {
+            centerX = destScene.x * 0.35 + scScene.x * 0.65;
+            centerZ = destScene.z * 0.35 + scScene.z * 0.65;
+            targetR = destSize * FLYBY_BODY_R_MULTIPLIER;
+          } else {
+            centerX = destScene.x;
+            centerZ = destScene.z;
+            targetR = HELIO_CLOSEUP_R;
+          }
+        }
         targetP = HELIO_APPROACH_P;
       } else if (sc.phase === 'outbound') {
         const t = sc.progress * 2; // 0→1 across outbound
@@ -2935,11 +3008,20 @@
           // Scrubber jumps boost the lerp rate so a Jupiter → Earth
           // hop doesn't spend 6-8 seconds in the slow cinematic lerp.
           // camSnapUntil is set by jumpToMet (700 ms) and onScrub
-          // (300 ms) — during those windows we converge at 8 × the
-          // cruise rate. Outside the window the slow rate restores
-          // for in-flight cinematic transitions.
+          // (300 ms) — during those windows we converge at ~3 × the
+          // cruise rate. Outside the window the cinematic rate restores
+          // for in-flight transitions.
+          //
+          // Polish-wave-2 (2026-06): the cinematic rate was bumped from
+          // 0.01 to 0.025. At 0.01 the 20-day approach window for an
+          // outer-system body translated to under a wall-clock second
+          // at default sim speed — not enough time for the camera to
+          // converge to the iconic-photo composition before the flyby
+          // event passed. 0.025 reaches 90% of target in ~90 frames
+          // (~1.5 s at 60 fps), inside even a 10-day approach window
+          // at 30 d/s sim speed.
           const inSnapWindow = performance.now() < camSnapUntil;
-          const LERP = inSnapWindow ? 0.08 : 0.01;
+          const LERP = inSnapWindow ? 0.08 : 0.025;
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
@@ -3825,6 +3907,10 @@
       cislunarCamera.aspect = ratio;
       cislunarCamera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      // EffectComposer maintains its own back-buffer at canvas size;
+      // resize it together with the renderer so the post-processing
+      // passes don't render at a stale resolution.
+      helioHandles.composer.setSize(container.clientWidth, container.clientHeight);
     };
     window.addEventListener('resize', onResize);
 
@@ -4599,8 +4685,21 @@
         updateCislunarCam();
 
         if (viewMode === 'cislunar') {
+          // Cislunar mode bypasses the helio composer + bloom pipeline —
+          // the Earth-Moon system framing is sized for diagrammatic
+          // clarity, not cinematic bloom, and the close-Earth-orbit
+          // sprites would smear under bloom. Direct render is correct.
           renderer.render(cislunarScene, cislunarCamera);
+        } else if (quality.postEnabled) {
+          // Helio (medium+): route through the EffectComposer so
+          // RenderPass + UnrealBloomPass (Sun halo, ship rim glow,
+          // engine plume sprites when present) compose on top of the
+          // base scene.
+          helioHandles.composer.render();
         } else {
+          // Helio (minimal / low): direct render, no post stack.
+          // The user gets a working scene at the cost of the
+          // cinematic glow — see the Settings panel to opt back in.
           renderer.render(scene, camera);
         }
         // GH #107 — phase marker projection (3D view). Compute pixel
@@ -4697,11 +4796,20 @@
             const legT = s.leg === 'out' ? outboundT : returnT;
             const tickIdx = Math.max(0, Math.min(lastIdx, Math.round(s.tickArc * lastIdx)));
             const tickPt = arc[tickIdx];
+            // Use the sample point's actual Y. The spline waypoints have
+            // non-zero Y at intermediate flybys (the +y offset that lifts
+            // the path above the planet rather than through it), so we
+            // can't hard-code Y=0 — that would render the diamond on the
+            // ecliptic plane while the spacecraft sits above it on the arc.
             fdNext.push({
               id: s.id,
               label: s.label(),
               tickScreen: helioAuToScreenPx(
-                { x: tickPt.x * SCALE_3D, y: 0, z: tickPt.z * SCALE_3D },
+                {
+                  x: tickPt.x * SCALE_3D,
+                  y: (tickPt.y ?? 0) * SCALE_3D,
+                  z: tickPt.z * SCALE_3D,
+                },
                 factory,
                 camera,
                 cwFd,
@@ -4960,77 +5068,34 @@
       data-testid="milestone-overlay"
       data-milestone-count={milestoneScreens.length}
     >
+      <!--
+        Polish-wave-2 (2026-06): the floating chip + leader-to-canvas
+        rendering for each milestone was retired. The diagonal leader
+        crossing the canvas + the tethered chip read as overlay clutter
+        on the cinematic shot — the "don't add foreground when the
+        planet/ship is the subject" principle from the creative-direction
+        guide. The active milestone now surfaces in the HUD ACTIVE row,
+        the next one in the HUD NEXT row, and the on-canvas diamond
+        pulses to correlate the chip with its anchor on the path.
+
+        data-testid `milestone-chip` is retained on the diamond span so
+        any existing harness query that just counts milestones still
+        sees the right number; the chip content moved to the HUD rows.
+      -->
       {#each milestoneScreens as m, idx (idx + '@' + m.met_days + '@' + m.label)}
         {#if m.screen.onScreen}
-          <!-- Three dock positions by state:
-               - active → top-centre, full description card
-               - past → top-right corner, compact, dimmed
-               - future → top-left corner just under HUD, compact,
-                 "NEXT" prefix for orientation
-               Leader line only on active (past/future float on
-               their own; the diagonal trail across the canvas was
-               more confusing than helpful). -->
-          {@const vw = typeof window !== 'undefined' ? window.innerWidth : 1400}
-          <!-- HUD column ~236 px wide (left:16 + width:220) when shown;
-               CAPCOM column ~336 px wide (width:320 + right:16) when
-               shown. The chip is centre-anchored (translate(-50%, 0))
-               so chipX must include half the chip width (~130 px). -->
-          {@const hudClearance = showHud ? 236 + 140 : 220}
-          {@const capcomClearance = showCapcom ? 336 + 140 : 220}
-          {@const chipX =
-            m.state === 'active'
-              ? vw / 2
-              : m.state === 'past'
-                ? vw - capcomClearance
-                : hudClearance}
-          <!-- Active chip used to dock top-centre but that's exactly
-               where the foreground spacecraft sits during the flyby
-               hero composition. Dock at the lower-centre instead so
-               the body + ship reading stays clear. chipY is the BOTTOM
-               edge of the chip (translate(-50%, -100%)); placing it
-               at viewport-height − 130 keeps the chip just above the
-               scrubber row. Past/future stay where they were. -->
-          {@const vh = typeof window !== 'undefined' ? window.innerHeight : 900}
-          {@const chipY = m.state === 'active' ? vh - 130 : 220 + idx * 40}
           <span
             class="milestone-diamond"
-            class:active={m.active}
-            style="left: {m.screen.x}px; top: {m.screen.y}px;"
-            aria-hidden="true"
-          ></span>
-          <!-- Leader only renders for the ACTIVE chip — past chips
-               dock in the corner and don't need a line back to their
-               distant diamond (the diagonal crossing-the-screen
-               leader was visually noisy). -->
-          {#if m.active}
-            <span
-              class="milestone-leader"
-              class:active={m.active}
-              style="left: {m.screen.x}px; top: {m.screen.y}px; width: {Math.hypot(
-                chipX - m.screen.x,
-                chipY - m.screen.y,
-              )}px; transform: rotate({Math.atan2(chipY - m.screen.y, chipX - m.screen.x)}rad);"
-              aria-hidden="true"
-            ></span>
-          {/if}
-          <span
-            class="milestone-chip"
             class:active={m.state === 'active'}
             class:past={m.state === 'past'}
             class:future={m.state === 'future'}
-            style="left: {chipX}px; top: {chipY}px;"
+            style="left: {m.screen.x}px; top: {m.screen.y}px;"
             data-testid="milestone-chip"
             data-met-days={m.met_days}
             data-milestone-state={m.state}
-          >
-            {#if m.state === 'future'}
-              <span class="milestone-prefix">NEXT</span>
-            {/if}
-            <span class="milestone-label">{m.label}</span>
-            {#if m.state === 'active' && m.description}
-              <span class="milestone-description">{m.description}</span>
-            {/if}
-          </span>
+            data-milestone-label={m.label}
+            aria-hidden="true"
+          ></span>
         {/if}
       {/each}
     </div>
@@ -5223,6 +5288,25 @@
               : '—'}
           </span>
         </div>
+        <!-- ACTIVE EVENT row (polish-wave-2, 2026-06). The current
+             milestone within the active window — pre-2026-06 this
+             rendered as a floating chip on the canvas; that was
+             replaced by an HUD line so the cinematic shot reads
+             without overlay clutter, with the on-canvas diamond
+             pulsing to graphically correlate the label with its
+             anchor on the path. Renders only when an active
+             milestone exists. -->
+        {#if activeMilestone}
+          <div class="hud-row hud-row-active-event" data-testid="fly-active-event">
+            <span class="hud-key">{m.fly_hud_active_event()}</span>
+            <span class="hud-val accent-active">
+              <span class="active-event-label">{activeMilestone.label}</span>
+              {#if activeMilestone.description}
+                <span class="active-event-description">{activeMilestone.description}</span>
+              {/if}
+            </span>
+          </div>
+        {/if}
         <!-- NEXT EVENT row (v0.1.13). Reads from the merged events
              list (mergeFlightEvents fuses editorial + structural). -->
         <div class="hud-row" data-testid="fly-next-event">
@@ -5603,6 +5687,11 @@
     pointer-events: none;
     z-index: 14;
   }
+  /* Milestone diamonds (polish-wave-2). Past = dim teal pinprick;
+     future = mid teal pinprick; active = larger glowing teal pulse
+     so the eye can pick out the "we're here now" anchor on the path.
+     The label / description live in the HUD ACTIVE row now (see
+     `.hud-row-active-event` below). */
   .milestone-diamond {
     position: absolute;
     width: 6px;
@@ -5611,93 +5700,72 @@
     transform: translate(-50%, -50%) rotate(45deg);
     box-shadow: 0 0 3px rgba(45, 212, 168, 0.65);
     z-index: 12;
-  }
-  .milestone-diamond.active {
-    width: 9px;
-    height: 9px;
-    background: #5eead4;
-    box-shadow:
-      0 0 8px rgba(94, 234, 212, 0.85),
-      0 0 3px rgba(255, 255, 255, 0.6);
-  }
-  .milestone-leader {
-    position: absolute;
-    height: 1px;
-    background: rgba(45, 212, 168, 0.4);
-    transform-origin: 0 50%;
-    z-index: 11;
-  }
-  .milestone-leader.active {
-    background: rgba(94, 234, 212, 0.7);
-    height: 1.5px;
-  }
-  .milestone-chip {
-    position: absolute;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 5px;
-    /* Past + future chips anchor at top-centre (chipY = chip TOP);
-       active chip overrides this below to anchor at the bottom so
-       the leader line reaches the chip from below. */
-    transform: translate(-50%, 0);
-    padding: 6px 12px 7px;
-    background: rgba(8, 10, 22, 0.94);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.95);
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 1.2px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
     user-select: none;
   }
-  .milestone-chip.past {
-    border: 1px solid rgba(45, 212, 168, 0.35);
-    opacity: 0.6;
-    white-space: nowrap;
-    font-size: 11px;
+  .milestone-diamond.past {
+    background: rgba(45, 212, 168, 0.55);
+    box-shadow: 0 0 2px rgba(45, 212, 168, 0.35);
   }
-  .milestone-chip.future {
-    border: 1px dashed rgba(45, 212, 168, 0.45);
-    opacity: 0.78;
-    white-space: nowrap;
-    font-size: 11px;
+  .milestone-diamond.future {
+    background: rgba(45, 212, 168, 0.75);
   }
-  .milestone-prefix {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(94, 234, 212, 0.85);
-    text-transform: uppercase;
-    margin-right: 6px;
-  }
-  .milestone-chip.active {
-    border: 1px solid rgba(94, 234, 212, 0.85);
-    max-width: 360px;
+  .milestone-diamond.active {
+    width: 11px;
+    height: 11px;
+    background: #5eead4;
     box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.55),
-      0 0 0 1px rgba(94, 234, 212, 0.15);
-    /* Bottom-anchored — chipY refers to chip's bottom edge so the
-       leader line meets the chip from below, never crossing the
-       description text. */
-    transform: translate(-50%, -100%);
+      0 0 10px rgba(94, 234, 212, 0.95),
+      0 0 4px rgba(255, 255, 255, 0.7);
+    animation: milestone-pulse 1.6s ease-in-out infinite;
   }
-  .milestone-label {
-    color: rgba(255, 255, 255, 0.98);
+  @keyframes milestone-pulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+      box-shadow:
+        0 0 10px rgba(94, 234, 212, 0.95),
+        0 0 4px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.35);
+      box-shadow:
+        0 0 18px rgba(94, 234, 212, 1),
+        0 0 8px rgba(255, 255, 255, 0.85);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .milestone-diamond.active {
+      animation: none;
+    }
+  }
+  /* HUD ACTIVE EVENT row — paired with the pulsing on-canvas diamond.
+     Wraps label + italic description vertically so a one-line key on
+     the left tracks a multi-line value on the right. */
+  .hud-row-active-event {
+    align-items: flex-start;
+  }
+  .hud-row-active-event .accent-active {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    color: rgba(94, 234, 212, 0.98);
+  }
+  .active-event-label {
     font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
   }
-  .milestone-description {
+  .active-event-description {
     color: rgba(255, 255, 255, 0.82);
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.45;
     letter-spacing: 0.2px;
     text-transform: none;
     white-space: normal;
+    max-width: 22ch;
   }
 
   /* Bottom strips row — centered band above the timeline scrubber
@@ -6170,7 +6238,13 @@
     top: 50%;
     height: 0;
     pointer-events: none;
-    z-index: 2;
+    /* Above .scrub (z-3) so the tick buttons receive hover / click
+       events. The track itself has `pointer-events: none`, so clicks
+       on empty bar pass through to the native range input below —
+       only the .milestone-tick-button children with `pointer-events:
+       auto` catch events. Pre-2026-06 this was z-2 (below .scrub),
+       which is why tooltips never appeared on hover. */
+    z-index: 4;
   }
   .milestone-tick-button {
     position: absolute;

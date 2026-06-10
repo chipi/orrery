@@ -133,6 +133,7 @@
   },
   "dependencies": {
     "@sentry/sveltekit": "^10.53.1",
+    "detect-gpu": "^5.0.70",
     "katex": "^0.16.45",
     "three": "0.128.0"
   }

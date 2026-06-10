@@ -13,6 +13,7 @@
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
@@ -510,6 +511,12 @@
 
     stopThree();
 
+    // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
+    // medium fallback). See lib/quality/quality-tier.ts.
+    const url = new URL(window.location.href);
+    const quality = resolveQualitySync(url);
+    void kickOffBackgroundDetect();
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       45,
@@ -524,9 +531,11 @@
     // breathing room around the T-silhouette before user zoom.
     camera.position.set(4.2, 5.2, 14.4);
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0x04040c, 1);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.dataset.testid = 'tiangong-canvas';
@@ -552,9 +561,19 @@
       camera,
       width: container.clientWidth,
       height: container.clientHeight,
+      pixelRatioCap: quality.pixelRatioCap,
+      bloom: quality.bloomEnabled
+        ? {
+            strength: quality.bloomStrength,
+            radius: quality.bloomRadius,
+            threshold: quality.bloomThreshold,
+          }
+        : null,
     });
 
-    scene.add(new THREE.AmbientLight(0x445566, 0.55));
+    // HemisphereLight for proper terminator contrast — matches the
+    // ISS scene and the /fly helio scene's lighting model.
+    scene.add(new THREE.HemisphereLight(0x303848, 0x000000, 0.55));
     const key = new THREE.DirectionalLight(0xfff4e8, 1.15);
     key.position.set(40, 24, 18);
     key.castShadow = true;

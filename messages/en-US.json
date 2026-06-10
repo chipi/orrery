@@ -473,6 +473,7 @@
   "fly_flight_caveat_sparse": "SPARSE PUBLIC RECORDS — SOME VALUES MISSING",
   "fly_flight_caveat_unknown": "FLIGHT DATA NOT YET RESEARCHED",
   "fly_hud_next_event": "NEXT",
+  "fly_hud_active_event": "ACTIVE",
   "fly_hud_event_t_plus": "T+{day}d",
   "fly_hud_event_t_minus": "T-{day}d",
   "fly_capcom_panel_label": "CAPCOM monitoring",

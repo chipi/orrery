@@ -1,6 +1,10 @@
 import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
+import type { QualityConfig } from '$lib/quality/quality-tier';
 import {
   DESTINATIONS,
   R_EARTH_AU,
@@ -61,12 +65,22 @@ export interface HelioSceneOptions {
     pluto: string;
     ceres?: string;
   };
+  /** Resolved quality config — auto-detected or user-chosen per the
+   *  `src/lib/quality/quality-tier.ts` system. Drives pixelRatio,
+   *  bloom on/off, sphere segments, particle counts, etc. The component
+   *  resolves this BEFORE calling buildHelioScene so the builder can
+   *  size everything correctly without a post-hoc rebuild. */
+  quality: QualityConfig;
 }
 
 export interface HelioSceneHandles {
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   renderer: ReturnType<typeof createSceneRenderer>;
+  /** Post-processing pipeline. Component animate loop calls
+   *  `composer.render()` instead of `renderer.render(scene, camera)`.
+   *  Resize is the caller's responsibility via `composer.setSize()`. */
+  composer: EffectComposer;
   /** Sun visible-core mesh (solid yellow). */
   sunCore: THREE.Mesh;
   /** Sun additive-blending halo. */
@@ -243,6 +257,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // (New Horizons) — the scene rendered black for those missions.
   const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.5, 16000);
   const renderer = createSceneRenderer(opts.container);
+  // Pixel-ratio cap from the quality config — 0.5 on minimal (half-
+  // res buffer for integrated graphics) up to 2.0 on high/cinematic.
+  // The renderer's own clamp is min(devicePixelRatio, cap).
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, opts.quality.pixelRatioCap));
   // ACES Filmic tone mapping — handles HDR Sun → SDR display the way
   // every cinematic space animation does. Single highest-impact line
   // for "cinematic feel" with zero performance cost. See
@@ -250,6 +268,27 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // stack we'll layer on top in subsequent waves.
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
+
+  // Post-processing pipeline — composer chains a sequence of passes
+  // operating on the previous pass's output. Skipped entirely on the
+  // `minimal` + `low` tiers where the perf budget can't afford even
+  // one extra blit. On medium+ we wire RenderPass + UnrealBloomPass;
+  // the bloom strength + threshold scale per tier so the cinematic
+  // tier blooms more aggressively than medium.
+  const containerW = opts.container.clientWidth || 1;
+  const containerH = opts.container.clientHeight || 1;
+  const composer = new EffectComposer(renderer);
+  composer.setSize(containerW, containerH);
+  composer.addPass(new RenderPass(scene, camera));
+  if (opts.quality.bloomEnabled) {
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(containerW, containerH),
+      opts.quality.bloomStrength,
+      opts.quality.bloomRadius,
+      opts.quality.bloomThreshold,
+    );
+    composer.addPass(bloomPass);
+  }
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
   // HemisphereLight replaces the prior AmbientLight(0x111133, 0.8) —
@@ -305,14 +344,30 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   //   - Bright sparse field — fewer big stars (foreground sparkle)
   //   - Milky Way band — stars concentrated near the ecliptic plane,
   //     compressed in y so they form a sky-spanning belt
-  scene.add(createStarField({ count: 1500, radius: 1500, jitter: 500, size: 0.9, opacity: 0.55 }));
-  scene.add(createStarField({ count: 300, radius: 1400, jitter: 600, size: 1.6, opacity: 0.95 }));
+  scene.add(
+    createStarField({
+      count: opts.quality.starsDim,
+      radius: 1500,
+      jitter: 500,
+      size: 0.9,
+      opacity: 0.55,
+    }),
+  );
+  scene.add(
+    createStarField({
+      count: opts.quality.starsBright,
+      radius: 1400,
+      jitter: 600,
+      size: 1.6,
+      opacity: 0.95,
+    }),
+  );
   // Milky Way band — same uniform-sphere sample then squashed in y by
   // 0.18 so the points cluster around the equatorial plane. Tinted a
   // touch warmer (galactic-plane dust) and slightly higher opacity so
   // it reads as a soft belt across the void.
   {
-    const COUNT = 1200;
+    const COUNT = opts.quality.starsMilkyWay;
     const RADIUS = 1450;
     const JIT = 350;
     const sp = new Float32Array(COUNT * 3);
@@ -360,7 +415,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const asteroidBeltGeo = new THREE.BufferGeometry();
   asteroidBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(1800, 2.2, 3.2, 0.1), 3),
+    new THREE.BufferAttribute(sampleBelt(opts.quality.asteroidBeltParticles, 2.2, 3.2, 0.1), 3),
   );
   const asteroidBelt = new THREE.Points(
     asteroidBeltGeo,
@@ -377,7 +432,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const kuiperBeltGeo = new THREE.BufferGeometry();
   kuiperBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(2200, 30, 50, 0.18), 3),
+    new THREE.BufferAttribute(sampleBelt(opts.quality.kuiperBeltParticles, 30, 50, 0.18), 3),
   );
   const kuiperBelt = new THREE.Points(
     kuiperBeltGeo,
@@ -860,6 +915,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     scene,
     camera,
     renderer,
+    composer,
     sunCore,
     sunGlow,
     earthMesh,

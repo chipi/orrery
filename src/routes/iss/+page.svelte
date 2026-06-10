@@ -14,6 +14,7 @@
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
@@ -678,6 +679,14 @@
 
     stopThree();
 
+    // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
+    // medium fallback). Sync resolver so the scene builds without
+    // awaiting the GPU benchmark; the background detect updates the
+    // cache for the next visit. See lib/quality/quality-tier.ts.
+    const url = new URL(window.location.href);
+    const quality = resolveQualitySync(url);
+    void kickOffBackgroundDetect();
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       45,
@@ -687,9 +696,14 @@
     );
     camera.position.set(2.0, -3.0, 13.0);
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0x04040c, 1);
+    // ACES filmic tone mapping — HDR → SDR roll-off that keeps
+    // highlights from clipping flat-white when the bloom pass +
+    // bright Earth backdrop stack on the sun-lit side of the station.
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.dataset.testid = 'iss-canvas';
@@ -715,9 +729,22 @@
       camera,
       width: container.clientWidth,
       height: container.clientHeight,
+      pixelRatioCap: quality.pixelRatioCap,
+      bloom: quality.bloomEnabled
+        ? {
+            strength: quality.bloomStrength,
+            radius: quality.bloomRadius,
+            threshold: quality.bloomThreshold,
+          }
+        : null,
     });
 
-    scene.add(new THREE.AmbientLight(0x445566, 0.55));
+    // HemisphereLight gives a proper sky/ground contrast for the
+    // terminator — sun-lit surfaces lean warm, shadowed surfaces sink
+    // into deep blue rather than the flat ambient grey. Matches the
+    // /fly helio scene's lighting model. Sky tinted faint blue-white;
+    // ground is black (no albedo to bounce from in orbital vacuum).
+    scene.add(new THREE.HemisphereLight(0x303848, 0x000000, 0.55));
     const key = new THREE.DirectionalLight(0xfff4e8, 1.15);
     key.position.set(40, 24, 18);
     key.castShadow = true;

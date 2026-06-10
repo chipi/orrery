@@ -87,6 +87,18 @@ const LICENSE_ALLOWLIST = new Set([
   'FSL-1.1-MIT',
 ]);
 
+// Per-package license overrides for packages that ship without a
+// `license` field in package.json but have a declared license in their
+// repo (README, LICENSE file, or initial publication). Each entry is a
+// justification — never override without naming the source.
+const PACKAGE_LICENSE_OVERRIDES: Record<string, string> = {
+  // webgl-constants — pulled in transitively by `detect-gpu` (GPU tier
+  // detection for the cinematic quality system, GH #321/#322/#323).
+  // Upstream repo (github.com/TimvanScherpenzeel/webgl-constants) ships
+  // a LICENSE file declaring MIT; the npm package omits the field.
+  'webgl-constants': 'MIT',
+};
+
 // Some legacy npm packages declare licenses as compound expressions or
 // non-SPDX strings. We canonicalise the obvious cases here.
 function canonicaliseLicense(raw: unknown): string {
@@ -250,10 +262,11 @@ function buildBom(): { pkgs: Pkg[]; ourPkg: Record<string, unknown> } {
     const id = `${pj.name as string}@${pj.version as string}`;
     if (seen.has(id)) return;
     seen.add(id);
+    const pkgName = pj.name as string;
     pkgs.push({
-      name: pj.name as string,
+      name: pkgName,
       version: pj.version as string,
-      license: canonicaliseLicense(pj.license ?? pj.licenses),
+      license: PACKAGE_LICENSE_OVERRIDES[pkgName] ?? canonicaliseLicense(pj.license ?? pj.licenses),
       description: typeof pj.description === 'string' ? pj.description : undefined,
       homepage: typeof pj.homepage === 'string' ? pj.homepage : undefined,
       repository: repoUrl(pj.repository),

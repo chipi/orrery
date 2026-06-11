@@ -48,7 +48,14 @@
     R_MARS_AU,
     type DestinationId,
   } from '$lib/lambert-grid.constants';
-  import { getMission, getMissionIndex, getScenario } from '$lib/data';
+  import {
+    getMission,
+    getMissionIndex,
+    getScenario,
+    getMissionGallery,
+    getFleet,
+    getFleetIndex,
+  } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { missionDestToDataFolder } from '$lib/mission-dest';
   import {
@@ -1180,12 +1187,97 @@
     epilogueStartedAt = 0;
     epilogueActive = false;
     epilogueCaptionOpacity = 0;
-    // #86 opening state — fires fresh on every mission swap
+    // #86 v2 opening state — fires fresh on every mission swap.
+    // Duration scales with description length + fleet asset count so
+    // longer missions get more read time. Base 9.5 s, capped at 22 s.
     openingStartedAt = performance.now();
     openingActive = true;
     openingTitleOpacity = 0;
     openingContextOpacity = 0;
     openingFleetOpacity = 0;
+    openingMissionHeroUrl = null;
+    openingFleetAssets = [];
+    const descLen = mission.description?.length ?? 0;
+    const refsCount = mission.fleet_refs?.length ?? 0;
+    const extra = Math.min(8000, descLen * 25) + refsCount * 800;
+    openingDurationMs = Math.min(22000, 9500 + extra);
+    // Kick off async asset loads — race-guarded by openingLoadId so
+    // a mission swap mid-flight discards the in-flight load.
+    if (mission.id) {
+      void loadOpeningAssets(mission.id, mission.fleet_refs ?? []);
+    }
+  }
+
+  /** #86 v2 — async load mission hero image + per-fleet-ref full
+   *  entries with hero paths. Updates openingMissionHeroUrl and
+   *  openingFleetAssets when done. Race-guarded against mission swap. */
+  async function loadOpeningAssets(
+    missionId: string,
+    refs: Array<{ id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site' }>,
+  ) {
+    openingLoadId++;
+    const myLoadId = openingLoadId;
+    // Mission hero — first image in the gallery.
+    try {
+      const gallery = await getMissionGallery(missionId);
+      if (myLoadId !== openingLoadId) return;
+      openingMissionHeroUrl = gallery[0] ?? null;
+    } catch {
+      openingMissionHeroUrl = null;
+    }
+    if (refs.length === 0) {
+      openingFleetAssets = [];
+      return;
+    }
+    // Need fleet index to look up category per ref before getFleet.
+    try {
+      const fleetIndex = await getFleetIndex();
+      if (myLoadId !== openingLoadId) return;
+      const loaded = await Promise.all(
+        refs.map(async (ref) => {
+          const idxEntry = fleetIndex.find((f) => f.id === ref.id);
+          if (!idxEntry) return null;
+          const fullEntry = await getFleet(ref.id, idxEntry.category);
+          if (!fullEntry) return null;
+          return {
+            id: ref.id,
+            role: ref.role,
+            name: fullEntry.name ?? idxEntry.name,
+            tagline: fullEntry.tagline ?? idxEntry.tagline ?? '',
+            description: fullEntry.description ?? '',
+            heroPath: idxEntry.hero_path ?? null,
+          } satisfies OpeningFleetAsset;
+        }),
+      );
+      if (myLoadId !== openingLoadId) return;
+      // Sort spacecraft first (the hero asset), then launcher, then site.
+      const roleOrder: Record<string, number> = {
+        spacecraft: 0,
+        payload: 1,
+        launcher: 2,
+        'launch-site': 3,
+      };
+      openingFleetAssets = loaded
+        .filter((x): x is OpeningFleetAsset => x !== null)
+        .sort((a, b) => (roleOrder[a.role] ?? 9) - (roleOrder[b.role] ?? 9));
+    } catch {
+      openingFleetAssets = [];
+    }
+  }
+
+  /** #86 v2 — skip the opening sequence on user click. Drops the
+   *  opening overlays, ends the dwell, and lets the prelaunch
+   *  composition take over for a brief settle before launch fires. */
+  function skipOpening() {
+    if (!openingActive) return;
+    openingActive = false;
+    openingTitleOpacity = 0;
+    openingContextOpacity = 0;
+    openingFleetOpacity = 0;
+    // Give 600 ms of prelaunch settle so the camera has time to
+    // lerp from the wide top-down to the Earth-closeup before sim
+    // starts advancing.
+    launchDwellUntil = performance.now() + 600;
   }
   // Polish-wave-3 cinematic state — all 13 timestamps + phase-tracking
   // flags live in a single CinematicBeatState instance. The struct
@@ -1239,6 +1331,26 @@
   let openingTitleOpacity = $state(0);
   let openingContextOpacity = $state(0);
   let openingFleetOpacity = $state(0);
+  // #86 v2 — adaptive duration. Base 9.5 s + extra time proportional to
+  // description length (so longer mission stories get more read time)
+  // and a per-fleet-asset second-and-a-half so multi-asset missions
+  // get a fair spotlight per item. Capped at 22 s total.
+  let openingDurationMs = 9500;
+  // #86 v2 — async asset loads. Mission hero image (first gallery
+  // photo) + per-fleet-ref full FleetEntry + hero_path. Loaded after
+  // applyMissionAsLoaded fires; opening renders with what's available
+  // each frame (skeleton placeholders → rich cards as they hydrate).
+  let openingMissionHeroUrl = $state<string | null>(null);
+  interface OpeningFleetAsset {
+    id: string;
+    role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site';
+    name: string;
+    tagline: string;
+    description: string;
+    heroPath: string | null;
+  }
+  let openingFleetAssets = $state<OpeningFleetAsset[]>([]);
+  let openingLoadId = 0; // race-guard for async loads vs mission swaps
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     const previousSimDay = simDay;
@@ -3144,7 +3256,9 @@
         // opening fades, the camera lerps to the Earth-closeup
         // prelaunch composition for the existing 4 s W3.3 dwell.
         const inOpeningWide =
-          openingActive && openingStartedAt > 0 && performance.now() - openingStartedAt < 7500;
+          openingActive &&
+          openingStartedAt > 0 &&
+          performance.now() - openingStartedAt < openingDurationMs - 2000;
         if (inOpeningWide) {
           sub = 'opening';
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
@@ -4510,14 +4624,12 @@
       if (!isMoonMission && !reducedMotion && !isDrag && epilogueActive) {
         camT += 0.04 * dt;
       }
-      // #86 — same slow azimuthal rotation during the opening, so the
-      // system visibly rotates while the audience reads the title card.
+      // #86 — same slow azimuthal rotation during the opening's wide
+      // phase. Halts once the camera starts lerping to Earth closeup
+      // so the composition settles into prelaunch.
       if (!isMoonMission && !reducedMotion && !isDrag && openingActive) {
         const elapsedO = openingStartedAt > 0 ? performance.now() - openingStartedAt : 0;
-        // Only rotate during the wide-view portion (0-7.5 s). Once the
-        // camera starts lerping to Earth closeup, halt rotation so the
-        // composition settles.
-        if (elapsedO < 7500) {
+        if (elapsedO < openingDurationMs - 2000) {
           camT += 0.04 * dt;
         }
       }
@@ -4929,42 +5041,44 @@
       // launch dwell. At 13.5 s the launch ring fires.
       if (openingActive && openingStartedAt > 0) {
         const elapsedO = performance.now() - openingStartedAt;
-        // Title fade-in 0 → 1 across 0 → 1000 ms
+        const fadeOutAt = openingDurationMs - 2000;
+        const endAt = openingDurationMs;
+        // Title fade-in 0 → 1 across 0 → 1000 ms, fade-out 2000 ms
         if (elapsedO < 1000) {
           openingTitleOpacity = elapsedO / 1000;
-        } else if (elapsedO < 7500) {
+        } else if (elapsedO < fadeOutAt) {
           openingTitleOpacity = 1;
-        } else if (elapsedO < 9500) {
-          openingTitleOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else if (elapsedO < endAt) {
+          openingTitleOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
         } else {
           openingTitleOpacity = 0;
         }
-        // Context fade-in 0 → 1 across 1500 → 3000 ms
+        // Context fade-in 1500 → 3000 ms
         if (elapsedO < 1500) {
           openingContextOpacity = 0;
         } else if (elapsedO < 3000) {
           openingContextOpacity = (elapsedO - 1500) / 1500;
-        } else if (elapsedO < 7500) {
+        } else if (elapsedO < fadeOutAt) {
           openingContextOpacity = 1;
-        } else if (elapsedO < 9500) {
-          openingContextOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else if (elapsedO < endAt) {
+          openingContextOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
         } else {
           openingContextOpacity = 0;
         }
-        // Fleet asset cards fade-in across 3000 → 5000 ms
+        // Fleet asset cards fade-in 3000 → 5000 ms
         if (elapsedO < 3000) {
           openingFleetOpacity = 0;
         } else if (elapsedO < 5000) {
           openingFleetOpacity = (elapsedO - 3000) / 2000;
-        } else if (elapsedO < 7500) {
+        } else if (elapsedO < fadeOutAt) {
           openingFleetOpacity = 1;
-        } else if (elapsedO < 9500) {
-          openingFleetOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else if (elapsedO < endAt) {
+          openingFleetOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
         } else {
           openingFleetOpacity = 0;
         }
-        // End opening at 9500 ms
-        if (elapsedO >= 9500) {
+        // End opening at adaptive endAt
+        if (elapsedO >= endAt) {
           openingActive = false;
           openingTitleOpacity = 0;
           openingContextOpacity = 0;
@@ -6066,9 +6180,11 @@
     </div>
   {/if}
 
-  <!-- #86 cinematic opening overlay — title card + story + fleet
-       asset chips. Wide top-down system view is the backdrop (set in
-       updateHelioAutoZoomTargets 'opening' branch). -->
+  <!-- #86 cinematic opening overlay — title card (with mission hero
+       image) + story + fleet asset cards (hero / name / tagline / bio).
+       Wide top-down system view is the backdrop (set in
+       updateHelioAutoZoomTargets 'opening' branch). Skip button is
+       always present while openingActive so users can fast-forward. -->
   {#if openingActive}
     {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
     {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
@@ -6076,7 +6192,19 @@
     {@const agencyFull = mission.agency_full ?? ''}
     {@const transitYears =
       mission.transit_days != null ? (mission.transit_days / 365).toFixed(1) : null}
-    {@const fleetRefs = mission.fleet_refs ?? []}
+
+    <!-- Skip button — fixed top-right, always visible during opening -->
+    <button
+      type="button"
+      class="opening-skip"
+      data-testid="fly-opening-skip"
+      onclick={skipOpening}
+      aria-label="Proceed to simulation"
+    >
+      <span>PROCEED TO SIMULATION</span>
+      <span class="opening-skip-arrow" aria-hidden="true">▸</span>
+    </button>
+
     {#if openingTitleOpacity > 0}
       <div
         class="opening-title"
@@ -6084,6 +6212,9 @@
         data-testid="fly-opening-title"
         aria-live="polite"
       >
+        {#if openingMissionHeroUrl}
+          <img class="opening-mission-hero" src={openingMissionHeroUrl} alt="" aria-hidden="true" />
+        {/if}
         <div class="opening-agency">{agencyFull}</div>
         <div class="opening-name">{mission.name}</div>
         {#if depYear || arrYear}
@@ -6130,7 +6261,7 @@
         </div>
       </div>
     {/if}
-    {#if openingFleetOpacity > 0 && fleetRefs.length > 0}
+    {#if openingFleetOpacity > 0 && openingFleetAssets.length > 0}
       <div
         class="opening-fleet"
         style="opacity: {openingFleetOpacity};"
@@ -6138,11 +6269,29 @@
       >
         <div class="opening-fleet-label">FLEET ASSETS</div>
         <div class="opening-fleet-row">
-          {#each fleetRefs as ref (ref.id)}
-            <span class="opening-fleet-chip">
-              <span class="opening-fleet-role">{ref.role.toUpperCase()}</span>
-              <span class="opening-fleet-id">{ref.id.replace(/-/g, ' ').toUpperCase()}</span>
-            </span>
+          {#each openingFleetAssets as asset, idx (asset.id)}
+            <article
+              class="opening-fleet-card"
+              class:hero={idx === 0 && asset.role === 'spacecraft'}
+            >
+              {#if asset.heroPath}
+                <img
+                  class="opening-fleet-hero"
+                  src="{base}/{asset.heroPath}"
+                  alt=""
+                  aria-hidden="true"
+                />
+              {/if}
+              <div class="opening-fleet-meta">
+                <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
+                <div class="opening-fleet-name">{asset.name}</div>
+                {#if idx === 0 && asset.role === 'spacecraft' && asset.description}
+                  <div class="opening-fleet-bio">{asset.description}</div>
+                {:else if asset.tagline}
+                  <div class="opening-fleet-tagline">{asset.tagline}</div>
+                {/if}
+              </div>
+            </article>
           {/each}
         </div>
       </div>
@@ -7184,6 +7333,135 @@
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.92);
     text-transform: uppercase;
+  }
+
+  /* #86 v2 — mission hero image in the title card */
+  .opening-mission-hero {
+    width: 280px;
+    max-width: 80vw;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(94, 234, 212, 0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
+    margin-bottom: 18px;
+  }
+
+  /* #86 v2 — skip button — top-right, subtle but always present */
+  .opening-skip {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 250;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(94, 234, 212, 0.5);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition:
+      background 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .opening-skip:hover,
+  .opening-skip:focus-visible {
+    background: rgba(94, 234, 212, 0.15);
+    border-color: rgba(94, 234, 212, 0.9);
+    color: #fff;
+    outline: none;
+  }
+  .opening-skip-arrow {
+    font-size: 14px;
+    color: rgba(94, 234, 212, 0.85);
+  }
+
+  /* #86 v2 — rich fleet asset cards (replaces the simple chips) */
+  .opening-fleet-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 14px;
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.88);
+    border: 1px solid rgba(94, 234, 212, 0.3);
+    border-radius: 6px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    max-width: 320px;
+  }
+  .opening-fleet-card.hero {
+    max-width: 460px;
+    border-color: rgba(255, 200, 80, 0.55);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  }
+  .opening-fleet-hero {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .opening-fleet-card.hero .opening-fleet-hero {
+    width: 110px;
+    height: 110px;
+  }
+  .opening-fleet-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+    min-width: 0;
+    flex: 1;
+  }
+  .opening-fleet-card .opening-fleet-role {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(94, 234, 212, 0.75);
+  }
+  .opening-fleet-card.hero .opening-fleet-role {
+    color: rgba(255, 200, 80, 0.85);
+  }
+  .opening-fleet-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.96);
+    text-transform: uppercase;
+  }
+  .opening-fleet-card.hero .opening-fleet-name {
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+  .opening-fleet-tagline {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .opening-fleet-bio {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.82);
+    /* Multi-line clamp for long bios — keep card compact */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   /* W3.6 scrubber-jump cut overlay. Same z as the finale-black but
      no transition — the JS drives the opacity each frame directly,

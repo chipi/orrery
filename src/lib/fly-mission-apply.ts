@@ -49,6 +49,9 @@ import type { LocalizedScenario } from '$types/scenario';
  * same module that produces it.
  */
 export interface LoadedMission {
+  /** Mission id from the raw Mission record. Surfaced by /fly's #86
+   *  opening sequence to load mission gallery + fleet entries. */
+  id?: string;
   name: string;
   vehicle: string;
   payload: string;
@@ -192,6 +195,7 @@ function buildMissionMeta(
   const dvTotal = parseDeltaV(m.delta_v, defaults.dvFallback);
   const dvTotalCanonical = m.flight?.totals?.total_dv_km_s ?? dvTotal;
   return {
+    id: m.id,
     name: m.name ?? m.id,
     vehicle: m.vehicle ?? '—',
     payload: m.payload ?? '—',

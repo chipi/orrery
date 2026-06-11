@@ -6,6 +6,8 @@
   import type { FleetIndexEntry } from '$types/fleet';
   import * as THREE from 'three';
   import { disposeScene } from '$lib/three/dispose-object3d';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import {
     earthPos,
     marsPos,
@@ -1818,6 +1820,13 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Single registry for every listener + disposable this scene
+    // owns. /fly carries 17 layer-stop callbacks + 9 input listeners
+    // + scene / texture / renderer disposes; routing them all through
+    // the LIFO registry keeps the cleanup block readable.
+    // See $lib/three/route-lifecycle.
+    const lifecycle = createRouteLifecycle();
 
     // ──────────────────────────────────────────────────────────────
     // 3D — heliocentric Three.js scene. Units = AU × SCALE_3D.
@@ -4499,17 +4508,17 @@
     };
 
     el3d.style.cursor = 'grab';
-    el3d.addEventListener('mousedown', onMouseDown);
-    el3d.addEventListener('contextmenu', onContextMenu);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onMouseUp);
+    lifecycle.on(el3d, 'mousedown', onMouseDown);
+    lifecycle.on(el3d, 'contextmenu', onContextMenu);
+    lifecycle.on(window, 'mousemove', onMouseMove);
+    lifecycle.on(window, 'mouseup', onMouseUp);
     // passive: false so onWheel can preventDefault against trackpad
     // pinch (macOS Ctrl+wheel) hijacking browser zoom.
-    el3d.addEventListener('wheel', onWheel, { passive: false });
-    el3d.addEventListener('touchstart', onTouchStart, { passive: true });
-    el3d.addEventListener('touchmove', onTouchMove, { passive: true });
-    el3d.addEventListener('touchend', onTouchEnd);
-    el3d.addEventListener('touchcancel', onTouchEnd);
+    lifecycle.on(el3d, 'wheel', onWheel, { passive: false });
+    lifecycle.on(el3d, 'touchstart', onTouchStart, { passive: true });
+    lifecycle.on(el3d, 'touchmove', onTouchMove, { passive: true });
+    lifecycle.on(el3d, 'touchend', onTouchEnd);
+    lifecycle.on(el3d, 'touchcancel', onTouchEnd);
 
     // 2D context. Pull the non-null reference into a separate local
     // so TS narrowing survives across the draw2d closure.
@@ -5013,10 +5022,9 @@
       // passes don't render at a stale resolution.
       helioHandles.composer.setSize(container.clientWidth, container.clientHeight);
     };
-    window.addEventListener('resize', onResize);
+    lifecycle.on(window, 'resize', onResize);
 
     let lastTime = performance.now();
-    let rafId = 0;
     // Latest heliocentric spacecraft world position — fed to the
     // cinematic-tier BokehPass focus uniform from the animate loop.
     // Null while the helio frame branch hasn't computed it yet (e.g.
@@ -5096,15 +5104,22 @@
       }
     }
 
-    const animate = (now: number) => {
-      rafId = requestAnimationFrame(animate);
-      // Feed the runtime adaptive frame monitor — fires onStruggle if
-      // the rolling-window average frame time stays over budget. The
-      // monitor itself is non-blocking and drops backgrounded-tab dt
-      // samples (>500 ms) so a tab-switch doesn't trip the toast.
-      frameMonitor.tick();
-      const dt = Math.min((now - lastTime) / 1000, 0.05);
-      lastTime = now;
+    // raf pump with the TA.md document.hidden contract baked in —
+    // see $lib/three/animate-loop. The onFrame body keeps the
+    // raf-timestamp `now` semantics via a `performance.now()` read
+    // at the top — same DOMHighResTimeStamp, sub-millisecond drift
+    // that doesn't matter for sim-time integration / cinematic
+    // beats / overlay refresh.
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        const now = performance.now();
+        // Feed the runtime adaptive frame monitor — fires onStruggle if
+        // the rolling-window average frame time stays over budget. The
+        // monitor itself is non-blocking and drops backgrounded-tab dt
+        // samples (>500 ms) so a tab-switch doesn't trip the toast.
+        frameMonitor.tick();
+        const dt = Math.min((now - lastTime) / 1000, 0.05);
+        lastTime = now;
       // Polish-wave-3 cinematic-beat status — recomputed once per frame
       // and reused by all per-concern updaters. W3.1 peak hold + W3.2
       // afterglow + W3.7 cruise hold each freeze sim time; the lerp
@@ -6621,8 +6636,10 @@
           milestoneScreens = [];
         }
       } else draw2d();
-    };
-    animate(performance.now());
+      },
+    });
+    lifecycle.add(loop.cleanup);
+    loop.start();
 
     // W9 wave B: assemble the typed updater handle. Mirrors the 9
     // freestanding `*Ref` assignments above so callers can address
@@ -6653,45 +6670,37 @@
       },
     };
 
-    cleanup = () => {
-      cancelAnimationFrame(rafId);
-      frameMonitor.stop();
-      stopLensWatch?.();
-      stopSoiLayer?.();
-      stopSoiLayerCislunar?.();
-      stopGravityLayer?.();
-      stopGravityLayerCislunar?.();
-      stopFlyVelocityLayer?.();
-      stopVelocityLayerCislunar?.();
-      stopFlyCentripetalLayer?.();
-      stopCentripetalLayerCislunar?.();
-      stopCoastLayer?.();
-      stopCoastLayerCislunar?.();
-      stopApsidesLayer?.();
-      stopApsidesLayerCislunar?.();
-      stopHillSphereLayer?.();
-      stopLagrangeLayer?.();
-      stopMagnetosphereLayer?.();
-      stopMoonsLayer?.();
-      el3d.removeEventListener('mousedown', onMouseDown);
-      el3d.removeEventListener('contextmenu', onContextMenu);
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', onMouseUp);
-      el3d.removeEventListener('wheel', onWheel);
-      el3d.removeEventListener('touchstart', onTouchStart);
-      el3d.removeEventListener('touchmove', onTouchMove);
-      el3d.removeEventListener('touchend', onTouchEnd);
-      el3d.removeEventListener('touchcancel', onTouchEnd);
-      window.removeEventListener('resize', onResize);
-      disposeScene(scene);
-      // ADR-058: dispose the cislunar scene's GPU resources too.
-      disposeScene(cislunarScene);
-      // ADR-073 Layer B — dispose lazy 4K textures held in closures
-      // (not reachable through cislunarScene's scene graph).
-      cislunarHandles.disposeLod();
-      renderer.dispose();
-      el3d.remove();
-    };
+    // Disposables that aren't a listener live in the same chain. LIFO
+    // drain so renderer / el3d teardowns run last; layer-stop watches
+    // are only present when their corresponding overlay registered.
+    lifecycle.add(() => frameMonitor.stop());
+    if (stopLensWatch) lifecycle.add(stopLensWatch);
+    if (stopSoiLayer) lifecycle.add(stopSoiLayer);
+    if (stopSoiLayerCislunar) lifecycle.add(stopSoiLayerCislunar);
+    if (stopGravityLayer) lifecycle.add(stopGravityLayer);
+    if (stopGravityLayerCislunar) lifecycle.add(stopGravityLayerCislunar);
+    if (stopFlyVelocityLayer) lifecycle.add(stopFlyVelocityLayer);
+    if (stopVelocityLayerCislunar) lifecycle.add(stopVelocityLayerCislunar);
+    if (stopFlyCentripetalLayer) lifecycle.add(stopFlyCentripetalLayer);
+    if (stopCentripetalLayerCislunar) lifecycle.add(stopCentripetalLayerCislunar);
+    if (stopCoastLayer) lifecycle.add(stopCoastLayer);
+    if (stopCoastLayerCislunar) lifecycle.add(stopCoastLayerCislunar);
+    if (stopApsidesLayer) lifecycle.add(stopApsidesLayer);
+    if (stopApsidesLayerCislunar) lifecycle.add(stopApsidesLayerCislunar);
+    if (stopHillSphereLayer) lifecycle.add(stopHillSphereLayer);
+    if (stopLagrangeLayer) lifecycle.add(stopLagrangeLayer);
+    if (stopMagnetosphereLayer) lifecycle.add(stopMagnetosphereLayer);
+    if (stopMoonsLayer) lifecycle.add(stopMoonsLayer);
+    lifecycle.add(() => disposeScene(scene));
+    // ADR-058: dispose the cislunar scene's GPU resources too.
+    lifecycle.add(() => disposeScene(cislunarScene));
+    // ADR-073 Layer B — dispose lazy 4K textures held in closures
+    // (not reachable through cislunarScene's scene graph).
+    lifecycle.add(() => cislunarHandles.disposeLod());
+    lifecycle.add(() => renderer.dispose());
+    lifecycle.add(() => el3d.remove());
+
+    cleanup = () => lifecycle.cleanup();
   });
 
   onDestroy(() => {

@@ -32,12 +32,12 @@ const RTL_LOCALES = ['ar'] as const;
 for (const locale of RTL_LOCALES) {
   test.describe(`RTL probe — ${locale}`, () => {
     test(`/missions sets html dir=rtl + visible focus advances RTL`, async ({ page }) => {
-      await page.goto(`/missions?lang=${locale}`);
+      await page.goto(`/${locale}/missions`);
       await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     });
 
     test(`/moon sets html dir=rtl + canvas labelled appropriately`, async ({ page }) => {
-      await page.goto(`/moon?lang=${locale}`);
+      await page.goto(`/${locale}/moon`);
       await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
       // Canvas should still have an aria-label, even though the
       // canvas pixels are direction-agnostic. Label text comes from
@@ -47,13 +47,13 @@ for (const locale of RTL_LOCALES) {
     });
 
     test(`/library sets html dir=rtl`, async ({ page }) => {
-      await page.goto(`/library?lang=${locale}`);
+      await page.goto(`/${locale}/library`);
       await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     });
   });
 }
 
 test('LTR locale (en-US) sets html dir=ltr', async ({ page }) => {
-  await page.goto('/missions?lang=en-US');
+  await page.goto('/missions');
   await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
 });

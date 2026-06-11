@@ -63,10 +63,10 @@ test.describe('i18n body-text translations actually render (desktop-only)', () =
   );
 
   for (const { code, expected } of LOCALES) {
-    test(`/plan?lang=${code} renders the ${code.toUpperCase()} plan_empty_title`, async ({
+    test(`/${code}/plan renders the ${code.toUpperCase()} plan_empty_title`, async ({
       page,
     }) => {
-      await page.goto(`/plan?lang=${code}`, { waitUntil: 'networkidle' });
+      await page.goto(`/${code}/plan`, { waitUntil: 'networkidle' });
 
       // Sanity: locale attribute is the authoritative signal that
       // Paraglide swapped bundles. Without this passing, the body-text

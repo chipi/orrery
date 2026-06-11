@@ -76,15 +76,17 @@ test.describe('landing page (/)', () => {
     await expect(page).toHaveURL(/\/science(\?|$)/);
   });
 
-  test('German browser locale → URL gains ?lang=de + landing renders in German', async ({
+  test('German browser locale → URL canonicalises to /de/ + landing renders in German', async ({
     browser,
   }) => {
     const context = await browser.newContext({ locale: 'de-DE' });
     const page = await context.newPage();
     await page.goto('/', { waitUntil: 'networkidle' });
 
-    // Canonicalisation (per #73 Gap 1)
-    await expect(page).toHaveURL(/\/\?lang=de$/);
+    // Paraglide URL strategy: preferredLanguage redirects bare `/` to
+    // `/de/` for a German visitor since `de` precedes `baseLocale` in
+    // the strategy chain (#328).
+    await expect(page).toHaveURL(/\/de\/?$/);
 
     // Tagline is German
     await expect(page.locator('p.tagline')).toContainText('Sonnensystem');

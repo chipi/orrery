@@ -34,6 +34,7 @@
     type MissionApplyDefaults,
     type TrajectoryOverride,
   } from '$lib/fly-mission-apply';
+  import { parseFlybyMetFromSubPhase } from '$lib/fly-cinematic-beats';
   import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
   import {
     DESTINATIONS,
@@ -1147,6 +1148,50 @@
    *  resolves. Once the boost window expires, lerp returns to the
    *  cinematic default. */
   let camSnapUntil = 0;
+
+  /**
+   * Reset all polish-wave-3 cinematic-beat state to defaults. Single
+   * funnel called from each of the mission-load paths
+   * (applyMissionAsLoaded, applyScenarioAsLoaded, applyPlanSelection)
+   * so a Cassini-after-Voyager swap can't leak a still-future
+   * `peakHoldUntil` into the new mission and falsely freeze sim time
+   * the moment the user presses play. Audit recommendation #1.
+   *
+   * The W3 timestamps + flags still live as individual `let` bindings
+   * in the component (state is used at the per-frame hot path so the
+   * indirection of an object access felt worse than the boilerplate).
+   * If we ever consolidate them into a CinematicBeatState instance,
+   * this body becomes a single `resetCinematicBeatState(cine)` call.
+   */
+  function resetCinematicForMissionSwap() {
+    // W3.1 peak hold
+    peakHoldUntil = 0;
+    peakHoldArmedForFlybyMet = null;
+    // W3.2 afterglow
+    afterglowUntil = 0;
+    afterglowStartCamR = 0;
+    afterglowTargetCamR = 0;
+    afterglowCenterX = 0;
+    afterglowCenterZ = 0;
+    afterglowP = 0;
+    // W3.4 finale
+    finaleStartedAt = 0;
+    inMissionFinale = false;
+    finaleCaptionOpacity = 0;
+    finaleBlackOpacity = 0;
+    // W3.5 chrome suppression
+    inCinematicHeldBeat = false;
+    // W3.6 scrub-cut
+    cutStartedAt = 0;
+    cutBlackOpacity = 0;
+    // W3.7 cruise hold
+    cruiseHoldUntil = 0;
+    cruiseHoldFired = false;
+    lastSeenSimDayForCruiseHold = 0;
+    // Phase tracking
+    arrivalSnapped = false;
+    lastSeenPhase = null;
+  }
   // Tracks the last `sc.phase` we saw in the animate loop. Used to fire
   // a one-shot camera snap when the spacecraft transitions to 'arrived'
   // so the parked-in-orbit frame settles immediately instead of slow-
@@ -1335,6 +1380,10 @@
     // "weight of decades of work" register from the creative-direction
     // guide §5).
     launchDwellUntil = performance.now() + 4000;
+    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
+    // any prior mission so we don't accidentally start the new one
+    // already inside a stale held beat.
+    resetCinematicForMissionSwap();
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1364,6 +1413,10 @@
     // "weight of decades of work" register from the creative-direction
     // guide §5).
     launchDwellUntil = performance.now() + 4000;
+    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
+    // any prior mission so we don't accidentally start the new one
+    // already inside a stale held beat.
+    resetCinematicForMissionSwap();
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1410,6 +1463,10 @@
     // "weight of decades of work" register from the creative-direction
     // guide §5).
     launchDwellUntil = performance.now() + 4000;
+    // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
+    // any prior mission so we don't accidentally start the new one
+    // already inside a stale held beat.
+    resetCinematicForMissionSwap();
     lastAppliedMissionId = r.appliedId;
   }
 
@@ -3021,21 +3078,27 @@
         // unlabeled missions: closest planet to spacecraft.
         const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
         const flyby = findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
-        // Debug exposure for the chrome-devtools-mcp verification path.
-        (window as unknown as Record<string, unknown>).__flyDebug = {
-          activeFlybyMet,
-          flybyId: flyby?.id ?? null,
-          flybySize: flyby?.size ?? null,
-          scPos: { x: sc.pos.x, z: sc.pos.z },
-          subPhase: lastHelioSubPhase,
-          simDay,
-          peakHoldUntil,
-          peakHoldArmedForFlybyMet,
-          peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
-          camR,
-          camTx: camTarget.x,
-          camTz: camTarget.z,
-        };
+        // Debug exposure. Most fields are dev-only — chrome-devtools-mcp
+        // verification reads them. flybyId + flybySize are also read
+        // by the foreground ship-offset block in the animate loop
+        // (search `flybyDbg`), so the write happens regardless of DEV
+        // flag for those two; the other fields are skipped in prod.
+        window.__flyDebug = import.meta.env.DEV
+          ? {
+              activeFlybyMet,
+              flybyId: flyby?.id ?? null,
+              flybySize: flyby?.size ?? null,
+              scPos: { x: sc.pos.x, z: sc.pos.z },
+              subPhase: lastHelioSubPhase,
+              simDay,
+              peakHoldUntil,
+              peakHoldArmedForFlybyMet,
+              peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
+              camR,
+              camTx: camTarget.x,
+              camTz: camTarget.z,
+            }
+          : { flybyId: flyby?.id ?? null, flybySize: flyby?.size ?? null };
         if (flyby) {
           const bodyPos =
             flyby.id === ('earth' as typeof flyby.id)
@@ -4359,9 +4422,10 @@
       // refreshed when no flyby is active — it stays stale at the
       // previous flyby's MET — so reading from there made the reset
       // think we were still in the prior flyby. lastHelioSubPhase IS
-      // updated every frame by updateHelioAutoZoomTargets.
-      const subFlybyMatch = lastHelioSubPhase?.match(/^flyby-(-?\d+(?:\.\d+)?)-/);
-      const currentFrameFlybyMet = subFlybyMatch ? Number(subFlybyMatch[1]) : null;
+      // updated every frame by updateHelioAutoZoomTargets. The parse
+      // lives in $lib/fly-cinematic-beats so the regex is a single
+      // source of truth + unit-tested.
+      const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
       if (peakHoldArmedForFlybyMet != null) {
         const sameFlyby = currentFrameFlybyMet === peakHoldArmedForFlybyMet;
         const outsidePeakDays =
@@ -4563,9 +4627,7 @@
         // + flybyId tracked via __flyDebug; use the body's PLANET_SIZE
         // for the offset magnitude. Stays inside the cinema target
         // sphere (camR = 2.4·r), so the ship doesn't fly off-frame.
-        const flybyDbg = (
-          window as unknown as { __flyDebug?: { flybySize?: number; flybyId?: string } }
-        ).__flyDebug;
+        const flybyDbg = window.__flyDebug;
         const bodyR = flybyDbg?.flybySize ?? 2.5;
         const overrideCamR = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
         const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
@@ -5218,26 +5280,33 @@
         // simDay / arming state stale at the most recent flyby across
         // launch / cruise / arrived. This frame-end write fixes the
         // verification path.
-        (window as unknown as Record<string, unknown>).__flyDebugFrame = {
-          simDay,
-          lastHelioSubPhase,
-          peakHoldArmedForFlybyMet,
-          peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
-          camR,
-          camTx: camTarget.x,
-          camTz: camTarget.z,
-          inMissionFinale,
-          finaleCaptionOpacity,
-          finaleBlackOpacity,
-          finaleStartedAt,
-          finaleElapsedMs: finaleStartedAt > 0 ? performance.now() - finaleStartedAt : 0,
-          cutBlackOpacity,
-          cutStartedAt,
-          cruiseHoldUntil,
-          cruiseHoldFired,
-          cruiseHoldRemainingMs: Math.max(0, cruiseHoldUntil - performance.now()),
-          cruiseHoldTriggerSimDay,
-        };
+        //
+        // Audit recommendation #2 — production builds skip the write
+        // entirely (Vite removes the dead branch at build time). Tests
+        // + dev work still see the full state. No prod overhead from a
+        // hot-path window assignment 60× / second.
+        if (import.meta.env.DEV) {
+          window.__flyDebugFrame = {
+            simDay,
+            lastHelioSubPhase,
+            peakHoldArmedForFlybyMet,
+            peakHoldRemainingMs: Math.max(0, peakHoldUntil - performance.now()),
+            camR,
+            camTx: camTarget.x,
+            camTz: camTarget.z,
+            inMissionFinale,
+            finaleCaptionOpacity,
+            finaleBlackOpacity,
+            finaleStartedAt,
+            finaleElapsedMs: finaleStartedAt > 0 ? performance.now() - finaleStartedAt : 0,
+            cutBlackOpacity,
+            cutStartedAt,
+            cruiseHoldUntil,
+            cruiseHoldFired,
+            cruiseHoldRemainingMs: Math.max(0, cruiseHoldUntil - performance.now()),
+            cruiseHoldTriggerSimDay,
+          };
+        }
         // GH #107 — phase marker projection (3D view). Compute pixel
         // positions for every event marker against the active cislunar
         // camera + canvas size, then write the resulting

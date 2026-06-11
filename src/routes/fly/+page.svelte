@@ -2609,6 +2609,16 @@
     // orbit rings + moon dots read as distraction during the flyby
     // cinema, fighting the ship-as-hero composition. Back to lens-
     // gated: users who want moons turn the science lens on.
+    //
+    // cinemaForceMoons + lastLayerMoonsOn are hoisted here (rather than
+    // declared further down with the other helio-loop state) because
+    // onLayerChange invokes its callback SYNCHRONOUSLY during
+    // subscription (science-layers.ts:137) — if we declared them
+    // below this call, the synchronous emit would hit a TDZ
+    // ReferenceError, the animate loop would never start, and the
+    // whole canvas would render blank.
+    let cinemaForceMoons = false;
+    let lastLayerMoonsOn = false;
     const stopMoonsLayer = onLayerChange('moons', (on) => {
       lastLayerMoonsOn = on;
       // #2 — during flyby cinema we force moons visible regardless of
@@ -3055,12 +3065,9 @@
     // read by updateCam to tilt camera.up for the ring-plane angled
     // look. Cleared when leaving Saturn-OI cinema.
     let saturnOIComposition = false;
-    // #2 — Auto-show moons during flyby cinema. cinemaForceMoons is
-    // true while we're forcing moons visible regardless of the
-    // science-lens master toggle. lastLayerMoonsOn tracks what the
-    // lens layer actually wants so we can restore on cinema exit.
-    let cinemaForceMoons = false;
-    let lastLayerMoonsOn = false;
+    // cinemaForceMoons + lastLayerMoonsOn are declared at the top of
+    // onMount alongside the onLayerChange('moons') subscription (TDZ
+    // would fire here otherwise — see the comment block there).
     const HELIO_CLOSEUP_R = 40;
     // Earth return closeup distance. A previous iteration tried 30 to
     // hug Earth more tightly, but that read as "too zoomed in" and

@@ -9,6 +9,8 @@
   import { Line2 } from 'three/examples/jsm/lines/Line2.js';
   import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
   import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
@@ -554,6 +556,13 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Single registry for every listener + disposable this scene owns.
+    // The bottom-of-onMount cleanup block drains it LIFO so unrelated
+    // additions (panorama escape handler, hover bus) can plug into the
+    // same chain instead of growing a thirty-line removeEventListener
+    // tail. See $lib/three/route-lifecycle.
+    const lifecycle = createRouteLifecycle();
 
     // Expose programmatic site-selection for the audio-tour executor
     // (PRD-016 §S11 / RFC-019 §12). Hidden tour-anchor buttons in
@@ -2558,7 +2567,7 @@
       });
       if (id) selectSite(id);
     }
-    c2.addEventListener('click', on2dClick);
+    lifecycle.on(c2, 'click', on2dClick);
 
     // Resize + animation loop
     const onResize = createCanvasResizer({
@@ -2578,18 +2587,33 @@
         }
       },
     });
-    window.addEventListener('resize', onResize);
+    lifecycle.on(window, 'resize', onResize);
 
-    let lastTime = performance.now();
-    let rafId = 0;
     let reducedMotion = false;
     const stopReducedMotionWatch = onReducedMotionChange((r) => {
       reducedMotion = r;
     });
-    const animate = (now: number) => {
-      rafId = requestAnimationFrame(animate);
-      const dt = Math.min((now - lastTime) / 1000, 0.05);
-      lastTime = now;
+    lifecycle.add(stopReducedMotionWatch);
+
+    let lastTime = performance.now();
+
+    // raf pump with the TA.md document.hidden contract baked in. The
+    // local `reducedMotion` flag still gates the per-frame body for
+    // domain-specific tween freezes (camera fly-in, tour drag inertia);
+    // we don't hand it to createAnimateLoop's reducedMotion option
+    // because the surface scene's render still has to run when the
+    // user prefers reduced motion (the camera stays put but the
+    // scene + 2D overlay still paints).
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        // SurfaceScene predates createAnimateLoop and its onFrame body
+        // assumed a raf-timestamp `now`. The same DOMHighResTimeStamp
+        // value is available via performance.now() inside the loop,
+        // with sub-millisecond drift that doesn't matter for the
+        // throttle / fly-in lerp consumers below.
+        const now = performance.now();
+        const dt = Math.min((now - lastTime) / 1000, 0.05);
+        lastTime = now;
 
       // RAF pause: when the flat patch is fully visible, the sphere is
       // hidden behind it (opacity 0 via the CSS cross-fade) and the
@@ -3469,32 +3493,34 @@
         }
       }
 
-      if (view === '3d') composer.render();
-      else draw2d();
-    };
-    animate(performance.now());
+        if (view === '3d') composer.render();
+        else draw2d();
+      },
+    });
+    lifecycle.add(loop.cleanup);
+    loop.start();
 
-    cleanup = () => {
-      cancelAnimationFrame(rafId);
-      stopReducedMotionWatch();
-      _stopTidalLockLayer?.();
-      _stopAtmosphereLayer?.();
+    // Disposables that aren't a listener live in the same chain. LIFO
+    // drain so loop.cleanup (registered first) runs after these.
+    if (_stopTidalLockLayer) lifecycle.add(_stopTidalLockLayer);
+    if (_stopAtmosphereLayer) lifecycle.add(_stopAtmosphereLayer);
+    lifecycle.add(() => {
       for (const h of earthLayerHandles) h.dispose();
-      stopPanoramaEscape();
-      panoramaSkybox?.dispose();
-      stopCanvasInputs();
-      c2.removeEventListener('click', on2dClick);
-      window.removeEventListener('resize', onResize);
-      disposeScene(scene);
-      // ADR-073 Layer B — explicitly dispose the lazy-loaded 4K
-      // texture. disposeScene only walks the scene graph; when the
-      // active LOD is 2K, the 4K texture is held in this closure but
-      // not attached to anything reachable through the scene tree.
-      // Without this dispose the 4K texture stays resident in GPU
-      // memory after route teardown.
-      planetMap4k?.dispose();
-      disposeSceneRenderer({ renderer, outlinePass });
-    };
+    });
+    lifecycle.add(stopPanoramaEscape);
+    lifecycle.add(() => panoramaSkybox?.dispose());
+    lifecycle.add(stopCanvasInputs);
+    lifecycle.add(() => disposeScene(scene));
+    // ADR-073 Layer B — explicitly dispose the lazy-loaded 4K
+    // texture. disposeScene only walks the scene graph; when the
+    // active LOD is 2K, the 4K texture is held in this closure but
+    // not attached to anything reachable through the scene tree.
+    // Without this dispose the 4K texture stays resident in GPU
+    // memory after route teardown.
+    lifecycle.add(() => planetMap4k?.dispose());
+    lifecycle.add(() => disposeSceneRenderer({ renderer, outlinePass }));
+
+    cleanup = () => lifecycle.cleanup();
   });
 
   onDestroy(() => {

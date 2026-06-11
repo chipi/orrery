@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import type { QualityConfig } from '$lib/quality/quality-tier';
@@ -81,6 +82,12 @@ export interface HelioSceneHandles {
    *  `composer.render()` instead of `renderer.render(scene, camera)`.
    *  Resize is the caller's responsibility via `composer.setSize()`. */
   composer: EffectComposer;
+  /** Bokeh depth-of-field pass — non-null only on the cinematic tier.
+   *  The component animate loop pokes `bokehPass.uniforms.focus.value`
+   *  per frame with the camera-to-spacecraft distance so the focal
+   *  plane tracks the hero subject. Other uniforms (aperture, maxblur)
+   *  are baked at construction. */
+  bokehPass: BokehPass | null;
   /** Sun visible-core mesh (solid yellow). */
   sunCore: THREE.Mesh;
   /** Sun additive-blending halo. */
@@ -288,6 +295,22 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       opts.quality.bloomThreshold,
     );
     composer.addPass(bloomPass);
+  }
+  // Bokeh depth-of-field — wave 2/3 punch #6. Appended after bloom so
+  // bright bloomed highlights still contribute to bokeh discs. Focus
+  // distance is updated per frame by the component animate loop (the
+  // bokehPass handle is returned so the caller can poke
+  // `bokehPass.uniforms.focus.value` with camera→spacecraft distance).
+  // Aperture + maxblur baked here — increasing aperture deepens the
+  // out-of-focus blur ring; maxblur caps the worst-case kernel radius.
+  let bokehPass: BokehPass | null = null;
+  if (opts.quality.dofEnabled) {
+    bokehPass = new BokehPass(scene, camera, {
+      focus: 100,
+      aperture: 0.00012,
+      maxblur: 0.008,
+    });
+    composer.addPass(bokehPass);
   }
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
@@ -916,6 +939,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     camera,
     renderer,
     composer,
+    bokehPass,
     sunCore,
     sunGlow,
     earthMesh,

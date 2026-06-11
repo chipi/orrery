@@ -64,6 +64,10 @@ export interface QualityConfig {
   starsMilkyWay: number;
   /** Whether to apply the rim-light Fresnel injection on spacecraft. */
   rimLightEnabled: boolean;
+  /** Whether to append a Bokeh depth-of-field pass. Cinematic only —
+   *  DoF is the most expensive post pass we wire and the focal-distance
+   *  driving requires per-frame uniform updates the caller has to feed. */
+  dofEnabled: boolean;
 }
 
 const CONFIGS: Record<QualityTier, QualityConfig> = {
@@ -82,6 +86,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsBright: 100,
     starsMilkyWay: 400,
     rimLightEnabled: false,
+    dofEnabled: false,
   },
   low: {
     tier: 'low',
@@ -98,6 +103,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsBright: 180,
     starsMilkyWay: 700,
     rimLightEnabled: true,
+    dofEnabled: false,
   },
   medium: {
     tier: 'medium',
@@ -114,6 +120,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsBright: 240,
     starsMilkyWay: 950,
     rimLightEnabled: true,
+    dofEnabled: false,
   },
   high: {
     tier: 'high',
@@ -130,6 +137,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsBright: 300,
     starsMilkyWay: 1200,
     rimLightEnabled: true,
+    dofEnabled: false,
   },
   cinematic: {
     tier: 'cinematic',
@@ -146,6 +154,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsBright: 380,
     starsMilkyWay: 1500,
     rimLightEnabled: true,
+    dofEnabled: true,
   },
 };
 

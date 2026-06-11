@@ -4643,6 +4643,11 @@
 
     let lastTime = performance.now();
     let rafId = 0;
+    // Latest heliocentric spacecraft world position — fed to the
+    // cinematic-tier BokehPass focus uniform from the animate loop.
+    // Null while the helio frame branch hasn't computed it yet (e.g.
+    // during the cislunar phase).
+    let scLastWorld: THREE.Vector3 | null = null;
 
     /**
      * W3.7 — arm the cruise hold once when sim crosses the midpoint of
@@ -5342,6 +5347,9 @@
         (sc.pos.y ?? 0) * SCALE_3D,
         sc.pos.z * SCALE_3D,
       );
+      // Stash the latest helio ship position for the cinematic-tier
+      // Bokeh DoF focus uniform — set in the post-render branch below.
+      scLastWorld = scWorld;
 
       // Fix B (ship-in-frame safety net) was reverted in commit
       // 5a4… — it fought the cinematic LERP (both nudged camTarget
@@ -5905,6 +5913,18 @@
           // sprites would smear under bloom. Direct render is correct.
           renderer.render(cislunarScene, cislunarCamera);
         } else if (quality.postEnabled) {
+          // Bokeh DoF focus tracking — wave 2/3 punch #6. When the
+          // cinematic-tier composer included a BokehPass, point the
+          // focal plane at the spacecraft each frame so the ship stays
+          // crisp while the Sun, planets, and starfield throw a soft
+          // photographic bokeh. Distance is camera→scWorld in scene
+          // units; BokehPass interprets it as world-space depth.
+          if (helioHandles.bokehPass && scLastWorld) {
+            const focusDist = camera.position.distanceTo(scLastWorld);
+            (
+              helioHandles.bokehPass.uniforms as Record<string, { value: number }>
+            ).focus.value = focusDist;
+          }
           // Helio (medium+): route through the EffectComposer so
           // RenderPass + UnrealBloomPass (Sun halo, ship rim glow,
           // engine plume sprites when present) compose on top of the

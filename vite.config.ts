@@ -53,15 +53,25 @@ export default defineConfig({
       project: './project.inlang',
       outdir: './src/lib/paraglide',
       strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
-      // Tree-shake every message function out of the client bundle.
-      // The SvelteKit prerender step (hooks.server.ts +
-      // paraglideMiddleware) injects only the messages each per-locale
-      // route actually uses into the emitted HTML, so the client JS
-      // ships ~0 KB for i18n strings instead of all 14 locales' worth.
-      // Trade-off: cross-locale navigation (e.g. /de/iss → /fr/iss)
-      // requires a full reload rather than SPA navigation — LocalePicker
-      // already calls setLocale() which handles this transparently.
-      experimentalMiddlewareLocaleSplitting: true,
+      // experimentalMiddlewareLocaleSplitting was tried first — it tree-
+      // shakes message functions from the client bundle and injects them
+      // via paraglideMiddleware → globalThis.__paraglide.ssr.<key>. Per
+      // the docs it "only works in SSR/SSG environments without client-
+      // side routing", and that caveat bites SvelteKit hard: after
+      // hydration any SPA-navigated route renders messages from JS, but
+      // the per-message slots on globalThis.__paraglide.ssr are only
+      // populated for the prerender-time route. The result is
+      // "globalThis.__paraglide.ssr.<key> is not a function" console
+      // errors across every route the e2e suite touches.
+      //
+      // Default mode (per-message tree-shaking via outputStructure:
+      // message-modules) still gives a substantial bundle win over 1.x's
+      // 1.5 MB monolithic dispatcher — each route's chunk only carries
+      // the message functions it actually calls. The remaining win
+      // (per-locale tree-shake of unused locale branches inside each
+      // message body) needs a different mechanism — likely a future
+      // Paraglide release that makes middleware-splitting SPA-aware,
+      // or a custom dynamic-import shim. Documented as a follow-up.
     }),
     sveltekit(),
     // Emit .br and .gz alongside every text-ish asset at build time
@@ -185,9 +195,11 @@ export default defineConfig({
   // external by the sveltekit plugin's auto-bundler. Vite already
   // splits it into its own chunk without help.
   //
-  // i18n bundle: as of #328, Paraglide 2.x's URL-segment strategy
-  // chunks per-locale automatically — each route ships only its own
-  // locale's compiled messages, not all 14. No manualChunks needed.
+  // i18n bundle: as of #328, Paraglide 2.x's per-message output structure
+  // lets the bundler tree-shake unused message functions per route — the
+  // 1.5 MB monolithic messages.js from 1.x is gone. Per-locale tree-
+  // shake of locale branches inside each message body is a future
+  // optimisation; see the paraglideVitePlugin block above.
   build: {
     chunkSizeWarningLimit: 700,
   },

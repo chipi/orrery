@@ -6,7 +6,7 @@
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
   import { onScienceLensChange, toggleScienceLens } from '$lib/science-lens';
   import { track } from '$lib/analytics';
-  import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
+  import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import type { Snippet } from 'svelte';
@@ -28,12 +28,6 @@
     { path: '/tiangong', label: m.nav_tiangong },
     { path: '/science', label: m.nav_science },
   ] as const;
-
-  const activeLocale = $derived(localeFromPage($page));
-
-  function withLang(path: string, locale: string): string {
-    return locale === DEFAULT_LOCALE ? path : `${path}?lang=${encodeURIComponent(locale)}`;
-  }
 
   function isActive(href: string, pathname: string): boolean {
     return pathname === href || pathname.startsWith(href + '/');
@@ -111,7 +105,7 @@
 <nav aria-label={m.nav_aria_label()}>
   <div class="left">
     <a
-      href={withLang(`${base}/`, activeLocale)}
+      href={localizeHref(`${base}/`)}
       class="brand"
       aria-label={m.nav_brand_home_aria()}
       class:active={isActive(`${base}/`, $page.url.pathname)}
@@ -123,7 +117,7 @@
   <div class="center">
     {#each linkDefs as { path, label } (path)}
       <a
-        href={withLang(`${base}${path}`, activeLocale)}
+        href={localizeHref(`${base}${path}`)}
         class="link"
         class:active={isActive(`${base}${path}`, $page.url.pathname)}>{label()}</a
       >
@@ -225,7 +219,7 @@
   >
     {#each linkDefs as { path, label } (path)}
       <a
-        href={withLang(`${base}${path}`, activeLocale)}
+        href={localizeHref(`${base}${path}`)}
         class="drawer-link"
         class:active={isActive(`${base}${path}`, $page.url.pathname)}
         onclick={closeMobileMenu}>{label()}</a

@@ -1,24 +1,23 @@
 /**
- * Locale resolution for Orrery's i18n layer.
+ * Locale UI metadata + RTL detection for Orrery.
  *
- * Source-of-truth precedence (per ADR-057):
- *   1. URL `?lang=` parameter — wins always (preserves share-link semantics).
- *   2. `orrery_locale` cookie — explicit user override only, written
- *      from LocalePicker.pick() and never from auto-detect.
- *   3. `navigator.language` — browser-default fallback.
- *   4. `DEFAULT_LOCALE` — final fallback.
+ * Per ADR-031, locales are grouped in waves by script risk. The
+ * canonical list lives here; `project.inlang/settings.json#locales`
+ * mirrors it for the Paraglide compiler.
  *
- * `localStorage` / `sessionStorage` are never used (CLAUDE.md ban).
- * The single cookie exception is narrowly scoped per ADR-057 and
- * forbids creep to other state.
- *
- * Per ADR-031, locales are grouped in waves by script risk.
- * `SUPPORTED_LOCALES` lists locales currently available in the picker.
+ * Runtime locale resolution (URL parsing, cookie reads, navigator
+ * fallback, canonicalisation) is owned by `$lib/paraglide/runtime`
+ * since the #328 migration to Paraglide 2.x's URL-segment strategy.
+ * This module is now thin: locale metadata for the picker, RTL set,
+ * and the document-attribute sync helper.
  */
 import { browser } from '$app/environment';
-import type { Page } from '@sveltejs/kit';
+import { getLocale, locales } from '$lib/paraglide/runtime';
 
-/** Locale code as used by Paraglide-js + the data-overlay path. */
+/**
+ * Locale code as used by Paraglide-js + the data-overlay path.
+ * The union is mirrored in `project.inlang/settings.json#locales`.
+ */
 export type LocaleCode =
   | 'en-US'
   | 'es'
@@ -49,11 +48,10 @@ export interface LocaleEntry {
 
 /**
  * Locales available to the user in the current build. Keep in sync
- * with `project.inlang/settings.json#languageTags` and
+ * with `project.inlang/settings.json#locales` and
  * `static/data/i18n/<code>/`. Adding a locale here without populating
- * its message bundle / overlays will silently fall back to en-US per
- * ADR-017 — visible to the user as English content under a non-EN
- * picker label.
+ * its message bundle / overlays silently falls back to en-US per
+ * ADR-017.
  */
 export const SUPPORTED_LOCALES: readonly LocaleEntry[] = [
   { code: 'en-US', nativeName: 'English', shortTag: 'EN', flag: '🇺🇸' },
@@ -82,184 +80,74 @@ export function isSupportedLocale(code: string | null | undefined): code is Loca
   return code != null && SUPPORTED_CODES.has(code);
 }
 
-/**
- * Normalise a raw `navigator.language` value (e.g. `"es-ES"`,
- * `"es-419"`, `"pt-PT"`, `"en"`) to a supported locale code, or
- * null if no supported locale matches.
- *
- * Strategy: exact match first; then language-prefix match
- * (`es-MX` → `es`); then null.
- */
-export function normaliseBrowserLocale(raw: string | undefined): LocaleCode | null {
-  if (!raw) return null;
-  if (isSupportedLocale(raw)) return raw;
-  const prefix = raw.toLowerCase().split('-')[0];
-  for (const entry of SUPPORTED_LOCALES) {
-    if (entry.code.toLowerCase().split('-')[0] === prefix) return entry.code;
-  }
-  return null;
-}
-
-/**
- * Resolve the active locale for a request. Precedence:
- *   1. URL `?lang=` (when supported)
- *   2. `cookieLocale` (when supported) — per ADR-057
- *   3. `navigatorLanguage` (normalised)
- *   4. `DEFAULT_LOCALE`
- *
- * Pure: no side effects, no URL mutation, no cookie reads. The
- * caller (LocalePicker / +layout) supplies all inputs. Tests inject
- * specific values directly without mocking `document` or `navigator`.
- */
-export function resolveLocale(
-  url: URL | { searchParams: URLSearchParams },
-  navigatorLanguage?: string,
-  cookieLocale?: LocaleCode | null,
-): LocaleCode {
-  const fromUrl = url.searchParams.get('lang');
-  if (isSupportedLocale(fromUrl)) return fromUrl;
-  if (cookieLocale && isSupportedLocale(cookieLocale)) return cookieLocale;
-  const fromBrowser = normaliseBrowserLocale(navigatorLanguage);
-  if (fromBrowser) return fromBrowser;
-  return DEFAULT_LOCALE;
-}
-
-/**
- * Convenience wrapper for Svelte components that have `$page`.
- *
- * SSR / prerender guard: SvelteKit's adapter-static prerender forbids
- * reading `url.searchParams` during render (it would change per-request
- * and break determinism). On the server we always return
- * `DEFAULT_LOCALE`; once the page hydrates in the browser the
- * `$derived` / `$effect` blocks re-evaluate and pick up the real URL
- * locale. This means the first paint for a `?lang=es` URL is briefly
- * en-US — a known + accepted trade-off for static prerendering.
- *
- * Reads the `orrery_locale` cookie (per ADR-057) so a user who
- * previously chose a non-browser-default locale via LocalePicker
- * gets that pick honoured even on a fresh URL with no `?lang=`.
- */
-export function localeFromPage(page: Page): LocaleCode {
-  if (!browser) return DEFAULT_LOCALE;
-  return resolveLocale(page.url, navigator.language, readLocaleCookie());
-}
-
-/**
- * Cookie name for the explicit-user-set locale override (ADR-057).
- * The ONLY cookie this app sets. See `writeLocaleCookie` for write
- * semantics; never written from auto-detection paths.
- */
-export const LOCALE_COOKIE_NAME = 'orrery_locale';
-
-/**
- * Read the `orrery_locale` cookie (per ADR-057).
- * Returns null if absent, malformed, or holding a non-supported code.
- *
- * SSR-safe: returns null when `document` is unavailable.
- */
-export function readLocaleCookie(): LocaleCode | null {
-  if (!browser) return null;
-  for (const raw of document.cookie.split(';')) {
-    const [name, value] = raw.trim().split('=');
-    if (name !== LOCALE_COOKIE_NAME) continue;
-    const decoded = decodeURIComponent(value ?? '');
-    return isSupportedLocale(decoded) ? decoded : null;
-  }
-  return null;
-}
-
-/**
- * Write the `orrery_locale` cookie (per ADR-057). MUST be called
- * only from explicit user-action paths — currently just
- * `LocalePicker.pick()`. Auto-detection / canonicalisation paths
- * never write this cookie.
- *
- * Cookie attributes: `SameSite=Lax`, `Path=/`, `Max-Age=31536000`
- * (1 year), `Secure` only on HTTPS. No HttpOnly because there is
- * no server — the value must be readable from `document.cookie`.
- *
- * Stores every supported locale including DEFAULT_LOCALE: an
- * explicit "use English" pick should persist even on a German
- * browser, otherwise next-visit re-detects German.
- */
-export function writeLocaleCookie(locale: LocaleCode): void {
-  if (!browser) return;
-  const isHttps = location.protocol === 'https:';
-  const secure = isHttps ? '; Secure' : '';
-  document.cookie = `${LOCALE_COOKIE_NAME}=${encodeURIComponent(locale)}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
-}
-
-/**
- * Delete the `orrery_locale` cookie. Provided for completeness +
- * tests; no production caller as of v0.5.x. A future "reset
- * preferences" UI would use this.
- */
-export function clearLocaleCookie(): void {
-  if (!browser) return;
-  const isHttps = location.protocol === 'https:';
-  const secure = isHttps ? '; Secure' : '';
-  document.cookie = `${LOCALE_COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
-}
-
-/**
- * Build a relative URL string with `?lang=<locale>` set (or removed
- * if the locale is `DEFAULT_LOCALE`). Preserves existing query params,
- * pathname, and hash.
- *
- * Used by the layout effect for first-visit URL canonicalisation
- * (Issue #73 Gap 1) so a German visitor landing on `/explore` with
- * no `?lang=` ends up at `/explore?lang=de` after the first frame.
- * The URL is then bookmarkable and shareable with correct semantics.
- */
-export function canonicaliseLocaleInUrl(url: URL, locale: LocaleCode): string {
-  const next = new URL(url.toString());
-  if (locale === DEFAULT_LOCALE) {
-    next.searchParams.delete('lang');
-  } else {
-    next.searchParams.set('lang', locale);
-  }
-  return `${next.pathname}${next.search}${next.hash}`;
-}
-
-/**
- * True iff the URL is in canonical form for the resolved locale.
- * Used by the layout effect to decide whether canonicalisation would
- * change anything — short-circuits a no-op `goto` and prevents loops.
- *
- * Canonical means EITHER:
- *  - `?lang=` is absent and resolved === DEFAULT_LOCALE (bare URL, default locale), OR
- *  - `?lang=` is present and exactly equals the resolved locale
- *    (explicit user choice; preserved even when the choice is en-US,
- *     so that `?lang=en-US` shared by a non-English-browser sender
- *     still pins English for the recipient).
- *
- * Non-canonical (rewrite-needed) cases:
- *  - `?lang=` absent, resolved !== DEFAULT_LOCALE  (auto-detected non-default
- *    needs to be promoted into the URL).
- *  - `?lang=xx` (invalid) — `resolveLocale` ignored it, so the param
- *    differs from the resolved locale → strip + replace with the
- *    resolved value (or just strip if resolved is default and
- *    we want to keep the URL minimal — `canonicaliseLocaleInUrl`
- *    handles the strip).
- */
-export function isLocaleUrlCanonical(url: URL, locale: LocaleCode): boolean {
-  const langParam = url.searchParams.get('lang');
-  if (langParam === locale) return true;
-  return langParam === null && locale === DEFAULT_LOCALE;
-}
-
 /** True when locale should render with right-to-left document flow. */
 export function isRtlLocale(locale: LocaleCode): boolean {
   return RTL_LOCALES.has(locale);
 }
 
 /**
+ * Active locale as resolved by Paraglide's URL strategy. Reads the
+ * locale prefix from `window.location` on the client; on the server
+ * (prerender) reads from request-bound async-local-storage which
+ * the `paraglideMiddleware` in hooks.server.ts populates.
+ *
+ * Centralises the narrow `LocaleCode` type assertion at one boundary
+ * so callers don't sprinkle `as LocaleCode` casts.
+ */
+export function activeLocale(): LocaleCode {
+  return getLocale() as LocaleCode;
+}
+
+/**
+ * Reactive form of `activeLocale()` for use inside Svelte 5 `$derived`.
+ * Paraglide's `getLocale()` reads from non-reactive sources (URL,
+ * cookie, request scope), so a bare `$derived(activeLocale())` won't
+ * re-fire when the user navigates between `/de/iss` and `/fr/iss`.
+ * This helper takes the SvelteKit `Page` store value as a tracking
+ * dependency: $derived re-runs whenever the URL changes, and
+ * Paraglide's runtime sees the new locale prefix.
+ *
+ * Callers:
+ *   const loc = $derived(localeFromPage($page));
+ */
+export function localeFromPage(page: { url: URL }): LocaleCode {
+  void page.url.pathname;
+  return activeLocale();
+}
+
+/**
  * Mirrors language + direction on <html> for runtime locale changes.
- * Keeps `?lang=` as source-of-truth while allowing CSS logical mirroring.
+ * Paraglide's server-side `transformPageChunk` sets the initial value
+ * on the prerendered HTML; this helper covers client-side picker
+ * switches where the document needs to update without a full reload.
  */
 export function syncDocumentLocaleAttributes(locale: LocaleCode): void {
   if (!browser) return;
   const root = document.documentElement;
   root.setAttribute('lang', locale);
   root.setAttribute('dir', isRtlLocale(locale) ? 'rtl' : 'ltr');
+}
+
+/**
+ * Sanity check that SUPPORTED_LOCALES and Paraglide's compiled
+ * `locales` constant agree. Catches the case where a new locale
+ * lands in `project.inlang/settings.json` but its picker metadata
+ * was forgotten here (would render as a missing chip in LocalePicker).
+ */
+export function assertLocalesInSync(): void {
+  const declared = new Set<string>(locales);
+  for (const code of declared) {
+    if (!SUPPORTED_CODES.has(code)) {
+      throw new Error(
+        `Paraglide declares locale "${code}" but src/lib/locale.ts SUPPORTED_LOCALES is missing it. Add an entry.`,
+      );
+    }
+  }
+  for (const code of SUPPORTED_CODES) {
+    if (!declared.has(code)) {
+      throw new Error(
+        `src/lib/locale.ts SUPPORTED_LOCALES declares "${code}" but Paraglide's locales constant does not. Run npm run i18n:compile.`,
+      );
+    }
+  }
 }

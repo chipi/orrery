@@ -9,54 +9,21 @@
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
-  import { setLocale } from '$lib/paraglide/runtime';
-  import {
-    localeFromPage,
-    isSupportedLocale,
-    syncDocumentLocaleAttributes,
-    canonicaliseLocaleInUrl,
-    isLocaleUrlCanonical,
-  } from '$lib/locale';
+  import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track } from '$lib/analytics';
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
 
-  // Apply the resolved locale to Paraglide BEFORE descendant
-  // components render their `m.foo()` calls. $effect.pre runs
-  // synchronously before each DOM update — early enough that the
-  // first paint of a `?lang=es` URL renders in Spanish, not in
-  // en-US fallback that gets corrected on the second tick.
-  $effect.pre(() => {
-    const code = localeFromPage($page);
-    if (isSupportedLocale(code)) {
-      setLocale(code, { reload: false });
-      syncDocumentLocaleAttributes(code);
-    }
-  });
-
-  // Issue #73 Gap 1: canonicalise the URL after first paint so a
-  // visitor whose locale was resolved from `navigator.language`
-  // (no ?lang= in URL) ends up with the canonical `?lang=<resolved>`
-  // form. Bookmarks + share-links then carry the locale explicitly,
-  // so the recipient sees the same content regardless of their own
-  // browser language. Inversely, an explicit `?lang=en-US` is
-  // stripped to bare URL since en-US is the default.
-  //
-  // replaceState (not push) keeps the back button clean. The
-  // hasLangParam-after-redirect short-circuit prevents loops.
+  // Mirror the active locale onto <html lang>/<html dir> after every
+  // navigation. Paraglide's transformPageChunk sets the initial value
+  // on the prerendered HTML; this effect re-syncs after SPA navigations
+  // between locale-prefixed URLs (e.g. /de/iss → /fr/iss) where the
+  // <html> tag is reused across the document swap.
   $effect(() => {
     if (!browser) return;
-    const url = $page.url;
-    const resolved = localeFromPage($page);
-    if (isLocaleUrlCanonical(url, resolved)) return;
-    const canonical = canonicaliseLocaleInUrl(url, resolved);
-    void goto(canonical, {
-      replaceState: true,
-      noScroll: true,
-      keepFocus: true,
-    });
+    syncDocumentLocaleAttributes(activeLocale);
   });
 
   // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.

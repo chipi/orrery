@@ -1,4 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { compression } from 'vite-plugin-compression2';
 import { defineConfig } from 'vitest/config';
@@ -41,6 +42,27 @@ export default defineConfig({
   },
   preview: { port: 5273, strictPort: true },
   plugins: [
+    // Paraglide 2.x i18n compiler — replaces the standalone CLI step
+    // for dev/build. URL-segment strategy: en-US (baseLocale) lives at
+    // bare paths; other locales are prefixed (e.g. /de/missions). The
+    // bundler statically emits per-locale chunks per route, so each
+    // page ships only its own locale's strings instead of all 14.
+    // Compiles on cold start; subsequent changes to messages/*.json
+    // trigger an incremental rebuild.
+    paraglideVitePlugin({
+      project: './project.inlang',
+      outdir: './src/lib/paraglide',
+      strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+      // Tree-shake every message function out of the client bundle.
+      // The SvelteKit prerender step (hooks.server.ts +
+      // paraglideMiddleware) injects only the messages each per-locale
+      // route actually uses into the emitted HTML, so the client JS
+      // ships ~0 KB for i18n strings instead of all 14 locales' worth.
+      // Trade-off: cross-locale navigation (e.g. /de/iss → /fr/iss)
+      // requires a full reload rather than SPA navigation — LocalePicker
+      // already calls setLocale() which handles this transparently.
+      experimentalMiddlewareLocaleSplitting: true,
+    }),
     sveltekit(),
     // Emit .br and .gz alongside every text-ish asset at build time
     // (GH #273 / W3). nginx serves them with brotli_static / gzip_static
@@ -152,25 +174,20 @@ export default defineConfig({
       },
     }),
   ],
-  // ─── Bundle chunking (issue #224) ───────────────────────────────
-  // Two chunks exceed Vite's default 500 kB chunk-size warning:
-  //   • `three.module.js` — ~513 kB; single-import shared library,
-  //     Vite already auto-chunks it. Can't meaningfully tree-shake
-  //     further at the SvelteKit layer.
-  //   • `messages.js` — ~665 kB; Paraglide's compiled translation
-  //     bundle for all 14 locales. Per-locale code-splitting needs a
-  //     paraglide config change (`outputStructure: 'locale-modules'`)
-  //     + lazy loading at hydration — separate follow-up effort. For
-  //     now, the full bundle ships once and the SW caches it.
-  //
-  // Both are intentional, not regressions. Raise the warning
-  // ceiling to 700 kB so the build log doesn't carry a known-known
-  // every release; anything above that IS worth investigating.
+  // ─── Bundle chunking ────────────────────────────────────────────
+  // `three.module.js` — ~513 kB; single-import shared library, Vite
+  // already auto-chunks it. Can't meaningfully tree-shake further at
+  // the SvelteKit layer. Raise the warning ceiling so the build log
+  // doesn't carry a known-known every release.
   //
   // Note: a previous attempt at `rollupOptions.output.manualChunks =
   // { three: ['three'] }` failed because Three.js is resolved as an
   // external by the sveltekit plugin's auto-bundler. Vite already
   // splits it into its own chunk without help.
+  //
+  // i18n bundle: as of #328, Paraglide 2.x's URL-segment strategy
+  // chunks per-locale automatically — each route ships only its own
+  // locale's compiled messages, not all 14. No manualChunks needed.
   build: {
     chunkSizeWarningLimit: 700,
   },

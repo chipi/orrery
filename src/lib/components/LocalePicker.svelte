@@ -1,50 +1,28 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { goto, invalidateAll } from '$app/navigation';
   import { setLocale } from '$lib/paraglide/runtime';
-  import {
-    SUPPORTED_LOCALES,
-    isSupportedLocale,
-    localeFromPage,
-    writeLocaleCookie,
-    type LocaleCode,
-  } from '$lib/locale';
+  import { SUPPORTED_LOCALES, localeFromPage, type LocaleCode } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { track } from '$lib/analytics';
 
   let open = $state(false);
-  // Currently-resolved locale, derived from the URL each render so the
-  // chip stays in sync if another component changes ?lang=.
   let active = $derived<LocaleCode>(localeFromPage($page));
   let activeEntry = $derived(
     SUPPORTED_LOCALES.find((l) => l.code === active) ?? SUPPORTED_LOCALES[0],
   );
 
   /**
-   * Switch locale: rewrite the URL `?lang=` parameter, persist the
-   * choice via the `orrery_locale` cookie (per ADR-057 — explicit
-   * user-action path only; auto-detect never writes), and tell
-   * Paraglide to use the new tag for compile-time string lookups.
-   *
-   * The cookie write is the single sanctioned exception to the
-   * "no client storage" rule (TA.md). It exists so that a user who
-   * picks a non-browser-default locale doesn't lose that pick on
-   * fresh-URL revisits. URL still wins on the next read.
+   * Switch locale by calling Paraglide's setLocale. With the URL
+   * strategy, Paraglide rewrites the URL (`/missions` → `/de/missions`
+   * or the inverse for baseLocale) and triggers a SvelteKit navigation
+   * by default — no manual goto + invalidateAll needed. We pass
+   * { reload: false } so the navigation stays SPA (no full reload).
    */
-  async function pick(code: LocaleCode) {
+  function pick(code: LocaleCode) {
     open = false;
     if (code === active) return;
-    // Umami custom event: which locales actually get used. Quantifies
-    // the i18n investment. Anonymous, structured props from + to.
     track('locale-switch', { from: active, to: code });
-    const url = new URL($page.url);
-    url.searchParams.set('lang', code);
     setLocale(code, { reload: false });
-    writeLocaleCookie(code);
-    // Stay SPA (no hard refresh) but force all route data/state that depends
-    // on locale to re-run on the active page.
-    await goto(url.pathname + url.search, { replaceState: false, keepFocus: true });
-    await invalidateAll();
   }
 
   // Close dropdown on Escape or outside-click.
@@ -56,13 +34,6 @@
     const target = e.target as HTMLElement | null;
     if (target && !target.closest('[data-locale-picker]')) open = false;
   }
-
-  // Apply the resolved locale to Paraglide on mount + whenever it
-  // changes (e.g. user pastes a `?lang=es` URL). Without this the
-  // chip would show ES but Paraglide would still compile en-US strings.
-  $effect(() => {
-    if (isSupportedLocale(active)) setLocale(active, { reload: false });
-  });
 </script>
 
 <svelte:window onkeydown={onKeydown} onclick={onWindowClick} />

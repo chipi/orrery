@@ -4805,40 +4805,15 @@
         sc.pos.z * SCALE_3D,
       );
 
-      // Polish-wave-3 Fix B — ship-in-frame safety net. Once per
-      // frame, project the spacecraft to normalised-device coords
-      // against the camera position updateCam() just settled. If
-      // the ship is outside the visible safe zone (|ndc.x|>0.85 OR
-      // |ndc.y|>0.85 OR ndc.z>1 = behind camera), nudge camTarget
-      // 30 % toward the ship and bump camR ×1.2, then re-set the
-      // camera. Catches edge cases where the cinematic lerp hasn't
-      // caught a fast-moving target (scrub-jumps across the system,
-      // sub-phase transitions at high sim speed even after Fix A).
-      // Bounded recovery — the ship can't drift off-screen for more
-      // than ~2 frames.
-      //
-      // Skipped during deliberate composed beats:
-      //   - Moon mission (cislunar has its own ship-centric framing)
-      //   - inCinematicHeldBeat = true (W3.1 peak hold / W3.2
-      //     afterglow / W3.4 finale lock — those frames are composed
-      //     by design and may legitimately have the ship offset or
-      //     hidden behind the body)
-      if (!isMoonMission && !inCinematicHeldBeat) {
-        const ndc = scWorld.clone().project(camera);
-        const offScreen =
-          Math.abs(ndc.x) > 0.85 || Math.abs(ndc.y) > 0.85 || ndc.z > 1 || ndc.z < -1;
-        if (offScreen) {
-          camTarget.x += (scWorld.x - camTarget.x) * 0.3;
-          camTarget.z += (scWorld.z - camTarget.z) * 0.3;
-          camR *= 1.2;
-          camera.position.set(
-            camTarget.x + camR * Math.sin(camP) * Math.sin(camT),
-            camTarget.y + camR * Math.cos(camP),
-            camTarget.z + camR * Math.sin(camP) * Math.cos(camT),
-          );
-          camera.lookAt(camTarget);
-        }
-      }
+      // Fix B (ship-in-frame safety net) was reverted in commit
+      // 5a4… — it fought the cinematic LERP (both nudged camTarget
+      // each frame in opposite directions) AND compounded camR ×1.2
+      // every frame the ship was off-screen, which caused the camera
+      // to zoom out unboundedly during the post-Jupiter cruise. Fix A
+      // alone (sim-speed-aware lerp + arc rotation, see updateCam
+      // closure) covers the original "all black" symptom; if edge
+      // cases remain, a non-conflicting safety net would need to
+      // operate on the camera lerp target, not the live camTarget.
 
       const earthWorld = earthMesh.position;
       const marsWorld = marsMesh.position;

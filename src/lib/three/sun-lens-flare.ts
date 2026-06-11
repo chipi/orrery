@@ -110,8 +110,7 @@ export function buildSunLensFlare(opts: {
       // sun NDC magnitude > 1 it's off-screen, no flare needed.
       const r = Math.hypot(sunScreen.x, sunScreen.y);
       const visiblityFactor = Math.max(0, 1 - r * 0.9);
-      (sprites[i].material as THREE.SpriteMaterial).opacity =
-        spec.opacity * visiblityFactor;
+      (sprites[i].material as THREE.SpriteMaterial).opacity = spec.opacity * visiblityFactor;
     }
   }
 

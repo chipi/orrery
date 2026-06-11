@@ -3372,8 +3372,7 @@
         // makes any object's plane appear angled — Saturn's disc
         // sits askew, which reads as "ring plane oriented obliquely"
         // even without explicit rings.
-        const isSaturnOI =
-          activeEvt?.type === 'edl_or_oi' && flyby?.id === 'saturn';
+        const isSaturnOI = activeEvt?.type === 'edl_or_oi' && flyby?.id === 'saturn';
         targetP = isSaturnOI ? 1.25 : HELIO_APPROACH_P;
         saturnOIComposition = isSaturnOI;
         if (sub !== lastHelioSubPhase) {
@@ -5921,9 +5920,8 @@
           // units; BokehPass interprets it as world-space depth.
           if (helioHandles.bokehPass && scLastWorld) {
             const focusDist = camera.position.distanceTo(scLastWorld);
-            (
-              helioHandles.bokehPass.uniforms as Record<string, { value: number }>
-            ).focus.value = focusDist;
+            (helioHandles.bokehPass.uniforms as Record<string, { value: number }>).focus.value =
+              focusDist;
           }
           // Sun lens flare ghost-position update — cinematic only. The
           // helper recomputes sprite world positions from the Sun's
@@ -6282,20 +6280,14 @@
     <div class="perf-toast" role="status" aria-live="polite">
       <div class="perf-toast-title">PERFORMANCE</div>
       <div class="perf-toast-body">
-        Frame time averaging {perfToastAvgMs.toFixed(0)} ms.
-        Drop to <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
+        Frame time averaging {perfToastAvgMs.toFixed(0)} ms. Drop to
+        <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
       </div>
       <div class="perf-toast-actions">
-        <button
-          type="button"
-          class="perf-toast-apply"
-          onclick={applyPerfSuggestion}
-        >Apply & reload</button>
-        <button
-          type="button"
-          class="perf-toast-dismiss"
-          onclick={dismissPerfToast}
-        >Not now</button>
+        <button type="button" class="perf-toast-apply" onclick={applyPerfSuggestion}
+          >Apply & reload</button
+        >
+        <button type="button" class="perf-toast-dismiss" onclick={dismissPerfToast}>Not now</button>
       </div>
     </div>
   {/if}
@@ -6307,8 +6299,8 @@
           type="button"
           class="settings-close"
           onclick={toggleSettings}
-          aria-label="Close settings"
-        >×</button>
+          aria-label="Close settings">×</button
+        >
       </div>
       <div class="settings-section">
         <div class="settings-section-title">Graphics Quality</div>
@@ -6340,11 +6332,9 @@
         {#if qualityDirty}
           <div class="settings-reload-hint">
             Reload required to apply.
-            <button
-              type="button"
-              class="settings-reload-btn"
-              onclick={reloadForQuality}
-            >Reload now</button>
+            <button type="button" class="settings-reload-btn" onclick={reloadForQuality}
+              >Reload now</button
+            >
           </div>
         {/if}
       </div>
@@ -6622,7 +6612,8 @@
       </div>
     {/if}
     {@const hasLoadedLauncher = openingFleetAssets.some((a) => a.role === 'launcher')}
-    {@const showSyntheticLauncher = !hasLoadedLauncher && mission.vehicle && mission.vehicle !== '—'}
+    {@const showSyntheticLauncher =
+      !hasLoadedLauncher && mission.vehicle && mission.vehicle !== '—'}
     {#if openingFleetOpacity > 0 && (openingFleetAssets.length > 0 || showSyntheticLauncher)}
       <div
         class="opening-fleet"

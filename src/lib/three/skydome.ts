@@ -127,8 +127,10 @@ function paintStarField(ctx: CanvasRenderingContext2D, count: number): void {
     // Slight color variation — warm/cold star bias.
     const colorRoll = rand();
     let color: string;
-    if (colorRoll < 0.15) color = `rgba(255, 220, 200, ${a})`; // warm
-    else if (colorRoll < 0.25) color = `rgba(200, 220, 255, ${a})`; // cool
+    if (colorRoll < 0.15)
+      color = `rgba(255, 220, 200, ${a})`; // warm
+    else if (colorRoll < 0.25)
+      color = `rgba(200, 220, 255, ${a})`; // cool
     else color = `rgba(245, 245, 235, ${a})`; // neutral
     ctx.fillStyle = color;
     ctx.beginPath();

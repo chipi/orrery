@@ -108,10 +108,7 @@ export function attachFrameMonitor(opts: FrameMonitorOptions): FrameMonitorHandl
     const avg = totalDt / samples.length;
     if (avg > frameBudgetMs) {
       if (firstOverBudgetAt < 0) firstOverBudgetAt = t;
-      if (
-        t - firstOverBudgetAt >= sustainedFor &&
-        t - lastStruggleFiredAt >= cooldownMs
-      ) {
+      if (t - firstOverBudgetAt >= sustainedFor && t - lastStruggleFiredAt >= cooldownMs) {
         lastStruggleFiredAt = t;
         firstOverBudgetAt = -1;
         opts.onStruggle(avg);

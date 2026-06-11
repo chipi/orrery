@@ -696,17 +696,57 @@
   let localizedPlanets: LocalizedPlanet[] = $state([]);
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
-  let panelOpen = $state(false);
-  let sunPanelOpen = $state(false);
-  let sizesOpen = $state(false);
+
+  // ─── Consolidated panel / layer / camera state (Action 7, #326) ──
+  // Replaced 11 standalone $state bools previously scattered between
+  // lines 699..1205. Three typed bags + a single reset funnel make
+  // the surface easier to scan and impossible to half-reset on
+  // route exit or canvas-clear.
+
+  /** Detail-panel toggles — closed all-at-once by `resetExplorePanelState`. */
+  let panelState = $state({
+    planet: false,
+    sun: false,
+    sizes: false,
+    smallBody: false,
+    satellite: false,
+    belt: false,
+    pathsLegend: false,
+  });
+
+  /** Visibility-layer master toggles (NOT the per-body layer flags —
+   *  those live in `layers` further down). */
+  let layerState = $state({
+    lens: false,
+    hover: false,
+    statsOverlay: false,
+  });
+
+  /** `cameraState.focusedOnPlanet` flips true when the camera transition into a
+   *  selected planet completes — gates gravity / atmo / temp overlay
+   *  rows so they only paint after the camera settles. */
+  let cameraState = $state({
+    focusedOnPlanet: false,
+  });
+
+  /** Close every detail panel in one call. */
+  function resetExplorePanelState(): void {
+    panelState.planet = false;
+    panelState.sun = false;
+    panelState.sizes = false;
+    panelState.smallBody = false;
+    panelState.satellite = false;
+    panelState.belt = false;
+    panelState.pathsLegend = false;
+  }
+
   let selectedSmallBodyId: string | null = $state(null);
-  let smallBodyPanelOpen = $state(false);
 
   // Tour collaboration (PRD-016 §S11 / RFC-019 §12): when a detail panel
   // opens while the Curator Tour is active, collapse the audio overlay to
   // compact mode so the panel the narrator just opened is fully visible.
   $effect(() => {
-    if (audio.tourActive && (panelOpen || sunPanelOpen || smallBodyPanelOpen) && !audio.compact) {
+    if (audio.tourActive && (panelState.planet || panelState.sun || panelState.smallBody) && !audio.compact) {
       audio.compact = true;
     }
   });
@@ -718,13 +758,11 @@
   // uniquely keyed by `${parentPlanetId}:${satelliteId}` to keep
   // collisions impossible if two parents ever share a moon name.
   let selectedSatelliteKey: string | null = $state(null);
-  let satellitePanelOpen = $state(false);
 
   // Belt selection (v0.7.x — user feedback 2026-06-06). One of
   // 'asteroid' | 'kuiper'; opens the BeltPanel via the same pickAid
   // raycast path the planets / small bodies use.
   let selectedBeltId: string | null = $state(null);
-  let beltPanelOpen = $state(false);
 
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
@@ -741,13 +779,13 @@
     paths: false,
   });
   // ESC closes the sizes overlay. Using a window listener here (gated
-  // by sizesOpen) so the dialog is keyboard-dismissible without a
+  // by panelState.sizes) so the dialog is keyboard-dismissible without a
   // svelte:window element inside the {#if} block, which prettier
   // doesn't like nested.
   $effect(() => {
-    if (!sizesOpen) return;
+    if (!panelState.sizes) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') sizesOpen = false;
+      if (e.key === 'Escape') panelState.sizes = false;
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -780,12 +818,10 @@
   // did (always-on terse text). When the lens is on but the 'hover'
   // layer is off, the tooltip is hidden — letting users opt for a
   // fully clean view of the scene.
-  let lensOn = $state(false);
-  let hoverLayerOn = $state(false);
   let stopLensWatch: (() => void) | undefined;
   let stopHoverLayerWatch: (() => void) | undefined;
-  let tooltipVisible = $derived(hoverData !== null && (!lensOn || hoverLayerOn));
-  let tooltipExpanded = $derived(lensOn && hoverLayerOn);
+  let tooltipVisible = $derived(hoverData !== null && (!layerState.lens || layerState.hover));
+  let tooltipExpanded = $derived(layerState.lens && layerState.hover);
   let cleanup: (() => void) | undefined;
   // Audio-tour camera-control listener teardown — set inside onMount
   // where camR / camT closures live, called from the main cleanup
@@ -943,7 +979,6 @@
     },
   ];
   let pathsLegendMission: Mission | null = $state(null);
-  let pathsLegendOpen = $state(false);
   // Which trajectory's color is currently solo'd (legend hover, or canvas
   // hover on the Today marker). null = all dim. Effect below pushes the
   // value into each handle's setHighlight so the bright/dim state lives
@@ -963,7 +998,7 @@
     const m = await getMission(missionId, entry.dest, localeFromPage($page));
     if (m) {
       pathsLegendMission = m;
-      pathsLegendOpen = true;
+      panelState.pathsLegend = true;
     }
   }
 
@@ -1011,11 +1046,11 @@
   let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
-  // overlays. `focusedOnPlanet` flips true when the camera completes
+  // overlays. `cameraState.focusedOnPlanet` flips true when the camera completes
   // a fly-to a planet, false on Reset View / Sun selection. Drives
   // the Earth-comparison ghost (E.2, always-on at focus) and the
-  // tactical stats overlay (E.4, lens-gated).
-  let focusedOnPlanet = $state(false);
+  // tactical stats overlay (E.4, lens-gated). Lives in `cameraState`
+  // bag — see top-of-file declaration.
 
   // Per-planet stats for the tactical overlay. Values are real
   // (surface gravity in g, atmospheric pressure in bar, sidereal
@@ -1159,7 +1194,7 @@
   // selected. Real diameters in km. Keyed by satellite id (without
   // the parent-planet prefix used in selectedSatelliteKey). Only
   // diameter info is needed today — the tactical-scan overlay still
-  // gates on `focusedOnPlanet` so the gravity / atmo / temp rows
+  // gates on `cameraState.focusedOnPlanet` so the gravity / atmo / temp rows
   // stay planet-only. Earth = 12 742 km.
   const SATELLITE_STATS: Record<string, { diameterKm: number; diameterRatioEarth: number }> = {
     moon: { diameterKm: 3474, diameterRatioEarth: 0.273 },
@@ -1202,7 +1237,6 @@
     const lminEarth = earth ? Math.abs(planet.a - earth.a) * 8.317 : null;
     return { fromSunMin: lminSun, fromEarthMin: lminEarth };
   });
-  let statsOverlayOn = $state(false);
 
   // Plumbed into the 3D scene's RAF tween from inside onMount once
   // the planetObjs array is built. Top-level selectPlanet / selectSun
@@ -1214,30 +1248,30 @@
 
   function selectPlanet(id: string) {
     selectedId = id;
-    panelOpen = true;
-    sunPanelOpen = false;
-    smallBodyPanelOpen = false;
-    satellitePanelOpen = false;
-    beltPanelOpen = false;
+    panelState.planet = true;
+    panelState.sun = false;
+    panelState.smallBody = false;
+    panelState.satellite = false;
+    panelState.belt = false;
     flyToBodyFn?.(id);
   }
 
   function selectSun() {
-    sunPanelOpen = true;
-    panelOpen = false;
-    smallBodyPanelOpen = false;
-    satellitePanelOpen = false;
-    beltPanelOpen = false;
+    panelState.sun = true;
+    panelState.planet = false;
+    panelState.smallBody = false;
+    panelState.satellite = false;
+    panelState.belt = false;
     flyToBodyFn?.(null);
   }
 
   function selectSmallBody(id: string) {
     selectedSmallBodyId = id;
-    smallBodyPanelOpen = true;
-    panelOpen = false;
-    sunPanelOpen = false;
-    satellitePanelOpen = false;
-    beltPanelOpen = false;
+    panelState.smallBody = true;
+    panelState.planet = false;
+    panelState.sun = false;
+    panelState.satellite = false;
+    panelState.belt = false;
   }
 
   // Natural-satellite selection (#304 Slice 1). Compound key
@@ -1247,21 +1281,21 @@
   // the other select* — only one detail panel is ever open.
   function selectSatellite(parentPlanetId: string, satelliteId: string) {
     selectedSatelliteKey = `${parentPlanetId}:${satelliteId}`;
-    satellitePanelOpen = true;
-    panelOpen = false;
-    sunPanelOpen = false;
-    smallBodyPanelOpen = false;
-    beltPanelOpen = false;
+    panelState.satellite = true;
+    panelState.planet = false;
+    panelState.sun = false;
+    panelState.smallBody = false;
+    panelState.belt = false;
   }
 
   // Belt selection (v0.7.x). Same panel-mutex pattern.
   function selectBelt(id: string) {
     selectedBeltId = id;
-    beltPanelOpen = true;
-    panelOpen = false;
-    sunPanelOpen = false;
-    smallBodyPanelOpen = false;
-    satellitePanelOpen = false;
+    panelState.belt = true;
+    panelState.planet = false;
+    panelState.sun = false;
+    panelState.smallBody = false;
+    panelState.satellite = false;
   }
 
   // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
@@ -1301,11 +1335,11 @@
   });
 
   function closePanel() {
-    panelOpen = false;
+    panelState.planet = false;
   }
 
   function closeSunPanel() {
-    sunPanelOpen = false;
+    panelState.sun = false;
   }
 
   function onPlanMission() {
@@ -1321,10 +1355,10 @@
     // so they're safe inside onMount. When either flips we re-derive
     // tooltip visibility / expansion via the existing $derived above.
     stopLensWatch = onScienceLensChange((on) => {
-      lensOn = on;
+      layerState.lens = on;
     });
     stopHoverLayerWatch = onLayerChange('hover', (on) => {
-      hoverLayerOn = on;
+      layerState.hover = on;
     });
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
@@ -2490,7 +2524,7 @@
     // element below); just track the layer's on/off state in a
     // script-level $state so the template's {#if} reads it directly.
     const stopExplorePlanetStatsLayer = onLayerChange('planet-stats', (on) => {
-      statsOverlayOn = on;
+      layerState.statsOverlay = on;
     });
 
     // ── Small bodies (3D) ─────────────────────────────────────────
@@ -2716,7 +2750,7 @@
         flyToP = Math.max(0.08, Math.min(Math.PI * 0.48, camP));
         flyToT = camT;
         focusedPlanetObj = next;
-        focusedOnPlanet = true;
+        cameraState.focusedOnPlanet = true;
       } else {
         flyToOrigin.set(0, 0, 0);
         flyToR = HELIO_DEFAULT_CAMR;
@@ -2725,7 +2759,7 @@
         flyToMinR = 60;
         flyToMaxR = 1400;
         focusedPlanetObj = null;
-        focusedOnPlanet = false;
+        cameraState.focusedOnPlanet = false;
       }
       flyStart = performance.now();
       flyActive = true;
@@ -4319,12 +4353,12 @@
     type="button"
     class="earth-compare"
     aria-label={m.explore_sizes_toggle()}
-    onclick={() => (sizesOpen = !sizesOpen)}
+    onclick={() => (panelState.sizes = !panelState.sizes)}
     data-testid="sizes-toggle"
   >
     <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
     <span class="earth-compare-label">
-      {#if focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
+      {#if cameraState.focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
         EARTH FOR SCALE<br />
         <span class="ratio">{focusedStats.diameterRatioEarth.toFixed(2)}× diameter</span>
       {:else if focusedSatelliteStats}
@@ -4344,7 +4378,7 @@
   <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
        atmospheric pressure, rotation period. Lens-gated by the
        'planet-stats' layer. Only when also focused on a planet. -->
-  {#if focusedOnPlanet && statsOverlayOn && selectedId && focusedStats}
+  {#if cameraState.focusedOnPlanet && layerState.statsOverlay && selectedId && focusedStats}
     <div class="tactical-scan" aria-hidden="true">
       <div class="scan-eyebrow">{m.explore_scan_eyebrow({ planet: selectedId.toUpperCase() })}</div>
       <div class="scan-row">
@@ -4477,11 +4511,7 @@
             selectedSmallBodyId = null;
             selectedSatelliteKey = null;
             selectedBeltId = null;
-            panelOpen = false;
-            sunPanelOpen = false;
-            smallBodyPanelOpen = false;
-            satellitePanelOpen = false;
-            beltPanelOpen = false;
+            resetExplorePanelState();
             flyToBodyFn?.(null);
           }}
           data-testid="explore-reset-view"
@@ -4557,7 +4587,7 @@
         >
           ⓘ Why are they all in one plane?
         </a>
-        {#each PATHS_LEGEND as entry}
+        {#each PATHS_LEGEND as entry (entry.mission_id)}
           <button
             type="button"
             class="paths-legend-row"
@@ -4571,7 +4601,7 @@
             <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
             <span class="name">{entry.name}</span>
             <span class="logos" aria-hidden="true">
-              {#each agencyToLogoPaths(entry.agency) as logoPath}
+              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
                 <img src={logoPath} alt="" loading="lazy" />
               {/each}
             </span>
@@ -4582,21 +4612,21 @@
     {/if}
   </div>
 
-  {#if sizesOpen}
+  {#if panelState.sizes}
     <!-- Size comparison overlay — modal-style, mirrors selected planet
          (if any) so the user keeps context. ESC + backdrop click close. -->
     <button
       type="button"
       class="sizes-backdrop"
       aria-label={m.explore_sizes_close()}
-      onclick={() => (sizesOpen = false)}
+      onclick={() => (panelState.sizes = false)}
     ></button>
     <div class="sizes-card" role="dialog" aria-modal="true" aria-label={m.explore_sizes_toggle()}>
       <button
         type="button"
         class="sizes-close"
         aria-label={m.explore_sizes_close()}
-        onclick={() => (sizesOpen = false)}>×</button
+        onclick={() => (panelState.sizes = false)}>×</button
       >
       <div class="sizes-canvas-wrap">
         <SizesCanvas highlightId={selectedId} />
@@ -4660,31 +4690,31 @@
 
 <PlanetPanel
   planet={selectedPlanet}
-  open={panelOpen}
+  open={panelState.planet}
   onClose={closePanel}
   onPlanMission={selectedPlanet?.missionable ? onPlanMission : undefined}
 />
 
-<SunPanel sun={localizedSun} open={sunPanelOpen} onClose={closeSunPanel} />
+<SunPanel sun={localizedSun} open={panelState.sun} onClose={closeSunPanel} />
 
 <SmallBodyPanel
   body={selectedSmallBody}
-  open={smallBodyPanelOpen}
-  onClose={() => (smallBodyPanelOpen = false)}
+  open={panelState.smallBody}
+  onClose={() => (panelState.smallBody = false)}
 />
 
 <SatellitePanel
   satelliteKey={selectedSatelliteKey}
-  open={satellitePanelOpen}
-  onClose={() => (satellitePanelOpen = false)}
+  open={panelState.satellite}
+  onClose={() => (panelState.satellite = false)}
 />
 
-<BeltPanel beltId={selectedBeltId} open={beltPanelOpen} onClose={() => (beltPanelOpen = false)} />
+<BeltPanel beltId={selectedBeltId} open={panelState.belt} onClose={() => (panelState.belt = false)} />
 
 <MissionPanel
   mission={pathsLegendMission}
-  open={pathsLegendOpen}
-  onClose={() => (pathsLegendOpen = false)}
+  open={panelState.pathsLegend}
+  onClose={() => (panelState.pathsLegend = false)}
 />
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic

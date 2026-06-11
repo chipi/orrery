@@ -39,6 +39,7 @@
     currentChip,
     buildPiecewiseMapping,
   } from '$lib/station-assembly-anim';
+  import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -245,16 +246,16 @@
 
   // Shared between Svelte state + the Three.js animate() closure. Updating
   // any field on the next frame applies it in-scene — no event plumbing.
-  const assemblyRef: {
-    active: boolean;
-    playing: boolean;
-    progress: number;
-  } = { active: false, playing: false, progress: 0 };
+  // See `$lib/station-assembly-state` for the type + helpers shared with
+  // /tiangong.
+  const assemblyRef = createAssemblyRef();
 
   $effect(() => {
-    assemblyRef.active = assemblyOpen;
-    assemblyRef.playing = assemblyPlaying;
-    assemblyRef.progress = assemblyProgress;
+    syncAssemblyRef(assemblyRef, {
+      open: assemblyOpen,
+      playing: assemblyPlaying,
+      progress: assemblyProgress,
+    });
   });
 
   let requestIssMaterialRefresh: () => void = () => {};

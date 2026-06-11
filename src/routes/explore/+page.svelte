@@ -7,6 +7,8 @@
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { disposeScene } from '$lib/three/dispose-object3d';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import {
     buildIconicTrajectory,
     type IconicTrajectoryData,
@@ -1362,6 +1364,11 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Single registry for every listener + disposable this scene
+    // owns. The bottom-of-onMount cleanup block drains it LIFO. See
+    // $lib/three/route-lifecycle.
+    const lifecycle = createRouteLifecycle();
 
     // Hover-card lens subscriptions. Both signals start in browser only,
     // so they're safe inside onMount. When either flips we re-derive
@@ -3328,18 +3335,18 @@
     };
 
     el3d.style.cursor = 'grab';
-    el3d.addEventListener('mousedown', on3dMouseDown);
-    el3d.addEventListener('contextmenu', onContextMenu3d);
-    window.addEventListener('mousemove', on3dMouseMove);
-    window.addEventListener('mouseup', on3dMouseUp);
+    lifecycle.on(el3d, 'mousedown', on3dMouseDown);
+    lifecycle.on(el3d, 'contextmenu', onContextMenu3d);
+    lifecycle.on(window, 'mousemove', on3dMouseMove);
+    lifecycle.on(window, 'mouseup', on3dMouseUp);
     // passive: false so on3dWheel can preventDefault against trackpad
     // pinch (macOS Ctrl+wheel) hijacking browser zoom.
-    el3d.addEventListener('wheel', on3dWheel, { passive: false });
-    el3d.addEventListener('touchstart', on3dTouchStart, { passive: true });
-    el3d.addEventListener('touchmove', on3dTouchMove, { passive: true });
-    el3d.addEventListener('touchend', on3dTouchEnd);
-    el3d.addEventListener('mousemove', onHover);
-    el3d.addEventListener('mouseleave', onHoverLeave);
+    lifecycle.on(el3d, 'wheel', on3dWheel, { passive: false });
+    lifecycle.on(el3d, 'touchstart', on3dTouchStart, { passive: true });
+    lifecycle.on(el3d, 'touchmove', on3dTouchMove, { passive: true });
+    lifecycle.on(el3d, 'touchend', on3dTouchEnd);
+    lifecycle.on(el3d, 'mousemove', onHover);
+    lifecycle.on(el3d, 'mouseleave', onHoverLeave);
 
     // ──────────────────────────────────────────────────────────────
     // 2D — Canvas top-down view (pan + zoom)
@@ -3534,13 +3541,13 @@
     };
 
     c2.style.cursor = 'grab';
-    c2.addEventListener('wheel', on2dWheel, { passive: false });
-    c2.addEventListener('mousedown', on2dMouseDown);
-    window.addEventListener('mouseup', on2dMouseUp);
-    window.addEventListener('mousemove', on2dMouseMove);
-    c2.addEventListener('touchstart', on2dTouchStart, { passive: true });
-    c2.addEventListener('touchmove', on2dTouchMove, { passive: true });
-    c2.addEventListener('touchend', on2dTouchEnd);
+    lifecycle.on(c2, 'wheel', on2dWheel, { passive: false });
+    lifecycle.on(c2, 'mousedown', on2dMouseDown);
+    lifecycle.on(window, 'mouseup', on2dMouseUp);
+    lifecycle.on(window, 'mousemove', on2dMouseMove);
+    lifecycle.on(c2, 'touchstart', on2dTouchStart, { passive: true });
+    lifecycle.on(c2, 'touchmove', on2dTouchMove, { passive: true });
+    lifecycle.on(c2, 'touchend', on2dTouchEnd);
 
     // ──────────────────────────────────────────────────────────────
     // 2D draw — ported from P01 lines 393–533
@@ -3923,7 +3930,7 @@
         h.onResize(container.clientWidth, container.clientHeight);
       }
     };
-    window.addEventListener('resize', onResize);
+    lifecycle.on(window, 'resize', onResize);
 
     // ──────────────────────────────────────────────────────────────
     // Animation loop — dispatches by `view`
@@ -3931,15 +3938,22 @@
 
     let simT = 0;
     let lastTime = performance.now();
-    let rafId = 0;
     let reducedMotion = false;
     const stopReducedMotionWatch = onReducedMotionChange((r) => {
       reducedMotion = r;
     });
-    const animate = (now: number) => {
-      rafId = requestAnimationFrame(animate);
-      const dt = Math.min((now - lastTime) / 1000, 0.05);
-      lastTime = now;
+    lifecycle.add(stopReducedMotionWatch);
+
+    // raf pump with the TA.md document.hidden contract baked in. The
+    // local `reducedMotion` flag still gates the per-frame sim-time
+    // advance (ADR-025) — we don't hand it to createAnimateLoop's
+    // reducedMotion option because user-initiated camera drag still
+    // needs to update the render even when sim time is frozen.
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        const now = performance.now();
+        const dt = Math.min((now - lastTime) / 1000, 0.05);
+        lastTime = now;
       // ADR-025: when prefers-reduced-motion is set we freeze sim
       // time. User-initiated camera drag still works.
       if (!reducedMotion) simT += dt * 0.04;
@@ -4272,58 +4286,45 @@
       } else {
         draw2d();
       }
-    };
-    animate(performance.now());
+      },
+    });
+    lifecycle.add(loop.cleanup);
+    loop.start();
 
-    cleanup = () => {
-      cancelAnimationFrame(rafId);
-      stopReducedMotionWatch();
-      stopLensWatch?.();
-      stopHoverLayerWatch?.();
-      stopExploreGravityLayer?.();
-      stopExploreVelocityLayer?.();
-      stopExploreCentripetalLayer?.();
-      stopExploreGalaxiesLayer?.();
-      stopExploreHillSphereLayer?.();
-      stopExploreLagrangeLayer?.();
-      stopExploreMagnetosphereLayer?.();
-      stopExploreSubSolarLayer?.();
-      stopExplorePlanetStatsLayer?.();
-      localGroup.dispose();
-      el3d.removeEventListener('mousedown', on3dMouseDown);
-      el3d.removeEventListener('contextmenu', onContextMenu3d);
-      window.removeEventListener('mousemove', on3dMouseMove);
-      window.removeEventListener('mouseup', on3dMouseUp);
-      el3d.removeEventListener('wheel', on3dWheel);
-      el3d.removeEventListener('touchstart', on3dTouchStart);
-      el3d.removeEventListener('touchmove', on3dTouchMove);
-      el3d.removeEventListener('touchend', on3dTouchEnd);
-      el3d.removeEventListener('mousemove', onHover);
-      el3d.removeEventListener('mouseleave', onHoverLeave);
-      c2.removeEventListener('wheel', on2dWheel);
-      c2.removeEventListener('mousedown', on2dMouseDown);
-      window.removeEventListener('mouseup', on2dMouseUp);
-      window.removeEventListener('mousemove', on2dMouseMove);
-      c2.removeEventListener('touchstart', on2dTouchStart);
-      c2.removeEventListener('touchmove', on2dTouchMove);
-      c2.removeEventListener('touchend', on2dTouchEnd);
-      window.removeEventListener('resize', onResize);
-      disposeScene(scene);
-      // #287 — dispose lazy-loaded 4K textures that are held in
-      // closures / per-planet state. disposeScene walks the scene
-      // graph, but a planet's `lod.tex4k` may have been loaded
-      // without ever being assigned to material.map (user zoomed
-      // close but the texture finished loading after the camera
-      // pulled back), and the Sun's 4K texture lives outside the
-      // PLANETS loop. Without these explicit disposes those
-      // textures stay resident in GPU memory after route teardown.
-      sunMap4k?.dispose();
+    // Disposables that aren't a listener live in the same chain. LIFO
+    // drain so the most recently added run first; layer-stop callbacks
+    // are non-null only when the corresponding overlay registered.
+    if (stopLensWatch) lifecycle.add(stopLensWatch);
+    if (stopHoverLayerWatch) lifecycle.add(stopHoverLayerWatch);
+    if (stopExploreGravityLayer) lifecycle.add(stopExploreGravityLayer);
+    if (stopExploreVelocityLayer) lifecycle.add(stopExploreVelocityLayer);
+    if (stopExploreCentripetalLayer) lifecycle.add(stopExploreCentripetalLayer);
+    if (stopExploreGalaxiesLayer) lifecycle.add(stopExploreGalaxiesLayer);
+    if (stopExploreHillSphereLayer) lifecycle.add(stopExploreHillSphereLayer);
+    if (stopExploreLagrangeLayer) lifecycle.add(stopExploreLagrangeLayer);
+    if (stopExploreMagnetosphereLayer) lifecycle.add(stopExploreMagnetosphereLayer);
+    if (stopExploreSubSolarLayer) lifecycle.add(stopExploreSubSolarLayer);
+    if (stopExplorePlanetStatsLayer) lifecycle.add(stopExplorePlanetStatsLayer);
+    lifecycle.add(() => localGroup.dispose());
+    lifecycle.add(() => disposeScene(scene));
+    // #287 — dispose lazy-loaded 4K textures that are held in
+    // closures / per-planet state. disposeScene walks the scene
+    // graph, but a planet's `lod.tex4k` may have been loaded
+    // without ever being assigned to material.map (user zoomed
+    // close but the texture finished loading after the camera
+    // pulled back), and the Sun's 4K texture lives outside the
+    // PLANETS loop. Without these explicit disposes those
+    // textures stay resident in GPU memory after route teardown.
+    lifecycle.add(() => sunMap4k?.dispose());
+    lifecycle.add(() => {
       for (const obj of planetObjs) {
         obj.lod?.tex4k?.dispose();
       }
-      renderer.dispose();
-      el3d.remove();
-    };
+    });
+    lifecycle.add(() => renderer.dispose());
+    lifecycle.add(() => el3d.remove());
+
+    cleanup = () => lifecycle.cleanup();
   });
 
   onDestroy(() => {

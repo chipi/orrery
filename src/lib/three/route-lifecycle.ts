@@ -33,19 +33,38 @@
  * in the route's lifecycle setup, not seven.
  */
 
-type EventTargetLike = {
-  addEventListener: (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void;
-  removeEventListener: (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions) => void;
-};
-
 export interface RouteLifecycle {
   /**
    * Register an event listener + matching removeEventListener in one
    * call. The listener is added immediately; the matching removal
    * runs as part of `cleanup()`.
+   *
+   * The signature mirrors the native DOM `addEventListener` so route
+   * code reads identically whether or not it's going through the
+   * lifecycle. Specifically, the WindowEventMap / DocumentEventMap /
+   * HTMLElementEventMap overloads each preserve the typed event arg
+   * (`MouseEvent`, `PointerEvent`, etc.) without an `as any` cast.
    */
-  on<E extends EventTargetLike>(
-    target: E,
+  on<E extends keyof WindowEventMap>(
+    target: Window,
+    event: E,
+    listener: (this: Window, ev: WindowEventMap[E]) => unknown,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  on<E extends keyof DocumentEventMap>(
+    target: Document,
+    event: E,
+    listener: (this: Document, ev: DocumentEventMap[E]) => unknown,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  on<T extends HTMLElement, E extends keyof HTMLElementEventMap>(
+    target: T,
+    event: E,
+    listener: (this: T, ev: HTMLElementEventMap[E]) => unknown,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  on(
+    target: EventTarget,
     event: string,
     listener: EventListenerOrEventListenerObject,
     options?: boolean | AddEventListenerOptions,
@@ -74,7 +93,12 @@ export function createRouteLifecycle(): RouteLifecycle {
   let disposed = false;
 
   return {
-    on(target, event, listener, options) {
+    on(
+      target: EventTarget,
+      event: string,
+      listener: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions,
+    ) {
       target.addEventListener(event, listener, options);
       const removeOptions: EventListenerOptions | boolean | undefined =
         typeof options === 'object' ? { capture: options.capture } : options;

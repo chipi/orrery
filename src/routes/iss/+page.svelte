@@ -10,6 +10,8 @@
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { createStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
+  import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
@@ -534,6 +536,11 @@
 
     stopThree();
 
+    // Single registry for every listener + disposable this scene
+    // owns. Replaces the manual addEventListener/removeEventListener
+    // pairs scattered across init + cleanupThree. See $lib/three/route-lifecycle.
+    const lifecycle = createRouteLifecycle();
+
     // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
     // medium fallback). Sync resolver so the scene builds without
     // awaiting the GPU benchmark; the background detect updates the
@@ -910,10 +917,10 @@
       }
     }
 
-    renderer.domElement.addEventListener('pointerdown', onPointerDown);
-    renderer.domElement.addEventListener('pointerup', onPointerUp);
-    renderer.domElement.addEventListener('pointermove', onPointerMove);
-    renderer.domElement.addEventListener('pointerleave', onPointerLeave);
+    lifecycle.on(renderer.domElement, 'pointerdown', onPointerDown);
+    lifecycle.on(renderer.domElement, 'pointerup', onPointerUp);
+    lifecycle.on(renderer.domElement, 'pointermove', onPointerMove);
+    lifecycle.on(renderer.domElement, 'pointerleave', onPointerLeave);
 
     // Test hook: project any pickable module to client-space pixels so
     // playwright can click a deterministic position instead of spiral-
@@ -956,7 +963,6 @@
 
     const perfStart = performance.now();
     let perfFrames = 0;
-    let raf = 0;
     const spin = createSpinAccumulator();
 
     function onResize() {
@@ -967,11 +973,15 @@
       composer.setSize(container.clientWidth, container.clientHeight);
       outlinePass.resolution.set(container.clientWidth, container.clientHeight);
     }
-    window.addEventListener('resize', onResize);
+    lifecycle.on(window, 'resize', onResize);
 
-    function animate() {
-      raf = requestAnimationFrame(animate);
-      if (perfCheckPending) {
+    // raf pump with the TA.md document.hidden contract baked in —
+    // see $lib/three/animate-loop. Replaces the prior hand-rolled
+    // animate() + cancelAnimationFrame pair which never paused
+    // when the tab backgrounded.
+    const loop = createAnimateLoop({
+      onFrame: () => {
+        if (perfCheckPending) {
         perfFrames++;
         const elapsed = performance.now() - perfStart;
         if (elapsed >= 2000) {
@@ -996,41 +1006,42 @@
           }
         }
       }
-      const t = performance.now() / 1000;
-      spin.tick(t, autoSpin);
-      station.rotation.y = spin.value() * 0.028;
-      // Sun-tracking solar arrays — slow continuous rotation around each
-      // array's SADA axis (one full revolution every ~4 minutes).
-      tickSunTrackingArrays(station, t);
-      applyAssemblyToScene(t);
-      refreshIssMeshMaterials(t);
-      controls.update();
-      // ADR-073 Layer B — distance from the orbit camera to the
-      // backdrop sphere's centre. Drives the 2K → 4K swap.
-      const camToBackdrop = camera.position.distanceTo(earthBackdrop.position);
-      updateEarthBackdropLod(camToBackdrop);
-      composer.render();
-      updateHoverLabel();
-    }
-    animate();
+        const t = performance.now() / 1000;
+        spin.tick(t, autoSpin);
+        station.rotation.y = spin.value() * 0.028;
+        // Sun-tracking solar arrays — slow continuous rotation around each
+        // array's SADA axis (one full revolution every ~4 minutes).
+        tickSunTrackingArrays(station, t);
+        applyAssemblyToScene(t);
+        refreshIssMeshMaterials(t);
+        controls.update();
+        // ADR-073 Layer B — distance from the orbit camera to the
+        // backdrop sphere's centre. Drives the 2K → 4K swap.
+        const camToBackdrop = camera.position.distanceTo(earthBackdrop.position);
+        updateEarthBackdropLod(camToBackdrop);
+        composer.render();
+        updateHoverLabel();
+      },
+    });
+    lifecycle.add(loop.cleanup);
+    loop.start();
+
+    // Disposables that aren't a listener live alongside the lifecycle
+    // teardowns. Order matters — lifecycle drains LIFO so loop.cleanup
+    // (registered earlier) runs after these.
+    if (stopLensWatch) lifecycle.add(stopLensWatch);
+    lifecycle.add(() => controls.dispose());
+    lifecycle.add(() => disposeScene(scene));
+    lifecycle.add(() => earthBackdropTex2k.dispose());
+    // ADR-073 Layer B — dispose 4K backdrop texture held in closure
+    // (not reachable through the scene graph when active LOD is 2K).
+    lifecycle.add(() => earthBackdropTex4k?.dispose());
+    lifecycle.add(() => outlinePass.dispose());
+    lifecycle.add(() => renderer.dispose());
+    lifecycle.add(() => renderer.domElement.remove());
 
     cleanupThree = () => {
-      cancelAnimationFrame(raf);
-      stopLensWatch?.();
-      window.removeEventListener('resize', onResize);
-      renderer.domElement.removeEventListener('pointerdown', onPointerDown);
-      renderer.domElement.removeEventListener('pointerup', onPointerUp);
-      renderer.domElement.removeEventListener('pointermove', onPointerMove);
-      renderer.domElement.removeEventListener('pointerleave', onPointerLeave);
-      controls.dispose();
-      disposeScene(scene);
-      earthBackdropTex2k.dispose();
-      // ADR-073 Layer B — dispose 4K backdrop texture held in closure
-      // (not reachable through the scene graph when active LOD is 2K).
-      earthBackdropTex4k?.dispose();
-      outlinePass.dispose();
-      renderer.dispose();
-      renderer.domElement.remove();
+      lifecycle.cleanup();
       issVisualRef.hoveredId = null;
       hoverLabel?.hide();
       resetIssCamera = () => {};

@@ -3306,15 +3306,30 @@
           // event passed. 0.025 reaches 90% of target in ~90 frames
           // (~1.5 s at 60 fps), inside even a 10-day approach window
           // at 30 d/s sim speed.
+          //
+          // Polish-wave-3 follow-up (Fix A) — scale LERP + TRACK by
+          // sim speed. The 0.025 rate was tuned for 7 d/s (Cassini's
+          // default). At 30 d/s the heliocentric world moves ~4×
+          // faster — Cassini covers ~6.5 scene units / wall-clock
+          // second on the Jupiter → Saturn leg, and the destination
+          // (Saturn) is moving too. A fixed lerp can't catch a target
+          // that's racing, so the camera spends the whole Saturn
+          // approach mid-lerp pointing at where the midpoint USED to
+          // be — user reports "all black" until pause lets it catch
+          // up. Scaling by simSpeed/7 (capped at 0.18 / 0.05 so we
+          // don't snap-cut) keeps composition fresh at every speed.
+          const simSpeedFactor = Math.max(1, simSpeed / 7);
           const inSnapWindow = performance.now() < camSnapUntil;
-          const LERP = inSnapWindow ? 0.08 : 0.025;
+          const LERP_BASE = inSnapWindow ? 0.08 : 0.025;
+          const LERP = Math.min(0.18, LERP_BASE * simSpeedFactor);
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
           camP += (helioAutoZoomTargetP - camP) * LERP;
           if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
         } else {
-          const TRACK = 0.006;
+          const simSpeedFactor = Math.max(1, simSpeed / 7);
+          const TRACK = Math.min(0.05, 0.006 * simSpeedFactor);
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * TRACK;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * TRACK;
           camP += (helioAutoZoomTargetP - camP) * TRACK;
@@ -4313,6 +4328,16 @@
       //   clock cycle — gentle "in / out" motion.
       // - Tilt drift: camP oscillates ±0.10 rad over a 180-second
       //   cycle — adds elevation parallax.
+      // Polish-wave-3 Fix A — sim-speed factor scales every camT arc
+      // rotation + the cruise zoom/tilt lerps. Same problem as the
+      // main lerp/track block: the rotations were tuned for 7 d/s.
+      // At 30 d/s an entire Cassini Jupiter→Saturn cruise takes ~43
+      // wall-clock seconds; the 0.05 rad/s cruise rotation = 2.15 rad
+      // total = ~123° of azimuth swing. The cinematic motion was
+      // designed for slow play; at high speeds the rotations get
+      // overwhelmed by the world racing past. Scaling them keeps the
+      // visual cadence consistent with the simulation speed.
+      const simSpeedFactor = Math.max(1, simSpeed / 7);
       if (
         !isMoonMission &&
         !reducedMotion &&
@@ -4320,18 +4345,18 @@
         !helioAutoZoomActive &&
         (lastHelioSubPhase === 'cruise-out' || lastHelioSubPhase === 'cruise-back')
       ) {
-        camT += 0.05 * dt;
+        camT += 0.05 * dt * simSpeedFactor;
         const t = now * 0.001; // seconds
         // Zoom breathing — modulate around the steady-state cruise
         // target radius. helioAutoZoomTargetR holds the cruise-wide
         // value; we add a sinusoid on top so camR breathes.
         const ZOOM_AMP = helioAutoZoomTargetR * 0.15;
         const zoomOsc = Math.sin((t * (Math.PI * 2)) / 90) * ZOOM_AMP;
-        camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005;
+        camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005 * simSpeedFactor;
         // Tilt drift — modulate camP around cruise default.
         const TILT_AMP = 0.1;
         const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
-        camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005;
+        camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005 * simSpeedFactor;
       }
       // Approach sweep — slow azimuthal arc around the ship-dest
       // midpoint during the final outbound leg. Paired with the
@@ -4349,7 +4374,7 @@
         // 0.08 rad/s — a touch faster than cruise (0.05) so the
         // rotation is visibly an "arc around the destination", not
         // just the slow cruise breathing.
-        camT += 0.08 * dt;
+        camT += 0.08 * dt * simSpeedFactor;
       }
       // Flyby cinema sweep — slow azimuthal orbit + gentle pitch tilt
       // around the body during a flyby sub-phase. Borrows from the
@@ -4440,7 +4465,9 @@
         // pitch breathing — during the hold and the afterglow the
         // camera should hold entirely still / pure-dolly, not arc.
         if (!isCinematicFreeze) {
-          camT += (inPeak ? 0.15 : 0.05) * dt;
+          // Fix A — scale by simSpeed for consistent visual cadence at
+          // high speeds (same reason the cruise/approach arcs scale).
+          camT += (inPeak ? 0.15 : 0.05) * dt * simSpeedFactor;
           // Gentle pitch breathing around the approach tilt, ±0.05 rad
           // over a 30-second cycle — adds parallax without making the
           // ecliptic plane swing too far.
@@ -4777,6 +4804,42 @@
         (sc.pos.y ?? 0) * SCALE_3D,
         sc.pos.z * SCALE_3D,
       );
+
+      // Polish-wave-3 Fix B — ship-in-frame safety net. Once per
+      // frame, project the spacecraft to normalised-device coords
+      // against the camera position updateCam() just settled. If
+      // the ship is outside the visible safe zone (|ndc.x|>0.85 OR
+      // |ndc.y|>0.85 OR ndc.z>1 = behind camera), nudge camTarget
+      // 30 % toward the ship and bump camR ×1.2, then re-set the
+      // camera. Catches edge cases where the cinematic lerp hasn't
+      // caught a fast-moving target (scrub-jumps across the system,
+      // sub-phase transitions at high sim speed even after Fix A).
+      // Bounded recovery — the ship can't drift off-screen for more
+      // than ~2 frames.
+      //
+      // Skipped during deliberate composed beats:
+      //   - Moon mission (cislunar has its own ship-centric framing)
+      //   - inCinematicHeldBeat = true (W3.1 peak hold / W3.2
+      //     afterglow / W3.4 finale lock — those frames are composed
+      //     by design and may legitimately have the ship offset or
+      //     hidden behind the body)
+      if (!isMoonMission && !inCinematicHeldBeat) {
+        const ndc = scWorld.clone().project(camera);
+        const offScreen =
+          Math.abs(ndc.x) > 0.85 || Math.abs(ndc.y) > 0.85 || ndc.z > 1 || ndc.z < -1;
+        if (offScreen) {
+          camTarget.x += (scWorld.x - camTarget.x) * 0.3;
+          camTarget.z += (scWorld.z - camTarget.z) * 0.3;
+          camR *= 1.2;
+          camera.position.set(
+            camTarget.x + camR * Math.sin(camP) * Math.sin(camT),
+            camTarget.y + camR * Math.cos(camP),
+            camTarget.z + camR * Math.sin(camP) * Math.cos(camT),
+          );
+          camera.lookAt(camTarget);
+        }
+      }
+
       const earthWorld = earthMesh.position;
       const marsWorld = marsMesh.position;
 

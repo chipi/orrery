@@ -82,6 +82,12 @@ export interface QualityConfig {
    *  existing Points-based star field. Wired at high+ — the additional
    *  sphere doubles overdraw, so we keep it off on weaker GPUs. */
   skydomeEnabled: boolean;
+  /** Whether to attach a Sun lens flare — a set of additive-blend
+   *  procedural sprite "ghosts" stretching from the Sun's screen
+   *  position toward the camera center. Cinematic only — the rolling
+   *  per-frame screen-space math is the kind of thing the runtime
+   *  adaptive layer would notice. */
+  lensFlareEnabled: boolean;
 }
 
 const CONFIGS: Record<QualityTier, QualityConfig> = {
@@ -104,6 +110,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: false,
     vignetteEnabled: false,
     skydomeEnabled: false,
+    lensFlareEnabled: false,
   },
   low: {
     tier: 'low',
@@ -124,6 +131,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: false,
     vignetteEnabled: false,
     skydomeEnabled: false,
+    lensFlareEnabled: false,
   },
   medium: {
     tier: 'medium',
@@ -144,6 +152,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: false,
+    lensFlareEnabled: false,
   },
   high: {
     tier: 'high',
@@ -164,6 +173,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: true,
+    lensFlareEnabled: false,
   },
   cinematic: {
     tier: 'cinematic',
@@ -184,6 +194,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     filmGrainEnabled: true,
     vignetteEnabled: true,
     skydomeEnabled: true,
+    lensFlareEnabled: true,
   },
 };
 

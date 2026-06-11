@@ -7,6 +7,7 @@ import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
+import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import type { QualityConfig } from '$lib/quality/quality-tier';
@@ -92,6 +93,11 @@ export interface HelioSceneHandles {
    *  plane tracks the hero subject. Other uniforms (aperture, maxblur)
    *  are baked at construction. */
   bokehPass: BokehPass | null;
+  /** Sun lens flare — non-null only on the cinematic tier. The
+   *  component animate loop calls `sunLensFlare.update(camera)` per
+   *  frame to recompute ghost positions from the Sun's screen-space
+   *  projection. */
+  sunLensFlare: SunLensFlare | null;
   /** Sun visible-core mesh (solid yellow). */
   sunCore: THREE.Mesh;
   /** Sun additive-blending halo. */
@@ -354,6 +360,17 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     // GC reclaims the sphere geometry + canvas texture when the scene
     // is torn down; the caller's cleanup destroys the renderer and
     // drops the WebGL context, freeing the GPU-side allocation.
+  }
+  // Sun lens flare — wave 2/3 punch #10. Sprite cluster anchored at
+  // the Sun world position. Caller updates per frame from the animate
+  // loop so ghost positions track the camera. Cinematic only.
+  let sunLensFlare: SunLensFlare | null = null;
+  if (opts.quality.lensFlareEnabled) {
+    sunLensFlare = buildSunLensFlare({
+      anchor: new THREE.Vector3(0, 0, 0),
+      baseScale: 30,
+    });
+    scene.add(sunLensFlare.group);
   }
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
@@ -983,6 +1000,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     renderer,
     composer,
     bokehPass,
+    sunLensFlare,
     sunCore,
     sunGlow,
     earthMesh,

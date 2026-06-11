@@ -5925,6 +5925,11 @@
               helioHandles.bokehPass.uniforms as Record<string, { value: number }>
             ).focus.value = focusDist;
           }
+          // Sun lens flare ghost-position update — cinematic only. The
+          // helper recomputes sprite world positions from the Sun's
+          // current screen-space projection so the ghosts trail through
+          // the screen center each frame, like an anamorphic anim flare.
+          helioHandles.sunLensFlare?.update(camera);
           // Helio (medium+): route through the EffectComposer so
           // RenderPass + UnrealBloomPass (Sun halo, ship rim glow,
           // engine plume sprites when present) compose on top of the

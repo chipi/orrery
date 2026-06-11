@@ -2,6 +2,8 @@
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { agencyToLogoEntries } from '$lib/agency-logo';
+  import type { FleetIndexEntry } from '$types/fleet';
   import * as THREE from 'three';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import {
@@ -64,6 +66,7 @@
     getMissionGallery,
     getFleet,
     getFleetIndex,
+    getFleetGallery,
   } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { missionDestToDataFolder } from '$lib/mission-dest';
@@ -1252,7 +1255,7 @@
     // Kick off async asset loads — race-guarded by openingLoadId so
     // a mission swap mid-flight discards the in-flight load.
     if (mission.id) {
-      void loadOpeningAssets(mission.id, mission.fleet_refs ?? []);
+      void loadOpeningAssets(mission.id, mission.fleet_refs ?? [], mission.vehicle ?? null);
     }
   }
 
@@ -1262,6 +1265,7 @@
   async function loadOpeningAssets(
     missionId: string,
     refs: Array<{ id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site' }>,
+    missionVehicle?: string | null,
   ) {
     openingLoadId++;
     const myLoadId = openingLoadId;
@@ -1287,17 +1291,73 @@
           if (!idxEntry) return null;
           const fullEntry = await getFleet(ref.id, idxEntry.category);
           if (!fullEntry) return null;
+          // Hero image — prefer fleet index's hero_path; fall back to
+          // the first image in the fleet gallery (most entries don't
+          // populate hero_path but DO have galleries under
+          // static/images/fleet-galleries/<id>/). Without this fallback
+          // the opening's fleet cards render with no thumbnail.
+          // Hero is stored as a FULL URL (with base path) on the asset
+          // so the markup can use src={heroPath} without an extra
+          // base-prefix step. idxEntry.hero_path lacks the base; we
+          // prefix it here. getFleetGallery() already returns full URLs.
+          let heroPath: string | null = idxEntry.hero_path ? `${base}/${idxEntry.hero_path}` : null;
+          if (!heroPath) {
+            try {
+              const gallery = await getFleetGallery(ref.id);
+              heroPath = gallery[0] ?? null;
+            } catch {
+              heroPath = null;
+            }
+          }
           return {
             id: ref.id,
             role: ref.role,
             name: fullEntry.name ?? idxEntry.name,
             tagline: fullEntry.tagline ?? idxEntry.tagline ?? '',
             description: fullEntry.description ?? '',
-            heroPath: idxEntry.hero_path ?? null,
+            heroPath,
           } satisfies OpeningFleetAsset;
         }),
       );
       if (myLoadId !== openingLoadId) return;
+      // Fuzzy-match the launcher when mission.fleet_refs lacks one but
+      // mission.vehicle names a real fleet entry (e.g. Saturn V, Atlas
+      // V 401). Search the index by name; if found, hydrate it as a
+      // launcher-role OpeningFleetAsset so it gets the same hero image
+      // + bio + clickable link as the spacecraft card. Missions like
+      // Cassini (Titan IVB / Centaur) still fall through to the
+      // synthetic card because no fleet entry matches.
+      const resolved = loaded.filter((x): x is OpeningFleetAsset => x !== null);
+      const hasLauncher = resolved.some((a) => a.role === 'launcher');
+      const launcherCandidate =
+        !hasLauncher && missionVehicle
+          ? findFleetEntryByVehicleName(fleetIndex, missionVehicle)
+          : null;
+      if (launcherCandidate) {
+        const fullLauncher = await getFleet(launcherCandidate.id, launcherCandidate.category);
+        if (myLoadId !== openingLoadId) return;
+        if (fullLauncher) {
+          let heroPath: string | null = launcherCandidate.hero_path
+            ? `${base}/${launcherCandidate.hero_path}`
+            : null;
+          if (!heroPath) {
+            try {
+              const gallery = await getFleetGallery(launcherCandidate.id);
+              heroPath = gallery[0] ?? null;
+            } catch {
+              heroPath = null;
+            }
+          }
+          resolved.push({
+            id: launcherCandidate.id,
+            role: 'launcher',
+            name: fullLauncher.name ?? launcherCandidate.name,
+            tagline: fullLauncher.tagline ?? launcherCandidate.tagline ?? '',
+            description: fullLauncher.description ?? '',
+            heroPath,
+          } satisfies OpeningFleetAsset);
+        }
+      }
       // Sort spacecraft first (the hero asset), then launcher, then site.
       const roleOrder: Record<string, number> = {
         spacecraft: 0,
@@ -1305,12 +1365,41 @@
         launcher: 2,
         'launch-site': 3,
       };
-      openingFleetAssets = loaded
-        .filter((x): x is OpeningFleetAsset => x !== null)
-        .sort((a, b) => (roleOrder[a.role] ?? 9) - (roleOrder[b.role] ?? 9));
+      openingFleetAssets = resolved.sort(
+        (a, b) => (roleOrder[a.role] ?? 9) - (roleOrder[b.role] ?? 9),
+      );
     } catch {
       openingFleetAssets = [];
     }
+  }
+
+  /** Loose-match a fleet index entry by vehicle-name string. Lowercases
+   *  both sides + strips punctuation/spaces so "Titan IVB / Centaur"
+   *  matches "Titan IVB-Centaur" matches "Titan IV-B Centaur". Returns
+   *  null if no entry shares meaningful tokens with the input. */
+  function findFleetEntryByVehicleName(
+    fleetIndex: FleetIndexEntry[],
+    vehicle: string,
+  ): FleetIndexEntry | null {
+    const norm = (s: string) =>
+      s
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    const target = norm(vehicle);
+    if (!target) return null;
+    const targetTokens = new Set(target.split(' ').filter((t) => t.length >= 2));
+    let best: { entry: (typeof fleetIndex)[number]; score: number } | null = null;
+    for (const entry of fleetIndex) {
+      if (entry.category !== 'launcher') continue;
+      const entryTokens = norm(entry.name)
+        .split(' ')
+        .filter((t) => t.length >= 2);
+      let score = 0;
+      for (const tok of entryTokens) if (targetTokens.has(tok)) score++;
+      if (score >= 2 && (!best || score > best.score)) best = { entry, score };
+    }
+    return best?.entry ?? null;
   }
 
   /** #86 v2 — skip the opening sequence on user click. Drops the
@@ -1931,16 +2020,15 @@
           uniform float uDimOpacity;
           varying float vT;
           void main() {
-            float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
-            // #85 — render in opaque pass with alpha discard so
-            // depth-test correctly hides line segments behind planet
-            // bodies during flyby. Transparent geo skips depth-write
-            // + sorts after opaque, so a transparent line drawn above
-            // a planet (the +y offset arc) always reads "in front"
-            // even when geometrically behind. Opaque pass + alpha
-            // discard fixes that.
-            if (a < 0.15) discard;
-            gl_FragColor = vec4(uColor, 1.0);
+            // Past-vs-future split — see helio buildTubeMaterial for
+            // the rationale. Past at full uColor, future at 30%-mixed
+            // dim. Same alpha-discard gate keeps depth-test correct.
+            bool past = vT < uProgress;
+            vec3 dimColor = uColor * 0.28;
+            vec3 finalColor = past ? uColor : dimColor;
+            float a = past ? uBrightOpacity : uDimOpacity;
+            if (a < 0.05) discard;
+            gl_FragColor = vec4(finalColor, 1.0);
           }
         `,
         transparent: false,
@@ -2369,26 +2457,33 @@
           uniform float uDimOpacity;
           varying float vT;
           void main() {
-            float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
-            // #85 — render in opaque pass with alpha discard so
-            // depth-test correctly hides line segments behind planet
-            // bodies during flyby. Transparent geo skips depth-write
-            // + sorts after opaque, so a transparent line drawn above
-            // a planet (the +y offset arc) always reads "in front"
-            // even when geometrically behind. Opaque pass + alpha
-            // discard fixes that.
-            if (a < 0.15) discard;
-            gl_FragColor = vec4(uColor, 1.0);
+            // Past-vs-future split — past segments render at full
+            // uColor, future segments at a 30%-mixed dim version of
+            // the same hue so the trajectory clearly reads "what's
+            // behind us is bright, what's ahead is faded preview."
+            // Opaque-pass with alpha=1 (and a no-op uBrightOpacity/
+            // uDimOpacity kept for back-compat with the prior shader
+            // contract) so depth-test still hides line segments
+            // behind planet bodies during flyby (#85).
+            bool past = vT < uProgress;
+            vec3 dimColor = uColor * 0.28;
+            vec3 finalColor = past ? uColor : dimColor;
+            float a = past ? uBrightOpacity : uDimOpacity;
+            if (a < 0.05) discard;
+            gl_FragColor = vec4(finalColor, 1.0);
           }
         `,
         transparent: false,
         depthWrite: true,
       });
     outLine = new THREE.Mesh(
-      buildTubeGeometry(outPts, 0.6),
+      buildTubeGeometry(outPts, 0.3),
       buildTubeMaterial(0x4488ff, 0.95, 0.22),
     );
-    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), buildTubeMaterial(0x9966ff, 0.9, 0.2));
+    retLine = new THREE.Mesh(
+      buildTubeGeometry(retPts, 0.25),
+      buildTubeMaterial(0x9966ff, 0.9, 0.2),
+    );
     scene.add(outLine);
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
@@ -3083,6 +3178,118 @@
     const HELIO_CRUISE_P = 1.05;
     const HELIO_APPROACH_P = 0.85;
     let helioAutoZoomTargetP = HELIO_CRUISE_P;
+    // Desired camera azimuth during flyby cinema. When set, the per-frame
+    // camT update lerps toward this value instead of free-spinning, so
+    // the planet doesn't end up between the camera and the spacecraft
+    // (the user-reported "ship blended into Venus" occlusion). Set in
+    // the flyby branch of updateHelioAutoZoomTargets; cleared to null
+    // when we leave flyby cinema. See computeFlybyDesiredCamT below.
+    let helioFlybyDesiredCamT: number | null = null;
+    /** Reusable flyby choreography: a slow panoramic sweep timed so the
+     *  camera arrives at the iconic "perpendicular to ship→planet"
+     *  composition exactly at peak (closest approach), having swept
+     *  ~90° across the planet during the final ~30 days of approach.
+     *
+     *  Composition rationale:
+     *  - Peak frame: camera perpendicular to ship→planet line — neither
+     *    body occludes the other (the Venus #1 "ship blended into
+     *    planet" report came from a camera azimuth that landed on the
+     *    planet-far-side of the ship, planet eclipsing the ship).
+     *  - Pre-peak: camera offset 90° "behind" the peak azimuth. The
+     *    planet fills more of the frame, the ship is approaching from
+     *    behind it. As approach progresses, the camera arcs around so
+     *    that at peak we hit the iconic frame.
+     *  - Post-peak: small ~22° continuation past the peak azimuth so
+     *    the camera doesn't freeze in place — the ship streams out
+     *    "ahead" while the camera follows briefly before settling.
+     *
+     *  All flybys reuse this by feeding their peak day + planet pos +
+     *  ship pos. The animate loop's camT lerp tracks the returned
+     *  desiredCamT each frame.
+     */
+    const FLYBY_PAN_DAYS = 30;
+    const FLYBY_PAN_ARC = Math.PI / 2;
+    // Lead time — the camera reaches its iconic perpendicular framing
+    // this many days BEFORE closest approach so the spacecraft flies
+    // INTO an already-steady shot, not chases the camera. Marko's
+    // feedback "rotate before spacecraft gets there, not after."
+    const FLYBY_PAN_LEAD_DAYS = 10;
+    /** Sample the outbound trajectory spline at a given mission-elapsed
+     *  day, returning a 2D scene-position. Linear interpolation across
+     *  outPts (which already encode the planned mission curve). Used to
+     *  predict the spacecraft's position at the flyby peak so the
+     *  camera knows which side of the planet the ship will be on. */
+    function predictShipPosAtMet(
+      points: Vec2[],
+      targetMet: number,
+      arrivalMet: number,
+    ): { x: number; z: number } | null {
+      if (points.length < 2 || !(arrivalMet > 0)) return null;
+      const fraction = Math.max(0, Math.min(1, targetMet / arrivalMet));
+      const indexFloat = fraction * (points.length - 1);
+      const i = Math.floor(indexFloat);
+      const t = indexFloat - i;
+      const a = points[i];
+      const b = points[Math.min(i + 1, points.length - 1)];
+      return { x: a.x + (b.x - a.x) * t, z: a.z + (b.z - a.z) * t };
+    }
+    function computeFlybyChoreographyCamT(
+      bodyX: number,
+      bodyZ: number,
+      shipX: number,
+      shipZ: number,
+      peakDay: number,
+      currentSimDay: number,
+      currentCamT: number,
+    ): number {
+      const dx = shipX - bodyX;
+      const dz = shipZ - bodyZ;
+      const mag = Math.hypot(dx, dz);
+      if (mag < 1e-6) return currentCamT;
+      // Perpendicular candidates — left/right of the ship→planet line.
+      // camera formula: pos = target + R · (sin(camT), cos(camT)) →
+      // direction (px, pz) maps to camT = atan2(px, pz).
+      const t1 = Math.atan2(-dz / mag, dx / mag);
+      const t2 = Math.atan2(dz / mag, -dx / mag);
+      // Pick whichever perpendicular is closer to current camT so the
+      // swing into framing takes the short arc, not the long one.
+      const shortestAbs = (a: number, b: number) => {
+        const TAU = Math.PI * 2;
+        let d = (((a - b) % TAU) + TAU) % TAU;
+        if (d > Math.PI) d -= TAU;
+        return Math.abs(d);
+      };
+      const peakCamT = shortestAbs(t1, currentCamT) <= shortestAbs(t2, currentCamT) ? t1 : t2;
+      // Pan offset — pan-in completes FLYBY_PAN_LEAD_DAYS BEFORE peak
+      // so the ship flies into a steady frame instead of chasing the
+      // camera. Timeline:
+      //   daysToPeak >= PAN_DAYS         : panOffset = -PAN_ARC (entry)
+      //   PAN_DAYS > daysToPeak > LEAD   : lerp from -PAN_ARC → 0
+      //   LEAD >= daysToPeak > -SETTLE   : panOffset = 0 (iconic frame)
+      //   daysToPeak <= -SETTLE          : small trail forward (track ship out)
+      const daysToPeak = peakDay - currentSimDay;
+      const SETTLE_DAYS = 8;
+      let panOffset: number;
+      if (daysToPeak > FLYBY_PAN_DAYS) {
+        panOffset = -FLYBY_PAN_ARC;
+      } else if (daysToPeak > FLYBY_PAN_LEAD_DAYS) {
+        // Active pan window — between entry and lead time.
+        const progress =
+          (FLYBY_PAN_DAYS - daysToPeak) / (FLYBY_PAN_DAYS - FLYBY_PAN_LEAD_DAYS);
+        panOffset = -FLYBY_PAN_ARC * (1 - progress);
+      } else if (daysToPeak > -SETTLE_DAYS) {
+        // Steady iconic frame — camera holds perpendicular as the ship
+        // completes its arc through closest approach.
+        panOffset = 0;
+      } else {
+        // Post-peak trail — camera follows the departing ship for a
+        // small forward arc (capped at ~22°) so the shot doesn't
+        // freeze the moment the ship pulls away.
+        const beyond = -daysToPeak - SETTLE_DAYS;
+        panOffset = Math.min(FLYBY_PAN_ARC / 4, beyond * 0.05);
+      }
+      return peakCamT + panOffset;
+    }
     // Flyby cinema mode — when the active mission has 'flyby' events on
     // its flight.events roster (grand-tour outer-system missions:
     // Voyager 1/2, Cassini, Galileo, Pioneer, etc.), the camera locks
@@ -3359,14 +3566,53 @@
           // where the body fills one half of the frame and curves out of
           // view rather than sitting whole in the centre. Shot-language
           // guide §P5 + T3 — "containment kills awe."
-          centerX = bodyScene.x * 0.35 + scScene.x * 0.65;
-          centerZ = bodyScene.z * 0.35 + scScene.z * 0.65;
-          targetR = flyby.size * FLYBY_BODY_R_MULTIPLIER;
+          // Earth flyby gets special treatment — the HOME planet
+          // beat. We weight the framing MORE toward Earth (50/50
+          // instead of 35/65) so Earth dominates the frame, and we
+          // tighten the camera distance (3.2× vs 5×) for a closer,
+          // more emotional read — earthrise-style. The longer peak
+          // hold is applied where peakHoldUntil is armed.
+          const isEarthFlyby = flyby.id === ('earth' as typeof flyby.id);
+          centerX = isEarthFlyby
+            ? bodyScene.x * 0.5 + scScene.x * 0.5
+            : bodyScene.x * 0.35 + scScene.x * 0.65;
+          centerZ = isEarthFlyby
+            ? bodyScene.z * 0.5 + scScene.z * 0.5
+            : bodyScene.z * 0.35 + scScene.z * 0.65;
+          targetR = flyby.size * (isEarthFlyby ? 3.2 : FLYBY_BODY_R_MULTIPLIER);
+          // Panoramic flyby choreography — gentle 90° sweep across the
+          // planet timed so camera arrives at the iconic perpendicular
+          // composition LEAD_DAYS BEFORE peak so the ship flies INTO a
+          // steady frame instead of chasing the camera. To pick the
+          // right perpendicular side (camera ends up where the ship
+          // WILL approach from), we predict the ship's position at
+          // peak via the outbound spline rather than using its current
+          // pos. Falls back to current pos if prediction is unavailable
+          // (no points loaded yet).
+          const peakDay = arcTimeline.dep_day + activeFlybyMet;
+          const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
+          const predicted = predictShipPosAtMet(outPts, activeFlybyMet, totalOutboundDays);
+          const shipXForPlan = predicted
+            ? predicted.x * SCALE_3D
+            : scScene.x;
+          const shipZForPlan = predicted
+            ? predicted.z * SCALE_3D
+            : scScene.z;
+          helioFlybyDesiredCamT = computeFlybyChoreographyCamT(
+            bodyScene.x,
+            bodyScene.z,
+            shipXForPlan,
+            shipZForPlan,
+            peakDay,
+            simDay,
+            camT,
+          );
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;
           centerZ = scScene.z;
           targetR = HELIO_FLYBY_R_FALLBACK;
+          helioFlybyDesiredCamT = null;
         }
         // #2 — Saturn-OI specific composition override. Wernquist's
         // Grand Finale art frames Cassini with Saturn looming high in
@@ -3404,8 +3650,10 @@
         return;
       }
       // Leaving flyby into non-flyby: clear the saturnOI composition
-      // flag so camera.up returns to vertical.
+      // flag so camera.up returns to vertical and drop the desired
+      // azimuth so the cruise/approach camT spin resumes.
       saturnOIComposition = false;
+      helioFlybyDesiredCamT = null;
       if (sc.phase === 'pre-launch') {
         // #86 — opening sequence overrides the prelaunch composition
         // for the first ~7.5 s. Wide top-down system view mirrors the
@@ -4887,7 +5135,18 @@
         const inHeldWindow =
           Math.abs(simDay - (arcTimeline.dep_day + currentFrameFlybyMet)) < peakHoldRadius;
         if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
-          cine.peakHoldUntil = performance.now() + 2500;
+          // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
+          // home-planet moment lingers. The lerp keeps converging
+          // toward the iconic frame during the hold; longer hold =
+          // tighter settle and longer emotional dwell.
+          const activeFlybyEvtForHold = mission.flight?.events?.find(
+            (e) => e.met_days === currentFrameFlybyMet,
+          );
+          const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
+            .toLowerCase()
+            .includes('earth');
+          const holdMs = isEarthHold ? 4000 : 2500;
+          cine.peakHoldUntil = performance.now() + holdMs;
           cine.peakHoldArmedForFlybyMet = currentFrameFlybyMet;
           // W3.2 — pre-arm the afterglow window so it kicks in the
           // instant the hold expires. Start values get captured at
@@ -4924,9 +5183,29 @@
         // pitch breathing — during the hold and the afterglow the
         // camera should hold entirely still / pure-dolly, not arc.
         if (!isCinematicFreeze) {
-          // Fix A — scale by simSpeed for consistent visual cadence at
-          // high speeds (same reason the cruise/approach arcs scale).
-          camT += (inPeak ? 0.15 : 0.05) * dt * simSpeedFactor;
+          if (helioFlybyDesiredCamT !== null) {
+            // Anti-occlusion lerp — pull camT toward the perpendicular
+            // azimuth so the planet doesn't sit between the camera and
+            // the spacecraft. Shortest-arc delta so the swing never
+            // takes the long way around. Faster lerp during peak so
+            // the iconic frame settles by the hold instant. Layer a
+            // small idle oscillation on top so the camera still has
+            // motion (camera-disagree principle) without re-introducing
+            // the free-spin occlusion bug.
+            const TAU = Math.PI * 2;
+            let delta = (((helioFlybyDesiredCamT - camT) % TAU) + TAU) % TAU;
+            if (delta > Math.PI) delta -= TAU;
+            const lerpRate = inPeak ? 0.06 : 0.025;
+            camT += delta * lerpRate * dt * simSpeedFactor * 60;
+            // Small ±0.02 rad oscillation (~1.1°) over a 12 s cycle so
+            // the camera breathes even after it settles into framing.
+            const oscPhase = (now * 0.001 * (Math.PI * 2)) / 12;
+            camT += Math.cos(oscPhase) * 0.0008 * dt * 60;
+          } else {
+            // Fix A — scale by simSpeed for consistent visual cadence at
+            // high speeds (same reason the cruise/approach arcs scale).
+            camT += (inPeak ? 0.15 : 0.05) * dt * simSpeedFactor;
+          }
           // Gentle pitch breathing around the approach tilt, ±0.05 rad
           // over a 30-second cycle — adds parallax without making the
           // ecliptic plane swing too far.
@@ -5489,21 +5768,31 @@
       //   - edl_or_oi: exhaust prograde (retrograde deceleration)
       // Opacity ramps in/out across ±BURN_WINDOW_DAYS.
       if (!isMoonMission && mission.flight?.events) {
-        const BURN_WINDOW_DAYS = 2;
-        type BurnConfig = { scale: number; mode: 'inward' | 'retro' | 'pro' };
+        const BURN_WINDOW_DAYS_DEFAULT = 2;
+        type BurnConfig = {
+          scale: number;
+          mode: 'inward' | 'retro' | 'pro';
+          /** Optional per-event-type window override. Launch gets a
+           *  wider window because it's the mission's emotional hero
+           *  moment — the audience should see a sustained dramatic
+           *  plume, not a 2-day blink. */
+          windowDays?: number;
+        };
         const BURN_TABLE: Record<string, BurnConfig> = {
-          launch: { scale: 1.4, mode: 'inward' },
+          launch: { scale: 2.6, mode: 'inward', windowDays: 5 },
           tli_or_tmi: { scale: 1.6, mode: 'retro' },
           tcm: { scale: 0.6, mode: 'retro' },
           edl_or_oi: { scale: 1.8, mode: 'pro' },
         };
-        // Find the closest in-window burn event.
+        // Find the closest in-window burn event — per-event window
+        // override so launch can hold longer than the default 2 days.
         let activeBurn: { type: string; met_days: number; daysFromEvent: number } | null = null;
         const simMet = simDay - arcTimeline.dep_day;
         for (const evt of mission.flight.events) {
           if (!(evt.type in BURN_TABLE) || evt.met_days == null) continue;
           const daysFromEvent = Math.abs(simMet - evt.met_days);
-          if (daysFromEvent > BURN_WINDOW_DAYS) continue;
+          const win = BURN_TABLE[evt.type].windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
+          if (daysFromEvent > win) continue;
           if (!activeBurn || daysFromEvent < activeBurn.daysFromEvent) {
             activeBurn = { type: evt.type, met_days: evt.met_days, daysFromEvent };
           }
@@ -5538,8 +5827,11 @@
           plumeMesh.position.copy(scWorld);
           plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
           plumeMesh.scale.setScalar(cfg.scale);
-          // Opacity: peak at event time, fade linearly across window
-          const opacity = 0.85 * Math.max(0, 1 - activeBurn.daysFromEvent / BURN_WINDOW_DAYS);
+          // Opacity: peak at event time, fade linearly across the
+          // per-event window (launch's wider window gives a sustained
+          // dramatic plume).
+          const winOpacity = cfg.windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
+          const opacity = 0.85 * Math.max(0, 1 - activeBurn.daysFromEvent / winOpacity);
           plumeMat.uniforms.uOpacity.value = opacity;
           plumeMesh.visible = opacity > 0.02;
         } else {
@@ -5894,8 +6186,11 @@
           flyUpdaters?.helio.rebuildTubeGeometry
         ) {
           const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
-          const desiredRadius = Math.max(0.18, Math.min(1.6, camR * 0.0045));
-          const currentRadius = tubeUd.tubeRadius ?? 0.35;
+          // Halved per user feedback — trajectory line was reading too
+          // thick at all framings. 0.0045 → 0.00225, clamp [0.18,1.6]
+          // → [0.09,0.8], default fallback 0.35 → 0.175.
+          const desiredRadius = Math.max(0.09, Math.min(0.8, camR * 0.00225));
+          const currentRadius = tubeUd.tubeRadius ?? 0.175;
           if (Math.abs(desiredRadius - currentRadius) > 0.05) {
             outLine.geometry.dispose();
             outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outPts, desiredRadius);
@@ -6547,129 +6842,162 @@
     {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
     {@const story = mission.description ?? ''}
     {@const agencyFull = mission.agency_full ?? ''}
+    {@const agencyLogos = agencyToLogoEntries(mission.agency ?? agencyFull)}
     {@const transitYears =
       mission.transit_days != null ? (mission.transit_days / 365).toFixed(1) : null}
+    {@const missionLink = mission.id ? `${base}/missions?id=${mission.id}` : null}
 
-    <!-- Skip button — fixed top-right, always visible during opening -->
-    <button
-      type="button"
-      class="opening-skip"
-      data-testid="fly-opening-skip"
-      onclick={skipOpening}
-      aria-label="Proceed to simulation"
-    >
-      <span>PROCEED TO SIMULATION</span>
-      <span class="opening-skip-arrow" aria-hidden="true">▸</span>
-    </button>
-
-    {#if openingTitleOpacity > 0}
-      <div
-        class="opening-title"
-        style="opacity: {openingTitleOpacity};"
-        data-testid="fly-opening-title"
-        aria-live="polite"
-      >
-        {#if openingMissionHeroUrl}
-          <img class="opening-mission-hero" src={openingMissionHeroUrl} alt="" aria-hidden="true" />
-        {/if}
-        <div class="opening-agency">{agencyFull}</div>
-        <div class="opening-name">{mission.name}</div>
-        {#if depYear || arrYear}
-          <div class="opening-years">
-            {depYear}{arrYear && arrYear !== depYear ? ` — ${arrYear}` : ''}
+    <!-- Single merged opening stack — title + context + fleet all
+         inside one translucent container, screen-centered. The whole
+         column reads as one "mission briefing" card with sections
+         separated by hairlines, instead of three floating dark blocks.
+         The wrapper is always rendered while openingActive; individual
+         sections fade in via their opacity vars. -->
+    <div class="opening-stack" data-testid="fly-opening-stack">
+      {#if openingTitleOpacity > 0}
+        <div
+          class="opening-title"
+          style="opacity: {openingTitleOpacity};"
+          data-testid="fly-opening-title"
+          aria-live="polite"
+        >
+          {#if openingMissionHeroUrl}
+            <img
+              class="opening-mission-hero"
+              src={openingMissionHeroUrl}
+              alt=""
+              aria-hidden="true"
+            />
+          {/if}
+          <div class="opening-agency-row">
+            {#each agencyLogos as logo (logo.path)}
+              <img
+                class="opening-agency-logo"
+                src={logo.path}
+                alt={logo.short}
+                title="{logo.short} — {logo.full}"
+              />
+            {/each}
+            <div class="opening-agency">
+              {mission.agency ?? agencyFull}
+            </div>
           </div>
-        {/if}
-      </div>
-    {/if}
-    {#if openingContextOpacity > 0 && (story || mission.vehicle || mission.payload || mission.delta_v_label)}
-      <div
-        class="opening-context"
-        style="opacity: {openingContextOpacity};"
-        data-testid="fly-opening-context"
-      >
-        {#if story}
-          <div class="opening-story">{story}</div>
-        {/if}
-        <div class="opening-stats">
-          {#if mission.vehicle}
-            <span class="opening-stat">
-              <span class="opening-stat-label">VEHICLE</span>
-              <span class="opening-stat-val">{mission.vehicle}</span>
-            </span>
+          {#if missionLink}
+            <a
+              class="opening-name opening-name-link"
+              href={missionLink}
+              data-sveltekit-preload-data="off">{mission.name}</a
+            >
+          {:else}
+            <div class="opening-name">{mission.name}</div>
           {/if}
-          {#if mission.payload}
-            <span class="opening-stat">
-              <span class="opening-stat-label">PAYLOAD</span>
-              <span class="opening-stat-val">{mission.payload}</span>
-            </span>
-          {/if}
-          {#if mission.delta_v_label}
-            <span class="opening-stat">
-              <span class="opening-stat-label">∆V</span>
-              <span class="opening-stat-val">{mission.delta_v_label}</span>
-            </span>
-          {/if}
-          {#if transitYears}
-            <span class="opening-stat">
-              <span class="opening-stat-label">TRANSIT</span>
-              <span class="opening-stat-val">{transitYears} years</span>
-            </span>
+          {#if depYear || arrYear}
+            <div class="opening-years">
+              {depYear}{arrYear && arrYear !== depYear ? ` — ${arrYear}` : ''}
+            </div>
           {/if}
         </div>
-      </div>
-    {/if}
-    {@const hasLoadedLauncher = openingFleetAssets.some((a) => a.role === 'launcher')}
-    {@const showSyntheticLauncher =
-      !hasLoadedLauncher && mission.vehicle && mission.vehicle !== '—'}
-    {#if openingFleetOpacity > 0 && (openingFleetAssets.length > 0 || showSyntheticLauncher)}
-      <div
-        class="opening-fleet"
-        style="opacity: {openingFleetOpacity};"
-        data-testid="fly-opening-fleet"
-      >
-        <div class="opening-fleet-label">FLEET ASSETS</div>
-        <div class="opening-fleet-row">
-          {#each openingFleetAssets as asset (asset.id)}
-            <article
-              class="opening-fleet-card"
-              class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
+      {/if}
+
+      {#if (openingContextOpacity > 0 || openingFleetOpacity > 0) && (story || mission.vehicle || mission.payload || mission.delta_v_label || openingFleetAssets.length > 0)}
+        <div class="opening-body" data-testid="fly-opening-body">
+          {#if openingContextOpacity > 0 && (story || mission.vehicle || mission.payload || mission.delta_v_label)}
+            <div
+              class="opening-context"
+              style="opacity: {openingContextOpacity};"
+              data-testid="fly-opening-context"
             >
-              {#if asset.heroPath}
-                <img
-                  class="opening-fleet-hero"
-                  src="{base}/{asset.heroPath}"
-                  alt=""
-                  aria-hidden="true"
-                />
+              {#if story}
+                <div class="opening-story">{story}</div>
               {/if}
-              <div class="opening-fleet-meta">
-                <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
-                <div class="opening-fleet-name">{asset.name}</div>
-                {#if (asset.role === 'spacecraft' || asset.role === 'launcher') && asset.description}
-                  <div class="opening-fleet-bio">{asset.description}</div>
-                {:else if asset.tagline}
-                  <div class="opening-fleet-tagline">{asset.tagline}</div>
+              <div class="opening-stats">
+                {#if mission.vehicle}
+                  <span class="opening-stat">
+                    <span class="opening-stat-label">VEHICLE</span>
+                    <span class="opening-stat-val">{mission.vehicle}</span>
+                  </span>
+                {/if}
+                {#if mission.payload}
+                  <span class="opening-stat">
+                    <span class="opening-stat-label">PAYLOAD</span>
+                    <span class="opening-stat-val">{mission.payload}</span>
+                  </span>
+                {/if}
+                {#if mission.delta_v_label}
+                  <span class="opening-stat">
+                    <span class="opening-stat-label">∆V</span>
+                    <span class="opening-stat-val">{mission.delta_v_label}</span>
+                  </span>
+                {/if}
+                {#if transitYears}
+                  <span class="opening-stat">
+                    <span class="opening-stat-label">TRANSIT</span>
+                    <span class="opening-stat-val">{transitYears} years</span>
+                  </span>
                 {/if}
               </div>
-            </article>
-          {/each}
-          {#if showSyntheticLauncher}
-            <!-- Synthesised launcher card when mission.fleet_refs has no
-                 launcher entry. Surfaces mission.vehicle as a labeled
-                 card so the launcher isn't invisible to the audience. -->
-            <article class="opening-fleet-card hero opening-fleet-card-synthetic">
-              <div class="opening-fleet-meta">
-                <div class="opening-fleet-role">launcher</div>
-                <div class="opening-fleet-name">{mission.vehicle}</div>
-                <div class="opening-fleet-tagline">
-                  Launch vehicle for {mission.name}
-                </div>
+            </div>
+          {/if}
+
+          {#if openingFleetOpacity > 0 && openingFleetAssets.length > 0}
+            <div
+              class="opening-fleet"
+              style="opacity: {openingFleetOpacity};"
+              data-testid="fly-opening-fleet"
+            >
+              <div class="opening-fleet-label">FLEET ASSETS</div>
+              <div class="opening-fleet-row">
+                {#each openingFleetAssets as asset (asset.id)}
+                  <a
+                    class="opening-fleet-card"
+                    class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
+                    href="{base}/fleet?id={asset.id}"
+                    data-sveltekit-preload-data="off"
+                  >
+                    {#if asset.heroPath}
+                      <img
+                        class="opening-fleet-hero"
+                        src={asset.heroPath}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    {/if}
+                    <div class="opening-fleet-meta">
+                      <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
+                      <div class="opening-fleet-name">{asset.name}</div>
+                      {#if (asset.role === 'spacecraft' || asset.role === 'launcher') && asset.description}
+                        <div class="opening-fleet-bio">{asset.description}</div>
+                      {:else if asset.tagline}
+                        <div class="opening-fleet-tagline">{asset.tagline}</div>
+                      {/if}
+                    </div>
+                  </a>
+                {/each}
+                <!-- Synthetic launcher fallback removed per Marko's
+                     feedback — if no fleet entry exists for the
+                     vehicle, the launcher is omitted entirely rather
+                     than shown as a text-only card. The proper fix
+                     is to add the missing launcher fleet entries
+                     (Titan IVB for Cassini, etc.) to the fleet index. -->
               </div>
-            </article>
+            </div>
           {/if}
         </div>
-      </div>
-    {/if}
+      {/if}
+      <!-- Skip button — last item in the stack, below the fleet
+           section. Always visible while openingActive so users can
+           fast-forward at any opening fade state. -->
+      <button
+        type="button"
+        class="opening-skip"
+        data-testid="fly-opening-skip"
+        onclick={skipOpening}
+        aria-label="Proceed to simulation"
+      >
+        <span>PROCEED TO SIMULATION</span>
+        <span class="opening-skip-arrow" aria-hidden="true">▸</span>
+      </button>
+    </div>
   {/if}
   <!-- W3.6 scrubber-jump cut overlay. Short 200 ms fade-to-black on
        big timeline jumps so the audience reads it as a deliberate cut,
@@ -7562,29 +7890,53 @@
       0 0 4px rgba(0, 0, 0, 1);
   }
 
-  /* #86 opening overlay — three layered cards stacked vertically over
-     the wide top-down system view. Title card top-anchored, context +
-     fleet asset chips below. All fade in/out per the state machine. */
-  .opening-title {
+  /* #86 opening overlay — one screen-centered translucent column
+     containing title section + body section. Sections separated by
+     hairlines; single shared backdrop reads as a single "mission
+     briefing" card instead of stacked dark blocks. */
+  .opening-stack {
     position: fixed;
-    top: 10%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 200;
+    width: min(820px, 94vw);
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    background: rgba(8, 12, 24, 0.22);
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    pointer-events: auto;
+    overflow-y: auto;
+  }
+  .opening-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 22px 32px;
-    pointer-events: none;
     text-align: center;
-    background: rgba(8, 10, 22, 0.62);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
     transition: opacity 200ms linear;
-    max-width: 90vw;
+    max-width: 100%;
+    pointer-events: auto;
+  }
+  .opening-agency-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .opening-agency-logo {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
   }
   .opening-agency {
     font-family: 'Space Mono', monospace;
@@ -7595,13 +7947,22 @@
   }
   .opening-name {
     font-family: var(--font-display);
-    font-size: 36px;
-    letter-spacing: 8px;
+    font-size: 28px;
+    letter-spacing: 6px;
     color: rgba(255, 255, 255, 0.98);
     text-transform: uppercase;
     text-shadow:
       0 0 16px rgba(0, 0, 0, 0.95),
       0 0 4px rgba(0, 0, 0, 1);
+  }
+  .opening-name-link {
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+  .opening-name-link:hover,
+  .opening-name-link:focus-visible {
+    color: rgba(94, 234, 212, 0.95);
+    outline: none;
   }
   .opening-years {
     font-family: 'Space Mono', monospace;
@@ -7609,32 +7970,38 @@
     letter-spacing: 3px;
     color: rgba(255, 200, 80, 0.85);
   }
+  /* Merged opening body — context + fleet wrapped in a single
+     translucent surface. Positioned in the lower half of the viewport
+     (top: 45%) and bottom-padded to the floor so it grows downward
+     without overlapping the title. The inner .opening-context and
+     .opening-fleet sections render WITHOUT their own backdrops — the
+     body wrapper provides the single shared tint. */
+  .opening-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    pointer-events: auto;
+    border-top: 1px solid rgba(94, 234, 212, 0.18);
+    padding-top: 14px;
+  }
   .opening-context {
-    position: fixed;
-    top: 46%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 200;
-    max-width: min(740px, 92vw);
-    padding: 22px 32px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     pointer-events: none;
     text-align: center;
-    background: rgba(8, 10, 22, 0.62);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
     transition: opacity 200ms linear;
   }
   .opening-story {
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 17px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.88);
     letter-spacing: 0.3px;
     text-shadow:
@@ -7668,19 +8035,17 @@
     color: rgba(255, 255, 255, 0.92);
     text-transform: uppercase;
   }
+  /* Nested fleet section — no own backdrop; rides inside .opening-body */
   .opening-fleet {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    pointer-events: none;
+    pointer-events: auto;
     transition: opacity 200ms linear;
-    max-width: 92vw;
+    border-top: 1px solid rgba(94, 234, 212, 0.18);
+    padding-top: 14px;
   }
   .opening-fleet-label {
     font-family: 'Space Mono', monospace;
@@ -7722,29 +8087,32 @@
     text-transform: uppercase;
   }
 
-  /* #86 v2 — mission hero image in the title card */
+  /* #86 v2 — mission hero image in the title card. Shrunk from
+     280x180 → 220x130 so the title block stays compact enough that
+     the body panel below has clear vertical separation on smaller
+     viewports. */
   .opening-mission-hero {
-    width: 280px;
-    max-width: 80vw;
-    height: 180px;
+    width: 220px;
+    max-width: 70vw;
+    height: 130px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid rgba(94, 234, 212, 0.35);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 
-  /* #86 v2 — skip button — top-right, subtle but always present */
+  /* #86 v2 — skip button. Sits as the LAST item in .opening-stack,
+     below the fleet card section, so the user's eye reaches it after
+     reading the brief. Inline positioning inside the centered stack
+     (no longer fixed top-right). */
   .opening-skip {
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 250;
+    margin-top: 4px;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 18px;
-    background: rgba(8, 10, 22, 0.85);
+    padding: 10px 22px;
+    background: rgba(8, 10, 22, 0.55);
     border: 1px solid rgba(94, 234, 212, 0.5);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.92);
@@ -7753,8 +8121,6 @@
     letter-spacing: 2.5px;
     text-transform: uppercase;
     cursor: pointer;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     transition:
       background 150ms ease,
       border-color 150ms ease,
@@ -7772,24 +8138,41 @@
     color: rgba(94, 234, 212, 0.85);
   }
 
-  /* #86 v2 — rich fleet asset cards (replaces the simple chips) */
+  /* #86 v2 — fleet cards. Clickable (anchor) so they deep-link into
+     /fleet?id=… for details. Translucent — the body wrapper carries the
+     primary tint; cards just get a hairline border + minimal lift on
+     hover. */
   .opening-fleet-card {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     gap: 14px;
     padding: 10px 14px;
-    background: rgba(8, 10, 22, 0.88);
-    border: 1px solid rgba(94, 234, 212, 0.3);
+    background: rgba(14, 18, 32, 0.55);
+    border: 1px solid rgba(94, 234, 212, 0.25);
     border-radius: 6px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    max-width: 320px;
+    max-width: 360px;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      border-color 150ms ease,
+      background 150ms ease,
+      transform 150ms ease;
+  }
+  .opening-fleet-card:hover,
+  .opening-fleet-card:focus-visible {
+    border-color: rgba(94, 234, 212, 0.65);
+    background: rgba(20, 26, 50, 0.65);
+    outline: none;
+    transform: translateY(-1px);
   }
   .opening-fleet-card.hero {
     max-width: 460px;
-    border-color: rgba(255, 200, 80, 0.55);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 200, 80, 0.5);
+  }
+  .opening-fleet-card.hero:hover,
+  .opening-fleet-card.hero:focus-visible {
+    border-color: rgba(255, 200, 80, 0.9);
   }
   .opening-fleet-hero {
     flex-shrink: 0;

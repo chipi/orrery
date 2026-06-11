@@ -68,6 +68,10 @@ export interface LoadedMission {
   /** Editorial blurb (per ADR-017). Used by #86 cinematic opening as
    *  the mission's story-paragraph context. */
   description?: string;
+  /** Short agency string (e.g. "NASA / ESA / ASI"). Suitable input for
+   *  $lib/agency-logo helpers — resolves compound agencies to individual
+   *  logo entries. */
+  agency?: string;
   /** Full agency name (e.g. "NASA/ESA/ASI" for Cassini). Used by #86
    *  opening as the title-card subtitle. */
   agency_full?: string;
@@ -208,6 +212,7 @@ function buildMissionMeta(
     flight: m.flight,
     flight_data_quality: m.flight_data_quality,
     description: m.description,
+    agency: m.agency,
     agency_full: m.agency_full,
     delta_v_label: m.delta_v,
     transit_days: m.transit_days,

@@ -1508,7 +1508,10 @@
       openingTitleOpacity = 0;
       openingContextOpacity = 0;
       openingFleetOpacity = 0;
-      launchDwellUntil = performance.now() + 13500;
+      // Hold sim until opening fade-out fully completes + 300 ms
+      // settle so the first animate frame doesn't fire under
+      // visible opening text.
+      launchDwellUntil = performance.now() + openingDurationMs + 300;
       // W3.7 — re-arm the cruise hold so it fires again on the
       // mission replay.
       cine.cruiseHoldFired = false;
@@ -1602,9 +1605,15 @@
     // already inside a stale held beat. Also arms the #86 opening
     // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
-    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
-    // dwell. Total 13.5 s before launch fires.
-    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
+    // #86 — opening sequence runs until openingDurationMs elapses
+    // (9.5-22 s depending on description + fleet ref count). Sim
+    // stays paused until the opening fully fades out so the
+    // simulation doesn't start advancing under visible text. 300 ms
+    // buffer past the fade-out endpoint gives a clean black-ish
+    // moment before the first animate frame. Non-opening missions
+    // keep the 4 s dwell (W3.3 prelaunch beat).
+    launchDwellUntil =
+      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1638,9 +1647,15 @@
     // already inside a stale held beat. Also arms the #86 opening
     // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
-    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
-    // dwell. Total 13.5 s before launch fires.
-    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
+    // #86 — opening sequence runs until openingDurationMs elapses
+    // (9.5-22 s depending on description + fleet ref count). Sim
+    // stays paused until the opening fully fades out so the
+    // simulation doesn't start advancing under visible text. 300 ms
+    // buffer past the fade-out endpoint gives a clean black-ish
+    // moment before the first animate frame. Non-opening missions
+    // keep the 4 s dwell (W3.3 prelaunch beat).
+    launchDwellUntil =
+      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1691,9 +1706,15 @@
     // already inside a stale held beat. Also arms the #86 opening
     // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
-    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
-    // dwell. Total 13.5 s before launch fires.
-    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
+    // #86 — opening sequence runs until openingDurationMs elapses
+    // (9.5-22 s depending on description + fleet ref count). Sim
+    // stays paused until the opening fully fades out so the
+    // simulation doesn't start advancing under visible text. 300 ms
+    // buffer past the fade-out endpoint gives a clean black-ish
+    // moment before the first animate frame. Non-opening missions
+    // keep the 4 s dwell (W3.3 prelaunch beat).
+    launchDwellUntil =
+      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     lastAppliedMissionId = r.appliedId;
   }
 

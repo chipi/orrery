@@ -68,6 +68,14 @@ export interface QualityConfig {
    *  DoF is the most expensive post pass we wire and the focal-distance
    *  driving requires per-frame uniform updates the caller has to feed. */
   dofEnabled: boolean;
+  /** Whether to append a subtle FilmPass grain. Cheaper than DoF but
+   *  still tier-gated (medium+) — adds a photographic noise layer that
+   *  reads as celluloid texture rather than dirty pixels. Scanlines off
+   *  + grayscale off — just noise. */
+  filmGrainEnabled: boolean;
+  /** Whether to append a vignette ShaderPass. Cheapest of the polish
+   *  passes — single full-screen fragment — so wired from medium+. */
+  vignetteEnabled: boolean;
 }
 
 const CONFIGS: Record<QualityTier, QualityConfig> = {
@@ -87,6 +95,8 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsMilkyWay: 400,
     rimLightEnabled: false,
     dofEnabled: false,
+    filmGrainEnabled: false,
+    vignetteEnabled: false,
   },
   low: {
     tier: 'low',
@@ -104,6 +114,8 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsMilkyWay: 700,
     rimLightEnabled: true,
     dofEnabled: false,
+    filmGrainEnabled: false,
+    vignetteEnabled: false,
   },
   medium: {
     tier: 'medium',
@@ -121,6 +133,8 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsMilkyWay: 950,
     rimLightEnabled: true,
     dofEnabled: false,
+    filmGrainEnabled: true,
+    vignetteEnabled: true,
   },
   high: {
     tier: 'high',
@@ -138,6 +152,8 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsMilkyWay: 1200,
     rimLightEnabled: true,
     dofEnabled: false,
+    filmGrainEnabled: true,
+    vignetteEnabled: true,
   },
   cinematic: {
     tier: 'cinematic',
@@ -155,6 +171,8 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     starsMilkyWay: 1500,
     rimLightEnabled: true,
     dofEnabled: true,
+    filmGrainEnabled: true,
+    vignetteEnabled: true,
   },
 };
 

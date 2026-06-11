@@ -3,6 +3,9 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import type { QualityConfig } from '$lib/quality/quality-tier';
@@ -311,6 +314,31 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       maxblur: 0.008,
     });
     composer.addPass(bokehPass);
+  }
+  // Film grain — wave 2/3 punch #7. Subtle photographic noise layer
+  // appended after bloom/DoF so the grain modulates the FINAL composed
+  // image (not the pre-bloom hi-contrast pass — that would erase the
+  // noise under the bloom blur). Scanlines + grayscale disabled —
+  // just noise — so we get "shot on film" texture without retro-CRT
+  // overlay. Tier-gated at medium+. Noise intensity intentionally low
+  // (0.18) — celluloid grain, not VHS static.
+  if (opts.quality.filmGrainEnabled) {
+    const filmPass = new FilmPass(0.18, 0, 0, 0);
+    composer.addPass(filmPass);
+  }
+  // Vignette — wave 2/3 punch #8. Cheapest of the polish passes:
+  // single full-screen fragment that darkens the corners proportional
+  // to dot(uv, uv). Offset 0.95 = mild radial falloff; darkness 0.6 =
+  // visible corner shade without crushing the frame. Last in the
+  // chain so it modulates the final composed image (bloom highlights
+  // included). Tier-gated at medium+ — even minimal-budget GPUs can
+  // afford this single quad blit on a desktop screen, but we keep the
+  // single off-switch in case a constrained device profile asks for it.
+  if (opts.quality.vignetteEnabled) {
+    const vignettePass = new ShaderPass(VignetteShader);
+    vignettePass.uniforms['offset'].value = 0.95;
+    vignettePass.uniforms['darkness'].value = 0.6;
+    composer.addPass(vignettePass);
   }
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));

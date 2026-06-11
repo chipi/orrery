@@ -2545,7 +2545,11 @@
     // cinema, fighting the ship-as-hero composition. Back to lens-
     // gated: users who want moons turn the science lens on.
     const stopMoonsLayer = onLayerChange('moons', (on) => {
-      helioHandles.setMoonsVisible(on);
+      lastLayerMoonsOn = on;
+      // #2 — during flyby cinema we force moons visible regardless of
+      // the layer state; the cinema-enter/exit transitions handle the
+      // visibility flip. Outside cinema the layer state wins.
+      if (!cinemaForceMoons) helioHandles.setMoonsVisible(on);
     });
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
@@ -2678,6 +2682,49 @@
     scSprite.scale.set(2.5, 2.5, 1);
     scSprite.renderOrder = 999;
     scene.add(scSprite);
+
+    // #1 Engine plume — directed cone at the spacecraft position
+    // during burn events. Geometry tip along -Z so THREE.Object3D.lookAt
+    // orients tip at any world-space target. Shader paints a base→tip
+    // orange→yellow-white gradient with squared falloff toward the tip
+    // (visually narrow tapering exhaust). Hidden between burns. Per-
+    // event orientation + scale + opacity in the animate loop below.
+    const plumeGeo = new THREE.ConeGeometry(0.35, 2.4, 16, 1, true);
+    plumeGeo.rotateX(Math.PI / 2);
+    plumeGeo.translate(0, 0, -1.2);
+    const plumeMat = new THREE.ShaderMaterial({
+      uniforms: {
+        uOpacity: { value: 0 },
+        uColorBase: { value: new THREE.Color(0xffaa44) },
+        uColorTip: { value: new THREE.Color(0xfff0aa) },
+      },
+      vertexShader: `
+        varying float vAlongAxis;
+        void main() {
+          vAlongAxis = (-position.z) / 2.4;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform float uOpacity;
+        uniform vec3 uColorBase;
+        uniform vec3 uColorTip;
+        varying float vAlongAxis;
+        void main() {
+          vec3 color = mix(uColorBase, uColorTip, vAlongAxis);
+          float alpha = uOpacity * (1.0 - vAlongAxis * vAlongAxis);
+          gl_FragColor = vec4(color, alpha);
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+    });
+    const plumeMesh = new THREE.Mesh(plumeGeo, plumeMat);
+    plumeMesh.visible = false;
+    plumeMesh.renderOrder = 998;
+    scene.add(plumeMesh);
 
     // Per-mission spacecraft model — replaces the generic sprite
     // glyph with a recognisable 3D silhouette for iconic missions.
@@ -2938,6 +2985,17 @@
     let helioAutoZoomTargetR = 360;
     const helioAutoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
     let lastHelioSubPhase: string | null = null;
+    // #2 — Saturn-OI Wernquist composition flag. Set by
+    // updateHelioAutoZoomTargets when the active flyby is the Saturn OI;
+    // read by updateCam to tilt camera.up for the ring-plane angled
+    // look. Cleared when leaving Saturn-OI cinema.
+    let saturnOIComposition = false;
+    // #2 — Auto-show moons during flyby cinema. cinemaForceMoons is
+    // true while we're forcing moons visible regardless of the
+    // science-lens master toggle. lastLayerMoonsOn tracks what the
+    // lens layer actually wants so we can restore on cinema exit.
+    let cinemaForceMoons = false;
+    let lastLayerMoonsOn = false;
     const HELIO_CLOSEUP_R = 40;
     // Earth return closeup distance. A previous iteration tried 30 to
     // hug Earth more tightly, but that read as "too zoomed in" and
@@ -3238,16 +3296,45 @@
           centerZ = scScene.z;
           targetR = HELIO_FLYBY_R_FALLBACK;
         }
-        targetP = HELIO_APPROACH_P;
+        // #2 — Saturn-OI specific composition override. Wernquist's
+        // Grand Finale art frames Cassini with Saturn looming high in
+        // the frame + ring plane edge-on with a slight tilt. We can't
+        // reproduce the actual rings (no ring geometry in scene yet)
+        // but we can approximate the FEEL: more horizontal camera
+        // (camP closer to π/2 instead of the default 0.85), tighter
+        // toCameraR for ship close to camera (already 0.9 on Saturn),
+        // and a small camera.up tilt that rolls the horizon. The tilt
+        // makes any object's plane appear angled — Saturn's disc
+        // sits askew, which reads as "ring plane oriented obliquely"
+        // even without explicit rings.
+        const isSaturnOI =
+          activeEvt?.type === 'edl_or_oi' && flyby?.id === 'saturn';
+        targetP = isSaturnOI ? 1.25 : HELIO_APPROACH_P;
+        saturnOIComposition = isSaturnOI;
         if (sub !== lastHelioSubPhase) {
+          const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;
+          const isInFlybyCinema = sub.startsWith('flyby-');
           lastHelioSubPhase = sub;
           helioAutoZoomActive = true;
+          // #2 — auto-show moons during flyby cinema. Entering forces
+          // moons visible; exiting restores whatever the science-lens
+          // moons layer last asked for.
+          if (isInFlybyCinema && !wasInFlybyCinema) {
+            cinemaForceMoons = true;
+            helioHandles.setMoonsVisible(true);
+          } else if (!isInFlybyCinema && wasInFlybyCinema) {
+            cinemaForceMoons = false;
+            helioHandles.setMoonsVisible(lastLayerMoonsOn);
+          }
         }
         helioAutoZoomTargetR = targetR;
         helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
         helioAutoZoomTargetP = targetP;
         return;
       }
+      // Leaving flyby into non-flyby: clear the saturnOI composition
+      // flag so camera.up returns to vertical.
+      saturnOIComposition = false;
       if (sc.phase === 'pre-launch') {
         // #86 — opening sequence overrides the prelaunch composition
         // for the first ~7.5 s. Wide top-down system view mirrors the
@@ -3466,8 +3553,14 @@
         }
       }
       if (sub !== lastHelioSubPhase) {
+        const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;
         lastHelioSubPhase = sub;
         helioAutoZoomActive = true;
+        // #2 — exit flyby cinema → restore moons to layer state
+        if (wasInFlybyCinema) {
+          cinemaForceMoons = false;
+          helioHandles.setMoonsVisible(lastLayerMoonsOn);
+        }
       }
       helioAutoZoomTargetR = targetR;
       helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
@@ -3598,6 +3691,16 @@
         camTarget.y + camR * Math.cos(camP),
         camTarget.z + camR * Math.sin(camP) * Math.cos(camT),
       );
+      // #2 — Saturn-OI tilt: roll camera.up by 17° so the horizon
+      // (and Saturn's disc) appears askew, reading as Wernquist's
+      // ring-plane-edge-on Grand Finale orientation. Reverts to true
+      // vertical (0,1,0) outside Saturn-OI composition.
+      if (saturnOIComposition) {
+        const ROLL = 0.3;
+        camera.up.set(Math.sin(ROLL), Math.cos(ROLL), 0);
+      } else {
+        camera.up.set(0, 1, 0);
+      }
       camera.lookAt(camTarget);
     };
     // Auto-zoom state for cislunar phases (ADR-058 polish). When the
@@ -5287,6 +5390,74 @@
           );
           centripetalArrow.setLength(logScaleLength(aSun2, 1.2, 14, 1e-6, 10), 0.7, 0.4);
         }
+      }
+
+      // #1 Engine plume — directed cone at the spacecraft during burn
+      // events. Hidden when no burn is active. Per-event-type config:
+      //   - launch: exhaust toward Earth (outward thrust)
+      //   - tli_or_tmi: exhaust retrograde (prograde acceleration)
+      //   - tcm: small retrograde
+      //   - edl_or_oi: exhaust prograde (retrograde deceleration)
+      // Opacity ramps in/out across ±BURN_WINDOW_DAYS.
+      if (!isMoonMission && mission.flight?.events) {
+        const BURN_WINDOW_DAYS = 2;
+        type BurnConfig = { scale: number; mode: 'inward' | 'retro' | 'pro' };
+        const BURN_TABLE: Record<string, BurnConfig> = {
+          launch: { scale: 1.4, mode: 'inward' },
+          tli_or_tmi: { scale: 1.6, mode: 'retro' },
+          tcm: { scale: 0.6, mode: 'retro' },
+          edl_or_oi: { scale: 1.8, mode: 'pro' },
+        };
+        // Find the closest in-window burn event.
+        let activeBurn: { type: string; met_days: number; daysFromEvent: number } | null = null;
+        const simMet = simDay - arcTimeline.dep_day;
+        for (const evt of mission.flight.events) {
+          if (!(evt.type in BURN_TABLE) || evt.met_days == null) continue;
+          const daysFromEvent = Math.abs(simMet - evt.met_days);
+          if (daysFromEvent > BURN_WINDOW_DAYS) continue;
+          if (!activeBurn || daysFromEvent < activeBurn.daysFromEvent) {
+            activeBurn = { type: evt.type, met_days: evt.met_days, daysFromEvent };
+          }
+        }
+        if (activeBurn) {
+          const cfg = BURN_TABLE[activeBurn.type];
+          // Sample next-frame position for velocity vector
+          const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+          const vx = (sc1.x - sc.pos.x) * SCALE_3D;
+          const vz = (sc1.z - sc.pos.z) * SCALE_3D;
+          const vMag = Math.hypot(vx, vz);
+          // Compute exhaust direction (the target the cone tip points at)
+          let exDx = 0;
+          let exDz = 0;
+          if (cfg.mode === 'inward') {
+            // From spacecraft toward Earth (or destination for early-mission Earth)
+            const earthW = earthMesh.position;
+            const idx = earthW.x - scWorld.x;
+            const idz = earthW.z - scWorld.z;
+            const idm = Math.hypot(idx, idz) || 1;
+            exDx = idx / idm;
+            exDz = idz / idm;
+          } else if (cfg.mode === 'retro' && vMag > 0.0001) {
+            // Opposite velocity
+            exDx = -vx / vMag;
+            exDz = -vz / vMag;
+          } else if (cfg.mode === 'pro' && vMag > 0.0001) {
+            // Along velocity
+            exDx = vx / vMag;
+            exDz = vz / vMag;
+          }
+          plumeMesh.position.copy(scWorld);
+          plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
+          plumeMesh.scale.setScalar(cfg.scale);
+          // Opacity: peak at event time, fade linearly across window
+          const opacity = 0.85 * Math.max(0, 1 - activeBurn.daysFromEvent / BURN_WINDOW_DAYS);
+          plumeMat.uniforms.uOpacity.value = opacity;
+          plumeMesh.visible = opacity > 0.02;
+        } else {
+          plumeMesh.visible = false;
+        }
+      } else {
+        plumeMesh.visible = false;
       }
 
       // v0.6.3 #228: single source of truth for bright/dim split. The

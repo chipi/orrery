@@ -62,6 +62,22 @@ export interface LoadedMission {
    *  surfaces in the FLIGHT PARAMS HUD group when present. */
   flight?: FlightParams;
   flight_data_quality?: FlightDataQuality;
+  /** Editorial blurb (per ADR-017). Used by #86 cinematic opening as
+   *  the mission's story-paragraph context. */
+  description?: string;
+  /** Full agency name (e.g. "NASA/ESA/ASI" for Cassini). Used by #86
+   *  opening as the title-card subtitle. */
+  agency_full?: string;
+  /** ∆v as the original string from the data file (e.g. "1.88 km/s")
+   *  — distinct from the parsed `dv_total` number for cases where the
+   *  string carries units / annotations the canonical number drops. */
+  delta_v_label?: string;
+  /** Transit days from the raw mission index — used by #86 opening
+   *  to surface "TRANSIT · 6.7 years" without recomputing. */
+  transit_days?: number;
+  /** Cross-links to fleet entries (Phase 3 backfill). Surfaced by
+   *  #86 opening as labeled chips. */
+  fleet_refs?: Array<{ id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site' }>;
 }
 
 export interface MissionApplyDefaults {
@@ -187,6 +203,11 @@ function buildMissionMeta(
     isFromData: true,
     flight: m.flight,
     flight_data_quality: m.flight_data_quality,
+    description: m.description,
+    agency_full: m.agency_full,
+    delta_v_label: m.delta_v,
+    transit_days: m.transit_days,
+    fleet_refs: m.fleet_refs,
   };
 }
 

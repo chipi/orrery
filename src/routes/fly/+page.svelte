@@ -1180,6 +1180,12 @@
     epilogueStartedAt = 0;
     epilogueActive = false;
     epilogueCaptionOpacity = 0;
+    // #86 opening state — fires fresh on every mission swap
+    openingStartedAt = performance.now();
+    openingActive = true;
+    openingTitleOpacity = 0;
+    openingContextOpacity = 0;
+    openingFleetOpacity = 0;
   }
   // Polish-wave-3 cinematic state — all 13 timestamps + phase-tracking
   // flags live in a single CinematicBeatState instance. The struct
@@ -1210,6 +1216,29 @@
   let epilogueStartedAt = 0;
   let epilogueActive = $state(false);
   let epilogueCaptionOpacity = $state(0);
+  // #86 cinematic opening — mirrors the epilogue tableau but at the
+  // START of the mission. Wide top-down system view + mission title +
+  // agency + dates + 1-sentence story + key stats (vehicle / payload /
+  // ∆v / duration) + a curated list of related fleet entries (the
+  // spacecraft, launcher, launch-site cross-linked from mission.
+  // fleet_refs) fade in over ~5.5 s, hold for 2 s, then the camera
+  // lerps toward the Earth-closeup prelaunch composition. The whole
+  // flyby reads as a movie: title card + context + body + credits.
+  //
+  // Timing:
+  //   0-1.0s   title (mission name + agency + years) fades in
+  //   1.5-3.0s context (story + stats) fades in
+  //   3.0-5.5s fleet asset cards fade in (spacecraft / launcher / site)
+  //   5.5-7.5s held: audience reads the context
+  //   7.5-9.5s title + context + fleet fade OUT, camera lerps from
+  //           wide top-down to Earth-closeup prelaunch composition
+  //   9.5-13.5s existing W3.3 prelaunch dwell (4 s of static Earth)
+  //           then launch fires.
+  let openingStartedAt = 0;
+  let openingActive = $state(false);
+  let openingTitleOpacity = $state(0);
+  let openingContextOpacity = $state(0);
+  let openingFleetOpacity = $state(0);
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     const previousSimDay = simDay;
@@ -1222,7 +1251,15 @@
     // for non-zero MET jumps; those want the snap behavior the
     // camSnapUntil window already provides.
     if (metDays === 0) {
-      launchDwellUntil = performance.now() + 4000;
+      // #86 — jumping back to Launch milestone replays the cinematic
+      // opening. Re-arm opening state + extend the dwell to cover the
+      // 9.5 s opening + 4 s prelaunch.
+      openingStartedAt = performance.now();
+      openingActive = true;
+      openingTitleOpacity = 0;
+      openingContextOpacity = 0;
+      openingFleetOpacity = 0;
+      launchDwellUntil = performance.now() + 13500;
       // W3.7 — re-arm the cruise hold so it fires again on the
       // mission replay.
       cine.cruiseHoldFired = false;
@@ -1311,11 +1348,14 @@
     // audience sits longer with the static Earth-closeup composition (the
     // "weight of decades of work" register from the creative-direction
     // guide §5).
-    launchDwellUntil = performance.now() + 4000;
     // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
     // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat.
+    // already inside a stale held beat. Also arms the #86 opening
+    // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
+    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
+    // dwell. Total 13.5 s before launch fires.
+    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1344,11 +1384,14 @@
     // audience sits longer with the static Earth-closeup composition (the
     // "weight of decades of work" register from the creative-direction
     // guide §5).
-    launchDwellUntil = performance.now() + 4000;
     // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
     // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat.
+    // already inside a stale held beat. Also arms the #86 opening
+    // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
+    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
+    // dwell. Total 13.5 s before launch fires.
+    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1394,11 +1437,14 @@
     // audience sits longer with the static Earth-closeup composition (the
     // "weight of decades of work" register from the creative-direction
     // guide §5).
-    launchDwellUntil = performance.now() + 4000;
     // Audit recommendation #1 — clear lingering W3.1-W3.7 timers from
     // any prior mission so we don't accidentally start the new one
-    // already inside a stale held beat.
+    // already inside a stale held beat. Also arms the #86 opening
+    // sequence, so the launchDwellUntil set below must come after.
     resetCinematicForMissionSwap();
+    // #86 — opening sequence runs 0-9.5 s; then existing 4 s prelaunch
+    // dwell. Total 13.5 s before launch fires.
+    launchDwellUntil = performance.now() + (openingActive ? 13500 : 4000);
     lastAppliedMissionId = r.appliedId;
   }
 
@@ -3091,15 +3137,33 @@
         return;
       }
       if (sc.phase === 'pre-launch') {
-        // Open framed close on Earth at the same zoom level as
-        // Mars-arrival — symmetric "depart / arrive" beats so the
-        // mission reads with a cinematic arc: close on Earth → slow
-        // pull out to wide cruise → slow zoom in on Mars → flyby →
-        // slow pull out → slow zoom in on Earth on return.
-        sub = 'prelaunch';
-        centerX = earthScene.x;
-        centerZ = earthScene.z;
-        targetR = HELIO_EARTH_CLOSEUP_R;
+        // #86 — opening sequence overrides the prelaunch composition
+        // for the first ~7.5 s. Wide top-down system view mirrors the
+        // epilogue tableau so the mission reads as bookended movie
+        // (title card → context → body → end credits). After the
+        // opening fades, the camera lerps to the Earth-closeup
+        // prelaunch composition for the existing 4 s W3.3 dwell.
+        const inOpeningWide =
+          openingActive && openingStartedAt > 0 && performance.now() - openingStartedAt < 7500;
+        if (inOpeningWide) {
+          sub = 'opening';
+          const destSize = PLANET_SIZES[activeDestination] ?? 0;
+          const destDistance = Math.hypot(destScene.x, destScene.z);
+          centerX = 0;
+          centerZ = 0;
+          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
+          targetP = 0.35;
+        } else {
+          // Open framed close on Earth at the same zoom level as
+          // Mars-arrival — symmetric "depart / arrive" beats so the
+          // mission reads with a cinematic arc: close on Earth → slow
+          // pull out to wide cruise → slow zoom in on Mars → flyby →
+          // slow pull out → slow zoom in on Earth on return.
+          sub = 'prelaunch';
+          centerX = earthScene.x;
+          centerZ = earthScene.z;
+          targetR = HELIO_EARTH_CLOSEUP_R;
+        }
       } else if (sc.phase === 'arrived') {
         sub = 'arrived';
         // Round-trip missions end at Earth; one-way ends at destination.
@@ -4446,6 +4510,17 @@
       if (!isMoonMission && !reducedMotion && !isDrag && epilogueActive) {
         camT += 0.04 * dt;
       }
+      // #86 — same slow azimuthal rotation during the opening, so the
+      // system visibly rotates while the audience reads the title card.
+      if (!isMoonMission && !reducedMotion && !isDrag && openingActive) {
+        const elapsedO = openingStartedAt > 0 ? performance.now() - openingStartedAt : 0;
+        // Only rotate during the wide-view portion (0-7.5 s). Once the
+        // camera starts lerping to Earth closeup, halt rotation so the
+        // composition settles.
+        if (elapsedO < 7500) {
+          camT += 0.04 * dt;
+        }
+      }
       // Approach sweep — slow azimuthal arc around the ship-dest
       // midpoint during the final outbound leg. Paired with the
       // wide → close framing lerp (see updateHelioAutoZoomTargets
@@ -4844,6 +4919,56 @@
         // Caption fade-in 0 → 1 across t=1500 → 2500
         if (elapsedE >= 1500) {
           epilogueCaptionOpacity = Math.min(1, (elapsedE - 1500) / 1000);
+        }
+      }
+      // #86 opening — title (mission name + agency + years), context
+      // (story + stats), fleet asset cards fade in sequentially over
+      // ~5.5 s while the camera holds at the wide top-down system view.
+      // Then everything fades out 7.5 → 9.5 s and the camera lerps to
+      // the prelaunch Earth-closeup composition for the 4 s W3.3
+      // launch dwell. At 13.5 s the launch ring fires.
+      if (openingActive && openingStartedAt > 0) {
+        const elapsedO = performance.now() - openingStartedAt;
+        // Title fade-in 0 → 1 across 0 → 1000 ms
+        if (elapsedO < 1000) {
+          openingTitleOpacity = elapsedO / 1000;
+        } else if (elapsedO < 7500) {
+          openingTitleOpacity = 1;
+        } else if (elapsedO < 9500) {
+          openingTitleOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else {
+          openingTitleOpacity = 0;
+        }
+        // Context fade-in 0 → 1 across 1500 → 3000 ms
+        if (elapsedO < 1500) {
+          openingContextOpacity = 0;
+        } else if (elapsedO < 3000) {
+          openingContextOpacity = (elapsedO - 1500) / 1500;
+        } else if (elapsedO < 7500) {
+          openingContextOpacity = 1;
+        } else if (elapsedO < 9500) {
+          openingContextOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else {
+          openingContextOpacity = 0;
+        }
+        // Fleet asset cards fade-in across 3000 → 5000 ms
+        if (elapsedO < 3000) {
+          openingFleetOpacity = 0;
+        } else if (elapsedO < 5000) {
+          openingFleetOpacity = (elapsedO - 3000) / 2000;
+        } else if (elapsedO < 7500) {
+          openingFleetOpacity = 1;
+        } else if (elapsedO < 9500) {
+          openingFleetOpacity = Math.max(0, 1 - (elapsedO - 7500) / 2000);
+        } else {
+          openingFleetOpacity = 0;
+        }
+        // End opening at 9500 ms
+        if (elapsedO >= 9500) {
+          openingActive = false;
+          openingTitleOpacity = 0;
+          openingContextOpacity = 0;
+          openingFleetOpacity = 0;
         }
       }
       // The LAUNCH / ARRIVAL anchor rings + their date sprites are
@@ -5940,6 +6065,89 @@
       <div class="epilogue-name">{mission.name}</div>
     </div>
   {/if}
+
+  <!-- #86 cinematic opening overlay — title card + story + fleet
+       asset chips. Wide top-down system view is the backdrop (set in
+       updateHelioAutoZoomTargets 'opening' branch). -->
+  {#if openingActive}
+    {@const depYear = mission.dep_label?.slice(0, 4) ?? ''}
+    {@const arrYear = mission.arr_label?.slice(0, 4) ?? ''}
+    {@const story = mission.description ?? ''}
+    {@const agencyFull = mission.agency_full ?? ''}
+    {@const transitYears =
+      mission.transit_days != null ? (mission.transit_days / 365).toFixed(1) : null}
+    {@const fleetRefs = mission.fleet_refs ?? []}
+    {#if openingTitleOpacity > 0}
+      <div
+        class="opening-title"
+        style="opacity: {openingTitleOpacity};"
+        data-testid="fly-opening-title"
+        aria-live="polite"
+      >
+        <div class="opening-agency">{agencyFull}</div>
+        <div class="opening-name">{mission.name}</div>
+        {#if depYear || arrYear}
+          <div class="opening-years">
+            {depYear}{arrYear && arrYear !== depYear ? ` — ${arrYear}` : ''}
+          </div>
+        {/if}
+      </div>
+    {/if}
+    {#if openingContextOpacity > 0 && (story || mission.vehicle || mission.payload || mission.delta_v_label)}
+      <div
+        class="opening-context"
+        style="opacity: {openingContextOpacity};"
+        data-testid="fly-opening-context"
+      >
+        {#if story}
+          <div class="opening-story">{story}</div>
+        {/if}
+        <div class="opening-stats">
+          {#if mission.vehicle}
+            <span class="opening-stat">
+              <span class="opening-stat-label">VEHICLE</span>
+              <span class="opening-stat-val">{mission.vehicle}</span>
+            </span>
+          {/if}
+          {#if mission.payload}
+            <span class="opening-stat">
+              <span class="opening-stat-label">PAYLOAD</span>
+              <span class="opening-stat-val">{mission.payload}</span>
+            </span>
+          {/if}
+          {#if mission.delta_v_label}
+            <span class="opening-stat">
+              <span class="opening-stat-label">∆V</span>
+              <span class="opening-stat-val">{mission.delta_v_label}</span>
+            </span>
+          {/if}
+          {#if transitYears}
+            <span class="opening-stat">
+              <span class="opening-stat-label">TRANSIT</span>
+              <span class="opening-stat-val">{transitYears} years</span>
+            </span>
+          {/if}
+        </div>
+      </div>
+    {/if}
+    {#if openingFleetOpacity > 0 && fleetRefs.length > 0}
+      <div
+        class="opening-fleet"
+        style="opacity: {openingFleetOpacity};"
+        data-testid="fly-opening-fleet"
+      >
+        <div class="opening-fleet-label">FLEET ASSETS</div>
+        <div class="opening-fleet-row">
+          {#each fleetRefs as ref (ref.id)}
+            <span class="opening-fleet-chip">
+              <span class="opening-fleet-role">{ref.role.toUpperCase()}</span>
+              <span class="opening-fleet-id">{ref.id.replace(/-/g, ' ').toUpperCase()}</span>
+            </span>
+          {/each}
+        </div>
+      </div>
+    {/if}
+  {/if}
   <!-- W3.6 scrubber-jump cut overlay. Short 200 ms fade-to-black on
        big timeline jumps so the audience reads it as a deliberate cut,
        not a long lerp across the system. -->
@@ -6829,6 +7037,153 @@
     text-shadow:
       0 0 12px rgba(0, 0, 0, 0.9),
       0 0 4px rgba(0, 0, 0, 1);
+  }
+
+  /* #86 opening overlay — three layered cards stacked vertically over
+     the wide top-down system view. Title card top-anchored, context +
+     fleet asset chips below. All fade in/out per the state machine. */
+  .opening-title {
+    position: fixed;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 200ms linear;
+  }
+  .opening-agency {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: rgba(94, 234, 212, 0.85);
+    text-transform: uppercase;
+  }
+  .opening-name {
+    font-family: var(--font-display);
+    font-size: 36px;
+    letter-spacing: 8px;
+    color: rgba(255, 255, 255, 0.98);
+    text-transform: uppercase;
+    text-shadow:
+      0 0 16px rgba(0, 0, 0, 0.95),
+      0 0 4px rgba(0, 0, 0, 1);
+  }
+  .opening-years {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: rgba(255, 200, 80, 0.85);
+  }
+  .opening-context {
+    position: fixed;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    max-width: 720px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 200ms linear;
+  }
+  .opening-story {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 0.3px;
+    text-shadow:
+      0 0 10px rgba(0, 0, 0, 0.95),
+      0 0 4px rgba(0, 0, 0, 1);
+  }
+  .opening-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 6px;
+  }
+  .opening-stat {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .opening-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: rgba(94, 234, 212, 0.7);
+    text-transform: uppercase;
+  }
+  .opening-stat-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.92);
+    text-transform: uppercase;
+  }
+  .opening-fleet {
+    position: fixed;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+    transition: opacity 200ms linear;
+  }
+  .opening-fleet-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    color: rgba(255, 200, 80, 0.78);
+    text-transform: uppercase;
+  }
+  .opening-fleet-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .opening-fleet-chip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 16px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(94, 234, 212, 0.35);
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .opening-fleet-role {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(94, 234, 212, 0.8);
+    text-transform: uppercase;
+  }
+  .opening-fleet-id {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.92);
+    text-transform: uppercase;
   }
   /* W3.6 scrubber-jump cut overlay. Same z as the finale-black but
      no transition — the JS drives the opacity each frame directly,

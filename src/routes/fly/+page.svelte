@@ -3312,7 +3312,16 @@
     // stretches the closest-approach moment in screen time without
     // touching physics. JPL's Cassini end-of-mission lingers ten beats
     // after the burn; we do the same in proportion.
-    const FLYBY_APPROACH_DAYS = 20;
+    // Bumped 20 → 60 days so the camera has 3× the wall-clock window
+    // to converge on the iconic flyby composition BEFORE the ship
+    // reaches peak. The previous 20-day window (= 2.86 wall-clock
+    // seconds at 7× sim speed) was barely long enough for the
+    // LERP=0.025 to converge — the camera arrived AT peak instead of
+    // before, which user read as "camera rotates late, after ship
+    // passes through planet." At 60 days, convergence completes
+    // ~6 sec early and the camera holds the iconic frame as the ship
+    // arcs into it.
+    const FLYBY_APPROACH_DAYS = 60;
     const FLYBY_DEPART_DAYS = 30;
     /** Approach window for orbit-insertion events specifically (Cassini at
      *  Saturn, Voyager Jupiter SOI, etc.) — arrivals get a longer ramp
@@ -3998,7 +4007,13 @@
           // don't snap-cut) keeps composition fresh at every speed.
           const simSpeedFactor = Math.max(1, simSpeed / 7);
           const inSnapWindow = performance.now() < camSnapUntil;
-          const LERP_BASE = inSnapWindow ? 0.08 : 0.025;
+          // LERP_BASE bumped 0.025 → 0.05 for flyby cinema so the
+          // camera converges in ~1.5s instead of 3s — combined with
+          // the 60-day approach window (was 20), the camera now
+          // arrives at the iconic frame well before peak instead of
+          // catching up after.
+          const inFlybyCinemaForLerp = lastHelioSubPhase?.startsWith('flyby-') ?? false;
+          const LERP_BASE = inSnapWindow ? 0.08 : inFlybyCinemaForLerp ? 0.05 : 0.025;
           const LERP = Math.min(0.18, LERP_BASE * simSpeedFactor);
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
@@ -4006,11 +4021,25 @@
           camP += (helioAutoZoomTargetP - camP) * LERP;
           if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
         } else {
+          // Even after convergence we keep a stronger track during
+          // flyby cinema because the framing target (planet pos + ship
+          // pos) moves every frame; the prior TRACK=0.006 couldn't
+          // keep up and the camera drifted off the iconic composition
+          // (user-reported "camera loses ship" mid-flyby). Inside the
+          // flyby branch sub starts with 'flyby-'; bump TRACK 4× there
+          // and also let camR track (without this only center drifts,
+          // and the cruise→cinema camR delta never closes when
+          // helioAutoZoomActive flipped false mid-lerp).
           const simSpeedFactor = Math.max(1, simSpeed / 7);
-          const TRACK = Math.min(0.05, 0.006 * simSpeedFactor);
+          const inFlyby = lastHelioSubPhase?.startsWith('flyby-') ?? false;
+          const TRACK_BASE = inFlyby ? 0.025 : 0.006;
+          const TRACK = Math.min(0.08, TRACK_BASE * simSpeedFactor);
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * TRACK;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * TRACK;
           camP += (helioAutoZoomTargetP - camP) * TRACK;
+          if (inFlyby) {
+            camR += (helioAutoZoomTargetR - camR) * TRACK;
+          }
         }
       }
       camera.position.set(

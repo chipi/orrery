@@ -40,11 +40,35 @@
   });
   let loading = $state(true);
   let activeDecade: string = $state(decadeForYear(new Date().getUTCFullYear()));
-  let tierFilter: TierFilter = $state('ALL');
-  let agencyFilter: string = $state('ALL');
-  let outcomeFilter: OutcomeFilter = $state('ALL');
-  let yearFilter: string = $state('ALL'); // 'ALL' or 4-digit year
-  let filtersExpanded = $state(false);
+
+  /**
+   * Launches list filter state. Bagged into a single typed `$state`
+   * per #330 C.1 — replaces 5 scattered `$state` declarations with
+   * one shape that's passed to the reset funnel + future URL-sync.
+   * `expanded` is a UI-only field (filter strip disclosure); the
+   * funnel doesn't touch it so clearing filters keeps the strip open.
+   */
+  interface LaunchFilterState {
+    tier: TierFilter;
+    agency: string;
+    outcome: OutcomeFilter;
+    year: string; // 'ALL' or 4-digit year
+    expanded: boolean;
+  }
+  const filterState = $state<LaunchFilterState>({
+    tier: 'ALL',
+    agency: 'ALL',
+    outcome: 'ALL',
+    year: 'ALL',
+    expanded: false,
+  });
+
+  function resetLaunchFilters(): void {
+    filterState.tier = 'ALL';
+    filterState.agency = 'ALL';
+    filterState.outcome = 'ALL';
+    filterState.year = 'ALL';
+  }
 
   let allEntries = $derived(Object.values(manifest.entries));
   let agencies = $derived(
@@ -54,11 +78,11 @@
 
   let filtered = $derived(
     allEntries.filter((e) => {
-      if (tierFilter === 'FEATURED' && e.tier !== 'T1') return false;
-      if (agencyFilter !== 'ALL' && e.agency_name !== agencyFilter) return false;
-      if (mode === 'historic' && outcomeFilter !== 'ALL' && e.status.code !== outcomeFilter)
+      if (filterState.tier === 'FEATURED' && e.tier !== 'T1') return false;
+      if (filterState.agency !== 'ALL' && e.agency_name !== filterState.agency) return false;
+      if (mode === 'historic' && filterState.outcome !== 'ALL' && e.status.code !== filterState.outcome)
         return false;
-      if (yearFilter !== 'ALL' && !e.net.startsWith(yearFilter)) return false;
+      if (filterState.year !== 'ALL' && !e.net.startsWith(filterState.year)) return false;
       return true;
     }),
   );
@@ -88,8 +112,8 @@
   function setMode(m: Mode) {
     if (m === mode) return;
     mode = m;
-    if (m === 'upcoming') outcomeFilter = 'ALL';
-    yearFilter = 'ALL'; // reset year when switching modes; available years change
+    if (m === 'upcoming') filterState.outcome = 'ALL';
+    filterState.year = 'ALL'; // reset year when switching modes; available years change
     pushUrl();
     void loadForMode(m);
   }
@@ -97,36 +121,33 @@
   function setDecade(d: string) {
     if (d === activeDecade) return;
     activeDecade = d;
-    yearFilter = 'ALL'; // reset year when switching decades
+    filterState.year = 'ALL'; // reset year when switching decades
     pushUrl();
     void loadForMode('historic', d);
   }
 
   function setYear(y: string) {
-    yearFilter = y;
+    filterState.year = y;
     pushUrl();
   }
 
   function setTier(t: TierFilter) {
-    tierFilter = t;
+    filterState.tier = t;
     pushUrl();
   }
 
   function setAgency(a: string) {
-    agencyFilter = a;
+    filterState.agency = a;
     pushUrl();
   }
 
   function setOutcome(o: OutcomeFilter) {
-    outcomeFilter = o;
+    filterState.outcome = o;
     pushUrl();
   }
 
   function clearFilters() {
-    tierFilter = 'ALL';
-    agencyFilter = 'ALL';
-    outcomeFilter = 'ALL';
-    yearFilter = 'ALL';
+    resetLaunchFilters();
     pushUrl();
   }
 
@@ -136,13 +157,13 @@
     const d = url.searchParams.get('decade');
     if (d && (ALL_DECADES as readonly string[]).includes(d)) activeDecade = d;
     const t = url.searchParams.get('tier');
-    tierFilter = t === 'FEATURED' ? 'FEATURED' : 'ALL';
+    filterState.tier = t === 'FEATURED' ? 'FEATURED' : 'ALL';
     const a = url.searchParams.get('agency');
-    agencyFilter = a ?? 'ALL';
+    filterState.agency = a ?? 'ALL';
     const o = url.searchParams.get('outcome');
-    outcomeFilter = o === 'SUCCESS' || o === 'FAILURE' ? o : 'ALL';
+    filterState.outcome = o === 'SUCCESS' || o === 'FAILURE' ? o : 'ALL';
     const y = url.searchParams.get('year');
-    yearFilter = y && /^\d{4}$/.test(y) ? y : 'ALL';
+    filterState.year = y && /^\d{4}$/.test(y) ? y : 'ALL';
     if (
       url.searchParams.has('mode') ||
       url.searchParams.has('decade') ||
@@ -151,7 +172,7 @@
       url.searchParams.has('outcome') ||
       url.searchParams.has('year')
     ) {
-      filtersExpanded = true;
+      filterState.expanded = true;
     }
   }
 
@@ -161,10 +182,10 @@
     if (mode === 'historic' && activeDecade !== decadeForYear(new Date().getUTCFullYear())) {
       params.set('decade', activeDecade);
     }
-    if (tierFilter !== 'ALL') params.set('tier', tierFilter);
-    if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
-    if (mode === 'historic' && outcomeFilter !== 'ALL') params.set('outcome', outcomeFilter);
-    if (yearFilter !== 'ALL') params.set('year', yearFilter);
+    if (filterState.tier !== 'ALL') params.set('tier', filterState.tier);
+    if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
+    if (mode === 'historic' && filterState.outcome !== 'ALL') params.set('outcome', filterState.outcome);
+    if (filterState.year !== 'ALL') params.set('year', filterState.year);
     const qs = params.toString();
     const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -208,9 +229,9 @@
   <button
     type="button"
     class="filters-toggle"
-    aria-expanded={filtersExpanded}
+    aria-expanded={filterState.expanded}
     aria-controls="launches-filters"
-    onclick={() => (filtersExpanded = !filtersExpanded)}
+    onclick={() => (filterState.expanded = !filterState.expanded)}
   >
     <span class="filters-eyebrow">{m.launches_filters_label().toUpperCase()}</span>
     <span class="filters-right">
@@ -219,11 +240,11 @@
       {:else}
         <span class="filters-count count-total-only">{allEntries.length}</span>
       {/if}
-      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+      <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
     </span>
   </button>
 
-  {#if filtersExpanded}
+  {#if filterState.expanded}
     <nav id="launches-filters" class="filters" aria-label={m.launches_filters_label()}>
       <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_view()}>
         <span class="filter-label">{m.launches_filter_view()}</span>
@@ -250,17 +271,17 @@
         <button
           type="button"
           class="pill"
-          class:active={tierFilter === 'ALL'}
+          class:active={filterState.tier === 'ALL'}
           role="radio"
-          aria-checked={tierFilter === 'ALL'}
+          aria-checked={filterState.tier === 'ALL'}
           onclick={() => setTier('ALL')}>{m.launches_filter_all()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={tierFilter === 'FEATURED'}
+          class:active={filterState.tier === 'FEATURED'}
           role="radio"
-          aria-checked={tierFilter === 'FEATURED'}
+          aria-checked={filterState.tier === 'FEATURED'}
           onclick={() => setTier('FEATURED')}>{m.launches_tier_featured()}</button
         >
       </div>
@@ -286,25 +307,25 @@
           <button
             type="button"
             class="pill"
-            class:active={outcomeFilter === 'ALL'}
+            class:active={filterState.outcome === 'ALL'}
             role="radio"
-            aria-checked={outcomeFilter === 'ALL'}
+            aria-checked={filterState.outcome === 'ALL'}
             onclick={() => setOutcome('ALL')}>{m.launches_outcome_all()}</button
           >
           <button
             type="button"
             class="pill"
-            class:active={outcomeFilter === 'SUCCESS'}
+            class:active={filterState.outcome === 'SUCCESS'}
             role="radio"
-            aria-checked={outcomeFilter === 'SUCCESS'}
+            aria-checked={filterState.outcome === 'SUCCESS'}
             onclick={() => setOutcome('SUCCESS')}>{m.launches_outcome_success()}</button
           >
           <button
             type="button"
             class="pill"
-            class:active={outcomeFilter === 'FAILURE'}
+            class:active={filterState.outcome === 'FAILURE'}
             role="radio"
-            aria-checked={outcomeFilter === 'FAILURE'}
+            aria-checked={filterState.outcome === 'FAILURE'}
             onclick={() => setOutcome('FAILURE')}>{m.launches_outcome_failure()}</button
           >
         </div>
@@ -313,7 +334,7 @@
       <div class="filter-group">
         <span class="filter-label">{m.launches_filter_agency()}</span>
         <PillDropdown
-          value={agencyFilter}
+          value={filterState.agency}
           options={agencies}
           placeholder={m.launches_filter_all()}
           label={m.launches_filter_agency()}
@@ -330,25 +351,25 @@
           <button
             type="button"
             class="pill"
-            class:active={yearFilter === 'ALL'}
+            class:active={filterState.year === 'ALL'}
             role="radio"
-            aria-checked={yearFilter === 'ALL'}
+            aria-checked={filterState.year === 'ALL'}
             onclick={() => setYear('ALL')}>{m.launches_filter_all()}</button
           >
           {#each years as y (y)}
             <button
               type="button"
               class="pill"
-              class:active={y === yearFilter}
+              class:active={y === filterState.year}
               role="radio"
-              aria-checked={y === yearFilter}
+              aria-checked={y === filterState.year}
               onclick={() => setYear(y)}>{y}</button
             >
           {/each}
         </div>
       {/if}
 
-      {#if tierFilter !== 'ALL' || agencyFilter !== 'ALL' || outcomeFilter !== 'ALL' || yearFilter !== 'ALL'}
+      {#if filterState.tier !== 'ALL' || filterState.agency !== 'ALL' || filterState.outcome !== 'ALL' || filterState.year !== 'ALL'}
         <button type="button" class="clear-btn" onclick={clearFilters}>{m.launches_clear()}</button>
       {/if}
     </nav>

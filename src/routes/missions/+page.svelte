@@ -25,19 +25,60 @@
   let loading = $state(true);
   let loadFailed = $state(false);
 
-  // Filters: parsed from URL query so /missions?dest=MARS pre-applies
-  // on first load (RFC-004). Updates write back to the URL via goto().
-  let destFilter: Destination | 'ALL' = $state('ALL');
-  let statusFilter: MissionStatus | 'ALL' = $state('ALL');
-  let agencyFilter: string = $state('ALL');
-  let crewFilter: 'ALL' | 'CREWED' | 'UNCREWED' = $state('ALL');
-  // J.1 — filter strip is collapsed by default; clicking the eyebrow
-  // expands it. Resets on route mount.
-  let filtersExpanded = $state(false);
-  // Timeline navigator year window (ADR-027). Default = full range
-  // = no year filter applied.
-  let fromYear: number = $state(TIMELINE_MIN_YEAR);
-  let toYear: number = $state(TIMELINE_MAX_YEAR);
+  /**
+   * Mission catalog filter state. Bagged into a single typed `$state`
+   * object per #330 C.1 — replaces 7 scattered `$state` declarations
+   * with one shape that callers can pass around (e.g. the reset funnel
+   * below, future URL-sync abstractions).
+   *
+   * `expanded` is a UI-only field that controls the filter strip's
+   * disclosure; the reset funnel deliberately leaves it untouched
+   * because clearing filters shouldn't also collapse the strip the
+   * user opened.
+   */
+  interface MissionFilterState {
+    dest: Destination | 'ALL';
+    status: MissionStatus | 'ALL';
+    agency: string;
+    crew: 'ALL' | 'CREWED' | 'UNCREWED';
+    fromYear: number;
+    toYear: number;
+    expanded: boolean;
+  }
+  const filterState = $state<MissionFilterState>({
+    dest: 'ALL',
+    status: 'ALL',
+    agency: 'ALL',
+    crew: 'ALL',
+    fromYear: TIMELINE_MIN_YEAR,
+    toYear: TIMELINE_MAX_YEAR,
+    expanded: false,
+  });
+
+  function resetMissionFilters(): void {
+    filterState.dest = 'ALL';
+    filterState.status = 'ALL';
+    filterState.agency = 'ALL';
+    filterState.crew = 'ALL';
+    filterState.fromYear = TIMELINE_MIN_YEAR;
+    filterState.toYear = TIMELINE_MAX_YEAR;
+  }
+
+  // True when at least one filter is set away from its 'ALL' / full-range
+  // default — drives the CLEAR-FILTERS chip in the expanded strip.
+  let anyFilterActive = $derived(
+    filterState.dest !== 'ALL' ||
+      filterState.status !== 'ALL' ||
+      filterState.agency !== 'ALL' ||
+      filterState.crew !== 'ALL' ||
+      filterState.fromYear !== TIMELINE_MIN_YEAR ||
+      filterState.toYear !== TIMELINE_MAX_YEAR,
+  );
+
+  function clearAllFilters(): void {
+    resetMissionFilters();
+    pushFiltersToUrl();
+  }
 
   // Agencies are derived from the loaded mission set so the filter
   // always reflects what's actually in the data — no hardcoded list to
@@ -51,13 +92,13 @@
     missions
       .filter(
         (mission) =>
-          (destFilter === 'ALL' || mission.dest === destFilter) &&
-          (statusFilter === 'ALL' || mission.status === statusFilter) &&
-          (agencyFilter === 'ALL' || splitAgencies(mission.agency).includes(agencyFilter)) &&
-          (crewFilter === 'ALL' ||
-            (crewFilter === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
-          mission.year >= fromYear &&
-          mission.year <= toYear,
+          (filterState.dest === 'ALL' || mission.dest === filterState.dest) &&
+          (filterState.status === 'ALL' || mission.status === filterState.status) &&
+          (filterState.agency === 'ALL' || splitAgencies(mission.agency).includes(filterState.agency)) &&
+          (filterState.crew === 'ALL' ||
+            (filterState.crew === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
+          mission.year >= filterState.fromYear &&
+          mission.year <= filterState.toYear,
       )
       // J.1 — sort descending by year so the latest + upcoming missions
       // surface at the top of the grid. Tiebreak by mission id for
@@ -71,23 +112,23 @@
     const dest = url.searchParams.get('dest')?.toUpperCase();
     const status = url.searchParams.get('status')?.toUpperCase();
     const agency = url.searchParams.get('agency');
-    destFilter = dest && isMissionDestination(dest) ? dest : 'ALL';
-    statusFilter =
+    filterState.dest = dest && isMissionDestination(dest) ? dest : 'ALL';
+    filterState.status =
       status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
-    agencyFilter = agency ?? 'ALL';
+    filterState.agency = agency ?? 'ALL';
     const crew = url.searchParams.get('crew')?.toUpperCase();
-    crewFilter = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
+    filterState.crew = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
     // Timeline year-window: out-of-range / non-numeric values clamp
     // to the legal bounds per ADR-027 §URL contract.
     const fromRaw = url.searchParams.get('from');
     const toRaw = url.searchParams.get('to');
     const fromParsed = fromRaw ? parseInt(fromRaw, 10) : NaN;
     const toParsed = toRaw ? parseInt(toRaw, 10) : NaN;
-    fromYear = Number.isFinite(fromParsed)
+    filterState.fromYear = Number.isFinite(fromParsed)
       ? Math.max(TIMELINE_MIN_YEAR, Math.min(TIMELINE_MAX_YEAR, fromParsed))
       : TIMELINE_MIN_YEAR;
-    toYear = Number.isFinite(toParsed)
-      ? Math.max(fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
+    filterState.toYear = Number.isFinite(toParsed)
+      ? Math.max(filterState.fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
       : TIMELINE_MAX_YEAR;
     // Auto-expand the filter strip whenever the URL carries any
     // filter param — even if the value clamped back to the default,
@@ -101,18 +142,18 @@
       url.searchParams.has('from') ||
       url.searchParams.has('to')
     ) {
-      filtersExpanded = true;
+      filterState.expanded = true;
     }
   }
 
   function pushFiltersToUrl() {
     const params = new URLSearchParams();
-    if (destFilter !== 'ALL') params.set('dest', destFilter);
-    if (statusFilter !== 'ALL') params.set('status', statusFilter);
-    if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
-    if (crewFilter !== 'ALL') params.set('crew', crewFilter);
-    if (fromYear !== TIMELINE_MIN_YEAR) params.set('from', String(fromYear));
-    if (toYear !== TIMELINE_MAX_YEAR) params.set('to', String(toYear));
+    if (filterState.dest !== 'ALL') params.set('dest', filterState.dest);
+    if (filterState.status !== 'ALL') params.set('status', filterState.status);
+    if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
+    if (filterState.crew !== 'ALL') params.set('crew', filterState.crew);
+    if (filterState.fromYear !== TIMELINE_MIN_YEAR) params.set('from', String(filterState.fromYear));
+    if (filterState.toYear !== TIMELINE_MAX_YEAR) params.set('to', String(filterState.toYear));
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -126,28 +167,28 @@
   // so a long drag doesn't thrash the URL. (Svelte 5's $derived reacts
   // synchronously per assignment; goto() is debounced inside SvelteKit.)
   function setYearWindow(from: number, to: number) {
-    fromYear = from;
-    toYear = to;
+    filterState.fromYear = from;
+    filterState.toYear = to;
     pushFiltersToUrl();
   }
 
   function setDest(value: Destination | 'ALL') {
-    destFilter = value;
+    filterState.dest = value;
     pushFiltersToUrl();
   }
 
   function setStatus(value: MissionStatus | 'ALL') {
-    statusFilter = value;
+    filterState.status = value;
     pushFiltersToUrl();
   }
 
   function setCrew(value: 'ALL' | 'CREWED' | 'UNCREWED') {
-    crewFilter = value;
+    filterState.crew = value;
     pushFiltersToUrl();
   }
 
   function setAgency(value: string) {
-    agencyFilter = value;
+    filterState.agency = value;
     pushFiltersToUrl();
   }
 
@@ -233,9 +274,9 @@
   <button
     type="button"
     class="filters-toggle"
-    aria-expanded={filtersExpanded}
-    aria-controls={filtersExpanded ? 'missions-filters' : undefined}
-    onclick={() => (filtersExpanded = !filtersExpanded)}
+    aria-expanded={filterState.expanded}
+    aria-controls={filterState.expanded ? 'missions-filters' : undefined}
+    onclick={() => (filterState.expanded = !filterState.expanded)}
   >
     <span class="filters-eyebrow">FILTERS</span>
     <span class="filters-right">
@@ -244,15 +285,20 @@
       {:else}
         <span class="filters-count count-total-only">{missions.length}</span>
       {/if}
-      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+      <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
     </span>
   </button>
 
-  {#if filtersExpanded}
+  {#if filterState.expanded}
+    {#if anyFilterActive}
+      <button type="button" class="clear-filters" onclick={clearAllFilters}>
+        CLEAR FILTERS
+      </button>
+    {/if}
     <TimelineNavigator
       {missions}
-      {fromYear}
-      {toYear}
+      fromYear={filterState.fromYear}
+      toYear={filterState.toYear}
       onChange={setYearWindow}
       onSelectMission={selectMission}
     />
@@ -267,89 +313,89 @@
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'ALL'}
+          class:active={filterState.dest === 'ALL'}
           role="radio"
-          aria-checked={destFilter === 'ALL'}
+          aria-checked={filterState.dest === 'ALL'}
           onclick={() => setDest('ALL')}>{m.lib_filter_dest_all()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'MARS'}
+          class:active={filterState.dest === 'MARS'}
           role="radio"
-          aria-checked={destFilter === 'MARS'}
+          aria-checked={filterState.dest === 'MARS'}
           onclick={() => setDest('MARS')}>{m.lib_filter_dest_mars()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'MOON'}
+          class:active={filterState.dest === 'MOON'}
           role="radio"
-          aria-checked={destFilter === 'MOON'}
+          aria-checked={filterState.dest === 'MOON'}
           onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'EARTH'}
+          class:active={filterState.dest === 'EARTH'}
           role="radio"
-          aria-checked={destFilter === 'EARTH'}
+          aria-checked={filterState.dest === 'EARTH'}
           onclick={() => setDest('EARTH')}>{m.lib_filter_dest_earth()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'JUPITER'}
+          class:active={filterState.dest === 'JUPITER'}
           role="radio"
-          aria-checked={destFilter === 'JUPITER'}
+          aria-checked={filterState.dest === 'JUPITER'}
           onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'NEPTUNE'}
+          class:active={filterState.dest === 'NEPTUNE'}
           role="radio"
-          aria-checked={destFilter === 'NEPTUNE'}
+          aria-checked={filterState.dest === 'NEPTUNE'}
           onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'PLUTO'}
+          class:active={filterState.dest === 'PLUTO'}
           role="radio"
-          aria-checked={destFilter === 'PLUTO'}
+          aria-checked={filterState.dest === 'PLUTO'}
           onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'CERES'}
+          class:active={filterState.dest === 'CERES'}
           role="radio"
-          aria-checked={destFilter === 'CERES'}
+          aria-checked={filterState.dest === 'CERES'}
           onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'COMET'}
+          class:active={filterState.dest === 'COMET'}
           role="radio"
-          aria-checked={destFilter === 'COMET'}
+          aria-checked={filterState.dest === 'COMET'}
           onclick={() => setDest('COMET')}>{m.lib_filter_dest_comet()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'ASTEROID'}
+          class:active={filterState.dest === 'ASTEROID'}
           role="radio"
-          aria-checked={destFilter === 'ASTEROID'}
+          aria-checked={filterState.dest === 'ASTEROID'}
           onclick={() => setDest('ASTEROID')}>{m.lib_filter_dest_asteroid()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={destFilter === 'SUN'}
+          class:active={filterState.dest === 'SUN'}
           role="radio"
-          aria-checked={destFilter === 'SUN'}
+          aria-checked={filterState.dest === 'SUN'}
           onclick={() => setDest('SUN')}>{m.lib_filter_dest_sun()}</button
         >
       </div>
@@ -359,33 +405,33 @@
         <button
           type="button"
           class="pill"
-          class:active={statusFilter === 'ALL'}
+          class:active={filterState.status === 'ALL'}
           role="radio"
-          aria-checked={statusFilter === 'ALL'}
+          aria-checked={filterState.status === 'ALL'}
           onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={statusFilter === 'ACTIVE'}
+          class:active={filterState.status === 'ACTIVE'}
           role="radio"
-          aria-checked={statusFilter === 'ACTIVE'}
+          aria-checked={filterState.status === 'ACTIVE'}
           onclick={() => setStatus('ACTIVE')}>{m.lib_filter_status_active()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={statusFilter === 'FLOWN'}
+          class:active={filterState.status === 'FLOWN'}
           role="radio"
-          aria-checked={statusFilter === 'FLOWN'}
+          aria-checked={filterState.status === 'FLOWN'}
           onclick={() => setStatus('FLOWN')}>{m.lib_filter_status_flown()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={statusFilter === 'PLANNED'}
+          class:active={filterState.status === 'PLANNED'}
           role="radio"
-          aria-checked={statusFilter === 'PLANNED'}
+          aria-checked={filterState.status === 'PLANNED'}
           onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
         >
       </div>
@@ -395,25 +441,25 @@
         <button
           type="button"
           class="pill"
-          class:active={crewFilter === 'ALL'}
+          class:active={filterState.crew === 'ALL'}
           role="radio"
-          aria-checked={crewFilter === 'ALL'}
+          aria-checked={filterState.crew === 'ALL'}
           onclick={() => setCrew('ALL')}>{m.lib_filter_crew_all()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={crewFilter === 'CREWED'}
+          class:active={filterState.crew === 'CREWED'}
           role="radio"
-          aria-checked={crewFilter === 'CREWED'}
+          aria-checked={filterState.crew === 'CREWED'}
           onclick={() => setCrew('CREWED')}>{m.lib_filter_crew_crewed()}</button
         >
         <button
           type="button"
           class="pill"
-          class:active={crewFilter === 'UNCREWED'}
+          class:active={filterState.crew === 'UNCREWED'}
           role="radio"
-          aria-checked={crewFilter === 'UNCREWED'}
+          aria-checked={filterState.crew === 'UNCREWED'}
           onclick={() => setCrew('UNCREWED')}>{m.lib_filter_crew_uncrewed()}</button
         >
       </div>
@@ -424,9 +470,9 @@
           <button
             type="button"
             class="pill"
-            class:active={agencyFilter === 'ALL'}
+            class:active={filterState.agency === 'ALL'}
             role="radio"
-            aria-checked={agencyFilter === 'ALL'}
+            aria-checked={filterState.agency === 'ALL'}
             onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
           >
           {#each agencies as agency (agency)}
@@ -435,10 +481,10 @@
             <button
               type="button"
               class="pill agency-pill"
-              class:active={agencyFilter === agency}
+              class:active={filterState.agency === agency}
               class:logo-pill={logo != null}
               role="radio"
-              aria-checked={agencyFilter === agency}
+              aria-checked={filterState.agency === agency}
               aria-label={fullName}
               title={fullName}
               onclick={() => setAgency(agency)}
@@ -680,6 +726,29 @@
   .filters-toggle:focus-visible {
     border-color: rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.92);
+    outline: none;
+  }
+  /* CLEAR FILTERS chip — visible inside the expanded strip only when
+     at least one filter is active. Same chip aesthetic as the other
+     filter rows but with a muted accent to read as a discard action
+     rather than a select action. */
+  .clear-filters {
+    align-self: flex-end;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  .clear-filters:hover,
+  .clear-filters:focus-visible {
+    border-color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.95);
     outline: none;
   }
   .filters-eyebrow {

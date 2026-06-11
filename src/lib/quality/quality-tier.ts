@@ -76,6 +76,12 @@ export interface QualityConfig {
   /** Whether to append a vignette ShaderPass. Cheapest of the polish
    *  passes — single full-screen fragment — so wired from medium+. */
   vignetteEnabled: boolean;
+  /** Whether to add a procedural skydome — large inverted sphere with
+   *  an equirectangular CanvasTexture painting a Milky Way band + a
+   *  sparse field of brighter stars. Augments (doesn't replace) the
+   *  existing Points-based star field. Wired at high+ — the additional
+   *  sphere doubles overdraw, so we keep it off on weaker GPUs. */
+  skydomeEnabled: boolean;
 }
 
 const CONFIGS: Record<QualityTier, QualityConfig> = {
@@ -97,6 +103,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     dofEnabled: false,
     filmGrainEnabled: false,
     vignetteEnabled: false,
+    skydomeEnabled: false,
   },
   low: {
     tier: 'low',
@@ -116,6 +123,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     dofEnabled: false,
     filmGrainEnabled: false,
     vignetteEnabled: false,
+    skydomeEnabled: false,
   },
   medium: {
     tier: 'medium',
@@ -135,6 +143,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     dofEnabled: false,
     filmGrainEnabled: true,
     vignetteEnabled: true,
+    skydomeEnabled: false,
   },
   high: {
     tier: 'high',
@@ -154,6 +163,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     dofEnabled: false,
     filmGrainEnabled: true,
     vignetteEnabled: true,
+    skydomeEnabled: true,
   },
   cinematic: {
     tier: 'cinematic',
@@ -173,6 +183,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
     dofEnabled: true,
     filmGrainEnabled: true,
     vignetteEnabled: true,
+    skydomeEnabled: true,
   },
 };
 

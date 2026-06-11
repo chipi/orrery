@@ -6,6 +6,7 @@ import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
+import { buildSkydome } from './skydome';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import type { QualityConfig } from '$lib/quality/quality-tier';
@@ -339,6 +340,20 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     vignettePass.uniforms['offset'].value = 0.95;
     vignettePass.uniforms['darkness'].value = 0.6;
     composer.addPass(vignettePass);
+  }
+  // Procedural skydome — wave 2/3 punch #9. Large inverted sphere with
+  // a CanvasTexture painting a Milky Way band gradient + sparse bright
+  // stars. Augments the Points-based starfield rather than replacing it
+  // — the Points provide the dense pinprick population, the skydome
+  // provides the soft galactic-band glow that point sprites can't
+  // carry. renderOrder -1000 + depthWrite false so everything else in
+  // the scene composes in front. Tier-gated (high+).
+  if (opts.quality.skydomeEnabled) {
+    const sky = buildSkydome();
+    scene.add(sky.mesh);
+    // GC reclaims the sphere geometry + canvas texture when the scene
+    // is torn down; the caller's cleanup destroys the renderer and
+    // drops the WebGL context, freeing the GPU-side allocation.
   }
 
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));

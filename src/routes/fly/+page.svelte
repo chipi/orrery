@@ -3228,13 +3228,14 @@
      *  ship pos. The animate loop's camT lerp tracks the returned
      *  desiredCamT each frame.
      */
+    // Legacy panoramic-sweep tunables — retained as scaffolding for
+    // future per-planet choreography tweaks. void to silence unused.
     const FLYBY_PAN_DAYS = 30;
     const FLYBY_PAN_ARC = Math.PI / 2;
-    // Lead time — the camera reaches its iconic perpendicular framing
-    // this many days BEFORE closest approach so the spacecraft flies
-    // INTO an already-steady shot, not chases the camera. Marko's
-    // feedback "rotate before spacecraft gets there, not after."
     const FLYBY_PAN_LEAD_DAYS = 10;
+    void FLYBY_PAN_DAYS;
+    void FLYBY_PAN_ARC;
+    void FLYBY_PAN_LEAD_DAYS;
     /** Sample the outbound trajectory spline at a given mission-elapsed
      *  day, returning a 2D scene-position. Linear interpolation across
      *  outPts (which already encode the planned mission curve). Used to
@@ -3254,63 +3255,14 @@
       const b = points[Math.min(i + 1, points.length - 1)];
       return { x: a.x + (b.x - a.x) * t, z: a.z + (b.z - a.z) * t };
     }
-    function computeFlybyChoreographyCamT(
-      bodyX: number,
-      bodyZ: number,
-      shipX: number,
-      shipZ: number,
-      peakDay: number,
-      currentSimDay: number,
-      currentCamT: number,
-    ): number {
-      const dx = shipX - bodyX;
-      const dz = shipZ - bodyZ;
-      const mag = Math.hypot(dx, dz);
-      if (mag < 1e-6) return currentCamT;
-      // Perpendicular candidates — left/right of the ship→planet line.
-      // camera formula: pos = target + R · (sin(camT), cos(camT)) →
-      // direction (px, pz) maps to camT = atan2(px, pz).
-      const t1 = Math.atan2(-dz / mag, dx / mag);
-      const t2 = Math.atan2(dz / mag, -dx / mag);
-      // Pick whichever perpendicular is closer to current camT so the
-      // swing into framing takes the short arc, not the long one.
-      const shortestAbs = (a: number, b: number) => {
-        const TAU = Math.PI * 2;
-        let d = (((a - b) % TAU) + TAU) % TAU;
-        if (d > Math.PI) d -= TAU;
-        return Math.abs(d);
-      };
-      const peakCamT = shortestAbs(t1, currentCamT) <= shortestAbs(t2, currentCamT) ? t1 : t2;
-      // Pan offset — pan-in completes FLYBY_PAN_LEAD_DAYS BEFORE peak
-      // so the ship flies into a steady frame instead of chasing the
-      // camera. Timeline:
-      //   daysToPeak >= PAN_DAYS         : panOffset = -PAN_ARC (entry)
-      //   PAN_DAYS > daysToPeak > LEAD   : lerp from -PAN_ARC → 0
-      //   LEAD >= daysToPeak > -SETTLE   : panOffset = 0 (iconic frame)
-      //   daysToPeak <= -SETTLE          : small trail forward (track ship out)
-      const daysToPeak = peakDay - currentSimDay;
-      const SETTLE_DAYS = 8;
-      let panOffset: number;
-      if (daysToPeak > FLYBY_PAN_DAYS) {
-        panOffset = -FLYBY_PAN_ARC;
-      } else if (daysToPeak > FLYBY_PAN_LEAD_DAYS) {
-        // Active pan window — between entry and lead time.
-        const progress =
-          (FLYBY_PAN_DAYS - daysToPeak) / (FLYBY_PAN_DAYS - FLYBY_PAN_LEAD_DAYS);
-        panOffset = -FLYBY_PAN_ARC * (1 - progress);
-      } else if (daysToPeak > -SETTLE_DAYS) {
-        // Steady iconic frame — camera holds perpendicular as the ship
-        // completes its arc through closest approach.
-        panOffset = 0;
-      } else {
-        // Post-peak trail — camera follows the departing ship for a
-        // small forward arc (capped at ~22°) so the shot doesn't
-        // freeze the moment the ship pulls away.
-        const beyond = -daysToPeak - SETTLE_DAYS;
-        panOffset = Math.min(FLYBY_PAN_ARC / 4, beyond * 0.05);
-      }
-      return peakCamT + panOffset;
-    }
+    // The previous computeFlybyChoreographyCamT (perpendicular
+    // azimuth + 90° pan sweep) was replaced by the inline
+    // "ship-side same-line" math in the flyby cinema block — see
+    // updateHelioAutoZoomTargets. The new model places the camera
+    // ON the ship's side of the planet (atan2(planetToShip)) so the
+    // ship is always BETWEEN camera and planet (in front, not
+    // behind). FLYBY_PAN_DAYS / FLYBY_PAN_ARC / FLYBY_PAN_LEAD_DAYS
+    // constants kept for telemetry / future per-planet tuning.
     // Flyby cinema mode — when the active mission has 'flyby' events on
     // its flight.events roster (grand-tour outer-system missions:
     // Voyager 1/2, Cassini, Galileo, Pioneer, etc.), the camera locks
@@ -3612,68 +3564,69 @@
           // tighten the camera distance (3.2× vs 5×) for a closer,
           // more emotional read — earthrise-style. The longer peak
           // hold is applied where peakHoldUntil is armed.
-          // Framing pivots from "midpoint of ship + planet" during
-          // approach (when ship is far from planet — both visible at
-          // frame edges, planet looms in distance) to "ship-biased"
-          // at peak (ship-as-hero, planet-as-backdrop). The blend is
-          // driven by ship-to-planet proximity:
-          //   - ship_to_planet ≥ 30 scene → 50/50 midpoint
-          //   - ship_to_planet ≤ flyby.size×2 → 35/65 ship-biased
-          // camR also scales with ship-to-planet distance so the
-          // approach never makes Venus a "tiny dot in the corner"
-          // — the prior fixed planet_size × 5 was too tight for the
-          // 75-scene-unit pre-peak gap (Venus angular size dropped
-          // to ~2°). Now camR fits both bodies + margin.
-          const shipToPlanetDist = Math.hypot(
-            scScene.x - bodyScene.x,
-            scScene.z - bodyScene.z,
-          );
+          // ICONIC FLYBY COMPOSITION — Cassini-mission-art reference.
+          // Camera must be on the SHIP'S side of the planet, looking
+          // toward the planet center. Ship is between camera and
+          // planet, silhouetted against the planet's lit disc — ship
+          // is small, in front of planet, NEVER behind. This is the
+          // hard rule Marko keeps reiterating, and the previous
+          // "perpendicular to ship→planet line" math violated it
+          // because perpendicular put the camera at 90° offset where
+          // either side could end up with the ship behind the planet
+          // depending on the gravity-assist trajectory direction.
+          //
+          // Geometry:
+          //   camTarget = planet center (planet centered in frame)
+          //   camera_pos = planet + (ship - planet).normalized × camR
+          //   camR > ship_to_planet_dist so ship is between cam and planet
+          //
+          // To anticipate the gravity-assist swing, we use the ship's
+          // PEAK position (predicted via outPts spline), not the
+          // current position. That way the camera is already on the
+          // "right side" before the ship arrives there.
           const isEarthFlyby = flyby.id === ('earth' as typeof flyby.id);
-          // Blend factor 0..1: 0 = far (midpoint), 1 = at peak (ship-bias).
-          const closeIn = Math.max(
-            0,
-            Math.min(1, 1 - (shipToPlanetDist - flyby.size * 2) / 30),
-          );
-          const shipBias = isEarthFlyby ? 0.5 : 0.5 + 0.15 * closeIn;
-          const planetBias = 1 - shipBias;
-          centerX = bodyScene.x * planetBias + scScene.x * shipBias;
-          centerZ = bodyScene.z * planetBias + scScene.z * shipBias;
-          // Camera distance — fits both bodies with a planet-radius
-          // margin. Earth keeps its tighter 3.2× treatment for the
-          // home-planet hero shot.
+          const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
+          // Sample ship pos at THE EXACT iconic-moment we freeze on
+          // (peak - ICONIC_LEAD_DAYS). The gravity-assist arc bends
+          // the ship continuously, so its position at peak-30 days
+          // (far approach) is on a different side of the planet than
+          // its position at peak-5 days (the actual frozen moment).
+          // Using peak-30 puts the camera on the approach-far side,
+          // where the ship is NOT at the frozen moment — ship ends
+          // up behind the planet from camera POV (the user-reported
+          // "ship on the other side" bug). Sampling at the iconic
+          // moment itself gives the camera the same-side perspective.
+          const ICONIC_LEAD_DAYS_FOR_CAMERA = 5;
+          const iconicMet = Math.max(0, activeFlybyMet - ICONIC_LEAD_DAYS_FOR_CAMERA);
+          const predicted = predictShipPosAtMet(outPts, iconicMet, totalOutboundDays);
+          const shipApproachX = predicted ? predicted.x * SCALE_3D : scScene.x;
+          const shipApproachZ = predicted ? predicted.z * SCALE_3D : scScene.z;
+          // camTarget = planet center
+          centerX = bodyScene.x;
+          centerZ = bodyScene.z;
+          // Direction from planet to ship's approach-side position.
+          // Camera will be in this direction from the planet.
+          const planetToApproachX = shipApproachX - bodyScene.x;
+          const planetToApproachZ = shipApproachZ - bodyScene.z;
+          const planetToApproachMag = Math.hypot(planetToApproachX, planetToApproachZ);
+          if (planetToApproachMag > 1e-3) {
+            helioFlybyDesiredCamT = Math.atan2(
+              planetToApproachX / planetToApproachMag,
+              planetToApproachZ / planetToApproachMag,
+            );
+          } else {
+            helioFlybyDesiredCamT = null;
+          }
+          // camR — must be > ship's approach-side distance from planet
+          // so ship is BETWEEN camera and planet (in front). Camera
+          // sits well behind the incoming spacecraft, looking down
+          // its approach line toward the planet.
           targetR = isEarthFlyby
-            ? flyby.size * 3.2
+            ? Math.max(flyby.size * 3.2, planetToApproachMag * 1.2 + flyby.size * 2)
             : Math.max(
                 flyby.size * FLYBY_BODY_R_MULTIPLIER,
-                shipToPlanetDist * 0.55 + flyby.size * 3,
+                planetToApproachMag * 1.2 + flyby.size * 3,
               );
-          // Panoramic flyby choreography — gentle 90° sweep across the
-          // planet timed so camera arrives at the iconic perpendicular
-          // composition LEAD_DAYS BEFORE peak so the ship flies INTO a
-          // steady frame instead of chasing the camera. To pick the
-          // right perpendicular side (camera ends up where the ship
-          // WILL approach from), we predict the ship's position at
-          // peak via the outbound spline rather than using its current
-          // pos. Falls back to current pos if prediction is unavailable
-          // (no points loaded yet).
-          const peakDay = arcTimeline.dep_day + activeFlybyMet;
-          const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
-          const predicted = predictShipPosAtMet(outPts, activeFlybyMet, totalOutboundDays);
-          const shipXForPlan = predicted
-            ? predicted.x * SCALE_3D
-            : scScene.x;
-          const shipZForPlan = predicted
-            ? predicted.z * SCALE_3D
-            : scScene.z;
-          helioFlybyDesiredCamT = computeFlybyChoreographyCamT(
-            bodyScene.x,
-            bodyScene.z,
-            shipXForPlan,
-            shipZForPlan,
-            peakDay,
-            simDay,
-            camT,
-          );
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;
@@ -5246,9 +5199,21 @@
       // future, so the audience reads a deliberate hold even if it
       // catches mid-lerp.
       if (!isMoonMission && !reducedMotion && !isDrag && currentFrameFlybyMet != null) {
+        // ICONIC MOMENT FREEZE — fire peak hold a few days BEFORE the
+        // mathematical closest-approach point, NOT at the exact peak.
+        // At exact closest approach the spacecraft is at ~0.1 scene
+        // units from the planet (for inner-system flybys with ~300 km
+        // altitude), which puts the ship INSIDE the planet's render
+        // sphere (radius ~2.5). No camera angle can show the ship at
+        // that moment — it's geometrically inside the opaque mesh.
+        // 5 days before peak the ship is far enough from the planet
+        // to be a visible foreground silhouette against the planet's
+        // disc — the actual "iconic Cassini-mission-art moment."
+        const ICONIC_LEAD_DAYS = 5;
         const peakHoldRadius = 0.5;
-        const inHeldWindow =
-          Math.abs(simDay - (arcTimeline.dep_day + currentFrameFlybyMet)) < peakHoldRadius;
+        const iconicPeakSimDay =
+          arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
+        const inHeldWindow = Math.abs(simDay - iconicPeakSimDay) < peakHoldRadius;
         if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
           // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
           // home-planet moment lingers. The lerp keeps converging

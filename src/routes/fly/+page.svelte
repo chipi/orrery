@@ -5545,10 +5545,19 @@
         // moon-missions are handled differently and stay out of the
         // finale path). Starts AFTER the 1.5 s arrival snap so the
         // parked-in-orbit composition is in frame before the lock.
+        // Finale lock (MISSION END caption + 12 s Saturn closeup hold +
+        // black fade) was removed per Marko — the epilogue tableau
+        // already carries an end-of-mission caption ("MISSION FLIGHT
+        // PATH · <mission>") and stacking two title beats reads as
+        // redundant. We now go straight from arrival → epilogue: the
+        // arrived-branch's epilogueActive trigger below is the only
+        // end-of-mission camera mode. inMissionFinale stays false so
+        // none of the finale-caption / finale-black / Saturn-closeup-
+        // hold UI ever fires.
         const isOneWayHelioEnd = !isMoonMission && retPts.length < 2;
-        if (isOneWayHelioEnd && cine.finaleStartedAt === 0) {
-          cine.finaleStartedAt = performance.now() + 1500;
-          inMissionFinale = true;
+        if (isOneWayHelioEnd && epilogueStartedAt === 0) {
+          epilogueStartedAt = performance.now();
+          epilogueActive = true;
         }
       }
       // Re-arm the snap when the user scrubs back out of arrived so a

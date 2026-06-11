@@ -78,6 +78,39 @@ test.describe('/iss', () => {
     expect(errors).toEqual([]);
   });
 
+  test('ASSEMBLY toggle opens the overlay and scrubbing the slider updates the date readout', async ({
+    page,
+  }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/iss', { waitUntil: 'networkidle' });
+    const toggle = page.getByTestId('iss-assembly-toggle');
+    await expect(toggle).toBeVisible({ timeout: 8_000 });
+    // Same DOM-evaluate trick as the TIMELINE toggle — on the mobile
+    // viewport the site footer's Library link overlaps the bottom-pinned
+    // controls and intercepts pointer events.
+    await toggle.evaluate((el) => (el as HTMLButtonElement).click());
+    const overlay = page.getByTestId('station-assembly');
+    await expect(overlay).toBeVisible({ timeout: 5_000 });
+    const dateReadout = page.getByTestId('assembly-date');
+    const initialDate = (await dateReadout.textContent())?.trim() ?? '';
+    expect(initialDate).not.toBe('');
+    // Scrub to the back half of the timeline. The slider is
+    // `<input type="range" min=0 max=1 step=0.001>` and the component
+    // listens on `oninput`, so we set value + dispatch synchronously.
+    const scrub = page.getByTestId('assembly-scrub');
+    await scrub.evaluate((el) => {
+      const input = el as HTMLInputElement;
+      input.value = '0.75';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    // The $effect that mirrors progress → assemblyRef is microtask-
+    // deferred; the date readout re-renders on the next reactive tick.
+    await expect
+      .poll(async () => (await dateReadout.textContent())?.trim(), { timeout: 3_000 })
+      .not.toBe(initialDate);
+    expect(errors).toEqual([]);
+  });
+
   test('3D canvas click opens the module panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss', { waitUntil: 'networkidle' });

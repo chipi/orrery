@@ -167,6 +167,22 @@ test.describe('/moon', () => {
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
   });
 
+  test('?site=apollo11 deep-link opens the panel pre-selected', async ({ page, isMobile }) => {
+    // SurfaceScene reads `?site=<id>` on mount and calls selectSite(id),
+    // bypassing the canvas-click path entirely. So the deep-link test
+    // doesn't need enterMoonTwoDMode — it works in default 3D mode and
+    // skips the camera/click projection that makes the geometric click
+    // tests above flake on mobile.
+    test.slow(isMobile, 'mobile-chromium panel mount > global 30 s budget');
+    await page.goto('/moon?site=apollo11', { waitUntil: 'networkidle' });
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 15_000 });
+    // Same "STILL ON THE SURFACE" UXS-006 anchor copy the click-based
+    // Apollo 11 test asserts on — confirms the deep-link landed on the
+    // correct site, not just any site.
+    await expect(panel).toContainText(/STILL ON THE SURFACE/i);
+  });
+
   test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
     test.slow(isMobile, 'mobile-chromium enterMoonTwoDMode + panel mount > global 30 s budget');
     await page.goto('/moon');

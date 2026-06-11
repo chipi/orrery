@@ -3345,7 +3345,7 @@
         const inOpeningWide =
           openingActive &&
           openingStartedAt > 0 &&
-          performance.now() - openingStartedAt < openingDurationMs - 2000;
+          performance.now() - openingStartedAt < openingDurationMs - 1000;
         if (inOpeningWide) {
           sub = 'opening';
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
@@ -4732,7 +4732,7 @@
       // so the composition settles into prelaunch.
       if (!isMoonMission && !reducedMotion && !isDrag && openingActive) {
         const elapsedO = openingStartedAt > 0 ? performance.now() - openingStartedAt : 0;
-        if (elapsedO < openingDurationMs - 2000) {
+        if (elapsedO < openingDurationMs - 1000) {
           camT += 0.04 * dt;
         }
       }
@@ -5144,15 +5144,20 @@
       // launch dwell. At 13.5 s the launch ring fires.
       if (openingActive && openingStartedAt > 0) {
         const elapsedO = performance.now() - openingStartedAt;
-        const fadeOutAt = openingDurationMs - 2000;
+        // Faster fade-out per user feedback — 2000 ms → 1000 ms so the
+        // scene reveals more crisply as the title overlays clear. The
+        // camera lerp gate (in updateHelioAutoZoomTargets 'opening'
+        // branch) uses the same fadeOutAt so the wide → Earth-closeup
+        // transition aligns with the visual fade.
+        const fadeOutAt = openingDurationMs - 1000;
         const endAt = openingDurationMs;
-        // Title fade-in 0 → 1 across 0 → 1000 ms, fade-out 2000 ms
+        // Title fade-in 0 → 1 across 0 → 1000 ms, fade-out 1000 ms
         if (elapsedO < 1000) {
           openingTitleOpacity = elapsedO / 1000;
         } else if (elapsedO < fadeOutAt) {
           openingTitleOpacity = 1;
         } else if (elapsedO < endAt) {
-          openingTitleOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
+          openingTitleOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
         } else {
           openingTitleOpacity = 0;
         }
@@ -5164,7 +5169,7 @@
         } else if (elapsedO < fadeOutAt) {
           openingContextOpacity = 1;
         } else if (elapsedO < endAt) {
-          openingContextOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
+          openingContextOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
         } else {
           openingContextOpacity = 0;
         }
@@ -5176,7 +5181,7 @@
         } else if (elapsedO < fadeOutAt) {
           openingFleetOpacity = 1;
         } else if (elapsedO < endAt) {
-          openingFleetOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 2000);
+          openingFleetOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
         } else {
           openingFleetOpacity = 0;
         }
@@ -6432,7 +6437,9 @@
         </div>
       </div>
     {/if}
-    {#if openingFleetOpacity > 0 && openingFleetAssets.length > 0}
+    {@const hasLoadedLauncher = openingFleetAssets.some((a) => a.role === 'launcher')}
+    {@const showSyntheticLauncher = !hasLoadedLauncher && mission.vehicle && mission.vehicle !== '—'}
+    {#if openingFleetOpacity > 0 && (openingFleetAssets.length > 0 || showSyntheticLauncher)}
       <div
         class="opening-fleet"
         style="opacity: {openingFleetOpacity};"
@@ -6440,10 +6447,10 @@
       >
         <div class="opening-fleet-label">FLEET ASSETS</div>
         <div class="opening-fleet-row">
-          {#each openingFleetAssets as asset, idx (asset.id)}
+          {#each openingFleetAssets as asset (asset.id)}
             <article
               class="opening-fleet-card"
-              class:hero={idx === 0 && asset.role === 'spacecraft'}
+              class:hero={asset.role === 'spacecraft' || asset.role === 'launcher'}
             >
               {#if asset.heroPath}
                 <img
@@ -6456,7 +6463,7 @@
               <div class="opening-fleet-meta">
                 <div class="opening-fleet-role">{asset.role.replace('-', ' ')}</div>
                 <div class="opening-fleet-name">{asset.name}</div>
-                {#if idx === 0 && asset.role === 'spacecraft' && asset.description}
+                {#if (asset.role === 'spacecraft' || asset.role === 'launcher') && asset.description}
                   <div class="opening-fleet-bio">{asset.description}</div>
                 {:else if asset.tagline}
                   <div class="opening-fleet-tagline">{asset.tagline}</div>
@@ -6464,6 +6471,20 @@
               </div>
             </article>
           {/each}
+          {#if showSyntheticLauncher}
+            <!-- Synthesised launcher card when mission.fleet_refs has no
+                 launcher entry. Surfaces mission.vehicle as a labeled
+                 card so the launcher isn't invisible to the audience. -->
+            <article class="opening-fleet-card hero opening-fleet-card-synthetic">
+              <div class="opening-fleet-meta">
+                <div class="opening-fleet-role">launcher</div>
+                <div class="opening-fleet-name">{mission.vehicle}</div>
+                <div class="opening-fleet-tagline">
+                  Launch vehicle for {mission.name}
+                </div>
+              </div>
+            </article>
+          {/if}
         </div>
       </div>
     {/if}
@@ -7364,17 +7385,24 @@
      fleet asset chips below. All fade in/out per the state machine. */
   .opening-title {
     position: fixed;
-    top: 14%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    padding: 22px 32px;
     pointer-events: none;
     text-align: center;
+    background: rgba(8, 10, 22, 0.62);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
     transition: opacity 200ms linear;
+    max-width: 90vw;
   }
   .opening-agency {
     font-family: 'Space Mono', monospace;
@@ -7401,18 +7429,23 @@
   }
   .opening-context {
     position: fixed;
-    top: 36%;
+    top: 46%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 200;
-    max-width: 720px;
-    padding: 0 24px;
+    max-width: min(740px, 92vw);
+    padding: 22px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     pointer-events: none;
     text-align: center;
+    background: rgba(8, 10, 22, 0.62);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
     transition: opacity 200ms linear;
   }
   .opening-story {
@@ -7455,7 +7488,7 @@
   }
   .opening-fleet {
     position: fixed;
-    bottom: 14%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
@@ -7465,6 +7498,7 @@
     gap: 12px;
     pointer-events: none;
     transition: opacity 200ms linear;
+    max-width: 92vw;
   }
   .opening-fleet-label {
     font-family: 'Space Mono', monospace;

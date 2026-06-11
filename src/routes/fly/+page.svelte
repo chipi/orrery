@@ -3827,14 +3827,21 @@
           sub = 'cruise-out';
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
           const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
-          centerX = (scScene.x + destScene.x) * 0.5;
-          centerZ = (scScene.z + destScene.z) * 0.5;
-          // 0.6 multiplier covers half the ship-dest separation (so
-          // both fit in the half-frame) plus a body-radius margin so
-          // the destination's disk doesn't kiss the frame edge. Floor
-          // at 140 prevents the camera from getting too tight when
-          // ship + dest are within a few AU (mid-Venus-loop case).
-          targetR = Math.max(140, shipToDestDist * 0.6 + (destSize > 0 ? destSize * 4 : 80));
+          // Ship-biased framing (70/30) instead of pure midpoint —
+          // pure midpoint put the ship right at the frame edge and
+          // any orbital curvature pushed it off-screen on long
+          // cruise stretches (user-reported "ship lost out of
+          // camera"). Weighting toward the ship keeps the
+          // spacecraft as the hero in frame; the destination remains
+          // visible at the edge as the target on the horizon.
+          centerX = scScene.x * 0.7 + destScene.x * 0.3;
+          centerZ = scScene.z * 0.7 + destScene.z * 0.3;
+          // Widened multiplier (0.6 → 0.85) compensates so the
+          // destination doesn't get clipped now that the camera
+          // target sits closer to the ship. Floor at 140 still
+          // prevents the camera from getting too tight on
+          // mid-Venus-loop scenarios.
+          targetR = Math.max(140, shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80));
         }
       } else {
         // return

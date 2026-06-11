@@ -40,6 +40,7 @@
     buildPiecewiseMapping,
   } from '$lib/station-assembly-anim';
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
+  import { ISS_DOCK_EVENTS, ISS_TRUSS_PHASES } from '$lib/iss-assembly-phases';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -70,153 +71,6 @@
   let assemblyProgress = $state(0);
   const ASSEMBLY_DURATION_MS = 50_000;
 
-  // Synthetic phases for the 7 visiting-craft first-arrival missions —
-  // each dock fly-in is tied to a real flagship mission so the chip
-  // narrative can name it. dockEventId values become userData.animModuleId
-  // on the visiting-craft meshes by mapping `dock-<visitorId>` → visitorId.
-  type DockEvent = {
-    id: string;
-    name: string;
-    launcher: string;
-    launch_date: string;
-  };
-  const DOCK_EVENTS: DockEvent[] = [
-    {
-      id: 'dock-soyuz_ms',
-      name: 'Soyuz TM-31 — Expedition 1 first crew aboard',
-      launcher: 'Soyuz-U · Krikalev + Gidzenko + Shepherd',
-      launch_date: '2000-10-31',
-    },
-    {
-      id: 'dock-progress_ms',
-      name: 'Progress M1-3 — first ISS resupply',
-      launcher: 'Soyuz-U · uncrewed cargo to Zarya',
-      launch_date: '2000-08-06',
-    },
-    {
-      id: 'dock-crew_dragon',
-      name: 'Crew Dragon Demo-2 — first commercial crew',
-      launcher: 'Falcon 9 · Behnken + Hurley',
-      launch_date: '2020-05-30',
-    },
-    {
-      id: 'dock-cargo_dragon',
-      name: 'Cargo Dragon CRS-21 — first Cargo Dragon 2',
-      launcher: 'Falcon 9 · upgraded cargo capsule',
-      launch_date: '2020-12-06',
-    },
-    {
-      id: 'dock-cygnus',
-      name: 'Cygnus Orb-D1 — first Orbital ATK resupply',
-      launcher: 'Antares · demonstration cargo flight',
-      launch_date: '2013-09-18',
-    },
-    {
-      id: 'dock-starliner',
-      name: 'Starliner CFT — first Boeing crewed flight',
-      launcher: 'Atlas V N22 · Wilmore + Williams',
-      launch_date: '2024-06-05',
-    },
-    {
-      id: 'dock-htv_x',
-      name: 'HTV-X1 — first H3-launched resupply',
-      launcher: 'H3 · JAXA / Mitsubishi cargo successor',
-      launch_date: '2025-10-26',
-    },
-  ];
-
-  // Synthetic phases for the 11 truss-segment / main-array STS missions
-  // + 3 EVA iROSA roll-out campaigns. Ids match userData.animModuleId
-  // tags assigned to truss segGroups / wingPair Groups / iROSA Meshes in
-  // src/lib/iss-proxy-model.ts so the assembly walker animates each part
-  // in at its real installation date instead of from frame 0.
-  type TrussPhase = {
-    id: string;
-    name: string;
-    launcher: string;
-    launch_date: string;
-  };
-  const TRUSS_PHASES: TrussPhase[] = [
-    {
-      id: 'truss-z1',
-      name: 'Z1 truss + PMA-3 (STS-92)',
-      launcher:
-        'STS-92 Discovery · Wisoff + López-Alegría + Chiao + McArthur + Wakata + Duffy + Melroy',
-      launch_date: '2000-10-11',
-    },
-    {
-      id: 'truss-p6',
-      name: 'P6 truss + first solar arrays (STS-97)',
-      launcher: 'STS-97 Endeavour · arrays 4A + 4B, first ISS solar power',
-      launch_date: '2000-12-01',
-    },
-    {
-      id: 'truss-s0',
-      name: 'S0 centre truss + Mobile Transporter (STS-110)',
-      launcher: 'STS-110 Atlantis · spine of the truss assembly',
-      launch_date: '2002-04-08',
-    },
-    {
-      id: 'truss-s1',
-      name: 'S1 starboard truss (STS-112)',
-      launcher: 'STS-112 Atlantis · CETA cart + S-band radio',
-      launch_date: '2002-10-07',
-    },
-    {
-      id: 'truss-p1',
-      name: 'P1 port truss (STS-113)',
-      launcher: 'STS-113 Endeavour · matching CETA on port side',
-      launch_date: '2002-11-23',
-    },
-    {
-      id: 'truss-p3p4',
-      name: 'P3/P4 truss + solar arrays 2A + 4A (STS-115)',
-      launcher: 'STS-115 Atlantis · first post-Columbia construction flight',
-      launch_date: '2006-09-09',
-    },
-    {
-      id: 'truss-p5',
-      name: 'P5 truss spacer (STS-116)',
-      launcher: 'STS-116 Discovery · port-side spacer for outboard P6',
-      launch_date: '2006-12-09',
-    },
-    {
-      id: 'truss-s3s4',
-      name: 'S3/S4 truss + solar arrays 1A + 3A (STS-117)',
-      launcher: 'STS-117 Atlantis · matching starboard pair',
-      launch_date: '2007-06-08',
-    },
-    {
-      id: 'truss-s5',
-      name: 'S5 truss spacer (STS-118)',
-      launcher: 'STS-118 Endeavour · starboard-side spacer',
-      launch_date: '2007-08-08',
-    },
-    {
-      id: 'truss-s6',
-      name: 'S6 truss + final solar arrays 1B + 3B (STS-119)',
-      launcher: 'STS-119 Discovery · completed the 8-wing solar array',
-      launch_date: '2009-03-15',
-    },
-    {
-      id: 'truss-irosa-1',
-      name: 'iROSA arrays 2A + 4A roll-out (Expedition 65)',
-      launcher: 'EVA roll-out on existing 2A + 4A mast bases',
-      launch_date: '2021-06-25',
-    },
-    {
-      id: 'truss-irosa-2',
-      name: 'iROSA arrays 3A + 4B roll-out (Expedition 67)',
-      launcher: 'EVA roll-out continuing the upgrade',
-      launch_date: '2022-12-22',
-    },
-    {
-      id: 'truss-irosa-3',
-      name: 'iROSA arrays 1A + 1B roll-out (Expedition 69)',
-      launcher: 'EVA roll-out completing the iROSA upgrade',
-      launch_date: '2023-06-15',
-    },
-  ];
   let hoverLabel: HoverLabel | undefined = $state();
 
   /** Reactive mirror of the 3D scene's hovered module id so the
@@ -313,7 +167,7 @@
         launch_epoch: Date.parse(m.launch_date),
         pickableId: m.id,
       }));
-    const dockEntries = DOCK_EVENTS.map((d) => {
+    const dockEntries = ISS_DOCK_EVENTS.map((d) => {
       // dock-soyuz_ms → soyuz_ms; dock-crew_dragon → crew_dragon; etc.
       const pickableId = d.id.replace(/^dock-/, '');
       return {
@@ -328,7 +182,7 @@
     // Truss + iROSA install phases — no module/visitor to highlight,
     // so pickableId is null. Chip stays as a date narrative; click is a
     // no-op (onChipClick falls through when find() returns undefined).
-    const trussEntries = TRUSS_PHASES.map((t) => ({
+    const trussEntries = ISS_TRUSS_PHASES.map((t) => ({
       id: t.id,
       name: t.name,
       launcher: t.launcher,
@@ -877,14 +731,14 @@
     const meshHomes = captureHomes(allMeshes.map((m) => m.mesh));
 
     // Map animModuleId → launch epoch (ms). Pulled fresh each frame from
-    // the loaded module list + the synthetic DOCK_EVENTS + TRUSS_PHASES
+    // the loaded module list + the synthetic ISS_DOCK_EVENTS + ISS_TRUSS_PHASES
     // so any change in either flows through without a separate reactive
     // plumb. Truss / iROSA segments fly in at their real STS / EVA install
     // dates instead of appearing from frame 0.
     function launchEpochOf(id: string): number {
-      const dock = DOCK_EVENTS.find((d) => d.id === id);
+      const dock = ISS_DOCK_EVENTS.find((d) => d.id === id);
       if (dock) return Date.parse(dock.launch_date);
-      const truss = TRUSS_PHASES.find((t) => t.id === id);
+      const truss = ISS_TRUSS_PHASES.find((t) => t.id === id);
       if (truss) return Date.parse(truss.launch_date);
       const item = moduleListRef.list.find((x) => x.id === id);
       if (!item || !item.launch_date) return Number.NaN;
@@ -923,8 +777,8 @@
       const mods = modules.filter((x) => x.launch_date);
       if (mods.length === 0) return;
       const moduleEpochs = mods.map((x) => Date.parse(x.launch_date));
-      const dockEpochs = DOCK_EVENTS.map((d) => Date.parse(d.launch_date));
-      const trussEpochs = TRUSS_PHASES.map((t) => Date.parse(t.launch_date));
+      const dockEpochs = ISS_DOCK_EVENTS.map((d) => Date.parse(d.launch_date));
+      const trussEpochs = ISS_TRUSS_PHASES.map((t) => Date.parse(t.launch_date));
       const epochs = [...moduleEpochs, ...dockEpochs, ...trussEpochs];
       const startEpoch = Math.min(...epochs);
       const endEpoch = Math.max(...epochs);

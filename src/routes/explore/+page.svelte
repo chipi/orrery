@@ -722,7 +722,7 @@
     statsOverlay: false,
   });
 
-  /** `cameraState.focusedOnPlanet` flips true when the camera transition into a
+  /** `focusedOnPlanet` flips true when the camera transition into a
    *  selected planet completes — gates gravity / atmo / temp overlay
    *  rows so they only paint after the camera settles. */
   let cameraState = $state({
@@ -746,7 +746,11 @@
   // opens while the Curator Tour is active, collapse the audio overlay to
   // compact mode so the panel the narrator just opened is fully visible.
   $effect(() => {
-    if (audio.tourActive && (panelState.planet || panelState.sun || panelState.smallBody) && !audio.compact) {
+    if (
+      audio.tourActive &&
+      (panelState.planet || panelState.sun || panelState.smallBody) &&
+      !audio.compact
+    ) {
       audio.compact = true;
     }
   });
@@ -1046,11 +1050,11 @@
   let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
-  // overlays. `cameraState.focusedOnPlanet` flips true when the camera completes
-  // a fly-to a planet, false on Reset View / Sun selection. Drives
-  // the Earth-comparison ghost (E.2, always-on at focus) and the
-  // tactical stats overlay (E.4, lens-gated). Lives in `cameraState`
-  // bag — see top-of-file declaration.
+  // overlays. `cameraState.focusedOnPlanet` is set true when the camera
+  // completes a fly-to a planet, false on Reset View / Sun selection.
+  // Drives the Earth-comparison ghost (E.2, always-on at focus) and
+  // the tactical stats overlay (E.4, lens-gated). See `cameraState`
+  // declaration near the top of the script.
 
   // Per-planet stats for the tactical overlay. Values are real
   // (surface gravity in g, atmospheric pressure in bar, sidereal
@@ -1245,6 +1249,14 @@
   // the Sun, and per-planet 4K LOD swaps (#287) never fired for
   // anything past Mercury. See `focusOnBody` inside onMount.
   let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+
+  // Panel mutex: each select* below opens its own panel and explicitly
+  // closes the four other planet/sun/smallBody/satellite/belt panels.
+  // The full `resetExplorePanelState()` funnel is deliberately NOT used
+  // here — it would also close `panelState.pathsLegend` and
+  // `panelState.sizes`, which should remain open across a body
+  // selection so the user can pick a body while the legend / sizes
+  // overlay stays up.
 
   function selectPlanet(id: string) {
     selectedId = id;
@@ -4709,7 +4721,11 @@
   onClose={() => (panelState.satellite = false)}
 />
 
-<BeltPanel beltId={selectedBeltId} open={panelState.belt} onClose={() => (panelState.belt = false)} />
+<BeltPanel
+  beltId={selectedBeltId}
+  open={panelState.belt}
+  onClose={() => (panelState.belt = false)}
+/>
 
 <MissionPanel
   mission={pathsLegendMission}

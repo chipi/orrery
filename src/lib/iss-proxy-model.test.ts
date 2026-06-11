@@ -510,17 +510,18 @@ describe('buildIssProxyStation — top-level structure', () => {
     });
   });
 
-  it('reports a non-trivial total mesh count (≥ 200 — sanity floor on the assembled station)', () => {
+  it('reports a non-trivial total mesh count (≥ 250 — sanity floor on the assembled station)', () => {
     const g = buildIssProxyStation();
     let n = 0;
     g.traverse((obj) => {
       if (obj instanceof THREE.Mesh) n++;
     });
     // The proxy station has ~300-400 meshes once trusses + arrays +
-    // visitors are added. 200 is a loose floor that would catch a
-    // catastrophic regression (e.g. an early-return that skips half
-    // the build) without breaking on legitimate piece-count tuning.
-    expect(n).toBeGreaterThanOrEqual(200);
+    // visitors are added. 250 is a moderately loose floor that would
+    // catch a catastrophic regression (early-return that skips half
+    // the build, an array-of-arrays empty, …) while still leaving
+    // headroom for legitimate piece-count tuning.
+    expect(n).toBeGreaterThanOrEqual(250);
   });
 
   it('two successive build calls produce independent Group instances (no module-level state)', () => {

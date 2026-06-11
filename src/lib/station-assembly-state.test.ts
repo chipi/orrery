@@ -1,9 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  type AssemblyRef,
-  createAssemblyRef,
-  syncAssemblyRef,
-} from './station-assembly-state';
+import { type AssemblyRef, createAssemblyRef, syncAssemblyRef } from './station-assembly-state';
 
 describe('createAssemblyRef', () => {
   it('returns a fresh ref with all flags off', () => {

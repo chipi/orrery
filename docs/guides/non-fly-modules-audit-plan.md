@@ -434,3 +434,35 @@ Example: `refactor(stations): extract shared assembly state shared by /iss and /
 - 4-6 commits
 
 Suggested cadence: one batch per session.
+
+---
+
+## Post-execution review · 2026-06-11
+
+Execution of #326 surfaced gaps between this plan-as-written and the actual codebase state at the time of execution. Recorded here so future readers don't follow stale guidance.
+
+### What didn't hold
+
+| Plan claim | Actual state |
+|---|---|
+| §Action 2: "Add `tests/e2e/tiangong.spec.ts`" | Already existed since commit `fb882461b` (119 lines, 6 tests). What was actually missing: an assembly-slider scrub assertion. |
+| §Action 3: "Add `tests/e2e/plan.spec.ts` and `tests/e2e/moon.spec.ts`" | Both already existed. Plan.spec.ts had 13 tests across porkchop loading + cell click + pin/compare + vehicle ∆v + FLY + Jupiter + LANDING/FLYBY pills + dest switch + Neptune + Ceres + mobile magnifier. Moon.spec.ts had 6 tests across 3D load + 2D toggle + Apollo 11 click + console errors + GALLERY + LEARN tabs. What was actually missing: a `?site=apollo11` deep-link assertion in moon.spec.ts. |
+| §Action 3: "Departure / arrival slider scrubbing updates DOM state" for plan.spec.ts | /plan has no temporal slider. The UI is the porkchop grid, already covered by cell-click + dest-switch. No test added; noted as not-applicable. |
+| §Action 1: "/iss + /tiangong share ~150 lines of identical assembly-state boilerplate" | The pure assembly-state container (3 `$state` declarations + `assemblyRef` POJO + `$effect` sync) is ~12 lines per route, not 150. The 150-line figure was likely double-counting §Action 5 territory (DOCK_EVENTS / TRUSS_PHASES) under §Action 1. |
+| §Action 1: factory returns `{state, ref, $effect-wiring}` | Svelte 5 `$effect` must run at `<script>` top level, so it can't live inside a plain-`.ts` factory. The shipped API is `createAssemblyRef()` + `syncAssemblyRef(ref, snap)`, with the component owning the `$effect`. Closer to `fly-cinematic-beats.ts` pure-data + pure-fn style than the `audio-state.svelte.ts` class. |
+| §Action 7: "/explore has 18 independent `$state()` bools at explore:699-788" | The actual count is 11 boolean toggles (panelOpen / sunPanelOpen / sizesOpen / smallBodyPanelOpen / satellitePanelOpen / beltPanelOpen / pathsLegendOpen / lensOn / hoverLayerOn / focusedOnPlanet / statsOverlayOn). The remaining "$state declarations" in the line range are typed selection IDs (string \| null) and complex bags (`layers`, `hoverData`, etc.), not bools. |
+| §Action 7: example bag includes `panelState.planet: string \| null` merging `panelOpen + selectedId` | Implementation kept bools as bools and left `selectedId` separate to preserve ordering invariants across the panel-mutex code (selectSun, selectSmallBody, …). The semantic consolidation can be revisited but isn't required for the audit's purpose. |
+| §Action 7: "4 typed bags" — `panelState` / `layerState` / `cameraState` / `selectionState` | Shipped 3 bags. The fourth (`selectionState`) was placeholder in the plan ("Whatever per-frame selected items live here") — the selection IDs (`selectedId`, `selectedSmallBodyId`, `selectedSatelliteKey`, `selectedBeltId`) stayed as separate lets. |
+| §Action 9: line references `explore:4560, 4574` | Lines shifted to `explore:4590, 4604` by the time §Action 7 was applied (no surprise — the bag declarations added ~30 lines). Pattern identified correctly; line numbers stale. |
+| §Action 6: "moon-lander-models.ts has no unit tests" + acceptance "`src/lib/moon-lander-models.test.ts` exists with 5+ tests" | The file already existed on disk with 9 well-targeted tests (J-mission LRV inclusion, Chang'e sample-return silhouette equivalence, Lunokhod sharing, generic-fallback mesh counts). Plan was written pre-checkin. Only `mars-lander-models.test.ts` was genuinely missing. |
+| §Action 10: "FLYBY_ONLY + GRAVITY_ASSIST_CAVEAT_DESTINATIONS are dead code" | Not dead. Both are intentional scaffolding per the inline comment + RFC-026 line 66 ("`FLYBY_ONLY` and `GRAVITY_ASSIST_CAVEAT_DESTINATIONS` are already in place as dead code (kept by ADR-076 for exactly this purpose)"). Deleting them would force a re-write at v0.8 multi-destination expansion, which is exactly what the comment + RFC argue against. No change made. |
+
+### What did hold
+
+The two structural refactors landed close to the plan's intent — extracting the assembly-state helpers (`station-assembly-state.ts`), relocating `DOCK_EVENTS / TRUSS_PHASES` to `iss-assembly-phases.ts`, consolidating /explore state into typed bags + a reset funnel, and bumping `iss-proxy-model.test.ts` from 0.181× to 0.304× test:source ratio.
+
+Six commits landed on `fixes` covering Batches 1, 2, 4, 5 (Actions 1, 2, 3, 5, 6, 7, 8, 9 — see #326 for per-action commit hashes). Action 4 (Batch 3, data.ts split) was deferred to #327 with a separate architecture-review phase because the plan undercounted scope (10-11 modules, not 8) and missed architectural choices that affect what the right split looks like.
+
+### Lesson for future plans
+
+When the plan author writes "this file doesn't exist" or "this constant is dead," verify against the current branch before committing the plan. Several of the staler claims here were artifacts of the audit being done on a slightly older branch state, then drifting against subsequent unrelated commits before the plan was written down. A `git ls-files | grep` pass at plan-write time would have caught most of them.

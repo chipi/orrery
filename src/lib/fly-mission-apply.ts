@@ -290,7 +290,15 @@ export function computeMissionApply(
           uranus: 3.4 / 80,
           neptune: 3.4 / 80,
         };
-        const offsetY = isIntermediateFlyby ? 1.5 * (FLYBY_RADIUS_AU[planet] ?? 0.03) : 0;
+        // Smaller +y offset (#85). Original 1.5× kept the line clear
+        // above the planet but read as "the line is in front of the
+        // body" during flyby cinema because the offset put the tube
+        // well above the planet's disk. 0.4× sits the tube just at
+        // the planet's pole — close enough that the depth-test (with
+        // opaque-pass tube material) hides the line where the planet
+        // is geometrically in front, but high enough that the line
+        // doesn't pass through the planet's interior.
+        const offsetY = isIntermediateFlyby ? 0.4 * (FLYBY_RADIUS_AU[planet] ?? 0.03) : 0;
         return {
           date: wp.date,
           label: wp.label,

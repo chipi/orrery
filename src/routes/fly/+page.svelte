@@ -1176,6 +1176,10 @@
     finaleBlackOpacity = 0;
     inCinematicHeldBeat = false;
     cutBlackOpacity = 0;
+    // #82 epilogue state
+    epilogueStartedAt = 0;
+    epilogueActive = false;
+    epilogueCaptionOpacity = 0;
   }
   // Polish-wave-3 cinematic state — all 13 timestamps + phase-tracking
   // flags live in a single CinematicBeatState instance. The struct
@@ -1198,6 +1202,14 @@
   let inCinematicHeldBeat = $state(false);
   // W3.6 cut overlay opacity — driven by animate() each frame.
   let cutBlackOpacity = $state(0);
+  // #82 end-of-mission epilogue — after the W3.4 finale fades to
+  // black, instead of staying black we fade BACK IN to a wide top-
+  // down system view that shows the entire mission flight path as
+  // a static tableau while the planetary system slowly rotates.
+  // The "where Cassini went" beat.
+  let epilogueStartedAt = 0;
+  let epilogueActive = $state(false);
+  let epilogueCaptionOpacity = $state(0);
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     const previousSimDay = simDay;
@@ -1697,11 +1709,19 @@
           varying float vT;
           void main() {
             float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
-            gl_FragColor = vec4(uColor, a);
+            // #85 — render in opaque pass with alpha discard so
+            // depth-test correctly hides line segments behind planet
+            // bodies during flyby. Transparent geo skips depth-write
+            // + sorts after opaque, so a transparent line drawn above
+            // a planet (the +y offset arc) always reads "in front"
+            // even when geometrically behind. Opaque pass + alpha
+            // discard fixes that.
+            if (a < 0.15) discard;
+            gl_FragColor = vec4(uColor, 1.0);
           }
         `,
-        transparent: true,
-        depthWrite: false,
+        transparent: false,
+        depthWrite: true,
       });
     function ensureCislunarPhaseLine(type: string): THREE.Line {
       const existing = cislunarPhaseLines.get(type);
@@ -2127,11 +2147,19 @@
           varying float vT;
           void main() {
             float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
-            gl_FragColor = vec4(uColor, a);
+            // #85 — render in opaque pass with alpha discard so
+            // depth-test correctly hides line segments behind planet
+            // bodies during flyby. Transparent geo skips depth-write
+            // + sorts after opaque, so a transparent line drawn above
+            // a planet (the +y offset arc) always reads "in front"
+            // even when geometrically behind. Opaque pass + alpha
+            // discard fixes that.
+            if (a < 0.15) discard;
+            gl_FragColor = vec4(uColor, 1.0);
           }
         `,
-        transparent: true,
-        depthWrite: false,
+        transparent: false,
+        depthWrite: true,
       });
     outLine = new THREE.Mesh(
       buildTubeGeometry(outPts, 0.6),
@@ -2523,17 +2551,18 @@
           const mat = mesh.material as THREE.MeshPhongMaterial;
           if (!mat || mat.userData?.rimPatched) return;
           mat.onBeforeCompile = (shader) => {
-            // Warm gold rim — matches real-spacecraft thermal-blanket
-            // sheen + the sun-side highlight read. Stronger than the
-            // pre-polish-wave-2 0.85 so the silhouette stands out
-            // against bright planet bodies (Saturn rings, Jupiter
-            // bands), but kept warm so the model doesn't look like
-            // a ghostly artificial-light cutout. The cool-white rim
-            // tried briefly during testing read "weird" per user
-            // feedback — backed off to warm.
+            // Per-part colour preservation (#84). User reported the
+            // ship reading as "a giant white lollipop" — the rim
+            // strength 1.25 + ACES tone mapping + bloom were washing
+            // out the gold bus / white dish / dark RTG / gold Huygens
+            // colour distinction. Pulled rim strength down to 0.5 so
+            // the silhouette still reads against bright planets but
+            // doesn't dominate the per-part diffuse colours. Power
+            // bumped to 3.0 so the rim is tighter at the silhouette
+            // edge instead of bleeding into the body's interior.
             shader.uniforms.rimColor = { value: new THREE.Color(0xffd9a3) };
-            shader.uniforms.rimStrength = { value: 1.25 };
-            shader.uniforms.rimPower = { value: 2.0 };
+            shader.uniforms.rimStrength = { value: 0.5 };
+            shader.uniforms.rimPower = { value: 3.0 };
             shader.fragmentShader = shader.fragmentShader.replace(
               '#include <common>',
               `#include <common>
@@ -2553,6 +2582,14 @@
               }`,
             );
           };
+          // #84 — bump emissive so the per-part colour (gold bus,
+          // white dish, dark RTG, gold Huygens, etc.) reads through
+          // ACES tone mapping + bloom. ACES crushes mid-tone diffuse
+          // colour at high exposure; emissive bypasses tone-mapping
+          // saturation curves and keeps the colour vibrant. ×2.0 of
+          // the model's declared intensity, capped at 1.0 to avoid
+          // overcooking already-bright parts.
+          mat.emissiveIntensity = Math.min(1.0, (mat.emissiveIntensity ?? 0.4) * 2.0);
           mat.userData = { ...(mat.userData ?? {}), rimPatched: true };
           mat.needsUpdate = true;
         });
@@ -2945,7 +2982,6 @@
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
-      const wide = cameraDistanceFor(activeDestination, false);
       const ePos = earthPos(simDay);
       const earthScene = new THREE.Vector3(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
       const dPosLive = destinationPos(simDay, activeDestination);
@@ -3068,7 +3104,20 @@
         sub = 'arrived';
         // Round-trip missions end at Earth; one-way ends at destination.
         const endAtEarth = retPts.length > 0;
-        if (endAtEarth) {
+        // #82 — once the epilogue tableau is active, override the
+        // arrived close-up framing with a wide Sun-centred top-down
+        // composition that contains the whole mission trajectory.
+        if (epilogueActive) {
+          const destSize = PLANET_SIZES[activeDestination] ?? 0;
+          centerX = 0;
+          centerZ = 0;
+          // camR covers the destination's orbital radius with a 1.5×
+          // margin — Saturn at 760 scene units needs camR ~1150 to
+          // fit the full trajectory + Saturn orbit ring.
+          const destDistance = Math.hypot(destScene.x, destScene.z);
+          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
+          targetP = 0.35; // near-top-down, slight oblique
+        } else if (endAtEarth) {
           centerX = earthScene.x;
           centerZ = earthScene.z;
           targetR = HELIO_EARTH_CLOSEUP_R;
@@ -3101,7 +3150,12 @@
             targetR = HELIO_CLOSEUP_R;
           }
         }
-        targetP = HELIO_APPROACH_P;
+        // Skip the approach-pitch override when the epilogue is
+        // controlling targetP — it already set targetP=0.35 for the
+        // top-down framing.
+        if (!epilogueActive) {
+          targetP = HELIO_APPROACH_P;
+        }
       } else if (sc.phase === 'outbound') {
         const t = sc.progress * 2; // 0→1 across outbound
         if (t < 0.05) {
@@ -3143,35 +3197,60 @@
           // same shot". Close framing at approachLocal=1: limb-grazing
           // distance off body radius. Smoothly lerp between.
           const wideR = shipToDestDist * 0.65 + (destSize > 0 ? destSize * 4 : HELIO_CLOSEUP_R);
-          const closeR = destSize > 0 ? destSize * FLYBY_BODY_R_MULTIPLIER : HELIO_CLOSEUP_R;
+          // Saturn-dominant approach (#81). Pre-fix had `closeR =
+          // destSize × FLYBY_BODY_R_MULTIPLIER (=5)` which gave Saturn
+          // ~22% of frame width. User wanted "larger Saturn" reading
+          // as the destination "looming" — × 3.5 puts it at ~35%.
+          // The subsequent OI cinema (±40 days around Saturn arrival)
+          // already takes the iconic ship-foreground "Wernquist" shot
+          // when the spacecraft actually reaches the planet, so the
+          // approach itself doesn't need to be ship-biased — it's the
+          // destination-establishing beat.
+          const closeR = destSize > 0 ? destSize * 3.5 : HELIO_CLOSEUP_R;
           targetR = wideR + (closeR - wideR) * approachLocal;
-          // Center also drifts from midpoint (approachLocal=0) to
-          // limb-grazing 35/65 toward ship (approachLocal=1), tracking
-          // the audience's eye smoothly from "look at the path" to
-          // "look at the spaceship arriving."
+          // Center drifts from midpoint (approachLocal=0) to Saturn-
+          // favoured 55/45 at approachLocal=1, letting the destination
+          // dominate the frame for the final approach beat. The OI
+          // cinema's separate ship-foreground composition takes over
+          // 40 days before arrival.
           const wideCenterX = (scScene.x + destScene.x) * 0.5;
           const wideCenterZ = (scScene.z + destScene.z) * 0.5;
-          const closeCenterX = destScene.x * 0.35 + scScene.x * 0.65;
-          const closeCenterZ = destScene.z * 0.35 + scScene.z * 0.65;
+          const closeCenterX = destScene.x * 0.55 + scScene.x * 0.45;
+          const closeCenterZ = destScene.z * 0.55 + scScene.z * 0.45;
           centerX = wideCenterX + (closeCenterX - wideCenterX) * approachLocal;
           centerZ = wideCenterZ + (closeCenterZ - wideCenterZ) * approachLocal;
           targetP = HELIO_APPROACH_P;
         } else {
-          // Tighter cruise — center biased toward the ship (70/30
-          // ship vs Sun) and distance scaled to where the ship
-          // actually is, so the spacecraft stays recognisable
-          // instead of becoming a sub-pixel dot in a wide frame.
-          // For outer-system missions the cap at wide × 0.65 keeps
-          // the framing inside the destination orbit so the ship
-          // doesn't fly OFF the edge during the long mid-cruise
-          // span. Cinematic drift + zoom breathing layer on top
-          // (see cruise-motion block in animate()).
+          // Ship+destination cruise framing. Pre-fix history: the cruise
+          // sub-phase used to centre on `scScene * 0.7` (70 % of the
+          // way from Sun to ship) with a camR sized to the ship's
+          // heliocentric distance. For Cassini's post-Jupiter cruise
+          // that put the camera target somewhere between Sun and ship
+          // — nowhere near Saturn — and camR grew to ~1000 scene units
+          // as ship-to-sun distance crossed 8 AU. Result: post-Jupiter
+          // user saw a wide solar-system overview with Cassini as a
+          // sub-pixel speck and Saturn entirely outside the frame.
+          //
+          // New framing centres on the MIDPOINT of ship + destination,
+          // with camR sized to the ship-to-dest distance (plus a body-
+          // radius margin). As Cassini closes on Saturn the midpoint
+          // tracks between them and camR naturally shrinks. The
+          // transition into the 'approach' sub-phase at t=0.8 is
+          // seamless because both branches now use the same midpoint
+          // + distance-based sizing pattern. Cinematic breathing /
+          // arc rotation layer on top (see cruise-motion block in
+          // animate()).
           sub = 'cruise-out';
-          const shipDistAu = Math.hypot(sc.pos.x, sc.pos.z);
-          const tightR = Math.max(140, shipDistAu * SCALE_3D * 1.3 + 80);
-          centerX = scScene.x * 0.7;
-          centerZ = scScene.z * 0.7;
-          targetR = Math.min(wide * 0.65, tightR);
+          const destSize = PLANET_SIZES[activeDestination] ?? 0;
+          const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
+          centerX = (scScene.x + destScene.x) * 0.5;
+          centerZ = (scScene.z + destScene.z) * 0.5;
+          // 0.6 multiplier covers half the ship-dest separation (so
+          // both fit in the half-frame) plus a body-radius margin so
+          // the destination's disk doesn't kiss the frame edge. Floor
+          // at 140 prevents the camera from getting too tight when
+          // ship + dest are within a few AU (mid-Venus-loop case).
+          targetR = Math.max(140, shipToDestDist * 0.6 + (destSize > 0 ? destSize * 4 : 80));
         }
       } else {
         // return
@@ -3197,14 +3276,15 @@
           targetR = HELIO_EARTH_CLOSEUP_R;
           targetP = HELIO_APPROACH_P;
         } else {
-          // Same ship-biased tight framing as cruise-out, applied to
-          // the inbound leg so round-trip missions get matching shots.
+          // Same ship+destination midpoint framing as cruise-out, but
+          // for the inbound leg the "destination" is Earth (the
+          // mission is returning home), so the camera tracks ship +
+          // Earth and naturally tightens as Earth grows in frame.
           sub = 'cruise-back';
-          const shipDistAu = Math.hypot(sc.pos.x, sc.pos.z);
-          const tightR = Math.max(140, shipDistAu * SCALE_3D * 1.3 + 80);
-          centerX = scScene.x * 0.7;
-          centerZ = scScene.z * 0.7;
-          targetR = Math.min(wide * 0.65, tightR);
+          const shipToEarthDist = Math.hypot(scScene.x - earthScene.x, scScene.z - earthScene.z);
+          centerX = (scScene.x + earthScene.x) * 0.5;
+          centerZ = (scScene.z + earthScene.z) * 0.5;
+          targetR = Math.max(140, shipToEarthDist * 0.6 + R_EARTH_AU * SCALE_3D * 4 + 30);
         }
       }
       if (sub !== lastHelioSubPhase) {
@@ -4358,6 +4438,14 @@
         const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
         camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005 * simSpeedFactor;
       }
+      // #82 epilogue — slow azimuthal rotation around the Sun so the
+      // tableau visibly rotates while the audience reads the trajectory
+      // arc. 0.04 rad/s × dt × simSpeedFactor keeps the rotation
+      // cinematic at all sim speeds (though sim is paused in arrived
+      // state, so simSpeedFactor=1 effectively).
+      if (!isMoonMission && !reducedMotion && !isDrag && epilogueActive) {
+        camT += 0.04 * dt;
+      }
       // Approach sweep — slow azimuthal arc around the ship-dest
       // midpoint during the final outbound leg. Paired with the
       // wide → close framing lerp (see updateHelioAutoZoomTargets
@@ -4699,6 +4787,11 @@
         inMissionFinale = false;
         finaleCaptionOpacity = 0;
         finaleBlackOpacity = 0;
+        // #82 — clear the epilogue tableau so re-entering arrived
+        // gets a fresh finale + epilogue sequence.
+        epilogueStartedAt = 0;
+        epilogueActive = false;
+        epilogueCaptionOpacity = 0;
       }
       cine.lastSeenPhase = phaseNow;
       // W3.4 — update finale state machine. After 12 s the camera
@@ -4721,11 +4814,36 @@
           );
         }
         // After 13 s (12 s finale + 1 s settle), drop the held flag
-        // so the rest of the scene resumes its normal pace if the
-        // user scrubs / interacts. The black overlay stays opaque
-        // until reset by the scrub-out reset above.
+        // and transition to the #82 epilogue tableau — wide top-down
+        // system view + slow rotation + the full mission trajectory
+        // visible.
         if (elapsed >= CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1000) {
           inMissionFinale = false;
+          if (epilogueStartedAt === 0) {
+            epilogueStartedAt = performance.now();
+            epilogueActive = true;
+          }
+        }
+      }
+      // #82 — epilogue tableau. Once active, fade the finale-black
+      // overlay BACK OUT to 0 over 1.5 s, lerp the camera to a wide
+      // Sun-centred top-down composition, slowly rotate the system
+      // around camT, and surface a "MISSION FLIGHT PATH · <name>"
+      // caption. The full out-line / dep+arr markers remain visible
+      // (see the helio-trajectory visibility block below). Stays
+      // until the user scrubs out (resetCinematicForMissionSwap or
+      // the phase-leaves-arrived reset wipe it).
+      if (epilogueActive && epilogueStartedAt > 0) {
+        const elapsedE = performance.now() - epilogueStartedAt;
+        // Black fade-out 1 → 0 across the first 1.5 s
+        if (elapsedE < 1500) {
+          finaleBlackOpacity = Math.max(0, 1 - elapsedE / 1500);
+        } else {
+          finaleBlackOpacity = 0;
+        }
+        // Caption fade-in 0 → 1 across t=1500 → 2500
+        if (elapsedE >= 1500) {
+          epilogueCaptionOpacity = Math.min(1, (elapsedE - 1500) / 1000);
         }
       }
       // The LAUNCH / ARRIVAL anchor rings + their date sprites are
@@ -4759,8 +4877,11 @@
       const showRet = showAnchors && retPts.length >= 2;
       if (retMarker) retMarker.visible = showRet;
       if (retLabelSprite) retLabelSprite.visible = showRet;
-      if (outLine) outLine.visible = !afterArrival;
-      if (retLine) retLine.visible = !afterArrival && retPts.length >= 2;
+      // #82 — keep the full trajectory visible during the epilogue
+      // tableau (the whole point is to show the "where the mission
+      // went" arc as a static visual).
+      if (outLine) outLine.visible = !afterArrival || epilogueActive;
+      if (retLine) retLine.visible = (!afterArrival || epilogueActive) && retPts.length >= 2;
       // When a per-mission 3D model is present, it becomes the primary
       // glyph and the generic sprite hides entirely (no duplication).
       // Otherwise the sprite remains the glyph.
@@ -5256,6 +5377,41 @@
         // the Earth-Moon system stays framed as it drifts. User mouse
         // input modifies cislunarCamR/P/T independently.
         updateCislunarCam();
+
+        // #83 — constant on-screen line thickness. Tube geometry is
+        // built with a world-space radius so it reads as the right
+        // pixel width at the wide cruise framing (camR ~ 500) but
+        // balloons to "fat sausage" at flyby-close (camR ~ 24). Scale
+        // the radius proportional to camR each frame so the line stays
+        // at a constant apparent thickness. Throttled — only rebuild
+        // geometry when the desired radius drifts > 0.05 from current
+        // (so static frames + held beats don't spend CPU rebuilding
+        // identical geometry).
+        if (
+          !isMoonMission &&
+          outLine &&
+          retLine &&
+          outPts.length >= 2 &&
+          flyUpdaters?.helio.rebuildTubeGeometry
+        ) {
+          const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
+          const desiredRadius = Math.max(0.18, Math.min(1.6, camR * 0.0045));
+          const currentRadius = tubeUd.tubeRadius ?? 0.35;
+          if (Math.abs(desiredRadius - currentRadius) > 0.05) {
+            outLine.geometry.dispose();
+            outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outPts, desiredRadius);
+            (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
+            if (retLine && retPts.length >= 2) {
+              retLine.geometry.dispose();
+              retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(
+                retPts,
+                desiredRadius * 0.85,
+              );
+              (retLine.geometry.userData as { tubeRadius?: number }).tubeRadius =
+                desiredRadius * 0.85;
+            }
+          }
+        }
 
         if (viewMode === 'cislunar') {
           // Cislunar mode bypasses the helio composer + bloom pipeline —
@@ -5770,6 +5926,19 @@
       data-testid="fly-finale-black"
       aria-hidden="true"
     ></div>
+  {/if}
+
+  <!-- #82 epilogue caption — "MISSION FLIGHT PATH · CASSINI-HUYGENS" -->
+  {#if epilogueActive && epilogueCaptionOpacity > 0}
+    <div
+      class="epilogue-caption"
+      style="opacity: {epilogueCaptionOpacity};"
+      data-testid="fly-epilogue-caption"
+      aria-live="polite"
+    >
+      <div class="epilogue-label">MISSION FLIGHT PATH</div>
+      <div class="epilogue-name">{mission.name}</div>
+    </div>
   {/if}
   <!-- W3.6 scrubber-jump cut overlay. Short 200 ms fade-to-black on
        big timeline jumps so the audience reads it as a deliberate cut,
@@ -6626,6 +6795,40 @@
     background: #000;
     pointer-events: none;
     transition: opacity 200ms linear;
+  }
+
+  /* #82 epilogue caption — top-anchored, larger than the finale
+     caption so it reads as a different beat. */
+  .epilogue-caption {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 400ms linear;
+  }
+  .epilogue-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: rgba(94, 234, 212, 0.85);
+    text-transform: uppercase;
+  }
+  .epilogue-name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: 7px;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    text-shadow:
+      0 0 12px rgba(0, 0, 0, 0.9),
+      0 0 4px rgba(0, 0, 0, 1);
   }
   /* W3.6 scrubber-jump cut overlay. Same z as the finale-black but
      no transition — the JS drives the opacity each frame directly,

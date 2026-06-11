@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
-  import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
+  import { useUrlParam } from '$lib/routes/use-url-param.svelte';
   import { syncPanoramaUrl, readPanoramaUrlState } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
@@ -271,10 +271,25 @@
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
   // sites pinned to Tier 0 silhouette; 'high' = all sites pinned
-  // to their hotspot_tier_max. Initial value resolves from the
-  // ?hotspots= URL param if present, else falls back to LOW under
-  // reduced-motion or saveData, else AUTO.
-  let hotspotsMode: HotspotMode = $state('auto');
+  // to their hotspot_tier_max. URL-synced via useUrlParam (#331):
+  // initial value comes from the ?hotspots= param via the same
+  // resolveInitialHotspotsMode fallback chain, the cycle button
+  // mutates via .value =, and the rune handles the goto + untrack
+  // discipline.
+  const hotspotsParam = useUrlParam<HotspotMode>(
+    'hotspots',
+    (raw) => {
+      const url = new URL(typeof window === 'undefined' ? 'http://x' : window.location.href);
+      if (raw !== null) url.searchParams.set('hotspots', raw);
+      else url.searchParams.delete('hotspots');
+      return resolveInitialHotspotsMode(url);
+    },
+    (mode) => (mode === 'auto' ? null : mode),
+    // User-action change — no slider scrubbing involved. Skip the
+    // 200 ms debounce; cycle button click should write the URL
+    // immediately so a refresh inside the next frame preserves intent.
+    { debounceMs: 0 },
+  );
 
   /**
    * Tier 3 panorama state (Phase 6 / #118). Only the currently
@@ -335,13 +350,12 @@
 
   // resolveInitialHotspotsMode + nextHotspotsMode extracted to
   // $lib/surface-map/hotspots-mode.ts (#42).
-  const cycleHotspotsMode = () => (hotspotsMode = nextHotspotsMode(hotspotsMode));
+  const cycleHotspotsMode = () => (hotspotsParam.value = nextHotspotsMode(hotspotsParam.value));
 
-  // Resolve initial mode once on mount (needs window for
-  // matchMedia + navigator.connection). Subsequent changes go
-  // through cycleHotspotsMode + the $effect below.
+  // useUrlParam handles the initial URL read + the goto write.
+  // The remaining initial-mount work is the debug-flag read +
+  // sidecar probe.
   onMount(() => {
-    hotspotsMode = resolveInitialHotspotsMode($page.url);
     showDebug = $page.url.searchParams.get('debug') === '1';
     // Sidecar fetch probe — fills the overlay's sidecarStatus.
     fetch('/data/surface-hotspots.json')
@@ -354,10 +368,10 @@
       });
   });
 
-  // Reactive: sync mode → dispatcher + URL.
+  // Reactive: sync mode → dispatcher. URL sync is owned by useUrlParam
+  // above; this effect only feeds the LOD dispatcher.
   $effect(() => {
-    setHotspotMode(hotspotsMode);
-    syncHotspotsModeUrl($page.url, hotspotsMode);
+    setHotspotMode(hotspotsParam.value);
   });
 
   // colorFor + computeTierScale extracted to $lib/surface-map/* (#42).
@@ -3442,7 +3456,7 @@
           debugInfo.maxTierAcrossSites = maxAcross;
           debugInfo.currentTopTier = curTop;
           debugInfo.targetTopTier = tgtTop;
-          debugInfo.pageMode = hotspotsMode;
+          debugInfo.pageMode = hotspotsParam.value;
           debugInfo.dispatcherMode = getHotspotMode();
           debugInfo.camR = camR;
           if (hotspots.length > 0) {
@@ -3684,7 +3698,7 @@
               : []),
           ]}
         />
-        <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />
+        <HotspotsLodChip mode={hotspotsParam.value} onCycle={cycleHotspotsMode} />
       </div>
     </div>
   {/if}

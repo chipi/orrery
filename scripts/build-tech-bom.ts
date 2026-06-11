@@ -97,6 +97,12 @@ const PACKAGE_LICENSE_OVERRIDES: Record<string, string> = {
   // Upstream repo (github.com/TimvanScherpenzeel/webgl-constants) ships
   // a LICENSE file declaring MIT; the npm package omits the field.
   'webgl-constants': 'MIT',
+  // sqlite-wasm-kysely — transitive dep of @inlang/paraglide-js@2
+  // (i18n bundle split, #328). Ships a LICENSE file declaring MIT
+  // (Copyright (c) 2024 Opral US Inc.) but omits the `license` field
+  // in package.json. Dev-only — used at compile time by the paraglide
+  // CLI, never bundled into the production client.
+  'sqlite-wasm-kysely': 'MIT',
 };
 
 // Some legacy npm packages declare licenses as compound expressions or

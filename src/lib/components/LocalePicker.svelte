@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { goto, invalidateAll } from '$app/navigation';
-  import { setLanguageTag } from '$lib/paraglide/runtime';
+  import { setLocale } from '$lib/paraglide/runtime';
   import {
     SUPPORTED_LOCALES,
     isSupportedLocale,
@@ -39,7 +39,7 @@
     track('locale-switch', { from: active, to: code });
     const url = new URL($page.url);
     url.searchParams.set('lang', code);
-    setLanguageTag(code);
+    setLocale(code, { reload: false });
     writeLocaleCookie(code);
     // Stay SPA (no hard refresh) but force all route data/state that depends
     // on locale to re-run on the active page.
@@ -61,7 +61,7 @@
   // changes (e.g. user pastes a `?lang=es` URL). Without this the
   // chip would show ES but Paraglide would still compile en-US strings.
   $effect(() => {
-    if (isSupportedLocale(active)) setLanguageTag(active);
+    if (isSupportedLocale(active)) setLocale(active, { reload: false });
   });
 </script>
 

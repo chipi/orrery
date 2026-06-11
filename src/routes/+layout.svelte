@@ -9,7 +9,7 @@
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
-  import { setLanguageTag } from '$lib/paraglide/runtime';
+  import { setLocale } from '$lib/paraglide/runtime';
   import {
     localeFromPage,
     isSupportedLocale,
@@ -31,7 +31,7 @@
   $effect.pre(() => {
     const code = localeFromPage($page);
     if (isSupportedLocale(code)) {
-      setLanguageTag(code);
+      setLocale(code, { reload: false });
       syncDocumentLocaleAttributes(code);
     }
   });

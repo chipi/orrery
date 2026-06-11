@@ -3,7 +3,7 @@
   import { type SiteStory, getImageProvenanceManifest, type ImageProvenanceEntry } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { getImageAlt } from '$lib/image-alt';
-  import { languageTag } from '$lib/paraglide/runtime';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -101,7 +101,7 @@
             >
               <img
                 src="{base}{img.src}"
-                alt={getImageAlt(img.src, languageTag()) || img.caption}
+                alt={getImageAlt(img.src, getLocale()) || img.caption}
                 loading="lazy"
                 decoding="async"
               />

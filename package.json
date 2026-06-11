@@ -97,7 +97,7 @@
     "@axe-core/playwright": "^4.11.3",
     "@eslint/js": "9.17.0",
     "@google-cloud/text-to-speech": "^6.4.1",
-    "@inlang/paraglide-js": "1.11.2",
+    "@inlang/paraglide-js": "^2.19.0",
     "@playwright/test": "1.60.0",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "2.61.1",

@@ -3528,21 +3528,31 @@
       // closes 40 days AFTER.
       const flybyEvents = mission.flight?.events ?? [];
       let activeFlybyMet: number | null = null;
-      for (const e of flybyEvents) {
-        // Treat both pure flybys AND the orbital-insertion / EDL event
-        // as cinema triggers — Saturn-OI for Cassini, Mars EDL for
-        // Curiosity etc. should compose with the same ship-as-hero
-        // tuning as a flyby (the only difference is the trajectory
-        // ends there instead of continuing).
-        if ((e.type !== 'flyby' && e.type !== 'edl_or_oi') || e.met_days == null) continue;
-        const flybySimDay = arcTimeline.dep_day + e.met_days;
-        const delta = simDay - flybySimDay; // negative = approaching
-        // OI events use a wider lead-in window so the camera has time
-        // to converge to the cinematic composition before the burn.
-        const approachWindow = e.type === 'edl_or_oi' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
-        if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
-          activeFlybyMet = e.met_days;
-          break;
+      // Once the epilogue is active, yield: skip the flyby cinema
+      // check so the arrived-branch's epilogue composition (wide Sun-
+      // centered top-down mirroring the opening tableau) can fire.
+      // Without this guard, Saturn-OI's flyby cinema window keeps
+      // activeFlybyMet=2451 forever (peakHold freezes simDay at peak),
+      // and the camera stays locked at the iconic flyby closeup
+      // instead of pulling out to the bookend wide tableau Marko
+      // wants at end of mission.
+      if (!epilogueActive) {
+        for (const e of flybyEvents) {
+          // Treat both pure flybys AND the orbital-insertion / EDL event
+          // as cinema triggers — Saturn-OI for Cassini, Mars EDL for
+          // Curiosity etc. should compose with the same ship-as-hero
+          // tuning as a flyby (the only difference is the trajectory
+          // ends there instead of continuing).
+          if ((e.type !== 'flyby' && e.type !== 'edl_or_oi') || e.met_days == null) continue;
+          const flybySimDay = arcTimeline.dep_day + e.met_days;
+          const delta = simDay - flybySimDay; // negative = approaching
+          // OI events use a wider lead-in window so the camera has time
+          // to converge to the cinematic composition before the burn.
+          const approachWindow = e.type === 'edl_or_oi' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
+          if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
+            activeFlybyMet = e.met_days;
+            break;
+          }
         }
       }
 
@@ -3758,13 +3768,16 @@
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
           centerX = 0;
           centerZ = 0;
-          // camR covers the destination's orbital radius with a 1.5×
-          // margin — Saturn at 760 scene units needs camR ~1150 to
-          // fit the full trajectory + Saturn orbit ring. Multiplier
-          // bumped 1.4 → 1.7 so the framing mirrors the opening's
-          // wide top-down system view (the bookend Marko wants).
+          // EXACT bookend with the opening tableau — same multiplier
+          // (1.4×), same Sun-centered framing, same near-top-down
+          // tilt. Earlier I bumped 1.4 → 1.7 thinking wider was more
+          // dramatic, but Marko's feedback "we want the end to look
+          // like start" means the two compositions must MATCH so the
+          // mission reads as a true bookended movie. With 1.4× the
+          // Sun appears at the same apparent size in both shots and
+          // the trajectory fits the frame identically.
           const destDistance = Math.hypot(destScene.x, destScene.z);
-          targetR = Math.max(800, destDistance * 1.7 + (destSize > 0 ? destSize * 8 : 0));
+          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
           targetP = 0.35; // near-top-down, slight oblique
         } else if (endAtEarth) {
           sub = 'arrived';
@@ -4061,8 +4074,25 @@
           // arrives at the iconic frame well before peak instead of
           // catching up after.
           const inFlybyCinemaForLerp = lastHelioSubPhase?.startsWith('flyby-') ?? false;
-          const LERP_BASE = inSnapWindow ? 0.08 : inFlybyCinemaForLerp ? 0.05 : 0.025;
-          const LERP = Math.min(0.18, LERP_BASE * simSpeedFactor);
+          const inEpilogue = lastHelioSubPhase === 'epilogue';
+          // Epilogue gets a deliberately SLOW lerp (0.008) so the
+          // transition from Saturn closeup → wide bookend tableau
+          // reads as a contemplative slow pull-out (~10 s wall-clock)
+          // instead of a snap-cut. Marko: "we can make transition
+          // from that Saturn scene slowly to final one."
+          const LERP_BASE = inSnapWindow
+            ? 0.08
+            : inEpilogue
+              ? 0.008
+              : inFlybyCinemaForLerp
+                ? 0.05
+                : 0.025;
+          // Cap the lerp at 0.18 for normal cases; for the epilogue
+          // we want it CAPPED LOWER so even at high sim speeds the
+          // pull-out stays cinematic rather than snapping.
+          const LERP = inEpilogue
+            ? Math.min(0.025, LERP_BASE * simSpeedFactor)
+            : Math.min(0.18, LERP_BASE * simSpeedFactor);
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;

@@ -13,6 +13,14 @@
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import {
+    type RemoteData,
+    loading as rdLoading,
+    error as rdError,
+    success as rdSuccess,
+    isError,
+    isSuccess,
+  } from '$lib/types/remote-data';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
   // TimelineNavigator.svelte; copied here so the URL coercion logic
@@ -21,9 +29,14 @@
   const TIMELINE_MAX_YEAR = 2035;
 
   // ─── State ───────────────────────────────────────────────────────
-  let missions: Mission[] = $state([]);
-  let loading = $state(true);
-  let loadFailed = $state(false);
+  // RemoteData<E,T> per #330 C.2 — collapses the prior {items, loading,
+  // loadFailed} triple into a single discriminated union. The `missions`
+  // $derived below exposes the success-branch payload as a plain array
+  // so the existing filter / sort / template body keeps reading
+  // `missions.length`, `missions.filter(...)` without each callsite
+  // having to defend against the loading / error variants.
+  let missionsRequest = $state<RemoteData<Error, Mission[]>>(rdLoading());
+  let missions = $derived(isSuccess(missionsRequest) ? missionsRequest.data : []);
 
   /**
    * Mission catalog filter state. Bagged into a single typed `$state`
@@ -233,12 +246,10 @@
   // the merged mission overlay set without a full page reload.
   $effect(() => {
     const locale = localeFromPage($page);
-    loading = true;
-    loadFailed = false;
+    missionsRequest = rdLoading();
     getMissionsForLibrary(locale)
       .then((list) => {
-        missions = list;
-        loading = false;
+        missionsRequest = rdSuccess(list);
         // Apply ?id= deep-link after data lands so the cross-link from
         // /mars or /moon ("FULL MISSION CARD" chip) opens the right
         // mission's panel pre-selected.
@@ -250,8 +261,7 @@
       })
       .catch((err) => {
         console.error('Failed to load mission library:', err);
-        loading = false;
-        loadFailed = true;
+        missionsRequest = rdError(err instanceof Error ? err : new Error(String(err)));
       });
   });
 
@@ -516,9 +526,9 @@
     </nav>
   {/if}
 
-  {#if loadFailed}
+  {#if isError(missionsRequest)}
     <div class="load-banner" role="alert">{m.lib_load_failed()}</div>
-  {:else if loading}
+  {:else if !isSuccess(missionsRequest)}
     <div class="loading" role="status" aria-live="polite">{m.missions_loading()}</div>
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>

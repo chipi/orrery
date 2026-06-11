@@ -15,11 +15,22 @@
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import {
+    type RemoteData,
+    loading as rdLoading,
+    error as rdError,
+    success as rdSuccess,
+    isError,
+    isSuccess,
+  } from '$lib/types/remote-data';
 
   // ─── State ───────────────────────────────────────────────────────
-  let entries: FleetIndexEntry[] = $state([]);
-  let loading = $state(true);
-  let loadFailed = $state(false);
+  // RemoteData<E,T> per #330 C.2. `entries` is the success-branch
+  // payload exposed as a plain array so existing filter / sort /
+  // template reads (`entries.length`, `entries.find(...)`) don't
+  // each have to guard against the loading / error variants.
+  let entriesRequest = $state<RemoteData<Error, FleetIndexEntry[]>>(rdLoading());
+  let entries = $derived(isSuccess(entriesRequest) ? entriesRequest.data : []);
 
   let selectedEntry: FleetEntry | null = $state(null);
   let panelOpen = $state(false);
@@ -252,11 +263,10 @@
   onMount(async () => {
     applyUrl($page.url);
     try {
-      entries = await getFleetIndex();
-    } catch {
-      loadFailed = true;
+      entriesRequest = rdSuccess(await getFleetIndex());
+    } catch (err) {
+      entriesRequest = rdError(err instanceof Error ? err : new Error(String(err)));
     }
-    loading = false;
 
     // Pre-select an entry if ?id= is in the URL on first visit.
     const id = $page.url.searchParams.get('id');
@@ -292,9 +302,9 @@
 </svelte:head>
 
 <div class="fleet">
-  {#if loading}
+  {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
     <p class="status">Loading fleet…</p>
-  {:else if loadFailed}
+  {:else if isError(entriesRequest)}
     <p class="status error">Failed to load fleet data.</p>
   {:else}
     <!-- Filters collapsed by default. Count lives on the right end of

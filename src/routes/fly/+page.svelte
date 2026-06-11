@@ -3602,14 +3602,41 @@
           // tighten the camera distance (3.2× vs 5×) for a closer,
           // more emotional read — earthrise-style. The longer peak
           // hold is applied where peakHoldUntil is armed.
+          // Framing pivots from "midpoint of ship + planet" during
+          // approach (when ship is far from planet — both visible at
+          // frame edges, planet looms in distance) to "ship-biased"
+          // at peak (ship-as-hero, planet-as-backdrop). The blend is
+          // driven by ship-to-planet proximity:
+          //   - ship_to_planet ≥ 30 scene → 50/50 midpoint
+          //   - ship_to_planet ≤ flyby.size×2 → 35/65 ship-biased
+          // camR also scales with ship-to-planet distance so the
+          // approach never makes Venus a "tiny dot in the corner"
+          // — the prior fixed planet_size × 5 was too tight for the
+          // 75-scene-unit pre-peak gap (Venus angular size dropped
+          // to ~2°). Now camR fits both bodies + margin.
+          const shipToPlanetDist = Math.hypot(
+            scScene.x - bodyScene.x,
+            scScene.z - bodyScene.z,
+          );
           const isEarthFlyby = flyby.id === ('earth' as typeof flyby.id);
-          centerX = isEarthFlyby
-            ? bodyScene.x * 0.5 + scScene.x * 0.5
-            : bodyScene.x * 0.35 + scScene.x * 0.65;
-          centerZ = isEarthFlyby
-            ? bodyScene.z * 0.5 + scScene.z * 0.5
-            : bodyScene.z * 0.35 + scScene.z * 0.65;
-          targetR = flyby.size * (isEarthFlyby ? 3.2 : FLYBY_BODY_R_MULTIPLIER);
+          // Blend factor 0..1: 0 = far (midpoint), 1 = at peak (ship-bias).
+          const closeIn = Math.max(
+            0,
+            Math.min(1, 1 - (shipToPlanetDist - flyby.size * 2) / 30),
+          );
+          const shipBias = isEarthFlyby ? 0.5 : 0.5 + 0.15 * closeIn;
+          const planetBias = 1 - shipBias;
+          centerX = bodyScene.x * planetBias + scScene.x * shipBias;
+          centerZ = bodyScene.z * planetBias + scScene.z * shipBias;
+          // Camera distance — fits both bodies with a planet-radius
+          // margin. Earth keeps its tighter 3.2× treatment for the
+          // home-planet hero shot.
+          targetR = isEarthFlyby
+            ? flyby.size * 3.2
+            : Math.max(
+                flyby.size * FLYBY_BODY_R_MULTIPLIER,
+                shipToPlanetDist * 0.55 + flyby.size * 3,
+              );
           // Panoramic flyby choreography — gentle 90° sweep across the
           // planet timed so camera arrives at the iconic perpendicular
           // composition LEAD_DAYS BEFORE peak so the ship flies INTO a

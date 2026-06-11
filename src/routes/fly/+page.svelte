@@ -33,6 +33,7 @@
     type QualityChoice,
     type QualityTier,
   } from '$lib/quality/quality-tier';
+  import { attachFrameMonitor, nextLowerTier } from '$lib/quality/frame-monitor';
   import type { FlyUpdaters } from '$lib/three/fly-updaters';
   import {
     computeMissionApply,
@@ -205,6 +206,22 @@
   }
   function reloadForQuality() {
     if (typeof window !== 'undefined') window.location.reload();
+  }
+
+  // Runtime adaptive — wave 2/3 punch #4. The frame monitor reports a
+  // sustained-over-budget rolling average; when it fires, we surface a
+  // non-blocking toast suggesting the next-lower tier rather than
+  // silently demoting mid-cinematic. User decides whether to flip.
+  let perfToastVisible = $state(false);
+  let perfToastAvgMs = $state(0);
+  let perfToastSuggestedTier = $state<QualityTier | null>(null);
+  function applyPerfSuggestion() {
+    if (!perfToastSuggestedTier) return;
+    writeUserChoice(perfToastSuggestedTier);
+    reloadForQuality();
+  }
+  function dismissPerfToast() {
+    perfToastVisible = false;
   }
 
   // ─── Arc geometries — recomputed per loaded mission ──────────────
@@ -1717,6 +1734,20 @@
     // localStorage so the NEXT page load can resolve the right tier
     // synchronously. First-ever visit gets a `medium` baseline.
     void kickOffBackgroundDetect();
+    // Runtime adaptive — tick this once per frame inside animate().
+    // The onStruggle callback surfaces a toast suggesting a demotion;
+    // user decides whether to apply. Skip entirely on the `minimal`
+    // tier (we're already at the floor — nothing to suggest) and when
+    // the user has explicitly picked a non-auto tier (respect intent).
+    const frameMonitor = attachFrameMonitor({
+      onStruggle: (avg) => {
+        const next = nextLowerTier(quality.tier);
+        if (!next) return;
+        perfToastAvgMs = avg;
+        perfToastSuggestedTier = next;
+        perfToastVisible = true;
+      },
+    });
     const helioHandles = buildHelioScene({
       container,
       aspect: container.clientWidth / container.clientHeight,
@@ -4688,6 +4719,11 @@
 
     const animate = (now: number) => {
       rafId = requestAnimationFrame(animate);
+      // Feed the runtime adaptive frame monitor — fires onStruggle if
+      // the rolling-window average frame time stays over budget. The
+      // monitor itself is non-blocking and drops backgrounded-tab dt
+      // samples (>500 ms) so a tab-switch doesn't trip the toast.
+      frameMonitor.tick();
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
       // Polish-wave-3 cinematic-beat status — recomputed once per frame
@@ -6140,6 +6176,7 @@
 
     cleanup = () => {
       cancelAnimationFrame(rafId);
+      frameMonitor.stop();
       stopLensWatch?.();
       stopSoiLayer?.();
       stopSoiLayerCislunar?.();
@@ -6213,6 +6250,30 @@
   >
     ⚙
   </button>
+  <!-- Runtime adaptive — wave 2/3 punch #4. Non-blocking toast at
+       bottom-right when the rolling-average frame time has stayed over
+       budget. Suggests the next-lower quality tier; user decides. -->
+  {#if perfToastVisible && perfToastSuggestedTier}
+    <div class="perf-toast" role="status" aria-live="polite">
+      <div class="perf-toast-title">PERFORMANCE</div>
+      <div class="perf-toast-body">
+        Frame time averaging {perfToastAvgMs.toFixed(0)} ms.
+        Drop to <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
+      </div>
+      <div class="perf-toast-actions">
+        <button
+          type="button"
+          class="perf-toast-apply"
+          onclick={applyPerfSuggestion}
+        >Apply & reload</button>
+        <button
+          type="button"
+          class="perf-toast-dismiss"
+          onclick={dismissPerfToast}
+        >Not now</button>
+      </div>
+    </div>
+  {/if}
   {#if settingsOpen}
     <div class="settings-panel" role="dialog" aria-label="Settings">
       <div class="settings-header">
@@ -8153,6 +8214,66 @@
   }
   .settings-reload-btn:hover {
     background: rgba(78, 205, 196, 0.35);
+  }
+
+  /* Runtime perf toast — bottom-right floating card. Same visual
+     vocabulary as the settings panel so it reads as native chrome. */
+  .perf-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 38;
+    max-width: 280px;
+    background: rgba(10, 14, 28, 0.96);
+    border: 1px solid rgba(255, 200, 80, 0.55);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: rgba(220, 230, 245, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+  }
+  .perf-toast-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #ffc850;
+    margin-bottom: 6px;
+  }
+  .perf-toast-body {
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .perf-toast-tier {
+    color: #4ecdc4;
+    text-transform: uppercase;
+  }
+  .perf-toast-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .perf-toast-apply,
+  .perf-toast-dismiss {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(78, 205, 196, 0.5);
+    color: rgba(220, 230, 245, 0.95);
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+  }
+  .perf-toast-apply {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+  }
+  .perf-toast-apply:hover {
+    background: rgba(78, 205, 196, 0.35);
+  }
+  .perf-toast-dismiss:hover {
+    border-color: rgba(220, 230, 245, 0.7);
   }
 
   /* FLIGHT PARAMS HUD (v0.1.7 / ADR-027 / UXS-003 §Extension) */

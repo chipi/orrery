@@ -3685,27 +3685,37 @@
           targetR = HELIO_EARTH_CLOSEUP_R;
         }
       } else if (sc.phase === 'arrived') {
-        sub = 'arrived';
         // Round-trip missions end at Earth; one-way ends at destination.
         const endAtEarth = retPts.length > 0;
         // #82 — once the epilogue tableau is active, override the
         // arrived close-up framing with a wide Sun-centred top-down
         // composition that contains the whole mission trajectory.
+        // sub === 'epilogue' (not 'arrived') so the sub-phase
+        // transition flips helioAutoZoomActive=true and the fast
+        // LERP engages — without that the camera drifts at the slow
+        // TRACK rate (0.006) and the zoom-out takes 30+ seconds to
+        // converge instead of registering as a deliberate "pull out
+        // to mission overview" beat.
         if (epilogueActive) {
+          sub = 'epilogue';
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
           centerX = 0;
           centerZ = 0;
           // camR covers the destination's orbital radius with a 1.5×
           // margin — Saturn at 760 scene units needs camR ~1150 to
-          // fit the full trajectory + Saturn orbit ring.
+          // fit the full trajectory + Saturn orbit ring. Multiplier
+          // bumped 1.4 → 1.7 so the framing mirrors the opening's
+          // wide top-down system view (the bookend Marko wants).
           const destDistance = Math.hypot(destScene.x, destScene.z);
-          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
+          targetR = Math.max(800, destDistance * 1.7 + (destSize > 0 ? destSize * 8 : 0));
           targetP = 0.35; // near-top-down, slight oblique
         } else if (endAtEarth) {
+          sub = 'arrived';
           centerX = earthScene.x;
           centerZ = earthScene.z;
           targetR = HELIO_EARTH_CLOSEUP_R;
         } else {
+          sub = 'arrived';
           // One-way mission arriving at the destination — Cassini at
           // Saturn, Galileo at Jupiter, Juno at Jupiter, Voyager Grand
           // Tour etc. Pre-polish-wave-2 this targeted destScene at
@@ -3776,34 +3786,25 @@
           const approachLocal = Math.max(0, Math.min(1, (t - 0.8) / 0.2));
           const destSize = PLANET_SIZES[activeDestination] ?? 0;
           const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
-          // Wide framing at approachLocal=0: covers ship + dest with
-          // margin so the audience reads "ship and destination in
-          // same shot". Close framing at approachLocal=1: limb-grazing
-          // distance off body radius. Smoothly lerp between.
-          const wideR = shipToDestDist * 0.65 + (destSize > 0 ? destSize * 4 : HELIO_CLOSEUP_R);
-          // Saturn-dominant approach (#81). Pre-fix had `closeR =
-          // destSize × FLYBY_BODY_R_MULTIPLIER (=5)` which gave Saturn
-          // ~22% of frame width. User wanted "larger Saturn" reading
-          // as the destination "looming" — × 3.5 puts it at ~35%.
-          // The subsequent OI cinema (±40 days around Saturn arrival)
-          // already takes the iconic ship-foreground "Wernquist" shot
-          // when the spacecraft actually reaches the planet, so the
-          // approach itself doesn't need to be ship-biased — it's the
-          // destination-establishing beat.
-          const closeR = destSize > 0 ? destSize * 3.5 : HELIO_CLOSEUP_R;
-          targetR = wideR + (closeR - wideR) * approachLocal;
-          // Center drifts from midpoint (approachLocal=0) to Saturn-
-          // favoured 55/45 at approachLocal=1, letting the destination
-          // dominate the frame for the final approach beat. The OI
-          // cinema's separate ship-foreground composition takes over
-          // 40 days before arrival.
-          const wideCenterX = (scScene.x + destScene.x) * 0.5;
-          const wideCenterZ = (scScene.z + destScene.z) * 0.5;
-          const closeCenterX = destScene.x * 0.55 + scScene.x * 0.45;
-          const closeCenterZ = destScene.z * 0.55 + scScene.z * 0.45;
-          centerX = wideCenterX + (closeCenterX - wideCenterX) * approachLocal;
-          centerZ = wideCenterZ + (closeCenterZ - wideCenterZ) * approachLocal;
+          // Ship-biased framing through the entire approach window —
+          // user-reported "camera loses ship in last segment, only
+          // last 5-10s look good." Previous code shrank camR toward
+          // closeR (= destSize × 3.5, tiny) and shifted center toward
+          // dest-biased 55/45 long before the flyby cinema took over,
+          // so the ship visibly slid out of frame for most of the
+          // approach. Now we hold the ship-biased 70/30 + 0.85× dist
+          // framing (same as cruise-out) throughout; the flyby cinema
+          // (±90 days around peak) takes over for the iconic closeup.
+          centerX = scScene.x * 0.7 + destScene.x * 0.3;
+          centerZ = scScene.z * 0.7 + destScene.z * 0.3;
+          targetR = Math.max(
+            140,
+            shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80),
+          );
           targetP = HELIO_APPROACH_P;
+          // Reference approachLocal so it isn't unused (kept for
+          // future per-stage tweaks like pitch breathing).
+          void approachLocal;
         } else {
           // Ship+destination cruise framing. Pre-fix history: the cruise
           // sub-phase used to centre on `scScene * 0.7` (70 % of the
@@ -5202,7 +5203,16 @@
             const TAU = Math.PI * 2;
             let delta = (((helioFlybyDesiredCamT - camT) % TAU) + TAU) % TAU;
             if (delta > Math.PI) delta -= TAU;
-            const lerpRate = inPeak ? 0.06 : 0.025;
+            // Bumped 4× over the original — the choreography's
+            // desiredCamT moves ~0.55 rad/sec during the pan window,
+            // and at the old 0.025/0.06 rates the steady-state lag was
+            // ~21°, leaving the camera still converging WHEN the ship
+            // hit peak (user-reported "ship goes through planet, then
+            // scene pauses, THEN camera rotates"). At 0.10 normal /
+            // 0.25 peak, steady-state lag drops below 5° so the
+            // camera arrives at the iconic frame well before peak and
+            // just holds.
+            const lerpRate = inPeak ? 0.25 : 0.1;
             camT += delta * lerpRate * dt * simSpeedFactor * 60;
             // Small ±0.02 rad oscillation (~1.1°) over a 12 s cycle so
             // the camera breathes even after it settles into framing.

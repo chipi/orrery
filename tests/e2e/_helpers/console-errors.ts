@@ -29,7 +29,21 @@ export function isExpectedNoise(msg: ConsoleMessage): boolean {
   // any other 404 (patch, portrait, gallery, diagram) is a real bug.
   if (/Failed to load resource|404 \(Not Found\)/.test(text)) {
     const url = msg.location()?.url ?? '';
-    return /\/data\/i18n\//.test(url) || /\/data\/trajectories\//.test(url);
+    return (
+      /\/data\/i18n\//.test(url) ||
+      /\/data\/trajectories\//.test(url) ||
+      // /images/missions/<id>.jpg (card cover) +
+      // /images/missions/thumbnails/<id>.png (trajectory thumbnail) are
+      // the mission catalog card photos. /missions/+page.svelte wires
+      // an `onerror` handler on the cover so the figure hides when the
+      // file is missing (slice B/C added inspiration4, polaris-dawn,
+      // otv-6, otv-7 to the index without shipping image assets — the
+      // cards gracefully degrade). The browser still logs each 404;
+      // allow them here so the smoke check focuses on real asset
+      // misses (per-mission patches, crew portraits, gallery items
+      // live deeper at /images/missions/<id>/<file>.<ext>).
+      /\/images\/missions\/([^/]+\.jpg|thumbnails\/[^/]+\.png)$/.test(url)
+    );
   }
   return false;
 }

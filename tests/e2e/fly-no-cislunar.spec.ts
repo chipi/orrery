@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * ADR-058 regression guard — for Moon missions, `/fly` switches to the
@@ -14,7 +15,9 @@ test.describe('/fly — heliocentric scene for non-Moon missions (ADR-058 regres
   test('curiosity (Mars) renders heliocentric without console errors', async ({ page }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
-      if (msg.type() === 'error') errors.push(msg.text());
+      if (msg.type() !== 'error') return;
+      if (isExpectedNoise(msg)) return;
+      errors.push(msg.text());
     });
     page.on('pageerror', (err) => errors.push(err.message));
 
@@ -35,7 +38,9 @@ test.describe('/fly — heliocentric scene for non-Moon missions (ADR-058 regres
   }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
-      if (msg.type() === 'error') errors.push(msg.text());
+      if (msg.type() !== 'error') return;
+      if (isExpectedNoise(msg)) return;
+      errors.push(msg.text());
     });
     page.on('pageerror', (err) => errors.push(err.message));
 

@@ -3596,7 +3596,7 @@
           // up behind the planet from camera POV (the user-reported
           // "ship on the other side" bug). Sampling at the iconic
           // moment itself gives the camera the same-side perspective.
-          const ICONIC_LEAD_DAYS_FOR_CAMERA = 5;
+          const ICONIC_LEAD_DAYS_FOR_CAMERA = 2;
           const iconicMet = Math.max(0, activeFlybyMet - ICONIC_LEAD_DAYS_FOR_CAMERA);
           const predicted = predictShipPosAtMet(outPts, iconicMet, totalOutboundDays);
           const shipApproachX = predicted ? predicted.x * SCALE_3D : scScene.x;
@@ -3610,6 +3610,14 @@
           const planetToApproachZ = shipApproachZ - bodyScene.z;
           const planetToApproachMag = Math.hypot(planetToApproachX, planetToApproachZ);
           if (planetToApproachMag > 1e-3) {
+            // Camera straight back along planet→ship line. With the
+            // near-horizontal camP (1.45 rad), camera is just above
+            // the orbital plane looking at the planet's equator; the
+            // ship's +y offset above the pole then appears as a
+            // foreground glyph at the top-of-limb rim — natural
+            // limb-grazing composition without needing an azimuth
+            // offset (which doesn't visibly change the shot anyway
+            // because the ship offset is +y, not xz).
             helioFlybyDesiredCamT = Math.atan2(
               planetToApproachX / planetToApproachMag,
               planetToApproachZ / planetToApproachMag,
@@ -3627,6 +3635,15 @@
                 flyby.size * FLYBY_BODY_R_MULTIPLIER,
                 planetToApproachMag * 1.2 + flyby.size * 3,
               );
+          // Flyby cinema pitch — camera looks almost horizontally at
+          // the planet (1.45 rad ≈ 83° from zenith → only 7° above
+          // the orbital plane). Combined with the ship's +y offset
+          // above the planet's pole, this puts the ship at the side
+          // of the planet's limb (rule-of-thirds rim-grazing), NOT
+          // at the top of the disc. Higher camP values (1.25 etc)
+          // still read as "looking down at top of planet." Earth
+          // flyby keeps slightly more elevation for the earthrise feel.
+          targetP = isEarthFlyby ? 1.3 : 1.45;
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;
@@ -5209,7 +5226,7 @@
         // 5 days before peak the ship is far enough from the planet
         // to be a visible foreground silhouette against the planet's
         // disc — the actual "iconic Cassini-mission-art moment."
-        const ICONIC_LEAD_DAYS = 5;
+        const ICONIC_LEAD_DAYS = 2;
         const peakHoldRadius = 0.5;
         const iconicPeakSimDay =
           arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
@@ -5684,9 +5701,17 @@
       if (retLabelSprite) retLabelSprite.visible = showRet;
       // #82 — keep the full trajectory visible during the epilogue
       // tableau (the whole point is to show the "where the mission
-      // went" arc as a static visual).
-      if (outLine) outLine.visible = !afterArrival || epilogueActive;
-      if (retLine) retLine.visible = (!afterArrival || epilogueActive) && retPts.length >= 2;
+      // went" arc as a static visual). Hide during flyby cinema so
+      // the iconic frozen frame isn't cluttered with the trajectory
+      // chord — same rule as the phase-marker label hiding. Marko:
+      // "when we zoom in also hide blue line as we hid the
+      // milestone marker."
+      const inFlybyCinemaForLines = lastHelioSubPhase?.startsWith('flyby-') ?? false;
+      if (outLine)
+        outLine.visible = (!afterArrival || epilogueActive) && !inFlybyCinemaForLines;
+      if (retLine)
+        retLine.visible =
+          (!afterArrival || epilogueActive) && retPts.length >= 2 && !inFlybyCinemaForLines;
       // When a per-mission 3D model is present, it becomes the primary
       // glyph and the generic sprite hides entirely (no duplication).
       // Otherwise the sprite remains the glyph.
@@ -6762,7 +6787,7 @@
        phaseMarkerScreens). Hidden when the mission has no
        phase-marker pipeline (no Moon cislunar nor Mars heliocentric
        trajectory + events). -->
-  {#if hasPhaseMarkers && phaseMarkerScreens.length > 0}
+  {#if hasPhaseMarkers && phaseMarkerScreens.length > 0 && !inCinematicHeldBeat}
     <div
       class="phase-markers-overlay"
       data-testid="phase-markers-overlay"

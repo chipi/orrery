@@ -320,15 +320,17 @@ export function computeMissionApply(
           uranus: 3.4 / 80,
           neptune: 3.4 / 80,
         };
-        // Smaller +y offset (#85). Original 1.5× kept the line clear
-        // above the planet but read as "the line is in front of the
-        // body" during flyby cinema because the offset put the tube
-        // well above the planet's disk. 0.4× sits the tube just at
-        // the planet's pole — close enough that the depth-test (with
-        // opaque-pass tube material) hides the line where the planet
-        // is geometrically in front, but high enough that the line
-        // doesn't pass through the planet's interior.
-        const offsetY = isIntermediateFlyby ? 0.4 * (FLYBY_RADIUS_AU[planet] ?? 0.03) : 0;
+        // The +y offset lifts the trajectory above the planet's pole
+        // so the line and the ship glyph at the flyby moment skim
+        // CLOSE BY the planet, not through its interior. Bumped 0.4×
+        // → 1.3× — the prior 0.4× was inside the planet's render
+        // sphere (radius = 1.0 scene unit × planet_radius), which
+        // depth-tested the ship glyph as occluded by the planet at
+        // the iconic-moment freeze. 1.3× puts the line cleanly above
+        // the planet's pole (130 % of radius), so the ship reads as
+        // foreground silhouette against the planet's lit disc at
+        // peak, never inside or behind it.
+        const offsetY = isIntermediateFlyby ? 1.3 * (FLYBY_RADIUS_AU[planet] ?? 0.03) : 0;
         return {
           date: wp.date,
           label: wp.label,

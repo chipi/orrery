@@ -112,6 +112,11 @@
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
+  import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
+  import {
+    PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
+    type PlanetId as FlybyPlanetId,
+  } from '$lib/three/flyby-camera-plan';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -6719,8 +6724,63 @@
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
 
 <DebugPanel pageLabel="FLY">
-  <!-- Page-specific debug content — Phase 2 will inject FlybyDebugViewer here. -->
-  <div class="debug-fly-placeholder">FLY debug content — Phase 2 (FlybyDebugViewer)</div>
+  {#if mission.flight?.events && outPts.length > 0}
+    {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
+      (e) => (e.type === 'flyby' || e.type === 'edl_or_oi') && e.met_days != null,
+    )}
+    {@const defaultEvent = flybyEventsForDebug[0]}
+    {#if defaultEvent}
+      {@const peakMet = defaultEvent.met_days ?? 0}
+      {@const planetIdGuess = (() => {
+        const label = (defaultEvent.label ?? '').toLowerCase();
+        const ids: FlybyPlanetId[] = [
+          'mercury',
+          'venus',
+          'earth',
+          'mars',
+          'jupiter',
+          'saturn',
+          'uranus',
+          'neptune',
+        ];
+        for (const p of ids) if (label.includes(p)) return p;
+        return 'venus' as FlybyPlanetId;
+      })()}
+      {@const planetPosForDebug =
+        planetIdGuess === 'earth'
+          ? earthPos(arcTimeline.dep_day + peakMet)
+          : destinationPos(arcTimeline.dep_day + peakMet, planetIdGuess)}
+      {@const planetRadiusForDebug =
+        FLYBY_PLANET_COMPOSITION[planetIdGuess].camRMultiplier > 0 ? 2.5 : 2.5}
+      <FlybyDebugViewer
+        planetId={planetIdGuess}
+        planetPos={{ x: planetPosForDebug.x * SCALE_3D, z: planetPosForDebug.z * SCALE_3D }}
+        planetRadius={planetRadiusForDebug}
+        peakMet={peakMet}
+        shipPosAtMet={(met: number) => {
+          const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
+          if (totalOutboundDays <= 0 || outPts.length < 2) return null;
+          const fraction = Math.max(0, Math.min(1, met / totalOutboundDays));
+          const idxF = fraction * (outPts.length - 1);
+          const i = Math.floor(idxF);
+          const t = idxF - i;
+          const a = outPts[i];
+          const b = outPts[Math.min(i + 1, outPts.length - 1)];
+          const ay = a.y ?? 0;
+          const by = b.y ?? 0;
+          return {
+            x: (a.x + (b.x - a.x) * t) * SCALE_3D,
+            y: (ay + (by - ay) * t) * SCALE_3D,
+            z: (a.z + (b.z - a.z) * t) * SCALE_3D,
+          };
+        }}
+      />
+    {:else}
+      <div class="debug-fly-placeholder">No flyby/EDL events in mission.</div>
+    {/if}
+  {:else}
+    <div class="debug-fly-placeholder">Trajectory not yet loaded.</div>
+  {/if}
 </DebugPanel>
 
 <div class="fly" class:hud-hidden={hudHidden}>

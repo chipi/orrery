@@ -107,7 +107,8 @@
         (mission) =>
           (filterState.dest === 'ALL' || mission.dest === filterState.dest) &&
           (filterState.status === 'ALL' || mission.status === filterState.status) &&
-          (filterState.agency === 'ALL' || splitAgencies(mission.agency).includes(filterState.agency)) &&
+          (filterState.agency === 'ALL' ||
+            splitAgencies(mission.agency).includes(filterState.agency)) &&
           (filterState.crew === 'ALL' ||
             (filterState.crew === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
           mission.year >= filterState.fromYear &&
@@ -165,7 +166,8 @@
     if (filterState.status !== 'ALL') params.set('status', filterState.status);
     if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
     if (filterState.crew !== 'ALL') params.set('crew', filterState.crew);
-    if (filterState.fromYear !== TIMELINE_MIN_YEAR) params.set('from', String(filterState.fromYear));
+    if (filterState.fromYear !== TIMELINE_MIN_YEAR)
+      params.set('from', String(filterState.fromYear));
     if (filterState.toYear !== TIMELINE_MAX_YEAR) params.set('to', String(filterState.toYear));
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
@@ -301,9 +303,7 @@
 
   {#if filterState.expanded}
     {#if anyFilterActive}
-      <button type="button" class="clear-filters" onclick={clearAllFilters}>
-        CLEAR FILTERS
-      </button>
+      <button type="button" class="clear-filters" onclick={clearAllFilters}> CLEAR FILTERS </button>
     {/if}
     <TimelineNavigator
       {missions}

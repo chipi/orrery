@@ -160,11 +160,7 @@ describe('RemoteData — impossible-state guard', () => {
     // Compile-time test: switch exhaustiveness. If a new variant is
     // added without updating fold, the assertNever below will fail to
     // typecheck. Easier to read than a type-level expect-type.
-    const variants: RemoteData<Error, number>[] = [
-      loading(),
-      error(new Error('x')),
-      success(42),
-    ];
+    const variants: RemoteData<Error, number>[] = [loading(), error(new Error('x')), success(42)];
     for (const v of variants) {
       switch (v.type) {
         case 'loading':

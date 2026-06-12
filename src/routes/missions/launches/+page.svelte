@@ -80,7 +80,11 @@
     allEntries.filter((e) => {
       if (filterState.tier === 'FEATURED' && e.tier !== 'T1') return false;
       if (filterState.agency !== 'ALL' && e.agency_name !== filterState.agency) return false;
-      if (mode === 'historic' && filterState.outcome !== 'ALL' && e.status.code !== filterState.outcome)
+      if (
+        mode === 'historic' &&
+        filterState.outcome !== 'ALL' &&
+        e.status.code !== filterState.outcome
+      )
         return false;
       if (filterState.year !== 'ALL' && !e.net.startsWith(filterState.year)) return false;
       return true;
@@ -184,7 +188,8 @@
     }
     if (filterState.tier !== 'ALL') params.set('tier', filterState.tier);
     if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
-    if (mode === 'historic' && filterState.outcome !== 'ALL') params.set('outcome', filterState.outcome);
+    if (mode === 'historic' && filterState.outcome !== 'ALL')
+      params.set('outcome', filterState.outcome);
     if (filterState.year !== 'ALL') params.set('year', filterState.year);
     const qs = params.toString();
     const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;

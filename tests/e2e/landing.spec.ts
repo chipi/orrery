@@ -76,9 +76,7 @@ test.describe('landing page (/)', () => {
     await expect(page).toHaveURL(/\/science(\?|$)/);
   });
 
-  test('German browser locale → landing renders in German under /de/', async ({
-    browser,
-  }) => {
+  test('German browser locale → landing renders in German under /de/', async ({ browser }) => {
     const context = await browser.newContext({ locale: 'de-DE' });
     const page = await context.newPage();
     // Paraglide's URL strategy resolves locale per request — bare `/`

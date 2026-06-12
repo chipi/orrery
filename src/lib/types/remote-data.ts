@@ -74,11 +74,15 @@ export function isLoading<E, T>(rd: RemoteData<E, T>): rd is { readonly type: 'l
   return rd.type === 'loading';
 }
 
-export function isError<E, T>(rd: RemoteData<E, T>): rd is { readonly type: 'error'; readonly error: E } {
+export function isError<E, T>(
+  rd: RemoteData<E, T>,
+): rd is { readonly type: 'error'; readonly error: E } {
   return rd.type === 'error';
 }
 
-export function isSuccess<E, T>(rd: RemoteData<E, T>): rd is { readonly type: 'success'; readonly data: T } {
+export function isSuccess<E, T>(
+  rd: RemoteData<E, T>,
+): rd is { readonly type: 'success'; readonly data: T } {
   return rd.type === 'success';
 }
 

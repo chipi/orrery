@@ -3954,338 +3954,342 @@
         const now = performance.now();
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
-      // ADR-025: when prefers-reduced-motion is set we freeze sim
-      // time. User-initiated camera drag still works.
-      if (!reducedMotion) simT += dt * 0.04;
+        // ADR-025: when prefers-reduced-motion is set we freeze sim
+        // time. User-initiated camera drag still works.
+        if (!reducedMotion) simT += dt * 0.04;
 
-      // Fly-to-body tween (#287 polish). When focused on a planet, the
-      // target world position drifts with the planet's own orbital
-      // motion — re-read it each frame so the tween lands on the
-      // planet's current position, not where it was when focus() fired.
-      if (flyActive) {
-        if (focusedPlanetObj) {
-          focusedPlanetObj.mesh.getWorldPosition(flyToOrigin);
-        }
-        const t = Math.min(1, (now - flyStart) / FLY_DURATION_MS);
-        const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
-        focusOrigin.lerpVectors(flyFromOrigin, flyToOrigin, e);
-        camR = flyFromR + (flyToR - flyFromR) * e;
-        camP = flyFromP + (flyToP - flyFromP) * e;
-        camT = flyFromT + (flyToT - flyFromT) * e;
-        if (t >= 1) {
-          flyActive = false;
-          camRMin = flyToMinR;
-          camRMax = flyToMaxR;
-        }
-        updateCam();
-      } else if (focusedPlanetObj) {
-        // Steady-state planet focus — keep focusOrigin glued to the
-        // planet's drifting world position so wheel-zoom and drag
-        // stay planet-relative across orbital motion.
-        focusedPlanetObj.mesh.getWorldPosition(focusOrigin);
-        updateCam();
-      }
-
-      // #287 per-planet 4K LOD swap. Cheap per-frame — a single
-      // distance check + threshold compare per planet. Active in 3D
-      // only (2D top-down view doesn't sample texture pixels in a
-      // way that benefits from 4K). Same loop now also gates moon
-      // visibility on the same threshold so satellites appear at
-      // the moment the parent's detail kicks in.
-      if (view === '3d') {
-        updateSunLod(camera.position.length());
-        updatePlanetLods();
-        updateSatellites(dt);
-      }
-
-      if (view === '3d') {
-        // Apply layer visibility (issue #32). Cheap — just sets the
-        // .visible flag on the existing scene refs each frame so
-        // toggling the LAYERS panel takes effect on the very next
-        // tick without rebuilding any geometry.
-        for (const line of planetOrbitLines) line.visible = layers.planets;
-        for (const o of planetObjs) o.group.visible = layers.planets;
-        for (const o of smallBodyObjs) {
-          const on =
-            o.body.type === 'dwarf'
-              ? layers.dwarfs
-              : o.body.type === 'comet'
-                ? layers.comets
-                : layers.interstellar;
-          o.mesh.visible = on;
-          o.pickAid.visible = on;
-          o.orbit.visible = on;
-          if (o.tail) o.tail.visible = on;
+        // Fly-to-body tween (#287 polish). When focused on a planet, the
+        // target world position drifts with the planet's own orbital
+        // motion — re-read it each frame so the tween lands on the
+        // planet's current position, not where it was when focus() fired.
+        if (flyActive) {
+          if (focusedPlanetObj) {
+            focusedPlanetObj.mesh.getWorldPosition(flyToOrigin);
+          }
+          const t = Math.min(1, (now - flyStart) / FLY_DURATION_MS);
+          const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
+          focusOrigin.lerpVectors(flyFromOrigin, flyToOrigin, e);
+          camR = flyFromR + (flyToR - flyFromR) * e;
+          camP = flyFromP + (flyToP - flyFromP) * e;
+          camT = flyFromT + (flyToT - flyFromT) * e;
+          if (t >= 1) {
+            flyActive = false;
+            camRMin = flyToMinR;
+            camRMax = flyToMaxR;
+          }
+          updateCam();
+        } else if (focusedPlanetObj) {
+          // Steady-state planet focus — keep focusOrigin glued to the
+          // planet's drifting world position so wheel-zoom and drag
+          // stay planet-relative across orbital motion.
+          focusedPlanetObj.mesh.getWorldPosition(focusOrigin);
+          updateCam();
         }
 
-        planetObjs.forEach(({ group, mesh, planet }, idx) => {
-          const angle = planet.a0 + (2 * Math.PI * simT) / planet.period;
-          const inc = (planet.inc * Math.PI) / 180;
-          const x = Math.cos(angle) * planet.orbitR;
-          const zf = Math.sin(angle) * planet.orbitR;
-          group.position.set(x, zf * Math.sin(inc), zf * Math.cos(inc));
-          // ADR-025: gate the per-frame axial spin under reduced-motion
-          // alongside the orbit advance. The audit caught this bypass
-          // in v1.0 — planets kept spinning even with simT frozen.
-          if (!reducedMotion) mesh.rotation.y += 0.005;
+        // #287 per-planet 4K LOD swap. Cheap per-frame — a single
+        // distance check + threshold compare per planet. Active in 3D
+        // only (2D top-down view doesn't sample texture pixels in a
+        // way that benefits from 4K). Same loop now also gates moon
+        // visibility on the same threshold so satellites appear at
+        // the moment the parent's detail kicks in.
+        if (view === '3d') {
+          updateSunLod(camera.position.length());
+          updatePlanetLods();
+          updateSatellites(dt);
+        }
 
-          // PRD-023 Slice B — position L1 + L2 markers along the planet→
-          // Sun line. Sun is at origin, planet at group.position; the
-          // unit vector from planet to Sun in WORLD space is
-          // -group.position.normalize(). L1 sits inside the planet's
-          // orbit (toward Sun); L2 outside (away from Sun). Distance
-          // from planet matches the stylised Hill-sphere radius
-          // (6 × planet size3). Markers + labels are parented to the
-          // planet's group (translation only) so the local position
-          // equals the world direction.
-          const obj = planetObjs[idx];
-          // PRD-023 Slice B + D — bodies needing the planet→Sun unit
-          // vector each frame: L1/L2 markers, sub-solar marker on the
-          // sunlit surface, magnetosphere orientation (stretches
-          // along anti-sun axis).
-          if (
-            obj.hillSphere.visible ||
-            obj.lagrangeL1.visible ||
-            obj.lagrangeL2.visible ||
-            obj.subSolar.visible ||
-            (obj.magnetosphere?.visible ?? false)
-          ) {
-            const sunDir = group.position.length();
-            if (sunDir > 0.0001) {
-              const ux = -group.position.x / sunDir;
-              const uy = -group.position.y / sunDir;
-              const uz = -group.position.z / sunDir;
-              if (obj.lagrangeL1.visible || obj.lagrangeL2.visible) {
-                const lagrangeDist = planet.size3 * 6;
-                obj.lagrangeL1.position.set(
-                  ux * lagrangeDist,
-                  uy * lagrangeDist,
-                  uz * lagrangeDist,
-                );
-                obj.lagrangeL2.position.set(
-                  -ux * lagrangeDist,
-                  -uy * lagrangeDist,
-                  -uz * lagrangeDist,
-                );
-                obj.lagrangeL1Label.position.copy(obj.lagrangeL1.position).multiplyScalar(1.18);
-                obj.lagrangeL2Label.position.copy(obj.lagrangeL2.position).multiplyScalar(1.18);
-              }
-              if (obj.subSolar.visible) {
-                // Sub-solar point on the planet surface, at the
-                // longitude where the Sun is directly overhead.
-                obj.subSolar.position.set(ux * planet.size3, uy * planet.size3, uz * planet.size3);
-              }
-              if (obj.magnetosphere?.visible) {
-                // Orient the magnetotail along the anti-sun axis —
-                // the ellipsoid's long axis (scale Z=2.4) points
-                // AWAY from the Sun. lookAt() points the local Z
-                // toward the given world coordinate; passing planet
-                // position - sun-direction = planet position +
-                // anti-sun-direction gives the right orientation.
-                obj.magnetosphere.lookAt(
-                  group.position.x - ux,
-                  group.position.y - uy,
-                  group.position.z - uz,
-                );
-              }
-            }
+        if (view === '3d') {
+          // Apply layer visibility (issue #32). Cheap — just sets the
+          // .visible flag on the existing scene refs each frame so
+          // toggling the LAYERS panel takes effect on the very next
+          // tick without rebuilding any geometry.
+          for (const line of planetOrbitLines) line.visible = layers.planets;
+          for (const o of planetObjs) o.group.visible = layers.planets;
+          for (const o of smallBodyObjs) {
+            const on =
+              o.body.type === 'dwarf'
+                ? layers.dwarfs
+                : o.body.type === 'comet'
+                  ? layers.comets
+                  : layers.interstellar;
+            o.mesh.visible = on;
+            o.pickAid.visible = on;
+            o.orbit.visible = on;
+            if (o.tail) o.tail.visible = on;
           }
 
-          // Phase H — overlay arrow updates. Group is at planet's world
-          // pos; arrows live in the group's local frame, so directions
-          // need transforming back from world space.
-          //
-          // Close-zoom polish (2026-06-03): at heliocentric framing the
-          // arrows use log-scaled lengths optimised for cross-system
-          // comparison. When the camera focuses on a single planet
-          // those same lengths overshoot the planet sphere with the
-          // base hidden INSIDE the silhouette and labels sitting on
-          // top of the planet's body. The `closeZoom` lerp below
-          // smoothly transitions to a planet-relative pose: arrow
-          // base offset just outside the selection halo, length
-          // compacted to ~1.5× planet radius, labels follow the new
-          // tip.
-          const ov = overlayPerPlanet[idx];
-          if (!ov) return;
-          if (ov.gravity.visible || ov.centripetal.visible || ov.velocity.visible) {
-            // World vector pointing planet → Sun (origin), normalised.
-            const worldToSun = new THREE.Vector3(
-              -group.position.x,
-              -group.position.y,
-              -group.position.z,
-            );
-            const dist = worldToSun.length();
-            if (dist > 0.0001) {
-              worldToSun.divideScalar(dist);
+          planetObjs.forEach(({ group, mesh, planet }, idx) => {
+            const angle = planet.a0 + (2 * Math.PI * simT) / planet.period;
+            const inc = (planet.inc * Math.PI) / 180;
+            const x = Math.cos(angle) * planet.orbitR;
+            const zf = Math.sin(angle) * planet.orbitR;
+            group.position.set(x, zf * Math.sin(inc), zf * Math.cos(inc));
+            // ADR-025: gate the per-frame axial spin under reduced-motion
+            // alongside the orbit advance. The audit caught this bypass
+            // in v1.0 — planets kept spinning even with simT frozen.
+            if (!reducedMotion) mesh.rotation.y += 0.005;
 
-              // Distance ratio drives the wide→close lerp. Same
-              // threshold the moon-reveal + 4K LOD already use.
-              mesh.getWorldPosition(tmpWorldPos);
-              const camRatio = camera.position.distanceTo(tmpWorldPos) / planet.size3;
-              const tWide = Math.max(
-                0,
-                Math.min(
-                  1,
-                  (camRatio - PLANET_LOD_IN_RATIO) / (PLANET_LOD_OUT_RATIO - PLANET_LOD_IN_RATIO),
-                ),
+            // PRD-023 Slice B — position L1 + L2 markers along the planet→
+            // Sun line. Sun is at origin, planet at group.position; the
+            // unit vector from planet to Sun in WORLD space is
+            // -group.position.normalize(). L1 sits inside the planet's
+            // orbit (toward Sun); L2 outside (away from Sun). Distance
+            // from planet matches the stylised Hill-sphere radius
+            // (6 × planet size3). Markers + labels are parented to the
+            // planet's group (translation only) so the local position
+            // equals the world direction.
+            const obj = planetObjs[idx];
+            // PRD-023 Slice B + D — bodies needing the planet→Sun unit
+            // vector each frame: L1/L2 markers, sub-solar marker on the
+            // sunlit surface, magnetosphere orientation (stretches
+            // along anti-sun axis).
+            if (
+              obj.hillSphere.visible ||
+              obj.lagrangeL1.visible ||
+              obj.lagrangeL2.visible ||
+              obj.subSolar.visible ||
+              (obj.magnetosphere?.visible ?? false)
+            ) {
+              const sunDir = group.position.length();
+              if (sunDir > 0.0001) {
+                const ux = -group.position.x / sunDir;
+                const uy = -group.position.y / sunDir;
+                const uz = -group.position.z / sunDir;
+                if (obj.lagrangeL1.visible || obj.lagrangeL2.visible) {
+                  const lagrangeDist = planet.size3 * 6;
+                  obj.lagrangeL1.position.set(
+                    ux * lagrangeDist,
+                    uy * lagrangeDist,
+                    uz * lagrangeDist,
+                  );
+                  obj.lagrangeL2.position.set(
+                    -ux * lagrangeDist,
+                    -uy * lagrangeDist,
+                    -uz * lagrangeDist,
+                  );
+                  obj.lagrangeL1Label.position.copy(obj.lagrangeL1.position).multiplyScalar(1.18);
+                  obj.lagrangeL2Label.position.copy(obj.lagrangeL2.position).multiplyScalar(1.18);
+                }
+                if (obj.subSolar.visible) {
+                  // Sub-solar point on the planet surface, at the
+                  // longitude where the Sun is directly overhead.
+                  obj.subSolar.position.set(
+                    ux * planet.size3,
+                    uy * planet.size3,
+                    uz * planet.size3,
+                  );
+                }
+                if (obj.magnetosphere?.visible) {
+                  // Orient the magnetotail along the anti-sun axis —
+                  // the ellipsoid's long axis (scale Z=2.4) points
+                  // AWAY from the Sun. lookAt() points the local Z
+                  // toward the given world coordinate; passing planet
+                  // position - sun-direction = planet position +
+                  // anti-sun-direction gives the right orientation.
+                  obj.magnetosphere.lookAt(
+                    group.position.x - ux,
+                    group.position.y - uy,
+                    group.position.z - uz,
+                  );
+                }
+              }
+            }
+
+            // Phase H — overlay arrow updates. Group is at planet's world
+            // pos; arrows live in the group's local frame, so directions
+            // need transforming back from world space.
+            //
+            // Close-zoom polish (2026-06-03): at heliocentric framing the
+            // arrows use log-scaled lengths optimised for cross-system
+            // comparison. When the camera focuses on a single planet
+            // those same lengths overshoot the planet sphere with the
+            // base hidden INSIDE the silhouette and labels sitting on
+            // top of the planet's body. The `closeZoom` lerp below
+            // smoothly transitions to a planet-relative pose: arrow
+            // base offset just outside the selection halo, length
+            // compacted to ~1.5× planet radius, labels follow the new
+            // tip.
+            const ov = overlayPerPlanet[idx];
+            if (!ov) return;
+            if (ov.gravity.visible || ov.centripetal.visible || ov.velocity.visible) {
+              // World vector pointing planet → Sun (origin), normalised.
+              const worldToSun = new THREE.Vector3(
+                -group.position.x,
+                -group.position.y,
+                -group.position.z,
               );
-              // Close-zoom presentation: base just past the selection
-              // halo (1.18× radius), length ~1.5× planet radius — so
-              // the whole arrow sits in the empty space between the
-              // planet's silhouette and the inner moon ring.
-              const closeBase = planet.size3 * 1.3;
-              const closeLen = planet.size3 * 1.5;
-              // Label sprites are built at worldScale=14 (constant
-              // world units). At close zoom that's wider than the
-              // planet itself; lerp scale down so labels stay
-              // readable but proportional. Aspect 4:1 preserved.
-              const labelScale = 4 + (14 - 4) * tWide;
-              // Arrow head ratios — at close zoom the default
-              // 0.22 / 0.13 made the cone ~1/5 of planet diameter.
-              // Halve them at close zoom.
-              const headRatio = 0.11 + (0.22 - 0.11) * tWide;
-              const headWidthRatio = 0.065 + (0.13 - 0.065) * tWide;
+              const dist = worldToSun.length();
+              if (dist > 0.0001) {
+                worldToSun.divideScalar(dist);
 
-              // Group has only translation (no rotation), so world dir
-              // == local dir — pass directly to setDirection.
-              if (ov.gravity.visible) {
-                // Acceleration in m/s² at this orbit radius (use a as proxy
-                // for r — circular). Length log-scaled to fit the 1/r²
-                // dynamic range across Mercury → Pluto.
-                const aAU = Math.pow(planet.period, 2 / 3);
-                const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
-                const wideLen = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
-                const len = closeLen + (wideLen - closeLen) * tWide;
-                const base = closeBase * (1 - tWide);
-                ov.gravity.setDirection(worldToSun);
-                ov.gravity.position.copy(worldToSun).multiplyScalar(base);
-                ov.gravity.setLength(len, len * headRatio, len * headWidthRatio);
-                // Label sits past the arrow tip = base + length, +20%
-                // overshoot so the arrow head doesn't occlude the text.
-                ov.gravityLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
-                ov.gravityLabel.scale.set(labelScale, labelScale * 0.25, 1);
-              }
-              if (ov.centripetal.visible) {
-                // Same direction (inward) as gravity — for a circular
-                // orbit, gravity provides exactly the centripetal
-                // acceleration (F = ma). Y-offset prevents overlap.
-                const aAU = Math.pow(planet.period, 2 / 3);
-                const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
-                const wideLen = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
-                const len = closeLen + (wideLen - closeLen) * tWide;
-                const base = closeBase * (1 - tWide);
-                ov.centripetal.setDirection(worldToSun);
-                ov.centripetal.position.copy(worldToSun).multiplyScalar(base);
-                ov.centripetal.setLength(len, len * headRatio, len * headWidthRatio);
-                ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
-                // Lift label by the same Y offset as the arrow base so
-                // it tracks the arrow's offset position. At close zoom
-                // the offset is smaller (proportional to the now
-                // shorter overall length).
-                ov.centripetalLabel.position.y += planet.size3 * (0.6 + tWide * 1.0);
-                ov.centripetalLabel.scale.set(labelScale, labelScale * 0.25, 1);
-              }
-              if (ov.velocity.visible) {
-                // Tangent to orbit, in the planet's orbital plane. Cross
-                // (worldToSun, orbital plane normal) gives the prograde
-                // direction; for the small inclinations used here, we
-                // approximate the plane normal as world-Y.
-                const tangent = new THREE.Vector3()
-                  .crossVectors(new THREE.Vector3(0, 1, 0), worldToSun)
-                  .normalize();
-                // Speed in km/s via vis-viva at r = a (circular).
-                const aAU = Math.pow(planet.period, 2 / 3);
-                const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
-                // Linear scale on velocity, clamped for visibility.
-                const wideLen = Math.min(20, Math.max(4, v * 0.3));
-                const len = closeLen + (wideLen - closeLen) * tWide;
-                const base = closeBase * (1 - tWide);
-                ov.velocity.setDirection(tangent);
-                ov.velocity.position.copy(tangent).multiplyScalar(base);
-                ov.velocity.setLength(len, len * headRatio, len * headWidthRatio);
-                ov.velocityLabel.position.copy(tangent).multiplyScalar(base + len * 1.2);
-                ov.velocityLabel.scale.set(labelScale, labelScale * 0.25, 1);
+                // Distance ratio drives the wide→close lerp. Same
+                // threshold the moon-reveal + 4K LOD already use.
+                mesh.getWorldPosition(tmpWorldPos);
+                const camRatio = camera.position.distanceTo(tmpWorldPos) / planet.size3;
+                const tWide = Math.max(
+                  0,
+                  Math.min(
+                    1,
+                    (camRatio - PLANET_LOD_IN_RATIO) / (PLANET_LOD_OUT_RATIO - PLANET_LOD_IN_RATIO),
+                  ),
+                );
+                // Close-zoom presentation: base just past the selection
+                // halo (1.18× radius), length ~1.5× planet radius — so
+                // the whole arrow sits in the empty space between the
+                // planet's silhouette and the inner moon ring.
+                const closeBase = planet.size3 * 1.3;
+                const closeLen = planet.size3 * 1.5;
+                // Label sprites are built at worldScale=14 (constant
+                // world units). At close zoom that's wider than the
+                // planet itself; lerp scale down so labels stay
+                // readable but proportional. Aspect 4:1 preserved.
+                const labelScale = 4 + (14 - 4) * tWide;
+                // Arrow head ratios — at close zoom the default
+                // 0.22 / 0.13 made the cone ~1/5 of planet diameter.
+                // Halve them at close zoom.
+                const headRatio = 0.11 + (0.22 - 0.11) * tWide;
+                const headWidthRatio = 0.065 + (0.13 - 0.065) * tWide;
+
+                // Group has only translation (no rotation), so world dir
+                // == local dir — pass directly to setDirection.
+                if (ov.gravity.visible) {
+                  // Acceleration in m/s² at this orbit radius (use a as proxy
+                  // for r — circular). Length log-scaled to fit the 1/r²
+                  // dynamic range across Mercury → Pluto.
+                  const aAU = Math.pow(planet.period, 2 / 3);
+                  const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
+                  const wideLen = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
+                  const len = closeLen + (wideLen - closeLen) * tWide;
+                  const base = closeBase * (1 - tWide);
+                  ov.gravity.setDirection(worldToSun);
+                  ov.gravity.position.copy(worldToSun).multiplyScalar(base);
+                  ov.gravity.setLength(len, len * headRatio, len * headWidthRatio);
+                  // Label sits past the arrow tip = base + length, +20%
+                  // overshoot so the arrow head doesn't occlude the text.
+                  ov.gravityLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
+                  ov.gravityLabel.scale.set(labelScale, labelScale * 0.25, 1);
+                }
+                if (ov.centripetal.visible) {
+                  // Same direction (inward) as gravity — for a circular
+                  // orbit, gravity provides exactly the centripetal
+                  // acceleration (F = ma). Y-offset prevents overlap.
+                  const aAU = Math.pow(planet.period, 2 / 3);
+                  const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
+                  const wideLen = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
+                  const len = closeLen + (wideLen - closeLen) * tWide;
+                  const base = closeBase * (1 - tWide);
+                  ov.centripetal.setDirection(worldToSun);
+                  ov.centripetal.position.copy(worldToSun).multiplyScalar(base);
+                  ov.centripetal.setLength(len, len * headRatio, len * headWidthRatio);
+                  ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
+                  // Lift label by the same Y offset as the arrow base so
+                  // it tracks the arrow's offset position. At close zoom
+                  // the offset is smaller (proportional to the now
+                  // shorter overall length).
+                  ov.centripetalLabel.position.y += planet.size3 * (0.6 + tWide * 1.0);
+                  ov.centripetalLabel.scale.set(labelScale, labelScale * 0.25, 1);
+                }
+                if (ov.velocity.visible) {
+                  // Tangent to orbit, in the planet's orbital plane. Cross
+                  // (worldToSun, orbital plane normal) gives the prograde
+                  // direction; for the small inclinations used here, we
+                  // approximate the plane normal as world-Y.
+                  const tangent = new THREE.Vector3()
+                    .crossVectors(new THREE.Vector3(0, 1, 0), worldToSun)
+                    .normalize();
+                  // Speed in km/s via vis-viva at r = a (circular).
+                  const aAU = Math.pow(planet.period, 2 / 3);
+                  const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
+                  // Linear scale on velocity, clamped for visibility.
+                  const wideLen = Math.min(20, Math.max(4, v * 0.3));
+                  const len = closeLen + (wideLen - closeLen) * tWide;
+                  const base = closeBase * (1 - tWide);
+                  ov.velocity.setDirection(tangent);
+                  ov.velocity.position.copy(tangent).multiplyScalar(base);
+                  ov.velocity.setLength(len, len * headRatio, len * headWidthRatio);
+                  ov.velocityLabel.position.copy(tangent).multiplyScalar(base + len * 1.2);
+                  ov.velocityLabel.scale.set(labelScale, labelScale * 0.25, 1);
+                }
               }
             }
-          }
-        });
+          });
 
-        // Small bodies — closed ellipse advance for dwarfs/comets,
-        // pinned-to-perihelion for interstellar visitors (Oumuamua).
-        // Comet tails recompute per-frame pointing anti-solar.
-        smallBodyObjs.forEach(({ mesh, pickAid, tail, body }) => {
-          const { x: px, y: py, z: pz } = smallBodyPosition(body, simT);
-          mesh.position.set(px, py, pz);
-          pickAid.position.set(px, py, pz);
+          // Small bodies — closed ellipse advance for dwarfs/comets,
+          // pinned-to-perihelion for interstellar visitors (Oumuamua).
+          // Comet tails recompute per-frame pointing anti-solar.
+          smallBodyObjs.forEach(({ mesh, pickAid, tail, body }) => {
+            const { x: px, y: py, z: pz } = smallBodyPosition(body, simT);
+            mesh.position.set(px, py, pz);
+            pickAid.position.set(px, py, pz);
 
-          if (tail) {
-            // 3D anti-solar tail: take the body's heliocentric position
-            // vector, normalise it, and extend by tailLen so the comet
-            // tail points away from the Sun in full 3D — important now
-            // that y is non-zero for inclined orbits.
-            const dist = Math.hypot(px, py, pz);
-            if (dist > 0) {
-              const tailLen = 12;
-              const ux = px / dist;
-              const uy = py / dist;
-              const uz = pz / dist;
-              const tx = px + ux * tailLen;
-              const ty = py + uy * tailLen;
-              const tz = pz + uz * tailLen;
-              tail.geometry.dispose();
-              tail.geometry = new THREE.BufferGeometry().setFromPoints([
-                new THREE.Vector3(px, py, pz),
-                new THREE.Vector3(tx, ty, tz),
-              ]);
+            if (tail) {
+              // 3D anti-solar tail: take the body's heliocentric position
+              // vector, normalise it, and extend by tailLen so the comet
+              // tail points away from the Sun in full 3D — important now
+              // that y is non-zero for inclined orbits.
+              const dist = Math.hypot(px, py, pz);
+              if (dist > 0) {
+                const tailLen = 12;
+                const ux = px / dist;
+                const uy = py / dist;
+                const uz = pz / dist;
+                const tx = px + ux * tailLen;
+                const ty = py + uy * tailLen;
+                const tz = pz + uz * tailLen;
+                tail.geometry.dispose();
+                tail.geometry = new THREE.BufferGeometry().setFromPoints([
+                  new THREE.Vector3(px, py, pz),
+                  new THREE.Vector3(tx, ty, tz),
+                ]);
+              }
             }
-          }
-        });
+          });
 
-        // Track selected planet with the 3D selection halo — a thin
-        // BackSide sphere that reads as a soft glow on the silhouette.
-        // Sized just outside the per-planet atmospheric halo (1.06×
-        // size3) so the two don't overlap at close zoom; at wide
-        // heliocentric framing it's still visually distinct against
-        // the starfield. Opacity pulses to communicate "selected".
-        // Selection halo prefers the satellite when one is picked —
-        // ring follows the moon mesh instead of staying on the parent
-        // planet (#304 follow-up, 2026-06-04). Falls back to the
-        // planet halo when no satellite is selected.
-        if (selectedSatelliteKey) {
-          const [parentId, satId] = selectedSatelliteKey.split(':');
-          const parentObj = planetObjs.find((o) => o.planet.id === parentId);
-          const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
-          if (satObj) {
-            satObj.mesh.getWorldPosition(tmpWorldPos);
-            const diam = satObj.def.sizeUnits * 2.5;
-            selHalo.scale.set(diam, diam, 1);
-            selHalo.position.copy(tmpWorldPos);
-            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selRingMat.opacity = 0.55 + pulse * 0.35;
-            selHalo.visible = true;
+          // Track selected planet with the 3D selection halo — a thin
+          // BackSide sphere that reads as a soft glow on the silhouette.
+          // Sized just outside the per-planet atmospheric halo (1.06×
+          // size3) so the two don't overlap at close zoom; at wide
+          // heliocentric framing it's still visually distinct against
+          // the starfield. Opacity pulses to communicate "selected".
+          // Selection halo prefers the satellite when one is picked —
+          // ring follows the moon mesh instead of staying on the parent
+          // planet (#304 follow-up, 2026-06-04). Falls back to the
+          // planet halo when no satellite is selected.
+          if (selectedSatelliteKey) {
+            const [parentId, satId] = selectedSatelliteKey.split(':');
+            const parentObj = planetObjs.find((o) => o.planet.id === parentId);
+            const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
+            if (satObj) {
+              satObj.mesh.getWorldPosition(tmpWorldPos);
+              const diam = satObj.def.sizeUnits * 2.5;
+              selHalo.scale.set(diam, diam, 1);
+              selHalo.position.copy(tmpWorldPos);
+              const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+              selRingMat.opacity = 0.55 + pulse * 0.35;
+              selHalo.visible = true;
+            } else {
+              selHalo.visible = false;
+            }
+          } else if (selectedId) {
+            const selObj = planetObjs.find((o) => o.planet.id === selectedId);
+            if (selObj) {
+              const diam = selObj.planet.size3 * 2.5;
+              selHalo.scale.set(diam, diam, 1);
+              selHalo.position.copy(selObj.group.position);
+              const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+              selRingMat.opacity = 0.55 + pulse * 0.35;
+              selHalo.visible = true;
+            } else {
+              selHalo.visible = false;
+            }
           } else {
             selHalo.visible = false;
           }
-        } else if (selectedId) {
-          const selObj = planetObjs.find((o) => o.planet.id === selectedId);
-          if (selObj) {
-            const diam = selObj.planet.size3 * 2.5;
-            selHalo.scale.set(diam, diam, 1);
-            selHalo.position.copy(selObj.group.position);
-            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selRingMat.opacity = 0.55 + pulse * 0.35;
-            selHalo.visible = true;
-          } else {
-            selHalo.visible = false;
-          }
+
+          renderer.render(scene, camera);
         } else {
-          selHalo.visible = false;
+          draw2d();
         }
-
-        renderer.render(scene, camera);
-      } else {
-        draw2d();
-      }
       },
     });
     lifecycle.add(loop.cleanup);

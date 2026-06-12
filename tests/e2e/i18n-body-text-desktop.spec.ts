@@ -63,9 +63,7 @@ test.describe('i18n body-text translations actually render (desktop-only)', () =
   );
 
   for (const { code, expected } of LOCALES) {
-    test(`/${code}/plan renders the ${code.toUpperCase()} plan_empty_title`, async ({
-      page,
-    }) => {
+    test(`/${code}/plan renders the ${code.toUpperCase()} plan_empty_title`, async ({ page }) => {
       await page.goto(`/${code}/plan`, { waitUntil: 'networkidle' });
 
       // Sanity: locale attribute is the authoritative signal that

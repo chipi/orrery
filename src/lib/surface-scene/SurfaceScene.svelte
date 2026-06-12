@@ -2629,883 +2629,888 @@
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
 
-      // RAF pause: when the flat patch is fully visible, the sphere is
-      // hidden behind it (opacity 0 via the CSS cross-fade) and the
-      // entire scene render is wasted CPU/battery. Short-circuit the
-      // per-frame body — RAF still queues so we resume cleanly on the
-      // 'leaving' phase. Per ADR-062 §"Animation timing" — pause is
-      // gated on 'visible' specifically (the entering / leaving phases
-      // still need the sphere rendered so the cross-fade reads as a
-      // cross-fade rather than a flicker).
-      if (flatPatchPhase === 'visible') return;
+        // RAF pause: when the flat patch is fully visible, the sphere is
+        // hidden behind it (opacity 0 via the CSS cross-fade) and the
+        // entire scene render is wasted CPU/battery. Short-circuit the
+        // per-frame body — RAF still queues so we resume cleanly on the
+        // 'leaving' phase. Per ADR-062 §"Animation timing" — pause is
+        // gated on 'visible' specifically (the entering / leaving phases
+        // still need the sphere rendered so the cross-fade reads as a
+        // cross-fade rather than a flicker).
+        if (flatPatchPhase === 'visible') return;
 
-      // Panorama HUD yaw + pitch readouts (PRD-022 / ADR-074 Phase 2C/2D).
-      // camT/camP are in radians; convert + normalise for compass-rose
-      // and synthetic-region-microcopy consumption. Cheap when active,
-      // skipped entirely otherwise.
-      if (panoramaActive) {
-        const yawDeg = (camT * 180) / Math.PI;
-        panoramaYawDeg = ((yawDeg % 360) + 360) % 360;
-        // camP π/2 = horizon → pitch 0; camP 0 = top → +90; camP π = bottom → -90.
-        panoramaPitchDeg = 90 - (camP * 180) / Math.PI;
+        // Panorama HUD yaw + pitch readouts (PRD-022 / ADR-074 Phase 2C/2D).
+        // camT/camP are in radians; convert + normalise for compass-rose
+        // and synthetic-region-microcopy consumption. Cheap when active,
+        // skipped entirely otherwise.
+        if (panoramaActive) {
+          const yawDeg = (camT * 180) / Math.PI;
+          panoramaYawDeg = ((yawDeg % 360) + 360) % 360;
+          // camP π/2 = horizon → pitch 0; camP 0 = top → +90; camP π = bottom → -90.
+          panoramaPitchDeg = 90 - (camP * 180) / Math.PI;
 
-        // Phase 3B — throttled URL state write. Update at most once
-        // every 300 ms so dragging the camera doesn't fire goto() per
-        // frame. Compares against last-written values to skip no-op
-        // writes (e.g. when the user holds the camera still).
-        if (now - panoramaUrlLastWriteMs > 300) {
-          panoramaUrlLastWriteMs = now;
-          syncPanoramaUrl($page.url, {
-            entryId: panoramaCurrentEntryId,
-            yawDeg: panoramaYawDeg,
-            pitchDeg: panoramaPitchDeg,
-          });
+          // Phase 3B — throttled URL state write. Update at most once
+          // every 300 ms so dragging the camera doesn't fire goto() per
+          // frame. Compares against last-written values to skip no-op
+          // writes (e.g. when the user holds the camera still).
+          if (now - panoramaUrlLastWriteMs > 300) {
+            panoramaUrlLastWriteMs = now;
+            syncPanoramaUrl($page.url, {
+              entryId: panoramaCurrentEntryId,
+              yawDeg: panoramaYawDeg,
+              pitchDeg: panoramaPitchDeg,
+            });
+          }
         }
-      }
 
-      // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):
-      //   (a) Fly-in tween — ease-out cubic interpolation of camP/T/R.
-      //   (b) Smooth zoom — lerp camR toward camRTarget at 15%/frame.
-      //   (c) Drag inertia — angular velocity decay 92%/frame.
-      // All three are mutually exclusive per-frame: fly-in supersedes
-      // zoom + inertia; zoom + inertia run together when fly isn't.
-      let cameraChanged = false;
-      if (flyActive) {
-        const t = (now - flyStart) / FLY_DURATION_MS;
-        if (t >= 1) {
-          camP = flyToP;
-          camT = flyToT;
-          camR = flyToR;
-          camRTarget = flyToR;
-          flyActive = false;
-        } else {
-          const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
-          camP = flyFromP + (flyToP - flyFromP) * e;
-          camT = flyFromT + (flyToT - flyFromT) * e;
-          camR = flyFromR + (flyToR - flyFromR) * e;
-          camRTarget = camR;
-        }
-        cameraChanged = true;
-      } else {
-        // (b) Smooth zoom: lerp camR toward camRTarget at 15%/frame.
-        if (Math.abs(camR - camRTarget) > 0.001) {
-          camR += (camRTarget - camR) * 0.15;
-          cameraChanged = true;
-        }
-        // (c) Drag inertia: after release, decay velocity ~92%/frame
-        // and apply to camT/camP until below threshold. Skips while
-        // user is actively dragging.
-        const dragging = isDrag || touchActive;
-        if (!dragging && (Math.abs(camTVelocity) > 0.0001 || Math.abs(camPVelocity) > 0.0001)) {
-          camT += camTVelocity;
-          camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + camPVelocity));
-          camTVelocity *= 0.92;
-          camPVelocity *= 0.92;
-          cameraChanged = true;
-        } else if (dragging) {
-          // While dragging, the move handler resets velocity each move;
-          // decay the residual so release doesn't double-fire inertia.
-          camTVelocity *= 0.5;
-          camPVelocity *= 0.5;
-        }
-      }
-      if (cameraChanged) updateCam();
-
-      // Rebuild markers if the site list changed (cheap — happens once
-      // when the data loads). Same trigger covers the orbital ring
-      // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
-      const surfaceCount = sites.filter((s) => s.kind !== 'orbiter').length;
-      const orbitalCount = sites.filter((s) => s.kind === 'orbiter').length;
-      if (surfaceCount !== markers.length) rebuildMarkers();
-      if (orbitalCount !== orbitalMarkers.length) rebuildOrbitalMarkers();
-
-      // Apply layer visibility every frame so chip toggles take effect
-      // immediately (cheap — small static arrays).
-      const selId = selected?.id ?? null;
-      // Selection-ring hide at Tier 2+ (port of /mars). The halo ring
-      // visually fights the LROC disc once the camera is in close —
-      // hide it when the site's currently-displayed tier ≥ 2 (or
-      // mid-transition with targetTier ≥ 2). Build a quick lookup so
-      // the halo loop stays a single pass.
-      const tierBySiteId = new Map<string, number>();
-      for (const h of hotspots) {
-        const t = Math.max(h.currentTier, h.targetTier);
-        tierBySiteId.set(h.siteId, t);
-      }
-      for (const mk of markers) {
-        mk.group.visible = layerSurface;
-        if (mk.halo) {
-          // Keep the selection halo visible at all tiers — previously
-          // hidden at tier ≥ 2 to avoid competing with the surface
-          // patch, but that left the user with no visible selection
-          // marker once they zoomed in (the panel opened, the camera
-          // flew in, but the rectangle disappeared). Now the rect
-          // stays visible throughout, with the semi-transparent fill
-          // providing the visual anchor that the thin-line outline
-          // alone didn't.
-          mk.halo.visible = layerSurface && mk.siteId === selId;
-        }
-      }
-      for (const om of orbitalMarkers) {
-        applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
-        if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
-      }
-
-      // Earth satellites — gated by master layerOrbiters + per-category
-      // chips. Per-spacecraft orbit rings track the master toggle since
-      // the regime rings (earthRingsGroup) carry the layerOrbits chip.
-      // Empty loop on /moon and /mars (earthSats stays []).
-      if (earthSats.length > 0) {
-        for (const s of earthSats) {
-          const catVisible =
-            s.category === 'station'
-              ? layerStations
-              : s.category === 'telescope'
-                ? layerObservatories
-                : s.category === 'constellation'
-                  ? layerConstellations
-                  : s.category === 'comsat'
-                    ? layerComsats
-                    : s.category === 'moon-orbiter'
-                      ? layerMoonOrbiters
-                      : true;
-          const on = layerOrbiters && catVisible;
-          s.group.visible = on;
-          if (s.ringMesh) s.ringMesh.visible = on;
-        }
-      }
-      if (earthRingsGroup) earthRingsGroup.visible = layerOrbits;
-
-      // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
-      // Drag-to-orbit still works.
-      // v0.1.7+: rotation slowed (was 0.05 rad/s) so users have time
-      // to track and click moving labels. ADR-025 reduced-motion gate
-      // still applies.
-      if (!reducedMotion && autoSpin) planetMesh.rotation.y += dt * 0.015;
-
-      // Orbital dot motion — perception-scaled, ~30 s per ring.
-      for (const om of orbitalMarkers) {
-        if (!om.group.visible) continue;
-        tickOrbiterDot(om, dt, reducedMotion);
-      }
-
-      // Outline-on-hover (skipped if hovered === selected).
-      const outlineMeshes: THREE.Object3D[] = [];
-      const selectedId = selected?.id;
-      if (hoveredSiteId && hoveredSiteId !== selectedId) {
-        const mk = markers.find((x) => x.siteId === hoveredSiteId);
-        if (mk) outlineMeshes.push(mk.group);
-        const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
-        if (om) outlineMeshes.push(om.dotGroup);
-      }
-      outlinePass.selectedObjects = outlineMeshes;
-
-      // Selection state is communicated by the bounding-rect outline +
-      // panel state; no scale pulsing (removed per ADR-072 Slice 3
-      // §"Remove disc pulse animation"). Markers stay at constant
-      // scale 1 — the halo + outline already convey "selected".
-      // (Orbiter dot scale also stays constant; the orbital ring +
-      // halo do the selection signalling.)
-
-      // Live altitude (km above surface) — read at the top of the loop
-      // so the bottom-right HUD updates every frame on every route,
-      // including /earth (no hotspot dispatcher). Previously this
-      // assignment was nested inside the `if (hotspots.length)` block
-      // below, so Earth's hotspot-free scene left altitudeKm pinned at
-      // its initial 0 ("0 m altitude" forever).
-      altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
-
-      // Match the flat-patch scale to the sphere scale at hand-off
-      // so the photo doesn't jump when the flat-patch component takes
-      // over. Same math the scale-bar uses below — surface distance
-      // → world units per pixel → km per pixel via the body's real
-      // radius. Smoothed (only update when change is meaningful) so
-      // the prop into SurfaceFlatPatch doesn't trigger a $effect on
-      // every imperceptible frame-to-frame jitter.
-      if (container) {
-        const surfaceDist = Math.max(0.05, camR - planetRadius);
-        const viewportH = renderer.domElement.clientHeight || window.innerHeight;
-        const worldPerPx = (2 * surfaceDist * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
-        const kmPerWorldUnit = config.radiusKm / planetRadius;
-        const kmPerPx = worldPerPx * kmPerWorldUnit;
-        if (
-          Math.abs(sphereKmPerPxAtSurface - kmPerPx) / Math.max(1e-9, sphereKmPerPxAtSurface) >
-          0.02
-        ) {
-          sphereKmPerPxAtSurface = kmPerPx;
-        }
-      }
-
-      // Persistent crosshair overlay — project the SELECTED site's
-      // lat/lon to screen coordinates so the template can pin an HTML
-      // crosshair there. Always-on, no transitions, no z-fight against
-      // the HiRISE texture (HTML sits above the WebGL canvas).
-      if (selected && selected.lat != null && selected.lon != null && container) {
-        const v = latLonToUnitSphere(selected.lat, selected.lon);
-        const worldPos = new THREE.Vector3(v.x, v.y, v.z).multiplyScalar(planetRadius);
-        planetMesh.updateMatrixWorld(true);
-        worldPos.applyMatrix4(planetMesh.matrixWorld);
-        // Visibility test: site is on the camera-facing hemisphere when
-        // the vector from camera→site points away from the site's
-        // outward normal. Avoids painting the crosshair through the
-        // planet onto the far hemisphere.
-        const camToSite = worldPos.clone().sub(camera.position).normalize();
-        const siteNormal = worldPos.clone().normalize();
-        const onFront = camToSite.dot(siteNormal) < 0;
-        const projected = worldPos.clone().project(camera);
-        const cw = container.clientWidth;
-        const ch = container.clientHeight;
-        const sx = ((projected.x + 1) / 2) * cw;
-        const sy = ((1 - projected.y) / 2) * ch;
-        const onScreen =
-          onFront &&
-          projected.z > -1 &&
-          projected.z < 1 &&
-          sx >= 0 &&
-          sx <= cw &&
-          sy >= 0 &&
-          sy <= ch;
-        siteCrosshairScreen = { x: sx, y: sy, onScreen };
-      } else if (siteCrosshairScreen !== null) {
-        siteCrosshairScreen = null;
-      }
-
-      // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
-      // Per-frame tier selection based on screen-projected marker size.
-      // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
-      // join the dispatcher as their sub-issues land.
-      if (hotspots.length) {
-        // Selected-site clamp (port of /mars). Without a selection
-        // every hotspot uses its data-driven maxTier; with one,
-        // non-selected sites clamp to ≤ Tier 1 so adjacent discs
-        // don't visually fight. Dispatcher reads entry.maxTier each
-        // frame so mutating in-place here is safe.
-        const selectedHotspotId = selected?.id;
-        for (const h of hotspots) {
-          const orig = originalMaxTier.get(h.siteId) ?? (h.maxTier as 0 | 1 | 2 | 3);
-          if (selectedHotspotId == null || selectedHotspotId === h.siteId) {
-            h.maxTier = orig;
+        // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):
+        //   (a) Fly-in tween — ease-out cubic interpolation of camP/T/R.
+        //   (b) Smooth zoom — lerp camR toward camRTarget at 15%/frame.
+        //   (c) Drag inertia — angular velocity decay 92%/frame.
+        // All three are mutually exclusive per-frame: fly-in supersedes
+        // zoom + inertia; zoom + inertia run together when fly isn't.
+        let cameraChanged = false;
+        if (flyActive) {
+          const t = (now - flyStart) / FLY_DURATION_MS;
+          if (t >= 1) {
+            camP = flyToP;
+            camT = flyToT;
+            camR = flyToR;
+            camRTarget = flyToR;
+            flyActive = false;
           } else {
-            h.maxTier = Math.min(1, orig) as 0 | 1;
+            const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
+            camP = flyFromP + (flyToP - flyFromP) * e;
+            camT = flyFromT + (flyToT - flyFromT) * e;
+            camR = flyFromR + (flyToR - flyFromR) * e;
+            camRTarget = camR;
+          }
+          cameraChanged = true;
+        } else {
+          // (b) Smooth zoom: lerp camR toward camRTarget at 15%/frame.
+          if (Math.abs(camR - camRTarget) > 0.001) {
+            camR += (camRTarget - camR) * 0.15;
+            cameraChanged = true;
+          }
+          // (c) Drag inertia: after release, decay velocity ~92%/frame
+          // and apply to camT/camP until below threshold. Skips while
+          // user is actively dragging.
+          const dragging = isDrag || touchActive;
+          if (!dragging && (Math.abs(camTVelocity) > 0.0001 || Math.abs(camPVelocity) > 0.0001)) {
+            camT += camTVelocity;
+            camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + camPVelocity));
+            camTVelocity *= 0.92;
+            camPVelocity *= 0.92;
+            cameraChanged = true;
+          } else if (dragging) {
+            // While dragging, the move handler resets velocity each move;
+            // decay the residual so release doesn't double-fire inertia.
+            camTVelocity *= 0.5;
+            camPVelocity *= 0.5;
           }
         }
-        const canvasH = renderer.domElement.clientHeight || 1;
-        updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
+        if (cameraChanged) updateCam();
 
-        // ADR-073 Layer B per-frame check. Cheap — a single number
-        // comparison + a material.map reassignment that only fires on
-        // threshold cross. camR is the orbital distance in scene units
-        // (planet radius = 30u inside SurfaceScene).
-        updatePlanetTextureLod(camR);
-        // Publish the highest currently-displayed tier on the canvas
-        // for e2e assertions (#116 S8).
-        let topTier = 0;
-        for (const h of hotspots) if (h.currentTier > topTier) topTier = h.currentTier;
-        const target = renderer.domElement;
-        const attr = target.getAttribute('data-hotspot-tier');
-        const next = String(topTier);
-        if (attr !== next) target.setAttribute('data-hotspot-tier', next);
+        // Rebuild markers if the site list changed (cheap — happens once
+        // when the data loads). Same trigger covers the orbital ring
+        // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
+        const surfaceCount = sites.filter((s) => s.kind !== 'orbiter').length;
+        const orbitalCount = sites.filter((s) => s.kind === 'orbiter').length;
+        if (surfaceCount !== markers.length) rebuildMarkers();
+        if (orbitalCount !== orbitalMarkers.length) rebuildOrbitalMarkers();
 
-        // Zoom-aware model scaling. tier0 marker + tier1 lander shrink
-        // toward 0.2× at the closest zoom so they sit readably on the
-        // LROC patch rather than dominating it. Same shape as /mars.
-        const zoomScale = computeTierScale(camR);
+        // Apply layer visibility every frame so chip toggles take effect
+        // immediately (cheap — small static arrays).
+        const selId = selected?.id ?? null;
+        // Selection-ring hide at Tier 2+ (port of /mars). The halo ring
+        // visually fights the LROC disc once the camera is in close —
+        // hide it when the site's currently-displayed tier ≥ 2 (or
+        // mid-transition with targetTier ≥ 2). Build a quick lookup so
+        // the halo loop stays a single pass.
+        const tierBySiteId = new Map<string, number>();
         for (const h of hotspots) {
-          if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
-          if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
+          const t = Math.max(h.currentTier, h.targetTier);
+          tierBySiteId.set(h.siteId, t);
         }
-
-        // Site labels — shrink with zoomScale but floored at 0.65 so
-        // they stay readable. Hide entirely when promoted to Tier 2+
-        // (the label is at the patch centre and visually crowds the
-        // disc; /mars uses the same pattern).
-        // Regional opacity ramp hoisted up so labels can fade against
-        // it. Mirrors the formula used below for the tier-2 patch
-        // material — single source of truth for "how visible is the
-        // regional CTX/LROC patch right now?". camR 50 → ramp starts;
-        // camR 33 → fully visible.
-        const regionalFadeStartTop = 50;
-        const regionalFadeEndTop = 33;
-        const regionalOpacityTop =
-          camR >= regionalFadeStartTop
-            ? 0
-            : camR <= regionalFadeEndTop
-              ? 1
-              : 1 - (camR - regionalFadeEndTop) / (regionalFadeStartTop - regionalFadeEndTop);
-        // Publish to template state so the HTML crosshair can gate on
-        // the same signal that fades the 3D lander out.
-        if (Math.abs(regionalOpacityForUi - regionalOpacityTop) > 0.005) {
-          regionalOpacityForUi = regionalOpacityTop;
-        }
-        const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
-
-        const tierByIdForLabels = new Map<string, number>();
-        for (const h of hotspots) {
-          tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
-        }
-        // Label fade only applies to the SELECTED site's label —
-        // unselected sites keep their labels fully visible so the
-        // wider scene context is preserved while the user zooms in on
-        // one site (user feedback 2026-06-08: "you hid all the
-        // labels, and I asked only one from the site that is
-        // selected"). Tier-2 hard hide still applies to every label
-        // (those are physically inside the rectangle anyway).
-        const selectedSiteId = selected?.id;
         for (const mk of markers) {
-          if (!mk.labelGroup) continue;
-          const t = tierByIdForLabels.get(mk.siteId) ?? 0;
-          if (t >= 2) {
-            mk.labelGroup.visible = false;
-            continue;
+          mk.group.visible = layerSurface;
+          if (mk.halo) {
+            // Keep the selection halo visible at all tiers — previously
+            // hidden at tier ≥ 2 to avoid competing with the surface
+            // patch, but that left the user with no visible selection
+            // marker once they zoomed in (the panel opened, the camera
+            // flew in, but the rectangle disappeared). Now the rect
+            // stays visible throughout, with the semi-transparent fill
+            // providing the visual anchor that the thin-line outline
+            // alone didn't.
+            mk.halo.visible = layerSurface && mk.siteId === selId;
           }
-          const fade = mk.siteId === selectedSiteId ? labelFade : 1;
-          if (fade < 0.01) {
-            mk.labelGroup.visible = false;
-            continue;
+        }
+        for (const om of orbitalMarkers) {
+          applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
+          if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
+        }
+
+        // Earth satellites — gated by master layerOrbiters + per-category
+        // chips. Per-spacecraft orbit rings track the master toggle since
+        // the regime rings (earthRingsGroup) carry the layerOrbits chip.
+        // Empty loop on /moon and /mars (earthSats stays []).
+        if (earthSats.length > 0) {
+          for (const s of earthSats) {
+            const catVisible =
+              s.category === 'station'
+                ? layerStations
+                : s.category === 'telescope'
+                  ? layerObservatories
+                  : s.category === 'constellation'
+                    ? layerConstellations
+                    : s.category === 'comsat'
+                      ? layerComsats
+                      : s.category === 'moon-orbiter'
+                        ? layerMoonOrbiters
+                        : true;
+            const on = layerOrbiters && catVisible;
+            s.group.visible = on;
+            if (s.ringMesh) s.ringMesh.visible = on;
           }
-          mk.labelGroup.visible = true;
-          mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
-          if (fade < 0.99) {
-            mk.labelGroup.traverse((obj) => {
-              if (obj instanceof THREE.Sprite) {
-                const mat = obj.material as THREE.SpriteMaterial;
-                mat.opacity = fade;
-                mat.transparent = true;
-              } else if (obj instanceof THREE.Mesh) {
-                const mat = obj.material as THREE.Material & { opacity: number };
-                if ('opacity' in mat) {
+        }
+        if (earthRingsGroup) earthRingsGroup.visible = layerOrbits;
+
+        // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
+        // Drag-to-orbit still works.
+        // v0.1.7+: rotation slowed (was 0.05 rad/s) so users have time
+        // to track and click moving labels. ADR-025 reduced-motion gate
+        // still applies.
+        if (!reducedMotion && autoSpin) planetMesh.rotation.y += dt * 0.015;
+
+        // Orbital dot motion — perception-scaled, ~30 s per ring.
+        for (const om of orbitalMarkers) {
+          if (!om.group.visible) continue;
+          tickOrbiterDot(om, dt, reducedMotion);
+        }
+
+        // Outline-on-hover (skipped if hovered === selected).
+        const outlineMeshes: THREE.Object3D[] = [];
+        const selectedId = selected?.id;
+        if (hoveredSiteId && hoveredSiteId !== selectedId) {
+          const mk = markers.find((x) => x.siteId === hoveredSiteId);
+          if (mk) outlineMeshes.push(mk.group);
+          const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
+          if (om) outlineMeshes.push(om.dotGroup);
+        }
+        outlinePass.selectedObjects = outlineMeshes;
+
+        // Selection state is communicated by the bounding-rect outline +
+        // panel state; no scale pulsing (removed per ADR-072 Slice 3
+        // §"Remove disc pulse animation"). Markers stay at constant
+        // scale 1 — the halo + outline already convey "selected".
+        // (Orbiter dot scale also stays constant; the orbital ring +
+        // halo do the selection signalling.)
+
+        // Live altitude (km above surface) — read at the top of the loop
+        // so the bottom-right HUD updates every frame on every route,
+        // including /earth (no hotspot dispatcher). Previously this
+        // assignment was nested inside the `if (hotspots.length)` block
+        // below, so Earth's hotspot-free scene left altitudeKm pinned at
+        // its initial 0 ("0 m altitude" forever).
+        altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
+
+        // Match the flat-patch scale to the sphere scale at hand-off
+        // so the photo doesn't jump when the flat-patch component takes
+        // over. Same math the scale-bar uses below — surface distance
+        // → world units per pixel → km per pixel via the body's real
+        // radius. Smoothed (only update when change is meaningful) so
+        // the prop into SurfaceFlatPatch doesn't trigger a $effect on
+        // every imperceptible frame-to-frame jitter.
+        if (container) {
+          const surfaceDist = Math.max(0.05, camR - planetRadius);
+          const viewportH = renderer.domElement.clientHeight || window.innerHeight;
+          const worldPerPx = (2 * surfaceDist * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
+          const kmPerWorldUnit = config.radiusKm / planetRadius;
+          const kmPerPx = worldPerPx * kmPerWorldUnit;
+          if (
+            Math.abs(sphereKmPerPxAtSurface - kmPerPx) / Math.max(1e-9, sphereKmPerPxAtSurface) >
+            0.02
+          ) {
+            sphereKmPerPxAtSurface = kmPerPx;
+          }
+        }
+
+        // Persistent crosshair overlay — project the SELECTED site's
+        // lat/lon to screen coordinates so the template can pin an HTML
+        // crosshair there. Always-on, no transitions, no z-fight against
+        // the HiRISE texture (HTML sits above the WebGL canvas).
+        if (selected && selected.lat != null && selected.lon != null && container) {
+          const v = latLonToUnitSphere(selected.lat, selected.lon);
+          const worldPos = new THREE.Vector3(v.x, v.y, v.z).multiplyScalar(planetRadius);
+          planetMesh.updateMatrixWorld(true);
+          worldPos.applyMatrix4(planetMesh.matrixWorld);
+          // Visibility test: site is on the camera-facing hemisphere when
+          // the vector from camera→site points away from the site's
+          // outward normal. Avoids painting the crosshair through the
+          // planet onto the far hemisphere.
+          const camToSite = worldPos.clone().sub(camera.position).normalize();
+          const siteNormal = worldPos.clone().normalize();
+          const onFront = camToSite.dot(siteNormal) < 0;
+          const projected = worldPos.clone().project(camera);
+          const cw = container.clientWidth;
+          const ch = container.clientHeight;
+          const sx = ((projected.x + 1) / 2) * cw;
+          const sy = ((1 - projected.y) / 2) * ch;
+          const onScreen =
+            onFront &&
+            projected.z > -1 &&
+            projected.z < 1 &&
+            sx >= 0 &&
+            sx <= cw &&
+            sy >= 0 &&
+            sy <= ch;
+          siteCrosshairScreen = { x: sx, y: sy, onScreen };
+        } else if (siteCrosshairScreen !== null) {
+          siteCrosshairScreen = null;
+        }
+
+        // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
+        // Per-frame tier selection based on screen-projected marker size.
+        // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
+        // join the dispatcher as their sub-issues land.
+        if (hotspots.length) {
+          // Selected-site clamp (port of /mars). Without a selection
+          // every hotspot uses its data-driven maxTier; with one,
+          // non-selected sites clamp to ≤ Tier 1 so adjacent discs
+          // don't visually fight. Dispatcher reads entry.maxTier each
+          // frame so mutating in-place here is safe.
+          const selectedHotspotId = selected?.id;
+          for (const h of hotspots) {
+            const orig = originalMaxTier.get(h.siteId) ?? (h.maxTier as 0 | 1 | 2 | 3);
+            if (selectedHotspotId == null || selectedHotspotId === h.siteId) {
+              h.maxTier = orig;
+            } else {
+              h.maxTier = Math.min(1, orig) as 0 | 1;
+            }
+          }
+          const canvasH = renderer.domElement.clientHeight || 1;
+          updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
+
+          // ADR-073 Layer B per-frame check. Cheap — a single number
+          // comparison + a material.map reassignment that only fires on
+          // threshold cross. camR is the orbital distance in scene units
+          // (planet radius = 30u inside SurfaceScene).
+          updatePlanetTextureLod(camR);
+          // Publish the highest currently-displayed tier on the canvas
+          // for e2e assertions (#116 S8).
+          let topTier = 0;
+          for (const h of hotspots) if (h.currentTier > topTier) topTier = h.currentTier;
+          const target = renderer.domElement;
+          const attr = target.getAttribute('data-hotspot-tier');
+          const next = String(topTier);
+          if (attr !== next) target.setAttribute('data-hotspot-tier', next);
+
+          // Zoom-aware model scaling. tier0 marker + tier1 lander shrink
+          // toward 0.2× at the closest zoom so they sit readably on the
+          // LROC patch rather than dominating it. Same shape as /mars.
+          const zoomScale = computeTierScale(camR);
+          for (const h of hotspots) {
+            if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
+            if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
+          }
+
+          // Site labels — shrink with zoomScale but floored at 0.65 so
+          // they stay readable. Hide entirely when promoted to Tier 2+
+          // (the label is at the patch centre and visually crowds the
+          // disc; /mars uses the same pattern).
+          // Regional opacity ramp hoisted up so labels can fade against
+          // it. Mirrors the formula used below for the tier-2 patch
+          // material — single source of truth for "how visible is the
+          // regional CTX/LROC patch right now?". camR 50 → ramp starts;
+          // camR 33 → fully visible.
+          const regionalFadeStartTop = 50;
+          const regionalFadeEndTop = 33;
+          const regionalOpacityTop =
+            camR >= regionalFadeStartTop
+              ? 0
+              : camR <= regionalFadeEndTop
+                ? 1
+                : 1 - (camR - regionalFadeEndTop) / (regionalFadeStartTop - regionalFadeEndTop);
+          // Publish to template state so the HTML crosshair can gate on
+          // the same signal that fades the 3D lander out.
+          if (Math.abs(regionalOpacityForUi - regionalOpacityTop) > 0.005) {
+            regionalOpacityForUi = regionalOpacityTop;
+          }
+          const labelFade = Math.max(0, 1 - regionalOpacityTop * 4);
+
+          const tierByIdForLabels = new Map<string, number>();
+          for (const h of hotspots) {
+            tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
+          }
+          // Label fade only applies to the SELECTED site's label —
+          // unselected sites keep their labels fully visible so the
+          // wider scene context is preserved while the user zooms in on
+          // one site (user feedback 2026-06-08: "you hid all the
+          // labels, and I asked only one from the site that is
+          // selected"). Tier-2 hard hide still applies to every label
+          // (those are physically inside the rectangle anyway).
+          const selectedSiteId = selected?.id;
+          for (const mk of markers) {
+            if (!mk.labelGroup) continue;
+            const t = tierByIdForLabels.get(mk.siteId) ?? 0;
+            if (t >= 2) {
+              mk.labelGroup.visible = false;
+              continue;
+            }
+            const fade = mk.siteId === selectedSiteId ? labelFade : 1;
+            if (fade < 0.01) {
+              mk.labelGroup.visible = false;
+              continue;
+            }
+            mk.labelGroup.visible = true;
+            mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
+            if (fade < 0.99) {
+              mk.labelGroup.traverse((obj) => {
+                if (obj instanceof THREE.Sprite) {
+                  const mat = obj.material as THREE.SpriteMaterial;
                   mat.opacity = fade;
                   mat.transparent = true;
+                } else if (obj instanceof THREE.Mesh) {
+                  const mat = obj.material as THREE.Material & { opacity: number };
+                  if ('opacity' in mat) {
+                    mat.opacity = fade;
+                    mat.transparent = true;
+                  }
                 }
-              }
-            });
-          } else {
-            // Reset to fully opaque when not fading (the user
-            // unselected this site after a partial fade).
-            mk.labelGroup.traverse((obj) => {
-              if (obj instanceof THREE.Sprite) {
-                const mat = obj.material as THREE.SpriteMaterial;
-                if (mat.opacity !== 1) {
-                  mat.opacity = 1;
-                  mat.transparent = false;
+              });
+            } else {
+              // Reset to fully opaque when not fading (the user
+              // unselected this site after a partial fade).
+              mk.labelGroup.traverse((obj) => {
+                if (obj instanceof THREE.Sprite) {
+                  const mat = obj.material as THREE.SpriteMaterial;
+                  if (mat.opacity !== 1) {
+                    mat.opacity = 1;
+                    mat.transparent = false;
+                  }
+                } else if (obj instanceof THREE.Mesh) {
+                  const mat = obj.material as THREE.Material & { opacity: number };
+                  if ('opacity' in mat && mat.opacity !== 1) {
+                    mat.opacity = 1;
+                    mat.transparent = false;
+                  }
                 }
-              } else if (obj instanceof THREE.Mesh) {
-                const mat = obj.material as THREE.Material & { opacity: number };
-                if ('opacity' in mat && mat.opacity !== 1) {
-                  mat.opacity = 1;
-                  mat.transparent = false;
-                }
-              }
-            });
-          }
-        }
-
-        // Tier-2 detail opacity ramp. Patch is eager-built at site
-        // creation so tier2Group exists even when curTier < 2; we
-        // override the dispatcher's "tier2 hidden when tier<2"
-        // decision and control visibility 100% via camR. ADR-072
-        // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
-        // Moon — Mars's tighter window matches actual Tier-2 patch
-        // dimensions). Traverse polylines + end-dots + captions
-        // share this ramp via tier2DelayedReveal.
-        const detailFadeStart = 33;
-        // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
-        // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
-        // peaking and then having a dead band before flat-patch.
-        const detailFadeEnd = 30.32;
-        const detailOpacity =
-          camR >= detailFadeStart
-            ? 0
-            : camR <= detailFadeEnd
-              ? 1
-              : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
-        // Regional CTX patch reveals EARLIER than the HiRISE detail
-        // patch — the user wants to see the wider CTX context first
-        // (~30km bbox) and only commit to the inner HiRISE area
-        // (~5km bbox) when zoomed deeper. Until 2026-06-01 both
-        // layers shared the detailFade window and revealed
-        // simultaneously, which made the "level up" zoom look like
-        // no progressive detail at all (image 14-17 screenshot
-        // sequence — regional + detail both popping in at the same
-        // camR). Regional ramp: 50 → 33 (starts at the same camR
-        // Tier-2 promotion fires for the detail layer, fully
-        // visible by the time detail starts ramping).
-        const regionalFadeStart = 50;
-        const regionalFadeEnd = 33;
-        const regionalOpacity =
-          camR >= regionalFadeStart
-            ? 0
-            : camR <= regionalFadeEnd
-              ? 1
-              : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
-        for (const h of hotspots) {
-          if (!h.tier2Group) continue;
-          // Visible when either ramp has anything to show — regional
-          // is the gating signal at wide zoom, detail picks up later.
-          h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
-          h.tier2Group.traverse((obj) => {
-            if (!(obj instanceof THREE.Mesh)) return;
-            const layer = obj.userData?.layer;
-            if (layer !== 'detail' && layer !== 'regional') return;
-            const mat = obj.material as THREE.Material & { opacity: number };
-            // Split ramps: regional CTX fades in earlier (wider
-            // zoom), detail HiRISE fades in later (closer zoom).
-            mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
-            mat.transparent = mat.opacity < 0.99;
-          });
-          // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
-          // is active": once the rectangular Tier-2 patch is the active
-          // representation (ramp > ~0.5), the Tier-1 engineering mesh
-          // would compete visually with the region polygon + its photo
-          // content. Cross-fade the Tier-1 group opacity inversely to
-          // the patch's ramp so they swap cleanly. Engineering model
-          // resurfaces at Tier 3 panorama / "stand at site" entry.
-          // Tier 0 silhouette + Tier 1 engineering model both cross-
-          // fade against the REGIONAL CTX ramp (camR 50 → 33), not the
-          // detail HiRISE ramp (33 → 30.32). This means by the time
-          // the HiRISE detail patch starts revealing (camR < 33) the
-          // 3D lander glyphs are already fully gone — they don't
-          // linger on top of the HiRISE imagery. User feedback
-          // 2026-06-03: "Tier 1 — 3d model of lander needs to be gone
-          // by the time we noticed tier 3 (HiRISE). Now it is there
-          // way too long into the zoomed-in region." Engineering
-          // model resurfaces when the user pulls back past camR=33
-          // and re-mounts at panorama entry as before.
-          // Linear `1 - regionalOpacity` left the lander at ~50 %
-          // when the regional patch was already fully readable —
-          // user feedback 2026-06-08: "as soon as we render photo in
-          // square, I want 3D model to be gone." Steepen the fade by
-          // 4× so the lander hits 0 once the regional ramp passes
-          // 25 %, well before the photo is fully visible. The Tier-1
-          // engineering model + Tier-0 silhouette both share this
-          // fade so they leave the frame together.
-          const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
-          if (h.tier1Group) {
-            h.tier1Group.visible = lander3dFade > 0.01;
-            h.tier1Group.traverse((obj) => {
-              if (!(obj instanceof THREE.Mesh)) return;
-              const mat = obj.material as THREE.Material & { opacity: number };
-              if ('opacity' in mat) {
-                mat.opacity = lander3dFade;
-                mat.transparent = lander3dFade < 0.99;
-              }
-            });
-          }
-          if (h.tier0Group) {
-            h.tier0Group.visible = lander3dFade > 0.01;
-            h.tier0Group.traverse((obj) => {
-              if (!(obj instanceof THREE.Mesh)) return;
-              const mat = obj.material as THREE.Material & { opacity: number };
-              if ('opacity' in mat) {
-                mat.opacity = lander3dFade;
-                mat.transparent = lander3dFade < 0.99;
-              }
-            });
-          }
-        }
-
-        // Apply ramp to traverse layer (lines + dots + captions push
-        // themselves into tier2DelayedReveal). Combines with the
-        // TRAVERSES layer toggle: invisible if layer off OR camR
-        // too far for detail. End-dots pulse (sine wave) when active.
-        const travVisible = loadTraverses != null && layerTraverses && detailOpacity > 0.01;
-        for (const obj of tier2DelayedReveal) {
-          if (
-            obj.userData?.kind === 'traverse' ||
-            (obj as { userData?: { kind?: string } }).userData?.kind === 'traverse'
-          ) {
-            obj.visible = travVisible;
-            const mat = (obj as THREE.Line).material as THREE.Material & { opacity: number };
-            if (mat) {
-              mat.opacity = detailOpacity * 0.95;
-              mat.transparent = true;
+              });
             }
           }
-        }
-        if (loadTraverses != null) {
-          // Screen-pixel-stable sizing for every traverse marker
-          // (pins, end-dot, captions). World-fixed sizes turned the
-          // markers into screen-filling blobs at deep zoom and into
-          // invisible dots at wide zoom — neither read as a useful
-          // map. Compute the world units that correspond to ONE
-          // screen pixel at the camera's current distance to the
-          // patch, then size each marker for a fixed screen-pixel
-          // target (image 19 feedback, 2026-06-02).
-          //
-          // worldPerPx = (2 * d * tan(fovY/2)) / viewportH
-          // where d ≈ distance from camera to surface (camR - 30).
-          const surfaceDistance = Math.max(0.05, camR - 30);
-          const viewportH = renderer.domElement.clientHeight || window.innerHeight;
-          const worldPerPx =
-            (2 * surfaceDistance * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
-          // Target screen sizes (px). Smaller pin head reads as a
-          // map marker rather than a road sign; caption is large
-          // enough to scan-read; end-dot is a tight punctuation mark.
-          const pinHeightPx = 26;
-          const endDotPx = 8;
-          // Patch-pin (the green landing-site disc) gets a beefier
-          // target so the locator stays readable on top of HiRISE
-          // terrain even at the deepest sphere zoom. 14 px ≈ a clear
-          // map-marker dot without dominating the rectangle.
-          const patchPinPx = 14;
-          const captionWidthPx = 140;
-          // Pin sprite has base scale (1, 1.5, 1) and canvas 64×96,
-          // so the visible-height-to-base-Y-scale ratio is 1 (=> the
-          // base Y scale IS the world height when stopScale is 1).
-          const pinWorldH = pinHeightPx * worldPerPx;
-          const pinWorldW = (64 / 96) * pinWorldH;
-          // End-dot sphere geometry has radius 0.022u (diameter 0.044u).
-          // Target diameter in world units = endDotPx * worldPerPx.
-          const endDotScale = (endDotPx * worldPerPx) / 0.044;
-          // Patch-pin (green landing disc) has geometry radius 0.005u
-          // (diameter 0.01u). Per-frame scale to the same screen-px
-          // size as endDot so green + red read as a matched pair.
-          const patchPinScale = (patchPinPx * worldPerPx) / 0.01;
-          // White halo ring's geometry radius is 0.007 → diameter 0.014.
-          // Scale so its on-screen diameter sits ~3 px wider than the
-          // green core. Read as a single locator pip, not two rings.
-          const patchPinHaloScale = ((patchPinPx + 3) * worldPerPx) / 0.014;
+
+          // Tier-2 detail opacity ramp. Patch is eager-built at site
+          // creation so tier2Group exists even when curTier < 2; we
+          // override the dispatcher's "tier2 hidden when tier<2"
+          // decision and control visibility 100% via camR. ADR-072
+          // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
+          // Moon — Mars's tighter window matches actual Tier-2 patch
+          // dimensions). Traverse polylines + end-dots + captions
+          // share this ramp via tier2DelayedReveal.
+          const detailFadeStart = 33;
+          // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
+          // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
+          // peaking and then having a dead band before flat-patch.
+          const detailFadeEnd = 30.32;
+          const detailOpacity =
+            camR >= detailFadeStart
+              ? 0
+              : camR <= detailFadeEnd
+                ? 1
+                : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+          // Regional CTX patch reveals EARLIER than the HiRISE detail
+          // patch — the user wants to see the wider CTX context first
+          // (~30km bbox) and only commit to the inner HiRISE area
+          // (~5km bbox) when zoomed deeper. Until 2026-06-01 both
+          // layers shared the detailFade window and revealed
+          // simultaneously, which made the "level up" zoom look like
+          // no progressive detail at all (image 14-17 screenshot
+          // sequence — regional + detail both popping in at the same
+          // camR). Regional ramp: 50 → 33 (starts at the same camR
+          // Tier-2 promotion fires for the detail layer, fully
+          // visible by the time detail starts ramping).
+          const regionalFadeStart = 50;
+          const regionalFadeEnd = 33;
+          const regionalOpacity =
+            camR >= regionalFadeStart
+              ? 0
+              : camR <= regionalFadeEnd
+                ? 1
+                : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
           for (const h of hotspots) {
             if (!h.tier2Group) continue;
+            // Visible when either ramp has anything to show — regional
+            // is the gating signal at wide zoom, detail picks up later.
+            h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
             h.tier2Group.traverse((obj) => {
-              if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin') {
-                obj.scale.set(patchPinScale, patchPinScale, 1);
-              } else if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin-halo') {
-                obj.scale.set(patchPinHaloScale, patchPinHaloScale, 1);
-              }
+              if (!(obj instanceof THREE.Mesh)) return;
+              const layer = obj.userData?.layer;
+              if (layer !== 'detail' && layer !== 'regional') return;
+              const mat = obj.material as THREE.Material & { opacity: number };
+              // Split ramps: regional CTX fades in earlier (wider
+              // zoom), detail HiRISE fades in later (closer zoom).
+              mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
+              mat.transparent = mat.opacity < 0.99;
             });
-          }
-          // Caption inner sprite scale is (0.32 wide, 0.32*(96/512)
-          // tall) when buildTraverseCaption is called with worldSize
-          // 0.32 — so a group.scale multiplier of (target / 0.32)
-          // yields the requested screen width.
-          const captionScale = (captionWidthPx * worldPerPx) / 0.32;
-          // Caption position offsets — kept tight to the anchor so
-          // labels stick close to the start/end dots rather than
-          // floating off (caps-lock feedback after image 20).
-          const captionTangentOffsetPx = 30;
-          const captionRadialOffsetPx = 10;
-          const tangentOffsetWorld = captionTangentOffsetPx * worldPerPx;
-          const radialOffsetWorld = captionRadialOffsetPx * worldPerPx;
-          for (const tl of traverseLines) {
-            tl.line.visible = travVisible;
-            tl.endDot.visible = travVisible;
-            if (tl.startLabel) tl.startLabel.visible = travVisible;
-            if (tl.endLabel) tl.endLabel.visible = travVisible;
-            tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
-            const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
-            // No pulse — flat 95% opacity for active rovers, 85% for ended (was
-            // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
-            dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
-            tl.endDot.scale.setScalar(endDotScale);
-            // Reposition captions each frame so they sit ~70 px
-            // tangentially + ~30 px outward from the anchor dot
-            // regardless of zoom level. World-fixed offsets either
-            // overlapped the dot at wide zoom or floated 1000 px
-            // away at close zoom.
-            if (tl.startLabel) {
-              tl.startLabel.scale.setScalar(captionScale);
-              const startTangent = tl.tangent.clone().negate();
-              const startCaptionPos = tl.startAnchor
-                .clone()
-                .addScaledVector(startTangent, tangentOffsetWorld)
-                .normalize()
-                .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
-              tl.startLabel.position.copy(startCaptionPos);
-              tl.startLabel.traverse((o) => {
-                if (o instanceof THREE.Sprite) {
-                  const m2 = o.material as THREE.SpriteMaterial;
-                  m2.opacity = detailOpacity;
+            // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
+            // is active": once the rectangular Tier-2 patch is the active
+            // representation (ramp > ~0.5), the Tier-1 engineering mesh
+            // would compete visually with the region polygon + its photo
+            // content. Cross-fade the Tier-1 group opacity inversely to
+            // the patch's ramp so they swap cleanly. Engineering model
+            // resurfaces at Tier 3 panorama / "stand at site" entry.
+            // Tier 0 silhouette + Tier 1 engineering model both cross-
+            // fade against the REGIONAL CTX ramp (camR 50 → 33), not the
+            // detail HiRISE ramp (33 → 30.32). This means by the time
+            // the HiRISE detail patch starts revealing (camR < 33) the
+            // 3D lander glyphs are already fully gone — they don't
+            // linger on top of the HiRISE imagery. User feedback
+            // 2026-06-03: "Tier 1 — 3d model of lander needs to be gone
+            // by the time we noticed tier 3 (HiRISE). Now it is there
+            // way too long into the zoomed-in region." Engineering
+            // model resurfaces when the user pulls back past camR=33
+            // and re-mounts at panorama entry as before.
+            // Linear `1 - regionalOpacity` left the lander at ~50 %
+            // when the regional patch was already fully readable —
+            // user feedback 2026-06-08: "as soon as we render photo in
+            // square, I want 3D model to be gone." Steepen the fade by
+            // 4× so the lander hits 0 once the regional ramp passes
+            // 25 %, well before the photo is fully visible. The Tier-1
+            // engineering model + Tier-0 silhouette both share this
+            // fade so they leave the frame together.
+            const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
+            if (h.tier1Group) {
+              h.tier1Group.visible = lander3dFade > 0.01;
+              h.tier1Group.traverse((obj) => {
+                if (!(obj instanceof THREE.Mesh)) return;
+                const mat = obj.material as THREE.Material & { opacity: number };
+                if ('opacity' in mat) {
+                  mat.opacity = lander3dFade;
+                  mat.transparent = lander3dFade < 0.99;
                 }
               });
             }
-            if (tl.endLabel) {
-              tl.endLabel.scale.setScalar(captionScale);
-              const endCaptionPos = tl.endAnchor
-                .clone()
-                .addScaledVector(tl.tangent, tangentOffsetWorld)
-                .normalize()
-                .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
-              tl.endLabel.position.copy(endCaptionPos);
-              tl.endLabel.traverse((o) => {
-                if (o instanceof THREE.Sprite) {
-                  const m2 = o.material as THREE.SpriteMaterial;
-                  m2.opacity = detailOpacity;
+            if (h.tier0Group) {
+              h.tier0Group.visible = lander3dFade > 0.01;
+              h.tier0Group.traverse((obj) => {
+                if (!(obj instanceof THREE.Mesh)) return;
+                const mat = obj.material as THREE.Material & { opacity: number };
+                if ('opacity' in mat) {
+                  mat.opacity = lander3dFade;
+                  mat.transparent = lander3dFade < 0.99;
                 }
               });
             }
-            // Gate the in-between stop pins on a tighter threshold
-            // than the line — pins only make sense once HiRISE detail
-            // is substantially in (detailOpacity > 0.6 ≈ camR < ~31.5),
-            // otherwise they read as confetti scattered across an
-            // un-textured rectangle (image 21 feedback, 2026-06-03).
-            // Line + start/end + captions stay on the wider gate so
-            // the user gets a path-preview earlier in the zoom.
-            const stopPinsVisible = travVisible && detailOpacity > 0.6;
-            for (const sp of tl.stopPins) {
-              sp.visible = stopPinsVisible;
-              sp.scale.set(pinWorldW, pinWorldH, 1);
-              (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
-            }
           }
-        }
 
-        // Distance scale bar — visible whenever either tier-2 layer
-        // is fading in (regional CTX or detail HiRISE). Picks a
-        // "nice" 1 / 2 / 5 × 10ⁿ round-number km value whose pixel
-        // width is closest to TARGET_BAR_PX (≈ 110 px); the bar
-        // overlay below the canvas renders at the resolved width.
-        if (regionalOpacity > 0.01 || detailOpacity > 0.01) {
-          const surfaceDistanceForBar = Math.max(0.05, camR - 30);
-          const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
-          const worldPerPxForBar =
-            (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) / viewportHForBar;
-          const kmPerWorldUnit = config.radiusKm / planetRadius;
-          const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
-          const TARGET_BAR_PX = 110;
-          const targetKm = kmPerPx * TARGET_BAR_PX;
-          const exp = Math.floor(Math.log10(targetKm));
-          const base = targetKm / Math.pow(10, exp);
-          let mantissa: number;
-          if (base < 1.5) mantissa = 1;
-          else if (base < 3.5) mantissa = 2;
-          else if (base < 7.5) mantissa = 5;
-          else mantissa = 10;
-          const niceKm = mantissa * Math.pow(10, exp);
-          const widthPx = niceKm / kmPerPx;
-          const label =
-            niceKm >= 1
-              ? `${niceKm} km`
-              : niceKm >= 0.001
-                ? `${Math.round(niceKm * 1000)} m`
-                : `${(niceKm * 1000).toFixed(1)} m`;
-          // Skip the assignment if values are unchanged — keeps
-          // Svelte from re-rendering the overlay every frame.
-          if (!scaleBar || Math.abs(scaleBar.widthPx - widthPx) > 0.5 || scaleBar.label !== label) {
-            scaleBar = { widthPx, label };
-          }
-        } else if (scaleBar !== null) {
-          scaleBar = null;
-        }
-
-        // TierContext info card (PRD-014 §v0.7.x). Surfaces
-        // attribution for the layers currently composed on the
-        // patch. Trigger condition changed 2026-06-01: show the
-        // card whenever EITHER the regional ramp OR the detail
-        // ramp has anything visible, not only when the dispatcher
-        // has promoted a hotspot to Tier 2 (which fires at
-        // ~camR=38). Before this, the CTX context layer would
-        // fade in at camR 50-38 with no on-screen explanation of
-        // what the user was looking at (image 18 feedback).
-        // Prefer the user-selected site whenever it has any tier
-        // promotion — multiple hotspots can be at the same Tier 2
-        // simultaneously (e.g. Viking 2 + Perseverance both
-        // visible at this zoom), and letting array-order win the
-        // tie surfaced the wrong card text on the wrong patch
-        // (image 21 feedback: card said "Viking 2 lander" while
-        // the highlighted rectangle was Perseverance).
-        let bestH: { siteId: string } | null = null;
-        if (selected) {
-          const selectedH = hotspots.find((h) => h.siteId === selected!.id);
-          if (selectedH && selectedH.currentTier > 0) {
-            bestH = { siteId: selectedH.siteId };
-          }
-        }
-        if (!bestH) {
-          let bestTier = 0;
-          for (const h of hotspots) {
-            if (h.currentTier > bestTier) {
-              bestTier = h.currentTier;
-              bestH = { siteId: h.siteId };
-            }
-          }
-        }
-        // Final fallback to the selected site when no hotspot is
-        // promoted yet — needed for the wider-zoom CTX window.
-        if (!bestH && selected) {
-          bestH = { siteId: selected.id };
-        }
-        const anyLayerVisible = regionalOpacity > 0.01 || detailOpacity > 0.01;
-        if (bestH && anyLayerVisible) {
-          const site = sites.find((s) => s.id === bestH!.siteId);
-          if (site) {
-            // Only count a layer if it has BOTH a source AND is actually
-            // ramping on screen right now. Without the opacity gate the
-            // card surfaced "DETAIL VIEW · HiRISE" while the user was
-            // still in the wide CTX-only window (image 2 2026-06-08
-            // feedback: "while I am on CTX, summary of imaging also
-            // says we see HiRISE"). 5 % thresholds let the card update
-            // a hair before the layer is visibly there, which feels
-            // right perceptually.
-            const hasRegional = !!site.hotspot_tier2_regional_source && regionalOpacity > 0.05;
-            const hasDetail = !!site.hotspot_tier2_source && detailOpacity > 0.05;
-            const agencyChip = nationChipFor(site);
-            const layers: TierLayer[] = [];
-            // Regional layer — honest per-planet attribution. Mars
-            // patches are 3072² JPEG crops of MRO CTX (Context
-            // Camera) mosaics: ~5 m/px native, ~15 km square crop.
-            // Moon patches are 3072² LROC NAC ROI mosaic crops, also
-            // ~5 m/px / ~15 km, same source URL as the detail layer
-            // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
-            if (hasRegional) {
-              if (config.planet === 'mars') {
-                layers.push({
-                  layerLabel: 'Regional view',
-                  sourceTitle: 'MRO CTX context mosaic',
-                  sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
-                  resolutionText: '~5 m/px (3072² crop · ~15 km)',
-                  sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
-                  licenseShort: 'PD-NASA',
-                  // CTX absolute georeferencing — typically ~100 m on
-                  // Mars (better in regions tied to HRSC / MOLA, worse
-                  // where it isn't). Honest middle estimate.
-                  uncertaintyM: 100,
-                });
-              } else {
-                // Moon regional layer — same LROC NAC ROI source as
-                // detail, but cropped at a wider 3072² window (~15 km).
-                // No separate Chang'e 2 / LROC WAC product needed; the
-                // NAC ROI mosaic at _5M.IMG resolution covers the
-                // full regional context with native quality.
-                layers.push({
-                  layerLabel: 'Regional view',
-                  sourceTitle: 'LROC NAC ROI regional mosaic',
-                  sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                  resolutionText: '~5 m/px (3072² crop · ~15 km)',
-                  sourceUrl: 'https://pds.lroc.im-ldi.com/',
-                  licenseShort: 'PD-NASA',
-                });
+          // Apply ramp to traverse layer (lines + dots + captions push
+          // themselves into tier2DelayedReveal). Combines with the
+          // TRAVERSES layer toggle: invisible if layer off OR camR
+          // too far for detail. End-dots pulse (sine wave) when active.
+          const travVisible = loadTraverses != null && layerTraverses && detailOpacity > 0.01;
+          for (const obj of tier2DelayedReveal) {
+            if (
+              obj.userData?.kind === 'traverse' ||
+              (obj as { userData?: { kind?: string } }).userData?.kind === 'traverse'
+            ) {
+              obj.visible = travVisible;
+              const mat = (obj as THREE.Line).material as THREE.Material & { opacity: number };
+              if (mat) {
+                mat.opacity = detailOpacity * 0.95;
+                mat.transparent = true;
               }
             }
-            if (hasDetail) {
-              // Per-planet detail-tier source attribution. Until 2026-06
-              // this was hardcoded to LROC NAC across all planets, which
-              // surfaced "LROC NAC ROI mosaic / NASA / GSFC / ASU LROC
-              // team" on Mars Tier-2 patches — false provenance, since
-              // the patches actually come from MRO HiRISE / CTX. Dispatch
-              // by config.planet so each route reads honest credit.
-              if (config.planet === 'mars') {
-                layers.push({
-                  layerLabel: 'Detail view',
-                  sourceTitle: 'HiRISE detail patch',
-                  sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
-                  // We serve 2048² JPEG crops of HiRISE products, which
-                  // works out to ~7 m/px on a typical landing-region
-                  // bounding box. Source HiRISE is ~0.25 m/px native;
-                  // raising the patch resolution is fetch-pipeline work
-                  // tracked separately.
-                  resolutionText: '~7 m/px (from HiRISE 0.25 m/px native)',
-                  sourceUrl: 'https://www.uahirise.org/',
-                  licenseShort: 'PD-NASA',
-                });
-              } else {
-                layers.push({
-                  layerLabel: 'Detail view',
-                  sourceTitle: 'LROC NAC ROI mosaic',
-                  sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                  resolutionText: '5 m/px',
-                  sourceUrl: 'https://pds.lroc.im-ldi.com/',
-                  licenseShort: 'PD-NASA',
+          }
+          if (loadTraverses != null) {
+            // Screen-pixel-stable sizing for every traverse marker
+            // (pins, end-dot, captions). World-fixed sizes turned the
+            // markers into screen-filling blobs at deep zoom and into
+            // invisible dots at wide zoom — neither read as a useful
+            // map. Compute the world units that correspond to ONE
+            // screen pixel at the camera's current distance to the
+            // patch, then size each marker for a fixed screen-pixel
+            // target (image 19 feedback, 2026-06-02).
+            //
+            // worldPerPx = (2 * d * tan(fovY/2)) / viewportH
+            // where d ≈ distance from camera to surface (camR - 30).
+            const surfaceDistance = Math.max(0.05, camR - 30);
+            const viewportH = renderer.domElement.clientHeight || window.innerHeight;
+            const worldPerPx =
+              (2 * surfaceDistance * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
+            // Target screen sizes (px). Smaller pin head reads as a
+            // map marker rather than a road sign; caption is large
+            // enough to scan-read; end-dot is a tight punctuation mark.
+            const pinHeightPx = 26;
+            const endDotPx = 8;
+            // Patch-pin (the green landing-site disc) gets a beefier
+            // target so the locator stays readable on top of HiRISE
+            // terrain even at the deepest sphere zoom. 14 px ≈ a clear
+            // map-marker dot without dominating the rectangle.
+            const patchPinPx = 14;
+            const captionWidthPx = 140;
+            // Pin sprite has base scale (1, 1.5, 1) and canvas 64×96,
+            // so the visible-height-to-base-Y-scale ratio is 1 (=> the
+            // base Y scale IS the world height when stopScale is 1).
+            const pinWorldH = pinHeightPx * worldPerPx;
+            const pinWorldW = (64 / 96) * pinWorldH;
+            // End-dot sphere geometry has radius 0.022u (diameter 0.044u).
+            // Target diameter in world units = endDotPx * worldPerPx.
+            const endDotScale = (endDotPx * worldPerPx) / 0.044;
+            // Patch-pin (green landing disc) has geometry radius 0.005u
+            // (diameter 0.01u). Per-frame scale to the same screen-px
+            // size as endDot so green + red read as a matched pair.
+            const patchPinScale = (patchPinPx * worldPerPx) / 0.01;
+            // White halo ring's geometry radius is 0.007 → diameter 0.014.
+            // Scale so its on-screen diameter sits ~3 px wider than the
+            // green core. Read as a single locator pip, not two rings.
+            const patchPinHaloScale = ((patchPinPx + 3) * worldPerPx) / 0.014;
+            for (const h of hotspots) {
+              if (!h.tier2Group) continue;
+              h.tier2Group.traverse((obj) => {
+                if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin') {
+                  obj.scale.set(patchPinScale, patchPinScale, 1);
+                } else if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin-halo') {
+                  obj.scale.set(patchPinHaloScale, patchPinHaloScale, 1);
+                }
+              });
+            }
+            // Caption inner sprite scale is (0.32 wide, 0.32*(96/512)
+            // tall) when buildTraverseCaption is called with worldSize
+            // 0.32 — so a group.scale multiplier of (target / 0.32)
+            // yields the requested screen width.
+            const captionScale = (captionWidthPx * worldPerPx) / 0.32;
+            // Caption position offsets — kept tight to the anchor so
+            // labels stick close to the start/end dots rather than
+            // floating off (caps-lock feedback after image 20).
+            const captionTangentOffsetPx = 30;
+            const captionRadialOffsetPx = 10;
+            const tangentOffsetWorld = captionTangentOffsetPx * worldPerPx;
+            const radialOffsetWorld = captionRadialOffsetPx * worldPerPx;
+            for (const tl of traverseLines) {
+              tl.line.visible = travVisible;
+              tl.endDot.visible = travVisible;
+              if (tl.startLabel) tl.startLabel.visible = travVisible;
+              if (tl.endLabel) tl.endLabel.visible = travVisible;
+              tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
+              const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
+              // No pulse — flat 95% opacity for active rovers, 85% for ended (was
+              // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
+              dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
+              tl.endDot.scale.setScalar(endDotScale);
+              // Reposition captions each frame so they sit ~70 px
+              // tangentially + ~30 px outward from the anchor dot
+              // regardless of zoom level. World-fixed offsets either
+              // overlapped the dot at wide zoom or floated 1000 px
+              // away at close zoom.
+              if (tl.startLabel) {
+                tl.startLabel.scale.setScalar(captionScale);
+                const startTangent = tl.tangent.clone().negate();
+                const startCaptionPos = tl.startAnchor
+                  .clone()
+                  .addScaledVector(startTangent, tangentOffsetWorld)
+                  .normalize()
+                  .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+                tl.startLabel.position.copy(startCaptionPos);
+                tl.startLabel.traverse((o) => {
+                  if (o instanceof THREE.Sprite) {
+                    const m2 = o.material as THREE.SpriteMaterial;
+                    m2.opacity = detailOpacity;
+                  }
                 });
               }
-            }
-            tierContext = buildTierContext({ site, agencyChip, layers });
-          }
-        } else if (tierContext !== null) {
-          tierContext = null;
-        }
-
-        // Sphere → flat-patch transition trigger (ADR-062). Once the
-        // camera crosses SPHERE_TO_FLAT_CAM_R = 30.3 with a region
-        // selected, start the entering-fade (sphere out, flat-patch
-        // in over 600 ms ease-in-out). Only TRIGGERS the entering
-        // phase — the back gesture reverses it.
-        //
-        // 2026-06-03 — bug fix: this trigger was previously nested
-        // INSIDE `if (showDebug)` along with the debug-only readouts.
-        // Without `?debug=1` the user could wheel-zoom all the way
-        // to the sphere camR floor (30.08) and flat-patch never
-        // fired — stuck at near-tangent camera with only the green
-        // patch-pin visible. Trigger lifted to top-level so it runs
-        // every frame; debug block below now contains only debug
-        // overlay state.
-        const SPHERE_TO_FLAT_CAM_R = 30.3;
-        if (
-          flatPatchPhase === 'hidden' &&
-          selected != null &&
-          selected.region_bounds != null &&
-          camR < SPHERE_TO_FLAT_CAM_R
-        ) {
-          if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
-          flatPatchPhase = 'entering';
-          flatPatchTransitionTimer = setTimeout(() => {
-            flatPatchPhase = 'visible';
-            flatPatchTransitionTimer = null;
-          }, FLAT_PATCH_FADE_MS);
-        }
-
-        if (showDebug) {
-          let maxAcross = 0;
-          for (const h of hotspots) if (h.maxTier > maxAcross) maxAcross = h.maxTier;
-          let curTop = 0;
-          for (const h of hotspots) if (h.currentTier > curTop) curTop = h.currentTier;
-          let tgtTop = 0;
-          for (const h of hotspots) if (h.targetTier > tgtTop) tgtTop = h.targetTier;
-          debugInfo.siteCount = sites.length;
-          debugInfo.hotspotCount = hotspots.length;
-          debugInfo.maxTierAcrossSites = maxAcross;
-          debugInfo.currentTopTier = curTop;
-          debugInfo.targetTopTier = tgtTop;
-          debugInfo.pageMode = hotspotsParam.value;
-          debugInfo.dispatcherMode = getHotspotMode();
-          debugInfo.camR = camR;
-          if (hotspots.length > 0) {
-            const h = hotspots[0];
-            const wp = new THREE.Vector3();
-            h.group.getWorldPosition(wp);
-            const canvasH = renderer.domElement.clientHeight || 1;
-            const distance = camera.position.distanceTo(wp);
-            const halfH = distance * Math.tan((camera.fov * Math.PI) / 360);
-            const pxPerUnit = canvasH / (2 * halfH);
-            debugInfo.projectedPxSample = `${h.siteId} dist=${distance.toFixed(1)}u px/u=${pxPerUnit.toFixed(0)}`;
-          }
-          let t2built = 0;
-          let t2visible = 0;
-          for (const h of hotspots) {
-            if (h.tier2Group) {
-              t2built++;
-              if (h.tier2Group.visible) t2visible++;
-            }
-          }
-          debugInfo.tier2Status = `${t2built} built / ${t2visible} visible`;
-          const h0 = hotspots[0];
-          if (h0?.tier2Group) {
-            const tg = h0.tier2Group;
-            const fmRef: Array<THREE.Mesh> = [];
-            tg.traverse((o) => {
-              if (fmRef.length === 0 && o instanceof THREE.Mesh) fmRef.push(o);
-            });
-            const firstMesh: THREE.Mesh | null = fmRef[0] ?? null;
-            const wp = new THREE.Vector3();
-            if (firstMesh) firstMesh.getWorldPosition(wp);
-            else tg.getWorldPosition(wp);
-            let cur: THREE.Object3D | null = tg as THREE.Object3D;
-            let hidden = false;
-            while (cur) {
-              if (!cur.visible) {
-                hidden = true;
-                break;
+              if (tl.endLabel) {
+                tl.endLabel.scale.setScalar(captionScale);
+                const endCaptionPos = tl.endAnchor
+                  .clone()
+                  .addScaledVector(tl.tangent, tangentOffsetWorld)
+                  .normalize()
+                  .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+                tl.endLabel.position.copy(endCaptionPos);
+                tl.endLabel.traverse((o) => {
+                  if (o instanceof THREE.Sprite) {
+                    const m2 = o.material as THREE.SpriteMaterial;
+                    m2.opacity = detailOpacity;
+                  }
+                });
               }
-              cur = cur.parent;
+              // Gate the in-between stop pins on a tighter threshold
+              // than the line — pins only make sense once HiRISE detail
+              // is substantially in (detailOpacity > 0.6 ≈ camR < ~31.5),
+              // otherwise they read as confetti scattered across an
+              // un-textured rectangle (image 21 feedback, 2026-06-03).
+              // Line + start/end + captions stay on the wider gate so
+              // the user gets a path-preview earlier in the zoom.
+              const stopPinsVisible = travVisible && detailOpacity > 0.6;
+              for (const sp of tl.stopPins) {
+                sp.visible = stopPinsVisible;
+                sp.scale.set(pinWorldW, pinWorldH, 1);
+                (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
+              }
             }
-            const reachable = !hidden;
-            const m = firstMesh
-              ? (firstMesh.material as THREE.Material & { opacity?: number })
-              : null;
-            debugInfo.patchDetail = `tg.children=${tg.children.length} tg.visible=${tg.visible} reachable=${reachable} meshVis=${firstMesh?.visible ?? '?'} matOp=${m?.opacity ?? '?'} worldR=${wp.length().toFixed(2)}`;
+          }
+
+          // Distance scale bar — visible whenever either tier-2 layer
+          // is fading in (regional CTX or detail HiRISE). Picks a
+          // "nice" 1 / 2 / 5 × 10ⁿ round-number km value whose pixel
+          // width is closest to TARGET_BAR_PX (≈ 110 px); the bar
+          // overlay below the canvas renders at the resolved width.
+          if (regionalOpacity > 0.01 || detailOpacity > 0.01) {
+            const surfaceDistanceForBar = Math.max(0.05, camR - 30);
+            const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
+            const worldPerPxForBar =
+              (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) /
+              viewportHForBar;
+            const kmPerWorldUnit = config.radiusKm / planetRadius;
+            const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
+            const TARGET_BAR_PX = 110;
+            const targetKm = kmPerPx * TARGET_BAR_PX;
+            const exp = Math.floor(Math.log10(targetKm));
+            const base = targetKm / Math.pow(10, exp);
+            let mantissa: number;
+            if (base < 1.5) mantissa = 1;
+            else if (base < 3.5) mantissa = 2;
+            else if (base < 7.5) mantissa = 5;
+            else mantissa = 10;
+            const niceKm = mantissa * Math.pow(10, exp);
+            const widthPx = niceKm / kmPerPx;
+            const label =
+              niceKm >= 1
+                ? `${niceKm} km`
+                : niceKm >= 0.001
+                  ? `${Math.round(niceKm * 1000)} m`
+                  : `${(niceKm * 1000).toFixed(1)} m`;
+            // Skip the assignment if values are unchanged — keeps
+            // Svelte from re-rendering the overlay every frame.
+            if (
+              !scaleBar ||
+              Math.abs(scaleBar.widthPx - widthPx) > 0.5 ||
+              scaleBar.label !== label
+            ) {
+              scaleBar = { widthPx, label };
+            }
+          } else if (scaleBar !== null) {
+            scaleBar = null;
+          }
+
+          // TierContext info card (PRD-014 §v0.7.x). Surfaces
+          // attribution for the layers currently composed on the
+          // patch. Trigger condition changed 2026-06-01: show the
+          // card whenever EITHER the regional ramp OR the detail
+          // ramp has anything visible, not only when the dispatcher
+          // has promoted a hotspot to Tier 2 (which fires at
+          // ~camR=38). Before this, the CTX context layer would
+          // fade in at camR 50-38 with no on-screen explanation of
+          // what the user was looking at (image 18 feedback).
+          // Prefer the user-selected site whenever it has any tier
+          // promotion — multiple hotspots can be at the same Tier 2
+          // simultaneously (e.g. Viking 2 + Perseverance both
+          // visible at this zoom), and letting array-order win the
+          // tie surfaced the wrong card text on the wrong patch
+          // (image 21 feedback: card said "Viking 2 lander" while
+          // the highlighted rectangle was Perseverance).
+          let bestH: { siteId: string } | null = null;
+          if (selected) {
+            const selectedH = hotspots.find((h) => h.siteId === selected!.id);
+            if (selectedH && selectedH.currentTier > 0) {
+              bestH = { siteId: selectedH.siteId };
+            }
+          }
+          if (!bestH) {
+            let bestTier = 0;
+            for (const h of hotspots) {
+              if (h.currentTier > bestTier) {
+                bestTier = h.currentTier;
+                bestH = { siteId: h.siteId };
+              }
+            }
+          }
+          // Final fallback to the selected site when no hotspot is
+          // promoted yet — needed for the wider-zoom CTX window.
+          if (!bestH && selected) {
+            bestH = { siteId: selected.id };
+          }
+          const anyLayerVisible = regionalOpacity > 0.01 || detailOpacity > 0.01;
+          if (bestH && anyLayerVisible) {
+            const site = sites.find((s) => s.id === bestH!.siteId);
+            if (site) {
+              // Only count a layer if it has BOTH a source AND is actually
+              // ramping on screen right now. Without the opacity gate the
+              // card surfaced "DETAIL VIEW · HiRISE" while the user was
+              // still in the wide CTX-only window (image 2 2026-06-08
+              // feedback: "while I am on CTX, summary of imaging also
+              // says we see HiRISE"). 5 % thresholds let the card update
+              // a hair before the layer is visibly there, which feels
+              // right perceptually.
+              const hasRegional = !!site.hotspot_tier2_regional_source && regionalOpacity > 0.05;
+              const hasDetail = !!site.hotspot_tier2_source && detailOpacity > 0.05;
+              const agencyChip = nationChipFor(site);
+              const layers: TierLayer[] = [];
+              // Regional layer — honest per-planet attribution. Mars
+              // patches are 3072² JPEG crops of MRO CTX (Context
+              // Camera) mosaics: ~5 m/px native, ~15 km square crop.
+              // Moon patches are 3072² LROC NAC ROI mosaic crops, also
+              // ~5 m/px / ~15 km, same source URL as the detail layer
+              // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
+              if (hasRegional) {
+                if (config.planet === 'mars') {
+                  layers.push({
+                    layerLabel: 'Regional view',
+                    sourceTitle: 'MRO CTX context mosaic',
+                    sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
+                    resolutionText: '~5 m/px (3072² crop · ~15 km)',
+                    sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
+                    licenseShort: 'PD-NASA',
+                    // CTX absolute georeferencing — typically ~100 m on
+                    // Mars (better in regions tied to HRSC / MOLA, worse
+                    // where it isn't). Honest middle estimate.
+                    uncertaintyM: 100,
+                  });
+                } else {
+                  // Moon regional layer — same LROC NAC ROI source as
+                  // detail, but cropped at a wider 3072² window (~15 km).
+                  // No separate Chang'e 2 / LROC WAC product needed; the
+                  // NAC ROI mosaic at _5M.IMG resolution covers the
+                  // full regional context with native quality.
+                  layers.push({
+                    layerLabel: 'Regional view',
+                    sourceTitle: 'LROC NAC ROI regional mosaic',
+                    sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
+                    resolutionText: '~5 m/px (3072² crop · ~15 km)',
+                    sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                    licenseShort: 'PD-NASA',
+                  });
+                }
+              }
+              if (hasDetail) {
+                // Per-planet detail-tier source attribution. Until 2026-06
+                // this was hardcoded to LROC NAC across all planets, which
+                // surfaced "LROC NAC ROI mosaic / NASA / GSFC / ASU LROC
+                // team" on Mars Tier-2 patches — false provenance, since
+                // the patches actually come from MRO HiRISE / CTX. Dispatch
+                // by config.planet so each route reads honest credit.
+                if (config.planet === 'mars') {
+                  layers.push({
+                    layerLabel: 'Detail view',
+                    sourceTitle: 'HiRISE detail patch',
+                    sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
+                    // We serve 2048² JPEG crops of HiRISE products, which
+                    // works out to ~7 m/px on a typical landing-region
+                    // bounding box. Source HiRISE is ~0.25 m/px native;
+                    // raising the patch resolution is fetch-pipeline work
+                    // tracked separately.
+                    resolutionText: '~7 m/px (from HiRISE 0.25 m/px native)',
+                    sourceUrl: 'https://www.uahirise.org/',
+                    licenseShort: 'PD-NASA',
+                  });
+                } else {
+                  layers.push({
+                    layerLabel: 'Detail view',
+                    sourceTitle: 'LROC NAC ROI mosaic',
+                    sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
+                    resolutionText: '5 m/px',
+                    sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                    licenseShort: 'PD-NASA',
+                  });
+                }
+              }
+              tierContext = buildTierContext({ site, agencyChip, layers });
+            }
+          } else if (tierContext !== null) {
+            tierContext = null;
+          }
+
+          // Sphere → flat-patch transition trigger (ADR-062). Once the
+          // camera crosses SPHERE_TO_FLAT_CAM_R = 30.3 with a region
+          // selected, start the entering-fade (sphere out, flat-patch
+          // in over 600 ms ease-in-out). Only TRIGGERS the entering
+          // phase — the back gesture reverses it.
+          //
+          // 2026-06-03 — bug fix: this trigger was previously nested
+          // INSIDE `if (showDebug)` along with the debug-only readouts.
+          // Without `?debug=1` the user could wheel-zoom all the way
+          // to the sphere camR floor (30.08) and flat-patch never
+          // fired — stuck at near-tangent camera with only the green
+          // patch-pin visible. Trigger lifted to top-level so it runs
+          // every frame; debug block below now contains only debug
+          // overlay state.
+          const SPHERE_TO_FLAT_CAM_R = 30.3;
+          if (
+            flatPatchPhase === 'hidden' &&
+            selected != null &&
+            selected.region_bounds != null &&
+            camR < SPHERE_TO_FLAT_CAM_R
+          ) {
+            if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
+            flatPatchPhase = 'entering';
+            flatPatchTransitionTimer = setTimeout(() => {
+              flatPatchPhase = 'visible';
+              flatPatchTransitionTimer = null;
+            }, FLAT_PATCH_FADE_MS);
+          }
+
+          if (showDebug) {
+            let maxAcross = 0;
+            for (const h of hotspots) if (h.maxTier > maxAcross) maxAcross = h.maxTier;
+            let curTop = 0;
+            for (const h of hotspots) if (h.currentTier > curTop) curTop = h.currentTier;
+            let tgtTop = 0;
+            for (const h of hotspots) if (h.targetTier > tgtTop) tgtTop = h.targetTier;
+            debugInfo.siteCount = sites.length;
+            debugInfo.hotspotCount = hotspots.length;
+            debugInfo.maxTierAcrossSites = maxAcross;
+            debugInfo.currentTopTier = curTop;
+            debugInfo.targetTopTier = tgtTop;
+            debugInfo.pageMode = hotspotsParam.value;
+            debugInfo.dispatcherMode = getHotspotMode();
+            debugInfo.camR = camR;
+            if (hotspots.length > 0) {
+              const h = hotspots[0];
+              const wp = new THREE.Vector3();
+              h.group.getWorldPosition(wp);
+              const canvasH = renderer.domElement.clientHeight || 1;
+              const distance = camera.position.distanceTo(wp);
+              const halfH = distance * Math.tan((camera.fov * Math.PI) / 360);
+              const pxPerUnit = canvasH / (2 * halfH);
+              debugInfo.projectedPxSample = `${h.siteId} dist=${distance.toFixed(1)}u px/u=${pxPerUnit.toFixed(0)}`;
+            }
+            let t2built = 0;
+            let t2visible = 0;
+            for (const h of hotspots) {
+              if (h.tier2Group) {
+                t2built++;
+                if (h.tier2Group.visible) t2visible++;
+              }
+            }
+            debugInfo.tier2Status = `${t2built} built / ${t2visible} visible`;
+            const h0 = hotspots[0];
+            if (h0?.tier2Group) {
+              const tg = h0.tier2Group;
+              const fmRef: Array<THREE.Mesh> = [];
+              tg.traverse((o) => {
+                if (fmRef.length === 0 && o instanceof THREE.Mesh) fmRef.push(o);
+              });
+              const firstMesh: THREE.Mesh | null = fmRef[0] ?? null;
+              const wp = new THREE.Vector3();
+              if (firstMesh) firstMesh.getWorldPosition(wp);
+              else tg.getWorldPosition(wp);
+              let cur: THREE.Object3D | null = tg as THREE.Object3D;
+              let hidden = false;
+              while (cur) {
+                if (!cur.visible) {
+                  hidden = true;
+                  break;
+                }
+                cur = cur.parent;
+              }
+              const reachable = !hidden;
+              const m = firstMesh
+                ? (firstMesh.material as THREE.Material & { opacity?: number })
+                : null;
+              debugInfo.patchDetail = `tg.children=${tg.children.length} tg.visible=${tg.visible} reachable=${reachable} meshVis=${firstMesh?.visible ?? '?'} matOp=${m?.opacity ?? '?'} worldR=${wp.length().toFixed(2)}`;
+            }
           }
         }
-      }
 
         if (view === '3d') composer.render();
         else draw2d();

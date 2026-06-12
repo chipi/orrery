@@ -5120,1522 +5120,1528 @@
         frameMonitor.tick();
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
-      // Polish-wave-3 cinematic-beat status — recomputed once per frame
-      // and reused by all per-concern updaters. W3.1 peak hold + W3.2
-      // afterglow + W3.7 cruise hold each freeze sim time; the lerp
-      // continues during the hold so iconic frames converge from a
-      // wide framing if the user scrubbed directly onto the moment.
-      // The afterglow comes AFTER the peak hold expires (Wernquist's
-      // Grand Finale grammar — 6 s of slow dolly recede with the world
-      // frozen behind, the way Cassini's mission ended).
-      const isPeakHoldingFrame = now < cine.peakHoldUntil;
-      const isAfterglowing = !isPeakHoldingFrame && now < cine.afterglowUntil;
-      const isCruiseHolding = now < cine.cruiseHoldUntil;
-      const isCinematicFreeze = isPeakHoldingFrame || isAfterglowing || isCruiseHolding;
+        // Polish-wave-3 cinematic-beat status — recomputed once per frame
+        // and reused by all per-concern updaters. W3.1 peak hold + W3.2
+        // afterglow + W3.7 cruise hold each freeze sim time; the lerp
+        // continues during the hold so iconic frames converge from a
+        // wide framing if the user scrubbed directly onto the moment.
+        // The afterglow comes AFTER the peak hold expires (Wernquist's
+        // Grand Finale grammar — 6 s of slow dolly recede with the world
+        // frozen behind, the way Cassini's mission ended).
+        const isPeakHoldingFrame = now < cine.peakHoldUntil;
+        const isAfterglowing = !isPeakHoldingFrame && now < cine.afterglowUntil;
+        const isCruiseHolding = now < cine.cruiseHoldUntil;
+        const isCinematicFreeze = isPeakHoldingFrame || isAfterglowing || isCruiseHolding;
 
-      updateCruiseHoldArming(now);
-      updateCutOverlay(now);
-      updateChromeSuppression(isPeakHoldingFrame, isAfterglowing, isCruiseHolding, now);
+        updateCruiseHoldArming(now);
+        updateCutOverlay(now);
+        updateChromeSuppression(isPeakHoldingFrame, isAfterglowing, isCruiseHolding, now);
 
-      if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
-        simDay += dt * simSpeed;
-        if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
-      }
-      // Cinematic cruise motion — three subtle, slow oscillations
-      // layered on top of each other so the camera never feels static
-      // during long cruise spans (Voyager 2's ~12-year cruise is
-      // ~60 wall-clock minutes at 90× simSpeed; the cruise phase
-      // can't be a held shot). All skipped under reduced-motion,
-      // while the user is dragging, during a sub-phase lerp, and
-      // during Moon-mode.
-      // - Azimuthal drift: slow horizontal orbit around the target.
-      // - Zoom breathing: camR oscillates ±15 % over a 90-second wall-
-      //   clock cycle — gentle "in / out" motion.
-      // - Tilt drift: camP oscillates ±0.10 rad over a 180-second
-      //   cycle — adds elevation parallax.
-      // Polish-wave-3 Fix A — sim-speed factor scales every camT arc
-      // rotation + the cruise zoom/tilt lerps. Same problem as the
-      // main lerp/track block: the rotations were tuned for 7 d/s.
-      // At 30 d/s an entire Cassini Jupiter→Saturn cruise takes ~43
-      // wall-clock seconds; the 0.05 rad/s cruise rotation = 2.15 rad
-      // total = ~123° of azimuth swing. The cinematic motion was
-      // designed for slow play; at high speeds the rotations get
-      // overwhelmed by the world racing past. Scaling them keeps the
-      // visual cadence consistent with the simulation speed.
-      const simSpeedFactor = Math.max(1, simSpeed / 7);
-      if (
-        !isMoonMission &&
-        !reducedMotion &&
-        !isDrag &&
-        !helioAutoZoomActive &&
-        (lastHelioSubPhase === 'cruise-out' || lastHelioSubPhase === 'cruise-back')
-      ) {
-        camT += 0.05 * dt * simSpeedFactor;
-        const t = now * 0.001; // seconds
-        // Zoom breathing — modulate around the steady-state cruise
-        // target radius. helioAutoZoomTargetR holds the cruise-wide
-        // value; we add a sinusoid on top so camR breathes.
-        const ZOOM_AMP = helioAutoZoomTargetR * 0.15;
-        const zoomOsc = Math.sin((t * (Math.PI * 2)) / 90) * ZOOM_AMP;
-        camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005 * simSpeedFactor;
-        // Tilt drift — modulate camP around cruise default.
-        const TILT_AMP = 0.1;
-        const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
-        camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005 * simSpeedFactor;
-      }
-      // #82 epilogue — slow azimuthal rotation around the Sun so the
-      // tableau visibly rotates while the audience reads the trajectory
-      // arc. 0.04 rad/s × dt × simSpeedFactor keeps the rotation
-      // cinematic at all sim speeds (though sim is paused in arrived
-      // state, so simSpeedFactor=1 effectively).
-      if (!isMoonMission && !reducedMotion && !isDrag && epilogueActive) {
-        camT += 0.04 * dt;
-      }
-      // #86 — same slow azimuthal rotation during the opening's wide
-      // phase. Halts once the camera starts lerping to Earth closeup
-      // so the composition settles into prelaunch.
-      if (!isMoonMission && !reducedMotion && !isDrag && openingActive) {
-        const elapsedO = openingStartedAt > 0 ? performance.now() - openingStartedAt : 0;
-        if (elapsedO < openingDurationMs - 1000) {
+        if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
+          simDay += dt * simSpeed;
+          if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
+        }
+        // Cinematic cruise motion — three subtle, slow oscillations
+        // layered on top of each other so the camera never feels static
+        // during long cruise spans (Voyager 2's ~12-year cruise is
+        // ~60 wall-clock minutes at 90× simSpeed; the cruise phase
+        // can't be a held shot). All skipped under reduced-motion,
+        // while the user is dragging, during a sub-phase lerp, and
+        // during Moon-mode.
+        // - Azimuthal drift: slow horizontal orbit around the target.
+        // - Zoom breathing: camR oscillates ±15 % over a 90-second wall-
+        //   clock cycle — gentle "in / out" motion.
+        // - Tilt drift: camP oscillates ±0.10 rad over a 180-second
+        //   cycle — adds elevation parallax.
+        // Polish-wave-3 Fix A — sim-speed factor scales every camT arc
+        // rotation + the cruise zoom/tilt lerps. Same problem as the
+        // main lerp/track block: the rotations were tuned for 7 d/s.
+        // At 30 d/s an entire Cassini Jupiter→Saturn cruise takes ~43
+        // wall-clock seconds; the 0.05 rad/s cruise rotation = 2.15 rad
+        // total = ~123° of azimuth swing. The cinematic motion was
+        // designed for slow play; at high speeds the rotations get
+        // overwhelmed by the world racing past. Scaling them keeps the
+        // visual cadence consistent with the simulation speed.
+        const simSpeedFactor = Math.max(1, simSpeed / 7);
+        if (
+          !isMoonMission &&
+          !reducedMotion &&
+          !isDrag &&
+          !helioAutoZoomActive &&
+          (lastHelioSubPhase === 'cruise-out' || lastHelioSubPhase === 'cruise-back')
+        ) {
+          camT += 0.05 * dt * simSpeedFactor;
+          const t = now * 0.001; // seconds
+          // Zoom breathing — modulate around the steady-state cruise
+          // target radius. helioAutoZoomTargetR holds the cruise-wide
+          // value; we add a sinusoid on top so camR breathes.
+          const ZOOM_AMP = helioAutoZoomTargetR * 0.15;
+          const zoomOsc = Math.sin((t * (Math.PI * 2)) / 90) * ZOOM_AMP;
+          camR += (helioAutoZoomTargetR + zoomOsc - camR) * 0.005 * simSpeedFactor;
+          // Tilt drift — modulate camP around cruise default.
+          const TILT_AMP = 0.1;
+          const tiltOsc = Math.sin((t * (Math.PI * 2)) / 180) * TILT_AMP;
+          camP += (HELIO_CRUISE_P + tiltOsc - camP) * 0.005 * simSpeedFactor;
+        }
+        // #82 epilogue — slow azimuthal rotation around the Sun so the
+        // tableau visibly rotates while the audience reads the trajectory
+        // arc. 0.04 rad/s × dt × simSpeedFactor keeps the rotation
+        // cinematic at all sim speeds (though sim is paused in arrived
+        // state, so simSpeedFactor=1 effectively).
+        if (!isMoonMission && !reducedMotion && !isDrag && epilogueActive) {
           camT += 0.04 * dt;
         }
-      }
-      // Approach sweep — slow azimuthal arc around the ship-dest
-      // midpoint during the final outbound leg. Paired with the
-      // wide → close framing lerp (see updateHelioAutoZoomTargets
-      // 'approach' branch), this gives the audience the choreographed
-      // "zoom out, zoom in, rotate, follow ship, come to planet"
-      // sequence the user asked for at the Saturn arrival.
-      if (
-        !isMoonMission &&
-        !reducedMotion &&
-        !isDrag &&
-        !helioAutoZoomActive &&
-        lastHelioSubPhase === 'approach'
-      ) {
-        // 0.08 rad/s — a touch faster than cruise (0.05) so the
-        // rotation is visibly an "arc around the destination", not
-        // just the slow cruise breathing.
-        camT += 0.08 * dt * simSpeedFactor;
-      }
-      // Flyby cinema sweep — slow azimuthal orbit + gentle pitch tilt
-      // around the body during a flyby sub-phase. Borrows from the
-      // NASA mission-art reference set (Cassini-Saturn, Juno-Jupiter,
-      // Galileo-Jupiter): the body holds frame while the camera arcs
-      // around it, giving the moment a "hero shot" feel instead of a
-      // static planet-centered lookup. Skipped under reduced-motion,
-      // while the user is dragging, and during the initial sub-phase
-      // lerp so the camera settles before the sweep starts.
-      // Polish-wave-3 W3.1 — peak-hold arming + re-arm reset.
-      // Runs EVERY frame (not gated on flyby sub-phase OR on
-      // !helioAutoZoomActive) so:
-      //   1. The reset fires when the user scrubs out of a held
-      //      flyby into launch / cruise / arrived states — otherwise
-      //      cine.peakHoldArmedForFlybyMet stays stale and re-jumping to
-      //      the same flyby never re-arms.
-      //   2. The ARM fires the instant we're inside the ±0.5 sim-day
-      //      window of a flyby moment — even if the cinematic lerp
-      //      hasn't converged yet. Gating arming on !helioAutoZoomActive
-      //      meant the camera kept lerping right through the held
-      //      window when the previous framing was far from the new
-      //      cinema target (e.g. scrubbing from launch wide R=50 to a
-      //      flyby R=13).
-      //
-      // Source of truth for "are we in a flyby right now": parse
-      // lastHelioSubPhase (e.g. "flyby-193-venus"). __flyDebug isn't
-      // refreshed when no flyby is active — it stays stale at the
-      // previous flyby's MET — so reading from there made the reset
-      // think we were still in the prior flyby. lastHelioSubPhase IS
-      // updated every frame by updateHelioAutoZoomTargets. The parse
-      // lives in $lib/fly-cinematic-beats so the regex is a single
-      // source of truth + unit-tested.
-      const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
-      if (cine.peakHoldArmedForFlybyMet != null) {
-        const sameFlyby = currentFrameFlybyMet === cine.peakHoldArmedForFlybyMet;
-        const outsidePeakDays =
-          Math.abs(simDay - (arcTimeline.dep_day + cine.peakHoldArmedForFlybyMet)) >
-          FLYBY_PEAK_DAYS;
-        if (!sameFlyby || outsidePeakDays) {
-          cine.peakHoldArmedForFlybyMet = null;
-        }
-      }
-      // Arm — independent of helioAutoZoomActive. The held composition
-      // is whatever the camera currently shows at the moment we enter
-      // the ±0.5 sim-day window; the lerp gate up in the camera lerp
-      // block freezes the lerp the moment cine.peakHoldUntil is in the
-      // future, so the audience reads a deliberate hold even if it
-      // catches mid-lerp.
-      if (!isMoonMission && !reducedMotion && !isDrag && currentFrameFlybyMet != null) {
-        // ICONIC MOMENT FREEZE — fire peak hold a few days BEFORE the
-        // mathematical closest-approach point, NOT at the exact peak.
-        // At exact closest approach the spacecraft is at ~0.1 scene
-        // units from the planet (for inner-system flybys with ~300 km
-        // altitude), which puts the ship INSIDE the planet's render
-        // sphere (radius ~2.5). No camera angle can show the ship at
-        // that moment — it's geometrically inside the opaque mesh.
-        // 5 days before peak the ship is far enough from the planet
-        // to be a visible foreground silhouette against the planet's
-        // disc — the actual "iconic Cassini-mission-art moment."
-        const ICONIC_LEAD_DAYS = 2;
-        const peakHoldRadius = 0.5;
-        const iconicPeakSimDay = arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
-        const inHeldWindow = Math.abs(simDay - iconicPeakSimDay) < peakHoldRadius;
-        if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
-          // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
-          // home-planet moment lingers. The lerp keeps converging
-          // toward the iconic frame during the hold; longer hold =
-          // tighter settle and longer emotional dwell.
-          const activeFlybyEvtForHold = mission.flight?.events?.find(
-            (e) => e.met_days === currentFrameFlybyMet,
-          );
-          const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
-          const holdMs = isEarthHold ? 4000 : 2500;
-          cine.peakHoldUntil = performance.now() + holdMs;
-          cine.peakHoldArmedForFlybyMet = currentFrameFlybyMet;
-          // W3.2 — pre-arm the afterglow window so it kicks in the
-          // instant the hold expires. Start values get captured at
-          // hold-expiry (see lerp block) — at that point the camera
-          // has had 2.5 s to converge onto the iconic frame, so the
-          // start is the converged composition.
-          cine.afterglowUntil = cine.peakHoldUntil + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
-          // Clear last flyby's captured afterglow start so this flyby's
-          // afterglow re-captures fresh values when its hold expires.
-          cine.afterglowStartCamR = 0;
-        }
-      }
-      if (
-        !isMoonMission &&
-        !reducedMotion &&
-        !isDrag &&
-        !helioAutoZoomActive &&
-        lastHelioSubPhase?.startsWith('flyby-')
-      ) {
-        // Parallax orbit — camera arcs around the body during the
-        // flyby cinema. Default 0.05 rad/s during approach + depart;
-        // boosted 3× during the FLYBY_PEAK_DAYS window (closest-
-        // approach beat). The boost creates the "camera moves while
-        // the ship holds" cinematic — the camera-disagree principle
-        // (shot-language guide P6). Without it the flyby reads as
-        // static.
-        const flybyMetActive = currentFrameFlybyMet;
-        const inPeak =
-          flybyMetActive != null &&
-          Math.abs(simDay - (arcTimeline.dep_day + flybyMetActive)) < FLYBY_PEAK_DAYS;
-        // Arming was hoisted to the frame-top block (runs every frame
-        // so it fires even mid-lerp). Here we only honour the active
-        // cine.peakHoldUntil window to suppress the parallax arc rotation +
-        // pitch breathing — during the hold and the afterglow the
-        // camera should hold entirely still / pure-dolly, not arc.
-        if (!isCinematicFreeze) {
-          if (helioFlybyDesiredCamT !== null) {
-            // Anti-occlusion lerp — pull camT toward the perpendicular
-            // azimuth so the planet doesn't sit between the camera and
-            // the spacecraft. Shortest-arc delta so the swing never
-            // takes the long way around. Faster lerp during peak so
-            // the iconic frame settles by the hold instant. Layer a
-            // small idle oscillation on top so the camera still has
-            // motion (camera-disagree principle) without re-introducing
-            // the free-spin occlusion bug.
-            const TAU = Math.PI * 2;
-            let delta = (((helioFlybyDesiredCamT - camT) % TAU) + TAU) % TAU;
-            if (delta > Math.PI) delta -= TAU;
-            // Bumped 4× over the original — the choreography's
-            // desiredCamT moves ~0.55 rad/sec during the pan window,
-            // and at the old 0.025/0.06 rates the steady-state lag was
-            // ~21°, leaving the camera still converging WHEN the ship
-            // hit peak (user-reported "ship goes through planet, then
-            // scene pauses, THEN camera rotates"). At 0.10 normal /
-            // 0.25 peak, steady-state lag drops below 5° so the
-            // camera arrives at the iconic frame well before peak and
-            // just holds.
-            const lerpRate = inPeak ? 0.25 : 0.1;
-            camT += delta * lerpRate * dt * simSpeedFactor * 60;
-            // Small ±0.02 rad oscillation (~1.1°) over a 12 s cycle so
-            // the camera breathes even after it settles into framing.
-            const oscPhase = (now * 0.001 * (Math.PI * 2)) / 12;
-            camT += Math.cos(oscPhase) * 0.0008 * dt * 60;
-          } else {
-            // Fix A — scale by simSpeed for consistent visual cadence at
-            // high speeds (same reason the cruise/approach arcs scale).
-            camT += (inPeak ? 0.15 : 0.05) * dt * simSpeedFactor;
+        // #86 — same slow azimuthal rotation during the opening's wide
+        // phase. Halts once the camera starts lerping to Earth closeup
+        // so the composition settles into prelaunch.
+        if (!isMoonMission && !reducedMotion && !isDrag && openingActive) {
+          const elapsedO = openingStartedAt > 0 ? performance.now() - openingStartedAt : 0;
+          if (elapsedO < openingDurationMs - 1000) {
+            camT += 0.04 * dt;
           }
-          // Gentle pitch breathing around the approach tilt, ±0.05 rad
-          // over a 30-second cycle — adds parallax without making the
-          // ecliptic plane swing too far.
-          const t = now * 0.001;
-          const TILT_AMP = 0.05;
-          const tiltOsc = Math.sin((t * (Math.PI * 2)) / 30) * TILT_AMP;
-          camP += (HELIO_APPROACH_P + tiltOsc - camP) * 0.008;
         }
-      }
-      // Re-aim the helio camera each frame so the sub-phase auto-zoom
-      // lerps (depart → cruise → approach → arrival) actually advance —
-      // updateHelioAutoZoomTargets needs to be re-sampled with the
-      // live spacecraft + planet positions and the lerp inside updateCam
-      // has to run per-frame to converge. Moon-mode additionally needs
-      // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
-      updateCam();
+        // Approach sweep — slow azimuthal arc around the ship-dest
+        // midpoint during the final outbound leg. Paired with the
+        // wide → close framing lerp (see updateHelioAutoZoomTargets
+        // 'approach' branch), this gives the audience the choreographed
+        // "zoom out, zoom in, rotate, follow ship, come to planet"
+        // sequence the user asked for at the Saturn arrival.
+        if (
+          !isMoonMission &&
+          !reducedMotion &&
+          !isDrag &&
+          !helioAutoZoomActive &&
+          lastHelioSubPhase === 'approach'
+        ) {
+          // 0.08 rad/s — a touch faster than cruise (0.05) so the
+          // rotation is visibly an "arc around the destination", not
+          // just the slow cruise breathing.
+          camT += 0.08 * dt * simSpeedFactor;
+        }
+        // Flyby cinema sweep — slow azimuthal orbit + gentle pitch tilt
+        // around the body during a flyby sub-phase. Borrows from the
+        // NASA mission-art reference set (Cassini-Saturn, Juno-Jupiter,
+        // Galileo-Jupiter): the body holds frame while the camera arcs
+        // around it, giving the moment a "hero shot" feel instead of a
+        // static planet-centered lookup. Skipped under reduced-motion,
+        // while the user is dragging, and during the initial sub-phase
+        // lerp so the camera settles before the sweep starts.
+        // Polish-wave-3 W3.1 — peak-hold arming + re-arm reset.
+        // Runs EVERY frame (not gated on flyby sub-phase OR on
+        // !helioAutoZoomActive) so:
+        //   1. The reset fires when the user scrubs out of a held
+        //      flyby into launch / cruise / arrived states — otherwise
+        //      cine.peakHoldArmedForFlybyMet stays stale and re-jumping to
+        //      the same flyby never re-arms.
+        //   2. The ARM fires the instant we're inside the ±0.5 sim-day
+        //      window of a flyby moment — even if the cinematic lerp
+        //      hasn't converged yet. Gating arming on !helioAutoZoomActive
+        //      meant the camera kept lerping right through the held
+        //      window when the previous framing was far from the new
+        //      cinema target (e.g. scrubbing from launch wide R=50 to a
+        //      flyby R=13).
+        //
+        // Source of truth for "are we in a flyby right now": parse
+        // lastHelioSubPhase (e.g. "flyby-193-venus"). __flyDebug isn't
+        // refreshed when no flyby is active — it stays stale at the
+        // previous flyby's MET — so reading from there made the reset
+        // think we were still in the prior flyby. lastHelioSubPhase IS
+        // updated every frame by updateHelioAutoZoomTargets. The parse
+        // lives in $lib/fly-cinematic-beats so the regex is a single
+        // source of truth + unit-tested.
+        const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
+        if (cine.peakHoldArmedForFlybyMet != null) {
+          const sameFlyby = currentFrameFlybyMet === cine.peakHoldArmedForFlybyMet;
+          const outsidePeakDays =
+            Math.abs(simDay - (arcTimeline.dep_day + cine.peakHoldArmedForFlybyMet)) >
+            FLYBY_PEAK_DAYS;
+          if (!sameFlyby || outsidePeakDays) {
+            cine.peakHoldArmedForFlybyMet = null;
+          }
+        }
+        // Arm — independent of helioAutoZoomActive. The held composition
+        // is whatever the camera currently shows at the moment we enter
+        // the ±0.5 sim-day window; the lerp gate up in the camera lerp
+        // block freezes the lerp the moment cine.peakHoldUntil is in the
+        // future, so the audience reads a deliberate hold even if it
+        // catches mid-lerp.
+        if (!isMoonMission && !reducedMotion && !isDrag && currentFrameFlybyMet != null) {
+          // ICONIC MOMENT FREEZE — fire peak hold a few days BEFORE the
+          // mathematical closest-approach point, NOT at the exact peak.
+          // At exact closest approach the spacecraft is at ~0.1 scene
+          // units from the planet (for inner-system flybys with ~300 km
+          // altitude), which puts the ship INSIDE the planet's render
+          // sphere (radius ~2.5). No camera angle can show the ship at
+          // that moment — it's geometrically inside the opaque mesh.
+          // 5 days before peak the ship is far enough from the planet
+          // to be a visible foreground silhouette against the planet's
+          // disc — the actual "iconic Cassini-mission-art moment."
+          const ICONIC_LEAD_DAYS = 2;
+          const peakHoldRadius = 0.5;
+          const iconicPeakSimDay = arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
+          const inHeldWindow = Math.abs(simDay - iconicPeakSimDay) < peakHoldRadius;
+          if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
+            // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
+            // home-planet moment lingers. The lerp keeps converging
+            // toward the iconic frame during the hold; longer hold =
+            // tighter settle and longer emotional dwell.
+            const activeFlybyEvtForHold = mission.flight?.events?.find(
+              (e) => e.met_days === currentFrameFlybyMet,
+            );
+            const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
+              .toLowerCase()
+              .includes('earth');
+            const holdMs = isEarthHold ? 4000 : 2500;
+            cine.peakHoldUntil = performance.now() + holdMs;
+            cine.peakHoldArmedForFlybyMet = currentFrameFlybyMet;
+            // W3.2 — pre-arm the afterglow window so it kicks in the
+            // instant the hold expires. Start values get captured at
+            // hold-expiry (see lerp block) — at that point the camera
+            // has had 2.5 s to converge onto the iconic frame, so the
+            // start is the converged composition.
+            cine.afterglowUntil = cine.peakHoldUntil + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
+            // Clear last flyby's captured afterglow start so this flyby's
+            // afterglow re-captures fresh values when its hold expires.
+            cine.afterglowStartCamR = 0;
+          }
+        }
+        if (
+          !isMoonMission &&
+          !reducedMotion &&
+          !isDrag &&
+          !helioAutoZoomActive &&
+          lastHelioSubPhase?.startsWith('flyby-')
+        ) {
+          // Parallax orbit — camera arcs around the body during the
+          // flyby cinema. Default 0.05 rad/s during approach + depart;
+          // boosted 3× during the FLYBY_PEAK_DAYS window (closest-
+          // approach beat). The boost creates the "camera moves while
+          // the ship holds" cinematic — the camera-disagree principle
+          // (shot-language guide P6). Without it the flyby reads as
+          // static.
+          const flybyMetActive = currentFrameFlybyMet;
+          const inPeak =
+            flybyMetActive != null &&
+            Math.abs(simDay - (arcTimeline.dep_day + flybyMetActive)) < FLYBY_PEAK_DAYS;
+          // Arming was hoisted to the frame-top block (runs every frame
+          // so it fires even mid-lerp). Here we only honour the active
+          // cine.peakHoldUntil window to suppress the parallax arc rotation +
+          // pitch breathing — during the hold and the afterglow the
+          // camera should hold entirely still / pure-dolly, not arc.
+          if (!isCinematicFreeze) {
+            if (helioFlybyDesiredCamT !== null) {
+              // Anti-occlusion lerp — pull camT toward the perpendicular
+              // azimuth so the planet doesn't sit between the camera and
+              // the spacecraft. Shortest-arc delta so the swing never
+              // takes the long way around. Faster lerp during peak so
+              // the iconic frame settles by the hold instant. Layer a
+              // small idle oscillation on top so the camera still has
+              // motion (camera-disagree principle) without re-introducing
+              // the free-spin occlusion bug.
+              const TAU = Math.PI * 2;
+              let delta = (((helioFlybyDesiredCamT - camT) % TAU) + TAU) % TAU;
+              if (delta > Math.PI) delta -= TAU;
+              // Bumped 4× over the original — the choreography's
+              // desiredCamT moves ~0.55 rad/sec during the pan window,
+              // and at the old 0.025/0.06 rates the steady-state lag was
+              // ~21°, leaving the camera still converging WHEN the ship
+              // hit peak (user-reported "ship goes through planet, then
+              // scene pauses, THEN camera rotates"). At 0.10 normal /
+              // 0.25 peak, steady-state lag drops below 5° so the
+              // camera arrives at the iconic frame well before peak and
+              // just holds.
+              const lerpRate = inPeak ? 0.25 : 0.1;
+              camT += delta * lerpRate * dt * simSpeedFactor * 60;
+              // Small ±0.02 rad oscillation (~1.1°) over a 12 s cycle so
+              // the camera breathes even after it settles into framing.
+              const oscPhase = (now * 0.001 * (Math.PI * 2)) / 12;
+              camT += Math.cos(oscPhase) * 0.0008 * dt * 60;
+            } else {
+              // Fix A — scale by simSpeed for consistent visual cadence at
+              // high speeds (same reason the cruise/approach arcs scale).
+              camT += (inPeak ? 0.15 : 0.05) * dt * simSpeedFactor;
+            }
+            // Gentle pitch breathing around the approach tilt, ±0.05 rad
+            // over a 30-second cycle — adds parallax without making the
+            // ecliptic plane swing too far.
+            const t = now * 0.001;
+            const TILT_AMP = 0.05;
+            const tiltOsc = Math.sin((t * (Math.PI * 2)) / 30) * TILT_AMP;
+            camP += (HELIO_APPROACH_P + tiltOsc - camP) * 0.008;
+          }
+        }
+        // Re-aim the helio camera each frame so the sub-phase auto-zoom
+        // lerps (depart → cruise → approach → arrival) actually advance —
+        // updateHelioAutoZoomTargets needs to be re-sampled with the
+        // live spacecraft + planet positions and the lerp inside updateCam
+        // has to run per-frame to converge. Moon-mode additionally needs
+        // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
+        updateCam();
 
-      // Moon-mode rendering: heliocentric, same framing as Mars.
-      // Sun + Earth orbit visible in the background; Earth at its
-      // live heliocentric position; Moon orbits Earth at the
-      // exaggerated MOON_FLY_RADIUS_AU (real Earth-Moon distance is
-      // sub-pixel at this scale). The cislunar arc runs from
-      // Earth-at-dep to Moon-at-arr in heliocentric AU. Mars + Mars
-      // orbit hidden so the scene focuses on Earth+Moon.
-      if (isMoonMission) {
-        marsMesh.visible = false;
-        sunCore.visible = true;
-        sunGlow.visible = true;
-        earthOrbitLine.visible = true;
-        helioHandles.setDestinationOrbitVisible(false);
-        moonMesh.visible = true;
-        const ePos = earthPos(simDay);
-        const mPos = moonHelioPos(simDay);
-        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-        moonMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
-        // Track Moon's orbit ring to Earth's heliocentric position so
-        // it stays centred on Earth as both drift around the Sun.
-        if (moonOrbitRing && moonOrbitRing.visible) {
-          moonOrbitRing.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-        }
-      } else {
-        marsMesh.visible = true;
-        sunCore.visible = true;
-        // Sun glow halo dominates the frame during the iconic-photo
-        // flyby cinema (the 20u additive halo overpowers a planet
-        // that fills only ~6u in radius), so hide it while a flyby
-        // sub-phase is active. Restored once cruise resumes.
-        sunGlow.visible = !lastHelioSubPhase?.startsWith('flyby-');
-        earthOrbitLine.visible = true;
-        helioHandles.setDestinationOrbitVisible(true);
-        moonMesh.visible = false;
-        if (moonOrbitRing) moonOrbitRing.visible = false;
-        // Earth + Mars orbit the Sun in real time as the spacecraft
-        // flies. The fixed convergence points (where Earth was at
-        // launch and where Mars will be at arrival) are marked by
-        // the persistent LAUNCH / ARRIVAL anchor rings, which stay
-        // pinned to outPts[0] and outPts[N-1] in the marker $effect.
-        // Separating "live planet body" from "mission anchor" lets
-        // the user watch Mars travel along its orbit toward the
-        // arrival ring as the spacecraft transits.
-        const ePos = earthPos(simDay);
-        // Destination position uses the active mission's target body,
-        // not always Mars. Jupiter / Saturn / Neptune / Pluto / Ceres
-        // missions now render their actual target instead of a
-        // confusing Mars stand-in.
-        const mPos = destinationPos(simDay, activeDestination);
-        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-        marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
-        // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
-        helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
-        helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
-        helioHandles.updateMoonsForParent('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D, simDay);
-        // Context planets — per-frame position updates for any non-
-        // active planet rendered for grand-tour context. Each mesh
-        // tracks its heliocentric position at simDay so the user
-        // sees Venus where Venus was when Cassini did its flybys,
-        // Jupiter where it was when Voyager 2 swung past, etc.
-        for (const [planetId, mesh] of helioHandles.contextPlanets) {
-          if (!mesh.visible) continue;
-          const p = destinationPos(simDay, planetId);
-          mesh.position.set(p.x * SCALE_3D, 0, p.z * SCALE_3D);
-          // Hill sphere + Lagrange overlays follow the planet; they
-          // hide via setHillSpheresVisible / setLagrangePointsVisible
-          // when the lens layer is off, so this update is cheap when
-          // unused (just position writes — no geometry rebuild).
-          helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
-          helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
-          helioHandles.updateMoonsForParent(planetId, p.x * SCALE_3D, p.z * SCALE_3D, simDay);
-        }
-        // Active destination also gets moon updates so Jupiter/Saturn
-        // missions (Cassini, Juno, Voyager) show their moons at the
-        // destination they're rendering live.
-        helioHandles.updateMoonsForParent(
-          activeDestination,
-          mPos.x * SCALE_3D,
-          mPos.z * SCALE_3D,
-          simDay,
-        );
-        // Active destination — its Hill sphere lives in the same
-        // entries map, keyed by planet id.
-        helioHandles.updateHillSphereForBody(
-          activeDestination,
-          mPos.x * SCALE_3D,
-          mPos.z * SCALE_3D,
-        );
-        helioHandles.updateMagnetosphereForBody(
-          activeDestination,
-          mPos.x * SCALE_3D,
-          mPos.z * SCALE_3D,
-        );
-      }
-
-      const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
-      // Sprite glyph sits at sc.pos. No lookAt — sprites face the
-      // camera by construction so the glyph is always centred on the
-      // arc regardless of curvature.
-      scSprite.position.set(sc.pos.x * SCALE_3D, (sc.pos.y ?? 0) * SCALE_3D, sc.pos.z * SCALE_3D);
-      // Per-mission 3D model rides the same position. Visibility +
-      // arrival-hide handled by the same code path that owns scSprite
-      // a few lines below; here we only update the transform.
-      if (scModel) {
-        scModel.position.copy(scSprite.position);
-      }
-      // During flyby cinema the camera is tight on the planet (camR =
-      // 2.4 × body radius). The default 4×4 sprite + 3.0 model scale
-      // are sized for cruise — at flyby they swamp the planet and
-      // look 'cartoonish'. Scale down so the ship reads as a
-      // foreground accent against the body, matching the NASA mission-
-      // art compositions. Outside the cinema window the ship goes
-      // back to its cruise scale.
-      // Cinema also offsets the ship TOWARD the camera so the 3D
-      // model sits geometrically in front of the planet body — the
-      // hero-shot composition from the NASA mission-art reference
-      // set (Cassini-Saturn, Juno-Jupiter): ship as foreground accent,
-      // planet limb behind. Without this offset, even with the +y
-      // waypoint anchor, the camera-elevation angle could still put
-      // the model behind the planet's z-range and the planet's
-      // opaque MeshPhongMaterial occludes it.
-      if (lastHelioSubPhase?.startsWith('flyby-')) {
-        // Push the ship toward the camera by the flyby body's radius
-        // — enough to clear the planet's front face. activeFlybyMet
-        // + flybyId tracked via __flyDebug; use the body's PLANET_SIZE
-        // for the offset magnitude. Stays inside the cinema target
-        // sphere (camR = 2.4·r), so the ship doesn't fly off-frame.
-        const flybyDbg = window.__flyDebug;
-        const bodyR = flybyDbg?.flybySize ?? 2.5;
-        const overrideCamR = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
-        const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
-        const dist = camToShip.length();
-        if (dist > 0.01) {
-          camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
-          scSprite.position.add(camToShip);
-          if (scModel) scModel.position.copy(scSprite.position);
-        }
-        // Scale the ship to read as a foreground hero without
-        // swamping the body. Each flyby tunes its own scale via
-        // FLYBY_OVERRIDES below (Saturn arrival keeps its smaller
-        // ship-on-rings look, Jupiter takes a closer-in scale, etc.)
-        // — the variation matches the NASA reference set, which
-        // doesn't use a single universal composition.
-        const overrides = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? ''] ?? {
-          spriteScale: 1.8,
-          modelScale: 1.3,
-          toCameraR: 1.4,
-        };
-        scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
-        if (scModel) scModel.scale.setScalar(overrides.modelScale);
-        // Boom orientation: rotate the 3D model so its iconic-front
-        // axis faces (roughly) the camera and the long magnetometer
-        // boom angles AWAY from the planet's limb. Each builder model
-        // ships with its own default axes — Cassini's HGA dish faces
-        // +X, magnetometer boom extends along -Y. lookAt(camera)
-        // orients the model's -Z toward the camera; rotating around
-        // local Y by +π/2 brings +X (dish) to that direction. Then
-        // an additional tilt around local Z lifts the boom off the
-        // planet-ship-camera plane so it reads as a graceful sweep
-        // across the frame instead of running through the planet.
-        if (scModel) {
-          scModel.lookAt(camera.position);
-          scModel.rotateY(Math.PI / 2);
-          scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
-        }
-      } else {
-        scSprite.scale.set(2.5, 2.5, 1);
-        if (scModel) {
-          scModel.scale.setScalar(1.5);
-          // Cruise: reset to identity orientation so the model rides
-          // along the trajectory without the cinema-specific tilt.
-          scModel.rotation.set(0, 0, 0);
-        }
-      }
-
-      // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
-      // visible from pre-launch through the entire flight so the user
-      // can always see where the mission started and where it's going;
-      // both hide on arrival together with the trajectory line so the
-      // scene "freezes" to just the planets continuing their orbits.
-      // Spacecraft sprite also hides on arrival.
-      const phaseNow = sc.phase;
-      const afterArrival = phaseNow === 'arrived';
-      // First-frame arrival snap. Pre-polish-wave-2 the camera spent
-      // ~10 s of wall-clock LERPing from the cruise-out wide frame
-      // toward the arrived target — user feedback "after arrival
-      // milestone is not optimal, mostly empty space in camera; last
-      // 10 s are really good but before that is not." The lerp is the
-      // last 10 s catching up. Snap once on the phase transition so
-      // the user lands directly on the parked-in-orbit composition.
-      if (phaseNow === 'arrived' && !cine.arrivalSnapped) {
-        camSnapUntil = performance.now() + 1500;
-        cine.arrivalSnapped = true;
-        // W3.4 — kick off the end-of-mission locked-off finale on
-        // one-way helio missions (round-trip endings at Earth and
-        // moon-missions are handled differently and stay out of the
-        // finale path). Starts AFTER the 1.5 s arrival snap so the
-        // parked-in-orbit composition is in frame before the lock.
-        // Finale lock (MISSION END caption + 12 s Saturn closeup hold +
-        // black fade) was removed per Marko — the epilogue tableau
-        // already carries an end-of-mission caption ("MISSION FLIGHT
-        // PATH · <mission>") and stacking two title beats reads as
-        // redundant. We now go straight from arrival → epilogue: the
-        // arrived-branch's epilogueActive trigger below is the only
-        // end-of-mission camera mode. inMissionFinale stays false so
-        // none of the finale-caption / finale-black / Saturn-closeup-
-        // hold UI ever fires.
-        const isOneWayHelioEnd = !isMoonMission && retPts.length < 2;
-        if (isOneWayHelioEnd && epilogueStartedAt === 0) {
-          epilogueStartedAt = performance.now();
-          epilogueActive = true;
-        }
-      }
-      // Re-arm the snap when the user scrubs back out of arrived so a
-      // subsequent re-entry into arrived triggers the snap again.
-      if (phaseNow !== 'arrived' && cine.lastSeenPhase === 'arrived') {
-        cine.arrivalSnapped = false;
-        // Re-arm the finale too. User scrubbed back into the mission;
-        // next re-entry into arrived should fire a fresh finale.
-        cine.finaleStartedAt = 0;
-        inMissionFinale = false;
-        finaleCaptionOpacity = 0;
-        finaleBlackOpacity = 0;
-        // #82 — clear the epilogue tableau so re-entering arrived
-        // gets a fresh finale + epilogue sequence.
-        epilogueStartedAt = 0;
-        epilogueActive = false;
-        epilogueCaptionOpacity = 0;
-      }
-      cine.lastSeenPhase = phaseNow;
-      // W3.4 — update finale state machine. After 12 s the camera
-      // remains locked but the fade-to-black is complete; the user
-      // can scrub to resume the mission.
-      if (cine.finaleStartedAt > 0 && performance.now() >= cine.finaleStartedAt) {
-        const elapsed = performance.now() - cine.finaleStartedAt;
-        // Caption fade-in over 1 s starting at t=8
-        if (elapsed >= CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) {
-          finaleCaptionOpacity = Math.min(
-            1,
-            (elapsed - CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) / 1000,
+        // Moon-mode rendering: heliocentric, same framing as Mars.
+        // Sun + Earth orbit visible in the background; Earth at its
+        // live heliocentric position; Moon orbits Earth at the
+        // exaggerated MOON_FLY_RADIUS_AU (real Earth-Moon distance is
+        // sub-pixel at this scale). The cislunar arc runs from
+        // Earth-at-dep to Moon-at-arr in heliocentric AU. Mars + Mars
+        // orbit hidden so the scene focuses on Earth+Moon.
+        if (isMoonMission) {
+          marsMesh.visible = false;
+          sunCore.visible = true;
+          sunGlow.visible = true;
+          earthOrbitLine.visible = true;
+          helioHandles.setDestinationOrbitVisible(false);
+          moonMesh.visible = true;
+          const ePos = earthPos(simDay);
+          const mPos = moonHelioPos(simDay);
+          earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+          moonMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+          // Track Moon's orbit ring to Earth's heliocentric position so
+          // it stays centred on Earth as both drift around the Sun.
+          if (moonOrbitRing && moonOrbitRing.visible) {
+            moonOrbitRing.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+          }
+        } else {
+          marsMesh.visible = true;
+          sunCore.visible = true;
+          // Sun glow halo dominates the frame during the iconic-photo
+          // flyby cinema (the 20u additive halo overpowers a planet
+          // that fills only ~6u in radius), so hide it while a flyby
+          // sub-phase is active. Restored once cruise resumes.
+          sunGlow.visible = !lastHelioSubPhase?.startsWith('flyby-');
+          earthOrbitLine.visible = true;
+          helioHandles.setDestinationOrbitVisible(true);
+          moonMesh.visible = false;
+          if (moonOrbitRing) moonOrbitRing.visible = false;
+          // Earth + Mars orbit the Sun in real time as the spacecraft
+          // flies. The fixed convergence points (where Earth was at
+          // launch and where Mars will be at arrival) are marked by
+          // the persistent LAUNCH / ARRIVAL anchor rings, which stay
+          // pinned to outPts[0] and outPts[N-1] in the marker $effect.
+          // Separating "live planet body" from "mission anchor" lets
+          // the user watch Mars travel along its orbit toward the
+          // arrival ring as the spacecraft transits.
+          const ePos = earthPos(simDay);
+          // Destination position uses the active mission's target body,
+          // not always Mars. Jupiter / Saturn / Neptune / Pluto / Ceres
+          // missions now render their actual target instead of a
+          // confusing Mars stand-in.
+          const mPos = destinationPos(simDay, activeDestination);
+          earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+          marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+          // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
+          helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
+          helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
+          helioHandles.updateMoonsForParent('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D, simDay);
+          // Context planets — per-frame position updates for any non-
+          // active planet rendered for grand-tour context. Each mesh
+          // tracks its heliocentric position at simDay so the user
+          // sees Venus where Venus was when Cassini did its flybys,
+          // Jupiter where it was when Voyager 2 swung past, etc.
+          for (const [planetId, mesh] of helioHandles.contextPlanets) {
+            if (!mesh.visible) continue;
+            const p = destinationPos(simDay, planetId);
+            mesh.position.set(p.x * SCALE_3D, 0, p.z * SCALE_3D);
+            // Hill sphere + Lagrange overlays follow the planet; they
+            // hide via setHillSpheresVisible / setLagrangePointsVisible
+            // when the lens layer is off, so this update is cheap when
+            // unused (just position writes — no geometry rebuild).
+            helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
+            helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
+            helioHandles.updateMoonsForParent(planetId, p.x * SCALE_3D, p.z * SCALE_3D, simDay);
+          }
+          // Active destination also gets moon updates so Jupiter/Saturn
+          // missions (Cassini, Juno, Voyager) show their moons at the
+          // destination they're rendering live.
+          helioHandles.updateMoonsForParent(
+            activeDestination,
+            mPos.x * SCALE_3D,
+            mPos.z * SCALE_3D,
+            simDay,
+          );
+          // Active destination — its Hill sphere lives in the same
+          // entries map, keyed by planet id.
+          helioHandles.updateHillSphereForBody(
+            activeDestination,
+            mPos.x * SCALE_3D,
+            mPos.z * SCALE_3D,
+          );
+          helioHandles.updateMagnetosphereForBody(
+            activeDestination,
+            mPos.x * SCALE_3D,
+            mPos.z * SCALE_3D,
           );
         }
-        // Black overlay fade-in over 1 s starting at t=11
-        if (elapsed >= CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) {
-          finaleBlackOpacity = Math.min(
-            1,
-            (elapsed - CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) / 1000,
-          );
+
+        const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
+        // Sprite glyph sits at sc.pos. No lookAt — sprites face the
+        // camera by construction so the glyph is always centred on the
+        // arc regardless of curvature.
+        scSprite.position.set(sc.pos.x * SCALE_3D, (sc.pos.y ?? 0) * SCALE_3D, sc.pos.z * SCALE_3D);
+        // Per-mission 3D model rides the same position. Visibility +
+        // arrival-hide handled by the same code path that owns scSprite
+        // a few lines below; here we only update the transform.
+        if (scModel) {
+          scModel.position.copy(scSprite.position);
         }
-        // After 13 s (12 s finale + 1 s settle), drop the held flag
-        // and transition to the #82 epilogue tableau — wide top-down
-        // system view + slow rotation + the full mission trajectory
-        // visible.
-        if (elapsed >= CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1000) {
-          inMissionFinale = false;
-          if (epilogueStartedAt === 0) {
+        // During flyby cinema the camera is tight on the planet (camR =
+        // 2.4 × body radius). The default 4×4 sprite + 3.0 model scale
+        // are sized for cruise — at flyby they swamp the planet and
+        // look 'cartoonish'. Scale down so the ship reads as a
+        // foreground accent against the body, matching the NASA mission-
+        // art compositions. Outside the cinema window the ship goes
+        // back to its cruise scale.
+        // Cinema also offsets the ship TOWARD the camera so the 3D
+        // model sits geometrically in front of the planet body — the
+        // hero-shot composition from the NASA mission-art reference
+        // set (Cassini-Saturn, Juno-Jupiter): ship as foreground accent,
+        // planet limb behind. Without this offset, even with the +y
+        // waypoint anchor, the camera-elevation angle could still put
+        // the model behind the planet's z-range and the planet's
+        // opaque MeshPhongMaterial occludes it.
+        if (lastHelioSubPhase?.startsWith('flyby-')) {
+          // Push the ship toward the camera by the flyby body's radius
+          // — enough to clear the planet's front face. activeFlybyMet
+          // + flybyId tracked via __flyDebug; use the body's PLANET_SIZE
+          // for the offset magnitude. Stays inside the cinema target
+          // sphere (camR = 2.4·r), so the ship doesn't fly off-frame.
+          const flybyDbg = window.__flyDebug;
+          const bodyR = flybyDbg?.flybySize ?? 2.5;
+          const overrideCamR = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
+          const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
+          const dist = camToShip.length();
+          if (dist > 0.01) {
+            camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
+            scSprite.position.add(camToShip);
+            if (scModel) scModel.position.copy(scSprite.position);
+          }
+          // Scale the ship to read as a foreground hero without
+          // swamping the body. Each flyby tunes its own scale via
+          // FLYBY_OVERRIDES below (Saturn arrival keeps its smaller
+          // ship-on-rings look, Jupiter takes a closer-in scale, etc.)
+          // — the variation matches the NASA reference set, which
+          // doesn't use a single universal composition.
+          const overrides = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? ''] ?? {
+            spriteScale: 1.8,
+            modelScale: 1.3,
+            toCameraR: 1.4,
+          };
+          scSprite.scale.set(overrides.spriteScale, overrides.spriteScale, 1);
+          if (scModel) scModel.scale.setScalar(overrides.modelScale);
+          // Boom orientation: rotate the 3D model so its iconic-front
+          // axis faces (roughly) the camera and the long magnetometer
+          // boom angles AWAY from the planet's limb. Each builder model
+          // ships with its own default axes — Cassini's HGA dish faces
+          // +X, magnetometer boom extends along -Y. lookAt(camera)
+          // orients the model's -Z toward the camera; rotating around
+          // local Y by +π/2 brings +X (dish) to that direction. Then
+          // an additional tilt around local Z lifts the boom off the
+          // planet-ship-camera plane so it reads as a graceful sweep
+          // across the frame instead of running through the planet.
+          if (scModel) {
+            scModel.lookAt(camera.position);
+            scModel.rotateY(Math.PI / 2);
+            scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+          }
+        } else {
+          scSprite.scale.set(2.5, 2.5, 1);
+          if (scModel) {
+            scModel.scale.setScalar(1.5);
+            // Cruise: reset to identity orientation so the model rides
+            // along the trajectory without the cinema-specific tilt.
+            scModel.rotation.set(0, 0, 0);
+          }
+        }
+
+        // Phase-based visibility: LAUNCH + ARRIVAL anchor rings both stay
+        // visible from pre-launch through the entire flight so the user
+        // can always see where the mission started and where it's going;
+        // both hide on arrival together with the trajectory line so the
+        // scene "freezes" to just the planets continuing their orbits.
+        // Spacecraft sprite also hides on arrival.
+        const phaseNow = sc.phase;
+        const afterArrival = phaseNow === 'arrived';
+        // First-frame arrival snap. Pre-polish-wave-2 the camera spent
+        // ~10 s of wall-clock LERPing from the cruise-out wide frame
+        // toward the arrived target — user feedback "after arrival
+        // milestone is not optimal, mostly empty space in camera; last
+        // 10 s are really good but before that is not." The lerp is the
+        // last 10 s catching up. Snap once on the phase transition so
+        // the user lands directly on the parked-in-orbit composition.
+        if (phaseNow === 'arrived' && !cine.arrivalSnapped) {
+          camSnapUntil = performance.now() + 1500;
+          cine.arrivalSnapped = true;
+          // W3.4 — kick off the end-of-mission locked-off finale on
+          // one-way helio missions (round-trip endings at Earth and
+          // moon-missions are handled differently and stay out of the
+          // finale path). Starts AFTER the 1.5 s arrival snap so the
+          // parked-in-orbit composition is in frame before the lock.
+          // Finale lock (MISSION END caption + 12 s Saturn closeup hold +
+          // black fade) was removed per Marko — the epilogue tableau
+          // already carries an end-of-mission caption ("MISSION FLIGHT
+          // PATH · <mission>") and stacking two title beats reads as
+          // redundant. We now go straight from arrival → epilogue: the
+          // arrived-branch's epilogueActive trigger below is the only
+          // end-of-mission camera mode. inMissionFinale stays false so
+          // none of the finale-caption / finale-black / Saturn-closeup-
+          // hold UI ever fires.
+          const isOneWayHelioEnd = !isMoonMission && retPts.length < 2;
+          if (isOneWayHelioEnd && epilogueStartedAt === 0) {
             epilogueStartedAt = performance.now();
             epilogueActive = true;
           }
         }
-      }
-      // #82 — epilogue tableau. Once active, fade the finale-black
-      // overlay BACK OUT to 0 over 1.5 s, lerp the camera to a wide
-      // Sun-centred top-down composition, slowly rotate the system
-      // around camT, and surface a "MISSION FLIGHT PATH · <name>"
-      // caption. The full out-line / dep+arr markers remain visible
-      // (see the helio-trajectory visibility block below). Stays
-      // until the user scrubs out (resetCinematicForMissionSwap or
-      // the phase-leaves-arrived reset wipe it).
-      if (epilogueActive && epilogueStartedAt > 0) {
-        const elapsedE = performance.now() - epilogueStartedAt;
-        // Black fade-out 1 → 0 across the first 1.5 s
-        if (elapsedE < 1500) {
-          finaleBlackOpacity = Math.max(0, 1 - elapsedE / 1500);
-        } else {
+        // Re-arm the snap when the user scrubs back out of arrived so a
+        // subsequent re-entry into arrived triggers the snap again.
+        if (phaseNow !== 'arrived' && cine.lastSeenPhase === 'arrived') {
+          cine.arrivalSnapped = false;
+          // Re-arm the finale too. User scrubbed back into the mission;
+          // next re-entry into arrived should fire a fresh finale.
+          cine.finaleStartedAt = 0;
+          inMissionFinale = false;
+          finaleCaptionOpacity = 0;
           finaleBlackOpacity = 0;
+          // #82 — clear the epilogue tableau so re-entering arrived
+          // gets a fresh finale + epilogue sequence.
+          epilogueStartedAt = 0;
+          epilogueActive = false;
+          epilogueCaptionOpacity = 0;
         }
-        // Caption fade-in 0 → 1 across t=1500 → 2500
-        if (elapsedE >= 1500) {
-          epilogueCaptionOpacity = Math.min(1, (elapsedE - 1500) / 1000);
+        cine.lastSeenPhase = phaseNow;
+        // W3.4 — update finale state machine. After 12 s the camera
+        // remains locked but the fade-to-black is complete; the user
+        // can scrub to resume the mission.
+        if (cine.finaleStartedAt > 0 && performance.now() >= cine.finaleStartedAt) {
+          const elapsed = performance.now() - cine.finaleStartedAt;
+          // Caption fade-in over 1 s starting at t=8
+          if (elapsed >= CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) {
+            finaleCaptionOpacity = Math.min(
+              1,
+              (elapsed - CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) / 1000,
+            );
+          }
+          // Black overlay fade-in over 1 s starting at t=11
+          if (elapsed >= CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) {
+            finaleBlackOpacity = Math.min(
+              1,
+              (elapsed - CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) / 1000,
+            );
+          }
+          // After 13 s (12 s finale + 1 s settle), drop the held flag
+          // and transition to the #82 epilogue tableau — wide top-down
+          // system view + slow rotation + the full mission trajectory
+          // visible.
+          if (elapsed >= CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1000) {
+            inMissionFinale = false;
+            if (epilogueStartedAt === 0) {
+              epilogueStartedAt = performance.now();
+              epilogueActive = true;
+            }
+          }
         }
-      }
-      // #86 opening — title (mission name + agency + years), context
-      // (story + stats), fleet asset cards fade in sequentially over
-      // ~5.5 s while the camera holds at the wide top-down system view.
-      // Then everything fades out 7.5 → 9.5 s and the camera lerps to
-      // the prelaunch Earth-closeup composition for the 4 s W3.3
-      // launch dwell. At 13.5 s the launch ring fires.
-      if (openingActive && openingStartedAt > 0) {
-        const elapsedO = performance.now() - openingStartedAt;
-        // Faster fade-out per user feedback — 2000 ms → 1000 ms so the
-        // scene reveals more crisply as the title overlays clear. The
-        // camera lerp gate (in updateHelioAutoZoomTargets 'opening'
-        // branch) uses the same fadeOutAt so the wide → Earth-closeup
-        // transition aligns with the visual fade.
-        const fadeOutAt = openingDurationMs - 1000;
-        const endAt = openingDurationMs;
-        // Title fade-in 0 → 1 across 0 → 1000 ms, fade-out 1000 ms
-        if (elapsedO < 1000) {
-          openingTitleOpacity = elapsedO / 1000;
-        } else if (elapsedO < fadeOutAt) {
-          openingTitleOpacity = 1;
-        } else if (elapsedO < endAt) {
-          openingTitleOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
+        // #82 — epilogue tableau. Once active, fade the finale-black
+        // overlay BACK OUT to 0 over 1.5 s, lerp the camera to a wide
+        // Sun-centred top-down composition, slowly rotate the system
+        // around camT, and surface a "MISSION FLIGHT PATH · <name>"
+        // caption. The full out-line / dep+arr markers remain visible
+        // (see the helio-trajectory visibility block below). Stays
+        // until the user scrubs out (resetCinematicForMissionSwap or
+        // the phase-leaves-arrived reset wipe it).
+        if (epilogueActive && epilogueStartedAt > 0) {
+          const elapsedE = performance.now() - epilogueStartedAt;
+          // Black fade-out 1 → 0 across the first 1.5 s
+          if (elapsedE < 1500) {
+            finaleBlackOpacity = Math.max(0, 1 - elapsedE / 1500);
+          } else {
+            finaleBlackOpacity = 0;
+          }
+          // Caption fade-in 0 → 1 across t=1500 → 2500
+          if (elapsedE >= 1500) {
+            epilogueCaptionOpacity = Math.min(1, (elapsedE - 1500) / 1000);
+          }
+        }
+        // #86 opening — title (mission name + agency + years), context
+        // (story + stats), fleet asset cards fade in sequentially over
+        // ~5.5 s while the camera holds at the wide top-down system view.
+        // Then everything fades out 7.5 → 9.5 s and the camera lerps to
+        // the prelaunch Earth-closeup composition for the 4 s W3.3
+        // launch dwell. At 13.5 s the launch ring fires.
+        if (openingActive && openingStartedAt > 0) {
+          const elapsedO = performance.now() - openingStartedAt;
+          // Faster fade-out per user feedback — 2000 ms → 1000 ms so the
+          // scene reveals more crisply as the title overlays clear. The
+          // camera lerp gate (in updateHelioAutoZoomTargets 'opening'
+          // branch) uses the same fadeOutAt so the wide → Earth-closeup
+          // transition aligns with the visual fade.
+          const fadeOutAt = openingDurationMs - 1000;
+          const endAt = openingDurationMs;
+          // Title fade-in 0 → 1 across 0 → 1000 ms, fade-out 1000 ms
+          if (elapsedO < 1000) {
+            openingTitleOpacity = elapsedO / 1000;
+          } else if (elapsedO < fadeOutAt) {
+            openingTitleOpacity = 1;
+          } else if (elapsedO < endAt) {
+            openingTitleOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
+          } else {
+            openingTitleOpacity = 0;
+          }
+          // Context fade-in 1500 → 3000 ms
+          if (elapsedO < 1500) {
+            openingContextOpacity = 0;
+          } else if (elapsedO < 3000) {
+            openingContextOpacity = (elapsedO - 1500) / 1500;
+          } else if (elapsedO < fadeOutAt) {
+            openingContextOpacity = 1;
+          } else if (elapsedO < endAt) {
+            openingContextOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
+          } else {
+            openingContextOpacity = 0;
+          }
+          // Fleet asset cards fade-in 3000 → 5000 ms
+          if (elapsedO < 3000) {
+            openingFleetOpacity = 0;
+          } else if (elapsedO < 5000) {
+            openingFleetOpacity = (elapsedO - 3000) / 2000;
+          } else if (elapsedO < fadeOutAt) {
+            openingFleetOpacity = 1;
+          } else if (elapsedO < endAt) {
+            openingFleetOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
+          } else {
+            openingFleetOpacity = 0;
+          }
+          // End opening at adaptive endAt
+          if (elapsedO >= endAt) {
+            openingActive = false;
+            openingTitleOpacity = 0;
+            openingContextOpacity = 0;
+            openingFleetOpacity = 0;
+          }
+        }
+        // The LAUNCH / ARRIVAL anchor rings + their date sprites are
+        // sized for the wide cruise framing. At any closeup sub-phase
+        // (helio flyby cinema, helio prelaunch / approach / depart,
+        // cislunar Moon / Earth phase closeups, Mars rover landing,
+        // any mission's tight camera moment) the rings + dates loom
+        // huge and dominate the body+ship hero composition — "the
+        // date is bigger than Saturn." Always ugly when zoomed in.
+        // Show only when the auto-camera is in a wide cruise framing.
+        const wideHelio =
+          lastHelioSubPhase === 'cruise-out' ||
+          lastHelioSubPhase === 'cruise-back' ||
+          lastHelioSubPhase === null;
+        // Cislunar wide = not in a closeup phase. lastAutoZoomPhase is
+        // normally a phase-type string (e.g., "tli_coast",
+        // "lunar_orbit_near_moon") — non-null for the whole mission.
+        // The "wide" phases (cruise + the translunar coasts) leave
+        // autoZoomTargetR at WIDE_DISTANCE; the close-up phases
+        // (LUNAR_PHASE_TYPES + EARTH_PHASE_TYPES + the proximity
+        // sentinel "_near_moon" suffix) pull the camera tight. Test
+        // the target distance directly: if the camera is still aiming
+        // at the wide framing, the rings are safe to show.
+        const wideCislunar = autoZoomTargetR >= WIDE_DISTANCE * 0.9;
+        const wideEnoughForAnchors = isMoonMission ? wideCislunar : wideHelio;
+        const showAnchors = !afterArrival && wideEnoughForAnchors;
+        if (depMarker) depMarker.visible = showAnchors;
+        if (depLabelSprite) depLabelSprite.visible = showAnchors;
+        if (arrMarker) arrMarker.visible = showAnchors;
+        if (arrLabelSprite) arrLabelSprite.visible = showAnchors;
+        const showRet = showAnchors && retPts.length >= 2;
+        if (retMarker) retMarker.visible = showRet;
+        if (retLabelSprite) retLabelSprite.visible = showRet;
+        // #82 — keep the full trajectory visible during the epilogue
+        // tableau (the whole point is to show the "where the mission
+        // went" arc as a static visual). Hide during flyby cinema so
+        // the iconic frozen frame isn't cluttered with the trajectory
+        // chord — same rule as the phase-marker label hiding. Marko:
+        // "when we zoom in also hide blue line as we hid the
+        // milestone marker."
+        const inFlybyCinemaForLines = lastHelioSubPhase?.startsWith('flyby-') ?? false;
+        if (outLine) outLine.visible = (!afterArrival || epilogueActive) && !inFlybyCinemaForLines;
+        if (retLine)
+          retLine.visible =
+            (!afterArrival || epilogueActive) && retPts.length >= 2 && !inFlybyCinemaForLines;
+        // When a per-mission 3D model is present, it becomes the primary
+        // glyph and the generic sprite hides entirely (no duplication).
+        // Otherwise the sprite remains the glyph.
+        //
+        // Pre-polish-wave-2 this hid both the model and sprite the
+        // moment phase === 'arrived'. User feedback: "at end spaceship
+        // disappears and we said we want it parked in orbit, not gone."
+        // Keep the ship visible at arrival so the final frame reads as
+        // "spacecraft is now in orbit" (Cassini at Saturn) or "returned
+        // home" (round-trip at Earth) instead of "ship gone."
+        if (scModel) {
+          scSprite.visible = false;
+          scModel.visible = true;
         } else {
-          openingTitleOpacity = 0;
+          scSprite.visible = true;
         }
-        // Context fade-in 1500 → 3000 ms
-        if (elapsedO < 1500) {
-          openingContextOpacity = 0;
-        } else if (elapsedO < 3000) {
-          openingContextOpacity = (elapsedO - 1500) / 1500;
-        } else if (elapsedO < fadeOutAt) {
-          openingContextOpacity = 1;
-        } else if (elapsedO < endAt) {
-          openingContextOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
-        } else {
-          openingContextOpacity = 0;
+
+        // Freeze playback on arrival — the planets should stop where they
+        // are when the mission completes, not keep orbiting indefinitely.
+        // Manually pressing play again or scrubbing the timeline still
+        // works; this just stops the auto-advance loop.
+        if (afterArrival && isPlaying) {
+          isPlaying = false;
         }
-        // Fleet asset cards fade-in 3000 → 5000 ms
-        if (elapsedO < 3000) {
-          openingFleetOpacity = 0;
-        } else if (elapsedO < 5000) {
-          openingFleetOpacity = (elapsedO - 3000) / 2000;
-        } else if (elapsedO < fadeOutAt) {
-          openingFleetOpacity = 1;
-        } else if (elapsedO < endAt) {
-          openingFleetOpacity = Math.max(0, 1 - (elapsedO - fadeOutAt) / 1000);
-        } else {
-          openingFleetOpacity = 0;
-        }
-        // End opening at adaptive endAt
-        if (elapsedO >= endAt) {
-          openingActive = false;
-          openingTitleOpacity = 0;
-          openingContextOpacity = 0;
-          openingFleetOpacity = 0;
-        }
-      }
-      // The LAUNCH / ARRIVAL anchor rings + their date sprites are
-      // sized for the wide cruise framing. At any closeup sub-phase
-      // (helio flyby cinema, helio prelaunch / approach / depart,
-      // cislunar Moon / Earth phase closeups, Mars rover landing,
-      // any mission's tight camera moment) the rings + dates loom
-      // huge and dominate the body+ship hero composition — "the
-      // date is bigger than Saturn." Always ugly when zoomed in.
-      // Show only when the auto-camera is in a wide cruise framing.
-      const wideHelio =
-        lastHelioSubPhase === 'cruise-out' ||
-        lastHelioSubPhase === 'cruise-back' ||
-        lastHelioSubPhase === null;
-      // Cislunar wide = not in a closeup phase. lastAutoZoomPhase is
-      // normally a phase-type string (e.g., "tli_coast",
-      // "lunar_orbit_near_moon") — non-null for the whole mission.
-      // The "wide" phases (cruise + the translunar coasts) leave
-      // autoZoomTargetR at WIDE_DISTANCE; the close-up phases
-      // (LUNAR_PHASE_TYPES + EARTH_PHASE_TYPES + the proximity
-      // sentinel "_near_moon" suffix) pull the camera tight. Test
-      // the target distance directly: if the camera is still aiming
-      // at the wide framing, the rings are safe to show.
-      const wideCislunar = autoZoomTargetR >= WIDE_DISTANCE * 0.9;
-      const wideEnoughForAnchors = isMoonMission ? wideCislunar : wideHelio;
-      const showAnchors = !afterArrival && wideEnoughForAnchors;
-      if (depMarker) depMarker.visible = showAnchors;
-      if (depLabelSprite) depLabelSprite.visible = showAnchors;
-      if (arrMarker) arrMarker.visible = showAnchors;
-      if (arrLabelSprite) arrLabelSprite.visible = showAnchors;
-      const showRet = showAnchors && retPts.length >= 2;
-      if (retMarker) retMarker.visible = showRet;
-      if (retLabelSprite) retLabelSprite.visible = showRet;
-      // #82 — keep the full trajectory visible during the epilogue
-      // tableau (the whole point is to show the "where the mission
-      // went" arc as a static visual). Hide during flyby cinema so
-      // the iconic frozen frame isn't cluttered with the trajectory
-      // chord — same rule as the phase-marker label hiding. Marko:
-      // "when we zoom in also hide blue line as we hid the
-      // milestone marker."
-      const inFlybyCinemaForLines = lastHelioSubPhase?.startsWith('flyby-') ?? false;
-      if (outLine) outLine.visible = (!afterArrival || epilogueActive) && !inFlybyCinemaForLines;
-      if (retLine)
-        retLine.visible =
-          (!afterArrival || epilogueActive) && retPts.length >= 2 && !inFlybyCinemaForLines;
-      // When a per-mission 3D model is present, it becomes the primary
-      // glyph and the generic sprite hides entirely (no duplication).
-      // Otherwise the sprite remains the glyph.
-      //
-      // Pre-polish-wave-2 this hid both the model and sprite the
-      // moment phase === 'arrived'. User feedback: "at end spaceship
-      // disappears and we said we want it parked in orbit, not gone."
-      // Keep the ship visible at arrival so the final frame reads as
-      // "spacecraft is now in orbit" (Cassini at Saturn) or "returned
-      // home" (round-trip at Earth) instead of "ship gone."
-      if (scModel) {
-        scSprite.visible = false;
-        scModel.visible = true;
-      } else {
-        scSprite.visible = true;
-      }
 
-      // Freeze playback on arrival — the planets should stop where they
-      // are when the mission completes, not keep orbiting indefinitely.
-      // Manually pressing play again or scrubbing the timeline still
-      // works; this just stops the auto-advance loop.
-      if (afterArrival && isPlaying) {
-        isPlaying = false;
-      }
-
-      // ─── Science Layers — per-frame overlay updates ──────────────
-      // Position SoI rings at Earth + Mars (or Earth + Moon in cislunar
-      // mode) and refresh gravity arrows on the spacecraft. Hidden
-      // layers don't bypass this work but their geometry is invisible
-      // — cheap.
-      // sc.pos.y is non-zero at intermediate flyby waypoints (polish-
-      // wave-2 spline +y offset so the path passes ABOVE the planet
-      // instead of through it). Hard-coding y=0 here meant the science-
-      // layer arrows (gravity to Sun + Earth, velocity tangent,
-      // centripetal) sat on the ecliptic plane while the spacecraft
-      // sprite + model floated above, with the offset growing
-      // visible at the peak of each intermediate flyby. Same bug
-      // as the FD-diamond y=0 projection; matching fix.
-      const scWorld = new THREE.Vector3(
-        sc.pos.x * SCALE_3D,
-        (sc.pos.y ?? 0) * SCALE_3D,
-        sc.pos.z * SCALE_3D,
-      );
-      // Stash the latest helio ship position for the cinematic-tier
-      // Bokeh DoF focus uniform — set in the post-render branch below.
-      scLastWorld = scWorld;
-
-      // Fix B (ship-in-frame safety net) was reverted in commit
-      // 5a4… — it fought the cinematic LERP (both nudged camTarget
-      // each frame in opposite directions) AND compounded camR ×1.2
-      // every frame the ship was off-screen, which caused the camera
-      // to zoom out unboundedly during the post-Jupiter cruise. Fix A
-      // alone (sim-speed-aware lerp + arc rotation, see updateCam
-      // closure) covers the original "all black" symptom; if edge
-      // cases remain, a non-conflicting safety net would need to
-      // operate on the camera lerp target, not the live camTarget.
-
-      const earthWorld = earthMesh.position;
-      const marsWorld = marsMesh.position;
-
-      // Keep Mars / Moon SoI visibility in sync with isMoonMission on
-      // every mission swap (cheap; just two boolean assignments). The
-      // layer-on flag itself comes from the onLayerChange subscription.
-      // marsSoI is also gated on activeDestination === 'mars' so it
-      // doesn't render at the wrong scale for outer-planet missions.
-      marsSoI.visible = soiLayerOn && !isMoonMission && activeDestination === 'mars';
-      moonSoI.visible = soiLayerOn && isMoonMission;
-      if (earthSoI.visible) earthSoI.position.copy(earthWorld);
-      if (marsSoI.visible) marsSoI.position.copy(marsWorld);
-      if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);
-
-      // Coast preview: walk FORWARD along outPts from the current
-      // spacecraft position to the arc terminus. Previously this drew
-      // a Keplerian conic projected from current (r, v) — physically
-      // correct as "what happens with no further help", but for grand-
-      // tour missions (Cassini, Voyager) the conic diverges hard from
-      // the multi-waypoint spline because the spline ASSUMES the
-      // future gravity assists land. The conic doesn't model them, so
-      // the predicted line looped around the Sun while the actual
-      // trajectory bent outward at each flyby — visually contradicting
-      // the rendered tube. Forward-walking outPts shows the same
-      // planned path the spacecraft is committed to.
-      if (coastLine.visible && outPts.length >= 2) {
-        const total = arcTimeline.arr_day - arcTimeline.dep_day;
-        const t = total > 0 ? Math.max(0, Math.min(1, (simDay - arcTimeline.dep_day) / total)) : 0;
-        const startIdx = Math.floor(t * (outPts.length - 1));
-        const samples = outPts.length - startIdx;
-        const scenePositions = new Float32Array(samples * 3);
-        for (let i = 0; i < samples; i++) {
-          const p = outPts[startIdx + i];
-          scenePositions[i * 3] = p.x * SCALE_3D;
-          scenePositions[i * 3 + 1] = (p.y ?? 0) * SCALE_3D;
-          scenePositions[i * 3 + 2] = p.z * SCALE_3D;
-        }
-        const geom = coastLine.geometry as THREE.BufferGeometry;
-        geom.setAttribute('position', new THREE.BufferAttribute(scenePositions, 3));
-        geom.attributes.position.needsUpdate = true;
-        geom.computeBoundingSphere();
-        coastLine.computeLineDistances();
-      }
-
-      if (gravArrowEarth.visible || gravArrowSun.visible) {
-        // Distances in km between spacecraft and source bodies. The
-        // /fly scene unit is SCALE_3D × AU, so convert: scene → AU →
-        // km.
-        const auPerScene = 1 / SCALE_3D;
-        const dEarthScene = scWorld.distanceTo(earthWorld);
-        const dEarthKm = dEarthScene * auPerScene * 149_597_870.7;
-        const dSunKm = scWorld.length() * auPerScene * 149_597_870.7;
-
-        // Gravity acceleration (m/s²) — same units as physics; log
-        // scale collapses the wide dynamic range into visible arrows.
-        const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
-        const aSun = gravityAccel(BODY_MASS_KG.sun, dSunKm);
-
-        // Earth arrow: anchor at spacecraft, point toward Earth.
-        gravArrowEarth.position.copy(scWorld);
-        const dirEarth = new THREE.Vector3().subVectors(earthWorld, scWorld).normalize();
-        gravArrowEarth.setDirection(dirEarth);
-        gravArrowEarth.setLength(
-          logScaleLength(aEarth, 1.5, 18, 1e-6, 10),
-          0.7, // head length
-          0.4, // head width
+        // ─── Science Layers — per-frame overlay updates ──────────────
+        // Position SoI rings at Earth + Mars (or Earth + Moon in cislunar
+        // mode) and refresh gravity arrows on the spacecraft. Hidden
+        // layers don't bypass this work but their geometry is invisible
+        // — cheap.
+        // sc.pos.y is non-zero at intermediate flyby waypoints (polish-
+        // wave-2 spline +y offset so the path passes ABOVE the planet
+        // instead of through it). Hard-coding y=0 here meant the science-
+        // layer arrows (gravity to Sun + Earth, velocity tangent,
+        // centripetal) sat on the ecliptic plane while the spacecraft
+        // sprite + model floated above, with the offset growing
+        // visible at the peak of each intermediate flyby. Same bug
+        // as the FD-diamond y=0 projection; matching fix.
+        const scWorld = new THREE.Vector3(
+          sc.pos.x * SCALE_3D,
+          (sc.pos.y ?? 0) * SCALE_3D,
+          sc.pos.z * SCALE_3D,
         );
+        // Stash the latest helio ship position for the cinematic-tier
+        // Bokeh DoF focus uniform — set in the post-render branch below.
+        scLastWorld = scWorld;
 
-        // Sun arrow: anchor at spacecraft, point toward Sun (origin).
-        gravArrowSun.position.copy(scWorld);
-        const dirSun = new THREE.Vector3()
-          .subVectors(new THREE.Vector3(0, 0, 0), scWorld)
-          .normalize();
-        gravArrowSun.setDirection(dirSun);
-        gravArrowSun.setLength(logScaleLength(aSun, 1.5, 18, 1e-6, 10), 0.7, 0.4);
-      }
+        // Fix B (ship-in-frame safety net) was reverted in commit
+        // 5a4… — it fought the cinematic LERP (both nudged camTarget
+        // each frame in opposite directions) AND compounded camR ×1.2
+        // every frame the ship was off-screen, which caused the camera
+        // to zoom out unboundedly during the post-Jupiter cruise. Fix A
+        // alone (sim-speed-aware lerp + arc rotation, see updateCam
+        // closure) covers the original "all black" symptom; if edge
+        // cases remain, a non-conflicting safety net would need to
+        // operate on the camera lerp target, not the live camTarget.
 
-      // Velocity tangent on spacecraft: finite-difference of next-frame
-      // position from the arc geometry, normalized + scaled by current
-      // heliocentric speed.
-      if (velocityArrow.visible || centripetalArrow.visible) {
-        const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
-        const dx = (sc1.x - sc.pos.x) * SCALE_3D;
-        const dz = (sc1.z - sc.pos.z) * SCALE_3D;
-        const dirMag = Math.hypot(dx, dz);
-        if (velocityArrow.visible && dirMag > 0.0001) {
-          velocityArrow.position.copy(scWorld);
-          const tangent = new THREE.Vector3(dx / dirMag, 0, dz / dirMag);
-          velocityArrow.setDirection(tangent);
-          // Scale arrow length by heliocentric speed (km/s) — typical
-          // 25-35 km/s on the cruise. 0.4 unit per km/s gives ~12-14
-          // unit arrows that read clearly.
-          const vLen = Math.min(20, Math.max(4, heliocentricKms * 0.4));
-          velocityArrow.setLength(vLen, 0.7, 0.4);
+        const earthWorld = earthMesh.position;
+        const marsWorld = marsMesh.position;
+
+        // Keep Mars / Moon SoI visibility in sync with isMoonMission on
+        // every mission swap (cheap; just two boolean assignments). The
+        // layer-on flag itself comes from the onLayerChange subscription.
+        // marsSoI is also gated on activeDestination === 'mars' so it
+        // doesn't render at the wrong scale for outer-planet missions.
+        marsSoI.visible = soiLayerOn && !isMoonMission && activeDestination === 'mars';
+        moonSoI.visible = soiLayerOn && isMoonMission;
+        if (earthSoI.visible) earthSoI.position.copy(earthWorld);
+        if (marsSoI.visible) marsSoI.position.copy(marsWorld);
+        if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);
+
+        // Coast preview: walk FORWARD along outPts from the current
+        // spacecraft position to the arc terminus. Previously this drew
+        // a Keplerian conic projected from current (r, v) — physically
+        // correct as "what happens with no further help", but for grand-
+        // tour missions (Cassini, Voyager) the conic diverges hard from
+        // the multi-waypoint spline because the spline ASSUMES the
+        // future gravity assists land. The conic doesn't model them, so
+        // the predicted line looped around the Sun while the actual
+        // trajectory bent outward at each flyby — visually contradicting
+        // the rendered tube. Forward-walking outPts shows the same
+        // planned path the spacecraft is committed to.
+        if (coastLine.visible && outPts.length >= 2) {
+          const total = arcTimeline.arr_day - arcTimeline.dep_day;
+          const t =
+            total > 0 ? Math.max(0, Math.min(1, (simDay - arcTimeline.dep_day) / total)) : 0;
+          const startIdx = Math.floor(t * (outPts.length - 1));
+          const samples = outPts.length - startIdx;
+          const scenePositions = new Float32Array(samples * 3);
+          for (let i = 0; i < samples; i++) {
+            const p = outPts[startIdx + i];
+            scenePositions[i * 3] = p.x * SCALE_3D;
+            scenePositions[i * 3 + 1] = (p.y ?? 0) * SCALE_3D;
+            scenePositions[i * 3 + 2] = p.z * SCALE_3D;
+          }
+          const geom = coastLine.geometry as THREE.BufferGeometry;
+          geom.setAttribute('position', new THREE.BufferAttribute(scenePositions, 3));
+          geom.attributes.position.needsUpdate = true;
+          geom.computeBoundingSphere();
+          coastLine.computeLineDistances();
         }
-        if (centripetalArrow.visible) {
-          centripetalArrow.position.copy(scWorld);
-          // Centripetal acceleration on a Keplerian arc points toward
-          // the central body — for a heliocentric arc that's the Sun.
-          // Same direction as the gravity-from-Sun arrow.
+
+        if (gravArrowEarth.visible || gravArrowSun.visible) {
+          // Distances in km between spacecraft and source bodies. The
+          // /fly scene unit is SCALE_3D × AU, so convert: scene → AU →
+          // km.
+          const auPerScene = 1 / SCALE_3D;
+          const dEarthScene = scWorld.distanceTo(earthWorld);
+          const dEarthKm = dEarthScene * auPerScene * 149_597_870.7;
+          const dSunKm = scWorld.length() * auPerScene * 149_597_870.7;
+
+          // Gravity acceleration (m/s²) — same units as physics; log
+          // scale collapses the wide dynamic range into visible arrows.
+          const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
+          const aSun = gravityAccel(BODY_MASS_KG.sun, dSunKm);
+
+          // Earth arrow: anchor at spacecraft, point toward Earth.
+          gravArrowEarth.position.copy(scWorld);
+          const dirEarth = new THREE.Vector3().subVectors(earthWorld, scWorld).normalize();
+          gravArrowEarth.setDirection(dirEarth);
+          gravArrowEarth.setLength(
+            logScaleLength(aEarth, 1.5, 18, 1e-6, 10),
+            0.7, // head length
+            0.4, // head width
+          );
+
+          // Sun arrow: anchor at spacecraft, point toward Sun (origin).
+          gravArrowSun.position.copy(scWorld);
           const dirSun = new THREE.Vector3()
             .subVectors(new THREE.Vector3(0, 0, 0), scWorld)
             .normalize();
-          centripetalArrow.setDirection(dirSun);
-          // Length proxy via Sun-gravity acceleration so the arrow
-          // size mirrors the curvature of the trajectory at this r.
-          const aSun2 = gravityAccel(
-            BODY_MASS_KG.sun,
-            scWorld.length() * (149_597_870.7 / SCALE_3D),
-          );
-          centripetalArrow.setLength(logScaleLength(aSun2, 1.2, 14, 1e-6, 10), 0.7, 0.4);
+          gravArrowSun.setDirection(dirSun);
+          gravArrowSun.setLength(logScaleLength(aSun, 1.5, 18, 1e-6, 10), 0.7, 0.4);
         }
-      }
 
-      // #1 Engine plume — directed cone at the spacecraft during burn
-      // events. Hidden when no burn is active. Per-event-type config:
-      //   - launch: exhaust toward Earth (outward thrust)
-      //   - tli_or_tmi: exhaust retrograde (prograde acceleration)
-      //   - tcm: small retrograde
-      //   - edl_or_oi: exhaust prograde (retrograde deceleration)
-      // Opacity ramps in/out across ±BURN_WINDOW_DAYS.
-      if (!isMoonMission && mission.flight?.events) {
-        const BURN_WINDOW_DAYS_DEFAULT = 2;
-        type BurnConfig = {
-          scale: number;
-          mode: 'inward' | 'retro' | 'pro';
-          /** Optional per-event-type window override. Launch gets a
-           *  wider window because it's the mission's emotional hero
-           *  moment — the audience should see a sustained dramatic
-           *  plume, not a 2-day blink. */
-          windowDays?: number;
-        };
-        const BURN_TABLE: Record<string, BurnConfig> = {
-          launch: { scale: 2.6, mode: 'inward', windowDays: 5 },
-          tli_or_tmi: { scale: 1.6, mode: 'retro' },
-          tcm: { scale: 0.6, mode: 'retro' },
-          edl_or_oi: { scale: 1.8, mode: 'pro' },
-        };
-        // Find the closest in-window burn event — per-event window
-        // override so launch can hold longer than the default 2 days.
-        let activeBurn: { type: string; met_days: number; daysFromEvent: number } | null = null;
-        const simMet = simDay - arcTimeline.dep_day;
-        for (const evt of mission.flight.events) {
-          if (!(evt.type in BURN_TABLE) || evt.met_days == null) continue;
-          const daysFromEvent = Math.abs(simMet - evt.met_days);
-          const win = BURN_TABLE[evt.type].windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
-          if (daysFromEvent > win) continue;
-          if (!activeBurn || daysFromEvent < activeBurn.daysFromEvent) {
-            activeBurn = { type: evt.type, met_days: evt.met_days, daysFromEvent };
+        // Velocity tangent on spacecraft: finite-difference of next-frame
+        // position from the arc geometry, normalized + scaled by current
+        // heliocentric speed.
+        if (velocityArrow.visible || centripetalArrow.visible) {
+          const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+          const dx = (sc1.x - sc.pos.x) * SCALE_3D;
+          const dz = (sc1.z - sc.pos.z) * SCALE_3D;
+          const dirMag = Math.hypot(dx, dz);
+          if (velocityArrow.visible && dirMag > 0.0001) {
+            velocityArrow.position.copy(scWorld);
+            const tangent = new THREE.Vector3(dx / dirMag, 0, dz / dirMag);
+            velocityArrow.setDirection(tangent);
+            // Scale arrow length by heliocentric speed (km/s) — typical
+            // 25-35 km/s on the cruise. 0.4 unit per km/s gives ~12-14
+            // unit arrows that read clearly.
+            const vLen = Math.min(20, Math.max(4, heliocentricKms * 0.4));
+            velocityArrow.setLength(vLen, 0.7, 0.4);
+          }
+          if (centripetalArrow.visible) {
+            centripetalArrow.position.copy(scWorld);
+            // Centripetal acceleration on a Keplerian arc points toward
+            // the central body — for a heliocentric arc that's the Sun.
+            // Same direction as the gravity-from-Sun arrow.
+            const dirSun = new THREE.Vector3()
+              .subVectors(new THREE.Vector3(0, 0, 0), scWorld)
+              .normalize();
+            centripetalArrow.setDirection(dirSun);
+            // Length proxy via Sun-gravity acceleration so the arrow
+            // size mirrors the curvature of the trajectory at this r.
+            const aSun2 = gravityAccel(
+              BODY_MASS_KG.sun,
+              scWorld.length() * (149_597_870.7 / SCALE_3D),
+            );
+            centripetalArrow.setLength(logScaleLength(aSun2, 1.2, 14, 1e-6, 10), 0.7, 0.4);
           }
         }
-        if (activeBurn) {
-          const cfg = BURN_TABLE[activeBurn.type];
-          // Sample next-frame position for velocity vector
-          const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
-          const vx = (sc1.x - sc.pos.x) * SCALE_3D;
-          const vz = (sc1.z - sc.pos.z) * SCALE_3D;
-          const vMag = Math.hypot(vx, vz);
-          // Compute exhaust direction (the target the cone tip points at)
-          let exDx = 0;
-          let exDz = 0;
-          if (cfg.mode === 'inward') {
-            // From spacecraft toward Earth (or destination for early-mission Earth)
-            const earthW = earthMesh.position;
-            const idx = earthW.x - scWorld.x;
-            const idz = earthW.z - scWorld.z;
-            const idm = Math.hypot(idx, idz) || 1;
-            exDx = idx / idm;
-            exDz = idz / idm;
-          } else if (cfg.mode === 'retro' && vMag > 0.0001) {
-            // Opposite velocity
-            exDx = -vx / vMag;
-            exDz = -vz / vMag;
-          } else if (cfg.mode === 'pro' && vMag > 0.0001) {
-            // Along velocity
-            exDx = vx / vMag;
-            exDz = vz / vMag;
+
+        // #1 Engine plume — directed cone at the spacecraft during burn
+        // events. Hidden when no burn is active. Per-event-type config:
+        //   - launch: exhaust toward Earth (outward thrust)
+        //   - tli_or_tmi: exhaust retrograde (prograde acceleration)
+        //   - tcm: small retrograde
+        //   - edl_or_oi: exhaust prograde (retrograde deceleration)
+        // Opacity ramps in/out across ±BURN_WINDOW_DAYS.
+        if (!isMoonMission && mission.flight?.events) {
+          const BURN_WINDOW_DAYS_DEFAULT = 2;
+          type BurnConfig = {
+            scale: number;
+            mode: 'inward' | 'retro' | 'pro';
+            /** Optional per-event-type window override. Launch gets a
+             *  wider window because it's the mission's emotional hero
+             *  moment — the audience should see a sustained dramatic
+             *  plume, not a 2-day blink. */
+            windowDays?: number;
+          };
+          const BURN_TABLE: Record<string, BurnConfig> = {
+            launch: { scale: 2.6, mode: 'inward', windowDays: 5 },
+            tli_or_tmi: { scale: 1.6, mode: 'retro' },
+            tcm: { scale: 0.6, mode: 'retro' },
+            edl_or_oi: { scale: 1.8, mode: 'pro' },
+          };
+          // Find the closest in-window burn event — per-event window
+          // override so launch can hold longer than the default 2 days.
+          let activeBurn: { type: string; met_days: number; daysFromEvent: number } | null = null;
+          const simMet = simDay - arcTimeline.dep_day;
+          for (const evt of mission.flight.events) {
+            if (!(evt.type in BURN_TABLE) || evt.met_days == null) continue;
+            const daysFromEvent = Math.abs(simMet - evt.met_days);
+            const win = BURN_TABLE[evt.type].windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
+            if (daysFromEvent > win) continue;
+            if (!activeBurn || daysFromEvent < activeBurn.daysFromEvent) {
+              activeBurn = { type: evt.type, met_days: evt.met_days, daysFromEvent };
+            }
           }
-          plumeMesh.position.copy(scWorld);
-          plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
-          plumeMesh.scale.setScalar(cfg.scale);
-          // Opacity: peak at event time, fade linearly across the
-          // per-event window (launch's wider window gives a sustained
-          // dramatic plume).
-          const winOpacity = cfg.windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
-          const opacity = 0.85 * Math.max(0, 1 - activeBurn.daysFromEvent / winOpacity);
-          plumeMat.uniforms.uOpacity.value = opacity;
-          plumeMesh.visible = opacity > 0.02;
+          if (activeBurn) {
+            const cfg = BURN_TABLE[activeBurn.type];
+            // Sample next-frame position for velocity vector
+            const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+            const vx = (sc1.x - sc.pos.x) * SCALE_3D;
+            const vz = (sc1.z - sc.pos.z) * SCALE_3D;
+            const vMag = Math.hypot(vx, vz);
+            // Compute exhaust direction (the target the cone tip points at)
+            let exDx = 0;
+            let exDz = 0;
+            if (cfg.mode === 'inward') {
+              // From spacecraft toward Earth (or destination for early-mission Earth)
+              const earthW = earthMesh.position;
+              const idx = earthW.x - scWorld.x;
+              const idz = earthW.z - scWorld.z;
+              const idm = Math.hypot(idx, idz) || 1;
+              exDx = idx / idm;
+              exDz = idz / idm;
+            } else if (cfg.mode === 'retro' && vMag > 0.0001) {
+              // Opposite velocity
+              exDx = -vx / vMag;
+              exDz = -vz / vMag;
+            } else if (cfg.mode === 'pro' && vMag > 0.0001) {
+              // Along velocity
+              exDx = vx / vMag;
+              exDz = vz / vMag;
+            }
+            plumeMesh.position.copy(scWorld);
+            plumeMesh.lookAt(scWorld.x + exDx, scWorld.y, scWorld.z + exDz);
+            plumeMesh.scale.setScalar(cfg.scale);
+            // Opacity: peak at event time, fade linearly across the
+            // per-event window (launch's wider window gives a sustained
+            // dramatic plume).
+            const winOpacity = cfg.windowDays ?? BURN_WINDOW_DAYS_DEFAULT;
+            const opacity = 0.85 * Math.max(0, 1 - activeBurn.daysFromEvent / winOpacity);
+            plumeMat.uniforms.uOpacity.value = opacity;
+            plumeMesh.visible = opacity > 0.02;
+          } else {
+            plumeMesh.visible = false;
+          }
         } else {
           plumeMesh.visible = false;
         }
-      } else {
-        plumeMesh.visible = false;
-      }
 
-      // v0.6.3 #228: single source of truth for bright/dim split. The
-      // sprite sits at sc.pos = lerpPoint(pts, fraction). Each tube
-      // vertex carries aT = i/(N-1) (same parameterization). The
-      // fragment shader paints vT < uProgress bright, else dim — and
-      // since per-vertex interpolation of vT crosses uProgress at
-      // exactly the same world position that lerpPoint(pts, uProgress)
-      // returns, the boundary lands on the sprite by construction.
-      // No vertex mutation, no drawRange, no two-tube alignment dance.
-      //
-      // sc.progress goes 0 → 0.5 across outbound and 0.5 → 1 across
-      // return, so outFraction maps [0, 0.5] → [0, 1] for outbound
-      // and retFraction maps [0.5, 1] → [0, 1] for return.
-      const outFraction = Math.min(1, sc.progress * 2);
-      const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
-      if (outLine) {
-        const mat = outLine.material as THREE.ShaderMaterial;
-        mat.uniforms.uProgress.value = outFraction;
-      }
-      if (retLine) {
-        const mat = retLine.material as THREE.ShaderMaterial;
-        mat.uniforms.uProgress.value = retFraction;
-      }
-
-      // marsArr / earthRet are recomputed per-frame from the live
-      // arcTimeline so these markers track per-mission launch windows.
-      // Moon-mode uses Earth-centred fake-AU coords so a heliocentric
-      // marsArr / earthRet would render the rings off in heliocentric
-      // space (visible because the camera is also looking at origin).
-      // Hide them entirely for Moon missions — Earth + Moon meshes
-      // already mark the start/end of the cislunar trajectory.
-      if (view === '3d' && container) {
-        // Per-frame cislunar updates.
-        const moonPos = moonEciPos(simDay);
-        if (cislunarMoonMeshRef) {
-          cislunarMoonMeshRef.position.set(
-            moonPos.x * SCALE_CISLUNAR,
-            moonPos.y * SCALE_CISLUNAR,
-            moonPos.z * SCALE_CISLUNAR,
-          );
+        // v0.6.3 #228: single source of truth for bright/dim split. The
+        // sprite sits at sc.pos = lerpPoint(pts, fraction). Each tube
+        // vertex carries aT = i/(N-1) (same parameterization). The
+        // fragment shader paints vT < uProgress bright, else dim — and
+        // since per-vertex interpolation of vT crosses uProgress at
+        // exactly the same world position that lerpPoint(pts, uProgress)
+        // returns, the boundary lands on the sprite by construction.
+        // No vertex mutation, no drawRange, no two-tube alignment dance.
+        //
+        // sc.progress goes 0 → 0.5 across outbound and 0.5 → 1 across
+        // return, so outFraction maps [0, 0.5] → [0, 1] for outbound
+        // and retFraction maps [0.5, 1] → [0, 1] for return.
+        const outFraction = Math.min(1, sc.progress * 2);
+        const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
+        if (outLine) {
+          const mat = outLine.material as THREE.ShaderMaterial;
+          mat.uniforms.uProgress.value = outFraction;
         }
-        // Drive the moon-frame group offset = (currentMoon - moonAtFlyby)
-        // so lunar-phase lines (orbit, descent, etc.) ride with the Moon
-        // mesh instead of staying anchored where the Moon was at
-        // flyby_day. Same delta used for the spacecraft sprite in
-        // updateCislunarSpacecraft.
-        if (cislunarMoonFrameGroupRef) {
-          const moonRefPos = moonEciPos(arcTimeline.flyby_day);
-          cislunarMoonFrameGroupRef.position.set(
-            (moonPos.x - moonRefPos.x) * SCALE_CISLUNAR,
-            (moonPos.y - moonRefPos.y) * SCALE_CISLUNAR,
-            (moonPos.z - moonRefPos.z) * SCALE_CISLUNAR,
-          );
+        if (retLine) {
+          const mat = retLine.material as THREE.ShaderMaterial;
+          mat.uniforms.uProgress.value = retFraction;
         }
-        const metDays = simDay - arcTimeline.dep_day;
-        flyUpdaters?.cislunar.updateSpacecraft(cislunarTrajectory, metDays);
-        flyUpdaters?.cislunar.updateLineProgress(cislunarTrajectory, metDays);
 
-        // ─── Cislunar science-layer per-frame updates ─────────────────
-        // Drive only the visible overlays so the math is skipped when
-        // the user has the layer off. All arrows / markers / coast
-        // need the spacecraft's current absolute ECI position + a
-        // finite-difference velocity, so the head of this block does
-        // both regardless of which layer is on.
-        const conicsLayerOn = isLayerOn('conics');
-        const anyCislunarLayerOn =
-          cisGravEarthArrow.visible ||
-          cisGravMoonArrow.visible ||
-          cisVelocityArrow.visible ||
-          cisCentripetalArrow.visible ||
-          cisPeriMarker.visible ||
-          cisCoastLine.visible ||
-          conicsLayerOn;
-        if (anyCislunarLayerOn && cislunarTrajectory && cislunarTrajectory.phases.length > 0) {
-          // Walk phases to find current absolute position + velocity
-          // (finite-diff at +0.05 days). For lunar-frame phases the
-          // points are stored Moon-relative, so add (currentMoon -
-          // moonAtFlyby) to bring them into absolute ECI.
-          const LUNAR_LOCAL_LAYERS = new Set([
-            'lunar_orbit',
-            'spiral_lunar',
-            'lunar_flyby',
-            'descent',
-            'ascent',
-          ]);
-          const moonRefForLayers = moonEciPos(arcTimeline.flyby_day);
-          const cisPosAt = (
-            metT: number,
-          ): { x: number; y: number; z: number; phaseType: string } => {
-            const traj = cislunarTrajectory!;
-            let active = traj.phases[0];
-            for (const p of traj.phases) {
-              if (metT >= p.start_met_days && metT <= p.end_met_days) {
-                active = p;
-                break;
+        // marsArr / earthRet are recomputed per-frame from the live
+        // arcTimeline so these markers track per-mission launch windows.
+        // Moon-mode uses Earth-centred fake-AU coords so a heliocentric
+        // marsArr / earthRet would render the rings off in heliocentric
+        // space (visible because the camera is also looking at origin).
+        // Hide them entirely for Moon missions — Earth + Moon meshes
+        // already mark the start/end of the cislunar trajectory.
+        if (view === '3d' && container) {
+          // Per-frame cislunar updates.
+          const moonPos = moonEciPos(simDay);
+          if (cislunarMoonMeshRef) {
+            cislunarMoonMeshRef.position.set(
+              moonPos.x * SCALE_CISLUNAR,
+              moonPos.y * SCALE_CISLUNAR,
+              moonPos.z * SCALE_CISLUNAR,
+            );
+          }
+          // Drive the moon-frame group offset = (currentMoon - moonAtFlyby)
+          // so lunar-phase lines (orbit, descent, etc.) ride with the Moon
+          // mesh instead of staying anchored where the Moon was at
+          // flyby_day. Same delta used for the spacecraft sprite in
+          // updateCislunarSpacecraft.
+          if (cislunarMoonFrameGroupRef) {
+            const moonRefPos = moonEciPos(arcTimeline.flyby_day);
+            cislunarMoonFrameGroupRef.position.set(
+              (moonPos.x - moonRefPos.x) * SCALE_CISLUNAR,
+              (moonPos.y - moonRefPos.y) * SCALE_CISLUNAR,
+              (moonPos.z - moonRefPos.z) * SCALE_CISLUNAR,
+            );
+          }
+          const metDays = simDay - arcTimeline.dep_day;
+          flyUpdaters?.cislunar.updateSpacecraft(cislunarTrajectory, metDays);
+          flyUpdaters?.cislunar.updateLineProgress(cislunarTrajectory, metDays);
+
+          // ─── Cislunar science-layer per-frame updates ─────────────────
+          // Drive only the visible overlays so the math is skipped when
+          // the user has the layer off. All arrows / markers / coast
+          // need the spacecraft's current absolute ECI position + a
+          // finite-difference velocity, so the head of this block does
+          // both regardless of which layer is on.
+          const conicsLayerOn = isLayerOn('conics');
+          const anyCislunarLayerOn =
+            cisGravEarthArrow.visible ||
+            cisGravMoonArrow.visible ||
+            cisVelocityArrow.visible ||
+            cisCentripetalArrow.visible ||
+            cisPeriMarker.visible ||
+            cisCoastLine.visible ||
+            conicsLayerOn;
+          if (anyCislunarLayerOn && cislunarTrajectory && cislunarTrajectory.phases.length > 0) {
+            // Walk phases to find current absolute position + velocity
+            // (finite-diff at +0.05 days). For lunar-frame phases the
+            // points are stored Moon-relative, so add (currentMoon -
+            // moonAtFlyby) to bring them into absolute ECI.
+            const LUNAR_LOCAL_LAYERS = new Set([
+              'lunar_orbit',
+              'spiral_lunar',
+              'lunar_flyby',
+              'descent',
+              'ascent',
+            ]);
+            const moonRefForLayers = moonEciPos(arcTimeline.flyby_day);
+            const cisPosAt = (
+              metT: number,
+            ): { x: number; y: number; z: number; phaseType: string } => {
+              const traj = cislunarTrajectory!;
+              let active = traj.phases[0];
+              for (const p of traj.phases) {
+                if (metT >= p.start_met_days && metT <= p.end_met_days) {
+                  active = p;
+                  break;
+                }
               }
-            }
-            const span = active.end_met_days - active.start_met_days;
-            const t =
-              span > 0 ? Math.max(0, Math.min(1, (metT - active.start_met_days) / span)) : 0;
-            const last = active.points.length - 1;
-            const f = t * last;
-            const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
-            const frac = f - i;
-            const a = active.points[i];
-            const b = active.points[i + 1] ?? a;
-            let x = a.x + (b.x - a.x) * frac;
-            let y = a.y + (b.y - a.y) * frac;
-            let z = a.z + (b.z - a.z) * frac;
-            if (LUNAR_LOCAL_LAYERS.has(active.type)) {
-              const moonAtT = moonEciPos(arcTimeline.dep_day + metT);
-              x += moonAtT.x - moonRefForLayers.x;
-              y += moonAtT.y - moonRefForLayers.y;
-              z += moonAtT.z - moonRefForLayers.z;
-            }
-            return { x, y, z, phaseType: active.type };
-          };
-
-          const p0 = cisPosAt(metDays);
-          const p1 = cisPosAt(metDays + 0.05);
-          const dt_sec = 0.05 * 86400; // days → seconds
-          const vx = (p1.x - p0.x) / dt_sec; // km/s
-          const vz = (p1.z - p0.z) / dt_sec;
-          const vy = (p1.y - p0.y) / dt_sec;
-          const speedKms = Math.hypot(vx, vy, vz);
-          const isLunarPhase = LUNAR_LOCAL_LAYERS.has(p0.phaseType);
-
-          // Spacecraft scene position (for anchoring arrows).
-          const scScene = new THREE.Vector3(
-            p0.x * SCALE_CISLUNAR,
-            p0.y * SCALE_CISLUNAR,
-            p0.z * SCALE_CISLUNAR,
-          );
-
-          // Earth / Moon positions in scene units.
-          const earthScene = new THREE.Vector3(0, 0, 0);
-          const moonAtNowAbs = moonEciPos(simDay);
-          const moonScene = new THREE.Vector3(
-            moonAtNowAbs.x * SCALE_CISLUNAR,
-            moonAtNowAbs.y * SCALE_CISLUNAR,
-            moonAtNowAbs.z * SCALE_CISLUNAR,
-          );
-
-          // Gravity arrows — Earth + Moon.
-          if (cisGravEarthArrow.visible) {
-            const dEarthKm = Math.hypot(p0.x, p0.y, p0.z);
-            const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
-            cisGravEarthArrow.position.copy(scScene);
-            cisGravEarthArrow.setDirection(
-              new THREE.Vector3().subVectors(earthScene, scScene).normalize(),
-            );
-            cisGravEarthArrow.setLength(
-              Math.max(0.5, Math.min(5, logScaleLength(aEarth, 0.5, 5, 1e-6, 10))),
-              0.18,
-              0.1,
-            );
-          }
-          if (cisGravMoonArrow.visible) {
-            const dMoonKm = Math.hypot(
-              p0.x - moonAtNowAbs.x,
-              p0.y - moonAtNowAbs.y,
-              p0.z - moonAtNowAbs.z,
-            );
-            const aMoon = gravityAccel(BODY_MASS_KG.moon, dMoonKm);
-            cisGravMoonArrow.position.copy(scScene);
-            cisGravMoonArrow.setDirection(
-              new THREE.Vector3().subVectors(moonScene, scScene).normalize(),
-            );
-            cisGravMoonArrow.setLength(
-              Math.max(0.5, Math.min(5, logScaleLength(aMoon, 0.5, 5, 1e-6, 10))),
-              0.18,
-              0.1,
-            );
-          }
-
-          // Velocity tangent — proportional to speed.
-          if (cisVelocityArrow.visible && speedKms > 1e-6) {
-            const dirMag = Math.hypot(p1.x - p0.x, p1.y - p0.y, p1.z - p0.z);
-            cisVelocityArrow.position.copy(scScene);
-            cisVelocityArrow.setDirection(
-              new THREE.Vector3(
-                (p1.x - p0.x) / dirMag,
-                (p1.y - p0.y) / dirMag,
-                (p1.z - p0.z) / dirMag,
-              ),
-            );
-            // 1 km/s → ~0.4u in cislunar scale (matches heliocentric ratio).
-            const vLen = Math.max(0.4, Math.min(5, speedKms * 0.4));
-            cisVelocityArrow.setLength(vLen, 0.18, 0.1);
-          }
-
-          // Centripetal — toward dominant body (Moon if in lunar phase,
-          // else Earth).
-          if (cisCentripetalArrow.visible) {
-            const target = isLunarPhase ? moonScene : earthScene;
-            const dir = new THREE.Vector3().subVectors(target, scScene).normalize();
-            cisCentripetalArrow.position.copy(scScene);
-            cisCentripetalArrow.setDirection(dir);
-            const dKm = isLunarPhase
-              ? Math.hypot(p0.x - moonAtNowAbs.x, p0.y - moonAtNowAbs.y, p0.z - moonAtNowAbs.z)
-              : Math.hypot(p0.x, p0.y, p0.z);
-            const accel = gravityAccel(isLunarPhase ? BODY_MASS_KG.moon : BODY_MASS_KG.earth, dKm);
-            cisCentripetalArrow.setLength(
-              Math.max(0.4, Math.min(5, logScaleLength(accel, 0.4, 5, 1e-6, 10))),
-              0.18,
-              0.1,
-            );
-          }
-
-          // Apsides — scan current phase's points for min/max distance
-          // from the dominant body. Earth-frame phases use Earth as
-          // centre, lunar-frame use Moon.
-          if (cisPeriMarker.visible || cisApoMarker.visible) {
-            let activePhase = cislunarTrajectory.phases[0];
-            for (const p of cislunarTrajectory.phases) {
-              if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
-                activePhase = p;
-                break;
+              const span = active.end_met_days - active.start_met_days;
+              const t =
+                span > 0 ? Math.max(0, Math.min(1, (metT - active.start_met_days) / span)) : 0;
+              const last = active.points.length - 1;
+              const f = t * last;
+              const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+              const frac = f - i;
+              const a = active.points[i];
+              const b = active.points[i + 1] ?? a;
+              let x = a.x + (b.x - a.x) * frac;
+              let y = a.y + (b.y - a.y) * frac;
+              let z = a.z + (b.z - a.z) * frac;
+              if (LUNAR_LOCAL_LAYERS.has(active.type)) {
+                const moonAtT = moonEciPos(arcTimeline.dep_day + metT);
+                x += moonAtT.x - moonRefForLayers.x;
+                y += moonAtT.y - moonRefForLayers.y;
+                z += moonAtT.z - moonRefForLayers.z;
               }
-            }
-            const lunarFrame = LUNAR_LOCAL_LAYERS.has(activePhase.type);
-            const cx = lunarFrame ? moonRefForLayers.x : 0;
-            const cy = lunarFrame ? moonRefForLayers.y : 0;
-            const cz = lunarFrame ? moonRefForLayers.z : 0;
-            let minR2 = Infinity;
-            let maxR2 = -Infinity;
-            let minI = 0;
-            let maxI = 0;
-            for (let i = 0; i < activePhase.points.length; i++) {
-              const p = activePhase.points[i];
-              const dx = p.x - cx;
-              const dy = p.y - cy;
-              const dz = p.z - cz;
-              const r2 = dx * dx + dy * dy + dz * dz;
-              if (r2 < minR2) {
-                minR2 = r2;
-                minI = i;
-              }
-              if (r2 > maxR2) {
-                maxR2 = r2;
-                maxI = i;
-              }
-            }
-            const peri = activePhase.points[minI];
-            const apo = activePhase.points[maxI];
-            // Lunar-frame points need the moonFrameGroup offset to land
-            // in absolute scene coords.
-            let dx0 = 0;
-            let dy0 = 0;
-            let dz0 = 0;
-            if (lunarFrame) {
-              dx0 = moonAtNowAbs.x - moonRefForLayers.x;
-              dy0 = moonAtNowAbs.y - moonRefForLayers.y;
-              dz0 = moonAtNowAbs.z - moonRefForLayers.z;
-            }
-            cisPeriMarker.position.set(
-              (peri.x + dx0) * SCALE_CISLUNAR,
-              (peri.y + dy0) * SCALE_CISLUNAR,
-              (peri.z + dz0) * SCALE_CISLUNAR,
-            );
-            cisApoMarker.position.set(
-              (apo.x + dx0) * SCALE_CISLUNAR,
-              (apo.y + dy0) * SCALE_CISLUNAR,
-              (apo.z + dz0) * SCALE_CISLUNAR,
-            );
-          }
+              return { x, y, z, phaseType: active.type };
+            };
 
-          // Coast preview — integrate forward from (p0, v) under Earth
-          // gravity for N seconds, dropping points each step. Tier 1
-          // simplification: ignores Moon gravity (acceptable outside
-          // lunar SoI).
-          if (cisCoastLine.visible) {
-            const MU_EARTH = 398600.4418; // km³/s²
-            const STEPS = 200;
-            const DT = 600; // 600 s per step → 200×600 = 33 h preview
-            let rx = p0.x;
-            let ry = p0.y;
-            let rz = p0.z;
-            let rvx = vx;
-            let rvy = vy;
-            let rvz = vz;
-            const verts = new Float32Array((STEPS + 1) * 3);
-            verts[0] = rx * SCALE_CISLUNAR;
-            verts[1] = ry * SCALE_CISLUNAR;
-            verts[2] = rz * SCALE_CISLUNAR;
-            for (let i = 1; i <= STEPS; i++) {
-              const rMag = Math.hypot(rx, ry, rz);
-              if (rMag < R_EARTH_KM) break; // collided
-              const a = -MU_EARTH / (rMag * rMag * rMag);
-              rvx += a * rx * DT;
-              rvy += a * ry * DT;
-              rvz += a * rz * DT;
-              rx += rvx * DT;
-              ry += rvy * DT;
-              rz += rvz * DT;
-              verts[i * 3] = rx * SCALE_CISLUNAR;
-              verts[i * 3 + 1] = ry * SCALE_CISLUNAR;
-              verts[i * 3 + 2] = rz * SCALE_CISLUNAR;
-            }
-            cisCoastLine.geometry.dispose();
-            cisCoastLine.geometry = new THREE.BufferGeometry();
-            cisCoastLine.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));
-            cisCoastLine.computeLineDistances();
-          }
+            const p0 = cisPosAt(metDays);
+            const p1 = cisPosAt(metDays + 0.05);
+            const dt_sec = 0.05 * 86400; // days → seconds
+            const vx = (p1.x - p0.x) / dt_sec; // km/s
+            const vz = (p1.z - p0.z) / dt_sec;
+            const vy = (p1.y - p0.y) / dt_sec;
+            const speedKms = Math.hypot(vx, vy, vz);
+            const isLunarPhase = LUNAR_LOCAL_LAYERS.has(p0.phaseType);
 
-          // Conics — classify the spacecraft's Earth-centric (r, v).
-          // Cislunar trajectories are Earth-bound ellipses for the
-          // outbound/return coasts and Moon-bound for lunar phases;
-          // here we always classify with Earth as the central body
-          // since that's what the conic panel labels.
-          if (conicsLayerOn) {
-            conicStateCislunar = classifyConicEarth(
-              { x: p0.x, y: p0.y, z: p0.z },
-              { x: vx, y: vy, z: vz },
+            // Spacecraft scene position (for anchoring arrows).
+            const scScene = new THREE.Vector3(
+              p0.x * SCALE_CISLUNAR,
+              p0.y * SCALE_CISLUNAR,
+              p0.z * SCALE_CISLUNAR,
             );
-          } else {
+
+            // Earth / Moon positions in scene units.
+            const earthScene = new THREE.Vector3(0, 0, 0);
+            const moonAtNowAbs = moonEciPos(simDay);
+            const moonScene = new THREE.Vector3(
+              moonAtNowAbs.x * SCALE_CISLUNAR,
+              moonAtNowAbs.y * SCALE_CISLUNAR,
+              moonAtNowAbs.z * SCALE_CISLUNAR,
+            );
+
+            // Gravity arrows — Earth + Moon.
+            if (cisGravEarthArrow.visible) {
+              const dEarthKm = Math.hypot(p0.x, p0.y, p0.z);
+              const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
+              cisGravEarthArrow.position.copy(scScene);
+              cisGravEarthArrow.setDirection(
+                new THREE.Vector3().subVectors(earthScene, scScene).normalize(),
+              );
+              cisGravEarthArrow.setLength(
+                Math.max(0.5, Math.min(5, logScaleLength(aEarth, 0.5, 5, 1e-6, 10))),
+                0.18,
+                0.1,
+              );
+            }
+            if (cisGravMoonArrow.visible) {
+              const dMoonKm = Math.hypot(
+                p0.x - moonAtNowAbs.x,
+                p0.y - moonAtNowAbs.y,
+                p0.z - moonAtNowAbs.z,
+              );
+              const aMoon = gravityAccel(BODY_MASS_KG.moon, dMoonKm);
+              cisGravMoonArrow.position.copy(scScene);
+              cisGravMoonArrow.setDirection(
+                new THREE.Vector3().subVectors(moonScene, scScene).normalize(),
+              );
+              cisGravMoonArrow.setLength(
+                Math.max(0.5, Math.min(5, logScaleLength(aMoon, 0.5, 5, 1e-6, 10))),
+                0.18,
+                0.1,
+              );
+            }
+
+            // Velocity tangent — proportional to speed.
+            if (cisVelocityArrow.visible && speedKms > 1e-6) {
+              const dirMag = Math.hypot(p1.x - p0.x, p1.y - p0.y, p1.z - p0.z);
+              cisVelocityArrow.position.copy(scScene);
+              cisVelocityArrow.setDirection(
+                new THREE.Vector3(
+                  (p1.x - p0.x) / dirMag,
+                  (p1.y - p0.y) / dirMag,
+                  (p1.z - p0.z) / dirMag,
+                ),
+              );
+              // 1 km/s → ~0.4u in cislunar scale (matches heliocentric ratio).
+              const vLen = Math.max(0.4, Math.min(5, speedKms * 0.4));
+              cisVelocityArrow.setLength(vLen, 0.18, 0.1);
+            }
+
+            // Centripetal — toward dominant body (Moon if in lunar phase,
+            // else Earth).
+            if (cisCentripetalArrow.visible) {
+              const target = isLunarPhase ? moonScene : earthScene;
+              const dir = new THREE.Vector3().subVectors(target, scScene).normalize();
+              cisCentripetalArrow.position.copy(scScene);
+              cisCentripetalArrow.setDirection(dir);
+              const dKm = isLunarPhase
+                ? Math.hypot(p0.x - moonAtNowAbs.x, p0.y - moonAtNowAbs.y, p0.z - moonAtNowAbs.z)
+                : Math.hypot(p0.x, p0.y, p0.z);
+              const accel = gravityAccel(
+                isLunarPhase ? BODY_MASS_KG.moon : BODY_MASS_KG.earth,
+                dKm,
+              );
+              cisCentripetalArrow.setLength(
+                Math.max(0.4, Math.min(5, logScaleLength(accel, 0.4, 5, 1e-6, 10))),
+                0.18,
+                0.1,
+              );
+            }
+
+            // Apsides — scan current phase's points for min/max distance
+            // from the dominant body. Earth-frame phases use Earth as
+            // centre, lunar-frame use Moon.
+            if (cisPeriMarker.visible || cisApoMarker.visible) {
+              let activePhase = cislunarTrajectory.phases[0];
+              for (const p of cislunarTrajectory.phases) {
+                if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
+                  activePhase = p;
+                  break;
+                }
+              }
+              const lunarFrame = LUNAR_LOCAL_LAYERS.has(activePhase.type);
+              const cx = lunarFrame ? moonRefForLayers.x : 0;
+              const cy = lunarFrame ? moonRefForLayers.y : 0;
+              const cz = lunarFrame ? moonRefForLayers.z : 0;
+              let minR2 = Infinity;
+              let maxR2 = -Infinity;
+              let minI = 0;
+              let maxI = 0;
+              for (let i = 0; i < activePhase.points.length; i++) {
+                const p = activePhase.points[i];
+                const dx = p.x - cx;
+                const dy = p.y - cy;
+                const dz = p.z - cz;
+                const r2 = dx * dx + dy * dy + dz * dz;
+                if (r2 < minR2) {
+                  minR2 = r2;
+                  minI = i;
+                }
+                if (r2 > maxR2) {
+                  maxR2 = r2;
+                  maxI = i;
+                }
+              }
+              const peri = activePhase.points[minI];
+              const apo = activePhase.points[maxI];
+              // Lunar-frame points need the moonFrameGroup offset to land
+              // in absolute scene coords.
+              let dx0 = 0;
+              let dy0 = 0;
+              let dz0 = 0;
+              if (lunarFrame) {
+                dx0 = moonAtNowAbs.x - moonRefForLayers.x;
+                dy0 = moonAtNowAbs.y - moonRefForLayers.y;
+                dz0 = moonAtNowAbs.z - moonRefForLayers.z;
+              }
+              cisPeriMarker.position.set(
+                (peri.x + dx0) * SCALE_CISLUNAR,
+                (peri.y + dy0) * SCALE_CISLUNAR,
+                (peri.z + dz0) * SCALE_CISLUNAR,
+              );
+              cisApoMarker.position.set(
+                (apo.x + dx0) * SCALE_CISLUNAR,
+                (apo.y + dy0) * SCALE_CISLUNAR,
+                (apo.z + dz0) * SCALE_CISLUNAR,
+              );
+            }
+
+            // Coast preview — integrate forward from (p0, v) under Earth
+            // gravity for N seconds, dropping points each step. Tier 1
+            // simplification: ignores Moon gravity (acceptable outside
+            // lunar SoI).
+            if (cisCoastLine.visible) {
+              const MU_EARTH = 398600.4418; // km³/s²
+              const STEPS = 200;
+              const DT = 600; // 600 s per step → 200×600 = 33 h preview
+              let rx = p0.x;
+              let ry = p0.y;
+              let rz = p0.z;
+              let rvx = vx;
+              let rvy = vy;
+              let rvz = vz;
+              const verts = new Float32Array((STEPS + 1) * 3);
+              verts[0] = rx * SCALE_CISLUNAR;
+              verts[1] = ry * SCALE_CISLUNAR;
+              verts[2] = rz * SCALE_CISLUNAR;
+              for (let i = 1; i <= STEPS; i++) {
+                const rMag = Math.hypot(rx, ry, rz);
+                if (rMag < R_EARTH_KM) break; // collided
+                const a = -MU_EARTH / (rMag * rMag * rMag);
+                rvx += a * rx * DT;
+                rvy += a * ry * DT;
+                rvz += a * rz * DT;
+                rx += rvx * DT;
+                ry += rvy * DT;
+                rz += rvz * DT;
+                verts[i * 3] = rx * SCALE_CISLUNAR;
+                verts[i * 3 + 1] = ry * SCALE_CISLUNAR;
+                verts[i * 3 + 2] = rz * SCALE_CISLUNAR;
+              }
+              cisCoastLine.geometry.dispose();
+              cisCoastLine.geometry = new THREE.BufferGeometry();
+              cisCoastLine.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));
+              cisCoastLine.computeLineDistances();
+            }
+
+            // Conics — classify the spacecraft's Earth-centric (r, v).
+            // Cislunar trajectories are Earth-bound ellipses for the
+            // outbound/return coasts and Moon-bound for lunar phases;
+            // here we always classify with Earth as the central body
+            // since that's what the conic panel labels.
+            if (conicsLayerOn) {
+              conicStateCislunar = classifyConicEarth(
+                { x: p0.x, y: p0.y, z: p0.z },
+                { x: vx, y: vy, z: vz },
+              );
+            } else {
+              conicStateCislunar = null;
+            }
+          } else if (isMoonMission) {
+            // Clear cached cislunar conic when all layers off so the
+            // panel doesn't keep showing a stale Earth-centric state.
             conicStateCislunar = null;
           }
-        } else if (isMoonMission) {
-          // Clear cached cislunar conic when all layers off so the
-          // panel doesn't keep showing a stale Earth-centric state.
-          conicStateCislunar = null;
-        }
 
-        // Cislunar camera tracks the moving Moon target each frame so
-        // the Earth-Moon system stays framed as it drifts. User mouse
-        // input modifies cislunarCamR/P/T independently.
-        updateCislunarCam();
+          // Cislunar camera tracks the moving Moon target each frame so
+          // the Earth-Moon system stays framed as it drifts. User mouse
+          // input modifies cislunarCamR/P/T independently.
+          updateCislunarCam();
 
-        // #83 — constant on-screen line thickness. Tube geometry is
-        // built with a world-space radius so it reads as the right
-        // pixel width at the wide cruise framing (camR ~ 500) but
-        // balloons to "fat sausage" at flyby-close (camR ~ 24). Scale
-        // the radius proportional to camR each frame so the line stays
-        // at a constant apparent thickness. Throttled — only rebuild
-        // geometry when the desired radius drifts > 0.05 from current
-        // (so static frames + held beats don't spend CPU rebuilding
-        // identical geometry).
-        if (
-          !isMoonMission &&
-          outLine &&
-          retLine &&
-          outPts.length >= 2 &&
-          flyUpdaters?.helio.rebuildTubeGeometry
-        ) {
-          const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
-          // Halved per user feedback — trajectory line was reading too
-          // thick at all framings. 0.0045 → 0.00225, clamp [0.18,1.6]
-          // → [0.09,0.8], default fallback 0.35 → 0.175.
-          const desiredRadius = Math.max(0.09, Math.min(0.8, camR * 0.00225));
-          const currentRadius = tubeUd.tubeRadius ?? 0.175;
-          if (Math.abs(desiredRadius - currentRadius) > 0.05) {
-            outLine.geometry.dispose();
-            outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outPts, desiredRadius);
-            (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
-            if (retLine && retPts.length >= 2) {
-              retLine.geometry.dispose();
-              retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(
-                retPts,
-                desiredRadius * 0.85,
-              );
-              (retLine.geometry.userData as { tubeRadius?: number }).tubeRadius =
-                desiredRadius * 0.85;
+          // #83 — constant on-screen line thickness. Tube geometry is
+          // built with a world-space radius so it reads as the right
+          // pixel width at the wide cruise framing (camR ~ 500) but
+          // balloons to "fat sausage" at flyby-close (camR ~ 24). Scale
+          // the radius proportional to camR each frame so the line stays
+          // at a constant apparent thickness. Throttled — only rebuild
+          // geometry when the desired radius drifts > 0.05 from current
+          // (so static frames + held beats don't spend CPU rebuilding
+          // identical geometry).
+          if (
+            !isMoonMission &&
+            outLine &&
+            retLine &&
+            outPts.length >= 2 &&
+            flyUpdaters?.helio.rebuildTubeGeometry
+          ) {
+            const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
+            // Halved per user feedback — trajectory line was reading too
+            // thick at all framings. 0.0045 → 0.00225, clamp [0.18,1.6]
+            // → [0.09,0.8], default fallback 0.35 → 0.175.
+            const desiredRadius = Math.max(0.09, Math.min(0.8, camR * 0.00225));
+            const currentRadius = tubeUd.tubeRadius ?? 0.175;
+            if (Math.abs(desiredRadius - currentRadius) > 0.05) {
+              outLine.geometry.dispose();
+              outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outPts, desiredRadius);
+              (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;
+              if (retLine && retPts.length >= 2) {
+                retLine.geometry.dispose();
+                retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(
+                  retPts,
+                  desiredRadius * 0.85,
+                );
+                (retLine.geometry.userData as { tubeRadius?: number }).tubeRadius =
+                  desiredRadius * 0.85;
+              }
             }
           }
-        }
 
-        if (viewMode === 'cislunar') {
-          // Cislunar mode bypasses the helio composer + bloom pipeline —
-          // the Earth-Moon system framing is sized for diagrammatic
-          // clarity, not cinematic bloom, and the close-Earth-orbit
-          // sprites would smear under bloom. Direct render is correct.
-          renderer.render(cislunarScene, cislunarCamera);
-        } else if (quality.postEnabled) {
-          // Bokeh DoF focus tracking — wave 2/3 punch #6. When the
-          // cinematic-tier composer included a BokehPass, point the
-          // focal plane at the spacecraft each frame so the ship stays
-          // crisp while the Sun, planets, and starfield throw a soft
-          // photographic bokeh. Distance is camera→scWorld in scene
-          // units; BokehPass interprets it as world-space depth.
-          if (helioHandles.bokehPass && scLastWorld) {
-            const focusDist = camera.position.distanceTo(scLastWorld);
-            (helioHandles.bokehPass.uniforms as Record<string, { value: number }>).focus.value =
-              focusDist;
+          if (viewMode === 'cislunar') {
+            // Cislunar mode bypasses the helio composer + bloom pipeline —
+            // the Earth-Moon system framing is sized for diagrammatic
+            // clarity, not cinematic bloom, and the close-Earth-orbit
+            // sprites would smear under bloom. Direct render is correct.
+            renderer.render(cislunarScene, cislunarCamera);
+          } else if (quality.postEnabled) {
+            // Bokeh DoF focus tracking — wave 2/3 punch #6. When the
+            // cinematic-tier composer included a BokehPass, point the
+            // focal plane at the spacecraft each frame so the ship stays
+            // crisp while the Sun, planets, and starfield throw a soft
+            // photographic bokeh. Distance is camera→scWorld in scene
+            // units; BokehPass interprets it as world-space depth.
+            if (helioHandles.bokehPass && scLastWorld) {
+              const focusDist = camera.position.distanceTo(scLastWorld);
+              (helioHandles.bokehPass.uniforms as Record<string, { value: number }>).focus.value =
+                focusDist;
+            }
+            // Sun lens flare ghost-position update — cinematic only. The
+            // helper recomputes sprite world positions from the Sun's
+            // current screen-space projection so the ghosts trail through
+            // the screen center each frame, like an anamorphic anim flare.
+            helioHandles.sunLensFlare?.update(camera);
+            // Helio (medium+): route through the EffectComposer so
+            // RenderPass + UnrealBloomPass (Sun halo, ship rim glow,
+            // engine plume sprites when present) compose on top of the
+            // base scene.
+            helioHandles.composer.render();
+          } else {
+            // Helio (minimal / low): direct render, no post stack.
+            // The user gets a working scene at the cost of the
+            // cinematic glow — see the Settings panel to opt back in.
+            renderer.render(scene, camera);
           }
-          // Sun lens flare ghost-position update — cinematic only. The
-          // helper recomputes sprite world positions from the Sun's
-          // current screen-space projection so the ghosts trail through
-          // the screen center each frame, like an anamorphic anim flare.
-          helioHandles.sunLensFlare?.update(camera);
-          // Helio (medium+): route through the EffectComposer so
-          // RenderPass + UnrealBloomPass (Sun halo, ship rim glow,
-          // engine plume sprites when present) compose on top of the
-          // base scene.
-          helioHandles.composer.render();
-        } else {
-          // Helio (minimal / low): direct render, no post stack.
-          // The user gets a working scene at the cost of the
-          // cinematic glow — see the Settings panel to opt back in.
-          renderer.render(scene, camera);
-        }
-        // Frame-end debug write. Captures state every frame
-        // independent of whether a flyby cinema is active — the
-        // mid-update __flyDebug write inside updateHelioAutoZoomTargets
-        // only runs when activeFlybyMet !== null, leaving subPhase /
-        // simDay / arming state stale at the most recent flyby across
-        // launch / cruise / arrived. This frame-end write fixes the
-        // verification path.
-        //
-        // Audit recommendation #2 — production builds skip the write
-        // entirely (Vite removes the dead branch at build time). Tests
-        // + dev work still see the full state. No prod overhead from a
-        // hot-path window assignment 60× / second.
-        if (import.meta.env.DEV) {
-          window.__flyDebugFrame = {
-            simDay,
-            lastHelioSubPhase,
-            peakHoldArmedForFlybyMet: cine.peakHoldArmedForFlybyMet,
-            peakHoldRemainingMs: Math.max(0, cine.peakHoldUntil - performance.now()),
-            camR,
-            camTx: camTarget.x,
-            camTz: camTarget.z,
-            inMissionFinale,
-            finaleCaptionOpacity,
-            finaleBlackOpacity,
-            finaleStartedAt: cine.finaleStartedAt,
-            finaleElapsedMs:
-              cine.finaleStartedAt > 0 ? performance.now() - cine.finaleStartedAt : 0,
-            cutBlackOpacity,
-            cutStartedAt: cine.cutStartedAt,
-            cruiseHoldUntil: cine.cruiseHoldUntil,
-            cruiseHoldFired: cine.cruiseHoldFired,
-            cruiseHoldRemainingMs: Math.max(0, cine.cruiseHoldUntil - performance.now()),
-            cruiseHoldTriggerSimDay,
-          };
-        }
-        // GH #107 — phase marker projection (3D view). Compute pixel
-        // positions for every event marker against the active cislunar
-        // camera + canvas size, then write the resulting
-        // PhaseMarkerRenderState[] in a single $state.raw assignment so
-        // the template re-renders once per frame.
-        // Shared Vector3 factory for the two marker pipelines below.
-        // Hoisted out of the `if (hasPhaseMarkers)` guard so the FD
-        // marker projection (later) can reuse it without depending on
-        // whether the mission has a flight.events[] roster.
-        const factory =
-          container == null
-            ? null
-            : (x: number, y: number, z: number): MinimalProjector => {
-                const v = new THREE.Vector3(x, y, z);
-                return {
-                  project(cam) {
-                    v.project(cam as unknown as THREE.Camera);
-                    return v;
-                  },
+          // Frame-end debug write. Captures state every frame
+          // independent of whether a flyby cinema is active — the
+          // mid-update __flyDebug write inside updateHelioAutoZoomTargets
+          // only runs when activeFlybyMet !== null, leaving subPhase /
+          // simDay / arming state stale at the most recent flyby across
+          // launch / cruise / arrived. This frame-end write fixes the
+          // verification path.
+          //
+          // Audit recommendation #2 — production builds skip the write
+          // entirely (Vite removes the dead branch at build time). Tests
+          // + dev work still see the full state. No prod overhead from a
+          // hot-path window assignment 60× / second.
+          if (import.meta.env.DEV) {
+            window.__flyDebugFrame = {
+              simDay,
+              lastHelioSubPhase,
+              peakHoldArmedForFlybyMet: cine.peakHoldArmedForFlybyMet,
+              peakHoldRemainingMs: Math.max(0, cine.peakHoldUntil - performance.now()),
+              camR,
+              camTx: camTarget.x,
+              camTz: camTarget.z,
+              inMissionFinale,
+              finaleCaptionOpacity,
+              finaleBlackOpacity,
+              finaleStartedAt: cine.finaleStartedAt,
+              finaleElapsedMs:
+                cine.finaleStartedAt > 0 ? performance.now() - cine.finaleStartedAt : 0,
+              cutBlackOpacity,
+              cutStartedAt: cine.cutStartedAt,
+              cruiseHoldUntil: cine.cruiseHoldUntil,
+              cruiseHoldFired: cine.cruiseHoldFired,
+              cruiseHoldRemainingMs: Math.max(0, cine.cruiseHoldUntil - performance.now()),
+              cruiseHoldTriggerSimDay,
+            };
+          }
+          // GH #107 — phase marker projection (3D view). Compute pixel
+          // positions for every event marker against the active cislunar
+          // camera + canvas size, then write the resulting
+          // PhaseMarkerRenderState[] in a single $state.raw assignment so
+          // the template re-renders once per frame.
+          // Shared Vector3 factory for the two marker pipelines below.
+          // Hoisted out of the `if (hasPhaseMarkers)` guard so the FD
+          // marker projection (later) can reuse it without depending on
+          // whether the mission has a flight.events[] roster.
+          const factory =
+            container == null
+              ? null
+              : (x: number, y: number, z: number): MinimalProjector => {
+                  const v = new THREE.Vector3(x, y, z);
+                  return {
+                    project(cam) {
+                      v.project(cam as unknown as THREE.Camera);
+                      return v;
+                    },
+                  };
                 };
-              };
 
-        if (hasPhaseMarkers && container && factory) {
-          const cw = container.clientWidth;
-          const ch = container.clientHeight;
-          const simMet = simDay - mission.timeline.dep_day;
-          const next: PhaseMarkerRenderState[] = [];
-          // Moon path: ECI km → CSS pixels via the cislunar camera.
-          if (viewMode === 'cislunar' && phaseMarkers.length > 0) {
-            for (const mk of phaseMarkers) {
-              next.push({
-                event: mk.event,
-                scienceRef: mk.scienceRef,
-                screen: eciKmToScreenPx(mk.posKm, factory, cislunarCamera, cw, ch),
-                reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
-                eventLabel: defaultEventLabel(mk.event.type),
+          if (hasPhaseMarkers && container && factory) {
+            const cw = container.clientWidth;
+            const ch = container.clientHeight;
+            const simMet = simDay - mission.timeline.dep_day;
+            const next: PhaseMarkerRenderState[] = [];
+            // Moon path: ECI km → CSS pixels via the cislunar camera.
+            if (viewMode === 'cislunar' && phaseMarkers.length > 0) {
+              for (const mk of phaseMarkers) {
+                next.push({
+                  event: mk.event,
+                  scienceRef: mk.scienceRef,
+                  screen: eciKmToScreenPx(mk.posKm, factory, cislunarCamera, cw, ch),
+                  reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+                  eventLabel: defaultEventLabel(mk.event.type),
+                });
+              }
+            }
+            // Mars / outer-system path: heliocentric AU → CSS pixels via
+            // the main camera (helio scene already uses AU as scene units).
+            if (viewMode === 'heliocentric' && interplanetaryPhaseMarkers.length > 0) {
+              for (const mk of interplanetaryPhaseMarkers) {
+                next.push({
+                  event: mk.event,
+                  scienceRef: mk.scienceRef,
+                  screen: helioAuToScreenPx(mk.posAu, factory, camera, cw, ch),
+                  reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+                  eventLabel: defaultEventLabel(mk.event.type),
+                });
+              }
+            }
+            phaseMarkerScreens = next;
+          } else if (phaseMarkerScreens.length > 0) {
+            phaseMarkerScreens = [];
+          }
+
+          // FlightDirectorBanner stage markers (heliocentric only — Moon
+          // missions already have the cislunar PhaseMarker pipeline). Each
+          // stage projects ONE point: a diamond tick on the path at the
+          // stage's startArc — the chip's leader line ends at that
+          // diamond, so the label visually anchors to the trajectory
+          // (not to a Sun-derived midpoint). The Sun's projected position
+          // is still passed so each chip can push itself off the Sun blob.
+          if (viewMode === 'heliocentric' && outPts.length >= 2 && container && factory) {
+            const fdNext: FdPhaseMarkerRender[] = [];
+            const cwFd = container.clientWidth;
+            const chFd = container.clientHeight;
+            const outLastIdx = outPts.length - 1;
+            const retLastIdx = retPts.length - 1;
+            const hasReturnArc = retPts.length >= 2;
+            // Leg-relative progress (0 → 1 across each leg's own arc),
+            // used to gate stage reveal. For round-trip missions
+            // arcProgress is normalised over the WHOLE mission so an
+            // outbound-arrival threshold at 0.95 wouldn't fire until ~95%
+            // of the round-trip = deep into the return leg. Leg-relative
+            // progress keeps stage thresholds intuitive on both one-way
+            // and round-trip missions.
+            const outboundT =
+              sc.phase === 'pre-launch' ? 0 : sc.phase === 'outbound' ? sc.progress * 2 : 1;
+            const returnT =
+              sc.phase === 'pre-launch' || sc.phase === 'outbound'
+                ? 0
+                : sc.phase === 'return'
+                  ? (sc.progress - 0.5) * 2
+                  : 1;
+            for (const s of FD_STAGES) {
+              // Skip return-leg stages on one-way missions (no retPts).
+              if (s.leg === 'return' && !hasReturnArc) continue;
+              const arc = s.leg === 'out' ? outPts : retPts;
+              const lastIdx = s.leg === 'out' ? outLastIdx : retLastIdx;
+              const legT = s.leg === 'out' ? outboundT : returnT;
+              const tickIdx = Math.max(0, Math.min(lastIdx, Math.round(s.tickArc * lastIdx)));
+              const tickPt = arc[tickIdx];
+              // Use the sample point's actual Y. The spline waypoints have
+              // non-zero Y at intermediate flybys (the +y offset that lifts
+              // the path above the planet rather than through it), so we
+              // can't hard-code Y=0 — that would render the diamond on the
+              // ecliptic plane while the spacecraft sits above it on the arc.
+              fdNext.push({
+                id: s.id,
+                label: s.label(),
+                tickScreen: helioAuToScreenPx(
+                  {
+                    x: tickPt.x * SCALE_3D,
+                    y: (tickPt.y ?? 0) * SCALE_3D,
+                    z: tickPt.z * SCALE_3D,
+                  },
+                  factory,
+                  camera,
+                  cwFd,
+                  chFd,
+                ),
+                // INJECTION hides its diamond + leader because the LAUNCH
+                // ring at the same arc position is the visual anchor.
+                // ARRIVAL-EARTH similarly suppresses its diamond because
+                // the RETURN ring at retPts[last] sits right there.
+                showTick: s.id !== 'injection' && s.id !== 'arrival-earth',
+                revealed: legT >= s.arcThreshold,
               });
             }
+            fdPhaseMarkerScreens = fdNext;
+          } else if (fdPhaseMarkerScreens.length > 0) {
+            fdPhaseMarkerScreens = [];
           }
-          // Mars / outer-system path: heliocentric AU → CSS pixels via
-          // the main camera (helio scene already uses AU as scene units).
-          if (viewMode === 'heliocentric' && interplanetaryPhaseMarkers.length > 0) {
-            for (const mk of interplanetaryPhaseMarkers) {
-              next.push({
-                event: mk.event,
-                scienceRef: mk.scienceRef,
-                screen: helioAuToScreenPx(mk.posAu, factory, camera, cw, ch),
-                reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
-                eventLabel: defaultEventLabel(mk.event.type),
+
+          // Milestone overlay projection — labeled flight.events render
+          // as teal chips at the spacecraft's projected position at the
+          // event's MET. Only milestones the ship has already REACHED
+          // (plus the one within an ±15-day "active" window) render, and
+          // we cap at the 2 most-recent past plus the active one — so
+          // the scene shows the current beat + one immediate predecessor
+          // for narrative context, not the whole roster (which would
+          // clutter the canvas for grand-tour missions like BepiColombo).
+          if (viewMode === 'heliocentric' && container && factory) {
+            const cwMs = container.clientWidth;
+            const chMs = container.clientHeight;
+            // 3-state milestone visibility: always show "where we came
+            // from" + "where we are" + "where we're going". The user
+            // wants to know the next milestone is coming even when
+            // they're still cruising far from it.
+            const ACTIVE_APPROACH_DAYS = 30;
+            const ACTIVE_DEPART_DAYS = 20;
+            const currentMet = simDay - arcTimeline.dep_day;
+            const labeled = (mission.flight?.events ?? [])
+              .filter((e) => e.label && e.met_days != null)
+              .sort((a, b) => (a.met_days ?? 0) - (b.met_days ?? 0));
+            let latestPast: FlightTimelineEvent | null = null;
+            let nextFuture: FlightTimelineEvent | null = null;
+            const actives: FlightTimelineEvent[] = [];
+            for (const evt of labeled) {
+              const delta = currentMet - (evt.met_days ?? 0);
+              if (delta > ACTIVE_DEPART_DAYS) {
+                latestPast = evt; // overwrite — keep the MOST RECENT past
+              } else if (delta >= -ACTIVE_APPROACH_DAYS) {
+                actives.push(evt);
+              } else if (!nextFuture) {
+                nextFuture = evt; // first future encountered
+              }
+            }
+            const picked: Array<{
+              evt: FlightTimelineEvent;
+              state: 'past' | 'active' | 'future';
+            }> = [];
+            if (latestPast) picked.push({ evt: latestPast, state: 'past' });
+            for (const a of actives) picked.push({ evt: a, state: 'active' });
+            if (nextFuture) picked.push({ evt: nextFuture, state: 'future' });
+            const msNext: MilestoneRender[] = [];
+            for (const { evt, state } of picked) {
+              const eventSimDay = arcTimeline.dep_day + evt.met_days!;
+              const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
+              msNext.push({
+                label: evt.label!,
+                description: evt.description,
+                met_days: evt.met_days!,
+                screen: helioAuToScreenPx(
+                  { x: evtSc.pos.x * SCALE_3D, y: 0, z: evtSc.pos.z * SCALE_3D },
+                  factory,
+                  camera,
+                  cwMs,
+                  chMs,
+                ),
+                active: state === 'active',
+                state,
               });
             }
+            milestoneScreens = msNext;
+          } else if (milestoneScreens.length > 0) {
+            milestoneScreens = [];
           }
-          phaseMarkerScreens = next;
-        } else if (phaseMarkerScreens.length > 0) {
-          phaseMarkerScreens = [];
-        }
-
-        // FlightDirectorBanner stage markers (heliocentric only — Moon
-        // missions already have the cislunar PhaseMarker pipeline). Each
-        // stage projects ONE point: a diamond tick on the path at the
-        // stage's startArc — the chip's leader line ends at that
-        // diamond, so the label visually anchors to the trajectory
-        // (not to a Sun-derived midpoint). The Sun's projected position
-        // is still passed so each chip can push itself off the Sun blob.
-        if (viewMode === 'heliocentric' && outPts.length >= 2 && container && factory) {
-          const fdNext: FdPhaseMarkerRender[] = [];
-          const cwFd = container.clientWidth;
-          const chFd = container.clientHeight;
-          const outLastIdx = outPts.length - 1;
-          const retLastIdx = retPts.length - 1;
-          const hasReturnArc = retPts.length >= 2;
-          // Leg-relative progress (0 → 1 across each leg's own arc),
-          // used to gate stage reveal. For round-trip missions
-          // arcProgress is normalised over the WHOLE mission so an
-          // outbound-arrival threshold at 0.95 wouldn't fire until ~95%
-          // of the round-trip = deep into the return leg. Leg-relative
-          // progress keeps stage thresholds intuitive on both one-way
-          // and round-trip missions.
-          const outboundT =
-            sc.phase === 'pre-launch' ? 0 : sc.phase === 'outbound' ? sc.progress * 2 : 1;
-          const returnT =
-            sc.phase === 'pre-launch' || sc.phase === 'outbound'
-              ? 0
-              : sc.phase === 'return'
-                ? (sc.progress - 0.5) * 2
-                : 1;
-          for (const s of FD_STAGES) {
-            // Skip return-leg stages on one-way missions (no retPts).
-            if (s.leg === 'return' && !hasReturnArc) continue;
-            const arc = s.leg === 'out' ? outPts : retPts;
-            const lastIdx = s.leg === 'out' ? outLastIdx : retLastIdx;
-            const legT = s.leg === 'out' ? outboundT : returnT;
-            const tickIdx = Math.max(0, Math.min(lastIdx, Math.round(s.tickArc * lastIdx)));
-            const tickPt = arc[tickIdx];
-            // Use the sample point's actual Y. The spline waypoints have
-            // non-zero Y at intermediate flybys (the +y offset that lifts
-            // the path above the planet rather than through it), so we
-            // can't hard-code Y=0 — that would render the diamond on the
-            // ecliptic plane while the spacecraft sits above it on the arc.
-            fdNext.push({
-              id: s.id,
-              label: s.label(),
-              tickScreen: helioAuToScreenPx(
-                {
-                  x: tickPt.x * SCALE_3D,
-                  y: (tickPt.y ?? 0) * SCALE_3D,
-                  z: tickPt.z * SCALE_3D,
-                },
-                factory,
-                camera,
-                cwFd,
-                chFd,
-              ),
-              // INJECTION hides its diamond + leader because the LAUNCH
-              // ring at the same arc position is the visual anchor.
-              // ARRIVAL-EARTH similarly suppresses its diamond because
-              // the RETURN ring at retPts[last] sits right there.
-              showTick: s.id !== 'injection' && s.id !== 'arrival-earth',
-              revealed: legT >= s.arcThreshold,
-            });
-          }
-          fdPhaseMarkerScreens = fdNext;
-        } else if (fdPhaseMarkerScreens.length > 0) {
-          fdPhaseMarkerScreens = [];
-        }
-
-        // Milestone overlay projection — labeled flight.events render
-        // as teal chips at the spacecraft's projected position at the
-        // event's MET. Only milestones the ship has already REACHED
-        // (plus the one within an ±15-day "active" window) render, and
-        // we cap at the 2 most-recent past plus the active one — so
-        // the scene shows the current beat + one immediate predecessor
-        // for narrative context, not the whole roster (which would
-        // clutter the canvas for grand-tour missions like BepiColombo).
-        if (viewMode === 'heliocentric' && container && factory) {
-          const cwMs = container.clientWidth;
-          const chMs = container.clientHeight;
-          // 3-state milestone visibility: always show "where we came
-          // from" + "where we are" + "where we're going". The user
-          // wants to know the next milestone is coming even when
-          // they're still cruising far from it.
-          const ACTIVE_APPROACH_DAYS = 30;
-          const ACTIVE_DEPART_DAYS = 20;
-          const currentMet = simDay - arcTimeline.dep_day;
-          const labeled = (mission.flight?.events ?? [])
-            .filter((e) => e.label && e.met_days != null)
-            .sort((a, b) => (a.met_days ?? 0) - (b.met_days ?? 0));
-          let latestPast: FlightTimelineEvent | null = null;
-          let nextFuture: FlightTimelineEvent | null = null;
-          const actives: FlightTimelineEvent[] = [];
-          for (const evt of labeled) {
-            const delta = currentMet - (evt.met_days ?? 0);
-            if (delta > ACTIVE_DEPART_DAYS) {
-              latestPast = evt; // overwrite — keep the MOST RECENT past
-            } else if (delta >= -ACTIVE_APPROACH_DAYS) {
-              actives.push(evt);
-            } else if (!nextFuture) {
-              nextFuture = evt; // first future encountered
-            }
-          }
-          const picked: Array<{
-            evt: FlightTimelineEvent;
-            state: 'past' | 'active' | 'future';
-          }> = [];
-          if (latestPast) picked.push({ evt: latestPast, state: 'past' });
-          for (const a of actives) picked.push({ evt: a, state: 'active' });
-          if (nextFuture) picked.push({ evt: nextFuture, state: 'future' });
-          const msNext: MilestoneRender[] = [];
-          for (const { evt, state } of picked) {
-            const eventSimDay = arcTimeline.dep_day + evt.met_days!;
-            const evtSc = spacecraftPos(eventSimDay, arcTimeline, outPts, retPts);
-            msNext.push({
-              label: evt.label!,
-              description: evt.description,
-              met_days: evt.met_days!,
-              screen: helioAuToScreenPx(
-                { x: evtSc.pos.x * SCALE_3D, y: 0, z: evtSc.pos.z * SCALE_3D },
-                factory,
-                camera,
-                cwMs,
-                chMs,
-              ),
-              active: state === 'active',
-              state,
-            });
-          }
-          milestoneScreens = msNext;
-        } else if (milestoneScreens.length > 0) {
-          milestoneScreens = [];
-        }
-      } else draw2d();
+        } else draw2d();
       },
     });
     lifecycle.add(loop.cleanup);

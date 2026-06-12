@@ -93,10 +93,7 @@ describe('createRouteLifecycle — cleanup()', () => {
     lifecycle.cleanup();
     // after() was registered later → LIFO runs it first → it ran.
     expect(after).toHaveBeenCalled();
-    expect(errorSpy).toHaveBeenCalledWith(
-      '[route-lifecycle] teardown failed',
-      expect.any(Error),
-    );
+    expect(errorSpy).toHaveBeenCalledWith('[route-lifecycle] teardown failed', expect.any(Error));
     errorSpy.mockRestore();
   });
 

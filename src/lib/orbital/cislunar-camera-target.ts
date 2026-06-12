@@ -23,7 +23,7 @@
  * + autoZoomActive flip).
  */
 
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 export const LUNAR_PHASE_TYPES = new Set<string>([
   'lunar_orbit',

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { R_EARTH_KM, R_MOON_KM } from '$lib/cislunar-geometry';
+import { R_EARTH_KM, R_MOON_KM } from '$lib/orbital/cislunar/cislunar-geometry';
 
 /**
  * Static cislunar-scene builder (ADR-058). Extracted from

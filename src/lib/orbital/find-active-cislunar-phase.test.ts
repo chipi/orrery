@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { findActiveCislunarPhase } from './find-active-cislunar-phase';
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 // Apollo 11-shaped phase roster.
 const APOLLO_PHASES: CislunarPhase[] = [

@@ -4,7 +4,7 @@ import {
   LUNAR_PHASE_TYPES,
   EARTH_PHASE_TYPES,
 } from './cislunar-camera-target';
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 const MOON_IN_SCENE = { x: 69, z: 0 };
 const DISTANCES = {

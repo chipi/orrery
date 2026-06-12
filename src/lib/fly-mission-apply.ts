@@ -12,7 +12,10 @@ import {
   parseWaypointDateToMet,
   type TrajectoryWaypoint,
 } from '$lib/trajectory-spline';
-import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
+import {
+  buildCislunarTrajectory,
+  type CislunarTrajectory,
+} from '$lib/orbital/cislunar/cislunar-geometry';
 import {
   buildInterplanetaryTrajectory,
   type InterplanetaryTrajectory,

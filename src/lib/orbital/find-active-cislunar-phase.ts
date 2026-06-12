@@ -12,7 +12,7 @@
  * computation, no closure deps.
  */
 
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 export interface ActiveCislunarPhase {
   /** The phase whose [start, end] window contains `metDays`. Falls

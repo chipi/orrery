@@ -21,7 +21,7 @@
  * on later if e.g. Chang'e 5's LOR pattern needs its own section.
  */
 
-import phaseScienceMap from '../../static/data/cislunar-phase-science-map.json';
+import phaseScienceMap from '../../../../static/data/cislunar-phase-science-map.json';
 import type {
   CislunarPhase,
   CislunarPhaseType,

@@ -30,9 +30,9 @@
 -->
 <script lang="ts">
   import ScienceChip from './ScienceChip.svelte';
-  import { intensityToOpacity } from '$lib/cislunar-marker-reveal';
-  import type { ScienceRef } from '$lib/cislunar-events';
-  import type { RevealResult } from '$lib/cislunar-marker-reveal';
+  import { intensityToOpacity } from '$lib/orbital/cislunar/cislunar-marker-reveal';
+  import type { ScienceRef } from '$lib/orbital/cislunar/cislunar-events';
+  import type { RevealResult } from '$lib/orbital/cislunar/cislunar-marker-reveal';
 
   interface Props {
     /** Where to position the marker (CSS px relative to its container). */

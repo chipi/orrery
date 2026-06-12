@@ -93,14 +93,14 @@
     moonEciPos,
     type CislunarTrajectory,
     type Vec3Km,
-  } from '$lib/cislunar-geometry';
+  } from '$lib/orbital/cislunar/cislunar-geometry';
   import {
     phaseMarkerKmPositions,
     currentPhaseFor,
     primaryScienceRefFor,
     type PhaseMarker,
     type ScienceRef,
-  } from '$lib/cislunar-events';
+  } from '$lib/orbital/cislunar/cislunar-events';
   import {
     eciKmToScreenPx,
     eciKmToCanvas2dPx,
@@ -108,7 +108,7 @@
     helioAuToCanvas2dPx,
     type ScreenPoint,
     type MinimalProjector,
-  } from '$lib/cislunar-screen-projection';
+  } from '$lib/orbital/cislunar/cislunar-screen-projection';
   import { type InterplanetaryTrajectory } from '$lib/interplanetary-geometry';
   import {
     phaseMarkerAuPositions,
@@ -116,7 +116,7 @@
     primaryInterplanetaryPhaseScienceRef,
     type InterplanetaryPhaseMarker,
   } from '$lib/interplanetary-events';
-  import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
+  import { markerStateFor, type RevealResult } from '$lib/orbital/cislunar/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
@@ -2234,7 +2234,7 @@
     }
     function rebuildCislunarAnnotations(
       traj: CislunarTrajectory | null,
-      profile: import('$lib/cislunar-geometry').CislunarProfile | undefined,
+      profile: import('$lib/orbital/cislunar/cislunar-geometry').CislunarProfile | undefined,
     ): void {
       clearCislunarAnnotations();
       if (!traj) return;

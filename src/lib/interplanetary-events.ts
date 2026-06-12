@@ -19,9 +19,9 @@ import {
   type InterplanetaryTrajectory,
   type Vec3Au,
 } from './interplanetary-geometry';
-import type { CislunarPhaseType } from './cislunar-geometry';
-import type { ScienceRef, FlightEvent } from './cislunar-events';
-import { primaryScienceRefFor } from './cislunar-events';
+import type { CislunarPhaseType } from './orbital/cislunar/cislunar-geometry';
+import type { ScienceRef, FlightEvent } from './orbital/cislunar/cislunar-events';
+import { primaryScienceRefFor } from './orbital/cislunar/cislunar-events';
 
 interface ScienceMap {
   phase_refs: Partial<Record<CislunarPhaseType | InterplanetaryPhaseType, ScienceRef[]>>;

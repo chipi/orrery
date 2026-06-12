@@ -1,5 +1,5 @@
 import * as m from '$lib/paraglide/messages';
-import type { PhaseMarker } from '$lib/cislunar-events';
+import type { PhaseMarker } from '$lib/orbital/cislunar/cislunar-events';
 
 /**
  * Resolve a FlightEvent.type to its localised label via paraglide

@@ -6,7 +6,7 @@ import {
   phaseMarkerAuPositions,
 } from './interplanetary-events';
 import type { InterplanetaryTrajectory } from './interplanetary-geometry';
-import type { FlightEvent } from './cislunar-events';
+import type { FlightEvent } from './orbital/cislunar/cislunar-events';
 
 const traj: InterplanetaryTrajectory = {
   phases: [

@@ -1,6 +1,6 @@
 import type * as THREE from 'three';
 import type { Vec2 } from '$lib/orbital/mission-arc';
-import type { CislunarTrajectory, CislunarProfile } from '$lib/cislunar-geometry';
+import type { CislunarTrajectory, CislunarProfile } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 
 /**

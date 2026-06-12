@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { sampleCislunarSpacecraftPos, MOON_LOCAL_PHASE_TYPES } from './sample-cislunar-spacecraft';
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 const TLI_COAST: CislunarPhase = {
   type: 'tli_coast',

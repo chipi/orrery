@@ -22,9 +22,9 @@
  * scene units). Exposed here so callers don't repeat the magic number.
  */
 
-import { AU_TO_KM } from './orbital';
+import { AU_TO_KM } from '../../orbital';
 import type { Vec3Km } from './cislunar-geometry';
-import type { Vec3Au } from './interplanetary-geometry';
+import type { Vec3Au } from '$lib/interplanetary-geometry';
 
 /** Scene-unit scaling for the Earth-centred cislunar view (ADR-058). */
 export const SCALE_CISLUNAR = 1 / 10000;

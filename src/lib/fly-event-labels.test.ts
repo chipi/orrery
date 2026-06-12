@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { defaultEventLabel } from './fly-event-labels';
-import type { PhaseMarker } from './cislunar-events';
+import type { PhaseMarker } from './orbital/cislunar/cislunar-events';
 
 type EventType = PhaseMarker['event']['type'];
 

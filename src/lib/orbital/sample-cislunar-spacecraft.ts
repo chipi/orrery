@@ -16,7 +16,7 @@
  * is unit-testable.
  */
 
-import type { CislunarPhase } from '$lib/cislunar-geometry';
+import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 
 export interface CislunarSamplePos {
   x: number;

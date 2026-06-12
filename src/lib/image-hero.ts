@@ -35,12 +35,7 @@
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
 
-export type HeroSurface =
-  | 'missions'
-  | 'fleet'
-  | 'moon-sites'
-  | 'mars-sites'
-  | 'earth-objects';
+export type HeroSurface = 'missions' | 'fleet' | 'moon-sites' | 'mars-sites' | 'earth-objects';
 
 const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   missions: 'missions',
@@ -71,9 +66,7 @@ const inflight = new Map<HeroSurface, Promise<HeroOverrideFile | null>>();
  * returns null on the server. Errors / 404s collapse to null silently —
  * absence of override file is the default, not a failure.
  */
-export function loadHeroOverrides(
-  surface: HeroSurface,
-): Promise<HeroOverrideFile | null> {
+export function loadHeroOverrides(surface: HeroSurface): Promise<HeroOverrideFile | null> {
   if (overrideCache.has(surface)) {
     return Promise.resolve(overrideCache.get(surface) ?? null);
   }

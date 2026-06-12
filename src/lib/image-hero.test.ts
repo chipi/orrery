@@ -38,9 +38,7 @@ describe('loadHeroOverrides — fetch behaviour', () => {
   it('returns null when the file is missing (404)', async () => {
     vi.stubGlobal(
       'fetch',
-      vi.fn(() =>
-        Promise.resolve(new Response(null, { status: 404 })),
-      ) as unknown as typeof fetch,
+      vi.fn(() => Promise.resolve(new Response(null, { status: 404 }))) as unknown as typeof fetch,
     );
     const r = await loadHeroOverrides('missions');
     expect(r).toBeNull();
@@ -110,9 +108,7 @@ describe('pickHero — override resolution', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    expect(pickHero('missions', 'perseverance')).toBe(
-      '/images/missions/perseverance/04.jpg',
-    );
+    expect(pickHero('missions', 'perseverance')).toBe('/images/missions/perseverance/04.jpg');
   });
 
   it('still falls back to 01.jpg for ids NOT in the override file', async () => {

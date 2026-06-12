@@ -474,6 +474,62 @@ async function buildMissionGalleryEntries(): Promise<ProvenanceEntry[]> {
   return out;
 }
 
+/**
+ * Sidecar manifest for missions whose imagery the post-2026-06
+ * fetch-assets.ts ran for but that aren't in `MISSION_IMAGE_QUERIES`
+ * (yet). Shape is `{commons_file, commons_url, credit, license}` keyed
+ * by `<missionId>/<slot>` (no extension). Used to extend
+ * `buildMissionGalleryEntries` coverage without forcing every mission
+ * id into MISSION_IMAGE_QUERIES (which would side-effect refetches).
+ */
+type MissionCommonsSource = {
+  commons_file: string;
+  commons_url: string;
+  credit: string;
+  license?: string;
+  fetched_at?: string;
+};
+
+async function buildMissionCommonsSidecarEntries(
+  knownMissionIds: Set<string>,
+): Promise<ProvenanceEntry[]> {
+  const out: ProvenanceEntry[] = [];
+  const sidecarPath = 'static/data/mission-image-sources.json';
+  let sources: Record<string, MissionCommonsSource> = {};
+  try {
+    const txt = await readFile(sidecarPath, 'utf8');
+    sources = JSON.parse(txt) as typeof sources;
+  } catch {
+    return out;
+  }
+  for (const [relPath, src] of Object.entries(sources)) {
+    const missionId = relPath.split('/')[0];
+    // Skip missions that MISSION_IMAGE_QUERIES already covers — that
+    // path emits curated commonsCoverFirst entries; sidecar is a
+    // fallback for unknown missions only.
+    if (knownMissionIds.has(missionId)) continue;
+    const baseLocal = join('static/images/missions', relPath);
+    let localPath = baseLocal;
+    if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
+    else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
+    else continue; // file isn't on disk — skip silently
+    const agencyHuman = src.credit || 'Unknown';
+    out.push(
+      await buildWikimediaEntry({
+        localPath,
+        filename: src.commons_file,
+        fallbackAuthor: agencyHuman,
+        fallbackAgency: agencyHuman,
+        fallbackLicense: defaultLicenseForAgency(agencyHuman),
+        fallbackLicenseUrl: null,
+        fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
+        modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
+      }),
+    );
+  }
+  return out;
+}
+
 function defaultLicenseForAgency(agency: string): string {
   // Curated Wikimedia files we ship are typically PD-NASA, PD-Russia
   // (Soviet), or CC-BY-SA. Without a Commons-API hit we still need an
@@ -831,10 +887,30 @@ async function buildIssEntries(): Promise<ProvenanceEntry[]> {
  * uploader attribution from Commons) or buildNasaEntry (for NASA
  * Images API URLs).
  */
+// Sidecar manifest produced by fetch-assets.ts. Two shapes are emitted
+// historically — the legacy `{agency, sourceUrl}` and the post-2026-06
+// `{commons_file, commons_url, credit, license, fetched_at}`. Both have
+// to keep working: the legacy 851 entries cannot be re-fetched without
+// re-running fetch-assets, and the post-2026-06 fetcher won't switch
+// back. Normalise inside the loop.
+type LegacyFleetSource = { agency: string; sourceUrl: string };
+type CommonsFleetSource = {
+  commons_file: string;
+  commons_url: string;
+  credit: string;
+  license?: string;
+  fetched_at?: string;
+};
+type FleetSource = LegacyFleetSource | CommonsFleetSource;
+
+function isCommonsShape(src: FleetSource): src is CommonsFleetSource {
+  return 'commons_url' in src && typeof src.commons_url === 'string';
+}
+
 async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
   const out: ProvenanceEntry[] = [];
   const manifestPath = 'static/data/fleet-image-sources.json';
-  let sources: Record<string, { agency: string; sourceUrl: string }> = {};
+  let sources: Record<string, FleetSource> = {};
   try {
     const txt = await readFile(manifestPath, 'utf8');
     sources = JSON.parse(txt) as typeof sources;
@@ -863,6 +939,32 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
   };
 
   for (const [relPath, src] of Object.entries(sources)) {
+    // Commons-shape entries skip the upload.wikimedia.org URL regex
+    // — they carry the Commons filename directly. Route them straight
+    // into buildWikimediaEntry so per-file license + uploader attribution
+    // still gets fetched from the Commons API. The legacy shape uses
+    // keys like `saturn-v/01.jpg`; the new shape uses `luna10/01` —
+    // we infer the extension from the on-disk file (jpg, then png).
+    if (isCommonsShape(src)) {
+      const agencyHuman = src.credit || 'Unknown';
+      const baseLocal = join('static/images/fleet-galleries', relPath);
+      let localPath = baseLocal;
+      if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
+      else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
+      out.push(
+        await buildWikimediaEntry({
+          localPath,
+          filename: src.commons_file,
+          fallbackAuthor: agencyHuman,
+          fallbackAgency: agencyHuman,
+          fallbackLicense: defaultLicenseForAgency(agencyHuman),
+          fallbackLicenseUrl: null,
+          fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
+          modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
+        }),
+      );
+      continue;
+    }
     const localPath = join('static/images/fleet-galleries', relPath);
     const agencyHuman = agencyToHumanReadable[src.agency] ?? src.agency;
     const url = src.sourceUrl;
@@ -2012,6 +2114,11 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
 
   console.log('Mission galleries…');
   out.push(...(await buildMissionGalleryEntries()));
+  // Sidecar coverage for missions not in MISSION_IMAGE_QUERIES (post-
+  // 2026-06 Commons fetcher output for shenzhou-1, vostok-2..6, etc).
+  out.push(
+    ...(await buildMissionCommonsSidecarEntries(new Set(MISSION_IMAGE_QUERIES.map((q) => q.id)))),
+  );
 
   console.log('ISS module galleries…');
   out.push(...(await buildIssEntries()));

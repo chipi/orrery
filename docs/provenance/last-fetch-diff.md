@@ -1,21 +1,217 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-08T18:33:58.505Z
+Generated: 2026-06-12T20:28:23.651Z
 Script: build-image-provenance@1.0.0
-Commit: 96e6d57f1e79fb11f868173f70c6cd7572ccba5c
-Total entries: 4222
+Commit: 5c4152fda75308e039b5e15775f70ff0fb20fba3
+Total entries: 2770
 
 ## Added (0)
 
 
-## Removed (6)
+## Removed (1470)
 
-- `/images/hotspots/moon/apollo11/tier2-regional.jpg` — was PD-NASA via direct-agency
-- `/images/hotspots/moon/apollo12/tier2-regional.jpg` — was PD-NASA via direct-agency
-- `/images/hotspots/moon/apollo14/tier2-regional.jpg` — was PD-NASA via direct-agency
-- `/images/hotspots/moon/apollo15/tier2-regional.jpg` — was PD-NASA via direct-agency
-- `/images/hotspots/moon/apollo16/tier2-regional.jpg` — was PD-NASA via direct-agency
-- `/images/hotspots/moon/apollo17/tier2-regional.jpg` — was PD-NASA via direct-agency
+- `/images/earth-objects/beidou/01.16x9.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
+- `/images/earth-objects/beidou/01.4x3.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
+- `/images/earth-objects/beidou/02.16x9.jpg` — was CC-BY-SA-4.0 via direct-other
+- `/images/earth-objects/beidou/02.4x3.jpg` — was CC-BY-SA-4.0 via direct-other
+- `/images/earth-objects/beidou/03.16x9.jpg` — was CC-BY-SA-4.0 via direct-other
+- `/images/earth-objects/beidou/03.4x3.jpg` — was CC-BY-SA-4.0 via direct-other
+- `/images/earth-objects/chandra/01.16x9.jpg` — was PD-NASA via wikimedia-commons
+- `/images/earth-objects/chandra/01.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/02.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/02.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/03.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/03.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/04.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/04.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/05.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/chandra/05.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gaia/01.16x9.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/earth-objects/gaia/01.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gaia/02.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gaia/02.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gaia/03.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gaia/03.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/galileo/01.16x9.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/earth-objects/galileo/01.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/galileo/02.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/galileo/02.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/galileo/03.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/galileo/03.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/geo/01.16x9.jpg` — was PD-NASA via wikimedia-commons
+- `/images/earth-objects/geo/01.4x3.jpg` — was PD-NASA via wikimedia-commons
+- `/images/earth-objects/geo/02.16x9.jpg` — was PD-NASA via direct-other
+- `/images/earth-objects/geo/02.4x3.jpg` — was PD-NASA via direct-other
+- `/images/earth-objects/geo/03.16x9.jpg` — was PD-NASA via direct-other
+- `/images/earth-objects/geo/03.4x3.jpg` — was PD-NASA via direct-other
+- `/images/earth-objects/glonass/01.16x9.jpg` — was PD-Russia via wikimedia-commons
+- `/images/earth-objects/glonass/01.4x3.jpg` — was PD-Russia via wikimedia-commons
+- `/images/earth-objects/glonass/02.16x9.jpg` — was PD-Russia via direct-other
+- `/images/earth-objects/glonass/02.4x3.jpg` — was PD-Russia via direct-other
+- `/images/earth-objects/glonass/03.16x9.jpg` — was PD-Russia via direct-other
+- `/images/earth-objects/glonass/03.4x3.jpg` — was PD-Russia via direct-other
+- `/images/earth-objects/gps/01.16x9.jpg` — was PD-Old via wikimedia-commons
+- `/images/earth-objects/gps/01.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gps/02.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gps/02.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gps/03.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/gps/03.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/hubble/01.16x9.jpg` — was PD-NASA via wikimedia-commons
+- `/images/earth-objects/hubble/01.4x3.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/hubble/02.16x9.jpg` — was PD-NASA via nasa-images-api
+- `/images/earth-objects/hubble/02.4x3.jpg` — was PD-NASA via nasa-images-api
+- … 1420 more
 
-## Changed (0)
+## Changed (520)
 
+- `/images/earth-objects/beidou/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou%20satellite%20mockup%20at%20FING%20UNLP%2003.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou-3%20Satellite%20Mockup.jpg"
+- `/images/earth-objects/beidou/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou%20satellite%20mockup%20at%20FING%20UNLP%2003.jpg"
+- `/images/earth-objects/beidou/02.1x1.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3A%E5%8C%97%E6%96%97%E4%B8%89%E5%8F%B7%E5%8D%AB%E6%98%9F%EF%BC%881%EF%BC%9A3%EF%BC%89.jpg"
+- `/images/earth-objects/chandra/01.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=chandra+x-ray+observatory&media_type=image&keywords=chandra"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ANASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
+- `/images/earth-objects/gaia/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft%20360%20Gaia%20Sky.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft.jpeg"
+- `/images/earth-objects/gaia/01.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=gaia+spacecraft+milky+way&media_type=image&keywords=gaia"
+  - after — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft%20360%20Gaia%20Sky.jpg"
+- `/images/earth-objects/galileo/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGalileo%20satellite%20model.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AGalileoSatModel.jpg"
+- `/images/earth-objects/galileo/01.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=galileo+navigation+satellite&media_type=image&keywords=galileo"
+  - after — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGalileo%20satellite%20model.jpg"
+- `/images/earth-objects/geo/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20Art%20Front%20Left%20(14213118418).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20on%20Night%20Sky%20(14398636554).jpg"
+- `/images/earth-objects/geo/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20Art%20Front%20Left%20(14213118418).jpg"
+- `/images/earth-objects/geo/02.1x1.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AINTELSAT%20I%20(Early%20Bird).jpg"
+- `/images/earth-objects/glonass/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGlonass%20K%20model%20at%20Cebit%202011%20Satellite%2C%20sideview%201.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ARussian%20Navigation%20Spacecraft%20Glonass%20K1%20at%20CeBIT.jpg"
+- `/images/earth-objects/glonass/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGlonass%20K%20model%20at%20Cebit%202011%20Satellite%2C%20sideview%201.jpg"
+- `/images/earth-objects/glonass/02.1x1.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASoyuz%202.1b%20GLONASS-K2%2013L%20launch%2004.jpg"
+- `/images/earth-objects/gps/01.1x1.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=gps+satellite+navstar&media_type=image&keywords=gps"
+  - after — license_short: "PD-Old", author: "USSF", agency: "USSF", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ANavstar-2F.jpg"
+- `/images/earth-objects/hubble/01.1x1.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=hubble+space+telescope+servicing&media_type=image&keywords=hubble"
+  - after — author: "NASA / ESA", agency: "NASA / ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AHST-SM4.jpeg"
+- `/images/earth-objects/iss/01.1x1.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=international+space+station+sts+flyaround+exterior+truss+solar+array&media_type=image&keywords=iss"
+  - after — author: "NASA / ESA / JAXA / Roscosmos / CSA", agency: "NASA / ESA / JAXA / Roscosmos / CSA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AInternational%20Space%20Station%20after%20undocking%20of%20STS-132.jpg"
+- `/images/earth-objects/jwst/01.1x1.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=james+webb+space+telescope&media_type=image&keywords=jwst"
+  - after — author: "NASA / ESA / CSA", agency: "NASA / ESA / CSA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20James%20Webb%20Space%20Telescope%2C%20Partially%20Stowed.jpg"
+- `/images/earth-objects/lro/01.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=lunar+reconnaissance+orbiter&media_type=image&keywords=lro"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AEarthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg"
+- `/images/earth-objects/tiangong/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ARear%20view%20of%20Tiangong%20Space%20Station.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AChinese%20Tiangong%20Space%20Station.jpg"
+- `/images/earth-objects/tiangong/01.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=tiangong+space+station+china&media_type=image&keywords=tiangong"
+  - after — license_short: "CC-BY-SA-4.0", author: "CNSA", agency: "CNSA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ARear%20view%20of%20Tiangong%20Space%20Station.jpg"
+- `/images/earth-objects/tiangong/02.1x1.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=tiangong+space+station+china&media_type=image&keywords=tiangong"
+  - after — license_short: "CC-BY-SA-4.0", author: "CNSA", agency: "CNSA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABasic%20space%20experiment%20cabinet%20of%20Tiangong%20space%20station.jpg"
+- `/images/earth-objects/xmm/01.1x1.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=xmm+newton+x-ray&media_type=image&keywords=xmm"
+  - after — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AXMM-Newton.jpg"
+- `/images/iss-modules/beam/01.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+beam+module&media_type=image&keywords=beam"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AIllustration%20of%20BEAM%20berthed%20to%20the%20International%20Space%20Station.jpg"
+- `/images/iss-modules/canadarm2/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2-lee.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2%20and%20JEMRMS.jpg"
+- `/images/iss-modules/canadarm2/01.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+canadarm2+module&media_type=image&keywords=canadarm2"
+  - after — author: "CSA / NASA", agency: "CSA / NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2-lee.jpg"
+- `/images/iss-modules/cargo_dragon/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20The%20SpaceX%20Cargo%20Dragon%20approaches%20the%20station%20(2).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-64%20The%20SpaceX%20CRS-21%20Cargo%20Dragon%20vehicle%20approaches%20the%20ISS.jpg"
+- `/images/iss-modules/cargo_dragon/01.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-59%20SpaceX%20CRS-17%20Dragon%20docked%20to%20the%20ISS%20(2).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20The%20SpaceX%20Cargo%20Dragon%20approaches%20the%20station%20(2).jpg"
+- `/images/iss-modules/cargo_dragon/02.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-47%20SpaceX%20Dragon%20CRS-8%20departure.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ACargo%20Dragon%20CRS-21%20Undocking.png"
+- `/images/iss-modules/cargo_dragon/02.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cargo_dragon+module&media_type=image&keywords=cargo_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-59%20SpaceX%20CRS-17%20Dragon%20docked%20to%20the%20ISS%20(2).jpg"
+- `/images/iss-modules/cargo_dragon/03.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cargo_dragon+module&media_type=image&keywords=cargo_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASpaceX%20CRS-15%20Dragon%20approaches%20the%20ISS%20(2).jpg"
+- `/images/iss-modules/cargo_dragon/03.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cargo_dragon+module&media_type=image&keywords=cargo_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-47%20SpaceX%20Dragon%20CRS-8%20departure.jpg"
+- `/images/iss-modules/columbus/01.1x1.jpg`
+  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+columbus+module&media_type=image&keywords=columbus"
+  - after — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AShiny%20Columbus%20during%20spacewalk%20ESA21793666.jpeg"
+- `/images/iss-modules/crew_dragon/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ACrew%20Dragon%20Demo%202%20docked%20with%20ISS%2C%20starboard%20light%20lit.png"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ACrew-4%20SpaceX%20Dragon%20Freedom%20docked%20to%20ISS%20(ISS067-E-066884).jpg"
+- `/images/iss-modules/crew_dragon/01.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ASpaceX%20Crew-3%20Launch%20(NHQ202111100021).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ACrew%20Dragon%20Demo%202%20docked%20with%20ISS%2C%20starboard%20light%20lit.png"
+- `/images/iss-modules/crew_dragon/02.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20SpaceX%20Dragon%20Endeavour%20crew%20ship%20is%20pictured%20docked%20to%20the%20Harmony%20module%20crop%20and%20flip.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-67%20The%20SpaceX%20Dragon%20Freedom%20crew%20ship%20docked%20to%20the%20Harmony%20module.jpg"
+- `/images/iss-modules/crew_dragon/02.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+crew_dragon+module&media_type=image&keywords=crew_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASpaceX%20Crew-3%20Launch%20(NHQ202111100021).jpg"
+- `/images/iss-modules/crew_dragon/03.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+crew_dragon+module&media_type=image&keywords=crew_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASpaceX%20Crew%20Dragon.jpg"
+- `/images/iss-modules/crew_dragon/03.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+crew_dragon+module&media_type=image&keywords=crew_dragon"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20SpaceX%20Dragon%20Endeavour%20crew%20ship%20is%20pictured%20docked%20to%20the%20Harmony%20module%20crop%20and%20flip.jpg"
+- `/images/iss-modules/cupola/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AInside%20the%20Cupola%20at%20night%202013-03-15.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ACupola_ISS.jpg"
+- `/images/iss-modules/cupola/01.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-130%20ISS%20approach%20closeup%20of%20Tranquility%20and%20Cupola.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AInside%20the%20Cupola%20at%20night%202013-03-15.jpg"
+- `/images/iss-modules/cupola/02.1x1.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cupola+module&media_type=image&keywords=cupola"
+  - after — author: "NASA / ESA", agency: "NASA / ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ATracy%20Caldwell%20Dyson%20in%20Cupola%20ISS.jpg"
+- `/images/iss-modules/cupola/02.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cupola+module&media_type=image&keywords=cupola"
+  - after — author: "NASA / ESA", agency: "NASA / ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-130%20ISS%20approach%20closeup%20of%20Tranquility%20and%20Cupola.jpg"
+- `/images/iss-modules/cygnus/01.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20Cygnus%20NG-16%20in%20the%20grip%20of%20Canadarm2%20(2).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-66%20Cygnus%20moments%20from%20being%20captured%20with%20the%20Canadarm2%20robotic%20arm.jpg"
+- `/images/iss-modules/cygnus/01.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-57%20Cygnus%20NG-10%20approaching%20the%20ISS%20(4).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20Cygnus%20NG-16%20in%20the%20grip%20of%20Canadarm2%20(2).jpg"
+- `/images/iss-modules/cygnus/02.1x1.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AAntares%20NG-15%20captured%20by%20Canadarm2%20(ISS064-E-036984).jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Cygnus%20XL%20cargo%20spacecraft%20is%20pictured%20in%20the%20grips%20of%20the%20Canadarm2%20robotic%20arm%20(iss074e0458279).jpg"
+- `/images/iss-modules/cygnus/02.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cygnus+module&media_type=image&keywords=cygnus"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-57%20Cygnus%20NG-10%20approaching%20the%20ISS%20(4).jpg"
+- `/images/iss-modules/cygnus/03.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cygnus+module&media_type=image&keywords=cygnus"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAntares%20liftoff%20from%20Pad%200A%20at%20the%20Wallops%20Flight%20Facility.jpg"
+- `/images/iss-modules/cygnus/03.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+cygnus+module&media_type=image&keywords=cygnus"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAntares%20NG-15%20captured%20by%20Canadarm2%20(ISS064-E-036984).jpg"
+- `/images/iss-modules/destiny/01.1x1.jpg`
+  - before — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=ISS+destiny+module&media_type=image&keywords=destiny"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20NASA%20astronauts%20work%20in%20the%20U.S.%20Destiny%20laboratory%20module.jpg"
+- … 470 more

@@ -1500,9 +1500,36 @@
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
     const previousSimDay = simDay;
-    simDay = mission.timeline.dep_day + metDays;
+    // Bias the target onto the iconic-shot hold window when the jump
+    // lands on a flyby / EDL event. The peakHold arming fires at
+    // simDay ∈ [peakMet−2 ± 0.5d]; landing exactly on peakMet skips
+    // straight past the hold window, so a direct jump from the
+    // timeline lands at peak with no freeze. Snapping to peak−2
+    // puts the user in the centre of the arming window so the iconic
+    // composition freezes immediately. MET 0 (Launch) is excluded —
+    // it replays the cinematic opening below, no flyby semantics.
+    let landMet = metDays;
+    if (metDays > 0 && mission?.flight?.events) {
+      const evt = mission.flight.events.find(
+        (e) =>
+          (e.type === 'flyby' || e.type === 'edl_or_oi') &&
+          Number.isFinite(e.met_days) &&
+          Math.abs((e.met_days ?? 0) - metDays) < 1,
+      );
+      if (evt) landMet = Math.max(0, metDays - 2);
+    }
+    simDay = mission.timeline.dep_day + landMet;
     if (isPlaying) isPlaying = false;
     camSnapUntil = performance.now() + 700;
+    // Re-jumping to the same flyby would normally fail to re-arm
+    // peakHold because the arming guard (peakHoldArmedForFlybyMet !==
+    // currentFrameFlybyMet) treats the prior arm as still valid even
+    // though the hold's peakHoldUntil has long expired. Clearing the
+    // arm flag lets the next animate frame re-detect the window and
+    // re-fire the freeze, so every timeline click yields the iconic
+    // hold instead of just the first one.
+    cine.peakHoldArmedForFlybyMet = null;
+    cine.peakHoldUntil = 0;
     // W3.3 — re-arm the pre-launch dwell when the user jumps back to
     // MET 0 (Launch milestone). Gives them the cinematic prelaunch
     // beat on demand instead of just a quiet snap to dep_day. Skipped
@@ -6905,7 +6932,7 @@
        arrival). Lens-gated like FD itself: showFlightDirector mirrors
        the Science Lens, so the markers and the banner appear together.
        Hidden in 2D mode for now (heliocentric projection only). -->
-  {#if showFlightDirector && view === '3d' && fdPhaseMarkerScreens.length > 0}
+  {#if showFlightDirector && view === '3d' && fdPhaseMarkerScreens.length > 0 && !inCinematicHeldBeat}
     <div
       class="fd-phase-markers-overlay"
       data-testid="fd-phase-markers-overlay"
@@ -6931,7 +6958,7 @@
        per-mission historical narrative beats (Cassini's Venus #1,
        Voyager's Jupiter, etc.) and shouldn't depend on the Science
        Lens toggle. Hidden in 2D for now. -->
-  {#if view === '3d' && milestoneScreens.length > 0}
+  {#if view === '3d' && milestoneScreens.length > 0 && !inCinematicHeldBeat}
     <div
       class="milestone-overlay"
       data-testid="milestone-overlay"

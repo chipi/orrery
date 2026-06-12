@@ -120,6 +120,11 @@
     type PlanetId as FlybyPlanetId,
   } from '$lib/orbital/flyby-camera-plan';
   import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
+  import {
+    findFlybyPlanetFromLabel,
+    findClosestPlanetToShip,
+    PLANET_SIZES,
+  } from '$lib/orbital/find-flyby-planet';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3413,90 +3418,11 @@
       neptune: { spriteScale: 1.7, modelScale: 1.3, toCameraR: 0.5 },
     };
 
-    const PLANET_SIZES: Record<string, number> = {
-      mercury: 1.0,
-      venus: 2.5,
-      earth: 2.6,
-      mars: 1.9,
-      jupiter: 5.5,
-      saturn: 4.8,
-      uranus: 3.4,
-      neptune: 3.4,
-    };
-
-    /** Parse the flyby body from the event's human-readable label
-     *  ("Venus #1 — gravity assist" → 'venus'). The trajectory MODEL
-     *  in /fly is a simplified Keplerian approximation that doesn't
-     *  faithfully pass through each planet's heliocentric position
-     *  at the actual flyby moment — debug check at Cassini MET 894
-     *  showed scPos = (1.28, 1.74) AU = 2.16 AU from Sun, far from
-     *  Earth's actual 1.0 AU. Parsing the label is the reliable
-     *  signal because the data layer carries the mission's narrative
-     *  truth even when the math layer doesn't. */
-    function findFlybyPlanetFromLabel(
-      label: string | undefined,
-    ): { id: import('$lib/lambert-grid.constants').DestinationId; size: number } | null {
-      if (!label) return null;
-      const lower = label.toLowerCase();
-      const planets: Array<import('$lib/lambert-grid.constants').DestinationId> = [
-        'mercury',
-        'venus',
-        'mars',
-        'jupiter',
-        'saturn',
-        'uranus',
-        'neptune',
-      ];
-      for (const p of planets) {
-        if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
-      }
-      if (lower.includes('earth')) {
-        return {
-          id: 'earth' as import('$lib/lambert-grid.constants').DestinationId,
-          size: PLANET_SIZES.earth,
-        };
-      }
-      return null;
-    }
-
-    /** Fallback for missions without labeled flyby events — find the
-     *  planet the spacecraft is heliocentric-closest to. Threshold
-     *  widened to 3 AU so outer-system Voyager-style flybys still
-     *  resolve. */
-    function findClosestPlanetToShip(scPos: {
-      x: number;
-      z: number;
-    }): { id: import('$lib/lambert-grid.constants').DestinationId; size: number } | null {
-      const CANDIDATES: import('$lib/lambert-grid.constants').DestinationId[] = [
-        'mercury',
-        'venus',
-        'mars',
-        'jupiter',
-        'saturn',
-        'uranus',
-        'neptune',
-      ];
-      let closest: import('$lib/lambert-grid.constants').DestinationId | null = null;
-      let closestSize = 1;
-      let minDist = 3.0;
-      const ePos = earthPos(simDay);
-      const dEarth = Math.hypot(scPos.x - ePos.x, scPos.z - ePos.z);
-      if (dEarth < minDist) {
-        minDist = dEarth;
-        closest = 'earth' as import('$lib/lambert-grid.constants').DestinationId;
-        closestSize = PLANET_SIZES.earth;
-      }
-      for (const id of CANDIDATES) {
-        const p = destinationPos(simDay, id);
-        const d = Math.hypot(scPos.x - p.x, scPos.z - p.z);
-        if (d < minDist) {
-          minDist = d;
-          closest = id;
-          closestSize = PLANET_SIZES[id] ?? 2.0;
-        }
-      }
-      return closest ? { id: closest, size: closestSize } : null;
-    }
+    // PLANET_SIZES + findFlybyPlanetFromLabel + findClosestPlanetToShip
+    // were moved to $lib/orbital/find-flyby-planet so they can be
+    // unit-tested + reused by the upcoming animate-loop split. The
+    // rationale for why label-parsing is the primary signal over
+    // closest-planet-detection lives in that module's docstring.
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -3562,7 +3488,8 @@
         // "Venus #1 — gravity assist" → Venus). Fallback for
         // unlabeled missions: closest planet to spacecraft.
         const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
-        const flyby = findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos);
+        const flyby =
+          findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos, simDay);
         // Debug exposure. Most fields are dev-only — chrome-devtools-mcp
         // verification reads them. flybyId + flybySize are also read
         // by the foreground ship-offset block in the animate loop
@@ -3587,9 +3514,7 @@
           : { flybyId: flyby?.id ?? null, flybySize: flyby?.size ?? null };
         if (flyby) {
           const bodyPos =
-            flyby.id === ('earth' as typeof flyby.id)
-              ? earthPos(simDay)
-              : destinationPos(simDay, flyby.id);
+            flyby.id === 'earth' ? earthPos(simDay) : destinationPos(simDay, flyby.id);
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
           void bodyScene;
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;

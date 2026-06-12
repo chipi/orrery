@@ -129,9 +129,17 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
     targetBias: 0,
   },
   saturn: {
+    // Saturn pitch is intentionally shallow (≈18° above the orbital
+    // plane vs the default 20°) so the camera reads close to the
+    // ring plane — Wernquist's Grand Finale art keeps the camera near
+    // ring-plane-edge-on so the rings register as a flat slice across
+    // the frame. Pairs with the 17° camera.up roll applied inline at
+    // /fly's render block. Pre-v2 this was a `targetP = 1.25` override
+    // inside the /fly cinema loop; absorbed here so PLANET_COMPOSITION
+    // is the single source of truth for camera framing.
     camRMultiplier: 4.5,
     sideAngleRad: ICONIC_SIDE,
-    pitchRad: (25 * Math.PI) / 180,
+    pitchRad: 0.32,
     iconicLeadDays: 2,
     targetBias: 0,
   },

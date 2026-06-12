@@ -3709,19 +3709,16 @@
           targetR = HELIO_FLYBY_R_FALLBACK;
           helioFlybyDesiredCamT = null;
         }
-        // #2 — Saturn-OI specific composition override. Wernquist's
-        // Grand Finale art frames Cassini with Saturn looming high in
-        // the frame + ring plane edge-on with a slight tilt. We can't
-        // reproduce the actual rings (no ring geometry in scene yet)
-        // but we can approximate the FEEL: more horizontal camera
-        // (camP closer to π/2 instead of the default 0.85), tighter
-        // toCameraR for ship close to camera (already 0.9 on Saturn),
-        // and a small camera.up tilt that rolls the horizon. The tilt
-        // makes any object's plane appear angled — Saturn's disc
-        // sits askew, which reads as "ring plane oriented obliquely"
-        // even without explicit rings.
+        // Saturn-OI composition flag. The shallow ring-plane-edge-on
+        // pitch is now expressed inside PLANET_COMPOSITION.saturn
+        // (pitchRad: 0.32 ≈ 18° above the orbital plane vs the 20°
+        // default), so this block no longer needs to clobber targetP
+        // — the v2 wire-up above already produced the right pitch for
+        // Saturn. The flag is still needed to drive the camera.up
+        // 17° roll applied at the render block (line ~4160), which
+        // is a post-process effect orthogonal to the planFlybyShot
+        // positioning.
         const isSaturnOI = activeEvt?.type === 'edl_or_oi' && flyby?.id === 'saturn';
-        targetP = isSaturnOI ? 1.25 : HELIO_APPROACH_P;
         saturnOIComposition = isSaturnOI;
         if (sub !== lastHelioSubPhase) {
           const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;

@@ -136,6 +136,7 @@
   import { findApsidesIndices } from '$lib/orbital/find-apsides';
   import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
   import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
+  import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3558,18 +3559,20 @@
         // positioning.
         const isSaturnOI = activeEvt?.type === 'edl_or_oi' && flyby?.id === 'saturn';
         saturnOIComposition = isSaturnOI;
-        if (sub !== lastHelioSubPhase) {
-          const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;
-          const isInFlybyCinema = sub.startsWith('flyby-');
+        const subPhaseTransition = detectSubPhaseTransition({
+          prev: lastHelioSubPhase,
+          next: sub,
+        });
+        if (subPhaseTransition.transitioned) {
           lastHelioSubPhase = sub;
           helioAutoZoomActive = true;
-          // #2 — auto-show moons during flyby cinema. Entering forces
-          // moons visible; exiting restores whatever the science-lens
-          // moons layer last asked for.
-          if (isInFlybyCinema && !wasInFlybyCinema) {
+          // Auto-show moons during flyby cinema. Entering forces them
+          // visible; exiting restores whatever the science-lens layer
+          // last asked for.
+          if (subPhaseTransition.enteredFlybyCinema) {
             cinemaForceMoons = true;
             helioHandles.setMoonsVisible(true);
-          } else if (!isInFlybyCinema && wasInFlybyCinema) {
+          } else if (subPhaseTransition.exitedFlybyCinema) {
             cinemaForceMoons = false;
             helioHandles.setMoonsVisible(lastLayerMoonsOn);
           }

@@ -10,7 +10,7 @@
  * days for time, km/s for speed unless suffixed otherwise.
  */
 
-import type { Vec2 } from './orbital/mission-arc';
+import type { Vec2 } from './mission-arc';
 import {
   AU_PER_YR_TO_KMS,
   AU_TO_KM,
@@ -19,7 +19,7 @@ import {
   MOON_ORBITAL_PERIOD_DAYS,
   MOON_VISUAL_DISTANCE,
   MU_SUN_AU3_YR2,
-} from './fly-physics-constants';
+} from '$lib/fly-physics-constants';
 
 // ─── Heliocentric speed ─────────────────────────────────────────────
 

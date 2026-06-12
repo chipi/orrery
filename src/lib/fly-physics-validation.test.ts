@@ -22,7 +22,7 @@ import { join } from 'node:path';
 import { earthPos, outboundArc } from './orbital/mission-arc';
 import { DESTINATIONS, R_EARTH_AU, R_MARS_AU } from './lambert-grid.constants';
 import { dateToSimDay } from './sim-day';
-import { heliocentricSpeed } from './fly-physics';
+import { heliocentricSpeed } from './orbital/fly-physics';
 import { expectCloseTo } from './test-helpers/expect-close';
 import type { Mission } from '$types/mission';
 

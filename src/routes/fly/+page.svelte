@@ -85,7 +85,7 @@
     distanceBetween,
     heliocentricSpeed as flyHeliocentricSpeed,
     signalDelayMin as flySignalDelayMin,
-  } from '$lib/fly-physics';
+  } from '$lib/orbital/fly-physics';
   import {
     A_MOON_KM,
     R_EARTH_KM,

@@ -30,7 +30,7 @@ import {
 } from './orbital/mission-arc';
 import { missionDestToHeliocentricDestinationId } from './mission-dest';
 import type { DestinationId } from './lambert-grid.constants';
-import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './fly-physics';
+import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './orbital/fly-physics';
 import { dateToSimDay } from './sim-day';
 import { expectCloseTo } from './test-helpers/expect-close';
 import type { Mission } from '$types/mission';

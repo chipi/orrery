@@ -1854,6 +1854,14 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+    // DEV-only test hook so chrome-devtools-mcp can drive jumpToMet on
+    // missions whose flight.events lack labels (Galileo / Juno / Voyager
+    // / JUICE / Orrery Demo etc. — labeled events get timeline buttons
+    // automatically; unlabeled ones don't). Mirrors __flyDebug's DEV gate.
+    if (import.meta.env.DEV) {
+      (window as Window & { __flyJumpToMet?: (met: number) => void }).__flyJumpToMet =
+        jumpToMet;
+    }
 
     // Single registry for every listener + disposable this scene
     // owns. /fly carries 17 layer-stop callbacks + 9 input listeners

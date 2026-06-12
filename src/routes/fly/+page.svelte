@@ -117,7 +117,7 @@
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
     planFlybyShot,
     type PlanetId as FlybyPlanetId,
-  } from '$lib/three/flyby-camera-plan';
+  } from '$lib/orbital/flyby-camera-plan';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';

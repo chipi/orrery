@@ -66,15 +66,18 @@
       },
       {
         "met_days": 255,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Comet Halley — flyby"
       },
       {
         "met_days": 1827,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist"
       },
       {
         "met_days": 2565,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Comet Grigg-Skjellerup — flyby"
       }
     ]
   }

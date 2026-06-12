@@ -66,11 +66,13 @@
       },
       {
         "met_days": 178,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus — flyby"
       },
       {
         "met_days": 446,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Comet Halley — flyby"
       }
     ]
   }

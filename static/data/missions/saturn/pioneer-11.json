@@ -70,11 +70,13 @@
       },
       {
         "met_days": 606,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist"
       },
       {
         "met_days": 2339,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Saturn — flyby"
       }
     ],
     "interplanetary_profile": {

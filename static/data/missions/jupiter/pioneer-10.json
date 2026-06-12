@@ -67,7 +67,8 @@
       },
       {
         "met_days": 641,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — flyby"
       }
     ],
     "interplanetary_profile": {

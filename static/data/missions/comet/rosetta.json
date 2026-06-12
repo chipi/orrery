@@ -71,27 +71,33 @@
       },
       {
         "met_days": 367,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #1 — gravity assist"
       },
       {
         "met_days": 1090,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mars — gravity assist"
       },
       {
         "met_days": 1349,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #2 — gravity assist"
       },
       {
         "met_days": 1671,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Asteroid 2867 Steins — flyby"
       },
       {
         "met_days": 2320,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Asteroid 21 Lutetia — flyby"
       },
       {
         "met_days": 2058,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #3 — gravity assist"
       },
       {
         "met_days": 3809,

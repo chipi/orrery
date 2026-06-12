@@ -72,7 +72,8 @@
       },
       {
         "met_days": 228,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mars — flyby"
       }
     ],
     "interplanetary_profile": {

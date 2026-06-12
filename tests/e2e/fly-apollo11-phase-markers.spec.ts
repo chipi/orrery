@@ -251,12 +251,17 @@ test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
     const renderState = page.locator('[data-testid="fly-render-state"]');
     const simDayBefore = Number(await renderState.getAttribute('data-sim-day'));
     // Find a clickable jump button (Step 6g adds data-testid on
-    // PhaseMarkerLabel's <button>). force: true bypasses the
-    // "element is stable" wait — under reducedMotion the dot has
-    // already snapped to its final pixel.
+    // PhaseMarkerLabel's <button>). Apollo 11's heliocentric phase
+    // markers project to screen coordinates near (or inside) the top
+    // Nav strip — `force: true` ignores element stability checks but
+    // STILL clicks at the dot's screen coordinate, which under those
+    // conditions lands on the Nav's `/missions` link instead of the
+    // dot. Dispatching the click directly on the button element fires
+    // its onclick handler regardless of what's painted on top of it.
+    // Post-#332 issue §4.
     const jumpBtn = page.locator('[data-testid="phase-marker-jump"]').first();
     await expect(jumpBtn).toBeVisible({ timeout: 10_000 });
-    await jumpBtn.click({ force: true });
+    await jumpBtn.dispatchEvent('click');
     await page.waitForTimeout(200);
     const simDayAfter = Number(await renderState.getAttribute('data-sim-day'));
     expect(Number.isFinite(simDayAfter)).toBe(true);

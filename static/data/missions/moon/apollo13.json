@@ -97,7 +97,8 @@
       },
       {
         "met_days": 3.13,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Moon — lunar flyby (free return)"
       },
       {
         "met_days": 3.96,

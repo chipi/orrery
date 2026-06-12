@@ -1,6 +1,6 @@
 <!--
   2D Canvas top-down chart that visualizes the iconic-shot camera plan
-  produced by $lib/three/flyby-camera-plan.ts. Side-panel content for
+  produced by $lib/orbital/flyby-camera-plan.ts. Side-panel content for
   /fly's DebugPanel. Lets us SEE the math (planet, trajectory, ship
   position + velocity arrow, camera position + view-direction arrow,
   side-angle marker) before applying it to the 3D scene.
@@ -28,7 +28,7 @@
     PLANET_COMPOSITION,
     type FlybyContext,
     type PlanetId,
-  } from '$lib/three/flyby-camera-plan';
+  } from '$lib/orbital/flyby-camera-plan';
 
   interface Props {
     planetId: PlanetId;

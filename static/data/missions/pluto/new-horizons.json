@@ -72,15 +72,18 @@
       },
       {
         "met_days": 405,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist"
       },
       {
         "met_days": 3463,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Pluto — flyby"
       },
       {
         "met_days": 4730,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Arrokoth (2014 MU69) — flyby"
       }
     ],
     "interplanetary_profile": {

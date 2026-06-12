@@ -83,7 +83,7 @@ function makeText(t: Partial<TextSourceEntry>): TextSourceEntry {
 describe('pathToRouteKey', () => {
   it('routes mission images to missions', () => {
     expect(pathToRouteKey('/images/missions/curiosity/01.jpg')).toBe('missions');
-    expect(pathToRouteKey('/images/missions/curiosity.jpg')).toBe('missions');
+    expect(pathToRouteKey('/images/missions/apollo11/02.4x3.jpg')).toBe('missions');
   });
   it('routes panel images to their host route', () => {
     expect(pathToRouteKey('/images/iss-modules/zarya/01.jpg')).toBe('iss');
@@ -287,23 +287,23 @@ describe('bundlePhotos', () => {
     expect(bundles[0].paths).toEqual(['/logos/nasa.svg']);
     expect(bundles[0].stems).toEqual(['/logos/nasa']);
   });
-  it('collapses hero ↔ panel reuse within one surface via image_url', () => {
-    // /images/missions/apollo11.jpg (hero card) and
-    // /images/missions/apollo11/01.{16x9,1x1,4x3,jpg} (first panel slot)
-    // are all the same Wikimedia upload — same image_url. Collapse.
+  it('collapses aspect-ratio variants of one slot via image_url', () => {
+    // /images/missions/apollo11/01.{16x9,1x1,4x3,jpg} are all crops of
+    // the same Wikimedia upload — same image_url. Collapse into one
+    // bundle. Since the unified-path migration, the mission card hero
+    // IS the gallery's 01.jpg (no separate <id>.jpg top-level to merge).
     const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Aldrin_Apollo_11.jpg';
     const bundles = bundlePhotos([
-      makePhoto({ path: '/images/missions/apollo11.jpg', image_url: imageUrl }),
       makePhoto({ path: '/images/missions/apollo11/01.16x9.jpg', image_url: imageUrl }),
       makePhoto({ path: '/images/missions/apollo11/01.1x1.jpg', image_url: imageUrl }),
       makePhoto({ path: '/images/missions/apollo11/01.4x3.jpg', image_url: imageUrl }),
       makePhoto({ path: '/images/missions/apollo11/01.jpg', image_url: imageUrl }),
     ]);
     expect(bundles).toHaveLength(1);
-    expect(bundles[0].paths).toHaveLength(5);
-    expect(bundles[0].stems).toEqual(['/images/missions/apollo11', '/images/missions/apollo11/01']);
-    // Hero (shortest un-cropped path) wins as representative.
-    expect(bundles[0].representative.path).toBe('/images/missions/apollo11.jpg');
+    expect(bundles[0].paths).toHaveLength(4);
+    expect(bundles[0].stems).toEqual(['/images/missions/apollo11/01']);
+    // Un-cropped variant wins as representative.
+    expect(bundles[0].representative.path).toBe('/images/missions/apollo11/01.jpg');
   });
   it('collapses cross-route reuse via image_url', () => {
     // Same Aldrin photo used on /missions and /moon-sites.

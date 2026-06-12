@@ -17,11 +17,13 @@ import type { ImageProvenanceEntry, SourceLogo, TextSourceEntry } from '$lib/dat
  *   1. **Reliable-id bundle (primary)** — when an entry carries a
  *      per-image identifier that can't collide across distinct images
  *      (`image_url` / `nasa_id` / `pageid` / `revid`), every path
- *      sharing that id collapses into one bundle. Catches hero ↔ panel
- *      reuse within one surface (e.g. `/images/missions/apollo11.jpg`
- *      + `/images/missions/apollo11/01.*.jpg`) AND cross-route reuse
+ *      sharing that id collapses into one bundle. Catches aspect-ratio
+ *      variants of the same slot (`/images/missions/apollo11/01.jpg`
+ *      + `/images/missions/apollo11/01.16x9.jpg`) AND cross-route reuse
  *      (e.g. same Aldrin photo on `/missions/apollo11` and
- *      `/moon-sites/apollo11`).
+ *      `/moon-sites/apollo11`). Since the unified-path migration, the
+ *      mission card hero IS the gallery's `01.jpg` (no separate
+ *      `<id>.jpg` top-level duplicate to bundle anymore).
  *
  *   2. **Stem-fallback bundle** — when no reliable id is available
  *      (notably NASA Images API search-URL entries where `source_url`
@@ -239,8 +241,8 @@ export function textSourceId(t: TextSourceEntry): string {
 /**
  * Map an emitted image path to a localised app-route label. Paths
  * follow the on-disk convention enforced by fetch-assets.ts:
- *   /images/missions/<id>/<nn>.jpg          → /missions panel
- *   /images/missions/<id>.jpg                → /missions card hero
+ *   /images/missions/<id>/<nn>.jpg          → /missions panel + card hero
+ *                                              (hero = slot 01)
  *   /images/iss-modules/<id>/<nn>.jpg        → /iss panel
  *   /images/earth-objects/<id>/<nn>.jpg      → /earth panel
  *   /images/moon-sites/<id>/<nn>.jpg         → /moon panel

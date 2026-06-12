@@ -556,7 +556,7 @@
             <figure class="card-photo">
               <img
                 class="card-cover"
-                src="{base}/images/missions/{mission.id}.jpg"
+                src="{base}/images/missions/{mission.id}/01.jpg"
                 alt=""
                 loading="lazy"
                 onerror={(e) => {

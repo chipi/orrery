@@ -39,6 +39,7 @@ const TASKS: Task[] = [
   },
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
+  { name: 'validate-hero-coverage', cmd: 'tsx', args: ['scripts/validate-hero-coverage.ts'] },
 ];
 
 interface TaskResult {

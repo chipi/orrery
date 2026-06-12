@@ -32,26 +32,7 @@ declare global {
    */
   interface Window {
     __flyDebug?: import('$lib/orbital/fly-debug-snapshot').FlyDebugSnapshot;
-    __flyDebugFrame?: {
-      simDay: number;
-      lastHelioSubPhase: string | null;
-      peakHoldArmedForFlybyMet: number | null;
-      peakHoldRemainingMs: number;
-      camR: number;
-      camTx: number;
-      camTz: number;
-      inMissionFinale: boolean;
-      finaleCaptionOpacity: number;
-      finaleBlackOpacity: number;
-      finaleStartedAt: number;
-      finaleElapsedMs: number;
-      cutBlackOpacity: number;
-      cutStartedAt: number;
-      cruiseHoldUntil: number;
-      cruiseHoldFired: boolean;
-      cruiseHoldRemainingMs: number;
-      cruiseHoldTriggerSimDay: number | null;
-    };
+    __flyDebugFrame?: import('$lib/orbital/fly-debug-frame').FlyDebugFrameSnapshot;
   }
 }
 

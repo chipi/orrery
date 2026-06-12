@@ -136,6 +136,7 @@
   import { findApsidesIndices } from '$lib/orbital/find-apsides';
   import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
   import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
+  import { buildFlyDebugFrameSnapshot } from '$lib/orbital/fly-debug-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -6225,27 +6226,26 @@
           // + dev work still see the full state. No prod overhead from a
           // hot-path window assignment 60× / second.
           if (import.meta.env.DEV) {
-            window.__flyDebugFrame = {
+            // Builder lives in $lib/orbital/fly-debug-frame — DEV-vs-prod
+            // tree-shake stays on this side of the call.
+            window.__flyDebugFrame = buildFlyDebugFrameSnapshot({
               simDay,
               lastHelioSubPhase,
               peakHoldArmedForFlybyMet: cine.peakHoldArmedForFlybyMet,
-              peakHoldRemainingMs: Math.max(0, cine.peakHoldUntil - performance.now()),
-              camR,
-              camTx: camTarget.x,
-              camTz: camTarget.z,
+              peakHoldUntil: cine.peakHoldUntil,
+              cruiseHoldUntil: cine.cruiseHoldUntil,
+              cruiseHoldFired: cine.cruiseHoldFired,
+              cruiseHoldTriggerSimDay,
+              cutStartedAt: cine.cutStartedAt,
+              cutBlackOpacity,
+              finaleStartedAt: cine.finaleStartedAt,
               inMissionFinale,
               finaleCaptionOpacity,
               finaleBlackOpacity,
-              finaleStartedAt: cine.finaleStartedAt,
-              finaleElapsedMs:
-                cine.finaleStartedAt > 0 ? performance.now() - cine.finaleStartedAt : 0,
-              cutBlackOpacity,
-              cutStartedAt: cine.cutStartedAt,
-              cruiseHoldUntil: cine.cruiseHoldUntil,
-              cruiseHoldFired: cine.cruiseHoldFired,
-              cruiseHoldRemainingMs: Math.max(0, cine.cruiseHoldUntil - performance.now()),
-              cruiseHoldTriggerSimDay,
-            };
+              camR,
+              camTarget: { x: camTarget.x, z: camTarget.z },
+              now: performance.now(),
+            });
           }
           // GH #107 — phase marker projection (3D view). Compute pixel
           // positions for every event marker against the active cislunar

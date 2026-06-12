@@ -111,6 +111,7 @@
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
+  import DebugPanel from '$lib/components/DebugPanel.svelte';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -6716,6 +6717,11 @@
 </script>
 
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
+
+<DebugPanel pageLabel="FLY">
+  <!-- Page-specific debug content — Phase 2 will inject FlybyDebugViewer here. -->
+  <div class="debug-fly-placeholder">FLY debug content — Phase 2 (FlybyDebugViewer)</div>
+</DebugPanel>
 
 <div class="fly" class:hud-hidden={hudHidden}>
   <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop

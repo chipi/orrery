@@ -2,6 +2,8 @@
 
 *A companion to fly-cinematic-shot-language.md. The technical guide tells you how to make the pixels behave. This guide tells you what the shot is FOR.*
 
+> **Iterating on camera math?** `/fly?debug=1` opens the in-app DebugPanel with a 2D top-down `FlybyDebugViewer` (Page tab) that visualises trajectory, planet, ship pose, and camera vector — pure math in `src/lib/three/flyby-camera-plan.ts`, no Three.js noise. Sliders for lead-days, camR multiplier, side-angle, and pitch let you nail the composition in 2D before wiring it into the 3D scene. Use this rather than recompiling the 3D path on every guess. Extend it (new readouts, new presets) when the next composition problem doesn't fit the current view. See AGENTS.md §"Debugging".
+
 ---
 
 ## Preamble: The thing the great references have

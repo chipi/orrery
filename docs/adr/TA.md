@@ -25,6 +25,8 @@ The subsystems of the production application, grouped by concern.
 
 **Service worker** — `@vite-pwa/sveltekit`-generated. Caches the shell + critical data on first paint; the app survives subsequent reloads offline. Install prompt and `data-high-contrast` attribute on `<html>` for accessibility. See ADR-029.
 
+**DebugPanel** (`src/lib/components/DebugPanel.svelte` + `DebugPanelRegistrar.svelte` + `debug-panel-context.ts`) — in-app inspector, surfaced on every route via `?debug=1`. Mounted once from `+layout.svelte`; a Svelte context (created on the layout, not the panel — siblings under `<main>` need a shared ancestor) lets any page register a page-specific snippet as a "Page" tab via `<DebugPanelRegistrar label="X" content={snippet?} />`. Built-in tabs: Page (conditional), Perf (FPS + frame time, stub for rolling avg / low-1%), i18n (current locale, stub for missing-key warnings), Route (`pathname` / `search` / `hash`). `/fly` registers `FlybyDebugViewer` (2D Canvas chart for iconic-shot camera math); other surface routes register a label-only header. Expand the stubs as you fix issues — agents are expected to reach for this before `console.log`. See AGENTS.md §"Debugging — `?debug=1` is the in-app inspector".
+
 ### Routes
 
 The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit page module under `src/routes/<route>/+page.svelte`. Pages do not share mutable state directly — they communicate via the data client + URL search params (`$page.url.searchParams`).

@@ -4,6 +4,8 @@ Operator guide for the observability stack defined in **[RFC-025](../rfc/RFC-025
 
 The integration shape is **load-bearing by env var, silent by default.** Empty environment variables mean both integrations short-circuit — Sentry's SDK returns before init, the Grafana Agent's entrypoint picks a no-clients config. Fork-friendly. No committed secrets anywhere in the repo.
 
+> **In-browser sibling:** for live, per-route inspection (FPS, current locale, page-specific debug views), use the in-app DebugPanel — append `?debug=1` to any route. Sentry catches production errors after the fact; the DebugPanel is the during-development surface. See AGENTS.md §"Debugging — `?debug=1` is the in-app inspector" for tabs, registrar pattern, and when to expand stubs.
+
 ---
 
 ## Sentry (client-side JS errors)

@@ -27,6 +27,7 @@ This caveat lives here (not in AGENTS.md) because it's a Claude Code environment
 - **`TaskCreate` / `TaskUpdate`** for any multi-step work (3+ steps). Keeps the user in the loop on progress.
 - **`EnterPlanMode` + `ExitPlanMode`** before non-trivial implementation — get the user's sign-off on the approach before writing code. Especially when touching `/fleet`, `/science`, `/fly` cislunar, or anything that modifies the asset / provenance pipelines.
 - **`Agent` (subagent) with `Explore`** for codebase research that would take 4+ Bash/Grep calls. Particularly useful for cross-route audits like "what's the actual route inventory" or "where do we use feature X".
+- **`?debug=1` in-app DebugPanel** (every route — see AGENTS.md §"Debugging") + `chrome-devtools` MCP for `take_snapshot` / `take_screenshot`. When you're triaging a visual, spatial, timing, or interaction bug, your first move is to navigate to the affected route with `?debug=1`, read the relevant tab, and snapshot the a11y tree. Add a Page tab via `<DebugPanelRegistrar>` when the signal you need doesn't fit the generic Perf / i18n / Route tabs — `/fly`'s `FlybyDebugViewer` is the template. Expand the panel proactively rather than re-discovering the same state read by read. Avoid console-only debugging: it disappears the moment another agent picks the work up.
 
 ### Preflight before push
 

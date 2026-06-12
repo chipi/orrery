@@ -369,6 +369,44 @@ Transfer arc: Keplerian half-ellipses, not Bezier. Do not replace. 3D scene unit
 
 ---
 
+## Debugging — `?debug=1` is the in-app inspector
+
+Every route surfaces a built-in DebugPanel when you append `?debug=1` to the URL (e.g. `/fly?debug=1`, `/mars?debug=1`, `/?debug=1`). Mounted from the root layout (`src/routes/+layout.svelte`) via Svelte context, so it's available on every page. Use it instead of bolting on ad-hoc `console.log` calls or one-off panels.
+
+Tabs:
+
+- **Page** — page-specific instrumentation. Only shown when the route registered content (today: `/fly` exposes the 2D `FlybyDebugViewer` for camera-math iteration). Add this tab to a page when you're solving a hard visual / spatial / interaction problem that's faster to debug against a derived 2D / numeric view than in the live 3D scene.
+- **Perf** — live FPS + frame time. Use when you're investigating perceived jank or a quality-tier downgrade. Stub for rolling avg / low-1% — extend it when needed rather than spinning up an external profiler for routine work.
+- **i18n** — current locale + (stub) key-resolution warnings. Extend when triaging translation regressions.
+- **Route** — `pathname` / `search` / `hash`. Useful when chasing a routing or deep-link bug.
+
+Wiring a page-specific tab:
+
+```svelte
+<!-- in your page -->
+<script lang="ts">
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+  // ...
+</script>
+
+<!-- label-only (header shows "DEBUG · MARS", no Page tab) -->
+<DebugPanelRegistrar label="MARS" />
+
+<!-- with a Page-tab snippet (e.g. /fly + FlybyDebugViewer) -->
+{#snippet pageDebugContent()}
+  <MyPageInspector ... />
+{/snippet}
+<DebugPanelRegistrar label="FLY" content={pageDebugContent} />
+```
+
+The registrar handles cleanup on navigation — no stale labels leak across routes. Context lives in `src/lib/components/debug-panel-context.ts`; panel in `src/lib/components/DebugPanel.svelte`.
+
+**Use this proactively.** When you hit a visual or timing problem that's hard to reason about in the live scene — camera math, spatial composition, animation phase, perf jank, locale bleed, deep-link state — your first move should be: can I add a Page tab here, or extend Perf/i18n/Route with the signal I need? Expand the panel's stubs (perf rolling avg, i18n missing-key list, route history) as you fix issues rather than reading them in isolation. A growing debug surface is the whole point — each iteration teaches the next agent how the system actually behaves.
+
+Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you don't have to opt in to get the baseline.
+
+---
+
 ## Testing rules
 
 **Unit tests** (Vitest, colocated): every function in `src/lib/orbital.ts` must have tests. Physics functions are the highest-priority testing surface.

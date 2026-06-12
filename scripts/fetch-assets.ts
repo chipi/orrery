@@ -2250,6 +2250,9 @@ export const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
     // search 2026-05-04.
     wikimediaGallery: ['Gaia spacecraft 360 Gaia Sky.jpg'],
   },
+  // #5 Phase 4 — copyFrom-mission for earth-objects whose mission gallery is curated.
+  { id: 'chandrayaan1', query: 'chandrayaan 1', copyFromMission: 'chandrayaan1' },
+  { id: 'clementine', query: 'clementine moon', copyFromMission: 'clementine' },
 ];
 
 export const MOON_SITE_QUERIES: GalleryQuery[] = [
@@ -2283,6 +2286,10 @@ export const MOON_SITE_QUERIES: GalleryQuery[] = [
   { id: 'chandrayaan3', query: 'chandrayaan 3 vikram', copyFromMission: 'chandrayaan3' },
   { id: 'slim', query: 'slim moon lander jaxa', copyFromMission: 'slim' },
   { id: 'artemis3', query: 'artemis lunar landing', copyFromMission: 'artemis3' },
+  // #5 Phase 4 — copyFrom-mission for sites whose mission gallery is curated.
+  { id: 'chandrayaan1', query: 'chandrayaan 1', copyFromMission: 'chandrayaan1' },
+  { id: 'clementine', query: 'clementine moon', copyFromMission: 'clementine' },
+  { id: 'lro', query: 'lunar reconnaissance orbiter', copyFromMission: 'lro' },
 ];
 
 /**

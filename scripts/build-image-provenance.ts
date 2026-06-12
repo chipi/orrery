@@ -490,6 +490,53 @@ type MissionCommonsSource = {
   fetched_at?: string;
 };
 
+/**
+ * Sidecar manifest for panel surfaces (moon-sites, mars-sites,
+ * earth-objects) whose imagery `source-known-gaps.ts` fetched but
+ * that aren't in the corresponding `*_QUERIES` arrays. Keyed by
+ * `<surface>/<id>/<slot>`.
+ */
+async function buildPanelCommonsSidecarEntries(
+  knownIdsBySurface: Map<string, Set<string>>,
+): Promise<ProvenanceEntry[]> {
+  const out: ProvenanceEntry[] = [];
+  const sidecarPath = 'static/data/panel-image-sources.json';
+  let sources: Record<string, MissionCommonsSource> = {};
+  try {
+    const txt = await readFile(sidecarPath, 'utf8');
+    sources = JSON.parse(txt) as typeof sources;
+  } catch {
+    return out;
+  }
+  for (const [relKey, src] of Object.entries(sources)) {
+    // Key shape: `<surface>/<id>/<slot>`. Slot has no extension here;
+    // we look up the on-disk file's actual extension.
+    const parts = relKey.split('/');
+    if (parts.length !== 3) continue;
+    const [surface, id, slot] = parts;
+    if (knownIdsBySurface.get(surface)?.has(id)) continue; // already covered
+    const baseLocal = join(`static/images/${surface}`, id, slot);
+    let localPath = baseLocal;
+    if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
+    else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
+    else continue;
+    const agencyHuman = src.credit || 'Unknown';
+    out.push(
+      await buildWikimediaEntry({
+        localPath,
+        filename: src.commons_file,
+        fallbackAuthor: agencyHuman,
+        fallbackAgency: agencyHuman,
+        fallbackLicense: defaultLicenseForAgency(agencyHuman),
+        fallbackLicenseUrl: null,
+        fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
+        modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
+      }),
+    );
+  }
+  return out;
+}
+
 async function buildMissionCommonsSidecarEntries(
   knownMissionIds: Set<string>,
 ): Promise<ProvenanceEntry[]> {
@@ -2167,6 +2214,19 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
       defaultLicense: 'PD-NASA',
       defaultLicenseRationale: getAllowlistEntry('PD-NASA')!.rationale,
     })),
+  );
+
+  // Panel sidecar (#5 Phase 4) — picks up moon-sites / mars-sites /
+  // earth-objects ids that source-known-gaps.ts fetched from Commons
+  // but that aren't in the corresponding query arrays yet.
+  out.push(
+    ...(await buildPanelCommonsSidecarEntries(
+      new Map<string, Set<string>>([
+        ['moon-sites', new Set(MOON_SITE_QUERIES.map((q) => q.id))],
+        ['mars-sites', new Set(MARS_SITE_QUERIES.map((q) => q.id))],
+        ['earth-objects', new Set(EARTH_OBJECT_QUERIES.map((q) => q.id))],
+      ]),
+    )),
   );
 
   console.log('Planet galleries…');

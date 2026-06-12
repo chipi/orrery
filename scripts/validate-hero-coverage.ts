@@ -47,74 +47,19 @@ interface SurfaceSpec {
 // the validator failing is the gate. Allowlist exists ONLY to capture
 // the baseline that existed when the validator landed.
 
-const MISSIONS_KNOWN_GAPS = new Set<string>([
-  // Index-only entries — no image directory on disk.
-  'apollo7',
-  'apollo8',
-  'apollo9',
-  'apollo10',
-  'aurora-7',
-  'faith-7',
-  'friendship-7',
-  'luna10',
-  'lunar-prospector',
-  'smart-1',
-  'change1',
-  'freedom-7',
-  'liberty-bell-7',
-  'mercury-atlas-9',
-  'mercury-redstone-3',
-  'shenzhou-2',
-  'shenzhou-3',
-  'sigma-7',
-]);
+// #5 Phase 4 sourced 57 of the original 58 gaps via Wikimedia Commons
+// (Special:FilePath + search-API fallback) and copyFrom-mission for the
+// 5 lunar/earth surfaces whose mission gallery already shipped. See
+// `docs/provenance/source-known-gaps-report.md` for the per-ID title.
 
-const FLEET_KNOWN_GAPS = new Set<string>([
-  'akatsuki',
-  'antares',
-  'cape-canaveral-lc-36b',
-  'exomars-tgo',
-  'hope',
-  'maven',
-  'soyuz-2',
-  'tianwen-1',
-  'vulcan',
-]);
-
-const MOON_SITES_KNOWN_GAPS = new Set<string>([
-  'beresheet',
-  'chandrayaan1',
-  'change1',
-  'change2',
-  'clementine',
-  'lro',
-  'luna10',
-  'luna16',
-  'luna21',
-  'lunar-prospector',
-  'smart-1',
-]);
-
-const MARS_SITES_KNOWN_GAPS = new Set<string>(['mars3-orbiter', 'zhurong']);
-
+const MISSIONS_KNOWN_GAPS = new Set<string>([]);
+const FLEET_KNOWN_GAPS = new Set<string>([]);
+const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
+const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([
-  'chandrayaan1',
-  'change1',
-  'change2',
-  'clementine',
-  'goes',
-  'inmarsat',
-  'iridium-next',
-  'kuiper',
-  'landsat',
-  'luna10',
-  'lunar-prospector',
-  'o3b',
-  'oneweb',
-  'planet-labs',
-  'sentinel-copernicus',
-  'smart-1',
-  'starlink',
+  // Commons search returned no usable raster file for "Molniya orbit
+  // diagram.jpg" or fallback queries. Tracked for re-curation; see
+  // post-332-orphan-status.md.
   'tundra-molniya',
 ]);
 

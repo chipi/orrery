@@ -111,8 +111,8 @@
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
-  import DebugPanel from '$lib/components/DebugPanel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import {
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
     type PlanetId as FlybyPlanetId,
@@ -6723,7 +6723,7 @@
 
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
 
-<DebugPanel pageLabel="FLY">
+{#snippet flyDebugContent()}
   {#if mission.flight?.events && outPts.length > 0}
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
       (e) => (e.type === 'flyby' || e.type === 'edl_or_oi') && e.met_days != null,
@@ -6776,12 +6776,14 @@
         }}
       />
     {:else}
-      <div class="debug-fly-placeholder">No flyby/EDL events in mission.</div>
+      <div>No flyby/EDL events in mission.</div>
     {/if}
   {:else}
-    <div class="debug-fly-placeholder">Trajectory not yet loaded.</div>
+    <div>Trajectory not yet loaded.</div>
   {/if}
-</DebugPanel>
+{/snippet}
+
+<DebugPanelRegistrar label="FLY" content={flyDebugContent} />
 
 <div class="fly" class:hud-hidden={hudHidden}>
   <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop

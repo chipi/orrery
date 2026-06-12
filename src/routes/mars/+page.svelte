@@ -9,7 +9,7 @@
   // input handlers, equirectangular 2D drawing — is owned by SurfaceScene.
   import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
-  import DebugPanel from '$lib/components/DebugPanel.svelte';
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
   import { buildMarsLanderModel } from '$lib/mars-lander-models';
   import { registerMarsHotspotBuilders } from '$lib/surface-scene/register-mars-hotspot-builders';
@@ -78,7 +78,7 @@
 
 <svelte:head><title>{m.mars_page_title()}</title></svelte:head>
 
-<DebugPanel pageLabel="MARS" />
+<DebugPanelRegistrar label="MARS" />
 
 <SurfaceScene
   config={MARS_CONFIG}

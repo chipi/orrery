@@ -7,6 +7,9 @@
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
+  import DebugPanel from '$lib/components/DebugPanel.svelte';
+  import { createDebugPanelContext } from '$lib/components/debug-panel-context';
+  import type { Snippet } from 'svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
@@ -15,6 +18,17 @@
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
+
+  // DebugPanel context — created HERE (layout), not inside DebugPanel,
+  // so descendant pages (which are children of `<main>`) can see it via
+  // getContext. setContext only flows down to descendants of the
+  // calling component, so siblings of DebugPanel (i.e. the page) need
+  // the context registered on a shared ancestor.
+  const debugPageReg = $state<{ label: string; content: Snippet | null }>({
+    label: '',
+    content: null,
+  });
+  createDebugPanelContext(debugPageReg);
 
   // Mirror the active locale onto <html lang>/<html dir> after every
   // navigation. Paraglide's transformPageChunk sets the initial value
@@ -186,6 +200,7 @@
 {#key activeLocale}
   <Nav />
   <AudioOverlay />
+  <DebugPanel />
   <main>
     {@render children?.()}
   </main>

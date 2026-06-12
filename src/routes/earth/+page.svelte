@@ -18,7 +18,7 @@
    */
   import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
-  import DebugPanel from '$lib/components/DebugPanel.svelte';
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
   import { viewerLatLon } from '$lib/viewer-location';
@@ -34,7 +34,7 @@
 
 <svelte:head><title>{m.earth_page_title()}</title></svelte:head>
 
-<DebugPanel pageLabel="EARTH" />
+<DebugPanelRegistrar label="EARTH" />
 
 <SurfaceScene
   config={earthSurfaceConfig}

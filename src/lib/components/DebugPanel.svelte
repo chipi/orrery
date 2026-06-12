@@ -1,34 +1,29 @@
 <!--
-  Generic debug side panel — surfaced on any route by appending `?debug=1`
-  to the URL. Wraps page-specific debug content (passed via the default
-  slot or named "page" slot) inside a floating panel with shared tabs:
+  Generic debug side panel — surfaced on every route via the root
+  layout. Opens with ?debug=1. Pages can OPTIONALLY register their
+  own page-specific debug surface via the context helper:
 
-    Page (slot)   — page-specific debug surface (mission state, camera
-                    math, scene introspection, etc.)
-    Perf          — frame time / FPS rolling readouts (stubbed; we can
-                    wire it to the existing $lib/quality/frame-monitor.
-    i18n          — current locale + untranslated-key warnings (stub).
-    Route         — current URL + search params + breadcrumb info.
+    import { setPageDebugContent } from '$lib/components/debug-panel-context';
+    setPageDebugContent({ label: 'FLY', content: pageDebugSnippet });
 
-  Each page wires its own debug slot — see /fly + /mars for examples.
-  Pattern reference: src/lib/surface-scene/SurfaceScene.svelte's
-  `showDebug = $page.url.searchParams.get('debug') === '1'`.
-
-  Hidden by default. Use `?debug=1` to open, click × to dismiss.
+  If no page registers content, the "Page" tab is hidden and only
+  the generic Perf / i18n / Route tabs show.
 -->
 <script lang="ts">
   import { page } from '$app/stores';
-  import { onMount, type Snippet } from 'svelte';
+  import { onMount } from 'svelte';
+  import { getDebugPanelContext } from '$lib/components/debug-panel-context';
 
-  /** Page label shown in the panel header (e.g. "FLY", "MARS"). */
-  let { pageLabel = '', children }: { pageLabel?: string; children?: Snippet } = $props();
+  // Read the page-registration state from context (set up in
+  // +layout.svelte). The layout owns the reactive object so siblings
+  // of <main> can both observe it and let descendants mutate it.
+  const debugCtx = getDebugPanelContext();
+  const pageReg = debugCtx?.registration ?? { label: '', content: null };
 
   let mounted = $state(false);
   let open = $state(false);
-  let activeTab = $state<'page' | 'perf' | 'i18n' | 'route'>('page');
+  let activeTab = $state<'page' | 'perf' | 'i18n' | 'route'>('perf');
 
-  // Rolling FPS counter — minimal stub. Wire to frame-monitor later
-  // for accurate readings (we already have $lib/quality/frame-monitor).
   let fps = $state(0);
   let frameTimeMs = $state(0);
 
@@ -37,8 +32,6 @@
     const url = $page.url;
     if (url.searchParams.get('debug') === '1') open = true;
 
-    // Lightweight FPS sampling — once per second is enough for the
-    // header readout. Don't tax the main loop with per-frame counters.
     let last = performance.now();
     let frameCount = 0;
     let rafId = 0;
@@ -60,6 +53,12 @@
   function toggleOpen() {
     open = !open;
   }
+
+  // If a page registers content, default to the Page tab; otherwise
+  // start on Perf.
+  $effect(() => {
+    if (pageReg.content && activeTab === 'perf') activeTab = 'page';
+  });
 </script>
 
 {#if mounted && open}
@@ -67,7 +66,7 @@
     <header class="debug-header">
       <div class="debug-title">
         <span class="debug-label">DEBUG</span>
-        {#if pageLabel}<span class="debug-page-label">· {pageLabel}</span>{/if}
+        {#if pageReg.label}<span class="debug-page-label">· {pageReg.label}</span>{/if}
       </div>
       <div class="debug-meta">
         <span class="debug-fps">{fps} fps · {frameTimeMs}ms</span>
@@ -80,13 +79,15 @@
       </div>
     </header>
     <div class="debug-tabs" role="tablist">
-      <button
-        type="button"
-        role="tab"
-        class="debug-tab"
-        class:active={activeTab === 'page'}
-        onclick={() => (activeTab = 'page')}
-      >Page</button>
+      {#if pageReg.content}
+        <button
+          type="button"
+          role="tab"
+          class="debug-tab"
+          class:active={activeTab === 'page'}
+          onclick={() => (activeTab = 'page')}
+        >Page</button>
+      {/if}
       <button
         type="button"
         role="tab"
@@ -110,8 +111,8 @@
       >Route</button>
     </div>
     <div class="debug-body">
-      {#if activeTab === 'page'}
-        {@render children?.()}
+      {#if activeTab === 'page' && pageReg.content}
+        {@render pageReg.content()}
       {:else if activeTab === 'perf'}
         <div class="debug-section">
           <div class="debug-row">

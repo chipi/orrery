@@ -135,6 +135,7 @@
   import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
   import { findApsidesIndices } from '$lib/orbital/find-apsides';
   import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
+  import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3441,28 +3442,24 @@
         const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
         const flyby =
           findFlybyPlanetFromLabel(activeEvt?.label) ?? findClosestPlanetToShip(sc.pos, simDay);
-        // Debug exposure. Most fields are dev-only — chrome-devtools-mcp
-        // verification reads them. flybyId + flybySize are also read
-        // by the foreground ship-offset block in the animate loop
-        // (search `flybyDbg`), so the write happens regardless of DEV
-        // flag for those two; the other fields are skipped in prod.
-        window.__flyDebug = import.meta.env.DEV
-          ? {
-              activeFlybyMet,
-              flybyId: flyby?.id ?? null,
-              flybySize: flyby?.size ?? null,
-              scPos: { x: sc.pos.x, z: sc.pos.z },
-              subPhase: lastHelioSubPhase,
-              simDay,
-              peakHoldUntil: cine.peakHoldUntil,
-              peakHoldArmedForFlybyMet: cine.peakHoldArmedForFlybyMet,
-              peakHoldRemainingMs: Math.max(0, cine.peakHoldUntil - performance.now()),
-              camR,
-              camTx: camTarget.x,
-              camTy: camTarget.y,
-              camTz: camTarget.z,
-            }
-          : { flybyId: flyby?.id ?? null, flybySize: flyby?.size ?? null };
+        // Debug exposure. Builder lives in $lib/orbital/fly-debug-snapshot
+        // so the DEV-vs-prod payload shape is unit-tested. flybyId +
+        // flybySize ship in BOTH modes (the foreground ship-offset
+        // block reads them outside the DEV gate); everything else is
+        // stripped in production.
+        window.__flyDebug = buildFlyDebugSnapshot({
+          isDev: import.meta.env.DEV,
+          activeFlybyMet,
+          flyby,
+          spacecraftPos: { x: sc.pos.x, z: sc.pos.z },
+          subPhase: lastHelioSubPhase,
+          simDay,
+          peakHoldUntil: cine.peakHoldUntil,
+          peakHoldArmedForFlybyMet: cine.peakHoldArmedForFlybyMet,
+          now: performance.now(),
+          camR,
+          camTarget: { x: camTarget.x, y: camTarget.y, z: camTarget.z },
+        });
         if (flyby) {
           const bodyPos =
             flyby.id === 'earth' ? earthPos(simDay) : destinationPos(simDay, flyby.id);

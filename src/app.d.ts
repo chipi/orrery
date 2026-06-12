@@ -31,21 +31,7 @@ declare global {
    *   captures W3 beat state for assertion harnesses.
    */
   interface Window {
-    __flyDebug?: {
-      flybyId?: string | null;
-      flybySize?: number | null;
-      activeFlybyMet?: number;
-      scPos?: { x: number; z: number };
-      subPhase?: string | null;
-      simDay?: number;
-      peakHoldUntil?: number;
-      peakHoldArmedForFlybyMet?: number | null;
-      peakHoldRemainingMs?: number;
-      camR?: number;
-      camTx?: number;
-      camTy?: number;
-      camTz?: number;
-    };
+    __flyDebug?: import('$lib/orbital/fly-debug-snapshot').FlyDebugSnapshot;
     __flyDebugFrame?: {
       simDay: number;
       lastHelioSubPhase: string | null;

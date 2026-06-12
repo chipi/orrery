@@ -43,6 +43,7 @@ declare global {
       peakHoldRemainingMs?: number;
       camR?: number;
       camTx?: number;
+      camTy?: number;
       camTz?: number;
     };
     __flyDebugFrame?: {

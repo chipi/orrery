@@ -3245,7 +3245,7 @@
       points: Vec2[],
       targetMet: number,
       arrivalMet: number,
-    ): { x: number; z: number } | null {
+    ): { x: number; y: number; z: number } | null {
       if (points.length < 2 || !(arrivalMet > 0)) return null;
       const fraction = Math.max(0, Math.min(1, targetMet / arrivalMet));
       const indexFloat = fraction * (points.length - 1);
@@ -3253,7 +3253,13 @@
       const t = indexFloat - i;
       const a = points[i];
       const b = points[Math.min(i + 1, points.length - 1)];
-      return { x: a.x + (b.x - a.x) * t, z: a.z + (b.z - a.z) * t };
+      const ay = a.y ?? 0;
+      const by = b.y ?? 0;
+      return {
+        x: a.x + (b.x - a.x) * t,
+        y: ay + (by - ay) * t,
+        z: a.z + (b.z - a.z) * t,
+      };
     }
     // The previous computeFlybyChoreographyCamT (perpendicular
     // azimuth + 90° pan sweep) was replaced by the inline
@@ -3511,6 +3517,7 @@
       let sub: string;
       let centerX: number;
       let centerZ: number;
+      let centerY = 0;
       let targetR: number;
       let targetP = HELIO_CRUISE_P;
 
@@ -3539,6 +3546,7 @@
               peakHoldRemainingMs: Math.max(0, cine.peakHoldUntil - performance.now()),
               camR,
               camTx: camTarget.x,
+              camTy: camTarget.y,
               camTz: camTarget.z,
             }
           : { flybyId: flyby?.id ?? null, flybySize: flyby?.size ?? null };
@@ -3548,6 +3556,7 @@
               ? earthPos(simDay)
               : destinationPos(simDay, flyby.id);
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
+          void bodyScene;
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;
           // Limb-grazing composition — bias the camera target 65 % toward
           // the spacecraft position (was 35 %). This pushes the planet
@@ -3584,66 +3593,91 @@
           // PEAK position (predicted via outPts spline), not the
           // current position. That way the camera is already on the
           // "right side" before the ship arrives there.
+          // ICONIC HERO-SHOT — Cassini-mission-art over-the-shoulder
+          // composition. The camera is positioned at a 3/4 side angle
+          // off the spacecraft's velocity vector, looking AT the ship.
+          // The ship sits in the foreground at 3/4 view; the planet
+          // appears in the background BEHIND the ship from camera POV
+          // (ship between camera and planet along the view axis).
+          //
+          // This is FUNDAMENTALLY different from the previous "camera
+          // looking at the planet with ship somewhere in frame"
+          // composition — Marko's feedback: "angle at planet was
+          // never problem ... change camera to get more side angle
+          // at ship."
           const isEarthFlyby = flyby.id === ('earth' as typeof flyby.id);
           const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
-          // Sample ship pos at THE EXACT iconic-moment we freeze on
-          // (peak - ICONIC_LEAD_DAYS). The gravity-assist arc bends
-          // the ship continuously, so its position at peak-30 days
-          // (far approach) is on a different side of the planet than
-          // its position at peak-5 days (the actual frozen moment).
-          // Using peak-30 puts the camera on the approach-far side,
-          // where the ship is NOT at the frozen moment — ship ends
-          // up behind the planet from camera POV (the user-reported
-          // "ship on the other side" bug). Sampling at the iconic
-          // moment itself gives the camera the same-side perspective.
           const ICONIC_LEAD_DAYS_FOR_CAMERA = 2;
           const iconicMet = Math.max(0, activeFlybyMet - ICONIC_LEAD_DAYS_FOR_CAMERA);
+          // Sample ship pos at the iconic moment AND just before it
+          // so we can compute the ship's velocity direction in the
+          // xz plane (orbital tangent). The hero-shot camera is
+          // positioned at 3/4 angle off this velocity direction —
+          // looking at the ship from a side-back angle, like a
+          // chase-cam pulled to one side. That's how the Cassini
+          // mission-art compositions read: spacecraft seen at 3/4
+          // perspective with the planet looming behind.
           const predicted = predictShipPosAtMet(outPts, iconicMet, totalOutboundDays);
-          const shipApproachX = predicted ? predicted.x * SCALE_3D : scScene.x;
-          const shipApproachZ = predicted ? predicted.z * SCALE_3D : scScene.z;
-          // camTarget = planet center
-          centerX = bodyScene.x;
-          centerZ = bodyScene.z;
-          // Direction from planet to ship's approach-side position.
-          // Camera will be in this direction from the planet.
-          const planetToApproachX = shipApproachX - bodyScene.x;
-          const planetToApproachZ = shipApproachZ - bodyScene.z;
-          const planetToApproachMag = Math.hypot(planetToApproachX, planetToApproachZ);
-          if (planetToApproachMag > 1e-3) {
-            // Camera straight back along planet→ship line. With the
-            // near-horizontal camP (1.45 rad), camera is just above
-            // the orbital plane looking at the planet's equator; the
-            // ship's +y offset above the pole then appears as a
-            // foreground glyph at the top-of-limb rim — natural
-            // limb-grazing composition without needing an azimuth
-            // offset (which doesn't visibly change the shot anyway
-            // because the ship offset is +y, not xz).
-            helioFlybyDesiredCamT = Math.atan2(
-              planetToApproachX / planetToApproachMag,
-              planetToApproachZ / planetToApproachMag,
-            );
+          const shipIconicX = predicted ? predicted.x * SCALE_3D : scScene.x;
+          centerY = predicted ? predicted.y * SCALE_3D : 0;
+          const shipIconicZ = predicted ? predicted.z * SCALE_3D : scScene.z;
+          const predictedPrev = predictShipPosAtMet(
+            outPts,
+            Math.max(0, iconicMet - 1),
+            totalOutboundDays,
+          );
+          const shipPrevX = predictedPrev ? predictedPrev.x * SCALE_3D : shipIconicX;
+          const shipPrevZ = predictedPrev ? predictedPrev.z * SCALE_3D : shipIconicZ;
+          // Ship velocity unit vector in xz plane (orbital tangent).
+          const velX = shipIconicX - shipPrevX;
+          const velZ = shipIconicZ - shipPrevZ;
+          const velMag = Math.hypot(velX, velZ);
+          // camTarget = SHIP position at iconic moment.
+          centerX = shipIconicX;
+          centerZ = shipIconicZ;
+          // Camera position relative to ship: at 3/4 angle off the
+          // BEHIND-ship direction (i.e., -velocity). 30° rotation off
+          // straight-behind so the camera sees the ship in 3/4 view,
+          // not dead-on from behind. The rotation is in the xz plane
+          // around the ship; camP handles elevation separately.
+          //
+          // -velocity gives the "straight behind ship" direction.
+          // Rotating that vector by +30° (CCW in xz) gives the
+          // behind-and-side position.
+          const SIDE_ANGLE = Math.PI / 6; // 30°
+          if (velMag > 1e-6) {
+            // Behind-direction (pointing FROM ship AWAY along reversed
+            // velocity) — camera will sit out along this direction.
+            const behindX = -velX / velMag;
+            const behindZ = -velZ / velMag;
+            // Rotate behind direction by SIDE_ANGLE in xz plane
+            // (counterclockwise when looking from +y).
+            const cs = Math.cos(SIDE_ANGLE);
+            const sn = Math.sin(SIDE_ANGLE);
+            const camDirX = behindX * cs - behindZ * sn;
+            const camDirZ = behindX * sn + behindZ * cs;
+            // camera_pos = camTarget + camR × (sin(camP)×sin(camT),
+            //                                  cos(camP),
+            //                                  sin(camP)×cos(camT))
+            // We want unit horizontal direction = (camDirX, camDirZ),
+            // so sin(camT) = camDirX, cos(camT) = camDirZ →
+            // camT = atan2(camDirX, camDirZ).
+            helioFlybyDesiredCamT = Math.atan2(camDirX, camDirZ);
           } else {
             helioFlybyDesiredCamT = null;
           }
-          // camR — must be > ship's approach-side distance from planet
-          // so ship is BETWEEN camera and planet (in front). Camera
-          // sits well behind the incoming spacecraft, looking down
-          // its approach line toward the planet.
-          targetR = isEarthFlyby
-            ? Math.max(flyby.size * 3.2, planetToApproachMag * 1.2 + flyby.size * 2)
-            : Math.max(
-                flyby.size * FLYBY_BODY_R_MULTIPLIER,
-                planetToApproachMag * 1.2 + flyby.size * 3,
-              );
-          // Flyby cinema pitch — camera looks almost horizontally at
-          // the planet (1.45 rad ≈ 83° from zenith → only 7° above
-          // the orbital plane). Combined with the ship's +y offset
-          // above the planet's pole, this puts the ship at the side
-          // of the planet's limb (rule-of-thirds rim-grazing), NOT
-          // at the top of the disc. Higher camP values (1.25 etc)
-          // still read as "looking down at top of planet." Earth
-          // flyby keeps slightly more elevation for the earthrise feel.
-          targetP = isEarthFlyby ? 1.3 : 1.45;
+          // camR — close-up of ship. Small radius because the ship
+          // glyph is small and we want it to fill a meaningful chunk
+          // of frame as the foreground hero. Planet behind ship will
+          // still be visible because the ship is small relative to
+          // planet and the +y offset puts ship at planet's near pole.
+          targetR = isEarthFlyby ? flyby.size * 2.5 : flyby.size * 3.5;
+          // Elevation — moderate above-horizontal angle (1.1 rad ≈
+          // 63° from zenith → 27° above orbital plane). Looking
+          // down and across at the spacecraft, with the planet
+          // visible below/behind as background. Earth gets slightly
+          // higher pitch for the earthrise-with-spacecraft feel.
+          targetP = isEarthFlyby ? 1.0 : 1.1;
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;
@@ -3682,7 +3716,12 @@
           }
         }
         helioAutoZoomTargetR = targetR;
-        helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
+        // Track ship's y (above orbital plane) so the camera looks AT
+        // the ship's actual world position, not at the y=0 plane
+        // below it. Otherwise the camTarget sits 3+ scene units below
+        // the spacecraft and any 3/4-angle camera rotation is masked
+        // by the camera looking down at the empty plane.
+        helioAutoZoomTargetCenter.set(centerX, centerY, centerZ);
         helioAutoZoomTargetP = targetP;
         return;
       }
@@ -4065,6 +4104,7 @@
             : Math.min(0.18, LERP_BASE * simSpeedFactor);
           camR += (helioAutoZoomTargetR - camR) * LERP;
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
+          camTarget.y += (helioAutoZoomTargetCenter.y - camTarget.y) * LERP;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
           camP += (helioAutoZoomTargetP - camP) * LERP;
           if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
@@ -4083,6 +4123,7 @@
           const TRACK_BASE = inFlyby ? 0.025 : 0.006;
           const TRACK = Math.min(0.08, TRACK_BASE * simSpeedFactor);
           camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * TRACK;
+          camTarget.y += (helioAutoZoomTargetCenter.y - camTarget.y) * TRACK;
           camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * TRACK;
           camP += (helioAutoZoomTargetP - camP) * TRACK;
           if (inFlyby) {

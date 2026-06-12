@@ -10,7 +10,7 @@ import {
   spacecraftHeading,
   transferEllipse,
 } from './mission-arc';
-import { R_EARTH_AU, R_MARS_AU } from './lambert-grid.constants';
+import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
 
 describe('orbital constants', () => {
   it('A_TRANSFER is the average of Earth and Mars semi-major axes', () => {
@@ -170,7 +170,7 @@ describe('transferEllipse', () => {
 describe('destinationPos (v0.1.6 + ADR-028)', () => {
   it('returns heliocentric r matching kepler-style radius at day 0 for all destinations', () => {
     return import('./mission-arc').then(({ destinationPos }) =>
-      import('./lambert-grid.constants').then(({ DESTINATIONS }) => {
+      import('$lib/lambert-grid.constants').then(({ DESTINATIONS }) => {
         for (const id of [
           'mercury',
           'venus',

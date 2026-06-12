@@ -4,7 +4,7 @@ import {
   findClosestPlanetToShip,
   PLANET_SIZES,
 } from './find-flyby-planet';
-import { earthPos } from '$lib/mission-arc';
+import { earthPos } from '$lib/orbital/mission-arc';
 
 describe('findFlybyPlanetFromLabel', () => {
   it('parses the standard "Planet # — gravity assist" label', () => {

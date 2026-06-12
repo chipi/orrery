@@ -16,7 +16,7 @@
     spacecraftHeading,
     type MissionTimeline,
     type Vec2,
-  } from '$lib/mission-arc';
+  } from '$lib/orbital/mission-arc';
   import { MOON_FLY_RADIUS_AU, moonHelioPos, buildArcs } from '$lib/fly-moon-arc';
   import { defaultEventLabel } from '$lib/fly-event-labels';
   import {

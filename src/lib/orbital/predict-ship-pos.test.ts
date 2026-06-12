@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { predictShipPosAtMet } from './predict-ship-pos';
-import type { Vec2 } from '$lib/mission-arc';
+import type { Vec2 } from '$lib/orbital/mission-arc';
 
 const TWO_POINT_LINE: Vec2[] = [
   { x: 0, z: 0, y: 0 },

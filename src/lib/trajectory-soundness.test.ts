@@ -27,7 +27,7 @@ import {
   returnArc,
   spacecraftPos,
   transferEllipse,
-} from './mission-arc';
+} from './orbital/mission-arc';
 import { missionDestToHeliocentricDestinationId } from './mission-dest';
 import type { DestinationId } from './lambert-grid.constants';
 import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './fly-physics';

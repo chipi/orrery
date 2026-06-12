@@ -17,7 +17,7 @@
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
-  import { earthPos, outboundArc, type Vec2 } from '$lib/mission-arc';
+  import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';
   import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';

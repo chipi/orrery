@@ -10,7 +10,7 @@
  * days for time, km/s for speed unless suffixed otherwise.
  */
 
-import type { Vec2 } from './mission-arc';
+import type { Vec2 } from './orbital/mission-arc';
 import {
   AU_PER_YR_TO_KMS,
   AU_TO_KM,

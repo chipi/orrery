@@ -6,7 +6,7 @@ import {
   returnArc,
   type MissionTimeline,
   type Vec2,
-} from '$lib/mission-arc';
+} from '$lib/orbital/mission-arc';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 
 /**

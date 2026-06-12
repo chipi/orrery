@@ -17,7 +17,13 @@
  * tier_1_5_hybrid.
  */
 
-import { earthPos, marsPos, destinationPos, transferEllipse, type Vec2 } from './mission-arc';
+import {
+  earthPos,
+  marsPos,
+  destinationPos,
+  transferEllipse,
+  type Vec2,
+} from './orbital/mission-arc';
 import type { DestinationId } from './lambert-grid.constants';
 
 /** Heliocentric position in AU. y is ecliptic-out-of-plane (0 for the

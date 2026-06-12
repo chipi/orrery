@@ -116,7 +116,6 @@
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import {
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
-    planFlybyShot,
     type PlanetId as FlybyPlanetId,
   } from '$lib/orbital/flyby-camera-plan';
   import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
@@ -125,6 +124,7 @@
     findClosestPlanetToShip,
     PLANET_SIZES,
   } from '$lib/orbital/find-flyby-planet';
+  import { computeIconicFrame } from '$lib/orbital/iconic-frame';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3565,55 +3565,33 @@
           // composition — Marko's feedback: "angle at planet was
           // never problem ... change camera to get more side angle
           // at ship."
-          // v2 iconic-shot math, validated in the FlybyDebugViewer 2D
-          // mockup (see flyby-camera-plan.ts §planFlybyShot). Camera is
-          // positioned RELATIVE TO THE PLANET (not ship) because the
-          // stylized trajectory data keeps ship.xz ≈ planet.xz around
-          // peakMet; only a planet-anchored camera with a side rotation
-          // perpendicular to the approach axis breaks the ship-planet
-          // colinearity in frame.
+          // v2 iconic-shot math + spherical-coord conversion are now in
+          // $lib/orbital/iconic-frame; the helper takes the ship-sampler
+          // closure + the planet's scene-space position + the iconic
+          // moment's MET and returns the (centerXYZ, targetR, targetP,
+          // helioFlybyDesiredCamT) tuple. See its module docstring for
+          // the planet-centric composition rationale.
           const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
           const sampleShipScene = (met: number) => {
             const p = predictShipPosAtMet(outPts, met, totalOutboundDays);
             if (!p) return null;
             return { x: p.x * SCALE_3D, y: p.y * SCALE_3D, z: p.z * SCALE_3D };
           };
-          const plan = planFlybyShot({
-            planetId: flyby.id as FlybyPlanetId,
-            planetPos: { x: bodyScene.x, z: bodyScene.z },
-            planetRadius: flyby.size,
-            shipPosAtMet: sampleShipScene,
+          const iconicFrame = computeIconicFrame({
+            flybyPlanetId: flyby.id as FlybyPlanetId,
+            flybyPlanetRadius: flyby.size,
+            planetScenePos: { x: bodyScene.x, z: bodyScene.z },
             peakMet: activeFlybyMet,
+            sampleShipScene,
+            fallbackShipPos: { x: scScene.x, z: scScene.z },
+            fallbackPitchRad: HELIO_APPROACH_P,
           });
-          if (plan) {
-            centerX = plan.cameraTarget.x;
-            centerY = plan.cameraTarget.y;
-            centerZ = plan.cameraTarget.z;
-            // Convert the v2 cameraPos → the scene's spherical
-            // (R, P, T) coords around camTarget.
-            // camera_pos = camTarget + R × (sin(P)·sin(T),
-            //                               cos(P),
-            //                               sin(P)·cos(T))
-            const offsetX = plan.cameraPos.x - plan.cameraTarget.x;
-            const offsetY = plan.cameraPos.y - plan.cameraTarget.y;
-            const offsetZ = plan.cameraPos.z - plan.cameraTarget.z;
-            const camDist = Math.hypot(offsetX, offsetY, offsetZ);
-            targetR = camDist;
-            targetP =
-              camDist > 1e-9
-                ? Math.acos(Math.max(-1, Math.min(1, offsetY / camDist)))
-                : HELIO_APPROACH_P;
-            helioFlybyDesiredCamT = Math.atan2(offsetX, offsetZ);
-          } else {
-            // Sampler returned null (rare) — fall back to ship-position
-            // target with cruise distance, no side-angle preference.
-            centerX = scScene.x;
-            centerZ = scScene.z;
-            centerY = 0;
-            targetR = flyby.size * 3.5;
-            targetP = HELIO_APPROACH_P;
-            helioFlybyDesiredCamT = null;
-          }
+          centerX = iconicFrame.centerX;
+          centerY = iconicFrame.centerY;
+          centerZ = iconicFrame.centerZ;
+          targetR = iconicFrame.targetR;
+          targetP = iconicFrame.targetP;
+          helioFlybyDesiredCamT = iconicFrame.helioFlybyDesiredCamT;
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;

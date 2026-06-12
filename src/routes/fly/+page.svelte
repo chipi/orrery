@@ -1612,8 +1612,7 @@
     // buffer past the fade-out endpoint gives a clean black-ish
     // moment before the first animate frame. Non-opening missions
     // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil =
-      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
+    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     // After all derived state has updated. The render-state hook
     // reads this LAST so a test gated on __flyArcHash() != null
     // sees an outPts / hash that already reflects the new mission.
@@ -1654,8 +1653,7 @@
     // buffer past the fade-out endpoint gives a clean black-ish
     // moment before the first animate frame. Non-opening missions
     // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil =
-      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
+    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1713,8 +1711,7 @@
     // buffer past the fade-out endpoint gives a clean black-ish
     // moment before the first animate frame. Non-opening missions
     // keep the 4 s dwell (W3.3 prelaunch beat).
-    launchDwellUntil =
-      performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
+    launchDwellUntil = performance.now() + (openingActive ? openingDurationMs + 300 : 4000);
     lastAppliedMissionId = r.appliedId;
   }
 
@@ -3876,10 +3873,7 @@
           // (±90 days around peak) takes over for the iconic closeup.
           centerX = scScene.x * 0.7 + destScene.x * 0.3;
           centerZ = scScene.z * 0.7 + destScene.z * 0.3;
-          targetR = Math.max(
-            140,
-            shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80),
-          );
+          targetR = Math.max(140, shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80));
           targetP = HELIO_APPROACH_P;
           // Reference approachLocal so it isn't unused (kept for
           // future per-stage tweaks like pitch breathing).
@@ -5269,8 +5263,7 @@
         // disc — the actual "iconic Cassini-mission-art moment."
         const ICONIC_LEAD_DAYS = 2;
         const peakHoldRadius = 0.5;
-        const iconicPeakSimDay =
-          arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
+        const iconicPeakSimDay = arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
         const inHeldWindow = Math.abs(simDay - iconicPeakSimDay) < peakHoldRadius;
         if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
           // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
@@ -5280,9 +5273,7 @@
           const activeFlybyEvtForHold = mission.flight?.events?.find(
             (e) => e.met_days === currentFrameFlybyMet,
           );
-          const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
-            .toLowerCase()
-            .includes('earth');
+          const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
           const holdMs = isEarthHold ? 4000 : 2500;
           cine.peakHoldUntil = performance.now() + holdMs;
           cine.peakHoldArmedForFlybyMet = currentFrameFlybyMet;
@@ -5748,8 +5739,7 @@
       // "when we zoom in also hide blue line as we hid the
       // milestone marker."
       const inFlybyCinemaForLines = lastHelioSubPhase?.startsWith('flyby-') ?? false;
-      if (outLine)
-        outLine.visible = (!afterArrival || epilogueActive) && !inFlybyCinemaForLines;
+      if (outLine) outLine.visible = (!afterArrival || epilogueActive) && !inFlybyCinemaForLines;
       if (retLine)
         retLine.visible =
           (!afterArrival || epilogueActive) && retPts.length >= 2 && !inFlybyCinemaForLines;

@@ -66,43 +66,53 @@
       },
       {
         "met_days": 538,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist"
       },
       {
         "met_days": 727,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #1 — gravity assist"
       },
       {
         "met_days": 1026,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #2 — gravity assist"
       },
       {
         "met_days": 1133,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #1 — gravity assist"
       },
       {
         "met_days": 1432,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #2 — gravity assist"
       },
       {
         "met_days": 1819,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #3 — gravity assist"
       },
       {
         "met_days": 2055,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #4 — gravity assist"
       },
       {
         "met_days": 2294,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #5 — gravity assist"
       },
       {
         "met_days": 2421,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #6 — gravity assist"
       },
       {
         "met_days": 2968,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mercury orbit insertion"
       }
     ]
   }

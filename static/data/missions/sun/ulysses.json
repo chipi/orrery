@@ -70,7 +70,8 @@
       },
       {
         "met_days": 490,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist (out of ecliptic)"
       },
       {
         "met_days": 1359,

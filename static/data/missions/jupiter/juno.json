@@ -67,11 +67,13 @@
       },
       {
         "met_days": 749,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist"
       },
       {
         "met_days": 1796,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Jupiter orbit insertion"
       }
     ],
     "interplanetary_profile": {

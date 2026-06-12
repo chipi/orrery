@@ -80,23 +80,28 @@
       },
       {
         "met_days": 115,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus — gravity assist"
       },
       {
         "met_days": 416,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #1 — gravity assist"
       },
       {
         "met_days": 741,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Asteroid Gaspra — flyby"
       },
       {
         "met_days": 1147,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #2 — gravity assist"
       },
       {
         "met_days": 1410,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Asteroid Ida + Dactyl — flyby"
       },
       {
         "met_days": 2242,
@@ -104,7 +109,8 @@
       },
       {
         "met_days": 2243,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Jupiter orbit insertion"
       }
     ],
     "interplanetary_profile": {

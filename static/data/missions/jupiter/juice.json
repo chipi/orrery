@@ -66,23 +66,28 @@
       },
       {
         "met_days": 493,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth-Moon LEGA — first-ever lunar gravity assist"
       },
       {
         "met_days": 871,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus — gravity assist"
       },
       {
         "met_days": 1265,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #2 — gravity assist"
       },
       {
         "met_days": 2103,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #3 — gravity assist"
       },
       {
         "met_days": 3020,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Jupiter orbit insertion"
       }
     ]
   }

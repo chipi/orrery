@@ -66,7 +66,8 @@
       },
       {
         "met_days": 366,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist"
       },
       {
         "met_days": 1302,

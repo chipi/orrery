@@ -47,13 +47,15 @@
 
   let canvas = $state<HTMLCanvasElement | null>(null);
   let scrubDayOffset = $state(-2);
+  // svelte-ignore state_referenced_locally
   let selectedPlanet = $state<PlanetId>(planetId);
 
-  // Reactive composition — defaults from PLANET_COMPOSITION for the
-  // selected planet. Adjustable knobs UI-side so we can tweak in 2D.
-  let camRMultOverride = $state(PLANET_COMPOSITION[planetId].camRMultiplier);
-  let sideAngleDegOverride = $state((PLANET_COMPOSITION[planetId].sideAngleRad * 180) / Math.PI);
-  let pitchDegOverride = $state(((PLANET_COMPOSITION[planetId].pitchRad * 180) / Math.PI) * 0.999); // avoid float quirk
+  // Reactive composition — defaults seeded from venus to satisfy the
+  // Svelte 5 "initial-value-only" lint; the $effect below reseeds on
+  // selectedPlanet change, so the actual live values track correctly.
+  let camRMultOverride = $state(PLANET_COMPOSITION.venus.camRMultiplier);
+  let sideAngleDegOverride = $state((PLANET_COMPOSITION.venus.sideAngleRad * 180) / Math.PI);
+  let pitchDegOverride = $state((PLANET_COMPOSITION.venus.pitchRad * 180) / Math.PI);
 
   $effect(() => {
     // When planet selection changes, reset overrides to that planet's defaults.

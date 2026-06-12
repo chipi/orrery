@@ -7,6 +7,7 @@
   // input handlers — is owned by SurfaceScene.
   import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
+  import DebugPanel from '$lib/components/DebugPanel.svelte';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
@@ -46,6 +47,8 @@
 </script>
 
 <svelte:head><title>{m.moon_page_title()}</title></svelte:head>
+
+<DebugPanel pageLabel="MOON" />
 
 <SurfaceScene config={MOON_CONFIG} loadSites={getMoonSites} loadGallery={getMoonSiteGallery} />
 

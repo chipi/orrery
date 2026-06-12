@@ -138,6 +138,7 @@
   import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
   import { buildFlyDebugFrameSnapshot } from '$lib/orbital/fly-debug-frame';
   import { findActiveCislunarPhase } from '$lib/orbital/find-active-cislunar-phase';
+  import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -4041,29 +4042,12 @@
         x: moonPos.x * SCALE_CISLUNAR,
         z: moonPos.z * SCALE_CISLUNAR,
       };
-      const LUNAR_LOCAL_AZ = new Set([
-        'lunar_orbit',
-        'spiral_lunar',
-        'lunar_flyby',
-        'descent',
-        'ascent',
-      ]);
-      const pts = activePhase.points;
-      const lastIdx = pts.length - 1;
-      const f = Math.max(0, Math.min(lastIdx, phaseProgress * lastIdx));
-      const i = Math.min(lastIdx - 1, Math.max(0, Math.floor(f)));
-      const frac = f - i;
-      const pa = pts[i];
-      const pb = pts[i + 1] ?? pa;
-      let scX = pa.x + (pb.x - pa.x) * frac;
-      let scY = pa.y + (pb.y - pa.y) * frac;
-      let scZ = pa.z + (pb.z - pa.z) * frac;
-      if (LUNAR_LOCAL_AZ.has(activePhase.type)) {
-        const moonRef = moonEciPos(arcTimeline.flyby_day);
-        scX += moonPos.x - moonRef.x;
-        scY += moonPos.y - moonRef.y;
-        scZ += moonPos.z - moonRef.z;
-      }
+      const sample = sampleCislunarSpacecraftPos(activePhase, phaseProgress, {
+        moonPos: { x: moonPos.x, y: moonPos.y, z: moonPos.z },
+        moonRefPos: moonEciPos(arcTimeline.flyby_day),
+      });
+      if (!sample) return;
+      const { x: scX, y: scY, z: scZ } = sample;
       const distToMoonKm = Math.hypot(scX - moonPos.x, scY - moonPos.y, scZ - moonPos.z);
       // Earth SoI is ~924 000 km; Moon SoI ~66 100 km. Trigger lunar
       // closeup well outside Moon SoI so the zoom is underway by the

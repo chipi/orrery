@@ -9215,23 +9215,30 @@
     justify-content: flex-end;
   }
   /* Gold cluster anchored just left of the blue cluster. The blue
-     cluster is right:16; this cluster ends with a small gap before
-     it. width of blue cluster ≈ 3×44 + 2×6 = 144 px, plus 16 px right
-     gutter and 10 px gap = 170 px → cluster sits at right:170. */
+     cluster shifts left to clear the settings gear which now anchors
+     the top-right corner. width of blue cluster ≈ 3×44 + 2×6 = 144 px,
+     settings gear is 36 px + 16 px right gutter + 12 px gap = 64 px →
+     blue starts at right:64. Gold sits at right:64 + 144 + 10 = 218 px.
+  */
   .fly-toggle-row-left {
-    right: 170px;
+    right: 218px;
     max-width: calc(50vw - 12px);
   }
   .fly-toggle-row-right {
-    right: 16px;
-    max-width: calc(50vw - 12px);
+    right: 64px;
+    max-width: calc(50vw - 60px);
   }
   @media (max-width: 600px) {
-    /* On narrow viewports both clusters share the same edge and stack
-       vertically rather than horizontally. */
-    .fly-toggle-row-left {
+    /* On narrow viewports both clusters share the same right edge and
+       stack vertically rather than horizontally. The settings gear
+       still claims the top-right corner; toggle rows drop below it. */
+    .fly-toggle-row-right {
       right: 16px;
       top: calc(var(--nav-height) + 12px + 50px);
+    }
+    .fly-toggle-row-left {
+      right: 16px;
+      top: calc(var(--nav-height) + 12px + 100px);
     }
   }
   .toggle {

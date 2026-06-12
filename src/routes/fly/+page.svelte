@@ -132,6 +132,7 @@
     PLANET_SIZES,
   } from '$lib/orbital/find-flyby-planet';
   import { computeIconicFrame } from '$lib/orbital/iconic-frame';
+  import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3288,26 +3289,8 @@
      *  outPts (which already encode the planned mission curve). Used to
      *  predict the spacecraft's position at the flyby peak so the
      *  camera knows which side of the planet the ship will be on. */
-    function predictShipPosAtMet(
-      points: Vec2[],
-      targetMet: number,
-      arrivalMet: number,
-    ): { x: number; y: number; z: number } | null {
-      if (points.length < 2 || !(arrivalMet > 0)) return null;
-      const fraction = Math.max(0, Math.min(1, targetMet / arrivalMet));
-      const indexFloat = fraction * (points.length - 1);
-      const i = Math.floor(indexFloat);
-      const t = indexFloat - i;
-      const a = points[i];
-      const b = points[Math.min(i + 1, points.length - 1)];
-      const ay = a.y ?? 0;
-      const by = b.y ?? 0;
-      return {
-        x: a.x + (b.x - a.x) * t,
-        y: ay + (by - ay) * t,
-        z: a.z + (b.z - a.z) * t,
-      };
-    }
+    // predictShipPosAtMet lives in $lib/orbital/predict-ship-pos — pure
+    // helper, unit-tested. The closure used to be inline here.
     // The previous computeFlybyChoreographyCamT (perpendicular
     // azimuth + 90° pan sweep) was replaced by the inline
     // "ship-side same-line" math in the flyby cinema block — see

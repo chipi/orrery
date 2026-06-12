@@ -259,10 +259,7 @@
 
       // Side-angle guide — draw the "behind ship" reference line for
       // visual comparison with the actual camera direction.
-      const guides = flybyCameraGuides(
-        plan.shipVelocityXZ,
-        plan.composition.sideAngleRad,
-      );
+      const guides = flybyCameraGuides(plan.shipVelocityXZ, plan.composition.sideAngleRad);
       const REF_LEN = 36;
       ctx.strokeStyle = 'rgba(180, 180, 220, 0.4)';
       ctx.setLineDash([3, 3]);
@@ -406,7 +403,9 @@
 
     // Verdict badge.
     const badge = shotQuality.isIconic ? 'ICONIC' : 'NOT ICONIC';
-    const badgeColor = shotQuality.isIconic ? 'rgba(78, 205, 196, 0.95)' : 'rgba(255, 120, 120, 0.95)';
+    const badgeColor = shotQuality.isIconic
+      ? 'rgba(78, 205, 196, 0.95)'
+      : 'rgba(255, 120, 120, 0.95)';
     ctx.fillStyle = badgeColor;
     ctx.font = 'bold 10px monospace';
     ctx.fillText(badge, 6, 14);
@@ -456,33 +455,51 @@
       </label>
     </div>
   </div>
-  <canvas
-    bind:this={canvas}
-    width="320"
-    height="320"
-    data-testid="flyby-debug-canvas"
-  ></canvas>
+  <canvas bind:this={canvas} width="320" height="320" data-testid="flyby-debug-canvas"></canvas>
   <div class="frame-label">CAMERA FRAME (50° FOV, 16:9)</div>
-  <canvas
-    bind:this={frameCanvas}
-    width="320"
-    height="180"
-    data-testid="flyby-frame-canvas"
+  <canvas bind:this={frameCanvas} width="320" height="180" data-testid="flyby-frame-canvas"
   ></canvas>
   {#if plan && shotQuality}
     <div class="readouts">
-      <div>shipPos: ({plan.shipPos.x.toFixed(2)}, {plan.shipPos.y.toFixed(2)}, {plan.shipPos.z.toFixed(2)})</div>
+      <div>
+        shipPos: ({plan.shipPos.x.toFixed(2)}, {plan.shipPos.y.toFixed(2)}, {plan.shipPos.z.toFixed(
+          2,
+        )})
+      </div>
       <div>vel xz: ({plan.shipVelocityXZ.x.toFixed(3)}, {plan.shipVelocityXZ.z.toFixed(3)})</div>
-      <div>cameraPos: ({plan.cameraPos.x.toFixed(2)}, {plan.cameraPos.y.toFixed(2)}, {plan.cameraPos.z.toFixed(2)})</div>
+      <div>
+        cameraPos: ({plan.cameraPos.x.toFixed(2)}, {plan.cameraPos.y.toFixed(2)}, {plan.cameraPos.z.toFixed(
+          2,
+        )})
+      </div>
       <div class="readout-divider"></div>
       <div>planetPos xz: ({planetPos.x.toFixed(2)}, {planetPos.z.toFixed(2)})</div>
-      <div>ship↔planet: {Math.hypot(plan.shipPos.x - planetPos.x, plan.shipPos.y, plan.shipPos.z - planetPos.z).toFixed(2)}u ({(Math.hypot(plan.shipPos.x - planetPos.x, plan.shipPos.y, plan.shipPos.z - planetPos.z) / planetRadius).toFixed(1)}·r)</div>
+      <div>
+        ship↔planet: {Math.hypot(
+          plan.shipPos.x - planetPos.x,
+          plan.shipPos.y,
+          plan.shipPos.z - planetPos.z,
+        ).toFixed(2)}u ({(
+          Math.hypot(plan.shipPos.x - planetPos.x, plan.shipPos.y, plan.shipPos.z - planetPos.z) /
+          planetRadius
+        ).toFixed(1)}·r)
+      </div>
       <div>cam→ship: {shotQuality.shipDepth.toFixed(2)}u</div>
-      <div>cam→planet: {shotQuality.planetDepth.toFixed(2)}u ({(shotQuality.planetDepth / planetRadius).toFixed(1)}·r)</div>
-      <div>frame ship↔planet: {(shotQuality.shipPlanetFrameSeparation * 100).toFixed(1)}% of FOV/2</div>
+      <div>
+        cam→planet: {shotQuality.planetDepth.toFixed(2)}u ({(
+          shotQuality.planetDepth / planetRadius
+        ).toFixed(1)}·r)
+      </div>
+      <div>
+        frame ship↔planet: {(shotQuality.shipPlanetFrameSeparation * 100).toFixed(1)}% of FOV/2
+      </div>
       <div>ship size: {(shotQuality.shipApparent * 100).toFixed(2)}% of FOV/2</div>
       <div>planet size: {(shotQuality.planetApparent * 100).toFixed(2)}% of FOV/2</div>
-      <div>planet/ship ratio: {(shotQuality.planetApparent / Math.max(1e-9, shotQuality.shipApparent)).toFixed(1)}×</div>
+      <div>
+        planet/ship ratio: {(
+          shotQuality.planetApparent / Math.max(1e-9, shotQuality.shipApparent)
+        ).toFixed(1)}×
+      </div>
       <div class="readout-divider"></div>
       <div class:bad={shotQuality.shipBehindPlanet}>
         ship-behind-planet: {shotQuality.shipBehindPlanet ? '✗ FAIL' : '✓ ok'}

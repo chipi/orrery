@@ -6733,7 +6733,7 @@
         planetId={planetIdGuess}
         planetPos={{ x: planetPosForDebug.x * SCALE_3D, z: planetPosForDebug.z * SCALE_3D }}
         planetRadius={planetRadiusForDebug}
-        peakMet={peakMet}
+        {peakMet}
         shipPosAtMet={(met: number) => {
           const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
           if (totalOutboundDays <= 0 || outPts.length < 2) return null;

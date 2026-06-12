@@ -26,7 +26,15 @@ export interface TrajectorySample {
   pos: Vec3;
 }
 
-export type PlanetId = 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune';
+export type PlanetId =
+  | 'mercury'
+  | 'venus'
+  | 'earth'
+  | 'mars'
+  | 'jupiter'
+  | 'saturn'
+  | 'uranus'
+  | 'neptune';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -85,14 +93,62 @@ export interface PlanetComposition {
 const ICONIC_SIDE = (85 * Math.PI) / 180;
 const ICONIC_PITCH = (20 * Math.PI) / 180;
 export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
-  mercury: { camRMultiplier: 3.5, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 1, targetBias: 0 },
-  venus: { camRMultiplier: 3.5, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 1, targetBias: 0 },
-  earth: { camRMultiplier: 3.2, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 1, targetBias: 0 },
-  mars: { camRMultiplier: 3.5, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 1, targetBias: 0 },
-  jupiter: { camRMultiplier: 4, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 2, targetBias: 0 },
-  saturn: { camRMultiplier: 4.5, sideAngleRad: ICONIC_SIDE, pitchRad: (25 * Math.PI) / 180, iconicLeadDays: 2, targetBias: 0 },
-  uranus: { camRMultiplier: 4, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 2, targetBias: 0 },
-  neptune: { camRMultiplier: 4, sideAngleRad: ICONIC_SIDE, pitchRad: ICONIC_PITCH, iconicLeadDays: 2, targetBias: 0 },
+  mercury: {
+    camRMultiplier: 3.5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 1,
+    targetBias: 0,
+  },
+  venus: {
+    camRMultiplier: 3.5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 1,
+    targetBias: 0,
+  },
+  earth: {
+    camRMultiplier: 3.2,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 1,
+    targetBias: 0,
+  },
+  mars: {
+    camRMultiplier: 3.5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 1,
+    targetBias: 0,
+  },
+  jupiter: {
+    camRMultiplier: 4,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  saturn: {
+    camRMultiplier: 4.5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: (25 * Math.PI) / 180,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  uranus: {
+    camRMultiplier: 4,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  neptune: {
+    camRMultiplier: 4,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
 };
 
 export interface FlybyContext {
@@ -256,7 +312,10 @@ export function projectToCameraFrame(
   worldRadius: number,
   cameraPos: Vec3,
   cameraTarget: Vec3,
-  fovDeg = 50,
+  // FOV is signature-only — the projection returns tan-half-FOV units so
+  // it's FOV-agnostic. Kept on the signature so the call sites read as
+  // "project at FOV X" alongside classifyShot, which DOES use FOV.
+  _fovDeg = 50,
 ): CameraFrameProjection | null {
   const fx = cameraTarget.x - cameraPos.x;
   const fy = cameraTarget.y - cameraPos.y;
@@ -342,8 +401,20 @@ export function classifyShot(
   fovDeg = 50,
 ): ShotQuality {
   const tanHalfFov = Math.tan((fovDeg * Math.PI) / 360);
-  const shipProj = projectToCameraFrame(plan.shipPos, shipVisibleRadius, plan.cameraPos, plan.cameraTarget, fovDeg);
-  const planetProj = projectToCameraFrame(planetPos, planetRadius, plan.cameraPos, plan.cameraTarget, fovDeg);
+  const shipProj = projectToCameraFrame(
+    plan.shipPos,
+    shipVisibleRadius,
+    plan.cameraPos,
+    plan.cameraTarget,
+    fovDeg,
+  );
+  const planetProj = projectToCameraFrame(
+    planetPos,
+    planetRadius,
+    plan.cameraPos,
+    plan.cameraTarget,
+    fovDeg,
+  );
   const shipDepth = shipProj?.depth ?? Infinity;
   const planetDepth = planetProj?.depth ?? Infinity;
   const shipApparent = shipProj?.apparentRadius ?? 0;
@@ -373,9 +444,12 @@ export function classifyShot(
   //   - planet is between camera and ship (planetDepth < shipDepth)
   //   - lateral offset of planet from view axis < planetRadius
   const shipBehindPlanet = planetDepth < shipDepth && lateralFromAxis < planetRadius;
-  const shipOutOfFrame = !shipProj || Math.abs(shipProj.x) > tanHalfFov || Math.abs(shipProj.y) > tanHalfFov;
+  const shipOutOfFrame =
+    !shipProj || Math.abs(shipProj.x) > tanHalfFov || Math.abs(shipProj.y) > tanHalfFov;
   const planetOutOfFrame =
-    !planetProj || Math.abs(planetProj.x) - planetApparent > tanHalfFov || Math.abs(planetProj.y) - planetApparent > tanHalfFov;
+    !planetProj ||
+    Math.abs(planetProj.x) - planetApparent > tanHalfFov ||
+    Math.abs(planetProj.y) - planetApparent > tanHalfFov;
   const planetTooSmall = planetApparent < shipApparent * 2;
   // "ship too tiny" — ship apparent angular radius < 0.5% of frame
   // (i.e. ≤ ~3 px in a 720-px frame). Below this it just disappears.

@@ -74,8 +74,8 @@
           type="button"
           class="debug-close"
           onclick={toggleOpen}
-          aria-label="Close debug panel"
-        >×</button>
+          aria-label="Close debug panel">×</button
+        >
       </div>
     </header>
     <div class="debug-tabs" role="tablist">
@@ -85,30 +85,30 @@
           role="tab"
           class="debug-tab"
           class:active={activeTab === 'page'}
-          onclick={() => (activeTab = 'page')}
-        >Page</button>
+          onclick={() => (activeTab = 'page')}>Page</button
+        >
       {/if}
       <button
         type="button"
         role="tab"
         class="debug-tab"
         class:active={activeTab === 'perf'}
-        onclick={() => (activeTab = 'perf')}
-      >Perf</button>
+        onclick={() => (activeTab = 'perf')}>Perf</button
+      >
       <button
         type="button"
         role="tab"
         class="debug-tab"
         class:active={activeTab === 'i18n'}
-        onclick={() => (activeTab = 'i18n')}
-      >i18n</button>
+        onclick={() => (activeTab = 'i18n')}>i18n</button
+      >
       <button
         type="button"
         role="tab"
         class="debug-tab"
         class:active={activeTab === 'route'}
-        onclick={() => (activeTab = 'route')}
-      >Route</button>
+        onclick={() => (activeTab = 'route')}>Route</button
+      >
     </div>
     <div class="debug-body">
       {#if activeTab === 'page' && pageReg.content}
@@ -123,9 +123,7 @@
             <span class="debug-key">Frame time</span>
             <span class="debug-val">{frameTimeMs}ms</span>
           </div>
-          <div class="debug-stub">
-            Wire to frame-monitor for rolling avg + low-1% (stub).
-          </div>
+          <div class="debug-stub">Wire to frame-monitor for rolling avg + low-1% (stub).</div>
         </div>
       {:else if activeTab === 'i18n'}
         <div class="debug-section">
@@ -133,9 +131,7 @@
             <span class="debug-key">Locale</span>
             <span class="debug-val">{document?.documentElement?.lang || 'en-US'}</span>
           </div>
-          <div class="debug-stub">
-            i18n key-resolution warnings: not yet wired (stub).
-          </div>
+          <div class="debug-stub">i18n key-resolution warnings: not yet wired (stub).</div>
         </div>
       {:else if activeTab === 'route'}
         <div class="debug-section">

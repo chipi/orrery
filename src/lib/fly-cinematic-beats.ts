@@ -464,6 +464,55 @@ export function computeCutOverlayOpacity(cutStartedAt: number, now: number): Cut
   return { opacity: 0, cutComplete: true };
 }
 
+/**
+ * Compute the W3.2 afterglow camera frame — the ease-in-out-cubic
+ * dolly recede after a peakHold expires. Starts at the iconic-frame
+ * composition (camR / camTarget / camP captured the moment the
+ * afterglow began) and tweens camR out to `camR × AFTERGLOW_PULLBACK_FACTOR`
+ * over `AFTERGLOW_DURATION_MS`. `camTarget` + `camP` stay locked at
+ * their captured values — the motion is a pure dolly, not a track.
+ *
+ * Pure form of the inline tween in /fly's animate loop. Assumes the
+ * caller already captured `afterglowStartCamR != 0` on the first
+ * afterglow frame; this helper just reads the locked values + clamps
+ * the eased ramp.
+ */
+export interface AfterglowCameraFrame {
+  /** Tweened camera radius. */
+  camR: number;
+  /** Locked camTarget x. */
+  centerX: number;
+  /** Locked camTarget z. */
+  centerZ: number;
+  /** Locked camera pitch. */
+  camP: number;
+  /** Eased ramp [0, 1] used in the tween — exposed for tests. */
+  easedT: number;
+}
+export function computeAfterglowCameraFrame(
+  cine: Pick<
+    CinematicBeatState,
+    | 'afterglowStartCamR'
+    | 'afterglowTargetCamR'
+    | 'afterglowCenterX'
+    | 'afterglowCenterZ'
+    | 'afterglowP'
+    | 'afterglowUntil'
+  >,
+  now: number,
+): AfterglowCameraFrame {
+  const elapsed = CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS - (cine.afterglowUntil - now);
+  const t = Math.max(0, Math.min(1, elapsed / CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS));
+  const eased = easeInOutCubic(t);
+  return {
+    camR: cine.afterglowStartCamR + (cine.afterglowTargetCamR - cine.afterglowStartCamR) * eased,
+    centerX: cine.afterglowCenterX,
+    centerZ: cine.afterglowCenterZ,
+    camP: cine.afterglowP,
+    easedT: eased,
+  };
+}
+
 export function parseFlybyMetFromSubPhase(sub: string | null | undefined): number | null {
   if (!sub) return null;
   const m = sub.match(/^flyby-(-?\d+(?:\.\d+)?)-/);

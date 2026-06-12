@@ -52,13 +52,14 @@
     createCinematicBeatState,
     resetCinematicBeatState,
     parseFlybyMetFromSubPhase,
-    easeInOutCubic,
     computePeakHoldArmStep,
     shouldArmCruiseHold,
     computeCutOverlayOpacity,
+    computeAfterglowCameraFrame,
     isPeakHolding,
     isAfterglowing,
     isCruiseHolding,
+    isFinaleLocked,
     isAnyCinematicFreeze,
   } from '$lib/fly-cinematic-beats';
   import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
@@ -3921,46 +3922,26 @@
         // at the converged values so the motion is a pure dolly,
         // not a track.
         const _nowForCine = performance.now();
-        const _isPeakHoldingFrame = _nowForCine < cine.peakHoldUntil;
-        const _isAfterglowing = !_isPeakHoldingFrame && _nowForCine < cine.afterglowUntil;
-        const _isCruiseHolding = _nowForCine < cine.cruiseHoldUntil;
-        // W3.4 — finale lock. During the 12 s end-of-mission lock the
-        // camera does not move at all. Sim is already frozen by the
-        // arrived state's isPlaying=false; the camera also holds at
-        // whatever the arrival-snap landed on. Lock starts AFTER
-        // cine.finaleStartedAt (which itself is now+1500 from the arrival
-        // transition so the snap can settle first).
-        const _isFinaleLocked =
-          cine.finaleStartedAt > 0 &&
-          _nowForCine >= cine.finaleStartedAt &&
-          _nowForCine < cine.finaleStartedAt + CINEMATIC_TIMINGS.FINALE_DURATION_MS;
-        if (_isFinaleLocked || _isCruiseHolding) {
-          // No camera update — pure locked frame. W3.4 finale +
-          // W3.7 Tarkovsky cruise hold both share the no-op semantics.
-        } else if (_isAfterglowing) {
+        // W3.4 finale lock + W3.7 cruise hold — no camera update,
+        // pure locked frame. W3.2 afterglow — eased dolly recede
+        // computed by $lib/fly-cinematic-beats.computeAfterglowCameraFrame.
+        if (isFinaleLocked(cine, _nowForCine) || isCruiseHolding(cine, _nowForCine)) {
+          // No camera update — pure locked frame.
+        } else if (!isPeakHolding(cine, _nowForCine) && isAfterglowing(cine, _nowForCine)) {
           if (cine.afterglowStartCamR === 0) {
             // First frame of afterglow — capture the converged
             // iconic-frame composition as the recede's origin.
             cine.afterglowStartCamR = camR;
-            cine.afterglowTargetCamR = camR * 4.5;
+            cine.afterglowTargetCamR = camR * CINEMATIC_TIMINGS.AFTERGLOW_PULLBACK_FACTOR;
             cine.afterglowCenterX = camTarget.x;
             cine.afterglowCenterZ = camTarget.z;
             cine.afterglowP = camP;
           }
-          const elapsed =
-            CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS - (cine.afterglowUntil - _nowForCine);
-          const t = Math.max(0, Math.min(1, elapsed / CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS));
-          // Ease-in-out cubic — slow start (audience lingers on the
-          // iconic frame for a beat), accelerates through the middle
-          // (the recede), eases out at the end (settles wide). Helper
-          // lives in $lib/fly-cinematic-beats so the curve is unit-
-          // tested for monotonicity + symmetry.
-          const eased = easeInOutCubic(t);
-          camR =
-            cine.afterglowStartCamR + (cine.afterglowTargetCamR - cine.afterglowStartCamR) * eased;
-          camTarget.x = cine.afterglowCenterX;
-          camTarget.z = cine.afterglowCenterZ;
-          camP = cine.afterglowP;
+          const tween = computeAfterglowCameraFrame(cine, _nowForCine);
+          camR = tween.camR;
+          camTarget.x = tween.centerX;
+          camTarget.z = tween.centerZ;
+          camP = tween.camP;
         } else if (helioAutoZoomActive) {
           // Scrubber jumps boost the lerp rate so a Jupiter → Earth
           // hop doesn't spend 6-8 seconds in the slow cinematic lerp.

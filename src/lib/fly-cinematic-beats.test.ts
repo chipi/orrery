@@ -28,6 +28,7 @@ import {
   computePeakHoldArmStep,
   shouldArmCruiseHold,
   computeCutOverlayOpacity,
+  computeAfterglowCameraFrame,
 } from './fly-cinematic-beats';
 
 describe('CinematicBeatState — factory + reset', () => {
@@ -472,5 +473,61 @@ describe('computeCutOverlayOpacity', () => {
   it('returns opacity 0 + cutComplete after 2× CUT_FADE_RAMP_MS', () => {
     expect(computeCutOverlayOpacity(1000, 1200)).toEqual({ opacity: 0, cutComplete: true });
     expect(computeCutOverlayOpacity(1000, 5000)).toEqual({ opacity: 0, cutComplete: true });
+  });
+});
+
+describe('computeAfterglowCameraFrame', () => {
+  // CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS = 6000
+  const captured = {
+    afterglowStartCamR: 10, // iconic-frame composition camR
+    afterglowTargetCamR: 45, // 10 × 4.5 — AFTERGLOW_PULLBACK_FACTOR
+    afterglowCenterX: 7.3,
+    afterglowCenterZ: -52.1,
+    afterglowP: 0.85,
+    afterglowUntil: 6000, // we set `now` relative to this
+  };
+
+  it('at the START of the tween: camR == start, eased t == 0', () => {
+    const out = computeAfterglowCameraFrame(captured, captured.afterglowUntil - 6000);
+    expect(out.camR).toBeCloseTo(10, 5);
+    expect(out.easedT).toBe(0);
+  });
+
+  it('at the MIDPOINT of the tween: camR is halfway (eased t = 0.5)', () => {
+    const out = computeAfterglowCameraFrame(captured, captured.afterglowUntil - 3000);
+    expect(out.easedT).toBeCloseTo(0.5, 5);
+    expect(out.camR).toBeCloseTo(10 + (45 - 10) * 0.5, 5);
+  });
+
+  it('at the END of the tween: camR == target, eased t == 1', () => {
+    const out = computeAfterglowCameraFrame(captured, captured.afterglowUntil);
+    expect(out.camR).toBeCloseTo(45, 5);
+    expect(out.easedT).toBe(1);
+  });
+
+  it('clamps eased t to [0, 1] outside the window', () => {
+    const before = computeAfterglowCameraFrame(captured, captured.afterglowUntil - 9000);
+    expect(before.easedT).toBe(0);
+    const after = computeAfterglowCameraFrame(captured, captured.afterglowUntil + 1000);
+    expect(after.easedT).toBe(1);
+  });
+
+  it('locks camTarget xz + camP at the captured values regardless of t', () => {
+    for (const now of [0, 1500, 3000, 4500, 6000, 7500]) {
+      const out = computeAfterglowCameraFrame(captured, now);
+      expect(out.centerX).toBe(7.3);
+      expect(out.centerZ).toBe(-52.1);
+      expect(out.camP).toBe(0.85);
+    }
+  });
+
+  it('uses ease-in-out-cubic so the recede slows near both ends', () => {
+    // At t = 0.25 (1.5 s in), eased ≈ 0.0625 (slow start)
+    const early = computeAfterglowCameraFrame(captured, captured.afterglowUntil - 4500);
+    // At t = 0.75 (4.5 s in), eased ≈ 0.9375 (slow finish)
+    const late = computeAfterglowCameraFrame(captured, captured.afterglowUntil - 1500);
+    expect(early.easedT).toBeCloseTo(0.0625, 4);
+    expect(late.easedT).toBeCloseTo(0.9375, 4);
+    expect(early.easedT + late.easedT).toBeCloseTo(1, 4); // symmetry around midpoint
   });
 });

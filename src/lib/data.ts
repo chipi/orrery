@@ -818,23 +818,28 @@ export async function getMoonSiteGallery(
   // lunar surface missions (e.g. Surveyor-class, early Luna landers,
   // Chang'e 3/4) have images only in fleet-galleries.json under
   // dash-separated ids like "luna-16" while site ids use "luna16".
+  // Final step: respect the moon-sites hero override JSON (#5 Phase 5+)
+  // so the audit-blessed slot becomes the gallery hero.
+  const { loadHeroOverrides, applyHeroOverride } = await import('$lib/image-hero');
+  await loadHeroOverrides('moon-sites');
+  const reorder = (g: string[]) => applyHeroOverride('moon-sites', siteId, g);
   const own = await getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
-  if (own.length > 0) return own;
+  if (own.length > 0) return reorder(own);
   if (missionIdFallback) {
     const byMission = await getMissionGallery(missionIdFallback);
-    if (byMission.length > 0) return byMission;
+    if (byMission.length > 0) return reorder(byMission);
   }
   const bySite = await getMissionGallery(siteId);
-  if (bySite.length > 0) return bySite;
+  if (bySite.length > 0) return reorder(bySite);
   if (missionIdFallback) {
     for (const v of gallerySiteIdVariants(missionIdFallback)) {
       const g = await getFleetGallery(v);
-      if (g.length > 0) return g;
+      if (g.length > 0) return reorder(g);
     }
   }
   for (const v of gallerySiteIdVariants(siteId)) {
     const g = await getFleetGallery(v);
-    if (g.length > 0) return g;
+    if (g.length > 0) return reorder(g);
   }
   return [];
 }
@@ -1174,29 +1179,34 @@ export async function getMarsSiteGallery(
   siteId: string,
   missionIdFallback?: string,
 ): Promise<string[]> {
+  // Mars hero overrides (#5 Phase 5+) — reorder so the audit-blessed
+  // slot becomes first whenever a non-empty gallery is found.
+  const { loadHeroOverrides, applyHeroOverride } = await import('$lib/image-hero');
+  await loadHeroOverrides('mars-sites');
+  const reorder = (g: string[]) => applyHeroOverride('mars-sites', siteId, g);
   // 1. Per-site override (preferred — currently empty manifest).
   const own = await getCategoryGallery('mars-sites', 'mars-site-galleries.json', siteId);
-  if (own.length > 0) return own;
+  if (own.length > 0) return reorder(own);
   // 2. Mission gallery by explicit mission_id, if set.
   if (missionIdFallback) {
     const byMission = await getMissionGallery(missionIdFallback);
-    if (byMission.length > 0) return byMission;
+    if (byMission.length > 0) return reorder(byMission);
   }
   // 3. Mission gallery by site id (site_id == mission_id case).
   const bySite = await getMissionGallery(siteId);
-  if (bySite.length > 0) return bySite;
+  if (bySite.length > 0) return reorder(bySite);
   // 4 + 5. Fleet gallery by mission_id and by every id-variant of
   // the site id (covers "luna16" vs "luna-16", "viking1-lander" vs
   // "viking-1" naming-convention drift).
   if (missionIdFallback) {
     for (const v of gallerySiteIdVariants(missionIdFallback)) {
       const g = await getFleetGallery(v);
-      if (g.length > 0) return g;
+      if (g.length > 0) return reorder(g);
     }
   }
   for (const v of gallerySiteIdVariants(siteId)) {
     const g = await getFleetGallery(v);
-    if (g.length > 0) return g;
+    if (g.length > 0) return reorder(g);
   }
   return [];
 }

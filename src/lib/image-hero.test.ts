@@ -7,6 +7,7 @@ vi.mock('$app/paths', () => ({ base: '' }));
 import {
   pickHero,
   loadHeroOverrides,
+  applyHeroOverride,
   _resetHeroOverrideCache,
   type HeroOverrideFile,
 } from './image-hero';
@@ -146,5 +147,94 @@ describe('pickHero — override resolution', () => {
     expect(pickHero('missions', 'dawn')).toBe('/images/missions/dawn/03.jpg');
     // Fleet has no override file → default everywhere.
     expect(pickHero('fleet', 'dawn')).toBe('/images/fleet-galleries/dawn/01.jpg');
+  });
+});
+
+describe('applyHeroOverride — gallery reordering', () => {
+  it('moves the override-blessed slot to the front when overrides are loaded', async () => {
+    const file: HeroOverrideFile = {
+      version: '1.0',
+      overrides: { apollo15: { slot: '04.jpg' } },
+    };
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify(file), { status: 200 })),
+      ) as unknown as typeof fetch,
+    );
+    await loadHeroOverrides('moon-sites');
+    const gallery = [
+      '/images/moon-sites/apollo15/01.jpg',
+      '/images/moon-sites/apollo15/02.jpg',
+      '/images/moon-sites/apollo15/03.jpg',
+      '/images/moon-sites/apollo15/04.jpg',
+      '/images/moon-sites/apollo15/05.jpg',
+    ];
+    const out = applyHeroOverride('moon-sites', 'apollo15', gallery);
+    expect(out[0]).toBe('/images/moon-sites/apollo15/04.jpg');
+    // 01..03 + 05 preserve relative order after the moved-to-front element
+    expect(out.slice(1)).toEqual([
+      '/images/moon-sites/apollo15/01.jpg',
+      '/images/moon-sites/apollo15/02.jpg',
+      '/images/moon-sites/apollo15/03.jpg',
+      '/images/moon-sites/apollo15/05.jpg',
+    ]);
+  });
+
+  it('returns the gallery unchanged when no override file is loaded', () => {
+    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
+  });
+
+  it('returns the gallery unchanged when the override id has no entry', async () => {
+    const file: HeroOverrideFile = {
+      version: '1.0',
+      overrides: { 'somebody-else': { slot: '04.jpg' } },
+    };
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify(file), { status: 200 })),
+      ) as unknown as typeof fetch,
+    );
+    await loadHeroOverrides('missions');
+    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
+  });
+
+  it('returns the gallery unchanged when the override slot is not in the gallery', async () => {
+    const file: HeroOverrideFile = {
+      version: '1.0',
+      overrides: { x: { slot: '99.jpg' } }, // not in any gallery
+    };
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify(file), { status: 200 })),
+      ) as unknown as typeof fetch,
+    );
+    await loadHeroOverrides('missions');
+    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
+  });
+
+  it('is a no-op when the override slot is already first', async () => {
+    const file: HeroOverrideFile = {
+      version: '1.0',
+      overrides: { x: { slot: '01.jpg' } },
+    };
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(new Response(JSON.stringify(file), { status: 200 })),
+      ) as unknown as typeof fetch,
+    );
+    await loadHeroOverrides('missions');
+    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
+  });
+
+  it('handles empty galleries safely', () => {
+    expect(applyHeroOverride('missions', 'x', [])).toEqual([]);
   });
 });

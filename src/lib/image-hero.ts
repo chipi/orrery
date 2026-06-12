@@ -117,6 +117,30 @@ export function pickHero(surface: HeroSurface, id: string): string {
   return `${base}/images/${SURFACE_TO_DIR[surface]}/${id}/${slot}`;
 }
 
+/**
+ * Re-order a per-id gallery list so the override-blessed hero slot
+ * (e.g. `04.jpg`) is the first element. The matching URL inside
+ * `gallery` is identified by trailing-path comparison (the slot
+ * filename + extension) so the helper survives prefix differences
+ * between callers (with/without `${base}`, with/without leading
+ * slash). Stable for non-matched slots — they keep their relative
+ * order after the moved-to-front element.
+ *
+ * When the surface's override file hasn't loaded yet, OR the id has
+ * no override entry, OR the requested slot isn't present in the
+ * gallery, the gallery is returned unchanged. Async loader is the
+ * caller's responsibility (same contract as `pickHero`).
+ */
+export function applyHeroOverride(surface: HeroSurface, id: string, gallery: string[]): string[] {
+  if (gallery.length === 0) return gallery;
+  const cached = overrideCache.get(surface);
+  const slot = cached?.overrides?.[id]?.slot;
+  if (!slot) return gallery;
+  const idx = gallery.findIndex((p) => p.endsWith(`/${slot}`) || p.endsWith(slot));
+  if (idx <= 0) return gallery; // not present, or already first
+  return [gallery[idx], ...gallery.slice(0, idx), ...gallery.slice(idx + 1)];
+}
+
 /** Test seam: clear the override cache so the next loadHeroOverrides
  *  call re-fetches. Only intended for vitest. */
 export function _resetHeroOverrideCache(): void {

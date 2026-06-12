@@ -44,61 +44,89 @@ describe('planFlybyShot', () => {
     expect(out.iconicMet).toBe(baseCtx.peakMet - expectedLead);
   });
 
-  it("targets the ship's position (camera looks AT the ship)", () => {
+  it('targets a lerp from planet (bias=0) toward ship (bias=1)', () => {
     const out = planFlybyShot(baseCtx)!;
-    expect(out.cameraTarget).toEqual(out.shipPos);
+    const bias = PLANET_COMPOSITION.venus.targetBias;
+    // Planet at xz=(0,0), y=0 by convention.
+    expect(out.cameraTarget.x).toBeCloseTo(out.shipPos.x * bias, 5);
+    expect(out.cameraTarget.z).toBeCloseTo(out.shipPos.z * bias, 5);
+    expect(out.cameraTarget.y).toBeCloseTo(out.shipPos.y * bias, 5);
   });
 
-  it('places the camera at distance planet_radius × camRMultiplier from the ship', () => {
+  it('bias=0 puts target at the planet; bias=1 puts it at the ship', () => {
+    const planet = planFlybyShot({
+      ...baseCtx,
+      composition: { ...PLANET_COMPOSITION.venus, targetBias: 0 },
+    })!;
+    expect(planet.cameraTarget.x).toBeCloseTo(baseCtx.planetPos.x, 5);
+    expect(planet.cameraTarget.z).toBeCloseTo(baseCtx.planetPos.z, 5);
+    const ship = planFlybyShot({
+      ...baseCtx,
+      composition: { ...PLANET_COMPOSITION.venus, targetBias: 1 },
+    })!;
+    expect(ship.cameraTarget.x).toBeCloseTo(ship.shipPos.x, 5);
+    expect(ship.cameraTarget.z).toBeCloseTo(ship.shipPos.z, 5);
+  });
+
+  it('places the camera at distance planet_radius × camRMultiplier from the PLANET (v2 planet-centric)', () => {
     const out = planFlybyShot(baseCtx)!;
-    const dx = out.cameraPos.x - out.shipPos.x;
-    const dy = out.cameraPos.y - out.shipPos.y;
-    const dz = out.cameraPos.z - out.shipPos.z;
+    const dx = out.cameraPos.x - baseCtx.planetPos.x;
+    const dy = out.cameraPos.y; // planet center y = 0
+    const dz = out.cameraPos.z - baseCtx.planetPos.z;
     const dist = Math.hypot(dx, dy, dz);
     const expected = baseCtx.planetRadius * PLANET_COMPOSITION.venus.camRMultiplier;
     expect(Math.abs(dist - expected)).toBeLessThan(1e-6);
   });
 
-  it('honours the side-angle override (camera direction rotates in xz)', () => {
+  it('side=0 places camera directly behind ship-approach (collinear); side rotates the xz position around the planet', () => {
+    // Synthetic ship moves +x at 1 u/day → approachUnit = (+1, 0).
+    // side=0 → camera offset xz = (-approachUnit · camR · cos(pitch)) = (-camR·cos(pitch), 0).
+    // side=π/2 (CCW) → camera offset xz = (perpUnit · camR · cos(pitch)) where perp = (0,1).
     const dead = planFlybyShot({
       ...baseCtx,
       composition: { ...PLANET_COMPOSITION.venus, sideAngleRad: 0, pitchRad: Math.PI / 2 },
     })!;
-    const tilted = planFlybyShot({
+    const side = planFlybyShot({
       ...baseCtx,
       composition: {
         ...PLANET_COMPOSITION.venus,
-        sideAngleRad: Math.PI / 4,
+        sideAngleRad: Math.PI / 2,
         pitchRad: Math.PI / 2,
       },
     })!;
-    // With pitch = π/2 (horizontal), the y component is ~0 and the
-    // xz component dominates. Tilting by π/4 should visibly rotate
-    // camera position in xz vs dead-behind.
-    const deadAngle = Math.atan2(dead.cameraPos.x - dead.shipPos.x, dead.cameraPos.z - dead.shipPos.z);
-    const tiltedAngle = Math.atan2(
-      tilted.cameraPos.x - tilted.shipPos.x,
-      tilted.cameraPos.z - tilted.shipPos.z,
-    );
-    const deltaAngle = Math.abs(((tiltedAngle - deadAngle + Math.PI) % (2 * Math.PI)) - Math.PI);
-    // π/4 rotation in xz should produce ~π/4 angular delta.
-    expect(Math.abs(deltaAngle - Math.PI / 4)).toBeLessThan(1e-4);
+    // pitch=π/2 means cos(pitch)=0 — degenerate, camera ends up directly
+    // above planet for both. Use pitch=0 (in-plane) to read xz cleanly.
+    const deadInPlane = planFlybyShot({
+      ...baseCtx,
+      composition: { ...PLANET_COMPOSITION.venus, sideAngleRad: 0, pitchRad: 0 },
+    })!;
+    const sideInPlane = planFlybyShot({
+      ...baseCtx,
+      composition: { ...PLANET_COMPOSITION.venus, sideAngleRad: Math.PI / 2, pitchRad: 0 },
+    })!;
+    const camR = baseCtx.planetRadius * PLANET_COMPOSITION.venus.camRMultiplier;
+    // dead in-plane: camera at planet - approachUnit · camR = (0 - camR, 0, 0).
+    expect(deadInPlane.cameraPos.x).toBeCloseTo(-camR, 5);
+    expect(Math.abs(deadInPlane.cameraPos.z)).toBeLessThan(1e-5);
+    // side=π/2 in-plane: camera at planet + perpUnit · camR. perpUnit = rotate(approachUnit,+90°CCW) = (0,1) in (x,z).
+    expect(Math.abs(sideInPlane.cameraPos.x)).toBeLessThan(1e-5);
+    expect(sideInPlane.cameraPos.z).toBeCloseTo(camR, 5);
+    // Sanity: pitch=π/2 outputs the same y for both side values.
+    expect(dead.cameraPos.y).toBeCloseTo(side.cameraPos.y, 5);
   });
 
-  it('honours the pitch override (camera y component changes)', () => {
-    const fromAbove = planFlybyShot({
+  it('honours pitch override: pitch=0 keeps camera in plane (y≈0); pitch=π/2 lifts camera to camR above planet', () => {
+    const inPlane = planFlybyShot({
       ...baseCtx,
       composition: { ...PLANET_COMPOSITION.venus, pitchRad: 0 },
     })!;
-    const horizontal = planFlybyShot({
+    const above = planFlybyShot({
       ...baseCtx,
       composition: { ...PLANET_COMPOSITION.venus, pitchRad: Math.PI / 2 },
     })!;
-    // pitch = 0 → camera directly above ship (y component = camR).
     const camR = baseCtx.planetRadius * PLANET_COMPOSITION.venus.camRMultiplier;
-    expect(Math.abs(fromAbove.cameraPos.y - fromAbove.shipPos.y - camR)).toBeLessThan(1e-6);
-    // pitch = π/2 → camera at ship's altitude (y component ≈ 0).
-    expect(Math.abs(horizontal.cameraPos.y - horizontal.shipPos.y)).toBeLessThan(1e-6);
+    expect(Math.abs(inPlane.cameraPos.y)).toBeLessThan(1e-6);
+    expect(Math.abs(above.cameraPos.y - camR)).toBeLessThan(1e-6);
   });
 
   it('returns the velocity unit vector from the trajectory samples', () => {

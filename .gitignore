@@ -17,6 +17,7 @@ Thumbs.db
 *.log
 .cache/
 .vite/
+.tmp-screens/
 
 # Playwright (e2e)
 playwright-report/

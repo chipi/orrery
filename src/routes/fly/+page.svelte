@@ -134,6 +134,7 @@
   import { computeIconicFrame } from '$lib/orbital/iconic-frame';
   import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
   import { findApsidesIndices } from '$lib/orbital/find-apsides';
+  import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -3313,17 +3314,12 @@
     // passes through planet." At 60 days, convergence completes
     // ~6 sec early and the camera holds the iconic frame as the ship
     // arcs into it.
-    const FLYBY_APPROACH_DAYS = 60;
-    const FLYBY_DEPART_DAYS = 30;
-    /** Approach window for orbit-insertion events specifically (Cassini at
-     *  Saturn, Voyager Jupiter SOI, etc.) — arrivals get a longer ramp
-     *  than gravity-assist flybys so the camera has wall-clock time to
-     *  close in from cruise distance to the iconic-photo composition
-     *  before the spacecraft reaches the body. Pre-polish-wave-2 both
-     *  used FLYBY_APPROACH_DAYS and the camera couldn't converge in
-     *  time at default sim speed, producing the "we see Saturn but
-     *  not the flight" complaint. */
-    const OI_APPROACH_DAYS = 40;
+    // FLYBY_APPROACH_DAYS / FLYBY_DEPART_DAYS / OI_APPROACH_DAYS now
+    // live in $lib/orbital/find-active-flyby alongside the window-scan
+    // helper findActiveFlybyMet. The doc rationale (60d approach so
+    // the LERP converges before the closest-approach beat; 40d OI
+    // approach so Saturn-OI has time to compose) is captured in that
+    // module.
     /** Peak window — the closest-approach beat. Inside this window
      *  sim-speed gets dilated so the moment stretches in screen time. */
     const FLYBY_PEAK_DAYS = 4;
@@ -3419,34 +3415,16 @@
       // BEFORE the flyby (so the user sees the slow approach) and
       // closes 40 days AFTER.
       const flybyEvents = mission.flight?.events ?? [];
-      let activeFlybyMet: number | null = null;
-      // Once the epilogue is active, yield: skip the flyby cinema
-      // check so the arrived-branch's epilogue composition (wide Sun-
-      // centered top-down mirroring the opening tableau) can fire.
-      // Without this guard, Saturn-OI's flyby cinema window keeps
-      // activeFlybyMet=2451 forever (peakHold freezes simDay at peak),
-      // and the camera stays locked at the iconic flyby closeup
-      // instead of pulling out to the bookend wide tableau Marko
-      // wants at end of mission.
-      if (!epilogueActive) {
-        for (const e of flybyEvents) {
-          // Treat both pure flybys AND the orbital-insertion / EDL event
-          // as cinema triggers — Saturn-OI for Cassini, Mars EDL for
-          // Curiosity etc. should compose with the same ship-as-hero
-          // tuning as a flyby (the only difference is the trajectory
-          // ends there instead of continuing).
-          if ((e.type !== 'flyby' && e.type !== 'edl_or_oi') || e.met_days == null) continue;
-          const flybySimDay = arcTimeline.dep_day + e.met_days;
-          const delta = simDay - flybySimDay; // negative = approaching
-          // OI events use a wider lead-in window so the camera has time
-          // to converge to the cinematic composition before the burn.
-          const approachWindow = e.type === 'edl_or_oi' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
-          if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
-            activeFlybyMet = e.met_days;
-            break;
-          }
-        }
-      }
+      // Skip the flyby cinema check once the epilogue is active so the
+      // arrived-branch's epilogue composition (wide Sun-centered
+      // top-down mirroring the opening tableau) can fire. Without
+      // this guard, Saturn-OI's flyby cinema window keeps activeFlybyMet
+      // pinned forever (peakHold freezes simDay at peak) and the camera
+      // stays locked at the iconic closeup instead of pulling out to
+      // the bookend wide tableau.
+      const activeFlybyMet = epilogueActive
+        ? null
+        : findActiveFlybyMet(flybyEvents, simDay, arcTimeline.dep_day);
 
       let sub: string;
       let centerX: number;

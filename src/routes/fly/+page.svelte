@@ -139,6 +139,7 @@
   import { buildFlyDebugFrameSnapshot } from '$lib/orbital/fly-debug-frame';
   import { findActiveCislunarPhase } from '$lib/orbital/find-active-cislunar-phase';
   import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
+  import { computeCislunarCameraTarget } from '$lib/orbital/cislunar-camera-target';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -3999,18 +4000,10 @@
     const WIDE_DISTANCE = A_MOON_KM * SCALE_CISLUNAR * 1.8; // ~69u
     const LUNAR_CLOSEUP_DISTANCE = R_MOON_KM * SCALE_CISLUNAR * 20; // ~3.5u
     const EARTH_CLOSEUP_DISTANCE = R_EARTH_KM * SCALE_CISLUNAR * 25; // ~16u
-    const LUNAR_PHASE_TYPES = new Set<string>([
-      'lunar_orbit',
-      'spiral_lunar',
-      'descent',
-      'ascent',
-      'lunar_flyby',
-    ]);
-    // Earth-localised phases — camera zooms close to Earth so the
-    // parking-orbit revs / spiral_earth burns / re-entry approach are
-    // visible. Same auto-zoom pattern as the Moon close-up, just
-    // pointed at the other end of the system.
-    const EARTH_PHASE_TYPES = new Set<string>(['parking', 'spiral_earth', 'reentry']);
+    // LUNAR_PHASE_TYPES + EARTH_PHASE_TYPES now live in
+    // $lib/orbital/cislunar-camera-target alongside the dispatcher
+    // they gate; exported there so any other consumer can use the
+    // same source of truth.
     let autoZoomTargetR = WIDE_DISTANCE;
     const autoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
     let lastAutoZoomPhase: string | null = null;
@@ -4055,38 +4048,24 @@
       const MOON_PROXIMITY_KM = 80_000;
       const isNearMoon = distToMoonKm < MOON_PROXIMITY_KM;
 
-      // Re-arm the auto-zoom on phase transitions OR on crossing the
-      // Moon-proximity boundary — both deserve a fresh zoom. Mouse-wheel
-      // during a sub-phase still wins (clears autoZoomActive).
-      const subPhase = isNearMoon ? activePhase.type + '_near_moon' : activePhase.type;
-      const phaseChanged = subPhase !== lastAutoZoomPhase;
-      if (phaseChanged) {
-        lastAutoZoomPhase = subPhase;
+      // Camera target dispatch lives in $lib/orbital/cislunar-camera-target.
+      // Sub-phase string carries the '_near_moon' suffix so the phase-
+      // changed detector re-arms the lerp on proximity crossings.
+      const camTarget_ = computeCislunarCameraTarget({
+        phase: activePhase,
+        phaseProgress,
+        isNearMoon,
+        moonInScene,
+        wideDistance: WIDE_DISTANCE,
+        lunarCloseupDistance: LUNAR_CLOSEUP_DISTANCE,
+        earthCloseupDistance: EARTH_CLOSEUP_DISTANCE,
+      });
+      if (camTarget_.subPhase !== lastAutoZoomPhase) {
+        lastAutoZoomPhase = camTarget_.subPhase;
         autoZoomActive = true;
       }
-      if (isNearMoon || LUNAR_PHASE_TYPES.has(activePhase.type)) {
-        autoZoomTargetR = LUNAR_CLOSEUP_DISTANCE;
-        autoZoomTargetCenter.set(moonInScene.x, 0, moonInScene.z);
-      } else if (EARTH_PHASE_TYPES.has(activePhase.type)) {
-        autoZoomTargetR = EARTH_CLOSEUP_DISTANCE;
-        autoZoomTargetCenter.set(0, 0, 0);
-      } else if (activePhase.type === 'tli_coast') {
-        // Translunar coast — pan the wide-view target from Earth side
-        // (start) toward Moon side (end) over phaseProgress 0→1. Gives
-        // a sense of the spacecraft actually crossing the system.
-        autoZoomTargetR = WIDE_DISTANCE;
-        autoZoomTargetCenter.set(
-          moonInScene.x * phaseProgress * 0.7,
-          0,
-          moonInScene.z * phaseProgress * 0.7,
-        );
-      } else if (activePhase.type === 'tei_coast') {
-        // Return coast — pan target from Moon side (start) back
-        // toward Earth side (end).
-        const t = 1 - phaseProgress;
-        autoZoomTargetR = WIDE_DISTANCE;
-        autoZoomTargetCenter.set(moonInScene.x * t * 0.7, 0, moonInScene.z * t * 0.7);
-      }
+      autoZoomTargetR = camTarget_.targetR;
+      autoZoomTargetCenter.set(camTarget_.centerX, 0, camTarget_.centerZ);
     }
 
     const updateCislunarCam = () => {

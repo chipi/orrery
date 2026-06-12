@@ -25,6 +25,7 @@ import {
   easeInOutCubic,
   computeCruiseHoldTriggerSimDay,
   parseFlybyMetFromSubPhase,
+  computePeakHoldArmStep,
 } from './fly-cinematic-beats';
 
 describe('CinematicBeatState — factory + reset', () => {
@@ -239,5 +240,157 @@ describe('parseFlybyMetFromSubPhase', () => {
     expect(parseFlybyMetFromSubPhase('flyby--')).toBe(null);
     expect(parseFlybyMetFromSubPhase('flybynothing')).toBe(null);
     expect(parseFlybyMetFromSubPhase('flyby-abc-venus')).toBe(null);
+  });
+});
+
+describe('computePeakHoldArmStep — arm / reset round-trip', () => {
+  const baseInputs = {
+    currentFrameFlybyMet: null as number | null,
+    simDay: 0,
+    depDay: 0,
+    now: 1000,
+    isEarthFlyby: false,
+    isMoonMission: false,
+    reducedMotion: false,
+    isDrag: false,
+  };
+
+  it('does nothing when not in a flyby and no prior arm', () => {
+    const cine = createCinematicBeatState();
+    const out = computePeakHoldArmStep(cine, { ...baseInputs });
+    expect(out.armed).toBe(false);
+    expect(out.reset).toBe(false);
+    expect(out.newArmedForFlybyMet).toBeUndefined();
+    expect(out.newPeakHoldUntil).toBeUndefined();
+  });
+
+  it('arms when sim enters the ±0.5 d window of an iconic moment', () => {
+    const cine = createCinematicBeatState();
+    // peakMet=193, iconicLeadDays=2 → iconicPeakSimDay = depDay+191
+    // simDay = depDay + 191 → inHeldWindow true
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 191, // depDay=0
+      depDay: 0,
+    });
+    expect(out.armed).toBe(true);
+    expect(out.newArmedForFlybyMet).toBe(193);
+    expect(out.newPeakHoldUntil).toBe(baseInputs.now + 2500); // default hold
+    expect(out.newAfterglowUntil).toBe(baseInputs.now + 2500 + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS);
+  });
+
+  it('uses the 4000 ms hold on Earth flybys', () => {
+    const cine = createCinematicBeatState();
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 749,
+      simDay: 747,
+      depDay: 0,
+      isEarthFlyby: true,
+    });
+    expect(out.armed).toBe(true);
+    expect(out.newPeakHoldUntil).toBe(baseInputs.now + 4000);
+  });
+
+  it('does not re-arm on the next frame if simDay stays in window with same flyby', () => {
+    const cine = createCinematicBeatState();
+    cine.peakHoldArmedForFlybyMet = 193;
+    cine.peakHoldUntil = baseInputs.now + 2400;
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 191,
+      depDay: 0,
+    });
+    expect(out.armed).toBe(false);
+    expect(out.newArmedForFlybyMet).toBeUndefined();
+    expect(out.newPeakHoldUntil).toBeUndefined();
+  });
+
+  it('resets armed flag when sub-phase changes to a different flyby MET', () => {
+    const cine = createCinematicBeatState();
+    cine.peakHoldArmedForFlybyMet = 193;
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 617,
+      simDay: 615,
+      depDay: 0,
+    });
+    expect(out.reset).toBe(true);
+    expect(out.newArmedForFlybyMet).toBe(617);
+    // After reset, the SAME frame can re-arm for the new flyby:
+    expect(out.armed).toBe(true);
+    expect(out.newPeakHoldUntil).toBe(baseInputs.now + 2500);
+  });
+
+  it('resets when sim drifts > 4 days from armed peak (FLYBY_PEAK_DAYS guard)', () => {
+    const cine = createCinematicBeatState();
+    cine.peakHoldArmedForFlybyMet = 193;
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 200, // 7 days past peak (193); > 4 from armed peak → reset
+      depDay: 0,
+    });
+    expect(out.reset).toBe(true);
+    expect(out.newArmedForFlybyMet).toBe(null);
+    expect(out.armed).toBe(false); // still in flyby sub-phase but outside the ±0.5d arm window
+  });
+
+  it('re-clicking the same flyby (jumpToMet bias) RE-ARMS after caller manually clears', () => {
+    // Round-trip: arm → caller pretends time passed and the user re-clicked,
+    // which (per /fly's jumpToMet) clears the armed flag manually. Next
+    // frame should re-arm.
+    const cine = createCinematicBeatState();
+    // 1) First arm
+    let out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 191,
+      depDay: 0,
+    });
+    expect(out.armed).toBe(true);
+    cine.peakHoldArmedForFlybyMet = out.newArmedForFlybyMet ?? null;
+    cine.peakHoldUntil = out.newPeakHoldUntil ?? 0;
+    // 2) Caller clears (mimicking jumpToMet's clear-on-jump)
+    cine.peakHoldArmedForFlybyMet = null;
+    cine.peakHoldUntil = 0;
+    // 3) Next frame's compute should re-arm
+    out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 191,
+      depDay: 0,
+      now: 5000,
+    });
+    expect(out.armed).toBe(true);
+    expect(out.newPeakHoldUntil).toBe(5000 + 2500);
+  });
+
+  it('does not arm if isMoonMission / reducedMotion / isDrag gates set', () => {
+    for (const gate of ['isMoonMission', 'reducedMotion', 'isDrag'] as const) {
+      const out = computePeakHoldArmStep(createCinematicBeatState(), {
+        ...baseInputs,
+        currentFrameFlybyMet: 193,
+        simDay: 191,
+        depDay: 0,
+        [gate]: true,
+      });
+      expect(out.armed, `gate ${gate} should block arming`).toBe(false);
+    }
+  });
+
+  it('does not arm outside the ±0.5d window', () => {
+    const cine = createCinematicBeatState();
+    // simDay = peakMet−2.6 → outside window (radius 0.5)
+    const out = computePeakHoldArmStep(cine, {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 190.4,
+      depDay: 0,
+    });
+    expect(out.armed).toBe(false);
+    expect(out.newArmedForFlybyMet).toBeUndefined();
   });
 });

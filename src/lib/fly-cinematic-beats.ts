@@ -298,6 +298,115 @@ export function computeCruiseHoldTriggerSimDay(
  * in a flyby right now." This helper centralises that parse so the
  * regex doesn't drift between call sites.
  */
+/**
+ * Pure peakHold arming step. Given the current animate-frame inputs +
+ * the cine state, returns the mutations that should be applied. Caller
+ * is responsible for actually writing them onto `cine.*` — keeping the
+ * step pure makes it trivially unit-testable.
+ *
+ * Two stages run inside one call so the reset → arm round-trip is
+ * captured atomically per frame:
+ *  1. Reset: clear `peakHoldArmedForFlybyMet` if the spacecraft is no
+ *     longer in the armed flyby (different sub-phase) or drifted >
+ *     FLYBY_PEAK_DAYS from the armed peak.
+ *  2. Arm: if currently inside the ±0.5 sim-day window of an iconic
+ *     moment AND not already armed for this flyby, fire a fresh
+ *     `peakHoldUntil` + `afterglowUntil` + mark armed.
+ *
+ * `gateInputs.gates` packs the four blockers that prevent arming:
+ * isMoonMission (cislunar uses a different freeze), reducedMotion,
+ * isDrag (scrubbing), label-misclassification fallback. See
+ * docs/reference/fly-cinematic-state-machine.md §"peakHold arming".
+ */
+export interface PeakHoldArmInputs {
+  /** Active flyby MET parsed from sub-phase string, or null if not in a
+   *  flyby right now. */
+  currentFrameFlybyMet: number | null;
+  /** Sim day (dep_day + MET). */
+  simDay: number;
+  /** Mission's dep_day (sim time at MET 0). */
+  depDay: number;
+  /** Current performance.now() in ms. */
+  now: number;
+  /** True if this flyby's label includes 'earth' — gets a longer hold. */
+  isEarthFlyby: boolean;
+  /** Hard gates: any one true and we don't arm. */
+  isMoonMission: boolean;
+  reducedMotion: boolean;
+  isDrag: boolean;
+  /** Days before peak to FREEZE the iconic moment (PLANET_COMPOSITION
+   *  default). Matches biasJumpToIconicMoment. */
+  iconicLeadDays?: number;
+  /** Half-width of the arming window in sim days. */
+  peakHoldRadius?: number;
+  /** Days outside which the reset stage fires. */
+  flybyPeakDays?: number;
+  /** Hold durations. */
+  defaultHoldMs?: number;
+  earthHoldMs?: number;
+}
+
+export interface PeakHoldArmResult {
+  /** New value for peakHoldArmedForFlybyMet, or undefined to leave alone. */
+  newArmedForFlybyMet?: number | null;
+  /** New value for peakHoldUntil, or undefined to leave alone. */
+  newPeakHoldUntil?: number;
+  /** New value for afterglowUntil, or undefined to leave alone. */
+  newAfterglowUntil?: number;
+  /** True if an arm fired this frame (informational, useful in tests). */
+  armed: boolean;
+  /** True if a reset fired this frame. */
+  reset: boolean;
+}
+
+export function computePeakHoldArmStep(
+  cine: Pick<CinematicBeatState, 'peakHoldArmedForFlybyMet' | 'peakHoldUntil' | 'afterglowUntil'>,
+  inputs: PeakHoldArmInputs,
+): PeakHoldArmResult {
+  const ICONIC_LEAD_DAYS = inputs.iconicLeadDays ?? 2;
+  const peakHoldRadius = inputs.peakHoldRadius ?? 0.5;
+  const FLYBY_PEAK_DAYS = inputs.flybyPeakDays ?? 4;
+  const defaultHoldMs = inputs.defaultHoldMs ?? 2500;
+  const earthHoldMs = inputs.earthHoldMs ?? 4000;
+  const result: PeakHoldArmResult = { armed: false, reset: false };
+
+  // ── Reset stage
+  if (cine.peakHoldArmedForFlybyMet != null) {
+    const sameFlyby = inputs.currentFrameFlybyMet === cine.peakHoldArmedForFlybyMet;
+    const outsidePeakDays =
+      Math.abs(inputs.simDay - (inputs.depDay + cine.peakHoldArmedForFlybyMet)) > FLYBY_PEAK_DAYS;
+    if (!sameFlyby || outsidePeakDays) {
+      result.newArmedForFlybyMet = null;
+      result.reset = true;
+    }
+  }
+
+  // ── Arm stage (uses POST-reset armed value)
+  const effectiveArmed =
+    result.newArmedForFlybyMet !== undefined
+      ? result.newArmedForFlybyMet
+      : cine.peakHoldArmedForFlybyMet;
+  if (
+    !inputs.isMoonMission &&
+    !inputs.reducedMotion &&
+    !inputs.isDrag &&
+    inputs.currentFrameFlybyMet != null
+  ) {
+    const iconicPeakSimDay = inputs.depDay + inputs.currentFrameFlybyMet - ICONIC_LEAD_DAYS;
+    const inHeldWindow = Math.abs(inputs.simDay - iconicPeakSimDay) < peakHoldRadius;
+    if (inHeldWindow && effectiveArmed !== inputs.currentFrameFlybyMet) {
+      const holdMs = inputs.isEarthFlyby ? earthHoldMs : defaultHoldMs;
+      result.newPeakHoldUntil = inputs.now + holdMs;
+      result.newArmedForFlybyMet = inputs.currentFrameFlybyMet;
+      result.newAfterglowUntil =
+        inputs.now + holdMs + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
+      result.armed = true;
+    }
+  }
+
+  return result;
+}
+
 export function parseFlybyMetFromSubPhase(sub: string | null | undefined): number | null {
   if (!sub) return null;
   const m = sub.match(/^flyby-(-?\d+(?:\.\d+)?)-/);

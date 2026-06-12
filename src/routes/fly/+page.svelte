@@ -53,6 +53,7 @@
     resetCinematicBeatState,
     parseFlybyMetFromSubPhase,
     easeInOutCubic,
+    computePeakHoldArmStep,
   } from '$lib/fly-cinematic-beats';
   import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
   import {
@@ -118,6 +119,7 @@
     planFlybyShot,
     type PlanetId as FlybyPlanetId,
   } from '$lib/orbital/flyby-camera-plan';
+  import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -1501,23 +1503,9 @@
     if (!Number.isFinite(metDays) || metDays < 0) return;
     const previousSimDay = simDay;
     // Bias the target onto the iconic-shot hold window when the jump
-    // lands on a flyby / EDL event. The peakHold arming fires at
-    // simDay ∈ [peakMet−2 ± 0.5d]; landing exactly on peakMet skips
-    // straight past the hold window, so a direct jump from the
-    // timeline lands at peak with no freeze. Snapping to peak−2
-    // puts the user in the centre of the arming window so the iconic
-    // composition freezes immediately. MET 0 (Launch) is excluded —
-    // it replays the cinematic opening below, no flyby semantics.
-    let landMet = metDays;
-    if (metDays > 0 && mission?.flight?.events) {
-      const evt = mission.flight.events.find(
-        (e) =>
-          (e.type === 'flyby' || e.type === 'edl_or_oi') &&
-          Number.isFinite(e.met_days) &&
-          Math.abs((e.met_days ?? 0) - metDays) < 1,
-      );
-      if (evt) landMet = Math.max(0, metDays - 2);
-    }
+    // lands on a flyby / EDL event. See $lib/orbital/jump-to-met-bias
+    // for the rationale; the function is unit-tested.
+    const landMet = biasJumpToIconicMoment(metDays, mission?.flight?.events);
     simDay = mission.timeline.dep_day + landMet;
     if (isPlaying) isPlaying = false;
     camSnapUntil = performance.now() + 700;
@@ -5265,60 +5253,43 @@
         // lives in $lib/fly-cinematic-beats so the regex is a single
         // source of truth + unit-tested.
         const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
-        if (cine.peakHoldArmedForFlybyMet != null) {
-          const sameFlyby = currentFrameFlybyMet === cine.peakHoldArmedForFlybyMet;
-          const outsidePeakDays =
-            Math.abs(simDay - (arcTimeline.dep_day + cine.peakHoldArmedForFlybyMet)) >
-            FLYBY_PEAK_DAYS;
-          if (!sameFlyby || outsidePeakDays) {
-            cine.peakHoldArmedForFlybyMet = null;
-          }
+        // The reset → arm round-trip is a pure step (see
+        // $lib/fly-cinematic-beats.computePeakHoldArmStep); the helper is
+        // unit-tested and documented at
+        // docs/reference/fly-cinematic-state-machine.md §"peakHold arming".
+        // Earth's longer 4 s hold is selected by looking at the active
+        // event's label here — kept inline because it's mission-data-shape
+        // dependent and not worth lifting into the helper.
+        const activeFlybyEvtForHold = mission.flight?.events?.find(
+          (e) => e.met_days === currentFrameFlybyMet,
+        );
+        const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
+          .toLowerCase()
+          .includes('earth');
+        const armStep = computePeakHoldArmStep(cine, {
+          currentFrameFlybyMet,
+          simDay,
+          depDay: arcTimeline.dep_day,
+          now: performance.now(),
+          isEarthFlyby: isEarthHold,
+          isMoonMission,
+          reducedMotion,
+          isDrag,
+          flybyPeakDays: FLYBY_PEAK_DAYS,
+        });
+        if (armStep.newArmedForFlybyMet !== undefined) {
+          cine.peakHoldArmedForFlybyMet = armStep.newArmedForFlybyMet;
         }
-        // Arm — independent of helioAutoZoomActive. The held composition
-        // is whatever the camera currently shows at the moment we enter
-        // the ±0.5 sim-day window; the lerp gate up in the camera lerp
-        // block freezes the lerp the moment cine.peakHoldUntil is in the
-        // future, so the audience reads a deliberate hold even if it
-        // catches mid-lerp.
-        if (!isMoonMission && !reducedMotion && !isDrag && currentFrameFlybyMet != null) {
-          // ICONIC MOMENT FREEZE — fire peak hold a few days BEFORE the
-          // mathematical closest-approach point, NOT at the exact peak.
-          // At exact closest approach the spacecraft is at ~0.1 scene
-          // units from the planet (for inner-system flybys with ~300 km
-          // altitude), which puts the ship INSIDE the planet's render
-          // sphere (radius ~2.5). No camera angle can show the ship at
-          // that moment — it's geometrically inside the opaque mesh.
-          // 5 days before peak the ship is far enough from the planet
-          // to be a visible foreground silhouette against the planet's
-          // disc — the actual "iconic Cassini-mission-art moment."
-          const ICONIC_LEAD_DAYS = 2;
-          const peakHoldRadius = 0.5;
-          const iconicPeakSimDay = arcTimeline.dep_day + currentFrameFlybyMet - ICONIC_LEAD_DAYS;
-          const inHeldWindow = Math.abs(simDay - iconicPeakSimDay) < peakHoldRadius;
-          if (inHeldWindow && cine.peakHoldArmedForFlybyMet !== currentFrameFlybyMet) {
-            // Earth flyby gets a longer hold — 4.0 s vs 2.5 s — so the
-            // home-planet moment lingers. The lerp keeps converging
-            // toward the iconic frame during the hold; longer hold =
-            // tighter settle and longer emotional dwell.
-            const activeFlybyEvtForHold = mission.flight?.events?.find(
-              (e) => e.met_days === currentFrameFlybyMet,
-            );
-            const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
-              .toLowerCase()
-              .includes('earth');
-            const holdMs = isEarthHold ? 4000 : 2500;
-            cine.peakHoldUntil = performance.now() + holdMs;
-            cine.peakHoldArmedForFlybyMet = currentFrameFlybyMet;
-            // W3.2 — pre-arm the afterglow window so it kicks in the
-            // instant the hold expires. Start values get captured at
-            // hold-expiry (see lerp block) — at that point the camera
-            // has had 2.5 s to converge onto the iconic frame, so the
-            // start is the converged composition.
-            cine.afterglowUntil = cine.peakHoldUntil + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
-            // Clear last flyby's captured afterglow start so this flyby's
-            // afterglow re-captures fresh values when its hold expires.
-            cine.afterglowStartCamR = 0;
-          }
+        if (armStep.newPeakHoldUntil !== undefined) {
+          cine.peakHoldUntil = armStep.newPeakHoldUntil;
+        }
+        if (armStep.newAfterglowUntil !== undefined) {
+          cine.afterglowUntil = armStep.newAfterglowUntil;
+        }
+        if (armStep.armed) {
+          // Clear last flyby's captured afterglow start so this flyby's
+          // afterglow re-captures fresh values when its hold expires.
+          cine.afterglowStartCamR = 0;
         }
         if (
           !isMoonMission &&

@@ -3,7 +3,6 @@
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
   import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
   import type {
     FleetCategory,
@@ -15,6 +14,7 @@
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
     loading as rdLoading,
@@ -262,6 +262,9 @@
 
   onMount(async () => {
     applyUrl($page.url);
+    // Pre-warm hero override cache so card covers pick up override
+    // slots on first paint; safe to fire-and-forget.
+    void loadHeroOverrides('fleet');
     try {
       entriesRequest = rdSuccess(await getFleetIndex());
     } catch (err) {
@@ -483,7 +486,7 @@
               <figure class="card-photo">
                 <img
                   class="card-cover"
-                  src="{base}/images/fleet-galleries/{entry.id}/01.jpg"
+                  src={pickHero('fleet', entry.id)}
                   alt=""
                   loading="lazy"
                   onerror={(e) => {

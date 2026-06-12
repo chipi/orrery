@@ -13,6 +13,7 @@
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
     loading as rdLoading,
@@ -243,6 +244,11 @@
   // ─── Load ────────────────────────────────────────────────────────
   onMount(() => {
     applyUrlFilters($page.url);
+    // Pre-warm the hero overrides cache so the first paint of mission
+    // cards picks up any Marko-blessed override slot. Falls back to
+    // `<id>/01.jpg` silently when no override file exists; safe to
+    // fire-and-forget.
+    void loadHeroOverrides('missions');
   });
   // Re-fetch when the URL `?lang=` changes so locale switches replace
   // the merged mission overlay set without a full page reload.
@@ -556,7 +562,7 @@
             <figure class="card-photo">
               <img
                 class="card-cover"
-                src="{base}/images/missions/{mission.id}/01.jpg"
+                src={pickHero('missions', mission.id)}
                 alt=""
                 loading="lazy"
                 onerror={(e) => {

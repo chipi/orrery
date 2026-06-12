@@ -11,6 +11,7 @@
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
 
@@ -676,6 +677,8 @@
 
   onMount(() => {
     applyUrlFilters($page.url);
+    // Pre-warm fleet hero overrides for the rocket-photo reference shot.
+    void loadHeroOverrides('fleet');
 
     getRockets(localeFromPage($page)).then((list) => {
       rocketList = list;
@@ -961,7 +964,7 @@
           {@const fleetId = ROCKET_FLEET_ID[selectedRocket.id] ?? selectedRocket.id}
           <figure class="rocket-photo">
             <img
-              src="{base}/images/fleet-galleries/{fleetId}/01.jpg"
+              src={pickHero('fleet', fleetId)}
               alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
               loading="lazy"
               onerror={(e) => {

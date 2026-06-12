@@ -137,6 +137,7 @@
   import { findActiveFlybyMet } from '$lib/orbital/find-active-flyby';
   import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
   import { buildFlyDebugFrameSnapshot } from '$lib/orbital/fly-debug-frame';
+  import { findActiveCislunarPhase } from '$lib/orbital/find-active-cislunar-phase';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -4025,16 +4026,10 @@
         return;
       }
       const metDays = simDay - arcTimeline.dep_day;
-      let activePhase = cislunarTrajectory.phases[0];
-      let phaseProgress = 0;
-      for (const p of cislunarTrajectory.phases) {
-        if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
-          activePhase = p;
-          const span = p.end_met_days - p.start_met_days;
-          phaseProgress = span > 0 ? (metDays - p.start_met_days) / span : 0;
-          break;
-        }
-      }
+      const phaseHit = findActiveCislunarPhase(cislunarTrajectory.phases, metDays);
+      // phases.length > 0 above so this can't be null in practice.
+      if (!phaseHit) return;
+      const { activePhase, phaseProgress } = phaseHit;
       // Compute spacecraft position in ECI km along the active phase
       // so a flyby coast (tli/tei) that swings past the Moon can still
       // trigger the lunar closeup — Artemis II is the canonical case:

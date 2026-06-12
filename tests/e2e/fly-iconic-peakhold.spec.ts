@@ -84,16 +84,18 @@ async function loadMissionAndJumpToFlyby(
 }
 
 test.describe('/fly iconic-shot peakHold smoke (one beat per planet)', () => {
+  // reducedMotion gates the cruise-hold off (see updateCruiseHoldArming
+  // in /fly/+page.svelte), so the wizard-dismiss → milestone-click path
+  // is no longer race-prone. The iconic-shot composition itself still
+  // fires under reducedMotion because it's an event-driven beat, not
+  // an auto-fired motion ramp.
+  test.use({ colorScheme: 'dark' });
+  test.beforeEach(async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+  });
+
   for (const beat of BEATS) {
-    // Marked `fixme` while the cruise-hold timing race is sorted out
-    // — the spec architecture is sound but cruise-hold's auto-fire on
-    // wizard-dismiss can hide the scrubber for 4 s, which makes the
-    // milestone-track-button click race-prone. The math invariants are
-    // already locked down by src/lib/orbital/classify-shot.test.ts +
-    // src/lib/orbital/jump-to-met-bias.test.ts + the arming round-trip
-    // tests in src/lib/fly-cinematic-beats.test.ts; this spec is the
-    // behavioural smoke layer on top. Tracked as a follow-up.
-    test.fixme(`${beat.planet}: ${beat.mission} MET ${beat.metDays}`, async ({ page }) => {
+    test(`${beat.planet}: ${beat.mission} MET ${beat.metDays}`, async ({ page }) => {
       await loadMissionAndJumpToFlyby(page, beat.mission, beat.metDays);
 
       // Page didn't navigate — we're still on /fly. Catches the

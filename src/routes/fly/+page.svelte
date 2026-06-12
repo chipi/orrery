@@ -4629,6 +4629,17 @@
      * otherwise-massive loop.
      */
     function updateCruiseHoldArming(now: number) {
+      // Suppress the cruise hold entirely when the user prefers reduced
+      // motion. The hold ramps the camera through a 4 s zoom/breath
+      // sequence with chrome suppression, which is exactly the kind of
+      // unsolicited motion `prefers-reduced-motion` asks us to skip.
+      // Also unblocks the iconic-peakhold e2e spec — the auto-fire on
+      // wizard-dismiss was hiding the milestone-track button under
+      // .cinematic-hidden, racing every flyby-jump click.
+      if (reducedMotion) {
+        cine.lastSeenSimDayForCruiseHold = simDay;
+        return;
+      }
       if (shouldArmCruiseHold(cine, simDay, cruiseHoldTriggerSimDay)) {
         cine.cruiseHoldUntil = now + CINEMATIC_TIMINGS.CRUISE_HOLD_DURATION_MS;
         cine.cruiseHoldFired = true;

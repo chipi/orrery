@@ -78,9 +78,10 @@ describe('fly-cinematic invariants', () => {
       shipPosAtMet: (met: number) => ({ x: peakMet - met, y: 0, z: 0 }),
       peakMet,
     });
+    expect(plan).not.toBeNull();
     // Camera looks AT the planet, not at the ship.
-    expect(plan.cameraTarget.x).toBeCloseTo(planetPos.x, 5);
-    expect(plan.cameraTarget.z).toBeCloseTo(planetPos.z, 5);
+    expect(plan!.cameraTarget.x).toBeCloseTo(planetPos.x, 5);
+    expect(plan!.cameraTarget.z).toBeCloseTo(planetPos.z, 5);
   });
 
   // §"Saturn-OI tilt" — the 17° camera.up roll is an external
@@ -90,7 +91,7 @@ describe('fly-cinematic invariants', () => {
   // both the inline /fly post-process AND the new field would compound
   // and double-tilt the camera. This test pins the contract.
   it('Saturn roll is NOT encoded in PLANET_COMPOSITION (external camera.up post-process only)', () => {
-    const composition = PLANET_COMPOSITION.saturn as Record<string, unknown>;
+    const composition = PLANET_COMPOSITION.saturn as unknown as Record<string, unknown>;
     expect(composition.rollRad).toBeUndefined();
     expect(composition.cameraUpRoll).toBeUndefined();
     expect(composition.roll).toBeUndefined();

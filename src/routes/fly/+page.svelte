@@ -54,6 +54,12 @@
     parseFlybyMetFromSubPhase,
     easeInOutCubic,
     computePeakHoldArmStep,
+    shouldArmCruiseHold,
+    computeCutOverlayOpacity,
+    isPeakHolding,
+    isAfterglowing,
+    isCruiseHolding,
+    isAnyCinematicFreeze,
   } from '$lib/fly-cinematic-beats';
   import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
   import {
@@ -4948,15 +4954,7 @@
      * otherwise-massive loop.
      */
     function updateCruiseHoldArming(now: number) {
-      const cruiseTrigger = cruiseHoldTriggerSimDay;
-      if (
-        !cine.cruiseHoldFired &&
-        cruiseTrigger != null &&
-        cine.lastSeenSimDayForCruiseHold > 0 &&
-        cine.lastSeenSimDayForCruiseHold < cruiseTrigger &&
-        simDay >= cruiseTrigger &&
-        simDay < cruiseTrigger + CINEMATIC_TIMINGS.CRUISE_HOLD_TRIGGER_WINDOW_DAYS
-      ) {
+      if (shouldArmCruiseHold(cine, simDay, cruiseHoldTriggerSimDay)) {
         cine.cruiseHoldUntil = now + CINEMATIC_TIMINGS.CRUISE_HOLD_DURATION_MS;
         cine.cruiseHoldFired = true;
       }
@@ -4972,16 +4970,9 @@
      */
     function updateCutOverlay(now: number) {
       if (cine.cutStartedAt === 0) return;
-      const cutElapsed = now - cine.cutStartedAt;
-      const ramp = CINEMATIC_TIMINGS.CUT_FADE_RAMP_MS;
-      if (cutElapsed < ramp) {
-        cutBlackOpacity = cutElapsed / ramp;
-      } else if (cutElapsed < 2 * ramp) {
-        cutBlackOpacity = 1 - (cutElapsed - ramp) / ramp;
-      } else {
-        cutBlackOpacity = 0;
-        cine.cutStartedAt = 0;
-      }
+      const { opacity, cutComplete } = computeCutOverlayOpacity(cine.cutStartedAt, now);
+      cutBlackOpacity = opacity;
+      if (cutComplete) cine.cutStartedAt = 0;
     }
 
     /**
@@ -4993,17 +4984,11 @@
      * Svelte doesn't trigger a needless template re-render every
      * frame.
      */
-    function updateChromeSuppression(
-      isPeakHoldingFrame: boolean,
-      isAfterglowing: boolean,
-      isCruiseHolding: boolean,
-      now: number,
-    ) {
-      const finaleActive =
-        cine.finaleStartedAt > 0 &&
-        now < cine.finaleStartedAt + CINEMATIC_TIMINGS.FINALE_DURATION_MS;
-      const wantSuppressed =
-        isPeakHoldingFrame || isAfterglowing || isCruiseHolding || finaleActive;
+    function updateChromeSuppression(now: number) {
+      // Chrome hides while any cinematic beat (peak hold, afterglow,
+      // cruise hold, finale lock) is engaged. Single-source predicate
+      // `isAnyCinematicFreeze` keeps the four-way OR in one place.
+      const wantSuppressed = isAnyCinematicFreeze(cine, now);
       if (inCinematicHeldBeat !== wantSuppressed) {
         inCinematicHeldBeat = wantSuppressed;
       }
@@ -5033,14 +5018,14 @@
         // The afterglow comes AFTER the peak hold expires (Wernquist's
         // Grand Finale grammar — 6 s of slow dolly recede with the world
         // frozen behind, the way Cassini's mission ended).
-        const isPeakHoldingFrame = now < cine.peakHoldUntil;
-        const isAfterglowing = !isPeakHoldingFrame && now < cine.afterglowUntil;
-        const isCruiseHolding = now < cine.cruiseHoldUntil;
-        const isCinematicFreeze = isPeakHoldingFrame || isAfterglowing || isCruiseHolding;
+        const isPeakHoldingFrame = isPeakHolding(cine, now);
+        const isAfterglowingFrame = isAfterglowing(cine, now);
+        const isCruiseHoldingFrame = isCruiseHolding(cine, now);
+        const isCinematicFreeze = isPeakHoldingFrame || isAfterglowingFrame || isCruiseHoldingFrame;
 
         updateCruiseHoldArming(now);
         updateCutOverlay(now);
-        updateChromeSuppression(isPeakHoldingFrame, isAfterglowing, isCruiseHolding, now);
+        updateChromeSuppression(now);
 
         if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
           simDay += dt * simSpeed;

@@ -26,6 +26,8 @@ import {
   computeCruiseHoldTriggerSimDay,
   parseFlybyMetFromSubPhase,
   computePeakHoldArmStep,
+  shouldArmCruiseHold,
+  computeCutOverlayOpacity,
 } from './fly-cinematic-beats';
 
 describe('CinematicBeatState — factory + reset', () => {
@@ -394,5 +396,81 @@ describe('computePeakHoldArmStep — arm / reset round-trip', () => {
     });
     expect(out.armed).toBe(false);
     expect(out.newArmedForFlybyMet).toBeUndefined();
+  });
+});
+
+describe('shouldArmCruiseHold', () => {
+  it('arms when sim just crossed the trigger inside the slop window', () => {
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 999;
+    expect(shouldArmCruiseHold(cine, 1003.5, 1003.5)).toBe(true);
+  });
+
+  it('does not arm if cruiseHoldFired is already true (one-shot)', () => {
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 999;
+    cine.cruiseHoldFired = true;
+    expect(shouldArmCruiseHold(cine, 1003.5, 1003.5)).toBe(false);
+  });
+
+  it('does not arm if trigger is null (mission has no qualifying cruise gap)', () => {
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 500;
+    expect(shouldArmCruiseHold(cine, 1000, null)).toBe(false);
+  });
+
+  it('does not arm before the trigger sim-day', () => {
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 500;
+    expect(shouldArmCruiseHold(cine, 1000, 1003.5)).toBe(false);
+  });
+
+  it('does not arm past the slop window (overshoot protection)', () => {
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 999;
+    // CRUISE_HOLD_TRIGGER_WINDOW_DAYS is 30; 1003.5 + 30 = 1033.5
+    expect(shouldArmCruiseHold(cine, 1035, 1003.5)).toBe(false);
+  });
+
+  it('does not arm if the sim has never been observed advancing toward the trigger', () => {
+    const cine = createCinematicBeatState();
+    // lastSeen still at sentinel 0 — no prior frame
+    expect(shouldArmCruiseHold(cine, 1003.5, 1003.5)).toBe(false);
+  });
+
+  it('does not arm if the sim was already past the trigger on the previous frame', () => {
+    // E.g. user scrubbed FROM the post-trigger region back through the
+    // trigger — the cruise hold should NOT re-arm in that case.
+    const cine = createCinematicBeatState();
+    cine.lastSeenSimDayForCruiseHold = 1500;
+    expect(shouldArmCruiseHold(cine, 1003.5, 1003.5)).toBe(false);
+  });
+});
+
+describe('computeCutOverlayOpacity', () => {
+  // CINEMATIC_TIMINGS.CUT_FADE_RAMP_MS = 100
+  it('returns opacity 0 + cutComplete when cutStartedAt is the inactive sentinel', () => {
+    expect(computeCutOverlayOpacity(0, 12345)).toEqual({ opacity: 0, cutComplete: true });
+  });
+
+  it('ramps opacity 0 → 1 during the first CUT_FADE_RAMP_MS', () => {
+    const start = 1000;
+    expect(computeCutOverlayOpacity(start, start + 0).opacity).toBe(0);
+    expect(computeCutOverlayOpacity(start, start + 50).opacity).toBe(0.5);
+    expect(computeCutOverlayOpacity(start, start + 99).opacity).toBeCloseTo(0.99, 5);
+    expect(computeCutOverlayOpacity(start, start + 50).cutComplete).toBe(false);
+  });
+
+  it('ramps opacity 1 → 0 during the second CUT_FADE_RAMP_MS', () => {
+    const start = 1000;
+    expect(computeCutOverlayOpacity(start, start + 100).opacity).toBeCloseTo(1.0, 5);
+    expect(computeCutOverlayOpacity(start, start + 150).opacity).toBeCloseTo(0.5, 5);
+    expect(computeCutOverlayOpacity(start, start + 199).opacity).toBeCloseTo(0.01, 5);
+    expect(computeCutOverlayOpacity(start, start + 199).cutComplete).toBe(false);
+  });
+
+  it('returns opacity 0 + cutComplete after 2× CUT_FADE_RAMP_MS', () => {
+    expect(computeCutOverlayOpacity(1000, 1200)).toEqual({ opacity: 0, cutComplete: true });
+    expect(computeCutOverlayOpacity(1000, 5000)).toEqual({ opacity: 0, cutComplete: true });
   });
 });

@@ -406,6 +406,64 @@ export function computePeakHoldArmStep(
   return result;
 }
 
+/**
+ * Decide whether the W3.7 cruise hold should arm this frame. Pure form
+ * of `updateCruiseHoldArming(now)` (lifted out of /fly's animate loop).
+ *
+ * Arms when:
+ *  - the cruise hold has not already fired (one-shot per mission run)
+ *  - a cruise-hold trigger sim-day exists (cruise gap was long enough)
+ *  - the spacecraft has actually been observed advancing toward the
+ *    trigger (lastSeenSimDayForCruiseHold > 0 and < trigger)
+ *  - the current sim-day has just crossed the trigger
+ *  - the current sim-day is still within the slop window
+ *    (CRUISE_HOLD_TRIGGER_WINDOW_DAYS) — caller scrubbed forward too
+ *    fast and the trigger would otherwise never fire
+ *
+ * Caller writes `cine.cruiseHoldUntil = now + CRUISE_HOLD_DURATION_MS;
+ * cine.cruiseHoldFired = true;` when this returns true, and
+ * `cine.lastSeenSimDayForCruiseHold = simDay;` unconditionally.
+ */
+export function shouldArmCruiseHold(
+  cine: Pick<CinematicBeatState, 'cruiseHoldFired' | 'lastSeenSimDayForCruiseHold'>,
+  simDay: number,
+  cruiseHoldTriggerSimDay: number | null,
+): boolean {
+  if (cine.cruiseHoldFired) return false;
+  if (cruiseHoldTriggerSimDay == null) return false;
+  if (cine.lastSeenSimDayForCruiseHold <= 0) return false;
+  if (cine.lastSeenSimDayForCruiseHold >= cruiseHoldTriggerSimDay) return false;
+  if (simDay < cruiseHoldTriggerSimDay) return false;
+  if (simDay >= cruiseHoldTriggerSimDay + CINEMATIC_TIMINGS.CRUISE_HOLD_TRIGGER_WINDOW_DAYS)
+    return false;
+  return true;
+}
+
+/**
+ * Compute the current W3.6 cut-overlay opacity. Pure form of
+ * `updateCutOverlay(now)` (lifted out of /fly's animate loop).
+ *
+ * The cut animates as: ramp UP from 0→1 over CUT_FADE_RAMP_MS, then
+ * DOWN from 1→0 over another CUT_FADE_RAMP_MS. After 2× ramp ms the
+ * cut is finished — caller clears `cine.cutStartedAt` so the next
+ * > 365-day jump can arm a fresh cut.
+ */
+export interface CutOverlayState {
+  /** [0, 1] — write into the overlay's CSS opacity. */
+  opacity: number;
+  /** True once the cut animation has fully run — caller resets
+   *  `cine.cutStartedAt = 0`. */
+  cutComplete: boolean;
+}
+export function computeCutOverlayOpacity(cutStartedAt: number, now: number): CutOverlayState {
+  if (cutStartedAt === 0) return { opacity: 0, cutComplete: true };
+  const cutElapsed = now - cutStartedAt;
+  const ramp = CINEMATIC_TIMINGS.CUT_FADE_RAMP_MS;
+  if (cutElapsed < ramp) return { opacity: cutElapsed / ramp, cutComplete: false };
+  if (cutElapsed < 2 * ramp) return { opacity: 1 - (cutElapsed - ramp) / ramp, cutComplete: false };
+  return { opacity: 0, cutComplete: true };
+}
+
 export function parseFlybyMetFromSubPhase(sub: string | null | undefined): number | null {
   if (!sub) return null;
   const m = sub.match(/^flyby-(-?\d+(?:\.\d+)?)-/);

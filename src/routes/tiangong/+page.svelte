@@ -45,11 +45,24 @@
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
+  import {
+    type RemoteData,
+    loading,
+    success,
+    error as rdError,
+    isSuccess,
+    isError,
+  } from '$lib/types/remote-data';
 
   let container: HTMLDivElement | undefined = $state();
-  let modules: TiangongModule[] = $state([]);
-  let visitors: TiangongModule[] = $state([]);
-  let loadFailed = $state(false);
+  // RemoteData migration (#8). Internal state holds the discriminated
+  // union; the legacy field names stay as $derived shims so read sites
+  // don't need to be rewritten.
+  let modulesRD = $state<RemoteData<Error, TiangongModule[]>>(loading());
+  let visitorsRD = $state<RemoteData<Error, TiangongModule[]>>(loading());
+  const modules = $derived(isSuccess(modulesRD) ? modulesRD.data : ([] as TiangongModule[]));
+  const visitors = $derived(isSuccess(visitorsRD) ? visitorsRD.data : ([] as TiangongModule[]));
+  const loadFailed = $derived(isError(modulesRD) || isError(visitorsRD));
   let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
   let selected: TiangongModule | null = $state(null);
   let panelOpen = $state(false);
@@ -156,17 +169,17 @@
     let cancelled = false;
     void getTiangongModules(L)
       .then((list) => {
-        if (!cancelled) modules = list;
+        if (!cancelled) modulesRD = success(list);
       })
-      .catch(() => {
-        if (!cancelled) loadFailed = true;
+      .catch((e) => {
+        if (!cancelled) modulesRD = rdError(e instanceof Error ? e : new Error(String(e)));
       });
     void getTiangongVisitors(L)
       .then((list) => {
-        if (!cancelled) visitors = list;
+        if (!cancelled) visitorsRD = success(list);
       })
-      .catch(() => {
-        if (!cancelled) loadFailed = true;
+      .catch((e) => {
+        if (!cancelled) visitorsRD = rdError(e instanceof Error ? e : new Error(String(e)));
       });
     return () => {
       cancelled = true;

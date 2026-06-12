@@ -14,6 +14,15 @@
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import {
+    type RemoteData,
+    loading,
+    success,
+    error as rdError,
+    isSuccess,
+    isError,
+    isLoading,
+  } from '$lib/types/remote-data';
 
   // v0.7: /plan only ships Mars. The Lambert-grid porkchop solver
   // works for Mars only — every other destination renders an empty /
@@ -93,13 +102,19 @@
   // The pre-computed grid file declares its own dep_range / tof_range
   // / steps / mission_types / dv_orbit_insertion / tof_axis_unit. The
   // /plan UI is now a pure consumer of those values per destination.
-  let activeGrid = $state<PorkchopGrid | null>(null);
+  // RemoteData migration (#8). gridRD is the source of truth — the
+  // legacy {activeGrid, computing, loadFailed} fields stay as $derived
+  // shims so the rest of the file's read sites don't need to be
+  // rewritten. `progress` stays separate since it's a load-progress
+  // signal (0..1), not a load-state.
+  let gridRD = $state<RemoteData<Error, PorkchopGrid>>(loading());
+  const activeGrid = $derived(isSuccess(gridRD) ? gridRD.data : null);
+  const computing = $derived(isLoading(gridRD));
+  const loadFailed = $derived(isError(gridRD));
   let destinationId = $state<DestinationId>('mars');
   let missionType = $state<MissionType>('LANDING');
   let loadId = 0;
-  let computing = $state(true);
   let progress = $state(0);
-  let loadFailed = $state(false);
 
   let canvas: HTMLCanvasElement | undefined = $state();
   let selected = $state<{ i: number; j: number } | null>(null);
@@ -270,19 +285,16 @@
   async function loadGrid(id: DestinationId) {
     const myId = ++loadId;
     progress = 0;
-    computing = true;
+    gridRD = loading();
     selected = null;
     pinned = null;
-    loadFailed = false;
     const result = await getPorkchopGrid(id);
     if (myId !== loadId) return; // superseded by a newer load
     if (!result) {
-      loadFailed = true;
-      computing = false;
+      gridRD = rdError(new Error(`porkchop grid for '${id}' not found`));
       return;
     }
-    activeGrid = result;
-    computing = false;
+    gridRD = success(result);
     progress = 1;
     coerceMissionType();
   }

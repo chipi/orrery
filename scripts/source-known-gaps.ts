@@ -177,7 +177,7 @@ const SOURCING_MAP: Record<string, SourceSpec> = {
   'earth-objects/planet-labs': { commons: 'Planet Labs Dove (cropped).jpg', agency: 'Planet Labs' },
   'earth-objects/sentinel-copernicus': { commons: 'Sentinel-1A.jpg', agency: 'ESA' },
   'earth-objects/starlink': { commons: 'Starlink satellite illustration.jpg', agency: 'SpaceX' },
-  'earth-objects/tundra-molniya': { commons: 'Molniya orbit diagram.jpg', agency: 'Roscosmos' },
+  'earth-objects/tundra-molniya': { commons: 'Molniya-1 satellite.jpg', agency: 'Roscosmos' },
 };
 
 interface SourceResult {

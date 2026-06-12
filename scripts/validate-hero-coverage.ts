@@ -56,12 +56,7 @@ const MISSIONS_KNOWN_GAPS = new Set<string>([]);
 const FLEET_KNOWN_GAPS = new Set<string>([]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
-const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([
-  // Commons search returned no usable raster file for "Molniya orbit
-  // diagram.jpg" or fallback queries. Tracked for re-curation; see
-  // post-332-orphan-status.md.
-  'tundra-molniya',
-]);
+const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);
 
 const SURFACES: SurfaceSpec[] = [
   {

@@ -1,0 +1,272 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-12T21:51:47.410Z",
+  "source_audit": "fleet-hero-audit.md",
+  "overrides": {
+    "apollo-csm-block-ii": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than apollo-csm-block-ii",
+      "approved_at": "2026-06-12"
+    },
+    "ariane-1": {
+      "slot": "04.jpg",
+      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than ariane-1",
+      "approved_at": "2026-06-12"
+    },
+    "atlantis": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than atlantis",
+      "approved_at": "2026-06-12"
+    },
+    "atlas-slv-3d": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than atlas-slv-3d",
+      "approved_at": "2026-06-12"
+    },
+    "beresheet": {
+      "slot": "04.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 5 < threshold 6; vision-rejected: category-diagram; subject names a different entity than beresheet",
+      "approved_at": "2026-06-12"
+    },
+    "buran": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than buran",
+      "approved_at": "2026-06-12"
+    },
+    "cargo-dragon-v1": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than cargo-dragon-v1",
+      "approved_at": "2026-06-12"
+    },
+    "cassini": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than cassini",
+      "approved_at": "2026-06-12"
+    },
+    "chandra": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than chandra",
+      "approved_at": "2026-06-12"
+    },
+    "clementine": {
+      "slot": "02.jpg",
+      "reason": "vision-rejected: score-below-threshold; subject names a different entity than clementine",
+      "approved_at": "2026-06-12"
+    },
+    "columbia": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than columbia",
+      "approved_at": "2026-06-12"
+    },
+    "crew-dragon-iva": {
+      "slot": "02.jpg",
+      "reason": "category: people-only — no asset visible; score: 3 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "dawn": {
+      "slot": "02.jpg",
+      "reason": "vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "discovery": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than discovery",
+      "approved_at": "2026-06-12"
+    },
+    "endeavour": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than endeavour",
+      "approved_at": "2026-06-12"
+    },
+    "falcon-9": {
+      "slot": "04.jpg",
+      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "feitian": {
+      "slot": "02.jpg",
+      "reason": "category: people-only — no asset visible; vision-rejected: category-people; subject names a different entity than feitian",
+      "approved_at": "2026-06-12"
+    },
+    "galileo": {
+      "slot": "04.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "gemini": {
+      "slot": "03.jpg",
+      "reason": "category: people-only — no asset visible; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "juno": {
+      "slot": "03.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; score: 4 < threshold 6; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "long-march-3b": {
+      "slot": "02.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 4 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "lvm3": {
+      "slot": "05.jpg",
+      "reason": "subject names a different entity than lvm3",
+      "approved_at": "2026-06-12"
+    },
+    "magellan": {
+      "slot": "05.jpg",
+      "reason": "subject names a different entity than magellan",
+      "approved_at": "2026-06-12"
+    },
+    "mars-express": {
+      "slot": "03.jpg",
+      "reason": "score: 2 < threshold 6; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "mars-polar-lander": {
+      "slot": "02.jpg",
+      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than mars-polar-lander",
+      "approved_at": "2026-06-12"
+    },
+    "mro": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than mro",
+      "approved_at": "2026-06-12"
+    },
+    "new-shepard": {
+      "slot": "05.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than new-shepard",
+      "approved_at": "2026-06-12"
+    },
+    "opportunity": {
+      "slot": "04.jpg",
+      "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than opportunity",
+      "approved_at": "2026-06-12"
+    },
+    "phobos-2": {
+      "slot": "02.jpg",
+      "reason": "not-scored",
+      "approved_at": "2026-06-12"
+    },
+    "pioneer-10": {
+      "slot": "04.jpg",
+      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than pioneer-10",
+      "approved_at": "2026-06-12"
+    },
+    "pioneer-11": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than pioneer-11",
+      "approved_at": "2026-06-12"
+    },
+    "pragyan": {
+      "slot": "03.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than pragyan",
+      "approved_at": "2026-06-12"
+    },
+    "progress-ms": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than progress-ms",
+      "approved_at": "2026-06-12"
+    },
+    "rosetta": {
+      "slot": "03.jpg",
+      "reason": "vision-rejected: score-below-threshold; subject names a different entity than rosetta",
+      "approved_at": "2026-06-12"
+    },
+    "saturn-ib": {
+      "slot": "02.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "saturn-v": {
+      "slot": "05.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "spirit": {
+      "slot": "04.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram; subject names a different entity than spirit",
+      "approved_at": "2026-06-12"
+    },
+    "taiyuan-lc-9": {
+      "slot": "04.jpg",
+      "reason": "url: text/logo/PDF/infographic in source URL; score: 1 < threshold 6; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "vega-2": {
+      "slot": "02.jpg",
+      "reason": "score: 5 < threshold 6",
+      "approved_at": "2026-06-12"
+    },
+    "viking-1": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than viking-1",
+      "approved_at": "2026-06-12"
+    },
+    "voyager-2": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than voyager-2",
+      "approved_at": "2026-06-12"
+    },
+    "x37b": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than x37b",
+      "approved_at": "2026-06-12"
+    },
+    "yutu": {
+      "slot": "04.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than yutu",
+      "approved_at": "2026-06-12"
+    },
+    "yutu-2": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than yutu-2",
+      "approved_at": "2026-06-12"
+    },
+    "smart-1": {
+      "slot": "03.jpg",
+      "reason": "url: artwork/illustration/render/scale-model in source URL; vision-rejected: score-below-threshold; subject names a different entity than smart-1",
+      "approved_at": "2026-06-12"
+    },
+    "chandrayaan1": {
+      "slot": "04.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "lro": {
+      "slot": "03.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than lro",
+      "approved_at": "2026-06-12"
+    },
+    "mars-odyssey": {
+      "slot": "02.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "lunar-orbiter-5": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than lunar-orbiter-5",
+      "approved_at": "2026-06-12"
+    },
+    "salyut-4": {
+      "slot": "05.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+      "approved_at": "2026-06-12"
+    },
+    "salyut-5": {
+      "slot": "05.jpg",
+      "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than salyut-5",
+      "approved_at": "2026-06-12"
+    },
+    "lc-5": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than lc-5",
+      "approved_at": "2026-06-12"
+    },
+    "apollo-csm-block-i": {
+      "slot": "02.jpg",
+      "reason": "category: people-only — no asset visible; score: 4 < threshold 6; vision-rejected: category-people; subject names a different entity than apollo-csm-block-i",
+      "approved_at": "2026-06-12"
+    }
+  }
+}

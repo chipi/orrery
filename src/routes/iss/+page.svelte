@@ -45,11 +45,25 @@
   import { ISS_DOCK_EVENTS, ISS_TRUSS_PHASES } from '$lib/iss-assembly-phases';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
+  import {
+    type RemoteData,
+    loading,
+    success,
+    error as rdError,
+    isSuccess,
+    isError,
+  } from '$lib/types/remote-data';
 
   let container: HTMLDivElement | undefined = $state();
-  let modules: IssModule[] = $state([]);
-  let visitors: IssModule[] = $state([]);
-  let loadFailed = $state(false);
+  // RemoteData migration (#8 / #5 Phase F follow-up). Internal state holds
+  // the discriminated union; legacy field names (modules, visitors,
+  // loadFailed) stay as $derived shims so the ~9 read sites in this
+  // file don't need to be rewritten.
+  let modulesRD = $state<RemoteData<Error, IssModule[]>>(loading());
+  let visitorsRD = $state<RemoteData<Error, IssModule[]>>(loading());
+  const modules = $derived(isSuccess(modulesRD) ? modulesRD.data : ([] as IssModule[]));
+  const visitors = $derived(isSuccess(visitorsRD) ? visitorsRD.data : ([] as IssModule[]));
+  const loadFailed = $derived(isError(modulesRD) || isError(visitorsRD));
   let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
   let selected: IssModule | null = $state(null);
   let panelOpen = $state(false);
@@ -130,17 +144,17 @@
     let cancelled = false;
     void getIssModules(L)
       .then((list) => {
-        if (!cancelled) modules = list;
+        if (!cancelled) modulesRD = success(list);
       })
-      .catch(() => {
-        if (!cancelled) loadFailed = true;
+      .catch((e) => {
+        if (!cancelled) modulesRD = rdError(e instanceof Error ? e : new Error(String(e)));
       });
     void getIssVisitors(L)
       .then((list) => {
-        if (!cancelled) visitors = list;
+        if (!cancelled) visitorsRD = success(list);
       })
-      .catch(() => {
-        if (!cancelled) loadFailed = true;
+      .catch((e) => {
+        if (!cancelled) visitorsRD = rdError(e instanceof Error ? e : new Error(String(e)));
       });
     return () => {
       cancelled = true;

@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-12T21:51:47.410Z",
+  "source_audit": "moon-sites-hero-audit.md",
+  "overrides": {
+    "chandrayaan3": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than chandrayaan3",
+      "approved_at": "2026-06-12"
+    }
+  }
+}

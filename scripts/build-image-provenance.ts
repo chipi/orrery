@@ -2341,6 +2341,98 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
     );
   }
 
+  // Final safety net (#5 Phase 4b / Task C): emit `direct-other` entries
+  // for any on-disk image file that the curated walkers above failed
+  // to enumerate. These are files we know exist + ship + serve to
+  // users, but for which the curated query maps lack an entry. Without
+  // this fallback those files become provenance orphans — fine for the
+  // build, embarrassing for the /credits page.
+  //
+  // Each emitted entry is tagged `curated-no-upstream-record` so it's
+  // obvious in audits + the credits page that the attribution is
+  // best-guess (default per-surface agency, default license fallback).
+  // When a curated query lands later, the next build replaces the
+  // direct-other row with the proper Wikimedia/NASA entry.
+  console.log('Walker fallback (uncovered on-disk files)…');
+  out.push(...(await buildWalkerFallbackEntries(out)));
+
+  return out;
+}
+
+/**
+ * Walk every image file under `static/images/<surface>/...` and emit
+ * a `direct-other` entry for any path not already covered by an entry
+ * in `out`. Variants (.16x9 / .4x3 / .1x1) and dash-naming legacy are
+ * skipped — they're not provenance-worthy on their own (manifest tracks
+ * bases only; Phase 6's prune-orphan-images keeps the tree variant-free
+ * anyway).
+ */
+async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<ProvenanceEntry[]> {
+  const out: ProvenanceEntry[] = [];
+  const covered = new Set(existing.map((e) => e.path));
+  const VARIANT_RE = /\.(16x9|4x3|1x1)\.|-(16x9|4x3|1x1)\./i;
+  const SURFACE_AGENCY_DEFAULT: Record<string, string> = {
+    missions: 'NASA',
+    'fleet-galleries': 'NASA',
+    hotspots: 'NASA',
+    satellites: 'NASA',
+    'moon-sites': 'NASA',
+    'mars-sites': 'NASA',
+    'earth-objects': 'NASA',
+    'iss-modules': 'NASA',
+    'tiangong-modules': 'CNSA',
+    planets: 'NASA',
+    'small-bodies': 'NASA',
+    science: 'NASA',
+    recommendations: 'Wikimedia Commons contributors',
+    rockets: 'NASA',
+    sun: 'NASA',
+  };
+  async function walk(dir: string): Promise<string[]> {
+    const acc: string[] = [];
+    let entries;
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      return acc;
+    }
+    for (const e of entries) {
+      const p = posix.join(dir, e.name);
+      if (e.isDirectory()) acc.push(...(await walk(p)));
+      else if (/\.(jpe?g|png|webp)$/i.test(e.name)) acc.push(p);
+    }
+    return acc;
+  }
+  const allFiles = await walk('static/images');
+  for (const localPath of allFiles) {
+    if (VARIANT_RE.test(localPath)) continue; // skip derivative variants
+    const served = staticToServed(localPath);
+    if (covered.has(served)) continue;
+    const segments = served.split('/');
+    const surface = segments[2] ?? 'unknown';
+    const agency = SURFACE_AGENCY_DEFAULT[surface] ?? 'NASA';
+    const license = defaultLicenseForAgency(agency);
+    const rationale = defaultRationaleForAgency(agency);
+    const idDescriptor = segments.slice(3, -1).join('/') || segments[segments.length - 1];
+    out.push({
+      id: entryId(served),
+      path: served,
+      source_type: 'direct-other',
+      title: `Uncurated panel image — ${surface}/${idDescriptor}`,
+      author: agency,
+      agency,
+      source_url: 'https://commons.wikimedia.org/',
+      image_url: null,
+      license_short: license,
+      license_url: getAllowlistEntry(license)?.url ?? null,
+      license_rationale: rationale,
+      modifications: ['curated-no-upstream-record', 'walker-fallback'],
+      revid: null,
+      pageid: null,
+      nasa_id: null,
+      fetched_at: new Date().toISOString(),
+    });
+  }
   return out;
 }
 

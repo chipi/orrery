@@ -140,6 +140,7 @@
   import { findActiveCislunarPhase } from '$lib/orbital/find-active-cislunar-phase';
   import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
   import { computeCislunarCameraTarget } from '$lib/orbital/cislunar-camera-target';
+  import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -3222,7 +3223,6 @@
     // cinemaForceMoons + lastLayerMoonsOn are declared at the top of
     // onMount alongside the onLayerChange('moons') subscription (TDZ
     // would fire here otherwise — see the comment block there).
-    const HELIO_CLOSEUP_R = 40;
     // Earth return closeup distance. A previous iteration tried 30 to
     // hug Earth more tightly, but that read as "too zoomed in" and
     // the depart-from-Mars pull-out couldn't reach it gracefully —
@@ -3329,18 +3329,6 @@
     /** Peak window — the closest-approach beat. Inside this window
      *  sim-speed gets dilated so the moment stretches in screen time. */
     const FLYBY_PEAK_DAYS = 4;
-    /** Camera distance multiplier vs flyby-body radius for the iconic
-     *  closeup. body.size × this = camR. Pulled back to 5.0 — the
-     *  earlier 2.4 had the camera so close to the body that the
-     *  ship couldn't be pushed toward the camera without its long-
-     *  axis booms crossing the near-clip plane (camera ended up
-     *  INSIDE the spacecraft model and rendered as clipped slivers).
-     *  At 5.0 the planet still fills ~40 % of frame width (40 % wide
-     *  matches the proportions in the Pioneer-Jupiter / Galileo-
-     *  Jupiter reference shots), and there's actual room for the
-     *  ship to sit in foreground space without intersecting the
-     *  camera position. */
-    const FLYBY_BODY_R_MULTIPLIER = 5.0;
     /** Fallback camR if we couldn't resolve the flyby body. */
     const HELIO_FLYBY_R_FALLBACK = 80;
 
@@ -3596,231 +3584,34 @@
       // azimuth so the cruise/approach camT spin resumes.
       saturnOIComposition = false;
       helioFlybyDesiredCamT = null;
-      if (sc.phase === 'pre-launch') {
-        // #86 — opening sequence overrides the prelaunch composition
-        // for the first ~7.5 s. Wide top-down system view mirrors the
-        // epilogue tableau so the mission reads as bookended movie
-        // (title card → context → body → end credits). After the
-        // opening fades, the camera lerps to the Earth-closeup
-        // prelaunch composition for the existing 4 s W3.3 dwell.
-        const inOpeningWide =
-          openingActive &&
-          openingStartedAt > 0 &&
-          performance.now() - openingStartedAt < openingDurationMs - 1000;
-        if (inOpeningWide) {
-          sub = 'opening';
-          const destSize = PLANET_SIZES[activeDestination] ?? 0;
-          const destDistance = Math.hypot(destScene.x, destScene.z);
-          centerX = 0;
-          centerZ = 0;
-          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
-          targetP = 0.35;
-        } else {
-          // Open framed close on Earth at the same zoom level as
-          // Mars-arrival — symmetric "depart / arrive" beats so the
-          // mission reads with a cinematic arc: close on Earth → slow
-          // pull out to wide cruise → slow zoom in on Mars → flyby →
-          // slow pull out → slow zoom in on Earth on return.
-          sub = 'prelaunch';
-          centerX = earthScene.x;
-          centerZ = earthScene.z;
-          targetR = HELIO_EARTH_CLOSEUP_R;
-        }
-      } else if (sc.phase === 'arrived') {
-        // Round-trip missions end at Earth; one-way ends at destination.
-        const endAtEarth = retPts.length > 0;
-        // #82 — once the epilogue tableau is active, override the
-        // arrived close-up framing with a wide Sun-centred top-down
-        // composition that contains the whole mission trajectory.
-        // sub === 'epilogue' (not 'arrived') so the sub-phase
-        // transition flips helioAutoZoomActive=true and the fast
-        // LERP engages — without that the camera drifts at the slow
-        // TRACK rate (0.006) and the zoom-out takes 30+ seconds to
-        // converge instead of registering as a deliberate "pull out
-        // to mission overview" beat.
-        if (epilogueActive) {
-          sub = 'epilogue';
-          const destSize = PLANET_SIZES[activeDestination] ?? 0;
-          centerX = 0;
-          centerZ = 0;
-          // EXACT bookend with the opening tableau — same multiplier
-          // (1.4×), same Sun-centered framing, same near-top-down
-          // tilt. Earlier I bumped 1.4 → 1.7 thinking wider was more
-          // dramatic, but Marko's feedback "we want the end to look
-          // like start" means the two compositions must MATCH so the
-          // mission reads as a true bookended movie. With 1.4× the
-          // Sun appears at the same apparent size in both shots and
-          // the trajectory fits the frame identically.
-          const destDistance = Math.hypot(destScene.x, destScene.z);
-          targetR = Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0));
-          targetP = 0.35; // near-top-down, slight oblique
-        } else if (endAtEarth) {
-          sub = 'arrived';
-          centerX = earthScene.x;
-          centerZ = earthScene.z;
-          targetR = HELIO_EARTH_CLOSEUP_R;
-        } else {
-          sub = 'arrived';
-          // One-way mission arriving at the destination — Cassini at
-          // Saturn, Galileo at Jupiter, Juno at Jupiter, Voyager Grand
-          // Tour etc. Pre-polish-wave-2 this targeted destScene at
-          // HELIO_CLOSEUP_R, which framed the planet alone with the
-          // spacecraft sitting AT the centre — read as "crashed into
-          // the planet" because the ship disappeared behind the body.
-          //
-          // Keep the iconic-photo composition that the flyby cinema
-          // built up to: bias the camera target 65% toward the ship,
-          // size the camera distance off the destination body radius.
-          // The ship's final waypoint sits slightly above the body in
-          // scene space (the spline +y offset for arrival), so this
-          // composition reads as "in orbit / docked" — the spacecraft
-          // hangs in foreground with the body filling one half of frame
-          // behind it. Matches the Cassini Grand Finale illustration
-          // grammar (Wernquist's "the mission ends here, but here is
-          // composed").
-          const destSize = PLANET_SIZES[activeDestination] ?? 0;
-          if (destSize > 0) {
-            centerX = destScene.x * 0.35 + scScene.x * 0.65;
-            centerZ = destScene.z * 0.35 + scScene.z * 0.65;
-            targetR = destSize * FLYBY_BODY_R_MULTIPLIER;
-          } else {
-            centerX = destScene.x;
-            centerZ = destScene.z;
-            targetR = HELIO_CLOSEUP_R;
-          }
-        }
-        // Skip the approach-pitch override when the epilogue is
-        // controlling targetP — it already set targetP=0.35 for the
-        // top-down framing.
-        if (!epilogueActive) {
-          targetP = HELIO_APPROACH_P;
-        }
-      } else if (sc.phase === 'outbound') {
-        const t = sc.progress * 2; // 0→1 across outbound
-        if (t < 0.05) {
-          // Depart — track the spacecraft (not Earth) at the closeup
-          // zoom. Anchoring on Earth-at-dep made the camera read as
-          // "following Earth" while the ship was already accelerating
-          // away. Centering on the ship keeps the cinematic feel of
-          // "watching the launch" while the camera actually moves
-          // with the spacecraft.
-          sub = 'depart';
-          centerX = scScene.x;
-          centerZ = scScene.z;
-          targetR = HELIO_EARTH_CLOSEUP_R;
-        } else if (t > 0.8) {
-          // Approach — choreographed sequence across the last 20 % of
-          // outbound. The audience sees: WIDE establishing pull-out
-          // (ship + destination both in frame, trajectory visible) →
-          // slow push-in following the ship, with the camera rotating
-          // around it → LIMB-GRAZING close composition as we hand off
-          // to the OI / flyby cinema. Local progress (approachLocal)
-          // 0..1 across the window drives the framing lerp; the camT
-          // rotation rate also scales up during this window (see
-          // animate() — search `inApproachWindow`) so the camera
-          // visibly arcs around the target while it pushes in.
-          //
-          // Pre-fix history: first this centered on destScene only
-          // (planet zoomed in, ship invisible). Then biased 65 % to
-          // ship (Saturn-class missions: planet off-frame entirely).
-          // Then static midpoint framing (better, but no motion → felt
-          // dead). The choreographed lerp is the third pass and is
-          // the composition that reads as a CINEMATIC approach rather
-          // than a static frame.
-          sub = 'approach';
-          const approachLocal = Math.max(0, Math.min(1, (t - 0.8) / 0.2));
-          const destSize = PLANET_SIZES[activeDestination] ?? 0;
-          const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
-          // Ship-biased framing through the entire approach window —
-          // user-reported "camera loses ship in last segment, only
-          // last 5-10s look good." Previous code shrank camR toward
-          // closeR (= destSize × 3.5, tiny) and shifted center toward
-          // dest-biased 55/45 long before the flyby cinema took over,
-          // so the ship visibly slid out of frame for most of the
-          // approach. Now we hold the ship-biased 70/30 + 0.85× dist
-          // framing (same as cruise-out) throughout; the flyby cinema
-          // (±90 days around peak) takes over for the iconic closeup.
-          centerX = scScene.x * 0.7 + destScene.x * 0.3;
-          centerZ = scScene.z * 0.7 + destScene.z * 0.3;
-          targetR = Math.max(140, shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80));
-          targetP = HELIO_APPROACH_P;
-          // Reference approachLocal so it isn't unused (kept for
-          // future per-stage tweaks like pitch breathing).
-          void approachLocal;
-        } else {
-          // Ship+destination cruise framing. Pre-fix history: the cruise
-          // sub-phase used to centre on `scScene * 0.7` (70 % of the
-          // way from Sun to ship) with a camR sized to the ship's
-          // heliocentric distance. For Cassini's post-Jupiter cruise
-          // that put the camera target somewhere between Sun and ship
-          // — nowhere near Saturn — and camR grew to ~1000 scene units
-          // as ship-to-sun distance crossed 8 AU. Result: post-Jupiter
-          // user saw a wide solar-system overview with Cassini as a
-          // sub-pixel speck and Saturn entirely outside the frame.
-          //
-          // New framing centres on the MIDPOINT of ship + destination,
-          // with camR sized to the ship-to-dest distance (plus a body-
-          // radius margin). As Cassini closes on Saturn the midpoint
-          // tracks between them and camR naturally shrinks. The
-          // transition into the 'approach' sub-phase at t=0.8 is
-          // seamless because both branches now use the same midpoint
-          // + distance-based sizing pattern. Cinematic breathing /
-          // arc rotation layer on top (see cruise-motion block in
-          // animate()).
-          sub = 'cruise-out';
-          const destSize = PLANET_SIZES[activeDestination] ?? 0;
-          const shipToDestDist = Math.hypot(scScene.x - destScene.x, scScene.z - destScene.z);
-          // Ship-biased framing (70/30) instead of pure midpoint —
-          // pure midpoint put the ship right at the frame edge and
-          // any orbital curvature pushed it off-screen on long
-          // cruise stretches (user-reported "ship lost out of
-          // camera"). Weighting toward the ship keeps the
-          // spacecraft as the hero in frame; the destination remains
-          // visible at the edge as the target on the horizon.
-          centerX = scScene.x * 0.7 + destScene.x * 0.3;
-          centerZ = scScene.z * 0.7 + destScene.z * 0.3;
-          // Widened multiplier (0.6 → 0.85) compensates so the
-          // destination doesn't get clipped now that the camera
-          // target sits closer to the ship. Floor at 140 still
-          // prevents the camera from getting too tight on
-          // mid-Venus-loop scenarios.
-          targetR = Math.max(140, shipToDestDist * 0.85 + (destSize > 0 ? destSize * 4 : 80));
-        }
-      } else {
-        // return
-        const t = (sc.progress - 0.5) * 2; // 0→1 across return
-        if (t < 0.05) {
-          // Depart-return — track the spacecraft as it leaves Mars,
-          // not Mars itself. Anchoring on Mars made the ship exit
-          // frame quickly as it accelerated away on the return arc
-          // (Mars stays put, ship moves). Following the ship keeps
-          // it centred while Mars drifts off naturally.
-          sub = 'depart-return';
-          centerX = scScene.x;
-          centerZ = scScene.z;
-          targetR = HELIO_CLOSEUP_R;
-        } else if (t > 0.9) {
-          // Approach-earth engages later (0.9 vs 0.8) so the camera
-          // doesn't snap to Earth too early — the closer trigger
-          // gives the final stretch of cruise more time to read
-          // before the zoom-in begins.
-          sub = 'approach-earth';
-          centerX = earthScene.x;
-          centerZ = earthScene.z;
-          targetR = HELIO_EARTH_CLOSEUP_R;
-          targetP = HELIO_APPROACH_P;
-        } else {
-          // Same ship+destination midpoint framing as cruise-out, but
-          // for the inbound leg the "destination" is Earth (the
-          // mission is returning home), so the camera tracks ship +
-          // Earth and naturally tightens as Earth grows in frame.
-          sub = 'cruise-back';
-          const shipToEarthDist = Math.hypot(scScene.x - earthScene.x, scScene.z - earthScene.z);
-          centerX = (scScene.x + earthScene.x) * 0.5;
-          centerZ = (scScene.z + earthScene.z) * 0.5;
-          targetR = Math.max(140, shipToEarthDist * 0.6 + R_EARTH_AU * SCALE_3D * 4 + 30);
-        }
-      }
+      // Non-flyby sub-phase frame (opening / prelaunch / cruise-out /
+      // approach / depart / arrived / epilogue / cruise-back /
+      // depart-return / approach-earth) — pure compute lives in
+      // $lib/orbital/helio-non-flyby-frame. Caller still owns the
+      // sub-phase transition + helioAutoZoomActive mutation below.
+      const inOpeningWide =
+        sc.phase === 'pre-launch' &&
+        openingActive &&
+        openingStartedAt > 0 &&
+        performance.now() - openingStartedAt < openingDurationMs - 1000;
+      const frame = computeHelioNonFlybyFrame({
+        phase: sc.phase,
+        progress: sc.progress,
+        scScene,
+        destScene,
+        earthScene,
+        epilogueActive,
+        endAtEarth: retPts.length > 0,
+        destSize: PLANET_SIZES[activeDestination] ?? 0,
+        inOpeningWide,
+        rEarthAu: R_EARTH_AU,
+        scale3d: SCALE_3D,
+      });
+      sub = frame.sub;
+      centerX = frame.centerX;
+      centerZ = frame.centerZ;
+      targetR = frame.targetR;
+      targetP = frame.targetP;
       if (sub !== lastHelioSubPhase) {
         const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;
         lastHelioSubPhase = sub;

@@ -1847,8 +1847,7 @@
     // / JUICE / Orrery Demo etc. — labeled events get timeline buttons
     // automatically; unlabeled ones don't). Mirrors __flyDebug's DEV gate.
     if (import.meta.env.DEV) {
-      (window as Window & { __flyJumpToMet?: (met: number) => void }).__flyJumpToMet =
-        jumpToMet;
+      (window as Window & { __flyJumpToMet?: (met: number) => void }).__flyJumpToMet = jumpToMet;
     }
 
     // Single registry for every listener + disposable this scene
@@ -5263,9 +5262,7 @@
         const activeFlybyEvtForHold = mission.flight?.events?.find(
           (e) => e.met_days === currentFrameFlybyMet,
         );
-        const isEarthHold = (activeFlybyEvtForHold?.label ?? '')
-          .toLowerCase()
-          .includes('earth');
+        const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
         const armStep = computePeakHoldArmStep(cine, {
           currentFrameFlybyMet,
           simDay,

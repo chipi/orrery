@@ -75,12 +75,7 @@ describe('classifyShot — ICONIC verdict at default PLANET_COMPOSITION', () => 
         peakMet,
       });
       expect(plan, `planFlybyShot returned null for ${planetId}`).not.toBeNull();
-      const quality = classifyShot(
-        plan!,
-        { x: 0, y: 0, z: 0 },
-        planetRadius,
-        SHIP_VISIBLE_RADIUS,
-      );
+      const quality = classifyShot(plan!, { x: 0, y: 0, z: 0 }, planetRadius, SHIP_VISIBLE_RADIUS);
       // Detailed failure context: which classifier check tripped.
       const failureReasons = {
         shipBehindPlanet: quality.shipBehindPlanet,

@@ -277,7 +277,9 @@ describe('computePeakHoldArmStep — arm / reset round-trip', () => {
     expect(out.armed).toBe(true);
     expect(out.newArmedForFlybyMet).toBe(193);
     expect(out.newPeakHoldUntil).toBe(baseInputs.now + 2500); // default hold
-    expect(out.newAfterglowUntil).toBe(baseInputs.now + 2500 + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS);
+    expect(out.newAfterglowUntil).toBe(
+      baseInputs.now + 2500 + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS,
+    );
   });
 
   it('uses the 4000 ms hold on Earth flybys', () => {

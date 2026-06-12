@@ -398,8 +398,7 @@ export function computePeakHoldArmStep(
       const holdMs = inputs.isEarthFlyby ? earthHoldMs : defaultHoldMs;
       result.newPeakHoldUntil = inputs.now + holdMs;
       result.newArmedForFlybyMet = inputs.currentFrameFlybyMet;
-      result.newAfterglowUntil =
-        inputs.now + holdMs + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
+      result.newAfterglowUntil = inputs.now + holdMs + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS;
       result.armed = true;
     }
   }

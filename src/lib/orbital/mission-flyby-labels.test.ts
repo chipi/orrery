@@ -120,7 +120,10 @@ describe('mission flyby-label corpus', () => {
         });
       }
     }
-    expect(unresolved, `Labels that don't resolve to a planet:\n${JSON.stringify(unresolved, null, 2)}`).toEqual([]);
+    expect(
+      unresolved,
+      `Labels that don't resolve to a planet:\n${JSON.stringify(unresolved, null, 2)}`,
+    ).toEqual([]);
   });
 
   it('every multi-target FLYBY event has a label (edl_or_oi at destination is exempt)', () => {
@@ -152,6 +155,8 @@ describe('mission flyby-label corpus', () => {
         }
       }
     }
-    expect(missing, `Flyby events without labels:\n${JSON.stringify(missing, null, 2)}`).toEqual([]);
+    expect(missing, `Flyby events without labels:\n${JSON.stringify(missing, null, 2)}`).toEqual(
+      [],
+    );
   });
 });

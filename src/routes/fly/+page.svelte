@@ -133,6 +133,7 @@
   } from '$lib/orbital/find-flyby-planet';
   import { computeIconicFrame } from '$lib/orbital/iconic-frame';
   import { predictShipPosAtMet } from '$lib/orbital/predict-ship-pos';
+  import { findApsidesIndices } from '$lib/orbital/find-apsides';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
@@ -2716,35 +2717,17 @@
     scene.add(apoMarker);
 
     function recomputeApsides() {
-      if (outPts.length < 3) return;
-      // Heliocentric trips (Mars / outer planets): min/max distance
-      // measured from the Sun at origin. Cislunar trips: both endpoints
-      // are at ~1 AU from the Sun so Sun-relative apsides collapse to
-      // a single point. Measure Earth-relative instead — perigee =
-      // closest approach to Earth, apogee = farthest from Earth — which
-      // is the cislunar physicist's apsides anyway.
+      // Heliocentric trips: centre = Sun at (0,0). Cislunar: centre =
+      // Earth at its current heliocentric xz (Sun-relative apsides
+      // collapse when both endpoints are at ~1 AU). The pure index-
+      // finder lives in $lib/orbital/find-apsides; this closure just
+      // wires the THREE.js marker positions to the result.
       const centreX = isMoonMission ? earthPos(simDay).x : 0;
       const centreZ = isMoonMission ? earthPos(simDay).z : 0;
-      let minR2 = Infinity;
-      let maxR2 = -Infinity;
-      let minIdx = 0;
-      let maxIdx = 0;
-      for (let i = 0; i < outPts.length; i++) {
-        const p = outPts[i];
-        const dx = p.x - centreX;
-        const dz = p.z - centreZ;
-        const r2 = dx * dx + dz * dz;
-        if (r2 < minR2) {
-          minR2 = r2;
-          minIdx = i;
-        }
-        if (r2 > maxR2) {
-          maxR2 = r2;
-          maxIdx = i;
-        }
-      }
-      const peri = outPts[minIdx];
-      const apo = outPts[maxIdx];
+      const apsides = findApsidesIndices(outPts, centreX, centreZ);
+      if (!apsides) return;
+      const peri = outPts[apsides.periIdx];
+      const apo = outPts[apsides.apoIdx];
       periMarker.position.set(peri.x * SCALE_3D, 0, peri.z * SCALE_3D);
       apoMarker.position.set(apo.x * SCALE_3D, 0, apo.z * SCALE_3D);
     }

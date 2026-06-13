@@ -58,7 +58,7 @@ describe('planCislunarHeroShot', () => {
     const plan = planCislunarHeroShot({ ...baseCtx, eventType: 'loi' });
     expect(plan?.iconicMet).toBe(3.13);
     const planAscent = planCislunarHeroShot({ ...baseCtx, eventType: 'ascent', peakMet: 4.34 });
-    expect(planAscent?.iconicMet).toBe(4.34 - (-0.1));
+    expect(planAscent?.iconicMet).toBe(4.34 - -0.1);
   });
 
   it('positions the camera ~camRMultiplier × R_MOON_KM from the Moon centre', () => {
@@ -107,8 +107,7 @@ describe('planCislunarHeroShot', () => {
     // shipPosAtMet returns data at the iconic moment but not 0.05d earlier
     const plan = planCislunarHeroShot({
       ...baseCtx,
-      shipPosAtMet: (met) =>
-        met >= baseCtx.peakMet ? shipPosAtMet(met) : null,
+      shipPosAtMet: (met) => (met >= baseCtx.peakMet ? shipPosAtMet(met) : null),
     });
     expect(plan).toBeNull();
   });
@@ -141,11 +140,7 @@ describe('findActiveCislunarHero', () => {
   });
 
   it('disengages after HERO_DEPART_DAYS past the event', () => {
-    const active = findActiveCislunarHero(
-      events,
-      depDay + 3.13 + HERO_DEPART_DAYS + 0.01,
-      depDay,
-    );
+    const active = findActiveCislunarHero(events, depDay + 3.13 + HERO_DEPART_DAYS + 0.01, depDay);
     expect(active).toBeNull();
   });
 

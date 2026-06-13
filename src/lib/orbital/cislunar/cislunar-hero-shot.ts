@@ -171,10 +171,7 @@ export function planCislunarHeroShot(ctx: CislunarHeroContext): CislunarHeroShot
   const mag = Math.hypot(dx, dz);
   // Degenerate case — ship hasn't moved enough in xz. Fall back to a
   // canonical "approach from -z" so the camera still composes.
-  const approachUnit =
-    mag > 1e-6
-      ? { x: dx / mag, z: dz / mag }
-      : { x: 0, z: 1 };
+  const approachUnit = mag > 1e-6 ? { x: dx / mag, z: dz / mag } : { x: 0, z: 1 };
   // Perpendicular in xz, CCW around +y.
   const perpUnit = { x: -approachUnit.z, z: approachUnit.x };
 
@@ -185,13 +182,9 @@ export function planCislunarHeroShot(ctx: CislunarHeroContext): CislunarHeroShot
   const sinS = Math.sin(composition.sideAngleRad);
 
   const cameraPos: Vec3 = {
-    x:
-      ctx.moonPos.x +
-      (-approachUnit.x * cosP * cosS + perpUnit.x * cosP * sinS) * camDist,
+    x: ctx.moonPos.x + (-approachUnit.x * cosP * cosS + perpUnit.x * cosP * sinS) * camDist,
     y: ctx.moonPos.y + sinP * camDist,
-    z:
-      ctx.moonPos.z +
-      (-approachUnit.z * cosP * cosS + perpUnit.z * cosP * sinS) * camDist,
+    z: ctx.moonPos.z + (-approachUnit.z * cosP * cosS + perpUnit.z * cosP * sinS) * camDist,
   };
 
   const t = composition.targetBias;
@@ -237,13 +230,7 @@ export function findActiveCislunarHero(
 ): ActiveCislunarHero | null {
   for (const e of events) {
     const t = e.type;
-    if (
-      t !== 'loi' &&
-      t !== 'tei' &&
-      t !== 'descent_start' &&
-      t !== 'ascent'
-    )
-      continue;
+    if (t !== 'loi' && t !== 'tei' && t !== 'descent_start' && t !== 'ascent') continue;
     if (e.met_days == null) continue;
     const eventSimDay = depDay + e.met_days;
     const delta = simDay - eventSimDay;

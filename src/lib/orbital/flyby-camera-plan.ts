@@ -247,8 +247,30 @@ export function planFlybyShot(ctx: FlybyContext): IconicShotPlan | null {
   const approachZ = velZ / velMag;
   // Perpendicular to approach in xz, rotated +90° CCW around +y:
   //   (vx, _, vz) rotated 90° CCW → (-vz, _, vx)
-  const perpX = -approachZ;
-  const perpZ = approachX;
+  let perpX = -approachZ;
+  let perpZ = approachX;
+  // Sun-lit-side bias: at side-angle 85° the camera sits almost
+  // entirely on the perp axis, so the angle α between perp and the
+  // sun-from-planet vector decides how much lit hemisphere ends up
+  // facing camera (α=0° → 100% lit disc, α=90° → terminator-grazing,
+  // α=180° → 100% night disc with only a thin lit limb). Pre-fix
+  // V2 Jupiter showed α≈170° → ugly thin-lit-limb shot. But V2 Uranus
+  // showed α≈80° → iconic terminator composition (the actual Voyager
+  // 2 Uranus photograph). We want to flip ONLY when α is DEEP into
+  // the night side, not just past terminator. Threshold cos(α) < -0.7
+  // corresponds to α > 134°, which catches Jupiter-style "thin-limb"
+  // framings while preserving terminator-grazing shots like Voyager
+  // 2 Uranus (α≈80°) and Cassini Saturn (varies by approach).
+  const sunDist = Math.hypot(ctx.planetPos.x, ctx.planetPos.z);
+  if (sunDist > 1e-6) {
+    const sunDirX = -ctx.planetPos.x / sunDist;
+    const sunDirZ = -ctx.planetPos.z / sunDist;
+    const cosAlpha = perpX * sunDirX + perpZ * sunDirZ;
+    if (cosAlpha < -0.7) {
+      perpX = -perpX;
+      perpZ = -perpZ;
+    }
+  }
 
   const camDist = ctx.planetRadius * composition.camRMultiplier;
   const cosPitch = Math.cos(composition.pitchRad);

@@ -15,7 +15,15 @@
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
-  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
+  import {
+    resolveQualitySync,
+    kickOffBackgroundDetect,
+    resolveQualitySource,
+    type QualityConfig,
+  } from '$lib/quality/quality-tier';
+  import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import type { QualitySource } from '$lib/components/debug-panel-context';
+  import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
@@ -54,6 +62,13 @@
   } from '$lib/types/remote-data';
 
   let container: HTMLDivElement | undefined = $state();
+
+  // DebugPanel "Rendering" tab bridge (#334).
+  let liveRenderer: THREE.WebGLRenderer | null = $state(null);
+  let liveQuality: QualityConfig | null = $state(null);
+  let liveQualitySource: QualitySource = $state('fallback');
+  let liveBloomPass: UnrealBloomPass | null = $state(null);
+
   // RemoteData migration (#8). Internal state holds the discriminated
   // union; the legacy field names stay as $derived shims so read sites
   // don't need to be rewritten.
@@ -575,7 +590,7 @@
     controls.minDistance = initialDistance * 0.6;
     controls.maxDistance = initialDistance * 3;
 
-    const { composer, outlinePass } = createOutlinePassSetup({
+    const { composer, outlinePass, bloomPass } = createOutlinePassSetup({
       renderer,
       scene,
       camera,
@@ -595,6 +610,11 @@
           }
         : null,
     });
+    // DebugPanel bridge (#334).
+    liveRenderer = renderer;
+    liveQuality = quality;
+    liveQualitySource = resolveQualitySource(url);
+    liveBloomPass = bloomPass;
 
     // HemisphereLight for proper terminator contrast — matches the
     // ISS scene and the /fly helio scene's lighting model.
@@ -1077,6 +1097,15 @@
 </script>
 
 <svelte:head><title>{m.tiangong_page_title()}</title></svelte:head>
+
+{#if liveRenderer && liveQuality}
+  <RenderingDebugRegistrar
+    renderer={liveRenderer}
+    quality={liveQuality}
+    qualitySource={liveQualitySource}
+    bloomPass={liveBloomPass}
+  />
+{/if}
 
 <div class="tiangong-root">
   {#if loadFailed}

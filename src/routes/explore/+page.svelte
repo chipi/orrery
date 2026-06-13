@@ -6,10 +6,17 @@
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
-  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
+  import {
+    resolveQualitySync,
+    kickOffBackgroundDetect,
+    resolveQualitySource,
+    type QualityConfig,
+  } from '$lib/quality/quality-tier';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+  import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import type { QualitySource } from '$lib/components/debug-panel-context';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
@@ -1019,6 +1026,13 @@
   let overlayMission: Mission | null = $state(null);
   let overlayArcPx: { x: number; z: number }[] = $state([]);
   let overlayArrivalPx: { x: number; z: number } | null = $state(null);
+
+  // DebugPanel "Rendering" tab bridge (#334). Filled in onMount after
+  // the renderer + composer + bloom pass are built; null until then.
+  let liveRenderer: THREE.WebGLRenderer | null = $state(null);
+  let liveQuality: QualityConfig | null = $state(null);
+  let liveQualitySource: QualitySource = $state('fallback');
+  let liveBloomPass: UnrealBloomPass | null = $state(null);
   $effect(() => {
     const id = $page.url.searchParams.get('mission');
     if (!id) {
@@ -1566,6 +1580,13 @@
       );
       composer.addPass(bloomPass);
     }
+
+    // Expose to the DebugPanel "Rendering" tab (#334) — the template-
+    // mounted <RenderingDebugRegistrar> picks these up reactively.
+    liveRenderer = renderer;
+    liveQuality = quality;
+    liveQualitySource = resolveQualitySource(url);
+    liveBloomPass = bloomPass;
 
     // Belt geometry helper — fills a Float32 position buffer with `count`
     // particles uniformly distributed across an annulus between `inner`
@@ -4403,6 +4424,15 @@
 </script>
 
 <svelte:head><title>{m.explore_page_title()}</title></svelte:head>
+
+{#if liveRenderer && liveQuality}
+  <RenderingDebugRegistrar
+    renderer={liveRenderer}
+    quality={liveQuality}
+    qualitySource={liveQualitySource}
+    bloomPass={liveBloomPass}
+  />
+{/if}
 
 <div class="explore" data-audio-stage="explore-scene">
   <div

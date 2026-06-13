@@ -37,7 +37,22 @@ import {
  * @returns speed in km/s
  */
 export function heliocentricSpeed(rAu: number, aTransferAu: number): number {
-  return Math.sqrt(MU_SUN_AU3_YR2 * (2 / rAu - 1 / aTransferAu)) * AU_PER_YR_TO_KMS;
+  if (rAu <= 0) return 0;
+  const radicand = 2 / rAu - 1 / aTransferAu;
+  if (!Number.isFinite(radicand) || radicand <= 0) {
+    // Spacecraft is OUTSIDE the transfer ellipse's apohelion (or the
+    // transfer SMA is undefined). Real /fly case: Voyager 2 at Neptune
+    // (r ≈ 30 AU) against the hardcoded Earth-Mars Hohmann SMA (1.262 AU)
+    // — radicand = 2/30 − 1/1.262 = −0.726 → sqrt produces NaN and the
+    // HUD reads "NaN km/s". Fall back to the CIRCULAR-orbit speed at
+    // the spacecraft's current heliocentric radius: v = √(µ/r). That's
+    // a finite + physically meaningful stylised value (at Neptune it's
+    // 5.43 km/s, which IS Neptune's mean orbital speed — coincidentally
+    // sensible for any outer-system flyby observer). Beats the NaN UX
+    // and preserves the "stylised, not simulator" framing of the HUD.
+    return Math.sqrt(MU_SUN_AU3_YR2 / rAu) * AU_PER_YR_TO_KMS;
+  }
+  return Math.sqrt(MU_SUN_AU3_YR2 * radicand) * AU_PER_YR_TO_KMS;
 }
 
 // ─── Distance helpers ───────────────────────────────────────────────

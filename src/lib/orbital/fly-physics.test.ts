@@ -32,6 +32,21 @@ describe('heliocentricSpeed (vis-viva)', () => {
   it('Hohmann perihelion (a=1.262, r=1.0) ≈ 32.73 km/s (Curtis §6.2)', () => {
     expectCloseTo(heliocentricSpeed(1.0, 1.262), 32.73, 0.05, 'Hohmann perihelion');
   });
+
+  // Follow-up 2 — guard against NaN when the spacecraft is outside
+  // the transfer ellipse's apohelion (e.g. Voyager 2 at Neptune
+  // against the hardcoded Earth-Mars Hohmann SMA 1.262 AU).
+  it('falls back to circular speed when r is beyond the transfer apohelion', () => {
+    // Voyager 2 at Neptune (~30 AU) — pre-fix returns NaN; post-fix
+    // returns Neptune's circular speed (5.43 km/s).
+    const v = heliocentricSpeed(30, 1.262);
+    expect(Number.isFinite(v)).toBe(true);
+    expectCloseTo(v, 5.43, 0.1, 'Neptune circular speed fallback');
+  });
+
+  it('returns 0 (not NaN) when r is at the Sun (r=0)', () => {
+    expect(heliocentricSpeed(0, 1.262)).toBe(0);
+  });
 });
 
 describe('distanceBetween', () => {

@@ -21,8 +21,10 @@
     kickOffBackgroundDetect,
     resolveQualitySource,
     type QualityConfig,
+    type QualityTier,
   } from '$lib/quality/quality-tier';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
@@ -69,6 +71,8 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  // QualitySettingsModal bridge (#339).
+  let activeQualityTier: QualityTier = $state('medium');
   // RemoteData migration (#8 / #5 Phase F follow-up). Internal state holds
   // the discriminated union; legacy field names (modules, visitors,
   // loadFailed) stay as $derived shims so the ~9 read sites in this
@@ -639,6 +643,7 @@
     liveQuality = quality;
     liveQualitySource = resolveQualitySource(url);
     liveBloomPass = bloomPass;
+    activeQualityTier = quality.tier;
 
     // HemisphereLight gives a proper sky/ground contrast for the
     // terminator — sun-lit surfaces lean warm, shadowed surfaces sink
@@ -1154,6 +1159,7 @@
     bloomPass={liveBloomPass}
   />
 {/if}
+<QualitySettingsModal {activeQualityTier} />
 
 <div class="iss-root">
   {#if loadFailed}

@@ -20,8 +20,10 @@
     kickOffBackgroundDetect,
     resolveQualitySource,
     type QualityConfig,
+    type QualityTier,
   } from '$lib/quality/quality-tier';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
@@ -68,6 +70,8 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  // QualitySettingsModal bridge (#339).
+  let activeQualityTier: QualityTier = $state('medium');
 
   // RemoteData migration (#8). Internal state holds the discriminated
   // union; the legacy field names stay as $derived shims so read sites
@@ -615,6 +619,7 @@
     liveQuality = quality;
     liveQualitySource = resolveQualitySource(url);
     liveBloomPass = bloomPass;
+    activeQualityTier = quality.tier;
 
     // HemisphereLight for proper terminator contrast — matches the
     // ISS scene and the /fly helio scene's lighting model.
@@ -1106,6 +1111,7 @@
     bloomPass={liveBloomPass}
   />
 {/if}
+<QualitySettingsModal {activeQualityTier} />
 
 <div class="tiangong-root">
   {#if loadFailed}

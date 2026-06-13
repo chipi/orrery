@@ -11,11 +11,13 @@
     kickOffBackgroundDetect,
     resolveQualitySource,
     type QualityConfig,
+    type QualityTier,
   } from '$lib/quality/quality-tier';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { createAnimateLoop } from '$lib/three/animate-loop';
@@ -1033,6 +1035,9 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  // QualitySettingsModal bridge (#339). Shown from first paint with a
+  // 'medium' default; onMount updates it to the actually-resolved tier.
+  let activeQualityTier: QualityTier = $state('medium');
   $effect(() => {
     const id = $page.url.searchParams.get('mission');
     if (!id) {
@@ -1587,6 +1592,7 @@
     liveQuality = quality;
     liveQualitySource = resolveQualitySource(url);
     liveBloomPass = bloomPass;
+    activeQualityTier = quality.tier;
 
     // Belt geometry helper — fills a Float32 position buffer with `count`
     // particles uniformly distributed across an annulus between `inner`
@@ -4433,6 +4439,7 @@
     bloomPass={liveBloomPass}
   />
 {/if}
+<QualitySettingsModal {activeQualityTier} />
 
 <div class="explore" data-audio-stage="explore-scene">
   <div

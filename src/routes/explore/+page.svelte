@@ -4,8 +4,12 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { createStarField } from '$lib/three/star-field';
+  import { createLayeredStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { resolveQualitySync, kickOffBackgroundDetect } from '$lib/quality/quality-tier';
+  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+  import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
@@ -1405,6 +1409,19 @@
       8000,
     );
     const renderer = createSceneRenderer(container);
+    // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
+    // medium fallback). Sync resolver so the scene builds without
+    // awaiting the GPU benchmark; the background detect updates the
+    // cache for the next visit. See lib/quality/quality-tier.ts.
+    const url = new URL(window.location.href);
+    const quality = resolveQualitySync(url);
+    void kickOffBackgroundDetect();
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
+    // ACES filmic tone mapping — HDR Sun → SDR roll-off so bright
+    // highlights (bloomed Sun + lit planet sides) don't clip to flat
+    // white. Matches the /fly helio scene's stack (#322).
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.1;
     // PRD-023 Slice A — enable shadow maps for Saturn's ring-shadow
     // effect. PCFSoftShadowMap is the cheap default; we scope the
     // perf cost by setting castShadow only on the ring mesh and
@@ -1423,7 +1440,13 @@
     sunLight.shadow.camera.near = 0.1;
     sunLight.shadow.bias = -0.001;
     scene.add(sunLight);
-    scene.add(new THREE.AmbientLight(0x111133, 0.8));
+    // HemisphereLight replaces the prior AmbientLight(0x111133, 0.8) —
+    // ambient at 0.8 was flattening shadow contrast (the #1 amateur-CG
+    // tell per the shot-language guide). Hemisphere at 0.08 keeps the
+    // shadow side legible without erasing the single-Sun direction.
+    // Sky-side faint deep-space tint; ground-side near-black so the
+    // underside doesn't pick up an unphysical glow.
+    scene.add(new THREE.HemisphereLight(0x08101a, 0x000000, 0.08));
     const fill = new THREE.DirectionalLight(0x223366, 0.3);
     fill.position.set(-200, 100, -200);
     scene.add(fill);
@@ -1507,9 +1530,42 @@
       );
     }
 
+    // Layered cinematic star field — dim background + bright sparkle +
+    // Milky Way band, counts gated by quality tier so low-end devices
+    // render fewer points. Shared with /fly + /iss + /tiangong; shell
+    // radius matches /explore's wide stellar outer shell.
     scene.add(
-      createStarField({ count: 3000, radius: 3000, jitter: 1000, size: 1.2, opacity: 0.7 }),
+      createLayeredStarField({
+        counts: {
+          dim: quality.starsDim,
+          bright: quality.starsBright,
+          milkyWay: quality.starsMilkyWay,
+        },
+        shellRadius: 3000,
+      }),
     );
+
+    // Post-processing — EffectComposer + RenderPass + (optional)
+    // UnrealBloomPass. Bloom is tier-gated (medium+) so minimal/low
+    // skips the extra blit on weaker GPUs. Sun glow is the marquee
+    // beneficiary (already textured emissive — bloom amplifies it
+    // without changing the underlying material). Selection halo +
+    // material-based outline still work because the composer just
+    // wraps the same scene.render call.
+    const composer = new EffectComposer(renderer);
+    composer.setSize(container.clientWidth, container.clientHeight);
+    composer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
+    composer.addPass(new RenderPass(scene, camera));
+    let bloomPass: UnrealBloomPass | null = null;
+    if (quality.bloomEnabled) {
+      bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(container.clientWidth, container.clientHeight),
+        quality.bloomStrength,
+        quality.bloomRadius,
+        quality.bloomThreshold,
+      );
+      composer.addPass(bloomPass);
+    }
 
     // Belt geometry helper — fills a Float32 position buffer with `count`
     // particles uniformly distributed across an annulus between `inner`
@@ -3922,6 +3978,8 @@
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      composer.setSize(container.clientWidth, container.clientHeight);
+      bloomPass?.setSize(container.clientWidth, container.clientHeight);
       resize2d();
       // Iconic trajectories use Line2 with screen-pixel-aware
       // LineMaterial — push the new resolution so the stroke width
@@ -4286,7 +4344,7 @@
             selHalo.visible = false;
           }
 
-          renderer.render(scene, camera);
+          composer.render();
         } else {
           draw2d();
         }
@@ -4325,6 +4383,7 @@
         obj.lod?.tex4k?.dispose();
       }
     });
+    lifecycle.add(() => bloomPass?.dispose());
     lifecycle.add(() => renderer.dispose());
     lifecycle.add(() => el3d.remove());
 

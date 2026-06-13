@@ -62,17 +62,21 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K",
+        "description": "Baikonur Cosmodrome, 1984-12-15. Soviet dual-target mission — \"Vega\" combines VEnera + GAlley (Halley) in Russian transliteration. Two identical spacecraft (Vega 1 + 2) used Venus gravity to redirect toward comet Halley after deploying landers + balloons in Venus's atmosphere."
       },
       {
         "met_days": 178,
         "type": "flyby",
-        "label": "Venus — flyby"
+        "label": "Venus — flyby + lander + balloon",
+        "description": "1985-06-11. Vega 1 released a lander (touched down at Mermaid Plains) and a helium balloon (drifted at 54 km altitude for 47 hours, the first atmospheric balloon at another planet). Vega 1 itself flew on past Venus, using the gravity assist to redirect toward Halley."
       },
       {
         "met_days": 446,
         "type": "flyby",
-        "label": "Comet Halley — flyby"
+        "label": "Halley — flyby (Halley Armada)",
+        "description": "Closest approach 8,890 km from Halley's nucleus on 1986-03-06 — first close visit to any comet, 8 days before Giotto's much closer pass. Vega 1's imagery + dust-impact data informed the Giotto-target final approach geometry: \"the Halley Armada\" cooperative tracking enabled Giotto to safely fly to 596 km without an unknown nucleus position."
       }
     ]
   }

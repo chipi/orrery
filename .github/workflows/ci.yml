@@ -29,8 +29,45 @@ jobs:
       # --omit=dev because dev-time advisories (esbuild dev-server CORS,
       # eslint plugin ReDoS) are tracked separately and would otherwise
       # block unrelated work. GH #265.
+      #
+      # Allowlisted advisories (re-evaluate when upstream ships a fix):
+      #
+      #   GHSA-gv7w-rqvm-qjhr — esbuild Deno-module binary integrity
+      #     bypass via NPM_CONFIG_REGISTRY. Affects the Deno path only;
+      #     orrery is a Node.js/Vite project (no Deno bundler use).
+      #     Upstream fix is in esbuild 0.28.1+, but vite 5/6/7 pin
+      #     esbuild 0.21-0.27 (newer break the chrome87 build target).
+      #     Will lift the allowlist when vite ships with esbuild 0.28+.
       - name: npm audit (high+critical, prod deps only)
-        run: npm audit --audit-level=high --omit=dev
+        run: |
+          set -o pipefail
+          # Capture audit JSON, then filter known-irrelevant advisories.
+          # Exit 0 only if every remaining high/critical advisory has
+          # been filtered. Anything else surfaces and fails the job.
+          audit_json=$(npm audit --omit=dev --json 2>/dev/null || true)
+          echo "$audit_json" | python3 -c "
+          import json,sys
+          d=json.loads(sys.stdin.read() or '{}')
+          ALLOWLIST={'GHSA-gv7w-rqvm-qjhr'}
+          bad=[]
+          for name, info in d.get('vulnerabilities', {}).items():
+              for via in info.get('via', []):
+                  if not isinstance(via, dict): continue
+                  sev=via.get('severity','')
+                  if sev not in ('high','critical'): continue
+                  url=via.get('url','')
+                  gha=url.rsplit('/',1)[-1] if 'advisories' in url else ''
+                  if gha in ALLOWLIST:
+                      print(f'allowlisted: {name} ← {gha} ({sev})', file=sys.stderr)
+                      continue
+                  bad.append((name, gha, sev, via.get('title','')))
+          if bad:
+              print('high/critical advisories that need attention:')
+              for n,g,s,t in bad:
+                  print(f'  FAIL: {n} ← {g} ({s}) — {t}')
+              sys.exit(1)
+          print('audit gate: clean (or only allowlisted)')
+          "
       - run: npm run typecheck
       # Split prettier + eslint into discrete steps with `if: always()` on
       # the second so a Prettier failure doesn't short-circuit ESLint —

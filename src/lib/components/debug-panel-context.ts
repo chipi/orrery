@@ -32,6 +32,7 @@ import type { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import type { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import type { QualityConfig } from '$lib/quality/quality-tier';
+import type { FrameMonitorHandle } from '$lib/quality/frame-monitor';
 
 const DEBUG_PANEL_KEY = Symbol('debug-panel-page-content');
 
@@ -66,6 +67,10 @@ export interface RenderingDebugRegistration {
    *  `.visible` for live A/B without a composer rebuild. */
   skydomeMesh?: THREE.Object3D | null;
   sunLensFlareGroup?: THREE.Object3D | null;
+  /** Optional FrameMonitorHandle. When present, the Rendering tab
+   *  shows the rolling-window avg frame time + last-struggle timing
+   *  the same numbers the auto-demote toast reads. */
+  frameMonitor?: FrameMonitorHandle | null;
 }
 
 /** Boxed reactive slot for the rendering registration. The layout

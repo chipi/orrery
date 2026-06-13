@@ -91,6 +91,42 @@ describe('attachFrameMonitor', () => {
     // Should have fired exactly once thanks to cooldown.
     expect(onStruggle).toHaveBeenCalledTimes(1);
   });
+
+  // #334 slice 34 — accessors for the DebugPanel "Rendering" tab.
+  it('getAvgFrameMs returns 0 until the 5-sample floor is reached', () => {
+    let t = 0;
+    const monitor = attachFrameMonitor({ getNow: () => t, onStruggle: () => {} });
+    for (let i = 0; i < 3; i++) {
+      t += 16;
+      monitor.tick();
+    }
+    expect(monitor.getAvgFrameMs()).toBe(0);
+    for (let i = 0; i < 10; i++) {
+      t += 16;
+      monitor.tick();
+    }
+    expect(monitor.getAvgFrameMs()).toBeCloseTo(16, 0);
+    monitor.stop();
+  });
+
+  it('getLastStruggleAt updates when onStruggle fires', () => {
+    let t = 0;
+    const monitor = attachFrameMonitor({
+      windowMs: 1000,
+      frameBudgetMs: 33.3,
+      sustainedFor: 500,
+      cooldownMs: 5000,
+      getNow: () => t,
+      onStruggle: () => {},
+    });
+    expect(monitor.getLastStruggleAt()).toBe(-Infinity);
+    for (let i = 0; i < 80; i++) {
+      t += 50;
+      monitor.tick();
+    }
+    expect(monitor.getLastStruggleAt()).toBeGreaterThan(0);
+    monitor.stop();
+  });
 });
 
 describe('nextLowerTier', () => {

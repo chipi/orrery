@@ -51,6 +51,14 @@ export interface FrameMonitorHandle {
   tick: () => void;
   /** Permanently disable the monitor. Idempotent. */
   stop: () => void;
+  /** Current rolling-window average frame time in ms, or 0 if not
+   *  enough samples yet (<5). Exposed for the DebugPanel "Rendering"
+   *  tab (#334 slice 34) so the same number the struggle-detector
+   *  reads is visible to the developer at a glance. */
+  getAvgFrameMs: () => number;
+  /** Most recent struggle-callback timestamp (`performance.now()` at
+   *  the moment `onStruggle` last fired), or -Infinity if never. */
+  getLastStruggleAt: () => number;
 }
 
 const DEFAULTS = {
@@ -122,7 +130,18 @@ export function attachFrameMonitor(opts: FrameMonitorOptions): FrameMonitorHandl
     stopped = true;
   }
 
-  return { tick, stop };
+  function getAvgFrameMs(): number {
+    if (samples.length < 5) return 0;
+    let total = 0;
+    for (const s of samples) total += s.dt;
+    return total / samples.length;
+  }
+
+  function getLastStruggleAt(): number {
+    return lastStruggleFiredAt;
+  }
+
+  return { tick, stop, getAvgFrameMs, getLastStruggleAt };
 }
 
 /** Pick the next-lower QualityTier given the user's current effective

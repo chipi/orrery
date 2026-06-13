@@ -34,7 +34,11 @@
     writeUserChoice,
     type QualityTier,
   } from '$lib/quality/quality-tier';
-  import { attachFrameMonitor, nextLowerTier } from '$lib/quality/frame-monitor';
+  import {
+    attachFrameMonitor,
+    nextLowerTier,
+    type FrameMonitorHandle,
+  } from '$lib/quality/frame-monitor';
   import type { FlyUpdaters } from '$lib/three/fly-updaters';
   import {
     computeMissionApply,
@@ -228,6 +232,7 @@
   let liveVignettePass: ShaderPass | null = $state(null);
   let liveSkydomeMesh: THREE.Object3D | null = $state(null);
   let liveSunLensFlareGroup: THREE.Object3D | null = $state(null);
+  let liveFrameMonitor: FrameMonitorHandle | null = $state(null);
 
   // ─── HUD-collapse toggle (mobile) ────────────────────────────────
   // On narrow viewports the hud-stack (top-left mission info) and
@@ -1909,7 +1914,7 @@
     // tier (we're already at the floor — nothing to suggest) and when
     // the user has explicitly picked a non-auto tier (respect intent).
     const frameMonitor = attachFrameMonitor({
-      onStruggle: (avg) => {
+      onStruggle: (avg: number) => {
         const next = nextLowerTier(quality.tier);
         if (!next) return;
         perfToastAvgMs = avg;
@@ -1958,6 +1963,7 @@
     liveVignettePass = helioHandles.vignettePass;
     liveSkydomeMesh = helioHandles.skydomeMesh;
     liveSunLensFlareGroup = helioHandles.sunLensFlare?.group ?? null;
+    liveFrameMonitor = frameMonitor;
     const sunCore = helioHandles.sunCore;
     const sunGlow = helioHandles.sunGlow;
     const earthMesh = helioHandles.earthMesh;
@@ -6259,6 +6265,7 @@
     vignettePass={liveVignettePass}
     skydomeMesh={liveSkydomeMesh}
     sunLensFlareGroup={liveSunLensFlareGroup}
+    frameMonitor={liveFrameMonitor}
   />
 {/if}
 

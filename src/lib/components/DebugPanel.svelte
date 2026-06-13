@@ -36,6 +36,10 @@
   let triangles = $state(0);
   let points = $state(0);
   let lines = $state(0);
+  // Frame-monitor rolling avg (#334 slice 34). Same number the auto-
+  // demote toast reads; 0 until the 5-sample noise-floor clears.
+  let frameMonitorAvgMs = $state(0);
+  let frameMonitorLastStruggleAt = $state(-Infinity);
 
   onMount(() => {
     mounted = true;
@@ -61,6 +65,11 @@
           triangles = rdr.info.render.triangles;
           points = rdr.info.render.points;
           lines = rdr.info.render.lines;
+        }
+        const fm = debugCtx?.rendering.value?.frameMonitor;
+        if (fm) {
+          frameMonitorAvgMs = fm.getAvgFrameMs();
+          frameMonitorLastStruggleAt = fm.getLastStruggleAt();
         }
       }
       rafId = requestAnimationFrame(tick);
@@ -431,9 +440,30 @@
             <span class="debug-val">{lines.toLocaleString()}</span>
           </div>
         </div>
-        <div class="debug-stub">
-          Per-feature toggles + live bloom-threshold slider land in slice 29 (#334).
-        </div>
+        {#if renderingReg.frameMonitor}
+          <div class="debug-section debug-section-stack">
+            <div class="debug-row debug-row-heading">
+              <span class="debug-key">frame monitor (rolling avg)</span>
+            </div>
+            <div class="debug-row">
+              <span class="debug-key">Avg frame</span>
+              <span class="debug-val"
+                >{frameMonitorAvgMs > 0 ? frameMonitorAvgMs.toFixed(1) + ' ms' : '— (warming up)'}
+                {#if frameMonitorAvgMs > 0}<em
+                    >({(1000 / frameMonitorAvgMs).toFixed(0)} fps)</em
+                  >{/if}</span
+              >
+            </div>
+            <div class="debug-row">
+              <span class="debug-key">Last struggle</span>
+              <span class="debug-val">
+                {frameMonitorLastStruggleAt > 0
+                  ? ((performance.now() - frameMonitorLastStruggleAt) / 1000).toFixed(0) + ' s ago'
+                  : 'never'}
+              </span>
+            </div>
+          </div>
+        {/if}
       {/if}
     </div>
   </aside>

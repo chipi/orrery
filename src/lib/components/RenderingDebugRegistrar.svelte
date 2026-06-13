@@ -34,6 +34,7 @@
   import type { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
   import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import type { QualityConfig } from '$lib/quality/quality-tier';
+  import type { FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { setRenderingDebugRegistration, type QualitySource } from './debug-panel-context';
 
   let {
@@ -46,6 +47,7 @@
     vignettePass = null,
     skydomeMesh = null,
     sunLensFlareGroup = null,
+    frameMonitor = null,
   }: {
     renderer: THREE.WebGLRenderer;
     quality: QualityConfig;
@@ -56,6 +58,7 @@
     vignettePass?: ShaderPass | null;
     skydomeMesh?: THREE.Object3D | null;
     sunLensFlareGroup?: THREE.Object3D | null;
+    frameMonitor?: FrameMonitorHandle | null;
   } = $props();
 
   $effect(() => {
@@ -69,6 +72,7 @@
       vignettePass,
       skydomeMesh,
       sunLensFlareGroup,
+      frameMonitor,
     });
     return () => setRenderingDebugRegistration(null);
   });

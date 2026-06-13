@@ -63,17 +63,21 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 551",
+        "description": "Cape Canaveral, 2011-08-05. Juno is the first solar-powered spacecraft to reach Jupiter — three massive solar arrays span 20 m tip-to-tip, generating 14 kW at Earth distance but only ~400 W at Jupiter (5.4 AU). The polar orbit was chosen to minimise time inside Jupiter's lethal radiation belts."
       },
       {
         "met_days": 749,
         "type": "flyby",
-        "label": "Earth — gravity assist"
+        "label": "Earth — gravity assist",
+        "description": "Closest approach 559 km on 2013-10-09. The flyby added 7.3 km/s to Juno's heliocentric velocity — the boost needed to reach Jupiter directly (a Hohmann transfer from Earth would have required a far larger launch vehicle than the Atlas V provides)."
       },
       {
         "met_days": 1796,
         "type": "edl_or_oi",
-        "label": "Jupiter orbit insertion"
+        "label": "Jupiter orbit insertion",
+        "description": "2016-07-04 (Independence Day). 35-minute main engine burn slowed Juno from hyperbolic to a highly-elliptical 53-day polar orbit, threading the gap between Jupiter and its main radiation belts. The polar orbit is unique among Jupiter missions — letting Juno map the deep interior + auroras while limiting total radiation dose. Mission extended through 2025."
       }
     ],
     "interplanetary_profile": {

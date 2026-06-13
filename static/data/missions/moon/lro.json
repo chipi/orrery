@@ -64,39 +64,57 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 401",
+        "description": "Cape Canaveral, 2009-06-18. LRO (Lunar Reconnaissance Orbiter) — NASA's lunar surveyor for the modern era. Co-launched with LCROSS, which impacted into Cabeus crater 4 months later to confirm water ice in permanently-shadowed regions."
       },
       {
         "met_days": 0.05,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Centaur upper stage burn places LRO on a 4-day translunar coast."
       },
       {
         "met_days": 1,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First mid-course correction after TLI."
       },
       {
         "met_days": 1.04,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 1.78,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 2.52,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-4",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 3.27,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-5 — final pre-LOI",
+        "description": "Final approach targeting before lunar orbit insertion."
       },
       {
         "met_days": 5,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar approach",
+        "description": "Pre-LOI checkout phase."
       },
       {
         "met_days": 5.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar orbit insertion",
+        "description": "2009-06-23. Series of 4 burns over 5 days captured LRO into a 30 × 216 km polar mapping orbit. The 0.5-m/pixel LROC NAC imaging — still operating 15 years later — gave the first true high-resolution global Moon map and located every Apollo landing site to within a few metres."
       }
     ],
     "cislunar_profile": {

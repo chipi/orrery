@@ -68,23 +68,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — New Glenn (planned)",
+        "description": "Cape Canaveral LC-36, planned 2025-2026. Blue Origin's Blue Moon Mk1 cargo lander — first uncrewed surface mission of Blue Origin's two-class lunar landing architecture. Mk1 carries ~3 metric tons of payload; the larger Mk2 will be the human-rated lander for Artemis V."
       },
       {
         "met_days": 0.2,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "New Glenn upper stage burn sends Blue Moon Mk1 on a 4-day translunar coast."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1 — first midcourse correction",
+        "description": "Refines the trajectory after TLI dispersion."
       },
       {
         "met_days": 4,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "Lander captures into a 100-km circular lunar orbit before descent."
       },
       {
         "met_days": 4.1,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Powered descent — south polar region",
+        "description": "Blue Moon's BE-7 hydrogen/oxygen engines (the first cryogenic propulsion on a lunar lander) execute the powered descent. Targets a south polar landing site near future Artemis crewed sites."
       }
     ],
     "cislunar_profile": {

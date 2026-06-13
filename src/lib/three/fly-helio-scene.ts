@@ -392,7 +392,17 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     scene.add(sunLensFlare.group);
   }
 
-  scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
+  // Sun illumination — uniform across the scene (distance=0 + decay=0).
+  // Outer-planet missions (Voyager 1/2 at Saturn/Uranus/Neptune, New
+  // Horizons at Pluto, Pioneer 10/11 at Jupiter/Saturn) sit BEYOND the
+  // prior 2000-unit cutoff (Neptune at 30 AU × SCALE_3D=80 = 2400u),
+  // so the PointLight previously gave them zero light and they rendered
+  // near-black — see the Voyager 2 / Neptune smoke. Physical-accuracy
+  // here is a non-goal vs the throne-of-glory cinematic vision; treat
+  // sunlight as a uniform directional from origin. Inner planets keep
+  // their existing look (they were already inside the previous
+  // (1−d/D)^decay ≈ 1 plateau); outer planets finally show up lit.
+  scene.add(new THREE.PointLight(0xfff4d0, 3.5, 0, 0));
   // HemisphereLight replaces the prior AmbientLight(0x111133, 0.8) —
   // ambient fill at non-zero intensity flattens shadow contrast (the
   // #1 amateur-CG tell per the shot-language guide). Hemisphere at

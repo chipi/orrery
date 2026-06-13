@@ -88,8 +88,19 @@ export function mergeFlightEvents(
     const labels = labelMap[sev.type] ?? DEFAULT_FLIGHT_LABELS[sev.type];
     out.push({
       met: sev.met_days,
-      label: labels.label,
-      note: labels.note,
+      // Rich per-event label (e.g. "Venus #1 — gravity assist", "Saturn
+      // orbit insertion") wins over the generic enum label ("FLYBY",
+      // "EDL / ORBIT INSERTION") when the mission record supplied one.
+      // Without this preference, the CAPCOM ticker collapsed every
+      // multi-flyby grand-tour mission to "FLYBY · FLYBY · FLYBY · …"
+      // and lost the per-event narrative the data already carried (#335).
+      label: sev.label ?? labels.label,
+      // Rich description (e.g. "First of four assists (1998-04-26).
+      // Cassini sweeps 284 km above Venus …") wins over the default
+      // empty note. Same #335 fix — the data was already there, just
+      // dropped on the floor by the merge.
+      note: sev.description ?? labels.note,
+      // Severity colour stays type-driven (anomaly → warning, etc.).
       type: labels.type,
     });
   }

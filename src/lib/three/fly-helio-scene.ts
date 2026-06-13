@@ -87,6 +87,10 @@ export interface HelioSceneHandles {
    *  `composer.render()` instead of `renderer.render(scene, camera)`.
    *  Resize is the caller's responsibility via `composer.setSize()`. */
   composer: EffectComposer;
+  /** UnrealBloom pass — non-null when quality.bloomEnabled. Exposed so
+   *  the DebugPanel "Rendering" tab (#334) can live-tune threshold /
+   *  strength / radius without a reload. */
+  bloomPass: UnrealBloomPass | null;
   /** Bokeh depth-of-field pass — non-null only on the cinematic tier.
    *  The component animate loop pokes `bokehPass.uniforms.focus.value`
    *  per frame with the camera-to-spacecraft distance so the focal
@@ -297,8 +301,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const composer = new EffectComposer(renderer);
   composer.setSize(containerW, containerH);
   composer.addPass(new RenderPass(scene, camera));
+  let bloomPass: UnrealBloomPass | null = null;
   if (opts.quality.bloomEnabled) {
-    const bloomPass = new UnrealBloomPass(
+    bloomPass = new UnrealBloomPass(
       new THREE.Vector2(containerW, containerH),
       opts.quality.bloomStrength,
       opts.quality.bloomRadius,
@@ -957,6 +962,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     camera,
     renderer,
     composer,
+    bloomPass,
     bokehPass,
     sunLensFlare,
     sunCore,

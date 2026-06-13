@@ -204,14 +204,89 @@
             <span class="debug-key">Post</span>
             <span class="debug-val">{renderingReg.quality.postEnabled ? 'on' : 'off'}</span>
           </div>
-          <div class="debug-row">
-            <span class="debug-key">Bloom</span>
-            <span class="debug-val"
-              >{renderingReg.quality.bloomEnabled
-                ? `on · str ${renderingReg.quality.bloomStrength} · rad ${renderingReg.quality.bloomRadius} · thr ${renderingReg.quality.bloomThreshold}`
-                : 'off'}</span
-            >
-          </div>
+          {#if renderingReg.bloomPass}
+            <!-- Live bloom controls (#334 slice 29). Mutating the pass
+                 uniforms takes effect on the next composer.render(); no
+                 reload required. -->
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">Bloom</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.bloomPass.enabled}
+                  onchange={(e) => {
+                    if (renderingReg?.bloomPass) {
+                      renderingReg.bloomPass.enabled = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.bloomPass.enabled ? 'on' : 'off'}</span>
+              </label>
+            </div>
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">· threshold</span>
+              <span class="debug-slider">
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={renderingReg.bloomPass.threshold}
+                  oninput={(e) => {
+                    if (renderingReg?.bloomPass) {
+                      renderingReg.bloomPass.threshold = Number(e.currentTarget.value);
+                    }
+                  }}
+                />
+                <span class="debug-slider-val">{renderingReg.bloomPass.threshold.toFixed(2)}</span>
+              </span>
+            </div>
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">· strength</span>
+              <span class="debug-slider">
+                <input
+                  type="range"
+                  min="0"
+                  max="3"
+                  step="0.05"
+                  value={renderingReg.bloomPass.strength}
+                  oninput={(e) => {
+                    if (renderingReg?.bloomPass) {
+                      renderingReg.bloomPass.strength = Number(e.currentTarget.value);
+                    }
+                  }}
+                />
+                <span class="debug-slider-val">{renderingReg.bloomPass.strength.toFixed(2)}</span>
+              </span>
+            </div>
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">· radius</span>
+              <span class="debug-slider">
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={renderingReg.bloomPass.radius}
+                  oninput={(e) => {
+                    if (renderingReg?.bloomPass) {
+                      renderingReg.bloomPass.radius = Number(e.currentTarget.value);
+                    }
+                  }}
+                />
+                <span class="debug-slider-val">{renderingReg.bloomPass.radius.toFixed(2)}</span>
+              </span>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">Bloom</span>
+              <span class="debug-val"
+                >{renderingReg.quality.bloomEnabled
+                  ? `on · str ${renderingReg.quality.bloomStrength} · rad ${renderingReg.quality.bloomRadius} · thr ${renderingReg.quality.bloomThreshold}`
+                  : 'off'}</span
+              >
+            </div>
+          {/if}
           <div class="debug-row">
             <span class="debug-key">DoF</span>
             <span class="debug-val">{renderingReg.quality.dofEnabled ? 'on' : 'off'}</span>
@@ -381,6 +456,36 @@
     font-size: 10px;
     letter-spacing: 2px;
     padding-bottom: 4px;
+  }
+  .debug-row-control {
+    align-items: center;
+  }
+  .debug-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 11px;
+    color: rgba(220, 230, 245, 0.95);
+  }
+  .debug-toggle input {
+    accent-color: #4ecdc4;
+  }
+  .debug-slider {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .debug-slider input[type='range'] {
+    width: 120px;
+    accent-color: #4ecdc4;
+  }
+  .debug-slider-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(94, 234, 212, 0.8);
+    min-width: 32px;
+    text-align: right;
   }
   .debug-row {
     display: flex;

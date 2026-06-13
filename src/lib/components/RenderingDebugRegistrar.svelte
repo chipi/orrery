@@ -23,6 +23,7 @@
 -->
 <script lang="ts">
   import type * as THREE from 'three';
+  import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import type { QualityConfig } from '$lib/quality/quality-tier';
   import {
     setRenderingDebugRegistration,
@@ -33,14 +34,16 @@
     renderer,
     quality,
     qualitySource,
+    bloomPass = null,
   }: {
     renderer: THREE.WebGLRenderer;
     quality: QualityConfig;
     qualitySource: QualitySource;
+    bloomPass?: UnrealBloomPass | null;
   } = $props();
 
   $effect(() => {
-    setRenderingDebugRegistration({ renderer, quality, qualitySource });
+    setRenderingDebugRegistration({ renderer, quality, qualitySource, bloomPass });
     return () => setRenderingDebugRegistration(null);
   });
 </script>

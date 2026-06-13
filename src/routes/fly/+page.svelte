@@ -122,6 +122,7 @@
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import { resolveQualitySource } from '$lib/quality/quality-tier';
   import type { QualityConfig } from '$lib/quality/quality-tier';
+  import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import {
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
     type PlanetId as FlybyPlanetId,
@@ -220,6 +221,7 @@
   let liveRenderer: THREE.WebGLRenderer | null = $state(null);
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
+  let liveBloomPass: UnrealBloomPass | null = $state(null);
 
   // ─── HUD-collapse toggle (mobile) ────────────────────────────────
   // On narrow viewports the hud-stack (top-left mission info) and
@@ -1954,9 +1956,13 @@
     const renderer = helioHandles.renderer;
     // Expose to the DebugPanel "Rendering" tab (#334) — the template-
     // mounted <RenderingDebugRegistrar> picks these up reactively.
+    // bloomPass is null on minimal/low tiers (no bloom built); the
+    // Rendering tab degrades gracefully (sliders hidden, on/off flag
+    // falls back to the static quality value).
     liveRenderer = renderer;
     liveQuality = quality;
     liveQualitySource = resolveQualitySource($page.url);
+    liveBloomPass = helioHandles.bloomPass;
     const sunCore = helioHandles.sunCore;
     const sunGlow = helioHandles.sunGlow;
     const earthMesh = helioHandles.earthMesh;
@@ -6252,6 +6258,7 @@
     renderer={liveRenderer}
     quality={liveQuality}
     qualitySource={liveQualitySource}
+    bloomPass={liveBloomPass}
   />
 {/if}
 

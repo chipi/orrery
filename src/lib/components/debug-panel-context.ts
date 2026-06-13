@@ -27,6 +27,7 @@
 import { getContext, setContext } from 'svelte';
 import type { Snippet } from 'svelte';
 import type * as THREE from 'three';
+import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import type { QualityConfig } from '$lib/quality/quality-tier';
 
 const DEBUG_PANEL_KEY = Symbol('debug-panel-page-content');
@@ -47,6 +48,11 @@ export interface RenderingDebugRegistration {
   renderer: THREE.WebGLRenderer;
   quality: QualityConfig;
   qualitySource: QualitySource;
+  /** Optional reference to the route's live UnrealBloomPass. When
+   *  present, the Rendering tab surfaces threshold / strength / radius
+   *  sliders + an ON/OFF toggle that mutate `bloomPass.enabled` and
+   *  the three uniforms in-place (no composer rebuild required). */
+  bloomPass?: UnrealBloomPass | null;
 }
 
 /** Boxed reactive slot for the rendering registration. The layout

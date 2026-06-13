@@ -256,3 +256,58 @@ test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {
     await expect(panel).toContainText(/∆V REQUIRED/);
   });
 });
+
+/* ── ?dep + ?tof deeplink coverage (#337 gap 4, shipped 66cd227b1) ─── */
+test.describe('/plan — porkchop point deeplink (?dep + ?tof)', () => {
+  test('?dep=400&tof=240 pre-selects a cell at the requested transit', async ({ page }) => {
+    // The resolver snaps to the closest grid cell — Mars grid spaces
+    // depDays ~13 d and arrDays ~4 d, so the URL gets rewritten with
+    // the rounded actual cell values (e.g. ?dep=395&tof=240).
+    await page.goto('/plan?dep=400&tof=240');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const panel = page.getByRole('complementary', { name: /Mission summary/i });
+    await expect(panel).toBeVisible();
+    await expect(panel).toContainText(/TRANSIT/);
+    // 240-day transit lands on cell j ≈ 36; the panel reads back "240 days"
+    // (closest grid cell). Tolerant ±5 days for future grid-resolution
+    // changes.
+    await expect(panel).toContainText(/2[3-4][0-9] days/);
+    await expect(panel).toContainText(/∆V REQUIRED/);
+    // URL gets rewritten to the actual grid-cell values.
+    await expect(page).toHaveURL(/dep=\d+/);
+    await expect(page).toHaveURL(/tof=\d+/);
+  });
+
+  test('clicking a cell writes ?dep + ?tof to the URL', async ({ page }) => {
+    await page.goto('/plan');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const canvas = page.locator('canvas.porkchop');
+    const box = await canvas.boundingBox();
+    if (!box) throw new Error('canvas not laid out');
+    await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
+    // Push debounces ~one tick; wait for goto to land.
+    await expect(page).toHaveURL(/dep=\d+/, { timeout: 5_000 });
+    await expect(page).toHaveURL(/tof=\d+/);
+  });
+
+  test('round-trip: re-navigating to written-out URL is stable', async ({ page }) => {
+    // First navigation — read back the rewritten URL.
+    await page.goto('/plan?dep=400&tof=240');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const firstUrl = page.url();
+    // Second navigation — same URL. The resolver should land on the
+    // same cell (grid is deterministic) and the URL shouldn't drift.
+    await page.goto(firstUrl);
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    expect(page.url()).toBe(firstUrl);
+  });
+
+  test('missing dep + tof params do not pre-select a cell', async ({ page }) => {
+    await page.goto('/plan');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const panel = page.getByRole('complementary', { name: /Mission summary/i });
+    await expect(panel).toBeVisible();
+    // Reading-the-porkchop intro shows; no TRANSIT readout yet.
+    await expect(panel).toContainText(/READING THE PORKCHOP|PICK A LAUNCH WINDOW/);
+  });
+});

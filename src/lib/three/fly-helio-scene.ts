@@ -8,7 +8,7 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
-import { createStarField } from '$lib/three/star-field';
+import { createLayeredStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
 import type { QualityConfig } from '$lib/quality/quality-tier';
 import {
@@ -421,61 +421,19 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // Background = three layered star populations instead of the single
   // sparse field. Cinematic space frames are NOT pure black — they have
   // depth + structure (zodiacal light, galactic plane gradient). See
-  // shot-language guide P1 + T8. Until we ship a baked cubemap, fake
-  // the same effect with three Three.Points layers at different sizes.
-  //   - Dim background field — many small stars (the "void")
-  //   - Bright sparse field — fewer big stars (foreground sparkle)
-  //   - Milky Way band — stars concentrated near the ecliptic plane,
-  //     compressed in y so they form a sky-spanning belt
+  // shot-language guide P1 + T8. The helper builds dim background +
+  // bright sparkle + Milky Way band as a single Group; counts come
+  // from the quality tier so low-tier devices render fewer points.
   scene.add(
-    createStarField({
-      count: opts.quality.starsDim,
-      radius: 1500,
-      jitter: 500,
-      size: 0.9,
-      opacity: 0.55,
+    createLayeredStarField({
+      counts: {
+        dim: opts.quality.starsDim,
+        bright: opts.quality.starsBright,
+        milkyWay: opts.quality.starsMilkyWay,
+      },
+      shellRadius: 1500,
     }),
   );
-  scene.add(
-    createStarField({
-      count: opts.quality.starsBright,
-      radius: 1400,
-      jitter: 600,
-      size: 1.6,
-      opacity: 0.95,
-    }),
-  );
-  // Milky Way band — same uniform-sphere sample then squashed in y by
-  // 0.18 so the points cluster around the equatorial plane. Tinted a
-  // touch warmer (galactic-plane dust) and slightly higher opacity so
-  // it reads as a soft belt across the void.
-  {
-    const COUNT = opts.quality.starsMilkyWay;
-    const RADIUS = 1450;
-    const JIT = 350;
-    const sp = new Float32Array(COUNT * 3);
-    for (let i = 0; i < COUNT; i++) {
-      const r = RADIUS + Math.random() * JIT;
-      const t = Math.random() * Math.PI * 2;
-      const p = Math.acos(2 * Math.random() - 1);
-      sp[i * 3] = r * Math.sin(p) * Math.cos(t);
-      sp[i * 3 + 1] = r * Math.sin(p) * Math.sin(t) * 0.18; // squash to band
-      sp[i * 3 + 2] = r * Math.cos(p);
-    }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(sp, 3));
-    const mw = new THREE.Points(
-      geo,
-      new THREE.PointsMaterial({
-        color: 0xf0e8d8,
-        size: 1.2,
-        sizeAttenuation: false,
-        transparent: true,
-        opacity: 0.45,
-      }),
-    );
-    scene.add(mw);
-  }
 
   // Asteroid belt + Kuiper belt — same sampling shape as /explore so
   // the cruise view reads the same way at a glance. Belt particles

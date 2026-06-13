@@ -373,8 +373,8 @@ describe('computePeakHoldArmStep — arm / reset round-trip', () => {
     expect(out.newPeakHoldUntil).toBe(5000 + 2500);
   });
 
-  it('does not arm if isMoonMission / reducedMotion / isDrag gates set', () => {
-    for (const gate of ['isMoonMission', 'reducedMotion', 'isDrag'] as const) {
+  it('does not arm if isMoonMission / isDrag gates set', () => {
+    for (const gate of ['isMoonMission', 'isDrag'] as const) {
       const out = computePeakHoldArmStep(createCinematicBeatState(), {
         ...baseInputs,
         currentFrameFlybyMet: 193,
@@ -384,6 +384,22 @@ describe('computePeakHoldArmStep — arm / reset round-trip', () => {
       });
       expect(out.armed, `gate ${gate} should block arming`).toBe(false);
     }
+  });
+
+  it('DOES arm under reducedMotion — peakHold is event-driven, not unsolicited', () => {
+    // prefers-reduced-motion suppresses unsolicited auto-fired ramps
+    // (e.g. the cruise hold). The iconic peakHold beat is tied to the
+    // user's own click on a flyby button, so it stays. Without this
+    // the fly-iconic-peakhold e2e spec (which emulates reducedMotion
+    // by design) never sees `.hud-stack.cinematic-hidden` engage.
+    const out = computePeakHoldArmStep(createCinematicBeatState(), {
+      ...baseInputs,
+      currentFrameFlybyMet: 193,
+      simDay: 191,
+      depDay: 0,
+      reducedMotion: true,
+    });
+    expect(out.armed).toBe(true);
   });
 
   it('does not arm outside the ±0.5d window', () => {

@@ -386,12 +386,13 @@ export function computePeakHoldArmStep(
     result.newArmedForFlybyMet !== undefined
       ? result.newArmedForFlybyMet
       : cine.peakHoldArmedForFlybyMet;
-  if (
-    !inputs.isMoonMission &&
-    !inputs.reducedMotion &&
-    !inputs.isDrag &&
-    inputs.currentFrameFlybyMet != null
-  ) {
+  // peakHold is an event-driven beat tied to the user's own click on a
+  // flyby button — NOT an unsolicited auto-motion ramp like the cruise
+  // hold. prefers-reduced-motion semantics target unsolicited motion;
+  // honouring an explicit user action with a brief held shot is fine,
+  // so reducedMotion is NOT one of the gates here. Cruise-hold + the
+  // parallax orbit pump still check reducedMotion at their own sites.
+  if (!inputs.isMoonMission && !inputs.isDrag && inputs.currentFrameFlybyMet != null) {
     const iconicPeakSimDay = inputs.depDay + inputs.currentFrameFlybyMet - ICONIC_LEAD_DAYS;
     const inHeldWindow = Math.abs(inputs.simDay - iconicPeakSimDay) < peakHoldRadius;
     if (inHeldWindow && effectiveArmed !== inputs.currentFrameFlybyMet) {

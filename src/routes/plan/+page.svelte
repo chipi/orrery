@@ -249,7 +249,12 @@
     // the resolution $effect pick it up once depDays/arrDays exist.
     const depParam = Number(url.searchParams.get('dep'));
     const tofParam = Number(url.searchParams.get('tof'));
-    if (url.searchParams.has('dep') && url.searchParams.has('tof') && Number.isFinite(depParam) && Number.isFinite(tofParam)) {
+    if (
+      url.searchParams.has('dep') &&
+      url.searchParams.has('tof') &&
+      Number.isFinite(depParam) &&
+      Number.isFinite(tofParam)
+    ) {
       pendingSelectedDeepLink = { dep: depParam, tof: tofParam };
     } else {
       pendingSelectedDeepLink = null;
@@ -338,7 +343,7 @@
   // Push selection changes to the URL so deep-links round-trip and a
   // user can share their picked cell.
   $effect(() => {
-    selected;
+    void selected;
     untrack(() => pushFiltersToUrl());
   });
 

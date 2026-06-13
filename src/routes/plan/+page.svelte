@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
@@ -217,6 +217,12 @@
   // ─── URL ↔ filter sync (mirrors /missions pattern) ───────────────
   // ?dest=jupiter&type=flyby pre-applies on first load; selector
   // changes write back via replaceState (no history pollution).
+  // Pending deeplink target for ?dep + ?tof. The selected cell can only
+  // be resolved once `depDays` and `arrDays` are populated by the loaded
+  // grid; we stash the requested day values here at applyUrl time and
+  // an $effect (further down) consumes them once the grid lands.
+  let pendingSelectedDeepLink = $state<{ dep: number; tof: number } | null>(null);
+
   function applyUrlFilters(url: URL) {
     const dest = (url.searchParams.get('dest') ?? '').toLowerCase();
     if (dest && !(DESTINATION_IDS as string[]).includes(dest)) {
@@ -237,6 +243,17 @@
       missionType = FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING';
     }
     coerceMissionType();
+    // Deep-link: ?dep=<dep_days_from_grid_epoch>&tof=<transit_days>.
+    // Both must be present and finite numbers; otherwise no
+    // pre-selection. The grid is async — store the request and let
+    // the resolution $effect pick it up once depDays/arrDays exist.
+    const depParam = Number(url.searchParams.get('dep'));
+    const tofParam = Number(url.searchParams.get('tof'));
+    if (url.searchParams.has('dep') && url.searchParams.has('tof') && Number.isFinite(depParam) && Number.isFinite(tofParam)) {
+      pendingSelectedDeepLink = { dep: depParam, tof: tofParam };
+    } else {
+      pendingSelectedDeepLink = null;
+    }
   }
 
   /** Coerce missionType to the first valid type for the active grid
@@ -254,12 +271,76 @@
     if (missionType !== (FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
       params.set('type', missionType.toLowerCase());
     }
+    // Porkchop point selection (#337 gap 4). Rounded to integer days
+    // so the URL stays human-readable; the resolver finds the closest
+    // grid cell, which round-trips cleanly because grid cells are
+    // typically spaced ~10 days apart.
+    //
+    // Three-tier preservation so the initial-render push doesn't wipe
+    // a deep-link request before the grid has loaded and the resolver
+    // has had a chance to consume it:
+    //   1. selected (post-grid) → write resolved depDays[i]/arrDays[j]
+    //   2. pendingSelectedDeepLink (pre-resolve)  → write its target
+    //   3. fallback: copy whatever dep/tof the current URL carries
+    if (selected && depDays.length > 0 && arrDays.length > 0) {
+      params.set('dep', String(Math.round(depDays[selected.i])));
+      params.set('tof', String(Math.round(arrDays[selected.j])));
+    } else if (pendingSelectedDeepLink) {
+      params.set('dep', String(Math.round(pendingSelectedDeepLink.dep)));
+      params.set('tof', String(Math.round(pendingSelectedDeepLink.tof)));
+    } else {
+      const urlDep = $page.url.searchParams.get('dep');
+      const urlTof = $page.url.searchParams.get('tof');
+      if (urlDep != null && urlTof != null) {
+        params.set('dep', urlDep);
+        params.set('tof', urlTof);
+      }
+    }
     const qs = params.toString();
     const target = `${base}/plan${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
   }
+
+  // Resolve any pending ?dep + ?tof deep-link once the grid is loaded.
+  // Find the cell whose depDay + tofDay are closest to the requested
+  // values. Clears the pending request after consumption.
+  $effect(() => {
+    if (!pendingSelectedDeepLink) return;
+    if (depDays.length === 0 || arrDays.length === 0) return;
+    const target = pendingSelectedDeepLink;
+    untrack(() => {
+      let bestI = 0;
+      let bestIDist = Infinity;
+      for (let k = 0; k < depDays.length; k++) {
+        const d = Math.abs(depDays[k] - target.dep);
+        if (d < bestIDist) {
+          bestIDist = d;
+          bestI = k;
+        }
+      }
+      let bestJ = 0;
+      let bestJDist = Infinity;
+      for (let k = 0; k < arrDays.length; k++) {
+        const d = Math.abs(arrDays[k] - target.tof);
+        if (d < bestJDist) {
+          bestJDist = d;
+          bestJ = k;
+        }
+      }
+      selected = { i: bestI, j: bestJ };
+      pendingSelectedDeepLink = null;
+      drawPlot();
+    });
+  });
+
+  // Push selection changes to the URL so deep-links round-trip and a
+  // user can share their picked cell.
+  $effect(() => {
+    selected;
+    untrack(() => pushFiltersToUrl());
+  });
 
   function setDestination(value: DestinationId) {
     destinationId = value;

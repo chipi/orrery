@@ -52,16 +52,13 @@
     createCinematicBeatState,
     resetCinematicBeatState,
     parseFlybyMetFromSubPhase,
-    computePeakHoldArmStep,
-    shouldArmCruiseHold,
-    computeCutOverlayOpacity,
     computeAfterglowCameraFrame,
     isPeakHolding,
     isAfterglowing,
     isCruiseHolding,
     isFinaleLocked,
-    isAnyCinematicFreeze,
   } from '$lib/fly-cinematic-beats';
+  import { runCinematicFrame } from '$lib/fly-cinematic-frame';
   import type { TrajectoryWaypoint } from '$lib/trajectory-spline';
   import {
     DESTINATIONS,
@@ -4617,69 +4614,6 @@
     // during the cislunar phase).
     let scLastWorld: THREE.Vector3 | null = null;
 
-    /**
-     * W3.7 — arm the cruise hold once when sim crosses the midpoint of
-     * the longest cruise gap. Only fires while sim is advancing forward
-     * (not on scrub-jumps), the gap is qualifying, and we haven't
-     * already fired this mission load.
-     *
-     * Lives as a named updater so the animate body reads as English
-     * and the cruise-hold rule + its 30-day overshoot guard sit
-     * together rather than half-explained inline at the top of an
-     * otherwise-massive loop.
-     */
-    function updateCruiseHoldArming(now: number) {
-      // Suppress the cruise hold entirely when the user prefers reduced
-      // motion. The hold ramps the camera through a 4 s zoom/breath
-      // sequence with chrome suppression, which is exactly the kind of
-      // unsolicited motion `prefers-reduced-motion` asks us to skip.
-      // Also unblocks the iconic-peakhold e2e spec — the auto-fire on
-      // wizard-dismiss was hiding the milestone-track button under
-      // .cinematic-hidden, racing every flyby-jump click.
-      if (reducedMotion) {
-        cine.lastSeenSimDayForCruiseHold = simDay;
-        return;
-      }
-      if (shouldArmCruiseHold(cine, simDay, cruiseHoldTriggerSimDay)) {
-        cine.cruiseHoldUntil = now + CINEMATIC_TIMINGS.CRUISE_HOLD_DURATION_MS;
-        cine.cruiseHoldFired = true;
-      }
-      cine.lastSeenSimDayForCruiseHold = simDay;
-    }
-
-    /**
-     * W3.6 — update the cut-fade overlay. Fade-out (0 → 1) over
-     * CUT_FADE_RAMP_MS, fade-in (1 → 0) over CUT_FADE_RAMP_MS. After
-     * 2× CUT_FADE_RAMP_MS the cut is finished, the overlay clears,
-     * and the trigger timestamp resets so the next > 365-day jump
-     * can arm a fresh cut.
-     */
-    function updateCutOverlay(now: number) {
-      if (cine.cutStartedAt === 0) return;
-      const { opacity, cutComplete } = computeCutOverlayOpacity(cine.cutStartedAt, now);
-      cutBlackOpacity = opacity;
-      if (cutComplete) cine.cutStartedAt = 0;
-    }
-
-    /**
-     * W3.5 — toggle the chrome-suppression flag every frame. True
-     * while ANY of the four cinematic beats (peak hold, afterglow,
-     * cruise hold, finale lock) is engaged. Drives the
-     * `.cinematic-hidden` class on the HUD stack, scrubber, FD banner
-     * row, and CAPCOM panel. Only writes when the flag changes so
-     * Svelte doesn't trigger a needless template re-render every
-     * frame.
-     */
-    function updateChromeSuppression(now: number) {
-      // Chrome hides while any cinematic beat (peak hold, afterglow,
-      // cruise hold, finale lock) is engaged. Single-source predicate
-      // `isAnyCinematicFreeze` keeps the four-way OR in one place.
-      const wantSuppressed = isAnyCinematicFreeze(cine, now);
-      if (inCinematicHeldBeat !== wantSuppressed) {
-        inCinematicHeldBeat = wantSuppressed;
-      }
-    }
-
     // raf pump with the TA.md document.hidden contract baked in —
     // see $lib/three/animate-loop. The onFrame body keeps the
     // raf-timestamp `now` semantics via a `performance.now()` read
@@ -4696,22 +4630,41 @@
         frameMonitor.tick();
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
-        // Polish-wave-3 cinematic-beat status — recomputed once per frame
-        // and reused by all per-concern updaters. W3.1 peak hold + W3.2
-        // afterglow + W3.7 cruise hold each freeze sim time; the lerp
-        // continues during the hold so iconic frames converge from a
-        // wide framing if the user scrubbed directly onto the moment.
-        // The afterglow comes AFTER the peak hold expires (Wernquist's
-        // Grand Finale grammar — 6 s of slow dolly recede with the world
-        // frozen behind, the way Cassini's mission ended).
-        const isPeakHoldingFrame = isPeakHolding(cine, now);
-        const isAfterglowingFrame = isAfterglowing(cine, now);
-        const isCruiseHoldingFrame = isCruiseHolding(cine, now);
-        const isCinematicFreeze = isPeakHoldingFrame || isAfterglowingFrame || isCruiseHoldingFrame;
-
-        updateCruiseHoldArming(now);
-        updateCutOverlay(now);
-        updateChromeSuppression(now);
+        // Polish-wave-3 cinematic-beat dispatch — single pure call into
+        // $lib/fly-cinematic-frame.runCinematicFrame. Handles cruise-hold
+        // arming (W3.7), cut overlay (W3.6), peak-hold arm + afterglow
+        // window (W3.1 + W3.2), finale opacities (W3.4), and returns
+        // the freeze predicate that gates simDay advance + drives the
+        // chrome-suppression class (W3.5). Same dispatcher is driven by
+        // the test harness in #325 — prod + tests can't drift on call order.
+        const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
+        // Earth's longer 4 s hold is selected by looking at the active
+        // event's label here — kept inline because it's mission-data-shape
+        // dependent and not worth lifting into the helper.
+        const activeFlybyEvtForHold = mission.flight?.events?.find(
+          (e) => e.met_days === currentFrameFlybyMet,
+        );
+        const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
+        const cineOut = runCinematicFrame(
+          cine,
+          {
+            simDay,
+            depDay: arcTimeline.dep_day,
+            reducedMotion,
+            isDrag,
+            isMoonMission,
+            currentFrameFlybyMet,
+            isEarthFlyby: isEarthHold,
+            cruiseHoldTriggerSimDay,
+            flybyPeakDays: FLYBY_PEAK_DAYS,
+          },
+          now,
+        );
+        cutBlackOpacity = cineOut.cutBlackOpacity;
+        inCinematicHeldBeat = cineOut.isCinematicFreeze;
+        finaleCaptionOpacity = cineOut.finaleCaptionOpacity;
+        finaleBlackOpacity = cineOut.finaleBlackOpacity;
+        const isCinematicFreeze = cineOut.isCinematicFreeze;
 
         if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
           simDay += dt * simSpeed;
@@ -4817,51 +4770,10 @@
         //      cinema target (e.g. scrubbing from launch wide R=50 to a
         //      flyby R=13).
         //
-        // Source of truth for "are we in a flyby right now": parse
-        // lastHelioSubPhase (e.g. "flyby-193-venus"). __flyDebug isn't
-        // refreshed when no flyby is active — it stays stale at the
-        // previous flyby's MET — so reading from there made the reset
-        // think we were still in the prior flyby. lastHelioSubPhase IS
-        // updated every frame by updateHelioAutoZoomTargets. The parse
-        // lives in $lib/fly-cinematic-beats so the regex is a single
-        // source of truth + unit-tested.
-        const currentFrameFlybyMet = parseFlybyMetFromSubPhase(lastHelioSubPhase);
-        // The reset → arm round-trip is a pure step (see
-        // $lib/fly-cinematic-beats.computePeakHoldArmStep); the helper is
-        // unit-tested and documented at
-        // docs/reference/fly-cinematic-state-machine.md §"peakHold arming".
-        // Earth's longer 4 s hold is selected by looking at the active
-        // event's label here — kept inline because it's mission-data-shape
-        // dependent and not worth lifting into the helper.
-        const activeFlybyEvtForHold = mission.flight?.events?.find(
-          (e) => e.met_days === currentFrameFlybyMet,
-        );
-        const isEarthHold = (activeFlybyEvtForHold?.label ?? '').toLowerCase().includes('earth');
-        const armStep = computePeakHoldArmStep(cine, {
-          currentFrameFlybyMet,
-          simDay,
-          depDay: arcTimeline.dep_day,
-          now: performance.now(),
-          isEarthFlyby: isEarthHold,
-          isMoonMission,
-          reducedMotion,
-          isDrag,
-          flybyPeakDays: FLYBY_PEAK_DAYS,
-        });
-        if (armStep.newArmedForFlybyMet !== undefined) {
-          cine.peakHoldArmedForFlybyMet = armStep.newArmedForFlybyMet;
-        }
-        if (armStep.newPeakHoldUntil !== undefined) {
-          cine.peakHoldUntil = armStep.newPeakHoldUntil;
-        }
-        if (armStep.newAfterglowUntil !== undefined) {
-          cine.afterglowUntil = armStep.newAfterglowUntil;
-        }
-        if (armStep.armed) {
-          // Clear last flyby's captured afterglow start so this flyby's
-          // afterglow re-captures fresh values when its hold expires.
-          cine.afterglowStartCamR = 0;
-        }
+        // The peak-hold arm step (W3.1) + afterglow window setup (W3.2)
+        // now fires inside runCinematicFrame at the top of the frame —
+        // see the cineOut block above. currentFrameFlybyMet is still in
+        // scope from there for the parallax-orbit gate below.
         if (
           !isMoonMission &&
           !reducedMotion &&
@@ -5165,35 +5077,17 @@
           epilogueCaptionOpacity = 0;
         }
         cine.lastSeenPhase = phaseNow;
-        // W3.4 — update finale state machine. After 12 s the camera
-        // remains locked but the fade-to-black is complete; the user
-        // can scrub to resume the mission.
-        if (cine.finaleStartedAt > 0 && performance.now() >= cine.finaleStartedAt) {
-          const elapsed = performance.now() - cine.finaleStartedAt;
-          // Caption fade-in over 1 s starting at t=8
-          if (elapsed >= CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) {
-            finaleCaptionOpacity = Math.min(
-              1,
-              (elapsed - CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) / 1000,
-            );
-          }
-          // Black overlay fade-in over 1 s starting at t=11
-          if (elapsed >= CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) {
-            finaleBlackOpacity = Math.min(
-              1,
-              (elapsed - CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) / 1000,
-            );
-          }
-          // After 13 s (12 s finale + 1 s settle), drop the held flag
-          // and transition to the #82 epilogue tableau — wide top-down
-          // system view + slow rotation + the full mission trajectory
-          // visible.
-          if (elapsed >= CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1000) {
-            inMissionFinale = false;
-            if (epilogueStartedAt === 0) {
-              epilogueStartedAt = performance.now();
-              epilogueActive = true;
-            }
+        // W3.4 — finale opacities (caption + black) are computed by
+        // runCinematicFrame at the top of the frame and already written
+        // to finaleCaptionOpacity / finaleBlackOpacity. Here we only
+        // handle the post-settle transition into the #82 epilogue
+        // tableau — wide top-down system view + slow rotation + the
+        // full mission trajectory visible.
+        if (cineOut.finaleSettled) {
+          inMissionFinale = false;
+          if (epilogueStartedAt === 0) {
+            epilogueStartedAt = performance.now();
+            epilogueActive = true;
           }
         }
         // #82 — epilogue tableau. Once active, fade the finale-black

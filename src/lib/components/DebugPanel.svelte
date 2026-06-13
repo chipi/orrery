@@ -414,8 +414,8 @@
           <div class="debug-row">
             <span class="debug-key">Rim light</span>
             <span class="debug-val"
-              >{renderingReg.quality.rimLightEnabled ? 'on' : 'off'} <em>(material swap — fixed)</em
-              ></span
+              >{renderingReg.quality.rimLightEnabled ? 'on' : 'off'}
+              <em>(material swap — fixed)</em></span
             >
           </div>
         </div>
@@ -449,8 +449,7 @@
               <span class="debug-key">Avg frame</span>
               <span class="debug-val"
                 >{frameMonitorAvgMs > 0 ? frameMonitorAvgMs.toFixed(1) + ' ms' : '— (warming up)'}
-                {#if frameMonitorAvgMs > 0}<em
-                    >({(1000 / frameMonitorAvgMs).toFixed(0)} fps)</em
+                {#if frameMonitorAvgMs > 0}<em>({(1000 / frameMonitorAvgMs).toFixed(0)} fps)</em
                   >{/if}</span
               >
             </div>

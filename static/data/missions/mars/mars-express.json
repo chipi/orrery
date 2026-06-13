@@ -60,35 +60,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Soyuz-FG / Fregat",
+        "description": "Baikonur Cosmodrome, 2003-06-02. ESA's first Mars mission, launched on a Russian Soyuz under a cooperative contract. Carried the Beagle 2 lander, designed by the UK's Beagle Project. Mars Express is still operational, the longest-running Mars orbiter ever."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Fregat upper stage burn at T+90 minutes sends Mars Express on a 6.5-month Hohmann-like transfer."
       },
       {
         "met_days": 25,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup."
       },
       {
         "met_days": 47.38,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 110,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 200,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-MOI",
+        "description": "Final approach targeting."
       },
       {
         "met_days": 206,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach + Beagle 2 release",
+        "description": "2003-12-19. Beagle 2 lander separated for independent EDL toward Isidis Planitia. Mars Express continued to MOI alone."
       },
       {
         "met_days": 206.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion",
+        "description": "2003-12-25 — Christmas Day. 34-minute main engine burn captured Mars Express into a 250 × 11,000 km polar orbit. Beagle 2 had landed safely 6 days earlier but failed to fully deploy its solar panels — only discovered in 2015 from MRO HiRISE imagery. Mars Express's MARSIS radar later mapped subsurface ice + (controversially) a liquid water reservoir under the south polar ice cap."
       }
     ],
     "interplanetary_profile": {

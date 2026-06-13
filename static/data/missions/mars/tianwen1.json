@@ -78,35 +78,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Long March 5",
+        "description": "Wenchang, China, 2020-07-23. CNSA's first interplanetary mission, named after a Chinese poem from 340 BCE (\"Heavenly Questions\"). Tianwen-1 is unique among Mars missions in carrying an orbiter + lander + rover (Zhurong) in a single launch — orbit, land, AND drive on the first attempt."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Long March 5 YZ-1 upper stage burn places Tianwen-1 on a 7-month Mars-transfer trajectory."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
       },
       {
         "met_days": 46.46,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 100,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 200,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-MOI burn",
+        "description": "Final approach targeting for Mars orbit insertion."
       },
       {
         "met_days": 202,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars orbit insertion",
+        "description": "2021-02-10. 15-minute main engine burn captured Tianwen-1 into a highly-elliptical Mars orbit. The orbiter spent 3 months scouting the planned EDL site at Utopia Planitia before releasing the lander."
       },
       {
         "met_days": 295,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Zhurong rover EDL — Utopia Planitia",
+        "description": "2021-05-14. Lander + rover deployed via parachute + retrorockets to the surface. Zhurong became the first Chinese rover on Mars — China the second nation to successfully drive on Mars after the United States. Zhurong operated until May 2022 when winter dust prevented solar charging; the orbiter continues."
       }
     ],
     "interplanetary_profile": {

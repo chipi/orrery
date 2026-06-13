@@ -77,39 +77,57 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 541",
+        "description": "Cape Canaveral, 2020-07-30. Mars 2020 carries Perseverance — a near-identical chassis to Curiosity but with a sample-caching coring system and the Ingenuity helicopter strapped under the belly. Designed to land in Jezero Crater, a 3.5-Gyr-old river delta sediment trap chosen specifically for organic-preservation potential."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Centaur upper stage burn at T+57 minutes sends Perseverance + Ingenuity on a 7-month transfer."
       },
       {
         "met_days": 15,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
       },
       {
         "met_days": 40.6,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 60,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 140,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Approach-phase adjustment."
       },
       {
         "met_days": 180,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-5 — final pre-EDL burn",
+        "description": "Tightens approach targeting for the Jezero EDL ellipse."
       },
       {
         "met_days": 203,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach + cruise-stage separation",
+        "description": "2021-02-18. 10 minutes before atmospheric entry, the cruise stage jettisons; the backshell + descent stage + rover enters Mars's atmosphere at 5.4 km/s."
       },
       {
         "met_days": 203.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Sky-crane landing in Jezero Crater",
+        "description": "\"Seven minutes of terror\", same architecture as Curiosity but adding Terrain-Relative Navigation — the rover steered itself away from boulders during the parachute descent using a vision-based hazard map. Landed 2021-02-18 at 18.4447°N, 77.4508°E, well inside the Jezero delta. First successful sample tube cached 2021-09-06. Ingenuity helicopter's first flight 2021-04-19 — first powered flight on another planet."
       }
     ],
     "interplanetary_profile": {

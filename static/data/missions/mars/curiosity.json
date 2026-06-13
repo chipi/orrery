@@ -72,35 +72,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 541",
+        "description": "Cape Canaveral, 2011-11-26. Mars Science Laboratory carries Curiosity, the largest, most capable rover at the time (900 kg, plutonium-powered RTG, mission lifetime targets 2 Mars years — actually 12+ years and counting). Launched on the second-largest Atlas V configuration available."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Centaur upper stage burn at T+45 minutes accelerates MSL onto a Hohmann-like transfer to Mars. Cruise stage handles solar panels + attitude control during the ~8.5-month cruise."
       },
       {
         "met_days": 12,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1 — first trajectory correction",
+        "description": "Cleanup burn 12 days after TMI, removing the small dispersion from the launch + TMI. Standard Mars-cruise practice: schedule TCMs at lengthening intervals as the trajectory firms up."
       },
       {
         "met_days": 76,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement burn. By this point Curiosity is past Earth's gravity well and on a stable heliocentric trajectory."
       },
       {
         "met_days": 110,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Approach-phase pre-burn. Begins tightening the targeting for the Gale Crater EDL site."
       },
       {
         "met_days": 211,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-EDL burn",
+        "description": "Last large trajectory tweak before Mars entry. EDL requires <1 km targeting accuracy at the atmospheric interface; TCM-4 delivers it."
       },
       {
         "met_days": 254,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach + cruise-stage separation",
+        "description": "2012-08-05. 10 minutes before atmospheric entry, the cruise stage separates and the backshell + descent stage + rover hits Mars's atmosphere at 5.85 km/s."
       },
       {
         "met_days": 254.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Sky-crane landing in Gale Crater",
+        "description": "\"Seven minutes of terror\": parachute deploys at Mach 2.2, then the descent stage fires retro-rockets and lowers Curiosity on a 7.5-m sky-crane tether — a one-shot technique no Mars mission had used before. Landed 2012-08-06 02:32 PDT at 4.5895°S, 137.4417°E, a few hundred metres from target inside Gale Crater. Mast-mounted MastCam returned the first colour panoramic minutes later. Still operational 12+ years on, climbing Mount Sharp's stratigraphic column."
       }
     ],
     "interplanetary_profile": {

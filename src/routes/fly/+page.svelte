@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { agencyToLogoEntries } from '$lib/agency-logo';
@@ -1870,8 +1870,30 @@
   // Re-sync mission whenever the URL changes (back/forward, or
   // cross-route navigation that lands here with a different ?mission=).
   // ADR-024 contract: "URL is the source of truth on entry."
+  //
+  // Follow-up 3: dep-track ONLY $page.url; isolate the body in
+  // untrack() so the many $state writes inside loadMissionFromUrl
+  // (outPts, simDay, mission, isMoonMission, …) don't re-fire this
+  // effect mid-run. Pre-fix the effect read $page reactively via
+  // localeFromPage($page) and was thus dirty against every $page
+  // mutation — that masked URL-change re-fires when the data hadn't
+  // changed (rapid SPA swap V2 → V1 → A11 left mission stuck on the
+  // first-arrived load while later URL changes silently dropped). The
+  // source-of-truth guard also short-circuits same-URL re-fires when
+  // SvelteKit batches $page updates around HMR / hover-prefetch.
   $effect(() => {
-    void loadMissionFromUrl($page.url);
+    const url = $page.url;
+    untrack(() => {
+      // Source-of-truth short-circuit: if URL's ?mission= matches what's
+      // already loaded, skip. Avoids re-running the full apply chain on
+      // unrelated $page mutations (locale switch, HMR, hover-prefetch).
+      // /plan-driven entries (no ?mission, has ?dep+?tof) still re-run
+      // through loadMissionFromUrl — applyPlanSelection is idempotent on
+      // identical params, and currentLoadId guards in-flight races.
+      const urlMissionId = url.searchParams.get('mission');
+      if (urlMissionId !== null && urlMissionId === lastAppliedMissionId) return;
+      void loadMissionFromUrl(url);
+    });
   });
 
   onMount(() => {

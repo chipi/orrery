@@ -27,3 +27,6 @@
 | RFC-023 | Launches Calendar — multi-source agency-first pipeline (NASA / ESA / SpaceX direct + GCAT primary historic + LL2 augmentation), provenance_chain manifest, heuristic + curated tier overrides, CC-BY citation gate | Closed (v0.7) | PRD-020 | v0.7 |
 | RFC-024 | Containerized local stack — `docker compose` web + on-demand pipeline runners + docker-e2e CI gate (VPS deploy deferred) | Closed (v0.7.x) | ADR-063 / 064 / 065 / 066 | v0.7.x |
 | RFC-025 | Observability — Sentry for client-side JS errors + Grafana Cloud Agent (env-var-gated, no committed secrets, reuses podcast_scraper RFC-081 credentials) | Closed (v0.7.x) | ADR-067 / 068 | v0.7.x |
+| RFC-026 | Multi-destination porkchop expansion (re-expand /plan from Mars-only to all rocky + outer destinations) | Draft | #312 | v0.8 |
+| RFC-027 | List-route search on /missions + /fleet — per-route `?q=` deep-link + bidirectional filter-chip interaction | Draft | #338 | v0.7 |
+| RFC-028 | data.ts split + DAL architecture review — `data-core` + `withLocaleOverlay` + per-domain modules + provenance to `$lib/provenance/` + new `galleries-data.ts` extraction | Draft | #327 | v0.7 |

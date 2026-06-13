@@ -62,20 +62,27 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — H-IIA",
+        "description": "Tanegashima, Japan, 2014-12-03. JAXA's follow-up to the original Hayabusa, designed to bring back a larger, less-contaminated asteroid sample. Targets near-Earth asteroid 162173 Ryugu — a primitive C-type carbonaceous body that may preserve volatile organics from the early Solar System."
       },
       {
         "met_days": 366,
         "type": "flyby",
-        "label": "Earth — gravity assist"
+        "label": "Earth — gravity assist",
+        "description": "Closest approach 3,090 km on 2015-12-03. The Earth flyby raises the spacecraft's aphelion enough to reach Ryugu's slightly-larger heliocentric orbit. Ion engines (four xenon thrusters) handled the cruise propulsion, demonstrating Japan's electric propulsion lineage from Hayabusa 1."
       },
       {
         "met_days": 1302,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Ryugu rendezvous",
+        "description": "Arrived at asteroid Ryugu on 2018-06-27. Held station at 20 km for 18 months of mapping. Deployed three rovers (MASCOT and two MINERVA-II hoppers) that landed on the surface and operated in Ryugu's ~0.0001 g gravity — the first wheeled exploration of any asteroid. Two touchdown sampling operations followed, including one inside an artificial crater made by a copper impactor."
       },
       {
         "met_days": 1880,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Earth re-entry — sample return capsule",
+        "description": "Sample capsule re-entered over Woomera, Australia, 2020-12-05, parachuting down with 5.4 grams of Ryugu material — vastly exceeding the 0.1 g minimum. The mother spacecraft continued on an extended mission toward asteroid 1998 KY26 with a planned 2031 encounter. Ryugu samples already revealed amino acids and water-bearing minerals, supporting the asteroid-delivery model of early-Earth volatiles."
       }
     ]
   }

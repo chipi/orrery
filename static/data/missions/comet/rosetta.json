@@ -67,41 +67,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Ariane 5 G+",
+        "description": "Kourou, French Guiana, 2004-03-02. ESA's flagship cometary mission, designed to rendezvous with comet 67P/Churyumov–Gerasimenko during its 2014–2016 inner-solar-system passage. The launch slipped 13 months from a January 2003 window targeting comet 46P/Wirtanen — a fault in Ariane 5 forced re-planning to the alternative comet."
       },
       {
         "met_days": 367,
         "type": "flyby",
-        "label": "Earth #1 — gravity assist"
+        "label": "Earth #1 — gravity assist",
+        "description": "Closest approach 1,955 km on 2005-03-04. First of four gravity assists in the cruise plan — the chemical engine alone can't reach 67P's aphelion at 5.7 AU."
       },
       {
         "met_days": 1090,
         "type": "flyby",
-        "label": "Mars — gravity assist"
+        "label": "Mars — gravity assist",
+        "description": "Closest approach 250 km above the Martian surface on 2007-02-25 — only 15 minutes inside Mars's eclipse. The spacecraft was put into hibernation mode during the brief eclipse to conserve power, then commanded back to operation immediately on emergence."
       },
       {
         "met_days": 1349,
         "type": "flyby",
-        "label": "Earth #2 — gravity assist"
+        "label": "Earth #2 — gravity assist",
+        "description": "Closest approach 5,295 km on 2007-11-13. Briefly mistaken for a near-Earth asteroid (designated 2007 VN84) before observers realised it was Rosetta heading out."
       },
       {
         "met_days": 1671,
         "type": "flyby",
-        "label": "Asteroid 2867 Steins — flyby"
-      },
-      {
-        "met_days": 2320,
-        "type": "flyby",
-        "label": "Asteroid 21 Lutetia — flyby"
+        "label": "Steins (2867) — asteroid flyby",
+        "description": "Closest approach 800 km from main-belt asteroid 2867 Steins on 2008-09-05. Steins's diamond-shaped 6 km E-type body provided the first close-up confirmation of an enstatite-chondrite parent body's surface morphology."
       },
       {
         "met_days": 2058,
         "type": "flyby",
-        "label": "Earth #3 — gravity assist"
+        "label": "Earth #3 — gravity assist",
+        "description": "Final Earth flyby on 2009-11-13, closest approach 2,481 km. The boost takes Rosetta out to the aphelion needed to match 67P's orbit, after which the spacecraft entered deep-space hibernation."
+      },
+      {
+        "met_days": 2320,
+        "type": "flyby",
+        "label": "Lutetia (21) — asteroid flyby",
+        "description": "Closest approach 3,168 km from main-belt asteroid 21 Lutetia on 2010-07-10. At 100 km diameter, Lutetia is the largest asteroid ever visited at close range; the M-type spectrum + high density suggested a metal-rich differentiated body."
       },
       {
         "met_days": 3809,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "67P/Churyumov–Gerasimenko rendezvous + Philae landing",
+        "description": "Arrived at comet 67P on 2014-08-06 — the first spacecraft to rendezvous with a comet (matching velocities, not just flying past). Released Philae lander on 2014-11-12; Philae bounced twice in the comet's ~10⁻⁴ g gravity but returned 64 hours of surface data. Rosetta continued orbiting 67P through perihelion in 2015, ended on 2016-09-30 with a controlled descent to the comet's surface."
       }
     ]
   }

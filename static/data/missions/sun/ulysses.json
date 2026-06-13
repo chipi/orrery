@@ -66,24 +66,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — STS-41 Discovery / IUS+PAM-S",
+        "description": "Cape Canaveral, 1990-10-06. Joint ESA / NASA mission, deployed from Space Shuttle Discovery and accelerated by a two-stage upper stage (Inertial Upper Stage + Payload Assist Module-S) — the fastest spacecraft ever launched at the time (40 km/s relative to Earth on a Jupiter escape trajectory)."
       },
       {
         "met_days": 490,
         "type": "flyby",
-        "label": "Jupiter — gravity assist (out of ecliptic)"
+        "label": "Jupiter — out-of-ecliptic gravity assist",
+        "description": "Closest approach 380,000 km from Jupiter on 1992-02-08. The encounter was used for one purpose: bend Ulysses's trajectory ~80° out of the ecliptic plane, an angle no chemical rocket could deliver from Earth directly. The flyby left Ulysses on a polar solar orbit — the only spacecraft ever to study the Sun's poles."
       },
       {
         "met_days": 1359,
-        "type": "phasing"
+        "type": "phasing",
+        "label": "First south polar pass",
+        "description": "September 1994. Ulysses passed over the Sun's south solar pole for the first time, mapping the polar magnetic field structure + the high-speed solar wind streaming from the polar coronal holes. The solar minimum conditions made for a 'clean' polar wind sample."
       },
       {
         "met_days": 1758,
-        "type": "phasing"
+        "type": "phasing",
+        "label": "First north polar pass",
+        "description": "July 1995. Companion to the south polar pass, this time over the northern solar pole. The two passes together delivered the first true 3D map of the heliosphere — confirming the Sun's polar magnetic-field structure flips during solar maximum (a finding Ulysses confirmed in its second polar pass set, 2000-2001)."
       },
       {
         "met_days": 6845,
-        "type": "anomaly"
+        "type": "anomaly",
+        "label": "End of mission — propellant frozen",
+        "description": "2009-06-30. Ulysses was decommissioned after 18 years of operation — far beyond the planned 5-year mission. The cause was thermal: as the RTG decayed below the threshold needed to keep hydrazine propellant lines warm, the propellant would have frozen and the spacecraft become unrecoverable. Three polar pass sets had been completed by then; the heliospheric data archive remains the standard reference."
       }
     ]
   }

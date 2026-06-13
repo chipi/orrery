@@ -62,22 +62,27 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Ariane 1",
+        "description": "Kourou, French Guiana, 1985-07-02. ESA's first deep-space mission, named after the painter who portrayed Halley's Comet as the Star of Bethlehem in 1301. Part of the multi-spacecraft Halley Armada (Soviet Vega 1/2, Japanese Sakigake/Suisei, ICE) — Giotto was the only one to make a close encounter."
       },
       {
         "met_days": 255,
         "type": "flyby",
-        "label": "Comet Halley — flyby"
+        "label": "Halley — closest comet encounter",
+        "description": "Closest approach 596 km from Halley's nucleus on 1986-03-14 — the closest cometary encounter to date. A dust-grain impact two seconds before closest approach damaged the camera and tumbled the spacecraft, but Giotto recovered and returned the first close images of any comet nucleus. Revealed Halley as a peanut-shaped 15-km dark body, not the bright ice ball expected."
       },
       {
         "met_days": 1827,
         "type": "flyby",
-        "label": "Earth — gravity assist"
+        "label": "Earth — gravity assist",
+        "description": "Closest approach 22,730 km on 1990-07-02 — the first time any spacecraft used Earth for a return gravity assist. Bent the orbit to set up the second cometary encounter."
       },
       {
         "met_days": 2565,
         "type": "flyby",
-        "label": "Comet Grigg-Skjellerup — flyby"
+        "label": "Grigg-Skjellerup — extended-mission flyby",
+        "description": "Closest approach 200 km from comet 26P/Grigg-Skjellerup on 1992-07-10. A bonus encounter possible only because Giotto survived Halley dust-storm damage. Showed Grigg-Skjellerup to be a much smaller and less dust-rich comet than Halley, broadening the early sample of in-situ cometary observations."
       }
     ]
   }

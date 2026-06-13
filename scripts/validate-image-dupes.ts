@@ -17,9 +17,19 @@
  * add the SHA-256 prefix (8 chars) to ALLOWLIST below with a comment
  * explaining the editorial intent.
  *
- * Same-surface dupes (e.g. `missions/otv-1/02.jpg` == `missions/otv-1/03.jpg`)
- * are out of scope for this check — they're flagged by Cat 2 work
- * which involves slot renumbering and lives in a separate script.
+ * Two scopes of dupe are detected:
+ *
+ * 1. Cross-surface: two files in DIFFERENT top-level surfaces share
+ *    bytes (e.g. moon-sites/apollo11/01.jpg == missions/apollo11/01.jpg
+ *    cleaned up in Cat 1A 2026-06-13).
+ *
+ * 2. Same-surface: two files in the SAME entity dir (e.g.
+ *    missions/otv-1/02.jpg == missions/otv-1/03.jpg cleaned up in Cat 2
+ *    2026-06-13) OR same surface but different entity (e.g.
+ *    fleet-galleries/mars-2/01.jpg == fleet-galleries/mars-3/01.jpg —
+ *    sister mission editorial reuse cleaned up + allowlisted in Cat 3).
+ *
+ * Both scopes use the same ALLOWLIST keyed by 8-char SHA-256 prefix.
  */
 import { execSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -118,6 +128,84 @@ const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // ── Rosetta fleet entry shares slot 02 with the mission
   //    gallery slot 05 — different slots, same canonical photo.
   '7334abe6', // fleet-galleries/rosetta/02.jpg ← missions/rosetta/05.jpg
+  // ── Cat 3 (same-surface inter-entity) — landed 2026-06-13
+  //    Family / programme / sibling editorial reuses where one
+  //    canonical archive photo serves multiple sister entities.
+  //    Chang'e + Yutu Chinese lunar program — sequential missions
+  //    share rover / lander / earthrise archive shots.
+  'e273f1e5', // change-2 + change-3
+  '166355ab', // change-3 + yutu
+  '10434490', // change-4 + yutu-2
+  '8ae385d1', // change-4 + yutu-2
+  'a6006cc3', // change-4 + change-5 + luna-9
+  'f98246f5', // change-4 + change-5 + luna-16 + venera-7
+  //    Outer-system flagships — paired / sequel missions share
+  //    iconic encounter photos.
+  '50feffd7', // mariner-9 + voyager-2
+  '658a431a', // pioneer-10 + pioneer-11
+  //    JAXA H3 launcher + Tanegashima Yoshinobu pad + HTV-X cargo —
+  //    same launch site / vehicle family.
+  '2fb3f849', // h3 + tanegashima-yoshinobu
+  'a6f8e02d', // h3 + htv-x
+  //    Long March 3B + Xichang LC-2/LC-3 + Taiyuan LC-9 — same
+  //    launcher + facility photos.
+  '83ad4e8f', // long-march-3b + xichang-lc-2
+  '5ba99e46', // long-march-3b + xichang-lc-3
+  'c0d5e7d2', // taiyuan-lc-9 + xichang-lc-2 + xichang-lc-3
+  '49d2cce2', // xichang-lc-2 + xichang-lc-3
+  '72276470', // xichang-lc-2 + xichang-lc-3
+  //    Soviet Luna program — sister missions share archival shots.
+  '3d00fdc3', // luna-16 + luna-9
+  //    Soviet Mars-N orbital program — Mars 2 + Mars 3 paired flights.
+  'b412955e', // mars-2 + mars-3
+  'e70d60b3', // mars-2 + mars-3
+  '89daa1f5', // mars-2 + mars-3
+  'c26a3d99', // mars-2 + mars-3
+  '777dcf96', // mars2 + mars3 (site dirs use no hyphen)
+  '97ae238b', // mars2 + mars3
+  //    Mir + Progress-M — same station ecosystem photos.
+  'c277c0b5', // mir + progress-m
+  //    Salyut station program — same hardware across mission numbers.
+  '0778bda1', // salyut-1 + salyut-6
+  '66324464', // salyut-1 + salyut-6
+  '255f4dd1', // salyut-2 + salyut-3
+  //    Sokol suit variants — same product line.
+  '33fc61a3', // sokol-kv-2 + sokol-m
+  //    Soyuz launcher / spacecraft family — variants share heritage.
+  '950ef1be', // soyuz-fg + soyuz-tma
+  'f6d9a517', // soyuz-tma + soyuz-u
+  //    Vega 1 + Vega 2 — paired Venus/Halley flyby siblings.
+  '8fc113b6', // vega-1 + vega-2
+  '2f1d825f', // vega-1 + vega-2
+  '039d725f', // vega-1 + vega-2
+  '8e2b0c2f', // vega-1 + vega-2
+  'fccbfe48', // vega-1 + vega-2
+  //    Vostok program — sister crewed flights share archive shots.
+  'ace3d473', // vostok-3 + vostok-4
+  //    Tiangong + Shenzhou + Tianzhou (visiting vehicles to station).
+  '32214862', // shenzhou + tianzhou
+  '31098aeb', // shenzhou + tianzhou
+  '672ad537', // tiangong-2 + tianzhou
+  '1d9c3c32', // chinarm + shenzhou
+  'd975f0f5', // chinarm + tianhe
+  //    ISS modules sharing assembly-era / docking-bay photos.
+  '3486a1ef', // unity + zvezda
+  '3632f2da', // unity + zarya
+  //    Mars rover pair from same Mars Exploration Rover programme.
+  'eaac0de3', // opportunity + spirit
+  //    Viking 1 lander + orbiter — same descent stack at Mars.
+  'deb29699', // viking1-lander + viking1-orbiter
+  'a990a3ef', // viking1-lander + viking1-orbiter
+  'cae8df25', // viking1-lander + viking1-orbiter
+  '1e135762', // viking1-lander + viking1-orbiter
+  //    Freedom 7 / Mercury Redstone-3 — same first US crewed flight.
+  '279f1015', // freedom-7 + mercury-redstone-3
+  //    X-37B OTV missions share spacecraft photo across flights.
+  '81547127', // otv-1 + otv-2 + otv-3
+  '838406cc', // otv-1 + otv-2
+  'a87d6afa', // otv-1 + otv-2
+  //    Starship demo + Starship Mars Crew — same SpaceX vehicle line.
+  '80b02832', // starship-demo + starship-mars-crew
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base
@@ -157,7 +245,7 @@ interface DupeGroup {
   surfaces: Set<string>;
 }
 
-function findCrossSurfaceDupes(): DupeGroup[] {
+function findDupes(): DupeGroup[] {
   const byHash = new Map<string, string[]>();
   for (const path of walkJpgs(IMAGES_DIR)) {
     const h = sha256Prefix(path);
@@ -168,9 +256,8 @@ function findCrossSurfaceDupes(): DupeGroup[] {
   const groups: DupeGroup[] = [];
   for (const [h, paths] of byHash) {
     if (paths.length < 2) continue;
-    const surfaces = new Set(paths.map(surfaceOf));
-    if (surfaces.size < 2) continue;
     if (ALLOWLIST.has(h)) continue;
+    const surfaces = new Set(paths.map(surfaceOf));
     groups.push({ hashPrefix: h, paths, surfaces });
   }
   return groups;
@@ -181,21 +268,24 @@ function rel(p: string): string {
 }
 
 function main(): void {
-  console.log('Cross-surface image byte-dupe check…');
-  const groups = findCrossSurfaceDupes();
+  console.log('Image byte-dupe check (cross + same-surface)…');
+  const groups = findDupes();
   if (groups.length === 0) {
-    console.log(
-      `✓ no cross-surface byte-dupes across ${execSync(
-        `find ${IMAGES_DIR} -name '*.jpg' ! -name '*.1x1.jpg' ! -name '*.4x3.jpg' ! -name '*.16x9.jpg' | wc -l`,
-        { encoding: 'utf-8' },
-      ).trim()} base jpgs`,
-    );
+    const n = execSync(
+      `find ${IMAGES_DIR} -name '*.jpg' ! -name '*.1x1.jpg' ! -name '*.4x3.jpg' ! -name '*.16x9.jpg' | wc -l`,
+      { encoding: 'utf-8' },
+    ).trim();
+    console.log(`✓ no un-allowlisted byte-dupes across ${n} base jpgs`);
     return;
   }
-  console.error(`✘ ${groups.length} cross-surface byte-dupe group(s):`);
+  console.error(`✘ ${groups.length} un-allowlisted byte-dupe group(s):`);
   console.error('');
   for (const g of groups) {
-    console.error(`  ${g.hashPrefix}  surfaces: [${[...g.surfaces].join(', ')}]`);
+    const surfTag =
+      g.surfaces.size === 1
+        ? `same-surface: ${[...g.surfaces][0]}`
+        : `surfaces: [${[...g.surfaces].join(', ')}]`;
+    console.error(`  ${g.hashPrefix}  ${surfTag}`);
     for (const p of g.paths) {
       console.error(`    ${rel(p)}`);
     }
@@ -203,8 +293,9 @@ function main(): void {
   }
   console.error(
     'Either:\n' +
-      '  1. Delete the redundant on-disk copies (preferred — the gallery\n' +
-      "     loader's fallback ladder handles serving the canonical file), OR\n" +
+      '  1. Delete the redundant on-disk copies (cross-surface: rely on the\n' +
+      "     gallery loader's fallback ladder; same-surface: pick canonical\n" +
+      '     slot, delete others, renumber + update count manifests), OR\n' +
       '  2. Add the 8-char SHA-256 prefix to ALLOWLIST in this script with a\n' +
       '     short comment explaining the editorial intent.\n',
   );

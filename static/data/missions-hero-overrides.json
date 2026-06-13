@@ -14,7 +14,7 @@
       "approved_at": "2026-06-12"
     },
     "cassini": {
-      "slot": "04.jpg",
+      "slot": "03.jpg",
       "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
       "approved_at": "2026-06-12"
     },
@@ -34,7 +34,7 @@
       "approved_at": "2026-06-12"
     },
     "juno": {
-      "slot": "03.jpg",
+      "slot": "02.jpg",
       "reason": "url: artwork/illustration/render/scale-model in source URL; category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
       "approved_at": "2026-06-12"
     },
@@ -59,28 +59,28 @@
       "approved_at": "2026-06-12"
     },
     "bepicolombo": {
-      "slot": "04.jpg",
+      "slot": "03.jpg",
       "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
       "approved_at": "2026-06-12"
     },
     "vostok-3": {
       "slot": "04.jpg",
-      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "skylab-4": {
       "slot": "04.jpg",
-      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "inspiration4": {
       "slot": "04.jpg",
-      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "polaris-dawn": {
       "slot": "03.jpg",
-      "reason": "category: people-only — no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only \u2014 no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "otv-3": {

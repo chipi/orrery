@@ -14,6 +14,7 @@
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { matchesQuery } from '$lib/list-search';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
@@ -50,6 +51,8 @@
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
+  /** RFC-027 — free-text search across name + agency + category + tagline + country. */
+  let query = $state('');
   // Filters strip is collapsed by default; clicking the eyebrow expands.
   // Mirrors the /missions pattern (J.1) so users land on the clean
   // grid first and only opt into filtering when they need it.
@@ -80,6 +83,8 @@
     entries
       .filter(
         (e) =>
+          // RFC-027 — free-text search across the fields the card renders.
+          matchesQuery([e.name, e.agency, e.category, e.tagline, e.country], query) &&
           (categoryFilter === 'ALL' || e.category === categoryFilter) &&
           (agencyFilter === 'ALL' || splitAgencies(e.agency).includes(agencyFilter)) &&
           (epochFilter === 'ALL' || e.epoch === epochFilter) &&
@@ -164,6 +169,7 @@
     agencyFilter = ag ?? 'ALL';
     sortMode = so === 'chrono-asc' || so === 'alpha' || so === 'category' ? so : 'chrono-desc';
     listView = view === 'list';
+    query = url.searchParams.get('q') ?? '';
   }
 
   function epochValid(v: string): boolean {
@@ -194,6 +200,8 @@
     else params.set('sort', sortMode);
     if (!listView) params.delete('view');
     else params.set('view', 'list');
+    if (query.trim() === '') params.delete('q');
+    else params.set('q', query.trim());
     goto(url.pathname + (params.toString() ? `?${params}` : ''), {
       replaceState: true,
       keepFocus: true,
@@ -219,6 +227,14 @@
   }
   function setSort(v: typeof sortMode) {
     sortMode = v;
+    syncUrl();
+  }
+
+  // RFC-027 search input handler. Push immediately on every input event;
+  // SvelteKit's `replaceState: true` keeps the back-button clean and the
+  // visible grid updates synchronously via the $derived chain.
+  function setQuery(v: string) {
+    query = v;
     syncUrl();
   }
 
@@ -310,6 +326,21 @@
   {:else if isError(entriesRequest)}
     <p class="status error">Failed to load fleet data.</p>
   {:else}
+    <!-- RFC-027 — free-text search across name + agency + category +
+         tagline + country. Sits above the FILTERS toggle so it's visible
+         without expanding. Inline en-US copy for Slice C; Slice D
+         replaces with message-bundle keys across all 14 locales. -->
+    <div class="search-row">
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Search the fleet…"
+        aria-label="Search the fleet"
+        data-testid="fleet-search"
+        value={query}
+        oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
+      />
+    </div>
     <!-- Filters collapsed by default. Count lives on the right end of
          the toggle bar (fraction when active, total-only otherwise) —
          matches /missions for visual consistency. -->
@@ -601,6 +632,29 @@
   }
   .count-total-only {
     color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* RFC-027 search input — same visual family as /missions for parity. */
+  .search-row {
+    margin-bottom: 8px;
+  }
+  .search-input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    transition: border-color 120ms;
+  }
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: #4ecdc4;
   }
 
   /* Filters — visually identical to /missions per route-parity directive. */

@@ -13,6 +13,7 @@
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { matchesQuery } from '$lib/list-search';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
@@ -57,6 +58,8 @@
     crew: 'ALL' | 'CREWED' | 'UNCREWED';
     fromYear: number;
     toYear: number;
+    /** RFC-027 — free-text search across name + agency + type + first. */
+    q: string;
     expanded: boolean;
   }
   const filterState = $state<MissionFilterState>({
@@ -66,6 +69,7 @@
     crew: 'ALL',
     fromYear: TIMELINE_MIN_YEAR,
     toYear: TIMELINE_MAX_YEAR,
+    q: '',
     expanded: false,
   });
 
@@ -76,6 +80,7 @@
     filterState.crew = 'ALL';
     filterState.fromYear = TIMELINE_MIN_YEAR;
     filterState.toYear = TIMELINE_MAX_YEAR;
+    filterState.q = '';
   }
 
   // True when at least one filter is set away from its 'ALL' / full-range
@@ -86,7 +91,8 @@
       filterState.agency !== 'ALL' ||
       filterState.crew !== 'ALL' ||
       filterState.fromYear !== TIMELINE_MIN_YEAR ||
-      filterState.toYear !== TIMELINE_MAX_YEAR,
+      filterState.toYear !== TIMELINE_MAX_YEAR ||
+      filterState.q.trim() !== '',
   );
 
   function clearAllFilters(): void {
@@ -106,6 +112,11 @@
     missions
       .filter(
         (mission) =>
+          // RFC-027 — free-text search across the fields the card renders.
+          matchesQuery(
+            [mission.name ?? mission.id, mission.agency, mission.type, mission.first],
+            filterState.q,
+          ) &&
           (filterState.dest === 'ALL' || mission.dest === filterState.dest) &&
           (filterState.status === 'ALL' || mission.status === filterState.status) &&
           (filterState.agency === 'ALL' ||
@@ -145,6 +156,7 @@
     filterState.toYear = Number.isFinite(toParsed)
       ? Math.max(filterState.fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
       : TIMELINE_MAX_YEAR;
+    filterState.q = url.searchParams.get('q') ?? '';
     // Auto-expand the filter strip whenever the URL carries any
     // filter param — even if the value clamped back to the default,
     // the user explicitly asked about filters and should see the
@@ -170,6 +182,7 @@
     if (filterState.fromYear !== TIMELINE_MIN_YEAR)
       params.set('from', String(filterState.fromYear));
     if (filterState.toYear !== TIMELINE_MAX_YEAR) params.set('to', String(filterState.toYear));
+    if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -205,6 +218,16 @@
 
   function setAgency(value: string) {
     filterState.agency = value;
+    pushFiltersToUrl();
+  }
+
+  // RFC-027 search input handler. We push immediately on every input
+  // event — SvelteKit's `replaceState: true` keeps the back-button
+  // clean and the visible card grid updates synchronously via the
+  // $derived chain. If real performance hurts on giant lists later,
+  // wrap the URL write in a debounce; the matcher itself is sub-ms.
+  function setQuery(value: string) {
+    filterState.q = value;
     pushFiltersToUrl();
   }
 
@@ -285,6 +308,21 @@
 <LaunchesBanner />
 
 <div class="library">
+  <!-- RFC-027 — free-text search across name + agency + type + first.
+       Sits above the FILTERS toggle so it's visible without expanding.
+       i18n placeholders are inlined for Slice B; Slice D replaces with
+       message-bundle keys across all 14 locales. -->
+  <div class="search-row">
+    <input
+      type="search"
+      class="search-input"
+      placeholder="Search missions…"
+      aria-label="Search missions"
+      data-testid="missions-search"
+      value={filterState.q}
+      oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
+    />
+  </div>
   <!-- Filters + timeline collapsed by default. The count lives at the
        right end of the toggle bar so the screen stays clean above the
        grid — fraction (filtered / total) when active, total-only when
@@ -678,6 +716,31 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+
+  /* RFC-027 search input — sits above the FILTERS toggle. Same visual
+     family as the .filters-toggle border + Space-Mono type so it reads
+     as part of the same control strip. */
+  .search-row {
+    margin-bottom: 8px;
+  }
+  .search-input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    transition: border-color 120ms;
+  }
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: #4ecdc4;
   }
 
   /* Inline count chip on the right end of the filters toggle bar.

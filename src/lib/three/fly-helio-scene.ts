@@ -97,6 +97,16 @@ export interface HelioSceneHandles {
    *  plane tracks the hero subject. Other uniforms (aperture, maxblur)
    *  are baked at construction. */
   bokehPass: BokehPass | null;
+  /** FilmPass — celluloid grain. Non-null when quality.filmGrainEnabled.
+   *  Exposed for the Rendering tab's per-pass enable toggle (#334). */
+  filmPass: FilmPass | null;
+  /** ShaderPass wrapping VignetteShader — corner darkening. Non-null
+   *  when quality.vignetteEnabled. Exposed for the Rendering tab. */
+  vignettePass: ShaderPass | null;
+  /** Procedural-skydome inverted-sphere mesh. Non-null when
+   *  quality.skydomeEnabled. Exposed so the Rendering tab can flip
+   *  `.visible` for live A/B without a reload. */
+  skydomeMesh: THREE.Mesh | null;
   /** Sun lens flare — non-null only on the cinematic tier. The
    *  component animate loop calls `sunLensFlare.update(camera)` per
    *  frame to recompute ghost positions from the Sun's screen-space
@@ -334,8 +344,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // just noise — so we get "shot on film" texture without retro-CRT
   // overlay. Tier-gated at medium+. Noise intensity intentionally low
   // (0.18) — celluloid grain, not VHS static.
+  let filmPass: FilmPass | null = null;
   if (opts.quality.filmGrainEnabled) {
-    const filmPass = new FilmPass(0.18, 0, 0, 0);
+    filmPass = new FilmPass(0.18, 0, 0, 0);
     composer.addPass(filmPass);
   }
   // Vignette — wave 2/3 punch #8. Cheapest of the polish passes:
@@ -346,8 +357,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // included). Tier-gated at medium+ — even minimal-budget GPUs can
   // afford this single quad blit on a desktop screen, but we keep the
   // single off-switch in case a constrained device profile asks for it.
+  let vignettePass: ShaderPass | null = null;
   if (opts.quality.vignetteEnabled) {
-    const vignettePass = new ShaderPass(VignetteShader);
+    vignettePass = new ShaderPass(VignetteShader);
     vignettePass.uniforms['offset'].value = 0.95;
     vignettePass.uniforms['darkness'].value = 0.6;
     composer.addPass(vignettePass);
@@ -359,9 +371,11 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // provides the soft galactic-band glow that point sprites can't
   // carry. renderOrder -1000 + depthWrite false so everything else in
   // the scene composes in front. Tier-gated (high+).
+  let skydomeMesh: THREE.Mesh | null = null;
   if (opts.quality.skydomeEnabled) {
     const sky = buildSkydome();
-    scene.add(sky.mesh);
+    skydomeMesh = sky.mesh;
+    scene.add(skydomeMesh);
     // GC reclaims the sphere geometry + canvas texture when the scene
     // is torn down; the caller's cleanup destroys the renderer and
     // drops the WebGL context, freeing the GPU-side allocation.
@@ -964,6 +978,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     composer,
     bloomPass,
     bokehPass,
+    filmPass,
+    vignettePass,
+    skydomeMesh,
     sunLensFlare,
     sunCore,
     sunGlow,

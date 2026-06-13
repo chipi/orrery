@@ -121,6 +121,9 @@
   import { resolveQualitySource } from '$lib/quality/quality-tier';
   import type { QualityConfig } from '$lib/quality/quality-tier';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+  import type { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
+  import type { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+  import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import {
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
     type PlanetId as FlybyPlanetId,
@@ -220,6 +223,11 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  let liveBokehPass: BokehPass | null = $state(null);
+  let liveFilmPass: FilmPass | null = $state(null);
+  let liveVignettePass: ShaderPass | null = $state(null);
+  let liveSkydomeMesh: THREE.Object3D | null = $state(null);
+  let liveSunLensFlareGroup: THREE.Object3D | null = $state(null);
 
   // ─── HUD-collapse toggle (mobile) ────────────────────────────────
   // On narrow viewports the hud-stack (top-left mission info) and
@@ -1945,6 +1953,11 @@
     liveQuality = quality;
     liveQualitySource = resolveQualitySource($page.url);
     liveBloomPass = helioHandles.bloomPass;
+    liveBokehPass = helioHandles.bokehPass;
+    liveFilmPass = helioHandles.filmPass;
+    liveVignettePass = helioHandles.vignettePass;
+    liveSkydomeMesh = helioHandles.skydomeMesh;
+    liveSunLensFlareGroup = helioHandles.sunLensFlare?.group ?? null;
     const sunCore = helioHandles.sunCore;
     const sunGlow = helioHandles.sunGlow;
     const earthMesh = helioHandles.earthMesh;
@@ -6241,6 +6254,11 @@
     quality={liveQuality}
     qualitySource={liveQualitySource}
     bloomPass={liveBloomPass}
+    bokehPass={liveBokehPass}
+    filmPass={liveFilmPass}
+    vignettePass={liveVignettePass}
+    skydomeMesh={liveSkydomeMesh}
+    sunLensFlareGroup={liveSunLensFlareGroup}
   />
 {/if}
 

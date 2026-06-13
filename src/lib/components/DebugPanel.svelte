@@ -287,29 +287,127 @@
               >
             </div>
           {/if}
-          <div class="debug-row">
-            <span class="debug-key">DoF</span>
-            <span class="debug-val">{renderingReg.quality.dofEnabled ? 'on' : 'off'}</span>
-          </div>
-          <div class="debug-row">
-            <span class="debug-key">Film grain</span>
-            <span class="debug-val">{renderingReg.quality.filmGrainEnabled ? 'on' : 'off'}</span>
-          </div>
-          <div class="debug-row">
-            <span class="debug-key">Vignette</span>
-            <span class="debug-val">{renderingReg.quality.vignetteEnabled ? 'on' : 'off'}</span>
-          </div>
-          <div class="debug-row">
-            <span class="debug-key">Skydome</span>
-            <span class="debug-val">{renderingReg.quality.skydomeEnabled ? 'on' : 'off'}</span>
-          </div>
-          <div class="debug-row">
-            <span class="debug-key">Lens flare</span>
-            <span class="debug-val">{renderingReg.quality.lensFlareEnabled ? 'on' : 'off'}</span>
-          </div>
+          <!-- Per-pass live toggles (#334 slice 33). Each is a Pass.enabled
+               flip (no composer rebuild) or Object3D.visible flip; mutated
+               in place, takes effect next composer.render(). When the
+               route didn't build the pass (lower tier) the row falls back
+               to the static quality-config readout. -->
+          {#if renderingReg.bokehPass}
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">DoF</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.bokehPass.enabled}
+                  onchange={(e) => {
+                    if (renderingReg?.bokehPass) {
+                      renderingReg.bokehPass.enabled = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.bokehPass.enabled ? 'on' : 'off'}</span>
+              </label>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">DoF</span>
+              <span class="debug-val">{renderingReg.quality.dofEnabled ? 'on' : 'off'}</span>
+            </div>
+          {/if}
+          {#if renderingReg.filmPass}
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">Film grain</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.filmPass.enabled}
+                  onchange={(e) => {
+                    if (renderingReg?.filmPass) {
+                      renderingReg.filmPass.enabled = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.filmPass.enabled ? 'on' : 'off'}</span>
+              </label>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">Film grain</span>
+              <span class="debug-val">{renderingReg.quality.filmGrainEnabled ? 'on' : 'off'}</span>
+            </div>
+          {/if}
+          {#if renderingReg.vignettePass}
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">Vignette</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.vignettePass.enabled}
+                  onchange={(e) => {
+                    if (renderingReg?.vignettePass) {
+                      renderingReg.vignettePass.enabled = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.vignettePass.enabled ? 'on' : 'off'}</span>
+              </label>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">Vignette</span>
+              <span class="debug-val">{renderingReg.quality.vignetteEnabled ? 'on' : 'off'}</span>
+            </div>
+          {/if}
+          {#if renderingReg.skydomeMesh}
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">Skydome</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.skydomeMesh.visible}
+                  onchange={(e) => {
+                    if (renderingReg?.skydomeMesh) {
+                      renderingReg.skydomeMesh.visible = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.skydomeMesh.visible ? 'on' : 'off'}</span>
+              </label>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">Skydome</span>
+              <span class="debug-val">{renderingReg.quality.skydomeEnabled ? 'on' : 'off'}</span>
+            </div>
+          {/if}
+          {#if renderingReg.sunLensFlareGroup}
+            <div class="debug-row debug-row-control">
+              <span class="debug-key">Lens flare</span>
+              <label class="debug-toggle">
+                <input
+                  type="checkbox"
+                  checked={renderingReg.sunLensFlareGroup.visible}
+                  onchange={(e) => {
+                    if (renderingReg?.sunLensFlareGroup) {
+                      renderingReg.sunLensFlareGroup.visible = e.currentTarget.checked;
+                    }
+                  }}
+                />
+                <span>{renderingReg.sunLensFlareGroup.visible ? 'on' : 'off'}</span>
+              </label>
+            </div>
+          {:else}
+            <div class="debug-row">
+              <span class="debug-key">Lens flare</span>
+              <span class="debug-val">{renderingReg.quality.lensFlareEnabled ? 'on' : 'off'}</span>
+            </div>
+          {/if}
           <div class="debug-row">
             <span class="debug-key">Rim light</span>
-            <span class="debug-val">{renderingReg.quality.rimLightEnabled ? 'on' : 'off'}</span>
+            <span class="debug-val"
+              >{renderingReg.quality.rimLightEnabled ? 'on' : 'off'} <em>(material swap — fixed)</em
+              ></span
+            >
           </div>
         </div>
         <div class="debug-section debug-section-stack">
@@ -510,5 +608,10 @@
     font-size: 10px;
     color: rgba(220, 230, 245, 0.5);
     font-style: italic;
+  }
+  .debug-val em {
+    color: rgba(220, 230, 245, 0.5);
+    font-style: italic;
+    font-size: 9px;
   }
 </style>

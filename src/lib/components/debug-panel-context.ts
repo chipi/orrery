@@ -28,6 +28,9 @@ import { getContext, setContext } from 'svelte';
 import type { Snippet } from 'svelte';
 import type * as THREE from 'three';
 import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import type { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
+import type { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import type { QualityConfig } from '$lib/quality/quality-tier';
 
 const DEBUG_PANEL_KEY = Symbol('debug-panel-page-content');
@@ -53,6 +56,16 @@ export interface RenderingDebugRegistration {
    *  sliders + an ON/OFF toggle that mutate `bloomPass.enabled` and
    *  the three uniforms in-place (no composer rebuild required). */
   bloomPass?: UnrealBloomPass | null;
+  /** Optional refs for the remaining /fly post-stack passes. Each
+   *  carries an `.enabled` flag the Rendering tab can flip live;
+   *  routes that don't build the pass leave the slot null. */
+  bokehPass?: BokehPass | null;
+  filmPass?: FilmPass | null;
+  vignettePass?: ShaderPass | null;
+  /** Optional refs for tier-gated scene objects. Each carries
+   *  `.visible` for live A/B without a composer rebuild. */
+  skydomeMesh?: THREE.Object3D | null;
+  sunLensFlareGroup?: THREE.Object3D | null;
 }
 
 /** Boxed reactive slot for the rendering registration. The layout

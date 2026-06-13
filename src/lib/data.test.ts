@@ -595,10 +595,15 @@ describe('panel gallery loaders (v0.1.10)', () => {
     expect(urls.length).toBeGreaterThanOrEqual(3);
   });
 
-  it('getMoonSiteGallery returns URLs for Apollo 11 (copied from missions)', async () => {
+  it('getMoonSiteGallery falls through to mission-gallery for Apollo 11', async () => {
+    // After the Cat 1A byte-dedup pass (2026-06-13), the per-moon-site
+    // copies of mission images were dropped from disk + manifest. The
+    // loader's fallback ladder now returns the canonical mission gallery
+    // directly, so the same Apollo 11 photos render on /moon/?site=apollo11
+    // without a second on-disk copy.
     const urls = await getMoonSiteGallery('apollo11');
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/moon-sites\/apollo11\/01\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/missions\/apollo11\/0[0-9]\.jpg$/);
   });
 });
 

@@ -102,6 +102,30 @@ interface Gap {
   expectedPath: string;
 }
 
+/**
+ * Surface fallback ladder mirroring the runtime gallery loaders in
+ * src/lib/data.ts. When a copy-surface (earth-objects / moon-sites /
+ * mars-sites) doesn't have its own hero, the loader falls through to
+ * the mission gallery (and then to fleet for moon/mars sites). The
+ * validator follows the same ladder so a Cat 1A byte-dedup pass that
+ * dropped redundant on-disk copies doesn't flag the entity as a gap.
+ */
+const FALLBACK_LADDER: Record<string, string[]> = {
+  'earth-objects': ['missions', 'fleet-galleries'],
+  'moon-sites': ['missions', 'fleet-galleries'],
+  'mars-sites': ['missions', 'fleet-galleries'],
+};
+
+function heroExistsOnAnyFallback(imageDir: string, id: string): boolean {
+  const direct = `static/images/${imageDir}/${id}/01.jpg`;
+  if (existsSync(resolve(ROOT, direct))) return true;
+  const ladder = FALLBACK_LADDER[imageDir] ?? [];
+  for (const fb of ladder) {
+    if (existsSync(resolve(ROOT, `static/images/${fb}/${id}/01.jpg`))) return true;
+  }
+  return false;
+}
+
 function validateSurface(spec: SurfaceSpec): Gap[] {
   const fullIndexPath = resolve(ROOT, spec.indexPath);
   if (!existsSync(fullIndexPath)) {
@@ -113,8 +137,8 @@ function validateSurface(spec: SurfaceSpec): Gap[] {
   const gaps: Gap[] = [];
   for (const id of ids) {
     if (spec.knownGaps.has(id)) continue;
-    const expectedPath = `static/images/${spec.imageDir}/${id}/01.jpg`;
-    if (!existsSync(resolve(ROOT, expectedPath))) {
+    if (!heroExistsOnAnyFallback(spec.imageDir, id)) {
+      const expectedPath = `static/images/${spec.imageDir}/${id}/01.jpg`;
       gaps.push({ surface: spec.label, id, expectedPath: `/${expectedPath}` });
     }
   }

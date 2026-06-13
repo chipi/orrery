@@ -6329,6 +6329,14 @@
     {@const flybyEventsForDebug = (mission.flight.events ?? []).filter(
       (e) => (e.type === 'flyby' || e.type === 'edl_or_oi') && e.met_days != null,
     )}
+    {@const cislunarHeroEvents = (mission.flight.events ?? []).filter(
+      (e) =>
+        (e.type === 'loi' ||
+          e.type === 'tei' ||
+          e.type === 'descent_start' ||
+          e.type === 'ascent') &&
+        e.met_days != null,
+    )}
     {@const defaultEvent = flybyEventsForDebug[0]}
     {#if defaultEvent}
       {@const peakMet = defaultEvent.met_days ?? 0}
@@ -6376,6 +6384,33 @@
           };
         }}
       />
+    {:else if cislunarHeroEvents.length > 0}
+      <!-- Follow-up 5 — cislunar missions don't emit flyby/edl_or_oi
+           events; their iconic moments are loi / tei / descent_start
+           / ascent. FlybyDebugViewer is heliocentric-only (planetPos,
+           PLANET_COMPOSITION), so surface the hero metadata as text
+           instead of an empty "no events" message. Per-event MET +
+           iconic-shot lead-day offset + Moon composition snapshot. -->
+      <div class="cislunar-hero-debug">
+        <div class="cislunar-hero-header">Cislunar hero events</div>
+        {#each cislunarHeroEvents as e}
+          {@const t = e.type as 'loi' | 'tei' | 'descent_start' | 'ascent'}
+          {@const leadDays = CISLUNAR_HERO_LEAD_DAYS[t]}
+          {@const peak = e.met_days ?? 0}
+          {@const iconicMet = peak - leadDays}
+          <div class="cislunar-hero-row">
+            <strong>{t.toUpperCase()}</strong>
+            <span>peak MET {peak.toFixed(2)}d</span>
+            <span>iconic MET {iconicMet.toFixed(2)}d</span>
+            <span>lead {leadDays}d</span>
+          </div>
+        {/each}
+        <div class="cislunar-hero-comp">
+          composition: side {Math.round((MOON_COMPOSITION.sideAngleRad * 180) / Math.PI)}° · pitch
+          {Math.round((MOON_COMPOSITION.pitchRad * 180) / Math.PI)}° · R ×{MOON_COMPOSITION.camRMultiplier} R_moon · targetBias
+          {MOON_COMPOSITION.targetBias}
+        </div>
+      </div>
     {:else}
       <div>No flyby/EDL events in mission.</div>
     {/if}
@@ -7354,6 +7389,28 @@
 {/if}
 
 <style>
+  /* Follow-up 5 — cislunar hero-events panel in the debug PAGE tab. */
+  .cislunar-hero-debug {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+  .cislunar-hero-header {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+  .cislunar-hero-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .cislunar-hero-comp {
+    opacity: 0.7;
+    font-style: italic;
+  }
   .fly {
     position: absolute;
     inset: var(--nav-height) 0 0 0;

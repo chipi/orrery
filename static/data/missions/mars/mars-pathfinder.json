@@ -66,35 +66,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Delta II 7925",
+        "description": "Cape Canaveral, 1996-12-04. Mars Pathfinder carried the first rover to operate on Mars — Sojourner, a 10.5-kg microwave-oven-sized vehicle. The mission also demonstrated airbag-cushioned EDL — a radical lower-cost alternative to the heritage Viking propulsive landing."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Delta II second stage burn sends Pathfinder on a 7-month Mars transfer."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
       },
       {
         "met_days": 48.76,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 86.92,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 100,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-EDL",
+        "description": "Final approach targeting for the Ares Vallis EDL site."
       },
       {
         "met_days": 212,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach + cruise-stage separation",
+        "description": "1997-07-04 — Independence Day. Cruise stage separated; the backshell entered Mars's atmosphere at 7.3 km/s."
       },
       {
         "met_days": 212.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Airbag landing in Ares Vallis",
+        "description": "First-ever airbag landing on Mars. After parachute + retrorockets, the airbag-cocooned lander bounced 15+ times across the Ares Vallis floodplain before rolling to a stop. Sojourner deployed via the lander's solar-panel ramps and roamed for 83 sols, returning the first wheeled mobility data from another planet. Communications lost 1997-09-27 due to battery failure."
       }
     ],
     "interplanetary_profile": {

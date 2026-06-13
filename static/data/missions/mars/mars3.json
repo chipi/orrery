@@ -68,31 +68,45 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K / Blok D",
+        "description": "Baikonur Cosmodrome, 1971-05-28. Soviet Mars 3 — an orbiter + lander combined. Twin of Mars 2 (launched 9 days earlier and crashed). Part of the Soviet Mars campaign during the 1971 launch window."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Blok D upper stage burn sends Mars 3 on a ~6-month transfer."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction."
       },
       {
         "met_days": 150,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 188,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars orbit insertion + lander release",
+        "description": "1971-12-02. Orbiter captured into a 1500 × 211,000 km Mars orbit. The lander separated for an independent descent toward the Ptolemaeus crater region in Mars's southern hemisphere."
       },
       {
         "met_days": 188.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mars 3 lander — first soft Mars landing",
+        "description": "Landed during a planet-encircling dust storm, 1971-12-02. The first human-made object to soft-land on Mars and survive its initial seconds — beating Viking 1 by 5 years."
       },
       {
         "met_days": 188.013,
-        "type": "anomaly"
+        "type": "anomaly",
+        "label": "Lander fails after 14.5 seconds",
+        "description": "Returned a partial low-resolution scan + the first signal from the Martian surface, then went silent — likely a victim of the dust-storm winds + sand-bombardment shorting the lander's surface instruments. The orbiter continued operating for another 8 months."
       }
     ],
     "interplanetary_profile": {

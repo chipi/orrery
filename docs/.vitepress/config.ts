@@ -21,6 +21,12 @@ export default defineConfig({
   cleanUrls: true,
   lang: 'en-US',
 
+  // ADR/guide docs occasionally link to source files via relative paths
+  // like `../../src/lib/foo.ts` — those resolve correctly on GitHub but
+  // are not part of the vitepress route table. Allow them; the build
+  // would otherwise fail on every doc that points readers at the code.
+  ignoreDeadLinks: [/(?:^|\/)\.\.\/\.\.\/(?:src|static|scripts|tests)\//],
+
   // Force dark mode — the app is dark-only, and the docs site should
   // feel like the same product. Removing the light option avoids a
   // jarring flash on first paint when the OS preference defaults to

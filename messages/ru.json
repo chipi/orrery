@@ -1125,5 +1125,7 @@
   "fly_traj_type_cislunar_free_return": "Cislunar free-return",
   "fly_traj_type_helio_hohmann": "Heliocentric Hohmann",
   "fly_traj_type_helio_free_return": "Heliocentric free-return",
-  "fly_traj_type_helio_flyby": "Heliocentric flyby"
+  "fly_traj_type_helio_flyby": "Heliocentric flyby",
+  "missions_search_placeholder": "Поиск миссий…",
+  "fleet_search_placeholder": "Поиск по флоту…"
 }

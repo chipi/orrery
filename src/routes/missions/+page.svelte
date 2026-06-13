@@ -310,14 +310,14 @@
 <div class="library">
   <!-- RFC-027 — free-text search across name + agency + type + first.
        Sits above the FILTERS toggle so it's visible without expanding.
-       i18n placeholders are inlined for Slice B; Slice D replaces with
-       message-bundle keys across all 14 locales. -->
+       Placeholder + aria reuse the same i18n key (the ellipsis suffix
+       reads fine in a screen-reader announcement). -->
   <div class="search-row">
     <input
       type="search"
       class="search-input"
-      placeholder="Search missions…"
-      aria-label="Search missions"
+      placeholder={m.missions_search_placeholder()}
+      aria-label={m.missions_search_placeholder()}
       data-testid="missions-search"
       value={filterState.q}
       oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}

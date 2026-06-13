@@ -15,6 +15,7 @@
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
+  import * as m from '$lib/paraglide/messages';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
@@ -328,14 +329,13 @@
   {:else}
     <!-- RFC-027 — free-text search across name + agency + category +
          tagline + country. Sits above the FILTERS toggle so it's visible
-         without expanding. Inline en-US copy for Slice C; Slice D
-         replaces with message-bundle keys across all 14 locales. -->
+         without expanding. Placeholder + aria reuse the same i18n key. -->
     <div class="search-row">
       <input
         type="search"
         class="search-input"
-        placeholder="Search the fleet…"
-        aria-label="Search the fleet"
+        placeholder={m.fleet_search_placeholder()}
+        aria-label={m.fleet_search_placeholder()}
         data-testid="fleet-search"
         value={query}
         oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}

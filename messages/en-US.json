@@ -1125,5 +1125,7 @@
   "fleet_view_photo_aria": "View photo",
   "fleet_close_photo_aria": "Close photo",
   "fleet_view_hero_aria": "View hero photo for {name}",
-  "surface_exit_panorama_title": "Exit panorama view (Esc)"
+  "surface_exit_panorama_title": "Exit panorama view (Esc)",
+  "missions_search_placeholder": "Search missions…",
+  "fleet_search_placeholder": "Search the fleet…"
 }

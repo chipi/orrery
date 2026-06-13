@@ -147,6 +147,10 @@
   import { findActiveCislunarPhase } from '$lib/orbital/find-active-cislunar-phase';
   import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
   import { computeCislunarCameraTarget } from '$lib/orbital/cislunar-camera-target';
+  import {
+    findActiveCislunarHero,
+    MOON_COMPOSITION,
+  } from '$lib/orbital/cislunar/cislunar-hero-shot';
   import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
@@ -3860,6 +3864,32 @@
       // time the spacecraft actually crosses into Moon-dominated space.
       const MOON_PROXIMITY_KM = 80_000;
       const isNearMoon = distToMoonKm < MOON_PROXIMITY_KM;
+
+      // Cislunar hero-shot check (Phase D — Moon-mission counterpart
+      // to the helio iconic-shot composition). When sim is inside the
+      // approach/depart window of an LOI / TEI / descent_start / ascent
+      // event, override the auto-zoom target to the Moon centre at the
+      // hero-tight distance — the Moon dominates the frame the way
+      // PLANET_COMPOSITION.saturn dominates Cassini's Saturn-OI shot.
+      // The cislunar camR/camT/camP architecture uses spherical
+      // coordinates (target + radius + azimuth/pitch); this slice
+      // overrides the target + radius. Full over-the-shoulder
+      // composition (auto-biased camP + camT) lands in slice 37.
+      const heroActive = findActiveCislunarHero(
+        mission.flight?.events ?? [],
+        simDay,
+        arcTimeline.dep_day,
+      );
+      if (heroActive) {
+        const heroSub = `hero_${heroActive.type}_${heroActive.met}`;
+        if (heroSub !== lastAutoZoomPhase) {
+          lastAutoZoomPhase = heroSub;
+          autoZoomActive = true;
+        }
+        autoZoomTargetR = R_MOON_KM * MOON_COMPOSITION.camRMultiplier * SCALE_CISLUNAR;
+        autoZoomTargetCenter.set(moonInScene.x, 0, moonInScene.z);
+        return;
+      }
 
       // Camera target dispatch lives in $lib/orbital/cislunar-camera-target.
       // Sub-phase string carries the '_near_moon' suffix so the phase-

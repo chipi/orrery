@@ -74,6 +74,7 @@
           type="button"
           class="debug-close"
           onclick={toggleOpen}
+          title="Close panel · or set ?debug=0 in the URL to keep it closed"
           aria-label="Close debug panel">×</button
         >
       </div>

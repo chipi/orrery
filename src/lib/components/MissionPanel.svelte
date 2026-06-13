@@ -407,10 +407,10 @@
           <div class="credit">{mission.credit}</div>
         {/if}
       {:else if tab === 'flight'}
-        <!-- Trajectory thumbnail at the top of the FLIGHT tab — same
-             pre-rendered image used by /missions card hover, mounted
-             here so the panel is self-contained (read flight data and
-             see the path it produces in one place). -->
+        <!-- Trajectory thumbnail at the top of the FLIGHT tab —
+             pre-rendered at build time by scripts/fetch-assets.ts so
+             the panel shows flight data + the path it produces in
+             one place. -->
         <figure class="flight-thumbnail">
           <img
             src="{base}/images/missions/thumbnails/{mission.id}.png"

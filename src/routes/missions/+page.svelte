@@ -551,32 +551,12 @@
             onclick={() => selectMission(mission.id)}
           >
             <div class="card-accent" aria-hidden="true"></div>
-            <!-- Mission cover image + trajectory thumbnail. The
-                 trajectory image (pre-rendered at build time, see
-                 scripts/fetch-assets.ts) overlays the cover photo on
-                 hover so the card itself flips to the flight preview
-                 — replaces the v0.1.11 floating popup since the
-                 in-place swap uses the existing card real estate
-                 instead of competing with neighbouring tiles for
-                 viewport space. -->
             <figure class="card-photo">
               <img
                 class="card-cover"
                 src={pickHero('missions', mission.id)}
                 alt=""
                 loading="lazy"
-                onerror={(e) => {
-                  const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                  if (fig) fig.classList.add('cover-missing');
-                }}
-                decoding="async"
-              />
-              <img
-                class="card-trajectory"
-                src="{base}/images/missions/thumbnails/{mission.id}.png"
-                alt=""
-                loading="lazy"
-                aria-hidden="true"
                 decoding="async"
               />
             </figure>
@@ -888,46 +868,14 @@
     }
   }
 
-  /* Card list-item wrapper — needed so the absolutely-positioned
-   * thumbnail can be a sibling of the card button without breaking
-   * the grid-cell layout. `height: 100%` makes the wrapper fill its
-   * grid cell (which is row-height = tallest item per row, by CSS
-   * Grid default). Without it the wrapper sizes to its content, and
-   * adjacent cards in the same row appear at different heights when
-   * one has more text than another. Issue #225. */
+  /* Card list-item wrapper — `height: 100%` makes the wrapper fill its
+   * grid cell (which is row-height = tallest item per row, by CSS Grid
+   * default). Without it the wrapper sizes to its content, and adjacent
+   * cards in the same row appear at different heights when one has
+   * more text than another. Issue #225. */
   .card-li {
     position: relative;
     height: 100%;
-  }
-  /* Trajectory image stacks on top of the cover photo and fades in
-     on hover (desktop). Mobile devices without :hover get the FLY
-     button to /fly for the full trajectory — no in-card swap. */
-  .card-trajectory {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: rgba(4, 4, 12, 0.92);
-    opacity: 0;
-    transition: opacity 160ms ease;
-    pointer-events: none;
-  }
-  @media (hover: hover) {
-    .card:hover .card-trajectory,
-    .card:focus-visible .card-trajectory {
-      opacity: 1;
-    }
-  }
-  /* When the cover photo's onerror fires, the trajectory is the only
-     thing in the figure — make it always visible so the card is not
-     blank. The class is set imperatively via onerror, so wrap in
-     :global() to keep Svelte's CSS purger from dropping the rule. */
-  :global(.card-photo.cover-missing .card-trajectory) {
-    opacity: 1;
-  }
-  :global(.card-photo.cover-missing .card-cover) {
-    display: none;
   }
 
   .card {

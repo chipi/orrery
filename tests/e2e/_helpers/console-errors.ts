@@ -33,11 +33,10 @@ export function isExpectedNoise(msg: ConsoleMessage): boolean {
       /\/data\/i18n\//.test(url) ||
       /\/data\/trajectories\//.test(url) ||
       // /images/missions/thumbnails/<id>.png (trajectory thumbnail) —
-      // small mission-card overlay. /missions/+page.svelte renders it
-      // alongside the card cover. Allowlisted because trajectory
-      // diagrams ship for only a subset of missions and the others
-      // fall through silently (the `card-trajectory` image has no
-      // onerror handler).
+      // rendered at the top of MissionPanel's FLIGHT tab. Allowlisted
+      // because trajectory diagrams ship for only a subset of missions;
+      // missing ones fire one 404 and the panel's onerror handler then
+      // hides the figure.
       /\/images\/missions\/thumbnails\/[^/]+\.png$/.test(url)
     );
   }

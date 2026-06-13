@@ -7,6 +7,7 @@
  */
 
 import { base } from '$app/paths';
+import { loadHeroOverrides, applyHeroOverride } from '$lib/image-hero';
 import type { Destination, Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
 import type { LocalizedSun, Sun, SunOverlay } from '$types/sun';
@@ -700,10 +701,16 @@ export async function getFleetGallery(id: string): Promise<string[]> {
     if (!map) return [];
     const count = map[id] ?? 0;
     if (count === 0) return [];
-    return Array.from(
+    const gallery = Array.from(
       { length: count },
       (_, i) => `${base}/images/fleet-galleries/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
     );
+    // Honour the fleet hero-override JSON so the panel hero (gallery[0])
+    // matches the card cover served via pickHero('fleet', id). Without
+    // this the audit-blessed slot reaches /fleet cards but the detail
+    // panel still surfaces the unblessed slot 01.
+    await loadHeroOverrides('fleet');
+    return applyHeroOverride('fleet', id, gallery);
   } catch {
     return [];
   }
@@ -737,10 +744,17 @@ export async function getMissionGallery(missionId: string): Promise<string[]> {
     const map = await get<Record<string, number>>('mission-galleries.json');
     const count = map[missionId] ?? 0;
     if (count === 0) return [];
-    return Array.from(
+    const gallery = Array.from(
       { length: count },
       (_, i) => `${base}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.jpg`,
     );
+    // Honour the mission hero-override JSON so the panel hero (gallery[0])
+    // matches the card cover served via pickHero('missions', id). Without
+    // this the audit-blessed slot reaches /missions cards but the detail
+    // panel still surfaces the unblessed slot 01 (perseverance is the
+    // canonical example — 01.jpg is a mis-sourced Curiosity photo).
+    await loadHeroOverrides('missions');
+    return applyHeroOverride('missions', missionId, gallery);
   } catch {
     return [];
   }

@@ -8,7 +8,7 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
-  import { createStarField } from '$lib/three/star-field';
+  import { createLayeredStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
@@ -19,7 +19,6 @@
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { gmstRadians } from '$lib/earth-sidereal';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
-  import { STAR_FIELD } from '$lib/three-constants';
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
@@ -587,7 +586,12 @@
         ? {
             strength: quality.bloomStrength,
             radius: quality.bloomRadius,
-            threshold: quality.bloomThreshold,
+            // #323 — Earth's lit day side is intrinsically bright;
+            // lift the threshold ≥ 0.95 so ONLY the atmospheric limb
+            // blooms (not the whole day side becoming a halo). Matches
+            // /iss; both routes share the same Earth-from-low-orbit
+            // composition problem.
+            threshold: Math.max(quality.bloomThreshold, 0.95),
           }
         : null,
     });
@@ -611,8 +615,18 @@
     fill.position.set(-30, -10, -40);
     scene.add(fill);
 
+    // Layered cinematic star field — dim background + bright sparkle +
+    // Milky Way band visible on the night side of Earth (#323). Counts
+    // gated by quality tier so low-end devices render fewer points.
     scene.add(
-      createStarField({ count: STAR_FIELD.station, radius: 180, jitter: 100, opacity: 0.5 }),
+      createLayeredStarField({
+        counts: {
+          dim: quality.starsDim,
+          bright: quality.starsBright,
+          milkyWay: quality.starsMilkyWay,
+        },
+        shellRadius: 180,
+      }),
     );
 
     const texLoader = new THREE.TextureLoader();

@@ -8,7 +8,7 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
-  import { createStarField } from '$lib/three/star-field';
+  import { createLayeredStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
@@ -610,7 +610,13 @@
         ? {
             strength: quality.bloomStrength,
             radius: quality.bloomRadius,
-            threshold: quality.bloomThreshold,
+            // #323 — Earth's lit day side is intrinsically bright;
+            // lift the threshold ≥ 0.95 so ONLY the atmospheric limb
+            // blooms (not the whole day side becoming a halo). The
+            // base tier value (0.9–0.94) is tuned for /fly's helio
+            // scene where bright Sun + dim planets give bloom room
+            // to breathe — different here.
+            threshold: Math.max(quality.bloomThreshold, 0.95),
           }
         : null,
     });
@@ -637,7 +643,20 @@
     fill.position.set(-30, -10, -40);
     scene.add(fill);
 
-    scene.add(createStarField({ count: 1200, radius: 180, jitter: 100, opacity: 0.5 }));
+    // Layered cinematic star field — dim background + bright sparkle +
+    // Milky Way band visible on the night side of Earth (#323).
+    // Counts gated by quality tier so low-end devices render fewer
+    // points. shellRadius matches the prior single-layer call.
+    scene.add(
+      createLayeredStarField({
+        counts: {
+          dim: quality.starsDim,
+          bright: quality.starsBright,
+          milkyWay: quality.starsMilkyWay,
+        },
+        shellRadius: 180,
+      }),
+    );
 
     const texLoader = new THREE.TextureLoader();
     // ADR-073 Layer B — 2K Earth backdrop, lazy 4K on close approach.

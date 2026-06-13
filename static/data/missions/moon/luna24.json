@@ -69,41 +69,59 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K / Blok D",
+        "description": "Baikonur Cosmodrome, 1976-08-09. Luna 24 — the final mission of the Soviet Luna program and the last soft lunar landing of any nation until China's Chang'e 3 (2013), 37 years later."
       },
       {
         "met_days": 0.1,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Blok D upper stage burn places Luna 24 on translunar trajectory."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction 1",
+        "description": "First trajectory refinement."
       },
       {
         "met_days": 4,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction 2",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 5,
         "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "1976-08-14. Captured into a 115-km circular lunar orbit.",
         "dv_km_s": 0.7
       },
       {
         "met_days": 6,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "Powered descent + sample collection — Mare Crisium",
+        "description": "1976-08-18. Soft landing in the Sea of Crises (12.75°N, 62.20°E). Deep drill collected 170 g of regolith from 2 m depth — much deeper than Luna 16's 35 cm."
       },
       {
         "met_days": 6.5,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "Ascent — sample capsule liftoff",
+        "description": "1976-08-19. Ascender lifted off with the sample capsule, heading back to Earth on a direct trajectory."
       },
       {
         "met_days": 7,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "Direct return trajectory — no return rendezvous needed.",
         "dv_km_s": 2.7
       },
       {
         "met_days": 9,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Sample capsule landing — Western Siberia",
+        "description": "1976-08-22. Capsule re-entered Earth's atmosphere, parachuted to landing in western Siberia. The 170 g sample was analysed at the Vernadsky Institute; later partially exchanged with the United States for Apollo samples. The Soviet lunar program closed with Luna 24."
       }
     ],
     "cislunar_profile": {

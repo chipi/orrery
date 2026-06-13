@@ -66,23 +66,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Molniya-M",
+        "description": "Baikonur Cosmodrome, 1966-01-31. Luna 9 — the first spacecraft to achieve a soft landing on the Moon (or anywhere off-Earth). 11 previous Soviet attempts (Luna 4-8) had failed."
       },
       {
         "met_days": 0.01,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Molniya-M upper stage burn sends Luna 9 on a 3-day direct-descent trajectory."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction",
+        "description": "Mid-cruise trajectory tweak."
       },
       {
         "met_days": 3,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar approach",
+        "description": "Direct-descent geometry — Luna 9 did not enter lunar orbit, descending straight to the surface."
       },
       {
         "met_days": 3.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "First soft landing on the Moon — Oceanus Procellarum",
+        "description": "1966-02-03. Retrorocket fired at 75 km altitude; airbag-cushioned capsule bounced + rolled to rest at Oceanus Procellarum (7.13°N, 64.37°W). Transmitted the first panoramic images from the lunar surface — settling whether the lunar regolith could support a lander's weight (NASA had feared it might sink, a fear that delayed Apollo lander design)."
       }
     ],
     "cislunar_profile": {

@@ -75,43 +75,63 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — LVM3 (GSLV Mk III)",
+        "description": "Sriharikota, India, 2023-07-14. Chandrayaan-3 — ISRO's follow-up to the failed 2019 Chandrayaan-2 lander. Carries the Vikram lander + Pragyan rover. Targets a south-polar landing site where Chandrayaan-2's Vikram had crashed."
       },
       {
         "met_days": 21,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Final perigee burn after 21 days of progressive Earth-orbit raising — same lower-cost lunar transfer ISRO has used since Chandrayaan-1."
       },
       {
         "met_days": 23.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TLI cleanup burn."
       },
       {
         "met_days": 25.3,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 27.1,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 28.9,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-5",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 30.7,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-6 — final pre-LOI",
+        "description": "Final approach targeting before lunar orbit insertion."
       },
       {
         "met_days": 35,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "2023-08-05. Captured into 170 × 36,500 km lunar orbit. ISRO spent 18 days lowering perilune to 25 km for the descent."
       },
       {
         "met_days": 40,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Powered descent + landing — Shiv Shakti Point",
+        "description": "2023-08-23. Powered descent + soft landing near the lunar south pole (69.37°S, 32.32°E) — making India the 4th country to soft-land on the Moon (after USSR, USA, China) and the FIRST to land near the south pole. Site later named Shiv Shakti Point. Pragyan rover rolled off + drove ~100 m before going into hibernation for the lunar night (with no recovery on the second day)."
       }
     ],
     "cislunar_profile": {

@@ -58,31 +58,45 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Titan II",
+        "description": "Vandenberg AFB, 1994-01-25. Clementine — joint US Department of Defense / NASA mission. Originally designed to test SDI (Strategic Defense Initiative) sensors against an asteroid, with the Moon as a calibration target. First US lunar mission after Apollo 17 (22 years)."
       },
       {
         "met_days": 0.5,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Phasing burns lifted Clementine from low Earth orbit to translunar trajectory."
       },
       {
         "met_days": 7,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TLI cleanup."
       },
       {
         "met_days": 7.24,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 12.75,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3 — final pre-LOI",
+        "description": "Final approach targeting before lunar orbit insertion."
       },
       {
         "met_days": 25,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar approach",
+        "description": "Pre-LOI checkout phase."
       },
       {
         "met_days": 25.05,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar orbit insertion",
+        "description": "1994-02-19. Captured into a 415 × 2,940 km polar orbit. Mapped the lunar surface at multiple wavelengths over 71 days — first global high-resolution multispectral lunar map. Bi-static radar experiment data was later interpreted (controversially) as evidence of water ice at the lunar south pole — the discovery that triggered LRO + every subsequent ice-search mission."
       }
     ],
     "cislunar_profile": {

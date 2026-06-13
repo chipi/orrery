@@ -57,39 +57,57 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — PSLV-XL",
+        "description": "Sriharikota, India, 2008-10-22. Chandrayaan-1 — India's first lunar mission. Carried 11 instruments including NASA's M³ (Moon Mineralogy Mapper) that would later be credited with the first detection of widespread water on the Moon."
       },
       {
         "met_days": 8,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Series of phasing perigee burns lifted Chandrayaan-1 from Earth orbit to lunar transfer — same energy-saving Earth-orbit raising strategy ISRO would reuse on Mangalyaan."
       },
       {
         "met_days": 9.8,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "Post-TLI cleanup burn."
       },
       {
         "met_days": 11.15,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 12,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 12.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 13.85,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-5 — final pre-LOI",
+        "description": "Final approach targeting."
       },
       {
         "met_days": 17,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar approach",
+        "description": "Pre-LOI checkout phase."
       },
       {
         "met_days": 17.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar orbit insertion + MIP release",
+        "description": "2008-11-08. Captured into a 100-km polar lunar orbit. Released the Moon Impact Probe on 2008-11-14, which hard-landed at Shackleton crater near the south pole — making India the 4th nation to reach the Moon. Mission ended 2009-08-29 (10 months) when the spacecraft's thermal control failed. NASA's M³ data was later analysed to discover lunar surface water at >40 ppm."
       }
     ],
     "cislunar_profile": {

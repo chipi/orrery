@@ -72,35 +72,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Long March 3B/E",
+        "description": "Xichang, China, 2018-12-07. Chang'e 4 — the first spacecraft to soft-land on the lunar far side. Carries the Yutu-2 rover. Required prior deployment of the Queqiao relay satellite at the Earth-Moon L2 point (2018-05) since the far side has no direct line-of-sight to Earth."
       },
       {
         "met_days": 0.05,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Long March 3B/E third-stage burn places Chang'e 4 on a direct translunar trajectory."
       },
       {
         "met_days": 1.19,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First mid-course correction."
       },
       {
         "met_days": 2.08,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 2.97,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-4 — final pre-LOI",
+        "description": "Final approach targeting before lunar orbit insertion."
       },
       {
         "met_days": 5,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "2018-12-12. Captured into a 100 × 400 km lunar orbit. CNSA spent ~22 days adjusting the orbit + waiting for sunlight conditions at the target landing site."
       },
       {
         "met_days": 27,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Far-side landing — Von Kármán crater",
+        "description": "2019-01-03. Powered descent + landing at Von Kármán crater (45.5°S, 177.6°E) inside the South Pole-Aitken basin — first soft landing on the Moon's far side. Yutu-2 rover deployed and is still operating, the longest-lived lunar rover in history."
       }
     ],
     "cislunar_profile": {

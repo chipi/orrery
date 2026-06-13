@@ -25,10 +25,7 @@
   import type * as THREE from 'three';
   import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
   import type { QualityConfig } from '$lib/quality/quality-tier';
-  import {
-    setRenderingDebugRegistration,
-    type QualitySource,
-  } from './debug-panel-context';
+  import { setRenderingDebugRegistration, type QualitySource } from './debug-panel-context';
 
   let {
     renderer,

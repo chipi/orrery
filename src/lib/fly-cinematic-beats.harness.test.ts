@@ -62,10 +62,7 @@ describe('runCinematicFrame harness — W3.2 afterglow tween', () => {
     // computeAfterglowCameraFrame eases over the 6 s window; at t≈1 the
     // eased value lands on the target within rounding.
     h.advanceFrames(510);
-    expect(h.camR).toBeCloseTo(
-      STARTING_R * CINEMATIC_TIMINGS.AFTERGLOW_PULLBACK_FACTOR,
-      0,
-    );
+    expect(h.camR).toBeCloseTo(STARTING_R * CINEMATIC_TIMINGS.AFTERGLOW_PULLBACK_FACTOR, 0);
   });
 });
 

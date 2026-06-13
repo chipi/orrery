@@ -16,10 +16,7 @@ import {
   createCinematicBeatState,
   type CinematicBeatState,
 } from './fly-cinematic-beats';
-import {
-  runCinematicFrame,
-  type RunCinematicFrameInputs,
-} from './fly-cinematic-frame';
+import { runCinematicFrame, type RunCinematicFrameInputs } from './fly-cinematic-frame';
 
 const BASE_INPUTS: RunCinematicFrameInputs = {
   simDay: 100,
@@ -111,19 +108,37 @@ describe('runCinematicFrame — peak-hold arm step (W3.1 + W3.2 window)', () => 
     expect(out.isCinematicFreeze).toBe(true);
   });
 
-  it('does NOT arm under reducedMotion / isDrag / isMoonMission', () => {
+  it('does NOT arm under isDrag / isMoonMission', () => {
+    // reducedMotion is intentionally NOT in this list. Per d7c0ba83e:
+    // peakHold is event-driven (user click on a flyby button) — the
+    // iconic-shot composition is the whole point of the click, so
+    // prefers-reduced-motion must not suppress it. Cruise hold IS
+    // gated by reducedMotion (an unsolicited auto-fire camera ramp).
     const baseArm = {
       ...BASE_INPUTS,
       simDay: 191,
       depDay: 0,
       currentFrameFlybyMet: 193,
     };
-    for (const gate of ['reducedMotion', 'isDrag', 'isMoonMission'] as const) {
+    for (const gate of ['isDrag', 'isMoonMission'] as const) {
       const cine = createCinematicBeatState();
       const out = runCinematicFrame(cine, { ...baseArm, [gate]: true }, 1_000);
       expect(out.peakHoldArmedThisFrame, `gate=${gate}`).toBe(false);
       expect(cine.peakHoldUntil, `gate=${gate}`).toBe(0);
     }
+  });
+
+  it('STILL arms under reducedMotion — event-driven beat, not unsolicited motion', () => {
+    // Companion to the gate test above; pins d7c0ba83e's contract so
+    // a future regression that re-adds the reducedMotion gate trips here.
+    const cine = createCinematicBeatState();
+    const out = runCinematicFrame(
+      cine,
+      { ...BASE_INPUTS, simDay: 191, depDay: 0, currentFrameFlybyMet: 193, reducedMotion: true },
+      1_000,
+    );
+    expect(out.peakHoldArmedThisFrame).toBe(true);
+    expect(cine.peakHoldUntil).toBeGreaterThan(0);
   });
 });
 

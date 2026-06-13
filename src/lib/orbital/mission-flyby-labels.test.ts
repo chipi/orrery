@@ -86,6 +86,8 @@ const NON_PLANET_LABEL_PATTERNS = [
   /arrokoth/i, // New Horizons KBO flyby
   /\bmoon\b/i, // Cislunar flybys (Apollo 13, Artemis 2) handled by closest-planet → Earth.
   /halley|grigg-skjellerup|steins|lutetia/i, // Specific comet / asteroid names without "asteroid" / "comet" keyword
+  /\bceres\b/i, // Dwarf-planet target (Dawn) — same rationale as Pluto.
+  /\bphobos\b|\bdeimos\b/i, // Martian moons (MMX, future Mars-moon missions).
 ];
 
 describe('mission flyby-label corpus', () => {

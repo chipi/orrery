@@ -23,8 +23,10 @@
     const route = pathname.slice(0, ampIdx);
     const params = pathname.slice(ampIdx + 1);
     const sep = search ? '&' : '?';
-    return `${base}${route}${sep === '?' ? '?' : (search || '?')}${params}${search ? '' : ''}`
-      .replace(/\?{2,}/, '?');
+    return `${base}${route}${sep === '?' ? '?' : search || '?'}${params}${search ? '' : ''}`.replace(
+      /\?{2,}/,
+      '?',
+    );
   }
 
   let suggestion = $derived(suggestedCorrection($page.url.pathname, $page.url.search));
@@ -61,8 +63,8 @@
     </div>
 
     <p class="error-tip">
-      Append <code>?debug=1</code> to any route URL to open the debug panel
-      (e.g. <code>{base}/fly?debug=1</code>).
+      Append <code>?debug=1</code> to any route URL to open the debug panel (e.g.
+      <code>{base}/fly?debug=1</code>).
     </p>
   </div>
 </main>
@@ -73,9 +75,7 @@
     display: grid;
     place-items: center;
     padding: 32px 20px;
-    background:
-      radial-gradient(ellipse at top, rgba(94, 234, 212, 0.06), transparent 60%),
-      #04040c;
+    background: radial-gradient(ellipse at top, rgba(94, 234, 212, 0.06), transparent 60%), #04040c;
     color: rgba(220, 230, 245, 0.95);
   }
   .error-card {

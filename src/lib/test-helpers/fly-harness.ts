@@ -109,10 +109,7 @@ export function createFlyHarness(opts: CreateFlyHarnessOptions): FlyHarness {
   const simSpeed = opts.simSpeed ?? 7;
   const startingCamR = opts.startingCamR ?? 10;
   const depDay = dateToSimDay(mission.departure_date) ?? 0;
-  const cruiseHoldTriggerSimDay = computeCruiseHoldTriggerSimDay(
-    mission.flight?.events,
-    depDay,
-  );
+  const cruiseHoldTriggerSimDay = computeCruiseHoldTriggerSimDay(mission.flight?.events, depDay);
 
   const cine = createCinematicBeatState();
   let simDay = depDay;

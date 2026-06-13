@@ -8,7 +8,10 @@
   import Nav from '$lib/components/Nav.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
-  import { createDebugPanelContext } from '$lib/components/debug-panel-context';
+  import {
+    createDebugPanelContext,
+    type RenderingDebugRegistration,
+  } from '$lib/components/debug-panel-context';
   import type { Snippet } from 'svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
@@ -28,7 +31,13 @@
     label: '',
     content: null,
   });
-  createDebugPanelContext(debugPageReg);
+  // Rendering slot for the DebugPanel "Rendering" tab (#334). 3D routes
+  // mount <RenderingDebugRegistrar> to populate `.value`; non-3D routes
+  // leave it null and the tab stays hidden.
+  const debugRenderingSlot = $state<{ value: RenderingDebugRegistration | null }>({
+    value: null,
+  });
+  createDebugPanelContext(debugPageReg, debugRenderingSlot);
 
   // Mirror the active locale onto <html lang>/<html dir> after every
   // navigation. Paraglide's transformPageChunk sets the initial value

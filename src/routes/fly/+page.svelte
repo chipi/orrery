@@ -118,6 +118,10 @@
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+  import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
+  import type { QualitySource } from '$lib/components/debug-panel-context';
+  import { resolveQualitySource } from '$lib/quality/quality-tier';
+  import type { QualityConfig } from '$lib/quality/quality-tier';
   import {
     PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
     type PlanetId as FlybyPlanetId,
@@ -207,6 +211,15 @@
     scenarioToLoaded(defaultScenarioBase, defaultScenarioOverlay),
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
+
+  // ─── Rendering debug bridge (#334) ───────────────────────────────
+  // Exposed so <RenderingDebugRegistrar> in the template can register
+  // the live renderer + quality with the DebugPanel context. Filled
+  // from inside onMount after the helio scene builds the renderer;
+  // null before then (registrar guarded by `{#if}` in the template).
+  let liveRenderer: THREE.WebGLRenderer | null = $state(null);
+  let liveQuality: QualityConfig | null = $state(null);
+  let liveQualitySource: QualitySource = $state('fallback');
 
   // ─── HUD-collapse toggle (mobile) ────────────────────────────────
   // On narrow viewports the hud-stack (top-left mission info) and
@@ -1939,6 +1952,11 @@
     const scene = helioHandles.scene;
     const camera = helioHandles.camera;
     const renderer = helioHandles.renderer;
+    // Expose to the DebugPanel "Rendering" tab (#334) — the template-
+    // mounted <RenderingDebugRegistrar> picks these up reactively.
+    liveRenderer = renderer;
+    liveQuality = quality;
+    liveQualitySource = resolveQualitySource($page.url);
     const sunCore = helioHandles.sunCore;
     const sunGlow = helioHandles.sunGlow;
     const earthMesh = helioHandles.earthMesh;
@@ -6228,6 +6246,14 @@
 {/snippet}
 
 <DebugPanelRegistrar label="FLY" content={flyDebugContent} />
+
+{#if liveRenderer && liveQuality}
+  <RenderingDebugRegistrar
+    renderer={liveRenderer}
+    quality={liveQuality}
+    qualitySource={liveQualitySource}
+  />
+{/if}
 
 <div class="fly" class:hud-hidden={hudHidden}>
   <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop

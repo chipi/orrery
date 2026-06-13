@@ -1,31 +1,33 @@
 /**
- * Svelte context for page-specific debug content. The DebugPanel
- * lives in the root layout so it's available on every route, but
- * each page can OPTIONALLY register its own page-specific debug
- * surface (e.g. /fly's FlybyDebugViewer) via this context.
+ * Svelte context for the root-layout DebugPanel.
  *
- * Pattern:
+ * Two parallel registration slots — the panel reads both via the
+ * same context object and surfaces whichever the active route has
+ * mounted.
  *
- *   // Root layout
- *   <DebugPanel />
+ *   1. **Page content** — a free-form snippet a route can register
+ *      to drive the "Page" tab (e.g. /fly's FlybyDebugViewer). See
+ *      `DebugPanelRegistrar.svelte`.
  *
- *   // Page wants to inject content
- *   <script>
- *     import { setPageDebugContent } from '$lib/components/debug-panel-context';
- *     // ...
- *     setPageDebugContent({ label: 'FLY', content: pageDebugSnippet });
- *   </script>
+ *   2. **Rendering registration** — a 3D route's `renderer`, live
+ *      `quality` config, and the resolution `qualitySource`. Drives
+ *      the "Rendering" tab (#334): tier + source attribution, live
+ *      renderer.info readout, and (slice 29) per-feature toggles.
+ *      See `RenderingDebugRegistrar.svelte`.
  *
- *   {#snippet pageDebugSnippet()}
- *     <FlybyDebugViewer ... />
- *   {/snippet}
+ * Both slots are optional. Routes that don't register a 3D scene
+ * leave the rendering slot null and the Rendering tab stays hidden.
  *
- * If no page registers content, the DebugPanel hides its "Page" tab
- * and shows only the generic Perf / i18n / Route tabs.
+ * The reactivity contract: the layout owns both slots' backing
+ * `$state` containers and passes them into `createDebugPanelContext`.
+ * The setters mutate the boxed values so any descendant reading
+ * through `getDebugPanelContext()` sees the change reactively.
  */
 
 import { getContext, setContext } from 'svelte';
 import type { Snippet } from 'svelte';
+import type * as THREE from 'three';
+import type { QualityConfig } from '$lib/quality/quality-tier';
 
 const DEBUG_PANEL_KEY = Symbol('debug-panel-page-content');
 
@@ -34,16 +36,39 @@ export interface PageDebugRegistration {
   content: Snippet | null;
 }
 
-interface DebugPanelContext {
-  registration: PageDebugRegistration;
+/** Source attribution for the resolved quality tier — surfaced in
+ *  the Rendering tab so the user knows whether the active tier came
+ *  from a URL override, their saved choice, the detect-gpu auto
+ *  result, or the medium fallback. Mirrors the precedence inside
+ *  `resolveQualitySync`. */
+export type QualitySource = 'url' | 'user-choice' | 'detect-gpu' | 'fallback';
+
+export interface RenderingDebugRegistration {
+  renderer: THREE.WebGLRenderer;
+  quality: QualityConfig;
+  qualitySource: QualitySource;
 }
 
-export function createDebugPanelContext(initial: PageDebugRegistration): DebugPanelContext {
-  // Use $state inside a wrapper so any component can read + mutate
-  // the registration reactively. The actual $state is created in
-  // the layout and passed down via context.
+/** Boxed reactive slot for the rendering registration. The layout
+ *  creates this as `$state({ value: null })` so the setter can
+ *  reassign `.value` and any descendant reading via the context sees
+ *  it reactively. */
+export interface RenderingRegistrationSlot {
+  value: RenderingDebugRegistration | null;
+}
+
+interface DebugPanelContext {
+  registration: PageDebugRegistration;
+  rendering: RenderingRegistrationSlot;
+}
+
+export function createDebugPanelContext(
+  pageReg: PageDebugRegistration,
+  renderingSlot: RenderingRegistrationSlot,
+): DebugPanelContext {
   const ctx: DebugPanelContext = {
-    registration: initial,
+    registration: pageReg,
+    rendering: renderingSlot,
   };
   setContext(DEBUG_PANEL_KEY, ctx);
   return ctx;
@@ -58,4 +83,10 @@ export function setPageDebugContent(reg: PageDebugRegistration): void {
   if (!ctx) return;
   ctx.registration.label = reg.label;
   ctx.registration.content = reg.content;
+}
+
+export function setRenderingDebugRegistration(reg: RenderingDebugRegistration | null): void {
+  const ctx = getDebugPanelContext();
+  if (!ctx) return;
+  ctx.rendering.value = reg;
 }

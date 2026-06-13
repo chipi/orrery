@@ -19,13 +19,23 @@
   // of <main> can both observe it and let descendants mutate it.
   const debugCtx = getDebugPanelContext();
   const pageReg = debugCtx?.registration ?? { label: '', content: null };
+  // Rendering registration is a boxed slot so 3D-route mounts / unmounts
+  // flow through reactively. `null` when no 3D route is active — the
+  // "Rendering" tab stays hidden in that case.
+  let renderingReg = $derived(debugCtx?.rendering.value ?? null);
 
   let mounted = $state(false);
   let open = $state(false);
-  let activeTab = $state<'page' | 'perf' | 'i18n' | 'route'>('perf');
+  let activeTab = $state<'page' | 'perf' | 'i18n' | 'route' | 'rendering'>('perf');
 
   let fps = $state(0);
   let frameTimeMs = $state(0);
+  // Live renderer.info snapshot — refreshed on the same raf as fps so
+  // it tracks the 3D route's actual draw activity, not stale init state.
+  let drawCalls = $state(0);
+  let triangles = $state(0);
+  let points = $state(0);
+  let lines = $state(0);
 
   onMount(() => {
     mounted = true;
@@ -43,6 +53,15 @@
         frameTimeMs = Math.round(elapsed / Math.max(1, frameCount));
         last = now;
         frameCount = 0;
+        // Sample renderer.info once per second; the values reset on
+        // every render call so reading them between frames is fine.
+        const rdr = debugCtx?.rendering.value?.renderer;
+        if (rdr) {
+          drawCalls = rdr.info.render.calls;
+          triangles = rdr.info.render.triangles;
+          points = rdr.info.render.points;
+          lines = rdr.info.render.lines;
+        }
       }
       rafId = requestAnimationFrame(tick);
     };
@@ -110,6 +129,15 @@
         class:active={activeTab === 'route'}
         onclick={() => (activeTab = 'route')}>Route</button
       >
+      {#if renderingReg}
+        <button
+          type="button"
+          role="tab"
+          class="debug-tab"
+          class:active={activeTab === 'rendering'}
+          onclick={() => (activeTab = 'rendering')}>Render</button
+        >
+      {/if}
     </div>
     <div class="debug-body">
       {#if activeTab === 'page' && pageReg.content}
@@ -148,6 +176,90 @@
             <span class="debug-key">Hash</span>
             <span class="debug-val">{$page.url.hash || '—'}</span>
           </div>
+        </div>
+      {:else if activeTab === 'rendering' && renderingReg}
+        <div class="debug-section">
+          <div class="debug-row">
+            <span class="debug-key">Tier</span>
+            <span class="debug-val">{renderingReg.quality.tier}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Source</span>
+            <span class="debug-val">{renderingReg.qualitySource}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Pixel ratio cap</span>
+            <span class="debug-val">{renderingReg.quality.pixelRatioCap}×</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Sphere segments</span>
+            <span class="debug-val">{renderingReg.quality.sphereSegments}</span>
+          </div>
+        </div>
+        <div class="debug-section debug-section-stack">
+          <div class="debug-row debug-row-heading">
+            <span class="debug-key">Post stack</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Post</span>
+            <span class="debug-val">{renderingReg.quality.postEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Bloom</span>
+            <span class="debug-val"
+              >{renderingReg.quality.bloomEnabled
+                ? `on · str ${renderingReg.quality.bloomStrength} · rad ${renderingReg.quality.bloomRadius} · thr ${renderingReg.quality.bloomThreshold}`
+                : 'off'}</span
+            >
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">DoF</span>
+            <span class="debug-val">{renderingReg.quality.dofEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Film grain</span>
+            <span class="debug-val">{renderingReg.quality.filmGrainEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Vignette</span>
+            <span class="debug-val">{renderingReg.quality.vignetteEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Skydome</span>
+            <span class="debug-val">{renderingReg.quality.skydomeEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Lens flare</span>
+            <span class="debug-val">{renderingReg.quality.lensFlareEnabled ? 'on' : 'off'}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Rim light</span>
+            <span class="debug-val">{renderingReg.quality.rimLightEnabled ? 'on' : 'off'}</span>
+          </div>
+        </div>
+        <div class="debug-section debug-section-stack">
+          <div class="debug-row debug-row-heading">
+            <span class="debug-key">renderer.info (1Hz)</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Draw calls</span>
+            <span class="debug-val">{drawCalls}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Triangles</span>
+            <span class="debug-val">{triangles.toLocaleString()}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Points</span>
+            <span class="debug-val">{points.toLocaleString()}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">Lines</span>
+            <span class="debug-val">{lines.toLocaleString()}</span>
+          </div>
+        </div>
+        <div class="debug-stub">
+          Per-feature toggles + live bloom-threshold slider land in slice 29 (#334).
         </div>
       {/if}
     </div>
@@ -257,6 +369,18 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+  .debug-section-stack {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(94, 234, 212, 0.15);
+  }
+  .debug-row-heading {
+    color: rgba(220, 230, 245, 0.85);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding-bottom: 4px;
   }
   .debug-row {
     display: flex;

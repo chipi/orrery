@@ -297,6 +297,26 @@ export function resolveQualitySync(url?: URL): QualityConfig {
   return CONFIGS.medium;
 }
 
+/** Returns which of the four precedence layers supplied the tier
+ *  `resolveQualitySync(url)` would return — URL override, saved user
+ *  choice, cached detect-gpu result, or the medium fallback. The
+ *  DebugPanel "Rendering" tab (#334) surfaces this so the user can
+ *  tell at a glance whether the active tier is theirs to control or
+ *  a baked-in default. */
+export type QualityResolutionSource = 'url' | 'user-choice' | 'detect-gpu' | 'fallback';
+
+export function resolveQualitySource(url?: URL): QualityResolutionSource {
+  const urlOverride = url?.searchParams.get('quality');
+  if (urlOverride && urlOverride in CONFIGS) return 'url';
+  const user = readUserChoice();
+  if (user !== 'auto') return 'user-choice';
+  if (typeof localStorage !== 'undefined') {
+    const cached = localStorage.getItem(DETECTED_KEY);
+    if (cached && cached in CONFIGS) return 'detect-gpu';
+  }
+  return 'fallback';
+}
+
 /** Run detect-gpu in the background; cache the result for the next
  *  call to `resolveQualitySync`. Call this from app mount so first-
  *  ever visit's detection is ready by the second visit. */

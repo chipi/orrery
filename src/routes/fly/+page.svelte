@@ -150,6 +150,8 @@
   import {
     findActiveCislunarHero,
     MOON_COMPOSITION,
+    planCislunarHeroShot,
+    CISLUNAR_HERO_LEAD_DAYS,
   } from '$lib/orbital/cislunar/cislunar-hero-shot';
   import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
   import { detectSubPhaseTransition } from '$lib/orbital/sub-phase-transition';
@@ -3847,6 +3849,12 @@
     const autoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
     let lastAutoZoomPhase: string | null = null;
     let autoZoomActive = false;
+    // Follow-up 4 — full over-the-shoulder hero composition for
+    // cislunar LOI / TEI / descent_start / ascent events. Only set
+    // while a hero event is active; cleared otherwise so the camera
+    // returns to user-controlled (or default) spherical coords.
+    let autoZoomTargetCamP: number | null = null;
+    let autoZoomTargetCamT: number | null = null;
 
     function updateAutoZoomTargets(): void {
       if (!cislunarTrajectory || cislunarTrajectory.phases.length === 0) {
@@ -3894,9 +3902,13 @@
       // hero-tight distance — the Moon dominates the frame the way
       // PLANET_COMPOSITION.saturn dominates Cassini's Saturn-OI shot.
       // The cislunar camR/camT/camP architecture uses spherical
-      // coordinates (target + radius + azimuth/pitch); this slice
-      // overrides the target + radius. Full over-the-shoulder
-      // composition (auto-biased camP + camT) lands in slice 37.
+      // coordinates (target + radius + azimuth/pitch). Follow-up 4
+      // promotes this from radius-only override to the full
+      // over-the-shoulder composition via planCislunarHeroShot:
+      // camP + camT are biased toward the ECI-derived hero geometry
+      // so the camera actually sits 85° off the ship's approach axis
+      // (the Cassini-art composition) instead of wherever the user
+      // last dragged it.
       const heroActive = findActiveCislunarHero(
         mission.flight?.events ?? [],
         simDay,
@@ -3910,8 +3922,65 @@
         }
         autoZoomTargetR = R_MOON_KM * MOON_COMPOSITION.camRMultiplier * SCALE_CISLUNAR;
         autoZoomTargetCenter.set(moonInScene.x, 0, moonInScene.z);
+        // Plan the iconic camera pose around the Moon at the hero
+        // moment. shipPosAtMet samples the cislunar trajectory at an
+        // arbitrary MET — the planner uses two samples (peak − leadDays
+        // and peak − leadDays − 0.05 d) to resolve the ship's approach
+        // direction, then composes camera at 85° off-axis. Returns
+        // ECI km positions, so we scale into scene units and convert
+        // (cameraPos − cameraTarget) to the spherical (R, P, T)
+        // coords the lerp loop already operates on.
+        const moonRefForHero = moonEciPos(arcTimeline.flyby_day);
+        const shipPosAtMet = (met: number) => {
+          const phaseHit = findActiveCislunarPhase(cislunarTrajectory!.phases, met);
+          if (!phaseHit) return null;
+          const moonAtMet = moonEciPos(arcTimeline.dep_day + met);
+          return sampleCislunarSpacecraftPos(phaseHit.activePhase, phaseHit.phaseProgress, {
+            moonPos: moonAtMet,
+            moonRefPos: moonRefForHero,
+          });
+        };
+        const iconicSimDay = arcTimeline.dep_day + heroActive.met - CISLUNAR_HERO_LEAD_DAYS[heroActive.type];
+        const moonAtIconic = moonEciPos(iconicSimDay);
+        const plan = planCislunarHeroShot({
+          eventType: heroActive.type,
+          moonPos: { x: moonAtIconic.x, y: moonAtIconic.y, z: moonAtIconic.z },
+          shipPosAtMet,
+          peakMet: heroActive.met,
+        });
+        if (plan) {
+          // Scene-space offset from camera target → camera position.
+          const dxScene = (plan.cameraPos.x - plan.cameraTarget.x) * SCALE_CISLUNAR;
+          const dyScene = (plan.cameraPos.y - plan.cameraTarget.y) * SCALE_CISLUNAR;
+          const dzScene = (plan.cameraPos.z - plan.cameraTarget.z) * SCALE_CISLUNAR;
+          const rScene = Math.hypot(dxScene, dyScene, dzScene);
+          if (rScene > 1e-6) {
+            // camera pos = target + R·(sinP·sinT, cosP, sinP·cosT)
+            //   ⇒ P = acos(dy/R), T = atan2(dx, dz)
+            // clamp P into the same drag-input bounds as the live
+            // viewer (0.08 .. π·0.48) so the lerp ends inside the
+            // user-reachable range.
+            autoZoomTargetCamP = Math.max(0.08, Math.min(Math.PI * 0.48, Math.acos(dyScene / rScene)));
+            autoZoomTargetCamT = Math.atan2(dxScene, dzScene);
+            // Override the radius + centre with the planner's exact
+            // values too — the planner's camRMultiplier is the same
+            // 4.0 used above, but the centre lerps toward the ship
+            // when composition.targetBias > 0 (currently 0, so this
+            // matches moonInScene exactly — kept for future tuning).
+            autoZoomTargetR = rScene;
+            autoZoomTargetCenter.set(
+              plan.cameraTarget.x * SCALE_CISLUNAR,
+              0,
+              plan.cameraTarget.z * SCALE_CISLUNAR,
+            );
+          }
+        }
         return;
       }
+      // Non-hero phase — release any prior P/T bias so user drag /
+      // default coords govern again.
+      autoZoomTargetCamP = null;
+      autoZoomTargetCamT = null;
 
       // Camera target dispatch lives in $lib/orbital/cislunar-camera-target.
       // Sub-phase string carries the '_near_moon' suffix so the phase-
@@ -3944,6 +4013,17 @@
         cislunarCamR += (autoZoomTargetR - cislunarCamR) * LERP;
         cislunarCamTarget.x += (autoZoomTargetCenter.x - cislunarCamTarget.x) * LERP;
         cislunarCamTarget.z += (autoZoomTargetCenter.z - cislunarCamTarget.z) * LERP;
+        // Follow-up 4 — lerp pitch + azimuth toward the planCislunar
+        // HeroShot pose when a hero event is active. autoZoomTargetCamT
+        // is an absolute angle; shortest-arc lerp via the (Δ + π) mod
+        // 2π − π trick keeps the swing from going the long way around
+        // when the user has dragged camT to e.g. 5.9 rad and the hero
+        // target is 0.2 rad.
+        if (autoZoomTargetCamP !== null && autoZoomTargetCamT !== null) {
+          cislunarCamP += (autoZoomTargetCamP - cislunarCamP) * LERP;
+          const dT = ((autoZoomTargetCamT - cislunarCamT + Math.PI) % (Math.PI * 2)) - Math.PI;
+          cislunarCamT += dT * LERP;
+        }
         if (Math.abs(cislunarCamR - autoZoomTargetR) < 0.05) autoZoomActive = false;
       } else {
         // Centre tracking when zoom is idle — slower than transition

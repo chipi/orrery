@@ -51,12 +51,12 @@ import {
   MISSION_NASA_CREDIT_EXTRAS,
   type GalleryQuery,
   type MissionImageQuery,
-} from './fetch-assets.js';
+} from './fetch-assets.ts';
 import {
   getAllowlistEntry,
   isAllowedLicense,
   normaliseLicenseShortName,
-} from './license-allowlist.js';
+} from './license-allowlist.ts';
 
 // ──────────────────────────────────────────────────────────────────────
 // Constants
@@ -998,6 +998,7 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
       let localPath = baseLocal;
       if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
       else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
+      else continue; // sidecar declares a slot but disk has no file — skip
       out.push(
         await buildWikimediaEntry({
           localPath,
@@ -1013,6 +1014,10 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
       continue;
     }
     const localPath = join('static/images/fleet-galleries', relPath);
+    // Sidecar may declare slots whose on-disk file was later deleted
+    // (Cat 1A/2 byte-dupe cleanup) or never sourced (no Commons hits).
+    // Skip silently so the manifest stays in sync with disk reality.
+    if (!(await pathExists(localPath))) continue;
     const agencyHuman = agencyToHumanReadable[src.agency] ?? src.agency;
     const url = src.sourceUrl;
 

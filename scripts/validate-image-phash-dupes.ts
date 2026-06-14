@@ -15,13 +15,16 @@
  * sibling validate-image-dupes.ts) or a true visual near-duplicate
  * worth flagging.
  */
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hammingDistance } from './lib/phash.ts';
+import { ALLOWLIST as BYTE_ALLOWLIST } from './validate-image-dupes.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE_PATH = resolve(ROOT, 'static/data/image-phashes.json');
+const IMAGES_DIR = resolve(ROOT, 'static/images');
 
 /** Hamming distance below which two images are flagged as near-dupes.
  *  Tuned for the current corpus — see header. */
@@ -33,11 +36,36 @@ const THRESHOLD = 6;
  *  but the pHash pair is still ≤ THRESHOLD because the bytes differ
  *  only in re-encoding). */
 const ALLOWLIST: ReadonlySet<string> = new Set<string>([
-  // Populated as Slice B/C runs surface real false positives.
+  // luna16/01 vs luna21/01 — same Soviet Luna programme launch imagery
+  // (Proton + Block-D upper stage on pad). Legitimate cross-mission
+  // editorial reuse: every Luna sample-return / lunokhod mission flew
+  // the same booster + the photo's the canonical pre-launch shot in
+  // Soviet press archives. d=6, surfaced 2026-06-14 fill-gallery-gaps.
+  '81807e3f81c07e3f|c1c03e3fc1c01e3f',
+  // lunar-prospector/03 vs /05 — same mission, both oblique
+  // pre-launch hangar shots of the Athena-II + Lunar Prospector
+  // stack from near-identical angles. d=6, sourced together in
+  // 2026-06-14 fill pass. Tightening source threshold to 6 would
+  // false-reject equivalent within-mission diversity elsewhere, so
+  // we allowlist the pair instead.
+  '9e1614d73021eb5b|9e1716973023e959',
 ]);
 
 interface Cache {
   phashes: Record<string, string>;
+}
+
+/** Compute SHA-256 8-char prefix of a base-jpg file, used to cross-
+ *  reference the sibling byte-dupe allowlist. We resolve url paths
+ *  ("/images/missions/apollo11/01.jpg") to on-disk paths under
+ *  static/images/ and hash the bytes. */
+function shaPrefixOf(urlPath: string): string | null {
+  const disk = join(IMAGES_DIR, urlPath.replace(/^\/images\//, ''));
+  try {
+    return createHash('sha256').update(readFileSync(disk)).digest('hex').slice(0, 8);
+  } catch {
+    return null;
+  }
 }
 
 function main(): void {
@@ -45,6 +73,17 @@ function main(): void {
   const entries = Object.entries(cache.phashes);
   const n = entries.length;
   console.log(`pHash near-dupe scan — ${n} images, threshold=${THRESHOLD}…`);
+
+  // Pre-compute SHA-256 prefix per path so the inner loop can defer
+  // to the byte-allowlist for byte-identical pairs (the curator already
+  // signed those off in validate-image-dupes.ts; we don't make them
+  // re-do it here). Lazy: only compute on the first time the inner
+  // loop asks for a path's hash.
+  const shaPrefixCache = new Map<string, string | null>();
+  const getSha = (p: string): string | null => {
+    if (!shaPrefixCache.has(p)) shaPrefixCache.set(p, shaPrefixOf(p));
+    return shaPrefixCache.get(p) ?? null;
+  };
 
   // Bucket by first hex char so the O(n²) loop has a slim outer
   // boundary in practice. Brute force is fine at n≈2000 (~2M pairs,
@@ -63,6 +102,12 @@ function main(): void {
       if (d > THRESHOLD) continue;
       const key = ha < hb ? `${ha}|${hb}` : `${hb}|${ha}`;
       if (ALLOWLIST.has(key)) continue;
+      // Auto-skip pairs whose on-disk bytes are identical AND already
+      // signed off in the byte-allowlist (validate-image-dupes.ts).
+      // Otherwise the curator pays the same dupe twice — once per
+      // validator — for every legitimate cross-surface reuse.
+      const shaA = getSha(pa);
+      if (shaA && shaA === getSha(pb) && BYTE_ALLOWLIST.has(shaA)) continue;
       flagged.push({ distance: d, paths: [pa, pb], hashes: [ha, hb] });
     }
   }

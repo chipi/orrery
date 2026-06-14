@@ -43,20 +43,20 @@ async function writeImageBytes(dest: string, buffer: Buffer): Promise<void> {
     await writeFile(dest, buffer);
   }
 }
-import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-sources.js';
-import type { Destination } from '../src/types/mission.js';
+import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-sources.ts';
+import type { Destination } from '../src/types/mission.ts';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
-import { earthPos, outboundArc } from '../src/lib/mission-arc.js';
-import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.js';
-import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.js';
-import { dateToSimDay } from '../src/lib/sim-day.js';
+import { earthPos, outboundArc } from '../src/lib/orbital/mission-arc.ts';
+import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.ts';
+import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.ts';
+import { dateToSimDay } from '../src/lib/sim-day.ts';
 import {
   A_MOON_KM,
   R_EARTH_KM,
   buildCislunarTrajectory,
   type CislunarProfile,
-} from '../src/lib/cislunar-geometry.js';
+} from '../src/lib/orbital/cislunar/cislunar-geometry.ts';
 
 // ──────────────────────────────────────────────────────────────────────
 // FONTS — Slice 1

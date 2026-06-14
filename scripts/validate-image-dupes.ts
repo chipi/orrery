@@ -46,7 +46,7 @@ const IMAGES_DIR = join(ROOT, 'static/images');
  *  every entry below is a legitimate cross-surface reuse, not a
  *  mistake. Future cross-surface dupes that don't appear here fail
  *  the build until a curator reviews + allowlists or removes them. */
-const ALLOWLIST: ReadonlySet<string> = new Set<string>([
+export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // ── /science encyclopedia reuses fleet-gallery suit/IVA photos
   //    as inline illustrations — same image, two distinct
   //    contexts (catalog detail vs in-article callout).
@@ -302,4 +302,8 @@ function main(): void {
   process.exit(1);
 }
 
-main();
+// Run main() only when this file is the CLI entrypoint; allow
+// sibling scripts (the pHash validator) to import ALLOWLIST without
+// triggering the byte-scan as a side effect.
+const invokedDirectly = fileURLToPath(import.meta.url) === resolve(process.argv[1] ?? '');
+if (invokedDirectly) main();

@@ -3539,30 +3539,24 @@
       // BEFORE the flyby (so the user sees the slow approach) and
       // closes 40 days AFTER.
       const flybyEvents = mission.flight?.events ?? [];
-      // Skip the flyby cinema check once the epilogue is active so the
-      // arrived-branch's epilogue composition (wide Sun-centered
-      // top-down mirroring the opening tableau) can fire. Without
-      // this guard, Saturn-OI's flyby cinema window keeps activeFlybyMet
-      // pinned forever (peakHold freezes simDay at peak) and the camera
-      // stays locked at the iconic closeup instead of pulling out to
-      // the bookend wide tableau.
-      //
-      // EXCEPTION: post-arrival flybys (NH's Arrokoth MET 4730 after
-      // Pluto-arrival at 3463). When sim is inside a flyby's iconic
-      // window AND the flyby happens AFTER the mission's arrival event,
-      // allow flyby cinema to override the epilogue — Arrokoth is the
-      // most-distant-body-ever-visited beat, can't compose against
-      // empty epilogue space.
-      const rawActiveFlybyMet = findActiveFlybyMet(
+      // Flyby cinema fires whenever the active-flyby window contains
+      // the current simDay. Earlier this was gated on `!epilogueActive`
+      // to fix Saturn-OI's peakHold pinning case (the cinema never
+      // released because peakHold froze simDay at peak, blocking the
+      // epilogue's wide bookend tableau). But the gate over-suppressed
+      // for ordinary missions where MOI IS the arrival event (Mars
+      // Express, Mars Pathfinder, Mariner 9, etc.): users landing at
+      // the iconic MOI moment got the wide epilogue instead of the
+      // close-up Mars composition. Removing the gate restores those.
+      // Saturn-OI peakHold pinning is a separate issue (the peakHold
+      // mechanism itself should release after a finite time, or the
+      // cinema window should auto-close at MET = peak + DEPART days
+      // regardless of peakHold — both pursuable in a follow-up).
+      const activeFlybyMet = findActiveFlybyMet(
         flybyEvents,
         simDay,
         arcTimeline.dep_day,
       );
-      const arrivalMet = arcTimeline.arr_day - arcTimeline.dep_day;
-      const activeFlybyMet =
-        epilogueActive && (rawActiveFlybyMet === null || rawActiveFlybyMet <= arrivalMet + 1)
-          ? null
-          : rawActiveFlybyMet;
 
       let sub: string;
       let centerX: number;

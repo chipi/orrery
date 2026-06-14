@@ -75,7 +75,8 @@ export type DestinationId =
   | 'ceres'
   | 'vesta'
   | 'psyche'
-  | 'bennu';
+  | 'bennu'
+  | 'arrokoth';
 
 export interface DestinationConstants {
   id: DestinationId;
@@ -111,6 +112,21 @@ function buildDwarfDestination(id: 'ceres' | 'pluto'): DestinationConstants {
   };
 }
 
+function buildKboDestination(id: 'arrokoth'): DestinationConstants {
+  const p = smallBody(id);
+  return {
+    id,
+    a: p.a,
+    a0: p.L0,
+    meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    /** Arrokoth's e≈0.041 is below the Lambert convergence breakage
+     *  threshold (Bennu at 0.20 is where eccentric arrival kicks in),
+     *  so the circular model is fine. Listed separately from the
+     *  dwarf / asteroid builders to keep the KBO category visible in
+     *  the source — there will likely be more KBOs added later. */
+  };
+}
+
 function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): DestinationConstants {
   const p = smallBody(id);
   return {
@@ -141,4 +157,5 @@ export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
   vesta: buildAsteroidDestination('vesta'),
   psyche: buildAsteroidDestination('psyche'),
   bennu: buildAsteroidDestination('bennu'),
+  arrokoth: buildKboDestination('arrokoth'),
 };

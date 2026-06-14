@@ -599,7 +599,7 @@
   type SmallBody = {
     id: string;
     name: string;
-    type: 'dwarf' | 'comet' | 'interstellar';
+    type: 'dwarf' | 'comet' | 'interstellar' | 'asteroid' | 'kbo';
     a: number;
     e: number;
     T: number;

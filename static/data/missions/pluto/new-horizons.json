@@ -8,13 +8,13 @@
   "year": 2006,
   "status": "FLOWN",
   "departure_date": "2006-01-19",
-  "arrival_date": "2015-07-14",
-  "transit_days": 3463,
+  "arrival_date": "2019-01-01",
+  "transit_days": 4730,
   "vehicle": "Atlas V 551",
   "payload": "New Horizons flyby spacecraft; RTG power",
   "delta_v": "~16 km/s (approx)",
   "data_quality": "partial",
-  "credit": "© NASA / JHUAPL — U.S. Government work, public domain. Pluto-system flyby; later Kuiper belt flybys not represented in this record.",
+  "credit": "© NASA / JHUAPL — U.S. Government work, public domain. Pluto-system flyby (2015-07-14) + Arrokoth Kuiper-Belt flyby (2019-01-01).",
   "links": [
     {
       "l": "New Horizons — Wikipedia",

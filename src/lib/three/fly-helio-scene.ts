@@ -70,6 +70,7 @@ export interface HelioSceneOptions {
     neptune: string;
     pluto: string;
     ceres?: string;
+    arrokoth?: string;
   };
   /** Resolved quality config — auto-detected or user-chosen per the
    *  `src/lib/quality/quality-tier.ts` system. Drives pixelRatio,
@@ -203,6 +204,12 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   neptune: { size: 3.4, color: 0x3f54ba },
   pluto: { size: 0.9, color: 0xb9a895 },
   ceres: { size: 0.6, color: 0xa8a499 },
+  // Arrokoth — real radius ~18 km vs Pluto's 1188 km, but cinematically
+  // it needs presence on screen during the NH 2019 flyby beat. Size 0.5
+  // is the smallest body in DEST_STYLE that still reads at the iconic
+  // composition distance. Color #9b5a48 — the canonical deep-red of
+  // cold-classical KBOs (Stern et al., Science 2020).
+  arrokoth: { size: 0.5, color: 0x9b5a48 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than

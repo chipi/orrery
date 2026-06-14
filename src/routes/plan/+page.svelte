@@ -91,6 +91,8 @@
         return m.plan_destination_psyche();
       case 'bennu':
         return m.plan_destination_bennu();
+      case 'arrokoth':
+        return m.plan_destination_arrokoth();
       default: {
         const _exhaustive: never = id;
         return _exhaustive;

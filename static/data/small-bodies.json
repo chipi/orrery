@@ -162,6 +162,22 @@
       "wiki": "https://en.wikipedia.org/wiki/101955_Bennu"
     },
     {
+      "id": "arrokoth",
+      "name": "486958 Arrokoth",
+      "type": "kbo",
+      "a": 44.587,
+      "e": 0.04146,
+      "T": 108740,
+      "L0": 5.67,
+      "incl": 2.4513,
+      "color": "#9b5a48",
+      "radius_km": 18,
+      "discovered": "2014 (Hubble Space Telescope)",
+      "mission_visited": "New Horizons (NASA, 2019 flyby)",
+      "description": "Cold-classical Kuiper Belt object — the most distant body ever visited by a spacecraft (4.1 billion km from the Sun at encounter). A 36 × 20 × 10 km contact binary nicknamed 'the snowman', formed when two lobes (Wenu and Weeyo) gently merged in the early solar system. New Horizons flew within 3,500 km on 2019-01-01, returning images of a deep-red, primordial KBO surface preserved at ~40 K since accretion.",
+      "wiki": "https://en.wikipedia.org/wiki/486958_Arrokoth"
+    },
+    {
       "id": "oumuamua",
       "name": "ʻOumuamua",
       "type": "interstellar",

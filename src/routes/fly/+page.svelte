@@ -300,6 +300,14 @@
   let arcTimeline: MissionTimeline = $state({ ...INITIAL_TIMELINE });
   let isFreeReturn = $state(true);
   let activeDestination = $state<DestinationId>('mars');
+  // Follow-up: secondary-flyby destinationMesh swap. Some missions
+  // (NH past Pluto → Arrokoth) fly past a body that ISN'T one of the
+  // 8 always-rendered context planets AND ISN'T the mission's primary
+  // destination — so neither the context system nor the
+  // destinationMesh holds geometry for it. Track which body we've
+  // currently swapped the destinationMesh to so we can swap back when
+  // the flyby window closes. Null = mesh matches activeDestination.
+  let currentDestMeshId: DestinationId = 'mars';
   let isMoonMission = $state(false);
 
   /** Human-readable orbit/trajectory regime for the identity HUD. The
@@ -1638,6 +1646,7 @@
     isMoonMission = r.isMoonMission;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    currentDestMeshId = r.activeDestination;
     flyUpdaters?.helio.setSpacecraftModel(m.id);
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
@@ -1685,6 +1694,7 @@
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    currentDestMeshId = r.activeDestination;
     // Default scenario is the ORRERY-1 demo — no dedicated spacecraft
     // model, so this clears any previously-loaded mission model.
     flyUpdaters?.helio.setSpacecraftModel(DEFAULT_SCENARIO_ID);
@@ -1744,6 +1754,7 @@
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
     flyUpdaters?.helio.applyDestination(r.activeDestination);
+    currentDestMeshId = r.activeDestination;
     // /plan-driven entry — no mission id, clear any previous model.
     flyUpdaters?.helio.setSpacecraftModel('');
     isMoonMission = r.isMoonMission;
@@ -3441,7 +3452,12 @@
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
       const ePos = earthPos(simDay);
       const earthScene = new THREE.Vector3(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-      const dPosLive = destinationPos(simDay, activeDestination);
+      // Track the destinationMesh's CURRENT id rather than the mission's
+      // primary, so a transient swap to a secondary flyby body (NH at
+      // Arrokoth past Pluto) renders the destinationMesh at the right
+      // heliocentric position. currentDestMeshId resets back to
+      // activeDestination when the flyby window closes.
+      const dPosLive = destinationPos(simDay, currentDestMeshId);
       const destScene = new THREE.Vector3(dPosLive.x * SCALE_3D, 0, dPosLive.z * SCALE_3D);
       // Live spacecraft scene position (AU × SCALE_3D).
       const scScene = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
@@ -3466,9 +3482,23 @@
       // pinned forever (peakHold freezes simDay at peak) and the camera
       // stays locked at the iconic closeup instead of pulling out to
       // the bookend wide tableau.
-      const activeFlybyMet = epilogueActive
-        ? null
-        : findActiveFlybyMet(flybyEvents, simDay, arcTimeline.dep_day);
+      //
+      // EXCEPTION: post-arrival flybys (NH's Arrokoth MET 4730 after
+      // Pluto-arrival at 3463). When sim is inside a flyby's iconic
+      // window AND the flyby happens AFTER the mission's arrival event,
+      // allow flyby cinema to override the epilogue — Arrokoth is the
+      // most-distant-body-ever-visited beat, can't compose against
+      // empty epilogue space.
+      const rawActiveFlybyMet = findActiveFlybyMet(
+        flybyEvents,
+        simDay,
+        arcTimeline.dep_day,
+      );
+      const arrivalMet = arcTimeline.arr_day - arcTimeline.dep_day;
+      const activeFlybyMet =
+        epilogueActive && (rawActiveFlybyMet === null || rawActiveFlybyMet <= arrivalMet + 1)
+          ? null
+          : rawActiveFlybyMet;
 
       let sub: string;
       let centerX: number;
@@ -3509,6 +3539,24 @@
           const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
           void bodyScene;
           sub = `flyby-${activeFlybyMet}-${flyby.id}`;
+          // Secondary-flyby destinationMesh swap. The 8 main planets
+          // (mercury..neptune) plus Earth render via context meshes
+          // that are always in the scene — for those bodies no swap is
+          // needed. Bodies like Pluto / Arrokoth / Ceres only render
+          // through the single destinationMesh, so a flyby past one of
+          // them while the mission's primary destination is a DIFFERENT
+          // such body (NH Arrokoth past primary-destination Pluto)
+          // would otherwise see the camera composing against thin air.
+          // Swap the mesh transiently; the cruise branch swaps back.
+          const NON_CONTEXT_BODIES = new Set<DestinationId>(['pluto', 'arrokoth', 'ceres']);
+          if (
+            flyby.id !== 'earth' &&
+            NON_CONTEXT_BODIES.has(flyby.id as DestinationId) &&
+            flyby.id !== currentDestMeshId
+          ) {
+            flyUpdaters?.helio.applyDestination(flyby.id as DestinationId);
+            currentDestMeshId = flyby.id as DestinationId;
+          }
           // Limb-grazing composition — bias the camera target 65 % toward
           // the spacecraft position (was 35 %). This pushes the planet
           // CENTRE off-frame so the planet LIMB arcs across the rule-of-
@@ -3670,6 +3718,15 @@
         if (wasInFlybyCinema) {
           cinemaForceMoons = false;
           helioHandles.setMoonsVisible(lastLayerMoonsOn);
+        }
+        // Secondary-flyby destinationMesh swap-back. If we swapped the
+        // mesh to a flyby-only body (Arrokoth, Pluto if not primary,
+        // Ceres), restore the mission's primary destination now that
+        // the flyby window has closed. This keeps the post-flyby
+        // cruise framing showing the right destination.
+        if (wasInFlybyCinema && currentDestMeshId !== activeDestination) {
+          flyUpdaters?.helio.applyDestination(activeDestination);
+          currentDestMeshId = activeDestination;
         }
       }
       helioAutoZoomTargetR = targetR;
@@ -5051,8 +5108,11 @@
           // Destination position uses the active mission's target body,
           // not always Mars. Jupiter / Saturn / Neptune / Pluto / Ceres
           // missions now render their actual target instead of a
-          // confusing Mars stand-in.
-          const mPos = destinationPos(simDay, activeDestination);
+          // confusing Mars stand-in. Reads currentDestMeshId so a
+          // secondary-flyby swap (NH at Arrokoth post-Pluto) positions
+          // the destinationMesh at the swapped body's heliocentric
+          // location, not the mission's primary.
+          const mPos = destinationPos(simDay, currentDestMeshId);
           earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
           marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
           // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
@@ -6352,6 +6412,7 @@
           'uranus',
           'neptune',
           'pluto',
+          'arrokoth',
         ];
         for (const p of ids) if (label.includes(p)) return p;
         return 'venus' as FlybyPlanetId;

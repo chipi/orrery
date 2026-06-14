@@ -322,6 +322,8 @@ export function computeMissionApply(
           saturn: 4.8 / 80,
           uranus: 3.4 / 80,
           neptune: 3.4 / 80,
+          pluto: 0.9 / 80,
+          arrokoth: 0.5 / 80,
         };
         // The +y offset lifts the trajectory above the planet's pole
         // so the line and the ship glyph at the flyby moment skim
@@ -413,6 +415,15 @@ function labelToPlanetId(label: string): DestinationId | null {
     'saturn',
     'uranus',
     'neptune',
+    // Pluto + Arrokoth — needed so NH's trajectory.json waypoints at
+    // those labels get remapped onto destinationPos() so the ship
+    // glyph coincides with the destinationMesh (both use the same
+    // heliocentric lookup). Without this, the trajectory waypoint
+    // stays at the raw (x, y, z) from /explore — which can be 20+ AU
+    // away from where the destinationMesh thinks the body is, and the
+    // iconic flyby composition ends up framing empty space.
+    'pluto',
+    'arrokoth',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return p;

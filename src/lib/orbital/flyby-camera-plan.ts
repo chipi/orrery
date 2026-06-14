@@ -35,7 +35,8 @@ export type PlanetId =
   | 'saturn'
   | 'uranus'
   | 'neptune'
-  | 'pluto';
+  | 'pluto'
+  | 'arrokoth';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -170,6 +171,20 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,
     iconicLeadDays: 3,
+    targetBias: 0,
+  },
+  // Arrokoth — NH 2019 Kuiper-Belt flyby. Render radius is only 0.5
+  // (smaller even than Pluto), so a 6× camR multiplier puts the
+  // camera close enough that the snowman contact-binary shape would
+  // dominate frame — matching the canonical NH Arrokoth release shot.
+  // Lead-days 2 is shorter than Pluto's 3 because the encounter is
+  // briefer (NH zipped past at 14 km/s, less than 16 minutes of
+  // close-approach window vs Pluto's hours-long pass).
+  arrokoth: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
     targetBias: 0,
   },
 };

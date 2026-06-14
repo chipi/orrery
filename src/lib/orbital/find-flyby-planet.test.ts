@@ -48,7 +48,17 @@ describe('findFlybyPlanetFromLabel', () => {
   it('returns null when no planet keyword appears (asteroid / comet labels)', () => {
     expect(findFlybyPlanetFromLabel('Asteroid Gaspra — flyby')).toBeNull();
     expect(findFlybyPlanetFromLabel('Comet Halley — flyby')).toBeNull();
-    expect(findFlybyPlanetFromLabel('Arrokoth (2014 MU69) — flyby')).toBeNull();
+  });
+
+  it('resolves Pluto + Arrokoth labels (NH 2015 + 2019 encounters)', () => {
+    expect(findFlybyPlanetFromLabel('Pluto — first close encounter')).toEqual({
+      id: 'pluto',
+      size: 0.9,
+    });
+    expect(findFlybyPlanetFromLabel('Arrokoth (2014 MU69) — Kuiper Belt flyby')).toEqual({
+      id: 'arrokoth',
+      size: 0.5,
+    });
   });
 
   it('matches every PlanetId in the standard list', () => {

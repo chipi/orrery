@@ -45,6 +45,10 @@ export const PLANET_SIZES: Record<string, number> = {
   // iconic-shot framing still has something to look at. Use the same
   // 0.9 here so planFlybyShot's camR multiplier composes correctly.
   pluto: 0.9,
+  // Arrokoth — real radius ~18 km. Stylised to 0.5 so the cinematic
+  // composition reads at the NH 2019 encounter beat. Mirror of
+  // DEST_STYLE.arrokoth.size in $lib/three/fly-helio-scene.
+  arrokoth: 0.5,
 };
 
 export interface FlybyPlanet {
@@ -81,6 +85,12 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     // within its 3 AU threshold (Pluto sits at ~39 AU), and the
     // animate loop never enters flyby-cinema mode — Pluto is invisible.
     'pluto',
+    // Arrokoth — New Horizons' MET-4730 KBO flyby ("Arrokoth (2014
+    // MU69) — Kuiper Belt flyby" in NH mission JSON). Without this,
+    // the same null-label / out-of-range fallback path leaves the
+    // most-distant-object-ever-visited beat composing against empty
+    // space.
+    'arrokoth',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
@@ -113,6 +123,7 @@ export function findClosestPlanetToShip(
     'uranus',
     'neptune',
     'pluto',
+    'arrokoth',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;

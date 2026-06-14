@@ -41,6 +41,11 @@ const TASKS: Task[] = [
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-hero-coverage', cmd: 'tsx', args: ['scripts/validate-hero-coverage.ts'] },
   { name: 'validate-image-dupes', cmd: 'tsx', args: ['scripts/validate-image-dupes.ts'] },
+  {
+    name: 'validate-image-phash-dupes',
+    cmd: 'tsx',
+    args: ['scripts/validate-image-phash-dupes.ts'],
+  },
 ];
 
 interface TaskResult {

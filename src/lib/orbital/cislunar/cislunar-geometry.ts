@@ -791,10 +791,18 @@ function buildFromWaypoints(
   // trajectory, so findActiveCislunarPhase saw an EARTH_PHASE_TYPE
   // through the lunar swing-by / impact / descent and never zoomed in.
   const phases: CislunarPhase[] = [];
-  // Find longest run of identical waypoints (within ~10 km tolerance).
+  // Find ALL hold runs (3+ consecutive identical waypoints within
+  // ~10 km tolerance). Apollo missions park the spacecraft at LOI,
+  // surface stay, AND TEI — earlier "pick the longest" approach
+  // missed the LOI hero for Apollo 17 because surface-stay was
+  // longer than LOI.
   const IDENTICAL_TOL_KM = 10;
-  let bestRunStart = -1;
-  let bestRunLen = 0;
+  const MIN_RUN = 3;
+  interface HoldRun {
+    start: number;
+    end: number;
+  }
+  const holds: HoldRun[] = [];
   let curStart = 0;
   for (let i = 1; i < waypoints.length; i++) {
     const [, x, y, z] = waypoints[i];
@@ -804,77 +812,72 @@ function buildFromWaypoints(
       Math.abs(y - py) < IDENTICAL_TOL_KM &&
       Math.abs(z - pz) < IDENTICAL_TOL_KM;
     if (!same) {
-      const runLen = i - curStart;
-      if (runLen > bestRunLen) {
-        bestRunLen = runLen;
-        bestRunStart = curStart;
-      }
+      if (i - curStart >= MIN_RUN) holds.push({ start: curStart, end: i - 1 });
       curStart = i;
     }
   }
-  // Tail run.
-  const tailLen = waypoints.length - curStart;
-  if (tailLen > bestRunLen) {
-    bestRunLen = tailLen;
-    bestRunStart = curStart;
+  if (waypoints.length - curStart >= MIN_RUN) {
+    holds.push({ start: curStart, end: waypoints.length - 1 });
   }
-  const isHoldPattern = bestRunLen >= 3;
-  if (isHoldPattern && bestRunStart >= 0) {
-    const lo = bestRunStart;
-    const hi = bestRunStart + bestRunLen - 1;
-    const lunarStart = waypoints[lo][0];
-    const lunarEnd = waypoints[hi][0];
-    // Phase type: 'descent' if closest_approach_km is at the surface
-    // (Luna 9 impact, Apollo 11 landing — closest ≤ R_MOON + ~50 km),
-    // otherwise 'lunar_flyby' (Apollo 13 swing-by). lunar_orbit can't
-    // be inferred from a single proximity window so we use lunar_flyby
-    // as the conservative LUNAR_PHASE_TYPES default.
-    // Phase type: 'descent' if data designer marked surface contact
-    // (closest waypoint at the Moon's surface), otherwise 'lunar_flyby'.
-    // Approximate: if the hold's |waypoint| ≤ R_MOON_KM + ~1000 km in
-    // absolute coords AND the data flagged closest_approach low, treat
-    // as descent. Otherwise default to lunar_flyby (the conservative
-    // LUNAR_PHASE_TYPES default — both compose iconically).
-    const isSurfaceContact = closest_approach_km <= R_MOON_KM + 50;
-    const lunarPhaseType = isSurfaceContact ? 'descent' : 'lunar_flyby';
-    // lunar_flyby / descent are in MOON_LOCAL_PHASE_TYPES — the
-    // sampler does `point + (live_moon − moonRefPos)`. The caller
-    // hard-codes moonRefPos = moonEciPos(flyby_day = dep + transit_days).
-    // For spacecraft to render at the live Moon position during the
-    // entire hold window, store points = moonAtFlyby — then
-    // sample = moonAtFlyby + (live_moon − moonAtFlyby) = live_moon.
-    // (For Tier 1.5 data the hold's absolute coords don't align with
-    // the stylized moonEciPos model, so we pin the spacecraft to the
-    // live Moon centre instead of using raw waypoint coords.)
+
+  if (holds.length > 0) {
     const moonAtFlyby = moonEciPos(dep_day_sim + transit_days);
-    const lunarLocalPoints: Vec3Km[] = [];
-    for (let i = lo; i <= hi; i++) {
-      lunarLocalPoints.push({ x: moonAtFlyby.x, y: moonAtFlyby.y, z: moonAtFlyby.z });
-    }
-    // Outbound segment (waypoints 0..lo).
-    if (lo > 0) {
+    // Surface contact only when closest_approach was logged at the
+    // surface (Luna 9 impact, Apollo 11 landing — closest ≤ R_MOON +
+    // ~50 km). Otherwise default to lunar_flyby. Same flag applies
+    // to all holds in the mission — can't distinguish per-hold
+    // without per-event signal.
+    const isSurfaceContact = closest_approach_km <= R_MOON_KM + 50;
+    const lunarPhaseType: CislunarPhase['type'] = isSurfaceContact ? 'descent' : 'lunar_flyby';
+    // Phases interleave: tli_coast (outbound) → hold[0] →
+    // tli_coast (between) → hold[1] → … → tei_coast (after last).
+    // First segment: 0 → first hold start.
+    if (holds[0].start > 0) {
       phases.push({
         type: 'tli_coast',
         start_met_days: waypoints[0][0],
-        end_met_days: lunarStart,
-        points: points.slice(0, lo + 1),
+        end_met_days: waypoints[holds[0].start][0],
+        points: points.slice(0, holds[0].start + 1),
       });
     }
-    // Lunar segment (waypoints lo..hi, Moon-local).
-    phases.push({
-      type: lunarPhaseType,
-      start_met_days: lunarStart,
-      end_met_days: lunarEnd,
-      points: lunarLocalPoints,
-    });
-    // Return segment (waypoints hi..end, ECI).
-    if (hi < waypoints.length - 1) {
+    for (let h = 0; h < holds.length; h++) {
+      const { start: lo, end: hi } = holds[h];
+      // lunar_flyby / descent are MOON_LOCAL_PHASE_TYPES — caller
+      // hard-codes moonRefPos = moonEciPos(flyby_day = dep + transit_days).
+      // Store points = moonAtFlyby so sample collapses to live_moon
+      // → spacecraft pinned to live Moon centre for the entire hold.
+      const lunarLocalPoints: Vec3Km[] = [];
+      for (let i = lo; i <= hi; i++) {
+        lunarLocalPoints.push({ x: moonAtFlyby.x, y: moonAtFlyby.y, z: moonAtFlyby.z });
+      }
       phases.push({
-        type: 'tei_coast',
-        start_met_days: lunarEnd,
-        end_met_days: waypoints[waypoints.length - 1][0],
-        points: points.slice(hi),
+        type: lunarPhaseType,
+        start_met_days: waypoints[lo][0],
+        end_met_days: waypoints[hi][0],
+        points: lunarLocalPoints,
       });
+      // Inter-hold cruise OR final return.
+      const isLast = h === holds.length - 1;
+      if (isLast) {
+        if (hi < waypoints.length - 1) {
+          phases.push({
+            type: 'tei_coast',
+            start_met_days: waypoints[hi][0],
+            end_met_days: waypoints[waypoints.length - 1][0],
+            points: points.slice(hi),
+          });
+        }
+      } else {
+        const nextStart = holds[h + 1].start;
+        if (nextStart > hi) {
+          phases.push({
+            type: 'tli_coast',
+            start_met_days: waypoints[hi][0],
+            end_met_days: waypoints[nextStart][0],
+            points: points.slice(hi, nextStart + 1),
+          });
+        }
+      }
     }
   } else {
     // No lunar proximity (deep cruise like Pioneer-class; fallback).

@@ -4070,11 +4070,18 @@
             moonRefPos: moonRefForHero,
           });
         };
-        const iconicSimDay = arcTimeline.dep_day + heroActive.met - CISLUNAR_HERO_LEAD_DAYS[heroActive.type];
-        const moonAtIconic = moonEciPos(iconicSimDay);
+        // moonPos for the plan uses LIVE Moon position (not Moon-at-
+        // iconic-MET) so the camera target tracks the moon as simDay
+        // drifts inside the hero window. Otherwise camera would point
+        // at where the Moon WAS at iconicMet while the cislunarMoon
+        // mesh is at moonEciPos(simDay) — a visible offset that left
+        // the moon out-of-frame for missions where the user lands a
+        // fraction of a day past iconicMet (Apollo 17 LOI at MET 3.4,
+        // user at MET 3.5 → 0.88-scene-unit offset → empty frame).
+        const moonPosForHero = moonEciPos(simDay);
         const plan = planCislunarHeroShot({
           eventType: heroActive.type,
-          moonPos: { x: moonAtIconic.x, y: moonAtIconic.y, z: moonAtIconic.z },
+          moonPos: { x: moonPosForHero.x, y: moonPosForHero.y, z: moonPosForHero.z },
           shipPosAtMet,
           peakMet: heroActive.met,
         });

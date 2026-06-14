@@ -143,6 +143,13 @@ const CURATED: Record<string, string[]> = {
     'Global Positioning System Block IIIA',
     'Navstar GPS satellite',
   ],
+  // Round 3 stragglers after cache-refresh-fix delete + renumber.
+  'fleet-galleries/salyut-3': [
+    'Salyut 3 station',
+    'Almaz OPS-2',
+    'Soviet military space station',
+    'Almaz station model',
+  ],
 };
 
 const dryRun = process.argv.includes('--dry');

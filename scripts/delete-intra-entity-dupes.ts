@@ -30,22 +30,40 @@ interface Pair {
   reason: string;
 }
 
-/** Intra-entity pairs from validate-image-phash-dupes 2026-06-14
- *  baseline. Sorted to delete the higher-numbered slot in each pair. */
+/** Intra-entity pairs from baseline. Updated after each
+ *  delete+renumber+refill cycle as the corpus is cleaned up.
+ *  Keep the lower-numbered slot, delete the higher copy.
+ *
+ *  This is the second pass — D's first pass surfaced these residuals
+ *  because the source-time pHash cache had stale entries for
+ *  renumbered slots (cache key referred to a slot whose disk content
+ *  had been renamed). Fix: refresh cache (compute-phash) between
+ *  delete and fill, then re-run. */
 const PAIRS: Pair[] = [
-  { surface: 'earth-objects', id: 'gps', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'clementine', keepSlot: 1, deleteSlot: 4, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'columbia', keepSlot: 1, deleteSlot: 5, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'energia', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'hayabusa-2', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'lunokhod-1', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'phobos-2', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'vostok', keepSlot: 1, deleteSlot: 4, reason: 'd>0' },
   { surface: 'fleet-galleries', id: 'r-7-vostok', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'taiyuan-lc-9', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'phobos-2', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
+  { surface: 'iss-modules', id: 'unity', keepSlot: 1, deleteSlot: 3, reason: 'd>0' },
+  { surface: 'fleet-galleries', id: 'hayabusa-2', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'clementine', keepSlot: 1, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'energia', keepSlot: 2, deleteSlot: 3, reason: 'd=0' },
+  { surface: 'missions', id: 'apollo16', keepSlot: 2, deleteSlot: 3, reason: 'd>0' },
+  { surface: 'earth-objects', id: 'gps', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'zhurong', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'vikram-cy3', keepSlot: 1, deleteSlot: 2, reason: 'd>0' },
   { surface: 'fleet-galleries', id: 'salyut-1', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'atlas-lv-3b', keepSlot: 2, deleteSlot: 3, reason: 'd>0' },
+  { surface: 'missions', id: 'vega-1', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'missions', id: 'vega-2', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'missions', id: 'lunar-prospector', keepSlot: 3, deleteSlot: 5, reason: 'd>0' },
+  { surface: 'fleet-galleries', id: 'lunokhod-1', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'tiangong-2', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'tiangong-2', keepSlot: 1, deleteSlot: 3, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'mars2-orbiter', keepSlot: 1, deleteSlot: 2, reason: 'd>0' },
   { surface: 'fleet-galleries', id: 'salyut-3', keepSlot: 1, deleteSlot: 3, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'salyut-6', keepSlot: 2, deleteSlot: 5, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'salyut-6', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'soyuz-tm', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'missions', id: 'blue-moon-mk1', keepSlot: 2, deleteSlot: 4, reason: 'd=0' },
+  { surface: 'fleet-galleries', id: 'euclid', keepSlot: 2, deleteSlot: 4, reason: 'd>0' },
   {
     surface: 'fleet-galleries',
     id: 'space-shuttle-orbiter',
@@ -53,26 +71,7 @@ const PAIRS: Pair[] = [
     deleteSlot: 3,
     reason: 'd=0',
   },
-  { surface: 'fleet-galleries', id: 'taiyuan-lc-9', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'zhurong', keepSlot: 1, deleteSlot: 2, reason: 'd=0' },
-  { surface: 'missions', id: 'blue-moon-mk1', keepSlot: 2, deleteSlot: 4, reason: 'd=0' },
-  { surface: 'fleet-galleries', id: 'euclid', keepSlot: 2, deleteSlot: 4, reason: 'd=2' },
-  { surface: 'fleet-galleries', id: 'mars2-orbiter', keepSlot: 1, deleteSlot: 2, reason: 'd=2' },
-  { surface: 'fleet-galleries', id: 'vikram-cy3', keepSlot: 1, deleteSlot: 2, reason: 'd=2' },
-  { surface: 'fleet-galleries', id: 'vostok', keepSlot: 1, deleteSlot: 4, reason: 'd=2' },
-  { surface: 'iss-modules', id: 'unity', keepSlot: 1, deleteSlot: 3, reason: 'd=2' },
-  { surface: 'mars-sites', id: 'mars3', keepSlot: 3, deleteSlot: 5, reason: 'd=2' },
-  { surface: 'missions', id: 'mars3', keepSlot: 3, deleteSlot: 5, reason: 'd=2' },
-  {
-    surface: 'fleet-galleries',
-    id: 'apollo-csm-block-ii',
-    keepSlot: 1,
-    deleteSlot: 5,
-    reason: 'd=4',
-  },
-  { surface: 'fleet-galleries', id: 'atlas-lv-3b', keepSlot: 2, deleteSlot: 3, reason: 'd=6' },
-  { surface: 'fleet-galleries', id: 'skylab', keepSlot: 2, deleteSlot: 5, reason: 'd=6' },
-  { surface: 'missions', id: 'apollo16', keepSlot: 2, deleteSlot: 3, reason: 'd=6' },
+  { surface: 'fleet-galleries', id: 'soyuz-tm', keepSlot: 3, deleteSlot: 4, reason: 'd=0' },
 ];
 
 const SURFACE_ROOTS: Record<string, string> = {

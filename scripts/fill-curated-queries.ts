@@ -119,6 +119,30 @@ const CURATED: Record<string, string[]> = {
     'Russian highly elliptical orbit',
     'Tundra orbit',
   ],
+  // ─── Re-source after D's delete + renumber dropped these below 5 ──
+  'missions/blue-moon-mk1': [
+    'Blue Moon lander concept',
+    'Blue Origin lunar lander',
+    'BE-7 engine test',
+  ],
+  'fleet-galleries/taiyuan-lc-9': [
+    'Taiyuan Satellite Launch Center',
+    'Long March 6A launch',
+    'Long March 4B Taiyuan',
+    'Chinese launch site',
+  ],
+  'fleet-galleries/zhurong': [
+    'Zhurong Mars rover',
+    'Tianwen-1 rover',
+    'Chinese Mars rover',
+    'Zhurong selfie Mars',
+  ],
+  'earth-objects/gps': [
+    'GPS Block IIR satellite',
+    'GPS Block III satellite',
+    'Global Positioning System Block IIIA',
+    'Navstar GPS satellite',
+  ],
 };
 
 const dryRun = process.argv.includes('--dry');

@@ -163,6 +163,8 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'c26a3d99', // mars-2 + mars-3
   '777dcf96', // mars2 + mars3 (site dirs use no hyphen)
   '97ae238b', // mars2 + mars3
+  '60000bc0', // fleet-galleries/mars2-orbiter + mars-sites/mars3 — same Soviet
+  //          Mars-N program archival photo (sourced 2026-06-14 fill round 2)
   //    Mir + Progress-M — same station ecosystem photos.
   'c277c0b5', // mir + progress-m
   //    Salyut station program — same hardware across mission numbers.

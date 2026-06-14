@@ -1512,6 +1512,18 @@
     "tagline": "Sample-returned Bennu (2023); now en route to Apophis"
   },
   {
+    "id": "parker-solar-probe",
+    "name": "Parker Solar Probe",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2018-08-12",
+    "tagline": "Closest spacecraft to the Sun ever flown (9.86 R☉)"
+  },
+  {
     "id": "psyche-spacecraft",
     "name": "Psyche",
     "category": "orbiter",
@@ -1522,6 +1534,18 @@
     "status": "ACTIVE",
     "first_flight": "2023-10-13",
     "tagline": "First mission to a metal-rich M-class asteroid"
+  },
+  {
+    "id": "solar-orbiter",
+    "name": "Solar Orbiter",
+    "category": "orbiter",
+    "agency": "ESA / NASA",
+    "country": "Europe / USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2020-02-10",
+    "tagline": "First detailed imaging of the Sun's polar regions"
   },
   {
     "id": "perseverance",

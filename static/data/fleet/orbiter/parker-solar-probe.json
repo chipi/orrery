@@ -1,0 +1,32 @@
+{
+  "id": "parker-solar-probe",
+  "name": "Parker Solar Probe",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Johns Hopkins Applied Physics Laboratory",
+  "first_flight": "2018-08-12",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Closest spacecraft to the Sun ever flown (9.86 R☉, 6.1 M km from the surface); first spacecraft to enter the solar corona",
+  "credit": "Added with /fly mission JSON (#341 batch 4 — Sun-skirter pair). 11.43-cm carbon-carbon Thermal Protection System sustains 1,377 °C at perihelion.",
+  "links": [
+    {
+      "l": "Parker Solar Probe — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Parker_Solar_Probe",
+      "t": "intro"
+    },
+    {
+      "l": "Parker Solar Probe — NASA",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "core"
+    },
+    {
+      "l": "Parker Solar Probe — JHU/APL",
+      "u": "https://parkersolarprobe.jhuapl.edu/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": ["parker-solar-probe"]
+}

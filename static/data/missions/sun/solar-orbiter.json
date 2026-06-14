@@ -1,0 +1,731 @@
+{
+  "id": "solar-orbiter",
+  "agency": "ESA / NASA",
+  "agency_full": "European Space Agency (lead) / Airbus Defence and Space (spacecraft) / NASA (launch + 1 instrument)",
+  "sector": "gov",
+  "dest": "SUN",
+  "color": "#003247",
+  "year": 2020,
+  "status": "ACTIVE",
+  "departure_date": "2020-02-10",
+  "arrival_date": "2020-06-15",
+  "transit_days": 125,
+  "vehicle": "Atlas V 411",
+  "payload": "1800 kg (incl. 209 kg of instruments + heat shield)",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© ESA / NASA / Airbus — public domain. First mission to image the Sun's polar regions in detail. Uses repeated Venus gravity assists over a decade to raise inclination to ~33° above the ecliptic.",
+  "links": [
+    {
+      "l": "Solar Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Solar_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "Solar Orbiter mission overview (ESA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "Solar Orbiter (NASA)",
+      "u": "https://science.nasa.gov/mission/solar-orbiter/",
+      "t": "core"
+    },
+    {
+      "l": "Müller et al. (2020) — Solar Orbiter mission overview (Astronomy & Astrophysics)",
+      "u": "https://www.aanda.org/articles/aa/full_html/2020/10/aa38467-20/aa38467-20.html",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "solar-orbiter",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 411)",
+      "c3_km2_s2": 0.38,
+      "mass_at_tli_kg": 1800,
+      "source": "NASA Solar Orbiter Press Kit (2020-02); ESA Solar Orbiter Launch Kit; Müller et al. (2020)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "ESA Solar Orbiter Mission Operations Report; one TCM event represented in catalogue"
+    },
+    "arrival": {
+      "v_infinity_km_s": 12.5,
+      "periapsis_km": null,
+      "inclination_deg": 4.5,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "Müller et al. (2020); Venus + Earth gravity assists shape the orbit toward 33° heliographic inclination over the mission lifetime, no chemical OI burn. Perihelion ~76 M km from Sun (above schema km cap; recorded in i18n description)."
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "tli_or_tmi_dv_km_s": 3,
+      "source": "ESA Solar Orbiter Launch Kit (2020-02)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Atlas V 411",
+        "description": "Cape Canaveral SLC-41, 2020-02-10. ESA-led mission with NASA launch + one instrument contribution. Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in detail — a view inaccessible from Earth or any prior ecliptic-bound observatory."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Venus injection",
+        "description": "Centaur upper stage burn places Solar Orbiter onto a Venus-encounter trajectory for the inclination-shaping phase."
+      },
+      {
+        "met_days": 60,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction."
+      },
+      {
+        "met_days": 125,
+        "type": "arrival",
+        "label": "First perihelion (P1)",
+        "description": "2020-06-15. First close approach: 0.51 AU (~109 R☉). Initial science observations during Mercury's neighbourhood."
+      },
+      {
+        "met_days": 1000,
+        "type": "flyby",
+        "label": "Venus gravity assist 2",
+        "description": "2022-09-04. Second VGA tilts the orbital plane upward, beginning the climb out of the ecliptic toward the polar viewing geometry."
+      },
+      {
+        "met_days": 1075,
+        "type": "edl_or_oi",
+        "label": "Closest perihelion to date (P4)",
+        "description": "2022-10-12. Reached 0.29 AU (~62 R☉) — within Mercury's perihelion distance. First close-approach observations using the full instrument suite."
+      },
+      {
+        "met_days": 1750,
+        "type": "flyby",
+        "label": "Venus gravity assist 4",
+        "description": "2025-02. Fourth VGA continues raising heliographic latitude toward ~17° (extended mission target ~33°)."
+      },
+      {
+        "met_days": 2200,
+        "type": "edl_or_oi",
+        "label": "First high-latitude polar imaging",
+        "description": "2025 onwards. Heliographic latitude exceeds 17° — the first close-up imaging of the Sun's polar magnetic field structures. The polar geometry is the unique scientific deliverable, complementary to Parker Solar Probe's in-corona measurements at low latitude."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "venus",
+      "transfer_type": "vvejga_gravity_assists",
+      "tcm_count": 1,
+      "waypoints_helio_au": [
+        [
+          0,
+          -0.759606,
+          0,
+          0.650383
+        ],
+        [
+          23.3333,
+          -0.764946,
+          0,
+          0.528472
+        ],
+        [
+          46.6667,
+          -0.741968,
+          0,
+          0.412251
+        ],
+        [
+          60,
+          -0.731253,
+          0,
+          0.348294
+        ],
+        [
+          93.3333,
+          -0.732712,
+          0,
+          0.196992
+        ],
+        [
+          125,
+          -0.719953,
+          0,
+          0.069811
+        ],
+        [
+          140,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          163.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          186.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          210,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          233.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          256.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          280,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          303.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          326.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          350,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          373.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          396.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          420,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          443.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          466.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          490,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          513.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          536.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          560,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          583.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          606.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          630,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          653.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          676.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          700,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          723.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          746.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          770,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          793.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          816.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          840,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          863.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          886.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          910,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          933.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          956.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          980,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1000,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1026.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1050,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1075,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1096.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1120,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1143.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1166.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1190,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1213.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1236.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1260,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1283.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1306.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1330,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1353.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1376.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1400,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1423.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1446.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1470,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1493.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1516.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1540,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1563.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1586.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1610,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1633.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1656.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1680,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1703.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1726.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1750,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1773.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1796.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1820,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1843.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1866.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1890,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1913.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1936.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1960,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          1983.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2006.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2030,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2053.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2076.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2100,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2123.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2146.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2170,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2200,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2216.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2240,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2263.3333,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2286.6667,
+          -0.720859,
+          0,
+          0.059739
+        ],
+        [
+          2310,
+          -0.720859,
+          0,
+          0.059739
+        ]
+      ]
+    }
+  }
+}

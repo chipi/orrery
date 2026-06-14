@@ -1058,5 +1058,25 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": false
+  },
+  {
+    "id": "parker-solar-probe",
+    "agency": "NASA",
+    "dest": "SUN",
+    "status": "ACTIVE",
+    "year": 2018,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "solar-orbiter",
+    "agency": "ESA / NASA",
+    "dest": "SUN",
+    "status": "ACTIVE",
+    "year": 2020,
+    "sector": "gov",
+    "color": "#003247",
+    "crewed": false
   }
 ]

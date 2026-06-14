@@ -57,8 +57,24 @@ interface SurfaceSpec {
 // from the live mission is not yet at the "iconic moment" standard
 // used elsewhere (the iconic shot is reserved for Psyche orbit
 // insertion). Re-evaluate when JPL releases approach + OI imagery.
-const MISSIONS_KNOWN_GAPS = new Set<string>(['psyche-mission']);
-const FLEET_KNOWN_GAPS = new Set<string>(['psyche-spacecraft']);
+//
+// parker-solar-probe + solar-orbiter: Sun-grazing/Sun-imaging missions
+// where the iconic moment is the corona-entry / polar-imaging beat,
+// rendered procedurally on /fly rather than represented by a hero
+// photograph. Spacecraft cruise imagery is documented in the source
+// links; reserve the gallery slot for science returns (PSP corona
+// imagery, SolO polar EUV / PHI magnetograms) when JHU APL + ESA
+// PHI consortium release high-resolution public-domain versions.
+const MISSIONS_KNOWN_GAPS = new Set<string>([
+  'psyche-mission',
+  'parker-solar-probe',
+  'solar-orbiter',
+]);
+const FLEET_KNOWN_GAPS = new Set<string>([
+  'psyche-spacecraft',
+  'parker-solar-probe',
+  'solar-orbiter',
+]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);

@@ -318,11 +318,13 @@ function checkInterplanetaryWaypoints(file: string): void {
     }
   }
   // Coordinate sanity: heliocentric AU magnitudes should be < 50 (Pluto ~40 AU).
+  // Lower bound 0.04 AU (= ~8.6 R☉) covers Sun-grazing trajectories like
+  // Parker Solar Probe's 9.86 R☉ perihelion.
   for (let i = 0; i < wp.length; i++) {
     const r = Math.hypot(wp[i][1], wp[i][2], wp[i][3]);
-    if (!Number.isFinite(r) || r > 50 || r < 0.1) {
+    if (!Number.isFinite(r) || r > 50 || r < 0.04) {
       violations.push(
-        `waypoints_helio_au[${i}] heliocentric radius ${r.toFixed(3)} AU is outside [0.1, 50] AU`,
+        `waypoints_helio_au[${i}] heliocentric radius ${r.toFixed(3)} AU is outside [0.04, 50] AU`,
       );
       break;
     }

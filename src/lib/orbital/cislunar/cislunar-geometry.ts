@@ -496,7 +496,7 @@ export function buildCislunarTrajectory(
   const { dep_day_sim, transit_days, is_return_trip } = opts;
 
   if (profile?.waypoints_km && profile.waypoints_km.length >= 2) {
-    return buildFromWaypoints(profile.waypoints_km, dep_day_sim);
+    return buildFromWaypoints(profile.waypoints_km, dep_day_sim, transit_days);
   }
 
   const phases: CislunarPhase[] = [];
@@ -761,25 +761,135 @@ export function buildCislunarTrajectory(
 function buildFromWaypoints(
   waypoints: Array<[number, number, number, number]>,
   dep_day_sim: number,
+  transit_days: number,
 ): CislunarTrajectory {
   const points: Vec3Km[] = waypoints.map(([, x, y, z]) => ({ x, y, z }));
-  const phases: CislunarPhase[] = [
-    {
+
+  // First pass — per-waypoint distance to Moon (for both lunar-phase
+  // detection below + closest_approach_km).
+  const distToMoon: number[] = [];
+  let closest_approach_km = Infinity;
+  let closestIdx = -1;
+  for (let i = 0; i < waypoints.length; i++) {
+    const [metDays, x, y, z] = waypoints[i];
+    const m = moonEciPos(dep_day_sim + metDays);
+    const d = Math.hypot(x - m.x, y - m.y, z - m.z);
+    distToMoon.push(d);
+    if (d < closest_approach_km) {
+      closest_approach_km = d;
+      closestIdx = i;
+    }
+  }
+
+  // Synthesize phases by detecting the data designer's "swing-by hold"
+  // pattern: a run of 3+ consecutive waypoints with identical (or near-
+  // identical) (x, y, z) coordinates. Tier 1.5 hybrid mission data
+  // (Apollo 13 et al.) "parks" the spacecraft at periselene during the
+  // swing-by since the analytic model can't compute the dynamic
+  // periselene pass — leaving a stuck-position signature that's a
+  // robust detector regardless of whether the stylized moonEciPos model
+  // happens to align with the waypoint's absolute coords.
+  //
+  // Pre-this-slice we returned a single tli_coast spanning the whole
+  // trajectory, so findActiveCislunarPhase saw an EARTH_PHASE_TYPE
+  // through the lunar swing-by / impact / descent and never zoomed in.
+  const phases: CislunarPhase[] = [];
+  // Find longest run of identical waypoints (within ~10 km tolerance).
+  const IDENTICAL_TOL_KM = 10;
+  let bestRunStart = -1;
+  let bestRunLen = 0;
+  let curStart = 0;
+  for (let i = 1; i < waypoints.length; i++) {
+    const [, x, y, z] = waypoints[i];
+    const [, px, py, pz] = waypoints[i - 1];
+    const same =
+      Math.abs(x - px) < IDENTICAL_TOL_KM &&
+      Math.abs(y - py) < IDENTICAL_TOL_KM &&
+      Math.abs(z - pz) < IDENTICAL_TOL_KM;
+    if (!same) {
+      const runLen = i - curStart;
+      if (runLen > bestRunLen) {
+        bestRunLen = runLen;
+        bestRunStart = curStart;
+      }
+      curStart = i;
+    }
+  }
+  // Tail run.
+  const tailLen = waypoints.length - curStart;
+  if (tailLen > bestRunLen) {
+    bestRunLen = tailLen;
+    bestRunStart = curStart;
+  }
+  const isHoldPattern = bestRunLen >= 3;
+  if (isHoldPattern && bestRunStart >= 0) {
+    const lo = bestRunStart;
+    const hi = bestRunStart + bestRunLen - 1;
+    const lunarStart = waypoints[lo][0];
+    const lunarEnd = waypoints[hi][0];
+    // Phase type: 'descent' if closest_approach_km is at the surface
+    // (Luna 9 impact, Apollo 11 landing — closest ≤ R_MOON + ~50 km),
+    // otherwise 'lunar_flyby' (Apollo 13 swing-by). lunar_orbit can't
+    // be inferred from a single proximity window so we use lunar_flyby
+    // as the conservative LUNAR_PHASE_TYPES default.
+    // Phase type: 'descent' if data designer marked surface contact
+    // (closest waypoint at the Moon's surface), otherwise 'lunar_flyby'.
+    // Approximate: if the hold's |waypoint| ≤ R_MOON_KM + ~1000 km in
+    // absolute coords AND the data flagged closest_approach low, treat
+    // as descent. Otherwise default to lunar_flyby (the conservative
+    // LUNAR_PHASE_TYPES default — both compose iconically).
+    const isSurfaceContact = closest_approach_km <= R_MOON_KM + 50;
+    const lunarPhaseType = isSurfaceContact ? 'descent' : 'lunar_flyby';
+    // lunar_flyby / descent are in MOON_LOCAL_PHASE_TYPES — the
+    // sampler does `point + (live_moon − moonRefPos)`. The caller
+    // hard-codes moonRefPos = moonEciPos(flyby_day = dep + transit_days).
+    // For spacecraft to render at the live Moon position during the
+    // entire hold window, store points = moonAtFlyby — then
+    // sample = moonAtFlyby + (live_moon − moonAtFlyby) = live_moon.
+    // (For Tier 1.5 data the hold's absolute coords don't align with
+    // the stylized moonEciPos model, so we pin the spacecraft to the
+    // live Moon centre instead of using raw waypoint coords.)
+    const moonAtFlyby = moonEciPos(dep_day_sim + transit_days);
+    const lunarLocalPoints: Vec3Km[] = [];
+    for (let i = lo; i <= hi; i++) {
+      lunarLocalPoints.push({ x: moonAtFlyby.x, y: moonAtFlyby.y, z: moonAtFlyby.z });
+    }
+    // Outbound segment (waypoints 0..lo).
+    if (lo > 0) {
+      phases.push({
+        type: 'tli_coast',
+        start_met_days: waypoints[0][0],
+        end_met_days: lunarStart,
+        points: points.slice(0, lo + 1),
+      });
+    }
+    // Lunar segment (waypoints lo..hi, Moon-local).
+    phases.push({
+      type: lunarPhaseType,
+      start_met_days: lunarStart,
+      end_met_days: lunarEnd,
+      points: lunarLocalPoints,
+    });
+    // Return segment (waypoints hi..end, ECI).
+    if (hi < waypoints.length - 1) {
+      phases.push({
+        type: 'tei_coast',
+        start_met_days: lunarEnd,
+        end_met_days: waypoints[waypoints.length - 1][0],
+        points: points.slice(hi),
+      });
+    }
+  } else {
+    // No lunar proximity (deep cruise like Pioneer-class; fallback).
+    phases.push({
       type: 'tli_coast',
       start_met_days: waypoints[0][0],
       end_met_days: waypoints[waypoints.length - 1][0],
       points,
-    },
-  ];
+    });
+  }
 
   const moon_track: Vec3Km[] = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
-
-  let closest_approach_km = Infinity;
-  for (const [metDays, x, y, z] of waypoints) {
-    const m = moonEciPos(dep_day_sim + metDays);
-    const d = Math.hypot(x - m.x, y - m.y, z - m.z);
-    if (d < closest_approach_km) closest_approach_km = d;
-  }
 
   return { phases, moon_track, closest_approach_km };
 }

@@ -1128,5 +1128,7 @@
   "fly_traj_type_helio_flyby": "Heliocentric flyby",
   "missions_search_placeholder": "ミッションを検索…",
   "fleet_search_placeholder": "機体を検索…",
-  "plan_destination_arrokoth": "アロコス"
+  "plan_destination_arrokoth": "アロコス",
+  "plan_destination_halley": "ハレー彗星",
+  "plan_destination_67p": "67P/Churyumov-Gerasimenko"
 }

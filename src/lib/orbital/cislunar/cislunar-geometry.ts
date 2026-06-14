@@ -765,19 +765,16 @@ function buildFromWaypoints(
 ): CislunarTrajectory {
   const points: Vec3Km[] = waypoints.map(([, x, y, z]) => ({ x, y, z }));
 
-  // First pass — per-waypoint distance to Moon (for both lunar-phase
-  // detection below + closest_approach_km).
-  const distToMoon: number[] = [];
+  // First pass — per-waypoint distance to Moon (just for
+  // closest_approach_km; hold-pattern detection below uses
+  // waypoint coordinates directly).
   let closest_approach_km = Infinity;
-  let closestIdx = -1;
   for (let i = 0; i < waypoints.length; i++) {
     const [metDays, x, y, z] = waypoints[i];
     const m = moonEciPos(dep_day_sim + metDays);
     const d = Math.hypot(x - m.x, y - m.y, z - m.z);
-    distToMoon.push(d);
     if (d < closest_approach_km) {
       closest_approach_km = d;
-      closestIdx = i;
     }
   }
 

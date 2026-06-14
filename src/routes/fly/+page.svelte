@@ -3619,6 +3619,8 @@
             'vesta',
             'psyche',
             'bennu',
+            'halley',
+            '67p',
           ]);
           if (
             flyby.id !== 'earth' &&
@@ -6484,6 +6486,8 @@
           'neptune',
           'pluto',
           'arrokoth',
+          'halley',
+          '67p',
         ];
         for (const p of ids) if (label.includes(p)) return p;
         return 'venus' as FlybyPlanetId;

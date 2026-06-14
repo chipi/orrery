@@ -45,6 +45,8 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
   psyche: '#a8a090',
   bennu: '#605a55',
   arrokoth: '#9b5a48',
+  halley: '#4a4744',
+  '67p': '#5a5550',
   moon: '#cfcfcf',
 };
 

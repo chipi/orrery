@@ -93,6 +93,10 @@
         return m.plan_destination_bennu();
       case 'arrokoth':
         return m.plan_destination_arrokoth();
+      case 'halley':
+        return m.plan_destination_halley();
+      case '67p':
+        return m.plan_destination_67p();
       default: {
         const _exhaustive: never = id;
         return _exhaustive;

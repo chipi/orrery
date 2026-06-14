@@ -328,6 +328,8 @@ export function computeMissionApply(
           vesta: 0.45 / 80,
           psyche: 0.4 / 80,
           bennu: 0.3 / 80,
+          halley: 0.35 / 80,
+          '67p': 0.3 / 80,
         };
         // The +y offset lifts the trajectory above the planet's pole
         // so the line and the ship glyph at the flyby moment skim
@@ -436,10 +438,17 @@ function labelToPlanetId(label: string): DestinationId | null {
     'vesta',
     'psyche',
     'bennu',
+    // Comet nuclei — Giotto/Halley + Rosetta/67P. Same remap rationale:
+    // route trajectory waypoints through destinationPos() so the ship
+    // glyph coincides with the comet mesh at the iconic moment.
+    'halley',
+    '67p',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return p;
   }
+  // Churyumov synonym → 67P
+  if (lower.includes('churyumov')) return '67p' as DestinationId;
   if (lower.includes('earth') || lower.includes('launch')) return 'earth' as DestinationId;
   return null;
 }

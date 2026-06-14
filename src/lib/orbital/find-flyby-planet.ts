@@ -59,6 +59,11 @@ export const PLANET_SIZES: Record<string, number> = {
   vesta: 0.45,
   psyche: 0.4,
   bennu: 0.3,
+  // Comet nuclei. Halley ~5.5 km radius, 67P ~2 km — both stylised to
+  // small but readable scene radii for the Giotto / Rosetta cinematic
+  // beats. Halley sits slightly larger to read at flyby speed.
+  halley: 0.35,
+  '67p': 0.3,
 };
 
 export interface FlybyPlanet {
@@ -109,10 +114,19 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     'vesta',
     'psyche',
     'bennu',
+    // Comet nuclei — Giotto at Halley, Rosetta at 67P. Label parsing
+    // is lowercase-substring so "Halley — closest comet encounter"
+    // and "67P/Churyumov–Gerasimenko rendezvous + Philae landing"
+    // both resolve. Note: 'churyumov' is also matched as a synonym
+    // for 67P in case future data uses the full name without the id.
+    'halley',
+    '67p',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
   }
+  // Churyumov synonym → 67P
+  if (lower.includes('churyumov')) return { id: '67p', size: PLANET_SIZES['67p'] };
   // Earth is checked LAST + separately so labels like "Earth-Moon LEGA"
   // get a positive match without short-circuiting on the substring.
   if (lower.includes('earth')) {
@@ -146,6 +160,8 @@ export function findClosestPlanetToShip(
     'vesta',
     'psyche',
     'bennu',
+    'halley',
+    '67p',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;

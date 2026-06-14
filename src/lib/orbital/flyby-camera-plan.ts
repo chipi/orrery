@@ -40,7 +40,9 @@ export type PlanetId =
   | 'ceres'
   | 'vesta'
   | 'psyche'
-  | 'bennu';
+  | 'bennu'
+  | 'halley'
+  | '67p';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -218,6 +220,25 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
     targetBias: 0,
   },
   bennu: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  // Comet hero shots. Halley (Giotto 1986) at ~600 km closest
+  // approach; 67P (Rosetta 2014) at a few km during the multi-year
+  // rendezvous. Both bodies are tiny, so tight camR (6×) to give
+  // them visual presence. Lead-days 2 — flyby speeds are high so
+  // there's no holding window like the Apollo orbit.
+  halley: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  '67p': {
     camRMultiplier: 6,
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,

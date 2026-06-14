@@ -74,6 +74,8 @@ export interface HelioSceneOptions {
     vesta?: string;
     psyche?: string;
     bennu?: string;
+    halley?: string;
+    '67p'?: string;
   };
   /** Resolved quality config — auto-detected or user-chosen per the
    *  `src/lib/quality/quality-tier.ts` system. Drives pixelRatio,
@@ -219,6 +221,12 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   vesta: { size: 0.45, color: 0xb8a890 },
   psyche: { size: 0.4, color: 0xa8a090 },
   bennu: { size: 0.3, color: 0x605a55 },
+  // Comet nuclei — dark dusty bodies (Giotto/Halley + Rosetta/67P).
+  // Halley nucleus reflectance ~0.04 (one of the darkest solar-system
+  // bodies); 67P similar dark-grey. Colors stylised slightly brighter
+  // than real albedo so the silhouette reads against the bloom.
+  halley: { size: 0.35, color: 0x4a4744 },
+  '67p': { size: 0.3, color: 0x5a5550 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than

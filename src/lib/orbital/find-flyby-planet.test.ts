@@ -45,9 +45,21 @@ describe('findFlybyPlanetFromLabel', () => {
     expect(findFlybyPlanetFromLabel('')).toBeNull();
   });
 
-  it('returns null when no planet keyword appears (asteroid / comet labels)', () => {
+  it('returns null when no planet keyword appears (other small bodies)', () => {
+    // Gaspra + Ida + Steins not yet wired; remain null.
     expect(findFlybyPlanetFromLabel('Asteroid Gaspra — flyby')).toBeNull();
-    expect(findFlybyPlanetFromLabel('Comet Halley — flyby')).toBeNull();
+    expect(findFlybyPlanetFromLabel('Ida — flyby')).toBeNull();
+    expect(findFlybyPlanetFromLabel('Steins — asteroid flyby')).toBeNull();
+  });
+
+  it('resolves comet flyby labels (Giotto-Halley + Rosetta-67P)', () => {
+    expect(findFlybyPlanetFromLabel('Halley — closest comet encounter')).toEqual({
+      id: 'halley',
+      size: 0.35,
+    });
+    expect(
+      findFlybyPlanetFromLabel('67P/Churyumov–Gerasimenko rendezvous + Philae landing'),
+    ).toEqual({ id: '67p', size: 0.3 });
   });
 
   it('resolves Pluto + Arrokoth labels (NH 2015 + 2019 encounters)', () => {

@@ -76,7 +76,9 @@ export type DestinationId =
   | 'vesta'
   | 'psyche'
   | 'bennu'
-  | 'arrokoth';
+  | 'arrokoth'
+  | 'halley'
+  | '67p';
 
 export interface DestinationConstants {
   id: DestinationId;
@@ -127,6 +129,24 @@ function buildKboDestination(id: 'arrokoth'): DestinationConstants {
   };
 }
 
+function buildCometDestination(id: 'halley' | '67p'): DestinationConstants {
+  const p = smallBody(id);
+  return {
+    id,
+    a: p.a,
+    a0: p.L0,
+    meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    /** Halley (e=0.967) and 67P (e=0.64) are highly eccentric. For
+     *  /fly's flyby-cinema purpose we only need their heliocentric
+     *  position at the flyby moment (1986-03-14 for Halley, 2014-08-06
+     *  for 67P rendezvous), which the circular model approximates
+     *  well enough since data designers tune trajectory.json to land
+     *  the spacecraft at the same spot. Lambert porkchop grids for
+     *  these aren't shipped (no /plan entries), so the eccentric-
+     *  convergence concern doesn't apply. */
+  };
+}
+
 function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): DestinationConstants {
   const p = smallBody(id);
   return {
@@ -158,4 +178,6 @@ export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
   psyche: buildAsteroidDestination('psyche'),
   bennu: buildAsteroidDestination('bennu'),
   arrokoth: buildKboDestination('arrokoth'),
+  halley: buildCometDestination('halley'),
+  '67p': buildCometDestination('67p'),
 };

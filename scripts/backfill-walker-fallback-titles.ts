@@ -301,6 +301,21 @@ async function main(): Promise<void> {
   let totalMatched = 0;
   let totalUnmatched = 0;
 
+  // Helper: flush sidecars to disk so a long-running replay is resumable
+  // mid-flight. Without this, a process kill loses all in-memory matches
+  // — the Commons API budget is too expensive to start over.
+  const sortedWrite = (path: string, obj: Record<string, unknown>): void => {
+    const sorted: Record<string, unknown> = {};
+    for (const k of Object.keys(obj).sort()) sorted[k] = obj[k];
+    writeFileSync(path, JSON.stringify(sorted, null, 2) + '\n');
+  };
+  const flush = (): void => {
+    if (dryRun) return;
+    sortedWrite('static/data/mission-image-sources.json', missionSidecar);
+    sortedWrite('static/data/fleet-image-sources.json', fleetSidecar);
+    sortedWrite('static/data/panel-image-sources.json', panelSidecar);
+  };
+
   for (const surface of surfaces) {
     if (!SURFACES[surface]) continue;
     const entities = listEntities(surface);
@@ -335,20 +350,15 @@ async function main(): Promise<void> {
             existing.panel.add(`${surface}/${id}/${slotStr}`);
           }
         }
+        // Flush after each entity that produced matches so a killed
+        // process keeps everything it earned. Cheap (~1ms per write).
+        flush();
       }
     }
   }
 
-  if (!dryRun) {
-    const sortedWrite = (path: string, obj: Record<string, unknown>): void => {
-      const sorted: Record<string, unknown> = {};
-      for (const k of Object.keys(obj).sort()) sorted[k] = obj[k];
-      writeFileSync(path, JSON.stringify(sorted, null, 2) + '\n');
-    };
-    sortedWrite('static/data/mission-image-sources.json', missionSidecar);
-    sortedWrite('static/data/fleet-image-sources.json', fleetSidecar);
-    sortedWrite('static/data/panel-image-sources.json', panelSidecar);
-  }
+  // Final flush — idempotent with the per-entity writes above.
+  flush();
 
   console.log(`\n${dryRun ? 'Would match' : 'Matched'}: ${totalMatched} slots`);
   console.log(`Unmatched: ${totalUnmatched} slots (search didn't surface the Commons file)`);

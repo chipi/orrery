@@ -1,24 +1,166 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-14T16:35:18.999Z
+Generated: 2026-06-14T21:32:10.597Z
 Script: build-image-provenance@1.0.0
-Commit: 2733b214822c604dae818efd65dc089b2dd69894
+Commit: 2fd080a1db60c3c7990215b238fca1a14f5a5c97
 Total entries: 3343
 
 ## Added (0)
 
 
-## Removed (9)
+## Removed (0)
 
-- `/images/rockets/h-iia.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/rockets/lvm3.jpg` — was PD-Old via wikimedia-commons
-- `/images/rockets/proton-m.jpg` — was PD-NASA via wikimedia-commons
-- `/images/rockets/soyuz-fregat.jpg` — was PD-NASA via wikimedia-commons
-- `/images/science/crew-dynamics-mir.jpg` — was PD-NASA via wikimedia-commons
-- `/images/science/free-return-apollo13.jpg` — was PD-NASA via wikimedia-commons
-- `/images/science/oberth-cassini.jpg` — was PD-NASA via wikimedia-commons
-- `/images/science/suit-lineage-sokol.jpg` — was CC-BY-SA-3.0 via wikimedia-commons
-- `/images/science/surface-mobility-lrv.jpg` — was PD-NASA via wikimedia-commons
 
-## Changed (0)
+## Changed (139)
 
+- `/images/earth-objects/goes/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20showing%20Geostationary%20Operational%20Environmental%20Satellite%20(GOES)%20Total%20System%20(2297-23).jpg"
+- `/images/earth-objects/goes/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES%20satellite%20antenna%20at%20the%20National%20Environmental%20Satellite%20Service%20building%20(2268-197).jpg"
+- `/images/earth-objects/goes/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20of%20GOES%20satellite%20operation%20(2297-20).jpg"
+- `/images/earth-objects/goes/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20of%20GOES%20satellite%20data%20collection%20and%20distribution%20(2297-1).jpg"
+- `/images/earth-objects/inmarsat/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20050406-N-8629M-016%20Information%20Systems%20Technician%201st%20Class%20John%20Opsteegh%20performs%20a%20communications%20check%20with%20an%20Inmarsat%20satellite%20phone%20system%20to%20establish%20communications.jpg"
+- `/images/earth-objects/inmarsat/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABoules%20Inmarsat%20dans%20la%20m%C3%A2ture%20du%20Suro%C3%AEt%20(Ifremer%2000521-63323).jpg"
+- `/images/earth-objects/inmarsat/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASatellite%20phone.jpg"
+- `/images/earth-objects/inmarsat/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABoules%20Inmarsat%20dans%20la%20m%C3%A2ture%20du%20Suro%C3%AEt%20(Ifremer%2000520-63197).jpg"
+- `/images/earth-objects/iridium-next/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20060219-N-5067K-086%20Satellite%20phone%20operations%20during%20disaster%20relief%20efforts%20in%20Saint%20Bernard%2C%20Republic%20of%20the%20Philippines.jpg"
+- `/images/earth-objects/iridium-next/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASpace%20sustainability%20overview.png"
+- `/images/earth-objects/iridium-next/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASpace%20sustainability%20overview%20black.png"
+- `/images/earth-objects/iridium-next/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AIridium-2%20Mission%20(35499710806).jpg"
+- `/images/earth-objects/kuiper/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339805).jpg"
+- `/images/earth-objects/kuiper/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339806).jpg"
+- `/images/earth-objects/kuiper/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339804).jpg"
+- `/images/earth-objects/kuiper/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339803).jpg"
+- `/images/earth-objects/landsat/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AFlorida%20Keys%2C%20Florida%2C%20satellite%20image%20map%2C%20NASA%20LANDSAT-1%20(1977).jpg"
+- `/images/earth-objects/landsat/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALandsat%20satellite%20image%20of%20the%20Middle%20Atlantic%20States%2C%20eastern%20part%20(1977).jpg"
+- `/images/earth-objects/landsat/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASatellite%20image%20of%20Singapore%20(Landsat%207)%20-%2020000428.jpg"
+- `/images/earth-objects/landsat/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AToba%20Landsat%20satellite%20image.jpg"
+- `/images/earth-objects/o3b/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABourgery%20%26%20Jacob-o3b.jpg"
+- `/images/earth-objects/o3b/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AFalcon%209%20Starlink%2010-59%20Launch%20(9391879).jpg"
+- `/images/earth-objects/o3b/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AFalcon%209%20Bluebird%201-5%20Launch%20(8638151).jpg"
+- `/images/earth-objects/o3b/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AFalcon%209%20Bluebird%201-5%20Launch%20(8638152).jpg"
+- `/images/earth-objects/oneweb/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AOneWeb%20satellite%20manufacturing%20facility%2C%20Merritt%20Island%2C%20Florida%2C%202019%2002.jpg"
+- `/images/earth-objects/oneweb/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALVM3%20M3%20OneWeb%20India-2%20Mission%20-%20Satellite%20seperation%20telemetry%20plot.jpg"
+- `/images/earth-objects/oneweb/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AKSC-20170316-PH%20KLS01%200007~orig.jpg"
+- `/images/earth-objects/oneweb/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ADogtag%20on%20oneweb.png"
+- `/images/earth-objects/planet-labs/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AArkhangelsk%20Russia%20-%20Planet%20Labs%20Satellite%20image.jpg"
+- `/images/earth-objects/planet-labs/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABohai%20sea%20aquaculture%20planet%20labs%20satellite%20image.jpg"
+- `/images/earth-objects/planet-labs/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ADawesville%20Channel%20Australia%20-%20Planet%20Labs%20satellite%20image.jpg"
+- `/images/earth-objects/planet-labs/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AUlanqab%2C%20Inner%20Mongolia%20China%20-%20Planet%20Labs%20satellite%20image.jpg"
+- `/images/earth-objects/sentinel-copernicus/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AL'%C3%AEle%20de%20la%20R%C3%A9union%20vue%20par%20le%20satellite%20Sentinel-2%20(cropped).jpg"
+- `/images/earth-objects/sentinel-copernicus/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASmoke%20and%20flames%20in%20Australia%20ESA21788548.jpeg"
+- `/images/earth-objects/sentinel-copernicus/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASvalbard%20Satellite%20Station%2C%20an%20important%20part%20of%20the%20Copernicus%20Sentinel%20ground%20segment.jpg"
+- `/images/earth-objects/sentinel-copernicus/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALakeBalkhash%20colorful.jpg"
+- `/images/earth-objects/starlink/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AStarlink%20%C3%BCber%20dem%20Rathaus%20in%20T%C3%BCbingen.jpg"
+- `/images/earth-objects/starlink/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AStarlink%20Satellites%20Overhead.jpg"
+- `/images/earth-objects/starlink/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AVenus%20and%20Starlink%20Satellites.jpg"
+- `/images/earth-objects/starlink/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AStarlink%2024planes%20a%2066sat%20sum%201584%20satelites.png"
+- `/images/mars-sites/zhurong/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AZhurong%20Rover%20heat%20shield%20(ESP%20069665%202055-3).jpg"
+- `/images/mars-sites/zhurong/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AZhurong%20rover%20mockup%20at%20CSTM%2002.jpg"
+- `/images/mars-sites/zhurong/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AZhurong-with-lander-selfie-flat.jpg"
+- `/images/mars-sites/zhurong/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AZhurong%20rover%20and%20Tianwen-1%20lander%20as%20seen%20by%20MRO%20in%20Southern%20Utopia%20Planitia%20(1).jpg"
+- `/images/missions/apollo-1/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AApollo%201%20Prime%20Crew%20-%20GPN-2000-001159.jpg"
+- `/images/missions/apollo10/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMoon%20-%20Apollo%2010%20(55096228970).jpg"
+- `/images/missions/apollo10/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ACrater%20Wall%20-%20Moon%20-%20Apollo%2010%20(55094732527).jpg"
+- `/images/missions/apollo10/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AArago%20Crater%20-%20Moon%20-%20Apollo%2010%20(55096078753).jpg"
+- `/images/missions/apollo10/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAS10-35-5240%20-%20Apollo%2010%20(46215743404).jpg"
+- `/images/missions/apollo7/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AApollo7%20Prime%20Crew%20(May%2022%2C%201968).jpg"
+- … 89 more

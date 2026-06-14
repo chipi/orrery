@@ -47,6 +47,17 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
   arrokoth: '#9b5a48',
   halley: '#4a4744',
   '67p': '#5a5550',
+  // #341 Batch 5 small bodies — mirror of small-bodies.json color.
+  itokawa: '#c1a075',
+  didymos: '#b89570',
+  dimorphos: '#a88860',
+  donaldjohanson: '#3a3530',
+  eurybates: '#4a4540',
+  polymele: '#4a3f38',
+  leucus: '#5a3a30',
+  orus: '#5a4030',
+  patroclus: '#4a3a30',
+  menoetius: '#4a3a30',
   moon: '#cfcfcf',
 };
 

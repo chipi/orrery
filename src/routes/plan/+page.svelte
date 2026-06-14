@@ -97,6 +97,27 @@
         return m.plan_destination_halley();
       case '67p':
         return m.plan_destination_67p();
+      // #341 Batch 5 small bodies.
+      case 'itokawa':
+        return m.plan_destination_itokawa();
+      case 'didymos':
+        return m.plan_destination_didymos();
+      case 'dimorphos':
+        return m.plan_destination_dimorphos();
+      case 'donaldjohanson':
+        return m.plan_destination_donaldjohanson();
+      case 'eurybates':
+        return m.plan_destination_eurybates();
+      case 'polymele':
+        return m.plan_destination_polymele();
+      case 'leucus':
+        return m.plan_destination_leucus();
+      case 'orus':
+        return m.plan_destination_orus();
+      case 'patroclus':
+        return m.plan_destination_patroclus();
+      case 'menoetius':
+        return m.plan_destination_menoetius();
       default: {
         const _exhaustive: never = id;
         return _exhaustive;

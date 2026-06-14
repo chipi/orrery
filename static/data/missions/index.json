@@ -1082,7 +1082,7 @@
   {
     "id": "dart",
     "agency": "NASA",
-    "dest": "ASTEROID",
+    "dest": "DIMORPHOS",
     "status": "FLOWN",
     "year": 2021,
     "sector": "gov",
@@ -1092,7 +1092,7 @@
   {
     "id": "lucy",
     "agency": "NASA",
-    "dest": "ASTEROID",
+    "dest": "EURYBATES",
     "status": "ACTIVE",
     "year": 2021,
     "sector": "gov",
@@ -1112,7 +1112,7 @@
   {
     "id": "hayabusa1",
     "agency": "JAXA",
-    "dest": "ASTEROID",
+    "dest": "ITOKAWA",
     "status": "FLOWN",
     "year": 2003,
     "sector": "gov",

@@ -63,7 +63,16 @@
         "PSYCHE",
         "VESTA",
         "ARROKOTH",
-        "ITOKAWA"
+        "ITOKAWA",
+        "DIDYMOS",
+        "DIMORPHOS",
+        "DONALDJOHANSON",
+        "EURYBATES",
+        "POLYMELE",
+        "LEUCUS",
+        "ORUS",
+        "PATROCLUS",
+        "MENOETIUS"
       ]
     },
     "color": {
@@ -536,7 +545,17 @@
                 "vesta",
                 "halley",
                 "67p",
-                "arrokoth"
+                "arrokoth",
+                "itokawa",
+                "didymos",
+                "dimorphos",
+                "donaldjohanson",
+                "eurybates",
+                "polymele",
+                "leucus",
+                "orus",
+                "patroclus",
+                "menoetius"
               ],
               "description": "Target body. Drives which position function provides arrival point + which mu is used for arrival_orbit seeding. Small-body destinations supported via small-bodies.json + DESTINATIONS table builders."
             },

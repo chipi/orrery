@@ -330,6 +330,17 @@ export function computeMissionApply(
           bennu: 0.3 / 80,
           halley: 0.35 / 80,
           '67p': 0.3 / 80,
+          // #341 Batch 5 small bodies — mirror of DEST_STYLE sizes.
+          itokawa: 0.35 / 80,
+          didymos: 0.4 / 80,
+          dimorphos: 0.25 / 80,
+          donaldjohanson: 0.3 / 80,
+          eurybates: 0.45 / 80,
+          polymele: 0.35 / 80,
+          leucus: 0.4 / 80,
+          orus: 0.4 / 80,
+          patroclus: 0.55 / 80,
+          menoetius: 0.5 / 80,
         };
         // The +y offset lifts the trajectory above the planet's pole
         // so the line and the ship glyph at the flyby moment skim
@@ -443,6 +454,18 @@ function labelToPlanetId(label: string): DestinationId | null {
     // glyph coincides with the comet mesh at the iconic moment.
     'halley',
     '67p',
+    // #341 Batch 5 small bodies — DART/Dimorphos, Lucy multi-Trojan,
+    // Hayabusa/Itokawa. Same remap rationale.
+    'itokawa',
+    'dimorphos',
+    'didymos',
+    'donaldjohanson',
+    'eurybates',
+    'polymele',
+    'leucus',
+    'orus',
+    'patroclus',
+    'menoetius',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return p;

@@ -227,6 +227,22 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   // than real albedo so the silhouette reads against the bloom.
   halley: { size: 0.35, color: 0x4a4744 },
   '67p': { size: 0.3, color: 0x5a5550 },
+  // #341 Batch 5 small bodies — see PLANET_SIZES for size rationale.
+  // Colors stylised per spectral class:
+  //   - S-type (Itokawa, Didymos, Dimorphos): tan / silicate
+  //   - C-type (Donaldjohanson, Eurybates): dark grey / carbonaceous
+  //   - P-type (Polymele, Patroclus, Menoetius): dark brown-grey
+  //   - D-type (Leucus, Orus): dark red-brown / primitive outer disc
+  itokawa: { size: 0.35, color: 0xc1a075 },
+  didymos: { size: 0.4, color: 0xb89570 },
+  dimorphos: { size: 0.25, color: 0xa88860 },
+  donaldjohanson: { size: 0.3, color: 0x3a3530 },
+  eurybates: { size: 0.45, color: 0x4a4540 },
+  polymele: { size: 0.35, color: 0x4a3f38 },
+  leucus: { size: 0.4, color: 0x5a3a30 },
+  orus: { size: 0.4, color: 0x5a4030 },
+  patroclus: { size: 0.55, color: 0x4a3a30 },
+  menoetius: { size: 0.5, color: 0x4a3a30 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than

@@ -78,7 +78,22 @@ export type DestinationId =
   | 'bennu'
   | 'arrokoth'
   | 'halley'
-  | '67p';
+  | '67p'
+  // #341 Batch 5 body wiring — small-body destinations for missions
+  // that previously routed through generic ASTEROID dest. Each gets
+  // full per-body composition tuning so the hero shot at the iconic
+  // mission moment composes correctly (DART/Dimorphos kinetic impact,
+  // Lucy multi-Trojan encounters, Hayabusa/Itokawa station-keeping).
+  | 'itokawa'
+  | 'didymos'
+  | 'dimorphos'
+  | 'donaldjohanson'
+  | 'eurybates'
+  | 'polymele'
+  | 'leucus'
+  | 'orus'
+  | 'patroclus'
+  | 'menoetius';
 
 export interface DestinationConstants {
   id: DestinationId;
@@ -161,6 +176,41 @@ function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): Destination
   };
 }
 
+type SmallBodyDestId =
+  | 'itokawa'
+  | 'didymos'
+  | 'dimorphos'
+  | 'donaldjohanson'
+  | 'eurybates'
+  | 'polymele'
+  | 'leucus'
+  | 'orus'
+  | 'patroclus'
+  | 'menoetius';
+
+/** Builder for #341 Batch 5 small-body destinations (Itokawa, the
+ *  Didymos-Dimorphos binary, Lucy's Trojan itinerary). All use the
+ *  circular-arrival approximation; eccentric Lambert porkchops aren't
+ *  shipped for any of these (no /plan grids). The data layer's
+ *  trajectory.json places the spacecraft at the iconic moment; this
+ *  builder only needs to feed destinationPos() the right heliocentric
+ *  position so the destinationMesh co-locates with the ship glyph. */
+function buildSmallBodyDestination(id: SmallBodyDestId): DestinationConstants {
+  const p = smallBody(id);
+  return {
+    id,
+    a: p.a,
+    a0: p.L0,
+    meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    /** Dimorphos + Didymos at e≈0.38, Donaldjohanson at e≈0.19,
+     *  Itokawa at e≈0.28 — above Bennu's 0.20 threshold so the
+     *  eccentric model applies. Trojans (Eurybates/Polymele/Leucus/
+     *  Orus/Patroclus/Menoetius) all sit at e≈0.03–0.14, comfortably
+     *  in the circular regime. */
+    ...(p.e > 0.18 ? { e: p.e } : {}),
+  };
+}
+
 /** Lookup table for porkchop / arc destinations. Mars stays in step
  *  with the legacy MARS_* exports above so a misedit shows up as a
  *  test failure rather than a silent drift. */
@@ -180,4 +230,14 @@ export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
   arrokoth: buildKboDestination('arrokoth'),
   halley: buildCometDestination('halley'),
   '67p': buildCometDestination('67p'),
+  itokawa: buildSmallBodyDestination('itokawa'),
+  didymos: buildSmallBodyDestination('didymos'),
+  dimorphos: buildSmallBodyDestination('dimorphos'),
+  donaldjohanson: buildSmallBodyDestination('donaldjohanson'),
+  eurybates: buildSmallBodyDestination('eurybates'),
+  polymele: buildSmallBodyDestination('polymele'),
+  leucus: buildSmallBodyDestination('leucus'),
+  orus: buildSmallBodyDestination('orus'),
+  patroclus: buildSmallBodyDestination('patroclus'),
+  menoetius: buildSmallBodyDestination('menoetius'),
 };

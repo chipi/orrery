@@ -64,6 +64,33 @@ export const PLANET_SIZES: Record<string, number> = {
   // beats. Halley sits slightly larger to read at flyby speed.
   halley: 0.35,
   '67p': 0.3,
+  // #341 Batch 5 small bodies. Stylised radii — these are all sub-
+  // kilometre to ~100 km in reality but the camera needs SOMETHING
+  // to compose against. Tuning logic per body:
+  //   - Itokawa (165 m): peanut rubble pile, size 0.35 reads at
+  //     Hayabusa's slow station-keeping approach.
+  //   - Didymos (390 m) + Dimorphos (80 m): binary cinema. Didymos
+  //     0.40, Dimorphos 0.25 so the size ratio reads in frame at
+  //     DART's impact moment.
+  //   - Donaldjohanson (2 km): Lucy main-belt bonus, small but
+  //     identifiable, 0.30.
+  //   - Eurybates (32 km): largest L4 family member, 0.45.
+  //   - Polymele (10.5 km): smaller P-type, 0.35.
+  //   - Leucus (17.5 km): D-type slow rotator, 0.40.
+  //   - Orus (25.5 km): mid-size D-type, 0.40.
+  //   - Patroclus (56.5 km) + Menoetius (52 km): largest Trojan
+  //     binary, both 0.55 / 0.50 to read as a binary pair at
+  //     Lucy's 2033 climax.
+  itokawa: 0.35,
+  didymos: 0.4,
+  dimorphos: 0.25,
+  donaldjohanson: 0.3,
+  eurybates: 0.45,
+  polymele: 0.35,
+  leucus: 0.4,
+  orus: 0.4,
+  patroclus: 0.55,
+  menoetius: 0.5,
 };
 
 export interface FlybyPlanet {
@@ -121,6 +148,20 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     // for 67P in case future data uses the full name without the id.
     'halley',
     '67p',
+    // #341 Batch 5 — small bodies. Each gets a substring match against
+    // the event label so flight.events labels like "Dimorphos kinetic
+    // impact" or "Eurybates + Queta" route through to per-body camera
+    // composition.
+    'itokawa',
+    'dimorphos',
+    'didymos',
+    'donaldjohanson',
+    'eurybates',
+    'polymele',
+    'leucus',
+    'orus',
+    'patroclus',
+    'menoetius',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
@@ -162,6 +203,16 @@ export function findClosestPlanetToShip(
     'bennu',
     'halley',
     '67p',
+    'itokawa',
+    'didymos',
+    'dimorphos',
+    'donaldjohanson',
+    'eurybates',
+    'polymele',
+    'leucus',
+    'orus',
+    'patroclus',
+    'menoetius',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;

@@ -3,7 +3,7 @@
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration / Goddard Space Flight Center / Southwest Research Institute / Lockheed Martin",
   "sector": "gov",
-  "dest": "ASTEROID",
+  "dest": "EURYBATES",
   "color": "#0B3D91",
   "year": 2021,
   "status": "ACTIVE",
@@ -144,7 +144,7 @@
       "source_tier": "tier_1_5_hybrid",
       "reference_frame": "heliocentric_ecliptic_J2000",
       "departure_body": "earth",
-      "arrival_body": "jupiter",
+      "arrival_body": "eurybates",
       "transfer_type": "type1_lambert",
       "tcm_count": 0,
       "waypoints_helio_au": [

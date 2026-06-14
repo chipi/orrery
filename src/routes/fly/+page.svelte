@@ -3609,6 +3609,17 @@
             'bennu',
             'halley',
             '67p',
+            // #341 Batch 5 small bodies — same mesh-swap mechanism.
+            'itokawa',
+            'didymos',
+            'dimorphos',
+            'donaldjohanson',
+            'eurybates',
+            'polymele',
+            'leucus',
+            'orus',
+            'patroclus',
+            'menoetius',
           ]);
           if (
             flyby.id !== 'earth' &&
@@ -6486,6 +6497,17 @@
           'arrokoth',
           'halley',
           '67p',
+          // #341 Batch 5 small bodies.
+          'itokawa',
+          'dimorphos',
+          'didymos',
+          'donaldjohanson',
+          'eurybates',
+          'polymele',
+          'leucus',
+          'orus',
+          'patroclus',
+          'menoetius',
         ];
         for (const p of ids) if (label.includes(p)) return p;
         return 'venus' as FlybyPlanetId;

@@ -42,7 +42,17 @@ export type PlanetId =
   | 'psyche'
   | 'bennu'
   | 'halley'
-  | '67p';
+  | '67p'
+  | 'itokawa'
+  | 'didymos'
+  | 'dimorphos'
+  | 'donaldjohanson'
+  | 'eurybates'
+  | 'polymele'
+  | 'leucus'
+  | 'orus'
+  | 'patroclus'
+  | 'menoetius';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -240,6 +250,89 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
   },
   '67p': {
     camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  // #341 Batch 5 — small bodies. Tight camR (6×) puts the camera
+  // close enough to give sub-km-class bodies frame presence.
+  // iconicLeadDays varies by encounter speed: Hayabusa/Itokawa was
+  // station-keeping (slow), so lead 3 pulls ship further away in xz;
+  // DART/Dimorphos was 6.14 km/s closing impact, lead 1 keeps ship
+  // close to the body at the impact moment; Lucy Trojans are
+  // multi-km/s flybys, lead 2.
+  itokawa: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 3,
+    targetBias: 0,
+  },
+  didymos: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 1,
+    targetBias: 0,
+  },
+  // Dimorphos is the impact target — camera frames Dimorphos with
+  // Didymos as background context body. targetBias 0.2 nudges the
+  // composition slightly toward the ship so the moonlet doesn't
+  // disappear under the parent's frame footprint.
+  dimorphos: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 0.5,
+    targetBias: 0.2,
+  },
+  donaldjohanson: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  eurybates: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  polymele: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  leucus: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  orus: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  // Patroclus + Menoetius is the binary climax — slightly looser camR
+  // so both bodies of the binary read in frame.
+  patroclus: {
+    camRMultiplier: 5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  menoetius: {
+    camRMultiplier: 5,
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,
     iconicLeadDays: 2,

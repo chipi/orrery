@@ -3,7 +3,7 @@
   "agency": "NASA",
   "agency_full": "National Aeronautics and Space Administration / Johns Hopkins Applied Physics Laboratory (lead)",
   "sector": "gov",
-  "dest": "ASTEROID",
+  "dest": "DIMORPHOS",
   "color": "#0B3D91",
   "year": 2021,
   "status": "FLOWN",
@@ -104,7 +104,7 @@
       "source_tier": "tier_1_5_hybrid",
       "reference_frame": "heliocentric_ecliptic_J2000",
       "departure_body": "earth",
-      "arrival_body": "ceres",
+      "arrival_body": "dimorphos",
       "transfer_type": "type1_lambert",
       "tcm_count": 1,
       "waypoints_helio_au": [

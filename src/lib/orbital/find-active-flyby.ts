@@ -48,11 +48,19 @@ export function findActiveFlybyMet(
   depDay: number,
 ): number | null {
   for (const e of events) {
-    if (e.type !== 'flyby' && e.type !== 'edl_or_oi') continue;
+    // Cinema fires for flyby (gravity-assist), edl_or_oi (orbit
+    // insertion at the mission's primary destination), and arrival
+    // (Dawn's Vesta + Ceres OIs, Hayabusa2's Ryugu arrival — same
+    // beat as edl_or_oi but the mission data uses the more generic
+    // type). Cislunar missions also use 'arrival' but they take the
+    // findActiveCislunarHero path instead; the helio flyby branch is
+    // gated by !isMoonMission in /fly so there's no overlap.
+    if (e.type !== 'flyby' && e.type !== 'edl_or_oi' && e.type !== 'arrival') continue;
     if (e.met_days == null) continue;
     const flybySimDay = depDay + e.met_days;
     const delta = simDay - flybySimDay; // negative = approaching
-    const approachWindow = e.type === 'edl_or_oi' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
+    const approachWindow =
+      e.type === 'edl_or_oi' || e.type === 'arrival' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
     if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
       return e.met_days;
     }

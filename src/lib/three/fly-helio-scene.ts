@@ -71,6 +71,9 @@ export interface HelioSceneOptions {
     pluto: string;
     ceres?: string;
     arrokoth?: string;
+    vesta?: string;
+    psyche?: string;
+    bennu?: string;
   };
   /** Resolved quality config — auto-detected or user-chosen per the
    *  `src/lib/quality/quality-tier.ts` system. Drives pixelRatio,
@@ -210,6 +213,12 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   // composition distance. Color #9b5a48 — the canonical deep-red of
   // cold-classical KBOs (Stern et al., Science 2020).
   arrokoth: { size: 0.5, color: 0x9b5a48 },
+  // Other asteroid destinations — Dawn at Vesta, OSIRIS-REx at Bennu,
+  // Psyche mission to Psyche. Visual radii stylised (small enough to
+  // distinguish from planets, big enough to compose iconic shots).
+  vesta: { size: 0.45, color: 0xb8a890 },
+  psyche: { size: 0.4, color: 0xa8a090 },
+  bennu: { size: 0.3, color: 0x605a55 },
 };
 
 /** Earth radius in /fly heliocentric units (tuned smaller than

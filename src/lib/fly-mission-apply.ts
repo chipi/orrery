@@ -324,6 +324,10 @@ export function computeMissionApply(
           neptune: 3.4 / 80,
           pluto: 0.9 / 80,
           arrokoth: 0.5 / 80,
+          ceres: 0.6 / 80,
+          vesta: 0.45 / 80,
+          psyche: 0.4 / 80,
+          bennu: 0.3 / 80,
         };
         // The +y offset lifts the trajectory above the planet's pole
         // so the line and the ship glyph at the flyby moment skim
@@ -424,6 +428,14 @@ function labelToPlanetId(label: string): DestinationId | null {
     // iconic flyby composition ends up framing empty space.
     'pluto',
     'arrokoth',
+    // Asteroid destinations — Dawn (Vesta + Ceres), Psyche (Psyche),
+    // OSIRIS-REx (Bennu). Same remap rationale: route the trajectory
+    // waypoint through destinationPos() so the ship glyph coincides
+    // with the destinationMesh at the iconic moment.
+    'ceres',
+    'vesta',
+    'psyche',
+    'bennu',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return p;

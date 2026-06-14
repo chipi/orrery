@@ -36,7 +36,11 @@ export type PlanetId =
   | 'uranus'
   | 'neptune'
   | 'pluto'
-  | 'arrokoth';
+  | 'arrokoth'
+  | 'ceres'
+  | 'vesta'
+  | 'psyche'
+  | 'bennu';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -181,6 +185,39 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
   // briefer (NH zipped past at 14 km/s, less than 16 minutes of
   // close-approach window vs Pluto's hours-long pass).
   arrokoth: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  // Asteroid hero shots. Small bodies need tighter camR multipliers
+  // so the disc actually fills the frame — at camR 4× a 0.6 unit
+  // body sits at 2.4 units distance, fine; smaller bodies need 5-6×
+  // to keep the silhouette readable. iconicLeadDays 2 matches the
+  // outer-system tier (sparser trajectory sampling).
+  ceres: {
+    camRMultiplier: 5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  vesta: {
+    camRMultiplier: 5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  psyche: {
+    camRMultiplier: 6,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  bennu: {
     camRMultiplier: 6,
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,

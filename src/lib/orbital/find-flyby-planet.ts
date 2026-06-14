@@ -49,6 +49,16 @@ export const PLANET_SIZES: Record<string, number> = {
   // composition reads at the NH 2019 encounter beat. Mirror of
   // DEST_STYLE.arrokoth.size in $lib/three/fly-helio-scene.
   arrokoth: 0.5,
+  // Asteroid + dwarf-planet bodies in DESTINATIONS that the /fly
+  // flyby cinema needs to recognise (Dawn at Vesta + Ceres; Psyche
+  // mission to Psyche; OSIRIS-REx at Bennu). Stylised radii — these
+  // are tiny in reality (Ceres 470 km, Vesta 263 km, Psyche 113 km,
+  // Bennu 0.25 km) but the camera needs SOMETHING to compose
+  // against. Mirror of DEST_STYLE entries.
+  ceres: 0.6,
+  vesta: 0.45,
+  psyche: 0.4,
+  bennu: 0.3,
 };
 
 export interface FlybyPlanet {
@@ -91,6 +101,14 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     // most-distant-object-ever-visited beat composing against empty
     // space.
     'arrokoth',
+    // Asteroid + small-body destinations — Dawn at Vesta + Ceres,
+    // Psyche mission to Psyche, OSIRIS-REx to Bennu. Each has a
+    // DestinationId + DEST_STYLE entry; the parser needed widening
+    // so labels like "Vesta orbit insertion" resolve.
+    'ceres',
+    'vesta',
+    'psyche',
+    'bennu',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
@@ -124,6 +142,10 @@ export function findClosestPlanetToShip(
     'neptune',
     'pluto',
     'arrokoth',
+    'ceres',
+    'vesta',
+    'psyche',
+    'bennu',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;

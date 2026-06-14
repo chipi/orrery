@@ -3548,7 +3548,14 @@
           // such body (NH Arrokoth past primary-destination Pluto)
           // would otherwise see the camera composing against thin air.
           // Swap the mesh transiently; the cruise branch swaps back.
-          const NON_CONTEXT_BODIES = new Set<DestinationId>(['pluto', 'arrokoth', 'ceres']);
+          const NON_CONTEXT_BODIES = new Set<DestinationId>([
+            'pluto',
+            'arrokoth',
+            'ceres',
+            'vesta',
+            'psyche',
+            'bennu',
+          ]);
           if (
             flyby.id !== 'earth' &&
             NON_CONTEXT_BODIES.has(flyby.id as DestinationId) &&

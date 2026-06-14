@@ -1,0 +1,741 @@
+{
+  "id": "osiris-rex",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Goddard Space Flight Center / University of Arizona / Lockheed Martin",
+  "sector": "gov",
+  "dest": "BENNU",
+  "color": "#0B3D91",
+  "year": 2016,
+  "status": "FLOWN",
+  "departure_date": "2016-09-08",
+  "arrival_date": "2018-12-03",
+  "transit_days": 816,
+  "vehicle": "Atlas V 411",
+  "payload": "2110 kg launch mass (1075 kg dry)",
+  "delta_v": "~1.4 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / GSFC / U. Arizona / Lockheed Martin — public domain. Returned 121.6 g of Bennu surface material to Earth 2023-09-24 — the largest asteroid sample ever returned. Extended as OSIRIS-APEX en route to a 2029 Apophis rendezvous.",
+  "links": [
+    {
+      "l": "OSIRIS-REx — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/OSIRIS-REx",
+      "t": "intro"
+    },
+    {
+      "l": "OSIRIS-REx (NASA)",
+      "u": "https://science.nasa.gov/mission/osiris-rex/",
+      "t": "intro"
+    },
+    {
+      "l": "OSIRIS-REx (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-055A",
+      "t": "core"
+    },
+    {
+      "l": "Lauretta et al. (2017) — OSIRIS-REx Sample Return Mission overview (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-017-0405-1",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    },
+    {
+      "id": "osiris-rex",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 411)",
+      "c3_km2_s2": 29.3,
+      "mass_at_tli_kg": 2110,
+      "source": "NASA OSIRIS-REx Press Kit (2016-09); Lauretta et al. (2017)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "NASA OSIRIS-REx Mission Operations Report; one major approach maneuver represented; cruise dispersions consolidated"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.32,
+      "periapsis_km": 5,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0.165,
+      "source": "Lauretta et al. (2017); arrival burn into a 1.4-km orbit, then station-keeping at 5-km altitude over Bennu"
+    },
+    "totals": {
+      "total_dv_km_s": 1.4,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "NASA OSIRIS-REx Press Kit (2016-09)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Atlas V 411",
+        "description": "Cape Canaveral SLC-41, 2016-09-08. OSIRIS-REx (Origins, Spectral Interpretation, Resource Identification, Security — Regolith Explorer) was the first US asteroid sample-return mission. Designed to study a primordial carbonaceous asteroid that may preserve material from the early solar system."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-asteroid injection",
+        "description": "Centaur upper stage burn places OSIRIS-REx on a heliocentric trajectory pre-tuned to use an Earth gravity assist 1 year later for the energy required to match Bennu's inclination."
+      },
+      {
+        "met_days": 380,
+        "type": "flyby",
+        "label": "Earth gravity assist",
+        "description": "2017-09-22. Closest approach 17,237 km over Antarctica. The 8.2°-inclination kick rotated OSIRIS-REx's orbital plane to match Bennu's 6° inclination — the assist did the heavy lifting that propellant alone couldn't have."
+      },
+      {
+        "met_days": 700,
+        "type": "tcm",
+        "label": "Approach maneuver",
+        "description": "First approach-phase burn. Slows OSIRIS-REx to match Bennu's heliocentric velocity for rendezvous."
+      },
+      {
+        "met_days": 816,
+        "type": "arrival",
+        "label": "Bennu approach",
+        "description": "2018-12-03. OSIRIS-REx arrives at 492-m-diameter Bennu — a carbonaceous near-Earth asteroid. Stationkeeping at 19 km, then orbital characterization."
+      },
+      {
+        "met_days": 816.005,
+        "type": "edl_or_oi",
+        "label": "Bennu orbit insertion",
+        "description": "Sequence of approach burns place OSIRIS-REx into a 1.4-km circumnavigation — the closest-ever spacecraft orbit around a celestial body. Surveyed Bennu for 1.5 years, mapping the boulder-strewn surface in unprecedented detail. Discovered active particle ejections from the asteroid — a previously unknown class of behaviour."
+      },
+      {
+        "met_days": 1503,
+        "type": "edl_or_oi",
+        "label": "TAG — Touch-and-Go sample collection",
+        "description": "2020-10-20. OSIRIS-REx descended to the Nightingale site, fired a burst of N₂ gas into the surface from its sample-collection arm, and grabbed a sample-rich plume — then immediately backed away. The asteroid surface turned out to be 'rubble-pile fluid' — the spacecraft sank ~50 cm into the surface in the half-second it was in contact. Sample mass returned: 121.6 g, the largest asteroid sample ever."
+      },
+      {
+        "met_days": 1705,
+        "type": "tli_or_tmi",
+        "label": "Bennu departure",
+        "description": "2021-05-10. Departure burn places OSIRIS-REx onto a 2.5-year heliocentric trajectory back toward Earth for sample drop."
+      },
+      {
+        "met_days": 2572,
+        "type": "earth_return",
+        "label": "Earth sample-return capsule delivery",
+        "description": "2023-09-24. Sample Return Capsule (SRC) released at 102,000 km, entered the atmosphere at 12.4 km/s, parachuted into the Utah Test and Training Range. The spacecraft itself was immediately redesignated OSIRIS-APEX and rerouted to a 2029-04-13 rendezvous with asteroid Apophis (which will pass within 31,000 km of Earth that same day)."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "bennu",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 1,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.975981,
+          0,
+          -0.217856
+        ],
+        [
+          27.2788,
+          0.963053,
+          0,
+          -0.091992
+        ],
+        [
+          54.5576,
+          0.937894,
+          0,
+          0.03042
+        ],
+        [
+          81.8364,
+          0.901793,
+          0,
+          0.148578
+        ],
+        [
+          109.1152,
+          0.855931,
+          0,
+          0.261752
+        ],
+        [
+          136.3939,
+          0.801374,
+          0,
+          0.369242
+        ],
+        [
+          163.6727,
+          0.739077,
+          0,
+          0.470359
+        ],
+        [
+          190.9515,
+          0.669888,
+          0,
+          0.564411
+        ],
+        [
+          218.2303,
+          0.594417,
+          0,
+          0.650478
+        ],
+        [
+          245.5091,
+          0.513474,
+          0,
+          0.727987
+        ],
+        [
+          272.7879,
+          0.427673,
+          0,
+          0.796269
+        ],
+        [
+          300.0667,
+          0.337541,
+          0,
+          0.854632
+        ],
+        [
+          327.3455,
+          0.24356,
+          0,
+          0.902407
+        ],
+        [
+          354.6242,
+          0.146179,
+          0,
+          0.938963
+        ],
+        [
+          380,
+          0.052893,
+          0,
+          0.962245
+        ],
+        [
+          409.1818,
+          -0.057074,
+          0,
+          0.975884
+        ],
+        [
+          436.4606,
+          -0.162036,
+          0,
+          0.975106
+        ],
+        [
+          463.7394,
+          -0.268508,
+          0,
+          0.961115
+        ],
+        [
+          491.0182,
+          -0.375894,
+          0,
+          0.933582
+        ],
+        [
+          518.297,
+          -0.483494,
+          0,
+          0.892247
+        ],
+        [
+          545.5758,
+          -0.590465,
+          0,
+          0.836917
+        ],
+        [
+          572.8545,
+          -0.695793,
+          0,
+          0.767477
+        ],
+        [
+          600.1333,
+          -0.798182,
+          0,
+          0.683691
+        ],
+        [
+          627.4121,
+          -0.89608,
+          0,
+          0.58566
+        ],
+        [
+          654.6909,
+          -0.98775,
+          0,
+          0.47387
+        ],
+        [
+          681.9697,
+          -1.071112,
+          0,
+          0.348816
+        ],
+        [
+          700,
+          -1.120714,
+          0,
+          0.259451
+        ],
+        [
+          736.5273,
+          -1.203105,
+          0,
+          0.062509
+        ],
+        [
+          763.8061,
+          -1.246229,
+          0,
+          -0.095828
+        ],
+        [
+          791.0848,
+          -1.270002,
+          0,
+          -0.26142
+        ],
+        [
+          816.005,
+          -1.272449,
+          0,
+          -0.416435
+        ],
+        [
+          845.6424,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          872.9212,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          900.2,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          927.4788,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          954.7576,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          982.0364,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1009.3152,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1036.5939,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1063.8727,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1091.1515,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1118.4303,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1145.7091,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1172.9879,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1200.2667,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1227.5455,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1254.8242,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1282.103,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1309.3818,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1336.6606,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1363.9394,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1391.2182,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1418.497,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1445.7758,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1473.0545,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1503,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1527.6121,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1554.8909,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1582.1697,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1609.4485,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1636.7273,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1664.0061,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1691.2848,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1705,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1745.8424,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1773.1212,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1800.4,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1827.6788,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1854.9576,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1882.2364,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1909.5152,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1936.7939,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1964.0727,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          1991.3515,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2018.6303,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2045.9091,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2073.1879,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2100.4667,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2127.7455,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2155.0242,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2182.303,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2209.5818,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2236.8606,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2264.1394,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2291.4182,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2318.697,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2345.9758,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2373.2545,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2400.5333,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2427.8121,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2455.0909,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2482.3697,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2509.6485,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2536.9273,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2572,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2591.4848,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2618.7636,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2646.0424,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2673.3212,
+          -1.268733,
+          0,
+          -0.425247
+        ],
+        [
+          2700.6,
+          -1.268733,
+          0,
+          -0.425247
+        ]
+      ]
+    }
+  }
+}

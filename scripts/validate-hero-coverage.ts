@@ -52,8 +52,13 @@ interface SurfaceSpec {
 // 5 lunar/earth surfaces whose mission gallery already shipped. See
 // `docs/provenance/source-known-gaps-report.md` for the per-ID title.
 
-const MISSIONS_KNOWN_GAPS = new Set<string>([]);
-const FLEET_KNOWN_GAPS = new Set<string>([]);
+// psyche-mission + psyche-spacecraft: Psyche launched 2023-10-13 but
+// won't arrive at the asteroid until 2029-08. Cruise-phase imagery
+// from the live mission is not yet at the "iconic moment" standard
+// used elsewhere (the iconic shot is reserved for Psyche orbit
+// insertion). Re-evaluate when JPL releases approach + OI imagery.
+const MISSIONS_KNOWN_GAPS = new Set<string>(['psyche-mission']);
+const FLEET_KNOWN_GAPS = new Set<string>(['psyche-spacecraft']);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);

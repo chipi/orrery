@@ -1512,6 +1512,18 @@
     "tagline": "Sample-returned Bennu (2023); now en route to Apophis"
   },
   {
+    "id": "psyche-spacecraft",
+    "name": "Psyche",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2023-10-13",
+    "tagline": "First mission to a metal-rich M-class asteroid"
+  },
+  {
     "id": "perseverance",
     "name": "Perseverance (Mars 2020)",
     "category": "rover",

@@ -1038,5 +1038,25 @@
     "sector": "gov",
     "color": "#003087",
     "crewed": false
+  },
+  {
+    "id": "osiris-rex",
+    "agency": "NASA",
+    "dest": "BENNU",
+    "status": "FLOWN",
+    "year": 2016,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "psyche-mission",
+    "agency": "NASA",
+    "dest": "PSYCHE",
+    "status": "ACTIVE",
+    "year": 2023,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
   }
 ]

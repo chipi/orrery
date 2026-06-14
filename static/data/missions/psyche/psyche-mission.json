@@ -1,0 +1,726 @@
+{
+  "id": "psyche-mission",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory / Arizona State University / Maxar Technologies",
+  "sector": "gov",
+  "dest": "PSYCHE",
+  "color": "#0B3D91",
+  "year": 2023,
+  "status": "ACTIVE",
+  "departure_date": "2023-10-13",
+  "arrival_date": "2029-08-01",
+  "transit_days": 2118,
+  "vehicle": "Falcon Heavy",
+  "payload": "2747 kg launch mass (1648 kg dry; 1085 kg xenon propellant)",
+  "delta_v": "~6.6 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL-Caltech / ASU / Maxar — public domain. First mission to a metal-rich M-type asteroid; uses solar electric propulsion (4 SPT-140 Hall-effect ion thrusters) and a Mars gravity assist en route.",
+  "links": [
+    {
+      "l": "Psyche (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Psyche_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Psyche (NASA)",
+      "u": "https://science.nasa.gov/mission/psyche/",
+      "t": "intro"
+    },
+    {
+      "l": "Psyche mission profile (JPL)",
+      "u": "https://www.jpl.nasa.gov/missions/psyche/",
+      "t": "core"
+    },
+    {
+      "l": "Elkins-Tanton et al. (2022) — Psyche mission overview (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-022-00942-y",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "psyche-spacecraft",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon Heavy second stage",
+      "c3_km2_s2": 3.06,
+      "mass_at_tli_kg": 2747,
+      "source": "NASA Psyche Press Kit (2023-10); Elkins-Tanton et al. (2022)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "peak_heliocentric_speed_km_s": 27,
+      "source": "JPL Psyche Mission Operations Report; one mid-cruise trajectory refinement represented; ion-thrust continuous-acceleration phases dominate"
+    },
+    "arrival": {
+      "v_infinity_km_s": 1.5,
+      "periapsis_km": 700,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "Elkins-Tanton et al. (2022); ion-thrust gravitational capture, no chemical OI burn"
+    },
+    "totals": {
+      "total_dv_km_s": 6.6,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "NASA Psyche Press Kit (2023-10); ion thrusters provide nearly all the post-launch delta-v"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon Heavy",
+        "description": "Kennedy Space Center LC-39A, 2023-10-13. Psyche is NASA's first mission to a metal-rich M-class asteroid — a 226-km-diameter body believed to be the exposed nickel-iron core of a differentiated proto-planet. Insight into Psyche's interior is insight into the cores of every rocky planet, including Earth's."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Earth departure",
+        "description": "Falcon Heavy second stage delivers Psyche to escape velocity. Ion thrusters take over within hours of separation — continuous low-thrust acceleration shapes the entire transfer."
+      },
+      {
+        "met_days": 30,
+        "type": "tli_or_tmi",
+        "label": "Ion-propulsion cruise begins",
+        "description": "Hall-effect ion thrusters (four SPT-140s, 4.5 kW each) commissioned. Continuous low-thrust acceleration over the next 4+ years gradually expands the heliocentric orbit toward Psyche."
+      },
+      {
+        "met_days": 945,
+        "type": "flyby",
+        "label": "Mars gravity assist",
+        "description": "2026-05-15. Closest approach 3,000 km. Adds the orbital energy that ion thrust alone couldn't deliver in a reasonable time frame, accelerating Psyche outward to the main belt."
+      },
+      {
+        "met_days": 1500,
+        "type": "tcm",
+        "label": "Cruise refinement",
+        "description": "Mid-cruise trajectory refinement. Ion thrust continues."
+      },
+      {
+        "met_days": 2118,
+        "type": "arrival",
+        "label": "Psyche approach",
+        "description": "Planned 2029-08. Psyche enters the asteroid's gravitational sphere of influence. Ion engines slow the spacecraft for gradual capture."
+      },
+      {
+        "met_days": 2118.005,
+        "type": "edl_or_oi",
+        "label": "Psyche orbit insertion",
+        "description": "Ion-thrust gravitational capture into a high orbit (700 km altitude). Over the following 26-month mission, Psyche will descend through four orbit phases (A → B → C → D), mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look fundamentally unlike any other small body we've seen — exposed metal surface with iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "psyche",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 1,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.932748,
+          0,
+          0.360528
+        ],
+        [
+          30,
+          0.927768,
+          0,
+          0.393699
+        ],
+        [
+          44.9274,
+          0.925065,
+          0,
+          0.410657
+        ],
+        [
+          67.3911,
+          0.920886,
+          0,
+          0.436402
+        ],
+        [
+          89.8548,
+          0.916285,
+          0,
+          0.462952
+        ],
+        [
+          112.3184,
+          0.911412,
+          0,
+          0.489987
+        ],
+        [
+          134.7821,
+          0.90629,
+          0,
+          0.51746
+        ],
+        [
+          157.2458,
+          0.900729,
+          0,
+          0.545657
+        ],
+        [
+          179.7095,
+          0.894837,
+          0,
+          0.574351
+        ],
+        [
+          202.1732,
+          0.888666,
+          0,
+          0.60345
+        ],
+        [
+          224.6369,
+          0.882033,
+          0,
+          0.633175
+        ],
+        [
+          247.1006,
+          0.874997,
+          0,
+          0.663383
+        ],
+        [
+          269.5643,
+          0.867644,
+          0,
+          0.693952
+        ],
+        [
+          292.028,
+          0.859804,
+          0,
+          0.725036
+        ],
+        [
+          314.4917,
+          0.851473,
+          0,
+          0.756565
+        ],
+        [
+          336.9553,
+          0.842784,
+          0,
+          0.788395
+        ],
+        [
+          359.419,
+          0.83358,
+          0,
+          0.820622
+        ],
+        [
+          381.8827,
+          0.823783,
+          0,
+          0.853231
+        ],
+        [
+          404.3464,
+          0.813577,
+          0,
+          0.886069
+        ],
+        [
+          426.8101,
+          0.802835,
+          0,
+          0.919187
+        ],
+        [
+          449.2738,
+          0.791378,
+          0,
+          0.952593
+        ],
+        [
+          471.7375,
+          0.77946,
+          0,
+          0.98615
+        ],
+        [
+          494.2012,
+          0.766985,
+          0,
+          1.019872
+        ],
+        [
+          516.6649,
+          0.75366,
+          0,
+          1.053764
+        ],
+        [
+          539.1285,
+          0.739816,
+          0,
+          1.08772
+        ],
+        [
+          561.5922,
+          0.725402,
+          0,
+          1.121737
+        ],
+        [
+          584.0559,
+          0.709984,
+          0,
+          1.155779
+        ],
+        [
+          606.5196,
+          0.693985,
+          0,
+          1.189793
+        ],
+        [
+          628.9833,
+          0.677403,
+          0,
+          1.223777
+        ],
+        [
+          651.447,
+          0.659669,
+          0,
+          1.257621
+        ],
+        [
+          673.9107,
+          0.64128,
+          0,
+          1.291342
+        ],
+        [
+          696.3744,
+          0.622245,
+          0,
+          1.32494
+        ],
+        [
+          718.8381,
+          0.602013,
+          0,
+          1.358245
+        ],
+        [
+          741.3018,
+          0.580993,
+          0,
+          1.391317
+        ],
+        [
+          763.7654,
+          0.559264,
+          0,
+          1.424171
+        ],
+        [
+          786.2291,
+          0.536304,
+          0,
+          1.4566
+        ],
+        [
+          808.6928,
+          0.512412,
+          0,
+          1.488667
+        ],
+        [
+          831.1565,
+          0.487747,
+          0,
+          1.520423
+        ],
+        [
+          853.6202,
+          0.461833,
+          0,
+          1.551643
+        ],
+        [
+          876.0839,
+          0.434833,
+          0,
+          1.582356
+        ],
+        [
+          898.5476,
+          0.406999,
+          0,
+          1.612668
+        ],
+        [
+          921.0113,
+          0.377912,
+          0,
+          1.642353
+        ],
+        [
+          945,
+          0.34549,
+          0,
+          1.673328
+        ],
+        [
+          965.9386,
+          0.316354,
+          0,
+          1.699905
+        ],
+        [
+          988.4023,
+          0.283891,
+          0,
+          1.727738
+        ],
+        [
+          1010.866,
+          0.250016,
+          0,
+          1.754735
+        ],
+        [
+          1033.3297,
+          0.215201,
+          0,
+          1.781157
+        ],
+        [
+          1055.7934,
+          0.17918,
+          0,
+          1.806831
+        ],
+        [
+          1078.2571,
+          0.141583,
+          0,
+          1.831482
+        ],
+        [
+          1100.7208,
+          0.103005,
+          0,
+          1.855475
+        ],
+        [
+          1123.1845,
+          0.063274,
+          0,
+          1.878685
+        ],
+        [
+          1145.6482,
+          0.021811,
+          0,
+          1.900671
+        ],
+        [
+          1168.1118,
+          -0.020662,
+          0,
+          1.921915
+        ],
+        [
+          1190.5755,
+          -0.064217,
+          0,
+          1.942359
+        ],
+        [
+          1213.0392,
+          -0.10964,
+          0,
+          1.961358
+        ],
+        [
+          1235.5029,
+          -0.156089,
+          0,
+          1.979529
+        ],
+        [
+          1257.9666,
+          -0.203563,
+          0,
+          1.996868
+        ],
+        [
+          1280.4303,
+          -0.252946,
+          0,
+          2.012578
+        ],
+        [
+          1302.894,
+          -0.303382,
+          0,
+          2.027341
+        ],
+        [
+          1325.3577,
+          -0.354835,
+          0,
+          2.04118
+        ],
+        [
+          1347.8214,
+          -0.408063,
+          0,
+          2.053324
+        ],
+        [
+          1370.2851,
+          -0.462414,
+          0,
+          2.064322
+        ],
+        [
+          1392.7487,
+          -0.517748,
+          0,
+          2.074301
+        ],
+        [
+          1415.2124,
+          -0.574682,
+          0,
+          2.082525
+        ],
+        [
+          1437.6761,
+          -0.632768,
+          0,
+          2.089379
+        ],
+        [
+          1460.1398,
+          -0.691771,
+          0,
+          2.095109
+        ],
+        [
+          1482.6035,
+          -0.75216,
+          0,
+          2.099034
+        ],
+        [
+          1500,
+          -0.799691,
+          0,
+          2.100969
+        ],
+        [
+          1527.5309,
+          -0.875995,
+          0,
+          2.102403
+        ],
+        [
+          1549.9946,
+          -0.939452,
+          0,
+          2.101626
+        ],
+        [
+          1572.4583,
+          -1.003926,
+          0,
+          2.098945
+        ],
+        [
+          1594.9219,
+          -1.069062,
+          0,
+          2.094913
+        ],
+        [
+          1617.3856,
+          -1.135043,
+          0,
+          2.089015
+        ],
+        [
+          1639.8493,
+          -1.201839,
+          0,
+          2.080908
+        ],
+        [
+          1662.313,
+          -1.269095,
+          0,
+          2.071333
+        ],
+        [
+          1684.7767,
+          -1.33688,
+          0,
+          2.059894
+        ],
+        [
+          1707.2404,
+          -1.405162,
+          0,
+          2.045925
+        ],
+        [
+          1729.7041,
+          -1.473647,
+          0,
+          2.03038
+        ],
+        [
+          1752.1678,
+          -1.542327,
+          0,
+          2.013005
+        ],
+        [
+          1774.6315,
+          -1.611051,
+          0,
+          1.992779
+        ],
+        [
+          1797.0952,
+          -1.679666,
+          0,
+          1.970888
+        ],
+        [
+          1819.5588,
+          -1.748142,
+          0,
+          1.94724
+        ],
+        [
+          1842.0225,
+          -1.816061,
+          0,
+          1.920446
+        ],
+        [
+          1864.4862,
+          -1.883507,
+          0,
+          1.891928
+        ],
+        [
+          1886.9499,
+          -1.950464,
+          0,
+          1.861684
+        ],
+        [
+          1909.4136,
+          -2.016183,
+          0,
+          1.828231
+        ],
+        [
+          1931.8773,
+          -2.080992,
+          0,
+          1.792953
+        ],
+        [
+          1954.341,
+          -2.144905,
+          0,
+          1.755941
+        ],
+        [
+          1976.8047,
+          -2.206955,
+          0,
+          1.715923
+        ],
+        [
+          1999.2684,
+          -2.267538,
+          0,
+          1.673952
+        ],
+        [
+          2021.732,
+          -2.326796,
+          0,
+          1.6303
+        ],
+        [
+          2044.1957,
+          -2.383628,
+          0,
+          1.58394
+        ],
+        [
+          2066.6594,
+          -2.438353,
+          0,
+          1.53559
+        ],
+        [
+          2089.1231,
+          -2.491329,
+          0,
+          1.485682
+        ],
+        [
+          2118.005,
+          -2.555738,
+          0,
+          1.418497
+        ],
+        [
+          2134.0505,
+          -2.558151,
+          0,
+          1.414141
+        ],
+        [
+          2156.5142,
+          -2.558151,
+          0,
+          1.414141
+        ],
+        [
+          2178.9779,
+          -2.558151,
+          0,
+          1.414141
+        ],
+        [
+          2201.4416,
+          -2.558151,
+          0,
+          1.414141
+        ],
+        [
+          2223.9053,
+          -2.558151,
+          0,
+          1.414141
+        ]
+      ]
+    }
+  }
+}

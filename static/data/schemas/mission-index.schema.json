@@ -40,7 +40,12 @@
           "URANUS",
           "COMET",
           "ASTEROID",
-          "SUN"
+          "SUN",
+          "BENNU",
+          "PSYCHE",
+          "VESTA",
+          "ARROKOTH",
+          "ITOKAWA"
         ]
       },
       "status": {

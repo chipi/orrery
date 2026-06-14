@@ -58,7 +58,12 @@
         "URANUS",
         "COMET",
         "ASTEROID",
-        "SUN"
+        "SUN",
+        "BENNU",
+        "PSYCHE",
+        "VESTA",
+        "ARROKOTH",
+        "ITOKAWA"
       ]
     },
     "color": {
@@ -525,9 +530,15 @@
                 "saturn",
                 "mercury",
                 "venus",
-                "uranus"
+                "uranus",
+                "bennu",
+                "psyche",
+                "vesta",
+                "halley",
+                "67p",
+                "arrokoth"
               ],
-              "description": "Target body. Drives which position function provides arrival point + which mu is used for arrival_orbit seeding."
+              "description": "Target body. Drives which position function provides arrival point + which mu is used for arrival_orbit seeding. Small-body destinations supported via small-bodies.json + DESTINATIONS table builders."
             },
             "transfer_type": {
               "enum": [

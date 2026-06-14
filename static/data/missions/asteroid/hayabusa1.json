@@ -1,0 +1,726 @@
+{
+  "id": "hayabusa1",
+  "agency": "JAXA",
+  "agency_full": "Japan Aerospace Exploration Agency / Institute of Space and Astronautical Science",
+  "sector": "gov",
+  "dest": "ASTEROID",
+  "color": "#003087",
+  "year": 2003,
+  "status": "FLOWN",
+  "departure_date": "2003-05-09",
+  "arrival_date": "2005-09-12",
+  "transit_days": 857,
+  "vehicle": "M-V-5",
+  "payload": "510 kg (incl. 60 kg of xenon for four μ10 ion thrusters)",
+  "delta_v": "~4.0 km/s",
+  "data_quality": "good",
+  "credit": "© JAXA / ISAS — public domain. First asteroid sample return. Heroic recovery from multiple failures: 3 of 4 reaction wheels died, an ion engine failed, communications lost for 7 weeks, hydrazine leak; engineers nursed the spacecraft back to Earth with one working ion engine assembled from the surviving halves of two damaged ones.",
+  "links": [
+    {
+      "l": "Hayabusa — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hayabusa",
+      "t": "intro"
+    },
+    {
+      "l": "Hayabusa mission archive (JAXA)",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/hayabusa.html",
+      "t": "intro"
+    },
+    {
+      "l": "Yano et al. (2006) — Touchdown of the Hayabusa Spacecraft at Itokawa (Science)",
+      "u": "https://www.science.org/doi/10.1126/science.1126164",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "hayabusa",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "M-V-5 fourth stage (KM-V2)",
+      "c3_km2_s2": 5.1,
+      "mass_at_tli_kg": 510,
+      "source": "JAXA Hayabusa Press Kit (2003-05); Yano et al. (2006)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "JAXA Hayabusa Mission Operations Report; ion-thrust cruise to Itokawa + Earth gravity assist"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.6,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "Yano et al. (2006); station-keeping at Itokawa, no orbital insertion required around the 540×270×210-m asteroid"
+    },
+    "totals": {
+      "total_dv_km_s": 4,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "JAXA Hayabusa Press Kit (2003-05); four μ10 ion thrusters supplied nearly all the post-launch ∆v"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — M-V-5",
+        "description": "Uchinoura Space Center, 2003-05-09. JAXA's first-of-its-kind sample-return mission to a near-Earth asteroid. Hayabusa (Japanese for 'falcon') carried four μ10 microwave-discharge ion thrusters — at the time the most powerful ion-propulsion subsystem ever flown."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-asteroid injection",
+        "description": "M-V-5 fourth stage delivers Hayabusa onto a heliocentric trajectory toward asteroid Itokawa."
+      },
+      {
+        "met_days": 366,
+        "type": "flyby",
+        "label": "Earth gravity assist",
+        "description": "2004-05-19. Earth swingby provides the orbital energy needed to reach Itokawa's higher-eccentricity orbit."
+      },
+      {
+        "met_days": 857,
+        "type": "arrival",
+        "label": "Itokawa station-keeping",
+        "description": "2005-09-12. Hayabusa arrived at 25143 Itokawa — a 540×270×210-m near-Earth asteroid. The body is too small to orbit gravitationally; the spacecraft station-kept at a 7-km gate position and descended for sample attempts."
+      },
+      {
+        "met_days": 857.005,
+        "type": "edl_or_oi",
+        "label": "Itokawa surface operations — sample attempts",
+        "description": "Two touchdowns 2005-11-20 + 2005-11-25. The first was unintended — Hayabusa came down softly and bounced; sample collection mechanism did not fire. The second touchdown was planned but the sample-collection projectile failed to fire on command. Both surface contacts kicked up regolith into the collection horn anyway. The team would not know whether material had been captured until the capsule's recovery 5 years later."
+      },
+      {
+        "met_days": 920,
+        "type": "anomaly",
+        "label": "Series of failures",
+        "description": "Late 2005. After the second touchdown, a hydrazine leak caused attitude loss and battery depletion. Two of four reaction wheels were already dead; communications lost for 7 weeks. Earth-return window slipped by 3 years. Engineers eventually re-established contact and devised a recovery plan."
+      },
+      {
+        "met_days": 1900,
+        "type": "tcm",
+        "label": "Heroic recovery cruise",
+        "description": "2008-2010. One ion engine assembled from the surviving halves of two damaged engines (neutralizer of one + ion source of another), powering Hayabusa back to Earth for sample return. Mission engineers became national heroes in Japan."
+      },
+      {
+        "met_days": 2592,
+        "type": "earth_return",
+        "label": "Earth sample-return capsule splashdown",
+        "description": "2010-06-13. Sample-return capsule splashed down at Woomera, Australia. The spacecraft itself burned in the atmosphere immediately afterward — the recovery imagery of the capsule descending under parachute while the spacecraft streaked overhead was widely shared. Capsule recovery returned 1500 micrograms of Itokawa surface particles — the first asteroid sample ever returned to Earth. Confirmed Itokawa's S-type composition and rubble-pile structure."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "ceres",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 1,
+      "waypoints_helio_au": [
+        [
+          0,
+          -0.688226,
+          0,
+          -0.725496
+        ],
+        [
+          27.4909,
+          -0.68013,
+          0,
+          -0.77208
+        ],
+        [
+          54.9818,
+          -0.672674,
+          0,
+          -0.822147
+        ],
+        [
+          82.4727,
+          -0.665609,
+          0,
+          -0.875608
+        ],
+        [
+          109.9636,
+          -0.658597,
+          0,
+          -0.932293
+        ],
+        [
+          137.4545,
+          -0.651218,
+          0,
+          -0.991956
+        ],
+        [
+          164.9455,
+          -0.642977,
+          0,
+          -1.05429
+        ],
+        [
+          192.4364,
+          -0.633324,
+          0,
+          -1.118936
+        ],
+        [
+          219.9273,
+          -0.621667,
+          0,
+          -1.185496
+        ],
+        [
+          247.4182,
+          -0.607389,
+          0,
+          -1.253552
+        ],
+        [
+          274.9091,
+          -0.589865,
+          0,
+          -1.322677
+        ],
+        [
+          302.4,
+          -0.568483,
+          0,
+          -1.392452
+        ],
+        [
+          329.8909,
+          -0.542658,
+          0,
+          -1.462479
+        ],
+        [
+          366,
+          -0.501076,
+          0,
+          -1.554231
+        ],
+        [
+          384.8727,
+          -0.475576,
+          0,
+          -1.601867
+        ],
+        [
+          412.3636,
+          -0.433428,
+          0,
+          -1.670629
+        ],
+        [
+          439.8545,
+          -0.385075,
+          0,
+          -1.738452
+        ],
+        [
+          467.3455,
+          -0.330275,
+          0,
+          -1.805163
+        ],
+        [
+          494.8364,
+          -0.268878,
+          0,
+          -1.87063
+        ],
+        [
+          522.3273,
+          -0.200816,
+          0,
+          -1.93476
+        ],
+        [
+          549.8182,
+          -0.126064,
+          0,
+          -1.997469
+        ],
+        [
+          577.3091,
+          -0.044823,
+          0,
+          -2.058716
+        ],
+        [
+          604.8,
+          0.042691,
+          0,
+          -2.118435
+        ],
+        [
+          632.2909,
+          0.136183,
+          0,
+          -2.176531
+        ],
+        [
+          659.7818,
+          0.235284,
+          0,
+          -2.232865
+        ],
+        [
+          687.2727,
+          0.339551,
+          0,
+          -2.28723
+        ],
+        [
+          714.7636,
+          0.448478,
+          0,
+          -2.339337
+        ],
+        [
+          742.2545,
+          0.561493,
+          0,
+          -2.388798
+        ],
+        [
+          769.7455,
+          0.677963,
+          0,
+          -2.435118
+        ],
+        [
+          797.2364,
+          0.797195,
+          0,
+          -2.47769
+        ],
+        [
+          824.7273,
+          0.918434,
+          0,
+          -2.515799
+        ],
+        [
+          857.005,
+          1.062263,
+          0,
+          -2.55389
+        ],
+        [
+          879.7091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          920,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          934.6909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          962.1818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          989.6727,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1017.1636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1044.6545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1072.1455,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1099.6364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1127.1273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1154.6182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1182.1091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1209.6,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1237.0909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1264.5818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1292.0727,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1319.5636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1347.0545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1374.5455,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1402.0364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1429.5273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1457.0182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1484.5091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1512,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1539.4909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1566.9818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1594.4727,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1621.9636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1649.4545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1676.9455,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1704.4364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1731.9273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1759.4182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1786.9091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1814.4,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1841.8909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1869.3818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1900,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1924.3636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1951.8545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          1979.3455,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2006.8364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2034.3273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2061.8182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2089.3091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2116.8,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2144.2909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2171.7818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2199.2727,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2226.7636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2254.2545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2281.7455,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2309.2364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2336.7273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2364.2182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2391.7091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2419.2,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2446.6909,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2474.1818,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2501.6727,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2529.1636,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2556.6545,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2592,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2611.6364,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2639.1273,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2666.6182,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2694.1091,
+          1.066984,
+          0,
+          -2.551921
+        ],
+        [
+          2721.6,
+          1.066984,
+          0,
+          -2.551921
+        ]
+      ]
+    }
+  }
+}

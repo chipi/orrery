@@ -540,6 +540,30 @@
     "tagline": "First planetary defense impactor (Dimorphos)"
   },
   {
+    "id": "europa-clipper",
+    "name": "Europa Clipper",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2024-10-14",
+    "tagline": "Largest planetary spacecraft; 49 Europa flybys planned"
+  },
+  {
+    "id": "lucy",
+    "name": "Lucy",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2021-10-16",
+    "tagline": "First mission to the Jupiter Trojans"
+  },
+  {
     "id": "dawn",
     "name": "Dawn",
     "category": "orbiter",
@@ -826,6 +850,18 @@
     "status": "FAILED",
     "first_flight": "2023-04-25",
     "tagline": "First private Japanese lunar lander; M1 + M2 both crashed"
+  },
+  {
+    "id": "hayabusa",
+    "name": "Hayabusa",
+    "category": "orbiter",
+    "agency": "JAXA",
+    "country": "Japan",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "2003-05-09",
+    "tagline": "First asteroid sample return (Itokawa, 2010)"
   },
   {
     "id": "hayabusa-2",

@@ -69,11 +69,23 @@ const MISSIONS_KNOWN_GAPS = new Set<string>([
   'psyche-mission',
   'parker-solar-probe',
   'solar-orbiter',
+  // Batch 5 (#341) — Lucy, Europa Clipper still in cruise (arrivals
+  // 2027 / 2030); Hayabusa 1 hero would be the SRC splashdown moment
+  // (no public-domain spacecraft imagery at that beat). DART resolves
+  // via the fleet-galleries DART hero (DRACO impactor footage exists)
+  // — not listed here. Re-evaluate when JHU APL / JAXA release
+  // mission imagery in high-resolution public-domain form.
+  'lucy',
+  'europa-clipper',
+  'hayabusa1',
 ]);
 const FLEET_KNOWN_GAPS = new Set<string>([
   'psyche-spacecraft',
   'parker-solar-probe',
   'solar-orbiter',
+  'lucy',
+  'europa-clipper',
+  'hayabusa',
 ]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);

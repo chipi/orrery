@@ -1,0 +1,32 @@
+{
+  "id": "lucy",
+  "name": "Lucy",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2021-10-16",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First mission to the Jupiter Trojans; visits 8 asteroids in one 12-year trajectory",
+  "credit": "Added with /fly mission JSON (#341 batch 5). 1003 kg of hydrazine — more propellant than dry mass — to feed an 8-encounter trajectory.",
+  "links": [
+    {
+      "l": "Lucy (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Lucy mission overview (NASA)",
+      "u": "https://science.nasa.gov/mission/lucy/",
+      "t": "core"
+    },
+    {
+      "l": "Levison et al. (2021) — Lucy Mission to the Trojan Asteroids (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-021-00845-4",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": ["lucy"]
+}

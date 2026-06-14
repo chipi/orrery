@@ -1,0 +1,754 @@
+{
+  "id": "lucy",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Goddard Space Flight Center / Southwest Research Institute / Lockheed Martin",
+  "sector": "gov",
+  "dest": "ASTEROID",
+  "color": "#0B3D91",
+  "year": 2021,
+  "status": "ACTIVE",
+  "departure_date": "2021-10-16",
+  "arrival_date": "2027-08-12",
+  "transit_days": 2127,
+  "vehicle": "Atlas V 401",
+  "payload": "1550 kg (incl. 1003 kg of hydrazine — Lucy carries more propellant than dry mass, by a wide margin)",
+  "delta_v": "~6 km/s (with 3 Earth gravity assists)",
+  "data_quality": "good",
+  "credit": "© NASA / GSFC / SwRI / Lockheed Martin — public domain. First mission to the Jupiter Trojans — primordial asteroids co-orbiting Jupiter at the L4 and L5 Lagrange points, believed to preserve material from the outer protoplanetary disc. Bonus main-belt asteroid Donaldjohanson flyby 2025-04. Eurybates encounter 2027-08; Patroclus-Menoetius binary 2033-03 closes the primary mission.",
+  "links": [
+    {
+      "l": "Lucy (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lucy_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Lucy (NASA)",
+      "u": "https://science.nasa.gov/mission/lucy/",
+      "t": "intro"
+    },
+    {
+      "l": "Levison et al. (2021) — Lucy Mission to the Trojan Asteroids (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-021-00845-4",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    },
+    {
+      "id": "lucy",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 401)",
+      "c3_km2_s2": 33.4,
+      "mass_at_tli_kg": 1550,
+      "source": "NASA Lucy Press Kit (2021-10); Levison et al. (2021)"
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "NASA Lucy Mission Operations Report; nominal mid-course corrections + autonomous targeting collapsed into the flyby event list"
+    },
+    "arrival": {
+      "v_infinity_km_s": 6,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "Levison et al. (2021); flyby velocities 6-9 km/s at each Trojan encounter — no orbit insertion (multi-flyby mission)"
+    },
+    "totals": {
+      "total_dv_km_s": 6,
+      "tli_or_tmi_dv_km_s": 4.6,
+      "source": "NASA Lucy Press Kit (2021-10); 3 Earth gravity assists provide the energy ion thrust alone couldn't deliver"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Atlas V 401",
+        "description": "Cape Canaveral SLC-41, 2021-10-16. Lucy is the first mission to study the Jupiter Trojans — primordial asteroids leading and trailing Jupiter at its L4 and L5 Lagrange points by 60°. The trojans are believed to be remnants of the outer protoplanetary disc, captured into the Lagrange points during early solar system migration. Lucy's 12-year primary mission visits eight asteroids (one bonus main-belt, seven trojans) in a single trajectory — a record."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-trojan injection",
+        "description": "Centaur upper stage delivers Lucy onto a complex multi-encounter trajectory using three Earth gravity assists (2022, 2024, 2030) to reach both Trojan swarms."
+      },
+      {
+        "met_days": 365,
+        "type": "flyby",
+        "label": "Earth gravity assist 1",
+        "description": "2022-10-16. First EGA accelerates Lucy onto a higher heliocentric orbit, reaching beyond Mars."
+      },
+      {
+        "met_days": 1290,
+        "type": "flyby",
+        "label": "Donaldjohanson (main-belt bonus)",
+        "description": "2025-04-20. Closest approach 920 km at 13.4 km/s past asteroid 52246 Donaldjohanson — a 4-km main-belt asteroid named for the discoverer of the Lucy hominid fossil. Bonus target added late in mission design to test instruments before the Trojan encounters."
+      },
+      {
+        "met_days": 1330,
+        "type": "flyby",
+        "label": "Earth gravity assist 2",
+        "description": "2024-12-12 (per redesigned profile)."
+      },
+      {
+        "met_days": 2127,
+        "type": "arrival",
+        "label": "Eurybates approach (L4 Trojan)",
+        "description": "2027-08-12. Lucy arrives at the L4 Trojan cloud."
+      },
+      {
+        "met_days": 2127.001,
+        "type": "flyby",
+        "label": "Eurybates + Queta",
+        "description": "Closest approach 1,000 km at 5.7 km/s past 3548 Eurybates, the largest member of the L4 Eurybates family — a 64-km C-type fragment of a larger parent body. Queta is Eurybates's 1-km moon, discovered by Hubble in 2018. Lucy's first Trojan encounter."
+      },
+      {
+        "met_days": 2280,
+        "type": "flyby",
+        "label": "Polymele",
+        "description": "2027-09-15. 21-km P-type Trojan; Hubble follow-up revealed a satellite that doesn't yet have a name."
+      },
+      {
+        "met_days": 2660,
+        "type": "flyby",
+        "label": "Leucus",
+        "description": "2028-04-18. 35-km D-type Trojan, slow rotator (446-hour period)."
+      },
+      {
+        "met_days": 2820,
+        "type": "flyby",
+        "label": "Orus",
+        "description": "2028-11-11. 51-km D-type Trojan."
+      },
+      {
+        "met_days": 3445,
+        "type": "flyby",
+        "label": "Earth gravity assist 3",
+        "description": "2030-12-13. Final EGA accelerates Lucy outbound to the trailing L5 cloud."
+      },
+      {
+        "met_days": 4170,
+        "type": "edl_or_oi",
+        "label": "Patroclus-Menoetius binary (L5)",
+        "description": "2033-03-02. The mission climax: encounter with binary Trojan Patroclus-Menoetius. Patroclus (113 km) + Menoetius (104 km) are a nearly-equal-mass binary on the L5 side — the largest Trojan binary known. Closest approach 1,000 km at 8.4 km/s. After 12 years of cruise, Lucy will have studied seven Trojan asteroids — more bodies in one mission than any prior planetary science mission."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "jupiter",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 0,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.909279,
+          0,
+          0.416187
+        ],
+        [
+          44.2273,
+          0.923617,
+          0,
+          0.446954
+        ],
+        [
+          88.4545,
+          0.937724,
+          0,
+          0.478953
+        ],
+        [
+          132.6818,
+          0.951603,
+          0,
+          0.512246
+        ],
+        [
+          176.9091,
+          0.965219,
+          0,
+          0.547173
+        ],
+        [
+          221.1364,
+          0.978626,
+          0,
+          0.583554
+        ],
+        [
+          265.3636,
+          0.991839,
+          0,
+          0.621457
+        ],
+        [
+          309.5909,
+          1.004844,
+          0,
+          0.661278
+        ],
+        [
+          365,
+          1.020928,
+          0,
+          0.713508
+        ],
+        [
+          398.0455,
+          1.030411,
+          0,
+          0.746161
+        ],
+        [
+          442.2727,
+          1.042997,
+          0,
+          0.791756
+        ],
+        [
+          486.5,
+          1.055495,
+          0,
+          0.839393
+        ],
+        [
+          530.7273,
+          1.067924,
+          0,
+          0.889152
+        ],
+        [
+          574.9545,
+          1.080293,
+          0,
+          0.941562
+        ],
+        [
+          619.1818,
+          1.092622,
+          0,
+          0.996395
+        ],
+        [
+          663.4091,
+          1.10492,
+          0,
+          1.053729
+        ],
+        [
+          707.6364,
+          1.11718,
+          0,
+          1.114175
+        ],
+        [
+          751.8636,
+          1.1294,
+          0,
+          1.177486
+        ],
+        [
+          796.0909,
+          1.141563,
+          0,
+          1.243736
+        ],
+        [
+          840.3182,
+          1.153624,
+          0,
+          1.313623
+        ],
+        [
+          884.5455,
+          1.165551,
+          0,
+          1.386875
+        ],
+        [
+          928.7727,
+          1.177297,
+          0,
+          1.46356
+        ],
+        [
+          973,
+          1.188742,
+          0,
+          1.54446
+        ],
+        [
+          1017.2273,
+          1.199829,
+          0,
+          1.629277
+        ],
+        [
+          1061.4545,
+          1.210467,
+          0,
+          1.718056
+        ],
+        [
+          1105.6818,
+          1.220432,
+          0,
+          1.811653
+        ],
+        [
+          1149.9091,
+          1.229638,
+          0,
+          1.909739
+        ],
+        [
+          1194.1364,
+          1.23795,
+          0,
+          2.012314
+        ],
+        [
+          1238.3636,
+          1.244998,
+          0,
+          2.120278
+        ],
+        [
+          1290,
+          1.251513,
+          0,
+          2.252541
+        ],
+        [
+          1330,
+          1.25504,
+          0,
+          2.359787
+        ],
+        [
+          1371.0455,
+          1.256807,
+          0,
+          2.47488
+        ],
+        [
+          1415.2727,
+          1.256586,
+          0,
+          2.603956
+        ],
+        [
+          1459.5,
+          1.253922,
+          0,
+          2.738185
+        ],
+        [
+          1503.7273,
+          1.24804,
+          0,
+          2.878308
+        ],
+        [
+          1547.9545,
+          1.238808,
+          0,
+          3.023743
+        ],
+        [
+          1592.1818,
+          1.226011,
+          0,
+          3.174087
+        ],
+        [
+          1636.4091,
+          1.208653,
+          0,
+          3.329761
+        ],
+        [
+          1680.6364,
+          1.186616,
+          0,
+          3.48998
+        ],
+        [
+          1724.8636,
+          1.15973,
+          0,
+          3.654064
+        ],
+        [
+          1769.0909,
+          1.126816,
+          0,
+          3.82185
+        ],
+        [
+          1813.3182,
+          1.087824,
+          0,
+          3.992266
+        ],
+        [
+          1857.5455,
+          1.042714,
+          0,
+          4.164286
+        ],
+        [
+          1901.7727,
+          0.990243,
+          0,
+          4.33687
+        ],
+        [
+          1946,
+          0.93052,
+          0,
+          4.508591
+        ],
+        [
+          1990.2273,
+          0.863756,
+          0,
+          4.678105
+        ],
+        [
+          2034.4545,
+          0.78887,
+          0,
+          4.843267
+        ],
+        [
+          2078.6818,
+          0.706255,
+          0,
+          5.00235
+        ],
+        [
+          2127.001,
+          0.608016,
+          0,
+          5.167714
+        ],
+        [
+          2167.1364,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2211.3636,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2255.5909,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2280,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2344.0455,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2388.2727,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2432.5,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2476.7273,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2520.9545,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2565.1818,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2609.4091,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2660,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2697.8636,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2742.0909,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2786.3182,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2820,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2874.7727,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2919,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          2963.2273,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3007.4545,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3051.6818,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3095.9091,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3140.1364,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3184.3636,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3228.5909,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3272.8182,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3317.0455,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3361.2727,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3405.5,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3445,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3493.9545,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3538.1818,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3582.4091,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3626.6364,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3670.8636,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3715.0909,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3759.3182,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3803.5455,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3847.7727,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3892,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3936.2273,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          3980.4545,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4024.6818,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4068.9091,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4113.1364,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4170,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4201.5909,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4245.8182,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4290.0455,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4334.2727,
+          0.604277,
+          0,
+          5.168153
+        ],
+        [
+          4378.5,
+          0.604277,
+          0,
+          5.168153
+        ]
+      ]
+    }
+  }
+}

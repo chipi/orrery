@@ -1078,5 +1078,45 @@
     "sector": "gov",
     "color": "#003247",
     "crewed": false
+  },
+  {
+    "id": "dart",
+    "agency": "NASA",
+    "dest": "ASTEROID",
+    "status": "FLOWN",
+    "year": 2021,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "lucy",
+    "agency": "NASA",
+    "dest": "ASTEROID",
+    "status": "ACTIVE",
+    "year": 2021,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "europa-clipper",
+    "agency": "NASA",
+    "dest": "JUPITER",
+    "status": "ACTIVE",
+    "year": 2024,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "hayabusa1",
+    "agency": "JAXA",
+    "dest": "ASTEROID",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#003087",
+    "crewed": false
   }
 ]

@@ -1,0 +1,714 @@
+{
+  "id": "europa-clipper",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory / Applied Physics Laboratory",
+  "sector": "gov",
+  "dest": "JUPITER",
+  "color": "#0B3D91",
+  "year": 2024,
+  "status": "ACTIVE",
+  "departure_date": "2024-10-14",
+  "arrival_date": "2030-04-11",
+  "transit_days": 2005,
+  "vehicle": "Falcon Heavy",
+  "payload": "6065 kg (largest planetary mission spacecraft ever launched; 100-m² solar arrays for outer-system power)",
+  "delta_v": "~3.5 km/s (with Mars + Earth gravity assists)",
+  "data_quality": "good",
+  "credit": "© NASA / JPL-Caltech / APL — public domain. Designed for 49 Europa flybys after Jupiter orbit insertion. Investigates Europa's habitability: confirms ice-shell thickness, characterizes the subsurface ocean, maps surface composition.",
+  "links": [
+    {
+      "l": "Europa Clipper — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "t": "intro"
+    },
+    {
+      "l": "Europa Clipper (NASA)",
+      "u": "https://europa.nasa.gov/",
+      "t": "intro"
+    },
+    {
+      "l": "Pappalardo et al. (2024) — Europa Clipper mission overview (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-023-01036-z",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "europa-clipper",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon Heavy second stage",
+      "c3_km2_s2": 41.7,
+      "mass_at_tli_kg": 6065,
+      "source": "NASA Europa Clipper Press Kit (2024-10); Pappalardo et al. (2024)"
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "JPL Europa Clipper Mission Operations Report; trajectory shaped by Mars + Earth gravity assists; cruise corrections folded into approach phase"
+    },
+    "arrival": {
+      "v_infinity_km_s": 5.5,
+      "periapsis_km": 4700,
+      "inclination_deg": 4,
+      "orbit_insertion_dv_km_s": 0.76,
+      "source": "Pappalardo et al. (2024); JOI burn 2030-04-11 places Clipper into a Jupiter-orbital tour"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "NASA Europa Clipper Press Kit (2024-10); Falcon Heavy + 2 gravity assists deliver the trajectory; chemical ∆v reserved for JOI + Europa-tour maintenance"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon Heavy",
+        "description": "Kennedy Space Center LC-39A, 2024-10-14. The largest planetary mission spacecraft ever launched — 6065 kg with 100-m² solar arrays (the largest interplanetary photovoltaic system at the time). Europa Clipper is the first mission dedicated specifically to characterising the habitability of one of Jupiter's icy moons."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Earth departure",
+        "description": "Falcon Heavy second stage delivers Clipper at C3 41.7 km²/s² onto a Mars-gravity-assist trajectory."
+      },
+      {
+        "met_days": 504,
+        "type": "flyby",
+        "label": "Mars gravity assist",
+        "description": "2025-03-01. Mars MGA bends the trajectory toward an Earth re-encounter, adding the energy chemical propulsion alone couldn't deliver economically."
+      },
+      {
+        "met_days": 1530,
+        "type": "flyby",
+        "label": "Earth gravity assist",
+        "description": "2026-12-03. EGA accelerates Clipper outbound to Jupiter, closing the 5.5-year cruise."
+      },
+      {
+        "met_days": 2005,
+        "type": "arrival",
+        "label": "Jupiter approach",
+        "description": "2030-04-11. Clipper begins the final approach to Jupiter for orbital insertion."
+      },
+      {
+        "met_days": 2005.005,
+        "type": "edl_or_oi",
+        "label": "Jupiter orbit insertion",
+        "description": "Multi-engine 760-m/s burn places Clipper into a highly elliptical Jupiter orbit, with apoapsis carefully timed to keep the spacecraft outside the worst of Jupiter's radiation belts. The orbital tour will execute 49 close Europa flybys over four years — passing within 25 km of Europa's surface on the closest passes. Each flyby strips Europa's ice-shell secrets one swath at a time: REASON ice-penetrating radar profiles the shell, MASPEX mass spectrometer samples plume material if any, E-THEMIS thermal imager finds active geysers."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "jupiter",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 0,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.921514,
+          0,
+          0.388345
+        ],
+        [
+          21.2652,
+          0.916781,
+          0,
+          0.415012
+        ],
+        [
+          42.5304,
+          0.911694,
+          0,
+          0.441852
+        ],
+        [
+          63.7956,
+          0.906251,
+          0,
+          0.468863
+        ],
+        [
+          85.0608,
+          0.900152,
+          0,
+          0.496191
+        ],
+        [
+          106.326,
+          0.893635,
+          0,
+          0.523719
+        ],
+        [
+          127.5912,
+          0.886736,
+          0,
+          0.55143
+        ],
+        [
+          148.8564,
+          0.879172,
+          0,
+          0.579457
+        ],
+        [
+          170.1216,
+          0.871118,
+          0,
+          0.607713
+        ],
+        [
+          191.3868,
+          0.862652,
+          0,
+          0.63616
+        ],
+        [
+          212.652,
+          0.85351,
+          0,
+          0.664918
+        ],
+        [
+          233.9173,
+          0.843791,
+          0,
+          0.693934
+        ],
+        [
+          255.1825,
+          0.833623,
+          0,
+          0.723149
+        ],
+        [
+          276.4477,
+          0.822768,
+          0,
+          0.752665
+        ],
+        [
+          297.7129,
+          0.811235,
+          0,
+          0.782468
+        ],
+        [
+          318.9781,
+          0.79921,
+          0,
+          0.812477
+        ],
+        [
+          340.2433,
+          0.786484,
+          0,
+          0.842772
+        ],
+        [
+          361.5085,
+          0.772962,
+          0,
+          0.873383
+        ],
+        [
+          382.7737,
+          0.758897,
+          0,
+          0.904204
+        ],
+        [
+          404.0389,
+          0.744118,
+          0,
+          0.935297
+        ],
+        [
+          425.3041,
+          0.728404,
+          0,
+          0.96673
+        ],
+        [
+          446.5693,
+          0.712087,
+          0,
+          0.998376
+        ],
+        [
+          467.8345,
+          0.695045,
+          0,
+          1.030274
+        ],
+        [
+          489.0997,
+          0.676903,
+          0,
+          1.062537
+        ],
+        [
+          504,
+          0.663941,
+          0,
+          1.085223
+        ],
+        [
+          531.6301,
+          0.638544,
+          0,
+          1.127718
+        ],
+        [
+          552.8953,
+          0.617704,
+          0,
+          1.160808
+        ],
+        [
+          574.1605,
+          0.596115,
+          0,
+          1.194109
+        ],
+        [
+          595.4257,
+          0.573773,
+          0,
+          1.227619
+        ],
+        [
+          616.6909,
+          0.549937,
+          0,
+          1.26152
+        ],
+        [
+          637.9561,
+          0.525249,
+          0,
+          1.295628
+        ],
+        [
+          659.2213,
+          0.499716,
+          0,
+          1.329939
+        ],
+        [
+          680.4865,
+          0.472607,
+          0,
+          1.364605
+        ],
+        [
+          701.7518,
+          0.44445,
+          0,
+          1.399487
+        ],
+        [
+          723.017,
+          0.415345,
+          0,
+          1.43456
+        ],
+        [
+          744.2822,
+          0.384579,
+          0,
+          1.469945
+        ],
+        [
+          765.5474,
+          0.352533,
+          0,
+          1.505545
+        ],
+        [
+          786.8126,
+          0.31942,
+          0,
+          1.541318
+        ],
+        [
+          808.0778,
+          0.28456,
+          0,
+          1.577349
+        ],
+        [
+          829.343,
+          0.248148,
+          0,
+          1.61358
+        ],
+        [
+          850.6082,
+          0.210535,
+          0,
+          1.649954
+        ],
+        [
+          871.8734,
+          0.17109,
+          0,
+          1.686524
+        ],
+        [
+          893.1386,
+          0.129775,
+          0,
+          1.723256
+        ],
+        [
+          914.4038,
+          0.087106,
+          0,
+          1.760088
+        ],
+        [
+          935.669,
+          0.042529,
+          0,
+          1.797041
+        ],
+        [
+          956.9342,
+          -0.004291,
+          0,
+          1.834086
+        ],
+        [
+          978.1994,
+          -0.052634,
+          0,
+          1.871169
+        ],
+        [
+          999.4646,
+          -0.102951,
+          0,
+          1.908285
+        ],
+        [
+          1020.7298,
+          -0.15594,
+          0,
+          1.945377
+        ],
+        [
+          1041.995,
+          -0.210636,
+          0,
+          1.98242
+        ],
+        [
+          1063.2602,
+          -0.267357,
+          0,
+          2.019391
+        ],
+        [
+          1084.5254,
+          -0.327235,
+          0,
+          2.056159
+        ],
+        [
+          1105.7906,
+          -0.389017,
+          0,
+          2.092757
+        ],
+        [
+          1127.0558,
+          -0.452851,
+          0,
+          2.129161
+        ],
+        [
+          1148.321,
+          -0.520379,
+          0,
+          2.165097
+        ],
+        [
+          1169.5863,
+          -0.590017,
+          0,
+          2.200697
+        ],
+        [
+          1190.8515,
+          -0.661773,
+          0,
+          2.235952
+        ],
+        [
+          1212.1167,
+          -0.737652,
+          0,
+          2.270384
+        ],
+        [
+          1233.3819,
+          -0.815915,
+          0,
+          2.304242
+        ],
+        [
+          1254.6471,
+          -0.896494,
+          0,
+          2.337527
+        ],
+        [
+          1275.9123,
+          -0.981289,
+          0,
+          2.369606
+        ],
+        [
+          1297.1775,
+          -1.068893,
+          0,
+          2.400739
+        ],
+        [
+          1318.4427,
+          -1.158985,
+          0,
+          2.431001
+        ],
+        [
+          1339.7079,
+          -1.253296,
+          0,
+          2.459604
+        ],
+        [
+          1360.9731,
+          -1.350817,
+          0,
+          2.486738
+        ],
+        [
+          1382.2383,
+          -1.450942,
+          0,
+          2.512616
+        ],
+        [
+          1403.5035,
+          -1.555161,
+          0,
+          2.536318
+        ],
+        [
+          1424.7687,
+          -1.662907,
+          0,
+          2.55784
+        ],
+        [
+          1446.0339,
+          -1.773274,
+          0,
+          2.577622
+        ],
+        [
+          1467.2991,
+          -1.887442,
+          0,
+          2.594661
+        ],
+        [
+          1488.5643,
+          -2.005277,
+          0,
+          2.608586
+        ],
+        [
+          1509.8295,
+          -2.125595,
+          0,
+          2.620188
+        ],
+        [
+          1530,
+          -2.242848,
+          0,
+          2.628027
+        ],
+        [
+          1552.3599,
+          -2.376328,
+          0,
+          2.632428
+        ],
+        [
+          1573.6251,
+          -2.505564,
+          0,
+          2.633407
+        ],
+        [
+          1594.8903,
+          -2.637356,
+          0,
+          2.630478
+        ],
+        [
+          1616.1555,
+          -2.772006,
+          0,
+          2.621856
+        ],
+        [
+          1637.4208,
+          -2.908109,
+          0,
+          2.60951
+        ],
+        [
+          1658.686,
+          -3.045776,
+          0,
+          2.592771
+        ],
+        [
+          1679.9512,
+          -3.184999,
+          0,
+          2.568776
+        ],
+        [
+          1701.2164,
+          -3.324641,
+          0,
+          2.540347
+        ],
+        [
+          1722.4816,
+          -3.464633,
+          0,
+          2.507209
+        ],
+        [
+          1743.7468,
+          -3.604046,
+          0,
+          2.465241
+        ],
+        [
+          1765.012,
+          -3.742445,
+          0,
+          2.418256
+        ],
+        [
+          1786.2772,
+          -3.879752,
+          0,
+          2.366234
+        ],
+        [
+          1807.5424,
+          -4.013607,
+          0,
+          2.304578
+        ],
+        [
+          1828.8076,
+          -4.144569,
+          0,
+          2.237325
+        ],
+        [
+          1850.0728,
+          -4.272634,
+          0,
+          2.164746
+        ],
+        [
+          1871.338,
+          -4.394265,
+          0,
+          2.082855
+        ],
+        [
+          1892.6032,
+          -4.510542,
+          0,
+          1.994924
+        ],
+        [
+          1913.8684,
+          -4.621937,
+          0,
+          1.901812
+        ],
+        [
+          1935.1336,
+          -4.724142,
+          0,
+          1.800448
+        ],
+        [
+          1956.3988,
+          -4.8182,
+          0,
+          1.693219
+        ],
+        [
+          1977.664,
+          -4.905469,
+          0,
+          1.581481
+        ],
+        [
+          2005.005,
+          -5.003155,
+          0,
+          1.429474
+        ],
+        [
+          2020.1944,
+          -5.00418,
+          0,
+          1.425882
+        ],
+        [
+          2041.4596,
+          -5.00418,
+          0,
+          1.425882
+        ],
+        [
+          2062.7248,
+          -5.00418,
+          0,
+          1.425882
+        ],
+        [
+          2083.99,
+          -5.00418,
+          0,
+          1.425882
+        ],
+        [
+          2105.2553,
+          -5.00418,
+          0,
+          1.425882
+        ]
+      ]
+    }
+  }
+}

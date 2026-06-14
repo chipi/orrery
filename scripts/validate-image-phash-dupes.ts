@@ -258,6 +258,79 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '8183a5252da95bd7|8183a5252da95bd7', // tiangong / tianhe
   'a3275ed67a843941|a3275ed67a843941', // tiangong-2 / tianzhou
   'fc3101fe0110fe5b|fc3101fe0110fe5b', // chinarm / mengtian / shenzhou
+
+  // ----- hotspots/moon tier3-panoramas (4 pairs) -----
+  // Per-mission tier-3 panorama compositions surface as pHash-similar
+  // because every lunar-surface oblique view from orbit shares the same
+  // DCT low-frequency signature (dark-vs-bright limb arc + lit terrain
+  // gradient). They're distinct per-mission illustrations, not dupes.
+  '0180fe7f01807e7f|01c0fe3f01c07e3f', // slim / luna9
+  '0180fe7f01807e7f|01c0fe3f01c0fe1f', // slim / chandrayaan3
+  '0180fe7f01807e7f|81807e7f81803e7f', // slim / luna24
+  '01c0fe3f01c07e3f|01c0fe3f01c0fe1f', // luna9 / chandrayaan3
+
+  // ----- launcher/pad sister-entity reuse (12 pairs) -----
+  // One canonical archival photo of a launch legitimately serves both
+  // the pad entity AND the rocket flown from it AND each crewed flight
+  // that used the stack. Soviet Soyuz family is the largest cluster.
+  '019ec1b6690ef1a7|411ec1be690ef0a7', // baikonur-31-6 / soyuz-u (Soyuz launch from pad 31/6)
+  '05d82772cdcc7233|05d82772cdcc7233', // cygnus-enhanced / cygnus-standard (NG cargo variants)
+  '16963d240eedc2cb|16963d340ee5c2cb', // endeavour / soyuz-tma (Endeavour ↔ Soyuz docking)
+  '488cd06bb439a577|488cd06bb439a577', // salyut-4 / soyuz-t (Soyuz-T servicing Salyut-4)
+  '499c898ec5863779|4b9c888ec5863779', // kourou-ela-3 / ariane-5 (ELA-3 launches Ariane-5)
+  '6107fcf04619f44b|6107fcf04619f44b', // jiuquan-slc-43 / long-march-2f (LM-2F from SLC-43)
+  '6b94cb568a4e04eb|6b94cb568a4e04eb', // proton-k / proton-m (Proton variant family)
+  '6c317829a5835377|6c317829a5835377', // salyut-1 / salyut-6 (Salyut station family)
+  '897a85b24f3061cf|897a85b24f3061cf', // baikonur-200 / proton-k (Proton from Baikonur 200)
+  '8c99336366cc9933|8c99336366cc9933', // h-iia / tanegashima-yoshinobu (H-IIA from Yoshinobu)
+  // The big Soyuz family group (pad + 3 crewed variants + Fregat upper).
+  // Now handled by deleting /rockets/soyuz-fregat.jpg in this commit —
+  // /rockets route is fallback-aware. The remaining ≥2 paths after the
+  // delete still need allowlisting because the same launch photo serves
+  // pad + 3 different crewed-vehicle galleries.
+  'cc4f31468d3265cd|cc4f31468d3265cd', // baikonur-31-6 / soyuz-2 / soyuz-tma / soyuz-u
+
+  // ----- ariane-5/02 ↔ juice/01 -----
+  // JUICE launched on Ariane-5 — the launcher's gallery slot 02 and the
+  // mission's gallery slot 01 are the same launch-day photo. Editorial
+  // cross-reference, not a bug.
+  'c4358b7433ccc533|c4358b7433ccc533', // ariane-5 / juice
+
+  // ----- change-5/02 ↔ ariane-6/02 -----
+  // Both are pre-flight integration photos of a tall white launcher
+  // stack on a green forest backdrop. The DCT signature collides on the
+  // composition (vertical-rocket + horizon line). Different missions,
+  // but the pHash can't tell them apart. Allowlist.
+  '6407465a5bd29af1|64074e5a1bd29af1', // change-5 / ariane-6
+
+  // ----- small-bodies black-void false-positive (1 pair) -----
+  // Distant Kuiper-belt object photos (Haumea + Eris). Both are a few
+  // pixels of object on a black starfield - pHash hits maximum
+  // similarity because the DCT is dominated by the black background.
+  // Replacing with composite false-color stretches would distinguish
+  // them; for now allowlist.
+  '4392383cb6764bc9|c382387cb67649c9', // haumea / eris
+
+  // ----- /science article inlines (5 pairs) -----
+  // The /science encyclopedia uses canonical mission/fleet photos as
+  // inline illustrations - same editorial pattern as the byte-allowlisted
+  // suit pages (lunar-suits-aldrin / iva-suits-crew10 / eva-suits-orlan).
+  // We tried deleting /science/X.jpg here but the article inline-image
+  // references live in src/data/science/*.json and aren't easily
+  // rerouted, so allowlist.
+  '1ccca3331cb6e349|1ccca3331cb6e349', // progress-m / science/crew-dynamics-mir
+  '4a98833852786f6f|4a9883b85278676f', // sokol-kv-2 / science/suit-lineage-sokol
+  '4b2f65fc88903663|4b2f65fc88903663', // apollo15 / science/surface-mobility-lrv
+  '5911a16b3b11add9|5911a16b3b11add9', // apollo13 / science/free-return-apollo13
+  '9c83b9b48b4a5655|9c83b9b48b4a5655', // cassini / science/oberth-cassini
+
+  // ----- /rockets thumbnails post-delete -----
+  // After deleting redundant /rockets/{lvm3,h-iia,proton-m,soyuz-fregat}.jpg
+  // some pairs still have surviving members (e.g. proton-m's fleet × fleet
+  // pair). Allowlist remainder.
+  'a1996f907b645945|a1996f907b645945', // sriharikota-slp / rockets/lvm3 (post-delete: just fleet)
+  'c63926c799666709|c63926c799666709', // fleet-galleries/h-iia / rockets/h-iia (post-delete)
+  'f01bf01708edc639|f01bf01708edc639', // proton-k / proton-m / rockets/proton-m (post-delete)
 ]);
 
 interface BaselineFile {

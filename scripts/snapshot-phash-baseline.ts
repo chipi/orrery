@@ -28,6 +28,22 @@ import { fileURLToPath } from 'node:url';
 import { hammingDistance } from './lib/phash.ts';
 import { ALLOWLIST as BYTE_ALLOWLIST } from './validate-image-dupes.ts';
 
+// Read INLINE_ALLOWLIST keys out of the validator source so the baseline
+// snapshot doesn't re-include pairs the curator already documented
+// inline. Parsing the TS source as text is brittle but avoids a circular
+// re-export (the validator imports the baseline JSON we're writing).
+function loadInlineAllowlist(): ReadonlySet<string> {
+  const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+  const src = readFileSync(resolve(root, 'scripts/validate-image-phash-dupes.ts'), 'utf-8');
+  const inlineBlock = /INLINE_ALLOWLIST[^[]*\[([\s\S]*?)\]\)/.exec(src);
+  if (!inlineBlock) return new Set();
+  const re = /'([0-9a-f]{16}\|[0-9a-f]{16})'/g;
+  const keys = new Set<string>();
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(inlineBlock[1])) !== null) keys.add(m[1]);
+  return keys;
+}
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE_PATH = resolve(ROOT, 'static/data/image-phashes.json');
 const IMAGES_DIR = resolve(ROOT, 'static/images');
@@ -51,7 +67,10 @@ function main(): void {
   const cache = JSON.parse(readFileSync(CACHE_PATH, 'utf-8')) as Cache;
   const entries = Object.entries(cache.phashes);
   const n = entries.length;
-  console.log(`Snapshotting pHash baseline — ${n} images, threshold=${THRESHOLD}…`);
+  const inlineAllowlist = loadInlineAllowlist();
+  console.log(
+    `Snapshotting pHash baseline — ${n} images, threshold=${THRESHOLD}, ${inlineAllowlist.size} inline-allowlisted pairs excluded…`,
+  );
 
   const shaPrefixCache = new Map<string, string | null>();
   const getSha = (p: string): string | null => {
@@ -71,6 +90,7 @@ function main(): void {
       const shaA = getSha(pa);
       if (shaA && shaA === getSha(pb) && BYTE_ALLOWLIST.has(shaA)) continue;
       const key = ha < hb ? `${ha}|${hb}` : `${hb}|${ha}`;
+      if (inlineAllowlist.has(key)) continue;
       pairs.add(key);
     }
   }

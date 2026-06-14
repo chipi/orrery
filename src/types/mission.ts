@@ -17,7 +17,25 @@ export type Destination =
   // treat them as first-class destinations.
   | 'COMET'
   | 'ASTEROID'
-  | 'SUN';
+  | 'SUN'
+  // GH #341 small-body destinations — first-class on /fly so the hero
+  // composition at the iconic moment frames the specific body (DART
+  // at Dimorphos, Lucy at each Trojan, Hayabusa 1 at Itokawa, etc.)
+  // rather than the generic ASTEROID catch-all.
+  | 'BENNU'
+  | 'PSYCHE'
+  | 'VESTA'
+  | 'ARROKOTH'
+  | 'ITOKAWA'
+  | 'DIDYMOS'
+  | 'DIMORPHOS'
+  | 'DONALDJOHANSON'
+  | 'EURYBATES'
+  | 'POLYMELE'
+  | 'LEUCUS'
+  | 'ORUS'
+  | 'PATROCLUS'
+  | 'MENOETIUS';
 export type MissionStatus = 'ACTIVE' | 'FLOWN' | 'PLANNED';
 export type Sector = 'gov' | 'private';
 export type DataQuality = 'good' | 'partial' | 'reconstructed';

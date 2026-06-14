@@ -34,6 +34,23 @@ const PLANET_KEYWORDS: PlanetId[] = [
   // matters in the runtime closure. We match the resolver's behaviour
   // by also accepting it here.
   'earth' as PlanetId,
+  // Small-body destinations wired into /fly's DESTINATIONS table —
+  // each composes a body-specific iconic shot (see TA.md §body-wiring).
+  // Bennu (OSIRIS-REx), Psyche (Psyche mission), plus the 10 #341
+  // Batch 5 small bodies (Itokawa, Didymos+Dimorphos, Donaldjohanson,
+  // Eurybates+Polymele+Leucus+Orus+Patroclus+Menoetius).
+  'bennu' as PlanetId,
+  'psyche' as PlanetId,
+  'itokawa' as PlanetId,
+  'didymos' as PlanetId,
+  'dimorphos' as PlanetId,
+  'donaldjohanson' as PlanetId,
+  'eurybates' as PlanetId,
+  'polymele' as PlanetId,
+  'leucus' as PlanetId,
+  'orus' as PlanetId,
+  'patroclus' as PlanetId,
+  'menoetius' as PlanetId,
 ];
 
 function resolvePlanetIdFromLabel(label: string): PlanetId | null {
@@ -88,6 +105,19 @@ const NON_PLANET_LABEL_PATTERNS = [
   /halley|grigg-skjellerup|steins|lutetia/i, // Specific comet / asteroid names without "asteroid" / "comet" keyword
   /\bceres\b/i, // Dwarf-planet target (Dawn) — same rationale as Pluto.
   /\bphobos\b|\bdeimos\b/i, // Martian moons (MMX, future Mars-moon missions).
+  // OSIRIS-REx sample-collection event "TAG — Touch-and-Go sample
+  // collection" — the body is implicit (Bennu) but the label doesn't
+  // mention it. Resolver falls back to closest-planet at runtime;
+  // since OSIRIS-REx is at Bennu at this MET, closest-planet → Bennu.
+  /TAG.*touch-and-go|touch-and-go/i,
+  // Parker Solar Probe + Solar Orbiter — Sun-skirter labels reference
+  // the perihelion / corona / polar geometry rather than naming "Sun"
+  // (the spacecraft is AT the Sun's neighbourhood; the destination
+  // name is implicit). Sun isn't a PlanetId; closest-planet fallback
+  // picks the nearest inner-system body (Mercury/Venus depending on
+  // simDay) which is the correct cinematic composition for these
+  // missions — Parker at perihelion 8 is near Mercury's orbit.
+  /perihelion|corona entry|high-latitude polar imaging/i,
 ];
 
 describe('mission flyby-label corpus', () => {

@@ -22,6 +22,21 @@ export const MISSION_CATALOG_DESTS: readonly Destination[] = [
   'COMET',
   'ASTEROID',
   'SUN',
+  // GH #341 small-body destinations — see TA.md §body-wiring.
+  'BENNU',
+  'PSYCHE',
+  'VESTA',
+  'ARROKOTH',
+  'ITOKAWA',
+  'DIDYMOS',
+  'DIMORPHOS',
+  'DONALDJOHANSON',
+  'EURYBATES',
+  'POLYMELE',
+  'LEUCUS',
+  'ORUS',
+  'PATROCLUS',
+  'MENOETIUS',
 ] as const;
 
 export function isMissionDestination(s: string): s is Destination {
@@ -78,5 +93,35 @@ export function missionDestToHeliocentricDestinationId(dest: Destination): Desti
       // Solar Probe scope) — /fly doesn't model them either; the
       // PATHS trajectory carries the visual story.
       return null;
+    // GH #341 small-body destinations — each is a first-class
+    // DestinationId in DESTINATIONS table (see lambert-grid.constants).
+    case 'BENNU':
+      return 'bennu';
+    case 'PSYCHE':
+      return 'psyche';
+    case 'VESTA':
+      return 'vesta';
+    case 'ARROKOTH':
+      return 'arrokoth';
+    case 'ITOKAWA':
+      return 'itokawa';
+    case 'DIDYMOS':
+      return 'didymos';
+    case 'DIMORPHOS':
+      return 'dimorphos';
+    case 'DONALDJOHANSON':
+      return 'donaldjohanson';
+    case 'EURYBATES':
+      return 'eurybates';
+    case 'POLYMELE':
+      return 'polymele';
+    case 'LEUCUS':
+      return 'leucus';
+    case 'ORUS':
+      return 'orus';
+    case 'PATROCLUS':
+      return 'patroclus';
+    case 'MENOETIUS':
+      return 'menoetius';
   }
 }

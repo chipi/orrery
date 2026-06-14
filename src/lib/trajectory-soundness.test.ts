@@ -158,15 +158,18 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
       ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
     );
     const inner = MISSIONS.filter((m) => ['mercury', 'venus'].includes(m.destDir));
+    // 2026-06-14 GH #341 — added 4 Mars (Mariner 9, Spirit, Opportunity,
+    // Phoenix), 1 outer (Europa Clipper Jupiter-bound), 2 inner (Venus
+    // pair Magellan + Akatsuki).
     if (
-      mars.length !== 16 ||
+      mars.length !== 20 ||
       moon.length !== 31 ||
       earth.length !== 31 ||
-      outer.length !== 10 ||
-      inner.length !== 6
+      outer.length !== 11 ||
+      inner.length !== 8
     ) {
       throw new Error(
-        `Expected 16 Mars + 31 Moon + 31 Earth + 10 outer + 6 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 20 Mars + 31 Moon + 31 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

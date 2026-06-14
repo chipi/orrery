@@ -106,8 +106,14 @@ describe('getMissionIndex', () => {
     // 2026-06-09 Right Stuff cross-reference — added 6 Mercury crewed
     // flights (Freedom 7, Liberty Bell 7, Friendship 7, Aurora 7,
     // Sigma 7, Faith 7). 68 → 74.
+    // 2026-06-14 GH #341 backfill — 14 notable missions across 5 batches:
+    // Batch 1 Mars rover quad (Mariner 9, Spirit, Opportunity, Phoenix);
+    // Batch 2 Venus (Magellan, Akatsuki); Batch 3 sample-return
+    // (OSIRIS-REx, Psyche); Batch 4 Sun-skirter (Parker, Solar Orbiter);
+    // Batch 5 new-body (DART, Lucy, Europa Clipper, Hayabusa 1).
+    // 98 → 112.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(98);
+    expect(missions).toHaveLength(112);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -130,6 +136,21 @@ describe('getMissionIndex', () => {
         'COMET',
         'ASTEROID',
         'SUN',
+        // GH #341 small-body destinations.
+        'BENNU',
+        'PSYCHE',
+        'VESTA',
+        'ARROKOTH',
+        'ITOKAWA',
+        'DIDYMOS',
+        'DIMORPHOS',
+        'DONALDJOHANSON',
+        'EURYBATES',
+        'POLYMELE',
+        'LEUCUS',
+        'ORUS',
+        'PATROCLUS',
+        'MENOETIUS',
       ]).toContain(m.dest);
       expect(['ACTIVE', 'FLOWN', 'PLANNED']).toContain(m.status);
       expect(['gov', 'private']).toContain(m.sector);
@@ -139,9 +160,11 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 16', async () => {
+  it('MARS filter returns 20', async () => {
+    // GH #341 Batch 1 added 4 Mars missions (Mariner 9, Spirit,
+    // Opportunity, Phoenix). 16 → 20.
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(16);
+    expect(mars).toHaveLength(20);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
@@ -339,9 +362,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 98 missions merged with their en-US overlays', async () => {
+  it('returns all 112 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(98);
+    expect(list).toHaveLength(112);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -360,6 +383,21 @@ describe('getMissionsForLibrary', () => {
         'COMET',
         'ASTEROID',
         'SUN',
+        // GH #341 small-body destinations.
+        'BENNU',
+        'PSYCHE',
+        'VESTA',
+        'ARROKOTH',
+        'ITOKAWA',
+        'DIDYMOS',
+        'DIMORPHOS',
+        'DONALDJOHANSON',
+        'EURYBATES',
+        'POLYMELE',
+        'LEUCUS',
+        'ORUS',
+        'PATROCLUS',
+        'MENOETIUS',
       ]).toContain(m.dest);
       expect(m.year).toBeGreaterThan(1900);
     }
@@ -372,7 +410,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(98);
+    expect(list).toHaveLength(112);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -407,6 +407,56 @@ Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you 
 
 ---
 
+## Adding a new flyby body to `/fly` — repeatable checklist
+
+Use this when adding a new destination (planet / dwarf / comet / asteroid / KBO) so its flyby beat composes an iconic hero shot. **Arrokoth (commit `e6e9175b`) is the worked example end-to-end** — read its diff before starting; everything below is a checklist to grind through. Halley + 67P (commit `3c1e6938e`) is a shorter follow-up that adds the synonym pattern for ambiguous label forms.
+
+For Issue [#341](https://github.com/chipi/orrery/issues/341) (13 missing missions) you'll iterate this ~7 times since many of the missions need new destination bodies (Dimorphos for DART, Itokawa for Hayabusa 1, Europa as a moon target for Europa Clipper, etc.).
+
+Per-body steps (numbered to match TA.md §body-wiring):
+
+1. **Orbital data** → `static/data/small-bodies.json` entry
+2. **`DestinationId`** widening → `src/lib/lambert-grid.constants.ts`
+3. **`PLANET_SIZES`** → `src/lib/orbital/find-flyby-planet.ts`
+4. **Label parser** (`findFlybyPlanetFromLabel` + `findClosestPlanetToShip`) → same file. Add a synonym branch for ambiguous data labels (e.g. "Churyumov" → '67p')
+5. **`PlanetId` union + `PLANET_COMPOSITION`** → `src/lib/orbital/flyby-camera-plan.ts`
+6. **`DEST_STYLE` + `bodyTextures` slot** → `src/lib/three/fly-helio-scene.ts`
+7. **`labelToPlanetId` + `FLYBY_RADIUS_AU`** → `src/lib/fly-mission-apply.ts` — **critical**: this remaps trajectory.json waypoints through `destinationPos()` so the ship glyph coincides with the destination mesh. Skip it and the ship sits at the raw trajectory coords 20+ AU off-axis from the iconic frame
+8. **`NON_CONTEXT_BODIES`** → `src/routes/fly/+page.svelte` (secondary-flyby destinationMesh swap)
+9. **Debug-panel `planetIdGuess`** loop → same file
+10. **`DESTINATION_LABEL_COLORS`** → `src/lib/fly-scene-constants.ts`
+11. **`/plan` label switch case** → `src/routes/plan/+page.svelte`
+12. **14-locale messages** → `messages/en-US.json` + 13 other locales (use the Python pattern from the Arrokoth commit for the non-English transliterations)
+13. **i18n overlay** (optional) → `static/data/i18n/en-US/planets/{id}.json`
+14. **Tests** → `find-flyby-planet.test.ts` — move new body out of "returns null" + add positive case
+15. **Browser-verify** → load a mission that flies past the body at its iconic MET, confirm composition
+
+Don't skip #7. It's the most subtle one and the most common reason a newly-wired body still renders as empty space.
+
+---
+
+## Race-free `/fly` test hooks — when chrome-devtools-mcp shares its browser
+
+If a second Claude Code session is using chrome-devtools-mcp on the same Chrome instance, click/scrub events race the automation (the other agent's pause toggles flip your pause back to play, scrubbers reset between your event and your screenshot). Symptom: simDay sticks at DAY 1 or jumps to DAY {arrival} regardless of what you commanded.
+
+Three workarounds, in increasing isolation:
+
+1. **Ask the user to pause the other session for 60 seconds.** Cheapest if available.
+2. **Use the race-free hooks** (DEV-only, no production surface):
+   - `window.__flySetSimDay(metDays)` — sets simDay + pauses. Skips `biasJumpToIconicMoment` / 700 ms snap-cut / peakHold clearing — all upstream input concerns. Everything downstream (auto-zoom lerp, scene render, hero detector) runs identically to a real user landing at the same MET.
+   - `window.__flyCislunarDebug()` — mirror of `__flyDebug` for cislunar missions (which `__flyDebug` is gated out of). Returns `{simDay, depDay, met, isMoonMission, cislunarTrajectory.phases, closestApproachKm, camPos, camTarget, camR, autoZoomActive, lastAutoZoomPhase, moonInScenePos, spacecraftPos}` — lets you observe internal cislunar state without spelunking Three.js refs.
+3. **Add a similar hook** if your test needs a state path the existing two don't cover. Keep it DEV-gated (`if (import.meta.env.DEV)`) — production never sees it.
+
+Workflow that proved out on Apollo 13 / 17 verification under contention:
+```js
+await new Promise(r => setTimeout(r, 6000));  // ride out the opening sequence
+window.__flySetSimDay(3.13);
+await new Promise(r => setTimeout(r, 10000));  // give auto-zoom lerp time to converge
+return window.__flyCislunarDebug();
+```
+
+---
+
 ## Testing rules
 
 **Unit tests** (Vitest, colocated): every function in `src/lib/orbital.ts` must have tests. Physics functions are the highest-priority testing surface.

@@ -2,7 +2,7 @@
 
 | Doc | Title | Status | Date |
 |---|---|---|---|
-| TA | Technical Authority | v2.0 | May 2026 |
+| TA | Technical Authority | v2.2 | Jun 2026 |
 | ADR-001 | Three.js r128 as 3D renderer | Accepted | Apr 2026 |
 | ADR-002 | Vanilla JS, no framework | Superseded by ADR-011, ADR-012 | Apr 2026 |
 | ADR-003 | Vite as bundler | Superseded by ADR-012 | Apr 2026 |
@@ -74,3 +74,5 @@
 | ADR-073 | Surface texture LOD via per-region insets (Layer A) + 2K → 4K base swap (Layer B); no tile streaming | Accepted | May 2026 |
 | ADR-074 | Panorama schema v2 + spatial-context renderer; commit to "exhibit, not embed" | Accepted | May 2026 |
 | ADR-075 | Narrow exception #2 to no-client-storage — `orrery_tour` cookie for Curator Tour resume | Accepted | Jun 2026 |
+| ADR-076 | /plan ships Mars-only porkchop in v0.7; multi-destination deferred to v0.8 | Accepted | Jun 2026 |
+| ADR-077 | /fly throne-of-glory iconic-shot architecture (body wiring + cislunar hold detector + per-event compositions + race-free test hooks) | Accepted | Jun 2026 |

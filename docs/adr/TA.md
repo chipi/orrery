@@ -1,11 +1,13 @@
 # TA — Technical Authority
-*Orrery · Reference document · v2.1 · May 2026*
+*Orrery · Reference document · v2.2 · June 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update `§stack` and `§map` when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs), [`../prd/index.md`](../prd/index.md) (PRDs).
 
 v2.0 caught up from v1.9 (May 2026, ADR-033) through **v0.6.0 reality** — 5 new routes, 25 new ADRs, the Fleet / Science / ISS / Tiangong / Mars / Cislunar subsystems, the Provenance pipeline, the Science Lens, and the multi-layer overlay state machine.
 
 v2.1 catches up through **v0.7.0 reality** — audio narration system (PRD-016 / RFC-019), surface hotspots (RFC-017) shipped onto the corpus, docker-stack runtime (ADR-063–066) with sharded e2e workflow (W7), build-time compression + nginx static-serving (W3), centralised Three.js disposal (`disposeScene` helper), and content-visibility long-list perf (W4).
+
+v2.2 catches up through the **`/fly` throne-of-glory sweep (June 13-14 2026)** — every A-B-C-D mission segment of the existing catalog now composes an iconic hero shot at its narrative beat. Body wiring is now a repeatable checklist (see §body-wiring below) with Arrokoth (commit `e6e9175b`) as the worked example for adding new flyby destinations. New destinations landed: Pluto + Arrokoth (Pluto already was a DestinationId but not flyby-wired; Arrokoth is fully new), Halley + 67P (comet nuclei for Giotto + Rosetta), Vesta + Ceres + Psyche + Bennu (asteroid bodies for Dawn / OSIRIS-REx / Psyche / DART). Cislunar Tier-1.5 hybrid waypoint data gets a "swing-by hold" detector that synthesises lunar_flyby / descent phases for missions whose authored waypoints "park" the spacecraft at periselene (Apollo 11/13/17, Luna 9/16, SLIM, Chandrayaan-3, Chang'e 5, etc.). Per-event MoonComposition variants tune each cislunar beat (loi / tei / descent_start / ascent / flyby / edl_or_oi / arrival). Race-free DEV-only test hooks `__flySetSimDay` + `__flyCislunarDebug` survive multi-Claude-session chrome-devtools-mcp interference. ADR-077 captures the architecture.
 
 ---
 
@@ -154,6 +156,11 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Deterministic readiness signals** — every canvas route exposes a `window.__pickAt(x, y)` test hook + `data-*` ready attributes so Playwright can synchronise without polling. See ADR-056.
 
+**`/fly` race-free test hooks (ADR-077, June 2026)** — when a second Claude Code session shares the same chrome-devtools-mcp browser instance, click/scrub events race the automated test's intended state (pause buttons get re-pressed, scrubbers move under us). The hook pair below bypasses the UI layer entirely:
+- `window.__flySetSimDay(metDays)` — sets `simDay` + pauses. Skips `biasJumpToIconicMoment` / 700 ms snap-cut / peakHold clearing (all upstream input concerns). Everything downstream — auto-zoom lerp, scene render, hero detector — runs identically to a real user landing at the same MET. DEV-gated; production never sees it.
+- `window.__flyCislunarDebug()` — mirror of `__flyDebug` for cislunar missions (which `__flyDebug` is gated out of via `!isMoonMission`). Returns `{simDay, phases, camPos, camTarget, camR, autoZoomActive, lastAutoZoomPhase, moonInScenePos, spacecraftPos, closestApproachKm}`. Lets automated tests diagnose the auto-zoom / scene-render pipeline without spelunking Three.js refs.
+Reach for these when (a) another session is using the same Chrome, (b) the opening sequence (~9.5 s freeze on simDay) makes timing-based assertions flaky, or (c) you need to observe internal cislunar state.
+
 **Preflight chain** (`npm run preflight`) — `typecheck && lint && test && validate-data && build`. Husky pre-push hook enforces. Mirrors CI exactly.
 
 **Overlay-completeness gate** (inside `validate-data`, ADR-069) — for every ID in `earth-objects.json` / `fleet/index.json` / `moon-sites.json` / `mars-sites.json` / `science/<tab>/_index.json`, verify the canonical en-US overlay exists. Closes the GH #83 defect class where missing overlays passed preflight but 404ed at e2e runtime. Optional Layer-2 smoke-subset e2e in pre-push via `PREFLIGHT_INCLUDE_SMOKE=1` (`landing.spec.ts` + `smoke.spec.ts`, ~30-60s, off by default).
@@ -213,6 +220,27 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 - **Bodies:** Sun + departure planet + destination planet + the spacecraft cone. Other planets are dimmed `Points` for context.
 - **Physics:** `src/lib/fly-physics.ts` — `transferEllipse`, Tsiolkovsky, per-mission validation harness per ADR-030. Math runs in pure functions, validated against committed expected values per mission so a regression in either the math or the data fails CI.
 - **Camera switching for Moon missions:** when the destination is `MOON` and the mission carries a `flight.cislunar_profile` block, the heliocentric scene hands off to **Scene 3** (Cislunar) once the spacecraft has crossed the Moon's sphere of influence. See ADR-058.
+- **Flyby cinema iconic-shot composer (`$lib/orbital/flyby-camera-plan.ts`):** when `findActiveFlybyMet` returns a non-null MET, the standard cruise framing yields to `planFlybyShot` which composes camera + lookAt for an iconic Cassini-art frame around the body. Per-planet `PLANET_COMPOSITION` carries `camRMultiplier`, `sideAngleRad`, `pitchRad`, `iconicLeadDays`, `targetBias`. Sun-lit-hemisphere bias (ADR-077): the perp vector flips when `cos(α) < −0.7` (camera deep on night side, α > 134°) so the camera lands on the lit hemisphere for the worst-case alignments — every Voyager / Cassini hero photograph composes against the lit limb, not the thin lit edge.
+
+### Body-wiring checklist (ADR-077)
+
+Adding a new flyby body / destination touches ~10 files. Arrokoth (commit `e6e9175b`) is the worked example covering everything end-to-end; the comet wiring (Halley + 67P, commit `3c1e6938e`) is a shorter follow-up. Per-body steps:
+
+1. **Orbital data** — `static/data/small-bodies.json` entry: `a`, `e`, `T`, `L0`, `incl`, `color`, `radius_km`, `discovered`, `mission_visited`, `description`, `wiki`. Bodies with `e > 0.20` need eccentric-arrival treatment (see Bennu / Pluto pattern in `buildDwarfDestination`); below that the circular model is fine. Comets get `buildCometDestination` so the Lambert-convergence concern (which doesn't apply since no porkchop grid ships) is logged.
+2. **`DestinationId` widening** — `src/lib/lambert-grid.constants.ts`. Add literal to the union, add `DESTINATIONS[id]` entry calling the appropriate `build*Destination` builder.
+3. **`PLANET_SIZES`** — `src/lib/orbital/find-flyby-planet.ts`. Stylised render radius (small bodies need 0.3–0.9 to read against the bloom).
+4. **Label parser** — same file: add to `findFlybyPlanetFromLabel` candidates + `findClosestPlanetToShip` candidates. Add a synonym branch if the label's data form (e.g. "Churyumov" → '67p') differs from the id.
+5. **`PlanetId` union + `PLANET_COMPOSITION`** — `src/lib/orbital/flyby-camera-plan.ts`. Tune `camRMultiplier` (6× for small bodies, 4× for giants), `iconicLeadDays` (2–3 for outer/sparse trajectory data, 1 for inner-system).
+6. **`DEST_STYLE` + `bodyTextures`** — `src/lib/three/fly-helio-scene.ts`. Visual radius (mirror PLANET_SIZES), stylised color. Texture slot is optional — bodies ship without a texture if no public-domain image source exists.
+7. **`labelToPlanetId` + `FLYBY_RADIUS_AU`** — `src/lib/fly-mission-apply.ts`. **Critical** — this remaps the trajectory.json waypoint at the body's label through `destinationPos()` so the ship glyph coincides with the destination mesh at the iconic moment. Without this remap the ship sits at the raw trajectory coords (20+ AU off-axis) and the iconic composition frames empty space.
+8. **`NON_CONTEXT_BODIES`** — `src/routes/fly/+page.svelte`. Add to the set so the destinationMesh swap fires when the flyby body differs from the mission's primary destination (NH at Arrokoth past Pluto — the secondary-flyby-mesh-swap mechanism).
+9. **Debug-panel `planetIdGuess` loop** — same file, the `FlybyDebugViewer` snippet.
+10. **`DESTINATION_LABEL_COLORS`** — `src/lib/fly-scene-constants.ts`.
+11. **`/plan` label switch** — `src/routes/plan/+page.svelte`. Switch case for the exhaustive `destinationLabel` function.
+12. **14-locale messages** — `messages/en-US.json` + 13 other locales. Use the Python pattern from the Arrokoth commit (transliterate per locale where appropriate; comet 67P keeps Latin in all locales).
+13. **i18n overlay (optional)** — `static/data/i18n/en-US/planets/{id}.json` for /explore detail panel.
+14. **Test update** — `find-flyby-planet.test.ts` — move new body out of the "returns null" bucket; add a positive case.
+15. **Browser-verify** — load any mission that flies past the body at the iconic MET, confirm iconic composition.
 
 ### Scene 3 — `/fly` cislunar (Earth-centered)
 
@@ -220,6 +248,9 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 - **Trajectory geometry:** `src/lib/cislunar-geometry.ts` consumes `flight.cislunar_profile` (parking orbit → TLI → translunar arc → lunar arrival → lunar orbit / TEI) and emits a polyline through 96+ points. The Moon orbits Earth in this scene; the spacecraft polyline is parented to the Earth–Moon barycentre frame so the trajectory stays geometrically faithful.
 - **Bodies:** textured Earth + textured Moon + spacecraft cone + a thin `Line` for the Moon's orbit.
 - **When it activates:** controlled by a `view` URL param + the destination check; visible only on Moon missions. Camera defaults to a 3-Moon-radii-out perspective with the trajectory fully framed.
+- **Tier-1.5 hybrid waypoint hold detector (ADR-077, June 2026):** when `cislunar_profile.waypoints_km` is shipped (Apollo / Luna / Chang'e / SLIM / Chandrayaan-3 / etc.), `buildFromWaypoints` walks the waypoints for "hold" runs — 3+ consecutive entries with identical (x, y, z) within 10 km tolerance. Each hold is a data-designer signature for an iconic beat the analytic model couldn't compute (LOI hold, surface stay, TEI, free-return periselene). Every hold becomes its own `lunar_flyby` (or `descent` if `closest_approach_km ≤ R_MOON + 50`) phase, with `tli_coast`/`tei_coast` filling outbound/inter-hold/return — phases interleave with no overlap. Points are stored as `moonAtFlyby` ECI so the sampler's `MOON_LOCAL_PHASE_TYPES` shift collapses to `live_moon` → spacecraft pins to the live Moon centre for the entire hold window. Multi-hold per mission supported (Apollo 17 with LOI + surface stay + TEI all firing). See ADR-077 for the convention details.
+- **Per-event hero compositions (`$lib/orbital/cislunar/cislunar-hero-shot.ts`):** seven event types now drive their own `MoonComposition` variant — `loi`/`tei`/`descent_start`/`ascent` use the Apollo-8-earthrise default (side 85°, pitch 15°, camR 4×, targetBias 0); `flyby` uses `MOON_COMPOSITION_FLYBY` (side 60°, pitch 35°, camR 5×, targetBias 0.4 — Apollo 13 free-return limb arc); `edl_or_oi` uses `MOON_COMPOSITION_IMPACT` (side 45°, pitch 10°, camR 3×, targetBias 0.5 — Luna 9 / Chandrayaan-3 descent-toward-surface tightness); `arrival` shares the loi composition. `findActiveCislunarHero` widened to match all seven types (ADR-077).
+- **Live-moon hero tracking (ADR-077):** `planCislunarHeroShot` reads `moonEciPos(simDay)` for its `moonPos`, not `moonEciPos(iconicMet)`. Otherwise the moon mesh (at simDay) drifted out-of-frame for users landing 0.1 d past iconicMet (Moon moves ~13°/day). The shipPosAtMet sampler still uses iconicMet so the approach-direction geometry is invariant inside the hero window.
 
 ### Scene 4 — `/earth` (Earth orbit viewer)
 

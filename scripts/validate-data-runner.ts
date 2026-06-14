@@ -46,6 +46,11 @@ const TASKS: Task[] = [
     cmd: 'tsx',
     args: ['scripts/validate-image-phash-dupes.ts'],
   },
+  {
+    name: 'validate-gallery-counts',
+    cmd: 'tsx',
+    args: ['scripts/validate-gallery-counts.ts'],
+  },
 ];
 
 interface TaskResult {

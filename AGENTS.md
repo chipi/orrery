@@ -326,6 +326,33 @@ Fleet entries, surface sites, and other localised records follow the same base +
 
 ---
 
+## Image pipeline — gotchas
+
+The image sourcing + dedup + attribution pipeline has four parts that have to stay in lockstep. Skip any of them and you'll re-learn one of the bugs below.
+
+**Sidecar surface routing.** Each surface has a specific sidecar manifest:
+
+| Surface | Sidecar | Key shape |
+|---|---|---|
+| `missions/` | `static/data/mission-image-sources.json` | `<id>/<slot>` (no ext) |
+| `fleet-galleries/` | `static/data/fleet-image-sources.json` | `<id>/<slot>.jpg` |
+| `moon-sites/` / `mars-sites/` / `earth-objects/` | `static/data/panel-image-sources.json` | `<surface>/<id>/<slot>` (no ext) |
+| `iss-modules/` | (none — `buildIssEntries` walks disk + uses `WIKIMEDIA_ISS_MODULE_GALLERY` constants in `scripts/fetch-assets.ts`) |
+| `tiangong-modules/` | (none — `buildTiangongEntries` walks disk + uses `WIKIMEDIA_TIANGONG_*` constants) |
+| `rockets/`, `science/` | (none — credits-grouping path prefixes only; not gallery-loaded) |
+
+**Routing a file to the wrong sidecar produces a duplicate manifest entry** because two code paths in `scripts/build-image-provenance.ts` cover the same file. June 2026 example: `scripts/backfill-sidecar-from-report.ts` routed `iss-modules/unity/0X.jpg` to `panel-image-sources.json` AND `buildIssEntries` walked it from disk → two entries → `validate-data` failed with `duplicate manifest entry`. Backfill now refuses to route iss-modules/tiangong-modules.
+
+**Cache-staleness after slot rename.** `static/data/image-phashes.json` is the on-disk pHash cache, keyed by URL path. Renaming `unity/03.jpg → unity/02.jpg` does NOT update the cache key — the cache still says `/images/iss-modules/unity/03.jpg → <old hash>`. Any subsequent fill-script run loads that stale cache into its localCache for the entity and lets near-duplicate candidates through the source-time pHash guard. **Always run `npx tsx scripts/compute-phash.ts --force` between `delete-intra-entity-dupes` and any fill script.** Round 1 of D shipped 26 residual dupes because this step was missed.
+
+**Walker-fallback agency lookup.** `scripts/build-image-provenance.ts buildWalkerFallbackEntries` (line ~2375) generates a manifest row for every disk file not covered by a declared source. The `agency` field comes from a catalog lookup (missions/index.json, fleet-image-sources, earth-objects.json, moon-sites.json, mars-sites.json) before falling through to the surface default. If the surface default fires for a non-NASA entity, /credits will incorrectly attribute the photo to NASA. Keep the per-catalog HUMAN map in sync with whatever name conventions the catalog uses (`ROSCOSMOS` ALL-CAPS vs `Roscosmos` proper-case is the gotcha — `scripts/build-image-provenance.ts loadMissionAgency` has fallbacks for legacy ids not in `missions/index.json`).
+
+**pHash baseline snapshotting.** `scripts/snapshot-phash-baseline.ts` writes the residual pairs that pass through to `static/data/phash-baseline-allowlist.json`. It MUST read `INLINE_ALLOWLIST` from `scripts/validate-image-phash-dupes.ts` and exclude those pairs — otherwise re-running the snapshot after categorisation re-bloats the baseline JSON with the same pairs you just moved inline. The snapshot script parses the TS source as text for the keys; this is brittle but avoids a circular import.
+
+**Gallery count manifests** (`static/data/fleet-galleries.json`, `mission-galleries.json`) are `<id, slot-count>` maps the gallery loader uses to enumerate URLs. **Drift produces silent 404s** when manifest > disk, or hidden images when manifest < disk. `validate-gallery-counts` (in preflight as of 2026-06-14) catches drift. If you ever delete or rename gallery slots, sync the count manifest in the same commit.
+
+---
+
 ## Mobile-first rules
 
 Design at 375px first. Desktop is progressive enhancement.

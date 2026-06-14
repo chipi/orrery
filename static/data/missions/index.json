@@ -1018,5 +1018,25 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": false
+  },
+  {
+    "id": "magellan",
+    "agency": "NASA",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1989,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "akatsuki",
+    "agency": "JAXA",
+    "dest": "VENUS",
+    "status": "ACTIVE",
+    "year": 2010,
+    "sector": "gov",
+    "color": "#003087",
+    "crewed": false
   }
 ]

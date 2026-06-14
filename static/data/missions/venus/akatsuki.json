@@ -1,0 +1,738 @@
+{
+  "id": "akatsuki",
+  "agency": "JAXA",
+  "agency_full": "Japan Aerospace Exploration Agency / Institute of Space and Astronautical Science",
+  "sector": "gov",
+  "dest": "VENUS",
+  "color": "#003087",
+  "year": 2010,
+  "status": "ACTIVE",
+  "departure_date": "2010-05-20",
+  "arrival_date": "2015-12-07",
+  "transit_days": 2027,
+  "vehicle": "H-IIA 202",
+  "payload": "517 kg (incl. 196 kg propellant)",
+  "delta_v": "~1.2 km/s",
+  "data_quality": "good",
+  "credit": "© JAXA / ISAS — public domain. Recovered from a 2010 VOI failure (clogged oxidiser check valve) and inserted into Venus orbit on a backup attempt 2015-12-07 using attitude-control thrusters. Still operating in orbit — currently the only active Venus orbiter.",
+  "links": [
+    {
+      "l": "Akatsuki (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Akatsuki mission overview (JAXA / ISAS)",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/current/akatsuki.html",
+      "t": "intro"
+    },
+    {
+      "l": "Nakamura et al. (2016) — AKATSUKI returns to Venus (Earth, Planets and Space)",
+      "u": "https://earth-planets-space.springeropen.com/articles/10.1186/s40623-016-0457-6",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "akatsuki",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "H-IIA 202 second stage",
+      "c3_km2_s2": 7.5,
+      "mass_at_tli_kg": 517,
+      "source": "JAXA Akatsuki Press Kit (2010-05); Nakamura et al. (2016)"
+    },
+    "cruise": {
+      "tcm_count": 3,
+      "source": "JAXA Akatsuki Mission Operations Report; TCM-1..3 during 2010 cruise; +12 maneuvers during the 2010-2015 solar-orbit recovery hold"
+    },
+    "arrival": {
+      "v_infinity_km_s": 3.5,
+      "periapsis_km": 400,
+      "inclination_deg": 3,
+      "orbit_insertion_dv_km_s": 0.244,
+      "source": "Nakamura et al. (2016); successful VOI-R2 on 2015-12-07 used four attitude-control thrusters (the main OME was permanently disabled after the 2010 anomaly)"
+    },
+    "totals": {
+      "total_dv_km_s": 1.2,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "JAXA Akatsuki Press Kit (2010-05); H-IIA delivered TMI directly"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — H-IIA 202",
+        "description": "Tanegashima Space Center, 2010-05-20. Shared a launch with the IKAROS solar-sail demonstrator (the first interplanetary solar sail) and three university CubeSats. Akatsuki — \"dawn\" in Japanese — was Japan's first Venus mission, designed for a 30-month primary mission to study Venus atmospheric super-rotation."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Venus injection",
+        "description": "H-IIA second stage delivers Akatsuki onto a direct 6-month transfer to Venus. The Orbit Maneuvering Engine (OME) was reserved for the planned VOI."
+      },
+      {
+        "met_days": 30,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction during the nominal 2010 cruise."
+      },
+      {
+        "met_days": 120,
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 195,
+        "type": "tcm",
+        "label": "TCM-3 — final pre-VOI",
+        "description": "Final pre-arrival trim."
+      },
+      {
+        "met_days": 201,
+        "type": "arrival",
+        "label": "Venus approach (first attempt)",
+        "description": "2010-12-07. Akatsuki arrives at Venus and begins the planned VOI burn."
+      },
+      {
+        "met_days": 201.005,
+        "type": "anomaly",
+        "label": "VOI-1 failure — clogged oxidiser check valve",
+        "description": "Approximately 152 seconds into the planned 720-second VOI burn, the Orbit Maneuvering Engine throttled off when salt crystal buildup in an oxidiser check valve disrupted the propellant mix and caused asymmetric thrust + attitude tumble. Akatsuki sailed past Venus into solar orbit. Recovery plan: keep the spacecraft alive in solar orbit until the next Venus encounter window (2015 or 2016), then attempt VOI again using the attitude-control thrusters."
+      },
+      {
+        "met_days": 1000,
+        "type": "phasing",
+        "label": "Solar-orbit hold maneuvers",
+        "description": "Twelve correction maneuvers during the 5-year solar-orbit hold to re-phase the heliocentric trajectory for a 2015 Venus re-encounter. The main OME was tested in 2011 and found permanently damaged; planning shifted entirely to RCS-thruster-based VOI."
+      },
+      {
+        "met_days": 2027,
+        "type": "arrival",
+        "label": "Venus approach (second attempt)",
+        "description": "2015-12-07 — five years and one day after the first attempt. Akatsuki arrives at Venus again."
+      },
+      {
+        "met_days": 2027.005,
+        "type": "edl_or_oi",
+        "label": "Venus orbit insertion — RCS recovery",
+        "description": "1228-second burn using four attitude-control thrusters (originally rated for ~50 m/s ∆v; ran 244 m/s) placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination prograde orbit. JAXA confirmed VOI-R2 success the following day. The recovery is one of the most dramatic mission-saves in spaceflight history. Akatsuki has since mapped Venus's UV/IR cloud features, confirmed bow-shaped gravity waves above Aphrodite Terra, and provided continuous super-rotation tracking — currently the only active Venus orbiter."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "venus",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 3,
+      "waypoints_helio_au": [
+        [
+          0,
+          -0.536463,
+          0,
+          -0.843924
+        ],
+        [
+          30,
+          -0.498257,
+          0,
+          -0.866127
+        ],
+        [
+          42.9971,
+          -0.481375,
+          0,
+          -0.874845
+        ],
+        [
+          64.4956,
+          -0.453341,
+          0,
+          -0.888951
+        ],
+        [
+          85.9942,
+          -0.424806,
+          0,
+          -0.901397
+        ],
+        [
+          107.4927,
+          -0.39602,
+          0,
+          -0.912807
+        ],
+        [
+          120,
+          -0.379168,
+          0,
+          -0.919009
+        ],
+        [
+          150.4898,
+          -0.337718,
+          0,
+          -0.932125
+        ],
+        [
+          171.9883,
+          -0.308269,
+          0,
+          -0.939821
+        ],
+        [
+          201.005,
+          -0.268334,
+          0,
+          -0.948373
+        ],
+        [
+          214.9854,
+          -0.249036,
+          0,
+          -0.951754
+        ],
+        [
+          236.4839,
+          -0.219331,
+          0,
+          -0.955699
+        ],
+        [
+          257.9825,
+          -0.189621,
+          0,
+          -0.958686
+        ],
+        [
+          279.481,
+          -0.159948,
+          0,
+          -0.96025
+        ],
+        [
+          300.9795,
+          -0.130376,
+          0,
+          -0.960489
+        ],
+        [
+          322.4781,
+          -0.100898,
+          0,
+          -0.959792
+        ],
+        [
+          343.9766,
+          -0.071582,
+          0,
+          -0.957808
+        ],
+        [
+          365.4751,
+          -0.042507,
+          0,
+          -0.954455
+        ],
+        [
+          386.9737,
+          -0.013617,
+          0,
+          -0.950208
+        ],
+        [
+          408.4722,
+          0.015016,
+          0,
+          -0.944824
+        ],
+        [
+          429.9708,
+          0.043264,
+          0,
+          -0.93806
+        ],
+        [
+          451.4693,
+          0.071248,
+          0,
+          -0.93046
+        ],
+        [
+          472.9678,
+          0.098907,
+          0,
+          -0.921879
+        ],
+        [
+          494.4664,
+          0.126039,
+          0,
+          -0.911939
+        ],
+        [
+          515.9649,
+          0.152838,
+          0,
+          -0.901234
+        ],
+        [
+          537.4634,
+          0.179271,
+          0,
+          -0.889705
+        ],
+        [
+          558.962,
+          0.205041,
+          0,
+          -0.876867
+        ],
+        [
+          580.4605,
+          0.230421,
+          0,
+          -0.863344
+        ],
+        [
+          601.9591,
+          0.25541,
+          0,
+          -0.849138
+        ],
+        [
+          623.4576,
+          0.27962,
+          0,
+          -0.833725
+        ],
+        [
+          644.9561,
+          0.303389,
+          0,
+          -0.8177
+        ],
+        [
+          666.4547,
+          0.326723,
+          0,
+          -0.801079
+        ],
+        [
+          687.9532,
+          0.349253,
+          0,
+          -0.783464
+        ],
+        [
+          709.4517,
+          0.371261,
+          0,
+          -0.765272
+        ],
+        [
+          730.9503,
+          0.3928,
+          0,
+          -0.746572
+        ],
+        [
+          752.4488,
+          0.413534,
+          0,
+          -0.727078
+        ],
+        [
+          773.9474,
+          0.433669,
+          0,
+          -0.707057
+        ],
+        [
+          795.4459,
+          0.453311,
+          0,
+          -0.686618
+        ],
+        [
+          816.9444,
+          0.472165,
+          0,
+          -0.665565
+        ],
+        [
+          838.443,
+          0.490348,
+          0,
+          -0.644051
+        ],
+        [
+          859.9415,
+          0.508021,
+          0,
+          -0.622206
+        ],
+        [
+          881.4401,
+          0.524938,
+          0,
+          -0.599907
+        ],
+        [
+          902.9386,
+          0.541119,
+          0,
+          -0.577225
+        ],
+        [
+          924.4371,
+          0.55678,
+          0,
+          -0.554294
+        ],
+        [
+          945.9357,
+          0.571726,
+          0,
+          -0.531046
+        ],
+        [
+          967.4342,
+          0.585874,
+          0,
+          -0.507502
+        ],
+        [
+          988.9327,
+          0.599499,
+          0,
+          -0.483785
+        ],
+        [
+          1000,
+          0.60617,
+          0,
+          -0.471471
+        ],
+        [
+          1031.9298,
+          0.624562,
+          0,
+          -0.435739
+        ],
+        [
+          1053.4284,
+          0.636142,
+          0,
+          -0.411511
+        ],
+        [
+          1074.9269,
+          0.647109,
+          0,
+          -0.387173
+        ],
+        [
+          1096.4254,
+          0.657169,
+          0,
+          -0.362722
+        ],
+        [
+          1117.924,
+          0.666705,
+          0,
+          -0.338231
+        ],
+        [
+          1139.4225,
+          0.675684,
+          0,
+          -0.313701
+        ],
+        [
+          1160.921,
+          0.683706,
+          0,
+          -0.289153
+        ],
+        [
+          1182.4196,
+          0.691208,
+          0,
+          -0.264618
+        ],
+        [
+          1203.9181,
+          0.698189,
+          0,
+          -0.240099
+        ],
+        [
+          1225.4167,
+          0.704202,
+          0,
+          -0.21565
+        ],
+        [
+          1246.9152,
+          0.70968,
+          0,
+          -0.191261
+        ],
+        [
+          1268.4137,
+          0.71464,
+          0,
+          -0.166934
+        ],
+        [
+          1289.9123,
+          0.71869,
+          0,
+          -0.142746
+        ],
+        [
+          1311.4108,
+          0.722156,
+          0,
+          -0.118666
+        ],
+        [
+          1332.9093,
+          0.725107,
+          0,
+          -0.094687
+        ],
+        [
+          1354.4079,
+          0.727206,
+          0,
+          -0.070895
+        ],
+        [
+          1375.9064,
+          0.728671,
+          0,
+          -0.047262
+        ],
+        [
+          1397.405,
+          0.729625,
+          0,
+          -0.02376
+        ],
+        [
+          1418.9035,
+          0.729782,
+          0,
+          -0.00048
+        ],
+        [
+          1440.402,
+          0.729258,
+          0,
+          0.022595
+        ],
+        [
+          1461.9006,
+          0.728225,
+          0,
+          0.045511
+        ],
+        [
+          1483.3991,
+          0.726451,
+          0,
+          0.068185
+        ],
+        [
+          1504.8977,
+          0.723948,
+          0,
+          0.090607
+        ],
+        [
+          1526.3962,
+          0.720939,
+          0,
+          0.112848
+        ],
+        [
+          1547.8947,
+          0.717245,
+          0,
+          0.134838
+        ],
+        [
+          1569.3933,
+          0.712775,
+          0,
+          0.156529
+        ],
+        [
+          1590.8918,
+          0.707802,
+          0,
+          0.178021
+        ],
+        [
+          1612.3903,
+          0.702201,
+          0,
+          0.19926
+        ],
+        [
+          1633.8889,
+          0.695778,
+          0,
+          0.220155
+        ],
+        [
+          1655.3874,
+          0.688858,
+          0,
+          0.240836
+        ],
+        [
+          1676.886,
+          0.681365,
+          0,
+          0.261267
+        ],
+        [
+          1698.3845,
+          0.67301,
+          0,
+          0.281309
+        ],
+        [
+          1719.883,
+          0.664164,
+          0,
+          0.301122
+        ],
+        [
+          1741.3816,
+          0.654803,
+          0,
+          0.320695
+        ],
+        [
+          1762.8801,
+          0.644543,
+          0,
+          0.339831
+        ],
+        [
+          1784.3786,
+          0.633801,
+          0,
+          0.358725
+        ],
+        [
+          1805.8772,
+          0.622577,
+          0,
+          0.377376
+        ],
+        [
+          1827.3757,
+          0.610473,
+          0,
+          0.395568
+        ],
+        [
+          1848.8743,
+          0.597875,
+          0,
+          0.413491
+        ],
+        [
+          1870.3728,
+          0.584808,
+          0,
+          0.431158
+        ],
+        [
+          1891.8713,
+          0.570932,
+          0,
+          0.448366
+        ],
+        [
+          1913.3699,
+          0.556531,
+          0,
+          0.465263
+        ],
+        [
+          1934.8684,
+          0.541676,
+          0,
+          0.481889
+        ],
+        [
+          1956.3669,
+          0.526088,
+          0,
+          0.498058
+        ],
+        [
+          1977.8655,
+          0.509951,
+          0,
+          0.51387
+        ],
+        [
+          1999.364,
+          0.493382,
+          0,
+          0.529393
+        ],
+        [
+          2027.005,
+          0.47116,
+          0,
+          0.548829
+        ],
+        [
+          2042.3611,
+          0.463519,
+          0,
+          0.555298
+        ],
+        [
+          2063.8596,
+          0.463519,
+          0,
+          0.555298
+        ],
+        [
+          2085.3582,
+          0.463519,
+          0,
+          0.555298
+        ],
+        [
+          2106.8567,
+          0.463519,
+          0,
+          0.555298
+        ],
+        [
+          2128.3553,
+          0.463519,
+          0,
+          0.555298
+        ]
+      ]
+    }
+  }
+}

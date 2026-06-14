@@ -117,9 +117,11 @@ const FALLBACK_LADDER: Record<string, string[]> = {
   // Missions whose iconic imagery already lives in the surface-site
   // gallery (e.g. Mars rovers/landers/orbiters whose hero is the
   // surface site itself — Spirit's Gusev pan, Phoenix's polar ice)
-  // resolve via the surface gallery rather than duplicating bytes.
-  // Symmetric with the surface → missions ladder above.
-  missions: ['mars-sites', 'moon-sites'],
+  // or in the fleet spacecraft gallery (e.g. Magellan, Akatsuki —
+  // single-spacecraft Venus orbiters where the fleet hero IS the
+  // mission hero) resolve via the surface/fleet gallery rather than
+  // duplicating bytes. Symmetric with the surface → missions ladder.
+  missions: ['mars-sites', 'moon-sites', 'fleet-galleries'],
 };
 
 function heroExistsOnAnyFallback(imageDir: string, id: string): boolean {

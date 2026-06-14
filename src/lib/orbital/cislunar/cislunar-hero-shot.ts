@@ -78,9 +78,52 @@ export const MOON_COMPOSITION: MoonComposition = {
   targetBias: 0,
 };
 
-/** Cislunar event types that trigger the hero shot. Same union as
- *  the FlightEventType set the cislunar mission JSONs ship. */
-export type CislunarHeroEventType = 'loi' | 'tei' | 'descent_start' | 'ascent';
+/** Apollo-8-earthrise composition for a free-return swing-by. The
+ *  ship arcs above the lunar limb on a hyperbolic free-return; the
+ *  camera composes from above-and-behind so the Moon limb fills the
+ *  lower-third and Earth (out of frame) is implied by the limb's
+ *  curvature direction. Higher pitch (35°) lifts camera off the
+ *  orbital plane; 60° side angle keeps the ship visible against the
+ *  limb instead of dead-behind. targetBias 0.4 — the ship sits ~40 %
+ *  of the way from Moon to its own position, so neither dominates. */
+const HERO_FLYBY_SIDE = (60 * Math.PI) / 180;
+const HERO_FLYBY_PITCH = (35 * Math.PI) / 180;
+export const MOON_COMPOSITION_FLYBY: MoonComposition = {
+  camRMultiplier: 5.0,
+  sideAngleRad: HERO_FLYBY_SIDE,
+  pitchRad: HERO_FLYBY_PITCH,
+  targetBias: 0.4,
+};
+
+/** Direct-impact / powered-descent composition. Luna 9, Luna 16
+ *  descent, Chandrayaan-3 descent. Camera pulled closer (camR 3) so
+ *  the surface fills more of the frame; lower pitch (10°) and
+ *  smaller side angle (45°) put the camera near the descent vector
+ *  so the audience reads the geometry as "ship coming in toward
+ *  surface." targetBias 0.5 keeps both ship + landing spot visible. */
+const HERO_IMPACT_SIDE = (45 * Math.PI) / 180;
+const HERO_IMPACT_PITCH = (10 * Math.PI) / 180;
+export const MOON_COMPOSITION_IMPACT: MoonComposition = {
+  camRMultiplier: 3.0,
+  sideAngleRad: HERO_IMPACT_SIDE,
+  pitchRad: HERO_IMPACT_PITCH,
+  targetBias: 0.5,
+};
+
+/** Cislunar event types that trigger the hero shot. Apollo-style
+ *  missions use loi/tei/descent_start/ascent (the original four).
+ *  Free-return missions (Apollo 13) use flyby. Direct landers
+ *  (Luna 9) + powered-descent landers (Luna 16, Chandrayaan-3) use
+ *  edl_or_oi. SLIM + Chandrayaan-1 use the generic arrival type for
+ *  their LOI moment — same composition as the original loi. */
+export type CislunarHeroEventType =
+  | 'loi'
+  | 'tei'
+  | 'descent_start'
+  | 'ascent'
+  | 'flyby'
+  | 'edl_or_oi'
+  | 'arrival';
 
 /** How many sim-days BEFORE the peak MET to compose the iconic
  *  frame. Mirrors PlanetComposition.iconicLeadDays. Per-event so
@@ -90,6 +133,21 @@ export const CISLUNAR_HERO_LEAD_DAYS: Record<CislunarHeroEventType, number> = {
   tei: 0,
   descent_start: 0.1, // just above the surface as ship descends
   ascent: -0.1, // just after liftoff (negative = sample AFTER peak)
+  flyby: 0, // Apollo 13 free-return apogee — capture the lunar limb at peak
+  edl_or_oi: 0.05, // Luna 9 impact / Luna 16 descent — moment before contact
+  arrival: 0, // SLIM / Chandrayaan-1 LOI — same as loi
+};
+
+/** Per-event composition pick. Returns the MoonComposition variant
+ *  best matched to each event's narrative beat. */
+export const CISLUNAR_HERO_COMPOSITION: Record<CislunarHeroEventType, MoonComposition> = {
+  loi: MOON_COMPOSITION,
+  tei: MOON_COMPOSITION,
+  descent_start: MOON_COMPOSITION,
+  ascent: MOON_COMPOSITION,
+  flyby: MOON_COMPOSITION_FLYBY,
+  edl_or_oi: MOON_COMPOSITION_IMPACT,
+  arrival: MOON_COMPOSITION,
 };
 
 export interface CislunarHeroContext {
@@ -154,7 +212,13 @@ export interface CislunarHeroShotPlan {
  * sample and skip the hero shot).
  */
 export function planCislunarHeroShot(ctx: CislunarHeroContext): CislunarHeroShotPlan | null {
-  const composition = ctx.composition ?? MOON_COMPOSITION;
+  // Composition pick: explicit override > per-event-type default >
+  // generic MOON_COMPOSITION fallback. The per-type lookup matches
+  // each event's narrative beat — free-return flyby gets the limb
+  // arc, impact gets the descent-toward-surface tightness, loi/tei/
+  // descent_start/ascent stay on the Apollo-8 earthrise default.
+  const composition =
+    ctx.composition ?? CISLUNAR_HERO_COMPOSITION[ctx.eventType] ?? MOON_COMPOSITION;
   const leadDays = CISLUNAR_HERO_LEAD_DAYS[ctx.eventType];
   const iconicMet = ctx.peakMet - leadDays;
 
@@ -230,7 +294,21 @@ export function findActiveCislunarHero(
 ): ActiveCislunarHero | null {
   for (const e of events) {
     const t = e.type;
-    if (t !== 'loi' && t !== 'tei' && t !== 'descent_start' && t !== 'ascent') continue;
+    // Widened from the original four (loi/tei/descent_start/ascent)
+    // to also cover free-return swing-bys (Apollo 13: type=flyby),
+    // impact / powered-descent landers (Luna 9, Luna 16, Chandrayaan-3:
+    // type=edl_or_oi), and missions that use the generic 'arrival'
+    // type for their lunar-orbit moment (SLIM, Chandrayaan-1).
+    if (
+      t !== 'loi' &&
+      t !== 'tei' &&
+      t !== 'descent_start' &&
+      t !== 'ascent' &&
+      t !== 'flyby' &&
+      t !== 'edl_or_oi' &&
+      t !== 'arrival'
+    )
+      continue;
     if (e.met_days == null) continue;
     const eventSimDay = depDay + e.met_days;
     const delta = simDay - eventSimDay;

@@ -28,6 +28,7 @@
       "t": "deep"
     }
   ],
+  "linked_missions": ["opportunity"],
   "linked_sites": [
     {
       "type": "mars",

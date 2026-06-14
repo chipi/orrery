@@ -978,5 +978,45 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": false
+  },
+  {
+    "id": "mariner9",
+    "agency": "NASA",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "spirit",
+    "agency": "NASA",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "opportunity",
+    "agency": "NASA",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "phoenix",
+    "agency": "NASA",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 2007,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
   }
 ]

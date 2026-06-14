@@ -1,0 +1,15 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · FLOWN",
+  "first": "First of the Mars Exploration Rover twins; longest-lived rover until passed by Curiosity",
+  "description": "Spirit (MER-A) bounced 28 times across the floor of Gusev Crater on 2004-01-04 and rolled to a stop 250 m from its first impact. Designed for a 90-sol primary mission, it would survive 2,210 sols. Drove 7.7 km across Gusev's plains, climbed the Columbia Hills, and uncovered hematite-bearing rocks that signalled persistent ancient water. In 2009-04 a wheel broke through a sulphate crust at \"Troy\" and Spirit ground to a halt in soft soil; the team converted it to a stationary platform. Final transmission 2010-03-22; mission declared ended 2011-05-25. Twinned with Opportunity, which landed three weeks later on the opposite side of Mars.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Delta II 7925 from Cape Canaveral LC-17A.", "type": "nominal" },
+    { "met": 15, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 200, "label": "TCM-4", "note": "Final pre-EDL trim.", "type": "nominal" },
+    { "met": 208, "label": "EDL", "note": "Heat shield, parachute, retro-rockets, airbags — 6 minutes of hell into Gusev Crater.", "type": "info" },
+    { "met": 208.01, "label": "TOUCHDOWN", "note": "Bounced 28 times. Rolled to rest at 14.57°S, 175.47°E.", "type": "info" },
+    { "met": 1990, "label": "STUCK AT TROY", "note": "Wheel breaks through sulphate crust; rover bogs down in soft soil. 2009-04.", "type": "warning" },
+    { "met": 2271, "label": "FINAL TRANSMISSION", "note": "2010-03-22. Mission declared ended 2011-05-25.", "type": "warning" }
+  ]
+}

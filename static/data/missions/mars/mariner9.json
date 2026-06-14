@@ -1,0 +1,720 @@
+{
+  "id": "mariner9",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 1971,
+  "status": "FLOWN",
+  "departure_date": "1971-05-30",
+  "arrival_date": "1971-11-14",
+  "transit_days": 168,
+  "vehicle": "Atlas SLV-3C Centaur",
+  "payload": "974 kg (incl. 449 kg propellant)",
+  "delta_v": "~1.6 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL — public domain. First spacecraft to orbit another planet. Imaged ~80% of Mars after a global dust storm cleared.",
+  "links": [
+    {
+      "l": "Mariner 9 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_9",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 9 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-051A",
+      "t": "core"
+    },
+    {
+      "l": "Mariner Mars 1971 Project Final Report (JPL)",
+      "u": "https://ntrs.nasa.gov/citations/19740007301",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "mariner-9",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur D-1A upper stage",
+      "c3_km2_s2": 13.6,
+      "mass_at_tli_kg": 974,
+      "source": "JPL Mariner Mars 1971 Project Final Report; NASA Mariner 9 Press Kit (1971-05)"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "JPL Mariner Mars 1971 Project Final Report; TCM-1 at L+5d, TCM-2 at L+98d"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.4,
+      "periapsis_km": 1398,
+      "inclination_deg": 64.4,
+      "orbit_insertion_dv_km_s": 1.4,
+      "source": "JPL Mariner Mars 1971 Project Final Report; MOI 1971-11-14, 1398 × 17,917 km initial orbit, 64.4° inclination"
+    },
+    "totals": {
+      "total_dv_km_s": 1.6,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "JPL Mariner Mars 1971 Project Final Report; Centaur delivered TMI, spacecraft delta-v reserved for MOI + trim"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Atlas SLV-3C / Centaur",
+        "description": "Cape Canaveral LC-36B, 1971-05-30. Twin to Mariner 8 (lost in the Atlantic three weeks earlier when its Centaur failed). Mariner 9 alone carried the orbital science load originally split across the pair — a single spacecraft to map the entire planet from orbit, the first attempt of its kind."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Centaur D-1A upper stage burn places Mariner 9 on a 167-day Type-I transfer to Mars."
+      },
+      {
+        "met_days": 5,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction, removing the launch dispersion."
+      },
+      {
+        "met_days": 98,
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Final approach trim. Pin-targeting the periapsis pass for the MOI burn."
+      },
+      {
+        "met_days": 168,
+        "type": "arrival",
+        "label": "Mars approach",
+        "description": "1971-11-14. Mariner 9 closed on Mars to find the entire planet shrouded in the largest global dust storm in recorded observation — only the four Tharsis volcano summits poked through the haze."
+      },
+      {
+        "met_days": 168.005,
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion — first ever",
+        "description": "15-minute solid-motor burn at 00:18 UT 1971-11-14 placed Mariner 9 into a 1398 × 17,917 km, 64.4°-inclination orbit — the first spacecraft of any nation to orbit another planet, beating Soviet Mars 2 by 13 days. The storm cleared by January; over the next 11 months Mariner 9 returned 7,329 images covering ~80% of the Martian surface, discovering Olympus Mons (the largest volcano in the solar system), Valles Marineris (the canyon system that bears its name), and the first close-ups of Phobos + Deimos."
+      },
+      {
+        "met_days": 515,
+        "type": "anomaly",
+        "label": "End of mission",
+        "description": "1972-10-27. Mariner 9 ran out of attitude-control gas. Powered down in a parking orbit it remains in today — expected atmospheric re-entry around 2050."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "mars",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 2,
+      "waypoints_helio_au": [
+        [
+          0,
+          -0.384341,
+          0,
+          -0.923191
+        ],
+        [
+          5,
+          -0.325544,
+          0,
+          -0.953439
+        ],
+        [
+          10.9242,
+          -0.252812,
+          0,
+          -0.986002
+        ],
+        [
+          16.3864,
+          -0.182934,
+          0,
+          -1.012641
+        ],
+        [
+          21.8485,
+          -0.110531,
+          0,
+          -1.035792
+        ],
+        [
+          27.3106,
+          -0.035797,
+          0,
+          -1.055192
+        ],
+        [
+          32.7727,
+          0.041044,
+          0,
+          -1.070554
+        ],
+        [
+          38.2348,
+          0.119741,
+          0,
+          -1.081575
+        ],
+        [
+          43.697,
+          0.200017,
+          0,
+          -1.087942
+        ],
+        [
+          49.1591,
+          0.281566,
+          0,
+          -1.089335
+        ],
+        [
+          54.6212,
+          0.364058,
+          0,
+          -1.085437
+        ],
+        [
+          60.0833,
+          0.447135,
+          0,
+          -1.075941
+        ],
+        [
+          65.5455,
+          0.530413,
+          0,
+          -1.060554
+        ],
+        [
+          71.0076,
+          0.613476,
+          0,
+          -1.038936
+        ],
+        [
+          76.4697,
+          0.69588,
+          0,
+          -1.010878
+        ],
+        [
+          81.9318,
+          0.777167,
+          0,
+          -0.976233
+        ],
+        [
+          87.3939,
+          0.85685,
+          0,
+          -0.934859
+        ],
+        [
+          92.8561,
+          0.934422,
+          0,
+          -0.886672
+        ],
+        [
+          98,
+          1.005076,
+          0,
+          -0.835064
+        ],
+        [
+          103.7803,
+          1.08108,
+          0,
+          -0.76985
+        ],
+        [
+          109.2424,
+          1.149039,
+          0,
+          -0.701391
+        ],
+        [
+          114.7045,
+          1.212637,
+          0,
+          -0.626486
+        ],
+        [
+          120.1667,
+          1.271276,
+          0,
+          -0.545429
+        ],
+        [
+          125.6288,
+          1.32435,
+          0,
+          -0.458607
+        ],
+        [
+          131.0909,
+          1.371257,
+          0,
+          -0.366495
+        ],
+        [
+          136.553,
+          1.411376,
+          0,
+          -0.269642
+        ],
+        [
+          142.0152,
+          1.44406,
+          0,
+          -0.168683
+        ],
+        [
+          147.4773,
+          1.46888,
+          0,
+          -0.064432
+        ],
+        [
+          152.9394,
+          1.485359,
+          0,
+          0.04229
+        ],
+        [
+          158.4015,
+          1.493091,
+          0,
+          0.150591
+        ],
+        [
+          163.8636,
+          1.491745,
+          0,
+          0.259525
+        ],
+        [
+          168.005,
+          1.484795,
+          0,
+          0.341939
+        ],
+        [
+          174.7879,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          180.25,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          185.7121,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          191.1742,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          196.6364,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          202.0985,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          207.5606,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          213.0227,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          218.4848,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          223.947,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          229.4091,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          234.8712,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          240.3333,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          245.7955,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          251.2576,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          256.7197,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          262.1818,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          267.6439,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          273.1061,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          278.5682,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          284.0303,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          289.4924,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          294.9545,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          300.4167,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          305.8788,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          311.3409,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          316.803,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          322.2652,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          327.7273,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          333.1894,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          338.6515,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          344.1136,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          349.5758,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          355.0379,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          360.5,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          365.9621,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          371.4242,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          376.8864,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          382.3485,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          387.8106,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          393.2727,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          398.7348,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          404.197,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          409.6591,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          415.1212,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          420.5833,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          426.0455,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          431.5076,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          436.9697,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          442.4318,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          447.8939,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          453.3561,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          458.8182,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          464.2803,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          469.7424,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          475.2045,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          480.6667,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          486.1288,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          491.5909,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          497.053,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          502.5152,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          507.9773,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          515,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          518.9015,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          524.3636,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          529.8258,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          535.2879,
+          1.483232,
+          0,
+          0.348657
+        ],
+        [
+          540.75,
+          1.483232,
+          0,
+          0.348657
+        ]
+      ]
+    }
+  }
+}

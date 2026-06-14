@@ -1,0 +1,739 @@
+{
+  "id": "phoenix",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory / University of Arizona",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2007,
+  "status": "FLOWN",
+  "departure_date": "2007-08-04",
+  "arrival_date": "2008-05-25",
+  "transit_days": 295,
+  "vehicle": "Delta II 7925-9.5",
+  "payload": "670 kg launch mass (350 kg landed mass)",
+  "delta_v": "~5.7 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL-Caltech / University of Arizona — public domain. Confirmed water ice in the Martian arctic regolith. Mission ended 2008-11-02 as solar power fell below operations threshold at the onset of Mars winter.",
+  "links": [
+    {
+      "l": "Phoenix (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Phoenix (NASA)",
+      "u": "https://science.nasa.gov/mission/phoenix/",
+      "t": "intro"
+    },
+    {
+      "l": "Phoenix (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "phoenix",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Star 48B PAM-D solid upper stage",
+      "c3_km2_s2": 10.6,
+      "mass_at_tli_kg": 670,
+      "source": "NASA Phoenix Press Kit (2007-07); JPL Phoenix Mission Plan"
+    },
+    "cruise": {
+      "tcm_count": 6,
+      "source": "JPL Phoenix Mission Operations Report; six TCMs (TCM-1..6)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 3.04,
+      "entry_velocity_km_s": 5.59,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "JPL Phoenix EDL Reconstruction (2008); direct atmospheric entry"
+    },
+    "totals": {
+      "total_dv_km_s": 5.7,
+      "tli_or_tmi_dv_km_s": 3.8,
+      "source": "NASA Phoenix Press Kit (2007-07)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Delta II 7925",
+        "description": "Cape Canaveral LC-17A, 2007-08-04. Phoenix was salvaged from the cancelled Mars Surveyor 2001 lander program — flight hardware put in storage for six years, reassembled, retargeted to the Martian north polar plains. The name was chosen literally."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "PAM-D solid upper-stage burn places Phoenix on a 295-day Type-II transfer to Mars."
+      },
+      {
+        "met_days": 7,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
+      },
+      {
+        "met_days": 65,
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 145,
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 220,
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 287,
+        "type": "tcm",
+        "label": "TCM-5",
+        "description": "Approach trim toward the Vastitas Borealis target ellipse."
+      },
+      {
+        "met_days": 294,
+        "type": "tcm",
+        "label": "TCM-6 — final pre-EDL",
+        "description": "Last trim 21 hours before atmospheric entry."
+      },
+      {
+        "met_days": 295,
+        "type": "arrival",
+        "label": "Mars approach + cruise-stage separation",
+        "description": "2008-05-25. Cruise stage jettisoned 7 minutes before entry; backshell + heat shield + lander entered the atmosphere at 5.59 km/s — the first soft propulsive landing on Mars since Viking 2 in 1976."
+      },
+      {
+        "met_days": 295.005,
+        "type": "edl_or_oi",
+        "label": "Mars EDL — propulsive landing on Vastitas Borealis",
+        "description": "Heritage Viking-style EDL: aeroshell, supersonic parachute, then twelve hydrazine retrorockets that throttled the lander down to 2.4 m/s touchdown velocity at 68.22°N, 234.25°E — further north than any prior Mars surface mission. Within days the robotic arm scraped through topsoil and exposed bright white ice that visibly sublimated on camera over four sols — the first direct confirmation of water ice in the Martian arctic regolith. Mission ended 2008-11-02 as solar power fell below operational threshold at the onset of Mars winter; the lander was never expected to survive the polar night."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "mars",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 6,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.672167,
+          0,
+          -0.740399
+        ],
+        [
+          3.1288,
+          0.698911,
+          0,
+          -0.711688
+        ],
+        [
+          7,
+          0.730794,
+          0,
+          -0.675407
+        ],
+        [
+          9.3865,
+          0.749904,
+          0,
+          -0.6527
+        ],
+        [
+          12.5154,
+          0.773464,
+          0,
+          -0.62206
+        ],
+        [
+          15.6442,
+          0.796076,
+          0,
+          -0.590905
+        ],
+        [
+          18.773,
+          0.817826,
+          0,
+          -0.559291
+        ],
+        [
+          21.9019,
+          0.838096,
+          0,
+          -0.526931
+        ],
+        [
+          25.0307,
+          0.857299,
+          0,
+          -0.494072
+        ],
+        [
+          28.1596,
+          0.87561,
+          0,
+          -0.460806
+        ],
+        [
+          31.2884,
+          0.892489,
+          0,
+          -0.426919
+        ],
+        [
+          34.4172,
+          0.908177,
+          0,
+          -0.392554
+        ],
+        [
+          37.5461,
+          0.922948,
+          0,
+          -0.357832
+        ],
+        [
+          40.6749,
+          0.93634,
+          0,
+          -0.322597
+        ],
+        [
+          43.8038,
+          0.948412,
+          0,
+          -0.286912
+        ],
+        [
+          46.9326,
+          0.95954,
+          0,
+          -0.250917
+        ],
+        [
+          50.0615,
+          0.969347,
+          0,
+          -0.214508
+        ],
+        [
+          53.1903,
+          0.977701,
+          0,
+          -0.177684
+        ],
+        [
+          56.3191,
+          0.985084,
+          0,
+          -0.140599
+        ],
+        [
+          59.448,
+          0.991209,
+          0,
+          -0.103189
+        ],
+        [
+          62.5768,
+          0.99574,
+          0,
+          -0.065412
+        ],
+        [
+          65,
+          0.998744,
+          0,
+          -0.036045
+        ],
+        [
+          68.8345,
+          1.001614,
+          0,
+          0.010808
+        ],
+        [
+          71.9633,
+          1.002215,
+          0,
+          0.049343
+        ],
+        [
+          75.0922,
+          1.001787,
+          0,
+          0.088034
+        ],
+        [
+          78.221,
+          1.000241,
+          0,
+          0.126889
+        ],
+        [
+          81.3499,
+          0.996799,
+          0,
+          0.165965
+        ],
+        [
+          84.4787,
+          0.9923,
+          0,
+          0.205135
+        ],
+        [
+          87.6075,
+          0.98674,
+          0,
+          0.244395
+        ],
+        [
+          90.7364,
+          0.979163,
+          0,
+          0.283764
+        ],
+        [
+          93.8652,
+          0.970479,
+          0,
+          0.323155
+        ],
+        [
+          96.9941,
+          0.960705,
+          0,
+          0.362564
+        ],
+        [
+          100.1229,
+          0.948974,
+          0,
+          0.401944
+        ],
+        [
+          103.2517,
+          0.935996,
+          0,
+          0.441258
+        ],
+        [
+          106.3806,
+          0.921901,
+          0,
+          0.480504
+        ],
+        [
+          109.5094,
+          0.905917,
+          0,
+          0.519577
+        ],
+        [
+          112.6383,
+          0.888545,
+          0,
+          0.558463
+        ],
+        [
+          115.7671,
+          0.870032,
+          0,
+          0.597181
+        ],
+        [
+          118.896,
+          0.849712,
+          0,
+          0.635576
+        ],
+        [
+          122.0248,
+          0.827863,
+          0,
+          0.673625
+        ],
+        [
+          125.1536,
+          0.804856,
+          0,
+          0.711387
+        ],
+        [
+          128.2825,
+          0.780139,
+          0,
+          0.748675
+        ],
+        [
+          131.4113,
+          0.753762,
+          0,
+          0.78541
+        ],
+        [
+          134.5402,
+          0.726221,
+          0,
+          0.821722
+        ],
+        [
+          137.669,
+          0.697081,
+          0,
+          0.857407
+        ],
+        [
+          140.7978,
+          0.666169,
+          0,
+          0.892281
+        ],
+        [
+          145,
+          0.622597,
+          0,
+          0.938075
+        ],
+        [
+          147.0555,
+          0.600566,
+          0,
+          0.960097
+        ],
+        [
+          150.1844,
+          0.565174,
+          0,
+          0.992492
+        ],
+        [
+          153.3132,
+          0.528653,
+          0,
+          1.024133
+        ],
+        [
+          156.442,
+          0.49082,
+          0,
+          1.054865
+        ],
+        [
+          159.5709,
+          0.451086,
+          0,
+          1.084096
+        ],
+        [
+          162.6997,
+          0.410278,
+          0,
+          1.112381
+        ],
+        [
+          165.8286,
+          0.368332,
+          0,
+          1.139641
+        ],
+        [
+          168.9574,
+          0.324499,
+          0,
+          1.164964
+        ],
+        [
+          172.0863,
+          0.279681,
+          0,
+          1.189139
+        ],
+        [
+          175.2151,
+          0.233882,
+          0,
+          1.212155
+        ],
+        [
+          178.3439,
+          0.186357,
+          0,
+          1.232835
+        ],
+        [
+          181.4728,
+          0.13794,
+          0,
+          1.252113
+        ],
+        [
+          184.6016,
+          0.088671,
+          0,
+          1.270024
+        ],
+        [
+          187.7305,
+          0.038018,
+          0,
+          1.285378
+        ],
+        [
+          190.8593,
+          -0.013432,
+          0,
+          1.298969
+        ],
+        [
+          193.9881,
+          -0.065561,
+          0,
+          1.31099
+        ],
+        [
+          197.117,
+          -0.118692,
+          0,
+          1.320286
+        ],
+        [
+          200.2458,
+          -0.17244,
+          0,
+          1.327437
+        ],
+        [
+          203.3747,
+          -0.226645,
+          0,
+          1.33283
+        ],
+        [
+          206.5035,
+          -0.281442,
+          0,
+          1.3354
+        ],
+        [
+          209.6323,
+          -0.336577,
+          0,
+          1.33544
+        ],
+        [
+          212.7612,
+          -0.391902,
+          0,
+          1.333564
+        ],
+        [
+          215.89,
+          -0.447392,
+          0,
+          1.328848
+        ],
+        [
+          220,
+          -0.520215,
+          0,
+          1.318567
+        ],
+        [
+          222.1477,
+          -0.558158,
+          0,
+          1.311603
+        ],
+        [
+          225.2765,
+          -0.613226,
+          0,
+          1.299199
+        ],
+        [
+          228.4054,
+          -0.667753,
+          0,
+          1.283596
+        ],
+        [
+          231.5342,
+          -0.72182,
+          0,
+          1.265914
+        ],
+        [
+          234.6631,
+          -0.775237,
+          0,
+          1.245627
+        ],
+        [
+          237.7919,
+          -0.82752,
+          0,
+          1.221923
+        ],
+        [
+          240.9208,
+          -0.878985,
+          0,
+          1.196163
+        ],
+        [
+          244.0496,
+          -0.929459,
+          0,
+          1.168044
+        ],
+        [
+          247.1784,
+          -0.978126,
+          0,
+          1.136417
+        ],
+        [
+          250.3073,
+          -1.025617,
+          0,
+          1.102834
+        ],
+        [
+          253.4361,
+          -1.071848,
+          0,
+          1.067213
+        ],
+        [
+          256.565,
+          -1.115554,
+          0,
+          1.028141
+        ],
+        [
+          259.6938,
+          -1.157748,
+          0,
+          0.9873
+        ],
+        [
+          262.8226,
+          -1.198414,
+          0,
+          0.944699
+        ],
+        [
+          265.9515,
+          -1.236009,
+          0,
+          0.899058
+        ],
+        [
+          269.0803,
+          -1.271711,
+          0,
+          0.85182
+        ],
+        [
+          272.2092,
+          -1.305597,
+          0,
+          0.80309
+        ],
+        [
+          275.338,
+          -1.336147,
+          0,
+          0.751978
+        ],
+        [
+          278.4668,
+          -1.364367,
+          0,
+          0.699473
+        ],
+        [
+          281.5957,
+          -1.39055,
+          0,
+          0.645807
+        ],
+        [
+          284.7245,
+          -1.413287,
+          0,
+          0.590444
+        ],
+        [
+          287,
+          -1.428222,
+          0,
+          0.549551
+        ],
+        [
+          290.9822,
+          -1.451138,
+          0,
+          0.476789
+        ],
+        [
+          295.005,
+          -1.469692,
+          0,
+          0.401927
+        ],
+        [
+          297.2399,
+          -1.471497,
+          0,
+          0.395269
+        ],
+        [
+          300.3687,
+          -1.471497,
+          0,
+          0.395269
+        ],
+        [
+          303.4976,
+          -1.471497,
+          0,
+          0.395269
+        ],
+        [
+          306.6264,
+          -1.471497,
+          0,
+          0.395269
+        ],
+        [
+          309.7553,
+          -1.471497,
+          0,
+          0.395269
+        ]
+      ]
+    }
+  }
+}

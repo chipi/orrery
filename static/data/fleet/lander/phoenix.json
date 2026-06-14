@@ -28,6 +28,7 @@
       "t": "deep"
     }
   ],
+  "linked_missions": ["phoenix"],
   "linked_sites": [
     {
       "type": "mars",

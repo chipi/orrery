@@ -389,7 +389,7 @@ async function loadMissionAgency(missionId: string): Promise<string> {
     }
   }
   // Fallbacks for legacy mars2/mars6 not in /missions json.
-  if (missionId === 'mars2' || missionId === 'mars6') return 'ROSCOSMOS';
+  if (missionId === 'mars2' || missionId === 'mars6') return 'Roscosmos';
   return 'NASA';
 }
 
@@ -600,7 +600,11 @@ function defaultRationaleForAgency(agency: string): string {
 
 function agencyForNasaTopup(missionId: string, primary: string): string {
   const extras = MISSION_NASA_CREDIT_EXTRAS[missionId];
-  if (!extras) return 'NASA';
+  // No partner-credit list: honour the mission's actual operator. Was
+  // hard-coding 'NASA' here, which mis-attributed Soviet/Chinese/
+  // Indian missions whose top-up photos came from the NASA Images API
+  // but whose operator owns the credit. (E.g. mars6 → Roscosmos.)
+  if (!extras) return primary;
   // ESA / JAXA / MBRSC partner credits surface for these mission IDs in
   // fetch-assets.ts; reflect that here.
   const bits = [primary, 'NASA'];
@@ -2376,6 +2380,12 @@ async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<
   const out: ProvenanceEntry[] = [];
   const covered = new Set(existing.map((e) => e.path));
   const VARIANT_RE = /\.(16x9|4x3|1x1)\.|-(16x9|4x3|1x1)\./i;
+
+  // Surface default is a last-resort. For each surface we first try
+  // to look up the entity-specific agency from its catalog
+  // (missions/index, fleet-image-sources, earth-objects, moon-sites,
+  // mars-sites) so e.g. missions/luna16 gets "Roscosmos" not "NASA"
+  // and earth-objects/change2 gets "CNSA" not "NASA".
   const SURFACE_AGENCY_DEFAULT: Record<string, string> = {
     missions: 'NASA',
     'fleet-galleries': 'NASA',
@@ -2393,6 +2403,107 @@ async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<
     rockets: 'NASA',
     sun: 'NASA',
   };
+
+  /** Map `surface/entity-id` → real agency name from the catalogs.
+   *  Loaded once per build. Misses fall through to surface default. */
+  const entityAgency: Map<string, string> = new Map();
+  // Mission catalog
+  try {
+    const idx = JSON.parse(await readFile('static/data/missions/index.json', 'utf8')) as Array<{
+      id: string;
+      agency?: string;
+    }>;
+    for (const m of idx) if (m.id && m.agency) entityAgency.set(`missions/${m.id}`, m.agency);
+  } catch {
+    // missing catalog — fall back to surface default
+  }
+  // Fleet — fleet-image-sources gives per-slot agency; aggregate by id
+  try {
+    const fleet = JSON.parse(
+      await readFile('static/data/fleet-image-sources.json', 'utf8'),
+    ) as Record<string, { agency?: string; credit?: string }>;
+    const HUMAN: Record<string, string> = {
+      NASA: 'NASA',
+      ROSCOSMOS: 'Roscosmos',
+      ESA: 'ESA',
+      JAXA: 'JAXA',
+      CNSA: 'CNSA',
+      CMSA: 'CMSA',
+      ISRO: 'ISRO',
+      SPACEX: 'SpaceX',
+      BLUE_ORIGIN: 'Blue Origin',
+      BOEING: 'Boeing',
+      NORTHROP_GRUMMAN: 'Northrop Grumman',
+      ULA: 'United Launch Alliance',
+      ISPACE: 'ispace',
+      INTUITIVE_MACHINES: 'Intuitive Machines',
+      SPACEIL: 'SpaceIL',
+      MULTI: 'Multi-agency',
+    };
+    for (const [relPath, src] of Object.entries(fleet)) {
+      const id = relPath.split('/')[0];
+      const key = `fleet-galleries/${id}`;
+      if (entityAgency.has(key)) continue;
+      const a = src.credit ?? (src.agency ? (HUMAN[src.agency] ?? src.agency) : null);
+      if (a) entityAgency.set(key, a);
+    }
+  } catch {
+    // missing catalog — fall back
+  }
+  // Earth objects (agencies is an array; take first)
+  try {
+    const eo = JSON.parse(await readFile('static/data/earth-objects.json', 'utf8')) as Array<{
+      id: string;
+      agencies?: string[];
+    }>;
+    for (const o of eo)
+      if (o.id && o.agencies?.[0]) entityAgency.set(`earth-objects/${o.id}`, o.agencies[0]);
+  } catch {
+    // missing catalog
+  }
+  // Moon sites
+  try {
+    const ms = JSON.parse(await readFile('static/data/moon-sites.json', 'utf8')) as Array<{
+      id: string;
+      agency?: string;
+    }>;
+    const HUMAN: Record<string, string> = {
+      NASA: 'NASA',
+      ROSCOSMOS: 'Roscosmos',
+      ESA: 'ESA',
+      JAXA: 'JAXA',
+      CNSA: 'CNSA',
+      ISRO: 'ISRO',
+      SPACEX: 'SpaceX',
+      SPACEIL: 'SpaceIL',
+      ISPACE: 'ispace',
+    };
+    for (const m of ms)
+      if (m.id && m.agency) entityAgency.set(`moon-sites/${m.id}`, HUMAN[m.agency] ?? m.agency);
+  } catch {
+    // missing
+  }
+  // Mars sites
+  try {
+    const ms = JSON.parse(await readFile('static/data/mars-sites.json', 'utf8')) as Array<{
+      id: string;
+      agency?: string;
+    }>;
+    const HUMAN: Record<string, string> = {
+      NASA: 'NASA',
+      ROSCOSMOS: 'Roscosmos',
+      ESA: 'ESA',
+      JAXA: 'JAXA',
+      CNSA: 'CNSA',
+      ISRO: 'ISRO',
+      'UAE Space Agency': 'MBRSC (UAE Space Agency)',
+      MBRSC: 'MBRSC (UAE Space Agency)',
+    };
+    for (const m of ms)
+      if (m.id && m.agency) entityAgency.set(`mars-sites/${m.id}`, HUMAN[m.agency] ?? m.agency);
+  } catch {
+    // missing
+  }
   async function walk(dir: string): Promise<string[]> {
     const acc: string[] = [];
     let entries;
@@ -2415,7 +2526,12 @@ async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<
     if (covered.has(served)) continue;
     const segments = served.split('/');
     const surface = segments[2] ?? 'unknown';
-    const agency = SURFACE_AGENCY_DEFAULT[surface] ?? 'NASA';
+    const entityId = segments[3] ?? '';
+    // Prefer the entity-specific agency (catalog lookup) over the
+    // surface default — fixes attribution for non-NASA missions/fleet
+    // entries that the walker would otherwise label "NASA" wholesale.
+    const agency =
+      entityAgency.get(`${surface}/${entityId}`) ?? SURFACE_AGENCY_DEFAULT[surface] ?? 'NASA';
     const license = defaultLicenseForAgency(agency);
     const rationale = defaultRationaleForAgency(agency);
     const idDescriptor = segments.slice(3, -1).join('/') || segments[segments.length - 1];

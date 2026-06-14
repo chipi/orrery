@@ -1,67 +1,4 @@
 {
-  "moon-sites/beresheet/01": {
-    "commons_file": "Beresheet model on Habima Square 20190222 01.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Beresheet%20model%20on%20Habima%20Square%2020190222%2001.jpg",
-    "credit": "SpaceIL",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/change1/01": {
-    "commons_file": "Birth of change1.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Birth%20of%20change1.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/change2/01": {
-    "commons_file": "Birth of change2.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Birth%20of%20change2.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/luna16/01": {
-    "commons_file": "The Soviet Union 1970 CPA 3951 stamp (Luna 16 in Flight (1970.09.12)).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201970%20CPA%203951%20stamp%20(Luna%2016%20in%20Flight%20(1970.09.12)).jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/luna21/01": {
-    "commons_file": "Luna 21.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Luna%2021.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/lunar-prospector/01": {
-    "commons_file": "Lunar Prospector orbiter.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunar%20Prospector%20orbiter.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "moon-sites/smart-1/01": {
-    "commons_file": "Smart Hashtag 1 IMG 7328.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Smart%20Hashtag%201%20IMG%207328.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "mars-sites/mars3-orbiter/01": {
-    "commons_file": "Viking 2 Landing Site B NASA Image 807A32.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Viking%202%20Landing%20Site%20B%20NASA%20Image%20807A32.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
-  "mars-sites/zhurong/01": {
-    "commons_file": "Zhurong rover mockup at CSTM 01.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Zhurong%20rover%20mockup%20at%20CSTM%2001.jpg",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
-  },
   "earth-objects/change1/01": {
     "commons_file": "Birth of change1.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Birth%20of%20change1.jpg",
@@ -76,19 +13,33 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
-  "earth-objects/lunar-prospector/01": {
-    "commons_file": "Lunar Prospector orbiter.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunar%20Prospector%20orbiter.jpg",
-    "credit": "NASA",
+  "earth-objects/change2/02": {
+    "commons_file": "Chang'e 4 Lander Coordinates (LROC1087 - content M1298916428LR 1100p arrows).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20M1298916428LR%201100p%20arrows).png",
+    "credit": "CNSA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
-  "earth-objects/smart-1/01": {
-    "commons_file": "Smart Hashtag 1 IMG 7328.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Smart%20Hashtag%201%20IMG%207328.jpg",
-    "credit": "ESA",
+  "earth-objects/change2/03": {
+    "commons_file": "Chang'e 4 Lander Coordinates (LROC1087 - content CE4 Locator Figure).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20CE4%20Locator%20Figure).png",
+    "credit": "CNSA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "earth-objects/change2/04": {
+    "commons_file": "Mandel zoom 11 satellite double spiral.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mandel%20zoom%2011%20satellite%20double%20spiral.jpg",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "earth-objects/change2/05": {
+    "commons_file": "Hitching a lift on a satellite 2.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hitching%20a%20lift%20on%20a%20satellite%202.jpg",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "earth-objects/goes/01": {
     "commons_file": "Monument Bento de Góis Vila Franca.jpg",
@@ -125,6 +76,20 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
+  "earth-objects/luna10/01": {
+    "commons_file": "Luna 10 Space Probe.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Luna_10_Space_Probe.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:29:15Z"
+  },
+  "earth-objects/lunar-prospector/01": {
+    "commons_file": "Lunar Prospector orbiter.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunar%20Prospector%20orbiter.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
   "earth-objects/o3b/01": {
     "commons_file": "O3b satellite constellation.png",
     "commons_url": "https://commons.wikimedia.org/wiki/File:O3b%20satellite%20constellation.png",
@@ -153,12 +118,173 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
+  "earth-objects/smart-1/01": {
+    "commons_file": "Smart Hashtag 1 IMG 7328.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Smart%20Hashtag%201%20IMG%207328.jpg",
+    "credit": "ESA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
   "earth-objects/starlink/01": {
     "commons_file": "Starlink Mission (47926144123).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Starlink%20Mission%20(47926144123).jpg",
     "credit": "SpaceX",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "earth-objects/tundra-molniya/01": {
+    "commons_file": "Molniya-1 satellite.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Molniya-1%20satellite.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:49:48.372Z"
+  },
+  "earth-objects/tundra-molniya/02": {
+    "commons_file": "CNX UPhysics 11 03 Molniya img.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:CNX%20UPhysics%2011%2003%20Molniya%20img.png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "earth-objects/tundra-molniya/03": {
+    "commons_file": "The Soviet Union 1968 CPA 3697 sheet of 3 with 3 labels (Earth, Molniya Orbit and Electromagnetic Waves. 1 'Molniya 1'. 2 'Molniya 1' and Ground Stations. 3 Ground Station).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201968%20CPA%203697%20sheet%20of%203%20with%203%20labels%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "earth-objects/tundra-molniya/04": {
+    "commons_file": "The Soviet Union 1968 CPA 3697 2nd stamp from sheet with label (Earth, Molniya Orbit and Electromagnetic Waves. 1 'Molniya 1'. 2 'Molniya 1' and Ground Stations. 3 Ground Station).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201968%20CPA%203697%202nd%20stamp%20from%20sheet%20with%20label%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "earth-objects/tundra-molniya/05": {
+    "commons_file": "The Soviet Union 1968 CPA 3697 3rd stamp from sheet with label (Earth, Molniya Orbit and Electromagnetic Waves. 1 'Molniya 1'. 2 'Molniya 1' and Ground Stations. 3 Ground Station).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201968%20CPA%203697%203rd%20stamp%20from%20sheet%20with%20label%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars3-orbiter/01": {
+    "commons_file": "Viking 2 Landing Site B NASA Image 807A32.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Viking%202%20Landing%20Site%20B%20NASA%20Image%20807A32.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "mars-sites/mars3-orbiter/02": {
+    "commons_file": "Mars Climate Orbiter 2.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Climate%20Orbiter%202.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars3-orbiter/03": {
+    "commons_file": "Mars Orbiter Mission Over Mars (15237158879).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission%20Over%20Mars%20(15237158879).jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars3-orbiter/04": {
+    "commons_file": "Mars Orbiter Mission-Mars Orbit Insertion Profile.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission-Mars%20Orbit%20Insertion%20Profile.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars3-orbiter/05": {
+    "commons_file": "Mars Orbiter Mission - Payloads.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbiter%20Mission%20-%20Payloads.png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars6/03": {
+    "commons_file": "PIA23202 cc-Mars-InSightLander-Sunset-20190425.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA23202%20cc-Mars-InSightLander-Sunset-20190425.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars6/04": {
+    "commons_file": "MarsLanderMola16.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:MarsLanderMola16.png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/mars6/05": {
+    "commons_file": "Viking Mars Lander - NASM.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Viking%20Mars%20Lander%20-%20NASM.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "mars-sites/zhurong/01": {
+    "commons_file": "Zhurong rover mockup at CSTM 01.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Zhurong%20rover%20mockup%20at%20CSTM%2001.jpg",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/beresheet/01": {
+    "commons_file": "Beresheet model on Habima Square 20190222 01.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Beresheet%20model%20on%20Habima%20Square%2020190222%2001.jpg",
+    "credit": "SpaceIL",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/change1/01": {
+    "commons_file": "Birth of change1.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Birth%20of%20change1.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/change2/01": {
+    "commons_file": "Birth of change2.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Birth%20of%20change2.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/change2/02": {
+    "commons_file": "Chang'e-3 lunar landing site.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e-3%20lunar%20landing%20site.jpg",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/change2/03": {
+    "commons_file": "Chang'e 4 Lander- A Closer Look (02 m1147290066lr m130C5A1B).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20Lander-%20A%20Closer%20Look%20(02%20m1147290066lr%20m130C5A1B).jpg",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/change2/04": {
+    "commons_file": "Rosetta spacecraft model.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rosetta%20spacecraft%20model.png",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/change2/05": {
+    "commons_file": "Tianwen-2 spacecraft diagram.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Tianwen-2%20spacecraft%20diagram.png",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/change3/05": {
+    "commons_file": "Artist view of Chang'e 7 lunar mission on the Moon.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist%20view%20of%20Chang'e%207%20lunar%20mission%20on%20the%20Moon.png",
+    "credit": "CNSA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "moon-sites/luna10/01": {
     "commons_file": "Luna 10 Space Probe.jpg",
@@ -167,18 +293,60 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-12T21:29:15Z"
   },
-  "earth-objects/luna10/01": {
-    "commons_file": "Luna 10 Space Probe.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Luna_10_Space_Probe.jpg",
+  "moon-sites/luna16/01": {
+    "commons_file": "The Soviet Union 1970 CPA 3951 stamp (Luna 16 in Flight (1970.09.12)).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201970%20CPA%203951%20stamp%20(Luna%2016%20in%20Flight%20(1970.09.12)).jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:29:15Z"
+    "fetched_at": "2026-06-12T21:28:42.805Z"
   },
-  "earth-objects/tundra-molniya/01": {
-    "commons_file": "Molniya-1 satellite.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Molniya-1%20satellite.jpg",
+  "moon-sites/luna16/02": {
+    "commons_file": "Zio81 - Eclisse di Luna 16-08-08 (by).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Zio81%20-%20Eclisse%20di%20Luna%2016-08-08%20(by).jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:49:48.372Z"
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/luna16/03": {
+    "commons_file": "Возвращаемый аппарат автоматической станции \"Луна-16\".jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9%20%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8%20%22%D0%9B%D1%83%D0%BD%D0%B0-16%22.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/luna16/04": {
+    "commons_file": "Eclipse Lunar Total del 15-16.05.2022.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eclipse%20Lunar%20Total%20del%2015-16.05.2022.png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/luna16/05": {
+    "commons_file": "Eclipse Parcial de Luna Cumbre de Gran Canaria 16 julio 2019 (48306938426).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eclipse%20Parcial%20de%20Luna%20Cumbre%20de%20Gran%20Canaria%2016%20julio%202019%20(48306938426).jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-14T13:26:18.186Z"
+  },
+  "moon-sites/luna21/01": {
+    "commons_file": "Luna 21.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Luna%2021.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/lunar-prospector/01": {
+    "commons_file": "Lunar Prospector orbiter.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunar%20Prospector%20orbiter.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
+  },
+  "moon-sites/smart-1/01": {
+    "commons_file": "Smart Hashtag 1 IMG 7328.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Smart%20Hashtag%201%20IMG%207328.jpg",
+    "credit": "ESA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-12T21:28:42.805Z"
   }
 }

@@ -1,66 +1,166 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-14T13:03:40.864Z
+Generated: 2026-06-14T13:26:18.726Z
 Script: build-image-provenance@1.0.0
-Commit: 42bbdf2341147fbb5f0ac5a88af23909d9f403a0
+Commit: 4958a52d6d7f04d63263508c0903208a109b4ed1
 Total entries: 3352
 
-## Added (54)
+## Added (0)
 
-- `/images/earth-objects/change2/02.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/change2/03.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/change2/04.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/change2/05.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/tundra-molniya/02.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/tundra-molniya/03.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/tundra-molniya/04.jpg` — PD-NASA via direct-other
-- `/images/earth-objects/tundra-molniya/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/blue-moon-mk1/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/change1/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/crew-dragon-iva/03.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/crew-dragon-iva/04.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/crew-dragon-iva/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/jiuquan-slc-43/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/mars6/03.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/mars6/04.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/mars6/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/progress-7k-tg/02.jpg` — PD-Russia via wikimedia-commons
-- `/images/fleet-galleries/progress-7k-tg/03.jpg` — PD-Russia via wikimedia-commons
-- `/images/fleet-galleries/progress-7k-tg/04.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/progress-7k-tg/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/tundra-sirius/05.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/vikram-cy3/05.jpg` — PD-self via wikimedia-commons
-- `/images/mars-sites/mars3-orbiter/02.jpg` — PD-NASA via direct-other
-- `/images/mars-sites/mars3-orbiter/03.jpg` — PD-NASA via direct-other
-- `/images/mars-sites/mars3-orbiter/04.jpg` — PD-NASA via direct-other
-- `/images/mars-sites/mars3-orbiter/05.jpg` — PD-NASA via direct-other
-- `/images/mars-sites/mars6/03.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/mars6/03.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/mars6/04.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/mars6/04.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/mars6/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/mars-sites/mars6/05.jpg` — PD-NASA via nasa-images-api
-- `/images/missions/change1/05.jpg` — PD-NASA via direct-other
-- `/images/missions/luna10/04.jpg` — PD-NASA via direct-other
-- `/images/missions/luna10/05.jpg` — PD-NASA via direct-other
-- `/images/missions/luna16/02.jpg` — PD-NASA via direct-other
-- `/images/missions/luna16/03.jpg` — PD-NASA via direct-other
-- `/images/missions/luna16/04.jpg` — PD-NASA via direct-other
-- `/images/missions/luna16/05.jpg` — PD-NASA via direct-other
-- `/images/missions/mars6/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/missions/mars6/05.jpg` — PD-NASA via nasa-images-api
-- `/images/missions/starship-mars-crew/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/missions/starship-mars-crew/05.jpg` — PD-NASA via nasa-images-api
-- `/images/moon-sites/change2/02.jpg` — PD-NASA via direct-other
-- `/images/moon-sites/change2/03.jpg` — PD-NASA via direct-other
-- `/images/moon-sites/change2/04.jpg` — PD-NASA via direct-other
-- `/images/moon-sites/change2/05.jpg` — PD-NASA via direct-other
-- `/images/moon-sites/change3/05.1x1.jpg` — PD-NASA via nasa-images-api
-- `/images/moon-sites/change3/05.jpg` — PD-NASA via nasa-images-api
-- … 4 more
 
 ## Removed (0)
 
 
-## Changed (0)
+## Changed (67)
 
+- `/images/earth-objects/change2/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AChang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20M1298916428LR%201100p%20arrows).png"
+- `/images/earth-objects/change2/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AChang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20CE4%20Locator%20Figure).png"
+- `/images/earth-objects/change2/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMandel%20zoom%2011%20satellite%20double%20spiral.jpg"
+- `/images/earth-objects/change2/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AHitching%20a%20lift%20on%20a%20satellite%202.jpg"
+- `/images/earth-objects/tundra-molniya/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ACNX%20UPhysics%2011%2003%20Molniya%20img.png"
+- `/images/earth-objects/tundra-molniya/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Soviet%20Union%201968%20CPA%203697%20sheet%20of%203%20with%203%20labels%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).jpg"
+- `/images/earth-objects/tundra-molniya/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Soviet%20Union%201968%20CPA%203697%202nd%20stamp%20from%20sheet%20with%20label%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).png"
+- `/images/earth-objects/tundra-molniya/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Soviet%20Union%201968%20CPA%203697%203rd%20stamp%20from%20sheet%20with%20label%20(Earth%2C%20Molniya%20Orbit%20and%20Electromagnetic%20Waves.%201%20'Molniya%201'.%202%20'Molniya%201'%20and%20Ground%20Stations.%203%20Ground%20Station).png"
+- `/images/mars-sites/mars2/01.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/01.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/02.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/02.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/03.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/03.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/04.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/04.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/05.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars2/05.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars3-orbiter/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20Climate%20Orbiter%202.jpg"
+- `/images/mars-sites/mars3-orbiter/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20Orbiter%20Mission%20Over%20Mars%20(15237158879).jpg"
+- `/images/mars-sites/mars3-orbiter/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20Orbiter%20Mission-Mars%20Orbit%20Insertion%20Profile.jpg"
+- `/images/mars-sites/mars3-orbiter/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20Orbiter%20Mission%20-%20Payloads.png"
+- `/images/mars-sites/mars6/01.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/01.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/02.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/02.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/03.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/03.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/04.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/04.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/05.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/mars-sites/mars6/05.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/change1/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALocation%20of%20the%20Chang'e-3%20landing%20site.jpg"
+- `/images/missions/luna10/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AFull%20Moon%20Luc%20Viatour.jpg"
+- `/images/missions/luna10/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMoon%20over%20cumulus.jpg"
+- `/images/missions/luna16/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALuna%2016%20landing%20on%20moon.jpg"
+- `/images/missions/luna16/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALuna%2016.jpg"
+- `/images/missions/luna16/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALuna%2016%20Space%20Probe%2001.jpg"
+- `/images/missions/luna16/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ASolaris%20grapes%20in%20Chateaux%20Luna%20vineyard%2024.jpg"
+- `/images/missions/mars2/01.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/01.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/02.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/02.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/03.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/03.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/04.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/04.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/05.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars2/05.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- `/images/missions/mars6/01.1x1.jpg`
+  - before — author: "ROSCOSMOS", agency: "ROSCOSMOS"
+  - after — author: "Roscosmos", agency: "Roscosmos"
+- … 17 more

@@ -118,14 +118,22 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
   describe('buildCislunarTrajectory — composition', () => {
     const baseOpts = { dep_day_sim: 100, transit_days: 5, is_return_trip: false };
 
-    it('produces parking + tli_coast for one-way missions', () => {
+    it('produces parking + tli_coast + lunar_flyby for one-way flyby missions', () => {
+      // Undefined profile defaults to arrival_type='flyby'. Post-#XX
+      // (this slice) the flyby case adds a lunar_flyby phase so the
+      // auto-zoom dispatcher can engage during the swing-by beat.
       const traj = buildCislunarTrajectory(undefined, baseOpts);
-      expect(traj.phases.map((p) => p.type)).toEqual(['parking', 'tli_coast']);
+      expect(traj.phases.map((p) => p.type)).toEqual(['parking', 'tli_coast', 'lunar_flyby']);
     });
 
-    it('adds tei_coast for round-trip missions', () => {
+    it('adds tei_coast for round-trip flyby missions (Apollo 13)', () => {
       const traj = buildCislunarTrajectory(undefined, { ...baseOpts, is_return_trip: true });
-      expect(traj.phases.map((p) => p.type)).toEqual(['parking', 'tli_coast', 'tei_coast']);
+      expect(traj.phases.map((p) => p.type)).toEqual([
+        'parking',
+        'tli_coast',
+        'lunar_flyby',
+        'tei_coast',
+      ]);
     });
 
     it('phases are ordered by met_days with no gaps or overlaps', () => {

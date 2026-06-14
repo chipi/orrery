@@ -554,8 +554,17 @@ export function buildCislunarTrajectory(
   }
 
   // ── 2. Translunar coast ──
+  // For arrival_type='flyby' (Apollo 13 free-return) we truncate the
+  // tli_coast end so the new lunar_flyby phase (below) gets a non-
+  // overlapping MET window. Same applies for impact landers and orbit
+  // arrivals — the lunar phase takes over at periselene-time, not at
+  // arr_day. For arrival types we don't add a lunar phase for, the
+  // tli_coast continues to its original end.
+  const flybyMET = Math.min(transit_days * 0.5, Math.max(0.5, transit_days - 0.5));
+  const flybyDuration = Math.min(1.0, transit_days * 0.2);
   const tliCoastPts = translunarCoast(lastPoint, moonAtFlyby, periselene, 192);
-  const tliEndMET = transit_days;
+  const tliEndMET =
+    arrivalType === 'flyby' ? Math.max(metCursor, flybyMET - flybyDuration / 2) : transit_days;
   phases.push({
     type: 'tli_coast',
     start_met_days: metCursor,
@@ -567,10 +576,26 @@ export function buildCislunarTrajectory(
 
   // ── 3. Lunar arrival phase ──
   if (arrivalType === 'flyby') {
-    // Free-return / hybrid: no LOI; spacecraft swings past and (if
-    // return_trip) curves back to Earth via tei_coast.
-    // Skip explicit flyby phase — the tli_coast already terminates
-    // at periselene; tei_coast picks up from there.
+    // Free-return / hybrid (Apollo 13): the spacecraft swings past at
+    // periselene and (for return_trip) curves back to Earth. PRIOR to
+    // this slice we skipped adding a phase, leaving the auto-zoom
+    // dispatcher stuck on tli_coast (an EARTH_PHASE_TYPE) through the
+    // entire mission — including the iconic swing-by beat — so the
+    // camera never zoomed in on the Moon. Now we add a short
+    // lunar_flyby phase (LUNAR_PHASE_TYPES recognised) centred on the
+    // periselene moment so the hero composition can engage. Phase
+    // length is 1 day (~16 % of an Apollo-13-class 6-day mission)
+    // which gives the lerp wall-clock time to converge.
+    const flybyPts = lunarFlyby(moonAtFlyby, periselene, 48);
+    phases.push({
+      type: 'lunar_flyby',
+      start_met_days: tliEndMET,
+      end_met_days: tliEndMET + flybyDuration,
+      points: flybyPts,
+    });
+    metCursor = tliEndMET + flybyDuration;
+    // lastPoint stays as the tli_coast terminus (already at periselene)
+    // — tei_coast will pick up from there if there's a return trip.
   } else if (arrivalType === 'impact') {
     // Direct hard-land (Luna 9). No orbit; tli_coast terminus IS the
     // descent. Add a short impact segment for visual continuity.
@@ -580,13 +605,20 @@ export function buildCislunarTrajectory(
       z: moonAtFlyby.z + (lastPoint.z - moonAtFlyby.z) * (R_MOON_KM / (R_MOON_KM + periselene)),
     };
     const impactPts = linear(lastPoint, surfacePoint, 48);
+    // Widen the impact phase from transit_days * 0.01 (Luna 9's 0.03 d
+    // = 43 min — too tight for the camera lerp to converge before the
+    // window closes). Use the same fraction the orbit path uses below
+    // (0.15) so impact landers have the same on-screen dwell as orbit
+    // landers. Caller's lerp 0.022 takes ~7 s wall-clock at 60 fps; at
+    // default 1× sim speed that's plenty within a 0.5-d window.
+    const impactPhaseMET = Math.min(0.5, transit_days * 0.15);
     phases.push({
       type: 'descent',
       start_met_days: metCursor,
-      end_met_days: metCursor + transit_days * 0.01,
+      end_met_days: metCursor + impactPhaseMET,
       points: impactPts,
     });
-    metCursor += transit_days * 0.01;
+    metCursor += impactPhaseMET;
     lastPoint = surfacePoint;
   } else if (
     arrivalType === 'orbit' ||

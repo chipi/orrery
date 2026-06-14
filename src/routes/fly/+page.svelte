@@ -1939,9 +1939,7 @@
       // !isMoonMission). Lets automated tests see active phase,
       // camera position, and the active hero event without spelunking
       // through Three.js scene refs.
-      (
-        window as Window & { __flyCislunarDebug?: () => unknown }
-      ).__flyCislunarDebug = () => ({
+      (window as Window & { __flyCislunarDebug?: () => unknown }).__flyCislunarDebug = () => ({
         simDay,
         depDay: mission?.timeline?.dep_day,
         met: simDay - (mission?.timeline?.dep_day ?? 0),
@@ -3552,11 +3550,7 @@
       // mechanism itself should release after a finite time, or the
       // cinema window should auto-close at MET = peak + DEPART days
       // regardless of peakHold — both pursuable in a follow-up).
-      const activeFlybyMet = findActiveFlybyMet(
-        flybyEvents,
-        simDay,
-        arcTimeline.dep_day,
-      );
+      const activeFlybyMet = findActiveFlybyMet(flybyEvents, simDay, arcTimeline.dep_day);
 
       let sub: string;
       let centerX: number;
@@ -4091,7 +4085,10 @@
             // clamp P into the same drag-input bounds as the live
             // viewer (0.08 .. π·0.48) so the lerp ends inside the
             // user-reachable range.
-            autoZoomTargetCamP = Math.max(0.08, Math.min(Math.PI * 0.48, Math.acos(dyScene / rScene)));
+            autoZoomTargetCamP = Math.max(
+              0.08,
+              Math.min(Math.PI * 0.48, Math.acos(dyScene / rScene)),
+            );
             autoZoomTargetCamT = Math.atan2(dxScene, dzScene);
             // Override the radius + centre with the planner's exact
             // values too — the planner's camRMultiplier is the same
@@ -6545,7 +6542,8 @@
         {/each}
         <div class="cislunar-hero-comp">
           composition: side {Math.round((MOON_COMPOSITION.sideAngleRad * 180) / Math.PI)}° · pitch
-          {Math.round((MOON_COMPOSITION.pitchRad * 180) / Math.PI)}° · R ×{MOON_COMPOSITION.camRMultiplier} R_moon · targetBias
+          {Math.round((MOON_COMPOSITION.pitchRad * 180) / Math.PI)}° · R ×{MOON_COMPOSITION.camRMultiplier}
+          R_moon · targetBias
           {MOON_COMPOSITION.targetBias}
         </div>
       </div>

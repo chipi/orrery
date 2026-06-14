@@ -33,9 +33,52 @@
  *   npx tsx scripts/source-known-gaps.ts        # apply
  */
 import { mkdir, writeFile, access, copyFile } from 'node:fs/promises';
-import { constants as fsConstants } from 'node:fs';
+import { constants as fsConstants, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import sharp from 'sharp';
+import { computePhash, hammingDistance } from './lib/phash.ts';
+
+/** Hamming distance below which an in-flight download is considered
+ *  a near-identical to something already on disk. Conservative (≤4)
+ *  so editorial reuses (sister-mission archive shots) don't trigger
+ *  on legitimate distinct photos. Bump to 6-8 if false negatives
+ *  outweigh the loosened guard. */
+const PHASH_DUPE_THRESHOLD = 4;
+const PHASH_CACHE_PATH = 'static/data/image-phashes.json';
+
+interface PhashCache {
+  computed_at: string;
+  algorithm: 'phash-dct-8x8';
+  phashes: Record<string, string>;
+}
+
+function loadPhashCache(): PhashCache {
+  if (!existsSync(PHASH_CACHE_PATH)) {
+    return {
+      computed_at: new Date().toISOString(),
+      algorithm: 'phash-dct-8x8',
+      phashes: {},
+    };
+  }
+  return JSON.parse(readFileSync(PHASH_CACHE_PATH, 'utf-8')) as PhashCache;
+}
+
+/** Find the path of an existing image that's perceptually near-identical
+ *  to `newHash`. Returns null on miss. O(n) scan over the cache; the
+ *  cache is ~2000 entries today so brute-force is fine. */
+function findPhashNearDupe(cache: PhashCache, newHash: string, selfUrlPath: string): string | null {
+  for (const [path, existingHash] of Object.entries(cache.phashes)) {
+    if (path === selfUrlPath) continue;
+    if (hammingDistance(newHash, existingHash) <= PHASH_DUPE_THRESHOLD) {
+      return path;
+    }
+  }
+  return null;
+}
+
+function diskToUrlPath(diskPath: string): string {
+  return diskPath.replace(/^static\//, '/');
+}
 
 const UA =
   'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
@@ -182,12 +225,28 @@ const SOURCING_MAP: Record<string, SourceSpec> = {
 
 interface SourceResult {
   key: string;
-  status: 'sourced' | 'copied' | 'skipped-existing' | 'failed-fetch' | 'failed-copy';
+  status:
+    | 'sourced'
+    | 'copied'
+    | 'skipped-existing'
+    | 'skipped-near-dupe'
+    | 'failed-fetch'
+    | 'failed-copy';
   details: string;
 }
 
+/** Loaded once at main() so each processOne() call shares the same cache;
+ *  updated in-process as new sources land. Persisted at end of main(). */
+let phashCache: PhashCache = {
+  computed_at: '',
+  algorithm: 'phash-dct-8x8',
+  phashes: {},
+};
+
 async function main(): Promise<void> {
   console.log(`source-known-gaps — ${dryRun ? 'DRY RUN' : 'APPLY'} mode`);
+  phashCache = loadPhashCache();
+  console.log(`Loaded pHash cache: ${Object.keys(phashCache.phashes).length} entries`);
   const results: SourceResult[] = [];
   const entries = Object.entries(SOURCING_MAP);
   console.log(`Processing ${entries.length} entries…`);
@@ -211,6 +270,20 @@ async function main(): Promise<void> {
     for (const f of failed) console.log(`  ${f.key}: ${f.details}`);
   }
   console.log(`\nReport: ${REPORT_PATH}`);
+
+  // Persist any pHash cache mutations so future invocations see the
+  // newly-sourced images in the dedup-pre-write check.
+  if (!dryRun) {
+    phashCache.computed_at = new Date().toISOString();
+    const sorted = Object.fromEntries(
+      Object.entries(phashCache.phashes).sort(([a], [b]) => a.localeCompare(b)),
+    );
+    writeFileSync(
+      PHASH_CACHE_PATH,
+      JSON.stringify({ ...phashCache, phashes: sorted }, null, 2) + '\n',
+    );
+    console.log(`pHash cache → ${PHASH_CACHE_PATH} (${Object.keys(sorted).length} entries)`);
+  }
 }
 
 async function processOne(key: string, spec: SourceSpec): Promise<SourceResult> {
@@ -262,7 +335,24 @@ async function processOne(key: string, spec: SourceSpec): Promise<SourceResult> 
   }
   try {
     const baseJpg = await sharp(fetched).jpeg({ quality: 90 }).toBuffer();
+    // pHash pre-write check — refuse to land a new image whose
+    // perceptual hash is within PHASH_DUPE_THRESHOLD of something
+    // already in the corpus. Prevents the Marko-flagged
+    // earth-objects/gps/02 == earth-objects/gps/01 pattern where
+    // the sourcing script pulled two near-identical photos at
+    // different fetch times.
+    const newHash = await computePhash(baseJpg);
+    const selfUrlPath = diskToUrlPath(targetBase);
+    const dupeOf = findPhashNearDupe(phashCache, newHash, selfUrlPath);
+    if (dupeOf) {
+      return {
+        key,
+        status: 'skipped-near-dupe',
+        details: `pHash near-identical to ${dupeOf} (d ≤ ${PHASH_DUPE_THRESHOLD}); ${title} discarded`,
+      };
+    }
     await writeFile(targetBase, baseJpg);
+    phashCache.phashes[selfUrlPath] = newHash;
     const meta = await sharp(baseJpg).metadata();
     const dim = Math.min(meta.width ?? 800, meta.height ?? 800);
     const oneXone = await sharp(baseJpg)

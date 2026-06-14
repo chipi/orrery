@@ -1,0 +1,120 @@
+/**
+ * Walk every base .jpg under static/images/, compute its DCT
+ * perceptual hash, and write the result to static/data/image-phashes.json.
+ *
+ * Output shape:
+ *
+ *   {
+ *     "computed_at": "2026-06-14T...",
+ *     "algorithm": "phash-dct-8x8",
+ *     "phashes": {
+ *       "/images/missions/apollo11/01.jpg": "f9c8...",
+ *       …
+ *     }
+ *   }
+ *
+ * Incremental: re-running re-uses the existing cache and only re-hashes
+ * paths whose mtime is newer than the cache's `computed_at`. Bulk re-run
+ * via `--force`.
+ *
+ * The cache feeds two downstream consumers:
+ *   - scripts/validate-image-phash-dupes.ts (preflight detective)
+ *   - scripts/source-known-gaps.ts (pre-write check at sourcing-time)
+ *
+ * Cost on the current ~2000-image corpus: ~10-15 s wall-clock. Sharp's
+ * 32×32 resize is ~5 ms per image; the DCT itself is ~0.5 ms.
+ */
+import { readdirSync, readFileSync, statSync, writeFileSync, existsSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { computePhash } from './lib/phash.ts';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const IMAGES_DIR = join(ROOT, 'static/images');
+const CACHE_PATH = join(ROOT, 'static/data/image-phashes.json');
+
+interface PhashCache {
+  computed_at: string;
+  algorithm: 'phash-dct-8x8';
+  phashes: Record<string, string>;
+}
+
+function* walkBaseJpgs(dir: string): Iterable<string> {
+  for (const ent of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, ent.name);
+    if (ent.isDirectory()) {
+      yield* walkBaseJpgs(full);
+    } else if (
+      ent.isFile() &&
+      ent.name.endsWith('.jpg') &&
+      !ent.name.includes('.1x1.') &&
+      !ent.name.includes('.4x3.') &&
+      !ent.name.includes('.16x9.')
+    ) {
+      yield full;
+    }
+  }
+}
+
+function loadCache(): PhashCache {
+  if (existsSync(CACHE_PATH)) {
+    try {
+      return JSON.parse(readFileSync(CACHE_PATH, 'utf-8'));
+    } catch {
+      // corrupted / older shape — fall through to fresh.
+    }
+  }
+  return { computed_at: '1970-01-01T00:00:00.000Z', algorithm: 'phash-dct-8x8', phashes: {} };
+}
+
+function urlPathOf(diskPath: string): string {
+  return diskPath.slice(IMAGES_DIR.length - '/images'.length);
+}
+
+async function main(): Promise<void> {
+  const force = process.argv.includes('--force');
+  const cache = force ? loadCache() : loadCache();
+  if (force) cache.phashes = {};
+  const cacheCutoff = new Date(cache.computed_at).getTime();
+  const startedAt = new Date();
+
+  let kept = 0;
+  let computed = 0;
+  let failed = 0;
+  const fresh: Record<string, string> = {};
+
+  for (const disk of walkBaseJpgs(IMAGES_DIR)) {
+    const urlPath = urlPathOf(disk);
+    const mtime = statSync(disk).mtimeMs;
+    const cached = cache.phashes[urlPath];
+    if (!force && cached && mtime < cacheCutoff) {
+      fresh[urlPath] = cached;
+      kept++;
+      continue;
+    }
+    try {
+      fresh[urlPath] = await computePhash(disk);
+      computed++;
+    } catch (err) {
+      console.error(`✘ ${urlPath} — ${(err as Error).message}`);
+      failed++;
+    }
+  }
+
+  const out: PhashCache = {
+    computed_at: startedAt.toISOString(),
+    algorithm: 'phash-dct-8x8',
+    phashes: Object.fromEntries(Object.entries(fresh).sort(([a], [b]) => a.localeCompare(b))),
+  };
+  writeFileSync(CACHE_PATH, JSON.stringify(out, null, 2) + '\n');
+
+  const total = Object.keys(out.phashes).length;
+  const elapsedMs = Date.now() - startedAt.getTime();
+  console.log(
+    `pHash cache → static/data/image-phashes.json — ${total} entries ` +
+      `(${computed} computed, ${kept} reused, ${failed} failed) in ${(elapsedMs / 1000).toFixed(1)}s`,
+  );
+  if (failed > 0) process.exit(1);
+}
+
+void main();

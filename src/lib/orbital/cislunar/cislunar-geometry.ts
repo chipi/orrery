@@ -586,7 +586,15 @@ export function buildCislunarTrajectory(
     // periselene moment so the hero composition can engage. Phase
     // length is 1 day (~16 % of an Apollo-13-class 6-day mission)
     // which gives the lerp wall-clock time to converge.
-    const flybyPts = lunarFlyby(moonAtFlyby, periselene, 48);
+    // Apollo 13's transit_days = 6 is the FULL mission duration, not
+    // time-to-Moon (Apollo 11 transit_days = 4 = one-way). For round-
+    // trip free-return missions the swing-by happens MID-mission, so
+    // Moon-at-flyby_day (transit_days end) is the wrong reference —
+    // use Moon-at-swingby instead so the phase points sit on the
+    // actual periselene location. moonAtFlyby is computed from
+    // dep_day_sim + transit_days; we use dep_day_sim + flybyMET.
+    const moonAtSwingby = is_return_trip ? moonEciPos(dep_day_sim + flybyMET) : moonAtFlyby;
+    const flybyPts = lunarFlyby(moonAtSwingby, periselene, 48);
     phases.push({
       type: 'lunar_flyby',
       start_met_days: tliEndMET,

@@ -40,6 +40,11 @@ export const PLANET_SIZES: Record<string, number> = {
   saturn: 4.8,
   uranus: 3.4,
   neptune: 3.4,
+  // Pluto's render radius — the dwarf is 1188 km (smaller than Earth's
+  // moon) but fly-helio-scene's DEST_STYLE puts it at size 0.9 so the
+  // iconic-shot framing still has something to look at. Use the same
+  // 0.9 here so planFlybyShot's camR multiplier composes correctly.
+  pluto: 0.9,
 };
 
 export interface FlybyPlanet {
@@ -70,6 +75,12 @@ export function findFlybyPlanetFromLabel(label: string | undefined | null): Flyb
     'saturn',
     'uranus',
     'neptune',
+    // Pluto — New Horizons' "Pluto — first close encounter" is the
+    // canonical case. Without this, findFlybyPlanetFromLabel returns
+    // null at the encounter, the closest-planet fallback finds no body
+    // within its 3 AU threshold (Pluto sits at ~39 AU), and the
+    // animate loop never enters flyby-cinema mode — Pluto is invisible.
+    'pluto',
   ];
   for (const p of planets) {
     if (lower.includes(p)) return { id: p, size: PLANET_SIZES[p] ?? 2.0 };
@@ -101,10 +112,16 @@ export function findClosestPlanetToShip(
     'saturn',
     'uranus',
     'neptune',
+    'pluto',
   ];
   let closest: FlybyPlanetId | null = null;
   let closestSize = 1;
-  let minDist = 3.0;
+  // 3 AU works for the inner-system flyby cluster (Cassini Venus/Earth,
+  // Galileo Venus/Earth, etc.) but is too tight for outer-system
+  // encounters at Saturn/Uranus/Neptune/Pluto where the trajectory data
+  // can be 5-10 AU off the body. Widen to 12 AU so Pluto-class flybys
+  // resolve while still rejecting deep-cruise distances.
+  let minDist = 12.0;
 
   const ePos = earthPos(simDay);
   const dEarth = Math.hypot(scenePos.x - ePos.x, scenePos.z - ePos.z);

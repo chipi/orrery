@@ -6351,6 +6351,7 @@
           'saturn',
           'uranus',
           'neptune',
+          'pluto',
         ];
         for (const p of ids) if (label.includes(p)) return p;
         return 'venus' as FlybyPlanetId;

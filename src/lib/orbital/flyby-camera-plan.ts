@@ -34,7 +34,8 @@ export type PlanetId =
   | 'jupiter'
   | 'saturn'
   | 'uranus'
-  | 'neptune';
+  | 'neptune'
+  | 'pluto';
 
 /**
  * Per-planet camera tuning. Adjust here to change the iconic
@@ -155,6 +156,20 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
     sideAngleRad: ICONIC_SIDE,
     pitchRad: ICONIC_PITCH,
     iconicLeadDays: 2,
+    targetBias: 0,
+  },
+  // Pluto — New Horizons' July 2015 encounter. Render radius is 0.9
+  // (smallest in PLANET_SIZES), so a 5× camR multiplier puts the
+  // camera ~4.5 scene units off the body — close enough that Pluto's
+  // heart-shaped Sputnik Planitia would dominate the frame if the
+  // mesh carried a texture. Lead-days bumped to 3 because the
+  // trajectory data at 39 AU is sparser than inner-system flybys, so
+  // a longer lead-time pulls the ship further from the body in xz.
+  pluto: {
+    camRMultiplier: 5,
+    sideAngleRad: ICONIC_SIDE,
+    pitchRad: ICONIC_PITCH,
+    iconicLeadDays: 3,
     targetBias: 0,
   },
 };

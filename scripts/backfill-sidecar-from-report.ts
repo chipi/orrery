@@ -201,13 +201,26 @@ function main(): void {
         fleetSidecar[key] = sidecarRow as unknown as Record<string, unknown>;
         fleetAdded++;
       }
-    } else {
-      // moon-sites / mars-sites / earth-objects
+    } else if (
+      row.surface === 'moon-sites' ||
+      row.surface === 'mars-sites' ||
+      row.surface === 'earth-objects'
+    ) {
       const key = `${row.surface}/${row.id}/${slot}`;
       if (!(key in panelSidecar)) {
         panelSidecar[key] = sidecarRow;
         panelAdded++;
       }
+    } else {
+      // iss-modules, tiangong-modules, and anything else have their own
+      // code paths in build-image-provenance.ts (buildIssEntries /
+      // buildTiangongEntries) that walk the directory directly and
+      // produce manifest rows. Writing to panel-image-sources for those
+      // surfaces produces duplicate-manifest-entry validation failures
+      // because both readers cover the same file.
+      console.warn(
+        `  skipping ${row.surface}/${row.id}/${slot}.jpg — surface has its own walker, no sidecar route`,
+      );
     }
   }
 

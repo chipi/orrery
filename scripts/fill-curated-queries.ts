@@ -31,6 +31,7 @@ const SURFACES: Record<string, string> = {
   'moon-sites': 'static/images/moon-sites',
   'mars-sites': 'static/images/mars-sites',
   'earth-objects': 'static/images/earth-objects',
+  'iss-modules': 'static/images/iss-modules',
 };
 
 const UA =
@@ -149,6 +150,13 @@ const CURATED: Record<string, string[]> = {
     'Almaz OPS-2',
     'Soviet military space station',
     'Almaz station model',
+  ],
+  // Round 4: iss-modules residuals from D's intra-entity cleanup.
+  'iss-modules/unity': [
+    'Unity Node 1 ISS',
+    'Node 1 module ISS',
+    'STS-88 Unity assembly',
+    'Unity module International Space Station',
   ],
 };
 

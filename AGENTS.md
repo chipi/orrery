@@ -409,9 +409,13 @@ Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you 
 
 ## Adding a new flyby body to `/fly` — repeatable checklist
 
-Use this when adding a new destination (planet / dwarf / comet / asteroid / KBO) so its flyby beat composes an iconic hero shot. **Arrokoth (commit `e6e9175b`) is the worked example end-to-end** — read its diff before starting; everything below is a checklist to grind through. Halley + 67P (commit `3c1e6938e`) is a shorter follow-up that adds the synonym pattern for ambiguous label forms.
+Use this when adding a new destination (planet / dwarf / comet / asteroid / KBO) so its flyby beat composes an iconic hero shot. Three worked examples in order of increasing scope:
 
-For Issue [#341](https://github.com/chipi/orrery/issues/341) (13 missing missions) you'll iterate this ~7 times since many of the missions need new destination bodies (Dimorphos for DART, Itokawa for Hayabusa 1, Europa as a moon target for Europa Clipper, etc.).
+- **Arrokoth (commit `e6e9175b`)** — single-body, end-to-end. Read this diff before starting; everything below is a checklist to grind through.
+- **Halley + 67P (commit `3c1e6938e`)** — comet pair with the synonym-label workaround ("Churyumov" → '67p').
+- **#341 Batch 5 (commit `91b8ed0db`)** — 10 bodies in one sweep (Dimorphos + Didymos + 7 Lucy Trojans + Itokawa). Proves the pattern batches efficiently: each touchpoint file gets all 10 entries at once. Also: file-rename gotcha — mission JSONs must move to `static/data/missions/<dest_lowercase>/{id}.json` when `dest` changes, otherwise the runtime loader 404s.
+
+Issue [#341](https://github.com/chipi/orrery/issues/341) (13 missions) is closed by the 6 commits between `064d37bf8` and `91b8ed0db`.
 
 Per-body steps (numbered to match TA.md §body-wiring):
 

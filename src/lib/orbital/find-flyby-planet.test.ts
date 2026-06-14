@@ -52,6 +52,31 @@ describe('findFlybyPlanetFromLabel', () => {
     expect(findFlybyPlanetFromLabel('Steins — asteroid flyby')).toBeNull();
   });
 
+  it('resolves #341 Batch 5 small bodies (DART + Lucy + Hayabusa-1 destinations)', () => {
+    // DART system — Dimorphos kinetic-impact target + Didymos parent.
+    expect(findFlybyPlanetFromLabel('Dimorphos kinetic impact')).toEqual({
+      id: 'dimorphos',
+      size: PLANET_SIZES.dimorphos,
+    });
+    expect(findFlybyPlanetFromLabel('Didymos system approach')).toEqual({
+      id: 'didymos',
+      size: PLANET_SIZES.didymos,
+    });
+    // Lucy itinerary — one bonus main-belt + 7 Trojans.
+    expect(findFlybyPlanetFromLabel('Donaldjohanson (main-belt bonus)')?.id).toBe('donaldjohanson');
+    expect(findFlybyPlanetFromLabel('Eurybates approach (L4 Trojan)')?.id).toBe('eurybates');
+    expect(findFlybyPlanetFromLabel('Polymele')?.id).toBe('polymele');
+    expect(findFlybyPlanetFromLabel('Leucus')?.id).toBe('leucus');
+    expect(findFlybyPlanetFromLabel('Orus')?.id).toBe('orus');
+    expect(findFlybyPlanetFromLabel('Patroclus-Menoetius binary (L5)')?.id).toBe('patroclus');
+    expect(findFlybyPlanetFromLabel('Menoetius — L5 binary secondary')?.id).toBe('menoetius');
+    // Hayabusa-1 target.
+    expect(findFlybyPlanetFromLabel('Itokawa station-keeping')).toEqual({
+      id: 'itokawa',
+      size: PLANET_SIZES.itokawa,
+    });
+  });
+
   it('resolves comet flyby labels (Giotto-Halley + Rosetta-67P)', () => {
     expect(findFlybyPlanetFromLabel('Halley — closest comet encounter')).toEqual({
       id: 'halley',

@@ -224,7 +224,13 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 
 ### Body-wiring checklist (ADR-077)
 
-Adding a new flyby body / destination touches ~10 files. Arrokoth (commit `e6e9175b`) is the worked example covering everything end-to-end; the comet wiring (Halley + 67P, commit `3c1e6938e`) is a shorter follow-up. Per-body steps:
+Adding a new flyby body / destination touches ~10 files. Worked examples in order of scope:
+
+- **Arrokoth** (commit `e6e9175b`) — single-body, end-to-end. Canonical reference for the pattern.
+- **Halley + 67P** (commit `3c1e6938e`) — comet pair with the synonym-label workaround ("Churyumov" → '67p').
+- **#341 Batch 5 — 10 bodies in one sweep** (commit `91b8ed0db`) — Dimorphos+Didymos (DART binary impact target) + 7 Lucy Trojans (Donaldjohanson + Eurybates + Polymele + Leucus + Orus + Patroclus + Menoetius) + Itokawa (Hayabusa 1). Proves the 15-step pattern scales batch-wise — the same 10 files take the entries together (small-bodies.json gets 10 entries at once, DEST_STYLE gets 10 entries at once, etc.) — much more efficient than 10 sequential single-body PRs would be. Also covers the file-rename gotcha (mission JSONs must move to `missions/<dest_lowercase>/` when `dest` changes — the loader resolves by directory).
+
+Per-body steps:
 
 1. **Orbital data** — `static/data/small-bodies.json` entry: `a`, `e`, `T`, `L0`, `incl`, `color`, `radius_km`, `discovered`, `mission_visited`, `description`, `wiki`. Bodies with `e > 0.20` need eccentric-arrival treatment (see Bennu / Pluto pattern in `buildDwarfDestination`); below that the circular model is fine. Comets get `buildCometDestination` so the Lambert-convergence concern (which doesn't apply since no porkchop grid ships) is logged.
 2. **`DestinationId` widening** — `src/lib/lambert-grid.constants.ts`. Add literal to the union, add `DESTINATIONS[id]` entry calling the appropriate `build*Destination` builder.

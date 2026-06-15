@@ -2,11 +2,17 @@
 // no-client-storage rule). Holds the active-tour position so the user
 // can close the tab and resume where they left off on the next visit.
 //
-// Schema:  { ep, pos, idx, cmp }    ~55–70 bytes URL-encoded
+// Schema:  { ep, pos, idx, cmp, spd?, cc? }    ~60–80 bytes URL-encoded
 //   ep   episode id (must exist in the audio registry on read)
 //   pos  positionSec, finite, 0 ≤ pos ≤ episode duration
 //   idx  tourIndex, integer, 0 ≤ idx < tourSequence.length
 //   cmp  compact-mode flag (0 | 1)
+//   spd  playback speed multiplier (one of 0.75 / 1 / 1.25 / 1.5).
+//        Optional for forward compatibility; older cookies without
+//        `spd` resume at 1×. Added Phase 19 (#342).
+//   cc   captions-on flag (0 | 1). Optional for forward compatibility;
+//        older cookies without `cc` resume at default-off. Added Phase
+//        19 (#342).
 //
 // Set when:    tour is active. Writes are throttled (~5 s) during
 //              playback and immediate on pause / advance / compact-
@@ -22,11 +28,20 @@ export const TOUR_COOKIE_NAME = 'orrery_tour';
 export const TOUR_COOKIE_MAX_AGE_SEC = 2592000; // 30 days — see ADR-075
 export const TOUR_COOKIE_WRITE_THROTTLE_MS = 5000;
 
+const VALID_SPEEDS: ReadonlyArray<number> = [0.75, 1, 1.25, 1.5];
+
 export interface TourResumeState {
   ep: string;
   pos: number;
   idx: number;
   cmp: 0 | 1;
+  /** Playback speed at the moment of write. Optional for backwards-
+   *  compat with cookies written before Phase 19. Resumes at 1× if
+   *  absent. */
+  spd?: number;
+  /** Captions-on at the moment of write (0 | 1). Optional for
+   *  backwards-compat. Resumes at default-off if absent. */
+  cc?: 0 | 1;
 }
 
 function validShape(value: unknown): value is TourResumeState {
@@ -36,6 +51,14 @@ function validShape(value: unknown): value is TourResumeState {
   if (typeof v.pos !== 'number' || !Number.isFinite(v.pos) || v.pos < 0) return false;
   if (typeof v.idx !== 'number' || !Number.isInteger(v.idx) || v.idx < 0) return false;
   if (v.cmp !== 0 && v.cmp !== 1) return false;
+  // spd is optional; if present, must be one of the supported values.
+  if (v.spd !== undefined) {
+    if (typeof v.spd !== 'number' || !VALID_SPEEDS.includes(v.spd)) return false;
+  }
+  // cc is optional; if present, must be 0 or 1.
+  if (v.cc !== undefined) {
+    if (v.cc !== 0 && v.cc !== 1) return false;
+  }
   return true;
 }
 

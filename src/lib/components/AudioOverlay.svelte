@@ -523,6 +523,10 @@
     }
     audio.resumeTour(available, realIdx);
     audio.compact = offer.cmp === 1;
+    // Phase 19 (#342) — restore speed + captions if persisted. Older
+    // cookies without these fields fall back to the existing defaults.
+    if (typeof offer.spd === 'number') audio.speed = offer.spd;
+    if (offer.cc !== undefined) audio.captionsOn = offer.cc === 1;
     resumeOffer = null;
     await loadAndPlay(ep);
     // The episode just started at position 0; seek to the saved point.

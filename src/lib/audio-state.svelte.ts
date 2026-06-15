@@ -105,6 +105,10 @@ class AudioState {
       pos: Number.isFinite(this.positionSec) && this.positionSec > 0 ? this.positionSec : 0,
       idx: this.tourIndex,
       cmp: this.compact ? 1 : 0,
+      // Phase 19 (#342) — persist speed + captions so resume doesn't
+      // silently snap them to defaults.
+      spd: this.speed,
+      cc: this.captionsOn ? 1 : 0,
     };
   }
 

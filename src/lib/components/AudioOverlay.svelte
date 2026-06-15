@@ -223,6 +223,14 @@
   // race the in-flight sequence), and execute them in an async loop
   // with `await tick()` after every action so each DOM mutation settles.
   let lastEpisodeIdForStages = $state<string | null>(null);
+  // Phase 16 (#342) — episode epoch. Bumped whenever the active episode
+  // id changes; the async stage-fire loop captures the epoch it started
+  // under and bails at every iteration if the active epoch has moved on
+  // (tourNext / ended / switchVariant fired mid-batch). Without this,
+  // stages from a prior episode kept firing against the NEW episode's
+  // DOM — selectors usually no-op but cue + flash from the prior
+  // episode could leak onto the new page.
+  let episodeEpoch = $state(0);
   $effect(() => {
     if (!browser || !audio.currentEpisode) return;
     const epId = audio.currentEpisode.id;
@@ -234,6 +242,7 @@
           cueTimer = null;
         }
         activeCue = null;
+        episodeEpoch += 1;
       });
       lastEpisodeIdForStages = epId;
     }
@@ -254,8 +263,15 @@
     // loop below finishes, those re-runs will see these as already fired
     // and skip them, avoiding a duplicate-execution race.
     firedStages = new Set([...firedStages, ...batchKeys]);
+    const startEpoch = episodeEpoch;
     void (async () => {
       for (const stage of batch) {
+        // Bail if the episode swapped while the loop was mid-batch
+        // (tourNext, ended-auto-advance, switchVariant). Without this,
+        // stages targeting the OLD episode's selectors would no-op
+        // against the new DOM, and worse — cue + flash on shared
+        // selectors (e.g. surface-hud) could fire stale content.
+        if (episodeEpoch !== startEpoch) return;
         executeStage(stage);
         trackStageFire(epId, stage.action, stage.at_sec, stage.target);
         // Yield so the click/navigate/etc DOM change can flush before

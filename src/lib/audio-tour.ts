@@ -436,8 +436,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:01:41.2 "Use the toolbar to switch frames on any mission."
     // Was t=70 (31 s early — the episode is 13 s longer than SSML target
     // AND the "toolbar" beat is in the closing third, not the middle).
+    // t=99 caps within the Google variant's 100.6 s duration; EL gets
+    // it 19 s before the line, which is fine for a permanent cue.
     {
-      at_sec: 101,
+      at_sec: 99,
       action: 'cue',
       target: 'Use the toolbar to switch frames on any mission yourself.',
     },
@@ -1445,16 +1447,20 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'NASA · ESA · Roscosmos · CNSA · ISRO · JAXA · CSA · SpaceIL.',
       duration_ms: 5000,
     },
-    // VTT § 00:01:35.3 "It is a map of what we now know is possible…"
-    // — was t=90 / 92 / 94 (5–6 s early).
+    // VTT § 00:01:35.3 (EL) / 01:25 (Google) "It is a map of what we
+    // now know is possible…" Anchor to the Google variant's last 10 % so
+    // the close still fires when the listener picks the shorter variant
+    // (Google = 95.3 s, EL = 106 s). On EL the visual lands 7–10 s
+    // before the line — banner stays up, so the early-firing reads as
+    // "anchor the reveal" rather than "miss". Phase 16 fix.
     {
-      at_sec: 95,
+      at_sec: 88,
       action: 'cue',
       target: 'End of the tour. Pick a card and begin your own visit.',
       duration_ms: 5000,
     },
-    { at_sec: 98, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
-    { at_sec: 100, action: 'flash', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 90, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 92, action: 'flash', target: '[data-audio-stage="route-grid"]' },
   ],
 };
 

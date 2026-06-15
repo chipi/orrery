@@ -16,6 +16,9 @@
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+  import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+  import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+  import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
   import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
   import type { QualitySource } from '$lib/components/debug-panel-context';
@@ -2773,49 +2776,39 @@
     // is too thin and like there are 2 of them. Can we trim this
     // down and be more sophisticated."
     //
-    // A camera-facing ring sprite is the canonical "this is selected"
-    // cue in 3D modelling apps: always renders as a clean circle
-    // outline regardless of view angle, doesn't compete with the
-    // atmospheric halo's full-shell illumination, scales with planet
-    // size, and pulses via material opacity.
-    const selRingCanvas = document.createElement('canvas');
-    selRingCanvas.width = 256;
-    selRingCanvas.height = 256;
-    {
-      const c = selRingCanvas.getContext('2d')!;
-      const cx = 128;
-      const cy = 128;
-      const outerR = 120;
-      const ringW = 3;
-      // Soft outer glow → crisp inner stroke.
-      const grad = c.createRadialGradient(cx, cy, outerR - ringW * 4, cx, cy, outerR + ringW);
-      grad.addColorStop(0, 'rgba(160, 200, 255, 0)');
-      grad.addColorStop(0.85, 'rgba(160, 200, 255, 0)');
-      grad.addColorStop(0.95, 'rgba(180, 220, 255, 0.55)');
-      grad.addColorStop(1.0, 'rgba(160, 200, 255, 0)');
-      c.fillStyle = grad;
-      c.fillRect(0, 0, 256, 256);
-      // Crisp 2 px ring on top of the glow.
-      c.strokeStyle = 'rgba(200, 225, 255, 0.92)';
-      c.lineWidth = 2;
-      c.beginPath();
-      c.arc(cx, cy, outerR, 0, Math.PI * 2);
-      c.stroke();
+    // Selection ring — a Line2 circle around the selected body.
+    // 2026-06-15 user direction: "thin, barely visible, like orbital,
+    // and don't scale it up as we zoom — it always retains thin
+    // appearance." Line2 + LineMaterial gives screen-pixel-constant
+    // stroke width (linewidth is in screen pixels regardless of camera
+    // distance), so the ring stays the same thickness whether the
+    // camera is at heliocentric framing or flown in close. The ring's
+    // radius scales with planet size each frame, but the line stroke
+    // does not. Billboarded per-frame so the ring always reads as a
+    // clean circle outline against the body silhouette.
+    const SEL_RING_SEGMENTS = 96;
+    const selRingPositions: number[] = [];
+    for (let i = 0; i <= SEL_RING_SEGMENTS; i++) {
+      const theta = (i / SEL_RING_SEGMENTS) * Math.PI * 2;
+      selRingPositions.push(Math.cos(theta), Math.sin(theta), 0);
     }
-    const selRingTexture = new THREE.Texture(selRingCanvas);
-    selRingTexture.needsUpdate = true;
-    selRingTexture.minFilter = THREE.LinearFilter;
-    selRingTexture.magFilter = THREE.LinearFilter;
-    const selRingMat = new THREE.SpriteMaterial({
-      map: selRingTexture,
+    const selRingGeo = new LineGeometry();
+    selRingGeo.setPositions(selRingPositions);
+    const selRingMat = new LineMaterial({
+      color: 0xa8c8ff, // pale-blue, same family as orbit lines
+      linewidth: 1.2, // screen pixels — Line2 holds this regardless of zoom
       transparent: true,
-      depthWrite: false,
+      opacity: 0.45,
       depthTest: false,
+      dashed: false,
     });
-    const selHalo = new THREE.Sprite(selRingMat);
+    selRingMat.resolution.set(window.innerWidth, window.innerHeight);
+    const selHalo = new Line2(selRingGeo, selRingMat);
+    selHalo.computeLineDistances();
     selHalo.visible = false;
-    // Renders on top of the planet sphere so the ring outline is
-    // never occluded by the body itself at any view angle.
+    // Render order high so the ring is drawn on top of the planet
+    // sphere even when oriented away — combined with depthTest:false
+    // the ring outline is never occluded by the body itself.
     selHalo.renderOrder = 999;
     scene.add(selHalo);
 
@@ -4064,6 +4057,10 @@
       for (const h of iconicTrajectoryHandles) {
         h.onResize(container.clientWidth, container.clientHeight);
       }
+      // Selection ring shares the same screen-pixel-width semantics —
+      // push the new resolution so the 1.2px stroke stays exact after
+      // a viewport resize / device-rotation.
+      selRingMat.resolution.set(container.clientWidth, container.clientHeight);
     };
     lifecycle.on(window, 'resize', onResize);
 
@@ -4390,17 +4387,27 @@
           // ring follows the moon mesh instead of staying on the parent
           // planet (#304 follow-up, 2026-06-04). Falls back to the
           // planet halo when no satellite is selected.
+          // Selection-ring placement. The ring's *radius* (set via
+          // mesh.scale) tracks the body's size so the circle wraps the
+          // silhouette at any zoom. The line *stroke* stays constant
+          // (linewidth is in screen pixels via Line2). Billboarded
+          // with lookAt(camera.position) so the ring reads as a clean
+          // circle outline regardless of view angle.
           if (selectedSatelliteKey) {
             const [parentId, satId] = selectedSatelliteKey.split(':');
             const parentObj = planetObjs.find((o) => o.planet.id === parentId);
             const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
             if (satObj) {
               satObj.mesh.getWorldPosition(tmpWorldPos);
-              const diam = satObj.def.sizeUnits * 2.5;
-              selHalo.scale.set(diam, diam, 1);
+              const r = satObj.def.sizeUnits * 1.25;
+              selHalo.scale.set(r, r, r);
               selHalo.position.copy(tmpWorldPos);
+              selHalo.lookAt(camera.position);
+              // Gentle pulse: 0.30 → 0.55 opacity. "Barely visible"
+              // floor with a soft heartbeat to confirm aliveness; no
+              // strong flash.
               const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-              selRingMat.opacity = 0.55 + pulse * 0.35;
+              selRingMat.opacity = 0.3 + pulse * 0.25;
               selHalo.visible = true;
             } else {
               selHalo.visible = false;
@@ -4408,11 +4415,12 @@
           } else if (selectedId) {
             const selObj = planetObjs.find((o) => o.planet.id === selectedId);
             if (selObj) {
-              const diam = selObj.planet.size3 * 2.5;
-              selHalo.scale.set(diam, diam, 1);
+              const r = selObj.planet.size3 * 1.25;
+              selHalo.scale.set(r, r, r);
               selHalo.position.copy(selObj.group.position);
+              selHalo.lookAt(camera.position);
               const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-              selRingMat.opacity = 0.55 + pulse * 0.35;
+              selRingMat.opacity = 0.3 + pulse * 0.25;
               selHalo.visible = true;
             } else {
               selHalo.visible = false;

@@ -57,6 +57,17 @@ export interface IconicTrajectoryHandle {
   setVisible: (visible: boolean) => void;
   /** Brighten (true) or dim (false) the line + markers. Default: dim. */
   setHighlight: (highlighted: boolean) => void;
+  /** Per-frame screen-space declutter for the encounter labels. When
+   *  multiple labeled waypoints project to nearby screen positions
+   *  (e.g. Rosetta's 3 Earth + Mars + 2 asteroid flybys all cluster in
+   *  the inner solar system) the static label sprites stack on top of
+   *  each other and become unreadable. This pushes overlapping labels
+   *  down along the camera-up axis so each one is fully visible while
+   *  keeping the marker → label association legible by color. No-op
+   *  unless the label group is currently visible (i.e. the mission is
+   *  highlighted). Cheap: O(N log N) sort + O(N) projection where
+   *  N ≤ ~10 labels per trajectory. */
+  relayoutLabels: (camera: THREE.PerspectiveCamera, canvasHeight: number) => void;
 }
 
 export interface BuildIconicTrajectoryOpts {
@@ -360,6 +371,12 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   // highlight. Sprites always face the camera, so the marker reads
   // the same from every angle the user orbits around.
   const labelSprites: THREE.Sprite[] = [];
+  // Each label's "base" world position — the un-deconflicted anchor
+  // (slightly above the encounter marker). The per-frame screen-space
+  // declutter pass projects these, sorts top → bottom, and offsets each
+  // sprite along the camera-up axis when its screen bbox would overlap
+  // the previously-placed label.
+  const labelBasePositions: THREE.Vector3[] = [];
   const markerTextures: THREE.CanvasTexture[] = [];
   const markerMaterials: THREE.SpriteMaterial[] = [];
   const hoverTargets: THREE.Object3D[] = [];
@@ -399,9 +416,11 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       // Offset the sprite slightly off the line so it doesn't sit on
       // top of the marker. Use the ecliptic-up direction (+Y) so the
       // label floats above the line at typical viewing angles.
-      sprite.position.set(pos.x, pos.y + LABEL_PIXEL_OFFSET, pos.z);
+      const base = new THREE.Vector3(pos.x, pos.y + LABEL_PIXEL_OFFSET, pos.z);
+      sprite.position.copy(base);
       labelGroup.add(sprite);
       labelSprites.push(sprite);
+      labelBasePositions.push(base);
     }
   }
 
@@ -466,6 +485,72 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
         : CLICK_TARGET_OPACITY_DIM;
       ringMaterial.opacity = highlighted ? RING_OPACITY_BRIGHT : RING_OPACITY_DIM;
       labelGroup.visible = highlighted;
+      // When the label group goes invisible, reset all sprite positions
+      // back to their base so the next hover starts from a clean state
+      // (otherwise a stale stacking would briefly flash on re-show).
+      if (!highlighted) {
+        for (let i = 0; i < labelSprites.length; i++) {
+          labelSprites[i].position.copy(labelBasePositions[i]);
+        }
+      }
+    },
+    relayoutLabels: (camera: THREE.PerspectiveCamera, canvasHeight: number) => {
+      if (!labelGroup.visible || labelSprites.length === 0) return;
+      // Camera basis — column 1 of matrixWorld is the local +Y axis,
+      // i.e. the camera-up direction. Displacing a sprite along this
+      // axis moves it vertically on screen.
+      const camRight = new THREE.Vector3();
+      const camUp = new THREE.Vector3();
+      const camForward = new THREE.Vector3();
+      camera.matrixWorld.extractBasis(camRight, camUp, camForward);
+      const halfFovTan = Math.tan((camera.fov * Math.PI) / 360);
+      // Compute screen position + per-pixel scale per label.
+      const items = labelBasePositions.map((basePos, i) => {
+        // distance from camera along the camera's view direction —
+        // not euclidean distance, otherwise off-axis labels get a
+        // pixel scale that's too small and we under-deconflict.
+        const offset = new THREE.Vector3().subVectors(basePos, camera.position);
+        const viewDist = Math.max(0.01, Math.abs(offset.dot(camForward)));
+        const worldPerPixel = (2 * viewDist * halfFovTan) / canvasHeight;
+        const ndc = basePos.clone().project(camera);
+        // Treat labels behind the camera as off-screen; skip them.
+        const onScreen = ndc.z > -1 && ndc.z < 1;
+        const screenY = (1 - ndc.y) * 0.5 * canvasHeight;
+        return {
+          i,
+          basePos,
+          worldPerPixel,
+          screenY,
+          finalScreenY: screenY,
+          // Label sprite is LABEL_SPRITE_SCALE_Y world-units tall;
+          // its screen-half-height shrinks with distance.
+          halfH: LABEL_SPRITE_SCALE_Y / 2 / worldPerPixel,
+          onScreen,
+        };
+      });
+      // Sort top → bottom (smaller screenY = higher on screen).
+      items.sort((a, b) => a.screenY - b.screenY);
+      // Push down any label whose top would overlap the previous
+      // label's bottom. Off-screen labels participate in sorting but
+      // don't constrain on-screen neighbors (the user can't see them).
+      let prevBottom = -Infinity;
+      for (const item of items) {
+        if (!item.onScreen) continue;
+        const top = item.finalScreenY - item.halfH;
+        if (top < prevBottom) {
+          item.finalScreenY = prevBottom + item.halfH;
+        }
+        prevBottom = item.finalScreenY + item.halfH;
+      }
+      // Apply: screen-down (positive screenY delta) corresponds to
+      // moving the sprite along -camUp in world space.
+      for (const item of items) {
+        const screenDy = item.finalScreenY - item.screenY;
+        const worldDy = -screenDy * item.worldPerPixel;
+        labelSprites[item.i].position
+          .copy(item.basePos)
+          .addScaledVector(camUp, worldDy);
+      }
     },
     dispose: () => {
       lineGeo.dispose();

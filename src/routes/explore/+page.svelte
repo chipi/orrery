@@ -4371,6 +4371,16 @@
             selHalo.visible = false;
           }
 
+          // Iconic-trajectory encounter labels — per-frame screen-space
+          // declutter so clustered waypoints (Rosetta has 3 Earth + Mars
+          // + 2 asteroid flybys in the inner solar system) don't stack
+          // into one unreadable blob on hover. Each handle early-returns
+          // when its labelGroup is hidden, so cost is ~10 cheap ifs.
+          if (iconicTrajectoryHandles.length > 0) {
+            const ch = container?.clientHeight ?? 1;
+            for (const h of iconicTrajectoryHandles) h.relayoutLabels(camera, ch);
+          }
+
           composer.render();
         } else {
           draw2d();

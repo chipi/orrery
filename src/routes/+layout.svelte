@@ -243,7 +243,7 @@
            does the same what those options do now"). Designed to
            grow as more about-style items land (imprint, privacy, …)
            without re-flowing the inline footer strip. -->
-      <span class="footer-about-group" tabindex="0">
+      <span class="footer-about-group">
         <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
         <ul class="footer-about-menu" role="menu" aria-label="About">
           <li role="none">

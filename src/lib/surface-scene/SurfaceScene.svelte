@@ -219,7 +219,16 @@
   // its first frame (which then continues to write live values). Without
   // this seed, fresh page-load briefly showed "0 m altitude" until the
   // first RAF tick (2026-06-15 user report on /moon).
-  let altitudeKm = $state(Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30)));
+  // Computed against config at module-top to seed the right value; the
+  // animate loop overwrites each frame, so this only matters before
+  // the first tick. The eslint-disable below silences a false-positive
+  // svelte/state_referenced_locally — we ONLY want the initial value
+  // here (that's the whole point of a seed); the lint is intended to
+  // warn against accidentally capturing a value that should be tracked
+  // reactively, which doesn't apply to a write-once $state initializer.
+  // eslint-disable-next-line svelte/valid-compile
+  const ALTITUDE_KM_SEED = Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30));
+  let altitudeKm = $state(ALTITUDE_KM_SEED);
 
   // Vendored rover-traverse data, populated from the loadTraverses()
   // prop in onMount. Empty record when the route doesn't pass that prop

@@ -106,6 +106,29 @@ export default defineConfig({
         // hi-res) sit at 3–4 MB. Bump the precache ceiling to 8 MiB so the
         // PWA build doesn't reject them.
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        // ─── Lifecycle: never strand a user on an old SW ──────────────
+        // 2026-06-15 user report: had to manually unregister the SW
+        // after a deploy because the old SW kept controlling the open
+        // tab while the new SW sat in `waiting` state forever (until
+        // every Orrery tab closed). registerType:'autoUpdate' alone
+        // isn't enough — the new SW only ACTIVATES when there are no
+        // controlled clients. These three flags close that window:
+        //   - skipWaiting:  new SW jumps installing → active on install,
+        //                   no waiting state, no manual restart needed.
+        //   - clientsClaim: on activation, the new SW immediately
+        //                   becomes the controller of every open tab,
+        //                   so the next fetch hits the fresh precache
+        //                   (and the new content-hashed chunks resolve
+        //                   instead of 404-ing against the prior deploy).
+        //   - cleanupOutdatedCaches: purge the previous precache
+        //                   manifest so stale chunks can't linger.
+        // The pattern matches what GitHub / Slack / Discord ship. The
+        // trade-off — a broken deploy lands on open tabs instantly
+        // instead of being shielded by the old SW — is acceptable
+        // because the e2e gate already blocks broken bundles.
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             // Mission base files + per-locale overlays.

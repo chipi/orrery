@@ -347,6 +347,7 @@
     <button
       type="button"
       class="filters-toggle"
+      data-audio-stage="fleet-filters-toggle"
       aria-expanded={filtersExpanded}
       aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
       onclick={() => (filtersExpanded = !filtersExpanded)}
@@ -365,7 +366,9 @@
     </button>
 
     {#if filtersExpanded}
-      <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+      <div data-audio-stage="fleet-epoch-timeline">
+        <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+      </div>
       <nav
         id="fleet-filters"
         class="filters"
@@ -510,6 +513,7 @@
               class="card"
               style:--accent={accent}
               data-testid="fleet-card-{entry.id}"
+              data-audio-stage="fleet-select-{entry.id}"
               onclick={() => openEntry(entry)}
               aria-label="{entry.name} ({entry.agency}, {entry.first_flight.slice(0, 4)})"
             >

@@ -1052,41 +1052,76 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   ],
 
   // ── /fleet · guide-fleet — VTT 167 s ──────────────────────────────
+  // The filters panel + epoch timeline are inside `{#if filtersExpanded}`
+  // and default-collapsed. The original tour fired scroll/flash at
+  // fleet-filters without opening the panel first, so the selectors
+  // didn't exist in the DOM and the stages silently no-opped. Fix: click
+  // the filters-toggle at t=18 to expand, THEN the panel + epoch strip
+  // are mounted for every later stage.
   'guide-fleet': [
-    // VTT § 00:00:23.2 "Crewed spacecraft. Cargo spacecraft." (category list)
-    { at_sec: 24, action: 'scroll-to', target: '[data-audio-stage="fleet-filters"]' },
-    { at_sec: 26, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
+    // VTT § 00:00:18 — narration just finished "The catalogue is organized
+    // into nine categories along the left." Open the filters panel so the
+    // category list (and the epoch strip) are visible.
+    { at_sec: 18, action: 'click', target: '[data-audio-stage="fleet-filters-toggle"]' },
+    // VTT § 00:00:22.0 – 29.4 — categories roll-call. The narration walks
+    // every category name; flash the filters panel as a whole (per-category
+    // filter buttons don't currently have stable data-audio-stage hooks —
+    // adding 9 would be cheap follow-up if we want per-category flashes).
+    { at_sec: 22, action: 'scroll-to', target: '[data-audio-stage="fleet-filters"]' },
+    { at_sec: 24, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
     {
       at_sec: 28,
       action: 'cue',
-      target: 'Use the category list — Launchers, Crewed, Cargo, Probes…',
+      target: 'Nine categories — Launchers, Crewed, Cargo, Stations…',
       duration_ms: 4500,
     },
-    // VTT § 00:00:35.7 "Try crewed spacecraft. Vostok at the top."
+    // VTT § 00:00:33.8 "Try crewed spacecraft. Vostok at the top."
+    // Filter the grid to crewed-spacecraft via URL — the route's q+filter
+    // state is URL-bound, so navigate sets it without a DOM click. After
+    // the navigate, the visible grid drops to ~13 cards and the crewed
+    // roll-call flashes land on cards that are actually on screen.
+    { at_sec: 33, action: 'navigate', target: '/fleet?category=crewed-spacecraft' },
+    { at_sec: 34, action: 'scroll-to', target: '[data-audio-stage="fleet-grid"]' },
+    // VTT § 00:00:34.0 – 53.4 — Vostok → Voskhod → Mercury → Gemini →
+    // Apollo CSM → Soyuz → Shuttle → Shenzhou → Crew Dragon → Starliner →
+    // Orion → Gaganyaan. Twelve flashes in ~20 s; the rapid stomp pacing
+    // matches the staccato narration. soyuz-7k-ok stands in for "Soyuz, in
+    // its many generations — Seven K, T, TM, TMA, MS" — one Soyuz card
+    // flashed rather than five rapid-fire on near-identical cards.
+    { at_sec: 35, action: 'flash', target: '[data-audio-stage="fleet-select-vostok"]' },
+    { at_sec: 41, action: 'flash', target: '[data-audio-stage="fleet-select-voskhod"]' },
+    { at_sec: 42, action: 'flash', target: '[data-audio-stage="fleet-select-mercury-capsule"]' },
+    { at_sec: 43, action: 'flash', target: '[data-audio-stage="fleet-select-gemini"]' },
+    { at_sec: 44, action: 'flash', target: '[data-audio-stage="fleet-select-apollo-csm-block-ii"]' },
+    { at_sec: 45, action: 'flash', target: '[data-audio-stage="fleet-select-soyuz-7k-ok"]' },
+    { at_sec: 48, action: 'flash', target: '[data-audio-stage="fleet-select-space-shuttle-orbiter"]' },
+    { at_sec: 49, action: 'flash', target: '[data-audio-stage="fleet-select-shenzhou"]' },
+    { at_sec: 50, action: 'flash', target: '[data-audio-stage="fleet-select-crew-dragon"]' },
+    { at_sec: 51, action: 'flash', target: '[data-audio-stage="fleet-select-starliner"]' },
+    { at_sec: 52, action: 'flash', target: '[data-audio-stage="fleet-select-orion"]' },
+    { at_sec: 53, action: 'flash', target: '[data-audio-stage="fleet-select-gaganyaan"]' },
+    // VTT § 00:01:07.8 "Click Saturn V" — clear filter so the launcher
+    // category becomes visible, then click. Was at t=77 (10 s late from
+    // VTT); pulled forward to land on the narration.
+    { at_sec: 66, action: 'navigate', target: '/fleet' },
     {
-      at_sec: 35,
-      action: 'cue',
-      target: 'Filter to Crewed Spacecraft. Vostok at the top.',
-      duration_ms: 4500,
-    },
-    // VTT § 00:01:11.5 "Click Saturn V"
-    {
-      at_sec: 71,
+      at_sec: 67,
       action: 'cue',
       target: 'Click Saturn V — read the anatomy diagram.',
       duration_ms: 4000,
     },
-    { at_sec: 73, action: 'scroll-to', target: '[data-audio-stage="fleet-grid"]' },
-    { at_sec: 75, action: 'flash', target: '[data-audio-stage="fleet-grid"]' },
-    { at_sec: 77, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
-    // VTT § 00:01:58.9 "Try the epoch timeline at the top"
+    { at_sec: 68, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
+    // VTT § 00:01:52.8 "Try the epoch timeline at the top" — was at t=118
+    // (5 s late) and flashed fleet-filters (wrong UI region — that's the
+    // category list, not the epoch strip). Re-targeted to the new
+    // fleet-epoch-timeline hook and re-timed to land on the narration.
     {
-      at_sec: 118,
+      at_sec: 113,
       action: 'cue',
       target: 'Try the epoch timeline — compare 1965 to 2025.',
       duration_ms: 4500,
     },
-    { at_sec: 120, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
+    { at_sec: 115, action: 'flash', target: '[data-audio-stage="fleet-epoch-timeline"]' },
   ],
 
   // ── /fleet · saturn-v-anchor — Enthusiast, VTT 134 s (Extended Tour) ─

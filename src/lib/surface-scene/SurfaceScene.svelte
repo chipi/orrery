@@ -1814,13 +1814,23 @@
       flyActive = true;
     };
 
+    // Shift+drag pan offset — translates the camera's orbit target
+    // off the body's origin. Default (0,0,0) keeps the legacy
+    // "orbit-around-planet" behaviour. Shift+drag in onMouseMove
+    // pushes this along camera-right + camera-up so the user can
+    // shift the body within the viewport without losing orbit lock
+    // (2026-06-15 user direction: "I also want same Shift-pan
+    // behaviour on moon, mars, earth, iss and tiangong. this should
+    // be standard canvas behaviour"). resetCamera() zeroes it so
+    // the framing returns to centered.
+    const focusOffset = new THREE.Vector3();
     const updateCam = () => {
       camera.position.set(
-        camR * Math.sin(camP) * Math.sin(camT),
-        camR * Math.cos(camP),
-        camR * Math.sin(camP) * Math.cos(camT),
+        focusOffset.x + camR * Math.sin(camP) * Math.sin(camT),
+        focusOffset.y + camR * Math.cos(camP),
+        focusOffset.z + camR * Math.sin(camP) * Math.cos(camT),
       );
-      camera.lookAt(0, 0, 0);
+      camera.lookAt(focusOffset);
     };
     updateCam();
     resetCamera = () => {
@@ -1831,6 +1841,7 @@
       camTVelocity = 0;
       camPVelocity = 0;
       flyActive = false;
+      focusOffset.set(0, 0, 0);
       updateCam();
     };
 
@@ -2084,10 +2095,19 @@
     // coordinates, and accidentally selects whatever hotspot/site
     // sits behind the cursor in 3D space.
     let mouseDownOnCanvas = false;
+    // Shift+left-click OR right-click → pan instead of orbit. Latched at
+    // mousedown so mid-drag Shift release doesn't switch modes.
+    let isPan = false;
+    // Scratch vectors for the pan basis — reused each move event to
+    // avoid GC churn at 60 FPS.
+    const panRight = new THREE.Vector3();
+    const panUp = new THREE.Vector3();
+    const panForward = new THREE.Vector3();
     const onMouseDown = (e: MouseEvent) => {
       mouseDownOnCanvas = true;
       isDrag = true;
       dragMoved = false;
+      isPan = e.button === 2 || e.shiftKey;
       lmx = e.clientX;
       lmy = e.clientY;
       downX = e.clientX;
@@ -2097,11 +2117,28 @@
       // Reset inertia velocities — fresh drag starts from rest.
       camTVelocity = 0;
       camPVelocity = 0;
-      el3d.style.cursor = 'grabbing';
+      el3d.style.cursor = isPan ? 'move' : 'grabbing';
     };
     const onMouseMove = (e: MouseEvent) => {
       if (!isDrag) return;
+      const dx = e.clientX - lmx;
+      const dy = e.clientY - lmy;
       if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > 4) dragMoved = true;
+      if (isPan) {
+        // Shift+drag pan — translate focusOffset along screen-aligned
+        // camera-right + camera-up. World units per pixel scale with
+        // camR + fov so a finger-width of drag shifts the view by ~a
+        // finger-width of world distance at every zoom.
+        const vh = renderer.domElement.clientHeight || window.innerHeight;
+        const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / vh;
+        camera.matrixWorld.extractBasis(panRight, panUp, panForward);
+        focusOffset.addScaledVector(panRight, -dx * scale);
+        focusOffset.addScaledVector(panUp, dy * scale);
+        lmx = e.clientX;
+        lmy = e.clientY;
+        updateCam();
+        return;
+      }
       // Zoom-relative drag sensitivity. Original 0.005 was right at
       // wide zoom but threw the view across the patch on a single
       // mouse twitch at camR ≈ 30. Curve: linear (camR/100) was too
@@ -2109,8 +2146,8 @@
       // — image 19 feedback). Power 1.8 makes it 8× slower at
       // camR=30 vs the wide-zoom feel (was ~3× with linear).
       const dragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
-      const dT = -(e.clientX - lmx) * dragK;
-      const dP = (e.clientY - lmy) * dragK;
+      const dT = -dx * dragK;
+      const dP = dy * dragK;
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
@@ -2131,10 +2168,20 @@
       const wasOnCanvas = mouseDownOnCanvas;
       mouseDownOnCanvas = false;
       const wasDrag = dragMoved;
+      const wasPan = isPan;
       isDrag = false;
+      isPan = false;
       el3d.style.cursor = 'grab';
-      if (wasOnCanvas && !wasDrag && view === '3d') tryPick3d(e.clientX, e.clientY);
+      // A pan that didn't move further than the click threshold still
+      // counts as a pan, not a pick — otherwise Shift+click selects a
+      // hotspot instead of doing nothing.
+      if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') {
+        tryPick3d(e.clientX, e.clientY);
+      }
     };
+    // Suppress the browser context menu on right-click so right-drag
+    // pan stays usable (no menu pop interrupting the gesture).
+    const onContextMenu = (e: MouseEvent) => e.preventDefault();
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering
       // browser-level zoom (Cmd-scroll). Registered with passive:false
@@ -2242,6 +2289,7 @@
       onTouchEnd,
       onHover,
       onHoverLeave,
+      onContextMenu,
     });
 
     // 2D context + body-specific raster source. Two projection modes:

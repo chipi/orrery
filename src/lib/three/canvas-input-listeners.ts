@@ -26,6 +26,7 @@ export function bindCanvasInputs({
   onTouchEnd,
   onHover,
   onHoverLeave,
+  onContextMenu,
 }: {
   el: HTMLElement;
   onMouseDown: (e: MouseEvent) => void;
@@ -37,6 +38,10 @@ export function bindCanvasInputs({
   onTouchEnd: (e: TouchEvent) => void;
   onHover?: (e: MouseEvent) => void;
   onHoverLeave?: () => void;
+  /** Optional context-menu suppressor — wire when the route supports
+   *  right-drag panning so the browser menu doesn't interrupt the
+   *  gesture. Defaults to no-op (browser menu still shows). */
+  onContextMenu?: (e: MouseEvent) => void;
 }): () => void {
   el.addEventListener('mousedown', onMouseDown);
   window.addEventListener('mousemove', onMouseMove);
@@ -48,6 +53,7 @@ export function bindCanvasInputs({
   el.addEventListener('touchcancel', onTouchEnd);
   if (onHover) el.addEventListener('mousemove', onHover);
   if (onHoverLeave) el.addEventListener('mouseleave', onHoverLeave);
+  if (onContextMenu) el.addEventListener('contextmenu', onContextMenu);
   return () => {
     el.removeEventListener('mousedown', onMouseDown);
     window.removeEventListener('mousemove', onMouseMove);
@@ -59,5 +65,6 @@ export function bindCanvasInputs({
     el.removeEventListener('touchcancel', onTouchEnd);
     if (onHover) el.removeEventListener('mousemove', onHover);
     if (onHoverLeave) el.removeEventListener('mouseleave', onHoverLeave);
+    if (onContextMenu) el.removeEventListener('contextmenu', onContextMenu);
   };
 }

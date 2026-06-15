@@ -588,6 +588,28 @@
     controls.target.set(0.6, 0.0, 0);
     controls.update();
 
+    // Shift+left-click → pan (in addition to OrbitControls' default
+    // right-click pan). 2026-06-15 user direction: "Shift+pan should
+    // be standard canvas behaviour" — matches /iss + /explore + the
+    // surface routes (/moon /mars /earth via SurfaceScene).
+    const swapToPan = () => {
+      controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
+      renderer.domElement.style.cursor = 'move';
+    };
+    const swapToRotate = () => {
+      controls.mouseButtons.LEFT = THREE.MOUSE.ROTATE;
+      renderer.domElement.style.cursor = '';
+    };
+    const onShiftKey = (e: KeyboardEvent, down: boolean) => {
+      if (e.key !== 'Shift') return;
+      if (down) swapToPan();
+      else swapToRotate();
+    };
+    const onKeyDown = (e: KeyboardEvent) => onShiftKey(e, true);
+    const onKeyUp = (e: KeyboardEvent) => onShiftKey(e, false);
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
+
     const initialCamPos = camera.position.clone();
     const initialTarget = controls.target.clone();
     const initialDistance = camera.position.distanceTo(controls.target);
@@ -1043,6 +1065,10 @@
     // teardowns. LIFO drain so loop.cleanup (registered earlier) runs
     // after these.
     if (stopLensWatch) lifecycle.add(stopLensWatch);
+    lifecycle.add(() => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+    });
     lifecycle.add(() => controls.dispose());
     lifecycle.add(() => disposeScene(scene));
     lifecycle.add(() => earthBackdropTex2k.dispose());

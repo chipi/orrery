@@ -4277,21 +4277,41 @@ sample      ${debugInfo.projectedPxSample}`}
           onEnter={enterPanorama}
           onExit={exitPanorama}
         />
-        <!-- "Zoom to detail" — flies the camera in to the close range
-             where the HiRISE/LROC detail patch is fully visible. Only
-             rendered when the site declares a Tier-2 source (otherwise
-             the patch wouldn't load and the button would be a no-op).
-             Hidden during panorama mode — you're already there. -->
+        <!-- Zoom-to-detail ↔ Exit-zoom button. Flips on flatPatchActive,
+             mirroring the PanoramaToggleButton's enter/exit flip
+             (2026-06-15 user direction: "same as we have button for
+             exit panorama view, we also need button to exit zoomed
+             in mode, in same way as we have one for panorama").
+             - Out of detail (Zoom to detail): flies the camera in to
+               the close range where the HiRISE/LROC detail patch is
+               fully visible. Rendered when the site declares a Tier-2
+               source AND we're not already in detail/panorama.
+             - In detail (Exit zoom view): drives closeFlatPatch which
+               fades the patch out + lifts camR back above the trigger
+               threshold. Same chrome family as Exit panorama view. -->
         {#if selected.hotspot_tier2_source && !panoramaActive}
-          <button
-            type="button"
-            class="zoom-to-detail-button"
-            data-testid="zoom-to-detail"
-            onclick={() => selected && flyToDetail?.(selected)}
-          >
-            <span class="icon" aria-hidden="true">⤓</span>
-            <span>Zoom to detail</span>
-          </button>
+          {#if flatPatchActive}
+            <button
+              type="button"
+              class="zoom-to-detail-button zoom-to-detail-button--exit"
+              data-testid="exit-zoom"
+              onclick={() => closeFlatPatch()}
+              title="Exit zoom view (Esc)"
+            >
+              <span class="icon" aria-hidden="true">✕</span>
+              <span>Exit zoom view</span>
+            </button>
+          {:else}
+            <button
+              type="button"
+              class="zoom-to-detail-button"
+              data-testid="zoom-to-detail"
+              onclick={() => selected && flyToDetail?.(selected)}
+            >
+              <span class="icon" aria-hidden="true">⤓</span>
+              <span>Zoom to detail</span>
+            </button>
+          {/if}
         {/if}
       </div>
 

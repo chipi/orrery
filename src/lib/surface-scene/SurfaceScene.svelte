@@ -56,7 +56,9 @@
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
-  import HotspotsLodChip from '$lib/components/HotspotsLodChip.svelte';
+  // HotspotsLodChip import dropped — its LOD-cycle UX is now folded
+  // into the unified SURFACE chip (see surfaceChipLabel /
+  // cycleSurfaceMode below).
   import PanoramaToggleButton from '$lib/components/PanoramaToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import {
@@ -178,7 +180,18 @@
   // Layer toggles. SURFACE = lander/rover markers; ORBITERS = dots
   // on inclined rings around the Moon (LRO, Clementine, Chandrayaan-1,
   // Chang'e 1/2, SMART-1, Lunar Prospector, Luna 10). Both default-on.
-  let layerSurface = $state(true);
+  // SURFACE is now a 4-state cycling chip — AUTO / HIGH / LOW / OFF —
+  // that subsumes the previously-separate HOTSPOTS · {auto,low,high}
+  // chip (2026-06-15 user direction: "merge hotspots chip into
+  // surface chip on earth, seems like overkill to have another chip
+  // here, so we can cycle with surface and use hotspot logic"). The
+  // AUTO/HIGH/LOW states all show surface markers + hotspots at the
+  // corresponding LOD; OFF hides the surface layer entirely.
+  // surfaceOff is the new toggle; layerSurface stays as a $derived
+  // boolean for the per-frame visibility math + raycaster paths to
+  // keep their existing call sites intact.
+  let surfaceOff = $state(false);
+  let layerSurface = $derived(!surfaceOff);
   let layerOrbiters = $state(true);
   let layerOrbits = $state(true);
   // TRAVERSES chip — visible only when route passes loadTraverses
@@ -359,6 +372,35 @@
   // resolveInitialHotspotsMode + nextHotspotsMode extracted to
   // $lib/surface-map/hotspots-mode.ts (#42).
   const cycleHotspotsMode = () => (hotspotsParam.value = nextHotspotsMode(hotspotsParam.value));
+
+  // Unified SURFACE chip cycle (replaces the prior SURFACE on/off +
+  // separate HOTSPOTS·auto/low/high pair). Cycle order:
+  //   AUTO -> HIGH -> LOW -> OFF -> AUTO
+  // AUTO/HIGH/LOW all show the surface markers + hotspots at the
+  // matching LOD; OFF hides the surface layer entirely. When toggling
+  // out of OFF, returns to AUTO so the next user state is the
+  // sensible default.
+  const cycleSurfaceMode = () => {
+    if (surfaceOff) {
+      surfaceOff = false;
+      hotspotsParam.value = 'auto';
+      return;
+    }
+    if (hotspotsParam.value === 'auto') {
+      hotspotsParam.value = 'high';
+    } else if (hotspotsParam.value === 'high') {
+      hotspotsParam.value = 'low';
+    } else {
+      // currently low -> off
+      surfaceOff = true;
+    }
+  };
+  // Compose the chip's display label so the user always sees the
+  // current state at a glance. Function form (not a derived) so the
+  // LayerChipRow consumer can call it each render — the reactivity
+  // is automatic via the $state reads inside.
+  const surfaceChipLabel = (): string =>
+    surfaceOff ? 'SURFACE · OFF' : `SURFACE · ${hotspotsParam.value.toUpperCase()}`;
 
   // useUrlParam handles the initial URL read + the goto write.
   // The remaining initial-mount work is the debug-flag read +
@@ -3680,10 +3722,12 @@
           chips={[
             {
               testid: 'layer-surface',
-              label: m.ui_layer_surface(),
+              // Cycling label reflects the SURFACE+HOTSPOTS unified
+              // state: SURFACE · AUTO / HIGH / LOW / OFF.
+              label: surfaceChipLabel,
               title: m.moon_layer_tip_surface(),
-              active: () => layerSurface,
-              toggle: () => (layerSurface = !layerSurface),
+              active: () => !surfaceOff,
+              toggle: cycleSurfaceMode,
             },
             {
               testid: 'layer-orbiters',
@@ -3776,7 +3820,10 @@
               : []),
           ]}
         />
-        <HotspotsLodChip mode={hotspotsParam.value} onCycle={cycleHotspotsMode} />
+        <!-- HOTSPOTS LOD chip merged into SURFACE — see surfaceChipLabel
+             / cycleSurfaceMode above. Component import preserved in case
+             future routes want the standalone variant; can be deleted
+             once the cycle UX has soaked. -->
       </div>
     </div>
   {/if}

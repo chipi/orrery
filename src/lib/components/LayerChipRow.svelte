@@ -14,8 +14,12 @@
   interface LayerChip {
     /** Test-id for Playwright (e.g. 'layer-surface'). */
     testid: string;
-    /** Display label (already-resolved Paraglide message). */
-    label: string;
+    /** Display label. Either a static string OR an accessor for
+     *  cycling chips whose label updates with state (e.g. /earth's
+     *  unified SURFACE chip cycles AUTO/HIGH/LOW/OFF). When supplied
+     *  as a function it's called each render so the label tracks the
+     *  underlying state reactively. */
+    label: string | (() => string);
     /** Tooltip (already-resolved Paraglide message). */
     title: string;
     /** Reactive state accessor. Used both for class:active + aria-pressed
@@ -54,7 +58,7 @@
       title={chip.title}
       data-testid={chip.testid}
     >
-      {chip.label}
+      {typeof chip.label === 'function' ? chip.label() : chip.label}
     </button>
   {/if}
 {/each}

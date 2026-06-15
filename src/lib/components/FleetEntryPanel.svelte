@@ -59,7 +59,13 @@
 
   let hasGallery = $derived(gallery.length > 0);
   let hasFlights = $derived((entry?.flights?.length ?? 0) > 0);
-  let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 0);
+  // MISSIONS tab is shown only when there are 2+ linked missions —
+  // the single-mission case is fully served by the .spec-cta--mission
+  // button at the top of OVERVIEW (which direct-links to that one
+  // mission), so showing a tab containing a list-of-one would just
+  // duplicate the CTA (2026-06-15 user note: "when we have 1 mission
+  // only, I don't think we need missions tab?").
+  let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 1);
   let hasLinks = $derived((entry?.links?.length ?? 0) > 0);
 
   let linksByTier = $derived.by(() => {

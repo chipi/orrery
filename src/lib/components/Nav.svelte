@@ -415,7 +415,16 @@
   .lens-toggle svg {
     display: block;
   }
-  .lens-toggle:hover,
+  /* Hover-affordance only on routes that actually surface lens content
+     (ScienceLayersPanel sets <html data-science-lens-available> on
+     mount). On routes without it (e.g. /missions, /fleet, /library,
+     /credits, /), clicking the toggle still works but doesn't change
+     anything visible — so the hover color shift would be misleading
+     (2026-06-15 user note: "physics layer button should not change
+     color on hover when on pages that do not have science lens").
+     focus-visible still applies everywhere — it's a keyboard-nav
+     affordance, not a "this will do something" hint. */
+  :global([data-science-lens-available]) .lens-toggle:hover,
   .lens-toggle:focus-visible {
     border-color: rgba(255, 200, 80, 0.5);
     color: rgba(255, 200, 80, 0.95);

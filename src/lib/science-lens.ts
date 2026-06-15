@@ -40,6 +40,43 @@ export function toggleScienceLens(): boolean {
   return next === 'on';
 }
 
+/**
+ * Per-route advertisement: "this route supports the science lens."
+ * Set on mount by `ScienceLayersPanel` (the component that actually
+ * surfaces lens-conditional content), cleared on unmount. Lens-aware
+ * routes get `<html data-science-lens-available>` while they're
+ * active; lens-blind routes (/missions, /fleet, /library, /credits,
+ * /, ...) leave the attribute absent.
+ *
+ * Nav uses the attribute to gate the lens-toggle's hover-affordance:
+ * on lens-blind routes the toggle still renders + still toggles the
+ * underlying state, but mousing over it doesn't shift colour, since
+ * clicking it wouldn't change anything the user can see (2026-06-15
+ * user note: "physics layer button should not change color on hover
+ * when on pages that do not have science lens").
+ *
+ * Idempotent under concurrent mounts (the panel can mount + unmount
+ * inside Svelte component lifecycle without interfering with another
+ * panel on the same page) — currently no route mounts two, but the
+ * ref-counted set keeps the contract future-proof.
+ */
+const AVAIL_ATTR = 'data-science-lens-available';
+const availableMounts = new Set<symbol>();
+
+export function markScienceLensAvailable(): () => void {
+  const token = Symbol();
+  availableMounts.add(token);
+  const r = root();
+  if (r) r.setAttribute(AVAIL_ATTR, '');
+  return () => {
+    availableMounts.delete(token);
+    if (availableMounts.size === 0) {
+      const r2 = root();
+      if (r2) r2.removeAttribute(AVAIL_ATTR);
+    }
+  };
+}
+
 /** Subscribe to lens-state changes. Returns an unsubscribe function. The
  * callback fires once with the initial state, then on every flip via a
  * MutationObserver on the <html> attribute. */

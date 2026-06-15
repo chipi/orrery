@@ -22,7 +22,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { onScienceLensChange } from '$lib/science-lens';
+  import { onScienceLensChange, markScienceLensAvailable } from '$lib/science-lens';
   import {
     LAYER_ORDER,
     ensureLayerDefaults,
@@ -97,6 +97,10 @@
 
   onMount(() => {
     ensureLayerDefaults();
+    // Advertise to <html data-science-lens-available> so the nav
+    // lens-toggle knows it can do something on this route — gates
+    // the hover-affordance in Nav.svelte.
+    stops.push(markScienceLensAvailable());
     stops.push(
       onScienceLensChange((on) => {
         lensOn = on;

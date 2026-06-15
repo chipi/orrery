@@ -104,17 +104,14 @@ const MATCHERS = {
   isDoc: (p) => /^(docs\/|README|CLAUDE|AGENTS|CHANGELOG|.*\.md$|.*\.mdx$)/.test(p),
   isData: (p) => p.startsWith('static/data/'),
   isMessages: (p) => p.startsWith('messages/') && p.endsWith('.json'),
-  isAudio: (p) =>
-    p.startsWith('static/audio/') || p.startsWith('scripts/audio/'),
+  isAudio: (p) => p.startsWith('static/audio/') || p.startsWith('scripts/audio/'),
   isTest: (p) => /\.(test|spec)\.(ts|js|svelte)$/.test(p),
   isCode: (p) =>
     /\.(svelte|ts|js|mjs)$/.test(p) &&
     !p.startsWith('src/lib/paraglide/') &&
     !/\.(test|spec)\./.test(p),
   isStaticAsset: (p) =>
-    p.startsWith('static/') &&
-    !p.startsWith('static/data/') &&
-    !p.startsWith('static/audio/'),
+    p.startsWith('static/') && !p.startsWith('static/data/') && !p.startsWith('static/audio/'),
 };
 
 function categorize(files) {
@@ -156,23 +153,38 @@ function pickPlan({ cats, otherFiles }) {
       reason: `unrecognised paths (${otherFiles.slice(0, 3).join(', ')}${otherFiles.length > 3 ? ' …' : ''})`,
     };
   // Only docs / commit-message edits → just secret scan.
-  if (cats.doc > 0 && cats.data + cats.messages + cats.audio + cats.test + cats.code + cats.staticAsset === 0) {
+  if (
+    cats.doc > 0 &&
+    cats.data + cats.messages + cats.audio + cats.test + cats.code + cats.staticAsset === 0
+  ) {
     return { mode: 'docs', reason: 'docs-only change' };
   }
   // Only data → validate-data + build.
-  if (cats.data > 0 && cats.code + cats.messages + cats.audio + cats.test + cats.staticAsset === 0) {
+  if (
+    cats.data > 0 &&
+    cats.code + cats.messages + cats.audio + cats.test + cats.staticAsset === 0
+  ) {
     return { mode: 'data', reason: 'data-only change' };
   }
   // Only messages → i18n + typecheck + build.
-  if (cats.messages > 0 && cats.code + cats.data + cats.audio + cats.test + cats.staticAsset === 0) {
+  if (
+    cats.messages > 0 &&
+    cats.code + cats.data + cats.audio + cats.test + cats.staticAsset === 0
+  ) {
     return { mode: 'messages', reason: 'i18n-only change' };
   }
   // Only audio → audio cost + build.
-  if (cats.audio > 0 && cats.code + cats.data + cats.messages + cats.test + cats.staticAsset === 0) {
+  if (
+    cats.audio > 0 &&
+    cats.code + cats.data + cats.messages + cats.test + cats.staticAsset === 0
+  ) {
     return { mode: 'audio', reason: 'audio-only change' };
   }
   // Only test files → vitest --changed + build.
-  if (cats.test > 0 && cats.code + cats.data + cats.messages + cats.audio + cats.staticAsset === 0) {
+  if (
+    cats.test > 0 &&
+    cats.code + cats.data + cats.messages + cats.audio + cats.staticAsset === 0
+  ) {
     return { mode: 'tests', reason: 'tests-only change' };
   }
   // Source code changes (with or without tests/messages/data) → typecheck + lint + vitest --changed + build.

@@ -59,12 +59,14 @@
 
   let hasGallery = $derived(gallery.length > 0);
   let hasFlights = $derived((entry?.flights?.length ?? 0) > 0);
-  // MISSIONS tab is shown only when there are 2+ linked missions —
-  // the single-mission case is fully served by the .spec-cta--mission
-  // button at the top of OVERVIEW (which direct-links to that one
+  // Mission-link CTA on OVERVIEW renders whenever there's at least
+  // one linked mission. MISSIONS tab is shown only when there are
+  // 2+ — the single-mission case is fully served by the
+  // .spec-cta--mission button (which direct-links to that one
   // mission), so showing a tab containing a list-of-one would just
-  // duplicate the CTA (2026-06-15 user note: "when we have 1 mission
-  // only, I don't think we need missions tab?").
+  // duplicate the CTA (2026-06-15 user note: "when we have 1
+  // mission only, I don't think we need missions tab?").
+  let hasAnyMission = $derived((entry?.linked_missions?.length ?? 0) > 0);
   let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 1);
   let hasLinks = $derived((entry?.links?.length ?? 0) > 0);
 
@@ -274,7 +276,7 @@
              mission ID; N missions -> tab switcher to the MISSIONS
              tab. 0 missions -> nothing rendered (consistent with the
              MISSIONS tab being auto-hidden for those entries). -->
-        {#if hasMissions}
+        {#if hasAnyMission}
           {@const missionIds = entry.linked_missions ?? []}
           {#if missionIds.length === 1}
             <div class="mission-cta-bar">

@@ -1242,7 +1242,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /science · vis-viva — Enthusiast, VTT 111 s (Extended Tour) ───
+  // ── /science · vis-viva — Enthusiast, VTT 123 s (Extended Tour) ───
   'vis-viva': [
     // VTT § 00:00:00.0 "Open the Orbits tab"
     { at_sec: 0, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
@@ -1257,6 +1257,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Vis-viva — one equation; three variables; six decades of spaceflight.',
       duration_ms: 6000,
     },
+    // VTT § 00:01:15.5 "Kepler's second law — equal areas in equal times
+    // — falls right out of this." Flash the keplers-laws section card in
+    // the right rail. We're on /science/orbits/vis-viva — the orbits
+    // right rail lists every orbits section, including keplers-laws.
+    { at_sec: 76, action: 'flash', target: '[data-audio-stage="science-section-keplers-laws"]' },
   ],
 
   // ── /fleet · guide-fleet — VTT 167 s ──────────────────────────────
@@ -1344,9 +1349,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   'saturn-v-anchor': [
     // VTT § 00:00:00.0 "Click Saturn V" → 00:00:01.1 "Look at the diagram"
     { at_sec: 1, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
-    // VTT § 00:00:30.9 "Saturn V flew thirteen times between 1967 and 1973"
+    // VTT § 00:00:02.7 – 11.9 "110.6 meters tall. 36 stories. 3,000 metric tons."
     {
-      at_sec: 31,
+      at_sec: 8,
+      action: 'cue',
+      target: '110 m tall. 36 stories. 3,000 tons.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:00:44.0 "Thirteen for thirteen." — was cue@31 (14 s early
+    // before VTT verification — the count line is at t=44, not t=31).
+    {
+      at_sec: 45,
       action: 'cue',
       target: 'Thirteen for thirteen. No catastrophic failures.',
       duration_ms: 5000,
@@ -1358,9 +1371,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'No rocket since has equalled Saturn V to LEO or the Moon.',
       duration_ms: 5000,
     },
-    // VTT § 00:02:02.4 "For now, Saturn V is the anchor point"
+    // VTT § 00:01:50.7 "SLS Block 1, the rocket flying Artemis, is comparable"
+    { at_sec: 111, action: 'flash', target: '[data-audio-stage="fleet-select-sls-block-1"]' },
+    // VTT § 00:01:58.6 "Starship and Super Heavy may eventually exceed it."
+    { at_sec: 119, action: 'flash', target: '[data-audio-stage="fleet-select-starship"]' },
+    // VTT § 00:02:06.4 "Look at the ladder of launchers in this catalogue,
+    // and notice which step has been empty for fifty years." — was
+    // cue@122 (10 s early; the "ladder" + "empty step" beat is at t=132).
     {
-      at_sec: 122,
+      at_sec: 132,
       action: 'cue',
       target: 'Notice which step on the ladder has been empty for fifty years.',
       duration_ms: 5000,

@@ -200,7 +200,15 @@
   // Live altitude readout (km above surface), driven by the camera-distance
   // ↔ km-per-unit ratio. Surfaced in the corner HUD as "how zoomed am
   // I" feedback. ADR-072 §Drift 16 — was Mars-only, now both bodies.
-  let altitudeKm = $state(0);
+  //
+  // Initial value derived from the route's initialCamR so the HUD reads
+  // the right altitude on first paint, BEFORE the animate loop fires
+  // its first frame (which then continues to write live values). Without
+  // this seed, fresh page-load briefly showed "0 m altitude" until the
+  // first RAF tick (2026-06-15 user report on /moon).
+  let altitudeKm = $state(
+    Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30)),
+  );
 
   // Vendored rover-traverse data, populated from the loadTraverses()
   // prop in onMount. Empty record when the route doesn't pass that prop

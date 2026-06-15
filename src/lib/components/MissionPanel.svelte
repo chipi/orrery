@@ -335,40 +335,6 @@
             <div class="cell-label">{m.mp_label_year()}</div>
             <div class="cell-value">{mission.year}</div>
           </div>
-          <div class="cell wide">
-            <div class="cell-label">{m.mp_label_vehicle()}</div>
-            <div class="cell-value">
-              {#if launcherRef && mission.vehicle}
-                <a
-                  class="fleet-link"
-                  href="{base}/fleet?id={launcherRef}"
-                  data-testid="mission-vehicle-fleet-link"
-                  title="Open {mission.vehicle} in /fleet"
-                >
-                  {mission.vehicle}
-                </a>
-              {:else}
-                {mission.vehicle ?? '—'}
-              {/if}
-            </div>
-          </div>
-          <div class="cell wide">
-            <div class="cell-label">{m.mp_label_payload()}</div>
-            <div class="cell-value">
-              {#if spacecraftRef && mission.payload}
-                <a
-                  class="fleet-link"
-                  href="{base}/fleet?id={spacecraftRef}"
-                  data-testid="mission-payload-fleet-link"
-                  title="Open spacecraft in /fleet"
-                >
-                  {mission.payload}
-                </a>
-              {:else}
-                {mission.payload ?? '—'}
-              {/if}
-            </div>
-          </div>
           <div class="cell">
             <div class="cell-label">{m.mp_label_delta_v()}</div>
             <div class="cell-value">{mission.delta_v ?? '—'}</div>
@@ -377,6 +343,116 @@
             <div class="cell-label">{m.mp_label_agency()}</div>
             <div class="cell-value short">{mission.agency_full ?? mission.agency}</div>
           </div>
+        </div>
+
+        <!-- Vehicle + Payload as prominent clickable CTAs. Previously
+             rendered as cramped grid cells with thin underlined links
+             which the user found "not seen well and links not clear"
+             (2026-06-15). Promoted to button-style anchors matching the
+             "Fly this mission" .cta template but with a distinct teal
+             tint (so the secondary navigation CTAs don't compete with
+             the primary blue Fly action). Each carries a small inline
+             SVG glyph — rocket for the launch vehicle, satellite-with-
+             antenna for the payload spacecraft — so the buttons read
+             at a glance even before the text resolves. When the
+             fleet_refs link isn't populated for the mission (no
+             matching launcher or spacecraft entry in /fleet) the chip
+             falls back to a non-clickable static frame in the same
+             colour so the spec stays visible but doesn't suggest a
+             dead link. -->
+        <div class="spec-cta-bar">
+          {#if mission.vehicle}
+            {#if launcherRef}
+              <a
+                class="spec-cta"
+                href="{base}/fleet?id={launcherRef}"
+                data-testid="mission-vehicle-fleet-link"
+                title="Open {mission.vehicle} in /fleet"
+              >
+                <span class="spec-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 20" width="16" height="20" fill="currentColor">
+                    <path
+                      d="M8 1 L11 6 L11 13 L13 16 L13 18 L11 17 L11 18 L5 18 L5 17 L3 18 L3 16 L5 13 L5 6 Z"
+                    />
+                    <circle cx="8" cy="9" r="1.6" fill="rgba(0,0,0,0.45)" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">{m.mp_label_vehicle()}</span>
+                  <span class="spec-value">{mission.vehicle}</span>
+                </span>
+              </a>
+            {:else}
+              <div class="spec-cta is-static" data-testid="mission-vehicle-static">
+                <span class="spec-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 20" width="16" height="20" fill="currentColor">
+                    <path
+                      d="M8 1 L11 6 L11 13 L13 16 L13 18 L11 17 L11 18 L5 18 L5 17 L3 18 L3 16 L5 13 L5 6 Z"
+                    />
+                    <circle cx="8" cy="9" r="1.6" fill="rgba(0,0,0,0.45)" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">{m.mp_label_vehicle()}</span>
+                  <span class="spec-value">{mission.vehicle}</span>
+                </span>
+              </div>
+            {/if}
+          {/if}
+          {#if mission.payload}
+            {#if spacecraftRef}
+              <a
+                class="spec-cta"
+                href="{base}/fleet?id={spacecraftRef}"
+                data-testid="mission-payload-fleet-link"
+                title="Open spacecraft in /fleet"
+              >
+                <span class="spec-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+                    <rect x="6" y="6" width="8" height="8" rx="1" />
+                    <rect x="1" y="8" width="4" height="4" />
+                    <rect x="15" y="8" width="4" height="4" />
+                    <line
+                      x1="10"
+                      y1="3"
+                      x2="10"
+                      y2="6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="10" cy="2.4" r="1.3" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">{m.mp_label_payload()}</span>
+                  <span class="spec-value">{mission.payload}</span>
+                </span>
+              </a>
+            {:else}
+              <div class="spec-cta is-static" data-testid="mission-payload-static">
+                <span class="spec-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+                    <rect x="6" y="6" width="8" height="8" rx="1" />
+                    <rect x="1" y="8" width="4" height="4" />
+                    <rect x="15" y="8" width="4" height="4" />
+                    <line
+                      x1="10"
+                      y1="3"
+                      x2="10"
+                      y2="6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="10" cy="2.4" r="1.3" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">{m.mp_label_payload()}</span>
+                  <span class="spec-value">{mission.payload}</span>
+                </span>
+              </div>
+            {/if}
+          {/if}
         </div>
 
         {#if mission.first}
@@ -1016,6 +1092,85 @@
     background: #2244dd;
     border-color: #4466ff;
     outline: none;
+  }
+
+  /* Spec-CTA buttons — vehicle + payload navigation chips at the top
+     of the overview tab. Match .cta's general shape (uppercase mono
+     label, 4px radius, prominent) but a TEAL tint so they don't read
+     as a second primary action competing with the blue Fly button.
+     Layout: side-by-side flex row on desktop; wraps to stacked column
+     on narrow viewports via the bar's flex-wrap. Static fallback
+     (when no fleet ref exists) keeps the same chrome but loses the
+     hover lift + cursor pointer. */
+  .spec-cta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 14px;
+  }
+  .spec-cta {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 12px;
+    background: #0a4a5a;
+    border: 1px solid rgba(80, 168, 198, 0.55);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .spec-cta:hover,
+  .spec-cta:focus-visible {
+    background: #0e6a82;
+    border-color: #50a8c6;
+    outline: none;
+  }
+  .spec-cta.is-static {
+    cursor: default;
+    opacity: 0.7;
+  }
+  .spec-cta.is-static:hover {
+    background: #0a4a5a;
+    border-color: rgba(80, 168, 198, 0.55);
+  }
+  .spec-cta .spec-icon {
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(180, 230, 245, 0.95);
+  }
+  .spec-cta .spec-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+  }
+  .spec-cta .spec-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(180, 230, 245, 0.78);
+  }
+  .spec-cta .spec-value {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   /* .gallery-credit / .lightbox / .lightbox-close moved to panel-tabs.css */

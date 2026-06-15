@@ -1687,8 +1687,8 @@
     position: absolute;
     top: 6px;
     right: 6px;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;

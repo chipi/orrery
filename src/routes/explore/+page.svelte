@@ -5174,7 +5174,7 @@
      so the on-state is obvious. 32 px tall keeps them subordinate to
      the 44 px primary toggles above. */
   .chip {
-    min-height: 32px;
+    min-height: 44px;
     /* width: 100% so each chip stretches to the chip-row's width,
        which itself stretches to the top toggle row's width via
        .hud-controls align-items: stretch. min-width kept at 110px as
@@ -5255,7 +5255,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.04em;
-    min-height: 28px;
+    min-height: 44px;
   }
   .paths-legend-row:hover,
   .paths-legend-row:focus-visible {
@@ -5370,7 +5370,7 @@
       padding: 0 8px;
       font-size: 9px;
       letter-spacing: 1.2px;
-      min-height: 30px;
+      min-height: 44px;
     }
   }
 

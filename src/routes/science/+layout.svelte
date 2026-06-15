@@ -332,7 +332,7 @@
     }
     .tab-card {
       flex: 0 0 auto;
-      min-height: 32px;
+      min-height: 44px;
       padding: 6px 12px;
     }
     .tab-name {
@@ -397,7 +397,7 @@
       gap: 6px;
     }
     .section-row {
-      min-height: 32px;
+      min-height: 44px;
       padding: 6px 8px;
     }
     .section-name {

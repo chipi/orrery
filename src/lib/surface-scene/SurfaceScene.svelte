@@ -4878,7 +4878,7 @@ sample      ${debugInfo.projectedPxSample}`}
     align-items: stretch;
   }
   .hud-controls :global(.chip) {
-    min-height: 32px;
+    min-height: 44px;
     min-width: 110px;
     padding: 0 10px;
     background: rgba(8, 10, 22, 0.65);
@@ -4916,7 +4916,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .hud-controls :global(.toggle) {
     min-width: 44px;
-    min-height: 36px;
+    min-height: 44px;
     max-width: 70px;
     padding: 4px 8px;
     background: rgba(15, 18, 35, 0.85);
@@ -4966,13 +4966,13 @@ sample      ${debugInfo.projectedPxSample}`}
       padding: 3px 5px;
       font-size: 9px;
       max-width: 54px;
-      min-height: 32px;
+      min-height: 44px;
     }
     .hud-controls :global(.chip) {
       padding: 0 6px;
       font-size: 8.5px;
       min-width: 78px;
-      min-height: 28px;
+      min-height: 44px;
     }
   }
   .load-banner {

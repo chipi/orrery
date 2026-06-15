@@ -153,8 +153,8 @@
     position: absolute;
     top: calc(64px + 14px);
     right: 14px;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;

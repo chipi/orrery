@@ -8108,6 +8108,13 @@
     padding-bottom: 4px;
     scrollbar-width: thin;
   }
+  /* Center the row when there's exactly one asset — multi-asset rows
+     stay left-anchored so horizontal scroll feels natural starting
+     from the first card (2026-06-15 user follow-up: "when there is
+     only 1 fleet asset, center it"). */
+  .opening-fleet-row:has(> .opening-fleet-card:only-child) {
+    justify-content: center;
+  }
   .opening-fleet-card {
     flex-shrink: 0;
   }

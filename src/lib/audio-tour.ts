@@ -897,11 +897,14 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 46, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
-    // No exit click — the panorama holds through the close ("Every
+    // Soft exit before the route transition to /fly. The "Every
     // photograph it sends back is from a place no other being has ever
-    // stood" at VTT 86.2, "persistence at four centimeters per second"
-    // at episode end). Auto-advance to the next Extended-Tour episode
-    // (guide-fly) navigates away from /mars and unmounts the skybox.
+    // stood" line at VTT 86.2 lands fully on the panorama; we hold ~3 s
+    // past that (~89 s total inside the skybox), then close at t=98 so
+    // the closing line "persistence at four centimeters per second"
+    // settles on the map view. The route transition to guide-fly then
+    // happens map → cislunar — a softer cut than panorama → cislunar.
+    { at_sec: 98, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
   ],
 
   // ── /iss · guide-iss — VTT 152 s ──────────────────────────────────
@@ -981,9 +984,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // Shuttle flight at a time"). The toggle button starts playback in
     // the same click — listener watches Zarya → Unity → Zvezda → Destiny
     // appear as the narration names the assembly arc. Fixed 50 s playback;
-    // episode ends at ~127 s so the listener sees ~90 % of the timeline
-    // before auto-advance to the next episode dismounts the panel.
+    // episode ends at ~127 s — close the panel just before so the
+    // /tiangong transition starts from the ISS module list, not from a
+    // mid-playback frame that's about to dismount.
     { at_sec: 80, action: 'click', target: '[data-audio-stage="iss-assembly-toggle"]' },
+    { at_sec: 125, action: 'click', target: '[data-audio-stage="iss-assembly-toggle"]' },
   ],
 
   // ── /tiangong · guide-tiangong — VTT 136 s ────────────────────────
@@ -1072,8 +1077,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 5, action: 'flash', target: '[data-audio-stage="science-section-lambert-problem"]' },
     // VTT § 00:00:07.1 "Free-return geometry"
     { at_sec: 7, action: 'flash', target: '[data-audio-stage="science-section-free-return"]' },
-    // VTT § 00:00:12 — return to /science home before "ten tabs" beat.
-    { at_sec: 12, action: 'navigate', target: '/science' },
+    // Stay on /science/transfers for the rest of the episode — the
+    // science-tabs left rail and search button are visible on every
+    // sub-route, so the "ten tabs" + "Cmd-K" beats still fire cleanly.
+    // The previous t=12 navigate-back to /science yanked any listener
+    // who'd started reading a section in the right rail.
     // VTT § 00:00:20.7 "The encyclopedia is organized into ten tabs across the top"
     { at_sec: 18, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
     { at_sec: 20, action: 'flash', target: '[data-audio-stage="science-tabs"]' },

@@ -739,6 +739,16 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 38, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    // VTT § 00:01:04.4 — Cernan quote ends ~t=59; auto-tour the
+    // panorama starting at t=65 so the camera pans through Apollo 17's
+    // three authored annotations (South Massif → Camelot Crater rim →
+    // LRV) during the "fifty years have passed / three Mars rovers /
+    // nobody has been back to the Moon" half-century arc. Tour
+    // duration = 3 × 4.5 s = ~13.5 s; ends at t=78.5, 21.5 s before
+    // the exit-panorama at t=100. exit-panorama also force-stops the
+    // auto-tour if it's still running (active=false → cleanup), so
+    // subsequent stages — and the next episode — are never blocked.
+    { at_sec: 65, action: 'click', target: '[data-audio-stage="surface-panorama-tour-play"]' },
     // VTT § 00:01:42.0 — return to map view before "twelve markers
     // represent a closed chapter" (t≈102) so the listener sees the full
     // landing-site cluster on the close. Panorama held for ~60 s:
@@ -1008,6 +1018,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 46, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    // VTT § 00:00:59.9 "no day since August 6th, 2012, on which
+    // Curiosity did not exist alone on Mars" → auto-tour the panorama
+    // starting at t=68 so the camera pans through Curiosity's three
+    // authored annotations (Gediz Vallis channel → Robotic arm → Mt.
+    // Sharp lower flank) during the "no relief shift / no vacation /
+    // no partner" arc. Tour duration = ~13.5 s; ends at t=81.5. The
+    // "every photograph it sends back is from a place no other being
+    // has ever stood" line at VTT 86.2 lands on the static Mt. Sharp
+    // view — the final annotation the auto-tour settled on. exit-
+    // panorama at t=98 force-stops the auto-tour if anything overran.
+    { at_sec: 68, action: 'click', target: '[data-audio-stage="surface-panorama-tour-play"]' },
     // Soft exit before the route transition to /fly. The "Every
     // photograph it sends back is from a place no other being has ever
     // stood" line at VTT 86.2 lands fully on the panorama; we hold ~3 s

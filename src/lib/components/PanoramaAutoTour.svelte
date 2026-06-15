@@ -144,6 +144,7 @@
       <button
         type="button"
         class="play-btn"
+        data-audio-stage="surface-panorama-tour-play"
         aria-label={reducedMotion ? m.panorama_tour_step_aria() : m.panorama_tour_play_aria()}
         onclick={start}
       >

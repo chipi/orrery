@@ -286,6 +286,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/lib/components/Nav.svelte',
       'src/lib/components/PlanetPanel.svelte',
       'src/lib/components/PanoramaToggleButton.svelte',
+      'src/lib/components/PanoramaAutoTour.svelte',
       // Surface-scene routes (anchors live in route-level pages and call
       // into the SurfaceScene window-hook).
       'src/routes/earth/+page.svelte',

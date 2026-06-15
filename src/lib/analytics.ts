@@ -14,15 +14,55 @@
  * Safe to call before the script loads (Umami queues internally) and
  * safe to call outside production (no-op).
  *
- * Suggested events to wire (see issue tracker — out-of-scope for this
- * file):
- *  - `mission-load` { id, dest, view } when a mission is loaded on /fly
- *  - `lens-toggle` { on } when the Science Lens flips
- *  - `layer-toggle` { layer, on } when a science layer flips
- *  - `science-section-view` { tab, section } on /science section page mount
- *  - `panel-tab-open` { entity, tab } on the mission/planet/etc panel tabs
- *  - `locale-switch` { from, to } when the user picks a locale chip
- *  - `cmdk-search` { query } when /science Cmd-K search lands a hit
+ * Event schema (#342 Phase 14 — was a 7-item suggestion list, expanded
+ * to track tour-fire, interaction, and nav-flow telemetry across the
+ * full app):
+ *
+ *  TOUR
+ *   - `audio-stage-fire`   { episode, action, at_sec, target_prefix? }
+ *                          fires once per stage from AudioOverlay's
+ *                          executor. `target_prefix` is the bare hook
+ *                          name without the [data-audio-stage="…"]
+ *                          wrapper (so dashboards group cleanly).
+ *
+ *  NAV-FLOW (root +layout's afterNavigate)
+ *   - `route-enter`        { route, from_route? }
+ *                          fires whenever the SvelteKit pathname
+ *                          changes. `from_route` is the previous one.
+ *   - `route-exit`         { route, dwell_ms }
+ *                          fires on the NEXT route-enter using a
+ *                          captured timestamp from the prior enter.
+ *
+ *  ITEM-CLICK (per-route entry points)
+ *   - `item-click`         { kind, id, route }
+ *                          kind ∈ planet | mission | fleet | marker |
+ *                          module | section | tab | card.
+ *
+ *  GALLERY (PRD-007 / pickHero)
+ *   - `gallery-image-load` { entity, entity_kind, image_index,
+ *                            total_images, layer? }
+ *                          fires when an image becomes visible in a
+ *                          gallery (cycler index advances, lightbox
+ *                          open, or initial mount).
+ *
+ *  SCIENCE
+ *   - `science-section-view`   { tab, section }
+ *   - `science-lens-toggle`    { on }
+ *   - `science-layer-toggle`   { layer, on }
+ *   - `cmdk-search`            { query }
+ *
+ *  /fly
+ *   - `mission-load`        { id, dest, view }
+ *
+ *  PANELS
+ *   - `panel-tab-open`      { entity, tab }
+ *
+ *  LOCALE
+ *   - `locale-switch`       { from, to }
+ *
+ * Use the typed helpers below where possible — they normalise prop
+ * names and prevent dashboard schema drift. Raw `track()` is for
+ * one-off events that don't fit the schema yet.
  */
 
 const UMAMI_SCRIPT_URL = 'https://cloud.umami.is/script.js';
@@ -75,4 +115,51 @@ export function track(name: string, props?: Record<string, unknown>): void {
   if (u?.track) {
     u.track(name, props);
   }
+}
+
+// ─── Typed helpers (Phase 14 schema). Use these to avoid prop drift ───
+
+export function trackStageFire(episode: string, action: string, at_sec: number, target?: string): void {
+  // Strip the [data-audio-stage="…"] wrapper so dashboards group by
+  // hook name. `cue` actions pass null target (their target is body text).
+  const target_prefix = target?.match(/data-audio-stage="([^"]+)"/)?.[1] ?? null;
+  track('audio-stage-fire', { episode, action, at_sec, target_prefix });
+}
+
+let lastRouteEnter: { route: string; t: number } | null = null;
+export function trackRouteEnter(route: string): void {
+  const now = Date.now();
+  if (lastRouteEnter) {
+    track('route-exit', { route: lastRouteEnter.route, dwell_ms: now - lastRouteEnter.t });
+  }
+  track('route-enter', { route, from_route: lastRouteEnter?.route ?? null });
+  lastRouteEnter = { route, t: now };
+}
+
+export type ClickKind = 'planet' | 'mission' | 'fleet' | 'marker' | 'module' | 'section' | 'tab' | 'card';
+export function trackItemClick(kind: ClickKind, id: string, route: string): void {
+  track('item-click', { kind, id, route });
+}
+
+export type GalleryEntityKind = 'mission' | 'fleet' | 'planet' | 'site' | 'episode';
+export function trackGalleryImageLoad(
+  entity: string,
+  entity_kind: GalleryEntityKind,
+  image_index: number,
+  total_images: number,
+  layer?: string,
+): void {
+  track('gallery-image-load', { entity, entity_kind, image_index, total_images, layer: layer ?? null });
+}
+
+export function trackScienceLensToggle(on: boolean): void {
+  track('science-lens-toggle', { on });
+}
+
+export function trackScienceLayerToggle(layer: string, on: boolean): void {
+  track('science-layer-toggle', { layer, on });
+}
+
+export function trackPanelTabOpen(entity: string, tab: string): void {
+  track('panel-tab-open', { entity, tab });
 }

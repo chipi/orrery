@@ -20,6 +20,7 @@
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
   import { localeFromPage } from '$lib/locale';
+  import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
 
   let audioEl: HTMLAudioElement | null = $state(null);
@@ -256,6 +257,7 @@
     void (async () => {
       for (const stage of batch) {
         executeStage(stage);
+        trackStageFire(epId, stage.action, stage.at_sec, stage.target);
         // Yield so the click/navigate/etc DOM change can flush before
         // the next stage's selector lookup. Cue/flash/scroll-to are
         // idempotent w.r.t. DOM state but the tick wait is negligible

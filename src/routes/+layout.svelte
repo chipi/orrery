@@ -17,7 +17,8 @@
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import { initAnalytics, track } from '$lib/analytics';
+  import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
+  import { afterNavigate } from '$app/navigation';
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
@@ -138,6 +139,17 @@
       // SW registration failed; carry on. Manifest-only install still
       // works on Android.
     }
+  });
+
+  // Phase 14 (#342) — route-enter / route-exit + nav-flow telemetry.
+  // SvelteKit fires afterNavigate on every successful nav (initial mount
+  // + every client-side transition). trackRouteEnter captures the new
+  // pathname, computes dwell against the prior enter, and emits both
+  // `route-exit` (for the prior route) and `route-enter` (for the new
+  // one). Initial mount has no prior route → no exit event.
+  afterNavigate((nav) => {
+    const path = nav.to?.url?.pathname;
+    if (path) trackRouteEnter(path);
   });
 
   onMount(() => {

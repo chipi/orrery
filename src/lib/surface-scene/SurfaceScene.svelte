@@ -219,9 +219,7 @@
   // its first frame (which then continues to write live values). Without
   // this seed, fresh page-load briefly showed "0 m altitude" until the
   // first RAF tick (2026-06-15 user report on /moon).
-  let altitudeKm = $state(
-    Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30)),
-  );
+  let altitudeKm = $state(Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30)));
 
   // Vendored rover-traverse data, populated from the loadTraverses()
   // prop in onMount. Empty record when the route doesn't pass that prop

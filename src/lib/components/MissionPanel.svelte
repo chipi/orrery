@@ -383,7 +383,10 @@
                 </span>
               </a>
             {:else}
-              <div class="spec-cta spec-cta--vehicle is-static" data-testid="mission-vehicle-static">
+              <div
+                class="spec-cta spec-cta--vehicle is-static"
+                data-testid="mission-vehicle-static"
+              >
                 <span class="spec-icon" aria-hidden="true">
                   <svg viewBox="0 0 16 20" width="16" height="20" fill="currentColor">
                     <path
@@ -412,14 +415,7 @@
                     <rect x="6" y="6" width="8" height="8" rx="1" />
                     <rect x="1" y="8" width="4" height="4" />
                     <rect x="15" y="8" width="4" height="4" />
-                    <line
-                      x1="10"
-                      y1="3"
-                      x2="10"
-                      y2="6"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
+                    <line x1="10" y1="3" x2="10" y2="6" stroke="currentColor" stroke-width="1.5" />
                     <circle cx="10" cy="2.4" r="1.3" />
                   </svg>
                 </span>
@@ -429,20 +425,16 @@
                 </span>
               </a>
             {:else}
-              <div class="spec-cta spec-cta--payload is-static" data-testid="mission-payload-static">
+              <div
+                class="spec-cta spec-cta--payload is-static"
+                data-testid="mission-payload-static"
+              >
                 <span class="spec-icon" aria-hidden="true">
                   <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
                     <rect x="6" y="6" width="8" height="8" rx="1" />
                     <rect x="1" y="8" width="4" height="4" />
                     <rect x="15" y="8" width="4" height="4" />
-                    <line
-                      x1="10"
-                      y1="3"
-                      x2="10"
-                      y2="6"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
+                    <line x1="10" y1="3" x2="10" y2="6" stroke="currentColor" stroke-width="1.5" />
                     <circle cx="10" cy="2.4" r="1.3" />
                   </svg>
                 </span>

@@ -112,9 +112,23 @@
     missions
       .filter(
         (mission) =>
-          // RFC-027 — free-text search across the fields the card renders.
+          // RFC-027 — free-text search across the fields the user can
+          // see on the mission card + panel. 2026-06-15: extended to
+          // cover description / payload / vehicle so the search
+          // matches /fleet's behaviour ("fleet search finds text in
+          // description / overview tab while on missions it does
+          // not"). description + first live in the i18n overlay so
+          // they're present on the merged Mission record at runtime.
           matchesQuery(
-            [mission.name ?? mission.id, mission.agency, mission.type, mission.first],
+            [
+              mission.name ?? mission.id,
+              mission.agency,
+              mission.type,
+              mission.first,
+              mission.description,
+              mission.payload,
+              mission.vehicle,
+            ],
             filterState.q,
           ) &&
           (filterState.dest === 'ALL' || mission.dest === filterState.dest) &&

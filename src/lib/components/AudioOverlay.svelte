@@ -268,6 +268,13 @@
       }, ms);
       return;
     }
+    // `navigate` is also DOM-free — `target` is a URL path/query, not a selector.
+    // Used to demo URL-bound search/filter affordances (e.g. /missions?q=apollo).
+    if (stage.action === 'navigate') {
+      const replaceState = stage.params?.replaceState === 1;
+      void goto(stage.target, { replaceState, keepFocus: true });
+      return;
+    }
     const el = document.querySelector(stage.target) as HTMLElement | null;
     if (!el) return;
     switch (stage.action) {

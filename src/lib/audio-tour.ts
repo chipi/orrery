@@ -31,6 +31,10 @@
 //                 Optional `params.rotateRad` + `params.durationMs`.
 //   zoom        — dispatch CustomEvent('audio-stage-zoom') on the target.
 //                 Optional `params.factor` (e.g. 0.55 = closer) + `durationMs`.
+//   navigate    — SvelteKit goto(`target`). `target` is the URL path/query
+//                 (e.g. `/missions?q=apollo`), NOT a CSS selector. Used to
+//                 demonstrate search/filter affordances by pushing URL-bound
+//                 state. Optional `params.replaceState` (1 = replace history).
 export type AudioStageAction =
   | 'flash'
   | 'scroll-to'
@@ -38,7 +42,8 @@ export type AudioStageAction =
   | 'open-tab'
   | 'cue'
   | 'drag'
-  | 'zoom';
+  | 'zoom'
+  | 'navigate';
 
 export interface AudioStage {
   /** Seconds into the episode when this stage fires. */
@@ -51,19 +56,23 @@ export interface AudioStage {
    *   cue         — show a directive banner inside the overlay. `target` is
    *                 the message text (NOT a CSS selector). No DOM hook
    *                 required — works on every route, including 3D canvases.
+   *   navigate    — SvelteKit goto. `target` is the URL path/query.
    */
   action: AudioStageAction;
-  /** For DOM actions: CSS selector. For `cue`: the message text. */
+  /** For DOM actions: CSS selector. For `cue`: the message text.
+   *  For `navigate`: the URL path/query (e.g. `/missions?q=apollo`). */
   target: string;
   /** Optional duration in ms — semantics depend on action:
    *  cue     → banner visibility (default 6000 ms).
    *  drag    → animation duration (default 1500 ms).
    *  zoom    → animation duration (default 1500 ms). */
   duration_ms?: number;
-  /** Optional extra parameters for `drag` / `zoom` actions, passed as the
-   *  CustomEvent's `detail` to the route's listener. Examples:
+  /** Optional extra parameters for `drag` / `zoom` / `navigate` actions.
+   *  For drag/zoom: passed as the CustomEvent's `detail`. Examples:
    *    `{ rotateRad: 1.57 }` — drag rotates camera by 90°
    *    `{ factor: 0.55 }`    — zoom multiplies camera radius by 0.55
+   *  For navigate:
+   *    `{ replaceState: 1 }` — replace history entry instead of push
    */
   params?: Record<string, number | string>;
   /** Optional authoring note — surfaced in dev console only. */

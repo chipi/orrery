@@ -273,6 +273,20 @@ v0.7 ships an in-overlay narrated episode system (PRD-016 / RFC-019). en-US only
 - **Transparency.** Every audio asset's text authorship + voice provider + tts_model + voice id surface on `/credits`. Provider/model/voice-id never elided.
 - **Operator runbook:** [docs/guides/audio-pipeline-setup.md](docs/guides/audio-pipeline-setup.md). Adding a new provider: implement `TtsProvider`, list it in `PROVIDER_NAMES` + `PROVIDER_MODELS` (`scripts/audio/generate.ts`), add a voices.json key, update `ProviderName` in `src/lib/audio-types.ts`. Pipeline picks up the rest.
 
+### Tour cue authoring — rules for `EPISODE_STAGES`
+
+Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that runs over an episode's narration. The audio bundle is frozen ground truth — you can re-time and add actions, but never to compensate for SSML you'd rather have written differently. Edits to SSML require a full audio re-render.
+
+- **Time against the VTT, not the SSML target.** Frontmatter `duration_target_sec` is the author's intention; the `.vtt` last-cue end-timestamp is reality. ElevenLabs renders 30–45 % faster than SSML targets for guide-tier episodes. Anchor every `at_sec` against a specific VTT line and note it inline (e.g. `// VTT § 00:00:48.9 "Click Curiosity"`).
+- **The screen does what the voice says.** Every imperative ("click X / drag / look at") gets a stage within ±3 s. Every named entity that has a `data-audio-stage` hook on the route should be flashed or clicked when its name is spoken — even when the narration doesn't say "click" out loud. Add per-card / per-marker hooks before adding the stages.
+- **1 s cue→click default.** Cue banner shows ~1 s before the click that demonstrates it; cue stays visible (default 6000 ms) through and after the click. Hold 2 s only for cues > 8 words or when a `drag`/`zoom` follows (the eye needs to find the canvas first).
+- **Cue text is directive, not subtitle.** "Click any planet — like this." beats "We now click on a planet." The cue tells the user what's about to happen; don't repeat the narration verbatim.
+- **No overlap.** Don't replace a cue banner mid-read (Δt < banner duration), don't stomp a flash with another flash within 1.8 s, don't yank a scroll-to with another scroll-to within ~2 s, don't fire a click while a panel from a previous click is still animating.
+- **Roll-calls get per-item hooks.** When narration names a sequence ("Vostok → Voskhod → Mercury → Gemini → CSM → Soyuz"), add a `data-audio-stage` hook to each card and flash them in order. A single container-flash is the wrong answer when the script is a roll-call.
+- **`navigate` for URL-bound state.** Use the `navigate` action (not `click`) to demo search/filter affordances on routes whose state lives in the URL (`/missions`, `/fleet`, `/launches`). Target is the URL path/query (`/missions?q=apollo`), NOT a CSS selector.
+- **Panorama / assembly playback opportunities.** /moon and /mars sites with `hotspot_tier3_panorama` can be entered via `data-audio-stage="surface-stand-at-site"`. /iss and /tiangong have a fixed-duration assembly playback (50 s / 24 s); only wire it into episodes whose narration covers a window of at least that length, with the assembly narrative content matching what plays.
+- **Verify in a real browser.** A failing selector silently no-ops — preflight won't catch it. After authoring, play the episode through with the AudioOverlay open and watch every stage fire.
+
 ---
 
 ## i18n rules — follow these exactly

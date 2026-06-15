@@ -4006,8 +4006,13 @@ sample      ${debugInfo.projectedPxSample}`}
   {/if}
 
   <!-- Live altitude readout — "how zoomed am I" feedback for both
-       routes (Drift 16 consolidation, was Mars-only). -->
-  {#if view === '3d' && !flatPatchActive}
+       routes (Drift 16 consolidation, was Mars-only). Hidden in
+       panorama mode — the user is standing on the surface, so
+       "altitude" stops being a meaningful metric (2026-06-15 user
+       note: "when we go to panorama mode we still see altitude
+       with Mm there, it should not be there in panorama mode on
+       any planet"). -->
+  {#if view === '3d' && !flatPatchActive && !panoramaActive}
     <div class="altitude-indicator" aria-hidden="true">
       {altitudeKm >= 1000
         ? `${(altitudeKm / 1000).toFixed(1)} Mm`

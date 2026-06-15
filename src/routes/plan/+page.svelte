@@ -1157,7 +1157,26 @@
         <p class="gravity-caveat">{m.plan_gravity_assist_caveat()}</p>
       {/if}
       <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
-        {m.plan_fly_button()}
+        <!-- Trajectory-arc glyph — same custom SVG used on the
+             /missions panel's Fly button so the cross-route action
+             is visually consistent (2026-06-15 user direction: "let's
+             adjust fly mission with same logo on plan page"). -->
+        <span class="fly-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 22 22"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 17 Q 9 3 19 9" />
+            <path d="M19 9 L14 7 M19 9 L17 14" />
+          </svg>
+        </span>
+        <span class="fly-text">{m.plan_fly_button()}</span>
       </button>
     {/if}
   </aside>
@@ -1806,6 +1825,17 @@
     transition:
       background 120ms,
       border-color 120ms;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .fly .fly-icon {
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(200, 215, 255, 0.95);
   }
   .fly:hover:not(:disabled),
   .fly:focus-visible:not(:disabled) {

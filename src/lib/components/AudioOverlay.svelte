@@ -208,6 +208,19 @@
   // need a sibling $effect (the previous sibling-reset effect had no
   // ordering guarantee with this one — sibling-effect race could fire
   // a stage from the prior episode against the new positionSec).
+  //
+  // Phase 10 (#342) — resume & scrub-forward handling. When the position
+  // jumps forward (cookie-restore resume, or user scrub), many stages
+  // become "ready" in a single $effect tick. The previous synchronous
+  // loop fired them all in one JS turn — so a state-establishing click
+  // (e.g. `mars-select-curiosity` at t=29) would not get a tick to
+  // mount its panel before the next click (e.g. `surface-stand-at-site`
+  // at t=46) looked for the stand-at-site button that the panel mounts.
+  // The downstream click silently no-op'd, leaving the listener on the
+  // map view at audio-t=70 instead of in the panorama. Fix: collect the
+  // catch-up batch, mark them all fired up-front (so a re-tick doesn't
+  // race the in-flight sequence), and execute them in an async loop
+  // with `await tick()` after every action so each DOM mutation settles.
   let lastEpisodeIdForStages = $state<string | null>(null);
   $effect(() => {
     if (!browser || !audio.currentEpisode) return;
@@ -226,13 +239,30 @@
     const stages = stagesForEpisode(epId);
     if (stages.length === 0) return;
     const pos = audio.positionSec;
+    const batch: AudioStage[] = [];
+    const batchKeys: string[] = [];
     for (const stage of stages) {
       if (pos < stage.at_sec) continue;
       const key = `${epId}:${stage.at_sec}:${stage.action}:${stage.target}`;
       if (firedStages.has(key)) continue;
-      firedStages = new Set([...firedStages, key]);
-      executeStage(stage);
+      batch.push(stage);
+      batchKeys.push(key);
     }
+    if (batch.length === 0) return;
+    // Mark fired up-front. If positionSec ticks again before the async
+    // loop below finishes, those re-runs will see these as already fired
+    // and skip them, avoiding a duplicate-execution race.
+    firedStages = new Set([...firedStages, ...batchKeys]);
+    void (async () => {
+      for (const stage of batch) {
+        executeStage(stage);
+        // Yield so the click/navigate/etc DOM change can flush before
+        // the next stage's selector lookup. Cue/flash/scroll-to are
+        // idempotent w.r.t. DOM state but the tick wait is negligible
+        // and keeps the code branch-free.
+        await tick();
+      }
+    })();
   });
 
   // Mark heard at ≥80 % completion (PRD-016 US-4). The Set guards against

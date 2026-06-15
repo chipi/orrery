@@ -6857,33 +6857,41 @@
               aria-hidden="true"
             />
           {/if}
-          <div class="opening-agency-row">
-            {#each agencyLogos as logo (logo.path)}
-              <img
-                class="opening-agency-logo"
-                src={logo.path}
-                alt={logo.short}
-                title="{logo.short} — {logo.full}"
-              />
-            {/each}
-            <div class="opening-agency">
-              {mission.agency ?? agencyFull}
+          <!-- Text cluster (agency + name + years) sits NEXT TO the hero
+               image rather than below it (2026-06-15 user direction:
+               "mission image at top NEXT TO mission name etc and not
+               over"). Layout flips to column on narrow viewports via
+               the media query below so the title still reads on
+               mobile. -->
+          <div class="opening-title-text">
+            <div class="opening-agency-row">
+              {#each agencyLogos as logo (logo.path)}
+                <img
+                  class="opening-agency-logo"
+                  src={logo.path}
+                  alt={logo.short}
+                  title="{logo.short} — {logo.full}"
+                />
+              {/each}
+              <div class="opening-agency">
+                {mission.agency ?? agencyFull}
+              </div>
             </div>
+            {#if missionLink}
+              <a
+                class="opening-name opening-name-link"
+                href={missionLink}
+                data-sveltekit-preload-data="off">{mission.name}</a
+              >
+            {:else}
+              <div class="opening-name">{mission.name}</div>
+            {/if}
+            {#if depYear || arrYear}
+              <div class="opening-years">
+                {depYear}{arrYear && arrYear !== depYear ? ` — ${arrYear}` : ''}
+              </div>
+            {/if}
           </div>
-          {#if missionLink}
-            <a
-              class="opening-name opening-name-link"
-              href={missionLink}
-              data-sveltekit-preload-data="off">{mission.name}</a
-            >
-          {:else}
-            <div class="opening-name">{mission.name}</div>
-          {/if}
-          {#if depYear || arrYear}
-            <div class="opening-years">
-              {depYear}{arrYear && arrYear !== depYear ? ` — ${arrYear}` : ''}
-            </div>
-          {/if}
         </div>
       {/if}
 
@@ -7925,22 +7933,42 @@
     pointer-events: auto;
     overflow-y: auto;
   }
+  /* Title — hero image LEFT, text cluster RIGHT (2026-06-15 user
+     direction). Stacks back to column on viewports too narrow to
+     comfortably fit both side-by-side. */
   .opening-title {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    text-align: center;
+    gap: 18px;
+    text-align: left;
     transition: opacity 200ms linear;
     max-width: 100%;
     pointer-events: auto;
+  }
+  .opening-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+  }
+  @media (max-width: 640px) {
+    .opening-title {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .opening-title-text {
+      align-items: center;
+    }
   }
   .opening-agency-row {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .opening-agency-logo {
     height: 20px;
@@ -8064,11 +8092,24 @@
     color: rgba(255, 200, 80, 0.78);
     text-transform: uppercase;
   }
+  /* Fleet assets — single horizontal row (2026-06-15 user direction:
+     "fleet assets in one row and not separate rows"). Overflows
+     horizontally on very-many-asset missions rather than stacking,
+     so the vertical footprint stays compact even on laptops. The
+     opening-stack's max-height handles the rare overflow with its
+     own vertical scroll. */
   .opening-fleet-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 12px;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+  .opening-fleet-card {
+    flex-shrink: 0;
   }
   .opening-fleet-chip {
     display: inline-flex;
@@ -8097,19 +8138,19 @@
     text-transform: uppercase;
   }
 
-  /* #86 v2 — mission hero image in the title card. Shrunk from
-     280x180 → 220x130 so the title block stays compact enough that
-     the body panel below has clear vertical separation on smaller
-     viewports. */
+  /* Mission hero image — sits LEFT of the title text cluster. Slightly
+     squarer than the old 220×130 banner so the title block reads as
+     "image + label" rather than "image with caption below". Drops to
+     a wider banner on mobile via the @media query above. */
   .opening-mission-hero {
-    width: 220px;
-    max-width: 70vw;
-    height: 130px;
+    flex-shrink: 0;
+    width: 180px;
+    max-width: 60vw;
+    height: 120px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid rgba(94, 234, 212, 0.35);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
-    margin-bottom: 10px;
   }
 
   /* #86 v2 — skip button. Sits as the LAST item in .opening-stack,

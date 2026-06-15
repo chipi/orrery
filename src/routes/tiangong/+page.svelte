@@ -1308,6 +1308,7 @@
           selectedId={selected?.id}
           hoveredId={canvasHoveredId}
           heading="Tiangong assembly timeline — modules above, visiting spacecraft below"
+          heroDir="tiangong-modules"
           onSelect={(item) => {
             const m = [...sortedModules, ...sortedVisitors].find((x) => x.id === item.id);
             if (m) openModule(m);

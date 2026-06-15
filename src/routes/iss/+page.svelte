@@ -1348,6 +1348,7 @@
           selectedId={selected?.id}
           hoveredId={canvasHoveredId}
           heading="ISS assembly timeline — modules above, visiting spacecraft below"
+          heroDir="iss-modules"
           onSelect={(item) => {
             const m = [...sortedModules, ...sortedVisitors].find((x) => x.id === item.id);
             if (m) openModule(m);

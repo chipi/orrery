@@ -9,6 +9,7 @@
    * One reusable component, mounted on both /iss and /tiangong.
    */
   import { resolveAgency } from '$lib/agencies';
+  import { base } from '$app/paths';
 
   type StationItem = {
     id: string;
@@ -29,6 +30,15 @@
     onHover?: (id: string | null) => void;
     /** Localised heading for the strip. */
     heading?: string;
+    /** Image-root directory for per-item thumbnails (2026-06-15 user
+     *  direction: "next to each item add small hero image of that
+     *  module to make it more interesting panel"). When supplied, each
+     *  marker prefixes its label with an <img> sourced from
+     *  `${base}/images/${heroDir}/${item.id}/01.jpg`. Set to
+     *  'iss-modules' on /iss and 'tiangong-modules' on /tiangong;
+     *  omit for routes without per-item imagery. onerror handler hides
+     *  the img so missing assets don't show a broken-image icon. */
+    heroDir?: string;
   }
 
   let {
@@ -39,6 +49,7 @@
     onSelect,
     onHover,
     heading,
+    heroDir,
   }: Props = $props();
 
   // Combined chronological list. Tag each item so we can style modules
@@ -172,6 +183,16 @@
           onfocus={() => onHover?.(item.id)}
           onblur={() => onHover?.(null)}
         >
+          {#if heroDir}
+            <img
+              class="marker-thumb"
+              src="{base}/images/{heroDir}/{item.id}/01.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+            />
+          {/if}
           <span class="marker-name">{shortName(item)}</span>
         </button>
       {/each}
@@ -197,6 +218,16 @@
             onfocus={() => onHover?.(item.id)}
             onblur={() => onHover?.(null)}
           >
+            {#if heroDir}
+              <img
+                class="marker-thumb"
+                src="{base}/images/{heroDir}/{item.id}/01.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+              />
+            {/if}
             <span class="marker-name">{shortName(item)}</span>
           </button>
         {/each}
@@ -267,7 +298,7 @@
     transform: translateX(-50%);
     min-width: 9px;
     height: 24px;
-    padding: 0 6px;
+    padding: 0 6px 0 0;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.95);
@@ -315,9 +346,26 @@
     max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-left: 6px;
     /* The span is purely visual; let pointer events fall through to the
        parent button so overlapping markers (e.g. Tianhe + Chinarm
        both launched 2021-04-29) don't intercept each other's clicks. */
+    pointer-events: none;
+  }
+  /* Per-item thumbnail (heroDir prop). Tiny rounded rect at the start
+     of each marker; pulls the actual module / visitor hero from the
+     same asset tree used by the panel's GALLERY tab. Falls back to
+     hidden via onerror so missing assets don't show a broken-image
+     icon (2026-06-15 user direction: "add small hero image of that
+     module to make it more interesting"). */
+  .marker-thumb {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 2px 0 0 2px;
+    margin-left: -1px;
+    display: block;
     pointer-events: none;
   }
 

@@ -90,6 +90,13 @@ const FLEET_KNOWN_GAPS = new Set<string>([
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);
+// Pluto: New Horizons returned the definitive Tombaugh Regio shot in
+// 2015 — image is sourceable from NASA Photojournal. Listed here for
+// now because the planets surface itself was invisible to the
+// validator until Phase 21 (#342); see
+// docs/provenance/image-sourcing-inventory.md for the cohort + plan.
+// Remove this entry the moment the Pluto panorama lands.
+const PLANETS_KNOWN_GAPS = new Set<string>(['pluto']);
 
 const SURFACES: SurfaceSpec[] = [
   {
@@ -126,6 +133,21 @@ const SURFACES: SurfaceSpec[] = [
     extractIds: (j) => (j as Array<{ id: string }>).map((e) => e.id),
     imageDir: 'earth-objects',
     knownGaps: EARTH_OBJECTS_KNOWN_GAPS,
+  },
+  {
+    // planets surface was previously invisible to this validator; Phase
+    // 21 (#342) added it after the audit caught Pluto as a zero-image
+    // entry. planets.json is shaped {constants, planets: [...]}, with
+    // entries keyed by `name` not `id` — the extractor slugifies the
+    // name to match the disk path (static/images/planets/<name-lower>/).
+    label: 'planets',
+    indexPath: 'static/data/planets.json',
+    extractIds: (j) => {
+      const obj = j as { planets: Array<{ name: string }> };
+      return obj.planets.map((p) => p.name.toLowerCase());
+    },
+    imageDir: 'planets',
+    knownGaps: PLANETS_KNOWN_GAPS,
   },
 ];
 

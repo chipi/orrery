@@ -510,7 +510,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 24, action: 'click', target: '[data-audio-stage="earth-select-tiangong"]' },
     // VTT § 00:00:33.2 "Look slightly higher" / Hubble at 550 km
     {
-      at_sec: 33,
+      at_sec: 34,
       action: 'cue',
       target: 'Higher — Hubble at 550 km.',
       duration_ms: 4000,
@@ -518,7 +518,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 35, action: 'click', target: '[data-audio-stage="earth-select-hubble"]' },
     // VTT § 00:01:33.8 "JWST orbits there"
     {
-      at_sec: 93,
+      at_sec: 95,
       action: 'cue',
       target: 'Top of the view — JWST at the Sun-Earth L2, 1.5 million km out.',
       duration_ms: 5000,
@@ -526,7 +526,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
     // VTT § 00:02:09.8 "Click any spacecraft"
     {
-      at_sec: 130,
+      at_sec: 132,
       action: 'cue',
       target: 'Click any spacecraft for its story — like this.',
       duration_ms: 4000,
@@ -575,7 +575,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     // VTT § 00:00:22.7 "Tranquillity Base"
     {
-      at_sec: 22,
+      at_sec: 23,
       action: 'cue',
       target: 'Find Tranquillity Base — Apollo 11.',
       duration_ms: 4000,
@@ -583,7 +583,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 24, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
     // VTT § 00:00:42.4 "Chandrayaan-3 placed the Vikram lander near the south pole"
     {
-      at_sec: 42,
+      at_sec: 43,
       action: 'cue',
       target: 'Near the south pole — Chandrayaan-3, 2023.',
       duration_ms: 4000,
@@ -628,7 +628,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 2, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     // VTT § 00:00:16.1 "Taurus-Littrow"
     {
-      at_sec: 16,
+      at_sec: 17,
       action: 'cue',
       target: 'Find Taurus-Littrow — Apollo 17, the last footstep.',
       duration_ms: 4500,
@@ -639,7 +639,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // the DOM. Enter the panorama just before Cernan starts speaking so
     // the quote lands ON the Taurus-Littrow vista, not on the map view.
     {
-      at_sec: 36,
+      at_sec: 37,
       action: 'cue',
       target: 'Stand where Cernan stood.',
       duration_ms: 4000,
@@ -675,7 +675,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     // VTT § 00:00:52.0 "Chang'e 4 made the first soft landing on the far side, inside Von Kármán crater"
     {
-      at_sec: 52,
+      at_sec: 53,
       action: 'cue',
       target: "Find Von Kármán crater — Chang'e 4 lives there.",
       duration_ms: 4500,
@@ -750,7 +750,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 29, action: 'click', target: '[data-audio-stage="mars-select-pathfinder"]' },
     // VTT § 00:00:48.9 "Click Curiosity, in Gale Crater"
     {
-      at_sec: 48,
+      at_sec: 49,
       action: 'cue',
       target: 'Find Curiosity at Gale Crater — still operating.',
       duration_ms: 4500,
@@ -758,7 +758,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 50, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
     // VTT § 00:01:06.5 "Click Perseverance, in Jezero Crater"
     {
-      at_sec: 66,
+      at_sec: 67,
       action: 'cue',
       target: 'Perseverance at Jezero — the sample-cache rover.',
       duration_ms: 4500,
@@ -891,7 +891,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:00:44.5 — "Alone." Single-word emphatic beat. The pivot
     // moment of the episode; descend onto Gale Crater's surface.
     {
-      at_sec: 44,
+      at_sec: 45,
       action: 'cue',
       target: 'Twelve years. Thirty-five kilometers. Alone.',
       duration_ms: 5000,
@@ -917,7 +917,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     // VTT § 00:00:28.8 "Zarya — the Functional Cargo Block — was the first module"
     {
-      at_sec: 28,
+      at_sec: 29,
       action: 'cue',
       target: 'Find Zarya — the back end. The first module.',
       duration_ms: 4000,
@@ -928,7 +928,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // open the Unity panel so the second-most-important historical module
     // gets the same treatment as Zarya/Destiny/Kibo/Columbus.
     {
-      at_sec: 51,
+      at_sec: 52,
       action: 'cue',
       target: 'Unity — Node 1. The second module.',
       duration_ms: 4000,
@@ -936,7 +936,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 53, action: 'click', target: '[data-audio-stage="iss-select-unity"]' },
     // VTT § 00:01:07.0 "Click Destiny" / 01:19.5 "Click Columbus" / 01:25.2 "Click Kibo"
     {
-      at_sec: 67,
+      at_sec: 68,
       action: 'cue',
       target: 'Click Destiny — the US lab.',
       duration_ms: 4000,
@@ -999,7 +999,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     // VTT § 00:00:22.1 "The core of the T is Tianhe"
     {
-      at_sec: 22,
+      at_sec: 23,
       action: 'cue',
       target: 'Tianhe — the upright of the T. The core module.',
       duration_ms: 4000,

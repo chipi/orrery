@@ -35,9 +35,11 @@ export function disposeSceneRenderer({
   outlinePass,
 }: {
   renderer: THREE.WebGLRenderer;
-  outlinePass: { dispose: () => void };
+  /** Optional — null on quality-tier minimal/low where the post stack
+   *  is skipped (#342 Phase 23). Callers may pass null/undefined. */
+  outlinePass?: { dispose: () => void } | null;
 }): void {
-  outlinePass.dispose();
+  outlinePass?.dispose();
   renderer.dispose();
   renderer.domElement.remove();
 }

@@ -12,6 +12,7 @@
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { resolveQualitySync, type QualityConfig } from '$lib/quality/quality-tier';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d, disposeScene } from '$lib/three/dispose-object3d';
@@ -690,14 +691,31 @@
     );
     const renderer = createSceneRenderer(container);
 
+    // Phase 23 (#342) — SurfaceScene was the last 3D route ignoring
+    // quality-tier. Resolve the user's tier on mount so the postpro
+    // stack (EffectComposer + OutlinePass) AND the 4 K texture LOD
+    // both have a degrade path on weak GPUs / mobile. Without this,
+    // mobile users paid full outline + 4 K cost on every /earth /moon
+    // /mars visit. Mirrors /fly's resolveQualitySync wiring.
+    const quality: QualityConfig = resolveQualitySync($page.url);
+
     // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
-    const { composer, outlinePass } = createOutlinePassSetup({
-      renderer,
-      scene,
-      camera,
-      width: container.clientWidth,
-      height: container.clientHeight,
-    });
+    // Skipped on `minimal` / `low` tiers — those render directly via
+    // renderer.render() (see animate-loop call below). Hover-outline
+    // is a polish affordance, not load-bearing; on a low-end GPU the
+    // outline pass cost dwarfs the visual gain.
+    const postEnabled = quality.tier !== 'minimal' && quality.tier !== 'low';
+    const composerSetup = postEnabled
+      ? createOutlinePassSetup({
+          renderer,
+          scene,
+          camera,
+          width: container.clientWidth,
+          height: container.clientHeight,
+        })
+      : null;
+    const composer = composerSetup?.composer ?? null;
+    const outlinePass = composerSetup?.outlinePass ?? null;
 
     // Ambient tint hints at body palette (slight blue for Moon, slight
     // red for Mars). Intensity consolidated to 0.8 per ADR-072 §Drift 5.
@@ -756,8 +774,14 @@
         },
       );
     }
+    // Phase 23 (#342) — gate the 4 K texture LOD on quality-tier. On
+    // minimal / low (mobile, weak GPU) the 4 K download + GPU upload
+    // cost is greater than the visual win — we stay at 2 K throughout.
+    // Medium and above keep the existing approach-distance LOD swap.
+    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low';
     function updatePlanetTextureLod(camR: number): void {
       if (!config.textureUrl4k) return; // body has no 4K source
+      if (!tex4kAllowed) return; // mobile / low GPU — stay at 2 K
       if (camR <= SURFACE_LOD_4K_IN) {
         ensurePlanet4kLoaded();
         if (planetMap4k && planetLodLevel !== '4k') {
@@ -3039,7 +3063,7 @@
           const sat = earthSats.find((s) => s.id === hoveredSatId);
           if (sat) outlineMeshes.push(sat.group);
         }
-        outlinePass.selectedObjects = outlineMeshes;
+        if (outlinePass) outlinePass.selectedObjects = outlineMeshes;
 
         // Selection state is communicated by the bounding-rect outline +
         // panel state; no scale pulsing (removed per ADR-072 Slice 3
@@ -3762,8 +3786,11 @@
           }
         }
 
-        if (view === '3d') composer.render();
-        else draw2d();
+        if (view === '3d') {
+          // composer is null on minimal/low tiers — render direct.
+          if (composer) composer.render();
+          else renderer.render(scene, camera);
+        } else draw2d();
       },
     });
     lifecycle.add(loop.cleanup);

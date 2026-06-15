@@ -23,8 +23,8 @@ export function createCanvasResizer({
   container: HTMLElement;
   camera: THREE.PerspectiveCamera;
   renderer: THREE.WebGLRenderer;
-  composer?: { setSize: (w: number, h: number) => void };
-  outlinePass?: { resolution: { set: (w: number, h: number) => void } };
+  composer?: { setSize: (w: number, h: number) => void } | null;
+  outlinePass?: { resolution: { set: (w: number, h: number) => void } } | null;
   onResize?: () => void;
 }): () => void {
   return () => {

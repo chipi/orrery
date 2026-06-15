@@ -809,6 +809,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4500,
     },
     { at_sec: 54, action: 'click', target: '[data-audio-stage="moon-select-change4"]' },
+    // Descend into Chang'e 4's panorama — the actual first-ever
+    // transmitted photograph from the lunar far side (panorama_metadata
+    // caption: "First panorama ever transmitted from the lunar farside.
+    // Von Kármán crater within South Pole–Aitken Basin"). Auto-tour
+    // pans through 3 annotations (Yutu-2 + lander shadow + horizon
+    // ridge) during the "first soft landing there in human history"
+    // narration arc. Exit before the closing "No human has ever set
+    // foot…" cue lands so the close plays on the rotated map view.
+    { at_sec: 58, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    { at_sec: 62, action: 'click', target: '[data-audio-stage="surface-panorama-tour-play"]' },
+    { at_sec: 108, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
     // VTT § 00:01:52.8 "Look at this map and pick the spot"
     {
       at_sec: 112,
@@ -901,6 +912,13 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4500,
     },
     { at_sec: 50, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
+    // Brief 10 s panorama descent into Gale Crater while narration says
+    // "It has driven over thirty kilometers across the floor of Gale
+    // Crater and up the lower slopes of Mount Sharp" (VTT 00:00:55.3).
+    // Mirror of the Apollo 11 descent in guide-moon (Phase 12) — short
+    // peek, no auto-tour, exit before the next Perseverance beat.
+    { at_sec: 53, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    { at_sec: 63, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
     // VTT § 00:01:06.5 "Click Perseverance, in Jezero Crater"
     {
       at_sec: 67,
@@ -978,9 +996,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   ],
 
   // ── /mars · signal-delay — Enthusiast, VTT 79 s ───────────────────
+  // Panorama descent: the episode's thesis ("no human has ever driven
+  // Curiosity in real time") lands ON the actual Gale Crater surface
+  // the listener is standing in. Open Curiosity panel early so the
+  // stand-at-site button mounts before the descent.
   'signal-delay': [
     { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 15, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
+    { at_sec: 18, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
     // VTT § 00:00:29.1 "This is why no human on Earth has ever driven Curiosity in real time"
     {
       at_sec: 29,
@@ -995,6 +1019,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'No joystick. A planner. Each sol — one sequence at a time.',
       duration_ms: 5000,
     },
+    // Exit panorama before episode-end so auto-advance to one-way-light-
+    // time starts from the map view. one-way-light-time is the same
+    // thematic territory (rover communication latency) but doesn't need
+    // its own descent — listener is fresh off the Gale-surface beat.
+    { at_sec: 70, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
   ],
 
   // ── /mars · one-way-light-time — Enthusiast, VTT 97 s ─────────────

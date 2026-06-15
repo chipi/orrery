@@ -597,6 +597,17 @@
                 src={pickHero('missions', mission.id)}
                 alt=""
                 loading="lazy"
+                onerror={(e) => {
+                  // Hero missing → mark parent figure as cover-missing
+                  // so CSS swaps the broken-image icon for the same
+                  // soft gradient placeholder /fleet uses (2026-06-15
+                  // user note: "fleet page handles that better, can we
+                  // do the same on mission"). Image sourcing happens
+                  // separately via the image pipeline; this just keeps
+                  // the gap honest while it does.
+                  const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+                  if (fig) fig.classList.add('cover-missing');
+                }}
                 decoding="async"
               />
             </figure>
@@ -991,12 +1002,22 @@
     background: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
+  /* Hero-missing placeholder — mirrors /fleet so missions without
+     sourced hero imagery degrade to a soft gradient instead of a
+     broken-image icon. .cover-missing class added by the <img>
+     onerror handler. */
+  .card-photo.cover-missing {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
+  }
   .card-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
+  }
+  :global(.card-photo.cover-missing .card-cover) {
+    display: none;
   }
   .card:hover .card-photo img {
     transform: scale(1.04);

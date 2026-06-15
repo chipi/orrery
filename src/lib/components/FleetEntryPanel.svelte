@@ -231,7 +231,9 @@
           class:active={tab === 'missions'}
           onclick={() => (tab = 'missions')}
           role="tab"
-          aria-selected={tab === 'missions'}>MISSIONS</button
+          aria-selected={tab === 'missions'}
+          >MISSIONS{#if (entry?.linked_missions?.length ?? 0) > 1}&nbsp;({entry?.linked_missions
+              ?.length}){/if}</button
         >
       {/if}
       {#if hasLinks}
@@ -255,6 +257,80 @@
           >
             Open {entry.name} Explorer →
           </a>
+        {/if}
+
+        <!-- Fleet -> Mission back-link CTA. Mirrors the Vehicle +
+             Payload CTAs on /missions panel so the cross-page
+             navigation is symmetric (2026-06-15 user direction:
+             "make feedback from fleet to mission as we have from
+             mission to fleet with same style buttons"). Label adapts
+             to cardinality: 1 mission -> direct deep-link with the
+             mission ID; N missions -> tab switcher to the MISSIONS
+             tab. 0 missions -> nothing rendered (consistent with the
+             MISSIONS tab being auto-hidden for those entries). -->
+        {#if hasMissions}
+          {@const missionIds = entry.linked_missions ?? []}
+          {#if missionIds.length === 1}
+            <div class="mission-cta-bar">
+              <a
+                class="spec-cta spec-cta--mission"
+                href="{base}/missions?id={missionIds[0]}"
+                data-testid="fleet-mission-cta-single"
+                data-sveltekit-preload-data="hover"
+              >
+                <span class="spec-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 22 22"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8.5" />
+                    <path d="M5 13 Q 11 5 17 13" />
+                    <circle cx="11" cy="6.6" r="1.3" fill="currentColor" stroke="none" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">MISSION</span>
+                  <span class="spec-value">{missionIds[0]}</span>
+                </span>
+              </a>
+            </div>
+          {:else}
+            <div class="mission-cta-bar">
+              <button
+                type="button"
+                class="spec-cta spec-cta--mission"
+                onclick={() => (tab = 'missions')}
+                data-testid="fleet-mission-cta-multi"
+              >
+                <span class="spec-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 22 22"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8.5" />
+                    <path d="M5 13 Q 11 5 17 13" />
+                    <circle cx="11" cy="6.6" r="1.3" fill="currentColor" stroke="none" />
+                  </svg>
+                </span>
+                <span class="spec-text">
+                  <span class="spec-label">MISSIONS</span>
+                  <span class="spec-value">{missionIds.length} missions →</span>
+                </span>
+              </button>
+            </div>
+          {/if}
         {/if}
 
         {#if entry.description}
@@ -577,6 +653,91 @@
   .explorer-cta:hover {
     background: rgba(78, 205, 196, 0.18);
     border-color: #4ecdc4;
+  }
+
+  /* Fleet -> Mission back-link CTA. Mirrors the .spec-cta system on
+     /missions MissionPanel.svelte. Third blue in the same family:
+     vehicle = #0c1660 (darkest), payload = #1788d4 (lightest),
+     mission = #1f4ca8 (mid). Lives on a different panel so the three
+     never appear together; the modifier color exists for sibling
+     identity, not for in-panel disambiguation. Both <a> (single
+     mission) and <button> (multi-mission tab-switcher) share the
+     base class so the chrome is identical regardless of element. */
+  .mission-cta-bar {
+    margin: 0 0 14px;
+  }
+  .spec-cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition:
+      background 120ms,
+      border-color 120ms;
+    background: transparent;
+  }
+  .spec-cta--mission {
+    background: #1f4ca8;
+    border: 1px solid rgba(100, 150, 240, 0.6);
+  }
+  .spec-cta--mission:hover,
+  .spec-cta--mission:focus-visible {
+    background: #2a5ec8;
+    border-color: #6090f0;
+    outline: none;
+  }
+  .spec-cta--mission .spec-icon,
+  .spec-cta--mission .spec-label {
+    color: rgba(200, 220, 255, 0.9);
+  }
+  .spec-cta .spec-icon {
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spec-cta .spec-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    text-align: left;
+  }
+  .spec-cta .spec-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .spec-cta .spec-value {
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    color: #fff;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+  }
+  /* Reset native button defaults so the <button> variant for the
+     multi-mission tab-switcher looks identical to the <a> single
+     variant. */
+  button.spec-cta {
+    border-style: solid;
+    appearance: none;
+    text-align: left;
   }
 
   .description {

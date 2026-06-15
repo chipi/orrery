@@ -57,8 +57,23 @@
     'coqui-local': 'Coqui',
   };
 
+  // Phase 35 (#342) — lazy-load the audio-provenance manifest. Was
+  // eagerly fetched on every page mount (47 KB per session, even for
+  // mobile-data users who never open the overlay). Now defers until
+  // either (a) the user opens the overlay or (b) a ?audio= deep-link
+  // forces it. AudioOverlay UI shows a brief loading state during the
+  // first fetch; subsequent opens read from the cached registry state.
+  $effect(() => {
+    if (!browser) return;
+    if (audio.open && !audioRegistry.loaded && !audioRegistry.loading) {
+      void audioRegistry.load();
+    }
+  });
+
   onMount(() => {
-    void audioRegistry.load();
+    // Registry load is now deferred to the $effect above (Phase 35) so
+    // the 47 KB manifest fetch happens lazily on overlay-open instead
+    // of eagerly on every page mount.
     // Test-only hook (RFC-019 §12 / pattern parallel to `window.__flyArcHash`
     // — ADR-056). Lets the audio-stage e2e suite drive `audio.positionSec`
     // without depending on real <audio> playback (Playwright denies

@@ -724,6 +724,17 @@
   if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
     hudCollapsed = true;
   }
+  // Phase 33 + 34 (#342) — mobile info toggle. Phase 27 hid the
+  // informational overlays (.tactical-scan + .paths-legend) on
+  // narrow viewports to give the canvas breathing room. This toggle
+  // surfaces them on demand so the data isn't actually lost —
+  // mobile users tap "i" to read the planet stats / trajectory roster
+  // and tap again to dismiss. Desktop is unaffected (the toggle
+  // button + CSS gate both honour (hover: none)).
+  let mobileInfoOpen = $state(false);
+  function toggleMobileInfo() {
+    mobileInfoOpen = !mobileInfoOpen;
+  }
   let localizedPlanets: LocalizedPlanet[] = $state([]);
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
@@ -4538,7 +4549,7 @@
 {/if}
 <QualitySettingsModal {activeQualityTier} />
 
-<div class="explore" data-audio-stage="explore-scene">
+<div class="explore" class:mobile-info-open={mobileInfoOpen} data-audio-stage="explore-scene">
   <div
     class="layer"
     bind:this={container}
@@ -4709,6 +4720,21 @@
       ◐
     </button>
   {/if}
+  <!-- Phase 33 + 34 (#342) — mobile info toggle. Top-right; hidden
+       on hoverable (desktop) devices via CSS. Toggles .tactical-scan
+       (planet stats) and .paths-legend (iconic trajectory roster)
+       which Phase 27 hid for canvas breathing room. -->
+  <button
+    type="button"
+    class="mobile-info-toggle"
+    class:active={mobileInfoOpen}
+    onclick={toggleMobileInfo}
+    aria-label={mobileInfoOpen ? 'Hide overlays' : 'Show overlays'}
+    aria-pressed={mobileInfoOpen}
+    title={mobileInfoOpen ? 'Hide stats + paths' : 'Show stats + paths'}
+  >
+    {mobileInfoOpen ? '✕' : 'ⓘ'}
+  </button>
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
        opposite side of the detail panel so they never collide. -->
@@ -5138,15 +5164,55 @@
     font-weight: 700;
   }
   @media (max-width: 600px) {
-    /* Phase 27 (#342) — /explore had 5 fixed overlays competing at
-       375 px. Hide the two informational ones (tactical-scan HUD label,
-       paths-legend trajectory listing) so the canvas + the primary
-       hud-controls + the detail panel are the only things on screen.
-       Tactical-scan + paths-legend are visual chrome the user can do
-       without on mobile; we'll add a per-route info button in a future
-       slice if listening-back UX warrants it. */
+    /* Phase 27 (#342) — informational overlays are hidden by default
+       at narrow widths so the canvas breathes. Phase 33 + 34 (#342)
+       reverses the cut on demand via the .mobile-info-toggle button:
+       when .mobile-info-open is set on the parent .explore container,
+       both the planet stats and the trajectory roster re-appear. */
     .tactical-scan {
       display: none;
+    }
+    .explore.mobile-info-open .tactical-scan {
+      display: block;
+    }
+  }
+  /* Phase 33 + 34 (#342) — mobile info toggle. 44×44 button top-right
+     of the canvas, mirrors hud-restore's style (.fly-style chrome bar).
+     Display:none on hoverable devices so desktop never sees it; flips
+     to inline-flex via @media (hover: none). */
+  .mobile-info-toggle {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    right: 16px;
+    z-index: 36;
+    width: 44px;
+    height: 44px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: rgba(220, 230, 245, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .mobile-info-toggle:hover,
+  .mobile-info-toggle:focus-visible {
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.95);
+    outline: none;
+  }
+  .mobile-info-toggle.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: #4ecdc4;
+    color: #4ecdc4;
+  }
+  @media (hover: none) {
+    .mobile-info-toggle {
+      display: inline-flex;
     }
   }
   /* Phase 31 (#342) — mobile HUD collapse pair.
@@ -5427,14 +5493,23 @@
      which only kicked in for phone-narrow widths — anyone resizing a
      desktop browser between 501–768 still saw the vertical column. */
   @media (max-width: 768px) {
-    /* Phase 27 (#342) — hide the iconic-trajectory legend on mobile.
-       18 rows × ~24 px = ~430 px vertical strip on the right side
-       that competes with hud-controls + the detail-panel bottom sheet
-       at 375 px. Trajectory info is informational, not interactive —
-       a future slice can surface it via a per-route info button or
-       tap-on-trajectory affordance. */
+    /* Phase 27 (#342) — hide the iconic-trajectory legend on mobile
+       by default. Phase 34 (#342) re-surfaces it on demand via the
+       .mobile-info-toggle button (top-right ⓘ): when active, the
+       roster floats over the canvas as a compact bottom-sheet-style
+       panel. Anchored to the bottom-left so it doesn't collide with
+       the info-toggle button or the detail-panel bottom sheet. */
     .paths-legend {
       display: none;
+    }
+    .explore.mobile-info-open .paths-legend {
+      display: flex;
+      position: fixed;
+      bottom: 76px; /* above the detail-panel handle if open */
+      left: 16px;
+      right: 16px;
+      max-height: 40vh;
+      z-index: 35;
     }
     .ctrl-row.chips {
       flex-direction: row;

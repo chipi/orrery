@@ -8512,6 +8512,42 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
   }
+
+  /* The HUD-collapse toggle itself — mobile-only floating button at
+     top-left, just above the HUD area. Sits at z-index 36 so it's
+     above the panels (35) but below modal overlays (100).
+     IMPORTANT — base rule MUST come before the @media (max-width:
+     767px) override below, otherwise source order makes the default
+     display:none win on mobile (CSS source-order, not @media-context,
+     decides ties at equal specificity). #342 Phase 25. */
+  .hud-collapse {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 16px;
+    z-index: 36;
+    width: 36px;
+    height: 36px;
+    min-width: 44px;
+    min-height: 44px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: rgba(220, 230, 245, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .hud-collapse:hover,
+  .hud-collapse:focus-visible {
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.95);
+    outline: none;
+  }
+
   @media (max-width: 767px) {
     .hud-navigation,
     .hud-systems,
@@ -8540,37 +8576,6 @@
     .fly.hud-hidden .fly-bottom-strips {
       display: none;
     }
-  }
-
-  /* The HUD-collapse toggle itself — mobile-only floating button at
-     top-left, just above the HUD area. Sits at z-index 36 so it's
-     above the panels (35) but below modal overlays (100). */
-  .hud-collapse {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    left: 16px;
-    z-index: 36;
-    width: 36px;
-    height: 36px;
-    min-width: 44px;
-    min-height: 44px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .hud-collapse:hover,
-  .hud-collapse:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
   }
 
   /* Settings button — top-right gear, mirrored layout from

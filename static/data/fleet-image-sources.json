@@ -2165,7 +2165,7 @@
   },
   "kourou-ela-2/01.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Arianespace_Flight_VA246_%E2%80%93_Launch_Campaign.webm/960px--Arianespace_Flight_VA246_%E2%80%93_Launch_Campaign.webm.jpg"
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/NASA%2C_Partners_Roll_Out_Webb_to_Launch_Pad_%2851769316551%29.jpg/960px-NASA%2C_Partners_Roll_Out_Webb_to_Launch_Pad_%2851769316551%29.jpg"
   },
   "kourou-ela-2/02.jpg": {
     "agency": "ESA",
@@ -2181,7 +2181,7 @@
   },
   "kourou-ela-2/05.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/NASA%2C_Partners_Roll_Out_Webb_to_Launch_Pad_%2851769316551%29.jpg/960px-NASA%2C_Partners_Roll_Out_Webb_to_Launch_Pad_%2851769316551%29.jpg"
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Arianespace_Flight_VA246_%E2%80%93_Launch_Campaign.webm/960px--Arianespace_Flight_VA246_%E2%80%93_Launch_Campaign.webm.jpg"
   },
   "kourou-ela-3/03.jpg": {
     "commons_file": "Ariane 5 launch pad.jpg",
@@ -5285,11 +5285,11 @@
   },
   "taiyuan-lc-9/01.jpg": {
     "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/223460_China_Naval_Modernization_Implications_for_U.S._Navy_Capabilities_-_Background_and_Issues_for_Congress_%28IA_223460ChinaNavalModernizationImplicationsforUSNavyCapabilities-BackgroundandIssuesforCongress-crs%29.pdf/page1-960px-thumbnail.pdf.jpg"
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/30MAR2023_Launch_of_Hongtu-1_Satellites.png/960px-30MAR2023_Launch_of_Hongtu-1_Satellites.png"
   },
   "taiyuan-lc-9/02.jpg": {
     "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/30MAR2023_Launch_of_Hongtu-1_Satellites.png/960px-30MAR2023_Launch_of_Hongtu-1_Satellites.png"
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/223460_China_Naval_Modernization_Implications_for_U.S._Navy_Capabilities_-_Background_and_Issues_for_Congress_%28IA_223460ChinaNavalModernizationImplicationsforUSNavyCapabilities-BackgroundandIssuesforCongress-crs%29.pdf/page1-960px-thumbnail.pdf.jpg"
   },
   "taiyuan-lc-9/03.jpg": {
     "agency": "CMSA",
@@ -6141,5 +6141,59 @@
     "credit": "CMSA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T13:59:16.165Z"
+  },
+  "hayabusa/01.jpg": {
+    "agency": "JAXA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg",
+    "commons_file": "Hayabusa hover.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
+    "credit": "JAXA — Hayabusa mission archive",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:35Z"
+  },
+  "solar-orbiter/01.jpg": {
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
+    "commons_file": "Solar Orbiter’s widest high-res view of the Sun ESA508430.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
+    "credit": "ESA / NASA — Solar Orbiter mission",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:38Z"
+  },
+  "parker-solar-probe/01.jpg": {
+    "agency": "NASA / JHU APL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Parker_Solar_Probe_spacecraft_model.png",
+    "commons_file": "Parker_Solar_Probe_spacecraft_model.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Parker_Solar_Probe_spacecraft_model.png",
+    "credit": "NASA / Johns Hopkins APL — Parker Solar Probe",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:40Z"
+  },
+  "lucy/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NHQ202110160002%20-%20Lucy%20Spacecraft%20Launch.jpg",
+    "commons_file": "NHQ202110160002 - Lucy Spacecraft Launch.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:NHQ202110160002%20-%20Lucy%20Spacecraft%20Launch.jpg",
+    "credit": "NASA / Goddard / SwRI — Lucy mission",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:42Z"
+  },
+  "psyche-spacecraft/01.jpg": {
+    "agency": "NASA / JPL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/One%20of%20two%20solar%20arrays%20on%20NASA%E2%80%99s%20Psyche%20spacecraft.jpg",
+    "commons_file": "One of two solar arrays on NASA’s Psyche spacecraft.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:One%20of%20two%20solar%20arrays%20on%20NASA%E2%80%99s%20Psyche%20spacecraft.jpg",
+    "credit": "NASA / JPL-Caltech / ASU — Psyche mission",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:46Z"
+  },
+  "europa-clipper/01.jpg": {
+    "agency": "NASA / JPL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Europa_Clipper_spacecraft_model.png",
+    "commons_file": "Europa_Clipper_spacecraft_model.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_spacecraft_model.png",
+    "credit": "NASA / JPL-Caltech — Europa Clipper",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:25:48Z"
   }
 }

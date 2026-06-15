@@ -65,38 +65,22 @@ interface SurfaceSpec {
 // links; reserve the gallery slot for science returns (PSP corona
 // imagery, SolO polar EUV / PHI magnetograms) when JHU APL + ESA
 // PHI consortium release high-resolution public-domain versions.
-const MISSIONS_KNOWN_GAPS = new Set<string>([
-  'psyche-mission',
-  'parker-solar-probe',
-  'solar-orbiter',
-  // Batch 5 (#341) — Lucy, Europa Clipper still in cruise (arrivals
-  // 2027 / 2030); Hayabusa 1 hero would be the SRC splashdown moment
-  // (no public-domain spacecraft imagery at that beat). DART resolves
-  // via the fleet-galleries DART hero (DRACO impactor footage exists)
-  // — not listed here. Re-evaluate when JHU APL / JAXA release
-  // mission imagery in high-resolution public-domain form.
-  'lucy',
-  'europa-clipper',
-  'hayabusa1',
-]);
-const FLEET_KNOWN_GAPS = new Set<string>([
-  'psyche-spacecraft',
-  'parker-solar-probe',
-  'solar-orbiter',
-  'lucy',
-  'europa-clipper',
-  'hayabusa',
-]);
+// Phase 22 (#342) cleared all 6 prior mission KNOWN_GAPS by sourcing
+// Wikimedia Commons heroes for Pluto + 6 spacecraft (Parker Solar
+// Probe, Solar Orbiter, Lucy, Europa Clipper, Psyche, Hayabusa 1).
+// The 7 fleet-galleries / planets hero files live on disk + the
+// runtime gallery loader's cross-surface fallback now resolves the
+// mission-side IDs. Set kept empty so future cruise-phase missions
+// can be added without rewriting the structure.
+const MISSIONS_KNOWN_GAPS = new Set<string>([]);
+const FLEET_KNOWN_GAPS = new Set<string>([]);
 const MOON_SITES_KNOWN_GAPS = new Set<string>([]);
 const MARS_SITES_KNOWN_GAPS = new Set<string>([]);
 const EARTH_OBJECTS_KNOWN_GAPS = new Set<string>([]);
-// Pluto: New Horizons returned the definitive Tombaugh Regio shot in
-// 2015 — image is sourceable from NASA Photojournal. Listed here for
-// now because the planets surface itself was invisible to the
-// validator until Phase 21 (#342); see
-// docs/provenance/image-sourcing-inventory.md for the cohort + plan.
-// Remove this entry the moment the Pluto panorama lands.
-const PLANETS_KNOWN_GAPS = new Set<string>(['pluto']);
+// Phase 22 (#342) sourced the Pluto hero from Wikimedia Commons
+// (New Horizons "Nh-pluto-in-true-color_2x_JPEG.jpg" — NASA / JHU
+// APL / SwRI). Set kept empty for future planet additions.
+const PLANETS_KNOWN_GAPS = new Set<string>([]);
 
 const SURFACES: SurfaceSpec[] = [
   {

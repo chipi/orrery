@@ -112,6 +112,15 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // ── Tianwen-1 orbiter + Zhurong rover (both at Mars) share
   //    photos since they arrived as one stack.
   'b5657304', // mars-sites/tianwen1-orbiter/03.jpg ← fleet-galleries/zhurong/02.jpg + missions/tianwen1/03.jpg
+  // ── ID-mismatched mission/fleet pairs (#342 Phase 22). The fleet
+  //    side carries `psyche-spacecraft` / `hayabusa` (asset names);
+  //    the mission side carries `psyche-mission` / `hayabusa1`
+  //    (programme designators). Runtime gallery loader's cross-
+  //    surface fallback requires SAME id across surfaces, so we
+  //    physically mirror these two heroes into the missions dir.
+  //    Same image, two catalogue rows, two intentional on-disk copies.
+  '7e065df1', // missions/hayabusa1/01.jpg ← fleet-galleries/hayabusa/01.jpg
+  'b445c375', // missions/psyche-mission/01.jpg ← fleet-galleries/psyche-spacecraft/01.jpg
   '35ab1735', // mars-sites/tianwen1-orbiter/02.jpg ← fleet-galleries/zhurong/04.jpg
   // ── Mariner 9 site shares an early-era body photo with the
   //    Pioneer 11 mission gallery. Editorial linkage.

@@ -2014,5 +2014,25 @@
     "credit": "NASA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
+  },
+  "psyche-mission/01": {
+    "agency": "NASA / JPL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/One%20of%20two%20solar%20arrays%20on%20NASA%E2%80%99s%20Psyche%20spacecraft.jpg",
+    "commons_file": "One of two solar arrays on NASA’s Psyche spacecraft.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:One%20of%20two%20solar%20arrays%20on%20NASA%E2%80%99s%20Psyche%20spacecraft.jpg",
+    "credit": "NASA / JPL-Caltech / ASU — Psyche mission",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:27:07Z",
+    "shared_with": "fleet-galleries/psyche-spacecraft"
+  },
+  "hayabusa1/01": {
+    "agency": "JAXA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg",
+    "commons_file": "Hayabusa hover.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
+    "credit": "JAXA — Hayabusa mission archive",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-15T14:27:07Z",
+    "shared_with": "fleet-galleries/hayabusa"
   }
 }

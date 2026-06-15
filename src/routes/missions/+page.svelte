@@ -853,7 +853,11 @@
     padding: 8px 0 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 14px;
-    overflow-x: auto;
+    /* Phase 29 (#342) — removed `overflow-x: auto`. The container
+       already wraps; overflow-x was a defensive scroll that hid pills
+       past the viewport on mobile when wrap should have kicked in.
+       Now: groups wrap onto subsequent rows, every pill visible at
+       375 px without horizontal scroll. */
   }
   .filter-group {
     display: flex;

@@ -701,7 +701,8 @@
     padding: 8px 0 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 14px;
-    overflow-x: auto;
+    /* Phase 29 (#342) — see /missions/+page.svelte comment. Same fix:
+       removed defensive overflow-x:auto so flex-wrap actually wraps. */
   }
   .filter-group {
     display: flex;

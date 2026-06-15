@@ -1474,6 +1474,7 @@
             type="button"
             class="toggle"
             data-testid="iss-assembly-toggle"
+            data-audio-stage="iss-assembly-toggle"
             aria-pressed={assemblyOpen}
             disabled={viewMode !== '3d'}
             onclick={() => {
@@ -1514,6 +1515,12 @@
       data-audio-stage="iss-select-zarya"
       tabindex="-1"
       onclick={() => blueprintModuleClick('zarya')}>select zarya</button
+    >
+    <button
+      type="button"
+      data-audio-stage="iss-select-unity"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('unity')}>select unity</button
     >
     <button
       type="button"

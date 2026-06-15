@@ -467,6 +467,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'ISS and Tiangong at ~400 km altitude.',
       duration_ms: 5000,
     },
+    // VTT § 00:00:23.5 "…and slightly higher, Tiangong." Tiangong hook
+    // existed but the original tour never opened the panel. Land the
+    // click as the name lands so the listener sees the actual entity.
+    { at_sec: 24, action: 'click', target: '[data-audio-stage="earth-select-tiangong"]' },
     // VTT § 00:00:33.2 "Look slightly higher" / Hubble at 550 km
     {
       at_sec: 33,
@@ -818,6 +822,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 30, action: 'click', target: '[data-audio-stage="iss-select-zarya"]' },
+    // VTT § 00:00:52.8 "Unity — also called Node 1 — was the second module."
+    // The narration names Unity explicitly before moving to the lab modules;
+    // open the Unity panel so the second-most-important historical module
+    // gets the same treatment as Zarya/Destiny/Kibo/Columbus.
+    {
+      at_sec: 51,
+      action: 'cue',
+      target: 'Unity — Node 1. The second module.',
+      duration_ms: 4000,
+    },
+    { at_sec: 53, action: 'click', target: '[data-audio-stage="iss-select-unity"]' },
     // VTT § 00:01:07.0 "Click Destiny" / 01:19.5 "Click Columbus" / 01:25.2 "Click Kibo"
     {
       at_sec: 67,
@@ -858,6 +873,16 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Two weeks later — Unity. The first on-orbit assembly.',
       duration_ms: 5000,
     },
+    // VTT § 00:01:23.0 — "Two weeks after Zarya reached orbit, Endeavour
+    // launched on STS-88 carrying Unity." The assembly visualization is
+    // the visual proof of what the next 40 s of narration walks through
+    // ("twelve and a half years, twenty more modules joined them, one
+    // Shuttle flight at a time"). The toggle button starts playback in
+    // the same click — listener watches Zarya → Unity → Zvezda → Destiny
+    // appear as the narration names the assembly arc. Fixed 50 s playback;
+    // episode ends at ~127 s so the listener sees ~90 % of the timeline
+    // before auto-advance to the next episode dismounts the panel.
+    { at_sec: 80, action: 'click', target: '[data-audio-stage="iss-assembly-toggle"]' },
   ],
 
   // ── /tiangong · guide-tiangong — VTT 136 s ────────────────────────
@@ -915,7 +940,39 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   ],
 
   // ── /science · guide-science — VTT 135 s ──────────────────────────
+  // Opening roll-call: the narration name-drops Hohmann / Lambert /
+  // Vis-viva / Free-return / Tsiolkovsky / C3 / Delta-V / V-infinity in
+  // rapid succession at t=3.8 – 9. Of these, ElevenLabs only voices four
+  // (Vis-viva, C3, Delta-V, V-infinity render as silent gaps in the VTT).
+  // We navigate to /science/transfers at t=2 so the right rail populates
+  // with the four voiced sections (three from transfers + Tsiolkovsky on
+  // propulsion). The transfers rail has Hohmann, Lambert, Free-return as
+  // section cards — flash each as it's spoken. Tsiolkovsky lives on the
+  // propulsion tab; honestly skipped (a second navigate to /science/
+  // propulsion for one 1.5 s flash would yank the page). Return to
+  // /science home at t=12 before the "ten tabs across the top" beat.
+  //
+  // Tab roll-call at t=25 – 33 ("Orbits. Maneuvers. Propulsion. Re-entry.
+  // Solar System. Stars. Astrophysics. Instruments. Life support.
+  // Operations.") is dead due to SSML drift: the 2026-06-06 SCIENCE_TABS
+  // reorder + rename means only "Orbits" and "Propulsion" still match
+  // current tab IDs. "Maneuvers" → 'transfers', "Solar System"/"Stars"/
+  // "Astrophysics" don't exist, "Life support" → 'life-in-space'.
+  // Flashing only the matching subset would lie by omission. Keep the
+  // existing container-level science-tabs flash at t=20; skip per-tab.
   'guide-science': [
+    // VTT § 00:00:02 — preload transfers tab right rail for the section
+    // roll-call burst. `keepFocus: true` is the default in our executor
+    // so focus stays on the audio overlay.
+    { at_sec: 2, action: 'navigate', target: '/science/transfers' },
+    // VTT § 00:00:03.8 "Hohmann transfers"
+    { at_sec: 4, action: 'flash', target: '[data-audio-stage="science-section-hohmann-transfer"]' },
+    // VTT § 00:00:05.1 "Lambert solutions"
+    { at_sec: 5, action: 'flash', target: '[data-audio-stage="science-section-lambert-problem"]' },
+    // VTT § 00:00:07.1 "Free-return geometry"
+    { at_sec: 7, action: 'flash', target: '[data-audio-stage="science-section-free-return"]' },
+    // VTT § 00:00:12 — return to /science home before "ten tabs" beat.
+    { at_sec: 12, action: 'navigate', target: '/science' },
     // VTT § 00:00:20.7 "The encyclopedia is organized into ten tabs across the top"
     { at_sec: 18, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
     { at_sec: 20, action: 'flash', target: '[data-audio-stage="science-tabs"]' },

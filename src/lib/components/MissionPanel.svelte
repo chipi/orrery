@@ -1168,45 +1168,51 @@
      with slight violet push). Same hue axis; just value + slight hue
      shift so they stay sibling-to-fly but distinguishable from each
      other at a glance. */
+  /* Vehicle = deep indigo / navy (darkest end of the blue axis);
+     Payload = bright sky-blue with cyan push (lightest end). Both
+     stay in the blue family that anchors Fly (#1a33bb), but with a
+     dramatic value + hue spread so the two read as obviously
+     different at a glance (2026-06-15 user note: "they look almost
+     the same, make more difference"). */
   .spec-cta--vehicle {
-    background: #15287a;
-    border: 1px solid rgba(80, 110, 200, 0.55);
+    background: #0c1660;
+    border: 1px solid rgba(60, 80, 180, 0.6);
   }
   .spec-cta--vehicle:hover,
   .spec-cta--vehicle:focus-visible {
-    background: #1e3aa0;
-    border-color: #5070d0;
+    background: #142082;
+    border-color: #4858c8;
     outline: none;
   }
   .spec-cta--vehicle .spec-icon,
   .spec-cta--vehicle .spec-label {
-    color: rgba(190, 210, 255, 0.85);
+    color: rgba(160, 185, 245, 0.82);
   }
   .spec-cta--payload {
-    background: #22288a;
-    border: 1px solid rgba(110, 110, 220, 0.55);
+    background: #1788d4;
+    border: 1px solid rgba(120, 200, 250, 0.7);
   }
   .spec-cta--payload:hover,
   .spec-cta--payload:focus-visible {
-    background: #2e36b0;
-    border-color: #7070e0;
+    background: #2aa0ec;
+    border-color: #80c8ff;
     outline: none;
   }
   .spec-cta--payload .spec-icon,
   .spec-cta--payload .spec-label {
-    color: rgba(210, 200, 255, 0.85);
+    color: rgba(220, 240, 255, 0.95);
   }
   .spec-cta.is-static {
     cursor: default;
     opacity: 0.65;
   }
   .spec-cta--vehicle.is-static:hover {
-    background: #15287a;
-    border-color: rgba(80, 110, 200, 0.55);
+    background: #0c1660;
+    border-color: rgba(60, 80, 180, 0.6);
   }
   .spec-cta--payload.is-static:hover {
-    background: #22288a;
-    border-color: rgba(110, 110, 220, 0.55);
+    background: #1788d4;
+    border-color: rgba(120, 200, 250, 0.7);
   }
   .spec-cta .spec-icon {
     flex: 0 0 20px;

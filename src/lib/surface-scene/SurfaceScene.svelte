@@ -4194,21 +4194,36 @@ sample      ${debugInfo.projectedPxSample}`}
        the browser doesn't support requestFullscreen(). -->
   <PanoramaFullscreenToggle active={panoramaActive} />
 
-  <!-- Floating Exit-Panorama chip — only renders when the right-side
-       detail panel is closed (the canonical Exit button lives inside
-       the panel, so if it's open the user has that path). When the
-       panel is closed the chip lands top-left, occupying the now-
-       empty corner. Esc remains the keyboard shortcut. -->
+  <!-- Floating Exit-Panorama / Exit-Zoom chips — only render when the
+       right-side detail panel is closed (the canonical exit lives
+       inside the panel, so if it's open the user has that path).
+       Positioned top-right (2026-06-15 user note: "position of exit
+       panorama and exit zoom buttons outside details panel is not
+       in good spot, they are now in upper left corner and other
+       buttons sometimes hide them. Put them in upper right corner
+       instead"). Esc remains the keyboard shortcut for both modes. -->
   {#if panoramaActive && !panelOpen}
     <button
       type="button"
-      class="panorama-floating-exit"
+      class="surface-floating-exit"
       onclick={() => exitPanorama()}
       data-testid="panorama-floating-exit"
       title={m.surface_exit_panorama_title()}
     >
       <span class="x mono" aria-hidden="true">✕</span>
       <span>Exit panorama</span>
+    </button>
+  {/if}
+  {#if flatPatchActive && !panoramaActive && !panelOpen}
+    <button
+      type="button"
+      class="surface-floating-exit"
+      onclick={() => closeFlatPatch()}
+      data-testid="zoom-floating-exit"
+      title="Exit zoom view (Esc)"
+    >
+      <span class="x mono" aria-hidden="true">✕</span>
+      <span>Exit zoom</span>
     </button>
   {/if}
 
@@ -5261,10 +5276,16 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.92);
   }
 
-  .panorama-floating-exit {
+  /* Floating exit chip — shared by panorama + zoom modes. Top-RIGHT
+     so it doesn't collide with the left-side HUD cluster (view
+     toggle, layer chips). Stays comfortably clear of the nav row
+     via --nav-height + 18px. When the right-side detail panel
+     reopens, the floating chip is unmounted (gate in the markup
+     above) so it doesn't sit on top of the panel. */
+  .surface-floating-exit {
     position: fixed;
     top: calc(var(--nav-height, 64px) + 18px);
-    left: 24px;
+    right: 24px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -5279,12 +5300,12 @@ sample      ${debugInfo.projectedPxSample}`}
     backdrop-filter: blur(6px);
     z-index: 60;
   }
-  .panorama-floating-exit:hover,
-  .panorama-floating-exit:focus-visible {
+  .surface-floating-exit:hover,
+  .surface-floating-exit:focus-visible {
     border-color: rgba(255, 255, 255, 0.4);
     outline: none;
   }
-  .panorama-floating-exit .x {
+  .surface-floating-exit .x {
     color: rgba(255, 255, 255, 0.65);
     font-size: 11px;
   }

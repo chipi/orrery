@@ -7754,24 +7754,26 @@
      the conic panel slip behind the CAPCOM column on narrow viewports.
      align-items: stretch makes both children share the taller height. */
   .fly-bottom-strips {
+    /* #342 Phase 30 — mobile-first. Phone defaults: edge-to-edge
+       strip, vertical stack. Restored to centered desktop layout at
+       @min-width: 901. */
     position: fixed;
     bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 16px;
+    right: 16px;
     z-index: 32;
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: column;
     gap: 16px;
     align-items: stretch;
     pointer-events: none;
-    /* Keep the strips inside the channel between the hud-stack (left
-       16+220 = 236) and the CAPCOM column (right 16+320 = 336). */
-    max-width: calc(100vw - 600px);
+    max-width: calc(100vw - 32px);
   }
   .fly-fd-anchor {
     display: flex;
-    max-width: 540px;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
+    max-width: 100%;
   }
   .fly-fd-anchor :global(.banner) {
     position: static;
@@ -7788,7 +7790,8 @@
   }
   .fly-conic-anchor {
     display: flex;
-    flex: 0 0 240px;
+    flex: 1 1 auto;
+    max-width: 100%;
   }
   .fly-conic-anchor :global(.panel) {
     /* !important guards against the component's own @media mobile
@@ -7804,22 +7807,24 @@
   .fly-conic-anchor :global(.panel:focus-visible) {
     transform: translateY(-2px);
   }
-  @media (max-width: 900px) {
-    /* Squeezed viewport: drop the strip row edge-to-edge above the
-       scrubber and stack vertically so neither panel clips into the
-       CAPCOM column or each other. */
+  /* ─── ≥ 901 px — restore centered horizontal strip layout ──────── */
+  @media (min-width: 901px) {
     .fly-bottom-strips {
-      left: 16px;
-      right: 16px;
-      transform: none;
-      max-width: calc(100vw - 32px);
-      flex-direction: column;
-      align-items: stretch;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      flex-direction: row;
+      /* Keep the strips inside the channel between the hud-stack (left
+         16+220 = 236) and the CAPCOM column (right 16+320 = 336). */
+      max-width: calc(100vw - 600px);
     }
-    .fly-fd-anchor,
+    .fly-fd-anchor {
+      flex: 0 1 auto;
+      max-width: 540px;
+    }
     .fly-conic-anchor {
-      flex: 1 1 auto;
-      max-width: 100%;
+      flex: 0 0 240px;
+      max-width: none;
     }
   }
 
@@ -7944,13 +7949,15 @@
   }
   /* Title — hero image LEFT, text cluster RIGHT (2026-06-15 user
      direction). Stacks back to column on viewports too narrow to
-     comfortably fit both side-by-side. */
+     comfortably fit both side-by-side.
+     #342 Phase 30 — mobile-first: stacked + centered by default;
+     row layout returns at @min-width: 641. */
   .opening-title {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 18px;
-    text-align: left;
+    text-align: center;
     transition: opacity 200ms linear;
     max-width: 100%;
     pointer-events: auto;
@@ -7958,18 +7965,19 @@
   .opening-title-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 6px;
     min-width: 0;
   }
-  @media (max-width: 640px) {
+  /* ─── ≥ 641 px — restore hero-image-left, text-right row layout ── */
+  @media (min-width: 641px) {
     .opening-title {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      text-align: center;
+      text-align: left;
     }
     .opening-title-text {
-      align-items: center;
+      align-items: flex-start;
     }
   }
   .opening-agency-row {
@@ -8341,10 +8349,14 @@
   }
 
   .hud-stack {
+    /* #342 Phase 30 — mobile base: bottom:auto so the stack only
+       claims the height of its children rather than stretching to
+       the scrubber. Restored to bottom:80 (full-height column) at
+       @min-width: 768. */
     position: fixed;
     top: calc(var(--nav-height) + 12px);
     left: 16px;
-    bottom: 80px;
+    bottom: auto;
     z-index: 30;
     display: flex;
     flex-direction: column;
@@ -8352,6 +8364,27 @@
     pointer-events: none;
     /* Stack stretches the full viewport height between nav and scrubber;
        individual .hud children re-enable pointer events. */
+  }
+  /* #342 Phase 30 — mobile base: hide the secondary HUD panels by
+     default so the canvas breathes. Phase 25's .hud-collapse toggle
+     lets users re-surface them on demand via the .hud-hidden class.
+     These panels are restored at @min-width: 768 (desktop). */
+  .hud-navigation,
+  .hud-systems,
+  .hud-flight-params {
+    display: none;
+  }
+  /* Phase 25 (#342) cluster-hide. When the user collapses the HUD on a
+     touch device, hide every chrome cluster so the actual 3D / 2D scene
+     is unobstructed. Scrubber + settings gear + hud-collapse stay
+     visible. This rule is mobile-only in effect because the .hud-hidden
+     class is only set under matchMedia('(hover: none)') — there's no
+     desktop affordance to toggle it. */
+  .fly.hud-hidden .hud-stack,
+  .fly.hud-hidden .capcom-panel,
+  .fly.hud-hidden .fly-toggle-row,
+  .fly.hud-hidden .fly-bottom-strips {
+    display: none;
   }
   .hud {
     pointer-events: auto;
@@ -8516,10 +8549,9 @@
   /* The HUD-collapse toggle itself — mobile-only floating button at
      top-left, just above the HUD area. Sits at z-index 36 so it's
      above the panels (35) but below modal overlays (100).
-     IMPORTANT — base rule MUST come before the @media (max-width:
-     767px) override below, otherwise source order makes the default
-     display:none win on mobile (CSS source-order, not @media-context,
-     decides ties at equal specificity). #342 Phase 25. */
+     #342 Phase 30 — mobile-first: visible by default (mobile is the
+     base), hidden at @min-width: 768 (desktop never sees the
+     button). */
   .hud-collapse {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
@@ -8529,7 +8561,7 @@
     height: 36px;
     min-width: 44px;
     min-height: 44px;
-    display: none;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background: rgba(15, 18, 35, 0.85);
@@ -8548,32 +8580,17 @@
     outline: none;
   }
 
-  @media (max-width: 767px) {
+  /* ─── ≥ 768 px — restore the desktop HUD layout ────────────────── */
+  @media (min-width: 768px) {
     .hud-navigation,
     .hud-systems,
     .hud-flight-params {
-      display: none;
+      display: block;
     }
     .hud-stack {
-      bottom: auto;
+      bottom: 80px;
     }
-    .scrubber {
-      right: 16px;
-    }
-    /* On mobile, the hud-collapse toggle is visible; when active, hide
-       every chrome cluster so the actual 3D / 2D scene is unobstructed.
-       Phase 25 (#342) widened from {hud-stack, capcom-panel} to also
-       include the gold + right toggle rows and the bottom strips —
-       Marko's "throne of glory" vision: cinematic moment by default,
-       chrome on demand. Scrubber + settings gear + hud-collapse stay
-       visible (playback controls are load-bearing). */
     .hud-collapse {
-      display: inline-flex;
-    }
-    .fly.hud-hidden .hud-stack,
-    .fly.hud-hidden .capcom-panel,
-    .fly.hud-hidden .fly-toggle-row,
-    .fly.hud-hidden .fly-bottom-strips {
       display: none;
     }
   }
@@ -9009,31 +9026,32 @@
     gap: 6px;
     justify-content: flex-end;
   }
-  /* Gold cluster anchored just left of the blue cluster. The blue
-     cluster shifts left to clear the settings gear which now anchors
-     the top-right corner. width of blue cluster ≈ 3×44 + 2×6 = 144 px,
-     settings gear is 36 px + 16 px right gutter + 12 px gap = 64 px →
-     blue starts at right:64. Gold sits at right:64 + 144 + 10 = 218 px.
-  */
-  .fly-toggle-row-left {
-    right: 218px;
-    max-width: calc(50vw - 12px);
-  }
+  /* #342 Phase 30 — mobile-first toggle-row anchors. On narrow
+     viewports both clusters share the right edge and stack vertically
+     below the settings gear. Restored to the side-by-side desktop
+     layout (gold-left of blue-right of gear) at @min-width: 601.
+     Desktop math: blue cluster ≈ 3×44 + 2×6 = 144 px, settings gear
+     is 36 px + 16 px right gutter + 12 px gap = 64 px → blue starts
+     at right:64. Gold sits at right:64 + 144 + 10 = 218 px. */
   .fly-toggle-row-right {
-    right: 64px;
-    max-width: calc(50vw - 60px);
+    right: 16px;
+    top: calc(var(--nav-height) + 12px + 50px);
   }
-  @media (max-width: 600px) {
-    /* On narrow viewports both clusters share the same right edge and
-       stack vertically rather than horizontally. The settings gear
-       still claims the top-right corner; toggle rows drop below it. */
+  .fly-toggle-row-left {
+    right: 16px;
+    top: calc(var(--nav-height) + 12px + 100px);
+  }
+  /* ─── ≥ 601 px — restore horizontal toggle-row layout ──────────── */
+  @media (min-width: 601px) {
     .fly-toggle-row-right {
-      right: 16px;
-      top: calc(var(--nav-height) + 12px + 50px);
+      right: 64px;
+      top: calc(var(--nav-height) + 12px);
+      max-width: calc(50vw - 60px);
     }
     .fly-toggle-row-left {
-      right: 16px;
-      top: calc(var(--nav-height) + 12px + 100px);
+      right: 218px;
+      top: calc(var(--nav-height) + 12px);
+      max-width: calc(50vw - 12px);
     }
   }
   .toggle {
@@ -9091,7 +9109,14 @@
   }
 
   .capcom-panel {
+    /* #342 Phase 30 — mobile base (bottom sheet edge-to-edge above
+       the scrubber). Desktop layout (right-pinned 320 px column)
+       layers in at @min-width: 768. */
     position: fixed;
+    bottom: 70px;
+    left: 16px;
+    right: 16px;
+    max-height: 50vh;
     z-index: 32;
     background: rgba(8, 10, 22, 0.96);
     border: 1px solid rgba(78, 205, 196, 0.3);
@@ -9110,26 +9135,17 @@
   .capcom-header {
     flex-shrink: 0;
   }
-  /* Desktop — start just under the 2D/3D toggle (nav-height + 12 +
-     44 + 8 = nav-height + 64) and stretch down to the scrubber. The
-     extra height is the v0.x.x ask: more room for events as the
-     mission unfolds. */
+  /* ─── ≥ 768 px — capcom-panel becomes right-pinned 320 px column ─
+     Mobile-first inversion: phone bottom-sheet is the base; desktop
+     restores the historical "tall right column" layout. */
   @media (min-width: 768px) {
     .capcom-panel {
       top: calc(var(--nav-height) + 64px);
       bottom: 86px;
+      left: auto;
       right: 16px;
       width: 320px;
-    }
-  }
-  /* Mobile — bottom sheet (unchanged; mobile already had a tall panel
-     because it stretches edge-to-edge above the scrubber). */
-  @media (max-width: 767px) {
-    .capcom-panel {
-      bottom: 70px;
-      left: 16px;
-      right: 16px;
-      max-height: 50vh;
+      max-height: none;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
     }

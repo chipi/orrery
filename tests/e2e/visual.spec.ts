@@ -48,6 +48,38 @@ const STABLE_ELEMENTS = [
   // catching real regressions. Net negative as a tripwire — see
   // docs/guides/visual-regression-baselines.md §"What to snapshot"
   // for the criteria.
+  //
+  // ── #342 Phase 38 — mobile coverage ────────────────────────────
+  // Every entry below is element-scoped on a stable fixed-position
+  // HUD or filter strip; the 3D canvas frames stay out of scope
+  // (per the file-level comment). Playwright auto-suffixes each
+  // baseline with project + platform, so each entry produces a
+  // desktop-chromium AND a mobile-chromium snapshot — mobile
+  // regressions in any Phase 23–32 surface get caught automatically.
+  //
+  // /missions filter strip — covers Phase 29 wrap behaviour, Phase
+  // 32 search-input height, Phase 28 catalog touch targets.
+  {
+    path: '/missions',
+    label: 'missions-filters',
+    selector: '.filters, [data-audio-stage="missions-filters"]',
+  },
+  // /fleet filter strip — same surfaces as /missions.
+  {
+    path: '/fleet',
+    label: 'fleet-filters',
+    selector: '.filters, [data-audio-stage="fleet-filters"]',
+  },
+  // /fly hud-collapse button — covers Phase 25 (default-collapsed on
+  // touch) + Phase 26 (font floor). The button itself is rendered on
+  // every visit (display:none on hover devices via CSS); on mobile-
+  // chromium the snapshot captures the visible ◐ toggle, on desktop
+  // the empty box (display:none). Stable selector — no canvas.
+  {
+    path: '/fly',
+    label: 'fly-hud-collapse',
+    selector: '.hud-collapse',
+  },
 ];
 
 test.describe('visual regression baselines (S8 — element-scoped, stable surfaces only)', () => {

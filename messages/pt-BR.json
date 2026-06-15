@@ -180,7 +180,7 @@
   "lib_filter_crew_crewed": "TRIPULADA",
   "lib_filter_crew_all": "TODAS",
   "lib_filter_crew_label": "TRIPULAÇÃO",
-  "lib_count_total": "{count} TOTAL",
+  "lib_count_total": "{count} NO TOTAL",
   "lib_count_filtered": "{count} VISÍVEIS",
   "lib_empty": "Nenhuma missão corresponde aos filtros atuais.",
   "lib_load_failed": "Falha ao carregar a biblioteca de missões. Atualize a página.",

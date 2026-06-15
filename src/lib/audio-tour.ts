@@ -701,6 +701,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Click any marker to read its mission record.',
       duration_ms: 4000,
     },
+    // VTT § 00:01:29.3 "That's where the Apollo program landed because
+    // the trajectories were cheapest there — direct ascents from Cape
+    // Kennedy, free-return geometry…" — generic Apollo-themed beat that
+    // runs from t=89.3 to t=102.4. Brief panorama descent into Apollo 11
+    // (Tranquillity Base) lets the listener stand at the cluster the
+    // narrator is describing. ~10 s window — skip auto-tour since the
+    // beat is short and the next narration ("Look at the south pole.
+    // That's where Artemis is going next") demands the map view back.
+    { at_sec: 87, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
+    { at_sec: 90, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
   ],
 
   // ── /moon · moon-one-lifetime — Curator, VTT 154 s ────────────────

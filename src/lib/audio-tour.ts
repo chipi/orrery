@@ -389,16 +389,39 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Filter by destination, status, agency.',
       duration_ms: 4000,
     },
+    // VTT § 00:00:42.9 – 47.9 — failed-mission roll-call ("Mars 2.
+    // Schiaparelli. Beresheet. Hakuto-R. Vikram from Chandrayaan-2.
+    // Hitomi."). Only schiaparelli and beresheet are catalogued today;
+    // mars-2 / hakuto-r / vikram-cy2 / hitomi don't have mission files yet
+    // so their flashes are honestly skipped (see #342 follow-up — adding
+    // those four to /missions catalogue unlocks the full roll-call burst).
+    { at_sec: 44, action: 'flash', target: '[data-audio-stage="missions-select-schiaparelli"]' },
+    { at_sec: 45, action: 'flash', target: '[data-audio-stage="missions-select-beresheet"]' },
+    // VTT § 00:00:59.4 – 01:18 — redemption-arc story. Walk the panel
+    // through "failure → successor → failure → successor → first
+    // catastrophic failure → first iconic success." Each click replaces
+    // the panel ~4–5 s after the previous one — pacing matches the
+    // narration's beat per pair.
+    // VTT § 00:00:59.4 "Chandrayaan-3 landed Vikram's twin"
+    { at_sec: 60, action: 'click', target: '[data-audio-stage="missions-select-chandrayaan3"]' },
+    // VTT § 00:01:04.6 "Beresheet hit the surface in 2019."
+    { at_sec: 65, action: 'click', target: '[data-audio-stage="missions-select-beresheet"]' },
+    // VTT § 00:01:09.6 "Apollo 1 killed three astronauts on the launch pad"
+    { at_sec: 70, action: 'click', target: '[data-audio-stage="missions-select-apollo-1"]' },
+    // VTT § 00:01:14.1 "Apollo 11 walked on the Moon two and a half years later."
+    // Was previously clicked at t=84 (10 s late, on the generic "Click any
+    // card" demo); pulled forward so the click lands ON the redemption
+    // payoff line, not on the post-story housekeeping.
+    { at_sec: 74, action: 'click', target: '[data-audio-stage="missions-select-apollo11"]' },
     // VTT § 00:01:18.5 "Click any mission card"
     {
       at_sec: 78,
       action: 'cue',
-      target: 'Click any card — like this one.',
+      target: 'Click any card — read the record.',
       duration_ms: 4000,
     },
     { at_sec: 80, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
     { at_sec: 82, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
-    { at_sec: 84, action: 'click', target: '[data-audio-stage="missions-select-apollo11"]' },
     // VTT § 00:01:42.9 "Look at the timeline"
     {
       at_sec: 103,
@@ -421,8 +444,13 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     // VTT § 00:01:10.8 "Voyager 1 is the most distant human-made object"
+    // V2 panel was open since t=41; swap to V1 panel as narration shifts
+    // to "Voyager 1 is the most distant human-made object". Hook is now
+    // templated onto every mission card, so the catalogue ID resolves
+    // automatically.
+    { at_sec: 110, action: 'click', target: '[data-audio-stage="missions-select-voyager-1"]' },
     {
-      at_sec: 110,
+      at_sec: 113,
       action: 'cue',
       target: 'Voyager 1 — ~24 billion km from the Sun, still transmitting.',
       duration_ms: 5000,

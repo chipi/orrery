@@ -319,6 +319,7 @@
       placeholder={m.missions_search_placeholder()}
       aria-label={m.missions_search_placeholder()}
       data-testid="missions-search"
+      data-audio-stage="missions-search-input"
       value={filterState.q}
       oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
     />
@@ -586,6 +587,7 @@
             class:selected={selectedId === mission.id}
             style:--accent={mission.color}
             data-testid="mission-card-{mission.id}"
+            data-audio-stage="missions-select-{mission.id}"
             onclick={() => selectMission(mission.id)}
           >
             <div class="card-accent" aria-hidden="true"></div>

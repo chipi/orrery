@@ -297,9 +297,15 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
     //   data-audio-stage="route-card-{card.route.slice(1)}"
     //   data-audio-stage="science-tab-{tab}"
     //   data-audio-stage="science-section-{section.id}"
+    //   data-audio-stage="missions-select-{mission.id}"
     // We can't statically resolve the interpolated value, so we allow
     // any selector whose prefix matches one of these templated bases.
-    const TEMPLATED_PREFIXES = ['route-card-', 'science-tab-', 'science-section-'];
+    const TEMPLATED_PREFIXES = [
+      'route-card-',
+      'science-tab-',
+      'science-section-',
+      'missions-select-',
+    ];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',
     );

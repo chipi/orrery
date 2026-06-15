@@ -241,13 +241,22 @@
   let liveFrameMonitor: FrameMonitorHandle | null = $state(null);
 
   // ─── HUD-collapse toggle (mobile) ────────────────────────────────
-  // On narrow viewports the hud-stack (top-left mission info) and
-  // capcom-panel (right/bottom Houston event log) cover most of the
-  // scene. A single toggle hides both so the user can see the actual
-  // 3D trajectory; tap again to bring them back.
+  // Phase 25 (#342) — "throne of glory" default. On touch devices the
+  // cinematic moment lands chrome-free: hud-stack, capcom-panel,
+  // fly-toggle-rows (gold + right clusters), and fly-bottom-strips
+  // all collapse under one toggle so the YouTube/Wired-grade animation
+  // breathes. Tap the floating ◐ top-left to expand. Desktop / mouse
+  // devices default to chrome-visible as before (no behavioural change).
   let hudHidden = $state(false);
   function toggleHud() {
     hudHidden = !hudHidden;
+  }
+  // Default-collapse on touch-only devices. Uses `(hover: none)` rather
+  // than viewport width: touchscreens with mice (Surface laptops, iPad
+  // with trackpad) keep the desktop default. Runs once at script-init
+  // (svelte 5 module-scope: it fires on mount before first render).
+  if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
+    hudHidden = true;
   }
 
   // Settings panel — wave 2/3 punch #3. Gear button top-right opens a
@@ -8516,12 +8525,19 @@
       right: 16px;
     }
     /* On mobile, the hud-collapse toggle is visible; when active, hide
-       hud-stack + capcom-panel so the actual 3D / 2D scene is unobstructed. */
+       every chrome cluster so the actual 3D / 2D scene is unobstructed.
+       Phase 25 (#342) widened from {hud-stack, capcom-panel} to also
+       include the gold + right toggle rows and the bottom strips —
+       Marko's "throne of glory" vision: cinematic moment by default,
+       chrome on demand. Scrubber + settings gear + hud-collapse stay
+       visible (playback controls are load-bearing). */
     .hud-collapse {
       display: inline-flex;
     }
     .fly.hud-hidden .hud-stack,
-    .fly.hud-hidden .capcom-panel {
+    .fly.hud-hidden .capcom-panel,
+    .fly.hud-hidden .fly-toggle-row,
+    .fly.hud-hidden .fly-bottom-strips {
       display: none;
     }
   }

@@ -2395,12 +2395,20 @@
       flyActive = false; // wheel cancels any in-flight fly-in
     };
 
-    // Touch — single-finger orbit + two-finger pinch
+    // Touch — single-finger orbit + two-finger pinch + two-finger pan
     let touchActive = false;
     let touchMoved = false;
     let touchDownX = 0;
     let touchDownY = 0;
     let pinchPrev = 0;
+    // Phase 36 (#342) — two-finger pan support. Touch users have no
+    // Shift key; the only mobile equivalent to mouse Shift+drag pan
+    // is two-finger drag where the midpoint of the fingers translates.
+    // Pinch (distance change) still drives zoom; pan (midpoint move)
+    // translates focusOffset along camera basis the same way Shift+drag
+    // does on desktop.
+    let panMidPrevX = 0;
+    let panMidPrevY = 0;
     const tDist = (a: Touch, b: Touch) => Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
     const onTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
@@ -2416,18 +2424,35 @@
       } else if (e.touches.length === 2) {
         touchActive = false;
         pinchPrev = tDist(e.touches[0], e.touches[1]);
+        panMidPrevX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        panMidPrevY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
       }
     };
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchPrev > 0) {
-        // Two-finger pinch — preventDefault so the browser doesn't
-        // also do its native pinch-zoom on the page itself.
+        // Two-finger gesture: pinch (distance) drives zoom; midpoint
+        // movement drives pan. preventDefault stops native pinch-zoom
+        // of the page itself.
         e.preventDefault();
         const d = tDist(e.touches[0], e.touches[1]);
-        // Update camRTarget — smooth-zoom lerp picks it up in RAF.
         camRTarget = Math.max(30.2, Math.min(200, camRTarget * (pinchPrev / d)));
+        // Pan via midpoint delta — mirrors the desktop Shift+drag path.
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const dxMid = midX - panMidPrevX;
+        const dyMid = midY - panMidPrevY;
+        if (dxMid !== 0 || dyMid !== 0) {
+          const vh = renderer.domElement.clientHeight || window.innerHeight;
+          const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / vh;
+          camera.matrixWorld.extractBasis(panRight, panUp, panForward);
+          focusOffset.addScaledVector(panRight, -dxMid * scale);
+          focusOffset.addScaledVector(panUp, dyMid * scale);
+          updateCam();
+        }
         flyActive = false;
         pinchPrev = d;
+        panMidPrevX = midX;
+        panMidPrevY = midY;
         return;
       }
       if (!touchActive || e.touches.length !== 1) return;

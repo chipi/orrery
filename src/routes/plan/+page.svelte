@@ -893,6 +893,17 @@
       ontouchcancel={onTouchEnd}
       aria-label={m.plan_canvas_label({ dest: destinationLabel(destinationId) })}
     ></canvas>
+    <!-- Phase 36 (#342) — touch affordance hint. The magnifier opens
+         on touch+hold but the gesture is invisible; surface a small
+         hint badge on touch devices when no cell is selected (mag is
+         null). Auto-fades once the user has held — the hint stays out
+         of the visual the moment it's been understood. Visible only
+         on (hover: none) devices via CSS. -->
+    {#if !mag}
+      <p class="touch-hint" aria-hidden="true">
+        Touch &amp; hold to peek
+      </p>
+    {/if}
 
     {#if mag}
       <canvas
@@ -1318,6 +1329,34 @@
     font-size: 10px;
     letter-spacing: 1px;
     border-radius: 4px;
+  }
+
+  /* Phase 36 (#342) — touch affordance hint for the magnifier gesture.
+     Visible only on (hover: none) so desktop users don't see it. Sits
+     at the top-right of the porkchop canvas; muted teal so it reads
+     as guidance rather than UI chrome. */
+  .touch-hint {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 4;
+    margin: 0;
+    padding: 6px 10px;
+    background: rgba(15, 18, 35, 0.7);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    border-radius: 4px;
+    color: rgba(78, 205, 196, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+  }
+  @media (hover: none) {
+    .touch-hint {
+      display: block;
+    }
   }
 
   .magnifier {

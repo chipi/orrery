@@ -1020,13 +1020,14 @@
 </article>
 
 <style>
+  /* Phase 30 (#342) — mobile-first cascade. Base values land at 375 px;
+     @media (min-width: 768px) lifts to tablet; (min-width: 1024px)
+     lifts to desktop. Output is identical to the pre-Phase-30 desktop-
+     first cascade at every breakpoint — pure convention hygiene per
+     AGENTS.md § Mobile-first rules. */
   .landing {
-    max-width: 880px;
     margin: 0 auto;
-    /* Reduced top padding so the hero illustration sits close to the
-       nav bar; breathing room added below the illustration via the
-       svg's bottom margin so the wordmark doesn't crowd it. */
-    padding: 24px 24px 48px;
+    padding: 16px 16px 32px;
     color: var(--color-text);
   }
 
@@ -1037,14 +1038,14 @@
   .hero-illustration {
     display: block;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
   }
   .wordmark {
     font-family: var(--font-display);
-    font-size: 96px;
-    letter-spacing: 8px;
+    font-size: 48px;
+    letter-spacing: 6px;
     line-height: 1;
     margin: 0 0 16px;
     color: var(--color-text);
@@ -1052,14 +1053,14 @@
   .tagline {
     font-family: var(--font-editorial), 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 8px;
   }
   .subhead {
     font-family: var(--font-mono), 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     margin: 0 0 32px;
@@ -1068,6 +1069,8 @@
   .cta-row {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -1076,6 +1079,8 @@
     align-items: center;
     justify-content: center;
     min-height: 44px;
+    width: 100%;
+    max-width: 320px;
     padding: 14px 28px;
     font-family: var(--font-display);
     font-size: 14px;
@@ -1131,21 +1136,21 @@
   .divider {
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 64px 0;
+    margin: 40px 0;
   }
 
   .prose h2,
   section > h2 {
     font-family: var(--font-display);
-    font-size: 32px;
-    letter-spacing: 3px;
+    font-size: 24px;
+    letter-spacing: 2px;
     margin: 0 0 24px;
     color: var(--color-text);
   }
   .prose p {
     font-family: var(--font-editorial), 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.82);
     margin: 0 0 16px;
@@ -1156,7 +1161,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
   }
   .card {
@@ -1236,65 +1241,65 @@
     margin: 0;
   }
 
-  /* ─── Tablet ───────────────────────────────────────────────── */
-  @media (max-width: 1023px) {
+  /* ─── Tablet enhancement (≥768px) ─────────────────────────── */
+  @media (min-width: 768px) {
     .landing {
+      padding: 24px 24px 48px;
       max-width: 720px;
     }
     .wordmark {
       font-size: 80px;
+      letter-spacing: 8px;
     }
     .hero-illustration {
       max-width: 520px;
+      margin-bottom: 32px;
     }
     .tagline {
       font-size: 20px;
+    }
+    .subhead {
+      font-size: 14px;
+    }
+    .cta {
+      width: auto;
+      max-width: none;
+    }
+    .cta-row {
+      flex-direction: row;
+    }
+    .divider {
+      margin: 64px 0;
+    }
+    .prose h2,
+    section > h2 {
+      font-size: 32px;
+      letter-spacing: 3px;
+    }
+    .prose p {
+      font-size: 17px;
     }
     .card-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  /* ─── Mobile ───────────────────────────────────────────────── */
-  @media (max-width: 767px) {
+  /* ─── Desktop enhancement (≥1024px) ───────────────────────── */
+  @media (min-width: 1024px) {
     .landing {
-      padding: 16px 16px 32px;
+      max-width: 880px;
     }
     .wordmark {
-      font-size: 48px;
-      letter-spacing: 6px;
+      font-size: 96px;
     }
     .hero-illustration {
-      max-width: 100%;
-      margin-bottom: 20px;
+      max-width: 600px;
     }
     .tagline {
-      font-size: 18px;
-    }
-    .subhead {
-      font-size: 13px;
-    }
-    .cta {
-      width: 100%;
-      max-width: 320px;
-    }
-    .cta-row {
-      flex-direction: column;
-      align-items: center;
-    }
-    .divider {
-      margin: 40px 0;
-    }
-    .prose h2,
-    section > h2 {
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-    .prose p {
-      font-size: 15px;
+      font-size: 22px;
     }
     .card-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

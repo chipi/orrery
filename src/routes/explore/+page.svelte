@@ -5057,16 +5057,18 @@
   :global(.explore canvas) {
     display: block;
   }
-  /* PRD-023 Slice E.2 — Earth comparison ghost. Bottom-right corner. */
+  /* PRD-023 Slice E.2 — Earth comparison ghost. Bottom-right corner.
+     #342 Phase 30 — mobile-first: phone values are the defaults below;
+     desktop values get layered back at @min-width: 601. */
   .earth-compare {
     position: fixed;
-    bottom: 16px;
-    left: 16px;
+    bottom: 8px;
+    left: 8px;
     z-index: 20;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 6px 10px 6px 6px;
+    padding: 4px 8px 4px 4px;
     background: rgba(8, 10, 22, 0.6);
     border: 1px solid rgba(75, 156, 211, 0.25);
     border-radius: 6px;
@@ -5086,8 +5088,8 @@
     outline: none;
   }
   .earth-compare img {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: block;
   }
@@ -5103,19 +5105,11 @@
     font-size: 10px;
     letter-spacing: 1.2px;
   }
-  @media (max-width: 600px) {
-    .earth-compare {
-      bottom: 8px;
-      left: 8px;
-      padding: 4px 8px 4px 4px;
-    }
-    .earth-compare img {
-      width: 24px;
-      height: 24px;
-    }
-  }
   /* PRD-023 Slice E.4 — Tactical scan overlay. Bottom-center, between
-     the layer chips and the detail panel on desktop. */
+     the layer chips and the detail panel on desktop.
+     #342 Phase 30 — mobile-first: hidden on phone unless the user
+     opens the mobile info toggle (.mobile-info-open scope below).
+     Re-visible at @min-width: 601 (the desktop range). */
   .tactical-scan {
     position: fixed;
     bottom: 16px;
@@ -5131,6 +5125,13 @@
     backdrop-filter: blur(4px);
     pointer-events: none;
     font-family: 'Space Mono', monospace;
+    /* Phase 27 (#342) — informational overlays are hidden by default
+       at narrow widths so the canvas breathes. Phase 33 + 34 (#342)
+       reverses the cut on demand via .mobile-info-toggle. */
+    display: none;
+  }
+  .explore.mobile-info-open .tactical-scan {
+    display: block;
   }
   .scan-value-wrap {
     /* Atmosphere composition string can be long; allow wrap without
@@ -5181,19 +5182,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  @media (max-width: 600px) {
-    /* Phase 27 (#342) — informational overlays are hidden by default
-       at narrow widths so the canvas breathes. Phase 33 + 34 (#342)
-       reverses the cut on demand via the .mobile-info-toggle button:
-       when .mobile-info-open is set on the parent .explore container,
-       both the planet stats and the trajectory roster re-appear. */
-    .tactical-scan {
-      display: none;
-    }
-    .explore.mobile-info-open .tactical-scan {
-      display: block;
-    }
   }
   /* Phase 33 + 34 (#342) — mobile info toggle. 44×44 button top-right
      of the canvas, mirrors hud-restore's style (.fly-style chrome bar).
@@ -5300,21 +5288,27 @@
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never
-     collides with the right-drawer detail panel on desktop. */
+     collides with the right-drawer detail panel on desktop.
+     #342 Phase 30 — mobile-first: phone-tight values are the
+     defaults; @min-width: 501 + @min-width: 769 layer desktop
+     spacing + the chip stretch column back. */
   .hud-controls {
     position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    left: 16px;
+    /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
+       viewport. Relaxed at @min-width: 501. */
+    top: calc(var(--nav-height) + 8px);
+    left: 8px;
     z-index: 35;
     display: flex;
     flex-direction: column;
-    /* align-items: stretch so the chip column inherits the top-row's
-       computed width — chips visually share the same gutter as the
-       2D + RESET-VIEW toggles instead of being a narrower 110px rail
-       (2026-06-06 user direction: "resize those 4 filter chips to fit
-       new width of remaining 2 buttons on top"). */
-    align-items: stretch;
-    gap: 8px;
+    /* Mobile: flex-start so each row takes its natural width (the chip
+       row wraps; the toggle row hugs left). align-items: stretch is
+       restored at @min-width: 769 so the chip column inherits the
+       top-row's computed width — 2026-06-06 user direction: "resize
+       those 4 filter chips to fit new width of remaining 2 buttons
+       on top". */
+    align-items: flex-start;
+    gap: 6px;
     pointer-events: none; /* children re-enable */
   }
   .ctrl-row {
@@ -5324,23 +5318,24 @@
     pointer-events: auto;
   }
   .ctrl-row.chips {
-    /* Layer chips stack vertically so their on/off state reads as a
-       compact left-edge column rather than a wide horizontal strip.
-       Individual chips set width: 100% (below) so they stretch to the
-       chip-row's width, which itself stretches to match the top toggle
-       row via .hud-controls align-items: stretch. */
-    flex-direction: column;
-    align-items: stretch;
+    /* Mobile: chip row wraps horizontally so 4 chips fit on a 375 px
+       viewport without scroll. At @min-width: 769 the rail returns to
+       a vertical column matching the toggle row's stretch width. */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: calc(100vw - 24px);
   }
   .toggle {
     min-width: 44px;
     min-height: 44px;
-    padding: 0 14px;
+    /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
+    padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     border-radius: 4px;
     cursor: pointer;
@@ -5358,23 +5353,24 @@
 
   /* Layer chips — always-visible visibility toggles. Inactive chips
      are dim outlines; active chips are filled with the teal accent
-     so the on-state is obvious. 32 px tall keeps them subordinate to
-     the 44 px primary toggles above. */
+     so the on-state is obvious. 44 px tall preserves the ADR-018
+     touch-target floor.
+     #342 Phase 30 — mobile-first: phone values default; desktop
+     bumps padding/font/letter-spacing at @min-width: 501 and
+     width:100% + chip-stretch column at @min-width: 769. */
   .chip {
     min-height: 44px;
-    /* width: 100% so each chip stretches to the chip-row's width,
-       which itself stretches to the top toggle row's width via
-       .hud-controls align-items: stretch. min-width kept at 110px as
-       a safety floor when the top row only has the 2D toggle. */
-    width: 100%;
+    /* Mobile: chips flow side-by-side, natural width. width: 100%
+       (chip-stretch column) reinstated at @min-width: 769. */
+    width: auto;
     min-width: 110px;
-    padding: 0 10px;
+    padding: 0 8px;
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.55);
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 9px;
+    letter-spacing: 1.2px;
     text-align: center;
     border-radius: 999px;
     cursor: pointer;
@@ -5404,7 +5400,12 @@
 
   .paths-legend {
     pointer-events: auto;
-    display: flex;
+    /* Mobile-first: hidden by default on phones / tablets. Phase 27
+       (#342) hides the iconic-trajectory legend so the canvas
+       breathes; Phase 34 (#342) re-surfaces it on demand via the
+       .mobile-info-toggle button (.mobile-info-open scope below).
+       At @min-width: 769 (desktop) the legend is always-on. */
+    display: none;
     flex-direction: column;
     gap: 2px;
     padding: 8px 10px;
@@ -5420,6 +5421,15 @@
     max-height: calc(100vh - var(--nav-height, 60px) - 180px);
     overflow-y: auto;
     overscroll-behavior: contain;
+  }
+  .explore.mobile-info-open .paths-legend {
+    display: flex;
+    position: fixed;
+    bottom: 76px; /* above the detail-panel handle if open */
+    left: 16px;
+    right: 16px;
+    max-height: 40vh;
+    z-index: 35;
   }
   .paths-legend::-webkit-scrollbar {
     width: 6px;
@@ -5508,65 +5518,66 @@
     color: rgba(255, 255, 255, 0.85);
   }
 
-  /* Chip rail wraps as soon as we leave desktop. Was gated on 500 px
-     which only kicked in for phone-narrow widths — anyone resizing a
-     desktop browser between 501–768 still saw the vertical column. */
-  @media (max-width: 768px) {
-    /* Phase 27 (#342) — hide the iconic-trajectory legend on mobile
-       by default. Phase 34 (#342) re-surfaces it on demand via the
-       .mobile-info-toggle button (top-right ⓘ): when active, the
-       roster floats over the canvas as a compact bottom-sheet-style
-       panel. Anchored to the bottom-left so it doesn't collide with
-       the info-toggle button or the detail-panel bottom sheet. */
-    .paths-legend {
-      display: none;
-    }
-    .explore.mobile-info-open .paths-legend {
-      display: flex;
-      position: fixed;
-      bottom: 76px; /* above the detail-panel handle if open */
-      left: 16px;
-      right: 16px;
-      max-height: 40vh;
-      z-index: 35;
-    }
-    .ctrl-row.chips {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      max-width: calc(100vw - 24px);
-    }
-    /* Drop the width: 100% the desktop column rail uses so chips can
-       actually flow side-by-side. Without this override chips inherit
-       the full chip-row width and stack vertically anyway, which
-       breaks mobile-layout.spec.ts:68's "chips flow rightward, not
-       downward" invariant. Also unstretch .hud-controls so each row
-       takes its natural width again. */
+  /* ─── ≥ 501 px — relax phone-tight cluster spacing ─────────────── */
+  @media (min-width: 501px) {
     .hud-controls {
-      align-items: flex-start;
+      left: 16px;
+      top: calc(var(--nav-height) + 12px);
+      gap: 8px;
+    }
+    .toggle {
+      padding: 0 14px;
+      font-size: 13px;
     }
     .chip {
-      width: auto;
+      padding: 0 10px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
     }
   }
 
-  /* Mobile: shrink the chip row so 4 chips fit comfortably at 375 px,
-     and tighten the cluster's left gutter. */
-  @media (max-width: 500px) {
-    .hud-controls {
-      left: 8px;
-      top: calc(var(--nav-height) + 8px);
-      gap: 6px;
+  /* ─── ≥ 601 px — overlays + earth-compare desktop sizing ───────── */
+  @media (min-width: 601px) {
+    .earth-compare {
+      bottom: 16px;
+      left: 16px;
+      padding: 6px 10px 6px 6px;
     }
-    .toggle {
-      padding: 0 10px;
-      font-size: 12px;
+    .earth-compare img {
+      width: 32px;
+      height: 32px;
+    }
+    .tactical-scan {
+      display: block;
+    }
+  }
+
+  /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
+  @media (min-width: 769px) {
+    .paths-legend {
+      display: flex;
+      position: static;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      max-height: calc(100vh - var(--nav-height, 60px) - 180px);
+      z-index: auto;
+    }
+    .ctrl-row.chips {
+      /* Layer chips stack vertically so their on/off state reads as a
+         compact left-edge column rather than a wide horizontal strip.
+         Individual chips set width: 100% so they stretch to match the
+         top toggle row via .hud-controls align-items: stretch. */
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      max-width: none;
+    }
+    .hud-controls {
+      align-items: stretch;
     }
     .chip {
-      padding: 0 8px;
-      font-size: 9px;
-      letter-spacing: 1.2px;
-      min-height: 44px;
+      width: 100%;
     }
   }
 

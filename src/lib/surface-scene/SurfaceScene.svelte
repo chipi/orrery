@@ -1047,6 +1047,7 @@
       group: THREE.Group;
       siteId: string;
       halo?: THREE.Object3D;
+      hoverHalo?: THREE.Object3D;
       labelGroup?: THREE.Group;
     };
     const markers: MarkerObj[] = [];
@@ -1622,6 +1623,21 @@
         });
         group.add(halo);
 
+        // Hover halo — same shape/pose as the selection halo but in the
+        // OutlinePass teal (#4ecdc4) so the on-hover visual cue matches
+        // what the user sees when hovering an orbital marker. Made
+        // slightly larger (1.7 vs 1.4) so it reads even at heliocentric
+        // zoom where the tiny lander cone is sub-pixel. Hidden by
+        // default; per-frame visibility flips when hoveredSiteId
+        // matches AND the site isn't already selected (2026-06-15 user
+        // note: "on surface spot hover I would like to see same as we
+        // see on orbiters in that teal glow color. now I see nothing").
+        const hoverHalo = createMarkerHalo('#4ecdc4', 1.7, {
+          lay: true,
+          aspect: haloAspect,
+        });
+        group.add(hoverHalo);
+
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).
         // Sites whose surface-hotspots.json sidecar gives
         // hotspot_tier_max >= 1 + a known hotspot_model id get a
@@ -1702,7 +1718,7 @@
         }
 
         planetMesh.add(group);
-        markers.push({ group, siteId: site.id, halo, labelGroup: label.group });
+        markers.push({ group, siteId: site.id, halo, hoverHalo, labelGroup: label.group });
       }
     }
 
@@ -2857,6 +2873,13 @@
             // providing the visual anchor that the thin-line outline
             // alone didn't.
             mk.halo.visible = layerSurface && mk.siteId === selId;
+          }
+          if (mk.hoverHalo) {
+            // Teal hover ring — only when the mouse is over this
+            // marker AND it isn't already selected (selection halo
+            // wins, avoids double-ring).
+            mk.hoverHalo.visible =
+              layerSurface && mk.siteId === hoveredSiteId && mk.siteId !== selId;
           }
         }
         for (const om of orbitalMarkers) {

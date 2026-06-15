@@ -302,6 +302,13 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
     //   data-audio-stage="missions-select-{mission.id}"
     // We can't statically resolve the interpolated value, so we allow
     // any selector whose prefix matches one of these templated bases.
+    // Templated prefixes: any selector whose name starts with one of these
+    // is allowed as long as the prefix appears in the haystack. Future-
+    // proofed Phase 20 — earth-/iss-/moon-/tiangong-select- are LITERAL
+    // emissions today (every entity has its own hidden tour-anchor
+    // button) but the moment any of those routes templates over an
+    // iteration, stages can reference {prefix}-{id} without the test
+    // going red.
     const TEMPLATED_PREFIXES = [
       'route-card-',
       'science-tab-',
@@ -310,6 +317,10 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'fleet-select-',
       'mars-select-',
       'explore-select-',
+      'earth-select-',
+      'iss-select-',
+      'moon-select-',
+      'tiangong-select-',
     ];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',

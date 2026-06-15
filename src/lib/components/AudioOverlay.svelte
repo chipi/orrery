@@ -251,9 +251,15 @@
     const pos = audio.positionSec;
     const batch: AudioStage[] = [];
     const batchKeys: string[] = [];
-    for (const stage of stages) {
+    for (let i = 0; i < stages.length; i++) {
+      const stage = stages[i];
       if (pos < stage.at_sec) continue;
-      const key = `${epId}:${stage.at_sec}:${stage.action}:${stage.target}`;
+      // Phase 20 (#342) — include stage-index in the key. Two stages
+      // with identical (at_sec, action, target) on the same episode are
+      // pathological today but trivial to introduce in v0.8 with the
+      // suggest-stages tool; keying on index makes it impossible for one
+      // to silently dedup the other.
+      const key = `${epId}:${i}:${stage.at_sec}:${stage.action}:${stage.target}`;
       if (firedStages.has(key)) continue;
       batch.push(stage);
       batchKeys.push(key);

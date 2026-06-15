@@ -97,7 +97,7 @@
     texture4k?: string;
     /**
      * Optional emissive (night-side glow) texture — PRD-023 Slice A.
-     * Used for Earth's city lights. Applied as MeshPhongMaterial's
+     * Used for Earth's city lights. Applied as MeshStandardMaterial's
      * `emissiveMap` so the glow only reads on the unlit hemisphere
      * (the bright day texture overwhelms the emission contribution
      * on the lit side). Omit on bodies with no significant
@@ -1721,7 +1721,7 @@
       mesh: THREE.Mesh;
       pickAid: THREE.Mesh;
       planet: PlanetVisual;
-      material: THREE.MeshPhongMaterial;
+      material: THREE.MeshStandardMaterial;
       lod?: LodState;
       /** Optional natural-satellite layer. Each satellite is a child
        *  of this PlanetObj's `group` so it inherits the parent's
@@ -1789,22 +1789,32 @@
       const group = new THREE.Group();
       const tex2k = loadTexture(p.texture);
       // PRD-023 Slice A — optional emissive (night-side) texture for
-      // Earth's city lights. MeshPhongMaterial adds emission on top
-      // of the lighting calculation; emission isn't multiplied by
-      // light direction, so on the day side the bright day texture
-      // overwhelms the city lights, and on the night side the lit-
-      // up cities glow against the dark surface. emissiveIntensity
-      // is bumped from the default 0.06 (faint planet-tint glow) to
-      // 1.0 when an emissiveMap is supplied so the cities read.
+      // Earth's city lights. MeshStandardMaterial adds emission on
+      // top of the lighting calculation; emission isn't multiplied
+      // by light direction, so on the day side the bright day texture
+      // overwhelms the city lights, and on the night side the lit-up
+      // cities glow against the dark surface. emissiveIntensity is
+      // bumped from the default 0.06 (faint planet-tint glow) to 1.0
+      // when an emissiveMap is supplied so the cities read.
+      //
+      // 2026-06-15 — migrated MeshPhongMaterial → MeshStandardMaterial
+      // (three.js PBR default). No envMap (nothing in the scene is
+      // reflective enough to justify the PMREMGenerator cost).
+      // roughness 1.0 + metalness 0 ≈ pure Lambertian: kills the broad
+      // white specular hotspot the prior shininess: 25 + specular:
+      // 0x222222 setup produced on gas-giant cloud-tops and rocky
+      // surfaces. Per-planet tuning (e.g. an ocean roughness map for
+      // Earth glint) can layer on top of this base without changing
+      // the material type.
       const emissiveMapTex = p.emissiveMap ? loadTexture(p.emissiveMap) : undefined;
-      const mat = new THREE.MeshPhongMaterial({
+      const mat = new THREE.MeshStandardMaterial({
         map: tex2k,
         color: 0xffffff,
         emissive: p.emissiveMap ? 0xffffff : p.color3,
         emissiveMap: emissiveMapTex,
         emissiveIntensity: p.emissiveMap ? 1.0 : 0.06,
-        shininess: 25,
-        specular: 0x222222,
+        roughness: 1.0,
+        metalness: 0,
       });
       const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3, 32, 32), mat);
       mesh.userData = { planetId: p.id };
@@ -1895,14 +1905,16 @@
         // map (e.g. Uranus + Neptune moons today) fall back to a flat
         // colour. #304 Slice 3 — texture sourcing tracked separately.
         const satMat = s.texture
-          ? new THREE.MeshPhongMaterial({
+          ? new THREE.MeshStandardMaterial({
               map: loadTexture(s.texture),
               color: 0xffffff,
-              shininess: 8,
+              roughness: 1.0,
+              metalness: 0,
             })
-          : new THREE.MeshPhongMaterial({
+          : new THREE.MeshStandardMaterial({
               color: s.fallbackColor ?? 0xc8c8c8,
-              shininess: 6,
+              roughness: 1.0,
+              metalness: 0,
             });
         const satMesh = new THREE.Mesh(new THREE.SphereGeometry(s.sizeUnits, 32, 32), satMat);
         satMesh.userData = { satelliteId: s.id, parentPlanetId: p.id };
@@ -2676,10 +2688,12 @@
       const colorInt = parseInt(b.color.slice(1), 16);
       const mesh = new THREE.Mesh(
         new THREE.SphereGeometry(b.type === 'comet' ? 1.2 : 1.8, 12, 12),
-        new THREE.MeshPhongMaterial({
+        new THREE.MeshStandardMaterial({
           color: colorInt,
           emissive: colorInt,
           emissiveIntensity: 0.5,
+          roughness: 1.0,
+          metalness: 0,
         }),
       );
       mesh.userData = { smallBodyId: b.id };

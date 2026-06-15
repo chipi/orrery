@@ -1998,6 +1998,16 @@
     const panoramaHiddenVisibility = new Map<THREE.Object3D, boolean>();
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
+      // Force the flat patch out of any in-flight or visible state —
+      // a user can reach "stand at site" from inside the flat-patch
+      // view (it's the natural next step after Zoom to detail). Without
+      // this the CSS overlay would keep masking the skybox even after
+      // the trigger guard above stops re-firing.
+      if (flatPatchTransitionTimer) {
+        clearTimeout(flatPatchTransitionTimer);
+        flatPatchTransitionTimer = null;
+      }
+      flatPatchPhase = 'hidden';
       // PRD-022 / ADR-074 Phase 3B — read deep-link URL state if present.
       // ?pano=<entry-id> picks the panorama-set entry; ?yaw=&pitch=
       // restore camera orientation. Defaults: null entry → default,
@@ -3660,10 +3670,19 @@
           const SPHERE_TO_FLAT_CAM_R = 30.3;
           if (
             flatPatchPhase === 'hidden' &&
+            !panoramaActive &&
             selected != null &&
             selected.region_bounds != null &&
             camR < SPHERE_TO_FLAT_CAM_R
           ) {
+            // !panoramaActive guard 2026-06-15: enterPanorama sets
+            // camR = 0.5 (placing the camera inside the skybox), which
+            // also satisfies this <30.3 trigger and made the flat-patch
+            // cross-fade run on top of the panorama skybox. To the user
+            // both buttons (Stand at site + Zoom to detail) ended up
+            // looking identical — they reported "both do the same
+            // thing — zoom to detail. None of them take me to the site
+            // in panorama mode. Somehow we lost link to panorama."
             if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
             flatPatchPhase = 'entering';
             flatPatchTransitionTimer = setTimeout(() => {

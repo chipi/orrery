@@ -547,9 +547,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       for (const item of items) {
         const screenDy = item.finalScreenY - item.screenY;
         const worldDy = -screenDy * item.worldPerPixel;
-        labelSprites[item.i].position
-          .copy(item.basePos)
-          .addScaledVector(camUp, worldDy);
+        labelSprites[item.i].position.copy(item.basePos).addScaledVector(camUp, worldDy);
       }
     },
     dispose: () => {

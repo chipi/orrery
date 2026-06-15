@@ -1440,7 +1440,7 @@
     // highlights (bloomed Sun + lit planet sides) don't clip to flat
     // white. Matches the /fly helio scene's stack (#322).
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.1;
+    renderer.toneMappingExposure = 1.0;
     // PRD-023 Slice A — enable shadow maps for Saturn's ring-shadow
     // effect. PCFSoftShadowMap is the cheap default; we scope the
     // perf cost by setting castShadow only on the ring mesh and
@@ -1452,7 +1452,7 @@
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    const sunLight = new THREE.PointLight(0xfff4d0, 3.5, 2500, 1.2);
+    const sunLight = new THREE.PointLight(0xfff4d0, 4.5, 2500, 1.2);
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 1024;
     sunLight.shadow.mapSize.height = 1024;
@@ -1471,8 +1471,20 @@
     scene.add(fill);
 
     const textureLoader = new THREE.TextureLoader();
-    const loadTexture = (file: string): THREE.Texture =>
-      textureLoader.load(`${base}/textures/${file}`);
+    // PBR migration (2026-06-15): MeshStandardMaterial expects albedo
+    // textures to be tagged with `colorSpace = SRGBColorSpace` so the
+    // engine de-gammas the sRGB-encoded JPGs into linear before
+    // lighting math, then the renderer re-gammas at output. Without
+    // this tag the texture is treated as already-linear, lighting
+    // operates on the wrong values, and the output gamma pass produces
+    // washed-out / desaturated colors. Applies to every albedo + every
+    // emissive map; normal/roughness maps (which we don't have yet)
+    // would stay Linear.
+    const loadTexture = (file: string): THREE.Texture => {
+      const tex = textureLoader.load(`${base}/textures/${file}`);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      return tex;
+    };
 
     // Per-planet texture LOD swap (#287). 2K base loads eagerly so
     // the first paint of /explore stays cheap. 4K lazy-loads when the
@@ -1504,6 +1516,10 @@
       textureLoader.load(
         `${base}/textures/4k_sun.jpg`,
         (tex) => {
+          // Sun map is rendered via MeshBasicMaterial (unlit) but
+          // still benefits from sRGB tagging so the texture's
+          // mid-tones don't shift when output gamma is applied.
+          tex.colorSpace = THREE.SRGBColorSpace;
           sunMap4k = tex;
         },
         undefined,
@@ -1809,10 +1825,26 @@
       const emissiveMapTex = p.emissiveMap ? loadTexture(p.emissiveMap) : undefined;
       const mat = new THREE.MeshStandardMaterial({
         map: tex2k,
-        color: 0xffffff,
+        // 0xb0b0b0 (~69% gray) — multiplies the texture's albedo
+        // before lighting. Real-world Bond-albedo values (Saturn ~0.34,
+        // Jupiter ~0.34, Earth ~0.30, Mars ~0.25) sit well below 1.0,
+        // but our public-domain equirectangular textures are baked at
+        // ~0.8–0.95 brightness so the Sun-side image is recognisable
+        // on unlit reference renders. Scaling color down here brings
+        // the effective albedo into a range where the diffuse term
+        // (color × NdotL) doesn't clip to white at sub-solar even on
+        // bright bodies (Saturn cream cloud-tops, Jupiter bright belts).
+        color: 0xb0b0b0,
         emissive: p.emissiveMap ? 0xffffff : p.color3,
         emissiveMap: emissiveMapTex,
-        emissiveIntensity: p.emissiveMap ? 1.0 : 0.06,
+        // emissive floor 0.10 (was 0.06) — gives each planet a faint
+        // self-illumination tint of its own characteristic color (red
+        // for Mars, blue-grey for Neptune, etc.) so heliocentric-zoom
+        // views read as "colourful solar system" rather than "black
+        // dots arranged around a Sun." Still tiny relative to the
+        // diffuse term on the day side, so it doesn't lift the night
+        // side enough to wash out the single-Sun direction cue.
+        emissiveIntensity: p.emissiveMap ? 1.0 : 0.1,
         roughness: 1.0,
         metalness: 0,
       });
@@ -2352,6 +2384,10 @@
               textureLoader.load(
                 `${base}/textures/${file}`,
                 (tex) => {
+                  // PBR — tag as sRGB (matches the 2K load above) so
+                  // the 4K swap doesn't shift hue/saturation when LOD
+                  // crosses the in-threshold.
+                  tex.colorSpace = THREE.SRGBColorSpace;
                   lod.tex4k = tex;
                 },
                 undefined,

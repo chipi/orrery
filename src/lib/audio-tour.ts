@@ -194,6 +194,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: '[data-audio-stage="planet-tab-technical"]',
       note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers.',
     },
+    // VTT § 00:00:30.5 – 43.9 — orbital-period roll-call. Narration
+    // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5 years)
+    // → Neptune (165 years) as illustrative orbit-period examples. The
+    // Saturn panel is open in the foreground from t=29; the planet
+    // glow renders behind it through the partially-translucent UI.
+    // Saturn flash skipped — its panel is already the visual focus.
+    { at_sec: 32, action: 'flash', target: '[data-audio-stage="explore-select-mercury"]' },
+    { at_sec: 35, action: 'flash', target: '[data-audio-stage="explore-select-mars"]' },
+    { at_sec: 43, action: 'flash', target: '[data-audio-stage="explore-select-neptune"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
     // but no such control exists on /explore today (script/UI drift —
     // SSML referenced a planned-but-never-shipped speed control). Cue

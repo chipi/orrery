@@ -4850,24 +4850,14 @@
      there's no clickable DOM element for a planet. These buttons are
      visually offscreen but click()-able. -->
 <div class="tour-anchors" aria-hidden="true">
-  <button
-    type="button"
-    data-audio-stage="explore-select-saturn"
-    tabindex="-1"
-    onclick={() => selectPlanet('saturn')}>select saturn</button
-  >
-  <button
-    type="button"
-    data-audio-stage="explore-select-jupiter"
-    tabindex="-1"
-    onclick={() => selectPlanet('jupiter')}>select jupiter</button
-  >
-  <button
-    type="button"
-    data-audio-stage="explore-select-earth"
-    tabindex="-1"
-    onclick={() => selectPlanet('earth')}>select earth</button
-  >
+  {#each ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as planetId (planetId)}
+    <button
+      type="button"
+      data-audio-stage="explore-select-{planetId}"
+      tabindex="-1"
+      onclick={() => selectPlanet(planetId)}>select {planetId}</button
+    >
+  {/each}
   <button
     type="button"
     data-audio-stage="explore-select-sun"

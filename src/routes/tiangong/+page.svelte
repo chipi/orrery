@@ -588,22 +588,13 @@
     controls.target.set(0.6, 0.0, 0);
     controls.update();
 
-    // Shift+left-click → pan (in addition to OrbitControls' default
-    // right-click pan). 2026-06-15 user direction: "Shift+pan should
-    // be standard canvas behaviour" — matches /iss + /explore + the
-    // surface routes (/moon /mars /earth via SurfaceScene).
-    const swapToPan = () => {
-      controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
-      renderer.domElement.style.cursor = 'move';
-    };
-    const swapToRotate = () => {
-      controls.mouseButtons.LEFT = THREE.MOUSE.ROTATE;
-      renderer.domElement.style.cursor = '';
-    };
+    // Shift+left-click → pan. OrbitControls handles this NATIVELY
+    // when mouseButtons.LEFT === ROTATE (default) and shiftKey is set
+    // — same fix story as /iss (see that file for the full note). No
+    // mouseButtons swap; just flip the cursor for affordance.
     const onShiftKey = (e: KeyboardEvent, down: boolean) => {
       if (e.key !== 'Shift') return;
-      if (down) swapToPan();
-      else swapToRotate();
+      renderer.domElement.style.cursor = down ? 'move' : '';
     };
     const onKeyDown = (e: KeyboardEvent) => onShiftKey(e, true);
     const onKeyUp = (e: KeyboardEvent) => onShiftKey(e, false);

@@ -611,25 +611,20 @@
     controls.target.set(0, 0.1, 0);
     controls.update();
 
-    // Shift+left-click → pan (in addition to OrbitControls' default
-    // right-click pan). 2026-06-15 user direction: "Shift+pan should
-    // be standard canvas behaviour" across /explore, surface routes,
-    // and /iss + /tiangong. OrbitControls doesn't natively support a
-    // modifier-keyed mouse button, so we swap mouseButtons.LEFT
-    // between ROTATE and PAN on Shift down/up. Cursor flips to 'move'
-    // for affordance.
-    const swapToPan = () => {
-      controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
-      renderer.domElement.style.cursor = 'move';
-    };
-    const swapToRotate = () => {
-      controls.mouseButtons.LEFT = THREE.MOUSE.ROTATE;
-      renderer.domElement.style.cursor = '';
-    };
+    // Shift+left-click → pan. OrbitControls handles this NATIVELY:
+    // when mouseButtons.LEFT === MOUSE.ROTATE (the default) and the
+    // pointerdown carries shiftKey, OrbitControls swaps the action to
+    // PAN inside its own switch statement. So no mouseButtons swap is
+    // needed — and an earlier attempt that DID swap mouseButtons on
+    // Shift down actually BROKE pan, because OrbitControls then saw
+    // (mouseButtons.LEFT === PAN) + shiftKey and swapped it BACK to
+    // ROTATE per the symmetric branch in its source. Net effect was
+    // "cursor changes, no action" (2026-06-15 user report). Now we
+    // only flip the cursor for affordance and let OrbitControls do
+    // its job.
     const onShiftKey = (e: KeyboardEvent, down: boolean) => {
       if (e.key !== 'Shift') return;
-      if (down) swapToPan();
-      else swapToRotate();
+      renderer.domElement.style.cursor = down ? 'move' : '';
     };
     const onKeyDown = (e: KeyboardEvent) => onShiftKey(e, true);
     const onKeyUp = (e: KeyboardEvent) => onShiftKey(e, false);

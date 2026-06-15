@@ -711,6 +711,19 @@
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let view: '3d' | '2d' = $state('3d');
+  // Phase 31 (#342) — "throne of glory" default on touch devices.
+  // Mirror of /fly Phase 25: on (hover: none) devices the cinematic
+  // canvas lands chrome-free; a floating ◐ button top-left expands
+  // the hud-controls cluster back. Desktop / mouse devices default
+  // to visible chrome (no behavioural change). One-shot at module
+  // init — user's toggle wins thereafter.
+  let hudCollapsed = $state(false);
+  function toggleHud() {
+    hudCollapsed = !hudCollapsed;
+  }
+  if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
+    hudCollapsed = true;
+  }
   let localizedPlanets: LocalizedPlanet[] = $state([]);
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
@@ -4680,15 +4693,41 @@
     </div>
   {/if}
 
+  <!-- Phase 31 (#342) — mobile HUD-collapse toggle. The expand button
+       appears when the cluster is hidden; the collapse button is the
+       first child of the cluster itself so it's reachable when the
+       cluster is shown. Two-button pattern keeps the top-left zone
+       single-claimant at every state. -->
+  {#if hudCollapsed}
+    <button
+      type="button"
+      class="hud-restore"
+      onclick={toggleHud}
+      aria-label="Show view controls"
+      title="Show controls"
+    >
+      ◐
+    </button>
+  {/if}
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
        opposite side of the detail panel so they never collide. -->
   <div
     class="hud-controls"
+    class:hidden-on-mobile={hudCollapsed}
     data-audio-stage="explore-hud"
     role="group"
     aria-label={m.ui_view_controls()}
   >
+    <!-- Inline collapse button — visible on mobile only, hides the
+         cluster + reveals the floating ◐ above. -->
+    <button
+      type="button"
+      class="hud-mobile-collapse"
+      onclick={toggleHud}
+      aria-label="Hide view controls"
+      title="Hide controls"
+    >◑</button>
     <div class="ctrl-row">
       <button
         class="toggle"
@@ -5110,6 +5149,69 @@
       display: none;
     }
   }
+  /* Phase 31 (#342) — mobile HUD collapse pair.
+     - .hud-restore: floating ◐ button that appears at top-left when
+       the cluster is collapsed. Reachable, single-claimant of the zone.
+     - .hud-mobile-collapse: ◑ button inside the cluster, visible only
+       on touch devices, used to fold the cluster away.
+     Desktop / hoverable devices never see either button — chrome
+     stays in its default visible state with no extra UI. */
+  .hud-restore {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 16px;
+    z-index: 36;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: rgba(220, 230, 245, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .hud-restore:hover,
+  .hud-restore:focus-visible {
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.95);
+    outline: none;
+  }
+  .hud-mobile-collapse {
+    display: none;
+    pointer-events: auto;
+    align-self: flex-start;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 18, 35, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(220, 230, 245, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 4px;
+  }
+  .hud-mobile-collapse:hover,
+  .hud-mobile-collapse:focus-visible {
+    border-color: #4ecdc4;
+    outline: none;
+  }
+  @media (hover: none) {
+    .hud-mobile-collapse {
+      display: inline-flex;
+    }
+    .hud-controls.hidden-on-mobile {
+      display: none;
+    }
+  }
+
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never

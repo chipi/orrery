@@ -68,7 +68,7 @@
   } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
-  import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
+  import { resolveInitialHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
@@ -369,9 +369,10 @@
     return currentPanoramaEntry?.metadata ?? selected?.panorama_metadata ?? null;
   });
 
-  // resolveInitialHotspotsMode + nextHotspotsMode extracted to
-  // $lib/surface-map/hotspots-mode.ts (#42).
-  const cycleHotspotsMode = () => (hotspotsParam.value = nextHotspotsMode(hotspotsParam.value));
+  // resolveInitialHotspotsMode lives in $lib/surface-map/hotspots-mode
+  // (#42). cycleHotspotsMode wrapper + nextHotspotsMode import were
+  // dropped when HOTSPOTS folded into the unified SURFACE chip below —
+  // cycleSurfaceMode hard-codes the auto → high → low → off order.
 
   // Unified SURFACE chip cycle (replaces the prior SURFACE on/off +
   // separate HOTSPOTS·auto/low/high pair). Cycle order:

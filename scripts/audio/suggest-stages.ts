@@ -62,14 +62,39 @@ interface Suggestion {
 // templated/added during the #342 structural pass.
 const ROUTE_HOOK_PREFIXES: Record<string, string[]> = {
   '/': ['route-card-', 'hero-illustration', 'hero-earth-label', 'route-grid'],
-  '/explore': ['explore-select-', 'explore-scene', 'explore-hud', 'explore-layer-paths', 'science-lens-toggle', 'planet-tab-technical'],
+  '/explore': [
+    'explore-select-',
+    'explore-scene',
+    'explore-hud',
+    'explore-layer-paths',
+    'science-lens-toggle',
+    'planet-tab-technical',
+  ],
   '/earth': ['earth-select-', 'surface-hud'],
-  '/moon': ['moon-select-', 'surface-hud', 'surface-stand-at-site', 'surface-exit-panorama', 'surface-panorama-tour-play'],
-  '/mars': ['mars-select-', 'surface-hud', 'surface-stand-at-site', 'surface-exit-panorama', 'surface-panorama-tour-play'],
+  '/moon': [
+    'moon-select-',
+    'surface-hud',
+    'surface-stand-at-site',
+    'surface-exit-panorama',
+    'surface-panorama-tour-play',
+  ],
+  '/mars': [
+    'mars-select-',
+    'surface-hud',
+    'surface-stand-at-site',
+    'surface-exit-panorama',
+    'surface-panorama-tour-play',
+  ],
   '/iss': ['iss-select-', 'iss-module-list', 'iss-assembly-toggle'],
   '/tiangong': ['tiangong-select-', 'tiangong-module-list'],
   '/missions': ['missions-select-', 'missions-filters', 'missions-grid', 'missions-search-input'],
-  '/fleet': ['fleet-select-', 'fleet-filters', 'fleet-filters-toggle', 'fleet-grid', 'fleet-epoch-timeline'],
+  '/fleet': [
+    'fleet-select-',
+    'fleet-filters',
+    'fleet-filters-toggle',
+    'fleet-grid',
+    'fleet-epoch-timeline',
+  ],
   '/science': ['science-tab-', 'science-section-', 'science-tabs', 'science-search-button'],
   '/plan': ['plan-selector-bar', 'porkchop-plot'],
   '/fly': ['fly-hud'],
@@ -106,7 +131,11 @@ function parseVtt(text: string): VttLine[] {
   return lines;
 }
 
-function parseSsmlFrontmatter(md: string): { id?: string; route?: string; duration_target_sec?: number } {
+function parseSsmlFrontmatter(md: string): {
+  id?: string;
+  route?: string;
+  duration_target_sec?: number;
+} {
   const fm = md.match(/^---\n([\s\S]*?)\n---/);
   if (!fm) return {};
   const out: Record<string, string | number> = {};
@@ -204,7 +233,9 @@ function findVttForEpisode(episodeId: string): string | null {
   for (const tier of ['curator', 'guide', 'enthusiast']) {
     const dir = join(audioRoot, tier);
     if (!existsSync(dir)) continue;
-    const files = readdirSync(dir).filter((f) => f.startsWith(`${episodeId}.`) && f.endsWith('.vtt'));
+    const files = readdirSync(dir).filter(
+      (f) => f.startsWith(`${episodeId}.`) && f.endsWith('.vtt'),
+    );
     if (files.length > 0) return join(dir, files[0]);
   }
   return null;
@@ -251,12 +282,18 @@ function main(): void {
   console.log(`// All selectors are heuristic — verify against +page.svelte hooks.`);
   console.log(`'${id}': [`);
   for (const s of suggestions) {
-    console.log(`  // VTT § ${fmtSecToVtt(s.at_sec)} "${s.source_line.slice(0, 70)}${s.source_line.length > 70 ? '…' : ''}"`);
+    console.log(
+      `  // VTT § ${fmtSecToVtt(s.at_sec)} "${s.source_line.slice(0, 70)}${s.source_line.length > 70 ? '…' : ''}"`,
+    );
     console.log(`  // (${s.reason})`);
     if (s.action === 'cue') {
-      console.log(`  { at_sec: ${s.at_sec}, action: 'cue', target: '${s.target.replace(/'/g, "\\'")}', duration_ms: ${s.duration_ms ?? 4000} },`);
+      console.log(
+        `  { at_sec: ${s.at_sec}, action: 'cue', target: '${s.target.replace(/'/g, "\\'")}', duration_ms: ${s.duration_ms ?? 4000} },`,
+      );
     } else if (s.duration_ms !== undefined) {
-      console.log(`  { at_sec: ${s.at_sec}, action: '${s.action}', target: '${s.target}', duration_ms: ${s.duration_ms} },`);
+      console.log(
+        `  { at_sec: ${s.at_sec}, action: '${s.action}', target: '${s.target}', duration_ms: ${s.duration_ms} },`,
+      );
     } else {
       console.log(`  { at_sec: ${s.at_sec}, action: '${s.action}', target: '${s.target}' },`);
     }

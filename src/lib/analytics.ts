@@ -119,7 +119,12 @@ export function track(name: string, props?: Record<string, unknown>): void {
 
 // ─── Typed helpers (Phase 14 schema). Use these to avoid prop drift ───
 
-export function trackStageFire(episode: string, action: string, at_sec: number, target?: string): void {
+export function trackStageFire(
+  episode: string,
+  action: string,
+  at_sec: number,
+  target?: string,
+): void {
   // Strip the [data-audio-stage="…"] wrapper so dashboards group by
   // hook name. `cue` actions pass null target (their target is body text).
   const target_prefix = target?.match(/data-audio-stage="([^"]+)"/)?.[1] ?? null;
@@ -136,7 +141,15 @@ export function trackRouteEnter(route: string): void {
   lastRouteEnter = { route, t: now };
 }
 
-export type ClickKind = 'planet' | 'mission' | 'fleet' | 'marker' | 'module' | 'section' | 'tab' | 'card';
+export type ClickKind =
+  | 'planet'
+  | 'mission'
+  | 'fleet'
+  | 'marker'
+  | 'module'
+  | 'section'
+  | 'tab'
+  | 'card';
 export function trackItemClick(kind: ClickKind, id: string, route: string): void {
   track('item-click', { kind, id, route });
 }
@@ -149,7 +162,13 @@ export function trackGalleryImageLoad(
   total_images: number,
   layer?: string,
 ): void {
-  track('gallery-image-load', { entity, entity_kind, image_index, total_images, layer: layer ?? null });
+  track('gallery-image-load', {
+    entity,
+    entity_kind,
+    image_index,
+    total_images,
+    layer: layer ?? null,
+  });
 }
 
 export function trackScienceLensToggle(on: boolean): void {

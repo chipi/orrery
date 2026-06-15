@@ -647,7 +647,10 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
-    padding: 8px 12px;
+    /* Phase 32 (#342) — bumped padding 8→12 + min-height 44 so the
+       input is comfortably tap-sized on touch. */
+    padding: 12px 14px;
+    min-height: 44px;
     color: rgba(255, 255, 255, 0.85);
     font-family: 'Space Mono', monospace;
     font-size: 13px;

@@ -232,22 +232,42 @@
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>
-      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-link-extra"
-        href="https://github.com/chipi/orrery/blob/main/LICENSE"
-        target="_blank"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_license()}</a
-      >
-      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-link-extra"
-        href="https://github.com/chipi/orrery#readme"
-        target="_blank"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_readme()}</a
-      >
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <!-- ABOUT is a hover-only group: not itself a link, just a label.
+           The submenu (LICENSE + README) sits in a popover ABOVE the
+           label; reveals on hover/focus-within (2026-06-15 user
+           direction: "let's add about section in footer and move
+           license and readme links under it somehow… hover on about
+           should present 2 nested menu options above it in same
+           style, click not possible, and then click on each of those
+           does the same what those options do now"). Designed to
+           grow as more about-style items land (imprint, privacy, …)
+           without re-flowing the inline footer strip. -->
+      <span class="footer-about-group" tabindex="0">
+        <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
+        <ul class="footer-about-menu" role="menu" aria-label="About">
+          <li role="none">
+            <a
+              class="footer-link footer-link-extra"
+              href="https://github.com/chipi/orrery/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer external"
+              hreflang="en"
+              role="menuitem">{m.layout_footer_license()}</a
+            >
+          </li>
+          <li role="none">
+            <a
+              class="footer-link footer-link-extra"
+              href="https://github.com/chipi/orrery#readme"
+              target="_blank"
+              rel="noopener noreferrer external"
+              hreflang="en"
+              role="menuitem">{m.layout_footer_readme()}</a
+            >
+          </li>
+        </ul>
+      </span>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a
         class="footer-link footer-version"
@@ -345,14 +365,61 @@
     text-underline-offset: 3px;
   }
 
-  /* On narrow viewports the footer pill keeps the essentials only —
-     Credits, Library, version. The "extra" links (GitHub, README,
-     License, TA) hide. They remain reachable via the landing page's
-     About-this-project section, the nav, and the GitHub repo. */
-  @media (max-width: 767px) {
-    .footer-link-extra,
-    .footer-sep-extra {
-      display: none;
-    }
+  /* ABOUT hover-group — non-clickable label with a popover menu
+     that appears above on hover/focus-within. Designed to grow as
+     more about-style items land (Imprint, Privacy, Press, …) without
+     reflowing the inline footer strip. */
+  .footer-about-group {
+    pointer-events: auto;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
   }
+  .footer-about-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    padding: 2px 0;
+    cursor: default;
+    user-select: none;
+  }
+  .footer-about-menu {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 4px 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(4, 4, 12, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+  }
+  .footer-about-group:hover .footer-about-menu,
+  .footer-about-group:focus-within .footer-about-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .footer-about-menu li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /* On narrow viewports the footer pill stays compact. LICENSE +
+     README used to render inline (with .footer-link-extra hiding on
+     mobile) but now live inside the ABOUT popover, so they're only
+     visible when the user explicitly opens it. The .footer-sep-extra
+     class is no longer used (the popover replaces the inline
+     separators) — drops out naturally. */
 </style>

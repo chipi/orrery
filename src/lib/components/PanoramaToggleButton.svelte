@@ -26,6 +26,7 @@
       type="button"
       class="stand-at-site stand-at-site--exit"
       data-testid="exit-panorama"
+      data-audio-stage="surface-exit-panorama"
       onclick={onExit}
       title="Exit panorama view (Esc)"
     >
@@ -36,6 +37,7 @@
       type="button"
       class="stand-at-site"
       data-testid="stand-at-site"
+      data-audio-stage="surface-stand-at-site"
       onclick={() => onEnter(`${base}${panoramaUrl}`, siteId)}
       title={isSaveDataActive()
         ? 'Tap to load panorama (~8 MB) — saveData is on'

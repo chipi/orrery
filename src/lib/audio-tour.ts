@@ -609,6 +609,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   ],
 
   // ── /moon · cernan-last-words — Guide (Atmospheric Move), VTT 111 s ─
+  // The descent. Map → Apollo 17 panel → panorama (Cernan's quote read
+  // over the actual Taurus-Littrow vista, half-century arc plays over the
+  // surface view) → back to map for the "twelve markers represent a
+  // closed chapter" coda.
   'cernan-last-words': [
     // VTT § 00:00:00.0 "Look at this map of the Moon"
     { at_sec: 0, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
@@ -621,13 +625,24 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4500,
     },
     { at_sec: 18, action: 'click', target: '[data-audio-stage="moon-select-apollo17"]' },
-    // VTT § 00:00:36.3 — Cernan's last-words reading begins
+    // VTT § 00:00:36.3 — Cernan's last-words reading begins. Apollo 17
+    // panel has been open for 24 s by now; the stand-at-site button is in
+    // the DOM. Enter the panorama just before Cernan starts speaking so
+    // the quote lands ON the Taurus-Littrow vista, not on the map view.
     {
       at_sec: 36,
       action: 'cue',
-      target: 'Apollo 17 left December 1972. The footprint has been alone since.',
-      duration_ms: 5000,
+      target: 'Stand where Cernan stood.',
+      duration_ms: 4000,
     },
+    { at_sec: 38, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    // VTT § 00:01:42.0 — return to map view before "twelve markers
+    // represent a closed chapter" (t≈102) so the listener sees the full
+    // landing-site cluster on the close. Panorama held for ~60 s:
+    // Cernan's quote → "December 14th, 1972" → "fifty years have passed"
+    // → "three Mars rovers / two stations / one probe interstellar /
+    // nobody back to the Moon" → "Artemis II is in flight planning".
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
   ],
 
   // ── /moon · far-side — Guide (Atmospheric Move), VTT 115 s ────────
@@ -813,6 +828,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   ],
 
   // ── /mars · curiosity-persistence — Enthusiast, VTT 102 s ─────────
+  // The descent. Map → Curiosity panel → panorama. "Alone." lands the
+  // panorama, then the narration walks the sol-by-sol loneliness on the
+  // Gale Crater vista, building to "Every photograph it sends back is
+  // from a place no other being has ever stood" — the line which IS the
+  // photograph the listener is standing in. Episode ends on the panorama;
+  // auto-advance dismounts.
   'curiosity-persistence': [
     // VTT § 00:00:00.0 "Curiosity drives at a top speed of about four centimeters per second"
     {
@@ -822,13 +843,24 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 3, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    // VTT § 00:00:44.9 "Every single sol of those twelve years, Curiosity has woken up"
+    // VTT § 00:00:29.0 "Curiosity landed in August 2012" — open the
+    // panel so the stand-at-site button mounts in time for the t=46
+    // descent.
+    { at_sec: 29, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
+    // VTT § 00:00:44.5 — "Alone." Single-word emphatic beat. The pivot
+    // moment of the episode; descend onto Gale Crater's surface.
     {
       at_sec: 44,
       action: 'cue',
       target: 'Twelve years. Thirty-five kilometers. Alone.',
       duration_ms: 5000,
     },
+    { at_sec: 46, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    // No exit click — the panorama holds through the close ("Every
+    // photograph it sends back is from a place no other being has ever
+    // stood" at VTT 86.2, "persistence at four centimeters per second"
+    // at episode end). Auto-advance to the next Extended-Tour episode
+    // (guide-fly) navigates away from /mars and unmounts the skybox.
   ],
 
   // ── /iss · guide-iss — VTT 152 s ──────────────────────────────────

@@ -340,14 +340,50 @@
       letter-spacing: 1.5px;
       white-space: nowrap;
     }
-    /* Hide the rail header + search button on mobile — they're
-       desktop affordances that just add vertical noise here. Cmd-K
-       still works from a keyboard if attached. */
+    /* Hide the rail heading on mobile (desktop affordance, vertical
+       noise). The search button stays but reduces to a 44×44 icon-only
+       tap target — mobile users have no keyboard shortcut, so the
+       encyclopedia's flagship affordance has to be visible.
+       Phase 24 (#342). */
     .rail-heading {
       display: none;
     }
     .search-button {
+      /* Override the desktop full-width layout: square icon button,
+         44×44 per ADR-018 touch-target floor, slot into the same row
+         as the tab chips so it doesn't add vertical space. */
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      margin-right: 6px;
+    }
+    .search-label,
+    .search-hint {
       display: none;
+    }
+    .search-icon {
+      font-size: 22px;
+      line-height: 1;
+      margin: 0;
+    }
+    /* The search button needs to sit BEFORE the tab list as a sibling
+       row chip on mobile. Push it into the same flex row by detaching
+       from its aside placement; visually it reads as a search chip in
+       the strip. */
+    .rail-left {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .tab-list {
+      flex: 1 1 auto;
+      width: auto;
     }
   }
 

@@ -818,7 +818,29 @@
       <div class="cta-bar">
         {#if mission.status !== 'PLANNED' && onFly}
           <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
-            {m.mp_fly_button()}
+            <!-- Trajectory-arc glyph — curved path with arrowhead.
+                 Replaces the prior "▶" play-character (2026-06-15
+                 user note: "invent small logo instead of play
+                 character"). Reads as "fly this path" — visually
+                 matches what /fly actually does: animate a curved
+                 mission trajectory. Inline SVG so it ships in the
+                 same bundle as the button + tints with currentColor. -->
+            <span class="cta-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 22 22"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 17 Q 9 3 19 9" />
+                <path d="M19 9 L14 7 M19 9 L17 14" />
+              </svg>
+            </span>
+            <span class="cta-text">{m.mp_fly_button()}</span>
           </button>
         {/if}
         {#if crossSite}
@@ -1086,12 +1108,24 @@
     transition:
       background 120ms,
       border-color 120ms;
+    /* Icon + text alignment for the trajectory-arc glyph. */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
   .cta:hover,
   .cta:focus-visible {
     background: #2244dd;
     border-color: #4466ff;
     outline: none;
+  }
+  .cta .cta-icon {
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(200, 215, 255, 0.95);
   }
 
   /* Spec-CTA buttons — vehicle + payload navigation chips at the top
@@ -1125,49 +1159,54 @@
       background 120ms,
       border-color 120ms;
   }
-  /* Per-CTA hue split. Both stay in the same blue-green "marine
-     teal" family so they read as siblings of one feature, not two
-     unrelated controls. Vehicle leans green; payload leans blue.
-     Same value/saturation; just a hue shift along the teal axis. */
+  /* Per-CTA hue split — kept in the SAME blue family as the
+     primary .cta (#1a33bb) so all three buttons read as one cohesive
+     style (2026-06-15 user note: "harmonize those 2 new buttons more
+     with color of fly button — let them all be in same style, fly
+     stays as it, we just need to adjust 2 new ones"). Vehicle leans
+     darker/cooler (deep navy); payload leans lighter/warmer (cobalt
+     with slight violet push). Same hue axis; just value + slight hue
+     shift so they stay sibling-to-fly but distinguishable from each
+     other at a glance. */
   .spec-cta--vehicle {
-    background: #0a5a4e;
-    border: 1px solid rgba(80, 198, 168, 0.55);
+    background: #15287a;
+    border: 1px solid rgba(80, 110, 200, 0.55);
   }
   .spec-cta--vehicle:hover,
   .spec-cta--vehicle:focus-visible {
-    background: #0e826e;
-    border-color: #50c6a8;
+    background: #1e3aa0;
+    border-color: #5070d0;
     outline: none;
   }
   .spec-cta--vehicle .spec-icon,
   .spec-cta--vehicle .spec-label {
-    color: rgba(180, 245, 220, 0.85);
+    color: rgba(190, 210, 255, 0.85);
   }
   .spec-cta--payload {
-    background: #0a4a5a;
-    border: 1px solid rgba(80, 168, 198, 0.55);
+    background: #22288a;
+    border: 1px solid rgba(110, 110, 220, 0.55);
   }
   .spec-cta--payload:hover,
   .spec-cta--payload:focus-visible {
-    background: #0e6a82;
-    border-color: #50a8c6;
+    background: #2e36b0;
+    border-color: #7070e0;
     outline: none;
   }
   .spec-cta--payload .spec-icon,
   .spec-cta--payload .spec-label {
-    color: rgba(180, 230, 245, 0.85);
+    color: rgba(210, 200, 255, 0.85);
   }
   .spec-cta.is-static {
     cursor: default;
     opacity: 0.65;
   }
   .spec-cta--vehicle.is-static:hover {
-    background: #0a5a4e;
-    border-color: rgba(80, 198, 168, 0.55);
+    background: #15287a;
+    border-color: rgba(80, 110, 200, 0.55);
   }
   .spec-cta--payload.is-static:hover {
-    background: #0a4a5a;
-    border-color: rgba(80, 168, 198, 0.55);
+    background: #22288a;
+    border-color: rgba(110, 110, 220, 0.55);
   }
   .spec-cta .spec-icon {
     flex: 0 0 20px;

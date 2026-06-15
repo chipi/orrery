@@ -4786,14 +4786,23 @@ sample      ${debugInfo.projectedPxSample}`}
   :global(.moon canvas) {
     display: block;
   }
+  /* #342 Phase 30 — SurfaceScene is authored mobile-first. The four
+     property groups below (hud-controls, ctrl-row.chips, chip,
+     toggle, distance-scale) have phone-tight base values; the two
+     @min-width blocks at the end of this stylesheet layer back the
+     desktop sizing. */
   .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    left: 16px;
-    z-index: 35;
+    /* Mobile (phone): tucked at 8 px from edge, row-gap 6 to fit on a
+       375 px viewport. Desktop bumps to 16 / 8 at @min-width: 501. */
+    left: 8px;
+    /* Mobile: z-index 25 so the bottom-sheet detail panel sits above
+       these controls. Desktop bumps to 35 at @min-width: 768. */
+    z-index: 25;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     pointer-events: none;
   }
   .ctrl-row {
@@ -4896,21 +4905,27 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 0;
   }
   .ctrl-row.chips {
-    flex-direction: column;
-    /* Explicit width keeps chips a consistent size that's NOT inherited
-       from the toggle row above. */
-    width: 140px;
-    align-items: stretch;
+    /* Mobile: wrapped chip row that fits inside the viewport without
+       horizontal scroll. Desktop returns to a vertical column at
+       @min-width: 768. */
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    align-items: center;
   }
   .hud-controls :global(.chip) {
     min-height: 44px;
-    min-width: 110px;
-    padding: 0 10px;
+    /* Mobile (≤ 500): tight 6 px horizontal padding, 8.5 px font,
+       78 px min-width — fits two chips per row on a 375 px viewport.
+       Relaxed back at @min-width: 501. */
+    min-width: 78px;
+    padding: 0 6px;
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.55);
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 8.5px;
     letter-spacing: 1.5px;
     text-align: center;
     border-radius: 999px;
@@ -4932,23 +4947,19 @@ sample      ${debugInfo.projectedPxSample}`}
     border-color: rgba(190, 195, 210, 0.7);
     color: #c8cdda;
   }
-  @media (max-width: 500px) {
-    .hud-controls :global(.chip) {
-      padding: 0 8px;
-      font-size: 9px;
-      min-width: 92px;
-    }
-  }
   .hud-controls :global(.toggle) {
     min-width: 44px;
     min-height: 44px;
-    max-width: 70px;
-    padding: 4px 8px;
+    /* Mobile (≤ 500): 3×5 padding, 9 px font, 54 px max-width — keeps
+       the toggle row compact enough that two toggles + the chip rail
+       all fit on a phone. Relaxed at @min-width: 501. */
+    max-width: 54px;
+    padding: 3px 5px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(190, 195, 210, 0.4);
     color: #d6d9e2;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 9px;
     line-height: 1.15;
     letter-spacing: 0.04em;
     text-align: center;
@@ -4966,38 +4977,37 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(34, 38, 56, 0.95);
     outline: none;
   }
-  @media (max-width: 768px) {
+
+  /* ─── ≥ 501 px — relax phone-tight chip / toggle dimensions ───── */
+  @media (min-width: 501px) {
     .hud-controls {
-      z-index: 25;
+      left: 16px;
+      gap: 8px;
     }
-    /* Chip rail wraps as soon as we leave desktop. Was gated on 500 px
-       which only kicked in for phone-narrow widths — anyone resizing a
-       desktop browser between 501–768 still saw the vertical column. */
-    .ctrl-row.chips {
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: auto;
-      max-width: calc(100vw - 24px);
-      align-items: center;
+    .hud-controls :global(.chip) {
+      padding: 0 10px;
+      font-size: 10px;
+      min-width: 110px;
+    }
+    .hud-controls :global(.toggle) {
+      padding: 4px 8px;
+      font-size: 11px;
+      max-width: 70px;
     }
   }
 
-  @media (max-width: 500px) {
+  /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
+  @media (min-width: 768px) {
     .hud-controls {
-      left: 8px;
-      gap: 6px;
+      z-index: 35;
     }
-    .hud-controls :global(.toggle) {
-      padding: 3px 5px;
-      font-size: 9px;
-      max-width: 54px;
-      min-height: 44px;
-    }
-    .hud-controls :global(.chip) {
-      padding: 0 6px;
-      font-size: 8.5px;
-      min-width: 78px;
-      min-height: 44px;
+    .ctrl-row.chips {
+      flex-direction: column;
+      /* Explicit width keeps chips a consistent size that's NOT
+         inherited from the toggle row above. */
+      width: 140px;
+      max-width: none;
+      align-items: stretch;
     }
   }
   .load-banner {
@@ -5275,7 +5285,10 @@ sample      ${debugInfo.projectedPxSample}`}
   .distance-scale {
     position: fixed;
     right: 12px;
-    bottom: 90px;
+    /* Mobile: 72 px from the bottom (above the global footer strip
+       on a phone, but below the floating scale/legend). Desktop bumps
+       to 90 px at @min-width: 768. #342 Phase 30. */
+    bottom: 72px;
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -5301,10 +5314,10 @@ sample      ${debugInfo.projectedPxSample}`}
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.92);
   }
-  @media (max-width: 767px) {
+  /* ─── ≥ 768 px — distance scale lifts back to bottom: 90 ───────── */
+  @media (min-width: 768px) {
     .distance-scale {
-      right: 12px;
-      bottom: 72px;
+      bottom: 90px;
     }
   }
 

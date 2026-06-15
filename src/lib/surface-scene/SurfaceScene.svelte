@@ -3664,12 +3664,25 @@
             // others use the shared ui_layer_* bundle).
             ...(config.earthOrbitalLayers?.satellites != null
               ? [
+                  // The 5 Earth-only sub-chips are gated on the master
+                  // ORBITERS toggle (per-frame visibility = layerOrbiters
+                  // && catVisible). When the master is off, clicking a
+                  // sub-chip silently flips state but the scene doesn't
+                  // change — the user reads this as "chip is broken"
+                  // (2026-06-15 user note: "tuned off orbiters [and the
+                  // sub-chips appeared dead] -- grayed out solution
+                  // please and disable in UI"). Each sub-chip now reads
+                  // disabled when ORBITERS is off, which dims it via
+                  // .chip:disabled CSS in LayerChipRow + blocks clicks
+                  // natively. Turning ORBITERS back on makes the chips
+                  // live again at whatever individual state they held.
                   {
                     testid: 'layer-stations',
                     label: 'STATIONS',
                     title: m.earth_layer_tip_habitats(),
                     active: () => layerStations,
                     toggle: () => (layerStations = !layerStations),
+                    disabled: () => !layerOrbiters,
                   },
                   {
                     testid: 'layer-observatories',
@@ -3677,6 +3690,7 @@
                     title: m.earth_layer_tip_telescopes(),
                     active: () => layerObservatories,
                     toggle: () => (layerObservatories = !layerObservatories),
+                    disabled: () => !layerOrbiters,
                   },
                   {
                     testid: 'layer-constellations',
@@ -3684,6 +3698,7 @@
                     title: m.earth_layer_tip_nav(),
                     active: () => layerConstellations,
                     toggle: () => (layerConstellations = !layerConstellations),
+                    disabled: () => !layerOrbiters,
                   },
                   {
                     testid: 'layer-comsats',
@@ -3691,6 +3706,7 @@
                     title: m.earth_layer_tip_geo(),
                     active: () => layerComsats,
                     toggle: () => (layerComsats = !layerComsats),
+                    disabled: () => !layerOrbiters,
                   },
                   {
                     testid: 'layer-moon-orbiters',
@@ -3698,6 +3714,7 @@
                     title: m.earth_layer_tip_lunar(),
                     active: () => layerMoonOrbiters,
                     toggle: () => (layerMoonOrbiters = !layerMoonOrbiters),
+                    disabled: () => !layerOrbiters,
                   },
                 ]
               : []),

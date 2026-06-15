@@ -25,6 +25,12 @@
     toggle: () => void;
     /** Optional visibility gate — when false, chip is not rendered. Default true. */
     visible?: boolean;
+    /** Optional disabled gate — when the accessor returns true, the chip
+     *  renders dimmed and ignores clicks. Used for sub-toggles that are
+     *  gated by a master toggle (e.g. Earth's STATIONS / OBSERVATORIES /
+     *  CONSTELLATIONS / COMSATS / MOON ORBITERS sub-chips are inert when
+     *  the master ORBITERS chip is off). Read each render for reactivity. */
+    disabled?: () => boolean;
   }
 
   interface Props {
@@ -35,11 +41,15 @@
 
 {#each chips as chip (chip.testid)}
   {#if chip.visible !== false}
+    {@const isDisabled = chip.disabled?.() ?? false}
     <button
       type="button"
       class="chip"
       class:active={chip.active()}
+      class:disabled={isDisabled}
       aria-pressed={chip.active()}
+      aria-disabled={isDisabled || undefined}
+      disabled={isDisabled}
       onclick={chip.toggle}
       title={chip.title}
       data-testid={chip.testid}
@@ -48,3 +58,17 @@
     </button>
   {/if}
 {/each}
+
+<style>
+  /* Sub-chip dimming when its master is off. The native :disabled
+     state on the button drops pointer events automatically; the class
+     hook just adds the visual cue so the user sees "I can't act here
+     yet" rather than "this chip is broken" (2026-06-15 user note:
+     "grayed out solution please and disable in UI"). */
+  .chip:disabled,
+  .chip.disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+</style>

@@ -7834,7 +7834,7 @@
     border: 1px solid rgba(193, 68, 14, 0.5);
     color: #ffc850;
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 2px;
     border-radius: 4px;
   }
@@ -8070,7 +8070,7 @@
   }
   .opening-stat-label {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 2.5px;
     color: rgba(94, 234, 212, 0.7);
     text-transform: uppercase;
@@ -8141,7 +8141,7 @@
   }
   .opening-fleet-role {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 2px;
     color: rgba(94, 234, 212, 0.8);
     text-transform: uppercase;
@@ -8262,7 +8262,7 @@
     flex: 1;
   }
   .opening-fleet-card .opening-fleet-role {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 2px;
     color: rgba(94, 234, 212, 0.75);
   }
@@ -8361,7 +8361,7 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
@@ -8402,7 +8402,7 @@
     white-space: nowrap;
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
     transition: all 0.15s;
@@ -8436,7 +8436,7 @@
     border-radius: 3px;
     border: 1px solid;
     font-weight: 700;
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 2px;
     margin-bottom: 4px;
   }
@@ -8464,7 +8464,7 @@
   }
   .hud-key {
     color: rgba(255, 255, 255, 0.35);
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
   }
@@ -8654,7 +8654,7 @@
   }
   .flight-caveat-banner {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 1.5px;
     color: #ffc850;
     background: rgba(255, 200, 80, 0.18);
@@ -8962,7 +8962,7 @@
   }
   .milestone-tooltip-met {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     color: rgba(255, 200, 80, 0.85);
     letter-spacing: 0.05em;
   }
@@ -8979,7 +8979,7 @@
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 1px;
     font-weight: 700;
     cursor: pointer;
@@ -9141,7 +9141,7 @@
     margin-bottom: 14px;
   }
   .capcom-section h3 {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 2px;
     color: rgba(78, 205, 196, 0.6);
     margin: 0 0 6px;
@@ -9178,13 +9178,13 @@
     flex-shrink: 0;
   }
   .anomaly-label {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
   }
   .anomaly-detail {
     margin-left: auto;
-    font-size: 8px;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.6);
   }
 
@@ -9192,12 +9192,12 @@
     display: flex;
     justify-content: space-between;
     padding: 4px 0;
-    font-size: 9px;
+    font-size: 11px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
   .comm-key {
     color: rgba(255, 255, 255, 0.4);
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
   }
@@ -9231,13 +9231,13 @@
     background: rgba(255, 200, 80, 0.05);
   }
   .event-time {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.35);
     margin-right: 8px;
   }
   .event-label {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 1px;
     color: #fff;
     font-weight: 700;

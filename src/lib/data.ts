@@ -1113,11 +1113,27 @@ function mergeStoryOverlay(base: SiteStory, overlay: SiteStoryOverlay): SiteStor
  * intro + chapter subtitles + per-image captions. Image paths,
  * chapter ids, and overall structure stay shared. Missing overlay
  * → render the base story (English) gracefully.
+ *
+ * Hard-membership gate via site-stories/index.json (2026-06-15 user
+ * note: console showed `[404] GET /data/site-stories/<id>.json` for
+ * every launch site without an editorial story — wenchang-lc-101,
+ * xichang-lc-2, taiyuan-lc-9, jiuquan-slc-43, etc.). The loader was
+ * already null-tolerant (catch → null), so behaviour was correct;
+ * the 404s were just dev-server console noise from the speculative
+ * fetch. Now we probe a tiny build-time manifest of available IDs
+ * first and skip the request entirely when the ID isn't present.
  */
+async function getSiteStoryIndex(): Promise<Set<string>> {
+  const idx = await get<{ ids: string[] }>('site-stories/index.json').catch(() => null);
+  return new Set(idx?.ids ?? []);
+}
+
 export async function getSiteStory(
   siteId: string,
   locale: string = 'en-US',
 ): Promise<SiteStory | null> {
+  const available = await getSiteStoryIndex();
+  if (!available.has(siteId)) return null;
   const base = await get<SiteStory>(`site-stories/${siteId}.json`).catch(() => null);
   if (!base) return null;
   if (locale === 'en-US') return base;

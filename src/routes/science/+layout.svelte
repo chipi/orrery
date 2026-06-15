@@ -153,26 +153,32 @@
     margin: 0 auto;
     padding: 32px 16px 48px;
   }
+  /* #342 Phase 30 — /science is authored mobile-first: defaults below
+     hold for the smallest viewport, then each @min-width block layers
+     desktop enhancements on top. Reading order tracks viewport order
+     (smallest → largest) so the cascade is easy to follow. The four
+     ranges are: base ≤ 640, ≥ 641 (compact tablet), ≥ 769 (desktop
+     grid), ≥ 1025 (right-rail expansion). */
   .layout {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-  .has-right-rail .layout {
-    /* `minmax(220px, 320px)` on the right rail (was a fixed 220 px)
-     * lets the section-list claim some of the extra space we
-     * freed up by raising .page max-width. Without it the section
-     * list stays 1-col at any viewport width. Capped at 320 px so
-     * the prose column stays the dominant one. Issue #226. */
-    grid-template-columns: 200px 1fr minmax(220px, 320px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
   }
   .rail {
-    position: sticky;
-    top: 16px;
-    align-self: start;
+    position: static;
+  }
+  .rail-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
   }
   .rail-heading {
+    /* Mobile: hidden — desktop affordance, vertical noise on phones.
+       Re-shown at @min-width: 769. */
+    display: none;
     font-family: var(--font-display);
     font-size: 12px;
     letter-spacing: 3px;
@@ -182,12 +188,21 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .search-button {
+    /* Mobile: 44×44 icon-only chip (Phase 24). Square tap target, no
+       label, slots into the rail-left flex row alongside the tab
+       chips. Phase 30 base — expanded to full-width labelled button
+       at @min-width: 769. */
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    width: 100%;
-    padding: 8px 10px;
-    margin: 0 0 14px;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    margin: 0 6px 0 0;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
@@ -208,13 +223,22 @@
     outline: none;
   }
   .search-icon {
-    font-size: 14px;
+    /* Mobile: 22 px icon-only. Scaled back to 14 px on desktop where
+       the search-label resurfaces alongside it. */
+    font-size: 22px;
+    line-height: 1;
+    margin: 0;
   }
   .search-label {
+    /* Mobile-hidden, desktop-restored at @min-width: 769. */
+    display: none;
     flex: 1;
     text-align: left;
   }
   .search-hint {
+    /* Mobile-hidden, desktop-restored at @min-width: 769. The
+       keyboard-shortcut chip has no meaning on a phone. */
+    display: none;
     font-size: 9px;
     padding: 1px 4px;
     background: rgba(255, 255, 255, 0.06);
@@ -223,21 +247,38 @@
     color: rgba(255, 255, 255, 0.6);
     font-family: 'Space Mono', monospace;
   }
-  .tab-list,
+  .tab-list {
+    /* Mobile: wrapped chip strip, sits in the rail-left flex row.
+       Switches to a vertical stack at @min-width: 769. */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1 1 auto;
+    width: auto;
+  }
   .section-list {
+    /* Mobile: compact 2-col grid for the right-rail section list (so
+       the article still gets > 50 % of viewport height). Switches to
+       a vertical stack at @min-width: 769. */
     list-style: none;
     margin: 0 0 16px;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
   }
   .tab-card,
   .section-row {
     display: flex;
     align-items: center;
-    min-height: 40px;
-    padding: 10px 12px;
+    flex: 0 0 auto;
+    /* Mobile: 44 px floor per ADR-018. Desktop relaxes to 40 px. */
+    min-height: 44px;
+    padding: 6px 12px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
@@ -266,8 +307,9 @@
   }
   .tab-name {
     font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: 2px;
+    /* Mobile: 11 px / 1.5 px chip font. Desktop bumps to 13/2. */
+    font-size: 11px;
+    letter-spacing: 1.5px;
     /* Phase 37 (#342) — long-locale guard. DE "Missionsphasen" + JA
        "ライフサポート" sit comfortably in the 200 px desktop rail but
        can blow past chip width on the wrapped mobile strip. Truncate
@@ -279,8 +321,9 @@
   }
   .section-name {
     font-family: 'Crimson Pro', serif;
-    font-size: 14px;
-    line-height: 1.3;
+    /* Mobile: 12 px / 1.2. Desktop bumps to 14/1.3. */
+    font-size: 12px;
+    line-height: 1.2;
     /* Phase 37 (#342) — section names are author-written so most are
        short, but a few (Tsiolkovsky-equation-1903) push 30+ chars.
        Allow up to 2 lines then ellipsis so the right-rail card height
@@ -294,132 +337,111 @@
   .content {
     min-width: 0;
   }
-  @media (max-width: 1024px) {
-    .has-right-rail .layout {
+
+  /* ─── ≥ 641 px — compact tablet ───────────────────────────────────
+     Relax the section-list out of the 2-col phone grid into an auto-
+     fit grid; loosen section-row padding + bump section-name back
+     to 14/1.3. Tab strip + search chip stay in mobile mode. */
+  @media (min-width: 641px) {
+    .has-right-rail .section-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+    }
+    .section-row {
+      min-height: 40px;
+      padding: 10px 12px;
+    }
+    .section-name {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  /* ─── ≥ 769 px — desktop grid + sticky rail + full search button ──
+     Switch from flex-column to a 2-col grid (rail | content). The
+     right-rail variant (`.has-right-rail`) still collapses its third
+     column at this width — it only expands at @min-width: 1025.
+     Reset the rail-left flex row + tab chips to vertical stacks;
+     resurface the rail heading + search label/hint. */
+  @media (min-width: 769px) {
+    .layout {
+      display: grid;
       grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: start;
     }
     .has-right-rail .rail-right {
       grid-column: 1 / -1;
       position: static;
     }
-    .has-right-rail .section-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 8px;
-    }
-  }
-  @media (max-width: 768px) {
-    /* Switch to flex-column so we can re-order children: tabs first
-       (compact horizontal scroll chip strip), then the section rail
-       (still the primary in-tab navigator), then the article content.
-       Previously the tab rail rendered as a 2-col auto-fit grid that
-       ate ~250 px of vertical space before the content even started —
-       on a 390 px phone that's a third of the viewport. Compacting to
-       a single scrollable row reclaims that space for the article. */
-    .layout {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
     .rail {
-      position: static;
+      position: sticky;
+      top: 16px;
+      align-self: start;
     }
     .rail-left {
-      order: 1;
+      display: block;
     }
-    .has-right-rail .rail-right {
-      order: 2;
+    .rail-heading {
+      display: block;
     }
-    .content {
-      order: 3;
-      min-width: 0;
-    }
-    /* Tab rail → wrapped chip strip. All 10 tabs visible at once
-       across 2-3 rows; no horizontal scroll (the previous overflow-x
-       pattern induced an unwanted horizontal scrollbar on the whole
-       page). Chips shrink to fit content so the layout adapts to
-       locale-specific label lengths (DE "Mission Phases" → "Missions-
-       phasen" etc.). */
-    .tab-list {
+    .tab-list,
+    .section-list {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 6px;
-      margin-bottom: 0;
+      margin: 0 0 16px;
+      width: auto;
+      flex: initial;
     }
-    .tab-card {
-      flex: 0 0 auto;
-      min-height: 44px;
-      padding: 6px 12px;
+    .tab-card,
+    .section-row {
+      flex: initial;
+      min-height: 40px;
+      padding: 10px 12px;
     }
     .tab-name {
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-    }
-    /* Hide the rail heading on mobile (desktop affordance, vertical
-       noise). The search button stays but reduces to a 44×44 icon-only
-       tap target — mobile users have no keyboard shortcut, so the
-       encyclopedia's flagship affordance has to be visible.
-       Phase 24 (#342). */
-    .rail-heading {
-      display: none;
+      font-size: 13px;
+      letter-spacing: 2px;
     }
     .search-button {
-      /* Override the desktop full-width layout: square icon button,
-         44×44 per ADR-018 touch-target floor, slot into the same row
-         as the tab chips so it doesn't add vertical space. */
-      flex: 0 0 auto;
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      margin-right: 6px;
+      width: 100%;
+      height: auto;
+      min-width: 0;
+      min-height: 0;
+      padding: 8px 10px;
+      justify-content: flex-start;
+      margin: 0 0 14px;
     }
     .search-label,
     .search-hint {
-      display: none;
+      display: revert;
     }
     .search-icon {
-      font-size: 22px;
-      line-height: 1;
-      margin: 0;
-    }
-    /* The search button needs to sit BEFORE the tab list as a sibling
-       row chip on mobile. Push it into the same flex row by detaching
-       from its aside placement; visually it reads as a search chip in
-       the strip. */
-    .rail-left {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-    }
-    .tab-list {
-      flex: 1 1 auto;
-      width: auto;
+      font-size: 14px;
     }
   }
 
-  /* Narrow viewports: the right-rail section list (e.g. 10 orbits
-     sections × 40 px each = ~70% of the screen height) compresses
-     to a 2-column compact grid so the actual content gets the
-     viewport, not the navigation. */
-  @media (max-width: 640px) {
+  /* ─── ≥ 1025 px — right rail expands to its own column ────────────
+     `.has-right-rail` pages get the full 3-col layout with the right
+     rail sticky-positioned and section-list back to a vertical stack
+     (auto-fit grid only made sense when the rail was inline on
+     tablet-sized viewports). Issue #226 motivated the 220–320 px
+     range so the rail can claim some of the extra space we freed
+     by raising .page max-width to 1440. */
+  @media (min-width: 1025px) {
+    .has-right-rail .layout {
+      grid-template-columns: 200px 1fr minmax(220px, 320px);
+    }
+    .has-right-rail .rail-right {
+      grid-column: auto;
+      position: sticky;
+    }
     .has-right-rail .section-list {
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: none;
       gap: 6px;
-    }
-    .section-row {
-      min-height: 44px;
-      padding: 6px 8px;
-    }
-    .section-name {
-      font-size: 12px;
-      line-height: 1.2;
     }
   }
 </style>

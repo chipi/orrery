@@ -255,12 +255,36 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Saturn open — see the ring data on the Technical tab.',
       duration_ms: 4000,
     },
-    // VTT § 00:00:46.6 "The Cassini Division"
+    // VTT § 00:00:21.8 "Ten meters." — the iconic ratio beat.
     {
-      at_sec: 47,
+      at_sec: 22,
+      action: 'cue',
+      target: 'Ten meters thick. A two-story building.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:00:43.5 "Pieces near the inner edge orbit Saturn in about five hours."
+    {
+      at_sec: 44,
+      action: 'cue',
+      target: 'Inner rings orbit in 5 h. Outer rings, 14.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:00:52.8 "The Cassini Division" — was cue@47 (5 s early).
+    {
+      at_sec: 53,
       action: 'cue',
       target: 'The Cassini Division — swept clear by Mimas in 2:1 resonance.',
       duration_ms: 5000,
+    },
+    // VTT § 00:01:42.1 "Those photographs are what you see when you look at the rings"
+    // — zoom into the Saturn render as the listener is told they're
+    // looking at the real Cassini imagery.
+    {
+      at_sec: 103,
+      action: 'zoom',
+      target: '[data-audio-stage="explore-scene"]',
+      duration_ms: 2000,
+      params: { factor: 0.5 },
     },
   ],
 
@@ -275,12 +299,33 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Find the Great Red Spot — the oval in the southern hemisphere.',
       duration_ms: 5000,
     },
+    // VTT § 00:00:18.3 "It has been there, continuously, for at least 350 years."
+    {
+      at_sec: 19,
+      action: 'cue',
+      target: 'A single storm. 350 years and counting.',
+      duration_ms: 5000,
+    },
     // VTT § 00:00:39.3 "Jupiter rotates once every nine hours fifty-five minutes"
     {
       at_sec: 39,
       action: 'cue',
       target: 'Jupiter rotates once every 9 h 55 min.',
       duration_ms: 4500,
+    },
+    // VTT § 00:01:00.5 "The spot has been shrinking. In 1879 it was 40,000…"
+    {
+      at_sec: 61,
+      action: 'cue',
+      target: '40,000 km in 1879. 15,000 today. Still shrinking.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:18.8 "Juno arrived in 2016." — Juno mission named.
+    {
+      at_sec: 79,
+      action: 'cue',
+      target: 'Juno arrived in 2016 — polar orbit, first of its kind for Jupiter.',
+      duration_ms: 5000,
     },
     // VTT § 00:01:46.2 "Jupiter has had the same hurricane for three and a half centuries"
     {
@@ -444,7 +489,14 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   'voyager-grand-tour': [
     { at_sec: 4, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
     { at_sec: 6, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
-    // VTT § 00:00:41.2 "Voyager 1 and Voyager 2 launched in 1977"
+    // VTT § 00:00:34.1 "Thomas Jefferson's presidency" → § 37.5 "next one in twenty-second century"
+    {
+      at_sec: 35,
+      action: 'cue',
+      target: 'Last alignment: Jefferson’s presidency. Next: 22nd century.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:00:41.0 "Voyager 1 and Voyager 2 launched in 1977"
     { at_sec: 41, action: 'click', target: '[data-audio-stage="missions-select-voyager-2"]' },
     {
       at_sec: 43,
@@ -452,43 +504,73 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Voyager 2 — past Jupiter, Saturn, Uranus, Neptune.',
       duration_ms: 5000,
     },
-    // VTT § 00:01:10.8 "Voyager 1 is the most distant human-made object"
+    // VTT § 00:01:04.3 "Voyager 1 is the most distant human-made object"
     // V2 panel was open since t=41; swap to V1 panel as narration shifts
-    // to "Voyager 1 is the most distant human-made object". Hook is now
-    // templated onto every mission card, so the catalogue ID resolves
-    // automatically.
-    { at_sec: 110, action: 'click', target: '[data-audio-stage="missions-select-voyager-1"]' },
+    // to V1. Previously fired at t=110 (40 s late — VTT was misread
+    // during the Phase 2 commit before VTT verification).
+    { at_sec: 66, action: 'click', target: '[data-audio-stage="missions-select-voyager-1"]' },
     {
-      at_sec: 113,
+      at_sec: 69,
       action: 'cue',
       target: 'Voyager 1 — ~24 billion km from the Sun, still transmitting.',
       duration_ms: 5000,
     },
+    // VTT § 00:01:19.6 "Each spacecraft carries the Golden Record"
+    {
+      at_sec: 95,
+      action: 'cue',
+      target: 'The Golden Record — Sagan’s gift to the universe.',
+      duration_ms: 5000,
+    },
   ],
 
-  // ── /missions · cassini-finale — Enthusiast, VTT 114 s (Extended Tour) ─
+  // ── /missions · cassini-finale — Enthusiast, VTT 132 s (Extended Tour) ─
   'cassini-finale': [
     // VTT § 00:00:00.0 "Cassini launched in October 1997"
     { at_sec: 1, action: 'click', target: '[data-audio-stage="missions-select-cassini"]' },
-    // VTT § 00:00:24.9 "It discovered that Enceladus shoots geysers"
+    // VTT § 00:00:21.0 "It dropped the Huygens probe onto Titan"
     {
-      at_sec: 25,
+      at_sec: 22,
+      action: 'cue',
+      target: 'Huygens — first soft landing on a moon of another planet.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:00:29.0 "It discovered that Enceladus shoots geysers"
+    // — was cue@25 (4 s early before VTT verification).
+    {
+      at_sec: 30,
       action: 'cue',
       target: 'Enceladus — geysers of water from the south pole.',
       duration_ms: 5000,
     },
-    // VTT § 00:00:56.3 "Twenty-two orbits, each threading the gap between cloud tops and rings"
+    // VTT § 00:01:03.1 "So they planned the Grand Finale" → 01:05.7 "Twenty-two orbits…"
+    // — was cue@56 (8 s early).
     {
-      at_sec: 56,
+      at_sec: 65,
       action: 'cue',
       target: 'The Grand Finale — 22 orbits through the ring gap.',
       duration_ms: 5000,
     },
-    // VTT § 00:01:34.1 "No spacecraft has been at Saturn since"
+    // VTT § 00:01:48.1 "Then it disintegrated."
     {
-      at_sec: 94,
+      at_sec: 89,
+      action: 'cue',
+      target: 'Then it disintegrated.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:01:52.8 "No spacecraft has been at Saturn since"
+    // — was cue@94 (16 s early).
+    {
+      at_sec: 93,
       action: 'cue',
       target: 'No spacecraft has been at Saturn since.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:01:57.9 "The next planned arrival, Dragonfly to Titan, will launch in 2028"
+    {
+      at_sec: 99,
+      action: 'cue',
+      target: 'Dragonfly to Titan — 2028.',
       duration_ms: 4500,
     },
   ],
@@ -553,6 +635,18 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Forty Kelvin — the heat shield keeps the cold side cold.',
       duration_ms: 5000,
+    },
+    // VTT § 00:01:43.7 "Hubble lives in low Earth orbit" — explicit
+    // Hubble/JWST contrast. Swap panels as each is named.
+    { at_sec: 104, action: 'click', target: '[data-audio-stage="earth-select-hubble"]' },
+    // VTT § 00:01:52.1 "JWST lives at L2"
+    { at_sec: 113, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
+    // VTT § 00:01:58.5 – 02:01.9 "Different problem. Different orbit. Same universe."
+    {
+      at_sec: 119,
+      action: 'cue',
+      target: 'Different problem. Different orbit. Same universe.',
+      duration_ms: 4500,
     },
   ],
 
@@ -690,7 +784,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /moon · queqiao-magpie — Enthusiast, VTT 119 s (Extended Tour) ─
+  // ── /moon · queqiao-magpie — Enthusiast, VTT 134 s (Extended Tour) ─
   // Queqiao itself isn't a clickable surface site — it's a sat in halo
   // orbit at Earth-Moon L2. Treatment is scroll-to surface-hud + drag
   // to face the far side; cues do the heavy lifting.
@@ -703,23 +797,40 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       params: { rotateRad: 3.14 },
       duration_ms: 2200,
     },
-    // VTT § 00:00:19.9 "A relay satellite called Queqiao"
+    // VTT § 00:00:00.0 "Before Chang'e 4 could land on the far side"
+    // Open the Chang'e 4 panel as the narration names it.
+    { at_sec: 7, action: 'click', target: '[data-audio-stage="moon-select-change4"]' },
+    // VTT § 00:00:22.5 "A relay satellite called Queqiao"
     {
-      at_sec: 20,
+      at_sec: 23,
       action: 'cue',
       target: 'Queqiao — the magpie bridge. Earth-Moon L2.',
       duration_ms: 5000,
     },
-    // VTT § 00:00:38.2 "Queqiao has line-of-sight to both Earth and the Moon's far side"
+    // VTT § 00:00:43.2 "Queqiao has line-of-sight to both Earth and the Moon's far side"
     {
-      at_sec: 38,
+      at_sec: 44,
       action: 'cue',
       target: 'Line-of-sight to both Earth and the far side — at once.',
       duration_ms: 5000,
     },
-    // VTT § 00:01:36.7 "Chang'e 6 ... used Queqiao 2 in 2024"
+    // VTT § 00:01:01.5 "Why is it called the magpie bridge?" → folklore beat
     {
-      at_sec: 96,
+      at_sec: 62,
+      action: 'cue',
+      target: 'A weaver girl. A cowherd. A river of stars.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:27.2 "The lovers are the orbits of Earth and Moon. Queqiao is the bridge."
+    {
+      at_sec: 88,
+      action: 'cue',
+      target: 'Earth and Moon — the lovers. Queqiao — the bridge.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:36.5 "Chang'e 6 ... used Queqiao 2 in 2024"
+    {
+      at_sec: 97,
       action: 'cue',
       target: "Chang'e 6 — first samples from the far side, 2024.",
       duration_ms: 5000,
@@ -1022,7 +1133,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /tiangong · tianhe-core — Enthusiast, VTT 104 s (Extended Tour) ─
+  // ── /tiangong · tianhe-core — Enthusiast, VTT 115 s (Extended Tour) ─
   'tianhe-core': [
     // VTT § 00:00:00.0 "Tianhe — the core module of Tiangong — launched April 29th, 2021"
     { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="tiangong-module-list"]' },
@@ -1034,11 +1145,27 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: '~50 m³ pressurized — half Zvezda’s volume.',
       duration_ms: 4500,
     },
-    // VTT § 00:00:46.1 "Wentian joined Tianhe in July 2022"
-    { at_sec: 47, action: 'click', target: '[data-audio-stage="tiangong-select-wentian"]' },
+    // VTT § 00:00:50.9 "Wentian, meaning 'quest for the heavens' — joined…"
+    { at_sec: 51, action: 'click', target: '[data-audio-stage="tiangong-select-wentian"]' },
+    // VTT § 00:00:58.8 "The second lab — Mengtian, 'dreaming of the heavens'"
+    { at_sec: 60, action: 'click', target: '[data-audio-stage="tiangong-select-mengtian"]' },
+    // VTT § 00:01:05.0 "Total assembly time…: seventeen months."
+    {
+      at_sec: 66,
+      action: 'cue',
+      target: 'Seventeen months — first module to fully assembled.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:01:11.9 "Compare to the ISS, which took twelve years…"
+    {
+      at_sec: 75,
+      action: 'cue',
+      target: 'Twelve years for ISS. Seventeen months for Tiangong.',
+      duration_ms: 5000,
+    },
     // VTT § 00:01:28.6 "Look at the T-shape on screen"
     {
-      at_sec: 88,
+      at_sec: 95,
       action: 'cue',
       target: 'Look at the T — Tianhe is the upright.',
       duration_ms: 4500,

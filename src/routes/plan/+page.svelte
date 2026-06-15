@@ -6,6 +6,7 @@
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { getRockets, getPorkchopGrid } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
+  import { localizeHref } from '$lib/paraglide/runtime';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
   import type { DestinationId } from '$lib/lambert-grid.constants';
@@ -329,7 +330,14 @@
       }
     }
     const qs = params.toString();
-    const target = `${base}/plan${qs ? `?${qs}` : ''}`;
+    // Localise the /plan path so the goto() preserves the current locale
+    // prefix — without this, on /es/plan or /de/plan the goto strips the
+    // locale prefix, the URL becomes /plan (baseLocale), and the
+    // +layout.svelte $effect's syncDocumentLocaleAttributes resets
+    // <html lang> to en-US. Caught by docker-e2e's "/plan loads in
+    // Spanish" smoke after the 2026-06-09 Mars-only-/plan regression
+    // (commit 47b35a024).
+    const target = `${localizeHref(`${base}/plan`)}${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }

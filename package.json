@@ -38,8 +38,8 @@
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "npm run lint:prettier && npm run lint:eslint",
-    "lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check --cache .",
+    "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint-cache .",
     "format": "prettier --write .",
     "typecheck": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "test": "npm run i18n:compile && vitest run --passWithNoTests",
@@ -74,8 +74,7 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",
-    "preflight:body": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
-    "preflight": "node scripts/with-lock.mjs preflight -- npm run preflight:body",
+    "preflight": "node scripts/with-lock.mjs preflight -- node scripts/preflight-smart.mjs",
     "ci": "npm run preflight",
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true",
     "docker:build": "docker compose build",
@@ -90,7 +89,9 @@
     "docker:build-image-provenance": "docker compose run --rm pipeline-runner scripts/build-image-provenance.ts",
     "docker:build-link-provenance": "docker compose run --rm pipeline-runner scripts/build-link-provenance.ts",
     "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts",
-    "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts"
+    "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts",
+    "preflight:full:body": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
+    "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

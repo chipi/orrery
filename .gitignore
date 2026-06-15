@@ -62,3 +62,4 @@ static/audit-report.html
 .xdg-cache/
 .linux-node-modules/
 test-screenshots/
+node_modules/.cache/

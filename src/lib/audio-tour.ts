@@ -727,13 +727,16 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Drag to rotate Mars. Every marker is a spacecraft we sent.',
       duration_ms: 4500,
     },
-    {
-      at_sec: 10,
-      action: 'drag',
-      target: '[data-audio-stage="surface-hud"]',
-      params: { rotateRad: 0.8 },
-      duration_ms: 1800,
-    },
+    // VTT § 00:00:14.6 "Mars 2, a Soviet lander, crashed here in 1971."
+    // VTT § 00:00:18.0 "Mars 3 made the first soft landing"
+    // VTT § 00:00:23.6 "Viking 1 and Viking 2, in 1976"
+    // Early-mission roll-call: flash each marker as it's named. Mariner 4
+    // is named at VTT t=8 but isn't a surface site (it was a flyby — no
+    // marker), so its flash is honestly skipped.
+    { at_sec: 15, action: 'flash', target: '[data-audio-stage="mars-select-mars2"]' },
+    { at_sec: 19, action: 'flash', target: '[data-audio-stage="mars-select-mars3"]' },
+    { at_sec: 24, action: 'flash', target: '[data-audio-stage="mars-select-viking1-lander"]' },
+    { at_sec: 26, action: 'flash', target: '[data-audio-stage="mars-select-viking2-lander"]' },
     // VTT § 00:00:29.2 "Click Pathfinder's marker"
     { at_sec: 29, action: 'click', target: '[data-audio-stage="mars-select-pathfinder"]' },
     // VTT § 00:00:48.9 "Click Curiosity, in Gale Crater"
@@ -752,6 +755,35 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4500,
     },
     { at_sec: 68, action: 'click', target: '[data-audio-stage="mars-select-perseverance"]' },
+    // VTT § 00:01:29.9 "Look at the orbiters around Mars."
+    // Orbiter roll-call — 8 named in ~9 s. Flashes land on orbiter
+    // markers that ride the orbital paths around Mars (visibility depends
+    // on camera angle; the visible-region invariant is the listener-side
+    // problem, not ours — surface-hud handles the camera). Mars 3 Orbiter,
+    // Beagle 2, Schiaparelli, Phoenix, InSight, etc. exist as sites but
+    // aren't in this roll-call's narration; honestly skipped.
+    {
+      at_sec: 89,
+      action: 'cue',
+      target: 'Look at the orbiters around Mars.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:01:32.0 "Mars Reconnaissance Orbiter"
+    { at_sec: 92, action: 'flash', target: '[data-audio-stage="mars-select-mro"]' },
+    // VTT § 00:01:33.0 "Mars Express"
+    { at_sec: 93, action: 'flash', target: '[data-audio-stage="mars-select-mars-express"]' },
+    // VTT § 00:01:33.4 "MAVEN"
+    { at_sec: 94, action: 'flash', target: '[data-audio-stage="mars-select-maven"]' },
+    // VTT § 00:01:34.4 "Mars Odyssey"
+    { at_sec: 95, action: 'flash', target: '[data-audio-stage="mars-select-mars-odyssey"]' },
+    // VTT § 00:01:35.0 "ExoMars Trace Gas Orbiter"
+    { at_sec: 96, action: 'flash', target: '[data-audio-stage="mars-select-tgo"]' },
+    // VTT § 00:01:36.3 "Mangalyaan from India"
+    { at_sec: 97, action: 'flash', target: '[data-audio-stage="mars-select-mangalyaan"]' },
+    // VTT § 00:01:37.9 "Hope from the United Arab Emirates"
+    { at_sec: 99, action: 'flash', target: '[data-audio-stage="mars-select-hope"]' },
+    // VTT § 00:01:40.5 "Tianwen-1 from China"
+    { at_sec: 101, action: 'flash', target: '[data-audio-stage="mars-select-tianwen1"]' },
     // VTT § 00:02:07.4 "Zoom in to Curiosity in Gale Crater to see its full route"
     {
       at_sec: 127,

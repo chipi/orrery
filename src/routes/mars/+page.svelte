@@ -87,33 +87,41 @@
   loadTraverses={loadMarsTraverses}
 />
 
-<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Templated over a
+     constant list of {audioId, siteId} pairs so the guide-mars roll-call
+     can flash/click every named lander/rover/orbiter the narration
+     mentions without manual per-entity duplication. audioId may differ
+     from siteId for readability (e.g. "pathfinder" vs "mars-pathfinder").
+     -->
 <div class="tour-anchors" aria-hidden="true">
-  <button
-    type="button"
-    data-audio-stage="mars-select-curiosity"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('curiosity')}>select curiosity</button
-  >
-  <button
-    type="button"
-    data-audio-stage="mars-select-perseverance"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('perseverance')}>select perseverance</button
-  >
-  <button
-    type="button"
-    data-audio-stage="mars-select-pathfinder"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('mars-pathfinder')}>select pathfinder</button
-  >
+  {#each [
+    // Existing v0.6 anchors (kept; audio-stage names preserved).
+    { audioId: 'curiosity', siteId: 'curiosity' },
+    { audioId: 'perseverance', siteId: 'perseverance' },
+    { audioId: 'pathfinder', siteId: 'mars-pathfinder' },
+    // Phase 4 — guide-mars early-mission roll-call.
+    { audioId: 'mars2', siteId: 'mars2' },
+    { audioId: 'mars3', siteId: 'mars3' },
+    { audioId: 'viking1-lander', siteId: 'viking1-lander' },
+    { audioId: 'viking2-lander', siteId: 'viking2-lander' },
+    // Phase 4 — guide-mars orbiter roll-call (t≈92 – 100).
+    { audioId: 'mro', siteId: 'mro' },
+    { audioId: 'maven', siteId: 'maven' },
+    { audioId: 'mars-express', siteId: 'mars-express' },
+    { audioId: 'mars-odyssey', siteId: 'mars-odyssey' },
+    { audioId: 'tgo', siteId: 'tgo' },
+    { audioId: 'mangalyaan', siteId: 'mangalyaan' },
+    { audioId: 'hope', siteId: 'hope' },
+    { audioId: 'tianwen1', siteId: 'tianwen1-orbiter' },
+  ] as anchor (anchor.audioId)}
+    <button
+      type="button"
+      data-audio-stage="mars-select-{anchor.audioId}"
+      tabindex="-1"
+      onclick={() =>
+        (
+          window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+        ).__surfaceSceneSelectSite?.(anchor.siteId)}>select {anchor.audioId}</button
+    >
+  {/each}
 </div>

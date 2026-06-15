@@ -307,6 +307,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'science-section-',
       'missions-select-',
       'fleet-select-',
+      'mars-select-',
     ];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',

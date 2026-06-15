@@ -2060,6 +2060,15 @@
     }
 
     let hoveredSiteId: string | null = null;
+    // /earth Earth-satellites use a separate raycast list (pickSatAt
+    // raycasts against earthSats' hit spheres; pickSiteAt only sees
+    // surface markers + orbital markers). Tracked separately so the
+    // outline-pass animator can light up an ISS / Hubble / GPS dot
+    // on hover (2026-06-15 user note: "nice highlight on moon and
+    // mars when we hover over orbiter, but not on earth — make it
+    // like that on earth as well"). Empty on /moon and /mars where
+    // earthSats stays [].
+    let hoveredSatId: string | null = null;
     // Raycast against every traverse-stop pin sprite, the
     // traverse-end dot, and the patch-pin landing marker across
     // all loaded rovers / hotspots. Returns a compact tooltip
@@ -2121,12 +2130,18 @@
     }
     const onHover = (e: MouseEvent) => {
       if (isDrag) return;
-      hoveredSiteId = pickSiteAt(e.clientX, e.clientY);
+      // Earth-sat picks win over surface picks (same precedence as
+      // tryPick3d's click handling) so hovering an ISS dot over a
+      // launchpad below it highlights the sat, not the pad.
+      const satId = pickSatAt(e.clientX, e.clientY);
+      hoveredSatId = satId;
+      hoveredSiteId = satId ? null : pickSiteAt(e.clientX, e.clientY);
       const stopHit = pickStopAt(e.clientX, e.clientY);
       hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
     const onHoverLeave = () => {
       hoveredSiteId = null;
+      hoveredSatId = null;
       hoveredStopInfo = null;
     };
 
@@ -2895,6 +2910,13 @@
           if (mk) outlineMeshes.push(mk.group);
           const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
           if (om) outlineMeshes.push(om.dotGroup);
+        }
+        // /earth — Earth-satellite hover outline. Skipped if the same
+        // satellite is currently selected so the outline doesn't
+        // double up with the selection chrome.
+        if (hoveredSatId && hoveredSatId !== selectedSat?.id) {
+          const sat = earthSats.find((s) => s.id === hoveredSatId);
+          if (sat) outlineMeshes.push(sat.group);
         }
         outlinePass.selectedObjects = outlineMeshes;
 

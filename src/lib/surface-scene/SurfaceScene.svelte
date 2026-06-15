@@ -1037,6 +1037,87 @@
       });
     }
 
+    // Hover-halo factory — bolder + glowing variant of the selection
+    // halo, in OutlinePass teal. Lays flat against the surface with a
+    // small Y offset to avoid z-fighting. Two variants:
+    //   - circular: outer soft disc (radius 2.4, opacity 0.16) + crisp
+    //     teal ring (1.7–2.4, opacity 0.95). Reads at heliocentric
+    //     framing where the lander cone is sub-pixel.
+    //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
+    //     Brighter / thicker than the selection-style brackets so the
+    //     "I'm hovering this" cue beats the LROC patch underneath.
+    const HOVER_TEAL = 0x4ecdc4;
+    function buildHoverHalo(aspect: number | undefined): THREE.Object3D {
+      const group = new THREE.Group();
+      const isRect = aspect != null && Math.abs(aspect - 1) >= 0.01;
+      if (isRect) {
+        const diameter = 4.4;
+        const circleArea = (Math.PI / 4) * diameter * diameter;
+        const height = Math.sqrt(circleArea / aspect);
+        const width = aspect * height;
+        const w2 = width / 2;
+        const h2 = height / 2;
+        // Soft fill — teal at 0.10 opacity. Subtle but adds the "lit"
+        // feeling vs the dim selection halo fill (0.04).
+        const fillGeo = new THREE.PlaneGeometry(width, height);
+        const fillMat = new THREE.MeshBasicMaterial({
+          color: HOVER_TEAL,
+          transparent: true,
+          opacity: 0.1,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        });
+        group.add(new THREE.Mesh(fillGeo, fillMat));
+        // Corner brackets — same L-shape pattern as the selection halo
+        // but in teal at full opacity for the hover cue.
+        const armLen = Math.min(width, height) * 0.18;
+        // prettier-ignore
+        const bracketVerts = new Float32Array([
+          -w2, -h2, 0,    -w2 + armLen, -h2, 0,
+          -w2, -h2, 0,    -w2, -h2 + armLen, 0,
+           w2, -h2, 0,     w2 - armLen, -h2, 0,
+           w2, -h2, 0,     w2, -h2 + armLen, 0,
+           w2,  h2, 0,     w2 - armLen,  h2, 0,
+           w2,  h2, 0,     w2,  h2 - armLen, 0,
+          -w2,  h2, 0,    -w2 + armLen,  h2, 0,
+          -w2,  h2, 0,    -w2,  h2 - armLen, 0,
+        ]);
+        const bracketGeo = new THREE.BufferGeometry();
+        bracketGeo.setAttribute('position', new THREE.Float32BufferAttribute(bracketVerts, 3));
+        const bracketMat = new THREE.LineBasicMaterial({
+          color: HOVER_TEAL,
+          transparent: true,
+          opacity: 1.0,
+        });
+        group.add(new THREE.LineSegments(bracketGeo, bracketMat));
+      } else {
+        // Outer glow disc — translucent teal fill, soft radial feel.
+        const glowGeo = new THREE.CircleGeometry(2.4, 48);
+        const glowMat = new THREE.MeshBasicMaterial({
+          color: HOVER_TEAL,
+          transparent: true,
+          opacity: 0.16,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        });
+        group.add(new THREE.Mesh(glowGeo, glowMat));
+        // Crisp ring — bright teal outline at the disc edge.
+        const ringGeo = new THREE.RingGeometry(1.7, 2.4, 48);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: HOVER_TEAL,
+          transparent: true,
+          opacity: 0.95,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        });
+        group.add(new THREE.Mesh(ringGeo, ringMat));
+      }
+      group.position.y = 0.02;
+      group.rotation.x = -Math.PI / 2;
+      group.visible = false;
+      return group;
+    }
+
     // Site markers — per-category geometry, anchored on the surface,
     // parented to planetMesh so they rotate with the sphere (post-v0.1.0
     // fix: previously markers floated in scene-space while the moon
@@ -1623,19 +1704,18 @@
         });
         group.add(halo);
 
-        // Hover halo — same shape/pose as the selection halo but in the
-        // OutlinePass teal (#4ecdc4) so the on-hover visual cue matches
-        // what the user sees when hovering an orbital marker. Made
-        // slightly larger (1.7 vs 1.4) so it reads even at heliocentric
-        // zoom where the tiny lander cone is sub-pixel. Hidden by
-        // default; per-frame visibility flips when hoveredSiteId
-        // matches AND the site isn't already selected (2026-06-15 user
-        // note: "on surface spot hover I would like to see same as we
-        // see on orbiters in that teal glow color. now I see nothing").
-        const hoverHalo = createMarkerHalo('#4ecdc4', 1.7, {
-          lay: true,
-          aspect: haloAspect,
-        });
+        // Hover halo — same flat-on-ground pose as the selection halo
+        // but built with a much thicker stroke + soft inner fill so the
+        // "I'm hovering this" cue actually reads at default zoom
+        // (2026-06-15 user note: first pass was "almost invisible — make
+        // them a bit stronger"). For point sites: an outer teal disc
+        // (radius 2.4) at 0.16 opacity for a soft glow, plus a bright
+        // teal ring (1.7–2.4) at 0.95 opacity for the crisp outline.
+        // For region-bounds sites: same teal corner brackets the
+        // selection halo uses, just at full opacity + a slightly
+        // wider rectangle so the affordance reads against the LROC
+        // patch below.
+        const hoverHalo = buildHoverHalo(haloAspect);
         group.add(hoverHalo);
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).

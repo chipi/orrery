@@ -65,9 +65,10 @@ test.describe('/missions search (RFC-027)', () => {
     const cards = page.locator('[data-testid^="mission-card-"]');
     await expect(cards.first()).toBeVisible({ timeout: 10_000 });
     const count = await cards.count();
-    // dest=MARS alone is 16; the search narrows it further. Both bounds.
+    // dest=MARS alone is 20 (post-#341 Batch 1 additions); the search
+    // narrows it further. Both bounds.
     expect(count).toBeGreaterThan(0);
-    expect(count).toBeLessThanOrEqual(16);
+    expect(count).toBeLessThanOrEqual(20);
   });
 });
 

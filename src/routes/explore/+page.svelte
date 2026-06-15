@@ -5099,13 +5099,15 @@
     font-weight: 700;
   }
   @media (max-width: 600px) {
+    /* Phase 27 (#342) — /explore had 5 fixed overlays competing at
+       375 px. Hide the two informational ones (tactical-scan HUD label,
+       paths-legend trajectory listing) so the canvas + the primary
+       hud-controls + the detail panel are the only things on screen.
+       Tactical-scan + paths-legend are visual chrome the user can do
+       without on mobile; we'll add a per-route info button in a future
+       slice if listening-back UX warrants it. */
     .tactical-scan {
-      min-width: 180px;
-      bottom: 56px;
-      padding: 6px 10px;
-    }
-    .scan-row {
-      font-size: 10px;
+      display: none;
     }
   }
   /* HUD controls cluster — top-left, opposite the detail panel.
@@ -5323,6 +5325,15 @@
      which only kicked in for phone-narrow widths — anyone resizing a
      desktop browser between 501–768 still saw the vertical column. */
   @media (max-width: 768px) {
+    /* Phase 27 (#342) — hide the iconic-trajectory legend on mobile.
+       18 rows × ~24 px = ~430 px vertical strip on the right side
+       that competes with hud-controls + the detail-panel bottom sheet
+       at 375 px. Trajectory info is informational, not interactive —
+       a future slice can surface it via a per-route info button or
+       tap-on-trajectory affordance. */
+    .paths-legend {
+      display: none;
+    }
     .ctrl-row.chips {
       flex-direction: row;
       flex-wrap: wrap;

@@ -900,9 +900,7 @@
          of the visual the moment it's been understood. Visible only
          on (hover: none) devices via CSS. -->
     {#if !mag}
-      <p class="touch-hint" aria-hidden="true">
-        Touch &amp; hold to peek
-      </p>
+      <p class="touch-hint" aria-hidden="true">Touch &amp; hold to peek</p>
     {/if}
 
     {#if mag}
@@ -1352,6 +1350,13 @@
     letter-spacing: 0.5px;
     pointer-events: none;
     backdrop-filter: blur(4px);
+    /* Phase 37 (#342) — long-locale guard. The english string is 18
+       chars; DE "Berühren und halten zum Heranzoomen" is ~36. Cap so
+       the hint doesn't push past the canvas right edge at 375 px. */
+    max-width: calc(100vw - 64px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   @media (hover: none) {
     .touch-hint {

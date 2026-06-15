@@ -4752,8 +4752,8 @@
       class="hud-mobile-collapse"
       onclick={toggleHud}
       aria-label="Hide view controls"
-      title="Hide controls"
-    >◑</button>
+      title="Hide controls">◑</button
+    >
     <div class="ctrl-row">
       <button
         class="toggle"
@@ -5153,15 +5153,34 @@
     gap: 14px;
     padding: 2px 0;
     font-size: 11px;
+    /* Phase 37 (#342) — long-locale guard. Labels like "Atmospheric
+       pressure" + values like "0.006 atm" sit together in a row whose
+       width is the tactical-scan envelope (~220 px on mobile). DE
+       "Atmosphärischer Druck" is ~30 % wider; without min-width: 0
+       the label flexbox-default-min-content overflows the parent
+       envelope rather than truncating. */
+    min-width: 0;
   }
   .scan-label {
     color: rgba(255, 255, 255, 0.45);
     letter-spacing: 1.3px;
     font-size: 9px;
+    /* Truncate at the label's natural box; the value column stays
+       right-aligned and full-text. */
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .scan-value {
     color: rgba(255, 255, 255, 0.92);
     font-weight: 700;
+    /* Values are usually numeric + short unit; rare overflows
+       (e.g. multi-word "no atmosphere") truncate cleanly. */
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   @media (max-width: 600px) {
     /* Phase 27 (#342) — informational overlays are hidden by default

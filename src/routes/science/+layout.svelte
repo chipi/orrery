@@ -268,11 +268,28 @@
     font-family: var(--font-display);
     font-size: 13px;
     letter-spacing: 2px;
+    /* Phase 37 (#342) — long-locale guard. DE "Missionsphasen" + JA
+       "ライフサポート" sit comfortably in the 200 px desktop rail but
+       can blow past chip width on the wrapped mobile strip. Truncate
+       cleanly rather than wrap-cascade onto a second row. */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .section-name {
     font-family: 'Crimson Pro', serif;
     font-size: 14px;
     line-height: 1.3;
+    /* Phase 37 (#342) — section names are author-written so most are
+       short, but a few (Tsiolkovsky-equation-1903) push 30+ chars.
+       Allow up to 2 lines then ellipsis so the right-rail card height
+       stays predictable. */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .content {
     min-width: 0;

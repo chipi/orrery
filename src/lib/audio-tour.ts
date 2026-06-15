@@ -1214,13 +1214,24 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Twelve years for ISS. Seventeen months for Tiangong.',
       duration_ms: 5000,
     },
+    // Open the assembly playback as the "twelve years vs seventeen
+    // months" contrast lands. Tiangong playback is 24 s fixed (vs ISS's
+    // 50 s); ends at t=104 — just in time for the "Look at the T" close
+    // to land on the fully-assembled station. Mirror of the
+    // zarya-first-module wiring (Phase 1) — same pattern, tighter window.
+    { at_sec: 80, action: 'click', target: '[data-audio-stage="tiangong-assembly-toggle"]' },
     // VTT § 00:01:28.6 "Look at the T-shape on screen"
     {
-      at_sec: 95,
+      at_sec: 105,
       action: 'cue',
       target: 'Look at the T — Tianhe is the upright.',
       duration_ms: 4500,
     },
+    // Close before episode-end so the auto-advance to guide-missions
+    // doesn't unmount mid-playback. The playback is already over by
+    // t=104 (started at 80 + 24 s); this click just dismisses the
+    // panel.
+    { at_sec: 112, action: 'click', target: '[data-audio-stage="tiangong-assembly-toggle"]' },
   ],
 
   // ── /science · guide-science — VTT 135 s ──────────────────────────

@@ -1461,6 +1461,7 @@
             type="button"
             class="toggle"
             data-testid="tiangong-assembly-toggle"
+            data-audio-stage="tiangong-assembly-toggle"
             aria-pressed={assemblyOpen}
             disabled={viewMode !== '3d'}
             onclick={() => {

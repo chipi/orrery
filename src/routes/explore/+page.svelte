@@ -3346,6 +3346,19 @@
         // Speed proportional to camR (and tan(fov/2)) so a finger-
         // width of mouse motion shifts the scene by ~one finger-width
         // of world distance at every zoom level.
+        //
+        // 2026-06-15 bugfix: clear focusedPlanetObj at the start of
+        // any pan. The animate-loop steady-state branch re-glues
+        // focusOrigin to the focused planet's world position every
+        // frame, which silently overwrote panning while a planet was
+        // selected (user note: "I click shift, mouse icon does change
+        // to move, but I am not moving the canvas"). A pan is an
+        // explicit "I'm leaving this body" gesture — drop the focus so
+        // the new focusOrigin sticks.
+        if (focusedPlanetObj) {
+          focusedPlanetObj = null;
+          flyActive = false;
+        }
         const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / window.innerHeight;
         camera.matrixWorld.extractBasis(camRight, camUp, camForward);
         focusOrigin.addScaledVector(camRight, -dx * scale);

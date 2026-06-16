@@ -5,6 +5,10 @@ import { compression } from 'vite-plugin-compression2';
 import { defineConfig } from 'vitest/config';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+// GH Pages compat — see scripts/gh-pages-compat.mjs header. Returns
+// `undefined` when VITE_BASE is empty, so the canonical no-base build
+// (VPS) is byte-identical to what it was before this file existed.
+import { ghPagesUrlPatterns } from './scripts/gh-pages-compat.mjs';
 
 const pkg = JSON.parse(
   readFileSync(fileURLToPath(new URL('./package.json', import.meta.url)), 'utf8'),
@@ -53,6 +57,12 @@ export default defineConfig({
       project: './project.inlang',
       outdir: './src/lib/paraglide',
       strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+      // GH Pages compat: when VITE_BASE is set, Paraglide's default
+      // URL pattern matcher can't extract the locale (`/orrery/de/`
+      // looks like `orrery` is the locale candidate). The helper
+      // returns `undefined` when base is empty so the VPS build is
+      // unaffected. Full rationale in scripts/gh-pages-compat.mjs.
+      urlPatterns: ghPagesUrlPatterns((process.env.VITE_BASE ?? '').replace(/\/$/, '')),
       // experimentalMiddlewareLocaleSplitting was tried first — it tree-
       // shakes message functions from the client bundle and injects them
       // via paraglideMiddleware → globalThis.__paraglide.ssr.<key>. Per

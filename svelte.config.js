@@ -1,6 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { generateStaticLocalizedUrls } from './src/lib/paraglide/runtime.js';
+// GH Pages compat — see scripts/gh-pages-compat.mjs header. Used here
+// for the manual locale × route expansion that replaces Paraglide's
+// flaky-at-build-time `generateStaticLocalizedUrls`. Same shape with
+// or without VITE_BASE; SvelteKit prepends the base internally at
+// render time.
+import { expandLocalizedRoots } from './scripts/gh-pages-compat.mjs';
 
 const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 
@@ -36,7 +41,7 @@ const SEED_ROUTES = [
   '/credits',
   '/library',
 ];
-const localizedRoots = generateStaticLocalizedUrls(SEED_ROUTES).map((url) => url.pathname);
+const localizedRoots = expandLocalizedRoots(SEED_ROUTES);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

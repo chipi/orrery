@@ -105,7 +105,7 @@
 <nav aria-label={m.nav_aria_label()}>
   <div class="left">
     <a
-      href={localizeHref(`${base}/`)}
+      href={`${base}${localizeHref('/')}`}
       class="brand"
       aria-label={m.nav_brand_home_aria()}
       class:active={isActive(`${base}/`, $page.url.pathname)}
@@ -117,7 +117,7 @@
   <div class="center">
     {#each linkDefs as { path, label } (path)}
       <a
-        href={localizeHref(`${base}${path}`)}
+        href={`${base}${localizeHref(path)}`}
         class="link"
         class:active={isActive(`${base}${path}`, $page.url.pathname)}>{label()}</a
       >
@@ -219,7 +219,7 @@
   >
     {#each linkDefs as { path, label } (path)}
       <a
-        href={localizeHref(`${base}${path}`)}
+        href={`${base}${localizeHref(path)}`}
         class="drawer-link"
         class:active={isActive(`${base}${path}`, $page.url.pathname)}
         onclick={closeMobileMenu}>{label()}</a

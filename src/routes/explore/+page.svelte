@@ -1024,6 +1024,54 @@
       agency: 'ESA',
     },
   ];
+  // Iconic-mission tagline lookup — one-line "why it's iconic" copy
+  // surfaced as an italic subtitle under each legend row. Keys are in
+  // messages/*.json under `explore_iconic_tagline_<mission_id>`. The
+  // mapping is hand-rolled because Paraglide's tree-shake only sees
+  // statically-referenced message functions.
+  function iconicTagline(missionId: string): string {
+    switch (missionId) {
+      case 'pioneer-10':
+        return m.explore_iconic_tagline_pioneer_10();
+      case 'pioneer-11':
+        return m.explore_iconic_tagline_pioneer_11();
+      case 'voyager-2':
+        return m.explore_iconic_tagline_voyager_2();
+      case 'voyager-1':
+        return m.explore_iconic_tagline_voyager_1();
+      case 'venera-13':
+        return m.explore_iconic_tagline_venera_13();
+      case 'vega-1':
+        return m.explore_iconic_tagline_vega_1();
+      case 'vega-2':
+        return m.explore_iconic_tagline_vega_2();
+      case 'giotto':
+        return m.explore_iconic_tagline_giotto();
+      case 'galileo':
+        return m.explore_iconic_tagline_galileo();
+      case 'ulysses':
+        return m.explore_iconic_tagline_ulysses();
+      case 'cassini':
+        return m.explore_iconic_tagline_cassini();
+      case 'rosetta':
+        return m.explore_iconic_tagline_rosetta();
+      case 'new-horizons':
+        return m.explore_iconic_tagline_new_horizons();
+      case 'dawn':
+        return m.explore_iconic_tagline_dawn();
+      case 'juno':
+        return m.explore_iconic_tagline_juno();
+      case 'hayabusa2':
+        return m.explore_iconic_tagline_hayabusa2();
+      case 'bepicolombo':
+        return m.explore_iconic_tagline_bepicolombo();
+      case 'juice':
+        return m.explore_iconic_tagline_juice();
+      default:
+        return '';
+    }
+  }
+
   let pathsLegendMission: Mission | null = $state(null);
   // Which trajectory's color is currently solo'd (legend hover, or canvas
   // hover on the Today marker). null = all dim. Effect below pushes the
@@ -4860,14 +4908,21 @@
             onblur={() => (highlightedMissionId = null)}
             data-testid="paths-legend-row-{entry.mission_id}"
           >
-            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
-            <span class="name">{entry.name}</span>
-            <span class="logos" aria-hidden="true">
-              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-                <img src={logoPath} alt="" loading="lazy" />
-              {/each}
+            <span class="row-top">
+              <span
+                class="swatch"
+                style="background-color: {entry.color};"
+                aria-hidden="true"
+              ></span>
+              <span class="name">{entry.name}</span>
+              <span class="logos" aria-hidden="true">
+                {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+                  <img src={logoPath} alt="" loading="lazy" />
+                {/each}
+              </span>
+              <span class="year">{entry.launch_year}</span>
             </span>
-            <span class="year">{entry.launch_year}</span>
+            <span class="tagline">{iconicTagline(entry.mission_id)}</span>
           </button>
         {/each}
       </div>
@@ -5440,12 +5495,12 @@
   }
   .paths-legend-row {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 2px;
     background: none;
     border: none;
     color: #dde4ff;
-    padding: 4px 6px;
+    padding: 6px 6px 8px;
     border-radius: 3px;
     cursor: pointer;
     text-align: left;
@@ -5453,6 +5508,34 @@
     font-size: 12px;
     letter-spacing: 0.04em;
     min-height: 44px;
+    width: 100%;
+  }
+  .paths-legend-row .row-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* "Why is it iconic" subtitle — italic, dim, one line with ellipsis
+     fallback. Indented past the swatch so the eye reads it as
+     attached to the row's name. */
+  .paths-legend-row .tagline {
+    display: block;
+    margin-left: 26px;
+    font-family: 'Crimson Pro', 'Space Mono', serif;
+    font-style: italic;
+    font-size: 11.5px;
+    letter-spacing: 0.01em;
+    color: rgba(221, 228, 255, 0.55);
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 120ms ease, white-space 200ms ease;
+  }
+  .paths-legend-row:hover .tagline,
+  .paths-legend-row:focus-visible .tagline {
+    color: rgba(255, 255, 255, 0.85);
+    white-space: normal;
   }
   .paths-legend-row:hover,
   .paths-legend-row:focus-visible {

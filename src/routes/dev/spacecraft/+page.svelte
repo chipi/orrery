@@ -176,9 +176,9 @@
   <header>
     <h1>Spacecraft model showcase</h1>
     <p>
-      All {MISSIONS.length} entries in interplanetary-spacecraft-models.ts. One shared WebGL canvas
-      paints each card's silhouette into the card's screen rect (so we side-step Chrome's 16-context
-      cap that would otherwise blank the first 5 cards as 17-21 came online).
+      All {MISSIONS.length} entries in interplanetary-spacecraft-models.ts. One shared WebGL canvas paints
+      each card's silhouette into the card's screen rect (so we side-step Chrome's 16-context cap that
+      would otherwise blank the first 5 cards as 17-21 came online).
     </p>
   </header>
   <div class="grid">

@@ -4909,10 +4909,7 @@
             data-testid="paths-legend-row-{entry.mission_id}"
           >
             <span class="row-top">
-              <span
-                class="swatch"
-                style="background-color: {entry.color};"
-                aria-hidden="true"
+              <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"
               ></span>
               <span class="name">{entry.name}</span>
               <span class="logos" aria-hidden="true">
@@ -5530,7 +5527,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: color 120ms ease, white-space 200ms ease;
+    transition:
+      color 120ms ease,
+      white-space 200ms ease;
   }
   .paths-legend-row:hover .tagline,
   .paths-legend-row:focus-visible .tagline {

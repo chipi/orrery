@@ -11,8 +11,20 @@ on:
 # truth and prevents stale "cancelled" entries from polling the README
 # badge. Per-PR runs cancel cleanly when a new commit pushes to the
 # same PR; main runs cancel cleanly when fast-consecutive pushes land.
+#
+# Launches-bot pushes (`chore(launches): refresh — …`) land on a
+# separate concurrency group so the launches cron NEVER cancels a
+# user CI run in flight — that race bit the 2026-06-16 #342 cycle
+# (my `fix(prod)` CI got cancelled mid-run when launches refreshed,
+# and the docker-e2e → publish-platforms chain never ran on my
+# commit, so the prod deploy then couldn't find the matching image
+# tag). The separate group means launches refresh CI still runs to
+# validate data, but in parallel with whatever user CI is happening.
 concurrency:
-  group: ci-${{ github.ref }}
+  group:
+    ${{ startsWith(github.event.head_commit.message, 'chore(launches): refresh')
+        && format('ci-launches-{0}', github.ref)
+        || format('ci-{0}', github.ref) }}
   cancel-in-progress: true
 
 jobs:

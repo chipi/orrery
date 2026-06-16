@@ -547,12 +547,17 @@ typecheck   → npm run typecheck (i18n:compile + svelte-kit sync + svelte-check
 lint        → npm run lint (prettier --check . && eslint .)
 test        → npm run test (vitest run)
 validate    → npm run validate-data (ajv + consistency checks on JSON under static/data/)
-build       → npm run build (i18n:compile + validate-data + precompute-porkchops + vite build)
+build       → npm run build (i18n:compile + validate-data + precompute-porkchops + vite build
+              + scripts/check-prerender-completeness.mjs)
 precompute  → npm run precompute-porkchops (9 porkchop grids; chained into build)
 doc-check   → grep checks from guide §18
 ```
 
 E2e (Playwright) runs on push to `main`, not on every PR.
+
+**`scripts/check-prerender-completeness.mjs`** runs after `vite build` and asserts every non-base locale has its root HTML emitted plus that the total HTML file count is plausible (≥ 200; today's build emits ~343). Catches the silent-incomplete-prerender failure mode that previously let a misconfigured `handleHttpError` ship 18 en-US files instead of the full per-locale tree. If you see `FAIL: N locale root(s) missing from build/`, the script header explains what to check.
+
+**workflow_run vs push event gates** — when adding `if:` conditions to a workflow that's triggered by `workflow_run` (e.g. docker-e2e fires after CI completes), do NOT check `github.event_name == 'push'`. That field reflects the *current* workflow's trigger (`workflow_run`), not the upstream one. Check `github.event.workflow_run.event == 'push'` instead. The publish-platforms job in `docker-e2e.yml` carried this bug from inception until 2026-06-16 — every `sha-<short>` image tag was silently skipped, and nobody noticed until a prod deploy tried to pull the matching image.
 
 ### Before pushing — `npm run preflight`
 

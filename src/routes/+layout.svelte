@@ -21,6 +21,13 @@
   import { afterNavigate } from '$app/navigation';
 
   let { children } = $props();
+
+// Footer version display — show major.minor only, dropping the
+// patch + any `-wip` / `-rc.N` / etc. pre-release suffix. The raw
+// `__APP_VERSION__` (full `0.7.0-wip` shape) stays available for
+// Sentry releases + analytics elsewhere — this is purely the
+// human-facing label in the footer strip.
+const displayVersion = __APP_VERSION__.split('-')[0].split('.').slice(0, 2).join('.');
   let activeLocale = $derived(localeFromPage($page));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
@@ -275,7 +282,7 @@
         target="_blank"
         rel="noopener noreferrer external"
         title="Build version + deploy date (opens CHANGELOG on GitHub)"
-        hreflang="en">v{__APP_VERSION__} · {__BUILD_DATE__}</a
+        hreflang="en">v{displayVersion} · {__BUILD_DATE__}</a
       >
     </nav>
   </footer>

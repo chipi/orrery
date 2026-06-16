@@ -63,3 +63,11 @@ static/audit-report.html
 .linux-node-modules/
 test-screenshots/
 node_modules/.cache/
+
+# Test-iteration screenshot artefacts (chrome-devtools-mcp captures)
+/earth-*.png
+/explore-*.png
+/fleet-*.png
+/missions-*.png
+/moon-*.png
+/plan-*.png

@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * One-iconic-beat-per-planet smoke test.
@@ -50,6 +51,9 @@ async function loadMissionAndJumpToFlyby(
   metDays: number,
 ): Promise<void> {
   await page.goto(`/fly?mission=${mission}`);
+  // #342 Phase 25 — expand the default-collapsed HUD on touch so the
+  // mission-name aside is visible.
+  await expandFlyHud(page);
   await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 20_000 });
   // The mission card / proceed-to-simulation wizard appears for ~3 s
   // when a mission is freshly loaded. Wait for it to render then

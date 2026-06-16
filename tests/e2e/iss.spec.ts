@@ -1,9 +1,17 @@
 import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 function attachConsoleAndError(page: Page) {
   const errors: string[] = [];
   page.on('console', (msg: ConsoleMessage) => {
-    if (msg.type() === 'error') errors.push(`console.error: ${msg.text()}`);
+    if (msg.type() !== 'error') return;
+    // Filter expected probe-style 404s (overlay JSON misses, mission
+    // thumbnail fallbacks) and browser-noise via the shared helper —
+    // the timeline panel loads per-module hero thumbnails on demand
+    // and some entries (HTV-X visitor 2025-10-26 etc.) ship without
+    // one yet. Real asset misses still fail.
+    if (isExpectedNoise(msg)) return;
+    errors.push(`console.error: ${msg.text()}`);
   });
   page.on('pageerror', (err: Error) => {
     errors.push(`pageerror: ${err.message}`);

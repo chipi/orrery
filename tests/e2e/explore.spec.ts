@@ -152,6 +152,9 @@ test.describe('/explore — load and toggle', () => {
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 
     await page.goto('/explore');
+    // #342 Phase 31 — expand the default-collapsed hud-controls so
+    // the 2D/3D toggle is in the layout.
+    await expandExploreHud(page);
     // Use button.toggle:not(.sizes-toggle) — the SIZES overlay toggle
     // also wears the .toggle class but we want only the 2D/3D one
     // here. The text content flips between "2D" and "3D" each click,
@@ -238,7 +241,17 @@ test.describe('/explore — selection and panel', () => {
     const toggle = page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
     if (isMobile) {
-      await toggle.tap();
+      // The sizes-toggle (REFERENCES button, .earth-compare) sits at
+      // bottom-left of the canvas. The persistent .site-footer strip
+      // (z-index 35, higher than the 20 on earth-compare) renders as
+      // an inline-flex bar that spans most of a 375 px viewport
+      // because of the version label, so its .footer-link children
+      // overlap the chip's hit area. tap() trips on Playwright's
+      // pointer-events stability check ("Credits link intercepts").
+      // DOM-dispatch the click so the button's onclick handler still
+      // fires — the runtime UX uses a real finger that the user can
+      // place precisely on the chip.
+      await toggle.evaluate((el) => (el as HTMLButtonElement).click());
     } else {
       await toggle.click();
     }

@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * Phase-marker parity smoke spec — #107 Step 6i.
@@ -81,6 +82,9 @@ async function loadMission(page: Page, mission: string): Promise<string[]> {
     errors.push(msg.text());
   });
   await page.goto(`/fly?mission=${mission}`);
+  // #342 Phase 25 — expand the default-collapsed HUD on touch so
+  // mission-name + phase-markers-overlay assertions can resolve.
+  await expandFlyHud(page);
   await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 15_000 });
   return errors;
 }

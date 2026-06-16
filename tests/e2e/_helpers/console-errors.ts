@@ -37,7 +37,21 @@ export function isExpectedNoise(msg: ConsoleMessage): boolean {
       // because trajectory diagrams ship for only a subset of missions;
       // missing ones fire one 404 and the panel's onerror handler then
       // hides the figure.
-      /\/images\/missions\/thumbnails\/[^/]+\.png$/.test(url)
+      /\/images\/missions\/thumbnails\/[^/]+\.png$/.test(url) ||
+      // /images/iss-modules/<id>/<n>.jpg + /images/tiangong-modules/...
+      // — per-module hero thumbnails rendered in the assembly-timeline
+      // panel. Same fallback contract as the mission thumbnails: some
+      // modules / visitors don't ship one yet, the panel's onerror
+      // handler hides the figure. (#342 mobile audit — ISS Poisk, HTV-X
+      // visitor.)
+      /\/images\/(?:iss-modules|tiangong-modules)\/[^/]+\/\d+\.(?:jpg|png|webp)$/.test(url) ||
+      // /images/missions/<id>/<n>.(jpg|png|webp) — per-mission gallery
+      // images probed by MissionCard for the catalog grid hero. Same
+      // fallback contract: not every mission ships a gallery; missing
+      // ones fire one 404 per slot and the card falls back to its
+      // procedural cover. (#342 mobile audit — europa-clipper, dart,
+      // lucy.)
+      /\/images\/missions\/[^/]+\/\d+\.(?:jpg|png|webp)$/.test(url)
     );
   }
   return false;

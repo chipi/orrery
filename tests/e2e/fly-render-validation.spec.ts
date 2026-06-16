@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * Layers 3 + 4 of the /fly rendering validation strategy.
@@ -124,6 +125,7 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
   for (const c of CASES) {
     test(`${c.id}: outbound arc hash is stable + non-empty`, async ({ page }) => {
       await page.goto(`/fly?mission=${c.id}`);
+      await expandFlyHud(page);
       // Wait for hydration: mission name HUD text settles.
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
@@ -156,6 +158,7 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       page,
     }) => {
       await page.goto(`/fly?mission=${c.id}`);
+      await expandFlyHud(page);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
@@ -211,6 +214,7 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       page,
     }) => {
       await page.goto(`/fly?mission=${c.id}`);
+      await expandFlyHud(page);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
@@ -253,6 +257,7 @@ test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
   for (const c of CASES) {
     test(`${c.id}: HUD readouts derive consistently from spacecraft position`, async ({ page }) => {
       await page.goto(`/fly?mission=${c.id}`);
+      await expandFlyHud(page);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
@@ -315,6 +320,7 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
         consoleErrors.push(msg.text());
       });
       await page.goto(`/fly?mission=${c.id}`);
+      await expandFlyHud(page);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
@@ -384,6 +390,7 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
 test.describe('/fly render validation — meta', () => {
   test('hook exists on default /fly with finite values', async ({ page }) => {
     await page.goto('/fly');
+    await expandFlyHud(page);
     await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
       timeout: 10_000,
     });

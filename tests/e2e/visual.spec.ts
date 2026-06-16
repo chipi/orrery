@@ -100,6 +100,21 @@ test.describe('visual regression baselines (S8 — element-scoped, stable surfac
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {
       await page.goto(path, { waitUntil: 'networkidle' });
+      // #342 Phase 29 — /missions and /fleet collapse the filter
+      // strip behind .filters-toggle on mobile. Expand it before the
+      // selector resolves so the screenshot captures the strip
+      // contents, not a hidden node. No-op on desktop (toggle is
+      // display:none on hover devices).
+      if (label === 'missions-filters' || label === 'fleet-filters') {
+        const toggle = page.locator('.filters-toggle');
+        if (await toggle.count()) {
+          await toggle
+            .first()
+            .click({ timeout: 5_000 })
+            .catch(() => {});
+          await page.waitForTimeout(200);
+        }
+      }
       // Extra animation frame so font rendering settles.
       await page.evaluate(
         () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))),

@@ -105,9 +105,10 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
       await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, {
         timeout: isMobile ? 30_000 : 15_000,
       });
-      const chip = page.locator('[data-testid="layer-hotspots"]');
+      // SURFACE chip merger (commit 0bf1fc96a, 2026-06-15) — see the
+      // Moon describe block above for context.
+      const chip = page.locator('[data-testid="layer-surface"]');
       await expect(chip).toBeVisible();
-      await expect(chip).toHaveAttribute('data-hotspots-mode', /^(auto|low|high)$/);
       expect(
         errors.filter((e) => !e.includes('Failed to load resource')),
         errors.join('\n'),

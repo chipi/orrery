@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * /fly — Mission Arc.
@@ -13,9 +14,22 @@ import { test, expect } from '@playwright/test';
  *   - mission library → fly end-to-end (RFC-004 contract)
  */
 
+/**
+ * `/fly` navigation that also expands the default-collapsed HUD on
+ * touch viewports (#342 Phase 25). Every spec in this file that
+ * touches the HUD cluster (mission-name aside, capcom-panel, speed
+ * pills, fly-toggle-rows, fly-bottom-strips) needs the HUD visible
+ * before asserting — going through this helper keeps the test bodies
+ * focused on what they're actually testing.
+ */
+async function gotoFly(page: Page, url = '/fly'): Promise<void> {
+  await page.goto(url);
+  await expandFlyHud(page);
+}
+
 test.describe('/fly — default mission', () => {
   test('default loads with ORRERY DEMO in the identity HUD', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toBeVisible();
     await expect(id).toContainText(/ORRERY DEMO/);
@@ -23,7 +37,7 @@ test.describe('/fly — default mission', () => {
   });
 
   test('3D/2D toggle switches the active layer', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     // Use the stable test-id over the role+name regex — the latter
     // races on mobile-chromium because the button label reactively
     // flips between '2D' and '3D' on Svelte's microtask flush, but
@@ -40,7 +54,7 @@ test.describe('/fly — default mission', () => {
   });
 
   test('2D mode renders non-blank pixels (regression test)', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     await page.getByRole('button', { name: /^2d$/i }).click();
     await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
     const canvas2d = page.locator('canvas.layer');
@@ -71,7 +85,7 @@ test.describe('/fly — default mission', () => {
   });
 
   test('timeline scrubber moves simDay forward', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toBeVisible();
     // Pause first so the scrubber value isn't fighting the play loop.
@@ -85,7 +99,7 @@ test.describe('/fly — default mission', () => {
   });
 
   test('speed pills change active selection', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const speed30 = page.getByRole('button', { name: /^30×$/ });
     await expect(speed30).toBeVisible();
     await speed30.click();
@@ -95,7 +109,7 @@ test.describe('/fly — default mission', () => {
 
 test.describe('/fly — URL mission loading (RFC-004)', () => {
   test('?mission=curiosity populates the identity HUD with Curiosity', async ({ page }) => {
-    await page.goto('/fly?mission=curiosity');
+    await gotoFly(page, '/fly?mission=curiosity');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toBeVisible();
     await expect(id).toContainText(/Curiosity/i, { timeout: 10_000 });
@@ -103,13 +117,13 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
   });
 
   test('?mission=apollo11 loads a Moon mission via the moon-dest fallback', async ({ page }) => {
-    await page.goto('/fly?mission=apollo11');
+    await gotoFly(page, '/fly?mission=apollo11');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/Apollo 11/i, { timeout: 10_000 });
   });
 
   test('?mission=does-not-exist surfaces the load-failed banner', async ({ page }) => {
-    await page.goto('/fly?mission=does-not-exist');
+    await gotoFly(page, '/fly?mission=does-not-exist');
     const banner = page.getByRole('alert');
     await expect(banner).toBeVisible({ timeout: 10_000 });
     await expect(banner).toContainText(/Failed to load/i);
@@ -118,7 +132,7 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
 
 test.describe('/fly — CAPCOM mode', () => {
   test('CAPCOM panel is always visible when a mission is loaded (v0.1.7)', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     // No toggle button — CAPCOM panel renders directly per ADR-026
     // batch (v0.1.7 audit feedback). Panel sits below the 2D/3D
     // toggle on desktop so it can never overlap.
@@ -130,7 +144,7 @@ test.describe('/fly — CAPCOM mode', () => {
   });
 
   test('CAPCOM panel surfaces ORRERY DEMO events for the default mission', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
     await expect(panel).toBeVisible();
     // Skip ahead so events have fired.
@@ -150,6 +164,9 @@ test.describe('/missions → /fly end-to-end (RFC-004)', () => {
     await page.locator('[data-testid="mission-card-curiosity"]').click();
     await page.locator('[data-testid="fly-mission-btn"]').click();
     await expect(page).toHaveURL(/\/fly\?mission=curiosity/);
+    // Navigation landed on /fly — expand the default-collapsed HUD on
+    // touch before the mission-name visibility check (#342 Phase 25).
+    await expandFlyHud(page);
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/Curiosity/i, { timeout: 10_000 });
   });
@@ -157,7 +174,7 @@ test.describe('/missions → /fly end-to-end (RFC-004)', () => {
 
 test.describe('/fly — 3D scene actually renders (regression for black-screen bug)', () => {
   test('?mission=curiosity renders non-bg pixels in 3D mode', async ({ page }) => {
-    await page.goto('/fly?mission=curiosity');
+    await gotoFly(page, '/fly?mission=curiosity');
     // Wait for HUD to confirm load.
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
       timeout: 10_000,
@@ -205,7 +222,7 @@ test.describe('/fly — /plan default-Mars selection (v0.1.9 regression)', () =>
     // so /fly's /plan-driven branch must coalesce missing dest to mars.
     // Previous bug: the branch required a non-empty dest param and
     // fell through to the ORRERY DEMO scenario.
-    await page.goto('/fly?type=landing&dep=200&tof=250');
+    await gotoFly(page, '/fly?type=landing&dep=200&tof=250');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).not.toContainText(/ORRERY DEMO/i, { timeout: 10_000 });
     // The synthesised mission name follows the EARTH → MARS · LANDING
@@ -217,7 +234,7 @@ test.describe('/fly — /plan default-Mars selection (v0.1.9 regression)', () =>
 
 test.describe('/fly — Moon-mission mode (v0.1.8)', () => {
   test('?mission=apollo11 renders Earth-Moon scene (not Earth-Mars)', async ({ page }) => {
-    await page.goto('/fly?mission=apollo11');
+    await gotoFly(page, '/fly?mission=apollo11');
     // HUD identifies Apollo 11.
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/Apollo 11/i, { timeout: 10_000 });
@@ -254,7 +271,7 @@ test.describe('/fly — Moon-mission mode (v0.1.8)', () => {
 test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
   test('?dest=jupiter&type=flyby&dep=N&tof=N renders a Jupiter trajectory', async ({ page }) => {
     // Synthesised /plan → /fly path: dest + dep + tof, no mission.
-    await page.goto('/fly?dest=jupiter&type=flyby&dep=200&tof=900');
+    await gotoFly(page, '/fly?dest=jupiter&type=flyby&dep=200&tof=900');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/JUPITER/i, { timeout: 10_000 });
     await expect(id).toContainText(/FLYBY/i);
@@ -264,7 +281,7 @@ test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
   });
 
   test('?dest=mercury&type=landing identifies Mercury + LANDING in HUD', async ({ page }) => {
-    await page.goto('/fly?dest=mercury&type=landing&dep=400&tof=180');
+    await gotoFly(page, '/fly?dest=mercury&type=landing&dep=400&tof=180');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/MERCURY/i, { timeout: 10_000 });
     await expect(id).toContainText(/LANDING/i);
@@ -273,20 +290,20 @@ test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
   test('?dest=neptune&type=flyby shows ADR-028 direct-trajectory caveat in identity HUD', async ({
     page,
   }) => {
-    await page.goto('/fly?dest=neptune&type=flyby&dep=100&tof=12000');
+    await gotoFly(page, '/fly?dest=neptune&type=flyby&dep=100&tof=12000');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/NEPTUNE/i, { timeout: 10_000 });
     await expect(page.locator('.hud-trajectory-caveat')).toContainText(/Direct trajectory shown/i);
   });
 
   test('?mission=galileo loads Jupiter mission from index (3.0a-5)', async ({ page }) => {
-    await page.goto('/fly?mission=galileo');
+    await gotoFly(page, '/fly?mission=galileo');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/Galileo/i, { timeout: 15_000 });
   });
 
   test('default /fly (no params) still loads ORRERY DEMO scenario', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/ORRERY DEMO/, { timeout: 10_000 });
   });
@@ -306,7 +323,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   });
 
   test('?mission=curiosity surfaces real C3 and total ∆v in the HUD', async ({ page }) => {
-    await page.goto('/fly?mission=curiosity');
+    await gotoFly(page, '/fly?mission=curiosity');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
       timeout: 10_000,
     });
@@ -319,7 +336,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   });
 
   test('?mission=mars3 shows sparse-data caveat banner in HUD', async ({ page }) => {
-    await page.goto('/fly?mission=mars3');
+    await gotoFly(page, '/fly?mission=mars3');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
       timeout: 10_000,
     });
@@ -329,7 +346,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   });
 
   test('default ORRERY DEMO has no FLIGHT PARAMS group (no regression)', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/ORRERY DEMO/, {
       timeout: 10_000,
     });
@@ -341,7 +358,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
 
   /* ── v0.1.13 — NEXT EVENT row in /fly HUD ──────────────────────── */
   test('?mission=curiosity surfaces a NEXT EVENT row', async ({ page }) => {
-    await page.goto('/fly?mission=curiosity');
+    await gotoFly(page, '/fly?mission=curiosity');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
       timeout: 10_000,
     });
@@ -354,7 +371,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   });
 
   test('Mars 3 (sparse-data) surfaces structural events in the ticker', async ({ page }) => {
-    await page.goto('/fly?mission=mars3');
+    await gotoFly(page, '/fly?mission=mars3');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
       timeout: 10_000,
     });
@@ -368,7 +385,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
   test('flight caveat exposes Why popover on reconstructed missions', async ({ page }) => {
     // Mars 3 is sparse-quality, so the FLIGHT PARAMS HUD shows the
     // caveat banner. The WhyPopover trigger renders alongside.
-    await page.goto('/fly?mission=mars3');
+    await gotoFly(page, '/fly?mission=mars3');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
       timeout: 10_000,
     });
@@ -386,7 +403,7 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
 
   /* ── C.5 — Flight Director narration banner ────────────────────── */
   test('Flight Director banner is hidden until Science Lens is enabled', async ({ page }) => {
-    await page.goto('/fly');
+    await gotoFly(page);
     const banner = page.locator('[data-testid="flight-director-banner"]');
     await expect(banner).toHaveCount(0);
 

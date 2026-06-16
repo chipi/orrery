@@ -1,0 +1,32 @@
+{
+  "name": "天空实验室4号",
+  "type": "载人空间站乘组 · 已飞行",
+  "first": "天空实验室最长驻留 — 84天，观测科胡特克彗星，\"天空实验室罢工\"休整日争议",
+  "description": "卡尔、吉布森和波格 — 天空实验室最后一组也是驻留时间最长的乘员，共84天1小时，全员均为首飞。1973-11-16 14:01 UTC由土星1B火箭(SA-208)发射。开展了全面的地球资源和太阳观测，包括12月至1月的完整科胡特克彗星观测活动。这次任务最为人记忆的是第45天非正式的\"天空实验室罢工\" — 乘员在地面控制人员压榨他们清醒时段每一分钟的连续要求之下，关闭无线电整整半天 — 这场争议促成NASA对长期任务乘员时间表规划的永久性改革。1974-02-08 15:17 UTC溅落，是直到2020年SpaceX载人龙飞船之前美国最后一次载人海上回收。CSM-118陈列于俄亥俄州代顿的美国空军国家博物馆。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

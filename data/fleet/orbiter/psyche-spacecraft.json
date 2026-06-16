@@ -1,0 +1,32 @@
+{
+  "id": "psyche-spacecraft",
+  "name": "Psyche",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Maxar Technologies / NASA JPL",
+  "first_flight": "2023-10-13",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First mission to a metal-rich M-class asteroid; Hall-effect ion-thruster cruise to a 2029 Psyche rendezvous",
+  "credit": "Added with /fly mission JSON (#341 batch 3 — sample-return pair). Spacecraft id 'psyche-spacecraft' to avoid colliding with the asteroid id 'psyche' (a DestinationId / small-body).",
+  "links": [
+    {
+      "l": "Psyche (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Psyche_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Psyche mission overview (NASA)",
+      "u": "https://science.nasa.gov/mission/psyche/",
+      "t": "core"
+    },
+    {
+      "l": "Psyche mission profile (JPL)",
+      "u": "https://www.jpl.nasa.gov/missions/psyche/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": ["psyche-mission"]
+}

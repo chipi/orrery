@@ -30,46 +30,28 @@
   ],
   "flights": [
     {
+      "mission_id": "soyuz-t-2",
+      "flight_designation": "Soyuz T-2 (1980-06-05) · Malyshev + Aksyonov — first crewed flight of redesigned Soyuz T; first crew to Salyut 6"
+    },
+    {
       "mission_id": "soyuz-t-3",
-      "flight_designation": "Soyuz T-3 (1980-11-27) · first crewed Soyuz T",
-      "crew": [
-        {
-          "name": "Leonid Kizim",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Oleg Makarov",
-          "role": "Flight engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Gennady Strekalov",
-          "role": "Researcher",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "flight_designation": "Soyuz T-3 (1980-11-27) · Kizim + Makarov + Strekalov — first three-person Soyuz crew since 1971 (T-series restored full crew capacity)"
+    },
+    {
+      "mission_id": "soyuz-t-5",
+      "flight_designation": "Soyuz T-5 (1982-05-13) · Berezovoy + Lebedev — Salyut 7 first crew; 211 days (longest at the time)"
+    },
+    {
+      "mission_id": "soyuz-t-7",
+      "flight_designation": "Soyuz T-7 (1982-08-19) · Popov + Serebrov + Savitskaya — Svetlana Savitskaya: second woman in space (19 years after Tereshkova)"
     },
     {
       "mission_id": "soyuz-t-13",
-      "flight_designation": "Soyuz T-13 (1985-06-06) · Salyut 7 rescue",
-      "crew": [
-        {
-          "name": "Vladimir Dzhanibekov",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Viktor Savinykh",
-          "role": "Engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "flight_designation": "Soyuz T-13 (1985-06-06) · Dzhanibekov + Savinykh — rescued the disabled Salyut 7 station; only Soviet salvage spaceflight, 110 days"
+    },
+    {
+      "mission_id": "soyuz-t-15",
+      "flight_designation": "Soyuz T-15 (1986-03-13) · Kizim + Solovyov — last Soyuz T; first crew to dock with both Mir and Salyut 7 in one flight"
     }
   ]
 }

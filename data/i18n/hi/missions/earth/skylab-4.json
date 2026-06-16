@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 4",
+  "type": "मानवयुक्त स्टेशन क्रू · उड़ान पूर्ण",
+  "first": "Skylab का सबसे लंबा प्रवास — 84 दिन, धूमकेतु Kohoutek का अवलोकन, \"Skylab हड़ताल\" विश्राम-दिवस विवाद",
+  "description": "Carr, Gibson और Pogue — Skylab का अंतिम और सबसे लंबा दल, 84 दिन 1 घंटा, सभी नवप्रशिक्षु। 1973-11-16 14:01 UTC को Saturn IB (SA-208) पर प्रक्षेपित। दिसंबर-जनवरी में Kohoutek धूमकेतु के पूर्ण अभियान सहित विस्तृत पृथ्वी-संसाधन और सौर अवलोकन। यह मिशन सबसे ज़्यादा 45वें दिन की अनौपचारिक 'Skylab हड़ताल' के लिए याद रखा जाता है, जब लगातार ज़मीनी-नियंत्रक माँगों ने जागरण के हर पल को निचोड़ दिया तो दल ने आधे दिन के लिए रेडियो बंद कर दिए — इस विवाद ने लंबी अवधि के मिशनों के लिए NASA की क्रू समय-सीमा योजना में स्थायी सुधारों को जन्म दिया। 1974-02-08 15:17 UTC को स्प्लैशडाउन, यह 2020 में SpaceX Crew Dragon तक US का अंतिम मानवयुक्त जल-अवतरण था। CSM-118 राष्ट्रीय US वायुसेना संग्रहालय, डेटन OH में प्रदर्शित है।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

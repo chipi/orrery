@@ -28,5 +28,27 @@
       "t": "core"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [],
+  "flights": [
+    {
+      "mission_id": "enterprise-cf-1",
+      "flight_designation": "CAPTIVE-INERT 1 (1977-02-18) · first carrying flight on a Boeing 747 SCA; unmanned; no separation"
+    },
+    {
+      "mission_id": "enterprise-ff-1",
+      "flight_designation": "FREE FLIGHT 1 (1977-08-12) · first free flight from the SCA; Haise + Fullerton; first proof Shuttle could glide + land"
+    },
+    {
+      "mission_id": "enterprise-ff-2",
+      "flight_designation": "FREE FLIGHT 2 (1977-09-13) · 2nd free flight; Engle + Truly; pitch-up landing test"
+    },
+    {
+      "mission_id": "enterprise-ff-4",
+      "flight_designation": "FREE FLIGHT 4 (1977-10-12) · 4th free flight; first without tailcone — full orbital aerodynamics"
+    },
+    {
+      "mission_id": "enterprise-ff-5",
+      "flight_designation": "FREE FLIGHT 5 (1977-10-26) · 5th + final free flight; first dry-runway landing; closed the ALT programme"
+    }
+  ]
 }

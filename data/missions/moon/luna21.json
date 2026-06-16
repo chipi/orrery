@@ -68,23 +68,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K / Blok D",
+        "description": "Baikonur Cosmodrome, 1973-01-08. Luna 21 — carried Lunokhod 2, the second + final Soviet lunar rover."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Blok D upper stage burn places Luna 21 on translunar trajectory."
       },
       {
         "met_days": 4,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction + lunar orbit insertion",
+        "description": "Approach burn + capture into 90 × 100 km lunar orbit."
       },
       {
         "met_days": 4.5,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar soft landing + Lunokhod 2 deployment — Le Monnier crater",
+        "description": "1973-01-15. Landed in Le Monnier crater (25.85°N, 30.45°E). Lunokhod 2 drove 39 km over 4 lunar days — the longest distance any extraterrestrial rover travelled until the Mars Opportunity rover broke the record in 2014."
       },
       {
         "met_days": 7,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunokhod 2 surface operations",
+        "description": "Mission ended 1973-05 when soil contamination on a thermal panel caused overheating. Lunokhod 2 + Lunokhod 1 still hold the only two operational moon-rover records the Soviets ever produced — both predating Apollo's surface mobility milestones by years."
       }
     ],
     "cislunar_profile": {

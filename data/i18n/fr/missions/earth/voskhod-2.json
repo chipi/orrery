@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
+  "first": "Première sortie extravéhiculaire (Leonov, 12 min, 18/03/1965)",
+  "description": "Le vol d'une journée de Pavel Belyaïev et Alexeï Leonov — la première EVA de l'histoire. Leonov a passé 12 minutes à l'extérieur de Voskhod 2 (18/03/1965 à 11h34 UTC), pressurisé via un sas Volga gonflable que les ingénieurs soviétiques ont ajouté parce que la coque de Voskhod manquait de place pour une dépressurisation complète. La combinaison de Leonov a gonflé dans le vide, le coinçant à l'extérieur du sas ; il a dû relâcher la pression de la combinaison pour rentrer, augmentant le risque d'accident de décompression. La rentrée fut tout aussi dramatique — le système d'atterrissage automatique a échoué et Belyaïev a piloté manuellement le module de descente jusqu'à un atterrissage brutal dans la neige profonde de l'Oural, à environ 390 km hors cible ; l'équipage a survécu à une nuit dans la forêt parmi les loups avant l'arrivée des hélicoptères de secours le 20/03/1965.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

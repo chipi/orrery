@@ -1,0 +1,1 @@
+import{W as d}from"./BekDQrkg.js";function n(e,{clearColor:i=263180}={}){const t=new d({antialias:!0,alpha:!1});return t.setPixelRatio(Math.min(window.devicePixelRatio,2)),t.setSize(e.clientWidth,e.clientHeight),t.setClearColor(i,1),e.appendChild(t.domElement),t}function o({renderer:e,outlinePass:i}){i==null||i.dispose(),e.dispose(),e.domElement.remove()}export{n as c,o as d};

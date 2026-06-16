@@ -62,27 +62,39 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Ariane 5 ECA",
+        "description": "Kourou, French Guiana, 2023-04-14. ESA's first L-class mission and the first European spacecraft to Jupiter. Juice (JUpiter ICy moons Explorer) targets the three Galilean ice moons — Ganymede, Callisto, Europa — to test whether their subsurface oceans could be habitable."
       },
       {
         "met_days": 493,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth + Moon — first-ever lunar gravity assist",
+        "description": "August 2024. The first spacecraft to use a Moon flyby (closest approach 700 km) followed by an Earth flyby (closest approach 6,800 km) within 24 hours — a coupled double assist that ESA engineers designed to bend Juice's trajectory toward Venus while saving ~100 m/s of ∆v versus a pure Earth-only flyby."
       },
       {
         "met_days": 871,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus — gravity assist",
+        "description": "August 2025. Closest approach ~9,000 km from Venus. The encounter raises Juice's aphelion enough that two more Earth assists in 2026 + 2029 will reach Jupiter. The Venus thermal environment is the hottest the spacecraft will face — passive thermal control was designed around this pass."
       },
       {
         "met_days": 1265,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #2 — gravity assist",
+        "description": "September 2026. Adds energy for the third leg of the cruise to Jupiter."
       },
       {
         "met_days": 2103,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth #3 — gravity assist",
+        "description": "January 2029. Final gravity assist before the direct trajectory to Jupiter — adds the last ~5 km/s needed for the long cruise to arrival in 2031."
       },
       {
         "met_days": 3020,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Jupiter orbit insertion",
+        "description": "Planned 2031-07. Multi-month capture burn into Jupiter orbit. After 35 Jupiter orbits with Europa + Callisto + Ganymede flybys, Juice will become the first spacecraft to orbit a moon other than Earth's (Ganymede) in 2034 — settling into a 5,000 km circular orbit to map the largest moon in the solar system."
       }
     ]
   }

@@ -1,0 +1,26 @@
+{
+  "name": "보스토크 3",
+  "type": "유인 지구 궤도 · 비행 완료",
+  "first": "최초의 동시 비행 랑데부 — 보스토크 4와 약 6.5 km 거리까지 접근",
+  "description": "안드리얀 니콜라예프의 64회 궤도 비행, 1962-08-11 08:30 UTC에 발사되었다. 발사 24시간 뒤 보스토크 4(포포비치)가 궤도에서 합류했다 — 최근접 거리는 약 6.5 km였으나 실제 랑데부 능력은 없었다(두 캡슐 모두 기동 추진기가 없었다). 동시 비행은 미국의 준궤도 임무와 존 글렌의 프렌드십 7에 대한 선전적 대응이었다. 니콜라예프는 우주에서 거의 4일을 보낸 뒤 1962-08-15 07:55 UTC 카자흐 SSR 카라간다 인근에 착륙했다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "VOSTOK 4 RDV",
+      "note": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
+      "type": "info"
+    },
+    {
+      "met": 3.98,
+      "label": "EJECT + LAND",
+      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

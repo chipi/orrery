@@ -1,0 +1,32 @@
+{
+  "name": "Vostok 1",
+  "type": "ÓRBITA TERRESTRE TRIPULADA · VOOU",
+  "first": "Primeiro humano no espaço; primeiro voo orbital tripulado",
+  "description": "O voo de uma única órbita de 108 minutos de Yuri Gagarin — o primeiro voo espacial tripulado da história e o primeiro humano a orbitar a Terra. Lançado em 12/04/1961 às 06:07 UTC de Baikonur em um lançador Vostok-K (8K72K); órbita 169 × 327 km, inclinação 65°. O módulo de descida esférico ejetou Gagarin a cerca de 7 km de altitude (um fato que a URSS ocultou por anos para reivindicar pouso tripulado completo segundo as regras da FAI). Gagarin desceu de paraquedas até Smelovka, oblast de Saratov; a cápsula pousou separadamente e está em exibição no Museu RKK Energia em Koroliov, Rússia. O voo encerrou uma década de trabalho de Korolev com mísseis/satélites e desencadeou o programa norte-americano de voos tripulados + o compromisso lunar de Kennedy seis semanas depois.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ORBIT INSERT",
+      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.063,
+      "label": "RETROFIRE",
+      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "type": "warning"
+    },
+    {
+      "met": 0.071,
+      "label": "CREW EJECT",
+      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "type": "info"
+    }
+  ]
+}

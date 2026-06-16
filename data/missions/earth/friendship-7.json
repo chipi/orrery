@@ -1,0 +1,45 @@
+{
+  "id": "friendship-7",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Space Task Group",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1962,
+  "status": "FLOWN",
+  "departure_date": "1962-02-20",
+  "arrival_date": "1962-02-20",
+  "transit_days": 0,
+  "vehicle": "Atlas LV-3B (MA-6)",
+  "payload": "Mercury capsule #13 (1955 kg); John Glenn",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Mercury mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Mercury-Atlas 6 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Atlas_6",
+      "t": "intro"
+    },
+    {
+      "l": "Friendship 7 at NASM",
+      "u": "https://airandspace.si.edu/collection-objects/capsule-mercury-ma-6-friendship-7",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "atlas-lv-3b",
+      "role": "launcher"
+    },
+    {
+      "id": "mercury-capsule",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-14",
+      "role": "launch-site"
+    }
+  ]
+}

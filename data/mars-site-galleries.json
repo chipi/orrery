@@ -1,17 +1,17 @@
 {
-  "beagle2": 2,
+  "beagle2": 1,
   "curiosity": 5,
   "exomars-rosalind-franklin": 1,
-  "hope": 5,
+  "hope": 4,
   "insight": 5,
-  "mangalyaan": 5,
+  "mangalyaan": 2,
   "mariner9": 5,
-  "mars-express": 5,
+  "mars-express": 3,
   "mars-odyssey": 5,
   "mars-pathfinder": 5,
-  "mars2": 5,
+  "mars2": 4,
   "mars3": 5,
-  "mars6": 3,
+  "mars6": 2,
   "maven": 5,
   "mro": 5,
   "opportunity": 5,
@@ -23,5 +23,5 @@
   "tianwen1-orbiter": 5,
   "viking1-lander": 5,
   "viking1-orbiter": 5,
-  "viking2-lander": 3
+  "viking2-lander": 2
 }

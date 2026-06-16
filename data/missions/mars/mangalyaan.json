@@ -68,35 +68,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — PSLV-XL",
+        "description": "Sriharikota, India, 2013-11-05. Mangalyaan (Mars Orbiter Mission, MOM) — ISRO's first interplanetary mission, launched on a Polar Satellite Launch Vehicle that lacked the energy for a direct Mars transfer. Solution: launch into Earth orbit and use 6 successive perigee burns to raise apogee until a final TMI burn could be done from a highly-elliptical Earth orbit."
       },
       {
         "met_days": 30,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection — final perigee burn",
+        "description": "2013-12-01. The 6th perigee burn — a 23-minute manoeuvre at 600 km altitude — finally sent Mangalyaan onto a heliocentric Mars-transfer trajectory after 25 days of Earth-orbit raising. Total mission cost was just $74M, the lowest-cost interplanetary mission in history."
       },
       {
         "met_days": 50,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cruise correction."
       },
       {
         "met_days": 97.62,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 150,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 250,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-MOI burn",
+        "description": "Final approach targeting before Mars orbit insertion."
       },
       {
         "met_days": 324,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach",
+        "description": "Pre-MOI checkout phase. 2014-09-24 arrival — 2 days after NASA's MAVEN reached Mars orbit; India became the 4th space agency to reach Mars and the first to succeed on its first attempt."
       },
       {
         "met_days": 324.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion",
+        "description": "24-minute main engine burn captured Mangalyaan into a highly-elliptical 366 × 80,000 km orbit. The mission was designed for 6 months but operated for ~9 years before contact was lost in April 2022. Returned the first global high-resolution mosaic of Mars + atmospheric methane observations."
       }
     ],
     "interplanetary_profile": {

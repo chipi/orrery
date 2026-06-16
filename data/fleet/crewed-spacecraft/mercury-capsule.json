@@ -30,40 +30,36 @@
   ],
   "flights": [
     {
-      "mission_id": "freedom7",
-      "flight_designation": "MR-3 Freedom 7 (1961-05-05)",
-      "crew": [
-        {
-          "name": "Alan Shepard",
-          "role": "Astronaut · first American in space",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "freedom-7",
+      "flight_designation": "Freedom 7 / MR-3 (1961-05-05) · Alan Shepard — first American in space; suborbital 15-min flight; capsule at JFK Library, Boston MA"
     },
     {
-      "mission_id": "friendship7",
-      "flight_designation": "MA-6 Friendship 7 (1962-02-20)",
-      "crew": [
-        {
-          "name": "John Glenn",
-          "role": "Astronaut · first American to orbit",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "liberty-bell-7",
+      "flight_designation": "Liberty Bell 7 / MR-4 (1961-07-21) · Gus Grissom — suborbital; hatch blew prematurely on splashdown; capsule sank, recovered 1999, displayed at Cosmosphere, Hutchinson KS"
     },
     {
-      "mission_id": "faith7",
-      "flight_designation": "MA-9 Faith 7 (1963-05-15)",
-      "crew": [
-        {
-          "name": "Gordon Cooper",
-          "role": "Astronaut · last Mercury flight",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "friendship-7",
+      "flight_designation": "Friendship 7 / MA-6 (1962-02-20) · John Glenn — first American to orbit; 3 orbits; capsule at NASM, Washington DC"
+    },
+    {
+      "mission_id": "aurora-7",
+      "flight_designation": "Aurora 7 / MA-7 (1962-05-24) · Scott Carpenter — 3 orbits; overshot landing target by 400 km; capsule at Museum of Science & Industry, Chicago IL"
+    },
+    {
+      "mission_id": "sigma-7",
+      "flight_designation": "Sigma 7 / MA-8 (1962-10-03) · Wally Schirra — first textbook Mercury flight (6 orbits); capsule at Astronaut Memorial Planetarium, Cocoa FL"
+    },
+    {
+      "mission_id": "faith-7",
+      "flight_designation": "Faith 7 / MA-9 (1963-05-15) · Gordon Cooper — last solo American crewed flight; 22 orbits / 34 h; capsule at Space Center Houston, TX"
     }
+  ],
+  "linked_missions": [
+    "aurora-7",
+    "faith-7",
+    "freedom-7",
+    "friendship-7",
+    "liberty-bell-7",
+    "sigma-7"
   ]
 }

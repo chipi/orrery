@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-12T21:51:47.411Z",
+  "source_audit": "mars-sites-hero-audit.md",
+  "overrides": {
+    "opportunity": {
+      "slot": "05.jpg",
+      "reason": "vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "phoenix": {
+      "slot": "05.jpg",
+      "reason": "score: 5 < threshold 6; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "mars-express": {
+      "slot": "05.jpg",
+      "reason": "vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "mro": {
+      "slot": "05.jpg",
+      "reason": "vision-rejected: score-below-threshold; subject names a different entity than mro",
+      "approved_at": "2026-06-12"
+    },
+    "mangalyaan": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than mangalyaan",
+      "approved_at": "2026-06-12"
+    },
+    "tgo": {
+      "slot": "03.jpg",
+      "reason": "category: diagram — not a hero candidate; score: 4 < threshold 6; vision-rejected: category-diagram; subject names a different entity than tgo",
+      "approved_at": "2026-06-12"
+    }
+  }
+}

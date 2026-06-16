@@ -1,0 +1,26 @@
+{
+  "id": "voskhod-11a57",
+  "name": "Voskhod (11A57)",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1 Korolev Bureau",
+  "first_flight": "1963-11-16",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
+  "credit": "Voskhod (GRAU index 11A57) was the next iteration of the R-7 family after Vostok-K, with uprated Blok-I third-stage engines for the heavier Voskhod capsule. Three-stage LOX + kerosene, 44 metres tall, 298 tonnes lift-off mass. Launched both crewed Voskhod flights (Voskhod 1 first 3-person crew in 1964; Voskhod 2 with Leonov's first EVA in 1965). After the Voskhod programme ended the 11A57 continued in service for ~300 uncrewed military / civilian satellite launches through 1976, when it was superseded by the Soyuz 11A511 line.",
+  "links": [
+    {
+      "l": "Voskhod (rocket) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voskhod_(rocket)",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "voskhod-1",
+    "voskhod-2"
+  ],
+  "linked_sites": []
+}

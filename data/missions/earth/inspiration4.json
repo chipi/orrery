@@ -1,0 +1,45 @@
+{
+  "id": "inspiration4",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp (commercial / private mission)",
+  "sector": "private",
+  "dest": "EARTH",
+  "color": "#005288",
+  "year": 2021,
+  "status": "FLOWN",
+  "departure_date": "2021-09-15",
+  "arrival_date": "2021-09-18",
+  "transit_days": 3,
+  "vehicle": "Falcon 9 Block 5 (B1062.3) + Crew Dragon C207 (Resilience)",
+  "payload": "~12000 kg LEO; 4 crew, no professional astronauts",
+  "delta_v": "~9.4 km/s (LEO; 585 km circular)",
+  "data_quality": "good",
+  "credit": "© SpaceX mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Inspiration4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Inspiration4",
+      "t": "intro"
+    },
+    {
+      "l": "Inspiration4 mission page (SpaceX)",
+      "u": "https://www.spacex.com/launches/inspiration-4/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
+      "id": "crew-dragon",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

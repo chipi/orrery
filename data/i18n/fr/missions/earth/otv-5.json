@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5 (USA-277)",
+  "type": "AVION SPATIAL SANS ÉQUIPAGE · VOLÉ",
+  "first": "USA-277 — 780 jours en orbite, Shuttle Landing Facility du KSC",
+  "description": "Cinquième vol du X-37B, premier lancement sur Falcon 9 au lieu d'Atlas V — et le seul vol X-37B sur une Falcon 9 Block 4. Lancé le 2017-09-07 à 14:00 UTC depuis KSC LC-39A (le premier étage récupéré en aval à LZ-1) ; a atterri à la KSC SLF le 2019-10-27 à 07:51 UTC. 780 jours en orbite. Premier vol X-37B vers une orbite à inclinaison plus élevée (54,5°) — élargit le schéma de survol suivi publiquement.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

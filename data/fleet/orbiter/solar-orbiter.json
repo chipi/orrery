@@ -1,0 +1,32 @@
+{
+  "id": "solar-orbiter",
+  "name": "Solar Orbiter",
+  "category": "orbiter",
+  "agency": "ESA / NASA",
+  "country": "Europe / USA",
+  "manufacturer": "Airbus Defence and Space",
+  "first_flight": "2020-02-10",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First mission to image the Sun's polar regions in detail; climbs to ~33° heliographic latitude via repeated Venus gravity assists",
+  "credit": "Added with /fly mission JSON (#341 batch 4 — Sun-skirter pair). ESA-led with NASA launch + one instrument contribution.",
+  "links": [
+    {
+      "l": "Solar Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Solar_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "Solar Orbiter — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter",
+      "t": "core"
+    },
+    {
+      "l": "Solar Orbiter — NASA",
+      "u": "https://science.nasa.gov/mission/solar-orbiter/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": ["solar-orbiter"]
+}

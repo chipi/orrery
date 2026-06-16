@@ -67,35 +67,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Delta II 7925H",
+        "description": "Cape Canaveral, 2004-08-03. The first Mercury orbiter — predecessor Mariner 10 (1974) only managed three flybys. MESSENGER (Mercury Surface, Space Environment, Geochemistry, and Ranging) took 6.5 years and six gravity assists to lose the orbital energy needed to capture into Mercury orbit."
       },
       {
         "met_days": 365,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist",
+        "description": "Closest approach 2,348 km on 2005-08-02. First of six gravity assists in the EVVMMM (Earth-Venus-Venus-Mercury-Mercury-Mercury) cruise plan. Each one removes orbital energy, the OPPOSITE of an outer-planet mission's energy gain."
       },
       {
         "met_days": 760,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #1 — gravity assist",
+        "description": "Closest approach 3,000 km on 2006-10-24. Mid-cruise instrument checkout flyby."
       },
       {
         "met_days": 998,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #2 — gravity assist",
+        "description": "Closest approach 338 km on 2007-06-05 — a much deeper pass than #1, removing significant heliocentric velocity."
       },
       {
         "met_days": 1474,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #1 — gravity assist",
+        "description": "Closest approach 200 km on 2008-01-14. First spacecraft to visit Mercury since Mariner 10's third flyby in 1975. Returned new imagery of the hemisphere Mariner 10 never saw."
       },
       {
         "met_days": 1858,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #2 — gravity assist",
+        "description": "Closest approach 200 km on 2008-10-06. Completed mapping of the previously-unobserved hemisphere — by the third flyby >95% of Mercury's surface had imagery for the first time in human history."
       },
       {
         "met_days": 2214,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #3 — gravity assist",
+        "description": "Closest approach 228 km on 2009-09-29. Final pre-orbit flyby — the trajectory was now tuned for Mercury orbital capture 17 months later."
       },
       {
         "met_days": 2419,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mercury orbit insertion",
+        "description": "2011-03-18. 15-minute main engine burn captured MESSENGER into a highly-elliptical 12-hour Mercury orbit — the first spacecraft to orbit Mercury. Mapped surface composition + topography for 4 years before exhausting fuel and impacting the surface on 2015-04-30 in a planned end-of-mission disposal."
       }
     ],
     "interplanetary_profile": {

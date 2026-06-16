@@ -40,7 +40,21 @@
           "URANUS",
           "COMET",
           "ASTEROID",
-          "SUN"
+          "SUN",
+          "BENNU",
+          "PSYCHE",
+          "VESTA",
+          "ARROKOTH",
+          "ITOKAWA",
+          "DIDYMOS",
+          "DIMORPHOS",
+          "DONALDJOHANSON",
+          "EURYBATES",
+          "POLYMELE",
+          "LEUCUS",
+          "ORUS",
+          "PATROCLUS",
+          "MENOETIUS"
         ]
       },
       "status": {
@@ -64,6 +78,10 @@
       "color": {
         "type": "string",
         "pattern": "^#[0-9A-Fa-f]{6}$"
+      },
+      "crewed": {
+        "type": "boolean",
+        "description": "True if any phase of the mission carried a crew. Derived offline from overlay.type containing 'CREWED' (see scripts/backfill-crewed-flag.mjs)."
       }
     }
   }

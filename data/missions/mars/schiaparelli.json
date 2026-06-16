@@ -73,35 +73,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-M / Briz-M",
+        "description": "Baikonur Cosmodrome, 2016-03-14. ExoMars 2016 carries the Trace Gas Orbiter (TGO) + Schiaparelli EDM (Entry, Descent and Landing Demonstrator Module) — Schiaparelli was a precursor designed to validate ESA's first powered Mars landing technology before the planned 2020 Rosalind Franklin rover."
       },
       {
         "met_days": 0.01,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Briz-M upper stage burn sends the stack on a 7-month Mars transfer."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
       },
       {
         "met_days": 120,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 216,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3 — final pre-separation",
+        "description": "Final approach targeting before Schiaparelli separates from TGO."
       },
       {
         "met_days": 216.5,
-        "type": "separation"
+        "type": "separation",
+        "label": "Schiaparelli separation from TGO",
+        "description": "2016-10-16. The lander released from the TGO carrier 3 days before atmospheric entry, on a slightly-modified ballistic trajectory toward Meridiani Planum."
       },
       {
         "met_days": 219,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Schiaparelli EDL — Mars Meridiani Planum",
+        "description": "2016-10-19. Parachute deployed at 11 km altitude, retrorockets fired. The lander broke the soft-landing requirement — it transmitted EDL telemetry continuously during descent, ESA's most-important objective."
       },
       {
         "met_days": 219.01,
-        "type": "anomaly"
+        "type": "anomaly",
+        "label": "Lander impact — IMU saturation",
+        "description": "The inertial measurement unit saturated during the parachute deceleration, leading the onboard software to believe the lander was already below the surface. It commanded a premature parachute jettison + thrust shutdown at ~3.7 km altitude. Schiaparelli impacted at 540 km/h. Post-mortem identified the software fault; lessons fed into the Rosalind Franklin rover EDL design. TGO entered Mars orbit successfully and continues to operate."
       }
     ],
     "interplanetary_profile": {

@@ -33,5 +33,27 @@
       "t": "core"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [],
+  "flights": [
+    {
+      "mission_id": "sts-1",
+      "flight_designation": "STS-1 (1981-04-12) · first Space Shuttle flight; Young + Crippen — first crewed test of a new US spacecraft in 25 years"
+    },
+    {
+      "mission_id": "sts-9",
+      "flight_designation": "STS-9 (1983-11-28) · first Spacelab mission; first 6-person Shuttle crew; first non-US ESA payload specialist (Merbold)"
+    },
+    {
+      "mission_id": "sts-32",
+      "flight_designation": "STS-32 (1990-01-09) · retrieved LDEF (Long Duration Exposure Facility) after 5.7 years in orbit"
+    },
+    {
+      "mission_id": "sts-93",
+      "flight_designation": "STS-93 (1999-07-23) · deployed Chandra X-ray Observatory; first Shuttle commanded by a woman (Collins)"
+    },
+    {
+      "mission_id": "sts-107",
+      "flight_designation": "STS-107 (2003-01-16) · LOST on re-entry 2003-02-01 — foam strike breached the RCC left-wing leading edge; all 7 crew (Husband, McCool, Anderson, Brown, Chawla, Clark, Ramon) perished"
+    }
+  ]
 }

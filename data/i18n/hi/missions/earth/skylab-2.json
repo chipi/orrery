@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 2",
+  "type": "मानवयुक्त स्टेशन क्रू · उड़ान पूर्ण",
+  "first": "Skylab की पहली मानवयुक्त यात्रा — क्षतिग्रस्त वर्कशॉप की मरम्मत की और कार्यक्रम को बचाया",
+  "description": "Conrad, Kerwin और Weitz — US Skylab अंतरिक्ष स्टेशन पर निवास करने वाला पहला दल। 1973-05-25 13:00 UTC को Saturn IB (SA-206) पर प्रक्षेपित, यह स्वयं Skylab के प्रक्षेपण के दौरान क्षतिग्रस्त होने के 11 दिन बाद हुआ (माइक्रोमेट्योरॉइड / सन शील्ड फट गया, एक सौर पंख को साथ ले गया और दूसरे को जाम कर दिया)। दल ने 28-दिवसीय बचाव कार्य निष्पादित किया: Weitz ने पहले दिन 38-मिनट के स्टैंड-अप EVA में जाम पंख को छुड़ाने की कोशिश की (असफल), फिर Conrad और Kerwin ने दिन 14 पर 3.5-घंटे के EVA में रोकने वाले स्ट्रैप को सफलतापूर्वक काटा, जिससे शक्ति बहाल हो गई। उन्होंने वैज्ञानिक एयरलॉक के माध्यम से Marshall-डिज़ाइन की गई पैरासोल थर्मल शील्ड तैनात की, जिसने कैबिन तापमान को 54°C से 24°C तक लाया। 1973-06-22 13:50 UTC को लौटे; CSM-116 राष्ट्रीय वायु एवं अंतरिक्ष संग्रहालय, वाशिंगटन डीसी में प्रदर्शित है।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.33,
+      "label": "DOCK",
+      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "EVA #2 — POWER RESTORED",
+      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.04,
+      "label": "SPLASHDOWN",
+      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "上升1号",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "首次多人乘员航天飞行 — 三名宇航员搭乘东方号衍生型飞船",
+  "description": "史上首次三人乘员航天飞行。科马罗夫、费奥克蒂斯托夫和叶戈罗夫于1964-10-12至1964-10-13搭乘大幅改装的东方号飞船(命名为上升号 / 'Voskhod')执行任务。弹射座椅被拆除，舱压系统经过重新评估，以容许三人不穿宇航服并排而坐 — 这是对计划中的美国双人乘员双子座飞行的一次宣传胜利，但也是残酷的妥协，乘员在发射或再入期间没有任何逃生能力。舱内空间局促，科马罗夫报告称24小时都能感觉到叶戈罗夫的呼吸喷在他的脖颈上。由于无法采用降落伞弹射，他们使用了新型固体火箭软着陆制动系统，于1964-10-13 07:47 UTC在哈萨克斯坦马列夫卡附近着陆。在他们处于轨道之时，赫鲁晓夫被罢黜；乘员归来时迎接他们的已是完全不同的苏联领导层。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8,
+      "label": "KHRUSHCHEV DEPOSED",
+      "note": "Soviet leadership change occurred during the flight.",
+      "type": "info"
+    },
+    {
+      "met": 1.01,
+      "label": "LAND",
+      "note": "Soft-landing retro-rocket touchdown near Marevka 1964-10-13 07:47 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

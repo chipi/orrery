@@ -31,45 +31,27 @@
   "flights": [
     {
       "mission_id": "soyuz-tm-2",
-      "flight_designation": "Soyuz TM-2 (1987-02-05) · first Mir long-duration crew",
-      "crew": [
-        {
-          "name": "Yuri Romanenko",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        },
-        {
-          "name": "Aleksandr Laveikin",
-          "role": "Engineer",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "flight_designation": "Soyuz TM-2 (1987-02-05) · Romanenko + Laveykin — first crew to Mir (TM-1 was uncrewed); 326 days"
+    },
+    {
+      "mission_id": "soyuz-tm-4",
+      "flight_designation": "Soyuz TM-4 (1987-12-21) · Titov + Manarov + Levchenko — Titov + Manarov: first 1-year spaceflight (365 days, returned via TM-6)"
+    },
+    {
+      "mission_id": "soyuz-tm-7",
+      "flight_designation": "Soyuz TM-7 (1988-11-26) · Volkov + Krikalev + Chrétien — first French citizen on Mir; 21-day Aragatz mission"
+    },
+    {
+      "mission_id": "soyuz-tm-12",
+      "flight_designation": "Soyuz TM-12 (1991-05-18) · Artsebarsky + Krikalev + Sharman — Helen Sharman: first Briton in space (Project Juno)"
+    },
+    {
+      "mission_id": "soyuz-tm-19",
+      "flight_designation": "Soyuz TM-19 (1994-07-01) · Malenchenko + Musabayev — first post-USSR cosmonaut crew to Mir"
     },
     {
       "mission_id": "soyuz-tm-31",
-      "flight_designation": "Soyuz TM-31 (2000-10-31) · first ISS Expedition crew",
-      "crew": [
-        {
-          "name": "Yuri Gidzenko",
-          "role": "Soyuz commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Sergei Krikalev",
-          "role": "ISS flight engineer",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "William Shepherd",
-          "role": "ISS commander",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Soyuz TM-31 (2000-10-31) · Shepherd + Krikalev + Gidzenko — Expedition 1 — first crew to ISS"
     }
   ]
 }

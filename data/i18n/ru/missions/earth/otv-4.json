@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
+  "type": "БЕСПИЛОТНЫЙ КОСМОПЛАН · СОВЕРШИЛ ПОЛЁТ",
+  "first": "USA-261 / AFSPC-5 — 718 дней на орбите, Shuttle Landing Facility KSC",
+  "description": "Четвёртый полёт X-37B. Запущен 2015-05-20 в 15:05 UTC с CCAFS SLC-41 на ракете Atlas V 501 AV-054; первая посадка OTV на Shuttle Landing Facility Космического центра Кеннеди (та же 4,6-километровая полоса, ранее использовавшаяся орбитальными аппаратами «Спейс шаттла») 2017-05-07 в 11:47 UTC. На борту находились эксперимент AFRL с двигателем на эффекте Холла (XR-5A, ионная тяга) и испытательный стенд NASA для воздействия на материалы.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~325 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 718,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "type": "nominal"
+    }
+  ]
+}

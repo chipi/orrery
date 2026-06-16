@@ -1,0 +1,38 @@
+{
+  "name": "Восход-2",
+  "type": "ПИЛОТИРАНА ЗЕМЉИНА ОРБИТА · ИЗВЕДЕН",
+  "first": "Прва ваневозилска активност (Љонов, 12 мин, 18. 3. 1965)",
+  "description": "Једнодневни лет Павла Бељајева и Алексеја Љонова — прва EVA у историји. Љонов је провео 12 минута ван Восхода 2 (18. 3. 1965. у 11.34 UTC), под притиском кроз надувну Волга ваздушну комору коју су совјетски инжењери додали јер труп Восхода није имао простора за потпуну декомпресију. Љонову је одело набубрило у вакууму и заглавило га ван ваздушне коморе; морао је да испусти притисак одела да би се вратио, повећавајући ризик од декомпресионе болести. Повратак је био подједнако драматичан — аутоматски систем за слетање је отказао, а Бељајев је ручно пилотирао модул за спуштање до тврдог слетања у дубоки урални снег ~390 km ван циља; посада је преживела ноћ у шуми међу вуковима пре него што су спасилачки хеликоптери стигли 20. 3. 1965.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

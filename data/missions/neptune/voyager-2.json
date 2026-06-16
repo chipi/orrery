@@ -73,23 +73,33 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Titan IIIE / Centaur",
+        "description": "Cape Canaveral, 1977-08-20. Launched 16 days BEFORE its twin Voyager 1, but on a slower trajectory that threads all four outer planets. The Grand Tour was the actual purpose — only Voyager 2's geometry could reach Uranus and Neptune via successive gravity assists. The alignment that made it possible was identified by Gary Flandro at JPL in 1965 and won't recur for ~175 years."
       },
       {
         "met_days": 688,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist",
+        "description": "Closest approach 721,670 km on 1979-07-09. Discovers Europa's smooth water-ice surface and the first detailed images of Ganymede's bright/dark terrain; confirms Voyager 1's volcanic Io observations. Jupiter's gravity bends the trajectory outward toward Saturn 26 months later, the first of three planetary assists this mission will make."
       },
       {
         "met_days": 1466,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Saturn — gravity assist",
+        "description": "Closest approach 101,000 km on 1981-08-26. Returns the most detailed Saturn-ring imagery to date (spokes, braided F-ring) and reveals the gross structure of Hyperion's chaotic tumble. The encounter geometry was constrained to thread the parking gate between Uranus and the deep south of the ecliptic — the only path that keeps both ice giants reachable."
       },
       {
         "met_days": 3079,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Uranus — gravity assist",
+        "description": "Closest approach 81,500 km on 1986-01-24 — the only spacecraft visit to Uranus to date. Reveals the planet's extreme 98° axial tilt, 10 new moons, and a tilted magnetic field. Voyager 2's geometry takes it through the ring plane at 14.5 km/s; the slingshot then has to bend the trajectory ~50° to reach Neptune three years later."
       },
       {
         "met_days": 4388,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Neptune — flyby + Triton probe",
+        "description": "Closest approach 4,950 km above Neptune's cloud tops on 1989-08-25 — closer than any other Voyager planet pass and the only spacecraft visit to Neptune ever. Five hours later flies past Triton at 40,000 km, imaging active nitrogen geysers on the moon's nitrogen-ice surface. With no remaining planetary target, the geometry bends the trajectory ~48° below the ecliptic; Voyager 2 crossed the heliopause on 2018-11-05."
       }
     ],
     "interplanetary_profile": {

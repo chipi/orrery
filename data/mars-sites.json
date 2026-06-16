@@ -25,6 +25,10 @@
       {
         "id": "mars-2",
         "role": "spacecraft"
+      },
+      {
+        "id": "mars2-orbiter",
+        "role": "spacecraft"
       }
     ],
     "links": [

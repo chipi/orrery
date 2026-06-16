@@ -27,5 +27,6 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-033B",
       "t": "deep"
     }
-  ]
+  ],
+  "linked_missions": ["magellan"]
 }

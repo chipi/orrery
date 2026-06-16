@@ -1,0 +1,32 @@
+{
+  "name": "灵感四号",
+  "type": "载人自由飞行 · 已飞行",
+  "first": "首次全平民轨道航天飞行；为圣裘德儿童研究医院筹集2.43亿美元",
+  "description": "贾里德·艾萨克曼、西安·普罗克特、海莉·阿西诺和克里斯·森布罗斯基 — 首次完全由非职业政府宇航员的人士组成的轨道乘组。2021-09-15 00:02 UTC自LC-39A由猎鹰9号B1062(第三次飞行)发射，搭乘载人龙飞船坚韧号(C207，此前曾执行Crew-1任务)。进入585公里、倾角51.6°的圆轨道 — 是自哈勃维修任务以来最高的载人轨道。未与任何空间站对接；三天自由飞行，包括首次在轨配备的舷窗穹顶(替换了对接适配器)。2021-09-18 23:06 UTC于佛罗里达海岸附近溅落。任务为圣裘德儿童研究医院筹集了超过2.43亿美元 — 阿西诺曾是圣裘德的患者，并是首位进入轨道的癌症幸存者。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.05,
+      "label": "ORBIT",
+      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "CUPOLA WINDOW",
+      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "type": "info"
+    },
+    {
+      "met": 2.96,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

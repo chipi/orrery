@@ -1,0 +1,45 @@
+{
+  "id": "liberty-bell-7",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Space Task Group",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1961,
+  "status": "FLOWN",
+  "departure_date": "1961-07-21",
+  "arrival_date": "1961-07-21",
+  "transit_days": 0,
+  "vehicle": "Mercury-Redstone (MR-8)",
+  "payload": "Mercury capsule #11 (1832 kg); Gus Grissom",
+  "delta_v": "~2.3 km/s (suborbital)",
+  "data_quality": "good",
+  "credit": "© NASA — Mercury mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Mercury-Redstone 4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_4",
+      "t": "intro"
+    },
+    {
+      "l": "Liberty Bell 7 recovery — Cosmosphere",
+      "u": "https://cosmo.org/visit/liberty-bell-7/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "mercury-redstone",
+      "role": "launcher"
+    },
+    {
+      "id": "mercury-capsule",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-5",
+      "role": "launch-site"
+    }
+  ]
+}

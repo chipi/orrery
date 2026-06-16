@@ -72,53 +72,77 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Long March 5",
+        "description": "Wenchang, China, 2020-11-23. Chang'e 5 — first sample return from the Moon since Soviet Luna 24 (1976), 44 years. CNSA's first multi-component robotic mission: orbiter + ascender + lander + Earth-return capsule, all stacked for one launch."
       },
       {
         "met_days": 0.05,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Long March 5 upper stage burn sends Chang'e 5 directly on translunar trajectory."
       },
       {
         "met_days": 1.04,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First post-TLI cleanup."
       },
       {
         "met_days": 1.78,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 2.52,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 3,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-4",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 3.27,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-5 — final pre-LOI",
+        "description": "Final approach targeting."
       },
       {
         "met_days": 5,
         "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "2020-11-28. Captured into 200-km circular lunar orbit.",
         "dv_km_s": 0.8
       },
       {
         "met_days": 8,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "Powered descent — Mons Rümker",
+        "description": "2020-12-01. Lander descended to Mons Rümker (43.06°N, 51.92°W) in Oceanus Procellarum — one of the youngest large lava-flow regions on the Moon. Drilled to ~1 m + scooped surface regolith, collecting 1,731 g."
       },
       {
         "met_days": 10,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "Ascent + lunar rendezvous",
+        "description": "2020-12-03. Ascender lifted off the surface, rendezvoused + docked with the orbiter — China's first robotic rendezvous + docking around another body."
       },
       {
         "met_days": 17,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "2020-12-12. Orbiter departed lunar orbit on return trajectory.",
         "dv_km_s": 0.9
       },
       {
         "met_days": 23,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Sample return capsule landing — Inner Mongolia",
+        "description": "2020-12-17. Capsule re-entered Earth's atmosphere using a skip-entry maneuver, parachuted to a soft landing in Inner Mongolia. Samples are some of the youngest lunar volcanic rocks (~1.97 Gyr) ever returned — extending the known Moon volcanism timeline."
       }
     ],
     "cislunar_profile": {

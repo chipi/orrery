@@ -1,0 +1,32 @@
+{
+  "name": "스카이랩 4",
+  "type": "유인 우주정거장 승무원 · 비행 완료",
+  "first": "스카이랩 최장 체류 — 84일, 코호우텍 혜성 관측, '스카이랩 파업' 휴무일 분쟁",
+  "description": "카, 깁슨, 포그 — 스카이랩의 마지막이자 최장 승무원, 84일 1시간, 전원 초보. 1973-11-16 14:01 UTC 새턴 IB(SA-208)로 발사되었다. 12월–1월에 걸친 코호우텍 혜성 전면 캠페인을 포함해 종합적인 지구 자원 및 태양 관측을 수행했다. 이 임무는 45일째의 비공식 '스카이랩 파업'으로 가장 잘 기억된다 — 끊임없는 지상 관제의 요구가 깨어 있는 매 분을 압박하자 승무원은 반나절 동안 무선을 껐다 — 이 분쟁은 장기 임무에서의 NASA 승무원 타임라인 계획에 영구적인 개혁을 가져왔다. 1974-02-08 15:17 UTC에 착수했고, 이는 2020년 스페이스X 크루 드래건 이전까지 미국의 마지막 유인 수상 착수였다. CSM-118은 오하이오주 데이턴의 미국 공군 국립박물관에 전시되어 있다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

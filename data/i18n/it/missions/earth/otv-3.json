@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-3 (USA-240)",
+  "type": "AEREO SPAZIALE SENZA EQUIPAGGIO · VOLATO",
+  "first": "USA-240 — 675 giorni in orbita, Vandenberg AFB",
+  "description": "Terzo volo dell'X-37B, riutilizzo del veicolo di volo OTV-1. Lanciato il 2012-12-11 alle 18:03 UTC da CCAFS SLC-41 su un Atlas V 501 AV-034; atterrato alla Vandenberg AFB il 2014-10-17 alle 16:24 UTC. 675 giorni in orbita. Operazioni interrotte per 16 giorni quando il fallimento del lancio Antares CRS-3 sull'infrastruttura adiacente del CCAFS ha brevemente ostacolato le finestre di supporto USSF.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-034) from CCAFS SLC-41 2012-12-11.",
+      "type": "nominal"
+    },
+    {
+      "met": 337.5,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 675,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg AFB 2014-10-17.",
+      "type": "nominal"
+    }
+  ]
+}

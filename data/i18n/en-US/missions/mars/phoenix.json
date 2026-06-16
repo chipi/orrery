@@ -1,0 +1,15 @@
+{
+  "name": "Phoenix",
+  "type": "LANDER · FLOWN",
+  "first": "First confirmation of water ice in the Martian arctic regolith; first soft propulsive Mars landing since Viking 2",
+  "description": "Phoenix was salvaged from the cancelled Mars Surveyor 2001 program — flight hardware in storage for six years, reassembled and retargeted to the Martian north polar plains. The name was chosen literally. Landed 2008-05-25 at 68.22°N, 234.25°E on Vastitas Borealis, further north than any prior surface mission. Within days the robotic arm scraped through topsoil and exposed bright white ice that visibly sublimated on camera over four sols — direct confirmation of subsurface water ice in the Martian arctic. Detected perchlorates in the regolith and observed snow falling from clouds. Mission ended 2008-11-02 as solar power fell below operational threshold at the onset of Mars winter; the lander was never expected to survive the polar night.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Delta II 7925-9.5 from Cape Canaveral LC-17A.", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 294, "label": "TCM-6", "note": "Final pre-EDL trim 21 hours before entry.", "type": "nominal" },
+    { "met": 295, "label": "EDL", "note": "Aeroshell, supersonic parachute, twelve hydrazine retro-rockets — Viking-style propulsive descent.", "type": "info" },
+    { "met": 295.01, "label": "TOUCHDOWN", "note": "Soft landing at 68.22°N, 234.25°E — northernmost Mars surface mission.", "type": "info" },
+    { "met": 302, "label": "ICE EXPOSED", "note": "Arm scrapes through topsoil. Bright white ice sublimates on camera over 4 sols.", "type": "info" },
+    { "met": 458, "label": "MISSION END", "note": "2008-11-02. Mars winter; solar power below operations threshold.", "type": "warning" }
+  ]
+}

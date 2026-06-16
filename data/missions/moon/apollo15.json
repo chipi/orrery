@@ -59,5 +59,32 @@
       "id": "lc-39a",
       "role": "launch-site"
     }
-  ]
+  ],
+  "flight": {
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 169,
+        "inclination_deg": 29.7,
+        "revs": 1.5
+      },
+      "tli": {
+        "dv_kms": 3.04,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "hybrid_free_return"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 113,
+        "inclination_deg": 26,
+        "periselene_km": 17.7
+      },
+      "return": {
+        "type": "tei_direct",
+        "dv_kms": 1
+      }
+    }
+  }
 }

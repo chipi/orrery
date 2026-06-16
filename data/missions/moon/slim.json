@@ -72,35 +72,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — H-IIA",
+        "description": "Tanegashima, Japan, 2023-09-07. SLIM (Smart Lander for Investigating Moon) — JAXA's first lunar landing attempt. Designed to demonstrate \"pinpoint\" landing — better than 100-m accuracy versus the kilometres of dispersion in earlier Moon landings."
       },
       {
         "met_days": 0.05,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "H-IIA upper stage burn places SLIM on a long-duration energy-efficient transfer."
       },
       {
         "met_days": 25.34,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 45.13,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 64.92,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-LOI",
+        "description": "Final approach targeting before lunar orbit insertion."
       },
       {
         "met_days": 110,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "2023-12-25. Captured into a 600 × 4,000 km polar orbit. JAXA spent ~30 days lowering perilune to ~15 km for the descent."
       },
       {
         "met_days": 135,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar pinpoint landing — Shioli crater",
+        "description": "2024-01-19. SLIM landed within 55 m of its target point inside Shioli crater (13.3°S, 25.2°E) — the most precise lunar landing of any mission ever. Japan becomes the 5th nation to soft-land on the Moon. The landing posture was off-nominal (a thrust-vector anomaly tipped the lander on its side), but the solar panels later caught sunlight 9 days into the lunar day and the mission returned surface science."
       }
     ],
     "cislunar_profile": {

@@ -1,0 +1,32 @@
+{
+  "name": "Shenzhou 1",
+  "type": "CREW-RATED TEST · UNCREWED · FLOWN",
+  "first": "China's first Shenzhou orbital test — opened the path to crewed PRC spaceflight",
+  "description": "First flight of the Shenzhou crewed-spacecraft programme. Launched 1999-11-20 22:30 UTC from Jiuquan on the inaugural flight of the human-rated Long March 2F (CZ-2F). The capsule completed 14 orbits at 196 × 324 km, 42.6° inclination, and re-entered to recovery on the Inner Mongolia steppe 1999-11-21 19:41 UTC. Carried mock-up life-support hardware, telemetry packages, and a Chinese flag, plus seeds for a microgravity-genetics return cargo. Marked China's commitment to follow the USSR / USA into independent crewed spaceflight; led directly to Shenzhou 5 (2003) with Yang Liwei.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F maiden flight from Jiuquan SLC-43 at 22:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT",
+      "note": "14-orbit flight at 196 × 324 km, 42.6° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.875,
+      "label": "DE-ORBIT",
+      "note": "Service-module retro-fire over Africa.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.882,
+      "label": "RECOVERY",
+      "note": "Capsule descended to Siziwang Banner, Inner Mongolia, 1999-11-21 19:41 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

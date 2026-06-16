@@ -78,15 +78,21 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Titan IIIE / Centaur",
+        "description": "Cape Canaveral, 1977-09-05. Launched 16 days AFTER Voyager 2 but on a higher-energy direct trajectory that overtakes its twin en route to Jupiter. Gary Flandro's Grand Tour mission profile exploits a late-1970s outer-planet alignment that won't recur for ~175 years; the chemical engine alone can't reach Saturn, so Jupiter's gravity does the bending."
       },
       {
         "met_days": 546,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist",
+        "description": "Closest approach 348,890 km from the cloud tops on 1979-03-05. The encounter discovers Jupiter's rings, captures Io's active volcanism (Linda Morabito's chance pixel), and maps the magnetic-field structure that traps the Io plasma torus. Jupiter's gravity slingshots Voyager 1 to ~17 km/s heliocentric, set up for Titan's haze at Saturn 21 months later."
       },
       {
         "met_days": 1164,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Saturn — flyby + Titan probe",
+        "description": "Closest approach 124,000 km from Saturn on 1980-11-12; the prior day Voyager 1 passes within 6500 km of Titan to probe its nitrogen haze. The Titan-targeted geometry bends the trajectory 35° upward out of the ecliptic plane, ending any future planetary encounter — Voyager 1 is now committed to interstellar space. Heliopause crossing followed on 2012-08-25; the spacecraft is the most distant human-made object."
       }
     ],
     "interplanetary_profile": {

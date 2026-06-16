@@ -1,0 +1,50 @@
+{
+  "id": "vostok-1",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet Academy of Sciences / OKB-1 Korolev Bureau (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#cc4444",
+  "year": 1961,
+  "status": "FLOWN",
+  "departure_date": "1961-04-12",
+  "arrival_date": "1961-04-12",
+  "transit_days": 0,
+  "vehicle": "Vostok-K (8K72K)",
+  "payload": "4725 kg launch mass; spherical descent module + service module",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© Roscosmos mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Vostok 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vostok_1",
+      "t": "intro"
+    },
+    {
+      "l": "Yuri Gagarin — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Yuri_Gagarin",
+      "t": "core"
+    },
+    {
+      "l": "Vostok 1 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1961-012A",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "vostok-k",
+      "role": "launcher"
+    },
+    {
+      "id": "vostok",
+      "role": "spacecraft"
+    },
+    {
+      "id": "gagarins-start",
+      "role": "launch-site"
+    }
+  ]
+}

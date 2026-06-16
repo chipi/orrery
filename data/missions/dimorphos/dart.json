@@ -1,0 +1,714 @@
+{
+  "id": "dart",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Johns Hopkins Applied Physics Laboratory (lead)",
+  "sector": "gov",
+  "dest": "DIMORPHOS",
+  "color": "#0B3D91",
+  "year": 2021,
+  "status": "FLOWN",
+  "departure_date": "2021-11-24",
+  "arrival_date": "2022-09-26",
+  "transit_days": 306,
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "611 kg (incl. 50 kg xenon for NEXT-C ion thruster demonstrator)",
+  "delta_v": "~3.7 km/s (mission cruise; 6.14 km/s impact velocity)",
+  "data_quality": "good",
+  "credit": "© NASA / JHU APL — public domain. First demonstration of kinetic-impactor planetary defense. Successfully deflected Dimorphos's orbital period around Didymos by 33 minutes, exceeding the 73-second success threshold by ~25×.",
+  "links": [
+    {
+      "l": "Double Asteroid Redirection Test — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
+      "t": "intro"
+    },
+    {
+      "l": "DART (NASA)",
+      "u": "https://science.nasa.gov/mission/dart/",
+      "t": "intro"
+    },
+    {
+      "l": "Rivkin et al. (2023) — DART mission overview (Planetary Science Journal)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/acb5fd",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "dart",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 Block 5 second stage",
+      "c3_km2_s2": 4.5,
+      "mass_at_tli_kg": 611,
+      "source": "NASA DART Press Kit (2021-11); Rivkin et al. (2023)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "JHU/APL DART Mission Operations Report; final tracking handoff to onboard SMART Nav 4 hours pre-impact"
+    },
+    "arrival": {
+      "v_infinity_km_s": 6.14,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "JHU/APL DART Mission Operations Report; closing velocity at impact 6.14 km/s; no orbit insertion (kinetic impactor)"
+    },
+    "totals": {
+      "total_dv_km_s": 3.7,
+      "tli_or_tmi_dv_km_s": 3.4,
+      "source": "NASA DART Press Kit (2021-11)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon 9 Block 5",
+        "description": "Vandenberg SLC-4E, 2021-11-24. DART (Double Asteroid Redirection Test) was the first dedicated planetary-defense mission — a kinetic impactor designed to demonstrate that a small spacecraft hitting an asteroid hard enough could measurably change its orbit, a technique that could deflect a real impact threat with sufficient lead time."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-asteroid injection",
+        "description": "Falcon 9 second stage delivers DART onto an Earth-trailing heliocentric trajectory targeting the Didymos binary system."
+      },
+      {
+        "met_days": 150,
+        "type": "tcm",
+        "label": "Mid-cruise refinement",
+        "description": "First major mid-course correction. Cumulative ion-thruster firings during cruise demonstrate the NEXT-C electric propulsion subsystem."
+      },
+      {
+        "met_days": 306,
+        "type": "arrival",
+        "label": "Didymos system approach",
+        "description": "2022-09-26. DART enters the gravitational sphere of the Didymos binary asteroid system. SMART Nav (Small-body Maneuvering Autonomous Real Time Navigation) takes over targeting from ground control 4 hours before impact — the spacecraft must autonomously distinguish Dimorphos (160-m moonlet) from Didymos (780-m parent) and hit the smaller of the two."
+      },
+      {
+        "met_days": 306.001,
+        "type": "edl_or_oi",
+        "label": "Dimorphos kinetic impact",
+        "description": "23:14 UTC, 2022-09-26. DART struck Dimorphos at 6.14 km/s. Final images from DRACO camera resolved boulders on the surface in the last few seconds. The 611-kg spacecraft delivered ~11 GJ of kinetic energy. Orbital-period change measured from Earth: 33 minutes shorter (4.2% reduction in Dimorphos's 11.9-hour orbit around Didymos), exceeding the 73-second success threshold by ~25× — the momentum-transfer enhancement factor β ≈ 3.6 indicates significant momentum carry from ejected surface material. First demonstration that humans can move an asteroid."
+      },
+      {
+        "met_days": 306.002,
+        "type": "anomaly",
+        "label": "Loss of signal",
+        "description": "DART transmitted nominal telemetry up to ~3 seconds before impact, then loss of signal as expected. The CubeSat LICIACube (deployed 15 days before impact) flew past at 1,000 km altitude, imaging the impact plume in real time. Hubble Space Telescope and the JWST also observed the ejecta tail in the days that followed."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "dimorphos",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 1,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.453479,
+          0,
+          0.891267
+        ],
+        [
+          3.2455,
+          0.435852,
+          0,
+          0.906418
+        ],
+        [
+          6.491,
+          0.418007,
+          0,
+          0.921233
+        ],
+        [
+          9.7364,
+          0.399942,
+          0,
+          0.93571
+        ],
+        [
+          12.9819,
+          0.381472,
+          0,
+          0.949579
+        ],
+        [
+          16.2274,
+          0.362743,
+          0,
+          0.963073
+        ],
+        [
+          19.4729,
+          0.343778,
+          0,
+          0.976229
+        ],
+        [
+          22.7183,
+          0.324402,
+          0,
+          0.988811
+        ],
+        [
+          25.9638,
+          0.304722,
+          0,
+          1.000988
+        ],
+        [
+          29.2093,
+          0.284785,
+          0,
+          1.012832
+        ],
+        [
+          32.4548,
+          0.264429,
+          0,
+          1.024146
+        ],
+        [
+          35.7002,
+          0.243713,
+          0,
+          1.035034
+        ],
+        [
+          38.9457,
+          0.222718,
+          0,
+          1.045597
+        ],
+        [
+          42.1912,
+          0.201295,
+          0,
+          1.055682
+        ],
+        [
+          45.4367,
+          0.179449,
+          0,
+          1.065325
+        ],
+        [
+          48.6821,
+          0.157297,
+          0,
+          1.074658
+        ],
+        [
+          51.9276,
+          0.134709,
+          0,
+          1.083566
+        ],
+        [
+          55.1731,
+          0.111627,
+          0,
+          1.092024
+        ],
+        [
+          58.4186,
+          0.08821,
+          0,
+          1.100188
+        ],
+        [
+          61.664,
+          0.064352,
+          0,
+          1.107979
+        ],
+        [
+          64.9095,
+          0.03992,
+          0,
+          1.115316
+        ],
+        [
+          68.155,
+          0.015122,
+          0,
+          1.122378
+        ],
+        [
+          71.4005,
+          -0.010117,
+          0,
+          1.129115
+        ],
+        [
+          74.6459,
+          -0.036016,
+          0,
+          1.135396
+        ],
+        [
+          77.8914,
+          -0.062314,
+          0,
+          1.141418
+        ],
+        [
+          81.1369,
+          -0.089047,
+          0,
+          1.147158
+        ],
+        [
+          84.3824,
+          -0.116533,
+          0,
+          1.15244
+        ],
+        [
+          87.6278,
+          -0.144449,
+          0,
+          1.157472
+        ],
+        [
+          90.8733,
+          -0.172795,
+          0,
+          1.162256
+        ],
+        [
+          94.1188,
+          -0.201976,
+          0,
+          1.166579
+        ],
+        [
+          97.3643,
+          -0.231623,
+          0,
+          1.170654
+        ],
+        [
+          100.6097,
+          -0.26173,
+          0,
+          1.174485
+        ],
+        [
+          103.8552,
+          -0.292673,
+          0,
+          1.177882
+        ],
+        [
+          107.1007,
+          -0.324155,
+          0,
+          1.181002
+        ],
+        [
+          110.3462,
+          -0.356122,
+          0,
+          1.183874
+        ],
+        [
+          113.5917,
+          -0.388915,
+          0,
+          1.186324
+        ],
+        [
+          116.8371,
+          -0.422322,
+          0,
+          1.188457
+        ],
+        [
+          120.0826,
+          -0.456233,
+          0,
+          1.190326
+        ],
+        [
+          123.3281,
+          -0.490948,
+          0,
+          1.19177
+        ],
+        [
+          126.5736,
+          -0.526347,
+          0,
+          1.192838
+        ],
+        [
+          129.819,
+          -0.562264,
+          0,
+          1.193616
+        ],
+        [
+          133.0645,
+          -0.598948,
+          0,
+          1.19395
+        ],
+        [
+          136.31,
+          -0.636379,
+          0,
+          1.193829
+        ],
+        [
+          139.5555,
+          -0.674333,
+          0,
+          1.193374
+        ],
+        [
+          142.8009,
+          -0.713005,
+          0,
+          1.192448
+        ],
+        [
+          146.0464,
+          -0.752472,
+          0,
+          1.190957
+        ],
+        [
+          150,
+          -0.801325,
+          0,
+          1.188555
+        ],
+        [
+          152.5374,
+          -0.833098,
+          0,
+          1.186688
+        ],
+        [
+          155.7828,
+          -0.874565,
+          0,
+          1.183592
+        ],
+        [
+          159.0283,
+          -0.916531,
+          0,
+          1.180036
+        ],
+        [
+          162.2738,
+          -0.959077,
+          0,
+          1.175929
+        ],
+        [
+          165.5193,
+          -1.002455,
+          0,
+          1.170938
+        ],
+        [
+          168.7647,
+          -1.046297,
+          0,
+          1.165399
+        ],
+        [
+          172.0102,
+          -1.090632,
+          0,
+          1.15927
+        ],
+        [
+          175.2557,
+          -1.13577,
+          0,
+          1.15204
+        ],
+        [
+          178.5012,
+          -1.18132,
+          0,
+          1.144163
+        ],
+        [
+          181.7466,
+          -1.227279,
+          0,
+          1.135635
+        ],
+        [
+          184.9921,
+          -1.273943,
+          0,
+          1.125801
+        ],
+        [
+          188.2376,
+          -1.320959,
+          0,
+          1.115185
+        ],
+        [
+          191.4831,
+          -1.36831,
+          0,
+          1.103808
+        ],
+        [
+          194.7285,
+          -1.416183,
+          0,
+          1.091003
+        ],
+        [
+          197.974,
+          -1.464339,
+          0,
+          1.077216
+        ],
+        [
+          201.2195,
+          -1.51273,
+          0,
+          1.062548
+        ],
+        [
+          204.465,
+          -1.561442,
+          0,
+          1.04635
+        ],
+        [
+          207.7104,
+          -1.610318,
+          0,
+          1.028939
+        ],
+        [
+          210.9559,
+          -1.659303,
+          0,
+          1.01053
+        ],
+        [
+          214.2014,
+          -1.708389,
+          0,
+          0.990509
+        ],
+        [
+          217.4469,
+          -1.757462,
+          0,
+          0.969028
+        ],
+        [
+          220.6924,
+          -1.806489,
+          0,
+          0.946435
+        ],
+        [
+          223.9378,
+          -1.855385,
+          0,
+          0.92218
+        ],
+        [
+          227.1833,
+          -1.904023,
+          0,
+          0.89621
+        ],
+        [
+          230.4288,
+          -1.952432,
+          0,
+          0.869026
+        ],
+        [
+          233.6743,
+          -2.00047,
+          0,
+          0.840171
+        ],
+        [
+          236.9197,
+          -2.047931,
+          0,
+          0.809351
+        ],
+        [
+          240.1652,
+          -2.094948,
+          0,
+          0.777237
+        ],
+        [
+          243.4107,
+          -2.141361,
+          0,
+          0.743487
+        ],
+        [
+          246.6562,
+          -2.186795,
+          0,
+          0.707547
+        ],
+        [
+          249.9016,
+          -2.231543,
+          0,
+          0.670264
+        ],
+        [
+          253.1471,
+          -2.275469,
+          0,
+          0.631427
+        ],
+        [
+          256.3926,
+          -2.31793,
+          0,
+          0.590224
+        ],
+        [
+          259.6381,
+          -2.359443,
+          0,
+          0.547667
+        ],
+        [
+          262.8835,
+          -2.399941,
+          0,
+          0.50369
+        ],
+        [
+          266.129,
+          -2.43841,
+          0,
+          0.457239
+        ],
+        [
+          269.3745,
+          -2.475655,
+          0,
+          0.409476
+        ],
+        [
+          272.62,
+          -2.511663,
+          0,
+          0.360403
+        ],
+        [
+          275.8654,
+          -2.545154,
+          0,
+          0.308981
+        ],
+        [
+          279.1109,
+          -2.577072,
+          0,
+          0.256278
+        ],
+        [
+          282.3564,
+          -2.607474,
+          0,
+          0.202365
+        ],
+        [
+          285.6019,
+          -2.635043,
+          0,
+          0.146443
+        ],
+        [
+          288.8473,
+          -2.660595,
+          0,
+          0.089285
+        ],
+        [
+          292.0928,
+          -2.684367,
+          0,
+          0.031081
+        ],
+        [
+          295.3383,
+          -2.705073,
+          0,
+          -0.028728
+        ],
+        [
+          298.5838,
+          -2.723299,
+          0,
+          -0.089626
+        ],
+        [
+          301.8292,
+          -2.739513,
+          0,
+          -0.151349
+        ],
+        [
+          306.002,
+          -2.756239,
+          0,
+          -0.23217
+        ],
+        [
+          308.3202,
+          -2.755802,
+          0,
+          -0.237298
+        ],
+        [
+          311.5657,
+          -2.755802,
+          0,
+          -0.237298
+        ],
+        [
+          314.8111,
+          -2.755802,
+          0,
+          -0.237298
+        ],
+        [
+          318.0566,
+          -2.755802,
+          0,
+          -0.237298
+        ],
+        [
+          321.3021,
+          -2.755802,
+          0,
+          -0.237298
+        ]
+      ]
+    }
+  }
+}

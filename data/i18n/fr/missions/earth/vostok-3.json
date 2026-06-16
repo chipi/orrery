@@ -1,0 +1,26 @@
+{
+  "name": "Vostok 3",
+  "type": "ORBITE TERRESTRE HABITÉE · VOLÉ",
+  "first": "Premier rendez-vous en vol double — passa à ~6,5 km de Vostok 4",
+  "description": "Vol de 64 orbites d'Andrian Nikolaïev, lancé le 1962-08-11 à 08:30 UTC. Vingt-quatre heures plus tard, Vostok 4 (Popovitch) le rejoignit en orbite — l'approche la plus proche fut d'environ 6,5 km, sans véritable capacité de rendez-vous (les deux capsules ne disposaient pas de propulseurs de manœuvre). Ce vol simultané fut une réponse de propagande aux missions suborbitales américaines et au Friendship 7 de John Glenn. Nikolaïev atterrit le 1962-08-15 à 07:55 UTC près de Karaganda, RSS du Kazakhstan, après presque 4 jours dans l'espace.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1962-08-11 08:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "VOSTOK 4 RDV",
+      "note": "Vostok 4 launched 24h later; closest approach ~6.5 km on day 2.",
+      "type": "info"
+    },
+    {
+      "met": 3.98,
+      "label": "EJECT + LAND",
+      "note": "Nikolayev landed near Karaganda 1962-08-15 07:55 UTC after 64 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

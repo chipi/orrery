@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-1 (USA-212)",
+  "type": "मानवरहित अंतरिक्ष विमान · उड़ान भर चुका",
+  "first": "USA-212 — कक्षा में 224 दिन, वैंडेनबर्ग AFB",
+  "description": "बोइंग द्वारा निर्मित X-37B ऑर्बिटल टेस्ट व्हीकल कार्यक्रम की पहली उड़ान। 2010-04-22 को 23:52 UTC पर केप कैनावेरल SLC-41 से एटलस V 501 AV-012 पर प्रक्षेपित; 1988 में सोवियत बुरान 1.01 के बाद रनवे लैंडिंग के साथ पहला स्वायत्त कक्षीय अंतरिक्ष विमान पुनः प्रवेश। 224 दिनों के बाद 2010-12-03 को 09:16 UTC पर वैंडेनबर्ग AFB पर उतरा। पेलोड और कक्षीय पैरामीटर वर्गीकृत हैं।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 112,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee 410 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 224,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "type": "nominal"
+    }
+  ]
+}

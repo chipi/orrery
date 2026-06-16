@@ -1,0 +1,32 @@
+{
+  "name": "Polaris Dawn",
+  "type": "VEÍCULO LIVRE TRIPULADO · VOADO",
+  "first": "Primeira caminhada espacial comercial; órbita terrestre humana mais alta desde Apolo 17 (1408 km)",
+  "description": "Jared Isaacman (comandante), Scott 'Kidd' Poteet (piloto), Sarah Gillis e Anna Menon (engenheiras da SpaceX / especialistas de missão). Lançados em 2024-09-10 às 09:23 UTC do LC-39A no Falcon 9 B1083, a bordo da Crew Dragon Resilience (C207, terceiro voo). No dia 1, elevaram o apogeu para 1408 km — a maior órbita já voada por humanos fora das missões lunares Apolo; depois o apogeu foi reduzido para uma órbita circular de 730 km para a EVA. No dia 3 ocorreu a primeira EVA comercial: Isaacman e Gillis saíram pela escotilha aberta nos novos trajes EVA da SpaceX (sem câmara estanque — toda a cabine exposta ao vácuo para os 4 tripulantes), cada um passando ~8 minutos no vácuo testando mobilidade. Também testaram os enlaces laser entre satélites Starlink a partir da órbita. Amerissaram na costa da Flórida em 2024-09-15 às 07:36 UTC.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "APOGEE BOOST",
+      "note": "Raised orbit to 1408 km apogee — highest crewed orbit since Apollo 17.",
+      "type": "info"
+    },
+    {
+      "met": 3,
+      "label": "COMMERCIAL EVA",
+      "note": "Isaacman + Gillis exited through cabin hatch into vacuum — first commercial spacewalk.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.93,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida 2024-09-15 07:36 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -62,15 +62,21 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K",
+        "description": "Baikonur Cosmodrome, 1984-12-21 — 6 days after Vega 1. Twin mission, identical hardware, slightly different Venus arrival geometry so the two landers + balloons sampled different regions of the atmosphere + surface."
       },
       {
         "met_days": 176,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus — flyby + lander + balloon",
+        "description": "1985-06-15. Lander touched down on Aphrodite Terra; balloon drifted 11,600 km at 54 km altitude before its batteries failed. Vega 2 surface samples returned the first X-ray fluorescence chemistry from the highlands — anorthositic, distinct from Vega 1's lowland sampling."
       },
       {
         "met_days": 442,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Halley — flyby (Halley Armada)",
+        "description": "Closest approach 8,030 km from Halley's nucleus on 1986-03-09, three days after Vega 1. Together the two Vegas + Sakigake/Suisei + Giotto delivered the first multi-spacecraft cometary observation campaign in history — pathway-data sharing across NASA, ESA, Roscosmos (then Soviet Intercosmos), and JAXA's predecessors was unprecedented for the period."
       }
     ]
   }

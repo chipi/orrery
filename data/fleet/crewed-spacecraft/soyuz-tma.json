@@ -31,75 +31,27 @@
   "flights": [
     {
       "mission_id": "soyuz-tma-1",
-      "flight_designation": "Soyuz TMA-1 (2002-10-30) · first ISS lifeboat",
-      "crew": [
-        {
-          "name": "Sergei Zalyotin",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Frank De Winne",
-          "role": "Flight engineer",
-          "agency": "ESA",
-          "country": "Belgium"
-        },
-        {
-          "name": "Yuri Lonchakov",
-          "role": "Flight engineer",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        }
-      ]
+      "flight_designation": "Soyuz TMA-1 (2002-10-30) · Zaletin + Lonchakov + De Winne — first TMA flight; first Belgian cosmonaut (De Winne)"
     },
     {
-      "mission_id": "soyuz-tma-21",
-      "flight_designation": "Soyuz TMA-21 \"Gagarin\" (2011-04-04) · 50th anniversary",
-      "crew": [
-        {
-          "name": "Aleksandr Samokutyaev",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Andrey Borisenko",
-          "role": "Flight engineer",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Ron Garan",
-          "role": "Flight engineer",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "mission_id": "soyuz-tma-3",
+      "flight_designation": "Soyuz TMA-3 (2003-10-18) · Foale + Kaleri + Duque — first post-Columbia-loss ISS crew; only crewed Soyuz delivering an ISS expedition"
+    },
+    {
+      "mission_id": "soyuz-tma-9",
+      "flight_designation": "Soyuz TMA-9 (2006-09-18) · López-Alegría + Tyurin + Ansari — Anousheh Ansari: first female space tourist + first Iranian-born in space"
+    },
+    {
+      "mission_id": "soyuz-tma-10",
+      "flight_designation": "Soyuz TMA-10 (2007-04-07) · Yurchikhin + Kotov + Simonyi — Charles Simonyi: first multiple-flight space tourist (paid $25M)"
+    },
+    {
+      "mission_id": "soyuz-tma-16m",
+      "flight_designation": "Soyuz TMA-16M (2015-03-27) · Kornienko + Padalka + Kelly — Scott Kelly + Kornienko: first 340-day ISS mission; identical-twin study with Mark Kelly"
     },
     {
       "mission_id": "soyuz-tma-22",
-      "flight_designation": "Soyuz TMA-22 (2011-11-13) · last analog Soyuz TMA",
-      "crew": [
-        {
-          "name": "Anton Shkaplerov",
-          "role": "Commander",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Anatoly Ivanishin",
-          "role": "Flight engineer",
-          "agency": "Roscosmos",
-          "country": "Russia"
-        },
-        {
-          "name": "Daniel Burbank",
-          "role": "Flight engineer",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Soyuz TMA-22 (2011-11-13) · Burbank + Shkaplerov + Ivanishin — last classic Soyuz TMA; first crew after the 2011 Progress-44 loss"
     }
   ]
 }

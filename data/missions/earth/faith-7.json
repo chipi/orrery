@@ -1,0 +1,40 @@
+{
+  "id": "faith-7",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Space Task Group",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1963,
+  "status": "FLOWN",
+  "departure_date": "1963-05-15",
+  "arrival_date": "1963-05-15",
+  "transit_days": 0,
+  "vehicle": "Atlas LV-3B (MA-9)",
+  "payload": "Mercury capsule #20 (1376 kg dry); Gordon Cooper",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Mercury mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Mercury-Atlas 9 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Atlas_9",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "atlas-lv-3b",
+      "role": "launcher"
+    },
+    {
+      "id": "mercury-capsule",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-14",
+      "role": "launch-site"
+    }
+  ]
+}

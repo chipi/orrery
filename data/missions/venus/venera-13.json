@@ -62,11 +62,15 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K / 4-stage Block D",
+        "description": "Baikonur Cosmodrome, 1981-10-30. Soviet Venus mission carrying a lander designed to survive Venus's 460°C, 90-bar surface environment. Venera 13 + 14 are twin spacecraft launched 5 days apart; both landed successfully."
       },
       {
         "met_days": 122,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Venus landing + surface operations",
+        "description": "Soft-landed 1982-03-01 at Phoebe Regio. Transmitted for 127 minutes from the surface — twice the design lifetime — and returned the first colour panoramic images of Venus's surface, sampled the soil with an X-ray fluorescence spectrometer, and recorded the first audio from the surface of another planet (wind on Venus's microphone). The lander succumbed to the heat after ~2 hours."
       }
     ]
   }

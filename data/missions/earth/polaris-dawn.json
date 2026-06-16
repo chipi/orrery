@@ -1,0 +1,45 @@
+{
+  "id": "polaris-dawn",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp (Polaris Program / commercial mission)",
+  "sector": "private",
+  "dest": "EARTH",
+  "color": "#005288",
+  "year": 2024,
+  "status": "FLOWN",
+  "departure_date": "2024-09-10",
+  "arrival_date": "2024-09-15",
+  "transit_days": 5,
+  "vehicle": "Falcon 9 Block 5 (B1083.4) + Crew Dragon C207 (Resilience)",
+  "payload": "~12500 kg LEO; 4 crew, first commercial EVA suits",
+  "delta_v": "~10.5 km/s (1408 km initial apogee, then 730 km circular)",
+  "data_quality": "good",
+  "credit": "© SpaceX mission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "Polaris Dawn — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Polaris_Dawn",
+      "t": "intro"
+    },
+    {
+      "l": "Polaris Program",
+      "u": "https://polarisprogram.com/dawn/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
+      "id": "crew-dragon",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "parker-solar-probe",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Johns Hopkins Applied Physics Laboratory",
+  "sector": "gov",
+  "dest": "SUN",
+  "color": "#0B3D91",
+  "year": 2018,
+  "status": "ACTIVE",
+  "departure_date": "2018-08-12",
+  "arrival_date": "2018-11-05",
+  "transit_days": 85,
+  "vehicle": "Delta IV Heavy + Star 48BV third stage",
+  "payload": "685 kg (including 11.43-cm carbon-carbon Thermal Protection System sustaining 1,377 °C at perihelion)",
+  "delta_v": "~16 km/s (incl. 7 Venus gravity assists)",
+  "data_quality": "good",
+  "credit": "© NASA / JHU APL — public domain. Closest spacecraft to the Sun ever flown. First mission to enter the Sun's corona (2021-04-28). Final perihelion 22 on 2024-12-24 at 6.1 M km from the Sun's surface (~9.86 R☉).",
+  "links": [
+    {
+      "l": "Parker Solar Probe — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Parker_Solar_Probe",
+      "t": "intro"
+    },
+    {
+      "l": "Parker Solar Probe (NASA)",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "intro"
+    },
+    {
+      "l": "Parker Solar Probe (JHU/APL)",
+      "u": "https://parkersolarprobe.jhuapl.edu/",
+      "t": "core"
+    },
+    {
+      "l": "Fox et al. (2016) — Parker Solar Probe Mission and Spacecraft (Space Science Reviews)",
+      "u": "https://link.springer.com/article/10.1007/s11214-015-0211-6",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "parker-solar-probe",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Star 48BV solid third stage (Delta IV Heavy core + 2 strap-ons)",
+      "c3_km2_s2": 154,
+      "mass_at_tli_kg": 685,
+      "source": "NASA Parker Solar Probe Press Kit (2018-08); Fox et al. (2016). Highest C3 ever achieved for a science payload."
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "JHU/APL Parker Solar Probe Mission Operations Report. Speed at perihelion 22 (2024-12-24): 192 km/s — the fastest human-made object on record (above schema cap; recorded in i18n description). Mid-course corrections collapsed into Venus gravity assist events."
+    },
+    "arrival": {
+      "v_infinity_km_s": 7.5,
+      "periapsis_km": null,
+      "inclination_deg": 3.4,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "JHU/APL Parker Solar Probe Mission Operations Report; Venus gravity assists shape the orbit, no chemical insertion burn. Perihelion 22 = 6.9 M km from Sun (above schema km cap; recorded in i18n description)."
+    },
+    "totals": {
+      "total_dv_km_s": 16,
+      "tli_or_tmi_dv_km_s": 12,
+      "source": "NASA Parker Solar Probe Press Kit (2018-08); seven Venus gravity assists deliver the remaining ~4 km/s of effective ∆v needed to walk perihelion in to 9.86 R☉"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Delta IV Heavy + Star 48BV",
+        "description": "Cape Canaveral SLC-37B, 2018-08-12. Parker Solar Probe required the highest C3 ever achieved for a science mission (154 km²/s²) to break out of Earth's orbital motion enough to fall into a Sun-grazing trajectory. The third-stage Star 48BV solid motor was a custom addition to the Delta IV Heavy stack."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-solar injection",
+        "description": "Delta IV Heavy + Star 48BV stack delivers Parker onto a Venus-encounter trajectory."
+      },
+      {
+        "met_days": 52,
+        "type": "flyby",
+        "label": "Venus gravity assist 1",
+        "description": "2018-10-03. First of seven Venus encounters that progressively lower perihelion. Each VGA bleeds orbital energy; perihelion shrinks ~3 R☉ per encounter."
+      },
+      {
+        "met_days": 85,
+        "type": "arrival",
+        "label": "First perihelion (P1)",
+        "description": "2018-11-05. First close approach to the Sun: 0.16 AU (35 R☉). Parker became the closest spacecraft to the Sun ever flown, beating Helios 2's 1976 record."
+      },
+      {
+        "met_days": 985,
+        "type": "flyby",
+        "label": "Venus gravity assist 4",
+        "description": "2021-02-20. Fourth VGA tightens perihelion further toward the 9.86 R☉ target."
+      },
+      {
+        "met_days": 989,
+        "type": "edl_or_oi",
+        "label": "First corona entry (P8)",
+        "description": "2021-04-28. Perihelion 8 dipped below the Alfvén critical surface — the formal boundary of the Sun's corona. Parker became the first spacecraft to enter the Sun's atmosphere."
+      },
+      {
+        "met_days": 1830,
+        "type": "flyby",
+        "label": "Venus gravity assist 6",
+        "description": "2023-08-21. Sixth VGA prepares the final two record-setting perihelia."
+      },
+      {
+        "met_days": 2326,
+        "type": "edl_or_oi",
+        "label": "Closest perihelion (P22) — final design milestone",
+        "description": "2024-12-24. Christmas Eve eve. Parker reached 6.1 M km from the Sun's surface (~9.86 R☉, 0.046 AU) — the closest any spacecraft has ever been to the Sun. Speed at perihelion: 192 km/s, the fastest human-made object ever. The heat shield's solar-facing surface reached ~1,377 °C; the spacecraft bus behind it remained at room temperature. Parker has not yet been commanded back to Earth contact at the time of writing."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_analytic",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "venus",
+      "transfer_type": "vvejga_gravity_assists",
+      "tcm_count": 0
+    }
+  }
+}

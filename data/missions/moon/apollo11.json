@@ -76,37 +76,53 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Saturn V",
+        "description": "Kennedy Space Center LC-39A, 1969-07-16 13:32 UTC. Saturn V — the largest, most powerful rocket ever flown (until Starship's first orbital flight) — lifts the Apollo 11 stack of CSM Columbia + LM Eagle + Armstrong + Aldrin + Collins."
       },
       {
         "met_days": 0.117,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "S-IVB third-stage burn at 2h 44m, accelerating the stack from 320 km Earth parking orbit to 10.83 km/s — escape velocity from Earth. Begins the 3-day translunar coast."
       },
       {
         "met_days": 1.4,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2 — midcourse correction",
+        "description": "Mid-cruise trajectory tweak. Mission planning called for 4 MCCs; only MCC-2 was needed because the TLI was precise enough that the other three were waived."
       },
       {
         "met_days": 3.13,
         "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "1969-07-19. 357-second SPS engine burn at the Moon's far side (out of Earth radio contact) braked the CSM into a 113 × 313 km lunar orbit. The crew waited for Earth re-acquisition to confirm LOI success.",
         "dv_km_s": 0.89
       },
       {
         "met_days": 4.25,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "LM Eagle powered descent",
+        "description": "1969-07-20 20:05 UTC. After undocking from Columbia, Eagle began powered descent from 15 km altitude to the surface. The famous 1201 + 1202 program alarms — guidance computer overflows — were judged 'GO' by 24-year-old Steve Bales at Mission Control. Armstrong manually targeted past a boulder field, landing with <30 seconds of fuel reserve."
       },
       {
         "met_days": 4.34,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "LM ascent stage liftoff",
+        "description": "1969-07-21 17:54 UTC. After 21h 36m on the lunar surface — including the 2h 31m EVA — the ascent stage lifted off from Tranquility Base. The ascent engine was a one-shot pressure-fed bipropellant with no backup; if it failed, the crew was permanently stranded."
       },
       {
         "met_days": 6.5,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "1969-07-22. SPS engine burn departing lunar orbit. Sent Apollo 11 on a free-return trajectory back to Earth.",
         "dv_km_s": 1
       },
       {
         "met_days": 8.13,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "1969-07-24 16:50 UTC. Command Module splashed down 1,440 km southwest of Honolulu, recovered by USS Hornet. The crew was quarantined for 3 weeks — a NASA precaution against unknown lunar pathogens — before being released to a world that had watched 650 million people walk on the Moon."
       }
     ],
     "cislunar_profile": {

@@ -73,31 +73,45 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Falcon 9 (rideshare)",
+        "description": "Cape Canaveral, 2019-02-22. Israel's SpaceIL Beresheet (\"Genesis\") — the first private/non-governmental lunar mission, launched as a SpaceX rideshare. Funded mostly by Israeli entrepreneur Morris Kahn (~$100M total) after the Google Lunar X PRIZE — for which Beresheet had been a contender — was cancelled."
       },
       {
         "met_days": 0.01,
-        "type": "phasing"
+        "type": "phasing",
+        "label": "GTO insertion + phasing orbit",
+        "description": "Released into a geostationary transfer orbit. The mission used 6 successive perigee-raise burns over 6 weeks (instead of a single direct TLI) to gradually raise apogee until lunar capture geometry."
       },
       {
         "met_days": 10,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Perigee raise burn 1",
+        "description": "First of 6 progressive perigee maneuvers."
       },
       {
         "met_days": 20,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Perigee raise burn 4",
+        "description": "Mid-sequence orbit raise."
       },
       {
         "met_days": 41,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Lunar capture",
+        "description": "2019-04-04. Final maneuver captured Beresheet into a 200 × 10,000 km lunar orbit — Israel becomes the 7th country to reach the Moon (after USSR, USA, ESA, Japan, China, India)."
       },
       {
         "met_days": 48,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar powered descent — Mare Serenitatis",
+        "description": "2019-04-11. Powered descent toward Mare Serenitatis began nominally."
       },
       {
         "met_days": 48.01,
-        "type": "anomaly"
+        "type": "anomaly",
+        "label": "Engine shutdown — surface impact",
+        "description": "An IMU failure 14 km above the surface caused the main engine to shut down. The backup engine could not be restarted. Beresheet impacted the surface at ~134 m/s. Despite the failure, the mission achieved lunar orbit and partial descent — the first privately-funded vehicle to do so."
       }
     ],
     "cislunar_profile": {

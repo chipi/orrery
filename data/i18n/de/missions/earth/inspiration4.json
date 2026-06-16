@@ -1,0 +1,32 @@
+{
+  "name": "Inspiration4",
+  "type": "BEMANNTER FREIFLIEGER · GEFLOGEN",
+  "first": "Erster vollständig ziviler Orbitalraumflug; sammelte 243 Mio. USD für das St. Jude Children's Research Hospital",
+  "description": "Jared Isaacman, Sian Proctor, Hayley Arceneaux und Chris Sembroski — der erste Orbitalflug, bemannt ausschließlich von Personen, die keine professionellen Regierungs-Astronauten waren. Gestartet am 2021-09-15 um 00:02 UTC vom LC-39A auf Falcon 9 B1062 (dritter Flug) mit Crew Dragon Resilience (C207, zuvor auf Crew-1 geflogen). Erreichte einen 585 km kreisförmigen Orbit mit 51,6° Bahnneigung — der höchste bemannte Orbit seit den Hubble-Wartungsmissionen. Kein Andocken an eine Station; drei Tage Freiflug einschließlich der ersten bordseitigen Kuppel (anstelle des Andockadapters). Wasserung vor der Küste Floridas am 2021-09-18 um 23:06 UTC. Die Mission brachte über 243 Mio. USD für das St. Jude Children's Research Hospital ein — Arceneaux ist eine ehemalige St.-Jude-Patientin und die erste Krebsüberlebende im Orbit.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.05,
+      "label": "ORBIT",
+      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "CUPOLA WINDOW",
+      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "type": "info"
+    },
+    {
+      "met": 2.96,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

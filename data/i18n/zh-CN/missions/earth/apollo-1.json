@@ -1,0 +1,26 @@
+{
+  "name": "阿波罗 1 号 (AS-204)",
+  "type": "载人地球轨道 · 已取消",
+  "first": "1967-01-27 致命的发射前发射台火灾导致格里森姆 + 怀特 + 查菲遇难",
+  "description": "阿波罗 1 号是计划中阿波罗 Block I CSM 的首次载人飞行，原编号 AS-204，预定 1967-02-21 由 LC-34 发射。1967-01-27 17:31 EST 进行常规『拔插头』测试时，乘员被密封在加压纯氧舱内，下部设备舱发生闪燃 — 很可能是经过安装时损坏的镀银铜的特氟龙绝缘电线发生电弧。15 秒内舱压飙升至 29 psi；内开式舱门在压差下无法解封。格斯·格里森姆、埃德·怀特和罗杰·查菲在数秒内因窒息身亡。调查导致 Block I → Block II 的完全重新设计 + 更安全的外开式统一舱门 + 不可燃舱内材料 + 发射前富氮舱内大气。阿波罗 1 号的正式编号是为纪念乘员而追授。后续阿波罗任务（CSM-101 至 CSM-114）使用了由此次重新设计产生的 Block II 硬件飞行。",
+  "events": [
+    {
+      "met": 0,
+      "label": "PAD FIRE",
+      "note": "Plugs-out test 1967-01-27 17:31 EST. Flash fire in pressurised pure-O₂ cabin; cabin pressure spiked to 29 psi in 15 s.",
+      "type": "warning"
+    },
+    {
+      "met": 1e-7,
+      "label": "CREW LOST",
+      "note": "Grissom + White + Chaffee perish from asphyxiation. Hatch could not be unsealed against pressure differential.",
+      "type": "warning"
+    },
+    {
+      "met": 25,
+      "label": "PROGRAM PAUSE",
+      "note": "Apollo crewed program halted 21 months. Mission renamed Apollo 1 in posthumous honour.",
+      "type": "info"
+    }
+  ]
+}

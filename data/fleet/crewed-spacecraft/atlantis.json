@@ -41,5 +41,31 @@
     "destiny",
     "quest",
     "rassvet"
+  ],
+  "flights": [
+    {
+      "mission_id": "sts-51-j",
+      "flight_designation": "STS-51-J (1985-10-03) · first Atlantis flight; classified DoD mission (DSCS-III deployment)"
+    },
+    {
+      "mission_id": "sts-30",
+      "flight_designation": "STS-30 (1989-05-04) · deployed Magellan probe to Venus — first US planetary mission in 11 years"
+    },
+    {
+      "mission_id": "sts-34",
+      "flight_designation": "STS-34 (1989-10-18) · deployed Galileo probe to Jupiter via VEEGA trajectory"
+    },
+    {
+      "mission_id": "sts-71",
+      "flight_designation": "STS-71 (1995-06-27) · first Shuttle-Mir docking; first US-Russian crew handover; 100th US crewed spaceflight"
+    },
+    {
+      "mission_id": "sts-125",
+      "flight_designation": "STS-125 (2009-05-11) · final Hubble servicing mission (HST SM4); only post-Columbia mission without ISS rendezvous"
+    },
+    {
+      "mission_id": "sts-135",
+      "flight_designation": "STS-135 (2011-07-08) · final Shuttle flight ever; delivered Raffaello MPLM to ISS; closed the 30-year Shuttle programme"
+    }
   ]
 }

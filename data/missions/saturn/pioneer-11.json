@@ -56,21 +56,31 @@
     {
       "id": "pioneer-11",
       "role": "spacecraft"
+    },
+    {
+      "id": "cape-canaveral-lc-36b",
+      "role": "launch-site"
     }
   ],
   "flight": {
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas / Centaur",
+        "description": "Cape Canaveral, 1973-04-06. Launched after Pioneer 10's successful Jupiter encounter — Pioneer 11's primary purpose was to use Jupiter's gravity to reach Saturn ahead of the Voyagers and scout the ring-plane crossing geometry."
       },
       {
         "met_days": 606,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist",
+        "description": "Closest approach 42,800 km above the cloud tops on 1974-12-02 — even closer than Pioneer 10. Returns the first images of Jupiter's polar regions and confirms the magnetosphere boundary's response to the solar wind. The flyby bends the trajectory dramatically — slingshot raises the aphelion past Saturn at a high inclination."
       },
       {
         "met_days": 2339,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Saturn — flyby",
+        "description": "Closest approach 20,900 km above Saturn's cloud tops on 1979-09-01 — the first spacecraft to visit Saturn, two years ahead of Voyager 1. Discovered the thin F-ring and a new moon (Janus); the ring-plane crossing geometry it tested cleared the Voyagers to attempt the same path. Last contact 1995-09-30."
       }
     ],
     "interplanetary_profile": {

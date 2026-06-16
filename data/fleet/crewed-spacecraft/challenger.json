@@ -28,5 +28,23 @@
       "t": "deep"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [],
+  "flights": [
+    {
+      "mission_id": "sts-6",
+      "flight_designation": "STS-6 (1983-04-04) · first Challenger flight; first Shuttle EVA (Musgrave + Peterson) · deployed TDRS-1"
+    },
+    {
+      "mission_id": "sts-41-b",
+      "flight_designation": "STS-41-B (1984-02-03) · first untethered EVA — McCandless and Stewart on MMU jetpacks"
+    },
+    {
+      "mission_id": "sts-41-g",
+      "flight_designation": "STS-41-G (1984-10-05) · first 7-person crew; first US-female EVA (Sullivan); Sally Ride's 2nd flight"
+    },
+    {
+      "mission_id": "sts-51-l",
+      "flight_designation": "STS-51-L (1986-01-28) · LOST 73 s after launch — right SRB O-ring failure in unprecedented cold (−1°C); all 7 crew (Scobee, Smith, Resnik, Onizuka, McNair, Jarvis, McAuliffe) perished"
+    }
+  ]
 }

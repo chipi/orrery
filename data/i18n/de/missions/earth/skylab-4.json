@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 4",
+  "type": "BEMANNTE STATIONSBESATZUNG · GEFLOGEN",
+  "first": "Längster Skylab-Aufenthalt — 84 Tage, beobachtete Komet Kohoutek, „Skylab-Streik“-Pausenstreit",
+  "description": "Carr, Gibson und Pogue — die letzte und längste Skylab-Besatzung, 84 Tage 1 Stunde, alle Erstflieger. Gestartet am 1973-11-16 um 14:01 UTC auf einer Saturn IB (SA-208). Umfassende Erderkundungs- und Sonnenbeobachtung, einschließlich einer vollständigen Kometen-Kohoutek-Kampagne im Dezember–Januar. Die Mission ist vor allem für den inoffiziellen „Skylab-Streik“ am 45. Tag in Erinnerung, als die Besatzung nach unermüdlichen Anforderungen der Bodencontroller, die jede wache Minute verplanten, die Funkgeräte einen halben Tag abschaltete — der Streit führte zu dauerhaften NASA-Reformen bei der Crew-Zeitplanung für Langzeitmissionen. Wasserung am 1974-02-08 um 15:17 UTC, die letzte bemannte US-Wasserlandung bis zur SpaceX Crew Dragon 2020. CSM-118 ist im National Museum of the US Air Force in Dayton, OH, ausgestellt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

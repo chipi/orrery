@@ -1,0 +1,32 @@
+{
+  "name": "天空实验室3号",
+  "type": "载人空间站乘组 · 已飞行",
+  "first": "天空实验室第二批乘员 — 59天，部署双杆式遮阳罩取代伞形屏蔽",
+  "description": "比恩、加里奥特和洛斯马 — 第二批入驻天空实验室的乘员，共停留59天11小时。1973-07-28 11:11 UTC由土星1B火箭(SA-207)发射。对接后数小时，CSM服务舱出现姿态控制推进器泄漏 — 备用CSM-119在卡纳维拉尔角准备好以备可能的救援任务，但乘员仍按预定计划顺利完成任务。加里奥特利用阿波罗望远镜架的仪器主导了305小时的太阳观测。三次太空行走中部署了一个跨越原伞形屏蔽的双杆式遮阳罩，修理了速率陀螺组件，并从ATM回收胶片盒。1973-09-25 22:19 UTC溅落；CSM-117陈列于克利夫兰的格伦游客中心。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "CSM THRUSTER LEAK",
+      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "type": "warning"
+    },
+    {
+      "met": 30,
+      "label": "TWIN-POLE SHIELD EVA",
+      "note": "Crew deployed twin-pole shield over original parasol.",
+      "type": "nominal"
+    },
+    {
+      "met": 59.46,
+      "label": "SPLASHDOWN",
+      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

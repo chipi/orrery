@@ -75,41 +75,59 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Saturn V (only night Apollo launch)",
+        "description": "Kennedy Space Center LC-39A, 1972-12-07 05:33 UTC. The first and only night-time Saturn V launch + the last crewed Moon mission. Crew: Cernan + Evans + Schmitt (the first scientist-astronaut, geologist). Bound for Taurus-Littrow valley to investigate explosive volcanic activity in a mountain-fringed lowland."
       },
       {
         "met_days": 0.13,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "S-IVB third-stage burn at 3h 13m sends the Apollo 17 stack on its translunar coast."
       },
       {
         "met_days": 1.27,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "First mid-course correction."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-3",
+        "description": "Approach-phase refinement before lunar orbit insertion."
       },
       {
         "met_days": 3.4,
         "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "1972-12-10. 387-second SPS burn captures America (CSM) + Challenger (LM) into a 110 × 314 km lunar orbit.",
         "dv_km_s": 0.91
       },
       {
         "met_days": 4.6,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "LM Challenger powered descent",
+        "description": "1972-12-11. Cernan + Schmitt landed at Taurus-Littrow (20.16°N, 30.77°E). Logged 22 hours of EVA over 3 moonwalks — the most of any Apollo mission. Drove the Lunar Roving Vehicle 35.9 km total."
       },
       {
         "met_days": 7.8,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "LM Challenger ascent — last humans on the Moon",
+        "description": "1972-12-14. Cernan was the last person to step off the Moon — his footprint at the LM ladder remains the most recent human surface activity on another world. The ascent stage rendezvoused with America in orbit."
       },
       {
         "met_days": 10.9,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "1972-12-16. SPS burn sends Apollo 17 home after 75 hours in lunar orbit + the 3-day surface stay.",
         "dv_km_s": 1.05
       },
       {
         "met_days": 12.6,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "1972-12-19 19:25 UTC. Apollo 17 splashed down 6.4 km from USS Ticonderoga, ending the Apollo program. The 110-kg sample haul (still the largest single Moon-rock collection) became the cornerstone of subsequent decades of lunar science."
       }
     ],
     "cislunar_profile": {

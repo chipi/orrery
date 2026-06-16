@@ -29,6 +29,7 @@
     }
   ],
   "linked_missions": [
+    "apollo-soyuz",
     "apollo10",
     "apollo11",
     "apollo12",
@@ -39,7 +40,10 @@
     "apollo17",
     "apollo7",
     "apollo8",
-    "apollo9"
+    "apollo9",
+    "skylab-2",
+    "skylab-3",
+    "skylab-4"
   ],
   "linked_sites": [
     {
@@ -70,123 +74,47 @@
   "flights": [
     {
       "mission_id": "apollo7",
-      "flight_designation": "Apollo 7 (1968-10-11) · first Block II crewed flight",
-      "crew": [
-        {
-          "name": "Wally Schirra",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Donn Eisele",
-          "role": "CMP",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Walter Cunningham",
-          "role": "LMP",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Apollo 7 (1968-10-11) · CSM-101 · first Block II crewed flight; LEO shakedown · CM at Frontiers of Flight Museum, Dallas TX"
     },
     {
       "mission_id": "apollo8",
-      "flight_designation": "Apollo 8 (1968-12-21) · first humans to leave Earth",
-      "crew": [
-        {
-          "name": "Frank Borman",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "James Lovell",
-          "role": "CMP",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "William Anders",
-          "role": "LMP",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Apollo 8 (1968-12-21) · CSM-103 · first humans to orbit the Moon; Earthrise · CM at Museum of Science and Industry, Chicago IL"
+    },
+    {
+      "mission_id": "apollo9",
+      "flight_designation": "Apollo 9 (1969-03-03) · CSM Gumdrop (CSM-104) · first crewed LM rendezvous in Earth orbit · CM at San Diego Air & Space Museum, San Diego CA"
+    },
+    {
+      "mission_id": "apollo10",
+      "flight_designation": "Apollo 10 (1969-05-18) · CSM Charlie Brown (CSM-106) · lunar dress rehearsal · CM at Science Museum, London, UK"
     },
     {
       "mission_id": "apollo11",
-      "flight_designation": "Apollo 11 (1969-07-16) · first lunar landing",
-      "crew": [
-        {
-          "name": "Neil Armstrong",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Michael Collins",
-          "role": "CMP",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Buzz Aldrin",
-          "role": "LMP",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Apollo 11 (1969-07-16) · CSM Columbia (CSM-107) · first crewed Moon landing · CM at National Air & Space Museum, Washington DC"
+    },
+    {
+      "mission_id": "apollo12",
+      "flight_designation": "Apollo 12 (1969-11-14) · CSM Yankee Clipper (CSM-108) · pinpoint Ocean of Storms landing · CM at Virginia Air & Space Center, Hampton VA"
     },
     {
       "mission_id": "apollo13",
-      "flight_designation": "Apollo 13 (1970-04-11) · survival",
-      "crew": [
-        {
-          "name": "James Lovell",
-          "role": "Commander",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Jack Swigert",
-          "role": "CMP",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Fred Haise",
-          "role": "LMP",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Apollo 13 (1970-04-11) · CSM Odyssey (CSM-109) · \"Houston we've had a problem\" · CM at Cosmosphere, Hutchinson KS"
+    },
+    {
+      "mission_id": "apollo14",
+      "flight_designation": "Apollo 14 (1971-01-31) · CSM Kitty Hawk (CSM-110) · Fra Mauro highlands · CM at Kennedy Space Center Visitor Complex, FL"
+    },
+    {
+      "mission_id": "apollo15",
+      "flight_designation": "Apollo 15 (1971-07-26) · CSM Endeavour (CSM-112) · first J-mission with LRV · CM at National Museum of the USAF, Dayton OH"
+    },
+    {
+      "mission_id": "apollo16",
+      "flight_designation": "Apollo 16 (1972-04-16) · CSM Casper (CSM-113) · first highlands landing (Descartes) · CM at U.S. Space & Rocket Center, Huntsville AL"
     },
     {
       "mission_id": "apollo17",
-      "flight_designation": "Apollo 17 (1972-12-07) · last lunar mission",
-      "crew": [
-        {
-          "name": "Eugene Cernan",
-          "role": "Commander · last man on the Moon",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Ronald Evans",
-          "role": "CMP",
-          "agency": "NASA",
-          "country": "USA"
-        },
-        {
-          "name": "Harrison Schmitt",
-          "role": "LMP · only scientist-astronaut on the Moon",
-          "agency": "NASA",
-          "country": "USA"
-        }
-      ]
+      "flight_designation": "Apollo 17 (1972-12-07) · CSM America (CSM-114) · last crewed lunar mission · CM at Space Center Houston, TX"
     }
   ]
 }

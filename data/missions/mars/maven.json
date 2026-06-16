@@ -60,43 +60,63 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 401",
+        "description": "Cape Canaveral, 2013-11-18. MAVEN (Mars Atmosphere and Volatile EvolutioN) was designed to characterise how Mars lost its atmosphere — measuring the present-day atmospheric-escape rates that scaled backward in time explain how the planet went from a wet, dense atmosphere ~3.8 Gyr ago to today's thin CO₂ shell."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Centaur upper stage burn sets MAVEN on a 10-month transfer to Mars."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI dispersion cleanup. ~30 days after launch is the standard for the first refinement burn."
       },
       {
         "met_days": 55,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 94.6,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise adjustment."
       },
       {
         "met_days": 100,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 134.2,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-5",
+        "description": "Approach-phase adjustment."
       },
       {
         "met_days": 200,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-6 — final pre-MOI burn",
+        "description": "Tightens approach targeting for Mars orbit insertion."
       },
       {
         "met_days": 308,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach",
+        "description": "Pre-MOI checkout phase. 2014-09-22 arrival, just 2 days after India's Mangalyaan reached Mars."
       },
       {
         "met_days": 308.005,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion",
+        "description": "33-minute main-engine burn captured MAVEN into a 35-hour elliptical orbit. The orbit was later trimmed to a 4.5-hour science orbit between 150 and 6,200 km. MAVEN remains operational, recently extended through 2030+, also serving as a relay for the Perseverance + Curiosity rovers."
       }
     ],
     "interplanetary_profile": {

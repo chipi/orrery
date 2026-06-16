@@ -1,0 +1,32 @@
+{
+  "name": "东方 1 号",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "首位进入太空的人类；首次载人轨道飞行",
+  "description": "尤里·加加林的 108 分钟单圈轨道飞行 — 史上首次载人航天飞行，也是首位环绕地球的人类。1961 年 4 月 12 日 06:07 UTC 从拜科努尔由东方-K (8K72K) 运载火箭发射；轨道 169 × 327 千米，倾角 65°。球形返回舱在约 7 千米高度将加加林弹射出舱（苏联多年隐瞒此事，以便依据 FAI 规则主张完整的载人着陆）。加加林跳伞降落在萨拉托夫州斯梅洛夫卡；返回舱单独着陆，现陈列于俄罗斯科罗廖夫的 RKK 能源博物馆。这次飞行结束了科罗廖夫十年来的导弹/卫星工作，并在六周后促成了美国的载人航天计划 + 肯尼迪的登月承诺。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ORBIT INSERT",
+      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.063,
+      "label": "RETROFIRE",
+      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "type": "warning"
+    },
+    {
+      "met": 0.071,
+      "label": "CREW EJECT",
+      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "type": "info"
+    }
+  ]
+}

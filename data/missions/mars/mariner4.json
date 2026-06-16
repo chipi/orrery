@@ -60,19 +60,27 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas-Agena D",
+        "description": "Cape Canaveral, 1964-11-28. The first successful Mars mission of any kind — earlier Soviet attempts (Mars 1960A/B/C) and NASA's Mariner 3 (failed shroud separation 3 weeks before) all collapsed before reaching Mars."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "Agena D upper stage burn sends Mariner 4 on a 228-day transfer to Mars."
       },
       {
         "met_days": 8,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction."
       },
       {
         "met_days": 228,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mars — first successful flyby",
+        "description": "Closest approach 9,846 km on 1965-07-14 — the first close-up images of Mars ever returned, shattering the pre-spacecraft picture of canals + dense atmosphere. The 22 grainy images revealed cratered terrain resembling the Moon and a thin (4.1–7 mbar) CO₂ atmosphere — Mars looked dead, not Earth-like, and the discovery reshaped a generation of planetary science."
       }
     ],
     "interplanetary_profile": {

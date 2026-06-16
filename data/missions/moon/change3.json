@@ -72,19 +72,27 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Long March 3B/E",
+        "description": "Xichang, China, 2013-12-01. Chang'e 3 — CNSA's first lunar soft-lander mission, carrying the Yutu rover. First soft landing on the Moon since Soviet Luna 24 (1976) — 37 years."
       },
       {
         "met_days": 0.01,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Long March 3B/E third-stage burn sends Chang'e 3 directly on a translunar trajectory."
       },
       {
         "met_days": 5,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar powered descent + landing — Mare Imbrium",
+        "description": "2013-12-14. Lander descended autonomously using LIDAR + camera-based hazard avoidance — China's first soft landing on another world. Landed at Sinus Iridum / Mare Imbrium (44.12°N, 19.51°W). Yutu rover deployed onto the surface that night."
       },
       {
         "met_days": 13,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Yutu rover surface operations",
+        "description": "Yutu (\"Jade Rabbit\") rolled off the lander ramp 2013-12-15 and operated for ~30 m of driving before a mechanism failure stopped its mobility on day 42. The lander continued surface science for years afterward; Yutu kept transmitting from the spot it stopped."
       }
     ],
     "cislunar_profile": {

@@ -28,6 +28,7 @@
       "t": "deep"
     }
   ],
+  "linked_missions": ["spirit"],
   "linked_sites": [
     {
       "type": "mars",

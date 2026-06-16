@@ -1,0 +1,32 @@
+{
+  "name": "Inspiration4",
+  "type": "BEMANDE FREE-FLYER · GEVLOGEN",
+  "first": "Eerste volledig civiele orbitale ruimtevlucht; haalde $243 mln op voor het St. Jude Children's Research Hospital",
+  "description": "Jared Isaacman, Sian Proctor, Hayley Arceneaux en Chris Sembroski — de eerste orbitale vlucht volledig bemand door mensen die geen professionele overheidsastronauten waren. Gelanceerd op 2021-09-15 om 00:02 UTC vanaf LC-39A op Falcon 9 B1062 (derde vlucht), boven op Crew Dragon Resilience (C207, eerder gevlogen op Crew-1). Bereikten een circulaire baan van 585 km bij 51,6° inclinatie — de hoogste bemande baan sinds de Hubble-servicemissies. Geen koppeling met enig station; drie dagen vrije vlucht inclusief de eerste onboard-koepel (ter vervanging van de dockingadapter). Plonsten voor de kust van Florida neer op 2021-09-18 om 23:06 UTC. De missie haalde meer dan $243 mln op voor het St. Jude Children's Research Hospital — Arceneaux is een voormalig St. Jude-patiënt en de eerste kankeroverlever in een baan om de Aarde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.05,
+      "label": "ORBIT",
+      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "CUPOLA WINDOW",
+      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "type": "info"
+    },
+    {
+      "met": 2.96,
+      "label": "SPLASHDOWN",
+      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

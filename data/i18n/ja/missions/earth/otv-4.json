@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-4号 (USA-261, AFSPC-5)",
+  "type": "無人スペースプレーン · 飛行済",
+  "first": "USA-261 / AFSPC-5 — 軌道上718日、KSCシャトル着陸施設",
+  "description": "X-37Bの4回目の飛行。2015-05-20 15:05 UTCにCCAFS SLC-41からアトラスV 501 AV-054で打ち上げ。OTVとしては初めてケネディ宇宙センターのシャトル着陸施設（かつてスペースシャトル軌道船が使用していたのと同じ4.6 kmの滑走路）に2017-05-07 11:47 UTCに着陸。AFRLのホール効果スラスタ実験（XR-5A、イオン推進）とNASAの材料曝露試験装置を搭載。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~325 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 718,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "type": "nominal"
+    }
+  ]
+}

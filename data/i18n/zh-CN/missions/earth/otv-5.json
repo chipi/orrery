@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5号 (USA-277)",
+  "type": "无人航天飞机 · 已飞行",
+  "first": "USA-277 — 在轨780天，KSC航天飞机着陆设施",
+  "description": "X-37B第五次飞行，首次以猎鹰9号取代阿特拉斯V发射 — 且为唯一一次使用Block 4型猎鹰9号的X-37B飞行。2017-09-07 14:00 UTC从KSC LC-39A发射（助推器在下游LZ-1回收）；2019-10-27 07:51 UTC着陆于KSC SLF。在轨780天。X-37B首次进入更高倾角轨道（54.5°） — 扩展了公开可追踪的飞越路径。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

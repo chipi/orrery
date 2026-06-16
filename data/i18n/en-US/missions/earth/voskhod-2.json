@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "First extra-vehicular activity (Leonov, 12 min, 1965-03-18)",
+  "description": "Pavel Belyayev + Alexei Leonov's 1-day flight — first EVA in history. Leonov spent 12 min outside Voskhod 2 (1965-03-18 11:34 UTC), pressurised through an inflatable Volga airlock that Soviet engineers added because the Voskhod hull lacked the room for full depressurisation. Leonov's suit ballooned in vacuum, jamming him outside the airlock; he had to vent suit pressure to re-enter, raising decompression-sickness risk. Re-entry was equally dramatic — the automatic landing system failed, and Belyayev manually piloted the descent module to a hard landing in deep Urals snow ~390 km off-target; the crew survived a night in the forest among wolves before rescue helicopters arrived 1965-03-20. The cabin atmosphere also became O₂-rich after re-entry, briefly risking spontaneous combustion.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

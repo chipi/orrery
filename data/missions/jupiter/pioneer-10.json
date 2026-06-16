@@ -63,11 +63,15 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas / Centaur",
+        "description": "Cape Canaveral, 1972-03-02. The first spacecraft launched on a trajectory to escape the solar system — Pioneer 10's primary objective was to prove a probe could survive the asteroid belt crossing and Jupiter's radiation environment. NASA Ames managed the program; engineered by TRW."
       },
       {
         "met_days": 641,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — first encounter",
+        "description": "Closest approach 132,252 km from Jupiter's cloud tops on 1973-12-03 — the first spacecraft ever to fly past the giant planet. Survived the previously-untested radiation belts, mapped the magnetosphere, returned the first close-up imagery, and gained enough energy from Jupiter's gravity to escape the solar system. Last signal received 2003-01-23 from 80 AU."
       }
     ],
     "interplanetary_profile": {

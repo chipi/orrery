@@ -1,0 +1,30 @@
+{
+  "id": "apollo-csm-block-i",
+  "name": "Apollo CSM (Block I)",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "North American Aviation",
+  "first_flight": "1966-02-26",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975",
+  "credit": "Block I was the first design iteration of the Apollo Command and Service Module — intended as a pure Earth-orbit shakedown vehicle before the lunar-capable Block II. Pure-O₂ pressurised cabin at 16.7 psi pre-launch (5 psi in flight); inward-opening hatch sealed by atmospheric differential. CSM-009 + CSM-011 flew uncrewed suborbital tests (AS-201 1966-02-26 + AS-202 1966-08-25). CSM-012 — the Apollo 1 ship — was sealed for a Plugs-Out test 1967-01-27 when a flash fire ignited in the lower-equipment bay, killing the crew in seconds; the cabin couldn't be vented because the hatch opened inward against the spike to 29 psi. The Apollo 204 Accident Review Board led to the Block II redesign: outward-opening unified hatch, non-flammable cabin materials, pre-launch nitrogen-rich atmosphere, redesigned wire bundles. No Block I CSM ever flew crewed; Block II flew Apollo 7 (1968) through ASTP (1975).",
+  "links": [
+    {
+      "l": "Apollo Command and Service Module — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module#Block_I",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 204 Accident Review Board report (NASA)",
+      "u": "https://history.nasa.gov/Apollo204/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "apollo-1"
+  ],
+  "linked_sites": []
+}

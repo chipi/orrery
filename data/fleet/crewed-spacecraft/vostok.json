@@ -30,40 +30,36 @@
   ],
   "flights": [
     {
-      "mission_id": "vostok1",
-      "flight_designation": "Vostok 1 (1961-04-12)",
-      "crew": [
-        {
-          "name": "Yuri Gagarin",
-          "role": "Cosmonaut",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "vostok-1",
+      "flight_designation": "Vostok 1 (1961-04-12) · Yuri Gagarin — first human in space; 108-min single orbit; ejected and parachuted to Earth (capsule landed separately)"
     },
     {
-      "mission_id": "vostok2",
-      "flight_designation": "Vostok 2 (1961-08-06)",
-      "crew": [
-        {
-          "name": "Gherman Titov",
-          "role": "Cosmonaut",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "vostok-2",
+      "flight_designation": "Vostok 2 (1961-08-06) · Gherman Titov — first full day in space (17 orbits); first space sickness recorded; youngest cosmonaut at 25"
     },
     {
-      "mission_id": "vostok6",
-      "flight_designation": "Vostok 6 (1963-06-16)",
-      "crew": [
-        {
-          "name": "Valentina Tereshkova",
-          "role": "Cosmonaut · first woman in space",
-          "agency": "Roscosmos",
-          "country": "USSR"
-        }
-      ]
+      "mission_id": "vostok-3",
+      "flight_designation": "Vostok 3 (1962-08-11) · Andriyan Nikolayev — first simultaneous-flight dual mission with Vostok 4; 4 days / 64 orbits"
+    },
+    {
+      "mission_id": "vostok-4",
+      "flight_designation": "Vostok 4 (1962-08-12) · Pavel Popovich — flew alongside Vostok 3; passed within 6.5 km of each other on first orbit"
+    },
+    {
+      "mission_id": "vostok-5",
+      "flight_designation": "Vostok 5 (1963-06-14) · Valery Bykovsky — longest solo crewed spaceflight ever (4 days 23 h, still standing in 2026)"
+    },
+    {
+      "mission_id": "vostok-6",
+      "flight_designation": "Vostok 6 (1963-06-16) · Valentina Tereshkova — first woman in space; flew alongside Vostok 5; 70 orbits"
     }
+  ],
+  "linked_missions": [
+    "vostok-1",
+    "vostok-2",
+    "vostok-3",
+    "vostok-4",
+    "vostok-5",
+    "vostok-6"
   ]
 }

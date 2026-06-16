@@ -62,47 +62,69 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Ariane 5 ECA",
+        "description": "Kourou, French Guiana, 2018-10-20. Joint ESA / JAXA mission carrying two science orbiters — ESA's Mercury Planetary Orbiter (MPO) + JAXA's Mio (formerly Mercury Magnetospheric Orbiter) — stacked on a Mercury Transfer Module that uses electric propulsion + nine planetary flybys to lose enough energy to capture into Mercury orbit."
       },
       {
         "met_days": 538,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Earth — gravity assist",
+        "description": "Closest approach 12,700 km on 2020-04-10. The first of nine flybys needed to lose orbital energy and spiral inward toward Mercury. Reaching Mercury directly from Earth is among the hardest interplanetary transfers — the spacecraft's heliocentric velocity must DROP by ~25 km/s, the opposite of an outer-system mission's accelerate-and-go problem."
       },
       {
         "met_days": 727,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #1 — gravity assist",
+        "description": "Closest approach 10,720 km on 2020-10-15. First of two Venus assists. Venus's gravity is used here to BRAKE the spacecraft — taking energy out of the heliocentric orbit so the perihelion drops toward Mercury's distance from the Sun."
       },
       {
         "met_days": 1026,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Venus #2 — gravity assist",
+        "description": "Closest approach 552 km on 2021-08-10 — much closer than Venus #1. The deeper flyby drops aphelion further, setting up the first of six Mercury flybys 11 months later."
       },
       {
         "met_days": 1133,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #1 — gravity assist",
+        "description": "Closest approach 199 km from Mercury's surface on 2021-10-01 — the first BepiColombo Mercury observation, four years before formal orbit insertion. Each successive Mercury flyby brakes the spacecraft further, shrinking its orbit closer to Mercury's."
       },
       {
         "met_days": 1432,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #2 — gravity assist",
+        "description": "Closest approach 200 km on 2022-06-23. Cumulative ∆v from gravity assists exceeds 6 km/s by this pass — work the chemical engine + electric thrusters can't have done alone within the propellant budget."
       },
       {
         "met_days": 1819,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #3 — gravity assist",
+        "description": "Closest approach 236 km on 2023-06-19. Mid-cruise checkpoint — instruments continue commissioning over the high-altitude legs."
       },
       {
         "met_days": 2055,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #4 — gravity assist",
+        "description": "Closest approach 165 km on 2024-09-04. Closest flyby to date in the BepiColombo sequence; the proximity adds substantial braking ∆v."
       },
       {
         "met_days": 2294,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #5 — gravity assist",
+        "description": "Closest approach planned for 2024-12-01. Penultimate Mercury flyby — the final two assists shrink the orbit to the geometry required for capture."
       },
       {
         "met_days": 2421,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Mercury #6 — gravity assist",
+        "description": "Final flyby planned for 2025-01-08 — the spacecraft's orbital period matches Mercury's well enough that orbital capture is feasible at the next solar conjunction window."
       },
       {
         "met_days": 2968,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mercury orbit insertion + spacecraft separation",
+        "description": "Planned 2026-11. The Mercury Transfer Module separates and the two orbiters (ESA MPO + JAXA Mio) split into their respective science orbits. MPO maps the surface geology + interior structure; Mio characterises Mercury's tenuous magnetosphere. First two-orbiter Mercury mission ever flown."
       }
     ]
   }

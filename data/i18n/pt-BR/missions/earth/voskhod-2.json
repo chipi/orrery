@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "ÓRBITA TERRESTRE TRIPULADA · VOOU",
+  "first": "Primeira atividade extraveicular (Leonov, 12 min, 18/03/1965)",
+  "description": "O voo de um dia de Pavel Belyayev + Alexei Leonov — a primeira EVA da história. Leonov passou 12 min fora da Voskhod 2 (18/03/1965 às 11:34 UTC), pressurizado através de uma câmara de descompressão Volga inflável que os engenheiros soviéticos adicionaram porque o casco da Voskhod não tinha espaço para uma despressurização completa. O traje de Leonov inflou no vácuo, prendendo-o fora da câmara de descompressão; ele teve que ventilar a pressão do traje para reentrar, aumentando o risco de doença descompressiva. A reentrada foi igualmente dramática — o sistema de aterrissagem automática falhou, e Belyayev pilotou manualmente o módulo de descida até um pouso duro na neve profunda dos Urais, ~390 km fora do alvo; a tripulação sobreviveu a uma noite na floresta entre lobos antes que helicópteros de resgate chegassem em 20/03/1965.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

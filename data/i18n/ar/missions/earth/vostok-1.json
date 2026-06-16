@@ -1,0 +1,32 @@
+{
+  "name": "Vostok 1",
+  "type": "مدار أرضي مأهول · حلّق",
+  "first": "أول إنسان في الفضاء؛ أول رحلة مدارية مأهولة",
+  "description": "رحلة يوري غاغارين المدارية الواحدة التي استغرقت 108 دقائق — أول رحلة فضائية مأهولة في التاريخ، وأول إنسان يدور حول الأرض. أُطلقت في 12 أبريل 1961 الساعة 06:07 ت.ع.م من بايكونور على صاروخ فوستوك-K (8K72K)؛ مدار 169 × 327 كم، ميل 65°. قذفت وحدة الهبوط الكروية غاغارين على ارتفاع نحو 7 كم (حقيقة أخفاها الاتحاد السوفيتي لسنوات للمطالبة بهبوط مأهول كامل بموجب قواعد الاتحاد الدولي للملاحة الجوية). هبط غاغارين بالمظلة في سميلوفكا، مقاطعة ساراتوف؛ هبطت الكبسولة بشكل منفصل وتُعرض اليوم في متحف ر.ك.ك. إنرجيا في كوروليوف، روسيا. أنهت الرحلة عقد كوروليف من العمل على الصواريخ والأقمار الصناعية، وأطلقت برنامج رحلات الفضاء المأهولة الأمريكي + تعهد كينيدي بالهبوط على القمر بعد ستة أسابيع.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ORBIT INSERT",
+      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.063,
+      "label": "RETROFIRE",
+      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "type": "warning"
+    },
+    {
+      "met": 0.071,
+      "label": "CREW EJECT",
+      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "type": "info"
+    }
+  ]
+}

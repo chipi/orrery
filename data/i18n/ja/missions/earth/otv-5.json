@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5号 (USA-277)",
+  "type": "無人スペースプレーン · 飛行済",
+  "first": "USA-277 — 軌道上780日、KSCシャトル着陸施設",
+  "description": "X-37Bの5回目の飛行、アトラスVに代えてFalcon 9で打ち上げられた初の便 — また唯一のBlock 4 Falcon 9によるX-37B飛行。2017-09-07 14:00 UTCにKSC LC-39Aから打ち上げ（ブースターは下流のLZ-1で回収）。2019-10-27 07:51 UTCにKSC SLFに着陸。軌道上780日。X-37Bとしては初めて高傾斜軌道（54.5°）に投入され、公開追跡される飛行経路パターンを拡大した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

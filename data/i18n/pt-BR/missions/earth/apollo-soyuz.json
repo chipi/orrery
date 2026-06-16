@@ -1,0 +1,38 @@
+{
+  "name": "Apollo-Soyuz Test Project (ASTP)",
+  "type": "ÓRBITA TERRESTRE TRIPULADA · VOOU",
+  "first": "Primeira cooperação internacional em voo espacial humano; primeiro encontro + acoplamento EUA-URSS",
+  "description": "O Apollo-Soyuz Test Project — primeiro voo espacial tripulado internacional, primeiro encontro + acoplamento EUA-URSS, e o último voo de um CSM Apollo. Apollo (Stafford + Brand + Slayton) foi lançada em 15/07/1975 do LC-39B; Soyuz 19 (Leonov + Kubasov) foi lançada no mesmo dia de Baikonur. O módulo de acoplamento da Apollo (construído pela NASA + Rockwell) usou um novo anel de acoplamento andrógino (APAS) que permitia que qualquer uma das naves fosse ativa — o precursor de todos os sistemas de acoplamento internacionais desde então (Mir, EEI, Tiangong, Dragon, Starliner). Abertura da escotilha em 17/07/1975 ~16:00 UTC; as tripulações trocaram bandeiras, presentes e experimentos conjuntos em 4 sequências de acoplamento separadas ao longo de 44 horas acopladas. Soyuz retornou em 21/07/1975; Apollo continuou mais 5 dias em órbita antes do amerissagem em 24/07/1975 — o último amerissagem da Apollo de todos os tempos. O CSM-111 está em exibição no California Science Center em LA (ao lado da Endeavour). A cooperação da era da détente que o ASTP modelou inspirou o programa Shuttle-Mir 20 anos depois.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH (Apollo)",
+      "note": "Saturn IB (AS-210) from LC-39B 1975-07-15 19:50 UTC. 7.5 h after Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.85,
+      "label": "DOCKING",
+      "note": "Apollo + Soyuz 19 dock 1975-07-17 16:09 UTC. First US-USSR rendezvous + dock. Hatch opens at 19:17 UTC; \"Glad to see you\" handshake.",
+      "type": "info"
+    },
+    {
+      "met": 2,
+      "label": "JOINT OPS",
+      "note": "Flag + gift exchange; joint experiments; 4 dockings across 44 hours docked.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.8,
+      "label": "UNDOCK",
+      "note": "Final undock 1975-07-19 16:26 UTC. Soyuz 19 lands 1975-07-21 in Kazakhstan.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.06,
+      "label": "SPLASHDOWN (Apollo)",
+      "note": "Apollo splashed down in Pacific 1975-07-24 21:18 UTC — last Apollo splashdown ever. CSM-111 displayed at California Science Center LA.",
+      "type": "nominal"
+    }
+  ]
+}

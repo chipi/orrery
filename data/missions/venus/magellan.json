@@ -1,0 +1,732 @@
+{
+  "id": "magellan",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory / Martin Marietta",
+  "sector": "gov",
+  "dest": "VENUS",
+  "color": "#0B3D91",
+  "year": 1989,
+  "status": "FLOWN",
+  "departure_date": "1989-05-04",
+  "arrival_date": "1990-08-10",
+  "transit_days": 463,
+  "vehicle": "Space Shuttle Atlantis (STS-30) + Inertial Upper Stage",
+  "payload": "3460 kg (incl. 2414 kg propellant)",
+  "delta_v": "~3.7 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL / Martin Marietta — public domain. Radar-mapped 98% of Venus's surface at 100-m resolution. Mission ended 1994-10-13 in a deliberate atmospheric entry — the Termination Experiment, the first planned controlled atmospheric entry of a planetary spacecraft.",
+  "links": [
+    {
+      "l": "Magellan (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Magellan (NASA)",
+      "u": "https://science.nasa.gov/mission/magellan/",
+      "t": "intro"
+    },
+    {
+      "l": "Magellan (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-033B",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "magellan",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Inertial Upper Stage (IUS)",
+      "c3_km2_s2": 11.45,
+      "mass_at_tli_kg": 3460,
+      "source": "NASA Magellan Press Kit (1989-04); JPL Magellan Mission Plan"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "JPL Magellan Mission Operations Report; Type-IV trajectory, 1.5 solar revolutions before Venus arrival"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.85,
+      "periapsis_km": 295,
+      "inclination_deg": 85.5,
+      "orbit_insertion_dv_km_s": 1.42,
+      "source": "JPL Magellan Mission Operations Report; VOI 1990-08-10 placed Magellan into 295 × 8543 km, 85.5° near-polar orbit"
+    },
+    "totals": {
+      "total_dv_km_s": 3.7,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "JPL Magellan Mission Operations Report; IUS delivered TMI; spacecraft delta-v reserved for VOI + circularization + aerobraking + Termination Experiment"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — STS-30 / Atlantis + IUS",
+        "description": "Kennedy Space Center LC-39B, 1989-05-04. Magellan was the first planetary spacecraft launched from the Space Shuttle bay. Shuttle Atlantis released the stack at low Earth orbit; the Inertial Upper Stage solid motor then fired for trans-Venus injection — the first IUS use for a planetary mission."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Venus injection",
+        "description": "IUS solid-motor burn places Magellan onto a Type-IV trajectory — 1.5 solar revolutions before Venus arrival, the unusual long-duration profile dictated by the IUS's modest energy and the launch-window constraints of the post-Challenger Shuttle manifest."
+      },
+      {
+        "met_days": 60,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction."
+      },
+      {
+        "met_days": 175,
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 325,
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Approach-phase trim."
+      },
+      {
+        "met_days": 455,
+        "type": "tcm",
+        "label": "TCM-4 — final pre-VOI",
+        "description": "Final trim before Venus orbit insertion."
+      },
+      {
+        "met_days": 463,
+        "type": "arrival",
+        "label": "Venus approach",
+        "description": "1990-08-10. Magellan closes on Venus after 15 months and 1.5 solar revolutions on a Type-IV transfer."
+      },
+      {
+        "met_days": 463.005,
+        "type": "edl_or_oi",
+        "label": "Venus orbit insertion",
+        "description": "Solid-motor VOI burn placed Magellan into a highly elliptical 295 × 8543 km, 85.5°-inclination near-polar orbit. Over four mapping cycles + an aerobraking phase that lowered the orbit, Magellan's synthetic-aperture radar mapped 98% of Venus's surface at 100-m resolution — the most complete planetary radar survey ever flown. Discovered tessera highlands, coronae, pancake domes, and confirmed the relative absence of impact craters (a young surface, repaved by global volcanism)."
+      },
+      {
+        "met_days": 1988,
+        "type": "anomaly",
+        "label": "Termination Experiment",
+        "description": "1994-10-13. Mission deliberately ended by lowering periapsis into the atmosphere — the first planned controlled atmospheric entry of a planetary spacecraft. Atmospheric drag data from the descent informed Venus atmosphere modelling. Final signal lost as the spacecraft burned."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "venus",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 4,
+      "waypoints_helio_au": [
+        [
+          0,
+          -0.741301,
+          0,
+          -0.671173
+        ],
+        [
+          21.0848,
+          -0.663666,
+          0,
+          -0.735792
+        ],
+        [
+          42.1697,
+          -0.57974,
+          0,
+          -0.789816
+        ],
+        [
+          60,
+          -0.504959,
+          0,
+          -0.826864
+        ],
+        [
+          84.3394,
+          -0.398979,
+          0,
+          -0.864491
+        ],
+        [
+          105.4242,
+          -0.305083,
+          0,
+          -0.885031
+        ],
+        [
+          126.5091,
+          -0.210693,
+          0,
+          -0.894703
+        ],
+        [
+          147.5939,
+          -0.117066,
+          0,
+          -0.894
+        ],
+        [
+          175,
+          0.001652,
+          0,
+          -0.878662
+        ],
+        [
+          189.7636,
+          0.0635,
+          0,
+          -0.864107
+        ],
+        [
+          210.8485,
+          0.148578,
+          0,
+          -0.836447
+        ],
+        [
+          231.9333,
+          0.229171,
+          0,
+          -0.801393
+        ],
+        [
+          253.0182,
+          0.304655,
+          0,
+          -0.759734
+        ],
+        [
+          274.103,
+          0.37451,
+          0,
+          -0.712232
+        ],
+        [
+          295.1879,
+          0.438384,
+          0,
+          -0.659661
+        ],
+        [
+          325,
+          0.517976,
+          0,
+          -0.578007
+        ],
+        [
+          337.3576,
+          0.547061,
+          0,
+          -0.541948
+        ],
+        [
+          358.4424,
+          0.591485,
+          0,
+          -0.477982
+        ],
+        [
+          379.5273,
+          0.629147,
+          0,
+          -0.411313
+        ],
+        [
+          400.6121,
+          0.659999,
+          0,
+          -0.342421
+        ],
+        [
+          421.697,
+          0.684035,
+          0,
+          -0.271762
+        ],
+        [
+          442.7818,
+          0.701289,
+          0,
+          -0.199779
+        ],
+        [
+          463.005,
+          0.711584,
+          0,
+          -0.12982
+        ],
+        [
+          484.9515,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          506.0364,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          527.1212,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          548.2061,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          569.2909,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          590.3758,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          611.4606,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          632.5455,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          653.6303,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          674.7152,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          695.8,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          716.8848,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          737.9697,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          759.0545,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          780.1394,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          801.2242,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          822.3091,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          843.3939,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          864.4788,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          885.5636,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          906.6485,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          927.7333,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          948.8182,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          969.903,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          990.9879,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1012.0727,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1033.1576,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1054.2424,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1075.3273,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1096.4121,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1117.497,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1138.5818,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1159.6667,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1180.7515,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1201.8364,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1222.9212,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1244.0061,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1265.0909,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1286.1758,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1307.2606,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1328.3455,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1349.4303,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1370.5152,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1391.6,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1412.6848,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1433.7697,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1454.8545,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1475.9394,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1497.0242,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1518.1091,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1539.1939,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1560.2788,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1581.3636,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1602.4485,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1623.5333,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1644.6182,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1665.703,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1686.7879,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1707.8727,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1728.9576,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1750.0424,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1771.1273,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1792.2121,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1813.297,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1834.3818,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1855.4667,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1876.5515,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1897.6364,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1918.7212,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1939.8061,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1960.8909,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          1988,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          2003.0606,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          2024.1455,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          2045.2303,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          2066.3152,
+          0.713313,
+          0,
+          -0.119959
+        ],
+        [
+          2087.4,
+          0.713313,
+          0,
+          -0.119959
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "salyut-4",
+  "name": "Salyut 4 (DOS-4)",
+  "category": "station",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "TsKBEM (Korolev)",
+  "first_flight": "1974-12-26",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Civilian DOS-4 station — hosted Soyuz 17 (30 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
+  "credit": "The fourth civilian Salyut (DOS-4), built by the Korolev bureau and operated by the Soviet civilian space programme rather than the military Almaz line. Launched 1974-12-26 on a Proton-K, Salyut 4 carried a 25-cm OST-1 solar telescope, an X-ray telescope, and a complement of life-sciences experiments. Hosted two long-duration crews: Soyuz 17 (Gubarev + Grechko, 30 days, 1975-01-11 to 1975-02-09) and Soyuz 18 (Klimuk + Sevastyanov, 63 days, 1975-05-24 to 1975-07-26, then the longest crewed spaceflight in history). A third attempt — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — suffered a 21-g booster failure during launch, returning the crew safely after the highest-ever landing g-load survived by humans. Salyut 4 hosted Soyuz 20, an automated dog/biological-experiment 3-month visit, before re-entering on 1977-02-03 after 26 months.",
+  "links": [
+    {
+      "l": "Salyut 4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Salyut_4",
+      "t": "intro"
+    },
+    {
+      "l": "Soyuz 18a abort — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_18a",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [],
+  "linked_sites": []
+}

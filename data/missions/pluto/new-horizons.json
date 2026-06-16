@@ -8,13 +8,13 @@
   "year": 2006,
   "status": "FLOWN",
   "departure_date": "2006-01-19",
-  "arrival_date": "2015-07-14",
-  "transit_days": 3463,
+  "arrival_date": "2019-01-01",
+  "transit_days": 4730,
   "vehicle": "Atlas V 551",
   "payload": "New Horizons flyby spacecraft; RTG power",
   "delta_v": "~16 km/s (approx)",
   "data_quality": "partial",
-  "credit": "© NASA / JHUAPL — U.S. Government work, public domain. Pluto-system flyby; later Kuiper belt flybys not represented in this record.",
+  "credit": "© NASA / JHUAPL — U.S. Government work, public domain. Pluto-system flyby (2015-07-14) + Arrokoth Kuiper-Belt flyby (2019-01-01).",
   "links": [
     {
       "l": "New Horizons — Wikipedia",
@@ -68,19 +68,27 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Atlas V 551 / Star 48B",
+        "description": "Cape Canaveral, 2006-01-19. The fastest spacecraft ever launched at the time — 16.26 km/s heliocentric — leaving Earth's gravity well at a velocity high enough to reach Jupiter in 13 months without a circular parking orbit. The trajectory was constrained by the launch window for the Pluto encounter ~9.5 years later; missing it would have added 5+ years."
       },
       {
         "met_days": 405,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Jupiter — gravity assist",
+        "description": "Closest approach 2.3 million km from Jupiter on 2007-02-28. Used the encounter to test instruments and gain ~4 km/s of heliocentric velocity, cutting the Pluto cruise from 14 to 9.5 years. Bonus science: detailed atmospheric mapping, Io's volcanism, and the first imaging of the previously-unobserved Little Red Spot storm system."
       },
       {
         "met_days": 3463,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Pluto — first close encounter",
+        "description": "Closest approach 12,500 km from Pluto's surface on 2015-07-14 — humanity's first close look at the dwarf planet system after a 9.5-year cruise. Revealed Sputnik Planitia (the heart-shaped nitrogen-ice plain), cryovolcanoes, and a thin atmosphere with haze layers. All five known Pluto moons imaged in the same encounter. Data downlink took 16 months at the 1-2 kbps far-distance rate."
       },
       {
         "met_days": 4730,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Arrokoth (2014 MU69) — Kuiper Belt flyby",
+        "description": "Closest approach 3,538 km from Arrokoth on 2019-01-01 — the most distant flyby ever attempted at the time (44 AU from the Sun). The contact-binary structure of two roughly-spherical lobes joined at a narrow neck supported gentle-accretion models of planetesimal formation in the early solar system. Target found by HST in 2014 specifically to give New Horizons a post-Pluto secondary."
       }
     ],
     "interplanetary_profile": {

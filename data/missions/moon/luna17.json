@@ -69,27 +69,39 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Proton-K / Blok D",
+        "description": "Baikonur Cosmodrome, 1970-11-10. Luna 17 — delivered Lunokhod 1, the first remote-controlled rover on another world."
       },
       {
         "met_days": 0.1,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Blok D upper stage burn places Luna 17 on translunar trajectory."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction 1",
+        "description": "First trajectory refinement."
       },
       {
         "met_days": 4,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "Mid-course correction 2",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 5,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "1970-11-15. Captured into 85 × 141 km lunar orbit."
       },
       {
         "met_days": 7,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Lunar powered descent + Lunokhod 1 deployment — Mare Imbrium",
+        "description": "1970-11-17. Soft landing at Mare Imbrium (38.28°N, 35.00°W). Lunokhod 1 rolled off the ramp + drove 10.5 km over 11 lunar days, surviving 10 months of operations (originally planned for 3) — the first wheeled vehicle on another world and the basis for every later rover design."
       }
     ],
     "cislunar_profile": {

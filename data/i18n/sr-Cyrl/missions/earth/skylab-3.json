@@ -1,0 +1,32 @@
+{
+  "name": "Скајлаб 3",
+  "type": "ПОСАДА СВЕМИРСКЕ СТАНИЦЕ · ОБАВЉЕНО",
+  "first": "Друга посада Скајлаба — 59 дана, поставила соларни штит са два стуба као замену за парасол",
+  "description": "Бин, Гариот и Лусма — друга посада која је живела на Скајлабу, 59 дана и 11 сати. Лансирани 1973-07-28 у 11:11 UTC на ракети Saturn IB (SA-207). Неколико сати након повезивања, сервисни модул CSM имао је цурење на млазнику за контролу става — резервни CSM-119 је припреман на Кејп Канавералу за могућу спасилачку мисију, али је посада задатак обавила номинално. Гариот је предводио 305 сати соларних опсервација помоћу инструмената на Apollo Telescope Mount. Три EVA активности поставиле су соларни штит са два стуба преко изворног парасола, поправиле пакет жироскопа и преузеле касете са филмом са ATM-а. Приводнили су се 1973-09-25 у 22:19 UTC; CSM-117 је изложен у Glenn Visitor Center-у у Кливленду.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "CSM THRUSTER LEAK",
+      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "type": "warning"
+    },
+    {
+      "met": 30,
+      "label": "TWIN-POLE SHIELD EVA",
+      "note": "Crew deployed twin-pole shield over original parasol.",
+      "type": "nominal"
+    },
+    {
+      "met": 59.46,
+      "label": "SPLASHDOWN",
+      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

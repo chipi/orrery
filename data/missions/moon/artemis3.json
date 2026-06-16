@@ -72,41 +72,59 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — SLS Block 1 / Orion (planned)",
+        "description": "Kennedy Space Center LC-39B, planned 2027. Artemis III — first crewed lunar landing since Apollo 17 (1972). Plans to deliver the first woman and the first person of colour to the Moon, targeting the lunar south pole at sites near Shackleton crater for direct sampling of permanently-shadowed water-ice regolith."
       },
       {
         "met_days": 0.13,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "ICPS burn sends Orion + crew on a 4-day translunar coast toward Near-Rectilinear Halo Orbit rendezvous with the SpaceX Starship HLS that pre-positioned there."
       },
       {
         "met_days": 1.48,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First mid-course correction."
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Approach-phase refinement."
       },
       {
         "met_days": 4,
         "type": "loi",
+        "label": "NRHO insertion + HLS rendezvous",
+        "description": "Orion captures into Near-Rectilinear Halo Orbit — an elongated lunar orbit with 3,000 km perilune + 70,000 km apolune, energetically much cheaper than Apollo's circular Low Lunar Orbit (~0.45 km/s vs Apollo's 0.89 km/s). Crew docks with the pre-positioned SpaceX Starship Human Landing System.",
         "dv_km_s": 0.45
       },
       {
         "met_days": 5,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "Starship HLS powered descent — lunar south pole",
+        "description": "Two crew descend in Starship HLS while two remain in Orion. Targets sites near Shackleton or Connecting Ridge, all within permanently-shadowed-region access. 6.5-day surface stay planned — far longer than Apollo's 3-day max."
       },
       {
         "met_days": 7.5,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "Starship HLS ascent + return to NRHO",
+        "description": "Starship's main Raptor engines fire from the surface, returning the lander to NRHO for crew transfer back to Orion. The HLS is designed for reuse — it stays at NRHO for refueling by subsequent tanker missions."
       },
       {
         "met_days": 9.5,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "Orion departs NRHO on a return trajectory. Total NRHO + surface time is ~5.5 days.",
         "dv_km_s": 0.45
       },
       {
         "met_days": 11,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "Planned 2027. Orion re-enters Earth's atmosphere at lunar return velocity (~11 km/s), executes skip-entry to bleed energy, and splashes down in the Pacific."
       }
     ],
     "cislunar_profile": {

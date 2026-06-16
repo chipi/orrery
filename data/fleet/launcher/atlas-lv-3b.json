@@ -27,5 +27,11 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "aurora-7",
+    "faith-7",
+    "friendship-7",
+    "sigma-7"
   ]
 }

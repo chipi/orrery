@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-7号 (USA-358, USSF-52)",
+  "type": "无人航天飞机 · 已飞行",
+  "first": "USA-358 / USSF-52 — 在轨434天，范登堡太空军基地",
+  "description": "X-37B第七次飞行 — 首次进入高椭圆（HEO）轨道，也是首次由猎鹰重型发射。2023-12-29 01:07 UTC从KSC LC-39A发射；两枚侧助推器在LZ-1 / LZ-2回收，中央芯级则为获得HEO入轨能量而消耗。HEO轨道使OTV在远地点大约达到GEO带高度。执行了一次受控的气动制动式离轨流程（USSF就该机动发布了公开更新，相较此前机密飞行是一次刻意的透明度转变）。2025-03-07 09:22 UTC着陆于范登堡太空军基地。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "type": "nominal"
+    },
+    {
+      "met": 217,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 434,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "type": "nominal"
+    }
+  ]
+}

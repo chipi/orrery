@@ -1,0 +1,32 @@
+{
+  "name": "스카이랩 3",
+  "type": "유인 우주정거장 승무원 · 비행 완료",
+  "first": "스카이랩 2차 승무원 — 59일간 머무르며 파라솔을 대체하는 쌍기둥 태양 차폐막을 전개",
+  "description": "빈, 개리엇, 라우스마 — 스카이랩에 거주한 두 번째 승무원으로 59일 11시간을 보냈다. 1973-07-28 11:11 UTC 새턴 IB(SA-207)로 발사되었다. 도킹 몇 시간 뒤 CSM 서비스 모듈의 자세제어 추진기 누출이 발생했고 — 케이프 커내버럴에서는 예비 CSM-119가 구조 임무에 대비해 준비되었지만, 승무원은 임무를 정상적으로 완수했다. 개리엇은 아폴로 망원경 마운트의 기기를 사용해 305시간에 걸친 태양 관측을 주도했다. 세 차례의 EVA로 원래의 파라솔 위에 쌍기둥 태양 차폐막을 전개하고, 자이로 패키지를 수리하고, ATM에서 필름 캐니스터를 회수했다. 1973-09-25 22:19 UTC에 착수했고, CSM-117은 클리블랜드의 글렌 방문자센터에 전시되어 있다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "CSM THRUSTER LEAK",
+      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "type": "warning"
+    },
+    {
+      "met": 30,
+      "label": "TWIN-POLE SHIELD EVA",
+      "note": "Crew deployed twin-pole shield over original parasol.",
+      "type": "nominal"
+    },
+    {
+      "met": 59.46,
+      "label": "SPLASHDOWN",
+      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

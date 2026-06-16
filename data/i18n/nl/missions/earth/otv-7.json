@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "type": "ONBEMAND RUIMTEVLIEGTUIG · GEVLOGEN",
+  "first": "USA-358 / USSF-52 — 434 dagen in een baan, Vandenberg SFB",
+  "description": "Zevende X-37B-vlucht — eerste naar een sterk elliptische (HEO) baan en eerste gelanceerd op een Falcon Heavy. Gelanceerd op 2023-12-29 om 01:07 UTC vanaf KSC LC-39A; beide zijdelingse boosters werden geborgen op LZ-1 / LZ-2, de centrale kern werd opgebruikt voor de HEO-inschietenergie. De HEO-baan bracht de OTV in het apogeum tot ongeveer de hoogte van de GEO-gordel. Voerde een gecontroleerde aerobraking-achtige de-orbit-sequentie uit (de USSF publiceerde een openbare update over de manoeuvre, een bewuste verschuiving naar transparantie ten opzichte van eerdere geheime vluchten). Landde op Vandenberg SFB op 2025-03-07 om 09:22 UTC.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "type": "nominal"
+    },
+    {
+      "met": 217,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 434,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "type": "nominal"
+    }
+  ]
+}

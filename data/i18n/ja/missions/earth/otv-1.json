@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-1号 (USA-212)",
+  "type": "無人スペースプレーン · 飛行済",
+  "first": "USA-212 — 軌道上224日、ヴァンデンバーグ空軍基地",
+  "description": "ボーイング製X-37B軌道試験機計画の初飛行。2010-04-22 23:52 UTCにケープカナベラルSLC-41からアトラスV 501 AV-012で打ち上げ。1988年のソ連ブラン1.01以来初の、滑走路着陸運用を伴う自律的な軌道スペースプレーン再突入。224日後の2010-12-03 09:16 UTCにヴァンデンバーグ空軍基地に着陸。ペイロードおよび軌道パラメータは機密。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 501 (AV-012) from CCAFS SLC-41 2010-04-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 112,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee 410 km; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 224,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg AFB 2010-12-03.",
+      "type": "nominal"
+    }
+  ]
+}

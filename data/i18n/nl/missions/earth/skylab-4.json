@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 4",
+  "type": "BEMANDE STATIONSBEMANNING · GEVLOGEN",
+  "first": "Langste Skylab-verblijf — 84 dagen, observatie van komeet Kohoutek, rustdaggeschil van de 'Skylab-staking'",
+  "description": "Carr, Gibson en Pogue — de laatste en langste Skylab-bemanning, 84 dagen 1 uur, allen rookies. Gelanceerd op 1973-11-16 om 14:01 UTC met een Saturn IB (SA-208). Uitgebreide aardobservaties en zonneobservaties, waaronder een volledige campagne rond komeet Kohoutek in december–januari. De missie wordt vooral herinnerd om de onofficiële 'Skylab-staking' op dag 45, toen de bemanning de radio's een halve dag uitschakelde nadat onophoudelijke eisen van vluchtleiders elke wakkere minuut hadden volgepland — het geschil leidde tot permanente NASA-hervormingen in de planning van bemanningstijdlijnen voor langdurige missies. Ze plonsten neer op 1974-02-08 om 15:17 UTC, de laatste Amerikaanse bemande waterlanding tot SpaceX Crew Dragon in 2020. CSM-118 staat tentoongesteld in het National Museum of the US Air Force, Dayton OH.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-208 from LC-39B 1973-11-16 14:01 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KOHOUTEK CAMPAIGN",
+      "note": "Comprehensive ATM + window observations of Comet Kohoutek.",
+      "type": "info"
+    },
+    {
+      "met": 45,
+      "label": "TIMELINE RESET",
+      "note": "Crew/ground dispute over timeline density led to permanent NASA reforms.",
+      "type": "warning"
+    },
+    {
+      "met": 84.05,
+      "label": "SPLASHDOWN",
+      "note": "CSM-118 splashed down in Pacific 1974-02-08 15:17 UTC — last US crewed water landing until Crew Dragon.",
+      "type": "nominal"
+    }
+  ]
+}

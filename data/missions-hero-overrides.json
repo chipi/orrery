@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-12T21:51:47.409Z",
+  "source_audit": "missions-hero-audit.md",
+  "overrides": {
+    "voyager-2": {
+      "slot": "05.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "galileo": {
+      "slot": "05.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than galileo",
+      "approved_at": "2026-06-12"
+    },
+    "cassini": {
+      "slot": "03.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "mars-express": {
+      "slot": "05.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "new-horizons": {
+      "slot": "02.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "dawn": {
+      "slot": "04.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "juno": {
+      "slot": "02.jpg",
+      "reason": "url: artwork/illustration/render/scale-model in source URL; category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "mangalyaan": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than mangalyaan",
+      "approved_at": "2026-06-12"
+    },
+    "perseverance": {
+      "slot": "04.jpg",
+      "reason": "subject names a different entity than perseverance",
+      "approved_at": "2026-06-12"
+    },
+    "chandrayaan3": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than chandrayaan3",
+      "approved_at": "2026-06-12"
+    },
+    "starship-demo": {
+      "slot": "03.jpg",
+      "reason": "subject names a different entity than starship-demo",
+      "approved_at": "2026-06-12"
+    },
+    "bepicolombo": {
+      "slot": "03.jpg",
+      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+      "approved_at": "2026-06-12"
+    },
+    "vostok-3": {
+      "slot": "04.jpg",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "skylab-4": {
+      "slot": "04.jpg",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "inspiration4": {
+      "slot": "04.jpg",
+      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "polaris-dawn": {
+      "slot": "03.jpg",
+      "reason": "category: people-only \u2014 no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
+      "approved_at": "2026-06-12"
+    },
+    "otv-3": {
+      "slot": "05.jpg",
+      "reason": "subject names a different entity than otv-3",
+      "approved_at": "2026-06-12"
+    },
+    "otv-7": {
+      "slot": "02.jpg",
+      "reason": "subject names a different entity than otv-7",
+      "approved_at": "2026-06-12"
+    }
+  }
+}

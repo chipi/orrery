@@ -540,6 +540,30 @@
     "tagline": "First planetary defense impactor (Dimorphos)"
   },
   {
+    "id": "europa-clipper",
+    "name": "Europa Clipper",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2024-10-14",
+    "tagline": "Largest planetary spacecraft; 49 Europa flybys planned"
+  },
+  {
+    "id": "lucy",
+    "name": "Lucy",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2021-10-16",
+    "tagline": "First mission to the Jupiter Trojans"
+  },
+  {
     "id": "dawn",
     "name": "Dawn",
     "category": "orbiter",
@@ -826,6 +850,18 @@
     "status": "FAILED",
     "first_flight": "2023-04-25",
     "tagline": "First private Japanese lunar lander; M1 + M2 both crashed"
+  },
+  {
+    "id": "hayabusa",
+    "name": "Hayabusa",
+    "category": "orbiter",
+    "agency": "JAXA",
+    "country": "Japan",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "2003-05-09",
+    "tagline": "First asteroid sample return (Itokawa, 2010)"
   },
   {
     "id": "hayabusa-2",
@@ -1510,6 +1546,42 @@
     "status": "ACTIVE",
     "first_flight": "2016-09-08",
     "tagline": "Sample-returned Bennu (2023); now en route to Apophis"
+  },
+  {
+    "id": "parker-solar-probe",
+    "name": "Parker Solar Probe",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2018-08-12",
+    "tagline": "Closest spacecraft to the Sun ever flown (9.86 R☉)"
+  },
+  {
+    "id": "psyche-spacecraft",
+    "name": "Psyche",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2023-10-13",
+    "tagline": "First mission to a metal-rich M-class asteroid"
+  },
+  {
+    "id": "solar-orbiter",
+    "name": "Solar Orbiter",
+    "category": "orbiter",
+    "agency": "ESA / NASA",
+    "country": "Europe / USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2020-02-10",
+    "tagline": "First detailed imaging of the Sun's polar regions"
   },
   {
     "id": "perseverance",
@@ -2770,5 +2842,173 @@
     "status": "RETIRED",
     "first_flight": "1967-08-01",
     "tagline": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations"
+  },
+  {
+    "id": "salyut-2",
+    "name": "Salyut 2 (OPS-1)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1973-04-03",
+    "tagline": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days"
+  },
+  {
+    "id": "salyut-3",
+    "name": "Salyut 3 (OPS-2)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1974-06-25",
+    "tagline": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24"
+  },
+  {
+    "id": "salyut-4",
+    "name": "Salyut 4 (DOS-4)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1974-12-26",
+    "tagline": "Civilian DOS-4 station — hosted Soyuz 17 (30 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03"
+  },
+  {
+    "id": "salyut-5",
+    "name": "Salyut 5 (OPS-3)",
+    "category": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1976-06-22",
+    "tagline": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days"
+  },
+  {
+    "id": "lc-34",
+    "name": "Launch Complex 34 (LC-34)",
+    "category": "launch-site",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1961-10-27",
+    "tagline": "NASA pad at Cape Canaveral (1961-68) — first Saturn I; Apollo 1 fire site 1967-01-27; Apollo 7 first crewed launch 1968-10-11"
+  },
+  {
+    "id": "mars2-orbiter",
+    "name": "Mars 2 Orbiter",
+    "category": "orbiter",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1969-1981",
+    "epoch": "lunar-era",
+    "status": "RETIRED",
+    "first_flight": "1971-05-19",
+    "tagline": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 2 weeks). Operated 1971-11-27 to 1972-08"
+  },
+  {
+    "id": "mercury-redstone",
+    "name": "Mercury-Redstone",
+    "category": "launcher",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1960-11-21",
+    "tagline": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)"
+  },
+  {
+    "id": "lc-5",
+    "name": "Launch Complex 5 (LC-5)",
+    "category": "launch-site",
+    "agency": "USAF / NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1956-07-19",
+    "tagline": "Cape Canaveral Mercury-Redstone pad — launched Freedom 7 (Shepard, 1961-05-05) and Liberty Bell 7 (Grissom, 1961-07-21)"
+  },
+  {
+    "id": "lc-14",
+    "name": "Launch Complex 14 (LC-14)",
+    "category": "launch-site",
+    "agency": "USAF / NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1957-06-11",
+    "tagline": "Cape Canaveral Mercury-Atlas pad — launched all 4 orbital Mercury flights (Glenn / Carpenter / Schirra / Cooper, 1962-1963)"
+  },
+  {
+    "id": "vostok-k",
+    "name": "Vostok-K (8K72K)",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1960-12-22",
+    "tagline": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963"
+  },
+  {
+    "id": "voskhod-11a57",
+    "name": "Voskhod (11A57)",
+    "category": "launcher",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1963-11-16",
+    "tagline": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)"
+  },
+  {
+    "id": "gagarins-start",
+    "name": "Gagarin's Start (Baikonur Site 1)",
+    "category": "launch-site",
+    "agency": "Roscosmos",
+    "country": "Kazakhstan",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1957-05-15",
+    "tagline": "Baikonur Site 1 — Sputnik 1 (1957-10-04), Gagarin's Vostok 1 (1961-04-12), every crewed Soyuz through MS-22 (2022). Retired 2019"
+  },
+  {
+    "id": "apollo-csm-block-i",
+    "name": "Apollo CSM (Block I)",
+    "category": "crewed-spacecraft",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1966-02-26",
+    "tagline": "Original Apollo CSM design — never flew crewed; killed Apollo 1 crew on the pad 1967-01-27. Redesign produced the Block II flown 1968-1975"
+  },
+  {
+    "id": "cape-canaveral-lc-36b",
+    "name": "Cape Canaveral Launch Complex 36B (LC-36B)",
+    "category": "launch-site",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1965-08-11",
+    "tagline": "USAF Atlas-Centaur pad — Mariner 10 (1973), Pioneer 11 (1973), Pioneer Venus, Intelsat — now Blue Origin New Glenn"
   }
 ]

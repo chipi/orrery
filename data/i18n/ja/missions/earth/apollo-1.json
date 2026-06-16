@@ -1,0 +1,26 @@
+{
+  "name": "アポロ 1 号 (AS-204)",
+  "type": "有人地球周回 · 中止",
+  "first": "1967年1月27日の致命的な発射台前火災でグリソム、ホワイト、チャフィーが死亡",
+  "description": "アポロ 1 号はアポロ Block I CSM の最初の有人飛行として計画され、当初 AS-204 と命名され、1967年2月21日にLC-34から打ち上げられる予定だった。1967年1月27日 17:31 ESTの通常の「プラグアウト」試験中、加圧された純酸素キャビン内に乗組員が密閉されていた際、下部機器ベイで閃光火災が発生した — おそらく取付時に損傷した銀メッキ銅をテフロン絶縁配線がアーク放電したことによる。キャビン圧力は15秒以内に29 psiに急上昇；内開きハッチは圧力差に抗して開封できなかった。ガス・グリソム、エド・ホワイト、ロジャー・チャフィーは数秒で窒息死した。調査により、Block I → Block II への全面再設計 + より安全な外開き統一ハッチ + 不燃性キャビン材料 + 打ち上げ前の窒素リッチなキャビン雰囲気が導入された。アポロ 1 号の公式呼称は乗組員を称えるため死後に付与された。その後のアポロミッション (CSM-101 から CSM-114) はこの再設計が生み出した Block II ハードウェアで飛行した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "PAD FIRE",
+      "note": "Plugs-out test 1967-01-27 17:31 EST. Flash fire in pressurised pure-O₂ cabin; cabin pressure spiked to 29 psi in 15 s.",
+      "type": "warning"
+    },
+    {
+      "met": 1e-7,
+      "label": "CREW LOST",
+      "note": "Grissom + White + Chaffee perish from asphyxiation. Hatch could not be unsealed against pressure differential.",
+      "type": "warning"
+    },
+    {
+      "met": 25,
+      "label": "PROGRAM PAUSE",
+      "note": "Apollo crewed program halted 21 months. Mission renamed Apollo 1 in posthumous honour.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "hayabusa",
+  "name": "Hayabusa",
+  "category": "orbiter",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "NEC Corporation",
+  "first_flight": "2003-05-09",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First asteroid sample ever returned to Earth (1500 μg from Itokawa, 2010); heroic recovery from multiple system failures",
+  "credit": "Added with /fly mission JSON (#341 batch 5). Pioneer of asteroid sample-return + ion-propulsion for primary cruise. Successor Hayabusa 2 returned Ryugu sample 2020.",
+  "links": [
+    {
+      "l": "Hayabusa — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hayabusa",
+      "t": "intro"
+    },
+    {
+      "l": "Hayabusa mission archive (JAXA / ISAS)",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/hayabusa.html",
+      "t": "core"
+    },
+    {
+      "l": "Yano et al. (2006) — Touchdown of the Hayabusa Spacecraft at Itokawa (Science)",
+      "u": "https://www.science.org/doi/10.1126/science.1126164",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": ["hayabusa1"]
+}

@@ -72,32 +72,46 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — SLS Block 1 / Orion (planned)",
+        "description": "Kennedy Space Center LC-39B, planned 2026. Artemis II — first crewed lunar mission since Apollo 17 (1972). Crew: Reid Wiseman (NASA, cmdr), Victor Glover (NASA), Christina Koch (NASA, first woman on a lunar mission), Jeremy Hansen (CSA, first non-American on the Moon)."
       },
       {
         "met_days": 0.05,
-        "type": "parking_orbit_exit"
+        "type": "parking_orbit_exit",
+        "label": "Earth-orbit checkout complete",
+        "description": "Orion + ICPS finish post-launch checkout in high Earth orbit. Crew rendezvouses with the ICPS for the manual proximity-operations demo unique to this mission."
       },
       {
         "met_days": 0.13,
         "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "ICPS burn places Orion + crew on a 4-day hybrid free-return trajectory. The trajectory is designed so the Moon's gravity bends Orion straight back to Earth even if the engine fails — no LOI burn needed.",
         "dv_km_s": 3.05
       },
       {
         "met_days": 1.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1 — first midcourse correction",
+        "description": "Refines the free-return trajectory toward the Moon."
       },
       {
         "met_days": 4,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Moon — free-return flyby",
+        "description": "Closest approach ~9,200 km past the lunar far side. The crew won't enter lunar orbit — Artemis II is a translunar-flyby test mission validating Orion's life support + comms over a 10-day deep-space cruise before Artemis III lands on the surface."
       },
       {
         "met_days": 6,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2 — return-leg correction",
+        "description": "Targets the Pacific splashdown ellipse off San Diego."
       },
       {
         "met_days": 10,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "Planned 2026. Orion re-enters Earth's atmosphere at 11 km/s (lunar return velocity), executes the skip-entry maneuver to bleed energy, and splashes down in the Pacific. First crewed deep-space mission of the 21st century."
       }
     ],
     "cislunar_profile": {

@@ -76,36 +76,52 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Saturn V",
+        "description": "Kennedy Space Center LC-39A, 1970-04-11 19:13 UTC. Apollo 13 — Lovell + Swigert + Haise — bound for the Fra Mauro highlands. The 5-month-delayed launch had been triggered by Swigert being a late substitute for prime crew member Ken Mattingly (suspected German measles exposure)."
       },
       {
         "met_days": 0.117,
         "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "S-IVB third-stage burn at 2h 35m, sending Odyssey + Aquarius on a 3-day translunar coast.",
         "dv_km_s": 3.05
       },
       {
         "met_days": 1.2,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2 — first midcourse correction",
+        "description": "Mid-cruise trajectory tweak. Planned + executed before the anomaly."
       },
       {
         "met_days": 2.33,
-        "type": "anomaly"
+        "type": "anomaly",
+        "label": "Oxygen tank 2 explosion — \"Houston, we've had a problem\"",
+        "description": "1970-04-13 03:08 UTC. Oxygen tank 2 in the Service Module ruptured during a routine cryo stir, venting both O₂ tanks and crippling the CSM's fuel-cell electrical power. Cause was later traced to a damaged thermostatic-switch heater wire dating from pre-launch ground testing. Mission objective immediately switched from \"land on the Moon\" to \"get the crew home alive\"."
       },
       {
         "met_days": 2.92,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "PC+2 burn — free-return correction",
+        "description": "1970-04-14. With the SPS engine ruled out (could compound the SM damage), the LM descent engine fired for 31 seconds to put Aquarius + Odyssey on a faster free-return trajectory back to Earth — using the Moon's gravity instead of a burn."
       },
       {
         "met_days": 3.13,
-        "type": "flyby"
+        "type": "flyby",
+        "label": "Moon — free-return flyby",
+        "description": "1970-04-14, closest approach 254 km above Mare Cognitum. Apollo 13's altitude record: the farthest humans have ever travelled from Earth (400,171 km on the far side). No lunar landing — Aquarius (the LM, designed for 45 hours) had to keep three astronauts alive for 87 hours instead."
       },
       {
         "met_days": 3.96,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "PC+22 — second LM burn correction",
+        "description": "Another LM descent-engine burn refines the Earth-return trajectory + targets the splashdown ellipse."
       },
       {
         "met_days": 5.95,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "1970-04-17 18:07 UTC. Apollo 13 splashed down 6.5 km from USS Iwo Jima, near Samoa. The mission was reclassified a \"successful failure\" — no Moon landing, but the crew survived and the systems-engineering lessons fed directly into Apollo 14–17 + later programs. Mattingly later flew Apollo 16."
       }
     ],
     "cislunar_profile": {

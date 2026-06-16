@@ -60,39 +60,57 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — H-IIA",
+        "description": "Tanegashima, Japan, 2020-07-19. UAE's Hope Probe (al-Amal) — the first Arab interplanetary mission. Launched on a Japanese H-IIA in a programme designed to leapfrog the Emirates' space-science capability by partnering with US universities + JAXA + ESA over a single mission timeline."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "H-IIA second stage carries Hope on a 7-month transfer to Mars."
       },
       {
         "met_days": 25,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First cruise correction burn after TMI."
       },
       {
         "met_days": 41,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 71.75,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 100,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4",
+        "description": "Approach-phase adjustment."
       },
       {
         "met_days": 102.5,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-5 — final pre-MOI",
+        "description": "Tightens approach targeting for Mars orbit insertion."
       },
       {
         "met_days": 205,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars approach",
+        "description": "Pre-MOI checkout phase."
       },
       {
         "met_days": 205.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion",
+        "description": "27-minute main-engine burn on 2021-02-09 captured Hope into a 22,000 × 43,000 km orbit. Hope is the first Mars mission to study the planet's lower atmosphere + weather + dust storms from a high-altitude 55-hour orbit — a vantage point that complements the lower-orbit science missions (MAVEN, TGO) it shares the Mars system with."
       }
     ],
     "interplanetary_profile": {

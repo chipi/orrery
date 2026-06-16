@@ -1,0 +1,44 @@
+{
+  "name": "Mariner 10",
+  "type": "SOBREVOO PLANETÁRIO · VOADO",
+  "first": "Primeiro sobrevoo de Mercúrio; primeiro sobrevoo de dois planetas; primeira missão com assistência gravitacional",
+  "description": "Primeira espaçonave a visitar Mercúrio, primeira a sobrevoar dois planetas e primeira a usar uma assistência gravitacional para alcançar seu destino. Lançada em 1973-11-03 às 05:45 UTC de Cape Canaveral LC-36B em um Atlas SLV-3D Centaur AC-34. A Mariner 10 sobrevoou Vênus em 1974-02-05 (5768 km de máxima aproximação, primeiras imagens UV das bandas de nuvens de Vênus) usando o encontro para reduzir seu periélio até o domínio orbital de Mercúrio — a primeira trajetória deliberada de assistência gravitacional na história espacial. Realizou três sobrevoos de Mercúrio: 1974-03-29 (703 km), 1974-09-21 (48069 km) e 1975-03-16 (327 km). Imageou cerca de 45 % da superfície de Mercúrio — as únicas imagens resolvidas disponíveis até a MESSENGER (2008-2015). Descobriu o campo magnético intrínseco de Mercúrio e a tênue exosfera de sódio-hélio. A gestão térmica dos painéis solares foi um problema de engenharia de missão em aberto: os cientistas do projeto inclinaram os painéis e rolaram a espaçonave para mantê-los abaixo de 115 °C. A missão terminou em 1975-03-24, quando o nitrogênio de controle de atitude se esgotou; presume-se que a espaçonave esteja em órbita heliocêntrica, passando periodicamente próxima a Mercúrio.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 94,
+      "label": "VENUS FLYBY",
+      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "type": "nominal"
+    },
+    {
+      "met": 146,
+      "label": "MERCURY 1",
+      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "type": "nominal"
+    },
+    {
+      "met": 322,
+      "label": "MERCURY 2",
+      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "type": "nominal"
+    },
+    {
+      "met": 498,
+      "label": "MERCURY 3",
+      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "type": "nominal"
+    },
+    {
+      "met": 506,
+      "label": "PROPELLANT END",
+      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "type": "nominal"
+    }
+  ]
+}

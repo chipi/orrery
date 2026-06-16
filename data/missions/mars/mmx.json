@@ -65,35 +65,51 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — H3 (planned)",
+        "description": "Tanegashima, Japan, planned 2026. MMX (Martian Moons eXploration) — JAXA's flagship return-sample mission to Phobos, the larger and inner of Mars's two moons. Lineage from Hayabusa 1 + 2 — same agency, same return-sample architecture, scaled to Mars system."
       },
       {
         "met_days": 0.005,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "H3 upper stage burn sends MMX on a ~11-month transfer to Mars."
       },
       {
         "met_days": 30,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First post-TMI cleanup burn."
       },
       {
         "met_days": 150,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 250,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 320,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "TCM-4 — final pre-MOI",
+        "description": "Final approach targeting."
       },
       {
         "met_days": 334,
-        "type": "arrival"
+        "type": "arrival",
+        "label": "Mars orbit insertion",
+        "description": "Planned 2027. Captures into Mars orbit, then spirals down to a Phobos quasi-satellite orbit — a stable Mars-relative position that lets MMX hover near Phobos without orbiting it directly (Phobos's gravity is too small for a stable orbit)."
       },
       {
         "met_days": 334.01,
-        "type": "edl_or_oi"
+        "type": "edl_or_oi",
+        "label": "Phobos sample collection",
+        "description": "Planned 2028–2029. MMX will descend to Phobos's surface, collect ≥10g of regolith via a coring sampler, and ascend back. The samples return to Earth in 2031 — the first material returned from Mars's moons, expected to settle whether Phobos formed from captured asteroids or from an Earth-Moon-style giant impact on Mars."
       }
     ],
     "interplanetary_profile": {

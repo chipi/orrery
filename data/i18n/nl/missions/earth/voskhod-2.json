@@ -1,0 +1,38 @@
+{
+  "name": "Voskhod 2",
+  "type": "BEMANDE AARDBAAN · GEVLOGEN",
+  "first": "Eerste ruimtewandeling (Leonov, 12 min, 18-03-1965)",
+  "description": "De ééndaagse vlucht van Pavel Beljajev en Aleksej Leonov — de eerste EVA in de geschiedenis. Leonov bracht 12 minuten buiten Voskhod 2 door (18-03-1965 om 11:34 UTC), onder druk gebracht via een opblaasbare Volga-luchtsluis die Sovjet-ingenieurs hadden toegevoegd omdat de Voskhod-romp geen ruimte had voor volledige drukverlaging. Leonovs pak zwol op in het vacuüm en klemde hem buiten de luchtsluis; hij moest de pakdruk laten ontsnappen om weer binnen te komen, wat het risico op decompressieziekte verhoogde. De terugkeer was even dramatisch — het automatische landingssysteem faalde en Beljajev stuurde de daalmodule handmatig naar een harde landing in de diepe sneeuw van de Oeral, ongeveer 390 km buiten doel; de bemanning overleefde een nacht in het bos tussen wolven voordat reddingshelikopters op 20-03-1965 arriveerden.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

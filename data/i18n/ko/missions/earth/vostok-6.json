@@ -1,0 +1,26 @@
+{
+  "name": "보스토크 6",
+  "type": "유인 지구 궤도 · 비행 완료",
+  "first": "우주에 간 최초의 여성 — 발렌티나 테레시코바, 48회 궤도",
+  "description": "발렌티나 테레시코바의 48회 궤도, 2일 23시간 비행 — 우주에 간 최초의 여성이자(2022년 소유즈 MS-22 전까지) 단독 우주 임무를 비행한 유일한 여성. 1962년 구성된 다섯 명의 여성 우주비행사 후보군에서 선발되었고, 가가린의 첫 궤도 비행으로부터 단 2년 뒤인 1963-06-16 09:30 UTC에 발사되었다. 그녀의 캡슐은 하향이 아닌 상향 궤도 수정 분사를 하도록 프로그램되어 있었다 — 그녀가 수동으로 오류를 발견했고 지상 관제는 다음 날 수정된 자세 제어 소프트웨어를 다시 업로드했다. 1963-06-19 08:20 UTC 알타이 변경주 바예보 인근에 착륙했다. 이후 테레시코바는 소련 정치의 거물이 되었으며, 26세에 궤도에 오른 역대 최연소 여성으로 남아 있다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1963-06-16 09:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "ORBIT-CORRECTION ERROR",
+      "note": "Pre-loaded attitude software would have raised orbit instead of lowering it; corrected next day.",
+      "type": "warning"
+    },
+    {
+      "met": 2.95,
+      "label": "EJECT + LAND",
+      "note": "Landed near Bayevo, Altai Krai, 1963-06-19 08:20 UTC after 48 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

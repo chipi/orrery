@@ -1,0 +1,15 @@
+{
+  "name": "Hayabusa",
+  "type": "SAMPLE-RETURN · FLOWN",
+  "first": "First asteroid sample ever returned to Earth (1500 μg from Itokawa)",
+  "description": "JAXA's Hayabusa (Japanese for 'falcon') flew the most heroic mission-save in spaceflight history. Launched 2003-05-09 on an M-V-5 with four μ10 ion thrusters — the most powerful ion-propulsion subsystem flown to that point. Arrived at 25143 Itokawa 2005-09-12 — a 540×270×210-m rubble-pile near-Earth asteroid. Two touchdowns (2005-11-20 + 25), both with sample-collection projectile failures, though regolith was kicked into the collection horn anyway. Then a hydrazine leak crippled attitude control, two of four reaction wheels died, communications lost for seven weeks, the Earth-return window slipped by three years. Engineers assembled a single working ion engine from the surviving halves of two damaged engines and nursed Hayabusa back to Earth. Sample capsule recovered at Woomera AUS 2010-06-13 returned 1500 micrograms of Itokawa material — confirming the asteroid's S-type composition and rubble-pile structure, and proving that asteroid sample return was possible.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "M-V-5 from Uchinoura Space Center.", "type": "nominal" },
+    { "met": 366, "label": "EARTH GRAVITY ASSIST", "note": "2004-05-19.", "type": "info" },
+    { "met": 857, "label": "ITOKAWA ARRIVAL", "note": "2005-09-12. Station-keep at 7-km gate position.", "type": "info" },
+    { "met": 857.01, "label": "TOUCHDOWNS", "note": "Two surface contacts 2005-11-20 + 25. Sample-collection projectiles fail to fire on command.", "type": "warning" },
+    { "met": 920, "label": "RECOVERY ATTEMPT", "note": "Hydrazine leak, 2 reaction wheels dead, comms lost 7 weeks.", "type": "warning" },
+    { "met": 1900, "label": "ION ENGINE FRANKENSTEIN", "note": "One working engine assembled from surviving halves of two damaged ones.", "type": "info" },
+    { "met": 2592, "label": "SAMPLE RETURN", "note": "2010-06-13. 1500 μg of Itokawa recovered at Woomera. First asteroid sample ever returned.", "type": "info" }
+  ]
+}

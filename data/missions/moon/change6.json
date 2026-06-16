@@ -68,53 +68,77 @@
     "events": [
       {
         "met_days": 0,
-        "type": "launch"
+        "type": "launch",
+        "label": "Launch — Long March 5",
+        "description": "Wenchang, China, 2024-05-03. Chang'e 6 — first sample return from the lunar far side. Uses the same multi-component architecture as Chang'e 5 plus the Queqiao-2 relay satellite (launched 2024-03) at the Earth-Moon L2 Lagrange point for far-side comms."
       },
       {
         "met_days": 0.05,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "Long March 5 upper stage burn places Chang'e 6 on translunar trajectory."
       },
       {
         "met_days": 1.04,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-1",
+        "description": "First post-TLI cleanup."
       },
       {
         "met_days": 1.78,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-2",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 2.52,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-3",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 3,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-4",
+        "description": "Mid-cruise refinement."
       },
       {
         "met_days": 3.27,
-        "type": "tcm"
+        "type": "tcm",
+        "label": "MCC-5 — final pre-LOI",
+        "description": "Final approach targeting."
       },
       {
         "met_days": 5,
         "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "2024-05-08. Captured into 200-km circular lunar orbit. CNSA spent ~25 days adjusting orbit + waiting for far-side sunlight conditions at the landing site.",
         "dv_km_s": 0.82
       },
       {
         "met_days": 30,
-        "type": "descent_start"
+        "type": "descent_start",
+        "label": "Far-side powered descent — Apollo crater",
+        "description": "2024-06-01. Lander descended to Apollo crater (41.6°S, 153.99°W) inside the South Pole-Aitken basin — the largest, deepest, oldest impact basin on the Moon. Communicated via the Queqiao-2 relay; drilled + scooped 1,935 g of far-side regolith."
       },
       {
         "met_days": 32,
-        "type": "ascent"
+        "type": "ascent",
+        "label": "Far-side ascent — first ever",
+        "description": "2024-06-03. Ascender lifted off the lunar far side — the first launch from the Moon's far side in history. Rendezvoused with the orbiter for sample transfer."
       },
       {
         "met_days": 47,
         "type": "tei",
+        "label": "Trans-Earth injection",
+        "description": "2024-06-21. Orbiter departed lunar orbit on return trajectory.",
         "dv_km_s": 0.9
       },
       {
         "met_days": 53,
-        "type": "earth_return"
+        "type": "earth_return",
+        "label": "Sample return capsule landing — Inner Mongolia",
+        "description": "2024-06-25. Capsule re-entered Earth's atmosphere using skip-entry, parachuted to Inner Mongolia. First samples from the lunar far side, expected to settle the South Pole-Aitken basin's age + composition + the long-standing near-side/far-side asymmetry question."
       }
     ],
     "cislunar_profile": {

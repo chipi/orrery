@@ -1,0 +1,26 @@
+{
+  "name": "Vostok 4",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "Second half of first dual flight — first communications between two crewed spacecraft",
+  "description": "Pavel Popovich's 48-orbit flight, launched 1962-08-12 08:02 UTC, twenty-four hours after Vostok 3. The two capsules came within ~6.5 km and exchanged the first voice radio communications between cosmonauts in orbit. Popovich was ordered down a day early when ground controllers misinterpreted a coded phrase about thunder as the duress code-word for early termination — the real signal was a routine weather observation. Landed 1962-08-15 07:59 UTC near Karaganda, four minutes after Vostok 3.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Vostok-K from Baikonur Site 1 1962-08-12 08:02 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "INTER-CRAFT VOICE",
+      "note": "First voice communication between two crewed spacecraft.",
+      "type": "info"
+    },
+    {
+      "met": 2.99,
+      "label": "EJECT + LAND",
+      "note": "Landed near Karaganda 1962-08-15 07:59 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

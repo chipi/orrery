@@ -1,0 +1,32 @@
+{
+  "name": "Skylab 3",
+  "type": "CREWED STATION CREW · FLOWN",
+  "first": "Second Skylab crew — 59 days, deployed twin-pole solar shield to replace parasol",
+  "description": "Bean, Garriott and Lousma — the second crew to live aboard Skylab, for 59 days 11 hours. Launched 1973-07-28 11:11 UTC on Saturn IB (SA-207). Within hours of docking the CSM service module suffered an attitude-control thruster leak — back-up CSM-119 was prepped at Cape Canaveral for a possible rescue mission, but the crew completed nominally. Garriott led 305 hours of solar observations using the Apollo Telescope Mount instruments. Three EVAs deployed a twin-pole sun shield over the original parasol, repaired the rate gyro package, and recovered film canisters from the ATM. Splashed down 1973-09-25 22:19 UTC; CSM-117 displayed at the Glenn Visitor Center, Cleveland.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "CSM THRUSTER LEAK",
+      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "type": "warning"
+    },
+    {
+      "met": 30,
+      "label": "TWIN-POLE SHIELD EVA",
+      "note": "Crew deployed twin-pole shield over original parasol.",
+      "type": "nominal"
+    },
+    {
+      "met": 59.46,
+      "label": "SPLASHDOWN",
+      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "type": "nominal"
+    }
+  ]
+}

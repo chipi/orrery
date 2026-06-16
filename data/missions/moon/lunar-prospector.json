@@ -38,5 +38,31 @@
       "id": "lunar-prospector",
       "role": "spacecraft"
     }
-  ]
+  ],
+  "flight": {
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 200,
+        "inclination_deg": 28.5,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.1,
+        "c3_km2_s2": -1.5
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 100,
+        "inclination_deg": 90,
+        "periselene_km": 100
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
 }

@@ -1,0 +1,38 @@
+{
+  "name": "ボスホート 2 号",
+  "type": "有人地球周回 · 飛行済み",
+  "first": "史上初の船外活動 (レオーノフ、12分、1965年3月18日)",
+  "description": "パーヴェル・ベリャーエフとアレクセイ・レオーノフによる1日間の飛行 — 史上初のEVA。レオーノフはボスホート 2 号の外で12分間を過ごし (1965年3月18日 11:34 UTC)、ボスホートの船体には完全な減圧の余地がなかったためソ連の技術者が追加した膨張式ヴォルガ・エアロックを通じて与圧された。レオーノフのスーツは真空中で膨らみ、エアロックの外で動けなくなった；彼は再突入するためにスーツ圧を排出せざるを得ず、減圧症のリスクを高めた。再突入も同様に劇的だった — 自動着陸システムが故障し、ベリャーエフは降下モジュールを手動操縦して目標から約390 km外れたウラルの深い雪の中に強行着陸させた；乗組員は1965年3月20日に救助ヘリコプターが到着するまで、狼に囲まれた森で一夜を生き延びた。",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Voskhod 11A57 from Baikonur Site 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT INSERT",
+      "note": "Insertion into 167 × 475 km Earth orbit, 64.8° inclination.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.19,
+      "label": "EVA",
+      "note": "Leonov exits the Volga airlock 1965-03-18 11:34 UTC; first human EVA. 12 min outside; suit ballooned in vacuum and he vented pressure to re-enter.",
+      "type": "info"
+    },
+    {
+      "met": 1.05,
+      "label": "DEORBIT",
+      "note": "Automatic landing system fails; Belyayev manually pilots descent. 390 km off-target hard landing in Perm Oblast snow.",
+      "type": "warning"
+    },
+    {
+      "met": 2.5,
+      "label": "RESCUE",
+      "note": "Crew survived 2 nights in -30°C wolf-inhabited forest before recovery helicopters reached them 1965-03-20.",
+      "type": "info"
+    }
+  ]
+}

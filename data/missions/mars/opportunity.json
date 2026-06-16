@@ -1,0 +1,727 @@
+{
+  "id": "opportunity",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2003,
+  "status": "FLOWN",
+  "departure_date": "2003-07-07",
+  "arrival_date": "2004-01-25",
+  "transit_days": 202,
+  "vehicle": "Delta II 7925H Heavy",
+  "payload": "1063 kg (cruise stage + EDL + rover); 174 kg surface mass",
+  "delta_v": "~5.5 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL-Caltech — public domain. MER-B. Meridiani Planum landing 2004-01-25; final transmission 2018-06-10 during a global dust storm; declared end-of-mission 2019-02-13 after 14 years 47 days of surface operations.",
+  "links": [
+    {
+      "l": "Opportunity (rover) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Opportunity_(rover)",
+      "t": "intro"
+    },
+    {
+      "l": "Mars Exploration Rovers (NASA)",
+      "u": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+      "t": "intro"
+    },
+    {
+      "l": "Opportunity (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "opportunity",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Star 48B PAM-D solid upper stage",
+      "c3_km2_s2": 9.79,
+      "mass_at_tli_kg": 1063,
+      "source": "NASA MER Press Kit (2003-06); JPL MER Mission Plan"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "JPL MER-B Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.93,
+      "entry_velocity_km_s": 5.5,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "JPL MER-B EDL Reconstruction (2004); direct atmospheric entry"
+    },
+    "totals": {
+      "total_dv_km_s": 5.5,
+      "tli_or_tmi_dv_km_s": 3.8,
+      "source": "NASA MER Press Kit (2003-06)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Delta II 7925H",
+        "description": "Cape Canaveral LC-17B, 2003-07-07. Second of the twin Mars Exploration Rovers. Flew on the heavier Delta II 7925H (Heavy) variant to compensate for the slightly later launch and a higher-energy injection requirement. Designed for 90 sols. Would survive 5,352 sols."
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi",
+        "label": "Trans-Mars injection",
+        "description": "PAM-D solid upper-stage burn sends Opportunity on a 6.6-month Type-I transfer, three weeks behind its twin Spirit."
+      },
+      {
+        "met_days": 12,
+        "type": "tcm",
+        "label": "TCM-1",
+        "description": "First mid-course correction."
+      },
+      {
+        "met_days": 70,
+        "type": "tcm",
+        "label": "TCM-2",
+        "description": "Mid-cruise refinement."
+      },
+      {
+        "met_days": 160,
+        "type": "tcm",
+        "label": "TCM-3",
+        "description": "Approach trim toward Meridiani Planum target ellipse."
+      },
+      {
+        "met_days": 195,
+        "type": "tcm",
+        "label": "TCM-4 — final pre-EDL",
+        "description": "Final trim before the atmospheric entry interface."
+      },
+      {
+        "met_days": 202,
+        "type": "arrival",
+        "label": "Mars approach + cruise-stage separation",
+        "description": "2004-01-25. Cruise stage jettisoned; backshell + heat shield + lander entered the atmosphere at 5.5 km/s."
+      },
+      {
+        "met_days": 202.005,
+        "type": "edl_or_oi",
+        "label": "Mars EDL — airbag landing in Meridiani Planum",
+        "description": "Bounced 26 times across the hematite-rich plains of Meridiani Planum and rolled into a 22-m diameter crater — Eagle Crater — by sheer luck. The first close-up images showed bedrock exposing in the crater walls, geology a rover could read without driving anywhere. Found jarosite and \"blueberry\" hematite concretions, the strongest mineral evidence to that point of standing liquid water on early Mars. Traversed 45.16 km over 14+ years — the marathon-distance Mars rover record. Final transmission 2018-06-10 during a planet-wide dust storm; NASA declared end-of-mission 2019-02-13."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "mars",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 4,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.253101,
+          0,
+          -0.96744
+        ],
+        [
+          2.1425,
+          0.277073,
+          0,
+          -0.96314
+        ],
+        [
+          4.285,
+          0.300965,
+          0,
+          -0.958437
+        ],
+        [
+          6.4274,
+          0.324776,
+          0,
+          -0.953333
+        ],
+        [
+          8.5699,
+          0.348428,
+          0,
+          -0.947502
+        ],
+        [
+          10.7124,
+          0.371976,
+          0,
+          -0.941224
+        ],
+        [
+          12,
+          0.386082,
+          0,
+          -0.937256
+        ],
+        [
+          14.9973,
+          0.418704,
+          0,
+          -0.927161
+        ],
+        [
+          17.1398,
+          0.441849,
+          0,
+          -0.919289
+        ],
+        [
+          19.2823,
+          0.464883,
+          0,
+          -0.911007
+        ],
+        [
+          21.4248,
+          0.487732,
+          0,
+          -0.90207
+        ],
+        [
+          23.5673,
+          0.510421,
+          0,
+          -0.892593
+        ],
+        [
+          25.7097,
+          0.532984,
+          0,
+          -0.882702
+        ],
+        [
+          27.8522,
+          0.555355,
+          0,
+          -0.872194
+        ],
+        [
+          29.9947,
+          0.577536,
+          0,
+          -0.861101
+        ],
+        [
+          32.1372,
+          0.599577,
+          0,
+          -0.849593
+        ],
+        [
+          34.2796,
+          0.621422,
+          0,
+          -0.837508
+        ],
+        [
+          36.4221,
+          0.643043,
+          0,
+          -0.824794
+        ],
+        [
+          38.5646,
+          0.664512,
+          0,
+          -0.811664
+        ],
+        [
+          40.7071,
+          0.685781,
+          0,
+          -0.797999
+        ],
+        [
+          42.8495,
+          0.706791,
+          0,
+          -0.783662
+        ],
+        [
+          44.992,
+          0.727634,
+          0,
+          -0.76891
+        ],
+        [
+          47.1345,
+          0.748278,
+          0,
+          -0.753666
+        ],
+        [
+          49.277,
+          0.768621,
+          0,
+          -0.73771
+        ],
+        [
+          51.4195,
+          0.788781,
+          0,
+          -0.72134
+        ],
+        [
+          53.5619,
+          0.808743,
+          0,
+          -0.704523
+        ],
+        [
+          55.7044,
+          0.828358,
+          0,
+          -0.686956
+        ],
+        [
+          57.8469,
+          0.847773,
+          0,
+          -0.66898
+        ],
+        [
+          59.9894,
+          0.866989,
+          0,
+          -0.650593
+        ],
+        [
+          62.1318,
+          0.88581,
+          0,
+          -0.631438
+        ],
+        [
+          64.2743,
+          0.904409,
+          0,
+          -0.611871
+        ],
+        [
+          66.4168,
+          0.922788,
+          0,
+          -0.591898
+        ],
+        [
+          68.5593,
+          0.940758,
+          0,
+          -0.57121
+        ],
+        [
+          70,
+          0.952722,
+          0,
+          -0.5571
+        ],
+        [
+          72.8442,
+          0.975916,
+          0,
+          -0.528544
+        ],
+        [
+          74.9867,
+          0.992949,
+          0,
+          -0.506352
+        ],
+        [
+          77.1292,
+          1.009658,
+          0,
+          -0.483683
+        ],
+        [
+          79.2717,
+          1.026097,
+          0,
+          -0.460626
+        ],
+        [
+          81.4141,
+          1.042096,
+          0,
+          -0.436965
+        ],
+        [
+          83.5566,
+          1.057707,
+          0,
+          -0.412804
+        ],
+        [
+          85.6991,
+          1.073018,
+          0,
+          -0.388267
+        ],
+        [
+          87.8416,
+          1.087873,
+          0,
+          -0.363184
+        ],
+        [
+          89.984,
+          1.102265,
+          0,
+          -0.337582
+        ],
+        [
+          92.1265,
+          1.116323,
+          0,
+          -0.311622
+        ],
+        [
+          94.269,
+          1.129911,
+          0,
+          -0.285174
+        ],
+        [
+          96.4115,
+          1.14295,
+          0,
+          -0.258198
+        ],
+        [
+          98.554,
+          1.155616,
+          0,
+          -0.230883
+        ],
+        [
+          100.6964,
+          1.167802,
+          0,
+          -0.203141
+        ],
+        [
+          102.8389,
+          1.179339,
+          0,
+          -0.174871
+        ],
+        [
+          104.9814,
+          1.190463,
+          0,
+          -0.146285
+        ],
+        [
+          107.1239,
+          1.201098,
+          0,
+          -0.117335
+        ],
+        [
+          109.2663,
+          1.210973,
+          0,
+          -0.087867
+        ],
+        [
+          111.4088,
+          1.22039,
+          0,
+          -0.058111
+        ],
+        [
+          113.5513,
+          1.229317,
+          0,
+          -0.028052
+        ],
+        [
+          115.6938,
+          1.237359,
+          0,
+          0.0025
+        ],
+        [
+          117.8363,
+          1.244898,
+          0,
+          0.033305
+        ],
+        [
+          119.9787,
+          1.251932,
+          0,
+          0.064362
+        ],
+        [
+          122.1212,
+          1.257984,
+          0,
+          0.095856
+        ],
+        [
+          124.2637,
+          1.263466,
+          0,
+          0.127571
+        ],
+        [
+          126.4062,
+          1.268395,
+          0,
+          0.159499
+        ],
+        [
+          128.5486,
+          1.272316,
+          0,
+          0.191768
+        ],
+        [
+          130.6911,
+          1.27556,
+          0,
+          0.224233
+        ],
+        [
+          132.8336,
+          1.278205,
+          0,
+          0.256863
+        ],
+        [
+          134.9761,
+          1.279826,
+          0,
+          0.289739
+        ],
+        [
+          137.1185,
+          1.280655,
+          0,
+          0.322768
+        ],
+        [
+          139.261,
+          1.280838,
+          0,
+          0.355911
+        ],
+        [
+          141.4035,
+          1.279995,
+          0,
+          0.389204
+        ],
+        [
+          143.546,
+          1.27824,
+          0,
+          0.42259
+        ],
+        [
+          145.6885,
+          1.275797,
+          0,
+          0.456031
+        ],
+        [
+          147.8309,
+          1.272338,
+          0,
+          0.489529
+        ],
+        [
+          149.9734,
+          1.267844,
+          0,
+          0.523039
+        ],
+        [
+          152.1159,
+          1.262625,
+          0,
+          0.556541
+        ],
+        [
+          154.2584,
+          1.256414,
+          0,
+          0.590011
+        ],
+        [
+          156.4008,
+          1.249048,
+          0,
+          0.623392
+        ],
+        [
+          158.5433,
+          1.240926,
+          0,
+          0.656694
+        ],
+        [
+          160,
+          1.234757,
+          0,
+          0.679259
+        ],
+        [
+          162.8283,
+          1.221508,
+          0,
+          0.72286
+        ],
+        [
+          164.9708,
+          1.210386,
+          0,
+          0.755683
+        ],
+        [
+          167.1132,
+          1.198368,
+          0,
+          0.788317
+        ],
+        [
+          169.2557,
+          1.184974,
+          0,
+          0.820599
+        ],
+        [
+          171.3982,
+          1.17079,
+          0,
+          0.852645
+        ],
+        [
+          173.5407,
+          1.155779,
+          0,
+          0.88444
+        ],
+        [
+          175.6831,
+          1.139304,
+          0,
+          0.915718
+        ],
+        [
+          177.8256,
+          1.122039,
+          0,
+          0.946678
+        ],
+        [
+          179.9681,
+          1.103984,
+          0,
+          0.977317
+        ],
+        [
+          182.1106,
+          1.084484,
+          0,
+          1.007293
+        ],
+        [
+          184.253,
+          1.064165,
+          0,
+          1.036849
+        ],
+        [
+          186.3955,
+          1.04307,
+          0,
+          1.065999
+        ],
+        [
+          188.538,
+          1.020642,
+          0,
+          1.094385
+        ],
+        [
+          190.6805,
+          0.997345,
+          0,
+          1.122216
+        ],
+        [
+          192.823,
+          0.973302,
+          0,
+          1.149559
+        ],
+        [
+          195,
+          0.947647,
+          0,
+          1.17648
+        ],
+        [
+          197.1079,
+          0.92191,
+          0,
+          1.201846
+        ],
+        [
+          199.2504,
+          0.895061,
+          0,
+          1.227069
+        ],
+        [
+          202.005,
+          0.859187,
+          0,
+          1.258307
+        ],
+        [
+          203.5353,
+          0.853481,
+          0,
+          1.262185
+        ],
+        [
+          205.6778,
+          0.853481,
+          0,
+          1.262185
+        ],
+        [
+          207.8203,
+          0.853481,
+          0,
+          1.262185
+        ],
+        [
+          209.9628,
+          0.853481,
+          0,
+          1.262185
+        ],
+        [
+          212.1053,
+          0.853481,
+          0,
+          1.262185
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-7 (USA-358, USSF-52)",
+  "type": "무인 우주비행기 · 비행 완료",
+  "first": "USA-358 / USSF-52 — 궤도상 434일, 밴덴버그 우주군기지",
+  "description": "일곱 번째 X-37B 비행 — 고타원궤도(HEO)에 진입한 최초이자 팰컨 헤비로 발사된 최초의 비행. 2023-12-29 01:07 UTC에 KSC LC-39A에서 발사; 양쪽 사이드 부스터는 LZ-1 / LZ-2에서 회수되었으며 중앙 코어는 HEO 진입 에너지를 위해 소진. HEO 궤적은 원지점에서 OTV를 대략 GEO 벨트 고도까지 도달시킴. 통제된 에어로브레이킹 방식의 궤도 이탈 시퀀스 수행(USSF는 이 기동에 대해 공개 업데이트를 발표 — 이전의 기밀 비행에서 의도적으로 투명성 방향으로 전환). 2025-03-07 09:22 UTC에 밴덴버그 우주군기지에 착륙.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from KSC LC-39A 2023-12-29.",
+      "type": "nominal"
+    },
+    {
+      "met": 217,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee HEO ~38,800 km × 250 km (first highly-elliptical OTV flight); classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 434,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at Vandenberg SFB 2025-03-07.",
+      "type": "nominal"
+    }
+  ]
+}

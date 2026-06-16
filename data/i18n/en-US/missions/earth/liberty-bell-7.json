@@ -1,0 +1,32 @@
+{
+  "name": "Liberty Bell 7 / MR-4",
+  "type": "CREWED SUBORBITAL · FLOWN",
+  "first": "Second American suborbital flight; hatch malfunction lost the capsule (recovered 1999)",
+  "description": "Gus Grissom's 15-min suborbital flight — second American in space, first flight to feature an explosive escape hatch. After splashdown the hatch fired prematurely, the capsule flooded, and Liberty Bell 7 sank in 4900 m of water; Grissom escaped but his suit took on water and he was nearly drowned during helicopter pickup. The cause of the hatch firing remained controversial for decades; Grissom maintained he had not bumped the firing pin. Recovered 1999-07-20 by an Oceaneering/Discovery Channel expedition, restored and now displayed at the Kansas Cosmosphere & Space Center, Hutchinson KS. The Tom Wolfe book / 1983 film The Right Stuff dramatised this flight + the hatch controversy.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "MR-8 from Cape Canaveral LC-5 1961-07-21 12:20 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000018,
+      "label": "APOGEE",
+      "note": "Apogee 190 km after 2.5 minutes; ~5 min of weightlessness.",
+      "type": "info"
+    },
+    {
+      "met": 0.000174,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic Ocean 480 km downrange. Hatch fired prematurely — capsule flooded and sank. Grissom escaped; recovered by USS Randolph.",
+      "type": "warning"
+    },
+    {
+      "met": 13880,
+      "label": "CAPSULE RECOVERY",
+      "note": "Liberty Bell 7 raised from 4900 m depth by Oceaneering International, 1999-07-20.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "X-37B OTV-5 (USA-277)",
+  "type": "मानवरहित अंतरिक्ष विमान · उड़ान भर चुका",
+  "first": "USA-277 — कक्षा में 780 दिन, KSC शटल लैंडिंग सुविधा",
+  "description": "पाँचवीं X-37B उड़ान, एटलस V के बजाय फाल्कन 9 पर पहला प्रक्षेपण — और केवल ब्लॉक 4 फाल्कन 9 पर हुई X-37B उड़ान। 2017-09-07 को 14:00 UTC पर KSC LC-39A से प्रक्षेपित (बूस्टर को LZ-1 पर पुनः प्राप्त किया गया); 2019-10-27 को 07:51 UTC पर KSC SLF पर उतरा। कक्षा में 780 दिन। उच्च-झुकाव वाली कक्षा (54.5°) में X-37B की पहली उड़ान — सार्वजनिक रूप से ट्रैक किए गए ओवरफ्लाइट पैटर्न का विस्तार करती है।",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+      "type": "nominal"
+    },
+    {
+      "met": 390,
+      "label": "ON-ORBIT OPS",
+      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "type": "info"
+    },
+    {
+      "met": 780,
+      "label": "LANDING",
+      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "type": "nominal"
+    }
+  ]
+}

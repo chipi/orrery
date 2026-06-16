@@ -49,15 +49,6 @@ on:
 permissions:
   actions: read
   contents: read
-  # `packages: read` lets the auto-provisioned GITHUB_TOKEN
-  # authenticate against GHCR so the walk-back image SHA resolver in
-  # "Resolve target image SHA" can run `docker manifest inspect` on
-  # `ghcr.io/chipi/orrery-pipeline-runner:sha-<short>` candidates.
-  # Without it, every probe 401s and the resolver thinks no published
-  # image exists (surfaced 2026-06-16 — the resolver exited with
-  # "No published pipeline-runner image found in the last 50 commits"
-  # even though sha-068f898 and sha-70295bd were both in the registry).
-  packages: read
 
 concurrency:
   # Serialize prod deploys. Don't cancel-in-progress; cancelling mid
@@ -100,55 +91,47 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         if: steps.preflight.outputs.skip != 'true'
         with:
-          # `fetch-depth: 50` enables the walk-back resolver below to
-          # check up to 50 recent commits when HEAD itself doesn't
-          # have a published image (e.g. when a chore(launches)
-          # commit is HEAD — docker-e2e gates publish on real user
-          # pushes, so launches commits never produce a `sha-<…>`
-          # image tag in GHCR).
-          fetch-depth: 50
+          fetch-depth: 1
 
-      - name: Resolve target image SHA
-        # If override_image_sha is provided, use it verbatim. Otherwise
-        # walk git history from HEAD looking for the most recent commit
-        # whose `sha-<short>` tag actually exists in GHCR. This handles
-        # the case where HEAD is a chore(launches)/chore(visual) commit
-        # — those are filtered out of docker-e2e's publish step by
-        # design, so their tags never exist and a naive HEAD-only
-        # resolver would deploy-fail with "image not found".
-        # (Surfaced 2026-06-16 when a launches refresh raced a user
-        # push and the next prod deploy couldn't find a matching tag.)
+      - name: Resolve target image tag
+        # `pipeline-runner` lives in the `manual` compose profile — it
+        # does NOT start with `docker compose up`. The deploy-time
+        # `compose pull` warms the cache; cron later invokes the
+        # container on demand to fetch external data.
+        #
+        # We don't need SHA-pinning at deploy time for that workflow
+        # — `:main` always points at the most recent published image
+        # from docker-e2e's publish-platforms job, and a stale image
+        # is fine because nothing reads from it until cron fires.
+        # `override_image_sha` stays as the explicit escape hatch for
+        # rollback or for re-running an earlier batch with a known
+        # script set; otherwise we default to `:main`.
+        #
+        # Earlier history: a walk-back resolver iterated up to 50
+        # commits trying to find one whose `sha-<short>` tag existed
+        # in GHCR. That existed to paper over a self-imposed
+        # constraint ("the tag must match HEAD's SHA") that nothing
+        # downstream actually required. Dropped 2026-06-16 once we
+        # checked what `pipeline-runner`'s deploy-time job was —
+        # `profile: manual`, i.e. nothing — and realised the pin had
+        # never been load-bearing.
         id: sha
         if: steps.preflight.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           OVERRIDE="${{ github.event.inputs.override_image_sha }}"
           if [ -n "$OVERRIDE" ]; then
-            SHA_SHORT="$OVERRIDE"
-            echo "::notice::Using override_image_sha=$SHA_SHORT"
+            TAG="sha-$OVERRIDE"
           else
-            echo "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin > /dev/null
-            SHA_SHORT=""
-            for candidate in $(git log --format="%h" -n 50); do
-              if docker manifest inspect "ghcr.io/chipi/orrery-pipeline-runner:sha-${candidate}" > /dev/null 2>&1; then
-                SHA_SHORT="$candidate"
-                break
-              fi
-            done
-            if [ -z "$SHA_SHORT" ]; then
-              echo "::error::No published pipeline-runner image found in the last 50 commits."
-              echo "::error::Trigger docker-e2e on a real user push first, or pass override_image_sha=<short>."
-              exit 1
-            fi
-            HEAD_SHORT=$(git log --format="%h" -n 1)
-            if [ "$SHA_SHORT" != "$HEAD_SHORT" ]; then
-              echo "::notice::HEAD ($HEAD_SHORT) has no published image; falling back to $SHA_SHORT"
-            fi
+            TAG="main"
           fi
-          echo "short=$SHA_SHORT" >> "$GITHUB_OUTPUT"
-          echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=sha-$SHA_SHORT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          # `short` output preserved for the Sentry release labelling
+          # downstream — Sentry wants HEAD's actual commit SHA on the
+          # release, not the image tag (the deployed code is HEAD; the
+          # pipeline-runner image is independent).
+          echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=$TAG"
 
       - name: Setup Node 20 (build static bundle for deploy)
         if: steps.preflight.outputs.skip != 'true'
@@ -242,7 +225,7 @@ jobs:
         if: steps.preflight.outputs.skip != 'true'
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
-          SHA_SHORT: ${{ steps.sha.outputs.short }}
+          IMAGE_TAG: ${{ steps.sha.outputs.tag }}
           # Grafana Cloud (ADR-068). Empty → silent.
           PROD_GRAFANA_CLOUD_LOKI_URL:  ${{ secrets.PROD_GRAFANA_CLOUD_LOKI_URL }}
           PROD_GRAFANA_CLOUD_LOKI_USER: ${{ secrets.PROD_GRAFANA_CLOUD_LOKI_USER }}
@@ -256,7 +239,7 @@ jobs:
             # Co-tenancy + per-deploy
             printf '%s=%s\n' COMPOSE_PROJECT_NAME      orrery
             printf '%s=%s\n' ORRERY_PORT               8090
-            printf '%s=%s\n' ORRERY_PIPELINE_IMAGE_TAG "sha-${SHA_SHORT}"
+            printf '%s=%s\n' ORRERY_PIPELINE_IMAGE_TAG "$IMAGE_TAG"
             # Grafana Cloud (label distinguishes from podcast_scraper)
             printf '%s=%s\n' GRAFANA_CLOUD_LOKI_URL  "$PROD_GRAFANA_CLOUD_LOKI_URL"
             printf '%s=%s\n' GRAFANA_CLOUD_LOKI_USER "$PROD_GRAFANA_CLOUD_LOKI_USER"
@@ -285,7 +268,6 @@ jobs:
         #   4. Internal healthcheck against ORRERY_PORT.
         if: steps.preflight.outputs.skip != 'true'
         env:
-          SHA_SHORT: ${{ steps.sha.outputs.short }}
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
         run: |
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \

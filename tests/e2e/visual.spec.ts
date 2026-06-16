@@ -99,6 +99,15 @@ test.describe('visual regression baselines (S8 — element-scoped, stable surfac
 
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {
+      // fly-hud-collapse is a mobile-only affordance — the .hud-collapse
+      // button is display:none on hover-capable devices. The desktop
+      // snapshot would capture an empty hidden node, which Playwright's
+      // toBeVisible() correctly rejects. Skip the desktop baseline; the
+      // mobile-chromium baseline is what this snapshot is for.
+      test.skip(
+        label === 'fly-hud-collapse' && testInfo.project.name === 'desktop-chromium',
+        'fly-hud-collapse only renders on touch viewports (display:none on hover)',
+      );
       await page.goto(path, { waitUntil: 'networkidle' });
       // #342 Phase 29 — /missions and /fleet collapse the filter
       // strip behind .filters-toggle on mobile. Expand it before the

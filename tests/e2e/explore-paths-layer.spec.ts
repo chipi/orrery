@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { expandExploreHud } from './_helpers/hud-expand';
 
 /**
  * /explore PATHS layer — iconic spacecraft trajectories (#306).
@@ -53,6 +54,9 @@ test.describe('/explore — PATHS layer', () => {
     // input lands (existing pitfall called out in explore.spec.ts's
     // enterTwoDMode helper — mobile-chromium races without this).
     await page.waitForLoadState('networkidle');
+    // #342 Phase 31 — the layer-paths chip lives inside the hud-controls
+    // cluster that default-collapses on touch. Expand it first.
+    await expandExploreHud(page);
     const chip = page.locator('[data-testid="layer-paths"]');
     await expect(chip).toBeVisible();
     // Default OFF per #306 — the layer ships hidden so wide-zoom view
@@ -116,6 +120,11 @@ test.describe('/explore — PATHS layer', () => {
     // above the link can intercept the tap by sub-pixel margin on
     // narrow viewports; the real-finger UX works fine).
     await page.goto('/explore?paths=1');
+    // #342 Phase 31 — the layer-paths chip is in the default-collapsed
+    // hud-controls cluster on touch. Expand it so .toBeVisible passes.
+    // Toggle state (aria-pressed) is independent of the cluster
+    // collapse — we check aria regardless of expansion.
+    await expandExploreHud(page);
     const chip = page.locator('[data-testid="layer-paths"]');
     await expect(chip).toBeVisible();
     await expect(chip).toHaveAttribute('aria-pressed', 'true', { timeout: 5_000 });

@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * Apollo 11 phase-marker reference suite — GH #107.
@@ -33,6 +34,11 @@ const APOLLO_EVENT_TYPES = [
 
 async function loadApollo11(page: Page): Promise<void> {
   await page.goto('/fly?mission=apollo11');
+  // #342 Phase 25 — HUD is default-collapsed on touch. The mission-name
+  // aside, hud-phase-pill, and other in-HUD affordances are display:none
+  // until the user clicks .hud-collapse to expand. Expand here so the
+  // subsequent visibility-based assertions can resolve.
+  await expandFlyHud(page);
   // Mission identity proves the route loaded + the mission JSON resolved.
   await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 15_000 });
   // Phase-marker overlay only renders once the cislunar trajectory has

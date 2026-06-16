@@ -69,8 +69,13 @@ test.describe('/tiangong', () => {
     // in its month). The first marker (Tianhe) overlaps with Chinarm —
     // both launched 2021-04-29 because Chinarm rode up pre-attached to
     // Tianhe — so first() collides in DOM z-order.
+    // Same DOM-dispatch workaround as the toggle above: on mobile the
+    // footer "Credits" link sits over the timeline strip and
+    // intercepts the synthetic pointer event during action stability
+    // checks. evaluate(el => el.click()) bypasses the pointer-events
+    // intercept and fires the marker's onclick directly.
     const lastMarker = markers.last();
-    await lastMarker.click();
+    await lastMarker.evaluate((el) => (el as HTMLButtonElement).click());
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     expect(errors).toEqual([]);

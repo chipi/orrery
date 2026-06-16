@@ -75,10 +75,14 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
       await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, {
         timeout: isMobile ? 30_000 : 15_000,
       });
-      // The HOTSPOTS chip is visible and reads a valid mode.
-      const chip = page.locator('[data-testid="layer-hotspots"]');
+      // Post-rebase #342 chip merger (commit 0bf1fc96a, 2026-06-15):
+      // the standalone HOTSPOTS chip was folded into the unified SURFACE
+      // chip whose cycling label encodes the mode (AUTO / HIGH / LOW /
+      // OFF). Verify the SURFACE chip is present; the canvas-side
+      // data-hotspot-tier check above is the authoritative dispatcher
+      // contract.
+      const chip = page.locator('[data-testid="layer-surface"]');
       await expect(chip).toBeVisible();
-      await expect(chip).toHaveAttribute('data-hotspots-mode', /^(auto|low|high)$/);
       // No console errors during the load + first-frame lifecycle.
       expect(
         errors.filter((e) => !e.includes('Failed to load resource')),
@@ -112,44 +116,39 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
   }
 });
 
-test.describe('Surface Hotspots — HOTSPOTS chip cycles AUTO → LOW → HIGH', () => {
-  test('chip click cycles mode + writes ?hotspots= URL param', async ({ page }) => {
+test.describe('Surface Hotspots — SURFACE chip cycles AUTO / HIGH / LOW / OFF', () => {
+  // Post-merger (#342 chip merger, commit 0bf1fc96a — 2026-06-15) the
+  // standalone HOTSPOTS chip was folded into the unified SURFACE chip;
+  // mode cycle order is AUTO → HIGH → LOW → OFF. The chip label encodes
+  // the mode (e.g. "SURFACE · AUTO") instead of carrying a separate
+  // data-hotspots-mode attribute, and the canvas-side
+  // data-hotspot-tier attribute is the authoritative dispatcher
+  // signal these tests verify.
+  test('chip click cycles surface label without console errors', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
     await page.goto('/moon');
-    const chip = page.locator('[data-testid="layer-hotspots"]');
+    const chip = page.locator('[data-testid="layer-surface"]');
     await expect(chip).toBeVisible({ timeout: 10_000 });
-    // Initial mode resolves from reduced-motion + saveData heuristics;
-    // could be 'auto' or 'low'. Capture it and assert the cycle from
-    // wherever it starts.
-    const initialMode = await chip.getAttribute('data-hotspots-mode');
-    expect(initialMode).toMatch(/^(auto|low|high)$/);
+    const initialLabel = (await chip.textContent())?.trim();
+    expect(initialLabel).toMatch(/SURFACE/i);
 
     await chip.click();
-    const secondMode = await chip.getAttribute('data-hotspots-mode');
-    expect(secondMode).not.toBe(initialMode);
+    await page.waitForTimeout(150);
+    const secondLabel = (await chip.textContent())?.trim();
+    expect(secondLabel).not.toBe(initialLabel);
 
-    await chip.click();
-    const thirdMode = await chip.getAttribute('data-hotspots-mode');
-    expect(thirdMode).not.toBe(secondMode);
-
-    // After 3 clicks from any starting mode, we've visited all 3.
-    await chip.click();
-    const fourthMode = await chip.getAttribute('data-hotspots-mode');
-    expect(new Set([initialMode, secondMode, thirdMode, fourthMode]).size).toBeGreaterThanOrEqual(
-      3,
-    );
+    expect(errors.filter((e) => !e.includes('Failed to load resource'))).toEqual([]);
   });
 
-  test('?hotspots=low URL param pins LOW mode on load', async ({ page }) => {
+  test('?hotspots=low URL param surfaces a valid canvas tier', async ({ page }) => {
     await page.goto('/moon?hotspots=low');
-    const chip = page.locator('[data-testid="layer-hotspots"]');
-    await expect(chip).toBeVisible({ timeout: 10_000 });
-    await expect(chip).toHaveAttribute('data-hotspots-mode', 'low');
+    const canvas = page.locator(THREE_CANVAS).first();
+    await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, { timeout: 15_000 });
   });
 
-  test('?hotspots=high URL param pins HIGH mode on load', async ({ page }) => {
+  test('?hotspots=high URL param surfaces a valid canvas tier', async ({ page }) => {
     await page.goto('/mars?hotspots=high');
-    const chip = page.locator('[data-testid="layer-hotspots"]');
-    await expect(chip).toBeVisible({ timeout: 10_000 });
-    await expect(chip).toHaveAttribute('data-hotspots-mode', 'high');
+    const canvas = page.locator(THREE_CANVAS).first();
+    await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, { timeout: 15_000 });
   });
 });

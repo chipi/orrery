@@ -121,24 +121,23 @@ test.describe('/science Phase 2 chips', () => {
 });
 
 // /science Cmd-K is reachable on both viewports as of v0.6.2:
-//   • desktop — left rail's Search button (display:flex on ≥641 px)
-//   • mobile  — hamburger drawer's Search row (issue #137)
+//   • desktop — left rail's Search button (full-width labelled)
+//   • mobile  — left rail's Search button is a 44×44 icon chip in the
+//     tab strip (#342 Phase 24). The hamburger drawer also carries a
+//     Search row (issue #137) for keyboard-shortcut discoverability.
 // Both surfaces carry the same `aria-label="Search the encyclopedia (⌘K)"`,
-// so `getByRole('button', {name: /Search the encyclopedia/i})` matches in
-// both viewports — but on mobile the rail button is `display:none` and
-// the drawer button isn't rendered until the hamburger is open. The
-// helper below opens the drawer first when the menu toggle is visible.
+// so `getByRole('button', {name: /Search the encyclopedia/i})` matches
+// in both viewports — disambiguate to `.first()` (the rail button) so
+// strict-mode locators don't trip on the drawer button.
 test.describe('/science Cmd-K search', () => {
   async function openSearchButton(page: import('@playwright/test').Page): Promise<void> {
-    // If the hamburger toggle is visible we're on mobile-chromium —
-    // open the drawer so the drawer Search row paints. Desktop has the
-    // toggle hidden, so we skip the click and click the rail button
-    // directly.
-    const menuToggle = page.locator('button.menu-toggle');
-    if (await menuToggle.isVisible().catch(() => false)) {
-      await menuToggle.click();
-    }
-    await page.getByRole('button', { name: /Search the encyclopedia/i }).click();
+    // Click the rail search button directly. As of #342 Phase 30 the
+    // rail button is visible on mobile too (44×44 icon chip), so we
+    // no longer need to open the hamburger drawer first.
+    await page
+      .getByRole('button', { name: /Search the encyclopedia/i })
+      .first()
+      .click();
   }
 
   test('search button opens the overlay and a query navigates to a section', async ({ page }) => {

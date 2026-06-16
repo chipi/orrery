@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { expandFlyHud } from './_helpers/hud-expand';
 
 /**
  * Curiosity (Mars heliocentric) phase-marker reference spec — #107
@@ -29,6 +30,9 @@ const CURIOSITY_EVENT_TYPES = [
 
 async function loadCuriosity(page: Page): Promise<void> {
   await page.goto('/fly?mission=curiosity');
+  // #342 Phase 25 — expand the default-collapsed HUD on touch so
+  // mission-name + hud-phase-pill resolve to visible.
+  await expandFlyHud(page);
   await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 15_000 });
   await expect(page.locator('[data-testid="phase-markers-overlay"]')).toBeVisible({
     timeout: 10_000,

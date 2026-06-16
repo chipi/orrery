@@ -43,7 +43,25 @@ test.describe('/fly — cislunar view (ADR-058)', () => {
       page.on('pageerror', (err) => consoleErrors.push(err.message));
 
       await page.goto(`/fly?mission=${id}`);
-      await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 10_000 });
+      // #342 Phase 25 — on touch devices (matchMedia('(hover: none)')
+      // matches under mobile-chromium emulation) the HUD cluster is
+      // default-collapsed so the canvas reads cinematically. The
+      // mission-name aside lives inside that cluster, so it's
+      // display:none on first paint on mobile. Switch the sentinel
+      // from "visible" to "attached + has text" so the test still
+      // proves the mission loaded without depending on the chrome
+      // being expanded. The console-error assertion below is the
+      // actual contract of this test.
+      await expect(page.locator('[data-testid="mission-name"]')).toBeAttached({
+        timeout: 10_000,
+      });
+      await page.waitForFunction(
+        () =>
+          (document.querySelector('[data-testid="mission-name"]')?.textContent ?? '').trim()
+            .length > 0,
+        null,
+        { timeout: 10_000 },
+      );
 
       // Allow the WebGL render loop a beat to settle so any deferred
       // errors land before we assert on the buffer.

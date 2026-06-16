@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { expandExploreHud } from './_helpers/hud-expand';
 
 /**
  * Switch to 2D mode and wait until the canvas has actually rendered
@@ -16,6 +17,9 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // networkidle inside the helper (not at each caller) makes every
   // entry path defensive.
   await page.waitForLoadState('networkidle');
+  // #342 Phase 31 — on touch viewports the hud-controls cluster
+  // (including this toggle) is default-collapsed. Expand first.
+  await expandExploreHud(page);
   // On mobile-chromium, the synthetic mouse `click()` races Svelte's
   // reactivity binding on the toggle — the click lands before the onclick
   // handler is wired, so the 3D→2D mode flip never fires and the
@@ -228,6 +232,9 @@ test.describe('/explore — selection and panel', () => {
     // highlights whichever planet panel is open, if any.
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');
+    // #342 Phase 31 — expand the default-collapsed hud-controls cluster
+    // on mobile so the sizes-toggle is in the layout.
+    await expandExploreHud(page);
     const toggle = page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
     if (isMobile) {

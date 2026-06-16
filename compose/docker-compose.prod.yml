@@ -50,11 +50,20 @@ services:
     # Custom image: nginx:alpine + brotli module + baked nginx.conf
     # (GH #273 / W3). Image is built fresh on each deploy by the
     # workflow's `docker compose build web` step — see
-    # .github/workflows/deploy-prod.yml. `context: ..` resolves to the
-    # repo root from this file's compose/ subdirectory; the Dockerfile
-    # path is relative to that context.
+    # .github/workflows/deploy-prod.yml.
+    #
+    # `context: .` (NOT `..`) — when the deploy command runs with
+    # `docker compose -f compose/docker-compose.prod.yml
+    # --project-directory .` from /srv/orrery, compose v2 resolves
+    # relative `context` paths from the project-directory, NOT the
+    # compose file location. With `context: ..` that becomes
+    # `/srv/orrery/..` = `/srv`, and the Dockerfile lookup tries
+    # `/srv/ops/docker/Dockerfile.web` and 404s. `context: .` is the
+    # canonical project-root form regardless of which subdirectory
+    # the compose file lives in. (Surfaced 2026-06-16 on the prod
+    # deploy retry post-VPS-recreate.)
     build:
-      context: ..
+      context: .
       dockerfile: ops/docker/Dockerfile.web
     image: orrery-web:local
     container_name: orrery-web

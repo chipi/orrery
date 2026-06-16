@@ -632,6 +632,8 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 **Stale-monitor caveat:** when a CI run shows `cancelled` from a successor push, that's the auto-supersede behaviour, not a real cancel — confirm by checking whether a newer run exists on a newer sha. Don't treat supersede-cancellations as either pass or fail; just re-arm the monitor on the live run.
 
+**Hard rule — never offer skip / band-aid / known-issue as an option alongside the proper fix.** When a failure has a clear engineering fix, do it; do not pre-package a shortcut and tempt the maintainer with it. If the maintainer wants to take a shortcut, they will initiate it themselves. Pre-loading "skip the test", "mark as known-issue", "file a tracking issue and move on", or "accept 99 % green" as bullet-point options is *cheating* — it shifts the engineering judgment to the maintainer and signals that you're optimising for "done", not "correct". Confirmed sharply 2026-06-16 on the docker-e2e German landing failure — the proper fix was an nginx try_files rewrite for trailing slashes; "skip with tracking issue" was offered next to it as an equal option and got rightfully called out. Only present multiple options when there are genuinely multiple *valid engineering paths* with real trade-offs that only the architect can judge.
+
 **Hard rule — never push partial fixes you expect to fail.** This came up sharp in the 2026-06-16 #342 docker-e2e cycle: with ~89 failing specs in docker-e2e, fixing 30 deterministically and pushing "hoping the rest is under 5" is *not* progress — it's pollution. CI exists to catch things you didn't predict, not to confirm what you already know is broken.
 
 The rule is binary:

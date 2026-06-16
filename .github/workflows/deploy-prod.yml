@@ -49,6 +49,15 @@ on:
 permissions:
   actions: read
   contents: read
+  # `packages: read` lets the auto-provisioned GITHUB_TOKEN
+  # authenticate against GHCR so the walk-back image SHA resolver in
+  # "Resolve target image SHA" can run `docker manifest inspect` on
+  # `ghcr.io/chipi/orrery-pipeline-runner:sha-<short>` candidates.
+  # Without it, every probe 401s and the resolver thinks no published
+  # image exists (surfaced 2026-06-16 — the resolver exited with
+  # "No published pipeline-runner image found in the last 50 commits"
+  # even though sha-068f898 and sha-70295bd were both in the registry).
+  packages: read
 
 concurrency:
   # Serialize prod deploys. Don't cancel-in-progress; cancelling mid

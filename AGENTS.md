@@ -632,6 +632,22 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 **Stale-monitor caveat:** when a CI run shows `cancelled` from a successor push, that's the auto-supersede behaviour, not a real cancel — confirm by checking whether a newer run exists on a newer sha. Don't treat supersede-cancellations as either pass or fail; just re-arm the monitor on the live run.
 
+**Hard rule — never push partial fixes you expect to fail.** This came up sharp in the 2026-06-16 #342 docker-e2e cycle: with ~89 failing specs in docker-e2e, fixing 30 deterministically and pushing "hoping the rest is under 5" is *not* progress — it's pollution. CI exists to catch things you didn't predict, not to confirm what you already know is broken.
+
+The rule is binary:
+
+- If you know a fix will leave specs failing → do not push. Run the full project sweep (`npx playwright test --workers=1 --project=mobile-chromium`) locally, fix every remaining failure, and *then* push.
+- If you're uncertain whether a spec is fixed → run it locally before pushing. "I didn't have time" is not in scope; the local run is 2-30 min, the CI cycle is 30-90 min and consumes minutes the next agent would otherwise use.
+- The only acceptable "partial" push is one that explicitly de-scopes the remaining work — say so in the commit message ("X tests still failing, tracked separately") and in chat, so the maintainer knows you stopped on purpose, not by accident.
+
+When a sweep produces a large failure list, triage *locally* into three buckets and address them in order before any push:
+
+1. **Deterministic regressions from your work** — fix these. The whole point of a CI sweep is to find these.
+2. **Spec drift from earlier merged commits** (HUD selectors that aged out, chip merger renames, UX flag flips) — update or skip with a comment naming the originating commit.
+3. **Flakes** — confirm by re-running the spec twice locally. If both pass, mark it as flake and keep moving. Don't push hoping flakes resolve themselves; they don't.
+
+Only when the local mobile-chromium project run is fully green (or every remaining failure is named + tracked + accepted as out-of-scope by the maintainer) do you push.
+
 ---
 
 ### Spec-writing patterns — viewport-aware, locale-resilient

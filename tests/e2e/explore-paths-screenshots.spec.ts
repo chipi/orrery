@@ -14,7 +14,14 @@ import { test } from '@playwright/test';
  */
 
 test.describe('/explore — visual smoke (manual)', () => {
-  test('capture three reference screenshots', async ({ page }) => {
+  test('capture three reference screenshots', async ({ page, isMobile }) => {
+    // Desktop-only smoke. The spec forces a 1280×800 viewport but
+    // Playwright's mobile-chromium device profile leaves
+    // `matchMedia('(hover: none)')` true regardless of viewport, so
+    // #342 Phase 31's default-collapsed hud-controls hides the
+    // layer-paths chip the spec clicks on. Rather than reaching for
+    // the .hud-restore workaround on a "manual" smoke, skip on touch.
+    test.skip(isMobile, 'desktop-only visual smoke');
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');

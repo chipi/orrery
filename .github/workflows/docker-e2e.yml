@@ -241,10 +241,23 @@ jobs:
   # drop arm64 to ~3-5 min — same speed as amd64.
   publish-platforms:
     needs: docker-e2e
+    # docker-e2e itself is triggered by CI's workflow_run, never by a
+    # bare `push:`, so `github.event_name == 'push'` was permanently
+    # false and publish-platforms had been silently skipped on every
+    # CI-driven run — leaving the `sha-<short>` image tag deploy-prod
+    # needs missing from GHCR (Deploy to prod VPS failure 2026-06-16
+    # on commit aff14496). Check the *upstream* CI run's trigger via
+    # `github.event.workflow_run.event` so a CI run that itself fired
+    # on a `push` to main publishes the image, and manual `dispatch`
+    # or `cron` runs still skip the registry push as intended.
     if: |
       github.repository == 'chipi/orrery'
-      && github.ref == 'refs/heads/main'
-      && github.event_name == 'push'
+      && (
+        (github.event_name == 'workflow_run'
+          && github.event.workflow_run.head_branch == 'main'
+          && github.event.workflow_run.event == 'push')
+        || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      )
     strategy:
       fail-fast: true
       matrix:

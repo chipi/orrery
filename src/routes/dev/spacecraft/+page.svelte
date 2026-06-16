@@ -1,21 +1,21 @@
 <!--
   Dev-only spacecraft model gallery — renders every entry in
-  src/lib/three/interplanetary-spacecraft-models.ts on its own canvas
-  so the supervising architect can scan all 21 silhouettes at once,
-  identify which need rework, and sign off as a set.
+  src/lib/three/interplanetary-spacecraft-models.ts so the supervising
+  architect can scan all silhouettes at once and sign off as a set.
 
-  Each card spins slowly so the silhouette reads from multiple angles.
-  Lighting matches /fly's heliocentric scene: a single warm key light
-  (the Sun) plus a thin cool fill so RTG / solar-panel contrast reads
-  the way it will in the live fly-through.
+  Chrome caps WebGL contexts at 16 per page; we have 21 spacecraft.
+  The first try used one WebGLRenderer per card and Chrome evicted
+  the first 5 contexts to make room for the newer ones — leaving the
+  Cassini / Voyager / Galileo cards visually blank with the browser's
+  default "no-context" placeholder. Fix: one shared WebGLRenderer
+  with viewport + scissor per card. Each card still owns its own
+  Scene + Camera; the renderer paints into the card's screen rect.
 -->
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
 
-  // Stable order — `cassini` first as the reference, then the 4 prior
-  // builders, then the 13 new ones grouped roughly by family.
   const MISSIONS: Array<{ id: string; label: string; era: string }> = [
     { id: 'cassini', label: 'Cassini–Huygens', era: '1997–2017 · ref.' },
     { id: 'cassini-tour', label: 'Cassini (Saturn tour)', era: 'shares cassini' },
@@ -24,7 +24,6 @@
     { id: 'galileo', label: 'Galileo', era: '1989–2003' },
     { id: 'galileo-tour', label: 'Galileo (Jupiter tour)', era: 'shares galileo' },
     { id: 'new-horizons', label: 'New Horizons', era: '2006–' },
-    // 2026-06-16 additions
     { id: 'pioneer-10', label: 'Pioneer 10', era: '1972–2003' },
     { id: 'pioneer-11', label: 'Pioneer 11', era: '1973–1995 · shares pioneer' },
     { id: 'juno', label: 'Juno', era: '2011–' },
@@ -42,34 +41,28 @@
   ];
 
   type Card = {
-    container: HTMLDivElement | null;
-    renderer: THREE.WebGLRenderer | null;
-    scene: THREE.Scene | null;
-    camera: THREE.PerspectiveCamera | null;
+    container: HTMLDivElement;
+    scene: THREE.Scene;
+    camera: THREE.PerspectiveCamera;
     group: THREE.Group | null;
   };
-  const cards: Card[] = MISSIONS.map(() => ({
-    container: null,
-    renderer: null,
-    scene: null,
-    camera: null,
-    group: null,
-  }));
 
+  let containers: HTMLDivElement[] = [];
+  let cards: Card[] = [];
+  let renderer: THREE.WebGLRenderer | null = null;
+  let sharedCanvas: HTMLCanvasElement | null = null;
   let raf = 0;
-  let mounted = false;
 
-  function setupCard(idx: number, missionId: string): void {
-    const card = cards[idx];
-    if (!card.container) return;
-    const w = card.container.clientWidth;
-    const h = card.container.clientHeight;
+  function buildScene(missionId: string): {
+    scene: THREE.Scene;
+    camera: THREE.PerspectiveCamera;
+    group: THREE.Group | null;
+  } {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x05060e);
-    const camera = new THREE.PerspectiveCamera(38, w / h, 0.01, 100);
-    camera.position.set(2.4, 1.0, 2.4);
+    const camera = new THREE.PerspectiveCamera(38, 1, 0.01, 100);
+    camera.position.set(3.5, 1.5, 3.5);
     camera.lookAt(0, 0, 0);
-    // Warm key (Sun) + cool fill so RTG / solar-blue read as intended.
     const key = new THREE.DirectionalLight(0xfff4d0, 1.8);
     key.position.set(3, 2, 3);
     scene.add(key);
@@ -77,72 +70,121 @@
     fill.position.set(-2, -1, -2);
     scene.add(fill);
     scene.add(new THREE.AmbientLight(0x404060, 0.55));
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(w, h);
-    card.container.appendChild(renderer.domElement);
     const group = buildInterplanetarySpacecraft(missionId);
     if (group) scene.add(group);
-    card.renderer = renderer;
-    card.scene = scene;
-    card.camera = camera;
-    card.group = group;
+    else console.warn(`[showcase] no builder for ${missionId}`);
+    return { scene, camera, group };
   }
 
   function tick(): void {
+    if (!renderer || !sharedCanvas) {
+      raf = requestAnimationFrame(tick);
+      return;
+    }
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    const W = window.innerWidth;
+    const H = window.innerHeight;
+    if (sharedCanvas.width !== W * dpr || sharedCanvas.height !== H * dpr) {
+      renderer.setSize(W, H, false);
+    }
+    renderer.setScissorTest(true);
+    // Black clear for off-card areas. The shared canvas is fixed-positioned
+    // behind the grid, so anything not covered by a scissor stays
+    // transparent / scrolls with the page (CSS handles that).
+    renderer.setClearColor(0x000000, 0);
+    renderer.clear();
     const t = performance.now() * 0.0004;
     for (const card of cards) {
-      if (!card.group || !card.scene || !card.camera || !card.renderer) continue;
-      card.group.rotation.y = t;
-      card.renderer.render(card.scene, card.camera);
+      const rect = card.container.getBoundingClientRect();
+      // Skip off-screen cards — no need to render.
+      if (rect.bottom < 0 || rect.top > H || rect.right < 0 || rect.left > W) continue;
+      const w = rect.width;
+      const h = rect.height;
+      if (w <= 0 || h <= 0) continue;
+      // Three.js uses bottom-left origin for viewport/scissor.
+      const x = rect.left;
+      const y = H - rect.bottom;
+      renderer.setViewport(x, y, w, h);
+      renderer.setScissor(x, y, w, h);
+      card.camera.aspect = w / h;
+      card.camera.updateProjectionMatrix();
+      if (card.group) card.group.rotation.y = t;
+      renderer.render(card.scene, card.camera);
     }
     raf = requestAnimationFrame(tick);
   }
 
   onMount(() => {
-    mounted = true;
-    for (let i = 0; i < MISSIONS.length; i++) setupCard(i, MISSIONS[i].id);
-    raf = requestAnimationFrame(tick);
-    const onResize = () => {
-      for (let i = 0; i < cards.length; i++) {
-        const c = cards[i];
-        if (!c.container || !c.renderer || !c.camera) continue;
-        const w = c.container.clientWidth;
-        const h = c.container.clientHeight;
-        c.renderer.setSize(w, h);
-        c.camera.aspect = w / h;
-        c.camera.updateProjectionMatrix();
+    // Defer one frame so the grid layout has settled before we read
+    // dimensions. ResizeObserver isn't needed — tick() re-reads
+    // getBoundingClientRect every frame.
+    requestAnimationFrame(() => {
+      // Single shared canvas, position:fixed behind the grid so
+      // getBoundingClientRect coordinates match viewport coords.
+      sharedCanvas = document.createElement('canvas');
+      sharedCanvas.style.position = 'fixed';
+      sharedCanvas.style.top = '0';
+      sharedCanvas.style.left = '0';
+      sharedCanvas.style.width = '100vw';
+      sharedCanvas.style.height = '100vh';
+      sharedCanvas.style.pointerEvents = 'none';
+      sharedCanvas.style.zIndex = '0';
+      document.body.appendChild(sharedCanvas);
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas: sharedCanvas,
+          antialias: true,
+          alpha: true,
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+      } catch (err) {
+        console.error('[showcase] WebGL renderer init failed:', err);
+        sharedCanvas.remove();
+        sharedCanvas = null;
+        return;
       }
-    };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+      for (let i = 0; i < MISSIONS.length; i++) {
+        const node = containers[i];
+        if (!node) {
+          console.warn(`[showcase] no container at index ${i} for ${MISSIONS[i].id}`);
+          continue;
+        }
+        const { scene, camera, group } = buildScene(MISSIONS[i].id);
+        cards.push({ container: node, scene, camera, group });
+      }
+      raf = requestAnimationFrame(tick);
+    });
   });
 
   onDestroy(() => {
     cancelAnimationFrame(raf);
-    for (const c of cards) {
-      if (c.group) (c.group.userData.dispose as (() => void) | undefined)?.();
-      c.renderer?.dispose();
+    for (const card of cards) {
+      if (card.group) (card.group.userData.dispose as (() => void) | undefined)?.();
     }
+    cards = [];
+    renderer?.dispose();
+    sharedCanvas?.remove();
+    sharedCanvas = null;
+    renderer = null;
   });
 </script>
 
 <svelte:head><title>Spacecraft showcase · Orrery dev</title></svelte:head>
 
-<main class="showcase" class:ready={mounted}>
+<main class="showcase">
   <header>
     <h1>Spacecraft model showcase</h1>
     <p>
-      All {MISSIONS.length} entries in interplanetary-spacecraft-models.ts. Each silhouette spins
-      slowly so the proportions read from multiple angles. Lighting matches /fly's heliocentric
-      key+fill so the gold-MLI / solar-blue / RTG-dark palette renders as it will in the live
-      fly-through.
+      All {MISSIONS.length} entries in interplanetary-spacecraft-models.ts. One shared WebGL canvas
+      paints each card's silhouette into the card's screen rect (so we side-step Chrome's 16-context
+      cap that would otherwise blank the first 5 cards as 17-21 came online).
     </p>
   </header>
   <div class="grid">
     {#each MISSIONS as mission, i (mission.id)}
       <figure class="card">
-        <div class="canvas" bind:this={cards[i].container}></div>
+        <div class="canvas" bind:this={containers[i]}></div>
         <figcaption>
           <span class="name">{mission.label}</span>
           <span class="era">{mission.era}</span>
@@ -154,11 +196,15 @@
 </main>
 
 <style>
+  :global(body) {
+    background: #03050b;
+  }
   .showcase {
     padding: 32px 22px 60px;
     color: rgba(255, 255, 255, 0.92);
-    background: #03050b;
     min-height: 100vh;
+    position: relative;
+    z-index: 1; /* sit above the shared canvas */
   }
   header {
     max-width: 980px;
@@ -197,12 +243,9 @@
   .canvas {
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: #05060e;
-  }
-  .canvas :global(canvas) {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
+    /* Transparent so the shared WebGL canvas underneath shows through
+       only where we set the viewport+scissor. */
+    background: transparent;
   }
   figcaption {
     display: flex;
@@ -210,6 +253,7 @@
     gap: 2px;
     padding: 10px 12px 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(12, 16, 28, 0.95);
   }
   .name {
     font-family: var(--font-display, 'Space Mono', monospace);

@@ -56,7 +56,15 @@ test.describe('a11y gate (ADR-025 v0.7.0 — 0 critical violations)', () => {
       // isolation: `region` requires every block of content under a
       // landmark, which the canvas pages can't satisfy because the canvas
       // itself isn't a landmark.
-      const results = await new AxeBuilder({ page })
+      // playwright-core typed-Page mismatch — AxeBuilder imports
+      // Page from `playwright-core` (whose root hoist can land on
+      // 1.61+ via @vitest/browser-playwright transitives), while
+      // `@playwright/test` pins 1.60. Both expose the same runtime
+      // surface; the 1.61 type adds localStorage/sessionStorage that
+      // the 1.60 test Page doesn't carry. `as never` defers the
+      // structural check so the test stays version-resilient.
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const results = await new AxeBuilder({ page: page as any })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .disableRules(['region'])
         .analyze();

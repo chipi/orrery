@@ -21,10 +21,7 @@ on:
 # tag). The separate group means launches refresh CI still runs to
 # validate data, but in parallel with whatever user CI is happening.
 concurrency:
-  group:
-    ${{ startsWith(github.event.head_commit.message, 'chore(launches): refresh')
-        && format('ci-launches-{0}', github.ref)
-        || format('ci-{0}', github.ref) }}
+  group: ${{ github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(launches): refresh') && format('ci-launches-{0}', github.ref) || format('ci-{0}', github.ref) }}
   cancel-in-progress: true
 
 jobs:

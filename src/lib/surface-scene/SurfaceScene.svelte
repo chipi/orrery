@@ -4350,49 +4350,67 @@ sample      ${debugInfo.projectedPxSample}`}
             {/if}
           </p>
         {/if}
-        <PanoramaToggleButton
-          panoramaUrl={selected.hotspot_tier3_panorama}
-          siteId={selected.id}
-          {panoramaActive}
-          onEnter={enterPanorama}
-          onExit={exitPanorama}
-        />
-        <!-- Zoom-to-detail ↔ Exit-zoom button. Flips on flatPatchActive,
-             mirroring the PanoramaToggleButton's enter/exit flip
-             (2026-06-15 user direction: "same as we have button for
-             exit panorama view, we also need button to exit zoomed
-             in mode, in same way as we have one for panorama").
-             - Out of detail (Zoom to detail): flies the camera in to
-               the close range where the HiRISE/LROC detail patch is
-               fully visible. Rendered when the site declares a Tier-2
-               source AND we're not already in detail/panorama.
-             - In detail (Exit zoom view): drives closeFlatPatch which
-               fades the patch out + lifts camR back above the trigger
-               threshold. Same chrome family as Exit panorama view. -->
-        {#if selected.hotspot_tier2_source && !panoramaActive}
-          {#if flatPatchActive}
-            <button
-              type="button"
-              class="zoom-to-detail-button zoom-to-detail-button--exit"
-              data-testid="exit-zoom"
-              onclick={() => closeFlatPatch()}
-              title="Exit zoom view (Esc)"
-            >
-              <span class="icon" aria-hidden="true">✕</span>
-              <span>Exit zoom view</span>
-            </button>
-          {:else}
-            <button
-              type="button"
-              class="zoom-to-detail-button"
-              data-testid="zoom-to-detail"
-              onclick={() => selected && flyToDetail?.(selected)}
-            >
-              <span class="icon" aria-hidden="true">⤓</span>
-              <span>Zoom to detail</span>
-            </button>
+        <!-- Site CTA row — Approach · Stand at site · Zoom to detail.
+             (2026-06-17 user direction: "can we on all landing sites
+             [add] approach, stand at site and zoom to details buttons
+             as we did on missions, color them and put them next to
+             each other"). All three actions share the same colored
+             chrome (tinted with the site's nation accent via --accent)
+             and live in a horizontal flex row instead of the prior
+             stacked full-width column.
+             - APPROACH: always shown; calls faceCameraAtSite which
+               flies to an overhead-but-near orbit (R≈50) so the user
+               re-frames on the site from the default exploration
+               distance.
+             - STAND AT SITE: only when the site has a Tier-3 panorama
+               (PanoramaToggleButton flips to "Exit panorama view"
+               while panoramaActive).
+             - ZOOM TO DETAIL: only when the site has a Tier-2 source
+               AND we're not in panorama (flips to "Exit zoom view"
+               while flatPatchActive). -->
+        <div class="site-cta-bar">
+          <button
+            type="button"
+            class="site-cta"
+            data-testid="approach-site"
+            onclick={() => selected && faceCameraAtSite?.(selected)}
+            title="Approach — fly to an overhead view of this site"
+          >
+            <span class="icon" aria-hidden="true">↧</span>
+            <span class="label">Approach</span>
+          </button>
+          <PanoramaToggleButton
+            panoramaUrl={selected.hotspot_tier3_panorama}
+            siteId={selected.id}
+            {panoramaActive}
+            onEnter={enterPanorama}
+            onExit={exitPanorama}
+          />
+          {#if selected.hotspot_tier2_source && !panoramaActive}
+            {#if flatPatchActive}
+              <button
+                type="button"
+                class="zoom-to-detail-button zoom-to-detail-button--exit"
+                data-testid="exit-zoom"
+                onclick={() => closeFlatPatch()}
+                title="Exit zoom view (Esc)"
+              >
+                <span class="icon" aria-hidden="true">✕</span>
+                <span>Exit zoom view</span>
+              </button>
+            {:else}
+              <button
+                type="button"
+                class="zoom-to-detail-button"
+                data-testid="zoom-to-detail"
+                onclick={() => selected && flyToDetail?.(selected)}
+              >
+                <span class="icon" aria-hidden="true">⤓</span>
+                <span>Zoom to detail</span>
+              </button>
+            {/if}
           {/if}
-        {/if}
+        </div>
       </div>
 
       {#if panelGallery.length > 0}
@@ -4893,6 +4911,79 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #fff;
     outline: none;
   }
+
+  /* Site CTA row — Approach · Stand at site · Zoom to detail
+     (2026-06-17). Horizontal flex container that overrides the
+     three child buttons' prior full-width stacked styling so they
+     sit side-by-side, each tinted with the site's nation accent
+     colour (--accent set on `.head`). Mirrors the MissionPanel
+     `.cta-bar` pattern (coloured, prominent) but uses the site's
+     own palette instead of MissionPanel's fixed blue. */
+  .head .site-cta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  /* Shared chrome — applies to the in-component `.site-cta`
+     (Approach), the global `.stand-at-site` rendered by
+     PanoramaToggleButton, and `.zoom-to-detail-button`. Equal-flex
+     so each button takes a fair share of the row, with min-width
+     so they wrap to a second row instead of squishing illegibly
+     on narrow viewports. */
+  .head .site-cta-bar > .site-cta,
+  .head .site-cta-bar :global(.stand-at-site),
+  .head .site-cta-bar .zoom-to-detail-button {
+    flex: 1 1 90px;
+    min-width: 90px;
+    width: auto;
+    margin-top: 0;
+    padding: 10px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: color-mix(in srgb, var(--accent, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
+    color: #fff;
+    border: 1px solid var(--accent, #4ecdc4);
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease,
+      transform 0.15s ease;
+  }
+  .head .site-cta-bar > .site-cta:hover,
+  .head .site-cta-bar > .site-cta:focus-visible,
+  .head .site-cta-bar :global(.stand-at-site:hover),
+  .head .site-cta-bar :global(.stand-at-site:focus-visible),
+  .head .site-cta-bar .zoom-to-detail-button:hover,
+  .head .site-cta-bar .zoom-to-detail-button:focus-visible {
+    background: color-mix(in srgb, var(--accent, #4ecdc4) 38%, rgba(8, 10, 22, 0.85));
+    border-color: var(--accent, #4ecdc4);
+    color: #fff;
+    outline: none;
+    transform: translateY(-1px);
+  }
+  .head .site-cta-bar > .site-cta .icon,
+  .head .site-cta-bar .zoom-to-detail-button .icon {
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+  }
+  /* The PanoramaToggleButton renders `.stand-at-site` with the
+     glyph injected via ::before; override its colour so the
+     half-moon / ✕ reads as white against the now-coloured fill. */
+  .head .site-cta-bar :global(.stand-at-site::before) {
+    color: #fff;
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;

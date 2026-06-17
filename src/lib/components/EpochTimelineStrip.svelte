@@ -63,6 +63,7 @@
           class:active={selected === ep.id}
           style:left="{pctLeft(ep.yearStart)}%"
           style:width="{pctWidth(ep.yearStart, ep.yearEnd)}%"
+          style:--band-color={ep.color}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
           onkeydown={(e) => handleKey(e, ep.id)}
           aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch.get(ep.id) ??
@@ -104,6 +105,7 @@
           type="button"
           class="chip"
           class:active={selected === ep.id}
+          style:--band-color={ep.color}
           role="radio"
           aria-checked={selected === ep.id}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
@@ -141,12 +143,18 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  /* Per-band hue via --band-color (set on the button inline). At rest
+     the band carries a faint tint of its colour so the row reads as a
+     narrative palette even before any hover/select. Hover deepens the
+     tint; active commits to the full hue. (2026-06-17 user direction:
+     "could use a dash of color"; epoch-bands.ts picks the hue per era
+     and verifies each one against WCAG-AA on the dark background.) */
   .band {
     position: absolute;
     top: 0;
     height: 100%;
-    background: rgba(78, 205, 196, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: color-mix(in srgb, var(--band-color, #4ecdc4) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 22%, transparent);
     border-radius: 0;
     color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
@@ -158,16 +166,17 @@
     overflow: hidden;
     transition:
       background 0.15s,
-      border-color 0.15s;
+      border-color 0.15s,
+      color 0.15s;
   }
   .band:hover {
-    background: rgba(78, 205, 196, 0.1);
-    border-color: rgba(78, 205, 196, 0.4);
+    background: color-mix(in srgb, var(--band-color, #4ecdc4) 12%, transparent);
+    border-color: color-mix(in srgb, var(--band-color, #4ecdc4) 55%, transparent);
   }
   .band.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--band-color, #4ecdc4) 20%, transparent);
+    border-color: var(--band-color, #4ecdc4);
+    color: var(--band-color, #4ecdc4);
     z-index: 2;
   }
   .band-label {
@@ -194,7 +203,7 @@
     max-width: 100%;
   }
   .band.active .band-meta {
-    color: rgba(78, 205, 196, 0.85);
+    color: color-mix(in srgb, var(--band-color, #4ecdc4) 90%, white);
   }
 
   .today {
@@ -256,9 +265,9 @@
     background: rgba(255, 255, 255, 0.07);
   }
   .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--band-color, #4ecdc4) 20%, transparent);
+    border-color: var(--band-color, #4ecdc4);
+    color: var(--band-color, #4ecdc4);
   }
   .chip-count {
     font-size: 9.5px;
@@ -268,7 +277,7 @@
     border-radius: 8px;
   }
   .chip.active .chip-count {
-    color: #4ecdc4;
+    color: var(--band-color, #4ecdc4);
     background: rgba(78, 205, 196, 0.12);
   }
 

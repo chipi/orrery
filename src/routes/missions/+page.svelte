@@ -321,7 +321,7 @@
 
 <LaunchesBanner />
 
-<div class="library">
+<div class="library entity-browse-page">
   <!-- RFC-027 — free-text search across name + agency + type + first.
        Sits above the FILTERS toggle so it's visible without expanding.
        Placeholder + aria reuse the same i18n key (the ellipsis suffix
@@ -752,193 +752,12 @@
   /* RFC-027 search input — sits above the FILTERS toggle. Same visual
      family as the .filters-toggle border + Space-Mono type so it reads
      as part of the same control strip. */
-  .search-row {
-    margin-bottom: 8px;
-  }
-  .search-input {
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    /* Phase 32 (#342) — bumped padding 8→12 + min-height 44 so the
-       input is comfortably tap-sized on touch. */
-    padding: 12px 14px;
-    min-height: 44px;
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    transition: border-color 120ms;
-  }
-  .search-input::placeholder {
-    color: rgba(255, 255, 255, 0.35);
-  }
-  .search-input:focus {
-    outline: none;
-    border-color: #4ecdc4;
-  }
-
-  /* Inline count chip on the right end of the filters toggle bar.
-     Fraction (filtered / total) is teal when active; total-only is
-     muted. Mirrors the same chip on /fleet. */
-  .filters-right {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .filters-count {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-  .count-fraction {
-    color: #4ecdc4;
-  }
-  .count-total-only {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  /* Collapsible filters toggle strip. */
-  .filters-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.65);
-    font-family: 'Space Mono', monospace;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      color 120ms;
-  }
-  .filters-toggle:hover,
-  .filters-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.92);
-    outline: none;
-  }
-  /* CLEAR FILTERS chip — visible inside the expanded strip only when
-     at least one filter is active. Same chip aesthetic as the other
-     filter rows but with a muted accent to read as a discard action
-     rather than a select action. */
-  .clear-filters {
-    align-self: flex-end;
-    padding: 6px 12px;
-    margin-bottom: 8px;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-  .clear-filters:hover,
-  .clear-filters:focus-visible {
-    border-color: rgba(255, 255, 255, 0.35);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
-  .filters-eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-  .filters-chevron {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
-  }
-
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 8px 0 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    margin-bottom: 14px;
-    /* Phase 29 (#342) — removed `overflow-x: auto`. The container
-       already wraps; overflow-x was a defensive scroll that hid pills
-       past the viewport on mobile when wrap should have kicked in.
-       Now: groups wrap onto subsequent rows, every pill visible at
-       375 px without horizontal scroll. */
-  }
-  .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .filter-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.3);
-    margin-right: 4px;
-  }
-  .pill {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 6px 14px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.4);
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .pill:hover:not(.active) {
-    border-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .pill.active {
-    background: rgba(68, 102, 255, 0.25);
-    border-color: rgba(68, 102, 255, 0.5);
-    color: #fff;
-  }
-  .pill:focus-visible {
-    outline: 2px solid #4466ff;
-    outline-offset: 2px;
-  }
-
-  /* Logo-mode agency pill: tighter padding (the logo is the label),
-     fixed minimum width so all agency pills line up uniformly, and
-     a subtle white tint that hover/active darkens. The image itself
-     is sized to match the pill's text metrics so the row reads as
-     one consistent strip. */
-  .pill.logo-pill {
-    padding: 4px 10px;
-    min-width: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .agency-pill-logo {
-    height: 22px;
-    width: auto;
-    max-width: 60px;
-    object-fit: contain;
-    display: block;
-    /* Most logos are full-color SVGs; lift contrast on the dark UI
-       and de-saturate the inactive state so the active one pops. */
-    opacity: 0.6;
-    transition: opacity 0.15s;
-  }
-  .pill.logo-pill:hover .agency-pill-logo,
-  .pill.logo-pill.active .agency-pill-logo {
-    opacity: 1;
-  }
-  .pill.logo-pill.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.55);
-  }
+  /* Page chrome (.search-row, .search-input, .filters-toggle,
+     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
+     .filters, .filter-group, .filter-label, .pill + variants,
+     .clear-filters) lives in src/lib/styles/entity-browse-page.css —
+     opted into by the `entity-browse-page` class on the page root.
+     Shared with /fleet so chrome can't visually drift. */
 
   /* Grid layout itself (display, columns, gap, breakpoints) lives in
      src/lib/styles/entity-card-grid.css — shared with /fleet so the

@@ -321,7 +321,7 @@
   />
 </svelte:head>
 
-<div class="fleet">
+<div class="fleet entity-browse-page">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
     <p class="status">Loading fleet…</p>
   {:else if isError(entriesRequest)}
@@ -623,159 +623,12 @@
     color: #c1440e;
   }
 
-  /* Inline count chip on the right end of the filters toggle bar.
-     Mirrors /missions for visual parity. */
-  .filters-right {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .filters-count {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-  .count-fraction {
-    color: #4ecdc4;
-  }
-  .count-total-only {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  /* RFC-027 search input — same visual family as /missions for parity. */
-  .search-row {
-    margin-bottom: 8px;
-  }
-  .search-input {
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    /* Phase 32 (#342) — bumped padding 8→12 + min-height 44 so the
-       input is comfortably tap-sized on touch. */
-    padding: 12px 14px;
-    min-height: 44px;
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    transition: border-color 120ms;
-  }
-  .search-input::placeholder {
-    color: rgba(255, 255, 255, 0.35);
-  }
-  .search-input:focus {
-    outline: none;
-    border-color: #4ecdc4;
-  }
-
-  /* Filters — visually identical to /missions per route-parity directive. */
-  .filters-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.65);
-    font-family: 'Space Mono', monospace;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      color 120ms;
-  }
-  .filters-toggle:hover,
-  .filters-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.92);
-    outline: none;
-  }
-  .filters-eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-  .filters-chevron {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
-  }
-
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 8px 0 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    margin-bottom: 14px;
-    /* Phase 29 (#342) — see /missions/+page.svelte comment. Same fix:
-       removed defensive overflow-x:auto so flex-wrap actually wraps. */
-  }
-  .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .filter-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.3);
-    margin-right: 4px;
-  }
-  .pill {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 6px 14px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.4);
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .pill:hover:not(.active) {
-    border-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .pill.active {
-    background: rgba(68, 102, 255, 0.25);
-    border-color: rgba(68, 102, 255, 0.5);
-    color: #fff;
-  }
-  .pill:focus-visible {
-    outline: 2px solid #4466ff;
-    outline-offset: 2px;
-  }
-  .pill.logo-pill {
-    padding: 4px 10px;
-    min-width: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .agency-pill-logo {
-    height: 22px;
-    width: auto;
-    max-width: 60px;
-    object-fit: contain;
-    display: block;
-    opacity: 0.6;
-    transition: opacity 0.15s;
-  }
-  .pill.logo-pill:hover .agency-pill-logo,
-  .pill.logo-pill.active .agency-pill-logo {
-    opacity: 1;
-  }
-  .pill.logo-pill.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.55);
-  }
+  /* Page chrome (.search-row, .search-input, .filters-toggle,
+     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
+     .filters, .filter-group, .filter-label, .pill + variants) lives in
+     src/lib/styles/entity-browse-page.css — opted into by the
+     `entity-browse-page` class on the page root. Shared with /missions
+     so chrome can't visually drift. */
 
   .status-pill.status-active.active {
     background: rgba(78, 205, 196, 0.25);

@@ -2,6 +2,7 @@
 @import './tokens.css';
 @import './panel-tabs.css';
 @import './entity-card-grid.css';
+@import './entity-browse-page.css';
 
 * {
   box-sizing: border-box;

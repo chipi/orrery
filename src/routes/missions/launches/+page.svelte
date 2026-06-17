@@ -221,7 +221,7 @@
 </svelte:head>
 
 <div
-  class="launches"
+  class="launches entity-browse-page"
   data-route-ready={!loading}
   data-loading={loading ? 'true' : null}
   data-mode={mode}
@@ -439,105 +439,21 @@
     line-height: 1;
   }
 
-  /* ── Filters toggle strip + count, copied verbatim from /missions
-       for visual consistency. ─────────────────────────────────────── */
-  .filters-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.65);
-    font-family: 'Space Mono', monospace;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      color 120ms;
-  }
-  .filters-toggle:hover,
-  .filters-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.92);
-    outline: none;
-  }
-  .filters-eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-  .filters-right {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .filters-count {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-  .count-fraction {
-    color: #4ecdc4;
-  }
-  .count-total-only {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .filters-chevron {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
-  }
+  /* Page chrome (.filters-toggle, .filters-right, .filters-count,
+     .filters-eyebrow, .filters-chevron, .filters, .filter-group,
+     .filter-label, .pill + variants) lives in
+     src/lib/styles/entity-browse-page.css — opted into by the
+     `entity-browse-page` class on the page root. Shared with /missions
+     and /fleet so chrome can't visually drift across the three
+     browse-and-filter routes. */
 
-  /* ── Filter groups + pills, same shape as /missions. ─────────── */
+  /* Launches-specific: keep `.filters { align-items: center }` so the
+     inline `.clear-btn` (margin-left:auto, sits at the row's end)
+     stays vertically centred with the filter groups. /missions and
+     /fleet put their clear-action above the strip, so the shared
+     rule omits this and they don't need it. */
   .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 8px 0 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    margin-bottom: 14px;
     align-items: center;
-  }
-  .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .filter-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.3);
-    margin-right: 4px;
-  }
-  .pill {
-    min-height: 32px;
-    padding: 6px 12px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.4);
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .pill:hover:not(.active) {
-    border-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .pill.active {
-    background: rgba(68, 102, 255, 0.25);
-    border-color: rgba(68, 102, 255, 0.5);
-    color: #fff;
-  }
-  .pill:focus-visible {
-    outline: 2px solid #4466ff;
-    outline-offset: 2px;
   }
 
   .clear-btn {

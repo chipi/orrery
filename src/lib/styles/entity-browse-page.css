@@ -1,0 +1,227 @@
+/*
+ * Entity-browse-page chrome — shared page shell for browse-and-filter
+ * routes that surface a list of entities behind a search row, a
+ * collapsible filters strip, and a card grid (v0.1.x).
+ *
+ * Used by:
+ *   - /missions
+ *   - /fleet
+ *   - /missions/launches (planned follow-up — same pattern, same drift
+ *     risk; not yet opted in)
+ *
+ * Tokens covered:
+ *   .search-row, .search-input, .search-input::placeholder,
+ *   .search-input:focus
+ *   .filters-toggle, .filters-eyebrow, .filters-right, .filters-count,
+ *   .count-fraction, .count-total-only, .filters-chevron
+ *   .filters (the expanded panel below the toggle)
+ *   .filter-group, .filter-label
+ *   .pill (+ :hover, .active, :focus-visible)
+ *   .pill.logo-pill, .agency-pill-logo, hover/active variants
+ *   .clear-filters
+ *
+ * Scope: rules are wrapped in `.entity-browse-page` so the unprefixed
+ * `.pill`, `.filters-toggle`, etc. don't collide with the many other
+ * unrelated `.pill` usages elsewhere (e.g. /science chips, /library
+ * filter pills). Add `entity-browse-page` as a sibling class on the
+ * page-root wrapper to opt in:
+ *   `<div class="missions entity-browse-page">`.
+ *
+ * Loaded once via src/lib/styles/app.css.
+ *
+ * 2026-06-17 — extracted from /missions + /fleet after the user
+ * direction "I would like to indeed better align those 2 pages as
+ * well, both on desktop and mobile. It is ok that they have different
+ * needs since different pages but common things should be the same."
+ * The two pages had inherited near-identical chrome CSS independently
+ * — the comments literally said "mirrors /missions for visual parity"
+ * — but inevitable drift had crept in. Now structurally impossible.
+ */
+
+/* ─── Search row ────────────────────────────────────────────────── */
+.entity-browse-page .search-row {
+  margin-bottom: 8px;
+}
+.entity-browse-page .search-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  /* Tap-sized on touch (Phase 32 / #342) — padding 12 px + min-height
+     44 px so the input clears the 44 px tap target floor. */
+  padding: 12px 14px;
+  min-height: 44px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  transition: border-color 120ms;
+}
+.entity-browse-page .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+.entity-browse-page .search-input:focus {
+  outline: none;
+  border-color: #4ecdc4;
+}
+
+/* ─── Filters toggle strip ──────────────────────────────────────── */
+.entity-browse-page .filters-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Space Mono', monospace;
+  cursor: pointer;
+  transition:
+    border-color 120ms,
+    color 120ms;
+}
+.entity-browse-page .filters-toggle:hover,
+.entity-browse-page .filters-toggle:focus-visible {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+.entity-browse-page .filters-eyebrow {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.entity-browse-page .filters-chevron {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Inline count chip on the right end of the filters toggle bar.
+   Fraction (filtered / total) is teal when active; total-only is
+   muted. */
+.entity-browse-page .filters-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.entity-browse-page .filters-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.entity-browse-page .count-fraction {
+  color: #4ecdc4;
+}
+.entity-browse-page .count-total-only {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* CLEAR FILTERS chip — visible inside the expanded strip only when
+   at least one filter is active. Same chrome family as the toggle
+   but with a muted accent so it reads as a discard action, not a
+   select. /fleet doesn't currently emit the markup, but the rule
+   is here so it can adopt it consistently. */
+.entity-browse-page .clear-filters {
+  align-self: flex-end;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.entity-browse-page .clear-filters:hover,
+.entity-browse-page .clear-filters:focus-visible {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+  outline: none;
+}
+
+/* ─── Expanded filters panel ────────────────────────────────────── */
+.entity-browse-page .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 8px 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 14px;
+  /* No overflow-x:auto — Phase 29 (#342) removed the defensive
+     horizontal-scroll that was hiding pills on mobile when wrap
+     should have done the job. */
+}
+.entity-browse-page .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.entity-browse-page .filter-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-right: 4px;
+}
+
+/* ─── Filter pill ───────────────────────────────────────────────── */
+.entity-browse-page .pill {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.entity-browse-page .pill:hover:not(.active) {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+.entity-browse-page .pill.active {
+  background: rgba(68, 102, 255, 0.25);
+  border-color: rgba(68, 102, 255, 0.5);
+  color: #fff;
+}
+.entity-browse-page .pill:focus-visible {
+  outline: 2px solid #4466ff;
+  outline-offset: 2px;
+}
+
+/* Logo-mode agency pill: tighter padding (the logo is the label),
+   fixed minimum width so all agency pills line up uniformly, subtle
+   white tint that hover/active darkens. */
+.entity-browse-page .pill.logo-pill {
+  padding: 4px 10px;
+  min-width: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.entity-browse-page .agency-pill-logo {
+  height: 22px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+.entity-browse-page .pill.logo-pill:hover .agency-pill-logo,
+.entity-browse-page .pill.logo-pill.active .agency-pill-logo {
+  opacity: 1;
+}
+.entity-browse-page .pill.logo-pill.active {
+  background: rgba(68, 102, 255, 0.18);
+  border-color: rgba(68, 102, 255, 0.55);
+}

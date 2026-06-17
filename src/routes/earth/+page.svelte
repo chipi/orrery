@@ -16,9 +16,10 @@
    * old deep-links but no longer affects rendering; the route is now
    * always the unified scene.
    */
-  import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+  import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import { base } from '$app/paths';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
   import { viewerLatLon } from '$lib/viewer-location';
@@ -30,6 +31,17 @@
   // null in non-browser contexts. Coarse: timezone-based, no
   // permission, works offline.
   const initialView = viewerLatLon() ?? undefined;
+
+  // Hidden tour anchors emit data-audio-stage="earth-select-{audio}".
+  // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
+  // for the literal substring `earth-select-` — kept in this comment
+  // and on each TourAnchors button below.
+  const EARTH_TOUR_ANCHORS = [
+    { audio: 'iss', site: 'iss' },
+    { audio: 'tiangong', site: 'tiangong' },
+    { audio: 'hubble', site: 'hubble' },
+    { audio: 'jwst', site: 'jwst' },
+  ] as const;
 </script>
 
 <svelte:head><title>{m.earth_page_title()}</title></svelte:head>
@@ -43,45 +55,4 @@
   {initialView}
 />
 
-<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
-     entry points for the Curator Tour's narration "Click ISS or
-     Tiangong" / "JWST orbits there" — calls into SurfaceScene's
-     selectSite via the window hook it exposes on mount. -->
-<div class="tour-anchors" aria-hidden="true">
-  <button
-    type="button"
-    data-audio-stage="earth-select-iss"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('iss')}>select iss</button
-  >
-  <button
-    type="button"
-    data-audio-stage="earth-select-tiangong"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('tiangong')}>select tiangong</button
-  >
-  <button
-    type="button"
-    data-audio-stage="earth-select-hubble"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('hubble')}>select hubble</button
-  >
-  <button
-    type="button"
-    data-audio-stage="earth-select-jwst"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('jwst')}>select jwst</button
-  >
-</div>
+<TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />

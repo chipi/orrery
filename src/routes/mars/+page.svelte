@@ -7,15 +7,22 @@
   // Everything else — scene assembly, animation loop with fly-in tween
   // + drag inertia + smooth zoom lerp, HUD, panel state, hotspot LOD,
   // input handlers, equirectangular 2D drawing — is owned by SurfaceScene.
-  import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+  import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
+  import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import { base } from '$app/paths';
   import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
   import { buildMarsLanderModel } from '$lib/mars-lander-models';
   import { registerMarsHotspotBuilders } from '$lib/surface-scene/register-mars-hotspot-builders';
   import { getMarsSites, getMarsSiteGallery, getMarsTraverse } from '$lib/data';
   import type { Traverse } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
+
+  // Hidden tour anchors emit data-audio-stage="mars-select-{audio}".
+  // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
+  // for the literal substring `mars-select-` — kept in this comment
+  // and on each TourAnchors button below.
 
   // Mars's native builder takes (siteId, missionType, agency, color) —
   // adapter reorders to the canonical (siteId, missionType, color, agency)
@@ -39,31 +46,31 @@
     return out;
   }
 
-  // Hidden tour anchors driven by guide-mars: each entry maps an
-  // audio-stage id to the actual mars-sites site id (they sometimes
-  // differ — "pathfinder" vs "mars-pathfinder", "tianwen1" vs
-  // "tianwen1-orbiter"). Add an entry here to expose a new marker to
-  // the tour; the executor calls __surfaceSceneSelectSite(siteId).
-  const TOUR_ANCHORS: ReadonlyArray<{ audioId: string; siteId: string }> = [
+  // Driven by guide-mars: each entry maps an audio-stage id to the
+  // actual mars-sites site id (they sometimes differ — "pathfinder"
+  // vs "mars-pathfinder", "tianwen1" vs "tianwen1-orbiter"). Add an
+  // entry here to expose a new marker to the tour; the executor
+  // calls __surfaceSceneSelectSite(siteId).
+  const MARS_TOUR_ANCHORS = [
     // v0.6 anchors (kept; audio-stage names preserved).
-    { audioId: 'curiosity', siteId: 'curiosity' },
-    { audioId: 'perseverance', siteId: 'perseverance' },
-    { audioId: 'pathfinder', siteId: 'mars-pathfinder' },
+    { audio: 'curiosity', site: 'curiosity' },
+    { audio: 'perseverance', site: 'perseverance' },
+    { audio: 'pathfinder', site: 'mars-pathfinder' },
     // Phase 4 — guide-mars early-mission roll-call.
-    { audioId: 'mars2', siteId: 'mars2' },
-    { audioId: 'mars3', siteId: 'mars3' },
-    { audioId: 'viking1-lander', siteId: 'viking1-lander' },
-    { audioId: 'viking2-lander', siteId: 'viking2-lander' },
+    { audio: 'mars2', site: 'mars2' },
+    { audio: 'mars3', site: 'mars3' },
+    { audio: 'viking1-lander', site: 'viking1-lander' },
+    { audio: 'viking2-lander', site: 'viking2-lander' },
     // Phase 4 — guide-mars orbiter roll-call (t≈92 – 100).
-    { audioId: 'mro', siteId: 'mro' },
-    { audioId: 'maven', siteId: 'maven' },
-    { audioId: 'mars-express', siteId: 'mars-express' },
-    { audioId: 'mars-odyssey', siteId: 'mars-odyssey' },
-    { audioId: 'tgo', siteId: 'tgo' },
-    { audioId: 'mangalyaan', siteId: 'mangalyaan' },
-    { audioId: 'hope', siteId: 'hope' },
-    { audioId: 'tianwen1', siteId: 'tianwen1-orbiter' },
-  ];
+    { audio: 'mro', site: 'mro' },
+    { audio: 'maven', site: 'maven' },
+    { audio: 'mars-express', site: 'mars-express' },
+    { audio: 'mars-odyssey', site: 'mars-odyssey' },
+    { audio: 'tgo', site: 'tgo' },
+    { audio: 'mangalyaan', site: 'mangalyaan' },
+    { audio: 'hope', site: 'hope' },
+    { audio: 'tianwen1', site: 'tianwen1-orbiter' },
+  ] as const;
 
   const MARS_CONFIG: SurfaceSceneConfig = {
     planet: 'mars',
@@ -104,16 +111,9 @@
 
 <svelte:head>
   <title>{m.mars_page_title()}</title>
-  <!-- Preload the site catalogue + hotspots sidecar so they start
-       downloading during HTML parse instead of after the Svelte
-       bundle executes and SurfaceScene's onMount() finally calls
-       `loadSites()`. Saves the network roundtrip from the critical
-       path; the JSON is already in the browser cache by the time
-       getMarsSites() asks for it. (2026-06-17 perf pass.) -->
-  <link rel="preload" as="fetch" href="{base}/data/mars-sites.json" crossorigin="anonymous" />
-  <link rel="preload" as="fetch" href="{base}/data/surface-hotspots.json" crossorigin="anonymous" />
 </svelte:head>
 
+<SurfacePreloadLinks planet="mars" />
 <DebugPanelRegistrar label="MARS" />
 
 <SurfaceScene
@@ -123,20 +123,4 @@
   loadTraverses={loadMarsTraverses}
 />
 
-<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Source list in
-     TOUR_ANCHORS above; the audio-tour executor calls
-     __surfaceSceneSelectSite via the window hook SurfaceScene exposes
-     on mount. -->
-<div class="tour-anchors" aria-hidden="true">
-  {#each TOUR_ANCHORS as anchor (anchor.audioId)}
-    <button
-      type="button"
-      data-audio-stage="mars-select-{anchor.audioId}"
-      tabindex="-1"
-      onclick={() =>
-        (
-          window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-        ).__surfaceSceneSelectSite?.(anchor.siteId)}>select {anchor.audioId}</button
-    >
-  {/each}
-</div>
+<TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />

@@ -5,14 +5,27 @@
   // builder registry) lives in MOON_CONFIG below. Everything else —
   // scene assembly, animation loop, HUD, panel state, hotspot LOD,
   // input handlers — is owned by SurfaceScene.
-  import { base } from '$app/paths';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+  import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
+  import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import { base } from '$app/paths';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
   import { getMoonSites, getMoonSiteGallery } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+
+  // Hidden tour anchors emit data-audio-stage="moon-select-{audio}".
+  // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
+  // for the literal substring `moon-select-` — kept in this comment
+  // and on each TourAnchors button below.
+  const MOON_TOUR_ANCHORS = [
+    { audio: 'apollo11', site: 'apollo11' },
+    { audio: 'change4', site: 'change4' },
+    { audio: 'chandrayaan3', site: 'chandrayaan3' },
+    { audio: 'apollo17', site: 'apollo17' },
+  ] as const;
 
   const MOON_CONFIG: SurfaceSceneConfig = {
     planet: 'moon',
@@ -48,56 +61,11 @@
 
 <svelte:head>
   <title>{m.moon_page_title()}</title>
-  <!-- Preload the site catalogue + hotspots sidecar so they start
-       downloading during HTML parse instead of after the Svelte
-       bundle executes and SurfaceScene's onMount() finally calls
-       `loadSites()`. Saves the network roundtrip from the critical
-       path; the JSON is already in the browser cache by the time
-       getMoonSites() asks for it. (2026-06-17 perf pass.) -->
-  <link rel="preload" as="fetch" href="{base}/data/moon-sites.json" crossorigin="anonymous" />
-  <link rel="preload" as="fetch" href="{base}/data/surface-hotspots.json" crossorigin="anonymous" />
 </svelte:head>
 
+<SurfacePreloadLinks planet="moon" />
 <DebugPanelRegistrar label="MOON" />
 
 <SurfaceScene config={MOON_CONFIG} loadSites={getMoonSites} loadGallery={getMoonSiteGallery} />
 
-<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
-<div class="tour-anchors" aria-hidden="true">
-  <button
-    type="button"
-    data-audio-stage="moon-select-apollo11"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('apollo11')}>select apollo 11</button
-  >
-  <button
-    type="button"
-    data-audio-stage="moon-select-change4"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('change4')}>select chang'e 4</button
-  >
-  <button
-    type="button"
-    data-audio-stage="moon-select-chandrayaan3"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('chandrayaan3')}>select chandrayaan-3</button
-  >
-  <button
-    type="button"
-    data-audio-stage="moon-select-apollo17"
-    tabindex="-1"
-    onclick={() =>
-      (
-        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
-      ).__surfaceSceneSelectSite?.('apollo17')}>select apollo 17</button
-  >
-</div>
+<TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />

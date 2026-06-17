@@ -1670,6 +1670,17 @@
       return out;
     }
 
+    // Per-rebuild queue of deferred tier-2 patch builds. Pushed during
+    // the main marker loop, drained on a `setTimeout(…, 0)` so the
+    // markers + labels paint on the next frame before the patches
+    // start eating ~50–150 ms of geometry work. (2026-06-17 user note:
+    // "on /earth /moon /mars orbits and items load after the planet,
+    // sometimes takes few seconds — analyse where slowness comes
+    // from.") See the eager-vs-deferred comment inside the loop for
+    // the UX trade-off.
+    const tier2BuildQueue: Array<() => void> = [];
+    let tier2QueueGen = 0;
+
     function rebuildMarkers() {
       for (const mk of markers) {
         disposeObject3d(mk.group);
@@ -1677,6 +1688,11 @@
       }
       markers.length = 0;
       hotspots.length = 0;
+      // Bump the generation so any in-flight deferred tier-2 build
+      // batch from a prior rebuildMarkers() call short-circuits before
+      // attaching patches to disposed marker groups.
+      tier2QueueGen += 1;
+      tier2BuildQueue.length = 0;
       const labelOffsets = computeLabelOffsets(sites);
       for (const site of sites) {
         // Skip orbiter entries — they go through rebuildOrbitalMarkers.
@@ -1812,17 +1828,25 @@
               tier1Builder: () => builder(accent),
               tier2Builder,
             });
-            // Eager-build the tier2 patch when one is configured so
-            // the camR-based opacity ramp has something to fade in
-            // even before the dispatcher's Tier 2 promotion threshold
-            // (projected radius >= 120 px ≈ camR ~38) fires. Without
-            // this, the patch can only start to materialize once the
-            // dispatcher decides we've earned Tier 2 — too late for
-            // the user-expected "fade starts at camR ~50" smoothness.
+            // Tier-2 patch build — deferred to a setTimeout(…, 0)
+            // so the marker + label paint isn't blocked by ~5 ms of
+            // geometry+material setup per site (×27 sites adds up to
+            // 50–150 ms of jank on the first-paint frame). The patch
+            // still pre-warms long before the camR ~50 fade-in starts,
+            // because the macrotask fires within a couple of frames
+            // and the user typically takes >100 ms to scroll-zoom in.
+            // (2026-06-17 perf pass.)
             if (tier2Builder) {
-              entry.tier2Group = tier2Builder();
-              entry.tier2Group.visible = false;
-              group.add(entry.tier2Group);
+              const queuedGen = tier2QueueGen;
+              tier2BuildQueue.push(() => {
+                // Bail if rebuildMarkers() ran again in the meantime —
+                // the captured `entry`/`group` would be attached to a
+                // disposed marker tree.
+                if (queuedGen !== tier2QueueGen) return;
+                entry.tier2Group = tier2Builder();
+                entry.tier2Group.visible = false;
+                group.add(entry.tier2Group);
+              });
             }
             hotspots.push(entry);
             originalMaxTier.set(site.id, maxTier);
@@ -1831,6 +1855,16 @@
 
         planetMesh.add(group);
         markers.push({ group, siteId: site.id, halo, hoverHalo, labelGroup: label.group });
+      }
+
+      if (tier2BuildQueue.length > 0) {
+        const queue = tier2BuildQueue.slice();
+        tier2BuildQueue.length = 0;
+        // setTimeout 0 — markers + labels paint on the next frame
+        // before the queue drains.
+        setTimeout(() => {
+          for (const build of queue) build();
+        }, 0);
       }
     }
 

@@ -46,7 +46,17 @@
   };
 </script>
 
-<svelte:head><title>{m.moon_page_title()}</title></svelte:head>
+<svelte:head>
+  <title>{m.moon_page_title()}</title>
+  <!-- Preload the site catalogue + hotspots sidecar so they start
+       downloading during HTML parse instead of after the Svelte
+       bundle executes and SurfaceScene's onMount() finally calls
+       `loadSites()`. Saves the network roundtrip from the critical
+       path; the JSON is already in the browser cache by the time
+       getMoonSites() asks for it. (2026-06-17 perf pass.) -->
+  <link rel="preload" as="fetch" href="{base}/data/moon-sites.json" crossorigin="anonymous" />
+  <link rel="preload" as="fetch" href="{base}/data/surface-hotspots.json" crossorigin="anonymous" />
+</svelte:head>
 
 <DebugPanelRegistrar label="MOON" />
 

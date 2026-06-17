@@ -272,38 +272,48 @@ async function hotspotMetadataOverlay(
  * sidecar default (which is English).
  */
 export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
-  const baseList = await moonSites();
-  const hotspots = await surfaceHotspotsSidecar();
-  const merged: MoonSite[] = [];
-  for (const s of baseList) {
-    const overlay = await get<Partial<MoonSite>>(`i18n/${locale}/moon-sites/${s.id}.json`).catch(
-      () => null,
-    );
-    const fallback =
-      overlay ??
-      (locale === 'en-US'
-        ? null
-        : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
-    const localised = fallback ? { ...s, ...fallback } : s;
-    const hotspot = hotspots[s.id];
-    let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
-    if (withHotspot.hotspot_annotations) {
-      const hsOverlay =
-        (await hotspotMetadataOverlay(locale, s.id)) ??
-        (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
-      if (hsOverlay?.hotspot_annotations) {
-        withHotspot = {
-          ...withHotspot,
-          hotspot_annotations: mergeAnnotations(
-            withHotspot.hotspot_annotations,
-            hsOverlay.hotspot_annotations,
-          ),
-        };
+  // baseList + hotspots run in parallel — both are single-fetch JSON
+  // and they don't depend on each other.
+  const [baseList, hotspots] = await Promise.all([moonSites(), surfaceHotspotsSidecar()]);
+  // Per-site overlay merge — fan out across all 27 sites instead of
+  // awaiting one at a time. Each iteration does up to four nested
+  // fetches (locale overlay, en-US fallback, hotspot metadata, hotspot
+  // metadata fallback) — under the old `for ... await` loop those
+  // serialised across sites for a worst-case ~108 sequential network
+  // roundtrips. With Promise.all the wall-clock drops to roughly
+  // one slow site's depth (~4 sequential fetches) instead of N times
+  // that. (2026-06-17 user report: "on /earth /moon /mars orbits and
+  // items load after the planet, sometimes takes few seconds.")
+  return Promise.all(
+    baseList.map(async (s) => {
+      const overlay = await get<Partial<MoonSite>>(
+        `i18n/${locale}/moon-sites/${s.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
+      const localised = fallback ? { ...s, ...fallback } : s;
+      const hotspot = hotspots[s.id];
+      let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
+      if (withHotspot.hotspot_annotations) {
+        const hsOverlay =
+          (await hotspotMetadataOverlay(locale, s.id)) ??
+          (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
+        if (hsOverlay?.hotspot_annotations) {
+          withHotspot = {
+            ...withHotspot,
+            hotspot_annotations: mergeAnnotations(
+              withHotspot.hotspot_annotations,
+              hsOverlay.hotspot_annotations,
+            ),
+          };
+        }
       }
-    }
-    merged.push(withHotspot);
-  }
-  return merged;
+      return withHotspot;
+    }),
+  );
 }
 
 /**
@@ -336,38 +346,40 @@ export async function marsSites(): Promise<MarsSite[]> {
  * Mirrors getMoonSites — the locale-merge pattern is body-agnostic.
  */
 export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
-  const baseList = await marsSites();
-  const hotspots = await surfaceHotspotsSidecar();
-  const merged: MarsSite[] = [];
-  for (const s of baseList) {
-    const overlay = await get<Partial<MarsSite>>(`i18n/${locale}/mars-sites/${s.id}.json`).catch(
-      () => null,
-    );
-    const fallback =
-      overlay ??
-      (locale === 'en-US'
-        ? null
-        : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
-    const localised = fallback ? { ...s, ...fallback } : s;
-    const hotspot = hotspots[s.id];
-    let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
-    if (withHotspot.hotspot_annotations) {
-      const hsOverlay =
-        (await hotspotMetadataOverlay(locale, s.id)) ??
-        (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
-      if (hsOverlay?.hotspot_annotations) {
-        withHotspot = {
-          ...withHotspot,
-          hotspot_annotations: mergeAnnotations(
-            withHotspot.hotspot_annotations,
-            hsOverlay.hotspot_annotations,
-          ),
-        };
+  // Parallel fan-out — see getMoonSites for the rationale. Same
+  // structure: baseList + hotspots in parallel, then 27 per-site
+  // overlay merges concurrently instead of sequentially.
+  const [baseList, hotspots] = await Promise.all([marsSites(), surfaceHotspotsSidecar()]);
+  return Promise.all(
+    baseList.map(async (s) => {
+      const overlay = await get<Partial<MarsSite>>(
+        `i18n/${locale}/mars-sites/${s.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
+      const localised = fallback ? { ...s, ...fallback } : s;
+      const hotspot = hotspots[s.id];
+      let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
+      if (withHotspot.hotspot_annotations) {
+        const hsOverlay =
+          (await hotspotMetadataOverlay(locale, s.id)) ??
+          (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
+        if (hsOverlay?.hotspot_annotations) {
+          withHotspot = {
+            ...withHotspot,
+            hotspot_annotations: mergeAnnotations(
+              withHotspot.hotspot_annotations,
+              hsOverlay.hotspot_annotations,
+            ),
+          };
+        }
       }
-    }
-    merged.push(withHotspot);
-  }
-  return merged;
+      return withHotspot;
+    }),
+  );
 }
 
 /** Mars rover traverse polylines (PRD-009 §what-comes-after). */

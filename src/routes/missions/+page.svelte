@@ -940,34 +940,9 @@
     border-color: rgba(68, 102, 255, 0.55);
   }
 
-  .grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    /* Mobile (≤600 px): 2 columns at typical phone widths via auto-fill +
-     * minmax(150 px) — same density as /fleet, which is what the
-     * user is comparing against. 1-column was wasted vertical space on
-     * a 9-cards-tall viewport. (Issue #125.) The min(150 px) floor still
-     * gracefully falls back to 1 column on very narrow viewports (<340 px). */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 12px;
-  }
-  @media (min-width: 600px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 960px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (min-width: 1280px) {
-    .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+  /* Grid layout itself (display, columns, gap, breakpoints) lives in
+     src/lib/styles/entity-card-grid.css — shared with /fleet so the
+     column count tracks viewport identically across both routes. */
 
   /* Card chrome (.card, .card-photo, .card-body, .card-head,
      .agency-badge, .card-status, .card-quality, .card-name, .card-type,

@@ -28,6 +28,28 @@
  * Loaded once via src/lib/styles/app.css.
  */
 
+/* Grid layout itself — auto-fill with a 260 px floor so column count
+   tracks viewport width uniformly across both routes (no manual
+   breakpoint stepping). Both /missions and /fleet now show the same
+   number of cards at any given viewport width. Mobile shrinks the
+   floor to 150 px (~2 columns on a 375 px phone). 2026-06-17 user
+   note: "I see still more cards on fleet than on mission, 5 vs 4,
+   can we make grid also the same". */
+.entity-card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+@media (max-width: 600px) {
+  .entity-card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+}
+
 .entity-card-grid .card-li {
   position: relative;
   height: 100%;

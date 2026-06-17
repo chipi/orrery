@@ -814,14 +814,10 @@
     cursor: pointer;
   }
 
-  .fleet-grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 14px;
-  }
+  /* Grid layout itself (display, columns, gap, breakpoints) lives in
+     src/lib/styles/entity-card-grid.css — shared with /missions so the
+     column count tracks viewport identically across both routes. */
+
   /* W4 (GH #274) — content-visibility: auto lets the browser skip
    * layout + paint for off-screen cards (152 fleet entries × ~280px
    * each = ~21000px tall before virtualisation; we only need ~3-4
@@ -831,7 +827,9 @@
    * virtualizer library, no scroll-listener; relies on Chromium
    * (mobile-chromium e2e target) + modern Safari/Firefox support.
    * Trade-off vs DOM virtualisation: DOM nodes still exist (cheap
-   * memory), but layout/paint cost drops to ~0 for off-screen items. */
+   * memory), but layout/paint cost drops to ~0 for off-screen items.
+   * Route-local because /missions doesn't yet have enough entries to
+   * benefit from the optimisation. */
   .fleet-grid > .card-li {
     content-visibility: auto;
     contain-intrinsic-size: auto 280px;
@@ -923,11 +921,8 @@
       min-width: 100%;
       margin-bottom: 2px;
     }
-    .fleet-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
-    }
-    /* Fleet-specific mobile shrink — selector tightened to .fleet-grid
+    /* Mobile grid floor lives in entity-card-grid.css.
+       Fleet-specific name shrink — selector tightened to .fleet-grid
        so Svelte's scoped-CSS specificity wins over the shared
        entity-card-grid.css default of 22 px. */
     .fleet-grid .card-name {

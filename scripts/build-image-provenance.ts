@@ -623,6 +623,33 @@ function panelCommonsTitles(q: GalleryQuery): string[] {
   return titles;
 }
 
+// Slice /explore (2026-06-17) — per-slot override sidecar consumed by
+// buildPanelEntries. Each key is `<surface>/<bodyId>/<slot>` (e.g.
+// `planets/jupiter/01`) and the value carries esahubble.org attribution
+// metadata. When an override is present for a given slot, emit an
+// esahubble-attributed provenance entry instead of the NASA/Commons
+// fallback path. Keeps the rest of the panel walker untouched.
+interface PanelImageSourceOverride {
+  source_type: 'esahubble';
+  source_url: string;
+  image_url: string;
+  credit: string;
+  license: string;
+  hubble_id?: string | null;
+  hubble_title?: string | null;
+  fetched_at: string;
+  slice?: string;
+  vision?: { verdict: string; confidence: number } | null;
+}
+async function loadPanelOverrides(): Promise<Record<string, PanelImageSourceOverride>> {
+  try {
+    const txt = await readFile('static/data/panel-esahubble-sources.json', 'utf-8');
+    return JSON.parse(txt) as Record<string, PanelImageSourceOverride>;
+  } catch {
+    return {};
+  }
+}
+
 async function buildPanelEntries(opts: {
   queries: readonly GalleryQuery[];
   rootDir: string;
@@ -635,6 +662,10 @@ async function buildPanelEntries(opts: {
   modifications?: string[];
 }): Promise<ProvenanceEntry[]> {
   const out: ProvenanceEntry[] = [];
+  const overrides = await loadPanelOverrides();
+  // Derive the surface label ('planets', 'small-bodies', 'sun', ...)
+  // from the rootDir so overrides can key on the served URL shape.
+  const surface = opts.rootDir.replace(/^static\/images\//, '');
   for (const q of opts.queries) {
     const dir = join(opts.rootDir, q.id);
     const files = (await listFiles(dir)).filter((f) => /\.(jpe?g|png)$/i.test(f));
@@ -689,6 +720,31 @@ async function buildPanelEntries(opts: {
       const slot = i + 1;
       const commonsTitle = titles[slot - 1];
       const mods = opts.modifications ?? ['downloaded-via-special-filepath', 'reencoded-jpeg'];
+      // Slice /explore — per-slot esahubble override (skip 1x1 variants;
+      // they inherit the base entry's attribution via the walker fallback).
+      const overrideKey = `${surface}/${q.id}/${String(slot).padStart(2, '0')}`;
+      const override = !files[i].includes('.1x1.') ? overrides[overrideKey] : undefined;
+      if (override) {
+        out.push({
+          id: entryId(staticToServed(localPath)),
+          path: staticToServed(localPath),
+          source_type: 'esahubble',
+          title: override.hubble_title ?? `${q.id} (Hubble)`,
+          author: override.credit,
+          agency: override.credit,
+          source_url: override.source_url,
+          image_url: override.image_url,
+          license_short: override.license,
+          license_url: 'https://creativecommons.org/licenses/by/4.0/',
+          license_rationale: 'ESA/Hubble — CC BY 4.0 (esahubble.org/copyright/)',
+          modifications: ['downloaded-via-esahubble-archive', 'reencoded-jpeg'],
+          revid: null,
+          pageid: null,
+          nasa_id: null,
+          fetched_at: override.fetched_at,
+        });
+        continue;
+      }
       if (commonsTitle) {
         out.push(
           await buildWikimediaEntry({

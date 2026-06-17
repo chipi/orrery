@@ -92,6 +92,12 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
           (await tryCuratedFallback(primary, { mission, slot }))
         );
       }
+      if (primary.url.includes('sci.esa.int/web/')) {
+        return (
+          (await sciEsaIntScrape(primary, { mission, query })) ??
+          (await tryCuratedFallback(primary, { mission, slot }))
+        );
+      }
       return await tryCuratedFallback(primary, { mission, slot });
     default:
       return null;
@@ -321,6 +327,71 @@ async function esaMultimediaScrape(primary, query) {
     credit: 'ESA',
     license: 'cc-by-4.0',
     metadata: { esa_slug: matched.slug, esa_detail_url: matched.url },
+    tier: 1,
+  };
+}
+
+// ── Tier 1: sci.esa.int per-mission gallery scraper ────────────────
+// ESA's Science portal hosts per-mission multimedia galleries that the
+// general ESA_Multimedia search can't reliably surface. Registry URL
+// carries a {mission} placeholder substituted at fetch time. CC BY 4.0.
+//
+// Page structure: gallery listing → child detail pages → full-res
+// image at <a href="...detailFigure"> or in <meta property="og:image">.
+// We sample the listing for image URLs directly to keep the call count
+// down (one HTTP request per attempted mission).
+
+async function sciEsaIntScrape(primary, { mission, query }) {
+  // Substitute {mission} placeholder with the slug. The registry URL
+  // template is e.g. `https://sci.esa.int/web/{mission}/multimedia-gallery`.
+  const url = primary.url.replace('{mission}', encodeURIComponent(mission));
+  const res = await fetch(url, { headers: { 'User-Agent': UA } });
+  if (!res.ok) return null;
+  const html = await res.text();
+
+  // Extract images from the gallery listing. sci.esa.int gallery images
+  // live at relative path /documents/<id>/<id>/<filename>_<size>.jpg
+  // where <size> is 200|625|1280|1920 (largest available varies by entry).
+  // They appear as CSS background-image URLs in style attributes
+  // (background-image:url(/documents/...)) — NOT plain <img src=>.
+  // The CSS in this DOM is malformed (no closing paren) so terminate
+  // on quote, semicolon, or end-of-attr instead of `)`.
+  const imgRegex = /background-image:\s*url\((\/documents\/[^?"';)\s]+?)\.(?:jpg|jpeg|png)/gi;
+  const seen = new Set();
+  const candidates = [];
+  let m;
+  // Skip site chrome — logos, icons, theme assets, banners. The
+  // gallery image URLs live under /var/scientific/storage/images/ or
+  // /var/esa/storage/ (per-mission directories), never under
+  // /o/esa-science-legacy-theme/ (the sitewide CSS/JS bundle path).
+  const isChrome = (u) =>
+    /\/o\/[^/]+(?:-theme|-legacy)\//i.test(u) ||
+    /(?:logo|favicon|icon|footer|header|banner|sprite|share|social)/i.test(u);
+  while ((m = imgRegex.exec(html)) !== null) {
+    // Replace _<size>.jpg with _1280.jpg to fetch the largest readily
+    // available variant. If 1280 doesn't exist the request 404s and we
+    // fall back to the next candidate.
+    let imgUrl = m[1].replace(/_\d{2,4}$/, '_1280') + '.jpg';
+    if (seen.has(imgUrl)) continue;
+    seen.add(imgUrl);
+    if (!imgUrl.startsWith('http')) imgUrl = `https://sci.esa.int${imgUrl}`;
+    if (isChrome(imgUrl)) continue;
+    candidates.push(imgUrl);
+    if (candidates.length >= 10) break;
+  }
+  if (candidates.length === 0) return null;
+
+  // Pick the first candidate. The listing is mission-scoped already so
+  // gating-by-title is unnecessary (and unreliable — many listing items
+  // share generic alt-text). Per-mission URL is the relevance signal.
+  const picked = candidates[0];
+  return {
+    source_type: 'sci-esa-int',
+    source_url: url,
+    image_url: picked,
+    credit: 'ESA',
+    license: 'cc-by-4.0',
+    metadata: { sci_esa_gallery: url, sci_esa_query: query },
     tier: 1,
   };
 }

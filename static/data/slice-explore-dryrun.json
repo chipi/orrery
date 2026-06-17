@@ -1,0 +1,295 @@
+{
+  "agency": "ESA-Hubble",
+  "surface": "/explore",
+  "generated_at": "2026-06-17T19:26:20.573Z",
+  "proposals": [
+    {
+      "surface": "planets",
+      "bodyId": "mercury",
+      "slot": "01",
+      "query": "Mercury planet",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "planets",
+      "bodyId": "venus",
+      "slot": "01",
+      "query": "Venus planet",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "planets",
+      "bodyId": "mars",
+      "slot": "01",
+      "query": "Mars planet",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic1814a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1814a",
+          "hubble_title": "Mars and Saturn close to opposition"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "The right image shows Mars with characteristic rusty coloration and surface features, while the left shows Saturn; both are planetary observations consistent with space-mission imagery documentation."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "planets",
+      "bodyId": "jupiter",
+      "slot": "01",
+      "query": "Jupiter Great Red Spot",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic2017a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic2017a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic2017a",
+          "hubble_title": "Hubble's View of Jupiter and Europa in August 2020"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a detailed photograph of Jupiter showing its characteristic atmospheric bands, cloud patterns, and the iconic Great Red Spot, which is the mission target body for Jupiter observation missions."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "planets",
+      "bodyId": "saturn",
+      "slot": "01",
+      "query": "Saturn rings",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic1814b/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814b.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1814b",
+          "hubble_title": "Saturn and its rings in 2018"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an astronomical photograph of Saturn showing its distinctive rings and atmospheric features, which substantively depicts the mission target body for Saturn observation missions."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "planets",
+      "bodyId": "uranus",
+      "slot": "01",
+      "query": "Uranus rings",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic2303a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic2303a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic2303a",
+          "hubble_title": "Hubble’s new views of Jupiter and Uranus"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Jupiter (left) and what appears to be Uranus (right), but depicts the planets themselves rather than their rings, and lacks mission-specific spacecraft or instrument imagery associate"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "planets",
+      "bodyId": "neptune",
+      "slot": "01",
+      "query": "Neptune storm",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "planets",
+      "bodyId": "pluto",
+      "slot": "01",
+      "query": "Pluto dwarf planet",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic1212a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic1212a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1212a",
+          "hubble_title": "Hubble finds fifth moon orbiting Pluto (labelled)"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.85,
+        "reason": "This appears to be an astronomical observation image with labeled sources/stars, but without mission-specific context it resembles a generic sky survey rather than substantive Pluto mission imagery; t"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "planets",
+      "bodyId": "earth",
+      "slot": "01",
+      "query": "Earth from space",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic0910h/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic0910h.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic0910h",
+          "hubble_title": "Butterfly emerges from stellar demise in planetary nebula NGC 6302"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a deep-space nebula image, not Earth imagery; it appears to be a planetary nebula or emission nebula observed by a space telescope, not an Earth observation mission product."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "67p",
+      "slot": "01",
+      "query": "67P Churyumov-Gerasimenko comet",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic0310a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic0310a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic0310a",
+          "hubble_title": "3-D models of comet 67P/Churyumov-Gerasimenko's nucleus"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This image shows 3D renderings of a small celestial body's shape from multiple viewing angles (pole, side, end), consistent with spacecraft imaging and shape reconstruction of comet 67P from the Roset"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "halley",
+      "slot": "01",
+      "query": "Halley comet",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "ceres",
+      "slot": "01",
+      "query": "Ceres dwarf planet",
+      "proposed": null,
+      "reason": "no hit"
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "eris",
+      "slot": "01",
+      "query": "Eris dwarf planet",
+      "proposed": null,
+      "reason": "no hit"
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "haumea",
+      "slot": "01",
+      "query": "Haumea dwarf planet",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "makemake",
+      "slot": "01",
+      "query": "Makemake dwarf planet",
+      "proposed": null,
+      "reason": "non-esahubble: wikimedia-commons"
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "oumuamua",
+      "slot": "01",
+      "query": "Oumuamua interstellar",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic1813a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic1813a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1813a",
+          "hubble_title": "Artist’s impression of the interstellar asteroid `Oumuamua"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is an artist's rendering or visualization of an interstellar object, not an actual observational photograph of Oumuamua from a space mission."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "small-bodies",
+      "bodyId": "pluto",
+      "slot": "01",
+      "query": "Pluto dwarf planet",
+      "proposed": {
+        "source_type": "esahubble",
+        "source_url": "https://esahubble.org/images/heic1212a/",
+        "image_url": "https://cdn.esahubble.org/archives/images/large/heic1212a.jpg",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1212a",
+          "hubble_title": "Hubble finds fifth moon orbiting Pluto (labelled)"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.85,
+        "reason": "This appears to be a scientific observation image (possibly astronomical spectroscopy or detection data) with annotations, but lacks the characteristic features of Pluto mission imagery and does not s"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "sun",
+      "bodyId": "sun",
+      "slot": "01",
+      "query": "Sun corona",
+      "proposed": null,
+      "reason": "no hit"
+    }
+  ]
+}

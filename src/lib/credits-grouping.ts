@@ -136,7 +136,17 @@ export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
 const SOURCE_TYPE_TO_ID: Record<string, string> = {
   'wikimedia-commons': 'wikimedia-commons',
   'nasa-images-api': 'nasa',
+  'nasa-image-library': 'nasa',
   'direct-other': 'solar-system-scope',
+  esahubble: 'stsci',
+  'esa-multimedia': 'esa',
+  'sci-esa-int': 'esa',
+  'smithsonian-openaccess': 'smithsonian',
+  smithsonian: 'smithsonian',
+  nara: 'nara',
+  jaxa: 'jaxa',
+  'europeanspaceagency-flickr': 'esa',
+  'roscosmos-flickr': 'roscosmos',
 };
 
 /**
@@ -185,6 +195,8 @@ function agencyToSourceId(agency: string): string | null {
   if (a.includes('asi') || a.includes('agenzia spaziale italiana')) return 'asi';
   if (a.includes('usgs')) return 'usgs';
   if (a.includes('noaa')) return 'noaa';
+  if (a.includes('smithsonian')) return 'smithsonian';
+  if (a.includes('national archives') || a.includes('nara')) return 'nara';
   if (a.includes('ussf') || a.includes('us space force') || a.includes('united states space force'))
     return 'us-space-force';
   if (a.includes('eutelsat') || a.includes('oneweb')) return 'eutelsat-oneweb';

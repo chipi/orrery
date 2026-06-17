@@ -721,7 +721,15 @@ async function tier3CommonsFailover(registry, query) {
   // space" so search results are biased toward space content even before
   // the gate runs. Keeps the original query intact but adds a positive
   // disjunctive hint that Commons's search ranks accordingly.
-  const enrichedQuery = `${query} (spacecraft OR mission OR space)`;
+  //
+  // Fix I (2026-06-17) — skip enrichment for short queries (≤3 tokens).
+  // For terse mission names like "Hope" or "Hope (EMM)" the "space"
+  // term biases Commons toward Hubble (rank-1 page is "Space Telescope
+  // Hope Diamond" et al.) and never reaches the real Hope-Probe pages.
+  // Long queries already carry mission-specific tokens that out-rank the
+  // generic disjunction, so they keep the enrichment.
+  const tokenCount = query.trim().split(/\s+/).filter(Boolean).length;
+  const enrichedQuery = tokenCount <= 3 ? query : `${query} (spacecraft OR mission OR space)`;
   const params = new URLSearchParams({
     action: 'query',
     format: 'json',

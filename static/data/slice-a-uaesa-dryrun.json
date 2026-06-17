@@ -3,11 +3,11 @@
   "totals": {
     "tier1_upgrade": 0,
     "tier2_upgrade": 0,
-    "no_change": 0,
-    "miss": 8,
+    "no_change": 3,
+    "miss": 5,
     "vision_passed": 0,
     "vision_flagged": 0,
-    "vision_unsure": 0
+    "vision_unsure": 3
   },
   "candidate_count": 8,
   "proposals": [
@@ -79,9 +79,19 @@
       "currentSource": "wikimedia-commons",
       "path": "/images/missions/hope-probe/01.jpg",
       "query": "hope probe",
-      "proposed": null,
-      "vision": null,
-      "ship_at_apply": false
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Omran%20Sharaf%20at%20Hope%20Scientific%20Mission%20Announcement%20Event.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
     },
     {
       "surface": "missions",
@@ -91,9 +101,19 @@
       "currentSource": "wikimedia-commons",
       "path": "/images/missions/hope-probe/02.jpg",
       "query": "hope probe",
-      "proposed": null,
-      "vision": null,
-      "ship_at_apply": false
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Omran%20Sharaf%20at%20Hope%20Scientific%20Mission%20Announcement%20Event.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
     },
     {
       "surface": "missions",
@@ -103,9 +123,19 @@
       "currentSource": "wikimedia-commons",
       "path": "/images/missions/hope-probe/03.jpg",
       "query": "hope probe",
-      "proposed": null,
-      "vision": null,
-      "ship_at_apply": false
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Omran%20Sharaf%20at%20Hope%20Scientific%20Mission%20Announcement%20Event.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
     }
   ]
 }

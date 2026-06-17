@@ -107,7 +107,7 @@ const MATCHERS = {
   isAudio: (p) => p.startsWith('static/audio/') || p.startsWith('scripts/audio/'),
   isTest: (p) => /\.(test|spec)\.(ts|js|svelte)$/.test(p),
   isCode: (p) =>
-    /\.(svelte|ts|js|mjs)$/.test(p) &&
+    /\.(svelte|ts|js|mjs|css)$/.test(p) &&
     !p.startsWith('src/lib/paraglide/') &&
     !/\.(test|spec)\./.test(p),
   isStaticAsset: (p) =>

@@ -78,8 +78,20 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
       );
     case 'scrape-mission-page':
     case 'scrape-press-release':
-      // Generic scrape stub. Try curation fallback first; real HTML
-      // scrape is future work.
+      // Per-source dispatcher: try a known scraper, then fall back to
+      // the curation file (or null) if not implemented.
+      if (primary.url.includes('esahubble.org')) {
+        return (
+          (await esahubbleScrape(primary, query)) ??
+          (await tryCuratedFallback(primary, { mission, slot }))
+        );
+      }
+      if (primary.url.includes('esa.int/ESA_Multimedia')) {
+        return (
+          (await esaMultimediaScrape(primary, query)) ??
+          (await tryCuratedFallback(primary, { mission, slot }))
+        );
+      }
       return await tryCuratedFallback(primary, { mission, slot });
     default:
       return null;
@@ -167,6 +179,128 @@ async function wikimediaCategoryLookup(primary, query) {
     credit: 'agency original via Wikimedia Commons mirror',
     license: primary.license,
     metadata: { commons_file: pick, wikimedia_category: category },
+    tier: 1,
+  };
+}
+
+// ── Tier 1: esahubble.org scraper (Hubble CC BY 4.0 archive) ───────
+// Two-step scrape: search page → image IDs (heic\d+\w?); per-ID
+// detail page → title. Apply relevance gate to title. Image URL
+// follows the predictable cdn.esahubble.org/archives/images/large/
+// <id>.jpg pattern (verified live 2026-06-17). 5,507 CC BY 4.0
+// images across Galaxies / Nebulae / Stars / Cosmology / Exoplanets
+// / Quasars / Black Holes — primary Tier 1 for /explore celestial
+// bodies. Boundary-case agency: Hubble is NASA/ESA joint; we credit
+// `ESA/Hubble` per their attribution policy (esahubble.org/copyright/).
+
+async function esahubbleScrape(primary, query) {
+  const searchUrl = `https://esahubble.org/images/?search=${encodeURIComponent(query)}`;
+  const res = await fetch(searchUrl, { headers: { 'User-Agent': UA } });
+  if (!res.ok) return null;
+  const html = await res.text();
+
+  // Extract heic IDs from /images/<id>/ links in search results
+  const idMatches = [...html.matchAll(/\/images\/(heic\d{4}[a-z]?)\//g)];
+  const seenIds = new Set();
+  const candidates = [];
+  for (const m of idMatches) {
+    if (seenIds.has(m[1])) continue;
+    seenIds.add(m[1]);
+    candidates.push(m[1]);
+    if (candidates.length >= 5) break; // cap parallel detail fetches
+  }
+  if (candidates.length === 0) return null;
+
+  // Resolve titles by fetching detail pages in parallel.
+  const detailFetches = candidates.map(async (id) => {
+    const dRes = await fetch(`https://esahubble.org/images/${id}/`, {
+      headers: { 'User-Agent': UA },
+    });
+    if (!dRes.ok) return null;
+    const dHtml = await dRes.text();
+    const titleMatch = dHtml.match(/<title>([^<|]+?)(?:\s*\|\s*ESA\/Hubble)?<\/title>/);
+    const title = titleMatch
+      ? titleMatch[1].replace(/&#39;/g, "'").replace(/&amp;/g, '&').trim()
+      : null;
+    return { id, title };
+  });
+  const details = (await Promise.all(detailFetches)).filter(Boolean);
+
+  // Gate per candidate; pick first that passes.
+  const threshold = primary.relevance_threshold;
+  const usable = details.find(
+    (d) => d.title && scoreRelevance({ title: d.title }, query, { threshold }).accepted,
+  );
+  if (!usable) return null;
+
+  return {
+    source_type: 'esahubble',
+    source_url: `https://esahubble.org/images/${usable.id}/`,
+    image_url: `https://cdn.esahubble.org/archives/images/large/${usable.id}.jpg`,
+    credit: 'ESA/Hubble',
+    license: 'cc-by-4.0',
+    metadata: { hubble_id: usable.id, hubble_title: usable.title },
+    tier: 1,
+  };
+}
+
+// ── Tier 1: esa.int/ESA_Multimedia scraper ─────────────────────────
+// Search ESA's central multimedia archive. CC BY 4.0. URLs follow
+// the pattern /ESA_Multimedia/Images/<year>/<month>/<slug-with-
+// underscores>. The slug is the title — gate against it directly.
+// On a hit, fetch the detail page to extract the full-res image URL
+// (the first /var/esa/storage/.../<filename>.jpg WITHOUT _card_medium).
+
+async function esaMultimediaScrape(primary, query) {
+  const searchUrl = `https://www.esa.int/ESA_Multimedia/Search?Type=I&q=${encodeURIComponent(query)}`;
+  const res = await fetch(searchUrl, { headers: { 'User-Agent': UA } });
+  if (!res.ok) return null;
+  const html = await res.text();
+
+  const matches = [...html.matchAll(
+    /href="(\/ESA_Multimedia\/Images\/(\d{4})\/(\d{2})\/([^"/]+))"/g,
+  )];
+  const seen = new Set();
+  const candidates = [];
+  for (const m of matches) {
+    if (seen.has(m[1])) continue;
+    seen.add(m[1]);
+    const slug = m[4].replace(/_/g, ' ');
+    candidates.push({ url: m[1], slug });
+    if (candidates.length >= 8) break;
+  }
+  if (candidates.length === 0) return null;
+
+  // Gate against the slug-as-title.
+  const threshold = primary.relevance_threshold;
+  const matched = candidates.find(
+    (c) => scoreRelevance({ title: c.slug }, query, { threshold }).accepted,
+  );
+  if (!matched) return null;
+
+  // Fetch detail page to extract the full-res image URL.
+  const detailRes = await fetch(`https://www.esa.int${matched.url}`, {
+    headers: { 'User-Agent': UA },
+  });
+  if (!detailRes.ok) return null;
+  const detailHtml = await detailRes.text();
+  // The first /var/esa/storage/.../<filename>.jpg without _card_medium
+  // is the full-size image; the rest are thumbnails for related items.
+  const imgMatch = detailHtml.match(
+    /(?:href|src)="(\/var\/esa\/storage\/images\/esa_multimedia\/images\/[^"]+?\.(?:jpg|jpeg|png))"/i,
+  );
+  if (!imgMatch) return null;
+  const imageUrl = imgMatch[1].startsWith('http')
+    ? imgMatch[1]
+    : `https://www.esa.int${imgMatch[1]}`;
+
+  return {
+    source_type: 'esa-multimedia',
+    source_url: `https://www.esa.int${matched.url}`,
+    image_url: imageUrl,
+    credit: 'ESA',
+    license: 'cc-by-4.0',
+    metadata: { esa_slug: matched.slug, esa_detail_url: matched.url },
     tier: 1,
   };
 }

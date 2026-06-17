@@ -107,7 +107,8 @@
           "license": "cc-by-4.0",
           "verified": true,
           "verified_at": "2026-06-17",
-          "notes": "ESA central multimedia archive organized by directorate (Science & Exploration, Space Safety, Applications, Enabling & Support, Agency). Most images CC BY 4.0; check individual page."
+          "experimental": true,
+          "notes": "ESA central multimedia archive organized by directorate (Science & Exploration, Space Safety, Applications, Enabling & Support, Agency). Most images CC BY 4.0; check individual page. **KNOWN LIMITATION:** /ESA_Multimedia/Search?Type=I&q=... does NOT actually filter by query — returns recent uploads regardless. esaMultimediaScrape gets ~20% recall (only matches when query overlaps a currently-featured image). For reliable per-mission coverage, use sci.esa.int/web/<mission>/multimedia-gallery instead (separate lane, requires mission-slug mapping). Tracked as registry follow-up."
         },
         {
           "url": "https://sci.esa.int/web/{mission}/multimedia-gallery",

@@ -91,12 +91,17 @@ export function scoreRelevance(record, query, ctx = {}) {
 
   // ── Signal 3: title isn't clearly unrelated (museum-collectibles). ──
   // Always applicable (we always have a title to check). Never vacuous.
+  // Word-boundary regex — substring matches were producing false
+  // positives (`cap` ~ Cape Canaveral, `pin` ~ pinnacle, etc.).
   const antiTokens = [
     'patch', 'pin', 'card', 'badge', 'sticker', 'toy', 'model kit',
     'lunchbox', 'figurine', 'puzzle', 'mug', 'cap', 't-shirt',
     'pennant', 'invitation', 'menu',
   ];
-  const notClearlyUnrelated = !antiTokens.some((t) => titleLower.includes(t));
+  const notClearlyUnrelated = !antiTokens.some((t) => {
+    const safe = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${safe}\\b`, 'i').test(title);
+  });
 
   const signals = {
     title_token_match: titleTokenMatch,

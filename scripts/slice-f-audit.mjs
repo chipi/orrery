@@ -12,6 +12,7 @@ import { readFileSync } from 'fs';
 
 const PROV = JSON.parse(readFileSync('static/data/image-provenance.json', 'utf8'));
 const MISSIONS = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
+const FLEET = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
 const REGISTRY = JSON.parse(readFileSync('static/data/agency-archives.json', 'utf8'));
 
 // Map source_type -> tier (1/2/3/null=legacy unknown)
@@ -26,10 +27,15 @@ function tierOf(sourceType) {
   return null;
 }
 
-// Build agency lookup: id -> agency
+// Build agency lookup: id -> agency. Both missions/index.json and
+// fleet/index.json contribute IDs — fleet entries (a7l, antares,
+// ariane-*, atlantis, atv, etc.) wouldn't otherwise be found.
 const AGENCY_BY_ID = {};
 for (const m of MISSIONS) {
   if (m.id) AGENCY_BY_ID[m.id] = m.agency ?? '?';
+}
+for (const f of FLEET) {
+  if (f.id && !AGENCY_BY_ID[f.id]) AGENCY_BY_ID[f.id] = f.agency ?? '?';
 }
 
 // Aggregate stats

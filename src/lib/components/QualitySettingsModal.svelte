@@ -1,21 +1,19 @@
 <!--
-  Shared graphics-quality settings modal (#339).
+  Shared graphics-quality settings popup (#339 + 2026-06-17 consolidation).
 
-  Lifted from /fly's polish-wave-1 settings UI so every 3D-heavy route
-  (/explore, /iss, /tiangong, /fly) ships the same in-app affordance
-  to swap quality tier — no need to leave the route + visit /fly to
-  change the global localStorage choice.
+  Pre-2026-06-17 this component rendered a fixed-position ⚙ button +
+  a click-out popup; each route (/fly, /explore, /iss, /tiangong) had
+  the button materialise on top of its canvas.
 
-  Behaviour mirrors /fly's original modal exactly:
-    - Button (⚙) fixed top-right under the nav bar
-    - Click → small floating panel with auto + 5 tier radios
-    - Selecting a value writes via `writeUserChoice` (the global
-      localStorage key) so the change persists across routes
-    - Dirty hint + "Reload now" button — the renderer reads the
-      tier synchronously in onMount, so applying a new tier needs
-      a reload (we don't rebuild the scene mid-flight)
+  Now: the ⚙ button lives in `<Nav>` permanently (enabled on routes
+  that mount this component; disabled-with-tooltip elsewhere). This
+  component:
+    - Registers settings availability + the active quality tier in
+      the shared store (`quality-settings-store.svelte.ts`) on mount,
+      clears on unmount.
+    - Renders only the popup panel, gated on `settingsState.open`.
 
-  Usage:
+  Usage is unchanged from the route's POV:
 
     <script>
       import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
@@ -24,12 +22,9 @@
     </script>
 
     <QualitySettingsModal {activeQualityTier} />
-
-  `activeQualityTier` is the tier the renderer actually resolved at
-  mount (shown in the "Active:" hint). Routes pass their own; the
-  modal doesn't re-resolve.
 -->
 <script lang="ts">
+  import { onDestroy } from 'svelte';
   import {
     type QualityChoice,
     type QualityTier,
@@ -37,17 +32,38 @@
     writeUserChoice,
     ALL_TIERS,
   } from '$lib/quality/quality-tier';
+  import {
+    settingsState,
+    setSettingsAvailable,
+    clearSettingsAvailable,
+    closeSettings,
+  } from '$lib/quality/quality-settings-store.svelte';
 
   let { activeQualityTier }: { activeQualityTier: QualityTier } = $props();
 
-  let settingsOpen = $state(false);
   let qualityChoice = $state<QualityChoice>('auto');
   let qualityDirty = $state(false);
 
-  function toggleSettings() {
-    settingsOpen = !settingsOpen;
-    if (settingsOpen) qualityChoice = readUserChoice();
-  }
+  // Register availability + the active tier on mount. Re-runs when
+  // activeQualityTier changes (e.g. a route that resolves tier
+  // asynchronously) so the popup's "Active:" hint stays accurate.
+  $effect(() => {
+    setSettingsAvailable(activeQualityTier);
+  });
+  onDestroy(() => {
+    clearSettingsAvailable();
+  });
+
+  // Read the persisted choice the first time the popup opens — saves a
+  // localStorage hit on every mount.
+  let pristineLoaded = false;
+  $effect(() => {
+    if (settingsState.open && !pristineLoaded) {
+      qualityChoice = readUserChoice();
+      pristineLoaded = true;
+    }
+  });
+
   function onQualityChange(next: QualityChoice) {
     qualityChoice = next;
     writeUserChoice(next);
@@ -58,25 +74,14 @@
   }
 </script>
 
-<button
-  type="button"
-  class="settings-btn"
-  onclick={toggleSettings}
-  aria-label={settingsOpen ? 'Close settings' : 'Open settings'}
-  aria-expanded={settingsOpen}
-  title="Settings"
->
-  ⚙
-</button>
-
-{#if settingsOpen}
+{#if settingsState.open}
   <div class="settings-panel" role="dialog" aria-label="Settings">
     <div class="settings-header">
       <span class="settings-title">SETTINGS</span>
       <button
         type="button"
         class="settings-close"
-        onclick={toggleSettings}
+        onclick={closeSettings}
         aria-label="Close settings">×</button
       >
     </div>
@@ -120,36 +125,9 @@
 {/if}
 
 <style>
-  .settings-btn {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    right: 16px;
-    z-index: 36;
-    min-width: 44px;
-    min-height: 44px;
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .settings-btn:hover,
-  .settings-btn:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
   .settings-panel {
     position: fixed;
-    top: calc(var(--nav-height) + 56px);
+    top: calc(var(--nav-height) + 8px);
     right: 16px;
     z-index: 37;
     width: 240px;

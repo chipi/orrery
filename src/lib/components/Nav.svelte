@@ -5,6 +5,10 @@
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
   import { onScienceLensChange, toggleScienceLens } from '$lib/science-lens';
+  import {
+    settingsState,
+    toggleSettingsOpen,
+  } from '$lib/quality/quality-settings-store.svelte';
   import { track } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
@@ -204,6 +208,39 @@
       onclick={onToggleHiContrast}
     >
       Aa
+    </button>
+    <!-- Graphics-settings ⚙. Lives in the Nav permanently (2026-06-17
+         consolidation — previously fixed-positioned over the canvas of
+         each 3D-heavy route). Disabled when no settings-capable route
+         is mounted; hover + active glow when available, matching the
+         lens / contrast toggles. State + handlers in
+         $lib/quality/quality-settings-store.svelte. -->
+    <button
+      type="button"
+      class="settings-toggle"
+      class:active={settingsState.open}
+      disabled={!settingsState.available}
+      aria-disabled={!settingsState.available}
+      aria-label={settingsState.available
+        ? 'Graphics settings'
+        : 'Graphics settings (unavailable on this page)'}
+      aria-pressed={settingsState.open}
+      title={settingsState.available
+        ? 'Graphics settings'
+        : 'Graphics settings (unavailable on this page)'}
+      onclick={toggleSettingsOpen}
+    >
+      <!-- 8-spoke gear glyph as inline SVG (matches the lens-toggle
+           pattern). Sized to fit the 16 × 16 toggle box. -->
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <path
+          d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linejoin="round"
+        />
+      </svg>
     </button>
     {@render right?.()}
   </div>
@@ -446,6 +483,57 @@
     background: rgba(255, 200, 80, 0.18);
     border-color: rgba(255, 200, 80, 0.65);
     color: #ffc850;
+  }
+
+  /* Graphics-settings ⚙ toggle. Same chrome family as the lens +
+     contrast buttons for visual consistency, with a third state
+     (disabled) for routes that don't surface settings. The disabled
+     visual mirrors the "no-action affordance" the lens-toggle already
+     uses on lens-unavailable routes (no hover-yellow), so the row
+     reads coherently regardless of which buttons are active.
+     (2026-06-17 user direction: "have it disabled when page does not
+     need it, and when it needs it add hover and glow as for other
+     buttons".) */
+  .settings-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .settings-toggle svg {
+    display: block;
+  }
+  /* Hover + focus glow only when the route surfaces settings (i.e. the
+     button isn't [disabled]). Teal accent — matches the popup panel's
+     border so opening it reads as a continuation of the same control. */
+  .settings-toggle:not(:disabled):hover,
+  .settings-toggle:not(:disabled):focus-visible {
+    border-color: rgba(78, 205, 196, 0.55);
+    color: rgba(78, 205, 196, 0.95);
+    outline: none;
+  }
+  .settings-toggle.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.7);
+    color: #4ecdc4;
+  }
+  .settings-toggle:disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Audio overlay toggle — same shape as the other right-rail toggles

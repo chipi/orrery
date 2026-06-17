@@ -743,5 +743,14 @@
     .right {
       gap: 2px;
     }
+    /* Graphics-settings ⚙ — added 2026-06-17 as a 6th right-rail
+       button, which overflowed the 375 px viewport again. Hidden on
+       phones: it controls graphics-quality tier, a desktop-3D
+       affordance (the auto-detection picks an appropriate tier on
+       mobile and most phone users don't tweak it). Visible on tablet
+       + desktop. */
+    .settings-toggle {
+      display: none;
+    }
   }
 </style>

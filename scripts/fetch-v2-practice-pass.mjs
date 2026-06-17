@@ -18,6 +18,8 @@
 
 import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 
+process.loadEnvFile?.();
+
 const TARGETS = [
   { mission: 'apollo11', slot: '01', agency: 'NASA', query: 'Apollo 11 command module lunar landing' },
   { mission: 'apollo13', slot: '01', agency: 'NASA', query: 'Apollo 13 spacecraft hardware' },

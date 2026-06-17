@@ -18,7 +18,7 @@
           "kind": "json-api",
           "license": "pd-nasa",
           "verified": true,
-          "notes": "Primary endpoint for all NASA missions + co-managed missions (DART, OSIRIS-REx, MER, Phoenix, Magellan, Mariner 9, Hubble crops). Reference implementation in scripts/lib/agency-resolver.mjs."
+          "notes": "Primary endpoint for all NASA missions + co-managed missions (DART, OSIRIS-REx, MER, Phoenix, Magellan, Mariner 9, Hubble crops). Reference implementation in scripts/lib/agency-resolver.mjs. Threshold left at default (0.66) — earlier attempt to loosen to 0.5 was based on a wrong assumption: PIA21944 was thought to be a legit Hayabusa frame and gate-rejected as false-negative; verification 2026-06-17 confirmed PIA21944 is actually a Pluto/New Horizons image and gate-rejection was correct. NASA images-api fuzzy-keyword search returns tangential picks; gate filtering at 0.66 is the right behavior."
         }
       ]
     },
@@ -35,7 +35,10 @@
           "verified": true,
           "verified_at": "2026-06-17",
           "photo_count_estimate": 743,
-          "notes": "Self-branded 'Official Roscosmos Photos', joined 2015. ~27 albums covering launches/ISS/missions. KNOWN BUG: Flickr UI sometimes renders 'no public photos' alongside live thumbnails — resolver must retry on transient state. Per-photo license varies; default is CC BY 2.0 but check individual files."
+          "flickr_nsid": "130679727@N03",
+          "relevance_threshold": 1.0,
+          "experimental": true,
+          "notes": "Self-branded 'Official Roscosmos Photos', joined 2015. ~27 albums covering launches/ISS/missions. NSID 130679727@N03. flickrPublicScrape uses flickr.com/search/?user_id=<nsid>&text=... Titles are mostly Cyrillic; minimal-proper-noun queries (e.g. 'Soyuz' not 'Soyuz spacecraft launch') give the gate the best shot. KNOWN LIMITATION: title pairing via regex is unreliable — Flickr search-form data echoes the query string into a `\"title\":\"...\"` JSON field which gets falsely paired with the first photo. Threshold 1.0 (strict) suppresses most false-positives at the cost of more Commons fallbacks. Proper fix: parse the embedded modelExport JSON. Tracked as registry follow-up."
         },
         {
           "url": "https://www.roscosmos.ru/",
@@ -348,7 +351,8 @@
       "verified_at": "2026-06-17",
       "coverage": "National Air and Space Museum (Apollo, Mercury, Gemini, Skylab, Shuttle, Soviet artefacts) + 18 other Smithsonian museums",
       "release_date": "2020-02-26",
-      "notes": "~2.8M+ items released CC0 in Feb 2020. NASM Rights & Reproductions page tags CC0 vs 'Usage Conditions Apply' per item. Apollo 11 Command Module record verified live with CC0 mark."
+      "relevance_threshold": 1.0,
+      "notes": "~2.8M+ items released CC0 in Feb 2020. NASM Rights & Reproductions page tags CC0 vs 'Usage Conditions Apply' per item. Apollo 11 Command Module record verified live with CC0 mark. Threshold 1.0 (strict — 3/3 signals required) because NASM keyword-matches return many tangential collectibles for non-NASA missions (Slice B regression case)."
     },
     {
       "id": "nara-rg-255",
@@ -362,7 +366,9 @@
       "photo_count_estimate": 1000000,
       "coverage": "1M+ NASA/NACA photos 1903-2011 across 103 series. Mercury / Gemini / Lunar Orbiter / Apollo / Skylab / Shuttle / probes / observatories",
       "search_prefixes": ["255-MG (Mercury/Gemini)", "255-AMP (Apollo Manned Photographs)", "255-STS (Shuttle)", "255-LO (Lunar Orbiter)", "255-MMP (Mercury Manned Project)", "255-ESD (Earth Sciences)", "255-NSS (NASA Spaceflight Series)"],
-      "notes": "PD-USGov. Electronic indexes: B/W (1958-1991), color (1958-1983)."
+      "notes": "PD-USGov. Electronic indexes: B/W (1958-1991), color (1958-1983).",
+      "requires_env_key": "NARA_API_KEY",
+      "key_signup": "Email Catalog_API@nara.gov with name + email; rate 10,000 req/month per key"
     },
     {
       "id": "usgs-astrogeology",
@@ -370,12 +376,14 @@
       "url": "https://astrogeology.usgs.gov/search",
       "homepage": "https://www.usgs.gov/centers/astrogeology-science-center",
       "license_policy_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
-      "kind": "scrape-mission-page",
+      "kind": "curated-only",
       "license": "pd-usgov",
       "verified": true,
       "verified_at": "2026-06-17",
       "coverage": "Planetary mosaics: Mercury, Venus, Moon, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, small bodies",
-      "notes": "PD-USGov per USGS copyright policy. License NOT declared on Astropedia landing — consult separate policy page. (astrogeology.usgs.gov/maps returns 404 — use /search.)"
+      "notes": "PD-USGov per USGS copyright policy. **No press-photo search API** — Astropedia's data is served as Web Mapping Services (WMS/WFS) GIS tiles for mapping clients, not searchable JPEG records. The /search page is a SPA. For Orrery: use a curation file `static/data/agency-archive-curations/usgs.json` with known mosaic URLs per planet/site (e.g. Mars Global Mosaic for /mars surface anchor, Lunar Mosaic for /moon). pygeoapi at /pygeoapi/ is vector-only.",
+      "auto_fetch_disabled": true,
+      "curation_file": "static/data/agency-archive-curations/usgs.json"
     },
     {
       "id": "eso-public",

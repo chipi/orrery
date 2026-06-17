@@ -20,6 +20,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'fs';
 import sharp from 'sharp';
 import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 
+process.loadEnvFile?.();
+
 const UA =
   'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
 const MISSION_SIDECAR = 'static/data/mission-image-sources.json';

@@ -18,6 +18,7 @@
 // has its primaries skipped entirely — that's a manual-permission flow.
 
 import { readFileSync, existsSync } from 'fs';
+import { scoreRelevance } from './relevance-gate.mjs';
 
 const UA =
   'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
@@ -68,10 +69,13 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
     case 'wikimedia-category':
       return await wikimediaCategoryLookup(primary, query);
     case 'flickr-album':
-      // Real Flickr requires API auth or scraping. Stub: try curation
-      // file fallback (per-mission verified URLs). Future: implement
-      // Flickr photoset scraping.
-      return await tryCuratedFallback(primary, { mission, slot });
+      // Try the public Flickr search HTML scraper first; fall back to
+      // a curation file if the scraper returns nothing (e.g. Russian-
+      // only Roscosmos titles failing the English-token gate).
+      return (
+        (await flickrPublicScrape(primary, query)) ??
+        (await tryCuratedFallback(primary, { mission, slot }))
+      );
     case 'scrape-mission-page':
     case 'scrape-press-release':
       // Generic scrape stub. Try curation fallback first; real HTML
@@ -92,12 +96,16 @@ async function nasaImagesApi(primary, query) {
   if (!res.ok) return null;
   const json = await res.json();
   const items = json?.collection?.items ?? [];
-  const usable = items
+  const candidates = items
     .map((it) => {
       const d = it?.data?.[0] ?? {};
       return { nasa_id: d.nasa_id, title: d.title, secondary_creator: d.secondary_creator, center: d.center };
     })
-    .find((x) => x.nasa_id && x.title);
+    .filter((x) => x.nasa_id && x.title);
+  // Apply relevance gate — pick first candidate that passes. Per-source
+  // threshold from registry (NASA = 0.5 loose; default 0.66).
+  const threshold = primary.relevance_threshold;
+  const usable = candidates.find((c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted);
   if (!usable) return null;
 
   const assetRes = await fetch(
@@ -148,7 +156,10 @@ async function wikimediaCategoryLookup(primary, query) {
     .filter((x) => /\.(jpg|jpeg|png)$/i.test(x.f))
     .sort((a, b) => b.score - a.score);
   if (scored.length === 0 || scored[0].score === 0) return null;
-  const pick = scored[0].f;
+  // Apply relevance gate using the filename as a title proxy.
+  const pickEntry = scored.find((x) => scoreRelevance({ title: x.f }, query).accepted);
+  if (!pickEntry) return null;
+  const pick = pickEntry.f;
   return {
     source_type: 'wikimedia-grandfathered-' + primary.license,
     source_url: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(pick)}`,
@@ -156,6 +167,81 @@ async function wikimediaCategoryLookup(primary, query) {
     credit: 'agency original via Wikimedia Commons mirror',
     license: primary.license,
     metadata: { commons_file: pick, wikimedia_category: category },
+    tier: 1,
+  };
+}
+
+// ── Tier 1: Flickr public-page scraper ─────────────────────────────
+// No API key required — Flickr's API moved to paid tiers, but the
+// public user-photostream HTML still embeds JSON model data with
+// titles + thumbnail URLs we can parse. Roscosmos / ESA / SpaceX
+// (grandfathered CC0 era) all expose this surface.
+
+async function flickrPublicScrape(primary, query) {
+  // Extract user-path from primary.url. flickr.com/photos/<userPath>/
+  const userMatch = primary.url.match(/flickr\.com\/photos\/([^/?]+)/);
+  if (!userMatch) return null;
+  const userPath = userMatch[1];
+
+  // Use flickr.com/search/?user_id=<NSID>&text=... when the registry
+  // entry carries an NSID. The user-photostream URL (?text=) does NOT
+  // filter — it returns the cover/recent photos regardless of query.
+  const searchUrl = primary.flickr_nsid
+    ? `https://www.flickr.com/search/?user_id=${encodeURIComponent(primary.flickr_nsid)}&text=${encodeURIComponent(query)}`
+    : `https://www.flickr.com/photos/${userPath}/?text=${encodeURIComponent(query)}`;
+  const res = await fetch(searchUrl, { headers: { 'User-Agent': UA } });
+  if (!res.ok) return null;
+  const html = await res.text();
+
+  // Photo URL pattern in the HTML: live.staticflickr.com/<server>/
+  // <photo_id>_<secret>(_<size>).jpg. Exclude UI sprites + cover photos.
+  const photoUrlRegex =
+    /live\.staticflickr\.com\/(\d+)\/(\d+)_([a-z0-9]+)(?:_([a-z]))?\.jpg/g;
+  // Titles in JSON model: "title":"Some Photo Name"
+  const titleRegex = /"title":"([^"]{3,200})"/g;
+
+  const photos = [];
+  const seen = new Set();
+  let m;
+  while ((m = photoUrlRegex.exec(html)) !== null) {
+    const [, server, id, secret] = m;
+    if (seen.has(id)) continue;
+    if (server === 'ap' || server === '285') continue; // ap=sprites, 285=cover
+    seen.add(id);
+    photos.push({ server, id, secret });
+  }
+  const titles = [];
+  while ((m = titleRegex.exec(html)) !== null) {
+    titles.push(m[1]);
+  }
+
+  // Pair photos to titles by position (Flickr's HTML lists them in
+  // matching order — both are interleaved in the JSON model).
+  const candidates = photos.map((p, i) => ({ ...p, title: titles[i] ?? '' }));
+  if (candidates.length === 0) return null;
+
+  // Apply relevance gate. Skipping Cyrillic-titled photos is OK —
+  // we fall back to Commons after the gate filters everything out.
+  const threshold = primary.relevance_threshold;
+  const usable = candidates.find(
+    (c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted,
+  );
+  if (!usable) return null;
+
+  // Build full-res URL (_b = 1024px max in Flickr API). Original (_o)
+  // requires the photo's originalsecret which isn't in public HTML.
+  const image_url = `https://live.staticflickr.com/${usable.server}/${usable.id}_${usable.secret}_b.jpg`;
+  const source_url = `https://www.flickr.com/photos/${userPath}/${usable.id}/`;
+  // source_type tag is agency-specific so audit-image-source-order
+  // can distinguish primary-via-Flickr from Commons-failover.
+  const agencyTag = userPath.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  return {
+    source_type: `${agencyTag}-flickr`,
+    source_url,
+    image_url,
+    credit: primary.credit_default,
+    license: primary.license ?? 'see_per_photo',
+    metadata: { flickr_id: usable.id, flickr_user: userPath, flickr_title: usable.title },
     tier: 1,
   };
 }
@@ -199,38 +285,117 @@ async function tryCuratedFallback(primary, { mission, slot }) {
 async function tryTier2(registry, query) {
   for (const inst of registry.tier_2_institutional ?? []) {
     if (!isLicenseAllowed(inst.license, registry)) continue;
-    if (inst.kind === 'json-api' && inst.id === 'smithsonian-openaccess') {
-      const result = await smithsonianSearch(inst, query);
-      if (result) return result;
+    // Skip auto_fetch_disabled sources (USGS — curated-only).
+    if (inst.auto_fetch_disabled) continue;
+    // Skip sources that require an env key we don't have set. Dead-
+    // code without it; better to fall through to the next tier than
+    // waste an API call.
+    if (inst.requires_env_key && !process.env[inst.requires_env_key]) continue;
+
+    let result = null;
+    if (inst.id === 'smithsonian-openaccess') {
+      result = await smithsonianSearch(inst, query);
+    } else if (inst.id === 'nara-rg-255') {
+      result = await naraRG255Search(inst, query);
     }
-    // Other tier 2 sources (NARA / USGS / ESO / ALSJ) are scrape-kind
-    // and require per-source scrapers. Stubs to be implemented as
-    // practice-pass yield justifies.
+    // USGS Astrogeology + ESO + ALSJ — implemented in Slice E and after.
+    if (result) return result;
   }
   return null;
 }
 
-async function smithsonianSearch(inst, query) {
+async function naraRG255Search(inst, query) {
+  // NARA Catalog API v2. Requires api_key obtainable for free by email
+  // Catalog_API@nara.gov. Without the key, this function silently
+  // returns null so the resolver falls through to tier 3 Commons.
+  // RG 255 is the NASA record group with 1M+ photos 1903-2011 across
+  // 103 series (255-MG Mercury/Gemini, 255-AMP Apollo Manned Photos,
+  // 255-STS Shuttle, 255-LO Lunar Orbiter, etc.).
+  const apiKey = process.env.NARA_API_KEY;
+  if (!apiKey) return null;
   const params = new URLSearchParams({
-    q: `${query} unit_code:NASM`, rows: '5',
+    q: query,
+    'recordGroupNumber': '255',
+    'typeOfMaterials': 'Photographs and other Graphic Materials',
+    limit: '10',
+  });
+  const res = await fetch(`${inst.url}api/v2/records/search?${params}`, {
+    headers: { 'User-Agent': UA, 'Accept': 'application/json', 'x-api-key': apiKey },
+  });
+  if (!res.ok) return null;
+  const json = await res.json();
+  const items = json?.body?.hits?.hits ?? json?.opaResponse?.results?.result ?? [];
+  const usable = items.find((it) => {
+    const dat = it._source ?? it.description ?? it;
+    if (!(dat?.naId && (dat?.digitalObjects?.[0]?.objectUrl || dat?.objects?.[0]?.file?.url))) return false;
+    return scoreRelevance({ title: dat.title }, query).accepted;
+  });
+  if (!usable) return null;
+  const dat = usable._source ?? usable.description ?? usable;
+  const image_url =
+    dat?.digitalObjects?.[0]?.objectUrl ??
+    dat?.objects?.[0]?.file?.url;
+  return {
+    source_type: 'nara-rg-255',
+    source_url: `https://catalog.archives.gov/id/${encodeURIComponent(dat.naId)}`,
+    image_url,
+    credit: 'NASA via NARA Still Picture Branch (RG 255)',
+    license: 'pd-usgov',
+    metadata: {
+      nara_naid: dat.naId,
+      nara_title: dat.title,
+      nara_series: dat.localIdentifier ?? dat.series,
+    },
+    tier: 2,
+  };
+}
+
+async function smithsonianSearch(inst, query) {
+  // Smithsonian Open Access API requires api_key from api.data.gov.
+  // DEMO_KEY works for low-volume dev/CI; production must set SI_API_KEY
+  // env var. The `unit_code:NASM` strict filter doesn't work reliably;
+  // adding NASM to the free-text query biases results to NASM items
+  // without false-negative dropping.
+  const apiKey = process.env.SI_API_KEY ?? 'DEMO_KEY';
+  const params = new URLSearchParams({
+    api_key: apiKey,
+    q: `${query} NASM`,
+    rows: '10',
   });
   const res = await fetch(`${inst.url}?${params}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
   const json = await res.json();
   const rows = json?.response?.rows ?? [];
+  // Prefer NASM-unit + CC0 + has-real-media. unitCode lives on the row.
+  // Per-source threshold (Smithsonian = 1.0 strict per registry).
+  const threshold = inst.relevance_threshold;
   const usable = rows.find((r) => {
+    if (r?.unitCode !== 'NASM') return false;
     const media = r?.content?.descriptiveNonRepeating?.online_media?.media?.[0];
-    return media?.usage?.access === 'CC0' && media?.content;
+    if (!(media?.usage?.access === 'CC0' && media?.content)) return false;
+    return scoreRelevance({ title: r.title }, query, { threshold }).accepted;
   });
   if (!usable) return null;
   const media = usable.content.descriptiveNonRepeating.online_media.media[0];
+  // Prefer the high-res JPEG resource over the IDS delivery service URL
+  // (which may serve a transformed/scaled version).
+  const hiResJpeg = (media.resources ?? []).find(
+    (r) => r.label === 'High-resolution JPEG' || /jpe?g$/i.test(r.url ?? ''),
+  );
+  const image_url = hiResJpeg?.url ?? media.content;
   return {
     source_type: 'smithsonian-openaccess',
-    source_url: usable.content?.descriptiveNonRepeating?.record_link,
-    image_url: media.content,
-    credit: usable.content?.descriptiveNonRepeating?.unit_code ?? 'Smithsonian / NASM',
+    source_url:
+      usable.content?.descriptiveNonRepeating?.record_link ??
+      `https://www.si.edu/object/${encodeURIComponent(usable.id)}`,
+    image_url,
+    credit: 'Smithsonian National Air and Space Museum',
     license: 'cc0',
-    metadata: { smithsonian_id: usable.id, smithsonian_title: usable.title },
+    metadata: {
+      smithsonian_id: usable.id,
+      smithsonian_title: usable.title,
+      smithsonian_unit: usable.unitCode,
+    },
     tier: 2,
   };
 }
@@ -249,7 +414,10 @@ async function tier3CommonsFailover(registry, query) {
   if (!res.ok) return null;
   const json = await res.json();
   const candidates = (json?.query?.search ?? []).map((r) => r.title.replace(/^File:/, ''));
-  const pick = candidates.find((c) => /\.(jpg|jpeg)$/i.test(c)) ?? candidates.find((c) => /\.png$/i.test(c));
+  // Apply relevance gate using filename as title proxy. Tier 3 has the
+  // highest false-positive risk so the gate matters most here.
+  const photos = candidates.filter((c) => /\.(jpg|jpeg|png)$/i.test(c));
+  const pick = photos.find((c) => scoreRelevance({ title: c }, query).accepted);
   if (!pick) return null;
   return {
     source_type: 'wikimedia-commons',

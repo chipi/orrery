@@ -6314,20 +6314,22 @@
   },
   "hayabusa/02.jpg": {
     "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg?width=1600",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid%20(25143)%20Itokawa%20seen%20in%20close-up%20(eso1405c).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Asteroid%20(25143)%20Itokawa%20seen%20in%20close-up%20(eso1405c).jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-17T09:59:07Z",
-    "commons_file": "Hayabusa hover.jpg"
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-17T11:47:50Z",
+    "tier": 3,
+    "commons_file": "Asteroid (25143) Itokawa seen in close-up (eso1405c).jpg"
   },
   "hayabusa/03.jpg": {
     "source_type": "wikimedia-commons",
     "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-17T09:59:09Z",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-17T11:47:53Z",
+    "tier": 3,
     "commons_file": "Hayabusa hover.jpg"
   },
   "hayabusa/04.jpg": {
@@ -6354,8 +6356,9 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-17T09:59:23Z",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-17T11:47:57Z",
+    "tier": 3,
     "commons_file": "Solar Orbiter’s widest high-res view of the Sun ESA508430.jpg"
   },
   "solar-orbiter/04.jpg": {
@@ -6379,12 +6382,15 @@
     "nasa_title": "Solar Orbiter Spacecraft Lift and Mate"
   },
   "hayabusa/05.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Jaxa-M-V-Rocket-No7-launches.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaxa-M-V-Rocket-No7-launches.jpg?width=1600",
-    "credit": "JAXA (M-V launch system; Hayabusa-1 launched 2003-05-09 on M-V-5)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-17T10:00:29Z",
-    "commons_file": "Jaxa-M-V-Rocket-No7-launches.jpg"
+    "source_type": "smithsonian-openaccess",
+    "source_url": "http://n2t.net/ark:/65665/nv9bc630938-2757-410e-9b36-e9d2d83942fc",
+    "image_url": "https://ids.si.edu/ids/download?id=NASM-A19940223000-NASM2018-10450-000001.jpg",
+    "credit": "Smithsonian National Air and Space Museum",
+    "license": "cc0",
+    "fetched_at": "2026-06-17T11:44:30Z",
+    "tier": 2,
+    "smithsonian_id": "ld1-1643400021979-1643400037288-0",
+    "smithsonian_title": "Model, Rocket, Saturn V, 1:34",
+    "smithsonian_unit": "NASM"
   }
 }

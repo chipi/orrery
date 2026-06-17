@@ -14,7 +14,7 @@
 //   node scripts/slice-a-apply.mjs --dry-run    # log what would happen, no writes
 //   node scripts/slice-a-apply.mjs --agency=NASA --limit=10  # narrow scope
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { glob } from 'fs/promises';
 import sharp from 'sharp';
 
@@ -151,12 +151,7 @@ for (const file of dryrunFiles) {
     }
 
     try {
-      const bytesWritten = await downloadAndProcess(
-        p.proposed.image_url,
-        surfaceDir,
-        p.missionId,
-        p.slot,
-      );
+      await downloadAndProcess(p.proposed.image_url, surfaceDir, p.missionId, p.slot);
       sidecar[sidecarKey] = {
         source_type: p.proposed.source_type,
         source_url: p.proposed.image_url,

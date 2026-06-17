@@ -4897,6 +4897,18 @@
         >
           ⓘ Why are they all in one plane?
         </a>
+        <!-- Hovered-mission tagline strip. Lives at the top of the
+             legend so the iconic-mission "why it matters" copy is
+             reachable without expanding any row (2026-06-17 user note:
+             "we need to move new text to hover-only so that width
+             stays the same and no jumps in width of chips"). The
+             strip wraps inside the existing legend column width — it
+             never pushes the chip cluster wider. -->
+        <div class="paths-legend-tagline" aria-live="polite">
+          {highlightedMissionId
+            ? iconicTagline(highlightedMissionId)
+            : m.explore_iconic_tagline_placeholder()}
+        </div>
         {#each PATHS_LEGEND as entry (entry.mission_id)}
           <button
             type="button"
@@ -4908,18 +4920,14 @@
             onblur={() => (highlightedMissionId = null)}
             data-testid="paths-legend-row-{entry.mission_id}"
           >
-            <span class="row-top">
-              <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"
-              ></span>
-              <span class="name">{entry.name}</span>
-              <span class="logos" aria-hidden="true">
-                {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-                  <img src={logoPath} alt="" loading="lazy" />
-                {/each}
-              </span>
-              <span class="year">{entry.launch_year}</span>
+            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
+            <span class="name">{entry.name}</span>
+            <span class="logos" aria-hidden="true">
+              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+                <img src={logoPath} alt="" loading="lazy" />
+              {/each}
             </span>
-            <span class="tagline">{iconicTagline(entry.mission_id)}</span>
+            <span class="year">{entry.launch_year}</span>
           </button>
         {/each}
       </div>
@@ -5033,6 +5041,7 @@
   mission={pathsLegendMission}
   open={panelState.pathsLegend}
   onClose={() => (panelState.pathsLegend = false)}
+  onFly={(id) => goto(`${base}/fly?mission=${id}`)}
 />
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
@@ -5490,51 +5499,49 @@
     background: rgba(68, 102, 255, 0.5);
     border-radius: 3px;
   }
+  /* Single-line row — name + logos + year. Slightly more compact
+     than the pre-tagline original (44 px → 36 px min-height) per
+     2026-06-17 user feedback; the "why it's iconic" copy lives in
+     the .paths-legend-tagline strip above so individual rows stay
+     stable-width regardless of tagline length. */
   .paths-legend-row {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 8px;
     background: none;
     border: none;
     color: #dde4ff;
-    padding: 6px 6px 8px;
+    padding: 5px 6px;
     border-radius: 3px;
     cursor: pointer;
     text-align: left;
     font-family: 'Space Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.04em;
-    min-height: 44px;
+    min-height: 36px;
     width: 100%;
   }
-  .paths-legend-row .row-top {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  /* "Why is it iconic" subtitle — italic, dim, one line with ellipsis
-     fallback. Indented past the swatch so the eye reads it as
-     attached to the row's name. */
-  .paths-legend-row .tagline {
-    display: block;
-    margin-left: 26px;
+  /* Hovered-mission tagline strip. Always rendered (with a placeholder
+     when no row is hovered) so the legend's vertical footprint is
+     stable; only the strip's text changes. Italic + dim by default,
+     full-opacity when a row is hovered. Sized generously (2026-06-17
+     user note: "text is so small for description I cannot read, be
+     generous and use few rows if needed there somehow") — 13.5 px
+     italic Crimson Pro with 1.45 line-height, min-height reserves
+     ~3 lines so short and long taglines both render without a
+     vertical layout shift. */
+  .paths-legend-tagline {
+    margin: 4px 0 8px;
+    padding: 8px 8px 10px;
     font-family: 'Crimson Pro', 'Space Mono', serif;
     font-style: italic;
-    font-size: 11.5px;
-    letter-spacing: 0.01em;
-    color: rgba(221, 228, 255, 0.55);
-    line-height: 1.35;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    transition:
-      color 120ms ease,
-      white-space 200ms ease;
-  }
-  .paths-legend-row:hover .tagline,
-  .paths-legend-row:focus-visible .tagline {
-    color: rgba(255, 255, 255, 0.85);
-    white-space: normal;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: rgba(221, 228, 255, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 76px;
+    background: rgba(8, 10, 22, 0.4);
+    border-radius: 3px;
   }
   .paths-legend-row:hover,
   .paths-legend-row:focus-visible {
@@ -5638,12 +5645,26 @@
   @media (min-width: 769px) {
     .paths-legend {
       display: flex;
-      position: static;
-      bottom: auto;
-      left: auto;
+      /* position: absolute, anchored to the fixed-positioned
+         .hud-controls parent. Removed from the flex-column flow so
+         its intrinsic content width can no longer drive the chip
+         column wider via the parent's align-items: stretch.
+         top:100% places it just below the in-flow children (toggle
+         row + chip column). (2026-06-17 iteration 2: align-self
+         + width was insufficient — the legend still expanded the
+         flex container's natural width because flex items
+         participate in max-content sizing. Absolute positioning
+         fully decouples.) */
+      position: absolute;
+      top: 100%;
+      left: 0;
       right: auto;
-      max-height: calc(100vh - var(--nav-height, 60px) - 180px);
-      z-index: auto;
+      bottom: auto;
+      margin-top: 8px;
+      width: 280px;
+      box-sizing: border-box;
+      max-height: calc(100vh - var(--nav-height, 60px) - 220px);
+      z-index: 36;
     }
     .ctrl-row.chips {
       /* Layer chips stack vertically so their on/off state reads as a

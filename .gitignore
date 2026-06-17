@@ -8,6 +8,7 @@ docs/.vitepress/cache/
 .env.production
 .env.development
 .env.*.local
+.env.backup-*
 .svelte-kit/
 .vscode/
 .idea/

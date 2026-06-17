@@ -331,6 +331,43 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'a1996f907b645945|a1996f907b645945', // sriharikota-slp / rockets/lvm3 (post-delete: just fleet)
   'c63926c799666709|c63926c799666709', // fleet-galleries/h-iia / rockets/h-iia (post-delete)
   'f01bf01708edc639|f01bf01708edc639', // proton-k / proton-m / rockets/proton-m (post-delete)
+
+  // ----- Slice A re-source — sibling-mission shared imagery (2026-06-17) -----
+  // The Slice A agency-archive backfill (#347 → milestone 2) re-downloaded
+  // the canonical asset for each slot. Sibling missions on a shared vehicle
+  // / programme legitimately resolve to the same source image (X-37B vehicle
+  // shared across OTV flights, Pioneer 10/11 sister probes, Mars 2/3 / Vega
+  // 1+2 / Vostok 3+4 family launches, programme-shared launch frames).
+  // pHash-identical, SHA-different (sharp re-encode each time). Editorial
+  // intent — keep both surfaces; allowlist the pair.
+  '094373030387fcfd|094373030387fcfd', // sibling-mission shared
+  '0d3a327a4e3ea48b|0d3a327a4e3ea48b', // sokol-kv-2 / sokol-m
+  '19597396967c0963|19597396967c0963', // shenzhou/04 / tianzhou/03
+  '2d43b8634d96923d|2d43b8634d96923d', // sibling-mission shared
+  '38c967615ca69359|38c967615ca69359', // giotto/03 / halley/01
+  '3967d0cd062339d5|3967d0cd062339d5', // mars-2/03 / mars-3/03
+  '39b8f638c9c60363|39b8f638c9c60363', // rosetta/01 / 67p/01
+  '4c769c06ad3c52e9|4c769c06ad3c52e9', // rosetta/02 / missions-rosetta/05
+  '4fa7685a13f4a489|4fa7685a13f4a489', // salyut-2/02 / salyut-3/03
+  '66030b493bad3277|66030b493bad3277', // pioneer-10 / pioneer-11 sister probes
+  '6666939ac10c3ee3|6666939ac10c3ee3', // mars2-orbiter / mars3
+  '682e9ae047ae9e61|682e9ae047ae9e61', // x37b/03 / otv-7/02
+  '692397653c5a6299|692397653c5a6299', // shenzhou/05 / tianzhou/02
+  '6de4e4680e9ef841|6de4e4680e9ef841', // x37b/04 / otv-7/05
+  '81e01effe1001ef9|81e01effe1001ef9', // hotspots/beresheet / missions/beresheet
+  '92ed92926c92c46f|92ed92926c92c46f', // vostok-k/02 / vostok-1/05
+  '96163629c9a93277|96163629c9a93277', // luna-16/02 / luna-9/03
+  '963125c3ce6a309f|963125c3ce6a309f', // sibling-mission shared
+  '9e7ee1021cf71819|9e7ee1021cf71819', // freedom-7 / mercury-redstone-3
+  'a57ae2962cf016a9|a57ae2962cf016a9', // mars-2/02 / mars-3/02
+  'accd92d2d4a4a5b1|accd92d2d4a4a5b1', // vega-1/04 / vega-2/04
+  'b4651bc6591e6499|b4651bc6591e6499', // soyuz-fg/01 / soyuz-tma/02
+  'c3851c71468d07f7|c3851c71468d07f7', // vega-1/02 / vega-2/02
+  'ca98859c765cbc23|ca98859c765cbc23', // vostok-3/05 / vostok-4/05
+  'cc69339a28cc5373|cc69339a28cc5373', // mir/02 / progress-m/01
+  'e0c9cdcdc54c4f11|e0c9cdcdc54c4f11', // x37b/01 ↔ otv-1/2/3/6 vehicle portrait
+  'f00773741270fa17|f00773741270fa17', // h3/04 / htv-x/04
+  'f4479843b846e599|f4479843b846e599', // h3/01 / tanegashima-yoshinobu/04
 ]);
 
 interface BaselineFile {

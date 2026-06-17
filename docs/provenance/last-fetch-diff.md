@@ -1,18 +1,218 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-17T13:08:48.631Z
+Generated: 2026-06-17T19:00:25.133Z
 Script: build-image-provenance@1.0.0
-Commit: 16448cef8029d3b0548def97b93a9aaa8310b78f
-Total entries: 3416
+Commit: 294836a6230b3962f9e8019708c9ad64bdff6b5d
+Total entries: 3321
 
-## Added (0)
+## Added (1)
 
+- `/images/missions/sputnik1/01.jpg` — PD-Russia via direct-other
 
-## Removed (0)
+## Removed (95)
 
+- `/images/missions/akatsuki/01.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/missions/akatsuki/02.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/missions/akatsuki/03.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/missions/akatsuki/04.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/missions/akatsuki/05.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/missions/chandrayaan1/01.1x1.jpg` — was PD-self via wikimedia-commons
+- `/images/missions/chandrayaan1/01.jpg` — was PD-self via wikimedia-commons
+- `/images/missions/chandrayaan1/02.1x1.jpg` — was CC-BY-SA-2.0 via wikimedia-commons
+- `/images/missions/chandrayaan1/02.jpg` — was PD-self via wikimedia-commons
+- `/images/missions/chandrayaan1/03.1x1.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/chandrayaan1/03.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/chandrayaan1/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/chandrayaan1/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/chandrayaan1/05.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/chandrayaan1/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/giotto/01.1x1.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/missions/giotto/01.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/missions/giotto/02.1x1.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/missions/giotto/02.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/giotto/03.1x1.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/giotto/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/giotto/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/giotto/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/giotto/05.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/giotto/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/01.1x1.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/lro/01.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/02.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/02.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/03.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/05.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lro/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/lunar-prospector/01.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/lunar-prospector/02.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/lunar-prospector/03.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/lunar-prospector/04.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/lunar-prospector/05.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/mars6/01.1x1.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/mars6/01.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/mars6/02.1x1.jpg` — was PD-Old via wikimedia-commons
+- `/images/missions/mars6/02.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/03.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/05.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mars6/05.jpg` — was PD-NASA via nasa-images-api
+- … 45 more
 
-## Changed (1)
+## Changed (633)
 
-- `/images/missions/dart/02.jpg`
-  - before — agency: "NASA / agency original via Wikimedia Commons mirror"
-  - after — agency: "agency original via Wikimedia Commons mirror"
+- `/images/fleet-galleries/a7lb/01.jpg`
+  - before — license_short: "PD-Old", author: "NASA / Harrison H. Schmitt", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Apollo_17_Cernan_on_moon.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+a7lb&media_type=image&keywords=a7lb"
+- `/images/fleet-galleries/a7lb/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+a7lb&media_type=image&keywords=a7lb"
+- `/images/fleet-galleries/a7lb/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+a7lb&media_type=image&keywords=a7lb"
+- `/images/fleet-galleries/a7lb/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+a7lb&media_type=image&keywords=a7lb"
+- `/images/fleet-galleries/a7lb/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+a7lb&media_type=image&keywords=a7lb"
+- `/images/fleet-galleries/akatsuki/01.jpg`
+  - before — license_short: "CC-BY-4.0", author: "宇宙航空研究開発機構・宇宙科学研究所(JAXA/ISAS)、https://www.isas.jaxa.jp/en/researchers/data-policy/ 、https://www.isas.jaxa.jp/researchers/data-policy/", agency: "JAXA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Akatsuki_CG01.png"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
+- `/images/fleet-galleries/akatsuki/02.jpg`
+  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
+- `/images/fleet-galleries/akatsuki/03.jpg`
+  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
+- `/images/fleet-galleries/akatsuki/04.jpg`
+  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
+- `/images/fleet-galleries/akatsuki/05.jpg`
+  - before — author: "JAXA", agency: "JAXA"
+  - after — author: "JAXA / Akihiro Ikeshita", agency: "JAXA / Akihiro Ikeshita"
+- `/images/fleet-galleries/antares/01.jpg`
+  - before — license_short: "PD-Old", author: "Joel Kowsky", agency: "Northrop Grumman", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Antares_Orb-3_launch_failure_(201410280009HQ).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+antares&media_type=image&keywords=antares"
+- `/images/fleet-galleries/antares/02.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+antares&media_type=image&keywords=antares"
+- `/images/fleet-galleries/antares/03.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+antares&media_type=image&keywords=antares"
+- `/images/fleet-galleries/antares/04.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+antares&media_type=image&keywords=antares"
+- `/images/fleet-galleries/antares/05.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+antares&media_type=image&keywords=antares"
+- `/images/fleet-galleries/apollo-csm-block-i/01.jpg`
+  - before — license_short: "PD-Old", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Apollo_1_SM-012_at_Downey_with_White_and_Grissom_June_27,_1966.jpg"
+  - after — license_short: "PD-NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+apollo-csm-block-i&media_type=image&keywords=apollo-csm-block-i"
+- `/images/fleet-galleries/apollo-csm-block-i/02.jpg`
+  - before — author: "North American Aviation Inc., Space and Information Systems Division, Photographic Department", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Apollo_1_Command_Module_at_North_American_Aviation.jpg"
+  - after — author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+apollo-csm-block-i&media_type=image&keywords=apollo-csm-block-i"
+- `/images/fleet-galleries/apollo-csm-block-i/03.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File:Apollo_1_CM_being_erected_at_Pad_34_January_6_1967.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File:Apollo_CSM_scimitar_antenna.PNG"
+- `/images/fleet-galleries/apollo-csm-block-i/04.jpg`
+  - before — author: "NASA Johnson Space Center", source_url: "https://commons.wikimedia.org/wiki/File:APOLLO_SPACECRAFT_009_-_SATURN_1B_201_-_ON_PAD_-_COMPLEX_34_-_CAPE_(S66-20410).jpg"
+  - after — author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Apollo_CSM_scimitar_antenna.PNG"
+- `/images/fleet-galleries/apollo-csm-block-i/05.jpg`
+  - before — author: "NASA Johnson Space Center", source_url: "https://commons.wikimedia.org/wiki/File:LAUNCH_COMPLEX_(LC)-34_-_APOLLO-SATURN_(A-S)_MISSION_202_-_PRELAUNCH_ALERT_-_KSC_(S66-50969).jpg"
+  - after — author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Apollo_CSM_scimitar_antenna.PNG"
+- `/images/fleet-galleries/ariane-5/01.jpg`
+  - before — license_short: "PD-Old", author: "Bill Ingalls", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Ariane_5_with_James_Webb_Space_Telescope_Prelaunch_(NHQ202112230012).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-5&media_type=image&keywords=ariane-5"
+- `/images/fleet-galleries/ariane-5/02.jpg`
+  - before — license_short: "CC0", author: "Benoît Seignovert", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:ESA_Juice_launch.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-5&media_type=image&keywords=ariane-5"
+- `/images/fleet-galleries/ariane-5/03.jpg`
+  - before — license_short: "CC-BY-SA-2.0", author: "ESA_events", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Ariane_5_on_the_launch_pad_(17287955801).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-5&media_type=image&keywords=ariane-5"
+- `/images/fleet-galleries/ariane-5/04.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Ariane_5%E2%80%99s_legacy_of_launching_science_missions_ESA24640884.png"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-5&media_type=image&keywords=ariane-5"
+- `/images/fleet-galleries/ariane-5/05.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Plato%E2%80%99s_launch_on_Ariane_6_ESA519047.webm"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-5&media_type=image&keywords=ariane-5"
+- `/images/fleet-galleries/ariane-6/01.jpg`
+  - before — license_short: "CC-BY-3.0", author: "Arianespace", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Arianespace_TV_-_VS21_Succesful_Mission.webm"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-6&media_type=image&keywords=ariane-6"
+- `/images/fleet-galleries/ariane-6/02.jpg`
+  - before — license_short: "PD-Old", author: "Adams, Priscilla M.", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:The_future_of_human_space_exploration-_toward_cooperation_or_competition%3F_(IA_thefutureofhumsp1094537577).pdf"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-6&media_type=image&keywords=ariane-6"
+- `/images/fleet-galleries/ariane-6/03.jpg`
+  - before — license_short: "PD-Old", author: "National Aeronautics and Space Administration", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:AERONAUTICS_AND_ASTRONAUTICS_A_CHRONOLOGY_2008.pdf"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-6&media_type=image&keywords=ariane-6"
+- `/images/fleet-galleries/ariane-6/04.jpg`
+  - before — license_short: "PD-Old", author: "National Aeronautics and Space Administration", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:SP-4012v5.pdf"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-6&media_type=image&keywords=ariane-6"
+- `/images/fleet-galleries/ariane-6/05.jpg`
+  - before — license_short: "PD-Old", author: "Unknown authorUnknown author", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Taming_Liquid_Hydrogen_The_Centaur_Upper_Stage_Rocket.pdf"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+ariane-6&media_type=image&keywords=ariane-6"
+- `/images/fleet-galleries/atlantis/02.jpg`
+  - before — license_short: "PD-Old", author: "Scott Andrews, Canon", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:STS-125_Atlantis_Liftoff_02.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+atlantis&media_type=image&keywords=atlantis"
+- `/images/fleet-galleries/atlantis/03.jpg`
+  - before — license_short: "PD-Old", author: "Bill Ingalls", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:Brightly_lit_STS-135_on_launch_pad_39a.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+atlantis&media_type=image&keywords=atlantis"
+- `/images/fleet-galleries/atlantis/05.jpg`
+  - before — license_short: "PD-Old", author: "Bill Ingalls", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File:STS-129_Atlantis_Ready_to_Fly.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+atlantis&media_type=image&keywords=atlantis"
+- `/images/fleet-galleries/bepicolombo/01.jpg`
+  - before — agency: "ESA"
+  - after — agency: "NASA"
+- `/images/fleet-galleries/bepicolombo/02.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_stack_ESA380846.jpg"
+  - after — license_short: "PD-Old", author: "National Aeronautics and Space Administration (NASA)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_model.png"
+- `/images/fleet-galleries/bepicolombo/03.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA/BepiColombo/MTM", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_Earth_Selfie_10_april_2020.jpg"
+  - after — license_short: "PD-Old", author: "National Aeronautics and Space Administration (NASA)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_model.png"
+- `/images/fleet-galleries/bepicolombo/04.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA–C. Carreau", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_stack.jpg"
+  - after — license_short: "PD-Old", author: "National Aeronautics and Space Administration (NASA)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_model.png"
+- `/images/fleet-galleries/bepicolombo/05.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "European Space Agency", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_images_antennas_ESA401735.jpg"
+  - after — license_short: "PD-Old", author: "National Aeronautics and Space Administration (NASA)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_model.png"
+- `/images/fleet-galleries/beresheet/01.jpg`
+  - before — author: "SpaceIL", agency: "SpaceIL", source_url: "https://commons.wikimedia.org/wiki/File%3ABeresheet_orbit.png%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled"
+  - after — author: "NASA/GSFC/Arizona State University", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Beresheet_Crash_Site_Spotted_LRO_01.png"
+- `/images/fleet-galleries/beresheet/02.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "TaBaZzz", agency: "SpaceIL", source_url: "https://commons.wikimedia.org/wiki/File:Beresheet_model_on_Habima_Square_20190222_01.jpg"
+  - after — license_short: "PD-Old", author: "NASA/GSFC/Arizona State University", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Beresheet_Crash_Site_Spotted_LRO_01.png"
+- `/images/fleet-galleries/beresheet/03.jpg`
+  - before — author: "SpaceIL", agency: "SpaceIL", source_url: "https://commons.wikimedia.org/wiki/File%3ABeresheet_-_last_telemetry_data.png%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled"
+  - after — author: "NASA/GSFC/Arizona State University", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Beresheet_Crash_Site_Spotted_LRO_01.png"
+- `/images/fleet-galleries/beresheet/04.jpg`
+  - before — agency: "SpaceIL"
+  - after — agency: "NASA"
+- `/images/fleet-galleries/beresheet/05.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "Don-vip", agency: "SpaceIL", source_url: "https://commons.wikimedia.org/wiki/File:Altitude_of_Beresheet_and_Chandrayaan_2.svg"
+  - after — license_short: "PD-Old", author: "NASA/GSFC/Arizona State University", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Beresheet_Crash_Site_Spotted_LRO_01.png"
+- `/images/fleet-galleries/buran-ok-gli/01.jpg`
+  - before — license_short: "PD-Russia", author: "Felix Goetting", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:VKK_Buran_BTS-002_(OK-GLI)_AN1344456.jpg"
+  - after — license_short: "CC0", author: "Pascal (Flickr user: pasukaru76)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Buran_Space_Shuttle_at_the_Technik_Museum_Speyer.jpg"
+- `/images/fleet-galleries/buran-ok-gli/02.jpg`
+  - before — license_short: "CC-BY-2.5", author: "No machine-readable author provided. Jno~commonswiki assumed (based on copyright claims).", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:BTS-002_OK-GLI_MAKS_Airshow_1999.jpg"
+  - after — license_short: "CC0", author: "Pascal (Flickr user: pasukaru76)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Buran_Space_Shuttle_at_the_Technik_Museum_Speyer.jpg"
+- `/images/fleet-galleries/buran-ok-gli/03.jpg`
+  - before — license_short: "CC-BY-SA-3.0", author: "Kobel", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:BTS-002_Orbiter.jpg"
+  - after — license_short: "CC0", author: "Pascal (Flickr user: pasukaru76)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Buran_Space_Shuttle_at_the_Technik_Museum_Speyer.jpg"
+- `/images/fleet-galleries/buran-ok-gli/04.jpg`
+  - before — license_short: "CC-BY-SA-3.0", author: "Kozuch", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Technik_Museum_Speyer_2008_12.JPG"
+  - after — license_short: "CC0", author: "Pascal (Flickr user: pasukaru76)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Buran_Space_Shuttle_at_the_Technik_Museum_Speyer.jpg"
+- `/images/fleet-galleries/buran-ok-gli/05.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "Eckhard Henkel", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:2008-04-09_Raumf%C3%A4hre_Buran_OK-GLI_IMG_9292.jpg"
+  - after — license_short: "CC0", author: "Pascal (Flickr user: pasukaru76)", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:OK-GLI_Buran_Space_Shuttle_at_the_Technik_Museum_Speyer.jpg"
+- `/images/fleet-galleries/buran/01.jpg`
+  - before — license_short: "PD-Old", author: "MASTER SGT. DAVE CASEY", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:Buran_partial_rear_view_(Le_Bourget_1989).JPEG"
+  - after — license_short: "CC-BY-SA-4.0", author: "W. Bulach", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:00_3362_Russian_space_glider_Buran.jpg"
+- `/images/fleet-galleries/buran/02.jpg`
+  - before — license_short: "PD-Old", author: "MASTER SGT. DAVE CASEY", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File:Buran_rear_view_(Le_Bourget_1989).JPEG"
+  - after — license_short: "CC-BY-SA-4.0", author: "W. Bulach", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:00_3362_Russian_space_glider_Buran.jpg"
+- … 583 more

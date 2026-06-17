@@ -8593,6 +8593,16 @@
     .hud-collapse {
       display: none;
     }
+    /* Wider rail on desktop so long button labels (PROBE TRAJECTORY,
+       FLIGHT PARAMS, plus the longer i18n strings — German hits this
+       hardest) sit on one line instead of wrapping and making the
+       panel look ragged. Mobile keeps the 220px base because the
+       three secondary panels are hidden there anyway (display:none
+       above), and the always-visible identity HUD has short labels. */
+    .hud {
+      min-width: 240px;
+      width: 260px;
+    }
   }
 
   /* Settings button — top-right gear, mirrored layout from

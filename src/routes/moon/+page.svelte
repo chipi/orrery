@@ -45,6 +45,11 @@
     // Slight-blue ambient tint hints at lunar palette (consolidated
     // intensity 0.8 lives inside SurfaceScene per ADR-072 §Drift 5).
     ambientColor: 0x666688,
+    // UI tint — warm rocky grey, the colour a hand-sample of lunar
+    // regolith reads as in raw photographs (the cool 3D-render blue
+    // is for atmospheric mood; the chrome should read as "moon rock"
+    // per user direction).
+    bodyTintCss: '#b8b5a8',
     // Science Lens panel — Moon-specific copy + the tidal-lock chip
     // (Moon is the only body in the system where the near-side overlay
     // makes sense). Mirrors the prior hardcoded SurfaceScene fallback

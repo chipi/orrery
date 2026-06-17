@@ -3884,7 +3884,7 @@
   });
 </script>
 
-<div class="surface-scene">
+<div class="surface-scene" style:--body-tint={config.bodyTintCss}>
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
        button fires the same selectSite handler that a canvas click
@@ -4953,6 +4953,20 @@ sample      ${debugInfo.projectedPxSample}`}
      colour (--accent set on `.head`). Mirrors the MissionPanel
      `.cta-bar` pattern (coloured, prominent) but uses the site's
      own palette instead of MissionPanel's fixed blue. */
+  /* Panel-tab active underline tinted to --body-tint inside the
+     surface-scene scope. The default in panel-tabs.css is a fixed
+     #4466ff blue — fine across MissionPanel / PlanetPanel / etc., but
+     on /moon /mars /earth detail panels the user wants the underline
+     to read as part of the current world's palette. Scoped to
+     `.surface-scene` so the global default still wins on every other
+     route. (2026-06-17 user direction: "chips and all buttons on
+     details panel should be red tinted [on mars] / grey [on moon] /
+     blue [on earth]" — also catches the tab underline since that's
+     the panel's primary active-state indicator.) */
+  :global(.surface-scene .tabs button.active) {
+    border-bottom-color: var(--body-tint, #4466ff);
+  }
+
   .head .site-cta-bar {
     display: flex;
     flex-wrap: wrap;
@@ -4977,9 +4991,13 @@ sample      ${debugInfo.projectedPxSample}`}
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: color-mix(in srgb, var(--accent, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
+    /* Tinted with the body's --body-tint (Mars rust, Moon rocky grey,
+       Earth deep blue) so the CTA row reads as belonging to the
+       current world, not the selected site's nation. The agency badge
+       above still carries the per-site nation accent for identity. */
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
     color: #fff;
-    border: 1px solid var(--accent, #4ecdc4);
+    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 80%, transparent);
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
@@ -4999,8 +5017,8 @@ sample      ${debugInfo.projectedPxSample}`}
   .head .site-cta-bar :global(.stand-at-site:focus-visible),
   .head .site-cta-bar .zoom-to-detail-button:hover,
   .head .site-cta-bar .zoom-to-detail-button:focus-visible {
-    background: color-mix(in srgb, var(--accent, #4ecdc4) 38%, rgba(8, 10, 22, 0.85));
-    border-color: var(--accent, #4ecdc4);
+    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 38%, rgba(8, 10, 22, 0.85));
+    border-color: var(--body-tint, #4ecdc4);
     color: #fff;
     outline: none;
     transform: translateY(-1px);
@@ -5061,16 +5079,22 @@ sample      ${debugInfo.projectedPxSample}`}
       background 120ms,
       color 120ms;
   }
+  /* Hover + active states tint with --body-tint (set per route on the
+     `.surface-scene` root). Falls back to the prior cool-grey if no
+     tint is provided. (2026-06-17 user direction: "chips on mars used
+     to be red colored, want that back. chips and all buttons on
+     details panel should be red tinted. on moon grey (moon rock)
+     tinted. and on earth blue tinted".) */
   .hud-controls :global(.chip:hover),
   .hud-controls :global(.chip:focus-visible) {
     color: #fff;
-    border-color: rgba(190, 195, 210, 0.55);
+    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
     outline: none;
   }
   .hud-controls :global(.chip.active) {
-    background: rgba(190, 195, 210, 0.16);
-    border-color: rgba(190, 195, 210, 0.7);
-    color: #c8cdda;
+    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 18%, transparent);
+    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 70%, transparent);
+    color: var(--body-tint, #c8cdda);
   }
   .hud-controls :global(.toggle) {
     min-width: 44px;

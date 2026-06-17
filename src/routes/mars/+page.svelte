@@ -95,6 +95,10 @@
     // Slight-red ambient tint hints at Martian palette (consolidated
     // intensity 0.8 lives inside SurfaceScene per ADR-072 §Drift 5).
     ambientColor: 0x886655,
+    // UI tint — Mars rust-red. Drives --body-tint on the scene root so
+    // layer chips, the site CTA row (Approach / Stand / Zoom), and the
+    // detail-panel tab underline all read as Martian palette.
+    bodyTintCss: '#d65c2e',
     // Science Lens panel for /mars (#303 fix). Pre-#303 SurfaceScene
     // mounted /moon's hardcoded panel here so the /mars user saw lunar
     // tidal-lock copy + a dead chip. Mars's atmosphere is the lensable

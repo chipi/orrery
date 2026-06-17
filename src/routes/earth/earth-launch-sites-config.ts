@@ -76,6 +76,10 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // palette (consolidated intensity 0.8 lives inside SurfaceScene
     // per ADR-072 §Drift 5).
     ambientColor: 0x6688aa,
+    // UI tint — Earth blue. Drives --body-tint on the scene root so
+    // layer chips, the site CTA row, and the detail-panel tab underline
+    // all read as Earth's ocean palette.
+    bodyTintCss: '#4488ff',
     // /earth is 3D-only post-#290 — the legacy concentric-rings 2D
     // view is gone, and the equirectangular surface 2D would lose all
     // orbital context. Suppresses both the toggle button and the 2D

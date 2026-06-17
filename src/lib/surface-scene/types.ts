@@ -231,6 +231,19 @@ export interface SurfaceSceneConfig {
   ambientColor: number;
 
   /**
+   * Per-body UI tint — CSS colour string applied via the
+   * `--body-tint` custom property on the SurfaceScene root. Used by:
+   *   - layer chips (.hud-controls .chip hover/active)
+   *   - site CTA buttons (Approach / Stand at site / Zoom to detail)
+   *   - the detail panel's active tab underline
+   * so the whole on-route chrome reads as belonging to *this* body
+   * instead of a generic interface (2026-06-17 user note: "chips on
+   * mars used to be red coloured… moon grey (moon rock)… earth
+   * blue"). Mars: rust-red; Moon: warm rocky grey; Earth: deep blue.
+   */
+  bodyTintCss: string;
+
+  /**
    * Earth-only — optional orbital subsystems layered on top of the
    * surface scene. Set on /earth to unify the previously-separate
    * EarthOrbitalScene's atmosphere / ozone / moon-ghost / orbit-rings

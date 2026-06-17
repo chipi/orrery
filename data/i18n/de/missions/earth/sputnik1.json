@@ -1,0 +1,32 @@
+{
+  "name": "Sputnik 1",
+  "type": "ERDORBIT-SATELLIT · GEFLOGEN",
+  "first": "Erster künstlicher Satellit im Erdorbit — Beginn des Weltraumzeitalters",
+  "description": "Koroljows polierte Aluminiumkugel — 58 cm breit, 83,6 kg, zwei Sender auf 20,005 und 40,002 MHz — wurde am 1957-10-04 19:28 UTC das erste von Menschenhand geschaffene Objekt, das einen Orbit erreichte. Die Bahn von 215 × 939 km bei 65,1° piepste in jener Nacht über Amerika und danach alle 96 Minuten erneut, auf Kurzwelle hörbar für jeden, der einschaltete. Die Batterien waren am 1957-10-26 erschöpft (nach 21 Tagen, ~315 Orbits); der Satellit verglühte beim Wiedereintritt am 1958-01-04 nach rund 1440 Orbits. Der Flug war ein Nebenprojekt des OKB-1: Koroljow brauchte eine leichte Nutzlast für seine noch in Entwicklung befindliche Interkontinentalrakete R-7 und verkaufte 'PS-1' (Prosteyshiy Sputnik — 'einfachster Satellit') Chruschtschow als Propagandacoup. Es funktionierte. Der Schock in Washington löste die Gründung der ARPA (Februar 1958), die Unterzeichnung des National Aeronautics and Space Act (Juli 1958) und vier Jahre später Kennedys Mondlandungs-Versprechen aus. Sputnik 1 lieferte zudem die ersten orbitalen Daten zur Ionosphäre und Atmosphärendichte — Ingenieure nutzten die Dopplerverschiebung der 20- / 40-MHz-Träger, um die Luftdichte in 215 km Höhe zu kartieren, eine Arbeit, die in jede nachfolgende Wiedereintrittsberechnung einfloss.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Sputnik 8K71PS hebt am 1957-10-04 19:28:34 UTC von NIIP-5 Standort 1 (später Baikonur, Gagarin's Start) ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "ORBIT-EINSCHUSS",
+      "note": "Brennschluss Stufe 2 + Nutzlasttrennung; Orbit 215 × 939 km, 65,1° Inklination, 96,2 min Umlaufzeit.",
+      "type": "nominal"
+    },
+    {
+      "met": 21,
+      "label": "SENDER VERSTUMMT",
+      "note": "Silber-Zink-Batterien am 1957-10-26 erschöpft; die Träger verstummen nach ~315 Orbits.",
+      "type": "info"
+    },
+    {
+      "met": 92,
+      "label": "WIEDEREINTRITT",
+      "note": "Bahn zerfiel am 1958-01-04 nach ~1440 Orbits; verglühte über dem Atlantik.",
+      "type": "info"
+    }
+  ]
+}

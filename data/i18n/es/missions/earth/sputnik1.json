@@ -1,0 +1,32 @@
+{
+  "name": "Sputnik 1",
+  "type": "SATÉLITE EN ÓRBITA TERRESTRE · VOLADO",
+  "first": "Primer satélite artificial en orbitar la Tierra — inicio de la Era Espacial",
+  "description": "La esfera de aluminio pulido de Korolev — 58 cm de ancho, 83,6 kg, dos transmisores en 20.005 y 40.002 MHz — se convirtió en el primer objeto creado por el ser humano en alcanzar la órbita el 1957-10-04 19:28 UTC. La trayectoria de 215 × 939 km con 65,1° emitió pitidos sobre América aquella noche y volvió a hacerlo cada 96 minutos, audible en onda corta para cualquiera que sintonizara. Las baterías se agotaron el 1957-10-26 (tras 21 días, ~315 órbitas); el satélite decayó y se desintegró durante la reentrada el 1958-01-04 después de aproximadamente 1440 órbitas. El vuelo fue un proyecto paralelo de OKB-1: Korolev necesitaba una carga útil ligera para su ICBM R-7 aún en desarrollo y le presentó a Khrushchev el 'PS-1' (Prosteyshiy Sputnik — 'satélite más simple') como un golpe propagandístico. Funcionó. La conmoción en Washington desencadenó ARPA (fundada en 1958-02), la Ley Nacional de Aeronáutica y del Espacio (firmada en 1958-07) y la promesa de Kennedy de llegar a la Luna cuatro años después. Sputnik 1 también devolvió los primeros datos orbitales ionosféricos y de densidad atmosférica — los ingenieros usaron el desplazamiento Doppler en las portadoras de 20 / 40 MHz para cartografiar la densidad del aire a 215 km, un trabajo que alimentó todos los cálculos posteriores de reentrada.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Sputnik 8K71PS despega desde NIIP-5 Sitio 1 (más tarde Baikonur, Gagarin's Start) el 1957-10-04 19:28:34 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "INSERCIÓN EN ÓRBITA",
+      "note": "Corte de la etapa 2 + separación de la carga útil; órbita 215 × 939 km, inclinación 65,1°, período 96,2 min.",
+      "type": "nominal"
+    },
+    {
+      "met": 21,
+      "label": "TRANSMISORES EN SILENCIO",
+      "note": "Las baterías de plata-zinc se agotaron el 1957-10-26; las portadoras enmudecen tras ~315 órbitas.",
+      "type": "info"
+    },
+    {
+      "met": 92,
+      "label": "REENTRADA",
+      "note": "Decayó el 1958-01-04 tras ~1440 órbitas; se desintegró sobre el Atlántico.",
+      "type": "info"
+    }
+  ]
+}

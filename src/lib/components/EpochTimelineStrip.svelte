@@ -66,6 +66,9 @@
           style:--band-color={ep.color}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
           onkeydown={(e) => handleKey(e, ep.id)}
+          title="{ep.label} ({ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd}) · {countByEpoch.get(
+            ep.id,
+          ) ?? 0}"
           aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch.get(ep.id) ??
             0} entries)"
         >
@@ -143,20 +146,42 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Per-band hue via --band-color (set on the button inline). At rest
-     the band carries a faint tint of its colour so the row reads as a
-     narrative palette even before any hover/select. Hover deepens the
-     tint; active commits to the full hue. (2026-06-17 user direction:
-     "could use a dash of color"; epoch-bands.ts picks the hue per era
-     and verifies each one against WCAG-AA on the dark background.) */
+  /* Per-band hue via --band-color (set on the button inline). Three
+     pieces working together so each band reads as belonging to its
+     era at every interaction state (2026-06-17 user direction:
+     "coloring is very thin and super basic, can we make it more
+     appealing, aligned with rest of the project in terms of UX and
+     being cool"):
+
+       1. A 3 px top-edge stripe in full-hue band colour. Stays
+          visible at every width — even when a 3-year band squeezes
+          to ~30 px and the label ellipsises, the stripe keeps the
+          hue legible.
+       2. A vertical gradient from band-colour at the top to
+          transparent at the bottom — feels like the era's light
+          spilling down into the row instead of a flat fill.
+       3. An outer glow on the active band so the selected era reads
+          as "lifted" off the dark axis, matching the glowy-accent
+          vibe of the rest of Orrery's chrome (planet panels,
+          fly HUD, science chips).
+
+     Default `#4ecdc4` fallback inside every color-mix matches the
+     prior teal, so a band without an explicit colour gracefully
+     degrades. */
   .band {
     position: absolute;
     top: 0;
     height: 100%;
-    background: color-mix(in srgb, var(--band-color, #4ecdc4) 5%, transparent);
-    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 22%, transparent);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 18%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 5%, transparent) 70%,
+      transparent 100%
+    );
+    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 28%, transparent);
+    border-top: 3px solid color-mix(in srgb, var(--band-color, #4ecdc4) 72%, transparent);
     border-radius: 0;
-    color: rgba(255, 255, 255, 0.85);
+    color: color-mix(in srgb, var(--band-color, #4ecdc4) 35%, white);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -165,18 +190,37 @@
     padding: 4px 6px;
     overflow: hidden;
     transition:
-      background 0.15s,
-      border-color 0.15s,
-      color 0.15s;
+      background 0.18s,
+      border-color 0.18s,
+      color 0.18s,
+      box-shadow 0.18s,
+      transform 0.18s;
   }
   .band:hover {
-    background: color-mix(in srgb, var(--band-color, #4ecdc4) 12%, transparent);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 32%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 12%, transparent) 70%,
+      transparent 100%
+    );
     border-color: color-mix(in srgb, var(--band-color, #4ecdc4) 55%, transparent);
+    border-top: 3px solid var(--band-color, #4ecdc4);
+    color: #fff;
+    transform: translateY(-1px);
   }
   .band.active {
-    background: color-mix(in srgb, var(--band-color, #4ecdc4) 20%, transparent);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 48%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 22%, transparent) 60%,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 8%, transparent) 100%
+    );
     border-color: var(--band-color, #4ecdc4);
-    color: var(--band-color, #4ecdc4);
+    border-top: 3px solid var(--band-color, #4ecdc4);
+    color: #fff;
+    box-shadow:
+      inset 0 -1px 10px color-mix(in srgb, var(--band-color, #4ecdc4) 28%, transparent),
+      0 0 14px color-mix(in srgb, var(--band-color, #4ecdc4) 36%, transparent);
     z-index: 2;
   }
   .band-label {
@@ -209,16 +253,21 @@
     max-width: 100%;
   }
   .band.active .band-meta {
-    color: color-mix(in srgb, var(--band-color, #4ecdc4) 90%, white);
+    color: color-mix(in srgb, var(--band-color, #4ecdc4) 30%, white);
   }
 
+  /* Today indicator — a slim glowing vertical line. Brought up to a
+     stronger amber glow so it stands above the now-richer band
+     gradients without competing with active-band hues. */
   .today {
     position: absolute;
-    top: -3px;
-    bottom: -3px;
-    width: 1.5px;
+    top: -4px;
+    bottom: -4px;
+    width: 2px;
     background: #ffc850;
-    box-shadow: 0 0 6px rgba(255, 200, 80, 0.5);
+    box-shadow:
+      0 0 4px rgba(255, 200, 80, 0.95),
+      0 0 12px rgba(255, 200, 80, 0.55);
     pointer-events: none;
     z-index: 3;
   }
@@ -255,11 +304,19 @@
     scroll-snap-align: start;
     flex-shrink: 0;
   }
+  /* Mobile chips — same three-state hierarchy as desktop bands so the
+     palette reads consistently across viewports. At rest the chip
+     carries a faint tint of its band's hue; hover lifts the tint;
+     active matches the desktop active-band's glow. */
   .chip {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.78);
-    padding: 6px 10px;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 14%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 4%, transparent)
+    );
+    border: 1px solid color-mix(in srgb, var(--band-color, #4ecdc4) 30%, transparent);
+    color: color-mix(in srgb, var(--band-color, #4ecdc4) 25%, white);
+    padding: 6px 12px;
     border-radius: 14px;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
@@ -269,14 +326,30 @@
     align-items: center;
     gap: 6px;
     min-height: 32px;
+    transition:
+      background 0.18s,
+      border-color 0.18s,
+      color 0.18s,
+      box-shadow 0.18s;
   }
   .chip:hover {
-    background: rgba(255, 255, 255, 0.07);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 24%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 8%, transparent)
+    );
+    border-color: color-mix(in srgb, var(--band-color, #4ecdc4) 55%, transparent);
+    color: #fff;
   }
   .chip.active {
-    background: color-mix(in srgb, var(--band-color, #4ecdc4) 20%, transparent);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--band-color, #4ecdc4) 45%, transparent),
+      color-mix(in srgb, var(--band-color, #4ecdc4) 18%, transparent)
+    );
     border-color: var(--band-color, #4ecdc4);
-    color: var(--band-color, #4ecdc4);
+    color: #fff;
+    box-shadow: 0 0 10px color-mix(in srgb, var(--band-color, #4ecdc4) 35%, transparent);
   }
   /* Mobile chip count badge — AA bump from 0.5 → 0.78 alpha. Sits
      inside the chip's white-tinted pill, which already lifts effective

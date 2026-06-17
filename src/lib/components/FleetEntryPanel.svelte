@@ -198,6 +198,12 @@
       </div>
     {/if}
 
+    <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · ANATOMY · CREW
+         · LEARN. MISSIONS sits 2nd whenever the vehicle has linked
+         missions, so the "what has actually flown on this" surface is
+         the user's first follow-on after the overview (2026-06-17 user
+         direction: "on fly details, can we get missions tab to be
+         second when available"). -->
     <div class="tabs" role="tablist">
       <button
         type="button"
@@ -206,6 +212,17 @@
         role="tab"
         aria-selected={tab === 'overview'}>OVERVIEW</button
       >
+      {#if hasMissions}
+        <button
+          type="button"
+          class:active={tab === 'missions'}
+          onclick={() => (tab = 'missions')}
+          role="tab"
+          aria-selected={tab === 'missions'}
+          >MISSIONS{#if (entry?.linked_missions?.length ?? 0) > 1}&nbsp;({entry?.linked_missions
+              ?.length}){/if}</button
+        >
+      {/if}
       {#if hasGallery}
         <button
           type="button"
@@ -231,17 +248,6 @@
           onclick={() => (tab = 'crew')}
           role="tab"
           aria-selected={tab === 'crew'}>CREW</button
-        >
-      {/if}
-      {#if hasMissions}
-        <button
-          type="button"
-          class:active={tab === 'missions'}
-          onclick={() => (tab = 'missions')}
-          role="tab"
-          aria-selected={tab === 'missions'}
-          >MISSIONS{#if (entry?.linked_missions?.length ?? 0) > 1}&nbsp;({entry?.linked_missions
-              ?.length}){/if}</button
         >
       {/if}
       {#if hasLinks}

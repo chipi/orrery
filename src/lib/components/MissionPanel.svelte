@@ -258,6 +258,12 @@
       </div>
     {/if}
 
+    <!-- Tab order: OVERVIEW · FLIGHT (cond) · GALLERY (cond) · SCIENCE.
+         FLIGHT is positioned as the 2nd tab whenever it's available so
+         the "fly this mission" surface is the user's first follow-on
+         after the overview (2026-06-17 user direction: "on mission
+         details, can we get fly to be 2nd tab always for all missions
+         in details template"). -->
     <div class="tabs" role="tablist">
       <button
         type="button"
@@ -268,17 +274,6 @@
         aria-selected={tab === 'overview'}
         aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
       >
-      {#if gallery.length > 0}
-        <button
-          type="button"
-          id="mp-tab-gallery"
-          class:active={tab === 'gallery'}
-          onclick={() => (tab = 'gallery')}
-          role="tab"
-          aria-selected={tab === 'gallery'}
-          aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
-        >
-      {/if}
       {#if hasFlightData}
         <button
           type="button"
@@ -288,6 +283,17 @@
           role="tab"
           aria-selected={tab === 'flight'}
           aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
+        >
+      {/if}
+      {#if gallery.length > 0}
+        <button
+          type="button"
+          id="mp-tab-gallery"
+          class:active={tab === 'gallery'}
+          onclick={() => (tab = 'gallery')}
+          role="tab"
+          aria-selected={tab === 'gallery'}
+          aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
         >
       {/if}
       <button

@@ -812,9 +812,20 @@
       {/if}
     </div>
 
-    {#if (mission.status !== 'PLANNED' && onFly) || crossSite}
+    <!-- Fly-mission CTA — only render when the mission has actual
+         flight data backing the /fly sim (hasFlightData), is not still
+         in the PLANNED bucket, AND a host route wired the onFly
+         callback. (2026-06-17 user correction: "I didn't ask to add
+         fly this mission to all cards, you added them where it makes
+         no sense. I asked to make it visible on iconic mission on
+         explore page where it was not visible." → restore onFly on
+         /explore AND gate the button at the MissionPanel level on
+         hasFlightData so iconic missions without flight-params data
+         silently skip the CTA instead of linking into a broken /fly
+         sim.) -->
+    {#if (mission.status !== 'PLANNED' && hasFlightData && onFly) || crossSite}
       <div class="cta-bar">
-        {#if mission.status !== 'PLANNED' && onFly}
+        {#if mission.status !== 'PLANNED' && hasFlightData && onFly}
           <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
             <!-- Trajectory-arc glyph — curved path with arrowhead.
                  Replaces the prior "▶" play-character (2026-06-15

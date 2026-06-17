@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Per-mission curated image URLs for JAXA missions. Used by scripts/lib/agency-resolver.mjs hybrid resolver: tried after a scrape attempt times out / yields nothing. Each entry pins to a JAXA-hosted URL with verified attribution. Source-URL points at the canonical JAXA mission page for the credits chain.",
+  "missions": {
+    "akatsuki": {
+      "agency": "JAXA",
+      "primary_archive": "https://akatsuki.isas.jaxa.jp/en/gallery/",
+      "slots": {
+        "01": {
+          "label": "Akatsuki spacecraft (conceptual — orbit insertion 2015)",
+          "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
+          "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+          "credit": "JAXA / Akihiro Ikeshita"
+        },
+        "02": {
+          "label": "Venus dayside UV (UVI, 2018 Mar 30)",
+          "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+          "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+          "credit": "JAXA / ISAS / DARTS"
+        },
+        "03": {
+          "label": "Venus dayside UV (UVI, 2018 Feb 02)",
+          "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180202_175611_283_365_l2b_v20180601_mod-thumb-1024x1024-3081.png",
+          "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+          "credit": "JAXA / ISAS / DARTS"
+        },
+        "04": {
+          "label": "Venus dayside UV (UVI, 2017 Oct 16)",
+          "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20171016_093112_283_365_l2b_v20180601_mod-thumb-1024x1024-3077.png",
+          "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+          "credit": "JAXA / ISAS / DARTS"
+        },
+        "05": {
+          "label": "Akatsuki observational instruments (illustration)",
+          "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/photo-spacecraft_05.jpg",
+          "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+          "credit": "JAXA / Akihiro Ikeshita"
+        }
+      }
+    },
+    "hayabusa": {
+      "agency": "JAXA",
+      "primary_archive": "https://www.hayabusa.isas.jaxa.jp/e/gallery/",
+      "_verification_needed": true,
+      "_notes": "URLs unverified as of 2026-06-17 — www.hayabusa.isas.jaxa.jp wouldn't respond on health check. WebFetch the actual gallery page before populating slots."
+    },
+    "hayabusa1": {
+      "agency": "JAXA",
+      "alias_of": "hayabusa",
+      "_notes": "Same physical mission as `hayabusa`. Will follow whatever resolution the hayabusa entry gets."
+    }
+  }
+}

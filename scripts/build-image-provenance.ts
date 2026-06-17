@@ -1022,8 +1022,11 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
     // (Cat 1A/2 byte-dupe cleanup) or never sourced (no Commons hits).
     // Skip silently so the manifest stays in sync with disk reality.
     if (!(await pathExists(localPath))) continue;
-    const agencyHuman = agencyToHumanReadable[src.agency] ?? src.agency;
-    const url = src.sourceUrl;
+    const agencyHuman = agencyToHumanReadable[src.agency] ?? src.agency ?? 'NASA';
+    // 2026-06-17: legacy sidecars use `sourceUrl`; new agency-first
+    // entries (post-#58 registry) use snake_case `source_url`/`image_url`.
+    // Accept either to keep the walker working across both shapes.
+    const url = src.sourceUrl ?? src.source_url ?? src.image_url ?? '';
 
     // Commons-hosted file → use buildWikimediaEntry so per-file
     // license + uploader metadata gets read from the Commons API.

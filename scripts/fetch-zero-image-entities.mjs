@@ -1,4 +1,14 @@
 #!/usr/bin/env node
+// ⚠ DEPRECATED AS A TEMPLATE (2026-06-17). Commons-only resolver
+//   skips the codified agency-first source order (ADR-046, see
+//   scripts/IMAGE-PIPELINE.md §"Source-resolution order"). New
+//   fetch scripts must copy from scripts/fetch-batch-2-mission-images.mjs
+//   instead — it tries NASA images-api.nasa.gov first and falls
+//   back to Commons only when the agency archive misses.
+//
+//   This file is kept for reference (it sourced the Phase-22 zero-
+//   image entities), but do NOT use its pattern for new batches.
+//
 // Source hero images for the 7 zero-image entities catalogued in
 // docs/provenance/image-sourcing-inventory.md (#342 Phase 22).
 //

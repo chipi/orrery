@@ -6195,5 +6195,196 @@
     "credit": "NASA / JPL-Caltech — Europa Clipper",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-15T14:25:48Z"
+  },
+  "europa-clipper/02.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20241012-PH-SPX01_0003",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20241012-PH-SPX01_0003/KSC-20241012-PH-SPX01_0003~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:18Z",
+    "nasa_id": "KSC-20241012-PH-SPX01_0003",
+    "nasa_title": "SpaceX Europa Clipper Rollout & Vertical"
+  },
+  "europa-clipper/03.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA26433",
+    "image_url": "http://images-assets.nasa.gov/image/PIA26433/PIA26433~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:22Z",
+    "nasa_id": "PIA26433",
+    "nasa_title": "Europa Clipper: NASA's Largest Planetary Spacecraft (Artist's Concept)"
+  },
+  "europa-clipper/04.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA24321",
+    "image_url": "http://images-assets.nasa.gov/image/PIA24321/PIA24321~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:24Z",
+    "nasa_id": "PIA24321",
+    "nasa_title": "Europa Clipper Spacecraft (Illustration)"
+  },
+  "europa-clipper/05.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA24330",
+    "image_url": "http://images-assets.nasa.gov/image/PIA24330/PIA24330~orig.jpg",
+    "credit": "NASA/Johns Hopkins APL/Ed Whitman",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:30Z",
+    "nasa_id": "PIA24330",
+    "nasa_title": "Preparing NASA's Europa Clipper's Plasma Instrument"
+  },
+  "lucy/02.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/NHQ202110160012",
+    "image_url": "http://images-assets.nasa.gov/image/NHQ202110160012/NHQ202110160012~orig.jpg",
+    "credit": "NASA / HQ",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:35Z",
+    "nasa_id": "NHQ202110160012",
+    "nasa_title": "Lucy Spacecraft Launch"
+  },
+  "lucy/03.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20210819-PH-GEB01_0105",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20210819-PH-GEB01_0105/KSC-20210819-PH-GEB01_0105~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:42Z",
+    "nasa_id": "KSC-20210819-PH-GEB01_0105",
+    "nasa_title": "Lucy Solar Array Pop & Catch"
+  },
+  "lucy/04.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lucy%20Sees%20Asteroid%20Dinkinesh%20in%20Detail%20(SVS14596).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucy%20Sees%20Asteroid%20Dinkinesh%20in%20Detail%20(SVS14596).jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:27:44Z",
+    "commons_file": "Lucy Sees Asteroid Dinkinesh in Detail (SVS14596).jpg"
+  },
+  "lucy/05.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lucy%20Will%20Explore%20Asteroid%20Donaldjohanson%20(SVS14821%20-%20Donaldjohanson%20Light%20Curve%20Preview).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucy%20Will%20Explore%20Asteroid%20Donaldjohanson%20(SVS14821%20-%20Donaldjohanson%20Light%20Curve%20Preview).jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:27:47Z",
+    "commons_file": "Lucy Will Explore Asteroid Donaldjohanson (SVS14821 - Donaldjohanson Light Curve Preview).jpg"
+  },
+  "parker-solar-probe/02.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20170828-PH_JBS01_0204",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20170828-PH_JBS01_0204/KSC-20170828-PH_JBS01_0204~orig.JPG",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:27:52Z",
+    "nasa_id": "KSC-20170828-PH_JBS01_0204",
+    "nasa_title": "ULA Delta IV Heavy Second Stage & Port Common Booster Core for t"
+  },
+  "parker-solar-probe/04.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parker%20Solar%20Probe%20coronal%20stream%20wispr-big%201-st%20flyby.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Parker%20Solar%20Probe%20coronal%20stream%20wispr-big%201-st%20flyby.jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:27:56Z",
+    "commons_file": "Parker Solar Probe coronal stream wispr-big 1-st flyby.jpg"
+  },
+  "parker-solar-probe/05.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20180730-PH_KLS01_0140",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20180730-PH_KLS01_0140/KSC-20180730-PH_KLS01_0140~orig.JPG",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:28:03Z",
+    "nasa_id": "KSC-20180730-PH_KLS01_0140",
+    "nasa_title": "Parker Solar Probe Transport to LC-37"
+  },
+  "parker-solar-probe/03.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parker%20Solar%20Probe%20Gets%20Its%20Revolutionary%20Heat%20Shield.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Parker%20Solar%20Probe%20Gets%20Its%20Revolutionary%20Heat%20Shield.jpg?width=1600",
+    "credit": "NASA / Johns Hopkins APL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:29:34Z",
+    "commons_file": "Parker Solar Probe Gets Its Revolutionary Heat Shield.jpg"
+  },
+  "hayabusa/02.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:59:07Z",
+    "commons_file": "Hayabusa hover.jpg"
+  },
+  "hayabusa/03.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20hover.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20hover.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:59:09Z",
+    "commons_file": "Hayabusa hover.jpg"
+  },
+  "hayabusa/04.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa%20Re-Entery.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayabusa%20Re-Entery.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:59:11Z",
+    "commons_file": "Hayabusa Re-Entery.jpg"
+  },
+  "solar-orbiter/02.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20200131-PH-JBS01_0039",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20200131-PH-JBS01_0039/KSC-20200131-PH-JBS01_0039~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:59:20Z",
+    "nasa_id": "KSC-20200131-PH-JBS01_0039",
+    "nasa_title": "Solar Orbiter Spacecraft Lift and Mate"
+  },
+  "solar-orbiter/03.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:59:23Z",
+    "commons_file": "Solar Orbiter’s widest high-res view of the Sun ESA508430.jpg"
+  },
+  "solar-orbiter/04.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/iss031e089012",
+    "image_url": "http://images-assets.nasa.gov/image/iss031e089012/iss031e089012~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:59:26Z",
+    "nasa_id": "iss031e089012",
+    "nasa_title": "Solar Observations taken during the Transit of Venus (Between Second and Third Contacts)"
+  },
+  "solar-orbiter/05.jpg": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20200131-PH-JBS01_0119",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20200131-PH-JBS01_0119/KSC-20200131-PH-JBS01_0119~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:59:33Z",
+    "nasa_id": "KSC-20200131-PH-JBS01_0119",
+    "nasa_title": "Solar Orbiter Spacecraft Lift and Mate"
+  },
+  "hayabusa/05.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jaxa-M-V-Rocket-No7-launches.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaxa-M-V-Rocket-No7-launches.jpg?width=1600",
+    "credit": "JAXA (M-V launch system; Hayabusa-1 launched 2003-05-09 on M-V-5)",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T10:00:29Z",
+    "commons_file": "Jaxa-M-V-Rocket-No7-launches.jpg"
   }
 }

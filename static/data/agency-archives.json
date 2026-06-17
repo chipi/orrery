@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "description": "Primary image archive endpoints per space agency. Consumed by the agency-first resolver in scripts/lib/agency-resolver.mjs. Locked by ADR-046; codified 2026-06-17 after the inventory revealed batch fetchers going straight to Commons. See scripts/IMAGE-PIPELINE.md §'Source-resolution order'.",
+  "agencies": {
+    "NASA": {
+      "label": "National Aeronautics and Space Administration",
+      "primary_kind": "json-api",
+      "endpoints": {
+        "search": "https://images-api.nasa.gov/search",
+        "asset": "https://images-api.nasa.gov/asset"
+      },
+      "credit_default": "NASA",
+      "license_default": "Public Domain (NASA — Media Usage Guidelines)"
+    },
+    "NASA / JPL": {
+      "label": "NASA Jet Propulsion Laboratory",
+      "primary_kind": "scrape-photojournal",
+      "endpoints": {
+        "search": "https://photojournal.jpl.nasa.gov",
+        "image_pattern": "https://photojournal.jpl.nasa.gov/jpeg/{pia_id}.jpg"
+      },
+      "credit_default": "NASA / JPL-Caltech",
+      "license_default": "Public Domain (NASA — Media Usage Guidelines)",
+      "notes": "JPL Photojournal hosts higher-res masters of PIA images. Resolver tries NASA images-api first (covers JPL); use this tier only when image-api returns crops."
+    },
+    "JAXA": {
+      "label": "Japan Aerospace Exploration Agency",
+      "primary_kind": "hybrid-scrape-curated",
+      "endpoints": {
+        "akatsuki_gallery": "https://akatsuki.isas.jaxa.jp/en/gallery/",
+        "akatsuki_data": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+        "akatsuki_spacecraft": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+        "hayabusa_archive": "https://www.hayabusa.isas.jaxa.jp/e/gallery/",
+        "global_press": "https://global.jaxa.jp/press/",
+        "darts": "https://www.darts.isas.jaxa.jp/"
+      },
+      "credit_default": "JAXA",
+      "license_default": "JAXA Press Use (free for editorial; attribute to JAXA)",
+      "curation_file": "static/data/agency-archive-curations/jaxa.json",
+      "notes": "JAXA has no public image search API. Resolver tries to scrape the configured gallery page with selector hints; falls back to the curated URL list keyed by mission_id."
+    },
+    "ESA": {
+      "label": "European Space Agency",
+      "primary_kind": "hybrid-scrape-curated",
+      "endpoints": {
+        "multimedia_root": "https://www.esa.int/ESA_Multimedia/",
+        "hubble": "https://esahubble.org/images/",
+        "solar_orbiter_set": "https://www.esa.int/ESA_Multimedia/Sets/Solar_Orbiter"
+      },
+      "credit_default": "ESA",
+      "license_default": "CC BY-SA 3.0 IGO (ESA Standard License)",
+      "curation_file": "static/data/agency-archive-curations/esa.json",
+      "notes": "ESA Multimedia hosts mission sets; resolver targets the set page and extracts <img> src attributes. Falls back to curated URL list."
+    },
+    "JHU-APL": {
+      "label": "Johns Hopkins Applied Physics Laboratory",
+      "primary_kind": "hybrid-scrape-curated",
+      "endpoints": {
+        "dart_gallery": "https://dart.jhuapl.edu/Gallery/index.php",
+        "parker_gallery": "https://parkersolarprobe.jhuapl.edu/Gallery/index.php",
+        "new_horizons": "http://pluto.jhuapl.edu/Multimedia/Science-Photos.php",
+        "dragonfly": "https://dragonfly.jhuapl.edu/Gallery/"
+      },
+      "credit_default": "NASA / Johns Hopkins APL",
+      "license_default": "Public Domain (JHU APL on NASA mission)",
+      "curation_file": "static/data/agency-archive-curations/jhu-apl.json",
+      "notes": "JHU APL is prime contractor on DART / Parker / New Horizons / Dragonfly. Their galleries are higher-res than NASA archive mirrors for hardware shots + the canonical 'DART final frame'. Site has been slow / timed out — curated fallback is load-bearing."
+    },
+    "ASI": {
+      "label": "Italian Space Agency / Agenzia Spaziale Italiana",
+      "primary_kind": "curated-only",
+      "endpoints": {
+        "press": "https://www.asi.it/"
+      },
+      "credit_default": "ASI / NASA (LICIACube)",
+      "license_default": "CC BY (ASI Press Use)",
+      "curation_file": "static/data/agency-archive-curations/asi.json",
+      "notes": "Italian agency, partner on DART (LICIACube imaged the impact). No public search API; curated URLs only."
+    },
+    "CNSA": {
+      "label": "China National Space Administration",
+      "primary_kind": "curated-only",
+      "endpoints": {
+        "press_en": "http://www.cnsa.gov.cn/english/",
+        "xinhua": "https://www.xinhuanet.com/english/sci/"
+      },
+      "credit_default": "CNSA / Xinhua",
+      "license_default": "CNSA Press Use",
+      "curation_file": "static/data/agency-archive-curations/cnsa.json",
+      "notes": "Chinese space program imagery is press-release based. Direct hot-linking unstable; curated mirrors via Xinhua / state-media press releases."
+    },
+    "Roscosmos": {
+      "label": "Roscosmos State Corporation",
+      "primary_kind": "curated-only",
+      "endpoints": {
+        "press": "https://www.roscosmos.ru/",
+        "tass": "https://tass.com/science"
+      },
+      "credit_default": "Roscosmos",
+      "license_default": "Roscosmos Press Use",
+      "curation_file": "static/data/agency-archive-curations/roscosmos.json",
+      "notes": "Roscosmos site has been intermittently dark since 2022. Curated picks are the durable path."
+    },
+    "ISRO": {
+      "label": "Indian Space Research Organisation",
+      "primary_kind": "curated-only",
+      "endpoints": {
+        "main": "https://www.isro.gov.in/",
+        "press": "https://www.isro.gov.in/Press_Release.html"
+      },
+      "credit_default": "ISRO",
+      "license_default": "ISRO Open Data Policy",
+      "curation_file": "static/data/agency-archive-curations/isro.json",
+      "notes": "ISRO publishes mission imagery via press releases. Curated picks per mission."
+    },
+    "SpaceIL": {
+      "label": "SpaceIL (Israeli non-profit, Beresheet)",
+      "primary_kind": "curated-only",
+      "endpoints": {
+        "main": "https://www.spaceil.com/"
+      },
+      "credit_default": "SpaceIL / IAI",
+      "license_default": "SpaceIL Press Use",
+      "curation_file": "static/data/agency-archive-curations/spaceil.json"
+    },
+    "WIKIMEDIA_COMMONS_FAILOVER": {
+      "label": "Wikimedia Commons (failover only)",
+      "primary_kind": "json-api",
+      "endpoints": {
+        "search": "https://commons.wikimedia.org/w/api.php",
+        "filepath": "https://commons.wikimedia.org/wiki/Special:FilePath"
+      },
+      "credit_default": "agency original via Wikimedia Commons mirror",
+      "license_default": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+      "notes": "Tier 7 — only consulted when all agency tiers miss. Resolver MUST attempt agency tiers first; PR reviewers reject Commons-first additions per IMAGE-PIPELINE.md REGRESSION GUARD."
+    }
+  },
+  "resolver_order": [
+    "NASA",
+    "NASA / JPL",
+    "JAXA",
+    "ESA",
+    "JHU-APL",
+    "ASI",
+    "CNSA",
+    "Roscosmos",
+    "ISRO",
+    "SpaceIL",
+    "WIKIMEDIA_COMMONS_FAILOVER"
+  ]
+}

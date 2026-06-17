@@ -11,6 +11,45 @@ SOURCE SIDECAR  →  DISK FILES  →  pHASH CACHE  →  PROVENANCE  →  COUNT M
 
 ---
 
+## Source-resolution order — agency archives first, Commons last
+
+> **REGRESSION GUARD.** This rule has been the design since [ADR-046](../docs/adr/ADR-046.md) (agency-first build-time imagery sourcing). It drifted in mid-2026 — batch fetchers like `fetch-zero-image-entities.mjs` skipped tier 1 and went straight to Commons, which is why the 2026-06-17 inventory found dozens of sidecar entries credited as `wikimedia-commons-mirror` when the NASA / JAXA / ESA original was right there. **The rule has not changed; the practice did.** Do not let it drift again:
+>
+> 1. Every new fetch script must call `nasaSearch()` (or the agency tier-1 equivalent) before touching Commons. The reference shape is `scripts/fetch-batch-2-mission-images.mjs`'s `resolveSource()`.
+> 2. `fetch-zero-image-entities.mjs` is **deprecated as a template** — its Commons-only resolver predates the codified order. Copy from `fetch-batch-2-*` instead.
+> 3. Every sidecar entry now records `source_type` (`nasa-image-library` | `jpl-photojournal` | `jaxa` | `esa` | `jhu-apl` | `wikimedia-commons`). Auditing the distribution is how we catch drift — a Commons-skew on NASA missions is the regression signal.
+> 4. PR reviewers: if a diff adds Commons-only sourcing to a NASA / NASA-co-managed mission, reject and ask for the NASA tier-1 path. The agency master is almost always there.
+
+**Original agency archives are always tried first. Wikimedia Commons is failover, not default.** Re-affirmed 2026-06-17 after the first /missions image inventory.
+
+The resolver tries sources in this order, stopping at the first hit:
+
+| Order | Source | When | API |
+|---|---|---|---|
+| 1 | **NASA Image and Video Library** (`images-api.nasa.gov`) | NASA missions, NASA-co-managed missions (DART, OSIRIS-REx, MER, Phoenix, Magellan, Mariner 9, Hubble crops) | `GET https://images-api.nasa.gov/search?q=<query>&media_type=image` |
+| 2 | **NASA JPL Photojournal** (`photojournal.jpl.nasa.gov`) | JPL-led missions (Mars rovers, Voyager, Cassini, Galileo, Magellan, MRO HiRISE) — higher-res masters | scrape mission page `targetFamily=Mars&target=...&mission=...` |
+| 3 | **JAXA Digital Archive** / **DARTS** | JAXA missions (Akatsuki, Hayabusa, Hayabusa2, SLIM, IKAROS) | scrape mission page (no public API) |
+| 4 | **ESA Multimedia** (`esa.int/ESA_Multimedia`) / **esahubble.org** | ESA missions (Solar Orbiter, JUICE, BepiColombo, Mars Express, Rosetta, Hubble joint) | scrape set page |
+| 5 | **JHU APL** (`dart.jhuapl.edu`, `parker-solar-probe.jhuapl.edu`) | APL-led missions (DART, Parker, New Horizons, Dragonfly) | scrape gallery page |
+| 6 | **CNSA / Roscosmos / ISRO / SpaceIL** mission pages | per-mission, language-specific | manual / scrape |
+| 7 | **Wikimedia Commons** (`commons.wikimedia.org/w/api.php`) | **failover only** when 1–6 miss or yield nothing usable | `action=query&list=search&srnamespace=6` |
+
+**Why agency-first matters:**
+- **Provenance integrity** — `image-provenance.json`'s `source_url` should point at the agency's canonical hosting, not a Wikimedia mirror that can be re-edited / removed
+- **Resolution** — NASA / JPL masters are usually 2× the dimensions of the Commons crop
+- **Captioning** — agency pages carry the authoritative caption, photographer, capture date; Commons inherits these but loses fidelity over revisions
+- **Credit chain** — `NASA / JPL-Caltech / Cornell University` is the agency's own attribution; Wikimedia summarises it as "NASA" and the walker-fallback then can't reconstruct the team
+
+**When Commons IS the right answer:**
+- The agency hosts only thumbnails (some JAXA pages)
+- The image is genuinely user-contributed (third-party photographs of launches)
+- The agency archive is offline / permanently dark (legacy Roscosmos pages)
+- All else fails — but **always note in the sidecar's `credit` field** that this is the Commons mirror, not the original
+
+Any new fetch script **must** implement this order. The reference implementation lives in `scripts/fetch-batch-2-mission-images.mjs` (NASA images-api primary, Commons failover); copy its `resolveSources()` shape rather than starting from `fetch-zero-image-entities.mjs` (Commons-only, predates this rule).
+
+---
+
 ## Flow — `mission_id` to rendered gallery
 
 ```

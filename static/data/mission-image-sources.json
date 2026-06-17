@@ -2034,5 +2034,438 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-15T14:27:07Z",
     "shared_with": "fleet-galleries/hayabusa"
+  },
+  "opportunity/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-03pd2090",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-03pd2090/KSC-03pd2090~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:20Z",
+    "nasa_id": "KSC-03pd2090",
+    "nasa_title": "Delta II Heavy launch of \"Opportunity\" MER-B Rover"
+  },
+  "opportunity/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA22074",
+    "image_url": "http://images-assets.nasa.gov/image/PIA22074/PIA22074~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:25Z",
+    "nasa_id": "PIA22074",
+    "nasa_title": "View From Within 'Perseverance Valley' on Mars"
+  },
+  "opportunity/03": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Victoria%20crater%20from%20HiRise.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20crater%20from%20HiRise.jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:11:27Z",
+    "commons_file": "Victoria crater from HiRise.jpg"
+  },
+  "opportunity/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA03691",
+    "image_url": "http://images-assets.nasa.gov/image/PIA03691/PIA03691~orig.jpg",
+    "credit": "NASA/JPL/Malin Space Science Systems",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:30Z",
+    "nasa_id": "PIA03691",
+    "nasa_title": "2 Years on Mars! Meridiani Planum Features Investigated by the Rover,   Opportunity"
+  },
+  "opportunity/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA17759",
+    "image_url": "http://images-assets.nasa.gov/image/PIA17759/PIA17759~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:33Z",
+    "nasa_id": "PIA17759",
+    "nasa_title": "Self-Portrait by Opportunity Mars Rover in January 2014"
+  },
+  "spirit/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-03pd2093",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-03pd2093/KSC-03pd2093~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:37Z",
+    "nasa_id": "KSC-03pd2093",
+    "nasa_title": "KENNEDY SPACE CENTER, FLA. - On Launch Complex 17-B, Cape Canaveral Air Force Station, the Delta II Heavy launch vehicle carrying the rover \"Opportunity\" for the second Mars Exploration Rover mission launches at 11:18:15 p.m. EDT.  Opportunity will reach Mars on Jan. 25, 2004. Together the two MER rovers, Spirit (launched June 10) and Opportunity, seek to determine the history of climate and water at two sites on Mars where conditions may once have been favorable to life. The rovers are identical. They will navigate themselves around obstacles as they drive across the Martian surface, traveling up to about 130 feet each Martian day.  Each rover carries five scientific instruments including a panoramic camera and microscope, plus a rock abrasion tool that will grind away the outer surfaces of rocks to expose their interiors for examination. Each rover’s prime mission is planned to last three months on Mars."
+  },
+  "spirit/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA03250",
+    "image_url": "http://images-assets.nasa.gov/image/PIA03250/PIA03250~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Cornell",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:40Z",
+    "nasa_id": "PIA03250",
+    "nasa_title": "Sweeping View of the Columbia"
+  },
+  "spirit/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA17760",
+    "image_url": "http://images-assets.nasa.gov/image/PIA17760/PIA17760~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Cornell Univ.",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:42Z",
+    "nasa_id": "PIA17760",
+    "nasa_title": "NASA Mars Rover Spirit View Southward from Husband Hill"
+  },
+  "spirit/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA16442",
+    "image_url": "http://images-assets.nasa.gov/image/PIA16442/PIA16442~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Cornell Univ./Arizona State Univ.",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:50Z",
+    "nasa_id": "PIA16442",
+    "nasa_title": "Spirit Mars Rover in McMurdo Panorama, Polar Projection"
+  },
+  "spirit/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA03230",
+    "image_url": "http://images-assets.nasa.gov/image/PIA03230/PIA03230~orig.jpg",
+    "credit": "NASA/JPL-Solar System Visualization Team",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:53Z",
+    "nasa_id": "PIA03230",
+    "nasa_title": "Special-Effects Spirit in Columbia"
+  },
+  "mariner9/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA15090",
+    "image_url": "http://images-assets.nasa.gov/image/PIA15090/PIA15090~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:11:56Z",
+    "nasa_id": "PIA15090",
+    "nasa_title": "Mariner 9 View of Nirgal Vallis"
+  },
+  "mariner9/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA02999",
+    "image_url": "http://images-assets.nasa.gov/image/PIA02999/PIA02999~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:00Z",
+    "nasa_id": "PIA02999",
+    "nasa_title": "Mariner 9 views Olympus Mons standing above the Martian Dust Storm"
+  },
+  "mariner9/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA04003",
+    "image_url": "http://images-assets.nasa.gov/image/PIA04003/PIA04003~orig.jpg",
+    "credit": "NASA/JPL/Arizona State University",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:03Z",
+    "nasa_id": "PIA04003",
+    "nasa_title": "Mariner 9 Anniversary/Landslides on Mars Released 13 November 2002"
+  },
+  "mariner9/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA03100",
+    "image_url": "http://images-assets.nasa.gov/image/PIA03100/PIA03100~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:08Z",
+    "nasa_id": "PIA03100",
+    "nasa_title": "Mariner 9 views Ascraeus Lacus above the Martian Dust Storm"
+  },
+  "phoenix/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-07pd2076",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-07pd2076/KSC-07pd2076~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:12Z",
+    "nasa_id": "KSC-07pd2076",
+    "nasa_title": "KSC-07pd2076"
+  },
+  "phoenix/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA10666",
+    "image_url": "http://images-assets.nasa.gov/image/PIA10666/PIA10666~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:15Z",
+    "nasa_id": "PIA10666",
+    "nasa_title": "Phoenix Eases Down to Mars Artist Concept"
+  },
+  "phoenix/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA10906",
+    "image_url": "http://images-assets.nasa.gov/image/PIA10906/PIA10906~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona/Texas A&M University",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:17Z",
+    "nasa_id": "PIA10906",
+    "nasa_title": "Disappearing Ice"
+  },
+  "phoenix/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA11000",
+    "image_url": "http://images-assets.nasa.gov/image/PIA11000/PIA11000~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona/Max Planck Institute",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:19Z",
+    "nasa_id": "PIA11000",
+    "nasa_title": "Snow Queen Animation"
+  },
+  "phoenix/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA22223",
+    "image_url": "http://images-assets.nasa.gov/image/PIA22223/PIA22223~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Univ. of Arizona",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:22Z",
+    "nasa_id": "PIA22223",
+    "nasa_title": "NASA's Phoenix Lander on Mars, Nearly a Decade Later"
+  },
+  "magellan/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/S91-50688",
+    "image_url": "http://images-assets.nasa.gov/image/S91-50688/S91-50688~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:27Z",
+    "nasa_id": "S91-50688",
+    "nasa_title": "Global view of Venus from Magellan, Pioneer, and Venera data"
+  },
+  "magellan/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA00254",
+    "image_url": "http://images-assets.nasa.gov/image/PIA00254/PIA00254~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:30Z",
+    "nasa_id": "PIA00254",
+    "nasa_title": "Venus - 3-D Perspective View of Maat Mons"
+  },
+  "magellan/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA00089",
+    "image_url": "http://images-assets.nasa.gov/image/PIA00089/PIA00089~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:33Z",
+    "nasa_id": "PIA00089",
+    "nasa_title": "Venus - Eistla Region"
+  },
+  "magellan/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA00107",
+    "image_url": "http://images-assets.nasa.gov/image/PIA00107/PIA00107~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:36Z",
+    "nasa_id": "PIA00107",
+    "nasa_title": "Venus - 3-D Perspective View of Sapas Mons"
+  },
+  "magellan/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA00233",
+    "image_url": "http://images-assets.nasa.gov/image/PIA00233/PIA00233~orig.jpg",
+    "credit": "NASA/JPL",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:38Z",
+    "nasa_id": "PIA00233",
+    "nasa_title": "Venus - 3-D Perspective View of Eistla Regio"
+  },
+  "akatsuki/01": {
+    "source_type": "jaxa",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+    "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
+    "credit": "JAXA / Akihiro Ikeshita",
+    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
+    "fetched_at": "2026-06-17T09:54:37Z",
+    "agency_archive": true,
+    "label": "Akatsuki spacecraft (conceptual — orbit insertion 2015)"
+  },
+  "akatsuki/02": {
+    "source_type": "jaxa",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+    "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+    "credit": "JAXA / ISAS / DARTS",
+    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
+    "fetched_at": "2026-06-17T09:54:41Z",
+    "agency_archive": true,
+    "label": "Venus dayside UV (UVI, 2018 Mar 30)"
+  },
+  "akatsuki/03": {
+    "source_type": "jaxa",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+    "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180202_175611_283_365_l2b_v20180601_mod-thumb-1024x1024-3081.png",
+    "credit": "JAXA / ISAS / DARTS",
+    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
+    "fetched_at": "2026-06-17T09:54:44Z",
+    "agency_archive": true,
+    "label": "Venus dayside UV (UVI, 2018 Feb 02)"
+  },
+  "osiris-rex/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20160908-PH_SRJ02_0018",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20160908-PH_SRJ02_0018/KSC-20160908-PH_SRJ02_0018~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:12:51Z",
+    "nasa_id": "KSC-20160908-PH_SRJ02_0018",
+    "nasa_title": "OSIRIS-REx Liftoff"
+  },
+  "osiris-rex/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/NHQ202309240001",
+    "image_url": "http://images-assets.nasa.gov/image/NHQ202309240001/NHQ202309240001~orig.jpg",
+    "credit": "NASA / HQ",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:13:23Z",
+    "nasa_id": "NHQ202309240001",
+    "nasa_title": "OSIRIS-REx Sample Return"
+  },
+  "osiris-rex/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/NHQ202308300001",
+    "image_url": "http://images-assets.nasa.gov/image/NHQ202308300001/NHQ202308300001~orig.jpg",
+    "credit": "NASA / HQ",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:13:28Z",
+    "nasa_id": "NHQ202308300001",
+    "nasa_title": "OSIRIS-REx Sample Return Training"
+  },
+  "dart/01": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20211002-PH-DNQ01_0006",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20211002-PH-DNQ01_0006/KSC-20211002-PH-DNQ01_0006~orig.JPG",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:13:35Z",
+    "nasa_id": "KSC-20211002-PH-DNQ01_0006",
+    "nasa_title": "DART Spacecraft Arrival"
+  },
+  "dart/02": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:All%20dimorphos%20dart%200401930040%2012262%2001%20iof%20imagedisplay-final.png",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/All%20dimorphos%20dart%200401930040%2012262%2001%20iof%20imagedisplay-final.png?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:13:38Z",
+    "commons_file": "All dimorphos dart 0401930040 12262 01 iof imagedisplay-final.png"
+  },
+  "dart/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA25329",
+    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:13:41Z",
+    "nasa_id": "PIA25329",
+    "nasa_title": "NASA's DART at the Didymos System"
+  },
+  "dart/05": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Webb%2C%20Hubble%20Capture%20Detailed%20Views%20of%20DART%20Impact%20-%2052405448284.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Webb%2C%20Hubble%20Capture%20Detailed%20Views%20of%20DART%20Impact%20-%2052405448284.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:59:35Z",
+    "commons_file": "Webb, Hubble Capture Detailed Views of DART Impact - 52405448284.jpg"
+  },
+  "akatsuki/04": {
+    "source_type": "jaxa",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
+    "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20171016_093112_283_365_l2b_v20180601_mod-thumb-1024x1024-3077.png",
+    "credit": "JAXA / ISAS / DARTS",
+    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
+    "fetched_at": "2026-06-17T09:54:48Z",
+    "agency_archive": true,
+    "label": "Venus dayside UV (UVI, 2017 Oct 16)"
+  },
+  "osiris-rex/02": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BennuAsteroid.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BennuAsteroid.jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:15:27Z",
+    "commons_file": "BennuAsteroid.jpg"
+  },
+  "osiris-rex/03": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:OSIRIS-REx%20landing.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS-REx%20landing.jpg?width=1600",
+    "credit": "NASA / agency original via Wikimedia Commons mirror",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:15:30Z",
+    "commons_file": "OSIRIS-REx landing.jpg"
+  },
+  "akatsuki/05": {
+    "source_type": "jaxa",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+    "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/photo-spacecraft_05.jpg",
+    "credit": "JAXA / Akihiro Ikeshita",
+    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
+    "fetched_at": "2026-06-17T09:54:50Z",
+    "agency_archive": true,
+    "label": "Akatsuki observational instruments (illustration)"
+  },
+  "mariner9/04": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Phobos%20colour%202008.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos%20colour%202008.jpg?width=1600",
+    "credit": "ESA / DLR / FU Berlin (CC BY-SA 3.0 IGO)",
+    "license": "CC-BY-SA 3.0 IGO (Wikimedia Commons)",
+    "fetched_at": "2026-06-17T09:17:10Z",
+    "commons_file": "Phobos colour 2008.jpg"
+  },
+  "dart/04": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:DART%20Spacecraft%20Arrival%20(KSC-20211002-PH-DNQ01%200011).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/DART%20Spacecraft%20Arrival%20(KSC-20211002-PH-DNQ01%200011).jpg?width=1600",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:17:13Z",
+    "commons_file": "DART Spacecraft Arrival (KSC-20211002-PH-DNQ01 0011).jpg"
+  },
+  "psyche-mission/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20230715-PH-DAC01_0170",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20230715-PH-DAC01_0170/KSC-20230715-PH-DAC01_0170~orig.JPG",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:28:13Z",
+    "nasa_id": "KSC-20230715-PH-DAC01_0170",
+    "nasa_title": "Psyche Solar Array Arrival and Offload"
+  },
+  "psyche-mission/03": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/KSC-20230720-PH-ILW01_0023",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20230720-PH-ILW01_0023/KSC-20230720-PH-ILW01_0023~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:28:20Z",
+    "nasa_id": "KSC-20230720-PH-ILW01_0023",
+    "nasa_title": "NASA's Psyche Solar Array Integration"
+  },
+  "psyche-mission/04": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA21499",
+    "image_url": "http://images-assets.nasa.gov/image/PIA21499/PIA21499~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Arizona State Univ./Space Systems Loral/Peter Rubin",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:28:22Z",
+    "nasa_id": "PIA21499",
+    "nasa_title": "Artist's Concept of Psyche Spacecraft with Five-Panel Array"
+  },
+  "psyche-mission/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA24788",
+    "image_url": "http://images-assets.nasa.gov/image/PIA24788/PIA24788~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-17T09:28:26Z",
+    "nasa_id": "PIA24788",
+    "nasa_title": "Preparing Psyche's Thruster Installation"
   }
 }

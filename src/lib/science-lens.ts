@@ -94,3 +94,30 @@ export function onScienceLensChange(cb: (on: boolean) => void): (() => void) | u
   obs.observe(r, { attributes: true, attributeFilter: [ATTR] });
   return () => obs.disconnect();
 }
+
+/**
+ * Subscribe to availability changes (route mount/unmount). Same shape
+ * as `onScienceLensChange` — fires once with initial state, then on
+ * every flip via a MutationObserver on the AVAIL_ATTR attribute on
+ * <html>. Used by Nav to set the lens-toggle button's `disabled` state
+ * on routes that don't surface lens content (2026-06-17 user direction:
+ * "can we also disable science button in the same way when not being
+ * able to be used"). Mirrors the gear-toggle's
+ * settingsState.available wiring.
+ */
+export function onScienceLensAvailableChange(
+  cb: (available: boolean) => void,
+): (() => void) | undefined {
+  const r = root();
+  if (!r) return undefined;
+  cb(r.hasAttribute(AVAIL_ATTR));
+  const obs = new MutationObserver((mutations) => {
+    for (const mut of mutations) {
+      if (mut.type === 'attributes' && mut.attributeName === AVAIL_ATTR) {
+        cb(r.hasAttribute(AVAIL_ATTR));
+      }
+    }
+  });
+  obs.observe(r, { attributes: true, attributeFilter: [AVAIL_ATTR] });
+  return () => obs.disconnect();
+}

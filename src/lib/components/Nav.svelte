@@ -4,7 +4,11 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
-  import { onScienceLensChange, toggleScienceLens } from '$lib/science-lens';
+  import {
+    onScienceLensAvailableChange,
+    onScienceLensChange,
+    toggleScienceLens,
+  } from '$lib/science-lens';
   import {
     settingsState,
     toggleSettingsOpen,
@@ -62,12 +66,26 @@
   // per-route style blocks.
   let scienceLens = $state(false);
   let stopLensWatch: (() => void) | undefined;
+  // Availability: true when a ScienceLayersPanel is mounted on the
+  // current route (it sets <html data-science-lens-available> via
+  // markScienceLensAvailable). Gates the lens-toggle's `disabled`
+  // attribute so the button reads as inert on routes without lens
+  // content — same affordance as the new settings-toggle on routes
+  // that don't surface graphics settings (2026-06-17).
+  let scienceLensAvailable = $state(false);
+  let stopLensAvailWatch: (() => void) | undefined;
   onMount(() => {
     stopLensWatch = onScienceLensChange((v) => {
       scienceLens = v;
     });
+    stopLensAvailWatch = onScienceLensAvailableChange((v) => {
+      scienceLensAvailable = v;
+    });
   });
-  onDestroy(() => stopLensWatch?.());
+  onDestroy(() => {
+    stopLensWatch?.();
+    stopLensAvailWatch?.();
+  });
 
   function onToggleLens() {
     toggleScienceLens();
@@ -180,9 +198,15 @@
       class="lens-toggle"
       data-audio-stage="science-lens-toggle"
       class:active={scienceLens}
-      aria-label={m.nav_science_lens_aria()}
+      disabled={!scienceLensAvailable}
+      aria-disabled={!scienceLensAvailable}
+      aria-label={scienceLensAvailable
+        ? m.nav_science_lens_aria()
+        : `${m.nav_science_lens_aria()} (unavailable on this page)`}
       aria-pressed={scienceLens}
-      title={m.nav_science_lens_title()}
+      title={scienceLensAvailable
+        ? m.nav_science_lens_title()
+        : `${m.nav_science_lens_title()} (unavailable on this page)`}
       onclick={onToggleLens}
     >
       <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
@@ -483,6 +507,18 @@
     background: rgba(255, 200, 80, 0.18);
     border-color: rgba(255, 200, 80, 0.65);
     color: #ffc850;
+  }
+  /* Disabled state — matches the settings-toggle disabled chrome
+     (2026-06-17 user direction: "can we also disable science button
+     in the same way when not being able to be used"). The button
+     still exists in the DOM and gets focused for screen-reader users,
+     but :disabled blocks the click + dims the chrome so it reads as
+     "not actionable here" instead of "actionable but does nothing"
+     — same UX as the gear toggle on non-3D routes. */
+  .lens-toggle:disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Graphics-settings ⚙ toggle. Same chrome family as the lens +

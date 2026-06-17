@@ -592,7 +592,11 @@
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}
-    <ul class="grid" data-audio-stage="missions-grid" aria-label={m.missions_grid_aria()}>
+    <ul
+      class="grid entity-card-grid"
+      data-audio-stage="missions-grid"
+      aria-label={m.missions_grid_aria()}
+    >
       {#each filtered as mission (mission.id)}
         <li class="card-li">
           <button
@@ -965,222 +969,12 @@
     }
   }
 
-  /* Card list-item wrapper — `height: 100%` makes the wrapper fill its
-   * grid cell (which is row-height = tallest item per row, by CSS Grid
-   * default). Without it the wrapper sizes to its content, and adjacent
-   * cards in the same row appear at different heights when one has
-   * more text than another. Issue #225. */
-  .card-li {
-    position: relative;
-    height: 100%;
-  }
-
-  .card {
-    width: 100%;
-    /* Fill the .card-li wrapper, which itself fills the grid cell.
-     * Equal-height cards across the row regardless of text length. */
-    height: 100%;
-    text-align: left;
-    background: rgba(10, 10, 22, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 8px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 4px 1fr;
-    grid-template-rows: auto 1fr;
-    cursor: pointer;
-    color: inherit;
-    font-family: inherit;
-    transition:
-      border-color 0.2s,
-      transform 0.15s,
-      box-shadow 0.2s;
-    min-height: 44px;
-  }
-  .card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-  .card:focus-visible {
-    outline: 2px solid var(--accent, #4466ff);
-    outline-offset: 2px;
-  }
-  .card.selected {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgb(from var(--accent) r g b / 0.2);
-  }
-  .card-accent {
-    background: var(--accent);
-    grid-row: 1 / span 2;
-  }
-  .card-photo {
-    grid-column: 2;
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    position: relative;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  }
-  /* Hero-missing placeholder — mirrors /fleet so missions without
-     sourced hero imagery degrade to a soft gradient instead of a
-     broken-image icon. .cover-missing class added by the <img>
-     onerror handler. */
-  .card-photo.cover-missing {
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
-  }
-  .card-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  :global(.card-photo.cover-missing .card-cover) {
-    display: none;
-  }
-  .card:hover .card-photo img {
-    transform: scale(1.04);
-  }
-  .card-body {
-    grid-column: 2;
-    padding: 12px 14px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .card-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
-  .agency-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .agency-logo {
-    height: 14px;
-    width: auto;
-    max-width: 18px;
-    object-fit: contain;
-    /* White-tint the SVG so dark logos remain legible against the
-       coloured agency badge background. CSS filter avoids needing a
-       per-agency variant. */
-    filter: brightness(0) invert(1);
-    opacity: 0.95;
-  }
-  .card-status {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    border: 1px solid;
-  }
-  .status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
-  }
-  .status-flown {
-    /* Was 0.5 — bumped to 0.7 (F3) so the 7 px FLOWN badge clears
-       WCAG AA against the card background. */
-    color: rgba(255, 255, 255, 0.7);
-    border-color: rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.03);
-  }
-  .status-planned {
-    /* Was #4466ff — bumped to #7b96ff (F3) so the 7 px PLANNED badge
-       clears WCAG AA on the dark card background. Same blue family,
-       lighter step. */
-    color: #7b96ff;
-    border-color: rgba(123, 150, 255, 0.45);
-    background: rgba(68, 102, 255, 0.1);
-  }
-
-  /* Flight-data quality badge (v0.1.13). Sits next to .card-status
-   * inside .card-head. Same visual scale; semantic colour scheme. */
-  .card-quality {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 6px;
-    border-radius: 3px;
-    border: 1px solid;
-  }
-  .quality-measured {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.35);
-    background: rgba(78, 205, 196, 0.06);
-  }
-  .quality-sparse {
-    color: #ffc850;
-    border-color: rgba(255, 200, 80, 0.4);
-    background: rgba(255, 200, 80, 0.08);
-  }
-  .quality-reconstructed {
-    color: #ff9966;
-    border-color: rgba(255, 153, 102, 0.4);
-    background: rgba(255, 153, 102, 0.08);
-  }
-  .quality-unknown {
-    color: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .card-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: #fff;
-    line-height: 1;
-    margin: 0;
-  }
-  .card-type {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    /* Was 0.4 — bumped to 0.7 (F3) to clear AA on 7 px caption text. */
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-  }
-  .card-meta {
-    display: flex;
-    gap: 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 1px;
-    /* Was 0.3 — bumped to 0.65 (F3) for the 8 px year/dest meta-row. */
-    color: rgba(255, 255, 255, 0.65);
-  }
-  .card-dest {
-    max-width: 12ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .card-first {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
-    margin: 0;
-  }
+  /* Card chrome (.card, .card-photo, .card-body, .card-head,
+     .agency-badge, .card-status, .card-quality, .card-name, .card-type,
+     .card-meta, .card-dest, .card-first, plus interactive states) lives
+     in src/lib/styles/entity-card-grid.css and is opted into by the
+     `entity-card-grid` class on `<ul class="grid entity-card-grid">`.
+     Shared with /fleet so the two routes can't visually drift again. */
 
   .loading,
   .empty {

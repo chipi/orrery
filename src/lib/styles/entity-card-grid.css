@@ -1,0 +1,262 @@
+/*
+ * Entity-card grid — shared card chrome for /missions + /fleet (v0.1.x)
+ *
+ * Both routes render a grid of clickable cards with the same visual
+ * grammar: agency badge + status pill in a header, large display-font
+ * name, optional caption, optional meta row, optional one-line tagline.
+ *
+ * Used by:
+ *   - /missions (route-data: id, name, agency, status, year, dest,
+ *     flight_data_quality, "first" tagline)
+ *   - /fleet (route-data: id, name, agency, status, year, country,
+ *     category, tagline)
+ *
+ * Data fields differ (year+dest vs year+country, quality badge only on
+ * missions) so the markup is route-local — but everything visual is
+ * shared here. Drift between the two routes is what motivated the
+ * 2026-06-17 extraction (user: "fleet cards are not the same as
+ * mission ones... I want mission and fleet pages to look the same...
+ * ideally we reuse same styles across these 2 pages and not have
+ * separate ones").
+ *
+ * Scope: rules are wrapped in `.entity-card-grid` so the unprefixed
+ * `.card`, `.card-photo`, etc. don't collide with the many other
+ * `.card` usages elsewhere (home hero, LaunchesBanner, dev showcase).
+ * Add `entity-card-grid` as a sibling class on the grid <ul> to opt
+ * in: `<ul class="grid entity-card-grid">`.
+ *
+ * Loaded once via src/lib/styles/app.css.
+ */
+
+.entity-card-grid .card-li {
+  position: relative;
+  height: 100%;
+}
+
+.entity-card-grid .card {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background: rgba(10, 10, 22, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  grid-template-rows: auto 1fr;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  padding: 0;
+  transition:
+    border-color 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  min-height: 44px;
+}
+.entity-card-grid .card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.entity-card-grid .card:focus-visible {
+  outline: 2px solid var(--accent, #4466ff);
+  outline-offset: 2px;
+}
+.entity-card-grid .card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgb(from var(--accent) r g b / 0.2);
+}
+
+.entity-card-grid .card-accent {
+  background: var(--accent);
+  grid-row: 1 / span 2;
+}
+
+.entity-card-grid .card-photo {
+  grid-column: 2;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+/* Hero-missing placeholder — degrade to a soft gradient instead of a
+   broken-image icon. .cover-missing class added by the <img> onerror
+   handler. */
+.entity-card-grid .card-photo.cover-missing {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
+}
+.entity-card-grid .card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.entity-card-grid .card-photo.cover-missing .card-cover {
+  display: none;
+}
+.entity-card-grid .card:hover .card-photo img {
+  transform: scale(1.04);
+}
+
+.entity-card-grid .card-body {
+  grid-column: 2;
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.entity-card-grid .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.entity-card-grid .agency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.entity-card-grid .agency-logo {
+  height: 14px;
+  width: auto;
+  max-width: 18px;
+  object-fit: contain;
+  /* White-tint dark logos so they remain legible against the coloured
+     agency badge background. CSS filter avoids per-agency variants. */
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.entity-card-grid .card-status {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+/* Status palette — WCAG-AA tuned at 7 px caption size (was originally
+   stronger 0.55/0.12 fleet values; missions had already dialled down
+   to 0.4/0.08 to clear AA). One canonical palette for both routes. */
+.entity-card-grid .card-status.status-active {
+  color: #4ecdc4;
+  border-color: rgba(78, 205, 196, 0.4);
+  background: rgba(78, 205, 196, 0.08);
+}
+.entity-card-grid .card-status.status-flown {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+}
+.entity-card-grid .card-status.status-retired {
+  color: #ffc850;
+  border-color: rgba(255, 200, 80, 0.4);
+  background: rgba(255, 200, 80, 0.08);
+}
+.entity-card-grid .card-status.status-failed {
+  color: #ff9966;
+  border-color: rgba(255, 153, 102, 0.4);
+  background: rgba(255, 153, 102, 0.08);
+}
+.entity-card-grid .card-status.status-planned {
+  color: #7b96ff;
+  border-color: rgba(123, 150, 255, 0.45);
+  background: rgba(68, 102, 255, 0.1);
+}
+.entity-card-grid .card-status.status-lost {
+  color: #ff9966;
+  border-color: rgba(255, 153, 102, 0.4);
+  background: rgba(255, 153, 102, 0.08);
+}
+
+/* Flight-data quality badge (missions only; fleet entries don't carry
+   the field). Sits next to .card-status inside .card-head. Same visual
+   scale; semantic colour scheme. Routes that don't use this class just
+   never emit the markup — the rules cost nothing if no element
+   matches. */
+.entity-card-grid .card-quality {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.entity-card-grid .card-quality.quality-measured {
+  color: #4ecdc4;
+  border-color: rgba(78, 205, 196, 0.35);
+  background: rgba(78, 205, 196, 0.06);
+}
+.entity-card-grid .card-quality.quality-sparse {
+  color: #ffc850;
+  border-color: rgba(255, 200, 80, 0.4);
+  background: rgba(255, 200, 80, 0.08);
+}
+.entity-card-grid .card-quality.quality-reconstructed {
+  color: #ff9966;
+  border-color: rgba(255, 153, 102, 0.4);
+  background: rgba(255, 153, 102, 0.08);
+}
+.entity-card-grid .card-quality.quality-unknown {
+  color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.entity-card-grid .card-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1;
+  margin: 0;
+}
+.entity-card-grid .card-type {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+.entity-card-grid .card-meta {
+  display: flex;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+/* Secondary meta cells — destination on /missions, country on /fleet.
+   Both ellipsize at ~13ch so the row stays single-line and the
+   primary year cell never wraps. */
+.entity-card-grid .card-dest,
+.entity-card-grid .card-country {
+  max-width: 13ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.entity-card-grid .card-first {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}

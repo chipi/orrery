@@ -1,6 +1,7 @@
 @import './fonts.css';
 @import './tokens.css';
 @import './panel-tabs.css';
+@import './entity-card-grid.css';
 
 * {
   box-sizing: border-box;

@@ -501,7 +501,11 @@
         {/each}
       </ul>
     {:else}
-      <ul class="fleet-grid" data-audio-stage="fleet-grid" aria-label="Fleet card grid">
+      <ul
+        class="fleet-grid entity-card-grid"
+        data-audio-stage="fleet-grid"
+        aria-label="Fleet card grid"
+      >
         {#each filtered as entry (entry.id)}
           {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}
           {@const cardLogo = logoFor(primaryAgency)}
@@ -833,176 +837,12 @@
     contain-intrinsic-size: auto 280px;
   }
 
-  /* Card grid — visually identical to /missions per route-parity directive. */
-  .card-li {
-    position: relative;
-    /* `height: 100%` makes the wrapper fill its grid cell (which is
-     * row-height = tallest item per row, by CSS Grid default). Without
-     * it, cards in the same row appear at different heights when one
-     * has more text than another. Issue #225. */
-    height: 100%;
-  }
-  .card {
-    width: 100%;
-    /* Fill the .card-li wrapper, which itself fills the grid cell.
-     * Equal-height cards across the row regardless of text length. */
-    height: 100%;
-    text-align: left;
-    background: rgba(10, 10, 22, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 8px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 4px 1fr;
-    grid-template-rows: auto 1fr;
-    cursor: pointer;
-    color: inherit;
-    font-family: inherit;
-    transition:
-      border-color 0.2s,
-      transform 0.15s,
-      box-shadow 0.2s;
-    min-height: 44px;
-    padding: 0;
-  }
-  .card:hover {
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-1px);
-  }
-  .card-accent {
-    background: var(--accent);
-    grid-row: 1 / span 2;
-  }
-  .card-photo {
-    grid-column: 2;
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    position: relative;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  }
-  .card-photo.cover-missing {
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
-  }
-  .card-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  :global(.card-photo.cover-missing .card-cover) {
-    display: none;
-  }
-
-  .card-body {
-    grid-column: 2;
-    padding: 12px 14px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .card-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
-  .agency-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .agency-logo {
-    height: 14px;
-    width: auto;
-    max-width: 18px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.95;
-  }
-  .card-status {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    border: 1px solid;
-  }
-  .card-status.status-active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.12);
-  }
-  .card-status.status-flown {
-    color: #4b9cd3;
-    border-color: rgba(75, 156, 211, 0.55);
-    background: rgba(75, 156, 211, 0.12);
-  }
-  .card-status.status-retired {
-    color: #ffc850;
-    border-color: rgba(255, 200, 80, 0.55);
-    background: rgba(255, 200, 80, 0.12);
-  }
-  .card-status.status-failed {
-    color: #ff6b3a;
-    border-color: rgba(193, 68, 14, 0.7);
-    background: rgba(193, 68, 14, 0.18);
-  }
-  .card-status.status-planned {
-    color: rgba(255, 255, 255, 0.78);
-    border-color: rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.06);
-  }
-
-  .card-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: #fff;
-    line-height: 1;
-    margin: 0;
-  }
-  .card-type {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
-    margin: 0;
-  }
-  .card-meta {
-    display: flex;
-    gap: 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.3);
-  }
-  .card-country {
-    max-width: 14ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .card-first {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
-    margin: 0;
-  }
+  /* Card chrome (.card, .card-photo, .card-body, .card-head,
+     .agency-badge, .card-status, .card-name, .card-type, .card-meta,
+     .card-country, .card-first, plus interactive states) lives in
+     src/lib/styles/entity-card-grid.css and is opted into by the
+     `entity-card-grid` class on `<ul class="fleet-grid entity-card-grid">`.
+     Shared with /missions so the two routes can't visually drift again. */
 
   .fleet-list {
     list-style: none;
@@ -1087,7 +927,10 @@
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 10px;
     }
-    .card-name {
+    /* Fleet-specific mobile shrink — selector tightened to .fleet-grid
+       so Svelte's scoped-CSS specificity wins over the shared
+       entity-card-grid.css default of 22 px. */
+    .fleet-grid .card-name {
       font-size: 18px;
     }
     .list-row {

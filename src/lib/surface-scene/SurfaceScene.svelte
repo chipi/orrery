@@ -566,7 +566,7 @@
   // hidden until the user manually drags the moon — issue #227).
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
-  let faceCameraAtSite: ((site: SurfaceSite) => void) | undefined;
+  let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
@@ -968,7 +968,7 @@
     // (ADR-072 §Drift 14 consolidation — Moon adopts the smoother UX).
     // RAF interpolates camP/camT/camR over FLY_DURATION_MS with ease-
     // out cubic. User drag cancels mid-flight.
-    faceCameraAtSite = (site: SurfaceSite) => {
+    faceCameraAtSite = (site: SurfaceSite, targetR = 50) => {
       if (site.lat == null || site.lon == null) return;
       const v = latLonToUnitSphere(site.lat, site.lon);
       planetMesh.updateMatrixWorld(true);
@@ -991,9 +991,15 @@
       while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
       while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
       flyToT = to;
-      // Land at a Tier-1-friendly distance (50u) so the lander model
-      // resolves; user can scroll-zoom further to reach Tier 2.
-      flyToR = 50;
+      // Default 50u — Tier-1-friendly distance so the lander model
+      // resolves on a fresh marker-click. The detail-panel Approach
+      // button overrides with a higher value (~85u) so clicking
+      // Approach after a marker-click — when the camera is already at
+      // 50 — actually goes somewhere instead of a no-op tween
+      // (2026-06-17 user report: "approach button on all 3 pages on
+      // details panel is not working" — the tween was running but
+      // start = end so nothing visible happened).
+      flyToR = targetR;
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
@@ -4407,7 +4413,7 @@ sample      ${debugInfo.projectedPxSample}`}
             type="button"
             class="site-cta"
             data-testid="approach-site"
-            onclick={() => selected && faceCameraAtSite?.(selected)}
+            onclick={() => selected && faceCameraAtSite?.(selected, 85)}
             title="Approach — fly to an overhead view of this site"
           >
             <span class="icon" aria-hidden="true">↧</span>

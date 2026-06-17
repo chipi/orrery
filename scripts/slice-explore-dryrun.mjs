@@ -8,7 +8,7 @@
 // is a per-slot proposal JSON consumed by slice-explore-vision.mjs +
 // slice-explore-apply.mjs.
 
-import { readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 
 process.loadEnvFile?.();

@@ -11,7 +11,7 @@
 // Commons failover); broader queries + explicit `prefer` filename
 // hints when we know the PIA / Commons file we want.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import sharp from 'sharp';
 
 const UA =
@@ -23,25 +23,43 @@ const SURFACE = 'missions';
 const SIDECAR_PATH = 'static/data/mission-image-sources.json';
 
 const SLOTS = [
-  { id: 'mariner9/04',  label: 'Phobos (first close-up)',
+  {
+    id: 'mariner9/04',
+    label: 'Phobos (first close-up)',
     nasaQuery: 'Phobos Mars Mariner 9 1971',
-    commonsQuery: 'Phobos Mars Mariner 9' },
-  { id: 'akatsuki/04',  label: 'Venus polar vortex (Akatsuki LIR)',
+    commonsQuery: 'Phobos Mars Mariner 9',
+  },
+  {
+    id: 'akatsuki/04',
+    label: 'Venus polar vortex (Akatsuki LIR)',
     nasaQuery: null,
-    commonsQuery: 'Akatsuki Venus polar vortex' },
-  { id: 'akatsuki/05',  label: 'H-IIA F17 launch (Akatsuki, 2010)',
+    commonsQuery: 'Akatsuki Venus polar vortex',
+  },
+  {
+    id: 'akatsuki/05',
+    label: 'H-IIA F17 launch (Akatsuki, 2010)',
     nasaQuery: null,
-    commonsQuery: 'H-IIA F17 launch Tanegashima' },
-  { id: 'dart/04',      label: 'DART spacecraft (hardware portrait)',
+    commonsQuery: 'H-IIA F17 launch Tanegashima',
+  },
+  {
+    id: 'dart/04',
+    label: 'DART spacecraft (hardware portrait)',
     nasaQuery: 'DART spacecraft hardware assembled',
-    commonsQuery: 'DART NASA spacecraft assembly' },
-  { id: 'osiris-rex/02', label: 'Bennu mosaic (full disk, real photo)',
+    commonsQuery: 'DART NASA spacecraft assembly',
+  },
+  {
+    id: 'osiris-rex/02',
+    label: 'Bennu mosaic (full disk, real photo)',
     nasaQuery: 'Bennu OSIRIS-REx PolyCam mosaic',
     commonsQuery: 'Bennu asteroid PolyCam mosaic',
-    preferCommonsFile: '101955_Bennu.jpg' },
-  { id: 'osiris-rex/03', label: 'TAG event (sample arm contact)',
+    preferCommonsFile: '101955_Bennu.jpg',
+  },
+  {
+    id: 'osiris-rex/03',
+    label: 'TAG event (sample arm contact)',
     nasaQuery: 'OSIRIS-REx TAG arm Bennu sample',
-    commonsQuery: 'OSIRIS-REx SamCam TAG Bennu' },
+    commonsQuery: 'OSIRIS-REx SamCam TAG Bennu',
+  },
 ];
 
 // ── NASA ──────────────────────────────────────────────────────────
@@ -178,7 +196,12 @@ async function downloadAndProcess(imageUrl, dir, slot) {
   const { width: W, height: H } = meta;
   const side = Math.min(W, H);
   await sharp(baseJpg)
-    .extract({ left: Math.round((W - side) / 2), top: Math.round((H - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((W - side) / 2),
+      top: Math.round((H - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 90 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
 }

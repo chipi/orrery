@@ -1,0 +1,279 @@
+{
+  "agency": "Northrop Grumman",
+  "totals": {
+    "tier1_upgrade": 10,
+    "tier2_upgrade": 0,
+    "no_change": 2,
+    "miss": 0,
+    "vision_passed": 5,
+    "vision_flagged": 0,
+    "vision_unsure": 7
+  },
+  "candidate_count": 12,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "antares",
+      "slot": "01",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/antares/01.jpg",
+      "query": "antares",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/NG14ROLLOUTpb2/NG14ROLLOUTpb2~orig.jpg",
+        "credit": "NASA / GSFC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This shows a Cygnus cargo spacecraft (Northrop Grumman vehicle) undergoing ground processing with its distinctive dual-engine nozzles and cylindrical cargo module visible, consistent with Antares miss"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "antares",
+      "slot": "02",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/antares/02.jpg",
+      "query": "antares",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/NG14ROLLOUTpb2/NG14ROLLOUTpb2~orig.jpg",
+        "credit": "NASA / GSFC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This shows a Cygnus cargo spacecraft (Northrop Grumman's vehicle for Antares missions) undergoing ground processing with visible docking adapters and life support umbilicals in a NASA facility."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "antares",
+      "slot": "03",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/antares/03.jpg",
+      "query": "antares",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/NG14ROLLOUTpb2/NG14ROLLOUTpb2~orig.jpg",
+        "credit": "NASA / GSFC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This shows a Cygnus cargo spacecraft (Antares's payload) undergoing ground processing with support equipment in what appears to be a NASA/Northrop Grumman facility."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "antares",
+      "slot": "04",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/antares/04.jpg",
+      "query": "antares",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/NG14ROLLOUTpb2/NG14ROLLOUTpb2~orig.jpg",
+        "credit": "NASA / GSFC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This shows a Cygnus cargo spacecraft (Antares program hardware) undergoing ground processing/assembly with distinctive dual engines and support equipment visible in a NASA facility."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "antares",
+      "slot": "05",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/antares/05.jpg",
+      "query": "antares",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/NG14ROLLOUTpb2/NG14ROLLOUTpb2~orig.jpg",
+        "credit": "NASA / GSFC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This shows a Cygnus cargo spacecraft (Northrop Grumman vehicle used for Antares missions) undergoing ground processing/integration in a facility, which is mission hardware documentation."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-enhanced",
+      "slot": "01",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cygnus-enhanced/01.jpg",
+      "query": "cygnus enhanced",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Enhanced%20Cygnus%20-%20Drawing.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-enhanced",
+      "slot": "02",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cygnus-enhanced/02.jpg",
+      "query": "cygnus enhanced",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Enhanced%20Cygnus%20-%20Drawing.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-standard",
+      "slot": "01",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cygnus-standard/01.jpg",
+      "query": "cygnus standard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-standard",
+      "slot": "02",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cygnus-standard/02.jpg",
+      "query": "cygnus standard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-standard",
+      "slot": "03",
+      "agency": "Northrop Grumman",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cygnus-standard/03.jpg",
+      "query": "cygnus standard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-standard",
+      "slot": "04",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cygnus-standard/04.jpg",
+      "query": "cygnus standard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cygnus-standard",
+      "slot": "05",
+      "agency": "Northrop Grumman",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cygnus-standard/05.jpg",
+      "query": "cygnus standard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    }
+  ]
+}

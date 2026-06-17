@@ -1,0 +1,1165 @@
+{
+  "agency": "USSF",
+  "totals": {
+    "tier1_upgrade": 5,
+    "tier2_upgrade": 0,
+    "no_change": 38,
+    "miss": 17,
+    "vision_passed": 0,
+    "vision_flagged": 5,
+    "vision_unsure": 38
+  },
+  "candidate_count": 60,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "01",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/01.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "02",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/02.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "03",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/03.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "04",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/04.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "05",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/05.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gps-gnss",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gps-gnss/01.jpg",
+      "query": "gps gnss",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gps-gnss",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gps-gnss/02.jpg",
+      "query": "gps gnss",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gps-gnss",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gps-gnss/03.jpg",
+      "query": "gps gnss",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gps-gnss",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gps-gnss/04.jpg",
+      "query": "gps gnss",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gps-gnss",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gps-gnss/05.jpg",
+      "query": "gps gnss",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sbirs-heo",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/sbirs-heo/01.jpg",
+      "query": "sbirs heo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS-GEO.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sbirs-heo",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/sbirs-heo/02.jpg",
+      "query": "sbirs heo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS-GEO.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sbirs-heo",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/sbirs-heo/03.jpg",
+      "query": "sbirs heo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS-GEO.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sbirs-heo",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sbirs-heo/04.jpg",
+      "query": "sbirs heo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sbirs-heo",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sbirs-heo/05.jpg",
+      "query": "sbirs heo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "01",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/01.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "02",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/02.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "03",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/03.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "04",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/04.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "05",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/05.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "x37b",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/x37b/01.jpg",
+      "query": "x 37 b",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/EC00-0198-2/EC00-0198-2~orig.jpg",
+        "credit": "NASA / AFRC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows commercial and military transport aircraft at an airport, not the X-37B spacecraft or its mission hardware."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "x37b",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/x37b/02.jpg",
+      "query": "x 37 b",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/EC00-0198-2/EC00-0198-2~orig.jpg",
+        "credit": "NASA / AFRC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows commercial and military transport aircraft at an airport, not the X-37B spaceplane or space-mission hardware."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "x37b",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/x37b/03.jpg",
+      "query": "x 37 b",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/EC00-0198-2/EC00-0198-2~orig.jpg",
+        "credit": "NASA / AFRC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows commercial and military transport aircraft on an airfield tarmac, not the X-37B spacecraft or its mission hardware."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "x37b",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/x37b/04.jpg",
+      "query": "x 37 b",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/EC00-0198-2/EC00-0198-2~orig.jpg",
+        "credit": "NASA / AFRC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is an airport tarmac photograph showing various aircraft including a C-130 Hercules and commercial airliners, with no X-37B spacecraft visible or depicted."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "x37b",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/x37b/05.jpg",
+      "query": "x 37 b",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/EC00-0198-2/EC00-0198-2~orig.jpg",
+        "credit": "NASA / AFRC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows various aircraft at an airfield including a C-130 Hercules and commercial airliners, with no X-37B spacecraft visible."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-1",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-1/01.jpg",
+      "query": "otv 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-1",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-1/02.jpg",
+      "query": "otv 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-1",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-1/03.jpg",
+      "query": "otv 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-1",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-1/04.jpg",
+      "query": "otv 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-1",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-1/05.jpg",
+      "query": "otv 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-2",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-2/01.jpg",
+      "query": "otv 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-2",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-2/02.jpg",
+      "query": "otv 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-2",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-2/03.jpg",
+      "query": "otv 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-2",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-2/04.jpg",
+      "query": "otv 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-2",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-2/05.jpg",
+      "query": "otv 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-3",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-3/01.jpg",
+      "query": "otv 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-3",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-3/02.jpg",
+      "query": "otv 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-3",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-3/03.jpg",
+      "query": "otv 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-3",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-3/04.jpg",
+      "query": "otv 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-3",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-3/05.jpg",
+      "query": "otv 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-4",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-4/01.jpg",
+      "query": "otv 4",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-4",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-4/02.jpg",
+      "query": "otv 4",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-4",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-4/03.jpg",
+      "query": "otv 4",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-4",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-4/04.jpg",
+      "query": "otv 4",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-4",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-4/05.jpg",
+      "query": "otv 4",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-5",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-5/01.jpg",
+      "query": "otv 5",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-5",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-5/02.jpg",
+      "query": "otv 5",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-5",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-5/03.jpg",
+      "query": "otv 5",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-5",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-5/04.jpg",
+      "query": "otv 5",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-5",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-5/05.jpg",
+      "query": "otv 5",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-6",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-6/01.jpg",
+      "query": "otv 6",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-6",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-6/02.jpg",
+      "query": "otv 6",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-6",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-6/03.jpg",
+      "query": "otv 6",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-6",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-6/04.jpg",
+      "query": "otv 6",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-6",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-6/05.jpg",
+      "query": "otv 6",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-7",
+      "slot": "01",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-7/01.jpg",
+      "query": "otv 7",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-7",
+      "slot": "02",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-7/02.jpg",
+      "query": "otv 7",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-7",
+      "slot": "03",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-7/03.jpg",
+      "query": "otv 7",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-7",
+      "slot": "04",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-7/04.jpg",
+      "query": "otv 7",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "otv-7",
+      "slot": "05",
+      "agency": "USSF",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/otv-7/05.jpg",
+      "query": "otv 7",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    }
+  ]
+}

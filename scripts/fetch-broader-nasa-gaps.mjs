@@ -35,40 +35,92 @@ const PLAN = [
     id: 'europa-clipper',
     surface: 'fleet-galleries',
     slots: [
-      { slot: '02', label: 'Falcon Heavy launch (2024)',     nasaQuery: 'Europa Clipper Falcon Heavy launch' },
-      { slot: '03', label: 'Spacecraft + solar arrays',      nasaQuery: 'Europa Clipper spacecraft solar arrays' },
-      { slot: '04', label: 'Europa flyby (concept)',         nasaQuery: 'Europa Clipper Europa flyby illustration' },
-      { slot: '05', label: 'Instrument layout',              nasaQuery: 'Europa Clipper instruments' },
+      {
+        slot: '02',
+        label: 'Falcon Heavy launch (2024)',
+        nasaQuery: 'Europa Clipper Falcon Heavy launch',
+      },
+      {
+        slot: '03',
+        label: 'Spacecraft + solar arrays',
+        nasaQuery: 'Europa Clipper spacecraft solar arrays',
+      },
+      {
+        slot: '04',
+        label: 'Europa flyby (concept)',
+        nasaQuery: 'Europa Clipper Europa flyby illustration',
+      },
+      { slot: '05', label: 'Instrument layout', nasaQuery: 'Europa Clipper instruments' },
     ],
   },
   {
     id: 'lucy',
     surface: 'fleet-galleries',
     slots: [
-      { slot: '02', label: 'Atlas V launch (2021)',          nasaQuery: 'Lucy spacecraft Atlas V launch 2021' },
-      { slot: '03', label: 'Spacecraft + solar arrays',      nasaQuery: 'Lucy spacecraft solar arrays Trojan' },
-      { slot: '04', label: 'Dinkinesh encounter (2023)',     nasaQuery: 'Lucy Dinkinesh asteroid' },
-      { slot: '05', label: 'Donaldjohanson encounter (2024)',nasaQuery: 'Lucy Donaldjohanson asteroid' },
+      {
+        slot: '02',
+        label: 'Atlas V launch (2021)',
+        nasaQuery: 'Lucy spacecraft Atlas V launch 2021',
+      },
+      {
+        slot: '03',
+        label: 'Spacecraft + solar arrays',
+        nasaQuery: 'Lucy spacecraft solar arrays Trojan',
+      },
+      { slot: '04', label: 'Dinkinesh encounter (2023)', nasaQuery: 'Lucy Dinkinesh asteroid' },
+      {
+        slot: '05',
+        label: 'Donaldjohanson encounter (2024)',
+        nasaQuery: 'Lucy Donaldjohanson asteroid',
+      },
     ],
   },
   {
     id: 'parker-solar-probe',
     surface: 'fleet-galleries',
     slots: [
-      { slot: '02', label: 'Delta IV Heavy launch (2018)',   nasaQuery: 'Parker Solar Probe Delta IV Heavy launch' },
-      { slot: '03', label: 'Spacecraft heat shield',         nasaQuery: 'Parker Solar Probe heat shield TPS' },
-      { slot: '04', label: 'Sun close approach (WISPR)',     nasaQuery: 'Parker Solar Probe WISPR Sun corona' },
-      { slot: '05', label: 'Spacecraft assembly',            nasaQuery: 'Parker Solar Probe spacecraft assembly' },
+      {
+        slot: '02',
+        label: 'Delta IV Heavy launch (2018)',
+        nasaQuery: 'Parker Solar Probe Delta IV Heavy launch',
+      },
+      {
+        slot: '03',
+        label: 'Spacecraft heat shield',
+        nasaQuery: 'Parker Solar Probe heat shield TPS',
+      },
+      {
+        slot: '04',
+        label: 'Sun close approach (WISPR)',
+        nasaQuery: 'Parker Solar Probe WISPR Sun corona',
+      },
+      {
+        slot: '05',
+        label: 'Spacecraft assembly',
+        nasaQuery: 'Parker Solar Probe spacecraft assembly',
+      },
     ],
   },
   {
     id: 'psyche-mission',
     surface: 'missions',
     slots: [
-      { slot: '02', label: 'Falcon Heavy launch (2023)',     nasaQuery: 'Psyche spacecraft Falcon Heavy launch' },
-      { slot: '03', label: 'Spacecraft + solar arrays',      nasaQuery: 'Psyche spacecraft solar arrays' },
-      { slot: '04', label: 'Psyche asteroid (concept)',      nasaQuery: 'Psyche asteroid illustration metal' },
-      { slot: '05', label: 'Hall thrusters / SEP',           nasaQuery: 'Psyche spacecraft Hall thruster' },
+      {
+        slot: '02',
+        label: 'Falcon Heavy launch (2023)',
+        nasaQuery: 'Psyche spacecraft Falcon Heavy launch',
+      },
+      {
+        slot: '03',
+        label: 'Spacecraft + solar arrays',
+        nasaQuery: 'Psyche spacecraft solar arrays',
+      },
+      {
+        slot: '04',
+        label: 'Psyche asteroid (concept)',
+        nasaQuery: 'Psyche asteroid illustration metal',
+      },
+      { slot: '05', label: 'Hall thrusters / SEP', nasaQuery: 'Psyche spacecraft Hall thruster' },
     ],
   },
 ];
@@ -185,7 +237,12 @@ async function downloadAndProcess(imageUrl, dir, slot) {
   const { width: W, height: H } = meta;
   const side = Math.min(W, H);
   await sharp(baseJpg)
-    .extract({ left: Math.round((W - side) / 2), top: Math.round((H - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((W - side) / 2),
+      top: Math.round((H - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 90 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
 }

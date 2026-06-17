@@ -1,0 +1,1308 @@
+{
+  "agency": "JAXA",
+  "totals": {
+    "tier1_upgrade": 15,
+    "tier2_upgrade": 4,
+    "no_change": 28,
+    "miss": 22,
+    "vision_passed": 13,
+    "vision_flagged": 2,
+    "vision_unsure": 32
+  },
+  "candidate_count": 69,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/akatsuki/01.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
+        "credit": "JAXA / Akihiro Ikeshita",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows a spacecraft with distinctive dual solar panels in an axial configuration and cylindrical body characteristic of Akatsuki, photographed in space near a celestial body, with JAXA credit vis"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/akatsuki/02.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a spacecraft image of Venus showing its thick cloud layers with characteristic atmospheric features, consistent with Akatsuki's primary mission objective to study Venus's atmosphere and cloud "
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/akatsuki/03.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180202_175611_283_365_l2b_v20180601_mod-thumb-1024x1024-3081.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a spacecraft image of Venus showing its thick cloud layers, consistent with Akatsuki's orbital imagery of the planet's atmosphere and cloud structure."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/akatsuki/04.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20171016_093112_283_365_l2b_v20180601_mod-thumb-1024x1024-3077.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution image of Venus showing its thick, featureless cloud-covered atmosphere, the type of imagery characteristically captured by Akatsuki's imaging instruments during its Venus orb"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/akatsuki/05.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/photo-spacecraft_05.jpg",
+        "credit": "JAXA / Akihiro Ikeshita",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is an educational graphic/diagram showing a spacecraft and various planetary bodies with beam illustrations, not substantive mission hardware or science imagery from Akatsuki."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "01",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/01.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "02",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/02.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "03",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/03.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "04",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/04.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "05",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/05.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h-iia",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h-iia/01.jpg",
+      "query": "h iia",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2022-06753.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h-iia",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h-iia/02.jpg",
+      "query": "h iia",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h-iia",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h-iia/03.jpg",
+      "query": "h iia",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h-iia",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h-iia/04.jpg",
+      "query": "h iia",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h-iia",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h-iia/05.jpg",
+      "query": "h iia",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h3",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h3/01.jpg",
+      "query": "h 3 launch vehicle",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/deliveryService?id=NASM-A19580114000-NASM2018-10158",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h3",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h3/02.jpg",
+      "query": "h 3 launch vehicle",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-A19770140000_AT_06122018_CU02.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h3",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h3/03.jpg",
+      "query": "h 3 launch vehicle",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-A20060281000_PS01.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h3",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h3/04.jpg",
+      "query": "h 3 launch vehicle",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "h3",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/h3/05.jpg",
+      "query": "h 3 launch vehicle",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa-2",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/hayabusa-2/01.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa-2",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/hayabusa-2/02.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa-2",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/hayabusa-2/03.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa-2",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hayabusa-2/04.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa-2",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hayabusa-2/05.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hayabusa",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hayabusa/01.jpg",
+      "query": "hayabusa",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hitomi",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/hitomi/01.jpg",
+      "query": "hitomi",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hitomi",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hitomi/02.jpg",
+      "query": "hitomi",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hitomi",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hitomi/03.jpg",
+      "query": "hitomi",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hitomi",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hitomi/04.jpg",
+      "query": "hitomi",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hitomi",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hitomi/05.jpg",
+      "query": "hitomi",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv-x",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv-x/01.jpg",
+      "query": "htv x",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv-x",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv-x/02.jpg",
+      "query": "htv x",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv-x",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv-x/03.jpg",
+      "query": "htv x",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv-x",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv-x/04.jpg",
+      "query": "htv x",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv-x",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv-x/05.jpg",
+      "query": "htv x",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv/01.jpg",
+      "query": "htv cargo spacecraft",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20HTV-X1%20cargo%20spacecraft%20from%20JAXA%20attached%20to%20the%20Harmony%20module%20(iss073e1193852).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv/02.jpg",
+      "query": "htv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv/03.jpg",
+      "query": "htv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv/04.jpg",
+      "query": "htv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "htv",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/htv/05.jpg",
+      "query": "htv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "01",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/01.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its distinctive solar panels and modules clearly visible in in-flight imagery."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "02",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/02.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its distinctive solar panels and truss structure clearly visible against the planet's surface."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "03",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/03.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its distinctive solar panels and truss structure clearly visible against the planet backdrop."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "04",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/04.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its distinctive solar arrays and truss structure clearly visible against the planet backdrop."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "05",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/05.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows the International Space Station in orbit above Earth with its distinctive solar panels and truss structure clearly visible against the planet backdrop."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "slim",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/slim/04.jpg",
+      "query": "slim lander",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "slim",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/slim/05.jpg",
+      "query": "slim lander",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tanegashima-yoshinobu",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tanegashima-yoshinobu/01.jpg",
+      "query": "tanegashima yoshinobu",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tanegashima-yoshinobu",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tanegashima-yoshinobu/02.jpg",
+      "query": "tanegashima yoshinobu",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tanegashima-yoshinobu",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tanegashima-yoshinobu/03.jpg",
+      "query": "tanegashima yoshinobu",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tanegashima-yoshinobu",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tanegashima-yoshinobu/04.jpg",
+      "query": "tanegashima yoshinobu",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tanegashima-yoshinobu",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tanegashima-yoshinobu/05.jpg",
+      "query": "tanegashima yoshinobu",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "akatsuki",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/akatsuki/01.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
+        "credit": "JAXA / Akihiro Ikeshita",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an in-flight image of the Akatsuki spacecraft showing its distinctive solar panel configuration and cylindrical bus with scientific instruments, photographed in space near Venus (visible on th"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "akatsuki",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/akatsuki/02.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "This is a spacecraft image of Venus showing its thick cloud cover, consistent with Akatsuki's mission to study Venusian atmospheric dynamics and chemistry."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "akatsuki",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/akatsuki/03.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180202_175611_283_365_l2b_v20180601_mod-thumb-1024x1024-3081.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is an image of Venus's atmosphere showing cloud patterns and atmospheric features, consistent with Akatsuki's primary mission objective to study Venusian atmospheric dynamics and meteorology."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "akatsuki",
+      "slot": "04",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/akatsuki/04.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20171016_093112_283_365_l2b_v20180601_mod-thumb-1024x1024-3077.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a crescent-phase image of Venus showing atmospheric cloud patterns consistent with Akatsuki orbiter observations of the mission target body."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "akatsuki",
+      "slot": "05",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/akatsuki/05.jpg",
+      "query": "akatsuki",
+      "proposed": {
+        "tier": 1,
+        "source_type": "jaxa",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/photo-spacecraft_05.jpg",
+        "credit": "JAXA / Akihiro Ikeshita",
+        "license": "pd-jaxa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is an educational graphic/poster showing a spacecraft and various celestial bodies with directional lines, not substantive mission hardware or operational imagery of Akatsuki."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "01",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/01.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "02",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/02.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "03",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/03.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "hayabusa1",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hayabusa1/01.jpg",
+      "query": "hayabusa 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "hayabusa2",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hayabusa2/01.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "hayabusa2",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hayabusa2/02.jpg",
+      "query": "hayabusa 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/20190605%20hayabusa-diagram-tpr-01-without-labels.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mmx",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mmx/01.jpg",
+      "query": "mmx",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mmx",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mmx/02.jpg",
+      "query": "mmx",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "slim",
+      "slot": "01",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/slim/01.jpg",
+      "query": "slim lander",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "slim",
+      "slot": "02",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/slim/02.jpg",
+      "query": "slim lander",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "slim",
+      "slot": "03",
+      "agency": "JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/slim/03.jpg",
+      "query": "slim lander",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

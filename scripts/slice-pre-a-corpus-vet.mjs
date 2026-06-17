@@ -57,9 +57,13 @@ const acceptRate = ((accepted / (accepted + rejected)) * 100).toFixed(0);
 console.log(`Accept rate on Tier 1 corpus: ${accepted}/${accepted + rejected} (${acceptRate}%)\n`);
 
 if (rejects.length > 0) {
-  console.log(`── False-negatives (${rejects.length}) — legit T1 entries gate would reject during backfill ──`);
+  console.log(
+    `── False-negatives (${rejects.length}) — legit T1 entries gate would reject during backfill ──`,
+  );
   for (const r of rejects.slice(0, 20)) {
-    console.log(`  q="${r.query.padEnd(20)}" title="${r.title.slice(0, 60).padEnd(60)}" ${formatRelevance(r.result)}`);
+    console.log(
+      `  q="${r.query.padEnd(20)}" title="${r.title.slice(0, 60).padEnd(60)}" ${formatRelevance(r.result)}`,
+    );
   }
   if (rejects.length > 20) console.log(`  ... and ${rejects.length - 20} more`);
 }
@@ -67,12 +71,18 @@ if (rejects.length > 0) {
 if (accepts.length > 0) {
   console.log(`\n── Sample accepts (${Math.min(5, accepts.length)} of ${accepts.length}) ──`);
   for (const a of accepts.slice(0, 5)) {
-    console.log(`  q="${a.query.padEnd(20)}" title="${a.title.slice(0, 60).padEnd(60)}" ${formatRelevance(a.result)}`);
+    console.log(
+      `  q="${a.query.padEnd(20)}" title="${a.title.slice(0, 60).padEnd(60)}" ${formatRelevance(a.result)}`,
+    );
   }
 }
 
 console.log('\n── interpretation ──');
 console.log(`  Accept rate measures gate recall on known-good Tier 1 corpus.`);
 console.log(`  Low accept rate = gate too strict; would over-reject during Slice A backfill.`);
-console.log(`  False-negative titles surface gate gaps (missing body tokens, anti-token false positives, etc.).`);
-console.log(`  Use rejected sample to refine BODY_TOKENS, drop bad anti-tokens, or loosen per-source threshold.`);
+console.log(
+  `  False-negative titles surface gate gaps (missing body tokens, anti-token false positives, etc.).`,
+);
+console.log(
+  `  Use rejected sample to refine BODY_TOKENS, drop bad anti-tokens, or loosen per-source threshold.`,
+);

@@ -101,9 +101,12 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
 // ── Tier 1 primary: NASA Image and Video Library ──────────────────
 
 async function nasaImagesApi(primary, query) {
-  const search = `${primary.url}?` + new URLSearchParams({
-    q: query, media_type: 'image',
-  });
+  const search =
+    `${primary.url}?` +
+    new URLSearchParams({
+      q: query,
+      media_type: 'image',
+    });
   const res = await fetch(search, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
   const json = await res.json();
@@ -111,13 +114,20 @@ async function nasaImagesApi(primary, query) {
   const candidates = items
     .map((it) => {
       const d = it?.data?.[0] ?? {};
-      return { nasa_id: d.nasa_id, title: d.title, secondary_creator: d.secondary_creator, center: d.center };
+      return {
+        nasa_id: d.nasa_id,
+        title: d.title,
+        secondary_creator: d.secondary_creator,
+        center: d.center,
+      };
     })
     .filter((x) => x.nasa_id && x.title);
   // Apply relevance gate — pick first candidate that passes. Per-source
   // threshold from registry (NASA = 0.5 loose; default 0.66).
   const threshold = primary.relevance_threshold;
-  const usable = candidates.find((c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted);
+  const usable = candidates.find(
+    (c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted,
+  );
   if (!usable) return null;
 
   const assetRes = await fetch(
@@ -137,7 +147,9 @@ async function nasaImagesApi(primary, query) {
     source_type: 'nasa-image-library',
     source_url: `https://images.nasa.gov/details/${encodeURIComponent(usable.nasa_id)}`,
     image_url,
-    credit: (usable.secondary_creator || '').trim() || (usable.center ? `NASA / ${usable.center}` : 'NASA'),
+    credit:
+      (usable.secondary_creator || '').trim() ||
+      (usable.center ? `NASA / ${usable.center}` : 'NASA'),
     license: 'pd-nasa',
     metadata: { nasa_id: usable.nasa_id, nasa_title: usable.title },
     tier: 1,
@@ -152,19 +164,27 @@ async function wikimediaCategoryLookup(primary, query) {
   if (!match) return null;
   const category = decodeURIComponent(match[1]);
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'categorymembers',
+    action: 'query',
+    format: 'json',
+    list: 'categorymembers',
     cmtitle: `Category:${category}`,
-    cmtype: 'file', cmlimit: '50',
+    cmtype: 'file',
+    cmlimit: '50',
     origin: '*',
   });
-  const res = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`, { headers: { 'User-Agent': UA } });
+  const res = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`, {
+    headers: { 'User-Agent': UA },
+  });
   if (!res.ok) return null;
   const json = await res.json();
   const files = (json?.query?.categorymembers ?? []).map((m) => m.title.replace(/^File:/, ''));
   // Score by query-token match in filename
   const queryTokens = query.toLowerCase().split(/\s+/).filter(Boolean);
   const scored = files
-    .map((f) => ({ f, score: queryTokens.reduce((s, t) => s + (f.toLowerCase().includes(t) ? 1 : 0), 0) }))
+    .map((f) => ({
+      f,
+      score: queryTokens.reduce((s, t) => s + (f.toLowerCase().includes(t) ? 1 : 0), 0),
+    }))
     .filter((x) => /\.(jpg|jpeg|png)$/i.test(x.f))
     .sort((a, b) => b.score - a.score);
   if (scored.length === 0 || scored[0].score === 0) return null;
@@ -257,9 +277,9 @@ async function esaMultimediaScrape(primary, query) {
   if (!res.ok) return null;
   const html = await res.text();
 
-  const matches = [...html.matchAll(
-    /href="(\/ESA_Multimedia\/Images\/(\d{4})\/(\d{2})\/([^"/]+))"/g,
-  )];
+  const matches = [
+    ...html.matchAll(/href="(\/ESA_Multimedia\/Images\/(\d{4})\/(\d{2})\/([^"/]+))"/g),
+  ];
   const seen = new Set();
   const candidates = [];
   for (const m of matches) {
@@ -329,8 +349,7 @@ async function flickrPublicScrape(primary, query) {
 
   // Photo URL pattern in the HTML: live.staticflickr.com/<server>/
   // <photo_id>_<secret>(_<size>).jpg. Exclude UI sprites + cover photos.
-  const photoUrlRegex =
-    /live\.staticflickr\.com\/(\d+)\/(\d+)_([a-z0-9]+)(?:_([a-z]))?\.jpg/g;
+  const photoUrlRegex = /live\.staticflickr\.com\/(\d+)\/(\d+)_([a-z0-9]+)(?:_([a-z]))?\.jpg/g;
   // Titles in JSON model: "title":"Some Photo Name"
   const titleRegex = /"title":"([^"]{3,200})"/g;
 
@@ -385,11 +404,17 @@ async function flickrPublicScrape(primary, query) {
 async function tryCuratedFallback(primary, { mission, slot }) {
   // Look up curation file via canonical paths
   const curationCandidates = [
-    `static/data/agency-archive-curations/${primary.url.includes('jaxa') ? 'jaxa' :
-      primary.url.includes('esa.int') || primary.url.includes('esahubble') ? 'esa' :
-      primary.url.includes('jhuapl') ? 'jhu-apl' :
-      primary.url.includes('isro') || primary.url.includes('issdc') ? 'isro' :
-      ''}.json`,
+    `static/data/agency-archive-curations/${
+      primary.url.includes('jaxa')
+        ? 'jaxa'
+        : primary.url.includes('esa.int') || primary.url.includes('esahubble')
+          ? 'esa'
+          : primary.url.includes('jhuapl')
+            ? 'jhu-apl'
+            : primary.url.includes('isro') || primary.url.includes('issdc')
+              ? 'isro'
+              : ''
+    }.json`,
   ].filter((p) => !p.endsWith('/.json'));
   for (const path of curationCandidates) {
     const curation = loadCuration(path);
@@ -416,23 +441,18 @@ async function tryCuratedFallback(primary, { mission, slot }) {
 
 // ── Tier 2: institutional secondary ───────────────────────────────
 
-async function tryTier2(registry, query) {
+async function tryTier2(registry, query, ctx = {}) {
   for (const inst of registry.tier_2_institutional ?? []) {
     if (!isLicenseAllowed(inst.license, registry)) continue;
-    // Skip auto_fetch_disabled sources (USGS — curated-only).
     if (inst.auto_fetch_disabled) continue;
-    // Skip sources that require an env key we don't have set. Dead-
-    // code without it; better to fall through to the next tier than
-    // waste an API call.
     if (inst.requires_env_key && !process.env[inst.requires_env_key]) continue;
 
     let result = null;
     if (inst.id === 'smithsonian-openaccess') {
-      result = await smithsonianSearch(inst, query);
+      result = await smithsonianSearch(inst, query, ctx);
     } else if (inst.id === 'nara-rg-255') {
       result = await naraRG255Search(inst, query);
     }
-    // USGS Astrogeology + ESO + ALSJ — implemented in Slice E and after.
     if (result) return result;
   }
   return null;
@@ -449,26 +469,25 @@ async function naraRG255Search(inst, query) {
   if (!apiKey) return null;
   const params = new URLSearchParams({
     q: query,
-    'recordGroupNumber': '255',
-    'typeOfMaterials': 'Photographs and other Graphic Materials',
+    recordGroupNumber: '255',
+    typeOfMaterials: 'Photographs and other Graphic Materials',
     limit: '10',
   });
   const res = await fetch(`${inst.url}api/v2/records/search?${params}`, {
-    headers: { 'User-Agent': UA, 'Accept': 'application/json', 'x-api-key': apiKey },
+    headers: { 'User-Agent': UA, Accept: 'application/json', 'x-api-key': apiKey },
   });
   if (!res.ok) return null;
   const json = await res.json();
   const items = json?.body?.hits?.hits ?? json?.opaResponse?.results?.result ?? [];
   const usable = items.find((it) => {
     const dat = it._source ?? it.description ?? it;
-    if (!(dat?.naId && (dat?.digitalObjects?.[0]?.objectUrl || dat?.objects?.[0]?.file?.url))) return false;
+    if (!(dat?.naId && (dat?.digitalObjects?.[0]?.objectUrl || dat?.objects?.[0]?.file?.url)))
+      return false;
     return scoreRelevance({ title: dat.title }, query).accepted;
   });
   if (!usable) return null;
   const dat = usable._source ?? usable.description ?? usable;
-  const image_url =
-    dat?.digitalObjects?.[0]?.objectUrl ??
-    dat?.objects?.[0]?.file?.url;
+  const image_url = dat?.digitalObjects?.[0]?.objectUrl ?? dat?.objects?.[0]?.file?.url;
   return {
     source_type: 'nara-rg-255',
     source_url: `https://catalog.archives.gov/id/${encodeURIComponent(dat.naId)}`,
@@ -484,7 +503,7 @@ async function naraRG255Search(inst, query) {
   };
 }
 
-async function smithsonianSearch(inst, query) {
+async function smithsonianSearch(inst, query, ctx = {}) {
   // Smithsonian Open Access API requires api_key from api.data.gov.
   // DEMO_KEY works for low-volume dev/CI; production must set SI_API_KEY
   // env var. The `unit_code:NASM` strict filter doesn't work reliably;
@@ -502,9 +521,15 @@ async function smithsonianSearch(inst, query) {
   const rows = json?.response?.rows ?? [];
   // Prefer NASM-unit + CC0 + has-real-media. unitCode lives on the row.
   // Per-source threshold (Smithsonian = 1.0 strict per registry).
+  // `seenIds` lets the caller exclude already-used NASM artifacts so
+  // we don't return the same record for every slot of a mission
+  // (Fix B from the A-1 dry-run review — apollo-csm-block-i was
+  // shipping the same NASM record for all 5 slots).
   const threshold = inst.relevance_threshold;
+  const seenIds = ctx?.seenIds ?? new Set();
   const usable = rows.find((r) => {
     if (r?.unitCode !== 'NASM') return false;
+    if (seenIds.has(r.id)) return false;
     const media = r?.content?.descriptiveNonRepeating?.online_media?.media?.[0];
     if (!(media?.usage?.access === 'CC0' && media?.content)) return false;
     return scoreRelevance({ title: r.title }, query, { threshold }).accepted;
@@ -536,22 +561,195 @@ async function smithsonianSearch(inst, query) {
 
 // ── Tier 3: Wikimedia Commons failover ────────────────────────────
 
+// Categories that prove a Commons file is space-related. Fix E from
+// iteration 2 spot-check — title-gate alone accepts geographic name-
+// collisions; verifying category membership catches what anti-tokens
+// miss.
+const COMMONS_SPACE_CATEGORIES = [
+  // Generic space-domain
+  'spacecraft',
+  'space exploration',
+  'space stations',
+  'space station',
+  'astronauts',
+  'cosmonauts',
+  'space suits',
+  'spacesuit',
+  'launch vehicles',
+  'rocket',
+  'rockets',
+  'satellites',
+  'satellite',
+  'space probes',
+  'space probe',
+  // Agency catalogs
+  'nasa',
+  'esa',
+  'roscosmos',
+  'jaxa',
+  'isro',
+  'cnsa',
+  'asi',
+  'spacex',
+  'blue origin',
+  'northrop grumman',
+  // US programs
+  'apollo program',
+  'mercury program',
+  'gemini program',
+  'skylab',
+  'shuttle',
+  'sts ',
+  'mariner program',
+  'voyager program',
+  'pioneer program',
+  'viking program',
+  'space shuttle program',
+  'orion ',
+  // Soviet/Russian programs
+  'vostok program',
+  'voskhod program',
+  'soyuz program',
+  'mir space station',
+  'salyut',
+  'luna program',
+  'venera',
+  'mars program of the soviet union',
+  // Chinese programs (Fix H — UAESA/ISRO/CNSA recovery)
+  'shenzhou program',
+  "chang'e program",
+  "chang'e",
+  'tianwen',
+  'tiangong',
+  'long march',
+  // Indian programs
+  'chandrayaan',
+  'mangalyaan',
+  'mars orbiter mission',
+  'gaganyaan',
+  // UAE / smaller national programs
+  'emirates mars mission',
+  'united arab emirates space',
+  'beresheet',
+  'israeli space',
+  // Japanese mission-name fallback (in addition to JAXA)
+  'hayabusa',
+  'akatsuki',
+  'kaguya',
+  'slim',
+  'ikaros',
+  // ESA mission-name fallback
+  'rosetta mission',
+  'mars express',
+  'venus express',
+  'bepicolombo',
+  'juice ',
+  'solar orbiter',
+  'gaia mission',
+  'cluster ',
+  // Planet / body-family categories (catches "Astronomy of Mars",
+  // "Photographs of Mars from spacecraft" etc.)
+  'mars exploration',
+  'astronomy of mars',
+  'photographs of mars',
+  'moon exploration',
+  'lunar exploration',
+  'photographs of the moon',
+  'venus exploration',
+  'photographs of venus',
+  'mercury exploration',
+  'photographs of mercury',
+  'jupiter exploration',
+  'saturn exploration',
+  'pluto',
+  'kuiper belt',
+  'asteroid',
+  'comet',
+  // ISS + station ops
+  'iss',
+  'international space station',
+  'iss expedition',
+  // Observatory + astronomy
+  'astronomy',
+  'observatories',
+  'observatory',
+  'telescopes',
+  'telescope',
+  'hubble space telescope',
+  'james webb',
+  'chandra x-ray',
+];
+
+async function commonsFileHasSpaceCategory(filename) {
+  // One extra API call per Tier 3 candidate. Verifies the file's actual
+  // categories include a space-related domain — catches cases where
+  // the relevance gate accepted a title that shares proper-noun tokens
+  // with geographic / non-mission Commons files.
+  const params = new URLSearchParams({
+    action: 'query',
+    format: 'json',
+    prop: 'categories',
+    titles: `File:${filename}`,
+    cllimit: '50',
+    clshow: '!hidden',
+    origin: '*',
+  });
+  try {
+    const res = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`, {
+      headers: { 'User-Agent': UA },
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    const pages = json?.query?.pages ?? {};
+    const cats = [];
+    for (const p of Object.values(pages)) {
+      for (const c of p.categories ?? []) {
+        cats.push((c.title || '').replace(/^Category:/, '').toLowerCase());
+      }
+    }
+    return cats.some((cat) =>
+      COMMONS_SPACE_CATEGORIES.some((sc) => cat === sc || cat.includes(sc) || sc.includes(cat)),
+    );
+  } catch {
+    return null; // network error — fail-open (don't block)
+  }
+}
+
 async function tier3CommonsFailover(registry, query) {
   const t3 = registry.tier_3_failover;
+  // Fix D — enrich Commons query with "spacecraft OR mission OR NASA OR
+  // space" so search results are biased toward space content even before
+  // the gate runs. Keeps the original query intact but adds a positive
+  // disjunctive hint that Commons's search ranks accordingly.
+  const enrichedQuery = `${query} (spacecraft OR mission OR space)`;
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: query + ' filetype:bitmap',
-    srnamespace: '6', srlimit: '15',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: enrichedQuery + ' filetype:bitmap',
+    srnamespace: '6',
+    srlimit: '15',
     origin: '*',
   });
   const res = await fetch(`${t3.url}?${params}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
   const json = await res.json();
   const candidates = (json?.query?.search ?? []).map((r) => r.title.replace(/^File:/, ''));
-  // Apply relevance gate using filename as title proxy. Tier 3 has the
-  // highest false-positive risk so the gate matters most here.
+  // Apply relevance gate + category check. Walk candidates in order,
+  // take the first that BOTH passes the title gate AND has at least
+  // one space-related category on its Commons file page. Fail-open
+  // on network errors (category check returns null → accept the gate
+  // decision alone).
+  const threshold = t3.relevance_threshold;
   const photos = candidates.filter((c) => /\.(jpg|jpeg|png)$/i.test(c));
-  const pick = photos.find((c) => scoreRelevance({ title: c }, query).accepted);
+  let pick = null;
+  for (const candidate of photos) {
+    if (!scoreRelevance({ title: candidate }, query, { threshold }).accepted) continue;
+    const isSpace = await commonsFileHasSpaceCategory(candidate);
+    if (isSpace === false) continue; // category-verified non-space; reject
+    pick = candidate;
+    break;
+  }
   if (!pick) return null;
   return {
     source_type: 'wikimedia-commons',
@@ -567,26 +765,29 @@ async function tier3CommonsFailover(registry, query) {
 // ── Agency token mapping ──────────────────────────────────────────
 
 const AGENCY_ALIAS = {
-  'NASA': 'NASA',
-  'JPL': 'NASA',
+  NASA: 'NASA',
+  JPL: 'NASA',
   'NASA / JPL': 'NASA',
   'NASA-JPL': 'NASA',
-  'JAXA': 'JAXA',
-  'ESA': 'ESA',
+  JAXA: 'JAXA',
+  ESA: 'ESA',
   'JHU APL': 'JHU-APL',
   'Johns Hopkins APL': 'JHU-APL',
-  'APL': 'JHU-APL',
-  'ASI': 'ASI',
-  'CNSA': 'CNSA',
-  'Roscosmos': 'Roscosmos',
-  'ROSCOSMOS': 'Roscosmos',
-  'ISRO': 'ISRO',
-  'SpaceX': 'SpaceX',
+  APL: 'JHU-APL',
+  ASI: 'ASI',
+  CNSA: 'CNSA',
+  Roscosmos: 'Roscosmos',
+  ROSCOSMOS: 'Roscosmos',
+  ISRO: 'ISRO',
+  SpaceX: 'SpaceX',
   'Blue Origin': 'Blue Origin',
 };
 
 function agencyTiersFor(agencyStr) {
-  const tokens = (agencyStr || '').split(/[\/\,·&]/).map((s) => s.trim()).filter(Boolean);
+  const tokens = (agencyStr || '')
+    .split(/[/,·&]/)
+    .map((s) => s.trim())
+    .filter(Boolean);
   const ordered = [];
   for (const t of tokens) {
     const key = AGENCY_ALIAS[t];
@@ -603,9 +804,12 @@ function agencyTiersFor(agencyStr) {
  * (per-agency primaries) → tier 2 (institutional) → tier 3 (Commons).
  * Returns the first successful resolution.
  */
-export async function resolveAgencyImage({ mission, slot, agency, query }) {
+export async function resolveAgencyImage({ mission, slot, agency, query, seenIds }) {
   const registry = loadRegistry();
   const tiers = agencyTiersFor(agency);
+  // ctx threads call-scoped state (seenIds for per-mission Smithsonian
+  // dedup) down to resolver functions that need it.
+  const ctx = { seenIds: seenIds ?? new Set() };
 
   // TIER 1 — agency primaries
   for (const agencyKey of tiers) {
@@ -625,10 +829,13 @@ export async function resolveAgencyImage({ mission, slot, agency, query }) {
     }
   }
 
-  // TIER 2 — institutional secondary
+  // TIER 2 — institutional secondary (pass ctx for Smithsonian dedup)
   try {
-    const result = await tryTier2(registry, query);
-    if (result) return result;
+    const result = await tryTier2(registry, query, ctx);
+    if (result) {
+      if (result.metadata?.smithsonian_id) ctx.seenIds.add(result.metadata.smithsonian_id);
+      return result;
+    }
   } catch (e) {
     console.error(`    [tier2] ${e.message}`);
   }

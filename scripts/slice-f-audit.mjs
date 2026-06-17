@@ -20,8 +20,20 @@ function tierOf(sourceType) {
   if (!sourceType) return null;
   if (sourceType === 'nasa-image-library' || sourceType === 'nasa-images-api') return 1;
   if (sourceType.startsWith('wikimedia-grandfathered-')) return 1;
-  if (sourceType === 'jaxa' || sourceType === 'esa' || sourceType === 'isro' || sourceType === 'jhu-apl' || sourceType === 'asi') return 1;
-  if (sourceType === 'smithsonian-openaccess' || sourceType === 'nara-rg-255' || sourceType === 'eso-public') return 2;
+  if (
+    sourceType === 'jaxa' ||
+    sourceType === 'esa' ||
+    sourceType === 'isro' ||
+    sourceType === 'jhu-apl' ||
+    sourceType === 'asi'
+  )
+    return 1;
+  if (
+    sourceType === 'smithsonian-openaccess' ||
+    sourceType === 'nara-rg-255' ||
+    sourceType === 'eso-public'
+  )
+    return 2;
   if (sourceType === 'wikimedia-commons') return 3;
   if (sourceType === 'direct-other') return 3;
   return null;
@@ -74,10 +86,18 @@ console.log('── Slice F audit — v2 tier distribution ──\n');
 console.log(`Total provenance entries: ${grand}\n`);
 
 console.log('Global distribution:');
-console.log(`  Tier 1 (agency primary):     ${totalsByTier[1].toString().padStart(5)}  (${pct(totalsByTier[1], grand)}%)`);
-console.log(`  Tier 2 (institutional):      ${totalsByTier[2].toString().padStart(5)}  (${pct(totalsByTier[2], grand)}%)`);
-console.log(`  Tier 3 (Commons failover):   ${totalsByTier[3].toString().padStart(5)}  (${pct(totalsByTier[3], grand)}%)`);
-console.log(`  Legacy / untyped:            ${totalsByTier.legacy.toString().padStart(5)}  (${pct(totalsByTier.legacy, grand)}%)`);
+console.log(
+  `  Tier 1 (agency primary):     ${totalsByTier[1].toString().padStart(5)}  (${pct(totalsByTier[1], grand)}%)`,
+);
+console.log(
+  `  Tier 2 (institutional):      ${totalsByTier[2].toString().padStart(5)}  (${pct(totalsByTier[2], grand)}%)`,
+);
+console.log(
+  `  Tier 3 (Commons failover):   ${totalsByTier[3].toString().padStart(5)}  (${pct(totalsByTier[3], grand)}%)`,
+);
+console.log(
+  `  Legacy / untyped:            ${totalsByTier.legacy.toString().padStart(5)}  (${pct(totalsByTier.legacy, grand)}%)`,
+);
 
 function pct(n, total) {
   if (!total) return '0.0';
@@ -85,7 +105,9 @@ function pct(n, total) {
 }
 
 console.log('\n\nPer-agency distribution (sorted by Commons-skew %):');
-console.log('agency                                  total  T1    T2    T3   legacy  T3%   t1-avail');
+console.log(
+  'agency                                  total  T1    T2    T3   legacy  T3%   t1-avail',
+);
 
 // Agency Tier 1 availability map (from registry)
 const t1AvailableFor = new Set();
@@ -95,7 +117,7 @@ for (const [k, v] of Object.entries(REGISTRY.tier_1_agencies ?? {})) {
 }
 function hasT1(agencyStr) {
   // Token-split & test against registry
-  const tokens = (agencyStr || '').split(/[\/\,·&]/).map((s) => s.trim());
+  const tokens = (agencyStr || '').split(/[/,·&]/).map((s) => s.trim());
   return tokens.some((t) => t1AvailableFor.has(t));
 }
 
@@ -115,7 +137,12 @@ for (const r of agencyRows) {
 console.log('\n\nTop 15 Commons-skewed missions (>=5 entries, sorted by T3%):');
 console.log('mission                       agency             total  T1  T2  T3 legacy  T3%');
 const skewedMissions = [...perMission.entries()]
-  .map(([m, r]) => ({ mission: m, agency: AGENCY_BY_ID[m] ?? '?', ...r, skew: r.t3 / Math.max(r.total, 1) }))
+  .map(([m, r]) => ({
+    mission: m,
+    agency: AGENCY_BY_ID[m] ?? '?',
+    ...r,
+    skew: r.t3 / Math.max(r.total, 1),
+  }))
   .filter((r) => r.total >= 5)
   .sort((a, b) => b.skew - a.skew)
   .slice(0, 15);
@@ -132,12 +159,20 @@ if (upgradeCandidates.length === 0) {
   console.log('  (none — every Commons-skewed mission is on an agency without Tier 1)');
 } else {
   for (const r of upgradeCandidates) {
-    console.log(`  ${r.mission.padEnd(28)} ${r.agency.padEnd(18)} skew=${(r.skew * 100).toFixed(0)}%`);
+    console.log(
+      `  ${r.mission.padEnd(28)} ${r.agency.padEnd(18)} skew=${(r.skew * 100).toFixed(0)}%`,
+    );
   }
 }
 
 console.log('\n── interpretation ──');
 console.log('  T3% = how often this agency falls to Commons failover instead of its own primary.');
-console.log('  t1-avail = does the agency have an auto-fetchable Tier 1 source in the v2 registry?');
-console.log('  Big T3% + t1-avail=✓ means the registry has a primary lane but the existing entries didn\'t use it (Slice A backfill target).');
-console.log('  Big T3% + t1-avail=✗ means agency primary genuinely doesn\'t exist (honest Commons).');
+console.log(
+  '  t1-avail = does the agency have an auto-fetchable Tier 1 source in the v2 registry?',
+);
+console.log(
+  "  Big T3% + t1-avail=✓ means the registry has a primary lane but the existing entries didn't use it (Slice A backfill target).",
+);
+console.log(
+  "  Big T3% + t1-avail=✗ means agency primary genuinely doesn't exist (honest Commons).",
+);

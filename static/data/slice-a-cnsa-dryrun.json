@@ -1,0 +1,2221 @@
+{
+  "agency": "CNSA",
+  "totals": {
+    "tier1_upgrade": 0,
+    "tier2_upgrade": 0,
+    "no_change": 37,
+    "miss": 116,
+    "vision_passed": 0,
+    "vision_flagged": 0,
+    "vision_unsure": 37
+  },
+  "candidate_count": 153,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beidou",
+      "slot": "01",
+      "agency": "CNSA / China Satellite Navigation Office",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beidou/01.jpg",
+      "query": "beidou",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beidou",
+      "slot": "02",
+      "agency": "CNSA / China Satellite Navigation Office",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beidou/02.jpg",
+      "query": "beidou",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beidou",
+      "slot": "03",
+      "agency": "CNSA / China Satellite Navigation Office",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beidou/03.jpg",
+      "query": "beidou",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beidou",
+      "slot": "04",
+      "agency": "CNSA / China Satellite Navigation Office",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beidou/04.jpg",
+      "query": "beidou",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beidou",
+      "slot": "05",
+      "agency": "CNSA / China Satellite Navigation Office",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beidou/05.jpg",
+      "query": "beidou",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-2/01.jpg",
+      "query": "change 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-2/02.jpg",
+      "query": "change 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-2/03.jpg",
+      "query": "change 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-2/04.jpg",
+      "query": "change 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-2/05.jpg",
+      "query": "change 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-3/01.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-3/02.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-3/03.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-3/04.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-3/05.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-4/01.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-4/02.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-4/03.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-4/04.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-4/05.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-5",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-5/01.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-5",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-5/02.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-5",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-5/03.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-5",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-5/04.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change-5",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change-5/05.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change1/01.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change1/02.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change1/03.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change1",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change1/04.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change1",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/change1/05.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change6",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change6/01.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change6",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change6/02.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change6",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change6/03.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change6",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change6/04.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "change6",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/change6/05.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "jiuquan-slc-43",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/jiuquan-slc-43/01.jpg",
+      "query": "jiuquan slc 43",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "jiuquan-slc-43",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/jiuquan-slc-43/02.jpg",
+      "query": "jiuquan slc 43",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "jiuquan-slc-43",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/jiuquan-slc-43/03.jpg",
+      "query": "jiuquan slc 43",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "jiuquan-slc-43",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/jiuquan-slc-43/04.jpg",
+      "query": "jiuquan slc 43",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "jiuquan-slc-43",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/jiuquan-slc-43/05.jpg",
+      "query": "jiuquan slc 43",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-2f",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-2f/01.jpg",
+      "query": "long march 2 f",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-2f",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-2f/02.jpg",
+      "query": "long march 2 f",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-2f",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-2f/03.jpg",
+      "query": "long march 2 f",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-2f",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-2f/04.jpg",
+      "query": "long march 2 f",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-2f",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-2f/05.jpg",
+      "query": "long march 2 f",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-3b",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-3b/01.jpg",
+      "query": "long march 3 b",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-3b",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-3b/02.jpg",
+      "query": "long march 3 b",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-3b",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-3b/03.jpg",
+      "query": "long march 3 b",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-3b",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-3b/04.jpg",
+      "query": "long march 3 b",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-3b",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-3b/05.jpg",
+      "query": "long march 3 b",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-5",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-5/01.jpg",
+      "query": "long march 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-5",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-5/02.jpg",
+      "query": "long march 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-5",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-5/03.jpg",
+      "query": "long march 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-5",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-5/04.jpg",
+      "query": "long march 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-5",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-5/05.jpg",
+      "query": "long march 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-7",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-7/01.jpg",
+      "query": "long march 7",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-7",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-7/02.jpg",
+      "query": "long march 7",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-7",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-7/03.jpg",
+      "query": "long march 7",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-7",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-7/04.jpg",
+      "query": "long march 7",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "long-march-7",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/long-march-7/05.jpg",
+      "query": "long march 7",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "shenzhou",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/shenzhou/01.jpg",
+      "query": "shenzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "shenzhou",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/shenzhou/02.jpg",
+      "query": "shenzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "shenzhou",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/shenzhou/03.jpg",
+      "query": "shenzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%202.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "shenzhou",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/shenzhou/04.jpg",
+      "query": "shenzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "shenzhou",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/shenzhou/05.jpg",
+      "query": "shenzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "taiyuan-lc-9",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/taiyuan-lc-9/01.jpg",
+      "query": "taiyuan lc 9",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "taiyuan-lc-9",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/taiyuan-lc-9/02.jpg",
+      "query": "taiyuan lc 9",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "taiyuan-lc-9",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/taiyuan-lc-9/03.jpg",
+      "query": "taiyuan lc 9",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "taiyuan-lc-9",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/taiyuan-lc-9/04.jpg",
+      "query": "taiyuan lc 9",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "taiyuan-lc-9",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/taiyuan-lc-9/05.jpg",
+      "query": "taiyuan lc 9",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-1/01.jpg",
+      "query": "tiangong 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-1/02.jpg",
+      "query": "tiangong 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-1/03.jpg",
+      "query": "tiangong 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-1",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-1/04.jpg",
+      "query": "tiangong 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-1",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tiangong-1/05.jpg",
+      "query": "tiangong 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-2",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-2/01.jpg",
+      "query": "tiangong 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-2",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-2/02.jpg",
+      "query": "tiangong 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-2",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong-2/03.jpg",
+      "query": "tiangong 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-2",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tiangong-2/04.jpg",
+      "query": "tiangong 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong-2",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tiangong-2/05.jpg",
+      "query": "tiangong 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "01",
+      "agency": "CNSA / CMSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong/01.jpg",
+      "query": "tiangong",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "02",
+      "agency": "CNSA / CMSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong/02.jpg",
+      "query": "tiangong",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "03",
+      "agency": "CNSA / CMSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong/03.jpg",
+      "query": "tiangong",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "04",
+      "agency": "CNSA / CMSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong/04.jpg",
+      "query": "tiangong",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "05",
+      "agency": "CNSA / CMSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tiangong/05.jpg",
+      "query": "tiangong",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rear%20view%20of%20Tiangong%20Space%20Station.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianwen-1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianwen-1/01.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianwen-1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tianwen-1/02.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianwen-1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tianwen-1/03.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianwen-1",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tianwen-1/04.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianwen-1",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/tianwen-1/05.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianzhou",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianzhou/01.jpg",
+      "query": "tianzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianzhou",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianzhou/02.jpg",
+      "query": "tianzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianzhou",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianzhou/03.jpg",
+      "query": "tianzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianzhou",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianzhou/04.jpg",
+      "query": "tianzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "tianzhou",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/tianzhou/05.jpg",
+      "query": "tianzhou",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "wenchang-lc-101",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/wenchang-lc-101/01.jpg",
+      "query": "wenchang lc 101",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "wenchang-lc-101",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/wenchang-lc-101/02.jpg",
+      "query": "wenchang lc 101",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "wenchang-lc-101",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/wenchang-lc-101/03.jpg",
+      "query": "wenchang lc 101",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "wenchang-lc-101",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/wenchang-lc-101/04.jpg",
+      "query": "wenchang lc 101",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "wenchang-lc-101",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/wenchang-lc-101/05.jpg",
+      "query": "wenchang lc 101",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-2",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-2/01.jpg",
+      "query": "xichang lc 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-2",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-2/02.jpg",
+      "query": "xichang lc 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-2",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-2/03.jpg",
+      "query": "xichang lc 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-2",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-2/04.jpg",
+      "query": "xichang lc 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-2",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-2/05.jpg",
+      "query": "xichang lc 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-3/01.jpg",
+      "query": "xichang lc 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-3/02.jpg",
+      "query": "xichang lc 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-3/03.jpg",
+      "query": "xichang lc 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-3/04.jpg",
+      "query": "xichang lc 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xichang-lc-3/05.jpg",
+      "query": "xichang lc 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu-2",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu-2/01.jpg",
+      "query": "yutu 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu%202018-10-28%200515Z%20(alternate).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu-2",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu-2/02.jpg",
+      "query": "yutu 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu%202018-10-28%200515Z%20(alternate).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu-2",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu-2/03.jpg",
+      "query": "yutu 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu%202018-10-28%200515Z%20(alternate).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu-2",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu-2/04.jpg",
+      "query": "yutu 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu%202018-10-28%200515Z%20(alternate).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu-2",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu-2/05.jpg",
+      "query": "yutu 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu%202018-10-28%200515Z%20(alternate).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu/01.jpg",
+      "query": "yutu rover",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu/02.jpg",
+      "query": "yutu rover",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu/03.jpg",
+      "query": "yutu rover",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu/04.jpg",
+      "query": "yutu rover",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "yutu",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/yutu/05.jpg",
+      "query": "yutu rover",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "zhurong",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/zhurong/01.jpg",
+      "query": "zhurong",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "zhurong",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/zhurong/02.jpg",
+      "query": "zhurong",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "zhurong",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/zhurong/03.jpg",
+      "query": "zhurong",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "zhurong",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/zhurong/04.jpg",
+      "query": "zhurong",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "zhurong",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/zhurong/05.jpg",
+      "query": "zhurong",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change1/01.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change1/02.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change1/03.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change1",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change1/04.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change1",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change1/05.jpg",
+      "query": "change 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change3",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "direct-other",
+      "path": "/images/missions/change3/01.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change3",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change3/02.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change3",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change3/03.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change3",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change3/04.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change3",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change3/05.jpg",
+      "query": "change 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change4",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change4/01.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change4",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change4/02.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change4",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change4/03.jpg",
+      "query": "change 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change5",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change5/01.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change5",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change5/02.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change5",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change5/03.jpg",
+      "query": "change 5",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change6",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change6/01.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "change6",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/change6/02.jpg",
+      "query": "change 6",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-1/01.jpg",
+      "query": "shenzhou 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%201.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-1/02.jpg",
+      "query": "shenzhou 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%201.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-1/03.jpg",
+      "query": "shenzhou 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%201.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-1",
+      "slot": "04",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-1/04.jpg",
+      "query": "shenzhou 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%201.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-1",
+      "slot": "05",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-1/05.jpg",
+      "query": "shenzhou 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%201.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-2",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-2/01.jpg",
+      "query": "shenzhou 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%202.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "shenzhou-3",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/shenzhou-3/01.jpg",
+      "query": "shenzhou 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenzhou%207%20spacecraft%20model%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "tianwen1",
+      "slot": "01",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/tianwen1/01.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "tianwen1",
+      "slot": "02",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/tianwen1/02.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "tianwen1",
+      "slot": "03",
+      "agency": "CNSA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/tianwen1/03.jpg",
+      "query": "tianwen 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

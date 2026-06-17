@@ -6,7 +6,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import sharp from 'sharp';
 
-const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA =
+  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
 const COMMONS_FILEPATH = 'https://commons.wikimedia.org/wiki/Special:FilePath';
 const FLEET_SIDECAR = 'static/data/fleet-image-sources.json';
 
@@ -34,7 +35,12 @@ const meta = await sharp(baseJpg).metadata();
 const { width: W, height: H } = meta;
 const side = Math.min(W, H);
 await sharp(baseJpg)
-  .extract({ left: Math.round((W - side) / 2), top: Math.round((H - side) / 2), width: side, height: side })
+  .extract({
+    left: Math.round((W - side) / 2),
+    top: Math.round((H - side) / 2),
+    width: side,
+    height: side,
+  })
   .jpeg({ quality: 90 })
   .toFile(`${PICK.dir}/${PICK.slot}.1x1.jpg`);
 

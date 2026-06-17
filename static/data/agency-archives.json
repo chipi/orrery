@@ -420,7 +420,8 @@
     "filepath": "https://commons.wikimedia.org/wiki/Special:FilePath",
     "kind": "json-api",
     "license": "varies",
-    "notes": "**Last resort only — try after every Tier 1 + Tier 2 primary has been exhausted.** PR reviewers reject Commons-first additions per IMAGE-PIPELINE.md REGRESSION GUARD. When used, always note in sidecar that this is the Commons mirror, not the original."
+    "relevance_threshold": 1.0,
+    "notes": "**Last resort only — try after every Tier 1 + Tier 2 primary has been exhausted.** PR reviewers reject Commons-first additions per IMAGE-PIPELINE.md REGRESSION GUARD. When used, always note in sidecar that this is the Commons mirror, not the original. **Threshold 1.0 strict** (raised from 0.66) — Tier 3 has the highest false-positive risk (full Commons keyword index); the A-1 dry-run shipped `Shenzhou Peninsula` (a Chinese coast) as the picked file for the `shenzhou-3` spacecraft query. Strict gate forces honest miss instead of wrong attribution."
   },
 
   "resolver_chain": [

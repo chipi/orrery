@@ -9,23 +9,85 @@
 // add per-mission date windows, subject taxonomy, unit alignment.
 
 const GENERIC_TOKENS = new Set([
-  'spacecraft', 'mission', 'image', 'photo', 'hardware', 'launch',
-  'final', 'before', 'after', 'photo', 'view', 'shot', 'panorama',
-  'orbiter', 'lander', 'rover', 'satellite', 'planet', 'space',
-  'flight', 'crew', 'system', 'module', 'concept', 'illustration',
+  'spacecraft',
+  'mission',
+  'image',
+  'photo',
+  'hardware',
+  'launch',
+  'final',
+  'before',
+  'after',
+  'photo',
+  'view',
+  'shot',
+  'panorama',
+  'orbiter',
+  'lander',
+  'rover',
+  'satellite',
+  'planet',
+  'space',
+  'flight',
+  'crew',
+  'system',
+  'module',
+  'concept',
+  'illustration',
 ]);
 
 // Planetary / body / mission-name vocabulary — broad enough to
 // cover the queries the catalog will run.
 const BODY_TOKENS = new Set([
-  'mars', 'venus', 'mercury', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto',
-  'moon', 'lunar', 'sun', 'solar', 'asteroid', 'comet', 'kuiper',
-  'titan', 'europa', 'io', 'enceladus', 'phobos', 'deimos', 'callisto',
-  'bennu', 'ryugu', 'itokawa', 'didymos', 'dimorphos',
-  'apollo', 'gemini', 'mercury', 'skylab', 'shuttle', 'hayabusa', 'akatsuki',
-  'magellan', 'cassini', 'voyager', 'galileo', 'pioneer', 'mariner',
-  'dart', 'opportunity', 'spirit', 'curiosity', 'perseverance',
-  'phoenix', 'viking', 'mariner', 'osiris',
+  'mars',
+  'venus',
+  'mercury',
+  'jupiter',
+  'saturn',
+  'uranus',
+  'neptune',
+  'pluto',
+  'moon',
+  'lunar',
+  'sun',
+  'solar',
+  'asteroid',
+  'comet',
+  'kuiper',
+  'titan',
+  'europa',
+  'io',
+  'enceladus',
+  'phobos',
+  'deimos',
+  'callisto',
+  'bennu',
+  'ryugu',
+  'itokawa',
+  'didymos',
+  'dimorphos',
+  'apollo',
+  'gemini',
+  'mercury',
+  'skylab',
+  'shuttle',
+  'hayabusa',
+  'akatsuki',
+  'magellan',
+  'cassini',
+  'voyager',
+  'galileo',
+  'pioneer',
+  'mariner',
+  'dart',
+  'opportunity',
+  'spirit',
+  'curiosity',
+  'perseverance',
+  'phoenix',
+  'viking',
+  'mariner',
+  'osiris',
 ]);
 
 /**
@@ -67,7 +129,7 @@ function tokenMatchesTitle(token, title) {
  */
 export function scoreRelevance(record, query, ctx = {}) {
   const title = record?.title ?? '';
-  const titleLower = title.toLowerCase();
+  const _titleLower = title.toLowerCase();
   const strong = strongTokens(query);
   const bodies = bodyTokens(query);
 
@@ -79,24 +141,67 @@ export function scoreRelevance(record, query, ctx = {}) {
 
   // ── Signal 1: title contains ≥1 strong (non-generic) query token ──
   const titleTokenMatch =
-    strong.length === 0
-      ? null
-      : strong.some((t) => tokenMatchesTitle(t, title));
+    strong.length === 0 ? null : strong.some((t) => tokenMatchesTitle(t, title));
 
   // ── Signal 2: title contains ≥1 query body/mission-name token ──
   const bodyAlignment =
-    bodies.length === 0
-      ? null
-      : bodies.some((t) => tokenMatchesTitle(t, title));
+    bodies.length === 0 ? null : bodies.some((t) => tokenMatchesTitle(t, title));
 
   // ── Signal 3: title isn't clearly unrelated (museum-collectibles). ──
   // Always applicable (we always have a title to check). Never vacuous.
   // Word-boundary regex — substring matches were producing false
   // positives (`cap` ~ Cape Canaveral, `pin` ~ pinnacle, etc.).
+  // Anti-tokens split into two domains:
+  //   1. Museum-collectibles vocabulary (NASM gift-shop / souvenir noise)
+  //   2. Geographic features (Commons file-names where a mission proper
+  //      noun is also a town/peninsula/river/etc. — e.g. "Shenzhou
+  //      Peninsula" matching the shenzhou-3 spacecraft query).
   const antiTokens = [
-    'patch', 'pin', 'card', 'badge', 'sticker', 'toy', 'model kit',
-    'lunchbox', 'figurine', 'puzzle', 'mug', 'cap', 't-shirt',
-    'pennant', 'invitation', 'menu',
+    // Collectibles / non-mission cataloging
+    'patch',
+    'pin',
+    'card',
+    'badge',
+    'sticker',
+    'toy',
+    'model kit',
+    'lunchbox',
+    'figurine',
+    'puzzle',
+    'mug',
+    'cap',
+    't-shirt',
+    'pennant',
+    'invitation',
+    'menu',
+    // Geographic features — share proper nouns with mission names
+    // (Shenzhou Peninsula, Soyuz River, etc.). Word-boundary matched
+    // so we don't over-reject "Lake Mead from orbit" type legit content.
+    'peninsula',
+    'river',
+    'mountain',
+    'valley',
+    'park',
+    'city',
+    'town',
+    'village',
+    'bay',
+    'harbor',
+    'beach',
+    'lake',
+    'ocean',
+    'sea',
+    'island',
+    'desert',
+    'forest',
+    'plateau',
+    'glacier',
+    'canyon',
+    // Misc-domain noise
+    'stone',
+    'restaurant',
+    'hotel',
+    'orange juice',
   ];
   const notClearlyUnrelated = !antiTokens.some((t) => {
     const safe = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

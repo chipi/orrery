@@ -1,0 +1,689 @@
+{
+  "agency": "SpaceX",
+  "totals": {
+    "tier1_upgrade": 10,
+    "tier2_upgrade": 0,
+    "no_change": 1,
+    "miss": 36,
+    "vision_passed": 6,
+    "vision_flagged": 4,
+    "vision_unsure": 1
+  },
+  "candidate_count": 47,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "01",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/01.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "02",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/02.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "03",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/03.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "04",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/04.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cape-canaveral-slc-40",
+      "slot": "05",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/cape-canaveral-slc-40/05.jpg",
+      "query": "cape canaveral slc 40",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "cargo-dragon-v1",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/cargo-dragon-v1/05.jpg",
+      "query": "cargo dragon v 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Dragon%2016%20-%203.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon-iva",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon-iva/01.jpg",
+      "query": "crew dragon iva",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon-iva",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/crew-dragon-iva/02.jpg",
+      "query": "crew dragon iva",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon-iva",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/crew-dragon-iva/03.jpg",
+      "query": "crew dragon iva",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon-iva",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/crew-dragon-iva/04.jpg",
+      "query": "crew dragon iva",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon-iva",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/crew-dragon-iva/05.jpg",
+      "query": "crew dragon iva",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon/01.jpg",
+      "query": "crew dragon",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an interior overhead view of a Crew Dragon spacecraft cabin showing the characteristic seating configuration (4 crew seats labeled S1-S4) and central control panels, which is mission hardware "
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon/02.jpg",
+      "query": "crew dragon",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an interior view of a Crew Dragon spacecraft cabin showing the distinctive layout of four crew seats (S1-S4) and center console elements labeled C5-C7, which is the actual mission hardware."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon/03.jpg",
+      "query": "crew dragon",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Interior view of Crew Dragon spacecraft showing the distinctive layout of four crew seats (S1-S4) and center console area with labeled components, which is mission hardware directly associated with Sp"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon/04.jpg",
+      "query": "crew dragon",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an interior view of a Crew Dragon spacecraft cabin showing the distinctive layout with four side-by-side crew seats (S1-S4) and center seats (C5-C7), which is mission hardware substantively de"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "crew-dragon",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/crew-dragon/05.jpg",
+      "query": "crew dragon",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an interior view of a Crew Dragon spacecraft capsule showing the distinctive seating configuration with four crew seats (S1-S4) and center console, which is mission hardware directly associate"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starbase-orbital-a",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starbase-orbital-a/01.jpg",
+      "query": "starbase orbital a",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starbase-orbital-a",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starbase-orbital-a/02.jpg",
+      "query": "starbase orbital a",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starbase-orbital-a",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starbase-orbital-a/03.jpg",
+      "query": "starbase orbital a",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starbase-orbital-a",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starbase-orbital-a/04.jpg",
+      "query": "starbase orbital a",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starbase-orbital-a",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starbase-orbital-a/05.jpg",
+      "query": "starbase orbital a",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starlink",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/starlink/01.jpg",
+      "query": "starlink",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20220421-PH-KLS01_0042/KSC-20220421-PH-KLS01_0042~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a launch facility photograph showing ground infrastructure and a rocket on the pad, not Starlink-specific hardware; the image depicts launch operations but does not substantively show Starlink"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starlink",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starlink/02.jpg",
+      "query": "starlink",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20220421-PH-KLS01_0042/KSC-20220421-PH-KLS01_0042~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows a rocket launch facility and a rocket on the launch pad at what appears to be Kennedy Space Center, not Starlink mission hardware or a Starlink-specific moment; the image depicts gene"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starlink",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starlink/03.jpg",
+      "query": "starlink",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20220421-PH-KLS01_0042/KSC-20220421-PH-KLS01_0042~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a launch facility photograph showing a rocket on the pad at what appears to be Kennedy Space Center, but Starlink is a satellite constellation mission and this image does not depict Starlink s"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starlink",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starlink/04.jpg",
+      "query": "starlink",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20220421-PH-KLS01_0042/KSC-20220421-PH-KLS01_0042~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Image shows a rocket on the launch pad at what appears to be Cape Canaveral with active engine ignition, depicting a SpaceX launch vehicle in its mission-defining moment of liftoff."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "starlink",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/starlink/05.jpg",
+      "query": "starlink",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20220421-PH-KLS01_0042/KSC-20220421-PH-KLS01_0042~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows a rocket launch at what appears to be Kennedy Space Center, but Starlink missions use Falcon 9 rockets, and this appears to be a Space Launch System (SLS) rocket on the pad, which is "
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "01",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/01.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "02",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/02.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "03",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/03.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "04",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/04.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vandenberg-slc-4e",
+      "slot": "05",
+      "agency": "USSF / SpaceX",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vandenberg-slc-4e/05.jpg",
+      "query": "vandenberg slc 4 e",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "inspiration4",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/inspiration4/01.jpg",
+      "query": "inspiration 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "inspiration4",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/inspiration4/02.jpg",
+      "query": "inspiration 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "inspiration4",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/inspiration4/03.jpg",
+      "query": "inspiration 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "inspiration4",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/inspiration4/04.jpg",
+      "query": "inspiration 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "inspiration4",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/inspiration4/05.jpg",
+      "query": "inspiration 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "polaris-dawn",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/polaris-dawn/01.jpg",
+      "query": "polaris dawn",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "polaris-dawn",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/polaris-dawn/02.jpg",
+      "query": "polaris dawn",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "polaris-dawn",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/polaris-dawn/03.jpg",
+      "query": "polaris dawn",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "polaris-dawn",
+      "slot": "04",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/polaris-dawn/04.jpg",
+      "query": "polaris dawn",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "polaris-dawn",
+      "slot": "05",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/polaris-dawn/05.jpg",
+      "query": "polaris dawn",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-demo",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-demo/01.jpg",
+      "query": "starship demo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-demo",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-demo/02.jpg",
+      "query": "starship demo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-demo",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-demo/03.jpg",
+      "query": "starship demo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-mars-crew",
+      "slot": "01",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-mars-crew/01.jpg",
+      "query": "starship mars crew",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-mars-crew",
+      "slot": "02",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-mars-crew/02.jpg",
+      "query": "starship mars crew",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "starship-mars-crew",
+      "slot": "03",
+      "agency": "SpaceX",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/starship-mars-crew/03.jpg",
+      "query": "starship mars crew",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

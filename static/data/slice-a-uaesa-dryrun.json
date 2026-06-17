@@ -1,0 +1,111 @@
+{
+  "agency": "UAESA",
+  "totals": {
+    "tier1_upgrade": 0,
+    "tier2_upgrade": 0,
+    "no_change": 0,
+    "miss": 8,
+    "vision_passed": 0,
+    "vision_flagged": 0,
+    "vision_unsure": 0
+  },
+  "candidate_count": 8,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "01",
+      "agency": "UAESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/hope/01.jpg",
+      "query": "Hope (EMM)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "02",
+      "agency": "UAESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hope/02.jpg",
+      "query": "Hope (EMM)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "03",
+      "agency": "UAESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hope/03.jpg",
+      "query": "Hope (EMM)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "04",
+      "agency": "UAESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hope/04.jpg",
+      "query": "Hope (EMM)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "05",
+      "agency": "UAESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/hope/05.jpg",
+      "query": "Hope (EMM)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "hope-probe",
+      "slot": "01",
+      "agency": "UAESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hope-probe/01.jpg",
+      "query": "hope probe",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "hope-probe",
+      "slot": "02",
+      "agency": "UAESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hope-probe/02.jpg",
+      "query": "hope probe",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "hope-probe",
+      "slot": "03",
+      "agency": "UAESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/hope-probe/03.jpg",
+      "query": "hope probe",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

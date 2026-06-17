@@ -13,14 +13,45 @@ import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 
 process.loadEnvFile?.();
 
-const UA = 'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const UA =
+  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
 
 const TARGETS = [
-  { mission: 'hayabusa', slot: '02', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Itokawa asteroid Hayabusa close-up' },
-  { mission: 'hayabusa', slot: '03', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa spacecraft asteroid sample-return' },
-  { mission: 'hayabusa', slot: '05', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'M-V rocket launch JAXA Hayabusa' },
-  { mission: 'solar-orbiter', slot: '03', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter EUI ultraviolet Sun corona' },
-  { mission: 'dart', slot: '02', agency: 'NASA / JHU APL', surface: 'missions', query: 'DART Dimorphos final image before impact' },
+  {
+    mission: 'hayabusa',
+    slot: '02',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Itokawa asteroid Hayabusa close-up',
+  },
+  {
+    mission: 'hayabusa',
+    slot: '03',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa spacecraft asteroid sample-return',
+  },
+  {
+    mission: 'hayabusa',
+    slot: '05',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'M-V rocket launch JAXA Hayabusa',
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '03',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter EUI ultraviolet Sun corona',
+  },
+  {
+    mission: 'dart',
+    slot: '02',
+    agency: 'NASA / JHU APL',
+    surface: 'missions',
+    query: 'DART Dimorphos final image before impact',
+  },
 ];
 
 async function downloadAndProcess(url, dir, slot) {
@@ -35,7 +66,8 @@ async function downloadAndProcess(url, dir, slot) {
     .extract({
       left: Math.round((meta.width - side) / 2),
       top: Math.round((meta.height - side) / 2),
-      width: side, height: side,
+      width: side,
+      height: side,
     })
     .jpeg({ quality: 90 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
@@ -50,14 +82,19 @@ for (const t of TARGETS) {
   mkdirSync(dir, { recursive: true });
   console.log(`\n→ ${t.mission}/${t.slot} (${t.agency})`);
   const resolved = await resolveAgencyImage({
-    mission: t.mission, slot: t.slot, agency: t.agency, query: t.query,
+    mission: t.mission,
+    slot: t.slot,
+    agency: t.agency,
+    query: t.query,
   });
   if (!resolved) {
     console.log('  ✗ no source');
     stats.miss = (stats.miss ?? 0) + 1;
     continue;
   }
-  console.log(`  [tier ${resolved.tier}] ${resolved.source_type} — ${resolved.image_url.slice(0, 70)}`);
+  console.log(
+    `  [tier ${resolved.tier}] ${resolved.source_type} — ${resolved.image_url.slice(0, 70)}`,
+  );
   try {
     // Remove old files first
     if (existsSync(`${dir}/${t.slot}.jpg`)) rmSync(`${dir}/${t.slot}.jpg`);

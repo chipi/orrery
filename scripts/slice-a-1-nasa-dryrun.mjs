@@ -32,7 +32,10 @@ function tierOf(sourceType) {
 }
 
 function isNasaAgency(agencyStr) {
-  return (agencyStr || '').split(/[\/\,·&]/).map((s) => s.trim()).some((t) => t === 'NASA');
+  return (agencyStr || '')
+    .split(/[/,·&]/)
+    .map((s) => s.trim())
+    .some((t) => t === 'NASA');
 }
 
 // Select candidates: tier 3 + agency contains NASA + has a .jpg (skip
@@ -63,7 +66,10 @@ for (let i = 0; i < CANDIDATES.length; i++) {
   let result;
   try {
     result = await resolveAgencyImage({
-      mission: c.missionId, slot: c.slot, agency: c.agency, query,
+      mission: c.missionId,
+      slot: c.slot,
+      agency: c.agency,
+      query,
     });
   } catch (e) {
     console.log(`  ✗ ${c.path}: ${e.message}`);
@@ -71,11 +77,18 @@ for (let i = 0; i < CANDIDATES.length; i++) {
     proposals.push({ ...c, query, proposed: null, error: e.message });
     continue;
   }
-  const proposedTier = result?.tier ?? null;
+  const _proposedTier = result?.tier ?? null;
   proposals.push({
-    ...c, query,
+    ...c,
+    query,
     proposed: result
-      ? { tier: result.tier, source_type: result.source_type, image_url: result.image_url, credit: result.credit, license: result.license }
+      ? {
+          tier: result.tier,
+          source_type: result.source_type,
+          image_url: result.image_url,
+          credit: result.credit,
+          license: result.license,
+        }
       : null,
   });
   if (!result) stats.miss++;
@@ -83,11 +96,17 @@ for (let i = 0; i < CANDIDATES.length; i++) {
   else if (result.tier === 2) stats.tier2_upgrade++;
   else stats.no_change++; // still tier 3
 
-  if (i % 25 === 24) console.log(`  …${i + 1}/${CANDIDATES.length} (T1 ${stats.tier1_upgrade}, T2 ${stats.tier2_upgrade}, T3 ${stats.no_change}, miss ${stats.miss})`);
+  if (i % 25 === 24)
+    console.log(
+      `  …${i + 1}/${CANDIDATES.length} (T1 ${stats.tier1_upgrade}, T2 ${stats.tier2_upgrade}, T3 ${stats.no_change}, miss ${stats.miss})`,
+    );
   await new Promise((r) => setTimeout(r, 600));
 }
 
-writeFileSync('static/data/slice-a-1-dryrun.json', JSON.stringify({ generated_at: 'see commit', totals: stats, proposals }, null, 2) + '\n');
+writeFileSync(
+  'static/data/slice-a-1-dryrun.json',
+  JSON.stringify({ generated_at: 'see commit', totals: stats, proposals }, null, 2) + '\n',
+);
 
 console.log('\n── Slice A-1 dry-run result ──');
 console.log(`  Tier 1 upgrade proposed:    ${stats.tier1_upgrade}`);

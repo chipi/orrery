@@ -16,24 +16,78 @@ import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 process.loadEnvFile?.();
 
 const TARGETS = [
-  { mission: 'hayabusa', slot: '02', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Itokawa asteroid Hayabusa close-up' },
-  { mission: 'hayabusa', slot: '03', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa spacecraft asteroid sample-return' },
-  { mission: 'hayabusa', slot: '04', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa sample return capsule Australia 2010' },
-  { mission: 'hayabusa', slot: '05', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'M-V rocket launch JAXA Hayabusa' },
-  { mission: 'solar-orbiter', slot: '03', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter EUI ultraviolet Sun corona' },
-  { mission: 'solar-orbiter', slot: '05', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter Atlas V launch Cape Canaveral 2020' },
-  { mission: 'dart', slot: '02', agency: 'NASA / JHU APL', surface: 'missions', query: 'DART Dimorphos final image before impact' },
-  { mission: 'dart', slot: '05', agency: 'NASA / JHU APL', surface: 'missions', query: 'DART impact plume Webb Hubble Dimorphos' },
-  { mission: 'apollo11', slot: '01', agency: 'NASA', surface: 'missions', query: 'Apollo 11 Command Module Columbia' },
+  {
+    mission: 'hayabusa',
+    slot: '02',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Itokawa asteroid Hayabusa close-up',
+  },
+  {
+    mission: 'hayabusa',
+    slot: '03',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa spacecraft asteroid sample-return',
+  },
+  {
+    mission: 'hayabusa',
+    slot: '04',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa sample return capsule Australia 2010',
+  },
+  {
+    mission: 'hayabusa',
+    slot: '05',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'M-V rocket launch JAXA Hayabusa',
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '03',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter EUI ultraviolet Sun corona',
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '05',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter Atlas V launch Cape Canaveral 2020',
+  },
+  {
+    mission: 'dart',
+    slot: '02',
+    agency: 'NASA / JHU APL',
+    surface: 'missions',
+    query: 'DART Dimorphos final image before impact',
+  },
+  {
+    mission: 'dart',
+    slot: '05',
+    agency: 'NASA / JHU APL',
+    surface: 'missions',
+    query: 'DART impact plume Webb Hubble Dimorphos',
+  },
+  {
+    mission: 'apollo11',
+    slot: '01',
+    agency: 'NASA',
+    surface: 'missions',
+    query: 'Apollo 11 Command Module Columbia',
+  },
 ];
 
 function loadSidecarEntry(t) {
-  const path = t.surface === 'fleet-galleries'
-    ? 'static/data/fleet-image-sources.json'
-    : 'static/data/mission-image-sources.json';
-  const key = t.surface === 'fleet-galleries'
-    ? `${t.mission}/${t.slot}.jpg`
-    : `${t.mission}/${t.slot}`;
+  const path =
+    t.surface === 'fleet-galleries'
+      ? 'static/data/fleet-image-sources.json'
+      : 'static/data/mission-image-sources.json';
+  const key =
+    t.surface === 'fleet-galleries' ? `${t.mission}/${t.slot}.jpg` : `${t.mission}/${t.slot}`;
   try {
     const data = JSON.parse(readFileSync(path, 'utf8'));
     return data[key];
@@ -54,7 +108,10 @@ for (const t of TARGETS) {
   process.stdout.write(`${t.mission}/${t.slot}`.padEnd(26) + ` | ${currentSource.padEnd(20)} | `);
   try {
     const resolved = await resolveAgencyImage({
-      mission: t.mission, slot: t.slot, agency: t.agency, query: t.query,
+      mission: t.mission,
+      slot: t.slot,
+      agency: t.agency,
+      query: t.query,
     });
     if (!resolved) {
       console.log('MISS                                ');

@@ -21,14 +21,29 @@ import { resolveAgencyImage } from './lib/agency-resolver.mjs';
 process.loadEnvFile?.();
 
 const TARGETS = [
-  { mission: 'apollo11', slot: '01', agency: 'NASA', query: 'Apollo 11 command module lunar landing' },
+  {
+    mission: 'apollo11',
+    slot: '01',
+    agency: 'NASA',
+    query: 'Apollo 11 command module lunar landing',
+  },
   { mission: 'apollo13', slot: '01', agency: 'NASA', query: 'Apollo 13 spacecraft hardware' },
   { mission: 'magellan', slot: '02', agency: 'NASA', query: 'Maat Mons Venus Magellan' },
   { mission: 'akatsuki', slot: '01', agency: 'JAXA', query: 'Akatsuki spacecraft Venus' },
   { mission: 'mars-express', slot: '01', agency: 'ESA', query: 'Mars Express HRSC' },
   { mission: 'chandrayaan-2', slot: '01', agency: 'ISRO', query: 'Chandrayaan-2 lunar orbiter' },
-  { mission: 'dart', slot: '05', agency: 'NASA / JHU APL', query: 'DART impact plume Dimorphos Hubble' },
-  { mission: 'starship-demo', slot: '01', agency: 'SpaceX', query: 'Starship test flight Boca Chica' },
+  {
+    mission: 'dart',
+    slot: '05',
+    agency: 'NASA / JHU APL',
+    query: 'DART impact plume Dimorphos Hubble',
+  },
+  {
+    mission: 'starship-demo',
+    slot: '01',
+    agency: 'SpaceX',
+    query: 'Starship test flight Boca Chica',
+  },
   // Honest gaps — should fall through to commons or fail cleanly
   { mission: 'beresheet', slot: '01', agency: 'SpaceIL', query: 'Beresheet lunar lander SpaceIL' },
 ];

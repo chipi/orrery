@@ -105,7 +105,9 @@ const hardFails = skewed.filter((s) => s.agency === 'NASA' && s.commons === s.to
 if (hardFails.length > 0) {
   console.log(`\n✗ HARD FAIL: ${hardFails.length} NASA missions with 100% Commons sourcing:`);
   for (const f of hardFails) console.log(`  ${f.id}: ${f.commons}/${f.total} entries`);
-  console.log(`\nRe-source these from NASA images-api.nasa.gov per IMAGE-PIPELINE.md §"Source-resolution order".`);
+  console.log(
+    `\nRe-source these from NASA images-api.nasa.gov per IMAGE-PIPELINE.md §"Source-resolution order".`,
+  );
   process.exit(1);
 }
 

@@ -36,25 +36,88 @@ const TARGETS = [
   // NASA mirrors Itokawa imagery from Hayabusa; honest fallback when
   // hayabusa.isas.jaxa.jp doesn't respond. JAXA stays the primary
   // attribution on the credit chain.
-  { mission: 'hayabusa', slot: '02', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Itokawa asteroid Hayabusa', replace: false },
-  { mission: 'hayabusa', slot: '03', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa spacecraft Itokawa asteroid', replace: false },
-  { mission: 'hayabusa', slot: '04', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa sample return capsule Australia', replace: false },
-  { mission: 'hayabusa', slot: '05', agency: 'JAXA / NASA', surface: 'fleet-galleries', query: 'Hayabusa M-V launch Uchinoura', replace: false },
+  {
+    mission: 'hayabusa',
+    slot: '02',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Itokawa asteroid Hayabusa',
+    replace: false,
+  },
+  {
+    mission: 'hayabusa',
+    slot: '03',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa spacecraft Itokawa asteroid',
+    replace: false,
+  },
+  {
+    mission: 'hayabusa',
+    slot: '04',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa sample return capsule Australia',
+    replace: false,
+  },
+  {
+    mission: 'hayabusa',
+    slot: '05',
+    agency: 'JAXA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Hayabusa M-V launch Uchinoura',
+    replace: false,
+  },
 
   // === Solar Orbiter (ESA + NASA partner) — NASA images-api ===
   // ESA Multimedia set URL is 404; NASA archive mirrors Solar Orbiter
   // imagery (joint mission). ESA stays on credit chain.
-  { mission: 'solar-orbiter', slot: '02', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter spacecraft Sun', replace: false },
-  { mission: 'solar-orbiter', slot: '03', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter EUI ultraviolet Sun', replace: false },
-  { mission: 'solar-orbiter', slot: '04', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter Mercury transit', replace: false },
-  { mission: 'solar-orbiter', slot: '05', agency: 'ESA / NASA', surface: 'fleet-galleries', query: 'Solar Orbiter launch Atlas V', replace: false },
+  {
+    mission: 'solar-orbiter',
+    slot: '02',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter spacecraft Sun',
+    replace: false,
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '03',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter EUI ultraviolet Sun',
+    replace: false,
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '04',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter Mercury transit',
+    replace: false,
+  },
+  {
+    mission: 'solar-orbiter',
+    slot: '05',
+    agency: 'ESA / NASA',
+    surface: 'fleet-galleries',
+    query: 'Solar Orbiter launch Atlas V',
+    replace: false,
+  },
 
   // === DART (NASA / JHU APL) — re-source via NASA images-api ===
   // JHU APL gallery times out on every WebFetch attempt; NASA archive
   // has all DART hardware + impact imagery. Replace the 3 Commons
   // entries from batch-2 (dart/02, dart/04 already done with NASA in
   // fixup; dart/05 was Commons).
-  { mission: 'dart', slot: '05', agency: 'NASA / JHU APL', surface: 'missions', query: 'DART asteroid impact plume Hubble', replace: true },
+  {
+    mission: 'dart',
+    slot: '05',
+    agency: 'NASA / JHU APL',
+    surface: 'missions',
+    query: 'DART asteroid impact plume Hubble',
+    replace: true,
+  },
 ];
 
 async function downloadAndProcess(imageUrl, dir, slot) {
@@ -67,7 +130,12 @@ async function downloadAndProcess(imageUrl, dir, slot) {
   const { width: W, height: H } = meta;
   const side = Math.min(W, H);
   await sharp(baseJpg)
-    .extract({ left: Math.round((W - side) / 2), top: Math.round((H - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((W - side) / 2),
+      top: Math.round((H - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 90 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
 }
@@ -85,7 +153,10 @@ for (const t of TARGETS) {
   }
   process.stdout.write(`→ ${t.mission}/${t.slot} (${t.agency})\n  `);
   const source = await resolveAgencyImage({
-    mission: t.mission, slot: t.slot, agency: t.agency, query: t.query,
+    mission: t.mission,
+    slot: t.slot,
+    agency: t.agency,
+    query: t.query,
   });
   if (!source) {
     console.log(`  ✗ no source from any tier`);

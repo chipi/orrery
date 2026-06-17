@@ -50,7 +50,12 @@ async function fetchAndProcess(url, dir, slot) {
   const { width: W, height: H } = meta;
   const side = Math.min(W, H);
   await sharp(baseJpg)
-    .extract({ left: Math.round((W - side) / 2), top: Math.round((H - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((W - side) / 2),
+      top: Math.round((H - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 90 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
 }

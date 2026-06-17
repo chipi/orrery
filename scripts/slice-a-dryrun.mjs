@@ -22,6 +22,7 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { resolveAgencyImage } from './lib/agency-resolver.mjs';
+import { judgeImage } from './lib/vision-judge.mjs';
 
 process.loadEnvFile?.();
 
@@ -40,6 +41,10 @@ if (!TARGET_AGENCY) {
 }
 const LIMIT = args.limit ? parseInt(args.limit, 10) : Infinity;
 const THROTTLE = args.throttle ? parseInt(args.throttle, 10) : 600;
+// Vision-judge layer (Claude Haiku) — runs per proposal, ~$0.0004 each.
+// Skip with --no-vision for fast iteration on gate/resolver work.
+const VISION_ENABLED = !args['no-vision'];
+const VISION_THROTTLE = args.visionThrottle ? parseInt(args.visionThrottle, 10) : 150;
 
 // ── Load data ──────────────────────────────────────────────────────
 
@@ -48,8 +53,57 @@ const MISSIONS = JSON.parse(readFileSync('static/data/missions/index.json', 'utf
 const FLEET = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
 
 const AGENCY_BY_ID = {};
-for (const m of MISSIONS) if (m.id) AGENCY_BY_ID[m.id] = m.agency ?? '?';
-for (const f of FLEET) if (f.id && !AGENCY_BY_ID[f.id]) AGENCY_BY_ID[f.id] = f.agency ?? '?';
+const CATEGORY_BY_ID = {};
+const NAME_BY_ID = {};
+for (const m of MISSIONS) {
+  if (!m.id) continue;
+  AGENCY_BY_ID[m.id] = m.agency ?? '?';
+  NAME_BY_ID[m.id] = m.name ?? m.title ?? null;
+}
+for (const f of FLEET) {
+  if (!f.id) continue;
+  if (!AGENCY_BY_ID[f.id]) AGENCY_BY_ID[f.id] = f.agency ?? '?';
+  if (!NAME_BY_ID[f.id]) NAME_BY_ID[f.id] = f.name ?? f.title ?? null;
+  CATEGORY_BY_ID[f.id] = f.category ?? null;
+}
+
+// Fix C — short cryptic IDs (a7l, aces, axemu, etc.) match nothing
+// in NASA images-api or NASM. Expand the query with a category-based
+// suffix so the gate has body tokens to match on.
+const CATEGORY_QUERY_SUFFIX = {
+  'space-suit': 'spacesuit',
+  launcher: 'launch vehicle',
+  'crewed-spacecraft': 'spacecraft',
+  'cargo-spacecraft': 'cargo spacecraft',
+  orbiter: 'spacecraft',
+  lander: 'lander',
+  rover: 'rover',
+  'launch-site': 'launch complex',
+  observatory: 'observatory',
+};
+
+function deriveQuery(missionId) {
+  // Fix G — prefer the catalog's human-readable `name` over the ID slug.
+  // Solves the UAESA `hope` case ("Hope Probe" is far better than "hope"
+  // for matching NASA/Commons). Falls back to ID-derived query when the
+  // catalog has no name (legacy entries / fleet/missions without name).
+  const name = NAME_BY_ID[missionId];
+  if (name && name.length > 2) {
+    return name;
+  }
+  // Fix F — split letter↔digit boundaries so concatenated IDs like
+  // `apollo10`, `mariner10`, `viking1` match "Apollo 10" / "Mariner 10".
+  const base = missionId
+    .replace(/[-_]+/g, ' ')
+    .replace(/([a-z])(\d)/gi, '$1 $2')
+    .replace(/(\d)([a-z])/gi, '$1 $2');
+  // For short cryptic IDs (≤4 chars) tied to a fleet category, append
+  // a category descriptor (e.g. "a7l" → "a7l spacesuit").
+  const category = CATEGORY_BY_ID[missionId];
+  const suffix = CATEGORY_QUERY_SUFFIX[category];
+  if (base.length <= 4 && suffix) return `${base} ${suffix}`;
+  return base;
+}
 
 function tierOf(sourceType) {
   if (!sourceType) return null;
@@ -60,7 +114,7 @@ function tierOf(sourceType) {
 
 function agencyMatches(agencyStr, target) {
   return (agencyStr || '')
-    .split(/[\/\,·&]/)
+    .split(/[/,·&]/)
     .map((s) => s.trim())
     .some((t) => t === target);
 }
@@ -87,27 +141,72 @@ console.log(`Candidates: ${CANDIDATES.length} Tier 3 entries matching agency=${T
 // ── Resolver loop ──────────────────────────────────────────────────
 
 const proposals = [];
-const stats = { tier1_upgrade: 0, tier2_upgrade: 0, no_change: 0, miss: 0 };
+const stats = {
+  tier1_upgrade: 0,
+  tier2_upgrade: 0,
+  no_change: 0,
+  miss: 0,
+  vision_passed: 0,
+  vision_flagged: 0,
+  vision_unsure: 0,
+};
+
+// Per-mission Smithsonian `seenIds` so dedup applies across slots.
+const seenIdsPerMission = new Map();
 
 for (let i = 0; i < CANDIDATES.length; i++) {
   const c = CANDIDATES[i];
-  // Minimal proper-noun query — mission id with dashes/underscores → spaces.
-  const query = c.missionId.replace(/[-_]+/g, ' ');
+  const query = deriveQuery(c.missionId);
+  let seenIds = seenIdsPerMission.get(c.missionId);
+  if (!seenIds) {
+    seenIds = new Set();
+    seenIdsPerMission.set(c.missionId, seenIds);
+  }
   let result;
   try {
     result = await resolveAgencyImage({
-      mission: c.missionId, slot: c.slot, agency: c.agency, query,
+      mission: c.missionId,
+      slot: c.slot,
+      agency: c.agency,
+      query,
+      seenIds,
     });
   } catch (e) {
     proposals.push({ ...c, query, proposed: null, error: e.message });
     stats.miss++;
     continue;
   }
+  // Vision-judge layer — verify the proposed candidate's content matches
+  // the mission. Skip if --no-vision OR no proposal OR no image_url.
+  let vision = null;
+  if (VISION_ENABLED && result?.image_url) {
+    vision = await judgeImage({
+      imageUrl: result.image_url,
+      missionId: c.missionId,
+      agency: c.agency,
+      subjectDescription: query,
+    });
+    await new Promise((r) => setTimeout(r, VISION_THROTTLE));
+    if (vision.verdict === 'related') stats.vision_passed++;
+    else if (vision.verdict === 'unrelated') stats.vision_flagged++;
+    else stats.vision_unsure++;
+  }
+
   proposals.push({
-    ...c, query,
+    ...c,
+    query,
     proposed: result
-      ? { tier: result.tier, source_type: result.source_type, image_url: result.image_url, credit: result.credit, license: result.license }
+      ? {
+          tier: result.tier,
+          source_type: result.source_type,
+          image_url: result.image_url,
+          credit: result.credit,
+          license: result.license,
+        }
       : null,
+    vision, // {verdict, confidence, reason} or null when skipped
+    // ship_at_apply: true if proposal accepted AND not vision-flagged.
+    ship_at_apply: !!(result && (!vision || vision.verdict !== 'unrelated')),
   });
   if (!result) stats.miss++;
   else if (result.tier === 1) stats.tier1_upgrade++;
@@ -115,7 +214,12 @@ for (let i = 0; i < CANDIDATES.length; i++) {
   else stats.no_change++;
 
   if (i % 25 === 24) {
-    console.log(`  …${i + 1}/${CANDIDATES.length} (T1 ${stats.tier1_upgrade}, T2 ${stats.tier2_upgrade}, T3 ${stats.no_change}, miss ${stats.miss})`);
+    const visionPart = VISION_ENABLED
+      ? ` | vision: ✓${stats.vision_passed} ✗${stats.vision_flagged} ?${stats.vision_unsure}`
+      : '';
+    console.log(
+      `  …${i + 1}/${CANDIDATES.length} (T1 ${stats.tier1_upgrade}, T2 ${stats.tier2_upgrade}, T3 ${stats.no_change}, miss ${stats.miss})${visionPart}`,
+    );
   }
   await new Promise((r) => setTimeout(r, THROTTLE));
 }
@@ -124,17 +228,34 @@ for (let i = 0; i < CANDIDATES.length; i++) {
 
 const slug = TARGET_AGENCY.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const outPath = `static/data/slice-a-${slug}-dryrun.json`;
-writeFileSync(outPath, JSON.stringify({
-  agency: TARGET_AGENCY,
-  totals: stats,
-  candidate_count: CANDIDATES.length,
-  proposals,
-}, null, 2) + '\n');
+writeFileSync(
+  outPath,
+  JSON.stringify(
+    {
+      agency: TARGET_AGENCY,
+      totals: stats,
+      candidate_count: CANDIDATES.length,
+      proposals,
+    },
+    null,
+    2,
+  ) + '\n',
+);
 
 console.log('\n── result ──');
 console.log(`  Tier 1 upgrade:           ${stats.tier1_upgrade}`);
 console.log(`  Tier 2 upgrade:           ${stats.tier2_upgrade}`);
 console.log(`  No change (still T3):     ${stats.no_change}`);
 console.log(`  Miss / error:             ${stats.miss}`);
+if (VISION_ENABLED) {
+  console.log(`\n  Vision passed (related):  ${stats.vision_passed}`);
+  console.log(`  Vision flagged (unrelated): ${stats.vision_flagged}`);
+  console.log(`  Vision unsure:            ${stats.vision_unsure}`);
+  const shipCount = proposals.filter((p) => p.ship_at_apply).length;
+  console.log(`\n  Will ship at apply:       ${shipCount}`);
+  console.log(
+    `  Held by vision flag:      ${stats.vision_flagged} (skipped at apply — stay on current Commons)`,
+  );
+}
 console.log(`  Total evaluated:          ${CANDIDATES.length}`);
 console.log(`\nFull payload: ${outPath}`);

@@ -56,61 +56,261 @@ const SIDECAR_PATH = 'static/data/mission-image-sources.json';
 // `nasaQuery: null` and let Commons handle it directly.
 const PLAN = {
   opportunity: [
-    { slot: '01', label: 'Delta II launch (2003)',          nasaQuery: 'Opportunity rover Delta II launch',                 commonsQuery: 'Opportunity rover MER-B Delta II launch 2003' },
-    { slot: '02', label: 'Endurance Crater panorama',       nasaQuery: 'Opportunity Endurance Crater panorama',             commonsQuery: 'Opportunity rover Endurance crater Mars' },
-    { slot: '03', label: 'Victoria Crater (MRO HiRISE)',    nasaQuery: 'Opportunity Victoria Crater HiRISE',                commonsQuery: 'Opportunity Victoria Crater HiRISE' },
-    { slot: '04', label: 'Meridiani Planum surface',        nasaQuery: 'Opportunity rover Meridiani Planum',                commonsQuery: 'Opportunity rover Meridiani Planum Mars' },
-    { slot: '05', label: 'Rover self-portrait',             nasaQuery: 'Opportunity rover self-portrait',                   commonsQuery: 'Opportunity rover self portrait Mars' },
+    {
+      slot: '01',
+      label: 'Delta II launch (2003)',
+      nasaQuery: 'Opportunity rover Delta II launch',
+      commonsQuery: 'Opportunity rover MER-B Delta II launch 2003',
+    },
+    {
+      slot: '02',
+      label: 'Endurance Crater panorama',
+      nasaQuery: 'Opportunity Endurance Crater panorama',
+      commonsQuery: 'Opportunity rover Endurance crater Mars',
+    },
+    {
+      slot: '03',
+      label: 'Victoria Crater (MRO HiRISE)',
+      nasaQuery: 'Opportunity Victoria Crater HiRISE',
+      commonsQuery: 'Opportunity Victoria Crater HiRISE',
+    },
+    {
+      slot: '04',
+      label: 'Meridiani Planum surface',
+      nasaQuery: 'Opportunity rover Meridiani Planum',
+      commonsQuery: 'Opportunity rover Meridiani Planum Mars',
+    },
+    {
+      slot: '05',
+      label: 'Rover self-portrait',
+      nasaQuery: 'Opportunity rover self-portrait',
+      commonsQuery: 'Opportunity rover self portrait Mars',
+    },
   ],
   spirit: [
-    { slot: '01', label: 'Delta II launch (MER-A, 2003)',   nasaQuery: 'Spirit rover Delta II launch',                      commonsQuery: 'Spirit rover MER-A Delta II launch 2003' },
-    { slot: '02', label: 'Gusev Crater panorama',           nasaQuery: 'Spirit rover Gusev Crater panorama',                commonsQuery: 'Spirit rover Gusev Crater panorama Mars' },
-    { slot: '03', label: 'Husband Hill summit panorama',    nasaQuery: 'Spirit rover Husband Hill summit',                  commonsQuery: 'Spirit rover Husband Hill panorama' },
-    { slot: '04', label: 'Rover self-portrait',             nasaQuery: 'Spirit rover self-portrait',                        commonsQuery: 'Spirit rover self portrait Mars' },
-    { slot: '05', label: 'Columbia Hills surface',          nasaQuery: 'Spirit rover Columbia Hills',                       commonsQuery: 'Spirit rover Columbia Hills Mars' },
+    {
+      slot: '01',
+      label: 'Delta II launch (MER-A, 2003)',
+      nasaQuery: 'Spirit rover Delta II launch',
+      commonsQuery: 'Spirit rover MER-A Delta II launch 2003',
+    },
+    {
+      slot: '02',
+      label: 'Gusev Crater panorama',
+      nasaQuery: 'Spirit rover Gusev Crater panorama',
+      commonsQuery: 'Spirit rover Gusev Crater panorama Mars',
+    },
+    {
+      slot: '03',
+      label: 'Husband Hill summit panorama',
+      nasaQuery: 'Spirit rover Husband Hill summit',
+      commonsQuery: 'Spirit rover Husband Hill panorama',
+    },
+    {
+      slot: '04',
+      label: 'Rover self-portrait',
+      nasaQuery: 'Spirit rover self-portrait',
+      commonsQuery: 'Spirit rover self portrait Mars',
+    },
+    {
+      slot: '05',
+      label: 'Columbia Hills surface',
+      nasaQuery: 'Spirit rover Columbia Hills',
+      commonsQuery: 'Spirit rover Columbia Hills Mars',
+    },
   ],
   mariner9: [
-    { slot: '01', label: 'Mariner 9 spacecraft',            nasaQuery: 'Mariner 9 spacecraft',                              commonsQuery: 'Mariner 9 spacecraft NASA' },
-    { slot: '02', label: 'Olympus Mons (1971 view)',        nasaQuery: 'Olympus Mons Mariner 9',                            commonsQuery: 'Olympus Mons Mariner 9 Mars' },
-    { slot: '03', label: 'Valles Marineris',                nasaQuery: 'Valles Marineris Mariner 9',                        commonsQuery: 'Valles Marineris Mariner 9 Mars' },
-    { slot: '04', label: 'Phobos (first close-up)',         nasaQuery: 'Phobos Mariner 9',                                  commonsQuery: 'Phobos Mariner 9 Mars moon' },
-    { slot: '05', label: 'Mars dust storm 1971',            nasaQuery: 'Mariner 9 Mars dust storm',                         commonsQuery: 'Mariner 9 Mars dust storm 1971' },
+    {
+      slot: '01',
+      label: 'Mariner 9 spacecraft',
+      nasaQuery: 'Mariner 9 spacecraft',
+      commonsQuery: 'Mariner 9 spacecraft NASA',
+    },
+    {
+      slot: '02',
+      label: 'Olympus Mons (1971 view)',
+      nasaQuery: 'Olympus Mons Mariner 9',
+      commonsQuery: 'Olympus Mons Mariner 9 Mars',
+    },
+    {
+      slot: '03',
+      label: 'Valles Marineris',
+      nasaQuery: 'Valles Marineris Mariner 9',
+      commonsQuery: 'Valles Marineris Mariner 9 Mars',
+    },
+    {
+      slot: '04',
+      label: 'Phobos (first close-up)',
+      nasaQuery: 'Phobos Mariner 9',
+      commonsQuery: 'Phobos Mariner 9 Mars moon',
+    },
+    {
+      slot: '05',
+      label: 'Mars dust storm 1971',
+      nasaQuery: 'Mariner 9 Mars dust storm',
+      commonsQuery: 'Mariner 9 Mars dust storm 1971',
+    },
   ],
   phoenix: [
-    { slot: '01', label: 'Delta II launch (2007)',          nasaQuery: 'Phoenix Mars lander Delta II launch',               commonsQuery: 'Phoenix Mars lander Delta II launch 2007' },
-    { slot: '02', label: 'Lander on Martian arctic',        nasaQuery: 'Phoenix Mars lander arctic',                        commonsQuery: 'Phoenix Mars lander arctic surface' },
-    { slot: '03', label: 'Water ice in trench',             nasaQuery: 'Phoenix Mars lander ice trench',                    commonsQuery: 'Phoenix Mars lander ice trench Snow Queen' },
-    { slot: '04', label: 'Robotic arm + soil scoop',        nasaQuery: 'Phoenix Mars lander robotic arm',                   commonsQuery: 'Phoenix Mars lander robotic arm scoop' },
-    { slot: '05', label: 'Descent parachute (HiRISE)',      nasaQuery: 'Phoenix Mars lander parachute HiRISE',              commonsQuery: 'Phoenix Mars lander parachute HiRISE' },
+    {
+      slot: '01',
+      label: 'Delta II launch (2007)',
+      nasaQuery: 'Phoenix Mars lander Delta II launch',
+      commonsQuery: 'Phoenix Mars lander Delta II launch 2007',
+    },
+    {
+      slot: '02',
+      label: 'Lander on Martian arctic',
+      nasaQuery: 'Phoenix Mars lander arctic',
+      commonsQuery: 'Phoenix Mars lander arctic surface',
+    },
+    {
+      slot: '03',
+      label: 'Water ice in trench',
+      nasaQuery: 'Phoenix Mars lander ice trench',
+      commonsQuery: 'Phoenix Mars lander ice trench Snow Queen',
+    },
+    {
+      slot: '04',
+      label: 'Robotic arm + soil scoop',
+      nasaQuery: 'Phoenix Mars lander robotic arm',
+      commonsQuery: 'Phoenix Mars lander robotic arm scoop',
+    },
+    {
+      slot: '05',
+      label: 'Descent parachute (HiRISE)',
+      nasaQuery: 'Phoenix Mars lander parachute HiRISE',
+      commonsQuery: 'Phoenix Mars lander parachute HiRISE',
+    },
   ],
   magellan: [
-    { slot: '01', label: 'Magellan spacecraft',             nasaQuery: 'Magellan spacecraft Venus',                         commonsQuery: 'Magellan spacecraft Venus NASA' },
-    { slot: '02', label: 'Maat Mons (radar)',               nasaQuery: 'Maat Mons Venus Magellan',                          commonsQuery: 'Maat Mons Venus Magellan radar' },
-    { slot: '03', label: 'Venus hemisphere radar mosaic',   nasaQuery: 'Venus hemisphere Magellan',                         commonsQuery: 'Venus globe Magellan radar mosaic' },
-    { slot: '04', label: 'Sapas Mons / pancake domes',      nasaQuery: 'Sapas Mons Venus Magellan',                         commonsQuery: 'Sapas Mons Venus Magellan radar' },
-    { slot: '05', label: 'Eistla Regio impact craters',     nasaQuery: 'Eistla Regio Venus Magellan',                       commonsQuery: 'Magellan Venus impact crater radar' },
+    {
+      slot: '01',
+      label: 'Magellan spacecraft',
+      nasaQuery: 'Magellan spacecraft Venus',
+      commonsQuery: 'Magellan spacecraft Venus NASA',
+    },
+    {
+      slot: '02',
+      label: 'Maat Mons (radar)',
+      nasaQuery: 'Maat Mons Venus Magellan',
+      commonsQuery: 'Maat Mons Venus Magellan radar',
+    },
+    {
+      slot: '03',
+      label: 'Venus hemisphere radar mosaic',
+      nasaQuery: 'Venus hemisphere Magellan',
+      commonsQuery: 'Venus globe Magellan radar mosaic',
+    },
+    {
+      slot: '04',
+      label: 'Sapas Mons / pancake domes',
+      nasaQuery: 'Sapas Mons Venus Magellan',
+      commonsQuery: 'Sapas Mons Venus Magellan radar',
+    },
+    {
+      slot: '05',
+      label: 'Eistla Regio impact craters',
+      nasaQuery: 'Eistla Regio Venus Magellan',
+      commonsQuery: 'Magellan Venus impact crater radar',
+    },
   ],
   akatsuki: [
     // JAXA mission — NASA archive mirrors Venus imagery; tried first, Commons fallback.
-    { slot: '01', label: 'Akatsuki spacecraft',             nasaQuery: 'Akatsuki Venus orbiter spacecraft',                 commonsQuery: 'Akatsuki spacecraft Venus JAXA' },
-    { slot: '02', label: 'Venus UV cloud structure',        nasaQuery: 'Akatsuki Venus ultraviolet',                        commonsQuery: 'Akatsuki Venus ultraviolet cloud' },
-    { slot: '03', label: 'Venus IR2 night-side',            nasaQuery: 'Akatsuki Venus infrared',                           commonsQuery: 'Akatsuki Venus IR2 infrared night' },
-    { slot: '04', label: 'Bow wave gravity wave',           nasaQuery: 'Akatsuki Venus gravity wave',                       commonsQuery: 'Akatsuki Venus bow wave gravity' },
-    { slot: '05', label: 'H-IIA launch (2010)',             nasaQuery: 'Akatsuki H-IIA launch',                             commonsQuery: 'Akatsuki H-IIA launch JAXA' },
+    {
+      slot: '01',
+      label: 'Akatsuki spacecraft',
+      nasaQuery: 'Akatsuki Venus orbiter spacecraft',
+      commonsQuery: 'Akatsuki spacecraft Venus JAXA',
+    },
+    {
+      slot: '02',
+      label: 'Venus UV cloud structure',
+      nasaQuery: 'Akatsuki Venus ultraviolet',
+      commonsQuery: 'Akatsuki Venus ultraviolet cloud',
+    },
+    {
+      slot: '03',
+      label: 'Venus IR2 night-side',
+      nasaQuery: 'Akatsuki Venus infrared',
+      commonsQuery: 'Akatsuki Venus IR2 infrared night',
+    },
+    {
+      slot: '04',
+      label: 'Bow wave gravity wave',
+      nasaQuery: 'Akatsuki Venus gravity wave',
+      commonsQuery: 'Akatsuki Venus bow wave gravity',
+    },
+    {
+      slot: '05',
+      label: 'H-IIA launch (2010)',
+      nasaQuery: 'Akatsuki H-IIA launch',
+      commonsQuery: 'Akatsuki H-IIA launch JAXA',
+    },
   ],
   'osiris-rex': [
-    { slot: '01', label: 'Atlas V launch (2016)',           nasaQuery: 'OSIRIS-REx Atlas V launch',                         commonsQuery: 'OSIRIS-REx Atlas V launch 2016' },
-    { slot: '02', label: 'Bennu full-disk view',            nasaQuery: 'Bennu OSIRIS-REx mosaic',                           commonsQuery: 'Bennu asteroid OSIRIS-REx full mosaic' },
-    { slot: '03', label: 'TAG sample collection',           nasaQuery: 'OSIRIS-REx TAG sample collection',                  commonsQuery: 'OSIRIS-REx TAG sample collection Bennu' },
-    { slot: '04', label: 'OSIRIS-REx spacecraft',           nasaQuery: 'OSIRIS-REx spacecraft Bennu',                       commonsQuery: 'OSIRIS-REx spacecraft Bennu mission' },
-    { slot: '05', label: 'Sample-return capsule (Utah)',    nasaQuery: 'OSIRIS-REx sample return capsule Utah',             commonsQuery: 'OSIRIS-REx sample return capsule Utah' },
+    {
+      slot: '01',
+      label: 'Atlas V launch (2016)',
+      nasaQuery: 'OSIRIS-REx Atlas V launch',
+      commonsQuery: 'OSIRIS-REx Atlas V launch 2016',
+    },
+    {
+      slot: '02',
+      label: 'Bennu full-disk view',
+      nasaQuery: 'Bennu OSIRIS-REx mosaic',
+      commonsQuery: 'Bennu asteroid OSIRIS-REx full mosaic',
+    },
+    {
+      slot: '03',
+      label: 'TAG sample collection',
+      nasaQuery: 'OSIRIS-REx TAG sample collection',
+      commonsQuery: 'OSIRIS-REx TAG sample collection Bennu',
+    },
+    {
+      slot: '04',
+      label: 'OSIRIS-REx spacecraft',
+      nasaQuery: 'OSIRIS-REx spacecraft Bennu',
+      commonsQuery: 'OSIRIS-REx spacecraft Bennu mission',
+    },
+    {
+      slot: '05',
+      label: 'Sample-return capsule (Utah)',
+      nasaQuery: 'OSIRIS-REx sample return capsule Utah',
+      commonsQuery: 'OSIRIS-REx sample return capsule Utah',
+    },
   ],
   dart: [
-    { slot: '01', label: 'Falcon 9 launch (2021)',          nasaQuery: 'DART mission Falcon 9 launch',                      commonsQuery: 'DART mission Falcon 9 launch 2021' },
-    { slot: '02', label: 'Dimorphos (final DART frame)',    nasaQuery: 'DART Dimorphos final image',                        commonsQuery: 'Dimorphos DART final impact image asteroid' },
-    { slot: '03', label: 'Didymos + Dimorphos binary',      nasaQuery: 'Didymos Dimorphos DART',                            commonsQuery: 'Didymos Dimorphos binary asteroid DART' },
-    { slot: '04', label: 'DART spacecraft model',           nasaQuery: 'DART spacecraft NASA',                              commonsQuery: 'DART spacecraft NASA Double Asteroid' },
-    { slot: '05', label: 'Post-impact ejecta plume',        nasaQuery: 'DART impact ejecta plume Dimorphos',                commonsQuery: 'DART impact ejecta plume Dimorphos Hubble' },
+    {
+      slot: '01',
+      label: 'Falcon 9 launch (2021)',
+      nasaQuery: 'DART mission Falcon 9 launch',
+      commonsQuery: 'DART mission Falcon 9 launch 2021',
+    },
+    {
+      slot: '02',
+      label: 'Dimorphos (final DART frame)',
+      nasaQuery: 'DART Dimorphos final image',
+      commonsQuery: 'Dimorphos DART final impact image asteroid',
+    },
+    {
+      slot: '03',
+      label: 'Didymos + Dimorphos binary',
+      nasaQuery: 'Didymos Dimorphos DART',
+      commonsQuery: 'Didymos Dimorphos binary asteroid DART',
+    },
+    {
+      slot: '04',
+      label: 'DART spacecraft model',
+      nasaQuery: 'DART spacecraft NASA',
+      commonsQuery: 'DART spacecraft NASA Double Asteroid',
+    },
+    {
+      slot: '05',
+      label: 'Post-impact ejecta plume',
+      nasaQuery: 'DART impact ejecta plume Dimorphos',
+      commonsQuery: 'DART impact ejecta plume Dimorphos Hubble',
+    },
   ],
 };
 
@@ -122,17 +322,19 @@ async function nasaSearch(query) {
   if (!res.ok) throw new Error(`NASA search HTTP ${res.status}`);
   const json = await res.json();
   const items = json?.collection?.items ?? [];
-  return items.map((it) => {
-    const d = it?.data?.[0] ?? {};
-    return {
-      nasa_id: d.nasa_id,
-      title: d.title,
-      secondary_creator: d.secondary_creator,
-      center: d.center,
-      keywords: d.keywords ?? [],
-      asset_href: it.href, // collection.json endpoint
-    };
-  }).filter((x) => x.nasa_id);
+  return items
+    .map((it) => {
+      const d = it?.data?.[0] ?? {};
+      return {
+        nasa_id: d.nasa_id,
+        title: d.title,
+        secondary_creator: d.secondary_creator,
+        center: d.center,
+        keywords: d.keywords ?? [],
+        asset_href: it.href, // collection.json endpoint
+      };
+    })
+    .filter((x) => x.nasa_id);
 }
 
 async function nasaResolveOriginalUrl(nasa_id) {
@@ -173,7 +375,7 @@ async function commonsSearch(query) {
   return (json?.query?.search ?? []).map((r) => r.title.replace(/^File:/, ''));
 }
 
-async function commonsFileExists(filename) {
+async function _commonsFileExists(filename) {
   const params = new URLSearchParams({
     action: 'query',
     format: 'json',

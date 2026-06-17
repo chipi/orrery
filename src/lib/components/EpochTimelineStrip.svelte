@@ -66,9 +66,9 @@
           style:--band-color={ep.color}
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
           onkeydown={(e) => handleKey(e, ep.id)}
-          title="{ep.label} ({ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd}) · {countByEpoch.get(
-            ep.id,
-          ) ?? 0}"
+          title="{ep.label} ({ep.yearStart}–{ep.id === 'mars-era'
+            ? '∞'
+            : ep.yearEnd}) · {countByEpoch.get(ep.id) ?? 0}"
           aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch.get(ep.id) ??
             0} entries)"
         >

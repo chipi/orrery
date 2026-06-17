@@ -382,11 +382,7 @@
 
     {#if filtersExpanded}
       <div data-audio-stage="fleet-epoch-timeline">
-        <EpochTimelineStrip
-          {countByEpoch}
-          selected={epochFilter}
-          onSelect={(v) => setEpoch(v)}
-        />
+        <EpochTimelineStrip {countByEpoch} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
       </div>
       <nav
         id="fleet-filters"

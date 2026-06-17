@@ -9,10 +9,7 @@
     onScienceLensChange,
     toggleScienceLens,
   } from '$lib/science-lens';
-  import {
-    settingsState,
-    toggleSettingsOpen,
-  } from '$lib/quality/quality-settings-store.svelte';
+  import { settingsState, toggleSettingsOpen } from '$lib/quality/quality-settings-store.svelte';
   import { track } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';

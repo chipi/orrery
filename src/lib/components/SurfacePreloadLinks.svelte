@@ -34,10 +34,5 @@
 
 <svelte:head>
   <link rel="preload" as="fetch" href="{base}/data/{planet}-sites.json" crossorigin="anonymous" />
-  <link
-    rel="preload"
-    as="fetch"
-    href="{base}/data/surface-hotspots.json"
-    crossorigin="anonymous"
-  />
+  <link rel="preload" as="fetch" href="{base}/data/surface-hotspots.json" crossorigin="anonymous" />
 </svelte:head>

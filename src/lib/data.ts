@@ -286,9 +286,9 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
   // items load after the planet, sometimes takes few seconds.")
   return Promise.all(
     baseList.map(async (s) => {
-      const overlay = await get<Partial<MoonSite>>(
-        `i18n/${locale}/moon-sites/${s.id}.json`,
-      ).catch(() => null);
+      const overlay = await get<Partial<MoonSite>>(`i18n/${locale}/moon-sites/${s.id}.json`).catch(
+        () => null,
+      );
       const fallback =
         overlay ??
         (locale === 'en-US'
@@ -352,9 +352,9 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
   const [baseList, hotspots] = await Promise.all([marsSites(), surfaceHotspotsSidecar()]);
   return Promise.all(
     baseList.map(async (s) => {
-      const overlay = await get<Partial<MarsSite>>(
-        `i18n/${locale}/mars-sites/${s.id}.json`,
-      ).catch(() => null);
+      const overlay = await get<Partial<MarsSite>>(`i18n/${locale}/mars-sites/${s.id}.json`).catch(
+        () => null,
+      );
       const fallback =
         overlay ??
         (locale === 'en-US'

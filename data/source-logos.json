@@ -126,6 +126,20 @@
       "license_summary": "Hubble (hubblesite.org) and Webb (webbtelescope.org) outreach material released for editorial reuse with credit; STScI operates under NASA contract."
     },
     {
+      "id": "smithsonian",
+      "name": "Smithsonian Institution",
+      "kind": "research-institute",
+      "url": "https://www.si.edu/",
+      "license_summary": "Smithsonian Open Access programme releases ~3M cultural-heritage objects under CC0 (no rights reserved) — National Air and Space Museum spaceflight artefact photography sourced via the OA API at api.si.edu."
+    },
+    {
+      "id": "nara",
+      "name": "U.S. National Archives",
+      "kind": "research-institute",
+      "url": "https://www.archives.gov/",
+      "license_summary": "Public domain — records of the U.S. Government (17 U.S.C. § 105). Record Group 255 (NASA Records) carries Mercury / Gemini / Apollo era photography."
+    },
+    {
       "id": "nature",
       "name": "Nature (Springer Nature)",
       "kind": "publisher",

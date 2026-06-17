@@ -1,0 +1,319 @@
+{
+  "agency": "Blue Origin",
+  "totals": {
+    "tier1_upgrade": 10,
+    "tier2_upgrade": 0,
+    "no_change": 0,
+    "miss": 7,
+    "vision_passed": 0,
+    "vision_flagged": 10,
+    "vision_unsure": 0
+  },
+  "candidate_count": 17,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "blue-moon-mk1",
+      "slot": "01",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/blue-moon-mk1/01.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "blue-moon-mk1",
+      "slot": "02",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/blue-moon-mk1/02.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "blue-moon-mk1",
+      "slot": "03",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/blue-moon-mk1/03.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "blue-moon-mk1",
+      "slot": "04",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/blue-moon-mk1/04.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "blue-moon-mk1",
+      "slot": "05",
+      "agency": "Blue Origin",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/blue-moon-mk1/05.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-glenn",
+      "slot": "01",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-glenn/01.jpg",
+      "query": "new glenn",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/m61-00041/m61-00041~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a vintage black-and-white photograph of people in a control room or facility tour, showing only crew/staff and no Blue Origin hardware, which didn't exist until decades after this image was ta"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-glenn",
+      "slot": "02",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-glenn/02.jpg",
+      "query": "new glenn",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/m61-00041/m61-00041~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a historical black-and-white photograph showing people in a control room or facility tour, depicting a press conference or educational presentation rather than spacecraft hardware, mission har"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-glenn",
+      "slot": "03",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-glenn/03.jpg",
+      "query": "new glenn",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/m61-00041/m61-00041~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a historical press conference or briefing photo showing people in suits listening to a presentation in what appears to be a 1960s-era control room, unrelated to Blue Origin's New Glenn program"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-glenn",
+      "slot": "04",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-glenn/04.jpg",
+      "query": "new glenn",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/m61-00041/m61-00041~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a historical control room scene with people in suits from approximately the 1950s-60s era, clearly predating Blue Origin's New Glenn program and showing only crew/personnel without identifying"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-glenn",
+      "slot": "05",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-glenn/05.jpg",
+      "query": "new glenn",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/m61-00041/m61-00041~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a historical black-and-white photograph showing people in a control room or facility with vintage electronics, clearly from the early space age (1950s-60s era), not related to Blue Origin's Ne"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "01",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-shepard/01.jpg",
+      "query": "new shepard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/S71-15273/S71-15273~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Apollo-era astronauts conducting lunar surface geology training with period-appropriate spacesuits and equipment, not New Shepard hardware or mission elements."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "02",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-shepard/02.jpg",
+      "query": "new shepard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/S71-15273/S71-15273~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Apollo-era astronauts in spacesuits performing lunar surface activities, which is inconsistent with New Shepard, a suborbital vehicle that never landed on the Moon and operated decade"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "03",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-shepard/03.jpg",
+      "query": "new shepard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/S71-15273/S71-15273~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Apollo-era astronauts conducting surface geology work on the Moon, not Blue Origin's New Shepard suborbital vehicle or missions."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "04",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-shepard/04.jpg",
+      "query": "new shepard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/S71-15273/S71-15273~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Apollo-era astronauts in spacesuits conducting lunar surface activities, not New Shepard hardware or mission-related imagery."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "05",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/new-shepard/05.jpg",
+      "query": "new shepard",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/S71-15273/S71-15273~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows Apollo-era astronauts in spacesuits conducting lunar surface geology work, not Blue Origin's New Shepard suborbital vehicle or mission hardware."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "blue-moon-mk1",
+      "slot": "01",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/blue-moon-mk1/01.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "blue-moon-mk1",
+      "slot": "02",
+      "agency": "Blue Origin",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/blue-moon-mk1/02.jpg",
+      "query": "blue moon mk 1",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

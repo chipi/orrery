@@ -1,0 +1,3075 @@
+{
+  "agency": "ESA",
+  "totals": {
+    "tier1_upgrade": 40,
+    "tier2_upgrade": 4,
+    "no_change": 71,
+    "miss": 45,
+    "vision_passed": 22,
+    "vision_flagged": 10,
+    "vision_unsure": 83
+  },
+  "candidate_count": 160,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-5",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-5/01.jpg",
+      "query": "ariane 5",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.7,
+        "reason": "This image shows a rocket launch with characteristics consistent with Ariane 5 (distinctive plume pattern and trajectory), which substantively depicts a mission-defining launch moment."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-5",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-5/02.jpg",
+      "query": "ariane 5",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.75,
+        "reason": "This is a launch photograph showing a rocket ascending with characteristic engine plume, which is a mission-defining moment for any space launch; while the specific rocket type cannot be definitively "
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-5",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-5/03.jpg",
+      "query": "ariane 5",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a launch image showing a rocket with distinctive yellow/orange flame plume characteristic of Ariane 5's cryogenic engines ascending through clouds, which is mission-defining launch imagery."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-5",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-5/04.jpg",
+      "query": "ariane 5",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a launch photograph showing a rocket with the distinctive flame and smoke plume characteristic of an Ariane 5 ascent, which is mission hardware in flight."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-5",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-5/05.jpg",
+      "query": "ariane 5",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a launch image showing a rocket in ascent with characteristic dual solid booster exhaust plumes consistent with Ariane 5's configuration, which is mission-defining in-flight imagery."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-6/01.jpg",
+      "query": "ariane 6",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.75,
+        "reason": "Image shows a rocket launch with white/yellow flame plume characteristic of cryogenic engines, consistent with Ariane-class vehicles, though specific mission identity cannot be definitively confirmed "
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-6/02.jpg",
+      "query": "ariane 6",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.6,
+        "reason": "This is a launch image showing a rocket ascending with characteristic engine plume, which constitutes in-flight mission imagery; however, without visible mission-specific markings or details, it canno"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-6/03.jpg",
+      "query": "ariane 6",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.6,
+        "reason": "This is a launch image showing a rocket with characteristic flame and exhaust plume, which substantively depicts mission hardware in flight, though the specific rocket type cannot be definitively conf"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-6/04.jpg",
+      "query": "ariane 6",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.65,
+        "reason": "Image shows a rocket launch with characteristic flame and exhaust plume, which is a mission-defining moment for any space launch, though the specific rocket type cannot be definitively identified from"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ariane-6/05.jpg",
+      "query": "ariane 6",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/first_ariane_6_with_p160c-based_boosters_soars/27332128-2-eng-GB/First_Ariane_6_with_P160C-based_boosters_soars_pillars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.6,
+        "reason": "This is a rocket launch image showing a spacecraft being propelled into orbit, which is a mission-defining moment; however, without visible identifying markers, I cannot definitively confirm this is s"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/atv/01.jpg",
+      "query": "atv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/atv/02.jpg",
+      "query": "atv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/atv/03.jpg",
+      "query": "atv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/atv/04.jpg",
+      "query": "atv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/atv/05.jpg",
+      "query": "atv cargo spacecraft",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beagle2",
+      "slot": "01",
+      "agency": "UKSA / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beagle2/01.jpg",
+      "query": "beagle 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beagle2",
+      "slot": "02",
+      "agency": "UKSA / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beagle2/02.jpg",
+      "query": "beagle 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beagle2",
+      "slot": "03",
+      "agency": "UKSA / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beagle2/03.jpg",
+      "query": "beagle 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beagle2",
+      "slot": "04",
+      "agency": "UKSA / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beagle2/04.jpg",
+      "query": "beagle 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beagle2",
+      "slot": "05",
+      "agency": "UKSA / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/beagle2/05.jpg",
+      "query": "beagle 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "01",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/01.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "02",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/02.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "03",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/03.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "04",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/04.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "bepicolombo",
+      "slot": "05",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/bepicolombo/05.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "euclid",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/euclid/01.jpg",
+      "query": "euclid",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "euclid",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/euclid/02.jpg",
+      "query": "euclid",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "euclid",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/euclid/03.jpg",
+      "query": "euclid",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "euclid",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/euclid/04.jpg",
+      "query": "euclid",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "euclid",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/euclid/05.jpg",
+      "query": "euclid",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-rosalind-franklin",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-rosalind-franklin/01.jpg",
+      "query": "exomars rosalind franklin",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-rosalind-franklin",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-rosalind-franklin/02.jpg",
+      "query": "exomars rosalind franklin",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-rosalind-franklin",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-rosalind-franklin/03.jpg",
+      "query": "exomars rosalind franklin",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-rosalind-franklin",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-rosalind-franklin/04.jpg",
+      "query": "exomars rosalind franklin",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-rosalind-franklin",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-rosalind-franklin/05.jpg",
+      "query": "exomars rosalind franklin",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-tgo",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/exomars-tgo/01.jpg",
+      "query": "exomars tgo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-tgo",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/exomars-tgo/02.jpg",
+      "query": "exomars tgo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-tgo",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/exomars-tgo/03.jpg",
+      "query": "exomars tgo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-tgo",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/exomars-tgo/04.jpg",
+      "query": "exomars tgo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "exomars-tgo",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/exomars-tgo/05.jpg",
+      "query": "exomars tgo",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaia",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaia/01.jpg",
+      "query": "gaia observatory",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaia",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaia/02.jpg",
+      "query": "gaia observatory",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaia",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaia/03.jpg",
+      "query": "gaia observatory",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaia",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gaia/04.jpg",
+      "query": "gaia observatory",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaia",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/gaia/05.jpg",
+      "query": "gaia observatory",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "galileo-gnss",
+      "slot": "01",
+      "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/galileo-gnss/01.jpg",
+      "query": "galileo gnss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "europeanspaceagency-flickr",
+        "image_url": "https://live.staticflickr.com/65535/55340468438_f2fda5588d_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is an internal view of a Galileo satellite showing the characteristic cylindrical body structure, solar panels, and deployment mechanism consistent with Galileo GNSS spacecraft hardware documenta"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "galileo-gnss",
+      "slot": "02",
+      "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/galileo-gnss/02.jpg",
+      "query": "galileo gnss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "europeanspaceagency-flickr",
+        "image_url": "https://live.staticflickr.com/65535/55340468438_f2fda5588d_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This appears to be an interior view of a Galileo satellite showing the characteristic circular design with yellow thermal radiators and the dense pattern of thrusters/components typical of Galileo GNS"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "galileo-gnss",
+      "slot": "03",
+      "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/galileo-gnss/03.jpg",
+      "query": "galileo gnss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "europeanspaceagency-flickr",
+        "image_url": "https://live.staticflickr.com/65535/55340468438_f2fda5588d_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is an internal view of a spacecraft showing solar panels, radiators, and the characteristic architecture of a Galileo satellite, which is Galileo GNSS constellation hardware."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "galileo-gnss",
+      "slot": "04",
+      "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/galileo-gnss/04.jpg",
+      "query": "galileo gnss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "europeanspaceagency-flickr",
+        "image_url": "https://live.staticflickr.com/65535/55340468438_f2fda5588d_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is an interior photograph of a Galileo satellite showing the distinctive circular design with solar panels and instrument components, representing actual Galileo GNSS spacecraft hardware."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "galileo-gnss",
+      "slot": "05",
+      "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/galileo-gnss/05.jpg",
+      "query": "galileo gnss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "europeanspaceagency-flickr",
+        "image_url": "https://live.staticflickr.com/65535/55340468438_f2fda5588d_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows a spacecraft assembly or testing facility with solar panels and internal structure, not Galileo GNSS satellite hardware or mission-specific imagery."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/giotto/01.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/giotto/02.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/giotto/03.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/giotto/04.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/giotto/05.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "01",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/01.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its characteristic solar panels and truss structure in-flight."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "02",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/02.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with characteristic solar panels and truss structure visible against the planet surface."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "03",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/03.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.98,
+        "reason": "The image shows the International Space Station in orbit above Earth with its distinctive solar arrays and truss structure, representing the operational spacecraft and in-flight mission hardware."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "04",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/04.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its characteristic solar panels and truss structure clearly visible against the planet's surface."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "iss",
+      "slot": "05",
+      "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/iss/05.jpg",
+      "query": "iss",
+      "proposed": {
+        "tier": 1,
+        "source_type": "roscosmos-flickr",
+        "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+        "license": "see_per_photo"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Image shows the International Space Station in orbit above Earth with its distinctive solar arrays and modules clearly visible."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "juice",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/juice/01.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "juice",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/juice/02.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "juice",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/juice/03.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "juice",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/juice/04.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "juice",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/juice/05.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-2",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/kourou-ela-2/01.jpg",
+      "query": "kourou ela 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-2",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/kourou-ela-2/02.jpg",
+      "query": "kourou ela 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-2",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/kourou-ela-2/03.jpg",
+      "query": "kourou ela 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-2",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/kourou-ela-2/04.jpg",
+      "query": "kourou ela 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-2",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/kourou-ela-2/05.jpg",
+      "query": "kourou ela 2",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-3",
+      "slot": "01",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-3/01.jpg",
+      "query": "kourou ela 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-3",
+      "slot": "02",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-3/02.jpg",
+      "query": "kourou ela 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-3",
+      "slot": "03",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-3/03.jpg",
+      "query": "kourou ela 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-3",
+      "slot": "04",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-3/04.jpg",
+      "query": "kourou ela 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-3",
+      "slot": "05",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-3/05.jpg",
+      "query": "kourou ela 3",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-4",
+      "slot": "01",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-4/01.jpg",
+      "query": "kourou ela 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-4",
+      "slot": "02",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-4/02.jpg",
+      "query": "kourou ela 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-4",
+      "slot": "03",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-4/03.jpg",
+      "query": "kourou ela 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-4",
+      "slot": "04",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-4/04.jpg",
+      "query": "kourou ela 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "kourou-ela-4",
+      "slot": "05",
+      "agency": "ESA / Arianespace",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/kourou-ela-4/05.jpg",
+      "query": "kourou ela 4",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mars-express",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mars-express/01.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mars-express",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mars-express/02.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mars-express",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mars-express/03.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mars-express",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mars-express/04.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mars-express",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mars-express/05.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "rosetta",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/rosetta/01.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "rosetta",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/rosetta/02.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "rosetta",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/rosetta/03.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "rosetta",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/rosetta/04.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "rosetta",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/rosetta/05.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "schiaparelli",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/schiaparelli/01.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "schiaparelli",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/schiaparelli/02.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "schiaparelli",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/schiaparelli/03.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "schiaparelli",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/schiaparelli/04.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "schiaparelli",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/schiaparelli/05.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sentinel-copernicus",
+      "slot": "01",
+      "agency": "ESA / European Commission",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/sentinel-copernicus/01.jpg",
+      "query": "sentinel copernicus",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sentinel-copernicus",
+      "slot": "02",
+      "agency": "ESA / European Commission",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sentinel-copernicus/02.jpg",
+      "query": "sentinel copernicus",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sentinel-copernicus",
+      "slot": "03",
+      "agency": "ESA / European Commission",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sentinel-copernicus/03.jpg",
+      "query": "sentinel copernicus",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sentinel-copernicus",
+      "slot": "04",
+      "agency": "ESA / European Commission",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sentinel-copernicus/04.jpg",
+      "query": "sentinel copernicus",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sentinel-copernicus",
+      "slot": "05",
+      "agency": "ESA / European Commission",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sentinel-copernicus/05.jpg",
+      "query": "sentinel copernicus",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/smart-1/01.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/smart-1/02.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/smart-1/03.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/smart-1/04.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/smart-1/05.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "01",
+      "agency": "ESA / NASA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/solar-orbiter/01.jpg",
+      "query": "solar orbiter",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20200108-PH-AIR01_0004/KSC-20200108-PH-AIR01_0004~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This image shows two people in spacesuits posing in what appears to be a museum or facility display, which is a crew/people-only portrait that does not substantively depict Solar Orbiter spacecraft, h"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ulysses",
+      "slot": "01",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ulysses/01.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This appears to be a surface imaging photograph of Mars or the Moon showing topography and craters, which does not correspond to Ulysses mission hardware or science—Ulysses was a heliospheric solar po"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ulysses",
+      "slot": "02",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ulysses/02.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a surface image of a planetary/lunar body showing terrain and craters, but Ulysses was a heliophysics mission that studied the Sun and solar wind in space, not a planetary surface imaging miss"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ulysses",
+      "slot": "03",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ulysses/03.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a surface orbital image showing terrain features and a crater, consistent with planetary/lunar reconnaissance imagery, but not substantively depicting Ulysses mission hardware, instruments, or"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ulysses",
+      "slot": "04",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ulysses/04.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.85,
+        "reason": "This appears to be a planetary/lunar surface image (likely Mars from an orbital camera), not related to Ulysses, which was a solar polar orbit mission with no surface imaging capability."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "ulysses",
+      "slot": "05",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/ulysses/05.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a surface imaging shot showing Martian or lunar terrain with craters and geological features, inconsistent with Ulysses which was a solar wind mission with no planetary imaging objectives."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-1",
+      "slot": "01",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-1/01.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-A19670093000-NASM2018-10363-000001.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-1",
+      "slot": "02",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-1/02.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2014-01653.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-1",
+      "slot": "03",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-1/03.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-1",
+      "slot": "04",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-1/04.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-1",
+      "slot": "05",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-1/05.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-2",
+      "slot": "01",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-2/01.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-A19670093000-NASM2018-10363-000001.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-2",
+      "slot": "02",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-2/02.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2014-01653.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-2",
+      "slot": "03",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vega-2/03.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-2",
+      "slot": "04",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vega-2/04.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vega-2",
+      "slot": "05",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vega-2/05.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xmm-newton",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xmm-newton/01.jpg",
+      "query": "xmm newton",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/XMM-Newton%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xmm-newton",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xmm-newton/02.jpg",
+      "query": "xmm newton",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/XMM-Newton%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xmm-newton",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xmm-newton/03.jpg",
+      "query": "xmm newton",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/XMM-Newton%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xmm-newton",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xmm-newton/04.jpg",
+      "query": "xmm newton",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/XMM-Newton%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "xmm-newton",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/xmm-newton/05.jpg",
+      "query": "xmm newton",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/XMM-Newton%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "01",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/01.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "02",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/02.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "bepicolombo",
+      "slot": "03",
+      "agency": "ESA / JAXA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/bepicolombo/03.jpg",
+      "query": "bepicolombo",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "cassini",
+      "slot": "01",
+      "agency": "NASA / ESA / ASI",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/cassini/01.jpg",
+      "query": "cassini",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA06092/PIA06092~orig.jpg",
+        "credit": "NASA/JPL/Space Science Institute",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This appears to be a high-resolution image of Saturn's rings, characteristic of imagery captured by Cassini's imaging instruments during its orbital mission around Saturn."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "cassini",
+      "slot": "02",
+      "agency": "NASA / ESA / ASI",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/cassini/02.jpg",
+      "query": "cassini",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA06092/PIA06092~orig.jpg",
+        "credit": "NASA/JPL/Space Science Institute",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a close-up image of Saturn's rings showing fine structure and detail characteristic of Cassini spacecraft imagery from its Saturn orbital mission."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "cassini",
+      "slot": "03",
+      "agency": "NASA / ESA / ASI",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/cassini/03.jpg",
+      "query": "cassini",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA06092/PIA06092~orig.jpg",
+        "credit": "NASA/JPL/Space Science Institute",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This is a high-resolution image of Saturn's rings, consistent with Cassini spacecraft imagery which extensively documented ring structure and dynamics during its 13-year mission."
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "giotto",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/giotto/01.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "giotto",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/giotto/02.jpg",
+      "query": "giotto",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "juice",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/juice/01.jpg",
+      "query": "juice",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20spatiale%20JUICE%20-%20instruments%20scientifiques%202023-04-13%20090056-fr.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mars-express",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mars-express/01.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mars-express",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mars-express/02.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mars-express",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mars-express/03.jpg",
+      "query": "mars express",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esa-multimedia",
+        "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "rosetta",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/rosetta/01.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "rosetta",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/rosetta/02.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "rosetta",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/rosetta/03.jpg",
+      "query": "rosetta",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta%20spacecraft%20model.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "direct-other",
+      "path": "/images/missions/schiaparelli/01.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/schiaparelli/02.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/schiaparelli/03.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/schiaparelli/04.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/schiaparelli/05.jpg",
+      "query": "schiaparelli",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "smart-1",
+      "slot": "01",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/smart-1/01.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "smart-1",
+      "slot": "02",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/smart-1/02.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "smart-1",
+      "slot": "03",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/smart-1/03.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "smart-1",
+      "slot": "04",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/smart-1/04.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "smart-1",
+      "slot": "05",
+      "agency": "ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/smart-1/05.jpg",
+      "query": "smart 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20SMART-1%20spacecraft%20leaves%20ESTEC%20ESA211073.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "ulysses",
+      "slot": "01",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/ulysses/01.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a planetary surface image (likely Mars from orbital imagery) showing terrain features and a crater, which has no connection to the Ulysses solar-physics spacecraft mission."
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "ulysses",
+      "slot": "02",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/ulysses/02.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution orbital image of a planetary surface showing terrain features and a crater, consistent with Mars reconnaissance imagery, not related to the Ulysses solar-wind mission which h"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "ulysses",
+      "slot": "03",
+      "agency": "ESA / NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/ulysses/03.jpg",
+      "query": "ulysses",
+      "proposed": {
+        "tier": 1,
+        "source_type": "nasa-image-library",
+        "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+        "credit": "NASA/JPL/ASU",
+        "license": "pd-nasa"
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.85,
+        "reason": "This appears to be an orbital/surface image of a planetary body (likely Mars from an orbiter), which is unrelated to Ulysses, a solar physics mission that studied the Sun and did not produce planetary"
+      },
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-1",
+      "slot": "01",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-1/01.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-1",
+      "slot": "02",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-1/02.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-1",
+      "slot": "03",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-1/03.jpg",
+      "query": "vega 1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-2",
+      "slot": "01",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-2/01.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-2",
+      "slot": "02",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-2/02.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "vega-2",
+      "slot": "03",
+      "agency": "Roscosmos / ESA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/vega-2/03.jpg",
+      "query": "vega 2",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    }
+  ]
+}

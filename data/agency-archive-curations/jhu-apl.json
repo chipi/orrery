@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "description": "Per-mission curated image URLs for JHU APL-led missions. JHU APL is prime contractor on DART, Parker, New Horizons, Dragonfly. Their galleries host higher-res masters of mission hardware + the canonical 'DART final frame' that the Wikimedia Commons mirror crops down.",
+  "missions": {
+    "dart": {
+      "agency": "JHU-APL",
+      "primary_archive": "https://dart.jhuapl.edu/Gallery/index.php",
+      "_verification_needed": true,
+      "_notes": "Site is responsive (200 OK on health check 2026-06-17). Three slots to re-source from JHU APL: dart/02 (Dimorphos final frame), dart/04 (spacecraft hardware portrait), dart/05 (post-impact plume). Need WebFetch of the gallery page to extract real image URLs; slots populated once URLs verified."
+    },
+    "parker-solar-probe": {
+      "agency": "JHU-APL",
+      "primary_archive": "https://parkersolarprobe.jhuapl.edu/",
+      "_verification_needed": true,
+      "_notes": "Default gallery path (parkersolarprobe.jhuapl.edu/Gallery/) returns 404 — URL pattern changed. Need to find current gallery path before populating. Parker Solar Probe was sourced via NASA images-api in broader-NASA pass (3/5 NASA, 2/5 Commons), so this is a future-quality-upgrade slot, not a gap."
+    },
+    "new-horizons": {
+      "agency": "JHU-APL",
+      "primary_archive": "http://pluto.jhuapl.edu/Multimedia/Science-Photos.php",
+      "_verification_needed": true,
+      "_notes": "Currently sourced via NASA / Commons. JHU APL hosts canonical Pluto-flyby imagery at higher res — upgrade target for future pass."
+    },
+    "dragonfly": {
+      "agency": "JHU-APL",
+      "primary_archive": "https://dragonfly.jhuapl.edu/",
+      "_verification_needed": true,
+      "_notes": "Mission not yet launched (NET 2027). Limited imagery available. Curation pass when mission lands."
+    }
+  }
+}

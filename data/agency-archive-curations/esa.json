@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "description": "Per-mission curated image URLs for ESA missions. ESA Multimedia hosts mission sets; resolver targets the set page. Hubble joint-mission imagery routes via esahubble.org (returns 200 OK).",
+  "missions": {
+    "solar-orbiter": {
+      "agency": "ESA",
+      "primary_archive": "https://www.esa.int/ESA_Multimedia/Missions/Solar_Orbiter",
+      "_verification_needed": true,
+      "_notes": "Sets URL (https://www.esa.int/ESA_Multimedia/Sets/Solar_Orbiter) returns 404 — need to find current set/missions path. WebFetch ESA Solar Orbiter mission page to enumerate gallery URLs."
+    },
+    "juice": {
+      "agency": "ESA",
+      "primary_archive": "https://www.esa.int/ESA_Multimedia/Missions/JUICE",
+      "_verification_needed": true
+    },
+    "bepicolombo": {
+      "agency": "ESA",
+      "primary_archive": "https://www.esa.int/ESA_Multimedia/Missions/BepiColombo",
+      "_verification_needed": true
+    },
+    "mars-express": {
+      "agency": "ESA",
+      "primary_archive": "https://www.esa.int/ESA_Multimedia/Missions/Mars_Express",
+      "_verification_needed": true
+    },
+    "rosetta": {
+      "agency": "ESA",
+      "primary_archive": "https://www.esa.int/ESA_Multimedia/Missions/Rosetta",
+      "_verification_needed": true
+    }
+  }
+}

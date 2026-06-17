@@ -1,0 +1,215 @@
+{
+  "agency": "SpaceIL",
+  "totals": {
+    "tier1_upgrade": 0,
+    "tier2_upgrade": 0,
+    "no_change": 8,
+    "miss": 2,
+    "vision_passed": 0,
+    "vision_flagged": 0,
+    "vision_unsure": 8
+  },
+  "candidate_count": 10,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beresheet",
+      "slot": "01",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beresheet/01.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beresheet",
+      "slot": "02",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beresheet/02.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beresheet",
+      "slot": "03",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beresheet/03.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beresheet",
+      "slot": "04",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beresheet/04.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "beresheet",
+      "slot": "05",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/beresheet/05.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "01",
+      "agency": "SpaceIL",
+      "currentSource": "direct-other",
+      "path": "/images/missions/beresheet/01.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "02",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/beresheet/02.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "03",
+      "agency": "SpaceIL",
+      "currentSource": "direct-other",
+      "path": "/images/missions/beresheet/03.jpg",
+      "query": "beresheet",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20Crash%20Site%20Spotted%20LRO%2001.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "04",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/beresheet/04.jpg",
+      "query": "beresheet",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "05",
+      "agency": "SpaceIL",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/beresheet/05.jpg",
+      "query": "beresheet",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    }
+  ]
+}

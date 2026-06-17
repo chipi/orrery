@@ -1,0 +1,1003 @@
+{
+  "agency": "ISRO",
+  "totals": {
+    "tier1_upgrade": 0,
+    "tier2_upgrade": 0,
+    "no_change": 34,
+    "miss": 20,
+    "vision_passed": 0,
+    "vision_flagged": 0,
+    "vision_unsure": 34
+  },
+  "candidate_count": 54,
+  "proposals": [
+    {
+      "surface": "fleet-galleries",
+      "missionId": "chandrayaan1",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/chandrayaan1/01.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "chandrayaan1",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/chandrayaan1/02.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "chandrayaan1",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/chandrayaan1/03.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "chandrayaan1",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/chandrayaan1/04.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "chandrayaan1",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/chandrayaan1/05.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaganyaan",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaganyaan/01.jpg",
+      "query": "Gaganyaan",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaganyaan",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaganyaan/02.jpg",
+      "query": "Gaganyaan",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaganyaan",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaganyaan/03.jpg",
+      "query": "Gaganyaan",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaganyaan",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaganyaan/04.jpg",
+      "query": "Gaganyaan",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "gaganyaan",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/gaganyaan/05.jpg",
+      "query": "Gaganyaan",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "lvm3",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/lvm3/01.jpg",
+      "query": "LVM3 (GSLV Mk III)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "lvm3",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/lvm3/02.jpg",
+      "query": "LVM3 (GSLV Mk III)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "lvm3",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/lvm3/03.jpg",
+      "query": "LVM3 (GSLV Mk III)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "lvm3",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/lvm3/04.jpg",
+      "query": "LVM3 (GSLV Mk III)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "lvm3",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/lvm3/05.jpg",
+      "query": "LVM3 (GSLV Mk III)",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mangalyaan",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mangalyaan/01.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mangalyaan",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mangalyaan/02.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mangalyaan",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mangalyaan/03.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mangalyaan",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mangalyaan/04.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "mangalyaan",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/mangalyaan/05.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pragyan",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pragyan/01.jpg",
+      "query": "Pragyan",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pragyan",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pragyan/02.jpg",
+      "query": "Pragyan",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pragyan",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pragyan/03.jpg",
+      "query": "Pragyan",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pragyan",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pragyan/04.jpg",
+      "query": "Pragyan",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pragyan",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pragyan/05.jpg",
+      "query": "Pragyan",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pslv-xl",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pslv-xl/01.jpg",
+      "query": "PSLV-XL",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pslv-xl",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pslv-xl/02.jpg",
+      "query": "PSLV-XL",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pslv-xl",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pslv-xl/03.jpg",
+      "query": "PSLV-XL",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pslv-xl",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pslv-xl/04.jpg",
+      "query": "PSLV-XL",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "pslv-xl",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/pslv-xl/05.jpg",
+      "query": "PSLV-XL",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sriharikota-slp",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sriharikota-slp/01.jpg",
+      "query": "Sriharikota SLP",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sriharikota-slp",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sriharikota-slp/02.jpg",
+      "query": "Sriharikota SLP",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sriharikota-slp",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sriharikota-slp/03.jpg",
+      "query": "Sriharikota SLP",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sriharikota-slp",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sriharikota-slp/04.jpg",
+      "query": "Sriharikota SLP",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "sriharikota-slp",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/sriharikota-slp/05.jpg",
+      "query": "Sriharikota SLP",
+      "proposed": null,
+      "vision": null,
+      "ship_at_apply": false
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy2",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy2/01.jpg",
+      "query": "Vikram (Chandrayaan-2)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy2",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy2/02.jpg",
+      "query": "Vikram (Chandrayaan-2)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy2",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy2/03.jpg",
+      "query": "Vikram (Chandrayaan-2)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy2",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy2/04.jpg",
+      "query": "Vikram (Chandrayaan-2)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy2",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy2/05.jpg",
+      "query": "Vikram (Chandrayaan-2)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy3",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy3/01.jpg",
+      "query": "Vikram (Chandrayaan-3)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy3",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy3/02.jpg",
+      "query": "Vikram (Chandrayaan-3)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy3",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/vikram-cy3/03.jpg",
+      "query": "Vikram (Chandrayaan-3)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy3",
+      "slot": "04",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vikram-cy3/04.jpg",
+      "query": "Vikram (Chandrayaan-3)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "vikram-cy3",
+      "slot": "05",
+      "agency": "ISRO",
+      "currentSource": "direct-other",
+      "path": "/images/fleet-galleries/vikram-cy3/05.jpg",
+      "query": "Vikram (Chandrayaan-3)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-2%20Vikram%20lander%20Impact%20Ejecta%20with%20scalebar.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan1",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan1/01.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan1",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan1/02.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan1",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan1/03.jpg",
+      "query": "Chandrayaan-1",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan3",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan3/01.jpg",
+      "query": "chandrayaan 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%E2%80%99s%20LRO%20imagery%20of%20Chandrayaan-3%20Landing%20Site.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan3",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan3/02.jpg",
+      "query": "chandrayaan 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%E2%80%99s%20LRO%20imagery%20of%20Chandrayaan-3%20Landing%20Site.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "chandrayaan3",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/chandrayaan3/03.jpg",
+      "query": "chandrayaan 3",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%E2%80%99s%20LRO%20imagery%20of%20Chandrayaan-3%20Landing%20Site.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mangalyaan",
+      "slot": "01",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mangalyaan/01.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mangalyaan",
+      "slot": "02",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mangalyaan/02.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    },
+    {
+      "surface": "missions",
+      "missionId": "mangalyaan",
+      "slot": "03",
+      "agency": "ISRO",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/missions/mangalyaan/03.jpg",
+      "query": "Mangalyaan (MOM)",
+      "proposed": {
+        "tier": 3,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India%20as%20seen%20by%20Mars%20Colour%20Camera%20(MCC)%20during%20the%20Mars%20Orbiter%20Mission%20(MOM)%20journey%20towards%20Mars.png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd"
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
+      },
+      "ship_at_apply": true
+    }
+  ]
+}

@@ -92,6 +92,46 @@
       "slot": "02.jpg",
       "reason": "subject names a different entity than otv-7",
       "approved_at": "2026-06-12"
+    },
+    "opportunity": {
+      "slot": "03.jpg",
+      "reason": "MRO HiRISE view of rover at Victoria Crater — the canonical Opportunity hero; slot 01 was Delta II launch (not iconic, rover-on-Mars is)",
+      "approved_at": "2026-06-17"
+    },
+    "spirit": {
+      "slot": "02.jpg",
+      "reason": "Gusev Crater landing-site panorama — Spirit's headline science frame; slot 01 was MER-A Delta II launch",
+      "approved_at": "2026-06-17"
+    },
+    "mariner9": {
+      "slot": "03.jpg",
+      "reason": "Valles Marineris — named AFTER the mission; the canonical Mariner 9 discovery; slot 01 was spacecraft hardware",
+      "approved_at": "2026-06-17"
+    },
+    "phoenix": {
+      "slot": "03.jpg",
+      "reason": "Water ice in trench — Phoenix's defining science discovery; slot 01 was Delta II launch",
+      "approved_at": "2026-06-17"
+    },
+    "magellan": {
+      "slot": "03.jpg",
+      "reason": "Venus hemisphere radar mosaic — Magellan's headline result (first global radar map); slot 01 was spacecraft",
+      "approved_at": "2026-06-17"
+    },
+    "akatsuki": {
+      "slot": "02.jpg",
+      "reason": "Venus UV dayside cloud structure — Akatsuki's primary science return; slot 01 is JAXA spacecraft concept art (kept as gallery context)",
+      "approved_at": "2026-06-17"
+    },
+    "osiris-rex": {
+      "slot": "02.jpg",
+      "reason": "Bennu full-disk view — Bennu is the mission's reason for being; slot 01 was Atlas V launch",
+      "approved_at": "2026-06-17"
+    },
+    "dart": {
+      "slot": "02.jpg",
+      "reason": "Final image of Dimorphos before impact — the most iconic moment in planetary defence history; slot 01 was Falcon 9 launch",
+      "approved_at": "2026-06-17"
     }
   }
 }

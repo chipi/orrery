@@ -50,7 +50,9 @@ async function downloadAndProcess(imageUrl, dir, slot) {
   return baseBuf.length;
 }
 
-let applied = 0, skipped = 0, errors = 0;
+let applied = 0,
+  skipped = 0,
+  errors = 0;
 for (const p of dryrun.proposals) {
   if (!p.proposed) {
     skipped++;

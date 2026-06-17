@@ -10,7 +10,10 @@ process.loadEnvFile?.();
 const PATH = 'static/data/slice-explore-dryrun.json';
 const data = JSON.parse(readFileSync(PATH, 'utf8'));
 
-let passed = 0, flagged = 0, unsure = 0, skipped = 0;
+let passed = 0,
+  flagged = 0,
+  unsure = 0,
+  skipped = 0;
 for (const p of data.proposals) {
   if (!p.proposed) {
     skipped++;

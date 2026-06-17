@@ -38,7 +38,12 @@ const TARGETS = [
   { surface: 'sun', id: 'sun', query: 'Sun corona' },
 ];
 
-const out = { agency: 'ESA-Hubble', surface: '/explore', generated_at: new Date().toISOString(), proposals: [] };
+const out = {
+  agency: 'ESA-Hubble',
+  surface: '/explore',
+  generated_at: new Date().toISOString(),
+  proposals: [],
+};
 
 for (const t of TARGETS) {
   process.stderr.write(`  → ${t.surface}/${t.id} q="${t.query}"… `);
@@ -61,14 +66,35 @@ for (const t of TARGETS) {
       process.stderr.write(`✓ ${result.metadata?.hubble_id ?? '?'}\n`);
     } else if (result) {
       process.stderr.write(`✗ resolver returned ${result.source_type} (not esahubble) — skip\n`);
-      out.proposals.push({ surface: t.surface, bodyId: t.id, slot: '01', query: t.query, proposed: null, reason: `non-esahubble: ${result.source_type}` });
+      out.proposals.push({
+        surface: t.surface,
+        bodyId: t.id,
+        slot: '01',
+        query: t.query,
+        proposed: null,
+        reason: `non-esahubble: ${result.source_type}`,
+      });
     } else {
       process.stderr.write(`✗ no esahubble hit\n`);
-      out.proposals.push({ surface: t.surface, bodyId: t.id, slot: '01', query: t.query, proposed: null, reason: 'no hit' });
+      out.proposals.push({
+        surface: t.surface,
+        bodyId: t.id,
+        slot: '01',
+        query: t.query,
+        proposed: null,
+        reason: 'no hit',
+      });
     }
   } catch (e) {
     process.stderr.write(`✗ ${e.message}\n`);
-    out.proposals.push({ surface: t.surface, bodyId: t.id, slot: '01', query: t.query, proposed: null, reason: e.message });
+    out.proposals.push({
+      surface: t.surface,
+      bodyId: t.id,
+      slot: '01',
+      query: t.query,
+      proposed: null,
+      reason: e.message,
+    });
   }
   await new Promise((r) => setTimeout(r, 300));
 }

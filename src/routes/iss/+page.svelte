@@ -1482,7 +1482,7 @@
             disabled={viewMode !== '3d'}
             title={m.iss_btn_reset_title()}
           >
-            {m.iss_btn_reset()}
+            {m.ui_reset_view()}
           </button>
           <button
             type="button"

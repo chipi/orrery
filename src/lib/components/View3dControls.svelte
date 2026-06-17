@@ -18,7 +18,7 @@
 </script>
 
 <button type="button" class="toggle" data-testid="reset-camera" onclick={onReset}>
-  {m.iss_reset_camera()}
+  {m.ui_reset_view()}
 </button>
 <button
   type="button"

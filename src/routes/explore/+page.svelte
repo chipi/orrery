@@ -4826,7 +4826,7 @@
           }}
           data-testid="explore-reset-view"
         >
-          RESET VIEW
+          {m.ui_reset_view()}
         </button>
       {/if}
     </div>

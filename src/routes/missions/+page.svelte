@@ -9,7 +9,9 @@
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
-  import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
+  import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import { EPOCH_BANDS, epochForYear } from '$lib/epoch-bands';
+  import type { FleetEpoch } from '$types/fleet';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
@@ -24,11 +26,12 @@
     isSuccess,
   } from '$lib/types/remote-data';
 
-  // Timeline navigator bounds (ADR-027). Match the constants in
-  // TimelineNavigator.svelte; copied here so the URL coercion logic
-  // doesn't need a cross-component import dance.
-  const TIMELINE_MIN_YEAR = 1957;
-  const TIMELINE_MAX_YEAR = 2035;
+  // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
+  // The strip writes `?epoch=<id>`; this validates round-trips so a junk
+  // value falls back to 'ALL' instead of cratering the filter.
+  function epochValid(v: string): boolean {
+    return EPOCH_BANDS.some((b) => b.id === v);
+  }
 
   // ─── State ───────────────────────────────────────────────────────
   // RemoteData<E,T> per #330 C.2 — collapses the prior {items, loading,
@@ -56,8 +59,14 @@
     status: MissionStatus | 'ALL';
     agency: string;
     crew: 'ALL' | 'CREWED' | 'UNCREWED';
-    fromYear: number;
-    toYear: number;
+    /**
+     * Historic-epoch filter (2026-06-17). Replaces the prior
+     * fromYear/toYear range driven by TimelineNavigator — Marko
+     * preferred /fleet's named-band UX ("apply time scrub filter as we
+     * have on fleet also on missions. I like that one more"). Bands +
+     * year ranges live in $lib/epoch-bands.ts.
+     */
+    epoch: FleetEpoch | 'ALL';
     /** RFC-027 — free-text search across name + agency + type + first. */
     q: string;
     expanded: boolean;
@@ -67,8 +76,7 @@
     status: 'ALL',
     agency: 'ALL',
     crew: 'ALL',
-    fromYear: TIMELINE_MIN_YEAR,
-    toYear: TIMELINE_MAX_YEAR,
+    epoch: 'ALL',
     q: '',
     expanded: false,
   });
@@ -78,22 +86,34 @@
     filterState.status = 'ALL';
     filterState.agency = 'ALL';
     filterState.crew = 'ALL';
-    filterState.fromYear = TIMELINE_MIN_YEAR;
-    filterState.toYear = TIMELINE_MAX_YEAR;
+    filterState.epoch = 'ALL';
     filterState.q = '';
   }
 
-  // True when at least one filter is set away from its 'ALL' / full-range
-  // default — drives the CLEAR-FILTERS chip in the expanded strip.
+  // True when at least one filter is set away from its 'ALL' default —
+  // drives the CLEAR-FILTERS chip in the expanded strip.
   let anyFilterActive = $derived(
     filterState.dest !== 'ALL' ||
       filterState.status !== 'ALL' ||
       filterState.agency !== 'ALL' ||
       filterState.crew !== 'ALL' ||
-      filterState.fromYear !== TIMELINE_MIN_YEAR ||
-      filterState.toYear !== TIMELINE_MAX_YEAR ||
+      filterState.epoch !== 'ALL' ||
       filterState.q.trim() !== '',
   );
+
+  // Count map for EpochTimelineStrip — band labels show counts based
+  // on the unfiltered mission set (full inventory per band, not the
+  // current filter slice). Computed via epochForYear() since Mission
+  // records have only `year`, not the explicit `epoch` field that
+  // FleetIndexEntry records carry.
+  let countByEpoch: Map<FleetEpoch, number> = $derived.by(() => {
+    const map = new Map<FleetEpoch, number>();
+    for (const mission of missions) {
+      const ep = epochForYear(mission.year);
+      if (ep) map.set(ep, (map.get(ep) ?? 0) + 1);
+    }
+    return map;
+  });
 
   function clearAllFilters(): void {
     resetMissionFilters();
@@ -137,8 +157,7 @@
             splitAgencies(mission.agency).includes(filterState.agency)) &&
           (filterState.crew === 'ALL' ||
             (filterState.crew === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
-          mission.year >= filterState.fromYear &&
-          mission.year <= filterState.toYear,
+          (filterState.epoch === 'ALL' || epochForYear(mission.year) === filterState.epoch),
       )
       // J.1 — sort descending by year so the latest + upcoming missions
       // surface at the top of the grid. Tiebreak by mission id for
@@ -158,30 +177,21 @@
     filterState.agency = agency ?? 'ALL';
     const crew = url.searchParams.get('crew')?.toUpperCase();
     filterState.crew = crew === 'CREWED' || crew === 'UNCREWED' ? crew : 'ALL';
-    // Timeline year-window: out-of-range / non-numeric values clamp
-    // to the legal bounds per ADR-027 §URL contract.
-    const fromRaw = url.searchParams.get('from');
-    const toRaw = url.searchParams.get('to');
-    const fromParsed = fromRaw ? parseInt(fromRaw, 10) : NaN;
-    const toParsed = toRaw ? parseInt(toRaw, 10) : NaN;
-    filterState.fromYear = Number.isFinite(fromParsed)
-      ? Math.max(TIMELINE_MIN_YEAR, Math.min(TIMELINE_MAX_YEAR, fromParsed))
-      : TIMELINE_MIN_YEAR;
-    filterState.toYear = Number.isFinite(toParsed)
-      ? Math.max(filterState.fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
-      : TIMELINE_MAX_YEAR;
+    // Epoch filter — falls back to 'ALL' on unknown values so a stale
+    // ?epoch param from a removed band doesn't crater the page.
+    const epochRaw = url.searchParams.get('epoch');
+    filterState.epoch = epochRaw && epochValid(epochRaw) ? (epochRaw as FleetEpoch) : 'ALL';
     filterState.q = url.searchParams.get('q') ?? '';
     // Auto-expand the filter strip whenever the URL carries any
     // filter param — even if the value clamped back to the default,
     // the user explicitly asked about filters and should see the
-    // strip open. Tests rely on this for `?from=…&to=…` deep links.
+    // strip open.
     if (
       url.searchParams.has('dest') ||
       url.searchParams.has('status') ||
       url.searchParams.has('agency') ||
       url.searchParams.has('crew') ||
-      url.searchParams.has('from') ||
-      url.searchParams.has('to')
+      url.searchParams.has('epoch')
     ) {
       filterState.expanded = true;
     }
@@ -193,9 +203,7 @@
     if (filterState.status !== 'ALL') params.set('status', filterState.status);
     if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
     if (filterState.crew !== 'ALL') params.set('crew', filterState.crew);
-    if (filterState.fromYear !== TIMELINE_MIN_YEAR)
-      params.set('from', String(filterState.fromYear));
-    if (filterState.toYear !== TIMELINE_MAX_YEAR) params.set('to', String(filterState.toYear));
+    if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
@@ -206,12 +214,8 @@
     }
   }
 
-  // Timeline drag handler — debounced via the existing reactive flow
-  // so a long drag doesn't thrash the URL. (Svelte 5's $derived reacts
-  // synchronously per assignment; goto() is debounced inside SvelteKit.)
-  function setYearWindow(from: number, to: number) {
-    filterState.fromYear = from;
-    filterState.toYear = to;
+  function setEpoch(value: FleetEpoch | 'ALL') {
+    filterState.epoch = value;
     pushFiltersToUrl();
   }
 
@@ -364,13 +368,13 @@
     {#if anyFilterActive}
       <button type="button" class="clear-filters" onclick={clearAllFilters}> CLEAR FILTERS </button>
     {/if}
-    <TimelineNavigator
-      {missions}
-      fromYear={filterState.fromYear}
-      toYear={filterState.toYear}
-      onChange={setYearWindow}
-      onSelectMission={selectMission}
-    />
+    <div data-audio-stage="missions-epoch-timeline">
+      <EpochTimelineStrip
+        {countByEpoch}
+        selected={filterState.epoch}
+        onSelect={(v) => setEpoch(v)}
+      />
+    </div>
     <nav
       id="missions-filters"
       class="filters"

@@ -12,52 +12,26 @@
    * Mobile (≤600 px): collapses to a horizontal swipe-friendly chip
    * row that surfaces epoch + count without the time axis.
    */
-  import type { FleetEpoch, FleetIndexEntry } from '$types/fleet';
+  import type { FleetEpoch } from '$types/fleet';
+  import { EPOCH_BANDS, AXIS_MIN, AXIS_MAX } from '$lib/epoch-bands';
 
-  interface Epoch {
-    id: FleetEpoch;
-    label: string;
-    yearStart: number;
-    yearEnd: number;
-  }
-
-  // Year ranges intentionally overlap where two strands ran concurrently
-  // (Shuttle program straddles First Stations + ISS Assembly epochs).
-  // Start/end clamp to a fixed 1957 → 2030 axis for stable layout.
-  const EPOCHS: Epoch[] = [
-    { id: 'first-steps', label: 'First Steps', yearStart: 1957, yearEnd: 1961 },
-    { id: 'space-race', label: 'Space Race', yearStart: 1961, yearEnd: 1969 },
-    { id: 'lunar-era', label: 'Lunar Era', yearStart: 1969, yearEnd: 1972 },
-    { id: 'first-stations', label: 'First Stations', yearStart: 1973, yearEnd: 1986 },
-    { id: 'shuttle-and-mir', label: 'Shuttle & Mir', yearStart: 1981, yearEnd: 1998 },
-    { id: 'iss-assembly', label: 'ISS Assembly', yearStart: 1998, yearEnd: 2011 },
-    { id: 'commercial-era', label: 'Commercial Era', yearStart: 2011, yearEnd: 2024 },
-    { id: 'lunar-return', label: 'Lunar Return', yearStart: 2024, yearEnd: 2030 },
-    // Mars Era — starts at the first planned crewed-Mars / sample-return
-    // window per missions/index.json (Starship Mars Crew NET 2031, MMX
-    // 2026, etc.). Open-ended; runs through the projected horizon.
-    { id: 'mars-era', label: 'Mars Era', yearStart: 2030, yearEnd: 2040 },
-  ];
-
-  const AXIS_MIN = 1957;
-  const AXIS_MAX = 2040;
   const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
 
   type Props = {
-    entries: FleetIndexEntry[];
+    /**
+     * Count per epoch id. Each consuming route brings its own count
+     * map — /fleet counts entries by their explicit `epoch` field,
+     * /missions counts by year-range membership. Keeps this component
+     * pure presentation. (2026-06-17 refactor — was previously
+     * computing counts internally from a FleetIndexEntry[] prop, which
+     * only worked for /fleet.)
+     */
+    countByEpoch: Map<FleetEpoch, number>;
     selected: FleetEpoch | 'ALL';
     onSelect: (v: FleetEpoch | 'ALL') => void;
   };
 
-  let { entries, selected, onSelect }: Props = $props();
-
-  let countByEpoch = $derived(() => {
-    const map = new Map<FleetEpoch, number>();
-    for (const e of entries) {
-      map.set(e.epoch, (map.get(e.epoch) ?? 0) + 1);
-    }
-    return map;
-  });
+  let { countByEpoch, selected, onSelect }: Props = $props();
 
   function pctLeft(year: number): number {
     return ((year - AXIS_MIN) / AXIS_RANGE) * 100;
@@ -82,7 +56,7 @@
   <!-- Desktop: full timeline with bands positioned along the axis -->
   <div class="axis-wrap" aria-hidden="true">
     <div class="axis">
-      {#each EPOCHS as ep (ep.id)}
+      {#each EPOCH_BANDS as ep (ep.id)}
         <button
           type="button"
           class="band"
@@ -91,12 +65,12 @@
           style:width="{pctWidth(ep.yearStart, ep.yearEnd)}%"
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
           onkeydown={(e) => handleKey(e, ep.id)}
-          aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch().get(ep.id) ??
+          aria-label="{ep.label} ({ep.yearStart}–{ep.yearEnd}, {countByEpoch.get(ep.id) ??
             0} entries)"
         >
           <span class="band-label">{ep.label}</span>
           <span class="band-meta"
-            >{ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd} · {countByEpoch().get(ep.id) ??
+            >{ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd} · {countByEpoch.get(ep.id) ??
               0}</span
           >
         </button>
@@ -124,7 +98,7 @@
         onclick={() => onSelect('ALL')}>All epochs</button
       >
     </li>
-    {#each EPOCHS as ep (ep.id)}
+    {#each EPOCH_BANDS as ep (ep.id)}
       <li>
         <button
           type="button"
@@ -135,7 +109,7 @@
           onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
         >
           {ep.label}
-          <span class="chip-count">{countByEpoch().get(ep.id) ?? 0}</span>
+          <span class="chip-count">{countByEpoch.get(ep.id) ?? 0}</span>
         </button>
       </li>
     {/each}

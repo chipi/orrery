@@ -49,6 +49,14 @@
   let categoryFilter: FleetCategory | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
   let epochFilter: FleetEpoch | 'ALL' = $state('ALL');
+  // Count map for EpochTimelineStrip — the strip is now pure
+  // presentation and takes counts as a prop. Built from the unfiltered
+  // entries list so band labels show full inventory, not filtered.
+  let countByEpoch: Map<FleetEpoch, number> = $derived.by(() => {
+    const map = new Map<FleetEpoch, number>();
+    for (const e of entries) map.set(e.epoch, (map.get(e.epoch) ?? 0) + 1);
+    return map;
+  });
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
@@ -374,7 +382,11 @@
 
     {#if filtersExpanded}
       <div data-audio-stage="fleet-epoch-timeline">
-        <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+        <EpochTimelineStrip
+          {countByEpoch}
+          selected={epochFilter}
+          onSelect={(v) => setEpoch(v)}
+        />
       </div>
       <nav
         id="fleet-filters"

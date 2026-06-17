@@ -430,7 +430,19 @@
     color: rgba(255, 200, 80, 0.95);
     outline: none;
   }
-  .lens-toggle.active {
+  /* Active-state yellow gated to the same scope as hover. The lens
+     state is a single global toggle, so after the user enables it on
+     /science and then navigates to /missions or /fleet the button
+     would otherwise keep glowing yellow as if it were doing something
+     on a route where the lens has no effect (2026-06-17 user note:
+     "science button in nav still changes color to yellow and looks
+     as an option when we're on pages that do not have science lens —
+     we don't want that. it should call for action by giving yellow
+     change of state only on pages where it makes sense since science
+     lens is there"). Toggle still works everywhere — the underlying
+     `scienceLens` state is preserved — just doesn't display yellow on
+     routes where it has no effect. */
+  :global([data-science-lens-available]) .lens-toggle.active {
     background: rgba(255, 200, 80, 0.18);
     border-color: rgba(255, 200, 80, 0.65);
     color: #ffc850;

@@ -1,151 +1,431 @@
 {
-  "schema_version": 1,
-  "description": "Primary image archive endpoints per space agency. Consumed by the agency-first resolver in scripts/lib/agency-resolver.mjs. Locked by ADR-046; codified 2026-06-17 after the inventory revealed batch fetchers going straight to Commons. See scripts/IMAGE-PIPELINE.md §'Source-resolution order'.",
-  "agencies": {
+  "schema_version": 2,
+  "description": "Per-agency multi-primary image source registry. v2 rewrite 2026-06-17 based on 4 phases of deep-research verification. Each agency has a `primaries: [...]` array of verified-license sources, tried in order. Resolver chain: tier_1 (agency primaries) → tier_2_institutional (museums/archives) → wikimedia_commons (failover). See scripts/IMAGE-PIPELINE.md §'Source-resolution order' and memory `reference_agency_primary_archives.md`.",
+  "license_compatibility": {
+    "allowed": ["cc0", "cc-by-4.0", "cc-by-2.0", "pd-usgov", "pd-nasa", "pd-jaxa", "pd-other"],
+    "excluded": ["cc-by-nc-2.0", "cc-by-nc-4.0", "cc-by-nc-sa", "all-rights-reserved", "editorial-only", "restricted-written-permission"],
+    "policy": "Per ADR-047, only allowed license types may be ingested as Tier 1 / Tier 2 sources. Excluded license types must NOT auto-fetch — either skip the source or require per-image manual permission flow. Wrong license is worse than missing source."
+  },
+
+  "tier_1_agencies": {
     "NASA": {
       "label": "National Aeronautics and Space Administration",
-      "primary_kind": "json-api",
-      "endpoints": {
-        "search": "https://images-api.nasa.gov/search",
-        "asset": "https://images-api.nasa.gov/asset"
-      },
       "credit_default": "NASA",
-      "license_default": "Public Domain (NASA — Media Usage Guidelines)"
+      "license_default": "pd-nasa",
+      "primaries": [
+        {
+          "url": "https://images-api.nasa.gov/search",
+          "kind": "json-api",
+          "license": "pd-nasa",
+          "verified": true,
+          "notes": "Primary endpoint for all NASA missions + co-managed missions (DART, OSIRIS-REx, MER, Phoenix, Magellan, Mariner 9, Hubble crops). Reference implementation in scripts/lib/agency-resolver.mjs."
+        }
+      ]
     },
-    "NASA / JPL": {
-      "label": "NASA Jet Propulsion Laboratory",
-      "primary_kind": "scrape-photojournal",
-      "endpoints": {
-        "search": "https://photojournal.jpl.nasa.gov",
-        "image_pattern": "https://photojournal.jpl.nasa.gov/jpeg/{pia_id}.jpg"
-      },
-      "credit_default": "NASA / JPL-Caltech",
-      "license_default": "Public Domain (NASA — Media Usage Guidelines)",
-      "notes": "JPL Photojournal hosts higher-res masters of PIA images. Resolver tries NASA images-api first (covers JPL); use this tier only when image-api returns crops."
+
+    "Roscosmos": {
+      "label": "Roscosmos State Corporation (Russia)",
+      "credit_default": "Roscosmos",
+      "license_default": "cc-by-2.0",
+      "primaries": [
+        {
+          "url": "https://www.flickr.com/photos/roscosmos/",
+          "kind": "flickr-album",
+          "license": "see_per_photo",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "photo_count_estimate": 743,
+          "notes": "Self-branded 'Official Roscosmos Photos', joined 2015. ~27 albums covering launches/ISS/missions. KNOWN BUG: Flickr UI sometimes renders 'no public photos' alongside live thumbnails — resolver must retry on transient state. Per-photo license varies; default is CC BY 2.0 but check individual files."
+        },
+        {
+          "url": "https://www.roscosmos.ru/",
+          "kind": "scrape-press-release",
+          "license": "see_per_page",
+          "verified": false,
+          "notes": "Official press site, intermittently dark since 2022. Try after Flickr exhaustion."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://tass.com/science",
+          "reason": "All-rights-reserved, prior written permission required (TASS terms of service)",
+          "excluded": true
+        }
+      ]
     },
-    "JAXA": {
-      "label": "Japan Aerospace Exploration Agency",
-      "primary_kind": "hybrid-scrape-curated",
-      "endpoints": {
-        "akatsuki_gallery": "https://akatsuki.isas.jaxa.jp/en/gallery/",
-        "akatsuki_data": "https://akatsuki.isas.jaxa.jp/en/gallery/data/",
-        "akatsuki_spacecraft": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
-        "hayabusa_archive": "https://www.hayabusa.isas.jaxa.jp/e/gallery/",
-        "global_press": "https://global.jaxa.jp/press/",
-        "darts": "https://www.darts.isas.jaxa.jp/"
-      },
-      "credit_default": "JAXA",
-      "license_default": "JAXA Press Use (free for editorial; attribute to JAXA)",
-      "curation_file": "static/data/agency-archive-curations/jaxa.json",
-      "notes": "JAXA has no public image search API. Resolver tries to scrape the configured gallery page with selector hints; falls back to the curated URL list keyed by mission_id."
-    },
-    "ESA": {
-      "label": "European Space Agency",
-      "primary_kind": "hybrid-scrape-curated",
-      "endpoints": {
-        "multimedia_root": "https://www.esa.int/ESA_Multimedia/",
-        "hubble": "https://esahubble.org/images/",
-        "solar_orbiter_set": "https://www.esa.int/ESA_Multimedia/Sets/Solar_Orbiter"
-      },
-      "credit_default": "ESA",
-      "license_default": "CC BY-SA 3.0 IGO (ESA Standard License)",
-      "curation_file": "static/data/agency-archive-curations/esa.json",
-      "notes": "ESA Multimedia hosts mission sets; resolver targets the set page and extracts <img> src attributes. Falls back to curated URL list."
-    },
-    "JHU-APL": {
-      "label": "Johns Hopkins Applied Physics Laboratory",
-      "primary_kind": "hybrid-scrape-curated",
-      "endpoints": {
-        "dart_gallery": "https://dart.jhuapl.edu/Gallery/index.php",
-        "parker_gallery": "https://parkersolarprobe.jhuapl.edu/Gallery/index.php",
-        "new_horizons": "http://pluto.jhuapl.edu/Multimedia/Science-Photos.php",
-        "dragonfly": "https://dragonfly.jhuapl.edu/Gallery/"
-      },
-      "credit_default": "NASA / Johns Hopkins APL",
-      "license_default": "Public Domain (JHU APL on NASA mission)",
-      "curation_file": "static/data/agency-archive-curations/jhu-apl.json",
-      "notes": "JHU APL is prime contractor on DART / Parker / New Horizons / Dragonfly. Their galleries are higher-res than NASA archive mirrors for hardware shots + the canonical 'DART final frame'. Site has been slow / timed out — curated fallback is load-bearing."
-    },
-    "ASI": {
-      "label": "Italian Space Agency / Agenzia Spaziale Italiana",
-      "primary_kind": "curated-only",
-      "endpoints": {
-        "press": "https://www.asi.it/"
-      },
-      "credit_default": "ASI / NASA (LICIACube)",
-      "license_default": "CC BY (ASI Press Use)",
-      "curation_file": "static/data/agency-archive-curations/asi.json",
-      "notes": "Italian agency, partner on DART (LICIACube imaged the impact). No public search API; curated URLs only."
-    },
+
     "CNSA": {
       "label": "China National Space Administration",
-      "primary_kind": "curated-only",
-      "endpoints": {
-        "press_en": "http://www.cnsa.gov.cn/english/",
-        "xinhua": "https://www.xinhuanet.com/english/sci/"
-      },
       "credit_default": "CNSA / Xinhua",
-      "license_default": "CNSA Press Use",
-      "curation_file": "static/data/agency-archive-curations/cnsa.json",
-      "notes": "Chinese space program imagery is press-release based. Direct hot-linking unstable; curated mirrors via Xinhua / state-media press releases."
+      "license_default": "restricted-written-permission",
+      "auto_fetch_disabled": true,
+      "primaries": [
+        {
+          "url": "https://www.cnsa.gov.cn/english/n6465652/n6465659/index.html",
+          "kind": "scrape-press-release",
+          "license": "restricted-written-permission",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "notes": "Official English-site Pictures section, paginated thumbnail grid (index_10538194_1.html, _2.html). License notice on site: 'Anyone who wants to mirror or copy the information appeared here at this site should first consult the webmaster to get written permisson' [sic]. **Do NOT auto-fetch** — this license is not ADR-047 compatible. Use for manual per-image permission flow only."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://www.flickr.com/photos/our_china/",
+          "reason": "Not CNSA-operated. CNSA has NO official Flickr account or aggregator (verified Phase 1).",
+          "excluded": true
+        },
+        {
+          "url": "https://www.xinhuanet.com/english/sci/",
+          "reason": "State media; image-license terms unverified; defer until clarified",
+          "excluded": true
+        }
+      ]
     },
-    "Roscosmos": {
-      "label": "Roscosmos State Corporation",
-      "primary_kind": "curated-only",
-      "endpoints": {
-        "press": "https://www.roscosmos.ru/",
-        "tass": "https://tass.com/science"
-      },
-      "credit_default": "Roscosmos",
-      "license_default": "Roscosmos Press Use",
-      "curation_file": "static/data/agency-archive-curations/roscosmos.json",
-      "notes": "Roscosmos site has been intermittently dark since 2022. Curated picks are the durable path."
+
+    "ESA": {
+      "label": "European Space Agency",
+      "credit_default": "ESA",
+      "license_default": "cc-by-4.0",
+      "primaries": [
+        {
+          "url": "https://esahubble.org/images/",
+          "kind": "scrape-press-release",
+          "license": "cc-by-4.0",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "photo_count_estimate": 5507,
+          "credit_format": "ESA/Hubble",
+          "notes": "5,507 images in 14 categories (Galaxies/Nebulae/Stars/Cosmology/Exoplanets/Quasars/Black Holes). CC BY 4.0 per esahubble.org/copyright/ — clearly attributable, active link required online. Exclusions: ESA/Hubble logo, music, code, scientific papers."
+        },
+        {
+          "url": "https://www.esa.int/ESA_Multimedia/Images",
+          "kind": "scrape-mission-page",
+          "license": "cc-by-4.0",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "notes": "ESA central multimedia archive organized by directorate (Science & Exploration, Space Safety, Applications, Enabling & Support, Agency). Most images CC BY 4.0; check individual page."
+        },
+        {
+          "url": "https://sci.esa.int/web/{mission}/multimedia-gallery",
+          "kind": "scrape-mission-page",
+          "license": "cc-by-4.0",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "url_pattern": "per-mission",
+          "notes": "Per-mission gallery URLs. Substitute {mission} with mission slug (juice, bepicolombo, mars-express, rosetta, etc.). Central sci.esa.int/web/multimedia-gallery only surfaces Rosetta; must crawl per-mission. The sci.esa.int domain carries a maintenance notice — secondary to ESA_Multimedia."
+        },
+        {
+          "url": "https://www.flickr.com/photos/europeanspaceagency/",
+          "kind": "flickr-album",
+          "license": "see_per_photo",
+          "verified": false,
+          "notes": "ESA's official Flickr account — well-maintained but per-photo license varies. Try after esahubble + esa.int Multimedia."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://photolibrary.esa.int",
+          "reason": "Pro library requiring registration; not auto-fetchable",
+          "excluded": true
+        }
+      ]
     },
+
+    "JAXA": {
+      "label": "Japan Aerospace Exploration Agency",
+      "credit_default": "JAXA",
+      "license_default": "pd-jaxa",
+      "primaries": [
+        {
+          "url": "https://akatsuki.isas.jaxa.jp/en/gallery/",
+          "kind": "scrape-mission-page",
+          "license": "pd-jaxa",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "mission_scope": "akatsuki",
+          "notes": "Mission-specific gallery (Akatsuki). Resolver consults curation file static/data/agency-archive-curations/jaxa.json for slot mapping."
+        },
+        {
+          "url": "https://hayabusa2.jaxa.jp/en/galleries/",
+          "kind": "scrape-mission-page",
+          "license": "pd-jaxa",
+          "verified": false,
+          "verified_at": "2026-06-17",
+          "mission_scope": "hayabusa2",
+          "notes": "Phase 1 deep-research surfaced this as the canonical JAXA per-mission URL pattern. Site not directly verified yet — needs curation file pass."
+        },
+        {
+          "url": "https://global.jaxa.jp/multimedia/photos/",
+          "kind": "scrape-press-release",
+          "license": "pd-jaxa",
+          "verified": false,
+          "notes": "Central JAXA photo portal. License: JAXA Press Use (free for editorial; attribute to JAXA)."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://www.darts.isas.jaxa.jp/",
+          "reason": "**DARTS is research data, NOT a press-image source.** Earlier registry had this wrong. Removed.",
+          "excluded": true
+        },
+        {
+          "url": "https://www.hayabusa.isas.jaxa.jp/e/gallery/",
+          "reason": "Site wouldn't respond on 2026-06-17 health check (DNS / connection failure). May be permanently dark.",
+          "excluded": true
+        }
+      ]
+    },
+
+    "JHU-APL": {
+      "label": "Johns Hopkins Applied Physics Laboratory",
+      "credit_default": "NASA / Johns Hopkins APL",
+      "license_default": "pd-other",
+      "primaries": [
+        {
+          "url": "https://dart.jhuapl.edu/Gallery/index.php",
+          "kind": "scrape-mission-page",
+          "license": "permissive-with-credit",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "mission_scope": "dart",
+          "notes": "DART mission gallery. Permissive non-commercial-with-credit. Site occasionally slow (WebFetch timeouts) — resolver should use long timeout + curated fallback."
+        },
+        {
+          "url": "http://pluto.jhuapl.edu/Multimedia/Science-Photos.php",
+          "kind": "scrape-mission-page",
+          "license": "pd-other",
+          "verified": false,
+          "mission_scope": "new-horizons"
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://parkersolarprobe.jhuapl.edu/Gallery/index.php",
+          "reason": "URL pattern changed — returned 404 on 2026-06-17 check. Find current Parker gallery path before re-adding.",
+          "excluded": true
+        }
+      ]
+    },
+
     "ISRO": {
       "label": "Indian Space Research Organisation",
-      "primary_kind": "curated-only",
-      "endpoints": {
-        "main": "https://www.isro.gov.in/",
-        "press": "https://www.isro.gov.in/Press_Release.html"
-      },
       "credit_default": "ISRO",
-      "license_default": "ISRO Open Data Policy",
-      "curation_file": "static/data/agency-archive-curations/isro.json",
-      "notes": "ISRO publishes mission imagery via press releases. Curated picks per mission."
+      "license_default": "pd-other",
+      "primaries": [
+        {
+          "url": "https://www.issdc.gov.in/ch2_gallery.html",
+          "kind": "scrape-mission-page",
+          "license": "pd-other",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "mission_scope": "chandrayaan-2",
+          "notes": "ISSDC (Indian Space Science Data Centre) — partner-lab archive for Chandrayaan-2. License: ISRO Open Data Policy / academic-use friendly."
+        },
+        {
+          "url": "https://www.isro.gov.in/Press_Release.html",
+          "kind": "scrape-press-release",
+          "license": "pd-other",
+          "verified": false,
+          "notes": "Official press releases. Per-image license inferred from ISRO Open Data Policy."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://www.isro.gov.in/SPARK",
+          "reason": "3D walkthrough only, no documented PD/CC0/CC-BY licensing or bulk image endpoint",
+          "excluded": true
+        }
+      ]
     },
-    "SpaceIL": {
-      "label": "SpaceIL (Israeli non-profit, Beresheet)",
-      "primary_kind": "curated-only",
-      "endpoints": {
-        "main": "https://www.spaceil.com/"
-      },
-      "credit_default": "SpaceIL / IAI",
-      "license_default": "SpaceIL Press Use",
-      "curation_file": "static/data/agency-archive-curations/spaceil.json"
+
+    "SpaceX": {
+      "label": "SpaceX (private, US)",
+      "credit_default": "NASA / SpaceX",
+      "license_default": "see_per_source",
+      "primaries": [
+        {
+          "url": "https://images-api.nasa.gov/search",
+          "kind": "json-api",
+          "license": "pd-nasa",
+          "verified": true,
+          "scope_hint": "NASA-shot SpaceX mission imagery (Crew Dragon Demo-2, CRS-*, SpaceX-launched NASA payloads)",
+          "notes": "NASA-shot imagery of SpaceX missions is NASA-PD. Use this as the safe Tier-1 path for SpaceX-mission content."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Files_from_SpaceX_Flickr_stream",
+          "kind": "wikimedia-category",
+          "license": "cc0",
+          "verified": true,
+          "verified_at": "2026-06-17",
+          "notes": "**Grandfathered pre-2018 SpaceX Flickr uploads** were CC0/Public Domain. These remain safe to use. Wikimedia maintains the category."
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://www.flickr.com/photos/spacex/",
+          "reason": "**CRITICAL: License changed from CC0 to CC BY-NC 2.0 in mid-2018.** Current uploads are NonCommercial-only — incompatible with ADR-047. Do NOT fetch new content from here. Only pre-2018 uploads (mirrored on Wikimedia) are safe.",
+          "excluded": true,
+          "history_note": "Historical 2015-2018: CC0 / Public Domain (driven by EFF Parker Higgins + Techdirt public-pressure campaign). 2018 reversal to CC BY-NC 2.0 was silent. Wikimedia attempted contact, no reply (April 2026 note)."
+        }
+      ]
     },
-    "WIKIMEDIA_COMMONS_FAILOVER": {
-      "label": "Wikimedia Commons (failover only)",
-      "primary_kind": "json-api",
-      "endpoints": {
-        "search": "https://commons.wikimedia.org/w/api.php",
-        "filepath": "https://commons.wikimedia.org/wiki/Special:FilePath"
-      },
-      "credit_default": "agency original via Wikimedia Commons mirror",
-      "license_default": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-      "notes": "Tier 7 — only consulted when all agency tiers miss. Resolver MUST attempt agency tiers first; PR reviewers reject Commons-first additions per IMAGE-PIPELINE.md REGRESSION GUARD."
+
+    "Blue Origin": {
+      "label": "Blue Origin (private, US)",
+      "credit_default": "NASA / Blue Origin",
+      "license_default": "see_per_source",
+      "primaries": [
+        {
+          "url": "https://images-api.nasa.gov/search",
+          "kind": "json-api",
+          "license": "pd-nasa",
+          "verified": true,
+          "scope_hint": "NASA-shot photos of Blue Origin hardware at NASA facilities (Blue Moon Mark 2 at JSC SVMF, MK1 in Thermal Vacuum Chamber A)",
+          "notes": "NASA-PD per 17 U.S.C. §105 + NASA Brand Center policy. Safe Tier-1 source for NASA-credited BO hardware imagery. **Important: 'courtesy of Blue Origin' attribution = Blue Origin's rights, NOT NASA-PD — exclude.**"
+        }
+      ],
+      "known_dark_or_restricted": [
+        {
+          "url": "https://www.blueorigin.com/gallery",
+          "reason": "Phase 1C + 1D inconclusive (HTTP 429 rate-limits). Re-verify before adding.",
+          "excluded": true
+        },
+        {
+          "url": "courtesy-of-blue-origin assets on nasa.gov mission articles",
+          "reason": "When NASA articles cite 'courtesy of Blue Origin', the photo is BO's rights — NOT NASA-PD. Resolver must check credit field before ingest.",
+          "excluded": true
+        }
+      ]
+    },
+
+    "ASI": {
+      "label": "Italian Space Agency / Agenzia Spaziale Italiana",
+      "credit_default": "ASI / NASA (LICIACube)",
+      "license_default": "cc-by-4.0",
+      "primaries": [
+        {
+          "url": "https://www.asi.it/",
+          "kind": "scrape-press-release",
+          "license": "see_per_page",
+          "verified": false,
+          "notes": "Italian agency, partner on DART (LICIACube). No public search API; press-release scrape only. License: CC BY (ASI Press Use)."
+        }
+      ]
     }
   },
-  "resolver_order": [
-    "NASA",
-    "NASA / JPL",
-    "JAXA",
-    "ESA",
-    "JHU-APL",
-    "ASI",
-    "CNSA",
-    "Roscosmos",
-    "ISRO",
-    "SpaceIL",
-    "WIKIMEDIA_COMMONS_FAILOVER"
+
+  "honest_gaps": {
+    "SpaceIL": {
+      "reason": "All Beresheet imagery at spaceil.com/מדיה is © 2020 SpaceIL with NO open license declared. Israeli copyright default = all rights reserved. **No Tier-1 source available without per-image manual permission flow.**",
+      "verified_at": "2026-06-17",
+      "manual_permission_contact": "spaceil.com contact form"
+    },
+    "IAI": {
+      "reason": "Every iai.co.il page: '© 2026 Israel Aerospace Industries. All rights reserved.' Terms of Use §5.2 explicitly prohibits reuse. Media Kit marked 'COMING SOON' (2026-06-17). No Tier-1 source.",
+      "verified_at": "2026-06-17",
+      "manual_permission_contact": "iai.co.il contact form"
+    },
+    "USSF": {
+      "reason": "US Space Force OTV / X-37B imagery — not researched yet. Likely some imagery is DoD-PD-government via dvidshub.net but verification pending.",
+      "verified_at": "deferred"
+    },
+    "UAESA": {
+      "reason": "UAE Space Agency / Hope Probe imagery — not researched yet. Likely on uaespaceagency.ae but verification pending.",
+      "verified_at": "deferred"
+    }
+  },
+
+  "tier_2_institutional": [
+    {
+      "id": "smithsonian-openaccess",
+      "label": "Smithsonian Open Access",
+      "url": "https://api.si.edu/openaccess/api/v1.0/search",
+      "homepage": "https://www.si.edu/openaccess",
+      "kind": "json-api",
+      "license": "cc0",
+      "verified": true,
+      "verified_at": "2026-06-17",
+      "coverage": "National Air and Space Museum (Apollo, Mercury, Gemini, Skylab, Shuttle, Soviet artefacts) + 18 other Smithsonian museums",
+      "release_date": "2020-02-26",
+      "notes": "~2.8M+ items released CC0 in Feb 2020. NASM Rights & Reproductions page tags CC0 vs 'Usage Conditions Apply' per item. Apollo 11 Command Module record verified live with CC0 mark."
+    },
+    {
+      "id": "nara-rg-255",
+      "label": "NARA Still Picture Branch Record Group 255",
+      "url": "https://catalog.archives.gov/",
+      "homepage": "https://www.archives.gov/research/still-pictures/nasa",
+      "kind": "scrape-mission-page",
+      "license": "pd-usgov",
+      "verified": true,
+      "verified_at": "2026-06-17",
+      "photo_count_estimate": 1000000,
+      "coverage": "1M+ NASA/NACA photos 1903-2011 across 103 series. Mercury / Gemini / Lunar Orbiter / Apollo / Skylab / Shuttle / probes / observatories",
+      "search_prefixes": ["255-MG (Mercury/Gemini)", "255-AMP (Apollo Manned Photographs)", "255-STS (Shuttle)", "255-LO (Lunar Orbiter)", "255-MMP (Mercury Manned Project)", "255-ESD (Earth Sciences)", "255-NSS (NASA Spaceflight Series)"],
+      "notes": "PD-USGov. Electronic indexes: B/W (1958-1991), color (1958-1983)."
+    },
+    {
+      "id": "usgs-astrogeology",
+      "label": "USGS Astrogeology / Astropedia",
+      "url": "https://astrogeology.usgs.gov/search",
+      "homepage": "https://www.usgs.gov/centers/astrogeology-science-center",
+      "license_policy_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "kind": "scrape-mission-page",
+      "license": "pd-usgov",
+      "verified": true,
+      "verified_at": "2026-06-17",
+      "coverage": "Planetary mosaics: Mercury, Venus, Moon, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, small bodies",
+      "notes": "PD-USGov per USGS copyright policy. License NOT declared on Astropedia landing — consult separate policy page. (astrogeology.usgs.gov/maps returns 404 — use /search.)"
+    },
+    {
+      "id": "eso-public",
+      "label": "European Southern Observatory (ESO) Public Images",
+      "url": "https://www.eso.org/public/images/",
+      "license_policy_url": "https://www.eso.org/public/copyright/",
+      "kind": "scrape-press-release",
+      "license": "cc-by-4.0",
+      "credit_format": "ESO/[Photographer Name]",
+      "verified": true,
+      "verified_at": "2026-06-17",
+      "coverage": "Astronomy / instruments — boundary case (not mission imagery per se), useful for some context shots",
+      "notes": "CC BY 4.0 by default per /copyright/ page. Carve-outs: logo protected, identifiable-person commercial restriction, no-endorsement clause."
+    },
+    {
+      "id": "apollo-lunar-surface-journal",
+      "label": "Apollo Lunar Surface Journal (ALSJ)",
+      "url": "https://www.nasa.gov/history/alsj/",
+      "alternate_url": "https://www.hq.nasa.gov/alsj/",
+      "kind": "scrape-mission-page",
+      "license": "mixed",
+      "verified": "medium-confidence",
+      "verified_at": "2026-06-17",
+      "coverage": "Apollo missions — surface photographs + transcripts + audio + maps",
+      "notes": "NASA-hosted PD photos + editorial copyright on Jones commentary. No API. Per-asset license confirmation required before fetch."
+    }
+  ],
+
+  "tier_3_failover": {
+    "id": "wikimedia-commons",
+    "label": "Wikimedia Commons (failover only)",
+    "url": "https://commons.wikimedia.org/w/api.php",
+    "filepath": "https://commons.wikimedia.org/wiki/Special:FilePath",
+    "kind": "json-api",
+    "license": "varies",
+    "notes": "**Last resort only — try after every Tier 1 + Tier 2 primary has been exhausted.** PR reviewers reject Commons-first additions per IMAGE-PIPELINE.md REGRESSION GUARD. When used, always note in sidecar that this is the Commons mirror, not the original."
+  },
+
+  "resolver_chain": [
+    "tier_1_agencies[<mission_agency>].primaries[*]",
+    "tier_1_agencies[<partner_agency>].primaries[*]  (for multi-agency missions)",
+    "tier_2_institutional[*]  (only those with license-compatible coverage for the mission era/program)",
+    "tier_3_failover.wikimedia_commons"
+  ],
+
+  "exclusions_global": [
+    {"license": "cc-by-nc-2.0", "reason": "NonCommercial incompatible with ADR-047 commercial-reuse posture"},
+    {"license": "cc-by-nc-4.0", "reason": "Same as above"},
+    {"license": "all-rights-reserved", "reason": "Default — no implicit grant"},
+    {"license": "editorial-only", "reason": "LIFE / AP / Reuters / Getty — commercial license required"},
+    {"license": "restricted-written-permission", "reason": "Per-image manual flow only; not auto-fetchable"}
   ]
 }

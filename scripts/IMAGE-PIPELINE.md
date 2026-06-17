@@ -22,17 +22,41 @@ SOURCE SIDECAR  →  DISK FILES  →  pHASH CACHE  →  PROVENANCE  →  COUNT M
 
 **Original agency archives are always tried first. Wikimedia Commons is failover, not default.** Re-affirmed 2026-06-17 after the first /missions image inventory.
 
-The resolver tries sources in this order, stopping at the first hit:
+**v2 (2026-06-17):** the resolver consults `static/data/agency-archives.json` schema_version 2 — each agency carries a `primaries: [...]` array (not a single endpoint) and the global chain is Tier 1 (agency multi-primary) → Tier 2 (institutional secondary) → Tier 3 (Commons failover).
 
-| Order | Source | When | API |
+### Tier 1 — Agency primaries (multi-primary per agency)
+
+For a mission with `agency: "ESA / NASA"`, the resolver iterates ALL primaries for ESA, then ALL primaries for NASA, before moving to tier 2. License-incompatible primaries are skipped silently per `license_compatibility.excluded`.
+
+| Agency | Verified primaries | License | Notes |
 |---|---|---|---|
-| 1 | **NASA Image and Video Library** (`images-api.nasa.gov`) | NASA missions, NASA-co-managed missions (DART, OSIRIS-REx, MER, Phoenix, Magellan, Mariner 9, Hubble crops) | `GET https://images-api.nasa.gov/search?q=<query>&media_type=image` |
-| 2 | **NASA JPL Photojournal** (`photojournal.jpl.nasa.gov`) | JPL-led missions (Mars rovers, Voyager, Cassini, Galileo, Magellan, MRO HiRISE) — higher-res masters | scrape mission page `targetFamily=Mars&target=...&mission=...` |
-| 3 | **JAXA Digital Archive** / **DARTS** | JAXA missions (Akatsuki, Hayabusa, Hayabusa2, SLIM, IKAROS) | scrape mission page (no public API) |
-| 4 | **ESA Multimedia** (`esa.int/ESA_Multimedia`) / **esahubble.org** | ESA missions (Solar Orbiter, JUICE, BepiColombo, Mars Express, Rosetta, Hubble joint) | scrape set page |
-| 5 | **JHU APL** (`dart.jhuapl.edu`, `parker-solar-probe.jhuapl.edu`) | APL-led missions (DART, Parker, New Horizons, Dragonfly) | scrape gallery page |
-| 6 | **CNSA / Roscosmos / ISRO / SpaceIL** mission pages | per-mission, language-specific | manual / scrape |
-| 7 | **Wikimedia Commons** (`commons.wikimedia.org/w/api.php`) | **failover only** when 1–6 miss or yield nothing usable | `action=query&list=search&srnamespace=6` |
+| **NASA** | `images-api.nasa.gov/search` | pd-nasa | Reference json-api implementation |
+| **Roscosmos** | `flickr.com/photos/roscosmos/` → `roscosmos.ru` | cc-by-2.0 / per-photo | 743 photos. Known Flickr visibility bug — resolver retries |
+| **CNSA** | `cnsa.gov.cn/english/n6465652/n6465659/` | **restricted-written-permission** | `auto_fetch_disabled: true` — manual flow only |
+| **ESA** | `esahubble.org` (5,507 imgs, CC BY 4.0) → `esa.int/ESA_Multimedia/Images` → `sci.esa.int/web/<mission>/multimedia-gallery` → ESA Flickr | cc-by-4.0 | Per-mission gallery pattern, NOT a central sci.esa.int listing |
+| **JAXA** | per-mission galleries (`akatsuki.isas.jaxa.jp/en/gallery/`, `hayabusa2.jaxa.jp/en/galleries/`) → `global.jaxa.jp/multimedia/photos/` | pd-jaxa | **DARTS is research data, NOT a press-image source — excluded** |
+| **JHU APL** | `dart.jhuapl.edu/Gallery/index.php` → `pluto.jhuapl.edu/Multimedia/` | permissive-with-credit | Site occasionally times out — curation fallback load-bearing |
+| **ISRO** | ISSDC `issdc.gov.in/ch2_gallery.html` → `isro.gov.in/Press_Release.html` | pd-other | ISRO Open Data Policy |
+| **SpaceX** | NASA images-api (Crew Dragon/CRS NASA-PD) → Wikimedia `Category:Files_from_SpaceX_Flickr_stream` (grandfathered pre-2018 CC0) | pd-nasa / cc0 | **Current SpaceX Flickr is CC BY-NC 2.0 since 2018 — EXCLUDED** |
+| **Blue Origin** | NASA images-api for NASA-shot BO hardware photos only | pd-nasa | "Courtesy of Blue Origin" attribution = BO rights, NOT NASA-PD — excluded |
+| **ASI** | `asi.it/` press releases | cc-by | LICIACube on DART; manual scrape |
+| **SpaceIL / IAI / USSF / UAESA** | (honest gap — no Tier 1 source) | n/a | All-rights-reserved or unverified; manual permission flow only |
+
+### Tier 2 — Institutional secondary
+
+Tried after Tier 1 exhaustion, before Commons. Non-agency but authoritative (museums, libraries, academic archives).
+
+| ID | Source | License | Coverage | Endpoint |
+|---|---|---|---|---|
+| `smithsonian-openaccess` | Smithsonian Open Access (NASM + 18 others) | **CC0** | Apollo / Mercury / Gemini / Skylab / Shuttle / Soviet artefacts | `api.si.edu/openaccess/api/v1.0/search` (json-api) |
+| `nara-rg-255` | NARA Still Picture Branch RG 255 | **PD-USGov** | **1M+ NASA/NACA photos 1903–2011, 103 series.** Mercury / Gemini / Lunar Orbiter / Apollo / Skylab / Shuttle / probes | `catalog.archives.gov` (scrape, series prefixes 255-MG / 255-AMP / 255-STS / 255-LO) |
+| `usgs-astrogeology` | USGS Astrogeology / Astropedia | **PD-USGov** | Planetary mosaics: Mercury / Venus / Moon / Mars / Jupiter / Saturn / Uranus / Neptune / Pluto / small bodies | `astrogeology.usgs.gov/search` (scrape) |
+| `eso-public` | European Southern Observatory | **CC BY 4.0** | astronomy / instruments (boundary case) | `eso.org/public/images/` (scrape) |
+| `apollo-lunar-surface-journal` | Apollo Lunar Surface Journal | mixed (PD-NASA photos + Jones editorial copyright) | Apollo surface photos + maps + transcripts | `nasa.gov/history/alsj/` (scrape, per-asset license check) |
+
+### Tier 3 — Wikimedia Commons (failover)
+
+`commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6` — tried only after Tier 1 + Tier 2 exhausted. Per-image license still applies. Always note in sidecar that the file came via the Commons mirror, not the agency original.
 
 **Why agency-first matters:**
 - **Provenance integrity** — `image-provenance.json`'s `source_url` should point at the agency's canonical hosting, not a Wikimedia mirror that can be re-edited / removed

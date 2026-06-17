@@ -342,6 +342,8 @@ Fleet entries, surface sites, and other localised records follow the same base +
 
 ## Image pipeline — gotchas
 
+> **Full pipeline reference:** [`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md) — end-to-end flow, every script's role, the 37-script inventory, worked example, ADR cross-refs. This section is **the gotchas** (what NOT to do); read the README for the happy path.
+
 The image sourcing + dedup + attribution pipeline has four parts that have to stay in lockstep. Skip any of them and you'll re-learn one of the bugs below.
 
 **Sidecar surface routing.** Each surface has a specific sidecar manifest:
@@ -445,6 +447,31 @@ The registrar handles cleanup on navigation — no stale labels leak across rout
 **Use this proactively.** When you hit a visual or timing problem that's hard to reason about in the live scene — camera math, spatial composition, animation phase, perf jank, locale bleed, deep-link state — your first move should be: can I add a Page tab here, or extend Perf/i18n/Route with the signal I need? Expand the panel's stubs (perf rolling avg, i18n missing-key list, route history) as you fix issues rather than reading them in isolation. A growing debug surface is the whole point — each iteration teaches the next agent how the system actually behaves.
 
 Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you don't have to opt in to get the baseline.
+
+---
+
+## Adding any card / entity — universal invariants
+
+Before the specific checklists below (flyby body, mission, science overlay, fleet row), every new card / entity / catalog entry **must** clear these five gates. They exist because we've shipped — repeatedly — entries that lived as bare stubs for months: empty galleries, English-only labels, no learn-link, no cross-reference to the parent body. The 2026-06-17 mission-image inventory surfaced 8 missions (opportunity, spirit, mariner9, phoenix, magellan, akatsuki, osiris-rex, dart) in exactly this state. Don't add the ninth.
+
+For every new card, in the same PR, you ship:
+
+1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `static/data/i18n/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
+
+2. **Image sourcing with provenance + credits.** No card ships with a placeholder hero or zero-slot gallery. Source via the agency-first pipeline ([`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md)) — every disk file gets a TASL row in `image-provenance.json` (ADR-047), every sidecar entry gets a `commons_file` / `credit` / `license` block, every count manifest gets bumped. If imagery genuinely doesn't exist for the entity, ship an honest caption (memory `feedback_ship_all_with_honest_captions` — single-frame / descent-frame with text beats graceful-absent button) — never a silent gap.
+
+3. **External link sourcing with provenance.** Every card surfaces at least one outbound learn-link (mission page on the agency site, paper, encyclopedia entry). Links go through `static/data/link-provenance.json` per ADR-051; `scripts/build-link-provenance.ts` validates each URL resolves and records the source. No dead links, no Wikipedia-only stub when the agency hosts a canonical page.
+
+4. **Cross-link to neighbours.** The card must reference, and be referenced by, every related entity:
+   - **Parent body** (mission → planet/moon/asteroid; surface site → parent body; spacecraft → mission)
+   - **Agency** (every entity has an `agency` field consumed by `/credits` walker-fallback — keep `Roscosmos` vs `ROSCOSMOS` consistent per [§"Image pipeline — gotchas"](#image-pipeline--gotchas))
+   - **Sibling missions** (Mars rovers cross-link Sojourner → Spirit → Opportunity → Curiosity → Perseverance; Apollo missions cross-link the previous + next flight; Mercury Seven cross-link to the other six)
+   - **`/explore` iconic-trajectory** entry if the body is reachable (mission → iconic-trajectory; surface site → exploration entry)
+   - **Tour stage** if the entity appears in any narrated episode (mine SSML per memory `feedback_tour_stage_authoring`)
+
+5. **No-stub validation.** `npm run validate-data` runs the per-surface completeness gates: `validate-gallery-counts`, ADR-069 overlay completeness, link-provenance resolution, i18n bundle coverage. **All must pass before push.** If a new entry slips through because a gate doesn't yet check it, add the gate in the same PR. Coverage is a one-way ratchet.
+
+**Honest exceptions.** If an invariant genuinely can't be met (e.g. no public imagery exists, no agency learn-page yet) document it inline in the entity JSON with `"_known_gaps": ["images", "agency_link"]` and an explanation — and open a tracking GitHub issue. The gap is now legible to the next agent instead of looking like neglect. The "global space programs" mandate (memory `feedback_global_space_program_representation`) means CNSA / ISRO / JAXA / Roscosmos / ESA / SpaceIL entities get the same five-invariant treatment as NASA — actively surface them, don't default to NASA-only.
 
 ---
 

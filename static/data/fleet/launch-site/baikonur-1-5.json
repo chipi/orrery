@@ -31,5 +31,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": []
+  "linked_missions": [
+    "sputnik1"
+  ]
 }

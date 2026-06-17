@@ -150,7 +150,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (16 Mars + 31 Moon + 31 Earth + 10 outer + 6 inner — Tier-A + Tier-F + Slice A + Slice B + Slice C X-37B/Mariner-10)`, () => {
+  it(`fixture loads expected counts (20 Mars + 31 Moon + 32 Earth + 11 outer + 8 inner)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -161,15 +161,16 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // 2026-06-14 GH #341 — added 4 Mars (Mariner 9, Spirit, Opportunity,
     // Phoenix), 1 outer (Europa Clipper Jupiter-bound), 2 inner (Venus
     // pair Magellan + Akatsuki).
+    // 2026-06-17 — added Sputnik 1 (Earth). 31 → 32.
     if (
       mars.length !== 20 ||
       moon.length !== 31 ||
-      earth.length !== 31 ||
+      earth.length !== 32 ||
       outer.length !== 11 ||
       inner.length !== 8
     ) {
       throw new Error(
-        `Expected 20 Mars + 31 Moon + 31 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 20 Mars + 31 Moon + 32 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

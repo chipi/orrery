@@ -85,7 +85,7 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 56 missions', async () => {
+  it('returns 113 missions', async () => {
     // v0.7 #107 Step 6 — index gained beresheet, change3, luna16,
     // luna21, schiaparelli (pre-existing JSONs registered).
     // #306 A.2 — index gained 6 missing iconic outer-system missions
@@ -112,8 +112,10 @@ describe('getMissionIndex', () => {
     // (OSIRIS-REx, Psyche); Batch 4 Sun-skirter (Parker, Solar Orbiter);
     // Batch 5 new-body (DART, Lucy, Europa Clipper, Hayabusa 1).
     // 98 → 112.
+    // 2026-06-17 — added sputnik1 (Sputnik 1, 1957-10-04, USSR/OKB-1).
+    // First artificial satellite; the missing mission #1. 112 → 113.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(112);
+    expect(missions).toHaveLength(113);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -362,9 +364,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 112 missions merged with their en-US overlays', async () => {
+  it('returns all 113 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(112);
+    expect(list).toHaveLength(113);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -410,7 +412,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(112);
+    expect(list).toHaveLength(113);
   });
 
   it('count matches what filterMissions reports', async () => {

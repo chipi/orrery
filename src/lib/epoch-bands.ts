@@ -79,13 +79,23 @@ export const AXIS_MAX = 2040;
 
 /**
  * Assign a single canonical epoch to a year. First matching band wins
- * (in EPOCH_BANDS order). Returns `null` for years outside the entire
- * range. Used by /missions to count by year-range without needing to
- * tag each mission with an `epoch` field in JSON.
+ * (in EPOCH_BANDS order), with INCLUSIVE end-year matching so the
+ * boundary year falls into the EARLIER band — e.g. 1961 → first-steps
+ * (not space-race), 1972 → lunar-era (not first-stations). This
+ * mirrors /fleet's editorial assignment of boundary-year entries
+ * (baikonur-31-6 / vostok in 1961 → first-steps; r-7 / sputnik
+ * 1957 → first-steps; etc.) so /missions buckets the same year in
+ * the same band /fleet does.
+ *
+ * Years outside the entire range fall back to the last band (Mars
+ * Era) so a 2045 mission still counts somewhere instead of vanishing.
+ *
+ * (2026-06-17 user note: "on fleet 1961 is included in first filter
+ * why on missions it is not — I would expect to see same on missions".)
  */
 export function epochForYear(year: number): FleetEpoch | null {
   for (const band of EPOCH_BANDS) {
-    if (year >= band.yearStart && year < band.yearEnd) return band.id;
+    if (year >= band.yearStart && year <= band.yearEnd) return band.id;
   }
   // Past the last band's end — bucket into the final band (Mars Era)
   // so a 2045 mission still counts somewhere instead of vanishing.

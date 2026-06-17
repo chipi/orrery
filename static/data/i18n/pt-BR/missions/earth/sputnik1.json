@@ -1,0 +1,32 @@
+{
+  "name": "Sputnik 1",
+  "type": "SATÉLITE EM ÓRBITA TERRESTRE · VOADO",
+  "first": "Primeiro satélite artificial a orbitar a Terra — início da Era Espacial",
+  "description": "A esfera de alumínio polido de Korolev — 58 cm de largura, 83,6 kg, dois transmissores em 20,005 e 40,002 MHz — tornou-se o primeiro objeto feito pelo homem a alcançar a órbita em 1957-10-04 19:28 UTC. A trajetória de 215 × 939 km e 65,1° bipava sobre a América naquela noite e novamente a cada 96 minutos, audível em ondas curtas para qualquer um que sintonizasse. As baterias se esgotaram em 1957-10-26 (após 21 dias, ~315 órbitas); o satélite decaiu e queimou na reentrada em 1958-01-04 após cerca de 1440 órbitas. O voo foi um projeto paralelo da OKB-1: Korolev precisava de uma carga útil leve para seu R-7 ICBM ainda em desenvolvimento e apresentou o 'PS-1' (Prosteyshiy Sputnik — 'satélite mais simples') a Khrushchev como um golpe de propaganda. Funcionou. O choque em Washington desencadeou a ARPA (fundada em 1958-02), o National Aeronautics and Space Act (assinado em 1958-07) e o compromisso de Kennedy com o pouso na Lua quatro anos depois. O Sputnik 1 também devolveu os primeiros dados orbitais ionosféricos e de densidade atmosférica — engenheiros usaram o desvio Doppler nas portadoras de 20 / 40 MHz para mapear a densidade do ar a 215 km, trabalho que alimentou todos os cálculos subsequentes de reentrada.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "O Sputnik 8K71PS decola do NIIP-5 Site 1 (mais tarde Baikonur, Gagarin's Start) em 1957-10-04 19:28:34 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.001,
+      "label": "INSERÇÃO EM ÓRBITA",
+      "note": "Corte do estágio 2 + separação da carga útil; órbita 215 × 939 km, 65,1° de inclinação, período de 96,2 min.",
+      "type": "nominal"
+    },
+    {
+      "met": 21,
+      "label": "TRANSMISSORES SILENCIADOS",
+      "note": "Baterias de prata-zinco esgotadas em 1957-10-26; as portadoras silenciam após ~315 órbitas.",
+      "type": "info"
+    },
+    {
+      "met": 92,
+      "label": "REENTRADA",
+      "note": "Decaiu em 1958-01-04 após ~1440 órbitas; queimou sobre o Atlântico.",
+      "type": "info"
+    }
+  ]
+}

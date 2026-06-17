@@ -1,5 +1,15 @@
 [
   {
+    "id": "sputnik1",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1957,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": false
+  },
+  {
     "id": "mariner4",
     "agency": "NASA",
     "dest": "MARS",
@@ -771,7 +781,7 @@
   },
   {
     "id": "apollo-soyuz",
-    "agency": "NASA · Roscosmos",
+    "agency": "NASA \u00b7 Roscosmos",
     "dest": "EARTH",
     "status": "FLOWN",
     "year": 1975,

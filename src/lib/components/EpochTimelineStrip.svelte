@@ -96,7 +96,7 @@
         >
           <span class="band-label">{ep.label}</span>
           <span class="band-meta"
-            >{ep.yearStart}–{ep.yearEnd === 2030 ? '∞' : ep.yearEnd} · {countByEpoch().get(ep.id) ??
+            >{ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd} · {countByEpoch().get(ep.id) ??
               0}</span
           >
         </button>

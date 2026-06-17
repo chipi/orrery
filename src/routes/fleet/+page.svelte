@@ -183,6 +183,13 @@
       'iss-assembly',
       'commercial-era',
       'lunar-return',
+      // 2026-06-17 — added 'mars-era'. The EpochTimelineStrip has
+      // shipped Mars Era as its 9th band but this allowlist missed
+      // it; clicking the band wrote ?epoch=mars-era to the URL and
+      // then the next URL roundtrip threw it out, resetting the
+      // filter to 'ALL'. User report: "last future segment with 2
+      // items on fleet does not work".
+      'mars-era',
     ].includes(v);
   }
 

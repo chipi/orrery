@@ -191,11 +191,17 @@
     white-space: nowrap;
     max-width: 100%;
   }
+  /* WCAG-AA: 9.5 px caption text needs ≥ 4.5:1 contrast on the dark
+     band background. White at 0.5 alpha → ~5:1 nominally but the
+     band's faint coloured tint pulls effective contrast below that.
+     Bumped to 0.78 alpha + slight size bump to 10 px so every meta
+     line clears AA across all 9 band hues. (2026-06-17 user note:
+     "make sure all labels are readable".) */
   .band-meta {
     margin-top: 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 9.5px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.78);
     line-height: 1;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -221,12 +227,15 @@
     position: relative;
     height: 14px;
   }
+  /* WCAG-AA bump from 0.4 → 0.72 + 9.5 → 10 px. The tick labels sit
+     on the dark page background (no band tint) so the math is simpler
+     but the prior 0.4 alpha was clearly failing AA. */
   .tick {
     position: absolute;
     top: 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 9.5px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.72);
     transform: translateX(-50%);
     pointer-events: none;
   }
@@ -269,10 +278,14 @@
     border-color: var(--band-color, #4ecdc4);
     color: var(--band-color, #4ecdc4);
   }
+  /* Mobile chip count badge — AA bump from 0.5 → 0.78 alpha. Sits
+     inside the chip's white-tinted pill, which already lifts effective
+     contrast vs the page; the bump makes the count legible at a
+     glance instead of squinting. */
   .chip-count {
-    font-size: 9.5px;
-    color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.06);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.08);
     padding: 1px 5px;
     border-radius: 8px;
   }

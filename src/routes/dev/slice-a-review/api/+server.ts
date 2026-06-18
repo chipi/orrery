@@ -40,7 +40,7 @@ const APPROVALS_PATH = 'static/data/slice-a-approvals.json';
 const VALID_STATUS = new Set(['approved', 'rejected', 'pending', 'needs-manual']);
 
 type Decision = {
-  status: 'approved' | 'rejected' | 'needs-manual';
+  status: 'approved' | 'rejected' | 'needs-manual' | 'pending';
   comment: string;
   tags: string[];
   overrides: Record<string, string>;
@@ -94,17 +94,16 @@ export async function POST({ request }) {
 
   const current = await loadCurrent();
   const now = new Date().toISOString();
-  if (body.status === 'pending') {
-    delete current.decisions[body.proposal_id];
-  } else {
-    current.decisions[body.proposal_id] = {
-      status: body.status as Decision['status'],
-      comment: typeof body.comment === 'string' ? body.comment.slice(0, 2000) : '',
-      tags: sanitizeTags(body.tags),
-      overrides: sanitizeOverrides(body.overrides),
-      updated_at: now,
-    };
-  }
+  // 'pending' is a REAL stored status now (was previously a delete signal).
+  // Marko's allowed to leave a comment / tag / override on a skipped card so
+  // the next review round explains why he set it aside.
+  current.decisions[body.proposal_id] = {
+    status: body.status as Decision['status'],
+    comment: typeof body.comment === 'string' ? body.comment.slice(0, 2000) : '',
+    tags: sanitizeTags(body.tags),
+    overrides: sanitizeOverrides(body.overrides),
+    updated_at: now,
+  };
   current.last_updated_at = now;
 
   await writeFile(APPROVALS_PATH, JSON.stringify(current, null, 2) + '\n', 'utf8');

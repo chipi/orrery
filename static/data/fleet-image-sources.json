@@ -101,7 +101,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "credit": "JAXA / Akihiro Ikeshita",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-18T15:01:11Z",
+    "fetched_at": "2026-06-18T16:13:05Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -115,7 +115,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
     "credit": "JAXA / ISAS / DARTS",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-18T15:01:14Z",
+    "fetched_at": "2026-06-18T16:13:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -1553,7 +1553,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T15:01:08Z",
+    "fetched_at": "2026-06-18T16:13:02Z",
     "slice_a_iteration": 4,
     "slice_a_query": "gaia observatory",
     "vision": {
@@ -4665,7 +4665,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%20TMA-16%20relocates%20from%20Zvezda%20Service%20Module%20to%20Poisk%20module.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T15:01:14Z",
+    "fetched_at": "2026-06-18T16:13:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "soyuz tma",
     "vision": {
@@ -5958,7 +5958,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T15:01:07Z",
+    "fetched_at": "2026-06-18T16:13:01Z",
     "slice_a_iteration": 4,
     "slice_a_query": "viking2 lander"
   },
@@ -5968,9 +5968,23 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T15:01:08Z",
+    "fetched_at": "2026-06-18T16:13:02Z",
     "slice_a_iteration": 4,
     "slice_a_query": "giotto",
+    "vision": {
+      "verdict": "unsure",
+      "confidence": 0
+    }
+  },
+  "euclid/01.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-18T16:13:02Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "euclid",
     "vision": {
       "verdict": "unsure",
       "confidence": 0

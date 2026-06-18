@@ -32,6 +32,7 @@
       source_url?: string;
       credit?: string;
       license?: string;
+      tier?: 1 | 2 | 3;
       metadata?: Record<string, unknown>;
     } | null;
     vision_v2?: { verdict?: string; confidence?: number; reason?: string } | null;
@@ -207,6 +208,9 @@
   let filterAgency = $state<Set<string>>(new Set());
   let filterSurface = $state<Set<string>>(new Set());
   let filterCodePath = $state<Set<string>>(new Set());
+  // Tier 2 (Smithsonian, NARA) is where mistakes hide — Marko asked
+  // for an explicit isolatable view. Empty Set means show all tiers.
+  let filterTier = $state<Set<string>>(new Set());
   let filterStatus = $state<Set<string>>(new Set(['pending', 'approved', 'rejected', 'needs-manual']));
 
   const proposals: Proposal[] = data.salvage.proposals ?? [];
@@ -227,12 +231,16 @@
     return decisions[id]?.status ?? 'pending';
   }
 
+  function tierOf(p: Proposal): string {
+    return p.proposed?.tier ? `T${p.proposed.tier}` : 'T?';
+  }
   const visibleList = $derived(
     proposals
       .filter((p) => (showDropped ? true : p.survivor))
       .filter((p) => filterAgency.size === 0 || filterAgency.has(p.agency))
       .filter((p) => filterSurface.size === 0 || filterSurface.has(p.surface))
       .filter((p) => filterCodePath.size === 0 || filterCodePath.has(codePathOf(p)))
+      .filter((p) => filterTier.size === 0 || filterTier.has(tierOf(p)))
       .filter((p) => filterStatus.has(statusOf(p.proposal_id))),
   );
   const counts = $derived({
@@ -246,6 +254,7 @@
   const agencies = $derived([...new Set(proposals.map((p) => p.agency))].sort());
   const surfaces = $derived([...new Set(proposals.map((p) => p.surface))].sort());
   const codePaths = $derived([...new Set(proposals.map(codePathOf))].sort());
+  const tiers = $derived([...new Set(proposals.map(tierOf))].sort());
 
   async function persist(id: string, status: 'approved' | 'rejected' | 'needs-manual' | 'pending') {
     savingId = id;
@@ -415,6 +424,19 @@
         </label>
       {/each}
 
+      <h2>Resolver tier</h2>
+      {#each tiers as t}
+        <label title={t === 'T1' ? 'Tier 1 — agency primaries (NASA Images API, ESA Hubble, Flickr, ESA Multimedia)' : t === 'T2' ? 'Tier 2 — institutional secondaries (Smithsonian Open Access, NARA RG-255)' : t === 'T3' ? 'Tier 3 — Wikimedia Commons failover' : 'No tier recorded'}>
+          <input
+            type="checkbox"
+            checked={filterTier.has(t)}
+            onchange={() => (filterTier = toggleFilter(filterTier, t))}
+          />
+          {t}
+          <span class="count">{proposals.filter((p) => tierOf(p) === t).length}</span>
+        </label>
+      {/each}
+
       <h2>Status</h2>
       {#each ['pending', 'approved', 'rejected', 'needs-manual'] as s}
         <label>
@@ -433,6 +455,7 @@
           filterAgency = new Set();
           filterSurface = new Set();
           filterCodePath = new Set();
+          filterTier = new Set();
           filterStatus = new Set(['pending', 'approved', 'rejected', 'needs-manual']);
         }}
       >Reset filters</button>

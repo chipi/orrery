@@ -1,8 +1,8 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-18T15:03:44.403Z
+Generated: 2026-06-18T16:13:10.142Z
 Script: build-image-provenance@1.0.0
-Commit: c59659c6878351660f857a561f8d7f983faef58c
+Commit: c749c055078b7e6944273ff1acf9a5ef56305888
 Total entries: 3420
 
 ## Added (0)
@@ -11,156 +11,8 @@ Total entries: 3420
 ## Removed (0)
 
 
-## Changed (75)
+## Changed (1)
 
-- `/images/fleet-galleries/akatsuki/01.jpg`
-  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAkatsuki%20CG01.png"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
-- `/images/fleet-galleries/akatsuki/02.jpg`
-  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+akatsuki&media_type=image&keywords=akatsuki"
-- `/images/fleet-galleries/akatsuki/03.jpg`
-  - before — author: "JAXA", agency: "JAXA"
-  - after — author: "JAXA / Akihiro Ikeshita", agency: "JAXA / Akihiro Ikeshita"
-- `/images/fleet-galleries/akatsuki/04.jpg`
-  - before — author: "JAXA", agency: "JAXA"
-  - after — author: "JAXA / Akihiro Ikeshita", agency: "JAXA / Akihiro Ikeshita"
-- `/images/fleet-galleries/akatsuki/05.jpg`
-  - before — author: "JAXA", agency: "JAXA"
-  - after — author: "JAXA / Akihiro Ikeshita", agency: "JAXA / Akihiro Ikeshita"
-- `/images/fleet-galleries/antares/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAntares%20Orb-3%20launch%20failure%20(201410280009HQ).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/apollo-csm-block-i/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAPOLLO%20SPACECRAFT%20009%20-%20SATURN%201B%20201%20-%20ON%20PAD%20-%20COMPLEX%2034%20-%20CAPE%20(S66-20410).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/cape-canaveral-lc-36b/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAtlas%20Centaur%2027%20with%20Pioneer%2010%20on%20launch%20pad.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/chandrayaan1/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APSLV-C11_launch2.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/exomars-tgo/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMaquette%20Exomars%20Orbiter%20Salon%20du%20Bourget%202015%20DSC%200045.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/gagarins-start/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AGagarin's%20Start%2C%20Kazakhstan%20by%20Planet%20Labs.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/gaia/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AThe_colour_of_the_sky_from_Gaia%E2%80%99s_Early_Data_Release_3_ESA22358060.png"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Gaia%20Spacecraft%20(eso1908d).jpg"
-- `/images/fleet-galleries/gaia/04.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA"
-  - after — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
-- `/images/fleet-galleries/gaia/05.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA"
-  - after — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
-- `/images/fleet-galleries/giotto/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AComet_Halley_(PIA17485).jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AGiotto%20Whipple%20shield%20ESA239195.jpg"
-- `/images/fleet-galleries/lc-14/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALaunch_Complex_14.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-14/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALaunch-complex-14.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-14/04.jpg`
-  - before — license_short: "PD-Old", author: "Don Senda", agency: "Don Senda", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALC-14_sign.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-34/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALaunch%20Complex%2034.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-5/02.jpg`
-  - before — license_short: "PD-Old", author: "Bubba73 (Jud McCranie)", agency: "Bubba73 (Jud McCranie)", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALC-5_blockhouse.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-5/03.jpg`
-  - before — license_short: "PD-Old", author: "Bubba73 (Jud McCranie)", agency: "Bubba73 (Jud McCranie)", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALC-5_firing_button.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lc-5/04.jpg`
-  - before — license_short: "PD-Old", author: "Bubba73 (Jud McCranie)", agency: "Bubba73 (Jud McCranie)", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALC-5_pad_in_2010.jpg"
-  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lro/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Reconnaissance_Orbiter_001.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/luna24/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALuna24_rev_fig.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-1/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_orbiter_1_(large).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-1/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_1_coverage.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-1/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ABenedict_crater_(as_seen_by_Lunar_Orbiter_1).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-2/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_2.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-2/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_2_coverage.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-2/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_camera_(large).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-2/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_diagram.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-3/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_3_moon_image.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-3/03.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_3_coverage.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-3/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_Spacecraft.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-4/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMare_Orientale_(Lunar_Orbiter_4).png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-4/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_4_image_of_Moon_with_Earth.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-4/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AStadius_crater_(Lunar_Orbiter_4).jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-4/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_4_coverage.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-5/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_V_image_of_earth.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-5/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_5_-_FRAME_5198-H3_-_DPLA_-_6a113a5cf26e003e5423f9d1bd785b6f.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-orbiter-5/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Orbiter_5_coverage.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-prospector/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Prospector_transparent.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-prospector/02.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Prospector_in_Clean_Room_-_GPN-2000-001543.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-prospector/04.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3A78646main_LPbrief.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/lunar-prospector/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ALunar_Prospector_Hydrogen_abundance_map.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/mars-odyssey/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars_Odyssey_spacecraft_model.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/mars-odyssey/05.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3A2001_Mars_Odyssey_-_mars-odyssey-logo-sm.png"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/mars2-orbiter/04.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars%20map%20Viking%201%20Mars%202%20Mars%20Pathfinder%20Opportunity.png"
-  - after — license_short: "PD-Old", author: "USSR Post", agency: "USSR Post", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/mars2-orbiter/05.jpg`
-  - before — author: "NPO Lavochkin / Memorial Museum of Cosmonautics", agency: "NPO Lavochkin / Memorial Museum of Cosmonautics", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars3%20lander%20vsm.jpg"
-  - after — author: "USSR Post", agency: "USSR Post", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- `/images/fleet-galleries/mars6/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMars_6.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-- … 25 more
+- `/images/fleet-galleries/euclid/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AEuclid%20spacecraft%20ESA24912474.jpg"

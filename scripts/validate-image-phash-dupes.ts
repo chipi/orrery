@@ -331,6 +331,13 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'a1996f907b645945|a1996f907b645945', // sriharikota-slp / rockets/lvm3 (post-delete: just fleet)
   'c63926c799666709|c63926c799666709', // fleet-galleries/h-iia / rockets/h-iia (post-delete)
   'f01bf01708edc639|f01bf01708edc639', // proton-k / proton-m / rockets/proton-m (post-delete)
+
+  // ALLOWLIST_AUTHORIZED (2026-06-18) — Slice A v3 round-3 ship.
+  //   Freedom 7 was the first US crewed spaceflight; Mercury-Redstone 3
+  //   was the rocket that launched it. Same NASA capsule photo serves
+  //   both heroes — Marko approved each separately knowing it's the
+  //   same image. Editorial-share, not a bug.
+  '9e7ee1021cf71819|9e7ee1021cf71819', // missions/freedom-7 / missions/mercury-redstone-3
 ]);
 
 interface BaselineFile {

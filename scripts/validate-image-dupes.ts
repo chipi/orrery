@@ -231,6 +231,12 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '8cc71617', // missions/europa-clipper + fleet-galleries/europa-clipper
   '07c0486a', // missions/parker-solar-probe + fleet-galleries/parker-solar-probe
   '96f1ded6', // missions/solar-orbiter + fleet-galleries/solar-orbiter
+
+  // ALLOWLIST_AUTHORIZED (2026-06-18) — Slice A v3 round-3 ship.
+  //   Pioneer 11 NASM portrait approved by Marko for BOTH mission hero
+  //   AND fleet slot 3 (he labeled the two proposals separately knowing
+  //   they share the same Smithsonian record). Editorial-share, not bug.
+  '003fae8f', // missions/pioneer-11/01 + fleet-galleries/pioneer-11/03
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base

@@ -101,7 +101,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "credit": "JAXA / Akihiro Ikeshita",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-18T16:13:05Z",
+    "fetched_at": "2026-06-18T17:33:20Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -115,7 +115,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
     "credit": "JAXA / ISAS / DARTS",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-18T16:13:08Z",
+    "fetched_at": "2026-06-18T17:33:23Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -178,13 +178,6 @@
     "credit": "Northrop Grumman",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "apollo-csm-block-i/01": {
-    "commons_file": "Apollo 1 SM-012 at Downey with White and Grissom June 27, 1966.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Apollo%201%20SM-012%20at%20Downey%20with%20White%20and%20Grissom%20June%2027%2C%201966.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T13:52:00Z"
   },
   "apollo-csm-block-i/02": {
     "commons_file": "Apollo 1 Command Module at North American Aviation.jpg",
@@ -1094,8 +1087,18 @@
     "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "crew-dragon/01.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Crew_Dragon_Demo_2_and_ISS_crew_tunnel_view.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
+    "credit": "NASA / KSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:24Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "crew dragon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "crew-dragon/02.jpg": {
     "agency": "SPACEX",
@@ -1553,7 +1556,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:02Z",
+    "fetched_at": "2026-06-18T17:33:17Z",
     "slice_a_iteration": 4,
     "slice_a_query": "gaia observatory",
     "vision": {
@@ -3216,11 +3219,14 @@
     "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "maven/01.jpg": {
-    "commons_file": "Maven & Johnny Takter 2015.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Maven%20%26%20Johnny%20Takter%202015.jpg",
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA14761/PIA14761~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA14761/PIA14761~orig.jpg",
     "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:03Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "maven"
   },
   "maven/02.jpg": {
     "commons_file": "MAVEN spacecraft model.png",
@@ -3701,8 +3707,14 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer_F-G_Plaque-_Pioneer_10_the_first_spacecraft_to_leave_our_solar_system_carries_a_message_to_other_worlds_(ARC-1972-AC72-1338).jpg"
   },
   "pioneer-11/03.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pioneer_plaque_mounted_on_the_spacecraft.jpg"
+    "source_type": "smithsonian-openaccess",
+    "source_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
+    "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
+    "credit": "Smithsonian National Air and Space Museum",
+    "license": "cc0",
+    "fetched_at": "2026-06-18T17:33:07Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "pioneer 11"
   },
   "pioneer-11/04.jpg": {
     "agency": "NASA",
@@ -4665,7 +4677,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%20TMA-16%20relocates%20from%20Zvezda%20Service%20Module%20to%20Poisk%20module.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:08Z",
+    "fetched_at": "2026-06-18T17:33:23Z",
     "slice_a_iteration": 4,
     "slice_a_query": "soyuz tma",
     "vision": {
@@ -5767,13 +5779,14 @@
     "fetched_at": "2026-06-15T14:25:46Z"
   },
   "europa-clipper/01.jpg": {
-    "agency": "NASA / JPL",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Europa_Clipper_spacecraft_model.png",
-    "commons_file": "Europa_Clipper_spacecraft_model.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_spacecraft_model.png",
-    "credit": "NASA / JPL-Caltech — Europa Clipper",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-15T14:25:48Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA25236/PIA25236~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA25236/PIA25236~orig.jpg",
+    "credit": "NASA/JPL-Caltech/Johns Hopkins APL/Ed Whitman",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:03Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "europa clipper"
   },
   "europa-clipper/02.jpg": {
     "source_type": "nasa-image-library",
@@ -5958,7 +5971,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:01Z",
+    "fetched_at": "2026-06-18T17:33:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "viking2 lander"
   },
@@ -5968,7 +5981,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:02Z",
+    "fetched_at": "2026-06-18T17:33:17Z",
     "slice_a_iteration": 4,
     "slice_a_query": "giotto",
     "vision": {
@@ -5982,12 +5995,22 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:02Z",
+    "fetched_at": "2026-06-18T17:33:16Z",
     "slice_a_iteration": 4,
     "slice_a_query": "euclid",
     "vision": {
       "verdict": "unsure",
       "confidence": 0
     }
+  },
+  "apollo-csm-block-i/01.jpg": {
+    "source_type": "smithsonian-openaccess",
+    "source_url": "https://ids.si.edu/ids/download?id=NASM-A19740798000-NASM2018-10165.jpg",
+    "image_url": "https://ids.si.edu/ids/download?id=NASM-A19740798000-NASM2018-10165.jpg",
+    "credit": "Smithsonian National Air and Space Museum",
+    "license": "cc0",
+    "fetched_at": "2026-06-18T17:33:02Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "apollo csm block i"
   }
 }

@@ -1148,9 +1148,23 @@
     "image_url": "https://cdn.esahubble.org/archives/images/large/heic2017a.jpg",
     "credit": "ESA/Hubble",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-18T16:13:09Z",
+    "fetched_at": "2026-06-18T17:33:24Z",
     "slice_a_iteration": 4,
     "slice_a_query": "Jupiter Great Red Spot",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/saturn/01": {
+    "source_type": "esahubble",
+    "source_url": "https://esahubble.org/images/heic1814b/",
+    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814b.jpg",
+    "credit": "ESA/Hubble",
+    "license": "cc-by-4.0",
+    "fetched_at": "2026-06-18T17:33:24Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "Saturn rings",
     "vision": {
       "verdict": "related",
       "confidence": 0.95

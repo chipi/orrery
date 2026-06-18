@@ -1,8 +1,8 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-18T16:13:10.142Z
+Generated: 2026-06-18T17:35:24.021Z
 Script: build-image-provenance@1.0.0
-Commit: c749c055078b7e6944273ff1acf9a5ef56305888
+Commit: ebd5df8d1b3a27cdbba2d8ff4e80ca31c79ce133
 Total entries: 3420
 
 ## Added (0)
@@ -11,8 +11,5 @@ Total entries: 3420
 ## Removed (0)
 
 
-## Changed (1)
+## Changed (0)
 
-- `/images/fleet-galleries/euclid/01.jpg`
-  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
-  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AEuclid%20spacecraft%20ESA24912474.jpg"

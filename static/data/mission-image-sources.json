@@ -117,7 +117,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T16:13:01Z",
+    "fetched_at": "2026-06-18T17:33:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "apollo8"
   },
@@ -465,11 +465,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "friendship-7/01": {
-    "commons_file": "Mercury 6, John H Glenn Jr.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury%206%2C%20John%20H%20Glenn%20Jr.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:10Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "friendship 7"
   },
   "friendship-7/02": {
     "commons_file": "Mercury Control Center during Mercury-Atlas 6 mission 1962.jpg",
@@ -626,11 +629,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "liberty-bell-7/01": {
-    "commons_file": "Grissom Climbs into Liberty Bell 7 - GPN-2002-000048.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Grissom%20Climbs%20into%20Liberty%20Bell%207%20-%20GPN-2002-000048.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s64-10806/s64-10806~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s64-10806/s64-10806~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:11Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "liberty bell 7"
   },
   "liberty-bell-7/02": {
     "commons_file": "Grissom prepares to enter Liberty Bell 7 61-MR4-76.jpg",
@@ -997,11 +1003,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mercury-redstone-3/01": {
-    "commons_file": "Alan Shepard during Mercury-Redstone 3.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Alan%20Shepard%20during%20Mercury-Redstone%203.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:12Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "mercury redstone 3"
   },
   "mercury-redstone-3/02": {
     "commons_file": "Mercury Redstone 3 4 (17874590413).jpg",
@@ -2089,13 +2098,13 @@
   },
   "spirit/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-03pd2093",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-03pd2093/KSC-03pd2093~orig.jpg",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:11:37Z",
-    "nasa_id": "KSC-03pd2093",
-    "nasa_title": "KENNEDY SPACE CENTER, FLA. - On Launch Complex 17-B, Cape Canaveral Air Force Station, the Delta II Heavy launch vehicle carrying the rover \"Opportunity\" for the second Mars Exploration Rover mission launches at 11:18:15 p.m. EDT.  Opportunity will reach Mars on Jan. 25, 2004. Together the two MER rovers, Spirit (launched June 10) and Opportunity, seek to determine the history of climate and water at two sites on Mars where conditions may once have been favorable to life. The rovers are identical. They will navigate themselves around obstacles as they drive across the Martian surface, traveling up to about 130 feet each Martian day.  Each rover carries five scientific instruments including a panoramic camera and microscope, plus a rock abrasion tool that will grind away the outer surfaces of rocks to expose their interiors for examination. Each rover’s prime mission is planned to last three months on Mars."
+    "source_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:16Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "spirit"
   },
   "spirit/02": {
     "source_type": "nasa-image-library",
@@ -2339,13 +2348,13 @@
   },
   "dart/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-20211002-PH-DNQ01_0006",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-20211002-PH-DNQ01_0006/KSC-20211002-PH-DNQ01_0006~orig.JPG",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:13:35Z",
-    "nasa_id": "KSC-20211002-PH-DNQ01_0006",
-    "nasa_title": "DART Spacecraft Arrival"
+    "source_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-18T17:33:09Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "dart"
   },
   "dart/02": {
     "source_type": "wikimedia-commons",
@@ -2471,5 +2480,15 @@
     "fetched_at": "2026-06-17T09:28:26Z",
     "nasa_id": "PIA24788",
     "nasa_title": "Preparing Psyche's Thruster Installation"
+  },
+  "pioneer-11/01": {
+    "source_type": "smithsonian-openaccess",
+    "source_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
+    "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
+    "credit": "Smithsonian National Air and Space Museum",
+    "license": "cc0",
+    "fetched_at": "2026-06-18T17:33:15Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "pioneer 11"
   }
 }

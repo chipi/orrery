@@ -112,11 +112,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "apollo8/01": {
-    "commons_file": "Apollo 8 Crewmembers - GPN-2000-001125.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Apollo_8_Crewmembers_-_GPN-2000-001125.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:29:15Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-18T15:01:07Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "apollo8"
   },
   "apollo8/02": {
     "commons_file": "NASA-Apollo8-Dec24-Earthrise.jpg",

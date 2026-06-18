@@ -68,17 +68,23 @@ if (APPROVALS_PATH) {
   );
 }
 
-// Load all agency dry-run files (or just one). Skip the legacy
-// slice-a-1-dryrun.json (NASA-specific from earlier work) — it's
-// superseded by slice-a-nasa-dryrun.json which has vision verdicts.
+// Load all dry-run files. slice-a-1-dryrun.json was previously skipped
+// as "legacy NASA superset"; the v3 approval surface emits proposal_ids
+// that match it (prefix "1-…") so we INCLUDE it now. slice-explore-
+// dryrun.json carries /explore body proposals (planets, small-bodies)
+// — also included so jupiter/01-style approveds can land.
 const dryrunFiles = [];
 for await (const f of glob('static/data/slice-a-*-dryrun.json')) {
-  if (f.endsWith('slice-a-1-dryrun.json')) continue; // legacy
   if (AGENCY_FILTER) {
     const slug = AGENCY_FILTER.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     if (!f.endsWith(`slice-a-${slug}-dryrun.json`)) continue;
   }
   dryrunFiles.push(f);
+}
+if (!AGENCY_FILTER) {
+  for await (const f of glob('static/data/slice-explore-dryrun.json')) {
+    dryrunFiles.push(f);
+  }
 }
 console.log(
   `Loading ${dryrunFiles.length} dryrun file(s)${DRY_RUN ? ' (DRY RUN — no disk writes)' : ''}\n`,
@@ -87,8 +93,10 @@ console.log(
 // Read sidecars once; rewrite at end
 const MISSION_SIDECAR = 'static/data/mission-image-sources.json';
 const FLEET_SIDECAR = 'static/data/fleet-image-sources.json';
+const PANEL_SIDECAR = 'static/data/panel-image-sources.json';
 const MISSION_SOURCES = JSON.parse(readFileSync(MISSION_SIDECAR, 'utf8'));
 const FLEET_SOURCES = JSON.parse(readFileSync(FLEET_SIDECAR, 'utf8'));
+const PANEL_SOURCES = JSON.parse(readFileSync(PANEL_SIDECAR, 'utf8'));
 
 // ── Image fetch + sharp encode ─────────────────────────────────────
 
@@ -167,8 +175,13 @@ for (const file of dryrunFiles) {
     // (refresh attribution). Skip only if source_type identical and ship is false.
     // (No-op since ship_at_apply is the gate; here we just trust it.)
 
+    // slice-explore proposals carry `bodyId` instead of `missionId`.
+    // Compute the canonical id once so the approval gate, sidecar
+    // dispatch, and download path all agree.
+    const missionId = p.missionId ?? p.bodyId;
+
     // Slice A v3 / Stage 4 approval gate + per-decision overrides.
-    const proposalId = `${agency.toLowerCase()}-${p.surface}-${p.missionId}-${p.slot}`;
+    const proposalId = `${agency.toLowerCase()}-${p.surface}-${missionId}-${p.slot}`;
     let overrides = {};
     if (APPROVED_IDS) {
       if (!APPROVED_IDS.has(proposalId)) {
@@ -190,17 +203,30 @@ for (const file of dryrunFiles) {
 
     processed++;
 
-    const surfaceDir = p.surface; // 'missions' or 'fleet-galleries'
+    const surfaceDir = p.surface;
+    // Surface dispatch:
+    //   fleet-galleries → FLEET sidecar, key `<id>/<slot>.jpg`
+    //   missions        → MISSION sidecar, key `<id>/<slot>`
+    //   planets / small-bodies / earth-objects / moon-sites / mars-sites
+    //                   → PANEL sidecar, key `<surface>/<id>/<slot>`
+    const isPanelLike = surfaceDir !== 'fleet-galleries' && surfaceDir !== 'missions';
     const sidecarKey =
       surfaceDir === 'fleet-galleries'
-        ? `${p.missionId}/${p.slot}.jpg`
-        : `${p.missionId}/${p.slot}`;
-    const sidecar = surfaceDir === 'fleet-galleries' ? FLEET_SOURCES : MISSION_SOURCES;
+        ? `${missionId}/${p.slot}.jpg`
+        : isPanelLike
+          ? `${surfaceDir}/${missionId}/${p.slot}`
+          : `${missionId}/${p.slot}`;
+    const sidecar =
+      surfaceDir === 'fleet-galleries'
+        ? FLEET_SOURCES
+        : isPanelLike
+          ? PANEL_SOURCES
+          : MISSION_SOURCES;
 
     const overrideTag = Object.keys(overrides).length > 0 ? ' [override]' : '';
     if (DRY_RUN) {
       console.log(
-        `  [dry]${overrideTag} ${agency.padEnd(20)} ${p.missionId}/${p.slot} ← ${effective.source_type} (vision=${p.vision?.verdict ?? 'n/a'})`,
+        `  [dry]${overrideTag} ${agency.padEnd(20)} ${surfaceDir}/${missionId}/${p.slot} ← ${effective.source_type} (vision=${p.vision?.verdict ?? 'n/a'})`,
       );
       agencyStats.applied++;
       overallStats.applied++;
@@ -208,7 +234,7 @@ for (const file of dryrunFiles) {
     }
 
     try {
-      await downloadAndProcess(effective.image_url, surfaceDir, p.missionId, p.slot);
+      await downloadAndProcess(effective.image_url, surfaceDir, missionId, p.slot);
       sidecar[sidecarKey] = {
         source_type: effective.source_type,
         source_url: effective.source_url,
@@ -228,8 +254,8 @@ for (const file of dryrunFiles) {
       // Light throttle so we don't hammer the source CDNs
       await new Promise((r) => setTimeout(r, 200));
     } catch (e) {
-      console.log(`  ✗ ${agency} ${p.missionId}/${p.slot}: ${e.message}`);
-      errorList.push({ agency, mission: p.missionId, slot: p.slot, error: e.message });
+      console.log(`  ✗ ${agency} ${missionId}/${p.slot}: ${e.message}`);
+      errorList.push({ agency, mission: missionId, slot: p.slot, error: e.message });
       agencyStats.errors++;
       overallStats.errors++;
     }
@@ -243,6 +269,7 @@ for (const file of dryrunFiles) {
 if (!DRY_RUN) {
   writeFileSync(MISSION_SIDECAR, JSON.stringify(MISSION_SOURCES, null, 2) + '\n');
   writeFileSync(FLEET_SIDECAR, JSON.stringify(FLEET_SOURCES, null, 2) + '\n');
+  writeFileSync(PANEL_SIDECAR, JSON.stringify(PANEL_SOURCES, null, 2) + '\n');
 }
 
 console.log('\n── Slice A apply result ──');

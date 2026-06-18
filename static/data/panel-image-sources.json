@@ -1141,5 +1141,19 @@
     "credit": "NASA / JHU APL / SwRI — New Horizons",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-15T14:25:32Z"
+  },
+  "planets/jupiter/01": {
+    "source_type": "esahubble",
+    "source_url": "https://esahubble.org/images/heic2017a/",
+    "image_url": "https://cdn.esahubble.org/archives/images/large/heic2017a.jpg",
+    "credit": "ESA/Hubble",
+    "license": "cc-by-4.0",
+    "fetched_at": "2026-06-18T15:01:15Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "Jupiter Great Red Spot",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   }
 }

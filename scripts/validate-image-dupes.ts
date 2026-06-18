@@ -217,6 +217,20 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'a87d6afa', // otv-1 + otv-2
   //    Starship demo + Starship Mars Crew — same SpaceX vehicle line.
   '80b02832', // starship-demo + starship-mars-crew
+
+  // ALLOWLIST_AUTHORIZED (2026-06-18) — /missions list hero loader does
+  //   NOT do cross-surface fallback; it loads /images/missions/<id>/01.jpg
+  //   directly and 404s when missing. For these 4 missions the canonical
+  //   image lives in /images/fleet-galleries/<id>/. To stop the empty-card
+  //   regression we mirror the byte-identical hero into missions/<id>/01.jpg.
+  //   Proper fix (deferred): teach pickHero('missions', id) in
+  //   src/lib/image-hero.ts to fall through to fleet-galleries when the
+  //   missions/ slot doesn't exist, then delete these allowlist entries +
+  //   the mirrored bytes.
+  '34773c05', // missions/lucy + fleet-galleries/lucy
+  '8cc71617', // missions/europa-clipper + fleet-galleries/europa-clipper
+  '07c0486a', // missions/parker-solar-probe + fleet-galleries/parker-solar-probe
+  '96f1ded6', // missions/solar-orbiter + fleet-galleries/solar-orbiter
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base

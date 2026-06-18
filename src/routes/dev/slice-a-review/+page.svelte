@@ -205,6 +205,17 @@
 
   // Filter / view controls.
   let showDropped = $state(false);
+  // Round-4 lesson: many dropped proposals are visual duplicates of the
+  // cluster's "first occurrence" — cross-mission-dupe + cross-mission-
+  // basename filters mark them but the cards still appear. Toggling this
+  // hides them so each visual cluster shows ONE representative.
+  let collapseDupes = $state(false);
+  function isClusterDuplicate(p: Proposal): boolean {
+    const drops = p.drop_reasons ?? [];
+    return drops.some(
+      (r) => r.startsWith('cross-mission-dupe:') || r.startsWith('cross-mission-basename:'),
+    );
+  }
   let filterAgency = $state<Set<string>>(new Set());
   let filterSurface = $state<Set<string>>(new Set());
   let filterCodePath = $state<Set<string>>(new Set());
@@ -237,6 +248,7 @@
   const visibleList = $derived(
     proposals
       .filter((p) => (showDropped ? true : p.survivor))
+      .filter((p) => !collapseDupes || !isClusterDuplicate(p))
       .filter((p) => filterAgency.size === 0 || filterAgency.has(p.agency))
       .filter((p) => filterSurface.size === 0 || filterSurface.has(p.surface))
       .filter((p) => filterCodePath.size === 0 || filterCodePath.has(codePathOf(p)))
@@ -385,6 +397,11 @@
         <input type="checkbox" bind:checked={showDropped} />
         Show dropped proposals
         <span class="count">({counts.total - counts.survivors})</span>
+      </label>
+      <label title="Hide cards that were dropped because the cluster's first occurrence already passed through (cross-mission-dupe or cross-mission-basename). Each visual cluster ends up with one representative card.">
+        <input type="checkbox" bind:checked={collapseDupes} />
+        Collapse cluster duplicates
+        <span class="count">({proposals.filter(isClusterDuplicate).length})</span>
       </label>
 
       <h2>Agency</h2>

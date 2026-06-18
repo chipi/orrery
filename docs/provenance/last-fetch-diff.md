@@ -1,8 +1,8 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-18T17:35:24.021Z
+Generated: 2026-06-18T21:10:33.635Z
 Script: build-image-provenance@1.0.0
-Commit: ebd5df8d1b3a27cdbba2d8ff4e80ca31c79ce133
+Commit: c7c498b7ff879837813f0feb41ca903aa812e1ea
 Total entries: 3420
 
 ## Added (0)
@@ -11,5 +11,156 @@ Total entries: 3420
 ## Removed (0)
 
 
-## Changed (0)
+## Changed (57)
 
+- `/images/fleet-galleries/a7l/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AS71-24537-A7L%20without%20outerlayer.jpg"
+- `/images/fleet-galleries/a7l/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AS71-24537-A7L%20without%20outerlayer.jpg"
+- `/images/fleet-galleries/a7l/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AS71-24537-A7L%20without%20outerlayer.jpg"
+- `/images/fleet-galleries/aces/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+aces&media_type=image&keywords=aces"
+- `/images/fleet-galleries/aces/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+aces&media_type=image&keywords=aces"
+- `/images/fleet-galleries/aces/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+aces&media_type=image&keywords=aces"
+- `/images/fleet-galleries/aces/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+aces&media_type=image&keywords=aces"
+- `/images/fleet-galleries/chandrayaan1/01.jpg`
+  - before — license_short: "PD-self", author: "ISRO", agency: "ISRO", source_url: "https://commons.wikimedia.org/wiki/File%3AChandrayaan-1.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AChandrayaan-1-01.jpg"
+- `/images/fleet-galleries/cygnus-standard/02.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ACygnus_Enhanced_spacecraft.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+cygnus-standard&media_type=image&keywords=cygnus-standard"
+- `/images/fleet-galleries/cygnus-standard/03.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ACygnus_Enhanced_spacecraft.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+cygnus-standard&media_type=image&keywords=cygnus-standard"
+- `/images/fleet-galleries/cygnus-standard/05.jpg`
+  - before — license_short: "PD-Old", author: "Northrop Grumman", agency: "Northrop Grumman", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+cygnus-standard&media_type=image&keywords=cygnus-standard"
+- `/images/fleet-galleries/emu/02.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+emu&media_type=image&keywords=emu"
+- `/images/fleet-galleries/emu/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+emu&media_type=image&keywords=emu"
+- `/images/fleet-galleries/emu/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+emu&media_type=image&keywords=emu"
+- `/images/fleet-galleries/emu/05.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+emu&media_type=image&keywords=emu"
+- `/images/fleet-galleries/h-iia/02.jpg`
+  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_url: "https://commons.wikimedia.org/wiki/File%3AH-IIA_No._F23_with_GPM_between_lightning_towers.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AHubble%202009%20close-up.jpg"
+- `/images/fleet-galleries/htv/01.jpg`
+  - before — license_short: "CC-BY-4.0", author: "JAXA", agency: "JAXA", source_url: "https://commons.wikimedia.org/wiki/File%3AHTV-2_Kounotori_2_approaches_the_ISS_6.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20HTV-X1%20cargo%20spacecraft%20from%20JAXA%20attached%20to%20the%20Harmony%20module%20(iss073e1193852).jpg"
+- `/images/fleet-galleries/lc-34/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lc-34&media_type=image&keywords=lc-34"
+- `/images/fleet-galleries/lc-34/04.jpg`
+  - before — license_short: "PD-Old", author: "Midnightcomm", agency: "Midnightcomm", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AApollo%201%20launch%20site%202009.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lc-34&media_type=image&keywords=lc-34"
+- `/images/fleet-galleries/lc-34/05.jpg`
+  - before — license_short: "PD-Old", author: "Bubba73", agency: "Bubba73", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APad%2034%20astronaut%20memorial.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lc-34&media_type=image&keywords=lc-34"
+- `/images/fleet-galleries/lc-39a/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lc-39a&media_type=image&keywords=lc-39a"
+- `/images/fleet-galleries/lc-39a/02.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA / KSC", agency: "NASA / KSC"
+- `/images/fleet-galleries/lc-39a/03.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA / KSC", agency: "NASA / KSC"
+- `/images/fleet-galleries/lc-39a/04.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA / KSC", agency: "NASA / KSC"
+- `/images/fleet-galleries/lc-39a/05.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA / KSC", agency: "NASA / KSC"
+- `/images/fleet-galleries/lro/05.jpg`
+  - before — author: "NASA/GSFC/ASU", agency: "NASA/GSFC/ASU", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AApollo11-LRO-March2012.jpg"
+  - after — author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lro&media_type=image&keywords=lro"
+- `/images/fleet-galleries/luna-9/01.jpg`
+  - before — license_short: "PD-Russia", author: "Roscosmos", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3ACelebrating_Luna_(51077805462).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ALuna%209%20proposed%202026%20landing%20site.png"
+- `/images/fleet-galleries/lunar-orbiter-1/03.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lunar-orbiter-1&media_type=image&keywords=lunar-orbiter-1"
+- `/images/fleet-galleries/lunar-prospector/01.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lunar-prospector&media_type=image&keywords=lunar-prospector"
+- `/images/fleet-galleries/lunar-prospector/02.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA/Ames", agency: "NASA/Ames"
+- `/images/fleet-galleries/lunar-prospector/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+lunar-prospector&media_type=image&keywords=lunar-prospector"
+- `/images/fleet-galleries/lunar-prospector/05.jpg`
+  - before — author: "NASA", agency: "NASA"
+  - after — author: "NASA/Ames", agency: "NASA/Ames"
+- `/images/fleet-galleries/mars-express/01.jpg`
+  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", agency: "ESA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3APIA07944_Mars_Express_Seen_by_Mars_Global_Surveyor.jpg%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+mars-express&media_type=image&keywords=mars-express"
+- `/images/fleet-galleries/maven/04.jpg`
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "nasa-images-api", source_url: "https://images.nasa.gov/search?q=fleet+maven&media_type=image&keywords=maven"
+- `/images/fleet-galleries/salyut-7/01.jpg`
+  - before — license_short: "PD-Russia", author: "Roscosmos", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3ASalyut_7_drawing.png"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AModel%20of%20Salyut-7%20with%20two%20Soyuz%20spacecrafts.JPEG"
+- `/images/fleet-galleries/sbirs-heo/01.jpg`
+  - before — license_short: "PD-Old", author: "Multi-agency", agency: "Multi-agency", source_url: "https://commons.wikimedia.org/wiki/File%3ASBIRS_GEO_Flight-4_Successfully_Launched_(180122-F-MY948-010).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ASBIRS-GEO.jpg"
+- `/images/fleet-galleries/sbirs-heo/04.jpg`
+  - before — author: "Multi-agency", agency: "Multi-agency"
+  - after — author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
+- `/images/fleet-galleries/sbirs-heo/05.jpg`
+  - before — author: "Multi-agency", agency: "Multi-agency"
+  - after — author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
+- `/images/fleet-galleries/tiangong-1/01.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "CMSA", agency: "CMSA", source_url: "https://commons.wikimedia.org/wiki/File%3ACNEWS_Wentian.png"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ATiangong%203%20space%20laboratory%20model.jpg"
+- `/images/fleet-galleries/tiangong-1/05.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "CMSA", agency: "CMSA"
+  - after — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
+- `/images/fleet-galleries/tianzhou/01.jpg`
+  - before — license_short: "CC-BY-SA-4.0", author: "CMSA", agency: "CMSA", source_url: "https://commons.wikimedia.org/wiki/File%3ATianzhou_Cargo_Spaceship.jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ATianzhou-1%20and%20Tiangong-2%20rendering.jpg"
+- `/images/fleet-galleries/vostok/01.jpg`
+  - before — license_short: "PD-Russia", author: "Roscosmos", agency: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AThe_Soviet_Union_1971_CPA_3994_sheet_of_4_(Cosmonauts_and_Spacecraft._1_Vostok_1._2_Yuri_Gagarin._3_First_Man_Walking_in_Space._4_First_Orbital_Station).jpg"
+  - after — license_short: "PD-NASA", author: "NASA", agency: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AVostok%20spacecraft.jpg"
+- `/images/fleet-galleries/vostok/04.jpg`
+  - before — license_short: "PD-Russia", author: "Roscosmos", agency: "Roscosmos"
+  - after — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
+- `/images/fleet-galleries/vostok/05.jpg`
+  - before — license_short: "PD-Russia", author: "Roscosmos", agency: "Roscosmos"
+  - after — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror"
+- `/images/missions/apollo-soyuz/05.jpg`
+  - before — author: "NASA · Roscosmos", agency: "NASA · Roscosmos", source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — author: "NASA / JSC", agency: "NASA / JSC", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/S74-17843/S74-17843~orig.jpg"
+- `/images/missions/apollo10/01.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AEarth-apollo10.jpg"
+  - after — author: "NASA / JSC", agency: "NASA / JSC", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/S69-27915/S69-27915~orig.jpg"
+- `/images/missions/aurora-7/01.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AAurora%20and%20perseids.jpg"
+  - after — author: "NASA / JSC", agency: "NASA / JSC", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/s62-04018/s62-04018~orig.jpg"
+- `/images/missions/dart/05.jpg`
+  - before — license_short: "PD-Old", author: "agency original via Wikimedia Commons mirror", agency: "agency original via Wikimedia Commons mirror", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AWebb%2C%20Hubble%20Capture%20Detailed%20Views%20of%20DART%20Impact%20-%2052405448284.jpg"
+  - after — license_short: "PD-NASA", author: "NASA/Johns Hopkins APL/Steve Gribben", agency: "NASA/Johns Hopkins APL/Steve Gribben", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg"
+- `/images/missions/freedom-7/03.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMercury-Redstone%203%20(Freedom%207)%20Flown%20One%20Dollar%20Bill.jpg"
+  - after — author: "NASA/JPL-Caltech", agency: "NASA/JPL-Caltech", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg"
+- `/images/missions/freedom-7/05.jpg`
+  - before — author: "NASA", agency: "NASA", source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3AMercury-Redstone%203%20Mission%20Control.jpg"
+  - after — author: "NASA/JPL-Caltech", agency: "NASA/JPL-Caltech", source_type: "nasa-images-api", source_url: "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg"
+- … 7 more

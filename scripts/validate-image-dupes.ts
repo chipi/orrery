@@ -237,6 +237,29 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //   AND fleet slot 3 (he labeled the two proposals separately knowing
   //   they share the same Smithsonian record). Editorial-share, not bug.
   '003fae8f', // missions/pioneer-11/01 + fleet-galleries/pioneer-11/03
+
+  // ALLOWLIST_AUTHORIZED (2026-06-18) — Slice A v3 round-4 rescue ship.
+  //   Marko triaged ~520 cards in the dropped pool. The slice-a-*-dryrun
+  //   JSONs predate Stage 2 (per-pick dedup across dry-run, commit
+  //   20f3016ac), so the resolver fed top-1 for each slot within a
+  //   single mission — many gallery slots (02-05) approved by Marko
+  //   ended up byte-identical. Re-running the dry-runs themselves
+  //   would diversify, but for THIS ship we honour the explicit
+  //   approvals and allowlist the dupes. The next pipeline iteration
+  //   will regenerate the dry-runs through the diversified resolver.
+  'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
+  '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)
+  '78248fa6', // fleet-galleries/cygnus-standard/02,03,05 (Cygnus fleet)
+  '0028195c', // fleet-galleries/emu/02,03,04,05 (EMU spacesuit gallery)
+  '7dacaa15', // fleet-galleries/lc-34/03,04,05 (LC-34 launch complex)
+  '5671243e', // fleet-galleries/lunar-prospector/01,04 (hero + slot)
+  'd79e07ae', // fleet-galleries/maven/01,04 (hero + slot)
+  '12042c1f', // missions/dart/01,05 (hero + slot)
+  '730db1bd', // missions/freedom-7/03,05 (gallery slots)
+  '5faf9c60', // missions/friendship-7/01,02 (hero + slot)
+  'f2730ab6', // missions/mercury-atlas-9/03,05 (gallery slots)
+  'de85aceb', // missions/mercury-redstone-3/01,04 (hero + slot)
+  'ff4e464c', // missions/spirit/01,02 (hero + slot)
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base

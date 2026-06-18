@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T17:25:52.290Z",
+  "generated_at": "2026-06-18T18:02:04.626Z",
   "filters_run": [
     "intra-mission",
     "cross-mission",
@@ -36,15 +36,15 @@
   ],
   "totals": {
     "proposals": 1344,
-    "survivors": 25,
-    "dropped": 1319
+    "survivors": 21,
+    "dropped": 1323
   },
   "drop_attribution": {
-    "vision": 133,
+    "vision": 136,
     "intra-mission": 1088,
     "cross-mission": 1136,
     "cross-mission-basename": 1136,
-    "size": 47,
+    "size": 48,
     "token-match": 0
   },
   "proposals": [
@@ -67,7 +67,7 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait of an astronaut in an A7L spacesuit against a studio backdrop — a people-in-formal-context photograph, not a mission-defining moment or hardware-in-action shot suitable for a p"
+        "reason": "This is a crew portrait of an astronaut in an A7L spacesuit against a studio backdrop — a people-in-studio-setting image without mission hardware or a mission-defining moment visible, which does not m"
       },
       "size_bytes": 679506,
       "survivor": false,
@@ -199,12 +199,12 @@
       "vision_v3": {
         "verdict": "unsure",
         "confidence": 0.45,
-        "reason": "This is a rendering or composite illustration of ISS-docked modules in orbit above Earth; without mission context or visible ACES-specific hardware markings, I cannot confirm this depicts the ACES mis"
+        "reason": "Image shows a spacecraft docked to ISS in orbit above Earth, but the specific mission cannot be determined from visual inspection alone; without confirmation that this is ACES hardware (not a generic "
       },
       "size_bytes": 2057669,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — This is a rendering or composite illustration of ISS-docked modules in orbit above Earth; without mi"
+        "vision: v=unsure c=0.45 — Image shows a spacecraft docked to ISS in orbit above Earth, but the specific mission cannot be dete"
       ],
       "notes": []
     },
@@ -458,13 +458,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "Image shows lunar surface rocks and regolith—likely from an Apollo lunar mission, but the Apollo CSM Block II spacecraft itself is not visible or the primary subject; this is a surface geology frame, "
+        "confidence": 0.99,
+        "reason": "This is a lunar surface photograph showing rocks and regolith — a data product from an Apollo mission's camera, not an image of the CSM Block II spacecraft itself."
       },
       "size_bytes": 1893435,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows lunar surface rocks and regolith—likely from an Apollo lunar mission, but the Apollo CSM"
+        "vision: v=unrelated c=0.99 — This is a lunar surface photograph showing rocks and regolith — a data product from an Apollo missio"
       ],
       "notes": []
     },
@@ -847,12 +847,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a technical diagram/schematic with labeled annotations, not a photograph suitable for a public hero gallery."
+        "reason": "This is a technical diagram/schematic illustration with labeled callouts, not a photograph or render suitable for a public hero gallery."
       },
       "size_bytes": 325195,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a technical diagram/schematic with labeled annotations, not a photograph suitable for a publ"
+        "vision: v=unrelated c=0.95 — This is a technical diagram/schematic illustration with labeled callouts, not a photograph or render"
       ],
       "notes": []
     },
@@ -977,14 +977,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.45,
-        "reason": "This is a spacesuit display or mockup in what appears to be a museum or training facility—a human figure in a pressure suit with helmet, not the spacecraft or mission hardware itself; without mission "
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a crew portrait of an astronaut in a spacesuit within a training or display setting — a person-in-context shot without visible mission hardware, spacecraft, or a mission-defining moment specif"
       },
       "size_bytes": 1838429,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — This is a spacesuit display or mockup in what appears to be a museum or training facility—a human fi"
+        "vision: v=unrelated c=0.95 — This is a crew portrait of an astronaut in a spacesuit within a training or display setting — a pers"
       ],
       "notes": []
     },
@@ -1375,12 +1375,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a rendered spacecraft mockup or illustration, not a photographic image of actual mission hardware; it appears to be a generic or stylized representation rather than documentation of the Clemen"
+        "reason": "This is a spacecraft rendering or mockup, not a photograph; it appears to be a generic or representative lunar orbiter design rather than a specific, identifiable Clementine spacecraft with its distin"
       },
       "size_bytes": 116380,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a rendered spacecraft mockup or illustration, not a photographic image of actual mission har"
+        "vision: v=unrelated c=0.95 — This is a spacecraft rendering or mockup, not a photograph; it appears to be a generic or representa"
       ],
       "notes": []
     },
@@ -1767,12 +1767,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Image shows a red spacecraft or payload module in an assembly/integration facility with technicians present; this is a clean-room or production-line hardware shot, but Delta II is a launch vehicle (ro"
+        "reason": "This is a clean-room assembly photograph showing a rocket payload (red conical structure with spherical components) surrounded by technicians during integration work. While this may be a Delta II-era "
       },
       "size_bytes": 3964954,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows a red spacecraft or payload module in an assembly/integration facility with technicians "
+        "vision: v=unrelated c=0.95 — This is a clean-room assembly photograph showing a rocket payload (red conical structure with spheri"
       ],
       "notes": []
     },
@@ -2027,12 +2027,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait of two astronauts inside a spacecraft cabin surrounded by equipment and spacesuits; the primary subject is the people, not the mission's spacecraft or a defining mission moment"
+        "reason": "This is a crew portrait of two astronauts inside a spacecraft module; the primary subject is the people, not the spacecraft itself or any mission-defining moment. While hardware is visible in the back"
       },
       "size_bytes": 2502934,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait of two astronauts inside a spacecraft cabin surrounded by equipment and spac"
+        "vision: v=unrelated c=0.95 — This is a crew portrait of two astronauts inside a spacecraft module; the primary subject is the peo"
       ],
       "notes": []
     },
@@ -2287,12 +2287,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a lunar orbital image showing craters and surface features; it appears to be from an orbiter mission (likely LRO or similar), not from Enterprise, which is a Space Shuttle orbiter. No spacecra"
+        "reason": "This is a lunar orbital image showing craters and surface features — a data product from a lunar orbiter, not the Enterprise spacecraft or mission hardware itself."
       },
       "size_bytes": 583414,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a lunar orbital image showing craters and surface features; it appears to be from an orbiter"
+        "vision: v=unrelated c=0.95 — This is a lunar orbital image showing craters and surface features — a data product from a lunar orb"
       ],
       "notes": []
     },
@@ -2417,13 +2417,15 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "related",
+        "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "The image shows the Europa Clipper spacecraft itself as the clear primary subject in a clean-room assembly setting — the spacecraft's structure, instruments, and distinctive hardware are the unmistaka"
+        "reason": "Clean-room assembly scene with technicians surrounding spacecraft hardware; people-in-an-office/production context dominates the frame, not the spacecraft itself as primary subject."
       },
       "size_bytes": 979891,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — Clean-room assembly scene with technicians surrounding spacecraft hardware; people-in-an-office/prod"
+      ],
       "notes": []
     },
     {
@@ -2445,12 +2447,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an Apollo-era Command/Service Module (identifiable by its distinctive conical shape, heat shield, and white ablative covering), not a Gemini spacecraft; Gemini used a different, more compact c"
+        "reason": "The image shows an Apollo Command/Service Module (cone-shaped heat shield, white ablator, docking collar visible) docked to or approaching another spacecraft, not a Gemini capsule or mission-defining "
       },
       "size_bytes": 570208,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an Apollo-era Command/Service Module (identifiable by its distinctive conical shape, heat sh"
+        "vision: v=unrelated c=0.95 — The image shows an Apollo Command/Service Module (cone-shaped heat shield, white ablator, docking co"
       ],
       "notes": []
     },
@@ -2576,13 +2578,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unsure",
-        "confidence": 0.62,
-        "reason": "The image shows a satellite with solar panels and antenna in orbit above Earth, consistent with GOES-class weather satellites, but without visible mission insignia, text, or definitive hardware marker"
+        "confidence": 0.45,
+        "reason": "This is an artist's rendering of a satellite in Earth orbit with solar panels and communication antenna, consistent with GOES-class spacecraft, but without visible mission-specific markers, labels, or"
       },
       "size_bytes": 1122286,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.62 — The image shows a satellite with solar panels and antenna in orbit above Earth, consistent with GOES"
+        "vision: v=unsure c=0.45 — This is an artist's rendering of a satellite in Earth orbit with solar panels and communication ante"
       ],
       "notes": []
     },
@@ -2707,13 +2709,15 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "related",
-        "confidence": 0.92,
-        "reason": "This is a before-and-after satellite image pair (1975 and 2011) showing landscape change over time, consistent with Landsat's primary science mission of multispectral Earth observation; the false-colo"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a satellite data product (false-colour before/after comparison showing land-use or environmental change) — not a photograph or render of the Landsat spacecraft itself, which is what constitute"
       },
       "size_bytes": 1414957,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — This is a satellite data product (false-colour before/after comparison showing land-use or environme"
+      ],
       "notes": []
     },
     {
@@ -2838,13 +2842,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a portrait of an individual standing in front of abstract public sculpture; no spacecraft, mission hardware, or mission-defining moment is visible or primary to the frame."
+        "confidence": 0.99,
+        "reason": "This is a portrait of an individual posed in front of a generic abstract sculpture; no spacecraft, mission hardware, target body, or mission-defining moment is visible or primary to the frame."
       },
       "size_bytes": 1447828,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a portrait of an individual standing in front of abstract public sculpture; no spacecraft, m"
+        "vision: v=unrelated c=0.99 — This is a portrait of an individual posed in front of a generic abstract sculpture; no spacecraft, m"
       ],
       "notes": []
     },
@@ -2971,12 +2975,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a Saturn V rocket on a launch pad with gantry tower — a generic launch-pad assembly shot without mission-specific hardware or defining moment visible; LC-34 is a specific Apollo launch complex"
+        "reason": "The image shows a Saturn IB rocket on a launch pad with gantry infrastructure, but without mission-specific identifiers visible, it cannot be confirmed as LC-34 (AS-204/Apollo 1) rather than another S"
       },
       "size_bytes": 817553,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a Saturn V rocket on a launch pad with gantry tower — a generic launch-pad assembly shot wit"
+        "vision: v=unrelated c=0.95 — The image shows a Saturn IB rocket on a launch pad with gantry infrastructure, but without mission-s"
       ],
       "notes": []
     },
@@ -3103,12 +3107,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This shows a SpaceX Falcon 9 rocket on a launch pad with ground support infrastructure—generic launch-pad hardware without identifying which specific mission or LC-39A launch this represents; it's inf"
+        "reason": "This is a SpaceX Falcon 9 rocket on a launch pad with support structures visible; it shows launch infrastructure, not a specific mission to LC-39A, and LC-39A is a launch facility identifier, not a mi"
       },
       "size_bytes": 1799912,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This shows a SpaceX Falcon 9 rocket on a launch pad with ground support infrastructure—generic launc"
+        "vision: v=unrelated c=0.95 — This is a SpaceX Falcon 9 rocket on a launch pad with support structures visible; it shows launch in"
       ],
       "notes": []
     },
@@ -3235,12 +3239,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a clean-room assembly or integration scene showing a technician working on spacecraft hardware components, but without mission context or identifying markers visible, it cannot be confirmed as"
+        "reason": "This is a clean-room or assembly-facility photograph showing a technician working on spacecraft hardware components and wiring, but without any mission-identifying markers, spacecraft name, or context"
       },
       "size_bytes": 419273,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a clean-room assembly or integration scene showing a technician working on spacecraft hardwa"
+        "vision: v=unrelated c=0.95 — This is a clean-room or assembly-facility photograph showing a technician working on spacecraft hard"
       ],
       "notes": []
     },
@@ -3366,13 +3370,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.98,
-        "reason": "This is a team portrait of five people posing in front of a NASA logo backdrop — a people-in-office/photo-opportunity context with no spacecraft, target body, or mission hardware visible."
+        "confidence": 0.95,
+        "reason": "Team portrait of five NASA staff members posing in front of a NASA logo backdrop; no spacecraft, mission hardware, target body, or mission-defining moment visible — this is a people-in-office context "
       },
       "size_bytes": 681889,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.98 — This is a team portrait of five people posing in front of a NASA logo backdrop — a people-in-office/"
+        "vision: v=unrelated c=0.95 — Team portrait of five NASA staff members posing in front of a NASA logo backdrop; no spacecraft, mis"
       ],
       "notes": []
     },
@@ -3653,14 +3657,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.45,
-        "reason": "Image shows a reflective spacecraft component or instrument in what appears to be a clean-room or assembly setting, but without visible mission markings, labels, or contextual details, I cannot confir"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a close-up photograph of spacecraft hardware (likely a solar panel or thermal shield component) in what appears to be a clean-room or assembly setting, not Lunar Orbiter 1 — a 1960s spacecraft"
       },
       "size_bytes": 2536652,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — Image shows a reflective spacecraft component or instrument in what appears to be a clean-room or as"
+        "vision: v=unrelated c=0.95 — This is a close-up photograph of spacecraft hardware (likely a solar panel or thermal shield compone"
       ],
       "notes": []
     },
@@ -3787,12 +3791,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an annotated orbital image showing Surveyor 1 lander on the lunar surface as the labeled subject; it does not show Lunar Orbiter 2 hardware or a mission-defining moment of that mission—it is a"
+        "reason": "This is a satellite data product (orbital imagery of the lunar surface showing Surveyor 1 lander and craters) — not a photograph of the Lunar Orbiter 2 spacecraft itself, which is the required primary"
       },
       "size_bytes": 148657,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an annotated orbital image showing Surveyor 1 lander on the lunar surface as the labeled sub"
+        "vision: v=unrelated c=0.95 — This is a satellite data product (orbital imagery of the lunar surface showing Surveyor 1 lander and"
       ],
       "notes": []
     },
@@ -3918,13 +3922,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.99,
-        "reason": "This is an Apollo Lunar Module on the Moon's surface with an American flag — a crewed lunar landing spacecraft, not Lunar Orbiter 3, which was an uncrewed orbital probe from the 1960s."
+        "confidence": 0.95,
+        "reason": "This is a photograph of the Apollo Lunar Module on the Moon's surface — a crewed landing mission hardware — not the Lunar Orbiter 3 spacecraft, which was an unmanned lunar reconnaissance orbiter from "
       },
       "size_bytes": 3458211,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.99 — This is an Apollo Lunar Module on the Moon's surface with an American flag — a crewed lunar landing "
+        "vision: v=unrelated c=0.95 — This is a photograph of the Apollo Lunar Module on the Moon's surface — a crewed landing mission har"
       ],
       "notes": []
     },
@@ -4051,12 +4055,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a clean-room assembly scene with technicians surrounding spacecraft hardware, but it is a people-in-context production / integration photograph, not a mission-defining moment or hero shot of t"
+        "reason": "This is a clean-room assembly scene with technicians surrounding spacecraft hardware, but the primary subject is the assembly/integration activity and team context, not the spacecraft itself as a hero"
       },
       "size_bytes": 4126815,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a clean-room assembly scene with technicians surrounding spacecraft hardware, but it is a pe"
+        "vision: v=unrelated c=0.95 — This is a clean-room assembly scene with technicians surrounding spacecraft hardware, but the primar"
       ],
       "notes": []
     },
@@ -4183,12 +4187,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a high-resolution orbital image of Martian surface terrain (gullies and erosion features), not a spacecraft, instrument, or Lunar Orbiter 5 hardware or target body; it appears to be from a Mar"
+        "reason": "This is a satellite data product — a high-resolution orbital image of Martian surface features (gullies or erosion patterns) — not a photograph of the Lunar Orbiter 5 spacecraft itself or a mission-de"
       },
       "size_bytes": 860801,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a high-resolution orbital image of Martian surface terrain (gullies and erosion features), n"
+        "vision: v=unrelated c=0.95 — This is a satellite data product — a high-resolution orbital image of Martian surface features (gull"
       ],
       "notes": []
     },
@@ -4315,12 +4319,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an artist's rendering or mockup of a spacecraft in lunar orbit, not a photograph of the actual Lunar Prospector spacecraft or mission hardware; the rendering style and perfect composition indi"
+        "reason": "This is an artist's rendering or mockup of a spacecraft in orbit above the Moon, but the design—with its large cylindrical body, solar panels, and prominent white antenna—does not match Lunar Prospect"
       },
       "size_bytes": 378498,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an artist's rendering or mockup of a spacecraft in lunar orbit, not a photograph of the actu"
+        "vision: v=unrelated c=0.95 — This is an artist's rendering or mockup of a spacecraft in orbit above the Moon, but the design—with"
       ],
       "notes": []
     },
@@ -4522,12 +4526,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an infographic with text overlays and statistics ('BY THE NUMBERS'), not a photographic hero image; the spacecraft illustration is secondary to the data presentation and typography."
+        "reason": "This is an infographic / data-display poster with text overlays and statistics, not a photograph suitable for a hero gallery; the spacecraft is present but embedded in a designed layout for educationa"
       },
       "size_bytes": 529534,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an infographic with text overlays and statistics ('BY THE NUMBERS'), not a photographic hero"
+        "vision: v=unrelated c=0.95 — This is an infographic / data-display poster with text overlays and statistics, not a photograph sui"
       ],
       "notes": []
     },
@@ -4653,8 +4657,8 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.92,
-        "reason": "The image shows a spacecraft with solar panels and a white antenna dish in orbit above Mars (the orange planet); this is consistent with MAVEN's design and primary mission to study the Martian atmosph"
+        "confidence": 0.93,
+        "reason": "The image shows the MAVEN spacecraft with its distinctive solar panels and white antenna in the upper left, orbiting Mars (shown as the large reddish-brown sphere); both the spacecraft and target body"
       },
       "size_bytes": 328273,
       "survivor": true,
@@ -4782,14 +4786,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a clean-room or assembly-hall shot showing spacecraft hardware with technicians present, but it's a people-in-context production/assembly scene rather than a mission-defining moment or in-flig"
+        "verdict": "unsure",
+        "confidence": 0.7,
+        "reason": "This appears to be a spacecraft capsule in a clean room or assembly facility with technicians present, consistent with Mercury-Redstone era hardware, but the image quality, color processing, and lack "
       },
       "size_bytes": 205517,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a clean-room or assembly-hall shot showing spacecraft hardware with technicians present, but"
+        "vision: v=unsure c=0.70 — This appears to be a spacecraft capsule in a clean room or assembly facility with technicians presen"
       ],
       "notes": []
     },
@@ -4916,12 +4920,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a composite infographic showing multiple diagrams, orbital illustrations, and data visualizations rather than a photographic image of the MESSENGER spacecraft or mission hardware itself."
+        "reason": "This is a multi-panel infographic / diagram composite showing orbital mechanics, ground-track plots, and data visualizations rather than a photograph of the MESSENGER spacecraft itself or a mission-de"
       },
       "size_bytes": 114051,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a composite infographic showing multiple diagrams, orbital illustrations, and data visualiza"
+        "vision: v=unrelated c=0.95 — This is a multi-panel infographic / diagram composite showing orbital mechanics, ground-track plots,"
       ],
       "notes": []
     },
@@ -5202,14 +5206,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a rendering of a generic communication or Earth-observation satellite with large solar panels and a reflective dish antenna, not the Psyche spacecraft (which has a distinctive ion-thruster des"
+        "verdict": "unsure",
+        "confidence": 0.45,
+        "reason": "This is a spacecraft render with a large dish antenna and solar panels in space, but without mission-specific markings or context visible, I cannot definitively confirm this is the Psyche spacecraft r"
       },
       "size_bytes": 1572232,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a rendering of a generic communication or Earth-observation satellite with large solar panel"
+        "vision: v=unsure c=0.45 — This is a spacecraft render with a large dish antenna and solar panels in space, but without mission"
       ],
       "notes": []
     },
@@ -5232,12 +5236,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a technical infographic/diagram showing mission sequence steps, not a photographic image of Skylab spacecraft or hardware as the primary subject suitable for a public hero gallery."
+        "reason": "This is a technical diagram/infographic showing the Skylab mission sequence with numbered steps, labels, and schematic spacecraft illustrations — a chart, not a photograph of the spacecraft or mission"
       },
       "size_bytes": 3461526,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a technical infographic/diagram showing mission sequence steps, not a photographic image of "
+        "vision: v=unrelated c=0.95 — This is a technical diagram/infographic showing the Skylab mission sequence with numbered steps, lab"
       ],
       "notes": []
     },
@@ -5260,12 +5264,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait in spacesuits posing indoors at what appears to be a training or display facility; there is no Solar Orbiter spacecraft visible as the primary subject, and this is a people-in-"
+        "reason": "This is a crew portrait in spacesuits posing in a clean room or training facility; the Solar Orbiter spacecraft is not visible as the primary subject, and this appears to be a generic astronaut/facili"
       },
       "size_bytes": 7121558,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait in spacesuits posing indoors at what appears to be a training or display fac"
+        "vision: v=unrelated c=0.95 — This is a crew portrait in spacesuits posing in a clean room or training facility; the Solar Orbiter"
       ],
       "notes": []
     },
@@ -5288,7 +5292,7 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a full-scale museum or training mockup of a Space Shuttle orbiter displayed indoors on support pedestals in what appears to be a museum or facility hangar — not an operational spacecraft or mi"
+        "reason": "This is a full-scale museum or training mockup of a Space Shuttle orbiter displayed indoors on support stands in what appears to be a hangar or exhibition hall — not an actual spacecraft, not a missio"
       },
       "size_bytes": 2947064,
       "survivor": false,
@@ -5342,12 +5346,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait / training / fitting scene in an office/lab setting; while a spacesuit is visible, the primary subjects are the two people and their interaction, not the suit as a mission-defi"
+        "reason": "This is a crew training or suit-fitting scene in an office/lab environment showing two people — a technician adjusting a spacesuit on a crew member — but the focus is on the people and the interaction"
       },
       "size_bytes": 5732861,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait / training / fitting scene in an office/lab setting; while a spacesuit is vi"
+        "vision: v=unrelated c=0.95 — This is a crew training or suit-fitting scene in an office/lab environment showing two people — a te"
       ],
       "notes": []
     },
@@ -5474,7 +5478,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "The image shows Surveyor 3 lander on the lunar surface as the primary subject — distinctive tripod legs, solar panels, and instruments clearly visible in direct sunlight on the Moon, making this a str"
+        "reason": "The image shows the Surveyor 3 lunar lander on the Moon's surface as the primary subject, clearly identifiable by its distinctive leg structure, solar panels, and instrumentation arms — a mission-defi"
       },
       "size_bytes": 3908617,
       "survivor": true,
@@ -5604,12 +5608,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a Mars orbital imagery frame showing surface features (crater, terrain); Ulysses was a heliospheric solar-wind mission with no Mars connection—no spacecraft, instrument, or mission-defining mo"
+        "reason": "This is a Mars orbital data product (likely from Mars Reconnaissance Orbiter or similar orbiter) showing surface topography and a crater; it is not the Ulysses spacecraft itself, nor does it represent"
       },
       "size_bytes": 443493,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a Mars orbital imagery frame showing surface features (crater, terrain); Ulysses was a helio"
+        "vision: v=unrelated c=0.95 — This is a Mars orbital data product (likely from Mars Reconnaissance Orbiter or similar orbiter) sho"
       ],
       "notes": []
     },
@@ -5736,12 +5740,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a multi-panel composite diagram with orbital/overhead imagery (left panel showing mapped terrain with annotations), surface panoramas (center panels A–C showing horizon views), and a cropped o"
+        "reason": "This is a multi-panel composite of orbital and surface imagery with annotation overlays — a data-product figure or analysis diagram, not a photograph of the Viking 1 spacecraft itself; the spacecraft "
       },
       "size_bytes": 330903,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a multi-panel composite diagram with orbital/overhead imagery (left panel showing mapped ter"
+        "vision: v=unrelated c=0.95 — This is a multi-panel composite of orbital and surface imagery with annotation overlays — a data-pro"
       ],
       "notes": []
     },
@@ -6204,12 +6208,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a mission patch or logo graphic — a symbolic/decorative design element, not a photograph of the spacecraft, hardware, or mission-defining moment suitable for a hero gallery."
+        "reason": "This is a mission patch or logo — a graphic design artifact — not a photograph or render of the Apollo-Soyuz spacecraft or mission hardware itself."
       },
       "size_bytes": 5391377,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a mission patch or logo graphic — a symbolic/decorative design element, not a photograph of "
+        "vision: v=unrelated c=0.95 — This is a mission patch or logo — a graphic design artifact — not a photograph or render of the Apol"
       ],
       "notes": []
     },
@@ -6335,8 +6339,8 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.93,
-        "reason": "This is the iconic Earth photograph taken during Apollo 10 in May 1969, showing Earth as the primary subject from lunar distance — a defining moment of the mission."
+        "confidence": 0.95,
+        "reason": "This is the iconic Earth photograph taken during Apollo 10 (May 1969), showing Earth as the primary subject — a mission-defining moment captured by the crewed spacecraft en route to the Moon."
       },
       "size_bytes": 208127,
       "survivor": true,
@@ -6466,12 +6470,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a mission patch illustration showing a stylized Soyuz-like spacecraft and Earth map — a graphic logo/emblem, not a photographic image suitable for a hero gallery."
+        "reason": "This is a mission patch graphic illustration, not a photograph or render of the Apollo 7 spacecraft itself — mission patches are logos/emblems, not hero images for public galleries."
       },
       "size_bytes": 381011,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a mission patch illustration showing a stylized Soyuz-like spacecraft and Earth map — a grap"
+        "vision: v=unrelated c=0.95 — This is a mission patch graphic illustration, not a photograph or render of the Apollo 7 spacecraft "
       ],
       "notes": []
     },
@@ -6598,7 +6602,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "Iconic 'Earthrise' photograph taken from lunar orbit during Apollo 8, showing Earth as the primary subject rising above the lunar surface — a mission-defining moment of the first crewed lunar flyby."
+        "reason": "The iconic 'Earthrise' photograph taken from lunar orbit during Apollo 8, showing Earth as the primary subject rising above the lunar horizon — a mission-defining moment and one of the most recognizab"
       },
       "size_bytes": 311263,
       "survivor": true,
@@ -6728,7 +6732,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "Saturn V rocket with Apollo Command/Service Module and Lunar Module in launch configuration at the pad — this is the Apollo 9 vehicle at launch, a mission-defining moment and the primary subject of th"
+        "reason": "Saturn V rocket with Apollo Command/Service Module and Lunar Module visible at the top of the stack at launch — the primary subject is the Apollo 9 launch vehicle and spacecraft stack lifting off, a m"
       },
       "size_bytes": null,
       "survivor": true,
@@ -6860,12 +6864,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew-and-technician assembly or training photo showing people in spacesuits working on spacecraft hardware in a clean-room / production context, not a mission-defining moment or public hero "
+        "reason": "This is a people-in-an-office / assembly-hall context showing technicians and an astronaut with spacecraft hardware, but the primary subject is crew/staff activity and interaction rather than a clear,"
       },
       "size_bytes": 1959847,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew-and-technician assembly or training photo showing people in spacesuits working on spa"
+        "vision: v=unrelated c=0.95 — This is a people-in-an-office / assembly-hall context showing technicians and an astronaut with spac"
       ],
       "notes": []
     },
@@ -6992,7 +6996,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "Close-up of Saturn's rings showing fine structure and shadow detail — a characteristic science observation from Cassini, the primary subject of the frame."
+        "reason": "Close-up photograph of Saturn's rings showing fine structure and detail — iconic Cassini imagery and a mission-defining subject (the rings were Cassini's primary target for 13 years)."
       },
       "size_bytes": 205351,
       "survivor": true,
@@ -7122,7 +7126,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "The image shows the DART spacecraft approaching a binary asteroid (Didymos system) with its solar panels, ion thruster, and instruments clearly visible as the primary subject — this is a mission-defin"
+        "reason": "The image shows the DART spacecraft (with solar panels and ion thruster clearly visible) approaching a binary asteroid target, depicting the mission-defining kinetic impact moment—the spacecraft and i"
       },
       "size_bytes": 1268302,
       "survivor": true,
@@ -7278,12 +7282,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a decorative prayer document with calligraphy and illuminated manuscript styling — an infographic / text artifact — not a photograph of the Faith 7 spacecraft, mission hardware, or a mission-d"
+        "reason": "This is a historical prayer document / text artifact with decorative illumination, not a photograph or image of the Faith 7 spacecraft, mission hardware, or mission-defining moment; it is a crew state"
       },
       "size_bytes": 2690420,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a decorative prayer document with calligraphy and illuminated manuscript styling — an infogr"
+        "vision: v=unrelated c=0.95 — This is a historical prayer document / text artifact with decorative illumination, not a photograph "
       ],
       "notes": []
     },
@@ -7409,13 +7413,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is an orbital or spacecraft-mounted photograph of a lunar or planetary surface showing craters and terrain; it has no connection to Freedom 7, which was a suborbital crewed spaceflight with no im"
+        "confidence": 0.98,
+        "reason": "This is a satellite/orbital imaging data product showing lunar or planetary surface terrain, not the Freedom 7 spacecraft or a mission-defining moment from the first crewed US spaceflight."
       },
       "size_bytes": 244591,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an orbital or spacecraft-mounted photograph of a lunar or planetary surface showing craters "
+        "vision: v=unrelated c=0.98 — This is a satellite/orbital imaging data product showing lunar or planetary surface terrain, not the"
       ],
       "notes": []
     },
@@ -7542,7 +7546,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "Mercury capsule marked 'UNITED STATES' is the primary subject mounted on launch pad tower with gantry, clearly showing Friendship 7 spacecraft in its pre-launch configuration."
+        "reason": "Mercury capsule marked 'UNITED STATES' on launch pad with access tower and crew personnel visible — this is a pre-launch assembly/preparation photograph of the Friendship 7 spacecraft itself, which is"
       },
       "size_bytes": 1200604,
       "survivor": true,
@@ -7670,13 +7674,15 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "related",
-        "confidence": 0.92,
-        "reason": "High-resolution orbital imagery of Jupiter's surface showing crater detail and topography — consistent with Galileo spacecraft imaging of the Jovian system, the primary subject of the frame."
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a data product — a grayscale orbital/satellite image mosaic of a celestial body's surface (likely the Moon or a planetary body) showing craters and terrain. The Galileo spacecraft itself is no"
       },
       "size_bytes": 707815,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — This is a data product — a grayscale orbital/satellite image mosaic of a celestial body's surface (l"
+      ],
       "notes": []
     },
     {
@@ -7723,13 +7729,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.99,
-        "reason": "This image shows toy/figurine minifigures (appear to be LEGO-style characters), not the Juno spacecraft, its target body (Jupiter), or any mission-defining moment — it is a toy product photo unrelated"
+        "confidence": 0.98,
+        "reason": "Image shows LEGO minifigures (fantasy/generic characters), not the Juno spacecraft, its target (Jupiter), or any mission-defining hardware or moment."
       },
       "size_bytes": 587873,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.99 — This image shows toy/figurine minifigures (appear to be LEGO-style characters), not the Juno spacecr"
+        "vision: v=unrelated c=0.98 — Image shows LEGO minifigures (fantasy/generic characters), not the Juno spacecraft, its target (Jupi"
       ],
       "notes": []
     },
@@ -7802,13 +7808,15 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "related",
-        "confidence": 0.92,
-        "reason": "Interior of Mercury spacecraft capsule showing astronaut in full spacesuit and helmet with mission-specific hardware (control panel, instrumentation, hatch structure) — the spacecraft itself is the pr"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a crew portrait inside a spacecraft cabin showing an astronaut in a spacesuit at the controls; it depicts people and mission hardware in an operational/training context rather than the spacecr"
       },
       "size_bytes": 2681795,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — This is a crew portrait inside a spacecraft cabin showing an astronaut in a spacesuit at the control"
+      ],
       "notes": []
     },
     {
@@ -8193,12 +8201,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a labeled technical diagram/schematic illustration of the Mariner 10 spacecraft with callout annotations — an infographic, not a photograph suitable for a hero gallery."
+        "reason": "This is a technical diagram / schematic with labeled instrument annotations, not a photograph of the spacecraft — it's an infographic suitable for educational material but not a hero image for a publi"
       },
       "size_bytes": 525845,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a labeled technical diagram/schematic illustration of the Mariner 10 spacecraft with callout"
+        "vision: v=unrelated c=0.95 — This is a technical diagram / schematic with labeled instrument annotations, not a photograph of the"
       ],
       "notes": []
     },
@@ -8451,14 +8459,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.45,
-        "reason": "Image shows a rocket on a launch pad surrounded by red gantry structures and ground support equipment, but without visible mission markings or context, the specific identity of the rocket and mission "
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This shows a generic launch-pad assembly with a rocket on a mobile platform surrounded by red support towers and ground infrastructure, but no mission-specific spacecraft, hardware marking, or identif"
       },
       "size_bytes": 1453252,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — Image shows a rocket on a launch pad surrounded by red gantry structures and ground support equipmen"
+        "vision: v=unrelated c=0.95 — This shows a generic launch-pad assembly with a rocket on a mobile platform surrounded by red suppor"
       ],
       "notes": []
     },
@@ -8558,8 +8566,8 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.93,
-        "reason": "A Mercury-Redstone rocket is shown at liftoff — the primary subject of the frame — captured during launch from the pad, which is a mission-defining moment for Mercury-Redstone 3 (Alan Shepard's suborb"
+        "confidence": 0.95,
+        "reason": "A Mercury-Redstone rocket is captured mid-launch in this archival photograph, with the spacecraft as the dominant subject against sky and launch infrastructure — a defining mission moment."
       },
       "size_bytes": 4399124,
       "survivor": true,
@@ -8767,12 +8775,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a low-resolution infrared or thermal data image with Pluto labeled as a tiny bright pixel; it appears to be a scientific data product or screen capture from an instrument, not a photographic h"
+        "reason": "This is a data product (infrared or thermal scan) showing Pluto as a tiny dot among pixel noise, not a photograph of the New Horizons spacecraft itself or a mission-defining moment; it is science outp"
       },
       "size_bytes": 119361,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a low-resolution infrared or thermal data image with Pluto labeled as a tiny bright pixel; i"
+        "vision: v=unrelated c=0.95 — This is a data product (infrared or thermal scan) showing Pluto as a tiny dot among pixel noise, not"
       ],
       "notes": []
     },
@@ -8821,12 +8829,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an overhead orbital image of a crater or impact feature on a planetary surface — likely Mars — with the spacecraft itself absent; it shows the target body / science subject, not the Opportunit"
+        "reason": "This is a satellite data product (likely a Mars orbital image showing a crater or impact feature) — a science observation output, not a photograph of the Opportunity rover itself, which is the mission"
       },
       "size_bytes": 2087821,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an overhead orbital image of a crater or impact feature on a planetary surface — likely Mars"
+        "vision: v=unrelated c=0.95 — This is a satellite data product (likely a Mars orbital image showing a crater or impact feature) — "
       ],
       "notes": []
     },
@@ -8953,12 +8961,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a clean-room assembly or integration shot showing spacecraft hardware under thermal protection and technicians in suits, but it's a behind-the-scenes production/assembly context, not a mission"
+        "reason": "This is a clean-room assembly or testing scene with spacecraft hardware surrounded by technicians in white suits — a production/integration context photo, not a mission-defining moment or hero shot of"
       },
       "size_bytes": 2082418,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a clean-room assembly or integration shot showing spacecraft hardware under thermal protecti"
+        "vision: v=unrelated c=0.95 — This is a clean-room assembly or testing scene with spacecraft hardware surrounded by technicians in"
       ],
       "notes": []
     },
@@ -9085,12 +9093,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a labeled map/diagram overlay showing Mars rover waypoints and rock-sample names (Dodo/Goldilocks, Stone Soup, etc.), not a photograph of the Phoenix spacecraft or its defining mission moment;"
+        "reason": "This is a labeled map/composite of Martian terrain with annotated waypoints and rock names, not a photograph of the Phoenix spacecraft itself or a mission-defining moment; it is a data visualization p"
       },
       "size_bytes": 869545,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a labeled map/diagram overlay showing Mars rover waypoints and rock-sample names (Dodo/Goldi"
+        "vision: v=unrelated c=0.95 — This is a labeled map/composite of Martian terrain with annotated waypoints and rock names, not a ph"
       ],
       "notes": []
     },
@@ -9217,12 +9225,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a detailed surface map or composite of Venus, showing topography and atmospheric features — the target body itself, not the Pioneer 10 spacecraft or any mission-defining moment. While Venus im"
+        "reason": "This is a data product — a false-colour composite or radar/thermal map of Venus's surface — not a photograph of the Pioneer 10 spacecraft itself; the spacecraft is not visible in the frame."
       },
       "size_bytes": 4906040,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a detailed surface map or composite of Venus, showing topography and atmospheric features — "
+        "vision: v=unrelated c=0.95 — This is a data product — a false-colour composite or radar/thermal map of Venus's surface — not a ph"
       ],
       "notes": []
     },
@@ -9612,13 +9620,13 @@
       "vision_v2": null,
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 1,
-        "reason": "This is a photograph of a beach scene with a coastal structure, people, and landscape — it has no connection to Shenzhou 3, a Chinese crewed spacecraft mission."
+        "confidence": 0.99,
+        "reason": "Image shows a terrestrial beach scene with visitors, buildings, and landscape — no spacecraft, mission hardware, or space mission content visible."
       },
       "size_bytes": 4983777,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=1.00 — This is a photograph of a beach scene with a coastal structure, people, and landscape — it has no co"
+        "vision: v=unrelated c=0.99 — Image shows a terrestrial beach scene with visitors, buildings, and landscape — no spacecraft, missi"
       ],
       "notes": []
     },
@@ -9719,12 +9727,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum display of a Sigma 7 spacecraft capsule mounted on a stand behind a blue velvet backdrop with decorative elements — a full-scale model or museum replica in a display context, not a ph"
+        "reason": "This is a museum display of a Mercury spacecraft capsule (Sigma 7) mounted on a stand with decorative backdrop and signage — a physical artifact in a museum/exhibition context, not a photograph suitab"
       },
       "size_bytes": 2733724,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum display of a Sigma 7 spacecraft capsule mounted on a stand behind a blue velvet bac"
+        "vision: v=unrelated c=0.95 — This is a museum display of a Mercury spacecraft capsule (Sigma 7) mounted on a stand with decorativ"
       ],
       "notes": []
     },
@@ -9849,14 +9857,14 @@
       },
       "vision_v2": null,
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a crew portrait / interaction shot of two astronauts inside a spacecraft cabin; the primary subject is the people, not the Skylab spacecraft hardware or a mission-defining moment, and it lacks"
+        "verdict": "unsure",
+        "confidence": 0.45,
+        "reason": "This appears to be a crew portrait or in-cabin scene from a crewed spacecraft mission, but the image quality is too degraded and the context too ambiguous to confirm it depicts Skylab 2 specifically o"
       },
       "size_bytes": 3569769,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait / interaction shot of two astronauts inside a spacecraft cabin; the primary "
+        "vision: v=unsure c=0.45 — This appears to be a crew portrait or in-cabin scene from a crewed spacecraft mission, but the image"
       ],
       "notes": []
     },
@@ -9983,12 +9991,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait / ceremonial photo opportunity showing astronauts in spacesuits on a platform with officials; no spacecraft, capsule, or mission hardware is visible as the primary subject."
+        "reason": "This is a crew portrait / post-mission photo-opportunity showing astronauts in spacesuits on a platform with officials; no spacecraft hardware is visible in the frame, making it unsuitable as a hero i"
       },
       "size_bytes": 5623816,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait / ceremonial photo opportunity showing astronauts in spacesuits on a platfor"
+        "vision: v=unrelated c=0.95 — This is a crew portrait / post-mission photo-opportunity showing astronauts in spacesuits on a platf"
       ],
       "notes": []
     },
@@ -10115,12 +10123,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait with three astronauts in gold spacesuits posing with a globe and a spacecraft mockup in the background; the spacecraft and mission hardware are incidental props in a formal pho"
+        "reason": "This is a crew portrait with a globe and a spacecraft mockup/model in the background; the primary subjects are the three astronauts in formal pose, not the Skylab spacecraft itself or a mission-defini"
       },
       "size_bytes": 4880693,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait with three astronauts in gold spacesuits posing with a globe and a spacecraf"
+        "vision: v=unrelated c=0.95 — This is a crew portrait with a globe and a spacecraft mockup/model in the background; the primary su"
       ],
       "notes": []
     },
@@ -10247,7 +10255,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "This is a fisheye view from Spirit rover's deck camera on Mars surface, showing the rover's own hardware (deck, instruments, solar panels) and the Martian terrain — a direct and iconic self-portrait o"
+        "reason": "This is a fisheye self-portrait of Spirit rover on the Martian surface, showing the spacecraft's deck, instruments, and wheels as the primary subject in its actual operational environment."
       },
       "size_bytes": 290611,
       "survivor": true,
@@ -10559,12 +10567,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a vintage black-and-white photograph of a briefing or presentation in what appears to be a control room or facility, showing people in suits listening to a speaker — a team/staff meeting conte"
+        "reason": "This is a vintage control-room briefing or presentation with multiple people in suits; no New Glenn hardware, spacecraft, or mission-defining moment is visible or identifiable in the frame."
       },
       "size_bytes": 2591389,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a vintage black-and-white photograph of a briefing or presentation in what appears to be a c"
+        "vision: v=unrelated c=0.95 — This is a vintage control-room briefing or presentation with multiple people in suits; no New Glenn "
       ],
       "notes": []
     },
@@ -10711,12 +10719,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait of two astronauts in spacesuits performing extravehicular activity or training on terrain, not featuring New Shepard spacecraft or hardware as the primary subject."
+        "reason": "This is a crew portrait of two astronauts in spacesuits conducting EVA training or a surface simulation; New Shepard is a suborbital crewed vehicle, and no New Shepard spacecraft or hardware is visibl"
       },
       "size_bytes": 1930758,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait of two astronauts in spacesuits performing extravehicular activity or traini"
+        "vision: v=unrelated c=0.95 — This is a crew portrait of two astronauts in spacesuits conducting EVA training or a surface simulat"
       ],
       "notes": []
     },
@@ -10863,12 +10871,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or exhibition display of scale models and replicas (white cylindrical module, rocket model, solar panel mock-ups) in an indoor office/gallery setting with signage — not a photograph o"
+        "reason": "This is a museum or exhibition display showing scale models and replicas of Chinese spacecraft hardware (including what appears to be a Tiangong module model, a Long March rocket model, and solar pane"
       },
       "size_bytes": 4788224,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or exhibition display of scale models and replicas (white cylindrical module, rocke"
+        "vision: v=unrelated c=0.95 — This is a museum or exhibition display showing scale models and replicas of Chinese spacecraft hardw"
       ],
       "notes": []
     },
@@ -10925,12 +10933,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or exhibition display of spacecraft mockups/models in an indoor facility, not a photograph of actual flight hardware or a mission-defining moment; the setting and presentation context"
+        "reason": "This is a museum or exhibition display showing full-scale mockups/replicas of spacecraft hardware (Shenzhou capsule, solar panels, launch vehicle) in an indoor gallery setting with Chinese flags and s"
       },
       "size_bytes": 4749312,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or exhibition display of spacecraft mockups/models in an indoor facility, not a pho"
+        "vision: v=unrelated c=0.95 — This is a museum or exhibition display showing full-scale mockups/replicas of spacecraft hardware (S"
       ],
       "notes": []
     },
@@ -11017,14 +11025,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum display or exhibition model (marked '1:110 model') of a space station / spaceship, not a photograph of the actual Tiangong-1 spacecraft or mission-defining moment; it is a full-scale "
+        "reason": "This is a museum or exhibition display showing a 1:10 scale model of the Tiangong-1 Space Lab/Spaceship, clearly labeled as a replica, not a photograph of the actual spacecraft or a mission-defining m"
       },
-      "size_bytes": 298151,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum display or exhibition model (marked '1:110 model') of a space station / spaceship, "
+        "vision: v=unrelated c=0.95 — This is a museum or exhibition display showing a 1:10 scale model of the Tiangong-1 Space Lab/Spaces"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "cnsa-fleet-galleries-tiangong-1-02",
@@ -11464,14 +11474,14 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.65,
-        "reason": "The image shows a generic crewed spacecraft with solar panels in Earth orbit, but without mission-specific markings, context, or documentation, it cannot be definitively attributed to Tianzhou rather "
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "The image shows a crewed spacecraft module with solar panels in orbit above Earth, consistent with Chinese space station architecture, but without mission-specific markings or context, it cannot be de"
       },
       "size_bytes": 314060,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.65 — The image shows a generic crewed spacecraft with solar panels in Earth orbit, but without mission-sp"
+        "vision: v=unrelated c=0.95 — The image shows a crewed spacecraft module with solar panels in orbit above Earth, consistent with C"
       ],
       "notes": []
     },
@@ -11772,14 +11782,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or exhibition display of scale models and mockups (spacecraft modules, solar panels, rocket model, astronaut figurine) in an indoor setting with signage and decorative elements — not "
+        "reason": "This is a museum or exhibition display showing full-scale mockups/replicas of Shenzhou spacecraft components and a CZ-5 rocket model on a red platform, not a photograph of the actual mission hardware "
       },
-      "size_bytes": 4756480,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or exhibition display of scale models and mockups (spacecraft modules, solar panels"
+        "vision: v=unrelated c=0.95 — This is a museum or exhibition display showing full-scale mockups/replicas of Shenzhou spacecraft co"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "cnsa-missions-shenzhou-1-02",
@@ -11981,13 +11993,13 @@
       },
       "vision_v3": {
         "verdict": "unsure",
-        "confidence": 0.65,
-        "reason": "A rocket launch is visible as the primary subject, but the image alone cannot definitively confirm this is an Ariane 5 — the rocket type, mission, and specific hardware are not clearly identifiable fr"
+        "confidence": 0.45,
+        "reason": "A rocket launch is visible in flight with bright engine plume, but the specific launch vehicle cannot be definitively identified from this frame alone—the angle, distance, and plume signature are cons"
       },
       "size_bytes": 124724,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.65 — A rocket launch is visible as the primary subject, but the image alone cannot definitively confirm t"
+        "vision: v=unsure c=0.45 — A rocket launch is visible in flight with bright engine plume, but the specific launch vehicle canno"
       ],
       "notes": []
     },
@@ -12283,12 +12295,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a technical mockup or artist's rendering of a spacecraft with solar panels and cylindrical modules, but it shows generic spacecraft architecture without identifying markers, logos, or distinct"
+        "reason": "This is a spacecraft mockup or technical illustration, not a photograph suitable for a public hero gallery; it lacks the photographic authenticity and mission-defining visual impact required for a gal"
       },
       "size_bytes": 999904,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a technical mockup or artist's rendering of a spacecraft with solar panels and cylindrical m"
+        "vision: v=unrelated c=0.95 — This is a spacecraft mockup or technical illustration, not a photograph suitable for a public hero g"
       ],
       "notes": []
     },
@@ -12434,8 +12446,8 @@
       },
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.95,
-        "reason": "The image shows the Euclid spacecraft as the primary subject — its distinctive cylindrical telescope barrel, golden thermal shields, and supporting structure are clearly visible against a starfield, m"
+        "confidence": 0.92,
+        "reason": "The image shows the Euclid spacecraft as the clear primary subject — a distinctive space telescope with gold thermal shielding, white cylindrical instrument barrel, and characteristic design against a"
       },
       "size_bytes": null,
       "survivor": true,
@@ -12585,13 +12597,15 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "related",
-        "confidence": 0.92,
-        "reason": "The Gaia spacecraft is the clear primary subject of the frame, shown in operational configuration against a starfield background, which is thematically and visually appropriate for a mission dedicated"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is an artist's rendering or composite showing a spacecraft against the Milky Way backdrop — the spacecraft is clearly visible and mission-adjacent, but the image is a stylized illustration/mockup"
       },
       "size_bytes": null,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — This is an artist's rendering or composite showing a spacecraft against the Milky Way backdrop — the"
+      ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
       ]
@@ -12738,12 +12752,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a close-up interior view of a spacecraft or module showing structure and components, but it does not clearly depict Galileo GNSS spacecraft or its distinctive hardware; it appears to be a gene"
+        "reason": "This is an interior assembly or integration photograph of a spacecraft in a clean room or production facility, showing structural components and fasteners, with no recognizable Galileo satellite hardw"
       },
       "size_bytes": 156113,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a close-up interior view of a spacecraft or module showing structure and components, but it "
+        "vision: v=unrelated c=0.95 — This is an interior assembly or integration photograph of a spacecraft in a clean room or production"
       ],
       "notes": []
     },
@@ -13177,14 +13191,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a technical infographic/diagram labeling instruments and their locations on a spacecraft, not a photographic hero image suitable for a public gallery; it is a schematic illustration rather tha"
+        "reason": "This is an infographic / technical diagram showing spacecraft instruments and their locations, not a photograph of the JUICE spacecraft or mission hardware suitable for a hero gallery."
       },
-      "size_bytes": 353931,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a technical infographic/diagram labeling instruments and their locations on a spacecraft, no"
+        "vision: v=unrelated c=0.95 — This is an infographic / technical diagram showing spacecraft instruments and their locations, not a"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "esa-fleet-galleries-juice-02",
@@ -13479,14 +13495,14 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a rendered 3D model or artist's concept of a generic communications satellite with solar panels and dish antenna, not the Rosetta spacecraft or its primary mission hardware (the orbiter or Phi"
+        "verdict": "unsure",
+        "confidence": 0.45,
+        "reason": "This is a spacecraft with solar panels and a communications antenna, but without mission-identifying markers or context visible in the frame, I cannot definitively confirm it is Rosetta rather than an"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a rendered 3D model or artist's concept of a generic communications satellite with solar pan"
+        "vision: v=unsure c=0.45 — This is a spacecraft with solar panels and a communications antenna, but without mission-identifying"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -13635,12 +13651,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a map-tile composite or data visualization overlay (grayscale satellite strip merged with false-color land-use map) — a screen capture from a viewer or analysis tool, not a photographic image "
+        "reason": "This is a satellite data product (multi-panel before/after or comparison composite of Earth observation data showing the UK coastline) — not a photograph of the Sentinel spacecraft itself, which is th"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a map-tile composite or data visualization overlay (grayscale satellite strip merged with fa"
+        "vision: v=unrelated c=0.95 — This is a satellite data product (multi-panel before/after or comparison composite of Earth observat"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -13789,12 +13805,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a mobile exhibition trailer/museum display showing SMART-1 promotional materials and imagery, not the spacecraft itself or a mission-defining moment; it's a terrestrial exhibition vehicle, not"
+        "reason": "This is a mobile exhibition trailer or museum display unit featuring SMART-1 promotional graphics and posters, not the spacecraft itself — a display vehicle, not mission hardware or a defining mission"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a mobile exhibition trailer/museum display showing SMART-1 promotional materials and imagery"
+        "vision: v=unrelated c=0.95 — This is a mobile exhibition trailer or museum display unit featuring SMART-1 promotional graphics an"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -14415,12 +14431,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a spacecraft mockup or artist's rendering — not a photographic image suitable for a hero gallery, and the illustration style and design do not match XMM-Newton's actual spacecraft architecture"
+        "reason": "This is a spacecraft render or technical illustration, not a photograph; it appears to be a generic or unidentified satellite mockup and does not match XMM-Newton's distinctive design (which is a much"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a spacecraft mockup or artist's rendering — not a photographic image suitable for a hero gal"
+        "vision: v=unrelated c=0.95 — This is a spacecraft render or technical illustration, not a photograph; it appears to be a generic "
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -15437,14 +15453,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a clean-room assembly scene with technicians in sterile suits around a gold-wrapped spacecraft, but it is a generic hardware-integration shot without visible mission-specific identifiers, and "
+        "reason": "Clean-room assembly scene with technicians and a gold-wrapped spacecraft under construction, but this is a generic hardware-integration/assembly-hall shot without mission-specific context visible; the"
       },
-      "size_bytes": 235296,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a clean-room assembly scene with technicians in sterile suits around a gold-wrapped spacecra"
+        "vision: v=unrelated c=0.95 — Clean-room assembly scene with technicians and a gold-wrapped spacecraft under construction, but thi"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "isro-fleet-galleries-chandrayaan1-02",
@@ -15589,12 +15607,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a team/crew portrait photo taken indoors at a water-survival training facility; no Gaganyaan spacecraft, hardware, or mission-defining moment is visible—only personnel and a training-facility "
+        "reason": "This is a team / staff portrait in an office/training facility context; no Gaganyaan spacecraft, capsule, or mission hardware is visible in the frame — only personnel and a generic training facility l"
       },
       "size_bytes": 215209,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a team/crew portrait photo taken indoors at a water-survival training facility; no Gaganyaan"
+        "vision: v=unrelated c=0.95 — This is a team / staff portrait in an office/training facility context; no Gaganyaan spacecraft, cap"
       ],
       "notes": []
     },
@@ -15740,13 +15758,13 @@
       },
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a satellite image of Earth showing weather systems, cloud patterns, and landmasses — not the Mangalyaan spacecraft, Mars, or any mission-defining hardware or moment related to the Mars Orbiter"
+        "confidence": 0.98,
+        "reason": "This is a satellite data product (Earth observation imagery showing Arabian Peninsula / Persian Gulf region) — not a photograph of the Mangalyaan spacecraft itself, which is the mission's primary subj"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a satellite image of Earth showing weather systems, cloud patterns, and landmasses — not the"
+        "vision: v=unrelated c=0.98 — This is a satellite data product (Earth observation imagery showing Arabian Peninsula / Persian Gulf"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -15895,12 +15913,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an annotated orbital/satellite image showing an impact site with debris and soil disturbance markers — a data visualization or analysis product, not a photograph of the Vikram spacecraft itsel"
+        "reason": "This is a data-product visualization — an annotated orbital/satellite image showing debris field and impact site with overlay labels and color-coded markers — not a photograph of the Vikram spacecraft"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an annotated orbital/satellite image showing an impact site with debris and soil disturbance"
+        "vision: v=unrelated c=0.95 — This is a data-product visualization — an annotated orbital/satellite image showing debris field and"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -16288,14 +16306,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a lunar surface image showing craters and terrain, likely from an orbiter; it is a scientific data product (map tile or orbital photograph) with no visible spacecraft, hardware, or mission-def"
+        "reason": "This is a lunar surface data product (crater field imagery), not a photograph of the Chandrayaan-3 spacecraft or lander itself; it is mission output, not a hero image of the mission hardware."
       },
-      "size_bytes": 576896,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a lunar surface image showing craters and terrain, likely from an orbiter; it is a scientifi"
+        "vision: v=unrelated c=0.95 — This is a lunar surface data product (crater field imagery), not a photograph of the Chandrayaan-3 s"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "isro-missions-chandrayaan3-02",
@@ -16468,15 +16488,13 @@
         "reason": "Image shows a spacecraft with distinctive dual solar panels in an axial configuration and cylindrical body characteristic of Akatsuki, photographed in space near a celestial body, with JAXA credit vis"
       },
       "vision_v3": {
-        "verdict": "unrelated",
+        "verdict": "related",
         "confidence": 0.95,
-        "reason": "Image shows a spacecraft with dual solar panels and a large disc instrument in space near a bright celestial body, consistent with Venus Climate Orbiter / Akatsuki, but the bright body on the left is "
+        "reason": "The image shows a spacecraft with distinctive solar panels and a cylindrical body in space near a celestial body; the copyright mark ©ISAS/JAXA and the configuration match Akatsuki (Venus Climate Orbi"
       },
       "size_bytes": 164432,
-      "survivor": false,
-      "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows a spacecraft with dual solar panels and a large disc instrument in space near a bright c"
-      ],
+      "survivor": true,
+      "drop_reasons": [],
       "notes": []
     },
     {
@@ -16502,7 +16520,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "This is Venus as imaged by Akatsuki's camera, showing the planet's thick cloud layers — the primary science subject of the Akatsuki mission."
+        "reason": "This is a photograph of Venus showing its thick cloud layers and atmospheric features, consistent with data from the Akatsuki orbiter, which is JAXA's dedicated Venus climate orbiter — the target body"
       },
       "size_bytes": 602333,
       "survivor": true,
@@ -16532,7 +16550,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "Venus's cloud-shrouded atmosphere is the primary subject, consistent with Akatsuki's core science mission of studying Venus's atmosphere and cloud dynamics from orbit."
+        "reason": "Venus in crescent phase, showing atmospheric cloud patterns characteristic of Akatsuki's ultraviolet and infrared observations — the target body and mission's primary science subject."
       },
       "size_bytes": 613974,
       "survivor": true,
@@ -16561,8 +16579,8 @@
       },
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.95,
-        "reason": "Venus in crescent phase photographed from orbit, showing atmospheric detail consistent with Akatsuki's infrared and visible-light imaging of the planet's cloud structure — a primary science subject of"
+        "confidence": 0.92,
+        "reason": "This is a close-up photograph of Venus's cloud-covered atmosphere, the primary science target of the Akatsuki (Venus Climate Orbiter) mission; the planet itself is the defining subject and a core miss"
       },
       "size_bytes": 986165,
       "survivor": true,
@@ -16798,12 +16816,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "The image shows the Hubble Space Telescope in orbit, not the H-IIA launch vehicle; while H-IIA has launched HST servicing missions, the spacecraft itself—not the launch vehicle—is the primary subject "
+        "reason": "The image shows the Hubble Space Telescope in orbit, not an H-IIA rocket or JAXA spacecraft; H-IIA is a launch vehicle, not a mission with a namesake spacecraft to photograph."
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — The image shows the Hubble Space Telescope in orbit, not the H-IIA launch vehicle; while H-IIA has l"
+        "vision: v=unrelated c=0.95 — The image shows the Hubble Space Telescope in orbit, not an H-IIA rocket or JAXA spacecraft; H-IIA i"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -16919,15 +16937,11 @@
         "confidence": 0,
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This URL is disallowed by the web"
       },
-      "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a full-scale model or mockup of a rocket displayed in an indoor museum or exhibition hall, not a photograph of the actual H-3 launch vehicle in an operational or mission-defining context."
-      },
-      "size_bytes": 289267,
+      "vision_v3": null,
+      "size_bytes": 0,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a full-scale model or mockup of a rocket displayed in an indoor museum or exhibition hall, n"
+        "size: HTTP 200 content-length=0 (< 100000 for smithsonian-openaccess)"
       ],
       "notes": []
     },
@@ -17010,14 +17024,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a labeled technical diagram or CAD illustration of a spacecraft with numbered component callouts — a schematic visualization, not a photographic image suitable for a hero gallery."
+        "reason": "This is a technical diagram or schematic illustration with numbered component labels (1–18), not a photograph of the Hayabusa2 spacecraft itself; it appears to be a CAD-style cutaway or annotated engi"
       },
-      "size_bytes": 445092,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a labeled technical diagram or CAD illustration of a spacecraft with numbered component call"
+        "vision: v=unrelated c=0.95 — This is a technical diagram or schematic illustration with numbered component labels (1–18), not a p"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "jaxa-fleet-galleries-hayabusa-2-02",
@@ -17162,12 +17178,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a labeled diagram/infographic showing Hayabusa2 instrument inventory with callout annotations—a technical illustration, not a photograph suitable for a hero gallery."
+        "reason": "This is an annotated diagram/infographic with callout labels identifying instruments, not a photograph of the Hayabusa spacecraft itself suitable for a hero gallery."
       },
       "size_bytes": 657162,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a labeled diagram/infographic showing Hayabusa2 instrument inventory with callout annotation"
+        "vision: v=unrelated c=0.95 — This is an annotated diagram/infographic with callout labels identifying instruments, not a photogra"
       ],
       "notes": []
     },
@@ -17880,12 +17896,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a press conference or briefing-room scene with people in suits and name badges; no A7L spacesuit is visible as a primary subject — the frame shows staff/officials in an office setting, not the"
+        "reason": "This is a press conference or briefing-room photograph showing men in suits with ID badges and American flags; no A7L spacesuit is visible or the primary subject — it is a people-in-an-office context "
       },
       "size_bytes": 2372115,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a press conference or briefing-room scene with people in suits and name badges; no A7L space"
+        "vision: v=unrelated c=0.95 — This is a press conference or briefing-room photograph showing men in suits with ID badges and Ameri"
       ],
       "notes": []
     },
@@ -19216,14 +19232,14 @@
         "reason": "This image shows spacecraft hardware being prepared or maintained in a facility, but without visible mission-identifying markings or context, it cannot be definitively linked to the Dawn mission speci"
       },
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.45,
-        "reason": "Image shows a spacecraft being prepared in a clean room or integration facility, suspended under a hoist with protective covering — consistent with Dawn spacecraft assembly/testing context, but the sp"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a clean-room assembly or testing scene showing technicians working on a spacecraft under protective wrapping and rigging equipment — a behind-the-scenes production/integration photograph, not "
       },
       "size_bytes": 3673798,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — Image shows a spacecraft being prepared in a clean room or integration facility, suspended under a h"
+        "vision: v=unrelated c=0.95 — This is a clean-room assembly or testing scene showing technicians working on a spacecraft under pro"
       ],
       "notes": []
     },
@@ -19670,12 +19686,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew/technician portrait in a clean-room or assembly setting, not a hero shot of the EMU spacesuit itself as the primary subject; the suit is partially visible but the frame centers on a per"
+        "reason": "This is a crew/technician portrait in a clean-room or workshop setting performing maintenance or assembly work on a spacesuit; the person is the primary subject, not the suit itself as a mission-defin"
       },
       "size_bytes": 2284271,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew/technician portrait in a clean-room or assembly setting, not a hero shot of the EMU s"
+        "vision: v=unrelated c=0.95 — This is a crew/technician portrait in a clean-room or workshop setting performing maintenance or ass"
       ],
       "notes": []
     },
@@ -20302,12 +20318,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an infographic/diagram showing spacecraft mockups and labeled instrument payloads with Earth below — a conceptual illustration, not a photographic hero image of the actual mission hardware or "
+        "reason": "This is an infographic/diagram showing the GeoXO constellation concept with labeled spacecraft and instruments, not a photograph of actual mission hardware; it's a technical illustration / poster, not"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an infographic/diagram showing spacecraft mockups and labeled instrument payloads with Earth"
+        "vision: v=unrelated c=0.95 — This is an infographic/diagram showing the GeoXO constellation concept with labeled spacecraft and i"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -20906,12 +20922,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a text overlay / inspirational quote displayed on a wall — a graphic design element without any spacecraft, hardware, or mission-defining moment visible; it does not show LC-39A as a primary s"
+        "reason": "This is a text overlay / inspirational quote on a generic corrugated-metal background with no spacecraft, hardware, or mission-specific imagery; it is not a photograph of LC-39A or any mission hardwar"
       },
       "size_bytes": 1255072,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a text overlay / inspirational quote displayed on a wall — a graphic design element without "
+        "vision: v=unrelated c=0.95 — This is a text overlay / inspirational quote on a generic corrugated-metal background with no spacec"
       ],
       "notes": []
     },
@@ -21058,12 +21074,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a Space Shuttle launch photo showing the spacecraft as the primary subject lifting off from a launch pad, not an image of LC-39B (a launch complex facility) itself; the pad infrastructure is s"
+        "reason": "This is a Space Shuttle launch photograph showing the orbiter lifting off from a launch pad with visible launch tower and ground infrastructure. LC-39B is a *launch facility*, not a mission; the image"
       },
       "size_bytes": 2177395,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a Space Shuttle launch photo showing the spacecraft as the primary subject lifting off from "
+        "vision: v=unrelated c=0.95 — This is a Space Shuttle launch photograph showing the orbiter lifting off from a launch pad with vis"
       ],
       "notes": []
     },
@@ -23842,12 +23858,12 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.85,
-        "reason": "High-resolution orbital image of Martian surface terrain (craters and geological features) consistent with Viking 1 Orbiter's imaging mission, with the target body (Mars) as the clear primary subject."
+        "reason": "This is a high-resolution orbital image of Martian surface terrain (craters and geological features) consistent with Viking 1 Orbiter's imaging science; the spacecraft's data product is the primary su"
       },
       "size_bytes": 3257198,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=related c=0.85 — High-resolution orbital image of Martian surface terrain (craters and geological features) consisten"
+        "vision: v=related c=0.85 — This is a high-resolution orbital image of Martian surface terrain (craters and geological features)"
       ],
       "notes": []
     },
@@ -23993,13 +24009,13 @@
       },
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.98,
-        "reason": "This is an orbital image of Martian terrain (likely from a Mars orbiter such as MRO or Viking Orbiter), not the Viking 2 Lander itself or a mission-defining moment; the lander is not visible or the pr"
+        "confidence": 0.95,
+        "reason": "This is a grayscale orbital image of Martian terrain (craters, ridges, surface features) — a data product from a Mars orbiter, not a photograph of the Viking 2 lander spacecraft itself or a mission-de"
       },
       "size_bytes": 1085429,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.98 — This is an orbital image of Martian terrain (likely from a Mars orbiter such as MRO or Viking Orbite"
+        "vision: v=unrelated c=0.95 — This is a grayscale orbital image of Martian terrain (craters, ridges, surface features) — a data pr"
       ],
       "notes": []
     },
@@ -24444,14 +24460,14 @@
         "reason": "This is an in-flight photograph of the Saturn V rocket on its launch pad, showing the actual Apollo-era spacecraft hardware used for the Apollo 10 mission."
       },
       "vision_v3": {
-        "verdict": "unsure",
-        "confidence": 0.65,
-        "reason": "The image shows a Saturn V rocket on the launch pad at what appears to be Kennedy Space Center, but without mission-specific markings or documentation, it cannot be definitively confirmed as the Apoll"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a Saturn V rocket on the launch pad at Kennedy Space Center, shown during assembly or preparation—a generic launch-pad infrastructure image without mission-specific context or identification v"
       },
       "size_bytes": 2653113,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.65 — The image shows a Saturn V rocket on the launch pad at what appears to be Kennedy Space Center, but "
+        "vision: v=unrelated c=0.95 — This is a Saturn V rocket on the launch pad at Kennedy Space Center, shown during assembly or prepar"
       ],
       "notes": []
     },
@@ -24597,13 +24613,13 @@
       },
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "Image shows Earth from orbit with clouds and atmosphere — a generic view of the target body, not the Apollo 7 spacecraft, its instruments, or a mission-defining moment; not suitable as a hero image fo"
+        "confidence": 0.98,
+        "reason": "This is a photograph of Earth from orbit showing clouds and atmosphere — a generic Earth-observation view with no Apollo 7 spacecraft, hardware, or mission-defining moment visible in the frame."
       },
       "size_bytes": 2761341,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows Earth from orbit with clouds and atmosphere — a generic view of the target body, not the"
+        "vision: v=unrelated c=0.98 — This is a photograph of Earth from orbit showing clouds and atmosphere — a generic Earth-observation"
       ],
       "notes": []
     },
@@ -24750,12 +24766,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a nighttime crowd scene with banners and signs — a public gathering or welcome event — with no spacecraft, mission hardware, or mission-defining moment visible as the primary subject."
+        "reason": "This is a nighttime crowd scene with people holding welcome banners — a public reception or celebration event, not a photograph of the Apollo 8 spacecraft, mission hardware, or a mission-defining mome"
       },
       "size_bytes": 2728472,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a nighttime crowd scene with banners and signs — a public gathering or welcome event — with "
+        "vision: v=unrelated c=0.95 — This is a nighttime crowd scene with people holding welcome banners — a public reception or celebrat"
       ],
       "notes": []
     },
@@ -24902,12 +24918,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Crew portrait in spacesuits at launch pad with Saturn V rocket visible in background; the three astronauts are the primary subject of the frame, not the spacecraft or a mission-defining moment."
+        "reason": "This is a crew portrait of three astronauts in spacesuits with a Saturn V rocket in the background; the astronauts are the primary subject, not the spacecraft or mission hardware itself, making it a p"
       },
       "size_bytes": 2063311,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Crew portrait in spacesuits at launch pad with Saturn V rocket visible in background; the three astr"
+        "vision: v=unrelated c=0.95 — This is a crew portrait of three astronauts in spacesuits with a Saturn V rocket in the background; "
       ],
       "notes": []
     },
@@ -25054,12 +25070,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a generic NASA test stand or launch facility infrastructure image showing structural testing apparatus, cranes, and support systems — not the Artemis 2 spacecraft, SLS rocket, or a mission-def"
+        "reason": "This is a ground-support facility (test stand with SLS core stage and boosters) — infrastructure, not the mission spacecraft itself; Artemis 2's primary subjects would be the crewed Orion capsule or t"
       },
       "size_bytes": 1151465,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a generic NASA test stand or launch facility infrastructure image showing structural testing"
+        "vision: v=unrelated c=0.95 — This is a ground-support facility (test stand with SLS core stage and boosters) — infrastructure, no"
       ],
       "notes": []
     },
@@ -26794,12 +26810,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a heavily processed orbital image with gridlines and reference marks — a data product or map overlay, not a photograph of Mariner 9 spacecraft, its instruments, or a mission-defining moment; i"
+        "reason": "This is a satellite data product (Mars surface imagery with dust devil tracks and reference grid markers), not a photograph of the Mariner 9 spacecraft itself; it shows what the spacecraft observed, n"
       },
       "size_bytes": 4357598,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a heavily processed orbital image with gridlines and reference marks — a data product or map"
+        "vision: v=unrelated c=0.95 — This is a satellite data product (Mars surface imagery with dust devil tracks and reference grid mar"
       ],
       "notes": []
     },
@@ -27906,12 +27922,12 @@
       "vision_v3": {
         "verdict": "unsure",
         "confidence": 0.45,
-        "reason": "Image shows a spacecraft with a large dish antenna in an assembly or integration facility, but without mission-specific markings or identifying context visible, I cannot definitively confirm this is P"
+        "reason": "The image shows a spacecraft assembly in a clean room with solar panels and a large dish antenna, consistent with Pioneer 11's design, but without visible mission-specific markings or context, positiv"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — Image shows a spacecraft with a large dish antenna in an assembly or integration facility, but witho"
+        "vision: v=unsure c=0.45 — The image shows a spacecraft assembly in a clean room with solar panels and a large dish antenna, co"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -29350,12 +29366,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a ground-processing / assembly-facility image showing a cargo module (likely Cygnus) undergoing integration or servicing in a clean-room hangar, with technicians and support equipment visible "
+        "reason": "This is a clean-room / production-line assembly shot of a cargo spacecraft (Cygnus module visible on fuselage) during ground processing with technicians and support equipment—hardware-in-context but n"
       },
       "size_bytes": 1851148,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a ground-processing / assembly-facility image showing a cargo module (likely Cygnus) undergo"
+        "vision: v=unrelated c=0.95 — This is a clean-room / production-line assembly shot of a cargo spacecraft (Cygnus module visible on"
       ],
       "notes": []
     },
@@ -29500,16 +29516,16 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a 3D rendering or mockup of a generic cargo spacecraft with solar panels and a cylindrical pressurized module, not a photograph of actual Cygnus hardware; it lacks mission-specific identifiers"
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Clean render of Cygnus spacecraft with its characteristic blue cargo module, cylindrical service section, and symmetrical solar arrays — the primary subject is unambiguously the Cygnus vehicle itself."
       },
-      "size_bytes": 342173,
-      "survivor": false,
-      "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a 3D rendering or mockup of a generic cargo spacecraft with solar panels and a cylindrical p"
-      ],
-      "notes": []
+      "size_bytes": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "northrop grumman-fleet-galleries-cygnus-enhanced-02",
@@ -29716,12 +29732,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or exhibition display of the Buran spacecraft with parachute deployment mockup, a classic car, and other artifacts — a full-scale model or replica in a static display hall, not a miss"
+        "reason": "This is a museum or exhibition display showing a full-scale Buran replica/test article in a hangar setting with parachutes, a helicopter, a vintage car, and other display items — a static museum exhib"
       },
       "size_bytes": 741975,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or exhibition display of the Buran spacecraft with parachute deployment mockup, a c"
+        "vision: v=unrelated c=0.95 — This is a museum or exhibition display showing a full-scale Buran replica/test article in a hangar s"
       ],
       "notes": []
     },
@@ -30022,12 +30038,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a Soviet postage stamp (1988) depicting the Buran shuttle and Energia rocket system as commemorative imagery; it is a printed stamp/philatelic item (a postal artifact), not a photographic imag"
+        "reason": "This is a Soviet postage stamp commemorating the Buran orbital shuttle's first flight (1988), not a photograph or hero image of the Energia rocket system itself; it's a printed philatelic item, not mi"
       },
       "size_bytes": 252462,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a Soviet postage stamp (1988) depicting the Buran shuttle and Energia rocket system as comme"
+        "vision: v=unrelated c=0.95 — This is a Soviet postage stamp commemorating the Buran orbital shuttle's first flight (1988), not a "
       ],
       "notes": []
     },
@@ -30319,14 +30335,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an orbital reconnaissance image showing a lunar surface with annotated search boxes for a landing module at 43% confidence — a data-visualization overlay / annotation frame, not a direct photo"
+        "reason": "This is a satellite data product — a processed orbital image showing a lunar landing site with annotated search boxes — not a photograph of the Luna 9 spacecraft itself; it's what an orbiter saw of th"
       },
-      "size_bytes": 439693,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an orbital reconnaissance image showing a lunar surface with annotated search boxes for a la"
+        "vision: v=unrelated c=0.95 — This is a satellite data product — a processed orbital image showing a lunar landing site with annot"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "roscosmos-fleet-galleries-luna-9-02",
@@ -30471,7 +30489,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.92,
-        "reason": "High-resolution orbital image showing a bright rover-like object on the lunar surface with scale bar and magnified inset — consistent with Lunar Reconnaissance Orbiter or similar imaging of Lunokhod 1"
+        "reason": "Orbital imaging of Lunokhod 1 on the lunar surface, showing the rover as a bright distinctive object amid craters and regolith, with inset magnification — this is a direct observational record of the "
       },
       "size_bytes": 468255,
       "survivor": true,
@@ -30619,14 +30637,14 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "related",
-        "confidence": 0.85,
-        "reason": "Orbital image of lunar surface showing what appears to be Lunokhod 2 rover as a small dark object (center frame, marked 'B' in inset); the rover is the primary subject but very small relative to frame"
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a lunar orbital data product (grayscale terrain image with scale bar) showing surface features from above; the Lunokhod 2 rover itself is not visible as the primary subject, and the frame is a"
       },
       "size_bytes": 387706,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=related c=0.85 — Orbital image of lunar surface showing what appears to be Lunokhod 2 rover as a small dark object (c"
+        "vision: v=unrelated c=0.95 — This is a lunar orbital data product (grayscale terrain image with scale bar) showing surface featur"
       ],
       "notes": []
     },
@@ -30857,14 +30875,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a technical illustration or mockup of a generic satellite with solar panels and communication antennas, not a photograph of Mars 2 hardware or a mission-defining moment; it appears to be a dia"
+        "reason": "This is a technical illustration or render of a generic communications or Earth-observation satellite with solar panels and antennas, not the Mars 2 lander/orbiter hardware, which would show a distinc"
       },
-      "size_bytes": 1246953,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a technical illustration or mockup of a generic satellite with solar panels and communicatio"
+        "vision: v=unrelated c=0.95 — This is a technical illustration or render of a generic communications or Earth-observation satellit"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "roscosmos-fleet-galleries-mars-2-05",
@@ -31092,14 +31112,14 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a generic satellite mockup or illustration showing solar panels and a dish antenna, with no mission-specific identifiers visible; it does not clearly depict the Mars 2 Orbiter specifically, an"
+        "verdict": "unsure",
+        "confidence": 0.45,
+        "reason": "This is a spacecraft with solar panels and a dish antenna, but without visible mission markings or contextual labels, I cannot definitively confirm it is Mars 2 Orbiter rather than another similar Ros"
       },
       "size_bytes": 2494384,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a generic satellite mockup or illustration showing solar panels and a dish antenna, with no "
+        "vision: v=unsure c=0.45 — This is a spacecraft with solar panels and a dish antenna, but without visible mission markings or c"
       ],
       "notes": []
     },
@@ -31245,14 +31265,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a mission logo/graphic design (stylized orbit, planet, and text) — an infographic or poster asset, not a photographic image of the spacecraft or mission hardware itself."
+        "reason": "This is a mission logo/graphic design showing Mars and an orbital trajectory with the ISRO emblem, not a photograph of the Mars Orbiter Mission spacecraft itself; it is a diagram/poster suitable for b"
       },
-      "size_bytes": 249662,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a mission logo/graphic design (stylized orbit, planet, and text) — an infographic or poster "
+        "vision: v=unrelated c=0.95 — This is a mission logo/graphic design showing Mars and an orbital trajectory with the ISRO emblem, n"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "roscosmos-fleet-galleries-mars3-orbiter-03",
@@ -32178,12 +32200,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a postage stamp depicting Soyuz spacecraft and Interkosmos mission hardware in orbit, not Salyut 1 specifically; it's a commemorative graphic design / illustration, not a photograph of the act"
+        "reason": "This is a commemorative postage stamp from 1978 celebrating Interkosmos (international space flights), not a photograph or primary image of Salyut 1 itself; it is a graphic design artifact (printed st"
       },
       "size_bytes": 230957,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a postage stamp depicting Soyuz spacecraft and Interkosmos mission hardware in orbit, not Sa"
+        "vision: v=unrelated c=0.95 — This is a commemorative postage stamp from 1978 celebrating Interkosmos (international space flights"
       ],
       "notes": []
     },
@@ -32627,12 +32649,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a 3D render or mockup of a Soyuz spacecraft with solar panels and docking module (labeled 'САЛЮТ'), not a photograph of Salyut 4 hardware or mission-defining moment; it appears to be a technic"
+        "reason": "This is a 3D render or mockup of a Soyuz-era spacecraft (bearing 'САЛЮТ'/Salyut markings), not a photograph of the actual Salyut 4 hardware, and renders are not suitable for hero gallery use."
       },
       "size_bytes": 151207,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a 3D render or mockup of a Soyuz spacecraft with solar panels and docking module (labeled 'С"
+        "vision: v=unrelated c=0.95 — This is a 3D render or mockup of a Soyuz-era spacecraft (bearing 'САЛЮТ'/Salyut markings), not a pho"
       ],
       "notes": []
     },
@@ -32779,14 +32801,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a postage stamp illustration commemorating Interkosmos 1978 international space flights; it depicts a generic spacecraft and tracking ship in stylized graphic form, not the Salyut 5 hardware o"
+        "reason": "This is a postage stamp — a graphic design artifact — depicting Interkosmos 1978 with illustrated spacecraft and Earth imagery; it is not a photograph of Salyut 5 hardware or a mission-defining moment"
       },
-      "size_bytes": 250150,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a postage stamp illustration commemorating Interkosmos 1978 international space flights; it "
+        "vision: v=unrelated c=0.95 — This is a postage stamp — a graphic design artifact — depicting Interkosmos 1978 with illustrated sp"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "roscosmos-fleet-galleries-salyut-5-02",
@@ -33080,12 +33104,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a full-scale replica or museum display of a Salyut space station mounted on a pedestal/support structure on the ground; it is not the actual spacecraft in flight or a mission-defining moment, "
+        "reason": "This is a full-scale ground display or museum mockup of a Salyut space station, not a photograph of the actual orbiting spacecraft or a mission-defining moment in flight; museum displays and ground re"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a full-scale replica or museum display of a Salyut space station mounted on a pedestal/suppo"
+        "vision: v=unrelated c=0.95 — This is a full-scale ground display or museum mockup of a Salyut space station, not a photograph of "
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -33262,12 +33286,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a crew portrait of an astronaut in spacesuit with two other suited figures aboard what appears to be the ISS; while spacesuits and ISS hardware are visible, the primary subject is the person, "
+        "reason": "This is a crew portrait of an astronaut in spacesuit surrounded by fellow crew members inside what appears to be a spacecraft module — a people-in-context shot, not a hero image of the Soyuz/Sokol-M s"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a crew portrait of an astronaut in spacesuit with two other suited figures aboard what appea"
+        "vision: v=unrelated c=0.95 — This is a crew portrait of an astronaut in spacesuit surrounded by fellow crew members inside what a"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -33847,13 +33871,13 @@
       },
       "vision_v3": {
         "verdict": "unsure",
-        "confidence": 0.45,
-        "reason": "The image shows a spacecraft with extended solar panels photographed against a blue sky, but the silhouette is too distant and backlit to confirm it is specifically a Soyuz-TM; it could be any number "
+        "confidence": 0.5,
+        "reason": "A spacecraft with solar panels and a central module is visible against blue sky, consistent with Soyuz morphology, but the image quality, distance, and lack of identifying context (mission patch, data"
       },
       "size_bytes": 863626,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unsure c=0.45 — The image shows a spacecraft with extended solar panels photographed against a blue sky, but the sil"
+        "vision: v=unsure c=0.50 — A spacecraft with solar panels and a central module is visible against blue sky, consistent with Soy"
       ],
       "notes": []
     },
@@ -34000,7 +34024,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "A Soyuz spacecraft (recognizable by its distinctive three-module design with solar panels, docking mechanism, and heat shield) is the unambiguous primary subject, photographed in orbit against Mars's "
+        "reason": "A Soyuz spacecraft is the clear primary subject of the frame, photographed in orbit above Mars with its distinctive solar panels, docking ring, and service module all clearly visible and identifiable."
       },
       "size_bytes": null,
       "survivor": true,
@@ -34596,14 +34620,16 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or exhibition display featuring a spacesuit and capsule mockup/replica in a staged lighting setup — not a primary mission photograph suitable for a public gallery hero image, and the "
+        "reason": "This is a museum or display mockup showing a spacesuit and spacecraft hardware in a controlled exhibition setting, not a documentary photograph of the Voskhod mission spacecraft or a mission-defining "
       },
-      "size_bytes": 822871,
+      "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or exhibition display featuring a spacesuit and capsule mockup/replica in a staged "
+        "vision: v=unrelated c=0.95 — This is a museum or display mockup showing a spacesuit and spacecraft hardware in a controlled exhib"
       ],
-      "notes": []
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "roscosmos-fleet-galleries-voskhod-02",
@@ -34748,12 +34774,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum or display mockup/replica of a Soyuz spacecraft against a blue backdrop, not a flight photograph of the Vostok mission hardware or a mission-defining moment; Vostok (1961–63) used a d"
+        "reason": "This is a museum display or full-scale replica of a Vostok spacecraft mounted against a blue backdrop — a mockup, not a mission photograph, and therefore not suitable as a hero image for a public gall"
       },
       "size_bytes": 512347,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum or display mockup/replica of a Soyuz spacecraft against a blue backdrop, not a flig"
+        "vision: v=unrelated c=0.95 — This is a museum display or full-scale replica of a Vostok spacecraft mounted against a blue backdro"
       ],
       "notes": []
     },
@@ -36208,12 +36234,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a museum display or exhibition model of a rocket on a launch tower, with informational panels in the background — a replica or full-scale model in a gallery setting, not a primary subject suit"
+        "reason": "Image shows a full-scale museum display model or replica of a Vostok-era rocket on a launch tower in a gallery setting, not an actual spacecraft or mission-defining moment; museum displays and replica"
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a museum display or exhibition model of a rocket on a launch tower, with informational panel"
+        "vision: v=unrelated c=0.95 — Image shows a full-scale museum display model or replica of a Vostok-era rocket on a launch tower in"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -36656,14 +36682,18 @@
         "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Unable to download the file. Plea"
       },
       "vision_v3": {
-        "verdict": "related",
+        "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Lunar surface image showing the Beresheet impact site marked by a white box, directly documenting the mission-defining moment (spacecraft impact on the Moon on 22 April 2019) — the primary subject of "
+        "reason": "This is a satellite data product (lunar orbital imagery showing an impact site) — the spacecraft itself is not visible in the frame, only what the spacecraft (or an orbiter) observed. This is mission "
       },
-      "size_bytes": 505295,
-      "survivor": true,
-      "drop_reasons": [],
-      "notes": []
+      "size_bytes": null,
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — This is a satellite data product (lunar orbital imagery showing an impact site) — the spacecraft its"
+      ],
+      "notes": [
+        "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
+      ]
     },
     {
       "proposal_id": "spaceil-fleet-galleries-beresheet-02",
@@ -36897,13 +36927,13 @@
       },
       "vision_v3": {
         "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "The image shows an Earth observation satellite (with solar panels) above a coastal desert region; this is an orbital reconnaissance photo, not Cargo Dragon hardware or a Cargo Dragon mission-defining "
+        "confidence": 0.98,
+        "reason": "This is an Earth-observation data product (satellite nadir view of a coastline with water and desert) with a generic spacecraft render overlaid; it is not a photograph of Cargo Dragon itself, and the "
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — The image shows an Earth observation satellite (with solar panels) above a coastal desert region; th"
+        "vision: v=unrelated c=0.98 — This is an Earth-observation data product (satellite nadir view of a coastline with water and desert"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -36930,13 +36960,15 @@
         "reason": "This is an interior overhead view of a Crew Dragon spacecraft cabin showing the characteristic seating configuration (4 crew seats labeled S1-S4) and central control panels, which is mission hardware "
       },
       "vision_v3": {
-        "verdict": "related",
+        "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Interior overhead view of Crew Dragon capsule showing crew seating arrangement (S1–S4) and equipment bays (C5–C7) — the spacecraft's primary subject and mission-defining hardware clearly visible and l"
+        "reason": "Interior crew compartment with labeled seats (S1–S4, C5–C7) is a technical diagram or training/documentation photo, not a hero image of the Crew Dragon spacecraft itself as a primary subject suitable "
       },
       "size_bytes": 120535,
-      "survivor": true,
-      "drop_reasons": [],
+      "survivor": false,
+      "drop_reasons": [
+        "vision: v=unrelated c=0.95 — Interior crew compartment with labeled seats (S1–S4, C5–C7) is a technical diagram or training/docum"
+      ],
       "notes": []
     },
     {
@@ -37234,12 +37266,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is a presentation or press-conference setting with a person on stage in front of Earth imagery and Arabic text; no spacecraft hardware is visible, and this is a people-in-office/briefing context "
+        "reason": "This is a presentation or press-conference photo showing a person in traditional dress speaking in front of a screen displaying Earth and Arabic text; no spacecraft hardware is visible, and the image "
       },
       "size_bytes": null,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a presentation or press-conference setting with a person on stage in front of Earth imagery "
+        "vision: v=unrelated c=0.95 — This is a presentation or press-conference photo showing a person in traditional dress speaking in f"
       ],
       "notes": [
         "size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)"
@@ -38616,12 +38648,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Image shows Saturn (left) and Mars (right) as astronomical observations, not a spacecraft, instrument, or mission-defining moment from a Mars mission; these are generic planetary imagery suitable for "
+        "reason": "Image shows Saturn (left) and Mars (right) as celestial bodies, but this is a two-planet comparison composite — not a single mission-defining observation of Mars, and not a spacecraft photograph. For "
       },
       "size_bytes": 163910,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows Saturn (left) and Mars (right) as astronomical observations, not a spacecraft, instrumen"
+        "vision: v=unrelated c=0.95 — Image shows Saturn (left) and Mars (right) as celestial bodies, but this is a two-planet comparison "
       ],
       "notes": []
     },
@@ -38653,7 +38685,7 @@
       "vision_v3": {
         "verdict": "related",
         "confidence": 0.95,
-        "reason": "High-resolution portrait of Jupiter showing the Great Red Spot as the primary subject — a defining feature of the target body for Jupiter observation missions; consistent with Hubble Space Telescope s"
+        "reason": "High-resolution photograph of Jupiter showing its iconic Great Red Spot and atmospheric band structure—the primary subject and a defining observational target of Jupiter missions including Hubble data"
       },
       "size_bytes": 312056,
       "survivor": true,
@@ -38687,8 +38719,8 @@
       },
       "vision_v3": {
         "verdict": "related",
-        "confidence": 0.92,
-        "reason": "Saturn with its iconic ring system is the primary subject of the frame — a direct target body of Saturn-mission science and a classic hero image for planetary exploration galleries."
+        "confidence": 0.95,
+        "reason": "Saturn with its iconic ring system is the primary subject of this photograph — a high-quality, sharp celestial observation image suitable for a planetary-mission hero gallery."
       },
       "size_bytes": 116780,
       "survivor": true,
@@ -38723,12 +38755,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "Image shows Jupiter (left) and what appears to be a star or distant object (right); neither is Uranus or its rings, and this appears to be a comparison or composite rather than a focused mission image"
+        "reason": "Image shows Jupiter (left) and what appears to be a star or exoplanet (right) — neither is Uranus or Uranus's rings, and there is no Uranus mission hardware visible."
       },
       "size_bytes": 127926,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — Image shows Jupiter (left) and what appears to be a star or distant object (right); neither is Uranu"
+        "vision: v=unrelated c=0.95 — Image shows Jupiter (left) and what appears to be a star or exoplanet (right) — neither is Uranus or"
       ],
       "notes": []
     },
@@ -38760,12 +38792,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an astronomical observation frame showing distant point sources (stars or small objects) with annotation overlays and measurement scale bars — a data-display / analysis image, not a photograph"
+        "reason": "This is an astronomical observation frame showing point sources (stars or distant objects) with measurement annotations and a data-display overlay — a screenshot of observational data or a visualizati"
       },
       "size_bytes": 1059699,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an astronomical observation frame showing distant point sources (stars or small objects) wit"
+        "vision: v=unrelated c=0.95 — This is an astronomical observation frame showing point sources (stars or distant objects) with meas"
       ],
       "notes": []
     },
@@ -38797,12 +38829,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.99,
-        "reason": "This is a deep-space astronomical observation of a planetary nebula or similar stellar phenomenon, not Earth imaged from space; it appears to be a Hubble Space Telescope observation of a distant celes"
+        "reason": "This is a deep-space astronomical observation of a planetary nebula or bipolar outflow, not Earth from space; it shows a celestial object, not the planet or any Earth-observation mission hardware."
       },
       "size_bytes": 3897356,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.99 — This is a deep-space astronomical observation of a planetary nebula or similar stellar phenomenon, n"
+        "vision: v=unrelated c=0.99 — This is a deep-space astronomical observation of a planetary nebula or bipolar outflow, not Earth fr"
       ],
       "notes": []
     },
@@ -38832,15 +38864,13 @@
         "reason": "This image shows 3D renderings of a small celestial body's shape from multiple viewing angles (pole, side, end), consistent with spacecraft imaging and shape reconstruction of comet 67P from the Roset"
       },
       "vision_v3": {
-        "verdict": "unrelated",
-        "confidence": 0.95,
-        "reason": "This is a 3D model or rendering of an asteroid/comet with multiple viewing angles labeled (Pole, Side, End) — a technical illustration or diagram, not a photographic image suitable for a public hero g"
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Multiple rendered or processed views of comet 67P Churyumov-Gerasimenko's distinctive bi-lobed nucleus from different angles (pole, side, end), the primary target body of the Rosetta mission—suitable "
       },
       "size_bytes": 205851,
-      "survivor": false,
-      "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is a 3D model or rendering of an asteroid/comet with multiple viewing angles labeled (Pole, Sid"
-      ],
+      "survivor": true,
+      "drop_reasons": [],
       "notes": []
     },
     {
@@ -38871,12 +38901,12 @@
       "vision_v3": {
         "verdict": "unrelated",
         "confidence": 0.95,
-        "reason": "This is an artist's rendering or illustration of an interstellar object with a comet-like tail and solar glare, not a direct observational image from a mission instrument, and does not represent a spa"
+        "reason": "This is an artist's rendering or illustration of an interstellar object with outgassing, not a photograph of a spacecraft or observational data from a mission. Oumuamua has no dedicated spacecraft; th"
       },
       "size_bytes": 1382638,
       "survivor": false,
       "drop_reasons": [
-        "vision: v=unrelated c=0.95 — This is an artist's rendering or illustration of an interstellar object with a comet-like tail and s"
+        "vision: v=unrelated c=0.95 — This is an artist's rendering or illustration of an interstellar object with outgassing, not a photo"
       ],
       "notes": []
     },

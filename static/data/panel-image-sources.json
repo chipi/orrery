@@ -1148,7 +1148,7 @@
     "image_url": "https://cdn.esahubble.org/archives/images/large/heic2017a.jpg",
     "credit": "ESA/Hubble",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-18T17:33:24Z",
+    "fetched_at": "2026-06-18T21:09:54Z",
     "slice_a_iteration": 4,
     "slice_a_query": "Jupiter Great Red Spot",
     "vision": {
@@ -1162,12 +1162,26 @@
     "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814b.jpg",
     "credit": "ESA/Hubble",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-18T17:33:24Z",
+    "fetched_at": "2026-06-18T21:09:54Z",
     "slice_a_iteration": 4,
     "slice_a_query": "Saturn rings",
     "vision": {
       "verdict": "related",
       "confidence": 0.95
+    }
+  },
+  "planets/mars/01": {
+    "source_type": "esahubble",
+    "source_url": "https://esahubble.org/images/heic1814a/",
+    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814a.jpg",
+    "credit": "ESA/Hubble",
+    "license": "cc-by-4.0",
+    "fetched_at": "2026-06-18T21:09:53Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "Mars planet",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.85
     }
   }
 }

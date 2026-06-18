@@ -121,6 +121,30 @@
       "v2_verdict": "unsure",
       "v2_confidence": 0,
       "v2_shipped": true
+    },
+    {
+      "id": "landsat-01-data-product-composite",
+      "missionId": "landsat",
+      "agency": "NASA",
+      "query": "landsat",
+      "subjectDescription": "Landsat Earth observation satellite",
+      "image_url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001704/GSFC_20171208_Archive_e001704~orig.jpg",
+      "failure_mode": "data_product_not_hero — before/after Landsat scene pair showing landscape change. Real Landsat output, NOT a hero photo of the spacecraft (round-3 lesson 2026-06-18: vision-judge v3 rated 0.92 related; Marko rejected with useless-screenshot tag)",
+      "v2_verdict": "related",
+      "v2_confidence": 0.92,
+      "v2_shipped": true
+    },
+    {
+      "id": "sentinel-copernicus-01-map-tile-overlay",
+      "missionId": "sentinel-copernicus",
+      "agency": "ESA",
+      "query": "sentinel copernicus",
+      "subjectDescription": "Sentinel-1 / Copernicus Earth observation satellite",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Final%20data%20captured%20by%20the%20Copernicus%20Sentinel-1B%20satellite%20ESA501277.jpg",
+      "failure_mode": "data_product_not_hero — radar-swath + false-colour land-use composite, no spacecraft in frame (round-1 lesson 2026-06-17: Marko rejected with useless-screenshot tag)",
+      "v2_verdict": "related",
+      "v2_confidence": 0.92,
+      "v2_shipped": true
     }
   ]
 }

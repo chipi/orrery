@@ -153,6 +153,12 @@ const stats = {
 
 // Per-mission Smithsonian `seenIds` so dedup applies across slots.
 const seenIdsPerMission = new Map();
+// Dry-run-scoped Stage 2 dedup: prevents the same asset from being picked
+// for two different (mission, slot) pairs in the same pass. The handoff
+// noted 6 OTV missions all received the same Hubble Commons photo because
+// the resolver returned top-1 with no cross-mission memory; this set is
+// that memory.
+const alreadyTakenAcrossDryRun = new Set();
 
 for (let i = 0; i < CANDIDATES.length; i++) {
   const c = CANDIDATES[i];
@@ -170,6 +176,7 @@ for (let i = 0; i < CANDIDATES.length; i++) {
       agency: c.agency,
       query,
       seenIds,
+      alreadyTaken: alreadyTakenAcrossDryRun,
     });
   } catch (e) {
     proposals.push({ ...c, query, proposed: null, error: e.message });

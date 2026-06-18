@@ -56,24 +56,68 @@ function isLicenseAllowed(license, registry) {
 
 // ── Primary dispatcher by `kind` ──────────────────────────────────
 
-async function fetchPrimary(primary, { mission, slot, query }, registry) {
+// ──────────────────────────────────────────────────────────────────────
+// Per-pick dedup (Slice A v3 / Stage 2 diversification)
+//
+// Tonight's v2 apply landed because the resolver returns top-1 per
+// scraper — so 6 OTV missions all received the same Hubble photo, 3
+// Vostok missions all received the same Vostok image, etc. The fix is
+// to dedupe across slots AND across missions within a single dry-run
+// pass: a candidate that's already been picked for ANY (mission, slot)
+// is skipped, falling through to the next candidate or the next tier.
+//
+// Each scraper takes ctx.alreadyTaken (a Set) and skips candidates
+// whose `takenKey(source_type, asset_id)` is already in it. The picker
+// adds the chosen key to the set so subsequent calls see it. Reset by
+// the caller per dry-run; the slice-a-dryrun.mjs script seeds an empty
+// Set and reuses it across every (mission, slot) it resolves.
+// ──────────────────────────────────────────────────────────────────────
+
+export function takenKey(sourceType, assetId) {
+  return `${sourceType}|${assetId}`;
+}
+
+/**
+ * Walk a candidate list, return the first that passes the gate AND
+ * isn't already taken. Updates `alreadyTaken` in place.
+ *
+ * @template T
+ * @param {T[]} candidates  Pre-sorted by relevance/score (best first).
+ * @param {(c: T) => boolean} gate
+ * @param {(c: T) => string | null} keyOf   Returns null when the
+ *   candidate has no stable id (skip dedup for that candidate).
+ * @param {Set<string>} alreadyTaken
+ * @returns {T | null}
+ */
+export function pickWithDedup(candidates, gate, keyOf, alreadyTaken) {
+  for (const c of candidates) {
+    const key = keyOf(c);
+    if (key && alreadyTaken.has(key)) continue;
+    if (!gate(c)) continue;
+    if (key) alreadyTaken.add(key);
+    return c;
+  }
+  return null;
+}
+
+async function fetchPrimary(primary, { mission, slot, query, alreadyTaken }, registry) {
   // Skip auto-disabled or excluded-license primaries up-front.
   if (!isLicenseAllowed(primary.license, registry)) return null;
 
   switch (primary.kind) {
     case 'json-api':
       if (primary.url.includes('images-api.nasa.gov')) {
-        return await nasaImagesApi(primary, query);
+        return await nasaImagesApi(primary, query, alreadyTaken);
       }
       return null;
     case 'wikimedia-category':
-      return await wikimediaCategoryLookup(primary, query);
+      return await wikimediaCategoryLookup(primary, query, alreadyTaken);
     case 'flickr-album':
       // Try the public Flickr search HTML scraper first; fall back to
       // a curation file if the scraper returns nothing (e.g. Russian-
       // only Roscosmos titles failing the English-token gate).
       return (
-        (await flickrPublicScrape(primary, query)) ??
+        (await flickrPublicScrape(primary, query, alreadyTaken)) ??
         (await tryCuratedFallback(primary, { mission, slot }))
       );
     case 'scrape-mission-page':
@@ -82,19 +126,19 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
       // the curation file (or null) if not implemented.
       if (primary.url.includes('esahubble.org')) {
         return (
-          (await esahubbleScrape(primary, query)) ??
+          (await esahubbleScrape(primary, query, alreadyTaken)) ??
           (await tryCuratedFallback(primary, { mission, slot }))
         );
       }
       if (primary.url.includes('esa.int/ESA_Multimedia')) {
         return (
-          (await esaMultimediaScrape(primary, query)) ??
+          (await esaMultimediaScrape(primary, query, alreadyTaken)) ??
           (await tryCuratedFallback(primary, { mission, slot }))
         );
       }
       if (primary.url.includes('sci.esa.int/web/')) {
         return (
-          (await sciEsaIntScrape(primary, { mission, query })) ??
+          (await sciEsaIntScrape(primary, { mission, query }, alreadyTaken)) ??
           (await tryCuratedFallback(primary, { mission, slot }))
         );
       }
@@ -106,7 +150,7 @@ async function fetchPrimary(primary, { mission, slot, query }, registry) {
 
 // ── Tier 1 primary: NASA Image and Video Library ──────────────────
 
-async function nasaImagesApi(primary, query) {
+async function nasaImagesApi(primary, query, alreadyTaken = new Set()) {
   const search =
     `${primary.url}?` +
     new URLSearchParams({
@@ -128,11 +172,14 @@ async function nasaImagesApi(primary, query) {
       };
     })
     .filter((x) => x.nasa_id && x.title);
-  // Apply relevance gate — pick first candidate that passes. Per-source
-  // threshold from registry (NASA = 0.5 loose; default 0.66).
+  // Apply relevance gate — pick first un-taken candidate that passes.
+  // Per-source threshold from registry (NASA = 0.5 loose; default 0.66).
   const threshold = primary.relevance_threshold;
-  const usable = candidates.find(
+  const usable = pickWithDedup(
+    candidates,
     (c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted,
+    (c) => takenKey('nasa-image-library', c.nasa_id),
+    alreadyTaken,
   );
   if (!usable) return null;
 
@@ -164,7 +211,7 @@ async function nasaImagesApi(primary, query) {
 
 // ── Tier 1 primary: Wikimedia category (e.g. grandfathered SpaceX) ──
 
-async function wikimediaCategoryLookup(primary, query) {
+async function wikimediaCategoryLookup(primary, query, alreadyTaken = new Set()) {
   // Search within a specific Commons category.
   const match = primary.url.match(/Category:([^?]+)/);
   if (!match) return null;
@@ -195,7 +242,12 @@ async function wikimediaCategoryLookup(primary, query) {
     .sort((a, b) => b.score - a.score);
   if (scored.length === 0 || scored[0].score === 0) return null;
   // Apply relevance gate using the filename as a title proxy.
-  const pickEntry = scored.find((x) => scoreRelevance({ title: x.f }, query).accepted);
+  const pickEntry = pickWithDedup(
+    scored,
+    (x) => scoreRelevance({ title: x.f }, query).accepted,
+    (x) => takenKey('wikimedia-grandfathered', x.f),
+    alreadyTaken,
+  );
   if (!pickEntry) return null;
   const pick = pickEntry.f;
   return {
@@ -219,7 +271,7 @@ async function wikimediaCategoryLookup(primary, query) {
 // bodies. Boundary-case agency: Hubble is NASA/ESA joint; we credit
 // `ESA/Hubble` per their attribution policy (esahubble.org/copyright/).
 
-async function esahubbleScrape(primary, query) {
+async function esahubbleScrape(primary, query, alreadyTaken = new Set()) {
   const searchUrl = `https://esahubble.org/images/?search=${encodeURIComponent(query)}`;
   const res = await fetch(searchUrl, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
@@ -252,10 +304,13 @@ async function esahubbleScrape(primary, query) {
   });
   const details = (await Promise.all(detailFetches)).filter(Boolean);
 
-  // Gate per candidate; pick first that passes.
+  // Gate per candidate; pick first that passes AND isn't already taken.
   const threshold = primary.relevance_threshold;
-  const usable = details.find(
-    (d) => d.title && scoreRelevance({ title: d.title }, query, { threshold }).accepted,
+  const usable = pickWithDedup(
+    details,
+    (d) => !!d.title && scoreRelevance({ title: d.title }, query, { threshold }).accepted,
+    (d) => takenKey('esahubble', d.id),
+    alreadyTaken,
   );
   if (!usable) return null;
 
@@ -277,7 +332,7 @@ async function esahubbleScrape(primary, query) {
 // On a hit, fetch the detail page to extract the full-res image URL
 // (the first /var/esa/storage/.../<filename>.jpg WITHOUT _card_medium).
 
-async function esaMultimediaScrape(primary, query) {
+async function esaMultimediaScrape(primary, query, alreadyTaken = new Set()) {
   const searchUrl = `https://www.esa.int/ESA_Multimedia/Search?Type=I&q=${encodeURIComponent(query)}`;
   const res = await fetch(searchUrl, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
@@ -297,10 +352,13 @@ async function esaMultimediaScrape(primary, query) {
   }
   if (candidates.length === 0) return null;
 
-  // Gate against the slug-as-title.
+  // Gate against the slug-as-title, skipping anything already taken.
   const threshold = primary.relevance_threshold;
-  const matched = candidates.find(
+  const matched = pickWithDedup(
+    candidates,
     (c) => scoreRelevance({ title: c.slug }, query, { threshold }).accepted,
+    (c) => takenKey('esa-multimedia', c.url),
+    alreadyTaken,
   );
   if (!matched) return null;
 
@@ -341,7 +399,7 @@ async function esaMultimediaScrape(primary, query) {
 // We sample the listing for image URLs directly to keep the call count
 // down (one HTTP request per attempted mission).
 
-async function sciEsaIntScrape(primary, { mission, query }) {
+async function sciEsaIntScrape(primary, { mission, query }, alreadyTaken = new Set()) {
   // Substitute {mission} placeholder with the slug. The registry URL
   // template is e.g. `https://sci.esa.int/web/{mission}/multimedia-gallery`.
   const url = primary.url.replace('{mission}', encodeURIComponent(mission));
@@ -381,10 +439,18 @@ async function sciEsaIntScrape(primary, { mission, query }) {
   }
   if (candidates.length === 0) return null;
 
-  // Pick the first candidate. The listing is mission-scoped already so
-  // gating-by-title is unnecessary (and unreliable — many listing items
-  // share generic alt-text). Per-mission URL is the relevance signal.
-  const picked = candidates[0];
+  // Walk listing in order, take the first un-taken candidate. The listing
+  // is mission-scoped already so gating-by-title is unnecessary (and
+  // unreliable — many listing items share generic alt-text); per-mission
+  // URL is the relevance signal. Dedup keeps slot N from picking the same
+  // gallery image as slot N-1.
+  const picked = pickWithDedup(
+    candidates,
+    () => true,
+    (c) => takenKey('sci-esa-int', c),
+    alreadyTaken,
+  );
+  if (!picked) return null;
   return {
     source_type: 'sci-esa-int',
     source_url: url,
@@ -402,7 +468,7 @@ async function sciEsaIntScrape(primary, { mission, query }) {
 // titles + thumbnail URLs we can parse. Roscosmos / ESA / SpaceX
 // (grandfathered CC0 era) all expose this surface.
 
-async function flickrPublicScrape(primary, query) {
+async function flickrPublicScrape(primary, query, alreadyTaken = new Set()) {
   // Extract user-path from primary.url. flickr.com/photos/<userPath>/
   const userMatch = primary.url.match(/flickr\.com\/photos\/([^/?]+)/);
   if (!userMatch) return null;
@@ -447,8 +513,12 @@ async function flickrPublicScrape(primary, query) {
   // Apply relevance gate. Skipping Cyrillic-titled photos is OK —
   // we fall back to Commons after the gate filters everything out.
   const threshold = primary.relevance_threshold;
-  const usable = candidates.find(
+  const userPath2 = userPath; // capture for closure below
+  const usable = pickWithDedup(
+    candidates,
     (c) => scoreRelevance({ title: c.title }, query, { threshold }).accepted,
+    (c) => takenKey(`${userPath2.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-flickr`, c.id),
+    alreadyTaken,
   );
   if (!usable) return null;
 
@@ -522,14 +592,14 @@ async function tryTier2(registry, query, ctx = {}) {
     if (inst.id === 'smithsonian-openaccess') {
       result = await smithsonianSearch(inst, query, ctx);
     } else if (inst.id === 'nara-rg-255') {
-      result = await naraRG255Search(inst, query);
+      result = await naraRG255Search(inst, query, ctx.alreadyTaken);
     }
     if (result) return result;
   }
   return null;
 }
 
-async function naraRG255Search(inst, query) {
+async function naraRG255Search(inst, query, alreadyTaken = new Set()) {
   // NARA Catalog API v2. Requires api_key obtainable for free by email
   // Catalog_API@nara.gov. Without the key, this function silently
   // returns null so the resolver falls through to tier 3 Commons.
@@ -550,12 +620,20 @@ async function naraRG255Search(inst, query) {
   if (!res.ok) return null;
   const json = await res.json();
   const items = json?.body?.hits?.hits ?? json?.opaResponse?.results?.result ?? [];
-  const usable = items.find((it) => {
-    const dat = it._source ?? it.description ?? it;
-    if (!(dat?.naId && (dat?.digitalObjects?.[0]?.objectUrl || dat?.objects?.[0]?.file?.url)))
-      return false;
-    return scoreRelevance({ title: dat.title }, query).accepted;
-  });
+  const usable = pickWithDedup(
+    items,
+    (it) => {
+      const dat = it._source ?? it.description ?? it;
+      if (!(dat?.naId && (dat?.digitalObjects?.[0]?.objectUrl || dat?.objects?.[0]?.file?.url)))
+        return false;
+      return scoreRelevance({ title: dat.title }, query).accepted;
+    },
+    (it) => {
+      const dat = it._source ?? it.description ?? it;
+      return dat?.naId ? takenKey('nara-rg-255', dat.naId) : null;
+    },
+    alreadyTaken,
+  );
   if (!usable) return null;
   const dat = usable._source ?? usable.description ?? usable;
   const image_url = dat?.digitalObjects?.[0]?.objectUrl ?? dat?.objects?.[0]?.file?.url;
@@ -592,19 +670,24 @@ async function smithsonianSearch(inst, query, ctx = {}) {
   const rows = json?.response?.rows ?? [];
   // Prefer NASM-unit + CC0 + has-real-media. unitCode lives on the row.
   // Per-source threshold (Smithsonian = 1.0 strict per registry).
-  // `seenIds` lets the caller exclude already-used NASM artifacts so
-  // we don't return the same record for every slot of a mission
-  // (Fix B from the A-1 dry-run review — apollo-csm-block-i was
-  // shipping the same NASM record for all 5 slots).
+  // Per-call seenIds (kept for back-compat) AND the broader alreadyTaken
+  // (Stage 2 cross-mission dedup) both block re-pick — either signal
+  // skips the row.
   const threshold = inst.relevance_threshold;
   const seenIds = ctx?.seenIds ?? new Set();
-  const usable = rows.find((r) => {
-    if (r?.unitCode !== 'NASM') return false;
-    if (seenIds.has(r.id)) return false;
-    const media = r?.content?.descriptiveNonRepeating?.online_media?.media?.[0];
-    if (!(media?.usage?.access === 'CC0' && media?.content)) return false;
-    return scoreRelevance({ title: r.title }, query, { threshold }).accepted;
-  });
+  const alreadyTaken = ctx?.alreadyTaken ?? new Set();
+  const usable = pickWithDedup(
+    rows,
+    (r) => {
+      if (r?.unitCode !== 'NASM') return false;
+      if (seenIds.has(r.id)) return false;
+      const media = r?.content?.descriptiveNonRepeating?.online_media?.media?.[0];
+      if (!(media?.usage?.access === 'CC0' && media?.content)) return false;
+      return scoreRelevance({ title: r.title }, query, { threshold }).accepted;
+    },
+    (r) => (r?.id ? takenKey('smithsonian-openaccess', r.id) : null),
+    alreadyTaken,
+  );
   if (!usable) return null;
   const media = usable.content.descriptiveNonRepeating.online_media.media[0];
   // Prefer the high-res JPEG resource over the IDS delivery service URL
@@ -786,7 +869,7 @@ async function commonsFileHasSpaceCategory(filename) {
   }
 }
 
-async function tier3CommonsFailover(registry, query) {
+async function tier3CommonsFailover(registry, query, alreadyTaken = new Set()) {
   const t3 = registry.tier_3_failover;
   // Fix D — enrich Commons query with "spacecraft OR mission OR NASA OR
   // space" so search results are biased toward space content even before
@@ -823,10 +906,13 @@ async function tier3CommonsFailover(registry, query) {
   const photos = candidates.filter((c) => /\.(jpg|jpeg|png)$/i.test(c));
   let pick = null;
   for (const candidate of photos) {
+    const key = takenKey('wikimedia-commons', candidate);
+    if (alreadyTaken.has(key)) continue;
     if (!scoreRelevance({ title: candidate }, query, { threshold }).accepted) continue;
     const isSpace = await commonsFileHasSpaceCategory(candidate);
     if (isSpace === false) continue; // category-verified non-space; reject
     pick = candidate;
+    alreadyTaken.add(key);
     break;
   }
   if (!pick) return null;
@@ -882,13 +968,29 @@ function agencyTiersFor(agencyStr) {
  * Resolve a single (mission, slot, agency, query) tuple. Tries tier 1
  * (per-agency primaries) → tier 2 (institutional) → tier 3 (Commons).
  * Returns the first successful resolution.
+ *
+ * @param {object} opts
+ * @param {string} opts.mission
+ * @param {string} opts.slot
+ * @param {string} opts.agency
+ * @param {string} opts.query
+ * @param {Set<string>} [opts.seenIds]       Legacy per-call Smithsonian dedup set.
+ * @param {Set<string>} [opts.alreadyTaken]  Dry-run-scoped dedup set across
+ *   ALL scrapers and ALL (mission, slot) tuples. Created/owned by the
+ *   caller (slice-a-dryrun.mjs) and passed in here. Keyed by
+ *   `${source_type}|${asset_id}`. Mutated in place — any scraper that
+ *   picks a candidate adds its key. Pass an empty Set the first time;
+ *   reuse the same Set for every subsequent resolveAgencyImage call in
+ *   the same dry-run so no two missions share an asset.
  */
-export async function resolveAgencyImage({ mission, slot, agency, query, seenIds }) {
+export async function resolveAgencyImage({ mission, slot, agency, query, seenIds, alreadyTaken }) {
   const registry = loadRegistry();
   const tiers = agencyTiersFor(agency);
-  // ctx threads call-scoped state (seenIds for per-mission Smithsonian
+  // ctx threads call-scoped state (seenIds for legacy Smithsonian dedup,
+  // alreadyTaken for the broader Stage 2 cross-source / cross-mission
   // dedup) down to resolver functions that need it.
-  const ctx = { seenIds: seenIds ?? new Set() };
+  const taken = alreadyTaken ?? new Set();
+  const ctx = { seenIds: seenIds ?? new Set(), alreadyTaken: taken };
 
   // TIER 1 — agency primaries
   for (const agencyKey of tiers) {
@@ -900,7 +1002,11 @@ export async function resolveAgencyImage({ mission, slot, agency, query, seenIds
     }
     for (const primary of agencyEntry.primaries ?? []) {
       try {
-        const result = await fetchPrimary(primary, { mission, slot, query }, registry);
+        const result = await fetchPrimary(
+          primary,
+          { mission, slot, query, alreadyTaken: taken },
+          registry,
+        );
         if (result) return result;
       } catch (e) {
         console.error(`    [${agencyKey}/${primary.kind}] ${e.message}`);
@@ -921,7 +1027,7 @@ export async function resolveAgencyImage({ mission, slot, agency, query, seenIds
 
   // TIER 3 — Wikimedia Commons failover
   try {
-    return await tier3CommonsFailover(registry, query);
+    return await tier3CommonsFailover(registry, query, taken);
   } catch (e) {
     console.error(`    [tier3] ${e.message}`);
     return null;

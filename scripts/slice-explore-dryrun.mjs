@@ -45,6 +45,10 @@ const out = {
   proposals: [],
 };
 
+// Stage 2 dry-run-scoped dedup: prevents the same Hubble image being
+// returned for multiple explore targets.
+const alreadyTakenAcrossDryRun = new Set();
+
 for (const t of TARGETS) {
   process.stderr.write(`  → ${t.surface}/${t.id} q="${t.query}"… `);
   try {
@@ -54,6 +58,7 @@ for (const t of TARGETS) {
       agency: 'ESA',
       query: t.query,
       seenIds: new Set(),
+      alreadyTaken: alreadyTakenAcrossDryRun,
     });
     if (result && result.source_type === 'esahubble') {
       out.proposals.push({

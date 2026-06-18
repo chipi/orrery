@@ -1,0 +1,17 @@
+{
+  "_about": "Whitelist of image_urls that legitimately appear in multiple missions / surfaces. The cross-mission and cross-mission-basename dedup filters in scripts/slice-a-salvage.mjs consult this registry and allow shared appearances. Populated from Marko's `cross-mission-share-ok` exception tags in the /dev/slice-a-review labeling. Add new entries as: { image_url: <url>, missions: [<id>, ...], rationale: <one-liner> }",
+  "_curator": "marko",
+  "_initial_population_at": "2026-06-18",
+  "shared": [
+    {
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo%209%20launch.jpg",
+      "missions": ["apollo9", "saturn-v", "ksc-launch-complex-39a"],
+      "rationale": "Apollo 9 Saturn V launch frame — equally a hero for the mission AND for the launcher + launch-complex galleries. Marko `cross-mission-share-ok` tag, round-1 2026-06-18: 'good image for launcher and launch site as well'."
+    },
+    {
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%20TMA-16%20relocates%20from%20Zvezda%20Service%20Module.jpg",
+      "missions": ["soyuz-tma", "soyuz-launcher", "gagarins-start"],
+      "rationale": "Soyuz-TMA against ISS / Earth backdrop — Marko labeled this 'old image is amazing, good for launcher and launch site' (round-1 2026-06-18, share-ok tag)."
+    }
+  ]
+}

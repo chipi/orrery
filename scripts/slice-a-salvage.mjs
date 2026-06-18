@@ -58,16 +58,32 @@ const ENABLED_FILTERS = new Set(
 );
 const LIMIT = typeof args.limit === 'string' ? parseInt(args.limit, 10) : Infinity;
 const VISION_THROTTLE_MS = parseInt(args['vision-throttle'] ?? '200', 10);
-// Min-bytes default raised from 50K → 100K (round 2 lesson from
-// Marko's labeling: 4 of 11 rejects were tagged `low-resolution`,
-// all under 100 KB. 50 KB is too lax — real hero images are >100 KB
-// once re-encoded to JPEG q80 @ 1600px.
-const MIN_BYTES = parseInt(args['min-bytes'] ?? '100000', 10);
+// Per-source min-bytes table (round 3 lesson — round 2 used a single
+// 100 KB floor but 3 of 4 `low-resolution` rejects came from
+// wikimedia-commons and were just over 100 KB. Round-3 tightens
+// per-source: Commons needs more bytes because its hero candidates
+// run JPEG q80 at 1600px and legitimately hit 150 KB+. esahubble
+// stays at 100 KB (its archive is already higher quality).
+// CLI --min-bytes=N overrides the default for ALL sources.
+const MIN_BYTES_OVERRIDE = typeof args['min-bytes'] === 'string' ? parseInt(args['min-bytes'], 10) : null;
+const MIN_BYTES_BY_SOURCE = {
+  'wikimedia-commons': 150_000,
+  esahubble: 100_000,
+  jaxa: 100_000,
+  'nasa-image-library': 100_000,
+  'smithsonian-openaccess': 100_000,
+  'esa-multimedia': 100_000,
+  default: 100_000,
+};
+function minBytesFor(sourceType) {
+  if (MIN_BYTES_OVERRIDE != null) return MIN_BYTES_OVERRIDE;
+  return MIN_BYTES_BY_SOURCE[sourceType] ?? MIN_BYTES_BY_SOURCE.default;
+}
 const SKIP_NETWORK = args['skip-network'] === 'true';
 const OUTPUT_PATH = typeof args.output === 'string' ? args.output : 'static/data/slice-a-salvage-result.json';
 
 console.log(`slice-a-salvage: filters=${[...ENABLED_FILTERS].join(',')} limit=${LIMIT === Infinity ? '∞' : LIMIT}`);
-console.log(`slice-a-salvage: vision gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}; min-bytes=${MIN_BYTES}`);
+console.log(`slice-a-salvage: vision gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}; min-bytes per-source (override=${MIN_BYTES_OVERRIDE ?? 'none'})`);
 
 // ── Load all dry-run JSONs ─────────────────────────────────────────────
 const dryrunPaths = [];
@@ -178,14 +194,32 @@ if (ENABLED_FILTERS.has('intra-mission')) {
   console.log(`  dropped ${dropped} / ${allProposals.length}`);
 }
 
+// Load the cross-mission share-ok whitelist (rule 6 — legitimate
+// cross-mission appearances Marko has explicitly approved). Used by
+// the cross-mission and cross-mission-basename filters to skip dedup
+// for whitelisted image_urls.
+const SHARE_OK = (() => {
+  try {
+    const raw = JSON.parse(readFileSync('static/data/cross-mission-share-ok.json', 'utf8'));
+    return new Set((raw.shared ?? []).map((e) => e.image_url));
+  } catch {
+    return new Set();
+  }
+})();
+
 // Filter 3: cross-mission-dupe — keep first occurrence per image_url across missions
 if (ENABLED_FILTERS.has('cross-mission')) {
   console.log('\nfilter: cross-mission');
   const seen = new Map(); // image_url → first proposal_id
   let dropped = 0;
+  let whitelisted = 0;
   for (const p of allProposals) {
     const key = p.proposed.image_url;
     if (!key) continue;
+    if (SHARE_OK.has(key)) {
+      whitelisted++;
+      continue; // legitimate cross-mission appearance — don't dedup
+    }
     const existing = seen.get(key);
     if (existing && existing !== p.proposal_id) {
       addDrop(p.proposal_id, `cross-mission-dupe: same image_url as ${existing}`);
@@ -194,7 +228,7 @@ if (ENABLED_FILTERS.has('cross-mission')) {
       seen.set(key, p.proposal_id);
     }
   }
-  console.log(`  dropped ${dropped} / ${allProposals.length}`);
+  console.log(`  dropped ${dropped} / ${allProposals.length}${whitelisted ? `  (share-ok whitelisted: ${whitelisted})` : ''}`);
 }
 
 // Filter 3b: cross-mission-basename — same filename across missions with
@@ -203,16 +237,33 @@ if (ENABLED_FILTERS.has('cross-mission')) {
 // `duplicate` in round 1.
 if (ENABLED_FILTERS.has('cross-mission-basename')) {
   console.log('\nfilter: cross-mission-basename');
+  // For most URLs, basename is the path-tail without query. But some
+  // CDN endpoints use a generic path-tail (Smithsonian IDS: `download`,
+  // `deliveryService`) with the real identity in the `?id=` query
+  // parameter. Round-2 mis-collapsed 54 of 56 Smithsonian URLs because
+  // every one's path tail was `download`. Now we detect those endpoints
+  // and use the id parameter instead.
   const basenameOf = (url) => {
     if (!url) return null;
-    const noQuery = url.split('?')[0];
-    const slash = noQuery.lastIndexOf('/');
-    const base = slash >= 0 ? noQuery.slice(slash + 1) : noQuery;
-    return decodeURIComponent(base).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+    try {
+      const u = new URL(url);
+      const tail = u.pathname.split('/').pop() ?? '';
+      if (/^(download|deliveryService|render|view)$/i.test(tail)) {
+        const id = u.searchParams.get('id') ?? u.searchParams.get('Id');
+        if (id) return id.toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+      }
+      const noQuery = url.split('?')[0];
+      const slash = noQuery.lastIndexOf('/');
+      const base = slash >= 0 ? noQuery.slice(slash + 1) : noQuery;
+      return decodeURIComponent(base).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+    } catch {
+      return null;
+    }
   };
   const seen = new Map(); // basename → first proposal_id
   let dropped = 0;
   for (const p of allProposals) {
+    if (SHARE_OK.has(p.proposed.image_url)) continue; // share-ok whitelist
     const b = basenameOf(p.proposed.image_url);
     if (!b || b.length < 6) continue; // too generic
     const existing = seen.get(b);
@@ -262,8 +313,9 @@ if (ENABLED_FILTERS.has('size') && !SKIP_NETWORK) {
       }
       const cl = parseInt(res.headers.get('content-length') ?? '0', 10);
       v.size = cl;
-      if (!res.ok || cl < MIN_BYTES) {
-        addDrop(p.proposal_id, `size: HTTP ${res.status} content-length=${cl}`);
+      const minBytes = minBytesFor(p.proposed?.source_type);
+      if (!res.ok || cl < minBytes) {
+        addDrop(p.proposal_id, `size: HTTP ${res.status} content-length=${cl} (< ${minBytes} for ${p.proposed?.source_type})`);
         dropped++;
       }
       await new Promise((r) => setTimeout(r, throttle));

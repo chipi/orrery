@@ -68,6 +68,16 @@ if (APPROVALS_PATH) {
   );
 }
 
+// Rule 7 — collision-path tracker. When two approved proposal_ids
+// target the same `surface/missionId/slot`, the second write would
+// overwrite the first silently. Track every (surface, missionId, slot)
+// triple we've already written this run; on collision log a warning,
+// skip the second write, and account it under `skipped_collision`.
+const COLLISION_SEEN = new Set();
+function collisionKeyFor(surface, missionId, slot) {
+  return `${surface}|${missionId}|${slot}`;
+}
+
 // Load all dry-run files. slice-a-1-dryrun.json was previously skipped
 // as "legacy NASA superset"; the v3 approval surface emits proposal_ids
 // that match it (prefix "1-…") so we INCLUDE it now. slice-explore-
@@ -222,6 +232,18 @@ for (const file of dryrunFiles) {
         : isPanelLike
           ? PANEL_SOURCES
           : MISSION_SOURCES;
+
+    // Rule 7 — duplicate target collision check.
+    const collisionKey = collisionKeyFor(surfaceDir, missionId, p.slot);
+    if (COLLISION_SEEN.has(collisionKey)) {
+      console.log(
+        `  ⚠ ${agency.padEnd(20)} collision skip: ${surfaceDir}/${missionId}/${p.slot} already applied (proposal_id=${proposalId})`,
+      );
+      agencyStats.skipped_collision = (agencyStats.skipped_collision ?? 0) + 1;
+      overallStats.skipped_collision = (overallStats.skipped_collision ?? 0) + 1;
+      continue;
+    }
+    COLLISION_SEEN.add(collisionKey);
 
     const overrideTag = Object.keys(overrides).length > 0 ? ' [override]' : '';
     if (DRY_RUN) {

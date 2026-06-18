@@ -202,6 +202,27 @@ export function scoreRelevance(record, query, ctx = {}) {
     'restaurant',
     'hotel',
     'orange juice',
+    // People-context anti-tokens (Slice A v3 round-3 lesson 2026-06-18):
+    // reject candidates titled as people gatherings without spacecraft.
+    // Workplace terms (assembly hall, factory, clean room) are
+    // intentionally NOT here — spacecraft + workshop context is a
+    // legitimate hero archetype.
+    'press conference',
+    'press briefing',
+    'award ceremony',
+    'awards ceremony',
+    'ceremony',
+    'team photo',
+    'group photo',
+    'staff photo',
+    'photo opportunity',
+    'photo session',
+    'meeting',
+    'briefing',
+    'presentation',
+    'signing',
+    'visit',
+    'tour',
   ];
   const notClearlyUnrelated = !antiTokens.some((t) => {
     const safe = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

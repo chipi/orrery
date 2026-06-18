@@ -353,7 +353,8 @@
       "coverage": "National Air and Space Museum (Apollo, Mercury, Gemini, Skylab, Shuttle, Soviet artefacts) + 18 other Smithsonian museums",
       "release_date": "2020-02-26",
       "relevance_threshold": 1.0,
-      "notes": "~2.8M+ items released CC0 in Feb 2020. NASM Rights & Reproductions page tags CC0 vs 'Usage Conditions Apply' per item. Apollo 11 Command Module record verified live with CC0 mark. Threshold 1.0 (strict — 3/3 signals required) because NASM keyword-matches return many tangential collectibles for non-NASA missions (Slice B regression case)."
+      "auto_fetch_disabled": true,
+      "notes": "~2.8M+ items released CC0 in Feb 2020. AUTO_FETCH_DISABLED 2026-06-18 after Slice A v3 round-1+2 labeling: 52 of 56 NASM candidates rejected (93%) — the few wins (3 unique Apollo/Pioneer hero records) are recoverable manually. IDS service returns a small pool of popular icons fuzzy-matched to many missions, mostly tangential. Re-enable per-call only when a maintainer has confirmed NASM will yield (e.g. Apollo-era NASA with explicit query)."
     },
     {
       "id": "nara-rg-255",

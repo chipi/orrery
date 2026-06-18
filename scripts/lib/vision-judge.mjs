@@ -42,6 +42,8 @@ Answer 'unrelated' for ALL of:
 - Crew portraits, team photos, press conferences, award ceremonies (UNLESS the image is unambiguously a launch-day or mission-defining moment — and even then, only if the spacecraft / mission hardware is clearly visible).
 - Mockups, replicas, museum displays, full-scale models, training mockups.
 - Infographics, diagrams, charts, technical illustrations, animations, posters, logos, mission patches.
+- Screen captures / UI dashboards / data-display panels / map-tile composites / app overlays — anything that's a captured frame from a viewer or visualisation rather than a photographic image (round-3 lesson 2026-06-18: sentinel-copernicus screenshot slipped through at 0.92 confidence).
+- Team / staff portraits, press conferences, award ceremonies, briefings, meetings, photo opportunities, presentation rooms — people-in-an-office context without mission hardware visible. (NOTE: a clear assembly-hall / production-line / clean-room shot of the spacecraft itself IS acceptable — that's hardware-in-context, not a people portrait.)
 - Tangential thematic matches — e.g. "Hubble Space Telescope" satisfying an "OTV" query because both are spacecraft; ISRO crew portrait satisfying a "Gaganyaan" query because both involve crewed flight; GRAIL photo where LRO is a dot satisfying an "LRO" query.
 - Generic agency imagery (rocket assembly buildings, launch pads with no spacecraft visible, hardware integration shots without context).
 

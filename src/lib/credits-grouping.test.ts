@@ -213,6 +213,38 @@ describe('groupBySource', () => {
     const groups = groupBySource(SOURCES, [], []);
     expect(groups).toEqual([]);
   });
+  it('bundles cross-source reuse globally before grouping (Slice A v3 / Stage 1.4)', () => {
+    // Same upstream Hubble photo used by two missions; one mission has
+    // primary-agency 'ESA/Hubble', the other has 'NASA via Wikimedia
+    // Commons mirror'. Previously these would split into two source
+    // buckets and render twice on /credits. After bundle-first-group-
+    // after, they collapse into one bundle routed by the representative.
+    const shared = 'https://commons.wikimedia.org/wiki/Special:FilePath/Hubble.jpg';
+    const photos = [
+      makePhoto({
+        path: '/images/missions/mission-a/01.jpg',
+        agency: 'ESA/Hubble',
+        image_url: shared,
+        source_type: 'wikimedia-commons',
+        source_url: 'https://commons.wikimedia.org/wiki/File:Hubble.jpg',
+      }),
+      makePhoto({
+        path: '/images/missions/mission-b/01.jpg',
+        agency: 'NASA via Wikimedia Commons mirror',
+        image_url: shared,
+        source_type: 'wikimedia-commons',
+        source_url: 'https://commons.wikimedia.org/wiki/File:Hubble.jpg',
+      }),
+    ];
+    const groups = groupBySource(SOURCES, photos, []);
+    const totalBundles = groups.reduce((n, g) => n + g.bundles.length, 0);
+    expect(totalBundles).toBe(1);
+    // Both paths land under the one bundle that survived.
+    const onlyBundle = groups.flatMap((g) => g.bundles)[0];
+    expect(new Set(onlyBundle.paths)).toEqual(
+      new Set(['/images/missions/mission-a/01.jpg', '/images/missions/mission-b/01.jpg']),
+    );
+  });
   it('sorts photos by path within a group', () => {
     const photos = [
       makePhoto({

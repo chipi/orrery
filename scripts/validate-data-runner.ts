@@ -61,6 +61,11 @@ const TASKS: Task[] = [
     cmd: 'tsx',
     args: ['scripts/validate-allowlist-discipline.ts'],
   },
+  {
+    name: 'validate-credits-bundling',
+    cmd: 'tsx',
+    args: ['scripts/validate-credits-bundling.ts'],
+  },
 ];
 
 interface TaskResult {

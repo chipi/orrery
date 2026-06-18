@@ -293,14 +293,23 @@ export function groupBySource(
   photos: ImageProvenanceEntry[],
   texts: TextSourceEntry[],
 ): CreditsGroup[] {
-  type Acc = { source: SourceLogo; photos: ImageProvenanceEntry[]; texts: TextSourceEntry[] };
+  type Acc = { source: SourceLogo; bundles: PhotoBundle[]; texts: TextSourceEntry[] };
   const byId = new Map<string, Acc>(
-    sources.map((s) => [s.id, { source: s, photos: [], texts: [] }]),
+    sources.map((s) => [s.id, { source: s, bundles: [], texts: [] }]),
   );
-  for (const p of photos) {
-    const id = provenanceSourceId(p);
+  // Bundle photos GLOBALLY before splitting by source. Earlier this code
+  // bucketed per-source first and bundled per-bucket, which split the
+  // same upstream image into two bundles when its entries routed to
+  // different source-ids (e.g. one Hubble photo credited "ESA/Hubble"
+  // on one mission and "NASA via Commons" on another rendered twice on
+  // /credits). Bundling first guarantees one bundle per upstream image;
+  // the bundle's source-id follows its representative entry.
+  const sortedPhotos = [...photos].sort((a, b) => a.path.localeCompare(b.path));
+  const allBundles = bundlePhotos(sortedPhotos);
+  for (const bundle of allBundles) {
+    const id = provenanceSourceId(bundle.representative);
     const grp = byId.get(id) ?? byId.get('wikimedia-commons');
-    if (grp) grp.photos.push(p);
+    if (grp) grp.bundles.push(bundle);
   }
   for (const t of texts) {
     const id = textSourceId(t);
@@ -309,11 +318,10 @@ export function groupBySource(
   }
   const out: CreditsGroup[] = [];
   for (const acc of byId.values()) {
-    acc.photos.sort((a, b) => a.path.localeCompare(b.path));
+    acc.bundles.sort((a, b) => a.representative.path.localeCompare(b.representative.path));
     acc.texts.sort((a, b) => a.id.localeCompare(b.id));
-    const bundles = bundlePhotos(acc.photos);
-    if (bundles.length + acc.texts.length === 0) continue;
-    out.push({ source: acc.source, bundles, texts: acc.texts });
+    if (acc.bundles.length + acc.texts.length === 0) continue;
+    out.push({ source: acc.source, bundles: acc.bundles, texts: acc.texts });
   }
   return out;
 }

@@ -263,6 +263,38 @@ function gitHeadSha(): string | null {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// Sidecar URL → identifier helpers (Slice A v3 walker schema sync)
+// Sidecar shape evolved over time. Pre-2026-06 entries carry
+// `commons_file` + `commons_url`. Post-2026-06 ("Slice A") entries carry
+// `source_type` + `source_url` + `image_url` and may or may not include
+// `commons_file` / `nasa_id`. Walkers must derive identity from whatever
+// fields are present rather than reading one fixed key.
+// ──────────────────────────────────────────────────────────────────────
+
+function deriveCommonsFilename(url: string | undefined | null): string | null {
+  if (!url) return null;
+  if (url.includes('upload.wikimedia.org')) {
+    const m = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
+    if (m) return decodeURIComponent(m[1]);
+  }
+  if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {
+    const m = url.match(/Special:FilePath\/([^?]+)/);
+    if (m) return decodeURIComponent(m[1]);
+  }
+  if (url.includes('commons.wikimedia.org/wiki/File:')) {
+    const m = url.match(/wiki\/File:([^?]+)/);
+    if (m) return decodeURIComponent(m[1]);
+  }
+  return null;
+}
+
+function extractNasaIdFromUrl(url: string | undefined | null): string | null {
+  if (!url) return null;
+  const m = url.match(/images-assets\.nasa\.gov\/image\/([^/~]+)/);
+  return m ? m[1] : null;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // Wikimedia → ProvenanceEntry
 // ──────────────────────────────────────────────────────────────────────
 
@@ -335,25 +367,30 @@ function buildNasaEntry(opts: {
   missionId: string | null;
   agency: string;
   modifications: string[];
+  nasaId?: string | null;
+  sourceUrl?: string | null;
+  imageUrl?: string | null;
+  title?: string | null;
 }): ProvenanceEntry {
   const allow = getAllowlistEntry('PD-NASA')!;
   const titleBase = opts.missionId ?? basename(opts.localPath, extname(opts.localPath));
+  const resolvedNasaId = opts.nasaId ?? extractNasaIdFromUrl(opts.imageUrl ?? opts.sourceUrl);
   return {
     id: entryId(staticToServed(opts.localPath)),
     path: staticToServed(opts.localPath),
     source_type: 'nasa-images-api',
-    title: `NASA Images search result — ${titleBase} / "${opts.query}"`,
+    title: opts.title ?? `NASA Images search result — ${titleBase} / "${opts.query}"`,
     author: opts.agency,
     agency: opts.agency,
-    source_url: nasaSearchUrl(opts.query, opts.missionId),
-    image_url: null,
+    source_url: opts.sourceUrl ?? nasaSearchUrl(opts.query, opts.missionId),
+    image_url: opts.imageUrl ?? null,
     license_short: 'PD-NASA',
     license_url: allow.url,
     license_rationale: allow.rationale,
     modifications: opts.modifications,
     revid: null,
     pageid: null,
-    nasa_id: null,
+    nasa_id: resolvedNasaId ?? null,
     fetched_at: new Date().toISOString(),
   };
 }
@@ -483,11 +520,20 @@ async function buildMissionGalleryEntries(): Promise<ProvenanceEntry[]> {
  * id into MISSION_IMAGE_QUERIES (which would side-effect refetches).
  */
 type MissionCommonsSource = {
-  commons_file: string;
-  commons_url: string;
+  // Legacy pre-2026-06 fields:
+  commons_file?: string;
+  commons_url?: string;
+  // Slice A v3 fields (post-2026-06): one of these source shapes is present.
+  source_type?: 'wikimedia-commons' | 'nasa-image-library' | string;
+  source_url?: string;
+  image_url?: string;
+  nasa_id?: string;
+  nasa_title?: string;
+  // Common fields across both shapes:
   credit: string;
   license?: string;
   fetched_at?: string;
+  shared_with?: string;
 };
 
 /**
@@ -520,21 +566,69 @@ async function buildPanelCommonsSidecarEntries(
     if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
     else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
     else continue;
-    const agencyHuman = src.credit || 'Unknown';
-    out.push(
-      await buildWikimediaEntry({
-        localPath,
-        filename: src.commons_file,
-        fallbackAuthor: agencyHuman,
-        fallbackAgency: agencyHuman,
-        fallbackLicense: defaultLicenseForAgency(agencyHuman),
-        fallbackLicenseUrl: null,
-        fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
-        modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
-      }),
-    );
+    const entry = await buildSidecarEntry(localPath, src, { missionId: id, query: id });
+    if (entry) out.push(entry);
   }
   return out;
+}
+
+/**
+ * Schema-tolerant sidecar → ProvenanceEntry router.
+ *
+ * Handles three shapes:
+ *   1. Slice A NASA: { source_type: 'nasa-image-library', source_url, image_url, nasa_id?, credit, ... }
+ *   2. Slice A Commons: { source_type: 'wikimedia-commons', source_url, image_url, commons_file?, credit, ... }
+ *   3. Legacy: { commons_file, commons_url, credit, license? }
+ *
+ * Returns null when no usable identity can be derived (skipped, not failed).
+ * Logs a warning so the missing field is visible during build.
+ */
+async function buildSidecarEntry(
+  localPath: string,
+  src: MissionCommonsSource,
+  ctx: { missionId: string; query: string },
+): Promise<ProvenanceEntry | null> {
+  const agencyHuman = src.credit || 'Unknown';
+  const fallbackLicense = defaultLicenseForAgency(agencyHuman);
+  const fallbackRationale = defaultRationaleForAgency(agencyHuman);
+
+  // Slice A NASA shape → route to buildNasaEntry, preserve nasa_id + URLs.
+  if (src.source_type === 'nasa-image-library' || extractNasaIdFromUrl(src.image_url)) {
+    return buildNasaEntry({
+      localPath,
+      query: ctx.query,
+      missionId: ctx.missionId,
+      agency: agencyHuman,
+      modifications: ['downloaded-via-nasa-images-api', 'reencoded-jpeg'],
+      nasaId: src.nasa_id ?? extractNasaIdFromUrl(src.image_url ?? src.source_url),
+      sourceUrl: src.source_url ?? null,
+      imageUrl: src.image_url ?? null,
+      title: src.nasa_title ?? null,
+    });
+  }
+
+  // Commons shape (Slice A or legacy) → derive filename from whichever field carries it.
+  const filename =
+    src.commons_file ??
+    deriveCommonsFilename(src.image_url) ??
+    deriveCommonsFilename(src.source_url) ??
+    deriveCommonsFilename(src.commons_url);
+  if (!filename) {
+    console.warn(
+      `[provenance walker] skipping ${localPath}: sidecar entry has no commons_file, derivable filename, or NASA id`,
+    );
+    return null;
+  }
+  return buildWikimediaEntry({
+    localPath,
+    filename,
+    fallbackAuthor: agencyHuman,
+    fallbackAgency: agencyHuman,
+    fallbackLicense,
+    fallbackLicenseUrl: null,
+    fallbackLicenseRationale: fallbackRationale,
+    modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
+  });
 }
 
 async function buildMissionCommonsSidecarEntries(
@@ -560,19 +654,8 @@ async function buildMissionCommonsSidecarEntries(
     if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
     else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
     else continue; // file isn't on disk — skip silently
-    const agencyHuman = src.credit || 'Unknown';
-    out.push(
-      await buildWikimediaEntry({
-        localPath,
-        filename: src.commons_file,
-        fallbackAuthor: agencyHuman,
-        fallbackAgency: agencyHuman,
-        fallbackLicense: defaultLicenseForAgency(agencyHuman),
-        fallbackLicenseUrl: null,
-        fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
-        modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
-      }),
-    );
+    const entry = await buildSidecarEntry(localPath, src, { missionId, query: missionId });
+    if (entry) out.push(entry);
   }
   return out;
 }
@@ -1003,10 +1086,17 @@ async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
       if (await pathExists(`${baseLocal}.jpg`)) localPath = `${baseLocal}.jpg`;
       else if (await pathExists(`${baseLocal}.png`)) localPath = `${baseLocal}.png`;
       else continue; // sidecar declares a slot but disk has no file — skip
+      const filename = src.commons_file ?? deriveCommonsFilename(src.commons_url);
+      if (!filename) {
+        console.warn(
+          `[provenance walker] skipping ${localPath}: fleet Commons-shape entry has no commons_file or derivable filename`,
+        );
+        continue;
+      }
       out.push(
         await buildWikimediaEntry({
           localPath,
-          filename: src.commons_file,
+          filename,
           fallbackAuthor: agencyHuman,
           fallbackAgency: agencyHuman,
           fallbackLicense: defaultLicenseForAgency(agencyHuman),

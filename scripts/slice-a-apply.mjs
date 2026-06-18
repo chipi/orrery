@@ -32,6 +32,22 @@ const args = Object.fromEntries(
 const DRY_RUN = !!args['dry-run'];
 const AGENCY_FILTER = args.agency;
 const LIMIT = args.limit ? parseInt(args.limit, 10) : Infinity;
+// Slice A v3 / Stage 4 approval gate.
+//   --approvals=<path>  Only apply proposals whose proposal_id appears in
+//                       payload.approved[]. Skips everything else with a
+//                       counted "skipped_approval_gate" stat. Without this
+//                       flag the apply runs unconditionally (legacy
+//                       behaviour) — STAGED for the human-approved flow
+//                       only; never run unflagged after v3 ships.
+const APPROVALS_PATH = typeof args.approvals === 'string' ? args.approvals : null;
+let APPROVED_IDS = null;
+if (APPROVALS_PATH) {
+  const payload = JSON.parse(readFileSync(APPROVALS_PATH, 'utf8'));
+  APPROVED_IDS = new Set(payload.approved ?? []);
+  console.log(
+    `Approval gate active: ${APPROVED_IDS.size} approved proposals from ${APPROVALS_PATH}`,
+  );
+}
 
 // Load all agency dry-run files (or just one). Skip the legacy
 // slice-a-1-dryrun.json (NASA-specific from earlier work) — it's
@@ -131,6 +147,16 @@ for (const file of dryrunFiles) {
     // "no change", we still re-write to apply the gate's relevance verdict
     // (refresh attribution). Skip only if source_type identical and ship is false.
     // (No-op since ship_at_apply is the gate; here we just trust it.)
+
+    // Slice A v3 / Stage 4 approval gate.
+    if (APPROVED_IDS) {
+      const proposalId = `${agency.toLowerCase()}-${p.surface}-${p.missionId}-${p.slot}`;
+      if (!APPROVED_IDS.has(proposalId)) {
+        agencyStats.skipped_approval_gate = (agencyStats.skipped_approval_gate ?? 0) + 1;
+        overallStats.skipped_approval_gate = (overallStats.skipped_approval_gate ?? 0) + 1;
+        continue;
+      }
+    }
 
     processed++;
 

@@ -56,6 +56,12 @@ static/audit-report.html
 # lean-ctx MCP server cache (per-session; not source)
 .lean-ctx/
 
+# Slice A v3 approval decisions — live state written by the dev
+# /dev/slice-a-review route. Consumed by scripts/slice-a-apply.mjs
+# via --approvals=…; not source of truth in git (regenerated per
+# review session).
+static/data/slice-a-approvals.json
+
 # Argos Translate (scripts/wave23/argos_translate_wave23.py)
 .venv-argos/
 .xdg-data/

@@ -51,6 +51,16 @@ const TASKS: Task[] = [
     cmd: 'tsx',
     args: ['scripts/validate-gallery-counts.ts'],
   },
+  {
+    name: 'validate-provenance-walker',
+    cmd: 'tsx',
+    args: ['scripts/validate-provenance-walker.ts'],
+  },
+  {
+    name: 'validate-allowlist-discipline',
+    cmd: 'tsx',
+    args: ['scripts/validate-allowlist-discipline.ts'],
+  },
 ];
 
 interface TaskResult {

@@ -400,7 +400,8 @@ writeFileSync(
       generated_at: new Date().toISOString(),
       filters_run: [...ENABLED_FILTERS],
       min_ship_confidence: MIN_SHIP_CONFIDENCE,
-      min_bytes: MIN_BYTES,
+      min_bytes_override: MIN_BYTES_OVERRIDE,
+      min_bytes_by_source: MIN_BYTES_BY_SOURCE,
       source_dryrun_files: dryrunPaths,
       totals: {
         proposals: results.length,

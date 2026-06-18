@@ -176,6 +176,8 @@
     { id: 'credit-incorrect', label: 'credit-fix', tip: 'Image OK but credit / license needs override' },
     { id: 'wrong-orientation', label: 'orientation', tip: 'Sideways / upside down / mirrored' },
     { id: 'cross-mission-share-ok', label: 'share-ok', tip: 'Explicitly allow sharing across related missions (overrides cross-mission-dedup)' },
+    { id: 'duplicate', label: 'duplicate', tip: 'Proposal is a duplicate of another (same image already used elsewhere)' },
+    { id: 'stay-in-gallery', label: 'stay-in-gallery', tip: 'Current image is fine — it can stay in the gallery, no swap needed (pair with Reject)' },
   ];
 
   // Live state, seeded from the loaded approvals file.
@@ -263,11 +265,17 @@
       updated_at: new Date().toISOString(),
     };
     try {
-      const res = await fetch('./api', {
+      // Absolute path on origin — relative './api' resolves to /dev/api
+      // when SvelteKit serves the route without a trailing slash and the
+      // POST 404s silently.
+      const res = await fetch('/dev/slice-a-review/api', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ proposal_id: id, status, comment, tags, overrides }),
       });
+      if (!res.ok) {
+        console.error('approval save failed', res.status, await res.text());
+      }
       if (res.ok) {
         const out = await res.json();
         lastSavedAt = out.last_updated_at;
@@ -310,6 +318,39 @@
       // eslint-disable-next-line no-await-in-loop -- intentional serialisation
       await persist(p.proposal_id, status);
     }
+  }
+
+  // Re-POST every locally-tracked decision. Used to recover after an early
+  // bug where fetch('./api') resolved to /dev/api and POSTs 404'd silently —
+  // local state was correct but disk wasn't. Click once to flush.
+  let resyncing = $state(false);
+  let resyncCount = $state(0);
+  async function resyncAll() {
+    resyncing = true;
+    resyncCount = 0;
+    for (const [id, d] of Object.entries(decisions)) {
+      try {
+        const res = await fetch('/dev/slice-a-review/api', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            proposal_id: id,
+            status: d.status,
+            comment: d.comment ?? '',
+            tags: d.tags ?? [],
+            overrides: d.overrides ?? {},
+          }),
+        });
+        if (res.ok) {
+          resyncCount++;
+          const out = await res.json();
+          lastSavedAt = out.last_updated_at;
+        }
+      } catch (e) {
+        console.error('resync failed for', id, e);
+      }
+    }
+    resyncing = false;
   }
 </script>
 
@@ -611,6 +652,12 @@
     <button class="bulk manual" onclick={() => bulkSet('needs-manual')}>Manual visible</button>
     <button class="bulk reject" onclick={() => bulkSet('rejected')}>Reject visible</button>
     <button class="bulk skip" onclick={() => bulkSet('pending')}>Clear visible</button>
+    <button
+      class="bulk resync"
+      title="Re-POST every in-memory decision to the server. Use after a POST URL fix to flush local state to disk."
+      disabled={resyncing}
+      onclick={resyncAll}
+    >{resyncing ? `Resyncing… ${resyncCount}` : 'Resync to disk'}</button>
   </footer>
 </div>
 
@@ -710,11 +757,17 @@
   .card.needs-manual .actions .manual { background: #b08a2a; color: #fff; }
   .empty { padding: 40px; text-align: center; color: #6b7484; grid-column: 1 / -1; }
   footer { position: fixed; bottom: 0; left: 230px; right: 0; background: #131822; border-top: 1px solid #2d3340; padding: 12px 22px; display: flex; gap: 14px; align-items: center; z-index: 10; flex-wrap: wrap; }
-  .summary { color: #9aa3b2; margin-right: auto; }
+  /* Bulk buttons sit immediately after the summary on the LEFT.
+     The push-spacer that used to anchor them right is gone — wide
+     viewport now has empty space on the right, which keeps the
+     action cluster centred near where Marko's reading the stats. */
+  .summary { color: #9aa3b2; }
   .summary b { color: #d8dde6; }
   .bulk { padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; border: 1px solid #2d3340; }
   .bulk.approve { background: #2a8a4b; color: #fff; border-color: #2a8a4b; }
   .bulk.reject  { background: #7a2a2a; color: #fff; border-color: #7a2a2a; }
   .bulk.manual  { background: #b08a2a; color: #fff; border-color: #b08a2a; }
   .bulk.skip    { background: #1a1e28; color: #d8dde6; }
+  .bulk.resync  { background: #1f4dab; color: #fff; border-color: #1f4dab; }
+  .bulk.resync:disabled { opacity: 0.7; cursor: progress; }
 </style>

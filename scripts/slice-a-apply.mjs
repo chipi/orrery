@@ -34,18 +34,37 @@ const AGENCY_FILTER = args.agency;
 const LIMIT = args.limit ? parseInt(args.limit, 10) : Infinity;
 // Slice A v3 / Stage 4 approval gate.
 //   --approvals=<path>  Only apply proposals whose proposal_id appears in
-//                       payload.approved[]. Skips everything else with a
-//                       counted "skipped_approval_gate" stat. Without this
-//                       flag the apply runs unconditionally (legacy
-//                       behaviour) — STAGED for the human-approved flow
-//                       only; never run unflagged after v3 ships.
+//                       the payload AND whose status === 'approved'.
+//                       Honours per-decision overrides: if a decision
+//                       sets overrides.{credit,license,image_url,
+//                       source_type,source_url}, those replace the
+//                       proposed values before download + sidecar write.
+//
+// Accepts two payload shapes for back-compat:
+//   v3 (current):  { decisions: { <id>: { status, overrides, comment, tags } } }
+//   v2 (legacy):   { approved: [<id>, ...] }
+//
+// Without this flag the apply runs unconditionally (legacy behaviour).
+// Never run unflagged after v3 ships.
 const APPROVALS_PATH = typeof args.approvals === 'string' ? args.approvals : null;
 let APPROVED_IDS = null;
+let DECISIONS = {};
 if (APPROVALS_PATH) {
   const payload = JSON.parse(readFileSync(APPROVALS_PATH, 'utf8'));
-  APPROVED_IDS = new Set(payload.approved ?? []);
+  if (payload.decisions && typeof payload.decisions === 'object') {
+    DECISIONS = payload.decisions;
+    APPROVED_IDS = new Set(
+      Object.entries(DECISIONS)
+        .filter(([, d]) => d?.status === 'approved')
+        .map(([id]) => id),
+    );
+  } else if (Array.isArray(payload.approved)) {
+    APPROVED_IDS = new Set(payload.approved);
+  } else {
+    throw new Error(`Approvals payload at ${APPROVALS_PATH} has neither decisions{} nor approved[]`);
+  }
   console.log(
-    `Approval gate active: ${APPROVED_IDS.size} approved proposals from ${APPROVALS_PATH}`,
+    `Approval gate active: ${APPROVED_IDS.size} approved (of ${Object.keys(DECISIONS).length || 'n/a'} total decisions) from ${APPROVALS_PATH}`,
   );
 }
 
@@ -148,15 +167,26 @@ for (const file of dryrunFiles) {
     // (refresh attribution). Skip only if source_type identical and ship is false.
     // (No-op since ship_at_apply is the gate; here we just trust it.)
 
-    // Slice A v3 / Stage 4 approval gate.
+    // Slice A v3 / Stage 4 approval gate + per-decision overrides.
+    const proposalId = `${agency.toLowerCase()}-${p.surface}-${p.missionId}-${p.slot}`;
+    let overrides = {};
     if (APPROVED_IDS) {
-      const proposalId = `${agency.toLowerCase()}-${p.surface}-${p.missionId}-${p.slot}`;
       if (!APPROVED_IDS.has(proposalId)) {
         agencyStats.skipped_approval_gate = (agencyStats.skipped_approval_gate ?? 0) + 1;
         overallStats.skipped_approval_gate = (overallStats.skipped_approval_gate ?? 0) + 1;
         continue;
       }
+      overrides = DECISIONS?.[proposalId]?.overrides ?? {};
     }
+    // Apply overrides to a working copy so the original sidecar diff is
+    // honest about WHERE the data came from (resolver vs reviewer override).
+    const effective = {
+      source_type: overrides.source_type ?? p.proposed.source_type,
+      source_url: overrides.source_url ?? p.proposed.source_url ?? p.proposed.image_url,
+      image_url: overrides.image_url ?? p.proposed.image_url,
+      credit: overrides.credit ?? p.proposed.credit,
+      license: overrides.license ?? p.proposed.license,
+    };
 
     processed++;
 
@@ -167,9 +197,10 @@ for (const file of dryrunFiles) {
         : `${p.missionId}/${p.slot}`;
     const sidecar = surfaceDir === 'fleet-galleries' ? FLEET_SOURCES : MISSION_SOURCES;
 
+    const overrideTag = Object.keys(overrides).length > 0 ? ' [override]' : '';
     if (DRY_RUN) {
       console.log(
-        `  [dry] ${agency.padEnd(20)} ${p.missionId}/${p.slot} ← ${p.proposed.source_type} (vision=${p.vision?.verdict ?? 'n/a'})`,
+        `  [dry]${overrideTag} ${agency.padEnd(20)} ${p.missionId}/${p.slot} ← ${effective.source_type} (vision=${p.vision?.verdict ?? 'n/a'})`,
       );
       agencyStats.applied++;
       overallStats.applied++;
@@ -177,16 +208,17 @@ for (const file of dryrunFiles) {
     }
 
     try {
-      await downloadAndProcess(p.proposed.image_url, surfaceDir, p.missionId, p.slot);
+      await downloadAndProcess(effective.image_url, surfaceDir, p.missionId, p.slot);
       sidecar[sidecarKey] = {
-        source_type: p.proposed.source_type,
-        source_url: p.proposed.image_url,
-        image_url: p.proposed.image_url,
-        credit: p.proposed.credit,
-        license: p.proposed.license,
+        source_type: effective.source_type,
+        source_url: effective.source_url,
+        image_url: effective.image_url,
+        credit: effective.credit,
+        license: effective.license,
         fetched_at: new Date().toISOString().slice(0, 19) + 'Z',
         slice_a_iteration: 4,
         slice_a_query: p.query,
+        ...(Object.keys(overrides).length > 0 ? { reviewer_overrides: overrides } : {}),
         ...(p.vision
           ? { vision: { verdict: p.vision.verdict, confidence: p.vision.confidence } }
           : {}),

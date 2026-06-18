@@ -18,7 +18,7 @@
 // vision verdict yet (resume after interrupt).
 
 import { readFileSync, writeFileSync } from 'fs';
-import { judgeImage } from './lib/vision-judge.mjs';
+import { judgeImage, isShippable } from './lib/vision-judge.mjs';
 
 process.loadEnvFile?.();
 
@@ -72,8 +72,10 @@ for (let i = 0; i < proposals.length; i++) {
     subjectDescription: p.query,
   });
   p.vision = result;
-  // Update ship_at_apply now that vision verdict is known
-  p.ship_at_apply = result.verdict !== 'unrelated';
+  // Requires 'related' + confidence ≥ MIN_SHIP_CONFIDENCE (see vision-judge.mjs).
+  // 'unsure' and sub-0.9 'related' both block apply but stay visible to the
+  // human approval UI for manual override.
+  p.ship_at_apply = isShippable(result);
 
   if (result.verdict === 'related') stats.passed++;
   else if (result.verdict === 'unrelated') stats.flagged++;

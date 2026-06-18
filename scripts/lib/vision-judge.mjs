@@ -23,15 +23,63 @@ const UA =
 const ANTHROPIC_API = 'https://api.anthropic.com/v1/messages';
 const MODEL = 'claude-haiku-4-5-20251001';
 
-const SYSTEM_PROMPT = `You are reviewing space-mission images for an open-source educational project. For each image you see, you'll answer ONE question: does this image substantively depict the named mission's spacecraft, mission hardware, mission target body, science instrument, or mission-defining moment?
+// Minimum confidence required for a 'related' verdict to be shipped at apply.
+// Below this, callers should treat the result as 'unsure' (block apply, defer
+// to human review via the Slice A approval UI).
+export const MIN_SHIP_CONFIDENCE = 0.9;
 
-Answer 'related' for: spacecraft hardware, planetary/lunar/celestial body surfaces, science instrument shots, launches, in-flight imagery, sample-return capsules, mission-defining science returns.
+const SYSTEM_PROMPT = `You are reviewing candidate hero images for a public-facing space-mission gallery. For each image, answer ONE question: is this a STRONG hero candidate for the named mission's gallery on a public space-mission website?
 
-Answer 'unrelated' for: crew portraits or press conference photos (people-only), mission patches/logos/decals, mockups/replicas in museums (UNLESS the mission has no other photographic record), educational graphics/posters/animations, award ceremonies, anything that's keyword-related-only.
+A strong hero shows the mission's spacecraft, target body, science instrument, or a mission-defining moment as the primary subject of the frame — not incidentally, not tangentially.
 
-Answer 'unsure' if you genuinely can't tell from the image.
+Answer 'related' ONLY when ALL of these hold:
+- The mission's spacecraft / target body / instrument / defining moment is the PRIMARY subject of the frame (not a distant dot, not background, not incidental).
+- The image is suitable for a public hero gallery (sharp, on-subject, not a chart or diagram).
+- The connection is direct — same mission, same hardware, same target body — not just a keyword match.
 
-Respond ONLY in this JSON shape: {"verdict": "related|unrelated|unsure", "confidence": 0.0-1.0, "reason": "one short sentence"}`;
+Answer 'unrelated' for ALL of:
+- Distant / incidental frames where the target appears as a tiny dot or in the background of a different subject.
+- Crew portraits, team photos, press conferences, award ceremonies (UNLESS the image is unambiguously a launch-day or mission-defining moment — and even then, only if the spacecraft / mission hardware is clearly visible).
+- Mockups, replicas, museum displays, full-scale models, training mockups.
+- Infographics, diagrams, charts, technical illustrations, animations, posters, logos, mission patches.
+- Tangential thematic matches — e.g. "Hubble Space Telescope" satisfying an "OTV" query because both are spacecraft; ISRO crew portrait satisfying a "Gaganyaan" query because both involve crewed flight; GRAIL photo where LRO is a dot satisfying an "LRO" query.
+- Generic agency imagery (rocket assembly buildings, launch pads with no spacecraft visible, hardware integration shots without context).
+
+Answer 'unsure' if you genuinely can't determine the subject from the image alone, OR if you would normally answer 'related' but with confidence below 0.9 — be honest about confidence; the caller treats sub-0.9 'related' as 'unsure' anyway.
+
+Respond ONLY in this JSON shape: {"verdict": "related|unrelated|unsure", "confidence": 0.0-1.0, "reason": "one short sentence — name what's actually in the frame and whether it's the mission's primary subject"}`;
+
+/**
+ * Fetch image bytes and prepare a base64 payload for Anthropic's vision API.
+ *
+ * Anthropic's vision API can't fetch from upload.wikimedia.org / Commons
+ * Special:FilePath URLs (HTTP 400 "Unable to download the file"). Downloading
+ * locally and uploading as base64 works for every source we use.
+ *
+ * @param {string} url  HTTPS image URL
+ * @returns {Promise<{ mediaType: string, base64: string }>}
+ * @throws on non-2xx fetch
+ */
+async function fetchImageAsBase64(url) {
+  // Wikimedia Special:FilePath ?width=… sometimes returns the resize page
+  // instead of the bytes; strip the query string so we get the original.
+  const cleaned = url.includes('commons.wikimedia.org/wiki/Special:FilePath/')
+    ? url.replace(/\?.*$/, '')
+    : url;
+  const res = await fetch(cleaned, {
+    headers: { 'User-Agent': UA, Accept: 'image/*' },
+    redirect: 'follow',
+  });
+  if (!res.ok) {
+    throw new Error(`fetch ${cleaned} → HTTP ${res.status}`);
+  }
+  const contentType = res.headers.get('content-type') ?? 'image/jpeg';
+  const mediaType = /^image\/(jpeg|png|gif|webp)/.test(contentType)
+    ? contentType.split(';')[0].trim()
+    : 'image/jpeg';
+  const buf = Buffer.from(await res.arrayBuffer());
+  return { mediaType, base64: buf.toString('base64') };
+}
 
 /**
  * Judge whether an image is substantively about the named mission.
@@ -55,9 +103,18 @@ export async function judgeImage({ imageUrl, missionId, agency, subjectDescripti
     : `${missionId}${agency ? ` (agency: ${agency})` : ''}`;
   const userPrompt = `Is this image substantively about ${subjectLabel}?`;
 
-  // Anthropic API requires HTTPS. NASA images-api returns http:// —
-  // upgrade transparently (the same NASA CDN works fine over https).
+  // Anthropic's vision API can't fetch upload.wikimedia.org / Commons
+  // Special:FilePath URLs (HTTP 400). Download bytes ourselves and upload
+  // as base64 — works for every source uniformly. http:// → https:// flip
+  // first since some NASA images-api URLs come through unencrypted.
   const httpsUrl = imageUrl.replace(/^http:\/\//i, 'https://');
+  let imagePayload;
+  try {
+    const { mediaType, base64 } = await fetchImageAsBase64(httpsUrl);
+    imagePayload = { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } };
+  } catch (e) {
+    return { verdict: 'unsure', confidence: 0, reason: `image-fetch: ${e.message}` };
+  }
 
   const body = {
     model: MODEL,
@@ -67,7 +124,7 @@ export async function judgeImage({ imageUrl, missionId, agency, subjectDescripti
       {
         role: 'user',
         content: [
-          { type: 'image', source: { type: 'url', url: httpsUrl } },
+          imagePayload,
           { type: 'text', text: userPrompt },
         ],
       },
@@ -114,4 +171,19 @@ export async function judgeImage({ imageUrl, missionId, agency, subjectDescripti
   } catch (e) {
     return { verdict: 'unsure', confidence: 0, reason: `error: ${e.message}` };
   }
+}
+
+/**
+ * Convenience gate used by the apply pipeline. A vision result is shippable
+ * ONLY when the verdict is 'related' AND confidence ≥ MIN_SHIP_CONFIDENCE.
+ *
+ * Falsy / 'unsure' / 'unrelated' / sub-threshold all block apply. Callers
+ * may still surface those to the human approval UI for manual override.
+ *
+ * @param {{verdict?: string, confidence?: number} | null | undefined} vision
+ * @returns {boolean}
+ */
+export function isShippable(vision) {
+  if (!vision) return false;
+  return vision.verdict === 'related' && (vision.confidence ?? 0) >= MIN_SHIP_CONFIDENCE;
 }

@@ -3,7 +3,7 @@
 // slice-a-vision-pass.mjs but on the /explore proposal format.
 
 import { readFileSync, writeFileSync } from 'fs';
-import { judgeImage } from './lib/vision-judge.mjs';
+import { judgeImage, isShippable } from './lib/vision-judge.mjs';
 
 process.loadEnvFile?.();
 
@@ -32,7 +32,7 @@ for (const p of data.proposals) {
       subjectDescription: p.query,
     });
     p.vision = v;
-    p.ship_at_apply = v.verdict !== 'unrelated';
+    p.ship_at_apply = isShippable(v);
     if (v.verdict === 'related') {
       passed++;
       process.stderr.write(`✓ related\n`);
@@ -46,7 +46,8 @@ for (const p of data.proposals) {
   } catch (e) {
     process.stderr.write(`✗ ${e.message}\n`);
     p.vision = { verdict: 'unsure', confidence: 0, reason: `error: ${e.message}` };
-    p.ship_at_apply = true;
+    // Fail closed on vision errors — caller can override via approval UI if needed.
+    p.ship_at_apply = false;
     unsure++;
   }
   await new Promise((r) => setTimeout(r, 200));
@@ -58,4 +59,5 @@ console.log(`  related:    ${passed}`);
 console.log(`  unrelated:  ${flagged}`);
 console.log(`  unsure:     ${unsure}`);
 console.log(`  skipped:    ${skipped}`);
-console.log(`  Will ship:  ${passed + unsure}/${data.proposals.length}`);
+const willShip = data.proposals.filter((p) => p.ship_at_apply).length;
+console.log(`  Will ship:  ${willShip}/${data.proposals.length} (requires related + confidence ≥ ${'0.9'})`);

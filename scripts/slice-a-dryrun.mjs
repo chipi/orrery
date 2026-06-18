@@ -22,7 +22,7 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { resolveAgencyImage } from './lib/agency-resolver.mjs';
-import { judgeImage } from './lib/vision-judge.mjs';
+import { judgeImage, isShippable } from './lib/vision-judge.mjs';
 
 process.loadEnvFile?.();
 
@@ -205,8 +205,11 @@ for (let i = 0; i < CANDIDATES.length; i++) {
         }
       : null,
     vision, // {verdict, confidence, reason} or null when skipped
-    // ship_at_apply: true if proposal accepted AND not vision-flagged.
-    ship_at_apply: !!(result && (!vision || vision.verdict !== 'unrelated')),
+    // ship_at_apply: requires a proposal AND a confident 'related' verdict
+    // when vision was consulted. 'unsure' / sub-0.9 'related' / 'unrelated'
+    // all block apply — they may still surface to the human approval UI for
+    // manual override. See scripts/lib/vision-judge.mjs:isShippable.
+    ship_at_apply: !!(result && (!vision || isShippable(vision))),
   });
   if (!result) stats.miss++;
   else if (result.tier === 1) stats.tier1_upgrade++;

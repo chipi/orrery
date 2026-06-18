@@ -1,0 +1,126 @@
+{
+  "purpose": "Known-bad image picks the v2 vision-judge let through (or marked 'unsure' which still shipped under the lax `verdict !== 'unrelated'` gate). The v3 prompt + isShippable gate (related + confidence ≥ 0.9) must reject all of these. Used by scripts/__smoke__/vision-judge-smoke.mjs.",
+  "expectation": "≥ 8/10 must be NOT shippable (verdict !== 'related' OR confidence < 0.9)",
+  "fixtures": [
+    {
+      "id": "lro-01-grail-distant-dot",
+      "missionId": "lro",
+      "agency": "NASA",
+      "query": "Lunar Reconnaissance Orbiter",
+      "subjectDescription": "Lunar Reconnaissance Orbiter spacecraft",
+      "image_url": "http://images-assets.nasa.gov/image/PIA16602/PIA16602~orig.jpg",
+      "failure_mode": "distant_incidental — LRO appears as a tiny point in a GRAIL frame",
+      "v2_verdict": "related",
+      "v2_confidence": 0.85,
+      "v2_shipped": true
+    },
+    {
+      "id": "ulysses-03-museum-mockup",
+      "missionId": "ulysses",
+      "agency": "NASA/ESA",
+      "query": "Ulysses spacecraft",
+      "subjectDescription": "Ulysses heliospheric probe",
+      "image_url": "http://images-assets.nasa.gov/image/PIA09993/PIA09993~orig.jpg",
+      "failure_mode": "mockup_or_museum — image is a model or rendering, not the real spacecraft",
+      "v2_verdict": "unrelated",
+      "v2_confidence": 0.95,
+      "v2_shipped": false
+    },
+    {
+      "id": "skylab-4-02-crew-portrait",
+      "missionId": "skylab-4",
+      "agency": "NASA",
+      "query": "Skylab 4",
+      "subjectDescription": "Skylab 4 mission",
+      "image_url": "http://images-assets.nasa.gov/image/S73-33208/S73-33208~orig.jpg",
+      "failure_mode": "crew_portrait — astronaut portrait, not mission-defining moment",
+      "v2_verdict": "unrelated",
+      "v2_confidence": 0.9,
+      "v2_shipped": false
+    },
+    {
+      "id": "gaganyaan-01-crew-recovery-training",
+      "missionId": "gaganyaan",
+      "agency": "ISRO",
+      "query": "Gaganyaan",
+      "subjectDescription": "Gaganyaan crewed spaceflight mission",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20batch%20of%20crew%20recovery%20team%20for%20Mission%20Gaganyaan%20completed%20Phase-1%20of%20training%20at%20Indian%20Navy's%20Water%20Survival%20Training%20Facility%20(WSTF)%2002.jpg?width=1600",
+      "failure_mode": "crew_only_training — ceremony / training photo, no spacecraft visible",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "otv-1-01-hubble-tangential",
+      "missionId": "otv-1",
+      "agency": "USSF",
+      "query": "Orbital Test Vehicle X-37B",
+      "subjectDescription": "X-37B Orbital Test Vehicle (OTV-1) — USSF spaceplane",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+      "failure_mode": "tangential_thematic — Hubble Space Telescope returned for an X-37B query because both are spacecraft",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "otv-3-01-hubble-tangential",
+      "missionId": "otv-3",
+      "agency": "USSF",
+      "query": "Orbital Test Vehicle X-37B",
+      "subjectDescription": "X-37B Orbital Test Vehicle (OTV-3) — USSF spaceplane",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
+      "failure_mode": "tangential_thematic + cross_mission_dupe — same Hubble image as OTV-1",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "vega-1-01-fictional-spacecraft",
+      "missionId": "vega-1",
+      "agency": "Roscosmos",
+      "query": "Vega 1",
+      "subjectDescription": "Vega 1 Venus / Halley mission probe",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+      "failure_mode": "tangential_thematic — screenshot from 'Vega Strike' video game, not the real Vega 1 probe",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "vega-2-01-fictional-spacecraft",
+      "missionId": "vega-2",
+      "agency": "Roscosmos",
+      "query": "Vega 2",
+      "subjectDescription": "Vega 2 Venus / Halley mission probe",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spacecraft%20approaching%20a%20space%20station%20in%20Vega%20Strike.png?width=1600",
+      "failure_mode": "tangential_thematic + cross_mission_dupe — same Vega Strike screenshot as Vega-1",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "vostok-1-01-shared-spacecraft-illustration",
+      "missionId": "vostok-1",
+      "agency": "Roscosmos",
+      "query": "Vostok 1",
+      "subjectDescription": "Vostok 1 crewed spaceflight",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok%20spacecraft.jpg?width=1600",
+      "failure_mode": "cross_mission_dupe — generic Vostok spacecraft photo also used for Vostok-2/3 (not mission-specific to Vostok-1)",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    },
+    {
+      "id": "vostok-3-01-shared-spacecraft-illustration",
+      "missionId": "vostok-3",
+      "agency": "Roscosmos",
+      "query": "Vostok 3",
+      "subjectDescription": "Vostok 3 crewed spaceflight",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok%20spacecraft.jpg?width=1600",
+      "failure_mode": "cross_mission_dupe — same generic Vostok spacecraft photo as Vostok-1",
+      "v2_verdict": "unsure",
+      "v2_confidence": 0,
+      "v2_shipped": true
+    }
+  ]
+}

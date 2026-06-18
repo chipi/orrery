@@ -50,7 +50,7 @@ const args = Object.fromEntries(
   }),
 );
 
-const ALL_FILTERS = ['vision', 'intra-mission', 'cross-mission', 'size', 'token-match'];
+const ALL_FILTERS = ['vision', 'intra-mission', 'cross-mission', 'cross-mission-basename', 'size', 'token-match'];
 const ENABLED_FILTERS = new Set(
   typeof args.filter === 'string'
     ? args.filter.split(',').map((s) => s.trim()).filter(Boolean)
@@ -58,7 +58,11 @@ const ENABLED_FILTERS = new Set(
 );
 const LIMIT = typeof args.limit === 'string' ? parseInt(args.limit, 10) : Infinity;
 const VISION_THROTTLE_MS = parseInt(args['vision-throttle'] ?? '200', 10);
-const MIN_BYTES = parseInt(args['min-bytes'] ?? '50000', 10);
+// Min-bytes default raised from 50K → 100K (round 2 lesson from
+// Marko's labeling: 4 of 11 rejects were tagged `low-resolution`,
+// all under 100 KB. 50 KB is too lax — real hero images are >100 KB
+// once re-encoded to JPEG q80 @ 1600px.
+const MIN_BYTES = parseInt(args['min-bytes'] ?? '100000', 10);
 const SKIP_NETWORK = args['skip-network'] === 'true';
 const OUTPUT_PATH = typeof args.output === 'string' ? args.output : 'static/data/slice-a-salvage-result.json';
 
@@ -188,6 +192,35 @@ if (ENABLED_FILTERS.has('cross-mission')) {
       dropped++;
     } else if (!existing) {
       seen.set(key, p.proposal_id);
+    }
+  }
+  console.log(`  dropped ${dropped} / ${allProposals.length}`);
+}
+
+// Filter 3b: cross-mission-basename — same filename across missions with
+// DIFFERENT URL params (e.g. ?width=1600 vs ?width=1024, or different
+// CDN paths). URL-level dedup misses these; Marko tagged 3 such cases
+// `duplicate` in round 1.
+if (ENABLED_FILTERS.has('cross-mission-basename')) {
+  console.log('\nfilter: cross-mission-basename');
+  const basenameOf = (url) => {
+    if (!url) return null;
+    const noQuery = url.split('?')[0];
+    const slash = noQuery.lastIndexOf('/');
+    const base = slash >= 0 ? noQuery.slice(slash + 1) : noQuery;
+    return decodeURIComponent(base).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+  };
+  const seen = new Map(); // basename → first proposal_id
+  let dropped = 0;
+  for (const p of allProposals) {
+    const b = basenameOf(p.proposed.image_url);
+    if (!b || b.length < 6) continue; // too generic
+    const existing = seen.get(b);
+    if (existing && existing !== p.proposal_id) {
+      addDrop(p.proposal_id, `cross-mission-basename: same filename "${b}" as ${existing}`);
+      dropped++;
+    } else if (!existing) {
+      seen.set(b, p.proposal_id);
     }
   }
   console.log(`  dropped ${dropped} / ${allProposals.length}`);

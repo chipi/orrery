@@ -558,7 +558,9 @@
   },
   "bepicolombo/01.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo_spacecraft_model.png"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BepiColombo_spacecraft_stack_ESA380846.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "bepicolombo/02.jpg": {
     "agency": "ESA",
@@ -770,7 +772,9 @@
   },
   "cassini/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA01050/PIA01050~medium.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/PIA01051/PIA01051~medium.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "cassini/02.jpg": {
     "agency": "NASA",
@@ -1673,7 +1677,9 @@
   },
   "galileo/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/S89-44173/S89-44173~medium.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/PIA01200/PIA01200~thumb.jpg",
+    "promoted_from": "slot 05",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "galileo/02.jpg": {
     "agency": "NASA",
@@ -1897,8 +1903,12 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Ispace_Mission_2_SMBC_x_HAKUTO-R_Venture_Moon_Impact_Site_%28LROC1456%29.tiff/lossy-page1-960px-Ispace_Mission_2_SMBC_x_HAKUTO-R_Venture_Moon_Impact_Site_%28LROC1456%29.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "hayabusa-2/01.jpg": {
-    "agency": "JAXA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Images_of_asteroid_Ryugu_from_the_wide_angle_Optical_Navigation_Cameras_%28ONC-W1_and_ONC-W2%29_via_Hayabusa2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "commons_file": "20190605 hayabusa-diagram-tpr-01-without-labels.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:20190605%20hayabusa-diagram-tpr-01-without-labels.png",
+    "credit": "JAXA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 04"
   },
   "hayabusa-2/02.jpg": {
     "agency": "JAXA",
@@ -2149,7 +2159,9 @@
   },
   "juno/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA20704/PIA20704~small.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/PIA14408/PIA14408~thumb.jpg",
+    "promoted_from": "slot 03",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "juno/02.jpg": {
     "agency": "NASA",
@@ -3764,7 +3776,9 @@
   },
   "pioneer-10/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/ARC-1969-AC72-1353/ARC-1969-AC72-1353~medium.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/ARC-1972-AC72-1354/ARC-1972-AC72-1354~medium.jpg",
+    "promoted_from": "slot 05",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "pioneer-10/02.jpg": {
     "agency": "NASA",
@@ -3781,13 +3795,6 @@
   "pioneer-10/05.jpg": {
     "agency": "NASA",
     "sourceUrl": "https://images-assets.nasa.gov/image/ARC-1972-AC72-1354/ARC-1972-AC72-1354~medium.jpg"
-  },
-  "pioneer-11/01": {
-    "commons_file": "Saturn_and_Titan_from_Pioneer_11_-_GPN-2002-000060.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn_and_Titan_from_Pioneer_11_-_GPN-2002-000060.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T11:07:39Z"
   },
   "pioneer-11/02.jpg": {
     "agency": "NASA",
@@ -5302,7 +5309,9 @@
   },
   "ulysses/01.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses_spacecraft.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses_at_Jupiter_H1.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "ulysses/02.jpg": {
     "agency": "ESA",
@@ -5320,13 +5329,6 @@
     "agency": "ESA",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses_-_ulysses_logo.jpg"
   },
-  "vega-1/01": {
-    "commons_file": "Vega_model_-_Udvar-Hazy_Center.JPG",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vega_model_-_Udvar-Hazy_Center.JPG",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T11:07:35Z"
-  },
   "vega-1/02.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vega_Solar_System_Probe_Bus_and_Landing_Apparatus_-_3732049103.jpg"
@@ -5342,13 +5344,6 @@
   "vega-1/05.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vega-mission.jpg"
-  },
-  "vega-2/01": {
-    "commons_file": "1PHalley-Vega2Flyby.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:1PHalley-Vega2Flyby.png",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T11:07:37Z"
   },
   "vega-2/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -5373,11 +5368,10 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "venera-13/01.jpg": {
-    "commons_file": "Surface of Venus from Venera 13.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Surface%20of%20Venus%20from%20Venera%2013.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mapa_de_sondas_sobre_Venus.png",
+    "promoted_from": "slot 05",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "venera-13/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -5651,7 +5645,9 @@
   },
   "voyager-1/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA21741/PIA21741~medium.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/201309120010HQ/201309120010HQ~medium.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "voyager-1/02.jpg": {
     "agency": "NASA",
@@ -5671,7 +5667,9 @@
   },
   "voyager-2/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA00061/PIA00061~small.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/ARC-1989-A89-7058/ARC-1989-A89-7058~medium.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
   },
   "voyager-2/02.jpg": {
     "agency": "NASA",
@@ -6203,5 +6201,25 @@
       "verdict": "unsure",
       "confidence": 0
     }
+  },
+  "pioneer-11/01.jpg": {
+    "commons_file": "Pioneer 10 - Pioneer 11 - mission patch - Pioneer patch.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pioneer%2010%20-%20Pioneer%2011%20-%20mission%20patch%20-%20Pioneer%20patch.png",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
+  },
+  "vega-1/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vega_Solar_System_Probe_Bus_and_Landing_Apparatus_-_3732049103.jpg",
+    "promoted_from": "slot 02",
+    "fetched_at": "2026-06-19T08:58:28Z"
+  },
+  "vega-2/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1985_CPA_5634.jpg",
+    "promoted_from": "slot 03",
+    "fetched_at": "2026-06-19T08:58:28Z"
   }
 }

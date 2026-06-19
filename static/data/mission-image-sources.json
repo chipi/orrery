@@ -1765,11 +1765,12 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "venera-13/01": {
-    "commons_file": "Surface of Venus from Venera 13.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Surface%20of%20Venus%20from%20Venera%2013.jpg",
+    "commons_file": "1982 CPA 5278.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:1982%20CPA%205278.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
   },
   "venera-13/02": {
     "commons_file": "Surface of Venus taken by Venera 13 (panoramic).jpg",
@@ -2517,14 +2518,12 @@
     "nasa_title": "Preparing Psyche's Thruster Installation"
   },
   "pioneer-11/01": {
-    "source_type": "smithsonian-openaccess",
-    "source_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
-    "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
-    "credit": "Smithsonian National Air and Space Museum",
-    "license": "cc0",
-    "fetched_at": "2026-06-19T08:51:43Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "pioneer 11"
+    "commons_file": "Pioneer 11 at Saturn.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pioneer%2011%20at%20Saturn.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
   },
   "apollo-soyuz/05": {
     "source_type": "nasa-image-library",
@@ -2559,5 +2558,13 @@
       "verdict": "unsure",
       "confidence": 0
     }
+  },
+  "pioneer-10/01": {
+    "commons_file": "Pioneer 10-11 spacecraft.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pioneer%2010-11%20spacecraft.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
   }
 }

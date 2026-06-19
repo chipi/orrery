@@ -254,11 +254,42 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '89f59113', // fleet-galleries/akatsuki/01 + 02 (promoted from slot 02)
   'f8ec568a', // missions/phoenix/01 + 03 (promoted from slot 03)
   'b6405663', // missions/dawn/01 + dawn/02 (promoted from slot 02)
-  'f6752d18', // missions/juno/01 + juno/02 (promoted from slot 02)
+  // juno round-5 promotion (slot 02) REVISED in round-6 to slot 03;
+  // f6752d18 retired in favour of ea36d455 + fe33a433 below.
   'c0dfb5fb', // missions/lro/01 + lro/03 (promoted from slot 03)
   'f437732b', // missions/new-horizons/01 + 02 (promoted from slot 02)
   '8af1cc20', // missions/vostok-5/01 + 02 (promoted from slot 02)
   'd453422e', // missions/vostok-6/01 + 02 (promoted from slot 02)
+
+  // ALLOWLIST_AUTHORIZED (2026-06-19) — Slice A v3 round-6 manual
+  //   promotions. Marko explicitly asked "use gallery N as hero" for
+  //   13 missions across both /missions and /fleet surfaces. Each
+  //   hero now matches its source gallery slot bytewise; editorial
+  //   share, gallery slot stays in place.
+  'bb76df7b', // missions/cassini/01 + 02 (promoted from slot 02)
+  '96df972a', // fleet-galleries/cassini/01 + 02 (promoted from slot 02)
+  '9616b095', // missions/pioneer-10/01 + 05 (promoted from slot 05)
+  '7f153de7', // fleet-galleries/pioneer-10/01 + 05 (promoted from slot 05)
+  'd1f20b12', // missions/pioneer-11/01 + 05 (promoted from slot 05)
+  '9e6e36a9', // fleet-galleries/pioneer-11/01 + 05 (promoted from slot 05)
+  '545171e0', // missions/voyager-1/01 + 02 (promoted from slot 02)
+  'c9c1524b', // fleet-galleries/voyager-1/01 + 02 (promoted from slot 02)
+  'eb216309', // missions/voyager-2/01 + 02 (promoted from slot 02)
+  'c37cc0b2', // fleet-galleries/voyager-2/01 + 02 (promoted from slot 02)
+  'd42d71f4', // missions/venera-13/01 + 05 (promoted from slot 05)
+  'd7eee3a0', // fleet-galleries/venera-13/01 + 05 (promoted from slot 05)
+  '79cbcd01', // fleet-galleries/vega-1/01 + 02 (promoted from slot 02)
+  '08d94211', // fleet-galleries/vega-2/01 + 03 (promoted from slot 03)
+  '299d2693', // missions/galileo/01 + 05 (promoted from slot 05)
+  '1ecb7e33', // fleet-galleries/galileo/01 + 05 (promoted from slot 05)
+  'dde29d26', // missions/ulysses/01 + 02 (promoted from slot 02)
+  'c8e0eef6', // fleet-galleries/ulysses/01 + 02 (promoted from slot 02)
+  '9ef1daaa', // missions/hayabusa2/01 + 04 (promoted from slot 04)
+  'f05f9834', // fleet-galleries/hayabusa-2/01 + 04 (promoted from slot 04)
+  '035ed5a0', // missions/bepicolombo/01 + 02 (promoted from slot 02)
+  '444c597f', // fleet-galleries/bepicolombo/01 + 02 (promoted from slot 02)
+  'fe33a433', // missions/juno/01 + 03 (REVISED round-6 promotion from slot 03; supersedes f6752d18)
+  'ea36d455', // fleet-galleries/juno/01 + 03 (REVISED round-6 promotion from slot 03)
 
   'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
   '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)

@@ -345,7 +345,21 @@
       return;
     }
     const el = document.querySelector(stage.target) as HTMLElement | null;
-    if (!el) return;
+    if (!el) {
+      // 2026-06-19 — user reported a lot of tour actions silently
+      // skipped on /explore and /earth episodes. The unit-test corpus
+      // at src/lib/audio-tour.test.ts verifies every selector exists
+      // in source files, but the LIVE DOM can still be missing
+      // anchors that are gated behind `{#if}` blocks, route-state
+      // flags, mobile breakpoints, etc. Logging the miss surfaces the
+      // exact target so the next round of fixes targets the right
+      // anchor without guessing. Includes the stage's at_sec so it
+      // can be matched back to the SSML beat.
+      console.warn(
+        `[audio-tour] stage skipped — no element matches selector "${stage.target}" at ${stage.at_sec}s (action: ${stage.action})`,
+      );
+      return;
+    }
     switch (stage.action) {
       case 'flash':
         el.classList.add('audio-stage-flash');

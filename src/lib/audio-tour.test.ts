@@ -284,6 +284,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/lib/surface-scene/SurfaceScene.svelte',
       // Shared chrome components that carry tour anchors used across routes.
       'src/lib/components/Nav.svelte',
+      'src/lib/components/Panel.svelte',
       'src/lib/components/PlanetPanel.svelte',
       'src/lib/components/PanoramaToggleButton.svelte',
       'src/lib/components/PanoramaAutoTour.svelte',

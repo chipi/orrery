@@ -204,13 +204,29 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     // VTT § 00:00:30.5 – 43.9 — orbital-period roll-call. Narration
     // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5 years)
-    // → Neptune (165 years) as illustrative orbit-period examples. The
-    // Saturn panel is open in the foreground from t=29; the planet
-    // glow renders behind it through the partially-translucent UI.
-    // Saturn flash skipped — its panel is already the visual focus.
-    { at_sec: 32, action: 'flash', target: '[data-audio-stage="explore-select-mercury"]' },
-    { at_sec: 35, action: 'flash', target: '[data-audio-stage="explore-select-mars"]' },
-    { at_sec: 43, action: 'flash', target: '[data-audio-stage="explore-select-neptune"]' },
+    // → Neptune (165 years) as illustrative orbit-period examples.
+    //
+    // 2026-06-19 — switched from `flash` on the offscreen tour-anchor
+    // buttons (no visible effect — they sit in a 90×19 px aria-hidden
+    // div at the top-left corner) to `click`, which fully opens each
+    // named planet's detail panel as the narrator says its name. User
+    // direction: "I am expecting each explore-select to open details
+    // panel fully". Saturn gets re-opened at ~39 s so the panel matches
+    // its narrated beat too; without it the panel would still be on
+    // Neptune (or whichever was last clicked) while the narrator says
+    // "Saturn 29.5 years".
+    { at_sec: 32, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
+    { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
+    { at_sec: 39, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
+    // Close the Neptune panel ~4 s after it opens — narrator is moving
+    // off the orbital-period roll-call onto the Voyager 2 beat (~58 s
+    // in VTT) and the canvas needs to re-emerge so the PATHS-layer
+    // flash at 76 s lands against the actual solar system instead of
+    // behind a Neptune panel that's been sitting open for 30+ seconds.
+    // (2026-06-19 user direction: "auto close open panel after 5 s or
+    // so and refocus and go back to main scene".)
+    { at_sec: 47, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
     // but no such control exists on /explore today (script/UI drift —
     // SSML referenced a planned-but-never-shipped speed control). Cue
@@ -249,6 +265,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 122, action: 'click', target: '[data-audio-stage="explore-select-sun"]' },
     { at_sec: 127, action: 'cue', target: 'Then click any planet.', duration_ms: 4000 },
     { at_sec: 132, action: 'click', target: '[data-audio-stage="explore-select-earth"]' },
+    // Close the Earth panel before the episode fades out so the listener
+    // ends on the canvas, not on a panel that lingers into the
+    // next-episode auto-advance.
+    { at_sec: 137, action: 'click', target: '[data-audio-stage="panel-close"]' },
   ],
 
   // ── /explore · saturn-rings — Enthusiast, VTT 102 s (Extended Tour) ─
@@ -480,6 +500,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // card" demo); pulled forward so the click lands ON the redemption
     // payoff line, not on the post-story housekeeping.
     { at_sec: 74, action: 'click', target: '[data-audio-stage="missions-select-apollo11"]' },
+    // Close the Apollo 11 panel before the "Click any card" cue +
+    // grid scroll so the listener's eye lands on the grid as the
+    // narrator says it, not on a panel obscuring the bottom half of
+    // the screen. (2026-06-19 open-then-close sweep.)
+    { at_sec: 77, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:18.5 "Click any mission card"
     {
       at_sec: 78,
@@ -611,6 +636,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 35, action: 'click', target: '[data-audio-stage="earth-select-hubble"]' },
+    // Close the Hubble panel ~5 s after it opens so the canvas can
+    // breathe during the long narration gap (35 s → 96 s = 61 s of
+    // science beats about Hubble's altitude / atmospheric drag /
+    // servicing-mission history). 2026-06-19 — first sweep applying
+    // the "open-then-close" pattern across guide-earth.
+    { at_sec: 40, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:33.8 "JWST orbits there"
     {
       at_sec: 95,
@@ -619,6 +650,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
+    // Close JWST panel ~5 s in — narration moves to the "Click any
+    // spacecraft" outro and the canvas needs to be visible for that
+    // cue to make sense.
+    { at_sec: 101, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:02:09.8 "Click any spacecraft"
     {
       at_sec: 132,
@@ -627,6 +662,9 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 133, action: 'click', target: '[data-audio-stage="earth-select-iss"]' },
+    // Close ISS panel before the episode ends so the listener fades
+    // out on the canvas.
+    { at_sec: 138, action: 'click', target: '[data-audio-stage="panel-close"]' },
   ],
 
   // ── /earth · jwst-l2-halo — Enthusiast, VTT 122 s (Extended Tour) ─
@@ -1138,6 +1176,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 69, action: 'click', target: '[data-audio-stage="iss-select-destiny"]' },
     { at_sec: 79, action: 'click', target: '[data-audio-stage="iss-select-columbus"]' },
     { at_sec: 86, action: 'click', target: '[data-audio-stage="iss-select-kibo"]' },
+    // Close Kibo panel so the canvas + module list are visible for
+    // the 50-second "eighteen modules / twenty-six countries / people
+    // living there now" outro. The Kibo beat ends at ~86 s and the
+    // next cue is at 136 s — without a close, the panel sits open
+    // for almost a minute over irrelevant narration.
+    { at_sec: 91, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:02:16.3 "Eighteen pressurized modules"
     {
       at_sec: 136,

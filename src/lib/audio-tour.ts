@@ -271,23 +271,39 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       note: "Zoom out so the full Voyager 2 trajectory reads against Neptune's orbit.",
     },
     // Close the Voyager 2 mission panel + reset camera so the
-    // canvas is clean before the Science Lens beat at 99 s.
+    // canvas is clean before the Science Lens beat. Also toggle the
+    // PATHS layer back OFF so the Voyager 2 arc isn't still drawn
+    // through the next beats.
     { at_sec: 92, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
-    // VTT § 00:01:39.1 — "Try the Science Lens toggle at the top right."
-    { at_sec: 99, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
-    { at_sec: 101, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
-    // 2026-06-19 — turn on a representative subset of lens layers so
-    // the visual difference is dramatic, then collapse the lens panel
-    // before 110 s so the listener sees the resulting overlay on the
-    // canvas (arrows, lagrange markers, hill spheres) without the
-    // panel UI in the way for the ~4 s before lens turns OFF at 114 s.
-    { at_sec: 103, action: 'click', target: '[data-audio-stage="science-layer-gravity"]' },
-    { at_sec: 105, action: 'click', target: '[data-audio-stage="science-layer-velocity"]' },
-    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-centripetal"]' },
+    { at_sec: 93, action: 'click', target: '[data-audio-stage="explore-layer-paths"]' },
+    // Science Lens beat — moved 4 s earlier (was 99/101 → now 95/97)
+    // so there's enough room for the layer-checkbox demo + the
+    // collapse + the post-lens-OFF planet-Technical-tab demo before
+    // the Sun beat at 121 s. (2026-06-19 user directions #2 → #5.)
+    { at_sec: 95, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
+    { at_sec: 97, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Turn on 5 representative lens layers so the canvas demonstrates
+    // the gamut of effects (per-planet arrows + magnetosphere shell +
+    // the tactical-scan stat overlay). Then collapse the lens panel
+    // so its UI doesn't sit over the canvas while the effects render.
+    { at_sec: 99, action: 'click', target: '[data-audio-stage="science-layer-gravity"]' },
+    { at_sec: 101, action: 'click', target: '[data-audio-stage="science-layer-velocity"]' },
+    { at_sec: 103, action: 'click', target: '[data-audio-stage="science-layer-centripetal"]' },
+    { at_sec: 105, action: 'click', target: '[data-audio-stage="science-layer-planet-stats"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-magnetosphere"]' },
     { at_sec: 109, action: 'click', target: '[data-audio-stage="science-lens-collapse"]' },
-    // Toggle lens back OFF a few seconds later so the listener sees the
-    // visual difference and the next beats render without the overlay.
-    { at_sec: 114, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Lens OFF — the canvas-overlay effects disappear so the next
+    // planet click reads clean.
+    { at_sec: 113, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Demonstrate the planet's Technical tab — the per-planet
+    // tactical-scan data (mass, surface gravity, atmospheric
+    // pressure, rotation period) that the lens overlay was hinting
+    // at. Jupiter chosen because its magnetosphere + Galilean moons
+    // make for a busier visual than a smaller planet. Reset at 118 s
+    // before the Sun beat. (2026-06-19 user directions #4 + #5.)
+    { at_sec: 114, action: 'click', target: '[data-audio-stage="explore-select-jupiter"]' },
+    { at_sec: 116, action: 'click', target: '[data-audio-stage="planet-tab-technical"]' },
+    { at_sec: 118, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:02:01.5 — "Click the Sun." / § 00:02:02.6 — "Then click any planet."
     { at_sec: 121, action: 'cue', target: 'Click the Sun — read its panel.', duration_ms: 4000 },
     { at_sec: 122, action: 'click', target: '[data-audio-stage="explore-select-sun"]' },

@@ -780,6 +780,10 @@
     panelState.satellite = false;
     panelState.belt = false;
     panelState.pathsLegend = false;
+    // Drop any trajectory-arc highlight tied to the iconic-mission
+    // legend; without this, the tour's 92 s reset leaves the Voyager 2
+    // arc still highlighted after its mission panel has been closed.
+    highlightedMissionId = null;
   }
 
   let selectedSmallBodyId: string | null = $state(null);
@@ -1099,6 +1103,13 @@
     if (m) {
       pathsLegendMission = m;
       panelState.pathsLegend = true;
+      // Also highlight the trajectory arc — same effect as hovering
+      // the row. Without this, a programmatic click (e.g. from the
+      // audio tour at guide-explore 82 s) opens the mission panel but
+      // the arc stays dim and the listener can't see WHICH path the
+      // panel is for. (2026-06-19 user report: "82 s click did open
+      // panel but did not highlight that arc in the paths".)
+      highlightedMissionId = missionId;
     }
   }
 

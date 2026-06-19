@@ -2323,13 +2323,18 @@
   },
   "akatsuki/01": {
     "source_type": "jaxa",
-    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "credit": "JAXA / Akihiro Ikeshita",
-    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
-    "fetched_at": "2026-06-17T09:54:37Z",
-    "agency_archive": true,
-    "label": "Akatsuki spacecraft (conceptual — orbit insertion 2015)"
+    "license": "pd-jaxa",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "akatsuki",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    },
+    "cross_surface_mirror_from": "fleet-galleries"
   },
   "akatsuki/02": {
     "source_type": "jaxa",

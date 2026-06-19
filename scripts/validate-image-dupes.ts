@@ -252,6 +252,7 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //   as the hero for these 6 missions; the gallery slot stays in place
   //   (now byte-equal to the hero). Editorial-share, not bug.
   '89f59113', // fleet-galleries/akatsuki/01 + 02 (promoted from slot 02)
+  'd16d505a', // akatsuki/01 ACROSS missions + fleet (round-6 cross-surface mirror; bytes changed after apply re-encode)
   'f8ec568a', // missions/phoenix/01 + 03 (promoted from slot 03)
   'b6405663', // missions/dawn/01 + dawn/02 (promoted from slot 02)
   // juno round-5 promotion (slot 02) REVISED in round-6 to slot 03;

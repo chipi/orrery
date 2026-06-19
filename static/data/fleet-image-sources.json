@@ -1248,8 +1248,12 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/LRC-2022-0926-H1_P_DART-000401/LRC-2022-0926-H1_P_DART-000401~medium.jpg"
   },
   "dawn/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dawn_Flight_Configuration_2.jpg"
+    "commons_file": "Dawn Flight Configuration 2.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Dawn%20Flight%20Configuration%202.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "cross_surface_mirror_from": "missions"
   },
   "dawn/02.jpg": {
     "agency": "NASA",
@@ -2552,11 +2556,12 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/30%E7%A7%92%E7%9C%8B%E5%A4%A9%E8%88%9F%E5%85%AD%E5%8F%B7%E8%B4%A7%E8%BF%90%E9%A3%9E%E8%88%B9%E5%8F%91%E5%B0%84%E7%9E%AC%E9%97%B45.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   },
   "lro/01.jpg": {
-    "commons_file": "Lunar Reconnaissance Orbiter 001.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunar%20Reconnaissance%20Orbiter%20001.jpg",
+    "commons_file": "Earthrise over Compton crater -LRO full res.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Earthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg",
     "credit": "NASA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "cross_surface_mirror_from": "missions"
   },
   "lro/02": {
     "commons_file": "Atlas_V(401)_launches_with_LRO_and_LCROSS.jpg",
@@ -3755,8 +3760,16 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "phoenix/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-07PD-1085/KSC-07PD-1085~medium.jpg"
+    "source_type": "nasa-image-library",
+    "source_url": "https://images.nasa.gov/details/PIA10906",
+    "image_url": "http://images-assets.nasa.gov/image/PIA10906/PIA10906~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona/Texas A&M University",
+    "license": "Public Domain (NASA — Media Usage Guidelines)",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "nasa_id": "PIA10906",
+    "nasa_title": "Disappearing Ice",
+    "promoted_from": "slot 03",
+    "cross_surface_mirror_from": "missions"
   },
   "phoenix/02.jpg": {
     "agency": "NASA",
@@ -6221,5 +6234,31 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1985_CPA_5634.jpg",
     "promoted_from": "slot 03",
     "fetched_at": "2026-06-19T08:58:28Z"
+  },
+  "new-horizons/01.jpg": {
+    "commons_file": "New Horizons spacecraft model 1.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Horizons%20spacecraft%20model%201.png",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "cross_surface_mirror_from": "missions"
+  },
+  "vostok-5/01.jpg": {
+    "commons_file": "Valery Bykovsky.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Valery%20Bykovsky.png",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "promoted_from": "slot 02",
+    "cross_surface_mirror_from": "missions"
+  },
+  "vostok-6/01.jpg": {
+    "commons_file": "Tereshkova Space Suit.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Tereshkova%20Space%20Suit.jpg",
+    "credit": "Roscosmos",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "promoted_from": "slot 02",
+    "cross_surface_mirror_from": "missions"
   }
 }

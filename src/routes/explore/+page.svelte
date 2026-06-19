@@ -4812,7 +4812,7 @@
       >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
-      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId}
+      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId || panelState.sun}
         <button
           class="toggle"
           type="button"
@@ -4825,6 +4825,7 @@
             flyToBodyFn?.(null);
           }}
           data-testid="explore-reset-view"
+          data-audio-stage="explore-reset-view"
         >
           {m.ui_reset_view()}
         </button>

@@ -203,30 +203,35 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers.',
     },
     // VTT § 00:00:30.5 – 43.9 — orbital-period roll-call. Narration
-    // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5 years)
-    // → Neptune (165 years) as illustrative orbit-period examples.
+    // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5
+    // years) → Neptune (165 years) as illustrative orbit-period
+    // examples.
     //
-    // 2026-06-19 — switched from `flash` on the offscreen tour-anchor
-    // buttons (no visible effect — they sit in a 90×19 px aria-hidden
-    // div at the top-left corner) to `click`, which fully opens each
-    // named planet's detail panel as the narrator says its name. User
-    // direction: "I am expecting each explore-select to open details
-    // panel fully". Saturn gets re-opened at ~39 s so the panel matches
-    // its narrated beat too; without it the panel would still be on
-    // Neptune (or whichever was last clicked) while the narrator says
-    // "Saturn 29.5 years".
-    { at_sec: 32, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
-    { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
-    { at_sec: 39, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
-    { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
-    // Close the Neptune panel ~4 s after it opens — narrator is moving
-    // off the orbital-period roll-call onto the Voyager 2 beat (~58 s
-    // in VTT) and the canvas needs to re-emerge so the PATHS-layer
-    // flash at 76 s lands against the actual solar system instead of
-    // behind a Neptune panel that's been sitting open for 30+ seconds.
-    // (2026-06-19 user direction: "auto close open panel after 5 s or
-    // so and refocus and go back to main scene".)
-    { at_sec: 47, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // 2026-06-19 (v3) — the planets are 3-5 s apart in narration, too
+    // rapid to fit the "open panel → linger seconds → reset view →
+    // next" rhythm the rest of the tour follows. Earlier iteration
+    // (v2) tried `click` on each but the panel swap was so fast the
+    // listener had no time to read anything before the next swap
+    // ("panels do not open and close at all" — actually they did, but
+    // each lived for ~3 s). Settled-on approach:
+    //
+    //   • Saturn panel stays open throughout the roll-call (29 s →
+    //     47 s = 18 s) so its Technical-tab data is readable for the
+    //     full duration of the example.
+    //   • Mercury / Mars / Neptune become CUES — short text overlays
+    //     that surface each name + period over the canvas without
+    //     swapping the panel. Matches what the listener expects from
+    //     a "1-2 s callout" beat that the original flashes were
+    //     trying (and failing) to deliver.
+    //   • 47 s `explore-reset-view` click closes Saturn AND resets
+    //     the camera in one action — the canvas re-emerges for the
+    //     PATHS-layer beat at 76 s, and the listener understands
+    //     "we're going back to the overview".
+    { at_sec: 32, action: 'cue', target: 'Mercury · 88 days', duration_ms: 2500 },
+    { at_sec: 35, action: 'cue', target: 'Mars · 1.88 years', duration_ms: 2500 },
+    { at_sec: 39, action: 'cue', target: 'Saturn · 29.5 years (this one)', duration_ms: 2500 },
+    { at_sec: 43, action: 'cue', target: 'Neptune · 165 years', duration_ms: 2500 },
+    { at_sec: 47, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
     // but no such control exists on /explore today (script/UI drift —
     // SSML referenced a planned-but-never-shipped speed control). Cue
@@ -263,12 +268,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:02:01.5 — "Click the Sun." / § 00:02:02.6 — "Then click any planet."
     { at_sec: 121, action: 'cue', target: 'Click the Sun — read its panel.', duration_ms: 4000 },
     { at_sec: 122, action: 'click', target: '[data-audio-stage="explore-select-sun"]' },
-    { at_sec: 127, action: 'cue', target: 'Then click any planet.', duration_ms: 4000 },
+    // Allocate ~5 s on the Sun panel, then reset before the Earth
+    // beat so each click starts from a clean state ("open → linger
+    // → reset → next" — 2026-06-19 user direction).
+    { at_sec: 127, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
+    { at_sec: 129, action: 'cue', target: 'Then click any planet.', duration_ms: 3500 },
     { at_sec: 132, action: 'click', target: '[data-audio-stage="explore-select-earth"]' },
-    // Close the Earth panel before the episode fades out so the listener
-    // ends on the canvas, not on a panel that lingers into the
-    // next-episode auto-advance.
-    { at_sec: 137, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // Reset before episode fade-out so the listener ends on the
+    // canvas, not on a panel.
+    { at_sec: 137, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
   ],
 
   // ── /explore · saturn-rings — Enthusiast, VTT 102 s (Extended Tour) ─

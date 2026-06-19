@@ -227,10 +227,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     //     the camera in one action — the canvas re-emerges for the
     //     PATHS-layer beat at 76 s, and the listener understands
     //     "we're going back to the overview".
-    { at_sec: 32, action: 'cue', target: 'Mercury · 88 days', duration_ms: 2500 },
-    { at_sec: 35, action: 'cue', target: 'Mars · 1.88 years', duration_ms: 2500 },
-    { at_sec: 39, action: 'cue', target: 'Saturn · 29.5 years (this one)', duration_ms: 2500 },
-    { at_sec: 43, action: 'cue', target: 'Neptune · 165 years', duration_ms: 2500 },
+    { at_sec: 32, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
+    { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
+    { at_sec: 39, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
     { at_sec: 47, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
     // but no such control exists on /explore today (script/UI drift —

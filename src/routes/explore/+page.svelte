@@ -1092,6 +1092,18 @@
     const id = highlightedMissionId;
     for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
   });
+  // When the PATHS layer is toggled off, close any open iconic-mission
+  // panel + clear the highlight. The tour relies on this at 93 s so a
+  // single PATHS-off click in the script tears down the entire
+  // mini-stack opened around the Voyager 2 beat (panel + arc highlight)
+  // before the next beat lands. (2026-06-19 user note: "at 93s when we
+  // turn off paths also close voyager in details".)
+  $effect(() => {
+    if (!layers.paths) {
+      panelState.pathsLegend = false;
+      highlightedMissionId = null;
+    }
+  });
   async function openPathsLegendMission(missionId: string) {
     // getMission(id, dest) needs the destination because mission JSON
     // is sharded under static/data/missions/<dest>/<id>.json. Resolve

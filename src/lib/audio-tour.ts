@@ -290,7 +290,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 101, action: 'click', target: '[data-audio-stage="science-layer-velocity"]' },
     { at_sec: 103, action: 'click', target: '[data-audio-stage="science-layer-centripetal"]' },
     { at_sec: 105, action: 'click', target: '[data-audio-stage="science-layer-planet-stats"]' },
-    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-magnetosphere"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-hill-sphere"]' },
     { at_sec: 109, action: 'click', target: '[data-audio-stage="science-lens-collapse"]' },
     // Lens OFF — the canvas-overlay effects disappear so the next
     // planet click reads clean.

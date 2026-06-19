@@ -749,10 +749,10 @@
             type="button"
             class="header-btn minimize-btn"
             aria-label={m.audio_minimize_aria()}
-            title={audio.tourActive
+            title={audio.currentEpisode
               ? m.audio_minimize_title()
-              : 'Start the tour first — minimize collapses to the active-tour bar'}
-            disabled={!audio.tourActive}
+              : 'Load an episode first — minimize collapses to the active-playback bar'}
+            disabled={!audio.currentEpisode}
             onclick={() => audio.toggleCompact()}
           >
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">

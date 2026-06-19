@@ -784,12 +784,18 @@
 
   let selectedSmallBodyId: string | null = $state(null);
 
-  // Tour collaboration (PRD-016 §S11 / RFC-019 §12): when a detail panel
-  // opens while the Curator Tour is active, collapse the audio overlay to
-  // compact mode so the panel the narrator just opened is fully visible.
+  // Tour / single-episode collaboration (PRD-016 §S11 / RFC-019 §12):
+  // when a detail panel opens during ACTIVE audio playback (full tour
+  // OR a single-episode play), collapse the audio overlay to compact
+  // mode so the panel the narrator just opened is fully visible.
+  // 2026-06-19 — was gated on `audio.tourActive` only, so single-
+  // episode previews (the most common entry point) kept the overlay
+  // at full width and the panel sat behind it. User report: "tour does
+  // not go to compact mode and overlays details panel".
   $effect(() => {
     if (
-      audio.tourActive &&
+      audio.currentEpisode &&
+      audio.open &&
       (panelState.planet || panelState.sun || panelState.smallBody) &&
       !audio.compact
     ) {

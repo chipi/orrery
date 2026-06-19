@@ -195,12 +195,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // Demo: open Saturn → switch to the TECHNICAL tab so the listener
     // sees the orbit parameters the narrator just named.
     { at_sec: 24, action: 'cue', target: 'Click any planet — like this.', duration_ms: 4000 },
-    { at_sec: 29, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    // 2026-06-19 user direction — open Saturn right after the cue
+    // (was 29 s, pulled to 25 s) so the click lands on the narrator's
+    // "like this" beat.
+    { at_sec: 25, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
     {
-      at_sec: 31,
+      at_sec: 27,
       action: 'click',
       target: '[data-audio-stage="planet-tab-technical"]',
-      note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers.',
+      note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers. Pulled from 31 s → 27 s so the technical view is up before the orbital-period roll-call starts.',
     },
     // VTT § 00:00:30.5 – 43.9 — orbital-period roll-call. Narration
     // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5
@@ -227,9 +230,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     //     the camera in one action — the canvas re-emerges for the
     //     PATHS-layer beat at 76 s, and the listener understands
     //     "we're going back to the overview".
-    { at_sec: 32, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
+    // 2026-06-19 — Mercury pulled from 32 s → 30 s; Saturn re-click at
+    // 39 s dropped (Saturn is already the open panel from 25 s and
+    // narrator returns to it after Mars without us needing to swap
+    // back). Mars + Neptune keep their VTT-aligned beats.
+    { at_sec: 30, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
     { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
-    { at_sec: 39, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
     { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
     { at_sec: 47, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
@@ -251,6 +257,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
         'And the spacecraft that travelled every outer planet — Voyager 2, now in interstellar space.',
       duration_ms: 6000,
     },
+    // 2026-06-19 — select Voyager 2 in the PATHS legend so its
+    // trajectory and mission panel surface alongside the cue.
+    // Previously the cue named Voyager 2 but nothing on screen
+    // pointed at it.
+    { at_sec: 82, action: 'click', target: '[data-audio-stage="iconic-mission-voyager-2"]' },
     {
       at_sec: 90,
       action: 'zoom',
@@ -259,9 +270,21 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       params: { factor: 1.55 },
       note: "Zoom out so the full Voyager 2 trajectory reads against Neptune's orbit.",
     },
+    // Close the Voyager 2 mission panel + reset camera so the
+    // canvas is clean before the Science Lens beat at 99 s.
+    { at_sec: 92, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:01:39.1 — "Try the Science Lens toggle at the top right."
     { at_sec: 99, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
     { at_sec: 101, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // 2026-06-19 — turn on a representative subset of lens layers so
+    // the visual difference is dramatic, then collapse the lens panel
+    // before 110 s so the listener sees the resulting overlay on the
+    // canvas (arrows, lagrange markers, hill spheres) without the
+    // panel UI in the way for the ~4 s before lens turns OFF at 114 s.
+    { at_sec: 103, action: 'click', target: '[data-audio-stage="science-layer-gravity"]' },
+    { at_sec: 105, action: 'click', target: '[data-audio-stage="science-layer-velocity"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-centripetal"]' },
+    { at_sec: 109, action: 'click', target: '[data-audio-stage="science-lens-collapse"]' },
     // Toggle lens back OFF a few seconds later so the listener sees the
     // visual difference and the next beats render without the overlay.
     { at_sec: 114, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },

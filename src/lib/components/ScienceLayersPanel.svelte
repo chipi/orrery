@@ -249,6 +249,7 @@
       class="panel-head"
       aria-expanded={expanded}
       aria-controls="science-lens-body"
+      data-audio-stage="science-lens-collapse"
       onclick={() => (expanded = !expanded)}
     >
       <span class="eyebrow">SCIENCE LENS{!expanded && hasLensStory ? ` · ${title}` : ''}</span>
@@ -277,6 +278,7 @@
                     checked={layerState[key]}
                     onchange={() => toggle(key)}
                     data-testid="science-layer-{key}"
+                    data-audio-stage="science-layer-{key}"
                   />
                   <span class="row-name">{meta.label}</span>
                 </label>

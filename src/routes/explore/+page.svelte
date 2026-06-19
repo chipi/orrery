@@ -4926,6 +4926,7 @@
             onfocus={() => (highlightedMissionId = entry.mission_id)}
             onblur={() => (highlightedMissionId = null)}
             data-testid="paths-legend-row-{entry.mission_id}"
+            data-audio-stage="iconic-mission-{entry.mission_id}"
           >
             <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
             <span class="name">{entry.name}</span>

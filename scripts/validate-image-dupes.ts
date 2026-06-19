@@ -247,6 +247,19 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   //   would diversify, but for THIS ship we honour the explicit
   //   approvals and allowlist the dupes. The next pipeline iteration
   //   will regenerate the dry-runs through the diversified resolver.
+  // ALLOWLIST_AUTHORIZED (2026-06-19) — Slice A v3 round-5 manual
+  //   promotions. Marko explicitly asked to use gallery slot N's image
+  //   as the hero for these 6 missions; the gallery slot stays in place
+  //   (now byte-equal to the hero). Editorial-share, not bug.
+  '89f59113', // fleet-galleries/akatsuki/01 + 02 (promoted from slot 02)
+  'f8ec568a', // missions/phoenix/01 + 03 (promoted from slot 03)
+  'b6405663', // missions/dawn/01 + dawn/02 (promoted from slot 02)
+  'f6752d18', // missions/juno/01 + juno/02 (promoted from slot 02)
+  'c0dfb5fb', // missions/lro/01 + lro/03 (promoted from slot 03)
+  'f437732b', // missions/new-horizons/01 + 02 (promoted from slot 02)
+  '8af1cc20', // missions/vostok-5/01 + 02 (promoted from slot 02)
+  'd453422e', // missions/vostok-6/01 + 02 (promoted from slot 02)
+
   'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
   '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)
   '78248fa6', // fleet-galleries/cygnus-standard/02,03,05 (Cygnus fleet)

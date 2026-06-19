@@ -12,7 +12,7 @@
     "image_url": "http://images-assets.nasa.gov/image/S69-27915/S69-27915~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:46Z",
+    "fetched_at": "2026-06-19T08:51:58Z",
     "slice_a_iteration": 4,
     "slice_a_query": "apollo 10",
     "vision": {
@@ -124,7 +124,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T21:09:23Z",
+    "fetched_at": "2026-06-19T08:51:27Z",
     "slice_a_iteration": 4,
     "slice_a_query": "apollo8"
   },
@@ -197,7 +197,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s62-04018/s62-04018~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:24Z",
+    "fetched_at": "2026-06-19T08:51:29Z",
     "slice_a_iteration": 4,
     "slice_a_query": "aurora 7"
   },
@@ -459,7 +459,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
     "credit": "NASA/JPL-Caltech",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:25Z",
+    "fetched_at": "2026-06-19T08:51:32Z",
     "slice_a_iteration": 4,
     "slice_a_query": "freedom 7"
   },
@@ -476,7 +476,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
     "credit": "NASA/JPL-Caltech",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:25Z",
+    "fetched_at": "2026-06-19T08:51:32Z",
     "slice_a_iteration": 4,
     "slice_a_query": "freedom 7"
   },
@@ -486,7 +486,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:26Z",
+    "fetched_at": "2026-06-19T08:51:33Z",
     "slice_a_iteration": 4,
     "slice_a_query": "friendship 7"
   },
@@ -496,7 +496,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:26Z",
+    "fetched_at": "2026-06-19T08:51:33Z",
     "slice_a_iteration": 4,
     "slice_a_query": "friendship 7"
   },
@@ -653,7 +653,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s64-10806/s64-10806~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:27Z",
+    "fetched_at": "2026-06-19T08:51:35Z",
     "slice_a_iteration": 4,
     "slice_a_query": "liberty bell 7"
   },
@@ -1006,7 +1006,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:27Z",
+    "fetched_at": "2026-06-19T08:51:36Z",
     "slice_a_iteration": 4,
     "slice_a_query": "mercury atlas 9"
   },
@@ -1023,7 +1023,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:28Z",
+    "fetched_at": "2026-06-19T08:51:36Z",
     "slice_a_iteration": 4,
     "slice_a_query": "mercury atlas 9"
   },
@@ -1033,7 +1033,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:28Z",
+    "fetched_at": "2026-06-19T08:51:38Z",
     "slice_a_iteration": 4,
     "slice_a_query": "mercury redstone 3"
   },
@@ -1057,7 +1057,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:29Z",
+    "fetched_at": "2026-06-19T08:51:39Z",
     "slice_a_iteration": 4,
     "slice_a_query": "mercury redstone 3"
   },
@@ -1543,7 +1543,7 @@
     "image_url": "http://images-assets.nasa.gov/image/s66-53205/s66-53205~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:33Z",
+    "fetched_at": "2026-06-19T08:51:44Z",
     "slice_a_iteration": 4,
     "slice_a_query": "sigma 7"
   },
@@ -1975,11 +1975,12 @@
     "fetched_at": "2026-06-09T15:27:19Z"
   },
   "vostok-5/01": {
-    "commons_file": "WaleriBykowski.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:WaleriBykowski.jpg",
+    "commons_file": "Valery Bykovsky.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Valery%20Bykovsky.png",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T15:27:21Z"
+    "fetched_at": "2026-06-19T06:33:22Z",
+    "promoted_from": "slot 02"
   },
   "vostok-5/02": {
     "commons_file": "Valery Bykovsky.png",
@@ -2010,11 +2011,12 @@
     "fetched_at": "2026-06-09T15:27:32Z"
   },
   "vostok-6/01": {
-    "commons_file": "VTereshkova.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:VTereshkova.jpg",
+    "commons_file": "Tereshkova Space Suit.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Tereshkova%20Space%20Suit.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T15:27:34Z"
+    "fetched_at": "2026-06-19T06:33:22Z",
+    "promoted_from": "slot 02"
   },
   "vostok-6/02": {
     "commons_file": "Tereshkova Space Suit.jpg",
@@ -2133,7 +2135,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
     "credit": "NASA/JPL-Caltech",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:33Z",
+    "fetched_at": "2026-06-19T08:51:44Z",
     "slice_a_iteration": 4,
     "slice_a_query": "spirit"
   },
@@ -2143,7 +2145,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
     "credit": "NASA/JPL-Caltech",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:34Z",
+    "fetched_at": "2026-06-19T08:51:45Z",
     "slice_a_iteration": 4,
     "slice_a_query": "spirit"
   },
@@ -2219,13 +2221,14 @@
   },
   "phoenix/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-07pd2076",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-07pd2076/KSC-07pd2076~orig.jpg",
-    "credit": "NASA / KSC",
+    "source_url": "https://images.nasa.gov/details/PIA10906",
+    "image_url": "http://images-assets.nasa.gov/image/PIA10906/PIA10906~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona/Texas A&M University",
     "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:12:12Z",
-    "nasa_id": "KSC-07pd2076",
-    "nasa_title": "KSC-07pd2076"
+    "fetched_at": "2026-06-19T06:43:24Z",
+    "nasa_id": "PIA10906",
+    "nasa_title": "Disappearing Ice",
+    "promoted_from": "slot 03"
   },
   "phoenix/02": {
     "source_type": "nasa-image-library",
@@ -2383,7 +2386,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
     "credit": "NASA/Johns Hopkins APL/Steve Gribben",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:24Z",
+    "fetched_at": "2026-06-19T08:51:30Z",
     "slice_a_iteration": 4,
     "slice_a_query": "dart"
   },
@@ -2413,7 +2416,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
     "credit": "NASA/Johns Hopkins APL/Steve Gribben",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:25Z",
+    "fetched_at": "2026-06-19T08:51:31Z",
     "slice_a_iteration": 4,
     "slice_a_query": "dart"
   },
@@ -2519,7 +2522,7 @@
     "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
     "credit": "Smithsonian National Air and Space Museum",
     "license": "cc0",
-    "fetched_at": "2026-06-18T21:09:33Z",
+    "fetched_at": "2026-06-19T08:51:43Z",
     "slice_a_iteration": 4,
     "slice_a_query": "pioneer 11"
   },
@@ -2529,7 +2532,7 @@
     "image_url": "http://images-assets.nasa.gov/image/S74-17843/S74-17843~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:23Z",
+    "fetched_at": "2026-06-19T08:51:27Z",
     "slice_a_iteration": 4,
     "slice_a_query": "apollo soyuz"
   },
@@ -2539,7 +2542,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA18159/PIA18159~orig.jpg",
     "credit": "NASA/GSFC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-18T21:09:24Z",
+    "fetched_at": "2026-06-19T08:51:29Z",
     "slice_a_iteration": 4,
     "slice_a_query": "clementine"
   },
@@ -2549,7 +2552,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%2021%20Lander%20(LROC15%20-%20M122007650LE%20L21%20ano).png?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-18T21:12:58Z",
+    "fetched_at": "2026-06-19T08:52:06Z",
     "slice_a_iteration": 4,
     "slice_a_query": "luna 21",
     "vision": {

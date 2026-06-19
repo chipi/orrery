@@ -780,6 +780,7 @@
     panelState.satellite = false;
     panelState.belt = false;
     panelState.pathsLegend = false;
+    pathsLegendLocked = false;
     // Drop the iconic-trajectory highlight too — the mission panel is
     // closing, so the bright arc that pointed to it should fade with it.
     highlightedMissionId = null;
@@ -1082,6 +1083,15 @@
   }
 
   let pathsLegendMission: Mission | null = $state(null);
+  // True when the iconic-mission panel was opened by a click (vs a
+  // hover). A locked panel ignores subsequent hover events so the
+  // user can move the cursor over to read the panel without dropping
+  // the selection. Cleared on panel close + on resetExplorePanelState.
+  // 2026-06-19 user UX direction:
+  //   1. Hover → panel + arc track the cursor.
+  //   2. Click → panel + arc lock; mouseleave doesn't tear them down.
+  //   3. Tour fires a programmatic click → same lock semantics.
+  let pathsLegendLocked = $state(false);
   // Which trajectory's color is currently solo'd (legend hover, or canvas
   // hover on the Today marker). null = all dim. Effect below pushes the
   // value into each handle's setHighlight so the bright/dim state lives
@@ -4929,18 +4939,27 @@
           <button
             type="button"
             class="paths-legend-row"
-            onclick={() => openPathsLegendMission(entry.mission_id)}
-            onmouseenter={() => (highlightedMissionId = entry.mission_id)}
-            onmouseleave={() => {
-              // Only clear when no mission panel is open — otherwise
-              // moving the cursor off the row to read the panel drops
-              // the arc highlight that was the whole point of opening
-              // the panel.
-              if (!panelState.pathsLegend) highlightedMissionId = null;
+            onclick={() => {
+              void openPathsLegendMission(entry.mission_id);
+              pathsLegendLocked = true;
             }}
-            onfocus={() => (highlightedMissionId = entry.mission_id)}
+            onmouseenter={() => {
+              if (!pathsLegendLocked) void openPathsLegendMission(entry.mission_id);
+            }}
+            onmouseleave={() => {
+              if (!pathsLegendLocked) {
+                panelState.pathsLegend = false;
+                highlightedMissionId = null;
+              }
+            }}
+            onfocus={() => {
+              if (!pathsLegendLocked) void openPathsLegendMission(entry.mission_id);
+            }}
             onblur={() => {
-              if (!panelState.pathsLegend) highlightedMissionId = null;
+              if (!pathsLegendLocked) {
+                panelState.pathsLegend = false;
+                highlightedMissionId = null;
+              }
             }}
             data-testid="paths-legend-row-{entry.mission_id}"
             data-audio-stage="iconic-mission-{entry.mission_id}"
@@ -5065,7 +5084,11 @@
 <MissionPanel
   mission={pathsLegendMission}
   open={panelState.pathsLegend}
-  onClose={() => (panelState.pathsLegend = false)}
+  onClose={() => {
+    panelState.pathsLegend = false;
+    pathsLegendLocked = false;
+    highlightedMissionId = null;
+  }}
   onFly={(id) => goto(`${base}/fly?mission=${id}`)}
 />
 

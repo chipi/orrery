@@ -12,17 +12,37 @@
   );
 
   /**
-   * Switch locale by calling Paraglide's setLocale. With the URL
-   * strategy, Paraglide rewrites the URL (`/missions` → `/de/missions`
-   * or the inverse for baseLocale) and triggers a SvelteKit navigation
-   * by default — no manual goto + invalidateAll needed. We pass
-   * { reload: false } so the navigation stays SPA (no full reload).
+   * Switch locale.
+   *
+   * The earlier implementation passed `{ reload: false }` to
+   * `setLocale()` on the assumption that Paraglide would handle the
+   * SPA navigation itself. The compiled runtime's behaviour for
+   * `{ reload: false }` is to set the cookie / globalVariable but
+   * skip navigation entirely (see `runReload` in
+   * paraglide/runtime.js). The cookie updated but the URL stayed
+   * put — the user saw the dropdown close and nothing else happened
+   * (2026-06-19 user report: "language picker stopped working, I
+   * see languages but cannot change them").
+   *
+   * Fix: drop the `{ reload: false }` so the runtime's default
+   * `reload: true` path runs, which calls `navigateOrReload(...)`
+   * → `window.location.href = newLocation`. That's a full page
+   * load at the localized URL — not SPA — but locale switching is
+   * a once-per-session action, so the reload cost is acceptable in
+   * exchange for a reliable URL update + a clean re-hydration that
+   * picks up the new locale across every component.
+   *
+   * The earlier `{ reload: false } + SvelteKit goto(...)` approach
+   * (the obvious SPA path) was tried and didn't navigate either,
+   * for reasons not yet understood. Keeping the full-reload path
+   * unblocks users today; the SPA optimisation can come back as a
+   * follow-up once we understand why `goto` was hanging.
    */
   function pick(code: LocaleCode) {
     open = false;
     if (code === active) return;
     track('locale-switch', { from: active, to: code });
-    setLocale(code, { reload: false });
+    setLocale(code);
   }
 
   // Close dropdown on Escape or outside-click.

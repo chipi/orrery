@@ -8490,20 +8490,37 @@
     border-color: rgba(78, 205, 196, 0.5);
   }
 
+  /* hud-row gets a long val (e.g. "Sputnik 8K71PS (R-7 Semyorka
+     derivative)") that overflows the .hud's 220 px width and, because
+     .hud is position:fixed, the overflow extends past the viewport
+     and triggers a horizontal scrollbar on the page (2026-06-19 user
+     report: "when we have launcher and vehicle a bit too narrow so at
+     bottom horizontal bar appears, we don't want that").
+     Fix: allow the val to wrap onto its own line when the row's flex
+     constraints can't accommodate the natural width, and break very
+     long single tokens at any character. The typical short-value
+     layout (one-line "MARS · 2011") is unchanged. */
   .hud-row {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    flex-wrap: wrap;
+    align-items: baseline;
   }
   .hud-key {
     color: rgba(255, 255, 255, 0.35);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
+    flex-shrink: 0;
   }
   .hud-val {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 700;
+    min-width: 0;
+    flex: 1 1 auto;
+    text-align: right;
+    overflow-wrap: anywhere;
   }
   .hud-val.dim {
     color: rgba(255, 255, 255, 0.5);

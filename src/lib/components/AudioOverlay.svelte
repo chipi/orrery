@@ -371,6 +371,18 @@
       case 'click':
       case 'open-tab':
         if (typeof el.click === 'function') {
+          // Focus first, then click — mimics a real mouse click which
+          // fires `focus` before `click`. Programmatic `el.click()` on
+          // its own skips the focus step, so any `onfocus` handler on
+          // the target (e.g. the /explore PATHS legend rows that wire
+          // highlightedMissionId via focus/hover) silently never runs.
+          // Calling `.focus()` first lets the natural component
+          // behavior run — no custom per-component shim needed.
+          // (2026-06-19 user direction on the Voyager 2 beat: "just
+          // make work the normal behavior".)
+          if (typeof el.focus === 'function') {
+            el.focus({ preventScroll: true });
+          }
           el.click();
           // Mirror the cue + drag/zoom pattern: tell the user the tour
           // just clicked something on their behalf. Aria-label of the

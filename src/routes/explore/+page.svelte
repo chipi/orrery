@@ -780,9 +780,8 @@
     panelState.satellite = false;
     panelState.belt = false;
     panelState.pathsLegend = false;
-    // Drop any trajectory-arc highlight tied to the iconic-mission
-    // legend; without this, the tour's 92 s reset leaves the Voyager 2
-    // arc still highlighted after its mission panel has been closed.
+    // Drop the iconic-trajectory highlight too — the mission panel is
+    // closing, so the bright arc that pointed to it should fade with it.
     highlightedMissionId = null;
   }
 
@@ -1092,18 +1091,6 @@
     const id = highlightedMissionId;
     for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
   });
-  // When the PATHS layer is toggled off, close any open iconic-mission
-  // panel + clear the highlight. The tour relies on this at 93 s so a
-  // single PATHS-off click in the script tears down the entire
-  // mini-stack opened around the Voyager 2 beat (panel + arc highlight)
-  // before the next beat lands. (2026-06-19 user note: "at 93s when we
-  // turn off paths also close voyager in details".)
-  $effect(() => {
-    if (!layers.paths) {
-      panelState.pathsLegend = false;
-      highlightedMissionId = null;
-    }
-  });
   async function openPathsLegendMission(missionId: string) {
     // getMission(id, dest) needs the destination because mission JSON
     // is sharded under static/data/missions/<dest>/<id>.json. Resolve
@@ -1115,12 +1102,11 @@
     if (m) {
       pathsLegendMission = m;
       panelState.pathsLegend = true;
-      // Also highlight the trajectory arc — same effect as hovering
-      // the row. Without this, a programmatic click (e.g. from the
-      // audio tour at guide-explore 82 s) opens the mission panel but
-      // the arc stays dim and the listener can't see WHICH path the
-      // panel is for. (2026-06-19 user report: "82 s click did open
-      // panel but did not highlight that arc in the paths".)
+      // Match the hover behaviour: clicking a row highlights its arc.
+      // Pre-2026-06-19 click only opened the panel without highlighting
+      // the trajectory — the user had to hover the row separately to
+      // see which arc the panel was for. (Reported as "click there
+      // should highlight specific mission which does not happen".)
       highlightedMissionId = missionId;
     }
   }
@@ -4945,9 +4931,17 @@
             class="paths-legend-row"
             onclick={() => openPathsLegendMission(entry.mission_id)}
             onmouseenter={() => (highlightedMissionId = entry.mission_id)}
-            onmouseleave={() => (highlightedMissionId = null)}
+            onmouseleave={() => {
+              // Only clear when no mission panel is open — otherwise
+              // moving the cursor off the row to read the panel drops
+              // the arc highlight that was the whole point of opening
+              // the panel.
+              if (!panelState.pathsLegend) highlightedMissionId = null;
+            }}
             onfocus={() => (highlightedMissionId = entry.mission_id)}
-            onblur={() => (highlightedMissionId = null)}
+            onblur={() => {
+              if (!panelState.pathsLegend) highlightedMissionId = null;
+            }}
             data-testid="paths-legend-row-{entry.mission_id}"
             data-audio-stage="iconic-mission-{entry.mission_id}"
           >

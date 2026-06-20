@@ -803,7 +803,14 @@ async function getCategoryGallery(
 }
 
 export async function getPlanetGallery(planetId: string): Promise<string[]> {
-  return getCategoryGallery('planets', 'planet-galleries.json', planetId);
+  const gallery = await getCategoryGallery('planets', 'planet-galleries.json', planetId);
+  if (gallery.length === 0) return gallery;
+  // Honour the planets hero-override JSON so the panel hero (gallery[0])
+  // matches the card cover served via pickHero('planets', id). Mirrors
+  // the fleet / missions pattern.
+  const { loadHeroOverrides, applyHeroOverride } = await import('$lib/image-hero');
+  await loadHeroOverrides('planets');
+  return applyHeroOverride('planets', planetId, gallery);
 }
 
 export async function getSunGallery(): Promise<string[]> {
@@ -876,7 +883,12 @@ export async function getMoonSiteGallery(
  * from `npm run fetch-assets`.
  */
 export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
-  return getCategoryGallery('small-bodies', 'small-body-galleries.json', bodyId);
+  const gallery = await getCategoryGallery('small-bodies', 'small-body-galleries.json', bodyId);
+  if (gallery.length === 0) return gallery;
+  // Honour the small-bodies hero-override JSON — mirrors the planets/fleet pattern.
+  const { loadHeroOverrides, applyHeroOverride } = await import('$lib/image-hero');
+  await loadHeroOverrides('small-bodies');
+  return applyHeroOverride('small-bodies', bodyId, gallery);
 }
 
 /**
@@ -922,7 +934,12 @@ export async function getSatellites(): Promise<SatelliteEntry[]> {
   }
 }
 export async function getSatelliteGallery(satelliteId: string): Promise<string[]> {
-  return getCategoryGallery('satellites', 'satellite-galleries.json', satelliteId);
+  const gallery = await getCategoryGallery('satellites', 'satellite-galleries.json', satelliteId);
+  if (gallery.length === 0) return gallery;
+  // Honour the satellites hero-override JSON — mirrors the planets/fleet pattern.
+  const { loadHeroOverrides, applyHeroOverride } = await import('$lib/image-hero');
+  await loadHeroOverrides('satellites');
+  return applyHeroOverride('satellites', satelliteId, gallery);
 }
 
 /**

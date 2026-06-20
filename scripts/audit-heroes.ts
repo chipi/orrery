@@ -163,6 +163,37 @@ const SURFACES: SurfaceConfig[] = [
     indexPath: 'static/data/earth-objects.json',
     extractIds: (j) => (j as Array<{ id: string }>).map((e) => ({ id: e.id })),
   },
+  {
+    label: 'planets',
+    imageDir: 'planets',
+    indexPath: 'static/data/planets.json',
+    // planets.json shape: { planets: [{ name: "Mercury", ... }, ...] }.
+    // Id is the lowercased name (matches the on-disk dir naming —
+    // static/images/planets/mercury/, etc.).
+    extractIds: (j) =>
+      ((j as { planets?: Array<{ name: string }> }).planets ?? []).map((e) => ({
+        id: e.name.toLowerCase(),
+      })),
+  },
+  {
+    label: 'small-bodies',
+    imageDir: 'small-bodies',
+    indexPath: 'static/data/small-body-galleries.json',
+    // small-body-galleries.json is a flat {id: count} map; ids match
+    // the on-disk dir names directly.
+    extractIds: (j) =>
+      Object.keys(j as Record<string, number>).map((id) => ({ id })),
+  },
+  {
+    label: 'satellites',
+    imageDir: 'satellites',
+    indexPath: 'static/data/satellites.json',
+    // satellites.json shape: { satellites: [{ id, name, ... }, ...] }.
+    extractIds: (j) =>
+      ((j as { satellites?: Array<{ id: string }> }).satellites ?? []).map((e) => ({
+        id: e.id,
+      })),
+  },
 ];
 
 // ─── Load manifests ────────────────────────────────────────────────

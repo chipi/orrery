@@ -35,7 +35,15 @@
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
 
-export type HeroSurface = 'missions' | 'fleet' | 'moon-sites' | 'mars-sites' | 'earth-objects';
+export type HeroSurface =
+  | 'missions'
+  | 'fleet'
+  | 'moon-sites'
+  | 'mars-sites'
+  | 'earth-objects'
+  | 'planets'
+  | 'small-bodies'
+  | 'satellites';
 
 const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   missions: 'missions',
@@ -43,6 +51,9 @@ const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   'moon-sites': 'moon-sites',
   'mars-sites': 'mars-sites',
   'earth-objects': 'earth-objects',
+  planets: 'planets',
+  'small-bodies': 'small-bodies',
+  satellites: 'satellites',
 };
 
 const DEFAULT_SLOT = '01.jpg';

@@ -31,7 +31,16 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const SURFACES = ['missions', 'fleet', 'moon-sites', 'mars-sites', 'earth-objects'];
+const SURFACES = [
+  'missions',
+  'fleet',
+  'moon-sites',
+  'mars-sites',
+  'earth-objects',
+  'planets',
+  'small-bodies',
+  'satellites',
+];
 const AUDIT_DIR = 'docs/provenance';
 const OUT_DIR = 'static/data';
 const APPROVED_AT = new Date().toISOString().slice(0, 10); // YYYY-MM-DD

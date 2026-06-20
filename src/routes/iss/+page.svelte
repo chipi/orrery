@@ -507,20 +507,26 @@
     selection.open(mod);
   }
 
-  // Roving keyboard nav for the MODULES list (visiting-vehicle list stays
-  // click/focus only). Up/Down move the highlight instantly via select()
-  // — debounced panel preview, so fast scrubbing doesn't storm the
-  // gallery fetch — and move DOM focus so the focus ring + canvas-hover
-  // outline follow. Enter/Space open immediately via the native button
-  // onclick → openModule; Esc closes. Wraps at both ends.
-  let moduleRowEls: HTMLButtonElement[] = [];
+  // Roving keyboard nav across BOTH lists as one continuous sequence:
+  // Down from the last module flows into the first visiting vehicle, and
+  // the whole run wraps round at the very ends. Home/End jump to the
+  // first module / last visitor. Up/Down move the highlight instantly
+  // via select() — debounced panel preview, so fast scrubbing doesn't
+  // storm the gallery fetch — and move DOM focus so the focus ring +
+  // canvas-hover outline follow. Enter/Space open immediately via the
+  // native button onclick → openModule; Esc closes.
+  //
+  // `navItems` / `rowEls` are the flattened modules-then-visitors order;
+  // visitor rows bind at index `sortedModules.length + j`.
+  let rowEls: HTMLButtonElement[] = [];
+  const navItems = $derived([...sortedModules, ...sortedVisitors]);
 
-  function onModuleKeydown(e: KeyboardEvent, i: number) {
+  function onRowKeydown(e: KeyboardEvent, i: number) {
     if (e.key === 'Escape') {
       closePanel();
       return;
     }
-    const n = sortedModules.length;
+    const n = navItems.length;
     if (n === 0) return;
     let next: number;
     if (e.key === 'ArrowDown') next = (i + 1) % n;
@@ -529,8 +535,8 @@
     else if (e.key === 'End') next = n - 1;
     else return;
     e.preventDefault();
-    selection.select(sortedModules[next]);
-    moduleRowEls[next]?.focus();
+    selection.select(navItems[next]);
+    rowEls[next]?.focus();
   }
 
   $effect(() => {
@@ -1283,10 +1289,10 @@
             <button
               type="button"
               class="module-row"
-              bind:this={moduleRowEls[i]}
+              bind:this={rowEls[i]}
               class:canvas-hovered={selection.state.hoveredId === mod.id}
               onclick={() => openModule(mod)}
-              onkeydown={(e) => onModuleKeydown(e, i)}
+              onkeydown={(e) => onRowKeydown(e, i)}
               onmouseenter={() => {
                 issVisualRef.hoveredId = mod.id;
                 requestIssMaterialRefresh();
@@ -1321,13 +1327,15 @@
       {#if sortedVisitors.length > 0}
         <h2 class="list-heading list-heading-visitors">{m.iss_visitors_heading()}</h2>
         <ul class="module-list">
-          {#each sortedVisitors as ship (ship.id)}
+          {#each sortedVisitors as ship, j (ship.id)}
             <li>
               <button
                 type="button"
                 class="module-row"
+                bind:this={rowEls[sortedModules.length + j]}
                 class:canvas-hovered={selection.state.hoveredId === ship.id}
                 onclick={() => openModule(ship)}
+                onkeydown={(e) => onRowKeydown(e, sortedModules.length + j)}
                 onmouseenter={() => {
                   issVisualRef.hoveredId = ship.id;
                   requestIssMaterialRefresh();

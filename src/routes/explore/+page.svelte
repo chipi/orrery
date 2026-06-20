@@ -32,6 +32,7 @@
   } from '$lib/three/iconic-trajectory';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
+  import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
@@ -753,8 +754,15 @@
     smallBody: false,
     satellite: false,
     belt: false,
-    pathsLegend: false,
   });
+
+  // Iconic-mission selection — service factory consolidates the old
+  // `pathsLegendSelectedId` / `pathsLegendMission` / `highlightedMissionId`
+  // / `panelState.pathsLegend` quartet into a single $state object with
+  // action methods. See `./iconic-selection.svelte.ts` for the contract.
+  // Idiomatic Svelte 5 pattern (per docs §"$state in classes / modules":
+  // mutate-not-reassign on the shared object).
+  const iconic = createIconicSelectionService();
 
   /** Visibility-layer master toggles (NOT the per-body layer flags —
    *  those live in `layers` further down). */
@@ -779,15 +787,9 @@
     panelState.smallBody = false;
     panelState.satellite = false;
     panelState.belt = false;
-    panelState.pathsLegend = false;
-    pathsLegendSelectedId = null;
-    if (pathsLegendOpenTimer !== null) {
-      clearTimeout(pathsLegendOpenTimer);
-      pathsLegendOpenTimer = null;
-    }
-    // Drop the iconic-trajectory highlight too — the mission panel is
-    // closing, so the bright arc that pointed to it should fade with it.
-    highlightedMissionId = null;
+    // Iconic-mission selection (panel + selectedId + hoveredId + pending
+    // debounce timer) is owned by the service — single reset() call.
+    iconic.reset();
   }
 
   let selectedSmallBodyId: string | null = $state(null);
@@ -1086,70 +1088,16 @@
     }
   }
 
-  let pathsLegendMission: Mission | null = $state(null);
-  // The selected mission id — set by an explicit click on an iconic
-  // legend row (or by a canvas click on a trajectory marker), cleared
-  // when the user closes the panel via the × button. Drives:
-  //   1. The `.is-selected` row indicator in the legend.
-  //   2. The arc-highlight fallback when no row is being hovered.
-  //   3. The panel's `open` state.
-  // Hover sets `highlightedMissionId` only (cheap; just brightens the
-  // arc + updates the tagline). Hover does NOT open the panel —
-  // that pattern caused a render-storm on 2026-06-19 because every
-  // mouseleave was re-issuing the async getMission() fetch.
-  let pathsLegendSelectedId: string | null = $state(null);
-  let openPathsLegendSeq = 0;
-  // Debounce for the heavy MissionPanel re-render. The visual selection
-  // indicator (`.is-selected` on the row + arc highlight) updates
-  // synchronously on every click so flicking through rows feels instant,
-  // but the panel mission swap (which fetches mission JSON, swaps hero
-  // image, re-renders the gallery) only commits after the user pauses on
-  // a row. Without this the user can rapid-click 10 rows/sec and queue
-  // 10 full panel rebuilds back-to-back → main thread saturates.
-  let pathsLegendOpenTimer: ReturnType<typeof setTimeout> | null = null;
-  function scheduleOpenPathsLegendMission(missionId: string) {
-    pathsLegendSelectedId = missionId;
-    if (pathsLegendOpenTimer !== null) clearTimeout(pathsLegendOpenTimer);
-    // 250ms debounce — feels instant to users while consolidating
-    // rapid-click bursts into one MissionPanel re-render. The seq
-    // guard inside openPathsLegendMission catches any racing async
-    // chains from prior calls so stale state writes are dropped.
-    pathsLegendOpenTimer = setTimeout(() => {
-      pathsLegendOpenTimer = null;
-      void openPathsLegendMission(missionId);
-    }, 250);
-  }
-  // Which trajectory's color is currently solo'd (legend hover, or canvas
-  // hover on the Today marker). null = all dim. Effect below pushes the
-  // value into each handle's setHighlight so the bright/dim state lives
-  // on the materials, not in Svelte.
-  let highlightedMissionId: string | null = $state(null);
+  // Arc-highlight effect — pushes the live "highlighted trajectory" id
+  // into each iconic-trajectory handle's setHighlight. The id is the
+  // hovered mission when one is hovered, falling back to the selected
+  // mission so the user always sees which path the open panel is for.
+  // setHighlight is a Three.js side effect (third-party library write),
+  // which is the canonical $effect use case per the Svelte 5 docs.
   $effect(() => {
-    // Arc highlight tracks live hover first (canvas hover or row hover
-    // both set highlightedMissionId), then falls back to the selected
-    // mission so the user always sees which path the open panel is for.
-    const id = highlightedMissionId ?? pathsLegendSelectedId;
+    const id = iconic.state.hoveredId ?? iconic.state.selectedId;
     for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
   });
-  async function openPathsLegendMission(missionId: string) {
-    // getMission(id, dest) needs the destination because mission JSON
-    // is sharded under static/data/missions/<dest>/<id>.json. Resolve
-    // dest via the index — same convention /missions itself uses.
-    // Seq guard: rapid clicks (or a tour firing multiple opens) must
-    // not race — only the latest call wins the final state writes.
-    const seq = ++openPathsLegendSeq;
-    pathsLegendSelectedId = missionId; // synchronous: row indicator + arc fallback update immediately
-    const idx = await getMissionIndex();
-    if (seq !== openPathsLegendSeq) return;
-    const entry = idx.find((e) => e.id === missionId);
-    if (!entry) return;
-    const m = await getMission(missionId, entry.dest, localeFromPage($page));
-    if (seq !== openPathsLegendSeq) return;
-    if (m) {
-      pathsLegendMission = m;
-      panelState.pathsLegend = true;
-    }
-  }
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
   // When `/explore?mission=ID` is loaded, fetch the mission and
@@ -1408,10 +1356,9 @@
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
   // The full `resetExplorePanelState()` funnel is deliberately NOT used
-  // here — it would also close `panelState.pathsLegend` and
-  // `panelState.sizes`, which should remain open across a body
-  // selection so the user can pick a body while the legend / sizes
-  // overlay stays up.
+  // here — it would also close the iconic-mission panel + the sizes
+  // overlay, which should remain open across a body selection so the
+  // user can pick a body while the legend / sizes overlay stays up.
 
   function selectPlanet(id: string) {
     selectedId = id;
@@ -3279,7 +3226,7 @@
           // instead of navigating away to /missions, so the camera +
           // scene state survives the click. Same MissionPanel surface
           // used by the PATHS legend rows.
-          void openPathsLegendMission(trajectoryMissionId);
+          void iconic.openMission(trajectoryMissionId, localeFromPage($page));
         }
         return;
       }
@@ -3324,17 +3271,17 @@
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
         if (hoverData) hoverData = null;
-        if (highlightedMissionId) highlightedMissionId = null;
+        if (iconic.state.hoveredId) iconic.state.hoveredId = null;
         return;
       }
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      // Trajectory-marker hover — set highlightedMissionId so the
-      // matching path goes bright. Independent of the tooltip hover
-      // path below: trajectories don't surface a vis-viva tooltip,
-      // only a color-brighten cue.
+      // Trajectory-marker hover — set hoveredId so the matching path
+      // goes bright. Independent of the tooltip hover path below:
+      // trajectories don't surface a vis-viva tooltip, only a color-
+      // brighten cue.
       if (layers.paths && iconicTrajectoryHandles.length > 0) {
         // All hover-able trajectory objects — Today markers + every
         // encounter sprite. Hover on any one of them brightens the
@@ -3343,9 +3290,9 @@
         for (const h of iconicTrajectoryHandles) trajTargets.push(...h.hoverTargets);
         const trajHits = ray3dHover.intersectObjects(trajTargets, false);
         const newId = (trajHits[0]?.object.userData.missionId as string | undefined) ?? null;
-        if (newId !== highlightedMissionId) highlightedMissionId = newId;
-      } else if (highlightedMissionId) {
-        highlightedMissionId = null;
+        if (newId !== iconic.state.hoveredId) iconic.state.hoveredId = newId;
+      } else if (iconic.state.hoveredId) {
+        iconic.state.hoveredId = null;
       }
       const hits = ray3dHover.intersectObjects(hoverTargets, false);
       if (hits.length === 0) {
@@ -3455,7 +3402,7 @@
     };
     const onHoverLeave = () => {
       hoverData = null;
-      highlightedMissionId = null;
+      iconic.state.hoveredId = null;
     };
 
     let mouseDownOnCanvas = false;
@@ -4611,7 +4558,7 @@
           // side detail panel covers the canvas. See module-level
           // declaration above for the why.
           const aRightPanelOpen =
-            panelState.pathsLegend ||
+            iconic.state.panelOpen ||
             panelState.planet ||
             panelState.sun ||
             panelState.smallBody ||
@@ -5002,10 +4949,10 @@
              strip wraps inside the existing legend column width — it
              never pushes the chip cluster wider. -->
         <div class="paths-legend-tagline" aria-live="polite">
-          {#if highlightedMissionId}
-            {iconicTagline(highlightedMissionId)}
-          {:else if pathsLegendSelectedId}
-            {iconicTagline(pathsLegendSelectedId)}
+          {#if iconic.state.hoveredId}
+            {iconicTagline(iconic.state.hoveredId)}
+          {:else if iconic.state.selectedId}
+            {iconicTagline(iconic.state.selectedId)}
           {:else}
             {m.explore_iconic_tagline_placeholder()}
           {/if}
@@ -5014,11 +4961,9 @@
           <button
             type="button"
             class="paths-legend-row"
-            class:is-selected={pathsLegendSelectedId === entry.mission_id}
-            aria-pressed={pathsLegendSelectedId === entry.mission_id}
-            onclick={() => {
-              scheduleOpenPathsLegendMission(entry.mission_id);
-            }}
+            class:is-selected={iconic.state.selectedId === entry.mission_id}
+            aria-pressed={iconic.state.selectedId === entry.mission_id}
+            onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
             onmouseenter={() => {
               // Lightweight preview — brightens the arc + swaps the
               // tagline. Does NOT open the panel; the panel only
@@ -5026,10 +4971,10 @@
               // intentional after the 2026-06-19 render-storm caused
               // by re-issuing the async getMission() fetch on every
               // mouseenter / mouseleave.
-              highlightedMissionId = entry.mission_id;
+              iconic.state.hoveredId = entry.mission_id;
             }}
             onmouseleave={() => {
-              highlightedMissionId = null;
+              iconic.state.hoveredId = null;
             }}
             data-testid="paths-legend-row-{entry.mission_id}"
             data-audio-stage="iconic-mission-{entry.mission_id}"
@@ -5152,18 +5097,9 @@
 />
 
 <MissionPanel
-  mission={pathsLegendMission}
-  open={panelState.pathsLegend}
-  onClose={() => {
-    // 2026-06-19 user direction: × clears the selection indicator too.
-    panelState.pathsLegend = false;
-    pathsLegendSelectedId = null;
-    if (pathsLegendOpenTimer !== null) {
-      clearTimeout(pathsLegendOpenTimer);
-      pathsLegendOpenTimer = null;
-    }
-    highlightedMissionId = null;
-  }}
+  mission={iconic.state.mission}
+  open={iconic.state.panelOpen}
+  onClose={() => iconic.reset()}
   onFly={(id) => goto(`${base}/fly?mission=${id}`)}
 />
 

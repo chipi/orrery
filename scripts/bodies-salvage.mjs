@@ -38,6 +38,7 @@ const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 const CANDIDATES_PER_BODY = 40; // Commons-search-top-N before any filter
 const KEEP_PER_BODY = 5; // slots 01–05
 const MIN_BYTES = 100_000; // junk-image floor (real planet photos ≥ 100KB)
+const MAX_BYTES = 25_000_000; // skip giant Hubble/TIFF originals — base64 inflates 1.4× and OOM-killed the first run on Earth's 80MB Blue Marble TIFF
 const VISION_THROTTLE_MS = 120; // ~8 req/sec to Anthropic
 const SCRAPE_THROTTLE_MS = 300; // ~3 req/sec to Commons (was 50 — got silently rate-limited around request #25)
 
@@ -302,9 +303,13 @@ async function processBody(body, budget) {
     const info = await commonsImageInfo(c.file);
     await sleep(SCRAPE_THROTTLE_MS);
     if (!info) continue;
-    if (info.size && info.size < MIN_BYTES) {
+    if (info.size && (info.size < MIN_BYTES || info.size > MAX_BYTES)) {
+      const reason =
+        info.size < MIN_BYTES
+          ? `size: ${(info.size / 1024).toFixed(1)}KB < min ${MIN_BYTES / 1024}KB`
+          : `size: ${(info.size / 1_048_576).toFixed(1)}MB > max ${MAX_BYTES / 1_048_576}MB (would OOM on base64)`;
       proposals.push({
-        proposal_id: `${body.surface}-${body.id}-SMALL-${proposals.length}`,
+        proposal_id: `${body.surface}-${body.id}-SIZE-${proposals.length}`,
         agency: 'commons',
         surface: body.surface,
         missionId: body.id,
@@ -323,7 +328,7 @@ async function processBody(body, budget) {
         size_bytes: info.size,
         vision_v3: null,
         survivor: false,
-        drop_reasons: [`size: ${(info.size / 1024).toFixed(1)}KB < min ${MIN_BYTES / 1024}KB`],
+        drop_reasons: [reason],
         notes: [],
       });
       continue;

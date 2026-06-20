@@ -35,7 +35,17 @@
 import { error, json } from '@sveltejs/kit';
 import { readFile, writeFile } from 'node:fs/promises';
 
-const APPROVALS_PATH = 'static/data/slice-a-approvals.json';
+// Two datasets share this endpoint (slice-a + bodies). Switched via
+// ?dataset=… query param; defaults to slice-a for backward compat.
+const APPROVALS_PATHS: Record<string, string> = {
+  'slice-a': 'static/data/slice-a-approvals.json',
+  bodies: 'static/data/bodies-approvals.json',
+};
+
+function resolveApprovalsPath(url: URL): string {
+  const d = url.searchParams.get('dataset') ?? 'slice-a';
+  return APPROVALS_PATHS[d] ?? APPROVALS_PATHS['slice-a'];
+}
 
 const VALID_STATUS = new Set(['approved', 'rejected', 'pending', 'needs-manual']);
 
@@ -52,9 +62,9 @@ type ApprovalsFile = {
   decisions: Record<string, Decision>;
 };
 
-async function loadCurrent(): Promise<ApprovalsFile> {
+async function loadCurrent(path: string): Promise<ApprovalsFile> {
   try {
-    return JSON.parse(await readFile(APPROVALS_PATH, 'utf8'));
+    return JSON.parse(await readFile(path, 'utf8'));
   } catch {
     return { reviewer: 'marko', last_updated_at: null, decisions: {} };
   }
@@ -81,7 +91,7 @@ function sanitizeTags(input: unknown): string[] {
   return [...new Set(out)];
 }
 
-export async function POST({ request }) {
+export async function POST({ request, url }: { request: Request; url: URL }) {
   const body = (await request.json()) as {
     proposal_id?: string;
     status?: string;
@@ -92,7 +102,8 @@ export async function POST({ request }) {
   if (!body.proposal_id || !body.status) throw error(400, 'proposal_id and status required');
   if (!VALID_STATUS.has(body.status)) throw error(400, `invalid status ${body.status}`);
 
-  const current = await loadCurrent();
+  const path = resolveApprovalsPath(url);
+  const current = await loadCurrent(path);
   const now = new Date().toISOString();
   // 'pending' is a REAL stored status now (was previously a delete signal).
   // Marko's allowed to leave a comment / tag / override on a skipped card so
@@ -106,12 +117,12 @@ export async function POST({ request }) {
   };
   current.last_updated_at = now;
 
-  await writeFile(APPROVALS_PATH, JSON.stringify(current, null, 2) + '\n', 'utf8');
+  await writeFile(path, JSON.stringify(current, null, 2) + '\n', 'utf8');
 
   return json({ ok: true, decisions: current.decisions, last_updated_at: current.last_updated_at });
 }
 
-export async function GET() {
-  const current = await loadCurrent();
+export async function GET({ url }: { url: URL }) {
+  const current = await loadCurrent(resolveApprovalsPath(url));
   return json(current);
 }

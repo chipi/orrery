@@ -393,8 +393,10 @@
     try {
       // Absolute path on origin — relative './api' resolves to /dev/api
       // when SvelteKit serves the route without a trailing slash and the
-      // POST 404s silently.
-      const res = await fetch('/dev/slice-a-review/api', {
+      // POST 404s silently. Dataset query param tells the api which
+      // approvals file to write to (slice-a-approvals vs bodies-approvals).
+      const datasetQuery = `?dataset=${data.dataset ?? 'slice-a'}`;
+      const res = await fetch(`/dev/slice-a-review/api${datasetQuery}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ proposal_id: id, status, comment, tags, overrides }),
@@ -455,7 +457,7 @@
     resyncCount = 0;
     for (const [id, d] of Object.entries(decisions)) {
       try {
-        const res = await fetch('/dev/slice-a-review/api', {
+        const res = await fetch(`/dev/slice-a-review/api?dataset=${data.dataset ?? 'slice-a'}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -479,11 +481,22 @@
   }
 </script>
 
-<svelte:head><title>Slice A v3 — Image Approval Review</title></svelte:head>
+<svelte:head><title>Image Approval Review — {data.dataset ?? 'slice-a'}</title></svelte:head>
 
 <div class="wrap">
   <header>
-    <h1>Slice A v3 — Image Approval Review</h1>
+    <h1>
+      Image Approval Review
+      <span class="dataset-badge">[{data.dataset ?? 'slice-a'}]</span>
+    </h1>
+    <div class="dataset-switch">
+      <a href="?dataset=slice-a" class:active={(data.dataset ?? 'slice-a') === 'slice-a'}>
+        slice-a (missions / fleet)
+      </a>
+      <a href="?dataset=bodies" class:active={data.dataset === 'bodies'}>
+        bodies (planets / small-bodies / satellites)
+      </a>
+    </div>
     <div class="stats">
       <span><b>{counts.visible}</b> visible</span>
       <span class="ok"><b>{counts.approved}</b> approved</span>
@@ -877,6 +890,33 @@
     gap: 22px;
     align-items: baseline;
     flex-wrap: wrap;
+  }
+  .dataset-badge {
+    font-size: 13px;
+    color: #6f8ea6;
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .dataset-switch {
+    display: flex;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .dataset-switch a {
+    color: #7a849a;
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid #232733;
+    border-radius: 4px;
+  }
+  .dataset-switch a:hover {
+    color: #d8dde6;
+    border-color: #3a4256;
+  }
+  .dataset-switch a.active {
+    color: #d8dde6;
+    background: #1c2330;
+    border-color: #3a4256;
   }
   header h1 {
     font-size: 16px;

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T14:52:20.211Z",
+  "generated_at": "2026-06-20T17:02:24.916Z",
   "source_audit": "missions-hero-audit.md",
   "overrides": {
     "voyager-2": {
@@ -19,9 +19,9 @@
       "approved_at": "2026-06-20"
     },
     "mars-express": {
-      "slot": "05.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
     },
     "new-horizons": {
       "slot": "01.jpg",
@@ -94,14 +94,14 @@
       "approved_at": "2026-06-12"
     },
     "opportunity": {
-      "slot": "03.jpg",
-      "reason": "MRO HiRISE view of rover at Victoria Crater — the canonical Opportunity hero; slot 01 was Delta II launch (not iconic, rover-on-Mars is)",
-      "approved_at": "2026-06-17"
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
     },
     "spirit": {
-      "slot": "02.jpg",
-      "reason": "Gusev Crater landing-site panorama — Spirit's headline science frame; slot 01 was MER-A Delta II launch",
-      "approved_at": "2026-06-17"
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G3 = slot 03)",
+      "approved_at": "2026-06-20"
     },
     "mariner9": {
       "slot": "03.jpg",
@@ -109,18 +109,18 @@
       "approved_at": "2026-06-17"
     },
     "phoenix": {
-      "slot": "03.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G2 = slot 02)",
       "approved_at": "2026-06-20"
     },
     "magellan": {
-      "slot": "03.jpg",
-      "reason": "Venus hemisphere radar mosaic — Magellan's headline result (first global radar map); slot 01 was spacecraft",
-      "approved_at": "2026-06-17"
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G4 = slot 04)",
+      "approved_at": "2026-06-20"
     },
     "akatsuki": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (gallery 1 = slot 01)",
       "approved_at": "2026-06-20"
     },
     "osiris-rex": {
@@ -186,6 +186,101 @@
     "hayabusa2": {
       "slot": "04.jpg",
       "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
+      "approved_at": "2026-06-20"
+    },
+    "psyche-mission": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (gallery 3)",
+      "approved_at": "2026-06-20"
+    },
+    "beresheet": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (gallery 2)",
+      "approved_at": "2026-06-20"
+    },
+    "schiaparelli": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (gallery 1)",
+      "approved_at": "2026-06-20"
+    },
+    "clementine": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G1 = slot 01)",
+      "approved_at": "2026-06-20"
+    },
+    "mariner10": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "skylab-2": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G3 = slot 03)",
+      "approved_at": "2026-06-20"
+    },
+    "luna16": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "luna17": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "smart-1": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 SMART-1 full gallery re-source (B = slot 01 = SMART-1 at the Moon)",
+      "approved_at": "2026-06-20"
+    },
+    "change1": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 Chang'e-1 (mockup accepted, no flight imagery on Commons)",
+      "approved_at": "2026-06-20"
+    },
+    "luna24": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (G2 = slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "mars3": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "luna21": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "otv-1": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "vostok-2": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "voskhod-1": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "apollo7": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "messenger": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
+      "approved_at": "2026-06-20"
+    },
+    "mariner4": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20",
       "approved_at": "2026-06-20"
     }
   }

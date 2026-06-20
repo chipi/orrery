@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T14:52:20.212Z",
+  "generated_at": "2026-06-20T15:33:22.355Z",
   "source_audit": "fleet-hero-audit.md",
   "overrides": {
     "apollo-csm-block-ii": {
@@ -224,9 +224,9 @@
       "approved_at": "2026-06-12"
     },
     "smart-1": {
-      "slot": "03.jpg",
-      "reason": "url: artwork/illustration/render/scale-model in source URL; vision-rejected: score-below-threshold; subject names a different entity than smart-1",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 SMART-1 full gallery re-source (B = slot 01 = SMART-1 at the Moon)",
+      "approved_at": "2026-06-20"
     },
     "chandrayaan1": {
       "slot": "04.jpg",
@@ -316,6 +316,11 @@
     "hayabusa-2": {
       "slot": "04.jpg",
       "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
+      "approved_at": "2026-06-20"
+    },
+    "change1": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 Chang'e-1 (mockup accepted, no flight imagery on Commons)",
       "approved_at": "2026-06-20"
     }
   }

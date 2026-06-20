@@ -4543,11 +4543,13 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210917-PH-FMX01_0124/KSC-20210917-PH-FMX01_0124~medium.jpg"
   },
   "smart-1/01.jpg": {
-    "commons_file": "Artist's impression of the SMART-1 mission ESA199399.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist's%20impression%20of%20the%20SMART-1%20mission%20ESA199399.jpg",
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SMART-1%20mission%20at%20the%20Moon%20ESA231855.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SMART-1%20mission%20at%20the%20Moon%20ESA231855.jpg",
     "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "license": "CC BY-SA 3.0 IGO",
+    "fetched_at": "2026-06-20T15:32:53Z",
+    "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
   },
   "smart-1/02": {
     "commons_file": "ESA's_SMART-1-_testing_solar_electric_propulsion_and_studying_the_Moon_ESA194476.jpg",
@@ -6236,5 +6238,50 @@
     "fetched_at": "2026-06-19T09:08:35Z",
     "promoted_from": "slot 02",
     "cross_surface_mirror_from": "missions"
+  },
+  "smart-1/02.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s%20impression%20of%20the%20SMART-1%20mission%20ESA199399.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Artist%27s%20impression%20of%20the%20SMART-1%20mission%20ESA199399.jpg",
+    "credit": "ESA",
+    "license": "CC BY-SA 3.0 IGO",
+    "fetched_at": "2026-06-20T15:32:54Z",
+    "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
+  },
+  "smart-1/03.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ESA%27s%20SMART-1-%20testing%20solar%20electric%20propulsion%20and%20studying%20the%20Moon%20ESA194476.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ESA%27s%20SMART-1-%20testing%20solar%20electric%20propulsion%20and%20studying%20the%20Moon%20ESA194476.jpg",
+    "credit": "ESA",
+    "license": "CC BY-SA 3.0 IGO",
+    "fetched_at": "2026-06-20T15:32:55Z",
+    "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
+  },
+  "smart-1/04.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SMART-1%20is%20packed%20as%20it%20will%20be%20for%20launch%20ESA228534.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SMART-1%20is%20packed%20as%20it%20will%20be%20for%20launch%20ESA228534.jpg",
+    "credit": "ESA",
+    "license": "CC BY-SA 3.0 IGO",
+    "fetched_at": "2026-06-20T15:32:56Z",
+    "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
+  },
+  "smart-1/05.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:One%20set%20of%20solar%20panels%20is%20deployed%20for%20testing%20ESA239244.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/One%20set%20of%20solar%20panels%20is%20deployed%20for%20testing%20ESA239244.jpg",
+    "credit": "ESA",
+    "license": "CC BY-SA 3.0 IGO",
+    "fetched_at": "2026-06-20T15:32:57Z",
+    "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
+  },
+  "change1/01.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e-1%20mockup%20at%20BASM.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang%27e-1%20mockup%20at%20BASM.jpg",
+    "credit": "Wikimedia Commons / CNSA",
+    "license": "CC BY-SA",
+    "fetched_at": "2026-06-20T15:33:22Z",
+    "manual_source": "Marko 2026-06-20 — accepted mockup as hero (no flight imagery available)"
   }
 }

@@ -794,11 +794,13 @@
 
   // Roving keyboard nav for the iconic-mission legend — mirrors /iss.
   // Up/Down move the highlight (wrapping at both ends), Home/End jump to
-  // first/last, Esc clears. Movement calls selectMission() — instant
-  // is-selected mark + 250 ms debounced panel open, exactly as a row
-  // click — and moves DOM focus so the focus ring follows. Enter/Space
-  // open via the native button onclick (also selectMission), keeping the
-  // legend's click semantics uniform.
+  // first/last, Esc clears.
+  //
+  // Arrows move DOM FOCUS ONLY — the committed selection (is-selected)
+  // and the open panel stay put while you traverse. Each focused row's
+  // onfocus sets hoveredId so the arc + tagline preview where you are
+  // without committing. Enter/Space commit via the native button onclick
+  // → selectMission.
   let legendRowEls: HTMLButtonElement[] = [];
 
   function onLegendKeydown(e: KeyboardEvent, i: number): void {
@@ -815,7 +817,7 @@
     else if (e.key === 'End') next = n - 1;
     else return;
     e.preventDefault();
-    iconic.selectMission(PATHS_LEGEND[next].mission_id, localeFromPage($page));
+    // Focus only — selection is committed on Enter/click, not on move.
     legendRowEls[next]?.focus();
   }
 
@@ -5001,6 +5003,16 @@
               // by re-issuing the async getMission() fetch on every
               // mouseenter / mouseleave.
               iconic.state.hoveredId = entry.mission_id;
+            }}
+            onfocus={() => {
+              // Keyboard equivalent of the hover preview — arrowing onto
+              // a row brightens its arc + tagline without committing.
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onblur={() => {
+              if (iconic.state.hoveredId === entry.mission_id) {
+                iconic.state.hoveredId = null;
+              }
             }}
             onmouseleave={() => {
               iconic.state.hoveredId = null;

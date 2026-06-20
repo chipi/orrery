@@ -510,23 +510,24 @@
   // Roving keyboard nav across BOTH lists as one continuous sequence:
   // Down from the last module flows into the first visiting vehicle, and
   // the whole run wraps round at the very ends. Home/End jump to the
-  // first module / last visitor. Up/Down move the highlight instantly
-  // via select() — debounced panel preview, so fast scrubbing doesn't
-  // storm the gallery fetch — and move DOM focus so the focus ring +
-  // canvas-hover outline follow. Enter/Space open immediately via the
-  // native button onclick → openModule; Esc closes.
+  // first module / last visitor.
   //
-  // `navItems` / `rowEls` are the flattened modules-then-visitors order;
-  // visitor rows bind at index `sortedModules.length + j`.
+  // Arrows move DOM FOCUS ONLY — the committed selection (teal
+  // aria-current) and the open panel stay put while you traverse. Each
+  // focused row's onfocus lights the canvas-hover outline so you preview
+  // where you are without committing. Enter/Space open the focused row
+  // (native button onclick → openModule, immediate); Esc closes.
+  //
+  // `rowEls` is the flattened modules-then-visitors focus order; visitor
+  // rows bind at index `sortedModules.length + j`.
   let rowEls: HTMLButtonElement[] = [];
-  const navItems = $derived([...sortedModules, ...sortedVisitors]);
 
   function onRowKeydown(e: KeyboardEvent, i: number) {
     if (e.key === 'Escape') {
       closePanel();
       return;
     }
-    const n = navItems.length;
+    const n = sortedModules.length + sortedVisitors.length;
     if (n === 0) return;
     let next: number;
     if (e.key === 'ArrowDown') next = (i + 1) % n;
@@ -535,7 +536,7 @@
     else if (e.key === 'End') next = n - 1;
     else return;
     e.preventDefault();
-    selection.select(navItems[next]);
+    // Focus only — selection is committed on Enter/click, not on move.
     rowEls[next]?.focus();
   }
 

@@ -708,6 +708,17 @@
     content-visibility: auto;
     contain-intrinsic-size: auto 280px;
   }
+  /* content-visibility:auto applies paint containment, which clips the
+     SHARED focus outline / selected glow — they draw OUTSIDE the card box
+     (outline-offset, box-shadow) and get cropped to the card-li. /missions
+     has no content-visibility so the identical highlight shows there. Lift
+     content-visibility for the focused/selected card so the keyboard
+     roving-nav highlight renders the same on both routes. One card opts
+     out of the optimisation at a time — negligible. */
+  .fleet-grid > .card-li:has(.card:focus-visible),
+  .fleet-grid > .card-li:has(.card.selected) {
+    content-visibility: visible;
+  }
 
   /* Card chrome (.card, .card-photo, .card-body, .card-head,
      .agency-badge, .card-status, .card-name, .card-type, .card-meta,

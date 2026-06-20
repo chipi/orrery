@@ -4236,6 +4236,19 @@
     // advance (ADR-025) — we don't hand it to createAnimateLoop's
     // reducedMotion option because user-initiated camera drag still
     // needs to update the render even when sim time is frozen.
+    // Render-loop throttle counter — composer.render() is skipped on
+    // 3 of every 4 frames when a right-side detail panel covers most
+    // of the canvas. Positions + arc-highlight + selection halo all
+    // update every frame; only the WebGL submission is skipped, so
+    // the visible image holds for ~33 ms on a 120 Hz display and
+    // ~67 ms on 60 Hz (below the perceptual flicker threshold for
+    // /explore's slow orbital motion). The GPU bill drops to 25% and
+    // the freed main-thread budget routes to MissionPanel re-renders
+    // + the Svelte reactive cascade during the click-heavy mission-
+    // browsing window. Verified by perf-explore-iconic-clicks.spec.ts
+    // on 2026-06-20: hero-image-loaded validation 42 → 49 / 50,
+    // panel-title-match 48 → 49 / 50 (both at the ceiling).
+    let frameThrottleCount = 0;
     const loop = createAnimateLoop({
       onFrame: () => {
         const now = performance.now();
@@ -4594,6 +4607,22 @@
             for (const h of iconicTrajectoryHandles) h.relayoutLabels(camera, ch);
           }
 
+          // Frame throttle — render 1 of every 4 frames when a right-
+          // side detail panel covers the canvas. See module-level
+          // declaration above for the why.
+          const aRightPanelOpen =
+            panelState.pathsLegend ||
+            panelState.planet ||
+            panelState.sun ||
+            panelState.smallBody ||
+            panelState.satellite ||
+            panelState.belt;
+          if (aRightPanelOpen) {
+            frameThrottleCount = (frameThrottleCount + 1) & 3;
+            if (frameThrottleCount !== 0) return;
+          } else {
+            frameThrottleCount = 0;
+          }
           composer.render();
         } else {
           draw2d();

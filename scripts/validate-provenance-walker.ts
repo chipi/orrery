@@ -30,7 +30,9 @@ type ProvenanceEntry = {
 
 const args = process.argv.slice(2);
 const manifestArg = args.find((a) => a.startsWith('--manifest='));
-const manifestPath = manifestArg ? manifestArg.slice('--manifest='.length) : 'static/data/image-provenance.json';
+const manifestPath = manifestArg
+  ? manifestArg.slice('--manifest='.length)
+  : 'static/data/image-provenance.json';
 
 async function main(): Promise<void> {
   const raw = await readFile(manifestPath, 'utf8');
@@ -58,11 +60,14 @@ async function main(): Promise<void> {
   let failed = 0;
   if (undefinedFilepath.length > 0) {
     failed += undefinedFilepath.length;
-    console.error(`  ✗ ${undefinedFilepath.length} entries have image_url=Special:FilePath/undefined`);
+    console.error(
+      `  ✗ ${undefinedFilepath.length} entries have image_url=Special:FilePath/undefined`,
+    );
     for (const e of undefinedFilepath.slice(0, 5)) {
       console.error(`      ${e.path} (${e.source_type})`);
     }
-    if (undefinedFilepath.length > 5) console.error(`      … and ${undefinedFilepath.length - 5} more`);
+    if (undefinedFilepath.length > 5)
+      console.error(`      … and ${undefinedFilepath.length - 5} more`);
   } else {
     console.log('  ✓ no Special:FilePath/undefined entries');
   }

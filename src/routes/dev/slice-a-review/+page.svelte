@@ -11,7 +11,13 @@
 <script lang="ts">
   import type { PageData } from './$types';
 
-  type Overrides = { credit?: string; license?: string; image_url?: string; source_type?: string; source_url?: string };
+  type Overrides = {
+    credit?: string;
+    license?: string;
+    image_url?: string;
+    source_type?: string;
+    source_url?: string;
+  };
   type Decision = {
     status: 'approved' | 'rejected' | 'needs-manual' | 'pending';
     comment: string;
@@ -50,14 +56,31 @@
   // proposal so Marko can see exactly why a candidate survived (or
   // didn't). Mirror of scripts/slice-a-salvage.mjs:ENABLED_FILTERS.
   const FILTER_ORDER: { id: string; label: string; describe: string }[] = [
-    { id: 'token-match',    label: 'token-match',    describe: 'Mission slug appears in candidate title / filename' },
-    { id: 'intra-mission',  label: 'intra-mission',  describe: 'No two slots of same mission share image_url' },
-    { id: 'cross-mission',  label: 'cross-mission',  describe: 'No two missions share image_url' },
-    { id: 'size',           label: 'size',           describe: 'HEAD content-length ≥ 50 KB' },
-    { id: 'vision',         label: 'vision v3',      describe: 'related + confidence ≥ 0.9 (stricter v3 prompt)' },
+    {
+      id: 'token-match',
+      label: 'token-match',
+      describe: 'Mission slug appears in candidate title / filename',
+    },
+    {
+      id: 'intra-mission',
+      label: 'intra-mission',
+      describe: 'No two slots of same mission share image_url',
+    },
+    { id: 'cross-mission', label: 'cross-mission', describe: 'No two missions share image_url' },
+    { id: 'size', label: 'size', describe: 'HEAD content-length ≥ 50 KB' },
+    {
+      id: 'vision',
+      label: 'vision v3',
+      describe: 'related + confidence ≥ 0.9 (stricter v3 prompt)',
+    },
   ];
 
-  type TrailStep = { id: string; label: string; status: 'pass' | 'fail' | 'skipped' | 'deferred'; detail?: string };
+  type TrailStep = {
+    id: string;
+    label: string;
+    status: 'pass' | 'fail' | 'skipped' | 'deferred';
+    detail?: string;
+  };
 
   function trailFor(p: Proposal): TrailStep[] {
     const drops = p.drop_reasons ?? [];
@@ -68,7 +91,12 @@
       const drop = drops.find((d) => d.startsWith(f.id + ':'));
       const note = notes.find((n) => n.startsWith(f.id + '-deferred:'));
       if (drop) {
-        out.push({ id: f.id, label: f.label, status: 'fail', detail: drop.slice(f.id.length + 1).trim() });
+        out.push({
+          id: f.id,
+          label: f.label,
+          status: 'fail',
+          detail: drop.slice(f.id.length + 1).trim(),
+        });
       } else if (note) {
         out.push({ id: f.id, label: f.label, status: 'deferred', detail: note });
       } else if (filtersRun.includes(f.id)) {
@@ -111,10 +139,15 @@
       .join(' ')
       .toLowerCase();
     const missionTokens = p.missionId.split(/[\s\-_]+/).filter((t) => t.length >= 3);
-    const queryTokens = (p.query ?? '').toLowerCase().split(/\s+/).filter((t) => t.length >= 3);
+    const queryTokens = (p.query ?? '')
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((t) => t.length >= 3);
     const tokens = [...new Set([...missionTokens, ...queryTokens].map((t) => t.toLowerCase()))];
     const hit = tokens.find((t) => haystack.includes(t));
-    return hit ? `matched "${hit}" out of ${tokens.length} mission/query token${tokens.length === 1 ? '' : 's'}` : undefined;
+    return hit
+      ? `matched "${hit}" out of ${tokens.length} mission/query token${tokens.length === 1 ? '' : 's'}`
+      : undefined;
   }
 
   function intraMissionSignal(p: Proposal): string | undefined {
@@ -164,23 +197,83 @@
   // Canonical exception-tag vocabulary. Free-form tags are also accepted
   // via the "+ add" affordance — these are just quick-pick chips.
   const TAG_VOCAB = [
-    { id: 'unrelated', label: 'unrelated', tip: 'Image is entirely off-topic — wrong subject, wrong domain' },
-    { id: 'wrong-mission', label: 'wrong-mission', tip: 'Image is real but is from a different mission than claimed' },
-    { id: 'wrong-target-body', label: 'wrong-target', tip: 'Image shows a different celestial body than the mission target' },
+    {
+      id: 'unrelated',
+      label: 'unrelated',
+      tip: 'Image is entirely off-topic — wrong subject, wrong domain',
+    },
+    {
+      id: 'wrong-mission',
+      label: 'wrong-mission',
+      tip: 'Image is real but is from a different mission than claimed',
+    },
+    {
+      id: 'wrong-target-body',
+      label: 'wrong-target',
+      tip: 'Image shows a different celestial body than the mission target',
+    },
     { id: 'low-resolution', label: 'low-res', tip: 'Too small / low-quality for hero use' },
-    { id: 'mockup-or-museum', label: 'mockup', tip: 'Replica / museum display / training model, not the real spacecraft' },
-    { id: 'crew-only', label: 'crew-only', tip: 'Astronaut crew portrait without spacecraft in frame (sometimes still ok if launch-day)' },
-    { id: 'non-astronaut-people', label: 'non-astronaut', tip: 'People-only image but they are factory workers / ground crew / officials, not astronauts' },
-    { id: 'useless-diagram', label: 'diagram', tip: 'Technical diagram / schematic / chart — not a usable hero image' },
-    { id: 'useless-marketing', label: 'marketing', tip: 'Press-kit poster / promotional art / marketing copy, not a real mission photograph' },
-    { id: 'useless-screenshot', label: 'screenshot', tip: 'Screen capture / UI frame / non-mission visualisation' },
-    { id: 'distant-incidental', label: 'distant', tip: 'Target appears as a dot or in the background, not the subject' },
-    { id: 'needs-manual-source', label: 'manual-source', tip: 'Automated resolver unlikely to find a good candidate' },
-    { id: 'credit-incorrect', label: 'credit-fix', tip: 'Image OK but credit / license needs override' },
+    {
+      id: 'mockup-or-museum',
+      label: 'mockup',
+      tip: 'Replica / museum display / training model, not the real spacecraft',
+    },
+    {
+      id: 'crew-only',
+      label: 'crew-only',
+      tip: 'Astronaut crew portrait without spacecraft in frame (sometimes still ok if launch-day)',
+    },
+    {
+      id: 'non-astronaut-people',
+      label: 'non-astronaut',
+      tip: 'People-only image but they are factory workers / ground crew / officials, not astronauts',
+    },
+    {
+      id: 'useless-diagram',
+      label: 'diagram',
+      tip: 'Technical diagram / schematic / chart — not a usable hero image',
+    },
+    {
+      id: 'useless-marketing',
+      label: 'marketing',
+      tip: 'Press-kit poster / promotional art / marketing copy, not a real mission photograph',
+    },
+    {
+      id: 'useless-screenshot',
+      label: 'screenshot',
+      tip: 'Screen capture / UI frame / non-mission visualisation',
+    },
+    {
+      id: 'distant-incidental',
+      label: 'distant',
+      tip: 'Target appears as a dot or in the background, not the subject',
+    },
+    {
+      id: 'needs-manual-source',
+      label: 'manual-source',
+      tip: 'Automated resolver unlikely to find a good candidate',
+    },
+    {
+      id: 'credit-incorrect',
+      label: 'credit-fix',
+      tip: 'Image OK but credit / license needs override',
+    },
     { id: 'wrong-orientation', label: 'orientation', tip: 'Sideways / upside down / mirrored' },
-    { id: 'cross-mission-share-ok', label: 'share-ok', tip: 'Explicitly allow sharing across related missions (overrides cross-mission-dedup)' },
-    { id: 'duplicate', label: 'duplicate', tip: 'Proposal is a duplicate of another (same image already used elsewhere)' },
-    { id: 'stay-in-gallery', label: 'stay-in-gallery', tip: 'Current image is fine — it can stay in the gallery, no swap needed (pair with Reject)' },
+    {
+      id: 'cross-mission-share-ok',
+      label: 'share-ok',
+      tip: 'Explicitly allow sharing across related missions (overrides cross-mission-dedup)',
+    },
+    {
+      id: 'duplicate',
+      label: 'duplicate',
+      tip: 'Proposal is a duplicate of another (same image already used elsewhere)',
+    },
+    {
+      id: 'stay-in-gallery',
+      label: 'stay-in-gallery',
+      tip: 'Current image is fine — it can stay in the gallery, no swap needed (pair with Reject)',
+    },
   ];
 
   // Live state, seeded from the loaded approvals file.
@@ -225,7 +318,9 @@
   // Tier 2 (Smithsonian, NARA) is where mistakes hide — Marko asked
   // for an explicit isolatable view. Empty Set means show all tiers.
   let filterTier = $state<Set<string>>(new Set());
-  let filterStatus = $state<Set<string>>(new Set(['pending', 'approved', 'rejected', 'needs-manual']));
+  let filterStatus = $state<Set<string>>(
+    new Set(['pending', 'approved', 'rejected', 'needs-manual']),
+  );
 
   const proposals: Proposal[] = data.salvage.proposals ?? [];
 
@@ -390,7 +485,9 @@
       <span class="bad"><b>{counts.rejected}</b> rejected</span>
       <span class="warn"><b>{counts.manual}</b> manual</span>
       <span><b>{counts.total - counts.approved - counts.rejected - counts.manual}</b> pending</span>
-      <span class="hint">saved {lastSavedAt ? new Date(lastSavedAt).toLocaleTimeString() : 'never'}</span>
+      <span class="hint"
+        >saved {lastSavedAt ? new Date(lastSavedAt).toLocaleTimeString() : 'never'}</span
+      >
     </div>
   </header>
 
@@ -402,12 +499,16 @@
         Show dropped proposals
         <span class="count">({counts.total - counts.survivors})</span>
       </label>
-      <label title="Hide cards that were dropped because the cluster's first occurrence already passed through (cross-mission-dupe or cross-mission-basename). Each visual cluster ends up with one representative card.">
+      <label
+        title="Hide cards that were dropped because the cluster's first occurrence already passed through (cross-mission-dupe or cross-mission-basename). Each visual cluster ends up with one representative card."
+      >
         <input type="checkbox" bind:checked={collapseDupes} />
         Collapse cluster duplicates
         <span class="count">({proposals.filter(isClusterDuplicate).length})</span>
       </label>
-      <label title="Show only proposals generated by scripts/slice-a-manual-source.mjs (the targeted hand-source backlog pass). Includes both PROMOTIONS (gallery slot → hero) and SOURCING (resolver-found alternative).">
+      <label
+        title="Show only proposals generated by scripts/slice-a-manual-source.mjs (the targeted hand-source backlog pass). Includes both PROMOTIONS (gallery slot → hero) and SOURCING (resolver-found alternative)."
+      >
         <input type="checkbox" bind:checked={manualSourceOnly} />
         Manual-source pass only
         <span class="count">({proposals.filter((p) => p.manual_source_pass).length})</span>
@@ -452,7 +553,15 @@
 
       <h2>Resolver tier</h2>
       {#each tiers as t}
-        <label title={t === 'T1' ? 'Tier 1 — agency primaries (NASA Images API, ESA Hubble, Flickr, ESA Multimedia)' : t === 'T2' ? 'Tier 2 — institutional secondaries (Smithsonian Open Access, NARA RG-255)' : t === 'T3' ? 'Tier 3 — Wikimedia Commons failover' : 'No tier recorded'}>
+        <label
+          title={t === 'T1'
+            ? 'Tier 1 — agency primaries (NASA Images API, ESA Hubble, Flickr, ESA Multimedia)'
+            : t === 'T2'
+              ? 'Tier 2 — institutional secondaries (Smithsonian Open Access, NARA RG-255)'
+              : t === 'T3'
+                ? 'Tier 3 — Wikimedia Commons failover'
+                : 'No tier recorded'}
+        >
           <input
             type="checkbox"
             checked={filterTier.has(t)}
@@ -483,8 +592,8 @@
           filterCodePath = new Set();
           filterTier = new Set();
           filterStatus = new Set(['pending', 'approved', 'rejected', 'needs-manual']);
-        }}
-      >Reset filters</button>
+        }}>Reset filters</button
+      >
     </aside>
 
     <section class="grid">
@@ -543,7 +652,9 @@
             {#if (p.drop_reasons?.length ?? 0) + (p.notes?.length ?? 0) > 0}
               <div class="row">
                 <b>flags</b>
-                <span class="flags">{[...(p.drop_reasons ?? []), ...(p.notes ?? [])].join(' · ')}</span>
+                <span class="flags"
+                  >{[...(p.drop_reasons ?? []), ...(p.notes ?? [])].join(' · ')}</span
+                >
               </div>
             {/if}
           </div>
@@ -564,8 +675,8 @@
                 class:on={tagsOn.has(t.id)}
                 title={t.tip}
                 disabled={isUntouched}
-                onclick={() => toggleTag(p.proposal_id, t.id)}
-              >{t.label}</button>
+                onclick={() => toggleTag(p.proposal_id, t.id)}>{t.label}</button
+              >
             {/each}
           </div>
 
@@ -576,9 +687,16 @@
                 <span class="step-icon">→</span>
                 <div class="step-body">
                   <b>resolver</b>
-                  <span class="dim">query <code>{p.query ?? '—'}</code> → {p.proposed?.source_type ?? 'no result'}</span>
+                  <span class="dim"
+                    >query <code>{p.query ?? '—'}</code> → {p.proposed?.source_type ??
+                      'no result'}</span
+                  >
                   {#if p.proposed?.image_url}
-                    <span class="dim mono">{p.proposed.image_url.slice(0, 100)}{p.proposed.image_url.length > 100 ? '…' : ''}</span>
+                    <span class="dim mono"
+                      >{p.proposed.image_url.slice(0, 100)}{p.proposed.image_url.length > 100
+                        ? '…'
+                        : ''}</span
+                    >
                   {/if}
                 </div>
               </li>
@@ -587,17 +705,31 @@
                   <span class="step-icon">→</span>
                   <div class="step-body">
                     <b>vision v2</b>
-                    <span class="pill {p.vision_v2.verdict}">{p.vision_v2.verdict} · {(p.vision_v2.confidence ?? 0).toFixed(2)}</span>
+                    <span class="pill {p.vision_v2.verdict}"
+                      >{p.vision_v2.verdict} · {(p.vision_v2.confidence ?? 0).toFixed(2)}</span
+                    >
                     {#if p.vision_v2.reason}<span class="dim">— {p.vision_v2.reason}</span>{/if}
                   </div>
                 </li>
               {/if}
               {#each trailFor(p) as t}
                 <li class="step {t.status}">
-                  <span class="step-icon">{t.status === 'pass' ? '✓' : t.status === 'fail' ? '✗' : t.status === 'deferred' ? '⌛' : '–'}</span>
+                  <span class="step-icon"
+                    >{t.status === 'pass'
+                      ? '✓'
+                      : t.status === 'fail'
+                        ? '✗'
+                        : t.status === 'deferred'
+                          ? '⌛'
+                          : '–'}</span
+                  >
                   <div class="step-body">
                     <b>{t.label}</b>
-                    {#if t.detail}<span class="dim">{t.detail}</span>{:else if t.status === 'pass'}<span class="dim">passed</span>{:else if t.status === 'skipped'}<span class="dim">filter not run this pass</span>{/if}
+                    {#if t.detail}<span class="dim">{t.detail}</span
+                      >{:else if t.status === 'pass'}<span class="dim">passed</span
+                      >{:else if t.status === 'skipped'}<span class="dim"
+                        >filter not run this pass</span
+                      >{/if}
                   </div>
                 </li>
               {/each}
@@ -605,19 +737,21 @@
                 <span class="step-icon">{p.survivor ? '★' : '·'}</span>
                 <div class="step-body">
                   <b>{p.survivor ? 'survivor' : 'dropped'}</b>
-                  <span class="dim">{p.survivor ? 'in approval pool — pending your label' : 'awaiting label / will be skipped at apply'}</span>
+                  <span class="dim"
+                    >{p.survivor
+                      ? 'in approval pool — pending your label'
+                      : 'awaiting label / will be skipped at apply'}</span
+                  >
                 </div>
               </li>
             </ol>
           </details>
 
-          <details
-            class="overrides"
-            bind:open={expandedOverrides[p.proposal_id]}
-          >
+          <details class="overrides" bind:open={expandedOverrides[p.proposal_id]}>
             <summary>overrides (apply uses these if set)</summary>
             <div class="override-grid">
-              <label>credit
+              <label
+                >credit
                 <input
                   type="text"
                   value={bufferFor(p.proposal_id, 'credit')}
@@ -625,7 +759,8 @@
                   onblur={() => saveOverridesAndComment(p.proposal_id)}
                 />
               </label>
-              <label>license
+              <label
+                >license
                 <input
                   type="text"
                   value={bufferFor(p.proposal_id, 'license')}
@@ -633,7 +768,8 @@
                   onblur={() => saveOverridesAndComment(p.proposal_id)}
                 />
               </label>
-              <label class="full">image_url (swap to a different source entirely)
+              <label class="full"
+                >image_url (swap to a different source entirely)
                 <input
                   type="url"
                   value={bufferFor(p.proposal_id, 'image_url')}
@@ -641,7 +777,8 @@
                   onblur={() => saveOverridesAndComment(p.proposal_id)}
                 />
               </label>
-              <label>source_type
+              <label
+                >source_type
                 <input
                   type="text"
                   value={bufferFor(p.proposal_id, 'source_type')}
@@ -649,7 +786,8 @@
                   onblur={() => saveOverridesAndComment(p.proposal_id)}
                 />
               </label>
-              <label>source_url
+              <label
+                >source_url
                 <input
                   type="url"
                   value={bufferFor(p.proposal_id, 'source_url')}
@@ -665,26 +803,26 @@
               class="approve"
               title="Ship this image — apply downloads the new image and updates the sidecar"
               disabled={savingId === p.proposal_id}
-              onclick={() => persist(p.proposal_id, 'approved')}
-            >Approve ✓</button>
+              onclick={() => persist(p.proposal_id, 'approved')}>Approve ✓</button
+            >
             <button
               class="reject"
               title="Reject the proposal — current image stays. Add tags so the next resolver pass tries harder."
               disabled={savingId === p.proposal_id}
-              onclick={() => persist(p.proposal_id, 'rejected')}
-            >Reject ✗</button>
+              onclick={() => persist(p.proposal_id, 'rejected')}>Reject ✗</button
+            >
             <button
               class="manual"
               title="No automated candidate will work — queue this mission for hand-sourcing"
               disabled={savingId === p.proposal_id}
-              onclick={() => persist(p.proposal_id, 'needs-manual')}
-            >Manual ⌛</button>
+              onclick={() => persist(p.proposal_id, 'needs-manual')}>Manual ⌛</button
+            >
             <button
               class="skip"
               title="Defer decision — comments still save so you can leave a note for next round"
               disabled={savingId === p.proposal_id}
-              onclick={() => persist(p.proposal_id, 'pending')}
-            >Skip</button>
+              onclick={() => persist(p.proposal_id, 'pending')}>Skip</button
+            >
           </div>
         </article>
       {:else}
@@ -695,7 +833,8 @@
 
   <footer>
     <span class="summary">
-      <b>{counts.approved}</b> approved · <b>{counts.rejected}</b> rejected · <b>{counts.manual}</b> manual · <b>{counts.visible}</b> visible
+      <b>{counts.approved}</b> approved · <b>{counts.rejected}</b> rejected · <b>{counts.manual}</b>
+      manual · <b>{counts.visible}</b> visible
     </span>
     <button class="bulk approve" onclick={() => bulkSet('approved')}>Approve visible</button>
     <button class="bulk manual" onclick={() => bulkSet('needs-manual')}>Manual visible</button>
@@ -705,118 +844,553 @@
       class="bulk resync"
       title="Re-POST every in-memory decision to the server. Use after a POST URL fix to flush local state to disk."
       disabled={resyncing}
-      onclick={resyncAll}
-    >{resyncing ? `Resyncing… ${resyncCount}` : 'Resync to disk'}</button>
+      onclick={resyncAll}>{resyncing ? `Resyncing… ${resyncCount}` : 'Resync to disk'}</button
+    >
   </footer>
 </div>
 
 <style>
-  :global(html, body) { background: #0a0c10; color: #d8dde6; }
-  :global(body) { font: 14px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; }
-  .wrap { min-height: 100vh; }
-  header { padding: 14px 22px; border-bottom: 1px solid #232733; display: flex; gap: 22px; align-items: baseline; flex-wrap: wrap; }
-  header h1 { font-size: 16px; margin: 0; font-weight: 600; color: #fff; }
-  .stats { color: #9aa3b2; font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap; }
-  .stats b { color: #d8dde6; }
-  .stats .ok b { color: #6df0a3; }
-  .stats .bad b { color: #f06d6d; }
-  .stats .warn b { color: #f0d56d; }
-  .stats .hint { color: #6b7484; margin-left: auto; }
-  main { display: grid; grid-template-columns: 230px 1fr; gap: 0; min-height: calc(100vh - 100px); }
-  aside { border-right: 1px solid #232733; padding: 16px 14px; max-height: calc(100vh - 100px); overflow-y: auto; position: sticky; top: 0; }
-  aside h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7484; margin: 18px 0 8px; }
-  aside h2:first-child { margin-top: 0; }
-  aside label { display: flex; gap: 6px; align-items: center; padding: 3px 0; cursor: pointer; font-size: 13px; }
-  .count { color: #6b7484; margin-left: auto; font-size: 12px; }
-  button.reset { width: 100%; padding: 6px 8px; background: #1a1e28; color: #d8dde6; border: 1px solid #2d3340; border-radius: 4px; cursor: pointer; margin-top: 14px; font-size: 12px; }
-  .grid { padding: 18px 22px 100px; display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 18px; align-content: start; }
-  .card { background: #131822; border: 1px solid #232733; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.1s; }
-  .card.approved { border-color: #2a8a4b; }
-  .card.rejected { border-color: #7a2a2a; opacity: 0.6; }
-  .card.needs-manual { border-color: #b08a2a; }
-  .head { display: flex; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid #232733; font-size: 12px; }
-  .mid { color: #d8dde6; font-weight: 600; }
-  .codepath { color: #6b7484; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #232733; }
-  .imgs > div { background: #0a0c10; display: flex; flex-direction: column; align-items: center; padding: 8px; min-height: 200px; }
-  .imgs .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7484; margin-bottom: 6px; }
-  .imgs img { max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 3px; background: #18181b; }
-  .imgs .missing { color: #6b7484; font-size: 11px; padding: 60px 12px; text-align: center; }
+  :global(html, body) {
+    background: #0a0c10;
+    color: #d8dde6;
+  }
+  :global(body) {
+    font:
+      14px/1.4 -apple-system,
+      BlinkMacSystemFont,
+      'SF Pro Text',
+      system-ui,
+      sans-serif;
+  }
+  .wrap {
+    min-height: 100vh;
+  }
+  header {
+    padding: 14px 22px;
+    border-bottom: 1px solid #232733;
+    display: flex;
+    gap: 22px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+  }
+  .stats {
+    color: #9aa3b2;
+    font-size: 13px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .stats b {
+    color: #d8dde6;
+  }
+  .stats .ok b {
+    color: #6df0a3;
+  }
+  .stats .bad b {
+    color: #f06d6d;
+  }
+  .stats .warn b {
+    color: #f0d56d;
+  }
+  .stats .hint {
+    color: #6b7484;
+    margin-left: auto;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 0;
+    min-height: calc(100vh - 100px);
+  }
+  aside {
+    border-right: 1px solid #232733;
+    padding: 16px 14px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+  }
+  aside h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7484;
+    margin: 18px 0 8px;
+  }
+  aside h2:first-child {
+    margin-top: 0;
+  }
+  aside label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 3px 0;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .count {
+    color: #6b7484;
+    margin-left: auto;
+    font-size: 12px;
+  }
+  button.reset {
+    width: 100%;
+    padding: 6px 8px;
+    background: #1a1e28;
+    color: #d8dde6;
+    border: 1px solid #2d3340;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-size: 12px;
+  }
+  .grid {
+    padding: 18px 22px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 18px;
+    align-content: start;
+  }
+  .card {
+    background: #131822;
+    border: 1px solid #232733;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.1s;
+  }
+  .card.approved {
+    border-color: #2a8a4b;
+  }
+  .card.rejected {
+    border-color: #7a2a2a;
+    opacity: 0.6;
+  }
+  .card.needs-manual {
+    border-color: #b08a2a;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #232733;
+    font-size: 12px;
+  }
+  .mid {
+    color: #d8dde6;
+    font-weight: 600;
+  }
+  .codepath {
+    color: #6b7484;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #232733;
+  }
+  .imgs > div {
+    background: #0a0c10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    min-height: 200px;
+  }
+  .imgs .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7484;
+    margin-bottom: 6px;
+  }
+  .imgs img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 3px;
+    background: #18181b;
+  }
+  .imgs .missing {
+    color: #6b7484;
+    font-size: 11px;
+    padding: 60px 12px;
+    text-align: center;
+  }
   .imgs .empty-slot {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px; padding: 30px 12px; flex: 1; align-self: stretch;
-    border: 1px dashed #2d3340; border-radius: 3px; background: #0a0c10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 30px 12px;
+    flex: 1;
+    align-self: stretch;
+    border: 1px dashed #2d3340;
+    border-radius: 3px;
+    background: #0a0c10;
   }
   .imgs .empty-slot .badge {
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
-    background: #2d2614; color: #f0d56d; padding: 4px 10px; border-radius: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    background: #2d2614;
+    color: #f0d56d;
+    padding: 4px 10px;
+    border-radius: 3px;
     border: 1px solid #b08a2a;
   }
   .imgs .empty-slot .detail {
-    font-size: 10px; color: #6b7484; word-break: break-all; max-width: 100%; text-align: center;
+    font-size: 10px;
+    color: #6b7484;
+    word-break: break-all;
+    max-width: 100%;
+    text-align: center;
   }
-  .meta { padding: 10px 12px; border-top: 1px solid #232733; font-size: 12px; color: #9aa3b2; }
-  .row { display: flex; gap: 8px; margin: 4px 0; }
-  .row b { color: #d8dde6; min-width: 70px; }
-  .flags { font-size: 11px; }
-  .pill { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .pill.related { background: #143924; color: #6df0a3; }
-  .pill.unrelated { background: #391414; color: #f06d6d; }
-  .pill.unsure { background: #393214; color: #f0d56d; }
-  .comment { width: 100%; min-height: 56px; padding: 8px 10px; border: none; border-top: 1px solid #232733; background: #0a0c10; color: #d8dde6; font: inherit; resize: vertical; }
-  .comment::placeholder { color: #6b7484; }
-  .tags { padding: 8px 10px; border-top: 1px solid #232733; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .tags.disabled { opacity: 0.5; }
-  .tags-label { font-size: 11px; color: #6b7484; text-transform: uppercase; letter-spacing: 0.05em; }
-  .tag-chip { background: #1a1e28; color: #9aa3b2; border: 1px solid #2d3340; border-radius: 11px; padding: 3px 9px; font-size: 11px; cursor: pointer; }
-  .tag-chip.on { background: #2a3340; color: #d8dde6; border-color: #5c6680; }
-  .tag-chip:hover { background: #232733; }
-  .tag-chip:disabled { cursor: not-allowed; }
-  .trail { padding: 8px 12px; border-top: 1px solid #232733; font-size: 12px; }
-  .trail summary { cursor: pointer; color: #9aa3b2; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; user-select: none; }
-  .trail-steps { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 4px; }
-  .trail-steps .step { display: grid; grid-template-columns: 20px 1fr; gap: 6px; align-items: start; padding: 4px 0; border-left: 2px solid transparent; padding-left: 6px; }
-  .trail-steps .step.input { color: #9aa3b2; border-left-color: #2d3340; }
-  .trail-steps .step.pass { color: #6df0a3; border-left-color: #2a8a4b; }
-  .trail-steps .step.fail { color: #f06d6d; border-left-color: #7a2a2a; }
-  .trail-steps .step.deferred { color: #f0d56d; border-left-color: #b08a2a; }
-  .trail-steps .step.skipped { color: #6b7484; border-left-color: #2d3340; opacity: 0.7; }
-  .trail-steps .step.outcome { color: #d8dde6; border-left-color: #5c6680; padding-top: 8px; margin-top: 4px; border-top: 1px solid #232733; }
-  .trail-steps .step-icon { font-weight: 700; font-size: 13px; text-align: center; }
-  .trail-steps .step-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .trail-steps .step-body b { color: inherit; font-size: 12px; }
-  .trail-steps .step-body .dim { color: #9aa3b2; font-size: 11px; word-break: break-word; }
-  .trail-steps .step-body .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: #6b7484; }
-  .trail-steps .step-body code { background: #0a0c10; border: 1px solid #232733; border-radius: 2px; padding: 0 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #d8dde6; }
-  .overrides { padding: 8px 12px; border-top: 1px solid #232733; font-size: 12px; }
-  .overrides summary { cursor: pointer; color: #9aa3b2; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; user-select: none; }
-  .override-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
-  .override-grid label { display: flex; flex-direction: column; font-size: 11px; color: #6b7484; gap: 2px; }
-  .override-grid label.full { grid-column: 1 / -1; }
-  .override-grid input { padding: 5px 7px; background: #0a0c10; color: #d8dde6; border: 1px solid #2d3340; border-radius: 3px; font: inherit; }
-  .actions { display: flex; gap: 6px; padding: 8px 12px; border-top: 1px solid #232733; }
-  .actions button { flex: 1; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600; border: 1px solid #2d3340; }
-  .actions .approve { background: #143924; color: #6df0a3; border-color: #2a8a4b; }
-  .actions .reject  { background: #391414; color: #f06d6d; border-color: #7a2a2a; }
-  .actions .manual  { background: #2d2614; color: #f0d56d; border-color: #b08a2a; }
-  .actions .skip    { background: #1a1e28; color: #d8dde6; }
-  .actions button:disabled { opacity: 0.5; cursor: progress; }
-  .card.approved .actions .approve { background: #2a8a4b; color: #fff; }
-  .card.rejected .actions .reject  { background: #7a2a2a; color: #fff; }
-  .card.needs-manual .actions .manual { background: #b08a2a; color: #fff; }
-  .empty { padding: 40px; text-align: center; color: #6b7484; grid-column: 1 / -1; }
-  footer { position: fixed; bottom: 0; left: 230px; right: 0; background: #131822; border-top: 1px solid #2d3340; padding: 12px 22px; display: flex; gap: 14px; align-items: center; z-index: 10; flex-wrap: wrap; }
+  .meta {
+    padding: 10px 12px;
+    border-top: 1px solid #232733;
+    font-size: 12px;
+    color: #9aa3b2;
+  }
+  .row {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0;
+  }
+  .row b {
+    color: #d8dde6;
+    min-width: 70px;
+  }
+  .flags {
+    font-size: 11px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pill.related {
+    background: #143924;
+    color: #6df0a3;
+  }
+  .pill.unrelated {
+    background: #391414;
+    color: #f06d6d;
+  }
+  .pill.unsure {
+    background: #393214;
+    color: #f0d56d;
+  }
+  .comment {
+    width: 100%;
+    min-height: 56px;
+    padding: 8px 10px;
+    border: none;
+    border-top: 1px solid #232733;
+    background: #0a0c10;
+    color: #d8dde6;
+    font: inherit;
+    resize: vertical;
+  }
+  .comment::placeholder {
+    color: #6b7484;
+  }
+  .tags {
+    padding: 8px 10px;
+    border-top: 1px solid #232733;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .tags.disabled {
+    opacity: 0.5;
+  }
+  .tags-label {
+    font-size: 11px;
+    color: #6b7484;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-chip {
+    background: #1a1e28;
+    color: #9aa3b2;
+    border: 1px solid #2d3340;
+    border-radius: 11px;
+    padding: 3px 9px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .tag-chip.on {
+    background: #2a3340;
+    color: #d8dde6;
+    border-color: #5c6680;
+  }
+  .tag-chip:hover {
+    background: #232733;
+  }
+  .tag-chip:disabled {
+    cursor: not-allowed;
+  }
+  .trail {
+    padding: 8px 12px;
+    border-top: 1px solid #232733;
+    font-size: 12px;
+  }
+  .trail summary {
+    cursor: pointer;
+    color: #9aa3b2;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  .trail-steps {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .trail-steps .step {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 6px;
+    align-items: start;
+    padding: 4px 0;
+    border-left: 2px solid transparent;
+    padding-left: 6px;
+  }
+  .trail-steps .step.input {
+    color: #9aa3b2;
+    border-left-color: #2d3340;
+  }
+  .trail-steps .step.pass {
+    color: #6df0a3;
+    border-left-color: #2a8a4b;
+  }
+  .trail-steps .step.fail {
+    color: #f06d6d;
+    border-left-color: #7a2a2a;
+  }
+  .trail-steps .step.deferred {
+    color: #f0d56d;
+    border-left-color: #b08a2a;
+  }
+  .trail-steps .step.skipped {
+    color: #6b7484;
+    border-left-color: #2d3340;
+    opacity: 0.7;
+  }
+  .trail-steps .step.outcome {
+    color: #d8dde6;
+    border-left-color: #5c6680;
+    padding-top: 8px;
+    margin-top: 4px;
+    border-top: 1px solid #232733;
+  }
+  .trail-steps .step-icon {
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+  }
+  .trail-steps .step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .trail-steps .step-body b {
+    color: inherit;
+    font-size: 12px;
+  }
+  .trail-steps .step-body .dim {
+    color: #9aa3b2;
+    font-size: 11px;
+    word-break: break-word;
+  }
+  .trail-steps .step-body .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 10px;
+    color: #6b7484;
+  }
+  .trail-steps .step-body code {
+    background: #0a0c10;
+    border: 1px solid #232733;
+    border-radius: 2px;
+    padding: 0 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    color: #d8dde6;
+  }
+  .overrides {
+    padding: 8px 12px;
+    border-top: 1px solid #232733;
+    font-size: 12px;
+  }
+  .overrides summary {
+    cursor: pointer;
+    color: #9aa3b2;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  .override-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .override-grid label {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: #6b7484;
+    gap: 2px;
+  }
+  .override-grid label.full {
+    grid-column: 1 / -1;
+  }
+  .override-grid input {
+    padding: 5px 7px;
+    background: #0a0c10;
+    color: #d8dde6;
+    border: 1px solid #2d3340;
+    border-radius: 3px;
+    font: inherit;
+  }
+  .actions {
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    border-top: 1px solid #232733;
+  }
+  .actions button {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #2d3340;
+  }
+  .actions .approve {
+    background: #143924;
+    color: #6df0a3;
+    border-color: #2a8a4b;
+  }
+  .actions .reject {
+    background: #391414;
+    color: #f06d6d;
+    border-color: #7a2a2a;
+  }
+  .actions .manual {
+    background: #2d2614;
+    color: #f0d56d;
+    border-color: #b08a2a;
+  }
+  .actions .skip {
+    background: #1a1e28;
+    color: #d8dde6;
+  }
+  .actions button:disabled {
+    opacity: 0.5;
+    cursor: progress;
+  }
+  .card.approved .actions .approve {
+    background: #2a8a4b;
+    color: #fff;
+  }
+  .card.rejected .actions .reject {
+    background: #7a2a2a;
+    color: #fff;
+  }
+  .card.needs-manual .actions .manual {
+    background: #b08a2a;
+    color: #fff;
+  }
+  .empty {
+    padding: 40px;
+    text-align: center;
+    color: #6b7484;
+    grid-column: 1 / -1;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 230px;
+    right: 0;
+    background: #131822;
+    border-top: 1px solid #2d3340;
+    padding: 12px 22px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
   /* Bulk buttons sit immediately after the summary on the LEFT.
      The push-spacer that used to anchor them right is gone — wide
      viewport now has empty space on the right, which keeps the
      action cluster centred near where Marko's reading the stats. */
-  .summary { color: #9aa3b2; }
-  .summary b { color: #d8dde6; }
-  .bulk { padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; border: 1px solid #2d3340; }
-  .bulk.approve { background: #2a8a4b; color: #fff; border-color: #2a8a4b; }
-  .bulk.reject  { background: #7a2a2a; color: #fff; border-color: #7a2a2a; }
-  .bulk.manual  { background: #b08a2a; color: #fff; border-color: #b08a2a; }
-  .bulk.skip    { background: #1a1e28; color: #d8dde6; }
-  .bulk.resync  { background: #1f4dab; color: #fff; border-color: #1f4dab; }
-  .bulk.resync:disabled { opacity: 0.7; cursor: progress; }
+  .summary {
+    color: #9aa3b2;
+  }
+  .summary b {
+    color: #d8dde6;
+  }
+  .bulk {
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #2d3340;
+  }
+  .bulk.approve {
+    background: #2a8a4b;
+    color: #fff;
+    border-color: #2a8a4b;
+  }
+  .bulk.reject {
+    background: #7a2a2a;
+    color: #fff;
+    border-color: #7a2a2a;
+  }
+  .bulk.manual {
+    background: #b08a2a;
+    color: #fff;
+    border-color: #b08a2a;
+  }
+  .bulk.skip {
+    background: #1a1e28;
+    color: #d8dde6;
+  }
+  .bulk.resync {
+    background: #1f4dab;
+    color: #fff;
+    border-color: #1f4dab;
+  }
+  .bulk.resync:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
 </style>

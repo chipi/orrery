@@ -120,7 +120,9 @@ async function main(): Promise<void> {
     reports.push({ file: file.path, added, baseline: baseline.size, current: current.size });
   }
 
-  console.log(`validate-allowlist-discipline: baseline=${baseRef}, max-autoland=${config.maxAutoland}`);
+  console.log(
+    `validate-allowlist-discipline: baseline=${baseRef}, max-autoland=${config.maxAutoland}`,
+  );
   for (const r of reports) {
     console.log(
       `  ${r.file}: ${r.current} entries (baseline ${r.baseline}, +${r.added.length} on this branch)`,

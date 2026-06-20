@@ -50,10 +50,20 @@ const args = Object.fromEntries(
   }),
 );
 
-const ALL_FILTERS = ['vision', 'intra-mission', 'cross-mission', 'cross-mission-basename', 'size', 'token-match'];
+const ALL_FILTERS = [
+  'vision',
+  'intra-mission',
+  'cross-mission',
+  'cross-mission-basename',
+  'size',
+  'token-match',
+];
 const ENABLED_FILTERS = new Set(
   typeof args.filter === 'string'
-    ? args.filter.split(',').map((s) => s.trim()).filter(Boolean)
+    ? args.filter
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
     : ALL_FILTERS,
 );
 const LIMIT = typeof args.limit === 'string' ? parseInt(args.limit, 10) : Infinity;
@@ -65,7 +75,8 @@ const VISION_THROTTLE_MS = parseInt(args['vision-throttle'] ?? '200', 10);
 // run JPEG q80 at 1600px and legitimately hit 150 KB+. esahubble
 // stays at 100 KB (its archive is already higher quality).
 // CLI --min-bytes=N overrides the default for ALL sources.
-const MIN_BYTES_OVERRIDE = typeof args['min-bytes'] === 'string' ? parseInt(args['min-bytes'], 10) : null;
+const MIN_BYTES_OVERRIDE =
+  typeof args['min-bytes'] === 'string' ? parseInt(args['min-bytes'], 10) : null;
 const MIN_BYTES_BY_SOURCE = {
   'wikimedia-commons': 150_000,
   esahubble: 100_000,
@@ -80,10 +91,15 @@ function minBytesFor(sourceType) {
   return MIN_BYTES_BY_SOURCE[sourceType] ?? MIN_BYTES_BY_SOURCE.default;
 }
 const SKIP_NETWORK = args['skip-network'] === 'true';
-const OUTPUT_PATH = typeof args.output === 'string' ? args.output : 'static/data/slice-a-salvage-result.json';
+const OUTPUT_PATH =
+  typeof args.output === 'string' ? args.output : 'static/data/slice-a-salvage-result.json';
 
-console.log(`slice-a-salvage: filters=${[...ENABLED_FILTERS].join(',')} limit=${LIMIT === Infinity ? '∞' : LIMIT}`);
-console.log(`slice-a-salvage: vision gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}; min-bytes per-source (override=${MIN_BYTES_OVERRIDE ?? 'none'})`);
+console.log(
+  `slice-a-salvage: filters=${[...ENABLED_FILTERS].join(',')} limit=${LIMIT === Infinity ? '∞' : LIMIT}`,
+);
+console.log(
+  `slice-a-salvage: vision gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}; min-bytes per-source (override=${MIN_BYTES_OVERRIDE ?? 'none'})`,
+);
 
 // ── Load all dry-run JSONs ─────────────────────────────────────────────
 const dryrunPaths = [];
@@ -160,9 +176,15 @@ if (ENABLED_FILTERS.has('token-match')) {
       p.proposed.metadata?.nara_title,
       p.proposed.image_url,
       p.proposed.source_url,
-    ].filter(Boolean).join(' ').toLowerCase();
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
     const missionTokens = p.missionId.split(/[\s\-_]+/).filter((t) => t.length >= 3);
-    const queryTokens = (p.query ?? '').toLowerCase().split(/\s+/).filter((t) => t.length >= 3);
+    const queryTokens = (p.query ?? '')
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((t) => t.length >= 3);
     const tokens = [...new Set([...missionTokens, ...queryTokens])].map((t) => t.toLowerCase());
     if (tokens.length === 0) continue; // can't gate on empty
     const hit = tokens.some((t) => haystack.includes(t));
@@ -228,7 +250,9 @@ if (ENABLED_FILTERS.has('cross-mission')) {
       seen.set(key, p.proposal_id);
     }
   }
-  console.log(`  dropped ${dropped} / ${allProposals.length}${whitelisted ? `  (share-ok whitelisted: ${whitelisted})` : ''}`);
+  console.log(
+    `  dropped ${dropped} / ${allProposals.length}${whitelisted ? `  (share-ok whitelisted: ${whitelisted})` : ''}`,
+  );
 }
 
 // Filter 3b: cross-mission-basename — same filename across missions with
@@ -250,12 +274,19 @@ if (ENABLED_FILTERS.has('cross-mission-basename')) {
       const tail = u.pathname.split('/').pop() ?? '';
       if (/^(download|deliveryService|render|view)$/i.test(tail)) {
         const id = u.searchParams.get('id') ?? u.searchParams.get('Id');
-        if (id) return id.toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+        if (id)
+          return id
+            .toLowerCase()
+            .replace(/[\s_-]+/g, ' ')
+            .trim();
       }
       const noQuery = url.split('?')[0];
       const slash = noQuery.lastIndexOf('/');
       const base = slash >= 0 ? noQuery.slice(slash + 1) : noQuery;
-      return decodeURIComponent(base).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+      return decodeURIComponent(base)
+        .toLowerCase()
+        .replace(/[\s_-]+/g, ' ')
+        .trim();
     } catch {
       return null;
     }
@@ -306,7 +337,10 @@ if (ENABLED_FILTERS.has('size') && !SKIP_NETWORK) {
       // approval UI surface these so a CDN hiccup doesn't lose real wins.
       if (res.status === 429) {
         v.size = null;
-        addNote(p.proposal_id, `size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)`);
+        addNote(
+          p.proposal_id,
+          `size-deferred: HTTP 429 after retry (CDN rate-limited; let human reviewer decide)`,
+        );
         deferred++;
         await new Promise((r) => setTimeout(r, throttle));
         continue;
@@ -315,7 +349,10 @@ if (ENABLED_FILTERS.has('size') && !SKIP_NETWORK) {
       v.size = cl;
       const minBytes = minBytesFor(p.proposed?.source_type);
       if (!res.ok || cl < minBytes) {
-        addDrop(p.proposal_id, `size: HTTP ${res.status} content-length=${cl} (< ${minBytes} for ${p.proposed?.source_type})`);
+        addDrop(
+          p.proposal_id,
+          `size: HTTP ${res.status} content-length=${cl} (< ${minBytes} for ${p.proposed?.source_type})`,
+        );
         dropped++;
       }
       await new Promise((r) => setTimeout(r, throttle));
@@ -324,7 +361,9 @@ if (ENABLED_FILTERS.has('size') && !SKIP_NETWORK) {
       dropped++;
     }
   }
-  console.log(`  checked ${checked}, dropped ${dropped}, deferred ${deferred} (429 — sent to human review)`);
+  console.log(
+    `  checked ${checked}, dropped ${dropped}, deferred ${deferred} (429 — sent to human review)`,
+  );
 } else if (ENABLED_FILTERS.has('size') && SKIP_NETWORK) {
   console.log('\nfilter: size — skipped (--skip-network)');
 }
@@ -351,7 +390,10 @@ if (ENABLED_FILTERS.has('vision') && !SKIP_NETWORK) {
         v.vision_v3 = vision;
         judged++;
         if (!isShippable(vision)) {
-          addDrop(p.proposal_id, `vision: v=${vision.verdict} c=${vision.confidence?.toFixed(2)} — ${(vision.reason ?? '').slice(0, 100)}`);
+          addDrop(
+            p.proposal_id,
+            `vision: v=${vision.verdict} c=${vision.confidence?.toFixed(2)} — ${(vision.reason ?? '').slice(0, 100)}`,
+          );
           dropped++;
         }
         if (judged % 25 === 0) {
@@ -409,7 +451,9 @@ writeFileSync(
         dropped: dropped.length,
       },
       drop_attribution: ALL_FILTERS.reduce((acc, f) => {
-        acc[f] = dropped.filter((r) => r.drop_reasons.some((reason) => reason.startsWith(f))).length;
+        acc[f] = dropped.filter((r) =>
+          r.drop_reasons.some((reason) => reason.startsWith(f)),
+        ).length;
         return acc;
       }, {}),
       proposals: results,
@@ -429,4 +473,6 @@ for (const f of ALL_FILTERS) {
   console.log(`    ${f.padEnd(16)} ${n}`);
 }
 console.log('\nThis is the DRY-RUN salvage result. No image bytes have been changed.');
-console.log('Next step (Stage 4): scripts/slice-a-review.mjs reads this file and writes an approval UI.');
+console.log(
+  'Next step (Stage 4): scripts/slice-a-review.mjs reads this file and writes an approval UI.',
+);

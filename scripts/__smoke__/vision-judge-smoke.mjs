@@ -37,8 +37,12 @@ if (!process.env.ANTHROPIC_API_KEY) {
   process.exit(2);
 }
 
-console.log(`vision-judge-smoke: ${fx.fixtures.length} fixtures, ship gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}`);
-console.log(`vision-judge-smoke: target pass rate ≥ ${(MIN_PASS_RATE * 100).toFixed(0)}% of fixtures NOT shippable\n`);
+console.log(
+  `vision-judge-smoke: ${fx.fixtures.length} fixtures, ship gate = related + confidence ≥ ${MIN_SHIP_CONFIDENCE}`,
+);
+console.log(
+  `vision-judge-smoke: target pass rate ≥ ${(MIN_PASS_RATE * 100).toFixed(0)}% of fixtures NOT shippable\n`,
+);
 
 const rows = [];
 let blocked = 0;
@@ -59,13 +63,23 @@ for (const f of fx.fixtures) {
   console.log(
     `  ${flag}  ${f.id.padEnd(36)}  v=${(v.verdict ?? '?').padEnd(9)}  c=${conf}   ${(v.reason ?? '').slice(0, 80)}`,
   );
-  rows.push({ fixture: f.id, mode: f.failure_mode, v2: `${f.v2_verdict}/${f.v2_confidence}`, v3_verdict: v.verdict, v3_confidence: v.confidence, ships, reason: v.reason });
+  rows.push({
+    fixture: f.id,
+    mode: f.failure_mode,
+    v2: `${f.v2_verdict}/${f.v2_confidence}`,
+    v3_verdict: v.verdict,
+    v3_confidence: v.confidence,
+    ships,
+    reason: v.reason,
+  });
   await new Promise((r) => setTimeout(r, THROTTLE_MS));
 }
 
 const total = fx.fixtures.length;
 const passRate = blocked / total;
-console.log(`\nvision-judge-smoke: blocked ${blocked}/${total} (${(passRate * 100).toFixed(0)}%) — leaks ${leaked}`);
+console.log(
+  `\nvision-judge-smoke: blocked ${blocked}/${total} (${(passRate * 100).toFixed(0)}%) — leaks ${leaked}`,
+);
 
 if (leaked > 0) {
   console.log('\nLeaked fixtures (the new gate let them through):');
@@ -75,8 +89,12 @@ if (leaked > 0) {
 }
 
 if (passRate >= MIN_PASS_RATE) {
-  console.log(`\nvision-judge-smoke: OK (pass rate ${(passRate * 100).toFixed(0)}% ≥ ${(MIN_PASS_RATE * 100).toFixed(0)}%)`);
+  console.log(
+    `\nvision-judge-smoke: OK (pass rate ${(passRate * 100).toFixed(0)}% ≥ ${(MIN_PASS_RATE * 100).toFixed(0)}%)`,
+  );
   process.exit(0);
 }
-console.error(`\nvision-judge-smoke: FAIL (pass rate ${(passRate * 100).toFixed(0)}% < ${(MIN_PASS_RATE * 100).toFixed(0)}%)`);
+console.error(
+  `\nvision-judge-smoke: FAIL (pass rate ${(passRate * 100).toFixed(0)}% < ${(MIN_PASS_RATE * 100).toFixed(0)}%)`,
+);
 process.exit(1);

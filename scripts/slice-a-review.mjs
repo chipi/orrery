@@ -25,8 +25,10 @@ const args = Object.fromEntries(
     return m ? [m[1], m[2]] : [a.replace(/^-+/, ''), 'true'];
   }),
 );
-const INPUT = typeof args.input === 'string' ? args.input : 'static/data/slice-a-salvage-result.json';
-const OUTPUT = typeof args.output === 'string' ? args.output : 'docs/provenance/slice-a-v3-review.html';
+const INPUT =
+  typeof args.input === 'string' ? args.input : 'static/data/slice-a-salvage-result.json';
+const OUTPUT =
+  typeof args.output === 'string' ? args.output : 'docs/provenance/slice-a-v3-review.html';
 const INCLUDE_DROPPED = args['include-dropped'] === 'true';
 
 const salvage = JSON.parse(readFileSync(INPUT, 'utf8'));

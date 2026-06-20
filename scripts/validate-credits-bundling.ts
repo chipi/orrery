@@ -54,7 +54,8 @@ const args = Object.fromEntries(
 );
 const TOP = typeof args.top === 'string' ? parseInt(args.top, 10) : 10;
 const FAIL_ON_SPLIT = args['fail-on-split'] === 'true';
-const MANIFEST = typeof args.manifest === 'string' ? args.manifest : 'static/data/image-provenance.json';
+const MANIFEST =
+  typeof args.manifest === 'string' ? args.manifest : 'static/data/image-provenance.json';
 
 function reliableImageId(p: ProvenanceEntry): string | null {
   if (p.image_url) return `image_url|${p.image_url}`;
@@ -139,7 +140,9 @@ async function main(): Promise<void> {
     }
     arr.push(e);
   }
-  console.log(`  ${byReliableId.size} distinct reliable ids, ${noReliableId} entries with no reliable id (fallback bundling)`);
+  console.log(
+    `  ${byReliableId.size} distinct reliable ids, ${noReliableId} entries with no reliable id (fallback bundling)`,
+  );
 
   // 3. Cross-route bundles — same id appearing in multiple paths.
   const crossRoute = [...byReliableId.entries()]
@@ -159,11 +162,17 @@ async function main(): Promise<void> {
   // Under the bundle-first-group-after refactor in credits-grouping.ts these
   // collapse into one bundle routed by the representative; flagging them is
   // editorial (mixed attribution) not a rendering bug.
-  const crossSource = crossRoute.filter(([, ents]) => new Set(ents.map(provenanceSourceId)).size > 1);
-  console.log(`  ${crossSource.length} cross-source bundles (same reliable id, multiple source-ids — bundled together; representative picks the source)`);
+  const crossSource = crossRoute.filter(
+    ([, ents]) => new Set(ents.map(provenanceSourceId)).size > 1,
+  );
+  console.log(
+    `  ${crossSource.length} cross-source bundles (same reliable id, multiple source-ids — bundled together; representative picks the source)`,
+  );
 
   if (FAIL_ON_SPLIT && crossSource.length > 0) {
-    console.error('validate-credits-bundling: FAIL (cross-source bundles present and --fail-on-split set)');
+    console.error(
+      'validate-credits-bundling: FAIL (cross-source bundles present and --fail-on-split set)',
+    );
     process.exit(1);
   }
   console.log('validate-credits-bundling: OK');

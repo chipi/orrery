@@ -60,4 +60,6 @@ console.log(`  unrelated:  ${flagged}`);
 console.log(`  unsure:     ${unsure}`);
 console.log(`  skipped:    ${skipped}`);
 const willShip = data.proposals.filter((p) => p.ship_at_apply).length;
-console.log(`  Will ship:  ${willShip}/${data.proposals.length} (requires related + confidence ≥ ${'0.9'})`);
+console.log(
+  `  Will ship:  ${willShip}/${data.proposals.length} (requires related + confidence ≥ ${'0.9'})`,
+);

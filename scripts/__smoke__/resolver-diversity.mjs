@@ -51,7 +51,12 @@ function check(label, condition) {
 console.log('unit: pickWithDedup');
 {
   const taken = new Set();
-  const r = pickWithDedup([], () => true, () => 'k', taken);
+  const r = pickWithDedup(
+    [],
+    () => true,
+    () => 'k',
+    taken,
+  );
   check('empty candidate list → null', r === null);
 }
 {
@@ -91,7 +96,11 @@ console.log('unit: pickWithDedup');
   // Gate rejects all but candidate b; b not taken → picked even though a is later.
   const taken = new Set();
   const r = pickWithDedup(
-    [{ id: 'a', ok: false }, { id: 'b', ok: true }, { id: 'c', ok: false }],
+    [
+      { id: 'a', ok: false },
+      { id: 'b', ok: true },
+      { id: 'c', ok: false },
+    ],
     (c) => c.ok,
     (c) => takenKey('test', c.id),
     taken,
@@ -147,10 +156,14 @@ for (const r of results) {
 const urls = results.map((r) => r.image_url).filter(Boolean);
 const distinct = new Set(urls);
 const duplicates = urls.length - distinct.size;
-console.log(`\nintegration: ${urls.length} resolutions, ${distinct.size} distinct image_urls, ${duplicates} duplicates`);
+console.log(
+  `\nintegration: ${urls.length} resolutions, ${distinct.size} distinct image_urls, ${duplicates} duplicates`,
+);
 
 if (duplicates > 1) {
-  console.error(`integration: FAIL — ${duplicates} duplicate image_urls (Stage 2 dedup is leaking)`);
+  console.error(
+    `integration: FAIL — ${duplicates} duplicate image_urls (Stage 2 dedup is leaking)`,
+  );
   process.exit(1);
 }
 console.log('integration: OK');

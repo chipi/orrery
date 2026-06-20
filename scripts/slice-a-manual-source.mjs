@@ -154,7 +154,9 @@ for (const item of PROMOTIONS) {
       size_bytes: null,
       survivor: false,
       drop_reasons: [`manual-source: no source-slot sidecar entry at ${fromKey}`],
-      notes: [`promotion: from ${item.surface}/${item.mission}/${item.fromSlot} → ${item.toSlot}, but source missing`],
+      notes: [
+        `promotion: from ${item.surface}/${item.mission}/${item.fromSlot} → ${item.toSlot}, but source missing`,
+      ],
       manual_source_pass: true,
       promotion: { from: item.fromSlot, to: item.toSlot },
     });
@@ -175,7 +177,9 @@ for (const item of PROMOTIONS) {
     tier: 1,
   };
 
-  console.log(`  ${item.mission}/${item.toSlot} ← promoted from ${item.fromSlot}: ${proposed.source_type}`);
+  console.log(
+    `  ${item.mission}/${item.toSlot} ← promoted from ${item.fromSlot}: ${proposed.source_type}`,
+  );
 
   const proposalShared = {
     proposal_id: id,
@@ -184,7 +188,8 @@ for (const item of PROMOTIONS) {
     missionId: item.mission,
     slot: item.toSlot,
     query: deriveQuery(item.mission),
-    currentSource: sidecar[sidecarKeyFor(item.surface, item.mission, item.toSlot)]?.source_type ?? null,
+    currentSource:
+      sidecar[sidecarKeyFor(item.surface, item.mission, item.toSlot)]?.source_type ?? null,
     proposed,
     vision: null,
     ship_at_apply: true,
@@ -295,7 +300,9 @@ for (const item of BACKLOG) {
       agency: item.agency,
       subjectDescription: query,
     });
-    console.log(`    vision v4.1: ${vision.verdict} @ ${(vision.confidence ?? 0).toFixed(2)} — ${(vision.reason ?? '').slice(0, 80)}`);
+    console.log(
+      `    vision v4.1: ${vision.verdict} @ ${(vision.confidence ?? 0).toFixed(2)} — ${(vision.reason ?? '').slice(0, 80)}`,
+    );
   }
 
   const survivor = !vision || isShippable(vision);
@@ -319,7 +326,9 @@ for (const item of BACKLOG) {
     vision_v3: vision,
     size_bytes: null,
     survivor,
-    drop_reasons: survivor ? [] : [`vision: v=${vision?.verdict} c=${vision?.confidence?.toFixed(2)}`],
+    drop_reasons: survivor
+      ? []
+      : [`vision: v=${vision?.verdict} c=${vision?.confidence?.toFixed(2)}`],
     notes: ['manual-source-pass: generated 2026-06-19'],
   });
 

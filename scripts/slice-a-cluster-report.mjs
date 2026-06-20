@@ -30,12 +30,19 @@ function basenameOf(url) {
     const tail = u.pathname.split('/').pop() ?? '';
     if (/^(download|deliveryService|render|view)$/i.test(tail)) {
       const id = u.searchParams.get('id') ?? u.searchParams.get('Id');
-      if (id) return id.toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+      if (id)
+        return id
+          .toLowerCase()
+          .replace(/[\s_-]+/g, ' ')
+          .trim();
     }
     const noQuery = url.split('?')[0];
     const slash = noQuery.lastIndexOf('/');
     const base = slash >= 0 ? noQuery.slice(slash + 1) : noQuery;
-    return decodeURIComponent(base).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
+    return decodeURIComponent(base)
+      .toLowerCase()
+      .replace(/[\s_-]+/g, ' ')
+      .trim();
   } catch {
     return null;
   }
@@ -77,16 +84,22 @@ function decisionFor(id) {
 const lines = [];
 lines.push('# Slice A v3 — visual-cluster report');
 lines.push('');
-lines.push(`Generated ${new Date().toISOString()} from \`static/data/slice-a-salvage-result.json\` and \`static/data/slice-a-approvals.json\`.`);
+lines.push(
+  `Generated ${new Date().toISOString()} from \`static/data/slice-a-salvage-result.json\` and \`static/data/slice-a-approvals.json\`.`,
+);
 lines.push('');
-lines.push('Groups dropped proposals by visual identity (same nasa_id / commons_file / hubble_id / URL basename). Use this list alongside the \`/dev/slice-a-review\` UI to skip duplicate triage: if you decide on one cluster member, the rest will reach the same conclusion.');
+lines.push(
+  'Groups dropped proposals by visual identity (same nasa_id / commons_file / hubble_id / URL basename). Use this list alongside the \`/dev/slice-a-review\` UI to skip duplicate triage: if you decide on one cluster member, the rest will reach the same conclusion.',
+);
 lines.push('');
 lines.push('## Stats');
 lines.push('');
 const total = sorted.reduce((n, [, m]) => n + m.length, 0);
 const wasted = total - sorted.length; // extra cards above the primary in each cluster
 lines.push(`- Clusters of ≥2 members: **${sorted.length}**`);
-lines.push(`- Total dropped proposals in clusters: **${total}** (i.e. ${wasted} cards collapsible into ${sorted.length} representatives)`);
+lines.push(
+  `- Total dropped proposals in clusters: **${total}** (i.e. ${wasted} cards collapsible into ${sorted.length} representatives)`,
+);
 lines.push(`- Top cluster size: **${sorted[0]?.[1].length ?? 0}** members`);
 lines.push('');
 lines.push('## Clusters (sorted by member count)');
@@ -94,10 +107,11 @@ lines.push('');
 
 for (const [key, members] of sorted.slice(0, 80)) {
   const url = members[0].proposed?.image_url ?? '?';
-  const sample = members[0].proposed?.metadata?.commons_file
-    ?? members[0].proposed?.metadata?.nasa_title
-    ?? members[0].proposed?.metadata?.hubble_title
-    ?? url.slice(0, 100);
+  const sample =
+    members[0].proposed?.metadata?.commons_file ??
+    members[0].proposed?.metadata?.nasa_title ??
+    members[0].proposed?.metadata?.hubble_title ??
+    url.slice(0, 100);
   lines.push(`### \`${key}\` — ${members.length} members`);
   lines.push('');
   lines.push(`Image: \`${url}\``);
@@ -108,14 +122,18 @@ for (const [key, members] of sorted.slice(0, 80)) {
   for (const m of members.slice(0, 15)) {
     const status = decisionFor(m.proposal_id);
     const tag = status === 'pending' ? '' : ` **${status}**`;
-    lines.push(`| \`${m.proposal_id}\` | ${m.agency} | ${m.missionId}/${m.slot} | ${status}${tag.startsWith(' ') ? '' : ''} |`);
+    lines.push(
+      `| \`${m.proposal_id}\` | ${m.agency} | ${m.missionId}/${m.slot} | ${status}${tag.startsWith(' ') ? '' : ''} |`,
+    );
   }
   if (members.length > 15) lines.push(`| _… and ${members.length - 15} more_ | | | |`);
   lines.push('');
 }
 
 if (sorted.length > 80) {
-  lines.push(`_(${sorted.length - 80} smaller clusters omitted; see slice-a-salvage-result.json for full data)_`);
+  lines.push(
+    `_(${sorted.length - 80} smaller clusters omitted; see slice-a-salvage-result.json for full data)_`,
+  );
 }
 
 writeFileSync('docs/provenance/slice-a-v3-visual-clusters.md', lines.join('\n') + '\n');

@@ -114,7 +114,10 @@ export async function judgeImage({ imageUrl, missionId, agency, subjectDescripti
   let imagePayload;
   try {
     const { mediaType, base64 } = await fetchImageAsBase64(httpsUrl);
-    imagePayload = { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } };
+    imagePayload = {
+      type: 'image',
+      source: { type: 'base64', media_type: mediaType, data: base64 },
+    };
   } catch (e) {
     return { verdict: 'unsure', confidence: 0, reason: `image-fetch: ${e.message}` };
   }
@@ -126,10 +129,7 @@ export async function judgeImage({ imageUrl, missionId, agency, subjectDescripti
     messages: [
       {
         role: 'user',
-        content: [
-          imagePayload,
-          { type: 'text', text: userPrompt },
-        ],
+        content: [imagePayload, { type: 'text', text: userPrompt }],
       },
     ],
   };

@@ -61,7 +61,9 @@ if (APPROVALS_PATH) {
   } else if (Array.isArray(payload.approved)) {
     APPROVED_IDS = new Set(payload.approved);
   } else {
-    throw new Error(`Approvals payload at ${APPROVALS_PATH} has neither decisions{} nor approved[]`);
+    throw new Error(
+      `Approvals payload at ${APPROVALS_PATH} has neither decisions{} nor approved[]`,
+    );
   }
   console.log(
     `Approval gate active: ${APPROVED_IDS.size} approved (of ${Object.keys(DECISIONS).length || 'n/a'} total decisions) from ${APPROVALS_PATH}`,

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-12T21:51:47.410Z",
+  "generated_at": "2026-06-20T14:52:20.212Z",
   "source_audit": "fleet-hero-audit.md",
   "overrides": {
     "apollo-csm-block-ii": {
@@ -39,9 +39,9 @@
       "approved_at": "2026-06-12"
     },
     "cassini": {
-      "slot": "02.jpg",
-      "reason": "subject names a different entity than cassini",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "chandra": {
       "slot": "04.jpg",
@@ -64,9 +64,9 @@
       "approved_at": "2026-06-12"
     },
     "dawn": {
-      "slot": "02.jpg",
-      "reason": "vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "discovery": {
       "slot": "03.jpg",
@@ -89,9 +89,9 @@
       "approved_at": "2026-06-12"
     },
     "galileo": {
-      "slot": "04.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "gemini": {
       "slot": "03.jpg",
@@ -99,9 +99,9 @@
       "approved_at": "2026-06-12"
     },
     "juno": {
-      "slot": "03.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; score: 4 < threshold 6; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "long-march-3b": {
       "slot": "02.jpg",
@@ -149,14 +149,14 @@
       "approved_at": "2026-06-12"
     },
     "pioneer-10": {
-      "slot": "04.jpg",
-      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than pioneer-10",
-      "approved_at": "2026-06-12"
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
     },
     "pioneer-11": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than pioneer-11",
-      "approved_at": "2026-06-12"
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
     },
     "pragyan": {
       "slot": "03.jpg",
@@ -194,9 +194,9 @@
       "approved_at": "2026-06-12"
     },
     "vega-2": {
-      "slot": "02.jpg",
-      "reason": "score: 5 < threshold 6",
-      "approved_at": "2026-06-12"
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
     },
     "viking-1": {
       "slot": "03.jpg",
@@ -204,9 +204,9 @@
       "approved_at": "2026-06-12"
     },
     "voyager-2": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than voyager-2",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "x37b": {
       "slot": "03.jpg",
@@ -235,8 +235,8 @@
     },
     "lro": {
       "slot": "03.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than lro",
-      "approved_at": "2026-06-12"
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
     },
     "mars-odyssey": {
       "slot": "02.jpg",
@@ -267,6 +267,56 @@
       "slot": "02.jpg",
       "reason": "category: people-only — no asset visible; score: 4 < threshold 6; vision-rejected: category-people; subject names a different entity than apollo-csm-block-i",
       "approved_at": "2026-06-12"
+    },
+    "bepicolombo": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
+    },
+    "voyager-1": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
+    },
+    "akatsuki": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "phoenix": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
+    },
+    "vostok-5": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "vostok-6": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "venera-13": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
+    },
+    "vega-1": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "ulysses": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "hayabusa-2": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
+      "approved_at": "2026-06-20"
     }
   }
 }

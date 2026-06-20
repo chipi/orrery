@@ -1,22 +1,22 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-12T21:51:47.409Z",
+  "generated_at": "2026-06-20T14:52:20.211Z",
   "source_audit": "missions-hero-audit.md",
   "overrides": {
     "voyager-2": {
-      "slot": "05.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "galileo": {
-      "slot": "05.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than galileo",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "cassini": {
-      "slot": "03.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "mars-express": {
       "slot": "05.jpg",
@@ -24,19 +24,19 @@
       "approved_at": "2026-06-12"
     },
     "new-horizons": {
-      "slot": "02.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "dawn": {
-      "slot": "04.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "juno": {
-      "slot": "02.jpg",
-      "reason": "url: artwork/illustration/render/scale-model in source URL; category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "mangalyaan": {
       "slot": "04.jpg",
@@ -59,28 +59,28 @@
       "approved_at": "2026-06-12"
     },
     "bepicolombo": {
-      "slot": "03.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
     },
     "vostok-3": {
       "slot": "04.jpg",
-      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "skylab-4": {
       "slot": "04.jpg",
-      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "inspiration4": {
       "slot": "04.jpg",
-      "reason": "category: people-only \u2014 no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "polaris-dawn": {
       "slot": "03.jpg",
-      "reason": "category: people-only \u2014 no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
+      "reason": "category: people-only — no asset visible; score: 1 < threshold 6; vision-rejected: category-people",
       "approved_at": "2026-06-12"
     },
     "otv-3": {
@@ -110,8 +110,8 @@
     },
     "phoenix": {
       "slot": "03.jpg",
-      "reason": "Water ice in trench — Phoenix's defining science discovery; slot 01 was Delta II launch",
-      "approved_at": "2026-06-17"
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
     },
     "magellan": {
       "slot": "03.jpg",
@@ -120,8 +120,8 @@
     },
     "akatsuki": {
       "slot": "02.jpg",
-      "reason": "Venus UV dayside cloud structure — Akatsuki's primary science return; slot 01 is JAXA spacecraft concept art (kept as gallery context)",
-      "approved_at": "2026-06-17"
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
     },
     "osiris-rex": {
       "slot": "02.jpg",
@@ -132,6 +132,61 @@
       "slot": "02.jpg",
       "reason": "Final image of Dimorphos before impact — the most iconic moment in planetary defence history; slot 01 was Falcon 9 launch",
       "approved_at": "2026-06-17"
+    },
+    "voyager-1": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+      "approved_at": "2026-06-20"
+    },
+    "lro": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
+    },
+    "vostok-5": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "vostok-6": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "pioneer-10": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
+    },
+    "pioneer-11": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
+    },
+    "venera-13": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+      "approved_at": "2026-06-20"
+    },
+    "vega-1": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "vega-2": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+      "approved_at": "2026-06-20"
+    },
+    "ulysses": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+      "approved_at": "2026-06-20"
+    },
+    "hayabusa2": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
+      "approved_at": "2026-06-20"
     }
   }
 }

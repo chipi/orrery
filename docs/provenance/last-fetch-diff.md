@@ -1,21 +1,22 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-19T09:08:47.611Z
+Generated: 2026-06-19T09:26:46.965Z
 Script: build-image-provenance@1.0.0
-Commit: 7947d5c885f2f1344a6681ed65b23b311de8f167
-Total entries: 3423
+Commit: b8a2836ff42fc59392773a1d8d6fe83520d284b8
+Total entries: 3422
 
-## Added (3)
-
-- `/images/fleet-galleries/new-horizons/01.jpg` — PD-NASA via direct-other
-- `/images/fleet-galleries/vostok-5/01.jpg` — PD-Russia via direct-other
-- `/images/fleet-galleries/vostok-6/01.jpg` — PD-Russia via direct-other
-
-## Removed (0)
+## Added (0)
 
 
-## Changed (1)
+## Removed (1)
 
+- `/images/fleet-galleries/new-horizons/01.jpg` — was PD-NASA via direct-other
+
+## Changed (2)
+
+- `/images/fleet-galleries/bepicolombo/01.jpg`
+  - before — source_url: "https://commons.wikimedia.org/wiki/File%3ABepiColombo_spacecraft_stack_ESA380846.jpg"
+  - after — source_url: "https://commons.wikimedia.org/wiki/File%3ABepiColombo_spacecraft_model.png"
 - `/images/fleet-galleries/dawn/01.jpg`
-  - before — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ADawn_Flight_Configuration_2.jpg"
-  - after — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - before — source_type: "direct-other", source_url: "https://commons.wikimedia.org/"
+  - after — source_type: "wikimedia-commons", source_url: "https://commons.wikimedia.org/wiki/File%3ADawn_Flight_Configuration_2.jpg"

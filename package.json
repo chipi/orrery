@@ -32,7 +32,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "npm run i18n:compile && vite dev",
+    "dev": "npm run i18n:compile && exec vite dev",
     "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && vite build && node scripts/check-prerender-completeness.mjs",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

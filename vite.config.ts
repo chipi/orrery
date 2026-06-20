@@ -51,6 +51,10 @@ export default defineConfig(({ mode }) => {
     server: {
       port: devPort,
       strictPort: true,
+      // HMR multiplexes over the same HTTP port via WebSocket upgrade —
+      // no separate hmr.port needed for parallel dev servers. Per
+      // https://vite.dev/config/server-options#server-hmr — distinct
+      // server.port across instances is sufficient.
       // Allow imports from static/ — used by $data/ alias for build-time
       // JSON imports (planets, small-bodies, scenarios). Without this,
       // Vite's default fs.allow excludes static/ and dev-only 404s flood

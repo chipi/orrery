@@ -13,6 +13,7 @@
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
+  import { createStationSelectionService } from '$lib/station-selection.svelte';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import {
@@ -82,13 +83,20 @@
   const visitors = $derived(isSuccess(visitorsRD) ? visitorsRD.data : ([] as TiangongModule[]));
   const loadFailed = $derived(isError(modulesRD) || isError(visitorsRD));
   let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
-  let selected: TiangongModule | null = $state(null);
-  let panelOpen = $state(false);
+  // Module / visiting-vehicle selection — shared station-selection
+  // service (replaces the former `selected` + `panelOpen` +
+  // `canvasHoveredId` cells written in lockstep at every consumer).
+  // Named `selection` not `station` to avoid shadowing the local Three.js
+  // station Group inside startThree(). See $lib/station-selection (shared
+  // with /iss).
+  const selection = createStationSelectionService<TiangongModule>({
+    onCommit: (item) => syncStationUrl('/tiangong', { moduleId: item?.id ?? null }),
+  });
 
   // Auto-compact the Curator Tour overlay when a module panel opens
   // during an active tour (PRD-016 §S8 / RFC-019 §12).
   $effect(() => {
-    if (audio.tourActive && panelOpen && !audio.compact) {
+    if (audio.tourActive && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
   });
@@ -136,9 +144,8 @@
   ];
   let hoverLabel: HoverLabel | undefined = $state();
 
-  /** Reactive mirror of the 3D scene's hovered module id so the
-   *  sidebar list can visually echo the canvas hover. */
-  let canvasHoveredId: string | null = $state(null);
+  // Reactive canvas-hover mirror now lives in `selection.state.hoveredId`
+  // so the sidebar list can visually echo the canvas hover.
 
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
@@ -175,8 +182,8 @@
   let resetCamera: () => void = () => {};
 
   $effect(() => {
-    visualRef.selectedId = selected?.id ?? null;
-    visualRef.panelOpen = panelOpen;
+    visualRef.selectedId = selection.state.selectedId;
+    visualRef.panelOpen = selection.state.panelOpen;
     requestMaterialRefresh();
   });
 
@@ -264,7 +271,7 @@
     if (!assemblyOpen) return;
     const hov = assemblyChip?.pickableId ?? null;
     visualRef.hoveredId = hov;
-    canvasHoveredId = hov;
+    selection.state.hoveredId = hov;
     requestMaterialRefresh();
   });
 
@@ -471,15 +478,43 @@
 
   function closePanel() {
     ignoreModuleParamUntilClear = true;
-    selected = null;
-    panelOpen = false;
-    syncUrl({ moduleId: null });
+    // reset() fires onCommit(null) → clears ?module.
+    selection.reset();
   }
 
   function openModule(mod: TiangongModule) {
-    selected = mod;
-    panelOpen = true;
-    syncUrl({ moduleId: mod.id });
+    // open() fires onCommit(mod) → sets ?module=<id> (no debounce).
+    selection.open(mod);
+  }
+
+  // Roving keyboard nav across BOTH lists as one continuous sequence —
+  // see /iss for the full rationale. Arrows move DOM FOCUS ONLY; the
+  // committed selection (teal aria-current) and the open panel stay put
+  // until Enter/click. The nav order is read live from the DOM (every
+  // `.module-row` button inside the list aside, document order = modules
+  // <ul> then visitors <ul>) so it's immune to the modules/visitors
+  // async-load race that a flattened ref index would hit. Esc closes.
+  function onRowKeydown(e: KeyboardEvent) {
+    const btn = e.currentTarget as HTMLButtonElement;
+    if (e.key === 'Escape') {
+      closePanel();
+      return;
+    }
+    const root = btn.closest('[data-testid="tiangong-list-view"]');
+    if (!root) return;
+    const rows = Array.from(root.querySelectorAll<HTMLButtonElement>('button.module-row'));
+    const cur = rows.indexOf(btn);
+    const n = rows.length;
+    if (n === 0 || cur === -1) return;
+    let next: number;
+    if (e.key === 'ArrowDown') next = (cur + 1) % n;
+    else if (e.key === 'ArrowUp') next = (cur - 1 + n) % n;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = n - 1;
+    else return;
+    e.preventDefault();
+    // Focus only — selection is committed on Enter/click, not on move.
+    rows[next]?.focus();
   }
 
   $effect(() => {
@@ -487,17 +522,15 @@
     if (modules.length === 0 && visitors.length === 0) return;
     if (!id) {
       ignoreModuleParamUntilClear = false;
-      if (selected !== null || panelOpen) {
-        selected = null;
-        panelOpen = false;
+      if (selection.state.selectedId !== null || selection.state.panelOpen) {
+        selection.reset();
       }
       return;
     }
     if (ignoreModuleParamUntilClear) return;
     const mod = modules.find((x) => x.id === id) ?? visitors.find((x) => x.id === id);
-    if (mod && selected?.id !== mod.id) {
-      selected = mod;
-      panelOpen = true;
+    if (mod && selection.state.selectedId !== mod.id) {
+      selection.open(mod);
     }
   });
 
@@ -934,7 +967,7 @@
       }
       if (found !== visualRef.hoveredId) {
         visualRef.hoveredId = found;
-        canvasHoveredId = found;
+        selection.state.hoveredId = found;
         refreshMeshMaterials(performance.now() / 1000);
       }
     }
@@ -942,7 +975,7 @@
     function onPointerLeave() {
       if (visualRef.hoveredId !== null) {
         visualRef.hoveredId = null;
-        canvasHoveredId = null;
+        selection.state.hoveredId = null;
         refreshMeshMaterials(performance.now() / 1000);
       }
     }
@@ -1144,7 +1177,7 @@
           <button
             type="button"
             onclick={() => openModule(mod)}
-            aria-current={selected?.id === mod.id ? 'true' : undefined}
+            aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: mod.name, agency: mod.agency })}
           </button>
@@ -1155,7 +1188,7 @@
           <button
             type="button"
             onclick={() => openModule(ship)}
-            aria-current={selected?.id === ship.id ? 'true' : undefined}
+            aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: ship.name, agency: ship.agency })}
           </button>
@@ -1179,7 +1212,7 @@
         <StationBlueprint
           modules={blueprintModules}
           view={viewMode === '2d-top' ? 'top' : viewMode === '2d-side' ? 'side' : 'front'}
-          selectedId={selected?.id ?? null}
+          selectedId={selection.state.selectedId}
           onModuleClick={blueprintModuleClick}
           ariaLabel="Tiangong blueprint diagram"
         />
@@ -1214,8 +1247,9 @@
             <button
               type="button"
               class="module-row"
-              class:canvas-hovered={canvasHoveredId === mod.id}
+              class:canvas-hovered={selection.state.hoveredId === mod.id}
               onclick={() => openModule(mod)}
+              onkeydown={onRowKeydown}
               onmouseenter={() => {
                 visualRef.hoveredId = mod.id;
                 requestMaterialRefresh();
@@ -1236,7 +1270,7 @@
                   requestMaterialRefresh();
                 }
               }}
-              aria-current={selected?.id === mod.id ? 'true' : undefined}
+              aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
               <span class="mod-name-row">
                 <span class="mod-name">{mod.name}</span>
@@ -1255,8 +1289,9 @@
               <button
                 type="button"
                 class="module-row"
-                class:canvas-hovered={canvasHoveredId === ship.id}
+                class:canvas-hovered={selection.state.hoveredId === ship.id}
                 onclick={() => openModule(ship)}
+                onkeydown={onRowKeydown}
                 onmouseenter={() => {
                   visualRef.hoveredId = ship.id;
                   requestMaterialRefresh();
@@ -1277,7 +1312,7 @@
                     requestMaterialRefresh();
                   }
                 }}
-                aria-current={selected?.id === ship.id ? 'true' : undefined}
+                aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
                 <span class="mod-name-row">
                   <span class="mod-name">{ship.name}</span>
@@ -1305,8 +1340,8 @@
         <StationTimelineStrip
           modules={sortedModules}
           visitors={sortedVisitors}
-          selectedId={selected?.id}
-          hoveredId={canvasHoveredId}
+          selectedId={selection.state.selectedId}
+          hoveredId={selection.state.hoveredId}
           heading="Tiangong assembly timeline — modules above, visiting spacecraft below"
           heroDir="tiangong-modules"
           onSelect={(item) => {
@@ -1315,7 +1350,7 @@
           }}
           onHover={(id) => {
             visualRef.hoveredId = id;
-            canvasHoveredId = id;
+            selection.state.hoveredId = id;
             requestMaterialRefresh();
           }}
         />
@@ -1516,8 +1551,8 @@
   </div>
 
   <StationModulePanel
-    module={selected}
-    open={panelOpen}
+    module={selection.state.item}
+    open={selection.state.panelOpen}
     onClose={closePanel}
     galleryFetcher={getTiangongModuleGallery}
   />

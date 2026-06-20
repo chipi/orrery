@@ -107,8 +107,8 @@ test.describe('/explore iconic-mission perf', () => {
 
       const memMB = () =>
         (performance as Performance & { memory?: { usedJSHeapSize: number } }).memory
-          ? (performance as unknown as { memory: { usedJSHeapSize: number } }).memory.usedJSHeapSize /
-            1048576
+          ? (performance as unknown as { memory: { usedJSHeapSize: number } }).memory
+              .usedJSHeapSize / 1048576
           : NaN;
       const memTick = () => {
         w.__perf.memSeries.push({ t: Math.round(performance.now()), mb: +memMB().toFixed(1) });
@@ -290,8 +290,6 @@ test.describe('/explore iconic-mission perf', () => {
     // Soft thresholds — surface regressions, don't gate CI yet
     expect.soft(clickPhase.longTasksFired, 'long tasks fired during clicks').toBeLessThan(50);
     expect.soft(clickPhase.worstLongTaskMs, 'worst single long task').toBeLessThan(200);
-    expect
-      .soft(report.clicks_25s.regressionPct, '1st→2nd half regression %')
-      .toBeLessThan(50);
+    expect.soft(report.clicks_25s.regressionPct, '1st→2nd half regression %').toBeLessThan(50);
   });
 });

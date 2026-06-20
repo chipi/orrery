@@ -35,9 +35,9 @@ test.describe('tour-stage open/close cycle', () => {
 
     // Tour-style programmatic click (matches what AudioOverlay does via el.click()).
     await page.evaluate(() => {
-      const el = document.querySelector('[data-audio-stage="explore-select-saturn"]') as
-        | HTMLElement
-        | null;
+      const el = document.querySelector(
+        '[data-audio-stage="explore-select-saturn"]',
+      ) as HTMLElement | null;
       if (!el) throw new Error('saturn anchor missing');
       el.click();
     });
@@ -100,7 +100,12 @@ test.describe('tour-stage open/close cycle', () => {
       { timeout: 10_000 },
     );
 
-    for (const a of ['earth-select-tiangong', 'earth-select-hubble', 'earth-select-jwst', 'earth-select-iss']) {
+    for (const a of [
+      'earth-select-tiangong',
+      'earth-select-hubble',
+      'earth-select-jwst',
+      'earth-select-iss',
+    ]) {
       await page.evaluate((sel) => {
         (document.querySelector(`[data-audio-stage="${sel}"]`) as HTMLElement | null)?.click();
       }, a);

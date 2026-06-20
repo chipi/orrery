@@ -292,6 +292,18 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'fe33a433', // missions/juno/01 + 03 (REVISED round-6 promotion from slot 03; supersedes f6752d18)
   'ea36d455', // fleet-galleries/juno/01 + 03 (REVISED round-6 promotion from slot 03)
 
+  // ALLOWLIST_AUTHORIZED (2026-06-20) — Slice A v3 final hand-source.
+  //   SMART-1 (5 slots) and Chang'e 1 (slot 01) were hand-sourced from
+  //   Wikimedia Commons and placed identically across both /missions
+  //   and /fleet surfaces (the same upstream file serves both gallery
+  //   contexts — we're tight on good imagery, mirroring is editorial).
+  'df29e20a', // change1/01 cross-surface (Commons mockup)
+  'e67e4979', // smart-1/01 cross-surface (ESA: SMART-1 at the Moon)
+  'b8f78099', // smart-1/02 cross-surface (ESA: artist's impression)
+  '724ed73b', // smart-1/03 cross-surface (ESA: electric propulsion)
+  'c4453604', // smart-1/04 cross-surface (ESA: packed for launch)
+  'fdc8e325', // smart-1/05 cross-surface (ESA: solar panels deployed)
+
   'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
   '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)
   '78248fa6', // fleet-galleries/cygnus-standard/02,03,05 (Cygnus fleet)

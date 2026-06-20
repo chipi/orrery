@@ -89,7 +89,7 @@ lines.push(
 );
 lines.push('');
 lines.push(
-  'Groups dropped proposals by visual identity (same nasa_id / commons_file / hubble_id / URL basename). Use this list alongside the \`/dev/slice-a-review\` UI to skip duplicate triage: if you decide on one cluster member, the rest will reach the same conclusion.',
+  'Groups dropped proposals by visual identity (same nasa_id / commons_file / hubble_id / URL basename). Use this list alongside the `/dev/slice-a-review` UI to skip duplicate triage: if you decide on one cluster member, the rest will reach the same conclusion.',
 );
 lines.push('');
 lines.push('## Stats');

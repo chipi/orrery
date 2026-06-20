@@ -276,9 +276,14 @@
     },
   ];
 
-  // Live state, seeded from the loaded approvals file.
+  // Live state, seeded from the loaded approvals file. `data` is a prop
+  // but only its initial value is consumed (no in-route navigation
+  // mutates it during a labeling session); svelte-ignore silences the
+  // reactivity warning that doesn't apply here.
+  // svelte-ignore state_referenced_locally
   const initialDecisions = (data.approvals.decisions ?? {}) as Record<string, Decision>;
   let decisions = $state<Record<string, Decision>>({ ...initialDecisions });
+  // svelte-ignore state_referenced_locally
   let lastSavedAt = $state<string | null>(data.approvals.last_updated_at ?? null);
   let savingId = $state<string | null>(null);
 
@@ -322,6 +327,7 @@
     new Set(['pending', 'approved', 'rejected', 'needs-manual']),
   );
 
+  // svelte-ignore state_referenced_locally
   const proposals: Proposal[] = data.salvage.proposals ?? [];
 
   function codePathOf(p: Proposal): string {
@@ -435,7 +441,6 @@
   async function bulkSet(status: 'approved' | 'rejected' | 'needs-manual' | 'pending') {
     // Serialised so the file write doesn't race.
     for (const p of visibleList) {
-      // eslint-disable-next-line no-await-in-loop -- intentional serialisation
       await persist(p.proposal_id, status);
     }
   }

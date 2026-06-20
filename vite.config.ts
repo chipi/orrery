@@ -35,8 +35,13 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(pkg.version),
     __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
   },
+  // Dev / preview port reads VITE_DEV_PORT from the env (or .env.local,
+  // which is gitignored). Falls back to 5273 if unset. Useful when
+  // running multiple worktrees of the repo in parallel — drop a line
+  // like `VITE_DEV_PORT=5274` into .env.local for the extra worktree
+  // and its dev server won't collide with the default 5273.
   server: {
-    port: 5273,
+    port: parseInt(process.env.VITE_DEV_PORT ?? '5273', 10),
     strictPort: true,
     // Allow imports from static/ — used by $data/ alias for build-time
     // JSON imports (planets, small-bodies, scenarios). Without this,
@@ -44,7 +49,7 @@ export default defineConfig({
     // the console.
     fs: { allow: ['static'] },
   },
-  preview: { port: 5273, strictPort: true },
+  preview: { port: parseInt(process.env.VITE_DEV_PORT ?? '5273', 10), strictPort: true },
   plugins: [
     // Paraglide 2.x i18n compiler — replaces the standalone CLI step
     // for dev/build. URL-segment strategy: en-US (baseLocale) lives at

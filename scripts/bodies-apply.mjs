@@ -41,9 +41,21 @@ const panel = JSON.parse(readFileSync(PANEL_SIDECAR_PATH, 'utf8'));
 const decisions = approvals.decisions ?? {};
 const proposalsById = new Map(salvage.proposals.map((p) => [p.proposal_id, p]));
 
-const stats = { approved: 0, applied: 0, missing: 0, collision: 0, error: 0 };
+const stats = { approved: 0, applied: 0, missing: 0, superseded: 0, error: 0 };
 const errors = [];
-const COLLISIONS = new Set();
+
+// Group approved decisions by (surface, body, slot) so when two
+// rounds of approvals target the same slot (e.g. round-1 + hubble-pass),
+// we can pick the latest one rather than first-wins-by-iteration-order.
+const bySlot = new Map();
+for (const [proposalId, decision] of Object.entries(decisions)) {
+  if (decision.status !== 'approved') continue;
+  const p = proposalsById.get(proposalId);
+  if (!p) continue;
+  const key = `${p.surface}|${p.missionId}|${p.slot}`;
+  if (!bySlot.has(key)) bySlot.set(key, []);
+  bySlot.get(key).push({ proposalId, decision, proposal: p });
+}
 
 async function downloadAndProcess(imageUrl, surface, id, slot) {
   const res = await fetch(imageUrl, { headers: { 'User-Agent': UA } });
@@ -54,7 +66,10 @@ async function downloadAndProcess(imageUrl, surface, id, slot) {
     .resize({ width: 1600, withoutEnlargement: true })
     .jpeg({ quality: 80 })
     .toBuffer();
-  const dir = `static/images/${surface}/${id}`;
+  // Sun is a single-entity surface (matches getSunGallery's flat
+  // {count: N} layout): files live at static/images/sun/<slot>.jpg
+  // with no per-id subdir. Every other surface uses <surface>/<id>/.
+  const dir = surface === 'sun' ? 'static/images/sun' : `static/images/${surface}/${id}`;
   mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/${slot}.jpg`, baseBuf);
   // 1x1 centre crop
@@ -72,17 +87,32 @@ async function downloadAndProcess(imageUrl, surface, id, slot) {
   return baseBuf.length;
 }
 
+// Collision tie-break: when two approvals target the same
+// (surface, body, slot), the one with the newer decision.updated_at
+// wins. Round-2 (hubble-pass) approvals will have a newer timestamp
+// than round-1 picks for the same slot, so they overwrite cleanly.
+function pickWinningApproval(decisionsBySlot) {
+  return decisionsBySlot
+    .filter((d) => d.decision.status === 'approved')
+    .sort((a, b) => (b.decision.updated_at ?? '').localeCompare(a.decision.updated_at ?? ''))
+    [0];
+}
+
 console.log(`Loading approvals from ${APPROVALS_PATH}${DRY_RUN ? ' (DRY RUN)' : ''}\n`);
 
-for (const [proposalId, decision] of Object.entries(decisions)) {
-  if (decision.status !== 'approved') continue;
-  stats.approved++;
-
-  const p = proposalsById.get(proposalId);
-  if (!p) {
-    console.log(`  ✗ missing proposal in salvage: ${proposalId}`);
-    stats.missing++;
-    continue;
+for (const [key, candidates] of bySlot) {
+  stats.approved += candidates.length;
+  const winner = pickWinningApproval(candidates);
+  if (!winner) continue;
+  const { proposalId, decision, proposal: p } = winner;
+  if (candidates.length > 1) {
+    const supersededIds = candidates
+      .filter((c) => c.proposalId !== proposalId)
+      .map((c) => c.proposalId);
+    stats.superseded += supersededIds.length;
+    console.log(
+      `  ↺ ${key.replace(/\|/g, '/')} — picked ${proposalId} (${decision.updated_at}), superseded ${supersededIds.length}`,
+    );
   }
 
   const overrides = decision.overrides ?? {};
@@ -93,14 +123,6 @@ for (const [proposalId, decision] of Object.entries(decisions)) {
     credit: overrides.credit ?? p.proposed.credit,
     license: overrides.license ?? p.proposed.license,
   };
-
-  const collisionKey = `${p.surface}|${p.missionId}|${p.slot}`;
-  if (COLLISIONS.has(collisionKey)) {
-    console.log(`  ⚠ collision skip: ${p.surface}/${p.missionId}/${p.slot} (proposal ${proposalId})`);
-    stats.collision++;
-    continue;
-  }
-  COLLISIONS.add(collisionKey);
 
   const overrideTag = Object.keys(overrides).length > 0 ? ' [override]' : '';
   if (DRY_RUN) {
@@ -117,9 +139,12 @@ for (const [proposalId, decision] of Object.entries(decisions)) {
       effective.image_url,
       p.surface,
       p.missionId,
-      p.slot + '.jpg' === `${p.slot}.jpg` ? p.slot : p.slot, // (slot is "01", file becomes "01.jpg")
+      p.slot,
     );
-    const sidecarKey = `${p.surface}/${p.missionId}/${p.slot}`;
+    // Sun uses a flat sidecar key matching its flat disk layout —
+    // 'sun/01' rather than 'sun/sun/01'.
+    const sidecarKey =
+      p.surface === 'sun' ? `sun/${p.slot}` : `${p.surface}/${p.missionId}/${p.slot}`;
     panel[sidecarKey] = {
       commons_file: p.proposed.metadata?.commons_file,
       commons_url: effective.source_url,

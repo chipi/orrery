@@ -9,6 +9,7 @@
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
+  import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import { EPOCH_BANDS, epochForYear } from '$lib/epoch-bands';
   import type { FleetEpoch } from '$types/fleet';
@@ -611,6 +612,7 @@
             data-testid="mission-card-{mission.id}"
             data-audio-stage="missions-select-{mission.id}"
             onclick={() => selectMission(mission.id)}
+            onkeydown={(e) => handleGridKeydown(e, closePanel)}
           >
             <div class="card-accent" aria-hidden="true"></div>
             <figure class="card-photo">

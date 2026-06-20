@@ -13,6 +13,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
+  import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import * as m from '$lib/paraglide/messages';
@@ -274,7 +275,10 @@
     url.searchParams.set('id', entry.id);
     goto(url.pathname + `?${url.searchParams}`, {
       replaceState: false,
-      keepFocus: false,
+      // keepFocus so the triggering grid card retains focus — otherwise
+      // SvelteKit resets focus to <body> on navigation and the grid's
+      // arrow-key nav dies after the first open (matches /missions).
+      keepFocus: true,
       noScroll: true,
     });
     void loadEntry(entry.id);
@@ -530,10 +534,12 @@
             <button
               type="button"
               class="card"
+              class:selected={selectedEntry?.id === entry.id}
               style:--accent={accent}
               data-testid="fleet-card-{entry.id}"
               data-audio-stage="fleet-select-{entry.id}"
               onclick={() => openEntry(entry)}
+              onkeydown={(e) => handleGridKeydown(e, closePanel)}
               aria-label="{entry.name} ({entry.agency}, {entry.first_flight.slice(0, 4)})"
             >
               <div class="card-accent" aria-hidden="true"></div>

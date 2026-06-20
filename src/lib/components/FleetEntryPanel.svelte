@@ -169,7 +169,9 @@
   };
 </script>
 
-<Panel {open} {onClose} title={entry?.name ?? entry?.id ?? ''}>
+<!-- grabFocus={false}: keep focus on the triggering fleet card so the
+     grid's arrow-key nav keeps working immediately after the first open. -->
+<Panel {open} {onClose} grabFocus={false} title={entry?.name ?? entry?.id ?? ''}>
   {#if entry}
     <div class="head">
       <div class="agency-row">

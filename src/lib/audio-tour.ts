@@ -195,22 +195,49 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // Demo: open Saturn → switch to the TECHNICAL tab so the listener
     // sees the orbit parameters the narrator just named.
     { at_sec: 24, action: 'cue', target: 'Click any planet — like this.', duration_ms: 4000 },
-    { at_sec: 29, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    // 2026-06-19 user direction — open Saturn right after the cue
+    // (was 29 s, pulled to 25 s) so the click lands on the narrator's
+    // "like this" beat.
+    { at_sec: 25, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
     {
-      at_sec: 31,
+      at_sec: 27,
       action: 'click',
       target: '[data-audio-stage="planet-tab-technical"]',
-      note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers.',
+      note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers. Pulled from 31 s → 27 s so the technical view is up before the orbital-period roll-call starts.',
     },
     // VTT § 00:00:30.5 – 43.9 — orbital-period roll-call. Narration
-    // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5 years)
-    // → Neptune (165 years) as illustrative orbit-period examples. The
-    // Saturn panel is open in the foreground from t=29; the planet
-    // glow renders behind it through the partially-translucent UI.
-    // Saturn flash skipped — its panel is already the visual focus.
-    { at_sec: 32, action: 'flash', target: '[data-audio-stage="explore-select-mercury"]' },
-    { at_sec: 35, action: 'flash', target: '[data-audio-stage="explore-select-mars"]' },
-    { at_sec: 43, action: 'flash', target: '[data-audio-stage="explore-select-neptune"]' },
+    // names Mercury (88 days) → Mars (1.88 years) → Saturn (29.5
+    // years) → Neptune (165 years) as illustrative orbit-period
+    // examples.
+    //
+    // 2026-06-19 (v3) — the planets are 3-5 s apart in narration, too
+    // rapid to fit the "open panel → linger seconds → reset view →
+    // next" rhythm the rest of the tour follows. Earlier iteration
+    // (v2) tried `click` on each but the panel swap was so fast the
+    // listener had no time to read anything before the next swap
+    // ("panels do not open and close at all" — actually they did, but
+    // each lived for ~3 s). Settled-on approach:
+    //
+    //   • Saturn panel stays open throughout the roll-call (29 s →
+    //     47 s = 18 s) so its Technical-tab data is readable for the
+    //     full duration of the example.
+    //   • Mercury / Mars / Neptune become CUES — short text overlays
+    //     that surface each name + period over the canvas without
+    //     swapping the panel. Matches what the listener expects from
+    //     a "1-2 s callout" beat that the original flashes were
+    //     trying (and failing) to deliver.
+    //   • 47 s `explore-reset-view` click closes Saturn AND resets
+    //     the camera in one action — the canvas re-emerges for the
+    //     PATHS-layer beat at 76 s, and the listener understands
+    //     "we're going back to the overview".
+    // 2026-06-19 — Mercury pulled from 32 s → 30 s; Saturn re-click at
+    // 39 s dropped (Saturn is already the open panel from 25 s and
+    // narrator returns to it after Mars without us needing to swap
+    // back). Mars + Neptune keep their VTT-aligned beats.
+    { at_sec: 30, action: 'click', target: '[data-audio-stage="explore-select-mercury"]' },
+    { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
+    { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
+    { at_sec: 47, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
     // but no such control exists on /explore today (script/UI drift —
     // SSML referenced a planned-but-never-shipped speed control). Cue
@@ -230,6 +257,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
         'And the spacecraft that travelled every outer planet — Voyager 2, now in interstellar space.',
       duration_ms: 6000,
     },
+    // 2026-06-19 — select Voyager 2 in the PATHS legend so its
+    // trajectory and mission panel surface alongside the cue.
+    // Previously the cue named Voyager 2 but nothing on screen
+    // pointed at it.
+    { at_sec: 82, action: 'click', target: '[data-audio-stage="iconic-mission-voyager-2"]' },
     {
       at_sec: 90,
       action: 'zoom',
@@ -238,17 +270,52 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       params: { factor: 1.55 },
       note: "Zoom out so the full Voyager 2 trajectory reads against Neptune's orbit.",
     },
-    // VTT § 00:01:39.1 — "Try the Science Lens toggle at the top right."
-    { at_sec: 99, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
-    { at_sec: 101, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
-    // Toggle lens back OFF a few seconds later so the listener sees the
-    // visual difference and the next beats render without the overlay.
-    { at_sec: 114, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Close the Voyager 2 mission panel + reset camera so the
+    // canvas is clean before the Science Lens beat. Also toggle the
+    // PATHS layer back OFF so the Voyager 2 arc isn't still drawn
+    // through the next beats.
+    { at_sec: 92, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
+    { at_sec: 93, action: 'click', target: '[data-audio-stage="explore-layer-paths"]' },
+    // Science Lens beat — moved 4 s earlier (was 99/101 → now 95/97)
+    // so there's enough room for the layer-checkbox demo + the
+    // collapse + the post-lens-OFF planet-Technical-tab demo before
+    // the Sun beat at 121 s. (2026-06-19 user directions #2 → #5.)
+    { at_sec: 95, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
+    { at_sec: 97, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Turn on 5 representative lens layers so the canvas demonstrates
+    // the gamut of effects (per-planet arrows + magnetosphere shell +
+    // the tactical-scan stat overlay). Then collapse the lens panel
+    // so its UI doesn't sit over the canvas while the effects render.
+    { at_sec: 99, action: 'click', target: '[data-audio-stage="science-layer-gravity"]' },
+    { at_sec: 101, action: 'click', target: '[data-audio-stage="science-layer-velocity"]' },
+    { at_sec: 103, action: 'click', target: '[data-audio-stage="science-layer-centripetal"]' },
+    { at_sec: 105, action: 'click', target: '[data-audio-stage="science-layer-planet-stats"]' },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="science-layer-hill-sphere"]' },
+    { at_sec: 109, action: 'click', target: '[data-audio-stage="science-lens-collapse"]' },
+    // Lens OFF — the canvas-overlay effects disappear so the next
+    // planet click reads clean.
+    { at_sec: 113, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Demonstrate the planet's Technical tab — the per-planet
+    // tactical-scan data (mass, surface gravity, atmospheric
+    // pressure, rotation period) that the lens overlay was hinting
+    // at. Jupiter chosen because its magnetosphere + Galilean moons
+    // make for a busier visual than a smaller planet. Reset at 118 s
+    // before the Sun beat. (2026-06-19 user directions #4 + #5.)
+    { at_sec: 114, action: 'click', target: '[data-audio-stage="explore-select-jupiter"]' },
+    { at_sec: 116, action: 'click', target: '[data-audio-stage="planet-tab-technical"]' },
+    { at_sec: 118, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
     // VTT § 00:02:01.5 — "Click the Sun." / § 00:02:02.6 — "Then click any planet."
     { at_sec: 121, action: 'cue', target: 'Click the Sun — read its panel.', duration_ms: 4000 },
     { at_sec: 122, action: 'click', target: '[data-audio-stage="explore-select-sun"]' },
-    { at_sec: 127, action: 'cue', target: 'Then click any planet.', duration_ms: 4000 },
+    // Allocate ~5 s on the Sun panel, then reset before the Earth
+    // beat so each click starts from a clean state ("open → linger
+    // → reset → next" — 2026-06-19 user direction).
+    { at_sec: 127, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
+    { at_sec: 129, action: 'cue', target: 'Then click any planet.', duration_ms: 3500 },
     { at_sec: 132, action: 'click', target: '[data-audio-stage="explore-select-earth"]' },
+    // Reset before episode fade-out so the listener ends on the
+    // canvas, not on a panel.
+    { at_sec: 137, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
   ],
 
   // ── /explore · saturn-rings — Enthusiast, VTT 102 s (Extended Tour) ─
@@ -480,6 +547,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // card" demo); pulled forward so the click lands ON the redemption
     // payoff line, not on the post-story housekeeping.
     { at_sec: 74, action: 'click', target: '[data-audio-stage="missions-select-apollo11"]' },
+    // Close the Apollo 11 panel before the "Click any card" cue +
+    // grid scroll so the listener's eye lands on the grid as the
+    // narrator says it, not on a panel obscuring the bottom half of
+    // the screen. (2026-06-19 open-then-close sweep.)
+    { at_sec: 77, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:18.5 "Click any mission card"
     {
       at_sec: 78,
@@ -611,6 +683,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 35, action: 'click', target: '[data-audio-stage="earth-select-hubble"]' },
+    // Close the Hubble panel ~5 s after it opens so the canvas can
+    // breathe during the long narration gap (35 s → 96 s = 61 s of
+    // science beats about Hubble's altitude / atmospheric drag /
+    // servicing-mission history). 2026-06-19 — first sweep applying
+    // the "open-then-close" pattern across guide-earth.
+    { at_sec: 40, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:33.8 "JWST orbits there"
     {
       at_sec: 95,
@@ -619,6 +697,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
+    // Close JWST panel ~5 s in — narration moves to the "Click any
+    // spacecraft" outro and the canvas needs to be visible for that
+    // cue to make sense.
+    { at_sec: 101, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:02:09.8 "Click any spacecraft"
     {
       at_sec: 132,
@@ -627,6 +709,9 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 133, action: 'click', target: '[data-audio-stage="earth-select-iss"]' },
+    // Close ISS panel before the episode ends so the listener fades
+    // out on the canvas.
+    { at_sec: 138, action: 'click', target: '[data-audio-stage="panel-close"]' },
   ],
 
   // ── /earth · jwst-l2-halo — Enthusiast, VTT 122 s (Extended Tour) ─
@@ -1138,6 +1223,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 69, action: 'click', target: '[data-audio-stage="iss-select-destiny"]' },
     { at_sec: 79, action: 'click', target: '[data-audio-stage="iss-select-columbus"]' },
     { at_sec: 86, action: 'click', target: '[data-audio-stage="iss-select-kibo"]' },
+    // Close Kibo panel so the canvas + module list are visible for
+    // the 50-second "eighteen modules / twenty-six countries / people
+    // living there now" outro. The Kibo beat ends at ~86 s and the
+    // next cue is at 136 s — without a close, the panel sits open
+    // for almost a minute over irrelevant narration.
+    { at_sec: 91, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:02:16.3 "Eighteen pressurized modules"
     {
       at_sec: 136,

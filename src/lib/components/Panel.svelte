@@ -86,8 +86,12 @@
          the same control without re-implementing it. Floats on top of
          the content's first row so consumers don't need to leave room
          for it in their layout. -->
-    <button type="button" class="panel-close" onclick={onClose} aria-label={m.panel_close()}
-      >×</button
+    <button
+      type="button"
+      class="panel-close"
+      onclick={onClose}
+      aria-label={m.panel_close()}
+      data-audio-stage="panel-close">×</button
     >
     <div class="content">
       {@render children?.()}

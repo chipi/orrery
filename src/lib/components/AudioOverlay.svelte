@@ -345,7 +345,21 @@
       return;
     }
     const el = document.querySelector(stage.target) as HTMLElement | null;
-    if (!el) return;
+    if (!el) {
+      // 2026-06-19 — user reported a lot of tour actions silently
+      // skipped on /explore and /earth episodes. The unit-test corpus
+      // at src/lib/audio-tour.test.ts verifies every selector exists
+      // in source files, but the LIVE DOM can still be missing
+      // anchors that are gated behind `{#if}` blocks, route-state
+      // flags, mobile breakpoints, etc. Logging the miss surfaces the
+      // exact target so the next round of fixes targets the right
+      // anchor without guessing. Includes the stage's at_sec so it
+      // can be matched back to the SSML beat.
+      console.warn(
+        `[audio-tour] stage skipped — no element matches selector "${stage.target}" at ${stage.at_sec}s (action: ${stage.action})`,
+      );
+      return;
+    }
     switch (stage.action) {
       case 'flash':
         el.classList.add('audio-stage-flash');
@@ -357,6 +371,18 @@
       case 'click':
       case 'open-tab':
         if (typeof el.click === 'function') {
+          // Focus first, then click — mimics a real mouse click which
+          // fires `focus` before `click`. Programmatic `el.click()` on
+          // its own skips the focus step, so any `onfocus` handler on
+          // the target (e.g. the /explore PATHS legend rows that wire
+          // highlightedMissionId via focus/hover) silently never runs.
+          // Calling `.focus()` first lets the natural component
+          // behavior run — no custom per-component shim needed.
+          // (2026-06-19 user direction on the Voyager 2 beat: "just
+          // make work the normal behavior".)
+          if (typeof el.focus === 'function') {
+            el.focus({ preventScroll: true });
+          }
           el.click();
           // Mirror the cue + drag/zoom pattern: tell the user the tour
           // just clicked something on their behalf. Aria-label of the
@@ -735,10 +761,10 @@
             type="button"
             class="header-btn minimize-btn"
             aria-label={m.audio_minimize_aria()}
-            title={audio.tourActive
+            title={audio.currentEpisode
               ? m.audio_minimize_title()
-              : 'Start the tour first — minimize collapses to the active-tour bar'}
-            disabled={!audio.tourActive}
+              : 'Load an episode first — minimize collapses to the active-playback bar'}
+            disabled={!audio.currentEpisode}
             onclick={() => audio.toggleCompact()}
           >
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">

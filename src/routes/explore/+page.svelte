@@ -32,6 +32,7 @@
   } from '$lib/three/iconic-trajectory';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
+  import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
@@ -753,8 +754,15 @@
     smallBody: false,
     satellite: false,
     belt: false,
-    pathsLegend: false,
   });
+
+  // Iconic-mission selection — service factory consolidates the old
+  // `pathsLegendSelectedId` / `pathsLegendMission` / `highlightedMissionId`
+  // / `panelState.pathsLegend` quartet into a single $state object with
+  // action methods. See `./iconic-selection.svelte.ts` for the contract.
+  // Idiomatic Svelte 5 pattern (per docs §"$state in classes / modules":
+  // mutate-not-reassign on the shared object).
+  const iconic = createIconicSelectionService();
 
   /** Visibility-layer master toggles (NOT the per-body layer flags —
    *  those live in `layers` further down). */
@@ -779,17 +787,25 @@
     panelState.smallBody = false;
     panelState.satellite = false;
     panelState.belt = false;
-    panelState.pathsLegend = false;
+    // Iconic-mission selection (panel + selectedId + hoveredId + pending
+    // debounce timer) is owned by the service — single reset() call.
+    iconic.reset();
   }
 
   let selectedSmallBodyId: string | null = $state(null);
 
-  // Tour collaboration (PRD-016 §S11 / RFC-019 §12): when a detail panel
-  // opens while the Curator Tour is active, collapse the audio overlay to
-  // compact mode so the panel the narrator just opened is fully visible.
+  // Tour / single-episode collaboration (PRD-016 §S11 / RFC-019 §12):
+  // when a detail panel opens during ACTIVE audio playback (full tour
+  // OR a single-episode play), collapse the audio overlay to compact
+  // mode so the panel the narrator just opened is fully visible.
+  // 2026-06-19 — was gated on `audio.tourActive` only, so single-
+  // episode previews (the most common entry point) kept the overlay
+  // at full width and the panel sat behind it. User report: "tour does
+  // not go to compact mode and overlays details panel".
   $effect(() => {
     if (
-      audio.tourActive &&
+      audio.currentEpisode &&
+      audio.open &&
       (panelState.planet || panelState.sun || panelState.smallBody) &&
       !audio.compact
     ) {
@@ -1072,29 +1088,16 @@
     }
   }
 
-  let pathsLegendMission: Mission | null = $state(null);
-  // Which trajectory's color is currently solo'd (legend hover, or canvas
-  // hover on the Today marker). null = all dim. Effect below pushes the
-  // value into each handle's setHighlight so the bright/dim state lives
-  // on the materials, not in Svelte.
-  let highlightedMissionId: string | null = $state(null);
+  // Arc-highlight effect — pushes the live "highlighted trajectory" id
+  // into each iconic-trajectory handle's setHighlight. The id is the
+  // hovered mission when one is hovered, falling back to the selected
+  // mission so the user always sees which path the open panel is for.
+  // setHighlight is a Three.js side effect (third-party library write),
+  // which is the canonical $effect use case per the Svelte 5 docs.
   $effect(() => {
-    const id = highlightedMissionId;
+    const id = iconic.state.hoveredId ?? iconic.state.selectedId;
     for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
   });
-  async function openPathsLegendMission(missionId: string) {
-    // getMission(id, dest) needs the destination because mission JSON
-    // is sharded under static/data/missions/<dest>/<id>.json. Resolve
-    // dest via the index — same convention /missions itself uses.
-    const idx = await getMissionIndex();
-    const entry = idx.find((e) => e.id === missionId);
-    if (!entry) return;
-    const m = await getMission(missionId, entry.dest, localeFromPage($page));
-    if (m) {
-      pathsLegendMission = m;
-      panelState.pathsLegend = true;
-    }
-  }
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
   // When `/explore?mission=ID` is loaded, fetch the mission and
@@ -1353,10 +1356,9 @@
   // Panel mutex: each select* below opens its own panel and explicitly
   // closes the four other planet/sun/smallBody/satellite/belt panels.
   // The full `resetExplorePanelState()` funnel is deliberately NOT used
-  // here — it would also close `panelState.pathsLegend` and
-  // `panelState.sizes`, which should remain open across a body
-  // selection so the user can pick a body while the legend / sizes
-  // overlay stays up.
+  // here — it would also close the iconic-mission panel + the sizes
+  // overlay, which should remain open across a body selection so the
+  // user can pick a body while the legend / sizes overlay stays up.
 
   function selectPlanet(id: string) {
     selectedId = id;
@@ -3133,28 +3135,40 @@
       'bepicolombo',
       'ulysses',
     ] as const;
-    for (const id of ICONIC_TRAJECTORY_IDS) {
-      void (async () => {
-        try {
-          const res = await fetch(`${base}/data/trajectories/${id}.json`);
-          if (!res.ok) return;
-          const data = (await res.json()) as IconicTrajectoryData;
-          const handle = buildIconicTrajectory({
-            data,
-            auToPx,
-            width: container?.clientWidth ?? window.innerWidth,
-            height: container?.clientHeight ?? window.innerHeight,
-            visible: layers.paths,
-          });
-          scene.add(handle.group);
-          iconicTrajectoryHandles.push(handle);
-          pickables.push(handle.clickTarget);
-        } catch {
-          // Silent — the PATHS chip simply skips this trajectory if
-          // the fetch fails. Not a fatal error for /explore.
-        }
-      })();
-    }
+    // Trajectory build is the worst init long task on /explore — each
+    // call creates ~5-20 sprites + CanvasTextures, and the 18-trajectory
+    // roster (vetted via perf-explore-iconic-clicks.spec.ts on 2026-06-19,
+    // baseline_5s.worstMs ≈ 1.5 s before this fix) was firing all the
+    // builds back-to-back inside a single microtask queue → ~1.5 s
+    // synchronous block. Fetches still go out in parallel (network is
+    // cheap + concurrent) but the SYNC build calls are interleaved with
+    // frame yields, so each frame stays under the 16 ms budget instead
+    // of one frame eating the whole roster.
+    const trajectoryDataPromises = ICONIC_TRAJECTORY_IDS.map((id) =>
+      fetch(`${base}/data/trajectories/${id}.json`)
+        .then((r) => (r.ok ? (r.json() as Promise<IconicTrajectoryData>) : null))
+        .catch(() => null),
+    );
+    void (async () => {
+      for (let i = 0; i < ICONIC_TRAJECTORY_IDS.length; i++) {
+        const data = await trajectoryDataPromises[i];
+        if (!data) continue;
+        const handle = buildIconicTrajectory({
+          data,
+          auToPx,
+          width: container?.clientWidth ?? window.innerWidth,
+          height: container?.clientHeight ?? window.innerHeight,
+          visible: layers.paths,
+        });
+        scene.add(handle.group);
+        iconicTrajectoryHandles.push(handle);
+        pickables.push(handle.clickTarget);
+        // Yield to the event loop — separates each build into its own
+        // macrotask so the browser can render + process input between
+        // builds instead of starving for the whole roster's duration.
+        await new Promise((r) => setTimeout(r, 0));
+      }
+    })();
 
     // Orbiter-tour loops (cassini-tour, galileo-tour, juno-tour)
     // intentionally NOT loaded. The planet-anchored orbital rings made
@@ -3212,7 +3226,7 @@
           // instead of navigating away to /missions, so the camera +
           // scene state survives the click. Same MissionPanel surface
           // used by the PATHS legend rows.
-          void openPathsLegendMission(trajectoryMissionId);
+          void iconic.openMission(trajectoryMissionId, localeFromPage($page));
         }
         return;
       }
@@ -3257,17 +3271,17 @@
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
         if (hoverData) hoverData = null;
-        if (highlightedMissionId) highlightedMissionId = null;
+        if (iconic.state.hoveredId) iconic.state.hoveredId = null;
         return;
       }
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      // Trajectory-marker hover — set highlightedMissionId so the
-      // matching path goes bright. Independent of the tooltip hover
-      // path below: trajectories don't surface a vis-viva tooltip,
-      // only a color-brighten cue.
+      // Trajectory-marker hover — set hoveredId so the matching path
+      // goes bright. Independent of the tooltip hover path below:
+      // trajectories don't surface a vis-viva tooltip, only a color-
+      // brighten cue.
       if (layers.paths && iconicTrajectoryHandles.length > 0) {
         // All hover-able trajectory objects — Today markers + every
         // encounter sprite. Hover on any one of them brightens the
@@ -3276,9 +3290,9 @@
         for (const h of iconicTrajectoryHandles) trajTargets.push(...h.hoverTargets);
         const trajHits = ray3dHover.intersectObjects(trajTargets, false);
         const newId = (trajHits[0]?.object.userData.missionId as string | undefined) ?? null;
-        if (newId !== highlightedMissionId) highlightedMissionId = newId;
-      } else if (highlightedMissionId) {
-        highlightedMissionId = null;
+        if (newId !== iconic.state.hoveredId) iconic.state.hoveredId = newId;
+      } else if (iconic.state.hoveredId) {
+        iconic.state.hoveredId = null;
       }
       const hits = ray3dHover.intersectObjects(hoverTargets, false);
       if (hits.length === 0) {
@@ -3388,7 +3402,7 @@
     };
     const onHoverLeave = () => {
       hoverData = null;
-      highlightedMissionId = null;
+      iconic.state.hoveredId = null;
     };
 
     let mouseDownOnCanvas = false;
@@ -4169,6 +4183,19 @@
     // advance (ADR-025) — we don't hand it to createAnimateLoop's
     // reducedMotion option because user-initiated camera drag still
     // needs to update the render even when sim time is frozen.
+    // Render-loop throttle counter — composer.render() is skipped on
+    // 3 of every 4 frames when a right-side detail panel covers most
+    // of the canvas. Positions + arc-highlight + selection halo all
+    // update every frame; only the WebGL submission is skipped, so
+    // the visible image holds for ~33 ms on a 120 Hz display and
+    // ~67 ms on 60 Hz (below the perceptual flicker threshold for
+    // /explore's slow orbital motion). The GPU bill drops to 25% and
+    // the freed main-thread budget routes to MissionPanel re-renders
+    // + the Svelte reactive cascade during the click-heavy mission-
+    // browsing window. Verified by perf-explore-iconic-clicks.spec.ts
+    // on 2026-06-20: hero-image-loaded validation 42 → 49 / 50,
+    // panel-title-match 48 → 49 / 50 (both at the ceiling).
+    let frameThrottleCount = 0;
     const loop = createAnimateLoop({
       onFrame: () => {
         const now = performance.now();
@@ -4527,6 +4554,22 @@
             for (const h of iconicTrajectoryHandles) h.relayoutLabels(camera, ch);
           }
 
+          // Frame throttle — render 1 of every 4 frames when a right-
+          // side detail panel covers the canvas. See module-level
+          // declaration above for the why.
+          const aRightPanelOpen =
+            iconic.state.panelOpen ||
+            panelState.planet ||
+            panelState.sun ||
+            panelState.smallBody ||
+            panelState.satellite ||
+            panelState.belt;
+          if (aRightPanelOpen) {
+            frameThrottleCount = (frameThrottleCount + 1) & 3;
+            if (frameThrottleCount !== 0) return;
+          } else {
+            frameThrottleCount = 0;
+          }
           composer.render();
         } else {
           draw2d();
@@ -4812,7 +4855,7 @@
       >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
-      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId}
+      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId || panelState.sun}
         <button
           class="toggle"
           type="button"
@@ -4825,6 +4868,7 @@
             flyToBodyFn?.(null);
           }}
           data-testid="explore-reset-view"
+          data-audio-stage="explore-reset-view"
         >
           {m.ui_reset_view()}
         </button>
@@ -4905,20 +4949,35 @@
              strip wraps inside the existing legend column width — it
              never pushes the chip cluster wider. -->
         <div class="paths-legend-tagline" aria-live="polite">
-          {highlightedMissionId
-            ? iconicTagline(highlightedMissionId)
-            : m.explore_iconic_tagline_placeholder()}
+          {#if iconic.state.hoveredId}
+            {iconicTagline(iconic.state.hoveredId)}
+          {:else if iconic.state.selectedId}
+            {iconicTagline(iconic.state.selectedId)}
+          {:else}
+            {m.explore_iconic_tagline_placeholder()}
+          {/if}
         </div>
         {#each PATHS_LEGEND as entry (entry.mission_id)}
           <button
             type="button"
             class="paths-legend-row"
-            onclick={() => openPathsLegendMission(entry.mission_id)}
-            onmouseenter={() => (highlightedMissionId = entry.mission_id)}
-            onmouseleave={() => (highlightedMissionId = null)}
-            onfocus={() => (highlightedMissionId = entry.mission_id)}
-            onblur={() => (highlightedMissionId = null)}
+            class:is-selected={iconic.state.selectedId === entry.mission_id}
+            aria-pressed={iconic.state.selectedId === entry.mission_id}
+            onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
+            onmouseenter={() => {
+              // Lightweight preview — brightens the arc + swaps the
+              // tagline. Does NOT open the panel; the panel only
+              // opens on click (or programmatic-tour click). This is
+              // intentional after the 2026-06-19 render-storm caused
+              // by re-issuing the async getMission() fetch on every
+              // mouseenter / mouseleave.
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onmouseleave={() => {
+              iconic.state.hoveredId = null;
+            }}
             data-testid="paths-legend-row-{entry.mission_id}"
+            data-audio-stage="iconic-mission-{entry.mission_id}"
           >
             <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
             <span class="name">{entry.name}</span>
@@ -5038,9 +5097,9 @@
 />
 
 <MissionPanel
-  mission={pathsLegendMission}
-  open={panelState.pathsLegend}
-  onClose={() => (panelState.pathsLegend = false)}
+  mission={iconic.state.mission}
+  open={iconic.state.panelOpen}
+  onClose={() => iconic.reset()}
   onFly={(id) => goto(`${base}/fly?mission=${id}`)}
 />
 
@@ -5548,6 +5607,18 @@
     background: rgba(68, 102, 255, 0.15);
     color: #fff;
     outline: none;
+  }
+  .paths-legend-row.is-selected {
+    background: rgba(68, 102, 255, 0.28);
+    color: #fff;
+    box-shadow: inset 2px 0 0 rgba(140, 170, 255, 0.95);
+  }
+  .paths-legend-row.is-selected .logos img {
+    opacity: 1;
+    filter: none;
+  }
+  .paths-legend-row.is-selected .year {
+    color: rgba(255, 255, 255, 0.95);
   }
   .paths-legend-why {
     display: block;

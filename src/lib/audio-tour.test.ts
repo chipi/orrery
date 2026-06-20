@@ -284,9 +284,11 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/lib/surface-scene/SurfaceScene.svelte',
       // Shared chrome components that carry tour anchors used across routes.
       'src/lib/components/Nav.svelte',
+      'src/lib/components/Panel.svelte',
       'src/lib/components/PlanetPanel.svelte',
       'src/lib/components/PanoramaToggleButton.svelte',
       'src/lib/components/PanoramaAutoTour.svelte',
+      'src/lib/components/ScienceLayersPanel.svelte',
       // Surface-scene routes (anchors live in route-level pages and call
       // into the SurfaceScene window-hook).
       'src/routes/earth/+page.svelte',
@@ -313,6 +315,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'route-card-',
       'science-tab-',
       'science-section-',
+      'science-layer-',
       'missions-select-',
       'fleet-select-',
       'mars-select-',
@@ -321,6 +324,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'iss-select-',
       'moon-select-',
       'tiangong-select-',
+      'iconic-mission-',
     ];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',

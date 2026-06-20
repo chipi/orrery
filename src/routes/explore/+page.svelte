@@ -780,7 +780,11 @@
     panelState.satellite = false;
     panelState.belt = false;
     panelState.pathsLegend = false;
-    pathsLegendLocked = false;
+    pathsLegendSelectedId = null;
+    if (pathsLegendOpenTimer !== null) {
+      clearTimeout(pathsLegendOpenTimer);
+      pathsLegendOpenTimer = null;
+    }
     // Drop the iconic-trajectory highlight too — the mission panel is
     // closing, so the bright arc that pointed to it should fade with it.
     highlightedMissionId = null;
@@ -1083,41 +1087,67 @@
   }
 
   let pathsLegendMission: Mission | null = $state(null);
-  // True when the iconic-mission panel was opened by a click (vs a
-  // hover). A locked panel ignores subsequent hover events so the
-  // user can move the cursor over to read the panel without dropping
-  // the selection. Cleared on panel close + on resetExplorePanelState.
-  // 2026-06-19 user UX direction:
-  //   1. Hover → panel + arc track the cursor.
-  //   2. Click → panel + arc lock; mouseleave doesn't tear them down.
-  //   3. Tour fires a programmatic click → same lock semantics.
-  let pathsLegendLocked = $state(false);
+  // The selected mission id — set by an explicit click on an iconic
+  // legend row (or by a canvas click on a trajectory marker), cleared
+  // when the user closes the panel via the × button. Drives:
+  //   1. The `.is-selected` row indicator in the legend.
+  //   2. The arc-highlight fallback when no row is being hovered.
+  //   3. The panel's `open` state.
+  // Hover sets `highlightedMissionId` only (cheap; just brightens the
+  // arc + updates the tagline). Hover does NOT open the panel —
+  // that pattern caused a render-storm on 2026-06-19 because every
+  // mouseleave was re-issuing the async getMission() fetch.
+  let pathsLegendSelectedId: string | null = $state(null);
+  let openPathsLegendSeq = 0;
+  // Debounce for the heavy MissionPanel re-render. The visual selection
+  // indicator (`.is-selected` on the row + arc highlight) updates
+  // synchronously on every click so flicking through rows feels instant,
+  // but the panel mission swap (which fetches mission JSON, swaps hero
+  // image, re-renders the gallery) only commits after the user pauses on
+  // a row. Without this the user can rapid-click 10 rows/sec and queue
+  // 10 full panel rebuilds back-to-back → main thread saturates.
+  let pathsLegendOpenTimer: ReturnType<typeof setTimeout> | null = null;
+  function scheduleOpenPathsLegendMission(missionId: string) {
+    pathsLegendSelectedId = missionId;
+    if (pathsLegendOpenTimer !== null) clearTimeout(pathsLegendOpenTimer);
+    // 250ms debounce — feels instant to users while consolidating
+    // rapid-click bursts into one MissionPanel re-render. The seq
+    // guard inside openPathsLegendMission catches any racing async
+    // chains from prior calls so stale state writes are dropped.
+    pathsLegendOpenTimer = setTimeout(() => {
+      pathsLegendOpenTimer = null;
+      void openPathsLegendMission(missionId);
+    }, 250);
+  }
   // Which trajectory's color is currently solo'd (legend hover, or canvas
   // hover on the Today marker). null = all dim. Effect below pushes the
   // value into each handle's setHighlight so the bright/dim state lives
   // on the materials, not in Svelte.
   let highlightedMissionId: string | null = $state(null);
   $effect(() => {
-    const id = highlightedMissionId;
+    // Arc highlight tracks live hover first (canvas hover or row hover
+    // both set highlightedMissionId), then falls back to the selected
+    // mission so the user always sees which path the open panel is for.
+    const id = highlightedMissionId ?? pathsLegendSelectedId;
     for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
   });
   async function openPathsLegendMission(missionId: string) {
     // getMission(id, dest) needs the destination because mission JSON
     // is sharded under static/data/missions/<dest>/<id>.json. Resolve
     // dest via the index — same convention /missions itself uses.
+    // Seq guard: rapid clicks (or a tour firing multiple opens) must
+    // not race — only the latest call wins the final state writes.
+    const seq = ++openPathsLegendSeq;
+    pathsLegendSelectedId = missionId; // synchronous: row indicator + arc fallback update immediately
     const idx = await getMissionIndex();
+    if (seq !== openPathsLegendSeq) return;
     const entry = idx.find((e) => e.id === missionId);
     if (!entry) return;
     const m = await getMission(missionId, entry.dest, localeFromPage($page));
+    if (seq !== openPathsLegendSeq) return;
     if (m) {
       pathsLegendMission = m;
       panelState.pathsLegend = true;
-      // Match the hover behaviour: clicking a row highlights its arc.
-      // Pre-2026-06-19 click only opened the panel without highlighting
-      // the trajectory — the user had to hover the row separately to
-      // see which arc the panel was for. (Reported as "click there
-      // should highlight specific mission which does not happen".)
-      highlightedMissionId = missionId;
     }
   }
 
@@ -3158,28 +3188,40 @@
       'bepicolombo',
       'ulysses',
     ] as const;
-    for (const id of ICONIC_TRAJECTORY_IDS) {
-      void (async () => {
-        try {
-          const res = await fetch(`${base}/data/trajectories/${id}.json`);
-          if (!res.ok) return;
-          const data = (await res.json()) as IconicTrajectoryData;
-          const handle = buildIconicTrajectory({
-            data,
-            auToPx,
-            width: container?.clientWidth ?? window.innerWidth,
-            height: container?.clientHeight ?? window.innerHeight,
-            visible: layers.paths,
-          });
-          scene.add(handle.group);
-          iconicTrajectoryHandles.push(handle);
-          pickables.push(handle.clickTarget);
-        } catch {
-          // Silent — the PATHS chip simply skips this trajectory if
-          // the fetch fails. Not a fatal error for /explore.
-        }
-      })();
-    }
+    // Trajectory build is the worst init long task on /explore — each
+    // call creates ~5-20 sprites + CanvasTextures, and the 18-trajectory
+    // roster (vetted via perf-explore-iconic-clicks.spec.ts on 2026-06-19,
+    // baseline_5s.worstMs ≈ 1.5 s before this fix) was firing all the
+    // builds back-to-back inside a single microtask queue → ~1.5 s
+    // synchronous block. Fetches still go out in parallel (network is
+    // cheap + concurrent) but the SYNC build calls are interleaved with
+    // frame yields, so each frame stays under the 16 ms budget instead
+    // of one frame eating the whole roster.
+    const trajectoryDataPromises = ICONIC_TRAJECTORY_IDS.map((id) =>
+      fetch(`${base}/data/trajectories/${id}.json`)
+        .then((r) => (r.ok ? (r.json() as Promise<IconicTrajectoryData>) : null))
+        .catch(() => null),
+    );
+    void (async () => {
+      for (let i = 0; i < ICONIC_TRAJECTORY_IDS.length; i++) {
+        const data = await trajectoryDataPromises[i];
+        if (!data) continue;
+        const handle = buildIconicTrajectory({
+          data,
+          auToPx,
+          width: container?.clientWidth ?? window.innerWidth,
+          height: container?.clientHeight ?? window.innerHeight,
+          visible: layers.paths,
+        });
+        scene.add(handle.group);
+        iconicTrajectoryHandles.push(handle);
+        pickables.push(handle.clickTarget);
+        // Yield to the event loop — separates each build into its own
+        // macrotask so the browser can render + process input between
+        // builds instead of starving for the whole roster's duration.
+        await new Promise((r) => setTimeout(r, 0));
+      }
+    })();
 
     // Orbiter-tour loops (cassini-tour, galileo-tour, juno-tour)
     // intentionally NOT loaded. The planet-anchored orbital rings made
@@ -4931,35 +4973,34 @@
              strip wraps inside the existing legend column width — it
              never pushes the chip cluster wider. -->
         <div class="paths-legend-tagline" aria-live="polite">
-          {highlightedMissionId
-            ? iconicTagline(highlightedMissionId)
-            : m.explore_iconic_tagline_placeholder()}
+          {#if highlightedMissionId}
+            {iconicTagline(highlightedMissionId)}
+          {:else if pathsLegendSelectedId}
+            {iconicTagline(pathsLegendSelectedId)}
+          {:else}
+            {m.explore_iconic_tagline_placeholder()}
+          {/if}
         </div>
         {#each PATHS_LEGEND as entry (entry.mission_id)}
           <button
             type="button"
             class="paths-legend-row"
+            class:is-selected={pathsLegendSelectedId === entry.mission_id}
+            aria-pressed={pathsLegendSelectedId === entry.mission_id}
             onclick={() => {
-              void openPathsLegendMission(entry.mission_id);
-              pathsLegendLocked = true;
+              scheduleOpenPathsLegendMission(entry.mission_id);
             }}
             onmouseenter={() => {
-              if (!pathsLegendLocked) void openPathsLegendMission(entry.mission_id);
+              // Lightweight preview — brightens the arc + swaps the
+              // tagline. Does NOT open the panel; the panel only
+              // opens on click (or programmatic-tour click). This is
+              // intentional after the 2026-06-19 render-storm caused
+              // by re-issuing the async getMission() fetch on every
+              // mouseenter / mouseleave.
+              highlightedMissionId = entry.mission_id;
             }}
             onmouseleave={() => {
-              if (!pathsLegendLocked) {
-                panelState.pathsLegend = false;
-                highlightedMissionId = null;
-              }
-            }}
-            onfocus={() => {
-              if (!pathsLegendLocked) void openPathsLegendMission(entry.mission_id);
-            }}
-            onblur={() => {
-              if (!pathsLegendLocked) {
-                panelState.pathsLegend = false;
-                highlightedMissionId = null;
-              }
+              highlightedMissionId = null;
             }}
             data-testid="paths-legend-row-{entry.mission_id}"
             data-audio-stage="iconic-mission-{entry.mission_id}"
@@ -5085,8 +5126,13 @@
   mission={pathsLegendMission}
   open={panelState.pathsLegend}
   onClose={() => {
+    // 2026-06-19 user direction: × clears the selection indicator too.
     panelState.pathsLegend = false;
-    pathsLegendLocked = false;
+    pathsLegendSelectedId = null;
+    if (pathsLegendOpenTimer !== null) {
+      clearTimeout(pathsLegendOpenTimer);
+      pathsLegendOpenTimer = null;
+    }
     highlightedMissionId = null;
   }}
   onFly={(id) => goto(`${base}/fly?mission=${id}`)}
@@ -5596,6 +5642,18 @@
     background: rgba(68, 102, 255, 0.15);
     color: #fff;
     outline: none;
+  }
+  .paths-legend-row.is-selected {
+    background: rgba(68, 102, 255, 0.28);
+    color: #fff;
+    box-shadow: inset 2px 0 0 rgba(140, 170, 255, 0.95);
+  }
+  .paths-legend-row.is-selected .logos img {
+    opacity: 1;
+    filter: none;
+  }
+  .paths-legend-row.is-selected .year {
+    color: rgba(255, 255, 255, 0.95);
   }
   .paths-legend-why {
     display: block;

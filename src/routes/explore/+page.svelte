@@ -792,6 +792,33 @@
     iconic.reset();
   }
 
+  // Roving keyboard nav for the iconic-mission legend — mirrors /iss.
+  // Up/Down move the highlight (wrapping at both ends), Home/End jump to
+  // first/last, Esc clears. Movement calls selectMission() — instant
+  // is-selected mark + 250 ms debounced panel open, exactly as a row
+  // click — and moves DOM focus so the focus ring follows. Enter/Space
+  // open via the native button onclick (also selectMission), keeping the
+  // legend's click semantics uniform.
+  let legendRowEls: HTMLButtonElement[] = [];
+
+  function onLegendKeydown(e: KeyboardEvent, i: number): void {
+    if (e.key === 'Escape') {
+      iconic.reset();
+      return;
+    }
+    const n = PATHS_LEGEND.length;
+    if (n === 0) return;
+    let next: number;
+    if (e.key === 'ArrowDown') next = (i + 1) % n;
+    else if (e.key === 'ArrowUp') next = (i - 1 + n) % n;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = n - 1;
+    else return;
+    e.preventDefault();
+    iconic.selectMission(PATHS_LEGEND[next].mission_id, localeFromPage($page));
+    legendRowEls[next]?.focus();
+  }
+
   let selectedSmallBodyId: string | null = $state(null);
 
   // Tour / single-episode collaboration (PRD-016 §S11 / RFC-019 §12):
@@ -4957,13 +4984,15 @@
             {m.explore_iconic_tagline_placeholder()}
           {/if}
         </div>
-        {#each PATHS_LEGEND as entry (entry.mission_id)}
+        {#each PATHS_LEGEND as entry, i (entry.mission_id)}
           <button
             type="button"
             class="paths-legend-row"
+            bind:this={legendRowEls[i]}
             class:is-selected={iconic.state.selectedId === entry.mission_id}
             aria-pressed={iconic.state.selectedId === entry.mission_id}
             onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
+            onkeydown={(e) => onLegendKeydown(e, i)}
             onmouseenter={() => {
               // Lightweight preview — brightens the arc + swaps the
               // tagline. Does NOT open the panel; the panel only

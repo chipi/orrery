@@ -144,6 +144,7 @@
                 href="{base}/science/{tab}"
                 aria-current={tab === activeTab ? 'page' : undefined}
                 onkeydown={onTabKeydown}
+                data-sveltekit-keepfocus
               >
                 <span class="tab-name">{tabLabel(tab)}</span>
               </a>
@@ -169,6 +170,7 @@
                   href="{base}/science/{activeTab}/{section.id}"
                   aria-current={section.id === activeSection ? 'page' : undefined}
                   onkeydown={onSectionKeydown}
+                  data-sveltekit-keepfocus
                 >
                   <span class="section-name">{section.title}</span>
                 </a>

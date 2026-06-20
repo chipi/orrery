@@ -507,6 +507,32 @@
     selection.open(mod);
   }
 
+  // Roving keyboard nav for the MODULES list (visiting-vehicle list stays
+  // click/focus only). Up/Down move the highlight instantly via select()
+  // — debounced panel preview, so fast scrubbing doesn't storm the
+  // gallery fetch — and move DOM focus so the focus ring + canvas-hover
+  // outline follow. Enter/Space open immediately via the native button
+  // onclick → openModule; Esc closes. Wraps at both ends.
+  let moduleRowEls: HTMLButtonElement[] = [];
+
+  function onModuleKeydown(e: KeyboardEvent, i: number) {
+    if (e.key === 'Escape') {
+      closePanel();
+      return;
+    }
+    const n = sortedModules.length;
+    if (n === 0) return;
+    let next: number;
+    if (e.key === 'ArrowDown') next = (i + 1) % n;
+    else if (e.key === 'ArrowUp') next = (i - 1 + n) % n;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = n - 1;
+    else return;
+    e.preventDefault();
+    selection.select(sortedModules[next]);
+    moduleRowEls[next]?.focus();
+  }
+
   $effect(() => {
     const id = $page.url.searchParams.get('module');
     if (modules.length === 0 && visitors.length === 0) return;
@@ -1252,13 +1278,15 @@
       {/if}
       <h2 class="list-heading">{m.iss_list_heading()}</h2>
       <ul class="module-list">
-        {#each sortedModules as mod (mod.id)}
+        {#each sortedModules as mod, i (mod.id)}
           <li>
             <button
               type="button"
               class="module-row"
+              bind:this={moduleRowEls[i]}
               class:canvas-hovered={selection.state.hoveredId === mod.id}
               onclick={() => openModule(mod)}
+              onkeydown={(e) => onModuleKeydown(e, i)}
               onmouseenter={() => {
                 issVisualRef.hoveredId = mod.id;
                 requestIssMaterialRefresh();

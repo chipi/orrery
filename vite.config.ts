@@ -3,6 +3,7 @@ import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { compression } from 'vite-plugin-compression2';
 import { defineConfig } from 'vitest/config';
+import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 // GH Pages compat — see scripts/gh-pages-compat.mjs header. Returns
@@ -24,32 +25,39 @@ const pkg = JSON.parse(
  * The static manifest (static/manifest.webmanifest) is shipped as-is
  * by adapter-static; we tell the plugin not to generate one.
  */
-export default defineConfig({
-  // Expose package.json version + build timestamp as globals at build
-  // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
-  // fetches or extra JSON. Replaced literally in the bundle by Vite's
-  // `define`. `__BUILD_DATE__` uses ISO 8601 date (UTC, YYYY-MM-DD) —
-  // stable across timezones; rebuilt only when the bundle is rebuilt
-  // so it doubles as a "this is the deploy on GH Pages today" signal.
-  define: {
-    __APP_VERSION__: JSON.stringify(pkg.version),
-    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
-  },
-  // Dev / preview port reads VITE_DEV_PORT from the env (or .env.local,
-  // which is gitignored). Falls back to 5273 if unset. Useful when
-  // running multiple worktrees of the repo in parallel — drop a line
-  // like `VITE_DEV_PORT=5274` into .env.local for the extra worktree
-  // and its dev server won't collide with the default 5273.
-  server: {
-    port: parseInt(process.env.VITE_DEV_PORT ?? '5273', 10),
-    strictPort: true,
-    // Allow imports from static/ — used by $data/ alias for build-time
-    // JSON imports (planets, small-bodies, scenarios). Without this,
-    // Vite's default fs.allow excludes static/ and dev-only 404s flood
-    // the console.
-    fs: { allow: ['static'] },
-  },
-  preview: { port: parseInt(process.env.VITE_DEV_PORT ?? '5273', 10), strictPort: true },
+export default defineConfig(({ mode }) => {
+  // loadEnv() reads .env / .env.local / .env.<mode> in CWD merged into
+  // a plain map — same precedence vite uses for app-time env, but
+  // available here at config-eval time (process.env alone wouldn't
+  // catch .env.local).
+  const env = loadEnv(mode, process.cwd(), '');
+  const devPort = parseInt(env.VITE_DEV_PORT || '5273', 10);
+  return {
+    // Expose package.json version + build timestamp as globals at build
+    // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
+    // fetches or extra JSON. Replaced literally in the bundle by Vite's
+    // `define`. `__BUILD_DATE__` uses ISO 8601 date (UTC, YYYY-MM-DD) —
+    // stable across timezones; rebuilt only when the bundle is rebuilt
+    // so it doubles as a "this is the deploy on GH Pages today" signal.
+    define: {
+      __APP_VERSION__: JSON.stringify(pkg.version),
+      __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+    },
+    // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
+    // which is gitignored). Falls back to 5273 if unset. Useful when
+    // running multiple worktrees of the repo in parallel — drop a line
+    // like `VITE_DEV_PORT=5274` into .env.local for the extra worktree
+    // and its dev server won't collide with the default 5273.
+    server: {
+      port: devPort,
+      strictPort: true,
+      // Allow imports from static/ — used by $data/ alias for build-time
+      // JSON imports (planets, small-bodies, scenarios). Without this,
+      // Vite's default fs.allow excludes static/ and dev-only 404s flood
+      // the console.
+      fs: { allow: ['static'] },
+    },
+    preview: { port: devPort, strictPort: true },
   plugins: [
     // Paraglide 2.x i18n compiler — replaces the standalone CLI step
     // for dev/build. URL-segment strategy: en-US (baseLocale) lives at
@@ -323,4 +331,5 @@ export default defineConfig({
       ],
     },
   },
+  };
 });

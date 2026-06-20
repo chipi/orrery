@@ -67,6 +67,55 @@
   const showRightRail = $derived(
     activeTab !== null && tabSections !== null && tabSections.length > 0,
   );
+
+  // ─── Roving keyboard nav for the two rails ──────────────────────
+  // Same focus-only model as the /missions + /fleet grids, adapted to
+  // two linked vertical lists. ↑/↓ move within a rail (wrapping); → jumps
+  // from the left tab rail into the right section subnav; ← jumps back.
+  // Enter/Space activate the focused <a> natively — which navigates and
+  // swaps the centre content (these rails have no detail panel; the
+  // centre IS the detail). Nav order is read live from the DOM.
+  function railLinks(side: 'left' | 'right'): HTMLAnchorElement[] {
+    const sel = side === 'left' ? '.rail-left .tab-card' : '.rail-right .section-row';
+    return Array.from(document.querySelectorAll<HTMLAnchorElement>(sel));
+  }
+  function moveWithin(links: HTMLAnchorElement[], current: EventTarget | null, dir: 1 | -1): void {
+    const i = links.indexOf(current as HTMLAnchorElement);
+    if (i === -1) return;
+    const n = links.length;
+    links[(i + dir + n) % n]?.focus();
+  }
+  /** Focus a rail's active item (or its first) when crossing into it. */
+  function focusRail(side: 'left' | 'right'): boolean {
+    const links = railLinks(side);
+    if (links.length === 0) return false;
+    (links.find((l) => l.classList.contains('active')) ?? links[0]).focus();
+    return true;
+  }
+  function onTabKeydown(e: KeyboardEvent): void {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      moveWithin(railLinks('left'), e.currentTarget, 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      moveWithin(railLinks('left'), e.currentTarget, -1);
+    } else if (e.key === 'ArrowRight') {
+      // Jump into the section subnav, if this tab has one rendered.
+      if (focusRail('right')) e.preventDefault();
+    }
+  }
+  function onSectionKeydown(e: KeyboardEvent): void {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      moveWithin(railLinks('right'), e.currentTarget, 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      moveWithin(railLinks('right'), e.currentTarget, -1);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      focusRail('left');
+    }
+  }
 </script>
 
 <div class="science-root">
@@ -94,6 +143,7 @@
                 data-audio-stage="science-tab-{tab}"
                 href="{base}/science/{tab}"
                 aria-current={tab === activeTab ? 'page' : undefined}
+                onkeydown={onTabKeydown}
               >
                 <span class="tab-name">{tabLabel(tab)}</span>
               </a>
@@ -118,6 +168,7 @@
                   data-audio-stage="science-section-{section.id}"
                   href="{base}/science/{activeTab}/{section.id}"
                   aria-current={section.id === activeSection ? 'page' : undefined}
+                  onkeydown={onSectionKeydown}
                 >
                   <span class="section-name">{section.title}</span>
                 </a>

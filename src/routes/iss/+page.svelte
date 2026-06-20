@@ -518,26 +518,34 @@
   // where you are without committing. Enter/Space open the focused row
   // (native button onclick → openModule, immediate); Esc closes.
   //
-  // `rowEls` is the flattened modules-then-visitors focus order; visitor
-  // rows bind at index `sortedModules.length + j`.
-  let rowEls: HTMLButtonElement[] = [];
-
-  function onRowKeydown(e: KeyboardEvent, i: number) {
+  // The nav order is read live from the DOM at keypress time — every
+  // `.module-row` button inside the list aside, in document order
+  // (modules <ul> then visitors <ul>). This deliberately avoids a
+  // flattened ref array indexed by `sortedModules.length + j`: modules
+  // and visitors load as two independent async fetches, so that index is
+  // racy (visitors resolving first bind at the wrong offset). DOM order
+  // is always correct once rendered.
+  function onRowKeydown(e: KeyboardEvent) {
+    const btn = e.currentTarget as HTMLButtonElement;
     if (e.key === 'Escape') {
       closePanel();
       return;
     }
-    const n = sortedModules.length + sortedVisitors.length;
-    if (n === 0) return;
+    const root = btn.closest('[data-testid="iss-list-view"]');
+    if (!root) return;
+    const rows = Array.from(root.querySelectorAll<HTMLButtonElement>('button.module-row'));
+    const cur = rows.indexOf(btn);
+    const n = rows.length;
+    if (n === 0 || cur === -1) return;
     let next: number;
-    if (e.key === 'ArrowDown') next = (i + 1) % n;
-    else if (e.key === 'ArrowUp') next = (i - 1 + n) % n;
+    if (e.key === 'ArrowDown') next = (cur + 1) % n;
+    else if (e.key === 'ArrowUp') next = (cur - 1 + n) % n;
     else if (e.key === 'Home') next = 0;
     else if (e.key === 'End') next = n - 1;
     else return;
     e.preventDefault();
     // Focus only — selection is committed on Enter/click, not on move.
-    rowEls[next]?.focus();
+    rows[next]?.focus();
   }
 
   $effect(() => {
@@ -1285,15 +1293,14 @@
       {/if}
       <h2 class="list-heading">{m.iss_list_heading()}</h2>
       <ul class="module-list">
-        {#each sortedModules as mod, i (mod.id)}
+        {#each sortedModules as mod (mod.id)}
           <li>
             <button
               type="button"
               class="module-row"
-              bind:this={rowEls[i]}
               class:canvas-hovered={selection.state.hoveredId === mod.id}
               onclick={() => openModule(mod)}
-              onkeydown={(e) => onRowKeydown(e, i)}
+              onkeydown={onRowKeydown}
               onmouseenter={() => {
                 issVisualRef.hoveredId = mod.id;
                 requestIssMaterialRefresh();
@@ -1328,15 +1335,14 @@
       {#if sortedVisitors.length > 0}
         <h2 class="list-heading list-heading-visitors">{m.iss_visitors_heading()}</h2>
         <ul class="module-list">
-          {#each sortedVisitors as ship, j (ship.id)}
+          {#each sortedVisitors as ship (ship.id)}
             <li>
               <button
                 type="button"
                 class="module-row"
-                bind:this={rowEls[sortedModules.length + j]}
                 class:canvas-hovered={selection.state.hoveredId === ship.id}
                 onclick={() => openModule(ship)}
-                onkeydown={(e) => onRowKeydown(e, sortedModules.length + j)}
+                onkeydown={onRowKeydown}
                 onmouseenter={() => {
                   issVisualRef.hoveredId = ship.id;
                   requestIssMaterialRefresh();

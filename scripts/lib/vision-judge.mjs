@@ -190,3 +190,172 @@ export function isShippable(vision) {
   if (!vision) return false;
   return vision.verdict === 'related' && (vision.confidence ?? 0) >= MIN_SHIP_CONFIDENCE;
 }
+
+// ────────────────────────────────────────────────────────────────────
+// Body-strict judge — for /explore detail surfaces where the SUBJECT
+// is the celestial body itself, not a mission to that body.
+//
+// Applies to: planets/, small-bodies/, satellites/. NOT to missions/
+// or fleet/ — those use judgeImage() above where spacecraft IS the
+// subject.
+//
+// Why a separate prompt: 2026-06-20 audit showed planets/mars/02-05
+// contained Perseverance mission marketing posters (NASA wordmark +
+// rover silhouette + astronaut). They'd score 'related' against the
+// missions prompt because they're on-topic for the Perseverance gallery
+// — but contamination on the Mars-the-planet gallery. The bar for body
+// surfaces is much stricter.
+// ────────────────────────────────────────────────────────────────────
+
+const BODY_SYSTEM_PROMPT = `You are reviewing candidate hero images for a public-facing celestial-body gallery. For each image, answer ONE question: is this image of the named celestial body ITSELF (the planet, moon, dwarf planet, comet, or asteroid) — and nothing else?
+
+The viewer is on the body's detail page. They want to SEE the body. Anything else in the frame is contamination.
+
+Answer 'related' ONLY when ALL of these hold:
+- The body itself is the PRIMARY subject — a full disc shot, partial-limb shot, surface terrain close-up (craters, dunes, canyons, ice), atmospheric / cloud / ring detail, or multi-band scientific imagery (e.g. Hubble UV/IR composite of Jupiter).
+- The frame is OBSERVATIONAL or RENDERED-FROM-DATA imagery: telescope photo, spacecraft flyby photo, surface lander photo of pure terrain, scientific colour composite. Photographs of the body's actual physical character.
+- ZERO visible spacecraft, probes, orbiters, landers, rovers, helicopters — even in the distance, even tiny in frame.
+- ZERO rockets, launch pads, ground equipment, antennas, dishes.
+- ZERO text overlays of any kind — mission names, dates, scale bars, agency wordmarks, captions burned into pixels.
+- ZERO agency logos / mission patches / wordmarks (NASA meatball, ESA, JAXA, SpaceX, mission-specific logos).
+- ZERO people — astronauts in suits, ground crews, scientists at desks.
+- ZERO data charts, plots, instrument readouts, multi-panel science figures.
+- ZERO marketing / promotional / poster compositions (gradient backgrounds, "MARS" wordmark + planet silhouette + crew member, branded layouts).
+
+Answer 'unrelated' for ALL of:
+- Any frame containing a spacecraft, rover, lander, satellite, or launch vehicle — regardless of how dramatic the body looks behind it. "Curiosity on Mars" is mission imagery, not Mars imagery.
+- Mission-marketing posters / promotional composites — even when the planet disc is the central element. Gradient backgrounds, agency wordmarks, and crew silhouettes are dead giveaways.
+- Artist-concept images of missions AT the body (e.g. probe over Saturn, lander descending to Mars) — these are mission art, not body imagery. EXCEPTION: a clean rendered-from-data illustration of the body itself with NO mission hardware (e.g. an artist's rendering of Pluto's surface based on New Horizons data) IS acceptable.
+- Mission patches, mission logos, wordmark-dominant compositions.
+- Charts, diagrams, orbital-trajectory plots, time-series data, science-result panels.
+- Photographs of telescope / spacecraft / instrument hardware on Earth (Hubble in the Shuttle bay; Voyager in a clean room) — those belong on mission surfaces, not body surfaces.
+- Crew portraits, press photos, team shots, ceremony photos.
+
+Answer 'unsure' if you genuinely can't tell what's in the frame, OR if you'd normally answer 'related' but at confidence below 0.9 — be honest; the caller treats sub-0.9 'related' as 'unsure' anyway.
+
+Respond ONLY in this JSON shape: {"verdict": "related|unrelated|unsure", "confidence": 0.0-1.0, "reason": "one short sentence — name what's actually in the frame and whether it's pure body imagery or contains contamination (spacecraft/logo/text/people)"}`;
+
+/**
+ * Judge whether an image is pure imagery of a celestial body itself.
+ * Strict prompt rejecting spacecraft, logos, text, and people even
+ * when the body is also in frame.
+ *
+ * @param {object} opts
+ * @param {string} opts.imageUrl         direct URL to the image
+ * @param {string} opts.bodyId           body slug (e.g. 'mars', 'titan', 'pluto')
+ * @param {string} [opts.subjectDescription]  human-readable subject (e.g. 'Mars (the planet)')
+ * @returns {Promise<{verdict, confidence, reason}>}
+ */
+export async function judgeBodyImage({ imageUrl, bodyId, subjectDescription }) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    return { verdict: 'unsure', confidence: 0, reason: 'no ANTHROPIC_API_KEY in env' };
+  }
+  const subjectLabel = subjectDescription
+    ? `${subjectDescription} (body slug: ${bodyId})`
+    : `${bodyId} (the celestial body itself, not a mission to it)`;
+  const userPrompt = `Is this image PURE imagery of ${subjectLabel} with NO spacecraft, NO logos, NO text, NO people?`;
+  const httpsUrl = imageUrl.replace(/^http:\/\//i, 'https://');
+  let imagePayload;
+  try {
+    const { mediaType, base64 } = await fetchImageAsBase64(httpsUrl);
+    imagePayload = {
+      type: 'image',
+      source: { type: 'base64', media_type: mediaType, data: base64 },
+    };
+  } catch (e) {
+    return { verdict: 'unsure', confidence: 0, reason: `image-fetch: ${e.message}` };
+  }
+  const body = {
+    model: MODEL,
+    max_tokens: 200,
+    system: BODY_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: 'user',
+        content: [imagePayload, { type: 'text', text: userPrompt }],
+      },
+    ],
+  };
+  try {
+    const res = await fetch(ANTHROPIC_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'User-Agent': UA,
+      },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      return {
+        verdict: 'unsure',
+        confidence: 0,
+        reason: `HTTP ${res.status}: ${text.slice(0, 100)}`,
+      };
+    }
+    const json = await res.json();
+    const reply = json?.content?.[0]?.text ?? '';
+    const match = reply.match(/\{[\s\S]*?\}/);
+    if (!match) {
+      return { verdict: 'unsure', confidence: 0, reason: `unparseable: ${reply.slice(0, 80)}` };
+    }
+    const parsed = JSON.parse(match[0]);
+    const verdict = ['related', 'unrelated', 'unsure'].includes(parsed.verdict)
+      ? parsed.verdict
+      : 'unsure';
+    const confidence =
+      typeof parsed.confidence === 'number' ? Math.max(0, Math.min(1, parsed.confidence)) : 0;
+    return {
+      verdict,
+      confidence,
+      reason: (parsed.reason || '').slice(0, 200),
+    };
+  } catch (e) {
+    return { verdict: 'unsure', confidence: 0, reason: `error: ${e.message}` };
+  }
+}
+
+/**
+ * Pre-vision filter — checks URL + title for mission/spacecraft/logo
+ * keywords and returns true when the candidate is clearly NOT pure
+ * body imagery. Saves vision API spend by dropping obvious junk before
+ * the expensive call.
+ *
+ * Returns { reject: boolean, reason?: string }.
+ *
+ * Keep this conservative — false-positives (rejecting a good image)
+ * waste a candidate; false-negatives just spend a few cents on vision.
+ *
+ * @param {object} opts
+ * @param {string} opts.url     candidate image URL
+ * @param {string} [opts.title] candidate title / filename / page title
+ * @returns {{ reject: boolean, reason?: string }}
+ */
+export function preFilterBodyCandidate({ url, title }) {
+  const haystack = `${url ?? ''} ${title ?? ''}`.toLowerCase();
+  // Spacecraft / mission keywords — frame contains hardware, not just body.
+  const MISSION_TOKENS = [
+    'rover', 'lander', 'orbiter', 'probe', 'spacecraft',
+    'helicopter', 'satellite', 'launch', 'rocket', 'booster',
+    'capsule', 'module', 'instrument-deck',
+    'perseverance', 'curiosity', 'opportunity', 'spirit',
+    'cassini', 'voyager', 'pioneer-', 'mariner-',
+    'galileo-probe', 'juno-spacecraft',
+    'mars-express', 'mars-odyssey', 'mars-reconnaissance',
+    'phoenix-lander', 'insight-lander', 'viking-lander',
+    'ingenuity', 'sojourner',
+    'beresheet', 'change-lander',
+    'mission-patch', 'logo', 'wordmark', 'mission-poster',
+    'press-conference', 'briefing', 'announcement',
+    'team-photo', 'crew-portrait', 'astronaut-suit',
+  ];
+  for (const tok of MISSION_TOKENS) {
+    if (haystack.includes(tok)) {
+      return { reject: true, reason: `contains '${tok}'` };
+    }
+  }
+  return { reject: false };
+}

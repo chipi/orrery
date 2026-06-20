@@ -227,7 +227,9 @@
   }
 </script>
 
-<Panel {open} {onClose} title={mission?.name ?? mission?.id ?? ''}>
+<!-- grabFocus={false}: keep focus on the triggering iconic-legend row so
+     arrow-key legend nav works immediately after the first click. -->
+<Panel {open} {onClose} grabFocus={false} title={mission?.name ?? mission?.id ?? ''}>
   {#if mission}
     <div class="head">
       <div class="agency-row">

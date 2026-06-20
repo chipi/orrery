@@ -62,7 +62,9 @@
   );
 </script>
 
-<Panel {open} {onClose} title={mod?.name ?? mod?.id ?? ''}>
+<!-- grabFocus={false}: keep focus on the triggering module-list row so
+     arrow-key list nav works immediately after the first click. -->
+<Panel {open} {onClose} grabFocus={false} title={mod?.name ?? mod?.id ?? ''}>
   {#if mod}
     <div class="head">
       <div class="agency-row">

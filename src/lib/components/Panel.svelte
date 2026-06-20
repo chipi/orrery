@@ -7,32 +7,43 @@
     open: boolean;
     onClose: () => void;
     title?: string;
+    /**
+     * Whether to move focus into the panel when it opens (and restore it
+     * on close). Default true — the modal-ish dialog pattern. Pass false
+     * for non-modal side panels driven by an adjacent keyboard-navigable
+     * list (e.g. /iss module list, /explore iconic-mission legend) so the
+     * caller keeps focus on the triggering row and can continue arrowing
+     * the list after opening. Otherwise the panel steals focus on open
+     * and list arrow-nav only works from the *second* click onward.
+     */
+    grabFocus?: boolean;
     children?: Snippet;
   };
-  let { open, onClose, title, children }: Props = $props();
+  let { open, onClose, title, grabFocus = true, children }: Props = $props();
 
   let panelEl: HTMLElement | undefined = $state();
-  let previousActiveElement: HTMLElement | null = null;
 
   $effect(() => {
     if (!open) return;
-    // Capture whatever was focused before the panel opened so we can
-    // restore it on close. The cleanup function (returned below) runs
-    // when `open` flips back to false.
-    previousActiveElement = (
-      typeof document !== 'undefined' ? document.activeElement : null
-    ) as HTMLElement | null;
-    // Move focus to the panel container itself (tabindex=-1) — keyboard
-    // users land inside the panel without us having to pick a single
-    // "right" focus target. Consumers render their own visible close
-    // button in their first content row (PRD-016 §S8 follow-up — the
-    // top of the panel is reserved as an empty dock zone).
-    queueMicrotask(() => panelEl?.focus());
 
+    // Escape-to-close is always wired, independent of focus management.
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handler);
+
+    // Focus management (dialog pattern) — opt-out via grabFocus={false}.
+    let previousActiveElement: HTMLElement | null = null;
+    if (grabFocus) {
+      // Capture whatever was focused before the panel opened so we can
+      // restore it on close, then move focus to the panel container
+      // (tabindex=-1) so keyboard users land inside the panel.
+      previousActiveElement = (
+        typeof document !== 'undefined' ? document.activeElement : null
+      ) as HTMLElement | null;
+      queueMicrotask(() => panelEl?.focus());
+    }
+
     return () => {
       window.removeEventListener('keydown', handler);
       // Restore focus to whatever was active before the panel opened

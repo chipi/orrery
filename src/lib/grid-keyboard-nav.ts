@@ -37,17 +37,29 @@ export function handleGridKeydown(e: KeyboardEvent, onEscape: () => void): void 
   const cur = cards.indexOf(btn);
   if (n === 0 || cur === -1) return;
 
-  // Live column count: how many leading cards share row 1's top edge.
-  // Use viewport-relative getBoundingClientRect().top, NOT offsetTop —
-  // each card's offsetParent is its own positioned <li>, so offsetTop is
-  // identical for every card and useless for row detection. Round to
-  // absorb sub-pixel layout jitter.
-  const rowTop = (el: HTMLElement) => Math.round(el.getBoundingClientRect().top);
-  const firstTop = rowTop(cards[0]);
+  // Live column count from the grid's RESOLVED template tracks. This is
+  // robust to `content-visibility: auto` (which /fleet sets on its
+  // card-li for 251-entry perf): off-screen cards under content-visibility
+  // are not laid out, so a getBoundingClientRect()-based row scan is
+  // unreliable once the grid is scrolled. getComputedStyle resolves
+  // `repeat(auto-fill, …)` to an explicit per-track list, so the number
+  // of size tokens (ignoring any [line-name] tokens) is the live column
+  // count — independent of which cards are currently rendered.
   let cols = 0;
-  for (const c of cards) {
-    if (rowTop(c) === firstTop) cols++;
-    else break;
+  const template = getComputedStyle(grid as Element).gridTemplateColumns;
+  if (template && template !== 'none') {
+    cols = template.split(/\s+/).filter((t) => t && !t.startsWith('[')).length;
+  }
+  if (cols < 1) {
+    // Fallback (non-grid display / unsupported): leading cards sharing
+    // row 1's top edge. offsetTop is useless here (offset parent is each
+    // card's own <li>), so use viewport-relative rects.
+    const rowTop = (el: HTMLElement) => Math.round(el.getBoundingClientRect().top);
+    const firstTop = rowTop(cards[0]);
+    for (const c of cards) {
+      if (rowTop(c) === firstTop) cols++;
+      else break;
+    }
   }
   if (cols < 1) cols = 1;
 

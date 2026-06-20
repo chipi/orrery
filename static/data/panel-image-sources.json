@@ -1134,13 +1134,17 @@
     "fetched_at": "2026-06-12T21:28:42.805Z"
   },
   "planets/pluto/01": {
-    "agency": "NASA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nh-pluto-in-true-color_2x_JPEG.jpg",
-    "commons_file": "Nh-pluto-in-true-color_2x_JPEG.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Nh-pluto-in-true-color_2x_JPEG.jpg",
-    "credit": "NASA / JHU APL / SwRI — New Horizons",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-15T14:25:32Z"
+    "commons_file": "Pluto in True Color - High-Res.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto%20in%20True%20Color%20-%20High-Res.jpg",
+    "credit": "http://pluto.jhuapl.edu/Galleries/Featured-Images/image.php?page=1&amp;gallery_id=2&amp;image_id=543",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:09Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "planets/jupiter/01": {
     "source_type": "esahubble",
@@ -1157,31 +1161,1238 @@
     }
   },
   "planets/saturn/01": {
-    "source_type": "esahubble",
-    "source_url": "https://esahubble.org/images/heic1814b/",
-    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814b.jpg",
-    "credit": "ESA/Hubble",
-    "license": "cc-by-4.0",
-    "fetched_at": "2026-06-19T08:52:08Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "Saturn rings",
+    "commons_file": "Saturn with auroras.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn%20with%20auroras.jpg",
+    "credit": "http://hubblesite.org/gallery/album/solar_system/pr2005006b/ https://www.nasa.gov/solar-system/nasas-webb-telescope-will-survey-saturn-and-its-moon-titan/",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:05Z",
+    "bodies_iteration": 1,
+    "query": "Saturn Hubble",
     "vision": {
       "verdict": "related",
       "confidence": 0.95
     }
   },
   "planets/mars/01": {
-    "source_type": "esahubble",
-    "source_url": "https://esahubble.org/images/heic1814a/",
-    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814a.jpg",
-    "credit": "ESA/Hubble",
-    "license": "cc-by-4.0",
-    "fetched_at": "2026-06-19T08:52:07Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "Mars planet",
+    "commons_file": "Mars Hubble.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Hubble.jpg",
+    "credit": "http://hubblesite.org/newscenter/archive/releases/2001/24/image/a/ (direct link) http://www.spacetelescope.org/images/opo0124a/",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:01Z",
+    "bodies_iteration": 1,
+    "query": "Mars planet Hubble",
     "vision": {
       "verdict": "related",
-      "confidence": 0.85
+      "confidence": 0.95
+    }
+  },
+  "planets/mercury/01": {
+    "commons_file": "Mercury in color - Prockter07 centered.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury%20in%20color%20-%20Prockter07%20centered.jpg",
+    "credit": "NASA/JPL",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:00:59Z",
+    "bodies_iteration": 1,
+    "query": "Mercury planet MESSENGER",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mercury/04": {
+    "commons_file": "Gravity Anomalies on Mercury.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Gravity%20Anomalies%20on%20Mercury.jpg",
+    "credit": "GRAVITY ANOMALIES",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:00:59Z",
+    "bodies_iteration": 1,
+    "query": "Mercury planet MESSENGER",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/venus/01": {
+    "commons_file": "Venus from Mariner 10.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Venus%20from%20Mariner%2010.jpg",
+    "credit": "https://solarsystem.nasa.gov/resources/2524/newly-processed-views-of-venus-from-mariner-10/",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:00:59Z",
+    "bodies_iteration": 1,
+    "query": "Venus planet Mariner 10",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mercury/05": {
+    "commons_file": "Mercury Globe-MESSENGER mosaic centered at 0degN-0degE.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury%20Globe-MESSENGER%20mosaic%20centered%20at%200degN-0degE.jpg",
+    "credit": "NASA [1]",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:00Z",
+    "bodies_iteration": 1,
+    "query": "Mercury planet MESSENGER",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/venus/05": {
+    "commons_file": "PIA23791-Venus-NewlyProcessedView-20200608 (cropped).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA23791-Venus-NewlyProcessedView-20200608%20(cropped).jpg",
+    "credit": "https://photojournal.jpl.nasa.gov/figures/PIA23791_fig2.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:00Z",
+    "bodies_iteration": 1,
+    "query": "Venus planet Mariner 10",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/earth/03": {
+    "commons_file": "Blue Marble Eastern Hemisphere.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Blue%20Marble%20Eastern%20Hemisphere.jpg",
+    "credit": "Earth Observatory: Twin Blue Marbles",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:01Z",
+    "bodies_iteration": 1,
+    "query": "Earth from space Blue Marble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/earth/05": {
+    "commons_file": "Earth Eastern Hemisphere.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Earth%20Eastern%20Hemisphere.jpg",
+    "credit": "http://visibleearth.nasa.gov/view_detail.php?id=2429 archive copy at the Wayback Machinehttp://veimages.gsfc.nasa.gov//2429/globe_east_540.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:01Z",
+    "bodies_iteration": 1,
+    "query": "Earth from space Blue Marble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mars/02": {
+    "commons_file": "MarsSunset.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:MarsSunset.jpg",
+    "credit": "http://marsrovers.jpl.nasa.gov/gallery/press/spirit/20050610a.html; see also http://www.nasa.gov/multimedia/imagegallery/image_feature_347.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:02Z",
+    "bodies_iteration": 1,
+    "query": "Mars planet Hubble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mars/03": {
+    "commons_file": "Mars from Hubble (Dec. 13, 1990).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20from%20Hubble%20(Dec.%2013%2C%201990).jpg",
+    "credit": "http://imgsrc.hubblesite.org/hu/db/images/hs-1991-05-a-full_jpg.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:02Z",
+    "bodies_iteration": 1,
+    "query": "Mars planet Hubble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mars/04": {
+    "commons_file": "Mars, image taken by NASA's Hubble Space Telescope, July 2018.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%2C%20image%20taken%20by%20NASA's%20Hubble%20Space%20Telescope%2C%20July%202018.png",
+    "credit": "https://www.nasa.gov/image-feature/goddard/2018/mars-opposition-2018",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:03Z",
+    "bodies_iteration": 1,
+    "query": "Mars planet Hubble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/mars/05": {
+    "commons_file": "Hubble's Sharpest View of Mars- ACS Image (opo0322d).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hubble's%20Sharpest%20View%20of%20Mars-%20ACS%20Image%20(opo0322d).jpg",
+    "credit": "Hubble's Sharpest View of Mars: ACS Image",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:03Z",
+    "bodies_iteration": 1,
+    "query": "Mars planet Hubble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/jupiter/03": {
+    "commons_file": "Jupiter, image taken by NASA's Hubble Space Telescope, June 2019 - Edited.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Jupiter%2C%20image%20taken%20by%20NASA's%20Hubble%20Space%20Telescope%2C%20June%202019%20-%20Edited.jpg",
+    "credit": "https://www.nasa.gov/feature/goddard/2019/hubble-new-portrait-of-jupiter",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:04Z",
+    "bodies_iteration": 1,
+    "query": "Jupiter Hubble Space Telescope",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/jupiter/04": {
+    "commons_file": "Jupiter on 2009-07-23 (captured by the Hubble Space Telescope).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Jupiter%20on%202009-07-23%20(captured%20by%20the%20Hubble%20Space%20Telescope).jpg",
+    "credit": "http://www.spacetelescope.org/images/heic0910q https://hubblesite.org/contents/media/images/2009/25/2573-Image.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:04Z",
+    "bodies_iteration": 1,
+    "query": "Jupiter Hubble Space Telescope",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/jupiter/02": {
+    "commons_file": "Visible-Light Image of Jupiter -- Hubble Space Telescope (opo0806b).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Visible-Light%20Image%20of%20Jupiter%20--%20Hubble%20Space%20Telescope%20(opo0806b).jpg",
+    "credit": "Visible-Light Image of Jupiter -- Hubble Space Telescope",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:04Z",
+    "bodies_iteration": 1,
+    "query": "Jupiter Hubble Space Telescope",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/jupiter/05": {
+    "commons_file": "Jupiter, image taken by NASA's Hubble Space Telescope, June 2019.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Jupiter%2C%20image%20taken%20by%20NASA's%20Hubble%20Space%20Telescope%2C%20June%202019.png",
+    "credit": "https://www.nasa.gov/feature/goddard/2019/hubble-new-portrait-of-jupiter",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:05Z",
+    "bodies_iteration": 1,
+    "query": "Jupiter Hubble Space Telescope",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/saturn/04": {
+    "commons_file": "Saturn's Rings in Ultraviolet Light.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn's%20Rings%20in%20Ultraviolet%20Light.png",
+    "credit": "http://imgsrc.hubblesite.org/hu/db/images/hs-2003-23-b-full_jpg.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:06Z",
+    "bodies_iteration": 1,
+    "query": "Saturn Hubble",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/uranus/02": {
+    "commons_file": "File-Uranus, Earth size comparison without Earth.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:File-Uranus%2C%20Earth%20size%20comparison%20without%20Earth.png",
+    "credit": "File:Uranus, Earth size comparison.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:06Z",
+    "bodies_iteration": 1,
+    "query": "Uranus Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/uranus/03": {
+    "commons_file": "Uranus Final Image.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Uranus%20Final%20Image.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA00143",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:07Z",
+    "bodies_iteration": 1,
+    "query": "Uranus Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/uranus/05": {
+    "commons_file": "Uranus true colour.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Uranus%20true%20colour.jpg",
+    "credit": "NASA JPL",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:07Z",
+    "bodies_iteration": 1,
+    "query": "Uranus Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/neptune/02": {
+    "commons_file": "Neptune with rings (transparent background).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20with%20rings%20(transparent%20background).png",
+    "credit": "Neptune Full.jpgRing texture: http://th06.deviantart.net/fs71/PRE/i/2010/331/0/d/guitar_ring_texture_by_mranimator93-d33q7w3.png",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:07Z",
+    "bodies_iteration": 1,
+    "query": "Neptune Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/neptune/03": {
+    "commons_file": "Neptune (False Color of Haze).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20(False%20Color%20of%20Haze).jpg",
+    "credit": "http://www.nasa.gov/multimedia/imagegallery/image_feature_596.htmlhttps://photojournal.jpl.nasa.gov/catalog/PIA00057",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:08Z",
+    "bodies_iteration": 1,
+    "query": "Neptune Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/neptune/04": {
+    "commons_file": "Neptune enhanced colour.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20enhanced%20colour.jpg",
+    "credit": "NASA JPL",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:08Z",
+    "bodies_iteration": 1,
+    "query": "Neptune Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "planets/neptune/05": {
+    "commons_file": "Neptune clouds.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20clouds.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA00058",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:08Z",
+    "bodies_iteration": 1,
+    "query": "Neptune Voyager 2",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "small-bodies/ceres/02": {
+    "commons_file": "PIA23017-CeresDwarfPlanet-Dawn-20180514.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA23017-CeresDwarfPlanet-Dawn-20180514.jpg",
+    "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA23017.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:11Z",
+    "bodies_iteration": 1,
+    "query": "Ceres Dawn spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/ceres/03": {
+    "commons_file": "PIA19562-Ceres-DwarfPlanet-Dawn-RC3-image19-20150506.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA19562-Ceres-DwarfPlanet-Dawn-RC3-image19-20150506.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/jpeg/PIA19562.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:11Z",
+    "bodies_iteration": 1,
+    "query": "Ceres Dawn spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/ceres/04": {
+    "commons_file": "PIA19632-Ceres-DwarfPlanet-Dawn-3rdMapOrbit-HAMO-image2-20150819.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA19632-Ceres-DwarfPlanet-Dawn-3rdMapOrbit-HAMO-image2-20150819.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/jpeg/PIA19632.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:11Z",
+    "bodies_iteration": 1,
+    "query": "Ceres Dawn spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/makemake/01": {
+    "commons_file": "Artist’s impression of the surface of the distant dwarf planet Makemake.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s%20impression%20of%20the%20surface%20of%20the%20distant%20dwarf%20planet%20Makemake.jpg",
+    "credit": "http://www.eso.org/public/images/eso1246a/, http://apod.nasa.gov/apod/ap121226.html",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:12Z",
+    "bodies_iteration": 1,
+    "query": "Makemake dwarf planet",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/67p/02": {
+    "commons_file": "Rosetta view of comet 67P-Churyumov–Gerasimenko (eso2001c).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rosetta%20view%20of%20comet%2067P-Churyumov%E2%80%93Gerasimenko%20(eso2001c).jpg",
+    "credit": "This media was produced by the European Southern Observatory (ESO), under the identifier eso2001c This tag does not indicate the copyright status of the attached work. A normal copyright tag is still ",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:12Z",
+    "bodies_iteration": 1,
+    "query": "67P Churyumov Gerasimenko Rosetta",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/67p/03": {
+    "commons_file": "67P Churyumov-Gerasimenko - Rosetta (23188650144).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(23188650144).png",
+    "credit": "67P/Churyumov-Gerasimenko - Rosetta",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:13Z",
+    "bodies_iteration": 1,
+    "query": "67P Churyumov Gerasimenko Rosetta",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/67p/04": {
+    "commons_file": "67P Churyumov-Gerasimenko - Rosetta (32393838120).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(32393838120).png",
+    "credit": "67P/Churyumov-Gerasimenko - Rosetta",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:13Z",
+    "bodies_iteration": 1,
+    "query": "67P Churyumov Gerasimenko Rosetta",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/67p/05": {
+    "commons_file": "67P Churyumov-Gerasimenko - Rosetta (23188755034).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(23188755034).png",
+    "credit": "67P/Churyumov-Gerasimenko - Rosetta",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:14Z",
+    "bodies_iteration": 1,
+    "query": "67P Churyumov Gerasimenko Rosetta",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/halley/01": {
+    "commons_file": "Lspn comet halley.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Lspn%20comet%20halley.jpg",
+    "credit": "NSSDC's Photo Gallery (NASA): http://nssdc.gsfc.nasa.gov/photo_gallery/photogallery-comets.html http://nssdc.gsfc.nasa.gov/image/planetary/comet/lspn_comet_halley1.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:15Z",
+    "bodies_iteration": 1,
+    "query": "Halley comet 1986",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/halley/03": {
+    "commons_file": "Halley gpo 386001-cc.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Halley%20gpo%20386001-cc.jpg",
+    "credit": "https://www.eso.org/public/images/halley_gpo_386001-cc/",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:15Z",
+    "bodies_iteration": 1,
+    "query": "Halley comet 1986",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/halley/04": {
+    "commons_file": "PSM V76 D017 Halley comet in 1759 (horizontal).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PSM%20V76%20D017%20Halley%20comet%20in%201759%20(horizontal).png",
+    "credit": "https://en.wikipedia.org/wiki/File:PSM_V76_D017_Halley_comet_in_1759.png Original source: Popular Science Monthly Volume 76",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:15Z",
+    "bodies_iteration": 1,
+    "query": "Halley comet 1986",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/halley/05": {
+    "commons_file": "Comet Halley (PIA17485).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Comet%20Halley%20(PIA17485).jpg",
+    "credit": "Catalog page · Full-res (JPEG · TIFF) · Full-res ([ MP4]) · Full-res ([ GIF])",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:16Z",
+    "bodies_iteration": 1,
+    "query": "Halley's Comet Giotto nucleus",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "small-bodies/pluto/02": {
+    "commons_file": "Pluto - as seen by New Horizons (28224885761).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto%20-%20as%20seen%20by%20New%20Horizons%20(28224885761).jpg",
+    "credit": "Pluto - as seen by New Horizons",
+    "license": "no restrictions",
+    "fetched_at": "2026-06-20T22:01:16Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/pluto/03": {
+    "commons_file": "PIA21590 – Blue Rays, New Horizons' High-Res Farewell to Pluto.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA21590%20%E2%80%93%20Blue%20Rays%2C%20New%20Horizons'%20High-Res%20Farewell%20to%20Pluto.png",
+    "credit": "Catalog page · Full-res (JPEG · TIFF)",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:17Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/pluto/04": {
+    "commons_file": "Pluto-new-horizons-2015-07-14-01.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto-new-horizons-2015-07-14-01.jpg",
+    "credit": "https://www.engadget.com/2015/07/14/the-big-picture-best-pluto-image/",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:17Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "small-bodies/pluto/05": {
+    "commons_file": "New Horizons’ Very Best View of Pluto (Mosiac).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Horizons%E2%80%99%20Very%20Best%20View%20of%20Pluto%20(Mosiac).jpg",
+    "credit": "http://pluto.jhuapl.edu/Multimedia/Science-Photos/pics/p_leisa_hires.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:18Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/moon/02": {
+    "commons_file": "AS11-41-6058 - Apollo 11 - Apollo 11 Mission image - View of Moon, Mare Fecunditatis and TO 67 - NARA - 16685621.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:AS11-41-6058%20-%20Apollo%2011%20-%20Apollo%2011%20Mission%20image%20-%20View%20of%20Moon%2C%20Mare%20Fecunditatis%20and%20TO%2067%20-%20NARA%20-%2016685621.jpg",
+    "credit": "U.S. National Archives and Records Administration",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:18Z",
+    "bodies_iteration": 1,
+    "query": "Moon from space Apollo",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/moon/05": {
+    "commons_file": "Earth from Space- Eyes on our Moon ESA519338.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Earth%20from%20Space-%20Eyes%20on%20our%20Moon%20ESA519338.jpg",
+    "credit": "Earth from Space: Eyes on our Moon",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:19Z",
+    "bodies_iteration": 1,
+    "query": "Moon from space Apollo",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/moon/04": {
+    "commons_file": "Full disc of the moon was photographed by the Apollo 17 crewmen.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Full%20disc%20of%20the%20moon%20was%20photographed%20by%20the%20Apollo%2017%20crewmen.jpg",
+    "credit": "Flickr nasa2explore NASA Image and Video Library",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:19Z",
+    "bodies_iteration": 1,
+    "query": "Moon from space Apollo",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/moon/03": {
+    "commons_file": "AS08-16-2615 - Apollo 8 - Apollo 8 Mission image, Moon, Langrenus - NARA - 16671101.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:AS08-16-2615%20-%20Apollo%208%20-%20Apollo%208%20Mission%20image%2C%20Moon%2C%20Langrenus%20-%20NARA%20-%2016671101.jpg",
+    "credit": "U.S. National Archives and Records Administration",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:20Z",
+    "bodies_iteration": 1,
+    "query": "Moon from space Apollo",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/phobos/02": {
+    "commons_file": "Phobos edit 2.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20edit%202.jpg",
+    "credit": "Edited version of Image:221831main PIA10368.png.",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:20Z",
+    "bodies_iteration": 1,
+    "query": "Phobos Mars moon MRO",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/phobos/03": {
+    "commons_file": "Stickney mro.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Stickney%20mro.jpg",
+    "credit": "English Wikipedia - Original image and description.",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:21Z",
+    "bodies_iteration": 1,
+    "query": "Phobos Mars moon MRO",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/phobos/04": {
+    "commons_file": "Phobos Viking Mosaic DLRcontrol 7200.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20Viking%20Mosaic%20DLRcontrol%207200.jpg",
+    "credit": "https://astrogeology.usgs.gov/search/map/Phobos/Viking/Phobos_Viking_Mosaic_40ppd_DLRcontrol",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:21Z",
+    "bodies_iteration": 1,
+    "query": "Phobos Viking",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/phobos/05": {
+    "commons_file": "Phobos Full.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Phobos%20Full.png",
+    "credit": "Viking Orbiter 357A64 http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vo1_357a64.html (Image conversion from TIFF file to PNG by uploader)",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:21Z",
+    "bodies_iteration": 1,
+    "query": "Phobos Viking",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/deimos/03": {
+    "commons_file": "Mars - Cloudy Elysium - NASA's Viking 1 1978 (54499814646).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20-%20Cloudy%20Elysium%20-%20NASA's%20Viking%201%201978%20(54499814646).jpg",
+    "credit": "Mars - Cloudy Elysium - NASA's Viking 1 1978",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:22Z",
+    "bodies_iteration": 1,
+    "query": "Deimos Viking",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "satellites/deimos/02": {
+    "commons_file": "Deimos Surface.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Deimos%20Surface.png",
+    "credit": "Viking 2 Orbiter 423B63 http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vo2_423b63.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:22Z",
+    "bodies_iteration": 1,
+    "query": "Deimos Viking",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "satellites/io/02": {
+    "commons_file": "Volcano Erupts on Io (Galileo) (2020-38-4721-Image).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Volcano%20Erupts%20on%20Io%20(Galileo)%20(2020-38-4721-Image).png",
+    "credit": "Volcano Erupts on Io (Galileo)",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:23Z",
+    "bodies_iteration": 1,
+    "query": "Io Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/io/03": {
+    "commons_file": "Gibbous Io - Galileo (32787060797).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Gibbous%20Io%20-%20Galileo%20(32787060797).png",
+    "credit": "Gibbous Io - Galileo",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:23Z",
+    "bodies_iteration": 1,
+    "query": "Io Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/io/04": {
+    "commons_file": "Global Image of Io - GPN-2000-000419.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Global%20Image%20of%20Io%20-%20GPN-2000-000419.jpg",
+    "credit": "https://images.nasa.gov/details/PIA02308 http://grin.hq.nasa.gov/IMAGES/LARGE/GPN-2000-000419.jpg on the Wayback Machine at the Wayback Machine http://grin.hq.nasa.gov/ABSTRACTS/GPN-2000-000419.html o",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:24Z",
+    "bodies_iteration": 1,
+    "query": "Io Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/io/05": {
+    "commons_file": "Image-Io highest resolution true color.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Image-Io%20highest%20resolution%20true%20color.jpg",
+    "credit": "NASA",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:24Z",
+    "bodies_iteration": 1,
+    "query": "Io Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/europa/02": {
+    "commons_file": "PIA19048 realistic color Europa mosaic (original).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA19048%20realistic%20color%20Europa%20mosaic%20(original).jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA19048 Also described here: http://www.jpl.nasa.gov/news/news.php?release=2014-406",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:24Z",
+    "bodies_iteration": 1,
+    "query": "Europa Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/europa/03": {
+    "commons_file": "Europa-moon-with-margins.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Europa-moon-with-margins.jpg",
+    "credit": "Derivative of File:Europa-moon.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:25Z",
+    "bodies_iteration": 1,
+    "query": "Europa Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/europa/05": {
+    "commons_file": "Europa Domes.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Europa%20Domes.jpg",
+    "credit": "NASA planetary photojournal NASA planetary photojournal, PIA00588 http://photojournal.jpl.nasa.gov/jpeg/PIA00588.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:25Z",
+    "bodies_iteration": 1,
+    "query": "Europa Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/ganymede/02": {
+    "commons_file": "Ganymede g1 true-edit.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Ganymede%20g1%20true-edit.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA00716",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:25Z",
+    "bodies_iteration": 1,
+    "query": "Ganymede Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/ganymede/04": {
+    "commons_file": "PIA00497 Nippur Sulcus.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00497%20Nippur%20Sulcus.png",
+    "credit": "https://science.nasa.gov/photojournal/ganymedes-nippur-sulcus/",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:26Z",
+    "bodies_iteration": 1,
+    "query": "Ganymede Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/ganymede/05": {
+    "commons_file": "Ganymede terrain.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Ganymede%20terrain.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA02577",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:26Z",
+    "bodies_iteration": 1,
+    "query": "Ganymede Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "satellites/callisto/02": {
+    "commons_file": "Callisto terrain.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Callisto%20terrain.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA01629",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:27Z",
+    "bodies_iteration": 1,
+    "query": "Callisto Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/callisto/03": {
+    "commons_file": "Callisto (cropped).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Callisto%20(cropped).jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA03456",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:27Z",
+    "bodies_iteration": 1,
+    "query": "Callisto Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/callisto/04": {
+    "commons_file": "Callisto, moon of Jupiter, NASA.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Callisto%2C%20moon%20of%20Jupiter%2C%20NASA.jpg",
+    "credit": "",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:28Z",
+    "bodies_iteration": 1,
+    "query": "Callisto Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/callisto/05": {
+    "commons_file": "Callisto Asgard PIA00562.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Callisto%20Asgard%20PIA00562.jpg",
+    "credit": "This image or video was catalogued by Jet Propulsion Laboratory of the United States National Aeronautics and Space Administration (NASA) under Photo ID: PIA00562 and Alternate ID: P48299.",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:28Z",
+    "bodies_iteration": 1,
+    "query": "Callisto Galileo spacecraft",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titan/01": {
+    "commons_file": "Titan globe.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titan%20globe.jpg",
+    "credit": "NASA planetary photojournal NASA planetary photojournal, PIA06141 http://photojournal.jpl.nasa.gov/jpeg/PIA06141.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:28Z",
+    "bodies_iteration": 1,
+    "query": "Titan Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titan/03": {
+    "commons_file": "Titan in true color.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titan%20in%20true%20color.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA14602",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:29Z",
+    "bodies_iteration": 1,
+    "query": "Titan Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titan/02": {
+    "commons_file": "Saturn & Titan - August 11 2013 (53823523697).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn%20%26%20Titan%20-%20August%2011%202013%20(53823523697).png",
+    "credit": "Saturn &amp; Titan - August 11 2013",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:29Z",
+    "bodies_iteration": 1,
+    "query": "Titan Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titan/04": {
+    "commons_file": "Titan (Mond) (7448341).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titan%20(Mond)%20(7448341).jpg",
+    "credit": "Titan-Down-Below",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:30Z",
+    "bodies_iteration": 1,
+    "query": "Titan Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titan/05": {
+    "commons_file": "Titan and Enceladus - May 18 2010 (39148769060).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titan%20and%20Enceladus%20-%20May%2018%202010%20(39148769060).jpg",
+    "credit": "Titan and Enceladus - May 18 2010",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:30Z",
+    "bodies_iteration": 1,
+    "query": "Titan Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/enceladus/04": {
+    "commons_file": "PIA17203-SaturnMoon-Enceladus-BeforeFlyby-20151028.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA17203-SaturnMoon-Enceladus-BeforeFlyby-20151028.jpg",
+    "credit": "http://photojournal.jpl.nasa.gov/jpeg/PIA17203.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:30Z",
+    "bodies_iteration": 1,
+    "query": "Enceladus Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/enceladus/03": {
+    "commons_file": "PIA17202 - Approaching Enceladus.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA17202%20-%20Approaching%20Enceladus.jpg",
+    "credit": "PIA17202 from the NASA/JPL Photojournal",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:31Z",
+    "bodies_iteration": 1,
+    "query": "Enceladus Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/enceladus/02": {
+    "commons_file": "PIA23175-SaturnMoon-Enceladus-ArtistConcept-20200224.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA23175-SaturnMoon-Enceladus-ArtistConcept-20200224.jpg",
+    "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA23175.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-20T22:01:31Z",
+    "bodies_iteration": 1,
+    "query": "Enceladus Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/enceladus/05": {
+    "commons_file": "Enceladus - nIR+UV - October 19 2011 (54235008190).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Enceladus%20-%20nIR%2BUV%20-%20October%2019%202011%20(54235008190).png",
+    "credit": "Enceladus - nIR+UV - October 19 2011",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:32Z",
+    "bodies_iteration": 1,
+    "query": "Enceladus Cassini Saturn moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/triton/02": {
+    "commons_file": "Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a).jpg",
+    "credit": "Neptune’s Moon Triton Fosters Rare Icy Union",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:32Z",
+    "bodies_iteration": 1,
+    "query": "Triton Voyager 2 Neptune moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/triton/03": {
+    "commons_file": "Triton (moon).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Triton%20(moon).jpg",
+    "credit": "http://nssdc.gsfc.nasa.gov/imgcat/html/object_page/vg2_p34764.html (image link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:33Z",
+    "bodies_iteration": 1,
+    "query": "Triton Voyager 2 Neptune moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/charon/02": {
+    "commons_file": "Pluto Spray Paints its Moon Red (noaoann16017a).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pluto%20Spray%20Paints%20its%20Moon%20Red%20(noaoann16017a).jpg",
+    "credit": "Pluto Spray Paints its Moon Red",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:33Z",
+    "bodies_iteration": 1,
+    "query": "Charon New Horizons Pluto moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/triton/04": {
+    "commons_file": "Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a) square.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%E2%80%99s%20Moon%20Triton%20Fosters%20Rare%20Icy%20Union%20(gemini1903a)%20square.jpg",
+    "credit": "Crop of File:Neptune’s Moon Triton Fosters Rare Icy Union (gemini1903a).tiff",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:33Z",
+    "bodies_iteration": 1,
+    "query": "Triton Voyager 2 Neptune moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/charon/03": {
+    "commons_file": "NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:NH-PlutoMoon--Charon-NeutralBrightRelease-20151001.jpg",
+    "credit": "http://www.nasa.gov/sites/default/files/thumbnails/image/nh-charon-neutral-bright-release.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:34Z",
+    "bodies_iteration": 1,
+    "query": "Charon New Horizons Pluto moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/charon/04": {
+    "commons_file": "Charon in True Color - High-Res.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Charon%20in%20True%20Color%20-%20High-Res.png",
+    "credit": "http://pluto.jhuapl.edu/Multimedia/Science-Photos/image.php?page=1&amp;gallery_id=2&amp;image_id=544",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:34Z",
+    "bodies_iteration": 1,
+    "query": "Charon New Horizons Pluto moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/charon/05": {
+    "commons_file": "New Pluto Images from NASA’s New Horizons- It’s Complicated (21331848801).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Pluto%20Images%20from%20NASA%E2%80%99s%20New%20Horizons-%20It%E2%80%99s%20Complicated%20(21331848801).jpg",
+    "credit": "New Pluto Images from NASA’s New Horizons: It’s Complicated",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:35Z",
+    "bodies_iteration": 1,
+    "query": "Charon New Horizons Pluto moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/miranda/05": {
+    "commons_file": "Miranda - January 24 1986 (40196276021).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Miranda%20-%20January%2024%201986%20(40196276021).jpg",
+    "credit": "Miranda - January 24 1986",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:35Z",
+    "bodies_iteration": 1,
+    "query": "Miranda Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/miranda/04": {
+    "commons_file": "Miranda elsinorinverness.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Miranda%20elsinorinverness.png",
+    "credit": "https://www.jpl.nasa.gov/spaceimages/wallpaper.php?id=PIA00038",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:36Z",
+    "bodies_iteration": 1,
+    "query": "Miranda Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/miranda/03": {
+    "commons_file": "Miranda2.JPG",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Miranda2.JPG",
+    "credit": "https://photojournal.jpl.nasa.gov/catalog/PIA00141",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:36Z",
+    "bodies_iteration": 1,
+    "query": "Miranda Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/miranda/02": {
+    "commons_file": "Miranda - January 24 1986 (30906319004).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Miranda%20-%20January%2024%201986%20(30906319004).jpg",
+    "credit": "Miranda - January 24 1986",
+    "license": "cc by-sa 2.0",
+    "fetched_at": "2026-06-20T22:01:37Z",
+    "bodies_iteration": 1,
+    "query": "Miranda Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/ariel/02": {
+    "commons_file": "Ariel - January 24 1986 (22257264653).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Ariel%20-%20January%2024%201986%20(22257264653).jpg",
+    "credit": "Ariel - January 24 1986",
+    "license": "cc by-sa 2.0",
+    "fetched_at": "2026-06-20T22:01:37Z",
+    "bodies_iteration": 1,
+    "query": "Ariel Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titania/03": {
+    "commons_file": "Titania - Jan 24 1986 (22689891350).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titania%20-%20Jan%2024%201986%20(22689891350).jpg",
+    "credit": "Titania - Jan 24 1986",
+    "license": "cc by-sa 2.0",
+    "fetched_at": "2026-06-20T22:01:38Z",
+    "bodies_iteration": 1,
+    "query": "Titania Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titania/02": {
+    "commons_file": "PIA00039 Titania (cropped).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00039%20Titania%20(cropped).jpg",
+    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:38Z",
+    "bodies_iteration": 1,
+    "query": "Titania Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titania/04": {
+    "commons_file": "Titania.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Titania.jpg",
+    "credit": "",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:39Z",
+    "bodies_iteration": 1,
+    "query": "Titania Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/titania/05": {
+    "commons_file": "PIA00039 Titania.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA00039%20Titania.jpg",
+    "credit": "PIA00039 http://photojournal.jpl.nasa.gov/catalog/PIA00039 http://ciclops.org/view/3651/Titania_-_Highest_Resolution_Voyager_Picture",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:39Z",
+    "bodies_iteration": 1,
+    "query": "Titania Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/oberon/02": {
+    "commons_file": "Oberon - Green-Violet - January 24 1986 - 4 (50906003243).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Oberon%20-%20Green-Violet%20-%20January%2024%201986%20-%204%20(50906003243).jpg",
+    "credit": "Oberon - Green-Violet - January 24 1986 - 4",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-20T22:01:40Z",
+    "bodies_iteration": 1,
+    "query": "Oberon Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/oberon/03": {
+    "commons_file": "Oberon - Jan 24 1986 (22889267591).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Oberon%20-%20Jan%2024%201986%20(22889267591).jpg",
+    "credit": "Oberon - Jan 24 1986",
+    "license": "cc by-sa 2.0",
+    "fetched_at": "2026-06-20T22:01:40Z",
+    "bodies_iteration": 1,
+    "query": "Oberon Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "satellites/oberon/04": {
+    "commons_file": "ESO - Which Ringed Planet (by).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:ESO%20-%20Which%20Ringed%20Planet%20(by).jpg",
+    "credit": "Which Ringed Planet...!? Uranus with rings and moons JPL Solar System Simulator for 2002-11-09 00:00 UT",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-20T22:01:41Z",
+    "bodies_iteration": 1,
+    "query": "Oberon Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "planets/pluto/02": {
+    "commons_file": "New Pluto Images from NASA’s New Horizons- It’s Complicated (20700948604).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Pluto%20Images%20from%20NASA%E2%80%99s%20New%20Horizons-%20It%E2%80%99s%20Complicated%20(20700948604).jpg",
+    "credit": "New Pluto Images from NASA’s New Horizons: It’s Complicated",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:10Z",
+    "bodies_iteration": 1,
+    "query": "Pluto New Horizons",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "satellites/ariel/03": {
+    "commons_file": "Ariel map JPL USGS.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Ariel%20map%20JPL%20USGS.jpg",
+    "credit": "https://maps.jpl.nasa.gov/tmaps/uranus.html, https://nasa3d.arc.nasa.gov/detail/ura1vuu2",
+    "license": "public domain",
+    "fetched_at": "2026-06-20T22:01:37Z",
+    "bodies_iteration": 1,
+    "query": "Ariel Voyager 2 Uranus moon",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
     }
   }
 }

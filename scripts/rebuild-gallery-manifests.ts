@@ -24,10 +24,20 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 
-const FLEET_DIR = path.join('static', 'images', 'fleet-galleries');
-const MISSION_DIR = path.join('static', 'images', 'missions');
-const FLEET_MANIFEST = path.join('static', 'data', 'fleet-galleries.json');
-const MISSION_MANIFEST = path.join('static', 'data', 'mission-galleries.json');
+// All surfaces that ship a {id: count} gallery manifest. Adding body
+// surfaces (planets / small-bodies / satellites) and the existing
+// panel-like surfaces (earth-objects / moon-sites / mars-sites) so a
+// single sync command catches every disk/manifest drift in one pass.
+const SURFACES: Array<{ label: string; imageDir: string; manifest: string }> = [
+  { label: 'fleet-galleries', imageDir: 'fleet-galleries', manifest: 'fleet-galleries.json' },
+  { label: 'mission-galleries', imageDir: 'missions', manifest: 'mission-galleries.json' },
+  { label: 'planet-galleries', imageDir: 'planets', manifest: 'planet-galleries.json' },
+  { label: 'small-body-galleries', imageDir: 'small-bodies', manifest: 'small-body-galleries.json' },
+  { label: 'satellite-galleries', imageDir: 'satellites', manifest: 'satellite-galleries.json' },
+  { label: 'earth-object-galleries', imageDir: 'earth-objects', manifest: 'earth-object-galleries.json' },
+  { label: 'moon-site-galleries', imageDir: 'moon-sites', manifest: 'moon-site-galleries.json' },
+  { label: 'mars-site-galleries', imageDir: 'mars-sites', manifest: 'mars-site-galleries.json' },
+];
 
 const VARIANT_SUFFIX = /\.(1x1|4x3|16x9)\.jpg$/i;
 
@@ -79,24 +89,31 @@ async function main(): Promise<void> {
     strict: true,
   });
 
-  const [fleetFresh, missionFresh, fleetCur, missionCur] = await Promise.all([
-    walkSegment(FLEET_DIR),
-    walkSegment(MISSION_DIR),
-    loadCurrent(FLEET_MANIFEST),
-    loadCurrent(MISSION_MANIFEST),
-  ]);
+  const results = await Promise.all(
+    SURFACES.map(async (s) => {
+      const fresh = await walkSegment(path.join('static', 'images', s.imageDir));
+      const cur = await loadCurrent(path.join('static', 'data', s.manifest));
+      return { ...s, fresh, cur };
+    }),
+  );
 
-  const fleetDiffs = diff('fleet-galleries', fleetCur, fleetFresh);
-  const missionDiffs = diff('mission-galleries', missionCur, missionFresh);
-
-  if (values.check) {
-    process.exit(fleetDiffs.length + missionDiffs.length > 0 ? 1 : 0);
+  let totalDiffs = 0;
+  for (const r of results) {
+    totalDiffs += diff(r.label, r.cur, r.fresh).length;
   }
 
-  await fs.writeFile(FLEET_MANIFEST, JSON.stringify(fleetFresh, null, 2) + '\n', 'utf-8');
-  await fs.writeFile(MISSION_MANIFEST, JSON.stringify(missionFresh, null, 2) + '\n', 'utf-8');
-  console.log(`\nWrote ${FLEET_MANIFEST} (${Object.keys(fleetFresh).length} entries)`);
-  console.log(`Wrote ${MISSION_MANIFEST} (${Object.keys(missionFresh).length} entries)`);
+  if (values.check) {
+    process.exit(totalDiffs > 0 ? 1 : 0);
+  }
+
+  for (const r of results) {
+    await fs.writeFile(
+      path.join('static', 'data', r.manifest),
+      JSON.stringify(r.fresh, null, 2) + '\n',
+      'utf-8',
+    );
+    console.log(`Wrote static/data/${r.manifest} (${Object.keys(r.fresh).length} entries)`);
+  }
 }
 
 main().catch((err) => {

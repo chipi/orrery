@@ -13,6 +13,7 @@
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
+  import { createStationSelectionService } from '$lib/station-selection.svelte';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
@@ -83,13 +84,20 @@
   const visitors = $derived(isSuccess(visitorsRD) ? visitorsRD.data : ([] as IssModule[]));
   const loadFailed = $derived(isError(modulesRD) || isError(visitorsRD));
   let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
-  let selected: IssModule | null = $state(null);
-  let panelOpen = $state(false);
+  // Module / visiting-vehicle selection — single source of truth in the
+  // shared station-selection service (replaces the former `selected` +
+  // `panelOpen` + `canvasHoveredId` cells written in lockstep at every
+  // consumer). Named `selection` not `station` to avoid shadowing the
+  // local Three.js station Group inside startThree(). See
+  // $lib/station-selection.
+  const selection = createStationSelectionService<IssModule>({
+    onCommit: (item) => syncStationUrl('/iss', { moduleId: item?.id ?? null }),
+  });
 
   // Auto-compact the Curator Tour overlay when a module panel opens
   // during an active tour (PRD-016 §S8 / RFC-019 §12).
   $effect(() => {
-    if (audio.tourActive && panelOpen && !audio.compact) {
+    if (audio.tourActive && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
   });
@@ -107,10 +115,9 @@
 
   let hoverLabel: HoverLabel | undefined = $state();
 
-  /** Reactive mirror of the 3D scene's hovered module id so the
-   *  sidebar list can visually echo the canvas hover. Set alongside
-   *  issVisualRef.hoveredId in the pointer-move handler. */
-  let canvasHoveredId: string | null = $state(null);
+  // Reactive canvas-hover mirror now lives in `selection.state.hoveredId`
+  // (set alongside issVisualRef.hoveredId in the pointer-move handler) so
+  // the sidebar list can visually echo the canvas hover.
 
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
@@ -150,8 +157,8 @@
   let resetIssCamera: () => void = () => {};
 
   $effect(() => {
-    issVisualRef.selectedId = selected?.id ?? null;
-    issVisualRef.panelOpen = panelOpen;
+    issVisualRef.selectedId = selection.state.selectedId;
+    issVisualRef.panelOpen = selection.state.panelOpen;
     requestIssMaterialRefresh();
   });
 
@@ -258,7 +265,7 @@
     if (!assemblyOpen) return;
     const hov = assemblyChip?.pickableId ?? null;
     issVisualRef.hoveredId = hov;
-    canvasHoveredId = hov;
+    selection.state.hoveredId = hov;
     requestIssMaterialRefresh();
   });
 
@@ -491,15 +498,13 @@
 
   function closePanel() {
     ignoreModuleParamUntilClear = true;
-    selected = null;
-    panelOpen = false;
-    syncUrl({ moduleId: null });
+    // reset() fires onCommit(null) → clears ?module.
+    selection.reset();
   }
 
   function openModule(mod: IssModule) {
-    selected = mod;
-    panelOpen = true;
-    syncUrl({ moduleId: mod.id });
+    // open() fires onCommit(mod) → sets ?module=<id> (no debounce).
+    selection.open(mod);
   }
 
   $effect(() => {
@@ -508,17 +513,15 @@
     if (!id) {
       ignoreModuleParamUntilClear = false;
       // URL is canonical source: no `module` param means no open panel.
-      if (selected !== null || panelOpen) {
-        selected = null;
-        panelOpen = false;
+      if (selection.state.selectedId !== null || selection.state.panelOpen) {
+        selection.reset();
       }
       return;
     }
     if (ignoreModuleParamUntilClear) return;
     const mod = modules.find((x) => x.id === id) ?? visitors.find((x) => x.id === id);
-    if (mod && selected?.id !== mod.id) {
-      selected = mod;
-      panelOpen = true;
+    if (mod && selection.state.selectedId !== mod.id) {
+      selection.open(mod);
     }
   });
 
@@ -981,7 +984,7 @@
       }
       if (found !== issVisualRef.hoveredId) {
         issVisualRef.hoveredId = found;
-        canvasHoveredId = found;
+        selection.state.hoveredId = found;
         refreshIssMeshMaterials(performance.now() / 1000);
       }
     }
@@ -989,7 +992,7 @@
     function onPointerLeave() {
       if (issVisualRef.hoveredId !== null) {
         issVisualRef.hoveredId = null;
-        canvasHoveredId = null;
+        selection.state.hoveredId = null;
         refreshIssMeshMaterials(performance.now() / 1000);
       }
     }
@@ -1199,7 +1202,7 @@
           <button
             type="button"
             onclick={() => openModule(mod)}
-            aria-current={selected?.id === mod.id ? 'true' : undefined}
+            aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: mod.name, agency: mod.agency })}
           </button>
@@ -1219,7 +1222,7 @@
         <StationBlueprint
           modules={blueprintModules}
           view={viewMode === '2d-top' ? 'top' : viewMode === '2d-side' ? 'side' : 'front'}
-          selectedId={selected?.id ?? null}
+          selectedId={selection.state.selectedId}
           onModuleClick={blueprintModuleClick}
           ariaLabel="ISS blueprint diagram"
         />
@@ -1254,7 +1257,7 @@
             <button
               type="button"
               class="module-row"
-              class:canvas-hovered={canvasHoveredId === mod.id}
+              class:canvas-hovered={selection.state.hoveredId === mod.id}
               onclick={() => openModule(mod)}
               onmouseenter={() => {
                 issVisualRef.hoveredId = mod.id;
@@ -1276,7 +1279,7 @@
                   requestIssMaterialRefresh();
                 }
               }}
-              aria-current={selected?.id === mod.id ? 'true' : undefined}
+              aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
               <span class="mod-name-row">
                 <span class="mod-name">{mod.name}</span>
@@ -1295,7 +1298,7 @@
               <button
                 type="button"
                 class="module-row"
-                class:canvas-hovered={canvasHoveredId === ship.id}
+                class:canvas-hovered={selection.state.hoveredId === ship.id}
                 onclick={() => openModule(ship)}
                 onmouseenter={() => {
                   issVisualRef.hoveredId = ship.id;
@@ -1317,7 +1320,7 @@
                     requestIssMaterialRefresh();
                   }
                 }}
-                aria-current={selected?.id === ship.id ? 'true' : undefined}
+                aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
                 <span class="mod-name-row">
                   <span class="mod-name">{ship.name}</span>
@@ -1345,8 +1348,8 @@
         <StationTimelineStrip
           modules={sortedModules}
           visitors={sortedVisitors}
-          selectedId={selected?.id}
-          hoveredId={canvasHoveredId}
+          selectedId={selection.state.selectedId}
+          hoveredId={selection.state.hoveredId}
           heading="ISS assembly timeline — modules above, visiting spacecraft below"
           heroDir="iss-modules"
           onSelect={(item) => {
@@ -1568,8 +1571,8 @@
   </div>
 
   <StationModulePanel
-    module={selected}
-    open={panelOpen}
+    module={selection.state.item}
+    open={selection.state.panelOpen}
     onClose={closePanel}
     galleryFetcher={getIssModuleGallery}
   />

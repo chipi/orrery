@@ -5619,38 +5619,40 @@
 
   /* Time playback mini-panel (#351 Layer 1) — pinned bottom-left, styled
      to match the PLANET SCALES button (.earth-compare): same translucent
-     navy card, blue hairline border, blur. Holds a compact play toggle +
-     a segmented 1×/10×/100× day-per-second speed control. The `left`
-     offset clears the scales card; bumped at the desktop breakpoint to
-     match .earth-compare's larger bottom/left inset. */
+     navy card, blue hairline border, blur, and matching height. Holds a
+     play toggle + a segmented 1×/10×/100× day-per-second speed control.
+     Mobile-first: STACKED directly above the scales card (no room to sit
+     beside it on a 375 px viewport). At @min-width: 601 it moves to sit
+     side-by-side, right of the (larger) scales card. */
   .time-controls {
     position: fixed;
-    bottom: 8px;
-    left: 156px;
+    /* Stacked above .earth-compare (bottom:8 + its ~36px height + gap). */
+    bottom: 50px;
+    left: 8px;
     z-index: 20;
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 3px 5px;
+    padding: 5px 6px;
     background: rgba(8, 10, 22, 0.6);
     border: 1px solid rgba(75, 156, 211, 0.25);
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: auto;
   }
-  /* Compact play toggle — overrides .toggle's 44px floor to match the
-     panel's tight footprint (consistent with .earth-compare, which also
-     runs a sub-44 affordance in this bottom-left zone). */
+  /* Play toggle — overrides .toggle's 44px floor to match the panel's
+     footprint (consistent with .earth-compare, which also runs a sub-44
+     affordance in this bottom-left zone). */
   .time-controls .play-btn {
-    min-width: 28px;
-    min-height: 28px;
-    width: 28px;
-    height: 28px;
+    min-width: 32px;
+    min-height: 32px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1;
     border-radius: 5px;
     background: rgba(15, 18, 35, 0.55);
@@ -5678,15 +5680,15 @@
     overflow: hidden;
   }
   .speed-pill {
-    min-width: 26px;
-    min-height: 28px;
-    padding: 0 7px;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0 10px;
     border: none;
     border-right: 1px solid rgba(75, 156, 211, 0.18);
     background: rgba(15, 18, 35, 0.4);
     color: rgba(207, 224, 255, 0.55);
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.04em;
     cursor: pointer;
     transition:
@@ -5897,10 +5899,11 @@
       width: 32px;
       height: 32px;
     }
-    /* Keep the time cluster beside the (now larger) PLANET SCALES button. */
+    /* Desktop: unstack — sit side-by-side, right of the (now larger)
+       PLANET SCALES card, sharing its bottom:16 baseline. */
     .time-controls {
       bottom: 16px;
-      left: 184px;
+      left: 188px;
     }
     .tactical-scan {
       display: block;

@@ -169,6 +169,11 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '31ce9167d832cd31|31ce9167d832cd31', // iridium-next / vandenberg-slc-4e
   '375e066d73e48207|375e076d33e48207', // mariner-9 / mariner9
   '38c967615ca69359|38c96761cca69359', // giotto / halley
+  // ALLOWLIST_AUTHORIZED (2026-06-21) — small-bodies halley re-curation
+  // sourced the same Giotto-flotilla Halley image that lives in
+  // missions/giotto. Editorial reuse: comet imagery comes from its
+  // mission; both surfaces legitimately show the same shot.
+  '38c967615ca69359|38c967615ca69359', // missions/giotto/03 ≡ small-bodies/halley/01
   '394048792f83d677|394048792f83d677', // tianwen1 / tianwen1-orbiter
   '41859d7961bd0357|41859d7961bd0357', // vega-1 / vega-2
   '4a9a96966154e52f|4a9a96966154e52f', // mariner-4 / mariner4

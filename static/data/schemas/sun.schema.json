@@ -20,12 +20,30 @@
     "mass_fraction_pct"
   ],
   "properties": {
-    "mass_kg": { "type": "number", "exclusiveMinimum": 0 },
-    "radius_km": { "type": "number", "exclusiveMinimum": 0 },
-    "luminosity_w": { "type": "number", "exclusiveMinimum": 0 },
-    "surface_temp_k": { "type": "number", "exclusiveMinimum": 0 },
-    "core_temp_k": { "type": "number", "exclusiveMinimum": 0 },
-    "age_gyr": { "type": "number", "exclusiveMinimum": 0 },
+    "mass_kg": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "radius_km": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "luminosity_w": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "surface_temp_k": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "core_temp_k": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "age_gyr": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
     "axial_tilt": {
       "type": "number",
       "description": "Tilt of the rotation axis to the ecliptic, degrees."
@@ -38,11 +56,24 @@
       "type": "number",
       "description": "Sidereal rotation period near the poles, days."
     },
-    "spectral_class": { "type": "string", "minLength": 1 },
-    "absolute_magnitude": { "type": "number" },
+    "spectral_class": {
+      "type": "string",
+      "minLength": 1
+    },
+    "absolute_magnitude": {
+      "type": "number"
+    },
     "mass_fraction_pct": {
       "type": "number",
       "description": "Percent of the solar system's mass contained in the Sun (~99.86)."
+    },
+    "mission_visits": {
+      "type": "array",
+      "description": "Spacecraft that have visited this body. Each entry: \"Mission — Agency, year(s) (context)\". Rendered in the panel MISSIONS tab.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     }
   }
 }

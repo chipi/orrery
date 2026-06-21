@@ -5,9 +5,17 @@
   "description": "Editorial overlay for the Sun per locale (ADR-017). One file at data/i18n/[locale]/sun.json. Merged with sun.json at fetch time.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["name", "type", "fact", "bio"],
+  "required": [
+    "name",
+    "type",
+    "fact",
+    "bio"
+  ],
   "properties": {
-    "name": { "type": "string", "minLength": 1 },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
     "type": {
       "type": "string",
       "minLength": 1,
@@ -29,11 +37,52 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["l", "u", "t"],
+        "required": [
+          "l",
+          "u",
+          "t"
+        ],
         "properties": {
-          "l": { "type": "string", "minLength": 1 },
-          "u": { "type": "string", "format": "uri" },
-          "t": { "enum": ["intro", "core", "deep"] }
+          "l": {
+            "type": "string",
+            "minLength": 1
+          },
+          "u": {
+            "type": "string",
+            "format": "uri"
+          },
+          "t": {
+            "enum": [
+              "intro",
+              "core",
+              "deep"
+            ]
+          }
+        }
+      }
+    },
+    "science_sections": {
+      "type": "array",
+      "description": "Per-body curated science-card selection rendered in the OVERVIEW tab. Each entry points to /science/<tab>/<section> with an optional one-line per-body why prefix translated per locale.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tab",
+          "section"
+        ],
+        "properties": {
+          "tab": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why": {
+            "type": "string"
+          }
         }
       }
     }

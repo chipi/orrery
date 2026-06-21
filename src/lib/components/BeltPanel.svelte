@@ -16,11 +16,13 @@
    */
   import Panel from './Panel.svelte';
   import ImageCredit from './ImageCredit.svelte';
+  import ScienceCard from './ScienceCard.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import type { ScienceTabId } from '$types/science';
   import {
     getBelts,
     getBeltGallery,
@@ -82,6 +84,7 @@
       description: ov.description ?? base.description,
       discovered: ov.discovered ?? base.discovered,
       mission_visits: ov.mission_visits ?? base.mission_visits,
+      science_sections: ov.science_sections ?? base.science_sections,
       library: base.library?.map((l) => ({
         ...l,
         label: ov.library_labels?.[l.id] ?? l.label,
@@ -239,6 +242,18 @@
           <span class="science-cta">READ THE FULL ARTICLE</span>
           <span class="science-label">/science/planets/{entry.id}-belt</span>
         </a>
+        {#if (entry.science_sections ?? []).length > 0}
+          <div class="science-section">
+            <h3 class="library-heading">SCIENCE</h3>
+            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+              <ScienceCard
+                tab={sec.tab as ScienceTabId}
+                section={sec.section}
+                why={sec.why}
+              />
+            {/each}
+          </div>
+        {/if}
         {#if entry.library && entry.library.length > 0}
           <div class="science-library">
             <h3 class="library-heading">LIBRARY</h3>

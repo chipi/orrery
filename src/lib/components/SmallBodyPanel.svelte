@@ -1,9 +1,10 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import Panel from './Panel.svelte';
-  import { getSmallBodyGallery } from '$lib/data';
+  import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
+  import type { ScienceSectionRef } from '$types/planet';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
@@ -14,7 +15,7 @@
 
   /** /science cross-sections relevant to small bodies — eccentric, often
    * inclined orbits with extreme apsides. */
-  const SMALL_BODY_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+  const SMALL_BODY_SCIENCE_SECTIONS: ScienceSectionRef[] = [
     { tab: 'orbits', section: 'keplerian-orbit' },
     { tab: 'orbits', section: 'eccentricity' },
     { tab: 'orbits', section: 'inclination' },
@@ -55,6 +56,10 @@
       tier: 'intro' | 'core' | 'deep';
       kind?: string;
     }>;
+    /** Per-body curated science-card selection. Falls back to the
+     *  panel default SMALL_BODY_SCIENCE_SECTIONS when absent. Overlay
+     *  takes precedence; see scienceSections derived. */
+    science_sections?: ScienceSectionRef[];
   };
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
@@ -75,6 +80,14 @@
   let gallery: string[] = $state([]);
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
+  let overlay = $state<SmallBodyI18n | null>(null);
+  // Effective science-section list: overlay overrides body.science_sections
+  // when present; the panel-default for small-bodies is empty (opt-in
+  // per body via overlay or base data).
+  let scienceSections = $derived<ScienceSectionRef[]>(
+    overlay?.science_sections ?? body?.science_sections ?? SMALL_BODY_SCIENCE_SECTIONS,
+  );
+  const loc = $derived(localeFromPage($page));
 
   let lastId = $state<string | null>(null);
   $effect(() => {
@@ -83,8 +96,13 @@
       lastId = body.id;
       lightboxSrc = null;
       gallery = [];
+      overlay = null;
       void getSmallBodyGallery(body.id).then((urls) => {
         if (body && body.id === lastId) gallery = urls;
+      });
+      const fetchId = body.id;
+      void getSmallBodyI18n(loc, fetchId).then((o) => {
+        if (body && body.id === lastId) overlay = o;
       });
       // Warm /missions + /fleet index for the MISSIONS tab linkifier.
       void loadMissionIndex();
@@ -197,11 +215,15 @@
         {#if body.note}
           <p class="note">{body.note}</p>
         {/if}
-        {#if SMALL_BODY_SCIENCE_SECTIONS.length > 0}
+        {#if scienceSections.length > 0}
           <div class="science-section">
             <h3 class="library-heading">SCIENCE</h3>
-            {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-              <ScienceCard tab={t} {section} />
+            {#each scienceSections as sec (sec.tab + sec.section)}
+              <ScienceCard
+                tab={sec.tab as ScienceTabId}
+                section={sec.section}
+                why={sec.why}
+              />
             {/each}
           </div>
         {/if}

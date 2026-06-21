@@ -892,6 +892,34 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
 }
 
 /**
+ * Per-locale small-body overlay (introduced 2026-06-21 for science_sections
+ * but designed for future translations of description / note / library
+ * labels too). Mirrors SatelliteI18n: optional fields override the base
+ * small-bodies.json entry when present.
+ *
+ * Files at `static/data/i18n/<locale>/small-bodies/<id>.json`.
+ */
+export type SmallBodyI18n = {
+  name?: string;
+  description?: string;
+  note?: string;
+  mission_visits?: string[];
+  library_labels?: Record<string, string>;
+  science_sections?: import('$types/planet').ScienceSectionRef[];
+};
+
+export async function getSmallBodyI18n(
+  locale: string,
+  bodyId: string,
+): Promise<SmallBodyI18n | null> {
+  try {
+    return await get<SmallBodyI18n>(`i18n/${locale}/small-bodies/${bodyId}.json`);
+  } catch {
+    return null;
+  }
+}
+
+/**
  * /explore satellite panel (Moon + other natural satellites). GH
  * #304 Slice 2. Single JSON manifest containing all satellite
  * entries — fetched once, cached for subsequent panel opens. Gallery
@@ -1008,6 +1036,11 @@ export type BeltEntry = {
   discovered: string;
   mission_visits: string[];
   library?: BeltLibraryLink[];
+  /** Per-belt curated science-card selection — merged from
+   *  BeltI18n.science_sections in BeltPanel.mergeOverlay. Renders
+   *  in the SCIENCE section at the bottom of OVERVIEW (belts have
+   *  no TECHNICAL tab). */
+  science_sections?: import('$types/planet').ScienceSectionRef[];
 };
 export async function getBelts(): Promise<BeltEntry[]> {
   try {
@@ -1058,6 +1091,10 @@ export type BeltI18n = {
   discovered?: string;
   mission_visits?: string[];
   library_labels?: Record<string, string>;
+  /** Per-belt curated science-card selection. Same pattern as
+   *  PlanetOverlay.science_sections — pointers into /science/<tab>/
+   *  <section> with an optional `why` prefix per entry. */
+  science_sections?: import('$types/planet').ScienceSectionRef[];
 };
 export async function getBeltI18n(locale: string, beltId: string): Promise<BeltI18n | null> {
   try {

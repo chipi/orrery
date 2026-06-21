@@ -1,14 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T21:03:11.060Z",
-  "pipeline": "bodies-salvage",
+  "generated_at": "2026-06-21T06:10:47.687Z",
+  "pipeline": "bodies-salvage + hubble-pass-v2 (esahubble.org)",
   "stats": {
     "bodies_processed": 32,
     "vision_calls": 933,
     "vision_cap": 1500,
     "proposals_total": 1245,
     "survivors": 138,
-    "duration_sec": "3281.5"
+    "duration_sec": "3281.5",
+    "hubble_pass_calls": 147,
+    "hubble_pass_proposals": 7,
+    "hubble_pass_survivors": 7,
+    "hubble_pass_duration_sec": "458.0"
   },
   "proposals": [
     {
@@ -36463,6 +36467,244 @@
       "survivor": true,
       "drop_reasons": [],
       "notes": []
+    },
+    {
+      "proposal_id": "hubble-planets-mars-01",
+      "agency": "esahubble",
+      "surface": "planets",
+      "missionId": "mars",
+      "slot": "01",
+      "query": "Mars",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic1814c.jpg",
+        "source_url": "https://esahubble.org/images/heic1814c/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1814c",
+          "hubble_title": "Stormy Mars in opposition in 2018",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Full-disc Mars showing rusty surface, polar ice cap, and atmospheric haze against black space; clean observational telescope imagery with no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-planets-jupiter-01",
+      "agency": "esahubble",
+      "surface": "planets",
+      "missionId": "jupiter",
+      "slot": "01",
+      "query": "Jupiter",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic2017a.jpg",
+        "source_url": "https://esahubble.org/images/heic2017a/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic2017a",
+          "hubble_title": "Hubble's View of Jupiter and Europa in August 2020",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Full-disc photograph of Jupiter showing atmospheric cloud bands, the Great Red Spot, and storm features in natural colour; no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-planets-saturn-01",
+      "agency": "esahubble",
+      "surface": "planets",
+      "missionId": "saturn",
+      "slot": "01",
+      "query": "Saturn",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic1917a.jpg",
+        "source_url": "https://esahubble.org/images/heic1917a/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic1917a",
+          "hubble_title": "Latest Saturn Portrait",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Saturn's full disc and ring system dominate the frame in clean observational/composite imagery with no visible spacecraft, logos, text, or people—pure planetary body imagery."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-planets-uranus-01",
+      "agency": "esahubble",
+      "surface": "planets",
+      "missionId": "uranus",
+      "slot": "01",
+      "query": "Uranus",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic2503b.jpg",
+        "source_url": "https://esahubble.org/images/heic2503b/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic2503b",
+          "hubble_title": "Close-up: Uranus aurorae (October 2022)",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Full-disc observational imagery of Uranus showing its cyan atmosphere, bright polar region, and atmospheric detail — no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-satellites-europa-01",
+      "agency": "esahubble",
+      "surface": "satellites",
+      "missionId": "europa",
+      "slot": "01",
+      "query": "Europa",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic2017b.jpg",
+        "source_url": "https://esahubble.org/images/heic2017b/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic2017b",
+          "hubble_title": "Hubble’s New Rainbow View of Jupiter",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Full-disc view of Jupiter showing cloud bands, atmospheric detail, and the Great Red Spot — pure observational/scientific imagery with no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-satellites-ganymede-01",
+      "agency": "esahubble",
+      "surface": "satellites",
+      "missionId": "ganymede",
+      "slot": "01",
+      "query": "Ganymede",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic0009a.jpg",
+        "source_url": "https://esahubble.org/images/heic0009a/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic0009a",
+          "hubble_title": "Uncovering the mysteries of Jupiter's aurora",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Pure observational imagery of Ganymede showing auroral oval and surface features in UV/infrared wavelengths; no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
+    },
+    {
+      "proposal_id": "hubble-satellites-titan-01",
+      "agency": "esahubble",
+      "surface": "satellites",
+      "missionId": "titan",
+      "slot": "01",
+      "query": "Titan",
+      "currentSource": "on-disk-round-1",
+      "proposed": {
+        "tier": 1,
+        "source_type": "esahubble",
+        "image_url": "https://cdn.esahubble.org/archives/images/screen/heic0904a.jpg",
+        "source_url": "https://esahubble.org/images/heic0904a/",
+        "credit": "ESA/Hubble",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "hubble_id": "heic0904a",
+          "hubble_title": "Quadruple Saturn moon transit snapped by Hubble",
+          "vision_confidence": 0.95,
+          "round": "hubble-pass-v2"
+        }
+      },
+      "size_bytes": null,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is Saturn itself shown as a full disc with its ring system visible against black space—pure observational planetary imagery with no spacecraft, logos, text, or people visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "hubble-pass v2 — sourced direct from esahubble.org, ESA/Hubble credited"
+      ]
     }
   ]
 }

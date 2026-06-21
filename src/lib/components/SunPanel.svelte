@@ -6,7 +6,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
-  import ScienceChip from './ScienceChip.svelte';
+  import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -152,11 +152,9 @@
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
         {#if SUN_SCIENCE_SECTIONS.length > 0}
-          <div class="science-chips">
-            {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-              <ScienceChip tab={t} {section} />
-            {/each}
-          </div>
+          {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">

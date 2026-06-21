@@ -8,7 +8,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
-  import ScienceChip from './ScienceChip.svelte';
+  import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -45,6 +45,16 @@
     description?: string;
     wiki?: string;
     note?: string;
+    /** Curated learn-more links (same shape as SatelliteEntry.library
+     *  + BeltEntry.library). Rendered at the bottom of TECHNICAL via
+     *  the LIBRARY section, matching the B2 tab pattern. */
+    library?: Array<{
+      id: string;
+      label: string;
+      url: string;
+      tier: 'intro' | 'core' | 'deep';
+      kind?: string;
+    }>;
   };
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
@@ -188,11 +198,9 @@
           <p class="note">{body.note}</p>
         {/if}
         {#if SMALL_BODY_SCIENCE_SECTIONS.length > 0}
-          <div class="science-chips">
-            {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-              <ScienceChip tab={t} {section} />
-            {/each}
-          </div>
+          {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">
@@ -291,7 +299,18 @@
             <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
         {/if}
-        {#if body.wiki}
+        {#if (body.library ?? []).length > 0}
+          <div class="science-library">
+            <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+            <ul class="learn-list">
+              {#each body.library ?? [] as link (link.id)}
+                <li>
+                  <LearnLink entityId={body.id} url={link.url} label={link.label} />
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {:else if body.wiki}
           <div class="science-library">
             <h3 class="library-heading">{m.panel_tab_learn()}</h3>
             <ul class="learn-list">

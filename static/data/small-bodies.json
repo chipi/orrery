@@ -17,6 +17,36 @@
       "wiki": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",
       "mission_visits": [
         "Dawn — NASA, 2015–18 (orbital survey from 1,470 km mapping orbit; gravity, mineralogy, bright spots)"
+      ],
+      "library": [
+        {
+          "id": "ceres-wiki",
+          "label": "Wikipedia — Ceres",
+          "url": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "ceres-nasa",
+          "label": "NASA Science — Ceres overview",
+          "url": "https://science.nasa.gov/dwarf-planets/ceres/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "ceres-dawn",
+          "label": "NASA Dawn — Ceres mission page",
+          "url": "https://science.nasa.gov/mission/dawn/",
+          "tier": "core",
+          "kind": "mission"
+        },
+        {
+          "id": "ceres-bright-spots",
+          "label": "Bright spots of Occator crater — Nature Astronomy",
+          "url": "https://www.nature.com/articles/s41550-020-1146-8",
+          "tier": "deep",
+          "kind": "paper"
+        }
       ]
     },
     {
@@ -36,6 +66,36 @@
       "wiki": "https://en.wikipedia.org/wiki/Pluto",
       "mission_visits": [
         "New Horizons — NASA, 14 July 2015 flyby (close-up imaging, atmosphere, Charon system)"
+      ],
+      "library": [
+        {
+          "id": "pluto-wiki",
+          "label": "Wikipedia — Pluto",
+          "url": "https://en.wikipedia.org/wiki/Pluto",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "pluto-nasa",
+          "label": "NASA Science — Pluto overview",
+          "url": "https://science.nasa.gov/dwarf-planets/pluto/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "pluto-newhorizons",
+          "label": "NASA New Horizons — mission page",
+          "url": "https://science.nasa.gov/mission/new-horizons/",
+          "tier": "core",
+          "kind": "mission"
+        },
+        {
+          "id": "pluto-iau",
+          "label": "IAU resolution B5/B6 — definition of 'planet'",
+          "url": "https://www.iau.org/news/pressreleases/detail/iau0603/",
+          "tier": "deep",
+          "kind": "article"
+        }
       ]
     },
     {
@@ -53,7 +113,30 @@
       "mission_visited": null,
       "description": "Trans-Neptunian dwarf planet rotating once every 3.9 hours — the fastest rotation of any large solar-system body. Centrifugal force has stretched it into a triaxial ellipsoid roughly twice as long as it is wide. Has two known moons (Hi'iaka, Namaka) and is the only TNO with a confirmed ring.",
       "wiki": "https://en.wikipedia.org/wiki/Haumea",
-      "mission_visits": []
+      "mission_visits": [],
+      "library": [
+        {
+          "id": "haumea-wiki",
+          "label": "Wikipedia — Haumea",
+          "url": "https://en.wikipedia.org/wiki/Haumea",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "haumea-nasa",
+          "label": "NASA Science — Haumea overview",
+          "url": "https://science.nasa.gov/dwarf-planets/haumea/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "haumea-ring",
+          "label": "Ring discovery — Nature 2017",
+          "url": "https://www.nature.com/articles/nature24051",
+          "tier": "deep",
+          "kind": "paper"
+        }
+      ]
     },
     {
       "id": "makemake",
@@ -70,7 +153,30 @@
       "mission_visited": null,
       "description": "Third-largest dwarf planet beyond Neptune, named for the Rapa Nui creator god. Surface coated in frozen methane, ethane, and possibly nitrogen. Has one tiny moon (MK2) discovered in 2016 — its existence had been masked by Makemake's reflective glare in earlier observations.",
       "wiki": "https://en.wikipedia.org/wiki/Makemake",
-      "mission_visits": []
+      "mission_visits": [],
+      "library": [
+        {
+          "id": "makemake-wiki",
+          "label": "Wikipedia — Makemake",
+          "url": "https://en.wikipedia.org/wiki/Makemake",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "makemake-nasa",
+          "label": "NASA Science — Makemake overview",
+          "url": "https://science.nasa.gov/dwarf-planets/makemake/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "makemake-moon",
+          "label": "Hubble discovery of moon MK2 — STScI 2016",
+          "url": "https://hubblesite.org/contents/news-releases/2016/news-2016-18",
+          "tier": "deep",
+          "kind": "article"
+        }
+      ]
     },
     {
       "id": "eris",
@@ -87,7 +193,30 @@
       "mission_visited": null,
       "description": "Most massive known dwarf planet — slightly smaller than Pluto by radius but ~27% more massive. Its 2005 discovery prompted the IAU to formalise the 'dwarf planet' category in 2006, simultaneously demoting Pluto. Lies in the scattered disk on a highly inclined, eccentric orbit reaching past 97 AU at aphelion.",
       "wiki": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)",
-      "mission_visits": []
+      "mission_visits": [],
+      "library": [
+        {
+          "id": "eris-wiki",
+          "label": "Wikipedia — Eris",
+          "url": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "eris-nasa",
+          "label": "NASA Science — Eris overview",
+          "url": "https://science.nasa.gov/dwarf-planets/eris/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "eris-mass",
+          "label": "Mass measurement via Dysnomia — Science 2007",
+          "url": "https://www.science.org/doi/10.1126/science.1139415",
+          "tier": "deep",
+          "kind": "paper"
+        }
+      ]
     },
     {
       "id": "halley",
@@ -110,6 +239,29 @@
         "Suisei + Sakigake — ISAS, 1986 (Japan’s first interplanetary missions)",
         "Giotto — ESA, 14 March 1986 (closest approach: 596 km; first images of a comet nucleus)",
         "ICE (International Cometary Explorer) — NASA, 1986 (distant tail observations)"
+      ],
+      "library": [
+        {
+          "id": "halley-wiki",
+          "label": "Wikipedia — Halley's Comet",
+          "url": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "halley-nasa",
+          "label": "NASA — Halley overview",
+          "url": "https://science.nasa.gov/solar-system/comets/1p-halley/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "halley-giotto",
+          "label": "ESA Giotto mission — Halley flyby",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview",
+          "tier": "core",
+          "kind": "mission"
+        }
       ]
     },
     {
@@ -130,6 +282,36 @@
       "mission_visits": [
         "Rosetta — ESA, 2014–16 (first orbital escort of a comet)",
         "Philae — ESA, 12 November 2014 (first soft-landing on a comet nucleus)"
+      ],
+      "library": [
+        {
+          "id": "67p-wiki",
+          "label": "Wikipedia — 67P/Churyumov–Gerasimenko",
+          "url": "https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "67p-esa",
+          "label": "ESA Rosetta — comet mission portal",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta",
+          "tier": "intro",
+          "kind": "esa"
+        },
+        {
+          "id": "67p-philae",
+          "label": "ESA Philae — first comet landing",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Philae",
+          "tier": "core",
+          "kind": "mission"
+        },
+        {
+          "id": "67p-results",
+          "label": "Rosetta key science results — Nature collection",
+          "url": "https://www.nature.com/collections/qwvbqxqvgs",
+          "tier": "deep",
+          "kind": "paper"
+        }
       ]
     },
     {
@@ -149,6 +331,29 @@
       "wiki": "https://en.wikipedia.org/wiki/4_Vesta",
       "mission_visits": [
         "Dawn — NASA, 2011–12 (orbital survey; first detailed images and gravity field)"
+      ],
+      "library": [
+        {
+          "id": "vesta-wiki",
+          "label": "Wikipedia — 4 Vesta",
+          "url": "https://en.wikipedia.org/wiki/4_Vesta",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "vesta-nasa",
+          "label": "NASA Science — Vesta overview",
+          "url": "https://science.nasa.gov/solar-system/asteroids/4-vesta/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "vesta-dawn",
+          "label": "NASA Dawn — Vesta orbital phase",
+          "url": "https://science.nasa.gov/mission/dawn/",
+          "tier": "core",
+          "kind": "mission"
+        }
       ]
     },
     {
@@ -168,6 +373,29 @@
       "wiki": "https://en.wikipedia.org/wiki/16_Psyche",
       "mission_visits": [
         "Psyche — NASA, launch 2023 · arrival 2029 (first orbital survey of a metallic M-type asteroid)"
+      ],
+      "library": [
+        {
+          "id": "psyche-wiki",
+          "label": "Wikipedia — 16 Psyche",
+          "url": "https://en.wikipedia.org/wiki/16_Psyche",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "psyche-nasa",
+          "label": "NASA Science — Psyche mission",
+          "url": "https://science.nasa.gov/mission/psyche/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "psyche-asu",
+          "label": "Psyche mission portal (ASU)",
+          "url": "https://psyche.asu.edu/",
+          "tier": "core",
+          "kind": "mission"
+        }
       ]
     },
     {
@@ -188,6 +416,29 @@
       "mission_visits": [
         "OSIRIS-REx — NASA, 2018–21 (orbital survey + Touch-and-Go sample collection)",
         "OSIRIS-APEX (extended mission) — NASA, en route to Apophis 2029"
+      ],
+      "library": [
+        {
+          "id": "bennu-wiki",
+          "label": "Wikipedia — 101955 Bennu",
+          "url": "https://en.wikipedia.org/wiki/101955_Bennu",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "bennu-nasa",
+          "label": "NASA OSIRIS-REx — Bennu mission portal",
+          "url": "https://science.nasa.gov/mission/osiris-rex/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "bennu-sample",
+          "label": "OSIRIS-REx sample return — September 2023",
+          "url": "https://www.nasa.gov/missions/osiris-rex/",
+          "tier": "core",
+          "kind": "mission"
+        }
       ]
     },
     {
@@ -207,6 +458,29 @@
       "wiki": "https://en.wikipedia.org/wiki/486958_Arrokoth",
       "mission_visits": [
         "New Horizons — NASA, 1 January 2019 flyby (most distant body ever visited at the time)"
+      ],
+      "library": [
+        {
+          "id": "arrokoth-wiki",
+          "label": "Wikipedia — 486958 Arrokoth",
+          "url": "https://en.wikipedia.org/wiki/486958_Arrokoth",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "arrokoth-nasa",
+          "label": "NASA New Horizons — Arrokoth flyby",
+          "url": "https://science.nasa.gov/mission/new-horizons/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "arrokoth-stern",
+          "label": "Initial results — Science 2020",
+          "url": "https://www.science.org/doi/10.1126/science.aay6620",
+          "tier": "deep",
+          "kind": "paper"
+        }
       ]
     },
     {
@@ -226,6 +500,22 @@
       "wiki": "https://en.wikipedia.org/wiki/25143_Itokawa",
       "mission_visits": [
         "Hayabusa — JAXA, 2005 rendezvous + 2010 sample return (first asteroid sample return)"
+      ],
+      "library": [
+        {
+          "id": "itokawa-wiki",
+          "label": "Wikipedia — 25143 Itokawa",
+          "url": "https://en.wikipedia.org/wiki/25143_Itokawa",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "itokawa-jaxa",
+          "label": "JAXA Hayabusa — asteroid sample return",
+          "url": "https://global.jaxa.jp/projects/sas/muses_c/",
+          "tier": "intro",
+          "kind": "jaxa"
+        }
       ]
     },
     {
@@ -247,6 +537,29 @@
         "DART — NASA, 26 September 2022 (kinetic-impactor test on companion Dimorphos)",
         "LICIACube — ASI, 2022 (CubeSat observation of impact ejecta)",
         "Hera — ESA, en route 2026, arrival 2026 (impact aftermath survey)"
+      ],
+      "library": [
+        {
+          "id": "didymos-wiki",
+          "label": "Wikipedia — 65803 Didymos",
+          "url": "https://en.wikipedia.org/wiki/65803_Didymos",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "didymos-nasa",
+          "label": "NASA DART — Didymos/Dimorphos system",
+          "url": "https://science.nasa.gov/mission/dart/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "didymos-hera",
+          "label": "ESA Hera — Didymos system follow-up",
+          "url": "https://www.esa.int/Space_Safety/Hera",
+          "tier": "core",
+          "kind": "esa"
+        }
       ]
     },
     {
@@ -267,6 +580,29 @@
       "mission_visits": [
         "DART — NASA, 26 September 2022 (kinetic impactor; first deliberate asteroid orbit change)",
         "Hera — ESA, arrival 2026 (post-impact characterisation)"
+      ],
+      "library": [
+        {
+          "id": "dimorphos-wiki",
+          "label": "Wikipedia — Dimorphos",
+          "url": "https://en.wikipedia.org/wiki/Dimorphos",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "dimorphos-dart",
+          "label": "NASA DART — kinetic impactor test",
+          "url": "https://science.nasa.gov/mission/dart/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "dimorphos-results",
+          "label": "DART impact orbit-change results — Nature 2023",
+          "url": "https://www.nature.com/articles/s41586-023-05810-5",
+          "tier": "deep",
+          "kind": "paper"
+        }
       ]
     },
     {
@@ -286,6 +622,22 @@
       "wiki": "https://en.wikipedia.org/wiki/52246_Donaldjohanson",
       "mission_visits": [
         "Lucy — NASA, 20 April 2025 flyby"
+      ],
+      "library": [
+        {
+          "id": "dj-wiki",
+          "label": "Wikipedia — 52246 Donaldjohanson",
+          "url": "https://en.wikipedia.org/wiki/52246_Donaldjohanson",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "dj-lucy",
+          "label": "NASA Lucy — main-belt flyby target",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -305,6 +657,22 @@
       "wiki": "https://en.wikipedia.org/wiki/3548_Eurybates",
       "mission_visits": [
         "Lucy — NASA, August 2027 flyby (first Trojan-asteroid encounter)"
+      ],
+      "library": [
+        {
+          "id": "eurybates-wiki",
+          "label": "Wikipedia — 3548 Eurybates",
+          "url": "https://en.wikipedia.org/wiki/3548_Eurybates",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "eurybates-lucy",
+          "label": "NASA Lucy — first Trojan target",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -324,6 +692,22 @@
       "wiki": "https://en.wikipedia.org/wiki/15094_Polymele",
       "mission_visits": [
         "Lucy — NASA, September 2027 flyby"
+      ],
+      "library": [
+        {
+          "id": "polymele-wiki",
+          "label": "Wikipedia — 15094 Polymele",
+          "url": "https://en.wikipedia.org/wiki/15094_Polymele",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "polymele-lucy",
+          "label": "NASA Lucy — Trojan target schedule",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -343,6 +727,22 @@
       "wiki": "https://en.wikipedia.org/wiki/11351_Leucus",
       "mission_visits": [
         "Lucy — NASA, April 2028 flyby"
+      ],
+      "library": [
+        {
+          "id": "leucus-wiki",
+          "label": "Wikipedia — 11351 Leucus",
+          "url": "https://en.wikipedia.org/wiki/11351_Leucus",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "leucus-lucy",
+          "label": "NASA Lucy — Trojan target schedule",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -362,6 +762,22 @@
       "wiki": "https://en.wikipedia.org/wiki/21900_Orus",
       "mission_visits": [
         "Lucy — NASA, November 2028 flyby"
+      ],
+      "library": [
+        {
+          "id": "orus-wiki",
+          "label": "Wikipedia — 21900 Orus",
+          "url": "https://en.wikipedia.org/wiki/21900_Orus",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "orus-lucy",
+          "label": "NASA Lucy — Trojan target schedule",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -381,6 +797,22 @@
       "wiki": "https://en.wikipedia.org/wiki/617_Patroclus",
       "mission_visits": [
         "Lucy — NASA, March 2033 flyby (L5 Trojan)"
+      ],
+      "library": [
+        {
+          "id": "patroclus-wiki",
+          "label": "Wikipedia — 617 Patroclus",
+          "url": "https://en.wikipedia.org/wiki/617_Patroclus",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "patroclus-lucy",
+          "label": "NASA Lucy — L5 Trojan binary target",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -400,6 +832,22 @@
       "wiki": "https://en.wikipedia.org/wiki/617_Patroclus",
       "mission_visits": [
         "Lucy — NASA, March 2033 flyby (L5 Trojan)"
+      ],
+      "library": [
+        {
+          "id": "menoetius-wiki",
+          "label": "Wikipedia — Menoetius (Patroclus' companion)",
+          "url": "https://en.wikipedia.org/wiki/617_Patroclus#Menoetius",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "menoetius-lucy",
+          "label": "NASA Lucy — L5 Trojan binary target",
+          "url": "https://science.nasa.gov/mission/lucy/",
+          "tier": "intro",
+          "kind": "nasa"
+        }
       ]
     },
     {
@@ -418,7 +866,30 @@
       "note": "Hyperbolic trajectory — first known interstellar object. 2017 visit only; will not return.",
       "description": "First known interstellar object to visit our solar system. Detected in October 2017 by the Pan-STARRS survey three weeks after closest approach to the Sun. Its hyperbolic trajectory (eccentricity ~1.2) confirmed it originated outside the solar system. Highly elongated, dark red, and showing non-gravitational acceleration of unknown cause. Already on its way out — will not return.",
       "wiki": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-      "mission_visits": []
+      "mission_visits": [],
+      "library": [
+        {
+          "id": "oumuamua-wiki",
+          "label": "Wikipedia — ʻOumuamua",
+          "url": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "oumuamua-nasa",
+          "label": "NASA — interstellar visitor overview",
+          "url": "https://science.nasa.gov/solar-system/comets/oumuamua-the-first-interstellar-object/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "oumuamua-nature",
+          "label": "First detection — Nature 2017",
+          "url": "https://www.nature.com/articles/nature25020",
+          "tier": "deep",
+          "kind": "paper"
+        }
+      ]
     }
   ]
 }

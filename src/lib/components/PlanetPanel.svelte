@@ -7,7 +7,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
-  import ScienceChip from './ScienceChip.svelte';
+  import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
   import type { ScienceTabId } from '$types/science';
@@ -198,11 +198,9 @@
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>
         {#if PLANET_SCIENCE_SECTIONS.length > 0}
-          <div class="science-chips">
-            {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-              <ScienceChip tab={t} {section} />
-            {/each}
-          </div>
+          {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">

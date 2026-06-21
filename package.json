@@ -104,7 +104,7 @@
     "@sveltejs/kit": "2.61.1",
     "@sveltejs/vite-plugin-svelte": "4.0.4",
     "@types/katex": "^0.16.8",
-    "@types/node": "22.10.2",
+    "@types/node": "26.0.0",
     "@types/three": "0.128.0",
     "@vite-pwa/sveltekit": "^1.1.0",
     "@vitest/coverage-v8": "^4.1.6",

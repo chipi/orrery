@@ -25,7 +25,7 @@
   // the planets-tab PRD-024 set. Same for every planet; the user's
   // planet-specific values live on the TECHNICAL tab and the cards
   // here unpack what those values mean.
-  const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+  const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
     { tab: 'orbits', section: 'keplerian-orbit' },
     { tab: 'orbits', section: 'semi-major-axis' },
     { tab: 'orbits', section: 'eccentricity' },

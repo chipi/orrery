@@ -18,7 +18,7 @@
 
   /** /science cross-sections relevant to the Sun: it's the central focus of
    * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
-  const SUN_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+  const SUN_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
     { tab: 'orbits', section: 'keplerian-orbit' },
     { tab: 'orbits', section: 'vis-viva' },
     { tab: 'orbits', section: 'keplers-laws' },

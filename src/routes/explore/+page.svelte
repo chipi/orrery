@@ -869,6 +869,17 @@
     // the chip, or the Curator Tour toggles it on at the relevant beat.
     paths: false,
   });
+  // Time playback (#351 Layer 1) — user control over the live `simT`
+  // clock that propagates planets, moons, and small bodies. The pills
+  // are days-per-second (matching the guide-explore narration: "one day
+  // per second, ten days, a hundred"); 1× ≡ 1 day/sec. This layer
+  // governs the EXISTING synthetic clock only — real-calendar anchoring
+  // (date readout, "Today") is Layer 2. prefers-reduced-motion still
+  // wins as the hard freeze (ADR-025), independent of `simPaused`.
+  const SIM_SPEEDS = [1, 10, 100] as const; // days per second
+  const DAYS_PER_YEAR = 365.25; // simT is in years; pills are days/sec
+  let simSpeed = $state(10);
+  let simPaused = $state(false);
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by panelState.sizes) so the dialog is keyboard-dismissible without a
   // svelte:window element inside the {#if} block, which prettier
@@ -2586,16 +2597,18 @@
      * Cheap: at most a handful of trig ops per frame per moon.
      */
     function updateSatellites(dt: number): void {
-      if (reducedMotion) return;
+      if (reducedMotion || simPaused) return;
+      // Same per-second time-compression as the planets (#351 Layer 1):
+      // simSpeed days/sec → years/sec, so moons stay phase-locked to the
+      // planet clock at every speed and freeze together on pause.
+      const yrPerSec = simSpeed / DAYS_PER_YEAR;
       for (const obj of planetObjs) {
         if (obj.satellites.length > 0) {
           for (const s of obj.satellites) {
-            // Sidereal rate — same time-compression as the planets
-            // (simT advances at 0.04 × dt per second elsewhere). The
-            // moon's angular velocity scales as 1 / periodDays so a
-            // sidereal month plays out in the same compressed window
-            // as Earth's orbital year.
-            s.angle += (dt * 0.04 * (2 * Math.PI)) / s.def.periodDays;
+            // Sidereal rate — the moon's angular velocity scales as
+            // 1 / periodDays so a sidereal month plays out in the same
+            // compressed window as the parent's orbital year.
+            s.angle += (dt * yrPerSec * (2 * Math.PI)) / s.def.periodDays;
             const ca = Math.cos(s.angle);
             const sa = Math.sin(s.angle);
             const ci = Math.cos(s.inclRad);
@@ -4231,8 +4244,10 @@
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
         // ADR-025: when prefers-reduced-motion is set we freeze sim
-        // time. User-initiated camera drag still works.
-        if (!reducedMotion) simT += dt * 0.04;
+        // time. User-initiated camera drag still works. #351 Layer 1:
+        // `simPaused` is the user-facing pause; `simSpeed` (days/sec)
+        // sets the rate. simT is years → divide by DAYS_PER_YEAR.
+        if (!reducedMotion && !simPaused) simT += (dt * simSpeed) / DAYS_PER_YEAR;
 
         // Fly-to-body tween (#287 polish). When focused on a planet, the
         // target world position drifts with the planet's own orbital
@@ -4961,6 +4976,39 @@
         {m.ui_layer_paths()}
       </button>
     </div>
+    <!-- Time playback (#351 Layer 1) — pause + days-per-second speed over
+         the live orbital clock. Pills mirror the guide-explore narration
+         ("one day per second, ten days, a hundred"). -->
+    <div class="ctrl-row time-row" data-audio-stage="explore-time">
+      <button
+        type="button"
+        class="toggle play-btn"
+        onclick={() => (simPaused = !simPaused)}
+        aria-pressed={simPaused}
+        aria-label={simPaused ? m.fly_play() : m.fly_pause()}
+        title={simPaused ? m.fly_play() : m.fly_pause()}
+        data-testid="explore-time-play"
+      >
+        {simPaused ? '▶' : '⏸'}
+      </button>
+      <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+        {#each SIM_SPEEDS as sp}
+          <button
+            type="button"
+            class="chip speed-pill"
+            class:active={!simPaused && simSpeed === sp}
+            aria-pressed={!simPaused && simSpeed === sp}
+            onclick={() => {
+              simSpeed = sp;
+              simPaused = false;
+            }}
+            data-testid="explore-speed-{sp}"
+          >
+            {sp}×
+          </button>
+        {/each}
+      </div>
+    </div>
     {#if layers.paths}
       <div class="paths-legend" role="group" aria-label="Iconic trajectory legend">
         <a
@@ -5557,6 +5605,30 @@
     color: #fff;
     background: rgba(78, 205, 196, 0.32);
     border-color: #4ecdc4;
+  }
+
+  /* Time playback row (#351 Layer 1) — play/pause reuses .toggle; the
+     speed pills reuse .chip (incl. the teal active state) but shrink to
+     a compact 44 px square so "1× 10× 100×" sit tight on one line. */
+  .time-row {
+    align-items: center;
+  }
+  .play-btn {
+    min-width: 44px;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .speed-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    pointer-events: auto;
+  }
+  .speed-pill {
+    min-width: 44px;
+    padding: 0 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
   }
 
   .paths-legend {

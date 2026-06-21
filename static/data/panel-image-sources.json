@@ -2518,5 +2518,50 @@
     "fetched_at": "2026-06-21T08:43:08Z",
     "bodies_iteration": "belts-structure-curate-2026-06-21",
     "query": "Kuiper Belt artist concept"
+  },
+  "small-bodies/eris/01": {
+    "commons_file": "Artist's impression dwarf planet Eris.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist's%20impression%20dwarf%20planet%20Eris.jpg",
+    "credit": "http://www.eso.org/public/images/eso1142a/",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-21T12:09:27Z",
+    "bodies_iteration": "handsource-zero-survivor-2026-06-21",
+    "query": "Eris dwarf planet artist"
+  },
+  "small-bodies/eris/02": {
+    "commons_file": "Eris and Dysnomia (captured by the Hubble Space Telescope).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eris%20and%20Dysnomia%20(captured%20by%20the%20Hubble%20Space%20Telescope).jpg",
+    "credit": "http://hubblesite.org/newscenter/archive/releases/2007/24/image/b/ (direct link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T12:09:29Z",
+    "bodies_iteration": "handsource-zero-survivor-2026-06-21",
+    "query": "Eris dwarf planet Hubble"
+  },
+  "small-bodies/haumea/01": {
+    "commons_file": "Haumea, Celestia.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Haumea%2C%20Celestia.jpg",
+    "credit": "Own work",
+    "license": "cc by-sa 3.0",
+    "fetched_at": "2026-06-21T12:09:31Z",
+    "bodies_iteration": "handsource-zero-survivor-2026-06-21",
+    "query": "Haumea artist impression"
+  },
+  "small-bodies/haumea/02": {
+    "commons_file": "Haumea with rings (37641832331).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Haumea%20with%20rings%20(37641832331).jpg",
+    "credit": "Haumea with rings",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-21T12:09:32Z",
+    "bodies_iteration": "handsource-zero-survivor-2026-06-21",
+    "query": "Haumea ring artist"
+  },
+  "small-bodies/oumuamua/02": {
+    "commons_file": "Artist impression of interstellar object ‘Oumuamua (54445460199).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist%20impression%20of%20interstellar%20object%20%E2%80%98Oumuamua%20(54445460199).png",
+    "credit": "Artist impression of interstellar object ‘Oumuamua",
+    "license": "cc by-sa 4.0",
+    "fetched_at": "2026-06-21T12:09:36Z",
+    "bodies_iteration": "handsource-zero-survivor-2026-06-21",
+    "query": "Oumuamua interstellar object"
   }
 }

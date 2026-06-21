@@ -1,5 +1,11 @@
 {
   "version": "1.0",
   "source_audit": "(manual curation — populate via /dev/slice-a-review or hand-edit)",
-  "overrides": {}
+  "overrides": {
+    "haumea": {
+      "slot": "03.jpg",
+      "reason": "slot 03 is the canonical artist concept of the elongated body with both moons (Hi'iaka + Namaka); slots 01-02 are supplementary handsource picks",
+      "approved_at": "2026-06-21"
+    }
+  }
 }

@@ -31,25 +31,35 @@ const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 // charts — the exact category of imagery vision-judge would (correctly)
 // reject. Filter on filename before fetch.
 const REJECT_TOKENS = [
-  'compari', 'infograph', 'branded', 'wallpaper', 'chart',
-  'magnitude', 'lightcurve', 'spectrum', 'plot', 'graph',
-  'logo', 'poster', 'banner', 'cover',
+  'compari',
+  'infograph',
+  'branded',
+  'wallpaper',
+  'chart',
+  'magnitude',
+  'lightcurve',
+  'spectrum',
+  'plot',
+  'graph',
+  'logo',
+  'poster',
+  'banner',
+  'cover',
 ];
 
 // Per (body, slot), a list of candidate Commons search queries in
 // priority order. First search returning at least one acceptable
 // candidate wins.
 const TARGETS = [
-  { body: 'eris', slot: '01',
-    queries: ['Eris dwarf planet artist', 'Eris and Dysnomia artist'] },
-  { body: 'eris', slot: '02',
-    queries: ['Eris dwarf planet Hubble', 'Eris and Dysnomia Hubble'] },
-  { body: 'haumea', slot: '01',
-    queries: ['Haumea artist impression', 'Haumea dwarf planet'] },
-  { body: 'haumea', slot: '02',
-    queries: ['Haumea ring artist', 'Haumea ring 2017'] },
-  { body: 'oumuamua', slot: '02',
-    queries: ['Oumuamua artist eso1820', 'Oumuamua interstellar object'] },
+  { body: 'eris', slot: '01', queries: ['Eris dwarf planet artist', 'Eris and Dysnomia artist'] },
+  { body: 'eris', slot: '02', queries: ['Eris dwarf planet Hubble', 'Eris and Dysnomia Hubble'] },
+  { body: 'haumea', slot: '01', queries: ['Haumea artist impression', 'Haumea dwarf planet'] },
+  { body: 'haumea', slot: '02', queries: ['Haumea ring artist', 'Haumea ring 2017'] },
+  {
+    body: 'oumuamua',
+    slot: '02',
+    queries: ['Oumuamua artist eso1820', 'Oumuamua interstellar object'],
+  },
 ];
 
 const MIN_BYTES = 80_000;
@@ -59,8 +69,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function commonsSearch(query) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: `${query} filetype:bitmap`, srnamespace: '6', srlimit: '30', origin: '*',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: `${query} filetype:bitmap`,
+    srnamespace: '6',
+    srlimit: '30',
+    origin: '*',
   });
   const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) return [];
@@ -72,8 +87,12 @@ async function commonsSearch(query) {
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) return null;
@@ -81,7 +100,12 @@ async function commonsImageInfo(filename) {
   const info = page?.imageinfo?.[0];
   if (!info) return null;
   const meta = info.extmetadata ?? {};
-  const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+  const strip = (s) =>
+    String(s)
+      .replace(/<[^>]+>/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 200);
   return {
     size: info.size,
     license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
@@ -103,8 +127,7 @@ function fileTitleAcceptable(filename) {
 
 const imageUrl = (f) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1600`;
-const sourceUrl = (f) =>
-  `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
+const sourceUrl = (f) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
 
 async function downloadAndProcess(url, dir, slot) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
@@ -183,7 +206,8 @@ async function main() {
   heroOverrides.overrides ??= {};
   heroOverrides.overrides.haumea = {
     slot: '03.jpg',
-    reason: 'slot 03 is the canonical artist concept of the elongated body with both moons (Hi\'iaka + Namaka); slots 01-02 are supplementary handsource picks',
+    reason:
+      "slot 03 is the canonical artist concept of the elongated body with both moons (Hi'iaka + Namaka); slots 01-02 are supplementary handsource picks",
     approved_at: '2026-06-21',
   };
 

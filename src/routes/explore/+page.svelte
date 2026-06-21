@@ -4279,7 +4279,9 @@
           simDateLabel = new Intl.DateTimeFormat(dateLocale, {
             year: 'numeric',
             month: 'short',
-            day: 'numeric',
+            // 2-digit day so the string never changes length as the day
+            // ticks 9 → 10 (#351 Layer 2-B) — keeps the chip width stable.
+            day: '2-digit',
           }).format(new Date(simDayIndex * 86_400_000));
         }
 
@@ -5761,6 +5763,12 @@
   .time-date {
     display: inline-flex;
     align-items: center;
+    /* Right-align the date in a fixed-width box so the chip (and the
+       reset button beside it) never shift as the date ticks (#351
+       Layer 2-B). Sized for the widest double-digit string. */
+    justify-content: flex-end;
+    text-align: right;
+    min-width: 108px;
     min-height: 32px;
     padding: 0 9px;
     border: 1px solid rgba(75, 156, 211, 0.25);

@@ -24,7 +24,6 @@
     getBeltGallery,
     getBeltI18n,
     type BeltEntry,
-    type BeltGallerySlot,
     type BeltI18n,
   } from '$lib/data';
 
@@ -52,7 +51,7 @@
 
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
-  let gallery: BeltGallerySlot[] = $state([]);
+  let gallery: string[] = $state([]);
   let overlay: BeltI18n | null = $state(null);
 
   let baseEntry = $derived<BeltEntry | null>(
@@ -164,7 +163,7 @@
 
     {#if gallery.length > 0}
       <div class="panel-hero">
-        <img src={`${base}${gallery[0].src}`} alt="" fetchpriority="high" decoding="async" />
+        <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
       </div>
     {/if}
 
@@ -238,15 +237,9 @@
       {:else if tab === 'gallery'}
         {#if gallery.length > 0}
           <ul class="gallery-grid">
-            {#each gallery as slot (slot.src)}
+            {#each gallery as src (src)}
               <li>
-                <img
-                  src={`${base}${slot.src}`}
-                  alt={slot.caption}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <p class="caption">{slot.caption}</p>
+                <img src={src} alt="" loading="lazy" decoding="async" />
               </li>
             {/each}
           </ul>

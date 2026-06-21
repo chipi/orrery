@@ -304,6 +304,14 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'c4453604', // smart-1/04 cross-surface (ESA: packed for launch)
   'fdc8e325', // smart-1/05 cross-surface (ESA: solar panels deployed)
 
+  // ALLOWLIST_AUTHORIZED (2026-06-21) — belts panel re-curation.
+  // Same NASA artist concept can legitimately represent both asteroid
+  // and Kuiper belt structures (e.g. generic "small body system" art).
+  // Marko will de-duplicate visually in /explore app review.
+  '0a066c4d', // belts/asteroid/01 + kuiper/03 (Altjira system artist concept)
+  '029bb16e', // belts/asteroid/02 + kuiper/02 (Kuiper Belt artist concept 2014)
+  '8bf77658', // belts/asteroid/03 + kuiper/05 (Comet 238P-Read artist concept)
+
   'eada8e1c', // fleet-galleries/a7l/03,04,05 (A7L spacesuit gallery)
   '702fcc41', // fleet-galleries/aces/02,03,04,05 (ACES suit gallery)
   '78248fa6', // fleet-galleries/cygnus-standard/02,03,05 (Cygnus fleet)

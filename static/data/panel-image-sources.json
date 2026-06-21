@@ -2393,5 +2393,139 @@
       "verdict": "related",
       "confidence": 0.92
     }
+  },
+  "sun/04": {
+    "commons_file": "Full disk of the Sun (eso1703e-comparisona).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Full%20disk%20of%20the%20Sun%20(eso1703e-comparisona).jpg",
+    "credit": "This media was produced by the European Southern Observatory (ESO), under the identifier eso1703e-comparisona This tag does not indicate the copyright status of the attached work. A normal copyright t",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-21T08:32:25Z",
+    "bodies_iteration": "sun-replace-2026-06-21",
+    "query": "Sun Solar Dynamics Observatory SDO full disk",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "sun/05": {
+    "commons_file": "446667main1 sdo-fulldisk-670.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:446667main1%20sdo-fulldisk-670.jpg",
+    "credit": "NASA [1]",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:32:25Z",
+    "bodies_iteration": "sun-replace-2026-06-21",
+    "query": "Sun Solar Dynamics Observatory SDO full disk",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "belts/asteroid/01": {
+    "commons_file": "The Altjira system (artist’s concept) (opo2507).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+    "credit": "The Altjira system (artist’s concept)",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-21T08:42:43Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/asteroid/02": {
+    "commons_file": "14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+    "credit": "http://www.nasa.gov/sites/default/files/14-281_0.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:42:44Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/asteroid/03": {
+    "commons_file": "Artist's Concept of Comet 238P-Read (2023-123).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist's%20Concept%20of%20Comet%20238P-Read%20(2023-123).jpg",
+    "credit": "Artist's Concept of Comet 238P/Read",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:42:45Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/asteroid/04": {
+    "commons_file": "Alien Asteroid Belt Compared to our Own.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Alien%20Asteroid%20Belt%20Compared%20to%20our%20Own.jpg",
+    "credit": "http://planetquest.jpl.nasa.gov/image/30",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:42:48Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/asteroid/05": {
+    "commons_file": "PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104.jpg",
+    "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA22190.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:42:49Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/asteroid/06": {
+    "commons_file": "PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104 (cropped).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA22190-NewHorizonEncountersAsteroid-2014MU69-ArtistConcept-20180104%20(cropped).jpg",
+    "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA22190.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:42:50Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "asteroid belt artist concept"
+  },
+  "belts/kuiper/01": {
+    "commons_file": "Smallest Kuiper Belt Object.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Smallest%20Kuiper%20Belt%20Object.jpg",
+    "credit": "NASA Image of the DaySee also: Hubble Finds Smallest Kuiper Belt Object Ever Seen (Hubblesite 2009-12-16)",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:43:04Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
+  },
+  "belts/kuiper/02": {
+    "commons_file": "14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:14-281-KuiperBeltObject-ArtistsConcept-20141015.jpg",
+    "credit": "http://www.nasa.gov/sites/default/files/14-281_0.jpg",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:43:04Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
+  },
+  "belts/kuiper/03": {
+    "commons_file": "The Altjira system (artist’s concept) (opo2507).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Altjira%20system%20(artist%E2%80%99s%20concept)%20(opo2507).jpg",
+    "credit": "The Altjira system (artist’s concept)",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-21T08:43:05Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
+  },
+  "belts/kuiper/04": {
+    "commons_file": "2006-16-a-full-1-.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:2006-16-a-full-1-.jpg",
+    "credit": "Hubblesite STScI-2006-16To see a real image of Eris: Hubble Space Telescope image of Eris",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-21T08:43:06Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
+  },
+  "belts/kuiper/05": {
+    "commons_file": "Artist's Concept of Comet 238P-Read (2023-123).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Artist's%20Concept%20of%20Comet%20238P-Read%20(2023-123).jpg",
+    "credit": "Artist's Concept of Comet 238P/Read",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:43:07Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
+  },
+  "belts/kuiper/06": {
+    "commons_file": "New Horizons Looking Back Towards Uranus (Artist's Concept) (2024-033).jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:New%20Horizons%20Looking%20Back%20Towards%20Uranus%20(Artist's%20Concept)%20(2024-033).jpg",
+    "credit": "New Horizons Looking Back Towards Uranus (Artist's Concept)",
+    "license": "public domain",
+    "fetched_at": "2026-06-21T08:43:08Z",
+    "bodies_iteration": "belts-structure-curate-2026-06-21",
+    "query": "Kuiper Belt artist concept"
   }
 }

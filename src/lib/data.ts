@@ -1015,14 +1015,18 @@ export async function getBelts(): Promise<BeltEntry[]> {
  * Eris + Haumea + Makemake for the Kuiper Belt) so the gallery
  * doubles as a tour of the belt's giants without duplicating assets.
  */
+/** Kept as a re-export for any callers that still import the type
+ *  (e.g. older overlay code); the field is no longer used now that
+ *  the belt manifest is a flat {id: count} map matching other
+ *  *-galleries.json shapes and captions are gone. */
 export type BeltGallerySlot = { src: string; caption: string };
-export async function getBeltGallery(beltId: string): Promise<BeltGallerySlot[]> {
-  try {
-    const data = await get<{ galleries: Record<string, BeltGallerySlot[]> }>('belt-galleries.json');
-    return data.galleries?.[beltId] ?? [];
-  } catch {
-    return [];
-  }
+
+/** Belt gallery (asteroid + kuiper). Reads belt-galleries.json which
+ *  was reshaped 2026-06-21 from { galleries: { asteroid: [{src,caption}] } }
+ *  to a flat { asteroid: N, kuiper: N } count map matching the other
+ *  gallery manifests. Images live under static/images/belts/<beltId>/ */
+export async function getBeltGallery(beltId: string): Promise<string[]> {
+  return getCategoryGallery('belts', 'belt-galleries.json', beltId);
 }
 
 /**

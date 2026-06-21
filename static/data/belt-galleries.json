@@ -1,44 +1,4 @@
 {
-  "_meta": {
-    "description": "Belt galleries — curated NASA imagery presented as portraits of each belt's largest members. Reuses existing small-body imagery (under static/images/small-bodies/) rather than duplicating files. Caption per slot tells the user which body they're looking at so the gallery reads as a tour of the belt's catalogued giants.",
-    "last_updated": "2026-06-06"
-  },
-  "galleries": {
-    "asteroid": [
-      {
-        "src": "/images/small-bodies/ceres/01.jpg",
-        "caption": "Ceres — the largest body in the asteroid belt, photographed by NASA Dawn from its 1,470 km mapping orbit. Diameter ≈ 940 km."
-      },
-      {
-        "src": "/images/small-bodies/ceres/02.jpg",
-        "caption": "Occator Crater on Ceres — the bright spots are sodium-carbonate salt deposits, evidence of a subsurface brine ocean."
-      },
-      {
-        "src": "/images/small-bodies/ceres/03.jpg",
-        "caption": "Ahuna Mons on Ceres — a 4-km-tall cryovolcano, the only one yet identified on a dwarf planet."
-      }
-    ],
-    "kuiper": [
-      {
-        "src": "/images/small-bodies/pluto/01.jpg",
-        "caption": "Pluto — New Horizons portrait from 450,000 km, July 2015. Sputnik Planitia (the heart-shaped nitrogen-ice plain) dominates the encounter hemisphere."
-      },
-      {
-        "src": "/images/small-bodies/pluto/02.jpg",
-        "caption": "Pluto's atmosphere backlit by the Sun — nitrogen haze layers stretching ~200 km above the surface."
-      },
-      {
-        "src": "/images/small-bodies/eris/01.jpg",
-        "caption": "Eris — slightly more massive than Pluto. Its 2005 discovery triggered the IAU's 2006 definition of 'dwarf planet'."
-      },
-      {
-        "src": "/images/small-bodies/haumea/01.jpg",
-        "caption": "Haumea — the most elongated known Kuiper-Belt object. Rapid rotation (3.9 h) stretches it to ≈ 2,322 × 1,704 × 1,026 km."
-      },
-      {
-        "src": "/images/small-bodies/makemake/01.jpg",
-        "caption": "Makemake — fourth-largest known KBO, surface dominated by methane ice; the only one of the classical-KBO 'big four' with a known moon (S/2015 (136472) 1)."
-      }
-    ]
-  }
+  "asteroid": 6,
+  "kuiper": 6
 }

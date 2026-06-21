@@ -37,6 +37,10 @@ const SURFACES: Array<{ label: string; imageDir: string; manifest: string }> = [
   { label: 'earth-object-galleries', imageDir: 'earth-objects', manifest: 'earth-object-galleries.json' },
   { label: 'moon-site-galleries', imageDir: 'moon-sites', manifest: 'moon-site-galleries.json' },
   { label: 'mars-site-galleries', imageDir: 'mars-sites', manifest: 'mars-site-galleries.json' },
+  // Belts: 2026-06-21 — schema flipped from {galleries:{asteroid:[{src,caption}]}}
+  // to flat {asteroid: N, kuiper: N} matching the other gallery manifests.
+  // Walker counts disk files under static/images/belts/<beltId>/.
+  { label: 'belt-galleries', imageDir: 'belts', manifest: 'belt-galleries.json' },
 ];
 
 const VARIANT_SUFFIX = /\.(1x1|4x3|16x9)\.jpg$/i;

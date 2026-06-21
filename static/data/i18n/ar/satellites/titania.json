@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — نظرة عامة على Titania",
     "titania-voyager2": "NASA Voyager 2 — صور منظومة أورانوس"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "تايتانيا هي أكبر أقمار أورانوس (قطرها 1,578 كم) — وحجمها مماثل لبلوتو. فقط Voyager 2 صورتها (1986)."
+    }
+  ]
 }

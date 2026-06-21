@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — Ariel सारांश",
     "ariel-voyager2": "NASA Voyager 2 — Uranian-system इमेजरी"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "एरिएल यूरेनस से 190,900 किमी की दूरी पर परिक्रमा करता है — प्रमुख चंद्रमाओं में दूसरा सबसे अंदरूनी। सभी यूरेनियन चंद्रमाओं की तरह, इसकी कक्षा ग्रह के 97° अक्षीय झुकाव को साझा करती है।"
+    }
+  ]
 }

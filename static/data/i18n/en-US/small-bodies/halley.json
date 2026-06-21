@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Halley's 0.967 eccentricity is the textbook short-period-comet orbit — nearly parabolic, with perihelion 0.59 AU and aphelion 35 AU."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Halley's enormous perihelion-aphelion swing (35 to 0.59 AU) drives the surface ices to sublimate violently near perihelion, producing the coma and tail. Next perihelion: 2061."
+    }
+  ]
+}

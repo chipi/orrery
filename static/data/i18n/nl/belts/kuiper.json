@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — Kuipergordel overzicht",
     "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth scheervluchten",
     "kuiper-belt-mpc": "Minor Planet Center — TNO catalogus"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "De Kuiper Belt is het trans-Neptuniaanse overblijfsel van de protoplanetaire schijf — 30 tot 50 AU, gedomineerd door ijs. Pluto, Eris, Haumea, Makemake bevinden zich hier."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "De klassieke KBO's draaien tussen 42 en 48 AU in banen met lage excentriciteit en lage inclinatie — zij zijn sinds het vroege stelsel grotendeels ongestoord gebleven."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "De scattered-disc subpopulatie (Eris, Sedna) bevindt zich op hoge inclinaties (30°+) — zwaartekrachtig verstrooid door Neptunus' uitwaartse migratie en momenteel de belt verticaal spreiding."
+    }
+  ]
 }

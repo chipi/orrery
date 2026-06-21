@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — overzicht van Ganymedes",
     "ganymede-juice": "ESA JUICE — Ganymedes-orbitermissie",
     "ganymede-magfield": "NASA Galileo — ontdekking van het magnetisch veld van Ganymedes"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganymede is de enige maan in het zonnestelsel met een eigen, intern gegenereerd magnetisch veld — geproduceerd door een ijzerrijke kern ingebed in Jupiters magnetosfeer."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Buitenlid van de 4:2:1 Laplace-resonantie met Io en Europa — de stabiliteit van Ganymede verankert het gehele binnenste Galileïsche systeem."
+    }
+  ]
 }

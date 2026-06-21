@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — panoramica Fascia di Kuiper",
     "kuiper-belt-newhorizons": "NASA New Horizons — sorvoli di Pluto + Arrokoth",
     "kuiper-belt-mpc": "Minor Planet Center — catalogo TNO"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 AU, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "I KBO classici orbitano tra 42 e 48 AU su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La sottopopolazione del disco disperso (Eris, Sedna) si trova ad alte inclinazioni (30°+) — gravitazionalmente dispersa dalla migrazione esterna di Nettuno e attualmente estende la fascia verticalmente."
+    }
+  ]
 }

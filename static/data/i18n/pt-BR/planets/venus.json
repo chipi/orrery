@@ -29,5 +29,27 @@
       "u": "https://www.nature.com/articles/s41550-019-0930-9",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Vênus rotaciona retrógrada com inclinação axial de 177° — efetivamente de cabeça para baixo. Combinada com rotação sideral de 243 dias, seu dia é mais longo que seu ano de 225 dias."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "A órbita planetária mais circular do sistema (e = 0,0068) — Vênus se move ao redor do Sol como um anel quase perfeito."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Vênus tem o efeito estufa mais extremo: temperaturas de superfície permanecem ~460°C dia e noite, portanto a distinção sub-solar / terminador importa menos que em qualquer outro planeta."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) é o único orbitador ativo de Vênus; a campanha soviética Venera (1961–83) ainda possui as únicas imagens de superfície já obtidas."
+    }
   ]
 }

@@ -4,10 +4,57 @@
   "fact": "Jupiter's gravity sculpted the asteroid belt — preventing a fifth rocky planet. Without it, Mars would be far larger.",
   "bio": "Rotates in just 10 hours despite its enormous size, creating powerful magnetic fields. More massive than all other planets combined.",
   "links": [
-    { "l": "Jupiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
-    { "l": "Jupiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
-    { "l": "Juno mission (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
-    { "l": "Galilean moons — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
-    { "l": "Jupiter's deep interior (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+    {
+      "l": "Jupiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "Jupiter (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Juno mission (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Galilean moons — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "Jupiter's deep interior (Nature 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Jupiter has 95 confirmed moons — the four Galileans (Io, Europa, Ganymede, Callisto) are each worlds in their own right and trace a 1:2:4 orbital resonance."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Jupiter's magnetosphere is the largest planetary structure in the solar system — extending past Saturn's orbit on the anti-sunward side."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Jupiter is the favoured gravity-assist target for outer-system missions — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper and JUICE all used or use a Jovian flyby for velocity gain."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "Jupiter's vast Hill sphere (50 million km radius) is what makes its 95-moon system stable — the gravitational well extends nearly to Mars at perihelion."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) is currently in polar orbit; Europa Clipper (NASA) and JUICE (ESA) are en route — orbital arrival at Ganymede 2034."
+    }
   ]
 }

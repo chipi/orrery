@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — преглед Ariel",
     "ariel-voyager2": "NASA Voyager 2 — снимци система Урана"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ганимед се креће на орбити на 190.900 км од Урана — други унутрашњи од главних месеци. Као сви месеци Урана, његова орбита дели наклоњеност осе планете од 97°."
+    }
+  ]
 }

@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon преглед",
     "oberon-voyager2": "NASA Voyager 2 — Uranian-system снимци"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Оберон је спољашња од пет великих месеци Урана (583,500 km орбита) — његова површина је најкратерисанија, што указује да има најстарију изложену површину у систему Урана."
+    }
+  ]
 }

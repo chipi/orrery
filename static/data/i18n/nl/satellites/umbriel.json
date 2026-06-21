@@ -8,5 +8,12 @@
     "umbriel-wiki": "Wikipedia — Umbriel",
     "umbriel-nasa": "NASA Science — Umbriel-overzicht",
     "umbriel-voyager2": "NASA Voyager 2 — Uranus-systeembeelden"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Umbriel omloopt Uranus op 266.000 km — zijn baanvlak helt mee met de planeet, dus zijn seizoenen spiegelen de extreme axiale geometrie van de moederplaneet."
+    }
+  ]
 }

@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — 이오 개요",
     "io-juno": "NASA Juno — 이오 최근 근접 비행",
     "io-volcanism": "USGS — 이오 화산 지형 카탈로그"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede는 4:2:1 라플라스 공명에 갇혀 있다 — Io가 4번 공전할 때마다 Europa는 2번, Ganymede는 1번 공전한다. 이 공명은 Io의 궤도를 비원형으로 유지한다."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Io의 조석 가열(태양계에서 가장 화산 활동이 활발한 천체로 만드는)은 강제 이심률에서 비롯되며 — Europa와 Ganymede가 라플라스 공명을 통해 주입한다."
+    }
+  ]
 }

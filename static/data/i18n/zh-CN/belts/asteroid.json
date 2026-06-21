@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — 小行星带概述",
     "asteroid-belt-dawn": "NASA Dawn — Vesta 和 Ceres 环绕探测器",
     "asteroid-belt-mpc": "Minor Planet Center — IAU 已知小行星目录"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "主带：火星和木星之间约 1–2 百万个天体，总质量约为月球的 4%。木星的轨道共振清空了该带——自那以来碎裂作用战胜了吸积作用。"
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "该带占据 2.2–3.2 AU 的环形区域。柯克伍德间隙——木星平均运动共振处的空轨道区——规定了该区域的天体分布格局。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "大多数主带小行星靠近黄道（< 10° 倾角），但倾角为 33° 的高倾角智神星族提醒你主带是一个三维圆盘，而非二维环。"
+    }
+  ]
 }

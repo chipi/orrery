@@ -4,10 +4,52 @@
   "fact": "表面大气压约为地球的 90 倍。苏联金星号着陆器在损毁前仅工作 23–127 分钟。",
   "bio": "逆向自转——自转极慢，一个金星日比金星年还长。自转轴倾角约 177.4°，使金星几乎“上下颠倒”。",
   "links": [
-    { "l": "金星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
-    { "l": "金星（NASA 太阳系探索）", "u": "https://science.nasa.gov/venus/", "t": "intro" },
-    { "l": "金星计划 — 维基百科", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
-    { "l": "DAVINCI + VERITAS（NASA）", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
-    { "l": "失控温室效应（Nature Astronomy 2020）", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+    {
+      "l": "金星 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "金星（NASA 太阳系探索）",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "金星计划 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITAS（NASA）",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "失控温室效应（Nature Astronomy 2020）",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "金星以177°的轴倾斜逆向自转——实际上是倒立的。结合243天的恒星自转周期，其一天比225天的年份更长。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "太阳系中最圆形的行星轨道（e = 0.0068）——金星绕太阳运行，几乎呈完美圆环。"
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "金星拥有最极端的温室效应：表面温度日夜都保持在~460°C，因此向日面与晨昏线的区别比任何其他行星都要小。"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki（JAXA，2015–）是唯一活跃的金星轨道器；苏联Venera项目（1961–83）仍保有迄今仅有的表面图像。"
+    }
   ]
 }

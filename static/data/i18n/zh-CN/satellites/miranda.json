@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda 概述",
     "miranda-voyager2": "NASA Voyager 2 — 唯一的天王星系统飞掠 (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda 在天王星主要卫星中具有最高的轨道倾角（4.3°）——结合早期系统扰动事件，这解释了 Voyager 2 在 1986 年拍摄的著名悬崖地貌。"
+    }
+  ]
 }

@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/nature25775",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Júpiter tem 95 luas confirmadas — as quatro galileanas (Io, Europa, Ganimedes, Calisto) são mundos por direito próprio e traçam uma ressonância orbital 1:2:4."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "A magnetosfera de Júpiter é a maior estrutura planetária do sistema solar — estendendo-se além da órbita de Saturno no lado anti-solar."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Júpiter é o alvo preferido de assistência gravitacional para missões do sistema externo — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper e JUICE todas usaram ou usam um sobrevoo joviano para ganho de velocidade."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "A vasta esfera de Hill de Júpiter (raio de 50 milhões km) é o que torna seu sistema de 95 luas estável — o poço gravitacional estende-se quase até Marte no periélio."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) está atualmente em órbita polar; Europa Clipper (NASA) e JUICE (ESA) estão a caminho — chegada orbital em Ganimedes 2034."
+    }
   ]
 }

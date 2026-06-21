@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — aperçu de Miranda",
     "miranda-voyager2": "NASA Voyager 2 — seul survol du système uranien (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda possède l'inclinaison orbitale la plus élevée (4,3°) parmi les grandes lunes d'Uranus — combinée à un événement de perturbation précoce du système, cela explique les célèbres falaises que Voyager 2 a photographiées en 1986."
+    }
+  ]
 }

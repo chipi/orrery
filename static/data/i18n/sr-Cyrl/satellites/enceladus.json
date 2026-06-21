@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — преглед Enceladus-а",
     "enceladus-cassini": "NASA Cassini — архива наслеђа пролета кроз млаз",
     "enceladus-habitability": "Astrobiology — Enceladus као циљ потраге за животом"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Енцелад је у резонанцији средње орбиталне кретње 2:1 са Дионом — присилна експцентричност (0.0047) покреће плимно савијање које напаја јужнополарне крiovулканске млазове."
+    }
+  ]
 }

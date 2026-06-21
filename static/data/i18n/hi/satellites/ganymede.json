@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — गैनिमीड अवलोकन",
     "ganymede-juice": "ESA JUICE — गैनिमीड ऑर्बिटर मिशन",
     "ganymede-magfield": "NASA Galileo — गैनिमीड चुंबकीय-क्षेत्र की खोज"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "गैनिमीड सौर मंडल का एकमात्र चंद्रमा है जिसका अपना आंतरिक रूप से उत्पादित चुंबकीय क्षेत्र है — जो Jupiter के magnetosphere में निहित एक लौह-समृद्ध core द्वारा उत्पादित है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io और Europa के साथ 4:2:1 Laplace resonance का बाहरी सदस्य — Ganymede की स्थिरता पूरे आंतरिक-Galilean system को स्थिर रखती है।"
+    }
+  ]
 }

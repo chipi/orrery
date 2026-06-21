@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charon सारांश",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charon उड़ान (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "चेरॉन और प्लूटो एक बैरीसेंटर की परिक्रमा करते हैं जो प्लूटो के बाहर स्थित है — जिससे यह सौर मंडल में एकमात्र ज्ञात सच्ची द्विआकाशीय प्रणाली है, न कि ग्रह-के-साथ-चंद्रमा।"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "चेरॉन की प्लूटो से 19,591-km माध्य दूरी, पारस्परिक ज्वारीय लॉकिंग के साथ मिलकर, दोनों पिंडों को हमेशा एक-दूसरे को एक ही चेहरा दिखाता है।"
+    }
+  ]
 }

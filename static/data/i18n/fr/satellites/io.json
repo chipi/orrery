@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — Io, aperçu",
     "io-juno": "NASA Juno — survols rapprochés récents d'Io",
     "io-volcanism": "USGS — catalogue des structures volcaniques d'Io"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymède sont verrouillés dans une résonance de Laplace 4:2:1 — pour 4 orbites d'Io, Europa en fait 2 et Ganymède 1. La résonance maintient l'orbite d'Io non-circulaire."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Le chauffage par marée d'Io (qui en fait le monde le plus volcaniquement actif du système solaire) provient d'une excentricité forcée — entretenue par Europa et Ganymède via la résonance de Laplace."
+    }
+  ]
 }

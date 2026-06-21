@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — Io overview",
     "io-juno": "NASA Juno — recent close flybys of Io",
     "io-volcanism": "USGS — Io volcanic feature catalog"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede are locked in a 4:2:1 Laplace resonance — for every 4 Io orbits, Europa makes 2 and Ganymede 1. The resonance keeps Io's orbit non-circular."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Io's tidal heating (which makes it the most volcanically active world in the solar system) comes from forced eccentricity — pumped by Europa and Ganymede through the Laplace resonance."
+    }
+  ]
 }

@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — преглед Европе",
     "europa-clipper": "NASA Europa Clipper — страница мисије",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Европа је средишњи члан резонанције Ио–Европа–Ганимед 4:2:1 Лапласа — њена приморана екцентричност покреће плимску флексију која одржава подземни океан течним."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Европина мала екцентричност од 0,009 је приморана Иовим пертурбацијама — без ње би подземни океан замрзнуо. Europa Clipper (NASA, 2024–) је у покретању да га проучава."
+    }
+  ]
 }

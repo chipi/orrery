@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "베스타는 소행성대에서 두 번째로 거대한 천체입니다 — 그 표면은 지구에서 발견되는 HED 운석의 유일한 메인 벨트 출처입니다."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "베스타는 2.36 AU에서 공전합니다 — 내부 벨트입니다. 그 근접성이 Dawn이 먼저 베스타를 방문(2011)한 후 세레스로 떠나기(2015) 위해 방문하도록 했습니다."
+    }
+  ]
+}

@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Callisto",
     "callisto-nasa": "NASA Science — Callisto overzicht",
     "callisto-galileo": "NASA Galileo nalatenschapsarchief"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Callisto beweegt in een baan buiten de Laplace-resonantie — zijn semi-grote as van 1,88 miljoen km plaatst het buiten de ergste stralingsgordels van Jupiter, wat het de meest ruimtevaartuig-vriendelijke Galileaanse maan maakt."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Callisto's excentriciteit van 0,007 is klein en niet afgedwongen — zonder resonante pompwerking, geen getijdenvervorming, geen onderzeese oceaan (waarschijnlijk niet)."
+    }
+  ]
 }

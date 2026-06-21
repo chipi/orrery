@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — aperçu d'Europe",
     "europa-clipper": "NASA Europa Clipper — site de la mission",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Europa est le membre central de la résonance de Laplace 4:2:1 Io–Europa–Ganymède — son excentricité forcée provoque les flexions de marée qui maintiennent liquide l'océan subsurface."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La minuscule excentricité de 0,009 d'Europa est forcée par les perturbations d'Io — sans elle, l'océan subsurface gèlerait. Europa Clipper (NASA, 2024–) est en cours de lancement pour l'étudier."
+    }
+  ]
 }

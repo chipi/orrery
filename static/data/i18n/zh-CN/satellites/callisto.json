@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — 木卫四",
     "callisto-nasa": "NASA Science — 木卫四概述",
     "callisto-galileo": "NASA Galileo 任务遗产档案"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "木卫四绕行在拉普拉斯共振之外——其188万公里的半长轴将其置于木星辐射带最强区域之外，使其成为对航天器最友好的伽利略卫星。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "木卫四的离心率为0.007，很小且无外力驱动——没有共振泵浦、没有潮汐变形、可能没有地下海洋。"
+    }
+  ]
 }

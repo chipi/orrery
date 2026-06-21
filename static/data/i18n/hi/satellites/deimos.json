@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos अवलोकन",
     "deimos-mrohirise": "HiRISE — मंगल-कक्षा छायांकन में Deimos"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "डीमोस मंगल का बाहरी चंद्रमा है (23,460 km) — इसकी कक्षीय अवधि (1.26 d) मंगल के दिन से अधिक है, इसलिए ज्वारीय बल इसे धीरे-धीरे बाहर की ओर धकेल रहे हैं।"
+    }
+  ]
 }

@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Callisto",
     "callisto-nasa": "NASA Science — Callisto अवलोकन",
     "callisto-galileo": "NASA Galileo विरासत संग्रह"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Callisto Laplace resonance के बाहर परिक्रमा करता है — इसकी 1.88-million-km अर्ध-दीर्घ अक्ष इसे Jupiter के विकिरण बेल्टों के सबसे गंभीर भाग से परे रखती है, जो इसे सबसे अंतरिक्ष-यान-अनुकूल Galilean बनाती है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Callisto की 0.007 विकेंद्रता छोटी और अप्रभावित है — resonant pumping के बिना, कोई tidal flexing नहीं, कोई subsurface ocean नहीं (संभवतः)।"
+    }
+  ]
 }

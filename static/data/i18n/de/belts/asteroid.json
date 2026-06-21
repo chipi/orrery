@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — Asteroidengürtel Überblick",
     "asteroid-belt-dawn": "NASA Dawn — Orbiter bei Vesta und Ceres",
     "asteroid-belt-mpc": "Minor Planet Center — IAU-Katalog aller bekannten Asteroiden"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "Der Hauptgürtel: ~1–2 Millionen Körper zwischen Mars und Jupiter, Gesamtmasse ≈ 4 % des Mondes. Jupiters Resonanzen räumten den Gürtel — Fragmentierung hat seit damals gegen Akkretion gewonnen."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "Der Gürtel erstreckt sich über die 2,2–3,2 AU Annulus. Kirkwood-Lücken — leere Umlaufbahnen bei Jupiter-Mittelbewegungs-Resonanzen — prägen die Bevölkerung."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Die meisten Hauptgürtel-Asteroiden bleiben nahe der Ekliptik (< 10° Inklination), aber die hochgeneigte Pallas-Familie bei 33° erinnert daran, dass der Gürtel eine 3-D-Scheibe ist, keine 2-D-Ringe."
+    }
+  ]
 }

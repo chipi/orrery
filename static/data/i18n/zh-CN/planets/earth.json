@@ -4,10 +4,57 @@
   "fact": "人类历史上所有人都生活在这里。作为衡量所有其他轨道的参考。",
   "bio": "23.44° 自转轴倾角形成季节——与距日远近无关。一月份地球其实比七月份更靠近太阳。",
   "links": [
-    { "l": "地球 — 维基百科", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
-    { "l": "地球（NASA 太阳系探索）", "u": "https://science.nasa.gov/earth/", "t": "intro" },
-    { "l": "地球观测系统（NASA）", "u": "https://eospso.nasa.gov/", "t": "core" },
-    { "l": "为什么地球有季节（NASA Climate Kids）", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
-    { "l": "暗淡蓝点 — 卡尔·萨根（行星学会）", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+    {
+      "l": "地球 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "地球（NASA 太阳系探索）",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "地球观测系统（NASA）",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "为什么地球有季节（NASA Climate Kids）",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "暗淡蓝点 — 卡尔·萨根（行星学会）",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "天文单位是地球与太阳的平均距离——地球是太阳系每一个测量的标准尺度。"
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "地球的轨道定义了黄道面。其他所有行星的倾角都相对于这个参考面测量。"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "地球23.4°的倾角是教科书式的季节机制——昼夜平分点和至日直接源于自转轴与轨道面之间的夹角。"
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "每个火星发射窗口——每26个月一次——都是一次地球出发的霍曼转移轨道。梯子从这里出发。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "月球相对其母星来说大小异常——直径与地球的比值≈0.27——是所有行星–卫星对中最大的。"
+    }
   ]
 }

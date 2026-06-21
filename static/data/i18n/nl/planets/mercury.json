@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/s41561-019-0405-8",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "De excentriciteit van Mercurius (0,206) is de hoogste van de 8 planeten — bij perihelium lijkt de Zon 1,5× groter aan zijn hemel dan bij aphelium."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "De perihelium-aphelium-variatie (46–70 miljoen km) veroorzaakt grote verschillen in zonnestralingsflux — het oppervlak van Mercurius warmt en koelt meer op dan enig ander planeet."
+    },
+    {
+      "tab": "orbits",
+      "section": "vis-viva",
+      "why": "De vis-viva-vergelijking toont aan dat Mercurius bij perihelium sterk versnelt en bij aphelium vertraagt — een schommeling van 12 km/s."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "De axiale kantelingshoek van Mercurius is vrijwel nul (0,034°), zodat de bodems van poolkraters nooit zonlicht zien — en waterijs kan daar overleven ondanks de hitte van de planeet."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Drie missies bestrijken Mercurius-verkenning: Mariner 10 (1974), MESSENGER (2011–15), en BepiColombo (baanopname eind 2026)."
+    }
   ]
 }

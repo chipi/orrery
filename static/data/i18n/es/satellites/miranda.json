@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — resumen de Miranda",
     "miranda-voyager2": "NASA Voyager 2 — único sobrevuelo del sistema de Urano (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda tiene la inclinación orbital más alta (4.3°) de las lunas principales de Urano — combinado con un evento de disrupción del sistema temprano, explica los acantilados famosos que Voyager 2 fotografió en 1986."
+    }
+  ]
 }

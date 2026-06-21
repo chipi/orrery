@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "The Kuiper Belt is the trans-Neptunian remnant of the protoplanetary disc — 30 to 50 AU, dominated by ice. Pluto, Eris, Haumea, Makemake live here."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "The classical KBOs orbit between 42 and 48 AU in low-eccentricity, low-inclination orbits — they have been mostly undisturbed since the early system."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "The scattered-disc subpopulation (Eris, Sedna) sits at high inclinations (30°+) — gravitationally scattered by Neptune's outward migration and currently spreading the belt vertically."
+    }
+  ]
+}

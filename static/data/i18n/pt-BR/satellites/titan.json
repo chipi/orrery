@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — visão geral de Titã",
     "titan-dragonfly": "NASA Dragonfly — missão de aeronave rotativa nuclear para Titã",
     "titan-huygens": "ESA Huygens — primeiro pouso em uma lua que não a nossa"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titã está em ressonância de rotação orbital 1:1 com Saturno — sempre mostra a mesma face. Seu semieixo maior de 1,22 milhão de km a coloca próximo à esfera de Hill externa de Saturno."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titã possui uma densa atmosfera N₂-CH₄ — a única lua com uma. As temperaturas da superfície chegam a 94 K, onde metano e etano existem como lagos líquidos."
+    }
+  ]
 }

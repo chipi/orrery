@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — visão geral de Oberon",
     "oberon-voyager2": "NASA Voyager 2 — imagens do sistema uraniano"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Oberon é a mais externa das cinco luas uranianas maiores (órbita de 583,500 km) — sua superfície é a mais cratarizada, sugerindo que possui a superfície exposta mais antiga do sistema de Urano."
+    }
+  ]
 }

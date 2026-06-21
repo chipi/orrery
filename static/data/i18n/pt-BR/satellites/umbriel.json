@@ -8,5 +8,12 @@
     "umbriel-wiki": "Wikipedia — Umbriel",
     "umbriel-nasa": "NASA Science — panorama de Umbriel",
     "umbriel-voyager2": "NASA Voyager 2 — imagens do sistema uraniano"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Umbriel orbita Urano a 266,000 km — seu plano orbital é inclinado com o planeta, portanto suas estações refletem a geometria axial extrema do corpo primário."
+    }
+  ]
 }

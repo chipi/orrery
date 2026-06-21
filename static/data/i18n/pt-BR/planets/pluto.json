@@ -1,0 +1,29 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "A excentricidade de 0.249 de Plutão é tão alta que sua órbita mergulha dentro da de Netuno por 20 anos a cada ciclo de 248 anos (1979–1999 foi o último intervalo desse tipo)."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "A inclinação orbital de 17.2° de Plutão é a mais alta de qualquer planeta ou planeta-anão comumente reconhecido — bem acima da eclíptica onde os gigantes gasosos residem."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Periélio 29.7 AU versus afélio 49.3 AU — uma variação de 20 AU significa que as temperaturas de superfície variam o suficiente para a atmosfera de Plutão se espessar perto do periélio e congelar perto do afélio."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Plutão e Caronte estão bloqueados por maré um ao outro — ambos os períodos de rotação igualam o período orbital mútuo de 6.4 dias. O par é tratado como um verdadeiro binário em muita literatura moderna."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Plutão é o maior membro do Cinturão de Kuiper — sua descoberta em 1930 precedeu o conceito do cinturão por 60 anos."
+    }
+  ]
+}

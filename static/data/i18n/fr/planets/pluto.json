@@ -1,0 +1,29 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'excentricité orbitale de Pluton de 0,249 est si élevée que son orbite pénètre dans celle de Neptune pendant 20 ans par cycle de 248 ans (1979–1999 était le dernier intervalle)."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinaison orbitale de 17,2° de Pluton est la plus élevée de toute planète ou planète naine communément reconnue — bien au-dessus de l'écliptique où résident les géantes gazeuses."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Périhélie 29,7 UA contre aphélie 49,3 UA — une variation de 20 UA signifie que les températures de surface varient suffisamment pour que l'atmosphère de Pluton s'épaississe près du périhélie et gèle près de l'aphélie."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Pluton et Charon sont verrouillés par les marées l'un à l'autre — leurs deux périodes de rotation égalent la période orbitale mutuelle de 6,4 jours. La paire est traitée comme un vrai binaire dans la littérature moderne."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluton est le plus grand membre de la Ceinture de Kuiper — sa découverte en 1930 a précédé le concept de ceinture de 60 ans."
+    }
+  ]
+}

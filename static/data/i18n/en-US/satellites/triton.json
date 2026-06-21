@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton overview",
     "triton-voyager2": "NASA Voyager 2 — Neptune-system encounter (1989)",
     "triton-trident": "Trident — proposed Discovery-class Triton flyby"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Triton's 156.8° orbital inclination — retrograde, steeply tilted to Neptune's equator — is the smoking-gun for capture from the Kuiper Belt rather than formation with Neptune."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Triton's tidal drag is decreasing its orbit — in 3.6 billion years it will either impact Neptune or fragment inside the Roche limit and form a ring system."
+    }
+  ]
 }

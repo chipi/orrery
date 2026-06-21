@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Calisto",
     "callisto-nasa": "NASA Science — Calisto: panorámica",
     "callisto-galileo": "NASA — Archivo histórico de Galileo"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Calisto orbita fuera de la resonancia de Laplace — su semieje mayor de 1,88 millones de km la sitúa más allá de los peores cinturones de radiación de Júpiter, lo que la convierte en la galileana más amigable para las naves espaciales."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La excentricidad de 0,007 de Calisto es pequeña y no forzada — sin bombeo resonante, sin flexión mareal, sin océano subsuperficial (probablemente)."
+    }
+  ]
 }

@@ -29,5 +29,27 @@
       "u": "https://www.nature.com/articles/s41550-019-0930-9",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Venere ruota retrograda con un'inclinazione assiale di 177° — effettivamente capovolta. Combinata con una rotazione siderale di 243 giorni, il suo giorno è più lungo del suo anno di 225 giorni."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'orbita planetaria più circolare del sistema (e = 0,0068) — Venere si muove attorno al Sole come un anello quasi perfetto."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Venere ha l'effetto serra più estremo: le temperature superficiali rimangono ~460°C giorno e notte, quindi la distinzione sub-solare / terminatore conta meno che per qualsiasi altro pianeta."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) è l'unico orbiter attivo di Venere; la campagna sovietica Venera (1961–83) possiede ancora le uniche immagini della superficie mai acquisite."
+    }
   ]
 }

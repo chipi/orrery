@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Pluto's 0.249 eccentricity dips its orbit inside Neptune's for 20 years per 248-year cycle."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Pluto's 17.2° inclination keeps it well clear of Neptune even though the orbits cross in projection."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluto is the largest known Kuiper-belt body — its 1930 discovery predated the belt concept by 60 years."
+    }
+  ]
+}

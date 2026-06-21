@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — Ganymede overview",
     "ganymede-juice": "ESA JUICE — Ganymede orbiter mission",
     "ganymede-magfield": "NASA Galileo — Ganymede magnetic-field discovery"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganymede is the only moon in the solar system with its own internally-generated magnetic field — produced by an iron-rich core embedded in Jupiter's magnetosphere."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Outer member of the 4:2:1 Laplace resonance with Io and Europa — Ganymede's stability anchors the whole inner-Galilean system."
+    }
+  ]
 }

@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton Übersicht",
     "triton-voyager2": "NASA Voyager 2 — Neptun-System Begegnung (1989)",
     "triton-trident": "Trident — vorgeschlagener Discovery-class Triton Vorbeiflug"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Tritons Bahnneigung von 156,8° — retrograd und steil zur Äquatorebene Neptuns geneigt — ist der Beweis für eine Einfangung aus dem Kuiper Belt statt einer Bildung mit Neptun."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Tritons Gezeitenreibung verringert seine Umlaufbahn — in 3,6 Milliarden Jahren wird es entweder auf Neptun treffen oder innerhalb der Roche-Grenze zerfallen und ein Ringsystem bilden."
+    }
+  ]
 }

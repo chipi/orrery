@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — présentation de Triton",
     "triton-voyager2": "NASA Voyager 2 — rencontre avec le système de Neptune (1989)",
     "triton-trident": "Trident — survol de Triton proposé de classe Discovery"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinaison orbitale de 156,8° de Triton — rétrograde, fortement inclinée par rapport à l'équateur de Neptune — est la preuve irréfutable de sa capture depuis la ceinture de Kuiper plutôt que de sa formation avec Neptune."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Le frottement de marée de Triton réduit son orbite — dans 3,6 milliards d'années, il entrera en collision avec Neptune ou se fragmentera dans la limite de Roche et formera un système d'anneaux."
+    }
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Bennu ist ein erdnahes Objekt (Große Halbachse 1,13 AU) — nah genug, dass OSIRIS-REx rendezvous konnte, Proben nahm und Material in 7 Jahren zur Erde zurückbrachte."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Bennus Exzentrizität von 0,204 ergibt eine geringe Wahrscheinlichkeit für einen Einschlag auf der Erde in den 2100er Jahren — einer der Gründe, warum es für OSIRIS-REx (Aufklärung zum Schutz des Planeten) ausgewählt wurde."
+    }
+  ]
+}

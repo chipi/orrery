@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — Kuipergürtel Überblick",
     "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth Vorbeiflüge",
     "kuiper-belt-mpc": "Minor Planet Center — TNO-Katalog"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Der Kuiper Belt ist das transneptunische Relikt der Protoplanetaren Scheibe — 30 bis 50 AU, dominiert von Eis. Pluto, Eris, Haumea und Makemake leben hier."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Die klassischen KBOs umkreisen zwischen 42 und 48 AU in Bahnen mit niedriger Exzentrizität und niedriger Inklination — sie sind seit dem frühen System weitgehend ungestört."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Die Scattered-Disc-Subpopulation (Eris, Sedna) sitzt bei hohen Inklinationen (30°+) — gravitativ von Neptuns Auswärtswanderung zerstreut und breitet den Belt derzeit vertikal aus."
+    }
+  ]
 }

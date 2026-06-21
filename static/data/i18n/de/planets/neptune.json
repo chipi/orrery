@@ -29,5 +29,27 @@
       "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "In einer mittleren Entfernung von 30,07 AU ist Neptun so weit entfernt, dass ein einfaches Lichtsignal 4 Stunden pro Richtung benötigt. Voyager 2 brauchte 12 Jahre, um ihn zu erreichen."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Triton ist der einzige große Mond im Sonnensystem mit einer retrograden Umlaufbahn — ein starker Hinweis darauf, dass er aus dem Kuiper Belt eingefangen wurde und nicht mit Neptun entstanden ist."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Neptuns sanfte Exzentrizität von 0,0086 ergibt eine so kreisförmige Umlaufbahn, dass die Perihel-Aphel-Schwankung unter 200 Millionen km bei einer 30-AU-Halbachse liegt — eine Variation von 1,4 %."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Voyager 2 (Vorbeiflug 1989) bleibt das einzige Raumschiff, das Neptun besucht hat. Derzeit ist keine Mission zum System finanziert oder im Flug."
+    }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità di Plutone di 0,249 è così elevata che la sua orbita penetra all'interno di quella di Nettuno per 20 anni ogni ciclo di 248 anni (1979–1999 è stato l'ultimo intervallo)."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinazione orbitale di Plutone di 17,2° è la più alta di qualsiasi pianeta o pianeta nano comunemente riconosciuto — ben al di sopra dell'eclittica dove risiedono i giganti gassosi."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Perielio 29,7 AU contro afelio 49,3 AU — un'oscillazione di 20 AU fa variare le temperature superficiali abbastanza da ispessire l'atmosfera di Plutone vicino al perielio e congelarsi vicino all'afelio."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Plutone e Caronte sono bloccati in risonanza di marea l'uno con l'altro — entrambi i periodi di rotazione uguagliano il periodo orbitale mutuo di 6,4 giorni. La coppia è trattata come un vero sistema binario in gran parte della letteratura moderna."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Plutone è il membro più grande della Fascia di Kuiper — la sua scoperta nel 1930 ha preceduto il concetto di fascia di 60 anni."
+    }
+  ]
+}

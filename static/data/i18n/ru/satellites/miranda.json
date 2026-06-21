@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — обзор Миранды",
     "miranda-voyager2": "NASA Voyager 2 — единственный пролёт через систему Урана (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Миранда имеет наибольший наклон орбиты (4,3°) среди крупных спутников Урана — в сочетании с событием нарушения в ранней системе это объясняет знаменитые обрывы, которые Voyager 2 заснял в 1986 году."
+    }
+  ]
 }

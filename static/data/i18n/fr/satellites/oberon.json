@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — aperçu d'Oberon",
     "oberon-voyager2": "NASA Voyager 2 — imagerie du système uranien"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Oberon est la plus externe des cinq lunes principales d'Uranus (orbite à 583,500 km) — sa surface est la plus cratérisée, ce qui suggère qu'elle possède la surface exposée la plus ancienne du système d'Uranus."
+    }
+  ]
 }

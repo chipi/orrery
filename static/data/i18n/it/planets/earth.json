@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "L'unità astronomica è la distanza media Terra-Sole — la Terra è il metro di riferimento letterale per ogni misurazione del sistema solare."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "L'orbita terrestre definisce il piano dell'eclittica. L'inclinazione di ogni altro pianeta è misurata rispetto a questo riferimento."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinazione di 23,4° della Terra è il meccanismo classico delle stagioni — gli equinozi e i solstizi derivano direttamente dall'angolo tra l'asse di rotazione e il piano orbitale."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Ogni finestra di lancio verso Marte — ogni 26 mesi — è un trasferimento di Hohmann con partenza dalla Terra. La scala parte da qui."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "La Luna è insolitamente grande per il suo pianeta — il rapporto (diametro ≈ 0,27 della Terra) è il più alto in qualsiasi coppia pianeta-satellite."
+    }
   ]
 }

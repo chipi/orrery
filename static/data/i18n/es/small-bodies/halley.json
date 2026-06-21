@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 AU y afelio 35 AU."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "El enorme rango perihelio-afelio del Halley (35 a 0.59 AU) impulsa los hielos superficiales a sublimarse violentamente cerca del perihelio, produciendo la coma y la cola. Próximo perihelio: 2061."
+    }
+  ]
+}

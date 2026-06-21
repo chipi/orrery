@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "486958 Arrokoth (2019년 New Horizons에 의해 방문)는 태양계에서 탐사된 가장 먼 천체로, 태양으로부터 데워진 적이 없을 가능성이 높은 원시 카이퍼 대 접촉 쌍성이다."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Arrokoth는 44.6 AU의 궤도를 도는데, 이는 명왕성 너머의 고전적 카이퍼 대 지역으로, 천체들이 태양계 초기 이후 대부분 교란받지 않은 곳이다."
+    }
+  ]
+}

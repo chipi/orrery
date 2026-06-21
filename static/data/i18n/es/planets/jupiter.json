@@ -4,10 +4,57 @@
   "fact": "La gravedad de Júpiter esculpió el cinturón de asteroides — impidiendo un quinto planeta rocoso. Sin él, Marte sería mucho más grande.",
   "bio": "Rota en solo 10 horas a pesar de su enorme tamaño, generando potentes campos magnéticos. Más masivo que todos los demás planetas juntos.",
   "links": [
-    { "l": "Júpiter — Wikipedia", "u": "https://es.wikipedia.org/wiki/J%C3%BApiter_(planeta)", "t": "intro" },
-    { "l": "Júpiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
-    { "l": "Misión Juno (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
-    { "l": "Lunas galileanas — Wikipedia", "u": "https://es.wikipedia.org/wiki/Sat%C3%A9lites_galileanos", "t": "core" },
-    { "l": "Interior profundo de Júpiter (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+    {
+      "l": "Júpiter — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/J%C3%BApiter_(planeta)",
+      "t": "intro"
+    },
+    {
+      "l": "Júpiter (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Misión Juno (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Lunas galileanas — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Sat%C3%A9lites_galileanos",
+      "t": "core"
+    },
+    {
+      "l": "Interior profundo de Júpiter (Nature 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Júpiter tiene 95 lunas confirmadas — los cuatro galileanos (Ío, Europa, Ganimedes, Calisto) son mundos por derecho propio y trazan una resonancia orbital 1:2:4."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "La magnetosfera de Júpiter es la estructura planetaria más grande del sistema solar — extendiéndose más allá de la órbita de Saturno en el lado anti-solar."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Júpiter es el objetivo preferido de asistencia gravitatoria para misiones hacia el sistema exterior — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper y JUICE utilizaron o utilizan un sobrevuelo joviano para ganancia de velocidad."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "La vasta esfera de Hill de Júpiter (radio de 50 millones de km) es lo que estabiliza su sistema de 95 lunas — el pozo gravitatorio se extiende casi hasta Marte en perihelio."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) está actualmente en órbita polar; Europa Clipper (NASA) y JUICE (ESA) están en ruta — llegada orbital a Ganimedes 2034."
+    }
   ]
 }

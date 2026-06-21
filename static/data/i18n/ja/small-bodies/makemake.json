@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Makemakeの45.7 AU の半長軸は古典的なカイパーベルト領域に位置しており、表面のメタンが主要な氷として存在するのに十分な距離にある。"
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Makemakeは4番目に大きい既知のKBO であり、ハッブル宇宙望遠鏡が2016年にMK2を発見するまで、IAUが認定した矮小惑星の中で唯一の衛星未確認天体である。"
+    }
+  ]
+}

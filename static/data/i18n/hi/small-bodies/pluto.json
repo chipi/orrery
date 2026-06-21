@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Pluto की 0.249 विलक्षणता इसकी कक्षा को 248-वर्षीय चक्र में 20 वर्षों के लिए Neptune की कक्षा के अंदर डालती है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Pluto का 17.2° झुकाव इसे Neptune से अच्छी तरह दूर रखता है भले ही कक्षाएं प्रक्षेपण में एक-दूसरे को काटती हैं।"
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluto सबसे बड़ा ज्ञात Kuiper-belt पिंड है — इसकी 1930 की खोज belt की अवधारणा से 60 साल पहले की गई थी।"
+    }
+  ]
+}

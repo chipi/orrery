@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "एरिस का 44° कक्षीय झुकाव किसी भी सूचीबद्ध बड़े खगोलीय पिंड में सर्वोच्च है — इसकी scattered-disc उत्पत्ति इसे ग्रहण से बहुत दूर रखती है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "एरिस perihelion पर 38 AU से aphelion पर 97 AU तक घूमता है — 96-AU माध्य कक्षा पर 60-AU विस्तार। यह वर्तमान में aphelion के निकट है।"
+    }
+  ]
+}

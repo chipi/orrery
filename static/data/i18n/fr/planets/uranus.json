@@ -29,5 +29,27 @@
       "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinaison de 97,8° d'Uranus signifie qu'elle tourne sur le côté — chaque pôle reçoit ~42 années de lumière solaire continue, puis ~42 années d'obscurité."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinaison orbitale de la planète importe moins que l'inclinaison de son axe de rotation — Uranus a l'inclinaison axiale la plus dramatique du système, bien que son inclinaison orbitale soit modeste (0,77°)."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Les cinq lunes uraniennes majeures (Miranda, Ariel, Umbriel, Titania, Oberon) partagent l'inclinaison d'Uranus — elles orbitent dans le plan équatorial, qui est presque perpendiculaire à l'écliptique."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Aucun engin spatial n'a visité Uranus depuis Voyager 2 (1986). Un orbiteur d'Uranus est une priorité majeure de la NASA Decadal Survey pour les années 2030."
+    }
   ]
 }

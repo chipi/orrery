@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titan im Überblick",
     "titan-dragonfly": "NASA Dragonfly — nukleare Drehflüglermission zum Titan",
     "titan-huygens": "ESA Huygens — erste Landung auf einem anderen Mond als unserem"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titan befindet sich in 1:1 Spin-Orbit-Resonanz mit Saturn — zeigt immer dieselbe Seite. Seine 1,22-Millionen-km-Halbachse platziert es in der Nähe von Saturns äußerer Hill-Sphäre."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titan hat eine dichte N₂-CH₄-Atmosphäre — der einzige Mond mit einer. Oberflächentemperaturen liegen bei 94 K, wo Methan und Ethan als flüssige Seen existieren."
+    }
+  ]
 }

@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — panoramica della Fascia degli asteroidi",
     "asteroid-belt-dawn": "NASA Dawn — sonda orbitale a Vesta e Ceres",
     "asteroid-belt-mpc": "Minor Planet Center — catalogo IAU di tutti gli asteroidi conosciuti"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "La fascia principale: ~1–2 milioni di corpi tra Marte e Giove, massa totale ≈ 4 % della Luna. Le risonanze di Giove hanno svuotato la fascia — la frammentazione ha prevalso sull'accrescimento da allora."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "La fascia occupa l'anello 2.2–3.2 AU. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La maggior parte degli asteroidi della fascia rimane vicina all'eclittica (< 10° di inclinazione) ma la famiglia Pallade ad alta inclinazione a 33° ricorda che la fascia è un disco 3-D, non un anello 2-D."
+    }
+  ]
 }

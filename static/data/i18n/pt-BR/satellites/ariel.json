@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — visão geral de Ariel",
     "ariel-voyager2": "NASA Voyager 2 — imagens do sistema uraniano"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ariel orbita a 190.900 km de Urano — segunda lua mais interna entre as maiores. Como todas as luas uranianas, sua órbita compartilha a inclinação axial de 97° do planeta."
+    }
+  ]
 }

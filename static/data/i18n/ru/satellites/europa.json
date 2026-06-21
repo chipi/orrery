@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — обзор Европы",
     "europa-clipper": "NASA Europa Clipper — сайт миссии",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Европа — средний член резонанса Лапласа Ио–Европа–Ганимед 4:2:1; её вынужденная эксцентриситет приводит к приливному изгибу, поддерживающему жидкий подповерхностный океан."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Вынужденная эксцентриситет Европы 0,009 поддерживается возмущениями Ио — без неё подповерхностный океан замёрзнет. К её изучению отправляется Europa Clipper (NASA, 2024–)."
+    }
+  ]
 }

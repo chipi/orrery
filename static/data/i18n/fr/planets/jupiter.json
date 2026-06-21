@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/nature25775",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Jupiter possède 95 lunes confirmées — les quatre galiléennes (Io, Europe, Ganymède, Callisto) sont chacune des mondes à part entière et tracent une résonance orbitale 1:2:4."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "La magnétosphère de Jupiter est la plus grande structure planétaire du système solaire — s'étendant au-delà de l'orbite de Saturne du côté anti-solaire."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Jupiter est la cible d'assistance gravitationnelle privilégiée pour les missions du système externe — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper et JUICE ont tous utilisé ou utilisent un survol jovien pour gagner de la vélocité."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "La vaste sphère de Hill de Jupiter (rayon de 50 millions de km) est ce qui rend stable son système de 95 lunes — le puits gravitationnel s'étend presque jusqu'à Mars au périhélie."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) est actuellement en orbite polaire ; Europa Clipper (NASA) et JUICE (ESA) sont en route — arrivée orbitale à Ganymède 2034."
+    }
   ]
 }

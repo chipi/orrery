@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — Kuiper Belt概述",
     "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth飞掠",
     "kuiper-belt-mpc": "Minor Planet Center — TNO目录"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "柯伊伯带是海王星外的原行星盘遗迹——距离30至50 AU，由冰质物质主导。冥王星、厌神星、妊神星、鸟神星居住在此。"
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "经典柯伊伯带天体在42至48 AU之间运行，轨道离心率和倾角都很低——自系统早期以来基本保持原状。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "散射盘亚族群（厌神星、塞德娜）位于高倾角轨道上（30°以上）——被海王星向外迁移时的引力散射，目前正在竖直方向扩展该带。"
+    }
+  ]
 }

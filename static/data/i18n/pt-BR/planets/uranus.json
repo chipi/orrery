@@ -29,5 +29,27 @@
       "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "A inclinação de 97,8° de Urano significa que ele gira deitado — cada pólo recebe ~42 anos de luz solar contínua, seguidos por ~42 anos de escuridão."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "A inclinação orbital do planeta importa menos que a inclinação de seu eixo de rotação — Urano possui a inclinação axial mais dramática do sistema, apesar de sua inclinação orbital ser modesta (0,77°)."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "As cinco luas uranianas principais (Miranda, Ariel, Umbriel, Titania, Oberon) compartilham a inclinação de Urano — elas orbitam no plano equatorial, que é quase perpendicular à eclíptica."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Nenhuma sonda visitou Urano desde a Voyager 2 (1986). Um orbitador de Urano é uma prioridade máxima da NASA no Decadal Survey para os anos 2030."
+    }
   ]
 }

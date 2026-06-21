@@ -29,5 +29,27 @@
       "u": "https://www.science.org/doi/10.1126/science.aat2965",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "A inclinação de 26,7° de Saturno é o que faz seus anéis parecerem abrir e fechar ao longo da órbita de 29 anos — e o que dá ao planeta estações hemisféricas que duram mais de sete anos terrestres."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Saturno tem 146 luas confirmadas — o maior número de qualquer planeta — com Titã grande o suficiente para ter sua própria atmosfera densa e Encélado expelindo ativamente água de um oceano subsuperficial."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "A campanha orbital de 13 anos da Cassini foi construída em torno das leis de Kepler — cada travessia de anel e sobrevoo de lua era um arco kepleriano projetado anos antes."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "A órbita de Saturno é suave (excentricidade 0,054) mas sua distância média de 9,6 AU significa que periélio e afélio diferem por 100 milhões de km — Cassini cronometrou sua chegada para usar a velocidade de aproximação."
+    }
   ]
 }

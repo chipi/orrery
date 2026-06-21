@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — Europa Überblick",
     "europa-clipper": "NASA Europa Clipper — Missionsseite",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Europa ist das mittlere Glied der Io–Europa–Ganymede 4:2:1 Laplace-Resonanz — seine erzwungene Exzentrizität treibt die Gezeitendeformation an, die einen Subsurfazean flüssig hält."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Europas winzige Exzentrizität von 0,009 wird durch Ios Störungen erzwungen — ohne sie würde der Subsurfazean einfrieren. Europa Clipper (NASA, 2024–) startet, um ihn zu untersuchen."
+    }
+  ]
 }

@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — Asteroid Belt 개요",
     "asteroid-belt-dawn": "NASA Dawn — Vesta와 Ceres의 궤도선",
     "asteroid-belt-mpc": "Minor Planet Center — IAU 전체 소행성 목록"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "주 소행성대: 화성과 목성 사이에 약 100만~200만 개의 천체, 총 질량 ≈ 달의 4%. 목성의 공명이 소행성대를 소거했으며, 단편화가 강착에 우위를 지속해 왔다."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "소행성대는 2.2~3.2 AU 환형 영역을 차지한다. 커크우드 간극 — 목성 평균운동 공명에서의 궤도 공백 영역 — 이 천체들의 분포를 규정한다."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "대부분의 소행성은 황도 근처에 머물러 있으나 (< 10° 경사각), 33°의 높은 경사각을 가진 팔라스 계열은 소행성대가 2차원 띠가 아닌 3차원 원판임을 상기시킨다."
+    }
+  ]
 }

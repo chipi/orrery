@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — Kuiper Belt 개요",
     "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth 플라이바이",
     "kuiper-belt-mpc": "Minor Planet Center — TNO 목록"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "카이퍼 벨트는 해왕성 너머의 원행성계 원판의 잔존물로, 30~50 AU 범위에 얼음으로 이루어져 있다. 명왕성, 에리스, 하우메아, 마케마케가 여기에 위치한다."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "고전적 KBO는 42~48 AU 사이의 낮은 이심률, 낮은 경사각 궤도에서 공전하며, 초기 태양계 형성 이후 대체로 교란받지 않았다."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "산재 원판 부분군(에리스, 세드나)은 높은 경사각(30°+)에 위치하며, 해왕성의 외향 이동으로 중력 산란되어 현재 벨트를 수직으로 확장하고 있다."
+    }
+  ]
 }

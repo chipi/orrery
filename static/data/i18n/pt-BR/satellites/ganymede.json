@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — visão geral de Ganimedes",
     "ganymede-juice": "ESA JUICE — missão orbital a Ganimedes",
     "ganymede-magfield": "NASA Galileo — descoberta do campo magnético de Ganimedes"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganimedes é o único satélite do sistema solar com seu próprio campo magnético gerado internamente — produzido por um núcleo rico em ferro imerso na magnetosfera de Júpiter."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Membro externo da ressonância de Laplace 4:2:1 com Io e Europa — a estabilidade de Ganimedes ancora todo o sistema galileano interno."
+    }
+  ]
 }

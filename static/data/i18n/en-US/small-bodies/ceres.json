@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "Ceres holds ~25% of the main belt's total mass in a single body — and is the only main-belt object classified as a dwarf planet."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ceres orbits at 2.77 AU — squarely inside the asteroid belt and used as the canonical \"middle of the belt\" reference distance."
+    }
+  ]
+}

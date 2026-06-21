@@ -29,5 +29,32 @@
       "u": "https://www.iau.org/news/pressreleases/detail/iau0603/",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Pluto's 0.249 eccentricity is so high its orbit dips inside Neptune's for 20 years per 248-year cycle (1979–1999 was the last such interval)."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Pluto's 17.2° orbital inclination is the highest of any commonly-recognised planet or dwarf planet — well above the ecliptic where the gas giants live."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Perihelion 29.7 AU vs aphelion 49.3 AU — a 20 AU swing means surface temperatures vary enough for Pluto’s atmosphere to thicken near perihelion and freeze out near aphelion."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Pluto and Charon are tidally locked to each other — both rotation periods equal the 6.4-day mutual orbital period. The pair is treated as a true binary in much modern literature."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluto is the largest member of the Kuiper Belt — its discovery in 1930 predated the belt concept by 60 years."
+    }
   ]
 }

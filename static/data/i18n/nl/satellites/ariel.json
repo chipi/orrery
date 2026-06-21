@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — Ariel overzicht",
     "ariel-voyager2": "NASA Voyager 2 — Uranus-systeem beeldmateriaal"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ariel cirkelt op 190.900 km van Uranus — de op één na binnenste van de grote manen. Zoals alle manen van Uranus deelt zijn baan de axiale helling van 97° van de planeet."
+    }
+  ]
 }

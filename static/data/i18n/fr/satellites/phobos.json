@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — Phobos, aperçu",
     "phobos-mmx": "JAXA MMX — mission de retour d'échantillons vers Phobos",
     "phobos-hirise": "HiRISE — Phobos à 0,25 m/px depuis l'orbite martienne"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Phobos orbite Mars à seulement 9 377 km — sous l'altitude synchrone, donc il est accéléré VERS L'INTÉRIEUR par les forces de marée et impactera Mars dans ~40 millions d'années."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "L'oscillation périhélie-aphélie de Phobos est minime mais il fait trois fois le tour de Mars par jour martien — la lune effectuant le plus d'orbites par jour parent du système."
+    }
+  ]
 }

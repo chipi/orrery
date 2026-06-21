@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/nature25775",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Jupiter hat 95 bestätigte Monde — die vier Galileischen (Io, Europa, Ganymede, Callisto) sind jeweils eigenständige Welten und weisen eine 1:2:4-Bahnresonanz auf."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Jupiters Magnetosphäre ist die größte Planetenstruktur des Sonnensystems — sie erstreckt sich auf der abgewandten Seite über die Saturnbahn hinaus."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Jupiter ist das bevorzugte Schwerkraft-Assist-Ziel für Missionen ins äußere System — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper und JUICE nutzten oder nutzen einen Jupiter-Vorbeiflug für Geschwindigkeitszugewinn."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "Jupiters umfangreiche Hill-Sphäre (50 Millionen km Radius) stabilisiert sein 95-Mond-System — der Gravitationstrichter reicht beim Perihel fast bis zum Mars."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) ist derzeit in Polarbahn; Europa Clipper (NASA) und JUICE (ESA) sind unterwegs — Bahnankuft bei Ganymede 2034."
+    }
   ]
 }

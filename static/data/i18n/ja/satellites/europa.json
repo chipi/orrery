@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — エウロパ概説",
     "europa-clipper": "NASA Europa Clipper — ミッションサイト",
     "europa-juice": "ESA JUICE — 木星氷衛星探査機"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "ユーロパはイオ–ユーロパ–ガニメデ4:2:1ラプラス共鳴の中間メンバーであり、その強制離心率は潮汐撓みを駆動して地下海を液体状態に保つ。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "ユーロパの微小な0.009離心率はイオの摂動によって強制され、これがなければ地下海は凍結する。ユーロパ・クリッパー(NASA、2024–)がこれを研究するため打ち上げられる。"
+    }
+  ]
 }

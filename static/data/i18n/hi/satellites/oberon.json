@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon सारांश",
     "oberon-voyager2": "NASA Voyager 2 — Uranian-system इमेजरी"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "ओबेरॉन यूरेनस के पाँच प्रमुख चंद्रमाओं में सबसे बाहरी है (583,500 km कक्षा) — इसकी सतह सबसे अधिक क्रेटर युक्त है, जो सुझाती है कि यूरेनस प्रणाली में इसकी सतह सबसे पुरानी है।"
+    }
+  ]
 }

@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — panorama del Cinturón de asteroides",
     "asteroid-belt-dawn": "NASA Dawn — orbitador en Vesta y Ceres",
     "asteroid-belt-mpc": "Minor Planet Center — catálogo de la IAU de todos los asteroides conocidos"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "El cinturón principal: ~1–2 millones de cuerpos entre Marte y Júpiter, masa total ≈ 4 % de la Luna. Las resonancias de Júpiter despejaron el cinturón — la fragmentación ha prevalecido sobre la acreción desde entonces."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "El cinturón ocupa el anillo de 2.2–3.2 AU. Las brechas de Kirkwood — zonas orbitales vacías en las resonancias de movimiento medio de Júpiter — estructuran la población."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La mayoría de asteroides del cinturón permanecen cerca de la eclíptica (< 10° inclinación) pero la familia Palas de alta inclinación a 33° recuerda que el cinturón es un disco 3-D, no un anillo 2-D."
+    }
+  ]
 }

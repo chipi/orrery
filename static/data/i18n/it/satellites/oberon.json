@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — panoramica di Oberon",
     "oberon-voyager2": "NASA Voyager 2 — immagini del sistema uraniano"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Oberon è la più esterna dei cinque maggiori satelliti di Urano (orbita a 583,500 km) — la sua superficie è la più crateri, suggerendo che abbia la superficie esposta più antica del sistema di Urano."
+    }
+  ]
 }

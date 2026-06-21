@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charon overview",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charon flyby (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Charon and Pluto orbit a barycentre that sits OUTSIDE Pluto — making it the only known true binary system in the solar system rather than a planet-with-moon."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Charon's 19,591-km mean distance from Pluto, combined with mutual tidal locking, means both bodies show the same face to each other forever."
+    }
+  ]
 }

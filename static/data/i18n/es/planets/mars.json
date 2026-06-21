@@ -5,10 +5,57 @@
   "bio": "La excentricidad más alta de los planetas interiores (e=0,093). Marte está un 25 % más lejos de la Tierra en afelio que en perihelio — por eso las ventanas de lanzamiento importan tanto.",
   "missionable": true,
   "links": [
-    { "l": "Marte — Wikipedia", "u": "https://es.wikipedia.org/wiki/Marte_(planeta)", "t": "intro" },
-    { "l": "Marte (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mars/", "t": "intro" },
-    { "l": "Programa de Exploración de Marte (NASA)", "u": "https://mars.nasa.gov/", "t": "core" },
-    { "l": "Ventanas de lanzamiento Tierra-Marte — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
-    { "l": "Historia climática de Marte (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+    {
+      "l": "Marte — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Marte_(planeta)",
+      "t": "intro"
+    },
+    {
+      "l": "Marte (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Programa de Exploración de Marte (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Ventanas de lanzamiento Tierra-Marte — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Historia climática de Marte (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "La inclinación axial de Marte de 25,2° es notablemente cercana a la de la Tierra — pero combinada con su excentricidad, los veranos australes son intensamente calurosos y breves mientras que los veranos boreales son largos y suaves."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La excentricidad de Marte de 0,0935 (seis veces la de la Tierra) produce una variación del 20 % en flujo solar por órbita — el motor detrás de las tormentas de polvo globales que pueden envolver el planeta durante meses."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Las ventanas de lanzamiento a Marte se abren cada 26 meses — el período sinódico entre Marte y la Tierra — y la transferencia de Hohmann es por qué cada misión a Marte parte en una de esas ventanas."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Marte tiene dos pequeñas lunas de aspecto capturado — Fobos (orbitando bajo altitud sincrónica, espiralizándose hacia adentro) y Deimos (retrocediendo lentamente)."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Marte alberga el censo de naves espaciales activas más denso más allá de la Tierra — orbitadores de cinco agencias y rovers / módulos de aterrizaje de superficie de tres."
+    }
   ]
 }

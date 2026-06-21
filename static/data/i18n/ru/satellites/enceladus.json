@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — обзор Энцелада",
     "enceladus-cassini": "NASA Cassini — архив пролётов сквозь плюмы",
     "enceladus-habitability": "Astrobiology — Энцелад как цель поиска жизни"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Энцелад находится в резонансе средних движений 2:1 с Дионой — вынужденная эксцентриситет (0,0047) вызывает приливные деформации, которые питают южнополярные криовулканические шлейфы."
+    }
+  ]
 }

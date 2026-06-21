@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton 概述",
     "triton-voyager2": "NASA Voyager 2 — Neptune 系统飞掠 (1989)",
     "triton-trident": "Trident — 提议的 Discovery 级 Triton 飞掠任务"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "海卫一156.8°的轨道倾角——逆行且相对海王星赤道大幅倾斜——是它从柯伊伯带被捕获而非随海王星形成的确凿证据。"
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "海卫一的潮汐拖曳正在降低其轨道——在36亿年后，它要么撞击海王星，要么在洛希极限内碎裂并形成环系统。"
+    }
+  ]
 }

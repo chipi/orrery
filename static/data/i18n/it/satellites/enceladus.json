@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — panoramica di Enceladus",
     "enceladus-cassini": "NASA Cassini — archivio storico dei passaggi ravvicinati ai pennacchi",
     "enceladus-habitability": "Astrobiology — Enceladus come obiettivo di ricerca della vita"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Encelado è in risonanza di moto medio 2:1 con Dione — l'eccentricità forzata (0,0047) alimenta la flessione di marea che alimenta i pennacchi crivovolcanici del polo sud."
+    }
+  ]
 }

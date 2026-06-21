@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton 개요",
     "triton-voyager2": "NASA Voyager 2 — Neptune 시스템 조우 (1989)",
     "triton-trident": "Trident — 제안된 Discovery급 Triton 근접 비행"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Triton의 156.8° 궤도 경사각 — 역행하며 Neptune의 적도에 가파르게 기울어진 — 은 Neptune과 함께 형성되기보다는 Kuiper Belt에서 포획되었다는 결정적 증거이다."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Triton의 조석 끌림은 그 궤도를 감소시키고 있다 — 36억 년 후 Neptune과 충돌하거나 Roche 한계 내에서 분열되어 고리 시스템을 형성할 것이다."
+    }
+  ]
 }

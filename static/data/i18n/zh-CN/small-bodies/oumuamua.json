@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "'Oumuamua的离心率e > 1——一条双曲线、无界轨道。第一个确认穿过太阳系的星际天体（2017年）。"
+    },
+    {
+      "tab": "transfers",
+      "section": "conic-sections",
+      "why": "'Oumuamua的轨迹是典型的双曲线圆锥曲线——在每个点都超过逃逸速度。在被发现时它已经在离开了。"
+    }
+  ]
+}

@@ -29,5 +29,27 @@
       "u": "https://www.science.org/doi/10.1126/science.aat2965",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Saturns 26,7°-Neigung führt dazu, dass seine Ringe sich über die 29-jährige Umlaufbahn hinweg öffnen und schließen — und erzeugt hemisphärische Jahreszeiten, die länger als sieben Erdenjahre andauern."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Saturn hat 146 bestätigte Monde — mehr als jeder andere Planet — wobei Titan groß genug ist, um eine eigene dichte Atmosphäre zu haben, und Enceladus aktiv Wasser aus einem subsurface Ozean ausstößt."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Cassinis 13-jährige Orbitalkampagne basierte auf Keplers Gesetzen — jede Ringebene und jeder Mondenflug war ein Keplerbahn, die Jahre im Voraus geplant wurde."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Saturns Umlaufbahn ist sanft (Exzentrizität 0,054), aber seine mittlere Distanz von 9,6 AU bedeutet, dass sich Perihel und Aphel um 100 Millionen km unterscheiden — Cassini zeitete seine Ankunft, um die Eingangsgeschwindigkeit zu nutzen."
+    }
   ]
 }

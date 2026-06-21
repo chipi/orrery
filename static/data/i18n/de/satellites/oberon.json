@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon Übersicht",
     "oberon-voyager2": "NASA Voyager 2 — Uranus-System-Bilder"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Oberon ist der äußerste der fünf großen Uranusmonde (583.500 km Umlaufbahn) — seine Oberfläche ist am stärksten verkratert und deutet auf die älteste freigelegte Oberfläche im Uranus-System hin."
+    }
+  ]
 }

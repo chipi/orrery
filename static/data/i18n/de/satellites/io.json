@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — Überblick zu Io",
     "io-juno": "NASA Juno — jüngste nahe Vorbeiflüge an Io",
     "io-volcanism": "USGS — Katalog vulkanischer Strukturen auf Io"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede sind in einer 4:2:1-Laplace-Resonanz gebunden — für je 4 Umlaufbahnen des Io macht Europa 2 und Ganymede 1. Die Resonanz hält die Umlaufbahn des Io nicht-zirkulär."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Ios Gezeitenheizung (die es zur vulkanisch aktivsten Welt des Sonnensystems macht) resultiert aus erzwungener Exzentrizität — angetrieben durch Europa und Ganymede über die Laplace-Resonanz."
+    }
+  ]
 }

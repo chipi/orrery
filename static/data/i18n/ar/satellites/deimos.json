@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — ديموس",
     "deimos-nasa": "NASA Science — نظرة عامة على ديموس",
     "deimos-mrohirise": "HiRISE — ديموس في صور مدار المريخ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "ديموس هو القمر الخارجي للمريخ (23,460 km) — فترة مداره (1.26 d) أطول من اليوم المريخي، لذا تدفعه قوى المد والجزر ببطء نحو الخارج."
+    }
+  ]
 }

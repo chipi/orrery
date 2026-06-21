@@ -29,5 +29,27 @@
       "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "De 97,8° kanteling van Uranus betekent dat het op zijn zijde roteert — elke pool krijgt ~42 jaar aaneengesloten zonlicht, gevolgd door ~42 jaar duisternis."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "De helling van de planetaire baan is minder bepalend dan de kanteling van de rotatieás — Uranus heeft de meest extreme axiale kanteling in het systeem, ondanks een bescheiden baanhelling (0,77°)."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "De vijf grote Uraanse manen (Miranda, Ariel, Umbriel, Titania, Oberon) delen de kanteling van Uranus — zij draaien in het equatoriale vlak, dat bijna loodrecht op de ecliptica staat."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Geen ruimtevaartuig heeft Uranus bezocht sinds Voyager 2 (1986). Een Uranus-orbiter is een topprioriteit voor NASA uit de Decadal Survey voor de jaren 2030."
+    }
   ]
 }

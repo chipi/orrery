@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus सारांश",
     "enceladus-cassini": "NASA Cassini — plume-flyby विरासत संग्रह",
     "enceladus-habitability": "Astrobiology — जीवन-खोज लक्ष्य के रूप में Enceladus"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Enceladus, Dione के साथ 2:1 माध्य-गति अनुनाद में है — बाध्य विकेंद्रता (0.0047) ज्वारीय विरूपण को चलाती है जो दक्षिण-ध्रुवीय क्रायोज्वालामुखी प्लम्स को शक्ति प्रदान करती है।"
+    }
+  ]
 }

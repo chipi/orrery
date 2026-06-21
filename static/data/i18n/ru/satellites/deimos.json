@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — обзор Деймоса",
     "deimos-mrohirise": "HiRISE — Деймос на снимках с марсианской орбиты"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Деймос — внешний спутник Марса (23,460 км) — его орбитальный период (1.26 д) больше, чем марсианские сутки, поэтому приливные силы медленно отталкивают его от планеты."
+    }
+  ]
 }

@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos преглед",
     "deimos-mrohirise": "HiRISE — Deimos на снимцима из Марсове орбите"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Деимос је спољашњи Марсов месец (23,460 км) — његов орбитални период (1.26 д) је дужи од Марсовог дана, тако да га плимске силе полако потискују према споља."
+    }
+  ]
 }

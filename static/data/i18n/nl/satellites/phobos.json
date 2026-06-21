@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — overzicht van Phobos",
     "phobos-mmx": "JAXA MMX — monsterretourmissie naar Phobos",
     "phobos-hirise": "HiRISE — Phobos op 0,25 m/px vanuit een baan om Mars"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Phobos omcirkelt Mars op slechts 9.377 km — onder de synchrone hoogte, dus wordt het getijdenversneld NAAR BINNEN en zal Mars over ~40 miljoen jaar treffen."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Phobos's perihelium-aphelium variatie is klein, maar het omcirkelt Mars drie keer per Martiaanse dag — de maan met de meeste banen per ouderdag in het systeem."
+    }
+  ]
 }

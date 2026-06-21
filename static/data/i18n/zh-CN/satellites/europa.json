@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — 欧罗巴概览",
     "europa-clipper": "NASA Europa Clipper — 任务官网",
     "europa-juice": "ESA JUICE — 木星冰卫星探测器"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "木卫二是木卫一–木卫二–木卫三4:2:1拉普拉斯共振的中间成员——其被迫离心率驱动潮汐弯曲，使次表面海洋保持液态。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "木卫二微小的0.009离心率由木卫一的扰动强制产生——没有它次表面海洋会冻结。欧罗巴快船号（NASA，2024–）正在发射以研究它。"
+    }
+  ]
 }

@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Titania overzicht",
     "titania-voyager2": "NASA Voyager 2 — Uranian-system imagery"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Titania is de grootste maan van Uranus (1.578 km diameter) — vergelijkbaar in grootte met Pluto. Alleen Voyager 2 heeft deze gefotografeerd (1986)."
+    }
+  ]
 }

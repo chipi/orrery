@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Titania概述",
     "titania-voyager2": "NASA Voyager 2 — 天王星系统图像"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "天卫一是天王星最大的卫星（直径1,578 km），大小与冥王星相当。仅有旅行者2号对其进行过成像（1986年）。"
+    }
+  ]
 }

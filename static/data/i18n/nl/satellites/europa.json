@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — Europa overzicht",
     "europa-clipper": "NASA Europa Clipper — missiesite",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Europa is het middelste lid van de Io–Europa–Ganymede 4:2:1 Laplace-resonantie — zijn gedwongen excentriciteit veroorzaakt getijdenbuiging die een ondergrondse oceaan vloeibaar houdt."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Europa's geringe gedwongen excentriciteit van 0,009 wordt veroorzaakt door Io's verstoringen — zonder deze zou de ondergrondse oceaan bevriezen. Europa Clipper (NASA, 2024–) wordt gelanceerd om dit te bestuderen."
+    }
+  ]
 }

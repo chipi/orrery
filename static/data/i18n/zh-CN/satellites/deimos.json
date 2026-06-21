@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — 火卫二",
     "deimos-nasa": "NASA Science — 火卫二概览",
     "deimos-mrohirise": "HiRISE — 火星轨道影像中的火卫二"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "火卫二是火星外月（23,460 km）——其轨道周期（1.26 d）长于火星日，所以潮汐力正在缓慢将其推离。"
+    }
+  ]
 }

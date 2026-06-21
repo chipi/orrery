@@ -30,5 +30,32 @@
       "u": "https://www.science.org/doi/10.1126/science.aar3201",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Mars's axiale kantelhoek van 25,2° lijkt opmerkelijk veel op die van Aarde — maar gecombineerd met zijn excentriciteit zijn zuidelijke zomers intens heet en kort terwijl noordelijke zomers lang en mild zijn."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Mars's excentriciteit van 0,0935 (zes keer die van Aarde) veroorzaakt een schommeling van 20 % in zonnestralingsflux per baan — de motor achter globale stofstormen die de planeet maandenlang kunnen omhullen."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Mars-lanceervensters openen elke 26 maanden — de synodische periode tussen Mars en Aarde — en Hohmann-overdracht is waarom elke Mars-missie in een van die vensters vertrekt."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Mars heeft twee kleine manen die er uit gesleept uitzien — Phobos (orbitaal onder synchrone hoogte, naar binnen spiraliserend) en Deimos (langzaam wegdriftend)."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Mars herbergt de dichtstbevolkte actieve ruimtevaartuigpopulatie buiten Aarde — orbiters van vijf agentschappen en rovers / landers op het oppervlak van drie."
+    }
   ]
 }

@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "L'unité astronomique EST la distance moyenne Terre-Soleil — la Terre est l'étalon littéral pour chaque mesure du système solaire."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "L'orbite terrestre définit le plan de l'écliptique. L'inclinaison de chaque autre planète est mesurée relativement à cette référence."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinaison de 23.4° de la Terre est la machine des saisons par excellence — équinoxes et solstices découlent directement de l'angle entre l'axe de rotation et le plan orbital."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Chaque fenêtre de lancement vers Mars — tous les 26 mois — est un transfert de Hohmann au départ de la Terre. L'échelle part d'ici."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "La Lune est exceptionnellement grande pour son astre-mère — le rapport (diamètre ≈ 0.27 de la Terre) est le plus élevé de toute paire planète–satellite."
+    }
   ]
 }

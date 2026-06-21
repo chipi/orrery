@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — نظرة عامة على Enceladus",
     "enceladus-cassini": "NASA Cassini — أرشيف إرث العبور عبر الأعمدة",
     "enceladus-habitability": "Astrobiology — Enceladus كهدف للبحث عن الحياة"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "إنسيلادوس في رنين حركة متوسط 2:1 مع ديون — الانحراف المفروض (0.0047) يدفع الانحناء المدي الذي يغذي الأعمدة البركانية الجليدية في القطب الجنوبي."
+    }
+  ]
 }

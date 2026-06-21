@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — نظرة عامة على أوبيرون",
     "oberon-voyager2": "NASA Voyager 2 — صور منظومة أورانوس"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "أوبيرون هو أبعد الأقمار الخمسة الرئيسية لأورانوس (مدار 583,500 كم) — سطحه الأكثر تأثراً بالحفر، مما يشير إلى أنه يملك أقدم سطح معروض في نظام أورانوس."
+    }
+  ]
 }

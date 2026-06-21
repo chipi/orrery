@@ -1,0 +1,29 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Pluto's excentriciteit van 0,249 is zo hoog dat zijn baan zich gedurende 20 jaar per 248-jarige cyclus binnen die van Neptunus uitstrekt (1979–1999 was het laatste dergelijke interval)."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Pluto's baanhelling van 17,2° is de hoogste van alle algemeen erkende planeten en dwergplaneten — veel groter dan de ecliptica waar de gasreuzen zich bevinden."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Perihelium 29,7 AU versus aphelium 49,3 AU — een zwing van 20 AU betekent dat oppervlaktetemperaturen variëren genoeg voor Pluto's atmosfeer om bij perihelium dikker te worden en bij aphelium in te vriezen."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Pluto en Charon zijn getijdengebonden aan elkaar — beide rotatieperioden zijn gelijk aan de 6,4-daagse wederzijdse baanperiode. Het paar wordt in veel moderne literatuur als een ware dubbelster behandeld."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluto is het grootste lid van de Kuipergordel — zijn ontdekking in 1930 ging het gordelbegrip met 60 jaar vooraf."
+    }
+  ]
+}

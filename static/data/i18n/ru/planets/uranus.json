@@ -4,10 +4,52 @@
   "fact": "Уран вращается «на боку» — наклон оси 98°. Северный полюс почти указывает на Солнце половину 84-летней орбиты.",
   "bio": "Почти перевёрнут (97,77°). Каждый полюс получает 42 года непрерывного света, затем 42 года тьмы. Скорее всего причина — древнее крупное столкновение.",
   "links": [
-    { "l": "Уран — Википедия", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
-    { "l": "Uranus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
-    { "l": "Voyager 2 у Урана (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
-    { "l": "Uranus Orbiter and Probe — Decadal Survey", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
-    { "l": "Происхождение наклона Урана (Astrophysical Journal 2020)", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+    {
+      "l": "Уран — Википедия",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "Uranus (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 у Урана (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus Orbiter and Probe — Decadal Survey",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "Происхождение наклона Урана (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Наклон оси вращения Урана в 97,8° означает, что он вращается на боку — каждый полюс получает ~42 года непрерывного солнечного света, затем ~42 года темноты."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Наклон орбиты планеты менее важен, чем наклон её оси вращения — Уран имеет наиболее выраженный наклон оси вращения в системе, несмотря на скромный наклон орбиты (0,77°)."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Пять крупных спутников Урана (Miranda, Ariel, Umbriel, Titania, Oberon) разделяют наклон Урана — они обращаются в плоскости экватора, которая почти перпендикулярна эклиптике."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Ни один космический аппарат не посещал Уран с момента Voyager 2 (1986). Орбитальный зонд к Урану — приоритет NASA из Десятилетнего обзора на 2030-е годы."
+    }
   ]
 }

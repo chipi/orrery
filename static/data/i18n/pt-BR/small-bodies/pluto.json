@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "A excentricidade de 0,249 de Plutão faz sua órbita mergulhar dentro da de Netuno por 20 anos a cada ciclo de 248 anos."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "A inclinação de 17,2° de Plutão o mantém bem afastado de Netuno, embora as órbitas se cruzem em projeção."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Plutão é o maior corpo conhecido do cinturão de Kuiper — sua descoberta em 1930 precedeu o conceito do cinturão em 60 anos."
+    }
+  ]
+}

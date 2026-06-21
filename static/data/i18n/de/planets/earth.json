@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "Die Astronomische Einheit ist die mittlere Erde-Sonne-Distanz — die Erde ist der Maßstab für jede Messung im Sonnensystem."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "Erdumlaufbahn definiert die Ekliptik-Ebene. Die Neigung aller anderen Planeten wird relativ zu dieser Referenz gemessen."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Erdneigung von 23,4° ist die klassische Jahreszeiten-Maschine — Äquinoktium und Sonnenwende entstehen direkt aus dem Winkel zwischen Rotationsachse und Orbitalebene."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Jedes Mars-Startfenster — alle 26 Monate — ist eine Erde-Hohmann-Transfer. Die Leiter startet von hier."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Der Mond ist ungewöhnlich groß für seinen Primärkörper — das Verhältnis (Durchmesser ≈ 0,27 der Erde) ist das höchste in jedem Planeten-Satelliten-Paar."
+    }
   ]
 }

@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — panoramica di Titan",
     "titan-dragonfly": "NASA Dragonfly — missione rotore nucleare verso Titan",
     "titan-huygens": "ESA Huygens — primo atterraggio su una luna diversa dalla nostra"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titano è in risonanza spin-orbita 1:1 con Saturno — mostra sempre la stessa faccia. Il suo semiasse maggiore di 1,22 milioni di km lo posiziona vicino alla sfera di Hill esterna di Saturno."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titano ha un'atmosfera densa di N₂-CH₄ — l'unico satellite con un'atmosfera. Le temperature superficiali si aggirano a 94 K, dove metano ed etano esistono come laghi liquidi."
+    }
+  ]
 }

@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — 칼리스토",
     "callisto-nasa": "NASA Science — 칼리스토 개요",
     "callisto-galileo": "NASA Galileo 레거시 아카이브"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "칼리스토는 라플라스 공명 범위 밖에서 공전하며 — 반장축 188만 km는 목성의 최악의 방사선대 너머에 위치하여 가장 우주선 친화적인 갈릴레이 위성이다."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "칼리스토의 이심률 0.007은 작고 강제되지 않으며 — 공명에 의한 펌핑이 없고, 조석 유연이 없으며, 지하 바다도 없다(아마도)."
+    }
+  ]
 }

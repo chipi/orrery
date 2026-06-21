@@ -29,5 +29,27 @@
       "u": "https://www.nature.com/articles/s41550-019-0930-9",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Venus roteert retrograde met een axiale helling van 177° — effectief ondersteboven. Gecombineerd met een siderische rotatie van 243 dagen, is zijn dag langer dan zijn 225-dagen jaar."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "De meest cirkelvormige planetaire baan in het systeem (e = 0,0068) — Venus beweegt rond de Zon als een bijna-perfecte ring."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Venus heeft het meest extreme broeikaseffect: oppervlaktetemperaturen blijven ~460°C dag en nacht, dus het onderzonnepunt / terminatoronderscheid is minder relevant dan voor enig ander planet."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) is de enige actieve Venus-orbiter; de Sovjet-Venera-missies (1961–83) bezitten nog steeds de enige oppervlakteafbeeldingen ooit gemaakt."
+    }
   ]
 }

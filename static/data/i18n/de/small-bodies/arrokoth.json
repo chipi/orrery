@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "486958 Arrokoth (von New Horizons 2019 besucht) ist das am weitesten entfernte je erforschte Objekt des Sonnensystems — ein primäres Kuiper-Gürtel-Kontaktdoppelsystem, das wahrscheinlich nie von der Sonne erwärmt wurde."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Arrokoth umkreist die Sonne in 44,6 AU — klassischer Kuiper-Gürtel, jenseits des Pluto, in einer Region, in der Körper seit der frühen Entwicklungsphase des Sonnensystems weitgehend ungestört geblieben sind."
+    }
+  ]
+}

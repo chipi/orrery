@@ -4,10 +4,52 @@
   "fact": "Presión en superficie 90× la terrestre. Las sondas soviéticas Venera duraron entre 23 y 127 minutos antes de ser aplastadas.",
   "bio": "Rota en sentido retrógrado — al revés y tan lentamente que un día venusiano es más largo que su año. La inclinación axial de 177,4° es la causa: Venus está esencialmente al revés.",
   "links": [
-    { "l": "Venus — Wikipedia", "u": "https://es.wikipedia.org/wiki/Venus_(planeta)", "t": "intro" },
-    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
-    { "l": "Programa Venera — Wikipedia", "u": "https://es.wikipedia.org/wiki/Programa_Venera", "t": "core" },
-    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
-    { "l": "El efecto invernadero descontrolado de Venus (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+    {
+      "l": "Venus — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Venus_(planeta)",
+      "t": "intro"
+    },
+    {
+      "l": "Venus (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Programa Venera — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Programa_Venera",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITAS (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "El efecto invernadero descontrolado de Venus (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Venus rota retrógradamente con una inclinación axial de 177° — efectivamente invertida. Combinada con una rotación sideral de 243 días, su día es más largo que su año de 225 días."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La órbita planetaria más circular del sistema (e = 0.0068) — Venus se mueve alrededor del Sol como un anillo casi perfecto."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Venus tiene el efecto invernadero más extremo: las temperaturas superficiales se mantienen ~460°C día y noche, por lo que la distinción sub-solar / terminador importa menos que en cualquier otro planeta."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) es el único orbitador activo de Venus; la campaña soviética Venera (1961–83) sigue siendo propietaria de las únicas imágenes de superficie jamás tomadas."
+    }
   ]
 }

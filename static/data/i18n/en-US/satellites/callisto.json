@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Callisto",
     "callisto-nasa": "NASA Science — Callisto overview",
     "callisto-galileo": "NASA Galileo legacy archive"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Callisto orbits outside the Laplace resonance — its 1.88-million-km semi-major axis puts it beyond the worst of Jupiter's radiation belts, making it the most spacecraft-friendly Galilean."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Callisto's 0.007 eccentricity is small and unforced — without resonant pumping, no tidal flexing, no subsurface ocean (probably)."
+    }
+  ]
 }

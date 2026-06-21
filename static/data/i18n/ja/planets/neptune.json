@@ -4,10 +4,52 @@
   "fact": "ボイジャー 2 号は 12 年の旅の末、1989 年に海王星に接近飛行した。いまも唯一、訪れた探査機である。",
   "bio": "最も風の強い惑星 — 表面付近で時速 2,100 km の風。天王星の軌道が予測とずれることから、数学的予測のあと肉眼で発見された。",
   "links": [
-    { "l": "海王星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
-    { "l": "海王星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
-    { "l": "ボイジャー 2 号の海王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
-    { "l": "海王星の発見 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
-    { "l": "海王星内部モデル（Icarus 2021）", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+    {
+      "l": "海王星 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "海王星（NASA Solar System Exploration）",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "ボイジャー 2 号の海王星（NASA JPL）",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "海王星の発見 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "海王星内部モデル（Icarus 2021）",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "平均距離30.07 AUにあるネプチューンは非常に遠く、単一方向の光信号は往復それぞれ4時間を要します。ボイジャー2号がそこに到達するのに12年かかりました。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "トリトンは太陽系で唯一の大型月で逆行軌道を持ち、ネプチューンと同時に形成されたのではなく、カイパーベルトから捕捉されたという強力な証拠です。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "ネプチューンの穏やかな離心率0.0086は軌道を極めて円に近くし、30 AU の半長軸上での近日点と遠日点の変動は200万km未満で、変動率は1.4%です。"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "ボイジャー2号（1989年フライバイ）はネプチューンを訪問した唯一の宇宙機のままです。現在、当システムへの資金提供されたミッションまたは進行中のミッションはありません。"
+    }
   ]
 }

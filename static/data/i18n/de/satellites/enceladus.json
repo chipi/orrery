@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus-Überblick",
     "enceladus-cassini": "NASA Cassini — Fontänen-Vorbeiflug-Archiv",
     "enceladus-habitability": "Astrobiology — Enceladus als Ziel der Lebenssuche"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Enceladus befindet sich in einer 2:1-Bahnresonanz mit Dione — die erzwungene Exzentrizität (0,0047) treibt die Gezeitenverformung an, die die südpolaren kryovulkanischen Fontänen speist."
+    }
+  ]
 }

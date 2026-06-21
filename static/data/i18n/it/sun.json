@@ -29,5 +29,32 @@
       "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Ogni pianeta, satellite di pianeta, cometa e veicolo spaziale umano orbita perché la gravità del Sole definisce il potenziale centrale — un'orbita kepleriana È un'orbita attorno al Sole."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Keplero derivò le sue tre leggi cercando di adattare i dati di Marte di Tycho alla gravità del Sole — la sua seconda legge (aree uguali) è ciò che rende i pianeti interni più veloci di quelli esterni."
+    },
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "L'unità astronomica è per definizione la distanza media Terra-Sole — ogni distanza nel sistema solare si legge relativa a questa scala."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "L'equatore del Sole e il piano dell'eclittica sono inclinati di soli 7,25° — abbastanza prossimi che 'orbite nell'eclittica' è un'approssimazione sufficientemente buona per quasi tutto nel sistema."
+    },
+    {
+      "tab": "scales-time",
+      "section": "frames",
+      "why": "Tutti i sistemi di riferimento inerziali nella meccanica del sistema solare sono definiti relativi al baricentro del Sole — il resto del sistema è co-mobile."
+    }
   ]
 }

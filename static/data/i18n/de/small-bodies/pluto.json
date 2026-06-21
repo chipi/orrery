@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Plutos Exzentrizität von 0,249 senkt seine Umlaufbahn 20 Jahre pro 248-Jahres-Zyklus unter Neptuns Bahn."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Plutos Inklination von 17,2° hält ihn weit entfernt von Neptun, obwohl sich die Bahnen in der Projektion kreuzen."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Pluto ist der größte bekannte Kuiper-Gürtel-Körper — seine Entdeckung 1930 lag 60 Jahre vor dem Konzept des Gürtels."
+    }
+  ]
+}

@@ -4,10 +4,52 @@
   "fact": "土星の密度は 0.687 g/cm³ — 水より小さい。環系は直径約 28 万 km にわたるが、厚さはおよそ 10 m 程度である。",
   "bio": "密度がもっとも低く — 水に浮く。環は約 28 万 km に広がるが厚さは数十メートル程度。軸傾斜角 26.73° のため、土星の約 29 年軌道のあいだに地球から見る環の向きが変わる。",
   "links": [
-    { "l": "土星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
-    { "l": "土星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
-    { "l": "カッシーニのアーカイブ（NASA）", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
-    { "l": "土星の環 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
-    { "l": "土星の環は若い（Science 2019）", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+    {
+      "l": "土星 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Saturn",
+      "t": "intro"
+    },
+    {
+      "l": "土星（NASA Solar System Exploration）",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "カッシーニのアーカイブ（NASA）",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "土星の環 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "t": "core"
+    },
+    {
+      "l": "土星の環は若い（Science 2019）",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "土星の26.7°の傾きにより、その環は29年の公転周期にわたって開閉するように見え、また半球ごとの季節が7年以上続く。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "土星は146個の確認済み衛星を持ち、全惑星で最多であり、タイタンは独自の濃密な大気を持つほど大きく、エンケラドゥスは地下海から能動的に水を放出している。"
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "カッシーニの13年間の周回キャンペーンはケプラーの法則に基づいて構築され、すべての環通過と衛星フライバイはケプラー軌道であり数年前に設計された。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "土星の公転は温和（離心率0.054）だが、平均距離9.6 AUにより近日点と遠日点は1億kmの差があり、カッシーニはその到着時間を内向きの速度を利用するために調整した。"
+    }
   ]
 }

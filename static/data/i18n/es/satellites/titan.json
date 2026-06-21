@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titán, vista general",
     "titan-dragonfly": "NASA Dragonfly — misión de rotorcóptero nuclear a Titán",
     "titan-huygens": "ESA Huygens — primer aterrizaje en una luna distinta a la nuestra"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titán está en resonancia de espín-órbita 1:1 con Saturno — siempre muestra la misma cara. Su semieje mayor de 1,22 millones de km la sitúa cerca de la esfera de Hill exterior de Saturno."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titán tiene una atmósfera densa de N₂-CH₄ — la única luna con una. Las temperaturas superficiales rondan 94 K, donde el metano y el etano existen como lagos líquidos."
+    }
+  ]
 }

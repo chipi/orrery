@@ -5,10 +5,57 @@
   "bio": "内侧行星中偏心率最高（e=0.093）。远日点与近日点相比，火星与地球的距离可相差约 25%——这就是发射窗口如此重要的原因。",
   "missionable": true,
   "links": [
-    { "l": "火星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Mars", "t": "intro" },
-    { "l": "火星（NASA 太阳系探索）", "u": "https://science.nasa.gov/mars/", "t": "intro" },
-    { "l": "火星探索计划（NASA）", "u": "https://mars.nasa.gov/", "t": "core" },
-    { "l": "地火发射窗口 — 维基百科", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
-    { "l": "火星气候历史（Science 2018）", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+    {
+      "l": "火星 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "火星（NASA 太阳系探索）",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "火星探索计划（NASA）",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "地火发射窗口 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "火星气候历史（Science 2018）",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "火星的轴向倾角为25.2°，与地球非常接近——但结合其离心率，南半球的夏季炎热而短暂，北半球的夏季则温和而漫长。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "火星的离心率为0.0935（是地球的六倍），每个轨道周期内太阳通量摆幅达20%——这是引发能够笼罩行星数月的全球尘暴的动力。"
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "火星发射窗口每26个月开启一次——这是火星与地球的会合周期——霍曼转移轨道是为什么每次火星任务都在这些窗口之一发射的原因。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "火星有两颗小卫星，看起来像被俘获的——火卫一（在同步轨道下方运行，逐渐螺旋下坠）和火卫二（缓慢后退）。"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "火星拥有地球以外最密集的活跃航天器阵容——来自五个机构的轨道器和来自三个机构的表面漫游车/着陆器。"
+    }
   ]
 }

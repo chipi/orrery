@@ -30,5 +30,32 @@
       "u": "https://www.science.org/doi/10.1126/science.aar3201",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinazione assiale di Marte di 25,2° è straordinariamente simile a quella terrestre — ma combinata con la sua eccentricità, le estati meridionali sono intensamente calde e brevi mentre le estati settentrionali sono lunghe e miti."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità di Marte di 0,0935 (sei volte quella terrestre) produce un'oscillazione del 20 % del flusso solare per orbita — il motore dietro le tempeste di polvere globali che possono avvolgere il pianeta per mesi."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Le finestre di lancio verso Marte si aprono ogni 26 mesi — il periodo sinodico tra Marte e la Terra — e il trasferimento di Hohmann è la ragione per cui ogni missione verso Marte parte in una di queste finestre."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Marte possiede due piccoli satelliti catturati — Phobos (orbitante al di sotto dell'altitudine sincrona, spiralizzante verso l'interno) e Deimos (lentamente allontanandosi)."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Marte ospita il censimento più denso di veicoli spaziali attivi oltre la Terra — orbiter da cinque agenzie e rover / lander di superficie da tre."
+    }
   ]
 }

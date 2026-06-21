@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus overview",
     "enceladus-cassini": "NASA Cassini — plume-flyby legacy archive",
     "enceladus-habitability": "Astrobiology — Enceladus as life-search target"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Enceladus is in 2:1 mean-motion resonance with Dione — the forced eccentricity (0.0047) drives the tidal flexing that powers the south-polar cryovolcanic plumes."
+    }
+  ]
 }

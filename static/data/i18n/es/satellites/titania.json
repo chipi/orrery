@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Información general de Titania",
     "titania-voyager2": "NASA Voyager 2 — Imágenes del sistema uraniano"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Titania es la luna más grande de Uranus (1,578 km de diámetro) — comparable en tamaño a Pluto. Solo Voyager 2 la ha fotografiado (1986)."
+    }
+  ]
 }

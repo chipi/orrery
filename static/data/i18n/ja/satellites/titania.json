@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Titaniaの概要",
     "titania-voyager2": "NASA Voyager 2 — 天王星系の画像"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "タイタニアは天王星最大の衛星（直径1,578 km）で、冥王星と同程度の大きさである。これを画像化したのはボイジャー2号のみ（1986年）。"
+    }
+  ]
 }

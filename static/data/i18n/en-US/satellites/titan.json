@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titan overview",
     "titan-dragonfly": "NASA Dragonfly — nuclear rotorcraft mission to Titan",
     "titan-huygens": "ESA Huygens — first landing on a moon other than ours"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titan is in 1:1 spin-orbit resonance with Saturn — always shows the same face. Its 1.22-million-km semi-major axis places it near Saturn's outer Hill sphere."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titan has a dense N₂-CH₄ atmosphere — the only moon with one. Surface temperatures sit at 94 K, where methane and ethane exist as liquid lakes."
+    }
+  ]
 }

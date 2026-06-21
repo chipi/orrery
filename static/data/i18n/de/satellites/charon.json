@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charon Übersicht",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charon Vorbeiflug (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Charon und Pluto umkreisen ein Baryzentrum, das sich AUßERHALB von Pluto befindet — was es zum einzigen bekannten echten Doppelsystem im Sonnensystem macht, anstelle eines Planeten mit Mond."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Charons mittlere Entfernung von 19.591 km von Pluto, kombiniert mit gegenseitiger Gezeitenblockade, bedeutet, dass beide Körper sich für immer die gleiche Seite zuwenden."
+    }
+  ]
 }

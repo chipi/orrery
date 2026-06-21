@@ -567,6 +567,15 @@
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
   let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
+  // Orbital-object focus (CORE-2, /earth). Mirrors faceCameraAtSite but
+  // targets a satellite's ring position: orient the camera at the
+  // object's bearing and pull in to just outside its ring so it sits
+  // centre-screen with Earth behind — the same "give it attention" zoom
+  // /explore does on fly-to-body. Assigned in onMount (captures the fly
+  // tween vars + earthSats); selection paths call it on every select.
+  let faceCameraAtObject:
+    | ((obj: import('$types/earth-object').EarthObject) => void)
+    | undefined;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
@@ -579,8 +588,24 @@
   let flyToDetail: ((site: SurfaceSite) => void) | undefined;
   function selectSite(id: string, options: { face?: boolean } = {}) {
     const s = sites.find((x) => x.id === id);
+    if (!s) {
+      // CORE-1 (#351 follow-up) — fall back to an orbital object so
+      // selection-by-id (tour anchors, ?object= deep-link) actually
+      // opens the object panel + focuses it. Without this the
+      // earth-select-<id> anchors were silent no-ops (objects aren't
+      // launch sites). No-op on /moon, /mars (earthObjectsCache === []).
+      const o = earthObjectsCache.find((x) => x.id === id);
+      if (o) {
+        selectedSat = o;
+        selected = null;
+        autoSpin = false;
+        faceCameraAtObject?.(o);
+      }
+      return;
+    }
     if (s) {
       selected = s;
+      selectedSat = null;
       panelOpen = true;
       // Picking a site is an explicit "I want to look at this" gesture,
       // and the auto-spin makes wheel-zoom feel like you're chasing the
@@ -950,7 +975,11 @@
             const objParam = $page.url.searchParams.get('object');
             if (objParam) {
               const o = objects.find((x) => x.id === objParam);
-              if (o) selectedSat = o;
+              if (o) {
+                selectedSat = o;
+                // CORE-2 — deep-link lands focused on the object.
+                faceCameraAtObject?.(o);
+              }
             }
           })
           .catch((err) => {
@@ -1000,6 +1029,48 @@
       // details panel is not working" — the tween was running but
       // start = end so nothing visible happened).
       flyToR = targetR;
+      // Surface sites orbit the body origin — clear any object orbit-target.
+      flyFromOffset.copy(focusOffset);
+      flyToOffset.set(0, 0, 0);
+      flyStart = performance.now();
+      flyActive = true;
+      autoSpin = false;
+    };
+
+    // CORE-2 (#351 follow-up) — orbital-object focus. Reads the sat's
+    // live world position off earthSats, points the camera at that
+    // bearing, and lands just outside the object's ring so it frames
+    // centre-screen. No-op on /moon and /mars (earthSats === []).
+    faceCameraAtObject = (obj) => {
+      const sat = earthSats.find((s) => s.id === obj.id);
+      if (!sat) return;
+      const worldPos = new THREE.Vector3();
+      sat.group.getWorldPosition(worldPos);
+      const radius = worldPos.length();
+      if (radius < 1e-3) return;
+      const dir = worldPos.clone().divideScalar(radius);
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyFromOffset.copy(focusOffset);
+      // Orbit the OBJECT itself (focusOffset → satellite), so it stays
+      // framed at ANY orbital altitude — low orbits no longer fall out of
+      // view as they did when we orbited Earth's centre. camR is now the
+      // camera→object distance (constant icon size regardless of orbit).
+      flyToOffset.copy(worldPos);
+      // Look from OUTWARD (same azimuth as the object's bearing) so Earth
+      // sits in the background, lifted ~29° above the orbital plane so the
+      // ring reads as an angled ellipse rather than a straight edge-on line.
+      let to = Math.atan2(dir.x, dir.z);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      const POLAR_TILT = 0.5; // rad above the orbital plane
+      flyToP = Math.max(
+        0.35,
+        Math.min(Math.PI - 0.35, Math.acos(Math.max(-1, Math.min(1, dir.y))) - POLAR_TILT),
+      );
+      flyToR = 14; // distance from the object — tune for icon size
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
@@ -1031,6 +1102,8 @@
       // detail looked like "we got close but the patch didn't open".
       flyToR = 30.2;
       camRTarget = 30.2;
+      flyFromOffset.copy(focusOffset);
+      flyToOffset.set(0, 0, 0);
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
@@ -1995,6 +2068,12 @@
     let flyToP = 0;
     let flyToT = 0;
     let flyToR = 0;
+    // Orbit-target interpolation (CORE-2). Most flys orbit the body
+    // origin (flyToOffset stays 0,0,0). Object focus retargets the orbit
+    // centre to the satellite so the camera looks AT the object — keeps
+    // it framed at any orbital altitude, with Earth in the background.
+    const flyFromOffset = new THREE.Vector3();
+    const flyToOffset = new THREE.Vector3();
 
     // Phase 3C — Auto-tour camera pan implementation. Reuses the
     // existing fly-tween primitive (ease-out cubic over FLY_DURATION_MS).
@@ -2227,13 +2306,18 @@
         if (o) {
           selectedSat = o;
           selected = null;
+          // CORE-2 — clicking an orbital object zooms + centres it.
+          faceCameraAtObject?.(o);
           return;
         }
       }
       const id = pickSiteAt(clientX, clientY);
       if (id) {
         selectedSat = null;
-        selectSite(id);
+        // CORE-2 — on /earth (earthSats present) a plain site click also
+        // zooms + centres, matching the orbital-object feel. /moon and
+        // /mars keep their no-lurch click behaviour (earthSats === []).
+        selectSite(id, { face: earthSats.length > 0 });
       }
     }
 
@@ -2993,6 +3077,7 @@
             camT = flyToT;
             camR = flyToR;
             camRTarget = flyToR;
+            focusOffset.copy(flyToOffset);
             flyActive = false;
           } else {
             const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
@@ -3000,6 +3085,9 @@
             camT = flyFromT + (flyToT - flyFromT) * e;
             camR = flyFromR + (flyToR - flyFromR) * e;
             camRTarget = camR;
+            // Retarget the orbit centre in lock-step (object focus moves
+            // it to the satellite; everything else holds it at origin).
+            focusOffset.lerpVectors(flyFromOffset, flyToOffset, e);
           }
           cameraChanged = true;
         } else {

@@ -23,11 +23,12 @@
     type SatelliteEntry,
     type SatelliteI18n,
   } from '$lib/data';
+  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { base } from '$app/paths';
 
   const loc = $derived(localeFromPage($page));
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'library';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'library';
 
   type Props = {
     satelliteKey: string | null;
@@ -83,6 +84,7 @@
       void getSatelliteI18n(loc, id).then((o) => {
         if (baseEntry && baseEntry.id === lastKey) overlay = o;
       });
+      void loadMissionIndex();
     }
   });
 </script>
@@ -142,6 +144,17 @@
         aria-selected={tab === 'technical'}
         aria-controls="sat-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if (entry.mission_visits ?? []).length > 0}
+        <button
+          type="button"
+          id="sat-tab-missions"
+          class:active={tab === 'missions'}
+          onclick={() => (tab = 'missions')}
+          role="tab"
+          aria-selected={tab === 'missions'}
+          aria-controls="sat-tabpanel">MISSIONS</button
+        >
+      {/if}
       <button
         type="button"
         id="sat-tab-library"
@@ -195,15 +208,22 @@
             <div class="cell-value">{entry.discovered}</div>
           </div>
         </div>
-        {#if entry.mission_visits.length > 0}
-          <div class="mission-block">
-            <div class="cell-label">{m.panel_satellite_missions_label()}</div>
-            <ul class="mission-list">
-              {#each entry.mission_visits as mission}
-                <li>{mission}</li>
-              {/each}
-            </ul>
-          </div>
+      {:else if tab === 'missions'}
+        {#if (entry.mission_visits ?? []).length === 0}
+          <p class="empty-tab">No spacecraft have visited this body.</p>
+        {:else}
+          <ul class="mission-list">
+            {#each entry.mission_visits as visit (visit)}
+              {@const link = linkifyMission(visit)}
+              <li>
+                {#if link}
+                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                {:else}
+                  {visit}
+                {/if}
+              </li>
+            {/each}
+          </ul>
         {/if}
       {:else if tab === 'library'}
         {#if entry.library && entry.library.length > 0}
@@ -349,11 +369,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px 16px;
-  }
-  .mission-block {
-    margin-top: 14px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .mission-list {
     list-style: none;

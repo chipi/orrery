@@ -2,6 +2,7 @@
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { getPlanetGallery } from '$lib/data';
+  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
@@ -14,7 +15,7 @@
 
   // LEARN folds into SCIENCE (Phase 4 cleanup) — one tab destination, less
   // strip crowding. Tiered link list renders below the curated ScienceCards.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'science';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
 
   // Curated /science cross-section list — the Keplerian-mechanics core +
   // the planets-tab PRD-024 set. Same for every planet; the user's
@@ -57,6 +58,9 @@
       void getPlanetGallery(planet.id).then((urls) => {
         if (planet && planet.id === lastId) gallery = urls;
       });
+      // Warm the /missions + /fleet id index so linkifyMission()
+      // resolves synchronously on first MISSIONS tab render.
+      void loadMissionIndex();
     }
   });
 
@@ -173,6 +177,17 @@
         aria-selected={tab === 'technical'}
         aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if (planet.mission_visits ?? []).length > 0}
+        <button
+          type="button"
+          id="pp-tab-missions"
+          class:active={tab === 'missions'}
+          onclick={() => (tab = 'missions')}
+          role="tab"
+          aria-selected={tab === 'missions'}
+          aria-controls="pp-tabpanel">MISSIONS</button
+        >
+      {/if}
       <button
         type="button"
         id="pp-tab-science"
@@ -293,6 +308,23 @@
         </div>
 
         <div class="src">{m.panel_source_iau()}</div>
+      {:else if tab === 'missions'}
+        {#if (planet.mission_visits ?? []).length === 0}
+          <p class="empty-tab">No missions recorded.</p>
+        {:else}
+          <ul class="mission-list">
+            {#each planet.mission_visits ?? [] as entry (entry)}
+              {@const link = linkifyMission(entry)}
+              <li>
+                {#if link}
+                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                {:else}
+                  {entry}
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        {/if}
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">

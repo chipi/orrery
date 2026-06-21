@@ -23,6 +23,13 @@ export interface Sun {
   absolute_magnitude: number;
   /** Percent of the solar system's mass contained in the Sun. */
   mass_fraction_pct: number;
+  /** Heliophysics missions and observatories that have studied the
+   *  Sun. Each entry is a one-line string in the BeltPanel format:
+   *  "Mission — Agency, year(s) (context)". Rendered in the panel
+   *  MISSIONS tab with the leading mission name linkified to
+   *  /missions/<id> or /fleet/<id> when an index match exists.
+   *  Optional — absent or empty hides the MISSIONS tab. */
+  mission_visits?: string[];
 }
 
 /** Editorial overlay strings (ADR-017). */

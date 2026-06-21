@@ -26,6 +26,13 @@ export interface Planet {
   axialTilt: number;
   /** Rotation period (days). Negative for retrograde rotation. */
   rotPeriod: number;
+  /** Spacecraft that have visited this planet. Each entry is a one-
+   *  line string in the BeltPanel format: "Mission Name — Agency,
+   *  year(s) (brief context)". Rendered in the panel MISSIONS tab
+   *  with the leading mission name linkified to /missions/<id> or
+   *  /fleet/<id> when an index match exists. Optional — absent or
+   *  empty array hides the MISSIONS tab for that planet. */
+  mission_visits?: string[];
 }
 
 export interface PlanetsData {

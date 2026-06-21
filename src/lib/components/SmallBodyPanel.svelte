@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery } from '$lib/data';
+  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -36,6 +37,10 @@
     radius_km?: number;
     discovered?: string;
     mission_visited?: string | null;
+    /** Spacecraft visits — preferred over mission_visited (singular,
+     *  back-compat for /explore). Each entry is a one-line BeltPanel-
+     *  style string: "Mission — Agency, year (context)". */
+    mission_visits?: string[];
     next_perihelion?: string;
     description?: string;
     wiki?: string;
@@ -43,7 +48,7 @@
   };
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'science';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
 
   type Props = {
     body: SmallBody | null;
@@ -67,8 +72,17 @@
       void getSmallBodyGallery(body.id).then((urls) => {
         if (body && body.id === lastId) gallery = urls;
       });
+      // Warm /missions + /fleet index for the MISSIONS tab linkifier.
+      void loadMissionIndex();
     }
   });
+  let missionEntries = $derived<string[]>(
+    body?.mission_visits && body.mission_visits.length > 0
+      ? body.mission_visits
+      : body?.mission_visited
+        ? [body.mission_visited]
+        : [],
+  );
 
   // Period in years (T is days in the data file).
   let periodYears = $derived(body ? body.T / 365.25 : 0);
@@ -146,6 +160,17 @@
         aria-selected={tab === 'technical'}
         aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if missionEntries.length > 0}
+        <button
+          type="button"
+          id="sbp-tab-missions"
+          class:active={tab === 'missions'}
+          onclick={() => (tab = 'missions')}
+          role="tab"
+          aria-selected={tab === 'missions'}
+          aria-controls="sbp-tabpanel">MISSIONS</button
+        >
+      {/if}
       <button
         type="button"
         id="sbp-tab-science"
@@ -263,6 +288,23 @@
           <div class="dist-row">
             <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
+        {/if}
+      {:else if tab === 'missions'}
+        {#if missionEntries.length === 0}
+          <p class="empty-tab">No spacecraft have visited this body.</p>
+        {:else}
+          <ul class="mission-list">
+            {#each missionEntries as entry (entry)}
+              {@const link = linkifyMission(entry)}
+              <li>
+                {#if link}
+                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                {:else}
+                  {entry}
+                {/if}
+              </li>
+            {/each}
+          </ul>
         {/if}
       {:else if tab === 'science'}
         <div class="science-tab">

@@ -10,5 +10,23 @@
   "polar_rot_days": 34.4,
   "spectral_class": "G2V",
   "absolute_magnitude": 4.83,
-  "mass_fraction_pct": 99.86
+  "mass_fraction_pct": 99.86,
+  "mission_visits": [
+    "Pioneer 5–11 — NASA, 1960s–70s (early interplanetary probes; solar wind + flares)",
+    "Helios 1 + 2 — NASA / DLR, 1974 / 1976 (closest perihelion of the era at 0.29 AU)",
+    "Skylab — NASA, 1973–74 (first crewed solar observatory; X-ray + UV imaging)",
+    "SMM (Solar Maximum Mission) — NASA, 1980–89 (flares, coronal mass ejections)",
+    "Yohkoh — ISAS / JAXA, 1991–2001 (X-ray + γ-ray solar imaging)",
+    "Ulysses — ESA / NASA, 1990–2009 (first polar solar orbit; high-latitude solar wind)",
+    "SOHO — ESA / NASA, 1995– (sun-pointing L1; coronal mass ejections, helioseismology, comet discoveries)",
+    "TRACE — NASA, 1998–2010 (high-resolution transition-region + corona)",
+    "RHESSI — NASA, 2002–18 (hard-X-ray + γ-ray imaging of flare physics)",
+    "Hinode — JAXA / NASA / STFC / ESA, 2006– (chromosphere + transition region + corona spectrometry)",
+    "STEREO A + B — NASA, 2006– (twin spacecraft; first 3-D solar imaging)",
+    "SDO (Solar Dynamics Observatory) — NASA, 2010– (AIA full-disk every 12 s in 10 EUV bands)",
+    "IRIS — NASA, 2013– (chromosphere + transition region UV spectrometry)",
+    "Parker Solar Probe — NASA, 2018– (first spacecraft to fly through the corona; perihelia inside 10 solar radii)",
+    "Solar Orbiter — ESA / NASA, 2020– (combined high-res imaging + in-situ; out-of-ecliptic polar pass)",
+    "Aditya-L1 — ISRO, 2023– (India's first solar mission; L1 halo orbit)"
+  ]
 }

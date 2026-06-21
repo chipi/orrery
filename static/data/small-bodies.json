@@ -14,7 +14,10 @@
       "discovered": "1801",
       "mission_visited": "Dawn (NASA, 2015)",
       "description": "Largest object in the asteroid belt and the only dwarf planet in the inner solar system. Surface ice and water-rich crust suggest a buried ocean. NASA's Dawn spacecraft orbited Ceres from 2015 to 2018, mapping its bright spots in Occator crater (now known to be sodium-carbonate salt deposits left by briny upwelling).",
-      "wiki": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)"
+      "wiki": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",
+      "mission_visits": [
+        "Dawn — NASA, 2015–18 (orbital survey from 1,470 km mapping orbit; gravity, mineralogy, bright spots)"
+      ]
     },
     {
       "id": "pluto",
@@ -30,7 +33,10 @@
       "discovered": "1930",
       "mission_visited": "New Horizons (NASA, 2015 flyby)",
       "description": "Reclassified as a dwarf planet in 2006 alongside the formal definition of 'planet'. Has a complex thin atmosphere, a heart-shaped nitrogen-ice plain (Sputnik Planitia), water-ice mountains, and a system of five moons led by Charon. New Horizons revealed unexpected geological youth — fewer craters than predicted.",
-      "wiki": "https://en.wikipedia.org/wiki/Pluto"
+      "wiki": "https://en.wikipedia.org/wiki/Pluto",
+      "mission_visits": [
+        "New Horizons — NASA, 14 July 2015 flyby (close-up imaging, atmosphere, Charon system)"
+      ]
     },
     {
       "id": "haumea",
@@ -46,7 +52,8 @@
       "discovered": "2004",
       "mission_visited": null,
       "description": "Trans-Neptunian dwarf planet rotating once every 3.9 hours — the fastest rotation of any large solar-system body. Centrifugal force has stretched it into a triaxial ellipsoid roughly twice as long as it is wide. Has two known moons (Hi'iaka, Namaka) and is the only TNO with a confirmed ring.",
-      "wiki": "https://en.wikipedia.org/wiki/Haumea"
+      "wiki": "https://en.wikipedia.org/wiki/Haumea",
+      "mission_visits": []
     },
     {
       "id": "makemake",
@@ -56,13 +63,14 @@
       "e": 0.156,
       "T": 113220,
       "L0": 5.2,
-      "incl": 29.0,
+      "incl": 29,
       "color": "#c87a4a",
       "radius_km": 715,
       "discovered": "2005",
       "mission_visited": null,
       "description": "Third-largest dwarf planet beyond Neptune, named for the Rapa Nui creator god. Surface coated in frozen methane, ethane, and possibly nitrogen. Has one tiny moon (MK2) discovered in 2016 — its existence had been masked by Makemake's reflective glare in earlier observations.",
-      "wiki": "https://en.wikipedia.org/wiki/Makemake"
+      "wiki": "https://en.wikipedia.org/wiki/Makemake",
+      "mission_visits": []
     },
     {
       "id": "eris",
@@ -78,7 +86,8 @@
       "discovered": "2005",
       "mission_visited": null,
       "description": "Most massive known dwarf planet — slightly smaller than Pluto by radius but ~27% more massive. Its 2005 discovery prompted the IAU to formalise the 'dwarf planet' category in 2006, simultaneously demoting Pluto. Lies in the scattered disk on a highly inclined, eccentric orbit reaching past 97 AU at aphelion.",
-      "wiki": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)"
+      "wiki": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)",
+      "mission_visits": []
     },
     {
       "id": "halley",
@@ -95,7 +104,13 @@
       "mission_visited": "Giotto (ESA, 1986 flyby)",
       "next_perihelion": "2061-07-28",
       "description": "Most famous short-period comet — visible from Earth roughly every 76 years. Edmond Halley correctly predicted its 1759 return based on Newton's gravity, the first such forecast in history. ESA's Giotto flew within 600 km of the nucleus in 1986, returning the first close-up image of a cometary core. Returns next in 2061.",
-      "wiki": "https://en.wikipedia.org/wiki/Halley%27s_Comet"
+      "wiki": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+      "mission_visits": [
+        "Vega 1 + 2 — USSR, March 1986 (first close imaging on the way to Venus)",
+        "Suisei + Sakigake — ISAS, 1986 (Japan’s first interplanetary missions)",
+        "Giotto — ESA, 14 March 1986 (closest approach: 596 km; first images of a comet nucleus)",
+        "ICE (International Cometary Explorer) — NASA, 1986 (distant tail observations)"
+      ]
     },
     {
       "id": "67p",
@@ -107,11 +122,15 @@
       "L0": 5.5,
       "incl": 7.04,
       "color": "#aabbff",
-      "radius_km": 2.0,
+      "radius_km": 2,
       "discovered": "1969",
       "mission_visited": "Rosetta + Philae lander (ESA, 2014)",
       "description": "Jupiter-family comet with a striking double-lobe 'rubber duck' shape. ESA's Rosetta mission orbited 67P from 2014 to 2016, accompanying it through perihelion. The Philae lander touched down in November 2014 — the first soft landing on a comet, although it bounced into shadow before its primary battery depleted.",
-      "wiki": "https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko"
+      "wiki": "https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko",
+      "mission_visits": [
+        "Rosetta — ESA, 2014–16 (first orbital escort of a comet)",
+        "Philae — ESA, 12 November 2014 (first soft-landing on a comet nucleus)"
+      ]
     },
     {
       "id": "vesta",
@@ -127,7 +146,10 @@
       "discovered": "1807",
       "mission_visited": "Dawn (NASA, 2011–2012)",
       "description": "Second-largest object in the asteroid belt and the brightest asteroid visible from Earth. NASA's Dawn spacecraft orbited Vesta in 2011–2012 en route to Ceres, revealing a giant south-pole impact basin (Rheasilvia) and a layered, differentiated interior — Vesta is structurally a remnant proto-planet that never grew into a planet.",
-      "wiki": "https://en.wikipedia.org/wiki/4_Vesta"
+      "wiki": "https://en.wikipedia.org/wiki/4_Vesta",
+      "mission_visits": [
+        "Dawn — NASA, 2011–12 (orbital survey; first detailed images and gravity field)"
+      ]
     },
     {
       "id": "psyche",
@@ -137,13 +159,16 @@
       "e": 0.1336,
       "T": 1825.7,
       "L0": 4.42,
-      "incl": 3.10,
+      "incl": 3.1,
       "color": "#a8a090",
-      "radius_km": 113.0,
+      "radius_km": 113,
       "discovered": "1852",
       "mission_visited": "Psyche (NASA, arrival 2029)",
       "description": "Metal-rich M-type asteroid suspected to be the exposed iron–nickel core of an early planetesimal whose mantle was stripped by giant impacts. NASA's Psyche mission launched in October 2023 and arrives in 2029 to map composition and magnetic remanence — the first dedicated visit to a metallic body.",
-      "wiki": "https://en.wikipedia.org/wiki/16_Psyche"
+      "wiki": "https://en.wikipedia.org/wiki/16_Psyche",
+      "mission_visits": [
+        "Psyche — NASA, launch 2023 · arrival 2029 (first orbital survey of a metallic M-type asteroid)"
+      ]
     },
     {
       "id": "bennu",
@@ -159,7 +184,11 @@
       "discovered": "1999",
       "mission_visited": "OSIRIS-REx (NASA, 2018–2020); sample returned 2023",
       "description": "Carbonaceous near-Earth asteroid sampled by OSIRIS-REx. The spacecraft collected a regolith sample in October 2020 and returned it to Earth in September 2023 — the first US asteroid sample-return. Bennu is a hydrated, carbon-rich rubble pile and a probable past parent body for primitive meteorites.",
-      "wiki": "https://en.wikipedia.org/wiki/101955_Bennu"
+      "wiki": "https://en.wikipedia.org/wiki/101955_Bennu",
+      "mission_visits": [
+        "OSIRIS-REx — NASA, 2018–21 (orbital survey + Touch-and-Go sample collection)",
+        "OSIRIS-APEX (extended mission) — NASA, en route to Apophis 2029"
+      ]
     },
     {
       "id": "arrokoth",
@@ -175,14 +204,17 @@
       "discovered": "2014 (Hubble Space Telescope)",
       "mission_visited": "New Horizons (NASA, 2019 flyby)",
       "description": "Cold-classical Kuiper Belt object — the most distant body ever visited by a spacecraft (4.1 billion km from the Sun at encounter). A 36 × 20 × 10 km contact binary nicknamed 'the snowman', formed when two lobes (Wenu and Weeyo) gently merged in the early solar system. New Horizons flew within 3,500 km on 2019-01-01, returning images of a deep-red, primordial KBO surface preserved at ~40 K since accretion.",
-      "wiki": "https://en.wikipedia.org/wiki/486958_Arrokoth"
+      "wiki": "https://en.wikipedia.org/wiki/486958_Arrokoth",
+      "mission_visits": [
+        "New Horizons — NASA, 1 January 2019 flyby (most distant body ever visited at the time)"
+      ]
     },
     {
       "id": "itokawa",
       "name": "25143 Itokawa",
       "type": "asteroid",
       "a": 1.324,
-      "e": 0.280,
+      "e": 0.28,
       "T": 556.4,
       "L0": 3.85,
       "incl": 1.62,
@@ -191,7 +223,10 @@
       "discovered": "1998",
       "mission_visited": "Hayabusa (JAXA, 2005 + sample return 2010)",
       "description": "S-type rubble-pile near-Earth asteroid — peanut-shaped, 540 × 270 × 210 m. JAXA's Hayabusa rendezvoused in 2005, made two touchdowns, and returned 1500 μg of surface particles to Earth in 2010 — the first asteroid sample ever returned. Confirmed Itokawa's rubble-pile internal structure: a collection of gravitationally-bound fragments, not a solid body.",
-      "wiki": "https://en.wikipedia.org/wiki/25143_Itokawa"
+      "wiki": "https://en.wikipedia.org/wiki/25143_Itokawa",
+      "mission_visits": [
+        "Hayabusa — JAXA, 2005 rendezvous + 2010 sample return (first asteroid sample return)"
+      ]
     },
     {
       "id": "didymos",
@@ -207,7 +242,12 @@
       "discovered": "1996",
       "mission_visited": "DART (NASA, 2022 system flyby)",
       "description": "S-type binary asteroid system — Didymos is the 780-m parent with the 160-m moonlet Dimorphos in 11.9-hour orbit at 1.2 km separation. NASA's DART hit Dimorphos in September 2022; Didymos remained intact while observing the kinetic-impact demonstration. ESA's Hera mission (launch 2024) will survey the post-impact system.",
-      "wiki": "https://en.wikipedia.org/wiki/65803_Didymos"
+      "wiki": "https://en.wikipedia.org/wiki/65803_Didymos",
+      "mission_visits": [
+        "DART — NASA, 26 September 2022 (kinetic-impactor test on companion Dimorphos)",
+        "LICIACube — ASI, 2022 (CubeSat observation of impact ejecta)",
+        "Hera — ESA, en route 2026, arrival 2026 (impact aftermath survey)"
+      ]
     },
     {
       "id": "dimorphos",
@@ -223,7 +263,11 @@
       "discovered": "2003",
       "mission_visited": "DART (NASA, 2022 kinetic impact)",
       "description": "160-m moonlet orbiting Didymos at 1.2 km separation. Impact target of NASA's DART on 2022-09-26 — first demonstration of kinetic-impactor planetary defense. DART's 6.14 km/s impact shortened Dimorphos's orbital period around Didymos by 33 minutes (4.2%), exceeding the 73-second success threshold by ~25×. The surface turned out to be 'rubble-pile fluid' — DART sank ~50 cm into the surface during the half-second of contact.",
-      "wiki": "https://en.wikipedia.org/wiki/Dimorphos"
+      "wiki": "https://en.wikipedia.org/wiki/Dimorphos",
+      "mission_visits": [
+        "DART — NASA, 26 September 2022 (kinetic impactor; first deliberate asteroid orbit change)",
+        "Hera — ESA, arrival 2026 (post-impact characterisation)"
+      ]
     },
     {
       "id": "donaldjohanson",
@@ -231,15 +275,18 @@
       "type": "asteroid",
       "a": 2.385,
       "e": 0.187,
-      "T": 1342.0,
+      "T": 1342,
       "L0": 2.55,
       "incl": 4.43,
       "color": "#3a3530",
-      "radius_km": 2.0,
+      "radius_km": 2,
       "discovered": "1981",
       "mission_visited": "Lucy (NASA, 2025 flyby)",
       "description": "4-km main-belt C-type asteroid named for the discoverer of the Lucy hominid fossil. Bonus target added to Lucy's itinerary late in mission design to test instruments before the Trojan encounters. Closest approach 920 km at 13.4 km/s on 2025-04-20.",
-      "wiki": "https://en.wikipedia.org/wiki/52246_Donaldjohanson"
+      "wiki": "https://en.wikipedia.org/wiki/52246_Donaldjohanson",
+      "mission_visits": [
+        "Lucy — NASA, 20 April 2025 flyby"
+      ]
     },
     {
       "id": "eurybates",
@@ -247,15 +294,18 @@
       "type": "asteroid",
       "a": 5.196,
       "e": 0.089,
-      "T": 4319.0,
-      "L0": 4.20,
+      "T": 4319,
+      "L0": 4.2,
       "incl": 8.05,
       "color": "#4a4540",
-      "radius_km": 32.0,
+      "radius_km": 32,
       "discovered": "1973",
       "mission_visited": "Lucy (NASA, 2027 flyby)",
       "description": "64-km C-type asteroid — the largest member of the L4 Trojan Eurybates family, a fragment cluster from a collisional breakup. Has a 1-km moon (Queta) discovered by Hubble in 2018. Lucy's first Trojan encounter, 2027-08-12 at 5.7 km/s.",
-      "wiki": "https://en.wikipedia.org/wiki/3548_Eurybates"
+      "wiki": "https://en.wikipedia.org/wiki/3548_Eurybates",
+      "mission_visits": [
+        "Lucy — NASA, August 2027 flyby (first Trojan-asteroid encounter)"
+      ]
     },
     {
       "id": "polymele",
@@ -263,15 +313,18 @@
       "type": "asteroid",
       "a": 5.179,
       "e": 0.094,
-      "T": 4297.0,
-      "L0": 4.10,
+      "T": 4297,
+      "L0": 4.1,
       "incl": 12.99,
       "color": "#4a3f38",
       "radius_km": 10.5,
       "discovered": "1999",
       "mission_visited": "Lucy (NASA, 2027 flyby)",
       "description": "21-km P-type L4 Trojan asteroid. Hubble follow-up after Lucy's selection revealed a satellite that doesn't yet have a name. Lucy encounter 2027-09-15.",
-      "wiki": "https://en.wikipedia.org/wiki/15094_Polymele"
+      "wiki": "https://en.wikipedia.org/wiki/15094_Polymele",
+      "mission_visits": [
+        "Lucy — NASA, September 2027 flyby"
+      ]
     },
     {
       "id": "leucus",
@@ -279,15 +332,18 @@
       "type": "asteroid",
       "a": 5.293,
       "e": 0.061,
-      "T": 4448.0,
-      "L0": 4.30,
+      "T": 4448,
+      "L0": 4.3,
       "incl": 11.55,
       "color": "#5a3a30",
       "radius_km": 17.5,
       "discovered": "1997",
       "mission_visited": "Lucy (NASA, 2028 flyby)",
       "description": "35-km D-type L4 Trojan asteroid with an unusually slow 446-hour rotation period — one of the slowest spinners known among bodies its size. Lucy encounter 2028-04-18.",
-      "wiki": "https://en.wikipedia.org/wiki/11351_Leucus"
+      "wiki": "https://en.wikipedia.org/wiki/11351_Leucus",
+      "mission_visits": [
+        "Lucy — NASA, April 2028 flyby"
+      ]
     },
     {
       "id": "orus",
@@ -295,47 +351,56 @@
       "type": "asteroid",
       "a": 5.131,
       "e": 0.035,
-      "T": 4242.0,
-      "L0": 4.00,
+      "T": 4242,
+      "L0": 4,
       "incl": 8.47,
       "color": "#5a4030",
       "radius_km": 25.5,
       "discovered": "1999",
       "mission_visited": "Lucy (NASA, 2028 flyby)",
       "description": "51-km D-type L4 Trojan asteroid. Lucy encounter 2028-11-11. D-types are believed to be among the most primitive bodies in the solar system, preserving compositional information from the outer protoplanetary disc.",
-      "wiki": "https://en.wikipedia.org/wiki/21900_Orus"
+      "wiki": "https://en.wikipedia.org/wiki/21900_Orus",
+      "mission_visits": [
+        "Lucy — NASA, November 2028 flyby"
+      ]
     },
     {
       "id": "patroclus",
       "name": "617 Patroclus",
       "type": "asteroid",
-      "a": 5.220,
+      "a": 5.22,
       "e": 0.139,
-      "T": 4352.0,
-      "L0": 5.50,
+      "T": 4352,
+      "L0": 5.5,
       "incl": 22.05,
       "color": "#4a3a30",
       "radius_km": 56.5,
       "discovered": "1906",
       "mission_visited": "Lucy (NASA, 2033 flyby)",
       "description": "113-km P-type L5 Trojan asteroid — the primary of the largest known Trojan binary, paired with the nearly-equal-mass Menoetius. The 2033-03-02 Lucy encounter at 8.4 km/s closes the primary mission, marking the first ever spacecraft visit to a Trojan binary.",
-      "wiki": "https://en.wikipedia.org/wiki/617_Patroclus"
+      "wiki": "https://en.wikipedia.org/wiki/617_Patroclus",
+      "mission_visits": [
+        "Lucy — NASA, March 2033 flyby (L5 Trojan)"
+      ]
     },
     {
       "id": "menoetius",
       "name": "Menoetius",
       "type": "asteroid",
-      "a": 5.220,
+      "a": 5.22,
       "e": 0.139,
-      "T": 4352.0,
-      "L0": 5.50,
+      "T": 4352,
+      "L0": 5.5,
       "incl": 22.05,
       "color": "#4a3a30",
-      "radius_km": 52.0,
+      "radius_km": 52,
       "discovered": "2001",
       "mission_visited": "Lucy (NASA, 2033 flyby)",
       "description": "104-km secondary of the Patroclus-Menoetius binary in the L5 Trojan cloud. Co-orbital with Patroclus at 680-km mutual separation; the pair forms the largest binary system known among the Jupiter Trojans. Lucy encounter 2033-03-02.",
-      "wiki": "https://en.wikipedia.org/wiki/617_Patroclus"
+      "wiki": "https://en.wikipedia.org/wiki/617_Patroclus",
+      "mission_visits": [
+        "Lucy — NASA, March 2033 flyby (L5 Trojan)"
+      ]
     },
     {
       "id": "oumuamua",
@@ -344,7 +409,7 @@
       "a": -1.272,
       "e": 1.2,
       "T": 0,
-      "L0": 4.0,
+      "L0": 4,
       "incl": 122.7,
       "color": "#ff8866",
       "radius_km": 0.1,
@@ -352,7 +417,8 @@
       "mission_visited": null,
       "note": "Hyperbolic trajectory — first known interstellar object. 2017 visit only; will not return.",
       "description": "First known interstellar object to visit our solar system. Detected in October 2017 by the Pan-STARRS survey three weeks after closest approach to the Sun. Its hyperbolic trajectory (eccentricity ~1.2) confirmed it originated outside the solar system. Highly elongated, dark red, and showing non-gravitational acceleration of unknown cause. Already on its way out — will not return.",
-      "wiki": "https://en.wikipedia.org/wiki/%CA%BBOumuamua"
+      "wiki": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+      "mission_visits": []
     }
   ]
 }

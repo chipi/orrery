@@ -1,6 +1,7 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import { getSunGallery } from '$lib/data';
+  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
@@ -10,7 +11,7 @@
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'science';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
 
   /** /science cross-sections relevant to the Sun: it's the central focus of
    * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
@@ -46,6 +47,8 @@
       void getSunGallery().then((urls) => {
         gallery = urls;
       });
+      // Warm the /missions + /fleet index for the MISSIONS tab linkifier.
+      void loadMissionIndex();
     }
   });
 
@@ -128,6 +131,17 @@
         aria-selected={tab === 'technical'}
         aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if (sun.mission_visits ?? []).length > 0}
+        <button
+          type="button"
+          id="sp-tab-missions"
+          class:active={tab === 'missions'}
+          onclick={() => (tab = 'missions')}
+          role="tab"
+          aria-selected={tab === 'missions'}
+          aria-controls="sp-tabpanel">MISSIONS</button
+        >
+      {/if}
       <button
         type="button"
         id="sp-tab-science"
@@ -202,6 +216,23 @@
         </div>
 
         <div class="src">{m.sun_source_nasa({ mag: sun.absolute_magnitude.toString() })}</div>
+      {:else if tab === 'missions'}
+        {#if (sun.mission_visits ?? []).length === 0}
+          <p class="empty-tab">No solar observatory missions recorded.</p>
+        {:else}
+          <ul class="mission-list">
+            {#each sun.mission_visits ?? [] as visit (visit)}
+              {@const link = linkifyMission(visit)}
+              <li>
+                {#if link}
+                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                {:else}
+                  {visit}
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        {/if}
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">

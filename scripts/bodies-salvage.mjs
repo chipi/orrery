@@ -28,7 +28,7 @@
  * Cost: ~$0.20–0.40 for a full 33-body sweep (Haiku 4.5 vision).
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { judgeBodyImage, preFilterBodyCandidate } from './lib/vision-judge.mjs';
 
 const UA =

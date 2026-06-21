@@ -485,18 +485,6 @@
     line-height: 1.6;
     margin: 0 0 12px 0;
   }
-  .science-tab {
-    padding-top: 4px;
-  }
-  .science-blurb {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 14px;
-  }
-
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

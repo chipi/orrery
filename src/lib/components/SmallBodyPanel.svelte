@@ -438,17 +438,6 @@
   .editorial.empty {
     color: rgba(255, 255, 255, 0.4);
   }
-  .science-tab {
-    padding-top: 4px;
-  }
-  .science-blurb {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 14px;
-  }
   .note {
     font-family: 'Space Mono', monospace;
     font-size: 9px;
@@ -516,23 +505,5 @@
     border-color: rgba(78, 205, 196, 0.5);
     outline: none;
   }
-  .learn-mission {
-    padding: 10px 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 3px;
-  }
-  .learn-key {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
-    margin-bottom: 4px;
-  }
-  .learn-val {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
   /* .panel-hero, .gallery-grid, .lightbox → src/lib/styles/panel-tabs.css */
 </style>

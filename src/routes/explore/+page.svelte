@@ -4806,18 +4806,18 @@
         </button>
       {/each}
     </div>
-    <!-- Date chip (#351 Layer 2-B) — shows the running simulated date and,
-         clicked, resets the clock to today. -->
+    <!-- Date readout + reset (#351 Layer 2-B) — the running simulated date,
+         with a dedicated reset-to-today button sized like play/pause. -->
+    <span class="time-date" data-testid="explore-sim-date">{simDateLabel}</span>
     <button
       type="button"
-      class="time-date"
+      class="play-btn reset-btn"
       onclick={() => resetSimToToday?.()}
       title={m.explore_time_today()}
       aria-label={m.explore_time_today()}
       data-testid="explore-time-today"
     >
-      <span class="time-date-value">{simDateLabel}</span>
-      <span class="time-date-reset" aria-hidden="true">⟲</span>
+      ⟲
     </button>
   </div>
 
@@ -5756,40 +5756,28 @@
     color: #4ecdc4;
     box-shadow: inset 0 0 8px rgba(78, 205, 196, 0.18);
   }
-  /* Date chip (#351 Layer 2-B) — running simulated date; click resets to
-     today. Matches the panel's mono/teal language; the ⟲ glyph hints at
-     the reset affordance. */
+  /* Date readout (#351 Layer 2-B) — non-interactive chip showing the
+     running simulated date, in the panel's mono/teal language. */
   .time-date {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
     min-height: 32px;
     padding: 0 9px;
-    border: 1px solid rgba(75, 156, 211, 0.3);
+    border: 1px solid rgba(75, 156, 211, 0.25);
     border-radius: 5px;
-    background: rgba(15, 18, 35, 0.4);
-    color: rgba(207, 224, 255, 0.78);
+    background: rgba(15, 18, 35, 0.35);
+    color: rgba(207, 224, 255, 0.82);
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.04em;
     white-space: nowrap;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      color 120ms,
-      border-color 120ms;
   }
-  .time-date:hover,
-  .time-date:focus-visible {
-    color: #fff;
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.7);
-    outline: none;
-  }
-  .time-date-reset {
-    font-size: 16px;
-    line-height: 1;
-    color: rgba(78, 205, 196, 0.9);
+  /* Reset-to-today — same icon-button footprint as play/pause (inherits
+     .time-controls .play-btn), teal tint, slightly larger glyph so the ⟲
+     reads clearly. Defined after .play-btn so it wins the font-size. */
+  .time-controls .reset-btn {
+    font-size: 15px;
+    color: #4ecdc4;
   }
 
   .paths-legend {

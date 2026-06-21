@@ -8,6 +8,7 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
   import type { ScienceTabId } from '$types/science';

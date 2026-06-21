@@ -574,6 +574,9 @@
   // /explore does on fly-to-body. Assigned in onMount (captures the fly
   // tween vars + earthSats); selection paths call it on every select.
   let faceCameraAtObject: ((obj: import('$types/earth-object').EarthObject) => void) | undefined;
+  // Orbiter-marker focus by site id (moon/mars orbital missions). Assigned
+  // in onMount (captures orbitalMarkers + the shared fly-in).
+  let faceCameraAtOrbiter: ((siteId: string) => void) | undefined;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
@@ -612,7 +615,12 @@
       // automatically. The user can resume spin via the chip if they
       // want — we don't fight them.
       autoSpin = false;
-      if (options.face) faceCameraAtSite?.(s);
+      if (options.face) {
+        // Orbiter sites (kind:'orbiter') have no lat/lon — fly to their
+        // orbital marker instead of the surface-facing tween.
+        if (s.kind === 'orbiter') faceCameraAtOrbiter?.(s.id);
+        else faceCameraAtSite?.(s);
+      }
     }
   }
   function toggleView() {
@@ -1039,11 +1047,11 @@
     // live world position off earthSats, points the camera at that
     // bearing, and lands just outside the object's ring so it frames
     // centre-screen. No-op on /moon and /mars (earthSats === []).
-    faceCameraAtObject = (obj) => {
-      const sat = earthSats.find((s) => s.id === obj.id);
-      if (!sat) return;
-      const worldPos = new THREE.Vector3();
-      sat.group.getWorldPosition(worldPos);
+    // Shared orbital fly-in: orbit the given world position (focusOffset →
+    // the object) from outward + lifted above the plane, so the body sits
+    // behind it and the ring reads as an angled ellipse. Used by both
+    // earth-satellite focus and orbiter-marker focus (moon/mars).
+    const flyToWorldPos = (worldPos: THREE.Vector3) => {
       const radius = worldPos.length();
       if (radius < 1e-3) return;
       const dir = worldPos.clone().divideScalar(radius);
@@ -1051,14 +1059,10 @@
       flyFromT = camT;
       flyFromR = camR;
       flyFromOffset.copy(focusOffset);
-      // Orbit the OBJECT itself (focusOffset → satellite), so it stays
-      // framed at ANY orbital altitude — low orbits no longer fall out of
-      // view as they did when we orbited Earth's centre. camR is now the
-      // camera→object distance (constant icon size regardless of orbit).
+      // Orbit the OBJECT itself, so it stays framed at ANY orbital altitude
+      // (low orbits no longer fall out of view). camR becomes the camera→
+      // object distance — constant icon size regardless of orbit radius.
       flyToOffset.copy(worldPos);
-      // Look from OUTWARD (same azimuth as the object's bearing) so Earth
-      // sits in the background, lifted ~29° above the orbital plane so the
-      // ring reads as an angled ellipse rather than a straight edge-on line.
       let to = Math.atan2(dir.x, dir.z);
       while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
       while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
@@ -1072,6 +1076,24 @@
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
+    };
+    faceCameraAtObject = (obj) => {
+      const sat = earthSats.find((s) => s.id === obj.id);
+      if (!sat) return;
+      const worldPos = new THREE.Vector3();
+      sat.group.getWorldPosition(worldPos);
+      flyToWorldPos(worldPos);
+    };
+    // Orbiter-marker focus (moon + mars). Orbiter SITES (kind:'orbiter')
+    // have no lat/lon, so faceCameraAtSite bails; fly to the marker dot's
+    // live orbital position instead. Generic — any route with orbiter
+    // markers gets it.
+    faceCameraAtOrbiter = (siteId) => {
+      const om = orbitalMarkers.find((m) => m.siteId === siteId);
+      if (!om) return;
+      const worldPos = new THREE.Vector3();
+      om.dotGroup.getWorldPosition(worldPos);
+      flyToWorldPos(worldPos);
     };
 
     // Zoom-to-detail variant: same lat/lon facing math, but lands at
@@ -3193,10 +3215,14 @@
         // still applies.
         if (!reducedMotion && autoSpin) planetMesh.rotation.y += dt * 0.015;
 
-        // Orbital dot motion — perception-scaled, ~30 s per ring.
+        // Orbital dot motion — perception-scaled, ~30 s per ring. Frozen
+        // while an item is selected so the focused orbiter holds still
+        // (matches /earth, where selection stops the scene). The fly-in
+        // captured the dot's position; freezing keeps it framed.
+        const motionFrozen = reducedMotion || selected != null || selectedSat != null;
         for (const om of orbitalMarkers) {
           if (!om.group.visible) continue;
-          tickOrbiterDot(om, dt, reducedMotion);
+          tickOrbiterDot(om, dt, motionFrozen);
         }
 
         // Outline-on-hover (skipped if hovered === selected).

@@ -28,10 +28,7 @@ export async function load({ fetch, url }: { fetch: typeof globalThis.fetch; url
   const datasetParam = url.searchParams.get('dataset') ?? 'slice-a';
   const dataset = (datasetParam in DATASETS ? datasetParam : 'slice-a') as keyof typeof DATASETS;
   const cfg = DATASETS[dataset];
-  const [salvageRes, approvalsRes] = await Promise.all([
-    fetch(cfg.salvage),
-    fetch(cfg.approvals),
-  ]);
+  const [salvageRes, approvalsRes] = await Promise.all([fetch(cfg.salvage), fetch(cfg.approvals)]);
   const salvage = salvageRes.ok ? await salvageRes.json() : { proposals: [], totals: {} };
   const approvals = approvalsRes.ok
     ? await approvalsRes.json()

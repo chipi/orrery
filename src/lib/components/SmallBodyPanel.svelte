@@ -219,11 +219,7 @@
           <div class="science-section">
             <h3 class="library-heading">SCIENCE</h3>
             {#each scienceSections as sec (sec.tab + sec.section)}
-              <ScienceCard
-                tab={sec.tab as ScienceTabId}
-                section={sec.section}
-                why={sec.why}
-              />
+              <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
         {/if}

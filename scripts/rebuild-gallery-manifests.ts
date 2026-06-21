@@ -32,9 +32,17 @@ const SURFACES: Array<{ label: string; imageDir: string; manifest: string }> = [
   { label: 'fleet-galleries', imageDir: 'fleet-galleries', manifest: 'fleet-galleries.json' },
   { label: 'mission-galleries', imageDir: 'missions', manifest: 'mission-galleries.json' },
   { label: 'planet-galleries', imageDir: 'planets', manifest: 'planet-galleries.json' },
-  { label: 'small-body-galleries', imageDir: 'small-bodies', manifest: 'small-body-galleries.json' },
+  {
+    label: 'small-body-galleries',
+    imageDir: 'small-bodies',
+    manifest: 'small-body-galleries.json',
+  },
   { label: 'satellite-galleries', imageDir: 'satellites', manifest: 'satellite-galleries.json' },
-  { label: 'earth-object-galleries', imageDir: 'earth-objects', manifest: 'earth-object-galleries.json' },
+  {
+    label: 'earth-object-galleries',
+    imageDir: 'earth-objects',
+    manifest: 'earth-object-galleries.json',
+  },
   { label: 'moon-site-galleries', imageDir: 'moon-sites', manifest: 'moon-site-galleries.json' },
   { label: 'mars-site-galleries', imageDir: 'mars-sites', manifest: 'mars-site-galleries.json' },
   // Belts: 2026-06-21 — schema flipped from {galleries:{asteroid:[{src,caption}]}}

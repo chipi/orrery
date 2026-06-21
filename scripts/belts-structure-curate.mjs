@@ -48,13 +48,41 @@ const BELTS = {
 
 // Single-body names to REJECT (these belong on their own surface).
 const REJECT_BODY_TOKENS = [
-  'vesta', 'pallas', 'ceres', 'eros', 'itokawa', 'bennu', 'ryugu',
-  'hygiea', 'lutetia', 'mathilde', 'gaspra', 'ida', 'psyche',
-  'pluto', 'eris', 'haumea', 'makemake', 'sedna', 'arrokoth',
-  'charon', 'ganymede', 'callisto', 'europa', 'io', 'titan',
-  'enceladus', 'triton', 'oumuamua',
+  'vesta',
+  'pallas',
+  'ceres',
+  'eros',
+  'itokawa',
+  'bennu',
+  'ryugu',
+  'hygiea',
+  'lutetia',
+  'mathilde',
+  'gaspra',
+  'ida',
+  'psyche',
+  'pluto',
+  'eris',
+  'haumea',
+  'makemake',
+  'sedna',
+  'arrokoth',
+  'charon',
+  'ganymede',
+  'callisto',
+  'europa',
+  'io',
+  'titan',
+  'enceladus',
+  'triton',
+  'oumuamua',
   // also reject obvious mission-hardware tokens just in case
-  'rover', 'lander', 'orbiter', 'spacecraft', 'launch', 'rocket',
+  'rover',
+  'lander',
+  'orbiter',
+  'spacecraft',
+  'launch',
+  'rocket',
 ];
 
 const KEEP_PER_BELT = 6; // 5–7 range; 6 is a clean grid layout
@@ -65,27 +93,41 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function commonsSearch(query) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: `${query} filetype:bitmap`, srnamespace: '6', srlimit: '30', origin: '*',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: `${query} filetype:bitmap`,
+    srnamespace: '6',
+    srlimit: '30',
+    origin: '*',
   });
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
-      if (res.status === 429 || res.status === 503) { await sleep(2000); continue; }
+      if (res.status === 429 || res.status === 503) {
+        await sleep(2000);
+        continue;
+      }
       if (!res.ok) return [];
       const j = await res.json();
       return (j?.query?.search ?? [])
         .map((h) => h.title.replace(/^File:/, ''))
         .filter((f) => /\.(jpg|jpeg|png)$/i.test(f));
-    } catch { return []; }
+    } catch {
+      return [];
+    }
   }
   return [];
 }
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -94,13 +136,20 @@ async function commonsImageInfo(filename) {
     const info = page?.imageinfo?.[0];
     if (!info) return null;
     const meta = info.extmetadata ?? {};
-    const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+    const strip = (s) =>
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
       credit: strip(meta.Credit?.value ?? meta.Artist?.value ?? ''),
     };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 const imageUrl = (f) =>
@@ -119,13 +168,22 @@ async function downloadAndProcess(url, dir, slot) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
-  const baseBuf = await sharp(buf).rotate().resize({ width: 1600, withoutEnlargement: true }).jpeg({ quality: 80 }).toBuffer();
+  const baseBuf = await sharp(buf)
+    .rotate()
+    .resize({ width: 1600, withoutEnlargement: true })
+    .jpeg({ quality: 80 })
+    .toBuffer();
   mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/${slot}.jpg`, baseBuf);
   const meta = await sharp(baseBuf).metadata();
   const side = Math.min(meta.width, meta.height);
   await sharp(baseBuf)
-    .extract({ left: Math.round((meta.width - side) / 2), top: Math.round((meta.height - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((meta.width - side) / 2),
+      top: Math.round((meta.height - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 80 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
   return baseBuf.length;
@@ -176,7 +234,11 @@ async function main() {
       const slot = String(i + 1).padStart(2, '0');
       const p = picks[i];
       try {
-        const bytes = await downloadAndProcess(imageUrl(p.file), `static/images/belts/${beltId}`, slot);
+        const bytes = await downloadAndProcess(
+          imageUrl(p.file),
+          `static/images/belts/${beltId}`,
+          slot,
+        );
         panel[`belts/${beltId}/${slot}`] = {
           commons_file: p.file,
           commons_url: sourceUrl(p.file),
@@ -199,4 +261,7 @@ async function main() {
   console.log('\n✓ wrote panel-image-sources.json');
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

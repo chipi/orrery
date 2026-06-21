@@ -94,8 +94,7 @@ async function downloadAndProcess(imageUrl, surface, id, slot) {
 function pickWinningApproval(decisionsBySlot) {
   return decisionsBySlot
     .filter((d) => d.decision.status === 'approved')
-    .sort((a, b) => (b.decision.updated_at ?? '').localeCompare(a.decision.updated_at ?? ''))
-    [0];
+    .sort((a, b) => (b.decision.updated_at ?? '').localeCompare(a.decision.updated_at ?? ''))[0];
 }
 
 console.log(`Loading approvals from ${APPROVALS_PATH}${DRY_RUN ? ' (DRY RUN)' : ''}\n`);
@@ -128,19 +127,14 @@ for (const [key, candidates] of bySlot) {
   if (DRY_RUN) {
     console.log(
       `  [dry]${overrideTag} ${p.surface}/${p.missionId}/${p.slot} ← ${effective.source_type} ` +
-      `(v=${p.vision_v3?.verdict ?? 'n/a'} c=${(p.vision_v3?.confidence ?? 0).toFixed(2)})`,
+        `(v=${p.vision_v3?.verdict ?? 'n/a'} c=${(p.vision_v3?.confidence ?? 0).toFixed(2)})`,
     );
     stats.applied++;
     continue;
   }
 
   try {
-    const bytes = await downloadAndProcess(
-      effective.image_url,
-      p.surface,
-      p.missionId,
-      p.slot,
-    );
+    const bytes = await downloadAndProcess(effective.image_url, p.surface, p.missionId, p.slot);
     // Sun uses a flat sidecar key matching its flat disk layout —
     // 'sun/01' rather than 'sun/sun/01'.
     const sidecarKey =

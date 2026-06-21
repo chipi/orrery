@@ -176,11 +176,7 @@
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
             {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
-              <ScienceCard
-                tab={sec.tab as ScienceTabId}
-                section={sec.section}
-                why={sec.why}
-              />
+              <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
         {/if}

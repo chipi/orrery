@@ -73,7 +73,12 @@ async function commonsImageInfo(filename) {
     const info = page?.imageinfo?.[0];
     if (!info) return null;
     const meta = info.extmetadata ?? {};
-    const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+    const strip = (s) =>
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
@@ -133,7 +138,9 @@ async function main() {
   console.log(`Gathered ${candidates.length} candidates`);
 
   // 2. Pre-filter (kills any rocket/launch keyword)
-  const filtered = candidates.filter((c) => !preFilterBodyCandidate({ url: c.file, title: c.file }).reject);
+  const filtered = candidates.filter(
+    (c) => !preFilterBodyCandidate({ url: c.file, title: c.file }).reject,
+  );
   console.log(`After pre-filter: ${filtered.length}`);
 
   // 3. Size-check + enrich
@@ -156,7 +163,7 @@ async function main() {
     });
     await sleep(120);
     judged.push({ ...c, vision: v });
-    console.log(`  ${c.file.slice(0,70)} → ${v.verdict} c=${(v.confidence ?? 0).toFixed(2)}`);
+    console.log(`  ${c.file.slice(0, 70)} → ${v.verdict} c=${(v.confidence ?? 0).toFixed(2)}`);
   }
 
   const survivors = judged
@@ -164,7 +171,9 @@ async function main() {
     .sort((a, b) => (b.vision.confidence ?? 0) - (a.vision.confidence ?? 0));
   console.log(`\nSurvivors: ${survivors.length}`);
   if (survivors.length < TARGET_SLOTS.length) {
-    console.error(`Not enough survivors (need ${TARGET_SLOTS.length}, got ${survivors.length}). Aborting apply.`);
+    console.error(
+      `Not enough survivors (need ${TARGET_SLOTS.length}, got ${survivors.length}). Aborting apply.`,
+    );
     process.exit(1);
   }
 

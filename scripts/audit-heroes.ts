@@ -181,8 +181,7 @@ const SURFACES: SurfaceConfig[] = [
     indexPath: 'static/data/small-body-galleries.json',
     // small-body-galleries.json is a flat {id: count} map; ids match
     // the on-disk dir names directly.
-    extractIds: (j) =>
-      Object.keys(j as Record<string, number>).map((id) => ({ id })),
+    extractIds: (j) => Object.keys(j as Record<string, number>).map((id) => ({ id })),
   },
   {
     label: 'satellites',

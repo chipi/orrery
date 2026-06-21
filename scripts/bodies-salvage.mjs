@@ -48,110 +48,227 @@ const SCRAPE_THROTTLE_MS = 300; // ~3 req/sec to Commons (was 50 — got silentl
 // where pure-body imagery dominates over mission-hardware shots.
 const BODIES = [
   // ─── planets ────────────────────────────────────────────────────
-  { surface: 'planets', id: 'mercury', subject: 'Mercury (the planet)', queries: [
-    'Mercury planet MESSENGER', 'Mercury Mariner 10', 'Mercury surface crater',
-  ]},
-  { surface: 'planets', id: 'venus', subject: 'Venus (the planet)', queries: [
-    'Venus planet Mariner 10', 'Venus Magellan radar', 'Venus atmosphere',
-    'Venus surface Venera',
-  ]},
-  { surface: 'planets', id: 'earth', subject: 'Earth (the planet from space)', queries: [
-    'Earth from space Blue Marble', 'Earth Apollo 17', 'Earth ISS view',
-    'Earth full disc satellite',
-  ]},
-  { surface: 'planets', id: 'mars', subject: 'Mars (the planet)', queries: [
-    'Mars planet Hubble', 'Mars Viking orbiter view', 'Mars from space',
-    'Mars Olympus Mons HiRise', 'Mars Valles Marineris',
-  ]},
-  { surface: 'planets', id: 'jupiter', subject: 'Jupiter (the planet)', queries: [
-    'Jupiter Hubble Space Telescope', 'Jupiter Voyager 1', 'Jupiter Cassini',
-    'Jupiter JunoCam', 'Jupiter Great Red Spot',
-  ]},
-  { surface: 'planets', id: 'saturn', subject: 'Saturn (the planet with rings)', queries: [
-    'Saturn Hubble', 'Saturn Cassini', 'Saturn rings',
-    'Saturn Voyager', 'Saturn aurora',
-  ]},
-  { surface: 'planets', id: 'uranus', subject: 'Uranus (the planet)', queries: [
-    'Uranus Voyager 2', 'Uranus Hubble', 'Uranus rings',
-  ]},
-  { surface: 'planets', id: 'neptune', subject: 'Neptune (the planet)', queries: [
-    'Neptune Voyager 2', 'Neptune Hubble', 'Neptune Great Dark Spot',
-  ]},
-  { surface: 'planets', id: 'pluto', subject: 'Pluto (the dwarf planet)', queries: [
-    'Pluto New Horizons', 'Pluto surface heart Tombaugh',
-  ]},
+  {
+    surface: 'planets',
+    id: 'mercury',
+    subject: 'Mercury (the planet)',
+    queries: ['Mercury planet MESSENGER', 'Mercury Mariner 10', 'Mercury surface crater'],
+  },
+  {
+    surface: 'planets',
+    id: 'venus',
+    subject: 'Venus (the planet)',
+    queries: [
+      'Venus planet Mariner 10',
+      'Venus Magellan radar',
+      'Venus atmosphere',
+      'Venus surface Venera',
+    ],
+  },
+  {
+    surface: 'planets',
+    id: 'earth',
+    subject: 'Earth (the planet from space)',
+    queries: [
+      'Earth from space Blue Marble',
+      'Earth Apollo 17',
+      'Earth ISS view',
+      'Earth full disc satellite',
+    ],
+  },
+  {
+    surface: 'planets',
+    id: 'mars',
+    subject: 'Mars (the planet)',
+    queries: [
+      'Mars planet Hubble',
+      'Mars Viking orbiter view',
+      'Mars from space',
+      'Mars Olympus Mons HiRise',
+      'Mars Valles Marineris',
+    ],
+  },
+  {
+    surface: 'planets',
+    id: 'jupiter',
+    subject: 'Jupiter (the planet)',
+    queries: [
+      'Jupiter Hubble Space Telescope',
+      'Jupiter Voyager 1',
+      'Jupiter Cassini',
+      'Jupiter JunoCam',
+      'Jupiter Great Red Spot',
+    ],
+  },
+  {
+    surface: 'planets',
+    id: 'saturn',
+    subject: 'Saturn (the planet with rings)',
+    queries: ['Saturn Hubble', 'Saturn Cassini', 'Saturn rings', 'Saturn Voyager', 'Saturn aurora'],
+  },
+  {
+    surface: 'planets',
+    id: 'uranus',
+    subject: 'Uranus (the planet)',
+    queries: ['Uranus Voyager 2', 'Uranus Hubble', 'Uranus rings'],
+  },
+  {
+    surface: 'planets',
+    id: 'neptune',
+    subject: 'Neptune (the planet)',
+    queries: ['Neptune Voyager 2', 'Neptune Hubble', 'Neptune Great Dark Spot'],
+  },
+  {
+    surface: 'planets',
+    id: 'pluto',
+    subject: 'Pluto (the dwarf planet)',
+    queries: ['Pluto New Horizons', 'Pluto surface heart Tombaugh'],
+  },
   // ─── small-bodies (dwarfs / comets / interstellar) ─────────────
-  { surface: 'small-bodies', id: 'ceres', subject: 'Ceres (the dwarf planet)', queries: [
-    'Ceres Dawn spacecraft', 'Ceres surface bright spots',
-  ]},
-  { surface: 'small-bodies', id: 'eris', subject: 'Eris (the dwarf planet)', queries: [
-    'Eris dwarf planet', 'Eris Dysnomia',
-  ]},
-  { surface: 'small-bodies', id: 'haumea', subject: 'Haumea (the dwarf planet)', queries: [
-    'Haumea dwarf planet', 'Haumea rings',
-  ]},
-  { surface: 'small-bodies', id: 'makemake', subject: 'Makemake (the dwarf planet)', queries: [
-    'Makemake dwarf planet', 'Makemake Hubble',
-  ]},
-  { surface: 'small-bodies', id: '67p', subject: "Comet 67P/Churyumov–Gerasimenko", queries: [
-    '67P Churyumov Gerasimenko Rosetta', 'Comet 67P nucleus',
-  ]},
-  { surface: 'small-bodies', id: 'halley', subject: "Halley's Comet", queries: [
-    "Halley's Comet Giotto nucleus", 'Halley comet 1986',
-  ]},
-  { surface: 'small-bodies', id: 'oumuamua', subject: "ʻOumuamua (interstellar object)", queries: [
-    'Oumuamua interstellar object', 'Oumuamua artist impression',
-  ]},
-  { surface: 'small-bodies', id: 'pluto', subject: 'Pluto (the dwarf planet)', queries: [
-    'Pluto New Horizons', 'Pluto surface heart Tombaugh',
-  ]},
+  {
+    surface: 'small-bodies',
+    id: 'ceres',
+    subject: 'Ceres (the dwarf planet)',
+    queries: ['Ceres Dawn spacecraft', 'Ceres surface bright spots'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'eris',
+    subject: 'Eris (the dwarf planet)',
+    queries: ['Eris dwarf planet', 'Eris Dysnomia'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'haumea',
+    subject: 'Haumea (the dwarf planet)',
+    queries: ['Haumea dwarf planet', 'Haumea rings'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'makemake',
+    subject: 'Makemake (the dwarf planet)',
+    queries: ['Makemake dwarf planet', 'Makemake Hubble'],
+  },
+  {
+    surface: 'small-bodies',
+    id: '67p',
+    subject: 'Comet 67P/Churyumov–Gerasimenko',
+    queries: ['67P Churyumov Gerasimenko Rosetta', 'Comet 67P nucleus'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'halley',
+    subject: "Halley's Comet",
+    queries: ["Halley's Comet Giotto nucleus", 'Halley comet 1986'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'oumuamua',
+    subject: 'ʻOumuamua (interstellar object)',
+    queries: ['Oumuamua interstellar object', 'Oumuamua artist impression'],
+  },
+  {
+    surface: 'small-bodies',
+    id: 'pluto',
+    subject: 'Pluto (the dwarf planet)',
+    queries: ['Pluto New Horizons', 'Pluto surface heart Tombaugh'],
+  },
   // ─── satellites (moons) ────────────────────────────────────────
-  { surface: 'satellites', id: 'moon', subject: "Earth's Moon", queries: [
-    'Moon from space Apollo', 'Moon full disc', 'Moon surface craters',
-    'Moon farside LRO',
-  ]},
-  { surface: 'satellites', id: 'phobos', subject: 'Phobos (Mars moon)', queries: [
-    'Phobos Mars moon MRO', 'Phobos Viking', 'Phobos Stickney crater',
-  ]},
-  { surface: 'satellites', id: 'deimos', subject: 'Deimos (Mars moon)', queries: [
-    'Deimos Mars moon MRO', 'Deimos Viking',
-  ]},
-  { surface: 'satellites', id: 'io', subject: 'Io (Jupiter moon)', queries: [
-    'Io Galileo spacecraft', 'Io volcanic surface', 'Io Voyager',
-  ]},
-  { surface: 'satellites', id: 'europa', subject: 'Europa (Jupiter moon)', queries: [
-    'Europa Galileo spacecraft', 'Europa surface ice', 'Europa Voyager',
-  ]},
-  { surface: 'satellites', id: 'ganymede', subject: 'Ganymede (Jupiter moon)', queries: [
-    'Ganymede Galileo spacecraft', 'Ganymede surface', 'Ganymede Voyager',
-  ]},
-  { surface: 'satellites', id: 'callisto', subject: 'Callisto (Jupiter moon)', queries: [
-    'Callisto Galileo spacecraft', 'Callisto surface', 'Callisto Voyager',
-  ]},
-  { surface: 'satellites', id: 'titan', subject: 'Titan (Saturn moon)', queries: [
-    'Titan Cassini Saturn moon', 'Titan haze atmosphere', 'Titan Huygens surface',
-  ]},
-  { surface: 'satellites', id: 'enceladus', subject: 'Enceladus (Saturn moon)', queries: [
-    'Enceladus Cassini Saturn moon', 'Enceladus tiger stripes', 'Enceladus plumes',
-  ]},
-  { surface: 'satellites', id: 'triton', subject: 'Triton (Neptune moon)', queries: [
-    'Triton Voyager 2 Neptune moon', 'Triton surface',
-  ]},
-  { surface: 'satellites', id: 'charon', subject: 'Charon (Pluto moon)', queries: [
-    'Charon New Horizons Pluto moon', 'Charon surface',
-  ]},
-  { surface: 'satellites', id: 'miranda', subject: 'Miranda (Uranus moon)', queries: [
-    'Miranda Voyager 2 Uranus moon', 'Miranda surface cliffs',
-  ]},
-  { surface: 'satellites', id: 'ariel', subject: 'Ariel (Uranus moon)', queries: [
-    'Ariel Voyager 2 Uranus moon',
-  ]},
-  { surface: 'satellites', id: 'titania', subject: 'Titania (Uranus moon)', queries: [
-    'Titania Voyager 2 Uranus moon',
-  ]},
-  { surface: 'satellites', id: 'oberon', subject: 'Oberon (Uranus moon)', queries: [
-    'Oberon Voyager 2 Uranus moon',
-  ]},
+  {
+    surface: 'satellites',
+    id: 'moon',
+    subject: "Earth's Moon",
+    queries: [
+      'Moon from space Apollo',
+      'Moon full disc',
+      'Moon surface craters',
+      'Moon farside LRO',
+    ],
+  },
+  {
+    surface: 'satellites',
+    id: 'phobos',
+    subject: 'Phobos (Mars moon)',
+    queries: ['Phobos Mars moon MRO', 'Phobos Viking', 'Phobos Stickney crater'],
+  },
+  {
+    surface: 'satellites',
+    id: 'deimos',
+    subject: 'Deimos (Mars moon)',
+    queries: ['Deimos Mars moon MRO', 'Deimos Viking'],
+  },
+  {
+    surface: 'satellites',
+    id: 'io',
+    subject: 'Io (Jupiter moon)',
+    queries: ['Io Galileo spacecraft', 'Io volcanic surface', 'Io Voyager'],
+  },
+  {
+    surface: 'satellites',
+    id: 'europa',
+    subject: 'Europa (Jupiter moon)',
+    queries: ['Europa Galileo spacecraft', 'Europa surface ice', 'Europa Voyager'],
+  },
+  {
+    surface: 'satellites',
+    id: 'ganymede',
+    subject: 'Ganymede (Jupiter moon)',
+    queries: ['Ganymede Galileo spacecraft', 'Ganymede surface', 'Ganymede Voyager'],
+  },
+  {
+    surface: 'satellites',
+    id: 'callisto',
+    subject: 'Callisto (Jupiter moon)',
+    queries: ['Callisto Galileo spacecraft', 'Callisto surface', 'Callisto Voyager'],
+  },
+  {
+    surface: 'satellites',
+    id: 'titan',
+    subject: 'Titan (Saturn moon)',
+    queries: ['Titan Cassini Saturn moon', 'Titan haze atmosphere', 'Titan Huygens surface'],
+  },
+  {
+    surface: 'satellites',
+    id: 'enceladus',
+    subject: 'Enceladus (Saturn moon)',
+    queries: ['Enceladus Cassini Saturn moon', 'Enceladus tiger stripes', 'Enceladus plumes'],
+  },
+  {
+    surface: 'satellites',
+    id: 'triton',
+    subject: 'Triton (Neptune moon)',
+    queries: ['Triton Voyager 2 Neptune moon', 'Triton surface'],
+  },
+  {
+    surface: 'satellites',
+    id: 'charon',
+    subject: 'Charon (Pluto moon)',
+    queries: ['Charon New Horizons Pluto moon', 'Charon surface'],
+  },
+  {
+    surface: 'satellites',
+    id: 'miranda',
+    subject: 'Miranda (Uranus moon)',
+    queries: ['Miranda Voyager 2 Uranus moon', 'Miranda surface cliffs'],
+  },
+  {
+    surface: 'satellites',
+    id: 'ariel',
+    subject: 'Ariel (Uranus moon)',
+    queries: ['Ariel Voyager 2 Uranus moon'],
+  },
+  {
+    surface: 'satellites',
+    id: 'titania',
+    subject: 'Titania (Uranus moon)',
+    queries: ['Titania Voyager 2 Uranus moon'],
+  },
+  {
+    surface: 'satellites',
+    id: 'oberon',
+    subject: 'Oberon (Uranus moon)',
+    queries: ['Oberon Voyager 2 Uranus moon'],
+  },
 ];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -260,7 +377,9 @@ async function processBody(body, budget) {
     await sleep(SCRAPE_THROTTLE_MS);
     if (candidates.length >= CANDIDATES_PER_BODY) break;
   }
-  console.log(`  [${body.surface}/${body.id}] ${candidates.length} candidates from ${body.queries.length} queries`);
+  console.log(
+    `  [${body.surface}/${body.id}] ${candidates.length} candidates from ${body.queries.length} queries`,
+  );
 
   // 2. Pre-filter by URL/title keywords (cheap, no API).
   const preFiltered = [];
@@ -294,7 +413,9 @@ async function processBody(body, budget) {
     }
     preFiltered.push(c);
   }
-  console.log(`  [${body.surface}/${body.id}] pre-filter: ${preFiltered.length}/${candidates.length} survived`);
+  console.log(
+    `  [${body.surface}/${body.id}] pre-filter: ${preFiltered.length}/${candidates.length} survived`,
+  );
 
   // 3. Pull imageinfo (size/license/credit) — cheap, no vision yet.
   //    Drop tiny images (< MIN_BYTES) here so we don't waste vision spend.
@@ -373,7 +494,9 @@ async function processBody(body, budget) {
         size_bytes: c.info.size,
         vision_v3: v,
         survivor: false,
-        drop_reasons: [`vision: v=${v.verdict} c=${(v.confidence ?? 0).toFixed(2)} — ${(v.reason ?? '').slice(0, 110)}`],
+        drop_reasons: [
+          `vision: v=${v.verdict} c=${(v.confidence ?? 0).toFixed(2)} — ${(v.reason ?? '').slice(0, 110)}`,
+        ],
         notes: [],
       });
     }

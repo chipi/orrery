@@ -23,13 +23,7 @@
   import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
-  import {
-    getBelts,
-    getBeltGallery,
-    getBeltI18n,
-    type BeltEntry,
-    type BeltI18n,
-  } from '$lib/data';
+  import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
 
   const loc = $derived(localeFromPage($page));
 
@@ -246,11 +240,7 @@
           <div class="science-section">
             <h3 class="library-heading">SCIENCE</h3>
             {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
-              <ScienceCard
-                tab={sec.tab as ScienceTabId}
-                section={sec.section}
-                why={sec.why}
-              />
+              <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
         {/if}

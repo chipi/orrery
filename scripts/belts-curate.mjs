@@ -38,38 +38,85 @@ const MANIFEST_PATH = 'static/data/belt-galleries.json';
 
 const BELTS = {
   asteroid: [
-    { slot: '01', subject: 'the asteroid belt (panoramic structure or NASA artist concept of the disc-shaped belt)',
-      queries: ['asteroid belt artist concept', 'asteroid belt solar system diagram', 'main asteroid belt artwork'],
-      isOverview: true },
-    { slot: '02', subject: '4 Vesta (the asteroid)',
-      queries: ['Vesta asteroid Dawn', 'Vesta asteroid surface'] },
-    { slot: '03', subject: '2 Pallas (the asteroid)',
-      queries: ['2 Pallas asteroid', 'Pallas asteroid Hubble'] },
-    { slot: '04', subject: '10 Hygiea (the asteroid)',
-      queries: ['10 Hygiea asteroid', 'Hygiea asteroid SPHERE'] },
-    { slot: '05', subject: '433 Eros (the asteroid)',
-      queries: ['433 Eros NEAR Shoemaker', 'Eros asteroid surface'] },
-    { slot: '06', subject: '25143 Itokawa (the asteroid)',
-      queries: ['Itokawa asteroid Hayabusa', '25143 Itokawa surface'] },
-    { slot: '07', subject: '101955 Bennu (the asteroid)',
-      queries: ['Bennu OSIRIS-REx', '101955 Bennu surface'] },
+    {
+      slot: '01',
+      subject:
+        'the asteroid belt (panoramic structure or NASA artist concept of the disc-shaped belt)',
+      queries: [
+        'asteroid belt artist concept',
+        'asteroid belt solar system diagram',
+        'main asteroid belt artwork',
+      ],
+      isOverview: true,
+    },
+    {
+      slot: '02',
+      subject: '4 Vesta (the asteroid)',
+      queries: ['Vesta asteroid Dawn', 'Vesta asteroid surface'],
+    },
+    {
+      slot: '03',
+      subject: '2 Pallas (the asteroid)',
+      queries: ['2 Pallas asteroid', 'Pallas asteroid Hubble'],
+    },
+    {
+      slot: '04',
+      subject: '10 Hygiea (the asteroid)',
+      queries: ['10 Hygiea asteroid', 'Hygiea asteroid SPHERE'],
+    },
+    {
+      slot: '05',
+      subject: '433 Eros (the asteroid)',
+      queries: ['433 Eros NEAR Shoemaker', 'Eros asteroid surface'],
+    },
+    {
+      slot: '06',
+      subject: '25143 Itokawa (the asteroid)',
+      queries: ['Itokawa asteroid Hayabusa', '25143 Itokawa surface'],
+    },
+    {
+      slot: '07',
+      subject: '101955 Bennu (the asteroid)',
+      queries: ['Bennu OSIRIS-REx', '101955 Bennu surface'],
+    },
   ],
   kuiper: [
-    { slot: '01', subject: 'the Kuiper Belt (artist concept of the outer trans-Neptunian disc)',
+    {
+      slot: '01',
+      subject: 'the Kuiper Belt (artist concept of the outer trans-Neptunian disc)',
       queries: ['Kuiper Belt artist concept', 'Kuiper Belt diagram', 'outer solar system Kuiper'],
-      isOverview: true },
-    { slot: '02', subject: 'Pluto (the dwarf planet)',
-      queries: ['Pluto New Horizons true color', 'Pluto surface heart'] },
-    { slot: '03', subject: 'Eris (the dwarf planet)',
-      queries: ['Eris dwarf planet Hubble', 'Eris and Dysnomia'] },
-    { slot: '04', subject: 'Haumea (the dwarf planet)',
-      queries: ['Haumea dwarf planet artist', 'Haumea rotation'] },
-    { slot: '05', subject: 'Makemake (the dwarf planet)',
-      queries: ['Makemake dwarf planet Hubble', 'Makemake surface'] },
-    { slot: '06', subject: '90377 Sedna (the trans-Neptunian object)',
-      queries: ['Sedna trans-Neptunian artist', '90377 Sedna'] },
-    { slot: '07', subject: '486958 Arrokoth (the Kuiper Belt object visited by New Horizons)',
-      queries: ['Arrokoth New Horizons', '486958 Arrokoth'] },
+      isOverview: true,
+    },
+    {
+      slot: '02',
+      subject: 'Pluto (the dwarf planet)',
+      queries: ['Pluto New Horizons true color', 'Pluto surface heart'],
+    },
+    {
+      slot: '03',
+      subject: 'Eris (the dwarf planet)',
+      queries: ['Eris dwarf planet Hubble', 'Eris and Dysnomia'],
+    },
+    {
+      slot: '04',
+      subject: 'Haumea (the dwarf planet)',
+      queries: ['Haumea dwarf planet artist', 'Haumea rotation'],
+    },
+    {
+      slot: '05',
+      subject: 'Makemake (the dwarf planet)',
+      queries: ['Makemake dwarf planet Hubble', 'Makemake surface'],
+    },
+    {
+      slot: '06',
+      subject: '90377 Sedna (the trans-Neptunian object)',
+      queries: ['Sedna trans-Neptunian artist', '90377 Sedna'],
+    },
+    {
+      slot: '07',
+      subject: '486958 Arrokoth (the Kuiper Belt object visited by New Horizons)',
+      queries: ['Arrokoth New Horizons', '486958 Arrokoth'],
+    },
   ],
 };
 
@@ -79,8 +126,13 @@ const MAX_BYTES = 25_000_000;
 
 async function commonsSearch(query) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: `${query} filetype:bitmap`, srnamespace: '6', srlimit: '20', origin: '*',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: `${query} filetype:bitmap`,
+    srnamespace: '6',
+    srlimit: '20',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -89,13 +141,19 @@ async function commonsSearch(query) {
     return (j?.query?.search ?? [])
       .map((h) => h.title.replace(/^File:/, ''))
       .filter((f) => /\.(jpg|jpeg|png)$/i.test(f));
-  } catch { return []; }
+  } catch {
+    return [];
+  }
 }
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -104,16 +162,24 @@ async function commonsImageInfo(filename) {
     const info = page?.imageinfo?.[0];
     if (!info) return null;
     const meta = info.extmetadata ?? {};
-    const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+    const strip = (s) =>
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
       credit: strip(meta.Credit?.value ?? meta.Artist?.value ?? ''),
     };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
-const imageUrl = (f) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1600`;
+const imageUrl = (f) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1600`;
 const sourceUrl = (f) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
 
 async function findBest(item) {
@@ -130,7 +196,9 @@ async function findBest(item) {
     if (candidates.length >= 20) break;
   }
   // overviews can be artist concepts; keep more lenient pre-filter (no mission keywords still).
-  const filtered = candidates.filter((c) => !preFilterBodyCandidate({ url: c.file, title: c.file }).reject);
+  const filtered = candidates.filter(
+    (c) => !preFilterBodyCandidate({ url: c.file, title: c.file }).reject,
+  );
   for (const c of filtered.slice(0, 10)) {
     const info = await commonsImageInfo(c.file);
     await sleep(300);
@@ -156,13 +224,22 @@ async function downloadAndProcess(url, dir, slot) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
-  const baseBuf = await sharp(buf).rotate().resize({ width: 1600, withoutEnlargement: true }).jpeg({ quality: 80 }).toBuffer();
+  const baseBuf = await sharp(buf)
+    .rotate()
+    .resize({ width: 1600, withoutEnlargement: true })
+    .jpeg({ quality: 80 })
+    .toBuffer();
   mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/${slot}.jpg`, baseBuf);
   const meta = await sharp(baseBuf).metadata();
   const side = Math.min(meta.width, meta.height);
   await sharp(baseBuf)
-    .extract({ left: Math.round((meta.width - side) / 2), top: Math.round((meta.height - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((meta.width - side) / 2),
+      top: Math.round((meta.height - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 80 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
   return baseBuf.length;

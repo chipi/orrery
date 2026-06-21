@@ -38,6 +38,11 @@ export function createOrbiterRing({
     new THREE.RingGeometry(ringRadius - ringThickness, ringRadius + ringThickness, segments),
     ringMat,
   );
-  ringMesh.rotation.x = inclinationRad;
+  // RingGeometry lies in the XY plane. Add π/2 to lay it flat into the XZ
+  // (equatorial) plane FIRST, then the inclination tilts it — so inc=0 is a
+  // horizontal equatorial ring and inc=90° is a polar ring. This matches the
+  // dot's XZ-plane parametrisation in tickOrbiterDot (the dot was off the
+  // ring before this — the ring was vertical while the dot orbited flat).
+  ringMesh.rotation.x = Math.PI / 2 + inclinationRad;
   return ringMesh;
 }

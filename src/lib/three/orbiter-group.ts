@@ -28,6 +28,7 @@ export type OrbiterMarker = {
   dotGroup: THREE.Group;
   siteId: string;
   ringRadius: number;
+  inclinationRad: number;
   orbitSpeed: number;
   orbitPhase: number;
   halo?: THREE.Object3D;
@@ -94,6 +95,7 @@ export function buildOrbiterGroup({
     dotGroup,
     siteId: site.id,
     ringRadius,
+    inclinationRad,
     orbitSpeed: dimmed ? 0.06 : 0.2,
     orbitPhase,
     halo,
@@ -114,7 +116,10 @@ export function tickOrbiterDot(om: OrbiterMarker, dt: number, reducedMotion: boo
   const a = om.orbitPhase;
   const lx = Math.cos(a) * om.ringRadius;
   const lz = Math.sin(a) * om.ringRadius;
-  const inc = om.ringMesh.rotation.x;
+  // Dot rides the same XZ-plane circle the ring is built from, inclined by
+  // the true inclination (NOT ringMesh.rotation.x, which now carries the
+  // extra π/2 that lays the RingGeometry flat — see orbiter-ring.ts).
+  const inc = om.inclinationRad;
   om.dotGroup.position.set(lx, -lz * Math.sin(inc), lz * Math.cos(inc));
 }
 

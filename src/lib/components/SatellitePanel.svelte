@@ -28,7 +28,10 @@
 
   const loc = $derived(localeFromPage($page));
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'library';
+  // 2026-06-21 — LIBRARY tab dropped; entry.library[] now renders at
+  // the bottom of TECHNICAL, matching the B2 pattern adopted across
+  // all /explore detail panels.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
   type Props = {
     satelliteKey: string | null;
@@ -155,15 +158,6 @@
           aria-controls="sat-tabpanel">MISSIONS</button
         >
       {/if}
-      <button
-        type="button"
-        id="sat-tab-library"
-        class:active={tab === 'library'}
-        onclick={() => (tab = 'library')}
-        role="tab"
-        aria-selected={tab === 'library'}
-        aria-controls="sat-tabpanel">{m.panel_tab_library()}</button
-      >
     </div>
 
     <div class="tab-content" role="tabpanel" id="sat-tabpanel" aria-labelledby="sat-tab-{tab}">
@@ -208,6 +202,20 @@
             <div class="cell-value">{entry.discovered}</div>
           </div>
         </div>
+        {#if entry.library && entry.library.length > 0}
+          <div class="science-library">
+            <h3 class="library-heading">{m.panel_tab_library()}</h3>
+            <ul class="learn-list">
+              {#each entry.library as link (link.id)}
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer external">
+                    {link.label} ↗
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
       {:else if tab === 'missions'}
         {#if (entry.mission_visits ?? []).length === 0}
           <p class="empty-tab">No spacecraft have visited this body.</p>
@@ -224,20 +232,6 @@
               </li>
             {/each}
           </ul>
-        {/if}
-      {:else if tab === 'library'}
-        {#if entry.library && entry.library.length > 0}
-          <ul class="learn-list">
-            {#each entry.library as link (link.id)}
-              <li>
-                <a href={link.url} target="_blank" rel="noopener noreferrer external">
-                  {link.label} ↗
-                </a>
-              </li>
-            {/each}
-          </ul>
-        {:else}
-          <p class="editorial empty">{m.panel_satellite_library_empty()}</p>
         {/if}
       {/if}
     </div>
@@ -370,18 +364,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 14px 16px;
   }
-  .mission-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.45;
-  }
+  /* .mission-list / .mission-link moved to src/lib/styles/panel-tabs.css
+     for cross-panel consistency; SatellitePanel-local rule deleted. */
   .gallery-grid {
     margin: 0;
     padding: 0;

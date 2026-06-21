@@ -20,6 +20,7 @@
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
+  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import {
     getBelts,
     getBeltGallery,
@@ -30,7 +31,11 @@
 
   const loc = $derived(localeFromPage($page));
 
-  type Tab = 'overview' | 'gallery' | 'members' | 'missions' | 'library';
+  // 2026-06-21 — LIBRARY tab dropped; entry.library[] now renders at
+  // the bottom of OVERVIEW (BeltPanel has no TECHNICAL tab; its
+  // composition cells live in overview). Same B2 pattern as the other
+  // /explore detail panels.
+  type Tab = 'overview' | 'gallery' | 'members' | 'missions';
 
   type Props = {
     beltId: string | null;
@@ -99,6 +104,7 @@
       void getBeltI18n(loc, id).then((o) => {
         if (baseEntry && baseEntry.id === id) overlay = o;
       });
+      void loadMissionIndex();
     }
   });
 
@@ -212,15 +218,6 @@
         aria-selected={tab === 'missions'}
         aria-controls="belt-tabpanel">MISSIONS</button
       >
-      <button
-        type="button"
-        id="belt-tab-library"
-        class:active={tab === 'library'}
-        onclick={() => (tab = 'library')}
-        role="tab"
-        aria-selected={tab === 'library'}
-        aria-controls="belt-tabpanel">LIBRARY</button
-      >
     </div>
 
     <div class="tab-content" role="tabpanel" id="belt-tabpanel" aria-labelledby="belt-tab-{tab}">
@@ -242,6 +239,19 @@
           <span class="science-cta">READ THE FULL ARTICLE</span>
           <span class="science-label">/science/planets/{entry.id}-belt</span>
         </a>
+        {#if entry.library && entry.library.length > 0}
+          <div class="science-library">
+            <h3 class="library-heading">LIBRARY</h3>
+            <ul class="learn-list">
+              {#each entry.library as link (link.id)}
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                  <span class="tier-pill tier-{link.tier}">{link.tier}</span>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
       {:else if tab === 'gallery'}
         {#if galleryGrid.length === 0}
           <p class="empty-tab">Gallery is still being assembled.</p>
@@ -277,27 +287,21 @@
           {/each}
         </ul>
       {:else if tab === 'missions'}
-        {#if entry.mission_visits.length > 0}
-          <ul class="member-list">
-            {#each entry.mission_visits as mission (mission)}
-              <li>{mission}</li>
-            {/each}
-          </ul>
-        {:else}
+        {#if entry.mission_visits.length === 0}
           <p class="editorial empty">No spacecraft have visited this belt yet.</p>
-        {/if}
-      {:else if tab === 'library'}
-        {#if entry.library && entry.library.length > 0}
-          <ul class="learn-list">
-            {#each entry.library as link (link.id)}
+        {:else}
+          <ul class="mission-list">
+            {#each entry.mission_visits as mission (mission)}
+              {@const link = linkifyMission(mission)}
               <li>
-                <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-                <span class="tier-pill tier-{link.tier}">{link.tier}</span>
+                {#if link}
+                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                {:else}
+                  {mission}
+                {/if}
               </li>
             {/each}
           </ul>
-        {:else}
-          <p class="editorial empty">Library links arrive in a follow-up.</p>
         {/if}
       {/if}
     </div>

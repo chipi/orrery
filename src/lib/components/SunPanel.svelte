@@ -6,12 +6,15 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
-  import ScienceCard from './ScienceCard.svelte';
+  import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
+  // 2026-06-21 — SCIENCE tab removed. Chips → overview bottom;
+  // library tiers → technical bottom. Same B2 pattern as PlanetPanel /
+  // SmallBodyPanel.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
   /** /science cross-sections relevant to the Sun: it's the central focus of
    * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
@@ -142,21 +145,19 @@
           aria-controls="sp-tabpanel">MISSIONS</button
         >
       {/if}
-      <button
-        type="button"
-        id="sp-tab-science"
-        class:active={tab === 'science'}
-        onclick={() => (tab = 'science')}
-        role="tab"
-        aria-selected={tab === 'science'}
-        aria-controls="sp-tabpanel">SCIENCE</button
-      >
     </div>
 
     <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
+        {#if SUN_SCIENCE_SECTIONS.length > 0}
+          <div class="science-chips">
+            {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+              <ScienceChip tab={t} {section} />
+            {/each}
+          </div>
+        {/if}
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
@@ -216,6 +217,41 @@
         </div>
 
         <div class="src">{m.sun_source_nasa({ mag: sun.absolute_magnitude.toString() })}</div>
+        {#if hasLinks}
+          <div class="science-library">
+            <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+            {#if linksByTier.intro.length > 0}
+              <section class="link-tier tier-intro">
+                <h3>{m.panel_links_intro()}</h3>
+                <ul>
+                  {#each linksByTier.intro as link (link.u)}
+                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+            {#if linksByTier.core.length > 0}
+              <section class="link-tier tier-core">
+                <h3>{m.panel_links_core()}</h3>
+                <ul>
+                  {#each linksByTier.core as link (link.u)}
+                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+            {#if linksByTier.deep.length > 0}
+              <section class="link-tier tier-deep">
+                <h3>{m.panel_links_deep()}</h3>
+                <ul>
+                  {#each linksByTier.deep as link (link.u)}
+                    <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+          </div>
+        {/if}
       {:else if tab === 'missions'}
         {#if (sun.mission_visits ?? []).length === 0}
           <p class="empty-tab">No solar observatory missions recorded.</p>
@@ -233,51 +269,6 @@
             {/each}
           </ul>
         {/if}
-      {:else if tab === 'science'}
-        <div class="science-tab">
-          <p class="science-blurb">
-            The Sun anchors every heliocentric orbit. These are the rules that move every planet,
-            asteroid, and spacecraft around it.
-          </p>
-          {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
-          {/each}
-          {#if hasLinks}
-            <div class="science-library">
-              <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-              {#if linksByTier.intro.length > 0}
-                <section class="link-tier tier-intro">
-                  <h3>{m.panel_links_intro()}</h3>
-                  <ul>
-                    {#each linksByTier.intro as link (link.u)}
-                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.core.length > 0}
-                <section class="link-tier tier-core">
-                  <h3>{m.panel_links_core()}</h3>
-                  <ul>
-                    {#each linksByTier.core as link (link.u)}
-                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.deep.length > 0}
-                <section class="link-tier tier-deep">
-                  <h3>{m.panel_links_deep()}</h3>
-                  <ul>
-                    {#each linksByTier.deep as link (link.u)}
-                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-            </div>
-          {/if}
-        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>

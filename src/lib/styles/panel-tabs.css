@@ -109,6 +109,37 @@
   margin: 0;
 }
 
+/* ─── MISSIONS tab ──────────────────────────────────────────────
+   Shared by PlanetPanel / SmallBodyPanel / SatellitePanel /
+   SunPanel / BeltPanel mission_visits[] lists. Same 11px Space
+   Mono treatment BeltPanel established for member-list, so all
+   five body panels render the missions list identically. */
+.mission-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mission-list li {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.4;
+}
+.mission-list li:last-child {
+  border-bottom: none;
+}
+.mission-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 2px;
+}
+.mission-link:hover {
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+}
+
 /* ─── GALLERY tab ───────────────────────────────────────────────── */
 .gallery-grid {
   display: grid;

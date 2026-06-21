@@ -8,14 +8,17 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
-  import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE (Phase 4 cleanup) — one tab destination, less
   // strip crowding. Tiered link list renders below the curated ScienceCards.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
+  // 2026-06-21 — dropped the SCIENCE tab. Chip strip relocated to the
+  // bottom of OVERVIEW; LearnLink library tiers relocated to the
+  // bottom of TECHNICAL. /science/<body> deep page still owns the
+  // full long-form content. 4 tabs fit comfortably without overflow.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
   // Curated /science cross-section list — the Keplerian-mechanics core +
   // the planets-tab PRD-024 set. Same for every planet; the user's
@@ -188,21 +191,19 @@
           aria-controls="pp-tabpanel">MISSIONS</button
         >
       {/if}
-      <button
-        type="button"
-        id="pp-tab-science"
-        class:active={tab === 'science'}
-        onclick={() => (tab = 'science')}
-        role="tab"
-        aria-selected={tab === 'science'}
-        aria-controls="pp-tabpanel">{m.panel_tab_science()}</button
-      >
     </div>
 
     <div class="tab-content" role="tabpanel" id="pp-tabpanel" aria-labelledby="pp-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>
+        {#if PLANET_SCIENCE_SECTIONS.length > 0}
+          <div class="science-chips">
+            {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+              <ScienceChip tab={t} {section} />
+            {/each}
+          </div>
+        {/if}
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
@@ -308,6 +309,41 @@
         </div>
 
         <div class="src">{m.panel_source_iau()}</div>
+        {#if hasLinks}
+          <div class="science-library">
+            <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+            {#if linksByTier.intro.length > 0}
+              <section class="link-tier tier-intro">
+                <h3>{m.panel_links_intro()}</h3>
+                <ul>
+                  {#each linksByTier.intro as link (link.u)}
+                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+            {#if linksByTier.core.length > 0}
+              <section class="link-tier tier-core">
+                <h3>{m.panel_links_core()}</h3>
+                <ul>
+                  {#each linksByTier.core as link (link.u)}
+                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+            {#if linksByTier.deep.length > 0}
+              <section class="link-tier tier-deep">
+                <h3>{m.panel_links_deep()}</h3>
+                <ul>
+                  {#each linksByTier.deep as link (link.u)}
+                    <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
+                  {/each}
+                </ul>
+              </section>
+            {/if}
+          </div>
+        {/if}
       {:else if tab === 'missions'}
         {#if (planet.mission_visits ?? []).length === 0}
           <p class="empty-tab">No missions recorded.</p>
@@ -325,51 +361,6 @@
             {/each}
           </ul>
         {/if}
-      {:else if tab === 'science'}
-        <div class="science-tab">
-          <p class="science-blurb">
-            The orbital mechanics that move {planet.name} around the Sun. Every number on the TECHNICAL
-            tab is one of these concepts.
-          </p>
-          {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
-          {/each}
-          {#if hasLinks}
-            <div class="science-library">
-              <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-              {#if linksByTier.intro.length > 0}
-                <section class="link-tier tier-intro">
-                  <h3>{m.panel_links_intro()}</h3>
-                  <ul>
-                    {#each linksByTier.intro as link (link.u)}
-                      <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.core.length > 0}
-                <section class="link-tier tier-core">
-                  <h3>{m.panel_links_core()}</h3>
-                  <ul>
-                    {#each linksByTier.core as link (link.u)}
-                      <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-              {#if linksByTier.deep.length > 0}
-                <section class="link-tier tier-deep">
-                  <h3>{m.panel_links_deep()}</h3>
-                  <ul>
-                    {#each linksByTier.deep as link (link.u)}
-                      <li><LearnLink entityId={planet.id} url={link.u} label={link.l} /></li>
-                    {/each}
-                  </ul>
-                </section>
-              {/if}
-            </div>
-          {/if}
-        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>

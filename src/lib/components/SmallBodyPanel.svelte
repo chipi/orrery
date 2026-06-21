@@ -8,7 +8,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
-  import ScienceCard from './ScienceCard.svelte';
+  import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -48,7 +48,11 @@
   };
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
-  type Tab = 'overview' | 'gallery' | 'technical' | 'missions' | 'science';
+  // 2026-06-21 — SCIENCE tab removed. Chips → bottom of OVERVIEW;
+  // library link(s) → bottom of TECHNICAL. /science/<body> deep page
+  // still owns the long-form articles. 4 tabs uniform across detail
+  // panels on /explore.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
   type Props = {
     body: SmallBody | null;
@@ -171,15 +175,6 @@
           aria-controls="sbp-tabpanel">MISSIONS</button
         >
       {/if}
-      <button
-        type="button"
-        id="sbp-tab-science"
-        class:active={tab === 'science'}
-        onclick={() => (tab = 'science')}
-        role="tab"
-        aria-selected={tab === 'science'}
-        aria-controls="sbp-tabpanel">SCIENCE</button
-      >
     </div>
 
     <div class="tab-content" role="tabpanel" id="sbp-tabpanel" aria-labelledby="sbp-tab-{tab}">
@@ -191,6 +186,13 @@
         {/if}
         {#if body.note}
           <p class="note">{body.note}</p>
+        {/if}
+        {#if SMALL_BODY_SCIENCE_SECTIONS.length > 0}
+          <div class="science-chips">
+            {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+              <ScienceChip tab={t} {section} />
+            {/each}
+          </div>
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">
@@ -289,6 +291,20 @@
             <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
         {/if}
+        {#if body.wiki}
+          <div class="science-library">
+            <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+            <ul class="learn-list">
+              <li>
+                <LearnLink
+                  entityId={body.id}
+                  url={body.wiki}
+                  label={m.sbp_wikipedia_link({ name: body.name })}
+                />
+              </li>
+            </ul>
+          </div>
+        {/if}
       {:else if tab === 'missions'}
         {#if missionEntries.length === 0}
           <p class="empty-tab">No spacecraft have visited this body.</p>
@@ -306,39 +322,6 @@
             {/each}
           </ul>
         {/if}
-      {:else if tab === 'science'}
-        <div class="science-tab">
-          <p class="science-blurb">
-            Small bodies — comets, dwarf planets, the trans-Neptunian crowd — break the "almost
-            circular, almost coplanar" rule that the eight planets follow. These are the orbital
-            elements that make their motion visible.
-          </p>
-          {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
-          {/each}
-          {#if body.wiki || body.mission_visited}
-            <div class="science-library">
-              <h3 class="library-heading">{m.panel_tab_learn()}</h3>
-              <ul class="learn-list">
-                {#if body.mission_visited}
-                  <li class="learn-mission">
-                    <div class="learn-key">{m.sbp_visited_by()}</div>
-                    <div class="learn-val">{body.mission_visited}</div>
-                  </li>
-                {/if}
-                {#if body.wiki}
-                  <li>
-                    <LearnLink
-                      entityId={body.id}
-                      url={body.wiki}
-                      label={m.sbp_wikipedia_link({ name: body.name })}
-                    />
-                  </li>
-                {/if}
-              </ul>
-            </div>
-          {/if}
-        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>

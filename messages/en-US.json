@@ -1061,6 +1061,7 @@
   "credits_storage_fine": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
   "ui_layer_paths": "ICONIC MISSIONS",
   "explore_layer_tip_paths": "Iconic spacecraft trajectories — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
+  "explore_time_today": "Reset to today",
   "explore_speed_tip_1": "1 day per second",
   "explore_speed_tip_10": "10 days per second",
   "explore_speed_tip_100": "100 days per second",

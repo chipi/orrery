@@ -97,7 +97,8 @@
     "surface_panel_historic_milestone": "HITO HISTÓRICO →",
     "explore_speed_tip_1": "1 día por segundo",
     "explore_speed_tip_10": "10 días por segundo",
-    "explore_speed_tip_100": "100 días por segundo"
+    "explore_speed_tip_100": "100 días por segundo",
+    "explore_time_today": "Volver a hoy"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -197,7 +198,8 @@
     "surface_panel_historic_milestone": "JALON HISTORIQUE →",
     "explore_speed_tip_1": "1 jour par seconde",
     "explore_speed_tip_10": "10 jours par seconde",
-    "explore_speed_tip_100": "100 jours par seconde"
+    "explore_speed_tip_100": "100 jours par seconde",
+    "explore_time_today": "Revenir à aujourd'hui"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -297,7 +299,8 @@
     "surface_panel_historic_milestone": "HISTORISCHER MEILENSTEIN →",
     "explore_speed_tip_1": "1 Tag pro Sekunde",
     "explore_speed_tip_10": "10 Tage pro Sekunde",
-    "explore_speed_tip_100": "100 Tage pro Sekunde"
+    "explore_speed_tip_100": "100 Tage pro Sekunde",
+    "explore_time_today": "Zurück zu heute"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -397,7 +400,8 @@
     "surface_panel_historic_milestone": "MARCO HISTÓRICO →",
     "explore_speed_tip_1": "1 dia por segundo",
     "explore_speed_tip_10": "10 dias por segundo",
-    "explore_speed_tip_100": "100 dias por segundo"
+    "explore_speed_tip_100": "100 dias por segundo",
+    "explore_time_today": "Voltar para hoje"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -497,7 +501,8 @@
     "surface_panel_historic_milestone": "TRAGUARDO STORICO →",
     "explore_speed_tip_1": "1 giorno al secondo",
     "explore_speed_tip_10": "10 giorni al secondo",
-    "explore_speed_tip_100": "100 giorni al secondo"
+    "explore_speed_tip_100": "100 giorni al secondo",
+    "explore_time_today": "Torna a oggi"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -597,7 +602,8 @@
     "surface_panel_historic_milestone": "ИСТОРИЈСКА ПРЕКРЕТНИЦА →",
     "explore_speed_tip_1": "1 дан у секунди",
     "explore_speed_tip_10": "10 дана у секунди",
-    "explore_speed_tip_100": "100 дана у секунди"
+    "explore_speed_tip_100": "100 дана у секунди",
+    "explore_time_today": "Назад на данас"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -697,7 +703,8 @@
     "surface_panel_historic_milestone": "历史里程碑 →",
     "explore_speed_tip_1": "每秒 1 天",
     "explore_speed_tip_10": "每秒 10 天",
-    "explore_speed_tip_100": "每秒 100 天"
+    "explore_speed_tip_100": "每秒 100 天",
+    "explore_time_today": "回到今天"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -797,7 +804,8 @@
     "surface_panel_historic_milestone": "歴史的マイルストーン →",
     "explore_speed_tip_1": "1秒あたり1日",
     "explore_speed_tip_10": "1秒あたり10日",
-    "explore_speed_tip_100": "1秒あたり100日"
+    "explore_speed_tip_100": "1秒あたり100日",
+    "explore_time_today": "今日に戻す"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -897,7 +905,8 @@
     "surface_panel_historic_milestone": "역사적 이정표 →",
     "explore_speed_tip_1": "초당 1일",
     "explore_speed_tip_10": "초당 10일",
-    "explore_speed_tip_100": "초당 100일"
+    "explore_speed_tip_100": "초당 100일",
+    "explore_time_today": "오늘로 재설정"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -997,7 +1006,8 @@
     "surface_panel_historic_milestone": "ऐतिहासिक मील का पत्थर →",
     "explore_speed_tip_1": "1 दिन प्रति सेकंड",
     "explore_speed_tip_10": "10 दिन प्रति सेकंड",
-    "explore_speed_tip_100": "100 दिन प्रति सेकंड"
+    "explore_speed_tip_100": "100 दिन प्रति सेकंड",
+    "explore_time_today": "आज पर लौटें"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -1097,7 +1107,8 @@
     "surface_panel_historic_milestone": "الإنجاز التاريخي ←",
     "explore_speed_tip_1": "يوم واحد في الثانية",
     "explore_speed_tip_10": "10 أيام في الثانية",
-    "explore_speed_tip_100": "100 يوم في الثانية"
+    "explore_speed_tip_100": "100 يوم في الثانية",
+    "explore_time_today": "العودة إلى اليوم"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -1197,7 +1208,8 @@
     "surface_panel_historic_milestone": "ИСТОРИЧЕСКАЯ ВЕХА →",
     "explore_speed_tip_1": "1 день в секунду",
     "explore_speed_tip_10": "10 дней в секунду",
-    "explore_speed_tip_100": "100 дней в секунду"
+    "explore_speed_tip_100": "100 дней в секунду",
+    "explore_time_today": "Вернуться к сегодня"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -1279,6 +1291,7 @@
     "surface_panel_historic_milestone": "HISTORISCHE MIJLPAAL →",
     "explore_speed_tip_1": "1 dag per seconde",
     "explore_speed_tip_10": "10 dagen per seconde",
-    "explore_speed_tip_100": "100 dagen per seconde"
+    "explore_speed_tip_100": "100 dagen per seconde",
+    "explore_time_today": "Terug naar vandaag"
   }
 }

@@ -64,6 +64,7 @@
   import { onLayerChange } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   // ──────────────────────────────────────────────────────────────────
   // Planet visual config — compressed orbital radii & display sizes,
@@ -880,6 +881,13 @@
   const DAYS_PER_YEAR = 365.25; // simT is in years; pills are days/sec
   let simSpeed = $state(10);
   let simPaused = $state(false);
+  // #351 Layer 2-B — give the clock a real calendar meaning WITHOUT
+  // touching the (artistic) a0 start angles. Convention: simT=0 ≡ the
+  // page-load day. The chip shows the running simulated date; clicking it
+  // resets the clock to today. Layer 2-A (real J2000 longitudes) is a
+  // separate, revertible swap of the 8 a0 constants on top of this.
+  let simDateLabel = $state('');
+  let resetSimToToday: (() => void) | null = null;
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by panelState.sizes) so the dialog is keyboard-dismissible without a
   // svelte:window element inside the {#if} block, which prettier
@@ -4213,6 +4221,15 @@
     // ──────────────────────────────────────────────────────────────
 
     let simT = 0;
+    // #351 Layer 2-B — simT=0 anchors to the page-load day so the date
+    // chip reads a real calendar date. The date label is reformatted only
+    // when the integer day (or locale) actually changes, to avoid churn.
+    const simEpochMs = Date.now();
+    let lastSimDayIndex = Number.NaN;
+    let lastDateLocale = '';
+    resetSimToToday = () => {
+      simT = 0;
+    };
     let lastTime = performance.now();
     let reducedMotion = false;
     const stopReducedMotionWatch = onReducedMotionChange((r) => {
@@ -4248,6 +4265,23 @@
         // `simPaused` is the user-facing pause; `simSpeed` (days/sec)
         // sets the rate. simT is years → divide by DAYS_PER_YEAR.
         if (!reducedMotion && !simPaused) simT += (dt * simSpeed) / DAYS_PER_YEAR;
+
+        // #351 Layer 2-B — surface the simulated calendar date. Reformat
+        // only when the day index or locale changes (cheap guard; the
+        // formatter is the only per-change cost, never per-frame).
+        const simDayIndex = Math.floor(
+          (simEpochMs + simT * DAYS_PER_YEAR * 86_400_000) / 86_400_000,
+        );
+        const dateLocale = getLocale();
+        if (simDayIndex !== lastSimDayIndex || dateLocale !== lastDateLocale) {
+          lastSimDayIndex = simDayIndex;
+          lastDateLocale = dateLocale;
+          simDateLabel = new Intl.DateTimeFormat(dateLocale, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          }).format(new Date(simDayIndex * 86_400_000));
+        }
 
         // Fly-to-body tween (#287 polish). When focused on a planet, the
         // target world position drifts with the planet's own orbital
@@ -4772,6 +4806,19 @@
         </button>
       {/each}
     </div>
+    <!-- Date chip (#351 Layer 2-B) — shows the running simulated date and,
+         clicked, resets the clock to today. -->
+    <button
+      type="button"
+      class="time-date"
+      onclick={() => resetSimToToday?.()}
+      title={m.explore_time_today()}
+      aria-label={m.explore_time_today()}
+      data-testid="explore-time-today"
+    >
+      <span class="time-date-value">{simDateLabel}</span>
+      <span class="time-date-reset" aria-hidden="true">⟲</span>
+    </button>
   </div>
 
   <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
@@ -5708,6 +5755,40 @@
     background: rgba(78, 205, 196, 0.22);
     color: #4ecdc4;
     box-shadow: inset 0 0 8px rgba(78, 205, 196, 0.18);
+  }
+  /* Date chip (#351 Layer 2-B) — running simulated date; click resets to
+     today. Matches the panel's mono/teal language; the ⟲ glyph hints at
+     the reset affordance. */
+  .time-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 32px;
+    padding: 0 9px;
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 5px;
+    background: rgba(15, 18, 35, 0.4);
+    color: rgba(207, 224, 255, 0.78);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      color 120ms,
+      border-color 120ms;
+  }
+  .time-date:hover,
+  .time-date:focus-visible {
+    color: #fff;
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.7);
+    outline: none;
+  }
+  .time-date-reset {
+    font-size: 12px;
+    color: rgba(78, 205, 196, 0.8);
   }
 
   .paths-legend {

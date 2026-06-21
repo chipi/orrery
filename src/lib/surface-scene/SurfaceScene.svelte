@@ -2314,10 +2314,11 @@
       const id = pickSiteAt(clientX, clientY);
       if (id) {
         selectedSat = null;
-        // CORE-2 — on /earth (earthSats present) a plain site click also
-        // zooms + centres, matching the orbital-object feel. /moon and
-        // /mars keep their no-lurch click behaviour (earthSats === []).
-        selectSite(id, { face: earthSats.length > 0 });
+        // CORE-2 — a plain site click zooms + centres on every surface
+        // route (earth / moon / mars), matching the ?site= deep-link and
+        // the orbital-object focus. Uniform across planets — no per-body
+        // gate. faceCameraAtSite is fully body-agnostic.
+        selectSite(id, { face: true });
       }
     }
 

@@ -6,11 +6,9 @@ import { test, expect, type Page } from '@playwright/test';
  * running date readout, and a reset-to-today button. Layer 2 anchors the
  * clock to a real calendar (simT=0 ≡ today).
  *
- * Pin reducedMotion off so the sim clock actually advances — under
- * prefers-reduced-motion the clock hard-freezes (ADR-025) and the
- * "date advances" assertion would never resolve.
+ * The Playwright config does not force prefers-reduced-motion, so the sim
+ * clock advances by default — required for the "date advances" assertion.
  */
-test.use({ reducedMotion: 'no-preference' });
 
 const play = (p: Page) => p.getByTestId('explore-time-play');
 const date = (p: Page) => p.getByTestId('explore-sim-date');

@@ -4225,6 +4225,34 @@
     // chip reads a real calendar date. The date label is reformatted only
     // when the integer day (or locale) actually changes, to avoid churn.
     const simEpochMs = Date.now();
+    // #351 Layer 2-A — anchor the planet start-angles to the REAL sky.
+    // Overwrite the artistic a0 with each planet's real heliocentric
+    // ecliptic longitude for the page-load day: J2000 mean longitude +
+    // mean motion (circular 2-body — approximate, a few degrees off for
+    // the eccentric ones, consistent with the stylized orrery). simT=0
+    // stays "today"; small bodies / starfield are untouched. Reverting
+    // this whole block falls back to Layer 2-B's decorative angles.
+    {
+      const J2000_MS = Date.UTC(2000, 0, 1, 12);
+      const MEAN_LON_J2000_DEG: Record<string, number> = {
+        mercury: 252.25,
+        venus: 181.98,
+        earth: 100.46,
+        mars: 355.43,
+        jupiter: 34.4,
+        saturn: 49.94,
+        uranus: 313.23,
+        neptune: 304.88,
+        pluto: 238.93,
+      };
+      const yrSinceJ2000 = (simEpochMs - J2000_MS) / (DAYS_PER_YEAR * 86_400_000);
+      for (const p of PLANETS) {
+        const L0 = MEAN_LON_J2000_DEG[p.id];
+        if (L0 === undefined) continue;
+        const deg = (((L0 + (360 * yrSinceJ2000) / p.period) % 360) + 360) % 360;
+        p.a0 = deg * (Math.PI / 180);
+      }
+    }
     let lastSimDayIndex = Number.NaN;
     let lastDateLocale = '';
     resetSimToToday = () => {

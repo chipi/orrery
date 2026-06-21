@@ -4749,11 +4749,19 @@
     </button>
     <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
       {#each SIM_SPEEDS as sp}
+        {@const speedTip =
+          sp === 1
+            ? m.explore_speed_tip_1()
+            : sp === 100
+              ? m.explore_speed_tip_100()
+              : m.explore_speed_tip_10()}
         <button
           type="button"
-          class="chip speed-pill"
+          class="speed-pill"
           class:active={!simPaused && simSpeed === sp}
           aria-pressed={!simPaused && simSpeed === sp}
+          aria-label={speedTip}
+          title={speedTip}
           onclick={() => {
             simSpeed = sp;
             simPaused = false;
@@ -5609,12 +5617,12 @@
     border-color: #4ecdc4;
   }
 
-  /* Time playback cluster (#351 Layer 1) — pinned bottom-left, beside the
-     PLANET SCALES button (.earth-compare). play/pause reuses .toggle; the
-     speed pills reuse .chip (incl. the teal active state) but shrink to a
-     compact 44 px square so "1× 10× 100×" sit tight on one line. The
-     `left` offset clears the scales button; bumped at the desktop
-     breakpoint to match .earth-compare's larger bottom/left inset. */
+  /* Time playback mini-panel (#351 Layer 1) — pinned bottom-left, styled
+     to match the PLANET SCALES button (.earth-compare): same translucent
+     navy card, blue hairline border, blur. Holds a compact play toggle +
+     a segmented 1×/10×/100× day-per-second speed control. The `left`
+     offset clears the scales card; bumped at the desktop breakpoint to
+     match .earth-compare's larger bottom/left inset. */
   .time-controls {
     position: fixed;
     bottom: 8px;
@@ -5622,28 +5630,82 @@
     z-index: 20;
     display: flex;
     align-items: center;
-    gap: 6px;
-    pointer-events: none; /* children re-enable */
-  }
-  .time-controls .play-btn {
+    gap: 5px;
+    padding: 3px 5px;
+    background: rgba(8, 10, 22, 0.6);
+    border: 1px solid rgba(75, 156, 211, 0.25);
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
     pointer-events: auto;
   }
-  .play-btn {
-    min-width: 44px;
-    font-size: 14px;
+  /* Compact play toggle — overrides .toggle's 44px floor to match the
+     panel's tight footprint (consistent with .earth-compare, which also
+     runs a sub-44 affordance in this bottom-left zone). */
+  .time-controls .play-btn {
+    min-width: 28px;
+    min-height: 28px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
     line-height: 1;
+    border-radius: 5px;
+    background: rgba(15, 18, 35, 0.55);
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    color: #cfe0ff;
   }
+  .time-controls .play-btn:hover,
+  .time-controls .play-btn:focus-visible {
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.85);
+    color: #fff;
+  }
+  .time-controls .play-btn[aria-pressed='true'] {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.5);
+  }
+  /* Segmented speed control — one rounded track, hairline dividers, the
+     active step glows teal. */
   .speed-group {
     display: flex;
-    gap: 4px;
-    align-items: center;
+    align-items: stretch;
     pointer-events: auto;
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
   }
   .speed-pill {
-    min-width: 44px;
-    padding: 0 6px;
-    font-size: 11px;
+    min-width: 26px;
+    min-height: 28px;
+    padding: 0 7px;
+    border: none;
+    border-right: 1px solid rgba(75, 156, 211, 0.18);
+    background: rgba(15, 18, 35, 0.4);
+    color: rgba(207, 224, 255, 0.55);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
     letter-spacing: 0.04em;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      color 120ms;
+  }
+  .speed-pill:last-child {
+    border-right: none;
+  }
+  .speed-pill:hover,
+  .speed-pill:focus-visible {
+    color: #fff;
+    background: rgba(20, 26, 50, 0.7);
+    outline: none;
+  }
+  .speed-pill.active {
+    background: rgba(78, 205, 196, 0.22);
+    color: #4ecdc4;
+    box-shadow: inset 0 0 8px rgba(78, 205, 196, 0.18);
   }
 
   .paths-legend {

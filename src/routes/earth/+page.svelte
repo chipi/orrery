@@ -40,7 +40,19 @@
     { audio: 'iss', site: 'iss' },
     { audio: 'tiangong', site: 'tiangong' },
     { audio: 'hubble', site: 'hubble' },
+    // Navigation constellations (~20,000 km) — narration names all four.
+    { audio: 'gps', site: 'gps' },
+    { audio: 'galileo', site: 'galileo' },
+    { audio: 'glonass', site: 'glonass' },
+    { audio: 'beidou', site: 'beidou' },
+    // Geostationary band (~36,000 km) + the weather / direct-broadcast
+    // satellites the narration calls out as living there.
+    { audio: 'geo', site: 'geo' },
+    { audio: 'goes', site: 'goes' },
+    { audio: 'inmarsat', site: 'inmarsat' },
+    // Sun-Earth L2 (~1.5M km).
     { audio: 'jwst', site: 'jwst' },
+    { audio: 'gaia', site: 'gaia' },
   ] as const;
 </script>
 

@@ -710,6 +710,26 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // servicing-mission history). 2026-06-19 — first sweep applying
     // the "open-then-close" pattern across guide-earth.
     { at_sec: 40, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:00:45.9 "Higher still — ~20,000 km — the navigation
+    // constellations: GPS, Galileo, GLONASS, BeiDou." Focus each as it's
+    // named so the nav band is showcased (CORE-2 flies the camera in).
+    {
+      at_sec: 46,
+      action: 'cue',
+      target: 'Navigation — GPS · Galileo · GLONASS · BeiDou, ~20,000 km up.',
+      duration_ms: 7000,
+    },
+    { at_sec: 47, action: 'click', target: '[data-audio-stage="earth-select-gps"]' },
+    { at_sec: 50, action: 'click', target: '[data-audio-stage="earth-select-galileo"]' },
+    { at_sec: 52, action: 'click', target: '[data-audio-stage="earth-select-glonass"]' },
+    { at_sec: 54, action: 'click', target: '[data-audio-stage="earth-select-beidou"]' },
+    // VTT 00:00:58.1 "36,000 km — geostationary orbit … 24-hour period."
+    { at_sec: 59, action: 'click', target: '[data-audio-stage="earth-select-geo"]' },
+    // VTT 00:01:16.1 "Every weather satellite, every direct-broadcast TV
+    // satellite, lives here." — GOES (weather) + Inmarsat (broadcast).
+    { at_sec: 77, action: 'click', target: '[data-audio-stage="earth-select-goes"]' },
+    { at_sec: 80, action: 'click', target: '[data-audio-stage="earth-select-inmarsat"]' },
+    { at_sec: 83, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:33.8 "JWST orbits there"
     {
       at_sec: 95,
@@ -718,10 +738,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 5000,
     },
     { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
-    // Close JWST panel ~5 s in — narration moves to the "Click any
-    // spacecraft" outro and the canvas needs to be visible for that
-    // cue to make sense.
-    { at_sec: 101, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:01:39.5 "So does ESA's Gaia, mapping a billion stars."
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="earth-select-gaia"]' },
+    // Close ~5 s in — narration moves to the "Click any spacecraft" outro
+    // and the canvas needs to be visible for that cue to make sense.
+    { at_sec: 105, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:02:09.8 "Click any spacecraft"
     {
       at_sec: 132,

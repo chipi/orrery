@@ -4731,6 +4731,41 @@
     </span>
   </button>
 
+  <!-- Time playback (#351 Layer 1) — pause + days-per-second speed over
+       the live orbital clock. Pinned bottom-left beside the PLANET SCALES
+       button (user direction 2026-06-21). Pills mirror the guide-explore
+       narration ("one day per second, ten days, a hundred"). -->
+  <div class="time-controls" data-audio-stage="explore-time">
+    <button
+      type="button"
+      class="toggle play-btn"
+      onclick={() => (simPaused = !simPaused)}
+      aria-pressed={simPaused}
+      aria-label={simPaused ? m.fly_play() : m.fly_pause()}
+      title={simPaused ? m.fly_play() : m.fly_pause()}
+      data-testid="explore-time-play"
+    >
+      {simPaused ? '▶' : '⏸'}
+    </button>
+    <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+      {#each SIM_SPEEDS as sp}
+        <button
+          type="button"
+          class="chip speed-pill"
+          class:active={!simPaused && simSpeed === sp}
+          aria-pressed={!simPaused && simSpeed === sp}
+          onclick={() => {
+            simSpeed = sp;
+            simPaused = false;
+          }}
+          data-testid="explore-speed-{sp}"
+        >
+          {sp}×
+        </button>
+      {/each}
+    </div>
+  </div>
+
   <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
        atmospheric pressure, rotation period. Lens-gated by the
        'planet-stats' layer. Only when also focused on a planet. -->
@@ -4975,39 +5010,6 @@
       >
         {m.ui_layer_paths()}
       </button>
-    </div>
-    <!-- Time playback (#351 Layer 1) — pause + days-per-second speed over
-         the live orbital clock. Pills mirror the guide-explore narration
-         ("one day per second, ten days, a hundred"). -->
-    <div class="ctrl-row time-row" data-audio-stage="explore-time">
-      <button
-        type="button"
-        class="toggle play-btn"
-        onclick={() => (simPaused = !simPaused)}
-        aria-pressed={simPaused}
-        aria-label={simPaused ? m.fly_play() : m.fly_pause()}
-        title={simPaused ? m.fly_play() : m.fly_pause()}
-        data-testid="explore-time-play"
-      >
-        {simPaused ? '▶' : '⏸'}
-      </button>
-      <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
-        {#each SIM_SPEEDS as sp}
-          <button
-            type="button"
-            class="chip speed-pill"
-            class:active={!simPaused && simSpeed === sp}
-            aria-pressed={!simPaused && simSpeed === sp}
-            onclick={() => {
-              simSpeed = sp;
-              simPaused = false;
-            }}
-            data-testid="explore-speed-{sp}"
-          >
-            {sp}×
-          </button>
-        {/each}
-      </div>
     </div>
     {#if layers.paths}
       <div class="paths-legend" role="group" aria-label="Iconic trajectory legend">
@@ -5607,11 +5609,24 @@
     border-color: #4ecdc4;
   }
 
-  /* Time playback row (#351 Layer 1) — play/pause reuses .toggle; the
-     speed pills reuse .chip (incl. the teal active state) but shrink to
-     a compact 44 px square so "1× 10× 100×" sit tight on one line. */
-  .time-row {
+  /* Time playback cluster (#351 Layer 1) — pinned bottom-left, beside the
+     PLANET SCALES button (.earth-compare). play/pause reuses .toggle; the
+     speed pills reuse .chip (incl. the teal active state) but shrink to a
+     compact 44 px square so "1× 10× 100×" sit tight on one line. The
+     `left` offset clears the scales button; bumped at the desktop
+     breakpoint to match .earth-compare's larger bottom/left inset. */
+  .time-controls {
+    position: fixed;
+    bottom: 8px;
+    left: 156px;
+    z-index: 20;
+    display: flex;
     align-items: center;
+    gap: 6px;
+    pointer-events: none; /* children re-enable */
+  }
+  .time-controls .play-btn {
+    pointer-events: auto;
   }
   .play-btn {
     min-width: 44px;
@@ -5819,6 +5834,11 @@
     .earth-compare img {
       width: 32px;
       height: 32px;
+    }
+    /* Keep the time cluster beside the (now larger) PLANET SCALES button. */
+    .time-controls {
+      bottom: 16px;
+      left: 184px;
     }
     .tactical-scan {
       display: block;

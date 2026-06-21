@@ -15,6 +15,7 @@
    * Makemake all resolve today).
    */
   import Panel from './Panel.svelte';
+  import ImageCredit from './ImageCredit.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
@@ -52,6 +53,12 @@
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
   let gallery: string[] = $state([]);
+  // Mirror PlanetPanel: the hero image already renders above the tabs,
+  // so the gallery grid skips it (gallery.slice(1)) to avoid showing
+  // the same image twice. lightboxSrc holds the currently-expanded
+  // image; null = closed.
+  let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
+  let lightboxSrc = $state<string | null>(null);
   let overlay: BeltI18n | null = $state(null);
 
   let baseEntry = $derived<BeltEntry | null>(
@@ -83,6 +90,7 @@
       tab = 'overview';
       lastKey = baseEntry.id;
       gallery = [];
+      lightboxSrc = null;
       overlay = null;
       const id = baseEntry.id;
       void getBeltGallery(id).then((g) => {
@@ -235,16 +243,21 @@
           <span class="science-label">/science/planets/{entry.id}-belt</span>
         </a>
       {:else if tab === 'gallery'}
-        {#if gallery.length > 0}
-          <ul class="gallery-grid">
-            {#each gallery as src (src)}
-              <li>
-                <img src={src} alt="" loading="lazy" decoding="async" />
-              </li>
-            {/each}
-          </ul>
+        {#if galleryGrid.length === 0}
+          <p class="empty-tab">Gallery is still being assembled.</p>
         {:else}
-          <p class="editorial empty">Gallery is still being assembled.</p>
+          <div class="gallery-grid" aria-label="{entry.name} gallery">
+            {#each galleryGrid as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (lightboxSrc = src)}
+                aria-label={entry.name}
+              >
+                <img {src} alt="" loading="lazy" decoding="async" />
+              </button>
+            {/each}
+          </div>
         {/if}
       {:else if tab === 'members'}
         <p class="editorial">The largest catalogued members of the {entry.name}.</p>
@@ -288,6 +301,21 @@
         {/if}
       {/if}
     </div>
+
+    {#if lightboxSrc}
+      <button
+        type="button"
+        class="lightbox"
+        aria-label="Close"
+        onclick={() => (lightboxSrc = null)}
+      >
+        <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
+        <span class="lightbox-close" aria-hidden="true">×</span>
+      </button>
+      <div class="lightbox-meta">
+        <ImageCredit src={lightboxSrc} />
+      </div>
+    {/if}
   {/if}
 </Panel>
 
@@ -398,21 +426,13 @@
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
   }
-  .gallery-grid {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .gallery-grid img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 3px;
-    background: rgba(0, 0, 0, 0.4);
-  }
+  /* gallery-grid / gallery-thumb / lightbox now come from
+     src/lib/styles/panel-tabs.css (shared with PlanetPanel +
+     SmallBodyPanel + others). Belt panel previously had its own
+     1-column captioned layout; flipped 2026-06-21 for visual
+     parity. .caption was used with the old layout and is now unused
+     here too but kept in CSS for any text that needs the italic
+     serif treatment elsewhere. */
   .caption {
     font-family: 'Crimson Pro', serif;
     font-style: italic;

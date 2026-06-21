@@ -33,8 +33,13 @@
      * false, render only the intro_sentence — use this for very compact
      * lists where space is tight. */
     expanded?: boolean;
+    /** Optional body-specific context — one short sentence about why
+     * this section matters FOR THIS BODY. Renders as a small italic
+     * prefix above the card title. When the body's overlay supplies a
+     * per-body `why` for this section, the panel passes it through. */
+    why?: string;
   };
-  let { tab, section, heading, expanded = true }: Props = $props();
+  let { tab, section, heading, expanded = true, why }: Props = $props();
 
   let sectionData = $state<ScienceSection | null>(null);
   const locale = $derived(localeFromPage($page));
@@ -47,6 +52,9 @@
 </script>
 
 <a class="card" href="{base}/science/{tab}/{section}" data-science-card>
+  {#if why}
+    <p class="why">{why}</p>
+  {/if}
   {#if sectionData}
     <p class="title">{heading ?? sectionData.title}</p>
     <p class="intro">{sectionData.intro_sentence}</p>
@@ -82,6 +90,19 @@
     border-color: rgba(78, 205, 196, 0.55);
     background: rgba(78, 205, 196, 0.06);
     outline: none;
+  }
+  .why {
+    /* Per-body context — small italic prefix above the title that
+     * answers "why this section, for this body". Italicised serif to
+     * differentiate from the encyclopedia content below. */
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
   }
   .title {
     font-family: var(--font-display);

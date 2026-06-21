@@ -14,5 +14,27 @@
     "moon-apollo": "NASA Apollo program — landing-mission archive",
     "moon-artemis": "NASA Artemis — return-to-Moon crewed program",
     "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera image archive"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "The Moon's orbit around Earth is the textbook two-body Keplerian system — every other moon-around-planet calculation generalises from here."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "The Moon's 0.055 eccentricity is small but matters — at perigee the disc looks 12 % larger and brighter than at apogee ('supermoon')."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Perigee (~363,000 km) and apogee (~405,000 km) drive the Moon's apparent size and the tidal-bulge phase that pulls the most water on Earth."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "The Moon is unusually large relative to Earth — its diameter ratio (≈ 0.27) is the highest of any planet–satellite pair in the solar system."
+    }
+  ]
 }

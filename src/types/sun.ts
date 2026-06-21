@@ -40,6 +40,11 @@ export interface SunOverlay {
   bio: string;
   /** Tiered learn-more links surfaced in the LEARN tab (v0.1.10). */
   links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
+  /** Per-body curated science-card selection. Same pattern as
+   *  PlanetOverlay.science_sections — pointers into /science/<tab>/
+   *  <section> with an optional `why` prefix per entry. Falls back
+   *  to SunPanel's default list when absent. */
+  science_sections?: import('./planet').ScienceSectionRef[];
 }
 
 /** Sun base record merged with its locale overlay. */

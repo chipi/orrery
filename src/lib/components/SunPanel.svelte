@@ -151,11 +151,15 @@
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
-        {#if SUN_SCIENCE_SECTIONS.length > 0}
+        {#if (sun.science_sections ?? SUN_SCIENCE_SECTIONS).length > 0}
           <div class="science-section">
             <h3 class="library-heading">SCIENCE</h3>
-            {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-              <ScienceCard tab={t} {section} />
+            {#each sun.science_sections ?? SUN_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
+              <ScienceCard
+                tab={entry.tab as ScienceTabId}
+                section={entry.section}
+                why={entry.why}
+              />
             {/each}
           </div>
         {/if}

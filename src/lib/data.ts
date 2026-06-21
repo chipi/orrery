@@ -924,6 +924,11 @@ export type SatelliteEntry = {
   description: string;
   wiki?: string;
   library?: SatelliteLibraryLink[];
+  /** Per-body curated science-card selection — merged from
+   *  SatelliteI18n.science_sections in mergeOverlay. Optional;
+   *  empty/absent means SatellitePanel renders no science cards
+   *  (no panel-wide default for satellites — selection is per-moon). */
+  science_sections?: import('$types/planet').ScienceSectionRef[];
 };
 export async function getSatellites(): Promise<SatelliteEntry[]> {
   try {
@@ -958,6 +963,11 @@ export type SatelliteI18n = {
   surface_composition?: string;
   mission_visits?: string[];
   library_labels?: Record<string, string>;
+  /** Per-body curated science-card selection. Same shape as
+   *  PlanetOverlay.science_sections — pointers into /science/<tab>/
+   *  <section> with an optional `why` prefix per entry. Falls back
+   *  to SatellitePanel's default list when absent. */
+  science_sections?: import('$types/planet').ScienceSectionRef[];
 };
 export async function getSatelliteI18n(
   locale: string,

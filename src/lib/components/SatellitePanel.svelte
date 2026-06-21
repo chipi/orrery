@@ -25,6 +25,8 @@
   } from '$lib/data';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { base } from '$app/paths';
+  import ScienceCard from './ScienceCard.svelte';
+  import type { ScienceTabId } from '$types/science';
 
   const loc = $derived(localeFromPage($page));
 
@@ -66,6 +68,7 @@
       description: ov?.description ?? base.description,
       surface_composition: ov?.surface_composition ?? base.surface_composition,
       mission_visits: ov?.mission_visits ?? base.mission_visits,
+      science_sections: ov?.science_sections ?? base.science_sections,
       library: base.library?.map((l) => ({
         ...l,
         label: ov?.library_labels?.[l.id] ?? l.label,
@@ -167,6 +170,18 @@
           <div class="composition">
             <div class="cell-label">{m.panel_satellite_composition_label()}</div>
             <div class="cell-value">{entry.surface_composition}</div>
+          </div>
+        {/if}
+        {#if (entry.science_sections ?? []).length > 0}
+          <div class="science-section">
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
+            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+              <ScienceCard
+                tab={sec.tab as ScienceTabId}
+                section={sec.section}
+                why={sec.why}
+              />
+            {/each}
           </div>
         {/if}
       {:else if tab === 'gallery'}

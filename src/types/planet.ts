@@ -41,6 +41,31 @@ export interface PlanetsData {
 }
 
 /**
+ * Pointer to a /science encyclopedia section, plus an optional
+ * one-line "why this matters for THIS body" string rendered as an
+ * italic prefix above the ScienceCard title. Shared across overlay
+ * types (planets, sun, satellites) so all body panels can carry
+ * curated science-section selections per body per locale.
+ *
+ * `tab` + `section` resolve to /science/<tab>/<section>; the lens
+ * article itself is shared across all bodies — only the selection
+ * and the `why` prefix are per-body.
+ */
+export interface ScienceSectionRef {
+  /** Encyclopedia tab id — same union as ScienceTabId, but kept as a
+   *  string here so this type can be JSON-imported without circular
+   *  dependencies into $types/science. The panel coerces via a cast
+   *  at render time. */
+  tab: string;
+  /** Section id within the tab (e.g. 'eccentricity', 'tidal-locking'). */
+  section: string;
+  /** Optional: one short sentence saying why this concept matters for
+   *  the specific body the panel is showing. Per-locale, translatable.
+   *  Renders as a small italic prefix above the card title. */
+  why?: string;
+}
+
+/**
  * Editorial overlay per planet per locale (ADR-017). Lives in
  * `static/data/i18n/[locale]/planets/[id].json` where `id` is the
  * lowercase planet name.
@@ -58,6 +83,10 @@ export interface PlanetOverlay {
   missionable?: boolean;
   /** Tiered learn-more links surfaced in the LEARN tab (v0.1.10). */
   links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
+  /** Per-body curated science-card selection with optional `why`
+   *  prefix. When present, the panel renders these instead of the
+   *  panel-wide default list. Falls back to the default when absent. */
+  science_sections?: ScienceSectionRef[];
 }
 
 /**

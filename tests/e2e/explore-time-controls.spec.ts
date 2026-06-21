@@ -57,9 +57,7 @@ test.describe('/explore — time playback controls', () => {
   test('the date advances while playing at speed', async ({ page }) => {
     await speed(page, 100).click(); // 100 days/sec — a large, fast delta
     const start = await date(page).textContent();
-    await expect
-      .poll(async () => date(page).textContent(), { timeout: 6_000 })
-      .not.toBe(start);
+    await expect.poll(async () => date(page).textContent(), { timeout: 6_000 }).not.toBe(start);
   });
 
   test('reset-to-today snaps the clock back to the real present day', async ({ page }) => {

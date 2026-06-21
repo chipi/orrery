@@ -199,9 +199,12 @@
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>
         {#if PLANET_SCIENCE_SECTIONS.length > 0}
-          {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
-          {/each}
+          <div class="science-section">
+            <h3 class="library-heading">{m.panel_tab_science()}</h3>
+            {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+              <ScienceCard tab={t} {section} />
+            {/each}
+          </div>
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">

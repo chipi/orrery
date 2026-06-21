@@ -198,9 +198,12 @@
           <p class="note">{body.note}</p>
         {/if}
         {#if SMALL_BODY_SCIENCE_SECTIONS.length > 0}
-          {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
-          {/each}
+          <div class="science-section">
+            <h3 class="library-heading">SCIENCE</h3>
+            {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+              <ScienceCard tab={t} {section} />
+            {/each}
+          </div>
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">

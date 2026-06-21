@@ -178,10 +178,21 @@
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* ─── SCIENCE tab library section (was the old LEARN tab) ─────────
- * The tiered learn-link list now lives below the ScienceCards inside
- * the SCIENCE tab. .science-library wraps it; .library-heading is the
- * sub-header that visually separates the cards from the link tiers. */
+/* ─── In-overview SCIENCE section (B2 — 2026-06-21) ────────────────
+ * After the SCIENCE tab was folded into OVERVIEW, the ScienceCards
+ * live below the editorial text. .science-section wraps them with a
+ * top divider matching .science-library, so OVERVIEW reads as
+ * editorial → divider → SCIENCE subtitle → cards. */
+.science-section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── In-technical LIBRARY section (was the old LEARN tab) ─────────
+ * The tiered learn-link list lives below the data grid at the bottom
+ * of TECHNICAL. .science-library wraps it; .library-heading is the
+ * sub-header (same heading style for SCIENCE section above too). */
 .science-library {
   margin-top: 18px;
   padding-top: 14px;

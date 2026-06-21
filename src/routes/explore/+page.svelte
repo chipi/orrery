@@ -1466,10 +1466,26 @@
   // panel without depending on canvas-pixel pick math (which is fragile
   // under mobile-chromium DPR + animation timing).
   $effect(() => {
+    // Force re-run when planetById / smallBodyById populate async —
+    // both are $derived from localizedPlanets / SMALL_BODIES which
+    // load after mount. Without these explicit reads, the effect's
+    // dep tree is shaped only by the FIRST branch the if-ladder took,
+    // and mars (which lives in planetById only) wouldn't re-trigger
+    // when planetById updates from empty Map → 9 entries.
+    planetById;
+    smallBodyById;
     const id = $page.url.searchParams.get('id');
     if (!id) return;
     if (id === 'sun') {
       selectSun();
+    } else if (id === 'pluto' && smallBodyById.has(id)) {
+      // Pluto is in BOTH planets.json (legacy orbital ring) and
+      // small-bodies.json (IAU 2006 dwarf-planet classification).
+      // The small-body panel carries the curated science_sections
+      // with body-specific `why` prefixes; the planet panel has
+      // only the minimal name/type/fact/bio overlay. Prefer the
+      // richer surface for deep-link landings.
+      selectSmallBody(id);
     } else if (planetById.has(id)) {
       selectPlanet(id);
     } else if (smallBodyById.has(id)) {

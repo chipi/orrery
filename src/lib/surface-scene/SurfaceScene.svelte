@@ -573,9 +573,7 @@
   // centre-screen with Earth behind — the same "give it attention" zoom
   // /explore does on fly-to-body. Assigned in onMount (captures the fly
   // tween vars + earthSats); selection paths call it on every select.
-  let faceCameraAtObject:
-    | ((obj: import('$types/earth-object').EarthObject) => void)
-    | undefined;
+  let faceCameraAtObject: ((obj: import('$types/earth-object').EarthObject) => void) | undefined;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just

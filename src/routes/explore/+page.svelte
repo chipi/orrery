@@ -5787,8 +5787,9 @@
     outline: none;
   }
   .time-date-reset {
-    font-size: 12px;
-    color: rgba(78, 205, 196, 0.8);
+    font-size: 16px;
+    line-height: 1;
+    color: rgba(78, 205, 196, 0.9);
   }
 
   .paths-legend {

@@ -5776,7 +5776,7 @@
      .time-controls .play-btn), teal tint, slightly larger glyph so the ⟲
      reads clearly. Defined after .play-btn so it wins the font-size. */
   .time-controls .reset-btn {
-    font-size: 15px;
+    font-size: 20px;
     color: #4ecdc4;
   }
 

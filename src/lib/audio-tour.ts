@@ -238,11 +238,32 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 35, action: 'click', target: '[data-audio-stage="explore-select-mars"]' },
     { at_sec: 43, action: 'click', target: '[data-audio-stage="explore-select-neptune"]' },
     { at_sec: 47, action: 'click', target: '[data-audio-stage="explore-reset-view"]' },
-    // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
-    // but no such control exists on /explore today (script/UI drift —
-    // SSML referenced a planned-but-never-shipped speed control). Cue
-    // intentionally omitted; SSML edit + audio re-render is the proper
-    // fix and lives outside this slice.
+    // VTT 00:00:56.3 "Watch the planets move." → 00:01:05.8 "Pause it on
+    // any date and read off the positions." The time controls shipped
+    // (#351), so this beat now drives them live: flash the panel, step the
+    // speed up 1×→10×→100× as the narrator counts "one day, ten days, a
+    // hundred", then pause on a date + flash the readout, then reset to
+    // today and resume at the default 10× before the PATHS beat at 76 s.
+    // (Narration still says "time slider"; we shipped speed pills — close
+    // enough that a re-record isn't worth it. Positions are real now too,
+    // so "read off the positions" at 00:00:09 is finally honest.)
+    { at_sec: 56, action: 'flash', target: '[data-audio-stage="explore-time"]' },
+    {
+      at_sec: 58,
+      action: 'cue',
+      target: 'The speed controls — one day, ten, or a hundred per second.',
+      duration_ms: 6000,
+    },
+    { at_sec: 59, action: 'click', target: '[data-audio-stage="explore-speed-1"]' },
+    { at_sec: 61, action: 'click', target: '[data-audio-stage="explore-speed-10"]' },
+    { at_sec: 64, action: 'click', target: '[data-audio-stage="explore-speed-100"]' },
+    // "Pause it on any date and read off the positions." (00:01:05.8)
+    { at_sec: 66, action: 'click', target: '[data-audio-stage="explore-time-pause"]' },
+    { at_sec: 67, action: 'flash', target: '[data-audio-stage="explore-sim-date"]' },
+    // Reset to today + resume at the default 10× so the canvas is live and
+    // today-accurate for the Voyager 2 / PATHS beat at 76 s.
+    { at_sec: 72, action: 'click', target: '[data-audio-stage="explore-time-today"]' },
+    { at_sec: 73, action: 'click', target: '[data-audio-stage="explore-speed-10"]' },
     // Voyager 2 PATHS-layer demo (#306 Slice A). Lands during the
     // Neptune beat (~38 s in VTT, "Neptune takes one hundred sixty-five
     // [years]"); shows that the spacecraft we sent past every outer

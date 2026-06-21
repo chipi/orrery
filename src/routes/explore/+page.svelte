@@ -4808,6 +4808,7 @@
       aria-label={simPaused ? m.fly_play() : m.fly_pause()}
       title={simPaused ? m.fly_play() : m.fly_pause()}
       data-testid="explore-time-play"
+      data-audio-stage="explore-time-pause"
     >
       {simPaused ? '▶' : '⏸'}
     </button>
@@ -4831,6 +4832,7 @@
             simPaused = false;
           }}
           data-testid="explore-speed-{sp}"
+          data-audio-stage="explore-speed-{sp}"
         >
           {sp}×
         </button>
@@ -4838,7 +4840,9 @@
     </div>
     <!-- Date readout + reset (#351 Layer 2-B) — the running simulated date,
          with a dedicated reset-to-today button sized like play/pause. -->
-    <span class="time-date" data-testid="explore-sim-date">{simDateLabel}</span>
+    <span class="time-date" data-testid="explore-sim-date" data-audio-stage="explore-sim-date"
+      >{simDateLabel}</span
+    >
     <button
       type="button"
       class="play-btn reset-btn"
@@ -4846,6 +4850,7 @@
       title={m.explore_time_today()}
       aria-label={m.explore_time_today()}
       data-testid="explore-time-today"
+      data-audio-stage="explore-time-today"
     >
       ⟲
     </button>

@@ -320,6 +320,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'fleet-select-',
       'mars-select-',
       'explore-select-',
+      'explore-speed-',
       'earth-select-',
       'iss-select-',
       'moon-select-',

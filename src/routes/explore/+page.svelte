@@ -1472,8 +1472,8 @@
     // dep tree is shaped only by the FIRST branch the if-ladder took,
     // and mars (which lives in planetById only) wouldn't re-trigger
     // when planetById updates from empty Map → 9 entries.
-    planetById;
-    smallBodyById;
+    void planetById;
+    void smallBodyById;
     const id = $page.url.searchParams.get('id');
     if (!id) return;
     if (id === 'sun') {

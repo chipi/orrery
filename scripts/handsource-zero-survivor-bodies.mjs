@@ -20,7 +20,7 @@
  * Run: node --env-file=.env scripts/handsource-zero-survivor-bodies.mjs
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import sharp from 'sharp';
 
 const UA =

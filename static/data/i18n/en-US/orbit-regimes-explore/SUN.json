@@ -1,0 +1,17 @@
+{
+  "name": "The Sun",
+  "short": "SUN",
+  "story": "The centre of the solar system — a G2V main-sequence star, 4.6 billion years old, fusing 600 million tonnes of hydrogen into helium every second. Holds 99.86% of the system's total mass; everything else is leftover dust. Surface temperature ~5,500°C; core ~15 million°C. The photosphere is what we see; the corona stretches millions of kilometres beyond it and reaches ~1 million°C — one of physics's open mysteries (why is the corona hotter than the surface?).",
+  "comparison": "Light from the Sun takes 8 minutes 17 seconds to reach Earth — a snapshot of how the Sun was 8 minutes ago. The Sun is 333,000× more massive than Earth.",
+  "residents": [
+    { "id": "sun", "label": "Sun", "agency": "NATURAL" }
+  ],
+  "firsts": [
+    { "year": 2018, "label": "Parker Solar Probe — closest-ever Sun flyby (USA)" },
+    { "year": 2020, "label": "Solar Orbiter — first close-Sun imaging (ESA)" }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "habitable-zone"
+  }
+}

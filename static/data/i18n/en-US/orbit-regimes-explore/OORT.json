@@ -1,0 +1,14 @@
+{
+  "name": "Oort Cloud",
+  "short": "OORT",
+  "story": "A hypothetical spherical shell of icy bodies surrounding the entire solar system — extending from roughly 2,000 to 100,000 AU. Never directly observed, only inferred: the long-period comets we see have orbits so wide they must come from out here. Estimated population: trillions of bodies. The Oort cloud represents the solar system's birth-cloud leftovers, dynamically stable for billions of years at this distance from the Sun. Passing stars can perturb individual objects inward, becoming the comets we observe.",
+  "comparison": "Half a light-year out. The Sun's gravitational reach extends roughly to the inner Oort cloud edge — beyond that, the galaxy's tides start to dominate. The Voyagers will take 30,000 years just to reach the inner boundary.",
+  "residents": [],
+  "firsts": [
+    { "year": 1950, "label": "Oort cloud proposed — Jan Oort (Netherlands)" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

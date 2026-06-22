@@ -40,8 +40,19 @@
      *  list to place HEO (highly elliptical) between LEO and MEO; other
      *  routes typically rely on the altitude default. */
     order?: readonly string[];
+    /** Synthetic anchor row painted below the last band. /earth, /moon,
+     *  /mars label it "SURFACE / 0 km" so the ruler reads as ground-up.
+     *  /explore omits it (set to null) since the Sun is itself the
+     *  bottom band and there is no "surface" below it. */
+    surfaceAnchor?: { label: string; value: string } | null;
   }
-  let { regimes, onSelect, highlightRegime = null, order }: Props = $props();
+  let {
+    regimes,
+    onSelect,
+    highlightRegime = null,
+    order,
+    surfaceAnchor,
+  }: Props = $props();
 
   // Render order top→bottom. SURFACE is synthetic (always at 0 km, no
   // panel) — included as a visual anchor so the ruler reads as "ground
@@ -50,26 +61,46 @@
   // value, ranges use the midpoint. The /earth order is curated
   // (HEO between LEO and MEO since its perigee straddles both); other
   // routes can override.
-  function midAltitude(alt: OrbitRegime['altitude_km']): number {
-    if (typeof alt === 'number') return alt;
-    const [lo, hi] = alt;
-    return (lo + hi) / 2;
+  type Band = number | [number, number] | undefined;
+  function mid(band: Band): number {
+    if (band == null) return 0;
+    if (typeof band === 'number') return band;
+    return (band[0] + band[1]) / 2;
+  }
+  /** Distance to use for ordering — falls back from km to AU. */
+  function midDistance(r: OrbitRegime): number {
+    return r.altitude_km != null ? mid(r.altitude_km) : mid(r.distance_au);
   }
   let ordered = $derived(
     order
       ? order
           .map((id) => regimes.find((r) => r.id === id))
           .filter((r): r is OrbitRegime => r != null)
-      : [...regimes].sort((a, b) => midAltitude(b.altitude_km) - midAltitude(a.altitude_km)),
+      : [...regimes].sort((a, b) => midDistance(b) - midDistance(a)),
   );
 
-  function fmtAltitude(alt: OrbitRegime['altitude_km']): string {
+  function fmtKm(alt: number | [number, number]): string {
     if (typeof alt === 'number') {
       return alt >= 1000 ? `${(alt / 1000).toFixed(0)},000 km` : `${alt} km`;
     }
     const [lo, hi] = alt;
     const fmt = (x: number) => (x >= 1000 ? `${(x / 1000).toFixed(0)}k` : `${x}`);
     return `${fmt(lo)}-${fmt(hi)} km`;
+  }
+  function fmtAU(d: number | [number, number]): string {
+    const fmt = (x: number) => {
+      if (x < 10) return x.toFixed(1);
+      if (x < 1000) return x.toFixed(0);
+      if (x < 10000) return `${(x / 1000).toFixed(1)}k`;
+      return `${(x / 1000).toFixed(0)}k`;
+    };
+    if (typeof d === 'number') return `${fmt(d)} AU`;
+    return `${fmt(d[0])}-${fmt(d[1])} AU`;
+  }
+  function fmtBand(r: OrbitRegime): string {
+    if (r.altitude_km != null) return fmtKm(r.altitude_km);
+    if (r.distance_au != null) return fmtAU(r.distance_au);
+    return '';
   }
 </script>
 
@@ -92,15 +123,18 @@
             <span class="band-dot" aria-hidden="true"></span>
           {/if}
           <span class="band-name">{r.short ?? r.id}</span>
-          <span class="band-alt">{fmtAltitude(r.altitude_km)}</span>
+          <span class="band-alt">{fmtBand(r)}</span>
         </button>
       </li>
     {/each}
-    <li class="surface-row" aria-hidden="true">
-      <span class="surface-line"></span>
-      <span class="surface-label">{m.earth_orbit_ruler_surface()}</span>
-      <span class="surface-alt">0 km</span>
-    </li>
+    {#if surfaceAnchor !== null}
+      {@const anchor = surfaceAnchor ?? { label: m.earth_orbit_ruler_surface(), value: '0 km' }}
+      <li class="surface-row" aria-hidden="true">
+        <span class="surface-line"></span>
+        <span class="surface-label">{anchor.label}</span>
+        <span class="surface-alt">{anchor.value}</span>
+      </li>
+    {/if}
   </ul>
 </aside>
 
@@ -129,6 +163,22 @@
     border-radius: 6px;
     padding: 10px 12px 8px;
     width: 188px;
+    /* Cap height so dense rulers (/explore 8 zones) never overflow off
+       the top edge when other overlays (iconic-mission legend, etc.)
+       are also showing on the left rail (2026-06-22 user direction
+       "make sure pulldowns stack on top of this new control. less
+       space for it, but no overflow"). Internal scroll if the band
+       count would otherwise exceed the budget. */
+    max-height: calc(100vh - var(--nav-height, 60px) - 140px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .ruler::-webkit-scrollbar {
+    width: 4px;
+  }
+  .ruler::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 2px;
   }
   .ruler > * {
     pointer-events: auto;

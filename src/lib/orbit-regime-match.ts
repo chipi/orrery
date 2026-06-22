@@ -19,6 +19,7 @@ export function regimeForAltitude(
   if (altKm == null) return null;
   for (const r of regimes) {
     const a = r.altitude_km;
+    if (a == null) continue; // skip distance_au-only regimes
     if (typeof a === 'number') {
       // Single-altitude regimes (GEO, MOON L2, …) — tolerance 50 km so
       // exact-altitude orbits (GEO at 35,786 km) still resolve under

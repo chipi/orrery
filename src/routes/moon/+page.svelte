@@ -20,6 +20,7 @@
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
   import { getMoonSites, getMoonSiteGallery, getOrbitRegimesMoon } from '$lib/data';
+  import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
 
@@ -95,22 +96,14 @@
   let selectedSiteId = $state<string | null>(null);
   let moonOrbiterSites: Array<{ id: string; altitude_km?: number }> = $state([]);
 
-  // Highlight derivation — find which lunar regime's altitude band
-  // contains the selected orbiter, if any.
+  // Highlight derivation — match the selected lunar orbiter's altitude
+  // against the regime bands via the shared `regimeForAltitude` helper
+  // (introduced for /earth + /mars; /moon adopts it for consistency).
   let highlightRegime = $derived.by(() => {
     if (!selectedSiteId) return null;
     const orb = moonOrbiterSites.find((s) => s.id === selectedSiteId);
-    if (!orb || orb.altitude_km == null) return null;
-    const alt = orb.altitude_km;
-    for (const r of regimes) {
-      const a = r.altitude_km;
-      if (typeof a === 'number') {
-        if (Math.abs(alt - a) < 50) return r.id;
-      } else if (alt >= a[0] && alt <= a[1]) {
-        return r.id;
-      }
-    }
-    return null;
+    const matched = regimeForAltitude(orb?.altitude_km, regimes);
+    return matched?.id ?? null;
   });
 
   let selectableIds = $derived(new Set(moonOrbiterSites.map((s) => s.id)));

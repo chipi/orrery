@@ -1,0 +1,15 @@
+{
+  "name": "Heliopause + Interstellar Space",
+  "short": "HELIO",
+  "story": "The boundary where the Sun's solar wind loses its battle against the interstellar medium — roughly 120 AU out. Inside lies the heliosphere, a bubble of charged solar particles streaming outward at hundreds of km/s. Beyond it: the cold, dense gas and cosmic rays of the galaxy itself. The Voyager probes are the only artefacts humanity has ever placed across this boundary — Voyager 1 crossed in 2012, Voyager 2 in 2018. Both still transmit data, faintly, from interstellar space.",
+  "comparison": "About 4× farther than Neptune. A signal from Voyager 1 takes ~22 hours to reach Earth. The probes will not encounter another star for 40,000+ years (Voyager 1 will pass within 1.6 light-years of Gliese 445 in ~40,000 years).",
+  "residents": [],
+  "firsts": [
+    { "year": 2012, "label": "Voyager 1 crosses the heliopause — first artefact in interstellar space (USA)" },
+    { "year": 2018, "label": "Voyager 2 crosses the heliopause (USA)" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

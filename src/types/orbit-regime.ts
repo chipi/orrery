@@ -6,8 +6,6 @@
  * JSON under `static/data/i18n/<locale>/orbit-regimes/<id>.json` and
  * gets merged at fetch time by `getOrbitRegimes()`.
  */
-import type { Regime } from './earth-object';
-
 export interface OrbitRegimeResident {
   /** EarthObject id this resident points at (links the regime panel to
    *  the same satellite panel a click on the dot would open). */
@@ -37,12 +35,22 @@ export interface OrbitRegimeFirst {
 }
 
 export interface OrbitRegime {
-  /** Regime code that matches `EarthObject.regime`. */
-  id: Regime;
-  /** Altitude band — single value for the parked / synchronous regimes
-   *  (GEO, MOON, L2) and `[low, high]` for the ranged ones (LEO, MEO,
-   *  HEO). All in kilometres above mean sea level. */
-  altitude_km: number | [number, number];
+  /** Regime code that matches `EarthObject.regime` for /earth, or a
+   *  surface-relative band id for /moon, /mars. /explore uses
+   *  heliocentric zone ids (SUN, TERRESTRIAL, GIANTS, KUIPER, …). */
+  id: string;
+  /** Altitude band above the parent body's surface — used by /earth,
+   *  /moon, /mars rulers. Single value for parked / synchronous regimes
+   *  (GEO, AREOSTATIONARY, L2), `[low, high]` for ranged regimes (LEO,
+   *  LMO, NRHO). Kilometres above mean sea level.
+   *
+   *  EXACTLY ONE of altitude_km / distance_au must be set per entry. */
+  altitude_km?: number | [number, number];
+  /** Heliocentric distance band in astronomical units — used by
+   *  /explore's zone ruler (#357). Single value for an iconic distance
+   *  (heliopause at ~120 AU), `[low, high]` for a range (gas giants
+   *  5-30 AU). Mutually exclusive with altitude_km. */
+  distance_au?: number | [number, number];
   /** Hex colour mirroring `REGIME_COLORS` in
    *  `src/routes/earth/earth-launch-sites-config.ts`. Stored here so
    *  the ruler component doesn't have to import the config (and the

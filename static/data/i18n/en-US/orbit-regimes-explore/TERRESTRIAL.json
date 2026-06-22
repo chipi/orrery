@@ -1,0 +1,21 @@
+{
+  "name": "Inner Terrestrial Planets",
+  "short": "TERRA",
+  "story": "The rocky inner solar system — 0.4 to 1.5 AU from the Sun. Four small worlds with metallic cores, silicate mantles, and thin or no atmospheres. They formed inside the frost line, where it was too hot for volatile ices to condense, so only refractory materials (silicates, iron, nickel) stayed solid. Three of the four have been targets of crewed exploration (Earth, Moon, Mars-bound).",
+  "comparison": "All four terrestrials would fit inside Jupiter's Great Red Spot. The four together hold less than 0.5% of the system's planetary mass.",
+  "residents": [
+    { "id": "mercury", "label": "Mercury — 0.39 AU", "agency": "NATURAL" },
+    { "id": "venus", "label": "Venus — 0.72 AU", "agency": "NATURAL" },
+    { "id": "earth", "label": "Earth — 1.00 AU", "agency": "NATURAL" },
+    { "id": "mars", "label": "Mars — 1.52 AU", "agency": "NATURAL" }
+  ],
+  "firsts": [
+    { "year": 1962, "label": "Mariner 2 — first Venus flyby (USA)" },
+    { "year": 1965, "label": "Mariner 4 — first Mars flyby (USA)" },
+    { "year": 1974, "label": "Mariner 10 — first Mercury flyby (USA)" }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "frost-line"
+  }
+}

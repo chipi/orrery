@@ -242,6 +242,13 @@ export async function getOrbitRegimesMars(locale = 'en-US'): Promise<OrbitRegime
   return loadOrbitRegimes('orbit-regimes-mars', locale);
 }
 
+/** Heliocentric zones for /explore's scale ruler (#357). Same overlay
+ *  shape as the surface-route regimes; the data file uses `distance_au`
+ *  instead of `altitude_km` since /explore zones are heliocentric. */
+export async function getOrbitRegimesExplore(locale = 'en-US'): Promise<OrbitRegime[]> {
+  return loadOrbitRegimes('orbit-regimes-explore', locale);
+}
+
 export async function moonSites(): Promise<MoonSite[]> {
   return get<MoonSite[]>('moon-sites.json');
 }

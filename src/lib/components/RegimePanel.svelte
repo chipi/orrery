@@ -46,13 +46,22 @@
     onResidentClick,
   }: Props = $props();
 
-  function fmtAltitude(alt: OrbitRegime['altitude_km']): string {
+  function fmtKm(alt: number | [number, number]): string {
     if (typeof alt === 'number') {
       return alt >= 1000 ? `${alt.toLocaleString('en-US')} km` : `${alt} km`;
     }
-    const [lo, hi] = alt;
     const f = (x: number) => x.toLocaleString('en-US');
-    return `${f(lo)} - ${f(hi)} km`;
+    return `${f(alt[0])} - ${f(alt[1])} km`;
+  }
+  function fmtAU(d: number | [number, number]): string {
+    const f = (x: number) => (x >= 1000 ? x.toLocaleString('en-US') : x.toString());
+    if (typeof d === 'number') return `${f(d)} AU`;
+    return `${f(d[0])} - ${f(d[1])} AU`;
+  }
+  function fmtDistance(r: OrbitRegime): string {
+    if (r.altitude_km != null) return fmtKm(r.altitude_km);
+    if (r.distance_au != null) return fmtAU(r.distance_au);
+    return '';
   }
 
   // Per-agency accent for resident dots. Mirrors `nationChipFor` in
@@ -99,7 +108,7 @@
       <div class="stat-row">
         <div>
           <div class="stat-label">{m.earth_regime_altitude_label()}</div>
-          <div class="stat-value">{fmtAltitude(regime.altitude_km)}</div>
+          <div class="stat-value">{fmtDistance(regime)}</div>
         </div>
         {#if regime.firsts && regime.firsts.length > 0}
           <div>

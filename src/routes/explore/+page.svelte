@@ -51,6 +51,10 @@
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
+  import OrbitRuler from '$lib/components/OrbitRuler.svelte';
+  import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import { getOrbitRegimesExplore } from '$lib/data';
+  import type { OrbitRegime } from '$types/orbit-regime';
   import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
@@ -755,6 +759,67 @@
     smallBody: false,
     satellite: false,
     belt: false,
+  });
+
+  // Heliocentric scale ruler + zone panel state (#357). Mirrors the
+  // /earth /moon /mars rulers — Sun → terrestrial → belt → giants →
+  // Kuiper → scattered → heliopause → Oort. Residents click → deep-
+  // link via `?id=<body-id>` to the existing /explore body resolver.
+  let exploreRegimes: OrbitRegime[] = $state([]);
+  let exploreRegimePanelOpen = $state(false);
+  let selectedExploreRegimeId = $state<string | null>(null);
+  let selectedExploreRegime = $derived(
+    selectedExploreRegimeId
+      ? (exploreRegimes.find((r) => r.id === selectedExploreRegimeId) ?? null)
+      : null,
+  );
+  let exploreSelectableIds = $derived(
+    new Set(exploreRegimes.flatMap((r) => r.residents?.map((res) => res.id) ?? [])),
+  );
+
+  function openExploreRegime(id: string) {
+    selectedExploreRegimeId = id;
+    exploreRegimePanelOpen = true;
+    const url = new URL(window.location.href);
+    url.searchParams.set('regime', id);
+    goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
+  }
+  function closeExploreRegime() {
+    exploreRegimePanelOpen = false;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('regime');
+    goto(url.pathname + (url.search ? url.search : ''), {
+      replaceState: true,
+      noScroll: true,
+      keepFocus: true,
+    });
+  }
+  function onExploreResidentClick(id: string) {
+    // Reuse /explore's existing `?id=<body-id>` deep-link resolver —
+    // it routes to the right panel (PlanetPanel / SmallBodyPanel /
+    // SunPanel / SatellitePanel) based on the body type.
+    const url = new URL(window.location.href);
+    url.searchParams.set('id', id);
+    // Drop the regime param so closing the body panel doesn't
+    // reopen the zone panel via the resolver.
+    url.searchParams.delete('regime');
+    exploreRegimePanelOpen = false;
+    goto(url.pathname + url.search, { replaceState: false, noScroll: true, keepFocus: true });
+  }
+
+  // Load /explore zones once per component instance + resolve any
+  // ?regime=GIANTS deep-link as soon as they arrive.
+  void getOrbitRegimesExplore(getLocale()).then((r) => {
+    exploreRegimes = r;
+  });
+  $effect(() => {
+    void exploreRegimes;
+    if (exploreRegimes.length === 0) return;
+    const id = $page.url.searchParams.get('regime');
+    if (id && exploreRegimes.some((r) => r.id === id)) {
+      selectedExploreRegimeId = id;
+      exploreRegimePanelOpen = true;
+    }
   });
 
   // Iconic-mission selection — service factory consolidates the old
@@ -3664,6 +3729,20 @@
     const planet2dPos = new Map<string, { x: number; y: number }>();
     const smallBody2dPos = new Map<string, { x: number; y: number }>();
 
+    // Test-only hook (#351 Layer 2-A): bodies no longer start at a fixed
+    // angle — `a0` is overwritten with each planet's real J2000 mean
+    // longitude — so e2e can't assume Earth sits at (W/2 + orbitR, H/2).
+    // Expose the live 2D offset (canvas-centre-relative, CSS px) so a click
+    // test can resolve a body's actual on-screen position deterministically:
+    // screen = (canvas.width/2 + off.x, canvas.height/2 + off.y).
+    if (typeof window !== 'undefined') {
+      (
+        window as Window & {
+          __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
+        }
+      ).__explore2dBodyOffset = (id) => planet2dPos.get(id) ?? smallBody2dPos.get(id) ?? null;
+    }
+
     const resize2d = () => {
       c2.width = c2.clientWidth;
       c2.height = c2.clientHeight;
@@ -5298,6 +5377,29 @@
   open={iconic.state.panelOpen}
   onClose={() => iconic.reset()}
   onFly={(id) => goto(`${base}/fly?mission=${id}`)}
+/>
+
+<!-- Heliocentric scale ruler + zone panel (#357). Lower-left, always
+     visible. Bands run from the Sun out to the Oort cloud; click a
+     band to teach the zone, click a resident body to deep-link via
+     ?id=<body-id> (the existing /explore deep-link resolver picks it
+     up). RegimePanel sits at zIndex=28 so any body panel that opens
+     stacks on top — closing the body panel reveals the zone panel. -->
+{#if exploreRegimes.length > 0}
+  <OrbitRuler
+    regimes={exploreRegimes}
+    highlightRegime={null}
+    onSelect={openExploreRegime}
+    surfaceAnchor={null}
+  />
+{/if}
+
+<RegimePanel
+  regime={selectedExploreRegime}
+  open={exploreRegimePanelOpen}
+  onClose={closeExploreRegime}
+  selectableIds={exploreSelectableIds}
+  onResidentClick={onExploreResidentClick}
 />
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic

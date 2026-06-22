@@ -1,0 +1,16 @@
+{
+  "name": "Scattered Disc + Sednoids",
+  "short": "SCATTERED",
+  "story": "Bodies on highly elliptical orbits beyond the Kuiper Belt — 50 to 1,000 AU. They were likely scattered out here by gravitational interactions with Neptune long ago. Sedna is the prototype Sednoid: 76 AU at perihelion, 937 AU at aphelion, an 11,400-year orbit. Their orbits are too far for Neptune to have placed them currently, hinting at influences from passing stars, a hypothetical Planet Nine, or the Sun's lost siblings from its birth cluster. No spacecraft has ever visited.",
+  "comparison": "Sedna at aphelion sits 1/53rd of the way to the Sun's nearest stellar neighbour, Proxima Centauri. The light reaching Sedna from the Sun is 1/350,000th of what hits Earth.",
+  "residents": [
+    { "id": "sedna", "label": "Sedna — 76-937 AU, 11,400-year orbit", "agency": "NATURAL" }
+  ],
+  "firsts": [
+    { "year": 2003, "label": "Sedna discovered — first Sednoid (USA)" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

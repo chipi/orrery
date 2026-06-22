@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "초당 1일",
   "explore_speed_tip_10": "초당 10일",
   "explore_speed_tip_100": "초당 100일",
-  "explore_time_today": "오늘로 재설정"
+  "explore_time_today": "오늘로 재설정",
+  "earth_orbit_ruler_title": "궤도 눈금자",
+  "earth_orbit_ruler_aria": "지구 궤도 영역의 고도 참조 — 구역을 탭하여 자세히 알아보기",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "궤도 고도 참조 열기",
+  "earth_orbit_ruler_close": "궤도 참조 닫기",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "궤도 영역 세부정보",
+  "earth_regime_panel_close": "닫기",
+  "earth_regime_altitude_label": "고도",
+  "earth_regime_comparison_label": "크기 비교",
+  "earth_regime_story_label": "궤도선이 여기에 사는 이유",
+  "earth_regime_residents_label": "거주자",
+  "earth_regime_firsts_label": "주요 기록",
+  "earth_regime_firsts_label_missions": "선구적 임무",
+  "earth_regime_science_label": "/science에서 더 알아보기"
 }

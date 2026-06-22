@@ -9,11 +9,18 @@
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import OrbitRuler from '$lib/components/OrbitRuler.svelte';
+  import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
+  import type { OrbitRegime } from '$types/orbit-regime';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
-  import { getMoonSites, getMoonSiteGallery } from '$lib/data';
+  import { getMoonSites, getMoonSiteGallery, getOrbitRegimesMoon } from '$lib/data';
+  import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
 
   // Hidden tour anchors emit data-audio-stage="moon-select-{audio}".
@@ -69,6 +76,93 @@
       available: ['tidal-lock'],
     },
   };
+
+  // Orbit-ruler + regime-panel state (#355). Same pattern as /earth
+  // (#354) — data + components shared, regime panel stacks under the
+  // satellite/site panel (z=28 vs default 30) so clicking a resident
+  // reveals the orbiter's detail panel without closing the ruler panel.
+  let regimes: OrbitRegime[] = $state([]);
+  let regimePanelOpen = $state(false);
+  let selectedRegimeId = $state<string | null>(null);
+  let selectedRegime = $derived(
+    selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
+  );
+
+  // Active lunar-orbiter selection (drives ruler highlight). On /moon
+  // orbiter selection lives in SurfaceScene's `selected` (SurfaceSite),
+  // not `selectedSat` (EarthObject — /earth-only). The onSiteSelect
+  // callback fires from SurfaceScene's $effect on `selected` changes.
+  let selectedSiteId = $state<string | null>(null);
+  let moonOrbiterSites: Array<{ id: string; altitude_km?: number }> = $state([]);
+
+  // Highlight derivation — find which lunar regime's altitude band
+  // contains the selected orbiter, if any.
+  let highlightRegime = $derived.by(() => {
+    if (!selectedSiteId) return null;
+    const orb = moonOrbiterSites.find((s) => s.id === selectedSiteId);
+    if (!orb || orb.altitude_km == null) return null;
+    const alt = orb.altitude_km;
+    for (const r of regimes) {
+      const a = r.altitude_km;
+      if (typeof a === 'number') {
+        if (Math.abs(alt - a) < 50) return r.id;
+      } else if (alt >= a[0] && alt <= a[1]) {
+        return r.id;
+      }
+    }
+    return null;
+  });
+
+  let selectableIds = $derived(new Set(moonOrbiterSites.map((s) => s.id)));
+
+  function openRegime(id: string) {
+    selectedRegimeId = id;
+    regimePanelOpen = true;
+    const url = new URL(window.location.href);
+    url.searchParams.set('regime', id);
+    goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
+  }
+
+  function closeRegime() {
+    regimePanelOpen = false;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('regime');
+    goto(url.pathname + (url.search ? url.search : ''), {
+      replaceState: true,
+      noScroll: true,
+      keepFocus: true,
+    });
+  }
+
+  // Resident click → select that orbiter site in the scene. Same
+  // `__surfaceSceneSelectSite` window hook the tour anchors use. We
+  // INTENTIONALLY do not close the regime panel (per #354's 2026-06-22
+  // stacking direction); the satellite panel paints on top at z=30.
+  function onResidentClick(id: string) {
+    (
+      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+    ).__surfaceSceneSelectSite?.(id);
+  }
+
+  onMount(async () => {
+    const [r, sites] = await Promise.all([
+      getOrbitRegimesMoon(getLocale()),
+      getMoonSites(getLocale()),
+    ]);
+    regimes = r;
+    moonOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+  });
+
+  // Resolve `?regime=NRHO` deep-link once regimes load.
+  $effect(() => {
+    void regimes;
+    if (regimes.length === 0) return;
+    const id = $page.url.searchParams.get('regime');
+    if (id && regimes.some((r) => r.id === id)) {
+      selectedRegimeId = id;
+      regimePanelOpen = true;
+    }
+  });
 </script>
 
 <svelte:head>
@@ -78,6 +172,23 @@
 <SurfacePreloadLinks planet="moon" />
 <DebugPanelRegistrar label="MOON" />
 
-<SurfaceScene config={MOON_CONFIG} loadSites={getMoonSites} loadGallery={getMoonSiteGallery} />
+<SurfaceScene
+  config={MOON_CONFIG}
+  loadSites={getMoonSites}
+  loadGallery={getMoonSiteGallery}
+  onSiteSelect={(id) => (selectedSiteId = id)}
+/>
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
+
+{#if regimes.length > 0}
+  <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} />
+{/if}
+
+<RegimePanel
+  regime={selectedRegime}
+  open={regimePanelOpen}
+  onClose={closeRegime}
+  {selectableIds}
+  {onResidentClick}
+/>

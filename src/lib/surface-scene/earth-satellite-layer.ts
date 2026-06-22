@@ -134,19 +134,9 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
       }
     });
 
-    // Label with leader-line — tag floats above the spacecraft. We
-    // suffix the satellite's altitude (#354) so users see magnitude
-    // alongside name — e.g. "ISS · 408 km". Moon-orbiters skip the
-    // suffix since their altitude is measured against the Moon, not
-    // Earth, and the number would mislead.
-    const baseText = o.short ?? o.name ?? o.id;
-    const altKm = o.altitude_km ?? o.earth_distance_km;
-    const labelText =
-      category === 'moon-orbiter' || altKm == null
-        ? baseText
-        : `${baseText} · ${altKm >= 1000 ? altKm.toLocaleString('en-US') : altKm} km`;
+    // Label with leader-line — tag floats above the spacecraft.
     const label = buildLabel({
-      text: labelText,
+      text: o.short ?? o.name ?? o.id,
       color: o.color,
       offset: new THREE.Vector3(0, 1.8, 0),
       size: 1.2,

@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 дан у секунди",
   "explore_speed_tip_10": "10 дана у секунди",
   "explore_speed_tip_100": "100 дана у секунди",
-  "explore_time_today": "Назад на данас"
+  "explore_time_today": "Назад на данас",
+  "earth_orbit_ruler_title": "ОРБИТАЛНИ ЛЕЊИР",
+  "earth_orbit_ruler_aria": "Референца висине за орбиталне режиме око Земље — додирните траку за више информација",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "Отвори референцу орбиталне висине",
+  "earth_orbit_ruler_close": "Затвори референцу орбита",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "Детаљи орбиталног режима",
+  "earth_regime_panel_close": "Затвори",
+  "earth_regime_altitude_label": "Висина",
+  "earth_regime_comparison_label": "Размера",
+  "earth_regime_story_label": "Зашто орбитери живе овде",
+  "earth_regime_residents_label": "Ко живи овде",
+  "earth_regime_firsts_label": "Значајне прве",
+  "earth_regime_firsts_label_missions": "Оснивачке мисије",
+  "earth_regime_science_label": "Сазнајте више у /science"
 }

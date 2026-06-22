@@ -1,0 +1,42 @@
+{
+  "name": "Geostationärer Orbit",
+  "short": "GEO",
+  "story": "Exakt 35.786 km hoch — die Höhe, bei der ein Orbit genau 24 Stunden dauert, sodass der Satellit bewegungslos über einem festen Längengrad am Äquator schwebt. Wettersatelliten starren für immer auf denselben Kontinent; Kommunikationssatelliten malen einen schüsselgroßen Fußabdruck und bewegen sich nie. Es gibt keine Parkplätze, nur Parkschlitze — jeder Betreiber erhält ein Längengradband, das von der ITU zugewiesen wird.",
+  "comparison": "Etwa 1/11 des Weges zum Mond. Ein Hin- und Rücksignal per GEO-Comsat dauert ~240 ms — lang genug, um es bei einem Telefonat zu hören („Satellitenverzögerung\").",
+  "residents": [
+    {
+      "id": "goes",
+      "label": "GOES — geostationäre Wettersatelliten der NOAA",
+      "agency": "NASA"
+    },
+    {
+      "id": "inmarsat",
+      "label": "Inmarsat — globale Kommunikationssatelliten",
+      "agency": "ESA"
+    },
+    {
+      "id": "meteosat",
+      "label": "Meteosat — Wettersatelliten der ESA",
+      "agency": "ESA"
+    },
+    {
+      "id": "fengyun",
+      "label": "Fengyun — chinesische Wettersatelliten",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1963,
+      "label": "Syncom 2 — erster geosynchroner Satellit (USA)"
+    },
+    {
+      "year": 1964,
+      "label": "Syncom 3 — erster echter geostationärer Satellit (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

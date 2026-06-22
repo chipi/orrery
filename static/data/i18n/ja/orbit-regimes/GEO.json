@@ -1,0 +1,42 @@
+{
+  "name": "静止軌道",
+  "short": "GEO",
+  "story": "正確に35,786 km上空——軌道周期がちょうど24時間となる高度で、衛星は赤道上の固定された経度の真上に静止して見える。気象衛星は同じ大陸を永遠に見つめ続け、通信衛星は皿状のフットプリントを描いて決して動かない。駐車スペースはなく、駐車スロットのみ——各運用者はITUによって割り当てられた経度帯を取得する。",
+  "comparison": "月までの距離の約1/11。GEO通信衛星経由のテレビ信号の往復には約240ミリ秒かかる——電話で聞き取れるほどの長さ(「衛星遅延」)。",
+  "residents": [
+    {
+      "id": "goes",
+      "label": "GOES — NOAAの静止気象衛星",
+      "agency": "NASA"
+    },
+    {
+      "id": "inmarsat",
+      "label": "Inmarsat — 全球通信衛星",
+      "agency": "ESA"
+    },
+    {
+      "id": "meteosat",
+      "label": "Meteosat — ESAの気象衛星",
+      "agency": "ESA"
+    },
+    {
+      "id": "fengyun",
+      "label": "Fengyun — 中国の気象衛星",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1963,
+      "label": "Syncom 2 — 初の地球同期衛星 (USA)"
+    },
+    {
+      "year": 1964,
+      "label": "Syncom 3 — 初の真の静止衛星 (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

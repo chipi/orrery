@@ -1,0 +1,44 @@
+{
+  "name": "近地轨道",
+  "short": "LEO",
+  "story": "最接近地球的空间带——距离地面160至2,000公里。通信延迟短（单程约7毫秒），大气阻力仍在较低边缘产生拖曳,辐射带尚未开始发挥作用。载人航天活动驻扎于此,原因相同:可救援、可抵达,人体能够承受几百公里的通勤距离。每一个曾经运行的空间站都停泊在LEO。",
+  "comparison": "大约是到月球距离的1/600。ISS在408公里的高度运行,相当于伦敦到日内瓦的距离——横向放置。",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — 国际空间站",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — 中国空间站",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble Space Telescope — 哈勃空间望远镜",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink — 星链星座",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — 第一颗人造地球卫星 (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin,首次载人轨道飞行 (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

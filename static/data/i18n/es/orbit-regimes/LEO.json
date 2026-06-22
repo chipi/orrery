@@ -1,0 +1,44 @@
+{
+  "name": "Órbita Terrestre Baja",
+  "short": "LEO",
+  "story": "La franja más cercana del espacio — de 160 a 2000 km de altura. Baja latencia de comunicaciones (~7 ms en un sentido), el arrastre atmosférico todavía tira del borde inferior, y los cinturones de radiación aún no han entrado en juego. Los vuelos espaciales tripulados viven aquí por las mismas razones: rescatable, alcanzable, y el cuerpo humano tolera un viaje de unos pocos cientos de kilómetros. Todas las estaciones espaciales que han volado se han estacionado en LEO.",
+  "comparison": "Aproximadamente 1/600 del camino hasta la Luna. La ISS a 408 km orbita a la misma altitud que la distancia entre Londres y Ginebra — puesta de lado.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — Estación Espacial Internacional",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — estación china",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble Space Telescope",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink — constelación",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — primer satélite artificial terrestre (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, primer vuelo orbital tripulado (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

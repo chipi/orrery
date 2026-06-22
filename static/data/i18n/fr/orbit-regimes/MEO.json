@@ -1,0 +1,42 @@
+{
+  "name": "Orbite terrestre moyenne",
+  "short": "MEO",
+  "story": "La bande de navigation — environ 20 000 km d'altitude, où une constellation de 24+ satellites peut couvrir chaque point sur Terre avec au moins quatre engins spatiaux simultanément visibles (le minimum pour un positionnement 3D). Les quatre principaux systèmes mondiaux de positionnement se trouvent ici, intentionnellement répartis sur quatre régimes indépendants par leurs agences opératrices. Au-dessus de la ceinture de Van Allen interne, en dessous de l'externe — une orbite haute et calme.",
+  "comparison": "Environ 1/19e de la distance jusqu'à la Lune. Un signal GPS met ~67 ms pour atteindre votre téléphone — environ 10× le trajet depuis LEO.",
+  "residents": [
+    {
+      "id": "gps",
+      "label": "GPS — Système de positionnement mondial",
+      "agency": "NASA"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo — GNSS européen",
+      "agency": "ESA"
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS — GNSS russe",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "beidou",
+      "label": "BeiDou — GNSS chinois",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1978,
+      "label": "Navstar 1 — premier satellite GPS (USA)"
+    },
+    {
+      "year": 1982,
+      "label": "GLONASS Block I — premier satellite GNSS soviétique"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

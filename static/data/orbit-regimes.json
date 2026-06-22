@@ -1,0 +1,32 @@
+[
+  {
+    "id": "LEO",
+    "altitude_km": [160, 2000],
+    "color": "#4ecdc4"
+  },
+  {
+    "id": "MEO",
+    "altitude_km": [2000, 35786],
+    "color": "#7b9cff"
+  },
+  {
+    "id": "GEO",
+    "altitude_km": 35786,
+    "color": "#ffc850"
+  },
+  {
+    "id": "HEO",
+    "altitude_km": [1000, 50000],
+    "color": "#ff8c3c"
+  },
+  {
+    "id": "MOON",
+    "altitude_km": 384400,
+    "color": "#aaaacc"
+  },
+  {
+    "id": "L2",
+    "altitude_km": 1500000,
+    "color": "#ffd700"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "name": "태양–지구 L2",
+  "short": "L2",
+  "story": "제2 라그랑주 점 — 지구에서 150만 km 떨어진 곳으로, 태양에서 지구를 지나 뒤쪽으로 이어지는 선 위에 있습니다. 태양과 지구의 중력이 결합하여 우주선이 최소한의 연료로 위치를 유지할 수 있게 합니다. 항상 밤하늘이고, 지구를 향한 쪽은 항상 따뜻하며, 태양 각도는 영원히 동일합니다 — 차갑게 유지되고 태양으로부터 멀리 향해야 하는 적외선 망원경에게 완벽한 주차 공간입니다. JWST는 여기 약 80만 km 폭의 헤일로 궤도에 주차되어 있습니다.",
+  "comparison": "달보다 네 배 더 멉니다. 태양, 지구, 달이 모두 우주선의 한쪽에 위치하여 차양막 기하학을 단순화합니다.",
+  "residents": [
+    {
+      "id": "jwst",
+      "label": "JWST — 제임스 웹 우주 망원경",
+      "agency": "NASA"
+    },
+    {
+      "id": "gaia",
+      "label": "Gaia — 10억 개 별 조사선",
+      "agency": "ESA"
+    },
+    {
+      "id": "euclid",
+      "label": "Euclid — 암흑 에너지 임무",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2001,
+      "label": "WMAP — 최초의 L2 임무 (USA)"
+    },
+    {
+      "year": 2009,
+      "label": "Herschel + Planck — 최초의 ESA L2 임무"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Sun–Earth L2",
+  "short": "L2",
+  "story": "The second Lagrange point — 1.5 million km from Earth, on the line from the Sun through Earth and out the back. The gravity of the Sun + Earth combine to keep a spacecraft station-keeping with minimal fuel. Always-night sky, always-warm Earth-facing side, the same Sun angle forever — the perfect parking spot for infrared telescopes that need to stay cold and pointed away from the Sun. JWST is parked here, in a halo orbit ~800,000 km wide.",
+  "comparison": "Four times farther than the Moon. The Sun, Earth, and Moon all sit on one side of the spacecraft, simplifying the sunshield geometry.",
+  "residents": [
+    {
+      "id": "jwst",
+      "label": "JWST — James Webb Space Telescope",
+      "agency": "NASA"
+    },
+    {
+      "id": "gaia",
+      "label": "Gaia — billion-star surveyor",
+      "agency": "ESA"
+    },
+    {
+      "id": "euclid",
+      "label": "Euclid — dark energy mission",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2001,
+      "label": "WMAP — first L2 mission (USA)"
+    },
+    {
+      "year": 2009,
+      "label": "Herschel + Planck — first ESA L2 missions"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 день в секунду",
   "explore_speed_tip_10": "10 дней в секунду",
   "explore_speed_tip_100": "100 дней в секунду",
-  "explore_time_today": "Вернуться к сегодня"
+  "explore_time_today": "Вернуться к сегодня",
+  "earth_orbit_ruler_title": "ЛИНЕЙКА ОРБИТ",
+  "earth_orbit_ruler_aria": "Высотный справочник для орбитальных режимов Земли — нажмите на полосу, чтобы узнать больше",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "Открыть высотный справочник орбит",
+  "earth_orbit_ruler_close": "Закрыть справочник орбит",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "км",
+  "earth_regime_panel_aria": "Сведения об орбитальном режиме",
+  "earth_regime_panel_close": "Закрыть",
+  "earth_regime_altitude_label": "Высота",
+  "earth_regime_comparison_label": "Масштаб",
+  "earth_regime_story_label": "Почему здесь летают",
+  "earth_regime_residents_label": "Кто здесь находится",
+  "earth_regime_firsts_label": "Знаковые достижения",
+  "earth_regime_firsts_label_missions": "Основополагающие миссии",
+  "earth_regime_science_label": "Подробнее в /science"
 }

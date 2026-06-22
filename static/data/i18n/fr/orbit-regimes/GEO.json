@@ -1,0 +1,42 @@
+{
+  "name": "Orbite géostationnaire",
+  "short": "GEO",
+  "story": "Exactement 35 786 km d'altitude — l'altitude où une orbite prend exactement 24 heures, de sorte que le satellite reste immobile au-dessus d'une longitude fixe sur l'équateur. Les satellites météorologiques observent le même continent pour toujours ; les satellites de communication projettent une empreinte de la taille d'une parabole et ne bougent jamais. Il n'y a pas de places de parking, seulement des créneaux — chaque opérateur se voit attribuer une bande de longitude par l'UIT.",
+  "comparison": "Environ 1/11e du chemin vers la Lune. Un signal TV aller-retour via un satellite GEO prend ~240 ms — suffisamment long pour être perceptible lors d'un appel téléphonique (« délai satellite »).",
+  "residents": [
+    {
+      "id": "goes",
+      "label": "GOES — météorologie géostationnaire de la NOAA",
+      "agency": "NASA"
+    },
+    {
+      "id": "inmarsat",
+      "label": "Inmarsat — satellites de communication mondiaux",
+      "agency": "ESA"
+    },
+    {
+      "id": "meteosat",
+      "label": "Meteosat — météorologie de l'ESA",
+      "agency": "ESA"
+    },
+    {
+      "id": "fengyun",
+      "label": "Fengyun — météorologie chinoise",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1963,
+      "label": "Syncom 2 — premier satellite géosynchrone (USA)"
+    },
+    {
+      "year": 1964,
+      "label": "Syncom 3 — premier véritable satellite géostationnaire (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

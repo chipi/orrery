@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 दिन प्रति सेकंड",
   "explore_speed_tip_10": "10 दिन प्रति सेकंड",
   "explore_speed_tip_100": "100 दिन प्रति सेकंड",
-  "explore_time_today": "आज पर लौटें"
+  "explore_time_today": "आज पर लौटें",
+  "earth_orbit_ruler_title": "कक्षा मापक",
+  "earth_orbit_ruler_aria": "पृथ्वी की कक्षीय क्षेत्रों के लिए ऊंचाई संदर्भ — अधिक जानने के लिए किसी बैंड पर टैप करें",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "कक्षा ऊंचाई संदर्भ खोलें",
+  "earth_orbit_ruler_close": "कक्षा संदर्भ बंद करें",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "कक्षीय क्षेत्र विवरण",
+  "earth_regime_panel_close": "बंद करें",
+  "earth_regime_altitude_label": "ऊंचाई",
+  "earth_regime_comparison_label": "पैमाना",
+  "earth_regime_story_label": "परिक्रमा यान यहां क्यों रहते हैं",
+  "earth_regime_residents_label": "यहां कौन रहता है",
+  "earth_regime_firsts_label": "उल्लेखनीय प्रथम",
+  "earth_regime_firsts_label_missions": "संस्थापक मिशन",
+  "earth_regime_science_label": "/science में और जानें"
 }

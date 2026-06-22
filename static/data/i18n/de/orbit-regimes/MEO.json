@@ -1,0 +1,42 @@
+{
+  "name": "Mittlere Erdumlaufbahn",
+  "short": "MEO",
+  "story": "Das Navigationsband — etwa 20.000 km hoch, wo eine Konstellation von 24+ Satelliten jeden Punkt auf der Erde mit mindestens vier gleichzeitig sichtbaren Raumfahrzeugen abdecken kann (das Minimum für eine 3D-Positionsbestimmung). Alle vier großen globalen Positionierungssysteme befinden sich hier, absichtlich über vier unabhängige Regime verteilt durch ihre Betreiberagenturen. Oberhalb des inneren Van-Allen-Gürtels, unterhalb des äußeren — eine ruhige, hohe Umlaufbahn.",
+  "comparison": "Etwa 1/19 des Weges zum Mond. Ein Signal von GPS benötigt ~67 ms, um Ihr Telefon zu erreichen — etwa 10× länger als der LEO-Sprung.",
+  "residents": [
+    {
+      "id": "gps",
+      "label": "GPS — Globales Positionierungssystem",
+      "agency": "NASA"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo — Europäisches GNSS",
+      "agency": "ESA"
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS — Russisches GNSS",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "beidou",
+      "label": "BeiDou — Chinesisches GNSS",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1978,
+      "label": "Navstar 1 — erster GPS-Satellit (USA)"
+    },
+    {
+      "year": 1982,
+      "label": "GLONASS Block I — erster sowjetischer GNSS-Satellit"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

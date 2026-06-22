@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 Tag pro Sekunde",
   "explore_speed_tip_10": "10 Tage pro Sekunde",
   "explore_speed_tip_100": "100 Tage pro Sekunde",
-  "explore_time_today": "Zurück zu heute"
+  "explore_time_today": "Zurück zu heute",
+  "earth_orbit_ruler_title": "ORBIT-LINEAL",
+  "earth_orbit_ruler_aria": "Höhenreferenz für Erdorbitalbereiche – tippe auf ein Band, um mehr zu erfahren",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "Orbit-Höhenreferenz öffnen",
+  "earth_orbit_ruler_close": "Orbit-Referenz schließen",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "Details zum Orbitalbereich",
+  "earth_regime_panel_close": "Schließen",
+  "earth_regime_altitude_label": "Höhe",
+  "earth_regime_comparison_label": "Maßstab",
+  "earth_regime_story_label": "Warum Orbiter hier leben",
+  "earth_regime_residents_label": "Wer hier lebt",
+  "earth_regime_firsts_label": "Bedeutende Premieren",
+  "earth_regime_firsts_label_missions": "Gründungsmissionen",
+  "earth_regime_science_label": "Mehr erfahren unter /science"
 }

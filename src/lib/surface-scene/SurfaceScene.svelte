@@ -136,8 +136,26 @@
      *  /earth to auto-orient toward the viewer's approximate location
      *  (issue #315). Has no effect if a URL state pose is present. */
     initialView?: { latDeg: number; lonDeg: number };
+    /** Fired when the selected orbital object (EarthObject) changes —
+     *  used by /earth to flag the matching regime band on the orbit
+     *  ruler (#354). Receives the selected EarthObject id, or null
+     *  when the panel closes / a different selection clears it. */
+    onSatelliteSelect?: (id: string | null) => void;
+    /** Fired when the selected SurfaceSite changes (any kind). Used by
+     *  /moon (#355) + /mars (#356) to flag the matching regime band
+     *  on the orbit ruler when a lunar/mars orbiter site is selected.
+     *  Receives the site id or null. */
+    onSiteSelect?: (id: string | null) => void;
   }
-  let { config, loadSites, loadGallery, loadTraverses, initialView }: Props = $props();
+  let {
+    config,
+    loadSites,
+    loadGallery,
+    loadTraverses,
+    initialView,
+    onSatelliteSelect,
+    onSiteSelect,
+  }: Props = $props();
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -273,6 +291,21 @@
   let earthObjectsCache: import('$types/earth-object').EarthObject[] = [];
   let selectedSat = $state<import('$types/earth-object').EarthObject | null>(null);
   let earthMissionIds = $state<Set<string>>(new Set());
+
+  // Notify the parent route on every selectedSat change so /earth's
+  // OrbitRuler can flag the matching regime band (#354). Reactive via
+  // $effect so we don't have to thread the callback through every
+  // selectedSat assignment site in this file.
+  $effect(() => {
+    onSatelliteSelect?.(selectedSat?.id ?? null);
+  });
+
+  // Parallel callback for SurfaceSite selection — /moon (#355) +
+  // /mars (#356) wire their orbit rulers to the `selected` state
+  // rather than `selectedSat` (which is /earth-only EarthObjects).
+  $effect(() => {
+    onSiteSelect?.(selected?.id ?? null);
+  });
 
   // Flat-patch view state (ADR-062 / #283 Slice 4). Four-phase machine
   // drives the 600 ms ease-in-out cross-fade between sphere and flat
@@ -3278,11 +3311,23 @@
 
         // Live altitude (km above surface) — read at the top of the loop
         // so the bottom-right HUD updates every frame on every route,
-        // including /earth (no hotspot dispatcher). Previously this
-        // assignment was nested inside the `if (hotspots.length)` block
-        // below, so Earth's hotspot-free scene left altitudeKm pinned at
-        // its initial 0 ("0 m altitude" forever).
-        altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
+        // including /earth (no hotspot dispatcher).
+        //
+        // Use the camera's WORLD distance from the planet centre, not
+        // camR. After an orbiter focus-on-select (#351 follow-up,
+        // flyToWorldPos), `focusOffset` shifts off origin and camR
+        // becomes the camera→object distance — which is much smaller
+        // than the camera→Earth distance. The old `camR - planetRadius`
+        // formula then clamped to 0 (`Math.max(0, …)`) and the HUD
+        // stayed at "0 m altitude" forever after any orbiter selection
+        // (#354 bug). Computing off `camera.position.length()` keeps
+        // the readout honest in both origin-framed and object-framed
+        // camera poses.
+        const camDistFromOrigin = camera.position.length();
+        altitudeKm = Math.max(
+          0,
+          (camDistFromOrigin - planetRadius) * (config.radiusKm / planetRadius),
+        );
 
         // Match the flat-patch scale to the sphere scale at hand-off
         // so the photo doesn't jump when the flat-patch component takes

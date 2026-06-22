@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 giorno al secondo",
   "explore_speed_tip_10": "10 giorni al secondo",
   "explore_speed_tip_100": "100 giorni al secondo",
-  "explore_time_today": "Torna a oggi"
+  "explore_time_today": "Torna a oggi",
+  "earth_orbit_ruler_title": "SCALA ORBITALE",
+  "earth_orbit_ruler_aria": "Riferimento altitudine per regimi orbitali terrestri — tocca una fascia per saperne di più",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "Apri riferimento altitudine orbitale",
+  "earth_orbit_ruler_close": "Chiudi riferimento orbitale",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "Dettagli regime orbitale",
+  "earth_regime_panel_close": "Chiudi",
+  "earth_regime_altitude_label": "Altitudine",
+  "earth_regime_comparison_label": "Scala",
+  "earth_regime_story_label": "Perché gli orbitanti vivono qui",
+  "earth_regime_residents_label": "Chi vive qui",
+  "earth_regime_firsts_label": "Prime volte notevoli",
+  "earth_regime_firsts_label_missions": "Missioni fondatrici",
+  "earth_regime_science_label": "Scopri di più in /science"
 }

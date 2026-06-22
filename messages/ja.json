@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1秒あたり1日",
   "explore_speed_tip_10": "1秒あたり10日",
   "explore_speed_tip_100": "1秒あたり100日",
-  "explore_time_today": "今日に戻す"
+  "explore_time_today": "今日に戻す",
+  "earth_orbit_ruler_title": "軌道ルーラー",
+  "earth_orbit_ruler_aria": "地球軌道領域の高度基準 — 帯域をタップして詳細を表示",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "軌道高度基準を開く",
+  "earth_orbit_ruler_close": "軌道基準を閉じる",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "軌道領域の詳細",
+  "earth_regime_panel_close": "閉じる",
+  "earth_regime_altitude_label": "高度",
+  "earth_regime_comparison_label": "スケール",
+  "earth_regime_story_label": "軌道の特性",
+  "earth_regime_residents_label": "主な衛星",
+  "earth_regime_firsts_label": "記念碑的ミッション",
+  "earth_regime_firsts_label_missions": "先駆的ミッション",
+  "earth_regime_science_label": "/science で詳しく"
 }

@@ -1,0 +1,44 @@
+{
+  "name": "Lage Aardbaan",
+  "short": "LEO",
+  "story": "De dichtstbijzijnde band van de ruimte — 160 tot 2.000 km omhoog. Korte communicatielatentie (~7 ms enkele reis), atmosferische weerstand trekt nog aan de onderste rand, en de stralingsgordels zijn nog niet actief. Bemande ruimtevaart bevindt zich hier om dezelfde redenen: redbaar, bereikbaar, en het menselijk lichaam verdraagt een reis van enkele honderden kilometers. Elk ruimtestation dat ooit heeft gevlogen, heeft in LEO geparkeerd.",
+  "comparison": "Ongeveer 1/600ste van de afstand naar de Maan. Het ISS op 408 km draait op dezelfde hoogte als de afstand van Londen naar Genève — zijwaarts gelegd.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — Internationaal Ruimtestation",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — Chinees station",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble ruimtetelescoop",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink-constellatie",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — eerste kunstmatige aardsatelliet (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, eerste bemande ruimtevlucht in een baan (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

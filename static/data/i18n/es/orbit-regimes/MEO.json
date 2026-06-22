@@ -1,0 +1,42 @@
+{
+  "name": "Órbita Terrestre Media",
+  "short": "MEO",
+  "story": "La banda de navegación — aproximadamente a 20.000 km de altura, donde una constelación de 24+ satélites puede cubrir cada punto de la Tierra con al menos cuatro naves espaciales visibles simultáneamente (el mínimo para una posición 3D). Los cuatro principales sistemas globales de posicionamiento residen aquí, intencionadamente distribuidos en cuatro regímenes independientes por sus agencias operadoras. Por encima del cinturón interior de Van Allen, por debajo del exterior — una órbita alta y tranquila.",
+  "comparison": "Aproximadamente 1/19 del camino hacia la Luna. Una señal desde GPS tarda ~67 ms en llegar a tu teléfono — unas 10× el rebote de LEO.",
+  "residents": [
+    {
+      "id": "gps",
+      "label": "GPS — Sistema de Posicionamiento Global",
+      "agency": "NASA"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo — GNSS europeo",
+      "agency": "ESA"
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS — GNSS ruso",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "beidou",
+      "label": "BeiDou — GNSS chino",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1978,
+      "label": "Navstar 1 — primer satélite GPS (USA)"
+    },
+    {
+      "year": 1982,
+      "label": "GLONASS Block I — primer satélite GNSS soviético"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

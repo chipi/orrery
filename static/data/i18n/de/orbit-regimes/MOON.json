@@ -1,0 +1,38 @@
+{
+  "name": "Mondumlaufbahn",
+  "short": "MOON",
+  "story": "Der Mond ist der einzige natürliche Satellit der Erde — 384.400 km entfernt, gezeitengebunden, sodass er stets dieselbe Seite zeigt, und umkreist sie einmal alle 27,3 Tage. Raumfahrzeuge besuchen ihn auf dem Weg zu Mondlandungen (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) oder um die Oberfläche für künftige Missionen zu kartieren. Das Lunar Gateway wird, sobald es fliegt, der erste permanente bemannte Außenposten jenseits von LEO sein.",
+  "comparison": "1.200× weiter entfernt als die ISS. Ein Funksignal Erde → Mond → Erde braucht ~2,6 Sekunden — lang genug, dass Missionskontrolleure in Houston in langsamen, bedachten Sätzen sprechen.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 Orbiter",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — Chang'e-Relaisstation für die Mondrückseite",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — erste Sonde, die die Mondumgebung erreichte (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — erste bemannte Mondumlaufbahn (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

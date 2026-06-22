@@ -17,9 +17,18 @@
      * and list arrow-nav only works from the *second* click onward.
      */
     grabFocus?: boolean;
+    /**
+     * Override the default z-index (30). Used by panels that need to
+     * stack underneath the primary detail panel — /earth's RegimePanel
+     * sits at 28 so when a resident click opens the satellite panel
+     * (z 30), the satellite panel paints on top of the regime panel
+     * (#354 — user direction "new panels open under geo panel, z order
+     * has to be swapped").
+     */
+    zIndex?: number;
     children?: Snippet;
   };
-  let { open, onClose, title, grabFocus = true, children }: Props = $props();
+  let { open, onClose, title, grabFocus = true, zIndex = 30, children }: Props = $props();
 
   let panelEl: HTMLElement | undefined = $state();
 
@@ -79,6 +88,7 @@
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
     style:transform={touchDeltaY > 0 ? `translateY(${touchDeltaY}px)` : ''}
+    style:z-index={zIndex}
     ontouchstart={onTouchStart}
     ontouchmove={onTouchMove}
     ontouchend={onTouchEnd}

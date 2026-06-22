@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "يوم واحد في الثانية",
   "explore_speed_tip_10": "10 أيام في الثانية",
   "explore_speed_tip_100": "100 يوم في الثانية",
-  "explore_time_today": "العودة إلى اليوم"
+  "explore_time_today": "العودة إلى اليوم",
+  "earth_orbit_ruler_title": "مسطرة المدارات",
+  "earth_orbit_ruler_aria": "مرجع الارتفاع للنطاقات المدارية حول الأرض — اضغط على نطاق لمعرفة المزيد",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "فتح مرجع ارتفاع المدارات",
+  "earth_orbit_ruler_close": "إغلاق مرجع المدارات",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "كم",
+  "earth_regime_panel_aria": "تفاصيل النطاق المداري",
+  "earth_regime_panel_close": "إغلاق",
+  "earth_regime_altitude_label": "الارتفاع",
+  "earth_regime_comparison_label": "المقياس",
+  "earth_regime_story_label": "لماذا تعيش المركبات هنا",
+  "earth_regime_residents_label": "من يعيش هنا",
+  "earth_regime_firsts_label": "السوابق البارزة",
+  "earth_regime_firsts_label_missions": "المهمات التأسيسية",
+  "earth_regime_science_label": "تعلّم المزيد في /science"
 }

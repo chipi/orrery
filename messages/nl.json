@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "1 dag per seconde",
   "explore_speed_tip_10": "10 dagen per seconde",
   "explore_speed_tip_100": "100 dagen per seconde",
-  "explore_time_today": "Terug naar vandaag"
+  "explore_time_today": "Terug naar vandaag",
+  "earth_orbit_ruler_title": "BAANHOOGTE",
+  "earth_orbit_ruler_aria": "Hoogtereferentie voor aardbanen — tik op een band voor meer informatie",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "Open baanhoogtereferentie",
+  "earth_orbit_ruler_close": "Sluit baanreferentie",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "Details baanregime",
+  "earth_regime_panel_close": "Sluit",
+  "earth_regime_altitude_label": "Hoogte",
+  "earth_regime_comparison_label": "Schaal",
+  "earth_regime_story_label": "Waarom satellieten hier cirkelen",
+  "earth_regime_residents_label": "Wie woont hier",
+  "earth_regime_firsts_label": "Baanbrekende missies",
+  "earth_regime_firsts_label_missions": "Grondleggende missies",
+  "earth_regime_science_label": "Meer lezen in /science"
 }

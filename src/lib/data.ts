@@ -14,6 +14,7 @@ import type { LocalizedSun, Sun, SunOverlay } from '$types/sun';
 import type { LocalizedScenario, Scenario, ScenarioOverlay } from '$types/scenario';
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
+import type { OrbitRegime } from '$types/orbit-regime';
 import type { MoonSite } from '$types/moon-site';
 import type { MarsSite, Traverse } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
@@ -195,6 +196,50 @@ export async function getEarthObjects(locale = 'en-US'): Promise<EarthObject[]> 
     merged.push(fallback ? { ...o, ...fallback } : o);
   }
   return merged;
+}
+
+/**
+ * Orbit-regime reference data for the orbit-ruler + regime panel
+ * pattern (#354 /earth, #355 /moon, #356 /mars). Base JSON carries the
+ * immutable numeric fields (altitude_km, color); per-locale overlays
+ * under `i18n/<locale>/<bundle>/` add the story / residents / firsts /
+ * science-cross-link.
+ *
+ * `bundle` is the on-disk slug for both the base file and the overlay
+ * directory:
+ *   - 'orbit-regimes'      → /earth (file: orbit-regimes.json)
+ *   - 'orbit-regimes-moon' → /moon  (file: orbit-regimes-moon.json)
+ *   - 'orbit-regimes-mars' → /mars  (file: orbit-regimes-mars.json)
+ */
+async function loadOrbitRegimes(bundle: string, locale: string): Promise<OrbitRegime[]> {
+  const base = await get<OrbitRegime[]>(`${bundle}.json`);
+  const merged: OrbitRegime[] = [];
+  for (const r of base) {
+    const overlay = await get<Partial<OrbitRegime>>(
+      `i18n/${locale}/${bundle}/${r.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<Partial<OrbitRegime>>(`i18n/en-US/${bundle}/${r.id}.json`).catch(
+            () => null,
+          ));
+    merged.push(fallback ? { ...r, ...fallback } : r);
+  }
+  return merged;
+}
+
+export async function getOrbitRegimes(locale = 'en-US'): Promise<OrbitRegime[]> {
+  return loadOrbitRegimes('orbit-regimes', locale);
+}
+
+export async function getOrbitRegimesMoon(locale = 'en-US'): Promise<OrbitRegime[]> {
+  return loadOrbitRegimes('orbit-regimes-moon', locale);
+}
+
+export async function getOrbitRegimesMars(locale = 'en-US'): Promise<OrbitRegime[]> {
+  return loadOrbitRegimes('orbit-regimes-mars', locale);
 }
 
 export async function moonSites(): Promise<MoonSite[]> {

@@ -1,0 +1,38 @@
+{
+  "name": "Orbite lunaire",
+  "short": "MOON",
+  "story": "La Lune est le seul satellite naturel de la Terre — à 384 400 km, verrouillée par effet de marée de sorte qu'elle montre toujours la même face, et orbitant une fois tous les 27,3 jours. Les vaisseaux spatiaux la visitent en route vers des alunissages (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) ou pour cartographier la surface en vue de futurs retours. La Lunar Gateway, lorsqu'elle sera en vol, sera le premier avant-poste habité permanent au-delà de LEO.",
+  "comparison": "1 200× plus loin que l'ISS. Un signal radio Terre → Lune → Terre prend ~2,6 secondes — suffisamment long pour que les contrôleurs de mission à Houston parlent par phrases lentes et délibérées.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 orbiter",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — relais Chang'e face cachée",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — premier à atteindre la proximité lunaire (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — première orbite lunaire habitée (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

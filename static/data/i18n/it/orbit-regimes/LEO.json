@@ -1,0 +1,44 @@
+{
+  "name": "Orbita Terrestre Bassa",
+  "short": "LEO",
+  "story": "La fascia di spazio più vicina — da 160 a 2.000 km di altitudine. Latenza di comunicazione ridotta (~7 ms andata), l'attrito atmosferico trascina ancora al bordo inferiore, e le fasce di radiazione non sono ancora entrate in gioco. Il volo spaziale con equipaggio vive qui per le stesse ragioni: soccorribile, raggiungibile, e il corpo umano tollera un tragitto di qualche centinaio di chilometri. Ogni stazione spaziale mai esistita ha orbitato in LEO.",
+  "comparison": "Circa 1/600 della distanza verso la Luna. La ISS a 408 km orbita alla stessa altitudine della distanza tra Londra e Ginevra — disposta lateralmente.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — Stazione Spaziale Internazionale",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — stazione cinese",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble Space Telescope",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink constellation",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — primo satellite artificiale terrestre (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, primo volo orbitale con equipaggio (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

@@ -1165,5 +1165,21 @@
   "explore_speed_tip_1": "每秒 1 天",
   "explore_speed_tip_10": "每秒 10 天",
   "explore_speed_tip_100": "每秒 100 天",
-  "explore_time_today": "回到今天"
+  "explore_time_today": "回到今天",
+  "earth_orbit_ruler_title": "轨道标尺",
+  "earth_orbit_ruler_aria": "地球轨道区域高度参考 — 点击区段了解更多",
+  "earth_orbit_ruler_chip": "ORBITS",
+  "earth_orbit_ruler_chip_aria": "打开轨道高度参考",
+  "earth_orbit_ruler_close": "关闭轨道参考",
+  "earth_orbit_ruler_surface": "SURFACE",
+  "earth_orbit_ruler_km_short": "km",
+  "earth_regime_panel_aria": "轨道区域详情",
+  "earth_regime_panel_close": "关闭",
+  "earth_regime_altitude_label": "高度",
+  "earth_regime_comparison_label": "比例",
+  "earth_regime_story_label": "轨道器为何在此运行",
+  "earth_regime_residents_label": "谁在这里",
+  "earth_regime_firsts_label": "里程碑事件",
+  "earth_regime_firsts_label_missions": "开创性任务",
+  "earth_regime_science_label": "在 /science 了解更多"
 }

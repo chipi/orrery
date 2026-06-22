@@ -19,13 +19,98 @@
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import OrbitRuler from '$lib/components/OrbitRuler.svelte';
+  import RegimePanel from '$lib/components/RegimePanel.svelte';
   import { base } from '$app/paths';
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
   import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
+  import { getOrbitRegimes } from '$lib/data';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import type { OrbitRegime } from '$types/orbit-regime';
   import { viewerLatLon } from '$lib/viewer-location';
   import * as m from '$lib/paraglide/messages';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
+
+  // Orbit-ruler + regime-panel state (#354). Regimes load asynchronously
+  // from the i18n overlay pipeline; the ruler renders nothing until the
+  // data lands. `?regime=GEO` deep-link resolves once regimes load.
+  let regimes: OrbitRegime[] = $state([]);
+  let regimePanelOpen = $state(false);
+  let selectedRegimeId = $state<string | null>(null);
+  let selectedRegime = $derived(
+    selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
+  );
+
+  // Track which orbiter is selected inside SurfaceScene → look up its
+  // regime to flag the matching ruler band (#354). EarthObjects live
+  // in static/data/earth-objects.json; we fetch once for the lookup.
+  let selectedSatId = $state<string | null>(null);
+  let earthObjects: import('$types/earth-object').EarthObject[] = $state([]);
+  let highlightRegime = $derived(
+    selectedSatId
+      ? (earthObjects.find((o) => o.id === selectedSatId)?.regime ?? null)
+      : null,
+  );
+  let selectableIds = $derived(new Set(earthObjects.map((o) => o.id)));
+
+  // Click handler for residents in the regime panel. Calls
+  // SurfaceScene's window-hook (`__surfaceSceneSelectSite`) — same
+  // path TourAnchors use. We INTENTIONALLY do not close the regime
+  // panel here so the two panels stack (2026-06-22 user direction —
+  // "stack that one on top of orbit, so when I close orbiter, I still
+  // see orbit I had and need to close it separately"). Panel shells
+  // share z-index 30, so the satellite panel paints over the regime
+  // panel; closing the satellite reveals the regime underneath.
+  function onResidentClick(id: string) {
+    (
+      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+    ).__surfaceSceneSelectSite?.(id);
+  }
+
+  function openRegime(id: string) {
+    selectedRegimeId = id;
+    regimePanelOpen = true;
+    const url = new URL(window.location.href);
+    url.searchParams.set('regime', id);
+    goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
+  }
+
+  function closeRegime() {
+    regimePanelOpen = false;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('regime');
+    goto(url.pathname + (url.search ? url.search : ''), {
+      replaceState: true,
+      noScroll: true,
+      keepFocus: true,
+    });
+  }
+
+  onMount(async () => {
+    const [r, objs] = await Promise.all([
+      getOrbitRegimes(getLocale()),
+      import('$lib/data').then((d) => d.earthObjects()),
+    ]);
+    regimes = r;
+    earthObjects = objs;
+  });
+
+  // Resolve `?regime=GEO` once regimes load. void's the dep so the
+  // effect re-runs when the async list lands (same Svelte 5 idiom as
+  // /explore's id-deep-link).
+  $effect(() => {
+    void regimes;
+    if (regimes.length === 0) return;
+    const id = $page.url.searchParams.get('regime');
+    if (id && regimes.some((r) => r.id === id)) {
+      selectedRegimeId = id;
+      regimePanelOpen = true;
+    }
+  });
   // Auto-orient the camera toward the viewer's approximate location
   // when /earth loads (issue #315). SSR-safe — viewerLatLon() returns
   // null in non-browser contexts. Coarse: timezone-based, no
@@ -65,6 +150,27 @@
   loadSites={getEarthLaunchSites}
   loadGallery={getEarthLaunchSiteGallery}
   {initialView}
+  onSatelliteSelect={(id) => (selectedSatId = id)}
 />
 
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
+
+{#if regimes.length > 0}
+  <!-- Curated order: HEO sits between LEO and MEO since its perigee/
+       apogee span straddles both; pure altitude-sort would place HEO
+       below LEO (perigee 1,000 km) which buries its teaching value. -->
+  <OrbitRuler
+    {regimes}
+    {highlightRegime}
+    onSelect={openRegime}
+    order={['L2', 'MOON', 'GEO', 'MEO', 'HEO', 'LEO']}
+  />
+{/if}
+
+<RegimePanel
+  regime={selectedRegime}
+  open={regimePanelOpen}
+  onClose={closeRegime}
+  {selectableIds}
+  {onResidentClick}
+/>

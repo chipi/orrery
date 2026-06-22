@@ -209,6 +209,7 @@
     <div class="tabs" role="tablist">
       <button
         type="button"
+        data-audio-stage="fleet-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
@@ -217,6 +218,7 @@
       {#if hasMissions}
         <button
           type="button"
+          data-audio-stage="fleet-tab-missions"
           class:active={tab === 'missions'}
           onclick={() => (tab = 'missions')}
           role="tab"
@@ -237,6 +239,7 @@
       {#if hasDiagram}
         <button
           type="button"
+          data-audio-stage="fleet-tab-anatomy"
           class:active={tab === 'anatomy'}
           onclick={() => (tab = 'anatomy')}
           role="tab"
@@ -255,6 +258,7 @@
       {#if hasLinks}
         <button
           type="button"
+          data-audio-stage="fleet-tab-learn"
           class:active={tab === 'learn'}
           onclick={() => (tab = 'learn')}
           role="tab"

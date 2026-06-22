@@ -1677,6 +1677,17 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 68, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
+    // The Saturn V narration walks the tabs explicitly — cycle them so each
+    // is shown as it's named (user direction). VTT: "anatomy" 00:01:07.8,
+    // "the flights tab" 00:01:16.5, "the links tab" 00:01:26.0.
+    { at_sec: 72, action: 'click', target: '[data-audio-stage="fleet-tab-anatomy"]' },
+    { at_sec: 78, action: 'click', target: '[data-audio-stage="fleet-tab-missions"]' },
+    { at_sec: 88, action: 'click', target: '[data-audio-stage="fleet-tab-learn"]' },
+    { at_sec: 93, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:01:33.9 "Try filtering by status. Failed." — drive the live
+    // status filter, then clear before the epoch-timeline beat.
+    { at_sec: 95, action: 'navigate', target: '/fleet?status=failed' },
+    { at_sec: 108, action: 'navigate', target: '/fleet' },
     // VTT § 00:01:52.8 "Try the epoch timeline at the top" — was at t=118
     // (5 s late) and flashed fleet-filters (wrong UI region — that's the
     // category list, not the epoch strip). Re-targeted to the new

@@ -1,10 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { existsSync, readdirSync } from 'node:fs';
-import {
-  SPACECRAFT_ANATOMY_IMG,
-  SPACECRAFT_DIAGRAMS,
-  spacecraftDiagramPath,
-} from './spacecraft-diagrams';
+import { SPACECRAFT_ANATOMY_IMG, spacecraftDiagramPath } from './spacecraft-diagrams';
 
 // Guards the anatomy manifest against drift: every registered raster id must
 // have its display webp on disk, and every webp on disk must be registered —
@@ -28,13 +24,12 @@ describe('spacecraft anatomy manifest ↔ assets', () => {
     expect(orphans, `unregistered webp: ${orphans.join(', ')}`).toEqual([]);
   });
 
-  it('raster ids resolve to their webp; legacy SVG ids to an svg; unknown → null', () => {
+  it('raster ids resolve to webp; station-visitor underscore ids alias; unknown → null', () => {
     const someRaster = [...SPACECRAFT_ANATOMY_IMG][0];
     expect(spacecraftDiagramPath(someRaster)).toMatch(/\/images\/anatomy\/.+\.webp$/);
 
-    // An SVG-only id (in SPACECRAFT_DIAGRAMS but not the raster set) → .svg.
-    const svgOnly = [...SPACECRAFT_DIAGRAMS].find((id) => !SPACECRAFT_ANATOMY_IMG.has(id));
-    if (svgOnly) expect(spacecraftDiagramPath(svgOnly)).toMatch(/\/diagrams\/spacecraft\/.+\.svg$/);
+    // Underscore visitor ids (e.g. crew_dragon) alias onto the kebab webp.
+    expect(spacecraftDiagramPath('crew_dragon')).toMatch(/\/images\/anatomy\/crew-dragon\.webp$/);
 
     expect(spacecraftDiagramPath('totally-not-a-spacecraft')).toBeNull();
   });

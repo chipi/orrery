@@ -19,7 +19,6 @@
   type Manifest = {
     anatomy_art: Diagram[];
     diagrams_science: Diagram[];
-    diagrams_spacecraft: Diagram[];
     models3d: Item[];
     canvas2d: Item[];
     ui: Item[];
@@ -104,21 +103,6 @@
       <ul class="thumb-grid">
         {#each data.diagrams_science as d (d.file)}
           <li class="thumb-card" class:cover={d.cover}>
-            <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
-            <span class="thumb-title">{d.title}</span>
-          </li>
-        {/each}
-      </ul>
-    </section>
-
-    <section class="block" aria-labelledby="sec-spacecraft">
-      <h2 id="sec-spacecraft">
-        {m.colophon_section_spacecraft()}<span class="count">{data.diagrams_spacecraft.length}</span
-        >
-      </h2>
-      <ul class="thumb-grid">
-        {#each data.diagrams_spacecraft as d (d.file)}
-          <li class="thumb-card">
             <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
             <span class="thumb-title">{d.title}</span>
           </li>

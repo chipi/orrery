@@ -59,7 +59,8 @@ function scanDiagrams(dir, urlBase) {
 }
 
 const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
-const spacecraft = scanDiagrams('static/diagrams/spacecraft', '/diagrams/spacecraft');
+// (The legacy SVG spacecraft schematics were retired — all spacecraft anatomy
+// is now generated raster art, surfaced via `anatomy_art` below.)
 
 // Generated spacecraft anatomy ART (#367) — watercolor cutaways + pencil
 // sketches under /images/anatomy/{id}.webp. Titles pulled from the fleet
@@ -261,7 +262,6 @@ const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
   anatomy_art: anatomyArt,
   diagrams_science: science,
-  diagrams_spacecraft: spacecraft,
   models3d,
   canvas2d,
   ui,
@@ -269,7 +269,6 @@ const manifest = {
   totals: {
     anatomy_art: anatomyArt.length,
     diagrams_science: science.length,
-    diagrams_spacecraft: spacecraft.length,
     models3d: models3d.length,
     canvas2d: canvas2d.length,
     ui: ui.length,

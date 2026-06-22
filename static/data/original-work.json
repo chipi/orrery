@@ -2,6 +2,16 @@
   "generated_by": "scripts/build-original-work.mjs",
   "anatomy_art": [
     {
+      "title": "Apollo CSM Block II",
+      "file": "/images/anatomy/apollo-csm-block-ii.webp",
+      "cover": false
+    },
+    {
+      "title": "Apollo Lunar Module",
+      "file": "/images/anatomy/apollo-lm.webp",
+      "cover": false
+    },
+    {
       "title": "Ariane 5",
       "file": "/images/anatomy/ariane-5.webp",
       "cover": false
@@ -22,6 +32,16 @@
       "cover": false
     },
     {
+      "title": "Cargo Dragon 2",
+      "file": "/images/anatomy/cargo-dragon-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Cassini-Huygens",
+      "file": "/images/anatomy/cassini.webp",
+      "cover": false
+    },
+    {
       "title": "Chandra X-ray Observatory",
       "file": "/images/anatomy/chandra.webp",
       "cover": false
@@ -29,6 +49,21 @@
     {
       "title": "Chang'e 4",
       "file": "/images/anatomy/change-4.webp",
+      "cover": false
+    },
+    {
+      "title": "Crew Dragon",
+      "file": "/images/anatomy/crew-dragon.webp",
+      "cover": false
+    },
+    {
+      "title": "Curiosity (MSL)",
+      "file": "/images/anatomy/curiosity.webp",
+      "cover": false
+    },
+    {
+      "title": "Cygnus Enhanced",
+      "file": "/images/anatomy/cygnus-enhanced.webp",
       "cover": false
     },
     {
@@ -67,8 +102,18 @@
       "cover": false
     },
     {
+      "title": "HTV-X",
+      "file": "/images/anatomy/htv-x.webp",
+      "cover": false
+    },
+    {
       "title": "HTV (Kounotori)",
       "file": "/images/anatomy/htv.webp",
+      "cover": false
+    },
+    {
+      "title": "Hubble Space Telescope",
+      "file": "/images/anatomy/hubble.webp",
       "cover": false
     },
     {
@@ -79,6 +124,11 @@
     {
       "title": "Juno",
       "file": "/images/anatomy/juno.webp",
+      "cover": false
+    },
+    {
+      "title": "James Webb Space Telescope",
+      "file": "/images/anatomy/jwst.webp",
       "cover": false
     },
     {
@@ -132,6 +182,11 @@
       "cover": false
     },
     {
+      "title": "Mir",
+      "file": "/images/anatomy/mir.webp",
+      "cover": false
+    },
+    {
       "title": "Mars Reconnaissance Orbiter",
       "file": "/images/anatomy/mro.webp",
       "cover": false
@@ -162,6 +217,11 @@
       "cover": false
     },
     {
+      "title": "Perseverance (Mars 2020)",
+      "file": "/images/anatomy/perseverance.webp",
+      "cover": false
+    },
+    {
       "title": "Pioneer 10",
       "file": "/images/anatomy/pioneer-10.webp",
       "cover": false
@@ -169,6 +229,11 @@
     {
       "title": "Pioneer 11",
       "file": "/images/anatomy/pioneer-11.webp",
+      "cover": false
+    },
+    {
+      "title": "Progress MS",
+      "file": "/images/anatomy/progress-ms.webp",
       "cover": false
     },
     {
@@ -184,6 +249,16 @@
     {
       "title": "Salyut 1",
       "file": "/images/anatomy/salyut-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Saturn V",
+      "file": "/images/anatomy/saturn-v.webp",
+      "cover": false
+    },
+    {
+      "title": "Shenzhou",
+      "file": "/images/anatomy/shenzhou.webp",
       "cover": false
     },
     {
@@ -212,6 +287,11 @@
       "cover": false
     },
     {
+      "title": "Soyuz MS",
+      "file": "/images/anatomy/soyuz-ms.webp",
+      "cover": false
+    },
+    {
       "title": "Space Shuttle Orbiter",
       "file": "/images/anatomy/space-shuttle-orbiter.webp",
       "cover": false
@@ -227,6 +307,11 @@
       "cover": false
     },
     {
+      "title": "Starliner (CST-100)",
+      "file": "/images/anatomy/starliner.webp",
+      "cover": false
+    },
+    {
       "title": "Starship",
       "file": "/images/anatomy/starship.webp",
       "cover": false
@@ -237,6 +322,11 @@
       "cover": false
     },
     {
+      "title": "Tianzhou",
+      "file": "/images/anatomy/tianzhou.webp",
+      "cover": false
+    },
+    {
       "title": "Venera 13",
       "file": "/images/anatomy/venera-13.webp",
       "cover": false
@@ -244,6 +334,16 @@
     {
       "title": "Viking 1",
       "file": "/images/anatomy/viking-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Vostok",
+      "file": "/images/anatomy/vostok.webp",
+      "cover": false
+    },
+    {
+      "title": "Voyager 1",
+      "file": "/images/anatomy/voyager-1.webp",
       "cover": false
     },
     {
@@ -634,108 +734,6 @@
       "cover": false
     }
   ],
-  "diagrams_spacecraft": [
-    {
-      "title": "Apollo CSM Block II",
-      "file": "/diagrams/spacecraft/apollo-csm-block-ii.svg",
-      "cover": false
-    },
-    {
-      "title": "Apollo LM",
-      "file": "/diagrams/spacecraft/apollo-lm.svg",
-      "cover": false
-    },
-    {
-      "title": "Cargo Dragon",
-      "file": "/diagrams/spacecraft/cargo_dragon.svg",
-      "cover": false
-    },
-    {
-      "title": "Cassini",
-      "file": "/diagrams/spacecraft/cassini.svg",
-      "cover": false
-    },
-    {
-      "title": "Crew Dragon",
-      "file": "/diagrams/spacecraft/crew_dragon.svg",
-      "cover": false
-    },
-    {
-      "title": "Curiosity",
-      "file": "/diagrams/spacecraft/curiosity.svg",
-      "cover": false
-    },
-    {
-      "title": "Cygnus",
-      "file": "/diagrams/spacecraft/cygnus.svg",
-      "cover": false
-    },
-    {
-      "title": "HTV X",
-      "file": "/diagrams/spacecraft/htv_x.svg",
-      "cover": false
-    },
-    {
-      "title": "Hubble",
-      "file": "/diagrams/spacecraft/hubble.svg",
-      "cover": false
-    },
-    {
-      "title": "JWST",
-      "file": "/diagrams/spacecraft/jwst.svg",
-      "cover": false
-    },
-    {
-      "title": "Mir",
-      "file": "/diagrams/spacecraft/mir.svg",
-      "cover": false
-    },
-    {
-      "title": "Perseverance",
-      "file": "/diagrams/spacecraft/perseverance.svg",
-      "cover": false
-    },
-    {
-      "title": "Progress MS",
-      "file": "/diagrams/spacecraft/progress_ms.svg",
-      "cover": false
-    },
-    {
-      "title": "Saturn V",
-      "file": "/diagrams/spacecraft/saturn-v.svg",
-      "cover": false
-    },
-    {
-      "title": "Shenzhou",
-      "file": "/diagrams/spacecraft/shenzhou.svg",
-      "cover": false
-    },
-    {
-      "title": "Soyuz MS",
-      "file": "/diagrams/spacecraft/soyuz_ms.svg",
-      "cover": false
-    },
-    {
-      "title": "Starliner",
-      "file": "/diagrams/spacecraft/starliner.svg",
-      "cover": false
-    },
-    {
-      "title": "Tianzhou",
-      "file": "/diagrams/spacecraft/tianzhou.svg",
-      "cover": false
-    },
-    {
-      "title": "Vostok",
-      "file": "/diagrams/spacecraft/vostok.svg",
-      "cover": false
-    },
-    {
-      "title": "Voyager 1",
-      "file": "/diagrams/spacecraft/voyager-1.svg",
-      "cover": false
-    }
-  ],
   "models3d": [
     {
       "title": "Apollo Lunar Module",
@@ -907,9 +905,8 @@
     }
   ],
   "totals": {
-    "anatomy_art": 52,
+    "anatomy_art": 72,
     "diagrams_science": 74,
-    "diagrams_spacecraft": 20,
     "models3d": 15,
     "canvas2d": 5,
     "ui": 5,

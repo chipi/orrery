@@ -795,22 +795,42 @@
     });
   }
   function onExploreResidentClick(id: string) {
-    // Reuse /explore's existing `?id=<body-id>` deep-link resolver —
-    // it routes to the right panel (PlanetPanel / SmallBodyPanel /
-    // SunPanel / SatellitePanel) based on the body type.
-    const url = new URL(window.location.href);
-    url.searchParams.set('id', id);
-    // Drop the regime param so closing the body panel doesn't
-    // reopen the zone panel via the resolver.
-    url.searchParams.delete('regime');
-    exploreRegimePanelOpen = false;
-    goto(url.pathname + url.search, { replaceState: false, noScroll: true, keepFocus: true });
+    // Call /explore's existing select* functions DIRECTLY — mirrors
+    // how /earth /moon /mars wire their residents through the
+    // `__surfaceSceneSelectSite` window hook (no URL mutation,
+    // no deep-link resolver bounce). 2026-06-22 user direction:
+    // "we update url with planet we open from belt panel and that
+    // confuses system and not working well. we dont have that in
+    // earth, moon and mars. we also dont need this here since just
+    // creating issues". Resolves to the right panel by type, same
+    // lookup ladder the `?id=` deep-link resolver uses.
+    if (id === 'sun') {
+      selectSun();
+    } else if (id === 'pluto' && smallBodyById.has(id)) {
+      // Pluto exists in both planets.json + small-bodies.json;
+      // prefer the small-body panel (richer science_sections).
+      selectSmallBody(id);
+    } else if (planetById.has(id)) {
+      selectPlanet(id);
+    } else if (smallBodyById.has(id)) {
+      selectSmallBody(id);
+    } else if (id === 'asteroid-belt' || id === 'belt:asteroid') {
+      selectBelt('asteroid');
+    } else if (id === 'kuiper-belt' || id === 'belt:kuiper') {
+      selectBelt('kuiper');
+    } else if (id.includes(':')) {
+      const [parent, sat] = id.split(':', 2);
+      if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
+    }
+    // Unknown id → no-op; regime panel stays open underneath either way.
   }
 
-  // Load /explore zones once per component instance + resolve any
-  // ?regime=GIANTS deep-link as soon as they arrive.
-  void getOrbitRegimesExplore(getLocale()).then((r) => {
-    exploreRegimes = r;
+  // Load /explore zones — must be browser-only (relative-URL fetch
+  // breaks during SSR per @sveltejs/kit; same pattern /moon and /mars
+  // use). The deep-link `?regime=` resolver fires once the regimes
+  // land.
+  onMount(async () => {
+    exploreRegimes = await getOrbitRegimesExplore(getLocale());
   });
   $effect(() => {
     void exploreRegimes;
@@ -5499,6 +5519,12 @@
     transition:
       border-color 120ms,
       background 120ms;
+    /* Width-aligned to the orbit ruler that sits directly above
+       (#357 — 2026-06-22 user direction "expand that reference panel
+       to match width of this one"). 188 px is the ruler's default
+       desktop width; box-sizing ensures padding stays inside. */
+    box-sizing: border-box;
+    min-width: 188px;
   }
   .earth-compare:hover,
   .earth-compare:focus-visible {
@@ -6129,10 +6155,13 @@
       height: 32px;
     }
     /* Desktop: unstack — sit side-by-side, right of the (now larger)
-       PLANET SCALES card, sharing its bottom:16 baseline. */
+       PLANET SCALES card, sharing its bottom:16 baseline. The 204 px
+       offset is the card width (188) + a 16 px gap so the two boxes
+       don't kiss edges (2026-06-22 user direction "move time controls
+       also a bit to the right not to overlap"). */
     .time-controls {
       bottom: 16px;
-      left: 188px;
+      left: 204px;
     }
     .tactical-scan {
       display: block;

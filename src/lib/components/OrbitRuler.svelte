@@ -151,7 +151,11 @@
   .ruler {
     position: absolute;
     left: 12px;
-    bottom: 56px;
+    /* Lifted from 56 to 80 px so the ruler clears the bottom-left
+       reference panel (/explore's .earth-compare, /mars' altitude HUD
+       etc.) below it — 2026-06-22 user direction "pull it a bit up
+       not to overlap with bottom one". */
+    bottom: 80px;
     z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);

@@ -36,6 +36,8 @@
   import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
+  import RegimeChip from '$lib/components/RegimeChip.svelte';
+  import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
@@ -146,6 +148,16 @@
      *  on the orbit ruler when a lunar/mars orbiter site is selected.
      *  Receives the site id or null. */
     onSiteSelect?: (id: string | null) => void;
+    /** Orbital-regime reference data — when passed, the orbiter detail
+     *  panel (inline surface-site panel + EarthObjectPanel) shows a
+     *  RegimeChip in the chip row that opens the regime panel when
+     *  clicked (2026-06-22 user direction "tag orbiters back to orbit
+     *  panels"). Optional — routes without rulers omit the prop and
+     *  the chip simply doesn't render. */
+    regimes?: import('$types/orbit-regime').OrbitRegime[];
+    /** Click handler for the RegimeChip — opens the matching regime
+     *  panel on the host route. */
+    onRegimeOpen?: (regimeId: string) => void;
   }
   let {
     config,
@@ -155,6 +167,8 @@
     initialView,
     onSatelliteSelect,
     onSiteSelect,
+    regimes,
+    onRegimeOpen,
   }: Props = $props();
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
@@ -305,6 +319,18 @@
   // rather than `selectedSat` (which is /earth-only EarthObjects).
   $effect(() => {
     onSiteSelect?.(selected?.id ?? null);
+  });
+
+  // RegimeChip in the inline orbiter panel (moon/mars). Derived from
+  // the selected SurfaceSite's altitude_km when it's an orbiter and
+  // the host route passed `regimes`. Null otherwise (chip hides).
+  // The `as SurfaceSite | null` cast works around a Svelte 5 flow-
+  // analysis narrowing-to-never that mirrors EarthObjectPanel's
+  // panelHasLinks cast.
+  let inlineRegime = $derived.by(() => {
+    const sel = selected as SurfaceSite | null;
+    if (!sel || sel.kind !== 'orbiter' || !regimes) return null;
+    return regimeForAltitude(sel.altitude_km, regimes);
   });
 
   // Flat-patch view state (ADR-062 / #283 Slice 4). Four-phase machine
@@ -4366,8 +4392,14 @@ sample      ${debugInfo.projectedPxSample}`}
 
   <!-- TierContext info card — same shape as /mars. Visible only at
        Tier 2+ when not in panorama mode. aria-live so screen-readers
-       announce the layer changes as the user zooms in/out. -->
-  {#if view === '3d' && tierContext && !panoramaActive}
+       announce the layer changes as the user zooms in/out. Suppressed
+       when an orbiter site is selected (2026-06-22 user direction:
+       "we dont need this panel for orbiters, all is in details card")
+       — the orbiter detail panel already carries altitude /
+       inclination / status, and the TierContext card duplicates the
+       agency chip in a smaller surface card that ALSO collides with
+       the OrbitRuler's lower-left footprint. -->
+  {#if view === '3d' && tierContext && !panoramaActive && selected?.kind !== 'orbiter'}
     <TierContextCard
       {tierContext}
       scaleNote={'Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale).'}
@@ -4568,6 +4600,9 @@ sample      ${debugInfo.projectedPxSample}`}
           <span class="agency-badge" style:background-color={colorFor(selected)}>
             {selected.nation} · {selected.agency}
           </span>
+          {#if inlineRegime && onRegimeOpen}
+            <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
+          {/if}
           <span class="status" style="color: {tone.color}; border-color: {tone.color}">
             {tone.label}
           </span>
@@ -4904,6 +4939,8 @@ sample      ${debugInfo.projectedPxSample}`}
       open={selectedSat != null}
       onClose={() => (selectedSat = null)}
       missionIds={earthMissionIds}
+      {regimes}
+      {onRegimeOpen}
     />
   {/if}
 </div>

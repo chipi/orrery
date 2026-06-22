@@ -108,12 +108,17 @@
   /* Pinned LOWER-LEFT and always visible — per 2026-06-22 user note
      "move this to lower left corner so it is always visible". `bottom`
      leaves room above the global footer bar (Gallery / Credits / etc.)
-     and above the centred nation legend (bottom: 48 / centred). */
+     and above the centred nation legend (bottom: 48 / centred).
+     z-index 1 (very low) — the ruler is a passive reference, NEVER
+     competes with overlay UI for the same screen real estate. Any
+     other panel, sheet, drawer, or popover in this region paints on
+     top (per 2026-06-22 user direction "send ruler always in
+     background if something shows up in the same place"). */
   .ruler {
     position: absolute;
     left: 12px;
     bottom: 56px;
-    z-index: 6;
+    z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);
     font-family: 'Space Mono', monospace;

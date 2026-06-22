@@ -1,0 +1,23 @@
+{
+  "name": "Low Mars Orbit",
+  "short": "LMO",
+  "story": "The mapping band — typically 150 to 500 km above the Martian surface. Most Mars orbiters live here: it's high enough to dodge the atmospheric drag from the upper thermosphere yet low enough for metre-scale imaging. The thin atmosphere is a gift — Mars Reconnaissance Orbiter and Mars Odyssey have used aerobraking (dipping repeatedly through it) to circularise their orbits for free, saving years of propellant. Six nations are flying spacecraft here right now.",
+  "comparison": "About 1/9th the distance from Mars to Phobos. From LMO you can resolve a tennis court on the surface (HiRISE on MRO does 25 cm/px).",
+  "residents": [
+    { "id": "maven", "label": "MAVEN — atmospheric studies", "agency": "NASA" },
+    { "id": "mars-express", "label": "Mars Express — first ESA Mars mission", "agency": "ESA" },
+    { "id": "mro", "label": "MRO — HiRISE imaging", "agency": "NASA" },
+    { "id": "tianwen1-orbiter", "label": "Tianwen-1 orbiter", "agency": "CNSA" },
+    { "id": "mangalyaan", "label": "Mangalyaan (MOM, 2014-2022)", "agency": "ISRO" },
+    { "id": "mars-odyssey", "label": "Mars Odyssey (oldest active Mars spacecraft)", "agency": "NASA" },
+    { "id": "tgo", "label": "ExoMars TGO — methane hunter", "agency": "ESA" }
+  ],
+  "firsts": [
+    { "year": 1971, "label": "Mariner 9 — first artificial Mars satellite (USA)", "mission_id": "mariner9" },
+    { "year": 2003, "label": "Mars Express — first ESA Mars mission" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

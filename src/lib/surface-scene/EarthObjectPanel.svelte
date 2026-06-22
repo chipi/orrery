@@ -28,6 +28,9 @@
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { EarthObject } from '$types/earth-object';
+  import type { OrbitRegime } from '$types/orbit-regime';
+  import RegimeChip from '$lib/components/RegimeChip.svelte';
+  import { regimeById } from '$lib/orbit-regime-match';
 
   interface Props {
     selected: EarthObject | null;
@@ -36,8 +39,18 @@
     /** Mission ids that exist in the mission index — drives the "FULL
      *  MISSION CARD →" cross-link visibility. */
     missionIds: Set<string>;
+    /** Optional orbital-regime reference (passed through from
+     *  SurfaceScene → /earth +page). When present + the EarthObject's
+     *  regime matches a known regime id, a RegimeChip renders in the
+     *  chip row and clicking it opens the regime panel underneath the
+     *  satellite panel (2026-06-22 "tag orbiters back to orbit
+     *  panels" — #354). */
+    regimes?: OrbitRegime[];
+    onRegimeOpen?: (regimeId: string) => void;
   }
-  let { selected, open, onClose, missionIds }: Props = $props();
+  let { selected, open, onClose, missionIds, regimes, onRegimeOpen }: Props = $props();
+
+  let matchedRegime = $derived(regimes ? regimeById(selected?.regime, regimes) : null);
 
   type PanelTab = 'overview' | 'gallery' | 'learn';
   let panelTab: PanelTab = $state('overview');
@@ -90,6 +103,9 @@
         <span class="agency-badge" style:background-color={selected.color}>
           {selected.agencies.join(' · ')}
         </span>
+        {#if matchedRegime && onRegimeOpen}
+          <RegimeChip regime={matchedRegime} onClick={() => onRegimeOpen?.(matchedRegime.id)} />
+        {/if}
         <span class="status status-{selected.status.toLowerCase()}">{selected.status}</span>
       </div>
       <h1 class="name">{selected.name ?? selected.id}</h1>

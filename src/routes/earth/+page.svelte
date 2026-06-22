@@ -151,6 +151,8 @@
   loadGallery={getEarthLaunchSiteGallery}
   {initialView}
   onSatelliteSelect={(id) => (selectedSatId = id)}
+  {regimes}
+  onRegimeOpen={openRegime}
 />
 
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />

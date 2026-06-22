@@ -11,11 +11,24 @@
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
+  import OrbitRuler from '$lib/components/OrbitRuler.svelte';
+  import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
+  import type { OrbitRegime } from '$types/orbit-regime';
   import { buildMarsLanderModel } from '$lib/mars-lander-models';
   import { registerMarsHotspotBuilders } from '$lib/surface-scene/register-mars-hotspot-builders';
-  import { getMarsSites, getMarsSiteGallery, getMarsTraverse } from '$lib/data';
+  import {
+    getMarsSites,
+    getMarsSiteGallery,
+    getMarsTraverse,
+    getOrbitRegimesMars,
+  } from '$lib/data';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { regimeForAltitude } from '$lib/orbit-regime-match';
   import type { Traverse } from '$types/surface-site';
   import * as m from '$lib/paraglide/messages';
 
@@ -111,6 +124,79 @@
       available: ['atmosphere'],
     },
   };
+
+  // Orbit-ruler + regime-panel state (#356). Same pattern as /earth
+  // (#354) + /moon (#355). LMO has 7 clickable current/historic
+  // orbiters spanning NASA · ESA · ISRO · CNSA · Roscosmos heritage;
+  // DMO has Hope (UAESA). Areostationary is the empty teaching band
+  // (no spacecraft has yet flown there); Hill-sphere is boundary.
+  let regimes: OrbitRegime[] = $state([]);
+  let regimePanelOpen = $state(false);
+  let selectedRegimeId = $state<string | null>(null);
+  let selectedRegime = $derived(
+    selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
+  );
+
+  // Active Mars-orbiter selection (drives ruler highlight). On /mars
+  // orbiter selection lives in `selected` (SurfaceSite), not
+  // `selectedSat` (EarthObject — /earth-only).
+  let selectedSiteId = $state<string | null>(null);
+  let marsOrbiterSites: Array<{ id: string; altitude_km?: number }> = $state([]);
+
+  let highlightRegime = $derived.by(() => {
+    if (!selectedSiteId) return null;
+    const orb = marsOrbiterSites.find((s) => s.id === selectedSiteId);
+    if (!orb) return null;
+    const matched = regimeForAltitude(orb.altitude_km, regimes);
+    return matched?.id ?? null;
+  });
+
+  let selectableIds = $derived(new Set(marsOrbiterSites.map((s) => s.id)));
+
+  function openRegime(id: string) {
+    selectedRegimeId = id;
+    regimePanelOpen = true;
+    const url = new URL(window.location.href);
+    url.searchParams.set('regime', id);
+    goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
+  }
+
+  function closeRegime() {
+    regimePanelOpen = false;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('regime');
+    goto(url.pathname + (url.search ? url.search : ''), {
+      replaceState: true,
+      noScroll: true,
+      keepFocus: true,
+    });
+  }
+
+  function onResidentClick(id: string) {
+    (
+      window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+    ).__surfaceSceneSelectSite?.(id);
+  }
+
+  onMount(async () => {
+    const [r, sites] = await Promise.all([
+      getOrbitRegimesMars(getLocale()),
+      getMarsSites(getLocale()),
+    ]);
+    regimes = r;
+    marsOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+  });
+
+  // ?regime=AREOSTATIONARY deep-link resolver.
+  $effect(() => {
+    void regimes;
+    if (regimes.length === 0) return;
+    const id = $page.url.searchParams.get('regime');
+    if (id && regimes.some((r) => r.id === id)) {
+      selectedRegimeId = id;
+      regimePanelOpen = true;
+    }
+  });
 </script>
 
 <svelte:head>
@@ -125,6 +211,21 @@
   loadSites={getMarsSites}
   loadGallery={getMarsSiteGallery}
   loadTraverses={loadMarsTraverses}
+  onSiteSelect={(id) => (selectedSiteId = id)}
+  {regimes}
+  onRegimeOpen={openRegime}
 />
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
+
+{#if regimes.length > 0}
+  <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} />
+{/if}
+
+<RegimePanel
+  regime={selectedRegime}
+  open={regimePanelOpen}
+  onClose={closeRegime}
+  {selectableIds}
+  {onResidentClick}
+/>

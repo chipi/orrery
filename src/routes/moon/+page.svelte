@@ -177,6 +177,8 @@
   loadSites={getMoonSites}
   loadGallery={getMoonSiteGallery}
   onSiteSelect={(id) => (selectedSiteId = id)}
+  {regimes}
+  onRegimeOpen={openRegime}
 />
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />

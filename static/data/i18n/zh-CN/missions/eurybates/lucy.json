@@ -1,0 +1,62 @@
+{
+  "name": "Lucy",
+  "type": "MULTI-FLYBY · ACTIVE",
+  "first": "首个前往木星特洛伊群小行星的任务；在单次12年轨道中访问8颗小行星——比以往任何行星科学任务访问的天体都多",
+  "description": "Lucy飞向L4和L5拉格朗日云团——这些原始小行星群分别领先和落后木星60°，被认为保存了外侧原行星盘的物质。三次地球引力助推（2022年、2024年、2030年）塑造出一条单一轨道，访问七颗特洛伊小行星以及一颗额外的主带天体。额外遭遇：Donaldjohanson 2025-04。L4群：Eurybates + 卫星Queta（2027-08）、Polymele（2027-09）、Leucus（2028-04）、Orus（2028-11）。在第三次地球引力助推（2030-12）后，前往尾随的L5群：Patroclus-Menoetius双星（2033-03）——已知最大的特洛伊双星，是对任务命名的完美致敬（Lucy是古人类化石；Patroclus-Menoetius是《伊利亚特》中一同陨落的两个角色）。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "Atlas V 401从卡纳维拉尔角SLC-41发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 365,
+      "label": "EGA-1",
+      "note": "第一次地球引力助推 2022-10-16。",
+      "type": "info"
+    },
+    {
+      "met": 1290,
+      "label": "DONALDJOHANSON",
+      "note": "主带额外飞掠 2025-04。4公里C型小行星。",
+      "type": "info"
+    },
+    {
+      "met": 2127,
+      "label": "EURYBATES + QUETA",
+      "note": "2027-08。首次特洛伊遭遇。64公里C型 + 1公里卫星。",
+      "type": "info"
+    },
+    {
+      "met": 2280,
+      "label": "POLYMELE",
+      "note": "21公里P型特洛伊，带有一颗未命名卫星。",
+      "type": "info"
+    },
+    {
+      "met": 2660,
+      "label": "LEUCUS",
+      "note": "35公里D型特洛伊，慢速旋转（446小时）。",
+      "type": "info"
+    },
+    {
+      "met": 2820,
+      "label": "ORUS",
+      "note": "51公里D型特洛伊。",
+      "type": "info"
+    },
+    {
+      "met": 3445,
+      "label": "EGA-3",
+      "note": "最后一次地球助推 2030-12。前往L5云团。",
+      "type": "info"
+    },
+    {
+      "met": 4170,
+      "label": "PATROCLUS-MENOETIUS",
+      "note": "2033-03。任务高潮：113公里 + 104公里双星特洛伊。",
+      "type": "info"
+    }
+  ]
+}

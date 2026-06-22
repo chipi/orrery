@@ -854,11 +854,16 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mars-sites/perseverance/01": {
-    "commons_file": "PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "commons_file": "Jezero crater on Mars, sol 48 of Perseverance mission.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Jezero%20crater%20on%20Mars%2C%20sol%2048%20of%20Perseverance%20mission.png",
+    "credit": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00048/ids/edr/browse/ncam/NRF_0048_0671211640_633ECM_N0031850NCAM03048_01_295J01.png",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:54:19Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "mars-sites/spirit/01": {
     "commons_file": "NASA Mars Rover.jpg",
@@ -1152,7 +1157,7 @@
     "image_url": "https://cdn.esahubble.org/archives/images/large/heic2017a.jpg",
     "credit": "ESA/Hubble",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-19T08:52:08Z",
+    "fetched_at": "2026-06-22T11:19:09Z",
     "slice_a_iteration": 4,
     "slice_a_query": "Jupiter Great Red Spot",
     "vision": {
@@ -1161,28 +1166,31 @@
     }
   },
   "planets/saturn/01": {
-    "commons_file": "Saturn with auroras.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn%20with%20auroras.jpg",
-    "credit": "http://hubblesite.org/gallery/album/solar_system/pr2005006b/ https://www.nasa.gov/solar-system/nasas-webb-telescope-will-survey-saturn-and-its-moon-titan/",
-    "license": "public domain",
-    "fetched_at": "2026-06-21T08:19:01Z",
-    "bodies_iteration": 1,
-    "query": "Saturn Hubble",
+    "source_type": "esahubble",
+    "source_url": "https://esahubble.org/images/heic1814b/",
+    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814b.jpg",
+    "credit": "ESA/Hubble",
+    "license": "cc-by-4.0",
+    "fetched_at": "2026-06-22T11:19:09Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "Saturn rings",
     "vision": {
       "verdict": "related",
       "confidence": 0.95
     }
   },
   "planets/mars/01": {
-    "commons_url": "https://esahubble.org/images/heic1814c/",
+    "source_type": "esahubble",
+    "source_url": "https://esahubble.org/images/heic1814a/",
+    "image_url": "https://cdn.esahubble.org/archives/images/large/heic1814a.jpg",
     "credit": "ESA/Hubble",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-21T08:18:58Z",
-    "bodies_iteration": 1,
-    "query": "Mars",
+    "fetched_at": "2026-06-22T11:19:08Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "Mars planet",
     "vision": {
       "verdict": "related",
-      "confidence": 0.95
+      "confidence": 0.85
     }
   },
   "planets/mercury/01": {
@@ -2563,5 +2571,61 @@
     "fetched_at": "2026-06-21T12:09:36Z",
     "bodies_iteration": "handsource-zero-survivor-2026-06-21",
     "query": "Oumuamua interstellar object"
+  },
+  "mars-sites/mars2/01": {
+    "commons_file": "Mariner 8 assembly.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mariner%208%20assembly.jpg",
+    "credit": "http://nix.larc.nasa.gov/info;jsessionid=5nrsh9jo1mk5?id=KSC-71PC-0343&amp;orgid=5",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:54:21Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.85
+    }
+  },
+  "mars-sites/phoenix/01": {
+    "commons_file": "Phoenix Mars Lander, side view.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Phoenix%20Mars%20Lander%2C%20side%20view.jpg",
+    "credit": "http://www.fourth-millennium.net/mission-artwork/phoenix-mars-lander.html (image link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:54:24Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
+  },
+  "moon-sites/change4/01": {
+    "commons_file": "ChangE-4 - PCAM.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%20-%20PCAM.png",
+    "credit": "ChangE-4 - PCAM",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-22T11:54:36Z",
+    "slice_a_iteration": "handsource-2026-06-22"
+  },
+  "moon-sites/luna17/01": {
+    "commons_file": "Lunokhod 1 Revisited (LROC402 - M175502049R LR1 thumb).png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Lunokhod%201%20Revisited%20(LROC402%20-%20M175502049R%20LR1%20thumb).png",
+    "credit": "Lunokhod 1 Revisited",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:36:51Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
+  },
+  "moon-sites/apollo16/01": {
+    "commons_file": "The Apollo 16 Command and Service Modules.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Apollo%2016%20Command%20and%20Service%20Modules.jpg",
+    "credit": "https://spaceflight.nasa.gov/gallery/images/apollo/apollo16/html/as16-113-18294.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:48:05Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   }
 }

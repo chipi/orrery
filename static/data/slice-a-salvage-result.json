@@ -40273,7 +40273,1617 @@
       "notes": [
         "manual-source-pass: generated 2026-06-19"
       ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-tiangong-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "01",
+      "query": "Tiangong Chinese modular station",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg",
+        "credit": "Own work",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Tiangong Space Station Rendering 2022.11.01.jpg"
+        }
+      },
+      "size_bytes": 599917,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "The image shows a modular space station in low Earth orbit with cylindrical modules, solar arrays, and docking ports orbiting above Earth — consistent with Tiangong's configuration, though the renderi"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Tiangong space station (Chinese modular station in low Earth orbit)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-tiangong-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "01",
+      "query": "Tiangong Chinese modular station",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%20Space%20Station%20Rendering%202021.10%20no%20background.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong%20Space%20Station%20Rendering%202021.10%20no%20background.png",
+        "credit": "Own work",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Tiangong Space Station Rendering 2021.10 no background.png"
+        }
+      },
+      "size_bytes": 1670092,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "3D render showing the Tiangong modular space station configuration with Shenzhou crew vehicle, Tianzhou cargo vehicle, and large solar arrays—the core hardware of the Tiangong mission."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Tiangong space station (Chinese modular station in low Earth orbit)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-atv-01",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "01",
+      "query": "ATV Automated Transfer Vehicle ESA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg",
+        "credit": "http://spaceflight.nasa.gov/gallery/images/station/crew-26/html/iss026e037172.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "View of ATV-2 - cropped and rotated.jpg"
+        }
+      },
+      "size_bytes": 312661,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A white cylindrical cargo spacecraft with distinctive solar panels and external hardware is photographed against a black background — this is clearly an ATV in orbit, the primary subject of the frame,"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — ESA Automated Transfer Vehicle (ATV) ISS resupply spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-atv-02",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "01",
+      "query": "ATV Automated Transfer Vehicle ESA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ATV-4%20approaches%20the%20International%20Space%20Station%202.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ATV-4%20approaches%20the%20International%20Space%20Station%202.jpg",
+        "credit": "http://spaceflight.nasa.gov/gallery/images/station/crew-36/html/iss036e007840.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ATV-4 approaches the International Space Station 2.jpg"
+        }
+      },
+      "size_bytes": 2173766,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows the ATV spacecraft as the clear primary subject — the distinctive disc-shaped cargo module with ESA branding, docking ring, and solar panels are fully visible and central to the frame,"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — ESA Automated Transfer Vehicle (ATV) ISS resupply spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-juno-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg",
+        "credit": "jpl.nasa.gov/spaceimages/details.php?id=PIA22946",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg"
+        }
+      },
+      "size_bytes": 448609,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "High-resolution photograph of Jupiter showing the planet's atmospheric features, Great Red Spot, and polar regions — consistent with Juno spacecraft imagery; Jupiter is the mission's primary target bo"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Juno spacecraft orbiting Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-juno-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21972%20Jupiter%20Blues.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21972%20Jupiter%20Blues.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21972 Jupiter Blues.jpg"
+        }
+      },
+      "size_bytes": 1773081,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution photograph of Jupiter's cloud formations and atmospheric detail, showing swirling storm patterns and cyclones — the primary subject and science focus of the Juno mission."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Juno spacecraft orbiting Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-mars-polar-lander-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "mars-polar-lander",
+      "slot": "01",
+      "query": "Mars Polar Lander NASA 1999",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Polar%20Lander%20in%20aeroshell.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Polar%20Lander%20in%20aeroshell.jpg",
+        "credit": "http://science.ksc.nasa.gov/gallery/photos/1998/captions/KSC-98PC-1884.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mars Polar Lander in aeroshell.jpg"
+        }
+      },
+      "size_bytes": 625439,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Clean-room assembly photograph showing the Mars Polar Lander spacecraft as the primary subject, suspended from overhead rigging during integration/assembly — a legitimate hardware-in-context documenta"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars Polar Lander (1999) NASA spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-mars-polar-lander-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "mars-polar-lander",
+      "slot": "01",
+      "query": "Mars Polar Lander NASA 1999",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Polar%20Lander%20undergoes%20testing.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Polar%20Lander%20undergoes%20testing.jpg",
+        "credit": "http://science.ksc.nasa.gov/gallery/photos/1998/captions/KSC-98PC-1610.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mars Polar Lander undergoes testing.jpg"
+        }
+      },
+      "size_bytes": 1663136,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A clean-room or museum display photograph showing the Mars Polar Lander spacecraft as the primary subject, with its distinctive white aeroshell, solar panels, and instrument bus clearly visible and un"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars Polar Lander (1999) NASA spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-opportunity-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "opportunity",
+      "slot": "01",
+      "query": "Opportunity rover Mars MER-B",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%20Mars%20Rover.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA%20Mars%20Rover.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA04413 (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "NASA Mars Rover.jpg"
+        }
+      },
+      "size_bytes": 877752,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A detailed render or photograph of the Opportunity rover on the Martian surface, showing its distinctive six-wheel chassis, solar panels, mast-mounted instruments (including the Pancam), and arm-mount"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Opportunity Mars Exploration Rover (MER-B)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-opportunity-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "opportunity",
+      "slot": "01",
+      "query": "Opportunity rover Mars MER-B",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navigation%20Camera%20Sol%204959%20of%20the%20MER-B%20Opportunity%20rover%20on%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Navigation%20Camera%20Sol%204959%20of%20the%20MER-B%20Opportunity%20rover%20on%20Mars.jpg",
+        "credit": "https://mars.nasa.gov/mer/gallery/all/1/n/4959/1N568428036EFFD0J8P1826R0M1.HTML from https://mars.nasa.gov/mer/gallery/all/opportunity_n4959.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Navigation Camera Sol 4959 of the MER-B Opportunity rover on Mars.jpg"
+        }
+      },
+      "size_bytes": 155860,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Surface panorama taken by Opportunity rover on Mars, showing Martian terrain with rover instrument (calibration target visible in foreground) as primary documentation of the mission's in-situ explorat"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Opportunity Mars Exploration Rover (MER-B)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-starliner-01",
+      "agency": "Boeing",
+      "surface": "fleet-galleries",
+      "missionId": "starliner",
+      "slot": "01",
+      "query": "Boeing Starliner CST-100",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CST-100.jpg",
+        "credit": "https://images.nasa.gov/details/KSC-2011-8114 http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=57309 on the Wayback Machine at the Wayback Machine",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "CST-100.jpg"
+        }
+      },
+      "size_bytes": 2772012,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Boeing CST-100 Starliner spacecraft is the clear primary subject, shown in a detailed render above Earth with its distinctive capsule shape, heat shield, and Boeing branding clearly visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Boeing CST-100 Starliner crew spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-starliner-02",
+      "agency": "Boeing",
+      "surface": "fleet-galleries",
+      "missionId": "starliner",
+      "slot": "01",
+      "query": "Boeing Starliner CST-100",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100%20Starliner%20render%203.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CST-100%20Starliner%20render%203.jpg",
+        "credit": "https://www.nasa.gov/specials/ccp-press-kit/boeing.html#C9",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "CST-100 Starliner render 3.jpg"
+        }
+      },
+      "size_bytes": 780512,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-quality photograph of the Boeing CST-100 Starliner spacecraft itself, shown head-on with clear mission branding and hardware details — the primary subject and a strong hero candidate fo"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Boeing CST-100 Starliner crew spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-phobos-2-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "phobos-2",
+      "slot": "01",
+      "query": "Phobos 2 spacecraft Soviet Mars",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mmxspacecraft%200.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mmxspacecraft%200.jpg",
+        "credit": "https://www.nasa.gov/press-release/nasa-selects-instrument-for-future-international-mission-to-martian-moons",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mmxspacecraft 0.jpg"
+        }
+      },
+      "size_bytes": 133164,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "The image shows the Phobos 2 spacecraft with its distinctive solar panels and instrumentation as the primary subject, depicted near Mars and its moon Phobos — the exact target and mission-defining con"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phobos 2 Soviet Mars mission spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-chandra-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "chandra",
+      "slot": "01",
+      "query": "Chandra X-ray Observatory NASA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg",
+        "credit": "http://astropix.ipac.caltech.edu/image/chandra/587b (direct link); see also http://chandra.harvard.edu/photo/2015/iyl/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
+        }
+      },
+      "size_bytes": 3166896,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "This is a Chandra X-ray Observatory data product showing a supernova remnant (likely Cassiopeia A based on morphology) — the red/orange outer shell and blue inner X-ray emission are characteristic Cha"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Chandra X-ray Observatory satellite"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-chandra-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "chandra",
+      "slot": "01",
+      "query": "Chandra X-ray Observatory NASA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png",
+        "credit": "http://chandra.harvard.edu/resources/chandraMission.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Chandra X-ray space observatory - TeleAsmblyHigh-300.png"
+        }
+      },
+      "size_bytes": 5433303,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A cylindrical spacecraft with gold insulation blankets and distinctive hardware is the clear primary subject during assembly/integration in a clean-room facility; the design and configuration are cons"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Chandra X-ray Observatory satellite"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-3-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "01",
+      "query": "Chang'e 3 lander Yutu rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang'e%204%20lander.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20lander.jpg",
+        "credit": "Liu, J., Ren, X., Yan, W. et al. Descent trajectory reconstruction and landing site positioning of Chang’E-4 on the lunar farside. Nat Commun 10, 4229 (2019). https://doi.org/10.1038/s41467-019-12278-",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Chang'e 4 lander.jpg"
+        }
+      },
+      "size_bytes": 241244,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows a lunar lander with solar panels and a rover with visible wheel tracks on the lunar surface — the primary subjects are the Chang'e 3 spacecraft and Yutu rover in their defining moment "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 3 lunar lander with Yutu rover"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-4-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "01",
+      "query": "Change 4 Yutu-2 rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%2C%20Yutu-2.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%2C%20Yutu-2.png",
+        "credit": "ChangE-4, Yutu-2",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4, Yutu-2.png"
+        }
+      },
+      "size_bytes": 6995357,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Yutu-2 rover is the primary subject on the lunar farside surface, a mission-defining moment of Chang'e 4 — the first soft landing and rover deployment on the Moon's far side."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 4 farside lunar lander mission"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-4-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "01",
+      "query": "Change 4 Yutu-2 rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg",
+        "credit": "This image has been extracted from another file",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Yutu-2 leaving Chang e-4-iau1901a.jpg"
+        }
+      },
+      "size_bytes": 1637770,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows the Chang'e 4 Yutu-2 rover as the primary subject on the lunar farside surface, with distinctive gold-wrapped lander elements visible in the foreground — this is a mission-defining mom"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 4 farside lunar lander mission"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-insight-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "insight",
+      "slot": "01",
+      "query": "InSight Mars lander NASA seismometer",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23177-Mars-InSightLander-Seismometer-20190423.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA23177-Mars-InSightLander-Seismometer-20190423.jpg",
+        "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA23177.jpg",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA23177-Mars-InSightLander-Seismometer-20190423.jpg"
+        }
+      },
+      "size_bytes": 154384,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows InSight's seismometer (SEIS) instrument deployed on the Martian surface with the lander's robotic arm visible above it — a mission-defining moment capturing the primary science instrum"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — InSight Mars lander"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-insight-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "insight",
+      "slot": "01",
+      "query": "InSight Mars lander NASA seismometer",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22956-Mars-InSight-SeismometerDeployed-20181219.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA22956-Mars-InSight-SeismometerDeployed-20181219.png",
+        "credit": "https://www.jpl.nasa.gov/images/insight/20181220/PIA22956.png",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA22956-Mars-InSight-SeismometerDeployed-20181219.png"
+        }
+      },
+      "size_bytes": 760540,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a direct photograph from InSight's robotic arm camera showing the lander's seismometer (SEIS instrument) being deployed onto the Martian surface — a mission-defining moment with the spacecraft"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — InSight Mars lander"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-luna17-01",
+      "agency": "Roscosmos",
+      "surface": "moon-sites",
+      "missionId": "luna17",
+      "slot": "01",
+      "query": "Lunokhod 1 lunar rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunokhod%201%20Revisited%20(LROC402%20-%20M175502049R%20LR1%20thumb).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lunokhod%201%20Revisited%20(LROC402%20-%20M175502049R%20LR1%20thumb).png",
+        "credit": "Lunokhod 1 Revisited",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Lunokhod 1 Revisited (LROC402 - M175502049R LR1 thumb).png"
+        }
+      },
+      "size_bytes": 468255,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Orbital image showing Luna 17's Lunokhod 1 rover on the lunar surface as the primary subject (bright spot in center, enlarged in inset), with scale bar and geological context — a direct documentation "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Luna 17 / Lunokhod 1 (first lunar rover, 1970)"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-apollo16-01",
+      "agency": "NASA",
+      "surface": "moon-sites",
+      "missionId": "apollo16",
+      "slot": "01",
+      "query": "Apollo 16 Descartes Highlands LM",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Apollo%2016%20Command%20and%20Service%20Modules.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Apollo%2016%20Command%20and%20Service%20Modules.jpg",
+        "credit": "https://spaceflight.nasa.gov/gallery/images/apollo/apollo16/html/as16-113-18294.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Apollo 16 Command and Service Modules.jpg"
+        }
+      },
+      "size_bytes": 3484372,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Command Module (Casper) in lunar orbit above the Descartes Highlands is the primary subject, clearly showing Apollo 16 hardware in its mission-defining context above the target landing site."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Apollo 16 lunar landing site (Descartes Highlands, 1972)"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-apollo16-02",
+      "agency": "NASA",
+      "surface": "moon-sites",
+      "missionId": "apollo16",
+      "slot": "01",
+      "query": "Apollo 16 Descartes Highlands LM",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo%2016%20astronauts%20take%20lunar%20soil%20sample%20from%20Station%20no%209%20during%20EVA%20(as16-107-17561).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Apollo%2016%20astronauts%20take%20lunar%20soil%20sample%20from%20Station%20no%209%20during%20EVA%20(as16-107-17561).jpg",
+        "credit": "This image or video was catalogued by Lyndon B. Johnson Space Center of the United States National Aeronautics and Space Administration (NASA) under Photo ID: as16-107-17561.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Apollo 16 astronauts take lunar soil sample from Station no 9 during EVA (as16-107-17561).jpg"
+        }
+      },
+      "size_bytes": 1758489,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Close-up of a lunar sample collection tool (likely a rake or similar instrument) actively engaged in soil/rock sampling on the lunar surface, consistent with Apollo 16 surface operations at Descartes "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Apollo 16 lunar landing site (Descartes Highlands, 1972)"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-mars2-01",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars2",
+      "slot": "01",
+      "query": "Mars 2 spacecraft Soviet 1971",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariner%208%20assembly.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mariner%208%20assembly.jpg",
+        "credit": "http://nix.larc.nasa.gov/info;jsessionid=5nrsh9jo1mk5?id=KSC-71PC-0343&amp;orgid=5",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mariner 8 assembly.jpg"
+        }
+      },
+      "size_bytes": 732999,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Clean-room assembly photograph of a Soviet-era lander spacecraft with distinctive cylindrical body, solar panels, and protective coverings — consistent with Mars 2 hardware configuration, and spacecra"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars 2 Soviet lander (1971)"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-phoenix-01",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "phoenix",
+      "slot": "01",
+      "query": "Phoenix Mars lander NASA 2008",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phoenix%20Mars%20Lander%2C%20side%20view.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Phoenix%20Mars%20Lander%2C%20side%20view.jpg",
+        "credit": "http://www.fourth-millennium.net/mission-artwork/phoenix-mars-lander.html (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Phoenix Mars Lander, side view.jpg"
+        }
+      },
+      "size_bytes": 578964,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an artist's rendering of the Phoenix Mars lander on the Martian surface, showing the spacecraft's distinctive twin solar panels, robotic arm, and instruments as the primary subject in its oper"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phoenix Mars lander (2008) on the Martian surface"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-phoenix-02",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "phoenix",
+      "slot": "01",
+      "query": "Phoenix Mars lander NASA 2008",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ph%C5%93nix%20lander%20at%20the%20northern%20arctic%20circle%20of%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ph%C5%93nix%20lander%20at%20the%20northern%20arctic%20circle%20of%20Mars.jpg",
+        "credit": "http://www.jpl.nasa.gov/news/phoenix/images.php?fileID=13718",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Phœnix lander at the northern arctic circle of Mars.jpg"
+        }
+      },
+      "size_bytes": 1305209,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows the Phoenix lander's robotic arm (RAD) and solar panel array as primary subjects on the Martian surface, with the rusty terrain and lander hardware clearly visible—a mission-defining m"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phoenix Mars lander (2008) on the Martian surface"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-perseverance-01",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "perseverance",
+      "slot": "01",
+      "query": "Perseverance rover Mars Jezero",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jezero%20crater%20on%20Mars%2C%20sol%2048%20of%20Perseverance%20mission.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jezero%20crater%20on%20Mars%2C%20sol%2048%20of%20Perseverance%20mission.png",
+        "credit": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00048/ids/edr/browse/ncam/NRF_0048_0671211640_633ECM_N0031850NCAM03048_01_295J01.png",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Jezero crater on Mars, sol 48 of Perseverance mission.png"
+        }
+      },
+      "size_bytes": 2077641,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Mars surface photograph showing rover wheel tracks in Jezero crater terrain — primary subject is mission-defining evidence of Perseverance's presence and operations on Mars."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Perseverance Mars rover at Jezero crater"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-perseverance-02",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "perseverance",
+      "slot": "01",
+      "query": "Perseverance rover Mars Jezero",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jezero%20crater%20on%20Mars%2C%20sol%2020%20of%20Perseverance%20mission.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jezero%20crater%20on%20Mars%2C%20sol%2020%20of%20Perseverance%20mission.png",
+        "credit": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00020/ids/edr/browse/ncam/NRF_0020_0668728525_175ECM_N0030770NCAM03020_01_295J01.png",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Jezero crater on Mars, sol 20 of Perseverance mission.png"
+        }
+      },
+      "size_bytes": 2280943,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a surface photograph of Martian terrain showing rocks, soil, and a distant crater rim taken from ground level at Jezero — a classic data product from the Perseverance rover's Mastcam-Z, showin"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Perseverance Mars rover at Jezero crater"
+      ]
+    },
+    {
+      "proposal_id": "hs2-fleet-galleries-baikonur-200-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "baikonur-200",
+      "slot": "01",
+      "query": "Baikonur Cosmodrome Site 200",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg",
+        "credit": "JSC Gateway to Astronaut Photography of Earth",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ISS057-E-23187 - View of Kazakhstan.jpg",
+          "sourcing_round": "try-harder"
+        }
+      },
+      "size_bytes": 1887330,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Aerial view of what appears to be the Baikonur Cosmodrome Site 200 complex showing launch infrastructure, roads, and facility buildings from above — the primary subject is the launch facility itself, "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "try-harder — Baikonur Cosmodrome Site 200 launch complex (Proton-K / Proton-M launches)"
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089A souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23234086,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-02",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089 souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23139168,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-03",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 capsule",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2034%20reentry%20capsule%2002.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2034%20reentry%20capsule%2002.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Soyuz 34 reentry capsule 02.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 14620516,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-04",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 capsule",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2034%20reentry%20capsule%2003.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2034%20reentry%20capsule%2003.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Soyuz 34 reentry capsule 03.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13621868,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-05",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok-6%20scale%20model.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vostok-6%20scale%20model.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Vostok-6 scale model.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13151601,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089A souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23234086,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-02",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089 souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23139168,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-03",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok-6%20scale%20model.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vostok-6%20scale%20model.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Vostok-6 scale model.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13151601,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-04",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201963%20CPA%202956-2961%20se-tenant%20strip%20of%206%20(First%20in%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201963%20CPA%202956-2961%20se-tenant%20strip%20of%206%20(First%20in%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1963 CPA 2956-2961 se-tenant strip of 6 (First in Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 10648180,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-05",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Space%20craft%20Vostok-6.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Space%20craft%20Vostok-6.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Space craft Vostok-6.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 6424942,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "commons:Change 2 lunar orbiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Earthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Earthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg",
+        "credit": "http://lroc.sese.asu.edu/posts/895",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Earthrise over Compton crater -LRO full res.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 20051988,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "commons:Change 2 lunar orbiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Television%20Coverage%20of%20LRO%20Lunar%20Orbit%20Insertion%20Event%20(3654433910).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Television%20Coverage%20of%20LRO%20Lunar%20Orbit%20Insertion%20Event%20(3654433910).jpg",
+        "credit": "Television Coverage of LRO Lunar Orbit Insertion Event",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Television Coverage of LRO Lunar Orbit Insertion Event (3654433910).jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8726680,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-03",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_2",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(32755885495).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(32755885495).png",
+        "credit": "67P/Churyumov-Gerasimenko - Rosetta",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "67P Churyumov-Gerasimenko - Rosetta (32755885495).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8185522,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-04",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥二号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/LADEE%20fires%20small%20engines.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:LADEE%20fires%20small%20engines.jpg",
+        "credit": "LADEE Fires Thrusters Artist's Concept",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "LADEE fires small engines.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8072277,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-05",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥二号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bean%20Descends%20Intrepid%20-%20GPN-2000-001317.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bean%20Descends%20Intrepid%20-%20GPN-2000-001317.jpg",
+        "credit": "https://images.nasa.gov/details/as12-46-6726 http://dayton.hq.nasa.gov/IMAGES/LARGE/GPN-2000-001317.jpg on the Wayback Machine at the Wayback Machine http://grin.hq.nasa.gov/ABSTRACTS/GPN-2000-001317.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Bean Descends Intrepid - GPN-2000-001317.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 7838583,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-01",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%20-%20PCAM%20(51216550288).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%20-%20PCAM%20(51216550288).png",
+        "credit": "ChangE-4 - PCAM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4 - PCAM (51216550288).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 21798165,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-02",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%20-%20PCAM.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%20-%20PCAM.png",
+        "credit": "ChangE-4 - PCAM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4 - PCAM.png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 20286075,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-03",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Crab%20Nebula.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Crab%20Nebula.jpg",
+        "credit": "HubbleSite: gallery, release.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Crab Nebula.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 14508851,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-04",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Esa-hubble-k2-18a%20impression.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Esa-hubble-k2-18a%20impression.jpg",
+        "credit": "https://www.spacetelescope.org/news/heic1916",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Esa-hubble-k2-18a impression.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8112045,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-05",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥四号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/LADEE%20fires%20small%20engines.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:LADEE%20fires%20small%20engines.jpg",
+        "credit": "LADEE Fires Thrusters Artist's Concept",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "LADEE fires small engines.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8072277,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-01",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "en.wiki/Mars_6",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/2001%20mars%20odyssey%20wizja.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2001%20mars%20odyssey%20wizja.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA04244 (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "2001 mars odyssey wizja.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8958987,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-02",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21131 Closer Look at Schiaparelli Impact Site on Mars.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 6757884,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-03",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars%2C%20Figure%201.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars%2C%20Figure%201.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21131 Closer Look at Schiaparelli Impact Site on Mars, Figure 1.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 4705269,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-04",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "en.wiki/Mars_6",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20system.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20system.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA03153",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Solar system.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 4225968,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-05",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianwen-1%20Lander%20and%20Zhurong%20Rover%20in%20Southern%20Utopia%20Planitia.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1%20Lander%20and%20Zhurong%20Rover%20in%20Southern%20Utopia%20Planitia.jpg",
+        "credit": "https://www.uahirise.org/hipod/ESP_069665_2055",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Tianwen-1 Lander and Zhurong Rover in Southern Utopia Planitia.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 2692842,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
     }
   ],
-  "last_manual_source_pass_at": "2026-06-19T06:28:04.685Z"
+  "last_manual_source_pass_at": "2026-06-19T06:28:04.685Z",
+  "stats": {
+    "handsource_appended_at": "2026-06-22T08:52:01.231Z",
+    "handsource_added": 28,
+    "handsource_try_harder_appended_at": "2026-06-22T09:41:46.126Z",
+    "handsource_try_harder_added": 1,
+    "handsource_native_wiki_appended_at": "2026-06-22T09:44:33.384Z",
+    "handsource_native_wiki_added": 0,
+    "handsource_no_vision_appended_at": "2026-06-22T09:47:50.900Z",
+    "handsource_no_vision_added": 25
+  }
 }

@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titan 概览",
     "titan-dragonfly": "NASA Dragonfly — 前往 Titan 的核动力旋翼飞行器任务",
     "titan-huygens": "ESA Huygens — 首次在地球以外卫星上着陆"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "泰坦与土星处于1:1自旋轨道共振状态——始终向土星展示同一面。其122万公里的半长轴使其位于土星外部希尔球附近。"
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "泰坦拥有致密的N₂-CH₄大气——唯一具有大气的卫星。表面温度为94 K，甲烷和乙烷以液态湖泊形式存在。"
+    }
+  ]
 }

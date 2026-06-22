@@ -1,0 +1,1 @@
+import"./CWj6FrbW.js";import{E as n,F as a,G as l}from"./BVC0-lGA.js";import{s as t}from"./BXfiKpBv.js";function c(o,e){n(e,!0),a(()=>(t({label:e.label,content:e.content??null}),()=>t({label:"",content:null}))),l()}export{c as D};

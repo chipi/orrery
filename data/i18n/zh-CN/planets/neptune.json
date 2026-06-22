@@ -4,10 +4,52 @@
   "fact": "旅行者 2 号在 12 年飞行后于 1989 年飞掠海王星。至今仍是唯一造访过的航天器。",
   "bio": "风速最强——表面风速可达约 2100 km/h。在直接观测之前仅靠数学预报发现，因为天王星轨道显示出未知天体的引力扰动。",
   "links": [
-    { "l": "海王星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
-    { "l": "海王星（NASA 太阳系探索）", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
-    { "l": "旅行者 2 号飞掠海王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
-    { "l": "海王星的发现 — 维基百科", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
-    { "l": "海王星内部模型（Icarus 2021）", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+    {
+      "l": "海王星 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "海王星（NASA 太阳系探索）",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "旅行者 2 号飞掠海王星（NASA JPL）",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "海王星的发现 — 维基百科",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "海王星内部模型（Icarus 2021）",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "海王星平均距离为 30.07 AU，距离遥远至单向光信号往返各需 4 小时。旅行者 2 号用时 12 年才到达。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "三王星是太阳系中唯一具有逆行轨道的大卫星——有力证据表明它是从柯伊伯带捕获，而非与海王星一起形成。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "海王星温和的 0.0086 偏心率造就极圆的轨道，近日点和远日点间的摆幅在 30 AU 半长轴上不足 2 亿 km——仅 1.4 % 的变化。"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "旅行者 2 号（1989 年掠过）仍是唯一访问过海王星的航天器。目前无任何计划中或在运行中的海王星系统任务。"
+    }
   ]
 }

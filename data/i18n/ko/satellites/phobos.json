@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — 포보스 개요",
     "phobos-mmx": "JAXA MMX — 포보스 시료 귀환 임무",
     "phobos-hirise": "HiRISE — 화성 궤도에서 촬영한 0.25 m/px 해상도의 포보스"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "포보스는 화성을 9,377 km 거리에서 공전하며 — 동기궤도 이하이므로 조석가속으로 내향 가속되어 약 4천만 년 후 화성과 충돌할 것이다."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "포보스의 근일점-원일점 변화는 미미하지만 화성 1일에 3번 공전하며 — 태양계에서 모행성 대비 가장 많은 공전 주기를 가진 위성이다."
+    }
+  ]
 }

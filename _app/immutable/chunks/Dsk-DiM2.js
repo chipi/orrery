@@ -1,1 +1,0 @@
-import{a as C}from"./DayBpKoh.js";import{a9 as A,h}from"./C2v8-jPP.js";function S(i,b,f,l,t,r){var u=i[A];if(h||u!==f||u===void 0){var a=C(f,l,r);(!h||a!==i.getAttribute("class"))&&(a==null?i.removeAttribute("class"):i.className=a),i[A]=f}else if(r&&t!==r)for(var o in r){var g=!!r[o];(t==null||g!==!!t[o])&&i.classList.toggle(o,g)}return r}export{S as s};

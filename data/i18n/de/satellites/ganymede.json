@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — Ganymed im Überblick",
     "ganymede-juice": "ESA JUICE — Ganymed-Orbiter-Mission",
     "ganymede-magfield": "NASA Galileo — Entdeckung des Magnetfelds von Ganymed"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganymed ist der einzige Mond des Sonnensystems mit einem eigenständig erzeugten Magnetfeld — hervorgerufen durch einen eisenreichen Kern in Jupiters Magnetosphäre."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Äußeres Mitglied der 4:2:1 Laplace-Resonanz mit Io und Europa — Ganymedls Stabilität verankert das gesamte innere Galilei-System."
+    }
+  ]
 }

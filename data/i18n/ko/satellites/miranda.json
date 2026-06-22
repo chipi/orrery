@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda 개요",
     "miranda-voyager2": "NASA Voyager 2 — 유일한 천왕성계 근접 비행 (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "미란다는 주요 천왕성 위성 중 가장 높은 궤도 경사각(4.3°)을 가지고 있으며 — 초기 시스템 교란 사건과 결합하면 보이저 2호가 1986년에 촬영한 유명한 절벽 지형을 설명한다."
+    }
+  ]
 }

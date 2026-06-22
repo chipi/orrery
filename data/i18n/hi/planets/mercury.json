@@ -4,10 +4,57 @@
   "fact": "एक ही दिन में सतह तापमान 610°C तक मंडलाता है। कोई वायुमंडल नहीं — केवल अंतरिक्ष के प्रत्यक्ष संपर्क में।",
   "bio": "सबसे छोटा ग्रह। इसकी अत्यधिक दीर्घवृत्तीय कक्षा (e=0.206) इसे पेरिहेलियन के पास स्पष्ट रूप से तेज करती है। सूर्य के निकट होने पर भी शुक्र अधिक गर्म है।",
   "links": [
-    { "l": "बुध — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
-    { "l": "बुध (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
-    { "l": "MESSENGER मिशन अवलोकन (NASA)", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
-    { "l": "बेपीकोलोम्बो (ESA / JAXA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
-    { "l": "बुध का पिघला हुआ कोर (Nature Geoscience 2019)", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+    {
+      "l": "बुध — विकिपीडिया",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "बुध (NASA सौर मंडल अन्वेषण)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "MESSENGER मिशन अवलोकन (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "बेपीकोलोम्बो (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "बुध का पिघला हुआ कोर (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "बुध का 0.206 विकेंद्रता 8 ग्रहों में सर्वोच्च है — अपसूर में सूर्य अपहेलियन की तुलना में इसके आकाश में 1.5× बड़ा दिखाई देता है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "अपसूर-अपहेलियन दोलन (46–70 million km) सौर प्रवाह में विशाल अंतर चलाता है — बुध की सतह किसी अन्य ग्रह की तुलना में अधिक गर्म और ठंडी होती है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "vis-viva",
+      "why": "Vis-viva वह है जो बुध को अपसूर में नाटकीय रूप से तेज गति दिखाता है और अपहेलियन में धीमा करता है — 12 km/s का दोलन।"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "बुध का अक्षीय झुकाव अनिवार्य रूप से शून्य है (0.034°), इसलिए ध्रुवीय गड्ढों के तल को कभी सूर्यप्रकाश नहीं मिलता — और ग्रह की गर्मी के बावजूद जल-बर्फ वहाँ जीवित रहती है।"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "तीन मिशन बुध के अन्वेषण को फैलाते हैं: Mariner 10 (1974), MESSENGER (2011–15), और BepiColombo (कक्षा प्रवेश late 2026)।"
+    }
   ]
 }

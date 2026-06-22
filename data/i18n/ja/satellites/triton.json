@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton 概要",
     "triton-voyager2": "NASA Voyager 2 — Neptune系遭遇 (1989)",
     "triton-trident": "Trident — 提案中のDiscoveryクラス Triton フライバイ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "トリトンの軌道傾斜角156.8°は逆行軌道でネプチューンの赤道に対して急激に傾いており、ネプチューンとともに形成されたのではなくカイパーベルトからの捕捗を示す決定的な証拠である。"
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "トリトンの潮汐抵抗により軌道は減衰しており、36億年後にはネプチューンに衝突するか、ロッシュ限界内で分裂して環系を形成するかのいずれかとなるだろう。"
+    }
+  ]
 }

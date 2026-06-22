@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — यूरोपा अवलोकन",
     "europa-clipper": "NASA Europa Clipper — मिशन साइट",
     "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "यूरोपा Io–Europa–Ganymede 4:2:1 Laplace अनुनाद का मध्य सदस्य है — इसकी बाध्य उत्केंद्रता ज्वारीय लचकपन को चलाती है जो उप-सतह महासागर को तरल रखता है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "यूरोपा की ничтожный 0.009 उत्केंद्रता Io के व्यतिक्रमणों द्वारा बाध्य है — इसके बिना उप-सतह महासागर जम जाता। Europa Clipper (NASA, 2024–) इसका अध्ययन करने के लिए प्रक्षेपित हो रहा है।"
+    }
+  ]
 }

@@ -4,10 +4,52 @@
   "fact": "यूरेनस अपनी ओर से घूमता है — ध्रुवीय झुकाव 98°। उत्तरी ध्रुव अपने 84 वर्षीय कक्षा के आधे समय लगभग सीधे सूर्य की ओर रहता है।",
   "bio": "लगभग करवट पर (97.77°)। हर ध्रुव को 42 वर्ष निरंतर सूर्यप्रकाश, फिर 42 वर्ष अंधकार। लगभग निश्चित रूप से प्राचीन भारी टकराव के कारण।",
   "links": [
-    { "l": "यूरेनस — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
-    { "l": "यूरेनस (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
-    { "l": "वॉयेजर 2 यूरेनस पर (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
-    { "l": "यूरेनस ऑर्बिटर और प्रोब — दशकीय सर्वेक्षण", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
-    { "l": "यूरेनस के झुकाव की उत्पत्ति (Astrophysical Journal 2020)", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+    {
+      "l": "यूरेनस — विकिपीडिया",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "यूरेनस (NASA सौर मंडल अन्वेषण)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "वॉयेजर 2 यूरेनस पर (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "यूरेनस ऑर्बिटर और प्रोब — दशकीय सर्वेक्षण",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "यूरेनस के झुकाव की उत्पत्ति (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "यूरेनस का 97.8° झुकाव इसे अपनी ओर घुमाता है — प्रत्येक ध्रुव को ~42 वर्ष की निरंतर धूप मिलती है, फिर ~42 वर्ष की अंधकार।"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "ग्रह की कक्षीय झुकाव इसके घूर्णन अक्ष की झुकाव से कम महत्वपूर्ण है — यूरेनस के पास प्रणाली में सबसे नाटकीय अक्षीय झुकाव है, भले ही इसकी कक्षीय झुकाव मामूली है (0.77°)।"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "पाँच प्रमुख यूरेनस के चंद्रमा (मिरांडा, एरियल, अंब्रिएल, टाइटेनिया, ओबेरॉन) यूरेनस की झुकाव साझा करते हैं — वे भूमध्यरेखीय तल में परिक्रमा करते हैं, जो लगभग अण्डाकार तल के लंबवत है।"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "वोएजर 2 (1986) के बाद से कोई अंतरिक्ष यान यूरेनस का दौरा नहीं किया है। एक यूरेनस ऑर्बिटर 2030 के दशक के लिए शीर्ष NASA डेकेडल-सर्वे प्राथमिकता है।"
+    }
   ]
 }

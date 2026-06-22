@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — カリスト",
     "callisto-nasa": "NASA Science — カリスト概説",
     "callisto-galileo": "NASA Galileoレガシーアーカイブ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "カリストは Laplace 共鳴の外側を公転しており、その 188万 km の半長軸はジュピターの放射線帯の最悪の領域を超えており、最も宇宙機にとって友好的なガリレイ衛星である。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "カリストの 0.007 の離心率は小さく強制されていない — 共鳴ポンピングがなく、潮汐加熱がなく、地表下の海がない（おそらく）。"
+    }
+  ]
 }

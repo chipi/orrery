@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charonの概要",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charonフライバイ(2015年)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "冥王星とカロンは冥王星の外側にある重心を公転しており、惑星と衛星の関係ではなく太陽系で唯一既知の真の二重星系となっている。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "カロンの冥王星からの平均距離19,591 kmと相互潮汐ロックにより、両天体は互いに永遠に同じ面を向き合わせている。"
+    }
+  ]
 }

@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/s41561-019-0405-8",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Merkurs Exzentrizität von 0,206 ist die höchste der 8 Planeten — bei Perihel erscheint die Sonne 1,5× größer am Himmel als bei Aphel."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Die Perihel-Aphel-Schwankung (46–70 Millionen km) führt zu enormen Unterschieden im Solarfluss — Merkurs Oberfläche heizt und kühlt sich stärker ab als bei jedem anderen Planeten."
+    },
+    {
+      "tab": "orbits",
+      "section": "vis-viva",
+      "why": "Die Vis-viva-Gleichung zeigt Merkur, der sich bei Perihel dramatisch beschleunigt und bei Aphel verlangsamt — eine Schwankung von 12 km/s."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Merkurs Achsneigung ist praktisch null (0,034°), daher erreicht Sonnenlicht niemals die Böden von Polarkratern — und Wassereis bleibt dort trotz der Hitze des Planeten erhalten."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Drei Missionen spannen Merkurs Erforschung auf: Mariner 10 (1974), MESSENGER (2011–15) und BepiColombo (Bahneinschuss Ende 2026)."
+    }
   ]
 }

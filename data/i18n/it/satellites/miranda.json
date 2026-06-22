@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — panoramica di Miranda",
     "miranda-voyager2": "NASA Voyager 2 — unico sorvolo del sistema uraniano (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda ha l'inclinazione orbitale più elevata (4,3°) tra i principali satelliti uraniani — combinata con un evento di perturbazione del sistema primordiale, spiega le celebri scarpate riprese da Voyager 2 nel 1986."
+    }
+  ]
 }

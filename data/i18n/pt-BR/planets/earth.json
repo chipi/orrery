@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "A unidade astronômica É a distância média Terra-Sol — a Terra é a régua literal para toda medição do sistema solar."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "A órbita da Terra define o plano da eclíptica. A inclinação de todo outro planeta é medida em relação a essa referência."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "A inclinação de 23,4° da Terra é a máquina clássica das estações — equinócios e solstícios surgem diretamente do ângulo entre o eixo de rotação e o plano orbital."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Cada janela de lançamento para Marte — a cada 26 meses — é uma transferência de Hohmann de partida da Terra. A escada sai daqui."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "A Lua é incomumente grande para seu primário — a razão (diâmetro ≈ 0,27 da Terra) é a mais alta em qualquer par planeta–satélite."
+    }
   ]
 }

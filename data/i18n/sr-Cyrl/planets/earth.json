@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "Astronomska jedinica JE srednja udaljenost Zemlja-Sunce — Zemlja je doslovno merilo za svako merenje u Sunčevom sistemu."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "Zemljina orbita definiše ekliptičku ravan. Nagib svakog drugog planeta meri se u odnosu na ovu referencu."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Zemljin nagib od 23,4° je udžbeniski stroj godišnjih doba — ekvinoksijumi i solsticijumi nastaju direktno iz ugla između ose rotacije i orbitalne ravni."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Svaki prozor za lansiranje na Mars — svakih 26 meseci — je Hohmannov transfer iz Zemlje. Stepenice počinju odavde."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Mesec je neobično veliki za svojeg roditelja — odnos (prečnik ≈ 0,27 od Zemlje) je najveći u bilo kom paru planeta i satelita."
+    }
   ]
 }

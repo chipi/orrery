@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "베누는 근지구 소행성(반장축 1.13 AU)으로, OSIRIS-REx가 만나 샘플을 채취하여 7년 내에 지구로 귀환할 수 있을 정도로 충분히 가깝다."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "베누의 0.204 이심률은 2100년대 지구와의 낮은 확률의 충돌 경로를 가지고 있으며, 이는 OSIRIS-REx가 선택된 이유 중 하나다(행성 방위 정찰)."
+    }
+  ]
+}

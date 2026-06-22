@@ -4,10 +4,52 @@
   "fact": "La densidad de Saturno es 0,687 g/cm³ — menos que el agua. Su sistema de anillos abarca 282 000 km pero solo tiene ~10 metros de espesor.",
   "bio": "El planeta menos denso — flotaría sobre el agua. El sistema de anillos abarca 282 000 km pero solo tiene metros de espesor. La inclinación de 26,73° hace que la Tierra vea los anillos en distintos ángulos a lo largo de la órbita de 29 años de Saturno.",
   "links": [
-    { "l": "Saturno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Saturno_(planeta)", "t": "intro" },
-    { "l": "Saturno (NASA Solar System Exploration)", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
-    { "l": "Archivo de la misión Cassini (NASA)", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
-    { "l": "Anillos de Saturno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Anillos_de_Saturno", "t": "core" },
-    { "l": "Los anillos de Saturno son jóvenes (Science 2019)", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+    {
+      "l": "Saturno — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Saturno_(planeta)",
+      "t": "intro"
+    },
+    {
+      "l": "Saturno (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "Archivo de la misión Cassini (NASA)",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Anillos de Saturno — Wikipedia",
+      "u": "https://es.wikipedia.org/wiki/Anillos_de_Saturno",
+      "t": "core"
+    },
+    {
+      "l": "Los anillos de Saturno son jóvenes (Science 2019)",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "La inclinación de 26.7° de Saturno hace que sus anillos parezcan abrirse y cerrarse durante su órbita de 29 años — y genera estaciones hemisféricas en el planeta que duran más de siete años terrestres."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Saturno tiene 146 lunas confirmadas — más que cualquier otro planeta — con Titán lo suficientemente grande como para tener su propia atmósfera densa y Encélado expulsando activamente agua de un océano subsuperficial."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "La campaña orbital de 13 años de Cassini se construyó alrededor de las leyes de Kepler — cada cruce de anillo y sobrevuelo de luna fue un arco kepleriano diseñado años antes."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "La órbita de Saturno es suave (excentricidad 0.054) pero su distancia media de 9.6 AU significa que el perihelio y afelio difieren en 100 millones de km — Cassini sincronizó su llegada para usar la velocidad de entrada."
+    }
   ]
 }

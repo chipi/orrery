@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — panorama de Enceladus",
     "enceladus-cassini": "NASA Cassini — arquivo histórico de sobrevoo de plumas",
     "enceladus-habitability": "Astrobiology — Enceladus como alvo de busca por vida"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Encélado está em ressonância de movimento médio 2:1 com Dione — a excentricidade forçada (0,0047) impulsiona a flexão de maré que alimenta as plumas criovalcânicas do pólo sul."
+    }
+  ]
 }

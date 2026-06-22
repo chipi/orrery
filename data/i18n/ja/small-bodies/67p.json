@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "67P/Churyumov–Gerasimenko は e = 0.64 を持つ木星族彗星であり、1959年の木星への接近によって軌道が変形された。"
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Rosetタaは67Pに到達するために3回の地球スイングバイと火星フライバイが必要であり、独自の楕円軌道を進む彗星を捕捉するまでの10年間の航行であった。"
+    }
+  ]
+}

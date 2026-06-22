@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda-overzicht",
     "miranda-voyager2": "NASA Voyager 2 — enige voorbiivlucht van het Uranus-systeem (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda heeft de hoogste baaninclinatie (4,3°) van de grote manen van Uranus — in combinatie met een verstoringsevenement in het vroege stelsel verklaart dit de beroemde kliffen die Voyager 2 in 1986 fotografeerde."
+    }
+  ]
 }

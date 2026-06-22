@@ -29,5 +29,27 @@
       "u": "https://www.science.org/doi/10.1126/science.aat2965",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinaison de 26,7° de Saturne fait que ses anneaux semblent s'ouvrir et se fermer sur son orbite de 29 ans — et crée des saisons hémisphériques qui durent plus de sept années terrestres."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Saturne compte 146 lunes confirmées — plus que toute autre planète — dont Titan est assez grande pour avoir sa propre atmosphère dense et Encelade éjecte activement de l'eau d'un océan souterrain."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "La campagne orbitale de 13 ans de Cassini s'est construite autour des lois de Kepler — chaque traversée d'anneau et survol de lune était un arc képlérien conçu des années à l'avance."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "L'orbite de Saturne est douce (excentricité 0,054) mais sa distance moyenne de 9,6 UA signifie que le périhélie et l'aphélie diffèrent de 100 millions de km — Cassini a synchronisé son arrivée pour utiliser la vitesse d'approche."
+    }
   ]
 }

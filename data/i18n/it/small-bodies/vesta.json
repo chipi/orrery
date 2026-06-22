@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "Vesta è il secondo corpo della cintura più massiccio — la sua superficie è l'unica fonte confermata della fascia principale per i meteoriti HED trovati sulla Terra."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Vesta orbita a 2,36 AU — fascia interna. La sua prossimità ha determinato la scelta di Dawn di visitare Vesta per primo (2011), poi partire verso Cerere (2015)."
+    }
+  ]
+}

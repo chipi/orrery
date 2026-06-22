@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — Ariel 概述",
     "ariel-voyager2": "NASA Voyager 2 — 天王星系统影像"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ariel 以 190,900 km 的距离绕天王星运行——主要卫星中第二内层。与所有天王星卫星一样，其轨道与该行星 97° 的轴倾角一致。"
+    }
+  ]
 }

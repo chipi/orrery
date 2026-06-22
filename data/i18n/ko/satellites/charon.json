@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charon 개요",
     "charon-new-horizons": "NASA New Horizons — 명왕성-Charon 플라이바이 (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "명왕성과 카론은 명왕성 외부에 위치한 무게중심을 공전하므로, 행성-위성 체계가 아닌 태양계에서 유일하게 알려진 진정한 쌍성계를 이룬다."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "카론의 명왕성으로부터의 평균 거리 19,591-km와 상호 조석 잠금으로 인해 두 천체는 영원히 서로 같은 면을 향한다."
+    }
+  ]
 }

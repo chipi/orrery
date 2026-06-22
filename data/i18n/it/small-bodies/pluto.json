@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità di 0,249 di Plutone fa sì che la sua orbita penetri dentro quella di Nettuno per 20 anni ogni ciclo di 248 anni."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinazione di 17,2° di Plutone lo mantiene ben lontano da Nettuno anche se le orbite si incrociano in proiezione."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Plutone è il corpo della fascia di Kuiper più grande conosciuto — la sua scoperta nel 1930 ha preceduto il concetto di fascia di 60 anni."
+    }
+  ]
+}

@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus overzicht",
     "enceladus-cassini": "NASA Cassini — pluim-voorbijvlucht archiefcollectie",
     "enceladus-habitability": "Astrobiology — Enceladus als doel voor levensonderzoek"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Enceladus is in 2:1 gemiddelde-bewegingsresonantie met Dione — de geforceerde excentriciteit (0,0047) drijft de getijdenbuiging aan die de zuid-polaire cryovulkanische pluimen aandrijft."
+    }
+  ]
 }

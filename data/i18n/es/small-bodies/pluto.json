@@ -1,0 +1,19 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "La excentricidad de 0.249 de Plutón sumerge su órbita dentro de la de Neptuno durante 20 años por cada ciclo de 248 años."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La inclinación de 17.2° de Plutón lo mantiene bien alejado de Neptuno aunque las órbitas se crucen en proyección."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Plutón es el cuerpo del cinturón de Kuiper más grande conocido — su descubrimiento en 1930 precedió el concepto del cinturón por 60 años."
+    }
+  ]
+}

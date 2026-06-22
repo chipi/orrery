@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "ベンヌは近地球小惑星（半長軸1.13 AU）であり、OSIRIS-RExが7年間でランデブー、サンプリング、および地球への物質返還が可能な距離にある。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "ベンヌの離心率0.204により、2100年代の地球への衝突確率は低いが、OSIRIS-RExが選定された理由の一つである（惑星防衛の偵察）。"
+    }
+  ]
+}

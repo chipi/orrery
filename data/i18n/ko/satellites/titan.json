@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titan 개요",
     "titan-dragonfly": "NASA Dragonfly — 타이탄 핵동력 회전익기 임무",
     "titan-huygens": "ESA Huygens — 우리의 달 이외의 위성 최초 착륙"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "타이탄은 토성과 1:1 자전-공전 공명 상태에 있어 항상 같은 면을 보인다. 반장축 122만 km는 토성의 외부 힐 구(Hill sphere) 근처에 위치한다."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "타이탄은 밀도 높은 N₂-CH₄ 대기를 가지고 있으며, 이는 유일한 위성이다. 표면 온도는 94 K에서 메탄과 에탄이 액체 호수로 존재한다."
+    }
+  ]
 }

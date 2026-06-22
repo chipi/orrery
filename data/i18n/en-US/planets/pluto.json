@@ -1,33 +1,6 @@
 {
   "name": "Pluto",
-  "type": "Dwarf planet · Binary with Charon",
-  "fact": "Pluto and its moon Charon co-orbit a barycenter outside Pluto's surface — the only true binary system among the major bodies. New Horizons flew past in July 2015, revealing the heart-shaped Tombaugh Regio and water-ice mountains.",
-  "bio": "Demoted from planet status by the IAU in 2006 — the same year New Horizons launched toward it. The flyby returned more data on Pluto than humanity had collected in the prior 76 years since Tombaugh's discovery photographs.",
-  "links": [
-    {
-      "l": "Pluto — Wikipedia",
-      "u": "https://en.wikipedia.org/wiki/Pluto",
-      "t": "intro"
-    },
-    {
-      "l": "Pluto (NASA Solar System Exploration)",
-      "u": "https://science.nasa.gov/dwarf-planets/pluto/",
-      "t": "intro"
-    },
-    {
-      "l": "New Horizons mission (NASA / JHUAPL)",
-      "u": "https://www.nasa.gov/mission/new-horizons/",
-      "t": "core"
-    },
-    {
-      "l": "Tombaugh Regio — Pluto's heart (NASA)",
-      "u": "https://science.nasa.gov/resource/the-heart-of-pluto-in-high-resolution/",
-      "t": "core"
-    },
-    {
-      "l": "Why Pluto is no longer a planet (IAU 2006 resolution)",
-      "u": "https://www.iau.org/news/pressreleases/detail/iau0603/",
-      "t": "deep"
-    }
-  ]
+  "type": "Dwarf planet · Kuiper Belt",
+  "fact": "The largest known Kuiper Belt body and the first object beyond Neptune ever discovered (1930). Reclassified from planet to dwarf planet by the IAU in 2006.",
+  "bio": "Pluto's 248-year orbit is highly eccentric (e = 0.249) and inclined 17° to the ecliptic — so its orbit dips inside Neptune's for 20 years per cycle and rises well above the planetary plane. Surface temperatures swing wide enough that the thin nitrogen atmosphere thickens near perihelion and freezes back onto the surface near aphelion. The mutual tidal lock with Charon makes the pair a true binary system."
 }

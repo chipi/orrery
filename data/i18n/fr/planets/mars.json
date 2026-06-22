@@ -30,5 +30,32 @@
       "u": "https://www.science.org/doi/10.1126/science.aar3201",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinaison axiale de Mars de 25,2° est remarquablement proche de celle de la Terre — mais combinée à son excentricité, les étés australs sont intensément chauds et brefs tandis que les étés boréaux sont longs et doux."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'excentricité de Mars de 0,0935 (six fois celle de la Terre) produit une variation de 20 % du flux solaire par orbite — le moteur des tempêtes de poussière globales qui peuvent engloutir la planète pendant des mois."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Les fenêtres de lancement vers Mars s'ouvrent tous les 26 mois — la période synodique entre Mars et la Terre — et le transfert de Hohmann explique pourquoi chaque mission vers Mars part pendant l'une de ces fenêtres."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Mars possède deux petites lunes d'apparence capturée — Phobos (orbitant sous l'altitude synchrone, spiralant vers l'intérieur) et Deimos (s'éloignant lentement)."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Mars accueille le recensement le plus dense de vaisseaux spatiaux actifs au-delà de la Terre — des orbiteurs de cinq agences et des rovers / atterrisseurs de surface de trois."
+    }
   ]
 }

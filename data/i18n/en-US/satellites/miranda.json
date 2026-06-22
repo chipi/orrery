@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda overview",
     "miranda-voyager2": "NASA Voyager 2 — only Uranian-system flyby (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda has the highest orbital inclination (4.3°) of the major Uranian moons — combined with an early-system disruption event, it explains the famous cliff faces Voyager 2 imaged in 1986."
+    }
+  ]
 }

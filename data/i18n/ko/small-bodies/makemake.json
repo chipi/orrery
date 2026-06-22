@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Makemake의 45.7 AU 반장축은 그것을 고전적 카이퍼 대에 위치시키며 — 표면 메탄이 주요 얼음으로 존재할 수 있을 정도로 충분히 멀다."
+    },
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "Makemake는 네 번째로 큰 알려진 KBO이며 2016년 허블이 MK2를 발견할 때까지 IAU 인정 왜행성 중 확인된 위성이 없는 유일한 천체다."
+    }
+  ]
+}

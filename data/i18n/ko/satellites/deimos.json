@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos 개요",
     "deimos-mrohirise": "HiRISE — 화성 궤도 영상 속 Deimos"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Deimos는 화성의 외측 위성(23,460 km)이며, 궤도 주기(1.26 d)가 화성의 날보다 길어서 조석력에 의해 천천히 바깥쪽으로 밀려나고 있다."
+    }
+  ]
 }

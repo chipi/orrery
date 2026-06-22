@@ -1,0 +1,729 @@
+{
+  "agency": "Manual-Source",
+  "surface": "manual-source",
+  "generated_at": "2026-06-19T06:28:04.678Z",
+  "proposals": [
+    {
+      "proposal_id": "manual-fleet-galleries-akatsuki-01",
+      "agency": "Manual-Promotion",
+      "surface": "fleet-galleries",
+      "missionId": "akatsuki",
+      "slot": "01",
+      "query": "akatsuki",
+      "currentSource": "jaxa",
+      "proposed": {
+        "source_type": "jaxa",
+        "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+        "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
+        "credit": "JAXA / ISAS / DARTS",
+        "license": "pd-jaxa",
+        "metadata": {
+          "promotion_from": "fleet-galleries/akatsuki/02"
+        },
+        "tier": 1
+      },
+      "vision": null,
+      "ship_at_apply": true,
+      "manual_source_pass": true,
+      "promotion": {
+        "from": "02",
+        "to": "01"
+      }
+    },
+    {
+      "proposal_id": "manual-missions-phoenix-01",
+      "agency": "Manual-Promotion",
+      "surface": "missions",
+      "missionId": "phoenix",
+      "slot": "01",
+      "query": "phoenix",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA10906",
+        "image_url": "http://images-assets.nasa.gov/image/PIA10906/PIA10906~orig.jpg",
+        "credit": "NASA/JPL-Caltech/University of Arizona/Texas A&M University",
+        "license": "Public Domain (NASA — Media Usage Guidelines)",
+        "metadata": {
+          "promotion_from": "missions/phoenix/03",
+          "nasa_id": "PIA10906"
+        },
+        "tier": 1
+      },
+      "vision": null,
+      "ship_at_apply": true,
+      "manual_source_pass": true,
+      "promotion": {
+        "from": "03",
+        "to": "01"
+      }
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-lunar-prospector-04",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "lunar-prospector",
+      "slot": "04",
+      "query": "lunar prospector",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/KSC-20170628-PH_KLS01_0089",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20170628-PH_KLS01_0089/KSC-20170628-PH_KLS01_0089~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "KSC-20170628-PH_KLS01_0089",
+          "nasa_title": "Resource Prospector Mobility Test"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0,
+        "reason": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.0.content.0.image.source"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-maven-04",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "maven",
+      "slot": "04",
+      "query": "maven",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA17487",
+        "image_url": "http://images-assets.nasa.gov/image/PIA17487/PIA17487~orig.jpg",
+        "credit": "NASA/GSFC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA17487",
+          "nasa_title": "MAVEN Artist Concept"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Spacecraft with distinctive solar panels and instrument boom positioned above Mars, consistent with MAVEN's design and mission profile as a Mars atmospheric orbiter."
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-dart-05",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "dart",
+      "slot": "05",
+      "query": "dart",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/KSC-20161013-PH_KLS01_0070",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20161013-PH_KLS01_0070/KSC-20161013-PH_KLS01_0070~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "KSC-20161013-PH_KLS01_0070",
+          "nasa_title": "DART Support for Hurricane Matthew"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.99,
+        "reason": "Image shows a damaged residential house and road, with no spacecraft, mission hardware, or any connection to the DART planetary defense mission visible."
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-friendship-7-02",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "friendship-7",
+      "slot": "02",
+      "query": "friendship 7",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/s62-00303",
+        "image_url": "http://images-assets.nasa.gov/image/s62-00303/s62-00303~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "s62-00303",
+          "nasa_title": "Camera Aboard \"Friendship 7\" - Astronaut John Glenn - Spaceflight"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "An astronaut in a Mercury capsule spacesuit is the primary subject, clearly showing Mercury-era hardware (capsule interior, life-support systems, period instrumentation), consistent with Friendship 7 "
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-mercury-redstone-3-04",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "mercury-redstone-3",
+      "slot": "04",
+      "query": "mercury redstone 3",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/S61-03158",
+        "image_url": "http://images-assets.nasa.gov/image/S61-03158/S61-03158~orig.jpg",
+        "credit": "NASA / JSC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "S61-03158",
+          "nasa_title": "Mercury-Redstone (MR)-3 Missile -  Standing - Pad"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Black-and-white photograph of a Redstone rocket on the launch pad with a Mercury capsule mounted atop, shown at night with launch-tower gantry and ground support equipment visible; this is a mission-d"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-spirit-02",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "spirit",
+      "slot": "02",
+      "query": "spirit",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA07410",
+        "image_url": "http://images-assets.nasa.gov/image/PIA07410/PIA07410~orig.jpg",
+        "credit": "NASA/JPL-Caltech",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA07410",
+          "nasa_title": "Spirit 360-Degree View on Sol 409 (vertical)"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a crater or impact feature on a planetary surface (likely Mars), imaged from orbit or altitude — a data product showing terrain, not a photograph of the Spirit rover itself, which is the missi"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-slim-01",
+      "agency": "JAXA",
+      "surface": "missions",
+      "missionId": "slim",
+      "slot": "01",
+      "query": "slim",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "wikimedia-commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Slim%2C%20Norm%20DeCarlo.jpg",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Slim%2C%20Norm%20DeCarlo.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd",
+        "metadata": {
+          "commons_file": "Slim, Norm DeCarlo.jpg"
+        },
+        "tier": 3
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a physical model or replica of an insect-like figure displayed on a stand indoors — not the SLIM lunar lander spacecraft or any mission hardware associated with JAXA's SLIM mission."
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-dart-01",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "dart",
+      "slot": "01",
+      "query": "dart",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/KSC-20161013-PH_KLS01_0098",
+        "image_url": "http://images-assets.nasa.gov/image/KSC-20161013-PH_KLS01_0098/KSC-20161013-PH_KLS01_0098~orig.JPG",
+        "credit": "NASA / KSC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "KSC-20161013-PH_KLS01_0098",
+          "nasa_title": "DART Support for Hurricane Matthew"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a construction or maintenance scene on a rooftop or industrial platform with workers and building infrastructure; no DART spacecraft, target body (Dimorphos), or mission-defining hardware is v"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-beresheet-01",
+      "agency": "SpaceIL",
+      "surface": "missions",
+      "missionId": "beresheet",
+      "slot": "01",
+      "query": "beresheet",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "wikimedia-commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Beresheet%20model%20on%20Habima%20Square%2020190222%2001.jpg",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beresheet%20model%20on%20Habima%20Square%2020190222%2001.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd",
+        "metadata": {
+          "commons_file": "Beresheet model on Habima Square 20190222 01.jpg"
+        },
+        "tier": 3
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a museum display or exhibition mockup of the Beresheet lander on a red carpet under gallery lighting — a replica or full-scale model in an indoor institutional setting, not a photograph of the"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-schiaparelli-01",
+      "agency": "ESA",
+      "surface": "missions",
+      "missionId": "schiaparelli",
+      "slot": "01",
+      "query": "schiaparelli",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "wikimedia-commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Schiaparelli%20crater%204162%20h3.jpg",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schiaparelli%20crater%204162%20h3.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd",
+        "metadata": {
+          "commons_file": "Schiaparelli crater 4162 h3.jpg"
+        },
+        "tier": 3
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a lunar crater photograph — a data product from a Moon-orbiting spacecraft — not an image of the Schiaparelli lander itself or a mission-defining moment of the ExoMars Schiaparelli mission to "
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-change-3-01",
+      "agency": "CNSA",
+      "surface": "missions",
+      "missionId": "change-3",
+      "slot": "01",
+      "query": "change 3",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "wikimedia-commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still%20There!%20(LROC751%20-%20change%203%204panel1).png",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Still%20There!%20(LROC751%20-%20change%203%204panel1).png?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd",
+        "metadata": {
+          "commons_file": "Still There! (LROC751 - change 3 4panel1).png"
+        },
+        "tier": 3
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a multi-panel before/after lunar surface comparison composite — a data product showing terrain change, not a photograph of the Chang'e-3 spacecraft or lander itself; satellite/orbital imagery "
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-messenger-01",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "messenger",
+      "slot": "01",
+      "query": "messenger",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA17228",
+        "image_url": "http://images-assets.nasa.gov/image/PIA17228/PIA17228~orig.jpg",
+        "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA17228",
+          "nasa_title": "Where is MESSENGER?"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a multi-panel infographic / diagram composite showing MESSENGER's orbital geometry, ground tracks, and planetary positions — data visualizations and technical illustrations, not a photograph o"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-vostok-2-01",
+      "agency": "Roscosmos",
+      "surface": "missions",
+      "missionId": "vostok-2",
+      "slot": "01",
+      "query": "vostok 2",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "wikimedia-commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vostok%20spacecraft.jpg",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok%20spacecraft.jpg?width=1600",
+        "credit": "agency original via Wikimedia Commons mirror",
+        "license": "cc-by-sa-or-pd",
+        "metadata": {
+          "commons_file": "Vostok spacecraft.jpg"
+        },
+        "tier": 3
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a museum display or full-scale replica of a Vostok spacecraft against a blue backdrop, not a photograph of the actual mission hardware or a mission-defining moment suitable for a public hero g"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-clementine-05",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "clementine",
+      "slot": "05",
+      "query": "clementine",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA18159",
+        "image_url": "http://images-assets.nasa.gov/image/PIA18159/PIA18159~orig.jpg",
+        "credit": "NASA/GSFC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA18159",
+          "nasa_title": "Clementine Fully Deployed Artist Concept"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0.45,
+        "reason": "This is a spacecraft render with solar panels and instruments in space, but without mission markings or context visible, it cannot be confidently attributed to Clementine rather to other similar NASA "
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-giotto-05",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "giotto",
+      "slot": "05",
+      "query": "giotto",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "sci-esa-int",
+        "source_url": "https://sci.esa.int/web/giotto/multimedia-gallery",
+        "image_url": "https://sci.esa.int/documents/33599/35211/1567210543098-51183_Giotto_HMC_Halley_200sqr_o_v2_newsitemimage.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "sci_esa_gallery": "https://sci.esa.int/web/giotto/multimedia-gallery",
+          "sci_esa_query": "giotto"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "HST observation of Comet Halley from 1986 — this is Halley during the epoch when Giotto made its historic close encounter (March 13–14, 1986). The image shows the comet's nucleus and coma as the prima"
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-smart-1-02",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "02",
+      "query": "smart 1",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "sci-esa-int",
+        "source_url": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+        "image_url": "https://sci.esa.int/documents/34677/35605/1567210968799-SMART-1_SIR_200sq_o_v2_newsitemimage.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "sci_esa_gallery": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+          "sci_esa_query": "smart 1"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a data-product composite map (likely a satellite or radar swath with false-color overlays and annotations) — a screenshot or visualization output, not a photograph of the SMART-1 spacecraft it"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-smart-1-03",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "03",
+      "query": "smart 1",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "sci-esa-int",
+        "source_url": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+        "image_url": "https://sci.esa.int/documents/34677/35605/1567210837982-47723_Moon_spectral_DCIXS_200_o_v2_newsitemimage.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "sci_esa_gallery": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+          "sci_esa_query": "smart 1"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a pair of scientific graphs/charts showing spectral data or measurement curves — a data visualization and infographic, not a photograph of the SMART-1 spacecraft or its mission-defining moment"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-smart-1-04",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "04",
+      "query": "smart 1",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "sci-esa-int",
+        "source_url": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+        "image_url": "https://sci.esa.int/documents/34677/35605/1567210942710-47719_South-Pole_preview_o_v2_newsitemimage.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "sci_esa_gallery": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+          "sci_esa_query": "smart 1"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unsure",
+        "confidence": 0.3,
+        "reason": "Image shows what appears to be a lunar surface or asteroid in close-up (grayscale, heavily cratered), but without mission context or visible spacecraft hardware, cannot confirm this is SMART-1 imagery"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-fleet-galleries-smart-1-05",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "smart-1",
+      "slot": "05",
+      "query": "smart 1",
+      "currentSource": null,
+      "proposed": {
+        "source_type": "sci-esa-int",
+        "source_url": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+        "image_url": "https://sci.esa.int/documents/34677/35605/1567210943171-47718_Smart1-mapping-moon_preview_o_v2_newsitemimage.jpg",
+        "credit": "ESA",
+        "license": "cc-by-4.0",
+        "metadata": {
+          "sci_esa_gallery": "https://sci.esa.int/web/smart-1/multimedia-gallery",
+          "sci_esa_query": "smart 1"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a rendered visualization or animation showing a spacecraft and beam above a lunar surface — not a photograph of SMART-1 hardware itself. It appears to be a conceptual illustration or data-prod"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-opportunity-01",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "opportunity",
+      "slot": "01",
+      "query": "opportunity",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA07463",
+        "image_url": "http://images-assets.nasa.gov/image/PIA07463/PIA07463~orig.jpg",
+        "credit": "NASA/JPL-Caltech",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA07463",
+          "nasa_title": "Opportunity View on Sol 397 (vertical)"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution orbital image of a crater on Mars (likely from MRO or similar orbiter), showing surface data product, not the Opportunity rover itself — which is not visible in the frame."
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-opportunity-02",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "opportunity",
+      "slot": "02",
+      "query": "opportunity",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA05157",
+        "image_url": "http://images-assets.nasa.gov/image/PIA05157/PIA05157~orig.jpg",
+        "credit": "NASA/JPL/Cornell/Ames/Maas Digital LLC",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA05157",
+          "nasa_title": "A Precious Opportunity"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "unrelated",
+        "confidence": 0.95,
+        "reason": "This is a 3D visualization or mockup rendered within Planet-Viz software, not a photograph; it shows a rover and lander design concept on a lunar surface, but is a digital model/diagram rather than mi"
+      },
+      "ship_at_apply": false,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-opportunity-03",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "opportunity",
+      "slot": "03",
+      "query": "opportunity",
+      "currentSource": "wikimedia-commons",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA07066",
+        "image_url": "http://images-assets.nasa.gov/image/PIA07066/PIA07066~orig.jpg",
+        "credit": "NASA/JPL",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA07066",
+          "nasa_title": "Opportunity at the Wall"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a panoramic mosaic of the Martian surface taken by Opportunity's camera, showing the rover's solar panels in the lower right — a signature view from the rover's perspective on Mars, directly d"
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-opportunity-04",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "opportunity",
+      "slot": "04",
+      "query": "opportunity",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA05309",
+        "image_url": "http://images-assets.nasa.gov/image/PIA05309/PIA05309~orig.jpg",
+        "credit": "NASA/JPL",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA05309",
+          "nasa_title": "Opportunity Digs"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "The Opportunity rover is the primary subject, shown on the Martian surface with its solar panels and instruments clearly visible and in focus — a defining moment of the mission on Mars."
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    },
+    {
+      "proposal_id": "manual-missions-opportunity-05",
+      "agency": "NASA",
+      "surface": "missions",
+      "missionId": "opportunity",
+      "slot": "05",
+      "query": "opportunity",
+      "currentSource": "nasa-image-library",
+      "proposed": {
+        "source_type": "nasa-image-library",
+        "source_url": "https://images.nasa.gov/details/PIA07083",
+        "image_url": "http://images-assets.nasa.gov/image/PIA07083/PIA07083~orig.jpg",
+        "credit": "NASA/JPL",
+        "license": "pd-nasa",
+        "metadata": {
+          "nasa_id": "PIA07083",
+          "nasa_title": "No Shortcut for Opportunity"
+        },
+        "tier": 1
+      },
+      "vision": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Panoramic mosaic of Martian terrain with Opportunity rover hardware (solar panels, mast, wheel) clearly visible in the frame as the mission-defining subject on Mars surface."
+      },
+      "ship_at_apply": true,
+      "manual_source_pass": true
+    }
+  ]
+}

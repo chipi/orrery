@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — aperçu de la ceinture de Kuiper",
     "kuiper-belt-newhorizons": "NASA New Horizons — survols de Pluto + Arrokoth",
     "kuiper-belt-mpc": "Minor Planet Center — catalogue TNO"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "La ceinture de Kuiper est le résidu trans-neptunien du disque protoplanétaire — 30 à 50 UA, dominé par la glace. Pluton, Éris, Hauméa, Makémaké y résident."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Les KBO classiques orbitent entre 42 et 48 UA sur des orbites de faible excentricité et faible inclinaison — ils n'ont pratiquement pas été perturbés depuis le système primitif."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La sous-population du disque épars (Éris, Sedna) se situe à fortes inclinaisons (30°+) — dispersée gravitationnellement par la migration externe de Neptune et élargissant actuellement la ceinture verticalement."
+    }
+  ]
 }

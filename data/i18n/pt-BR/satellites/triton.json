@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — visão geral de Tritão",
     "triton-voyager2": "NASA Voyager 2 — encontro com o sistema de Netuno (1989)",
     "triton-trident": "Trident — sobrevoo proposto de Tritão classe Discovery"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "A inclinação orbital de 156,8° de Tritão — retrógrada, fortemente inclinada em relação ao equador de Netuno — é a evidência crucial de sua captura da Cintura de Kuiper em vez de formação com Netuno."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "O arrasto de maré de Tritão está diminuindo sua órbita — em 3,6 bilhões de anos, ele colidirá com Netuno ou se fragmentará dentro do limite de Roche e formará um sistema de anéis."
+    }
+  ]
 }

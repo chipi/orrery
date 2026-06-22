@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — イオ概説",
     "io-juno": "NASA Juno — イオへの最近の接近フライバイ",
     "io-volcanism": "USGS — イオ火山地形カタログ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede は 4:2:1 のラプラス共鳴に固定されている — Io が 4 周回するごとに、Europa は 2 周回、Ganymede は 1 周回する。この共鳴により Io の軌道は非円形のままである。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Io の潮汐加熱（太陽系で最も火山活動が活発な天体にしている）は強制離心率から生じる — Europa と Ganymede がラプラス共鳴を通じてこれを駆動している。"
+    }
+  ]
 }

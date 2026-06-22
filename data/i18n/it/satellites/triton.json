@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — panoramica di Tritone",
     "triton-voyager2": "NASA Voyager 2 — incontro con il sistema di Nettuno (1989)",
     "triton-trident": "Trident — proposta missione Discovery-class per sorvolo di Tritone"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "L'inclinazione orbitale di Tritone di 156,8° — retrograda, fortemente inclinata rispetto all'equatore di Nettuno — è la prova decisiva di una cattura dalla Fascia di Kuiper piuttosto che di una formazione insieme a Nettuno."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "L'attrito mareale di Tritone sta diminuendo la sua orbita — tra 3,6 miliardi di anni colpirà Nettuno o si frammenterà all'interno del limite di Roche formando un sistema di anelli."
+    }
+  ]
 }

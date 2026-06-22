@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus 개요",
     "enceladus-cassini": "NASA Cassini — 플룸 근접비행 기록 아카이브",
     "enceladus-habitability": "Astrobiology — 생명체 탐사 대상으로서의 Enceladus"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Enceladus는 Dione과 2:1 평균 운동 공명 상태에 있으며 — 강제 이심률(0.0047)이 남극 저온 화산 분출을 구동하는 조석 굴곡을 일으킨다."
+    }
+  ]
 }

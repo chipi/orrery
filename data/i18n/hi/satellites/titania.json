@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Titania सामान्य विवरण",
     "titania-voyager2": "NASA Voyager 2 — Uranian-system छवियाँ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "टाइटेनिया यूरेनस का सबसे बड़ा चंद्रमा है (1,578 किमी व्यास) — आकार में प्लूटो के समान। केवल वोएजर 2 ने इसे चित्रित किया है (1986)।"
+    }
+  ]
 }

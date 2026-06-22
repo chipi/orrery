@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — resumen del cinturón de Kuiper",
     "kuiper-belt-newhorizons": "NASA New Horizons — sobrevuelos de Pluto + Arrokoth",
     "kuiper-belt-mpc": "Minor Planet Center — catálogo de TNO"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "El Cinturón de Kuiper es el remanente transneptuniano del disco protoplanetario — 30 a 50 AU, dominado por hielo. Plutón, Eris, Haumea y Makemake viven aquí."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Los KBOs clásicos orbitan entre 42 y 48 AU en órbitas de baja excentricidad e baja inclinación — han permanecido mayormente sin perturbaciones desde el sistema temprano."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La subpoblación del disco disperso (Eris, Sedna) se sitúa en altas inclinaciones (30°+) — dispersados gravitacionalmente por la migración hacia el exterior de Neptuno y actualmente expandiendo el cinturón verticalmente."
+    }
+  ]
 }

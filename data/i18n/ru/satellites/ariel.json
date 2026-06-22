@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — обзор Ариэля",
     "ariel-voyager2": "NASA Voyager 2 — снимки системы Урана"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ариэль обращается на расстоянии 190 900 км от Урана — второй из ближайших к планете крупных спутников. Как и все уранианские спутники, его орбита разделяет наклон оси планеты в 97°."
+    }
+  ]
 }

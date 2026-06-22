@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — Enceladus 概要",
     "enceladus-cassini": "NASA Cassini — プルーム通過飛行レガシーアーカイブ",
     "enceladus-habitability": "Astrobiology — 生命探査ターゲットとしてのEnceladus"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "エンケラドゥスはディオーネとの2:1平均運動共鳴にあり、強制離心率(0.0047)が南極域の低温火山プルームを駆動する潮汐変形を引き起こしている。"
+    }
+  ]
 }

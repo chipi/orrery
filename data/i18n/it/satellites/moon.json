@@ -1,3 +1,25 @@
 {
-  "description": "La Luna è l'unico satellite naturale della Terra e l'unico mondo oltre alla Terra su cui gli esseri umani abbiano camminato. Il suo blocco mareale 1:1 mantiene sempre lo stesso emisfero rivolto verso la Terra — il lato vicino dominato da bacini marini inondati di lava, il lato lontano un antico terreno craterizzato delle terre alte coronato dal bacino del Polo Sud–Aitken, la più grande struttura d'impatto del Sistema Solare. La lenta recessione della Luna dalla Terra (~3,8 cm/anno) sta gradualmente allungando la giornata terrestre."
+  "description": "La Luna è l'unico satellite naturale della Terra e l'unico mondo oltre alla Terra su cui gli esseri umani abbiano camminato. Il suo blocco mareale 1:1 mantiene sempre lo stesso emisfero rivolto verso la Terra — il lato vicino dominato da bacini marini inondati di lava, il lato lontano un antico terreno craterizzato delle terre alte coronato dal bacino del Polo Sud–Aitken, la più grande struttura d'impatto del Sistema Solare. La lenta recessione della Luna dalla Terra (~3,8 cm/anno) sta gradualmente allungando la giornata terrestre.",
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "L'orbita della Luna attorno alla Terra è il sistema kepleriano a due corpi da manuale — ogni altro calcolo luna-attorno-pianeta si generalizza da qui."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità della Luna di 0.055 è piccola ma conta — al perigeo il disco appare il 12 % più grande e luminoso che all'apogeo ('superluna')."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Il perigeo (~363,000 km) e l'apogeo (~405,000 km) determinano la dimensione apparente della Luna e la fase del rigonfiamento di marea che attira la maggior quantità d'acqua sulla Terra."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "La Luna è insolitamente grande rispetto alla Terra — il suo rapporto di diametro (≈ 0.27) è il più alto di qualsiasi coppia pianeta–satellite del sistema solare."
+    }
+  ]
 }

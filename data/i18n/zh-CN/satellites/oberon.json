@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon概述",
     "oberon-voyager2": "NASA Voyager 2 — 天王星系统影像"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "天卫四是天王星五颗主要卫星中最外层的卫星（轨道距离583,500 km）— 其表面坑陨最密集，表明它在天王星系统中拥有最古老的裸露表面。"
+    }
+  ]
 }

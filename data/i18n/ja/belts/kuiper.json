@@ -22,5 +22,22 @@
     "kuiper-belt-nasa": "NASA Science — Kuiper Belt概要",
     "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokothフライバイ",
     "kuiper-belt-mpc": "Minor Planet Center — TNOカタログ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "kuiper-belt",
+      "why": "カイパーベルトは海王星外縁の原始惑星円盤の遺跡である — 30～50 AU、氷が主成分。プルートゥ、エリス、ハウメア、マケマケがここに存在する。"
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "古典的なKBOは42～48 AUの間を低離心率・低傾斜軌道で公転している — 太陽系初期以来、ほぼ乱されていない。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "散乱円盤の小天体群（エリス、セドナ）は高傾斜（30°以上）に位置している — 海王星の外向き移動により重力散乱され、現在ベルトを垂直方向に拡大している。"
+    }
+  ]
 }

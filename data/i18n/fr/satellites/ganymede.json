@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — Ganymède, aperçu",
     "ganymede-juice": "ESA JUICE — mission orbitale autour de Ganymède",
     "ganymede-magfield": "NASA Galileo — découverte du champ magnétique de Ganymède"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganymède est le seul satellite du système solaire disposant d'un champ magnétique généré de manière interne — produit par un noyau riche en fer plongé dans la magnétosphère de Jupiter."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Membre externe de la résonance de Laplace 4:2:1 avec Io et Europe — la stabilité de Ganymède ancre l'ensemble du système galiléen intérieur."
+    }
+  ]
 }

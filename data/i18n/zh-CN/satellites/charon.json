@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — Charon概述",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charon飞掠（2015）"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "冥卫一和冥王星绕行的质心位于冥王星外部——使其成为太阳系中唯一已知的真正双星系统，而非行星与卫星的关系。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "冥卫一距冥王星平均19,591 km，加上相互潮汐锁定，意味着两个天体永远向彼此展示同一面。"
+    }
+  ]
 }

@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda सारांश",
     "miranda-voyager2": "NASA Voyager 2 — only Uranian-system flyby (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "मिरांडा का सबसे अधिक कक्षीय झुकाव (4.3°) यूरेनस के प्रमुख चंद्रमाओं में है — शुरुआती-प्रणाली विघ्टन घटना के साथ मिलकर, यह 1986 में वॉयेजर 2 द्वारा प्रतिबिंबित प्रसिद्ध चट्टान मुखों की व्याख्या करता है।"
+    }
+  ]
 }

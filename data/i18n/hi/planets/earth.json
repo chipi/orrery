@@ -4,10 +4,57 @@
   "fact": "जितने भी मनुष्य कभी रहे, सब यहीं रहे। वह संदर्भ कक्षा जिससे बाकी सब मापे जाते हैं।",
   "bio": "23.44° ध्रुवीय ऋजुता ऋतुएँ बनाती है — सूर्य से दूरी नहीं। जनवरी में जुलाई की तुलना में पृथ्वी सूर्य के करीब होती है।",
   "links": [
-    { "l": "पृथ्वी — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
-    { "l": "पृथ्वी (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/earth/", "t": "intro" },
-    { "l": "पृथ्वी अवलोकन प्रणाली (NASA)", "u": "https://eospso.nasa.gov/", "t": "core" },
-    { "l": "पृथ्वी पर ऋतुएँ क्यों (NASA Climate Kids)", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
-    { "l": "पेल ब्लू डॉट — कार्ल सैगन प्रतिबिंब (Planetary Society)", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+    {
+      "l": "पृथ्वी — विकिपीडिया",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "पृथ्वी (NASA सौर मंडल अन्वेषण)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "पृथ्वी अवलोकन प्रणाली (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "पृथ्वी पर ऋतुएँ क्यों (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "पेल ब्लू डॉट — कार्ल सैगन प्रतिबिंब (Planetary Society)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "खगोलीय इकाई पृथ्वी-सूर्य का माध्य दूरी है — पृथ्वी ही प्रत्येक सौर-मंडल माप के लिए शाब्दिक मापदंड है।"
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "पृथ्वी की कक्षा क्रांतिवृत्त तल को परिभाषित करती है। अन्य प्रत्येक ग्रह का झुकाव इस संदर्भ के सापेक्ष मापा जाता है।"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "पृथ्वी का 23.4° झुकाव पाठ्य-पुस्तक ऋतु-मशीन है — विषुव और संक्रांति घूर्णन अक्ष और कक्षीय तल के बीच के कोण से सीधे उत्पन्न होते हैं।"
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "प्रत्येक मंगल प्रक्षेपण विंडो — हर 26 महीने — एक पृथ्वी-प्रस्थान होहमान स्थानांतरण है। सीढ़ी यहाँ से निकलती है।"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "चंद्रमा अपने मातृ-ग्रह के लिए असामान्य रूप से बड़ा है — अनुपात (व्यास ≈ 0.27 पृथ्वी का) किसी भी ग्रह–उपग्रह युग्म में सर्वोच्च है।"
+    }
   ]
 }

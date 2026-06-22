@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — フォボス概説",
     "phobos-mmx": "JAXA MMX — フォボスへのサンプルリターンミッション",
     "phobos-hirise": "HiRISE — 火星周回軌道から捉えた0.25 m/pxのフォボス"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "フォボスは火星を9,377 kmの軌道で周回しており、これは同期軌道高度より低いため、潮汐加速により内側へ加速され、約4000万年後に火星に衝突する予定である。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "フォボスの近日点と遠日点の変化は小さいが、火星の1日に3回周回する——太陽系内で親天体の1日あたりの周回数が最も多い衛星である。"
+    }
+  ]
 }

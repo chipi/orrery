@@ -7,11 +7,18 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "apollo10/01": {
-    "commons_file": "Earth-apollo10.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Earth-apollo10.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/S69-27915/S69-27915~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/S69-27915/S69-27915~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:58Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "apollo 10",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "apollo10/02": {
     "commons_file": "Moon - Apollo 10 (55096228970).jpg",
@@ -112,11 +119,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "apollo8/01": {
-    "commons_file": "Apollo 8 Crewmembers - GPN-2000-001125.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Apollo_8_Crewmembers_-_GPN-2000-001125.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:29:15Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-Apollo8-Dec24-Earthrise.jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-19T08:51:27Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "apollo8"
   },
   "apollo8/02": {
     "commons_file": "NASA-Apollo8-Dec24-Earthrise.jpg",
@@ -182,11 +192,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "aurora-7/01": {
-    "commons_file": "Aurora and perseids.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Aurora%20and%20perseids.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s62-04018/s62-04018~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s62-04018/s62-04018~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:29Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "aurora 7"
   },
   "aurora-7/04": {
     "commons_file": "Mercury-Atlas 7 launch.jpg",
@@ -441,11 +454,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "freedom-7/03": {
-    "commons_file": "Mercury-Redstone 3 (Freedom 7) Flown One Dollar Bill.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury-Redstone%203%20(Freedom%207)%20Flown%20One%20Dollar%20Bill.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:32Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "freedom 7"
   },
   "freedom-7/04": {
     "commons_file": "Mercury-Redstone 3 egress test at Pad 5.jpg",
@@ -455,25 +471,34 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "freedom-7/05": {
-    "commons_file": "Mercury-Redstone 3 Mission Control.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury-Redstone%203%20Mission%20Control.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA13988/PIA13988~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:32Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "freedom 7"
   },
   "friendship-7/01": {
-    "commons_file": "Mercury 6, John H Glenn Jr.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury%206%2C%20John%20H%20Glenn%20Jr.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:33Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "friendship 7"
   },
   "friendship-7/02": {
-    "commons_file": "Mercury Control Center during Mercury-Atlas 6 mission 1962.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury%20Control%20Center%20during%20Mercury-Atlas%206%20mission%201962.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s62-00380/s62-00380~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:33Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "friendship 7"
   },
   "friendship-7/03": {
     "commons_file": "Friendship 7 spacecraft (a full-scale replica) - 02.jpg",
@@ -623,11 +648,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "liberty-bell-7/01": {
-    "commons_file": "Grissom Climbs into Liberty Bell 7 - GPN-2002-000048.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Grissom%20Climbs%20into%20Liberty%20Bell%207%20-%20GPN-2002-000048.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s64-10806/s64-10806~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s64-10806/s64-10806~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:35Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "liberty bell 7"
   },
   "liberty-bell-7/02": {
     "commons_file": "Grissom prepares to enter Liberty Bell 7 61-MR4-76.jpg",
@@ -973,11 +1001,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mercury-atlas-9/03": {
-    "commons_file": "MERCURY-ATLAS (MA)-9 - SHEPARD, ALAN B , JR ASTRONAUT - MERCURY CONTROL CENTER (MCC) - CAPE (s63-07857).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:MERCURY-ATLAS%20(MA)-9%20-%20SHEPARD%2C%20ALAN%20B%20%2C%20JR%20ASTRONAUT%20-%20MERCURY%20CONTROL%20CENTER%20(MCC)%20-%20CAPE%20(s63-07857).jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:36Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "mercury atlas 9"
   },
   "mercury-atlas-9/04": {
     "commons_file": "ASTRONAUT COOPER - PRELAUNCH MISSION REVIEW - MERCURY-ATLAS (MA)-9 (s63-06123).jpg",
@@ -987,18 +1018,24 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mercury-atlas-9/05": {
-    "commons_file": "Mercury-Atlas 9 preflight breakfast.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury-Atlas%209%20preflight%20breakfast.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s63-07608/s63-07608~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:36Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "mercury atlas 9"
   },
   "mercury-redstone-3/01": {
-    "commons_file": "Alan Shepard during Mercury-Redstone 3.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Alan%20Shepard%20during%20Mercury-Redstone%203.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-12T21:28:42.805Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:38Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "mercury redstone 3"
   },
   "mercury-redstone-3/02": {
     "commons_file": "Mercury Redstone 3 4 (17874590413).jpg",
@@ -1015,11 +1052,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mercury-redstone-3/04": {
-    "commons_file": "Mercury-Redstone 3 breakfast.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mercury-Redstone%203%20breakfast.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/jsc2007e046477/jsc2007e046477~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:39Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "mercury redstone 3"
   },
   "mercury-redstone-3/05": {
     "commons_file": "Mercury-Redstone 3 final pre-flight couch check.jpg",
@@ -1498,11 +1538,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "sigma-7/04": {
-    "commons_file": "The SDS Sigma-7 The First Computer to be Connected to the Internet (6294434636).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20SDS%20Sigma-7%20The%20First%20Computer%20to%20be%20Connected%20to%20the%20Internet%20(6294434636).jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/s66-53205/s66-53205~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/s66-53205/s66-53205~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:44Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "sigma 7"
   },
   "sigma-7/05": {
     "commons_file": "Mercury-Atlas 8 simulated launch activities.jpg",
@@ -1722,11 +1765,12 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "venera-13/01": {
-    "commons_file": "Surface of Venus from Venera 13.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Surface%20of%20Venus%20from%20Venera%2013.jpg",
+    "commons_file": "1982 CPA 5278.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:1982%20CPA%205278.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
   },
   "venera-13/02": {
     "commons_file": "Surface of Venus taken by Venera 13 (panoramic).jpg",
@@ -1932,11 +1976,12 @@
     "fetched_at": "2026-06-09T15:27:19Z"
   },
   "vostok-5/01": {
-    "commons_file": "WaleriBykowski.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:WaleriBykowski.jpg",
+    "commons_file": "Valery Bykovsky.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Valery%20Bykovsky.png",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T15:27:21Z"
+    "fetched_at": "2026-06-19T06:33:22Z",
+    "promoted_from": "slot 02"
   },
   "vostok-5/02": {
     "commons_file": "Valery Bykovsky.png",
@@ -1967,11 +2012,12 @@
     "fetched_at": "2026-06-09T15:27:32Z"
   },
   "vostok-6/01": {
-    "commons_file": "VTereshkova.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:VTereshkova.jpg",
+    "commons_file": "Tereshkova Space Suit.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Tereshkova%20Space%20Suit.jpg",
     "credit": "Roscosmos",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T15:27:34Z"
+    "fetched_at": "2026-06-19T06:33:22Z",
+    "promoted_from": "slot 02"
   },
   "vostok-6/02": {
     "commons_file": "Tereshkova Space Suit.jpg",
@@ -2086,23 +2132,23 @@
   },
   "spirit/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-03pd2093",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-03pd2093/KSC-03pd2093~orig.jpg",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:11:37Z",
-    "nasa_id": "KSC-03pd2093",
-    "nasa_title": "KENNEDY SPACE CENTER, FLA. - On Launch Complex 17-B, Cape Canaveral Air Force Station, the Delta II Heavy launch vehicle carrying the rover \"Opportunity\" for the second Mars Exploration Rover mission launches at 11:18:15 p.m. EDT.  Opportunity will reach Mars on Jan. 25, 2004. Together the two MER rovers, Spirit (launched June 10) and Opportunity, seek to determine the history of climate and water at two sites on Mars where conditions may once have been favorable to life. The rovers are identical. They will navigate themselves around obstacles as they drive across the Martian surface, traveling up to about 130 feet each Martian day.  Each rover carries five scientific instruments including a panoramic camera and microscope, plus a rock abrasion tool that will grind away the outer surfaces of rocks to expose their interiors for examination. Each rover’s prime mission is planned to last three months on Mars."
+    "source_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:44Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "spirit"
   },
   "spirit/02": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/PIA03250",
-    "image_url": "http://images-assets.nasa.gov/image/PIA03250/PIA03250~orig.jpg",
-    "credit": "NASA/JPL-Caltech/Cornell",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:11:40Z",
-    "nasa_id": "PIA03250",
-    "nasa_title": "Sweeping View of the Columbia"
+    "source_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA05040/PIA05040~orig.jpg",
+    "credit": "NASA/JPL-Caltech",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:45Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "spirit"
   },
   "spirit/03": {
     "source_type": "nasa-image-library",
@@ -2176,13 +2222,14 @@
   },
   "phoenix/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-07pd2076",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-07pd2076/KSC-07pd2076~orig.jpg",
-    "credit": "NASA / KSC",
+    "source_url": "https://images.nasa.gov/details/PIA10906",
+    "image_url": "http://images-assets.nasa.gov/image/PIA10906/PIA10906~orig.jpg",
+    "credit": "NASA/JPL-Caltech/University of Arizona/Texas A&M University",
     "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:12:12Z",
-    "nasa_id": "KSC-07pd2076",
-    "nasa_title": "KSC-07pd2076"
+    "fetched_at": "2026-06-19T06:43:24Z",
+    "nasa_id": "PIA10906",
+    "nasa_title": "Disappearing Ice",
+    "promoted_from": "slot 03"
   },
   "phoenix/02": {
     "source_type": "nasa-image-library",
@@ -2276,13 +2323,18 @@
   },
   "akatsuki/01": {
     "source_type": "jaxa",
-    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/",
+    "source_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "credit": "JAXA / Akihiro Ikeshita",
-    "license": "JAXA Press Use (free for editorial; attribute to JAXA)",
-    "fetched_at": "2026-06-17T09:54:37Z",
-    "agency_archive": true,
-    "label": "Akatsuki spacecraft (conceptual — orbit insertion 2015)"
+    "license": "pd-jaxa",
+    "fetched_at": "2026-06-19T09:08:35Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "akatsuki",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    },
+    "cross_surface_mirror_from": "fleet-galleries"
   },
   "akatsuki/02": {
     "source_type": "jaxa",
@@ -2336,13 +2388,13 @@
   },
   "dart/01": {
     "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-20211002-PH-DNQ01_0006",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-20211002-PH-DNQ01_0006/KSC-20211002-PH-DNQ01_0006~orig.JPG",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:13:35Z",
-    "nasa_id": "KSC-20211002-PH-DNQ01_0006",
-    "nasa_title": "DART Spacecraft Arrival"
+    "source_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:30Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "dart"
   },
   "dart/02": {
     "source_type": "wikimedia-commons",
@@ -2365,13 +2417,14 @@
     "nasa_title": "NASA's DART at the Didymos System"
   },
   "dart/05": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Webb%2C%20Hubble%20Capture%20Detailed%20Views%20of%20DART%20Impact%20-%2052405448284.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Webb%2C%20Hubble%20Capture%20Detailed%20Views%20of%20DART%20Impact%20-%2052405448284.jpg?width=1600",
-    "credit": "agency original via Wikimedia Commons mirror",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-17T09:59:35Z",
-    "commons_file": "Webb, Hubble Capture Detailed Views of DART Impact - 52405448284.jpg"
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
+    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:31Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "dart"
   },
   "akatsuki/04": {
     "source_type": "jaxa",
@@ -2468,5 +2521,55 @@
     "fetched_at": "2026-06-17T09:28:26Z",
     "nasa_id": "PIA24788",
     "nasa_title": "Preparing Psyche's Thruster Installation"
+  },
+  "pioneer-11/01": {
+    "commons_file": "Pioneer 11 at Saturn.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pioneer%2011%20at%20Saturn.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
+  },
+  "apollo-soyuz/05": {
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/S74-17843/S74-17843~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/S74-17843/S74-17843~orig.jpg",
+    "credit": "NASA / JSC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:27Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "apollo soyuz"
+  },
+  "clementine/02": {
+    "source_type": "nasa-image-library",
+    "source_url": "http://images-assets.nasa.gov/image/PIA18159/PIA18159~orig.jpg",
+    "image_url": "http://images-assets.nasa.gov/image/PIA18159/PIA18159~orig.jpg",
+    "credit": "NASA/GSFC",
+    "license": "pd-nasa",
+    "fetched_at": "2026-06-19T08:51:29Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "clementine"
+  },
+  "luna21/01": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%2021%20Lander%20(LROC15%20-%20M122007650LE%20L21%20ano).png?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%2021%20Lander%20(LROC15%20-%20M122007650LE%20L21%20ano).png?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-19T08:52:06Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "luna 21",
+    "vision": {
+      "verdict": "unsure",
+      "confidence": 0
+    }
+  },
+  "pioneer-10/01": {
+    "commons_file": "Pioneer 10-11 spacecraft.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pioneer%2010-11%20spacecraft.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
+    "fetched_at": "2026-06-19T08:58:28Z",
+    "promoted_from": "slot 05"
   }
 }

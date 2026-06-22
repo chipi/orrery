@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — обзор Оберона",
     "oberon-voyager2": "NASA Voyager 2 — снимки системы Урана"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Оберон — самый внешний из пяти крупных спутников Урана (орбита 583,500 км) — его поверхность наиболее кратеризирована, что указывает на самую древнюю открытую поверхность в системе Урана."
+    }
+  ]
 }

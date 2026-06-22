@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — overzicht Asteroïdengordel",
     "asteroid-belt-dawn": "NASA Dawn — orbiter bij Vesta en Ceres",
     "asteroid-belt-mpc": "Minor Planet Center — IAU-catalogus van alle bekende asteroïden"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "De hoofdgordel: ~1–2 miljoen lichamen tussen Mars en Jupiter, totale massa ≈ 4 % van de Maan. Resonanties van Jupiter hebben de gordel leeggeveegd — fragmentatie heeft sinds dien de overhand op accretie."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "De gordel beslaat de annulus 2.2–3.2 AU. Kirkwood-gaten — lege baanzones bij Jupiter middel-bewegingsresonanties — bepalen het patroon van de populatie."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "De meeste asteroïden in de gordel blijven dicht bij de ecliptica (< 10° inclinatie), maar de familie Pallas met hoge inclinatie op 33° herinnert eraan dat de gordel een 3D-schijf is, geen 2D-ring."
+    }
+  ]
 }

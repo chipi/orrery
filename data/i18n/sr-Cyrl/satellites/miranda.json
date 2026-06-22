@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — преглед Миранде",
     "miranda-voyager2": "NASA Voyager 2 — једини пролет кроз систем Урана (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Миранда има највећи орбитални нагиб (4,3°) међу главним Урановим месецима — у комбинацији са разорним догађајем у раном периоду система, то објашњава позната литица лица која је Voyager 2 снимила 1986."
+    }
+  ]
 }

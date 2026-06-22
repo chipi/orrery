@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — Ariel-Übersicht",
     "ariel-voyager2": "NASA Voyager 2 — Uranus-System-Aufnahmen"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ariel umkreist Uranus in 190.900 km Entfernung — der zweite innerste der großen Monde. Wie alle Uranusmonde teilt seine Umlaufbahn die 97°-Achsenneigung des Planeten."
+    }
+  ]
 }

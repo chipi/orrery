@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — Io अवलोकन",
     "io-juno": "NASA Juno — Io के हाल के निकट फ्लाईबाई",
     "io-volcanism": "USGS — Io ज्वालामुखीय विशेषता सूची"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede एक 4:2:1 Laplace अनुनाद में बंधे हैं — प्रत्येक 4 Io कक्षाओं के लिए, Europa 2 और Ganymede 1 बनाता है। अनुनाद Io की कक्षा को गैर-वृत्ताकार रखता है।"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Io का ज्वारीय तापन (जो इसे सौर मंडल में सबसे ज्वालामुखी रूप से सक्रिय दुनिया बनाता है) बाध्य विकेन्द्रता से आता है — Laplace अनुनाद के माध्यम से Europa और Ganymede द्वारा पंप किया जाता है।"
+    }
+  ]
 }

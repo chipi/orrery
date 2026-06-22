@@ -9,5 +9,17 @@
     "triton-nasa": "NASA Science — Triton सारांश",
     "triton-voyager2": "NASA Voyager 2 — Neptune-प्रणाली मुठभेड़ (1989)",
     "triton-trident": "Trident — प्रस्तावित Discovery-class Triton फ्लाईबाय"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Triton का 156.8° कक्षीय झुकाव — प्रतिगामी, Neptune की भूमध्य रेखा से तीव्रता से झुका हुआ — Kuiper Belt से इसके ग्रहण का मुख्य सबूत है, न कि Neptune के साथ गठन का।"
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Triton का ज्वारीय घर्षण इसकी कक्षा को घटा रहा है — 3.6 अरब वर्षों में यह या तो Neptune से टकराएगा या Roche सीमा के अंदर खंडित हो जाएगा और एक वलय प्रणाली बनाएगा।"
+    }
+  ]
 }

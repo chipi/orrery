@@ -29,5 +29,27 @@
       "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Uranus' Neigung von 97,8° führt dazu, dass es auf seiner Seite rotiert — jeder Pol erhält ~42 Jahre ununterbrochenes Sonnenlicht, dann ~42 Jahre Dunkelheit."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Die Bahnneigung des Planeten ist weniger entscheidend als die Neigung seiner Rotationsachse — Uranus hat die dramatischste axiale Neigung im System, obwohl seine Bahnneigung gering ist (0,77°)."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Die fünf großen Uranus-Monde (Miranda, Ariel, Umbriel, Titania, Oberon) teilen die Neigung des Uranus — sie umkreisen die Äquatorebene, die nahezu senkrecht zur Ekliptik steht."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Kein Raumfahrzeug hat Uranus seit Voyager 2 (1986) besucht. Ein Uranus-Orbiter ist eine Top-Priorität der NASA Decadal-Survey für die 2030er Jahre."
+    }
   ]
 }

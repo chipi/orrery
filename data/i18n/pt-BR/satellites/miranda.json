@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — visão geral de Miranda",
     "miranda-voyager2": "NASA Voyager 2 — único sobrevoo do sistema uraniano (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda tem a maior inclinação orbital (4,3°) entre as luas principais de Urano — combinado com um evento de disrupção no início do sistema, isso explica os famosos penhascos que a Voyager 2 imageou em 1986."
+    }
+  ]
 }

@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — overzicht Charon",
     "charon-new-horizons": "NASA New Horizons — Pluto-Charon-scheervlucht (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Charon en Pluto draaien om een barycenter dat BUITEN Pluto ligt — waardoor het het enige bekende echte binaire systeem in het zonnestelsel is in plaats van een planeet-met-maan."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Charons gemiddelde afstand van 19.591 km tot Pluto, gecombineerd met wederzijdse getijdenvergrendeling, betekent dat beide lichamen elkaar voor eeuwig hetzelfde gezicht toedraaien."
+    }
+  ]
 }

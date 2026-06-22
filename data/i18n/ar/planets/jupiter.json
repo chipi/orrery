@@ -4,10 +4,57 @@
   "fact": "ثقالية المشتري شكلت حزام الكويكبات — فمنعت كوكبًا صخريًا خامسًا. بدونه لكان المريخ أكبر بكثير.",
   "bio": "يدور في 10 ساعات فقط رغم حجمه الهائل، فيخلق حقولًا مغناطيسية قوية. أكثر كتلة من جميع الكواكب الأخرى مجتمعة.",
   "links": [
-    { "l": "المشتري — ويكيبيديا", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
-    { "l": "المشتري (استكشاف النظام الشمسي في ناسا)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
-    { "l": "مهمة جونو (ناسا)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
-    { "l": "أقمار غاليليو — ويكيبيديا", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
-    { "l": "باطن المشتري العميق (نيتشر 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+    {
+      "l": "المشتري — ويكيبيديا",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "المشتري (استكشاف النظام الشمسي في ناسا)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "مهمة جونو (ناسا)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "أقمار غاليليو — ويكيبيديا",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "باطن المشتري العميق (نيتشر 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "يمتلك المشتري 95 قمراً مؤكداً — الأقمار الأربعة الجليلية (آيو، أوروبا، جانيميد، كاليستو) هي عوالم بحد ذاتها وتتبع رنين مداري 1:2:4."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "الغلاف المغناطيسي للمشتري هو أكبر هيكل كوكبي في النظام الشمسي — يمتد إلى ما وراء مدار زحل على الجانب البعيد عن الشمس."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "المشتري هو الهدف المفضل لمساعدة الجاذبية للمهام خارج النظام — استخدمت أو تستخدم مسابير Voyager 1+2 و Cassini و Galileo و New Horizons و Juno و Europa Clipper و JUICE تحليقاً حول المشتري لكسب السرعة."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "كرة Hill الشاسعة للمشتري (50 مليون km نصف قطر) هي ما يجعل نظام أقماره الـ 95 مستقراً — البئر الجاذبية تمتد تقريباً إلى المريخ عند الحضيض."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) يدور حالياً في مدار قطبي؛ Europa Clipper (NASA) و JUICE (ESA) في طريقهما — الوصول المداري إلى جانيميد 2034."
+    }
   ]
 }

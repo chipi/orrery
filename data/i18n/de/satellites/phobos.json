@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — Phobos im Überblick",
     "phobos-mmx": "JAXA MMX — Probenrückführungsmission zu Phobos",
     "phobos-hirise": "HiRISE — Phobos mit 0,25 m/px aus dem Marsorbit"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Phobos umkreist den Mars in nur 9.377 km Entfernung — unterhalb der synchronen Umlaufbahn, daher wird er gezeitenbeschleunigt nach INNEN und wird in ~40 Millionen Jahren auf dem Mars einschlagen."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Phobos' Perihelion-Aphelion-Schwankung ist gering, doch er umkreist den Mars dreimal pro Marstag — der Mond mit den meisten Umläufen pro Elterntag im System."
+    }
+  ]
 }

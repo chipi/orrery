@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — نظرة عامة على Miranda",
     "miranda-voyager2": "NASA Voyager 2 — التحليق الوحيد لمنظومة أورانوس (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "لدى ميراندا أعلى ميل مداري (4.3°) بين أقمار أورانوس الرئيسية — وعندما يُدمج مع حدث اضطراب مبكر في النظام، فإنه يفسر جروف الحافات الشهيرة التي صورتها Voyager 2 في عام 1986."
+    }
+  ]
 }

@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda 概要",
     "miranda-voyager2": "NASA Voyager 2 — 天王星系唯一のフライバイ(1986年)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "ミランダはウラヌスの主要衛星の中で最高の軌道傾斜角（4.3°）を持ち、初期の太陽系の擾乱イベントと組み合わせると、1986年にボイジャー2がイメージした有名な断崖を説明します。"
+    }
+  ]
 }

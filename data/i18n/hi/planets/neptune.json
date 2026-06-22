@@ -4,10 +4,52 @@
   "fact": "वॉयेजर 2 ने 12 वर्ष की यात्रा के बाद 1989 में नेपच्यून के पास से उड़ान भरी। अब तक का एकमात्र अंतरिक्ष यान जो वहाँ गया।",
   "bio": "सबसे तेज़ हवाओं वाला ग्रह — 2,100 km/h सतह पवन। सीधे अवलोकन से पहले गणितीय भविष्यवाणी से खोजा गया, क्योंकि यूरेनस की कक्षा में अदृश्य गुरुत्वीय प्रभाव दिखा।",
   "links": [
-    { "l": "नेपच्यून — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
-    { "l": "नेपच्यून (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
-    { "l": "वॉयेजर 2 नेपच्यून पर (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
-    { "l": "नेपच्यून की खोज — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
-    { "l": "नेपच्यून का आंतरिक मॉडल (Icarus 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+    {
+      "l": "नेपच्यून — विकिपीडिया",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "नेपच्यून (NASA सौर मंडल अन्वेषण)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "वॉयेजर 2 नेपच्यून पर (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "नेपच्यून की खोज — विकिपीडिया",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "नेपच्यून का आंतरिक मॉडल (Icarus 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "30.07 AU के माध्य दूरी पर, नेपच्यून इतना दूर है कि एक दिशात्मक प्रकाश संकेत को दोनों ओर 4 घंटे लगते हैं। Voyager 2 को इस तक पहुंचने में 12 साल लगे।"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Triton सौर मंडल का एकमात्र बड़ा चंद्रमा है जिसकी कक्षा प्रतिगामी है — यह मजबूत साक्ष्य है कि इसे Kuiper Belt से पकड़ा गया था, न कि नेपच्यून के साथ बना।"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "नेपच्यून की हल्की 0.0086 विलक्षणता 30 AU अर्ध-दीर्घ अक्ष पर एक इतनी वृत्ताकार कक्षा देती है कि perihelion–aphelion दोलन 200 मिलियन km से कम है — 1.4% भिन्नता।"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Voyager 2 (1989 flyby) नेपच्यून की यात्रा करने वाला एकमात्र अंतरिक्ष यान बना हुआ है। वर्तमान में इस प्रणाली के लिए कोई मिशन वित्त पोषित या उड़ान में नहीं है।"
+    }
   ]
 }

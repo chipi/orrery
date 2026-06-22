@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — panoramica su Io",
     "io-juno": "NASA Juno — recenti sorvoli ravvicinati di Io",
     "io-volcanism": "USGS — catalogo delle strutture vulcaniche di Io"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganimede sono bloccati in una risonanza di Laplace 4:2:1 — per ogni 4 orbite di Io, Europa ne compie 2 e Ganimede 1. La risonanza mantiene l'orbita di Io non circolare."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Il riscaldamento mareale di Io (che lo rende il corpo più attivo vulcanicamente del sistema solare) deriva dall'eccentricità forzata — pompata da Europa e Ganimede attraverso la risonanza di Laplace."
+    }
+  ]
 }

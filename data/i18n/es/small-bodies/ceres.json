@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "Ceres contiene ~25% de la masa total del cinturón principal en un solo cuerpo — y es el único objeto del cinturón principal clasificado como planeta enano."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Ceres orbita a 2,77 AU — claramente dentro del cinturón de asteroides y utilizado como distancia de referencia canónica del \"centro del cinturón\"."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "67P/Churyumov–Gerasimenko has e = 0.64 — a Jupiter-family comet whose orbit was reshaped by a 1959 Jupiter close approach."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Rosetta needed three Earth gravity assists and a Mars flyby to reach 67P — a 10-year cruise to catch a comet moving on its own elliptical trajectory."
+    }
+  ]
+}

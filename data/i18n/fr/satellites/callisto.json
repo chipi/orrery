@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Callisto",
     "callisto-nasa": "NASA Science — Callisto, aperçu",
     "callisto-galileo": "NASA Galileo, archives patrimoniales"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Callisto orbite en dehors de la résonance de Laplace — son demi-grand axe de 1,88 million de km la place au-delà des pires ceintures de radiation de Jupiter, ce qui en fait la plus accessible aux engins spatiaux parmi les Galiléens."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'excentricité de 0,007 de Callisto est faible et non forcée — sans pompage résonnant, pas de flexion tidale, pas d'océan souterrain (probablement)."
+    }
+  ]
 }

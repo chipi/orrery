@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — visão geral de Io",
     "io-juno": "NASA Juno — sobrevoos rasantes recentes de Io",
     "io-volcanism": "USGS — catálogo de feições vulcânicas de Io"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede estão presos em uma ressonância de Laplace 4:2:1 — a cada 4 órbitas de Io, Europa completa 2 e Ganymede completa 1. A ressonância mantém a órbita de Io não-circular."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "O aquecimento por maré de Io (que o torna o mundo mais ativamente vulcânico do sistema solar) vem da excentricidade forçada — bombeada por Europa e Ganymede através da ressonância de Laplace."
+    }
+  ]
 }

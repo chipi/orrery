@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — ガニメデ概説",
     "ganymede-juice": "ESA JUICE — ガニメデ周回探査ミッション",
     "ganymede-magfield": "NASA Galileo — ガニメデの磁場発見"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "ガニメデは太陽系で唯一、内部生成の磁場を持つ衛星であり、木星の磁気圏に埋め込まれた鉄に富むコアによって生成されている。"
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "イオとエウロパとの4:2:1ラプラス共鳴の外側のメンバー — ガニメデの安定性がガリレイ衛星内部システム全体を支えている。"
+    }
+  ]
 }

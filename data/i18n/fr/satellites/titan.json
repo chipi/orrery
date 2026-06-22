@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — aperçu de Titan",
     "titan-dragonfly": "NASA Dragonfly — mission de giravion nucléaire vers Titan",
     "titan-huygens": "ESA Huygens — premier atterrissage sur une lune autre que la nôtre"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titan est en résonance spin-orbite 1:1 avec Saturne — toujours tourné vers la même face. Son demi-grand axe de 1,22 million de km le place près de la sphère de Hill externe de Saturne."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titan possède une atmosphère dense N₂-CH₄ — la seule lune à en avoir une. Les températures de surface sont de 94 K, où le méthane et l'éthane existent sous forme de lacs liquides."
+    }
+  ]
 }

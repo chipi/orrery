@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon 개요",
     "oberon-voyager2": "NASA Voyager 2 — 천왕성계 이미지"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "오베론은 5개의 주요 천왕성 위성 중 가장 바깥쪽 위성이며(궤도 583,500 km) — 표면이 가장 많은 운석공을 가지고 있어 천왕성계에서 가장 오래된 노출 표면을 가지고 있음을 시사한다."
+    }
+  ]
 }

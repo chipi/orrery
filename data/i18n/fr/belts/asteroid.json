@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — aperçu de la Ceinture d'astéroïdes",
     "asteroid-belt-dawn": "NASA Dawn — orbiteur à Vesta et Ceres",
     "asteroid-belt-mpc": "Minor Planet Center — catalogue IAU de tous les astéroïdes connus"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "La ceinture principale : ~1–2 millions de corps entre Mars et Jupiter, masse totale ≈ 4 % de la Lune. Les résonances de Jupiter ont vidé la ceinture — la fragmentation l'emporte sur l'accrétion depuis."
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "La ceinture occupe l'anneau 2,2–3,2 AU. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "La plupart des astéroïdes de la ceinture restent près de l'écliptique (< 10° d'inclinaison) mais la famille de Pallas à haute inclinaison à 33° rappelle que la ceinture est un disque 3-D, non un anneau 2-D."
+    }
+  ]
 }

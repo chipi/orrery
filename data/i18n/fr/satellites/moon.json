@@ -1,3 +1,25 @@
 {
-  "description": "La Lune est le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage gravitationnel 1:1 maintient le même hémisphère face à la Terre en permanence — la face visible dominée par des bassins maritimes inondés de lave, la face cachée un ancien terrain cratérisé des hautes terres couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du Système solaire. Le lent éloignement de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement la journée terrestre."
+  "description": "La Lune est le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage gravitationnel 1:1 maintient le même hémisphère face à la Terre en permanence — la face visible dominée par des bassins maritimes inondés de lave, la face cachée un ancien terrain cratérisé des hautes terres couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du Système solaire. Le lent éloignement de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement la journée terrestre.",
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "L'orbite de la Lune autour de la Terre est le système képlérien à deux corps du manuel — tous les autres calculs lune-autour-de-planète se généralisent à partir de là."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'excentricité de 0.055 de la Lune est faible mais significative — au périgée le disque semble 12 % plus grand et plus brillant qu'à l'apogée (« superlune »)."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Le périgée (~363 000 km) et l'apogée (~405 000 km) déterminent la taille apparente de la Lune et la phase du bourrelet de marée qui attire le plus d'eau sur Terre."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "La Lune est exceptionnellement grande par rapport à la Terre — son rapport de diamètre (≈ 0.27) est le plus élevé de toute paire planète-satellite du système solaire."
+    }
+  ]
 }

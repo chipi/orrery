@@ -4,10 +4,57 @@
   "fact": "木星の重力は小惑星帯を形づくり — 第五の岩石惑星が育たなかった。木星がなければ、火星はずっと大きかっただろう。",
   "bio": "巨大な質量にもかかわらず自転周期は約 10 時間と速く、強い磁場をつくり出している。他のすべての惑星を合わせたよりも重い。",
   "links": [
-    { "l": "木星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
-    { "l": "木星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
-    { "l": "ジュノー（NASA）", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
-    { "l": "ガリレオ衛星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
-    { "l": "木星の深部内部（Nature 2018）", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+    {
+      "l": "木星 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "木星（NASA Solar System Exploration）",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "ジュノー（NASA）",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "ガリレオ衛星 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "木星の深部内部（Nature 2018）",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "木星は95個の確認された衛星を持ち、4つのガリレオ衛星（イオ、エウロパ、ガニメデ、カリスト）はそれぞれ独立した世界であり、1:2:4の軌道共鳴を示します。"
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "木星の磁気圏は太陽系最大の惑星構造で、反太陽側では土星の軌道を超えて広がっています。"
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "木星は外側領域のミッションに好まれる重力アシスト目標です。ボイジャー1号・2号、カッシーニ、ガリレオ、ニューホライズンズ、ジュノー、ヨーロッパ・クリッパー、JUICEはすべて木星フライバイを用いるか用いています。"
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "木星の広大なヒル球（半径50万km）がその95個の衛星系を安定させています。重力井戸は近日点でほぼ火星に達しています。"
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "ジュノー（NASA）は現在極軌道にあります。ヨーロッパ・クリッパー（NASA）とJUICE（ESA）は現在進行中で、ガニメデへの軌道投入は2034年です。"
+    }
   ]
 }

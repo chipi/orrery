@@ -10,5 +10,12 @@
     "enceladus-nasa": "NASA Science — información general de Encélado",
     "enceladus-cassini": "NASA Cassini — archivo histórico de sobrevuelos de penachos",
     "enceladus-habitability": "Astrobiology — Encélado como objetivo de búsqueda de vida"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Encélado está en resonancia de movimiento medio 2:1 con Dione — la excentricidad forzada (0,0047) impulsa la flexión de mareas que alimenta los géiseres crivolcánicos del polo sur."
+    }
+  ]
 }

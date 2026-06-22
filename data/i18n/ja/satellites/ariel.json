@@ -8,5 +8,12 @@
     "ariel-wiki": "Wikipedia — Ariel",
     "ariel-nasa": "NASA Science — Ariel 概要",
     "ariel-voyager2": "NASA Voyager 2 — 天王星系の画像"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "アリエルは天王星から190,900 kmの軌道を周回しており、主要衛星の中で2番目に内側の衛星である。すべての天王星の衛星と同様に、その軌道は惑星の97°の軸傾斜を共有している。"
+    }
+  ]
 }

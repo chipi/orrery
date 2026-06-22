@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos overview",
     "deimos-mrohirise": "HiRISE — Deimos in Mars-orbit imagery"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Deimos is the outer Mars moon (23,460 km) — its orbital period (1.26 d) is longer than the Martian day, so tidal forces are pushing it slowly outward."
+    }
+  ]
 }

@@ -8,5 +8,12 @@
     "miranda-wiki": "Wikipedia — Miranda",
     "miranda-nasa": "NASA Science — Miranda Übersicht",
     "miranda-voyager2": "NASA Voyager 2 — einziger Vorbeiflug am Uranus-System (1986)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "Miranda hat die höchste Bahnneigung (4,3°) der großen Uranusmonde — kombiniert mit einem Störungsereignis in der frühen Systemphase erklärt dies die berühmten Klippen, die Voyager 2 1986 fotografierte."
+    }
+  ]
 }

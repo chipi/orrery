@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — visión general de Ío",
     "io-juno": "NASA Juno — sobrevuelos cercanos recientes de Ío",
     "io-volcanism": "USGS — catálogo de rasgos volcánicos de Ío"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Io / Europa / Ganymede están atrapados en una resonancia de Laplace 4:2:1 — por cada 4 órbitas de Io, Europa realiza 2 y Ganymede 1. La resonancia mantiene la órbita de Io no circular."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "El calentamiento por mareas de Io (que lo hace el mundo más activo volcánicamente del sistema solar) proviene de la excentricidad forzada — impulsada por Europa y Ganymede a través de la resonancia de Laplace."
+    }
+  ]
 }

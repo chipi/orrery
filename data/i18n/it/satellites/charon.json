@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — panoramica di Charon",
     "charon-new-horizons": "NASA New Horizons — sorvolo di Pluto-Charon (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Caronte e Plutone orbitano un baricentro che si trova FUORI da Plutone — rendendolo l'unico noto vero sistema binario del sistema solare piuttosto che un pianeta-con-luna."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "La distanza media di 19,591 km di Caronte da Plutone, combinata con il mutuo blocco di marea, significa che entrambi i corpi mostrano la stessa faccia l'uno all'altro in eterno."
+    }
+  ]
 }

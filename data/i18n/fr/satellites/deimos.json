@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos, aperçu",
     "deimos-mrohirise": "HiRISE — Deimos dans l'imagerie en orbite martienne"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Déimos est la lune extérieure de Mars (23,460 km) — sa période orbitale (1.26 j) est plus longue que le jour martien, donc les forces de marée la poussent lentement vers l'extérieur."
+    }
+  ]
 }

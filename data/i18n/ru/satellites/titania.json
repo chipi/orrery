@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — обзор Titania",
     "titania-voyager2": "NASA Voyager 2 — снимки системы Урана"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Титания — крупнейший спутник Урана (диаметр 1,578 км) — по размерам сравним с Плутоном. Только Voyager 2 получил его снимки (1986)."
+    }
+  ]
 }

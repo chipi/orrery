@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/s41561-019-0405-8",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'eccentricità di Mercurio di 0,206 è la più alta degli 8 pianeti — al perielio il Sole appare 1,5× più grande nel suo cielo rispetto all'afelio."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "L'oscillazione perielio-afelio (46–70 milioni di km) genera enormi differenze nel flusso solare — la superficie di Mercurio si riscalda e raffredda più di qualsiasi altro pianeta."
+    },
+    {
+      "tab": "orbits",
+      "section": "vis-viva",
+      "why": "La vis-viva è ciò che mostra Mercurio accelerare drammaticamente al perielio e decelerare all'afelio — un'oscillazione di 12 km/s."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "L'inclinazione assiale di Mercurio è essenzialmente nulla (0,034°), quindi i fondi dei crateri polari non vedono mai la luce solare — e il ghiaccio d'acqua vi sopravvive nonostante il calore del pianeta."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Tre missioni abbracciano l'esplorazione di Mercurio: Mariner 10 (1974), MESSENGER (2011–15), e BepiColombo (inserimento in orbita fine 2026)."
+    }
   ]
 }

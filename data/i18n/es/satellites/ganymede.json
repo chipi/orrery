@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — Ganímedes, visión general",
     "ganymede-juice": "ESA JUICE — misión orbitadora de Ganímedes",
     "ganymede-magfield": "NASA Galileo — descubrimiento del campo magnético de Ganímedes"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Ganímedes es la única luna del sistema solar con su propio campo magnético generado internamente — producido por un núcleo rico en hierro incrustado en la magnetosfera de Júpiter."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Miembro exterior de la resonancia de Laplace 4:2:1 con Ío y Europa — la estabilidad de Ganímedes ancla todo el sistema galileano interior."
+    }
+  ]
 }

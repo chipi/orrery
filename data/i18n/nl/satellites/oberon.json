@@ -8,5 +8,12 @@
     "oberon-wiki": "Wikipedia — Oberon",
     "oberon-nasa": "NASA Science — Oberon overzicht",
     "oberon-voyager2": "NASA Voyager 2 — Uranus-systeembeelden"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Oberon is de buitenste van de vijf grote Uraanse manen (583.500 km baan) — het oppervlak is het meest gekraterd, wat suggereert dat het het oudste blootgestelde oppervlak in het Uranus-systeem heeft."
+    }
+  ]
 }

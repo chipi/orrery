@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — 火卫一概览",
     "phobos-mmx": "JAXA MMX — 前往火卫一的样本返回任务",
     "phobos-hirise": "HiRISE — 从火星轨道以 0.25 m/px 拍摄的火卫一"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "火卫一绕火星轨道仅9,377 km — 低于同步轨道高度，因此受潮汐加速向内，将在约4000万年后撞击火星。"
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "火卫一的近日点-远日点摆幅很小，但它每个火星日绕火星三圈 — 是太阳系中每个母行星周期内公转圈数最多的卫星。"
+    }
+  ]
 }

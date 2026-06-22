@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — Titania Überblick",
     "titania-voyager2": "NASA Voyager 2 — Uranian-system Aufnahmen"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Titania ist der größte Mond des Uranus (1.578 km Durchmesser) — vergleichbar groß mit Pluto. Nur Voyager 2 hat ihn abgebildet (1986)."
+    }
+  ]
 }

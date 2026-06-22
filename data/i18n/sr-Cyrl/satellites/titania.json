@@ -8,5 +8,12 @@
     "titania-wiki": "Wikipedia — Titania",
     "titania-nasa": "NASA Science — преглед Titania",
     "titania-voyager2": "NASA Voyager 2 — снимци уранског система"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Титанија је највећи месец Урана (пречник 1,578 км) — упоредива је са Плутоном по величини. Само је Вајаџер 2 сликао (1986)."
+    }
+  ]
 }

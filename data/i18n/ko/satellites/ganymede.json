@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — 가니메데 개요",
     "ganymede-juice": "ESA JUICE — 가니메데 궤도선 임무",
     "ganymede-magfield": "NASA Galileo — 가니메데 자기장 발견"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "가니메데는 태양계에서 자체 생성 자기장을 가진 유일한 위성이며, 목성의 자기권에 내장된 철이 풍부한 핵에 의해 생성된다."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "이오와 유로파와의 4:2:1 라플라스 공명의 외부 천체 — 가니메데의 안정성이 전체 내측 갈릴레이 위성계를 고정시킨다."
+    }
+  ]
 }

@@ -4,10 +4,52 @@
   "fact": "Давление на поверхности в 90 раз выше земного. Советские станции «Венера» выдерживали 23–127 минут, прежде чем их раздавило.",
   "bio": "Вращается ретроградно — «задом наперёд» и настолько медленно, что венерианские сутки длиннее года. Наклон оси 177,4° объясняется тем, что Венера по сути перевёрнута.",
   "links": [
-    { "l": "Венера — Википедия", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
-    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
-    { "l": "Программа «Венера» — Википедия", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
-    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
-    { "l": "Парниковый эффект на Венере (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+    {
+      "l": "Венера — Википедия",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "Venus (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Программа «Венера» — Википедия",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITAS (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "Парниковый эффект на Венере (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Венера вращается ретроградно с наклоном оси 177° — фактически перевёрнута. При сидерическом периоде вращения 243 дня её сутки длиннее, чем год из 225 дней."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Самая круговая орбита планеты в системе (e = 0,0068) — Венера движется вокруг Солнца как почти идеальное кольцо."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Венера имеет самый экстремальный парниковый эффект: поверхностная температура держится ~460°C день и ночь, поэтому различие между подсолнечной стороной и терминатором менее значимо, чем для других планет."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) — единственный активный орбитальный аппарат у Венеры; советская программа Venera (1961–83) остаётся единственным источником фотографий поверхности."
+    }
   ]
 }

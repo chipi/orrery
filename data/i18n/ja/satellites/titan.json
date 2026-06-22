@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titanの概要",
     "titan-dragonfly": "NASA Dragonfly — Titanへの原子力回転翼機ミッション",
     "titan-huygens": "ESA Huygens — 地球の月以外への初着陸"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "タイタンはサターンとの1:1スピン軌道共鳴にあり、常に同じ面を向けている。半長軸122万kmはサターンの外部ヒル球の近くに位置する。"
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "タイタンは密度の高いN₂-CH₄大気を持つ — 唯一の衛星である。表面温度は94 Kで、メタンとエタンが液体の湖として存在する。"
+    }
+  ]
 }

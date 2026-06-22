@@ -12,5 +12,17 @@
     "titan-nasa": "NASA Science — Titan overzicht",
     "titan-dragonfly": "NASA Dragonfly — nucleaire rotorcraft-missie naar Titan",
     "titan-huygens": "ESA Huygens — eerste landing op een andere maan dan de onze"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "Titan bevindt zich in 1:1 spin-baanresonantie met Saturnus — toont altijd dezelfde zijde. De semi-grote as van 1,22 miljoen km plaatst het dicht bij Saturnus' buitenste Hill-bol."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Titan heeft een dichte N₂-CH₄-atmosfeer — de enige maan met één. Oppervlaktetemperaturen liggen op 94 K, waar methaan en ethaan als vloeibare meren bestaan."
+    }
+  ]
 }

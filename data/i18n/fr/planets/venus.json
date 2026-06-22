@@ -29,5 +29,27 @@
       "u": "https://www.nature.com/articles/s41550-019-0930-9",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Vénus tourne en sens rétrograde avec une inclinaison axiale de 177° — effectivement à l'envers. Combinée à une rotation sidérale de 243 jours, sa journée est plus longue que son année de 225 jours."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "L'orbite planétaire la plus circulaire du système (e = 0,0068) — Vénus se déplace autour du Soleil comme un anneau quasi parfait."
+    },
+    {
+      "tab": "planets",
+      "section": "sub-solar-and-terminator",
+      "why": "Vénus possède l'effet de serre le plus extrême : les températures de surface restent ~460°C jour et nuit, donc la distinction sub-solaire / terminateur importe moins que pour toute autre planète."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Akatsuki (JAXA, 2015–) est le seul orbiteur actif de Vénus ; la campagne soviétique Venera (1961–83) détient toujours les seules images de surface jamais prises."
+    }
   ]
 }

@@ -12,5 +12,17 @@
     "ganymede-nasa": "NASA Science — 木卫三概览",
     "ganymede-juice": "ESA JUICE — 木卫三轨道器任务",
     "ganymede-magfield": "NASA Galileo — 木卫三磁场发现"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "木卫三是太阳系中唯一拥有自身内部产生的磁场的卫星——由嵌入木星磁层中的富铁核心产生。"
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "与木卫一和木卫二构成4:2:1拉普拉斯共振的外层成员——木卫三的稳定性锚定了整个内侧伽利略卫星系统。"
+    }
+  ]
 }

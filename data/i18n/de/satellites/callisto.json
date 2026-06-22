@@ -9,5 +9,17 @@
     "callisto-wiki": "Wikipedia — Kallisto",
     "callisto-nasa": "NASA Science — Überblick zu Kallisto",
     "callisto-galileo": "NASA Galileo-Vermächtnisarchiv"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Callisto umkreist Jupiter außerhalb der Laplace-Resonanz — seine große Halbachse von 1,88 Millionen km liegt jenseits der intensivsten Strahlungsgürtel Jupiters und macht ihn zum raumfahrtfreundlichsten Galileischen Mond."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Callistos Exzentrizität von 0,007 ist klein und nicht erzwungen — ohne resonante Anregung, kein Gezeitenflexing, wahrscheinlich kein Subsurface-Ozean."
+    }
+  ]
 }

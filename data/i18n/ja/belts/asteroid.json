@@ -23,5 +23,22 @@
     "asteroid-belt-nasa": "NASA Science — Asteroid Belt概要",
     "asteroid-belt-dawn": "NASA Dawn — VestaとCeresの周回機",
     "asteroid-belt-mpc": "Minor Planet Center — IAU全既知小惑星カタログ"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "メインベルト：火星と木星の間に約100万～200万個の天体が存在し、総質量は月の約4%。木星の共鳴がベルトをクリアしてからは、分裂が降着に勝ってきた。"
+    },
+    {
+      "tab": "orbits",
+      "section": "orbit-regimes",
+      "why": "ベルトは2.2～3.2 AUの環状領域を占有する。Kirkwood gap（木星の平均運動共鳴における軌道空白域）が集団のパターンを形成する。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination",
+      "why": "ベルト内の小惑星のほとんどは黄道近くに留まる（傾斜角 < 10°）が、33°の高傾斜Pallas familyはベルトが2次元リングではなく3次元円盤であることを示唆している。"
+    }
+  ]
 }

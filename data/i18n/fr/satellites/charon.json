@@ -8,5 +8,17 @@
     "charon-wiki": "Wikipedia — Charon",
     "charon-nasa": "NASA Science — aperçu de Charon",
     "charon-new-horizons": "NASA New Horizons — survol de Pluton-Charon (2015)"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Charon et Pluton orbitent autour d'un barycentre situé À L'EXTÉRIEUR de Pluton — ce qui en fait le seul véritable système binaire connu du système solaire plutôt qu'une planète avec satellite."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "La distance moyenne de 19 591 km entre Charon et Pluton, combinée à un verrouillage de marée mutuel, signifie que les deux corps se montrent mutuellement le même côté de façon permanente."
+    }
+  ]
 }

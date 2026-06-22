@@ -29,5 +29,32 @@
       "u": "https://www.nature.com/articles/nature25775",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Jupiter heeft 95 bevestigde manen — de vier Galileïsche manen (Io, Europa, Ganymedes, Callisto) zijn elk werelden op zich en vertonen een 1:2:4 baanresonantie."
+    },
+    {
+      "tab": "planets",
+      "section": "magnetic-fields",
+      "why": "Jupiters magnetosfeer is de grootste planetaire structuur in het zonnestelsel — deze strekt zich voorbij de baan van Saturnus aan de nachtelijke zijde."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist",
+      "why": "Jupiter is het voorkeursdoel voor zwaartekrachtassistentie bij missies naar het buitenstelsel — Voyager 1+2, Cassini, Galileo, New Horizons, Juno, Europa Clipper en JUICE gebruikten of gebruiken een Jovische vliegbij voor snelheidswinst."
+    },
+    {
+      "tab": "orbits",
+      "section": "hill-sphere",
+      "why": "Jupiters uitgebreide Hill-bol (straal 50 miljoen km) maakt het systeem van 95 manen stabiel — de zwaartekrachtput strekt zich bijna tot aan Mars bij perihelium."
+    },
+    {
+      "tab": "planets",
+      "section": "active-spacecraft-survey",
+      "why": "Juno (NASA) bevindt zich momenteel in polaire baan; Europa Clipper (NASA) en JUICE (ESA) zijn onderweg — baanopvangst bij Ganymedes 2034."
+    }
   ]
 }

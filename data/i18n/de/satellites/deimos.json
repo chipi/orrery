@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos Überblick",
     "deimos-mrohirise": "HiRISE — Deimos in Marsorbit-Aufnahmen"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Deimos ist der äußere Marsmond (23.460 km) — seine Umlaufperiode (1,26 d) ist länger als der Marstag, daher schieben ihn Gezeitenkräfte langsam nach außen."
+    }
+  ]
 }

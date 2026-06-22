@@ -1,0 +1,14 @@
+{
+  "science_sections": [
+    {
+      "tab": "planets",
+      "section": "asteroid-belt",
+      "why": "Vesta é o segundo corpo mais massivo do cinturão — sua superfície é a única fonte confirmada do cinturão principal para meteoritos HED encontrados na Terra."
+    },
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Vesta orbita a 2,36 AU — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015)."
+    }
+  ]
+}

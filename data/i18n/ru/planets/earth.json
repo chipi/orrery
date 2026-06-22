@@ -4,10 +4,57 @@
   "fact": "Каждый человек, когда-либо живший, жил здесь. Опорная орбита, относительно которой измеряются все остальные.",
   "bio": "Наклон оси 23,44° создаёт времена года — не расстояние до Солнца. В январе Земля ближе к Солнцу, чем в июле.",
   "links": [
-    { "l": "Земля — Википедия", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
-    { "l": "Earth (NASA Solar System Exploration)", "u": "https://science.nasa.gov/earth/", "t": "intro" },
-    { "l": "Earth Observing System (NASA)", "u": "https://eospso.nasa.gov/", "t": "core" },
-    { "l": "Почему на Земле есть времена года (NASA Climate Kids)", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
-    { "l": "«Бледно-голубая точка» — размышление Карла Сагана (Planetary Society)", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+    {
+      "l": "Земля — Википедия",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "Earth (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Earth Observing System (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Почему на Земле есть времена года (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "«Бледно-голубая точка» — размышление Карла Сагана (Planetary Society)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "Астрономическая единица — это среднее расстояние Земля-Солнце. Земля служит эталоном для всех измерений в Солнечной системе."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "Орбита Земли определяет плоскость эклиптики. Наклонение любой другой планеты измеряется относительно этого ориентира."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "Наклон оси Земли на 23,4° — классический механизм смены сезонов. Равноденствия и солнцестояния возникают непосредственно из угла между осью вращения и орбитальной плоскостью."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Каждое окно запуска на Марс — каждые 26 месяцев — это гомановский перелёт с орбиты Земли. Трамплин отправляется отсюда."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "Луна необычно велика для своего спутника — отношение размеров (диаметр ≈ 0,27 диаметра Земли) наибольшее среди всех пар планета–спутник."
+    }
   ]
 }

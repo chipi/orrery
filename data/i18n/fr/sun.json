@@ -29,5 +29,32 @@
       "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplerian-orbit",
+      "why": "Chaque planète, satellite planétaire, comète et engin spatial anthropique orbite parce que la gravité du Soleil établit le potentiel central — une orbite keplerienne EST une orbite autour du Soleil."
+    },
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Kepler a dérivé ses trois lois en tentant d'ajuster les données martiennes de Tycho à la gravité du Soleil — sa deuxième loi (aires égales) est ce qui rend les planètes internes plus rapides que les externes."
+    },
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "L'unité astronomique est par définition la distance moyenne Terre-Soleil — chaque distance du système solaire se lit relativement à cette échelle."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "L'équateur du Soleil et le plan écliptique sont inclinés de seulement 7,25° — ce qui est suffisamment proche pour que « les orbites dans l'écliptique » soit une bonne première approximation pour presque tout dans le système."
+    },
+    {
+      "tab": "scales-time",
+      "section": "frames",
+      "why": "Tous les référentiels inertiels en mécanique du système solaire sont définis relativement au barycentre du Soleil — le reste du système se meut avec lui."
+    }
   ]
 }

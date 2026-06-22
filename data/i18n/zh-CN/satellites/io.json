@@ -11,5 +11,17 @@
     "io-nasa": "NASA Science — 木卫一概述",
     "io-juno": "NASA Juno — 近期对木卫一的近距离飞越",
     "io-volcanism": "USGS — 木卫一火山特征目录"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "木卫一/木卫二/木卫三处于4:2:1的拉普拉斯共振状态——木卫一公转4周期间，木卫二公转2周期，木卫三公转1周期。该共振使木卫一的轨道保持非圆形。"
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "木卫一的潮汐加热（使其成为太阳系中火山活动最活跃的星体）来自被迫的离心率——由木卫二和木卫三通过拉普拉斯共振泵送。"
+    }
+  ]
 }

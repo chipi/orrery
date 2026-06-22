@@ -11,5 +11,17 @@
     "phobos-nasa": "NASA Science — visão geral de Phobos",
     "phobos-mmx": "JAXA MMX — missão de retorno de amostras a Phobos",
     "phobos-hirise": "HiRISE — Phobos a 0,25 m/px a partir da órbita de Marte"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Fobos orbita Marte a apenas 9.377 km — abaixo da altitude síncrona, portanto é acelerado tidalmente PARA DENTRO e impactará Marte em ~40 milhões de anos."
+    },
+    {
+      "tab": "orbits",
+      "section": "apsides",
+      "why": "A variação periélio-afélio de Fobos é pequena, mas ele circula Marte três vezes por dia marciano — a lua com mais órbitas por dia do corpo primário no sistema."
+    }
+  ]
 }

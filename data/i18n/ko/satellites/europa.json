@@ -12,5 +12,17 @@
     "europa-nasa": "NASA Science — 유로파 개요",
     "europa-clipper": "NASA Europa Clipper — 미션 사이트",
     "europa-juice": "ESA JUICE — 목성 얼음 위성 탐사선"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "keplers-laws",
+      "why": "Europa는 Io–Europa–Ganymede 4:2:1 라플라스 공명의 중간 구성원이며, 강제된 이심률이 조석 유연성을 일으켜 표면 아래 바다를 액체 상태로 유지한다."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity",
+      "why": "Europa의 작은 0.009 이심률은 Io의 섭동에 의해 강제되며, 이것이 없으면 표면 아래 바다가 얼 것이다. Europa Clipper (NASA, 2024–)는 이를 연구하기 위해 발사될 예정이다."
+    }
+  ]
 }

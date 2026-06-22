@@ -29,5 +29,32 @@
       "u": "https://www.planetary.org/worlds/pale-blue-dot",
       "t": "deep"
     }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "De astronomische eenheid IS de gemiddelde afstand Aarde-Zon — Aarde is de letterlijke maatstaf voor elke meting in het zonnestelsel."
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "De baan van Aarde bepaalt het eclipticavlak. De inclinatie van elke andere planeet wordt ten opzichte van deze referentie gemeten."
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "De tilt van Aarde van 23.4° is de handboek-seizoenen-machine — equinoxen en solstitia ontstaan rechtstreeks uit de hoek tussen rotatieas en baanvlak."
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "Elk Marsvertrekvenster — elke 26 maanden — is een Hohmann-transferbaan vanuit Aarde. De ladder vertrekt vanaf hier."
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "De Maan is ongewoon groot voor zijn moederplaneet — de verhouding (diameter ≈ 0,27 van Aarde) is de hoogste van elk planeet–satellietpaar."
+    }
   ]
 }

@@ -9,5 +9,12 @@
     "deimos-wiki": "Wikipedia — Deimos",
     "deimos-nasa": "NASA Science — Deimos overzicht",
     "deimos-mrohirise": "HiRISE — Deimos in beelden vanuit een baan om Mars"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Deimos is de buitenste maan van Mars (23.460 km) — zijn omloopperiode (1,26 d) is langer dan de Martiaanse dag, dus getijdenkrachten duwen hem langzaam naar buiten."
+    }
+  ]
 }

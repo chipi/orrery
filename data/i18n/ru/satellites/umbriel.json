@@ -8,5 +8,12 @@
     "umbriel-wiki": "Wikipedia — Umbriel",
     "umbriel-nasa": "NASA Science — обзор Умбриэля",
     "umbriel-voyager2": "NASA Voyager 2 — снимки системы Урана"
-  }
+  },
+  "science_sections": [
+    {
+      "tab": "orbits",
+      "section": "semi-major-axis",
+      "why": "Умбриэль обращается вокруг Урана на расстоянии 266,000 км — его орбитальная плоскость наклонена вместе с планетой, поэтому его сезоны отражают экстремальную осевую геометрию материнского тела."
+    }
+  ]
 }

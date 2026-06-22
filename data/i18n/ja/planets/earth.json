@@ -4,10 +4,57 @@
   "fact": "これまで生きてきた人類はみな、この惑星の上にいた。他のすべての軌道を量る際の参照となる軌道である。",
   "bio": "季節をつくるのは太陽との距離ではなく、軸傾斜角 23.44°。地球は、七月より一月のほうが太陽に近い。",
   "links": [
-    { "l": "地球 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
-    { "l": "地球（NASA Solar System Exploration）", "u": "https://science.nasa.gov/earth/", "t": "intro" },
-    { "l": "Earth Observing System（NASA）", "u": "https://eospso.nasa.gov/", "t": "core" },
-    { "l": "なぜ地球に季節があるか（NASA Climate Kids）", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
-    { "l": "ペイルブルードット — カール・セーガンの語り（Planetary Society）", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+    {
+      "l": "地球 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "地球（NASA Solar System Exploration）",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Earth Observing System（NASA）",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "なぜ地球に季節があるか（NASA Climate Kids）",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "ペイルブルードット — カール・セーガンの語り（Planetary Society）",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ],
+  "science_sections": [
+    {
+      "tab": "scales-time",
+      "section": "au",
+      "why": "天文単位(AU)は地球と太陽の平均距離であり、地球は太陽系のあらゆる計測における文字通りのものさしである。"
+    },
+    {
+      "tab": "scales-time",
+      "section": "ecliptic-plane",
+      "why": "地球の軌道は黄道面を定義する。他のすべての惑星の傾斜角はこの基準面に対して測定される。"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons",
+      "why": "地球の23.4°の軸傾斜は教科書的な季節変化の仕組みである — 春分・秋分と夏至・冬至は回転軸と軌道面との角度から直接生じる。"
+    },
+    {
+      "tab": "transfers",
+      "section": "hohmann-transfer",
+      "why": "火星へのすべての打上げウィンドウ — 26ヶ月ごと — は地球を出発するホーマン遷移軌道である。梯子はここから上昇する。"
+    },
+    {
+      "tab": "planets",
+      "section": "moons-of-the-system",
+      "why": "月は親惑星に対して異例に大きい — その比率(直径≈地球の0.27倍)は惑星と衛星のいかなるペアにおいても最高である。"
+    }
   ]
 }

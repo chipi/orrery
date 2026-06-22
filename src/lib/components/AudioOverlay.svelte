@@ -5,7 +5,7 @@
 
   import { onMount, tick, untrack } from 'svelte';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { goto, afterNavigate } from '$app/navigation';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
@@ -176,46 +176,102 @@
     if (audioEl) audioEl.playbackRate = audio.speed;
   });
 
-  // Virtual-walkthrough auto-navigation. When the tour advances to an
-  // episode anchored to a different route, drive the browser there so
-  // the listener sees the screen they're hearing about. Only runs while
-  // a tour is active — manual episode loads from the inventory leave
-  // navigation under the user's control.
+  // Virtual-walkthrough auto-navigation. When the tour advances to a NEW
+  // episode anchored to a different route, drive the browser there so the
+  // listener sees the screen they're hearing about. Only runs while a tour
+  // is active — manual episode loads leave navigation under the user.
   //
-  // Intentional behaviour: if the user manually navigates away from the
-  // tour's current route mid-episode (Nav link click, browser back), the
-  // NEXT tour episode advance will pull them back to its anchored route.
-  // Stop the tour first (the stop button in the tour-bar) to free
-  // navigation entirely.
-  // Track the last episode id we navigated FOR so we can tell tour-
-  // advance navigation apart from a user link click that we have to
-  // revert. The toast only fires on the latter — silent on the former.
+  // Episode→route is one half of the binding; route→episode (page follows
+  // the user) is the other half, in the afterNavigate watcher below. The
+  // two are kept from looping by acting only on *episode* changes here
+  // (`ep.id === lastAutoNavEpisodeId` short-circuit): a bare route change
+  // — a manual Nav-link click or browser-back — no longer yanks the
+  // listener back to the tour's old route. Page-follows-user (#358) owns
+  // that case now: it fast-forwards the tour to the page they landed on.
   let lastAutoNavEpisodeId: string | null = null;
   $effect(() => {
     if (!browser || !audio.tourActive) return;
     const ep = audio.currentEpisode;
     if (!ep?.route) return;
-    const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
-    // Strip query string + hash for the compare; preserve scroll reset
-    // because each route's content is its own scene.
+    // Read $page so the effect re-runs on navigation, but only ACT when
+    // the episode itself changed (a tour advance). A route-only change
+    // (user navigated) is left alone — the watcher below handles it.
     const current = $page.url.pathname.replace(/\/+$/, '') || '/';
+    if (ep.id === lastAutoNavEpisodeId) return;
+    lastAutoNavEpisodeId = ep.id;
+    const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
     const want = (target.replace(/\/+$/, '') || '/').replace(base, '') || '/';
     const have = current.replace(base, '') || '/';
-    if (have === want) {
-      lastAutoNavEpisodeId = ep.id;
-      return;
-    }
-    const isUserBouncedAway = lastAutoNavEpisodeId === ep.id;
+    // Already on the episode's route (page-follow may have brought us
+    // here) — no navigation needed.
+    if (have === want) return;
     void goto(target, {
       replaceState: false,
       noScroll: false,
       keepFocus: true,
     });
-    if (isUserBouncedAway) {
-      showManualActionIndicator(m.audio_action_tour_driving(), 3500);
-    }
-    lastAutoNavEpisodeId = ep.id;
   });
+
+  // Page-follows-user navigation (#358). The episode follows the route the
+  // listener lands on, so the overlay never strands them on a stale window:
+  //   • tour active → fast-forward / rewind the tour to this page's episode
+  //     and keep playing (a manual nav == a tour skip);
+  //   • single play → load this page's episode, PAUSED;
+  //   • page owns no (tour) episode → stop audio, idle the window.
+  // Only engages once audio is in play (a loaded episode or a running
+  // tour) — plain browsing with the overlay idle must never auto-load.
+  afterNavigate((nav) => {
+    // Skip the initial 'enter' navigation so we don't fight tour-resume.
+    if (!browser || nav.type === 'enter') return;
+    const path = nav.to?.url.pathname;
+    if (!path) return;
+    // Ignore query-only / same-pathname navigations (filter changes,
+    // deep-link param updates) — only a real route change follows.
+    if (nav.from?.url.pathname === path) return;
+    void routeFollowEpisode(path);
+  });
+
+  async function routeFollowEpisode(path: string): Promise<void> {
+    if (!audio.tourActive && !audio.currentEpisode) return;
+
+    const here = audioRegistry.forRoute(path);
+    // During a tour, only follow to episodes in the active sequence — a
+    // manual nav is a tour skip, not a detour onto off-sequence audio.
+    const target = audio.tourActive
+      ? here.find((ep) => audio.tourSequence.includes(ep.id))
+      : here[0];
+
+    // Already showing this page's episode — covers tour-driven nav that
+    // just advanced here. Nothing to do; avoids reload + feedback loops.
+    if (target && audio.currentEpisode?.id === target.id) return;
+
+    if (!target) {
+      // Edge 1A — page owns no (tour) episode. Stop so it doesn't keep
+      // narrating the page you left.
+      if (audioEl && !audioEl.paused) audioEl.pause();
+      audio.pause();
+      if (!audio.tourActive) {
+        // Single play → clean idle window. (Tour keeps its bar + pointer
+        // so stepping back onto the trail resumes where you are.)
+        audio.currentEpisode = null;
+        audio.positionSec = 0;
+      }
+      return;
+    }
+
+    if (audio.tourActive) {
+      // Edge 2A/3A — forced fast-forward (or rewind): move the pointer and
+      // keep the guided run playing.
+      audio.jumpTourToId(target.id);
+      void loadAndPlay(target);
+    } else {
+      // Single-episode — stop the stale track, load PAUSED at position 0.
+      if (audioEl && !audioEl.paused) audioEl.pause();
+      audio.loadEpisode(target);
+      await tick();
+      audioEl?.load();
+    }
+  }
 
   // Tour Phase 2 — fire stage hooks during playback. Watches position
   // against the current episode's stage timings; each stage fires once.

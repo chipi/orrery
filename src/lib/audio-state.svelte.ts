@@ -240,6 +240,24 @@ class AudioState {
     if (!this.tourActive || this.tourSequence.length === 0) return null;
     return this.tourSequence[this.tourIndex] ?? null;
   }
+
+  // Move the tour pointer to a specific episode id (page-follows-user
+  // navigation — #354/#358). When the listener manually navigates to a
+  // page that owns a tour episode, we "fast-forward" (or rewind) the
+  // tour to that episode rather than yanking them back to the old route.
+  // Returns true when the id is in the active sequence and the pointer
+  // moved (or already pointed there); false when the id isn't part of the
+  // tour, so the caller can fall back to single-episode handling.
+  jumpTourToId(id: string): boolean {
+    if (!this.tourActive) return false;
+    const idx = this.tourSequence.indexOf(id);
+    if (idx < 0) return false;
+    if (idx !== this.tourIndex) {
+      this.tourIndex = idx;
+      this.persistTourImmediate();
+    }
+    return true;
+  }
 }
 
 export const audio = new AudioState();

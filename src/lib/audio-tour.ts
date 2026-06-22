@@ -497,12 +497,29 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:00:16.0 "Look at the arc"
     { at_sec: 16, action: 'scroll-to', target: '[data-audio-stage="fly-hud"]' },
     { at_sec: 18, action: 'flash', target: '[data-audio-stage="fly-hud"]' },
+    // VTT 00:00:31.4 "That total velocity puts the spacecraft on a Keplerian
+    // ellipse… perihelion at Earth's distance, aphelion at Mars." Turn the
+    // Science Lens ON so the orbital-mechanics overlays show while the
+    // narrator describes the ellipse (user direction: toggle the lens).
+    { at_sec: 33, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
     // VTT § 00:00:44.8 "Press play. Watch the spacecraft slide along the arc."
     {
       at_sec: 44,
       action: 'cue',
       target: 'Press play — watch the spacecraft slide along the arc.',
       duration_ms: 4000,
+    },
+    { at_sec: 46, action: 'click', target: '[data-audio-stage="fly-play"]' },
+    // Lens back OFF before the porkchop / cislunar explanation.
+    { at_sec: 65, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // VTT 00:01:20.5 "Some missions add a cislunar view — switchable from
+    // the toolbar. Earth-centered, not Sun-centered." (Cislunar is mission-
+    // conditional, so this is a cue rather than a toggle on the default arc.)
+    {
+      at_sec: 73,
+      action: 'cue',
+      target: 'Cislunar view — Earth-centered, switchable per mission.',
+      duration_ms: 5000,
     },
     // VTT § 00:01:59.8 "Click any phase chip"
     {

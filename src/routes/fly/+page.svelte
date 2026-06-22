@@ -7255,6 +7255,7 @@
     <button
       type="button"
       class="play-btn"
+      data-audio-stage="fly-play"
       onclick={togglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
     >

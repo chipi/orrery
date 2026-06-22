@@ -248,7 +248,7 @@
           class:active={tab === 'anatomy'}
           onclick={() => (tab = 'anatomy')}
           role="tab"
-          aria-selected={tab === 'anatomy'}>{hasDiagram ? 'ANATOMY' : 'LEARN'}</button
+          aria-selected={tab === 'anatomy'}>DETAIL</button
         >
       {/if}
     </div>

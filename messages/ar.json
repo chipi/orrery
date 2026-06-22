@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "النص",
+  "colophon_listen": "استماع",
+  "colophon_close_aria": "إغلاق العرض بالحجم الكامل",
   "colophon_section_tours": "حلقات الجولة",
   "colophon_tours_note": "كل حلقة مكتوبة من أجل Orrery — النصوص صاغها الذكاء الاصطناعي، والأصوات مُركّبة بواسطة خدمات خارجية. كل عنوان يرتبط بنصه المكتوب.",
   "colophon_section_cutaways": "مقاطع المركبات الفضائية",

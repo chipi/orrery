@@ -25,11 +25,13 @@
     writing: Item[];
   };
   // Tour episodes (#358 follow-up) — original scripts live here on the
-  // colophon, not /credits. Each links to its transcript.
-  type Episode = { id: string; title: string; route: string; txt: string };
+  // colophon, not /credits. Two contributions: the written script
+  // (transcript) and the synthesized audio (listen).
+  type Episode = { id: string; title: string; route: string; txt: string; mp3: string };
 
   let data = $state<Manifest | null>(null);
   let episodes = $state<Episode[]>([]);
+  let lightbox = $state<{ src: string; title: string; route: string } | null>(null);
 
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
@@ -55,6 +57,7 @@
             title: e.title ?? e.episode_id,
             route: e.route ?? '/',
             txt: e.path_txt,
+            mp3: e.path_mp3 ?? '',
           });
         }
         episodes = [...byId.values()];
@@ -88,7 +91,14 @@
       <ul class="thumb-grid wide">
         {#each data.anatomy_art as d (d.file)}
           <li class="thumb-card">
-            <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+            <button
+              type="button"
+              class="thumb-open"
+              onclick={() =>
+                (lightbox = { src: `${base}${d.file}`, title: d.title, route: '/fleet' })}
+            >
+              <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+            </button>
             <span class="thumb-title">{d.title}</span>
           </li>
         {/each}
@@ -103,7 +113,14 @@
       <ul class="thumb-grid">
         {#each data.diagrams_science as d (d.file)}
           <li class="thumb-card" class:cover={d.cover}>
-            <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+            <button
+              type="button"
+              class="thumb-open"
+              onclick={() =>
+                (lightbox = { src: `${base}${d.file}`, title: d.title, route: '/science' })}
+            >
+              <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+            </button>
             <span class="thumb-title">{d.title}</span>
           </li>
         {/each}
@@ -150,10 +167,28 @@
         <ul class="episode-list">
           {#each episodes as ep (ep.id)}
             <li class="episode">
-              <a class="ep-title" href="{base}{ep.txt}" target="_blank" rel="noopener noreferrer">
-                {ep.title}
-              </a>
-              <a class="ep-route" href="{base}{ep.route}"><code>{ep.route}</code></a>
+              <span class="ep-title">{ep.title}</span>
+              <span class="ep-actions">
+                <a
+                  class="ep-action script"
+                  href="{base}{ep.txt}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  ↓ {m.colophon_transcript()}
+                </a>
+                {#if ep.mp3}
+                  <a
+                    class="ep-action audio"
+                    href="{base}{ep.mp3}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ▶ {m.colophon_listen()}
+                  </a>
+                {/if}
+              </span>
             </li>
           {/each}
         </ul>
@@ -161,6 +196,25 @@
     {/if}
   {/if}
 </section>
+
+{#if lightbox}
+  <button
+    type="button"
+    class="lightbox"
+    onclick={() => (lightbox = null)}
+    aria-label={m.colophon_close_aria()}
+  >
+    <figure>
+      <img src={lightbox.src} alt={lightbox.title} />
+      <figcaption>
+        <span class="lb-title">{lightbox.title}</span>
+        <a class="lb-route" href="{base}{lightbox.route}"
+          >{m.colophon_seen_on()} {lightbox.route} →</a
+        >
+      </figcaption>
+    </figure>
+  </button>
+{/if}
 
 <style>
   .colophon {
@@ -247,6 +301,14 @@
     flex-direction: column;
     gap: 8px;
   }
+  .thumb-open {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+  }
   .thumb-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -314,28 +376,94 @@
   }
   .episode {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 7px 0;
+    padding: 9px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
   .ep-title {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
   }
-  .ep-title:hover {
-    color: #fff;
-  }
-  .ep-route {
-    text-decoration: none;
+  .ep-actions {
+    display: inline-flex;
+    gap: 8px;
     flex-shrink: 0;
   }
-  .ep-route code {
+  .ep-action {
     font-family: 'Space Mono', monospace;
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  /* Two contributions, two accents: script = gold, audio = teal. */
+  .ep-action.script {
+    color: rgba(201, 170, 111, 0.95);
+    border-color: rgba(201, 170, 111, 0.35);
+    background: rgba(201, 170, 111, 0.08);
+  }
+  .ep-action.script:hover {
+    background: rgba(201, 170, 111, 0.16);
+  }
+  .ep-action.audio {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.35);
+    background: rgba(78, 205, 196, 0.08);
+  }
+  .ep-action.audio:hover {
+    background: rgba(78, 205, 196, 0.16);
+  }
+
+  /* Full-size lightbox (#367). */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vmin;
+    border: 0;
+    background: rgba(4, 7, 10, 0.92);
+    cursor: zoom-out;
+  }
+  .lightbox figure {
+    margin: 0;
+    max-width: 96vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 84vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox figcaption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .lb-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: #fff;
+  }
+  .lb-route {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 205, 196, 0.5);
   }
 </style>

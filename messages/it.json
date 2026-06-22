@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "Trascrizione",
+  "colophon_listen": "Ascolta",
+  "colophon_close_aria": "Chiudi la vista a schermo intero",
   "colophon_section_tours": "Episodi del tour",
   "colophon_tours_note": "Ogni episodio è scritto per Orrery — testi redatti con IA, voci sintetizzate da servizi di terzi. Ogni titolo rimanda alla sua trascrizione.",
   "colophon_section_cutaways": "Spaccati di veicoli spaziali",

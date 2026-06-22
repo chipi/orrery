@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "Расшифровка",
+  "colophon_listen": "Слушать",
+  "colophon_close_aria": "Закрыть полноэкранный просмотр",
   "colophon_section_tours": "Эпизоды тура",
   "colophon_tours_note": "Каждый эпизод написан для Orrery — сценарии созданы ИИ, голоса синтезированы сторонними сервисами. Каждый заголовок ведёт к расшифровке.",
   "colophon_section_cutaways": "Разрезы космических аппаратов",

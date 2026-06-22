@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "Transcript",
+  "colophon_listen": "Listen",
+  "colophon_close_aria": "Close full-size view",
   "colophon_section_tours": "Tour episodes",
   "colophon_tours_note": "Every tour episode is written for Orrery — scripts AI-drafted, voices synthesized by third-party services. Each title links to its transcript.",
   "colophon_section_cutaways": "Spacecraft cutaways",

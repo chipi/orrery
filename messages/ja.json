@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "文字起こし",
+  "colophon_listen": "再生",
+  "colophon_close_aria": "全画面表示を閉じる",
   "colophon_section_tours": "ツアーのエピソード",
   "colophon_tours_note": "各エピソードは Orrery のために書かれています。台本はAIが起草し、音声は外部サービスで合成。各タイトルは文字起こしにリンクします。",
   "colophon_section_cutaways": "宇宙機のカットアウェイ",

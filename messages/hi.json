@@ -1,5 +1,8 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_transcript": "ट्रांसक्रिप्ट",
+  "colophon_listen": "सुनें",
+  "colophon_close_aria": "पूर्ण-आकार दृश्य बंद करें",
   "colophon_section_tours": "टूर एपिसोड",
   "colophon_tours_note": "हर एपिसोड Orrery के लिए लिखा गया है — स्क्रिप्ट AI द्वारा तैयार, आवाज़ें तृतीय-पक्ष सेवाओं द्वारा संश्लेषित। हर शीर्षक उसके ट्रांसक्रिप्ट से जुड़ा है।",
   "colophon_section_cutaways": "अंतरिक्ष यान कटअवे",

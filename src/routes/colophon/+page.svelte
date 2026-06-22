@@ -15,7 +15,7 @@
   import { getAudioProvenanceManifest } from '$lib/data';
 
   type Diagram = { title: string; file: string; cover: boolean };
-  type Item = { title: string; what: string; where: string; route: string };
+  type Item = { title: string; what: string; where: string; route: string; thumb?: string };
   type Manifest = {
     anatomy_art: Diagram[];
     diagrams_science: Diagram[];
@@ -133,7 +133,17 @@
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">
           {#each sec.items as it (it.title)}
-            <li class="item">
+            <li class="item" class:has-thumb={it.thumb}>
+              {#if it.thumb}
+                <button
+                  type="button"
+                  class="thumb-open it-thumb"
+                  onclick={() =>
+                    (lightbox = { src: `${base}${it.thumb}`, title: it.title, route: it.route })}
+                >
+                  <img src="{base}{it.thumb}" alt={it.title} loading="lazy" decoding="async" />
+                </button>
+              {/if}
               <p class="it-title">{it.title}</p>
               <p class="it-what">{it.what}</p>
               <a class="it-where" href="{base}{it.route}">{m.colophon_seen_on()} {it.where} →</a>
@@ -338,6 +348,25 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     padding: 14px 16px;
+    overflow: hidden;
+  }
+  .item.has-thumb {
+    padding-top: 0;
+  }
+  .it-thumb {
+    margin: 0 -16px 12px;
+    display: block;
+    width: calc(100% + 32px);
+    border: 0;
+    padding: 0;
+    background: #11151a;
+    cursor: zoom-in;
+  }
+  .it-thumb img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
   }
   .it-title {
     font-weight: 600;
@@ -383,12 +412,17 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
   .ep-title {
+    flex: 1;
     font-size: 13px;
+    line-height: 1.35;
     color: rgba(255, 255, 255, 0.85);
   }
+  /* Stack the two chips vertically — that frees the row width so the title
+     can run to two lines instead of truncating. */
   .ep-actions {
-    display: inline-flex;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     flex-shrink: 0;
   }
   .ep-action {
@@ -400,6 +434,7 @@
     border-radius: 3px;
     border: 1px solid transparent;
     white-space: nowrap;
+    text-align: center;
   }
   /* Two contributions, two accents: script = gold, audio = teal. */
   .ep-action.script {

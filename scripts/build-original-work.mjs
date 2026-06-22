@@ -75,7 +75,11 @@ const anatomyArt = (() => {
       .sort()
       .map((f) => {
         const id = f.replace(/\.webp$/, '');
-        return { title: fleetNames[id] ?? humanize(id), file: `/images/anatomy/${f}`, cover: false };
+        return {
+          title: fleetNames[id] ?? humanize(id),
+          file: `/images/anatomy/${f}`,
+          cover: false,
+        };
       });
   } catch {
     return [];
@@ -108,6 +112,7 @@ const models3d = [
     what: 'Truss, modules, and solar arrays built from the station module schema.',
     where: 'ISS orbital scene',
     route: '/iss',
+    thumb: '/images/colophon/model-iss.webp',
   },
   {
     title: 'Tiangong proxy model',
@@ -126,6 +131,7 @@ const models3d = [
     what: 'Hubble, JWST, and generic bus + panel builds keyed to operator agency.',
     where: 'Earth orbital markers',
     route: '/earth',
+    thumb: '/images/colophon/model-earth.webp',
   },
   {
     title: 'Earth launch facilities',
@@ -138,6 +144,7 @@ const models3d = [
     what: 'Cruise-stage probe bodies with antenna + panels for trajectory scenes.',
     where: 'Fly + Explore',
     route: '/fly',
+    thumb: '/images/colophon/model-fly.webp',
   },
   {
     title: 'Orbit overlays',
@@ -183,18 +190,21 @@ const canvas2d = [
     what: 'Top-down orrery with shaded planets, glow, orbit rings, and Saturn’s rings.',
     where: 'Explore 2D mode',
     route: '/explore',
+    thumb: '/images/colophon/viz-system-map.webp',
   },
   {
     title: 'Porkchop Δv heatmap',
     what: 'Departure × time-of-flight grid colour-mapped from a Lambert solver.',
     where: 'Plan a transfer',
     route: '/plan',
+    thumb: '/images/colophon/viz-porkchop.webp',
   },
   {
     title: 'Station blueprints',
     what: 'Orthographic top / side projections of every station module.',
     where: 'ISS + Tiangong',
     route: '/iss',
+    thumb: '/images/colophon/viz-blueprint.webp',
   },
   {
     title: 'Surface-map nation legend',

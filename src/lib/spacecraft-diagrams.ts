@@ -60,7 +60,55 @@ const FLEET_TO_FILE: Record<string, string> = {
   'htv-x': 'htv_x',
 };
 
+/**
+ * Iconic-set anatomy ART (#367) — generated watercolor cutaways (payload
+ * craft) + pencil sketches (launchers), stored as raster under
+ * `/images/anatomy/{id}.webp`. These take precedence over the legacy SVG
+ * schematics; the ANATOMY tab + /colophon render them via a plain <img>.
+ */
+export const SPACECRAFT_ANATOMY_IMG = new Set<string>([
+  // pencil-sketch launchers
+  'falcon-9',
+  'falcon-heavy',
+  'sls-block-1',
+  'space-shuttle-stack',
+  'ariane-5',
+  'starship',
+  'soyuz-2',
+  'n1',
+  // watercolor cutaways
+  'space-shuttle-orbiter',
+  'orion',
+  'gemini',
+  'mercury-capsule',
+  'buran',
+  'x37b',
+  'voyager-2',
+  'galileo',
+  'juno',
+  'parker-solar-probe',
+  'mro',
+  'rosetta',
+  'viking-1',
+  'venera-13',
+  'change-4',
+  'luna-9',
+  'sojourner',
+  'opportunity',
+  'lunokhod-1',
+  'zhurong',
+  'skylab',
+  'salyut-1',
+  'tiangong',
+  'kepler',
+  'spitzer',
+  'chandra',
+  'atv',
+  'htv',
+]);
+
 export function spacecraftDiagramPath(id: string): string | null {
+  if (SPACECRAFT_ANATOMY_IMG.has(id)) return `${base}/images/anatomy/${id}.webp`;
   if (!SPACECRAFT_DIAGRAMS.has(id)) return null;
   const file = FLEET_TO_FILE[id] ?? id;
   return `${base}/diagrams/spacecraft/${file}.svg`;

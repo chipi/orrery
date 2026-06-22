@@ -1,5 +1,187 @@
 {
   "generated_by": "scripts/build-original-work.mjs",
+  "anatomy_art": [
+    {
+      "title": "Ariane 5",
+      "file": "/images/anatomy/ariane-5.webp",
+      "cover": false
+    },
+    {
+      "title": "ATV (Automated Transfer Vehicle)",
+      "file": "/images/anatomy/atv.webp",
+      "cover": false
+    },
+    {
+      "title": "Buran",
+      "file": "/images/anatomy/buran.webp",
+      "cover": false
+    },
+    {
+      "title": "Chandra X-ray Observatory",
+      "file": "/images/anatomy/chandra.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 4",
+      "file": "/images/anatomy/change-4.webp",
+      "cover": false
+    },
+    {
+      "title": "Falcon 9 Block 5",
+      "file": "/images/anatomy/falcon-9.webp",
+      "cover": false
+    },
+    {
+      "title": "Falcon Heavy",
+      "file": "/images/anatomy/falcon-heavy.webp",
+      "cover": false
+    },
+    {
+      "title": "Galileo",
+      "file": "/images/anatomy/galileo.webp",
+      "cover": false
+    },
+    {
+      "title": "Gemini",
+      "file": "/images/anatomy/gemini.webp",
+      "cover": false
+    },
+    {
+      "title": "HTV (Kounotori)",
+      "file": "/images/anatomy/htv.webp",
+      "cover": false
+    },
+    {
+      "title": "Juno",
+      "file": "/images/anatomy/juno.webp",
+      "cover": false
+    },
+    {
+      "title": "Kepler",
+      "file": "/images/anatomy/kepler.webp",
+      "cover": false
+    },
+    {
+      "title": "Luna 9",
+      "file": "/images/anatomy/luna-9.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunokhod 1",
+      "file": "/images/anatomy/lunokhod-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Mercury capsule",
+      "file": "/images/anatomy/mercury-capsule.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars Reconnaissance Orbiter",
+      "file": "/images/anatomy/mro.webp",
+      "cover": false
+    },
+    {
+      "title": "N1",
+      "file": "/images/anatomy/n1.webp",
+      "cover": false
+    },
+    {
+      "title": "Opportunity (MER-B)",
+      "file": "/images/anatomy/opportunity.webp",
+      "cover": false
+    },
+    {
+      "title": "Orion",
+      "file": "/images/anatomy/orion.webp",
+      "cover": false
+    },
+    {
+      "title": "Parker Solar Probe",
+      "file": "/images/anatomy/parker-solar-probe.webp",
+      "cover": false
+    },
+    {
+      "title": "Rosetta",
+      "file": "/images/anatomy/rosetta.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 1",
+      "file": "/images/anatomy/salyut-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Skylab",
+      "file": "/images/anatomy/skylab.webp",
+      "cover": false
+    },
+    {
+      "title": "SLS Block 1",
+      "file": "/images/anatomy/sls-block-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Sojourner",
+      "file": "/images/anatomy/sojourner.webp",
+      "cover": false
+    },
+    {
+      "title": "Soyuz-2",
+      "file": "/images/anatomy/soyuz-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle Orbiter",
+      "file": "/images/anatomy/space-shuttle-orbiter.webp",
+      "cover": false
+    },
+    {
+      "title": "Space Shuttle stack",
+      "file": "/images/anatomy/space-shuttle-stack.webp",
+      "cover": false
+    },
+    {
+      "title": "Spitzer Space Telescope",
+      "file": "/images/anatomy/spitzer.webp",
+      "cover": false
+    },
+    {
+      "title": "Starship",
+      "file": "/images/anatomy/starship.webp",
+      "cover": false
+    },
+    {
+      "title": "Tiangong",
+      "file": "/images/anatomy/tiangong.webp",
+      "cover": false
+    },
+    {
+      "title": "Venera 13",
+      "file": "/images/anatomy/venera-13.webp",
+      "cover": false
+    },
+    {
+      "title": "Viking 1",
+      "file": "/images/anatomy/viking-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Voyager 2",
+      "file": "/images/anatomy/voyager-2.webp",
+      "cover": false
+    },
+    {
+      "title": "X-37B OTV",
+      "file": "/images/anatomy/x37b.webp",
+      "cover": false
+    },
+    {
+      "title": "Zhurong",
+      "file": "/images/anatomy/zhurong.webp",
+      "cover": false
+    }
+  ],
   "diagrams_science": [
     {
       "title": "History",
@@ -645,6 +827,7 @@
     }
   ],
   "totals": {
+    "anatomy_art": 36,
     "diagrams_science": 74,
     "diagrams_spacecraft": 20,
     "models3d": 15,

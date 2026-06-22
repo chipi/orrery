@@ -9,7 +9,7 @@
  *
  * Re-run after adding diagrams:  node scripts/build-original-work.mjs
  */
-import { readdirSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const ACRONYMS = new Set([
   'au',
@@ -60,6 +60,26 @@ function scanDiagrams(dir, urlBase) {
 
 const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
 const spacecraft = scanDiagrams('static/diagrams/spacecraft', '/diagrams/spacecraft');
+
+// Generated spacecraft anatomy ART (#367) — watercolor cutaways + pencil
+// sketches under /images/anatomy/{id}.webp. Titles pulled from the fleet
+// index so they read as proper names ("Mars Reconnaissance Orbiter").
+const fleetNames = Object.fromEntries(
+  JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.name]),
+);
+const anatomyArt = (() => {
+  try {
+    return readdirSync('static/images/anatomy')
+      .filter((f) => f.endsWith('.webp'))
+      .sort()
+      .map((f) => {
+        const id = f.replace(/\.webp$/, '');
+        return { title: fleetNames[id] ?? humanize(id), file: `/images/anatomy/${f}`, cover: false };
+      });
+  } catch {
+    return [];
+  }
+})();
 
 // Curated, non-previewable categories. `route` is where the graphic is
 // drawn live; `where` is a human label for the surface.
@@ -239,6 +259,7 @@ const writing = [
 
 const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
+  anatomy_art: anatomyArt,
   diagrams_science: science,
   diagrams_spacecraft: spacecraft,
   models3d,
@@ -246,6 +267,7 @@ const manifest = {
   ui,
   writing,
   totals: {
+    anatomy_art: anatomyArt.length,
     diagrams_science: science.length,
     diagrams_spacecraft: spacecraft.length,
     models3d: models3d.length,

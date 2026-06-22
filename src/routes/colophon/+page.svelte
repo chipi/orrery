@@ -15,6 +15,7 @@
   type Diagram = { title: string; file: string; cover: boolean };
   type Item = { title: string; what: string; where: string; route: string };
   type Manifest = {
+    anatomy_art: Diagram[];
     diagrams_science: Diagram[];
     diagrams_spacecraft: Diagram[];
     models3d: Item[];
@@ -54,6 +55,21 @@
   {#if !data}
     <p class="loading">…</p>
   {:else}
+    <!-- Showpiece: generated watercolor cutaways + pencil sketches (#367). -->
+    <section class="block" aria-labelledby="sec-cutaways">
+      <h2 id="sec-cutaways">
+        {m.colophon_section_cutaways()}<span class="count">{data.anatomy_art.length}</span>
+      </h2>
+      <ul class="thumb-grid wide">
+        {#each data.anatomy_art as d (d.file)}
+          <li class="thumb-card">
+            <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
+            <span class="thumb-title">{d.title}</span>
+          </li>
+        {/each}
+      </ul>
+    </section>
+
     <!-- Hand-authored SVG diagrams: real thumbnails. -->
     <section class="block" aria-labelledby="sec-diagrams">
       <h2 id="sec-diagrams">
@@ -185,6 +201,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 14px;
+  }
+  /* Detailed cutaway art reads better at a larger thumbnail. */
+  .thumb-grid.wide {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  }
+  .thumb-grid.wide .thumb-card img {
+    aspect-ratio: 3 / 2;
   }
   .thumb-card {
     background: rgba(255, 255, 255, 0.02);

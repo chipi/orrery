@@ -101,14 +101,16 @@
   }
 
   function formatTextAuthorship(row: AudioRow): string {
-    const model = row.text_author_model ? ` (${row.text_author_model})` : '';
+    // We disclose AI involvement generically — never which specific model
+    // (user direction). The `text_author_model` field is intentionally not
+    // surfaced.
     switch (row.text_authorship) {
       case 'claude-drafted':
-        return `Claude drafted${model}`;
+        return 'AI-drafted';
       case 'claude-translated':
-        return `Claude translated${model}`;
+        return 'AI-translated';
       case 'human-edited-claude-draft':
-        return `Claude draft, human-edited${model}`;
+        return 'AI draft, human-edited';
       case 'human-authored':
         return 'Human-authored';
       default:

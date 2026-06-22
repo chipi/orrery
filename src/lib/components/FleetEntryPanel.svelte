@@ -438,7 +438,7 @@
             decoding="async"
           />
           <p class="anatomy-caption">
-            Hand-drawn schematic in the canonical /science chapter style.
+            Original anatomy illustration made for Orrery.
           </p>
         </div>
       {:else if tab === 'crew' && hasFlights}

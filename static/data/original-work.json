@@ -12,6 +12,11 @@
       "cover": false
     },
     {
+      "title": "BepiColombo",
+      "file": "/images/anatomy/bepicolombo.webp",
+      "cover": false
+    },
+    {
       "title": "Buran",
       "file": "/images/anatomy/buran.webp",
       "cover": false
@@ -24,6 +29,16 @@
     {
       "title": "Chang'e 4",
       "file": "/images/anatomy/change-4.webp",
+      "cover": false
+    },
+    {
+      "title": "DART",
+      "file": "/images/anatomy/dart.webp",
+      "cover": false
+    },
+    {
+      "title": "Europa Clipper",
+      "file": "/images/anatomy/europa-clipper.webp",
       "cover": false
     },
     {
@@ -47,8 +62,18 @@
       "cover": false
     },
     {
+      "title": "Hayabusa2",
+      "file": "/images/anatomy/hayabusa-2.webp",
+      "cover": false
+    },
+    {
       "title": "HTV (Kounotori)",
       "file": "/images/anatomy/htv.webp",
+      "cover": false
+    },
+    {
+      "title": "JUICE",
+      "file": "/images/anatomy/juice.webp",
       "cover": false
     },
     {
@@ -62,6 +87,11 @@
       "cover": false
     },
     {
+      "title": "Lucy",
+      "file": "/images/anatomy/lucy.webp",
+      "cover": false
+    },
+    {
       "title": "Luna 9",
       "file": "/images/anatomy/luna-9.webp",
       "cover": false
@@ -72,8 +102,33 @@
       "cover": false
     },
     {
+      "title": "Magellan",
+      "file": "/images/anatomy/magellan.webp",
+      "cover": false
+    },
+    {
+      "title": "Mariner 9",
+      "file": "/images/anatomy/mariner-9.webp",
+      "cover": false
+    },
+    {
+      "title": "Mars Express",
+      "file": "/images/anatomy/mars-express.webp",
+      "cover": false
+    },
+    {
+      "title": "MAVEN",
+      "file": "/images/anatomy/maven.webp",
+      "cover": false
+    },
+    {
       "title": "Mercury capsule",
       "file": "/images/anatomy/mercury-capsule.webp",
+      "cover": false
+    },
+    {
+      "title": "MESSENGER",
+      "file": "/images/anatomy/messenger.webp",
       "cover": false
     },
     {
@@ -97,8 +152,28 @@
       "cover": false
     },
     {
+      "title": "OSIRIS-REx",
+      "file": "/images/anatomy/osiris-rex.webp",
+      "cover": false
+    },
+    {
       "title": "Parker Solar Probe",
       "file": "/images/anatomy/parker-solar-probe.webp",
+      "cover": false
+    },
+    {
+      "title": "Pioneer 10",
+      "file": "/images/anatomy/pioneer-10.webp",
+      "cover": false
+    },
+    {
+      "title": "Pioneer 11",
+      "file": "/images/anatomy/pioneer-11.webp",
+      "cover": false
+    },
+    {
+      "title": "Psyche",
+      "file": "/images/anatomy/psyche-spacecraft.webp",
       "cover": false
     },
     {
@@ -124,6 +199,11 @@
     {
       "title": "Sojourner",
       "file": "/images/anatomy/sojourner.webp",
+      "cover": false
+    },
+    {
+      "title": "Solar Orbiter",
+      "file": "/images/anatomy/solar-orbiter.webp",
       "cover": false
     },
     {
@@ -827,7 +907,7 @@
     }
   ],
   "totals": {
-    "anatomy_art": 36,
+    "anatomy_art": 52,
     "diagrams_science": 74,
     "diagrams_spacecraft": 20,
     "models3d": 15,

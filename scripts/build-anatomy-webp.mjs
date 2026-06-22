@@ -5,7 +5,7 @@
  *
  *   node scripts/build-anatomy-webp.mjs
  */
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, statSync, writeFileSync } from 'node:fs';
 import sharp from 'sharp';
 
 // Full-res .png originals are kept in original-assets/ (committed as the
@@ -28,4 +28,9 @@ for (const f of pngs) {
   console.log(`${f.replace(/\.png$/, '')} → webp ${kb} KB`);
   done++;
 }
-console.log(`\n${done} anatomy webp derivatives written.`);
+
+// Emit the id list so src/lib/spacecraft-diagrams.ts derives its anatomy
+// manifest automatically — no hand-editing the set as art is added.
+const ids = pngs.map((f) => f.replace(/\.png$/, '')).sort();
+writeFileSync('src/lib/anatomy-ids.json', JSON.stringify(ids, null, 0) + '\n');
+console.log(`\n${done} anatomy webp derivatives written; ${ids.length} ids → anatomy-ids.json.`);

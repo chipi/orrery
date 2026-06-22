@@ -569,6 +569,16 @@
     font-size: 12px;
   }
 
+  /* Match the photo-source section headers (.src-meta h2) so the audio
+     "Audio narration" title shares the Bebas Neue treatment instead of
+     falling back to the default browser h3. */
+  .source-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    color: #fff;
+  }
   .audio-card .head-row {
     margin-bottom: 12px;
   }

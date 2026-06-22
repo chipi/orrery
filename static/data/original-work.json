@@ -1,0 +1,655 @@
+{
+  "generated_by": "scripts/build-original-work.mjs",
+  "diagrams_science": [
+    {
+      "title": "History",
+      "file": "/diagrams/science/_cover-history.svg",
+      "cover": true
+    },
+    {
+      "title": "Life In Space",
+      "file": "/diagrams/science/_cover-life-in-space.svg",
+      "cover": true
+    },
+    {
+      "title": "Mission Phases",
+      "file": "/diagrams/science/_cover-mission-phases.svg",
+      "cover": true
+    },
+    {
+      "title": "Observation",
+      "file": "/diagrams/science/_cover-observation.svg",
+      "cover": true
+    },
+    {
+      "title": "Orbits",
+      "file": "/diagrams/science/_cover-orbits.svg",
+      "cover": true
+    },
+    {
+      "title": "Planets",
+      "file": "/diagrams/science/_cover-planets.svg",
+      "cover": true
+    },
+    {
+      "title": "Porkchop",
+      "file": "/diagrams/science/_cover-porkchop.svg",
+      "cover": true
+    },
+    {
+      "title": "Propulsion",
+      "file": "/diagrams/science/_cover-propulsion.svg",
+      "cover": true
+    },
+    {
+      "title": "Scales Time",
+      "file": "/diagrams/science/_cover-scales-time.svg",
+      "cover": true
+    },
+    {
+      "title": "Space Stations",
+      "file": "/diagrams/science/_cover-space-stations.svg",
+      "cover": true
+    },
+    {
+      "title": "Transfers",
+      "file": "/diagrams/science/_cover-transfers.svg",
+      "cover": true
+    },
+    {
+      "title": "Apsides",
+      "file": "/diagrams/science/apsides.svg",
+      "cover": false
+    },
+    {
+      "title": "Asteroid Belt",
+      "file": "/diagrams/science/asteroid-belt.svg",
+      "cover": false
+    },
+    {
+      "title": "AU",
+      "file": "/diagrams/science/au.svg",
+      "cover": false
+    },
+    {
+      "title": "Black Holes",
+      "file": "/diagrams/science/black-holes.svg",
+      "cover": false
+    },
+    {
+      "title": "C3",
+      "file": "/diagrams/science/c3.svg",
+      "cover": false
+    },
+    {
+      "title": "Conic Sections",
+      "file": "/diagrams/science/conic-sections.svg",
+      "cover": false
+    },
+    {
+      "title": "Contour Reading",
+      "file": "/diagrams/science/contour-reading.svg",
+      "cover": false
+    },
+    {
+      "title": "Departure Axis",
+      "file": "/diagrams/science/departure-axis.svg",
+      "cover": false
+    },
+    {
+      "title": "DV Budget",
+      "file": "/diagrams/science/dv-budget.svg",
+      "cover": false
+    },
+    {
+      "title": "DV Heatmap",
+      "file": "/diagrams/science/dv-heatmap.svg",
+      "cover": false
+    },
+    {
+      "title": "Eccentricity",
+      "file": "/diagrams/science/eccentricity.svg",
+      "cover": false
+    },
+    {
+      "title": "Ecliptic Plane",
+      "file": "/diagrams/science/ecliptic-plane.svg",
+      "cover": false
+    },
+    {
+      "title": "EDL",
+      "file": "/diagrams/science/edl.svg",
+      "cover": false
+    },
+    {
+      "title": "EVA Suits",
+      "file": "/diagrams/science/eva-suits.svg",
+      "cover": false
+    },
+    {
+      "title": "EVA",
+      "file": "/diagrams/science/eva.svg",
+      "cover": false
+    },
+    {
+      "title": "Expedition Cadence",
+      "file": "/diagrams/science/expedition-cadence.svg",
+      "cover": false
+    },
+    {
+      "title": "Frames",
+      "file": "/diagrams/science/frames.svg",
+      "cover": false
+    },
+    {
+      "title": "Free Return",
+      "file": "/diagrams/science/free-return.svg",
+      "cover": false
+    },
+    {
+      "title": "Gravity Assist",
+      "file": "/diagrams/science/gravity-assist.svg",
+      "cover": false
+    },
+    {
+      "title": "History Apollo 11",
+      "file": "/diagrams/science/history-apollo-11.svg",
+      "cover": false
+    },
+    {
+      "title": "History Goddard Rocket",
+      "file": "/diagrams/science/history-goddard-rocket.svg",
+      "cover": false
+    },
+    {
+      "title": "History Keplers Laws",
+      "file": "/diagrams/science/history-keplers-laws.svg",
+      "cover": false
+    },
+    {
+      "title": "History Newton Principia",
+      "file": "/diagrams/science/history-newton-principia.svg",
+      "cover": false
+    },
+    {
+      "title": "History Sputnik",
+      "file": "/diagrams/science/history-sputnik.svg",
+      "cover": false
+    },
+    {
+      "title": "History Tsiolkovsky",
+      "file": "/diagrams/science/history-tsiolkovsky.svg",
+      "cover": false
+    },
+    {
+      "title": "Hohmann Transfer",
+      "file": "/diagrams/science/hohmann-transfer.svg",
+      "cover": false
+    },
+    {
+      "title": "Inclination",
+      "file": "/diagrams/science/inclination.svg",
+      "cover": false
+    },
+    {
+      "title": "IVA Suits",
+      "file": "/diagrams/science/iva-suits.svg",
+      "cover": false
+    },
+    {
+      "title": "J2000",
+      "file": "/diagrams/science/j2000.svg",
+      "cover": false
+    },
+    {
+      "title": "Keplerian Orbit",
+      "file": "/diagrams/science/keplerian-orbit.svg",
+      "cover": false
+    },
+    {
+      "title": "Keplers Laws",
+      "file": "/diagrams/science/keplers-laws.svg",
+      "cover": false
+    },
+    {
+      "title": "Kuiper Belt",
+      "file": "/diagrams/science/kuiper-belt.svg",
+      "cover": false
+    },
+    {
+      "title": "Lagrange Points",
+      "file": "/diagrams/science/lagrange-points.svg",
+      "cover": false
+    },
+    {
+      "title": "Lambert Problem",
+      "file": "/diagrams/science/lambert-problem.svg",
+      "cover": false
+    },
+    {
+      "title": "Launch",
+      "file": "/diagrams/science/launch.svg",
+      "cover": false
+    },
+    {
+      "title": "Light Minute",
+      "file": "/diagrams/science/light-minute.svg",
+      "cover": false
+    },
+    {
+      "title": "Long Duration",
+      "file": "/diagrams/science/long-duration.svg",
+      "cover": false
+    },
+    {
+      "title": "Lunar Suits",
+      "file": "/diagrams/science/lunar-suits.svg",
+      "cover": false
+    },
+    {
+      "title": "MET",
+      "file": "/diagrams/science/met.svg",
+      "cover": false
+    },
+    {
+      "title": "Microgravity Physiology",
+      "file": "/diagrams/science/microgravity-physiology.svg",
+      "cover": false
+    },
+    {
+      "title": "Mission Types",
+      "file": "/diagrams/science/mission-types.svg",
+      "cover": false
+    },
+    {
+      "title": "Node Module",
+      "file": "/diagrams/science/node-module.svg",
+      "cover": false
+    },
+    {
+      "title": "NRHO",
+      "file": "/diagrams/science/nrho.svg",
+      "cover": false
+    },
+    {
+      "title": "Oberth Effect",
+      "file": "/diagrams/science/oberth-effect.svg",
+      "cover": false
+    },
+    {
+      "title": "Orbit Insertion",
+      "file": "/diagrams/science/orbit-insertion.svg",
+      "cover": false
+    },
+    {
+      "title": "Orbit Regimes",
+      "file": "/diagrams/science/orbit-regimes.svg",
+      "cover": false
+    },
+    {
+      "title": "Patched Conics",
+      "file": "/diagrams/science/patched-conics.svg",
+      "cover": false
+    },
+    {
+      "title": "Porkchop",
+      "file": "/diagrams/science/porkchop.svg",
+      "cover": false
+    },
+    {
+      "title": "Pressurized Volume",
+      "file": "/diagrams/science/pressurized-volume.svg",
+      "cover": false
+    },
+    {
+      "title": "Semi Major Axis",
+      "file": "/diagrams/science/semi-major-axis.svg",
+      "cover": false
+    },
+    {
+      "title": "Sidereal Synodic",
+      "file": "/diagrams/science/sidereal-synodic.svg",
+      "cover": false
+    },
+    {
+      "title": "Solar Power Budget",
+      "file": "/diagrams/science/solar-power-budget.svg",
+      "cover": false
+    },
+    {
+      "title": "Space Photography",
+      "file": "/diagrams/science/space-photography.svg",
+      "cover": false
+    },
+    {
+      "title": "Specific Impulse",
+      "file": "/diagrams/science/specific-impulse.svg",
+      "cover": false
+    },
+    {
+      "title": "TCM",
+      "file": "/diagrams/science/tcm.svg",
+      "cover": false
+    },
+    {
+      "title": "Tof Axis",
+      "file": "/diagrams/science/tof-axis.svg",
+      "cover": false
+    },
+    {
+      "title": "Trans X Injection",
+      "file": "/diagrams/science/trans-x-injection.svg",
+      "cover": false
+    },
+    {
+      "title": "Transfer Ellipse",
+      "file": "/diagrams/science/transfer-ellipse.svg",
+      "cover": false
+    },
+    {
+      "title": "True Anomaly",
+      "file": "/diagrams/science/true-anomaly.svg",
+      "cover": false
+    },
+    {
+      "title": "Tsiolkovsky",
+      "file": "/diagrams/science/tsiolkovsky.svg",
+      "cover": false
+    },
+    {
+      "title": "V Infinity",
+      "file": "/diagrams/science/v-infinity.svg",
+      "cover": false
+    },
+    {
+      "title": "Viability",
+      "file": "/diagrams/science/viability.svg",
+      "cover": false
+    },
+    {
+      "title": "Vis Viva",
+      "file": "/diagrams/science/vis-viva.svg",
+      "cover": false
+    }
+  ],
+  "diagrams_spacecraft": [
+    {
+      "title": "Apollo CSM Block II",
+      "file": "/diagrams/spacecraft/apollo-csm-block-ii.svg",
+      "cover": false
+    },
+    {
+      "title": "Apollo LM",
+      "file": "/diagrams/spacecraft/apollo-lm.svg",
+      "cover": false
+    },
+    {
+      "title": "Cargo Dragon",
+      "file": "/diagrams/spacecraft/cargo_dragon.svg",
+      "cover": false
+    },
+    {
+      "title": "Cassini",
+      "file": "/diagrams/spacecraft/cassini.svg",
+      "cover": false
+    },
+    {
+      "title": "Crew Dragon",
+      "file": "/diagrams/spacecraft/crew_dragon.svg",
+      "cover": false
+    },
+    {
+      "title": "Curiosity",
+      "file": "/diagrams/spacecraft/curiosity.svg",
+      "cover": false
+    },
+    {
+      "title": "Cygnus",
+      "file": "/diagrams/spacecraft/cygnus.svg",
+      "cover": false
+    },
+    {
+      "title": "HTV X",
+      "file": "/diagrams/spacecraft/htv_x.svg",
+      "cover": false
+    },
+    {
+      "title": "Hubble",
+      "file": "/diagrams/spacecraft/hubble.svg",
+      "cover": false
+    },
+    {
+      "title": "JWST",
+      "file": "/diagrams/spacecraft/jwst.svg",
+      "cover": false
+    },
+    {
+      "title": "Mir",
+      "file": "/diagrams/spacecraft/mir.svg",
+      "cover": false
+    },
+    {
+      "title": "Perseverance",
+      "file": "/diagrams/spacecraft/perseverance.svg",
+      "cover": false
+    },
+    {
+      "title": "Progress MS",
+      "file": "/diagrams/spacecraft/progress_ms.svg",
+      "cover": false
+    },
+    {
+      "title": "Saturn V",
+      "file": "/diagrams/spacecraft/saturn-v.svg",
+      "cover": false
+    },
+    {
+      "title": "Shenzhou",
+      "file": "/diagrams/spacecraft/shenzhou.svg",
+      "cover": false
+    },
+    {
+      "title": "Soyuz MS",
+      "file": "/diagrams/spacecraft/soyuz_ms.svg",
+      "cover": false
+    },
+    {
+      "title": "Starliner",
+      "file": "/diagrams/spacecraft/starliner.svg",
+      "cover": false
+    },
+    {
+      "title": "Tianzhou",
+      "file": "/diagrams/spacecraft/tianzhou.svg",
+      "cover": false
+    },
+    {
+      "title": "Vostok",
+      "file": "/diagrams/spacecraft/vostok.svg",
+      "cover": false
+    },
+    {
+      "title": "Voyager 1",
+      "file": "/diagrams/spacecraft/voyager-1.svg",
+      "cover": false
+    }
+  ],
+  "models3d": [
+    {
+      "title": "Apollo Lunar Module",
+      "what": "Engineering-accurate descent + ascent stage, gold MLI foil and RCS quads.",
+      "where": "Moon landing sites · Fly",
+      "route": "/moon"
+    },
+    {
+      "title": "Mars rovers (Curiosity, Perseverance, Zhurong)",
+      "what": "Rocker-bogie chassis, mast, and RTG / solar configurations per mission.",
+      "where": "Mars landing sites",
+      "route": "/mars"
+    },
+    {
+      "title": "Historical landers",
+      "what": "Luna 9, Viking, Pathfinder + Sojourner, Beagle 2, Beresheet, Chandrayaan-3, SLIM, Schiaparelli, Mars 3.",
+      "where": "Moon + Mars landing sites",
+      "route": "/mars"
+    },
+    {
+      "title": "ISS proxy model",
+      "what": "Truss, modules, and solar arrays built from the station module schema.",
+      "where": "ISS orbital scene",
+      "route": "/iss"
+    },
+    {
+      "title": "Tiangong proxy model",
+      "what": "T-configuration core + lab modules and steerable arrays.",
+      "where": "Tiangong orbital scene",
+      "route": "/tiangong"
+    },
+    {
+      "title": "Station module geometry",
+      "what": "Parametric cylinders, trusses, and panels rendered per module descriptor.",
+      "where": "ISS + Tiangong detail",
+      "route": "/iss"
+    },
+    {
+      "title": "Earth satellite models",
+      "what": "Hubble, JWST, and generic bus + panel builds keyed to operator agency.",
+      "where": "Earth orbital markers",
+      "route": "/earth"
+    },
+    {
+      "title": "Earth launch facilities",
+      "what": "Gantry + pad spires for Kennedy, Baikonur, Jiuquan, and others.",
+      "where": "Earth surface markers",
+      "route": "/earth"
+    },
+    {
+      "title": "Interplanetary spacecraft",
+      "what": "Cruise-stage probe bodies with antenna + panels for trajectory scenes.",
+      "where": "Fly + Explore",
+      "route": "/fly"
+    },
+    {
+      "title": "Orbit overlays",
+      "what": "Sphere-of-influence shells, gravity-vector arrows, and conic arcs.",
+      "where": "Fly orbit lens",
+      "route": "/fly"
+    },
+    {
+      "title": "Microgravity axes",
+      "what": "Six labelled arrows marking the station local frame (zenith/nadir…).",
+      "where": "ISS + Tiangong science lens",
+      "route": "/iss"
+    },
+    {
+      "title": "Orbiter rings + marker halos",
+      "what": "Inclination-tilted altitude rings and selection glow halos.",
+      "where": "Earth · Moon · Mars",
+      "route": "/earth"
+    },
+    {
+      "title": "Layered star fields + skydomes",
+      "what": "Three-population star sampling with a squashed Milky Way band.",
+      "where": "All 3D scenes",
+      "route": "/explore"
+    },
+    {
+      "title": "Iconic mission trajectories",
+      "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn flight paths.",
+      "where": "Explore",
+      "route": "/explore"
+    },
+    {
+      "title": "Sun lens flare + galaxies layer",
+      "what": "Screen-space flare ghosts and a distant galaxy point cloud.",
+      "where": "Fly · Explore",
+      "route": "/explore"
+    }
+  ],
+  "canvas2d": [
+    {
+      "title": "2D system map",
+      "what": "Top-down orrery with shaded planets, glow, orbit rings, and Saturn’s rings.",
+      "where": "Explore 2D mode",
+      "route": "/explore"
+    },
+    {
+      "title": "Porkchop Δv heatmap",
+      "what": "Departure × time-of-flight grid colour-mapped from a Lambert solver.",
+      "where": "Plan a transfer",
+      "route": "/plan"
+    },
+    {
+      "title": "Station blueprints",
+      "what": "Orthographic top / side projections of every station module.",
+      "where": "ISS + Tiangong",
+      "route": "/iss"
+    },
+    {
+      "title": "Surface-map nation legend",
+      "what": "Auto-spaced agency colour key drawn onto the flat surface maps.",
+      "where": "Moon + Mars 2D",
+      "route": "/moon"
+    },
+    {
+      "title": "3D text-label sprites",
+      "what": "Canvas-rendered name tags billboarded onto objects in every scene.",
+      "where": "Earth · Moon · Mars · Explore",
+      "route": "/earth"
+    }
+  ],
+  "ui": [
+    {
+      "title": "Landing-page hero",
+      "what": "Hand-built SVG orrery poster — sun corona gradients, orbits, two mission arcs.",
+      "where": "Home",
+      "route": "/"
+    },
+    {
+      "title": "Science info-chips",
+      "what": "Inline “i” glyph linking any figure to its /science explainer.",
+      "where": "Throughout",
+      "route": "/science"
+    },
+    {
+      "title": "Panorama compass rose",
+      "what": "Rotating N/E/S/W marker oriented to the panorama yaw.",
+      "where": "Moon + Mars panoramas",
+      "route": "/moon"
+    },
+    {
+      "title": "Conic-section icons",
+      "what": "Circle / ellipse / parabola / hyperbola glyphs for the orbit overlay.",
+      "where": "Fly",
+      "route": "/fly"
+    },
+    {
+      "title": "Navigation + control glyphs",
+      "what": "Hamburger, science-lens, contrast, quality, and fullscreen icons.",
+      "where": "Every route",
+      "route": "/"
+    }
+  ],
+  "writing": [
+    {
+      "title": "Audio tour scripts",
+      "what": "Every guided + extended tour episode is originally written for Orrery; only the text-to-speech voices are third-party (credited on the Credits page).",
+      "where": "Take the tour",
+      "route": "/credits"
+    },
+    {
+      "title": "Science encyclopedia",
+      "what": "The /science explainers, captions, and figure copy are original writing.",
+      "where": "Science",
+      "route": "/science"
+    }
+  ],
+  "totals": {
+    "diagrams_science": 74,
+    "diagrams_spacecraft": 20,
+    "models3d": 15,
+    "canvas2d": 5,
+    "ui": 5,
+    "writing": 2
+  }
+}

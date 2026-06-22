@@ -238,6 +238,8 @@
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href="{base}/colophon">{m.layout_footer_colophon()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <!-- ABOUT is a hover-only group: not itself a link, just a label.

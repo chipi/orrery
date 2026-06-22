@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "투어 에피소드",
+  "colophon_tours_note": "모든 에피소드는 Orrery를 위해 작성되었습니다. 대본은 AI 초안, 음성은 외부 서비스로 합성. 각 제목은 대본으로 연결됩니다.",
   "colophon_section_cutaways": "우주선 단면도",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

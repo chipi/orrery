@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "Tour-Episoden",
+  "colophon_tours_note": "Jede Tour-Episode wird für Orrery geschrieben – Skripte KI-entworfen, Stimmen von Drittanbietern synthetisiert. Jeder Titel verlinkt auf sein Transkript.",
   "colophon_section_cutaways": "Raumfahrzeug-Schnittbilder",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

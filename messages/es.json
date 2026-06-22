@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "Episodios del recorrido",
+  "colophon_tours_note": "Cada episodio del recorrido se escribe para Orrery: guiones redactados con IA, voces sintetizadas por servicios de terceros. Cada título enlaza con su transcripción.",
   "colophon_section_cutaways": "Cortes de naves",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

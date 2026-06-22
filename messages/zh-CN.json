@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "导览单集",
+  "colophon_tours_note": "每个单集都为 Orrery 撰写——脚本由 AI 起草，配音由第三方服务合成。每个标题链接到其文字稿。",
   "colophon_section_cutaways": "航天器剖视图",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

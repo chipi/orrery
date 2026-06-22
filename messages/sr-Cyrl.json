@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "Епизоде обиласка",
+  "colophon_tours_note": "Свака епизода је написана за Orrery — текстове је израдила вештачка интелигенција, гласове синтетишу услуге трећих страна. Сваки наслов води до транскрипта.",
   "colophon_section_cutaways": "Пресеци свемирских летелица",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

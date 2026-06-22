@@ -11,6 +11,8 @@
   */
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { getAudioProvenanceManifest } from '$lib/data';
 
   type Diagram = { title: string; file: string; cover: boolean };
   type Item = { title: string; what: string; where: string; route: string };
@@ -23,8 +25,12 @@
     ui: Item[];
     writing: Item[];
   };
+  // Tour episodes (#358 follow-up) — original scripts live here on the
+  // colophon, not /credits. Each links to its transcript.
+  type Episode = { id: string; title: string; route: string; txt: string };
 
   let data = $state<Manifest | null>(null);
+  let episodes = $state<Episode[]>([]);
 
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
@@ -35,6 +41,26 @@
       .catch(() => {
         data = null;
       });
+
+    void getAudioProvenanceManifest()
+      .then((mft) => {
+        if (!mft) return;
+        const loc = getLocale();
+        const rows = mft.entries.filter((e) => e.locale === loc);
+        const use = rows.length ? rows : mft.entries.filter((e) => e.locale === 'en-US');
+        const byId = new Map<string, Episode>();
+        for (const e of use) {
+          if (byId.has(e.episode_id) || !e.path_txt) continue;
+          byId.set(e.episode_id, {
+            id: e.episode_id,
+            title: e.title ?? e.episode_id,
+            route: e.route ?? '/',
+            txt: e.path_txt,
+          });
+        }
+        episodes = [...byId.values()];
+      })
+      .catch(() => {});
   });
 </script>
 
@@ -130,6 +156,25 @@
         {/each}
       </ul>
     </section>
+
+    {#if episodes.length > 0}
+      <section class="block" aria-labelledby="sec-tours">
+        <h2 id="sec-tours">
+          {m.colophon_section_tours()}<span class="count">{episodes.length}</span>
+        </h2>
+        <p class="tours-note">{m.colophon_tours_note()}</p>
+        <ul class="episode-list">
+          {#each episodes as ep (ep.id)}
+            <li class="episode">
+              <a class="ep-title" href="{base}{ep.txt}" target="_blank" rel="noopener noreferrer">
+                {ep.title}
+              </a>
+              <a class="ep-route" href="{base}{ep.route}"><code>{ep.route}</code></a>
+            </li>
+          {/each}
+        </ul>
+      </section>
+    {/if}
   {/if}
 </section>
 
@@ -266,5 +311,47 @@
     color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  }
+
+  .tours-note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+  .episode-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 4px 24px;
+  }
+  .episode {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .ep-title {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
+  }
+  .ep-title:hover {
+    color: #fff;
+  }
+  .ep-route {
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .ep-route code {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
   }
 </style>

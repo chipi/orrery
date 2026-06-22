@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "Эпизоды тура",
+  "colophon_tours_note": "Каждый эпизод написан для Orrery — сценарии созданы ИИ, голоса синтезированы сторонними сервисами. Каждый заголовок ведёт к расшифровке.",
   "colophon_section_cutaways": "Разрезы космических аппаратов",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

@@ -1,5 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "colophon_section_tours": "Tour-afleveringen",
+  "colophon_tours_note": "Elke aflevering is voor Orrery geschreven — scripts AI-opgesteld, stemmen gesynthetiseerd door externe diensten. Elke titel linkt naar het transcript.",
   "colophon_section_cutaways": "Ruimtevaartuig-doorsneden",
   "colophon_title": "Colophon",
   "layout_footer_colophon": "Colophon",

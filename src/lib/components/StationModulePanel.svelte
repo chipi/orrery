@@ -95,6 +95,7 @@
       <button
         type="button"
         id="station-tab-overview"
+        data-audio-stage="station-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
@@ -105,6 +106,7 @@
         <button
           type="button"
           id="station-tab-gallery"
+          data-audio-stage="station-tab-gallery"
           class:active={tab === 'gallery'}
           onclick={() => (tab = 'gallery')}
           role="tab"
@@ -116,6 +118,7 @@
         <button
           type="button"
           id="station-tab-anatomy"
+          data-audio-stage="station-tab-anatomy"
           class:active={tab === 'anatomy'}
           onclick={() => (tab = 'anatomy')}
           role="tab"
@@ -127,6 +130,7 @@
         <button
           type="button"
           id="station-tab-learn"
+          data-audio-stage="station-tab-learn"
           class:active={tab === 'learn'}
           onclick={() => (tab = 'learn')}
           role="tab"

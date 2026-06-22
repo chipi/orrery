@@ -93,12 +93,26 @@
     onCommit: (item) => syncStationUrl('/tiangong', { moduleId: item?.id ?? null }),
   });
 
-  // Auto-compact the Curator Tour overlay when a module panel opens
-  // during an active tour (PRD-016 §S8 / RFC-019 §12).
+  // Auto-compact the audio overlay when a module panel opens during any
+  // active playback (PRD-016 §S8 / RFC-019 §12). Gate on currentEpisode +
+  // open (not just tourActive) so single-episode plays compact too — else
+  // the full-width overlay covers the module panel the narrator opened.
   $effect(() => {
-    if (audio.tourActive && selection.state.panelOpen && !audio.compact) {
+    if (audio.currentEpisode && audio.open && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
+  });
+  // Scroll the selected module's row into view in the list (user direction)
+  // — keeps the highlighted row on-screen when the tour selects modules /
+  // visiting vehicles further down the list.
+  $effect(() => {
+    const id = selection.state.selectedId;
+    if (!id || typeof document === 'undefined') return;
+    requestAnimationFrame(() => {
+      document
+        .querySelector('[data-audio-stage="tiangong-module-list"] .module-row[aria-current="true"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
   });
   let ignoreModuleParamUntilClear = $state(false);
   let perfBanner = $state(false);
@@ -884,10 +898,14 @@
         panelOpen: visualRef.panelOpen,
         timeSec,
       });
+      // Outline the SELECTED module (not just hover) so the tour — and a
+      // normal click — visibly highlights the module on the 3D station,
+      // not only in the side panel.
       const hov = visualRef.hoveredId;
       const sel = visualRef.selectedId;
       const hoveredMeshes = hov && hov !== sel ? (meshById.get(hov) ?? []) : [];
-      outlinePass.selectedObjects = hoveredMeshes;
+      const selectedMeshes = sel ? (meshById.get(sel) ?? []) : [];
+      outlinePass.selectedObjects = [...selectedMeshes, ...hoveredMeshes];
     }
 
     const hoverLabelAnchor = new THREE.Vector3();
@@ -1547,6 +1565,31 @@
       data-audio-stage="tiangong-select-mengtian"
       tabindex="-1"
       onclick={() => blueprintModuleClick('mengtian')}>select mengtian</button
+    >
+    <button
+      type="button"
+      data-audio-stage="tiangong-select-shenzhou"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('shenzhou')}>select shenzhou</button
+    >
+    <button
+      type="button"
+      data-audio-stage="tiangong-select-tianzhou"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('tianzhou')}>select tianzhou</button
+    >
+    <!-- Open the assembly timeline + play it from the start, so the tour
+         can fill the dead-air gaps with the station building up (user
+         direction — regardless of narration). -->
+    <button
+      type="button"
+      data-audio-stage="tiangong-assembly-toggle"
+      tabindex="-1"
+      onclick={() => {
+        assemblyOpen = true;
+        assemblyProgress = 0;
+        assemblyPlaying = true;
+      }}>play assembly</button
     >
   </div>
 

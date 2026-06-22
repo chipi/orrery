@@ -21,10 +21,12 @@
   // for the literal substring `moon-select-` — kept in this comment
   // and on each TourAnchors button below.
   const MOON_TOUR_ANCHORS = [
+    { audio: 'luna9', site: 'luna9' },
     { audio: 'apollo11', site: 'apollo11' },
     { audio: 'change4', site: 'change4' },
     { audio: 'chandrayaan3', site: 'chandrayaan3' },
     { audio: 'apollo17', site: 'apollo17' },
+    { audio: 'artemis3', site: 'artemis3' },
   ] as const;
 
   const MOON_CONFIG: SurfaceSceneConfig = {

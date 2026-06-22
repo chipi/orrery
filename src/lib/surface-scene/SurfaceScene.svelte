@@ -67,7 +67,7 @@
     type TierContext,
     type TierLayer,
   } from '$lib/surface-map/tier-context';
-  import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
+  import { NATION_COLORS, colorFor, nationChipFor, nationKey } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { resolveInitialHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
@@ -163,12 +163,18 @@
   // route change.
   let tourCameraTeardown: (() => void) | undefined;
 
-  // Tour collaboration (PRD-016 §S8 / RFC-019 §12): when the surface
-  // site panel opens during an active Curator Tour, collapse the audio
-  // overlay to compact mode so the panel is fully visible. Mirrors the
-  // pattern wired into /explore for planet panels.
+  // Tour collaboration (PRD-016 §S8 / RFC-019 §12): when ANY detail panel
+  // opens during active audio playback, collapse the overlay to compact
+  // mode so the panel the narrator just opened is fully visible. Mirrors
+  // /explore. Two fixes vs the old version:
+  //   - gate on `currentEpisode && open` (not just tourActive) so single-
+  //     episode plays compact too (same fix /explore took 2026-06-19);
+  //   - include orbital objects (selectedSat) + the surface-site `selected`
+  //     — earth orbiters (Hubble/ISS) set selectedSat, NOT panelOpen, so
+  //     the old panelOpen-only gate never fired for them.
   $effect(() => {
-    if (audio.tourActive && panelOpen && !audio.compact) {
+    const panelShowing = panelOpen || selected != null || selectedSat != null;
+    if (audio.currentEpisode && audio.open && panelShowing && !audio.compact) {
       audio.compact = true;
     }
   });
@@ -210,6 +216,23 @@
   let layerMoonOrbiters = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
+
+  // Per-body nation legend — filter NATION_COLORS to only the nations
+  // with ≥1 site actually on this body. /moon has no UAE entries, /mars
+  // has no Japan entries, /earth has neither UAE nor any extras beyond
+  // its 6-nation pad set; showing the full 7-entry union painted UAE on
+  // /moon and Japan on /mars, implying contributions that don't exist.
+  // Falls back to the full palette while `sites` is still loading so
+  // the legend doesn't flicker empty.
+  let legendPalette = $derived.by(() => {
+    if (sites.length === 0) return NATION_COLORS;
+    const present = new Set(sites.map((s) => nationKey(s.nation)));
+    const out: Record<string, string> = {};
+    for (const [k, v] of Object.entries(NATION_COLORS)) {
+      if (present.has(k)) out[k] = v;
+    }
+    return out;
+  });
 
   // Live altitude readout (km above surface), driven by the camera-distance
   // ↔ km-per-unit ratio. Surfaced in the corner HUD as "how zoomed am
@@ -2858,7 +2881,7 @@
       ctx2.font = "bold 7px 'Space Mono',monospace";
       ctx2.textAlign = 'left';
       ctx2.shadowBlur = 0;
-      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: NATION_COLORS });
+      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: legendPalette });
     }
 
     // Equirectangular 2D mode — Mars (and future Earth-surface). Single
@@ -2989,7 +3012,7 @@
       const legendY = H - 24;
       ctx2.font = "bold 7px 'Space Mono',monospace";
       ctx2.textAlign = 'left';
-      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: NATION_COLORS });
+      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: legendPalette });
     }
 
     function on2dClick(e: MouseEvent) {
@@ -3180,7 +3203,10 @@
         }
         for (const om of orbitalMarkers) {
           applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
-          if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
+          // No selection halo on orbiters — the outline-pass marks the
+          // selected orbiter, so the extra ring around the dot is
+          // redundant (user direction). Keep the halo always hidden.
+          if (om.halo) om.halo.visible = false;
         }
 
         // Earth satellites — gated by master layerOrbiters + per-category
@@ -4032,6 +4058,7 @@
     bind:this={container}
     class:hidden={view !== '3d'}
     class:flat-patch-fading={flatPatchPhase !== 'hidden'}
+    data-audio-stage="surface-scene"
   ></div>
   <!-- 2D fallback canvas — equirectangular for /mars, lunar-polar-discs
        for /moon. On /earth (config.disable2D) the toggle button + view
@@ -4073,6 +4100,17 @@
             onToggleSpin={() => (autoSpin = !autoSpin)}
           />
         {/if}
+        <!-- Hidden tour hook — lets the audio tour pull the camera back to
+             the overview (e.g. after a deep zoom) without a visible button.
+             data-audio-stage scanned by audio-tour.test.ts. -->
+        <button
+          type="button"
+          class="tour-reset-anchor"
+          data-audio-stage="surface-reset-view"
+          onclick={() => resetCamera()}
+          tabindex="-1"
+          aria-hidden="true">reset view</button
+        >
       </div>
       <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
         <LayerChipRow
@@ -4464,7 +4502,7 @@ sample      ${debugInfo.projectedPxSample}`}
        a CSS overlay. Same NATION_COLORS keep the two views in sync. -->
   {#if view === '3d' && !panoramaActive}
     <div class="legend-3d" aria-label={m.moon_legend_nation_aria()}>
-      {#each Object.entries(NATION_COLORS) as [nation, color] (nation)}
+      {#each Object.entries(legendPalette) as [nation, color] (nation)}
         <span class="legend-item">
           <span class="legend-dot" style:background={color}></span>
           {nation}
@@ -4522,16 +4560,13 @@ sample      ${debugInfo.projectedPxSample}`}
                AND we're not in panorama (flips to "Exit zoom view"
                while flatPatchActive). -->
         <div class="site-cta-bar">
-          <button
-            type="button"
-            class="site-cta"
-            data-testid="approach-site"
-            onclick={() => selected && faceCameraAtSite?.(selected, 85)}
-            title="Approach — fly to an overhead view of this site"
-          >
-            <span class="icon" aria-hidden="true">↧</span>
-            <span class="label">Approach</span>
-          </button>
+          <!-- Approach button removed (user direction): selecting a site now
+               auto-frames it via faceCameraAtSite (the focus-on-select
+               behaviour), same as orbiters — so a manual "Approach" was
+               redundant, and pulled the camera BACK to R≈85 after the
+               select had already flown in to R≈50. Zoom-to-detail + Stand
+               at site stay (distinct actions). -->
+
           <PanoramaToggleButton
             panoramaUrl={selected.hotspot_tier3_panorama}
             siteId={selected.id}
@@ -4976,6 +5011,11 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     pointer-events: none;
   }
+  /* Hidden tour-only reset hook — out of the visual HUD but in the DOM so
+     the audio tour can .click() it (programmatic click ignores display). */
+  .tour-reset-anchor {
+    display: none;
+  }
   .ctrl-row {
     display: flex;
     flex-wrap: wrap;
@@ -5092,13 +5132,12 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     margin-top: 14px;
   }
-  /* Shared chrome — applies to the in-component `.site-cta`
-     (Approach), the global `.stand-at-site` rendered by
-     PanoramaToggleButton, and `.zoom-to-detail-button`. Equal-flex
+  /* Shared chrome — applies to the global `.stand-at-site` rendered by
+     PanoramaToggleButton, and `.zoom-to-detail-button` (Approach removed:
+     selection now auto-frames the site). Equal-flex
      so each button takes a fair share of the row, with min-width
      so they wrap to a second row instead of squishing illegibly
      on narrow viewports. */
-  .head .site-cta-bar > .site-cta,
   .head .site-cta-bar :global(.stand-at-site),
   .head .site-cta-bar .zoom-to-detail-button {
     flex: 1 1 90px;
@@ -5130,8 +5169,6 @@ sample      ${debugInfo.projectedPxSample}`}
       color 0.15s ease,
       transform 0.15s ease;
   }
-  .head .site-cta-bar > .site-cta:hover,
-  .head .site-cta-bar > .site-cta:focus-visible,
   .head .site-cta-bar :global(.stand-at-site:hover),
   .head .site-cta-bar :global(.stand-at-site:focus-visible),
   .head .site-cta-bar .zoom-to-detail-button:hover,
@@ -5142,7 +5179,6 @@ sample      ${debugInfo.projectedPxSample}`}
     outline: none;
     transform: translateY(-1px);
   }
-  .head .site-cta-bar > .site-cta .icon,
   .head .site-cta-bar .zoom-to-detail-button .icon {
     color: #fff;
     font-size: 13px;

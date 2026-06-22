@@ -541,17 +541,34 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     {
       at_sec: 23,
       action: 'cue',
-      target: 'Filter by destination, status, agency.',
+      target: 'Filter by status, destination, agency.',
       duration_ms: 4000,
     },
-    // VTT § 00:00:42.9 – 47.9 — failed-mission roll-call ("Mars 2.
-    // Schiaparelli. Beresheet. Hakuto-R. Vikram from Chandrayaan-2.
-    // Hitomi."). Only schiaparelli and beresheet are catalogued today;
-    // mars-2 / hakuto-r / vikram-cy2 / hitomi don't have mission files yet
-    // so their flashes are honestly skipped (see #342 follow-up — adding
-    // those four to /missions catalogue unlocks the full roll-call burst).
+    // Demonstrate the filters for real (user direction) — the catalogue is
+    // URL-driven, so `navigate` re-filters the live grid as the narrator
+    // names each filter type, then the "status = failed" combination.
+    // VTT 00:00:22.0 "Filter by status — flown, active, planned, concept."
+    { at_sec: 25, action: 'navigate', target: '/missions?status=FLOWN', params: { replaceState: 1 } },
+    // VTT 00:00:25.9 "Filter by destination — Moon, Mars, Venus…"
+    { at_sec: 29, action: 'navigate', target: '/missions?dest=MARS', params: { replaceState: 1 } },
+    // VTT 00:00:31.1 "Filter by agency — NASA, ESA, JAXA…"
+    { at_sec: 33, action: 'navigate', target: '/missions?agency=ESA', params: { replaceState: 1 } },
+    // VTT § 00:00:38.3 "Try this combination. Filter status equals failed."
+    {
+      at_sec: 38,
+      action: 'cue',
+      target: 'Try it — status = failed.',
+      duration_ms: 4000,
+    },
+    { at_sec: 39, action: 'navigate', target: '/missions?status=FAILED', params: { replaceState: 1 } },
+    // VTT § 00:00:41.7 "You'll see Mars 2. Schiaparelli. Beresheet…" — flash
+    // the catalogued ones inside the now-filtered grid. (mars-2 / hakuto-r /
+    // vikram-cy2 / hitomi aren't catalogued yet, so honestly skipped.)
     { at_sec: 44, action: 'flash', target: '[data-audio-stage="missions-select-schiaparelli"]' },
     { at_sec: 45, action: 'flash', target: '[data-audio-stage="missions-select-beresheet"]' },
+    // Clear the filter before the redemption-arc card clicks (they need the
+    // full catalogue). VTT 00:00:50 "the redemption-arc layer of spaceflight."
+    { at_sec: 48, action: 'navigate', target: '/missions', params: { replaceState: 1 } },
     // VTT § 00:00:59.4 – 01:18 — redemption-arc story. Walk the panel
     // through "failure → successor → failure → successor → first
     // catastrophic failure → first iconic success." Each click replaces
@@ -740,9 +757,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
     // VTT 00:01:39.5 "So does ESA's Gaia, mapping a billion stars."
     { at_sec: 100, action: 'click', target: '[data-audio-stage="earth-select-gaia"]' },
-    // Close ~5 s in — narration moves to the "Click any spacecraft" outro
-    // and the canvas needs to be visible for that cue to make sense.
+    // Close the Gaia panel, then pull the camera back to the full-system
+    // overview (user direction: reset after Gaia for a cleaner flow) so the
+    // "log scale" + "Click any spacecraft" outro plays over the wide view.
     { at_sec: 105, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    { at_sec: 106, action: 'click', target: '[data-audio-stage="surface-reset-view"]' },
     // VTT § 00:02:09.8 "Click any spacecraft"
     {
       at_sec: 132,
@@ -750,10 +769,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Click any spacecraft for its story — like this.',
       duration_ms: 4000,
     },
+    // Open ISS and KEEP it open through the end of the episode (user
+    // direction) — the listener fades out on the station's record rather
+    // than an empty canvas.
     { at_sec: 133, action: 'click', target: '[data-audio-stage="earth-select-iss"]' },
-    // Close ISS panel before the episode ends so the listener fades
-    // out on the canvas.
-    { at_sec: 138, action: 'click', target: '[data-audio-stage="panel-close"]' },
   ],
 
   // ── /earth · jwst-l2-halo — Enthusiast, VTT 122 s (Extended Tour) ─
@@ -795,9 +814,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:00:06.6 "Drag to rotate"
     { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
     {
+      // Demonstrate the drag on "Drag to rotate" — must target the CANVAS
+      // (surface-scene), which owns the audio-stage-drag listener; the old
+      // surface-hud target fired on the HUD overlay and nothing rotated.
       at_sec: 7,
       action: 'drag',
-      target: '[data-audio-stage="surface-hud"]',
+      target: '[data-audio-stage="surface-scene"]',
       params: { rotateRad: 0.7 },
       duration_ms: 1800,
     },
@@ -807,6 +829,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Drag the sphere — each yellow marker is a landing site.',
       duration_ms: 4000,
     },
+    // VTT 00:00:11.7 "Luna 9, in 1966, was the first soft landing on
+    // another world." Focus it as the narrator names it (CORE flies in).
+    {
+      at_sec: 12,
+      action: 'cue',
+      target: 'The first soft landing on another world — Luna 9, 1966.',
+      duration_ms: 4000,
+    },
+    { at_sec: 13, action: 'click', target: '[data-audio-stage="moon-select-luna9"]' },
     // VTT § 00:00:22.7 "Tranquillity Base"
     {
       at_sec: 23,
@@ -815,6 +846,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 24, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
+    // VTT 00:00:30.1 "Chang'e 4 landed on the lunar far side in 2019 — the
+    // first soft landing there in human history."
+    {
+      at_sec: 31,
+      action: 'cue',
+      target: 'First far-side landing — Chang’e 4, 2019.',
+      duration_ms: 4000,
+    },
+    { at_sec: 32, action: 'click', target: '[data-audio-stage="moon-select-change4"]' },
     // VTT § 00:00:42.4 "Chandrayaan-3 placed the Vikram lander near the south pole"
     {
       at_sec: 43,
@@ -830,17 +870,34 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Click any marker to read its mission record.',
       duration_ms: 4000,
     },
-    // VTT § 00:01:29.3 "That's where the Apollo program landed because
-    // the trajectories were cheapest there — direct ascents from Cape
-    // Kennedy, free-return geometry…" — generic Apollo-themed beat that
-    // runs from t=89.3 to t=102.4. Brief panorama descent into Apollo 11
-    // (Tranquillity Base) lets the listener stand at the cluster the
-    // narrator is describing. ~10 s window — skip auto-tour since the
-    // beat is short and the next narration ("Look at the south pole.
-    // That's where Artemis is going next") demands the map view back.
+    // Close the Chandrayaan-3 panel once the narrator leaves it (user
+    // direction: it lingered too long) — narration has moved to the
+    // generic "Click any marker" beat.
+    { at_sec: 55, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT § 00:01:32 "That's where the Apollo program landed…" — descend
+    // into Apollo 11 (Tranquillity Base) so the listener stands at the
+    // cluster the narrator is describing. Panorama held to 00:01:45.6,
+    // when the line ends.
     { at_sec: 87, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
     { at_sec: 90, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
-    { at_sec: 100, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
+    { at_sec: 105, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
+    // VTT 00:01:45.6 "Look at the south pole. That's where Artemis is
+    // going next." Focus the planned Artemis 3 south-pole landing site.
+    {
+      at_sec: 106,
+      action: 'cue',
+      target: 'The south pole — where Artemis is going next.',
+      duration_ms: 4000,
+    },
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis3"]' },
+    { at_sec: 115, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:02:15.2 "Twelve people have walked on this surface." Descend
+    // back into Tranquillity Base to celebrate Apollo 11, held through
+    // "…softly since the last Apollo" (00:02:23) — user direction: really
+    // celebrate it.
+    { at_sec: 134, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
+    { at_sec: 135, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
+    { at_sec: 144, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
   ],
 
   // ── /moon · moon-one-lifetime — Curator, VTT 154 s ────────────────
@@ -1025,10 +1082,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // Early-mission roll-call: flash each marker as it's named. Mariner 4
     // is named at VTT t=8 but isn't a surface site (it was a flyby — no
     // marker), so its flash is honestly skipped.
-    { at_sec: 15, action: 'flash', target: '[data-audio-stage="mars-select-mars2"]' },
-    { at_sec: 19, action: 'flash', target: '[data-audio-stage="mars-select-mars3"]' },
-    { at_sec: 24, action: 'flash', target: '[data-audio-stage="mars-select-viking1-lander"]' },
-    { at_sec: 26, action: 'flash', target: '[data-audio-stage="mars-select-viking2-lander"]' },
+    // Open each early lander's panel as the narrator names it (user
+    // direction: focus + details, not a flash — a flash is invisible once
+    // a prior focus has zoomed in). Each select replaces the last, so the
+    // camera walks lander-by-lander. VTT: Mars 2 00:14.9, Mars 3 00:18.4,
+    // Viking 1+2 00:24.1.
+    { at_sec: 15, action: 'click', target: '[data-audio-stage="mars-select-mars2"]' },
+    { at_sec: 19, action: 'click', target: '[data-audio-stage="mars-select-mars3"]' },
+    { at_sec: 24, action: 'click', target: '[data-audio-stage="mars-select-viking1-lander"]' },
+    { at_sec: 26, action: 'click', target: '[data-audio-stage="mars-select-viking2-lander"]' },
     // VTT § 00:00:29.2 "Click Pathfinder's marker"
     { at_sec: 29, action: 'click', target: '[data-audio-stage="mars-select-pathfinder"]' },
     // VTT § 00:00:48.9 "Click Curiosity, in Gale Crater"
@@ -1054,35 +1116,32 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4500,
     },
     { at_sec: 68, action: 'click', target: '[data-audio-stage="mars-select-perseverance"]' },
-    // VTT § 00:01:29.9 "Look at the orbiters around Mars."
-    // Orbiter roll-call — 8 named in ~9 s. Flashes land on orbiter
-    // markers that ride the orbital paths around Mars (visibility depends
-    // on camera angle; the visible-region invariant is the listener-side
-    // problem, not ours — surface-hud handles the camera). Mars 3 Orbiter,
-    // Beagle 2, Schiaparelli, Phoenix, InSight, etc. exist as sites but
-    // aren't in this roll-call's narration; honestly skipped.
+    // VTT § 00:01:29.9 "Look at the orbiters around Mars." Reset to the
+    // full planet view first (user direction), then go orbiter-by-orbiter
+    // — focus each as the narrator names it (focus flies the camera in;
+    // freeze-on-select holds it). The orbiter rings now sit correctly under
+    // each dot so each lands framed with its orbit.
     {
       at_sec: 89,
       action: 'cue',
       target: 'Look at the orbiters around Mars.',
       duration_ms: 4000,
     },
-    // VTT § 00:01:32.0 "Mars Reconnaissance Orbiter"
-    { at_sec: 92, action: 'flash', target: '[data-audio-stage="mars-select-mro"]' },
-    // VTT § 00:01:33.0 "Mars Express"
-    { at_sec: 93, action: 'flash', target: '[data-audio-stage="mars-select-mars-express"]' },
-    // VTT § 00:01:33.4 "MAVEN"
-    { at_sec: 94, action: 'flash', target: '[data-audio-stage="mars-select-maven"]' },
-    // VTT § 00:01:34.4 "Mars Odyssey"
-    { at_sec: 95, action: 'flash', target: '[data-audio-stage="mars-select-mars-odyssey"]' },
-    // VTT § 00:01:35.0 "ExoMars Trace Gas Orbiter"
-    { at_sec: 96, action: 'flash', target: '[data-audio-stage="mars-select-tgo"]' },
-    // VTT § 00:01:36.3 "Mangalyaan from India"
-    { at_sec: 97, action: 'flash', target: '[data-audio-stage="mars-select-mangalyaan"]' },
-    // VTT § 00:01:37.9 "Hope from the United Arab Emirates"
-    { at_sec: 99, action: 'flash', target: '[data-audio-stage="mars-select-hope"]' },
-    // VTT § 00:01:40.5 "Tianwen-1 from China"
-    { at_sec: 101, action: 'flash', target: '[data-audio-stage="mars-select-tianwen1"]' },
+    { at_sec: 90, action: 'click', target: '[data-audio-stage="surface-reset-view"]' },
+    // Focus only the most notable orbiters, spaced ~5-6 s so each detail
+    // panel lingers (user direction — 1 s clicks were too rapid). One per
+    // space power, telling the "Mars is global now" story; the others
+    // (Mars Express, MAVEN, Odyssey, TGO) are still named by the narrator
+    // but not flown to. The last two land during the "eleven orbiters work
+    // in the sky" summary (VTT 00:01:48+).
+    // VTT § 00:01:32.0 "Mars Reconnaissance Orbiter" — NASA workhorse.
+    { at_sec: 94, action: 'click', target: '[data-audio-stage="mars-select-mro"]' },
+    // VTT § 00:01:40.0 "Mangalyaan from India".
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="mars-select-mangalyaan"]' },
+    // VTT § 00:01:42.7 "Hope from the United Arab Emirates".
+    { at_sec: 106, action: 'click', target: '[data-audio-stage="mars-select-hope"]' },
+    // VTT § 00:01:44.2 "Tianwen-1 from China".
+    { at_sec: 111, action: 'click', target: '[data-audio-stage="mars-select-tianwen1"]' },
     // VTT § 00:02:07.4 "Zoom in to Curiosity in Gale Crater to see its full route"
     {
       at_sec: 127,
@@ -1244,6 +1303,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       duration_ms: 4000,
     },
     { at_sec: 30, action: 'click', target: '[data-audio-stage="iss-select-zarya"]' },
+    // While Zarya is open (long 22 s beat) cycle its panel tabs to show the
+    // tabbed record — builder/launch on overview, then gallery, then back
+    // (user direction: "click each tab"). Tabs that a module lacks no-op.
+    { at_sec: 37, action: 'click', target: '[data-audio-stage="station-tab-gallery"]' },
+    { at_sec: 43, action: 'click', target: '[data-audio-stage="station-tab-learn"]' },
+    { at_sec: 48, action: 'click', target: '[data-audio-stage="station-tab-overview"]' },
     // VTT § 00:00:52.8 "Unity — also called Node 1 — was the second module."
     // The narration names Unity explicitly before moving to the lab modules;
     // open the Unity panel so the second-most-important historical module
@@ -1271,6 +1336,25 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // next cue is at 136 s — without a close, the panel sits open
     // for almost a minute over irrelevant narration.
     { at_sec: 91, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:01:33.7 "Look at the solar arrays. Eight of them… about two
+    // hundred forty kilowatts — a hundred and twenty homes."
+    {
+      at_sec: 95,
+      action: 'cue',
+      target: 'Eight solar arrays — about 240 kW, enough for ~120 homes.',
+      duration_ms: 6000,
+    },
+    // VTT 00:01:52.8 "Look at the trusses… It was assembled segment by
+    // segment by Shuttle crews between 2000 and 2011." Play the assembly
+    // animation so the listener watches the station build up segment by
+    // segment as the narrator describes exactly that.
+    {
+      at_sec: 114,
+      action: 'cue',
+      target: 'The truss — the station’s skeleton, built segment by segment.',
+      duration_ms: 5000,
+    },
+    { at_sec: 119, action: 'click', target: '[data-audio-stage="iss-assembly-toggle"]' },
     // VTT § 00:02:16.3 "Eighteen pressurized modules"
     {
       at_sec: 136,
@@ -1337,6 +1421,25 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // VTT § 00:00:37.3 "Click Wentian — the arm to one side" / 00:55.4 "Click Mengtian"
     { at_sec: 39, action: 'click', target: '[data-audio-stage="tiangong-select-wentian"]' },
     { at_sec: 57, action: 'click', target: '[data-audio-stage="tiangong-select-mengtian"]' },
+    // Close the Mengtian panel once its beat ends (00:01:07.8) so the
+    // canvas is clear for the arrays + docking-port beats.
+    { at_sec: 68, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:01:07.8 "Look at the solar arrays. Four large panels… ~100 kW."
+    {
+      at_sec: 70,
+      action: 'cue',
+      target: 'Four solar arrays — about 100 kilowatts.',
+      duration_ms: 6000,
+    },
+    // VTT 00:01:22.3 "Crews arrive on Shenzhou…" — open the crew vehicle.
+    { at_sec: 83, action: 'click', target: '[data-audio-stage="tiangong-select-shenzhou"]' },
+    // VTT 00:01:37.7 "Cargo arrives on Tianzhou ships."
+    { at_sec: 95, action: 'click', target: '[data-audio-stage="tiangong-select-tianzhou"]' },
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="panel-close"]' },
+    // VTT 00:01:40.9 "Tiangong was assembled in seventeen months." Play the
+    // assembly timeline so the listener watches it build up (fills the gap
+    // to the outro).
+    { at_sec: 102, action: 'click', target: '[data-audio-stage="tiangong-assembly-toggle"]' },
     // VTT § 00:01:55.7 "Click any module"
     {
       at_sec: 115,

@@ -134,9 +134,19 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
       }
     });
 
-    // Label with leader-line — tag floats above the spacecraft.
+    // Label with leader-line — tag floats above the spacecraft. We
+    // suffix the satellite's altitude (#354) so users see magnitude
+    // alongside name — e.g. "ISS · 408 km". Moon-orbiters skip the
+    // suffix since their altitude is measured against the Moon, not
+    // Earth, and the number would mislead.
+    const baseText = o.short ?? o.name ?? o.id;
+    const altKm = o.altitude_km ?? o.earth_distance_km;
+    const labelText =
+      category === 'moon-orbiter' || altKm == null
+        ? baseText
+        : `${baseText} · ${altKm >= 1000 ? altKm.toLocaleString('en-US') : altKm} km`;
     const label = buildLabel({
-      text: o.short ?? o.name ?? o.id,
+      text: labelText,
       color: o.color,
       offset: new THREE.Vector3(0, 1.8, 0),
       size: 1.2,
@@ -159,7 +169,12 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
       });
       ringMesh = new THREE.Mesh(ringGeo, ringMat);
       ringMesh.rotation.order = 'YXZ';
-      ringMesh.rotation.x = inclRad;
+      // RingGeometry lies in the XY plane; the dot orbits an XZ-based
+      // circle inclined by inclRad (ly = +sin·sin(inc)). Lay the ring flat
+      // and incline it to MATCH that plane — π/2 − inclRad (inc=0 →
+      // equatorial/horizontal, inc=90° → polar). Without the π/2 the ring
+      // sat vertical and the dot floated off it (e.g. Hubble).
+      ringMesh.rotation.x = Math.PI / 2 - inclRad;
       ringMesh.rotation.y = nodeRad;
       opts.scene.add(ringMesh);
     }

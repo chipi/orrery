@@ -94,12 +94,26 @@
     onCommit: (item) => syncStationUrl('/iss', { moduleId: item?.id ?? null }),
   });
 
-  // Auto-compact the Curator Tour overlay when a module panel opens
-  // during an active tour (PRD-016 §S8 / RFC-019 §12).
+  // Auto-compact the audio overlay when a module panel opens during any
+  // active playback (PRD-016 §S8 / RFC-019 §12). Gate on currentEpisode +
+  // open (not just tourActive) so single-episode plays compact too — else
+  // the full-width overlay covers the module panel the narrator opened.
   $effect(() => {
-    if (audio.tourActive && selection.state.panelOpen && !audio.compact) {
+    if (audio.currentEpisode && audio.open && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
+  });
+  // Scroll the selected module's row into view in the list — the tour
+  // selects modules far down the list (e.g. Zarya at the Russian end), so
+  // without this the highlighted row sits off-screen. User direction.
+  $effect(() => {
+    const id = selection.state.selectedId;
+    if (!id || typeof document === 'undefined') return;
+    requestAnimationFrame(() => {
+      document
+        .querySelector('[data-audio-stage="iss-module-list"] .module-row[aria-current="true"]')
+        ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
   });
   let ignoreModuleParamUntilClear = $state(false);
   let perfBanner = $state(false);
@@ -940,11 +954,15 @@
         panelOpen: issVisualRef.panelOpen,
         timeSec,
       });
-      // Hover feedback now lives on OutlinePass instead of emissive.
+      // Hover + selection feedback on OutlinePass. The SELECTED module is
+      // outlined too (not just hover) so the tour — and a normal click —
+      // visibly highlights the module on the 3D station, not only in the
+      // side panel ("we show nothing on the model" otherwise).
       const hov = issVisualRef.hoveredId;
       const sel = issVisualRef.selectedId;
       const hoveredMeshes = hov && hov !== sel ? (meshById.get(hov) ?? []) : [];
-      outlinePass.selectedObjects = hoveredMeshes;
+      const selectedMeshes = sel ? (meshById.get(sel) ?? []) : [];
+      outlinePass.selectedObjects = [...selectedMeshes, ...hoveredMeshes];
     }
 
     const hoverLabelAnchor = new THREE.Vector3();

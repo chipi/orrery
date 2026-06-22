@@ -595,7 +595,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // URL-driven, so `navigate` re-filters the live grid as the narrator
     // names each filter type, then the "status = failed" combination.
     // VTT 00:00:22.0 "Filter by status — flown, active, planned, concept."
-    { at_sec: 25, action: 'navigate', target: '/missions?status=FLOWN', params: { replaceState: 1 } },
+    {
+      at_sec: 25,
+      action: 'navigate',
+      target: '/missions?status=FLOWN',
+      params: { replaceState: 1 },
+    },
     // VTT 00:00:25.9 "Filter by destination — Moon, Mars, Venus…"
     { at_sec: 29, action: 'navigate', target: '/missions?dest=MARS', params: { replaceState: 1 } },
     // VTT 00:00:31.1 "Filter by agency — NASA, ESA, JAXA…"
@@ -607,7 +612,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: 'Try it — status = failed.',
       duration_ms: 4000,
     },
-    { at_sec: 39, action: 'navigate', target: '/missions?status=FAILED', params: { replaceState: 1 } },
+    {
+      at_sec: 39,
+      action: 'navigate',
+      target: '/missions?status=FAILED',
+      params: { replaceState: 1 },
+    },
     // VTT § 00:00:41.7 "You'll see Mars 2. Schiaparelli. Beresheet…" — flash
     // the catalogued ones inside the now-filtered grid. (mars-2 / hakuto-r /
     // vikram-cy2 / hitomi aren't catalogued yet, so honestly skipped.)
@@ -1740,7 +1750,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // "the flights tab" 00:01:16.5, "the links tab" 00:01:26.0.
     { at_sec: 72, action: 'click', target: '[data-audio-stage="fleet-tab-anatomy"]' },
     { at_sec: 78, action: 'click', target: '[data-audio-stage="fleet-tab-missions"]' },
-    { at_sec: 88, action: 'click', target: '[data-audio-stage="fleet-tab-learn"]' },
+    // ANATOMY+LEARN merged into one tab — the "links tab" beat re-shows it.
+    { at_sec: 88, action: 'click', target: '[data-audio-stage="fleet-tab-anatomy"]' },
     { at_sec: 93, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT 00:01:33.9 "Try filtering by status. Failed." — drive the live
     // status filter, then clear before the epoch-timeline beat.

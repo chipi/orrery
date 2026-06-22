@@ -19,7 +19,9 @@
    * stay out. A unified EntityDetailPanel refactor is tracked for v0.7+.
    */
 
-  type Tab = 'overview' | 'gallery' | 'anatomy' | 'crew' | 'missions' | 'learn';
+  // ANATOMY+LEARN and MISSIONS+CREW are each merged into one tab now, so the
+  // 'crew' / 'learn' tab values are retired.
+  type Tab = 'overview' | 'gallery' | 'anatomy' | 'missions';
 
   type Props = {
     entry: FleetEntry | null;
@@ -215,16 +217,17 @@
         role="tab"
         aria-selected={tab === 'overview'}>OVERVIEW</button
       >
-      {#if hasMissions}
+      {#if hasMissions || hasFlights}
+        <!-- MISSIONS + CREW merged (user direction): crewed vehicles show
+             their flights + crew rosters under "CREW"; everything else shows
+             the linked-mission list under "MISSIONS". Hidden when neither. -->
         <button
           type="button"
           data-audio-stage="fleet-tab-missions"
           class:active={tab === 'missions'}
           onclick={() => (tab = 'missions')}
           role="tab"
-          aria-selected={tab === 'missions'}
-          >MISSIONS{#if (entry?.linked_missions?.length ?? 0) > 1}&nbsp;({entry?.linked_missions
-              ?.length}){/if}</button
+          aria-selected={tab === 'missions'}>{hasFlights ? 'CREW' : 'MISSIONS'}</button
         >
       {/if}
       {#if hasGallery}
@@ -236,33 +239,16 @@
           aria-selected={tab === 'gallery'}>GALLERY</button
         >
       {/if}
-      {#if hasDiagram}
+      {#if hasDiagram || hasLinks}
+        <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from
+             overflowing. Shows the diagram (if any) then the tiered links. -->
         <button
           type="button"
           data-audio-stage="fleet-tab-anatomy"
           class:active={tab === 'anatomy'}
           onclick={() => (tab = 'anatomy')}
           role="tab"
-          aria-selected={tab === 'anatomy'}>ANATOMY</button
-        >
-      {/if}
-      {#if entry.category === 'crewed-spacecraft' && hasFlights}
-        <button
-          type="button"
-          class:active={tab === 'crew'}
-          onclick={() => (tab = 'crew')}
-          role="tab"
-          aria-selected={tab === 'crew'}>CREW</button
-        >
-      {/if}
-      {#if hasLinks}
-        <button
-          type="button"
-          data-audio-stage="fleet-tab-learn"
-          class:active={tab === 'learn'}
-          onclick={() => (tab = 'learn')}
-          role="tab"
-          aria-selected={tab === 'learn'}>LEARN</button
+          aria-selected={tab === 'anatomy'}>{hasDiagram ? 'ANATOMY' : 'LEARN'}</button
         >
       {/if}
     </div>
@@ -429,113 +415,129 @@
             {/each}
           </div>
         {/if}
-      {:else if tab === 'anatomy' && diagramPath}
-        <div class="anatomy">
-          <img
-            src={diagramPath}
-            alt="Anatomy diagram for {entry.name}"
-            loading="lazy"
-            decoding="async"
-          />
-          <p class="anatomy-caption">
-            Original anatomy illustration made for Orrery.
-          </p>
-        </div>
-      {:else if tab === 'crew' && hasFlights}
-        <ul class="flights">
-          {#each entry.flights ?? [] as flight (flight.mission_id)}
-            <li class="flight">
-              <header class="flight-head">
-                <span class="flight-designation">{flight.flight_designation}</span>
-                <a
-                  class="mission-link"
-                  href="{base}/missions?id={flight.mission_id}"
-                  data-sveltekit-preload-data="hover"
-                >
-                  Mission →
-                </a>
-              </header>
-              {#if flight.patch_path}
-                <img class="patch" src={flight.patch_path} alt="" loading="lazy" decoding="async" />
-              {/if}
-              {#if flight.crew && flight.crew.length > 0}
-                <ul class="crew-grid">
-                  {#each flight.crew as crew (crew.name)}
-                    <li class="crew-card">
-                      {#if crew.portrait_path}
-                        <img src={crew.portrait_path} alt="" loading="lazy" decoding="async" />
-                      {:else}
-                        <div class="crew-portrait-empty" aria-hidden="true">—</div>
-                      {/if}
-                      <span class="crew-name">{crew.name}</span>
-                      <span class="crew-role">{crew.role}</span>
+      {:else if tab === 'anatomy' && (diagramPath || hasLinks)}
+        {#if diagramPath}
+          <div class="anatomy">
+            <button
+              type="button"
+              class="anatomy-open"
+              onclick={() => (lightboxSrc = diagramPath)}
+              aria-label="Open {entry.name} anatomy full-size"
+            >
+              <img
+                src={diagramPath}
+                alt="Anatomy diagram for {entry.name}"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <p class="anatomy-caption">Original anatomy illustration made for Orrery.</p>
+          </div>
+        {/if}
+        {#if hasLinks}
+          <ul class="links">
+            {#if linksByTier.intro.length > 0}
+              <li class="tier">
+                <h4>Intro</h4>
+                <ul>
+                  {#each linksByTier.intro as link (link.u)}
+                    <li>
+                      <a href={link.u} target="_blank" rel="noopener noreferrer external">
+                        {link.l}
+                      </a>
                     </li>
                   {/each}
                 </ul>
-              {/if}
-            </li>
-          {/each}
-        </ul>
-      {:else if tab === 'missions' && hasMissions}
-        <ul class="missions-list">
-          {#each entry.linked_missions ?? [] as mid (mid)}
-            <li>
-              <a
-                class="mission-link"
-                href="{base}/missions?id={mid}"
-                data-sveltekit-preload-data="hover"
-              >
-                {mid}
-                <span class="mission-arrow">→</span>
-              </a>
-            </li>
-          {/each}
-        </ul>
-      {:else if tab === 'learn' && hasLinks}
-        <ul class="links">
-          {#if linksByTier.intro.length > 0}
-            <li class="tier">
-              <h4>Intro</h4>
-              <ul>
-                {#each linksByTier.intro as link (link.u)}
-                  <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer external">
-                      {link.l}
-                    </a>
-                  </li>
-                {/each}
-              </ul>
-            </li>
-          {/if}
-          {#if linksByTier.core.length > 0}
-            <li class="tier">
-              <h4>Core</h4>
-              <ul>
-                {#each linksByTier.core as link (link.u)}
-                  <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer external">
-                      {link.l}
-                    </a>
-                  </li>
-                {/each}
-              </ul>
-            </li>
-          {/if}
-          {#if linksByTier.deep.length > 0}
-            <li class="tier">
-              <h4>Deep</h4>
-              <ul>
-                {#each linksByTier.deep as link (link.u)}
-                  <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer external">
-                      {link.l}
-                    </a>
-                  </li>
-                {/each}
-              </ul>
-            </li>
-          {/if}
-        </ul>
+              </li>
+            {/if}
+            {#if linksByTier.core.length > 0}
+              <li class="tier">
+                <h4>Core</h4>
+                <ul>
+                  {#each linksByTier.core as link (link.u)}
+                    <li>
+                      <a href={link.u} target="_blank" rel="noopener noreferrer external">
+                        {link.l}
+                      </a>
+                    </li>
+                  {/each}
+                </ul>
+              </li>
+            {/if}
+            {#if linksByTier.deep.length > 0}
+              <li class="tier">
+                <h4>Deep</h4>
+                <ul>
+                  {#each linksByTier.deep as link (link.u)}
+                    <li>
+                      <a href={link.u} target="_blank" rel="noopener noreferrer external">
+                        {link.l}
+                      </a>
+                    </li>
+                  {/each}
+                </ul>
+              </li>
+            {/if}
+          </ul>
+        {/if}
+      {:else if tab === 'missions' && (hasMissions || hasFlights)}
+        {#if hasFlights}
+          <ul class="flights">
+            {#each entry.flights ?? [] as flight (flight.mission_id)}
+              <li class="flight">
+                <header class="flight-head">
+                  <span class="flight-designation">{flight.flight_designation}</span>
+                  <a
+                    class="mission-link"
+                    href="{base}/missions?id={flight.mission_id}"
+                    data-sveltekit-preload-data="hover"
+                  >
+                    Mission →
+                  </a>
+                </header>
+                {#if flight.patch_path}
+                  <img
+                    class="patch"
+                    src={flight.patch_path}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                {/if}
+                {#if flight.crew && flight.crew.length > 0}
+                  <ul class="crew-grid">
+                    {#each flight.crew as crew (crew.name)}
+                      <li class="crew-card">
+                        {#if crew.portrait_path}
+                          <img src={crew.portrait_path} alt="" loading="lazy" decoding="async" />
+                        {:else}
+                          <div class="crew-portrait-empty" aria-hidden="true">—</div>
+                        {/if}
+                        <span class="crew-name">{crew.name}</span>
+                        <span class="crew-role">{crew.role}</span>
+                      </li>
+                    {/each}
+                  </ul>
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <ul class="missions-list">
+            {#each entry.linked_missions ?? [] as mid (mid)}
+              <li>
+                <a
+                  class="mission-link"
+                  href="{base}/missions?id={mid}"
+                  data-sveltekit-preload-data="hover"
+                >
+                  {mid}
+                  <span class="mission-arrow">→</span>
+                </a>
+              </li>
+            {/each}
+          </ul>
+        {/if}
       {/if}
     </div>
   {/if}
@@ -869,6 +871,14 @@
     border-radius: 4px;
     padding: 12px;
     text-align: center;
+  }
+  .anatomy-open {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
   }
   .anatomy img {
     max-width: 100%;

@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "من يعيش هنا",
   "earth_regime_firsts_label": "السوابق البارزة",
   "earth_regime_firsts_label_missions": "المهمات التأسيسية",
-  "earth_regime_science_label": "تعلّم المزيد في /science"
+  "earth_regime_science_label": "تعلّم المزيد في /science",
+  "fly_phase_panel_aria": "تفاصيل مرحلة المهمة",
+  "fly_phase_panel_close": "إغلاق تفاصيل المرحلة",
+  "fly_phase_panel_eyebrow": "مرحلة المهمة",
+  "fly_phase_pill_open_aria": "تعرّف على مرحلة {phase}"
 }

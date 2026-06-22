@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "Wie woont hier",
   "earth_regime_firsts_label": "Baanbrekende missies",
   "earth_regime_firsts_label_missions": "Grondleggende missies",
-  "earth_regime_science_label": "Meer lezen in /science"
+  "earth_regime_science_label": "Meer lezen in /science",
+  "fly_phase_panel_aria": "Detailgegevens missiefase",
+  "fly_phase_panel_close": "Sluit fasedetails",
+  "fly_phase_panel_eyebrow": "MISSIEFASE",
+  "fly_phase_pill_open_aria": "Meer informatie over de {phase}-fase"
 }

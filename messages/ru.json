@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "Кто здесь находится",
   "earth_regime_firsts_label": "Знаковые достижения",
   "earth_regime_firsts_label_missions": "Основополагающие миссии",
-  "earth_regime_science_label": "Подробнее в /science"
+  "earth_regime_science_label": "Подробнее в /science",
+  "fly_phase_panel_aria": "Детали фазы миссии",
+  "fly_phase_panel_close": "Закрыть детали фазы",
+  "fly_phase_panel_eyebrow": "ФАЗА МИССИИ",
+  "fly_phase_pill_open_aria": "Узнать о фазе {phase}"
 }

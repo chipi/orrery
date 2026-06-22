@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "यहां कौन रहता है",
   "earth_regime_firsts_label": "उल्लेखनीय प्रथम",
   "earth_regime_firsts_label_missions": "संस्थापक मिशन",
-  "earth_regime_science_label": "/science में और जानें"
+  "earth_regime_science_label": "/science में और जानें",
+  "fly_phase_panel_aria": "मिशन चरण विवरण",
+  "fly_phase_panel_close": "चरण विवरण बंद करें",
+  "fly_phase_panel_eyebrow": "मिशन चरण",
+  "fly_phase_pill_open_aria": "{phase} चरण के बारे में जानें"
 }

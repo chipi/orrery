@@ -162,6 +162,7 @@
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
@@ -908,6 +909,10 @@
   // loaded mission's identity strings around it.
   let scState = $derived(spacecraftPos(simDay, arcTimeline, outPts, retPts));
   let phase = $derived(scState.phase);
+  // PhasePanel modal state — opens when the user clicks the HUD phase
+  // pill. ESC + backdrop close. Lives in the regime-panel z-stack at
+  // zIndex=28 so the cinematic stays uninterrupted underneath.
+  let phasePanelOpen = $state(false);
   let phaseLabel = $derived(
     phase === 'pre-launch'
       ? m.fly_phase_pre_launch()
@@ -7034,16 +7039,26 @@
       data-testid="mission-name"
     >
       <span class="hud-title">{mission.name}</span>
-      <span class="hud-phase phase-{phase}" data-testid="hud-phase-pill">
-        {phaseLabel}
-        {#if phaseScienceRef}
-          <ScienceChip
-            tab={phaseScienceRef.tab}
-            section={phaseScienceRef.slug}
-            label={phaseLabel}
-          />
-        {/if}
-      </span>
+      <!-- Click the phase pill → opens PhasePanel (richer in-route
+           preview of the matching /science/mission-phases section).
+           Pill remains its existing colored chip; the button is
+           transparent + inherits the pill style. Replaces the old
+           "tiny ⓘ chip jumps to /science" pattern with the regime-
+           panel-style modal Marko asked for (2026-06-22 micro-
+           enhancement #2 from #358 close). -->
+      {#if phaseScienceRef}
+        <button
+          type="button"
+          class="hud-phase phase-{phase} hud-phase-button"
+          data-testid="hud-phase-pill"
+          aria-label={m.fly_phase_pill_open_aria({ phase: phaseLabel })}
+          onclick={() => (phasePanelOpen = true)}
+        >
+          {phaseLabel}
+        </button>
+      {:else}
+        <span class="hud-phase phase-{phase}" data-testid="hud-phase-pill">{phaseLabel}</span>
+      {/if}
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
         <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>
@@ -7303,6 +7318,9 @@
                 <span class="milestone-tooltip">
                   <span class="milestone-tooltip-label">{evt.label}</span>
                   <span class="milestone-tooltip-met">MET {evt.met_days}d</span>
+                  {#if evt.description}
+                    <span class="milestone-tooltip-desc">{evt.description}</span>
+                  {/if}
                 </span>
               </button>
             {/if}
@@ -7563,6 +7581,13 @@
     </div>
   </div>
 {/if}
+
+<PhasePanel
+  open={phasePanelOpen}
+  onClose={() => (phasePanelOpen = false)}
+  {phaseLabel}
+  scienceRef={phaseScienceRef}
+/>
 
 <style>
   /* Follow-up 5 — cislunar hero-events panel in the debug PAGE tab. */
@@ -8474,6 +8499,20 @@
     letter-spacing: 2px;
     margin-bottom: 4px;
   }
+  /* Button variant — reset native button chrome so .phase-* color
+     classes paint the same look as the <span> variant. */
+  .hud-phase-button {
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-transform: inherit;
+  }
+  .hud-phase-button:hover,
+  .hud-phase-button:focus-visible {
+    filter: brightness(1.25);
+    outline: none;
+  }
   .phase-pre-launch {
     color: rgba(255, 255, 255, 0.5);
     border-color: rgba(255, 255, 255, 0.2);
@@ -8982,21 +9021,25 @@
     bottom: 22px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 6px 10px;
+    padding: 8px 12px;
     background: rgba(15, 18, 30, 0.96);
     border: 1px solid rgba(255, 200, 80, 0.5);
     border-radius: 4px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
+    /* Widened from white-space:nowrap to fixed max-width so the new
+       description line can wrap naturally (#358 micro-enhancement). */
+    width: max-content;
+    max-width: 280px;
     pointer-events: none;
     opacity: 0;
     transition: opacity 120ms;
     z-index: 5;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    align-items: center;
+    gap: 4px;
+    align-items: flex-start;
     backdrop-filter: blur(4px);
+    text-align: left;
   }
   .milestone-tick-button:hover .milestone-tooltip,
   .milestone-tick-button:focus-visible .milestone-tooltip {
@@ -9015,6 +9058,15 @@
     font-size: 11px;
     color: rgba(255, 200, 80, 0.85);
     letter-spacing: 0.05em;
+  }
+  .milestone-tooltip-desc {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.78);
+    margin-top: 2px;
+    white-space: normal;
   }
   .speed-group {
     display: flex;

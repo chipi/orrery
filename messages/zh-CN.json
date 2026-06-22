@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "谁在这里",
   "earth_regime_firsts_label": "里程碑事件",
   "earth_regime_firsts_label_missions": "开创性任务",
-  "earth_regime_science_label": "在 /science 了解更多"
+  "earth_regime_science_label": "在 /science 了解更多",
+  "fly_phase_panel_aria": "任务阶段详情",
+  "fly_phase_panel_close": "关闭阶段详情",
+  "fly_phase_panel_eyebrow": "任务阶段",
+  "fly_phase_pill_open_aria": "了解{phase}阶段"
 }

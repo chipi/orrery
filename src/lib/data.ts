@@ -70,7 +70,43 @@ export async function getMission(
     const overlay = await get<Partial<Mission>>(
       `i18n/${locale}/missions/${destLower}/${id}.json`,
     ).catch(() => ({}) as Partial<Mission>);
-    return { ...baseRecord, ...overlay };
+    const merged: Mission = { ...baseRecord, ...overlay };
+
+    // Inject translated label / description into `flight.events[]` for
+    // non-en-US locales (2026-06-22 — #358 micro-enhancement
+    // "make sure they are translated in all languages"). The overlay
+    // ships an editorial `events[]` array with shape `{met, label,
+    // note}`; map it onto the structural `flight.events[]` by MET so
+    // downstream consumers (milestone tooltip, PhaseMarkerLabel,
+    // FlightDirectorBanner) get translated copy without their own
+    // overlay-merge code. en-US is skipped to preserve the rich
+    // base descriptions (the overlay is intentionally terser/curated
+    // for the CAPCOM ticker; the tooltip wants the full prose).
+    if (
+      locale !== 'en-US' &&
+      Array.isArray(overlay.events) &&
+      Array.isArray(baseRecord.flight?.events)
+    ) {
+      const TOL = 0.05; // days
+      const overlayEvents = overlay.events as Array<{
+        met?: number;
+        label?: string;
+        note?: string;
+      }>;
+      const mergedEvents = baseRecord.flight.events.map((evt) => {
+        if (evt.met_days == null) return evt;
+        let ov = overlayEvents.find((o) => o.met === evt.met_days);
+        if (!ov) ov = overlayEvents.find((o) => Math.abs((o.met ?? -1) - evt.met_days!) <= TOL);
+        if (!ov) return evt;
+        return {
+          ...evt,
+          label: ov.label ?? evt.label,
+          description: ov.note ?? evt.description,
+        };
+      });
+      merged.flight = { ...baseRecord.flight, events: mergedEvents };
+    }
+    return merged;
   } catch {
     return null;
   }

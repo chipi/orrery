@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "Quem vive aqui",
   "earth_regime_firsts_label": "Pioneiros notáveis",
   "earth_regime_firsts_label_missions": "Missões fundadoras",
-  "earth_regime_science_label": "Saiba mais em /science"
+  "earth_regime_science_label": "Saiba mais em /science",
+  "fly_phase_panel_aria": "Detalhes da fase da missão",
+  "fly_phase_panel_close": "Fechar detalhes da fase",
+  "fly_phase_panel_eyebrow": "FASE DA MISSÃO",
+  "fly_phase_pill_open_aria": "Saiba mais sobre a fase {phase}"
 }

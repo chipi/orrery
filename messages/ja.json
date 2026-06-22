@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "主な衛星",
   "earth_regime_firsts_label": "記念碑的ミッション",
   "earth_regime_firsts_label_missions": "先駆的ミッション",
-  "earth_regime_science_label": "/science で詳しく"
+  "earth_regime_science_label": "/science で詳しく",
+  "fly_phase_panel_aria": "ミッションフェーズの詳細",
+  "fly_phase_panel_close": "フェーズ詳細を閉じる",
+  "fly_phase_panel_eyebrow": "ミッションフェーズ",
+  "fly_phase_pill_open_aria": "{phase}フェーズについて詳しく見る"
 }

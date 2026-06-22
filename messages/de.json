@@ -1182,5 +1182,9 @@
   "earth_regime_residents_label": "Wer hier lebt",
   "earth_regime_firsts_label": "Bedeutende Premieren",
   "earth_regime_firsts_label_missions": "Gründungsmissionen",
-  "earth_regime_science_label": "Mehr erfahren unter /science"
+  "earth_regime_science_label": "Mehr erfahren unter /science",
+  "fly_phase_panel_aria": "Missionsphase Details",
+  "fly_phase_panel_close": "Details schließen",
+  "fly_phase_panel_eyebrow": "MISSIONSPHASE",
+  "fly_phase_pill_open_aria": "Mehr über die {phase}-Phase erfahren"
 }

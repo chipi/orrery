@@ -23,9 +23,14 @@
   const MOON_TOUR_ANCHORS = [
     { audio: 'luna9', site: 'luna9' },
     { audio: 'apollo11', site: 'apollo11' },
-    { audio: 'change4', site: 'change4' },
-    { audio: 'chandrayaan3', site: 'chandrayaan3' },
+    { audio: 'apollo12', site: 'apollo12' },
+    { audio: 'apollo14', site: 'apollo14' },
+    { audio: 'apollo15', site: 'apollo15' },
+    { audio: 'apollo16', site: 'apollo16' },
     { audio: 'apollo17', site: 'apollo17' },
+    { audio: 'change4', site: 'change4' },
+    { audio: 'change6', site: 'change6' },
+    { audio: 'chandrayaan3', site: 'chandrayaan3' },
     { audio: 'artemis3', site: 'artemis3' },
   ] as const;
 

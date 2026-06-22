@@ -86,6 +86,36 @@ export interface AudioStage {
 // =============================================================================
 
 export const EPISODE_STAGES: Record<string, AudioStage[]> = {
+  // ── / · guide-home — landing-page card tour. The narration names every
+  //    route card in order; flash each as it's spoken (was 0 stages — the
+  //    whole 200 s episode played with no automation). route-card-<slug>
+  //    is templated onto the grid (card.route.slice(1)). ────────────────
+  'guide-home': [
+    // VTT 00:00:22.4 "Look at the cards on this page."
+    { at_sec: 22, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 24, action: 'flash', target: '[data-audio-stage="route-grid"]' },
+    // VTT 00:00:28.2 "Explore opens the whole solar system…"
+    { at_sec: 29, action: 'flash', target: '[data-audio-stage="route-card-explore"]' },
+    // VTT 00:00:35.4 "Earth, Moon, and Mars are the places we know best…"
+    // (9 s sentence — spaced ~3 s each for breathing room, not crammed.)
+    { at_sec: 37, action: 'flash', target: '[data-audio-stage="route-card-earth"]' },
+    { at_sec: 40, action: 'flash', target: '[data-audio-stage="route-card-moon"]' },
+    { at_sec: 43, action: 'flash', target: '[data-audio-stage="route-card-mars"]' },
+    // VTT 00:00:44.3 "ISS and Tiangong are the two space stations…"
+    { at_sec: 46, action: 'flash', target: '[data-audio-stage="route-card-iss"]' },
+    { at_sec: 50, action: 'flash', target: '[data-audio-stage="route-card-tiangong"]' },
+    // VTT 00:00:51.9 "Missions is the catalogue…"
+    { at_sec: 54, action: 'flash', target: '[data-audio-stage="route-card-missions"]' },
+    // VTT 00:00:58.3 "Fleet shows the hardware itself…"
+    { at_sec: 60, action: 'flash', target: '[data-audio-stage="route-card-fleet"]' },
+    // VTT 00:01:05.9 "Science is the in-app encyclopedia…"
+    { at_sec: 68, action: 'flash', target: '[data-audio-stage="route-card-science"]' },
+    // VTT 00:01:13.4 "Plan and Fly let you design a transfer trajectory…"
+    { at_sec: 76, action: 'flash', target: '[data-audio-stage="route-card-plan"]' },
+    { at_sec: 80, action: 'flash', target: '[data-audio-stage="route-card-fly"]' },
+    // VTT 00:01:48 "Take any card."
+    { at_sec: 109, action: 'flash', target: '[data-audio-stage="route-grid"]' },
+  ],
   // ── / · pale-blue-dot — Curator tour open (PILOT for stage authoring,
   //    RFC-019 §12). Mixed sequence: scroll-to + flash + cue across the
   //    115 s narration. Anchored to data-audio-stage attrs on +page.svelte. ─
@@ -950,8 +980,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       at_sec: 140,
       action: 'cue',
       target: 'Six landings in 3.5 years. Then half a century of silence.',
-      duration_ms: 5000,
+      duration_ms: 4500,
     },
+    // Apollo 17 — the last footstep on the Moon — anchors the "half a
+    // century of silence" beat (audit gap).
+    { at_sec: 142, action: 'click', target: '[data-audio-stage="moon-select-apollo17"]' },
   ],
 
   // ── /moon · cernan-last-words — Guide (Atmospheric Move), VTT 111 s ─
@@ -1038,7 +1071,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // foot…" cue lands so the close plays on the rotated map view.
     { at_sec: 58, action: 'click', target: '[data-audio-stage="surface-stand-at-site"]' },
     { at_sec: 62, action: 'click', target: '[data-audio-stage="surface-panorama-tour-play"]' },
-    { at_sec: 108, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
+    { at_sec: 104, action: 'click', target: '[data-audio-stage="surface-exit-panorama"]' },
+    // VTT 00:01:45 "Artemis has chosen the south pole." Show where the next
+    // crewed mission lands — the far-side past → future bridge (audit gap).
+    { at_sec: 107, action: 'click', target: '[data-audio-stage="moon-select-artemis3"]' },
     // VTT § 00:01:52.8 "Look at this map and pick the spot"
     {
       at_sec: 112,
@@ -1099,6 +1135,9 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: "Chang'e 6 — first samples from the far side, 2024.",
       duration_ms: 5000,
     },
+    // Switch from Chang'e 4 to Chang'e 6 — the far-side sample-return
+    // successor the narrator just named (audit gap).
+    { at_sec: 98, action: 'click', target: '[data-audio-stage="moon-select-change6"]' },
   ],
 
   // ── /mars · guide-mars — VTT 152 s ────────────────────────────────
@@ -1211,9 +1250,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       at_sec: 112,
       action: 'cue',
       target: 'Look at the rovers on the map. Silent. But there.',
+      // (Curiosity focused below — open a named rover on the finale beat;
+      //  audit gap, replaces the generic HUD flash.)
       duration_ms: 5000,
     },
-    { at_sec: 114, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 114, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
   ],
 
   // ── /mars · signal-delay — Enthusiast, VTT 79 s ───────────────────

@@ -599,13 +599,31 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
     { at_sec: 80, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
     { at_sec: 82, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
+    // VTT 00:01:18 "The right panel opens with the full record — launch
+    // vehicle, payload mass, crew or instruments, key events, gallery of
+    // images, links." Open a rich card (Curiosity) and cycle its tabs so
+    // each part the narrator lists is actually shown (user direction).
+    { at_sec: 83, action: 'click', target: '[data-audio-stage="missions-select-curiosity"]' },
+    { at_sec: 85, action: 'click', target: '[data-audio-stage="mission-tab-flight"]' },
+    { at_sec: 87, action: 'click', target: '[data-audio-stage="mission-tab-gallery"]' },
+    { at_sec: 89, action: 'click', target: '[data-audio-stage="mission-tab-science"]' },
+    { at_sec: 91, action: 'click', target: '[data-audio-stage="mission-tab-overview"]' },
+    // Close before the timeline beat so it's visible.
+    { at_sec: 100, action: 'click', target: '[data-audio-stage="panel-close"]' },
     // VTT § 00:01:42.9 "Look at the timeline"
     {
       at_sec: 103,
       action: 'cue',
-      target: 'Look at the timeline.',
+      target: 'Look at the timeline — notice the gaps.',
       duration_ms: 3500,
     },
+    // VTT 00:01:40 "Look at the timeline. Notice the gaps." Bring the epoch
+    // timeline into view + flash it as the narrator walks the Apollo→Luna
+    // gap and Chang'e-1 reopening.
+    { at_sec: 104, action: 'scroll-to', target: '[data-audio-stage="missions-epoch-timeline"]' },
+    { at_sec: 106, action: 'flash', target: '[data-audio-stage="missions-epoch-timeline"]' },
+    // VTT 00:02:10 "Filter, click, read. See where you stand on the ladder."
+    { at_sec: 130, action: 'flash', target: '[data-audio-stage="missions-filters"]' },
   ],
 
   // ── /missions · voyager-grand-tour — Enthusiast, VTT 134 s (Extended Tour) ─

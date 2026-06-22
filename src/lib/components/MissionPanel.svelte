@@ -270,6 +270,7 @@
       <button
         type="button"
         id="mp-tab-overview"
+        data-audio-stage="mission-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
@@ -280,6 +281,7 @@
         <button
           type="button"
           id="mp-tab-flight"
+          data-audio-stage="mission-tab-flight"
           class:active={tab === 'flight'}
           onclick={() => (tab = 'flight')}
           role="tab"
@@ -291,6 +293,7 @@
         <button
           type="button"
           id="mp-tab-gallery"
+          data-audio-stage="mission-tab-gallery"
           class:active={tab === 'gallery'}
           onclick={() => (tab = 'gallery')}
           role="tab"
@@ -301,6 +304,7 @@
       <button
         type="button"
         id="mp-tab-science"
+        data-audio-stage="mission-tab-science"
         class:active={tab === 'science'}
         onclick={() => (tab = 'science')}
         role="tab"

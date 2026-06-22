@@ -287,6 +287,7 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/lib/components/Panel.svelte',
       'src/lib/components/PlanetPanel.svelte',
       'src/lib/components/StationModulePanel.svelte',
+      'src/lib/components/MissionPanel.svelte',
       'src/lib/components/PanoramaToggleButton.svelte',
       'src/lib/components/PanoramaAutoTour.svelte',
       'src/lib/components/ScienceLayersPanel.svelte',

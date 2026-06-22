@@ -4,7 +4,7 @@
   // S5.1 — real playback. <audio> element + per-route inventory + transport.
 
   import { onMount, tick, untrack } from 'svelte';
-  import { page } from '$app/state';
+  import { page } from '$app/stores';
   import { goto, afterNavigate } from '$app/navigation';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
@@ -136,7 +136,7 @@
     }
   }
 
-  const routeEpisodes = $derived(audioRegistry.forRoute(page.url.pathname));
+  const routeEpisodes = $derived(audioRegistry.forRoute($page.url.pathname));
   const visibleEpisodes = $derived(scope === 'screen' ? routeEpisodes : audioRegistry.episodes);
 
   // When the visible list is empty under 'screen' scope, fall back to 'all'.
@@ -193,10 +193,10 @@
     if (!browser || !audio.tourActive) return;
     const ep = audio.currentEpisode;
     if (!ep?.route) return;
-    // Read page.url so the effect re-runs on navigation, but only ACT when
+    // Read $page so the effect re-runs on navigation, but only ACT when
     // the episode itself changed (a tour advance). A route-only change
     // (user navigated) is left alone — the watcher below handles it.
-    const current = page.url.pathname.replace(/\/+$/, '') || '/';
+    const current = $page.url.pathname.replace(/\/+$/, '') || '/';
     if (ep.id === lastAutoNavEpisodeId) return;
     lastAutoNavEpisodeId = ep.id;
     const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
@@ -754,7 +754,7 @@
   // lands the contract in code so v0.8 i18n surfaces it on first ride.
   $effect(() => {
     if (!browser) return;
-    const targetLocale = localeFromPage(page);
+    const targetLocale = localeFromPage($page);
     const ep = audio.currentEpisode;
     if (!ep || ep.locale === targetLocale) return;
     const dur = audio.durationSec;

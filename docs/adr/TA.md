@@ -48,7 +48,7 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 | `/science` | Science Encyclopedia · 85 sections × 10 tabs · KaTeX · 71 SVG diagrams · ?-chip deep-links · Cmd-K search | PRD-008 / RFC-011 / ADR-034 / ADR-035 / ADR-036 |
 | `/fleet` | Spaceflight Fleet · 137 entries × 9 categories with bidirectional cross-refs | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
 
-**Disclosure + gallery pages:** `/credits` (image + text-source provenance per ADR-047), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
+**Disclosure + gallery pages:** `/credits` (image + text-source provenance per ADR-047), `/colophon` (the *original*-work bill-of-materials — spacecraft anatomy art, science diagrams, 3D/2D graphics, tour scripts; manifest `static/data/original-work.json` built by `scripts/build-original-work.mjs`. Anatomy art is AI-generated watercolor/pencil cutaways under `static/images/anatomy/*.webp` — to add more without style drift follow [`docs/anatomy-art-runbook.md`](../anatomy-art-runbook.md), #367), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
 
 ### Data layer
 

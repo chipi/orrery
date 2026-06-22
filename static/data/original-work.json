@@ -2,6 +2,16 @@
   "generated_by": "scripts/build-original-work.mjs",
   "anatomy_art": [
     {
+      "title": "Akatsuki",
+      "file": "/images/anatomy/akatsuki.webp",
+      "cover": false
+    },
+    {
+      "title": "Antares",
+      "file": "/images/anatomy/antares.webp",
+      "cover": false
+    },
+    {
       "title": "Apollo CSM Block II",
       "file": "/images/anatomy/apollo-csm-block-ii.webp",
       "cover": false
@@ -12,8 +22,23 @@
       "cover": false
     },
     {
+      "title": "Ariane 1",
+      "file": "/images/anatomy/ariane-1.webp",
+      "cover": false
+    },
+    {
       "title": "Ariane 5",
       "file": "/images/anatomy/ariane-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Ariane 6",
+      "file": "/images/anatomy/ariane-6.webp",
+      "cover": false
+    },
+    {
+      "title": "Atlas V",
+      "file": "/images/anatomy/atlas-v.webp",
       "cover": false
     },
     {
@@ -27,6 +52,16 @@
       "cover": false
     },
     {
+      "title": "Beresheet",
+      "file": "/images/anatomy/beresheet.webp",
+      "cover": false
+    },
+    {
+      "title": "Blue Moon Mk1",
+      "file": "/images/anatomy/blue-moon-mk1.webp",
+      "cover": false
+    },
+    {
       "title": "Buran",
       "file": "/images/anatomy/buran.webp",
       "cover": false
@@ -34,6 +69,11 @@
     {
       "title": "Cargo Dragon 2",
       "file": "/images/anatomy/cargo-dragon-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Cargo Dragon v1",
+      "file": "/images/anatomy/cargo-dragon-v1.webp",
       "cover": false
     },
     {
@@ -47,8 +87,28 @@
       "cover": false
     },
     {
+      "title": "Chandrayaan-1",
+      "file": "/images/anatomy/chandrayaan1.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 3",
+      "file": "/images/anatomy/change-3.webp",
+      "cover": false
+    },
+    {
       "title": "Chang'e 4",
       "file": "/images/anatomy/change-4.webp",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 5",
+      "file": "/images/anatomy/change-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Compton Gamma Ray Observatory",
+      "file": "/images/anatomy/compton-gro.webp",
       "cover": false
     },
     {
@@ -72,8 +132,38 @@
       "cover": false
     },
     {
+      "title": "Dawn",
+      "file": "/images/anatomy/dawn.webp",
+      "cover": false
+    },
+    {
+      "title": "Delta II",
+      "file": "/images/anatomy/delta-ii.webp",
+      "cover": false
+    },
+    {
+      "title": "Energia",
+      "file": "/images/anatomy/energia.webp",
+      "cover": false
+    },
+    {
+      "title": "Euclid",
+      "file": "/images/anatomy/euclid.webp",
+      "cover": false
+    },
+    {
       "title": "Europa Clipper",
       "file": "/images/anatomy/europa-clipper.webp",
+      "cover": false
+    },
+    {
+      "title": "Rosalind Franklin (ExoMars rover)",
+      "file": "/images/anatomy/exomars-rosalind-franklin.webp",
+      "cover": false
+    },
+    {
+      "title": "ExoMars TGO",
+      "file": "/images/anatomy/exomars-tgo.webp",
       "cover": false
     },
     {
@@ -87,6 +177,16 @@
       "cover": false
     },
     {
+      "title": "Gaganyaan",
+      "file": "/images/anatomy/gaganyaan.webp",
+      "cover": false
+    },
+    {
+      "title": "Gaia",
+      "file": "/images/anatomy/gaia.webp",
+      "cover": false
+    },
+    {
       "title": "Galileo",
       "file": "/images/anatomy/galileo.webp",
       "cover": false
@@ -97,8 +197,38 @@
       "cover": false
     },
     {
+      "title": "H-IIA",
+      "file": "/images/anatomy/h-iia.webp",
+      "cover": false
+    },
+    {
+      "title": "H3",
+      "file": "/images/anatomy/h3.webp",
+      "cover": false
+    },
+    {
+      "title": "Hakuto-R program",
+      "file": "/images/anatomy/hakuto-r.webp",
+      "cover": false
+    },
+    {
       "title": "Hayabusa2",
       "file": "/images/anatomy/hayabusa-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Hayabusa",
+      "file": "/images/anatomy/hayabusa.webp",
+      "cover": false
+    },
+    {
+      "title": "Hitomi (ASTRO-H)",
+      "file": "/images/anatomy/hitomi.webp",
+      "cover": false
+    },
+    {
+      "title": "Hope (EMM)",
+      "file": "/images/anatomy/hope.webp",
       "cover": false
     },
     {
@@ -114,6 +244,21 @@
     {
       "title": "Hubble Space Telescope",
       "file": "/images/anatomy/hubble.webp",
+      "cover": false
+    },
+    {
+      "title": "IM-1 Odysseus",
+      "file": "/images/anatomy/im-1-odysseus.webp",
+      "cover": false
+    },
+    {
+      "title": "InSight",
+      "file": "/images/anatomy/insight.webp",
+      "cover": false
+    },
+    {
+      "title": "International Space Station",
+      "file": "/images/anatomy/iss.webp",
       "cover": false
     },
     {
@@ -137,8 +282,43 @@
       "cover": false
     },
     {
+      "title": "Long March 2F",
+      "file": "/images/anatomy/long-march-2f.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 3B",
+      "file": "/images/anatomy/long-march-3b.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 5 / 5B",
+      "file": "/images/anatomy/long-march-5.webp",
+      "cover": false
+    },
+    {
+      "title": "Long March 7",
+      "file": "/images/anatomy/long-march-7.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Reconnaissance Orbiter (LRO)",
+      "file": "/images/anatomy/lro.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunar Roving Vehicle",
+      "file": "/images/anatomy/lrv-apollo.webp",
+      "cover": false
+    },
+    {
       "title": "Lucy",
       "file": "/images/anatomy/lucy.webp",
+      "cover": false
+    },
+    {
+      "title": "Luna 16-class",
+      "file": "/images/anatomy/luna-16.webp",
       "cover": false
     },
     {
@@ -147,8 +327,23 @@
       "cover": false
     },
     {
+      "title": "Lunar Prospector",
+      "file": "/images/anatomy/lunar-prospector.webp",
+      "cover": false
+    },
+    {
       "title": "Lunokhod 1",
       "file": "/images/anatomy/lunokhod-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Lunokhod 2",
+      "file": "/images/anatomy/lunokhod-2.webp",
+      "cover": false
+    },
+    {
+      "title": "LVM3 (GSLV Mk III)",
+      "file": "/images/anatomy/lvm3.webp",
       "cover": false
     },
     {
@@ -157,13 +352,33 @@
       "cover": false
     },
     {
+      "title": "Mangalyaan (MOM)",
+      "file": "/images/anatomy/mangalyaan.webp",
+      "cover": false
+    },
+    {
+      "title": "Mariner 4",
+      "file": "/images/anatomy/mariner-4.webp",
+      "cover": false
+    },
+    {
       "title": "Mariner 9",
       "file": "/images/anatomy/mariner-9.webp",
       "cover": false
     },
     {
+      "title": "Mars 3",
+      "file": "/images/anatomy/mars-3.webp",
+      "cover": false
+    },
+    {
       "title": "Mars Express",
       "file": "/images/anatomy/mars-express.webp",
+      "cover": false
+    },
+    {
+      "title": "2001 Mars Odyssey",
+      "file": "/images/anatomy/mars-odyssey.webp",
       "cover": false
     },
     {
@@ -174,6 +389,11 @@
     {
       "title": "Mercury capsule",
       "file": "/images/anatomy/mercury-capsule.webp",
+      "cover": false
+    },
+    {
+      "title": "Mercury-Redstone",
+      "file": "/images/anatomy/mercury-redstone.webp",
       "cover": false
     },
     {
@@ -194,6 +414,16 @@
     {
       "title": "N1",
       "file": "/images/anatomy/n1.webp",
+      "cover": false
+    },
+    {
+      "title": "New Glenn",
+      "file": "/images/anatomy/new-glenn.webp",
+      "cover": false
+    },
+    {
+      "title": "New Shepard",
+      "file": "/images/anatomy/new-shepard.webp",
       "cover": false
     },
     {
@@ -222,6 +452,11 @@
       "cover": false
     },
     {
+      "title": "Phoenix",
+      "file": "/images/anatomy/phoenix.webp",
+      "cover": false
+    },
+    {
       "title": "Pioneer 10",
       "file": "/images/anatomy/pioneer-10.webp",
       "cover": false
@@ -232,8 +467,28 @@
       "cover": false
     },
     {
+      "title": "Pragyan",
+      "file": "/images/anatomy/pragyan.webp",
+      "cover": false
+    },
+    {
+      "title": "Progress M",
+      "file": "/images/anatomy/progress-m.webp",
+      "cover": false
+    },
+    {
       "title": "Progress MS",
       "file": "/images/anatomy/progress-ms.webp",
+      "cover": false
+    },
+    {
+      "title": "Proton-M",
+      "file": "/images/anatomy/proton-m.webp",
+      "cover": false
+    },
+    {
+      "title": "PSLV-XL",
+      "file": "/images/anatomy/pslv-xl.webp",
       "cover": false
     },
     {
@@ -252,8 +507,28 @@
       "cover": false
     },
     {
+      "title": "Salyut 6",
+      "file": "/images/anatomy/salyut-6.webp",
+      "cover": false
+    },
+    {
+      "title": "Salyut 7",
+      "file": "/images/anatomy/salyut-7.webp",
+      "cover": false
+    },
+    {
+      "title": "Saturn IB",
+      "file": "/images/anatomy/saturn-ib.webp",
+      "cover": false
+    },
+    {
       "title": "Saturn V",
       "file": "/images/anatomy/saturn-v.webp",
+      "cover": false
+    },
+    {
+      "title": "Schiaparelli",
+      "file": "/images/anatomy/schiaparelli.webp",
       "cover": false
     },
     {
@@ -267,8 +542,18 @@
       "cover": false
     },
     {
+      "title": "SLIM",
+      "file": "/images/anatomy/slim.webp",
+      "cover": false
+    },
+    {
       "title": "SLS Block 1",
       "file": "/images/anatomy/sls-block-1.webp",
+      "cover": false
+    },
+    {
+      "title": "SMART-1",
+      "file": "/images/anatomy/smart-1.webp",
       "cover": false
     },
     {
@@ -292,6 +577,11 @@
       "cover": false
     },
     {
+      "title": "Soyuz TMA",
+      "file": "/images/anatomy/soyuz-tma.webp",
+      "cover": false
+    },
+    {
       "title": "Space Shuttle Orbiter",
       "file": "/images/anatomy/space-shuttle-orbiter.webp",
       "cover": false
@@ -299,6 +589,16 @@
     {
       "title": "Space Shuttle stack",
       "file": "/images/anatomy/space-shuttle-stack.webp",
+      "cover": false
+    },
+    {
+      "title": "Spektr-RG",
+      "file": "/images/anatomy/spektr-rg.webp",
+      "cover": false
+    },
+    {
+      "title": "Spirit (MER-A)",
+      "file": "/images/anatomy/spirit.webp",
       "cover": false
     },
     {
@@ -317,8 +617,33 @@
       "cover": false
     },
     {
+      "title": "Surveyor 3",
+      "file": "/images/anatomy/surveyor-3.webp",
+      "cover": false
+    },
+    {
+      "title": "TESS",
+      "file": "/images/anatomy/tess.webp",
+      "cover": false
+    },
+    {
+      "title": "Tiangong-1",
+      "file": "/images/anatomy/tiangong-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Tiangong-2",
+      "file": "/images/anatomy/tiangong-2.webp",
+      "cover": false
+    },
+    {
       "title": "Tiangong",
       "file": "/images/anatomy/tiangong.webp",
+      "cover": false
+    },
+    {
+      "title": "Tianwen-1",
+      "file": "/images/anatomy/tianwen-1.webp",
       "cover": false
     },
     {
@@ -327,13 +652,28 @@
       "cover": false
     },
     {
+      "title": "Ulysses",
+      "file": "/images/anatomy/ulysses.webp",
+      "cover": false
+    },
+    {
       "title": "Venera 13",
       "file": "/images/anatomy/venera-13.webp",
       "cover": false
     },
     {
+      "title": "Venera 7-class",
+      "file": "/images/anatomy/venera-7.webp",
+      "cover": false
+    },
+    {
       "title": "Viking 1",
       "file": "/images/anatomy/viking-1.webp",
+      "cover": false
+    },
+    {
+      "title": "Vikram (Chandrayaan-3)",
+      "file": "/images/anatomy/vikram-cy3.webp",
       "cover": false
     },
     {
@@ -352,8 +692,28 @@
       "cover": false
     },
     {
+      "title": "Vulcan Centaur",
+      "file": "/images/anatomy/vulcan.webp",
+      "cover": false
+    },
+    {
       "title": "X-37B OTV",
       "file": "/images/anatomy/x37b.webp",
+      "cover": false
+    },
+    {
+      "title": "XMM-Newton",
+      "file": "/images/anatomy/xmm-newton.webp",
+      "cover": false
+    },
+    {
+      "title": "Yutu-2",
+      "file": "/images/anatomy/yutu-2.webp",
+      "cover": false
+    },
+    {
+      "title": "Yutu",
+      "file": "/images/anatomy/yutu.webp",
       "cover": false
     },
     {
@@ -911,7 +1271,7 @@
     }
   ],
   "totals": {
-    "anatomy_art": 72,
+    "anatomy_art": 144,
     "diagrams_science": 74,
     "models3d": 15,
     "canvas2d": 5,

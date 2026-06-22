@@ -155,12 +155,12 @@ test.describe('/explore — load and toggle', () => {
     // #342 Phase 31 — expand the default-collapsed hud-controls so
     // the 2D/3D toggle is in the layout.
     await expandExploreHud(page);
-    // Use button.toggle:not(.sizes-toggle) — the SIZES overlay toggle
-    // also wears the .toggle class but we want only the 2D/3D one
-    // here. The text content flips between "2D" and "3D" each click,
-    // which races Svelte's reactive update on slow viewports if we
-    // re-resolve by name.
-    const toggle = page.locator('button.toggle:not(.sizes-toggle):not(.layers-toggle)');
+    // Target the 2D/3D toggle by its stable testid. The bare `.toggle`
+    // class is shared (SIZES overlay, layers, and the #351 time-control
+    // play button all wear it), so a class selector resolves to multiple
+    // elements — strict-mode violation. The testid is unique and stable
+    // across the "2D"⇄"3D" label flip.
+    const toggle = page.getByTestId('explore-view-toggle');
     await expect(toggle).toBeVisible();
     // Wait one rAF between clicks so Svelte commits the reactive
     // update (3D ⇄ 2D toggle changes the canvas layer's hidden class +
@@ -200,12 +200,11 @@ test.describe('/explore — selection and panel', () => {
     page,
     isMobile,
   }) => {
-    // Earth's orbitR is 113 in world space and at simT=0 it sits at
-    // (W/2 + 113, H/2). simT advances at 0.04 scale, so on slow CI a
-    // 6+ second test gap can rotate Earth ~90° off that spot and the
-    // click misses entirely. Emulating reduced-motion freezes simT
-    // (per the gate in /explore's animate loop) so the click hits a
-    // deterministic position.
+    // Emulate reduced-motion to freeze simT (per the gate in /explore's
+    // animate loop) so the body sits at a deterministic position. Since
+    // #351 Layer 2-A, `a0` is overwritten with each planet's real J2000
+    // mean longitude, so Earth no longer sits at (W/2 + 113, H/2) — read
+    // its live 2D offset from the page and click there.
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page, isMobile);
@@ -215,7 +214,18 @@ test.describe('/explore — selection and panel', () => {
     expect(box).not.toBeNull();
     if (!box) return;
 
-    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
+    const off = await page.evaluate(
+      () =>
+        (
+          window as Window & {
+            __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
+          }
+        ).__explore2dBodyOffset?.('earth') ?? null,
+    );
+    expect(off, 'explore exposes Earth 2D offset').not.toBeNull();
+    await canvas2d.click({
+      position: { x: box.width / 2 + off!.x, y: box.height / 2 + off!.y },
+    });
 
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
@@ -317,29 +327,29 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 10_000 });
   });
 
-  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
+  test('Earth panel surfaces curated SCIENCE cards in overview', async ({ page }) => {
     await page.goto('/explore?id=earth');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    // LEARN folded into SCIENCE in the Phase-4 panel cleanup — the
-    // tiered links now live inside the SCIENCE tab.
-    const scienceTab = page.getByRole('tab', { name: /^SCIENCE$/ });
-    await expect(scienceTab).toBeVisible({ timeout: 10_000 });
-    await scienceTab.click();
-    await expect(scienceTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
-    // Earth overlay carries 5 links across intro/core/deep tiers.
-    await expect(panel).toContainText(/INTRO/);
-    await expect(panel.locator('.link-tier a').first()).toBeVisible();
+    // 2026-06-21 panel collapse (16960d316): panels dropped to 4 uniform
+    // tabs and the SCIENCE tab was folded inline — curated ScienceCards
+    // now render under a SCIENCE heading in the default OVERVIEW tab.
+    await expect(panel.getByRole('heading', { name: 'SCIENCE', level: 3 })).toBeVisible({
+      timeout: 10_000,
+    });
+    // Each card links into the /science deep page ("Read full section →").
+    await expect(panel.locator('.science-section a').first()).toBeVisible();
   });
 
-  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page }) => {
+  test('Sun panel exposes GALLERY tab + curated SCIENCE cards', async ({ page }) => {
     // Open via deep-link (same rationale as the Earth-panel tests above).
     await page.goto('/explore?id=sun');
     const panel = page.locator('aside.panel');
     await expect(panel).toContainText(/The Sun/i, { timeout: 10_000 });
     await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
-    // LEARN tab folded into SCIENCE — assert the SCIENCE tab is
-    // present in its place.
-    await expect(page.getByRole('tab', { name: /^SCIENCE$/ })).toBeVisible();
+    // SCIENCE tab folded into OVERVIEW (16960d316) — assert the inline
+    // science section renders in its place.
+    await expect(panel.getByRole('heading', { name: 'SCIENCE', level: 3 })).toBeVisible();
+    await expect(panel.locator('.science-section a').first()).toBeVisible();
   });
 });

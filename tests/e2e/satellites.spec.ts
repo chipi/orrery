@@ -77,16 +77,17 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await expectSatelliteText(page, 'aside.panel', /27[.,]/);
   });
 
-  test('LIBRARY tab shows tiered LEARN links for Moon', async ({ page }) => {
+  test('TECHNICAL tab shows tiered LEARN links for Moon', async ({ page }) => {
     await page.goto('/explore?id=earth:moon');
-    // Pin to the SatellitePanel by its unique tab id prefix — BeltPanel
-    // can be co-mounted (rarely) and shares the LIBRARY tab role label.
-    const panel = page.locator('aside.panel').filter({ has: page.locator('#sat-tab-library') });
+    // 2026-06-21 panel collapse: the LIBRARY tab was dropped; the library
+    // links now render inside the TECHNICAL tab. Pin to the SatellitePanel
+    // by its unique tab id prefix (#sat-tab-*) — BeltPanel uses #belt-tab-*.
+    const panel = page.locator('aside.panel').filter({ has: page.locator('#sat-tab-technical') });
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const libraryTab = page.locator('#sat-tab-library');
-    await expect(libraryTab).toBeVisible({ timeout: 10_000 });
-    await libraryTab.click();
-    await expect(libraryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
+    const techTab = page.locator('#sat-tab-technical');
+    await expect(techTab).toBeVisible({ timeout: 10_000 });
+    await techTab.click();
+    await expect(techTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
     // Moon overlay carries 5 links: wiki + NASA + Apollo + Artemis + LROC.
     await expect(panel.locator('.learn-list a').first()).toBeVisible({ timeout: 10_000 });
   });

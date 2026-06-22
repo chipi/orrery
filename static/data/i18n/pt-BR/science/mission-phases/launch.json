@@ -1,0 +1,15 @@
+{
+  "title": "Lançamento + Ascensão",
+  "intro_sentence": "Os dez minutos mais violentos de qualquer missão — lutando contra gravidade, atmosfera e a equação do foguete simultaneamente.",
+  "narrative_101": [
+    "A maior parte do perigo em voos espaciais acontece nos primeiros oito minutos. O foguete acende, luta contra seu próprio peso para decolar da plataforma, sobe através de ar denso o suficiente para destroçá-lo, e acelera de zero a sete quilômetros e meio por segundo até o momento em que o motor desliga. Se algo der errado durante a ascensão, raramente há tempo para consertar.",
+    "A aritmética é brutal. Alcançar órbita requer ~9,4 km/s de ∆v, mas apenas ~7,9 km/s realmente contribuem para a velocidade orbital. O resto é desperdiçado em \"perda gravitacional\" (você precisa continuar disparando apenas para manter o foguete no ar enquanto ele sobe) e \"perda por arrasto\" (a atmosfera empurrando de volta). Engenheiros passam anos otimizando o programa de inclinação — exatamente quando e quanto inclinar — para minimizar essas perdas.",
+    "Uma vez que o foguete está alto o suficiente para que o ar desista, as coisas ficam mais fáceis. Estágios se separam, carenagens se soltam, o segundo estágio assume para um empurrão mais longo e suave. Toda a jornada é uma queda calibrada de massa seca: cada quilograma de tanque vazio que você pode descartar é um quilograma que o próximo estágio não precisa acelerar. A SpaceX contraria isso e recupera seus primeiros estágios; todos os outros os descartam."
+  ],
+  "body_paragraphs": [
+    "A ascensão de lançamento custa cerca de 9,4 km/s de ∆v, mas apenas 7,9 km/s disso é velocidade orbital real. O resto é perda gravitacional (você gasta energia mantendo o foguete no ar enquanto ele sobe) e perda por arrasto (atmosfera lutando de volta). Programe a inclinação corretamente e você minimiza ambas — muito vertical desperdiça impulso em altitude que não ajuda na inserção orbital; muito horizontal e a atmosfera tem mais tempo para desacelerá-lo.",
+    "Estágios se soltam ao longo do caminho. Separação do primeiro estágio, ignição do segundo estágio, ejeção da carenagem, liberação da carga útil. Cada estágio descarta massa seca que o próximo não precisa mais acelerar. O Falcon 9 retorna seu primeiro estágio; o Saturn V não retornava. A troca é se o hardware de recuperação custa mais do que o propelente que teria sido necessário para descartar o estágio.",
+    "Em `/missions` o campo launch_vehicle informa qual foguete voou na missão. Saturn V para Apollo. Atlas V para Curiosity. Falcon 9 para Crew Dragon. SLS para Artemis I. Cada foguete tem uma curva fixa de C3-vs-carga útil — o foguete estabelece o teto do que é possível."
+  ],
+  "diagram_caption": "Perfil de lançamento: subida vertical → programa de inclinação → estagiamento → inserção orbital."
+}

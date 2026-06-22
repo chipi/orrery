@@ -1,0 +1,51 @@
+{
+  "name": "Gigantes Gasosos + Gelados",
+  "short": "GIANTS",
+  "story": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Jupiter, Saturn) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Uranus, Neptune) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Jupiter tem 95 luas conhecidas, incluindo quatro maiores que Pluto.",
+  "comparison": "Jupiter tem massa 318× maior que a Terra. Os quatro gigantes juntos formariam um sistema com diâmetro 25× maior que o dos planetas interiores combinados.",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5,20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9,58 AU, sistema de anéis",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19,18 AU, inclinado 97°",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30,07 AU, ventos mais rápidos do sistema",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — primeiro sobrevoo de Jupiter (USA)"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — único sobrevoo de Uranus até hoje (USA)"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — único sobrevoo de Neptune até hoje (USA)"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — primeiro orbitador de Jupiter (USA)",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

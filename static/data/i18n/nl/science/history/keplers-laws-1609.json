@@ -1,0 +1,16 @@
+{
+  "title": "Wetten van Kepler · 1609–1619",
+  "intro_sentence": "Tycho Brahe's levenslange verzameling nauwkeurige waarnemingen van Mars met het blote oog, door Kepler gedestilleerd tot de drie regels die elke baan gehoorzaamt.",
+  "narrative_101": [
+    "Tycho Brahe bracht 30 jaar door in het Uraniborg-observatorium op Hven, waar hij de positie van Mars mat met quadranten van messing en eikenhout — nauwkeuriger dan een boogminuut, allemaal met het blote oog. Hij stierf in 1601 zonder bijna iets te hebben gepubliceerd.",
+    "Kepler erfde de Mars-notitieboeken. Hij bracht nog eens tien jaar door met pogingen ze in cirkels te passen, maar faalde. De doorbraak kwam toen hij een ellips probeerde — Mars kwam onmiddellijk overeen. Daaruit kwamen drie wetten voort: banen zijn ellipsen met de zon in één brandpunt; gelijke oppervlakten afgelegd in gelijke tijd; periode in het kwadraat is gelijk aan halve lange as in het kubiek.",
+    "Zonder die drie wetten zou geen enkele ruimtevaartuigtraject in deze app kunnen worden berekend. Elke porkchop-cel, elke overdrachtsboog, elke planeet op /explore is een Kepleriaanse oplossing."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) publiceerde Wetten 1 + 2 — de ellips- en gelijke-oppervlaktenregels, afgeleid uit de Mars-oppositiegegevens. Harmonices Mundi (1619) publiceerde Wet 3 — periode² ∝ halve lange as³.",
+    "Kepler had geen theoretische rechtvaardiging — de wetten waren empirische patronen die uit gegevens werden gehaald. Newton zou 70 jaar later het waarom leveren (zwaartekracht gaat als 1/r²; gebonden banen zijn kegelsneden; Wet 3 volgt uit energiebehoud).",
+    "Brahe's bijdrage was niet alleen data: hij was een nauwgezette instrumentenbouwer die meting met het blote oog tot zijn fysieke limiet doordreef. Telescoopkwaliteit precisie kwam pas na Galileo's telescoop van 1609 — te laat om met Brahe's carrière te overlappen.",
+    "Moderne heranalyse: Kepler's Mars-residuen zijn sub-boogminuut. Hij bepaalde een ellips met excentriciteit 0.0934 uit gegevens met een onvermijdbare meetonzekerheid van ~1 boogminuut. De fit was echt."
+  ],
+  "diagram_caption": "Tycho's Mars-posities (punten) versus Kepler's elliptische fit (curve). Zon in één brandpunt."
+}

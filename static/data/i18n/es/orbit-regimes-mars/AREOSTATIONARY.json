@@ -1,0 +1,12 @@
+{
+  "name": "Órbita Areostacionaria",
+  "short": "AREO",
+  "story": "El equivalente marciano de la geoestacionaria — a 17.031 km de altitud, donde una órbita tarda exactamente un día sidéreo marciano (24 h 37 min 22 s), de modo que una nave espacial permanecería inmóvil sobre una longitud marciana fija. Ninguna nave espacial ha utilizado jamás esta órbita. Es el objetivo de diseño para futuras constelaciones de retransmisión marcianas: a medida que crezcan las misiones tripuladas y las bases de superficie, colocar satélites de comunicaciones en posiciones areostacionarias reflejaría la red de satélites de comunicaciones GEO de la Tierra, eliminando los cortes diarios de comunicaciones que los relés en órbita baja de hoy en día imponen a cada misión de superficie.",
+  "comparison": "Justo por debajo de Deimos, la luna exterior de Marte (23.460 km). Tres satélites areostacionarios espaciados 120° cubrirían todo el disco marciano — el mismo truco que usan los satélites de comunicaciones GEO para la televisión por difusión terrestre.",
+  "residents": [],
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

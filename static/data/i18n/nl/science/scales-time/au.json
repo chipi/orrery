@@ -1,0 +1,15 @@
+{
+  "title": "AU — Astronomical Unit",
+  "intro_sentence": "De gemiddelde afstand van de aarde tot de zon, vastgesteld op exact 149.597.870.700 meter — de natuurlijke maatstaf voor afstanden in het zonnestelsel.",
+  "narrative_101": [
+    "Zodra je afstanden in de ruimte begint te meten, worden kilometers snel onhandelbaar. Mars is 200 miljoen km. Saturnus is 1,4 miljard km. Pluto is 6 miljard km. Je brein stopt met het verwerken van die getallen als iets anders dan \"groot.\" Dus kozen astronomen een meer menselijke maatstaf: één aarde-zon-afstand. Dat is een Astronomical Unit, afgekort AU.",
+    "De eenheid is verankerd aan een specifiek geheel getal in meters — 149.597.870.700 ervan, vastgesteld in 2012 — maar het praktische idee is eenvoudiger. Mars staat op 1,5 AU van de zon. Jupiter op 5 AU. Pluto draait tussen 30 en 50 AU. Voyager 1, het verst verwijderde door mensen gemaakte object, staat nu rond 165 AU en gaat nog steeds door. Getallen die je daadwerkelijk in je hoofd kunt houden.",
+    "AU komt overal in deze app voor. Het /explore-scherm tekent baanstralen in AU. De /plan porkchop-assen zijn gekalibreerd in AU. De HUD op /fly zet AU om in kilometers en lichtminuten wanneer je die nodig hebt, maar de onderliggende maatstaf is altijd AU. Zodra je het geïnternaliseerd hebt, voelt het zonnestelsel niet meer abstract — je kunt afstanden grofweg in kaart brengen door sprongen in AU te tellen."
+  ],
+  "body_paragraphs": [
+    "Tot 2012 werd de AU gedefinieerd door de baan van de aarde. Omdat de baan van de aarde langzaam evolueert onder planetaire verstoringen, veranderde de AU technisch gezien ook. De IAU heeft het in 2012 vastgesteld op een exact geheel getal in meters — 149.597.870.700 — en de definitie is sindsdien stabiel gebleven. De AU is niet langer 'de baan van de aarde'; het is een metrische maatstaf die er toevallig ruwweg aan gelijk is.",
+    "Afstanden in het zonnestelsel in AU: Mercurius 0,39, Venus 0,72, aarde 1,0, Mars 1,52, Jupiter 5,20, Saturnus 9,58, Uranus 19,22, Neptunus 30,05, Pluto 39,5 (gemiddelden — excentriciteit zorgt ervoor dat ze variëren). De Voyagers zijn ruim voorbij 150 AU en gaan nog steeds door. De Oortwolk reikt uit tot tienduizenden AU.",
+    "Waarom AU in plaats van meters? Omdat getallen in meters onhandelbaar zijn op de schaal van het zonnestelsel. De 1,4 miljard km van Saturnus is onleesbaar. 9,58 AU is een getal dat je in je hoofd kunt houden. De panelen en HUD van Orrery gebruiken allemaal AU voor posities in het zonnestelsel — alleen omgezet naar km, lichtminuten en andere eenheden waar het publiek de conversie nodig heeft."
+  ],
+  "diagram_caption": "1 AU ≈ aarde-zon-afstand. Grote halve assen van planeten in AU, logaritmische schaal om de buitenste planeten te kunnen weergeven."
+}

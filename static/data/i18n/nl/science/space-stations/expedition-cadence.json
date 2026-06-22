@@ -1,0 +1,17 @@
+{
+  "title": "Expeditiecadans",
+  "intro_sentence": "Stations werken met doorlopende rotaties van 6 maanden voor de bemanning — een balans tussen verbruiksgoederen van ruimtepakken, houdbaarheid van voertuigen, opleidingstrajecten en menselijke fysiologie.",
+  "narrative_101": [
+    "Waarom zes maanden? Het is het antwoord op verschillende beperkingen die op één plaats samenkomen. Soyuz- en Crew Dragon-ruimtevaartuigen zijn gecertificeerd om ~210 dagen gekoppeld te blijven voordat hun stuurraketten en afdichtingen moeten worden ververst. Russische Orlan EVA-pakken worden elke zes maanden op de grond opgeladen. NASA's gegevens over botverliesbestrijding zijn het meest betrouwbaar in periodes van 6 maanden. Het rouleren van een derde van de bemanning elke 4-6 maanden zorgt ervoor dat er nieuwe handen aan boord zijn zonder hot-bunking.",
+    "ISS begon met expedities van 3 personen (Expedition 1 in 2000) en stapte over naar bemanningen van 6 personen in 2009 zodra de reddingsbootcapaciteit er was. Elke expeditie duurt doorgaans ~6 maanden. Sommige duren langer — Frank Rubio's onbedoelde verblijf van 371 dagen (Expedition 67/68/69) gebeurde toen zijn Soyuz werd beschadigd door puin en een vervanging naar boven moest worden gebracht.",
+    "Tiangong begon met kortere rotaties (Shenzhou 12: 92 dagen; Shenzhou 13: 183 dagen) en stabiliseerde op ~6 maanden vanaf Shenzhou 14. Bemanningen van drie roteren; de vertrekkende en aankomende bemanningen delen ongeveer een week aan boord om de operationele status over te dragen."
+  ],
+  "body_paragraphs": [
+    "Beperkingen die de ~6-maandencadans bepalen: certificering van gekoppelde ruimtevaartuigen (Soyuz: 210 dagen; Crew Dragon: 210 dagen; Shenzhou: 180-210 dagen), revisiecycli op de grond voor EVA-pakken, voorraadkastcapaciteit per bevoorradingsvlucht en de voorkeur van het NASA Human Research Program voor gegevensbrackets van 6 maanden voor botverlies.",
+    "ISS-expedities: opeenvolgend genummerd sinds Expedition 1 (nov 2000). Bemanningsgroottes — 3 (Exp 1-19), 6 (Exp 20-63), variabel 7-9 met Crew Dragon-overlap (Exp 64-).",
+    "Overdracht: inkomende Soyuz/Crew Dragon koppelt 5-10 dagen voor het vertrek van de uitgaande bemanning. Beide bemanningen delen het station, houden briefings, dragen vracht over, waarna de uitgaande bemanning loskoppelt. De gecombineerde-bemanningsperiode is het meest onder druk wat betreft middelen: meer lichamen, meer CO₂, meer voedselconsumptie.",
+    "Langdurige uitschieters: Polyakov 437,7 d (Mir, 1994-95, opzettelijke Mars-klasse uithoudingstest); Rubio 371 d (ISS, 2022-23, noodgeval); Vande Hei 355 d (ISS, 2021-22, Soyuz-zitplaatswisseling); Kelly + Kornienko 340 d (ISS, 2015-16, tweelingonderzoeksprogramma).",
+    "Tiangong-cadans: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Stabiel ritme dat de ISS-praktijk volgt."
+  ],
+  "diagram_caption": "ISS-expeditietijdlijn 2000-2025: gestapelde kleurenbanden (3-, 6-, 7-persoons bemanningen) met geannoteerde uitschieters (Polyakov, Vande Hei, Rubio)."
+}

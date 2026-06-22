@@ -1,0 +1,14 @@
+{
+  "title": "Lendo os Contornos",
+  "intro_sentence": "A forma da zona econômica revela a geometria das trajetórias viáveis — e onde estão os compromissos.",
+  "narrative_101": [
+    "Agora você conhece os eixos e a escala de cores. A próxima habilidade é ler a FORMA da zona econômica. O lóbulo azul-petróleo não é apenas uma mancha genérica — é um mapa literal de quais trajetórias funcionam e quais não funcionam.",
+    "O clássico porkchop de Marte tem DOIS lóbulos econômicos por janela de lançamento, lado a lado. Eles são chamados de trajetórias \"Tipo I\" e \"Tipo II\" — mesma janela, dois caminhos diferentes ao redor do Sol. Tipo I segue o caminho curto (ângulo de transferência abaixo de 180 graus) e é mais rápida. Tipo II segue o caminho longo (ângulo de transferência acima de 180 graus) e é mais lenta, mas às vezes mais econômica. Ambas são reais, ambas são usadas.",
+    "Fora dos lóbulos: vermelho. A maior parte do porkchop é vermelha, na verdade. Essa é a lição. Existem muito poucos momentos econômicos para lançar uma espaçonave para outro planeta, e eles não são negociáveis. \"Simplesmente esperar pela janela certa\" quase sempre supera \"inventar uma trajetória inteligente.\" Ler a forma do lóbulo — onde ele se alarga, onde se estreita, onde ficam os pontos ótimos — é o que dinamicistas de voo fazem para ganhar a vida."
+  ],
+  "body_paragraphs": [
+    "Observe um porkchop de Marte. Você verá um lóbulo aproximadamente oval de células azul-petróleo centrado próximo a um TOF de 250 dias, recorrendo a cada 26 meses. Essa é a oportunidade Hohmann. Dentro do lóbulo, todas as combinações de (partida, TOF) entregam missões viáveis para Marte com ∆v aceitável.",
+    "Duas soluções por janela. O 'caminho curto' (ângulo de transferência < 180°) e o 'caminho longo' (ângulo de transferência > 180°) ambos conectam a Terra a Marte, mas por elipses diferentes. Eles aparecem como duas faixas econômicas paralelas no porkchop — às vezes ambas aparecem, às vezes apenas uma, dependendo da geometria.",
+    "Fora dos lóbulos econômicos: vermelho. Longe de qualquer janela natural, você precisaria de uma trajetória personalizada de alta energia (assistência gravitacional, múltiplas queimas) para fazer a matemática funcionar. Missões reais se concentram nas zonas econômicas; a filosofia de projeto 'simplesmente esperar pela janela certa' frequentemente supera 'inventar uma trajetória inteligente.'"
+  ]
+}

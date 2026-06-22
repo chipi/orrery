@@ -1,0 +1,46 @@
+{
+  "name": "内太阳系类地行星",
+  "short": "TERRA",
+  "story": "岩石质的内太阳系——距太阳0.4至1.5 AU。四颗拥有金属核心、硅酸盐地幔以及稀薄或无大气层的小型世界。它们形成于冰雪线内侧,那里温度过高,挥发性冰无法凝结,因此只有难熔材料(硅酸盐、铁、镍)保持固态。四颗行星中的三颗曾是载人探索的目标(地球、月球、火星任务)。",
+  "comparison": "全部四颗类地行星都能装进木星的大红斑内。它们的总质量不到太阳系行星总质量的0.5%。",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0.39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0.72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1.00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1.52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — 首次金星飞掠 (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — 首次火星飞掠 (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — 首次水星飞掠 (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Kepleriaanse baan",
+  "intro_sentence": "Een ellips met de Zon in een van de brandpunten — de eenvoudigste baan die een lichaam rond een ander kan hebben.",
+  "narrative_101": [
+    "Stel je voor dat je een bal van een hoge toren gooit. Hij buigt naar beneden naar de grond. Gooi je hem harder, dan wordt de boog langer. Gooi je hem zo hard dat de grond onder hem vandaan valt net zo snel als de bal naar beneden valt — en de bal komt nooit neer. Hij blijft gewoon vallen, voor altijd, in een gesloten lus. Dat is een baan. Elk ruimtevaartuig, elke maan, elke planeet doet die ene truc.",
+    "Wat de lus specifiek een Kepleriaanse baan maakt, is dat we de zwaartekracht behandelen als één, heldere trek naar één zwaar ding — de Zon voor planeten, de Aarde voor satellieten, Mars voor InSight. Twee lichamen, één kracht, geen complicaties. Het resultaat is altijd een ellips, en het zware lichaam bevindt zich altijd in een van de twee brandpunten, nooit in het midden. Dat enkele beeld staat achter elk getal dat je in deze hele encyclopedie zult zien.",
+    "De werkelijkheid is rommелiger — manen verstoren planeten, de uitstulping van de Aarde trekt aan satellieten, de Zon trekt aan maanbanen — maar de rommel is meestal een kleine correctie bovenop een Kepleriaanse baan. Dus beginnen we hier. Krijg de ellips goed en al het andere is decoratie."
+  ],
+  "body_paragraphs": [
+    "Wanneer je naar iets massiefs valt maar het mist, krijg je een Kepleriaanse baan. Het pad is een ellips — een uitgerekte cirkel — en het lichaam waar je naartoe valt bevindt zich in een van de twee brandpunten, nooit in het centrum. De Aarde rond de Zon, de Maan rond de Aarde, elk ruimtevaartuig dat je in Orrery zult zien: allemaal Kepleriaans in eerste benadering.",
+    "Zes getallen beschrijven zo'n baan volledig: de grootte (halve lange as), de uitrekking (excentriciteit), drie hoeken die de ellips in de ruimte oriënteren (inclinatie, lengte van de klimmende knoop, argument van het periapsis), en waar het lichaam zich op dit moment langs het pad bevindt (ware anomalie). Dit zijn de Kepleriaanse elementen — de taal die elke andere sectie in dit tabblad vertaalt naar iets dat je je kunt voorstellen.",
+    "Het model valt uiteen wanneer de zwaartekracht van een derde lichaam ertoe doet: ruimtevaartuigen bij de Maan, satellieten in een lage Aardbaan die de uitstulping van de evenaar voelen, alles wat door de schaduw van Jupiter gaat. Orrery gebruikt Kepleriaanse banen voor het heliocentrische verhaal en patched-conic-benaderingen voor de rest."
+  ],
+  "diagram_caption": "Ellips met brandpunt F₁ in de Zon. Halve lange as a · perihelium (dichtst) en aphelium (verst) op de lijn van apsiden."
+}

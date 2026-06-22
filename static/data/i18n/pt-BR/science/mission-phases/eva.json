@@ -1,0 +1,17 @@
+{
+  "title": "EVA — Atividade Extraveicular",
+  "intro_sentence": "Uma caminhada espacial: a porção de maior risco e maior recompensa de uma missão tripulada, limitada a cerca de 8 horas pelos consumíveis do traje.",
+  "narrative_101": [
+    "Uma EVA — atividade extraveicular — ocorre quando um membro da tripulação deixa o interior pressurizado da estação para trabalhar do lado de fora no vácuo. Toda tarefa externa que não pode ser feita por um braço robótico — instalar um módulo, substituir uma bateria, reparar um vazamento de refrigerante — acontece em uma EVA. Elas são coreografadas ao minuto, ensaiadas debaixo d'água por centenas de horas e limitadas a cerca de 8 horas cada pelos suprimentos de oxigênio e capacidade do depurador de CO₂ do traje.",
+    "As EVAs começam na eclusa de ar — um pequeno compartimento de duas portas onde a tripulação respira 100% de oxigênio por 60-90 minutos (eliminando o nitrogênio da corrente sanguínea para evitar a doença descompressiva), depois despressuriza a eclusa e flutua para fora. A ISS usa a Quest como centro de EVA dos EUA; o segmento russo usa a Pirs (agora Poisk após a Pirs ter sido desorbitada em 2021). A eclusa de ar primária da Tiangong fica no módulo Wentian.",
+    "A tripulação se prende aos corrimãos do lado de fora da estação — perder o apoio significa que o cabo de segurança te segura, mas a mochila a jato SAFER nas costas do traje fornece uma recuperação propulsiva de último recurso se você de alguma forma se desprender de ambos. Ferramentas são amarradas a argolas tipo D, as luvas são pressurizadas e rígidas (razão pela qual a fadiga das mãos é o problema nº 1 no dia de EVA), e o visor heads-up do traje mostra o status de oxigênio, CO₂, bateria e cabo de segurança."
+  ],
+  "body_paragraphs": [
+    "Consumíveis do traje: a EMU da ISS (Unidade de Mobilidade Extraveicular) carrega cerca de 8 horas de oxigênio + bateria + sublimação de água de resfriamento. A depuração de CO₂ é tipicamente o limitador — quando o canister de LiOH ou de oscilação de amina satura, a EVA termina.",
+    "Protocolo de pré-respiração: 60-90 minutos de 100% O₂ a pressão reduzida para eliminar o nitrogênio do sangue (prevenção da doença descompressiva). Os trajes russos Orlan operam a uma pressão mais alta que a EMU dos EUA e necessitam de pré-respiração mais curta.",
+    "Translação: as EVAs usam corrimãos (amarelos) cobrindo todo o exterior da estação; ferramentas e tripulação são presos por cabos. Mochila a jato SAFER (Auxílio Simplificado para Resgate em EVA): 24 pequenos propulsores na mochila PLSS do traje, 1,4 m/s ∆v total — recuperação de emergência apenas.",
+    "Recordes: Anatoly Solovyev detém o recorde cumulativo com 78h 28m ao longo de 16 EVAs. A EVA individual mais longa é de 8h 56m (STS-102, 2001). Maior número de EVAs já realizadas em um único local: ISS, com mais de 270 até 2025.",
+    "Perfil de risco: eventos de perda de veículo em EVA são raros, mas documentados — o incidente de água no capacete de Parmitano em 2013 na EVA-23 quase afogou um astronauta e forçou redesenhos do separador de água da EMU. Perfuração do traje, perda do cabo de segurança e acúmulo de CO₂ são as ameaças reais."
+  ],
+  "diagram_caption": "Trajetória estilizada de EVA: saída da eclusa de ar → translação por corrimão ao longo da treliça → local de trabalho (bateria/carga útil) → translação por corrimão de volta → entrada na eclusa de ar. Linha pontilhada mostra a rota, círculos com anel marcam os pontos de ancoragem do cabo de segurança."
+}

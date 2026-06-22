@@ -1,0 +1,6 @@
+{
+  "name": "O3b / O3b mPOWER (comms MEO)",
+  "short": "O3b",
+  "description": "20 satélites a 8.063 km em MEO equatorial — único sistema comercial de banda larga operacional em MEO. Os sucessores O3b mPOWER estão sendo lançados desde 2022 com alocação de feixe definida por software. Latência menor que GEO, mais cobertura que LEO; voltado para os 'outros 3 bilhões' (origem do nome).",
+  "scale_fact": "As órbitas MEO são um meio-termo subutilizado — rápidas o suficiente para chamadas de baixa latência, requerem menos satélites que LEO. O3b é o único operador usando-as comercialmente."
+}

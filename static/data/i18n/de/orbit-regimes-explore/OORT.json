@@ -1,0 +1,17 @@
+{
+  "name": "Oortsche Wolke",
+  "short": "OORT",
+  "story": "Eine hypothetische kugelförmige Schale aus eisigen Körpern, die das gesamte Sonnensystem umgibt — sie erstreckt sich von etwa 2.000 bis 100.000 AU. Niemals direkt beobachtet, nur abgeleitet: Die langperiodischen Kometen, die wir sehen, haben Bahnen, die so weit sind, dass sie von hier draußen kommen müssen. Geschätzte Population: Billionen von Körpern. Die Oortsche Wolke repräsentiert die Überreste der Geburtswolke des Sonnensystems, dynamisch stabil seit Milliarden von Jahren in dieser Entfernung von der Sonne. Vorbeiziehende Sterne können einzelne Objekte nach innen stören, die dann zu den Kometen werden, die wir beobachten.",
+  "comparison": "Ein halbes Lichtjahr entfernt. Die gravitative Reichweite der Sonne erstreckt sich etwa bis zum inneren Rand der Oortschen Wolke — darüber hinaus beginnen die Gezeiten der Galaxie zu dominieren. Die Voyagers werden 30.000 Jahre brauchen, nur um die innere Grenze zu erreichen.",
+  "residents": [],
+  "firsts": [
+    {
+      "year": 1950,
+      "label": "Oortsche Wolke vorgeschlagen — Jan Oort (Niederlande)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

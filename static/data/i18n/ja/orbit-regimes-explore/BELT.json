@@ -1,0 +1,42 @@
+{
+  "name": "小惑星メインベルト",
+  "short": "BELT",
+  "story": "火星と木星の間に広がる岩石質の残骸の環 — 2.2から3.2 AU。何十万もの天体がカタログ化されており、総推定質量は月の4%未満。SF作品に登場する密集した小惑星帯ではない:天体間の典型的な間隔は約100万キロメートル。木星の重力が軌道をかき乱し続け、衝突による集積を妨げたため、このベルトは惑星に成長することはなかった。3つのカークウッド空隙は木星との共鳴を示し、そこでは小惑星が掃き出されている。",
+  "comparison": "もしあなたが(最大の天体である)Ceresの上に立ったとしても、望遠鏡なしでは他の小惑星を見つけるのに苦労するだろう。ベルトの総質量はおよそPlutoの質量に匹敵する。",
+  "residents": [
+    {
+      "id": "ceres",
+      "label": "Ceres — 最大の天体、準惑星",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "vesta",
+      "label": "Vesta — 2番目に大きく、最も明るい",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "pallas",
+      "label": "Pallas — 3番目に大きい",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "hygiea",
+      "label": "Hygiea — 4番目に大きく、準惑星の可能性",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1801,
+      "label": "Ceres — 最初に発見された小惑星 (Piazzi, Italy)"
+    },
+    {
+      "year": 2011,
+      "label": "Dawn — 最初の小惑星専用周回機 (Vesta, USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

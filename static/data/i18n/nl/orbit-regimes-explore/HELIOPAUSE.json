@@ -1,0 +1,21 @@
+{
+  "name": "Heliopauze + Interstellaire Ruimte",
+  "short": "HELIO",
+  "story": "De grens waar de zonnewind van de Zon de strijd verliest tegen het interstellaire medium — ruwweg op 120 AU afstand. Binnen bevindt zich de heliosfeer, een bel van geladen zonnedeeltjes die naar buiten stromen met honderden km/s. Daarbuiten: het koude, dichte gas en de kosmische straling van de melkweg zelf. De Voyager-sondes zijn de enige artefacten die de mensheid ooit over deze grens heeft geplaatst — Voyager 1 stak over in 2012, Voyager 2 in 2018. Beide zenden nog steeds zwakjes gegevens uit vanuit de interstellaire ruimte.",
+  "comparison": "Ongeveer 4× verder dan Neptunus. Een signaal van Voyager 1 doet er ~22 uur over om de Aarde te bereiken. De sondes zullen pas over 40.000+ jaar een andere ster tegenkomen (Voyager 1 zal over ~40.000 jaar binnen 1,6 lichtjaar van Gliese 445 passeren).",
+  "residents": [],
+  "firsts": [
+    {
+      "year": 2012,
+      "label": "Voyager 1 steekt de heliopauze over — eerste artefact in de interstellaire ruimte (USA)"
+    },
+    {
+      "year": 2018,
+      "label": "Voyager 2 steekt de heliopauze over (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

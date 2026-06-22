@@ -1,0 +1,17 @@
+{
+  "name": "Nube de Oort",
+  "short": "OORT",
+  "story": "Una hipotética capa esférica de cuerpos helados que rodea todo el sistema solar, extendiéndose desde aproximadamente 2000 hasta 100 000 UA. Nunca observada directamente, solo inferida: los cometas de período largo que vemos tienen órbitas tan amplias que deben provenir de aquí. Población estimada: billones de cuerpos. La nube de Oort representa los restos de la nube de nacimiento del sistema solar, dinámicamente estable durante miles de millones de años a esta distancia del Sol. Las estrellas que pasan cerca pueden perturbar objetos individuales hacia el interior, convirtiéndose en los cometas que observamos.",
+  "comparison": "A medio año luz de distancia. El alcance gravitacional del Sol se extiende aproximadamente hasta el borde interior de la nube de Oort; más allá de eso, las mareas galácticas empiezan a dominar. Las Voyager tardarán 30 000 años solo en alcanzar el límite interior.",
+  "residents": [],
+  "firsts": [
+    {
+      "year": 1950,
+      "label": "Nube de Oort propuesta — Jan Oort (Países Bajos)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

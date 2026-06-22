@@ -1,0 +1,51 @@
+{
+  "name": "Gas- und Eisriesen",
+  "short": "GIANTS",
+  "story": "Der äußere Planetenbereich — 5 bis 30 AU. Zwei Gasriesen (Jupiter, Saturn) mit Wasserstoff-Helium-Hüllen von Tausenden Kilometern Tiefe über kleinen felsigen Kernen; zwei Eisriesen (Uranus, Neptune) mit Wasser-/Ammoniak-/Methanmänteln unter dünneren Gashüllen. Zusammen vereinen sie 99 % der gesamten Planetenmasse im Sonnensystem. Jeder besitzt sein eigenes Mondsystem, das wie ein Miniatur-Sonnensystem für sich funktioniert — allein Jupiter hat 95 bekannte Monde, darunter vier, die größer sind als Pluto.",
+  "comparison": "Jupiter ist 318× massereicher als die Erde. Die vier Riesen zusammen würden ein System mit dem 25-fachen Durchmesser der inneren Planeten bilden.",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5,20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9,58 AU, Ringsystem",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19,18 AU, um 97° geneigt",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30,07 AU, schnellste Winde im System",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — erster Jupiter-Vorbeiflug (USA)"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — einziger Uranus-Vorbeiflug überhaupt (USA)"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — einziger Neptune-Vorbeiflug überhaupt (USA)"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — erster Jupiter-Orbiter (USA)",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

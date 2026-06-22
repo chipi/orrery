@@ -1,0 +1,8 @@
+{
+  "title": "Escalas e Tempo — nada disso é do tamanho da Terra, e tudo está acontecendo em um relógio lento.",
+  "intro_sentence": "O sistema solar é maior do que sua intuição está calibrada para entender. Marte está a 200 milhões de km de distância. Saturno está a 1,4 bilhão. Plutão está a 6 bilhões. Números em quilômetros param de ajudar. Então os astrônomos escolheram uma régua mais humana — uma distância Terra-Sol, chamada de unidade astronômica (AU). Marte está a 1,5 AU. Júpiter está a 5. Plutão orbita entre 30 e 50.",
+  "body_paragraphs": [
+    "O tempo é o outro eixo que você precisa recalibrar. Um sinal da Terra leva de 4 a 22 minutos para alcançar Marte. Não há como controlar um rover de Marte da Terra com um joystick — cada manobra importante precisa ser autônoma, porque quando você descobre que falhou, já está falhando há uma hora. As janelas de lançamento para Marte só abrem a cada 26 meses. Se você perder uma, espera dois anos.",
+    "Seis seções aqui. AU e minuto-luz fornecem as réguas. J2000 é o calendário zero universal com o qual todos os astrônomos concordam. Sideral vs sinódico explica por que as janelas para Marte se repetem a cada 26 meses, não 23. O plano da eclíptica é o disco plano no qual os planetas todos (na maioria) se encontram. Sistemas de referência é a contabilidade para alternar entre visões centradas no Sol, centradas na Terra e centradas no corpo — o que o controle de missão manipula constantemente."
+  ]
+}

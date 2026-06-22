@@ -1,0 +1,11 @@
+{
+  "name": "Sfera di Hill di Marte",
+  "short": "HILL",
+  "story": "Il limite esterno dell'autorità gravitazionale di Marte — circa 1,08 milioni di chilometri dal centro del pianeta. All'interno di questa sfera, la gravità di Marte prevale su quella del Sole; all'esterno, il Sole rivendica qualsiasi cosa venga lasciata indietro. La sfera di Hill di Marte è più piccola di quella terrestre (1,5 M km) perché Marte ha meno massa, anche se Marte si trova più lontano dal Sole. Entrambe le lune marziane orbitano in profondità all'interno (Deimos al 2% del raggio di Hill). Nessuna sonda spaziale è stata posizionata vicino al confine.",
+  "comparison": "Approssimativamente la distanza dalla Terra al punto lagrangiano L2 Terra-Luna. Qualsiasi oggetto catturato in una traiettoria diretta verso Marte deve dissipare energia sufficiente per rimanere all'interno di questo confine, altrimenti il Sole lo riporterà in orbita solare.",
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

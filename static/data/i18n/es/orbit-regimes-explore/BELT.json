@@ -1,0 +1,42 @@
+{
+  "name": "Cinturón Principal de Asteroides",
+  "short": "BELT",
+  "story": "Un anillo de restos rocosos entre Marte y Júpiter — de 2,2 a 3,2 UA. Cientos de miles de cuerpos catalogados; la masa total estimada es menos del 4% de la Luna. No es el campo de asteroides densamente poblado de la ciencia ficción: la separación típica entre objetos es de aproximadamente 1 millón de kilómetros. El cinturón nunca se acretó en un planeta porque la gravedad de Júpiter mantuvo las órbitas en agitación, impidiendo que las colisiones se consolidaran. Tres huecos de Kirkwood marcan resonancias con Júpiter donde los asteroides son despejados.",
+  "comparison": "Si estuvieras sobre Ceres (el cuerpo más grande) te costaría ver otro asteroide sin un telescopio. La masa total del cinturón es aproximadamente la masa de Pluto.",
+  "residents": [
+    {
+      "id": "ceres",
+      "label": "Ceres — cuerpo más grande, planeta enano",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "vesta",
+      "label": "Vesta — segundo más grande, el más brillante",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "pallas",
+      "label": "Pallas — tercer más grande",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "hygiea",
+      "label": "Hygiea — cuarto más grande, posiblemente enano",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1801,
+      "label": "Ceres — primer asteroide descubierto (Piazzi, Italia)"
+    },
+    {
+      "year": 2011,
+      "label": "Dawn — primer orbitador dedicado a asteroides (Vesta, USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

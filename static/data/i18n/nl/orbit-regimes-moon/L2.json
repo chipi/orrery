@@ -1,0 +1,28 @@
+{
+  "name": "Aarde-Maan L2",
+  "short": "L2",
+  "story": "Het Lagrangepunt 64.500 km achter de Maan gezien vanaf de Aarde — het gravitatiezadel waar aarde-, maan- en middelpuntvliedende krachten in evenwicht zijn. De Maan bevindt zich altijd tussen het ruimtevaartuig en de Aarde, dus directe communicatie is onmogelijk — maar een satelliet die hier in een halo-baan ROND L2 geparkeerd staat, heeft zichtlijn naar ZOWEL de verre zijde van de Maan ALS de Aarde. Zo kon China Chang'e 4 in 2019 op de verre zijde landen: de Queqiao-relaissatelliet, geparkeerd in een halo rond Aarde-Maan L2, verbindt elk commando en elke afbeelding.",
+  "comparison": "Ongeveer 1/6e van de afstand tussen Aarde en Maan. Zonder een relais bij L2 is de gehele verre zijde van de Maan een communicatie-black-out — elk ruimtevaartuig dat daar ooit landde, heeft er een nodig gehad.",
+  "residents": [
+    {
+      "id": "queqiao",
+      "label": "Queqiao — Chang'e 4 relais voor de verre zijde (2018)",
+      "agency": "CNSA"
+    },
+    {
+      "id": "queqiao-2",
+      "label": "Queqiao-2 — Chang'e 6 relais voor de verre zijde (2024)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2018,
+      "label": "Queqiao — eerste operationele Aarde-Maan L2-relais (China)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

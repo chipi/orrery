@@ -1,0 +1,34 @@
+{
+  "name": "Orbite martienne haute",
+  "short": "HMO",
+  "story": "Orbites hautement elliptiques dans la plage de 1 000 à 2 500 km, principalement historiques. Mariner 9 y est arrivée en 1971 — la première sonde à orbiter autour d'une autre planète, devançant Mars 2 de quelques semaines. L'orbiteur soviétique Mars 3 et l'orbiteur américain Viking 1 ont suivi, tous stationnés sur de longues ellipses qui minimisaient la consommation de carburant pour le maintien à poste durant l'ère Mariner aux budgets delta-v limités. Phobos traverse cette bande à 9 376 km — Viking et Mars Express ont tous deux exploité cette géométrie pour étudier la lune de près.",
+  "comparison": "Approximativement l'altitude où orbitent les satellites GPS terrestres — mais autour d'une planète à peine plus grande que la moitié de la Terre. La vue de Mars par l'orbiteur à l'apoapse correspond au cadrage classique « disque complet » des photographies de mission du début des années 1970.",
+  "residents": [
+    {
+      "id": "mariner9",
+      "label": "Mariner 9 (1971-1972 — premier orbiteur martien)",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars3-orbiter",
+      "label": "Mars 3 orbiteur (1971-1972)",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "viking1-orbiter",
+      "label": "Viking 1 orbiteur (1976-1980)",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — premier satellite artificiel d'une planète autre que la Terre (USA)",
+      "mission_id": "mariner9"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

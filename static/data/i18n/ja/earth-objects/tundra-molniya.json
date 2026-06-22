@@ -1,0 +1,6 @@
+{
+  "name": "Molniya + Tundra (HEO 63.4°)",
+  "short": "Molniya/Tundra",
+  "description": "軌道傾斜角63.4°の臨界傾斜角を持つ高離心率軌道。Molniya(12時間周期、600 × 40,000 km)— 1965年以来のロシアの高緯度通信 + Oko/Meridian早期警戒システム。Tundra(24時間周期、25,000 × 35,786 km)— Sirius XM Satellite Radio + 米国SBIRS-HEOセンサー。",
+  "scale_fact": "63.4°の傾斜角は偶然ではない — これは地球のJ2摂動が遠地点を選択した半球上に固定する「臨界傾斜角」である。"
+}

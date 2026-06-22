@@ -1,0 +1,29 @@
+{
+  "name": "準直線ハロー軌道",
+  "short": "NRHO",
+  "story": "月の周回軌道というよりも、地球-月系のL1およびL2ラグランジュ点の周りを描く細長い8の字軌道である。近月点(~3,000 km)では月の南極に接近し、遠月点(~70,000 km)では北極のはるか上空まで伸びる。この軌道形状には2つの利点がある:地球への連続的な可視性(通信途絶なし)と、非常に少ない軌道維持燃料(年間数m/s)である。NASAの月周回有人拠点 Lunar Gateway は、打ち上げ後NRHOに配置される予定である。CAPSTONE は2022年に先駆けとしてNRHOへ飛行した。",
+  "comparison": "NRHOは約7日ごとに1周する——月自体の公転周期のおよそ4分の1である。探査機は常に南極域の近くにあるが、その真上に位置することはない。",
+  "residents": [
+    {
+      "id": "capstone",
+      "label": "CAPSTONE — NRHOパスファインダー",
+      "agency": "NASA"
+    },
+    {
+      "id": "gateway",
+      "label": "Lunar Gateway — 計画中の有人拠点",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2022,
+      "label": "CAPSTONE — 初のNRHO運用飛行(アメリカ)",
+      "mission_id": ""
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

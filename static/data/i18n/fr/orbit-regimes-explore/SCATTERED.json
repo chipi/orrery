@@ -1,0 +1,23 @@
+{
+  "name": "Disque diffus + Sednoïdes",
+  "short": "SCATTERED",
+  "story": "Corps sur des orbites très elliptiques au-delà de la ceinture de Kuiper — 50 à 1 000 UA. Ils ont probablement été dispersés ici par des interactions gravitationnelles avec Neptune il y a longtemps. Sedna est le prototype des sednoïdes : 76 UA au périhélie, 937 UA à l'aphélie, une orbite de 11 400 ans. Leurs orbites sont trop éloignées pour que Neptune les ait placées dans leur configuration actuelle, suggérant des influences d'étoiles de passage, d'une hypothétique neuvième planète, ou des sœurs perdues du Soleil issues de son amas de naissance. Aucun vaisseau spatial ne les a jamais visités.",
+  "comparison": "Sedna à l'aphélie se situe à 1/53 de la distance qui nous sépare de Proxima Centauri, l'étoile la plus proche du Soleil. La lumière atteignant Sedna depuis le Soleil représente 1/350 000 de ce qui atteint la Terre.",
+  "residents": [
+    {
+      "id": "sedna",
+      "label": "Sedna — 76-937 UA, orbite de 11 400 ans",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2003,
+      "label": "Découverte de Sedna — premier sednoïde (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

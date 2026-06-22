@@ -1,0 +1,15 @@
+{
+  "title": "Transfer Ellips",
+  "intro_sentence": "De Kepleriaanse boog die een ruimtevaartuig van de ene baan naar de andere brengt — de zon in één brandpunt, net als elke andere baan.",
+  "narrative_101": [
+    "Missieplannen klinkt alsof het om motoren en raketten gaat. Het gaat vooral om het kiezen van een ellips. Elke interplanetaire reis — Apollo naar de maan, Voyager naar Neptunus, Perseverance naar Mars — is gewoon een ruimtevaartuig dat een elliptische baan volgt tussen waar het begon en waar het naartoe gaat. Het mooie woord voor die ellips is de transferbaan.",
+    "Het volgt dezelfde regels als elke andere Kepleriaanse baan. De zon zit in één brandpunt. Het ruimtevaartuig beweegt langzaam aan het verre uiteinde en snel aan het dichtbije uiteinde. Vis-viva werkt nog steeds om de snelheid te berekenen. De derde wet van Kepler geeft je nog steeds de vliegtijd op basis van de grootte. Niets exotisch.",
+    "Het enige dat een transfer ellips anders maakt dan de baan van een planeet is dat het ruimtevaartuig er maar de HELFT van aflegt. Het stapt op aan het ene uiteinde, rijdt naar het andere en stapt af. Daarom heeft het ∆v budget altijd twee grote branding — één om de ellips binnen te gaan, één om eruit te gaan. Het stuk in het midden, de acht maanden durende vrije vlucht, kost helemaal niets."
+  ],
+  "body_paragraphs": [
+    "Zodra je uit de baan van de aarde bent gebrand, zit je op een ellips om de zon. Die ellips is de transferbaan, en heeft dezelfde eigenschappen als elke andere: halve lange as, excentriciteit, perihelium, aphelium. Het feit dat je ergens naartoe gaat verandert de geometrie niet — zwaartekracht geeft niets om je bestemming.",
+    "Twee ankerpunten definiëren een transfer ellips: waar je begon (perihelium als je naar buiten gaat) en waar je zult eindigen (aphelium). De halve lange as is het gemiddelde van die twee stralen. Pas een van beide ankerpunten aan en de hele ellips verandert van vorm — ga verder naar buiten, de ellips rekt uit, de reis duurt langer.",
+    "Op de `/fly` HUD van Orrery zie je het ruimtevaartuig deze ellips in real time volgen. De transferboog op het scherm is een visuele weergave van dezelfde kegelsnede die de wiskunde zegt dat het is — de zon in één brandpunt, perihelium achter je, aphelium voor je."
+  ],
+  "diagram_caption": "Twee coplanaire banen (vertrek binnen, bestemming buiten) verbonden door een transfer ellips met de zon in één brandpunt."
+}

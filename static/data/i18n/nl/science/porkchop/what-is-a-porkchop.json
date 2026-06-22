@@ -1,0 +1,15 @@
+{
+  "title": "Wat is een Porkchop Plot?",
+  "intro_sentence": "Een 2D-heatmap die de ∆v-kosten toont voor elk (vertrekdatum, reistijd) paar — het standaardinstrument voor het vinden van lanceervenstersen.",
+  "narrative_101": [
+    "Wanneer missieplanners willen weten of een reis naar Mars haalbaar is, berekenen ze niet één baan. Ze berekenen er MILJOENEN — elke mogelijke vertrekdatum, elke mogelijke reistijd, in een gigantisch raster — en ze maken er een heatmap van. Goedkope trajecten verschijnen als koelblauwe zones, dure als rood. Het resultaat ziet er vreemd genoeg uit als een karbonade. De goedkope zone is het vlees van de karbonade; de dure richel is het bot.",
+    "Waarom de moeite nemen om een hele heatmap te maken in plaats van gewoon één optimaal antwoord? Omdat echte missies beperkingen hebben. Misschien is een bepaald lanceerplatform alleen beschikbaar in 2026. Misschien moet je landen voordat een stofstormseizoen eindigt. Misschien is een bepaalde raket pas klaar tegen een bepaalde maand. De porkchop laat je ALLE afwegingen in één oogopslag zien — kies het goedkoop-genoeg traject dat past bij je echte kalender.",
+    "Open /plan in deze simulator. Kies een bestemming. Kies een lanceerjaar. Wat je ziet is een porkchop, live berekend. Elke pixel is één Lambert-probleem — \"vertrek van de Aarde op dag X, aankomst op dag Y, wat kost het?\" Beweeg over een pixel en de simulator vertelt je de exacte datums en ∆v. Klik en het traject wordt geladen in /fly. De volgende vier secties leggen uit hoe je het moet lezen."
+  ],
+  "body_paragraphs": [
+    "Kies een vertrekdatum op de X-as. Kies een reistijd op de Y-as. De kleur van die cel vertelt je hoeveel ∆v het zou kosten om die missie te vliegen. Koel turquoise: goedkoop. Geel: gematigd. Rood: heel duur. Herhaal voor elke pixel en je krijgt een porkchop plot — genoemd naar de manier waarop de contouren van de goedkope zone een karbonadevormige lob vormen.",
+    "Elke cel is het antwoord op een Lambert-probleem: 'vertrek van de Aarde op datum X, aankomst op de bestemming op datum X + Y, wat is de benodigde ∆v?' Los Lambert miljoenen keren op over een datumraster en de contouren ontstaan ​​vanzelf. De natuurlijke minima zijn lanceervensteren — de goedkope zones waar Hohmann-achtige overbrengingen bestaan.",
+    "Orrery's `/plan` route toont je de porkchop voor elk van negen bestemmingen (Mars, Mercurius, Venus, de gasreuzen, Pluto, Ceres). Beweeg over een cel om de exacte datums en ∆v te zien. Klik om die missie te laden in `/fly`."
+  ],
+  "diagram_caption": "Porkchop plot: X = vertrekdatum, Y = reistijd, kleur = ∆v-kosten. Goedkope zones clusteren rond natuurlijke Hohmann-vensteren."
+}

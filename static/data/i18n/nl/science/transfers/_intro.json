@@ -1,0 +1,8 @@
+{
+  "title": "Transfers — eenmaal in een baan om de aarde ben je halverwege overal",
+  "intro_sentence": "Robert Heinlein schreef dat. Hij had gelijk. Het bereiken van een lage aardbaan kost ongeveer 9,4 km/s aan ∆v — het moeilijkste deel van elke reis. Van daaruit naar Mars gaan voegt slechts ~3,6 km/s toe. Zodra je vrij bent van de atmosfeer van de planeet en in een juiste baan zit, is de rest van het zonnestelsel voornamelijk meetkunde.",
+  "body_paragraphs": [
+    "De zeven secties in dit tabblad behandelen de meetkunde. De Hohmann-transfer is de goedkoopst mogelijke reis tussen twee banen — twee brandingen, acht maanden zweven. Het probleem van Lambert generaliseert Hohmann naar willekeurige vertrek- en aankomstdata. Zwaartekrachtassisties laten je (in essentie) gratis snelheid stelen van een planeet, wat de manier is waarop Voyager 2 Neptunus bereikte. Vrije-terugkeerbanen zijn het vangnet dat Apollo 13 thuisbracht. Patched conics is de werkbare benadering die ons in staat stelt dit alles in een browser te berekenen.",
+    "Als je maar één sectie leest: Hohmann-transfer. Al het andere bouwt daarop voort."
+  ]
+}

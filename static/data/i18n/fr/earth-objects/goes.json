@@ -1,0 +1,6 @@
+{
+  "name": "GOES (Météo NOAA)",
+  "short": "GOES",
+  "description": "Paire de satellites météorologiques géostationnaires américains — GOES-East à 75,2°W + GOES-West à 137,0°W assurent une couverture continue des Amériques. À partir de GOES-16, l'imageur Advanced Baseline Imager permet des balayages mésoéchelle de 30 secondes des cœurs d'ouragans.",
+  "scale_fact": "Chaque carte météo télévisée d'un ouragan américain que vous avez vue est une image GOES prise quelques minutes plus tôt depuis 35 786 km d'altitude."
+}

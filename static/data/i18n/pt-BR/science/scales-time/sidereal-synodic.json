@@ -1,0 +1,16 @@
+{
+  "title": "Período Sideral vs Período Sinódico",
+  "intro_sentence": "Duas formas de perguntar 'com que frequência isso se repete?' — mesmo corpo, referencial diferente, resposta diferente.",
+  "narrative_101": [
+    "Existem duas respostas diferentes para a pergunta \"quanto dura um ano em Marte?\" — e qual delas você quer depende do que você está tentando fazer.",
+    "Se você quer saber quanto tempo Marte leva para dar UMA VOLTA completa ao redor do Sol, a resposta é 687 dias terrestres. Esse é o período sideral — medido em relação às estrelas distantes e imóveis. É a verdade geométrica da órbita. Vis-viva e a terceira lei de Kepler funcionam em tempo sideral.",
+    "Mas se você quer saber com que frequência a Terra e Marte SE ALINHAM DA MESMA FORMA (para que você possa lançar uma missão), a resposta é 780 dias — cerca de 26 meses. Esse é o período sinódico. Por que mais longo? Porque enquanto Marte dá uma volta ao redor do Sol, a Terra dá quase duas — ambos os planetas continuam se movendo. O alinhamento só se repete quando a Terra ultrapassa Marte na dança.",
+    "É por isso que janelas de lançamento para Marte aparecem a cada 26 meses. Se você perder uma, espera dois anos. Toda missão para Marte que você já ouviu falar teve que se sincronizar com uma janela sinódica — Curiosity em 2011, Perseverance em 2020, a próxima em 2026. O período sinódico é o batimento cardíaco do planejamento de missões interplanetárias."
+  ],
+  "body_paragraphs": [
+    "Período sideral: tempo para uma órbita completa em relação às estrelas fixas. Este é o período geométrico da terceira lei de Kepler — o ano sideral de Marte é 687 dias terrestres. Período sinódico: tempo para um corpo retornar à mesma posição em relação a outro corpo, geralmente visto de um terceiro. O período sinódico de Marte — tempo entre alinhamentos Terra-Marte — é 780 dias, ou cerca de 26 meses.",
+    "O período sinódico é o que importa para os planejadores de missão. Transferências de Hohmann Terra-Marte só funcionam quando Marte está no lugar certo. A próxima janela de lançamento viável aparece a cada 26 meses. Perca uma, espere dois anos por outra. Essa é a cadência de toda missão para Marte já realizada.",
+    "Matematicamente: `1/T_syn = 1/T_inner − 1/T_outer`. Se o ano da Terra é 1,0 ano e o de Marte é 1,88 anos: `1/T_syn = 1 − 1/1.88 = 0.468`, então `T_syn = 2.14 anos ≈ 26 meses`. A matemática é simples; a consequência operacional — toda linha do tempo de missão deve respeitá-la — é onde ela vive no planejamento de missões."
+  ],
+  "diagram_caption": "Sideral: mesmo alinhamento estelar. Sinódico: mesmo alinhamento Terra-Marte-Sol, mais longo porque ambos os planetas se moveram."
+}

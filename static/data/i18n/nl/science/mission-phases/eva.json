@@ -1,0 +1,17 @@
+{
+  "title": "EVA — Extravehicular Activity",
+  "intro_sentence": "Een ruimtewandeling: het meest risicovolle en meest lonende deel van een bemande missie, beperkt tot ongeveer 8 uur door verbruiksartikelen van het pak.",
+  "narrative_101": [
+    "Een EVA — extravehicular activity — is wanneer een bemanningslid het onder druk staande interieur van het station verlaat om buiten in het vacuüm te werken. Elke externe taak die niet door een robotarm kan worden uitgevoerd — het installeren van een module, het vervangen van een batterij, het repareren van een koelmiddellek — gebeurt tijdens een EVA. Ze zijn tot op de minuut gechoreografeerd, honderden uren onder water geoefend, en beperkt tot ongeveer 8 uur elk door de zuurstof- en CO₂-scrubbercapaciteit van het pak.",
+    "EVA's beginnen in de luchtsluis — een kleine compartiment met twee deuren waar de bemanning 60-90 minuten lang 100% zuurstof inademt (om stikstof uit de bloedstroom te spoelen zodat ze geen caissonziekte krijgen), vervolgens de sluis decomprimeren en naar buiten zweven. ISS gebruikt Quest als het Amerikaanse EVA-knooppunt; het Russische segment gebruikt Pirs (nu Poisk nadat Pirs in 2021 uit zijn baan is gehaald). Tiangong's primaire luchtsluis bevindt zich op de Wentian-module.",
+    "De bemanning maakt zich vast aan leuningen aan de buitenkant van het station — je grip verliezen betekent dat de veiligheidslijn je opvangt, maar de SAFER-jetpack op de rug van het pak biedt een propulsief herstel als laatste redmiddel als je op de een of andere manier van beide losraakt. Gereedschap is vastgebonden aan D-ringen, handschoenen zijn onder druk en stijf (daarom is handvermoeidheid het #1 probleem op EVA-dag), en het heads-up display van het pak toont zuurstof, CO₂, batterij en lijnsituatie."
+  ],
+  "body_paragraphs": [
+    "Verbruiksartikelen van het pak: ISS EMU (Extravehicular Mobility Unit) heeft ongeveer 8 uur aan zuurstof + batterij + koelwatersublimatie aan boord. CO₂-scrubbing is typisch de beperkende factor — wanneer de LiOH- of amine-swing-canister verzadigd raakt, eindigt de EVA.",
+    "Prebreathing-protocol: 60-90 minuten 100% O₂ bij verlaagde druk om stikstof uit het bloed te spoelen (preventie van decompressieziekte). Russische Orlan-pakken werken bij hogere druk dan Amerikaanse EMU en hebben een kortere prebreathing nodig.",
+    "Verplaatsing: EVA's gebruiken leuningen (geel) die de gehele buitenkant van het station bedekken; gereedschap en bemanning zijn vastgebonden. SAFER (Simplified Aid For EVA Rescue) jetpack: 24 kleine stuwraketten op de PLSS-rugzak van het pak, 1,4 m/s ∆v totaal — alleen voor noodhersteL.",
+    "Records: Anatoly Solovyev heeft het cumulatieve record met 78u 28m over 16 EVA's. De langste enkele EVA is 8u 56m (STS-102, 2001). Meeste EVA's ooit uitgevoerd op één locatie: ISS, met meer dan 270 tegen 2025.",
+    "Risicoprofiel: verlies-van-voertuig-incidenten tijdens EVA zijn zeldzaam maar gedocumenteerd — het Parmitano-helmwaterincident van 2013 tijdens EVA-23 deed een astronaut bijna verdrinken en dwong tot herontwerpen van de waterafscheider van de EMU. Pakperforatie, verloren lijn en CO₂-ophoping zijn de actuele bedreigingen."
+  ],
+  "diagram_caption": "Gestileerd EVA-pad: luchtsluis uitgang → leuningverplaatsing langs truss → werkplek (batterij/payload) → leuningverplaatsing terug → luchtsluis ingang. Stippellijn toont de route, omcirkelde cirkels markeren de ankerpunten van de veiligheidslijn."
+}

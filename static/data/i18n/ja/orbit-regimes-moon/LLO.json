@@ -1,0 +1,44 @@
+{
+  "name": "低月軌道",
+  "short": "LLO",
+  "story": "月面に最も近い帯域 — 通常は高度50〜100 km。この軌道の宇宙機は月面をサブメートル解像度で撮像できるが、その代償は大きい。月の質量分布は極めて不均一であり(月の海の地下に巨大なマスコンが存在)、低軌道は激しく摂動を受ける。ほとんどのLLOミッションは、能動的な軌道維持か、ドリフトに抵抗する慎重に選ばれた「凍結」軌道傾斜角を必要とする。LROは2009年以来ここを継続的に飛行しており、史上最長の月ミッションである。",
+  "comparison": "地球までの距離の約1/3,800。LLOから見ると月の地平線は急激に湾曲しており、地表が落ち込む前にあらゆる方向に30〜40 km先まで見渡せる。",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — 月偵察軌道船",
+      "agency": "NASA"
+    },
+    {
+      "id": "lunar-prospector",
+      "label": "Lunar Prospector (1998-1999)",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan1",
+      "label": "Chandrayaan-1 (2008-2009)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "change2",
+      "label": "Chang'e 2 (2010-2011)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1966,
+      "label": "Luna 10 — 初の人工月周回機 (USSR)",
+      "mission_id": "luna10"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — 初の有人月周回 (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

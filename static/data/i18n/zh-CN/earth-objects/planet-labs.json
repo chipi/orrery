@@ -1,0 +1,6 @@
+{
+  "name": "Planet Labs (PlanetScope + SkySat)",
+  "short": "Planet",
+  "description": "~150 颗 PlanetScope 3U 立方星 + ~21 颗 SkySats,运行于 475 km 太阳同步轨道 — 每日重访地球成像。PlanetScope 提供 3-5 m 全球每日覆盖;SkySats 提供 50 cm 按需任务。地球陆地表面的每一块区域每天都被拍摄。",
+  "scale_fact": "Planet 的 Doves 卫星群每天产生约 25 TB 的影像数据 — 超过 NASA 整个地球观测项目的数据量。"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "V∞ — Velocidade Hiperbólica Excedente",
+  "intro_sentence": "A velocidade que sobra depois de você escalar para fora do poço gravitacional de um planeta — o que define a energia de chegada de um sobrevoo.",
+  "narrative_101": [
+    "C3 é o que seu foguete precisa entregar no LANÇAMENTO. V∞ — pronunciado \"vê-infinito\" — é a mesma ideia, mas na OUTRA extremidade da viagem. Quando você chega em Marte, quão rápido você está se movendo em relação a Marte, antes que sua gravidade te capture? Isso é V∞.",
+    "Isso importa porque define sua queima de chegada. Quanto mais rápido você chega, mais precisa frear para parar. A Mars Reconnaissance Orbiter chegou com V∞ ≈ 2,6 km/s e queimou ~1 km/s para captura em órbita. A Voyager 2 chegou a Netuno com V∞ ≈ 8 km/s e nem tentou parar — apenas passou, tirou fotos e continuou para fora do sistema solar para sempre.",
+    "A matemática tem uma bela simetria: a V∞ de chegada em Marte é o mesmo número que você veria se observasse Marte de longe e a espaçonave estivesse a caminho. Toda a jornada, vista de fora das esferas de influência de ambos os planetas, se torna um arco kepleriano limpo com dois valores de V∞ bem definidos — um em cada extremidade. Esse é o número do momento da verdade no HUD do /fly quando a espaçonave cruza para dentro do poço gravitacional do destino."
+  ],
+  "body_paragraphs": [
+    "Imagine uma assíntota, infinitamente longe do planeta. A velocidade com que você estaria se movendo nessa assíntota é V∞ — pronunciado 'vê-infinito'. É a velocidade relativa ao Sol menos a contribuição do planeta para seu movimento. Em um sobrevoo hiperbólico, V∞ é constante ao longo de ambos os braços da hipérbole.",
+    "V∞ controla quão grande a queima de chegada precisa ser. Para capturar em órbita, você precisa sangrar energia suficiente para cair abaixo da velocidade de escape — quanto mais fundo o poço, mais `∆v` custa para te desacelerar. A Mars Reconnaissance Orbiter chegou a Marte com V∞ ≈ 2,6 km/s, então gastou ~1 km/s de `∆v` para inserção orbital. A Voyager 2 chegou a Netuno com V∞ ≈ 8 km/s e nem tentou inserir — apenas passou.",
+    "No HUD do `/fly` você verá V∞ aparecer quando a espaçonave entra na esfera de influência do destino. É o momento da verdade: quanta velocidade você precisa eliminar, e seu foguete pode pagar o preço de eliminá-la?"
+  ],
+  "diagram_caption": "Sobrevoo hiperbólico: V∞ é a velocidade constante nas assíntotas, longe do planeta."
+}

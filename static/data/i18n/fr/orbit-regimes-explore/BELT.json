@@ -1,0 +1,42 @@
+{
+  "name": "Ceinture principale d'astéroïdes",
+  "short": "BELT",
+  "story": "Un anneau de débris rocheux entre Mars et Jupiter — 2,2 à 3,2 AU. Des centaines de milliers de corps catalogués ; masse totale estimée inférieure à 4 % de celle de la Lune. Ce n'est pas le champ d'astéroïdes densément peuplé de la science-fiction : l'espacement typique entre les objets est d'environ 1 million de kilomètres. La ceinture ne s'est jamais agglomérée en planète car la gravité de Jupiter n'a cessé de perturber les orbites, empêchant les collisions de fusionner. Trois lacunes de Kirkwood marquent des résonances avec Jupiter où les astéroïdes sont éliminés.",
+  "comparison": "Si vous vous teniez sur Ceres (le plus grand corps), vous auriez du mal à voir un autre astéroïde sans télescope. La masse totale de la ceinture équivaut approximativement à celle de Pluto.",
+  "residents": [
+    {
+      "id": "ceres",
+      "label": "Ceres — plus grand corps, planète naine",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "vesta",
+      "label": "Vesta — deuxième plus grand, le plus brillant",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "pallas",
+      "label": "Pallas — troisième plus grand",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "hygiea",
+      "label": "Hygiea — quatrième plus grand, possiblement planète naine",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1801,
+      "label": "Ceres — premier astéroïde découvert (Piazzi, Italie)"
+    },
+    {
+      "year": 2011,
+      "label": "Dawn — premier orbiteur dédié aux astéroïdes (Vesta, USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

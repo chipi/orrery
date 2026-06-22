@@ -1,0 +1,34 @@
+{
+  "name": "火星高轨道",
+  "short": "HMO",
+  "story": "高度椭圆轨道,范围在1,000-2,500公里,大多具有历史意义。Mariner 9于1971年抵达这里——成为第一个环绕另一颗行星运行的航天器,比Mars 2早了几周。苏联的Mars 3和美国的Viking 1轨道器紧随其后,它们都停泊在长椭圆轨道上,以在Mariner时代有限的delta-v预算下最大限度地减少轨道维持燃料消耗。火卫一Phobos在9,376公里处穿过这一轨道带——Viking和Mars Express都利用这一几何关系近距离研究这颗卫星。",
+  "comparison": "大致相当于地球GPS卫星的轨道高度——但这是围绕一颗直径仅为地球一半多一点的行星。轨道器在远火点观察火星时呈现出经典的\"全盘\"视角,这种构图常见于1970年代早期的任务照片中。",
+  "residents": [
+    {
+      "id": "mariner9",
+      "label": "Mariner 9 (1971-1972 — 首个火星轨道器)",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars3-orbiter",
+      "label": "Mars 3 轨道器 (1971-1972)",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "viking1-orbiter",
+      "label": "Viking 1 轨道器 (1976-1980)",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — 首个环绕地球以外任何行星的人造卫星 (USA)",
+      "mission_id": "mariner9"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

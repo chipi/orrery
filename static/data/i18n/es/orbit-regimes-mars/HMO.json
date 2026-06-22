@@ -1,0 +1,34 @@
+{
+  "name": "Órbita Alta de Marte",
+  "short": "HMO",
+  "story": "Órbitas muy elípticas en el rango de 1.000-2.500 km, en su mayoría históricas. Mariner 9 llegó aquí en 1971 — la primera nave espacial en orbitar otro planeta, superando a Mars 2 por unas pocas semanas. La Mars 3 soviética y los orbitadores Viking 1 estadounidenses siguieron, todos estacionados en elipses largas que minimizaban el combustible de mantenimiento de estación durante la era Mariner, con presupuestos limitados de delta-v. Fobos atraviesa esta banda a 9.376 km — tanto Viking como Mars Express utilizaron la geometría para estudiar la luna de cerca.",
+  "comparison": "Aproximadamente la altitud a la que orbitan los satélites GPS de la Tierra — pero alrededor de un planeta de poco más de la mitad del tamaño de la Tierra. La vista de Marte desde el orbitador en el apoápside es el encuadre clásico de 'disco completo' en las fotografías de misiones de principios de los años 70.",
+  "residents": [
+    {
+      "id": "mariner9",
+      "label": "Mariner 9 (1971-1972 — primer orbitador de Marte)",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars3-orbiter",
+      "label": "Mars 3 orbitador (1971-1972)",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "viking1-orbiter",
+      "label": "Viking 1 orbitador (1976-1980)",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — primer satélite artificial de cualquier planeta distinto de la Tierra (EE. UU.)",
+      "mission_id": "mariner9"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

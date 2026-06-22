@@ -1,0 +1,16 @@
+{
+  "title": "Tsiolkovsky Raketvergelijking",
+  "intro_sentence": "Hoeveel snelheidsverandering je kunt halen uit een gegeven motor en een gegeven hoeveelheid brandstof — de vergelijking die ruimtevaart een logaritmisch probleem maakt.",
+  "narrative_101": [
+    "Konstantin Tsiolkovsky was een dove Russische onderwijzer die in zijn vrije tijd nadacht over ruimtevaart, tientallen jaren voordat iemand daadwerkelijk een raket kon bouwen. In 1903 schreef hij een vergelijking op waar niemand aan kon ontsnappen, en dat kunnen we nog steeds niet. De vergelijking zegt: de ∆v die je uit een raket kunt persen hangt van twee dingen af — hoe goed je motor is, en hoeveel van je raket brandstof is. En de relatie is LOGARITMISCH.",
+    "Het logaritme is de val. Als je raket voor de helft uit brandstof bestaat, krijg je een bepaalde ∆v. Om die ∆v te verdubbelen, maak je je raket niet voor tweederde uit brandstof. Je moet het meer richting 87% brandstof maken. Om het te verdrievoudigen, meer richting 95%. De getallen lopen exponentieel van je weg. Dit is waarom een Saturn V een 110 meter hoge toren is die bijna volledig uit brandstof bestaat — het ruimtevaartuig is een klein capsule bovenop.",
+    "Twee uitwegen. Eén: betere motoren (hogere specifieke impuls) — dat verhoogt de vermenigvuldiger zodat je meer ∆v krijgt uit dezelfde massaverhouding. Twee: trapsgewijze afstoting — gooi lege tanks weg zodra ze leeg zijn, zodat je geen dood gewicht mee hoeft te slepen. Echte raketten doen beide. Zelfs dan bereiken missies in één keer een maximum van ongeveer 10-15 km/s aan ∆v. Daarbuiten zegt de vergelijking dat je in een baan om de aarde moet bijtanken, of exotische motoren moet gebruiken, of hulp moet krijgen van een planeet."
+  ],
+  "body_paragraphs": [
+    "Konstantin Tsiolkovsky leidde de raketvergelijking af in 1903, tientallen jaren voordat iemand een raket bouwde die de moeite waard was om te laten vliegen. Het resultaat heeft de onvermijdelijkheid van de natuurkunde: ∆v hangt af van de motor-`Isp` en de verhouding tussen de startmassa en de eindmassa — en het is logaritmisch in die verhouding.",
+    "Het logaritme is het wrede deel. Het verdubbelen van brandstof verdubbelt de ∆v niet; het voegt een constant stuk toe. Wil je twee keer zo ver vliegen? Dan heb je een exponentieel grotere raket nodig. Dit is de tirannie van de raketvergelijking: chemische motoren (`Isp` ~300-450s) stuiten op een muur rond 10-15 km/s aan ∆v voordat de massaverhouding absurd wordt. Om verder te gaan heb je een hogere `Isp` nodig (ionenmotoren, ~3000s) of trapsgewijze afstoting (tanks weggooien als ze leeg zijn), of beide.",
+    "Saturn V: 7.800 ton nat, 600 ton droog. Massaverhouding 13. Isp ~330s. ∆v ≈ 8,3 km/s — net genoeg om trans-lunaire injectie te bereiken. Falcon 9 hergebruik stuit op een andere muur: elk kilogram herbruikbare hardware kost je evenredige nuttige lading."
+  ],
+  "formula_caption": "∆v uit specifieke impuls, gravitatieversnelling g₀, en massaverhouding m₀/m_f.",
+  "diagram_caption": "Curve van ∆v versus massaverhouding: logaritmisch. Verdubbeling van brandstof voegt slechts een constant ∆v-stuk toe."
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Géantes gazeuses + glacées",
+  "short": "GIANTS",
+  "story": "Le royaume planétaire extérieur — de 5 à 30 AU. Deux géantes gazeuses (Jupiter, Saturn) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluto.",
+  "comparison": "Jupiter est 318× plus massive que la Terre. Les quatre géantes réunies formeraient un système de 25× le diamètre des planètes intérieures combinées.",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5,20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9,58 AU, système d'anneaux",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19,18 AU, incliné de 97°",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30,07 AU, vents les plus rapides du système",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — premier survol de Jupiter (USA)"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — seul survol d'Uranus jamais effectué (USA)"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — seul survol de Neptune jamais effectué (USA)"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — premier orbiteur de Jupiter (USA)",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

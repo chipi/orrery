@@ -1,0 +1,15 @@
+{
+  "title": "Elipse de Transferência",
+  "intro_sentence": "O arco kepleriano que transporta uma nave espacial de uma órbita a outra — Sol em um dos focos, assim como qualquer outra órbita.",
+  "narrative_101": [
+    "O planejamento de missões parece ser sobre motores e foguetes. Na verdade, é principalmente sobre escolher uma elipse. Toda viagem interplanetária — Apollo até a Lua, Voyager até Netuno, Perseverance até Marte — é apenas uma nave espacial percorrendo uma órbita elíptica entre onde começou e para onde está indo. O termo técnico para essa elipse é órbita de transferência.",
+    "Ela obedece às mesmas regras de qualquer outra órbita kepleriana. O Sol fica em um dos focos. A nave espacial se move lentamente na extremidade distante e rapidamente na extremidade próxima. A equação vis-viva ainda funciona para calcular sua velocidade. A terceira lei de Kepler ainda fornece o tempo de voo a partir do tamanho. Nada exótico.",
+    "A única coisa que torna uma elipse de transferência diferente da órbita de um planeta é que a nave espacial voa apenas METADE dela. Ela embarca em uma extremidade, percorre até a outra e desembarca. É por isso que o orçamento de ∆v sempre tem duas grandes queimas — uma para entrar na elipse, outra para sair dela. A parte do meio, a navegação de oito meses, não custa absolutamente nada."
+  ],
+  "body_paragraphs": [
+    "Uma vez que você sai da órbita da Terra com a queima, você está em uma elipse ao redor do Sol. Essa elipse é a órbita de transferência, e ela tem todas as mesmas propriedades de qualquer outra: semieixo maior, excentricidade, periélio, afélio. O fato de você estar indo para algum lugar não muda a geometria — a gravidade não se importa com seu destino.",
+    "Duas âncoras definem uma elipse de transferência: onde você começou (periélio se você está indo para fora) e onde você vai terminar (afélio). O semieixo maior é a média desses dois raios. Ajuste qualquer uma das âncoras e toda a elipse se reformula — vá mais para fora, a elipse se alonga, a viagem fica mais longa.",
+    "No HUD `/fly` do Orrery você verá a nave espacial traçar essa elipse em tempo real. O arco de transferência na tela é uma renderização visual da mesma cônica que a matemática diz que é — Sol em um dos focos, periélio atrás de você, afélio à frente."
+  ],
+  "diagram_caption": "Duas órbitas coplanares (partida interna, destino externa) conectadas por uma elipse de transferência com o Sol em um dos focos."
+}

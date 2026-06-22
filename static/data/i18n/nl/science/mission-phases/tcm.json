@@ -1,0 +1,14 @@
+{
+  "title": "TCM — Trajectory Correction Maneuver",
+  "intro_sentence": "Een kleine brandstof-burn halverwege de reis om de kleine fouten te corrigeren die altijd in het lanceertraject sluipen.",
+  "narrative_101": [
+    "Geen raketlancering is perfect. Na de stijgfase en de trans-X-injectie bevindt je ruimtevaartuig zich op ruwweg het juiste traject — maar \"ruwweg\" maakt veel uit wanneer je bestemming een kleine planeet is die 250 miljoen kilometer ver weg ligt. Een fout van 5 cm/s aan het begin van de reis vertaalt zich in 100 km mis-afstand bij Mars. Dus corrigeer je het.",
+    "TCM's zijn kleine burns — meestal slechts een paar meter per seconde aan ∆v, soms minder — uitgevoerd weken of maanden na het begin van de reis, nadat grondvolging de tijd heeft gehad om exact te meten waar het ruimtevaartuig zich werkelijk bevindt. Goedkoop qua brandstof, maar operationeel kostbaar: elke burn is een kans dat er iets misgaat, dus missies plannen er zo min mogelijk.",
+    "De meeste interplanetaire missies plannen er vier. TCM-1 een paar dagen na de start. TCM-2 een paar weken na de start. TCM-3 dichter bij aankomst. TCM-4 de laatste bijstelling voordat de zwaartekracht van de planeet je grijpt. Apollo gebruikte vier tot vijf op weg naar de Maan en hetzelfde op de terugweg. Curiosity gebruikte er vier. Het /missions FLIGHT-tabblad vertelt je precies hoeveel TCM's elke missie gebruikte; het laagste aantal betekent meestal dat de lancering buitengewoon schoon was."
+  ],
+  "body_paragraphs": [
+    "Geen lancering is perfect. Het werkelijke traject vanaf het lanceervoertuig verschilt van het geplande traject met tientallen meters per seconde — klein in absolute termen, catastrofaal voor de aankomstnauwkeurigheid als het zo gelaten wordt. Een fout van 5 cm/s bij TLI vertaalt zich in 100 km mis-afstand bij de Maan. TCM's corrigeren die fouten voordat ze groeien.",
+    "De meeste missies plannen er drie of vier. TCM-1 vindt plaats binnen enkele dagen na de lancering, wanneer de lanceringsfout het beste gekarakteriseerd is. TCM-2 een paar weken later, nadat vroege tracking de baan verfijnt. TCM-3 dichter bij aankomst. TCM-4 is meestal een laatste naderingsbijstelling. Elk kost slechts meters per seconde — goedkoop qua brandstof, maar operationeel kostbaar (elke burn is een kans dat er iets misgaat).",
+    "Het `tcm_count`-veld op de `/missions` FLIGHT-tabbladen rapporteert hoeveel TCM's elke missie gebruikte. Curiosity gebruikte er 4. Mars Reconnaissance Orbiter gebruikte er 4. Apollo-missies gebruikten 4-5 mid-course correcties op weg naar en van de Maan."
+  ]
+}

@@ -30,7 +30,15 @@
   let { open, onClose, phaseLabel, scienceRef }: Props = $props();
 </script>
 
-<Panel {open} {onClose} title={phaseLabel} zIndex={28}>
+<!--
+  zIndex=40 sits ABOVE /fly's persistent HUD chrome (.hud-stack +
+  .capcom-panel both at z=30). The orbit-ruler regime panel used z=28
+  because it stacked UNDER detail panels (z=30); /fly has no detail
+  panel — the persistent CAPCOM + HUD are the things to clear, so
+  PhasePanel needs to paint on top of them (2026-06-22 user direction:
+  "mission phase opens in panel that is under capcom").
+-->
+<Panel {open} {onClose} title={phaseLabel} zIndex={40}>
   <div class="phase-head">
     <div class="eyebrow">{m.fly_phase_panel_eyebrow()}</div>
     <h2 class="phase-name">{phaseLabel}</h2>

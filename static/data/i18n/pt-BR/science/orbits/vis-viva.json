@@ -1,0 +1,16 @@
+{
+  "title": "Equação Vis-Viva",
+  "intro_sentence": "Quão rápido um corpo está se movendo em qualquer ponto de sua órbita — dado apenas seu raio atual e o semieixo maior da órbita.",
+  "narrative_101": [
+    "Se você for aprender apenas uma equação de mecânica orbital, que seja esta. Diga à vis-viva três coisas — em torno do que você está orbitando, quão longe você está no momento, e o tamanho da sua órbita — e ela te diz exatamente quão rápido você está se movendo. Sem tempo, sem integração, sem truque inteligente. Três entradas, uma raiz quadrada, pronto.",
+    "A razão de funcionar é a conservação de energia. Uma espaçonave trocando altitude por velocidade (ou vice-versa) mantém sua energia total constante em uma dada órbita. Então, se você sabe onde ela está ao longo da elipse, você sabe como aquela energia está dividida entre potencial e cinética — e uma vez que você conhece a parte cinética, você tem a velocidade.",
+    "Abra a tela /fly e observe a leitura de velocidade conforme uma espaçonave passa por um planeta. Isso é vis-viva, recalculada a cada quadro. Os números de velocidade de partida e velocidade de chegada em cada porkchop em /plan? Vis-viva, amostrada no raio de lançamento e raio de chegada. Está em todo lugar."
+  ],
+  "body_paragraphs": [
+    "Vis-viva é a equação de trabalho da mecânica orbital. Ela conecta três números — o parâmetro gravitacional `μ` do que quer que você esteja orbitando, sua distância atual `r` do foco, e o semieixo maior `a` da órbita — e fornece a velocidade `v`. Só isso. Sem integração temporal, sem cadeia de anomalia, apenas uma raiz quadrada e você sabe quão rápido está indo.",
+    "A equação encapsula a conservação de energia: a energia mecânica total em uma órbita kepleriana é constante, então sempre que você conhece `r` você pode recuperar a velocidade. No periélio `r` é pequeno, o termo entre parênteses é grande, `v` é alto. No afélio `r` é grande, o termo diminui, `v` cai. A Terra passa veloz pelo periélio a 30,3 km/s e rasteja pelo afélio a 29,3 km/s — mesma órbita, velocidade diferente, mesma energia.",
+    "No Orrery, vis-viva é o que calcula as leituras de velocidade que você vê no HUD do `/fly` conforme uma espaçonave passa por um planeta — e os números de energia de lançamento e velocidade de chegada que alimentam o mapa de calor porkchop em `/plan`."
+  ],
+  "formula_caption": "v a partir do parâmetro gravitacional μ, raio atual r, semieixo maior a.",
+  "diagram_caption": "A velocidade varia ao longo da órbita: alta no periélio, baixa no afélio. Vis-viva relaciona velocidade ao raio."
+}

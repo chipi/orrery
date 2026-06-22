@@ -1,0 +1,6 @@
+{
+  "name": "Planet Labs (PlanetScope + SkySat)",
+  "short": "Planet",
+  "description": "~150 CubeSats 3U PlanetScope + ~21 SkySats a 475 km heliosíncronos — imágenes terrestres con revisita diaria. PlanetScope ofrece 3-5 m globales diarios; SkySats ofrecen 50 cm bajo demanda. Cada zona de la superficie terrestre fotografiada cada día.",
+  "scale_fact": "La flota Doves de Planet genera aproximadamente 25 terabytes de imágenes al día — más que todo el programa de observación terrestre de NASA."
+}

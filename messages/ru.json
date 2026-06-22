@@ -1201,5 +1201,6 @@
   "fly_phase_panel_aria": "Детали фазы миссии",
   "fly_phase_panel_close": "Закрыть детали фазы",
   "fly_phase_panel_eyebrow": "ФАЗА МИССИИ",
-  "fly_phase_pill_open_aria": "Узнать о фазе {phase}"
+  "fly_phase_pill_open_aria": "Узнать о фазе {phase}",
+  "earth_regime_chip_aria": "Просмотр орбитального режима {regime}"
 }

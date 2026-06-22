@@ -1,0 +1,29 @@
+{
+  "name": "近直线晕轨道",
+  "short": "NRHO",
+  "story": "并非真正意义上的绕月轨道——更像是围绕地月L1和L2拉格朗日点的长\"8\"字形轨道,在近月点贴近月球南极(约3,000公里),在远月点则延伸至北极上方极远处(约70,000公里)。这种几何构型带来两大优势:与地球保持持续视线通信(无通信中断)以及极低的轨道维持燃料消耗——每年仅需几米/秒。NASA的Lunar Gateway在发射后将驻留于NRHO轨道。CAPSTONE于2022年作为探路者飞抵该轨道。",
+  "comparison": "NRHO每约7天完成一次循环——大约是月球自身公转周期的四分之一。航天器始终靠近南极区域,但从不直接位于其正上方。",
+  "residents": [
+    {
+      "id": "capstone",
+      "label": "CAPSTONE — NRHO探路者",
+      "agency": "NASA"
+    },
+    {
+      "id": "gateway",
+      "label": "Lunar Gateway — 计划中的载人前哨站",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2022,
+      "label": "CAPSTONE——首次NRHO运行飞行(美国)",
+      "mission_id": ""
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

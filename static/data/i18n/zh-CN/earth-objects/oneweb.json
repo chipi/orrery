@@ -1,0 +1,6 @@
+{
+  "name": "OneWeb",
+  "short": "OneWeb",
+  "description": "648颗卫星位于1,200 km高度,分布在12个极地轨道平面——第一代LEO宽带。自2023年合并后由Eutelsat OneWeb运营。极地轨道提供极地到极地的覆盖,这是中倾角Starlink星座无法达到的。",
+  "scale_fact": "OneWeb选择1,200 km高度——是Starlink高度的两倍——以减少更长信号路径带来的延迟损失。权衡:寿命终止时更难脱轨。"
+}

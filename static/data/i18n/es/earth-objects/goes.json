@@ -1,0 +1,6 @@
+{
+  "name": "GOES (Meteorología NOAA)",
+  "short": "GOES",
+  "description": "Pareja geoestacionaria meteorológica estadounidense — GOES-East a 75,2°W + GOES-West a 137,0°W ofrecen cobertura continua de las Américas. GOES-16 en adelante utilizan el Advanced Baseline Imager para escaneos mesoescalares de 30 segundos del núcleo de huracanes.",
+  "scale_fact": "Cada mapa meteorológico televisivo que hayas visto de un huracán estadounidense fue una imagen GOES tomada minutos antes desde 35 786 km de altura."
+}

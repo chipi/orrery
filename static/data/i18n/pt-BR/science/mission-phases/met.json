@@ -1,0 +1,14 @@
+{
+  "title": "MET — Tempo Decorrido de Missão",
+  "intro_sentence": "Um cronômetro simples que inicia no lançamento e nunca para — a marcação de tempo universal para cada evento na linha do tempo da missão.",
+  "narrative_101": [
+    "MET significa Mission Elapsed Time (Tempo Decorrido de Missão). É um cronômetro. Dia zero, hora zero, minuto zero, segundo zero é o momento em que o foguete deixa a plataforma. Tudo que acontece depois disso recebe uma marcação MET. O primeiro passo da Apollo 11 na Lua? MET 109 horas 24 minutos. A Voyager 1 cruzando para o espaço interestelar? MET 35 anos.",
+    "Por que um cronômetro em vez de um calendário normal? Dois motivos. Primeiro, calendários na Terra não têm nada a ver com o que a espaçonave está fazendo — a Voyager não se importa com terças-feiras. Segundo, quanto mais longe você vai, mais os relógios divergem. Marte está a minutos-luz de distância; os sinais atrasam. Espaçonaves em velocidades relativísticas (algumas delas) medem o tempo de forma ligeiramente diferente de nós. O MET contorna tudo isso — é a linha do tempo particular da própria espaçonave.",
+    "Abra a tela /fly e observe o MET avançar em dias conforme uma viagem simulada progride. O HUD mostra MET 173d quando a espaçonave passa por Marte. Tradução: se passaram 173 dias desde o lançamento na perspectiva da espaçonave. Que data é na Terra? Não importa. O controle da missão fala em MET."
+  ],
+  "body_paragraphs": [
+    "MET é o tempo desde o lançamento. Dia zero é a decolagem. Cada evento — separação de estágios, injeção trans-X, correção de meio de curso, inserção orbital, operações de superfície — recebe um carimbo de tempo MET. Alunissagem da Apollo 11: MET 4 dias, 6 horas, 45 minutos. Voyager 1 deixando a heliopausa: MET 35 anos.",
+    "Por que MET em vez de UTC? Porque o relógio na Terra não corresponde exatamente ao relógio na espaçonave quando a espaçonave está se movendo rápido ou longe. Os atrasos de tempo-luz aumentam (Marte está a 4-22 minutos-luz de distância dependendo da geometria orbital). A dilatação relativística surge para sondas rápidas. MET é o próprio tempo decorrido da espaçonave, a âncora natural para sequenciar eventos a bordo.",
+    "No HUD do `/fly` você verá o MET avançar em dias conforme a simulação progride. É a perspectiva da espaçonave sobre quanto tempo a jornada levou — independente de que data é de volta na Terra."
+  ]
+}

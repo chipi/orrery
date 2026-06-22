@@ -1,0 +1,14 @@
+{
+  "title": "Tijd-van-Vlucht-as",
+  "intro_sentence": "Hoe lang de reis duurt — uitgezet langs de Y-as, in dagen voor de binnenplaneten en jaren voor de buitenplaneten.",
+  "narrative_101": [
+    "Als de X-as je vertelt WANNEER je vertrekt, vertelt de Y-as je HOE LANG de reis duurt. Onderkant van de grafiek: snelle, korte reizen. Bovenkant van de grafiek: langzame, lange reizen. Voor Mars-achtige bestemmingen beslaat de as ruwweg 100 tot 500 dagen. Voor Jupiter zijn het jaren.",
+    "Nu kun je de hele afweging in één oogopslag aflezen. Loop recht omhoog door een kolom op de porkchop — dat is DEZELFDE lanceerdatum maar met verschillende transittijden. Onderaan (snelle reis) kleuren de cellen rood — snelle reizen zijn duur omdat je een steile overgangsellips afdwingt. Hoger (langzamere reis) worden de cellen koel blauw — dat is de natuurlijke Hohmann-band waar de wiskunde de reis wil laten duren.",
+    "Dit is waarom een Hohmann-transfer naar Mars altijd rond de 8,5 maanden duurt. Trek je daaronder en je betaalt steil voor de snelheid. Trek je ver daarboven en je talmt zonder reden. De porkchop visualiseert die afweging als een kleurverloop omhoog door elke kolom. Vrachtmissies kunnen langzaam aan, bemanningmissies meestal niet, omdat elke extra maand meer voedsel, water, zuurstof en stralingsblootstelling betekent."
+  ],
+  "body_paragraphs": [
+    "De Y-as is de transitduur. Voor Mars-achtige doelen is de natuurlijke Hohmann-transit ~250 dagen, dus Orrery's Y-bereik loopt ruwweg van 100-500 dagen. Voor Jupiter of Saturnus duurt de Hohmann-transit jaren, dus de as is in jaren.",
+    "Verschillende rijen op de porkchop wegen transittijd af tegen ∆v-kosten. De goedkoopste cellen (Hohmann-band) zitten op de natuurlijke Hohmann-transittijd. Trek de transittijd omlaag (snellere reis) en de ∆v-kosten stijgen steil. Trek hem omhoog (langzamere reis) en je krijgt goedkopere maar langzamere opties — soms de moeite waard voor vracht of tijdgevoelige ladingen.",
+    "De vorm van de goedkope zone vertelt je over afwegingen. Een smalle Hohmann-band betekent dat het optimum scherp is; een brede goedkope zone betekent dat je flexibiliteit hebt. Mars' porkchop heeft een smal optimum. Jupiter's is breder — het zwaartekracht-assistentielandschap spreidt lanceeropties over meer data."
+  ]
+}

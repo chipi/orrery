@@ -1,0 +1,46 @@
+{
+  "name": "Planetas Terrestres Interiores",
+  "short": "TERRA",
+  "story": "El sistema solar interior rocoso — de 0,4 a 1,5 AU desde el Sol. Cuatro mundos pequeños con núcleos metálicos, mantos de silicato y atmósferas delgadas o inexistentes. Se formaron dentro de la línea de congelación, donde hacía demasiado calor para que se condensaran los hielos volátiles, por lo que solo los materiales refractarios (silicatos, hierro, níquel) permanecieron sólidos. Tres de los cuatro han sido objetivos de exploración tripulada (Tierra, Luna, rumbo a Marte).",
+  "comparison": "Los cuatro planetas terrestres cabrían dentro de la Gran Mancha Roja de Júpiter. Los cuatro juntos representan menos del 0,5 % de la masa planetaria del sistema.",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0,39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0,72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1,00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1,52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — primer sobrevuelo de Venus (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — primer sobrevuelo de Marte (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — primer sobrevuelo de Mercurio (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

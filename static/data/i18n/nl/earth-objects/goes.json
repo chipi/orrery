@@ -1,0 +1,6 @@
+{
+  "name": "GOES (NOAA-weer)",
+  "short": "GOES",
+  "description": "Amerikaans geostationnair weersatellietpaar — GOES-East op 75,2°W + GOES-West op 137,0°W bieden continue dekking van Noord- en Zuid-Amerika. GOES-16 en later gebruiken de Advanced Baseline Imager voor mesoschalige scans van orkaankernen met 30-seconde intervallen.",
+  "scale_fact": "Elke weerkaart op tv die je ooit hebt gezien van een Amerikaanse orkaan was een GOES-beeld gemaakt enkele minuten eerder vanaf 35.786 km hoogte."
+}

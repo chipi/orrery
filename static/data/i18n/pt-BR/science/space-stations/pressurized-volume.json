@@ -1,0 +1,17 @@
+{
+  "title": "Volume Pressurizado",
+  "intro_sentence": "O interior habitável total de uma estação — quanto espaço a tripulação realmente tem para viver e trabalhar.",
+  "narrative_101": [
+    "Toda especificação de estação começa com um número: volume pressurizado em metros cúbicos. É o interior dos módulos onde a tripulação pode respirar, somado em toda a estação. A ISS chega a aproximadamente 388 m³ (cerca do volume da cabine de passageiros de um Boeing 747). A Tiangong chega a cerca de 110 m³ — confortável para três tripulantes, apertado para seis.",
+    "O volume pressurizado é limitado por dois tetos: diâmetro da carenagem do veículo de lançamento (você só pode enviar um módulo tão largo quanto o foguete consegue levantar) e massa do casco pressurizado (quanto mais espessa a parede, mais pesado o lançamento). Cascos modernos de alumínio-composto atingem um ponto ideal entre 2-4 mm de espessura. Além disso e você está pagando massa por margem de segurança que não usa; mais fino que isso e um micrometeoroide pode perfurá-lo.",
+    "Tripulações precisam de cerca de 14 m³ por pessoa de \"volume habitável líquido\" (volume após racks e anteparas) para missões acima de um mês. Tanto a ISS quanto a Tiangong superam isso em 3-4× — o que parece excessivo até você lembrar que a tripulação fica acordada 16 horas por dia, todos os dias, durante meses a fio."
+  ],
+  "body_paragraphs": [
+    "Volume pressurizado é o interior habitável preenchido com ar de uma estação espacial, medido em metros cúbicos. Exclui racks estruturais, anteparas e volume de equipamentos — o valor geralmente citado é o volume interno bruto, do qual 30-50% é ocupado por hardware.",
+    "ISS: ~388 m³ em 16 módulos pressurizados (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, além dos russos Rassvet e Poisk).",
+    "Tiangong: ~110 m³ em três módulos (núcleo Tianhe, laboratórios Wentian e Mengtian).",
+    "Mir: ~350 m³ no auge (1986–2001) — comparável à ISS em volume habitável, mas construída com módulos de paredes mais espessas e uma geração mais antiga de sistemas de suporte à vida.",
+    "A diretriz de 14 m³/pessoa (NASA-STD-3001 Volume 2) é derivada empiricamente de estudos de psicologia em ambientes confinados que remontam à Skylab e ao programa soviético Salyut. Abaixo disso, o bem-estar da tripulação e o desempenho da missão declinam de forma mensurável."
+  ],
+  "diagram_caption": "Três pegadas de estações em escala: Tiangong (~110 m³), Mir (~350 m³), ISS (~388 m³). Uma silhueta humana como referência de escala."
+}

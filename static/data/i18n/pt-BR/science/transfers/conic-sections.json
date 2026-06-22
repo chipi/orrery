@@ -1,0 +1,15 @@
+{
+  "title": "Seções Cônicas",
+  "intro_sentence": "Corte um cone de quatro maneiras e você obtém todas as trajetórias keplerianas possíveis — círculo, elipse, parábola, hipérbole.",
+  "narrative_101": [
+    "Há uma estranha sorte matemática no coração da mecânica orbital. As formas que você pode fazer cortando um cone com um plano — círculo, elipse, parábola, hipérbole — são EXATAMENTE as únicas formas que um corpo sob gravidade pode percorrer. Os gregos estudaram essas curvas por diversão em 200 a.C. Dois mil anos depois descobrimos que o universo funciona com base nelas.",
+    "As quatro formas formam um contínuo. Lento o suficiente? Você está em um círculo ou elipse — preso, você voltará. Exatamente na velocidade de escape? Parábola — você mal conseguirá nunca mais voltar. Mais rápido que isso? Hipérbole — você passa rapidamente e nunca retorna. A excentricidade é o controle: 0 é um círculo, 1 é o limiar de escape, acima de 1 você está livre.",
+    "Missões reais usam todas as quatro. A viagem da Terra a Marte é uma elipse. A passagem rasante por Júpiter a caminho de Saturno é uma hipérbole — em relação a Júpiter, você está indo rápido demais para ser capturado. As sondas Voyager agora estão em trajetórias parabolóides que as levarão para fora do sistema solar para sempre. A mesma equação descreve todas elas; apenas a excentricidade difere."
+  ],
+  "body_paragraphs": [
+    "Pegue um cone infinito e corte-o com um plano. Corte horizontalmente: um círculo (`e = 0`). Incline o corte: uma elipse (`0 < e < 1`). Incline paralelo à borda do cone: uma parábola (`e = 1`, o caso exato de escape). Incline além disso: uma hipérbole (`e > 1`, escape com energia de sobra). Dois mil anos antes de Kepler, Apolônio de Perga catalogou essas curvas. Dois séculos antes de Newton, Kepler descobriu que os planetas voam ao longo delas.",
+    "Toda órbita kepleriana é uma dessas quatro. Órbitas ligadas — planetas, luas, satélites, qualquer coisa que retorna — são círculos ou elipses. Trajetórias não ligadas — passagens rasantes, escapes, capturas hiperbólicas — são parábolas ou hipérboles. O limite é exato: em `e = 1` você está se movendo exatamente na velocidade de escape local.",
+    "Projetistas de missões exploram todas as quatro. Viaje em uma elipse, passe por um planeta em uma hipérbole (em relação àquele planeta), insira-se em órbita em uma elipse novamente. A rota `/fly` do simulador faz isso naturalmente — a mesma equação de trajetória lida com todos os casos, a excentricidade diz qual cônica você está voando."
+  ],
+  "diagram_caption": "Quatro cônicas do corte de um cone: círculo, elipse, parábola, hipérbole. A excentricidade define qual."
+}

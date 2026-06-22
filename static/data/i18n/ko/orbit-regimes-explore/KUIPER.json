@@ -1,0 +1,56 @@
+{
+  "name": "카이퍼 벨트",
+  "short": "KUIPER",
+  "story": "해왕성 너머의 얼음 천체들로 이루어진 고리 — 30~50 AU. 소행성대의 얼어붙은 유사체로, 수십만 개의 천체가 있으나 그중 가장 큰 소수만이 관측되었습니다. 메탄, 암모니아, 물 얼음과 암석으로 구성되어 있습니다. Pluto는 1930년에 확인된 첫 번째 구성원이지만, 이 벨트가 하나의 집단으로 인식된 것은 1990년대 Jewitt와 Luu가 두 번째 구성원(1992 QB1)을 발견한 이후입니다. New Horizons는 인류에게 두 개의 카이퍼 천체 — 2015년의 Pluto와 2019년의 Arrokoth — 를 처음으로 근접 관측할 기회를 제공했습니다.",
+  "comparison": "소행성대가 내태양계 주변의 얇은 고리라면, 카이퍼 벨트는 1,000배 더 넓으며 약 25배 더 많은 질량을 포함합니다. Pluto에서의 태양빛은 지구에서의 1/1,600 강도입니다.",
+  "residents": [
+    {
+      "id": "pluto",
+      "label": "Pluto — 39.5 AU, 알려진 것 중 가장 큼",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "eris",
+      "label": "Eris — 96.4 AU (산란 원반)",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "makemake",
+      "label": "Makemake — 45.8 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "haumea",
+      "label": "Haumea — 43.3 AU, 빠른 자전체",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "quaoar",
+      "label": "Quaoar — 43.4 AU, 고리 보유",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "arrokoth",
+      "label": "Arrokoth — 44.6 AU, 접촉 쌍성체",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1930,
+      "label": "Pluto 발견 — 최초로 확인된 카이퍼 벨트 천체 (Tombaugh, USA)"
+    },
+    {
+      "year": 2015,
+      "label": "New Horizons — 최초의 Pluto 근접 통과 (USA)"
+    },
+    {
+      "year": 2019,
+      "label": "New Horizons의 Arrokoth 도달 — 역대 방문한 천체 중 가장 먼 거리 (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

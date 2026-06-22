@@ -1,0 +1,16 @@
+{
+  "title": "Siderische versus Synodische Periode",
+  "intro_sentence": "Twee manieren om te vragen 'hoe vaak komt dit weer langs?' — hetzelfde hemellichaam, verschillend referentiekader, verschillend antwoord.",
+  "narrative_101": [
+    "Er zijn twee verschillende antwoorden op de vraag \"hoe lang is een jaar op Mars?\" — en welke je nodig hebt hangt af van wat je probeert te doen.",
+    "Als je wilt weten hoe lang Mars doet om ÉÉN RONDJE om de zon te maken, is het antwoord 687 aardse dagen. Dat is de siderische periode — gemeten ten opzichte van de onbeweeglijke verre sterren. Het is de geometrische waarheid van de baan. Vis-viva en de derde wet van Kepler werken beide in siderische tijd.",
+    "Maar als je wilt weten hoe vaak de aarde en Mars OP DEZELFDE MANIER OP ÉÉN LIJN staan (zodat je een missie kunt lanceren), is het antwoord 780 dagen — ongeveer 26 maanden. Dat is de synodische periode. Waarom langer? Omdat terwijl Mars één keer rond de zon gaat, de aarde er bijna twee keer omheen gaat — beide planeten blijven bewegen. De opstelling herhaalt zich pas wanneer de aarde Mars heeft ingehaald in de dans.",
+    "Dit is waarom Mars-lanceervensters elke 26 maanden verschijnen. Als je er een mist, wacht je twee jaar. Elke Mars-missie waarvan je ooit hebt gehoord moest zich afstemmen op een synodisch venster — Curiosity in 2011, Perseverance in 2020, de volgende in 2026. De synodische periode is de hartslag van interplanetaire missieplanning."
+  ],
+  "body_paragraphs": [
+    "Siderische periode: tijd voor één volledige baan ten opzichte van de vaste sterren. Dit is de geometrische, Kepler-derde-wet-periode — het siderische jaar van Mars is 687 aardse dagen. Synodische periode: tijd voor één hemellichaam om terug te keren naar dezelfde positie ten opzichte van een ander hemellichaam, meestal gezien vanaf een derde. De synodische periode van Mars — tijd tussen Mars-aarde-opstellingen — is 780 dagen, of ongeveer 26 maanden.",
+    "De synodische periode is waar missieplanners om geven. Aarde-Mars Hohmann-overbrengingen werken alleen wanneer Mars op de juiste plaats staat. Het volgende haalbare lanceervenster verschijnt elke 26 maanden. Mis je er een, wacht dan twee jaar op de volgende. Dat is het ritme van elke Mars-missie die ooit is gevlogen.",
+    "Wiskundig: `1/T_syn = 1/T_inner − 1/T_outer`. Als het jaar van de aarde 1,0 jr is en dat van Mars 1,88 jr: `1/T_syn = 1 − 1/1,88 = 0,468`, dus `T_syn = 2,14 jr ≈ 26 maanden`. De wiskunde is eenvoudig; de operationele consequentie — elke missietijdlijn moet ermee rekening houden — is waar het leeft in missieplanning."
+  ],
+  "diagram_caption": "Siderisch: zelfde steruitlijning. Synodisch: zelfde aarde-Mars-zon-uitlijning, langer omdat beide planeten zijn bewogen."
+}

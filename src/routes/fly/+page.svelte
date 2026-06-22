@@ -7958,7 +7958,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 200;
-    width: min(820px, 94vw);
+    /* Bumped from 820 → 1040 px so the typical launcher + spacecraft
+       hero-card pair (each up to 460 px) fits without horizontal
+       scroll (2026-06-22 user direction: "can we expand that intro
+       surface not to have that scroll"). 94vw cap still keeps it on
+       narrow laptops. */
+    width: min(1040px, 94vw);
     max-height: 92vh;
     display: flex;
     flex-direction: column;
@@ -8135,21 +8140,21 @@
     color: rgba(255, 200, 80, 0.78);
     text-transform: uppercase;
   }
-  /* Fleet assets — single horizontal row (2026-06-15 user direction:
-     "fleet assets in one row and not separate rows"). Overflows
-     horizontally on very-many-asset missions rather than stacking,
-     so the vertical footprint stays compact even on laptops. The
-     opening-stack's max-height handles the rare overflow with its
-     own vertical scroll. */
+  /* Fleet assets — preferred single row at 2026-06-15 direction
+     ("fleet assets in one row and not separate rows"), but now ALLOWED
+     to wrap when the asset count would force horizontal scroll
+     (2026-06-22 user direction "expand that intro surface not to have
+     that scroll" — paired with the opening-stack max-width bump from
+     820 → 1040 px). On wide viewports the typical 2-card case still
+     reads as one row; many-asset missions wrap to a second row instead
+     of revealing a horizontal scrollbar. */
   .opening-fleet-row {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
-    overflow-x: auto;
     width: 100%;
     padding-bottom: 4px;
-    scrollbar-width: thin;
   }
   /* Center the row when there's exactly one asset — multi-asset rows
      stay left-anchored so horizontal scroll feels natural starting

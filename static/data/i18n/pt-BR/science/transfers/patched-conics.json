@@ -1,0 +1,15 @@
+{
+  "title": "Cônicas Remendadas",
+  "intro_sentence": "Finja que a gravidade é de um corpo por vez — a aproximação que transforma o insolúvel problema de três corpos em uma cadeia de problemas keplerianos de dois corpos que você realmente pode resolver.",
+  "narrative_101": [
+    "Aqui está um segredo sujo da mecânica orbital: a física completa real — cada corpo no sistema solar puxando todos os outros — é matematicamente insolúvel de qualquer forma limpa. NÃO temos solução em forma fechada para o problema de três corpos, muito menos para a versão real com dezenas de corpos. Então, como os planejadores de missão conseguem fazer alguma coisa?",
+    "Eles trapaceiam. Fingem que, a qualquer momento, apenas a gravidade de UM corpo importa. Perto da Terra, só a Terra puxa. No cruzeiro, só o Sol. Perto de Marte, só Marte. Cada uma dessas regiões é chamada de esfera de influência, e dentro de cada uma a espaçonave voa uma cônica kepleriana limpa. Quando a espaçonave cruza uma fronteira, você muda de sistema de coordenadas e começa uma nova cônica. Remendadas juntas, elas formam a trajetória. Isso são as cônicas remendadas.",
+    "A matemática sai alguns por cento diferente da verdade — pequeno o suficiente para que missões reais planejem com isso como sua primeira aproximação, e então refinem numericamente para o lançamento. Também é pequeno o suficiente para que o Orrery possa rodar tudo isso no seu navegador, em um Web Worker, rápido o suficiente para redesenhar todo o porkchop quando você ajusta o ano de lançamento. Todo o simulador é construído nesse truque."
+  ],
+  "body_paragraphs": [
+    "A gravidade real é bagunçada. Uma espaçonave cruzando entre a Terra e Marte sente a gravidade da Terra, a gravidade do Sol, a gravidade de Marte, mais todo o resto, tudo de uma vez. A matemática completa (o problema de n-corpos) não tem solução em forma fechada — apenas integração numérica. Isso é lento, frágil, difícil de planejar.",
+    "Cônicas remendadas é o compromisso funcional: declare uma esfera de influência ao redor de cada corpo. Dentro da esfera da Terra, apenas a gravidade da Terra importa; você voa em um arco kepleriano ao redor da Terra. Cruza a fronteira para a região heliocêntrica, muda para um arco kepleriano centrado no Sol. Cruza para a esfera de Marte, muda novamente. Três problemas keplerianos, remendados juntos nas fronteiras.",
+    "É errado, mas útil. Erros nas fronteiras são pequenos — alguns por cento de ∆v no máximo para trabalho cislunar, menos para heliocêntrico — e a matemática se torna tratável o suficiente para caber em um Web Worker. Os porkchops do `/plan` do Orrery são calculados dessa forma; assim como as trajetórias em `/fly`. O planejamento de voo real na NASA usa a mesma aproximação como primeira aproximação, e então refina numericamente antes do lançamento."
+  ],
+  "diagram_caption": "Três referenciais, três cônicas: centrado na Terra → heliocêntrico → centrado em Marte, remendadas nas fronteiras da esfera de influência."
+}

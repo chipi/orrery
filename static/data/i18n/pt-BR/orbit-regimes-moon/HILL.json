@@ -1,0 +1,11 @@
+{
+  "name": "Esfera de Hill Lunar",
+  "short": "HILL",
+  "story": "A fronteira da autoridade gravitacional da Lua — aproximadamente 60.000 km do centro lunar. Dentro desta esfera, a gravidade da Lua prevalece sobre a da Terra; fora dela, qualquer coisa que você deixe para trás deriva de volta em direção à Terra. A maioria das órbitas lunares estáveis existe bem no interior, abaixo de 70% do raio de Hill, porque a perturbação dos mascons torna órbitas mais altas instáveis. A esfera de Hill também é a razão pela qual a Lua não possui satélites naturais — nenhum consegue manter uma órbita por muito tempo.",
+  "comparison": "Cerca de 16% do caminho de volta à Terra. O ponto Terra-Lua L2 situa-se aproximadamente na fronteira da esfera de Hill no lado distante — a mesma razão geométrica pela qual ambos existem.",
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

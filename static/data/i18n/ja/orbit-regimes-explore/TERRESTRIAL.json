@@ -1,0 +1,49 @@
+{
+  "name": "内側地球型惑星",
+  "short": "TERRA",
+  "story": "岩石質の内側太陽系 — 太陽から0.4〜1.5 AUの範囲。金属核、ケイ酸塩マントル、薄い大気またはほぼ無い大気を持つ4つの小さな世界。これらは氷点線(フロストライン)の内側で形成され、そこでは揮発性の氷が凝縮するには高温すぎたため、難揮発性物質(ケイ酸塩、鉄、ニッケル)のみが固体のままであった。4つのうち3つは有人探査の目標となっている(地球、月、火星方面)。",
+  "comparison": "4つの地球型惑星すべてを合わせても木星の大赤斑の中に収まる。4つ合わせても太陽系惑星質量の0.5%未満しか占めていない。",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0.39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0.72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1.00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1.52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — 初の金星フライバイ (USA)",
+      "mission_id": "mariner-2"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — 初の火星フライバイ (USA)",
+      "mission_id": "mariner-4"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — 初の水星フライバイ (USA)",
+      "mission_id": "mariner-10"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

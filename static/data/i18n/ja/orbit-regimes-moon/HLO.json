@@ -1,0 +1,39 @@
+{
+  "name": "高月軌道",
+  "short": "HLO",
+  "story": "100 kmを超える楕円マッピング軌道および駐機軌道。1966年のLuna 10がここに投入された——地球以外の天体を周回する最初の人工物である。SMART-1はイオン推進の耐久性試験のため、非常に細長い楕円軌道に長期滞在した。現代の月探査機の多くは、LLOへ降下する前にHLOを通過する。ミッション終了時には、LLOという「作業空間」を空けるため、衝突処分の前にここまで軌道を上げられることもある。",
+  "comparison": "地球上空のGEOとほぼ同じ高度だが、直径が27%の天体の周りを回る。月の地平線は遠のき、探査機は表面の近接画像ではなく、月の全球を見る。",
+  "residents": [
+    {
+      "id": "luna10",
+      "label": "Luna 10 — 史上初の月周回機",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "clementine",
+      "label": "Clementine — 1994年",
+      "agency": "NASA"
+    },
+    {
+      "id": "smart-1",
+      "label": "SMART-1 — イオン推進実証機(2003–2006)",
+      "agency": "ESA"
+    },
+    {
+      "id": "change1",
+      "label": "Chang'e 1 — 2007–2009年",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1966,
+      "label": "Luna 10 — 史上初の人工月周回機(ソ連)",
+      "mission_id": "luna10"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

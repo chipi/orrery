@@ -4,7 +4,7 @@
   // S5.1 — real playback. <audio> element + per-route inventory + transport.
 
   import { onMount, tick, untrack } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { goto, afterNavigate } from '$app/navigation';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
@@ -136,7 +136,7 @@
     }
   }
 
-  const routeEpisodes = $derived(audioRegistry.forRoute($page.url.pathname));
+  const routeEpisodes = $derived(audioRegistry.forRoute(page.url.pathname));
   const visibleEpisodes = $derived(scope === 'screen' ? routeEpisodes : audioRegistry.episodes);
 
   // When the visible list is empty under 'screen' scope, fall back to 'all'.
@@ -193,10 +193,10 @@
     if (!browser || !audio.tourActive) return;
     const ep = audio.currentEpisode;
     if (!ep?.route) return;
-    // Read $page so the effect re-runs on navigation, but only ACT when
+    // Read page.url so the effect re-runs on navigation, but only ACT when
     // the episode itself changed (a tour advance). A route-only change
     // (user navigated) is left alone — the watcher below handles it.
-    const current = $page.url.pathname.replace(/\/+$/, '') || '/';
+    const current = page.url.pathname.replace(/\/+$/, '') || '/';
     if (ep.id === lastAutoNavEpisodeId) return;
     lastAutoNavEpisodeId = ep.id;
     const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
@@ -235,6 +235,15 @@
     if (!audio.tourActive && !audio.currentEpisode) return;
 
     const here = audioRegistry.forRoute(path);
+
+    // #1 — single play: if the loaded episode still belongs to this route
+    // (e.g. navigating into a sub-route that inherits the parent's audio),
+    // keep the listener's chosen episode rather than resetting to primary.
+    const loaded = audio.currentEpisode;
+    if (!audio.tourActive && loaded && here.some((ep) => ep.id === loaded.id)) {
+      return;
+    }
+
     // During a tour, only follow to episodes in the active sequence — a
     // manual nav is a tour skip, not a detour onto off-sequence audio.
     const target = audio.tourActive
@@ -247,9 +256,10 @@
 
     if (!target) {
       // Edge 1A — page owns no (tour) episode. Stop so it doesn't keep
-      // narrating the page you left.
+      // narrating the page you left, and surface why the audio went quiet.
       if (audioEl && !audioEl.paused) audioEl.pause();
       audio.pause();
+      showManualActionIndicator(m.audio_action_no_audio_here(), 2500);
       if (!audio.tourActive) {
         // Single play → clean idle window. (Tour keeps its bar + pointer
         // so stepping back onto the trail resumes where you are.)
@@ -569,11 +579,17 @@
   // registry + tourSequence + positionSec. Visible only while tourActive.
   const tourLookup = (id: string): number | undefined => audioRegistry.byId(id)?.durationSec;
   const tourTotal = $derived(tourTotalSec(audio.tourSequence, tourLookup));
+  // #3 — whole-second position for the on-screen clocks. Feeding the clock
+  // text a 1 Hz value (instead of the raw ~4 Hz `timeupdate` cadence) lets
+  // Svelte skip the text DOM update on the 3 ticks out of 4 where the
+  // displayed second is unchanged. Canonical `positionSec` stays exact for
+  // stage timing + the scrubber thumb.
+  const displaySec = $derived(Math.floor(audio.positionSec));
   const tourElapsed = $derived(
-    tourElapsedSec(audio.tourSequence, audio.tourIndex, audio.positionSec, tourLookup),
+    tourElapsedSec(audio.tourSequence, audio.tourIndex, displaySec, tourLookup),
   );
   const tourRemaining = $derived(
-    tourRemainingSec(audio.tourSequence, audio.tourIndex, audio.positionSec, tourLookup),
+    tourRemainingSec(audio.tourSequence, audio.tourIndex, displaySec, tourLookup),
   );
   // Tour totals routinely exceed an hour (~66 min for the en-US 21-ep tour),
   // so format with h:mm:ss; elapsed + remaining follow the same axis so the
@@ -738,7 +754,7 @@
   // lands the contract in code so v0.8 i18n surfaces it on first ride.
   $effect(() => {
     if (!browser) return;
-    const targetLocale = localeFromPage($page);
+    const targetLocale = localeFromPage(page);
     const ep = audio.currentEpisode;
     if (!ep || ep.locale === targetLocale) return;
     const dur = audio.durationSec;
@@ -882,7 +898,7 @@
           </span>
         {/if}
         <span class="compact-clock" aria-label={m.audio_compact_clock_aria()}>
-          {fmtTime(audio.tourActive ? tourElapsed : audio.positionSec, {
+          {fmtTime(audio.tourActive ? tourElapsed : displaySec, {
             withHours: audio.tourActive && tourUseHours,
           })}
         </span>
@@ -1033,7 +1049,7 @@
             {audio.playing ? '⏸' : '▶'}
           </button>
           <span class="time" aria-label={m.audio_current_time_aria()}>
-            {fmtTime(audio.positionSec)} / {fmtTime(audio.durationSec)}
+            {fmtTime(displaySec)} / {fmtTime(audio.durationSec)}
           </span>
           <label class="speed">
             <span class="sr-only">{m.audio_speed_label()}</span>

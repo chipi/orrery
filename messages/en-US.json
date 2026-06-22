@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "audio_action_no_audio_here": "No audio for this page",
   "nav_home": "HOME",
   "nav_moon": "MOON",
   "nav_mars": "MARS",
@@ -786,6 +787,7 @@
   "earth_regime_firsts_label": "Notable firsts",
   "earth_regime_firsts_label_missions": "Founding missions",
   "earth_regime_science_label": "Learn more in /science",
+  "earth_regime_chip_aria": "View {regime} orbital regime",
   "moon_page_title": "Moon Map · Orrery",
   "mars_page_title": "Mars Map · Orrery",
   "mars_load_failed": "Failed to load Mars sites. Please refresh.",

@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "audio_action_no_audio_here": "No hay audio para esta página",
   "nav_home": "INICIO",
   "nav_moon": "LUNA",
   "nav_mars": "MARTE",

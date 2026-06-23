@@ -1,7 +1,7 @@
 {
-  "title": "Estações Espaciais — caixas pressurizadas que caem para sempre.",
-  "intro_sentence": "Uma estação espacial é o que você obtém quando empilha vasos de pressão classificados para humanos em órbita terrestre baixa e nunca os deixa descer. Cada sistema a bordo existe para manter o interior mais quente que -270°C e a uma atmosfera de ar respirável, enquanto o exterior faz o melhor para arrancar o ar de volta (vácuo) e resfriar o metal às temperaturas espaciais (resfriamento radiativo).",
-  "body_paragraphs": [
+  "headline": "Estações Espaciais — caixas pressurizadas que caem para sempre.",
+  "paragraphs": [
+    "Uma estação espacial é o que você obtém quando empilha vasos de pressão classificados para humanos em órbita terrestre baixa e nunca os deixa descer. Cada sistema a bordo existe para manter o interior mais quente que -270°C e a uma atmosfera de ar respirável, enquanto o exterior faz o melhor para arrancar o ar de volta (vácuo) e resfriar o metal às temperaturas espaciais (resfriamento radiativo).",
     "Três números realmente definem uma estação: quanto volume pressurizado a tripulação tem para viver e trabalhar, como os módulos de pressão são conectados (nós), e quanta energia elétrica os painéis solares podem fornecer. As três seções aqui detalham cada um desses aspectos — o que são, como são dimensionados, e como a ISS e Tiangong fizeram escolhas de design diferentes.",
     "Estações não são apenas \"espaçonaves grandes\". Elas são permanentes, modulares e crescem ao longo do tempo. A ISS começou como um módulo russo (Zarya, 1998) e cresceu para uma treliça de 109 metros com dezesseis módulos pressurizados ao longo de quinze anos de lançamentos incrementais. Tiangong subiu mais rápido (2021–2022), mas segue a mesma lógica: lançar uma caixa, acoplar a próxima, conectá-la."
   ]

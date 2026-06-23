@@ -66,9 +66,7 @@ for (const id of fleetIds) {
   const heroSize = statSync(heroPath).size;
   const proposals = propByKey.get(`${id}|01`) ?? [];
   const visions = proposals.map((p) => p.vision_v3).filter(Boolean);
-  const bestVision = visions.sort(
-    (a, b) => (b.confidence ?? 0) - (a.confidence ?? 0),
-  )[0];
+  const bestVision = visions.sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0))[0];
   // Determine if any decision exists across this id's proposals
   const idDecisions = (salvage.proposals ?? [])
     .filter((p) => p.surface === 'fleet-galleries' && p.missionId === id)
@@ -117,10 +115,12 @@ import('node:fs').then(({ writeFileSync }) => {
   console.log('Summary:');
   for (const [k, v] of Object.entries(summary)) console.log(' ', k.padEnd(25), v);
   console.log('\nTop 20 highest-priority for triage:');
-  rows.slice(0, 20).forEach((r) =>
-    console.log(
-      ` ${r.id.padEnd(28)} ${String(r.hero_size_kb).padStart(5)}KB  v=${(r.vision_verdict ?? '-').padEnd(10)}  status=${r.triage_status}`,
-    ),
-  );
+  rows
+    .slice(0, 20)
+    .forEach((r) =>
+      console.log(
+        ` ${r.id.padEnd(28)} ${String(r.hero_size_kb).padStart(5)}KB  v=${(r.vision_verdict ?? '-').padEnd(10)}  status=${r.triage_status}`,
+      ),
+    );
   console.log('\n→ full sorted list at /tmp/fleet-weak-heroes.json');
 });

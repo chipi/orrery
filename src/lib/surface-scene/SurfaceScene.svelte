@@ -69,7 +69,12 @@
     type TierContext,
     type TierLayer,
   } from '$lib/surface-map/tier-context';
-  import { NATION_COLORS, colorFor, nationChipFor, nationKey } from '$lib/surface-map/nation-palette';
+  import {
+    NATION_COLORS,
+    colorFor,
+    nationChipFor,
+    nationKey,
+  } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { resolveInitialHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';

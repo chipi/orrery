@@ -1,8 +1,0 @@
-{
-  "title": "Propulsão — a equação do foguete é o chefe final.",
-  "intro_sentence": "O voo espacial tem uma moeda universal: ∆v, pronunciado \"delta-v\", medido em quilômetros por segundo. Cada queima custa um pouco. Cada movimento em uma trajetória tem um preço. O orçamento de ∆v da missão — a soma de tudo que você vai gastar, do início ao fim — é o único número que diz se a missão pode voar.",
-  "narrative_101": [
-    "A restrição cruel é a equação do foguete, escrita por Konstantin Tsiolkovsky em 1903. Ela diz que o ∆v escala LOGARITMICAMENTE com quanto do seu foguete é combustível. Quer o dobro de ∆v? Você precisa exponencialmente mais combustível. É por isso que um Saturn V é 90% propelente. É por isso que pousar em Marte e voltar é muito mais difícil do que pousar na Lua. Cada grama de massa que não é combustível é disputada.",
-    "Seis seções aqui. Comece com ∆v como orçamento de missão — essa é a base para tudo. Depois Tsiolkovsky para ver por que a matemática é tão implacável. Impulso específico explica o lado do motor; C3 e V∞ são os números de energia de lançamento e energia de chegada que você verá por toda a aba FLIGHT em /missions. O efeito Oberth no final é uma rara peça de magia gratuita — queime fundo em um poço gravitacional e seu combustível faz mais trabalho."
-  ]
-}

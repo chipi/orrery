@@ -25,33 +25,58 @@ const MAX_BYTES = 25_000_000;
 
 const TARGETS = [
   {
-    surface: 'fleet-galleries', id: 'vostok-5', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-5',
+    agency: 'Roscosmos',
     subject: 'Vostok 5 spacecraft / mission (Bykovsky 1963)',
-    wikis: [['en', 'Vostok_5'], ['ru', 'Восток-5']],
+    wikis: [
+      ['en', 'Vostok_5'],
+      ['ru', 'Восток-5'],
+    ],
     commons_queries: ['Vostok 5 spacecraft', 'Vostok 5 capsule'],
   },
   {
-    surface: 'fleet-galleries', id: 'vostok-6', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-6',
+    agency: 'Roscosmos',
     subject: 'Vostok 6 spacecraft / mission (Tereshkova 1963)',
-    wikis: [['en', 'Vostok_6'], ['ru', 'Восток-6']],
+    wikis: [
+      ['en', 'Vostok_6'],
+      ['ru', 'Восток-6'],
+    ],
     commons_queries: ['Vostok 6 spacecraft', 'Vostok 6 capsule Tereshkova'],
   },
   {
-    surface: 'fleet-galleries', id: 'change-2', agency: 'CNSA',
+    surface: 'fleet-galleries',
+    id: 'change-2',
+    agency: 'CNSA',
     subject: "Chang'e 2 Chinese lunar orbiter (2010)",
-    wikis: [['en', "Chang'e_2"], ['zh', '嫦娥二号']],
+    wikis: [
+      ['en', "Chang'e_2"],
+      ['zh', '嫦娥二号'],
+    ],
     commons_queries: ["Chang'e 2 spacecraft", 'Change 2 lunar orbiter'],
   },
   {
-    surface: 'moon-sites', id: 'change4', agency: 'CNSA',
+    surface: 'moon-sites',
+    id: 'change4',
+    agency: 'CNSA',
     subject: "Chang'e 4 farside landing / Yutu-2",
-    wikis: [['en', "Chang'e_4"], ['zh', '嫦娥四号']],
+    wikis: [
+      ['en', "Chang'e_4"],
+      ['zh', '嫦娥四号'],
+    ],
     commons_queries: ["Chang'e 4 lander Yutu-2", "Chang'e 4 Von Karman"],
   },
   {
-    surface: 'mars-sites', id: 'mars6', agency: 'Roscosmos',
+    surface: 'mars-sites',
+    id: 'mars6',
+    agency: 'Roscosmos',
     subject: 'Mars 6 Soviet lander (1973)',
-    wikis: [['en', 'Mars_6'], ['ru', 'Марс-6']],
+    wikis: [
+      ['en', 'Mars_6'],
+      ['ru', 'Марс-6'],
+    ],
     commons_queries: ['Mars 6 Soviet lander', 'Mars programme 6'],
   },
 ];
@@ -61,8 +86,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function wikiImages(lang, slug) {
   const base = `https://${lang}.wikipedia.org/w/api.php`;
   const params = new URLSearchParams({
-    action: 'query', format: 'json',
-    titles: slug, prop: 'images', imlimit: '20', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: slug,
+    prop: 'images',
+    imlimit: '20',
+    origin: '*',
   });
   try {
     const res = await fetch(`${base}?${params}`, { headers: { 'User-Agent': UA } });
@@ -73,13 +102,20 @@ async function wikiImages(lang, slug) {
       .map((i) => i.title.replace(/^File:/, ''))
       .filter((f) => /\.(jpg|jpeg|png)$/i.test(f))
       .filter((f) => !/icon|flag|logo|symbol|coat[_\s-]of[_\s-]arms|\.svg/i.test(f));
-  } catch { return []; }
+  } catch {
+    return [];
+  }
 }
 
 async function commonsSearch(query) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: `${query} filetype:bitmap`, srnamespace: '6', srlimit: '20', origin: '*',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: `${query} filetype:bitmap`,
+    srnamespace: '6',
+    srlimit: '20',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -88,13 +124,19 @@ async function commonsSearch(query) {
     return (j?.query?.search ?? [])
       .map((h) => h.title.replace(/^File:/, ''))
       .filter((f) => /\.(jpg|jpeg|png)$/i.test(f));
-  } catch { return []; }
+  } catch {
+    return [];
+  }
 }
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -104,13 +146,19 @@ async function commonsImageInfo(filename) {
     if (!info) return null;
     const meta = info.extmetadata ?? {};
     const strip = (s) =>
-      String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
       credit: strip(meta.Credit?.value ?? meta.Artist?.value ?? ''),
     };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 const commonsImageUrl = (f) =>
@@ -124,14 +172,20 @@ async function processTarget(t) {
   for (const [lang, slug] of t.wikis) {
     const files = await wikiImages(lang, slug);
     for (const f of files) {
-      if (!seen.has(f)) { seen.add(f); candidates.push({ file: f, query: `${lang}.wiki/${slug}` }); }
+      if (!seen.has(f)) {
+        seen.add(f);
+        candidates.push({ file: f, query: `${lang}.wiki/${slug}` });
+      }
     }
     await sleep(SCRAPE_THROTTLE_MS);
   }
   for (const q of t.commons_queries) {
     const files = await commonsSearch(q);
     for (const f of files) {
-      if (!seen.has(f)) { seen.add(f); candidates.push({ file: f, query: `commons:${q}` }); }
+      if (!seen.has(f)) {
+        seen.add(f);
+        candidates.push({ file: f, query: `commons:${q}` });
+      }
     }
     await sleep(SCRAPE_THROTTLE_MS);
   }
@@ -194,7 +248,12 @@ async function main() {
   existing.stats.handsource_no_vision_appended_at = new Date().toISOString();
   existing.stats.handsource_no_vision_added = newOnly.length;
   writeFileSync(path, JSON.stringify(existing, null, 2));
-  console.log(`\n✓ appended ${newOnly.length} hs4-* proposals (no vision filter — Marko eyeball picks)`);
+  console.log(
+    `\n✓ appended ${newOnly.length} hs4-* proposals (no vision filter — Marko eyeball picks)`,
+  );
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

@@ -51,9 +51,7 @@
   let selectedSatId = $state<string | null>(null);
   let earthObjects: import('$types/earth-object').EarthObject[] = $state([]);
   let highlightRegime = $derived(
-    selectedSatId
-      ? (earthObjects.find((o) => o.id === selectedSatId)?.regime ?? null)
-      : null,
+    selectedSatId ? (earthObjects.find((o) => o.id === selectedSatId)?.regime ?? null) : null,
   );
   let selectableIds = $derived(new Set(earthObjects.map((o) => o.id)));
 

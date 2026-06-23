@@ -11,6 +11,5 @@
     "Veículos de lançamento são caracterizados por sua curva C3-versus-carga-útil. Falcon Heavy pode lançar ~16 toneladas para C3=10, mas apenas ~5 toneladas para C3=80. Marte tipicamente requer C3 em torno de 8-12. Júpiter direto: C3 em torno de 80. New Horizons foi lançado com C3 = 158 km²/s² — o mais alto de qualquer missão já realizada — para fazer a viagem a Plutão em apenas 9,5 anos.",
     "Na aba FLIGHT de `/missions` do Orrery, o C3 de cada missão interplanetária é o dado canônico da primeira linha. É o único número que captura 'quão difícil foi lançar.'"
   ],
-  "diagram_caption": "",
   "formula_caption": "C3 é apenas V∞ ao quadrado. Mesma física, unidades diferentes."
 }

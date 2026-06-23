@@ -53,9 +53,8 @@ function fleetHero(id) {
 function ownSlotCount(surface, id) {
   const dir = `${IMG_ROOT}/${surface}/${id}`;
   if (!existsSync(dir)) return 0;
-  return readdirSync(dir).filter(
-    (f) => f.endsWith('.jpg') && !/\.(1x1|4x3|16x9)\.jpg$/.test(f),
-  ).length;
+  return readdirSync(dir).filter((f) => f.endsWith('.jpg') && !/\.(1x1|4x3|16x9)\.jpg$/.test(f))
+    .length;
 }
 
 function categorise(own, mission, fleet) {

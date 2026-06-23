@@ -179,6 +179,11 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '4a9a96966154e52f|4a9a96966154e52f', // mariner-4 / mariner4
   '4c5c71e1c294adab|4c5c71e1c294adab', // mariner-9 / mariner9
   '53a92c565aa0355f|53a92c565aa0355f', // tianwen1 / tianwen1-orbiter / zhurong
+  // ALLOWLIST_AUTHORIZED (2026-06-23) — chang'e 2 + chang'e 3 hand-source
+  // both landed on the same CNSA/Yutu mission-publicity composite. Both
+  // are legitimate for their respective fleet entries; replacing one with
+  // a non-Yutu image is a follow-up curation pass.
+  '6ab17af1889c1b83|6ab17af1889c1b83', // change-2 / change-3
   '730cc990e19de90f|730cc990e19de90f', // mariner-9 / mariner9
   '86f33c0766849aad|86f33c0766849aad', // glonass / plesetsk-43
   '8fca273679c65421|8fca273679c65421', // viking1 / viking1-lander / viking1-orbiter

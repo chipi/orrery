@@ -1,7 +1,7 @@
 {
-  "title": "Transferências — uma vez em órbita, você está na metade do caminho para qualquer lugar.",
-  "intro_sentence": "Robert Heinlein escreveu isso. Ele estava certo. Alcançar a órbita baixa da Terra custa cerca de 9,4 km/s de ∆v — a parte mais difícil de qualquer viagem. Ir de lá para Marte adiciona apenas ~3,6 km/s. Uma vez livre da atmosfera do planeta e em uma órbita adequada, o resto do sistema solar é principalmente geometria.",
-  "body_paragraphs": [
+  "headline": "Transferências — uma vez em órbita, você está na metade do caminho para qualquer lugar.",
+  "paragraphs": [
+    "Robert Heinlein escreveu isso. Ele estava certo. Alcançar a órbita baixa da Terra custa cerca de 9,4 km/s de ∆v — a parte mais difícil de qualquer viagem. Ir de lá para Marte adiciona apenas ~3,6 km/s. Uma vez livre da atmosfera do planeta e em uma órbita adequada, o resto do sistema solar é principalmente geometria.",
     "As sete seções nesta aba cobrem a geometria. A transferência de Hohmann é a viagem mais econômica possível entre duas órbitas — duas queimas, oito meses de trajetória inercial. O problema de Lambert generaliza Hohmann para datas arbitrárias de partida e chegada. As assistências gravitacionais permitem que você roube velocidade de um planeta (essencialmente) de graça, e foi assim que a Voyager 2 alcançou Netuno. Trajetórias de retorno livre são a rede de segurança que trouxe a Apollo 13 de volta para casa. Cônicas remendadas é a aproximação prática que nos permite calcular tudo isso em um navegador.",
     "Se você ler apenas uma seção: transferência de Hohmann. Todo o resto se baseia nela."
   ]

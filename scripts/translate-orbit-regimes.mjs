@@ -70,8 +70,7 @@ CRITICAL CONSTRAINTS:
 
 const tool = {
   name: 'submit_translation',
-  description:
-    'Submit the translated orbit-regime overlay JSON. Keep the same shape as the input.',
+  description: 'Submit the translated orbit-regime overlay JSON. Keep the same shape as the input.',
   input_schema: {
     type: 'object',
     properties: {

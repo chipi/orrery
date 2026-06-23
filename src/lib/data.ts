@@ -251,16 +251,14 @@ async function loadOrbitRegimes(bundle: string, locale: string): Promise<OrbitRe
   const base = await get<OrbitRegime[]>(`${bundle}.json`);
   const merged: OrbitRegime[] = [];
   for (const r of base) {
-    const overlay = await get<Partial<OrbitRegime>>(
-      `i18n/${locale}/${bundle}/${r.id}.json`,
-    ).catch(() => null);
+    const overlay = await get<Partial<OrbitRegime>>(`i18n/${locale}/${bundle}/${r.id}.json`).catch(
+      () => null,
+    );
     const fallback =
       overlay ??
       (locale === 'en-US'
         ? null
-        : await get<Partial<OrbitRegime>>(`i18n/en-US/${bundle}/${r.id}.json`).catch(
-            () => null,
-          ));
+        : await get<Partial<OrbitRegime>>(`i18n/en-US/${bundle}/${r.id}.json`).catch(() => null));
     merged.push(fallback ? { ...r, ...fallback } : r);
   }
   return merged;

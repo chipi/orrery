@@ -37,7 +37,9 @@ const VISION_MIN_CONF = 0.75; // relaxed from 0.85
 
 const TARGETS = [
   {
-    surface: 'fleet-galleries', id: 'baikonur-200', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'baikonur-200',
+    agency: 'Roscosmos',
     subject: 'Baikonur Cosmodrome Site 200 launch complex (Proton-K / Proton-M launches)',
     wiki: 'Baikonur_Cosmodrome_Site_200',
     queries: [
@@ -48,7 +50,9 @@ const TARGETS = [
     ],
   },
   {
-    surface: 'fleet-galleries', id: 'vostok-5', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-5',
+    agency: 'Roscosmos',
     subject: 'Vostok 5 spacecraft (Valery Bykovsky 1963)',
     wiki: 'Vostok_5',
     queries: [
@@ -59,7 +63,9 @@ const TARGETS = [
     ],
   },
   {
-    surface: 'fleet-galleries', id: 'vostok-6', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-6',
+    agency: 'Roscosmos',
     subject: 'Vostok 6 spacecraft (Valentina Tereshkova 1963 — first woman in space)',
     wiki: 'Vostok_6',
     queries: [
@@ -70,29 +76,35 @@ const TARGETS = [
     ],
   },
   {
-    surface: 'fleet-galleries', id: 'change-2', agency: 'CNSA',
+    surface: 'fleet-galleries',
+    id: 'change-2',
+    agency: 'CNSA',
     subject: "Chang'e 2 Chinese lunar orbiter (2010)",
-    wiki: "Chang%27e_2",
+    wiki: 'Chang%27e_2',
     queries: [
       "Chang'e 2 lunar orbiter CNSA",
       'Change 2 spacecraft',
-      "嫦娥二号",
-      "Chang-e 2 lunar probe",
+      '嫦娥二号',
+      'Chang-e 2 lunar probe',
     ],
   },
   {
-    surface: 'moon-sites', id: 'change4', agency: 'CNSA',
+    surface: 'moon-sites',
+    id: 'change4',
+    agency: 'CNSA',
     subject: "Chang'e 4 farside landing / Yutu-2 rover at Von Karman crater",
-    wiki: "Chang%27e_4",
+    wiki: 'Chang%27e_4',
     queries: [
       "Chang'e 4 lander Von Karman",
       'Yutu-2 rover farside lunar',
-      "嫦娥四号 着陆",
-      "Chang-e 4 farside Moon",
+      '嫦娥四号 着陆',
+      'Chang-e 4 farside Moon',
     ],
   },
   {
-    surface: 'mars-sites', id: 'mars6', agency: 'Roscosmos',
+    surface: 'mars-sites',
+    id: 'mars6',
+    agency: 'Roscosmos',
     subject: 'Mars 6 Soviet lander (1973) — first to transmit during Mars atmospheric descent',
     wiki: 'Mars_6',
     queries: [
@@ -123,8 +135,13 @@ async function wikipediaLeadImage(slug) {
 
 async function commonsSearch(query) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', list: 'search',
-    srsearch: `${query} filetype:bitmap`, srnamespace: '6', srlimit: '20', origin: '*',
+    action: 'query',
+    format: 'json',
+    list: 'search',
+    srsearch: `${query} filetype:bitmap`,
+    srnamespace: '6',
+    srlimit: '20',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -133,13 +150,19 @@ async function commonsSearch(query) {
     return (j?.query?.search ?? [])
       .map((h) => h.title.replace(/^File:/, ''))
       .filter((f) => /\.(jpg|jpeg|png)$/i.test(f));
-  } catch { return []; }
+  } catch {
+    return [];
+  }
 }
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -149,13 +172,19 @@ async function commonsImageInfo(filename) {
     if (!info) return null;
     const meta = info.extmetadata ?? {};
     const strip = (s) =>
-      String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
       credit: strip(meta.Credit?.value ?? meta.Artist?.value ?? ''),
     };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 const commonsImageUrl = (f) =>
@@ -190,7 +219,9 @@ async function processTarget(t, budget) {
     }
   }
 
-  console.log(`  ${candidates.length} candidates (incl wiki: ${candidates[0]?.query?.startsWith('wikipedia:') ? 'Y' : 'N'})`);
+  console.log(
+    `  ${candidates.length} candidates (incl wiki: ${candidates[0]?.query?.startsWith('wikipedia:') ? 'Y' : 'N'})`,
+  );
 
   const proposals = [];
   let kept = 0;
@@ -267,4 +298,7 @@ async function main() {
   console.log(`  ${budget.calls}/${cap} vision calls (~$${(budget.calls * 0.0004).toFixed(3)})`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

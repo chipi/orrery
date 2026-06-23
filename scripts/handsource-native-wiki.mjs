@@ -31,29 +31,54 @@ const VISION_MIN_CONF = 0.7; // very relaxed for niche subjects
 // `wiki` entries are [language, slug] pairs. Multiple → try all.
 const TARGETS = [
   {
-    surface: 'fleet-galleries', id: 'vostok-5', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-5',
+    agency: 'Roscosmos',
     subject: 'Vostok 5 spacecraft (Valery Bykovsky 1963)',
-    wikis: [['en', 'Vostok_5'], ['ru', 'Восток-5']],
+    wikis: [
+      ['en', 'Vostok_5'],
+      ['ru', 'Восток-5'],
+    ],
   },
   {
-    surface: 'fleet-galleries', id: 'vostok-6', agency: 'Roscosmos',
+    surface: 'fleet-galleries',
+    id: 'vostok-6',
+    agency: 'Roscosmos',
     subject: 'Vostok 6 spacecraft (Valentina Tereshkova 1963)',
-    wikis: [['en', 'Vostok_6'], ['ru', 'Восток-6']],
+    wikis: [
+      ['en', 'Vostok_6'],
+      ['ru', 'Восток-6'],
+    ],
   },
   {
-    surface: 'fleet-galleries', id: 'change-2', agency: 'CNSA',
+    surface: 'fleet-galleries',
+    id: 'change-2',
+    agency: 'CNSA',
     subject: "Chang'e 2 Chinese lunar orbiter (2010)",
-    wikis: [['en', "Chang'e_2"], ['zh', '嫦娥二号']],
+    wikis: [
+      ['en', "Chang'e_2"],
+      ['zh', '嫦娥二号'],
+    ],
   },
   {
-    surface: 'moon-sites', id: 'change4', agency: 'CNSA',
+    surface: 'moon-sites',
+    id: 'change4',
+    agency: 'CNSA',
     subject: "Chang'e 4 farside landing / Yutu-2 rover",
-    wikis: [['en', "Chang'e_4"], ['zh', '嫦娥四号']],
+    wikis: [
+      ['en', "Chang'e_4"],
+      ['zh', '嫦娥四号'],
+    ],
   },
   {
-    surface: 'mars-sites', id: 'mars6', agency: 'Roscosmos',
+    surface: 'mars-sites',
+    id: 'mars6',
+    agency: 'Roscosmos',
     subject: 'Mars 6 Soviet lander (1973)',
-    wikis: [['en', 'Mars_6'], ['ru', 'Марс-6']],
+    wikis: [
+      ['en', 'Mars_6'],
+      ['ru', 'Марс-6'],
+    ],
   },
 ];
 
@@ -65,7 +90,8 @@ async function wikipediaLeadImageFiles(lang, slug) {
   // best fit; collecting all images + filtering gives more candidates.
   const base = `https://${lang}.wikipedia.org/w/api.php`;
   const params = new URLSearchParams({
-    action: 'query', format: 'json',
+    action: 'query',
+    format: 'json',
     titles: slug,
     prop: 'images',
     imlimit: '20',
@@ -88,8 +114,12 @@ async function wikipediaLeadImageFiles(lang, slug) {
 
 async function commonsImageInfo(filename) {
   const params = new URLSearchParams({
-    action: 'query', format: 'json', titles: `File:${filename}`,
-    prop: 'imageinfo', iiprop: 'size|extmetadata', origin: '*',
+    action: 'query',
+    format: 'json',
+    titles: `File:${filename}`,
+    prop: 'imageinfo',
+    iiprop: 'size|extmetadata',
+    origin: '*',
   });
   try {
     const res = await fetch(`${COMMONS_API}?${params}`, { headers: { 'User-Agent': UA } });
@@ -99,13 +129,19 @@ async function commonsImageInfo(filename) {
     if (!info) return null;
     const meta = info.extmetadata ?? {};
     const strip = (s) =>
-      String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+      String(s)
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200);
     return {
       size: info.size,
       license: (meta.LicenseShortName?.value ?? '').toLowerCase(),
       credit: strip(meta.Credit?.value ?? meta.Artist?.value ?? ''),
     };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 const commonsImageUrl = (f) =>
@@ -198,4 +234,7 @@ async function main() {
   console.log(`  ${budget.calls}/${cap} vision calls (~$${(budget.calls * 0.0004).toFixed(3)})`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

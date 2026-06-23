@@ -11,8 +11,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import sharp from 'sharp';
 
-const UA =
-  'Mozilla/5.0 (compatible; OrreryBuildBot/0.7) AppleWebKit/605.1.15 (KHTML, like Gecko)';
+const UA = 'Mozilla/5.0 (compatible; OrreryBuildBot/0.7) AppleWebKit/605.1.15 (KHTML, like Gecko)';
 const DRY = process.argv.includes('--dry-run');
 
 const salvage = JSON.parse(readFileSync('static/data/slice-a-salvage-result.json', 'utf8'));
@@ -28,7 +27,10 @@ for (const [pid, d] of Object.entries(approvals.decisions ?? {})) {
   if (d.status !== 'approved') continue;
   if (!/^hs\d?-/.test(pid)) continue;
   const p = proposalsById.get(pid);
-  if (!p) { console.log(`  ✗ missing in salvage: ${pid}`); continue; }
+  if (!p) {
+    console.log(`  ✗ missing in salvage: ${pid}`);
+    continue;
+  }
   const key = `${p.surface}|${p.missionId}|${p.slot}`;
   const prev = bySlot.get(key);
   if (!prev || (d.updated_at ?? '').localeCompare(prev.d.updated_at ?? '') > 0) {
@@ -42,13 +44,22 @@ async function dl(url, dir, slot) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
-  const baseBuf = await sharp(buf).rotate().resize({ width: 1600, withoutEnlargement: true }).jpeg({ quality: 80 }).toBuffer();
+  const baseBuf = await sharp(buf)
+    .rotate()
+    .resize({ width: 1600, withoutEnlargement: true })
+    .jpeg({ quality: 80 })
+    .toBuffer();
   mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/${slot}.jpg`, baseBuf);
   const meta = await sharp(baseBuf).metadata();
   const side = Math.min(meta.width, meta.height);
   await sharp(baseBuf)
-    .extract({ left: Math.round((meta.width - side) / 2), top: Math.round((meta.height - side) / 2), width: side, height: side })
+    .extract({
+      left: Math.round((meta.width - side) / 2),
+      top: Math.round((meta.height - side) / 2),
+      width: side,
+      height: side,
+    })
     .jpeg({ quality: 80 })
     .toFile(`${dir}/${slot}.1x1.jpg`);
   return baseBuf.length;
@@ -78,22 +89,35 @@ for (const [, entry] of bySlot) {
     const now = new Date().toISOString().slice(0, 19) + 'Z';
     if (p.surface === 'fleet-galleries') {
       fleet[`${p.missionId}/${p.slot}.jpg`] = {
-        source_type: eff.source_type, source_url: eff.source_url, image_url: eff.image_url,
-        credit: eff.credit, license: eff.license, fetched_at: now,
+        source_type: eff.source_type,
+        source_url: eff.source_url,
+        image_url: eff.image_url,
+        credit: eff.credit,
+        license: eff.license,
+        fetched_at: now,
         slice_a_iteration: 'handsource-2026-06-22',
-        ...(p.vision_v3 ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } } : {}),
+        ...(p.vision_v3
+          ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } }
+          : {}),
         ...(Object.keys(overrides).length ? { reviewer_overrides: overrides } : {}),
       };
     } else {
       panel[`${p.surface}/${p.missionId}/${p.slot}`] = {
-        commons_file: p.proposed.metadata?.commons_file, commons_url: eff.source_url,
-        credit: eff.credit, license: eff.license, fetched_at: now,
+        commons_file: p.proposed.metadata?.commons_file,
+        commons_url: eff.source_url,
+        credit: eff.credit,
+        license: eff.license,
+        fetched_at: now,
         slice_a_iteration: 'handsource-2026-06-22',
-        ...(p.vision_v3 ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } } : {}),
+        ...(p.vision_v3
+          ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } }
+          : {}),
         ...(Object.keys(overrides).length ? { reviewer_overrides: overrides } : {}),
       };
     }
-    console.log(`  ✓ ${p.surface}/${p.missionId}/${p.slot} ← ${(bytes/1024).toFixed(0)}KB (${pid})`);
+    console.log(
+      `  ✓ ${p.surface}/${p.missionId}/${p.slot} ← ${(bytes / 1024).toFixed(0)}KB (${pid})`,
+    );
     stats.applied++;
     await new Promise((r) => setTimeout(r, 2000)); // 2s — Commons rate-limits us under shorter
   } catch (e) {
@@ -109,4 +133,7 @@ if (!DRY) {
 }
 
 console.log(`\nstats: ${JSON.stringify(stats)}`);
-if (errors.length) { console.log('errors:'); errors.forEach((e) => console.log(` ${e.pid}: ${e.e}`)); }
+if (errors.length) {
+  console.log('errors:');
+  errors.forEach((e) => console.log(` ${e.pid}: ${e.e}`));
+}

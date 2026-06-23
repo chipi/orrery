@@ -137,17 +137,10 @@
           {#each regime.residents as r (r.id)}
             {@const clickable = selectableIds.has(r.id) && onResidentClick != null}
             <li>
-              <span
-                class="agency-dot"
-                style:background={agencyColor(r.agency)}
-                aria-hidden="true"
+              <span class="agency-dot" style:background={agencyColor(r.agency)} aria-hidden="true"
               ></span>
               {#if clickable}
-                <button
-                  type="button"
-                  class="resident-link"
-                  onclick={() => onResidentClick?.(r.id)}
-                >
+                <button type="button" class="resident-link" onclick={() => onResidentClick?.(r.id)}>
                   {r.label}
                   <span class="resident-arrow" aria-hidden="true">↗</span>
                 </button>

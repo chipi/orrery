@@ -25,13 +25,34 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const I18N = path.join(ROOT, 'static/data/i18n');
 
 const LOCALES = [
-  'ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN',
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
 ];
 
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish', fr: 'French',
-  hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese', ru: 'Russian', 'sr-Cyrl': 'Serbian (Cyrillic)',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
   'zh-CN': 'Simplified Chinese',
 };
 
@@ -45,48 +66,76 @@ CRITICAL CONSTRAINTS:
 
 const TOOLS = {
   'earth-objects': {
-    system: SYSTEM_BASE + `
+    system:
+      SYSTEM_BASE +
+      `
 - "short" is usually an acronym (ISS, JWST, GOES, GPS) — keep verbatim. Translate only if it's a localised brand (rare).
 - "name" — translate to native conventions if commonly localised (e.g. "International Space Station" ↔ "Internationale Raumstation"); else keep verbatim.`,
     schema: {
-      name: { name: 'submit_translation', description: 'Submit translated earth-object overlay.',
-        input_schema: { type: 'object', properties: {
-          name: { type: 'string' }, short: { type: 'string' },
-          description: { type: 'string' }, scale_fact: { type: 'string' },
-        }, required: ['name', 'description'] },
+      name: {
+        name: 'submit_translation',
+        description: 'Submit translated earth-object overlay.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            short: { type: 'string' },
+            description: { type: 'string' },
+            scale_fact: { type: 'string' },
+          },
+          required: ['name', 'description'],
+        },
       },
     },
   },
-  'planets': {
-    system: SYSTEM_BASE + `
+  planets: {
+    system:
+      SYSTEM_BASE +
+      `
 - "name" — translate to native conventions (Pluto ↔ Plutón, Arrokoth keep verbatim).
 - "type" — translate the kind classification (Dwarf planet, Kuiper Belt) idiomatically.`,
     schema: {
-      name: { name: 'submit_translation', description: 'Submit translated planet overlay.',
-        input_schema: { type: 'object', properties: {
-          name: { type: 'string' }, type: { type: 'string' },
-          fact: { type: 'string' }, bio: { type: 'string' },
-        }, required: ['name'] },
+      name: {
+        name: 'submit_translation',
+        description: 'Submit translated planet overlay.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            type: { type: 'string' },
+            fact: { type: 'string' },
+            bio: { type: 'string' },
+          },
+          required: ['name'],
+        },
       },
     },
   },
-  'science': {
-    system: SYSTEM_BASE + `
+  science: {
+    system:
+      SYSTEM_BASE +
+      `
 - "title" — section title (translate if a common physics term has a native rendering).
 - narrative_101 + body_paragraphs are array fields — translate each paragraph, preserve count + order.
 - diagram_caption — usually a short illustration label.
 - Preserve LaTeX-ish math notation verbatim (r_H, ≈, ^(1/3), R_Earth, R_Jupiter, etc.).
 - "formula_caption", "see_also", "references" — pass through arrays verbatim where applicable.`,
     schema: {
-      name: { name: 'submit_translation', description: 'Submit translated science section.',
-        input_schema: { type: 'object', properties: {
-          title: { type: 'string' },
-          intro_sentence: { type: 'string' },
-          narrative_101: { type: 'array', items: { type: 'string' } },
-          body_paragraphs: { type: 'array', items: { type: 'string' } },
-          diagram_caption: { type: 'string' },
-          formula_caption: { type: 'string' },
-        }, required: ['title', 'intro_sentence'] },
+      name: {
+        name: 'submit_translation',
+        description: 'Submit translated science section.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            title: { type: 'string' },
+            intro_sentence: { type: 'string' },
+            narrative_101: { type: 'array', items: { type: 'string' } },
+            body_paragraphs: { type: 'array', items: { type: 'string' } },
+            diagram_caption: { type: 'string' },
+            formula_caption: { type: 'string' },
+          },
+          required: ['title', 'intro_sentence'],
+        },
       },
     },
   },
@@ -100,10 +149,12 @@ async function translate(client, surface, locale, payload) {
     system: cfg.system,
     tools: [cfg.schema.name],
     tool_choice: { type: 'tool', name: 'submit_translation' },
-    messages: [{
-      role: 'user',
-      content: `Translate the following ${surface} overlay into ${NAMES[locale]} (${locale}). Output via the submit_translation tool.\n\nSource (en-US):\n\n${JSON.stringify(payload, null, 2)}`,
-    }],
+    messages: [
+      {
+        role: 'user',
+        content: `Translate the following ${surface} overlay into ${NAMES[locale]} (${locale}). Output via the submit_translation tool.\n\nSource (en-US):\n\n${JSON.stringify(payload, null, 2)}`,
+      },
+    ],
   });
   const block = r.content.find((b) => b.type === 'tool_use');
   if (!block || block.type !== 'tool_use') throw new Error('no tool_use block');
@@ -118,7 +169,10 @@ function findGaps() {
     if (!fs.existsSync(enAbs)) return;
     for (const entry of fs.readdirSync(enAbs, { withFileTypes: true })) {
       const rel = path.join(relDir, entry.name);
-      if (entry.isDirectory()) { walk(rel); continue; }
+      if (entry.isDirectory()) {
+        walk(rel);
+        continue;
+      }
       if (!entry.name.endsWith('.json')) continue;
       // Determine surface from top-level dir
       const surface = relDir.split(path.sep)[0];
@@ -126,8 +180,11 @@ function findGaps() {
       const srcAbs = path.join(enAbs, entry.name);
       // Source must be parseable
       let payload;
-      try { payload = JSON.parse(fs.readFileSync(srcAbs, 'utf8')); }
-      catch { continue; }
+      try {
+        payload = JSON.parse(fs.readFileSync(srcAbs, 'utf8'));
+      } catch {
+        continue;
+      }
       // Check each locale
       for (const loc of LOCALES) {
         const dst = path.join(I18N, loc, rel);
@@ -135,7 +192,9 @@ function findGaps() {
           try {
             const existing = JSON.parse(fs.readFileSync(dst, 'utf8'));
             if (existing && Object.keys(existing).length > 0) continue;
-          } catch {}
+          } catch {
+            // existing overlay unreadable — treat as a gap to re-fill
+          }
         }
         gaps.push({ surface, locale: loc, rel, dst, payload });
       }
@@ -146,12 +205,19 @@ function findGaps() {
 }
 
 async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) { console.error('Missing ANTHROPIC_API_KEY'); process.exit(1); }
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('Missing ANTHROPIC_API_KEY');
+    process.exit(1);
+  }
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const gaps = findGaps();
   console.log(`Found ${gaps.length} translation gaps across ${LOCALES.length} locales.`);
-  if (gaps.length === 0) { console.log('Nothing to do.'); return; }
-  let ok = 0, fail = 0;
+  if (gaps.length === 0) {
+    console.log('Nothing to do.');
+    return;
+  }
+  let ok = 0,
+    fail = 0;
   for (const g of gaps) {
     process.stdout.write(`  [${g.surface}] ${g.rel} → ${g.locale}... `);
     try {

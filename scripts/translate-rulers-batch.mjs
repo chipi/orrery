@@ -25,13 +25,34 @@ const MESSAGES_DIR = path.join(ROOT, 'messages');
 const BUNDLES = ['orbit-regimes-moon', 'orbit-regimes-mars', 'orbit-regimes-explore'];
 
 const LOCALES = [
-  'ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN',
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
 ];
 
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish', fr: 'French',
-  hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese', ru: 'Russian', 'sr-Cyrl': 'Serbian (Cyrillic)',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
   'zh-CN': 'Simplified Chinese',
 };
 
@@ -102,10 +123,12 @@ async function translate(client, bundle, locale, overlay) {
     system: SYSTEM,
     tools: [tool],
     tool_choice: { type: 'tool', name: 'submit_translation' },
-    messages: [{
-      role: 'user',
-      content: `Translate the following ${bundle} overlay into ${NAMES[locale]} (${locale}). Output via the submit_translation tool.\n\nSource (en-US):\n\n${JSON.stringify(overlay, null, 2)}`,
-    }],
+    messages: [
+      {
+        role: 'user',
+        content: `Translate the following ${bundle} overlay into ${NAMES[locale]} (${locale}). Output via the submit_translation tool.\n\nSource (en-US):\n\n${JSON.stringify(overlay, null, 2)}`,
+      },
+    ],
   });
   const block = r.content.find((b) => b.type === 'tool_use');
   if (!block || block.type !== 'tool_use') throw new Error('no tool_use block');
@@ -114,9 +137,14 @@ async function translate(client, bundle, locale, overlay) {
 
 async function runBundle(client, bundle) {
   const srcDir = path.join(I18N, 'en-US', bundle);
-  if (!fs.existsSync(srcDir)) { console.log(`SKIP missing source dir: ${bundle}`); return [0, 0, 0]; }
+  if (!fs.existsSync(srcDir)) {
+    console.log(`SKIP missing source dir: ${bundle}`);
+    return [0, 0, 0];
+  }
   const files = fs.readdirSync(srcDir).filter((f) => f.endsWith('.json'));
-  let ok = 0, fail = 0, skip = 0;
+  let ok = 0,
+    fail = 0,
+    skip = 0;
   for (const file of files) {
     const id = file.replace(/\.json$/, '');
     const overlay = JSON.parse(fs.readFileSync(path.join(srcDir, file), 'utf8'));
@@ -128,18 +156,24 @@ async function runBundle(client, bundle) {
         try {
           const existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
           if (existing && Object.keys(existing).length > 0) {
-            console.log(`  ${locale}... skip(exists)`); skip++; continue;
+            console.log(`  ${locale}... skip(exists)`);
+            skip++;
+            continue;
           }
-        } catch {}
+        } catch {
+          // existing overlay unreadable — fall through to re-translate
+        }
       }
       process.stdout.write(`  ${locale}... `);
       try {
         const tr = await translate(client, bundle, locale, overlay);
         fs.mkdirSync(outDir, { recursive: true });
         fs.writeFileSync(outPath, JSON.stringify(tr, null, 2) + '\n', 'utf8');
-        process.stdout.write('ok\n'); ok++;
+        process.stdout.write('ok\n');
+        ok++;
       } catch (err) {
-        process.stdout.write(`FAIL ${err.message}\n`); fail++;
+        process.stdout.write(`FAIL ${err.message}\n`);
+        fail++;
       }
     }
   }
@@ -151,40 +185,69 @@ async function translateChipAriaKey(client) {
   // regime-chip iteration; never standalone-translated.
   const KEY = 'earth_regime_chip_aria';
   const en = JSON.parse(fs.readFileSync(path.join(MESSAGES_DIR, 'en-US.json'), 'utf8'));
-  if (!en[KEY]) { console.log(`SKIP message key not in en-US: ${KEY}`); return; }
+  if (!en[KEY]) {
+    console.log(`SKIP message key not in en-US: ${KEY}`);
+    return;
+  }
   const SYSTEM2 = `Translate a single Orrery UI label. Preserve {variable} placeholders verbatim. Short, idiomatic. Output JSON: {"${KEY}": "<translation>"}. No fences.`;
-  let ok = 0, fail = 0, skip = 0;
+  let ok = 0,
+    fail = 0,
+    skip = 0;
   for (const loc of LOCALES) {
     const mpath = path.join(MESSAGES_DIR, `${loc}.json`);
     const messages = JSON.parse(fs.readFileSync(mpath, 'utf8'));
-    if (messages[KEY]) { console.log(`  ${loc} ${KEY}... skip(exists)`); skip++; continue; }
+    if (messages[KEY]) {
+      console.log(`  ${loc} ${KEY}... skip(exists)`);
+      skip++;
+      continue;
+    }
     process.stdout.write(`  ${loc} ${KEY}... `);
     try {
       const r = await client.messages.create({
         model: 'claude-sonnet-4-5',
         max_tokens: 200,
         system: SYSTEM2,
-        messages: [{ role: 'user', content: `Translate into ${NAMES[loc]}: ${JSON.stringify({ [KEY]: en[KEY] })}` }],
+        messages: [
+          {
+            role: 'user',
+            content: `Translate into ${NAMES[loc]}: ${JSON.stringify({ [KEY]: en[KEY] })}`,
+          },
+        ],
       });
-      const text = r.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
+      const text = r.content
+        .filter((b) => b.type === 'text')
+        .map((b) => b.text)
+        .join('')
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
       const parsed = JSON.parse(text);
       messages[KEY] = parsed[KEY];
       fs.writeFileSync(mpath, JSON.stringify(messages, null, 2) + '\n', 'utf8');
-      process.stdout.write('ok\n'); ok++;
+      process.stdout.write('ok\n');
+      ok++;
     } catch (err) {
-      process.stdout.write(`FAIL ${err.message}\n`); fail++;
+      process.stdout.write(`FAIL ${err.message}\n`);
+      fail++;
     }
   }
   console.log(`  earth_regime_chip_aria: ok=${ok} skip=${skip} fail=${fail}`);
 }
 
 async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) { console.error('Missing ANTHROPIC_API_KEY'); process.exit(1); }
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('Missing ANTHROPIC_API_KEY');
+    process.exit(1);
+  }
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  let totalOk = 0, totalSkip = 0, totalFail = 0;
+  let totalOk = 0,
+    totalSkip = 0,
+    totalFail = 0;
   for (const bundle of BUNDLES) {
     const [ok, skip, fail] = await runBundle(client, bundle);
-    totalOk += ok; totalSkip += skip; totalFail += fail;
+    totalOk += ok;
+    totalSkip += skip;
+    totalFail += fail;
   }
   console.log(`\nOverlays: ok=${totalOk} skip=${totalSkip} fail=${totalFail}`);
   console.log('\nTranslating earth_regime_chip_aria across locales...');
@@ -192,4 +255,7 @@ async function main() {
   console.log('\nDone');
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

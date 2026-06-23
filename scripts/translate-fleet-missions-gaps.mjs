@@ -12,12 +12,33 @@ import Anthropic from '@anthropic-ai/sdk';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const I18N = path.join(ROOT, 'static/data/i18n');
 const LOCALES = [
-  'ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN',
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
 ];
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish', fr: 'French',
-  hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese', ru: 'Russian', 'sr-Cyrl': 'Serbian (Cyrillic)',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
   'zh-CN': 'Simplified Chinese',
 };
 
@@ -87,10 +108,12 @@ async function translate(client, system, tool, locale, overlay) {
     system,
     tools: [tool],
     tool_choice: { type: 'tool', name: tool.name },
-    messages: [{
-      role: 'user',
-      content: `Translate into ${NAMES[locale]} (${locale}). Output via the tool.\n\n${JSON.stringify(overlay, null, 2)}`,
-    }],
+    messages: [
+      {
+        role: 'user',
+        content: `Translate into ${NAMES[locale]} (${locale}). Output via the tool.\n\n${JSON.stringify(overlay, null, 2)}`,
+      },
+    ],
   });
   const block = r.content.find((b) => b.type === 'tool_use');
   if (!block || block.type !== 'tool_use') throw new Error('no tool_use block');
@@ -118,7 +141,9 @@ function findGaps(prefix) {
         try {
           const j = JSON.parse(fs.readFileSync(dst, 'utf8'));
           if (j && Object.keys(j).length > 0) continue;
-        } catch {}
+        } catch {
+          // existing overlay unreadable — treat as a gap to re-fill
+        }
       }
       gaps.push({ rel, locale: loc, dst });
     }
@@ -129,7 +154,8 @@ function findGaps(prefix) {
 async function runPrefix(client, prefix, system, tool) {
   const gaps = findGaps(prefix);
   console.log(`\n=== ${prefix} — ${gaps.length} gaps ===`);
-  let ok = 0, fail = 0;
+  let ok = 0,
+    fail = 0;
   for (const g of gaps) {
     const srcAbs = path.join(I18N, 'en-US', g.rel);
     const overlay = JSON.parse(fs.readFileSync(srcAbs, 'utf8'));
@@ -138,27 +164,38 @@ async function runPrefix(client, prefix, system, tool) {
       const tr = await translate(client, system, tool, g.locale, overlay);
       fs.mkdirSync(path.dirname(g.dst), { recursive: true });
       fs.writeFileSync(g.dst, JSON.stringify(tr, null, 2) + '\n', 'utf8');
-      process.stdout.write('ok\n'); ok++;
+      process.stdout.write('ok\n');
+      ok++;
     } catch (err) {
-      process.stdout.write(`FAIL ${err.message}\n`); fail++;
+      process.stdout.write(`FAIL ${err.message}\n`);
+      fail++;
     }
   }
   return [ok, fail];
 }
 
 async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) { console.error('Missing ANTHROPIC_API_KEY'); process.exit(1); }
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('Missing ANTHROPIC_API_KEY');
+    process.exit(1);
+  }
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  let totalOk = 0, totalFail = 0;
+  let totalOk = 0,
+    totalFail = 0;
   for (const prefix of ['fleet']) {
     const [ok, fail] = await runPrefix(client, prefix, SYSTEM_FLEET, FLEET_TOOL);
-    totalOk += ok; totalFail += fail;
+    totalOk += ok;
+    totalFail += fail;
   }
   for (const prefix of ['missions']) {
     const [ok, fail] = await runPrefix(client, prefix, SYSTEM_MISSION, MISSION_TOOL);
-    totalOk += ok; totalFail += fail;
+    totalOk += ok;
+    totalFail += fail;
   }
   console.log(`\nDone: ok=${totalOk} fail=${totalFail}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

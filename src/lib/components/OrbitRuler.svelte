@@ -46,13 +46,7 @@
      *  bottom band and there is no "surface" below it. */
     surfaceAnchor?: { label: string; value: string } | null;
   }
-  let {
-    regimes,
-    onSelect,
-    highlightRegime = null,
-    order,
-    surfaceAnchor,
-  }: Props = $props();
+  let { regimes, onSelect, highlightRegime = null, order, surfaceAnchor }: Props = $props();
 
   // Render order top→bottom. SURFACE is synthetic (always at 0 km, no
   // panel) — included as a visual anchor so the ruler reads as "ground
@@ -215,7 +209,9 @@
     grid-template-columns: 10px 1fr auto;
     align-items: center;
     gap: 8px;
-    transition: background 120ms ease, border-color 120ms ease;
+    transition:
+      background 120ms ease,
+      border-color 120ms ease;
   }
   .band:hover,
   .band:focus-visible {

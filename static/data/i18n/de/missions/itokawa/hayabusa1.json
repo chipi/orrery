@@ -1,0 +1,50 @@
+{
+  "name": "Hayabusa",
+  "type": "SAMPLE-RETURN · FLOWN",
+  "first": "Erste jemals zur Erde zurückgebrachte Asteroidenprobe (1500 μg von Itokawa)",
+  "description": "JAXAs Hayabusa (japanisch für „Falke\") flog die heroischste Missionsrettung der Raumfahrtgeschichte. Gestartet am 09.05.2003 mit einer M-V-5-Rakete und vier μ10-Ionentriebwerken – dem bis dahin leistungsstärksten Ionenantriebssystem. Ankunft am 25143 Itokawa am 12.09.2005 – ein 540×270×210-m großer Schutthaufen-Asteroid in Erdnähe. Zwei Landungen (20. + 25.11.2005), beide mit Versagen des Probenentnahme-Projektils, wobei dennoch Regolith in den Sammeltrichter geschleudert wurde. Dann verkrüppelte ein Hydrazin-Leck die Lagekontrolle, zwei von vier Reaktionsrädern fielen aus, Kommunikation für sieben Wochen verloren, das Rückkehrfenster zur Erde verschob sich um drei Jahre. Ingenieure setzten aus den überlebenden Hälften zweier beschädigter Triebwerke ein funktionierendes Ionentriebwerk zusammen und pflegten Hayabusa zurück zur Erde. Die am 13.06.2010 in Woomera, Australien, geborgene Probenkapsel brachte 1500 Mikrogramm Itokawa-Material zurück – bestätigte die S-Typ-Zusammensetzung und Schutthaufen-Struktur des Asteroiden und bewies, dass eine Asteroidenprobenrückführung möglich war.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "M-V-5 vom Uchinoura Space Center.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "ERD-SWING-BY",
+      "note": "19.05.2004.",
+      "type": "info"
+    },
+    {
+      "met": 857,
+      "label": "ANKUNFT BEI ITOKAWA",
+      "note": "12.09.2005. Stationshaltung an 7-km-Gate-Position.",
+      "type": "info"
+    },
+    {
+      "met": 857.01,
+      "label": "LANDUNGEN",
+      "note": "Zwei Oberflächenkontakte am 20. + 25.11.2005. Probenentnahme-Projektile versagen auf Kommando.",
+      "type": "warning"
+    },
+    {
+      "met": 920,
+      "label": "RETTUNGSVERSUCH",
+      "note": "Hydrazin-Leck, 2 Reaktionsräder ausgefallen, Kommunikation 7 Wochen verloren.",
+      "type": "warning"
+    },
+    {
+      "met": 1900,
+      "label": "IONENTRIEBWERK-FRANKENSTEIN",
+      "note": "Ein funktionierendes Triebwerk aus überlebenden Hälften zweier beschädigter zusammengesetzt.",
+      "type": "info"
+    },
+    {
+      "met": 2592,
+      "label": "PROBENRÜCKFÜHRUNG",
+      "note": "13.06.2010. 1500 μg von Itokawa in Woomera geborgen. Erste jemals zurückgebrachte Asteroidenprobe.",
+      "type": "info"
+    }
+  ]
+}

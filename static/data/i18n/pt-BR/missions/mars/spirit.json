@@ -1,0 +1,50 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · FLOWN",
+  "first": "Primeiro dos rovers gêmeos Mars Exploration Rover; rover mais longevo até ser superado pela Curiosity",
+  "description": "Spirit (MER-A) quicou 28 vezes no solo da Cratera Gusev em 2004-01-04 e parou a 250 m de seu primeiro impacto. Projetado para uma missão primária de 90 sols, ele sobreviveu 2.210 sols. Percorreu 7,7 km pelas planícies de Gusev, escalou as Columbia Hills e descobriu rochas contendo hematita que indicavam água antiga persistente. Em 2009-04 uma roda atravessou uma crosta de sulfato em \"Troy\" e Spirit ficou imobilizado em solo macio; a equipe o converteu em uma plataforma estacionária. Transmissão final em 2010-03-22; missão declarada encerrada em 2011-05-25. Gêmeo da Opportunity, que pousou três semanas depois no lado oposto de Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Delta II 7925 de Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 15,
+      "label": "TCM-1",
+      "note": "Primeira correção de meio de curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4",
+      "note": "Ajuste final pré-EDL.",
+      "type": "nominal"
+    },
+    {
+      "met": 208,
+      "label": "EDL",
+      "note": "Escudo térmico, paraquedas, retro-foguetes, airbags — 6 minutos de inferno na Cratera Gusev.",
+      "type": "info"
+    },
+    {
+      "met": 208.01,
+      "label": "POUSO",
+      "note": "Quicou 28 vezes. Parou em 14,57°S, 175,47°E.",
+      "type": "info"
+    },
+    {
+      "met": 1990,
+      "label": "PRESO EM TROY",
+      "note": "Roda atravessa crosta de sulfato; rover fica atolado em solo macio. 2009-04.",
+      "type": "warning"
+    },
+    {
+      "met": 2271,
+      "label": "TRANSMISSÃO FINAL",
+      "note": "2010-03-22. Missão declarada encerrada em 2011-05-25.",
+      "type": "warning"
+    }
+  ]
+}

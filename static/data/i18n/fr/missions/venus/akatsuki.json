@@ -1,0 +1,44 @@
+{
+  "name": "Akatsuki",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Récupéré d'une attente de 5 ans en orbite solaire pour atteindre l'orbite de Vénus lors d'une tentative de secours ; actuellement le seul orbiteur vénusien actif",
+  "description": "Akatsuki — « aube » — était la première mission vénusienne du Japon. Lancé le 20-05-2010 depuis Tanegashima sur une H-IIA 202, jumelé avec le démonstrateur de voile solaire IKAROS. L'insertion orbitale prévue autour de Vénus le 07-12-2010 a échoué lorsque l'accumulation de cristaux de sel dans une valve de retenue d'oxydant a désaxé le moteur principal 152 secondes après le début de la combustion. La JAXA a maintenu le vaisseau en vie en orbite solaire pendant cinq ans, douze manœuvres de correction, jusqu'à la prochaine fenêtre de rencontre avec Vénus. Le 07-12-2015, une combustion de 1228 secondes utilisant quatre propulseurs de contrôle d'attitude — jamais conçus pour l'insertion orbitale — a placé Akatsuki dans une orbite hautement elliptique de 400 × 440 000 km, avec une inclinaison de 3°. L'un des sauvetages de mission les plus spectaculaires de l'histoire du vol spatial. Toujours actif.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "H-IIA 202 depuis Tanegashima, jumelé avec la voile solaire IKAROS.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Première correction de trajectoire.",
+      "type": "nominal"
+    },
+    {
+      "met": 201,
+      "label": "ÉCHEC VOI-1",
+      "note": "07-12-2010. Anomalie de régulation OME 152s après le début de la combustion ; le vaisseau passe à côté et entre en orbite solaire.",
+      "type": "warning"
+    },
+    {
+      "met": 1000,
+      "label": "ATTENTE EN ORBITE SOLAIRE",
+      "note": "12 manœuvres sur 5 ans pour maintenir une trajectoire de nouvelle rencontre avec Vénus.",
+      "type": "info"
+    },
+    {
+      "met": 2027,
+      "label": "SUCCÈS VOI-R2",
+      "note": "07-12-2015. Combustion RCS de 1228s vers orbite 400 × 440 000 km, 3°.",
+      "type": "info"
+    },
+    {
+      "met": 2200,
+      "label": "OPÉRATIONS SCIENTIFIQUES",
+      "note": "Suivi UV/IR des structures nuageuses ; études de super-rotation ; ondes de gravité en forme d'arc au-dessus d'Aphrodite Terra.",
+      "type": "info"
+    }
+  ]
+}

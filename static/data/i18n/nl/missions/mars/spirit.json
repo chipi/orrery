@@ -1,0 +1,50 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · GEVLOGEN",
+  "first": "Eerste van de Mars Exploration Rover tweeling; langstlevende rover totdat Curiosity het record verbrak",
+  "description": "Spirit (MER-A) stuiterde 28 keer over de bodem van Gusev Crater op 2004-01-04 en rolde tot stilstand 250 m van zijn eerste inslag. Ontworpen voor een primaire missie van 90 sol, zou het 2.210 sols overleven. Legde 7,7 km af over de vlaktes van Gusev, beklom de Columbia Hills en ontdekte hematiet-bevattende rotsen die wijzen op aanhoudend oud water. In 2009-04 brak een wiel door een sulfaatkorst bij \"Troy\" en kwam Spirit tot stilstand in zachte grond; het team zette het om in een stationaire platform. Laatste transmissie 2010-03-22; missie verklaard beëindigd 2011-05-25. Tweelingbroer van Opportunity, die drie weken later aan de andere kant van Mars landde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Delta II 7925 vanaf Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 15,
+      "label": "TCM-1",
+      "note": "Eerste correctie halverwege de koers.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4",
+      "note": "Laatste bijstelling vóór EDL.",
+      "type": "nominal"
+    },
+    {
+      "met": 208,
+      "label": "EDL",
+      "note": "Hitteschild, parachute, retro-raketten, airbags — 6 minuten van hel in Gusev Crater.",
+      "type": "info"
+    },
+    {
+      "met": 208.01,
+      "label": "LANDING",
+      "note": "28 keer gestuiterd. Rolde tot rust op 14,57°Z, 175,47°O.",
+      "type": "info"
+    },
+    {
+      "met": 1990,
+      "label": "VASTGELOPEN BIJ TROY",
+      "note": "Wiel breekt door sulfaatkorst; rover zakt weg in zachte grond. 2009-04.",
+      "type": "warning"
+    },
+    {
+      "met": 2271,
+      "label": "LAATSTE TRANSMISSIE",
+      "note": "2010-03-22. Missie verklaard beëindigd 2011-05-25.",
+      "type": "warning"
+    }
+  ]
+}

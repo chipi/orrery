@@ -1,0 +1,50 @@
+{
+  "name": "Phoenix",
+  "type": "LANDER · FLOWN",
+  "first": "Primeira confirmação de gelo de água no regolito ártico marciano; primeiro pouso propulsivo suave em Marte desde a Viking 2",
+  "description": "A Phoenix foi recuperada do cancelado programa Mars Surveyor 2001 — hardware de voo armazenado por seis anos, remontado e redirecionado para as planícies do polo norte marciano. O nome foi escolhido literalmente. Pousou em 25/05/2008 em 68.22°N, 234.25°E em Vastitas Borealis, mais ao norte do que qualquer missão de superfície anterior. Em poucos dias o braço robótico raspou através do solo superficial e expôs gelo branco brilhante que visivelmente sublimou na câmera ao longo de quatro sols — confirmação direta de gelo de água subsuperficial no ártico marciano. Detectou percloratos no regolito e observou neve caindo de nuvens. A missão terminou em 02/11/2008 quando a energia solar caiu abaixo do limite operacional no início do inverno marciano; nunca se esperou que o módulo de pouso sobrevivesse à noite polar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Delta II 7925-9.5 de Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primeira correção de meio de curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 294,
+      "label": "TCM-6",
+      "note": "Ajuste final pré-EDL 21 horas antes da entrada.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "EDL",
+      "note": "Aeroshell, paraquedas supersônico, doze retrofoguetes de hidrazina — descida propulsiva estilo Viking.",
+      "type": "info"
+    },
+    {
+      "met": 295.01,
+      "label": "TOUCHDOWN",
+      "note": "Pouso suave em 68.22°N, 234.25°E — missão de superfície marciana mais ao norte.",
+      "type": "info"
+    },
+    {
+      "met": 302,
+      "label": "GELO EXPOSTO",
+      "note": "Braço raspa através do solo superficial. Gelo branco brilhante sublima na câmera ao longo de 4 sols.",
+      "type": "info"
+    },
+    {
+      "met": 458,
+      "label": "FIM DA MISSÃO",
+      "note": "02/11/2008. Inverno marciano; energia solar abaixo do limite operacional.",
+      "type": "warning"
+    }
+  ]
+}

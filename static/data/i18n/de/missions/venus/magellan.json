@@ -1,0 +1,44 @@
+{
+  "name": "Magellan",
+  "type": "ORBITER · FLOWN",
+  "first": "Vollständigste Radarkarte der Venus — 98 % der Oberfläche mit 100-m-Auflösung; erste planetare Raumsonde, die vom Space Shuttle gestartet wurde",
+  "description": "Magellan verwandelte die Venus von einer strukturlosen, wolkenverschleierten Scheibe in einen kartierten Planeten. Start aus der Ladebucht der Shuttle Atlantis am 04.05.1989 — die erste planetare Raumsonde, die mit einem Shuttle flog — und Ankunft bei der Venus am 10.08.1990 über eine lange Typ-IV-Flugbahn (1,5 Sonnenumläufe). Über vier Kartierungszyklen bildete das Synthetic-Aperture-Radar 98 % der Venusoberfläche mit 100-m-Auflösung ab und enthüllte Tessera-Hochländer, Coronae, Pfannkuchenkuppeln und eine junge, vulkanisch neu geformte Oberfläche. Die Mission endete am 13.10.1994 im Termination Experiment — dem ersten geplanten kontrollierten atmosphärischen Eintritt einer planetaren Raumsonde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "STS-30 / Atlantis von Kennedy LC-39B; IUS aus der Shuttle-Ladebucht ausgesetzt.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Erste Bahnkorrektur.",
+      "type": "nominal"
+    },
+    {
+      "met": 455,
+      "label": "TCM-4",
+      "note": "Letzte Feinkorrektur vor VOI.",
+      "type": "nominal"
+    },
+    {
+      "met": 463,
+      "label": "VOI",
+      "note": "Feststoffmotor-Zündung in einen 295 × 8543 km, 85,5° nahezu polaren Orbit.",
+      "type": "info"
+    },
+    {
+      "met": 950,
+      "label": "KARTIERUNGSZYKLUS 1 ABGESCHLOSSEN",
+      "note": "Erster vollständiger Durchlauf — 84 % Oberflächenabdeckung bei 100 m Auflösung.",
+      "type": "info"
+    },
+    {
+      "met": 1988,
+      "label": "TERMINATION EXPERIMENT",
+      "note": "13.10.1994. Periapsis in die Atmosphäre abgesenkt — erster geplanter Eintritt einer planetaren Raumsonde.",
+      "type": "warning"
+    }
+  ]
+}

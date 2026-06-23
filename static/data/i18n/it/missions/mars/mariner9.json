@@ -1,0 +1,44 @@
+{
+  "name": "Mariner 9",
+  "type": "ORBITER · FLOWN",
+  "first": "Primo veicolo spaziale ad orbitare attorno a un altro pianeta",
+  "description": "Mariner 9 ha reso possibili tutti gli orbiter successivi. Dopo un'accensione MOI di 15 minuti che lo inserì in orbita marziana il 14-11-1971, il pianeta sottostante era irriconoscibile — una tempesta di polvere globale aveva nascosto tutto tranne le quattro vette dei vulcani Tharsis. Il JPL aspettò. Durante gennaio 1972 la polvere si depositò e Mariner 9 restituì 7.329 immagini coprendo ~80% della superficie marziana, rivelando Olympus Mons (il vulcano più grande del sistema solare), Valles Marineris (il sistema di canyon che porta il suo nome), canali fluviali prosciugati che suggerivano un'antica era liquida, e i primi primi piani di Phobos e Deimos. La missione terminò il 27-10-1972 quando il gas di controllo d'assetto si esaurì; il veicolo spaziale rimane in orbita, decadendo lentamente.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas SLV-3C / Centaur da Cape Canaveral LC-36B.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "TCM-1",
+      "note": "Prima correzione di rotta.",
+      "type": "nominal"
+    },
+    {
+      "met": 98,
+      "label": "TCM-2",
+      "note": "Correzione di avvicinamento che punta con precisione il periapside MOI.",
+      "type": "nominal"
+    },
+    {
+      "met": 168,
+      "label": "MOI",
+      "note": "Accensione del motore a propellente solido di 15 min inserisce Mariner 9 in un'orbita di 1398 × 17.917 km, 64,4° — prima orbita in assoluto attorno a un altro pianeta.",
+      "type": "info"
+    },
+    {
+      "met": 200,
+      "label": "POLVERE SI DIRADA",
+      "note": "La tempesta globale si placa; inizia l'acquisizione di immagini.",
+      "type": "info"
+    },
+    {
+      "met": 515,
+      "label": "FINE MISSIONE",
+      "note": "27-10-1972. Gas di controllo d'assetto esaurito.",
+      "type": "warning"
+    }
+  ]
+}

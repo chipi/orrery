@@ -1,0 +1,50 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · FLOWN",
+  "first": "Primo dei rover gemelli Mars Exploration Rover; rover più longevo fino al superamento da parte di Curiosity",
+  "description": "Spirit (MER-A) rimbalzò 28 volte sul fondo del cratere Gusev il 2004-01-04 e si fermò a 250 m dal primo impatto. Progettato per una missione primaria di 90 sol, sarebbe sopravvissuto 2.210 sol. Percorse 7,7 km attraverso le pianure di Gusev, scalò le Columbia Hills e scoprì rocce contenenti ematite che segnalavano la presenza persistente di acqua antica. Nell'aprile 2009 una ruota sfondò una crosta di solfato a \"Troy\" e Spirit si bloccò nel terreno soffice; il team lo convertì in una piattaforma stazionaria. Ultima trasmissione il 2010-03-22; missione dichiarata conclusa il 2011-05-25. Gemellato con Opportunity, che atterrò tre settimane dopo sul lato opposto di Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Delta II 7925 da Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 15,
+      "label": "TCM-1",
+      "note": "Prima correzione di rotta a metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4",
+      "note": "Ultima regolazione pre-EDL.",
+      "type": "nominal"
+    },
+    {
+      "met": 208,
+      "label": "EDL",
+      "note": "Scudo termico, paracadute, retrorazzi, airbag — 6 minuti d'inferno nel cratere Gusev.",
+      "type": "info"
+    },
+    {
+      "met": 208.01,
+      "label": "ATTERRAGGIO",
+      "note": "Rimbalzato 28 volte. Fermato a 14,57°S, 175,47°E.",
+      "type": "info"
+    },
+    {
+      "met": 1990,
+      "label": "BLOCCATO A TROY",
+      "note": "La ruota sfonda la crosta di solfato; il rover si impantana nel terreno soffice. 2009-04.",
+      "type": "warning"
+    },
+    {
+      "met": 2271,
+      "label": "ULTIMA TRASMISSIONE",
+      "note": "2010-03-22. Missione dichiarata conclusa il 2011-05-25.",
+      "type": "warning"
+    }
+  ]
+}

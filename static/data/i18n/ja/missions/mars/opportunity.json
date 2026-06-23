@@ -1,0 +1,50 @@
+{
+  "name": "Opportunity",
+  "type": "ROVER · FLOWN",
+  "first": "最長走行距離の火星ローバー (45.16 km)、設計寿命90ソルに対し14年間の表面活動",
+  "description": "Opportunity (MER-B) は惑星探査の大当たりを引いた。エアバッグに包まれた着陸船がMeridiani Planumを26回バウンドし、幸運にも22メートルのクレーター (Eagle) に転がり込み、ローバーが走行せずとも読み取れる露出した基岩に囲まれていた。最初の画像はジャロサイトと「ブルーベリー」状のヘマタイト結節を示し、初期火星に液体の水が存在した最も強力な鉱物学的証拠となった。14年47日間にわたりOpportunityは45.16 kmを走破 — 火星ローバーのマラソン記録 — Endurance、Victoria、Endeavourクレーターを訪問した。2018年6月の惑星規模のダストストームが太陽電池パネルからの日光を遮断。最後の送信は2018年6月10日、NASAは2019年2月13日にミッション終了を宣言した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "Cape Canaveral LC-17BからDelta II 7925H Heavy。",
+      "type": "nominal"
+    },
+    {
+      "met": 12,
+      "label": "TCM-1",
+      "note": "最初の軌道修正。",
+      "type": "nominal"
+    },
+    {
+      "met": 195,
+      "label": "TCM-4",
+      "note": "EDL前の最終調整。",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "EDL",
+      "note": "ヒートシールド、パラシュート、逆噴射ロケット、エアバッグ。",
+      "type": "info"
+    },
+    {
+      "met": 202.01,
+      "label": "着陸 — EAGLE CRATERに到達",
+      "note": "26回バウンド。偶然22メートルのクレーターに転がり込み、露出した基岩に囲まれる。",
+      "type": "info"
+    },
+    {
+      "met": 5300,
+      "label": "最終送信",
+      "note": "2018年6月10日。惑星規模のダストストームが太陽電力を遮断。",
+      "type": "warning"
+    },
+    {
+      "met": 5543,
+      "label": "ミッション終了",
+      "note": "NASAが2019年2月13日にミッション終了を宣言。45.16 km走破。",
+      "type": "warning"
+    }
+  ]
+}

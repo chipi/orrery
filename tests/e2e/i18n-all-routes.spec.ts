@@ -29,17 +29,20 @@ const ROUTES = [
   '/library',
 ];
 
+// `script` (for the non-Latin locales) lets us assert the rendered content is
+// ACTUALLY in the language — not just that <html lang> is set. Even the
+// canvas-heavy routes carry plenty of script via the nav + HUD labels.
 const LOCALES = [
-  { code: 'de', rtl: false },
-  { code: 'ja', rtl: false },
-  { code: 'ar', rtl: true },
-  { code: 'sr-Cyrl', rtl: false },
+  { code: 'de', rtl: false, script: null }, // Latin — content checked by science + body-text specs
+  { code: 'ja', rtl: false, script: /[぀-ヿ一-鿿]/g },
+  { code: 'ar', rtl: true, script: /[؀-ۿ]/g },
+  { code: 'sr-Cyrl', rtl: false, script: /[Ѐ-ӿ]/g },
 ];
 
-for (const { code, rtl } of LOCALES) {
+for (const { code, rtl, script } of LOCALES) {
   test.describe(`i18n route sweep — ${code}`, () => {
     for (const route of ROUTES) {
-      test(`${route} renders in ${code}`, async ({ page }) => {
+      test(`${route} renders + is in ${code}`, async ({ page }) => {
         const errors: string[] = [];
         page.on('pageerror', (e) => errors.push(e.message));
 
@@ -51,6 +54,14 @@ for (const { code, rtl } of LOCALES) {
         // Nav is on every page; a heading or main region proves it rendered.
         await expect(page.locator('nav').first()).toBeVisible();
         await expect(page.locator('h1, main, [role="main"]').first()).toBeVisible();
+
+        // Content-language check: the visible text must contain enough
+        // characters from the locale's script that it cannot be English.
+        if (script) {
+          const text = await page.locator('body').innerText();
+          const hits = (text.match(script) ?? []).length;
+          expect(hits, `${url} should render ${code} script, got ${hits} script chars`).toBeGreaterThan(10);
+        }
 
         expect(errors, `page errors on ${url}: ${errors.join(' | ')}`).toHaveLength(0);
       });

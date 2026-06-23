@@ -17,7 +17,7 @@ not elevation. See the style bible for the full recipe. Generated 2026-06-23, 21
 | `_cover-space-stations.0642146c.png` | space-stations — world + low ring + station node | 0642146c |
 | `_cover-observation.7fb51cfc.png` | observation — sight-line to a galaxy spiral | 7fb51cfc |
 | `_cover-life-in-space.fef663a6.png` | life-in-space — "we are stardust": star → dust → carbon hexagon | fef663a6 |
-| `_science-landing-hero.66c6927e.png` | /science landing overture hero | 66c6927e |
+| `_science-landing-hero.1f00ffe6.png` | /science landing hero (iconic orrery) | 1f00ffe6 |
 
 These replace the diluted originals (timeline ticks / rocket icon / wireframe boxes /
 astronaut+bar-charts / telescope+spectrum / flowchart) with the celestial-poetic family look.

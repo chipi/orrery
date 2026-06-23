@@ -48,6 +48,13 @@
 </svelte:head>
 
 <header class="hero">
+  <img
+    class="hero-banner"
+    src="{base}/images/science-covers-v2/_science-landing-hero.webp"
+    alt=""
+    loading="eager"
+    decoding="async"
+  />
   <h1>{m.science_heading()}</h1>
   <p class="lede">{m.science_intro()}</p>
 </header>
@@ -114,6 +121,13 @@
 <style>
   .hero {
     margin-bottom: 24px;
+  }
+  .hero-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
   }
   .hero h1 {
     font-family: var(--font-display);

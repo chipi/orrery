@@ -1,0 +1,15 @@
+{
+  "title": "Marées",
+  "intro_sentence": "La gravité de la Lune attire les océans en deux renflements — l'un situé en dessous d'elle, l'autre du côté opposé — si bien que la plupart des côtes connaissent deux marées hautes par jour.",
+  "narrative_101": [
+    "La gravité s'affaiblit avec la distance, donc la Lune tire le côté proche de la Terre plus fort que le centre, et le centre plus fort que le côté éloigné.",
+    "Étirés entre ces forces inégales, les océans se soulèvent en un renflement faisant face à la Lune et un renflement correspondant du côté opposé — et la Terre effectue sa rotation à travers les deux chaque jour."
+  ],
+  "body_paragraphs": [
+    "Une marée n'est pas la Lune soulevant l'eau directement vers le haut — c'est la différence dans l'attraction de la Lune sur la largeur de la Terre. Le côté proche est attiré vers la Lune plus fortement que le centre de la planète, et le côté éloigné moins fortement, si bien que l'enveloppe d'eau est étirée en une forme prolate à deux renflements alignés avec la ligne Terre–Lune.",
+    "Parce qu'il y a deux renflements et que la Terre tourne une fois par jour, une côte donnée traverse généralement deux marées hautes et deux marées basses tous les ~24 h 50 min (les 50 minutes supplémentaires correspondent au déplacement de la Lune sur son orbite). Lorsque le Soleil s'aligne avec la Lune à la nouvelle lune et à la pleine lune, leurs attractions s'additionnent — les grandes marées de vive-eau ; aux quartiers, elles s'annulent partiellement en marées de morte-eau plus petites.",
+    "Les marées sont une voie à double sens. Le renflement que la Terre soulève se situe légèrement en avance sur la Lune parce que la Terre tourne plus vite que la Lune n'orbite ; sa gravité tire la Lune vers l'avant, la poussant vers une orbite plus élevée (~3.8 cm/année), tandis que la Lune tire en arrière sur le renflement et allonge lentement le jour terrestre.",
+    "Le même effet a déjà accompli son travail sur la Lune : la friction des marées a freiné sa rotation jusqu'à ce que celle-ci corresponde à son orbite, de sorte qu'elle garde une face tournée vers la Terre — le verrouillage gravitationnel. La lentille Marées sur /terre dessine les deux renflements jumeaux ; la lentille Point sub-terrestre sur /lune montre le côté proche verrouillé qu'ils ont produit."
+  ],
+  "diagram_caption": "Deux renflements de marée jumeaux étirés le long de la ligne Terre–Lune — le renflement proche sous la Lune, le renflement éloigné projeté vers l'extérieur."
+}

@@ -48,6 +48,8 @@
 </svelte:head>
 
 <header class="hero">
+  <h1>{m.science_heading()}</h1>
+  <p class="lede">{m.science_intro()}</p>
   <img
     class="hero-banner"
     src="{base}/images/science-covers-v2/_science-landing-hero.webp"
@@ -55,8 +57,6 @@
     loading="eager"
     decoding="async"
   />
-  <h1>{m.science_heading()}</h1>
-  <p class="lede">{m.science_intro()}</p>
 </header>
 
 {#if landing}

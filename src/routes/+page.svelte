@@ -731,7 +731,7 @@
     display: block;
     /* Break out of the .landing text column and centre on the page so the
        orrery reads ~3-4x larger than the body copy. */
-    width: min(1100px, 90vw);
+    width: min(720px, 62vw);
     max-width: none;
     height: auto;
     margin: 0 0 24px;
@@ -988,7 +988,7 @@
       font-size: 96px;
     }
     .hero-illustration {
-      width: min(1180px, 86vw);
+      width: min(760px, 56vw);
     }
     .tagline {
       font-size: 22px;

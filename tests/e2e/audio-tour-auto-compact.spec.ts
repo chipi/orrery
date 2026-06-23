@@ -38,11 +38,24 @@ async function primeTourActive(page: Page): Promise<void> {
   });
   await page.evaluate(() => {
     const w = window as Window & {
-      __orreryAudio?: { state: { tourActive: boolean; compact: boolean } };
+      __orreryAudio?: {
+        state: {
+          tourActive: boolean;
+          compact: boolean;
+          open: boolean;
+          currentEpisode: unknown;
+        };
+      };
     };
     if (!w.__orreryAudio) return;
     w.__orreryAudio.state.tourActive = true;
     w.__orreryAudio.state.compact = false;
+    // Post `feat(audio): page-follows-user navigation for tour + single-
+    // episode`, /iss + /tiangong gated their auto-compact effect on
+    // `audio.currentEpisode && audio.open` rather than `tourActive`, so
+    // priming tourActive alone wasn't enough. Set the new flags too.
+    w.__orreryAudio.state.open = true;
+    w.__orreryAudio.state.currentEpisode = { id: 'test-episode' };
   });
 }
 

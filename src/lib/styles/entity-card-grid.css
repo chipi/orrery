@@ -142,25 +142,27 @@
 .entity-card-grid .agency-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-family: 'Space Mono', monospace;
   font-size: 7px;
   letter-spacing: 2px;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 8px 3px 4px;
   border-radius: 3px;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 .entity-card-grid .agency-logo {
-  height: 14px;
+  height: 17px;
   width: auto;
-  max-width: 18px;
+  max-width: 26px;
   object-fit: contain;
-  /* White-tint dark logos so they remain legible against the coloured
-     agency badge background. CSS filter avoids per-agency variants. */
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
+  /* Show the logo in its real brand colours on a small white tile, so it
+     reads on any agency-colour badge (NASA red/blue, SpaceX blue, plus the
+     monochrome marks) — far clearer than the old flat-white invert. */
+  background: #fff;
+  border-radius: 2px;
+  padding: 2px 3px;
 }
 
 .entity-card-grid .card-status {

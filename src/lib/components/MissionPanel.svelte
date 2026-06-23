@@ -14,6 +14,7 @@
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
+  import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
@@ -382,12 +383,7 @@
                 title="Open {mission.vehicle} in /fleet"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg viewBox="0 0 16 20" width="16" height="20" fill="currentColor">
-                    <path
-                      d="M8 1 L11 6 L11 13 L13 16 L13 18 L11 17 L11 18 L5 18 L5 17 L3 18 L3 16 L5 13 L5 6 Z"
-                    />
-                    <circle cx="8" cy="9" r="1.6" fill="rgba(0,0,0,0.45)" />
-                  </svg>
+                  <VehicleIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">{m.mp_label_vehicle()}</span>
@@ -400,12 +396,7 @@
                 data-testid="mission-vehicle-static"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg viewBox="0 0 16 20" width="16" height="20" fill="currentColor">
-                    <path
-                      d="M8 1 L11 6 L11 13 L13 16 L13 18 L11 17 L11 18 L5 18 L5 17 L3 18 L3 16 L5 13 L5 6 Z"
-                    />
-                    <circle cx="8" cy="9" r="1.6" fill="rgba(0,0,0,0.45)" />
-                  </svg>
+                  <VehicleIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">{m.mp_label_vehicle()}</span>
@@ -423,13 +414,7 @@
                 title="Open spacecraft in /fleet"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
-                    <rect x="6" y="6" width="8" height="8" rx="1" />
-                    <rect x="1" y="8" width="4" height="4" />
-                    <rect x="15" y="8" width="4" height="4" />
-                    <line x1="10" y1="3" x2="10" y2="6" stroke="currentColor" stroke-width="1.5" />
-                    <circle cx="10" cy="2.4" r="1.3" />
-                  </svg>
+                  <SpacecraftIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">{m.mp_label_payload()}</span>
@@ -442,13 +427,7 @@
                 data-testid="mission-payload-static"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
-                    <rect x="6" y="6" width="8" height="8" rx="1" />
-                    <rect x="1" y="8" width="4" height="4" />
-                    <rect x="15" y="8" width="4" height="4" />
-                    <line x1="10" y1="3" x2="10" y2="6" stroke="currentColor" stroke-width="1.5" />
-                    <circle cx="10" cy="2.4" r="1.3" />
-                  </svg>
+                  <SpacecraftIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">{m.mp_label_payload()}</span>
@@ -841,19 +820,7 @@
                  mission trajectory. Inline SVG so it ships in the
                  same bundle as the button + tints with currentColor. -->
             <span class="cta-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 22 22"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 17 Q 9 3 19 9" />
-                <path d="M19 9 L14 7 M19 9 L17 14" />
-              </svg>
+              <TrajectoryArrowIcon />
             </span>
             <span class="cta-text">{m.mp_fly_button()}</span>
           </button>

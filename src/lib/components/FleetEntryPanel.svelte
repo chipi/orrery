@@ -5,6 +5,7 @@
   import { track } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
+  import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
 
   /**
@@ -285,20 +286,7 @@
                 data-sveltekit-preload-data="hover"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 22 22"
-                    width="20"
-                    height="20"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="11" cy="11" r="8.5" />
-                    <path d="M5 13 Q 11 5 17 13" />
-                    <circle cx="11" cy="6.6" r="1.3" fill="currentColor" stroke="none" />
-                  </svg>
+                  <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">MISSION</span>
@@ -315,20 +303,7 @@
                 data-testid="fleet-mission-cta-multi"
               >
                 <span class="spec-icon" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 22 22"
-                    width="20"
-                    height="20"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="11" cy="11" r="8.5" />
-                    <path d="M5 13 Q 11 5 17 13" />
-                    <circle cx="11" cy="6.6" r="1.3" fill="currentColor" stroke="none" />
-                  </svg>
+                  <MissionOrbitIcon />
                 </span>
                 <span class="spec-text">
                   <span class="spec-label">MISSIONS</span>

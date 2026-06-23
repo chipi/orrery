@@ -22,6 +22,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { track } from '$lib/analytics';
+  import { InfoChipIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
 
   type Props = {
@@ -58,21 +59,10 @@
   data-science-chip
   onclick={onClick}
 >
-  <!-- Geometric `i` (info) icon: outer ring + tiny round dot above a
-       short stem. Coordinates are tuned to the 14×14 viewBox so the
-       glyph sits in the geometric centre of the circle, regardless of
-       the user's font. -->
-  <svg
-    class="dot"
-    viewBox="0 0 14 14"
-    aria-hidden="true"
-    focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1" />
-    <circle cx="7" cy="4.2" r="0.85" fill="currentColor" />
-    <rect x="6.25" y="6" width="1.5" height="4.4" rx="0.4" fill="currentColor" />
-  </svg>
+  <!-- Geometric `i` (info) icon (registry InfoChipIcon). The `.dot`
+       wrapper carries the size + the hover-state circular tint; the icon
+       inherits colour via currentColor. -->
+  <span class="dot"><InfoChipIcon size={14} /></span>
 </a>
 
 <style>
@@ -90,7 +80,9 @@
      ring's stroke + the glyph's fills both inherit currentColor so the
      hover state only needs to flip color (no border-color hack). */
   .dot {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 14px;
     height: 14px;
     color: rgba(78, 205, 196, 0.85);

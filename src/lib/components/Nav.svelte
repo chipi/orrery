@@ -14,6 +14,12 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import {
+    MenuIcon,
+    AudioWaveIcon,
+    ScienceLensIcon,
+    SettingsGearIcon,
+  } from '$lib/components/icons';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
@@ -152,16 +158,7 @@
       aria-controls={mobileMenuOpen ? 'mobile-nav-drawer' : undefined}
       onclick={toggleMobileMenu}
     >
-      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
-        {#if mobileMenuOpen}
-          <line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
-          <line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.6" />
-        {:else}
-          <line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6" />
-          <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6" />
-          <line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6" />
-        {/if}
-      </svg>
+      <MenuIcon open={mobileMenuOpen} />
     </button>
     <button
       type="button"
@@ -179,15 +176,7 @@
            while audio.playing comes from the .playing class — bounded
            opacity oscillation, no transform churn (keeps the icon
            readable + respects prefers-reduced-motion via CSS). -->
-      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-        <path
-          d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-      </svg>
+      <AudioWaveIcon />
     </button>
     <LocalePicker />
     <button
@@ -209,15 +198,7 @@
       <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
            blank in some font stacks that don't carry them. SVG always
            draws. Outer ring + crosshair when on, just outer ring off. -->
-      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-        <circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4" />
-        {#if scienceLens}
-          <line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="1.4" />
-          <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.4" />
-        {:else}
-          <circle cx="8" cy="8" r="1.4" fill="currentColor" />
-        {/if}
-      </svg>
+      <ScienceLensIcon active={scienceLens} />
     </button>
     <button
       type="button"
@@ -253,15 +234,7 @@
     >
       <!-- 8-spoke gear glyph as inline SVG (matches the lens-toggle
            pattern). Sized to fit the 16 × 16 toggle box. -->
-      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-        <path
-          d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.2"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <SettingsGearIcon />
     </button>
     {@render right?.()}
   </div>

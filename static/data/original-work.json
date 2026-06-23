@@ -1096,97 +1096,347 @@
   ],
   "models3d": [
     {
+      "title": "Cassini–Huygens",
+      "what": "High-gain dish, RTG booms, and the Huygens probe — Saturn orbiter.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-cassini.webp"
+    },
+    {
+      "title": "Voyager",
+      "what": "3.7 m dish, magnetometer boom, and RTG truss — the Grand Tour bus.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-voyager-1.webp"
+    },
+    {
+      "title": "Galileo",
+      "what": "Dual-spin bus with the furled high-gain umbrella antenna.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-galileo.webp"
+    },
+    {
+      "title": "New Horizons",
+      "what": "Compact triangular bus with a single dish — the Pluto flyby probe.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-new-horizons.webp"
+    },
+    {
+      "title": "Pioneer",
+      "what": "Spin-stabilised dish, RTG booms, and the engraved plaque.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-pioneer-10.webp"
+    },
+    {
+      "title": "Juno",
+      "what": "Three vast solar wings around a hexagonal bus — Jupiter polar orbiter.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-juno.webp"
+    },
+    {
+      "title": "BepiColombo",
+      "what": "Stacked transfer module + Mercury orbiters with ion thrusters.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-bepicolombo.webp"
+    },
+    {
+      "title": "Dawn",
+      "what": "Ion-drive bus with wide solar wings — Vesta + Ceres orbiter.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-dawn.webp"
+    },
+    {
+      "title": "Giotto",
+      "what": "Drum-shaped spinner with a dust shield — Halley’s Comet flyby.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-giotto.webp"
+    },
+    {
+      "title": "Hayabusa2",
+      "what": "Boxy bus with solar panels and sampler horn — asteroid Ryugu.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-hayabusa2.webp"
+    },
+    {
+      "title": "JUICE",
+      "what": "Cross-shaped solar arrays on a compact bus — Jupiter icy-moons orbiter.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-juice.webp"
+    },
+    {
+      "title": "Rosetta",
+      "what": "14 m solar wings around a comet-chasing bus + Philae lander.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-rosetta.webp"
+    },
+    {
+      "title": "Ulysses",
+      "what": "RTG-powered solar polar probe with a single dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-ulysses.webp"
+    },
+    {
+      "title": "Vega",
+      "what": "Soviet Venus flyby + balloon mother-craft with a steerable dish.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-vega-1.webp"
+    },
+    {
+      "title": "Venera 13",
+      "what": "Soviet Venus lander — toroidal aerobrake and landing ring.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/craft-venera-13.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
-      "what": "Engineering-accurate descent + ascent stage, gold MLI foil and RCS quads.",
-      "where": "Moon landing sites · Fly",
-      "route": "/moon"
+      "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-apollo-lm.webp"
     },
     {
-      "title": "Mars rovers (Curiosity, Perseverance, Zhurong)",
-      "what": "Rocker-bogie chassis, mast, and RTG / solar configurations per mission.",
+      "title": "Apollo LM (J-mission + LRV)",
+      "what": "Extended-stay LM paired with the Lunar Roving Vehicle.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-apollo-lm-extended.webp"
+    },
+    {
+      "title": "Luna 9",
+      "what": "Soviet sphere that returned the first images from the lunar surface.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-luna-9.webp"
+    },
+    {
+      "title": "Luna sample-return",
+      "what": "Ascent rocket atop a descent platform (Luna 16 / 20 / 24).",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-luna-sample-return.webp"
+    },
+    {
+      "title": "Lunokhod rover",
+      "what": "Eight-wheeled Soviet rover with a clamshell solar lid.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-lunokhod.webp"
+    },
+    {
+      "title": "Chang’e lander",
+      "what": "CNSA descent stage with ascent capsule (Chang’e 5 / 6).",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-chang-e-lander.webp"
+    },
+    {
+      "title": "Yutu rover",
+      "what": "Six-wheeled Chinese rover with folding solar panels.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-yutu.webp"
+    },
+    {
+      "title": "Chandrayaan-3 Vikram",
+      "what": "ISRO four-leg lander that delivered the Pragyan rover.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-chandrayaan-3-vikram.webp"
+    },
+    {
+      "title": "SLIM",
+      "what": "JAXA precision “Moon Sniper” two-engine descent stage.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-slim.webp"
+    },
+    {
+      "title": "Beresheet",
+      "what": "SpaceIL’s compact four-leg lander.",
+      "where": "Moon landing sites",
+      "route": "/moon",
+      "thumb": "/images/colophon/model-moon-beresheet.webp"
+    },
+    {
+      "title": "Viking",
+      "what": "Tripod-legged NASA lander with RTG and sampling arm.",
       "where": "Mars landing sites",
-      "route": "/mars"
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-viking.webp"
     },
     {
-      "title": "Historical landers",
-      "what": "Luna 9, Viking, Pathfinder + Sojourner, Beagle 2, Beresheet, Chandrayaan-3, SLIM, Schiaparelli, Mars 3.",
-      "where": "Moon + Mars landing sites",
-      "route": "/mars"
+      "title": "Pathfinder + Sojourner",
+      "what": "Tetrahedral airbag lander and the first Mars rover.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-pathfinder-sojourner.webp"
+    },
+    {
+      "title": "MER (Spirit / Opportunity)",
+      "what": "Rocker-bogie rover with butterfly solar wings.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-mer.webp"
+    },
+    {
+      "title": "Curiosity / Perseverance",
+      "what": "MSL-class RTG rover with mast + arm (and Ingenuity).",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-curiosity.webp"
+    },
+    {
+      "title": "Phoenix / InSight",
+      "what": "Solar stationary lander with a robotic arm.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-phoenix.webp"
+    },
+    {
+      "title": "Mars 3",
+      "what": "Soviet petal lander — first soft Mars touchdown.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-mars-3.webp"
+    },
+    {
+      "title": "Tianwen-1 Zhurong",
+      "what": "Chinese rover with butterfly arrays and a mast.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-zhurong.webp"
+    },
+    {
+      "title": "Schiaparelli",
+      "what": "ESA entry-descent-landing demonstrator capsule.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-schiaparelli.webp"
+    },
+    {
+      "title": "Beagle 2",
+      "what": "Clamshell ESA lander with petal solar panels.",
+      "where": "Mars landing sites",
+      "route": "/mars",
+      "thumb": "/images/colophon/model-mars-beagle-2.webp"
+    },
+    {
+      "title": "Hubble",
+      "what": "Cylindrical observatory with aperture door and solar wings.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-hubble.webp"
+    },
+    {
+      "title": "JWST",
+      "what": "Tennis-court sunshield beneath a segmented gold mirror.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-jwst.webp"
+    },
+    {
+      "title": "Chandra",
+      "what": "Elongated X-ray observatory with solar wings.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-chandra.webp"
+    },
+    {
+      "title": "XMM-Newton",
+      "what": "Long ESA X-ray telescope tube.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-xmm.webp"
+    },
+    {
+      "title": "Gaia",
+      "what": "Sunshade-skirted ESA astrometry observatory.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-gaia.webp"
+    },
+    {
+      "title": "LRO",
+      "what": "Lunar Reconnaissance Orbiter bus and dish.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-lro.webp"
+    },
+    {
+      "title": "GEO comsat",
+      "what": "Box bus with deployed solar wings and antennas.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-geo-comsat.webp"
+    },
+    {
+      "title": "Navigation constellation",
+      "what": "GPS-class satellite cluster (GPS / Galileo / GLONASS / BeiDou).",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-nav-constellation.webp"
+    },
+    {
+      "title": "Generic orbiter bus",
+      "what": "Hex bus + solar wings + antenna, agency-keyed fallback build.",
+      "where": "Earth orbital markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-sat-generic-orbiter.webp"
+    },
+    {
+      "title": "Launch facility",
+      "what": "Octagonal pad with four lightning towers — Kennedy, Baikonur, Jiuquan, and others.",
+      "where": "Earth surface markers",
+      "route": "/earth",
+      "thumb": "/images/colophon/model-earth-launchpad.webp"
     },
     {
       "title": "ISS proxy model",
-      "what": "Truss, modules, and solar arrays built from the station module schema.",
+      "what": "Full truss, pressurised modules, docked visitors, and steerable arrays.",
       "where": "ISS orbital scene",
       "route": "/iss",
-      "thumb": "/images/colophon/model-iss.webp"
+      "thumb": "/images/colophon/model-station-iss.webp"
     },
     {
       "title": "Tiangong proxy model",
-      "what": "T-configuration core + lab modules and steerable arrays.",
+      "what": "T-configuration core + lab modules, docked Shenzhou / Tianzhou, and arrays.",
       "where": "Tiangong orbital scene",
-      "route": "/tiangong"
-    },
-    {
-      "title": "Station module geometry",
-      "what": "Parametric cylinders, trusses, and panels rendered per module descriptor.",
-      "where": "ISS + Tiangong detail",
-      "route": "/iss"
-    },
-    {
-      "title": "Earth satellite models",
-      "what": "Hubble, JWST, and generic bus + panel builds keyed to operator agency.",
-      "where": "Earth orbital markers",
-      "route": "/earth",
-      "thumb": "/images/colophon/model-earth.webp"
-    },
-    {
-      "title": "Earth launch facilities",
-      "what": "Gantry + pad spires for Kennedy, Baikonur, Jiuquan, and others.",
-      "where": "Earth surface markers",
-      "route": "/earth"
-    },
-    {
-      "title": "Interplanetary spacecraft",
-      "what": "Cruise-stage probe bodies with antenna + panels for trajectory scenes.",
-      "where": "Fly + Explore",
-      "route": "/fly",
-      "thumb": "/images/colophon/model-fly.webp"
-    },
-    {
-      "title": "Orbit overlays",
-      "what": "Sphere-of-influence shells, gravity-vector arrows, and conic arcs.",
-      "where": "Fly orbit lens",
-      "route": "/fly"
+      "route": "/tiangong",
+      "thumb": "/images/colophon/model-station-tiangong.webp"
     },
     {
       "title": "Microgravity axes",
       "what": "Six labelled arrows marking the station local frame (zenith/nadir…).",
       "where": "ISS + Tiangong science lens",
-      "route": "/iss"
+      "route": "/iss",
+      "thumb": "/images/colophon/model-microgravity.webp"
     },
     {
       "title": "Orbiter rings + marker halos",
       "what": "Inclination-tilted altitude rings and selection glow halos.",
       "where": "Earth · Moon · Mars",
-      "route": "/earth"
-    },
-    {
-      "title": "Layered star fields + skydomes",
-      "what": "Three-population star sampling with a squashed Milky Way band.",
-      "where": "All 3D scenes",
-      "route": "/explore"
+      "route": "/earth",
+      "thumb": "/images/colophon/model-orbit-rings.webp"
     },
     {
       "title": "Iconic mission trajectories",
       "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn flight paths.",
       "where": "Explore",
-      "route": "/explore"
-    },
-    {
-      "title": "Sun lens flare + galaxies layer",
-      "what": "Screen-space flare ghosts and a distant galaxy point cloud.",
-      "where": "Fly · Explore",
-      "route": "/explore"
+      "route": "/explore",
+      "thumb": "/images/colophon/model-trajectories.webp"
     }
   ],
   "canvas2d": [
@@ -1215,13 +1465,15 @@
       "title": "Surface-map nation legend",
       "what": "Auto-spaced agency colour key drawn onto the flat surface maps.",
       "where": "Moon + Mars 2D",
-      "route": "/moon"
+      "route": "/moon",
+      "thumb": "/images/colophon/viz-nation-legend.webp"
     },
     {
       "title": "3D text-label sprites",
       "what": "Canvas-rendered name tags billboarded onto objects in every scene.",
       "where": "Earth · Moon · Mars · Explore",
-      "route": "/earth"
+      "route": "/earth",
+      "thumb": "/images/colophon/model-textlabels.webp"
     }
   ],
   "ui": [
@@ -1258,24 +1510,60 @@
   ],
   "writing": [
     {
+      "title": "Mission briefings",
+      "what": "114 mission narratives — launch history, spacecraft, flight profile, and results — written for the mission cards and Fly briefings.",
+      "where": "Missions + Fly",
+      "route": "/missions"
+    },
+    {
+      "title": "Fleet catalogue entries",
+      "what": "251 spacecraft, launchers, suits, pads, and station components, each with a “best known for” line and full prose profile.",
+      "where": "Fleet",
+      "route": "/fleet"
+    },
+    {
+      "title": "Landing-site stories",
+      "what": "55 multi-chapter narrative histories of lunar and Martian landing sites, with original captions on every photograph.",
+      "where": "Moon + Mars sites",
+      "route": "/moon"
+    },
+    {
+      "title": "Science encyclopedia",
+      "what": "117 original explainers across orbital mechanics, propulsion, life in space, Earth-from-space, and spaceflight history — plus every figure caption.",
+      "where": "Science",
+      "route": "/science"
+    },
+    {
+      "title": "World profiles",
+      "what": "Descriptive copy for the 9 planets and 22 small bodies — comets, asteroids, and Kuiper-belt objects — shown on the orrery.",
+      "where": "Explore",
+      "route": "/explore"
+    },
+    {
+      "title": "Station module notes",
+      "what": "Operational and historical notes for all 22 ISS and Tiangong modules, written for the blueprint panels.",
+      "where": "ISS + Tiangong",
+      "route": "/iss"
+    },
+    {
+      "title": "Surface + panorama captions",
+      "what": "Hotspot labels and annotated panorama captions that name what you’re looking at on each Moon and Mars scene.",
+      "where": "Moon + Mars panoramas",
+      "route": "/mars"
+    },
+    {
       "title": "Audio tour scripts",
       "what": "Every guided + extended tour episode is originally written for Orrery; only the text-to-speech voices are third-party (credited on the Credits page).",
       "where": "Take the tour",
       "route": "/credits"
-    },
-    {
-      "title": "Science encyclopedia",
-      "what": "The /science explainers, captions, and figure copy are original writing.",
-      "where": "Science",
-      "route": "/science"
     }
   ],
   "totals": {
     "anatomy_art": 144,
     "diagrams_science": 74,
-    "models3d": 15,
+    "models3d": 49,
     "canvas2d": 5,
     "ui": 5,
-    "writing": 2
+    "writing": 8
   }
 }

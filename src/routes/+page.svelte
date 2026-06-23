@@ -6,6 +6,7 @@
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
+  import { AudioWaveIcon } from '$lib/components/icons';
 
   const activeLocale = $derived(localeFromPage($page));
 
@@ -406,15 +407,7 @@
         data-testid="landing-cta-tour"
         onclick={startCuratorTour}
       >
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" class="cta-tour-glyph">
-          <path
-            d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-        </svg>
+        <span class="cta-tour-glyph" aria-hidden="true"><AudioWaveIcon size={14} /></span>
         {m.landing_cta_tour()}
       </button>
       <a class="cta cta-secondary" href="#how-it-works">

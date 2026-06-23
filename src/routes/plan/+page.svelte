@@ -12,6 +12,7 @@
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import { TrajectoryArrowIcon } from '$lib/components/icons';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -1171,19 +1172,7 @@
              is visually consistent (2026-06-15 user direction: "let's
              adjust fly mission with same logo on plan page"). -->
         <span class="fly-icon" aria-hidden="true">
-          <svg
-            viewBox="0 0 22 22"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M3 17 Q 9 3 19 9" />
-            <path d="M19 9 L14 7 M19 9 L17 14" />
-          </svg>
+          <TrajectoryArrowIcon />
         </span>
         <span class="fly-text">{m.plan_fly_button()}</span>
       </button>

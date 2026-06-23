@@ -25,15 +25,16 @@
     flex-shrink: 0;
   }
   .badge {
-    width: 14px;
-    height: 14px;
+    width: auto;
+    height: 17px;
+    max-width: 26px;
     object-fit: contain;
-    /* SVG agency marks are black-on-transparent; invert to white-on-dark
-       for the dark theme. */
-    filter: brightness(0) invert(1) opacity(0.85);
-    transition: filter 120ms;
+    /* Real brand colours on a small white tile — legible on the dark theme
+       for both the colour marks (NASA, SpaceX) and the monochrome ones,
+       and keeps each logo's own aspect ratio instead of squashing to a
+       square. */
+    background: #fff;
+    border-radius: 2px;
+    padding: 2px 3px;
   }
-  /* Don't invert if the logo is already coloured — let CSS classes
-     opt-out via parent selectors if needed. For now we trust the
-     monochrome convention used by /static/logos/. */
 </style>

@@ -544,9 +544,12 @@
     align-items: flex-start;
   }
   .src-logo {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 6px;
+    /* Solid white tile so the monochrome agency marks (ESA, CNSA, ISRO,
+       JAXA…) read as well as the colour ones (NASA, SpaceX) — on the dark
+       page the old 6%-white tile left the black logos all but invisible. */
+    background: #fff;
+    border-radius: 6px;
+    padding: 7px;
     object-fit: contain;
     flex-shrink: 0;
   }

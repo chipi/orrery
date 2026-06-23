@@ -14,6 +14,7 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
+  import { FullscreenIcon } from '$lib/components/icons';
 
   interface Props {
     active: boolean;
@@ -76,15 +77,7 @@
     data-testid="panorama-fullscreen-toggle"
     disabled={!isSupported}
   >
-    {#if isFullscreen}
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-        <path d="M6 1v5H1M12 1v5h5M6 17v-5H1M12 17v-5h5" stroke="currentColor" stroke-width="1.5" />
-      </svg>
-    {:else}
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-        <path d="M1 6V1h5M17 6V1h-5M1 12v5h5M17 12v5h-5" stroke="currentColor" stroke-width="1.5" />
-      </svg>
-    {/if}
+    <FullscreenIcon active={isFullscreen} />
   </button>
 {/if}
 

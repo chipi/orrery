@@ -13,6 +13,7 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { getAudioProvenanceManifest } from '$lib/data';
+  import { ICON_SHOWCASE } from '$lib/components/icons';
 
   type Diagram = { title: string; file: string; cover: boolean };
   type Item = { title: string; what: string; where: string; route: string; thumb?: string };
@@ -128,7 +129,7 @@
     </section>
 
     <!-- Live-rendered geometry/canvas: no static preview, link to the route. -->
-    {#each [{ id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }, { id: 'ui', label: m.colophon_section_ui(), items: data.ui }] as sec (sec.id)}
+    {#each [{ id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }] as sec (sec.id)}
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">
@@ -152,6 +153,32 @@
         </ul>
       </section>
     {/each}
+
+    <!-- Interface graphics: every original UI glyph, embedded as the real
+         inline SVG from the icon registry (crisp, theme-coloured) rather
+         than a rasterised preview. -->
+    <section class="block" aria-labelledby="sec-ui">
+      <h2 id="sec-ui">
+        {m.colophon_section_ui()}<span class="count">{ICON_SHOWCASE.length}</span>
+      </h2>
+      <ul class="icon-grid">
+        {#each ICON_SHOWCASE as icon (icon.id)}
+          <li class="icon-card">
+            <div class="icon-swatch">
+              {#each icon.variants ?? [{ props: {} }] as v (v.label ?? 'only')}
+                <span class="icon-variant">
+                  <icon.component {...v.props} />
+                  {#if v.label}<span class="iv-label">{v.label}</span>{/if}
+                </span>
+              {/each}
+            </div>
+            <p class="it-title">{icon.label}</p>
+            <p class="it-what">{icon.what}</p>
+            <a class="it-where" href="{base}{icon.route}">{m.colophon_seen_on()} {icon.where} →</a>
+          </li>
+        {/each}
+      </ul>
+    </section>
 
     <section class="block" aria-labelledby="sec-writing">
       <h2 id="sec-writing">
@@ -386,6 +413,57 @@
     color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  }
+
+  /* Interface-graphics grid — the real inline SVGs on a faint glow swatch. */
+  .icon-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .icon-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .icon-swatch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 22px 16px;
+    min-height: 78px;
+    color: #5eead4;
+    background: radial-gradient(circle at 50% 36%, rgba(94, 234, 212, 0.1), transparent 70%);
+  }
+  .icon-variant {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+  .iv-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .icon-card .it-title,
+  .icon-card .it-what {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .icon-card .it-title {
+    margin-top: 12px;
+  }
+  .icon-card .it-where {
+    margin: 0 16px 14px;
+    display: inline-block;
   }
 
   .tours-note {

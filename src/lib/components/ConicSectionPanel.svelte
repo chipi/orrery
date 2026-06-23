@@ -12,6 +12,7 @@
   import { onDestroy, onMount } from 'svelte';
   import { base } from '$app/paths';
   import { onLayerChange } from '$lib/science-layers';
+  import { ConicIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages.js';
 
   type Shape = 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
@@ -83,36 +84,7 @@
       <!-- Inline SVG family, swapped by the current shape. Coord-pinned
            at 32×20 so the icon sits crisp next to the label regardless
            of font-size at the consuming site. -->
-      {#if shape === 'circle'}
-        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true">
-          <circle cx="16" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.4" />
-          <circle cx="16" cy="10" r="1.2" fill="currentColor" />
-        </svg>
-      {:else if shape === 'ellipse'}
-        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true">
-          <ellipse
-            cx="16"
-            cy="10"
-            rx="13"
-            ry="6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-          />
-          <circle cx="22" cy="10" r="1.2" fill="currentColor" />
-        </svg>
-      {:else if shape === 'parabola'}
-        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true">
-          <path d="M3 3 Q 16 22 29 3" fill="none" stroke="currentColor" stroke-width="1.4" />
-          <circle cx="16" cy="14" r="1.2" fill="currentColor" />
-        </svg>
-      {:else}
-        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true">
-          <path d="M3 3 Q 12 10 3 17" fill="none" stroke="currentColor" stroke-width="1.4" />
-          <path d="M29 3 Q 20 10 29 17" fill="none" stroke="currentColor" stroke-width="1.4" />
-          <circle cx="11.5" cy="10" r="1.2" fill="currentColor" />
-        </svg>
-      {/if}
+      <ConicIcon {shape} />
       <span class="shape-label">{shapeLabel(shape)}</span>
     </div>
     <p class="blurb">{shapeBlurb(shape)}</p>

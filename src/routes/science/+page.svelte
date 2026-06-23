@@ -124,10 +124,11 @@
   }
   .hero-banner {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 260px;
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin: 0 auto 16px;
   }
   .hero h1 {
     font-family: var(--font-display);

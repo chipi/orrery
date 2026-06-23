@@ -729,10 +729,14 @@
   }
   .hero-illustration {
     display: block;
-    width: 100%;
-    max-width: 100%;
+    /* Break out of the .landing text column and centre on the page so the
+       orrery reads ~3-4x larger than the body copy. */
+    width: min(1100px, 90vw);
+    max-width: none;
     height: auto;
-    margin: 0 auto 20px;
+    margin: 0 0 24px;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
   .wordmark {
     font-family: var(--font-display);
@@ -944,7 +948,6 @@
       letter-spacing: 8px;
     }
     .hero-illustration {
-      max-width: 520px;
       margin-bottom: 32px;
     }
     .tagline {
@@ -985,7 +988,7 @@
       font-size: 96px;
     }
     .hero-illustration {
-      max-width: 600px;
+      width: min(1180px, 86vw);
     }
     .tagline {
       font-size: 22px;

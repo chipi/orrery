@@ -2318,15 +2318,26 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
     })),
   );
 
-  // Panel sidecar (#5 Phase 4) — picks up moon-sites / mars-sites /
-  // earth-objects ids that source-known-gaps.ts fetched from Commons
-  // but that aren't in the corresponding query arrays yet.
+  // Panel sidecar (#5 Phase 4) — picks up panel surface ids that
+  // source-known-gaps.ts fetched from Commons but that aren't in the
+  // corresponding query arrays yet.
+  // 2026-06-23 fix: extended to include planets + small-bodies + sun
+  // + missions. The panel-image-sources.json sidecar carries keys for
+  // EVERY panel surface, so the original knownIdsBySurface (which only
+  // had moon-sites / mars-sites / earth-objects) was letting through
+  // planet + small-body sidecar entries that the dedicated Planet +
+  // Small-body walkers ALSO emitted — producing 49 duplicate manifest
+  // entries that bailed the validate-before-write.
   out.push(
     ...(await buildPanelCommonsSidecarEntries(
       new Map<string, Set<string>>([
         ['moon-sites', new Set(MOON_SITE_QUERIES.map((q) => q.id))],
         ['mars-sites', new Set(MARS_SITE_QUERIES.map((q) => q.id))],
         ['earth-objects', new Set(EARTH_OBJECT_QUERIES.map((q) => q.id))],
+        ['planets', new Set(PLANET_QUERIES.map((q) => q.id))],
+        ['small-bodies', new Set(SMALL_BODY_QUERIES.map((q) => q.id))],
+        ['sun', new Set(SUN_QUERIES.map((q) => q.id))],
+        ['missions', new Set(MISSION_IMAGE_QUERIES.map((q) => q.id))],
       ]),
     )),
   );

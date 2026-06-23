@@ -1004,13 +1004,6 @@
     "agency": "CMSA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf/page1-960px-Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
-  "change1/01": {
-    "commons_file": "Chang e 1.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang%20e%201.jpg",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:44:03Z"
-  },
   "change1/02": {
     "commons_file": "Chang'e-1 mockup at BASM.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e-1%20mockup%20at%20BASM.jpg",
@@ -4740,34 +4733,6 @@
     "license": "CC BY-SA 3.0 IGO",
     "fetched_at": "2026-06-20T15:32:53Z",
     "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
-  },
-  "smart-1/02": {
-    "commons_file": "ESA's_SMART-1-_testing_solar_electric_propulsion_and_studying_the_Moon_ESA194476.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:ESA's_SMART-1-_testing_solar_electric_propulsion_and_studying_the_Moon_ESA194476.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:33Z"
-  },
-  "smart-1/03": {
-    "commons_file": "SMART-1_is_packed_as_it_will_be_for_launch_ESA228534.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:SMART-1_is_packed_as_it_will_be_for_launch_ESA228534.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:36Z"
-  },
-  "smart-1/04": {
-    "commons_file": "Hadley_Rille_on_the_Moon,_seen_by_SMART-1_ESA214754.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Hadley_Rille_on_the_Moon%2C_seen_by_SMART-1_ESA214754.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:38Z"
-  },
-  "smart-1/05": {
-    "commons_file": "SMART-1_Impact_flash.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:SMART-1_Impact_flash.jpg",
-    "credit": "CFHT",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:40Z"
   },
   "sojourner/01.jpg": {
     "agency": "NASA",

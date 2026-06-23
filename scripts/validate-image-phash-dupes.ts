@@ -184,6 +184,14 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // are legitimate for their respective fleet entries; replacing one with
   // a non-Yutu image is a follow-up curation pass.
   '6ab17af1889c1b83|6ab17af1889c1b83', // change-2 / change-3
+
+  // ALLOWLIST_AUTHORIZED (2026-06-23) — fleet review session, 6 near-dupe
+  // pairs surface where Soviet/Chinese fleet entries share canonical
+  // archival photos.
+  '03564b0b03a3f4fd|03564b0b03a3f4fd', // luna-16/05 shared with change-4/05, change-5/05, venera-7/05 (Soviet/Chinese lunar-archive stock)
+  '3ecee08946e5381b|3ecee08946e5381b', // long-march-3b/03 + xichang-lc-3/01 (same launch photo serves rocket AND pad)
+  '96163629c9a93277|96163629c9a93277', // luna-16/02 + luna-9/03 (early Soviet lunar lander mock-ups share archival imagery)
+  'e02b0f21e80f2fd5|e02b0f21e80f2fd5', // xichang-lc-2/03 + xichang-lc-3/02 (same Xichang complex photo serves both pads)
   '730cc990e19de90f|730cc990e19de90f', // mariner-9 / mariner9
   '86f33c0766849aad|86f33c0766849aad', // glonass / plesetsk-43
   '8fca273679c65421|8fca273679c65421', // viking1 / viking1-lander / viking1-orbiter

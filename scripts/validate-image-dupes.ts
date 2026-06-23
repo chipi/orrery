@@ -325,6 +325,53 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'f2730ab6', // missions/mercury-atlas-9/03,05 (gallery slots)
   'de85aceb', // missions/mercury-redstone-3/01,04 (hero + slot)
   'ff4e464c', // missions/spirit/01,02 (hero + slot)
+
+  // ALLOWLIST_AUTHORIZED (2026-06-23) — fleet review session mission-
+  // folder shortcuts. Marko picked 11 fleet entries to mirror from
+  // their existing mission-folder photos (akatsuki, magellan, venera-13,
+  // voyager-1, voyager-2, pioneer-11, luna-16 ← luna16, mercury-capsule
+  // ← mercury-redstone-3, dart, hope ← hope-probe, beresheet). 39
+  // cross-surface byte-pairs result; all editorial-legitimate (same
+  // agency-curated photo serves both routes).
+  '0191cfe1', // luna-16/03 + luna16/03
+  '035d1f61', // voyager-1/05 (fleet ↔ mission)
+  '0a641aea', // magellan/04
+  '0d29c0a0', // luna-16/05 + luna16/05
+  '14af2278', // mercury-capsule/03 + mercury-redstone-3/03
+  '2278220d', // venera-13/02
+  '2688fc09', // magellan/03
+  '2d4cbae6', // mercury-capsule/05 + mercury-redstone-3/05
+  '330d1bd9', // beresheet/04
+  '334aafec', // akatsuki/05
+  '416d7973', // hope/01 + hope-probe/01
+  '47c16889', // hope/04 + hope-probe/04
+  '4ac98e16', // magellan/01
+  '50d4d1db', // akatsuki/02
+  '581c54b0', // dart/03
+  '61ec6121', // beresheet/05
+  '7869aa24', // voyager-1/01
+  '7bc47e39', // luna-16/04 + luna16/04
+  '811bca9b', // voyager-2/03
+  '98d4a2a5', // pioneer-11/02
+  '9b120e78', // venera-13/03
+  'a4dde03e', // beresheet/02
+  'a70f5140', // akatsuki/04
+  'aa5740b1', // luna-16/02 + luna16/02
+  'ad334bce', // voyager-2/01
+  'b16339a5', // akatsuki/03
+  'bc4787d8', // dart/02
+  'bc86da3d', // voyager-2/04
+  'bd9b5258', // venera-13/04
+  'bfb42797', // voyager-1/03
+  'ca9ba4c1', // voyager-1/04
+  'd064f12f', // beresheet/03
+  'd1e4d0ea', // mercury-capsule/02 + mercury-redstone-3/02
+  'e0d65ae0', // magellan/05
+  'eb38bed4', // dart/04
+  'f1d219d0', // hope/05 + hope-probe/05
+  'f2b5ec5e', // magellan/02
+  'fded2d7a', // voyager-2/05
+  'fe7c9320', // hope/03 + hope-probe/03
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base

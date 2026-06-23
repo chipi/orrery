@@ -46,12 +46,14 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('.about-body')).toBeVisible();
     await expect(page.locator('.about-links')).toHaveCount(0);
 
-    // Persistent site-footer has 6 entries on desktop:
-    // Gallery, Credits, Library, License (external), README (external),
-    // and the v{version} · {date} pill (which links to CHANGELOG).
-    // (Mobile drops the 3 'extra' external links: License, README, version.)
+    // Persistent site-footer has 7 entries on desktop:
+    // Gallery, Credits, Colophon, Library, License (external),
+    // README (external), and the v{version} · {date} pill (which
+    // links to CHANGELOG). (Mobile drops the 3 'extra' external
+    // links: License, README, version.) Colophon link added 2026-06-22
+    // alongside the credits work.
     const persistentLinks = page.locator('.site-footer .footer-link');
-    await expect(persistentLinks).toHaveCount(6);
+    await expect(persistentLinks).toHaveCount(7);
 
     // External README link opens in new tab.
     await expect(

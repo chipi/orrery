@@ -140,11 +140,13 @@ test.describe('/fleet', () => {
     await expect(page).not.toHaveURL(/[?&]id=/);
   });
 
-  test('panel renders LEARN tab with tiered links for marquee entry', async ({ page }) => {
+  test('panel renders DETAIL tab with tiered links for marquee entry', async ({ page }) => {
     await page.goto('/fleet?id=jwst');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    await panel.getByRole('tab', { name: /LEARN/i }).click();
+    // Tab merged + renamed 2026-06-22: ANATOMY+LEARN → DETAIL
+    // (commit fa00649be + 1d9c6230e). LEARN content lives inside.
+    await panel.getByRole('tab', { name: /DETAIL/i }).click();
     // JWST gets full 3-tier coverage (intro/core/deep) per Phase I.
     await expect(panel.locator('.tier h4', { hasText: /Intro/i })).toBeVisible();
     await expect(panel.locator('.tier h4', { hasText: /Core/i })).toBeVisible();

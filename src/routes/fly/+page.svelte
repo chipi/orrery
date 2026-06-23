@@ -7039,26 +7039,16 @@
       data-testid="mission-name"
     >
       <span class="hud-title">{mission.name}</span>
-      <!-- Click the phase pill → opens PhasePanel (richer in-route
-           preview of the matching /science/mission-phases section).
-           Pill remains its existing colored chip; the button is
-           transparent + inherits the pill style. Replaces the old
-           "tiny ⓘ chip jumps to /science" pattern with the regime-
-           panel-style modal Marko asked for (2026-06-22 micro-
-           enhancement #2 from #358 close). -->
-      {#if phaseScienceRef}
-        <button
-          type="button"
-          class="hud-phase phase-{phase} hud-phase-button"
-          data-testid="hud-phase-pill"
-          aria-label={m.fly_phase_pill_open_aria({ phase: phaseLabel })}
-          onclick={() => (phasePanelOpen = true)}
-        >
-          {phaseLabel}
-        </button>
-      {:else}
-        <span class="hud-phase phase-{phase}" data-testid="hud-phase-pill">{phaseLabel}</span>
-      {/if}
+      <span class="hud-phase phase-{phase}" data-testid="hud-phase-pill">
+        {phaseLabel}
+        {#if phaseScienceRef}
+          <ScienceChip
+            tab={phaseScienceRef.tab}
+            section={phaseScienceRef.slug}
+            label={phaseLabel}
+          />
+        {/if}
+      </span>
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
         <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>

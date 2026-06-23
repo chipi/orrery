@@ -72,7 +72,8 @@ CRITICAL CONSTRAINTS:
 
 const tool = {
   name: 'submit_translation',
-  description: 'Submit the translated tides science overlay JSON. Keep the same shape + array lengths as the input.',
+  description:
+    'Submit the translated tides science overlay JSON. Keep the same shape + array lengths as the input.',
   input_schema: {
     type: 'object',
     properties: {
@@ -107,7 +108,9 @@ async function translate(client, locale, overlay) {
 
 async function main() {
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('Missing ANTHROPIC_API_KEY (set -a; source .env; set +a; node scripts/translate-tides.mjs)');
+    console.error(
+      'Missing ANTHROPIC_API_KEY (set -a; source .env; set +a; node scripts/translate-tides.mjs)',
+    );
     process.exit(1);
   }
   const overlay = JSON.parse(fs.readFileSync(SOURCE_PATH, 'utf8'));

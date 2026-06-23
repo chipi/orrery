@@ -5,9 +5,8 @@
   interface Props {
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { size, class: cls = '', ...rest }: Props = $props();
+  let { size, class: cls = '' }: Props = $props();
 </script>
 
 <svg
@@ -18,7 +17,6 @@
   aria-hidden="true"
   focusable="false"
   xmlns="http://www.w3.org/2000/svg"
-  {...rest}
 >
   <circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1" />
   <circle cx="7" cy="4.2" r="0.85" fill="currentColor" />

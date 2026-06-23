@@ -22,14 +22,34 @@ const EN = path.join(ROOT, 'static/data/i18n/en-US/science');
 const I18N = path.join(ROOT, 'static/data/i18n');
 
 const LOCALES = [
-  'ar', 'de', 'es', 'fr', 'hi', 'it', 'ja',
-  'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN',
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
 ];
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish',
-  fr: 'French', hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean',
-  nl: 'Dutch', 'pt-BR': 'Brazilian Portuguese', ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
 const SYSTEM = `Translate this ordered list of Orrery /science strings from en-US.
@@ -109,7 +129,10 @@ async function translateOne(client, locale, s) {
     tools: [oneTool],
     tool_choice: { type: 'tool', name: 'submit_one' },
     messages: [
-      { role: 'user', content: `Translate this one string into ${NAMES[locale]} (${locale}):\n\n${s}` },
+      {
+        role: 'user',
+        content: `Translate this one string into ${NAMES[locale]} (${locale}):\n\n${s}`,
+      },
     ],
   });
   const block = r.content.find((b) => b.type === 'tool_use');
@@ -137,7 +160,11 @@ async function translate(client, locale, source) {
   });
   const block = r.content.find((b) => b.type === 'tool_use');
   const arr = block?.input?.translations;
-  if (Array.isArray(arr) && arr.length === leaves.length && arr.every((s) => typeof s === 'string')) {
+  if (
+    Array.isArray(arr) &&
+    arr.length === leaves.length &&
+    arr.every((s) => typeof s === 'string')
+  ) {
     translated = arr;
   } else {
     // Batched response drifted — translate each leaf individually.
@@ -166,7 +193,9 @@ async function main() {
   }
   console.log(`${jobs.length} overlay files to translate across ${LOCALES.length} locales`);
 
-  let ok = 0, fail = 0, next = 0;
+  let ok = 0,
+    fail = 0,
+    next = 0;
   const CONCURRENCY = 6;
   async function worker() {
     while (next < jobs.length) {

@@ -443,7 +443,7 @@
       border-color 120ms,
       color 120ms;
   }
-  .lens-toggle svg {
+  .lens-toggle :global(svg) {
     display: block;
   }
   /* Hover-affordance only on routes that actually surface lens content
@@ -519,7 +519,7 @@
       border-color 120ms,
       color 120ms;
   }
-  .settings-toggle svg {
+  .settings-toggle :global(svg) {
     display: block;
   }
   /* Hover + focus glow only when the route surfaces settings (i.e. the
@@ -563,7 +563,7 @@
       border-color 120ms,
       color 120ms;
   }
-  .audio-toggle svg {
+  .audio-toggle :global(svg) {
     display: block;
   }
   .audio-toggle:hover,
@@ -584,7 +584,7 @@
   .audio-toggle.playing {
     border-color: rgba(150, 175, 255, 0.6);
   }
-  .audio-toggle.playing svg {
+  .audio-toggle.playing :global(svg) {
     animation: audio-toggle-pulse 1.6s ease-in-out infinite;
   }
   @keyframes audio-toggle-pulse {
@@ -597,7 +597,7 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .audio-toggle.playing svg {
+    .audio-toggle.playing :global(svg) {
       animation: none;
       opacity: 1;
     }

@@ -40,6 +40,19 @@ const HARDCODED_IN_COMPONENT = new Set([
   'sub-solar',
   'planet-stats',
   'moons',
+  // Geophysics-lens batch (commit 19be18e4b — Earth/Moon/Mars body
+  // overlays). Hardcoded copy currently lives inline in
+  // ScienceLayersPanel.svelte metaFor(); paraglide-migration tracked
+  // under the same PRD-024 Slice 2 follow-up as the PRD-023 set above.
+  'axial-tilt',
+  'mag-north',
+  'tides',
+  'hydrosphere',
+  'sub-earth',
+  'far-side',
+  'dead-dynamo',
+  'polar-caps',
+  'mars-moons',
 ]);
 
 function paraglideKey(layer: string): string {

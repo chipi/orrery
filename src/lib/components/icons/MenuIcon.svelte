@@ -4,12 +4,11 @@
     open?: boolean;
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { open = false, size = 18, class: cls = '', ...rest }: Props = $props();
+  let { open = false, size = 18, class: cls = '' }: Props = $props();
 </script>
 
-<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true" {...rest}>
+<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true">
   {#if open}
     <line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
     <line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.6" />

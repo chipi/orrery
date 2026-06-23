@@ -15,11 +15,35 @@ import Anthropic from '@anthropic-ai/sdk';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'static/data/i18n/en-US/science/_landing.json');
 const I18N = path.join(ROOT, 'static/data/i18n');
-const LOCALES = ['ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN'];
+const LOCALES = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish', fr: 'French',
-  hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese', ru: 'Russian', 'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
 /** Collect string leaves in stable DFS order. */
@@ -67,7 +91,8 @@ async function main() {
   const leaves = [];
   collect(enDoc, leaves);
 
-  let ok = 0, fail = 0;
+  let ok = 0,
+    fail = 0;
   for (const locale of LOCALES) {
     const dst = path.join(I18N, locale, 'science/_landing.json');
     if (fs.existsSync(dst)) continue;

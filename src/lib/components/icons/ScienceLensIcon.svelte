@@ -6,12 +6,11 @@
     active?: boolean;
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { active = false, size = 16, class: cls = '', ...rest }: Props = $props();
+  let { active = false, size = 16, class: cls = '' }: Props = $props();
 </script>
 
-<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true" {...rest}>
+<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true">
   <circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4" />
   {#if active}
     <line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="1.4" />

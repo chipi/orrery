@@ -5,12 +5,11 @@
   interface Props {
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { size = 16, class: cls = '', ...rest }: Props = $props();
+  let { size = 16, class: cls = '' }: Props = $props();
 </script>
 
-<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true" {...rest}>
+<svg viewBox="0 0 16 16" width={size} height={size} class={cls} aria-hidden="true">
   <path
     d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
     fill="none"

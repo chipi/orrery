@@ -11,9 +11,14 @@
  *
  * Run: node scripts/copy-mission-to-fleet.mjs akatsuki dart
  */
-import { readFileSync, writeFileSync, copyFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { dirname } from 'node:path';
-
+import {
+  readFileSync,
+  writeFileSync,
+  copyFileSync,
+  existsSync,
+  readdirSync,
+  statSync,
+} from 'node:fs';
 const FLEET_SIDECAR = 'static/data/fleet-image-sources.json';
 const MISSION_SIDECAR = 'static/data/mission-image-sources.json';
 
@@ -67,4 +72,6 @@ for (const id of ids) {
 }
 
 writeFileSync(FLEET_SIDECAR, JSON.stringify(fleet, null, 2) + '\n');
-console.log('\n✓ sidecar updated. Note: cross-surface byte-dupes will need ALLOWLIST_AUTHORIZED in next commit.');
+console.log(
+  '\n✓ sidecar updated. Note: cross-surface byte-dupes will need ALLOWLIST_AUTHORIZED in next commit.',
+);

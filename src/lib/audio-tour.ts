@@ -144,19 +144,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       target: '[data-audio-stage="hero-illustration"]',
       note: 'Pulse the illustration on "Turn around. Look back."',
     },
-    // VTT § 00:00:38.95 "That dot is Earth."
-    {
-      at_sec: 35,
-      action: 'cue',
-      target: 'Find Earth in the illustration — small label, centre-right.',
-      duration_ms: 7000,
-    },
-    {
-      at_sec: 37,
-      action: 'flash',
-      target: '[data-audio-stage="hero-earth-label"]',
-      note: 'Pulse the EARTH text label on "That dot is Earth."',
-    },
+    // VTT § 00:00:38.95 "That dot is Earth." — flat-family hero is a
+    // single .webp without an isolatable EARTH label anchor (commit
+    // e12039461). The earlier flash at t=21 already pulses the whole
+    // illustration; the second beat is dropped as the asset doesn't
+    // support a precise label target. Honest degradation > a flash
+    // pointing at nothing.
     // VTT § 00:01:07.0 "You are looking at it now."
     {
       at_sec: 65,

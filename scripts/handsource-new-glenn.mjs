@@ -34,7 +34,8 @@ const QUERIES = [
   'Blue Origin New Glenn rollout',
 ];
 
-const SUBJECT = 'New Glenn heavy-lift rocket by Blue Origin (BE-4 engines, debut NG-1 launch January 2025 from LC-36, reusable first stage)';
+const SUBJECT =
+  'New Glenn heavy-lift rocket by Blue Origin (BE-4 engines, debut NG-1 launch January 2025 from LC-36, reusable first stage)';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -94,8 +95,7 @@ async function commonsImageInfo(filename) {
 
 const imageUrl = (f) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1600`;
-const sourceUrl = (f) =>
-  `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
+const sourceUrl = (f) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
 
 async function main() {
   const cap = parseInt(process.env.VISION_BUDGET_CALLS || '80', 10);

@@ -30,7 +30,17 @@ const byPath = new Map(manifest.entries.map((e) => [e.path, e]));
 
 // Build agency lookup: fleet id → agency. Walks every category dir under static/data/fleet/.
 const fleetAgencyById = new Map();
-const fleetCategoryDirs = ['observatory', 'orbiter', 'launcher', 'rover', 'lander', 'constellation', 'crewed-spacecraft', 'cargo-spacecraft', 'launch-site'];
+const fleetCategoryDirs = [
+  'observatory',
+  'orbiter',
+  'launcher',
+  'rover',
+  'lander',
+  'constellation',
+  'crewed-spacecraft',
+  'cargo-spacecraft',
+  'launch-site',
+];
 for (const cat of fleetCategoryDirs) {
   const dir = `static/data/fleet/${cat}`;
   if (!existsSync(dir)) continue;
@@ -116,9 +126,22 @@ function deriveAgency(sidecar, fleetId, surface) {
   // 2. Parse from credit text
   const credit = sidecar.credit ?? '';
   const upper = credit.toUpperCase();
-  const agencies = ['NASA', 'JAXA', 'ESA', 'CNSA', 'ISRO', 'ROSCOSMOS', 'CSA', 'UAESA', 'KARI', 'SPACEX', 'BLUE ORIGIN'];
+  const agencies = [
+    'NASA',
+    'JAXA',
+    'ESA',
+    'CNSA',
+    'ISRO',
+    'ROSCOSMOS',
+    'CSA',
+    'UAESA',
+    'KARI',
+    'SPACEX',
+    'BLUE ORIGIN',
+  ];
   for (const a of agencies) {
-    if (upper.includes(a)) return a === 'SPACEX' ? 'SpaceX' : a === 'BLUE ORIGIN' ? 'Blue Origin' : a;
+    if (upper.includes(a))
+      return a === 'SPACEX' ? 'SpaceX' : a === 'BLUE ORIGIN' ? 'Blue Origin' : a;
   }
   return '';
 }
@@ -138,12 +161,11 @@ function buildEntryFromSidecar({ surface, fleetId, sidecar, filepath }) {
     image_url: sidecar.image_url ?? '',
     license_short,
     license_url: licenseShortToUrl(license_short),
-    license_rationale:
-      license_short.startsWith('CC-BY-SA')
-        ? 'Reuse with attribution; derivatives under same license.'
-        : license_short === 'CC-BY-4.0'
-          ? 'Reuse with attribution.'
-          : 'Public domain.',
+    license_rationale: license_short.startsWith('CC-BY-SA')
+      ? 'Reuse with attribution; derivatives under same license.'
+      : license_short === 'CC-BY-4.0'
+        ? 'Reuse with attribution.'
+        : 'Public domain.',
     modifications: ['downloaded-via-special-filepath', 'reencoded-jpeg'],
     revid: null,
     pageid: null,
@@ -166,7 +188,12 @@ for (const [key, sidecar] of Object.entries(fleet)) {
   for (const filepath of [baseFile, onexFile]) {
     if (!existsSync(filepath)) continue;
     const manifestPath = `/${filepath.slice(filepath.indexOf('images/'))}`;
-    const newEntry = buildEntryFromSidecar({ surface: 'fleet-galleries', fleetId, sidecar, filepath });
+    const newEntry = buildEntryFromSidecar({
+      surface: 'fleet-galleries',
+      fleetId,
+      sidecar,
+      filepath,
+    });
     if (byPath.has(manifestPath)) patched++;
     else inserted++;
     byPath.set(manifestPath, newEntry);
@@ -194,4 +221,6 @@ for (const [key, sidecar] of Object.entries(panel)) {
 manifest.entries = [...byPath.values()];
 manifest.generated_at = new Date().toISOString();
 writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
-console.log(`patched: ${patched}, inserted: ${inserted}, total entries: ${manifest.entries.length}`);
+console.log(
+  `patched: ${patched}, inserted: ${inserted}, total entries: ${manifest.entries.length}`,
+);

@@ -4,9 +4,8 @@
   interface Props {
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { size = 20, class: cls = '', ...rest }: Props = $props();
+  let { size = 20, class: cls = '' }: Props = $props();
 </script>
 
 <svg
@@ -16,7 +15,6 @@
   fill="currentColor"
   class={cls}
   aria-hidden="true"
-  {...rest}
 >
   <rect x="6" y="6" width="8" height="8" rx="1" />
   <rect x="1" y="8" width="4" height="4" />

@@ -6,13 +6,12 @@
     shape?: Shape;
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { shape = 'ellipse', size = 32, class: cls = '', ...rest }: Props = $props();
+  let { shape = 'ellipse', size = 32, class: cls = '' }: Props = $props();
   let height = $derived((size * 20) / 32);
 </script>
 
-<svg viewBox="0 0 32 20" width={size} {height} class={cls} aria-hidden="true" {...rest}>
+<svg viewBox="0 0 32 20" width={size} {height} class={cls} aria-hidden="true">
   {#if shape === 'circle'}
     <circle cx="16" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.4" />
     <circle cx="16" cy="10" r="1.2" fill="currentColor" />

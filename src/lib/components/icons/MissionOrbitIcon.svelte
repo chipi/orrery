@@ -4,9 +4,8 @@
   interface Props {
     size?: number;
     class?: string;
-    [key: string]: unknown;
   }
-  let { size = 20, class: cls = '', ...rest }: Props = $props();
+  let { size = 20, class: cls = '' }: Props = $props();
 </script>
 
 <svg
@@ -20,7 +19,6 @@
   stroke-linejoin="round"
   class={cls}
   aria-hidden="true"
-  {...rest}
 >
   <circle cx="11" cy="11" r="8.5" />
   <path d="M5 13 Q 11 5 17 13" />

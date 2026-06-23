@@ -60,7 +60,10 @@ for (const { code, rtl, script } of LOCALES) {
         if (script) {
           const text = await page.locator('body').innerText();
           const hits = (text.match(script) ?? []).length;
-          expect(hits, `${url} should render ${code} script, got ${hits} script chars`).toBeGreaterThan(10);
+          expect(
+            hits,
+            `${url} should render ${code} script, got ${hits} script chars`,
+          ).toBeGreaterThan(10);
         }
 
         expect(errors, `page errors on ${url}: ${errors.join(' | ')}`).toHaveLength(0);

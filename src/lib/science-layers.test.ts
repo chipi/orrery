@@ -34,7 +34,7 @@ describe('science-layers — config', () => {
     expect(new Set(LAYER_ORDER)).toEqual(new Set(Object.keys(LAYER_DEFAULTS) as LayerKey[]));
   });
 
-  it('LAYER_ORDER has 18 layers (matches docs)', () => {
+  it('LAYER_ORDER has 28 layers (matches docs)', () => {
     // Tracked by README + user-guide as the sub-toggleable layer
     // count; this test breaks if a layer is added/removed without
     // doc update. 12th was ozone (v0.6); 13th added v0.7 = galaxies
@@ -44,8 +44,12 @@ describe('science-layers — config', () => {
     // day by Slice E.4 — planet-stats tactical-scan overlay. 19th
     // added 2026-06-10 by the /fly cinematic polish wave — `moons`
     // toggles major-moon overlays + orbit rings around the gas
-    // giants (Galilean / Saturnian / Earth / Mars / Triton).
-    expect(LAYER_ORDER.length).toBe(19);
+    // giants (Galilean / Saturnian / Earth / Mars / Triton). 20th–
+    // 28th added 2026-06-22 by the geophysics-lens commit (19be18e4b):
+    // axial-tilt, mag-north, tides, hydrosphere, sub-earth, far-side,
+    // dead-dynamo, polar-caps, mars-moons — body-specific overlays
+    // across Earth / Moon / Mars.
+    expect(LAYER_ORDER.length).toBe(28);
   });
 });
 

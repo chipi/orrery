@@ -10,7 +10,7 @@
  *
  * Run: node scripts/handsource-retry-safari.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync, statSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import sharp from 'sharp';
 
 const SAFARI_UA =
@@ -66,7 +66,10 @@ const errs = [];
 (async () => {
   for (const { pid, p } of targets) {
     const url = p.proposed?.image_url;
-    if (!url) { console.log(`  ${pid}: no image_url, skip`); continue; }
+    if (!url) {
+      console.log(`  ${pid}: no image_url, skip`);
+      continue;
+    }
     const surface = p.surface;
     const dir = `static/images/${surface}/${p.missionId}`;
     process.stdout.write(`  ${surface}/${p.missionId}/${p.slot}... `);
@@ -104,7 +107,9 @@ const errs = [];
         license: p.proposed.license,
         fetched_at: now,
         slice_a_iteration: 'safari-ua-retry-2026-06-23',
-        ...(p.vision_v3 ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } } : {}),
+        ...(p.vision_v3
+          ? { vision: { verdict: p.vision_v3.verdict, confidence: p.vision_v3.confidence } }
+          : {}),
       };
       if (surface === 'fleet-galleries') {
         fleet[`${p.missionId}/${p.slot}.jpg`] = sidecarEntry;

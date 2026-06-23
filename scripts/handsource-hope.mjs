@@ -124,8 +124,7 @@ async function commonsImageInfo(filename) {
 
 const imageUrl = (f) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1600`;
-const sourceUrl = (f) =>
-  `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
+const sourceUrl = (f) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f)}`;
 
 async function main() {
   const cap = parseInt(process.env.VISION_BUDGET_CALLS || '120', 10);

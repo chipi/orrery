@@ -1,3 +1,4 @@
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 // GH Pages compat — see scripts/gh-pages-compat.mjs header. Used here
@@ -41,7 +42,27 @@ const SEED_ROUTES = [
   '/credits',
   '/library',
 ];
-const localizedRoots = expandLocalizedRoots(SEED_ROUTES);
+
+// Every /science tab + section route, read from the section indexes. The
+// section pages link to each other with base-relative hrefs that the
+// per-locale crawl doesn't follow into /<locale>/, so enumerate them here
+// — expandLocalizedRoots then prerenders each in all 14 locales, and the
+// load() resolves the right overlay via getLocale().
+function scienceRoutes() {
+  const root = 'static/data/science';
+  const routes = [];
+  for (const tab of readdirSync(root, { withFileTypes: true })) {
+    if (!tab.isDirectory()) continue;
+    const idx = `${root}/${tab.name}/_index.json`;
+    if (!existsSync(idx)) continue;
+    routes.push(`/science/${tab.name}`);
+    const { ids } = JSON.parse(readFileSync(idx, 'utf8'));
+    for (const id of ids ?? []) routes.push(`/science/${tab.name}/${id}`);
+  }
+  return routes;
+}
+
+const localizedRoots = expandLocalizedRoots([...SEED_ROUTES, ...scienceRoutes()]);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

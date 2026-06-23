@@ -2,6 +2,7 @@
 // prerendered at build time so KaTeX runs once in Node and the client
 // receives plain HTML (ADR-034).
 import { SCIENCE_TABS, getScienceTab } from '$lib/data';
+import { getLocale } from '$lib/paraglide/runtime';
 import type { ScienceSection, ScienceTabId } from '$types/science';
 import type { LayoutLoad } from './$types';
 
@@ -23,7 +24,7 @@ export const load: LayoutLoad = async ({ url, fetch }) => {
     tabSlug && SCIENCE_TABS.includes(tabSlug as ScienceTabId) ? (tabSlug as ScienceTabId) : null;
   const railSection = railTab && sectionSlug ? sectionSlug : null;
   const railSections: ScienceSection[] | null = railTab
-    ? await getScienceTab(railTab, 'en-US', fetch).catch(() => [])
+    ? await getScienceTab(railTab, getLocale(), fetch).catch(() => [])
     : null;
   return { railTab, railSection, railSections };
 };

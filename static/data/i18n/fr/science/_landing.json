@@ -1,0 +1,142 @@
+{
+  "intro_heading": "Vous voulez donc lancer une fusée vers Mars.",
+  "intro_paragraphs": [
+    "Bienvenue. Voici la partie d'Orrery où les boutons cessent d'être magiques. Chaque étiquette dans le HUD, chaque contour coloré dans le porkchop, chaque marqueur de combustion sur la trajectoire — cette section explique d'où cela vient. Lisez ceci comme une bande dessinée : les diagrammes font l'essentiel du travail, et chaque terme en italique est un lien que vous pouvez suivre aussi loin que vous le souhaitez.",
+    "Nous allons construire une fusée ensemble. Pas une vraie — Orrery est un simulateur — mais la même chaîne de décisions qu'une véritable équipe de vol prend, dans l'ordre où elle les prendrait. À la fin, vous saurez pourquoi les fenêtres de lancement se produisent tous les 26 mois pour Mars et tous les mois pour la Lune, pourquoi une trajectoire de retour libre existe, et pourquoi la poussée est la partie la moins chère d'une mission et le carburant est tout le combat."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — La gravité est la seule physique qui compte.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Une ellipse avec le Soleil à l'un des foyers.",
+      "diagram_caption": "Un corps, un foyer, une ellipse. C'est tout le système solaire.",
+      "paragraphs": [
+        "Oubliez les fusées un instant. Tenez-vous sur la Terre, lancez une balle de base-ball aussi fort que vous le pouvez. Elle retombe. Lancez-la plus fort, elle atterrit plus loin. Lancez-la si fort que le sol se courbe plus vite que la balle ne tombe, et la balle rate la planète — pour toujours. C'est une [orbite](orbits/keplerian-orbit). Chaque vaisseau spatial, chaque planète, chaque roche dans la ceinture d'astéroïdes fait ce tour autour de quelque chose de plus lourd.",
+        "Une orbite est une ellipse. Elle a une [taille](orbits/semi-major-axis), une [forme](orbits/eccentricity) (ronde vs. étirée), une [inclinaison](orbits/inclination), et une phase vous indiquant où sur l'ellipse le vaisseau spatial se trouve en ce moment ([anomalie vraie](orbits/true-anomaly)). Cinq nombres et vous pouvez prédire la position de n'importe quel objet dans le système solaire, pour toujours, sans aucune autre donnée. Ce sont les [trois lois de Kepler](orbits/keplers-laws), écrites en 1609 — elles fonctionnent toujours.",
+        "L'équation la plus utile que vous rencontrerez ici est [vis-viva](orbits/vis-viva). Entrez votre rayon, la taille de votre orbite, et vous obtenez votre vitesse. C'est tout. La Terre au périhélie : 30,3 km/s. La Terre à l'aphélie : 29,3 km/s. Même orbite, même énergie, vitesse différente."
+      ]
+    },
+    {
+      "heading": "2 — L'équation de la fusée est le boss final.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Courbe du rapport de masse : le ∆v augmente logarithmiquement avec la quantité de carburant que vous brûlez.",
+      "diagram_caption": "La cruelle vérité : doubler votre ∆v signifie brûler bien plus que 2× le carburant.",
+      "paragraphs": [
+        "Maintenant : comment changer d'orbite ? Vous brûlez du carburant. Le [∆v](propulsion/dv-budget) (« delta-v ») est la monnaie universelle du vol spatial — le changement de vitesse total dont une mission a besoin. Chaque mouvement que vous faites sur une trajectoire a un prix en km/s.",
+        "Et ce prix est brutal. L'[équation de fusée de Tsiolkovsky](propulsion/tsiolkovsky) dit que le ∆v évolue avec le logarithme de la proportion de votre fusée qui est du carburant. Vous voulez deux fois le ∆v ? Vous ne transportez pas deux fois le carburant — vous en transportez exponentiellement plus. C'est pourquoi une Saturn V était composée à 90 % de propergol. La majeure partie de la fusée est le carburant qui soulève le carburant qui soulève le carburant qui soulève le vaisseau spatial.",
+        "Deux nombres combattent cette taxe gravitationnelle. La poussée vous indique avec quelle force le moteur pousse — c'est le nombre dont personne ne se soucie vraiment après le lancement. L'[impulsion spécifique](propulsion/specific-impulse) vous indique avec quelle efficacité le moteur pousse — et c'est celle qui compte. Une fusée chimique obtient ~450 secondes. Un propulseur ionique obtient 4 000+ — siroté du carburant pendant des mois et surpasse tout ce qui est chimique pour les croisières dans l'espace lointain.",
+        "Le meilleur tour de magie de tous : l'[effet Oberth](propulsion/oberth-effect). Allumer votre moteur lorsque vous vous déplacez déjà rapidement (bas et près d'une planète) vous donne beaucoup plus d'efficacité pour le même carburant. C'est pourquoi chaque mission interplanétaire effectue sa grande combustion de départ au périgée, en serrant la Terre, en allant aussi vite que la physique le permet. Énergie gratuite de la géométrie."
+      ]
+    },
+    {
+      "heading": "3 — Une fois en orbite, vous êtes à mi-chemin de n'importe où.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Une ellipse tangente à l'orbite de la Terre et à l'orbite de Mars.",
+      "diagram_caption": "Deux combustions, une ellipse. La façon la moins chère de changer d'orbite.",
+      "paragraphs": [
+        "Robert Heinlein l'a écrit : « Une fois en orbite, vous êtes à mi-chemin de n'importe où dans le système solaire. » Il ne plaisantait pas. Atteindre l'orbite terrestre basse coûte ~9,4 km/s de ∆v. Aller de là à Mars coûte encore ~3,6 km/s. La partie la plus difficile est déjà derrière vous.",
+        "La route interplanétaire la moins chère est un [transfert de Hohmann](transfers/hohmann-transfer) : une ellipse qui effleure à peine l'orbite de la Terre à une extrémité et l'orbite de la destination à l'autre. Deux combustions, pas de carburant gaspillé. Vers Mars, cela prend ~8,5 mois. Lent, mais optimal.",
+        "Vous voulez aller plus vite ? Résolvez un [problème de Lambert](transfers/lambert-problem) — choisissez votre date de départ et votre temps de transit, et Lambert vous indique l'[ellipse de transfert](transfers/transfer-ellipse) unique qui les relie. C'est exactement ce que fait l'écran [/plan](app:/plan) d'Orrery, dix mille fois en parallèle, pour dessiner un graphique porkchop.",
+        "Besoin d'aller encore plus loin ? Volez de la vitesse à une planète. Une [assistance gravitationnelle](transfers/gravity-assist) utilise un survol pour changer votre trajectoire à coût de carburant zéro — Voyager 2 en a utilisé quatre pour atteindre Neptune. Tout le système solaire s'assemble en [coniques raccordées](transfers/patched-conics) : une série d'arcs de [sections coniques](transfers/conic-sections) passés entre des quartiers gravitationnels comme des témoins dans une course de relais."
+      ]
+    },
+    {
+      "heading": "4 — Choisissez une fenêtre de lancement, ou attendez deux ans.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "Le graphique de contour porkchop classique — date de départ sur l'axe x, temps de vol sur l'axe y.",
+      "diagram_caption": "Un porkchop. Chaque contour est un ∆v constant ; le lobe est quand la nature rend Mars accessible.",
+      "paragraphs": [
+        "La Terre et Mars ne restent pas immobiles. La Terre fait le tour du Soleil tous les 365 jours, Mars tous les 687. Leur géométrie relative ne se répète que tous les ~26 mois — et la plupart de ces mois, les planètes sont trop éloignées, du mauvais côté du Soleil, pour être atteintes à moindre coût. La conception de mission commence par un calendrier, pas une fusée.",
+        "Le [graphique porkchop](porkchop/what-is-a-porkchop) est la façon dont les ingénieurs voient cela. Date de départ le long d'[un axe](porkchop/departure-axis), [temps de vol](porkchop/tof-axis) le long de l'autre, ∆v comme une [carte thermique de couleur](porkchop/dv-heatmap). Les zones bon marché apparaissent comme des lobes ovales — les fenêtres de lancement. En dehors du lobe : rouge, cher, impossible avec les fusées actuelles. [Lire les contours](porkchop/contour-reading) représente la moitié du travail d'un dynamicien de vol.",
+        "Deux termes techniques que vous verrez partout : [C3](propulsion/c3) est l'énergie de lancement dont votre fusée a besoin pour quitter le puits gravitationnel de la Terre. [V∞](propulsion/v-infinity) (« v-infini ») est votre vitesse par rapport à la destination au moment où vous arrivez. Les deux proviennent directement des mathématiques du porkchop."
+      ]
+    },
+    {
+      "heading": "5 — Le vol n'est que cinq phases en boucle.",
+      "diagram": "edl.svg",
+      "diagram_alt": "Entrée atmosphérique, déploiement de parachute, rétropropulsion, atterrissage.",
+      "diagram_caption": "Entrée, descente, atterrissage. Six minutes de terreur pure.",
+      "paragraphs": [
+        "Pratiquement toutes les missions interplanétaires, de Voyager à Perseverance, suivent le même script :",
+        "[Lancement](mission-phases/launch) — sortir de l'atmosphère et entrer en orbite terrestre basse. [Injection Trans-X](mission-phases/trans-x-injection) — une seule combustion forte au périgée qui vous propulse sur l'ellipse de transfert vers la Lune (TLI), Mars (TMI), Vénus (TVI) ou Jupiter (TJI). [Manœuvres de correction de trajectoire](mission-phases/tcm) — de minuscules combustions pendant la croisière pour corriger les erreurs de dispersion. Habituellement 1 à 3. [Insertion orbitale](mission-phases/orbit-insertion) — une combustion de freinage à la destination pour vous placer sur une orbite capturée. [EDL](mission-phases/edl) — Entrée, Descente, Atterrissage — pour l'atterrisseur. Six minutes de chaos atmosphérique supersonique.",
+        "Les missions lunaires passent parfois par une [orbite de halo quasi rectiligne](mission-phases/nrho) (Gateway y vivra), et les vols habités Apollo ont volé sur des [trajectoires de retour libre](transfers/free-return) — des chemins en forme de huit qui vous ramènent automatiquement sur Terre si tous les moteurs du vaisseau spatial meurent. Apollo 13 doit sa vie à cette géométrie."
+      ]
+    },
+    {
+      "heading": "6 — Distances et temps, puisque rien de tout cela n'est à l'échelle terrestre.",
+      "diagram": "au.svg",
+      "diagram_alt": "L'unité astronomique, marquée le long du rayon orbital de la Terre.",
+      "diagram_caption": "Une UA = une distance Terre-Soleil. Mars est à ~1,5 UA. Jupiter est à ~5,2.",
+      "paragraphs": [
+        "Trois unités apparaissent partout. L'[unité astronomique](scales-time/au) (UA) est la distance moyenne Terre-Soleil — 150 millions de km. Nous mesurons le système solaire en UA parce que les kilomètres deviennent rapidement ingérables. La [minute-lumière](scales-time/light-minute) vous indique combien de temps il faut à un signal radio pour atteindre un vaisseau spatial. Mars : 4 à 24 minutes dans un sens. Vous ne pouvez pas piloter un rover depuis la Terre avec un joystick. Tout ce qui est important est autonome.",
+        "L'[époque J2000](scales-time/j2000) est le zéro calendaire que chaque astrodynamicien utilise. Les [périodes sidérales vs. synodiques](scales-time/sidereal-synodic) expliquent pourquoi les fenêtres de Mars reviennent tous les 26 mois au lieu de tous les 23. Le [plan de l'écliptique](scales-time/ecliptic-plane) est le disque plat sur lequel les planètes se trouvent toutes (presque). Les [référentiels](scales-time/frames) sont les systèmes de coordonnées entre lesquels le contrôle de mission jongle entre les vues centrées sur la Terre, centrées sur le Soleil et centrées sur le corps."
+      ]
+    },
+    {
+      "heading": "7 — Les humains ne sont pas faits pour ça.",
+      "diagram": "_cover-life-in-space.svg",
+      "diagram_alt": "Un astronaute stylisé flottant en microgravité avec des barres indicatrices os/muscle/contre-mesures.",
+      "diagram_caption": "Os, muscle, vision, vestibulaire, immunitaire — tout se recâble en microgravité, et pas vers la Terre.",
+      "paragraphs": [
+        "Passez six mois en orbite et vous revenez plus petit, plus léger et plus court que lorsque vous êtes parti. La [microgravité](life-in-space/microgravity-physiology) est la cause profonde : les fluides se redistribuent vers la tête, les muscles posturaux se déchargent, les [os](life-in-space/bone-density-loss) perdent 1 à 2 % de leurs minéraux par mois, le [système vestibulaire](life-in-space/vestibular-adaptation) renonce à essayer de trouver le « bas ». Les [contre-mesures](life-in-space/muscle-atrophy) — deux heures d'exercice de résistance et d'aérobie par jour sur l'ARED + le tapis roulant — le ralentissent sans le résoudre.",
+        "Le [rayonnement](life-in-space/radiation-exposure) est le problème le plus difficile. L'ISS reçoit ~200 mSv/an (contre 3 mSv de fond sur Terre) ; l'espace lointain en dehors de la magnétosphère est de 600+ mSv/an, sans bonne stratégie de blindage pour l'instant. Un voyage de classe Mars mettrait un membre d'équipage près de la limite de carrière de risque de cancer en un seul aller-retour.",
+        "Ensuite, il y a l'[EVA](life-in-space/eva-physiology) (un événement d'endurance de 6 heures dans une combinaison d'oxygène pur à 4,3 psi) et les [effets de longue durée](life-in-space/long-duration-effects) comme le SANS — Syndrome neuro-oculaire associé à l'espace — où 60 % de l'équipage de vol long développent des changements oculaires mesurables qui ne s'inversent pas complètement. Ce sont les problèmes non résolus qui se dressent entre l'humanité et Mars."
+      ]
+    },
+    {
+      "heading": "8 — Tout ce que nous savons sur l'univers est arrivé sous forme de photon.",
+      "diagram": "_cover-observation.svg",
+      "diagram_alt": "Un télescope spatial pointé vers une galaxie lointaine avec un spectre d'émission représentatif en dessous.",
+      "diagram_caption": "Télescope + filtre + spectrographe + maths. Presque chaque fait sur le cosmos a été reconstruit à partir de la lumière.",
+      "paragraphs": [
+        "La [photographie spatiale](observation/space-photography) n'est pas ce que les gens pensent. Il n'y a pas d'obturateur qui clique ; chaque image d'observatoire que vous avez vue est un empilement de longues expositions à travers des filtres à bande étroite, calibrés, enregistrés, avec des fausses couleurs attribuées. Le matériel est un capteur CCD ou CMOS — une grille de compteurs de photons — et les données sont le compte, pas l'image. L'image est ce que les humains font du compte.",
+        "L'[optique adaptative](observation/adaptive-optics) vainc l'atmosphère en mesurant sa distorsion en temps réel et en pliant le miroir pour l'annuler. Les [coronographes](observation/coronagraphs) bloquent l'étoile centrale pour voir les planètes qui l'orbitent. La [spectroscopie](observation/spectroscopy) lit la composition chimique d'une étoile à partir des raies d'absorption dans sa lumière. L'[interférométrie](observation/interferometry) assemble des télescopes séparés en une ouverture virtuelle plus grande que n'importe lequel d'entre eux.",
+        "Et les objets les plus étranges que ces méthodes ont trouvés : les [trous noirs](observation/black-holes) (réels, cartographiés, imagés par ombre au centre de deux galaxies) et les [trous de ver](observation/wormholes) (mathématiques pures, inclus pour que vous sachiez quoi en faire quand vous en voyez un dans un film). La catégorie /fleet ↦ Observatory contient les machines réelles — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — chacune avec sa propre galerie de ce qu'elle a vu."
+      ]
+    }
+  ],
+  "tools_heading": "Maintenant allez jouer.",
+  "tools_intro": "C'est toute la boucle. Vous en savez maintenant assez pour lire chaque étiquette, contour et affichage HUD dans le reste de l'application. Voici où le mettre en pratique :",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Faites tourner le système solaire. Regardez les lois de Kepler en direct. Cliquez sur n'importe quelle planète pour ses éléments orbitaux."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Choisissez une destination, choisissez une année de lancement, voyez le porkchop. Le lobe est l'endroit où se cachent les transferts de Hohmann."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Volez un arc de mission réel. Le HUD affiche ∆v, V∞, MET, distance à la Terre. Chaque nombre est quelque chose que vous venez d'apprendre."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 vaisseaux spatiaux réels, de Luna 9 à Artemis II. L'onglet FLIGHT de chacun décompose son budget ∆v réel à travers les phases ci-dessus."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Vérité terrain. Où chaque Apollo, chaque rover, chaque satellite actif se trouve réellement."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "Les deux avant-postes orbitaux habités, module par module."
+    }
+  ],
+  "closing": "En dessous de cette histoire, l'encyclopédie proprement dite : six onglets, quarante entrées, chaque formule et chaque diagramme en un seul endroit. Mettez-le en signet. Nous serons là quand vous en aurez besoin."
+}

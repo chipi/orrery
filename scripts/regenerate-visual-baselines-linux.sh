@@ -57,7 +57,13 @@ docker run --rm \
     set -e
     if [ ! -d node_modules/@playwright ]; then
       echo "▶ Linux node_modules missing — running npm ci (one-time, ~60 s)"
-      npm ci --include=optional
+      # --ignore-scripts skips postinstall native builds (gdal-async,
+      # sharp, etc.). The Playwright image lacks build-essential so
+      # gdal compilation fails — and we do not need GDAL for visual
+      # baselines (only pipeline scripts touch it). Browsers ship
+      # pre-installed in /ms-playwright in this image, so the usual
+      # `playwright install` postinstall is also unnecessary.
+      npm ci --include=optional --ignore-scripts
     fi
     echo "▶ Building production bundle (vite preview needs build/)"
     npm run build

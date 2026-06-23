@@ -77,6 +77,18 @@ const config = {
     }),
     paths: {
       base,
+      // Default `relative: true` emits `./_app/...` in every prerendered
+      // page. At a URL like `/de/`, the browser resolves `./_app/env.js`
+      // against the URL (not the file location) → `/de/_app/env.js`,
+      // which doesn't exist (the only `_app/` dir is at the build root).
+      // The bug surfaces only on the localized landing routes (trailing
+      // slash); deeper routes like `/de/missions` happen to land on
+      // `/de.html` (one level up) and resolve correctly. Setting
+      // `relative: false` emits absolute paths rooted at `base` (`/`
+      // locally and Docker, `/orrery` on GH Pages preview), which works
+      // for every URL depth. Caught by the i18n-all-routes e2e on the
+      // localized `/${locale}/` landings (#326).
+      relative: false,
     },
     alias: {
       $types: './src/types',

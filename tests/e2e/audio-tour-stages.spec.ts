@@ -55,13 +55,10 @@ test.describe('pale-blue-dot guided stages (PRD-016 §S11 pilot)', () => {
 
   test('data-audio-stage anchors are present on / for every non-cue stage', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    for (const name of [
-      'hero',
-      'hero-illustration',
-      'hero-earth-label',
-      'route-grid',
-      'route-card-explore',
-    ]) {
+    // hero-earth-label dropped from the corpus alongside the flat-family
+    // hero swap (commit e12039461) — the .webp has no isolatable EARTH
+    // label, and the unit test in audio-tour.test.ts enforces parity.
+    for (const name of ['hero', 'hero-illustration', 'route-grid', 'route-card-explore']) {
       const count = await page.locator(`[data-audio-stage="${name}"]`).count();
       expect(count, `data-audio-stage="${name}" should exist on /`).toBeGreaterThan(0);
     }
@@ -73,13 +70,6 @@ test.describe('pale-blue-dot guided stages (PRD-016 §S11 pilot)', () => {
     // Pre-fire — class absent.
     await expect(target).not.toHaveClass(/audio-stage-flash/);
     await setPosition(page, 32);
-    await expect(target).toHaveClass(/audio-stage-flash/, { timeout: 2000 });
-  });
-
-  test('flash on hero-earth-label fires at 52s', async ({ page }) => {
-    await startTour(page);
-    await setPosition(page, 52);
-    const target = page.locator('[data-audio-stage="hero-earth-label"]');
     await expect(target).toHaveClass(/audio-stage-flash/, { timeout: 2000 });
   });
 

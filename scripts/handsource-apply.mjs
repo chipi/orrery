@@ -25,7 +25,11 @@ const proposalsById = new Map(salvage.proposals.map((p) => [p.proposal_id, p]));
 const bySlot = new Map();
 for (const [pid, d] of Object.entries(approvals.decisions ?? {})) {
   if (d.status !== 'approved') continue;
-  if (!/^hs\d?-/.test(pid)) continue;
+  // Match every hand-source prefix: hs- · hs2/3/4/6- · hsfr- · hsng- ·
+  // hsma- ... 2026-06-23 — the original /^hs\d?-/ regex silently
+  // skipped all hsfr-* approvals (jwst, starship, new-shepard etc.)
+  // because the suffix wasn't a single digit.
+  if (!/^hs[a-z0-9]*-/.test(pid)) continue;
   const p = proposalsById.get(pid);
   if (!p) {
     console.log(`  ✗ missing in salvage: ${pid}`);

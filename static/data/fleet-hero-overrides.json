@@ -30,8 +30,8 @@
     },
     "buran": {
       "slot": "04.jpg",
-      "reason": "subject names a different entity than buran",
-      "approved_at": "2026-06-12"
+      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
     },
     "cargo-dragon-v1": {
       "slot": "02.jpg",
@@ -55,8 +55,8 @@
     },
     "columbia": {
       "slot": "04.jpg",
-      "reason": "subject names a different entity than columbia",
-      "approved_at": "2026-06-12"
+      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
     },
     "crew-dragon-iva": {
       "slot": "02.jpg",
@@ -134,9 +134,9 @@
       "approved_at": "2026-06-12"
     },
     "new-shepard": {
-      "slot": "05.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold; subject names a different entity than new-shepard",
-      "approved_at": "2026-06-12"
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
     },
     "opportunity": {
       "slot": "04.jpg",
@@ -160,8 +160,8 @@
     },
     "pragyan": {
       "slot": "03.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than pragyan",
-      "approved_at": "2026-06-12"
+      "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
     },
     "progress-ms": {
       "slot": "02.jpg",
@@ -229,9 +229,9 @@
       "approved_at": "2026-06-20"
     },
     "chandrayaan1": {
-      "slot": "04.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
     },
     "lro": {
       "slot": "03.jpg",
@@ -322,6 +322,56 @@
       "slot": "01.jpg",
       "reason": "manual hero override — Marko 2026-06-20 Chang'e-1 (mockup accepted, no flight imagery on Commons)",
       "approved_at": "2026-06-20"
+    },
+    "exomars-rosalind-franklin": {
+      "slot": "03.jpg",
+      "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "h3": {
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "solar-orbiter": {
+      "slot": "04.jpg",
+      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "oneweb": {
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "schiaparelli": {
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "xichang-lc-2": {
+      "slot": "02.jpg",
+      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "space-shuttle-orbiter": {
+      "slot": "05.jpg",
+      "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "lunokhod-1": {
+      "slot": "05.jpg",
+      "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+      "approved_at": "2026-06-23"
+    },
+    "starship": {
+      "slot": "03.jpg",
+      "reason": "G3 hero — Marko 2026-06-23 (corrected numbering convention: G N = 0N.jpg counting hero)",
+      "approved_at": "2026-06-23"
+    },
+    "beagle2": {
+      "slot": "05.jpg",
+      "reason": "G5 hero — Marko 2026-06-23 (G N = 0N.jpg convention)",
+      "approved_at": "2026-06-23"
     }
   }
 }

@@ -725,22 +725,22 @@
   "diagrams_science": [
     {
       "title": "History",
-      "file": "/diagrams/science/_cover-history.svg",
+      "file": "/images/science-covers-v2/_cover-history.webp",
       "cover": true
     },
     {
       "title": "Life In Space",
-      "file": "/diagrams/science/_cover-life-in-space.svg",
+      "file": "/images/science-covers-v2/_cover-life-in-space.webp",
       "cover": true
     },
     {
       "title": "Mission Phases",
-      "file": "/diagrams/science/_cover-mission-phases.svg",
+      "file": "/images/science-covers-v2/_cover-mission-phases.webp",
       "cover": true
     },
     {
       "title": "Observation",
-      "file": "/diagrams/science/_cover-observation.svg",
+      "file": "/images/science-covers-v2/_cover-observation.webp",
       "cover": true
     },
     {
@@ -760,7 +760,7 @@
     },
     {
       "title": "Propulsion",
-      "file": "/diagrams/science/_cover-propulsion.svg",
+      "file": "/images/science-covers-v2/_cover-propulsion.webp",
       "cover": true
     },
     {
@@ -770,7 +770,7 @@
     },
     {
       "title": "Space Stations",
-      "file": "/diagrams/science/_cover-space-stations.svg",
+      "file": "/images/science-covers-v2/_cover-space-stations.webp",
       "cover": true
     },
     {
@@ -1441,6 +1441,13 @@
   ],
   "canvas2d": [
     {
+      "title": "Landing-page hero",
+      "what": "Flat-family orrery poster — glowing sun, tilted orbit rings, and one highlighted cyan transfer arc.",
+      "where": "Home",
+      "route": "/",
+      "thumb": "/images/app-landing-hero.webp"
+    },
+    {
       "title": "2D system map",
       "what": "Top-down orrery with shaded planets, glow, orbit rings, and Saturn’s rings.",
       "where": "Explore 2D mode",
@@ -1477,12 +1484,6 @@
     }
   ],
   "ui": [
-    {
-      "title": "Landing-page hero",
-      "what": "Hand-built SVG orrery poster — sun corona gradients, orbits, two mission arcs.",
-      "where": "Home",
-      "route": "/"
-    },
     {
       "title": "Science info-chips",
       "what": "Inline “i” glyph linking any figure to its /science explainer.",
@@ -1562,8 +1563,8 @@
     "anatomy_art": 144,
     "diagrams_science": 74,
     "models3d": 49,
-    "canvas2d": 5,
-    "ui": 5,
+    "canvas2d": 6,
+    "ui": 4,
     "writing": 8
   }
 }

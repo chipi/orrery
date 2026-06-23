@@ -9,7 +9,7 @@
  *
  * Re-run after adding diagrams:  node scripts/build-original-work.mjs
  */
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const ACRONYMS = new Set([
   'au',
@@ -51,11 +51,21 @@ function scanDiagrams(dir, urlBase) {
   return readdirSync(dir)
     .filter((f) => f.endsWith('.svg'))
     .sort()
-    .map((f) => ({
-      title: humanize(f),
-      file: `${urlBase}/${f}`,
-      cover: f.startsWith('_cover-'),
-    }));
+    .map((f) => {
+      const cover = f.startsWith('_cover-');
+      // Redone flat-family covers (2026-06) ship as raster webp under
+      // /images/science-covers-v2/. Prefer that when present; covers we
+      // didn't redo (no webp) keep their original hand-authored SVG. The
+      // .svg files stay in place — the live /science/[tab] pages still use them.
+      let file = `${urlBase}/${f}`;
+      if (cover) {
+        const webp = f.replace(/\.svg$/, '.webp');
+        if (existsSync(`static/images/science-covers-v2/${webp}`)) {
+          file = `/images/science-covers-v2/${webp}`;
+        }
+      }
+      return { title: humanize(f), file, cover };
+    });
 }
 
 const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
@@ -261,6 +271,13 @@ const models3d = [
 
 const canvas2d = [
   {
+    title: 'Landing-page hero',
+    what: 'Flat-family orrery poster — glowing sun, tilted orbit rings, and one highlighted cyan transfer arc.',
+    where: 'Home',
+    route: '/',
+    thumb: '/images/app-landing-hero.webp',
+  },
+  {
     title: '2D system map',
     what: 'Top-down orrery with shaded planets, glow, orbit rings, and Saturn’s rings.',
     where: 'Explore 2D mode',
@@ -298,12 +315,6 @@ const canvas2d = [
 ];
 
 const ui = [
-  {
-    title: 'Landing-page hero',
-    what: 'Hand-built SVG orrery poster — sun corona gradients, orbits, two mission arcs.',
-    where: 'Home',
-    route: '/',
-  },
   {
     title: 'Science info-chips',
     what: 'Inline “i” glyph linking any figure to its /science explainer.',

@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
@@ -67,14 +68,13 @@
 <Panel {open} {onClose} grabFocus={false} title={mod?.name ?? mod?.id ?? ''}>
   {#if mod}
     <div class="head">
-      <div class="agency-row">
-        <span class="agency-badge">{mod.agency}</span>
+      <AgencyRow agency={mod.agency}>
         <span
           class="status"
           class:status-active={mod.status === 'ACTIVE'}
           class:status-retired={mod.status === 'RETIRED'}>{statusLabel}</span
         >
-      </div>
+      </AgencyRow>
       <h1 class="name">{mod.name}</h1>
     </div>
 
@@ -354,33 +354,7 @@
     flex-shrink: 0;
     margin-bottom: 12px;
   }
-  .agency-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .agency-badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    color: #fff;
-    background: #4466ff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .status {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    border: 1px solid;
-  }
+  /* .agency-row / .agency-badge / .status base now come from AgencyRow.svelte. */
   .status-active {
     color: #4ecdc4;
     border-color: rgba(78, 205, 196, 0.4);

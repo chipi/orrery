@@ -50,6 +50,7 @@
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
+  import AgencyRow from '$lib/components/AgencyRow.svelte';
   import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
@@ -4695,17 +4696,14 @@ sample      ${debugInfo.projectedPxSample}`}
     {#if selected}
       {@const tone = statusTone(selected.status, selected.kind)}
       <div class="head" style:--accent={colorFor(selected)}>
-        <div class="agency-row">
-          <span class="agency-badge" style:background-color={colorFor(selected)}>
-            {selected.nation} · {selected.agency}
-          </span>
+        <AgencyRow agency={selected.agency} color={colorFor(selected)}>
           {#if inlineRegime && onRegimeOpen}
             <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
           {/if}
           <span class="status" style="color: {tone.color}; border-color: {tone.color}">
             {tone.label}
           </span>
-        </div>
+        </AgencyRow>
         <h1 class="name">{selected.name ?? selected.id}</h1>
         {#if selected.mission_type || selected.site_name}
           <p class="type">
@@ -5551,26 +5549,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 12px;
   }
-  .agency-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .agency-badge,
-  .status {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-  }
-  .agency-badge {
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
+  /* .agency-row / .agency-badge base now from AgencyRow.svelte. */
   .status {
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);

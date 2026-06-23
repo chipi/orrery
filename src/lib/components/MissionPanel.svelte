@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { getMissionGallery, getMarsSites, getMoonSites } from '$lib/data';
@@ -233,15 +234,14 @@
 <Panel {open} {onClose} grabFocus={false} title={mission?.name ?? mission?.id ?? ''}>
   {#if mission}
     <div class="head">
-      <div class="agency-row">
-        <span class="agency-badge" style:background-color={mission.color}>{mission.agency}</span>
+      <AgencyRow agency={mission.agency} color={mission.color}>
         <span class="status status-{mission.status.toLowerCase()}">{mission.status}</span>
         {#if mission.data_quality === 'partial'}
           <span class="quality">{m.mp_data_quality_partial()}</span>
         {:else if mission.data_quality === 'reconstructed'}
           <span class="quality">{m.mp_data_quality_reconstructed()}</span>
         {/if}
-      </div>
+      </AgencyRow>
       <h1 class="name">{mission.name ?? mission.id}</h1>
       {#if mission.type}
         <p class="type">{mission.type}</p>
@@ -872,30 +872,7 @@
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 12px;
   }
-  .agency-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .agency-badge,
-  .status,
-  .quality {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-  }
-  .agency-badge {
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .status {
-    border: 1px solid;
-  }
+  /* .agency-row / .agency-badge / .status + .quality base now from AgencyRow.svelte. */
   .status-active {
     color: #4ecdc4;
     border-color: rgba(78, 205, 196, 0.4);

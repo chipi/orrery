@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { track } from '$lib/analytics';
@@ -177,13 +178,12 @@
 <Panel {open} {onClose} grabFocus={false} title={entry?.name ?? entry?.id ?? ''}>
   {#if entry}
     <div class="head">
-      <div class="agency-row">
-        <span class="agency-badge">{entry.agency}</span>
+      <AgencyRow agency={entry.agency}>
         <span class="status status-{entry.status.toLowerCase()}">
           {STATUS_LABEL[entry.status] ?? entry.status}
         </span>
         <span class="category-chip">{entry.category}</span>
-      </div>
+      </AgencyRow>
       <h1 class="name">{entry.name}</h1>
       {#if entry.tagline ?? entry.best_known_for}
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>
@@ -533,51 +533,42 @@
   .head {
     padding: 12px 16px 4px;
   }
-  .agency-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    font-family: 'Space Mono', monospace;
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .agency-badge {
-    background: rgba(78, 205, 196, 0.16);
-    color: #4ecdc4;
-    padding: 2px 8px;
-    border-radius: 3px;
-  }
-  .status {
-    padding: 2px 8px;
-    border-radius: 3px;
-  }
+  /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
+     status chips converted from filled to the shared bordered treatment. */
   .status-active {
-    background: rgba(78, 205, 196, 0.16);
     color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.4);
+    background: rgba(78, 205, 196, 0.08);
   }
   .status-flown {
-    background: rgba(75, 156, 211, 0.18);
     color: #4b9cd3;
+    border-color: rgba(75, 156, 211, 0.4);
+    background: rgba(75, 156, 211, 0.08);
   }
   .status-retired {
-    background: rgba(255, 200, 80, 0.18);
     color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.4);
+    background: rgba(255, 200, 80, 0.08);
   }
   .status-failed {
-    background: rgba(193, 68, 14, 0.22);
     color: #ff6b3a;
+    border-color: rgba(193, 68, 14, 0.4);
+    background: rgba(193, 68, 14, 0.08);
   }
   .status-planned {
-    background: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.78);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
   }
   .category-chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
     background: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.6);
-    padding: 2px 8px;
-    border-radius: 3px;
   }
 
   .name {

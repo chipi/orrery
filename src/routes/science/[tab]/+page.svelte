@@ -21,6 +21,23 @@
       ? fn()
       : tab.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   }
+
+  // Tabs whose covers were re-done in the flat-family style ship as raster
+  // webp under /images/science-covers-v2/; the rest keep their original
+  // hand-authored SVG cover. Mirrors scripts/build-original-work.mjs.
+  const COVER_V2 = new Set([
+    'history',
+    'mission-phases',
+    'propulsion',
+    'space-stations',
+    'observation',
+    'life-in-space',
+  ]);
+  function coverSrc(tab: string): string {
+    return COVER_V2.has(tab)
+      ? `${base}/images/science-covers-v2/_cover-${tab}.webp`
+      : `${base}/diagrams/science/_cover-${tab}.svg`;
+  }
 </script>
 
 <svelte:head>
@@ -38,7 +55,7 @@
 </header>
 
 <figure class="tab-cover">
-  <img src="{base}/diagrams/science/_cover-{data.tab}.svg" alt="" loading="lazy" decoding="async" />
+  <img src={coverSrc(data.tab)} alt="" loading="lazy" decoding="async" />
 </figure>
 
 {#if data.intro}

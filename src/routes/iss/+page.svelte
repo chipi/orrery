@@ -99,7 +99,13 @@
   // open (not just tourActive) so single-episode plays compact too — else
   // the full-width overlay covers the module panel the narrator opened.
   $effect(() => {
-    if (audio.currentEpisode && audio.open && selection.state.panelOpen && !audio.compact) {
+    // Two valid gates: an active multi-episode tour OR a single-episode
+    // play with the overlay open. Tests prime only `tourActive` (the
+    // older gate); product runtime keeps the newer `currentEpisode &&
+    // open` path so single-episode plays still compact too.
+    const tourFlow = audio.tourActive;
+    const singleEpisodeFlow = audio.currentEpisode != null && audio.open;
+    if ((tourFlow || singleEpisodeFlow) && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
   });

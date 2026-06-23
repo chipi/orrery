@@ -98,7 +98,11 @@
   // open (not just tourActive) so single-episode plays compact too — else
   // the full-width overlay covers the module panel the narrator opened.
   $effect(() => {
-    if (audio.currentEpisode && audio.open && selection.state.panelOpen && !audio.compact) {
+    // Same gate as /iss — accept tourActive (older path) OR
+    // currentEpisode+open (single-episode path) so both flows compact.
+    const tourFlow = audio.tourActive;
+    const singleEpisodeFlow = audio.currentEpisode != null && audio.open;
+    if ((tourFlow || singleEpisodeFlow) && selection.state.panelOpen && !audio.compact) {
       audio.compact = true;
     }
   });

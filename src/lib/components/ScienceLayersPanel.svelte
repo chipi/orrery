@@ -91,6 +91,15 @@
     'sub-solar': false,
     'planet-stats': false,
     moons: false,
+    'axial-tilt': false,
+    'mag-north': false,
+    tides: false,
+    hydrosphere: false,
+    'sub-earth': false,
+    'far-side': false,
+    'dead-dynamo': false,
+    'polar-caps': false,
+    'mars-moons': false,
   });
 
   let stops: Array<() => void> = [];
@@ -228,6 +237,66 @@
           label: 'Moons',
           description:
             'Major moons + orbit rings around each planet (Galilean at Jupiter, Titan/Enceladus/Iapetus at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at Neptune).',
+        };
+      case 'axial-tilt':
+        return {
+          label: 'Axial Tilt & Seasons',
+          description:
+            'Spin axis + obliquity arc against the orbital plane — the tilt that drives the seasons.',
+          learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
+        };
+      case 'mag-north':
+        return {
+          label: 'True vs Magnetic North',
+          description:
+            'Geographic pole (spin axis) vs magnetic pole — the offset a compass reads as declination.',
+          learn: { tab: 'planets', section: 'magnetic-fields' },
+        };
+      case 'tides':
+        return {
+          label: 'Tides (Earth–Moon)',
+          description:
+            'Twin tidal bulges raised by the Moon — one beneath it, one on the far side. Two high tides a day.',
+          learn: { tab: 'planets', section: 'tides' },
+        };
+      case 'hydrosphere':
+        return {
+          label: 'Hydrosphere',
+          description:
+            '71% of the surface is ocean — Earth is the only known world with stable surface liquid water.',
+        };
+      case 'sub-earth':
+        return {
+          label: 'Sub-Earth Point',
+          description:
+            'Earth hangs fixed over this spot — the Moon is tidally locked. Libration lets us see 59% of the surface over a month.',
+          learn: { tab: 'transfers', section: 'free-return' },
+        };
+      case 'far-side':
+        return {
+          label: 'Far Side',
+          description:
+            'The hemisphere that never faces Earth — unseen until Luna 3 photographed it in 1959. Heavily cratered, almost no maria.',
+        };
+      case 'dead-dynamo':
+        return {
+          label: 'Dead Dynamo',
+          description:
+            'No global field — only fossil crustal magnetism in the southern highlands. With the shield gone, the solar wind stripped most of the air.',
+          learn: { tab: 'planets', section: 'magnetic-fields' },
+        };
+      case 'polar-caps':
+        return {
+          label: 'Polar Ice Caps',
+          description:
+            'Seasonal CO₂ frost over perennial water ice. They grow and shrink as each hemisphere tips toward and away from the Sun.',
+          learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
+        };
+      case 'mars-moons':
+        return {
+          label: 'Phobos & Deimos',
+          description:
+            'Two captured-asteroid moons. Phobos skims so low it sets in the west; it will break up into a ring in ~50 Myr.',
         };
     }
   }

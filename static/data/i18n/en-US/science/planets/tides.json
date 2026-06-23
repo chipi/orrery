@@ -1,0 +1,15 @@
+{
+  "title": "Tides",
+  "intro_sentence": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
+  "narrative_101": [
+    "Gravity weakens with distance, so the Moon tugs the near side of Earth harder than the centre, and the centre harder than the far side.",
+    "Stretched between these unequal pulls, the oceans rise into a bulge facing the Moon and a matching bulge on the opposite side — and Earth rotates through both every day."
+  ],
+  "body_paragraphs": [
+    "A tide is not the Moon lifting the water straight up — it is the difference in the Moon's pull across the width of the Earth. The near side is pulled toward the Moon more strongly than the planet's centre, and the far side less, so the water envelope is stretched into a prolate, two-bulge shape aligned with the Earth–Moon line.",
+    "Because there are two bulges and the Earth turns once a day, a given coastline usually sweeps through two high tides and two low tides every ~24 h 50 min (the extra 50 minutes is the Moon moving on in its orbit). When the Sun lines up with the Moon at new and full moon their pulls add — the large spring tides; at the quarters they partly cancel into the smaller neap tides.",
+    "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
+    "The same effect already finished the job on the Moon: tidal friction braked its spin until its rotation matched its orbit, so it keeps one face toward Earth — tidal locking. The Tides lens on /earth draws the twin bulges; the Sub-Earth Point lens on /moon shows the locked near side they produced."
+  ],
+  "diagram_caption": "Twin tidal bulges stretched along the Earth–Moon line — the near bulge under the Moon, the far bulge thrown outward."
+}

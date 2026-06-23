@@ -101,6 +101,14 @@
     },
     // Mars's real axial obliquity drives season/insolation.
     axialTiltDeg: 25.19,
+    // Mars science-lens extras: spin axis, the dead-dynamo crustal patches,
+    // seasonal polar caps, and the Phobos/Deimos rings.
+    marsLayers: {
+      axialTilt: { color: 0xffb066 },
+      crustalField: { color: 0xc46bd6 },
+      polarCaps: { color: 0xeaf3ff },
+      moons: { color: 0xd88a5a },
+    },
     initialCamR: 150,
     landerModelBuilder: marsLanderBuilder,
     twoDMode: 'equirectangular',
@@ -121,7 +129,7 @@
       body: "Mars' atmospheric pressure sits at 0.6 % of Earth's — enough for parachute aerobraking but not aerocapture. The global magnetic dynamo died ~4 Gyr ago; the residual crustal magnetism in the southern highlands is the only fossil record of when it was alive.",
       tab: 'planets',
       section: 'magnetic-fields',
-      available: ['atmosphere'],
+      available: ['atmosphere', 'axial-tilt', 'dead-dynamo', 'polar-caps', 'mars-moons'],
     },
   };
 

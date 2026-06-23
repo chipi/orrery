@@ -164,6 +164,31 @@ export interface EarthOrbitalLayersConfig {
       moonOrbiter: boolean;
     };
   };
+
+  /**
+   * Stylised dipole magnetosphere — field-line cage + magnetic axis,
+   * tilted to the spin axis plus the ~11° magnetic-dipole offset.
+   * Science-layer-gated by the `'magnetosphere'` lens.
+   */
+  magnetosphere?: {
+    color: number;
+    opacity?: number;
+    magneticOffsetDeg?: number;
+    shells?: number[];
+    longitudes?: number;
+  };
+
+  /** Spin axis + obliquity arc vs the orbital plane ('axial-tilt' lens). */
+  axialTilt?: { color: number };
+
+  /** Geographic vs magnetic north pole markers ('mag-north' lens). */
+  magNorth?: { color: number; magneticOffsetDeg?: number };
+
+  /** Earth–Moon tidal bulges along the Moon axis ('tides' lens). */
+  tides?: { color: number };
+
+  /** Faint ocean-sheen shell — the "water world" read ('hydrosphere' lens). */
+  hydrosphere?: { color: number };
 }
 
 /**
@@ -205,6 +230,30 @@ export interface SurfaceSceneConfig {
    * rotates freely; no analog of "near side").
    */
   tidalLockOverlay?: TidalLockOverlayConfig;
+
+  /**
+   * Moon-only science-lens extras attached to the lunar surface:
+   *   - subEarth: sub-Earth point + libration envelope ('sub-earth' lens)
+   *   - farSide:  far-side hemisphere tint ('far-side' lens)
+   */
+  lunarLayers?: {
+    subEarth?: { color: number };
+    farSide?: { color: number; opacity?: number };
+  };
+
+  /**
+   * Mars-only science-lens extras:
+   *   - axialTilt:    spin axis + obliquity arc ('axial-tilt' lens)
+   *   - crustalField: patchy crustal magnetism ('dead-dynamo' lens)
+   *   - polarCaps:    seasonal ice caps ('polar-caps' lens)
+   *   - moons:        Phobos + Deimos rings ('mars-moons' lens)
+   */
+  marsLayers?: {
+    axialTilt?: { color: number };
+    crustalField?: { color: number };
+    polarCaps?: { color: number };
+    moons?: { color: number };
+  };
 
   /**
    * Real obliquity in degrees. Mars: 25.19. Moon: ~0 (1.5° in reality,

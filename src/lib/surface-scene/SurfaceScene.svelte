@@ -33,6 +33,19 @@
     buildKarmanLineShell,
     buildOzoneOverlay,
   } from '$lib/surface-scene/earth-atmosphere-layer';
+  import { buildMagnetosphere } from '$lib/surface-scene/earth-magnetosphere-layer';
+  import {
+    buildAxialTilt,
+    buildMagNorth,
+    buildTides,
+    buildHydrosphere,
+  } from '$lib/surface-scene/earth-geophysics-layers';
+  import { buildSubEarthPoint, buildFarSideOverlay } from '$lib/surface-scene/moon-lens-layers';
+  import {
+    buildCrustalField,
+    buildPolarCaps,
+    buildMarsMoons,
+  } from '$lib/surface-scene/mars-lens-layers';
   import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
@@ -978,6 +991,43 @@
         scene.add(o.north);
         earthLayerHandles.push(o);
       }
+      if (eol.magnetosphere) {
+        const mag = buildMagnetosphere({
+          ...eol.magnetosphere,
+          planetRadius,
+          spinTiltDeg: config.axialTiltDeg,
+        });
+        scene.add(mag.group);
+        earthLayerHandles.push(mag);
+      }
+      if (eol.axialTilt) {
+        const at = buildAxialTilt({
+          ...eol.axialTilt,
+          planetRadius,
+          spinTiltDeg: config.axialTiltDeg,
+        });
+        scene.add(at.group);
+        earthLayerHandles.push(at);
+      }
+      if (eol.magNorth) {
+        const mn = buildMagNorth({
+          ...eol.magNorth,
+          planetRadius,
+          spinTiltDeg: config.axialTiltDeg,
+        });
+        scene.add(mn.group);
+        earthLayerHandles.push(mn);
+      }
+      if (eol.tides) {
+        const td = buildTides({ ...eol.tides, planetRadius });
+        scene.add(td.group);
+        earthLayerHandles.push(td);
+      }
+      if (eol.hydrosphere) {
+        const hy = buildHydrosphere({ ...eol.hydrosphere, planetRadius });
+        scene.add(hy.group);
+        earthLayerHandles.push(hy);
+      }
       let earthMoonR = 0;
       if (eol.moonGhost) {
         const mg = buildMoonGhost({
@@ -1253,6 +1303,47 @@
       _stopTidalLockLayer = onLayerChange('tidal-lock', (on) => {
         nearSideOverlay.visible = on;
       });
+    }
+
+    // Moon-only sub-Earth point + libration envelope and far-side tint.
+    // Attached to planetMesh so they track the surface like tidal-lock.
+    const lunarLayerHandles: Array<{ dispose: () => void }> = [];
+    if (config.lunarLayers?.subEarth) {
+      const se = buildSubEarthPoint({ ...config.lunarLayers.subEarth, planetRadius });
+      planetMesh.add(se.object);
+      lunarLayerHandles.push(se);
+    }
+    if (config.lunarLayers?.farSide) {
+      const fs = buildFarSideOverlay({ ...config.lunarLayers.farSide, planetRadius });
+      planetMesh.add(fs.object);
+      lunarLayerHandles.push(fs);
+    }
+
+    // Mars-only science-lens extras. Crustal patches + ice caps track the
+    // surface (planetMesh); the axis + moon rings are inertial (scene).
+    if (config.marsLayers?.axialTilt) {
+      const at = buildAxialTilt({
+        ...config.marsLayers.axialTilt,
+        planetRadius,
+        spinTiltDeg: config.axialTiltDeg,
+      });
+      scene.add(at.group);
+      lunarLayerHandles.push(at);
+    }
+    if (config.marsLayers?.crustalField) {
+      const cf = buildCrustalField({ ...config.marsLayers.crustalField, planetRadius });
+      planetMesh.add(cf.object);
+      lunarLayerHandles.push(cf);
+    }
+    if (config.marsLayers?.polarCaps) {
+      const pc = buildPolarCaps({ ...config.marsLayers.polarCaps, planetRadius });
+      planetMesh.add(pc.object);
+      lunarLayerHandles.push(pc);
+    }
+    if (config.marsLayers?.moons) {
+      const mm = buildMarsMoons({ ...config.marsLayers.moons, planetRadius });
+      scene.add(mm.object);
+      lunarLayerHandles.push(mm);
     }
 
     // Hover-halo factory — bolder + glowing variant of the selection
@@ -4082,6 +4173,9 @@
     if (_stopAtmosphereLayer) lifecycle.add(_stopAtmosphereLayer);
     lifecycle.add(() => {
       for (const h of earthLayerHandles) h.dispose();
+    });
+    lifecycle.add(() => {
+      for (const h of lunarLayerHandles) h.dispose();
     });
     lifecycle.add(stopPanoramaEscape);
     lifecycle.add(() => panoramaSkybox?.dispose());

@@ -38,7 +38,16 @@ export type LayerKey =
   | 'magnetosphere' // L3 — stylised magnetic-field shell + magnetic axis (PRD-023 Slice D/E.3b)
   | 'sub-solar' // L4 — noon-longitude marker + terminator emphasis (PRD-023 Slice D)
   | 'planet-stats' // L5 — tactical scan overlay (GRAVITY / ATMO / ROTATION) at planet focus (PRD-023 Slice E.4)
-  | 'moons'; // L6 — major moons + orbit rings around each planet (/fly + /explore)
+  | 'moons' // L6 — major moons + orbit rings around each planet (/fly + /explore)
+  | 'axial-tilt' // M1 — spin axis + obliquity arc + ecliptic plane (terrestrial surface scenes)
+  | 'mag-north' // M2 — geographic vs magnetic north pole markers (/earth)
+  | 'tides' // M3 — Earth–Moon tidal bulges aligned to the Moon (/earth)
+  | 'hydrosphere' // M4 — ocean-sheen shell + "71% water" stat (/earth)
+  | 'sub-earth' // N1 — sub-Earth point + libration envelope (/moon)
+  | 'far-side' // N2 — far-side hemisphere tint (/moon)
+  | 'dead-dynamo' // O1 — Mars crustal-magnetism patches (dead global field)
+  | 'polar-caps' // O2 — Mars seasonal CO₂/H₂O ice caps
+  | 'mars-moons'; // O3 — Phobos + Deimos orbit rings + markers (/mars)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -61,6 +70,15 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'sub-solar',
   'planet-stats',
   'moons',
+  'axial-tilt',
+  'mag-north',
+  'tides',
+  'hydrosphere',
+  'sub-earth',
+  'far-side',
+  'dead-dynamo',
+  'polar-caps',
+  'mars-moons',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -86,6 +104,15 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'sub-solar': false,
   'planet-stats': false,
   moons: false,
+  'axial-tilt': false,
+  'mag-north': false,
+  tides: false,
+  hydrosphere: false,
+  'sub-earth': false,
+  'far-side': false,
+  'dead-dynamo': false,
+  'polar-caps': false,
+  'mars-moons': false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

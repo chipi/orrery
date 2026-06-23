@@ -540,6 +540,13 @@
   },
   {
     "tab": "planets",
+    "section": "tides",
+    "title": "Tides",
+    "intro": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
+    "haystack": "tides the moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day. tidal force bulge spring neap tidal locking earth moon high tide low tide"
+  },
+  {
+    "tab": "planets",
     "section": "moons-of-the-system",
     "title": "Moons of the System",
     "intro": "Galileo's four-night observation in 1610 ended geocentrism. The system's moons are still ending old assumptions today.",

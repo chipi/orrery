@@ -96,7 +96,15 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       body: 'A 100 km Kármán-line shell separates atmosphere from space; LEO begins another 100 km up. The ozone column at ~30 km blocks the UV-C that would otherwise sterilise the surface — its polar depletion is one of the few global atmospheric measurements visible from orbit.',
       tab: 'orbits',
       section: 'orbit-regimes',
-      available: ['atmosphere', 'ozone'],
+      available: [
+        'atmosphere',
+        'ozone',
+        'magnetosphere',
+        'axial-tilt',
+        'mag-north',
+        'tides',
+        'hydrosphere',
+      ],
     },
     // /earth needs more camera headroom than /moon and /mars because
     // the scene includes the full orbital stack (Kármán shell at the
@@ -129,6 +137,23 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
         south: { color: 0xb866ff, opacity: 0.55, phiCoverageRatio: 0.34 },
         north: { color: 0x9b5dff, opacity: 0.45, phiCoverageRatio: 0.22 },
       },
+      // Stylised dipole magnetosphere — field-line cage + magnetic axis,
+      // gated by the 'magnetosphere' lens. The cage is tilted to Earth's
+      // 23.4° spin axis plus the ~11° magnetic-dipole offset, so the
+      // magnetic pole reads as visibly off the geographic pole.
+      magnetosphere: {
+        color: 0x5fa8ff,
+        opacity: 0.5,
+        magneticOffsetDeg: 11,
+      },
+      // Spin axis + obliquity arc vs the orbital plane ('axial-tilt' lens).
+      axialTilt: { color: 0xffd27f },
+      // Geographic vs magnetic north pole markers ('mag-north' lens).
+      magNorth: { color: 0x5fa8ff, magneticOffsetDeg: 11 },
+      // Earth-Moon tidal bulges along the +X Moon axis ('tides' lens).
+      tides: { color: 0x4ecdc4 },
+      // Faint ocean-sheen shell — the "water world" read ('hydrosphere').
+      hydrosphere: { color: 0x2a6cb0 },
       // Small textured Moon sphere at the real Moon-orbit radius —
       // anchors moon-orbiter satellites and acts as a wayfinding cue.
       moonGhost: {

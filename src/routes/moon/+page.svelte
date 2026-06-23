@@ -51,6 +51,12 @@
     // Moon's near-side tidal-lock indicator (Mars rotates freely; no
     // analog). Science Lens 'tidal-lock' layer toggles visibility.
     tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 },
+    // Sub-Earth point + libration envelope ('sub-earth' lens) and the
+    // far-side tint ('far-side' lens) — both attach to the lunar surface.
+    lunarLayers: {
+      subEarth: { color: 0xffd27f },
+      farSide: { color: 0xd98a4a, opacity: 0.16 },
+    },
     // Moon's ~0° obliquity (1.5° in reality, effectively zero here).
     axialTiltDeg: 0,
     initialCamR: 150,
@@ -74,7 +80,7 @@
       body: "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path.",
       tab: 'transfers',
       section: 'free-return',
-      available: ['tidal-lock'],
+      available: ['tidal-lock', 'sub-earth', 'far-side'],
     },
   };
 

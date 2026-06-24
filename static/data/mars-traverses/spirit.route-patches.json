@@ -1,0 +1,130 @@
+{
+  "rover_id": "spirit",
+  "patches": [
+    {
+      "id": "sol-90",
+      "lat": -14.57267,
+      "lon": 175.48572,
+      "kind": "feature",
+      "label": "Bonneville Crater rim",
+      "image": "/images/hotspots/mars/spirit/traverse/sol-90.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-590",
+      "lat": -14.58043,
+      "lon": 175.4909,
+      "kind": "feature",
+      "label": "Husband Hill base",
+      "image": "/images/hotspots/mars/spirit/traverse/sol-590.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-1000",
+      "lat": -14.57983,
+      "lon": 175.50535,
+      "kind": "panorama",
+      "label": "Husband Hill summit",
+      "image": "/images/hotspots/mars/spirit/traverse/sol-1000.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-1500",
+      "lat": -14.59022,
+      "lon": 175.51066,
+      "kind": "feature",
+      "label": "Home Plate volcanic feature",
+      "image": "/images/hotspots/mars/spirit/traverse/sol-1500.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-2210",
+      "lat": -14.59942,
+      "lon": 175.53049,
+      "kind": "feature",
+      "label": "Last contact — Troy",
+      "image": "/images/hotspots/mars/spirit/traverse/sol-2210.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-01",
+      "lat": -14.5715,
+      "lon": 175.4779,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-01.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-02",
+      "lat": -14.576323371635343,
+      "lon": 175.4821027289267,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-02.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-03",
+      "lat": -14.578080907600475,
+      "lon": 175.4872045621058,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-03.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-04",
+      "lat": -14.585026252172709,
+      "lon": 175.49783401103616,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-04.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-05",
+      "lat": -14.58846495659613,
+      "lon": 175.51593250744983,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-05.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-06",
+      "lat": -14.589004608358735,
+      "lon": 175.52230763325255,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-06.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-07",
+      "lat": -14.596654394585775,
+      "lon": 175.52435341439133,
+      "kind": "route",
+      "image": "/images/hotspots/mars/spirit/traverse/km-07.jpg",
+      "product_id": "PSP_003689_1650",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    }
+  ]
+}

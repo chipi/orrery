@@ -47,7 +47,7 @@
   // entries (missing JSON) silently filtered out so missing data
   // degrades to "this rover has no rendered track" rather than failure.
   async function loadMarsTraverses(): Promise<Record<string, Traverse>> {
-    const ids = ['curiosity', 'perseverance', 'opportunity', 'spirit'];
+    const ids = ['curiosity', 'perseverance', 'opportunity', 'spirit', 'zhurong'];
     const entries = await Promise.all(
       ids.map(async (id) => {
         const t = await getMarsTraverse(id);

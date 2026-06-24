@@ -373,6 +373,11 @@
   type FlatPatchPhase = 'hidden' | 'entering' | 'visible' | 'leaving';
   let flatPatchPhase: FlatPatchPhase = $state('hidden');
   let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
+  // #360: when "zoom all the way" lands on an along-route HiRISE patch under
+  // the view centre, the flat-patch opens THAT patch instead of the landing.
+  // A synthetic site (landing site + the route patch's image/coords) or null
+  // (use the real selected landing).
+  let flatPatchTarget: SurfaceSite | null = $state(null);
   // Phase transitions are timestamped via setTimeout. Track the pending
   // timeout so we can cancel mid-transition (e.g. user clicks back
   // while still fading in).
@@ -1150,9 +1155,17 @@
     // (ADR-072 §Drift 14 consolidation — Moon adopts the smoother UX).
     // RAF interpolates camP/camT/camR over FLY_DURATION_MS with ease-
     // out cubic. User drag cancels mid-flight.
+    // #360: per-rover camera target = the magnified traverse midpoint, so
+    // selecting a rover frames the whole route. Populated by rebuildTraverses.
+    const routeViewCenters = new Map<string, { lat: number; lon: number }>();
     faceCameraAtSite = (site: SurfaceSite, targetR = 50) => {
       if (site.lat == null || site.lon == null) return;
-      const v = latLonToUnitSphere(site.lat, site.lon);
+      // #360: rovers with a traverse frame on the route's CENTRE (the
+      // magnified midpoint) rather than the landing, so the whole drive +
+      // its midpoint-centred CTX sit centred in view. routeViewCenters is
+      // populated by rebuildTraverses.
+      const ctr = routeViewCenters.get(site.id);
+      const v = latLonToUnitSphere(ctr?.lat ?? site.lat, ctr?.lon ?? site.lon);
       planetMesh.updateMatrixWorld(true);
       const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
       const dir = worldPos.clone().normalize();
@@ -1367,7 +1380,9 @@
     const HOVER_TEAL = 0x4ecdc4;
     function buildHoverHalo(aspect: number | undefined): THREE.Object3D {
       const group = new THREE.Group();
-      const isRect = aspect != null && Math.abs(aspect - 1) >= 0.01;
+      // Corner-bracket hover affordance for every region-bounds site, incl.
+      // near-square ones — matches the selection halo (no leftover circles).
+      const isRect = aspect != null;
       if (isRect) {
         const diameter = 4.4;
         const circleArea = (Math.PI / 4) * diameter * diameter;
@@ -1492,6 +1507,10 @@
     // depth and punches a hole in the CTX.
     const routeRegionalGroups: THREE.Object3D[] = [];
     const routeRegionalMaterials: Array<THREE.Material & { opacity: number }> = [];
+    // Selection brackets at the route centre (#360) — the "zoomable imagery
+    // here" blue-corner cue, framing the midpoint CTX. Replaces the landing
+    // halo (hidden for traverse rovers); visible when the rover is selected.
+    const routeSelectionHalos: Array<{ siteId: string; obj: THREE.Object3D }> = [];
 
     function buildTraverseCaption(
       text: string,
@@ -1642,6 +1661,8 @@
       routeRegionalGroups.length = 0;
       routePatchMaterials.length = 0;
       routeRegionalMaterials.length = 0;
+      routeSelectionHalos.length = 0;
+      routeViewCenters.clear();
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
         // Prepend the rover's published landing lat/lon when the first
@@ -1870,6 +1891,9 @@
             const midUnit = tpos(midLat, midLon, rReg).normalize();
             const rmLat = (Math.asin(Math.max(-1, Math.min(1, midUnit.y))) * 180) / Math.PI;
             const rmLon = (Math.atan2(-midUnit.z, midUnit.x) * 180) / Math.PI;
+            // Camera frames the route here (the magnified midpoint), not the
+            // landing — so selecting the rover centres the whole drive (#360).
+            routeViewCenters.set(tr.rover_id, { lat: rmLat, lon: rmLon });
             const regWrap = new THREE.Group();
             placeOnSphereTangent(regWrap, midUnit, rReg);
             const regGroup = buildRegionalPatch({
@@ -1889,6 +1913,25 @@
                 routeRegionalMaterials.push(m);
               }
             });
+            // Selection bracket at the route centre — the blue-corner
+            // "zoomable imagery here" cue, north-aligned + framing the
+            // midpoint CTX. Visible while the rover is selected (#360).
+            const routeHalo = createMarkerHalo(color, 1.6, {
+              lay: true,
+              aspect: aspectFromRegion(trSite?.region_bounds),
+            });
+            const haloWrap = new THREE.Group();
+            placeOnSphereTangent(haloWrap, midUnit, rReg + 0.02);
+            const haloSpin = new THREE.Group();
+            haloSpin.rotation.y =
+              (azimuthToAlignNorth(rmLat, rmLon, haloWrap.quaternion) * Math.PI) / 180;
+            haloSpin.add(routeHalo);
+            haloWrap.add(haloSpin);
+            planetMesh.add(haloWrap);
+            routePatchGroups.push(haloWrap);
+            // Track the halo itself (not the wrap) — createMarkerHalo starts it
+            // hidden; the per-frame loop flips it on when the rover is selected.
+            routeSelectionHalos.push({ siteId: tr.rover_id, obj: routeHalo });
           }
           // Path-travel direction at a route point (#360): direction of the
           // nearest polyline segment, in MAGNIFIED world space. Route patches
@@ -1925,6 +1968,9 @@
               groundMeters: rp.ground_m,
               regionalGroundMeters: regionalGroundForPatch,
             });
+            // Tag the wrap with its manifest entry so the flat-patch trigger
+            // can resolve which route patch is under the view (#360).
+            wrap.userData = { roverId: tr.rover_id, routePatch: rp };
             wrap.add(patchGroup);
             planetMesh.add(wrap);
             routePatchGroups.push(wrap);
@@ -2476,6 +2522,7 @@
       flatPatchTransitionTimer = setTimeout(() => {
         flatPatchPhase = 'hidden';
         flatPatchTransitionTimer = null;
+        flatPatchTarget = null; // #360 — back to the landing for next entry
       }, FLAT_PATCH_FADE_MS);
     };
 
@@ -2776,10 +2823,13 @@
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const targets: THREE.Object3D[] = [];
-      // (a) in-between traverse-stop pin sprites
+      // (a) in-between traverse-stop pin sprites + end dot. Only the VISIBLE
+      // ones — the pins are hidden at wide zoom (detailOpacity gate), but
+      // raycasting ignores `visible`, so without this filter the tooltip
+      // leaks at planetary level where the pins aren't even drawn (#360).
       for (const tl of traverseLines) {
-        for (const sp of tl.stopPins) targets.push(sp);
-        targets.push(tl.endDot);
+        for (const sp of tl.stopPins) if (sp.visible) targets.push(sp);
+        if (tl.endDot.visible) targets.push(tl.endDot);
       }
       // (b) per-hotspot patch-pin (landing marker, green flat disc)
       for (const h of hotspots) {
@@ -3581,15 +3631,27 @@
             // stays visible throughout, with the semi-transparent fill
             // providing the visual anchor that the thin-line outline
             // alone didn't.
-            mk.halo.visible = layerSurface && mk.siteId === selId;
+            // #360: rovers with a traverse don't show the landing-site halo —
+            // it sits at the landing (off the route centre) and duplicates the
+            // route's own framing (CTX + crosshair + line). The route IS the
+            // selection indicator for these.
+            mk.halo.visible =
+              layerSurface && mk.siteId === selId && !routeViewCenters.has(mk.siteId);
           }
           if (mk.hoverHalo) {
             // Teal hover ring — only when the mouse is over this
             // marker AND it isn't already selected (selection halo
-            // wins, avoids double-ring).
+            // wins, avoids double-ring). Hover stays on the marker for ALL
+            // sites incl. traverse rovers (same as InSight) — only the
+            // SELECTION cue moves to the route centre (#360).
             mk.hoverHalo.visible =
               layerSurface && mk.siteId === hoveredSiteId && mk.siteId !== selId;
           }
+        }
+        // #360: route-centre selection brackets — the "zoomable imagery here"
+        // cue, shown while the rover is selected (its landing halo is hidden).
+        for (const rh of routeSelectionHalos) {
+          rh.obj.visible = layerSurface && rh.siteId === selId;
         }
         for (const om of orbitalMarkers) {
           applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
@@ -3707,12 +3769,17 @@
           }
         }
 
-        // Persistent crosshair overlay — project the SELECTED site's
-        // lat/lon to screen coordinates so the template can pin an HTML
-        // crosshair there. Always-on, no transitions, no z-fight against
-        // the HiRISE texture (HTML sits above the WebGL canvas).
-        if (selected && selected.lat != null && selected.lon != null && container) {
-          const v = latLonToUnitSphere(selected.lat, selected.lon);
+        // Persistent crosshair overlay — project the view-centre to screen
+        // coordinates so the template can pin an HTML crosshair there.
+        // #360: for a rover with a traverse, the centre is the route's
+        // magnified midpoint (the CTX centre), not the landing — so the
+        // crosshair reads as the centre of the framed route. Always-on, no
+        // transitions, no z-fight (HTML sits above the WebGL canvas).
+        const crosshairCtr = selected ? routeViewCenters.get(selected.id) : undefined;
+        const crosshairLat = crosshairCtr?.lat ?? selected?.lat;
+        const crosshairLon = crosshairCtr?.lon ?? selected?.lon;
+        if (selected && crosshairLat != null && crosshairLon != null && container) {
+          const v = latLonToUnitSphere(crosshairLat, crosshairLon);
           const worldPos = new THREE.Vector3(v.x, v.y, v.z).multiplyScalar(planetRadius);
           planetMesh.updateMatrixWorld(true);
           worldPos.applyMatrix4(planetMesh.matrixWorld);
@@ -3918,6 +3985,14 @@
               if (!(obj instanceof THREE.Mesh)) return;
               const layer = obj.userData?.layer;
               if (layer !== 'detail' && layer !== 'regional') return;
+              // #360: for traverse rovers the landing regional CTX is replaced
+              // by the midpoint-centred one (rebuildTraverses) — hide the
+              // landing copy here, robustly per-frame, beating the async
+              // traverse-load race the build-time suppression couldn't.
+              if (layer === 'regional' && routeViewCenters.has(obj.userData?.siteId)) {
+                obj.visible = false;
+                return;
+              }
               const mat = obj.material as THREE.Material & { opacity: number };
               // Split ramps: regional CTX fades in earlier (wider
               // zoom), detail HiRISE fades in later (closer zoom).
@@ -4349,6 +4424,44 @@
             // looking identical — they reported "both do the same
             // thing — zoom to detail. None of them take me to the site
             // in panorama mode. Somehow we lost link to panorama."
+            // #360: open the flat-patch of the along-route HiRISE patch under
+            // the screen centre (so "zoom all the way" shows where you are on
+            // the route), falling back to the landing when none is centred.
+            let target: SurfaceSite | null = null;
+            if (routeDetailGroups.length && selected) {
+              // Raycast the planet at screen-centre to get the surface point
+              // the camera is looking at, then pick the NEAREST route patch
+              // (a direct ray-hit on a tiny 0.1u patch slips between them).
+              const rc = new THREE.Raycaster();
+              rc.setFromCamera(new THREE.Vector2(0, 0), camera);
+              const planetHit = rc.intersectObject(planetMesh, false)[0];
+              if (planetHit) {
+                const tmp = new THREE.Vector3();
+                let best: THREE.Object3D | null = null;
+                let bestD = Infinity;
+                for (const g of routeDetailGroups) {
+                  g.getWorldPosition(tmp);
+                  const d = tmp.distanceTo(planetHit.point);
+                  if (d < bestD) {
+                    bestD = d;
+                    best = g;
+                  }
+                }
+                const rp = best?.userData?.routePatch as
+                  | { lat: number; lon: number; image: string; id: string }
+                  | undefined;
+                if (rp) {
+                  target = {
+                    ...selected,
+                    lat: rp.lat,
+                    lon: rp.lon,
+                    hotspot_tier2_source: rp.image,
+                    name: `${selected.name ?? selected.id} · ${rp.id}`,
+                  };
+                }
+              }
+            }
+            flatPatchTarget = target;
             if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
             flatPatchPhase = 'entering';
             flatPatchTransitionTimer = setTimeout(() => {
@@ -4743,7 +4856,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class:leaving={flatPatchPhase === 'leaving'}
     >
       <SurfaceFlatPatch
-        {selected}
+        selected={flatPatchTarget ?? selected}
         {config}
         {traverses}
         entryKmPerPx={sphereKmPerPxAtSurface}

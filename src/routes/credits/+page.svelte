@@ -273,6 +273,19 @@
                       <span class="ph-license">{photo.license_short}</span>
                     {/if}
                   </p>
+                  {#if photo.spacecraft_name && photo.spacecraft_id}
+                    <p class="ph-row sat">
+                      <a
+                        class="ph-sat"
+                        href="{base}/{photo.path.includes('/moon/')
+                          ? 'moon'
+                          : 'mars'}?site={photo.spacecraft_id}"
+                      >
+                        <span aria-hidden="true">📡</span>
+                        {photo.spacecraft_name}{photo.instrument ? ` · ${photo.instrument}` : ''}
+                      </a>
+                    </p>
+                  {/if}
                   <p class="ph-row used">
                     <span class="lbl">{m.credits_used_on()}:</span>
                     {#each bundleRoutes(bundle.stems) as route, i}
@@ -659,6 +672,22 @@
   .ph-row.mods {
     color: rgba(255, 255, 255, 0.4);
     font-style: italic;
+  }
+  /* Satellite attribution chip — links surface imagery to the spacecraft
+     that captured it (#360). */
+  .ph-row.sat {
+    margin-top: 1px;
+  }
+  .ph-sat {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85em;
+    color: #ffd479 !important;
+    border-bottom: 1px dotted rgba(255, 212, 121, 0.45) !important;
+  }
+  .ph-sat:hover {
+    color: #ffe4a8 !important;
   }
   .ph-row .variants {
     display: inline-flex;

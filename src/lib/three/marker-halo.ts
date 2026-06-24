@@ -40,7 +40,11 @@ export function createMarkerHalo(
 ): THREE.Object3D {
   const { lay = false, aspect } = opts;
   let halo: THREE.Object3D;
-  if (aspect != null && Math.abs(aspect - 1) >= 0.01) {
+  // Corner-bracket reticle for EVERY region-bounds site, including near-square
+  // ones (Curiosity / Opportunity / Schiaparelli, whose ~equal lat/lon extent
+  // used to fall into the circular-ring branch). Only true point markers with
+  // no aspect (orbiters) keep the circle. (#360 / unify on InSight style.)
+  if (aspect != null) {
     // Region-bounds halo — surveyor's-reticle / camera-viewfinder
     // style: 4 corner brackets + faint centre crosshair + very
     // subtle fill. Replaces the previous full-perimeter rectangle

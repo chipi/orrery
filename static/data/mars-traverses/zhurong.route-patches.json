@@ -1,0 +1,58 @@
+{
+  "rover_id": "zhurong",
+  "patches": [
+    {
+      "id": "sol-60",
+      "lat": 25.0584,
+      "lon": 109.9253,
+      "kind": "feature",
+      "label": "450 m due south",
+      "image": "/images/hotspots/mars/zhurong/traverse/sol-60.jpg",
+      "product_id": "ESP_075559_2055",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-103",
+      "lat": 25.0525,
+      "lon": 109.9249,
+      "kind": "panorama",
+      "label": "Sedimentary rocks survey",
+      "image": "/images/hotspots/mars/zhurong/traverse/sol-103.jpg",
+      "product_id": "ESP_075559_2055",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-347",
+      "lat": 25.0336,
+      "lon": 109.9245,
+      "kind": "feature",
+      "label": "Final position · winter dormancy",
+      "image": "/images/hotspots/mars/zhurong/traverse/sol-347.jpg",
+      "product_id": "ESP_075559_2055",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-01",
+      "lat": 25.066,
+      "lon": 109.925,
+      "kind": "route",
+      "image": "/images/hotspots/mars/zhurong/traverse/km-01.jpg",
+      "product_id": "ESP_075559_2055",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-02",
+      "lat": 25.041077631948106,
+      "lon": 109.9246964211117,
+      "kind": "route",
+      "image": "/images/hotspots/mars/zhurong/traverse/km-02.jpg",
+      "product_id": "ESP_075559_2055",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    }
+  ]
+}

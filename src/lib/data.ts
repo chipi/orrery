@@ -1453,6 +1453,16 @@ export interface ImageProvenanceEntry {
   pageid: number | null;
   nasa_id: string | null;
   fetched_at: string;
+  /**
+   * Capturing spacecraft + instrument for orbital surface imagery (#360 /
+   * credits). HiRISE + CTX both ride on Mars Reconnaissance Orbiter, LROC on
+   * Lunar Reconnaissance Orbiter, etc. Lets /credits link the image back to
+   * the actual satellite that took it. Optional — absent for ground/archival
+   * imagery. `spacecraft_id` resolves to a /mars or /moon surface-orbiter id.
+   */
+  spacecraft_id?: string;
+  spacecraft_name?: string;
+  instrument?: string;
 }
 
 export interface ImageProvenanceManifest {

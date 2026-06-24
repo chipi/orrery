@@ -39,6 +39,12 @@ export interface ProvenanceEntry {
   pageid: number | null;
   nasa_id: string;
   fetched_at: string;
+  // Capturing spacecraft + instrument (#360 / credits) — links the image to
+  // the actual satellite on /credits. HiRISE + CTX → Mars Reconnaissance
+  // Orbiter; LROC → Lunar Reconnaissance Orbiter; etc.
+  spacecraft_id?: string;
+  spacecraft_name?: string;
+  instrument?: string;
 }
 
 interface ProvenanceFile {
@@ -85,6 +91,9 @@ export function buildHiriseProvenanceEntry(input: {
     pageid: null,
     nasa_id: input.productId,
     fetched_at: new Date().toISOString(),
+    spacecraft_id: 'mro',
+    spacecraft_name: 'Mars Reconnaissance Orbiter',
+    instrument: 'HiRISE',
   };
 }
 
@@ -131,6 +140,9 @@ export function buildCtxMosaicProvenanceEntry(input: {
     pageid: null,
     nasa_id: input.tileName,
     fetched_at: new Date().toISOString(),
+    spacecraft_id: 'mro',
+    spacecraft_name: 'Mars Reconnaissance Orbiter',
+    instrument: 'CTX',
   };
 }
 

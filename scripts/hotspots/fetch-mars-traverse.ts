@@ -25,6 +25,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { findHiriseCandidates, hiriseProductIdToJP2Url } from './hirise-catalog.ts';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
+import { buildHiriseProvenanceEntry, upsertProvenanceEntries } from './provenance.ts';
 
 const MARS_RADIUS_M = 3389500;
 const M_PER_DEG = (Math.PI / 180) * MARS_RADIUS_M;
@@ -189,6 +190,25 @@ async function main() {
     JSON.stringify({ rover_id: rover, patches: manifest }, null, 2) + '\n',
   );
   console.log(`\n${manifest.length}/${samples.length} crops written → ${manifestPath}`);
+
+  // Self-credit (#360 / credits): upsert an image-provenance entry for each
+  // route crop so /credits attributes them (NASA · HiRISE · MRO) without a
+  // separate backfill. buildHiriseProvenanceEntry stamps the MRO spacecraft
+  // fields. Idempotent by id (path hash).
+  if (manifest.length) {
+    const provEntries = manifest.map((m) =>
+      buildHiriseProvenanceEntry({
+        outputPath: `static${m.image as string}`,
+        sourceUrl: hiriseProductIdToJP2Url(m.product_id as string),
+        productId: m.product_id as string,
+        siteId: rover,
+        centerLat: m.lat as number,
+        centerLon: m.lon as number,
+      }),
+    );
+    await upsertProvenanceEntries(provEntries);
+    console.log(`Provenance: ${provEntries.length} route entries upserted (MRO · HiRISE).`);
+  }
 }
 
 main();

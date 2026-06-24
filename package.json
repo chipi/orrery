@@ -63,6 +63,7 @@
     "images:score": "tsx scripts/score-images.ts",
     "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
     "fetch:launches": "tsx scripts/fetch-launches.ts",
+    "audit:images": "tsx scripts/audit-image-usage.ts",
     "audit:launches": "tsx scripts/audit-report-launches.ts",
     "audio:translate": "tsx scripts/audio/translate.ts",
     "audio:generate": "tsx scripts/audio/generate.ts",

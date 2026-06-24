@@ -2617,6 +2617,8 @@ async function buildWalkerFallbackEntries(existing: ProvenanceEntry[]): Promise<
       return acc;
     }
     for (const e of entries) {
+      // RFC-029 — the staging ground is never shipped, never credited.
+      if (e.isDirectory() && e.name === '_staging') continue;
       const p = posix.join(dir, e.name);
       if (e.isDirectory()) acc.push(...(await walk(p)));
       else if (/\.(jpe?g|png|webp)$/i.test(e.name)) acc.push(p);

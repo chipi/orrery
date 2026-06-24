@@ -109,6 +109,15 @@ export interface HotspotPatchBuilderInput {
    * circular geometry.
    */
   regionBounds?: RegionBounds;
+  /**
+   * Azimuth (degrees) to spin the patch about its surface normal so
+   * the north-up source texture's north points to GEOGRAPHIC north on
+   * the globe (#309). Computed by the caller from the site's lat/lon and
+   * the wrapper group's tangent quaternion (see azimuthToAlignNorth).
+   * Applied identically to the detail + regional layers so they stay
+   * mutually aligned. Defaults to 0 (legacy axis-aligned behaviour).
+   */
+  orientationDeg?: number;
 }
 
 /**
@@ -135,8 +144,14 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // first / sits under everything that follows. Larger geometry +
   // weaker polygonOffset means it loses depth fights against the
   // detail patch / rim / pin while still beating the planet sphere.
+  const orientationDeg = input.orientationDeg ?? 0;
   if (input.regionalTextureUrl) {
-    const regGeom = buildPatchGeometry(REGIONAL_PATCH_DIAMETER_WORLD_UNITS, aspect, 96);
+    const regGeom = buildPatchGeometry(
+      REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
+      aspect,
+      96,
+      orientationDeg,
+    );
     const regMat = createPatchMaterial(input.regionalTextureUrl, {
       polygonOffsetFactor: -1,
       polygonOffsetUnits: -1,
@@ -147,7 +162,7 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
     g.add(regMesh);
   }
 
-  const geom = buildPatchGeometry(PATCH_DIAMETER_WORLD_UNITS, aspect, 64);
+  const geom = buildPatchGeometry(PATCH_DIAMETER_WORLD_UNITS, aspect, 64, orientationDeg);
 
   const material = createPatchMaterial(input.textureUrl);
   const mesh = new THREE.Mesh(geom, material);
@@ -338,12 +353,23 @@ function buildPatchGeometry(
   aspect: number,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   segments: number,
+  orientationDeg = 0,
 ): THREE.BufferGeometry {
   const circleArea = (Math.PI / 4) * baseDiameter * baseDiameter;
   const height = Math.sqrt(circleArea / aspect);
   const width = aspect * height;
   const g = new THREE.PlaneGeometry(width, height);
   g.rotateX(-Math.PI / 2);
+  // North alignment (#309). Our HiRISE/CTX sources are all map-projected
+  // north-up rasters, but the wrapper group's tangent pose
+  // (placeOnSphereTangent → setFromUnitVectors) leaves the azimuth about
+  // the surface normal arbitrary, so texture-north does NOT point to
+  // geographic north on the globe. After rotateX(-90°) the texture's top
+  // edge (+V = north in a north-up source) maps to local -Z; rotateY by
+  // the caller-supplied azimuth spins -Z onto true north. Both the detail
+  // and regional layers take the SAME orientationDeg (both north-up), so
+  // they stay mutually consistent while becoming globe-correct.
+  if (orientationDeg !== 0) g.rotateY((orientationDeg * Math.PI) / 180);
   return g;
 }
 

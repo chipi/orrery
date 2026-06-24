@@ -115,7 +115,8 @@ function main() {
     try {
       const r = roundTrip(cp, site.lat, site.lon);
       const ok = r.inBounds && r.residualM < 5;
-      ok ? pass++ : fail++;
+      if (ok) pass++;
+      else fail++;
       rows.push({ id: m[1], ...r, ok });
     } catch (err) {
       fail++;

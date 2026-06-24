@@ -1920,9 +1920,15 @@
             // Selection bracket at the route centre — the blue-corner
             // "zoomable imagery here" cue, north-aligned + framing the
             // midpoint CTX. Visible while the rover is selected (#360).
+            // Square (aspect 1) to MATCH the midpoint CTX patch, which
+            // buildRegionalPatch renders square (no region_bounds passed).
+            // Using the region_bounds aspect here made the bracket a
+            // tall/narrow rectangle around a square image — glaring on
+            // Zhurong (region aspect 0.45) where the blue corners sat well
+            // outside the CTX. The CTX crop is square, so the frame is too.
             const routeHalo = createMarkerHalo(color, 1.6, {
               lay: true,
-              aspect: aspectFromRegion(trSite?.region_bounds),
+              aspect: 1,
             });
             const haloWrap = new THREE.Group();
             placeOnSphereTangent(haloWrap, midUnit, rReg + 0.02);

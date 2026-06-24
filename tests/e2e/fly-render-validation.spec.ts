@@ -121,6 +121,19 @@ function signalDelayFromDistAu(distAu: number): number {
   return (distAu * AU_TO_KM) / C_LIGHT_KM_S / 60;
 }
 
+// All Layer 3-5 tests walk the full /fly hydration path (mission load +
+// view toggle + pause + scrub + screenshot capture). Each individual step
+// has its own 5-10 s locator timeout; on mobile-chromium-1-of-2 in CI, by
+// the time test #239+ in the shard runs, accumulated worker memory
+// pressure stretches multiple step waits near their individual ceilings —
+// pushing total elapsed past the default 30 s test timeout (consistent
+// failure pattern for apollo11/apollo17 HUD and curiosity capture, while
+// the same tests pass in < 3 s locally against the same docker stack).
+// Bump file-level timeout to 60 s so transient slow runs don't tip the
+// cumulative budget. The individual step timeouts still catch real
+// regressions — only the total budget is loosened.
+test.describe.configure({ timeout: 60_000 });
+
 test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
   for (const c of CASES) {
     test(`${c.id}: outbound arc hash is stable + non-empty`, async ({ page }) => {

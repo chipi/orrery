@@ -141,6 +141,39 @@ export interface HotspotPatchBuilderInput {
  *     boundary of the surveyed area reads clearly against the moon
  *     base texture.
  */
+/**
+ * Build a regional-only (Tier 2a CTX) patch — the 3.0u context disc with no
+ * detail layer or pins. Used to render the regional layer at a rover's
+ * traverse MIDPOINT (#360) instead of the landing site, so the whole drive
+ * frames inside the 15.4 km context. North-aligned by default; pass
+ * orientationDeg to lock it to geographic north on the globe.
+ */
+export function buildRegionalPatch(input: {
+  textureUrl?: string;
+  siteId: string;
+  orientationDeg?: number;
+  regionBounds?: RegionBounds;
+}): THREE.Group {
+  const g = new THREE.Group();
+  g.userData = { siteId: input.siteId };
+  const aspect = aspectFromRegion(input.regionBounds);
+  const geom = buildPatchGeometry(
+    REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
+    aspect,
+    96,
+    input.orientationDeg ?? 0,
+  );
+  const mat = createPatchMaterial(input.textureUrl, {
+    polygonOffsetFactor: -1,
+    polygonOffsetUnits: -1,
+  });
+  const mesh = new THREE.Mesh(geom, mat);
+  mesh.position.y = Z_FIGHT_OFFSET_Y;
+  mesh.userData = { siteId: input.siteId, layer: 'regional' };
+  g.add(mesh);
+  return g;
+}
+
 export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE.Group {
   const g = new THREE.Group();
   g.userData = { siteId: input.siteId };

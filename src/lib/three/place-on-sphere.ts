@@ -54,7 +54,17 @@ export function azimuthToAlignNorth(
   lonDeg: number,
   quaternion: THREE.Quaternion,
 ): number {
-  const nLocal = northTangent(latDeg, lonDeg).applyQuaternion(quaternion.clone().invert());
-  const theta = Math.atan2(-nLocal.x, -nLocal.z);
-  return (theta * 180) / Math.PI;
+  return azimuthToAlignDir(northTangent(latDeg, lonDeg), quaternion);
+}
+
+/**
+ * Generalised form of azimuthToAlignNorth: the rotateY (degrees) that spins
+ * a flat-laid patch about its surface normal so its local "up" (-Z after the
+ * builder's rotateX(-90°)) points along an arbitrary WORLD direction. Used
+ * to orient along-route HiRISE patches to the path-travel direction instead
+ * of geographic north (#360) so they tile neatly along the traverse.
+ */
+export function azimuthToAlignDir(worldDir: THREE.Vector3, quaternion: THREE.Quaternion): number {
+  const local = worldDir.clone().applyQuaternion(quaternion.clone().invert());
+  return (Math.atan2(-local.x, -local.z) * 180) / Math.PI;
 }

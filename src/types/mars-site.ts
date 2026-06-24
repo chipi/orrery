@@ -10,4 +10,5 @@ export type {
   SurfaceAgency as MarsAgency,
   SurfaceNation as MarsNation,
   Traverse,
+  RouteHirisePatch,
 } from './surface-site';

@@ -1481,11 +1481,16 @@
     // Along-route HiRISE detail patches (#360). Built per route_patches
     // entry on the magnified traverse; their detail meshes ramp opacity
     // with the same detailOpacity curve as the landing detail patch.
-    const routePatchGroups: THREE.Object3D[] = [];
+    const routePatchGroups: THREE.Object3D[] = []; // all, for disposal
+    const routeDetailGroups: THREE.Object3D[] = []; // detail wraps, detail-curve visibility
     const routePatchMaterials: Array<THREE.Material & { opacity: number }> = [];
     // Regional CTX patches rendered at the traverse MIDPOINT (#360) — ramped
     // on the EARLIER regional-opacity curve (like the landing CTX) so the
-    // context frames in before the detail patches fade up.
+    // context frames in before the detail patches fade up. Tracked separately
+    // from the detail wraps so each gets its OWN visibility gate — otherwise a
+    // detail patch sitting at opacity 0 in the regional band still writes
+    // depth and punches a hole in the CTX.
+    const routeRegionalGroups: THREE.Object3D[] = [];
     const routeRegionalMaterials: Array<THREE.Material & { opacity: number }> = [];
 
     function buildTraverseCaption(
@@ -1633,6 +1638,8 @@
         planetMesh.remove(g);
       }
       routePatchGroups.length = 0;
+      routeDetailGroups.length = 0;
+      routeRegionalGroups.length = 0;
       routePatchMaterials.length = 0;
       routeRegionalMaterials.length = 0;
       for (const tr of Object.values(traverses)) {
@@ -1857,11 +1864,14 @@
               }
               acc += seg[i];
             }
-            const midUnit = tpos(midLat, midLon, r).normalize();
+            // Regional sits on a LOWER shell than the detail patches so the
+            // two never z-fight where they overlap.
+            const rReg = planetRadius + 0.03;
+            const midUnit = tpos(midLat, midLon, rReg).normalize();
             const rmLat = (Math.asin(Math.max(-1, Math.min(1, midUnit.y))) * 180) / Math.PI;
             const rmLon = (Math.atan2(-midUnit.z, midUnit.x) * 180) / Math.PI;
             const regWrap = new THREE.Group();
-            placeOnSphereTangent(regWrap, midUnit, r);
+            placeOnSphereTangent(regWrap, midUnit, rReg);
             const regGroup = buildRegionalPatch({
               textureUrl: regionalUrl,
               siteId: tr.rover_id,
@@ -1870,6 +1880,7 @@
             regWrap.add(regGroup);
             planetMesh.add(regWrap);
             routePatchGroups.push(regWrap);
+            routeRegionalGroups.push(regWrap);
             regGroup.traverse((o) => {
               if (o instanceof THREE.Mesh && o.userData?.layer === 'regional') {
                 const m = o.material as THREE.Material & { opacity: number };
@@ -1900,10 +1911,12 @@
             const b = tpos(points[segIdx][0], points[segIdx][1], r);
             return b.clone().sub(a);
           };
+          // Detail patches sit on a HIGHER shell than the regional.
+          const rDet = planetRadius + 0.08;
           for (const rp of tr.route_patches) {
-            const mUnit = tpos(rp.lat, rp.lon, r).normalize();
+            const mUnit = tpos(rp.lat, rp.lon, rDet).normalize();
             const wrap = new THREE.Group();
-            placeOnSphereTangent(wrap, mUnit, r);
+            placeOnSphereTangent(wrap, mUnit, rDet);
             const patchGroup = buildHotspotSurfacePatch({
               textureUrl: rp.image,
               accentColor: color,
@@ -1915,11 +1928,16 @@
             wrap.add(patchGroup);
             planetMesh.add(wrap);
             routePatchGroups.push(wrap);
+            routeDetailGroups.push(wrap);
             // Collect detail materials so the reveal ramp can fade them in.
+            // depthWrite:false so adjacent overlapping patches alpha-blend by
+            // render order instead of z-fighting (they tile with slight edge
+            // overlap at 0.5 km spacing).
             patchGroup.traverse((o) => {
               if (o instanceof THREE.Mesh && o.userData?.layer === 'detail') {
                 const m = o.material as THREE.Material & { opacity: number };
                 m.transparent = true;
+                m.depthWrite = false;
                 m.opacity = 0;
                 routePatchMaterials.push(m);
               }
@@ -3976,21 +3994,23 @@
             }
           }
           // Along-route patches (#360), gated by the TRAVERSES layer toggle.
-          // The midpoint regional CTX fades in on the EARLIER regional curve;
-          // the detail HiRISE patches fade in later on the detail curve —
-          // same progressive-detail behaviour as the landing tiers.
-          const routeVisible =
-            loadTraverses != null &&
-            layerTraverses &&
-            (regionalOpacity > 0.01 || detailOpacity > 0.01);
-          for (const g of routePatchGroups) g.visible = routeVisible;
+          // Detail + regional get SEPARATE visibility gates so a patch that's
+          // at opacity 0 in the other layer's band is fully hidden (visible =
+          // false) rather than writing depth and punching a hole in the CTX.
+          // The midpoint regional fades on the EARLIER regional curve; the
+          // detail HiRISE on the later detail curve (progressive detail).
+          const routeOn = loadTraverses != null && layerTraverses;
+          const detailVisible = routeOn && detailOpacity > 0.01;
+          const regionalVisible = routeOn && regionalOpacity > 0.01;
+          for (const g of routeDetailGroups) g.visible = detailVisible;
+          for (const g of routeRegionalGroups) g.visible = regionalVisible;
           for (const m of routePatchMaterials) {
-            m.opacity = routeVisible ? detailOpacity : 0;
-            m.transparent = m.opacity < 0.99;
+            m.opacity = detailOpacity;
+            m.transparent = true;
           }
           for (const m of routeRegionalMaterials) {
-            m.opacity = routeVisible ? regionalOpacity : 0;
-            m.transparent = m.opacity < 0.99;
+            m.opacity = regionalOpacity;
+            m.transparent = true;
           }
           if (loadTraverses != null) {
             // Screen-pixel-stable sizing for every traverse marker

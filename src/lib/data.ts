@@ -16,7 +16,7 @@ import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { OrbitRegime } from '$types/orbit-regime';
 import type { MoonSite } from '$types/moon-site';
-import type { MarsSite, Traverse } from '$types/mars-site';
+import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 import type { IssModule, IssModuleBase, IssModuleOverlay } from '$types/iss-module';
@@ -470,7 +470,15 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
 
 /** Mars rover traverse polylines (PRD-009 §what-comes-after). */
 export async function getMarsTraverse(roverId: string): Promise<Traverse | null> {
-  return get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
+  const t = await get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
+  if (!t) return null;
+  // Along-route HiRISE patches (#360) — optional sidecar manifest. Absent
+  // for rovers not yet sampled; the traverse still renders without it.
+  const rp = await get<{ patches: RouteHirisePatch[] }>(
+    `mars-traverses/${roverId}.route-patches.json`,
+  ).catch(() => null);
+  if (rp?.patches?.length) t.route_patches = rp.patches;
+  return t;
 }
 
 /**

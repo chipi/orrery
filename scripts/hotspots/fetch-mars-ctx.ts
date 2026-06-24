@@ -1,4 +1,4 @@
-import { existsSync, promises as fs } from 'node:fs';
+import { existsSync, readFileSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 import { ensureCtxMosaicTile, tileNameForLatLon, tileUrlForName } from './ctx-mosaic.ts';
@@ -54,6 +54,43 @@ interface MarsSite {
 
 const SIDECAR_PATH = path.join('static', 'data', 'surface-hotspots.json');
 const MARS_SITES_PATH = path.join('static', 'data', 'mars-sites.json');
+const TRAVERSE_DIR = path.join('static', 'data', 'mars-traverses');
+const MARS_RADIUS_M = 3389500;
+
+function gcMetres(a: [number, number], b: [number, number]): number {
+  const mPerDeg = (Math.PI / 180) * MARS_RADIUS_M;
+  const dLat = (b[0] - a[0]) * mPerDeg;
+  const dLon = (b[1] - a[1]) * mPerDeg * Math.cos((a[0] * Math.PI) / 180);
+  return Math.hypot(dLat, dLon);
+}
+
+/**
+ * Crop centre for a rover's regional CTX (#360): the arc-length MIDPOINT of
+ * its traverse, so the 15.4 km context patch frames the whole drive instead
+ * of just the landing zone at one end. Falls back to the landing coordinate
+ * when the rover has no traverse file.
+ */
+function cropCentre(roverId: string, lat: number, lon: number): { lat: number; lon: number } {
+  const p = path.join(TRAVERSE_DIR, `${roverId}.json`);
+  if (!existsSync(p)) return { lat, lon };
+  const tr = JSON.parse(readFileSync(p, 'utf8')) as { points?: [number, number][] };
+  const pts = tr.points;
+  if (!pts || pts.length < 2) return { lat, lon };
+  const seg = pts.slice(1).map((b, i) => gcMetres(pts[i], b));
+  const half = seg.reduce((s, d) => s + d, 0) / 2;
+  let acc = 0;
+  for (let i = 0; i < seg.length; i++) {
+    if (acc + seg[i] >= half) {
+      const t = seg[i] === 0 ? 0 : (half - acc) / seg[i];
+      return {
+        lat: pts[i][0] + (pts[i + 1][0] - pts[i][0]) * t,
+        lon: pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t,
+      };
+    }
+    acc += seg[i];
+  }
+  return { lat, lon };
+}
 
 export interface MarsCtxFetchResult {
   siteId: string;
@@ -146,19 +183,22 @@ async function fetchOneCtx(
   site: Required<MarsSite>,
   input: FetchMarsCtxHotspotsInput,
 ): Promise<MarsCtxFetchResult | null> {
-  const tileName = tileNameForLatLon(site.lat, site.lon);
+  // #360: centre the regional CTX on the rover's traverse midpoint (not the
+  // landing site) so the whole drive fits in the 15.4 km context patch.
+  const centre = cropCentre(hotspot.id, site.lat, site.lon);
+  const tileName = tileNameForLatLon(centre.lat, centre.lon);
   const sourceUrl = tileUrlForName(tileName);
   const outputPath = `static${hotspot.hotspot_tier2_regional_source}`;
   if (input.dryRun) {
     console.log(`  · ${hotspot.id} dry-run → tile ${tileName} → ${outputPath}`);
     return null;
   }
-  const localTilePath = await ensureCtxMosaicTile(site.lat, site.lon);
+  const localTilePath = await ensureCtxMosaicTile(centre.lat, centre.lon);
   try {
     const crop = await cropRemoteRasterToLatLon({
       localRasterPath: localTilePath,
-      targetLat: site.lat,
-      targetLon: site.lon,
+      targetLat: centre.lat,
+      targetLon: centre.lon,
       outputPath,
       cropSize: 3072,
       jpegQuality: 88,

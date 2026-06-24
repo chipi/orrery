@@ -306,4 +306,28 @@ export interface Traverse {
   points: Array<[number, number]>;
   /** Curated notable stops along the traverse. Optional. */
   stops?: TraverseStop[];
+  /**
+   * HiRISE detail crops sampled ALONG the route (#360) so there's zoom
+   * capability anywhere the rover drove, not just at the landing site.
+   * Loaded from `<rover>.route-patches.json` by getMarsTraverse. Each is
+   * rendered as a detail patch on the magnified traverse.
+   */
+  route_patches?: RouteHirisePatch[];
+}
+
+/** One along-route HiRISE detail crop (#360). */
+export interface RouteHirisePatch {
+  /** Stop id (`sol-<N>`) or interval id (`km-<NN>`). */
+  id: string;
+  lat: number;
+  lon: number;
+  /** Stop kind, or `route` for interval-fill samples. */
+  kind: string;
+  /** Provenance-style image path (/images/hotspots/mars/<rover>/traverse/<id>.jpg). */
+  image: string;
+  /** Source HiRISE product the crop came from. */
+  product_id: string;
+  resolution_m_per_px: number;
+  /** True ground width (m) of the crop — drives literal co-scale. */
+  ground_m: number;
 }

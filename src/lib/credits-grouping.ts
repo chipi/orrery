@@ -217,6 +217,9 @@ export function provenanceSourceId(p: ImageProvenanceEntry): string {
   // NASA gallery photos, so they shouldn't be mixed into the NASA bucket.
   if (p.instrument === 'HiRISE') return 'nasa-hirise';
   if (p.instrument === 'CTX') return 'nasa-ctx';
+  // Moon regional context layer (#361) — JAXA SELENE/Kaguya Terrain Camera,
+  // the /moon CTX-equivalent. Its own section, surfaces JAXA.
+  if (p.instrument === 'Kaguya TC') return 'jaxa-kaguya-tc';
   // Take the first agency token when the field is a partner credit
   // like "ROSCOSMOS / NASA" or "ESA / NASA" — the first listed is
   // the primary attribution per ADR-046.

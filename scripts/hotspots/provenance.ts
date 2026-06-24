@@ -147,6 +147,58 @@ export function buildCtxMosaicProvenanceEntry(input: {
 }
 
 /**
+ * Build an image-provenance entry for a Kaguya (SELENE) Terrain Camera
+ * regional patch (#361) — the Moon's CTX-equivalent Tier 2a context
+ * layer. Source is the USGS Astrogeology ARD cloud-optimized GeoTIFF
+ * of an individual JAXA/SELENE TC monoscopic observation (~6 m/px),
+ * window-cropped to a ~16 km regional patch. JAXA imagery surfaced via
+ * the JAXA-OPEN license precedent; the credits page groups these into a
+ * dedicated "JAXA · Kaguya TC" section via the `instrument` field.
+ *
+ * No spacecraft_id is set: there is no kaguya/selene orbiter site to
+ * deep-link the 📡 credit chip to yet, so the section groups by
+ * instrument but the per-row satellite chip stays off (avoids a dead
+ * link). Add a Kaguya orbiter site later to light the chip up.
+ */
+export function buildKaguyaTcProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  productId: string;
+  siteId: string;
+  centerLat: number;
+  centerLon: number;
+  cropSize: number;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `Kaguya (SELENE) Terrain Camera ${input.productId} — regional patch centred at ${input.centerLat.toFixed(3)}°N ${input.centerLon.toFixed(3)}°E`,
+    author: 'JAXA / SELENE (Kaguya) Terrain Camera · USGS Astrogeology ARD',
+    agency: 'JAXA',
+    source_url: input.sourceUrl,
+    image_url: input.sourceUrl,
+    license_short: 'JAXA-OPEN',
+    license_url: 'https://www.jaxa.jp/about/copyright_e.html',
+    license_rationale:
+      'Kaguya (SELENE) Terrain Camera imagery is produced by JAXA and published for non-commercial reuse with attribution under JAXA’s open-data policy; redistributed here as USGS Astrogeology Analysis Ready Data (cloud-optimized GeoTIFF). Attribution: JAXA / SELENE (Kaguya) Terrain Camera. Mirrors the JAXA-OPEN allowlist precedent.',
+    modifications: [
+      `cropped-${input.cropSize}x${input.cropSize}-around-site-coords`,
+      'p2-p98-linear-stretch-to-8bit',
+      'reencoded-jpeg-q88',
+    ],
+    revid: null,
+    pageid: null,
+    nasa_id: input.productId,
+    fetched_at: new Date().toISOString(),
+    spacecraft_name: 'Kaguya (SELENE)',
+    instrument: 'Kaguya TC',
+  };
+}
+
+/**
  * Build an image-provenance entry for an LROC-derived Moon hotspot
  * patch. Same shape as HiRISE; different attribution + URLs.
  */

@@ -26,6 +26,14 @@
       "license_summary": "CTX camera on Mars Reconnaissance Orbiter (NASA / JPL-Caltech / MSSS), blended into the Global CTX Mosaic by Caltech Murray Lab (Dickson et al. 2024, doi:10.1029/2024EA003555). Cite the mosaic paper."
     },
     {
+      "id": "jaxa-kaguya-tc",
+      "name": "JAXA · Kaguya TC (SELENE)",
+      "kind": "research-institute",
+      "url": "https://www.kaguya.jaxa.jp/",
+      "logo_path": "/logos/jaxa.svg",
+      "license_summary": "Terrain Camera on JAXA's SELENE (Kaguya) lunar orbiter — ~6 m/px regional context for /moon landing zones (the CTX-equivalent layer). JAXA open-data policy; redistributed as USGS Astrogeology Analysis Ready Data. Attribute JAXA / SELENE (Kaguya) Terrain Camera."
+    },
+    {
       "id": "esa",
       "name": "European Space Agency",
       "kind": "space-agency",

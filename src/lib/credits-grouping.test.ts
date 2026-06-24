@@ -176,6 +176,13 @@ describe('provenanceSourceId', () => {
         makePhoto({ source_type: 'derived-mosaic', agency: 'NASA', instrument: 'CTX' }),
       ),
     ).toBe('nasa-ctx');
+    // Moon regional context (#361) — JAXA Kaguya Terrain Camera gets its own
+    // section, surfacing JAXA rather than collapsing into the NASA bucket.
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'JAXA', instrument: 'Kaguya TC' }),
+      ),
+    ).toBe('jaxa-kaguya-tc');
     // Without an instrument, the agency mapping still applies.
     expect(provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'NASA' }))).toBe(
       'nasa',

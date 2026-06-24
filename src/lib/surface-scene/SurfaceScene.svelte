@@ -1158,7 +1158,14 @@
     // #360: per-rover camera target = the magnified traverse midpoint, so
     // selecting a rover frames the whole route. Populated by rebuildTraverses.
     const routeViewCenters = new Map<string, { lat: number; lon: number }>();
-    faceCameraAtSite = (site: SurfaceSite, targetR = 50) => {
+    // Default landing zoom = 37 (was 50). At camR 50 the regional reveal
+    // ramp hadn't even started (regionalFadeStart), so selecting a site
+    // dropped you on a bare globe and you had to wheel in to ~33 to see any
+    // imagery. 37 lands with the regional context patch (Kaguya TC / Mars
+    // CTX) ~64% revealed and already framed by the brackets; leaning in
+    // sharpens to the HiRISE/LROC detail. Paired with regionalFadeStart
+    // 50→44 below so the ramp tracks the closer landing (#361).
+    faceCameraAtSite = (site: SurfaceSite, targetR = 37) => {
       if (site.lat == null || site.lon == null) return;
       // #360: rovers with a traverse frame on the route's CENTRE (the
       // magnified midpoint) rather than the landing, so the whole drive +
@@ -1378,13 +1385,12 @@
     //     Brighter / thicker than the selection-style brackets so the
     //     "I'm hovering this" cue beats the LROC patch underneath.
     const HOVER_TEAL = 0x4ecdc4;
-    function buildHoverHalo(aspect: number | undefined): THREE.Object3D {
+    function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Object3D {
       const group = new THREE.Group();
       // Corner-bracket hover affordance for every region-bounds site, incl.
       // near-square ones — matches the selection halo (no leftover circles).
       const isRect = aspect != null;
       if (isRect) {
-        const diameter = 4.4;
         const circleArea = (Math.PI / 4) * diameter * diameter;
         const height = Math.sqrt(circleArea / aspect);
         const width = aspect * height;
@@ -2297,7 +2303,27 @@
         // equator, wide for polar ROI). Otherwise falls back to the
         // legacy circular ring.
         const haloAspect = aspectFromRegion(site.region_bounds);
-        const halo = createMarkerHalo(colorFor(site), 1.4, {
+        // Size the bracket to the OUTERMOST visible patch so the corners
+        // frame the actual image, not empty surface. Sites WITH a regional
+        // CTX/LROC layer show the 3.0u regional disc → bracket ≈ 2.8u
+        // (radius 1.4, the historical constant). Sites with only a detail
+        // patch (no regional — most /moon landers incl. the Chang'e set,
+        // Luna 16-24, SLIM, Beresheet, Chandrayaan-3) show the ~1.0u detail
+        // patch, so the 2.8u bracket floated ~2.8× too big and framed bare
+        // regolith. Mirror the literal co-scale the patch builder uses.
+        const haloHasRegional = site.hotspot_tier2_regional_source != null;
+        const haloDetailDiam =
+          site.hotspot_tier2_ground_m && site.hotspot_tier2_regional_ground_m
+            ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS *
+              (site.hotspot_tier2_ground_m / site.hotspot_tier2_regional_ground_m)
+            : 1.0;
+        const haloOuterDiam = haloHasRegional
+          ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS
+          : haloDetailDiam;
+        // 0.93 keeps the bracket a hair INSIDE the patch edge (same ratio
+        // the 1.4-radius constant gave against the 3.0u regional).
+        const haloRadius = (haloOuterDiam * 0.93) / 2;
+        const halo = createMarkerHalo(colorFor(site), haloRadius, {
           lay: true,
           aspect: haloAspect,
         });
@@ -2315,7 +2341,9 @@
         // selection halo uses, just at full opacity + a slightly
         // wider rectangle so the affordance reads against the LROC
         // patch below.
-        const hoverHalo = buildHoverHalo(haloAspect);
+        // Hover bracket keeps its historical 4.4/3.0 ratio over the
+        // selection bracket, scaled to the same outer patch.
+        const hoverHalo = buildHoverHalo(haloAspect, haloOuterDiam * (4.4 / 3.0));
         group.add(northSpun(hoverHalo));
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).
@@ -3870,9 +3898,10 @@
           // Regional opacity ramp hoisted up so labels can fade against
           // it. Mirrors the formula used below for the tier-2 patch
           // material — single source of truth for "how visible is the
-          // regional CTX/LROC patch right now?". camR 50 → ramp starts;
-          // camR 33 → fully visible.
-          const regionalFadeStartTop = 50;
+          // regional CTX/LROC patch right now?". camR 44 → ramp starts;
+          // camR 33 → fully visible. (Start pulled 50→44 with the closer
+          // select-landing zoom, #361, so the reveal tracks the landing.)
+          const regionalFadeStartTop = 44;
           const regionalFadeEndTop = 33;
           const regionalOpacityTop =
             camR >= regionalFadeStartTop
@@ -3975,10 +4004,11 @@
           // simultaneously, which made the "level up" zoom look like
           // no progressive detail at all (image 14-17 screenshot
           // sequence — regional + detail both popping in at the same
-          // camR). Regional ramp: 50 → 33 (starts at the same camR
-          // Tier-2 promotion fires for the detail layer, fully
-          // visible by the time detail starts ramping).
-          const regionalFadeStart = 50;
+          // camR). Regional ramp: 44 → 33 (start pulled 50→44 with the
+          // closer select-landing zoom, #361, so the regional context is
+          // already ~64% in when you arrive at camR 37 and fully visible
+          // by the time the detail layer starts ramping at 33).
+          const regionalFadeStart = 44;
           const regionalFadeEnd = 33;
           const regionalOpacity =
             camR >= regionalFadeStart

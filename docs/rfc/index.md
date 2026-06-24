@@ -30,3 +30,4 @@
 | RFC-026 | Multi-destination porkchop expansion (re-expand /plan from Mars-only to all rocky + outer destinations) | Draft | #312 | v0.8 |
 | RFC-027 | List-route search on /missions + /fleet — per-route `?q=` deep-link + bidirectional filter-chip interaction | Draft | #338 | v0.7 |
 | RFC-028 | data.ts split + DAL architecture review — `data-core` + `withLocaleOverlay` + per-domain modules + provenance to `$lib/provenance/` + new `galleries-data.ts` extraction | Draft | #327 | v0.7 |
+| RFC-029 | Image staging ground — fetch→stage→approve→promote so `/credits` == shipped == displayed; rejects quarantined in gitignored `_staging/`, provenance walks the shipped tree only | Draft | #363 | v0.7 |

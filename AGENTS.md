@@ -8,7 +8,7 @@ This is the **canonical** instruction file. `CLAUDE.md` and `.cursor/rules/orrer
 
 ## Where to start — read these before touching code
 
-**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** v2.0 is current as of v0.6.0; it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
+**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** v2.2 is current as of v0.7.0; it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
 
 Then drill into the matching doc by question type:
 
@@ -29,7 +29,7 @@ Then drill into the matching doc by question type:
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Eleven primary nav destinations, real orbital mechanics, **42 missions** in the catalog (21 Moon + 17 Mars + 4 outer-system: Galileo, Voyager 2, New Horizons, Dawn), **137 fleet entries** across 9 categories cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
+Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Eleven primary nav destinations, real orbital mechanics, **113 missions** in the catalog (Moon + Mars + inner-planet + outer-system probes), **251 fleet entries** across 9 categories cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
 
 The eleven primary nav destinations:
 
@@ -90,7 +90,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |
 | Science Lens + multi-layer state | Attribute-on-`<html>` + MutationObserver subscription; 12 per-layer toggles gated on the master lens; CSS reacts via `:global([data-science-layer-*='on'])` with zero imports | ADR-055 |
 | Fleet schema + cross-refs | Per-category folders + generated index manifest; bidirectional `fleet_refs` ↔ `linked_missions`/`linked_sites` enforced by symmetric-link validator (fail-closed) | ADR-052 |
-| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; 137 entries × 14 locales = 1,918 overlay files translated in-session by the LLM | ADR-053, ADR-054 |
+| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; 251 entries × 14 locales = 3,514 overlay files translated in-session by the LLM | ADR-053, ADR-054 |
 | E2e readiness signals | Every canvas route exposes `window.__pickAt(x, y)` + `data-route-ready` + `data-loading` attributes; no `sleep(N)` polling in Playwright tests | ADR-056 |
 | Locale persistence | Single `orrery_locale` cookie is the ONLY exception to "no client storage"; everything else stays runtime-only | ADR-057 |
 

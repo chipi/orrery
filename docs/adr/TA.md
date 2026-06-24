@@ -39,7 +39,7 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 | `/explore` | Solar System Explorer · 3D orrery + per-body Science Lens layers · per-planet 4K texture LOD swap (#287) for Mercury/Venus/Earth/Mars/Jupiter/Saturn/Sun; Uranus + Neptune stay 2K (SSS publishes no higher res) · user time controls — pause / 1×–100× days-per-sec / reset-to-today over a real-J2000-anchored sim clock (#351) | PRD-001 / ADR-012 / #287 / #351 |
 | `/plan` | Mission Configurator · porkchop plot (9 destinations) | PRD-002 / RFC-006 / ADR-023 / ADR-026 / ADR-028 |
 | `/fly` | Mission Arc · heliocentric transfer (+ cislunar Earth-centered view) | PRD-003 / ADR-030 / ADR-058 |
-| `/missions` | Mission Catalog · 42 flown / active / planned / concept missions | PRD-004 / ADR-020 / ADR-027 |
+| `/missions` | Mission Catalog · 113 flown / active / planned / concept missions (+ `/missions/launches` calendar, PRD-020) | PRD-004 / ADR-020 / ADR-027 |
 | `/earth` | Hybrid scene — default orbital mode (ISS, Tiangong, Hubble, JWST, GNSS constellations) + surface mode (`?mode=surface`) with 14 launchpads via shared `SurfaceScene`. Mode toggle top-center. | PRD-005 / ADR-046 / ADR-072 / #285 |
 | `/moon` | Moon Map · 16 surface sites + lunar orbiters with per-mission 3D models | PRD-006 / ADR-037 / ADR-038 |
 | `/mars` | Mars Surface Map · equirectangular + 3D globe; 16 surface sites + 11 orbiters; rover traverses | PRD-007 / ADR-037 / ADR-038 / RFC-012 |

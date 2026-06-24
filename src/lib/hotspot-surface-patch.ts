@@ -53,7 +53,7 @@ const PATCH_DIAMETER_WORLD_UNITS = 1.0;
  * landing zone" frame. polygonOffset ordering keeps the detail
  * patch on top of the regional patch.
  */
-const REGIONAL_PATCH_DIAMETER_WORLD_UNITS = 3.0;
+export const REGIONAL_PATCH_DIAMETER_WORLD_UNITS = 3.0;
 
 /**
  * +Y offset above the planet surface. Kept small — the actual
@@ -118,6 +118,19 @@ export interface HotspotPatchBuilderInput {
    * mutually aligned. Defaults to 0 (legacy axis-aligned behaviour).
    */
   orientationDeg?: number;
+  /**
+   * True ground width of the DETAIL crop in metres (HiRISE 2048 px ×
+   * source res ≈ 512 m). With `regionalGroundMeters`, the detail patch
+   * is co-scaled LITERALLY against the regional patch (#309 step 2 /
+   * option A) so overlapping content matches 1:1 at the seam:
+   *   detailDiameter = REGIONAL_DIAMETER × groundMeters/regionalGroundMeters.
+   * Absent → legacy editorial PATCH_DIAMETER_WORLD_UNITS (1.0u), which
+   * over-magnifies the detail ~10× vs the regional.
+   */
+  groundMeters?: number;
+  /** True ground width of the REGIONAL crop in metres (CTX 3072 px ×
+   *  5 m/px ≈ 15360 m). Pairs with `groundMeters` for literal co-scale. */
+  regionalGroundMeters?: number;
 }
 
 /**
@@ -162,7 +175,16 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
     g.add(regMesh);
   }
 
-  const geom = buildPatchGeometry(PATCH_DIAMETER_WORLD_UNITS, aspect, 64, orientationDeg);
+  // Detail diameter — literal co-scale (#309 step 2 / option A) when both
+  // true ground extents are known: the detail patch occupies the SAME
+  // fraction of the regional patch that its ground footprint occupies of
+  // the regional footprint, so a crater at the seam is the same size in
+  // both layers. Falls back to the legacy editorial 1.0u otherwise.
+  const detailDiameter =
+    input.groundMeters && input.regionalGroundMeters
+      ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS * (input.groundMeters / input.regionalGroundMeters)
+      : PATCH_DIAMETER_WORLD_UNITS;
+  const geom = buildPatchGeometry(detailDiameter, aspect, 64, orientationDeg);
 
   const material = createPatchMaterial(input.textureUrl);
   const mesh = new THREE.Mesh(geom, material);
@@ -250,7 +272,10 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // converted to local patch coordinates. lat_offset_m maps to +Z
   // (north), lon_offset_m maps to +X (east).
   if (input.annotations && input.annotations.length > 0) {
-    addAnnotationDots(g, input.annotations, input.siteId, input.accentColor);
+    addAnnotationDots(g, input.annotations, input.siteId, input.accentColor, {
+      detailDiameter,
+      groundMeters: input.groundMeters,
+    });
   }
 
   return g;
@@ -262,19 +287,23 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
  * propagate via userData.annotationId; the route's existing pick
  * handler reads this to surface the annotation in the detail panel.
  *
- * Metre-to-world-unit conversion: the patch represents a 1 km × 1 km
- * area mapped to the PATCH_DIAMETER_WORLD_UNITS disc. So
- * 1 metre = PATCH_DIAMETER_WORLD_UNITS / 1000 world units.
+ * Metre-to-world-unit conversion: the detail patch of diameter
+ * `detailDiameter` world-units represents `groundMeters` of ground, so
+ * 1 metre = detailDiameter / groundMeters world units. With literal
+ * co-scale (#309) this matches the regional layer's scale exactly, so an
+ * annotation lands on the same feature in both. Legacy fallback (no
+ * groundMeters) keeps the old 1 km-per-disc assumption.
  */
 function addAnnotationDots(
   g: THREE.Group,
   annotations: HotspotAnnotation[],
   siteId: string,
   accentColor: string,
+  scale: { detailDiameter: number; groundMeters?: number },
 ): void {
-  const PATCH_M = 1000;
-  const M_TO_U = PATCH_DIAMETER_WORLD_UNITS / PATCH_M;
-  const radius = PATCH_DIAMETER_WORLD_UNITS / 2;
+  const PATCH_M = scale.groundMeters ?? 1000;
+  const M_TO_U = scale.detailDiameter / PATCH_M;
+  const radius = scale.detailDiameter / 2;
   for (const a of annotations) {
     const x = a.lon_offset_m * M_TO_U;
     const z = -a.lat_offset_m * M_TO_U; // +lat = -Z (north up on the patch)

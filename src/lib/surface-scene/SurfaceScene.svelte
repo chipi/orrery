@@ -22,7 +22,7 @@
     tickOrbiterDot,
     type OrbiterMarker,
   } from '$lib/three/orbiter-group';
-  import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
+  import { placeOnSphereTangent, azimuthToAlignNorth } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { pickClosest2d } from '$lib/three/pick-closest-2d';
@@ -115,7 +115,11 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
   import { dimMaterials } from '$lib/three/dim-materials';
-  import { buildHotspotSurfacePatch, aspectFromRegion } from '$lib/hotspot-surface-patch';
+  import {
+    buildHotspotSurfacePatch,
+    aspectFromRegion,
+    REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
+  } from '$lib/hotspot-surface-patch';
   import {
     createSkybox,
     teardownPanoramaSkybox,
@@ -1254,12 +1258,11 @@
       while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
       flyToT = to;
       // Land just past the flat-patch trigger (SPHERE_TO_FLAT_CAM_R =
-      // 30.3) so the crosshair appears as soon as the fly-in completes
-      // instead of one wheel-tick later. Before this, flyToR = 31 left
-      // the camera one click above the trigger, so clicking Zoom to
-      // detail looked like "we got close but the patch didn't open".
-      flyToR = 30.2;
-      camRTarget = 30.2;
+      // 30.1) so the crosshair appears as soon as the fly-in completes —
+      // the button is the shortcut straight to full detail, distinct from
+      // the manual 3D zoom band (30.32 → 30.1) that wheel/pinch now expose.
+      flyToR = 30.08;
+      camRTarget = 30.08;
       flyFromOffset.copy(focusOffset);
       flyToOffset.set(0, 0, 0);
       flyStart = performance.now();
@@ -1611,11 +1614,47 @@
             points.unshift([trSite.lat, trSite.lon]);
           }
         }
-        const verts: number[] = [];
         const r = planetRadius + 0.05;
+        // #309 — magnify the traverse around the landing site so it sits at
+        // the SAME scale as the (magnified) Tier-2 patches instead of true
+        // geographic scale (which renders ~22× too small to land on the
+        // CTX/HiRISE imagery). M = patch magnification: world-units-per-metre
+        // at the co-scale factor (REGIONAL_DIAMETER / regionalGroundMeters)
+        // ÷ world-units-per-metre at true scale (planetRadius / bodyRadiusM).
+        // Detail + regional share this factor (option A), so the path lines
+        // up with both. Sites without a regional ground extent (Moon, legacy)
+        // keep true scale (M = 1) — unchanged behaviour.
+        const siteUnit =
+          trSite?.lat != null && trSite?.lon != null
+            ? latLonToUnitSphere(trSite.lat, trSite.lon)
+            : null;
+        const regionalGroundM = trSite?.hotspot_tier2_regional_ground_m;
+        const traverseMag =
+          siteUnit && regionalGroundM
+            ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS /
+              regionalGroundM /
+              (planetRadius / (config.radiusKm * 1000))
+            : 1;
+        // Map a (lat,lon) to its magnified world position on the surface.
+        const tpos = (lat: number, lon: number, radius: number): THREE.Vector3 => {
+          const p = latLonToUnitSphere(lat, lon);
+          if (traverseMag === 1 || !siteUnit) {
+            return new THREE.Vector3(p.x, p.y, p.z).multiplyScalar(radius);
+          }
+          // Scale the offset from the site centre, then re-project onto the
+          // sphere so the magnified path stays on the surface.
+          return new THREE.Vector3(
+            siteUnit.x + (p.x - siteUnit.x) * traverseMag,
+            siteUnit.y + (p.y - siteUnit.y) * traverseMag,
+            siteUnit.z + (p.z - siteUnit.z) * traverseMag,
+          )
+            .normalize()
+            .multiplyScalar(radius);
+        };
+        const verts: number[] = [];
         for (const [lat, lon] of points) {
-          const { x, y, z } = latLonToUnitSphere(lat, lon);
-          verts.push(x * r, y * r, z * r);
+          const wp = tpos(lat, lon, r);
+          verts.push(wp.x, wp.y, wp.z);
         }
         const site = sites.find((s) => s.id === tr.rover_id);
         const color = site ? colorFor(site) : '#ffffff';
@@ -1651,17 +1690,17 @@
         const TRAVERSE_END_ACTIVE_COLOR = 0xef4444;
         const TRAVERSE_END_FINISHED_COLOR = 0xf59e0b;
         const first = tr.points[0];
-        const firstPos = latLonToUnitSphere(first[0], first[1]);
+        const startWorld = tpos(first[0], first[1], r);
         const startDot = new THREE.Mesh(
           new THREE.BufferGeometry(),
           new THREE.MeshBasicMaterial({ visible: false }),
         );
         startDot.visible = false;
-        startDot.position.set(firstPos.x * r, firstPos.y * r, firstPos.z * r);
+        startDot.position.copy(startWorld);
         planetMesh.add(startDot);
         tier2DelayedReveal.push(startDot);
         const last = tr.points[tr.points.length - 1];
-        const lastPos = latLonToUnitSphere(last[0], last[1]);
+        const endWorld = tpos(last[0], last[1], r);
         const endDot = new THREE.Mesh(
           new THREE.SphereGeometry(0.022, 12, 12),
           new THREE.MeshBasicMaterial({
@@ -1671,7 +1710,7 @@
             depthWrite: false,
           }),
         );
-        endDot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        endDot.position.copy(endWorld);
         // Compute the sol number at the current rover position —
         // for active rovers, days alive since landing; for ended,
         // days between landing and snapshot.
@@ -1689,8 +1728,8 @@
         tier2DelayedReveal.push(endDot);
         // Captions along path tangent, offset away from each other
         // so labels don't overlap the dots or the line.
-        const startPosWorld = new THREE.Vector3(firstPos.x * r, firstPos.y * r, firstPos.z * r);
-        const endPosWorld = new THREE.Vector3(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        const startPosWorld = startWorld.clone();
+        const endPosWorld = endWorld.clone();
         const tangent = new THREE.Vector3().subVectors(endPosWorld, startPosWorld).normalize();
         const TANGENT_OFFSET = 0.025;
         const RADIAL_OFFSET = 0.03;
@@ -1730,11 +1769,11 @@
             feature: 0xfde047,
           };
           for (const stop of tr.stops) {
-            const stopPos = latLonToUnitSphere(stop.lat, stop.lon);
+            const stopWorld = tpos(stop.lat, stop.lon, r);
             const { sprite: pinSprite, texture: pinTexture } = buildTraverseStopPin(
               STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
             );
-            pinSprite.position.set(stopPos.x * r, stopPos.y * r, stopPos.z * r);
+            pinSprite.position.copy(stopWorld);
             pinSprite.userData = {
               roverId: tr.rover_id,
               kind: 'traverse-stop',
@@ -2004,6 +2043,27 @@
         // Anchor on the surface; orient the group so +Y points away from
         // Moon centre (radially outward), so cone-style markers stand up.
         placeOnSphereTangent(group, { x, y, z }, r);
+        // #309 north azimuth — the angle that spins anything laid flat on
+        // this site's tangent plane (patch, selection/hover halo brackets)
+        // so its local north points to GEOGRAPHIC north. The wrapper quat
+        // above leaves the azimuth about the normal arbitrary; this is the
+        // single source of truth shared by the halos + the Tier-2 patch so
+        // the blue corner brackets line up with the north-aligned imagery.
+        const siteOrientationDeg =
+          site.lat != null && site.lon != null
+            ? azimuthToAlignNorth(site.lat, site.lon, group.quaternion)
+            : 0;
+        // Spin a flat-laid child (halo etc.) about the surface normal by the
+        // north azimuth. A Ry wrapper around the child reproduces the
+        // patch's Ry∘Rx orientation exactly (child keeps its rotateX(-90°)
+        // flat-lay; wrapper rotates about the wrapper Y = surface normal).
+        const northSpun = (child: THREE.Object3D): THREE.Object3D => {
+          if (!siteOrientationDeg) return child;
+          const spin = new THREE.Group();
+          spin.rotation.y = (siteOrientationDeg * Math.PI) / 180;
+          spin.add(child);
+          return spin;
+        };
         attachPickableHit({ dotGroup: group, siteId: site.id });
         // Label with leader line, floating radially outward (along the
         // group's local +Y, which is surface-normal away from Moon
@@ -2028,7 +2088,8 @@
           lay: true,
           aspect: haloAspect,
         });
-        group.add(halo);
+        // North-align the corner brackets with the rotated patch (#309).
+        group.add(northSpun(halo));
 
         // Hover halo — same flat-on-ground pose as the selection halo
         // but built with a much thicker stroke + soft inner fill so the
@@ -2042,7 +2103,7 @@
         // wider rectangle so the affordance reads against the LROC
         // patch below.
         const hoverHalo = buildHoverHalo(haloAspect);
-        group.add(hoverHalo);
+        group.add(northSpun(hoverHalo));
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).
         // Sites whose surface-hotspots.json sidecar gives
@@ -2095,6 +2156,16 @@
                       // to a stylized rectangle whose aspect matches
                       // the region's lon-extent vs lat-extent ratio.
                       regionBounds: site.region_bounds,
+                      // #309 north alignment: spin the north-up HiRISE/CTX
+                      // texture so its north points to geographic north on
+                      // the globe — same azimuth the halo brackets use, so
+                      // imagery + brackets stay locked together.
+                      orientationDeg: siteOrientationDeg,
+                      // #309 step 2 (option A): true ground extents drive
+                      // literal co-scale of the detail patch vs the regional
+                      // patch, so a crater is the same size across the seam.
+                      groundMeters: site.hotspot_tier2_ground_m,
+                      regionalGroundMeters: site.hotspot_tier2_regional_ground_m,
                     });
                   }
                 : undefined;
@@ -2759,7 +2830,9 @@
         // of the page itself.
         e.preventDefault();
         const d = tDist(e.touches[0], e.touches[1]);
-        camRTarget = Math.max(30.2, Math.min(200, camRTarget * (pinchPrev / d)));
+        // Floor lowered 30.2 → 30.08 to match the wheel floor so touch can
+        // reach the manual 3D HiRISE zoom band before flat-patch (#309).
+        camRTarget = Math.max(30.08, Math.min(200, camRTarget * (pinchPrev / d)));
         // Pan via midpoint delta — mirrors the desktop Shift+drag path.
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
@@ -4071,7 +4144,16 @@
           // patch-pin visible. Trigger lifted to top-level so it runs
           // every frame; debug block below now contains only debug
           // overlay state.
-          const SPHERE_TO_FLAT_CAM_R = 30.3;
+          // 30.3 → 30.1 (#309 feedback): hold off the auto flat-patch flip
+          // so MANUAL wheel/pinch zoom has a real 3D band (30.32 → 30.1) to
+          // grow the now-literally-co-scaled HiRISE patch before the 2D
+          // flat-patch takes over. Also softens the handoff — by 30.1 the
+          // 3D HiRISE has grown close to the flat-patch's entry scale, so
+          // the cross-fade no longer jumps. Stays above the near-plane-safe
+          // sphere floor (patch sits 0.08u from the camera at 30.1 > 0.05
+          // near). The Zoom-to-detail button still lands past this to open
+          // the flat-patch immediately (flyToDetail).
+          const SPHERE_TO_FLAT_CAM_R = 30.1;
           if (
             flatPatchPhase === 'hidden' &&
             !panoramaActive &&

@@ -127,6 +127,20 @@ export interface SurfaceSite {
    */
   hotspot_tier2_regional_source?: string;
   /**
+   * True ground width of the detail (HiRISE/LROC NAC) crop in metres
+   * — 2048 px × source resolution (≈512 m at 0.25 m/px). Written by the
+   * fetch pipeline. Pairs with `hotspot_tier2_regional_ground_m` to let
+   * the surface-patch builder co-scale the detail patch LITERALLY against
+   * the regional patch (#309) so overlapping content matches at the seam.
+   */
+  hotspot_tier2_ground_m?: number;
+  /**
+   * True ground width of the regional (CTX/WAC) crop in metres — 3072 px
+   * × 5 m/px (≈15360 m for the Murray Lab CTX mosaic). Written by the
+   * fetch pipeline. See `hotspot_tier2_ground_m`.
+   */
+  hotspot_tier2_regional_ground_m?: number;
+  /**
    * Operator override for the auto-pick HiRISE product. When set,
    * the fetch pipeline skips the catalog candidate ranking and
    * pulls this specific product ID. Also surfaced in the info card

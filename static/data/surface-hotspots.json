@@ -167,7 +167,9 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/viking1-lander/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/viking1-lander/tier2-ctx.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "viking2-lander": {
       "hotspot_tier_max": 3,
@@ -176,7 +178,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "mars-pathfinder": {
       "hotspot_tier_max": 3,
@@ -185,7 +189,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "spirit": {
       "hotspot_tier_max": 3,
@@ -204,7 +210,9 @@
         "credit_team": "NASA/JPL-Caltech/Cornell",
         "nasa_id": "PIA01906"
       },
-      "traverse_stop_link": "sol-590"
+      "traverse_stop_link": "sol-590",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "opportunity": {
       "hotspot_tier_max": 3,
@@ -223,7 +231,9 @@
         "credit_team": "NASA/JPL-Caltech/Cornell",
         "nasa_id": "PIA05783"
       },
-      "traverse_stop_link": "sol-56"
+      "traverse_stop_link": "sol-56",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "curiosity": {
       "hotspot_tier_max": 3,
@@ -279,7 +289,9 @@
           "body": "Layered slopes of Aeolis Mons, the 5 km mountain at the centre of Gale Crater that Curiosity has been climbing since 2014."
         }
       ],
-      "traverse_stop_link": "sol-3500"
+      "traverse_stop_link": "sol-3500",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "perseverance": {
       "hotspot_tier_max": 3,
@@ -335,7 +347,9 @@
           "body": "Foreground of every Mastcam-Z 360° — solar-panel-style deck, sample-tube cache visible at right."
         }
       ],
-      "traverse_stop_link": "sol-38"
+      "traverse_stop_link": "sol-38",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "phoenix": {
       "hotspot_tier_max": 3,
@@ -344,7 +358,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/phoenix/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "insight": {
       "hotspot_tier_max": 3,
@@ -353,7 +369,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/insight/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/insight/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/insight/tier3-pan.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "luna9": {
       "hotspot_tier_max": 3,
@@ -415,7 +433,9 @@
           }
         ]
       },
-      "panorama_annotations": []
+      "panorama_annotations": [],
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "change3": {
       "hotspot_tier_max": 3,
@@ -488,7 +508,9 @@
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/zhurong/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/zhurong/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "chandrayaan3": {
       "hotspot_tier_max": 3,
@@ -548,7 +570,9 @@
       "location_uncertainty_m": 50,
       "crashed": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     },
     "beagle2": {
       "hotspot_tier_max": 2,
@@ -556,7 +580,9 @@
       "hotspot_tier2_source": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_ground_m": 15360
     }
   }
 }

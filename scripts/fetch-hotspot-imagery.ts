@@ -54,6 +54,8 @@ interface HotspotSidecar {
       hotspot_tier2_source?: string;
       hotspot_tier2_force_product_id?: string;
       location_uncertainty_m?: number;
+      hotspot_tier2_ground_m?: number;
+      hotspot_tier2_regional_ground_m?: number;
     }
   >;
 }
@@ -212,6 +214,16 @@ async function main(): Promise<void> {
         .filter((e) => e !== null);
       await upsertProvenanceEntries(provenanceEntries);
       console.log(`  Provenance: ${provenanceEntries.length} entries upserted`);
+
+      // True detail ground extent (#309 step 2) — drives literal co-scale
+      // of the detail patch in the surface-patch builder. 2048 px is the
+      // HiRISE crop size (fetch-mars.ts); ground = crop px × source res.
+      for (const f of marsResult.fetched) {
+        const e = sidecar.entries[f.siteId];
+        if (e) e.hotspot_tier2_ground_m = Math.round(2048 * f.cropMeta.resolutionMPerPx);
+      }
+      await fs.writeFile(SIDECAR_PATH, JSON.stringify(sidecar, null, 2) + '\n');
+      console.log(`  Sidecar: detail ground extents written`);
     }
   }
 
@@ -253,6 +265,15 @@ async function main(): Promise<void> {
         .filter((e) => e !== null);
       await upsertProvenanceEntries(provenanceEntries);
       console.log(`  Provenance: ${provenanceEntries.length} CTX entries upserted`);
+
+      // True regional ground extent (#309 step 2). 3072 px is the CTX crop
+      // size (fetch-mars-ctx.ts); ground = crop px × source res (5 m/px).
+      for (const f of ctxResult.fetched) {
+        const e = sidecar.entries[f.siteId];
+        if (e) e.hotspot_tier2_regional_ground_m = Math.round(3072 * f.cropMeta.resolutionMPerPx);
+      }
+      await fs.writeFile(SIDECAR_PATH, JSON.stringify(sidecar, null, 2) + '\n');
+      console.log(`  Sidecar: regional ground extents written`);
     }
   }
 

@@ -22,7 +22,11 @@
     tickOrbiterDot,
     type OrbiterMarker,
   } from '$lib/three/orbiter-group';
-  import { placeOnSphereTangent, azimuthToAlignNorth } from '$lib/three/place-on-sphere';
+  import {
+    placeOnSphereTangent,
+    azimuthToAlignNorth,
+    azimuthToAlignDir,
+  } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { pickClosest2d } from '$lib/three/pick-closest-2d';
@@ -1473,6 +1477,11 @@
     // captions go in here so they ramp opacity in lockstep with the
     // hotspot detail patches.
     const tier2DelayedReveal: Array<THREE.Line | THREE.Mesh | THREE.Sprite | THREE.Group> = [];
+    // Along-route HiRISE detail patches (#360). Built per route_patches
+    // entry on the magnified traverse; their detail meshes ramp opacity
+    // with the same detailOpacity curve as the landing detail patch.
+    const routePatchGroups: THREE.Object3D[] = [];
+    const routePatchMaterials: Array<THREE.Material & { opacity: number }> = [];
 
     function buildTraverseCaption(
       text: string,
@@ -1509,9 +1518,18 @@
       texture.needsUpdate = true;
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
-      const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false });
+      // depthTest:false + high renderOrder → captions always read ON TOP
+      // of the route HiRISE patches + terrain, never occluded (#360 — "make
+      // all labelling on top always").
+      const mat = new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false,
+      });
       const sprite = new THREE.Sprite(mat);
       sprite.scale.set(worldSize, worldSize * (96 / 512), 1);
+      sprite.renderOrder = 8;
       const group = new THREE.Group();
       group.add(sprite);
       return { group, texture };
@@ -1568,8 +1586,11 @@
         map: texture,
         transparent: true,
         depthWrite: false,
+        // Always on top of the route HiRISE patches (#360).
+        depthTest: false,
       });
       const sprite = new THREE.Sprite(mat);
+      sprite.renderOrder = 8;
       sprite.scale.set(1, 1.5, 1);
       sprite.center.set(0.5, 0);
       return { sprite, texture };
@@ -1601,6 +1622,13 @@
         tl.endLabelTexture?.dispose();
       }
       traverseLines.length = 0;
+      // Tear down along-route HiRISE patches from the previous build (#360).
+      for (const g of routePatchGroups) {
+        disposeObject3d(g);
+        planetMesh.remove(g);
+      }
+      routePatchGroups.length = 0;
+      routePatchMaterials.length = 0;
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
         // Prepend the rover's published landing lat/lon when the first
@@ -1677,6 +1705,10 @@
           transparent: true,
           opacity: isActive ? 0.95 : 0.7,
           dashed: false,
+          // Draw the trail ON TOP of the along-route HiRISE patches (#360)
+          // — without this the 0.1u detail patches (rendered just above the
+          // line) occlude the path as you zoom in, hiding the route.
+          depthTest: false,
         });
         lineMaterial.resolution.set(
           container?.clientWidth || window.innerWidth,
@@ -1684,6 +1716,7 @@
         );
         const line = new Line2(lineGeo, lineMaterial);
         line.computeLineDistances();
+        line.renderOrder = 6;
         line.userData = { roverId: tr.rover_id, kind: 'traverse' };
         planetMesh.add(line);
         tier2DelayedReveal.push(line);
@@ -1785,6 +1818,60 @@
             tier2DelayedReveal.push(pinSprite);
             stopPins.push(pinSprite);
             stopPinTextures.push(pinTexture);
+          }
+        }
+
+        // Along-route HiRISE detail patches (#360) — one per route_patches
+        // entry, dropped on the MAGNIFIED traverse so the user can zoom
+        // into HiRISE anywhere the rover drove. Detail-only (no regional
+        // disc); co-scaled + north-aligned exactly like the landing patch.
+        if (tr.route_patches?.length) {
+          const regionalGroundForPatch = trSite?.hotspot_tier2_regional_ground_m ?? 15360;
+          // Path-travel direction at a route point (#360): direction of the
+          // nearest polyline segment, in MAGNIFIED world space. Route patches
+          // orient to this instead of geographic north so they tile neatly
+          // along the traverse (Marko's call — accepts losing CTX-north match
+          // on the route segments).
+          const pathDirAt = (lat: number, lon: number): THREE.Vector3 => {
+            let best = Infinity;
+            let segIdx = 1;
+            for (let i = 1; i < points.length; i++) {
+              const mlat = (points[i - 1][0] + points[i][0]) / 2;
+              const mlon = (points[i - 1][1] + points[i][1]) / 2;
+              const d = (mlat - lat) ** 2 + (mlon - lon) ** 2;
+              if (d < best) {
+                best = d;
+                segIdx = i;
+              }
+            }
+            const a = tpos(points[segIdx - 1][0], points[segIdx - 1][1], r);
+            const b = tpos(points[segIdx][0], points[segIdx][1], r);
+            return b.clone().sub(a);
+          };
+          for (const rp of tr.route_patches) {
+            const mUnit = tpos(rp.lat, rp.lon, r).normalize();
+            const wrap = new THREE.Group();
+            placeOnSphereTangent(wrap, mUnit, r);
+            const patchGroup = buildHotspotSurfacePatch({
+              textureUrl: rp.image,
+              accentColor: color,
+              siteId: tr.rover_id,
+              orientationDeg: azimuthToAlignDir(pathDirAt(rp.lat, rp.lon), wrap.quaternion),
+              groundMeters: rp.ground_m,
+              regionalGroundMeters: regionalGroundForPatch,
+            });
+            wrap.add(patchGroup);
+            planetMesh.add(wrap);
+            routePatchGroups.push(wrap);
+            // Collect detail materials so the reveal ramp can fade them in.
+            patchGroup.traverse((o) => {
+              if (o instanceof THREE.Mesh && o.userData?.layer === 'detail') {
+                const m = o.material as THREE.Material & { opacity: number };
+                m.transparent = true;
+                m.opacity = 0;
+                routePatchMaterials.push(m);
+              }
+            });
           }
         }
 
@@ -3830,6 +3917,15 @@
                 mat.opacity = detailOpacity * 0.95;
                 mat.transparent = true;
               }
+            }
+          }
+          // Along-route HiRISE patches (#360) — fade with the detail curve,
+          // gated by the TRAVERSES layer toggle (they belong to the route).
+          for (const g of routePatchGroups) g.visible = travVisible;
+          if (routePatchMaterials.length) {
+            for (const m of routePatchMaterials) {
+              m.opacity = travVisible ? detailOpacity : 0;
+              m.transparent = m.opacity < 0.99;
             }
           }
           if (loadTraverses != null) {

@@ -22,12 +22,18 @@
  */
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import sharp from 'sharp';
 import { findHiriseCandidates, hiriseProductIdToJP2Url } from './hirise-catalog.ts';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 
 const MARS_RADIUS_M = 3389500;
 const M_PER_DEG = (Math.PI / 180) * MARS_RADIUS_M;
+// Crop 2048 source px (≈512 m of ground at 0.25 m/px) for the true ground
+// extent, then downsample the OUTPUT to OUTPUT_PX. Route patches render
+// small (0.1u) until the deepest zoom, so 1024² is plenty and ~4× lighter
+// than the full-res landing patches (#360 repo-weight decision).
 const CROP_PX = 2048;
+const OUTPUT_PX = 1024;
 const POLITE_PAUSE_MS = 1500;
 const MAX_CANDIDATES = 8;
 
@@ -135,6 +141,17 @@ async function main() {
           outputPath,
           cropSize: CROP_PX,
         });
+        // Downsample the 2048² crop → OUTPUT_PX in place (ground extent
+        // unchanged; just lighter pixels). Read to a buffer first since
+        // sharp can't read+write the same path.
+        const full = await fs.readFile(outputPath);
+        await fs.writeFile(
+          outputPath,
+          await sharp(full)
+            .resize(OUTPUT_PX, OUTPUT_PX, { fit: 'fill' })
+            .jpeg({ quality: 85 })
+            .toBuffer(),
+        );
         lastProduct = productId;
         manifest.push({
           id: s.id,

@@ -21,7 +21,6 @@
  *   node --import tsx scripts/hotspots/fetch-mars-traverse.ts --rover curiosity [--interval-km 2]
  */
 import { promises as fs } from 'node:fs';
-import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { findHiriseCandidates, hiriseProductIdToJP2Url } from './hirise-catalog.ts';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';

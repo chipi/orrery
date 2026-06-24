@@ -87,6 +87,13 @@ async function loadMissionAndJumpToFlyby(
   await page.waitForTimeout(900);
 }
 
+// Skip on mobile-chromium — milestone-track click + cinematic peakHold
+// detection is the same scrub-adjacent UX that races touch pointer events.
+// Desktop covers the cinematic preset.
+test.beforeEach(({ page: _page }, testInfo) => {
+  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only cinematic peakHold');
+});
+
 test.describe('/fly iconic-shot peakHold smoke (one beat per planet)', () => {
   // reducedMotion gates the cruise-hold off (see updateCruiseHoldArming
   // in /fly/+page.svelte), so the wizard-dismiss → milestone-click path

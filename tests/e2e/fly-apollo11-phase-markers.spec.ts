@@ -49,6 +49,16 @@ async function loadApollo11(page: Page): Promise<void> {
   });
 }
 
+// Skip on mobile-chromium — same reason as fly-render-validation: the
+// touch-emulated pointer events race the rAF commit on scrub interactions,
+// blowing per-test timeouts and the shard's 45-min ceiling. Phase-marker
+// behaviour is view-independent (driven by flight.events[] + the cislunar
+// profile); desktop covers it. Mobile /fly UX coverage stays in
+// fly-cislunar.spec.ts and fly-no-cislunar.spec.ts (light smokes).
+test.beforeEach(({ page: _page }, testInfo) => {
+  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only phase-marker reference');
+});
+
 test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
   test('all 8 flight-event markers exist in the overlay (logical count)', async ({ page }) => {
     await loadApollo11(page);

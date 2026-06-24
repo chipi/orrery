@@ -70,11 +70,17 @@ jobs:
     # adding shards would only marginally improve wall-clock at full 2x
     # runner cost. Mobile is the actual bottleneck.
     #
-    # Why 2 shards and not 4: the per-leg overhead (checkout + setup-
-    # node + npm ci + npm run build + docker stack up + playwright
-    # install) is ~1.7 min. At 4 shards you spend more on overhead than
-    # you save. 2 shards keeps each leg's Playwright runtime at ~13 min
-    # while keeping setup overhead a sane fraction.
+    # Shard count = 4 (was 2, 2026-06-24): the touch-emulation overhead
+    # on mobile-chromium (synthetic pointerdown/pointerup per click + a
+    # long tail of /fly-related flakiness on scrub-by-touch UX that we
+    # now skip explicitly per-spec) pushed mobile-1-of-2 close to the
+    # 45 min job-timeout on every run, eventually cancelling. Per-leg
+    # overhead (checkout + setup-node + npm ci + build + docker up +
+    # playwright install) is ~1.7 min; at 4 shards each leg's Playwright
+    # runtime drops to ~10-12 min, comfortably under timeout. Public
+    # repo → unlimited Actions minutes, 20 concurrent runners; the
+    # extra 2 setup overheads (now 4 mobile + 1 desktop = 5 vs. 3) are
+    # free in $.
     strategy:
       fail-fast: false
       matrix:
@@ -83,11 +89,17 @@ jobs:
             shard: '1/1'
             shard_id: 'full'
           - project: mobile-chromium
-            shard: '1/2'
-            shard_id: '1-of-2'
+            shard: '1/4'
+            shard_id: '1-of-4'
           - project: mobile-chromium
-            shard: '2/2'
-            shard_id: '2-of-2'
+            shard: '2/4'
+            shard_id: '2-of-4'
+          - project: mobile-chromium
+            shard: '3/4'
+            shard_id: '3-of-4'
+          - project: mobile-chromium
+            shard: '4/4'
+            shard_id: '4-of-4'
     name: docker-e2e (${{ matrix.project }} ${{ matrix.shard_id }})
     runs-on: ubuntu-latest
     # workflow_run fires on EVERY completion of the upstream workflow

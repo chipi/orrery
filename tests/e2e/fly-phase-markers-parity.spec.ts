@@ -89,6 +89,14 @@ async function loadMission(page: Page, mission: string): Promise<string[]> {
   return errors;
 }
 
+// Skip on mobile-chromium — phase-marker overlay parity is view-
+// independent (same flight.events / cislunar_profile driving it on every
+// viewport); desktop coverage is sufficient. Avoids the touch-emulated
+// pointer event slowness × ALL_MISSIONS iteration cost.
+test.beforeEach(({ page: _page }, testInfo) => {
+  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only phase-marker parity');
+});
+
 test.describe('/fly phase-marker parity smoke (#107 Step 6i)', () => {
   for (const mission of ALL_MISSIONS) {
     test(`${mission} — overlay renders + count > 0 + HUD chip + clean console`, async ({

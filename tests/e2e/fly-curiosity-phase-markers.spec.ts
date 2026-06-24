@@ -39,6 +39,11 @@ async function loadCuriosity(page: Page): Promise<void> {
   });
 }
 
+// Skip on mobile-chromium — same reason as the Apollo 11 sibling spec.
+test.beforeEach(({ page: _page }, testInfo) => {
+  test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only phase-marker reference');
+});
+
 test.describe('/fly Curiosity — phase markers (#107 finding 6 — Mars depth reference)', () => {
   test('all 8 flight-event markers exist in the overlay (logical count)', async ({ page }) => {
     await loadCuriosity(page);

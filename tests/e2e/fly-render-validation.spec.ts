@@ -134,7 +134,7 @@ function signalDelayFromDistAu(distAu: number): number {
 // fly-curiosity-phase-markers / fly-apollo11-phase-markers) which test
 // the touch UX directly; this file's job is the math invariants. Same
 // pattern as perf-explore-iconic-clicks.spec.ts's mobile skip.
-test.beforeEach((_args, testInfo) => {
+test.beforeEach(({ page: _page }, testInfo) => {
   test.skip(testInfo.project.name === 'mobile-chromium', 'desktop-only math invariants');
 });
 

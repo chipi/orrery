@@ -121,6 +121,7 @@
   import { dimMaterials } from '$lib/three/dim-materials';
   import {
     buildHotspotSurfacePatch,
+    buildRegionalPatch,
     aspectFromRegion,
     REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
   } from '$lib/hotspot-surface-patch';
@@ -1832,6 +1833,52 @@
         // disc); co-scaled + north-aligned exactly like the landing patch.
         if (tr.route_patches?.length) {
           const regionalGroundForPatch = trSite?.hotspot_tier2_regional_ground_m ?? 15360;
+          // Regional CTX at the traverse MIDPOINT (#360) — re-centred so the
+          // whole drive frames inside the 15.4 km context (fetch-mars-ctx
+          // crops the same arc-length midpoint). Rendered here instead of on
+          // the landing patch, which skips its regional for traverse rovers.
+          const regionalUrl = trSite?.hotspot_tier2_regional_source;
+          if (regionalUrl) {
+            const raw = tr.points;
+            const seg = raw.slice(1).map((b, i) => {
+              const a = raw[i];
+              return Math.hypot(b[0] - a[0], (b[1] - a[1]) * Math.cos((a[0] * Math.PI) / 180));
+            });
+            const halfLen = seg.reduce((s, d) => s + d, 0) / 2;
+            let acc = 0;
+            let midLat = raw[0][0];
+            let midLon = raw[0][1];
+            for (let i = 0; i < seg.length; i++) {
+              if (acc + seg[i] >= halfLen) {
+                const t = seg[i] ? (halfLen - acc) / seg[i] : 0;
+                midLat = raw[i][0] + (raw[i + 1][0] - raw[i][0]) * t;
+                midLon = raw[i][1] + (raw[i + 1][1] - raw[i][1]) * t;
+                break;
+              }
+              acc += seg[i];
+            }
+            const midUnit = tpos(midLat, midLon, r).normalize();
+            const rmLat = (Math.asin(Math.max(-1, Math.min(1, midUnit.y))) * 180) / Math.PI;
+            const rmLon = (Math.atan2(-midUnit.z, midUnit.x) * 180) / Math.PI;
+            const regWrap = new THREE.Group();
+            placeOnSphereTangent(regWrap, midUnit, r);
+            const regGroup = buildRegionalPatch({
+              textureUrl: regionalUrl,
+              siteId: tr.rover_id,
+              orientationDeg: azimuthToAlignNorth(rmLat, rmLon, regWrap.quaternion),
+            });
+            regWrap.add(regGroup);
+            planetMesh.add(regWrap);
+            routePatchGroups.push(regWrap);
+            regGroup.traverse((o) => {
+              if (o instanceof THREE.Mesh && o.userData?.layer === 'regional') {
+                const m = o.material as THREE.Material & { opacity: number };
+                m.transparent = true;
+                m.opacity = 0;
+                routeRegionalMaterials.push(m);
+              }
+            });
+          }
           // Path-travel direction at a route point (#360): direction of the
           // nearest polyline segment, in MAGNIFIED world space. Route patches
           // orient to this instead of geographic north so they tile neatly
@@ -2230,8 +2277,12 @@
                     // (Chang'e 2 mosaic or LROC WAC placeholder when
                     // wired; undefined today on /moon — patch builder
                     // skips the regional disc cleanly).
+                    // #360: rovers with a traverse render their regional CTX
+                    // at the traverse MIDPOINT (rebuildTraverses), not on the
+                    // landing patch — so skip the landing regional here to
+                    // avoid a duplicate disc centred on the wrong point.
                     let regionalTextureUrl: string | undefined;
-                    if (tier2RegionalSource) {
+                    if (tier2RegionalSource && !traverses[site.id]) {
                       const rEntry = getImageEntry(tier2RegionalSource);
                       regionalTextureUrl =
                         (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
@@ -3924,14 +3975,22 @@
               }
             }
           }
-          // Along-route HiRISE patches (#360) — fade with the detail curve,
-          // gated by the TRAVERSES layer toggle (they belong to the route).
-          for (const g of routePatchGroups) g.visible = travVisible;
-          if (routePatchMaterials.length) {
-            for (const m of routePatchMaterials) {
-              m.opacity = travVisible ? detailOpacity : 0;
-              m.transparent = m.opacity < 0.99;
-            }
+          // Along-route patches (#360), gated by the TRAVERSES layer toggle.
+          // The midpoint regional CTX fades in on the EARLIER regional curve;
+          // the detail HiRISE patches fade in later on the detail curve —
+          // same progressive-detail behaviour as the landing tiers.
+          const routeVisible =
+            loadTraverses != null &&
+            layerTraverses &&
+            (regionalOpacity > 0.01 || detailOpacity > 0.01);
+          for (const g of routePatchGroups) g.visible = routeVisible;
+          for (const m of routePatchMaterials) {
+            m.opacity = routeVisible ? detailOpacity : 0;
+            m.transparent = m.opacity < 0.99;
+          }
+          for (const m of routeRegionalMaterials) {
+            m.opacity = routeVisible ? regionalOpacity : 0;
+            m.transparent = m.opacity < 0.99;
           }
           if (loadTraverses != null) {
             // Screen-pixel-stable sizing for every traverse marker

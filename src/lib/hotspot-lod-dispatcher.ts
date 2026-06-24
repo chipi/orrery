@@ -69,12 +69,17 @@ export const HOTSPOT_TIER_THRESHOLDS_PX = {
  * to Tier 0 + their tier1+ groups disposed. `high` mode bypasses this
  * ceiling entirely — see updateHotspotLOD.
  *
- * Bumped to 16 from the original 6 because the original was specced
- * before /mars hosted 13 hotspots; a 6-ceiling against a 13-hotspot
- * planet causes LRU thrash in `high` mode where every hotspot fights
- * to stay promoted and none finishes its 600 ms fade.
+ * Bumped 6 → 16 → 28. The original 6 predated /mars's 13 hotspots; 16
+ * predated the closer select-landing zoom (#361, camR 50 → 37) which —
+ * because projected radius is distance-based — promotes most of a body's
+ * near-hemisphere hotspots at once. /moon has 18 surface hotspots, so 16
+ * pinned the count at the ceiling and the LRU demoted/re-promoted 2 every
+ * frame: a classic thrash where `fadeProgress` resets each frame, the
+ * tier-2 cross-fade never completes, and the patch opacity oscillates →
+ * the rapid blink reported on selecting SLIM / Chang'e sites. 28 clears
+ * every current body's hotspot count (moon 18, mars 13) with headroom.
  */
-export const HOTSPOT_LRU_CEILING = 16;
+export const HOTSPOT_LRU_CEILING = 28;
 
 /**
  * HOTSPOTS chip state (PRD-014 / RFC-017 §S7, sub-issue #115).

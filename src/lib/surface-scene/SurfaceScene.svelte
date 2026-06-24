@@ -383,6 +383,25 @@
   // while still fading in).
   let flatPatchTransitionTimer: ReturnType<typeof setTimeout> | null = null;
   const FLAT_PATCH_FADE_MS = 220;
+  // #361: /moon landers whose regional context layer comes from JAXA's
+  // SELENE (Kaguya) Terrain Camera rather than LROC NAC ROI — drives the
+  // on-canvas "Regional view" credit so the imagery is honestly attributed
+  // (these are the only Moon sites fetch-moon-kaguya-regional.ts wired).
+  // Apollo + any future LROC-sourced regional keep the LROC credit.
+  const KAGUYA_REGIONAL_MOON_SITES = new Set([
+    'luna9',
+    'luna16',
+    'luna17',
+    'luna21',
+    'luna24',
+    'change3',
+    'change4',
+    'change5',
+    'change6',
+    'chandrayaan3',
+    'slim',
+    'beresheet',
+  ]);
   /** Sphere's current km/px at the deepest-zoom HiRISE distance.
    *  Computed each animate frame and passed into SurfaceFlatPatch as
    *  the entry zoom so the photo content stays at the *same pixel
@@ -4387,12 +4406,22 @@
                     // where it isn't). Honest middle estimate.
                     uncertaintyM: 100,
                   });
+                } else if (KAGUYA_REGIONAL_MOON_SITES.has(site.id)) {
+                  // Moon regional layer from JAXA SELENE (Kaguya) Terrain
+                  // Camera (#361) — the CTX-equivalent context for the 12
+                  // landers with no LROC NAC ROI regional. ~6 m/px TC COG,
+                  // window-cropped via USGS Astrogeology ARD.
+                  layers.push({
+                    layerLabel: 'Regional view',
+                    sourceTitle: 'Kaguya (SELENE) TC regional context',
+                    sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
+                    resolutionText: '~6 m/px (2560² crop · ~16 km)',
+                    sourceUrl: 'https://www.kaguya.jaxa.jp/',
+                    licenseShort: 'JAXA-OPEN',
+                  });
                 } else {
-                  // Moon regional layer — same LROC NAC ROI source as
-                  // detail, but cropped at a wider 3072² window (~15 km).
-                  // No separate Chang'e 2 / LROC WAC product needed; the
-                  // NAC ROI mosaic at _5M.IMG resolution covers the
-                  // full regional context with native quality.
+                  // Moon regional layer — LROC NAC ROI mosaic (Apollo set),
+                  // cropped at a wider 3072² window (~15 km).
                   layers.push({
                     layerLabel: 'Regional view',
                     sourceTitle: 'LROC NAC ROI regional mosaic',

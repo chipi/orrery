@@ -164,6 +164,23 @@ describe('provenanceSourceId', () => {
       'esa',
     );
   });
+  it('routes orbital instrument imagery to its own per-instrument section (#360)', () => {
+    // HiRISE + CTX surface patches are a distinct product class — they get
+    // dedicated NASA · HiRISE / NASA · CTX sections, not the general NASA
+    // bucket. The instrument field wins over the agency mapping.
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'NASA', instrument: 'HiRISE' })),
+    ).toBe('nasa-hirise');
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'derived-mosaic', agency: 'NASA', instrument: 'CTX' }),
+      ),
+    ).toBe('nasa-ctx');
+    // Without an instrument, the agency mapping still applies.
+    expect(provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'NASA' }))).toBe(
+      'nasa',
+    );
+  });
 });
 
 describe('textSourceId', () => {

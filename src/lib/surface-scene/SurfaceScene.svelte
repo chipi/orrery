@@ -1482,6 +1482,10 @@
     // with the same detailOpacity curve as the landing detail patch.
     const routePatchGroups: THREE.Object3D[] = [];
     const routePatchMaterials: Array<THREE.Material & { opacity: number }> = [];
+    // Regional CTX patches rendered at the traverse MIDPOINT (#360) — ramped
+    // on the EARLIER regional-opacity curve (like the landing CTX) so the
+    // context frames in before the detail patches fade up.
+    const routeRegionalMaterials: Array<THREE.Material & { opacity: number }> = [];
 
     function buildTraverseCaption(
       text: string,
@@ -1629,6 +1633,7 @@
       }
       routePatchGroups.length = 0;
       routePatchMaterials.length = 0;
+      routeRegionalMaterials.length = 0;
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
         // Prepend the rover's published landing lat/lon when the first

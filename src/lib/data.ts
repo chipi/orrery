@@ -1434,7 +1434,8 @@ export type ImageProvenanceSourceType =
   | 'wikimedia-commons'
   | 'nasa-images-api'
   | 'direct-agency'
-  | 'direct-other';
+  | 'direct-other'
+  | 'derived-mosaic';
 
 export interface ImageProvenanceEntry {
   id: string;

@@ -1902,6 +1902,10 @@
               orientationDeg: azimuthToAlignNorth(rmLat, rmLon, regWrap.quaternion),
             });
             regWrap.add(regGroup);
+            // Tag with the rover so the per-frame reveal can gate this
+            // midpoint CTX on the FOCUSED site only (#360 — see the
+            // traverse visibility loop).
+            regWrap.userData = { roverId: tr.rover_id };
             planetMesh.add(regWrap);
             routePatchGroups.push(regWrap);
             routeRegionalGroups.push(regWrap);
@@ -4055,12 +4059,21 @@
           // TRAVERSES layer toggle: invisible if layer off OR camR
           // too far for detail. End-dots pulse (sine wave) when active.
           const travVisible = loadTraverses != null && layerTraverses && detailOpacity > 0.01;
+          // #360: only the FOCUSED (selected) rover's traverse is shown.
+          // Previously every gate here was global-zoom-only, so reaching
+          // Tier-2 on ANY site faded in EVERY rover's trail + route patches.
+          // Off-site lines bleed especially badly because the trail draws
+          // with depthTest:false (renders through the planet). The rest of
+          // the route subsystem (selection bracket, crosshair, flat-patch)
+          // already gates on the selected site — bring the trail + patches
+          // in line so we show "just the one on the site we're looking at".
+          const focusedSiteId = selected?.id ?? null;
           for (const obj of tier2DelayedReveal) {
             if (
               obj.userData?.kind === 'traverse' ||
               (obj as { userData?: { kind?: string } }).userData?.kind === 'traverse'
             ) {
-              obj.visible = travVisible;
+              obj.visible = travVisible && obj.userData?.roverId === focusedSiteId;
               const mat = (obj as THREE.Line).material as THREE.Material & { opacity: number };
               if (mat) {
                 mat.opacity = detailOpacity * 0.95;
@@ -4077,8 +4090,12 @@
           const routeOn = loadTraverses != null && layerTraverses;
           const detailVisible = routeOn && detailOpacity > 0.01;
           const regionalVisible = routeOn && regionalOpacity > 0.01;
-          for (const g of routeDetailGroups) g.visible = detailVisible;
-          for (const g of routeRegionalGroups) g.visible = regionalVisible;
+          // Per-site gate (#360): a route patch only shows for the focused
+          // rover — otherwise every rover's HiRISE/CTX patches reveal at once.
+          for (const g of routeDetailGroups)
+            g.visible = detailVisible && g.userData?.roverId === focusedSiteId;
+          for (const g of routeRegionalGroups)
+            g.visible = regionalVisible && g.userData?.roverId === focusedSiteId;
           for (const m of routePatchMaterials) {
             m.opacity = detailOpacity;
             m.transparent = true;
@@ -4153,10 +4170,13 @@
             const tangentOffsetWorld = captionTangentOffsetPx * worldPerPx;
             const radialOffsetWorld = captionRadialOffsetPx * worldPerPx;
             for (const tl of traverseLines) {
-              tl.line.visible = travVisible;
-              tl.endDot.visible = travVisible;
-              if (tl.startLabel) tl.startLabel.visible = travVisible;
-              if (tl.endLabel) tl.endLabel.visible = travVisible;
+              // #360: show only the focused rover's trail — see the gate
+              // rationale above the tier2DelayedReveal loop.
+              const tlShow = travVisible && tl.roverId === focusedSiteId;
+              tl.line.visible = tlShow;
+              tl.endDot.visible = tlShow;
+              if (tl.startLabel) tl.startLabel.visible = tlShow;
+              if (tl.endLabel) tl.endLabel.visible = tlShow;
               tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
               const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
               // No pulse — flat 95% opacity for active rovers, 85% for ended (was
@@ -4206,7 +4226,7 @@
               // un-textured rectangle (image 21 feedback, 2026-06-03).
               // Line + start/end + captions stay on the wider gate so
               // the user gets a path-preview earlier in the zoom.
-              const stopPinsVisible = travVisible && detailOpacity > 0.6;
+              const stopPinsVisible = tlShow && detailOpacity > 0.6;
               for (const sp of tl.stopPins) {
                 sp.visible = stopPinsVisible;
                 sp.scale.set(pinWorldW, pinWorldH, 1);

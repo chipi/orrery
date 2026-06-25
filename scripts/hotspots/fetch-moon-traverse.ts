@@ -51,8 +51,7 @@ interface StacFeature {
 
 function metresBetween(a: [number, number], b: [number, number]): number {
   const dLat = ((b[0] - a[0]) * Math.PI * MOON_RADIUS_M) / 180;
-  const dLon =
-    ((b[1] - a[1]) * Math.PI * MOON_RADIUS_M * Math.cos((a[0] * Math.PI) / 180)) / 180;
+  const dLon = ((b[1] - a[1]) * Math.PI * MOON_RADIUS_M * Math.cos((a[0] * Math.PI) / 180)) / 180;
   return Math.hypot(dLat, dLon);
 }
 
@@ -120,9 +119,7 @@ async function cropKaguyaAt(
     feats = feats.concat(round.filter((f) => !seen.has(f.id)));
     if (feats.length >= 12) break;
   }
-  const ranked = feats
-    .map((f) => ({ f, sc: rankScore(f, lat, lon) }))
-    .sort((a, b) => a.sc - b.sc);
+  const ranked = feats.map((f) => ({ f, sc: rankScore(f, lat, lon) })).sort((a, b) => a.sc - b.sc);
   let tried = 0;
   for (const { f } of ranked) {
     if (tried >= 10) break;
@@ -142,7 +139,10 @@ async function cropKaguyaAt(
       const full = await fs.readFile(outputPath);
       await fs.writeFile(
         outputPath,
-        await sharp(full).resize(OUTPUT_PX, OUTPUT_PX, { fit: 'fill' }).jpeg({ quality: 85 }).toBuffer(),
+        await sharp(full)
+          .resize(OUTPUT_PX, OUTPUT_PX, { fit: 'fill' })
+          .jpeg({ quality: 85 })
+          .toBuffer(),
       );
       return { productId: f.id, resolutionMPerPx: crop.resolutionMPerPx };
     } catch (err) {
@@ -160,7 +160,9 @@ async function doRover(rover: string): Promise<void> {
   const len = totalLengthM(tr.points);
   const intervalM = Math.max(250, len / 5);
   const pts = resample(tr.points, intervalM);
-  console.log(`▶ ${rover}: ${(len / 1000).toFixed(2)} km drive → ${pts.length} patches (every ${(intervalM / 1000).toFixed(2)} km)`);
+  console.log(
+    `▶ ${rover}: ${(len / 1000).toFixed(2)} km drive → ${pts.length} patches (every ${(intervalM / 1000).toFixed(2)} km)`,
+  );
 
   const outDir = path.join('static/images/hotspots/moon', rover, 'traverse');
   await fs.mkdir(outDir, { recursive: true });
@@ -168,7 +170,8 @@ async function doRover(rover: string): Promise<void> {
   const manifest: Array<Record<string, unknown>> = [];
   for (let i = 0; i < pts.length; i++) {
     const [lat, lon] = pts[i];
-    const id = i === 0 ? 'start' : i === pts.length - 1 ? 'end' : `km-${String(i).padStart(2, '0')}`;
+    const id =
+      i === 0 ? 'start' : i === pts.length - 1 ? 'end' : `km-${String(i).padStart(2, '0')}`;
     const outputPath = path.join(outDir, `${id}.jpg`);
     const r = await cropKaguyaAt(lat, lon, outputPath);
     if (!r) {
@@ -180,7 +183,8 @@ async function doRover(rover: string): Promise<void> {
       lat: Number(lat.toFixed(5)),
       lon: Number(lon.toFixed(5)),
       kind: 'feature',
-      label: id === 'start' ? 'Landing / drive start' : id === 'end' ? 'Final position' : `Along route`,
+      label:
+        id === 'start' ? 'Landing / drive start' : id === 'end' ? 'Final position' : `Along route`,
       image: `/${path.relative('static', outputPath)}`,
       product_id: r.productId,
       resolution_m_per_px: r.resolutionMPerPx,
@@ -190,7 +194,10 @@ async function doRover(rover: string): Promise<void> {
   }
 
   const manifestPath = path.join('static/data/moon-traverses', `${rover}.route-patches.json`);
-  await fs.writeFile(manifestPath, JSON.stringify({ rover_id: rover, patches: manifest }, null, 2) + '\n');
+  await fs.writeFile(
+    manifestPath,
+    JSON.stringify({ rover_id: rover, patches: manifest }, null, 2) + '\n',
+  );
   console.log(`  ${manifest.length}/${pts.length} → ${manifestPath}`);
 
   if (manifest.length) {

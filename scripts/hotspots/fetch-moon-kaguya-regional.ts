@@ -134,9 +134,7 @@ async function fetchSite(siteId: string, lat: number, lon: number): Promise<bool
     feats = feats.concat(round.filter((f) => !seen.has(f.id)));
     if (feats.length >= 12) break;
   }
-  const ranked = feats
-    .map((f) => ({ f, sc: rankScore(f, lat, lon) }))
-    .sort((a, b) => a.sc - b.sc);
+  const ranked = feats.map((f) => ({ f, sc: rankScore(f, lat, lon) })).sort((a, b) => a.sc - b.sc);
 
   if (!ranked.length) {
     console.log(`  ✗ ${siteId}: no Kaguya TC observations returned by STAC`);
@@ -187,7 +185,9 @@ async function fetchSite(siteId: string, lat: number, lon: number): Promise<bool
 
 async function main(): Promise<void> {
   const only = process.argv[2];
-  const moon = JSON.parse(await fs.readFile(MOON_SITES_PATH, 'utf-8')) as MoonSite[] | { sites: MoonSite[] };
+  const moon = JSON.parse(await fs.readFile(MOON_SITES_PATH, 'utf-8')) as
+    | MoonSite[]
+    | { sites: MoonSite[] };
   const arr = Array.isArray(moon) ? moon : moon.sites;
   const byId = new Map(arr.map((s) => [s.id, s]));
 
@@ -207,7 +207,9 @@ async function main(): Promise<void> {
     (success ? ok : fail).push(id);
   }
 
-  console.log(`\nDone. ok=${ok.length} [${ok.join(', ')}]  fail=${fail.length} [${fail.join(', ')}]`);
+  console.log(
+    `\nDone. ok=${ok.length} [${ok.join(', ')}]  fail=${fail.length} [${fail.join(', ')}]`,
+  );
 }
 
 main().catch((e) => {

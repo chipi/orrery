@@ -199,7 +199,11 @@ async function downloadAndCrop(spec: FeaturedSpec): Promise<{ outputPath: string
  * crop as the detail layer. Lower resolution than LROC NAC but real,
  * georegistered, no curation — and it can't be the wrong subject.
  */
-async function kaguyaFailover(siteId: string, lat: number, lon: number): Promise<ProvenanceEntry | null> {
+async function kaguyaFailover(
+  siteId: string,
+  lat: number,
+  lon: number,
+): Promise<ProvenanceEntry | null> {
   const reg = regionalPath(siteId);
   if (!existsSync(reg)) {
     console.log(`  ✗ ${siteId}: no Kaguya regional on disk — cannot fail over`);

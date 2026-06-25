@@ -426,6 +426,11 @@
     'slim',
     'beresheet',
   ]);
+  // #361: /moon landers whose DETAIL layer is the Kaguya regional (failover) —
+  // no LROC Featured Image exists, so fetch-moon-featured-images.ts copied the
+  // Kaguya crop in. Keep KAGUYA_DETAIL_MOON_SITES in sync with that script's
+  // failover set. Drives the on-canvas "Detail view" credit honestly.
+  const KAGUYA_DETAIL_MOON_SITES = new Set(['luna9']);
   /** Sphere's current km/px at the deepest-zoom HiRISE distance.
    *  Computed each animate frame and passed into SurfaceFlatPatch as
    *  the entry zoom so the photo content stays at the *same pixel
@@ -4493,13 +4498,26 @@
                     sourceUrl: 'https://www.uahirise.org/',
                     licenseShort: 'PD-NASA',
                   });
-                } else {
+                } else if (KAGUYA_DETAIL_MOON_SITES.has(site.id)) {
+                  // Failover detail (#361) — this site has no LROC Featured
+                  // Image, so the detail is its Kaguya TC regional crop.
                   layers.push({
                     layerLabel: 'Detail view',
-                    sourceTitle: 'LROC NAC ROI mosaic',
+                    sourceTitle: 'Kaguya (SELENE) TC',
+                    sourceAuthor: 'JAXA / SELENE (Kaguya) Terrain Camera',
+                    resolutionText: '~6 m/px',
+                    sourceUrl: 'https://www.kaguya.jaxa.jp/',
+                    licenseShort: 'JAXA-OPEN',
+                  });
+                } else {
+                  // LROC NAC Featured Image (#361) — pre-cropped orbital view
+                  // published by the LROC team, ~0.5–2 m/px native.
+                  layers.push({
+                    layerLabel: 'Detail view',
+                    sourceTitle: 'LROC NAC Featured Image',
                     sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                    resolutionText: '5 m/px',
-                    sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                    resolutionText: '~0.5–2 m/px',
+                    sourceUrl: 'https://www.lroc.asu.edu/',
                     licenseShort: 'PD-NASA',
                   });
                 }

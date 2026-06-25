@@ -95,14 +95,31 @@ async function stacSearch(lat: number, lon: number, halfDeg: number): Promise<St
  *  the site come first (ranked by margin = distance from footprint centre),
  *  then non-containing candidates by distance — TC monoscopic swaths are
  *  narrow strips, so the containing test is a hint, not a gate; GDAL's own
- *  no-data pre-crop check is the real filter. */
+ *  no-data pre-crop check is the real filter.
+ *
+ *  CRITICAL: collection dominates the rank. Kaguya's MONOSCOPIC observations
+ *  are the nominal mapping product — full-MTF, genuinely sharp at their GSD.
+ *  STEREOSCOPIC and especially SPSUPPORT (Spectral-Profiler-support) frames
+ *  are off-nominal and visibly SOFT — a 2560² crop from one looks like an
+ *  upscaled thumbnail even though the pixel count is identical (#361,
+ *  verified 1:1 vs Mars CTX). So always prefer a monoscopic frame, even a
+ *  coarser/less-centred one, over a sharper-on-paper stereo/spsupport frame;
+ *  only fall through to stereo/spsupport for sites with no monoscopic
+ *  coverage at all (luna9/16/17). */
+function collectionRank(f: StacFeature): number {
+  const href = f.assets?.image?.href ?? '';
+  if (href.includes('/monoscopic/')) return 0;
+  if (href.includes('/stereoscopic/')) return 1;
+  return 2; // spsupport / other — softest, last resort
+}
 function rankScore(f: StacFeature, lat: number, lon: number): number {
   const [w, s, e, n] = f.bbox;
   const cx = (w + e) / 2;
   const cy = (s + n) / 2;
   const dist = Math.hypot(lon - cx, lat - cy);
   const contains = lon >= w && lon <= e && lat >= s && lat <= n;
-  return contains ? dist : dist + 1000;
+  // Collection rank dominates (×1e6) — monoscopic always wins when present.
+  return collectionRank(f) * 1_000_000 + (contains ? dist : dist + 1000);
 }
 
 async function fetchSite(siteId: string, lat: number, lon: number): Promise<boolean> {

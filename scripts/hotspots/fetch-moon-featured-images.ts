@@ -1,23 +1,32 @@
 #!/usr/bin/env tsx
-import { promises as fs } from 'node:fs';
+import { promises as fs, existsSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { buildLrocProvenanceEntry, upsertProvenanceEntries } from './provenance.ts';
+import {
+  buildLrocProvenanceEntry,
+  buildKaguyaTcProvenanceEntry,
+  upsertProvenanceEntries,
+  type ProvenanceEntry,
+} from './provenance.ts';
 
 /**
- * Phase 2.5 — hand-curated LROC Featured Image fetch for the 11
- * non-Apollo Moon sites whose BDR NAC_ROI products don't cover the
- * actual landing coordinates.
+ * Moon Tier-2 DETAIL layer for the 11 non-Apollo landers (#361).
  *
- * Source: LROC team's published Featured Images at lroc.im-ldi.com.
- * Each post embeds a high-resolution PNG centered on the landing
- * site, already curated by the LROC team (best lighting + framing).
- * We download, sharp-resize to 2048² square, save as JPEG, and
- * upsert provenance — bypassing the GDAL crop path entirely (these
- * images are pre-cropped to the landing site, no projection needed).
+ * WHY this is the source: LROC NAC has imaged every landing site at ~0.5 m/px,
+ * but for these sites that data exists ONLY as raw camera-geometry frames
+ * (ODE EDRNAC4) — there is no pre-map-projected NAC product (verified: SDPPHO
+ * returns 0 here vs 99 at Apollo). Map-projecting raw NAC needs ISIS, which
+ * isn't installed. So the realistic sharp source is the LROC team's published
+ * **Featured Images** — pre-cropped, well-lit, georeferenced-by-eye PNGs at
+ * lroc.im-ldi.com. We download, sharp-resize to 2048² square, JPEG, upsert.
  *
- * Skip: luna9 — LROC team has not located it yet (early Soviet
- * landings lack precise coordinates; first soft landing 1966).
+ * ROBUSTNESS (the part that bit us — luna17 once pointed at a rover *photo*):
+ *  - **Orbital-surface guard** — reject any crop that's >40% near-black
+ *    (a hardware/studio photo has a black background; orbital terrain doesn't).
+ *  - **Kaguya failover** — a guard rejection, a download failure, or a site
+ *    with no Featured Image at all (luna9) falls back to that site's already-
+ *    fetched Kaguya TC regional crop. Lower-res but real, georegistered, and
+ *    can never be the wrong subject.
  *
  * Run: `npx tsx scripts/hotspots/fetch-moon-featured-images.ts`
  */
@@ -49,7 +58,11 @@ const FEATURED_IMAGES: FeaturedSpec[] = [
   },
   {
     siteId: 'luna17',
-    url: 'https://lroc.im-ldi.com/news/uploads/LROCiotw/lunokhod_1_big.png',
+    // FIX (#361): was `lunokhod_1_big.png` — that's the *rover hardware* photo,
+    // not the orbital view. This is the LROC NAC M175502049R orbital image of
+    // the site: Lunokhod 1, the lander, and the rover traverse tracks from
+    // above, with a 25 m scale bar. Passes the orbital-surface guard.
+    url: 'https://lroc.im-ldi.com/news/uploads/LROCiotw/M175502049R_L17_thumb.png',
     centerLat: 38.315,
     centerLon: 324.992,
     notes:
@@ -121,15 +134,33 @@ const FEATURED_IMAGES: FeaturedSpec[] = [
   },
 ];
 
+const detailPath = (siteId: string) =>
+  path.join('static', 'images', 'hotspots', 'moon', siteId, 'tier2-lroc.jpg');
+const regionalPath = (siteId: string) =>
+  path.join('static', 'images', 'hotspots', 'moon', siteId, 'tier2-regional.jpg');
+
+/**
+ * Orbital-surface guard. A real LROC orbital NAC crop is mid-gray regolith
+ * with fine texture and very few near-black pixels. A hardware/studio photo
+ * (a rover or lander on a stand) has a large black "space" background → a high
+ * near-black fraction. luna17's bad file measured 54.8 % dark; every correct
+ * orbital image measured ≤ 21.8 % (apollo17, valley shadows) and most < 3 %.
+ * Reject above 40 % so a wrong file can't silently ship — it falls over to
+ * Kaguya instead. (#361)
+ */
+const DARK_THRESHOLD = 24; // pixel value considered "near-black"
+const MAX_DARK_FRACTION = 0.4;
+async function darkFraction(jpgPath: string): Promise<number> {
+  const { data } = await sharp(jpgPath).greyscale().raw().toBuffer({ resolveWithObject: true });
+  let dark = 0;
+  for (let i = 0; i < data.length; i++) if (data[i] <= DARK_THRESHOLD) dark++;
+  return dark / data.length;
+}
+
+class GuardError extends Error {}
+
 async function downloadAndCrop(spec: FeaturedSpec): Promise<{ outputPath: string; bytes: number }> {
-  const outputPath = path.join(
-    'static',
-    'images',
-    'hotspots',
-    'moon',
-    spec.siteId,
-    'tier2-lroc.jpg',
-  );
+  const outputPath = detailPath(spec.siteId);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
 
   console.log(`  downloading ${spec.url}`);
@@ -150,45 +181,102 @@ async function downloadAndCrop(spec: FeaturedSpec): Promise<{ outputPath: string
     .jpeg({ quality: 88, mozjpeg: true })
     .toFile(outputPath);
 
+  // Guard: reject non-orbital imagery (the luna17 rover-photo failure mode).
+  const dark = await darkFraction(outputPath);
+  if (dark > MAX_DARK_FRACTION) {
+    throw new GuardError(
+      `${spec.siteId}: ${(dark * 100).toFixed(0)}% near-black — looks like a hardware/studio photo, not orbital surface`,
+    );
+  }
+
   const stat = await fs.stat(outputPath);
   return { outputPath, bytes: stat.size };
 }
 
+/**
+ * Failover (#361, option C): when a site has no usable Featured Image (no
+ * spec, or the guard rejected it), use its already-fetched Kaguya TC regional
+ * crop as the detail layer. Lower resolution than LROC NAC but real,
+ * georegistered, no curation — and it can't be the wrong subject.
+ */
+async function kaguyaFailover(siteId: string, lat: number, lon: number): Promise<ProvenanceEntry | null> {
+  const reg = regionalPath(siteId);
+  if (!existsSync(reg)) {
+    console.log(`  ✗ ${siteId}: no Kaguya regional on disk — cannot fail over`);
+    return null;
+  }
+  const out = detailPath(siteId);
+  await fs.copyFile(reg, out);
+  console.log(`  ⤵ ${siteId}: failed over to Kaguya TC detail`);
+  return buildKaguyaTcProvenanceEntry({
+    outputPath: out,
+    sourceUrl: 'https://stac.astrogeology.usgs.gov/ (Kaguya TC, see regional)',
+    productId: `KAGUYA_TC_DETAIL_${siteId.toUpperCase()}`,
+    siteId,
+    centerLat: lat,
+    centerLon: lon,
+    cropSize: 2560,
+  });
+}
+
+/** Sites with no LROC Featured Image at all — go straight to Kaguya failover. */
+const FAILOVER_ONLY: Array<{ siteId: string; centerLat: number; centerLon: number }> = [
+  // Luna 9 (1966, first soft landing) — LROC has never precisely located it.
+  { siteId: 'luna9', centerLat: 7.08, centerLon: -64.37 },
+];
+
 async function main(): Promise<void> {
-  console.log(`Fetching ${FEATURED_IMAGES.length} LROC Featured Images (Phase 2.5 hand-curated)`);
-  const results: Array<{ spec: FeaturedSpec; outputPath: string; bytes: number }> = [];
+  console.log(`Moon detail layer: ${FEATURED_IMAGES.length} Featured Images + Kaguya failover`);
+  const entries: ProvenanceEntry[] = [];
+  let lroc = 0;
+  let failover = 0;
+
   for (let i = 0; i < FEATURED_IMAGES.length; i++) {
     const spec = FEATURED_IMAGES[i];
     try {
       const out = await downloadAndCrop(spec);
-      console.log(`  ✓ ${spec.siteId} → ${out.outputPath} (${(out.bytes / 1024).toFixed(0)} KB)`);
-      results.push({ spec, ...out });
+      console.log(`  ✓ ${spec.siteId} → LROC NAC (${(out.bytes / 1024).toFixed(0)} KB)`);
+      entries.push(
+        buildLrocProvenanceEntry({
+          outputPath: out.outputPath,
+          sourceUrl: spec.url,
+          productId: `LROC_FEATURED_${spec.siteId.toUpperCase()}`,
+          siteId: spec.siteId,
+          centerLat: spec.centerLat,
+          centerLon: spec.centerLon,
+        }),
+      );
+      lroc++;
     } catch (err) {
-      console.error(`  ✗ ${spec.siteId} FAILED — ${(err as Error).message}`);
+      // Guard rejection OR download failure → fall over to Kaguya.
+      const why = err instanceof GuardError ? `guard: ${err.message}` : (err as Error).message;
+      console.warn(`  ! ${spec.siteId} — ${why}`);
+      const prov = await kaguyaFailover(spec.siteId, spec.centerLat, spec.centerLon);
+      if (prov) {
+        entries.push(prov);
+        failover++;
+      }
     }
-    // Polite pause between successive downloads (1s; these are small).
     if (i < FEATURED_IMAGES.length - 1) await new Promise((r) => setTimeout(r, 1000));
   }
 
-  if (results.length === 0) {
-    console.log('No successful downloads — nothing to upsert.');
-    return;
+  // Sites with no Featured Image at all → Kaguya failover.
+  for (const f of FAILOVER_ONLY) {
+    const prov = await kaguyaFailover(f.siteId, f.centerLat, f.centerLon);
+    if (prov) {
+      entries.push(prov);
+      failover++;
+    }
   }
 
-  console.log(`\nUpserting ${results.length} provenance entries...`);
-  const entries = results.map((r) =>
-    buildLrocProvenanceEntry({
-      outputPath: r.outputPath,
-      sourceUrl: r.spec.url,
-      productId: `LROC_FEATURED_${r.spec.siteId.toUpperCase()}`,
-      siteId: r.spec.siteId,
-      centerLat: r.spec.centerLat,
-      centerLon: r.spec.centerLon,
-    }),
-  );
+  if (entries.length === 0) {
+    console.log('Nothing to upsert.');
+    return;
+  }
   await upsertProvenanceEntries(entries);
-  console.log(`  Provenance: ${entries.length} entries upserted.`);
-  console.log(`\nDone. ${results.length}/${FEATURED_IMAGES.length} sites covered.`);
+  console.log(
+    `\nDone. ${lroc} LROC NAC + ${failover} Kaguya-failover = ${entries.length} detail layers, provenance upserted.`,
+  );
 }
 
 main().catch((err) => {

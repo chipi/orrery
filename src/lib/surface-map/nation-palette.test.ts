@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { NATION_COLORS, colorFor, nationChipFor, nationKey } from './nation-palette';
+import {
+  NATION_COLORS,
+  agencyNationKey,
+  colorFor,
+  nationChipFor,
+  nationKey,
+  objectNationKey,
+} from './nation-palette';
 
 describe('nationKey', () => {
   it('collapses USSR + Russia to USSR/Russia', () => {
@@ -65,5 +72,58 @@ describe('nationChipFor', () => {
       'AnyCorp',
     );
     expect(nationChipFor({ nation: '' as never, agency: '' as never }).label).toBe('—');
+  });
+});
+
+describe('agencyNationKey', () => {
+  it('maps each space agency to its NATION_COLORS key', () => {
+    expect(agencyNationKey('NASA')).toBe('USA');
+    expect(agencyNationKey('Roscosmos')).toBe('USSR/Russia');
+    expect(agencyNationKey('CNSA')).toBe('China');
+    expect(agencyNationKey('ISRO')).toBe('India');
+    expect(agencyNationKey('JAXA')).toBe('Japan');
+    expect(agencyNationKey('UAESA')).toBe('UAE');
+    expect(agencyNationKey('ESA')).toBe('Europe');
+  });
+
+  it('buckets commercial + civil operators to their home nation', () => {
+    expect(agencyNationKey('SpaceX')).toBe('USA');
+    expect(agencyNationKey('Amazon')).toBe('USA');
+    expect(agencyNationKey('NOAA')).toBe('USA');
+    expect(agencyNationKey('USSF')).toBe('USA');
+    expect(agencyNationKey('Eutelsat OneWeb')).toBe('Europe');
+    expect(agencyNationKey('SES')).toBe('Europe');
+    expect(agencyNationKey('European Commission')).toBe('Europe');
+  });
+
+  it('returns the same key returned must exist in NATION_COLORS', () => {
+    for (const agency of ['NASA', 'ESA', 'CNSA', 'ISRO', 'JAXA', 'UAESA', 'Roscosmos']) {
+      const key = agencyNationKey(agency)!;
+      expect(Object.keys(NATION_COLORS)).toContain(key);
+    }
+  });
+
+  it('returns null for agencies with no legend nation', () => {
+    expect(agencyNationKey('CSA')).toBeNull(); // Canada — no palette entry
+    expect(agencyNationKey('Unknownia Corp')).toBeNull();
+    expect(agencyNationKey('')).toBeNull();
+    expect(agencyNationKey(undefined)).toBeNull();
+  });
+});
+
+describe('objectNationKey', () => {
+  it('buckets by the first agency that resolves to a nation (primary attribution)', () => {
+    expect(objectNationKey({ agencies: ['NASA', 'ESA'] })).toBe('USA');
+    expect(objectNationKey({ agencies: ['ESA', 'NASA'] })).toBe('Europe');
+  });
+
+  it('skips leading unattributed agencies', () => {
+    expect(objectNationKey({ agencies: ['CSA', 'JAXA'] })).toBe('Japan');
+  });
+
+  it('returns null when no agency resolves or list is empty', () => {
+    expect(objectNationKey({ agencies: ['CSA'] })).toBeNull();
+    expect(objectNationKey({ agencies: [] })).toBeNull();
+    expect(objectNationKey({})).toBeNull();
   });
 });

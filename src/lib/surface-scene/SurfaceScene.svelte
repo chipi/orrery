@@ -50,7 +50,7 @@
     buildPolarCaps,
     buildMarsMoons,
   } from '$lib/surface-scene/mars-lens-layers';
-  import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
+  import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
@@ -92,6 +92,7 @@
     colorFor,
     nationChipFor,
     nationKey,
+    objectNationKey,
   } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { resolveInitialHotspotsMode } from '$lib/surface-map/hotspots-mode';
@@ -99,7 +100,6 @@
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
   import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
-  import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
@@ -301,16 +301,45 @@
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
+  // ─── Nation filter (#363) ────────────────────────────────────────
+  // The nation legend is interactive: clicking a nation hides every
+  // object belonging to it (surface markers, moon/mars orbiters, earth
+  // satellites). `disabledNations` is the off-set — empty means all on,
+  // so the page looks identical to before until the user interacts.
+  // Read every frame in the animate loop (same immediate-effect pattern
+  // as the layer chips), and reactively for legend button styling.
+  let disabledNations = $state(new Set<string>());
+  function nationEnabled(key: string | null | undefined): boolean {
+    // Unattributed objects (no legend nation) are always shown.
+    return key == null || !disabledNations.has(key);
+  }
+  function toggleNation(key: string): void {
+    const next = new Set(disabledNations);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    disabledNations = next;
+  }
+  // siteId → nation key for surface sites + moon/mars orbiters (both are
+  // SurfaceSites in `sites`). Reactive on `sites`; read by .get() in rAF.
+  let nationBySiteId = $derived.by(
+    () => new Map(sites.map((s) => [s.id, nationKey(s.nation)] as const)),
+  );
+  // satId → nation key for /earth's EarthObjects (agency-bucketed). Set at
+  // satellite-build time (earthObjectsCache isn't reactive). Empty on
+  // /moon + /mars. `satNations` feeds the legend union below.
+  let nationBySatId = $state(new Map<string, string>());
+  let satNations = $derived(new Set(nationBySatId.values()));
+
   // Per-body nation legend — filter NATION_COLORS to only the nations
-  // with ≥1 site actually on this body. /moon has no UAE entries, /mars
-  // has no Japan entries, /earth has neither UAE nor any extras beyond
-  // its 6-nation pad set; showing the full 7-entry union painted UAE on
-  // /moon and Japan on /mars, implying contributions that don't exist.
-  // Falls back to the full palette while `sites` is still loading so
-  // the legend doesn't flicker empty.
+  // with ≥1 object actually on this body (surface sites OR earth
+  // satellites). /moon has no UAE entries, /mars has no Japan entries;
+  // showing the full union implied contributions that don't exist. Earth
+  // unions in its orbiter nations (via satNations) so those objects are
+  // filterable too. Falls back to the full palette while `sites` is still
+  // loading so the legend doesn't flicker empty.
   let legendPalette = $derived.by(() => {
-    if (sites.length === 0) return NATION_COLORS;
-    const present = new Set(sites.map((s) => nationKey(s.nation)));
+    if (sites.length === 0 && satNations.size === 0) return NATION_COLORS;
+    const present = new Set([...sites.map((s) => nationKey(s.nation)), ...satNations]);
     const out: Record<string, string> = {};
     for (const [k, v] of Object.entries(NATION_COLORS)) {
       if (present.has(k)) out[k] = v;
@@ -349,7 +378,6 @@
   // carries its category so the per-frame loop can sub-gate against
   // the relevant layer{Stations,Observatories,...} flag.
   let earthSats: Array<import('$lib/surface-scene/earth-satellite-layer').SatObj> = [];
-  let earthRingsGroup: THREE.Group | null = null;
   // EarthObject cache + selection state (#290 Slice 6b). Cached for the
   // pointer-click handler to look up the clicked sat. selectedSat
   // drives EarthObjectPanel; nulled out when the user selects a
@@ -1118,38 +1146,10 @@
       // panel polymorphism for satellite selection land in Slice 6.
       if (eol.satellites) {
         const satCfg = eol.satellites;
-        const ringsCfg = eol.orbitRings;
         satCfg
           .loadObjects(localeFromPage($page))
           .then((raw) => {
             const objects = raw as EarthObject[];
-
-            if (ringsCfg) {
-              const repAlt: Record<string, number> = {};
-              for (const o of objects) {
-                const alt = o.altitude_km ?? o.earth_distance_km;
-                if (!(o.regime in repAlt)) repAlt[o.regime] = alt;
-              }
-              const regimes = Object.entries(repAlt).map(([regime, altitude_km]) => ({
-                regime,
-                altitude_km,
-              }));
-              const rings = buildOrbitRings({
-                regimeColors: ringsCfg.regimeColors,
-                regimes,
-                planetRadius,
-              });
-              rings.group.visible = ringsCfg.visibleByDefault;
-              scene.add(rings.group);
-              earthRingsGroup = rings.group;
-              earthLayerHandles.push({
-                dispose: () => {
-                  rings.dispose();
-                  scene.remove(rings.group);
-                  earthRingsGroup = null;
-                },
-              });
-            }
 
             // Apply route-provided per-category defaults before the
             // animate loop's first sub-gating pass.
@@ -1168,11 +1168,20 @@
             });
             earthSats = satLayer.sats;
             earthObjectsCache = objects;
+            // Nation map for the legend filter — bucket each orbiter by its
+            // primary agency's nation (#363). Unattributed objects are simply
+            // absent (treated as always-visible by nationEnabled).
+            nationBySatId = new Map(
+              objects
+                .map((o) => [o.id, objectNationKey(o)] as const)
+                .filter((e): e is readonly [string, string] => e[1] != null),
+            );
             earthLayerHandles.push({
               dispose: () => {
                 satLayer.dispose();
                 earthSats = [];
                 earthObjectsCache = [];
+                nationBySatId = new Map();
               },
             });
 
@@ -3402,12 +3411,8 @@
       drawDisc(nearCx, yMid, 'NEAR SIDE · EARTH-FACING', 'rgba(220,220,200,0.85)', false);
       drawDisc(farCx, yMid, 'FAR SIDE', 'rgba(220,220,200,0.85)', true);
 
-      // Nation legend (bottom)
-      const legendY = H - 32;
-      ctx2.font = "bold 7px 'Space Mono',monospace";
-      ctx2.textAlign = 'left';
-      ctx2.shadowBlur = 0;
-      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: legendPalette });
+      // Nation legend is now the shared interactive HTML overlay (#363) —
+      // painted for both 2D and 3D outside the canvas. No canvas legend here.
     }
 
     // Equirectangular 2D mode — Mars (and future Earth-surface). Single
@@ -3534,11 +3539,8 @@
         }
       }
 
-      // Legend
-      const legendY = H - 24;
-      ctx2.font = "bold 7px 'Space Mono',monospace";
-      ctx2.textAlign = 'left';
-      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: legendPalette });
+      // Nation legend is the shared interactive HTML overlay (#363) — not
+      // painted into the canvas anymore.
     }
 
     function on2dClick(e: MouseEvent) {
@@ -3707,7 +3709,9 @@
           tierBySiteId.set(h.siteId, t);
         }
         for (const mk of markers) {
-          mk.group.visible = layerSurface;
+          // Nation filter (#363) — hide markers whose nation is toggled off.
+          const nv = nationEnabled(nationBySiteId.get(mk.siteId));
+          mk.group.visible = layerSurface && nv;
           if (mk.halo) {
             // Keep the selection halo visible at all tiers — previously
             // hidden at tier ≥ 2 to avoid competing with the surface
@@ -3722,7 +3726,7 @@
             // route's own framing (CTX + crosshair + line). The route IS the
             // selection indicator for these.
             mk.halo.visible =
-              layerSurface && mk.siteId === selId && !routeViewCenters.has(mk.siteId);
+              layerSurface && nv && mk.siteId === selId && !routeViewCenters.has(mk.siteId);
           }
           if (mk.hoverHalo) {
             // Teal hover ring — only when the mouse is over this
@@ -3731,16 +3735,21 @@
             // sites incl. traverse rovers (same as InSight) — only the
             // SELECTION cue moves to the route centre (#360).
             mk.hoverHalo.visible =
-              layerSurface && mk.siteId === hoveredSiteId && mk.siteId !== selId;
+              layerSurface && nv && mk.siteId === hoveredSiteId && mk.siteId !== selId;
           }
         }
         // #360: route-centre selection brackets — the "zoomable imagery here"
         // cue, shown while the rover is selected (its landing halo is hidden).
         for (const rh of routeSelectionHalos) {
-          rh.obj.visible = layerSurface && rh.siteId === selId;
+          rh.obj.visible =
+            layerSurface && nationEnabled(nationBySiteId.get(rh.siteId)) && rh.siteId === selId;
         }
         for (const om of orbitalMarkers) {
-          applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
+          // Nation filter (#363) folds into showOrbiters so dot + ring both hide.
+          applyOrbiterLayerVisibility(om, {
+            showOrbiters: layerOrbiters && nationEnabled(nationBySiteId.get(om.siteId)),
+            showOrbits: layerOrbits,
+          });
           // No selection halo on orbiters — the outline-pass marks the
           // selected orbiter, so the extra ring around the dot is
           // redundant (user direction). Keep the halo always hidden.
@@ -3748,8 +3757,7 @@
         }
 
         // Earth satellites — gated by master layerOrbiters + per-category
-        // chips. Per-spacecraft orbit rings track the master toggle since
-        // the regime rings (earthRingsGroup) carry the layerOrbits chip.
+        // chips. Per-spacecraft orbit rings track the master toggle.
         // Empty loop on /moon and /mars (earthSats stays []).
         if (earthSats.length > 0) {
           for (const s of earthSats) {
@@ -3765,12 +3773,12 @@
                       : s.category === 'moon-orbiter'
                         ? layerMoonOrbiters
                         : true;
-            const on = layerOrbiters && catVisible;
+            // Nation filter (#363) — earth orbiters bucketed by primary agency.
+            const on = layerOrbiters && catVisible && nationEnabled(nationBySatId.get(s.id));
             s.group.visible = on;
             if (s.ringMesh) s.ringMesh.visible = on;
           }
         }
-        if (earthRingsGroup) earthRingsGroup.visible = layerOrbits;
 
         // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
         // Drag-to-orbit still works.
@@ -4826,6 +4834,10 @@
               title: m.moon_layer_tip_orbit_rings(),
               active: () => layerOrbits,
               toggle: () => (layerOrbits = !layerOrbits),
+              // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
+              // /earth had no such rings under this chip — it only drove the
+              // regime bands, now removed (#363) — so the chip is hidden there.
+              visible: config.earthOrbitalLayers == null,
             },
             // TRAVERSES chip shows only when this body has vendored
             // rover paths (Mars today; Moon EVA / Lunokhod future).
@@ -5191,17 +5203,26 @@ sample      ${debugInfo.projectedPxSample}`}
     }}
   />
 
-  <!-- Nation legend overlay. The 2D view paints this directly into
-       the canvas (line 617 of the 2D draw); the 3D view is a Three.js
-       scene that can't host text reliably, so we mirror the legend as
-       a CSS overlay. Same NATION_COLORS keep the two views in sync. -->
-  {#if view === '3d' && !panoramaActive}
-    <div class="legend-3d" aria-label={m.moon_legend_nation_aria()}>
+  <!-- Nation legend + filter (#363). Single interactive HTML overlay for
+       BOTH 2D and 3D (the canvas-painted 2D legend was dropped so the two
+       views share one keyboard-accessible control). Each entry is a toggle
+       button: pressed = nation shown; un-pressed dims it and hides every
+       object of that nation (surface, orbital, earth-sat). Default all-on,
+       so it looks identical to the old passive legend until you click. -->
+  {#if !panoramaActive}
+    <div class="legend-3d" role="group" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <span class="legend-item">
+        <button
+          type="button"
+          class="legend-item"
+          class:legend-item--off={!nationEnabled(nation)}
+          aria-pressed={nationEnabled(nation)}
+          data-testid="legend-nation-{nation}"
+          onclick={() => toggleNation(nation)}
+        >
           <span class="legend-dot" style:background={color}></span>
           {nation}
-        </span>
+        </button>
       {/each}
     </div>
   {/if}
@@ -6047,13 +6068,44 @@ sample      ${debugInfo.projectedPxSample}`}
     font-weight: 700;
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.7);
+    /* Container ignores pointer events so its gaps don't block the canvas;
+       the buttons re-enable them (#363). */
     pointer-events: none;
     z-index: 5;
   }
+  /* Interactive toggle button — reset native chrome back to the old
+     span look, then layer on hover / focus / pressed-off states (#363). */
   .legend-item {
+    pointer-events: auto;
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    margin: 0;
+    padding: 2px 4px;
+    background: transparent;
+    border: 0;
+    border-radius: 3px;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+    transition:
+      opacity 120ms ease,
+      background 120ms ease;
+  }
+  .legend-item:hover,
+  .legend-item:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+  }
+  .legend-item:focus-visible {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+  /* Toggled off — dim + strike, but keep the colour dot legible so the
+     key still reads. */
+  .legend-item--off {
+    opacity: 0.4;
+    text-decoration: line-through;
   }
   .legend-dot {
     width: 8px;

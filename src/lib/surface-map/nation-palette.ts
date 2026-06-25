@@ -59,3 +59,44 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (agency === 'SpaceX') return { label: 'USA · SpaceX', color: '#3b82f6' };
   return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
 }
+
+/**
+ * Map an operating-agency string to a NATION_COLORS key, for objects that
+ * carry only an agency (e.g. /earth's EarthObjects expose `agencies[]`, not a
+ * `nation`). Keys returned MUST equal NATION_COLORS keys so the nation legend
+ * filter can match. Returns null when the agency has no legend nation (e.g.
+ * CSA / Canada has no palette entry) — callers treat null as "unattributed,
+ * always visible". Commercial operators bucket to their home nation.
+ */
+export function agencyNationKey(agency: string | undefined | null): string | null {
+  if (!agency) return null;
+  const a = agency.toLowerCase();
+  // USA — civil, military + the US commercial operators in the EarthObject set.
+  if (
+    /\b(nasa|noaa|usgs|ussf|spacex|amazon|planet labs|iridium|sirius|viasat|globalstar|maxar)\b/.test(
+      a,
+    )
+  )
+    return 'USA';
+  if (/\b(roscosmos|russia|ussr)\b/.test(a)) return 'USSR/Russia';
+  if (/\b(cnsa|china)\b/.test(a)) return 'China';
+  if (/\b(isro|india)\b/.test(a)) return 'India';
+  if (/\b(jaxa|japan)\b/.test(a)) return 'Japan';
+  if (/\b(uaesa|uae)\b/.test(a)) return 'UAE';
+  // Europe — ESA + EU bodies + the European commercial operators.
+  if (/\b(esa|arianespace|european commission|eutelsat|oneweb|ses)\b/.test(a)) return 'Europe';
+  return null;
+}
+
+/**
+ * Nation key for an object identified by its agency list — buckets by the
+ * FIRST (primary) agency that resolves to a nation, matching the primary-
+ * attribution convention (ADR-046). Null when none resolve.
+ */
+export function objectNationKey(obj: { agencies?: string[] | null }): string | null {
+  for (const a of obj.agencies ?? []) {
+    const key = agencyNationKey(a);
+    if (key) return key;
+  }
+  return null;
+}

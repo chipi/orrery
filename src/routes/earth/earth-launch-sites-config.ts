@@ -24,19 +24,6 @@ import { getEarthObjects } from '$lib/data';
 
 const MOON_DISTANCE_KM = 384400;
 
-// Per-regime ring colours, mirrors EarthOrbitalScene's REGIME_COLORS
-// constant so the unified route's regime legend matches what users
-// have seen since v0.4. LEO teal, MEO blue, GEO gold, HEO orange,
-// MOON grey-purple, L2 yellow.
-const REGIME_COLORS: Record<string, number> = {
-  LEO: 0x4ecdc4,
-  MEO: 0x7b9cff,
-  GEO: 0xffc850,
-  HEO: 0xff8c3c,
-  MOON: 0xaaaacc,
-  L2: 0xffd700,
-};
-
 // buildLaunchpadModel already matches the canonical
 // (siteId, missionType, color, agency) LanderModelBuilder signature,
 // so no adapter is needed. Cast preserves the import-time check that
@@ -161,13 +148,11 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
         radiusUnits: 2.0,
         distanceKm: MOON_DISTANCE_KM,
       },
-      // Per-regime orbit-ring torus, drawn at one representative
-      // altitude per regime present in the loaded EarthObject set.
-      // Default visible — matches EarthOrbitalScene's defaults.
-      orbitRings: {
-        regimeColors: REGIME_COLORS,
-        visibleByDefault: true,
-      },
+      // Per-regime orbit-ring overlay removed (#363) — the concentric
+      // LEO/MEO/GEO/HEO/MOON/L2 bands read as unexplained "empty orbits"
+      // around the globe, especially once every object was filtered off.
+      // The altitude/regime an orbiter sits in is surfaced in its detail
+      // panel instead (relating it to the orbit ruler).
       // Loaded async on mount; categories drive chip-row sub-toggles.
       // Defaults match EarthOrbitalScene's default-on state for every
       // category — users can hide via the new STATIONS / OBSERVATORIES

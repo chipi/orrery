@@ -13,10 +13,24 @@ import * as THREE from 'three';
 
 export function disposeObject3d(obj: THREE.Object3D): void {
   obj.traverse((o) => {
-    if (o instanceof THREE.Mesh || o instanceof THREE.Line) {
+    if (o instanceof THREE.Mesh || o instanceof THREE.Line || o instanceof THREE.Points) {
       o.geometry?.dispose();
-      if (Array.isArray(o.material)) o.material.forEach((mat) => mat.dispose());
-      else o.material?.dispose();
+      // Dispose the textures held in each material's map slots BEFORE the
+      // material itself — `material.dispose()` frees the material program
+      // but NOT its bound textures, so skipping this leaks the texture's
+      // GPU memory. This is the load-bearing fix for the multi-GB surface
+      // leak (#363): rebuildMarkers / route-patch + traverse teardown /
+      // tier eviction all route through here, and the recent regional +
+      // route-HiRISE imagery layers bind large textures to these materials.
+      if (Array.isArray(o.material)) {
+        o.material.forEach((mat) => {
+          disposeMaterialTextures(mat);
+          mat.dispose();
+        });
+      } else if (o.material) {
+        disposeMaterialTextures(o.material);
+        o.material.dispose();
+      }
     }
   });
 }

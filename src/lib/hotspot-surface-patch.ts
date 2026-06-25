@@ -463,6 +463,12 @@ function createPatchMaterial(
     });
   }
   const loader = new THREE.TextureLoader();
+  // Guard the async texture load against teardown-during-flight (#363):
+  // patch textures load after the material is created, so if the owning
+  // group is disposed before the load resolves, binding the texture here
+  // would orphan it on the GPU (no later dispose pass reaches it). We
+  // flip `disposed` in an overridden dispose() and drop a late texture.
+  let disposed = false;
   const mat = new THREE.MeshStandardMaterial({
     color: 0xffffff,
     metalness: 0.0,
@@ -477,9 +483,20 @@ function createPatchMaterial(
     polygonOffsetFactor: pof,
     polygonOffsetUnits: pou,
   });
+  const baseDispose = mat.dispose.bind(mat);
+  mat.dispose = () => {
+    disposed = true;
+    baseDispose();
+  };
   loader.load(
     textureUrl,
     (tex) => {
+      // Material already torn down while this load was in flight — free
+      // the just-decoded texture instead of binding it to a dead material.
+      if (disposed) {
+        tex.dispose();
+        return;
+      }
       // Three.js r128 colour space API (PRD-019 §S1 will upgrade to
       // r140+ where this becomes tex.colorSpace = SRGBColorSpace).
       tex.encoding = THREE.sRGBEncoding;

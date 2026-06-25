@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { disposeObject3d } from '$lib/three/dispose-object3d';
 
 /**
  * Surface Hotspots LOD dispatcher (PRD-014 / RFC-017 ADR-059).
@@ -267,14 +268,11 @@ function evictLRUIfNeeded(hotspots: HotspotEntry[]): void {
 
 function disposeTierGroup(g: THREE.Group | undefined): void {
   if (!g) return;
-  g.traverse((obj) => {
-    if (obj instanceof THREE.Mesh) {
-      obj.geometry?.dispose();
-      const mat = obj.material;
-      if (Array.isArray(mat)) for (const m of mat) m.dispose();
-      else mat?.dispose();
-    }
-  });
+  // disposeObject3d frees geometry + material + the material's bound
+  // TEXTURES — critical here, since tier-2/3 groups hold the large
+  // CTX/HiRISE/Kaguya patch textures. The previous inline walk disposed
+  // materials only, leaking those textures on every LRU eviction (#363).
+  disposeObject3d(g);
   g.parent?.remove(g);
 }
 

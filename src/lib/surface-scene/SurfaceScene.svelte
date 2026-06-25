@@ -12,7 +12,12 @@
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
-  import { resolveQualitySync, type QualityConfig } from '$lib/quality/quality-tier';
+  import {
+    resolveQualitySync,
+    resolveQualitySource,
+    type QualityConfig,
+  } from '$lib/quality/quality-tier';
+  import { setRenderingDebugRegistration } from '$lib/components/debug-panel-context';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d, disposeScene } from '$lib/three/dispose-object3d';
@@ -938,6 +943,17 @@
       : null;
     const composer = composerSetup?.composer ?? null;
     const outlinePass = composerSetup?.outlinePass ?? null;
+
+    // Feed renderer.info into the DebugPanel "Rendering" tab so the live
+    // GPU memory counts (textures / geometries) + draw stats are visible
+    // on /earth /moon /mars — the instrument for watching the surface
+    // memory footprint (#363). Cleared on teardown.
+    setRenderingDebugRegistration({
+      renderer,
+      quality,
+      qualitySource: resolveQualitySource($page.url),
+    });
+    lifecycle.add(() => setRenderingDebugRegistration(null));
 
     // Ambient tint hints at body palette (slight blue for Moon, slight
     // red for Mars). Intensity consolidated to 0.8 per ADR-072 §Drift 5.

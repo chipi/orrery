@@ -26,9 +26,18 @@ export function createSceneRenderer(
 /**
  * Standard renderer + composer teardown for cleanup paths (#42).
  *
- * Disposes the OutlinePass + the WebGLRenderer, then removes the
- * canvas from the DOM. Both surface routes' cleanup blocks end with
- * this trio.
+ * Disposes the OutlinePass + the WebGLRenderer, FORCES the WebGL context
+ * to be released, then removes the canvas from the DOM. Both surface
+ * routes' cleanup blocks end with this.
+ *
+ * `renderer.dispose()` frees Three's own bookkeeping but does NOT tell
+ * the browser to drop the underlying WebGL context — the GPU memory
+ * (textures, buffers, the framebuffer) lingers until lazy GC, and Chrome
+ * keeps a pool of live contexts. So navigating earth → moon → mars left
+ * each surface scene's hundreds-of-MB context resident, piling up into
+ * multiple GB until something (e.g. opening /home) finally let them be
+ * collected. `forceContextLoss()` releases the context immediately, so
+ * each navigation reclaims its GPU memory right away (#363).
  */
 export function disposeSceneRenderer({
   renderer,
@@ -41,5 +50,6 @@ export function disposeSceneRenderer({
 }): void {
   outlinePass?.dispose();
   renderer.dispose();
+  renderer.forceContextLoss();
   renderer.domElement.remove();
 }

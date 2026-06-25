@@ -36,6 +36,11 @@
   let triangles = $state(0);
   let points = $state(0);
   let lines = $state(0);
+  // Live GPU resource counts (#363) — these only climb if textures /
+  // geometries aren't disposed, so they're the leak canary for the
+  // surface scenes.
+  let texCount = $state(0);
+  let geoCount = $state(0);
   // Frame-monitor rolling avg (#334 slice 34). Same number the auto-
   // demote toast reads; 0 until the 5-sample noise-floor clears.
   let frameMonitorAvgMs = $state(0);
@@ -65,6 +70,8 @@
           triangles = rdr.info.render.triangles;
           points = rdr.info.render.points;
           lines = rdr.info.render.lines;
+          texCount = rdr.info.memory.textures;
+          geoCount = rdr.info.memory.geometries;
         }
         const fm = debugCtx?.rendering.value?.frameMonitor;
         if (fm) {
@@ -438,6 +445,14 @@
           <div class="debug-row">
             <span class="debug-key">Lines</span>
             <span class="debug-val">{lines.toLocaleString()}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">GPU textures</span>
+            <span class="debug-val">{texCount.toLocaleString()}</span>
+          </div>
+          <div class="debug-row">
+            <span class="debug-key">GPU geometries</span>
+            <span class="debug-val">{geoCount.toLocaleString()}</span>
           </div>
         </div>
         {#if renderingReg.frameMonitor}

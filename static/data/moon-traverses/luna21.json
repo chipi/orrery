@@ -1,0 +1,61 @@
+{
+  "rover_id": "luna21",
+  "agency": "Roscosmos",
+  "status": "ENDED",
+  "snapshot_date": "1973-06-03",
+  "credit": "© Roscosmos / Lavochkin — Lunokhod 2 traverse (Luna 21, Le Monnier crater, Jan–Jun 1973; ~39 km, the longest off-world drive until 2014). V1 simplified polyline; documented per-sol track is a high-fidelity follow-up.",
+  "points": [
+    [
+      25.8323,
+      30.9221
+    ],
+    [
+      25.81911,
+      30.9265
+    ],
+    [
+      25.80262,
+      30.92503
+    ],
+    [
+      25.78943,
+      30.93163
+    ],
+    [
+      25.78283,
+      30.94408
+    ],
+    [
+      25.78448,
+      30.9624
+    ],
+    [
+      25.78943,
+      30.98439
+    ],
+    [
+      25.79108,
+      31.01003
+    ],
+    [
+      25.78613,
+      31.03568
+    ],
+    [
+      25.77624,
+      31.05766
+    ],
+    [
+      25.76305,
+      31.07232
+    ],
+    [
+      25.74656,
+      31.07965
+    ],
+    [
+      25.73007,
+      31.07782
+    ]
+  ]
+}

@@ -19,7 +19,13 @@
   import type { OrbitRegime } from '$types/orbit-regime';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
-  import { getMoonSites, getMoonSiteGallery, getOrbitRegimesMoon } from '$lib/data';
+  import {
+    getMoonSites,
+    getMoonSiteGallery,
+    getOrbitRegimesMoon,
+    getMoonTraverse,
+  } from '$lib/data';
+  import type { Traverse } from '$types/surface-site';
   import { regimeForAltitude } from '$lib/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
@@ -165,6 +171,22 @@
       regimePanelOpen = true;
     }
   });
+
+  // Moon rover traverses (#361 follow-on) — Lunokhod 1/2, Yutu, Yutu-2,
+  // Pragyan. Same optional loadTraverses path Mars uses; missing JSON
+  // degrades to "no rendered track" rather than a failure.
+  async function loadMoonTraverses(): Promise<Record<string, Traverse>> {
+    const ids = ['luna17', 'luna21', 'change3', 'change4', 'chandrayaan3'];
+    const entries = await Promise.all(
+      ids.map(async (id) => {
+        const t = await getMoonTraverse(id);
+        return t ? ([id, t] as const) : null;
+      }),
+    );
+    const out: Record<string, Traverse> = {};
+    for (const e of entries) if (e) out[e[0]] = e[1];
+    return out;
+  }
 </script>
 
 <svelte:head>
@@ -178,6 +200,7 @@
   config={MOON_CONFIG}
   loadSites={getMoonSites}
   loadGallery={getMoonSiteGallery}
+  loadTraverses={loadMoonTraverses}
   onSiteSelect={(id) => (selectedSiteId = id)}
   {regimes}
   onRegimeOpen={openRegime}

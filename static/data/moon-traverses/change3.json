@@ -1,0 +1,45 @@
+{
+  "rover_id": "change3",
+  "agency": "CNSA",
+  "status": "ENDED",
+  "snapshot_date": "2014-01-25",
+  "credit": "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). V1 simplified polyline anchored at the lander.",
+  "points": [
+    [
+      44.1214,
+      -19.5116
+    ],
+    [
+      44.12094,
+      -19.51197
+    ],
+    [
+      44.12074,
+      -19.51261
+    ],
+    [
+      44.12114,
+      -19.51298
+    ],
+    [
+      44.12166,
+      -19.51279
+    ],
+    [
+      44.12199,
+      -19.51215
+    ],
+    [
+      44.12186,
+      -19.51142
+    ],
+    [
+      44.12133,
+      -19.51114
+    ],
+    [
+      44.12087,
+      -19.51151
+    ]
+  ]
+}

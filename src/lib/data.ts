@@ -481,6 +481,18 @@ export async function getMarsTraverse(roverId: string): Promise<Traverse | null>
   return t;
 }
 
+/** Moon rover traverse polylines (#361 follow-on) — Lunokhod 1/2, Yutu,
+ *  Yutu-2, Pragyan. Same shape + along-route patch sidecar as Mars. */
+export async function getMoonTraverse(roverId: string): Promise<Traverse | null> {
+  const t = await get<Traverse>(`moon-traverses/${roverId}.json`).catch(() => null);
+  if (!t) return null;
+  const rp = await get<{ patches: RouteHirisePatch[] }>(
+    `moon-traverses/${roverId}.route-patches.json`,
+  ).catch(() => null);
+  if (rp?.patches?.length) t.route_patches = rp.patches;
+  return t;
+}
+
 /**
  * Returns the Sun's astrophysical figures merged with its locale
  * overlay. Falls back to en-US when a locale overlay is missing.

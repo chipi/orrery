@@ -186,6 +186,13 @@
     /** Click handler for the RegimeChip — opens the matching regime
      *  panel on the host route. */
     onRegimeOpen?: (regimeId: string) => void;
+    /** Fired when the camera crosses below / back above the lowest orbit
+     *  band, i.e. when the orbital neighbourhood stops / starts being
+     *  visible above the surface. /earth, /moon, /mars use it to hide the
+     *  OrbitRuler once you've zoomed beneath every orbit (the ruler then
+     *  references nothing on screen). `true` = orbits in view (ruler
+     *  meaningful), `false` = zoomed below them (hide). */
+    onOrbitsInViewChange?: (inView: boolean) => void;
   }
   let {
     config,
@@ -197,7 +204,24 @@
     onSiteSelect,
     regimes,
     onRegimeOpen,
+    onOrbitsInViewChange,
   }: Props = $props();
+
+  // Orbit-ruler auto-hide threshold (#363). The literal "below the lowest
+  // orbit band" test hid far too late — at LEO (160 km) you're already
+  // skimming the surface, while at 1.5-3 Mm you're clearly zoomed into
+  // "approaching the planet" yet the ruler lingered. Instead we hide once
+  // the camera comes within ~1 planet-radius of the surface: above that
+  // you see the globe-in-context with its orbital neighbourhood (ruler
+  // meaningful); below it the planet fills the view and the orbits have
+  // scrolled off-screen. Radius-relative so it's right for Earth, Moon and
+  // Mars without per-body tuning. Earth ≈ 6.4 Mm, Moon ≈ 1.7 Mm, Mars ≈
+  // 3.4 Mm.
+  const ORBIT_RULER_HIDE_RADII = 1.0;
+  // Last emitted in-view state — drives onOrbitsInViewChange edge calls.
+  // 12% hysteresis band so parking the camera exactly at the threshold
+  // can't flicker the ruler frame-to-frame.
+  let orbitsInView = true;
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -3804,6 +3828,22 @@
           0,
           (camDistFromOrigin - planetRadius) * (config.radiusKm / planetRadius),
         );
+
+        // Orbit-ruler auto-hide (#363): once the camera comes within ~1
+        // planet-radius of the surface the planet fills the view and the
+        // orbits have scrolled off-screen, so signal the host to hide the
+        // ruler. Hysteresis (hide < threshold, re-show > threshold × 1.12)
+        // keeps it from flickering when parked near the boundary.
+        if (onOrbitsInViewChange) {
+          const orbitRulerHideKm = config.radiusKm * ORBIT_RULER_HIDE_RADII;
+          if (orbitsInView && altitudeKm < orbitRulerHideKm) {
+            orbitsInView = false;
+            onOrbitsInViewChange(false);
+          } else if (!orbitsInView && altitudeKm > orbitRulerHideKm * 1.12) {
+            orbitsInView = true;
+            onOrbitsInViewChange(true);
+          }
+        }
 
         // Match the flat-patch scale to the sphere scale at hand-off
         // so the photo doesn't jump when the flat-patch component takes

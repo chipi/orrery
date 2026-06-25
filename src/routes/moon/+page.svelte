@@ -89,6 +89,9 @@
   // satellite/site panel (z=28 vs default 30) so clicking a resident
   // reveals the orbiter's detail panel without closing the ruler panel.
   let regimes: OrbitRegime[] = $state([]);
+  // Orbit ruler auto-hides once the camera dips below the lowest orbit
+  // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
+  let orbitsInView = $state(true);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
@@ -178,11 +181,14 @@
   onSiteSelect={(id) => (selectedSiteId = id)}
   {regimes}
   onRegimeOpen={openRegime}
+  onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
 
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 
-{#if regimes.length > 0}
+{#if regimes.length > 0 && orbitsInView}
+  <!-- Hidden once the camera dips below LLO — orbits then sit overhead
+       and the ruler references nothing on screen (#363). -->
   <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} />
 {/if}
 

@@ -39,6 +39,9 @@
   // from the i18n overlay pipeline; the ruler renders nothing until the
   // data lands. `?regime=GEO` deep-link resolves once regimes load.
   let regimes: OrbitRegime[] = $state([]);
+  // Orbit ruler auto-hides once the camera dips below the lowest orbit
+  // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
+  let orbitsInView = $state(true);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
@@ -151,14 +154,17 @@
   onSatelliteSelect={(id) => (selectedSatId = id)}
   {regimes}
   onRegimeOpen={openRegime}
+  onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
 
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
 
-{#if regimes.length > 0}
+{#if regimes.length > 0 && orbitsInView}
   <!-- Curated order: HEO sits between LEO and MEO since its perigee/
        apogee span straddles both; pure altitude-sort would place HEO
-       below LEO (perigee 1,000 km) which buries its teaching value. -->
+       below LEO (perigee 1,000 km) which buries its teaching value.
+       Hidden once the camera dips below LEO — orbits then sit overhead
+       and the ruler references nothing on screen (#363). -->
   <OrbitRuler
     {regimes}
     {highlightRegime}

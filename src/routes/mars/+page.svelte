@@ -139,6 +139,9 @@
   // DMO has Hope (UAESA). Areostationary is the empty teaching band
   // (no spacecraft has yet flown there); Hill-sphere is boundary.
   let regimes: OrbitRegime[] = $state([]);
+  // Orbit ruler auto-hides once the camera dips below the lowest orbit
+  // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
+  let orbitsInView = $state(true);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
@@ -222,11 +225,14 @@
   onSiteSelect={(id) => (selectedSiteId = id)}
   {regimes}
   onRegimeOpen={openRegime}
+  onOrbitsInViewChange={(v) => (orbitsInView = v)}
 />
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 
-{#if regimes.length > 0}
+{#if regimes.length > 0 && orbitsInView}
+  <!-- Hidden once the camera dips below LMO — orbits then sit overhead
+       and the ruler references nothing on screen (#363). -->
   <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} />
 {/if}
 

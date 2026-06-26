@@ -57,6 +57,24 @@ for (const route of ROUTES) {
       `mount-time hotspot image requests on ${route}:\n${hotspotReqs.slice(0, 8).join('\n')}`,
     ).toBeLessThan(8);
   });
+
+  test(`${route} — planet scene becomes interactive within a few seconds`, async ({ page }) => {
+    const t0 = Date.now();
+    await page.goto(route);
+    // Scene-ready = SurfaceScene mounted its renderer + exposed the
+    // selection hook (the planet mesh + base texture are up by then).
+    await page.waitForFunction(
+      () =>
+        typeof (window as { __surfaceSceneSelectSite?: unknown }).__surfaceSceneSelectSite ===
+        'function',
+      null,
+      { timeout: 20_000 },
+    );
+    const ms = Date.now() - t0;
+    // eslint-disable-next-line no-console
+    console.log(`[perf] ${route} time-to-interactive = ${ms} ms`);
+    expect(ms, `${route} took ${ms}ms to become interactive`).toBeLessThan(5000);
+  });
 }
 
 test('/mars — selecting a rover lazily loads its route imagery (feature intact)', async ({

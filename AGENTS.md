@@ -424,6 +424,22 @@ Transfer arc: Keplerian half-ellipses, not Bezier. Do not replace. 3D scene unit
 
 ---
 
+## Performance — 3D scene discipline (do not regress)
+
+The `/earth /moon /mars /iss /tiangong /explore /fly` scenes are GPU- and main-thread-sensitive. A v0.7 regression made planets take *seconds* to load and leaked *multi-GB* of GPU memory that throttled the whole app (post-mortem + deferred follow-ups: issue #364). These are hard rules — breaking one degrades every page, not just the route you touched:
+
+1. **Teardown MUST release the WebGL context.** `renderer.dispose()` frees Three's bookkeeping but NOT the GL context — you must also call `renderer.forceContextLoss()` on unmount. Use the shared `disposeSceneRenderer` (`src/lib/three/scene-renderer.ts`), or mirror it on routes that build their own renderer. Skipping it leaks the context (Chrome pools them) → GBs of GPU pressure that throttles *every* page. Verify: a `webglcontextlost` listener fires on navigation away.
+
+2. **Dispose textures, not just materials.** `material.dispose()` does NOT free its bound textures. Use `disposeObject3d` / `disposeScene` (`src/lib/three/dispose-object3d.ts`) which dispose the map slots too. Guard async `TextureLoader.load` callbacks against teardown-in-flight (drop the texture if the owner was disposed).
+
+3. **Load heavy imagery lazily + per landing zone — NEVER eagerly at mount.** Tier-2 / panorama / route-patch textures (multi-MB each) build only for the zone you actually zoom into or select — tier-2 via the LOD dispatcher's on-promotion `ensureTierBuilt`, route patches on rover select. Building all sites' imagery at mount floods network+GPU and stalls first paint. The base planet texture loads 2K first, 4K on zoom — keep it that way.
+
+4. **No allocations in the animate/rAF loop.** No `new THREE.*`, `Array.filter`, `new Map`, `querySelectorAll`, or JSON ops *per frame* — hoist or cache them. Per-frame allocations cause GC hitches.
+
+5. **Prove perf changes with measurements.** `tests/e2e/surface-mount-perf.spec.ts` is the guard: mount-time hotspot image requests must stay ~0 and time-to-interactive under a few seconds. Measure before/after in Playwright's OWN clean browser — the dev / chrome-devtools-mcp browser gets bogged by accumulated GPU pressure and can't measure reliably (and HMR can't reclaim already-leaked contexts; restart Chrome to clear). Watch live GPU counts via `?debug=1` → Render tab (GPU textures / geometries — they should be bounded, not climbing).
+
+---
+
 ## Debugging — `?debug=1` is the in-app inspector
 
 Every route surfaces a built-in DebugPanel when you append `?debug=1` to the URL (e.g. `/fly?debug=1`, `/mars?debug=1`, `/?debug=1`). Mounted from the root layout (`src/routes/+layout.svelte`) via Svelte context, so it's available on every page. Use it instead of bolting on ad-hoc `console.log` calls or one-off panels.
@@ -811,6 +827,7 @@ When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tol
 - Do not add npm dependencies without ADR
 - Do not use `localStorage` or `sessionStorage`. Cookies are also forbidden for user preferences EXCEPT the single narrowly-scoped `orrery_locale` cookie permitted by ADR-057 (explicit user-set locale override only — auto-detect, Science Lens, mission filters, and any other state stay runtime-only). Any new cookie requires its own ADR.
 - Do not use `THREE.CapsuleGeometry` (not in r128)
+- Do not tear down a Three.js renderer with `dispose()` alone — always pair it with `forceContextLoss()`, and dispose textures (not just materials). Do not build tier/panorama/route imagery eagerly at mount or allocate inside the rAF loop. See §"Performance — 3D scene discipline".
 - Do not use `console.log` in production code
 - **NON-NEGOTIABLE — every committed image must end up on `/credits`.** No matter how the image got there (manual download, Wikipedia REST, Open Library API, podcast RSS, YouTube avatar, hand-authored SVG, agency-direct fetch), there has to be a path from the file on disk to a row on `/credits` via `static/data/image-provenance.json`. The same rule applies to LEARN links (must end up on `/library` via `link-provenance.json`) and to source-logos / text fragments (`source-logos.json` / `text-sources.json`). If you add an image and it doesn't appear on `/credits` after `npm run build-image-provenance`, the work is not done — extend the script with a new walker, or register the source in the appropriate map in `scripts/build-image-provenance.ts`. See ADR-046 / ADR-047 / ADR-051. New license short names must land in `scripts/license-allowlist.ts` or be waived in `static/data/license-waivers.json`.
 - Do not introduce `waitForTimeout(<magic>)` in Playwright tests — use a deterministic readiness signal (`window.__pickAt`, `data-route-ready`, `data-loading`, `expect(...).toHave...`). Brittle on slow CI. See ADR-056.

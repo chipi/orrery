@@ -763,6 +763,10 @@
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
   let faceCameraAtSite: ((site: SurfaceSite, targetR?: number) => void) | undefined;
+  // Lazily build a rover's along-route HiRISE imagery the first time it's
+  // selected (#363 perf) — invoked from selectSite before the camera
+  // fly-in. Assigned in onMount once the traverse system exists.
+  let buildRoutePatchesForSelected: ((siteId: string) => void) | undefined;
   // Orbital-object focus (CORE-2, /earth). Mirrors faceCameraAtSite but
   // targets a satellite's ring position: orient the camera at the
   // object's bearing and pull in to just outside its ring so it sits
@@ -804,6 +808,10 @@
       selected = s;
       selectedSat = null;
       panelOpen = true;
+      // Build this rover's deferred route imagery NOW (before the fly-in
+      // below reads its routeViewCenters framing). No-op for non-rover
+      // sites and for rovers already built (#363 perf).
+      buildRoutePatchesForSelected?.(s.id);
       // Picking a site is an explicit "I want to look at this" gesture,
       // and the auto-spin makes wheel-zoom feel like you're chasing the
       // marker. Pause the spin so the camera stays put; View3dControls'
@@ -1231,6 +1239,16 @@
     // #360: per-rover camera target = the magnified traverse midpoint, so
     // selecting a rover frames the whole route. Populated by rebuildTraverses.
     const routeViewCenters = new Map<string, { lat: number; lon: number }>();
+    // Per-rover deferred route-imagery builders (#363 perf) — populated by
+    // rebuildTraverses, drained on first selection of that rover.
+    const routePatchBuilders = new Map<string, () => void>();
+    buildRoutePatchesForSelected = (id: string) => {
+      const build = routePatchBuilders.get(id);
+      if (build) {
+        routePatchBuilders.delete(id);
+        build();
+      }
+    };
     // Default landing zoom = 37 (was 50). At camR 50 the regional reveal
     // ramp hadn't even started (regionalFadeStart), so selecting a site
     // dropped you on a bare globe and you had to wheel in to ~33 to see any
@@ -1742,6 +1760,7 @@
       routeRegionalMaterials.length = 0;
       routeSelectionHalos.length = 0;
       routeViewCenters.clear();
+      routePatchBuilders.clear();
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
         // Prepend the rover's published landing lat/lon when the first
@@ -1939,144 +1958,161 @@
         // into HiRISE anywhere the rover drove. Detail-only (no regional
         // disc); co-scaled + north-aligned exactly like the landing patch.
         if (tr.route_patches?.length) {
-          const regionalGroundForPatch = trSite?.hotspot_tier2_regional_ground_m ?? 15360;
-          // Regional CTX at the traverse MIDPOINT (#360) — re-centred so the
-          // whole drive frames inside the 15.4 km context (fetch-mars-ctx
-          // crops the same arc-length midpoint). Rendered here instead of on
-          // the landing patch, which skips its regional for traverse rovers.
-          const regionalUrl = trSite?.hotspot_tier2_regional_source;
-          if (regionalUrl) {
-            const raw = tr.points;
-            const seg = raw.slice(1).map((b, i) => {
-              const a = raw[i];
-              return Math.hypot(b[0] - a[0], (b[1] - a[1]) * Math.cos((a[0] * Math.PI) / 180));
-            });
-            const halfLen = seg.reduce((s, d) => s + d, 0) / 2;
-            let acc = 0;
-            let midLat = raw[0][0];
-            let midLon = raw[0][1];
-            for (let i = 0; i < seg.length; i++) {
-              if (acc + seg[i] >= halfLen) {
-                const t = seg[i] ? (halfLen - acc) / seg[i] : 0;
-                midLat = raw[i][0] + (raw[i + 1][0] - raw[i][0]) * t;
-                midLon = raw[i][1] + (raw[i + 1][1] - raw[i][1]) * t;
-                break;
+          // #363 perf — defer this rover's along-route HiRISE imagery
+          // (regional CTX + N multi-MB detail patches) until the rover is
+          // selected. They only render when the rover is focused, so
+          // building all rovers at mount flooded GPU/network and stalled
+          // the planet's first paint. Built synchronously in selectSite,
+          // before the fly-in reads routeViewCenters (which this sets).
+          routePatchBuilders.set(tr.rover_id, () => {
+            const regionalGroundForPatch = trSite?.hotspot_tier2_regional_ground_m ?? 15360;
+            // Regional CTX at the traverse MIDPOINT (#360) — re-centred so the
+            // whole drive frames inside the 15.4 km context (fetch-mars-ctx
+            // crops the same arc-length midpoint). Rendered here instead of on
+            // the landing patch, which skips its regional for traverse rovers.
+            const regionalUrl = trSite?.hotspot_tier2_regional_source;
+            if (regionalUrl) {
+              const raw = tr.points;
+              const seg = raw.slice(1).map((b, i) => {
+                const a = raw[i];
+                return Math.hypot(b[0] - a[0], (b[1] - a[1]) * Math.cos((a[0] * Math.PI) / 180));
+              });
+              const halfLen = seg.reduce((s, d) => s + d, 0) / 2;
+              let acc = 0;
+              let midLat = raw[0][0];
+              let midLon = raw[0][1];
+              for (let i = 0; i < seg.length; i++) {
+                if (acc + seg[i] >= halfLen) {
+                  const t = seg[i] ? (halfLen - acc) / seg[i] : 0;
+                  midLat = raw[i][0] + (raw[i + 1][0] - raw[i][0]) * t;
+                  midLon = raw[i][1] + (raw[i + 1][1] - raw[i][1]) * t;
+                  break;
+                }
+                acc += seg[i];
               }
-              acc += seg[i];
+              // Regional sits on a LOWER shell than the detail patches so the
+              // two never z-fight where they overlap.
+              const rReg = planetRadius + 0.03;
+              const midUnit = tpos(midLat, midLon, rReg).normalize();
+              const rmLat = (Math.asin(Math.max(-1, Math.min(1, midUnit.y))) * 180) / Math.PI;
+              const rmLon = (Math.atan2(-midUnit.z, midUnit.x) * 180) / Math.PI;
+              // Camera frames the route here (the magnified midpoint), not the
+              // landing — so selecting the rover centres the whole drive (#360).
+              routeViewCenters.set(tr.rover_id, { lat: rmLat, lon: rmLon });
+              const regWrap = new THREE.Group();
+              placeOnSphereTangent(regWrap, midUnit, rReg);
+              const regGroup = buildRegionalPatch({
+                textureUrl: regionalUrl,
+                siteId: tr.rover_id,
+                orientationDeg: azimuthToAlignNorth(rmLat, rmLon, regWrap.quaternion),
+              });
+              regWrap.add(regGroup);
+              // Tag with the rover so the per-frame reveal can gate this
+              // midpoint CTX on the FOCUSED site only (#360 — see the
+              // traverse visibility loop).
+              regWrap.userData = { roverId: tr.rover_id };
+              planetMesh.add(regWrap);
+              routePatchGroups.push(regWrap);
+              routeRegionalGroups.push(regWrap);
+              regGroup.traverse((o) => {
+                if (o instanceof THREE.Mesh && o.userData?.layer === 'regional') {
+                  const m = o.material as THREE.Material & { opacity: number };
+                  m.transparent = true;
+                  m.opacity = 0;
+                  routeRegionalMaterials.push(m);
+                }
+              });
+              // Selection bracket at the route centre — the blue-corner
+              // "zoomable imagery here" cue, north-aligned + framing the
+              // midpoint CTX. Visible while the rover is selected (#360).
+              // Square (aspect 1) to MATCH the midpoint CTX patch, which
+              // buildRegionalPatch renders square (no region_bounds passed).
+              // Using the region_bounds aspect here made the bracket a
+              // tall/narrow rectangle around a square image — glaring on
+              // Zhurong (region aspect 0.45) where the blue corners sat well
+              // outside the CTX. The CTX crop is square, so the frame is too.
+              const routeHalo = createMarkerHalo(color, 1.6, {
+                lay: true,
+                aspect: 1,
+              });
+              const haloWrap = new THREE.Group();
+              placeOnSphereTangent(haloWrap, midUnit, rReg + 0.02);
+              const haloSpin = new THREE.Group();
+              haloSpin.rotation.y =
+                (azimuthToAlignNorth(rmLat, rmLon, haloWrap.quaternion) * Math.PI) / 180;
+              haloSpin.add(routeHalo);
+              haloWrap.add(haloSpin);
+              planetMesh.add(haloWrap);
+              routePatchGroups.push(haloWrap);
+              // Track the halo itself (not the wrap) — createMarkerHalo starts it
+              // hidden; the per-frame loop flips it on when the rover is selected.
+              routeSelectionHalos.push({ siteId: tr.rover_id, obj: routeHalo });
             }
-            // Regional sits on a LOWER shell than the detail patches so the
-            // two never z-fight where they overlap.
-            const rReg = planetRadius + 0.03;
-            const midUnit = tpos(midLat, midLon, rReg).normalize();
-            const rmLat = (Math.asin(Math.max(-1, Math.min(1, midUnit.y))) * 180) / Math.PI;
-            const rmLon = (Math.atan2(-midUnit.z, midUnit.x) * 180) / Math.PI;
-            // Camera frames the route here (the magnified midpoint), not the
-            // landing — so selecting the rover centres the whole drive (#360).
-            routeViewCenters.set(tr.rover_id, { lat: rmLat, lon: rmLon });
-            const regWrap = new THREE.Group();
-            placeOnSphereTangent(regWrap, midUnit, rReg);
-            const regGroup = buildRegionalPatch({
-              textureUrl: regionalUrl,
-              siteId: tr.rover_id,
-              orientationDeg: azimuthToAlignNorth(rmLat, rmLon, regWrap.quaternion),
-            });
-            regWrap.add(regGroup);
-            // Tag with the rover so the per-frame reveal can gate this
-            // midpoint CTX on the FOCUSED site only (#360 — see the
-            // traverse visibility loop).
-            regWrap.userData = { roverId: tr.rover_id };
-            planetMesh.add(regWrap);
-            routePatchGroups.push(regWrap);
-            routeRegionalGroups.push(regWrap);
-            regGroup.traverse((o) => {
-              if (o instanceof THREE.Mesh && o.userData?.layer === 'regional') {
-                const m = o.material as THREE.Material & { opacity: number };
-                m.transparent = true;
-                m.opacity = 0;
-                routeRegionalMaterials.push(m);
+            // Path-travel direction at a route point (#360): direction of the
+            // nearest polyline segment, in MAGNIFIED world space. Route patches
+            // orient to this instead of geographic north so they tile neatly
+            // along the traverse (Marko's call — accepts losing CTX-north match
+            // on the route segments).
+            const pathDirAt = (lat: number, lon: number): THREE.Vector3 => {
+              let best = Infinity;
+              let segIdx = 1;
+              for (let i = 1; i < points.length; i++) {
+                const mlat = (points[i - 1][0] + points[i][0]) / 2;
+                const mlon = (points[i - 1][1] + points[i][1]) / 2;
+                const d = (mlat - lat) ** 2 + (mlon - lon) ** 2;
+                if (d < best) {
+                  best = d;
+                  segIdx = i;
+                }
               }
-            });
-            // Selection bracket at the route centre — the blue-corner
-            // "zoomable imagery here" cue, north-aligned + framing the
-            // midpoint CTX. Visible while the rover is selected (#360).
-            // Square (aspect 1) to MATCH the midpoint CTX patch, which
-            // buildRegionalPatch renders square (no region_bounds passed).
-            // Using the region_bounds aspect here made the bracket a
-            // tall/narrow rectangle around a square image — glaring on
-            // Zhurong (region aspect 0.45) where the blue corners sat well
-            // outside the CTX. The CTX crop is square, so the frame is too.
-            const routeHalo = createMarkerHalo(color, 1.6, {
-              lay: true,
-              aspect: 1,
-            });
-            const haloWrap = new THREE.Group();
-            placeOnSphereTangent(haloWrap, midUnit, rReg + 0.02);
-            const haloSpin = new THREE.Group();
-            haloSpin.rotation.y =
-              (azimuthToAlignNorth(rmLat, rmLon, haloWrap.quaternion) * Math.PI) / 180;
-            haloSpin.add(routeHalo);
-            haloWrap.add(haloSpin);
-            planetMesh.add(haloWrap);
-            routePatchGroups.push(haloWrap);
-            // Track the halo itself (not the wrap) — createMarkerHalo starts it
-            // hidden; the per-frame loop flips it on when the rover is selected.
-            routeSelectionHalos.push({ siteId: tr.rover_id, obj: routeHalo });
-          }
-          // Path-travel direction at a route point (#360): direction of the
-          // nearest polyline segment, in MAGNIFIED world space. Route patches
-          // orient to this instead of geographic north so they tile neatly
-          // along the traverse (Marko's call — accepts losing CTX-north match
-          // on the route segments).
-          const pathDirAt = (lat: number, lon: number): THREE.Vector3 => {
-            let best = Infinity;
-            let segIdx = 1;
-            for (let i = 1; i < points.length; i++) {
-              const mlat = (points[i - 1][0] + points[i][0]) / 2;
-              const mlon = (points[i - 1][1] + points[i][1]) / 2;
-              const d = (mlat - lat) ** 2 + (mlon - lon) ** 2;
-              if (d < best) {
-                best = d;
-                segIdx = i;
-              }
+              const a = tpos(points[segIdx - 1][0], points[segIdx - 1][1], r);
+              const b = tpos(points[segIdx][0], points[segIdx][1], r);
+              return b.clone().sub(a);
+            };
+            // Detail patches sit on a HIGHER shell than the regional.
+            const rDet = planetRadius + 0.08;
+            // `?? []` — the deferred closure loses the outer `?.length`
+            // narrowing; route_patches is guaranteed non-empty here by the
+            // enclosing `if (tr.route_patches?.length)`.
+            for (const rp of tr.route_patches ?? []) {
+              const mUnit = tpos(rp.lat, rp.lon, rDet).normalize();
+              const wrap = new THREE.Group();
+              placeOnSphereTangent(wrap, mUnit, rDet);
+              const patchGroup = buildHotspotSurfacePatch({
+                textureUrl: rp.image,
+                accentColor: color,
+                siteId: tr.rover_id,
+                orientationDeg: azimuthToAlignDir(pathDirAt(rp.lat, rp.lon), wrap.quaternion),
+                groundMeters: rp.ground_m,
+                regionalGroundMeters: regionalGroundForPatch,
+              });
+              // Tag the wrap with its manifest entry so the flat-patch trigger
+              // can resolve which route patch is under the view (#360).
+              wrap.userData = { roverId: tr.rover_id, routePatch: rp };
+              wrap.add(patchGroup);
+              planetMesh.add(wrap);
+              routePatchGroups.push(wrap);
+              routeDetailGroups.push(wrap);
+              // Collect detail materials so the reveal ramp can fade them in.
+              // depthWrite:false so adjacent overlapping patches alpha-blend by
+              // render order instead of z-fighting (they tile with slight edge
+              // overlap at 0.5 km spacing).
+              patchGroup.traverse((o) => {
+                if (o instanceof THREE.Mesh && o.userData?.layer === 'detail') {
+                  const m = o.material as THREE.Material & { opacity: number };
+                  m.transparent = true;
+                  m.depthWrite = false;
+                  m.opacity = 0;
+                  routePatchMaterials.push(m);
+                }
+              });
             }
-            const a = tpos(points[segIdx - 1][0], points[segIdx - 1][1], r);
-            const b = tpos(points[segIdx][0], points[segIdx][1], r);
-            return b.clone().sub(a);
-          };
-          // Detail patches sit on a HIGHER shell than the regional.
-          const rDet = planetRadius + 0.08;
-          for (const rp of tr.route_patches) {
-            const mUnit = tpos(rp.lat, rp.lon, rDet).normalize();
-            const wrap = new THREE.Group();
-            placeOnSphereTangent(wrap, mUnit, rDet);
-            const patchGroup = buildHotspotSurfacePatch({
-              textureUrl: rp.image,
-              accentColor: color,
-              siteId: tr.rover_id,
-              orientationDeg: azimuthToAlignDir(pathDirAt(rp.lat, rp.lon), wrap.quaternion),
-              groundMeters: rp.ground_m,
-              regionalGroundMeters: regionalGroundForPatch,
-            });
-            // Tag the wrap with its manifest entry so the flat-patch trigger
-            // can resolve which route patch is under the view (#360).
-            wrap.userData = { roverId: tr.rover_id, routePatch: rp };
-            wrap.add(patchGroup);
-            planetMesh.add(wrap);
-            routePatchGroups.push(wrap);
-            routeDetailGroups.push(wrap);
-            // Collect detail materials so the reveal ramp can fade them in.
-            // depthWrite:false so adjacent overlapping patches alpha-blend by
-            // render order instead of z-fighting (they tile with slight edge
-            // overlap at 0.5 km spacing).
-            patchGroup.traverse((o) => {
-              if (o instanceof THREE.Mesh && o.userData?.layer === 'detail') {
-                const m = o.material as THREE.Material & { opacity: number };
-                m.transparent = true;
-                m.depthWrite = false;
-                m.opacity = 0;
-                routePatchMaterials.push(m);
-              }
-            });
+          });
+          // Already-selected rover (deep-link, or selection made before
+          // traverses finished loading) — build its route imagery now.
+          if (selected?.id === tr.rover_id) {
+            routePatchBuilders.get(tr.rover_id)?.();
+            routePatchBuilders.delete(tr.rover_id);
           }
         }
 
@@ -2280,16 +2316,12 @@
     }
 
     // Per-rebuild queue of deferred tier-2 patch builds. Pushed during
-    // the main marker loop, drained on a `setTimeout(…, 0)` so the
-    // markers + labels paint on the next frame before the patches
-    // start eating ~50–150 ms of geometry work. (2026-06-17 user note:
-    // "on /earth /moon /mars orbits and items load after the planet,
-    // sometimes takes few seconds — analyse where slowness comes
-    // from.") See the eager-vs-deferred comment inside the loop for
-    // the UX trade-off.
-    const tier2BuildQueue: Array<() => void> = [];
-    let tier2QueueGen = 0;
-
+    // the main marker loop. Tier-2 patches are no longer pre-warmed at
+    // mount (#363 perf) — they build lazily per landing zone via the LOD
+    // dispatcher's ensureTierBuilt() when a hotspot is first promoted to
+    // Tier 2 (2026-06-17 user note: "on /earth /moon /mars orbits and
+    // items load after the planet, sometimes takes few seconds"; #360/#361
+    // imagery turned that into a multi-second stall).
     function rebuildMarkers() {
       for (const mk of markers) {
         disposeObject3d(mk.group);
@@ -2297,11 +2329,6 @@
       }
       markers.length = 0;
       hotspots.length = 0;
-      // Bump the generation so any in-flight deferred tier-2 build
-      // batch from a prior rebuildMarkers() call short-circuits before
-      // attaching patches to disposed marker groups.
-      tier2QueueGen += 1;
-      tier2BuildQueue.length = 0;
       const labelOffsets = computeLabelOffsets(sites);
       for (const site of sites) {
         // Skip orbiter entries — they go through rebuildOrbitalMarkers.
@@ -2457,7 +2484,16 @@
                     // landing patch — so skip the landing regional here to
                     // avoid a duplicate disc centred on the wrong point.
                     let regionalTextureUrl: string | undefined;
-                    if (tier2RegionalSource && !traverses[site.id]) {
+                    // #360/#361: Mars rovers tile HiRISE patches along the
+                    // magnified route, so their landing regional is rendered at
+                    // the traverse midpoint instead (skip it here to avoid a
+                    // duplicate disc). Moon traverses no longer tile patches —
+                    // the whole short drive fits the single LROC detail /
+                    // Kaguya regional — so when a traverse has NO route_patches
+                    // we render the landing regional here, exactly like a
+                    // non-traverse site, and the polyline overlays it.
+                    const siteTrav = traverses[site.id];
+                    if (tier2RegionalSource && (!siteTrav || !siteTrav.route_patches?.length)) {
                       const rEntry = getImageEntry(tier2RegionalSource);
                       regionalTextureUrl =
                         (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
@@ -2495,26 +2531,15 @@
               tier1Builder: () => builder(accent),
               tier2Builder,
             });
-            // Tier-2 patch build — deferred to a setTimeout(…, 0)
-            // so the marker + label paint isn't blocked by ~5 ms of
-            // geometry+material setup per site (×27 sites adds up to
-            // 50–150 ms of jank on the first-paint frame). The patch
-            // still pre-warms long before the camR ~50 fade-in starts,
-            // because the macrotask fires within a couple of frames
-            // and the user typically takes >100 ms to scroll-zoom in.
-            // (2026-06-17 perf pass.)
-            if (tier2Builder) {
-              const queuedGen = tier2QueueGen;
-              tier2BuildQueue.push(() => {
-                // Bail if rebuildMarkers() ran again in the meantime —
-                // the captured `entry`/`group` would be attached to a
-                // disposed marker tree.
-                if (queuedGen !== tier2QueueGen) return;
-                entry.tier2Group = tier2Builder();
-                entry.tier2Group.visible = false;
-                group.add(entry.tier2Group);
-              });
-            }
+            // Tier-2 patch build is LAZY + per-landing-zone (#363 perf).
+            // No mount-time pre-warm: the LOD dispatcher's ensureTierBuilt()
+            // calls `entry.tier2Builder()` the first time THIS hotspot is
+            // promoted to Tier 2 (i.e. the camera zooms into this specific
+            // site). Previously every site's tier-2 was pre-built at mount,
+            // downloading a flood of multi-MB regional/detail patch textures
+            // (moon ~59 MB, mars per-site) while zoomed out where none were
+            // visible — stalling the planet's first paint by seconds. Now
+            // only the zone you zoom into builds, when you zoom into it.
             hotspots.push(entry);
             originalMaxTier.set(site.id, maxTier);
           }
@@ -2522,16 +2547,6 @@
 
         planetMesh.add(group);
         markers.push({ group, siteId: site.id, halo, hoverHalo, labelGroup: label.group });
-      }
-
-      if (tier2BuildQueue.length > 0) {
-        const queue = tier2BuildQueue.slice();
-        tier2BuildQueue.length = 0;
-        // setTimeout 0 — markers + labels paint on the next frame
-        // before the queue drains.
-        setTimeout(() => {
-          for (const build of queue) build();
-        }, 0);
       }
     }
 
@@ -3961,6 +3976,7 @@
           // threshold cross. camR is the orbital distance in scene units
           // (planet radius = 30u inside SurfaceScene).
           updatePlanetTextureLod(camR);
+
           // Publish the highest currently-displayed tier on the canvas
           // for e2e assertions (#116 S8).
           let topTier = 0;

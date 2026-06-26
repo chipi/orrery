@@ -75,7 +75,10 @@ test.describe('/earth', () => {
     await expect(page.getByTestId('layer-constellations')).toBeVisible();
     await expect(page.getByTestId('layer-comsats')).toBeVisible();
     await expect(page.getByTestId('layer-moon-orbiters')).toBeVisible();
-    await expect(page.getByTestId('layer-orbits')).toBeVisible();
+    // ORBITS chip was removed on /earth (#363) — it only toggled the
+    // regime-band overlay, which is gone; it stays on /moon + /mars where
+    // it controls real per-orbiter rings.
+    await expect(page.getByTestId('layer-orbits')).toHaveCount(0);
   });
 
   test('chip toggle flips aria-pressed', async ({ page, isMobile }) => {

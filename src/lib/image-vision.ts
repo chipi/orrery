@@ -23,7 +23,9 @@ import { base } from '$app/paths';
  * surfaces keep working before v2 has scored everything.
  */
 
-export type VariantRatio = '1x1' | '4x3' | '16x9';
+// 1x1 is the only generated variant (4x3/16x9 retired 2026-06-26 — no
+// UI consumed them). See scripts/vision/crop-variants.ts VARIANT_RATIOS.
+export type VariantRatio = '1x1';
 
 export type VisionCategory =
   | 'spacecraft'
@@ -117,16 +119,13 @@ export function pickVariant(
   surface: ImageSurface,
   isMobile = false,
 ): string | undefined {
-  if (!entry || surface === 'full') return undefined;
-  const variants = entry.variants;
-  switch (surface) {
-    case 'thumbnail':
-      return variants['1x1'] || undefined;
-    case 'card':
-      return variants['4x3'] || undefined;
-    case 'hero':
-      return (isMobile ? variants['4x3'] : variants['16x9']) || undefined;
-  }
+  // 1x1 is the only generated variant (4x3/16x9 retired 2026-06-26 — no
+  // UI consumed 'card'/'hero'). Non-thumbnail surfaces return undefined so
+  // the caller falls back to the raw source path (the correct full-res
+  // image anyway). isMobile is retained for call-site back-compat.
+  void isMobile;
+  if (!entry || surface !== 'thumbnail') return undefined;
+  return entry.variants['1x1'] || undefined;
 }
 
 /**

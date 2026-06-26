@@ -289,7 +289,9 @@ The hotspot fetch scripts (`fetch-moon-featured-images.ts`, `fetch-moon-kaguya-r
 node scripts/hotspots/regenerate-tier3-variants.mjs static/images/hotspots/<body>/<site>/tier2-lroc.jpg [...more bases]
 ```
 
-(`tier3` name is historical — it regenerates all ratios for any base via the same `generateVariants()`; no vision-API cost, no manifest rewrite.) Gate #8 above fails preflight if you forget. This bit us 2026-06-26 on change3/4 + luna16/17/21/24 after the clean-frame swap.
+(`tier3` name is historical — it regenerates the `.1x1` variant, the only ratio we generate since 2026-06-26, for any base via the same `generateVariants()`; no vision-API cost, no manifest rewrite.) Gate #8 above fails preflight if you forget. This bit us 2026-06-26 on change3/4 + luna16/17/21/24 after the clean-frame swap.
+
+> **Variant policy (2026-06-26):** `1x1` is the only generated ratio. `4x3` (card) + `16x9` (hero) were retired — no UI ever consumed them (`pickVariant` callers all pass `'thumbnail'`). `VARIANT_RATIOS` in `vision/crop-variants.ts` is the single lever (`[1x1]`); `pickVariant` returns `undefined` for non-thumbnail surfaces → caller uses the raw source path. 494 dead `static/images` files + ~1k `image-vision.json` refs removed. `/textures/*.{4x3,16x9}.jpg` are a SEPARATE pipeline (still consumed on `/credits`) — untouched.
 
 ---
 

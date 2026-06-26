@@ -138,10 +138,10 @@ export async function buildAndWriteManifest(
       subject: item.cached.subject,
       category: item.cached.category,
       focal_point: item.cached.focal_point,
+      // 1x1 only — 4x3/16x9 retired 2026-06-26 (no consumer). See
+      // crop-variants.ts VARIANT_RATIOS.
       variants: {
         '1x1': variantsMap['1x1'] ?? '',
-        '4x3': variantsMap['4x3'] ?? '',
-        '16x9': variantsMap['16x9'] ?? '',
       },
       rejected_by,
       fallback: item.fallback ?? false,

@@ -28,11 +28,13 @@ import sharp from 'sharp';
  * output, ready to copy to its destination next to the source image.
  */
 
-export const VARIANT_RATIOS = [
-  { id: '1x1', w: 1, h: 1 } as const,
-  { id: '4x3', w: 4, h: 3 } as const,
-  { id: '16x9', w: 16, h: 9 } as const,
-];
+// 1x1 is the only variant we generate. The 4x3 (card) and 16x9 (hero)
+// crops were retired 2026-06-26 — no UI ever consumed them (every
+// pickVariant caller in src/ passes 'thumbnail' → 1x1; surface scenes
+// read 1x1 exclusively). Keeping them was 494 dead files + ~1k dead
+// manifest refs that regenerated on every pipeline run. To re-introduce
+// an aspect crop, add it back here and wire a real consumer first.
+export const VARIANT_RATIOS = [{ id: '1x1', w: 1, h: 1 } as const];
 
 export type VariantRatio = (typeof VARIANT_RATIOS)[number]['id'];
 

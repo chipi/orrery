@@ -20,6 +20,14 @@ import {
  * **Featured Images** — pre-cropped, well-lit, georeferenced-by-eye PNGs at
  * lroc.im-ldi.com. We download, sharp-resize to 2048² square, JPEG, upsert.
  *
+ * CLEAN vs ANNOTATED (2026-06-25): Marko wants NON-annotated crops. LROC's
+ * Featured-Image *blog* PNGs bake in scale bars / boxes / arrows / labels.
+ * The /data/support/featured_sites/<Mission>/<n>/<NACframe>.jpg tree behind
+ * lroc.im-ldi.com/featured_sites serves the SAME NAC frames with NO annotation
+ * (the clean "before/after" base frames). For the 6 sites that have an entry
+ * there (change3/4, luna16/17/21/24) we now point at the clean frame. change5
+ * + beresheet aren't in that tree, so they keep their sharp annotated blog PNG.
+ *
  * ROBUSTNESS (the part that bit us — luna17 once pointed at a rover *photo*):
  *  - **Orbital-surface guard** — reject any crop that's >40% near-black
  *    (a hardware/studio photo has a black background; orbital terrain doesn't).
@@ -29,6 +37,18 @@ import {
  *    can never be the wrong subject.
  *
  * Run: `npx tsx scripts/hotspots/fetch-moon-featured-images.ts`
+ *
+ * ⚠️ MANDATORY POST-STEP — REGENERATE VARIANTS. This script writes ONLY the
+ * 2048² base `tier2-lroc.jpg`. The /moon deep-zoom DETAIL patch consumes
+ * `image-vision.json`'s `variants['1x1']` (pickVariant 'thumbnail'), so a
+ * re-fetched base whose `.1x1.jpg` wasn't regenerated leaves the manifest
+ * pointing at a stale/missing variant → the loader 404s → an EMPTY tile at
+ * deepest zoom (the 2026-06-26 bug on change3/4, luna16/17/21/24). After ANY
+ * url change here, run:
+ *   node scripts/hotspots/regenerate-tier3-variants.mjs \
+ *     static/images/hotspots/moon/<site>/tier2-lroc.jpg [...]
+ * `validate-data` now gates this — a missing consumed variant fails preflight.
+ * See AGENTS.md §"Image pipeline — gotchas".
  */
 
 interface FeaturedSpec {
@@ -42,27 +62,27 @@ interface FeaturedSpec {
 const FEATURED_IMAGES: FeaturedSpec[] = [
   {
     siteId: 'change3',
-    url: 'https://lroc.im-ldi.com/news/uploads/chang_e3_FI_opening.png',
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Change/3/M1142596997R.jpg',
     centerLat: 44.1214,
     centerLon: 340.4884,
     notes:
-      "Chang'e 3 lander + Yutu rover in Mare Imbrium. LROC NAC M1142582775R, 25 Dec 2013, 150 cm/px. Published Featured Image opening view.",
+      "Chang'e 3 lander + Yutu rover in Mare Imbrium. Clean (un-annotated) LROC NAC frame M1142596997R from the featured_sites tree.",
   },
   {
     siteId: 'luna16',
-    url: 'https://lroc.im-ldi.com/news/uploads/luna16_figure_900.png',
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Luna/16/M141899500L.jpg',
     centerLat: 0.5137,
     centerLon: 56.3638,
     notes:
-      'Luna 16 descent stage in Mare Fecunditatis. First robotic sample-return (1970, USSR). LROC NAC M106511834L. Published Featured Image.',
+      'Luna 16 descent stage in Mare Fecunditatis. First robotic sample-return (1970, USSR). Clean (un-annotated) LROC NAC frame M141899500L from the featured_sites tree.',
   },
   {
     siteId: 'luna17',
     // FIX (#361): was `lunokhod_1_big.png` — that's the *rover hardware* photo,
-    // not the orbital view. This is the LROC NAC M175502049R orbital image of
-    // the site: Lunokhod 1, the lander, and the rover traverse tracks from
-    // above, with a 25 m scale bar. Passes the orbital-surface guard.
-    url: 'https://lroc.im-ldi.com/news/uploads/LROCiotw/M175502049R_L17_thumb.png',
+    // not the orbital view. Then the annotated M175502049R_L17_thumb.png (scale
+    // bar + inset). Now the clean featured_sites NAC frame M173144480R — the
+    // Luna 17 lander + Lunokhod 1 site from above, un-annotated.
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Luna/17/M173144480R.jpg',
     centerLat: 38.315,
     centerLon: 324.992,
     notes:
@@ -70,27 +90,27 @@ const FEATURED_IMAGES: FeaturedSpec[] = [
   },
   {
     siteId: 'luna21',
-    url: 'https://lroc.im-ldi.com/news/uploads/M175070494LR_thumb.png',
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Luna/21/M122007650L.jpg',
     centerLat: 25.83,
     centerLon: 30.914,
     notes:
-      'Lunokhod 2 rover parked at 25.830°N 30.914°E inside Le Monnier crater. Lander at 26.005°N 30.406°E. Record 39 km traverse across Mare Serenitatis floor.',
+      'Lunokhod 2 rover parked at 25.830°N 30.914°E inside Le Monnier crater. Lander at 26.005°N 30.406°E. Record 39 km traverse across Mare Serenitatis floor. Clean (un-annotated) LROC NAC frame M122007650L from the featured_sites tree.',
   },
   {
     siteId: 'luna24',
-    url: 'https://lroc.im-ldi.com/news/uploads/LROCiotw/luna24_rev_fig.png',
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Luna/24/M137136039R.jpg',
     centerLat: 12.7141,
     centerLon: 62.213,
     notes:
-      'Luna 24 lander on the northwestern rim of a 64 m diameter impact crater in Mare Crisium. Last Soviet lunar mission (1976, robotic sample return). LROC low-altitude NAC.',
+      'Luna 24 lander on the northwestern rim of a 64 m diameter impact crater in Mare Crisium. Last Soviet lunar mission (1976, robotic sample return). Clean (un-annotated) LROC NAC frame M137136039R from the featured_sites tree.',
   },
   {
     siteId: 'change4',
-    url: 'https://lroc.im-ldi.com/ckeditor_assets/pictures/749/content_M1303619844LR_Close_crop_anot50m.png',
+    url: 'https://lroc.im-ldi.com/data/support/featured_sites/Change/4/M1370616052.jpg',
     centerLat: -45.4446,
     centerLon: 177.6048,
     notes:
-      "Chang'e 4 lander + Yutu-2 rover in Von Kármán crater, South Pole-Aitken basin (lunar far side). First far-side landing (2019, CNSA). LROC NAC M1303619844LR, Feb 2019. Only LROC view of any far-side landing — no NASA equivalent.",
+      "Chang'e 4 lander + Yutu-2 rover in Von Kármán crater, South Pole-Aitken basin (lunar far side). First far-side landing (2019, CNSA). Clean (un-annotated) LROC NAC frame M1370616052 from the featured_sites tree. Only LROC view of any far-side landing — no NASA equivalent.",
   },
   {
     siteId: 'change5',

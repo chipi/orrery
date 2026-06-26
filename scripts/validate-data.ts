@@ -1397,6 +1397,66 @@ console.log('\nValidating image-pipeline v2 manifests (image-vision + image-cura
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// Surface-hotspot Tier-2 consumed-variant resolution (image-work, 2026-06-26).
+//
+// The /moon + /mars deep-zoom DETAIL + REGIONAL patches resolve their texture
+// via image-vision's `variants['1x1']` (pickVariant 'thumbnail'), falling back
+// to the raw source only when that variant is empty/absent. When a hotspot base
+// image is RE-FETCHED without regenerating its variants, the manifest keeps
+// pointing at a now-deleted `*.1x1.jpg` → the loader 404s → the patch renders an
+// EMPTY placeholder tile at deepest zoom (hit 2026-06-26 on 6 re-pointed moon
+// sites: change3/4, luna16/17/21/24). This guard mirrors the runtime resolve for
+// every surface-hotspots.json Tier-2 source and fails if the consumed file is
+// missing on disk — so a half-baked re-fetch can never reach origin.
+//
+// MANDATORY after any hotspot base re-fetch (fetch-moon-featured-images.ts,
+// fetch-moon-kaguya-regional.ts, fetch-mars-*.ts, …):
+//   node scripts/hotspots/regenerate-tier3-variants.mjs <changed base>.jpg ...
+// See AGENTS.md §"Image pipeline — gotchas" + scripts/IMAGE-PIPELINE.md.
+console.log('\nValidating surface-hotspot Tier-2 consumed variants resolve on disk...');
+let surfaceHotspotVariantFailed = 0;
+{
+  const problems: string[] = [];
+  try {
+    const sidecar = JSON.parse(readFileSync(join(DATA_ROOT, 'surface-hotspots.json'), 'utf-8')) as {
+      entries?: Record<string, Record<string, unknown>>;
+    };
+    const vision = JSON.parse(readFileSync(join(DATA_ROOT, 'image-vision.json'), 'utf-8')) as {
+      entries?: Record<string, { variants?: Record<string, string> }>;
+    };
+    const visionEntries = vision.entries ?? {};
+    // Mirror src/lib/image-vision.ts pickVariant(entry, 'thumbnail'): the 1x1
+    // variant when truthy, else the raw source path (the `?? source` fallback).
+    const resolveConsumed = (source: string): string => {
+      const v = visionEntries[source]?.variants?.['1x1'];
+      return v && v.length > 0 ? v : source;
+    };
+    const entries = sidecar.entries ?? {};
+    for (const [siteId, e] of Object.entries(entries)) {
+      for (const field of ['hotspot_tier2_source', 'hotspot_tier2_regional_source'] as const) {
+        const source = e[field];
+        if (typeof source !== 'string' || !source.startsWith('/images/')) continue;
+        const consumed = resolveConsumed(source);
+        if (!existsSync(join('static', consumed.replace(/^\//, '')))) {
+          problems.push(
+            `surface-hotspots "${siteId}" ${field}: consumed variant ${consumed} missing on disk ` +
+              `— re-run: node scripts/hotspots/regenerate-tier3-variants.mjs ${join('static', source.replace(/^\//, ''))}`,
+          );
+        }
+      }
+    }
+  } catch (err) {
+    problems.push(`surface-hotspot variant check error: ${(err as Error).message}`);
+  }
+  if (problems.length === 0) {
+    console.log('  ✓ every surface-hotspot Tier-2 detail + regional source resolves on disk');
+  } else {
+    for (const p of problems) console.log(`  ✗ ${p}`);
+    surfaceHotspotVariantFailed = problems.length;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Overlay-completeness check (AGENTS.md non-negotiable, GH #83 follow-up).
 //
 // History: GH #83 added 11 constellation entries to earth-objects.json but
@@ -1708,6 +1768,7 @@ if (
     assetSizeFailed +
     imageMimeFailed +
     imagePipelineFailed +
+    surfaceHotspotVariantFailed +
     overlayFailed +
     audioFailed +
     episodeSourcesFailed >

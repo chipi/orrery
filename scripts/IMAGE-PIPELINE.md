@@ -277,8 +277,19 @@ Per ADR-047, every disk image must have a TASL row in `image-provenance.json`:
 5. Provenance completeness (every disk file must have a TASL row; fail-closed per ADR-047)
 6. License allowlist + waivers
 7. v2 vision manifest schema (sidecars conform to the surface schema)
+8. **Surface-hotspot Tier-2 consumed variants resolve on disk** — for every `surface-hotspots.json` `hotspot_tier2_source` + `hotspot_tier2_regional_source`, the file the /moon + /mars deep-zoom patch actually loads (`image-vision` `variants['1x1']`, else the raw base) must exist. Catches the half-baked-tile trap below.
 
 `npm run preflight` chains this into the pre-push hook. **Trust the exit code, not the prose** — the prettier filter can rewrite output and the test stays accurate.
+
+### ⚠️ Re-fetching a hotspot base = regenerate its variants (mandatory)
+
+The hotspot fetch scripts (`fetch-moon-featured-images.ts`, `fetch-moon-kaguya-regional.ts`, `fetch-mars-*.ts`) write **only** the 2048² base `tier2-*.jpg`. They do **not** produce the `.1x1/.4x3/.16x9` variants — and the /moon + /mars surface scene consumes `variants['1x1']`. So a re-fetched/re-pointed base whose variants weren't rebuilt leaves the manifest pointing at a stale or missing `*.1x1.jpg` → 404 → **empty tile at deepest zoom**. After ANY hotspot base change, run:
+
+```bash
+node scripts/hotspots/regenerate-tier3-variants.mjs static/images/hotspots/<body>/<site>/tier2-lroc.jpg [...more bases]
+```
+
+(`tier3` name is historical — it regenerates all ratios for any base via the same `generateVariants()`; no vision-API cost, no manifest rewrite.) Gate #8 above fails preflight if you forget. This bit us 2026-06-26 on change3/4 + luna16/17/21/24 after the clean-frame swap.
 
 ---
 

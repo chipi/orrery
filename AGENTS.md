@@ -379,6 +379,14 @@ The image sourcing + dedup + attribution pipeline has four parts that have to st
 
 **Surface select-landing zoom + Tier reveal + blink (#361).** Selecting a surface site flies to `faceCameraAtSite` default `targetR = 37` (was 50 — landed before the regional ramp started → bare globe). Regional ramp `regionalFadeStart 44 → 33` (was 50→33), detail `33 → 30.32`, flat-patch `30.1`; both `regionalFadeStartTop` (labels) and `regionalFadeStart` (patch) must stay in lock-step. The closer landing exposed an LRU-thrash blink: at camR 37 most of a body's hotspots project past the tier threshold at once, so `HOTSPOT_LRU_CEILING` (was 16) capped them and the LRU demoted+re-promoted 2/frame → `fadeProgress` reset every frame → the tier-2 patch flickered. Raised to **28** (clears moon's 18 + mars's 13). `image-provenance.json` is a concurrent-write hotspot — `build-image-provenance.ts` preserves existing covered entries but a parallel run can clobber fresh upserts via a load-snapshot race; re-run + verify before committing.
 
+**MANDATORY — re-fetching a hotspot base image MUST regenerate its variants (the half-baked-tile trap, 2026-06-26).** The /moon + /mars deep-zoom DETAIL + REGIONAL patches (both the 3D sphere quad in `hotspot-surface-patch.ts` AND the 2D `SurfaceFlatPatch.svelte`) resolve their texture through `image-vision.json`'s `variants['1x1']` (`pickVariant(entry, 'thumbnail')`), falling back to the raw `hotspot_tier2_source` path **only when that variant is empty/absent**. The fetch scripts (`fetch-moon-featured-images.ts`, `fetch-moon-kaguya-regional.ts`, `fetch-mars-*.ts`) write **only the 2048² base `.jpg`** — they do NOT regenerate the `.1x1/.4x3/.16x9` variants. So if you re-point or re-fetch a base image and stop there, the manifest keeps pointing at the now-stale (or now-missing) `*.1x1.jpg`: the loader 404s and the patch renders an **empty placeholder tile at deepest zoom** (this bit us on 6 re-pointed moon sites — change3/4, luna16/17/21/24 — after the 2026-06-25 clean-frame swap). After ANY hotspot base change, you MUST run:
+
+```bash
+node scripts/hotspots/regenerate-tier3-variants.mjs static/images/hotspots/<body>/<site>/tier2-lroc.jpg [...more bases]
+```
+
+(despite the `tier3` name it regenerates `.1x1/.4x3/.16x9` for any base via the same `generateVariants()` the vision step uses — no vision-API cost, no manifest rewrite; the manifest already references those paths). The `1x1` is the one the surface scene consumes; the regional layer falls back to the base when its `1x1` is absent, but regenerate both layers' bases for consistency. **This is now gated:** `validate-data.ts` mirrors the runtime resolve for every `surface-hotspots.json` Tier-2 source and fails preflight if a consumed variant is missing on disk — so a half-baked re-fetch can no longer reach origin. Don't `--no-verify` past it; run the regenerate command it prints.
+
 ---
 
 ## Mobile-first rules

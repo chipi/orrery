@@ -66,6 +66,10 @@ const SCRIPT_VERSION = 'build-image-provenance@1.0.0';
 const SCHEMA_VERSION = 1;
 
 const PROVENANCE_OUT = 'static/data/image-provenance.json';
+// Durable approved allowlist (RFC-029 / #363, decision 4). Only images
+// promoted into the shipped tree appear here; the build intersects against
+// it so a rebuild or vision re-score can never credit an unapproved image.
+const APPROVED_IN = 'static/data/image-approved.json';
 const DIFF_REPORT_OUT = 'docs/provenance/last-fetch-diff.md';
 const WAIVERS_PATH = 'static/data/license-waivers.json';
 
@@ -2731,8 +2735,27 @@ async function main() {
   if (OFFLINE) {
     console.log('  --offline: Wikimedia imageinfo enrichment skipped; using fallbacks only.');
   }
-  const entries = await buildAllEntries();
+  let entries = await buildAllEntries();
   console.log(`  → ${entries.length} entries`);
+
+  // Decision 4 (RFC-029 / #363) — the approved allowlist is the source of
+  // truth for what ships. Drop any /images/ entry not in it (staged-out or
+  // orphan images that linger in a stale walk). logos/ + textures/ live
+  // outside static/images and aren't part of the staging pipeline, so they
+  // bypass the filter (always credited). Absent allowlist = no filtering.
+  const approvedRaw = await readFile(APPROVED_IN, 'utf8').catch(() => null);
+  if (approvedRaw) {
+    const approved = new Set<string>(
+      (JSON.parse(approvedRaw) as { approved?: string[] }).approved ?? [],
+    );
+    const before = entries.length;
+    entries = entries.filter((e) => !e.path.startsWith('/images/') || approved.has(e.path));
+    const dropped = before - entries.length;
+    if (dropped > 0) {
+      console.log(`  → dropped ${dropped} unapproved /images/ entries (RFC-029 allowlist)`);
+    }
+  }
+
   const failures = await validate(entries);
   const manifest: ProvenanceManifest = {
     schema_version: SCHEMA_VERSION,

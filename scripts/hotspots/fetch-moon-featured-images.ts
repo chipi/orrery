@@ -234,7 +234,10 @@ async function kaguyaFailover(
   console.log(`  ⤵ ${siteId}: failed over to Kaguya TC detail`);
   return buildKaguyaTcProvenanceEntry({
     outputPath: out,
-    sourceUrl: 'https://stac.astrogeology.usgs.gov/ (Kaguya TC, see regional)',
+    // Bare archive root — must be a valid URI for the image-provenance
+    // schema. The "Kaguya TC detail (failover from the regional crop)"
+    // note lives in the entry's `title`, not glued onto the URL.
+    sourceUrl: 'https://stac.astrogeology.usgs.gov/',
     productId: `KAGUYA_TC_DETAIL_${siteId.toUpperCase()}`,
     siteId,
     centerLat: lat,

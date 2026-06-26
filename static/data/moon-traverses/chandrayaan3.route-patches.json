@@ -1,27 +1,4 @@
 {
   "rover_id": "chandrayaan3",
-  "patches": [
-    {
-      "id": "start",
-      "lat": -69.373,
-      "lon": 32.319,
-      "kind": "feature",
-      "label": "Landing / drive start",
-      "image": "/images/hotspots/moon/chandrayaan3/traverse/start.jpg",
-      "product_id": "TC1S2B0_01_03493S699E0322",
-      "resolution_m_per_px": 9.5747019921327,
-      "ground_m": 9804
-    },
-    {
-      "id": "end",
-      "lat": -69.37392,
-      "lon": 32.32799,
-      "kind": "feature",
-      "label": "Final position",
-      "image": "/images/hotspots/moon/chandrayaan3/traverse/end.jpg",
-      "product_id": "TC1S2B0_01_03493S699E0322",
-      "resolution_m_per_px": 9.5747019921327,
-      "ground_m": 9804
-    }
-  ]
+  "patches": []
 }

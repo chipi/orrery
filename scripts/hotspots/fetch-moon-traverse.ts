@@ -204,7 +204,10 @@ async function doRover(rover: string): Promise<void> {
     const prov = manifest.map((m) =>
       buildKaguyaTcProvenanceEntry({
         outputPath: `static${m.image as string}`,
-        sourceUrl: `https://astrogeo-ard.s3-us-west-2.amazonaws.com/ (Kaguya TC ${m.product_id})`,
+        // Bare archive root — must be a valid URI for the image-provenance
+        // schema. The Kaguya TC product_id is carried in `productId` (and
+        // the entry's `title`), not glued onto the URL.
+        sourceUrl: `https://astrogeo-ard.s3-us-west-2.amazonaws.com/`,
         productId: m.product_id as string,
         siteId: rover,
         centerLat: m.lat as number,

@@ -59,6 +59,10 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '8ba75ba6', // hotspots/moon/beresheet/tier3-pan.jpg ← missions/beresheet/01.jpg
   '48e655bc', // hotspots/moon/change3/tier3-pan.jpg ← missions/change3/01.jpg
   '895b2de9', // hotspots/moon/luna16/tier3-pan.jpg ← missions/luna16/01.jpg
+  // ── luna9 has no distinct LROC detail, so the detail fetch fails
+  //    over to a copy of its Kaguya TC regional crop (#361). Same
+  //    image at two tiers (regional + detail) by design.
+  'fd4ed591', // hotspots/moon/luna9/tier2-lroc.jpg = tier2-regional.jpg (failover)
   // ── /rockets surface = thumbnail-sized rocket reference cards
   //    that share the canonical fleet-gallery photo. Same image,
   //    two render contexts (catalog grid vs hero card).

@@ -1187,6 +1187,11 @@
     lifecycle.add(() => earthBackdropTex4k?.dispose());
     lifecycle.add(() => outlinePass.dispose());
     lifecycle.add(() => renderer.dispose());
+    // Force the WebGL context to be released immediately (#363) —
+    // renderer.dispose() alone leaves it resident until lazy GC, so
+    // navigating in/out of /iss piled up GBs of GPU memory and throttled
+    // rendering. Mirrors disposeSceneRenderer on the surface routes.
+    lifecycle.add(() => renderer.forceContextLoss());
     lifecycle.add(() => renderer.domElement.remove());
 
     cleanupThree = () => {

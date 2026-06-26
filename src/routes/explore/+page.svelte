@@ -4834,6 +4834,10 @@
     });
     lifecycle.add(() => bloomPass?.dispose());
     lifecycle.add(() => renderer.dispose());
+    // Force immediate WebGL context release (#363) — dispose() alone keeps
+    // the context (and its GPU memory) resident until lazy GC, piling up
+    // across navigations. Mirrors disposeSceneRenderer.
+    lifecycle.add(() => renderer.forceContextLoss());
     lifecycle.add(() => el3d.remove());
 
     cleanup = () => lifecycle.cleanup();

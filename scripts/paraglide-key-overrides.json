@@ -208,7 +208,18 @@
     "science_focused_101_tab_aria": "Un resumen enfocado para esta pestaña",
     "science_tabs_aria": "Pestañas de la enciclopedia",
     "science_search_kbd_aria": "Buscar en la enciclopedia (⌘K)",
-    "science_sections_tab_aria": "Secciones en esta pestaña"
+    "science_sections_tab_aria": "Secciones en esta pestaña",
+    "poster_solar_system_aria": "Póster de viaje del Sistema Solar",
+    "poster_earth_aria": "Póster de viaje de la Tierra",
+    "poster_moon_aria": "Póster de viaje de la Luna",
+    "poster_mars_aria": "Póster de viaje de Marte (estilo JPL Visions of the Future)",
+    "poster_iss_aria": "Póster de la EEI — colores de las banderas de las naciones socias rodeando la estación",
+    "poster_tiangong_aria": "Póster de Tiangong — panda con traje espacial, silueta de pagoda del palacio celestial, bambú",
+    "poster_apollo11_aria": "Huella de bota del Apolo 11 en la superficie lunar, con la Tierra visible en el cielo negro sobre el horizonte de la Luna",
+    "poster_gagarin_aria": "Póster de Yuri Gagarin — visor del casco SK-1 con la Tierra reflejada en el cristal dorado",
+    "poster_sputnik_aria": "Póster del Sputnik 1 — pop-art soviético con bocadillos bip-bip-bip",
+    "poster_voyager_aria": "Póster de las Voyager estilo cómic independiente / pop-art",
+    "poster_sojourner_aria": "Póster del rover Sojourner — estilo cómic independiente, primeras ruedas en Marte"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -419,7 +430,18 @@
     "science_focused_101_tab_aria": "Une introduction ciblée pour cet onglet",
     "science_tabs_aria": "Onglets de l'encyclopédie",
     "science_search_kbd_aria": "Rechercher dans l'encyclopédie (⌘K)",
-    "science_sections_tab_aria": "Sections de cet onglet"
+    "science_sections_tab_aria": "Sections de cet onglet",
+    "poster_solar_system_aria": "Affiche touristique du Système solaire",
+    "poster_earth_aria": "Affiche touristique de la Terre",
+    "poster_moon_aria": "Affiche touristique de la Lune",
+    "poster_mars_aria": "Affiche touristique de Mars (style JPL Visions of the Future)",
+    "poster_iss_aria": "Affiche ISS — drapeaux des nations partenaires encerclant la station",
+    "poster_tiangong_aria": "Affiche Tiangong — panda en combinaison spatiale, silhouette de pagode du palais céleste, bambou",
+    "poster_apollo11_aria": "Empreinte de botte d'Apollo 11 sur la surface lunaire, avec la Terre visible dans le ciel noir au-dessus de l'horizon de la Lune",
+    "poster_gagarin_aria": "Affiche Youri Gagarine — visière de casque SK-1 avec la Terre reflétée dans le verre teinté d'or",
+    "poster_sputnik_aria": "Affiche Spoutnik 1 — pop-art soviétique avec bulles bip-bip-bip",
+    "poster_voyager_aria": "Affiche Voyager style bande-dessinée indépendante / pop-art",
+    "poster_sojourner_aria": "Affiche rover Sojourner — style bande-dessinée indépendante, premières roues sur Mars"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -630,7 +652,18 @@
     "science_focused_101_tab_aria": "Ein fokussiertes Einmaleins für diesen Tab",
     "science_tabs_aria": "Enzyklopädie-Tabs",
     "science_search_kbd_aria": "Enzyklopädie durchsuchen (⌘K)",
-    "science_sections_tab_aria": "Abschnitte in diesem Tab"
+    "science_sections_tab_aria": "Abschnitte in diesem Tab",
+    "poster_solar_system_aria": "Sonnensystem-Reiseposter",
+    "poster_earth_aria": "Erde-Reiseposter",
+    "poster_moon_aria": "Mond-Reiseposter",
+    "poster_mars_aria": "Mars-Reiseposter (JPL Visions of the Future Stil)",
+    "poster_iss_aria": "ISS-Poster — Flaggenfarben der Partnernationen umkreisen die Station",
+    "poster_tiangong_aria": "Tiangong-Poster — Panda im Raumanzug, Himmelspalast-Pagoden-Silhouette, Bambus",
+    "poster_apollo11_aria": "Apollo-11-Fußabdruck auf der Mondoberfläche, mit Erde am schwarzen Himmel über dem Mondhorizont sichtbar",
+    "poster_gagarin_aria": "Juri-Gagarin-Poster — SK-1-Helmvisier mit Erde, die sich im goldgetönten Glas spiegelt",
+    "poster_sputnik_aria": "Sputnik-1-Poster — sowjetische Pop-Art mit Piep-Piep-Piep-Sprechblasen",
+    "poster_voyager_aria": "Voyager-Indie-Comic-/Pop-Art-Poster",
+    "poster_sojourner_aria": "Sojourner-Rover-Poster — Indie-Comic-Stil, erste Räder auf dem Mars"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -841,7 +874,18 @@
     "science_focused_101_tab_aria": "Um 101 focado para esta aba",
     "science_tabs_aria": "Abas da enciclopédia",
     "science_search_kbd_aria": "Buscar na enciclopédia (⌘K)",
-    "science_sections_tab_aria": "Seções nesta aba"
+    "science_sections_tab_aria": "Seções nesta aba",
+    "poster_solar_system_aria": "Pôster de viagem do Sistema Solar",
+    "poster_earth_aria": "Pôster de viagem da Terra",
+    "poster_moon_aria": "Pôster de viagem da Lua",
+    "poster_mars_aria": "Pôster de Marte (estilo JPL Visions of the Future)",
+    "poster_iss_aria": "Pôster da ISS — cores das bandeiras dos países parceiros circulando a estação",
+    "poster_tiangong_aria": "Pôster da Tiangong — panda em traje espacial, silhueta de pagode palácio celeste, bambu",
+    "poster_apollo11_aria": "Pegada da Apollo 11 na superfície lunar, com a Terra visível no céu negro acima do horizonte da Lua",
+    "poster_gagarin_aria": "Pôster de Yuri Gagarin — viseira do capacete SK-1 com a Terra refletida no vidro dourado",
+    "poster_sputnik_aria": "Pôster do Sputnik 1 — pop-art soviética com balões de fala bip-bip-bip",
+    "poster_voyager_aria": "Pôster da Voyager estilo quadrinhos indie / pop-art",
+    "poster_sojourner_aria": "Pôster do rover Sojourner — estilo quadrinhos indie, primeiras rodas em Marte"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -1052,7 +1096,18 @@
     "science_focused_101_tab_aria": "Un'introduzione mirata per questa scheda",
     "science_tabs_aria": "Schede enciclopedia",
     "science_search_kbd_aria": "Cerca nell'enciclopedia (⌘K)",
-    "science_sections_tab_aria": "Sezioni in questa scheda"
+    "science_sections_tab_aria": "Sezioni in questa scheda",
+    "poster_solar_system_aria": "Poster turistico del Sistema Solare",
+    "poster_earth_aria": "Poster turistico della Terra",
+    "poster_moon_aria": "Poster turistico della Luna",
+    "poster_mars_aria": "Poster di Marte (stile JPL Visions of the Future)",
+    "poster_iss_aria": "Poster ISS — colori delle bandiere dei paesi partner che circondano la stazione",
+    "poster_tiangong_aria": "Poster Tiangong — panda in tuta spaziale, silhouette di pagoda palazzo celeste, bambù",
+    "poster_apollo11_aria": "Impronta di stivale dell'Apollo 11 sulla superficie lunare, con la Terra visibile nel cielo nero sopra l'orizzonte della Luna",
+    "poster_gagarin_aria": "Poster Jurij Gagarin — visiera del casco SK-1 con la Terra riflessa nel vetro dorato",
+    "poster_sputnik_aria": "Poster Sputnik 1 — pop-art sovietica con nuvolette beep-beep-beep",
+    "poster_voyager_aria": "Poster Voyager stile fumetto indie / pop-art",
+    "poster_sojourner_aria": "Poster rover Sojourner — stile fumetto indie, le prime ruote su Marte"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -1263,7 +1318,18 @@
     "science_focused_101_tab_aria": "Фокусирани водич за овај језичак",
     "science_tabs_aria": "Језичци енциклопедије",
     "science_search_kbd_aria": "Претражи енциклопедију (⌘K)",
-    "science_sections_tab_aria": "Одељци у овом језичку"
+    "science_sections_tab_aria": "Одељци у овом језичку",
+    "poster_solar_system_aria": "Туристички плакат Сунчевог система",
+    "poster_earth_aria": "Туристички плакат Земље",
+    "poster_moon_aria": "Туристички плакат Месеца",
+    "poster_mars_aria": "Туристички плакат Марса (JPL Визије будућности стил)",
+    "poster_iss_aria": "МСС плакат — заставе земаља партнера око станице",
+    "poster_tiangong_aria": "Тјангонг плакат — панда у свемирском оделу, силуета пагоде небеског двора, бамбус",
+    "poster_apollo11_aria": "Траг Аполо 11 на месечевој површини, са Земљом видљивом на црном небу изнад месечевог хоризонта",
+    "poster_gagarin_aria": "Јуриј Гагарин плакат — визир шлема СК-1 са Земљом одраженом у златно тонираном стаклу",
+    "poster_sputnik_aria": "Спутњик 1 плакат — совјетски поп-арт са бип-бип-бип облачићима",
+    "poster_voyager_aria": "Војаџер инди-стрип / поп-арт плакат",
+    "poster_sojourner_aria": "Соџорнер ровер плакат — инди-стрип стил, први точкови на Марсу"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -1474,7 +1540,18 @@
     "science_focused_101_tab_aria": "此标签的聚焦入门",
     "science_tabs_aria": "百科全书标签",
     "science_search_kbd_aria": "搜索百科全书(⌘K)",
-    "science_sections_tab_aria": "此标签中的章节"
+    "science_sections_tab_aria": "此标签中的章节",
+    "poster_solar_system_aria": "太阳系旅行海报",
+    "poster_earth_aria": "地球旅行海报",
+    "poster_moon_aria": "月球旅行海报",
+    "poster_mars_aria": "火星旅行海报（JPL未来愿景风格）",
+    "poster_iss_aria": "国际空间站海报——伙伴国旗帜色彩环绕空间站",
+    "poster_tiangong_aria": "天宫海报——太空服熊猫、天宫宝塔剪影、竹子",
+    "poster_apollo11_aria": "阿波罗11号在月球表面的靴印，月球地平线上方的黑色天空中可见地球",
+    "poster_gagarin_aria": "尤里·加加林海报——SK-1头盔面罩，金色玻璃中映出地球倒影",
+    "poster_sputnik_aria": "斯普特尼克1号海报——苏联波普艺术风格，带有嘀嘀嘀对话气泡",
+    "poster_voyager_aria": "旅行者号独立漫画/波普艺术海报",
+    "poster_sojourner_aria": "旅居者号火星车海报——独立漫画风格，火星上的第一对车轮"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1685,7 +1762,18 @@
     "science_focused_101_tab_aria": "このタブのフォーカスされた入門",
     "science_tabs_aria": "百科事典タブ",
     "science_search_kbd_aria": "百科事典を検索（⌘K）",
-    "science_sections_tab_aria": "このタブのセクション"
+    "science_sections_tab_aria": "このタブのセクション",
+    "poster_solar_system_aria": "太陽系トラベルポスター",
+    "poster_earth_aria": "地球トラベルポスター",
+    "poster_moon_aria": "月トラベルポスター",
+    "poster_mars_aria": "火星ポスター（JPL Visions of the Futureスタイル）",
+    "poster_iss_aria": "ISSポスター — パートナー国の国旗色がステーションを周回",
+    "poster_tiangong_aria": "天宮ポスター — 宇宙服を着たパンダ、天宮の塔のシルエット、竹",
+    "poster_apollo11_aria": "月面のアポロ11号の足跡、月の地平線上の漆黒の空に地球が見える",
+    "poster_gagarin_aria": "ユーリイ・ガガーリンポスター — SK-1ヘルメットのバイザーに金色のガラスに反射する地球",
+    "poster_sputnik_aria": "スプートニク1号ポスター — ビープ・ビープ・ビープの吹き出し付きソビエトポップアート",
+    "poster_voyager_aria": "ボイジャー インディーコミック/ポップアートポスター",
+    "poster_sojourner_aria": "ソジャーナー探査車ポスター — インディーコミックスタイル、火星で初めての車輪"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -1896,7 +1984,18 @@
     "science_focused_101_tab_aria": "이 탭의 집중 입문",
     "science_tabs_aria": "백과사전 탭",
     "science_search_kbd_aria": "백과사전 검색 (⌘K)",
-    "science_sections_tab_aria": "이 탭의 섹션"
+    "science_sections_tab_aria": "이 탭의 섹션",
+    "poster_solar_system_aria": "태양계 여행 포스터",
+    "poster_earth_aria": "지구 여행 포스터",
+    "poster_moon_aria": "달 여행 포스터",
+    "poster_mars_aria": "화성 여행 포스터 (JPL Visions of the Future 스타일)",
+    "poster_iss_aria": "ISS 포스터 — 우주정거장을 도는 파트너 국가 국기 색상",
+    "poster_tiangong_aria": "톈궁 포스터 — 우주복 입은 판다, 천궁 누각 실루엣, 대나무",
+    "poster_apollo11_aria": "달 표면의 아폴로 11호 발자국, 달 지평선 위 검은 하늘에 보이는 지구",
+    "poster_gagarin_aria": "유리 가가린 포스터 — 금빛 유리에 반사된 지구가 비친 SK-1 헬멧 바이저",
+    "poster_sputnik_aria": "스푸트니크 1호 포스터 — 삑삑삑 말풍선이 있는 소련 팝아트",
+    "poster_voyager_aria": "보이저 인디 코믹 / 팝아트 포스터",
+    "poster_sojourner_aria": "소저너 탐사로봇 포스터 — 인디 코믹 스타일, 화성의 첫 바퀴"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -2107,7 +2206,18 @@
     "science_focused_101_tab_aria": "इस टैब के लिए एक केंद्रित 101",
     "science_tabs_aria": "विश्वकोश टैब",
     "science_search_kbd_aria": "विश्वकोश खोजें (⌘K)",
-    "science_sections_tab_aria": "इस टैब में अनुभाग"
+    "science_sections_tab_aria": "इस टैब में अनुभाग",
+    "poster_solar_system_aria": "सौर मंडल यात्रा-पोस्टर",
+    "poster_earth_aria": "पृथ्वी यात्रा-पोस्टर",
+    "poster_moon_aria": "चंद्रमा यात्रा-पोस्टर",
+    "poster_mars_aria": "मंगल यात्रा-पोस्टर (JPL Visions of the Future शैली)",
+    "poster_iss_aria": "ISS पोस्टर — स्टेशन के चारों ओर साझेदार-राष्ट्रों के झंडे के रंग",
+    "poster_tiangong_aria": "तियांगोंग पोस्टर — अंतरिक्ष सूट में पांडा, स्वर्गीय-महल पैगोडा सिल्हूट, बांस",
+    "poster_apollo11_aria": "चंद्र सतह पर Apollo 11 के बूट का निशान, चंद्रमा के क्षितिज के ऊपर काले आकाश में पृथ्वी दिखाई दे रही है",
+    "poster_gagarin_aria": "यूरी गागरिन पोस्टर — SK-1 हेलमेट वाइज़र में सुनहरे रंग के कांच पर पृथ्वी का प्रतिबिम्ब",
+    "poster_sputnik_aria": "स्पुतनिक 1 पोस्टर — सोवियत पॉप-आर्ट बीप-बीप-बीप स्पीच बबल्स के साथ",
+    "poster_voyager_aria": "वॉयेजर इंडी-कॉमिक / पॉप-आर्ट पोस्टर",
+    "poster_sojourner_aria": "सोजर्नर रोवर पोस्टर — इंडी-कॉमिक शैली, मंगल पर पहले पहिये"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2318,7 +2428,18 @@
     "science_focused_101_tab_aria": "مقدمة مركزة لهذا التبويب",
     "science_tabs_aria": "تبويبات الموسوعة",
     "science_search_kbd_aria": "البحث في الموسوعة (⌘K)",
-    "science_sections_tab_aria": "الأقسام في هذا التبويب"
+    "science_sections_tab_aria": "الأقسام في هذا التبويب",
+    "poster_solar_system_aria": "ملصق سفر المجموعة الشمسية",
+    "poster_earth_aria": "ملصق سفر الأرض",
+    "poster_moon_aria": "ملصق سفر القمر",
+    "poster_mars_aria": "ملصق المريخ (بأسلوب رؤى المستقبل من مختبر الدفع النفاث)",
+    "poster_iss_aria": "ملصق المحطة الفضائية الدولية — ألوان أعلام الدول الشريكة تحيط بالمحطة",
+    "poster_tiangong_aria": "ملصق تيانغونغ — باندا يرتدي بذلة فضاء، ظلال معبد القصر السماوي، خيزران",
+    "poster_apollo11_aria": "بصمة حذاء أبولو 11 على سطح القمر، مع الأرض مرئية في السماء السوداء فوق أفق القمر",
+    "poster_gagarin_aria": "ملصق يوري غاغارين — واقي خوذة SK-1 مع انعكاس الأرض في الزجاج المموّه بالذهبي",
+    "poster_sputnik_aria": "ملصق سبوتنيك 1 — فن سوفييتي شعبي مع فقاعات كلام بيب-بيب-بيب",
+    "poster_voyager_aria": "ملصق فوياجر بأسلوب الكوميكس المستقل / الفن الشعبي",
+    "poster_sojourner_aria": "ملصق مركبة سوجورنر — أسلوب كوميكس مستقل، أول عجلات على المريخ"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -2529,7 +2650,18 @@
     "science_focused_101_tab_aria": "Целевое введение для этой вкладки",
     "science_tabs_aria": "Вкладки энциклопедии",
     "science_search_kbd_aria": "Искать в энциклопедии (⌘K)",
-    "science_sections_tab_aria": "Разделы в этой вкладке"
+    "science_sections_tab_aria": "Разделы в этой вкладке",
+    "poster_solar_system_aria": "Туристический постер Солнечной системы",
+    "poster_earth_aria": "Туристический постер Земли",
+    "poster_moon_aria": "Туристический постер Луны",
+    "poster_mars_aria": "Туристический постер Марса (в стиле JPL Visions of the Future)",
+    "poster_iss_aria": "Постер МКС — флаги стран-партнёров по орбите вокруг станции",
+    "poster_tiangong_aria": "Постер «Тяньгун» — панда в скафандре, силуэт небесной пагоды, бамбук",
+    "poster_apollo11_aria": "Отпечаток ботинка Аполлона-11 на лунной поверхности, Земля видна в чёрном небе над горизонтом Луны",
+    "poster_gagarin_aria": "Постер Юрия Гагарина — визор шлема СК-1 с отражением Земли в золотистом стекле",
+    "poster_sputnik_aria": "Постер Спутника-1 — советский поп-арт с облачками «бип-бип-бип»",
+    "poster_voyager_aria": "Постер «Вояджера» в стиле инди-комикса / поп-арта",
+    "poster_sojourner_aria": "Постер марсохода Sojourner — стиль инди-комикса, первые колёса на Марсе"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -2722,6 +2854,17 @@
     "science_focused_101_tab_aria": "Een gerichte inleiding voor dit tabblad",
     "science_tabs_aria": "Encyclopedietabbladen",
     "science_search_kbd_aria": "Doorzoek de encyclopedie (⌘K)",
-    "science_sections_tab_aria": "Secties in dit tabblad"
+    "science_sections_tab_aria": "Secties in dit tabblad",
+    "poster_solar_system_aria": "Zonnestelsel reisposter",
+    "poster_earth_aria": "Aarde reisposter",
+    "poster_moon_aria": "Maan reisposter",
+    "poster_mars_aria": "Mars reisposter (JPL Visions of the Future stijl)",
+    "poster_iss_aria": "ISS-poster — partnerlandvlaggen cirkelen rond het station",
+    "poster_tiangong_aria": "Tiangong-poster — panda in ruimtepak, hemels paleis pagode silhouet, bamboe",
+    "poster_apollo11_aria": "Apollo 11 laarsafdruk op het maanoppervlak, met de Aarde zichtbaar aan de zwarte hemel boven de maanhorizon",
+    "poster_gagarin_aria": "Joeri Gagarin poster — SK-1 helmvizier met de Aarde weerspiegeld in het goudgetinte glas",
+    "poster_sputnik_aria": "Spoetnik 1 poster — Sovjet pop-art met piep-piep-piep tekstballonnen",
+    "poster_voyager_aria": "Voyager indie-comic / pop-art poster",
+    "poster_sojourner_aria": "Sojourner rover poster — indie-comic stijl, eerste wielen op Mars"
   }
 }

@@ -12,6 +12,7 @@
   // gives the user an infinitely-scalable file suitable for
   // wallpaper, T-shirt print, or Zoom background. ORRERY watermark
   // in the corner of every poster.
+  import * as m from '$lib/paraglide/messages';
 </script>
 
 <svelte:head>
@@ -32,7 +33,7 @@
 
     <!-- 1 · Solar System -->
     <figure class="poster">
-      <svg viewBox="0 0 600 900" role="img" aria-label="Solar System travel-poster">
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_solar_system_aria()}>
         <defs>
           <linearGradient id="ss-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#0a0a1c" />
@@ -220,7 +221,7 @@
 
     <!-- 2 · Earth -->
     <figure class="poster">
-      <svg viewBox="0 0 600 900" role="img" aria-label="Earth travel-poster">
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_earth_aria()}>
         <defs>
           <linearGradient id="er-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#04040c" />
@@ -378,7 +379,7 @@
 
     <!-- 3 · Moon -->
     <figure class="poster">
-      <svg viewBox="0 0 600 900" role="img" aria-label="Moon travel-poster">
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_moon_aria()}>
         <defs>
           <linearGradient id="mn-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#04040a" />
@@ -568,7 +569,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Mars travel-poster (JPL Visions of the Future style)"
+        aria-label={m.poster_mars_aria()}
       >
         <defs>
           <linearGradient id="ma-sky" x1="0" y1="0" x2="0" y2="1">
@@ -680,7 +681,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="ISS poster — partner-nation flag colours circling the station"
+        aria-label={m.poster_iss_aria()}
       >
         <defs>
           <radialGradient id="is-bg" cx="0.5" cy="0.45" r="0.7">
@@ -1138,7 +1139,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Tiangong poster — panda in spacesuit, heavenly-palace pagoda silhouette, bamboo"
+        aria-label={m.poster_tiangong_aria()}
       >
         <defs>
           <linearGradient id="tg-sky" x1="0" y1="0" x2="0" y2="1">
@@ -1424,7 +1425,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Apollo 11 bootprint on the lunar surface, with Earth visible in the black sky above the Moon's horizon"
+        aria-label={m.poster_apollo11_aria()}
       >
         <defs>
           <linearGradient id="apb-sky" x1="0" y1="0" x2="0" y2="1">
@@ -1642,7 +1643,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Yuri Gagarin poster — SK-1 helmet visor with Earth reflected in the gold-tinted glass"
+        aria-label={m.poster_gagarin_aria()}
       >
         <defs>
           <linearGradient id="ga-bg" x1="0" y1="0" x2="0" y2="1">
@@ -1841,7 +1842,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Sputnik 1 poster — Soviet pop-art with beep-beep-beep speech bubbles"
+        aria-label={m.poster_sputnik_aria()}
       >
         <defs>
           <linearGradient id="sp-sky" x1="0" y1="0" x2="0" y2="1">
@@ -2081,7 +2082,7 @@
 
     <!-- 10 · Voyager — bicentennial pop-art -->
     <figure class="poster">
-      <svg viewBox="0 0 600 900" role="img" aria-label="Voyager indie-comic / pop-art poster">
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_voyager_aria()}>
         <defs>
           <linearGradient id="vy-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#0a1230" />
@@ -2408,7 +2409,7 @@
       <svg
         viewBox="0 0 600 900"
         role="img"
-        aria-label="Sojourner rover poster — indie-comic style, first wheels on Mars"
+        aria-label={m.poster_sojourner_aria()}
       >
         <defs>
           <linearGradient id="sj-sky" x1="0" y1="0" x2="0" y2="1">

@@ -566,11 +566,7 @@
 
     <!-- 4 · Mars (JPL Visions) -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_mars_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_mars_aria()}>
         <defs>
           <linearGradient id="ma-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#1a0a2a" />
@@ -678,11 +674,7 @@
 
     <!-- 5 · ISS — fifteen partner-nation flag colours circling the station -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_iss_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_iss_aria()}>
         <defs>
           <radialGradient id="is-bg" cx="0.5" cy="0.45" r="0.7">
             <stop offset="0%" stop-color="#0a1a3a" />
@@ -1136,11 +1128,7 @@
 
     <!-- 6 · Tiangong — panda + heavenly palace -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_tiangong_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_tiangong_aria()}>
         <defs>
           <linearGradient id="tg-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#3a0a18" />
@@ -1422,11 +1410,7 @@
 
     <!-- 7 · Apollo 11 — bootprint on the Moon -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_apollo11_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_apollo11_aria()}>
         <defs>
           <linearGradient id="apb-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#000000" />
@@ -1640,11 +1624,7 @@
 
     <!-- 8 · Gagarin — helmet visor with Earth reflection -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_gagarin_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_gagarin_aria()}>
         <defs>
           <linearGradient id="ga-bg" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#2a0204" />
@@ -1839,11 +1819,7 @@
 
     <!-- 9 · Sputnik — Soviet pop-art, beep beep beep -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_sputnik_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_sputnik_aria()}>
         <defs>
           <linearGradient id="sp-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#1a0408" />
@@ -2406,11 +2382,7 @@
 
     <!-- 11 · Sojourner — indie comic, first wheels on Mars -->
     <figure class="poster">
-      <svg
-        viewBox="0 0 600 900"
-        role="img"
-        aria-label={m.poster_sojourner_aria()}
-      >
+      <svg viewBox="0 0 600 900" role="img" aria-label={m.poster_sojourner_aria()}>
         <defs>
           <linearGradient id="sj-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#3a1a08" />

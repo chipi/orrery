@@ -135,7 +135,12 @@
 
 {#if open}
   <div class="overlay" role="dialog" aria-modal="true" aria-label={m.science_search_dialog_aria()}>
-    <button type="button" class="backdrop" aria-label={m.search_close_aria()} tabindex="-1" onclick={close}
+    <button
+      type="button"
+      class="backdrop"
+      aria-label={m.search_close_aria()}
+      tabindex="-1"
+      onclick={close}
     ></button>
     <div class="panel" role="document">
       <input

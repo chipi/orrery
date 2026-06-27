@@ -7407,7 +7407,11 @@
   <!-- Right cluster — always visible, blue theme. HUD, CAPCOM, 2D/3D.
        2D sits furthest right so the canonical view switch stays at the
        conventional top-right corner. -->
-  <div class="fly-toggle-row fly-toggle-row-right" role="group" aria-label={m.fly_view_toggles_aria()}>
+  <div
+    class="fly-toggle-row fly-toggle-row-right"
+    role="group"
+    aria-label={m.fly_view_toggles_aria()}
+  >
     <button
       type="button"
       class="toggle"

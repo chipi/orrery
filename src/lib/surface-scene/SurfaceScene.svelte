@@ -894,6 +894,12 @@
         const siteParam = $page.url.searchParams.get('site');
         const traverseStopParam = $page.url.searchParams.get('traverse_stop');
         if (siteParam) {
+          // A deep-link arrival should land on OVERVIEW and stay there —
+          // suppress the one-shot OVERVIEW→STORY auto-promote that would
+          // otherwise fire the instant the detail tier loads (#361 made
+          // moon sites carry a tier context, which began triggering it).
+          // Auto-promote is reserved for an interactive zoom-to-detail.
+          storyAutopromote.suppressFor(siteParam);
           // Deep-link with ?traverse_stop=<id> — select the site but
           // defer the camera fly-in until traverses load so we can
           // target the stop's lat/lon instead of the site's. The

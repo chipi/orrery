@@ -8591,7 +8591,13 @@
     bottom: 14px;
     left: 16px;
     right: 16px;
-    z-index: 30;
+    /* Above the global .site-footer (z-index 35): the footer strip is
+       fixed at the bottom with pointer-events:auto links, and on narrow
+       mobile viewports its wide form (Gallery|Credits|…|ABOUT) overlaps
+       this transport bar and intercepts taps on the play / speed
+       controls. The interactive scrubber must out-stack the decorative
+       footer. */
+    z-index: 40;
     display: flex;
     align-items: center;
     gap: 12px;

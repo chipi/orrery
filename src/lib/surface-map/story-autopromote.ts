@@ -22,6 +22,7 @@ export type StoryAutopromoteInput = {
 
 export function createStoryAutopromoteTracker(): {
   check(input: StoryAutopromoteInput): boolean;
+  suppressFor(siteId: string): void;
 } {
   let prevActive = false;
   let switchedForSite: string | null = null;
@@ -36,6 +37,16 @@ export function createStoryAutopromoteTracker(): {
       if (switchedForSite === selectedId) return false;
       switchedForSite = selectedId;
       return true;
+    },
+    // Mark a site as already-promoted WITHOUT switching tabs, so the
+    // next tier-context activation for it is a no-op. Used by the
+    // `?site=<id>` deep-link path: arriving on a site should orient the
+    // visitor on OVERVIEW (the "STILL ON THE SURFACE" centrepiece), not
+    // fling them straight into STORY the instant the detail tier loads.
+    // The auto-promote is for an *interactive* zoom-to-detail gesture,
+    // which a deep-link is not.
+    suppressFor(siteId: string) {
+      switchedForSite = siteId;
     },
   };
 }

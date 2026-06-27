@@ -36,12 +36,30 @@ export async function expandFlyHud(page: Page): Promise<void> {
  * (the top-left ◐ button) if present; otherwise returns immediately.
  */
 export async function expandExploreHud(page: Page): Promise<void> {
-  const btn = page.locator('.hud-restore');
-  if (!(await btn.count())) return;
-  if ((await btn.evaluate((el) => getComputedStyle(el).display)) === 'none') return;
-  await btn
+  // Wait for hydration first. On mobile the HUD collapses at component
+  // init (during Svelte mount), so right after `goto` (fired on `load`,
+  // before mount completes) `.hud-restore` isn't in the DOM yet — a bare
+  // `count()` check would early-return as if already expanded, then the
+  // HUD collapses a beat later and every HUD-resident locator is hidden.
+  // `.hud-controls` is in the DOM on both desktop and mobile once mounted,
+  // so waiting for it is a fast, reliable hydration signal on either.
+  await page
+    .locator('.hud-controls')
     .first()
-    .click({ timeout: 5_000 })
+    .waitFor({ state: 'attached', timeout: 15_000 })
     .catch(() => {});
-  await page.waitForTimeout(150);
+  const btn = page.locator('.hud-restore');
+  // Retry until the cluster is expanded. A single click can be swallowed
+  // (momentary interception while the scene paints) and `.catch()` hides
+  // it. Each pass: if the restore button is gone (expanded) or hidden
+  // (desktop / no-op), we're done; otherwise click again.
+  for (let i = 0; i < 8; i++) {
+    if (!(await btn.count())) return; // {#if hudCollapsed} removed it → expanded
+    if ((await btn.evaluate((el) => getComputedStyle(el).display)) === 'none') return;
+    await btn
+      .first()
+      .click({ timeout: 5_000 })
+      .catch(() => {});
+    await page.waitForTimeout(200);
+  }
 }

@@ -93,6 +93,35 @@ describe('createStoryAutopromoteTracker', () => {
     ).toBe(false);
   });
 
+  it('suppressFor pins a site as already-promoted without switching', () => {
+    const t = createStoryAutopromoteTracker();
+    // Deep-link path: suppress before any tier activation.
+    t.suppressFor('apollo11');
+    // tierContext now flips on for the suppressed site → no promote.
+    expect(
+      t.check({
+        tierContextActive: true,
+        selectedId: 'apollo11',
+        hasStory: true,
+        currentTab: 'overview',
+      }),
+    ).toBe(false);
+  });
+
+  it('suppressFor only pins the named site — others still promote', () => {
+    const t = createStoryAutopromoteTracker();
+    t.suppressFor('apollo11');
+    // A different (non-deep-linked) site still auto-promotes normally.
+    expect(
+      t.check({
+        tierContextActive: true,
+        selectedId: 'curiosity',
+        hasStory: true,
+        currentTab: 'overview',
+      }),
+    ).toBe(true);
+  });
+
   it('promotes again when a different site flips on', () => {
     const t = createStoryAutopromoteTracker();
     t.check({

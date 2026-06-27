@@ -5859,7 +5859,11 @@
     /* Stacked above .earth-compare (bottom:8 + its ~36px height + gap). */
     bottom: 50px;
     left: 8px;
-    z-index: 20;
+    /* Above the global .site-footer (z-index 35): on narrow mobile the
+       footer's wide link strip (Gallery|Credits|…|ABOUT) overlaps this
+       bottom-left control and intercepts taps on the reset / play
+       buttons. The interactive control must out-stack the footer. */
+    z-index: 40;
     display: flex;
     align-items: center;
     gap: 5px;

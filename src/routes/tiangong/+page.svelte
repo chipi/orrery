@@ -1358,8 +1358,8 @@
         <button
           type="button"
           class="timeline-close"
-          aria-label="Close timeline"
-          title="Close timeline"
+          aria-label={m.timeline_close()}
+          title={m.timeline_close()}
           onclick={() => (timelineOpen = false)}
         >
           ×
@@ -1444,8 +1444,8 @@
         class="edge-handle handle-bottom"
         data-testid="tiangong-timeline-toggle"
         aria-pressed={timelineOpen}
-        aria-label="Toggle Tiangong assembly timeline"
-        title="Chronological timeline of when each Tiangong module + visitor joined the station"
+        aria-label={m.tiangong_toggle_timeline_aria()}
+        title={m.tiangong_timeline_title()}
         onclick={() => (timelineOpen = !timelineOpen)}
       >
         <span class="handle-label">{m.station_handle_timeline()}</span>
@@ -1535,7 +1535,7 @@
                 assemblyPlaying = false;
               }
             }}
-            title="Watch the station's modules join in chronological order"
+            title={m.tiangong_watch_assembly_title()}
           >
             ASSEMBLY
           </button>

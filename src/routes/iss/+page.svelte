@@ -1411,8 +1411,8 @@
         <button
           type="button"
           class="timeline-close"
-          aria-label="Close timeline"
-          title="Close timeline"
+          aria-label={m.timeline_close()}
+          title={m.timeline_close()}
           onclick={() => (timelineOpen = false)}
         >
           ×
@@ -1496,8 +1496,8 @@
         class="edge-handle handle-bottom"
         data-testid="iss-timeline-toggle"
         aria-pressed={timelineOpen}
-        aria-label="Toggle ISS assembly timeline"
-        title="Chronological timeline of when each module + visitor joined the ISS"
+        aria-label={m.iss_toggle_timeline_aria()}
+        title={m.iss_timeline_title()}
         onclick={() => (timelineOpen = !timelineOpen)}
       >
         <span class="handle-label">{m.station_handle_timeline()}</span>
@@ -1586,7 +1586,7 @@
                 assemblyPlaying = false;
               }
             }}
-            title="Watch the station's modules + visitors join in chronological order"
+            title={m.iss_watch_assembly_title()}
           >
             ASSEMBLY
           </button>

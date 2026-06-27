@@ -5108,8 +5108,8 @@
       type="button"
       class="hud-restore"
       onclick={toggleHud}
-      aria-label="Show view controls"
-      title="Show controls"
+      aria-label={m.explore_show_controls_aria()}
+      title={m.explore_show_controls_title()}
     >
       ◐
     </button>
@@ -5145,8 +5145,8 @@
       type="button"
       class="hud-mobile-collapse"
       onclick={toggleHud}
-      aria-label="Hide view controls"
-      title="Hide controls">◑</button
+      aria-label={m.explore_hide_controls_aria()}
+      title={m.explore_hide_controls_title()}>◑</button
     >
     <div class="ctrl-row">
       <button
@@ -5236,7 +5236,7 @@
       </button>
     </div>
     {#if layers.paths}
-      <div class="paths-legend" role="group" aria-label="Iconic trajectory legend">
+      <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
         <a
           class="paths-legend-why"
           href="{base}/science/transfers/coplanar-trajectories"

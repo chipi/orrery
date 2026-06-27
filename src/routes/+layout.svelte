@@ -232,8 +232,8 @@
   <main>
     {@render children?.()}
   </main>
-  <footer class="site-footer" aria-label="Site footer">
-    <nav class="footer-menu" aria-label="Footer links">
+  <footer class="site-footer" aria-label={m.footer_aria()}>
+    <nav class="footer-menu" aria-label={m.footer_links_aria()}>
       <a class="footer-link" href="{base}/posters">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
@@ -254,7 +254,7 @@
            without re-flowing the inline footer strip. -->
       <span class="footer-about-group">
         <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
-        <ul class="footer-about-menu" role="menu" aria-label="About">
+        <ul class="footer-about-menu" role="menu" aria-label={m.footer_about_aria()}>
           <li role="none">
             <a
               class="footer-link footer-link-extra"
@@ -283,7 +283,7 @@
         href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
         target="_blank"
         rel="noopener noreferrer external"
-        title="Build version + deploy date (opens CHANGELOG on GitHub)"
+        title={m.version_info_title()}
         hreflang="en">v{displayVersion} · {__BUILD_DATE__}</a
       >
     </nav>

@@ -121,12 +121,12 @@
 <div class="science-root">
   <div class="page" class:has-right-rail={showRightRail}>
     <div class="layout">
-      <aside class="rail rail-left" aria-label="Encyclopedia tabs">
+      <aside class="rail rail-left" aria-label={m.science_tabs_aria()}>
         <button
           type="button"
           class="search-button"
           data-audio-stage="science-search-button"
-          aria-label="Search the encyclopedia (⌘K)"
+          aria-label={m.science_search_kbd_aria()}
           onclick={() => searchEl?.open_()}
         >
           <span class="search-icon" aria-hidden="true">⌕</span>
@@ -158,7 +158,7 @@
       </div>
 
       {#if showRightRail && tabSections && activeTab}
-        <aside class="rail rail-right" aria-label="Sections in this tab">
+        <aside class="rail rail-right" aria-label={m.science_sections_tab_aria()}>
           <h2 class="rail-heading">{tabLabel(activeTab)}</h2>
           <ul class="section-list">
             {#each tabSections as section (section.id)}

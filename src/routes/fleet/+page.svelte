@@ -392,9 +392,9 @@
         id="fleet-filters"
         class="filters"
         data-audio-stage="fleet-filters"
-        aria-label="Fleet filters"
+        aria-label={m.fleet_filters_aria()}
       >
-        <div class="filter-group" role="radiogroup" aria-label="Category">
+        <div class="filter-group" role="radiogroup" aria-label={m.fleet_category_aria()}>
           <span class="filter-label">{m.fleet_filter_category()}</span>
           <button
             type="button"
@@ -416,7 +416,7 @@
           {/each}
         </div>
 
-        <div class="filter-group" role="radiogroup" aria-label="Status">
+        <div class="filter-group" role="radiogroup" aria-label={m.fleet_status_aria()}>
           <span class="filter-label">{m.fleet_filter_status()}</span>
           <button
             type="button"
@@ -439,7 +439,7 @@
         </div>
 
         {#if agencies.length > 0}
-          <div class="filter-group" role="radiogroup" aria-label="Agency">
+          <div class="filter-group" role="radiogroup" aria-label={m.fleet_agency_aria()}>
             <span class="filter-label">{m.fleet_filter_agency()}</span>
             <button
               type="button"
@@ -489,7 +489,7 @@
         <div class="filter-group sort-group">
           <span class="filter-label">{m.fleet_filter_sort()}</span>
           <select
-            aria-label="Sort fleet entries"
+            aria-label={m.fleet_sort_aria()}
             value={sortMode}
             onchange={(e) =>
               setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
@@ -523,7 +523,7 @@
       <ul
         class="fleet-grid entity-card-grid"
         data-audio-stage="fleet-grid"
-        aria-label="Fleet card grid"
+        aria-label={m.fleet_grid_aria()}
       >
         {#each filtered as entry (entry.id)}
           {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}

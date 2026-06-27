@@ -150,7 +150,7 @@
     {/if}
     <p class="disclaimer">{m.no_endorsement_disclaimer()}</p>
 
-    <aside class="data-sources" aria-label="Audio episode transcripts index">
+    <aside class="data-sources" aria-label={m.library_transcripts_aria()}>
       <h3>Audio episodes</h3>
       <p>
         Read every Curator Tour episode without playing the audio —
@@ -160,7 +160,7 @@
       </p>
     </aside>
 
-    <aside class="data-sources" aria-label="Data sources for the launches calendar">
+    <aside class="data-sources" aria-label={m.library_launches_sources_aria()}>
       <h3>Launches data</h3>
       <p>
         Historic launches:

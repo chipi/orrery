@@ -85,7 +85,7 @@
       data-audio-stage="hero-illustration"
       src="{base}/images/app-landing-hero.webp"
       alt=""
-      aria-label="Orrery — a stylised solar system with a highlighted transfer trajectory"
+      aria-label={m.landing_hero_aria()}
     />
 
     <h1 class="wordmark">ORRERY</h1>

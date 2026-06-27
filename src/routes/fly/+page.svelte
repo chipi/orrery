@@ -7006,7 +7006,7 @@
         class="opening-skip"
         data-testid="fly-opening-skip"
         onclick={skipOpening}
-        aria-label="Proceed to simulation"
+        aria-label={m.fly_proceed_aria()}
       >
         <span>{m.fly_proceed_to_simulation()}</span>
         <span class="opening-skip-arrow" aria-hidden="true">▸</span>
@@ -7370,13 +7370,13 @@
     <div
       class="fly-toggle-row fly-toggle-row-left lens"
       role="group"
-      aria-label="Science Lens panel toggles"
+      aria-label={m.fly_science_lens_toggles_aria()}
     >
       <button
         type="button"
         class="toggle toggle-lens"
         aria-pressed={showFlightDirector}
-        title="Toggle Flight Director narration banner"
+        title={m.fly_toggle_flight_director_title()}
         onclick={() => (showFlightDirector = !showFlightDirector)}
       >
         FD
@@ -7385,7 +7385,7 @@
         type="button"
         class="toggle toggle-lens"
         aria-pressed={showLayersPanel}
-        title="Toggle Science Layers panel"
+        title={m.fly_toggle_science_layers_title()}
         onclick={() => (showLayersPanel = !showLayersPanel)}
       >
         LYR
@@ -7395,7 +7395,7 @@
           type="button"
           class="toggle toggle-lens"
           aria-pressed={showConicPanel}
-          title="Toggle Conic Section side panel"
+          title={m.fly_toggle_conic_title()}
           onclick={() => (showConicPanel = !showConicPanel)}
         >
           CON
@@ -7407,12 +7407,12 @@
   <!-- Right cluster — always visible, blue theme. HUD, CAPCOM, 2D/3D.
        2D sits furthest right so the canonical view switch stays at the
        conventional top-right corner. -->
-  <div class="fly-toggle-row fly-toggle-row-right" role="group" aria-label="View and panel toggles">
+  <div class="fly-toggle-row fly-toggle-row-right" role="group" aria-label={m.fly_view_toggles_aria()}>
     <button
       type="button"
       class="toggle"
       aria-pressed={showHud}
-      title="Toggle HUD column (mission identity, navigation, flight params, systems, live state)"
+      title={m.fly_toggle_hud_title()}
       onclick={() => (showHud = !showHud)}
     >
       HUD
@@ -7421,7 +7421,7 @@
       type="button"
       class="toggle"
       aria-pressed={showCapcom}
-      title="Toggle CAPCOM events panel"
+      title={m.fly_toggle_capcom_title()}
       onclick={() => (showCapcom = !showCapcom)}
     >
       CAP
@@ -7510,7 +7510,7 @@
        so /fly aligns with /explore / /earth / /moon / /mars / /plan,
        which all pass title + body + tab + section. LYR toggle hides it. -->
   <ScienceLayersPanel
-    title="Mission arc · Keplerian transfer ellipse"
+    title={m.fly_mission_arc_title()}
     body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
     tab="transfers"
     section="transfer-ellipse"

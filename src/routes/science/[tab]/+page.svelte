@@ -59,7 +59,7 @@
 </figure>
 
 {#if data.intro}
-  <section class="tab-intro" aria-label="A focused 101 for this tab">
+  <section class="tab-intro" aria-label={m.science_focused_101_tab_aria()}>
     <p class="badge">101 · zoom in</p>
     <p class="headline">{data.intro.headline}</p>
     {#each data.intro.paragraphs as para (para)}

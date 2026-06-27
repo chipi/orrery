@@ -293,7 +293,7 @@
                       <span>{routeLabel(route)}</span>
                     {/each}
                     {#if bundle.variants.length > 1 || bundle.stems.length > 1}
-                      <span class="variants" aria-label="Aspect-ratio variants">
+                      <span class="variants" aria-label={m.credits_variants_aria()}>
                         {#each bundle.variants as v}
                           <span class="variant-chip">{v}</span>
                         {/each}

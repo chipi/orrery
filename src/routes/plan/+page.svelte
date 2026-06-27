@@ -1183,7 +1183,7 @@
 <!-- Unified Science Lens panel — lens story only on /plan (no layer
      toggles meaningful for the porkchop view). -->
 <ScienceLayersPanel
-  title="Porkchop plot · the calendar of cheap launches"
+  title={m.plan_porkchop_title()}
   body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
   tab="porkchop"
   section="what-is-a-porkchop"

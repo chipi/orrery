@@ -24,7 +24,14 @@
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
+import { dirname as pathDirname } from 'node:path';
 import { coerceToJpeg } from './lib/image-bytes.ts';
+import { toStagingDest } from './lib/staging.ts';
+
+// Stage-by-default (RFC-029 / #363, Slice 3): new gallery-slot fetches land
+// in static/images/_staging/ for review + promote, not the shipped tree.
+// `--no-stage` restores the legacy write-straight-to-main behaviour.
+const STAGE_FETCH = !process.argv.includes('--no-stage');
 
 /**
  * GH #251: bytes downloaded from the wire are not necessarily the
@@ -34,13 +41,18 @@ import { coerceToJpeg } from './lib/image-bytes.ts';
  * write to a `.jpg`/`.jpeg` path round-trips through `sharp().jpeg()`
  * so the on-disk bytes are guaranteed-valid JPEG regardless of source.
  * Other extensions pass through unchanged.
+ *
+ * When STAGE_FETCH is on, gallery-slot destinations are redirected into
+ * the staging ground (toStagingDest is a no-op for textures/logos/etc.).
  */
 async function writeImageBytes(dest: string, buffer: Buffer): Promise<void> {
-  const lower = dest.toLowerCase();
+  const finalDest = STAGE_FETCH ? toStagingDest(dest) : dest;
+  await mkdir(pathDirname(finalDest), { recursive: true });
+  const lower = finalDest.toLowerCase();
   if (lower.endsWith('.jpg') || lower.endsWith('.jpeg')) {
-    await writeFile(dest, await coerceToJpeg(buffer));
+    await writeFile(finalDest, await coerceToJpeg(buffer));
   } else {
-    await writeFile(dest, buffer);
+    await writeFile(finalDest, buffer);
   }
 }
 import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-sources.ts';
@@ -1567,7 +1579,12 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
   // Write the manifest (sorted keys → byte-identical re-runs).
   const sortedManifest: Record<string, number> = {};
   for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
-  await writeFile(MISSION_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  // Staged fetches leave gallery counts untouched — counts change only when
+  // images are promoted in /dev/staging (else the manifest over-claims
+  // slots that live in _staging). --no-stage writes counts as before.
+  if (!STAGE_FETCH)
+    await writeFile(MISSION_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  else console.log('  (staged: mission gallery counts unchanged — promote in /dev/staging)');
   const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
   console.log(
     `  → manifest written to ${MISSION_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
@@ -1903,7 +1920,9 @@ async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
 
   const sortedManifest: Record<string, number> = {};
   for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
-  await writeFile(ISS_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  if (!STAGE_FETCH)
+    await writeFile(ISS_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  else console.log('  (staged: ISS gallery counts unchanged — promote in /dev/staging)');
   const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
   console.log(
     `  → manifest written to ${ISS_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
@@ -2086,7 +2105,9 @@ async function fetchTiangongModuleImages(onlyIds?: string[]): Promise<number> {
 
   const sortedManifest: Record<string, number> = {};
   for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
-  await writeFile(TIANGONG_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  if (!STAGE_FETCH)
+    await writeFile(TIANGONG_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  else console.log('  (staged: Tiangong gallery counts unchanged — promote in /dev/staging)');
   const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
   console.log(
     `  → manifest written to ${TIANGONG_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
@@ -3708,8 +3729,12 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
     process.stdout.write(` → ${saved}\n`);
   }
 
-  await writeFile(FLEET_GALLERIES_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
-  await writeFile(FLEET_IMAGE_SOURCES_MANIFEST, JSON.stringify(sources, null, 2) + '\n');
+  if (!STAGE_FETCH) {
+    await writeFile(FLEET_GALLERIES_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+    await writeFile(FLEET_IMAGE_SOURCES_MANIFEST, JSON.stringify(sources, null, 2) + '\n');
+  } else {
+    console.log('  (staged: fleet gallery counts unchanged — promote in /dev/staging)');
+  }
   return totalPhotos;
 }
 

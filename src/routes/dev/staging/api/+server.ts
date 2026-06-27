@@ -27,6 +27,23 @@ const APPROVED_PATH = resolve('static/data/image-approved.json');
 const VARIANT_RE = /\.(1x1|4x3|16x9)\.(jpe?g|png|webp)$/i;
 const IMG_RE = /\.(jpe?g|png|webp)$/i;
 
+// category → its gallery-count manifest. Promoting a slot bumps the count
+// so the image actually displays. Categories absent here (e.g. rockets,
+// anatomy) aren't count-capped galleries — promote just ships the file.
+const CATEGORY_MANIFEST: Record<string, string> = {
+  missions: 'mission-galleries.json',
+  'fleet-galleries': 'fleet-galleries.json',
+  'iss-modules': 'iss-galleries.json',
+  'tiangong-modules': 'tiangong-galleries.json',
+  'mars-sites': 'mars-site-galleries.json',
+  'moon-sites': 'moon-site-galleries.json',
+  'earth-objects': 'earth-object-galleries.json',
+  planets: 'planet-galleries.json',
+  'small-bodies': 'small-body-galleries.json',
+  satellites: 'satellite-galleries.json',
+  belts: 'belt-galleries.json',
+};
+
 /** Guard: resolved path must stay inside static/images/. */
 function safeImagesPath(p: string): string {
   const abs = resolve(p);
@@ -167,9 +184,56 @@ export async function POST({ request }) {
     await writeFile(APPROVED_PATH, JSON.stringify(appr, null, 2) + '\n', 'utf8');
   }
 
+  // Bump gallery counts so promoted slots actually display. For each
+  // affected <category>/<id>, set the count to the number of CONTIGUOUS
+  // main slots (01..N) — a promoted non-contiguous slot won't show until
+  // the gap is also promoted, which keeps galleries gap-free.
+  const countBumps: Record<string, number> = {};
+  const affected = new Set(
+    promoted
+      .map((p) => p.match(/^\/images\/([^/]+)\/([^/]+)\/\d+\./))
+      .filter((m): m is RegExpMatchArray => !!m && m[1] in CATEGORY_MANIFEST)
+      .map((m) => `${m[1]}::${m[2]}`),
+  );
+  const byManifest = new Map<string, Array<[string, number]>>(); // manifestFile -> [id, count][]
+  for (const key of affected) {
+    const [cat, id] = key.split('::');
+    let n = 0;
+    while (true) {
+      try {
+        await stat(
+          safeImagesPath(join(IMAGES_DIR, cat, id, `${String(n + 1).padStart(2, '0')}.jpg`)),
+        );
+        n++;
+      } catch {
+        break;
+      }
+    }
+    if (n > 0) {
+      const man = CATEGORY_MANIFEST[cat];
+      if (!byManifest.has(man)) byManifest.set(man, []);
+      byManifest.get(man)!.push([id, n]);
+      countBumps[`${cat}/${id}`] = n;
+    }
+  }
+  for (const [manFile, pairs] of byManifest) {
+    const manPath = resolve('static/data', manFile);
+    let counts: Record<string, number> = {};
+    try {
+      counts = JSON.parse(await readFile(manPath, 'utf8'));
+    } catch {
+      /* new manifest */
+    }
+    for (const [id, n] of pairs) counts[id] = n;
+    const sorted: Record<string, number> = {};
+    for (const k of Object.keys(counts).sort()) sorted[k] = counts[k];
+    await writeFile(manPath, JSON.stringify(sorted, null, 2) + '\n', 'utf8');
+  }
+
   return json({
     promoted: promoted.length,
     pruned: pruned.length,
+    countBumps,
     errors,
     note: promoted.length
       ? 'Promoted images appended to image-approved.json. Run `npm run build-image-provenance` (use --offline to skip Wikimedia) to credit them on /credits.'

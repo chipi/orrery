@@ -1489,7 +1489,7 @@
         title={m.iss_btn_modules_title()}
         onclick={() => (indexOpen = !indexOpen)}
       >
-        <span class="handle-label">MODULES</span>
+        <span class="handle-label">{m.station_handle_modules()}</span>
       </button>
       <button
         type="button"
@@ -1500,7 +1500,7 @@
         title="Chronological timeline of when each module + visitor joined the ISS"
         onclick={() => (timelineOpen = !timelineOpen)}
       >
-        <span class="handle-label">TIMELINE</span>
+        <span class="handle-label">{m.station_handle_timeline()}</span>
       </button>
     {/if}
 

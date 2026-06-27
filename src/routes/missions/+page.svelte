@@ -354,7 +354,7 @@
     aria-controls={filterState.expanded ? 'missions-filters' : undefined}
     onclick={() => (filterState.expanded = !filterState.expanded)}
   >
-    <span class="filters-eyebrow">FILTERS</span>
+    <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
     <span class="filters-right">
       {#if filtered.length !== missions.length}
         <span class="filters-count count-fraction">{filtered.length} / {missions.length}</span>

@@ -55,19 +55,28 @@ const NAMES = {
 // re-runs only translate the keys listed here (overrides for prior batches
 // already persisted in paraglide-key-overrides.json).
 const KEYS = [
-  // batch 7b — science sub-pages + science rail
-  'reading_list_title',
-  'reading_list_lede',
-  'reading_list_section_books',
-  'reading_list_section_blogs',
-  'watch_list_title',
-  'watch_list_lede',
-  'watch_list_section_scifi',
-  'watch_list_section_documentaries',
-  'watch_list_section_podcasts',
-  'watch_list_section_youtube',
-  'science_rail_search',
-  'science_rail_sections',
+  // batch 7c — route-level HUD visible labels
+  'filters_eyebrow',
+  'fleet_filter_category',
+  'fleet_filter_status',
+  'fleet_filter_agency',
+  'fleet_filter_sort',
+  'station_handle_modules',
+  'station_handle_timeline',
+  'explore_planet_scales',
+  'explore_tt_speed',
+  'explore_tt_dist',
+  'explore_tt_ecc',
+  'explore_tt_incl',
+  'fly_cislunar_hero_header',
+  'fly_perf_title',
+  'fly_mission_end',
+  'fly_mission_flight_path',
+  'fly_opening_vehicle',
+  'fly_opening_payload',
+  'fly_opening_transit',
+  'fly_opening_fleet_assets',
+  'fly_proceed_to_simulation',
 ];
 
 const SYSTEM = `Translate Orrery UI strings (a space-exploration web app).

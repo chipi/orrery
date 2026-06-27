@@ -4924,7 +4924,7 @@
         >
       {:else}
         {m.explore_sizes_toggle()}<br />
-        <span class="ratio">PLANET SCALES</span>
+        <span class="ratio">{m.explore_planet_scales()}</span>
       {/if}
     </span>
   </button>
@@ -5357,22 +5357,22 @@
              /science via the lens banner instead. -->
         <div class="tt-eyebrow">{hoverData.name.toUpperCase()}</div>
         <div class="tt-row">
-          <span class="tt-key">SPEED</span>
+          <span class="tt-key">{m.explore_tt_speed()}</span>
           <span class="tt-val">{hoverData.velocityKms.toFixed(2)} km/s</span>
         </div>
         <div class="tt-row">
-          <span class="tt-key">DIST</span>
+          <span class="tt-key">{m.explore_tt_dist()}</span>
           <span class="tt-val">
             {hoverData.distanceAU.toFixed(3)} AU ·
             {(hoverData.distanceAU * 8.317).toFixed(1)} l-min
           </span>
         </div>
         <div class="tt-row">
-          <span class="tt-key">ECC</span>
+          <span class="tt-key">{m.explore_tt_ecc()}</span>
           <span class="tt-val">{hoverData.eccentricity.toFixed(3)}</span>
         </div>
         <div class="tt-row">
-          <span class="tt-key">INCL</span>
+          <span class="tt-key">{m.explore_tt_incl()}</span>
           <span class="tt-val">{hoverData.inclinationDeg.toFixed(1)}°</span>
         </div>
       {:else}

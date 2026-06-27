@@ -6567,7 +6567,7 @@
            instead of an empty "no events" message. Per-event MET +
            iconic-shot lead-day offset + Moon composition snapshot. -->
       <div class="cislunar-hero-debug">
-        <div class="cislunar-hero-header">Cislunar hero events</div>
+        <div class="cislunar-hero-header">{m.fly_cislunar_hero_header()}</div>
         {#each cislunarHeroEvents as e}
           {@const t = e.type as 'loi' | 'tei' | 'descent_start' | 'ascent'}
           {@const leadDays = CISLUNAR_HERO_LEAD_DAYS[t]}
@@ -6635,7 +6635,7 @@
        budget. Suggests the next-lower quality tier; user decides. -->
   {#if perfToastVisible && perfToastSuggestedTier}
     <div class="perf-toast" role="status" aria-live="polite">
-      <div class="perf-toast-title">PERFORMANCE</div>
+      <div class="perf-toast-title">{m.fly_perf_title()}</div>
       <div class="perf-toast-body">
         Frame time averaging {perfToastAvgMs.toFixed(0)} ms. Drop to
         <span class="perf-toast-tier">{perfToastSuggestedTier}</span>?
@@ -6812,7 +6812,7 @@
       data-testid="fly-finale-caption"
       aria-live="polite"
     >
-      <div class="finale-caption-label">MISSION END</div>
+      <div class="finale-caption-label">{m.fly_mission_end()}</div>
       <div class="finale-caption-name">{mission.name}</div>
     </div>
   {/if}
@@ -6833,7 +6833,7 @@
       data-testid="fly-epilogue-caption"
       aria-live="polite"
     >
-      <div class="epilogue-label">MISSION FLIGHT PATH</div>
+      <div class="epilogue-label">{m.fly_mission_flight_path()}</div>
       <div class="epilogue-name">{mission.name}</div>
     </div>
   {/if}
@@ -6927,13 +6927,13 @@
               <div class="opening-stats">
                 {#if mission.vehicle}
                   <span class="opening-stat">
-                    <span class="opening-stat-label">VEHICLE</span>
+                    <span class="opening-stat-label">{m.fly_opening_vehicle()}</span>
                     <span class="opening-stat-val">{mission.vehicle}</span>
                   </span>
                 {/if}
                 {#if mission.payload}
                   <span class="opening-stat">
-                    <span class="opening-stat-label">PAYLOAD</span>
+                    <span class="opening-stat-label">{m.fly_opening_payload()}</span>
                     <span class="opening-stat-val">{mission.payload}</span>
                   </span>
                 {/if}
@@ -6945,7 +6945,7 @@
                 {/if}
                 {#if transitYears}
                   <span class="opening-stat">
-                    <span class="opening-stat-label">TRANSIT</span>
+                    <span class="opening-stat-label">{m.fly_opening_transit()}</span>
                     <span class="opening-stat-val">{transitYears} years</span>
                   </span>
                 {/if}
@@ -6959,7 +6959,7 @@
               style="opacity: {openingFleetOpacity};"
               data-testid="fly-opening-fleet"
             >
-              <div class="opening-fleet-label">FLEET ASSETS</div>
+              <div class="opening-fleet-label">{m.fly_opening_fleet_assets()}</div>
               <div class="opening-fleet-row">
                 {#each openingFleetAssets as asset (asset.id)}
                   <a
@@ -7008,7 +7008,7 @@
         onclick={skipOpening}
         aria-label="Proceed to simulation"
       >
-        <span>PROCEED TO SIMULATION</span>
+        <span>{m.fly_proceed_to_simulation()}</span>
         <span class="opening-skip-arrow" aria-hidden="true">▸</span>
       </button>
     </div>

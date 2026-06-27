@@ -1437,7 +1437,7 @@
         title={m.tiangong_btn_modules_title()}
         onclick={() => (indexOpen = !indexOpen)}
       >
-        <span class="handle-label">MODULES</span>
+        <span class="handle-label">{m.station_handle_modules()}</span>
       </button>
       <button
         type="button"
@@ -1448,7 +1448,7 @@
         title="Chronological timeline of when each Tiangong module + visitor joined the station"
         onclick={() => (timelineOpen = !timelineOpen)}
       >
-        <span class="handle-label">TIMELINE</span>
+        <span class="handle-label">{m.station_handle_timeline()}</span>
       </button>
     {/if}
 

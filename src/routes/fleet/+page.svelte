@@ -371,7 +371,7 @@
       aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
       onclick={() => (filtersExpanded = !filtersExpanded)}
     >
-      <span class="filters-eyebrow">FILTERS</span>
+      <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
       <span class="filters-right">
         {#if filtered.length !== entries.length}
           <span class="filters-count count-fraction count"
@@ -395,7 +395,7 @@
         aria-label="Fleet filters"
       >
         <div class="filter-group" role="radiogroup" aria-label="Category">
-          <span class="filter-label">CATEGORY</span>
+          <span class="filter-label">{m.fleet_filter_category()}</span>
           <button
             type="button"
             class="pill"
@@ -417,7 +417,7 @@
         </div>
 
         <div class="filter-group" role="radiogroup" aria-label="Status">
-          <span class="filter-label">STATUS</span>
+          <span class="filter-label">{m.fleet_filter_status()}</span>
           <button
             type="button"
             class="pill"
@@ -440,7 +440,7 @@
 
         {#if agencies.length > 0}
           <div class="filter-group" role="radiogroup" aria-label="Agency">
-            <span class="filter-label">AGENCY</span>
+            <span class="filter-label">{m.fleet_filter_agency()}</span>
             <button
               type="button"
               class="pill"
@@ -487,7 +487,7 @@
         {/if}
 
         <div class="filter-group sort-group">
-          <span class="filter-label">SORT</span>
+          <span class="filter-label">{m.fleet_filter_sort()}</span>
           <select
             aria-label="Sort fleet entries"
             value={sortMode}

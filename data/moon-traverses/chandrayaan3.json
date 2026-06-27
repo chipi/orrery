@@ -1,0 +1,45 @@
+{
+  "rover_id": "chandrayaan3",
+  "agency": "ISRO",
+  "status": "ENDED",
+  "snapshot_date": "2023-09-03",
+  "credit": "© ISRO — Pragyan rover traverse (Chandrayaan-3, ~600 km from the south pole, Aug–Sep 2023; ~101 m, the southernmost surface drive). V1 simplified polyline anchored at the Vikram lander.",
+  "points": [
+    [
+      -69.373,
+      32.319
+    ],
+    [
+      -69.37333,
+      32.31956
+    ],
+    [
+      -69.37353,
+      32.3205
+    ],
+    [
+      -69.37346,
+      32.32181
+    ],
+    [
+      -69.37366,
+      32.32312
+    ],
+    [
+      -69.37353,
+      32.32443
+    ],
+    [
+      -69.37379,
+      32.32574
+    ],
+    [
+      -69.37366,
+      32.32705
+    ],
+    [
+      -69.37392,
+      32.32799
+    ]
+  ]
+}

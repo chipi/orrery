@@ -1,0 +1,15 @@
+{
+  "title": "Oberth-effect",
+  "intro_sentence": "Brand diep in een zwaartekrachtput en je brandstof verricht meer werk — fysisch gezien produceert dezelfde motor meer baanenergie wanneer hij snel beweegt.",
+  "narrative_101": [
+    "Hier is een gratis goocheltruc uit de natuurkunde. Stel je voor dat je een bepaalde hoeveelheid brandstof hebt om te verbranden. Je kunt het ontsteken wanneer je maar wilt. Waar zou je het moeten doen? Het gezond verstand zegt dat het niet uitmaakt — dezelfde brandstof, dezelfde motor, dezelfde stuwkracht. Het gezond verstand heeft het mis.",
+    "Brand het wanneer je SNEL gaat en dezelfde brandstof geeft je veel meer bruikbare energie dan dezelfde verbranding wanneer je langzaam gaat. De reden verbergt zich in het feit dat kinetische energie gaat met v² — wanneer je al beweegt, voegt een kleine ∆v erbovenop proportioneel meer energie toe dan wanneer je stilstaat. Dus een 1 km/s verbranding bij perigeum (gaande met 11 km/s) geeft je meer baanverhoging dan dezelfde 1 km/s verbranding bij apogeum (gaande met 1 km/s).",
+    "Hermann Oberth wees hier in 1929 op en missieontwerpers maken er sindsdien misbruik van. Apollo's translunaire injectie vond plaats bij perigeum, dicht bij de aarde, zo snel mogelijk gaand. Parker Solar Probe brandt bij de dichtste passage bij de zon tijdens elke lus om de volgende keer dieper te duiken. Het is geen gratis energie — de planeet waaraan je vastklampt doet de donatie — maar het is het dichtst bij een gratis lunch dat je ooit in ruimtevaart zult vinden."
+  ],
+  "body_paragraphs": [
+    "De kinetische energie van een bewegend lichaam gaat met `½ m v²`. Een kleine ∆v bij hoge snelheid produceert een veel grotere verandering in kinetische energie dan dezelfde ∆v bij lage snelheid. Pas dit toe op een raketverbranding: doe de verbranding bij periapsis (waar je het snelst beweegt) en dezelfde brandstof produceert meer baanenergie-toename dan bij apoapsis.",
+    "Hermann Oberth wees hier in 1929 op. De implicatie voor missieontwerp: plan je grote ∆v verbrandingen waar je al snel beweegt — bij perihelium van de cruise-ellips, bij periapsis van een fly-by. Parker Solar Probe brandt bij perihelium van elke zonpassage-boog om dieper naar de zon te zakken tijdens de volgende lus. Juno vuurt bij joviale periapsis om zijn wetenschappelijke baan te controleren.",
+    "De afweging: verbrandingen diep in de put zijn kort en intens; het ruimtevaartuig moet klaar zijn om de hitte, de dynamische druk en de precisietiming aan te kunnen. Er is geen gratis lunch — maar Oberth laat je zien welke lunches goedkoper zijn."
+  ],
+  "diagram_caption": "Dezelfde ∆v bij periapsis (hoge v) levert meer energietoename op dan bij apoapsis (lage v)."
+}

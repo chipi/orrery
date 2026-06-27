@@ -1,0 +1,14 @@
+{
+  "title": "De contouren lezen",
+  "intro_sentence": "De vorm van de goedkope zone vertelt je de geometrie van haalbare trajecten — en waar de afwegingen liggen.",
+  "narrative_101": [
+    "Nu ken je de assen en de kleurenschaal. De volgende vaardigheid is het lezen van de VORM van de goedkope zone. De lob van groenblauw is niet zomaar een generieke vlek — het is een letterlijke kaart van welke trajecten werken en welke niet.",
+    "De klassieke Mars porkchop heeft TWEE goedkope lobben per lanceringvenster, naast elkaar. Ze worden de \"Type I\" en \"Type II\" trajecten genoemd — hetzelfde venster, twee verschillende wegen rond de Zon. Type I gaat de korte weg (overdrachtshoek onder de 180 graden) en is sneller. Type II gaat de lange weg (overdrachtshoek boven de 180 graden) en is langzamer maar soms goedkoper. Beide zijn echt, beide worden gevlogen.",
+    "Buiten de lobben: rood. Het grootste deel van de porkchop is eigenlijk rood. Dat is de les. Er zijn maar heel weinig goedkope momenten om een ruimtevaartuig naar een andere planeet te lanceren, en die zijn niet onderhandelbaar. \"Gewoon wachten op het juiste venster\" wint het bijna altijd van \"een slim traject bedenken.\" Het lezen van de vorm van de lob — waar hij breder wordt, waar hij smaller wordt, waar de optima liggen — is waar vluchtdynamici hun brood mee verdienen."
+  ],
+  "body_paragraphs": [
+    "Kijk naar een Mars porkchop. Je ziet een grofweg ovale lob van groenblauw cellen gecentreerd rond een 250-dagen TOF, die elke 26 maanden terugkeert. Dat is de Hohmann-mogelijkheid. Binnen de lob leveren alle combinaties van (vertrek, TOF) haalbare Mars-missies op met acceptabele ∆v.",
+    "Twee oplossingen per venster. De 'korte weg' (overdrachtshoek < 180°) en de 'lange weg' (overdrachtshoek > 180°) verbinden beide de Aarde met Mars maar via verschillende ellipsen. Ze verschijnen als twee parallelle goedkope banden in de porkchop — soms verschijnen beide, soms maar één, afhankelijk van de geometrie.",
+    "Buiten de goedkope lobben: rood. Ver van elk natuurlijk venster zou je een aangepast hoogenergetisch traject nodig hebben (zwaartekrachtondersteuning, meervoudige ontsteking) om de wiskunde te laten werken. Echte missies clusteren in de goedkope zones; de ontwerpfilosofie 'gewoon wachten op het juiste venster' wint het vaak van 'een slim traject bedenken.'"
+  ]
+}

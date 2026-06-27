@@ -1,0 +1,56 @@
+{
+  "name": "Cinturón de Kuiper",
+  "short": "KUIPER",
+  "story": "Un anillo de cuerpos helados más allá de Neptuno — de 30 a 50 AU. El análogo congelado del cinturón de asteroides: cientos de miles de cuerpos de los cuales solo los más grandes han sido resueltos. Compuestos de metano, amoníaco, hielo de agua + roca. Pluto fue el primer miembro identificado, en 1930, aunque el cinturón no fue reconocido como población hasta la década de 1990 cuando Jewitt + Luu encontraron el segundo miembro (1992 QB1). New Horizons brindó a la humanidad sus primeras vistas cercanas de DOS objetos del Kuiper — Pluto en 2015 y Arrokoth en 2019.",
+  "comparison": "Si el cinturón de asteroides es un anillo delgado alrededor del sistema solar interior, el cinturón de Kuiper es 1.000× más ancho y contiene ~25× más masa. La luz solar en Pluto tiene 1/1.600 de su intensidad en la Tierra.",
+  "residents": [
+    {
+      "id": "pluto",
+      "label": "Pluto — 39,5 AU, el más grande conocido",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "eris",
+      "label": "Eris — 96,4 AU (disco disperso)",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "makemake",
+      "label": "Makemake — 45,8 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "haumea",
+      "label": "Haumea — 43,3 AU, rotador rápido",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "quaoar",
+      "label": "Quaoar — 43,4 AU, tiene anillos",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "arrokoth",
+      "label": "Arrokoth — 44,6 AU, binario de contacto",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1930,
+      "label": "Pluto descubierto — primer KBO identificado (Tombaugh, USA)"
+    },
+    {
+      "year": 2015,
+      "label": "New Horizons — primer sobrevuelo de Pluto (USA)"
+    },
+    {
+      "year": 2019,
+      "label": "New Horizons en Arrokoth — cuerpo más distante jamás visitado (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

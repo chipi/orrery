@@ -1,0 +1,11 @@
+{
+  "name": "Lunare Hill-Sphäre",
+  "short": "HILL",
+  "story": "Die Grenze der gravitativen Einflusssphäre des Mondes — etwa 60.000 km vom Mondzentrum entfernt. Innerhalb dieser Sphäre gewinnt die Schwerkraft des Mondes über die der Erde; außerhalb driftet alles, was man zurücklässt, zur Erde zurück. Die meisten stabilen Mondumlaufbahnen befinden sich weit im Inneren, unterhalb von 70 % des Hill-Radius, da Mascon-Störungen höhere Orbits instabil machen. Die Hill-Sphäre ist auch der Grund, warum der Mond keine natürlichen Trabanten hat — keiner kann langfristig eine Umlaufbahn halten.",
+  "comparison": "Etwa 16 % des Weges zurück zur Erde. Der Erde-Mond-L2-Punkt liegt ungefähr auf der Grenze der Hill-Sphäre auf der Rückseite — aus demselben geometrischen Grund existieren beide.",
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

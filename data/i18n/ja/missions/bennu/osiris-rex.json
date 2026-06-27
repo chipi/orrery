@@ -1,0 +1,44 @@
+{
+  "name": "OSIRIS-REx",
+  "type": "サンプルリターン · 運用終了",
+  "first": "史上最大の小惑星サンプルリターン（Bennuから121.6 g、2023-09-24に地球へ到達）",
+  "description": "OSIRIS-RExは史上最も精密な小惑星ランデブーミッションを実施した。2016-09-08にCape CanaveralからAtlas V 411で打ち上げられ、2017年の地球重力アシストを利用して軌道面をBennuの6°傾斜角に合わせ、2018-12-03に直径492 mの炭素質地球接近小惑星とランデブーした。1.4 kmで位置保持を行った — これは天体周回軌道として史上最も接近した距離である。2年間をかけてBennuの岩石に覆われた表面をマッピングし、活発な粒子放出を発見した。2020-10-20にTouch-and-Goサンプル採取アームがNightingaleサイトに降下し、N₂ガスを表面に噴射してプルームを採取 — 「瓦礫の山のような流動体」表面に50 cm沈み込んだ。Sample Return Capsuleは2023-09-24にBennu物質121.6 gをUtahに届けた。探査機自体は直ちにOSIRIS-APEXと改名され、2029年のApophis ランデブーに向かっている。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "Cape Canaveral SLC-41からAtlas V 411で打ち上げ。",
+      "type": "nominal"
+    },
+    {
+      "met": 380,
+      "label": "地球重力アシスト",
+      "note": "2017-09-22、南極上空17,237 km — 軌道面をBennuの6°傾斜角に合わせる。",
+      "type": "info"
+    },
+    {
+      "met": 816,
+      "label": "Bennuランデブー",
+      "note": "1.4 kmで位置保持 — 天体周回軌道として史上最接近距離。",
+      "type": "info"
+    },
+    {
+      "met": 1503,
+      "label": "TAGサンプル採取",
+      "note": "2020-10-20。Touch-and-Goアームが瓦礫の山表面に50 cm沈み込み、121.6 gを採取。",
+      "type": "info"
+    },
+    {
+      "met": 1705,
+      "label": "Bennu出発",
+      "note": "2021-05-10。地球への2.5年間の巡航。",
+      "type": "nominal"
+    },
+    {
+      "met": 2572,
+      "label": "サンプルリターン",
+      "note": "2023-09-24。SRCがUtah Test and Training Rangeにパラシュート着陸、探査機はOSIRIS-APEXとなる。",
+      "type": "info"
+    }
+  ]
+}

@@ -613,13 +613,13 @@
     "nation": "China",
     "year": 2021,
     "landing_date": "2021-05-14",
-    "lat": 25.1,
-    "lon": 109.93,
+    "lat": 25.066,
+    "lon": 109.925,
     "region_bounds": {
-      "lat_min": 25.06,
-      "lat_max": 25.12,
-      "lon_min": 109.9,
-      "lon_max": 109.96
+      "lat_min": 25.03,
+      "lat_max": 25.07,
+      "lon_min": 109.915,
+      "lon_max": 109.935
     },
     "region_kind": "traverse_bbox",
     "crewed": false,

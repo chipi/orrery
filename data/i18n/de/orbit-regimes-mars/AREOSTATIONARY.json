@@ -1,0 +1,12 @@
+{
+  "name": "Areostationäre Umlaufbahn",
+  "short": "AREO",
+  "story": "Das Mars-Äquivalent einer geostationären Umlaufbahn — 17.031 km Höhe, wo ein Orbit genau einen siderischen Marstag dauert (24 h 37 min 22 s), sodass eine Raumsonde bewegungslos über einem festen Längengrad des Mars hängen würde. Bisher hat keine Raumsonde diese Umlaufbahn genutzt. Sie ist das angestrebte Ziel für zukünftige Mars-Relay-Konstellationen: Mit dem Wachstum bemannter Missionen und Oberflächenbasen würde die Platzierung von Kommunikationssatelliten in areostationären Positionen das irdische GEO-Kommunikationsnetzwerk widerspiegeln und die täglichen Kommunikationsausfälle beseitigen, die die heutigen Relays in niedrigen Umlaufbahnen jeder Oberflächenmission auferlegen.",
+  "comparison": "Knapp unterhalb von Deimos, dem äußeren Marsmond (23.460 km). Drei areostationäre Satelliten im Abstand von 120° würden die gesamte Marsscheibe abdecken — derselbe Trick, den GEO-Kommunikationssatelliten für Fernsehübertragungen auf der Erde nutzen.",
+  "residents": [],
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

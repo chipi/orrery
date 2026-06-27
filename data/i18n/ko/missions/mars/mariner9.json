@@ -1,0 +1,44 @@
+{
+  "name": "Mariner 9",
+  "type": "ORBITER · FLOWN",
+  "first": "다른 행성을 최초로 궤도 비행한 우주선",
+  "description": "Mariner 9는 이후의 모든 궤도선을 가능하게 만들었습니다. 1971년 11월 14일 15분간의 MOI 분사로 화성 궤도에 진입한 후, 아래 행성은 알아볼 수 없었습니다 — 전 지구적 먼지 폭풍이 네 개의 Tharsis 화산 정상을 제외한 모든 것을 가렸습니다. JPL은 기다렸습니다. 1972년 1월까지 먼지가 가라앉자 Mariner 9는 화성 표면의 약 80%를 덮는 7,329장의 이미지를 전송했으며, 태양계에서 가장 큰 화산인 Olympus Mons, 그 이름을 따서 명명된 협곡 시스템인 Valles Marineris, 고대 액체 시대를 암시하는 마른 강 수로, 그리고 Phobos와 Deimos의 첫 근접 사진을 밝혀냈습니다. 임무는 1972년 10월 27일 자세 제어 가스가 고갈되면서 종료되었으며, 우주선은 여전히 궤도에 남아 천천히 쇠퇴하고 있습니다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "Cape Canaveral LC-36B에서 Atlas SLV-3C / Centaur 발사.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "TCM-1",
+      "note": "첫 번째 중간 궤도 수정.",
+      "type": "nominal"
+    },
+    {
+      "met": 98,
+      "label": "TCM-2",
+      "note": "접근 조정으로 MOI 근일점 정밀 목표 설정.",
+      "type": "nominal"
+    },
+    {
+      "met": 168,
+      "label": "MOI",
+      "note": "15분간의 고체 모터 분사로 Mariner 9를 1398 × 17,917 km, 64.4° 궤도에 진입 — 다른 행성의 최초 궤도 비행.",
+      "type": "info"
+    },
+    {
+      "met": 200,
+      "label": "먼지 소멸",
+      "note": "전 지구적 폭풍 진정; 촬영 시작.",
+      "type": "info"
+    },
+    {
+      "met": 515,
+      "label": "임무 종료",
+      "note": "1972-10-27. 자세 제어 가스 고갈.",
+      "type": "warning"
+    }
+  ]
+}

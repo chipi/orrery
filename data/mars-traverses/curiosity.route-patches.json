@@ -1,0 +1,260 @@
+{
+  "rover_id": "curiosity",
+  "patches": [
+    {
+      "id": "sol-270",
+      "lat": -4.59559,
+      "lon": 137.43158,
+      "kind": "drill",
+      "label": "John Klein drill",
+      "image": "/images/hotspots/mars/curiosity/traverse/sol-270.jpg",
+      "product_id": "ESP_029957_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-1000",
+      "lat": -4.61205,
+      "lon": 137.41987,
+      "kind": "feature",
+      "label": "Marias Pass",
+      "image": "/images/hotspots/mars/curiosity/traverse/sol-1000.jpg",
+      "product_id": "ESP_029957_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-1647",
+      "lat": -4.63069,
+      "lon": 137.41623,
+      "kind": "panorama",
+      "label": "Murray Buttes",
+      "image": "/images/hotspots/mars/curiosity/traverse/sol-1647.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-2300",
+      "lat": -4.65382,
+      "lon": 137.3938,
+      "kind": "feature",
+      "label": "Vera Rubin Ridge",
+      "image": "/images/hotspots/mars/curiosity/traverse/sol-2300.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-3500",
+      "lat": -4.67289,
+      "lon": 137.38132,
+      "kind": "feature",
+      "label": "Greenheugh Pediment",
+      "image": "/images/hotspots/mars/curiosity/traverse/sol-3500.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-01",
+      "lat": -4.5895,
+      "lon": 137.4417,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-01.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-02",
+      "lat": -4.591844783589454,
+      "lon": 137.43355369000363,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-02.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-03",
+      "lat": -4.600753026075771,
+      "lon": 137.43234467208893,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-03.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-04",
+      "lat": -4.602665983237139,
+      "lon": 137.42408544463675,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-04.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-05",
+      "lat": -4.617300271912153,
+      "lon": 137.42329166020764,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-05.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-06",
+      "lat": -4.622875082187743,
+      "lon": 137.4180695943757,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-06.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-07",
+      "lat": -4.629522984928738,
+      "lon": 137.4050127314864,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-07.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-08",
+      "lat": -4.63341766037351,
+      "lon": 137.41117302077424,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-08.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-09",
+      "lat": -4.638642107727846,
+      "lon": 137.40575035055681,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-09.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-10",
+      "lat": -4.640906368290054,
+      "lon": 137.4003714928933,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-10.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-11",
+      "lat": -4.648444153762082,
+      "lon": 137.39653566229404,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-11.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-12",
+      "lat": -4.663274657413896,
+      "lon": 137.39643679242798,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-12.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-13",
+      "lat": -4.667798636180605,
+      "lon": 137.38927382604737,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-13.jpg",
+      "product_id": "ESP_036128_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-14",
+      "lat": -4.676136021666141,
+      "lon": 137.375267483425,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-14.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-15",
+      "lat": -4.682694833874457,
+      "lon": 137.37246936479556,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-15.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-16",
+      "lat": -4.690431432353896,
+      "lon": 137.37043385809017,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-16.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-17",
+      "lat": -4.696222955293041,
+      "lon": 137.36573342328117,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-17.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-18",
+      "lat": -4.7017120400056145,
+      "lon": 137.36036752114515,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-18.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-19",
+      "lat": -4.706737060116438,
+      "lon": 137.36562238129628,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-19.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-20",
+      "lat": -4.7092766538631485,
+      "lon": 137.3615029046424,
+      "kind": "route",
+      "image": "/images/hotspots/mars/curiosity/traverse/km-20.jpg",
+      "product_id": "ESP_039280_1755",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    }
+  ]
+}

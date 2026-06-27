@@ -1,0 +1,6 @@
+{
+  "name": "GOES (NOAA-Wetter)",
+  "short": "GOES",
+  "description": "US-geostationäres Wetterpaar — GOES-East bei 75,2°W + GOES-West bei 137,0°W bieten durchgehende Abdeckung der Amerikas. GOES-16 und nachfolgende nutzen den Advanced Baseline Imager für 30-Sekunden-Mesoskalen-Scans von Hurrikankernen.",
+  "scale_fact": "Jede Wetterkarte im Fernsehen, die Sie jemals von einem US-Hurrikan gesehen haben, war ein GOES-Bild, das Minuten zuvor aus 35.786 km Höhe aufgenommen wurde."
+}

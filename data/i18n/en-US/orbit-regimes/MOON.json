@@ -1,0 +1,38 @@
+{
+  "name": "Lunar Orbit",
+  "short": "MOON",
+  "story": "The Moon is Earth's only natural satellite — 384,400 km out, tidally locked so it always shows the same face, and orbiting once every 27.3 days. Spacecraft visit on the way to lunar landings (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) or to map the surface for future returns. The Lunar Gateway, when it flies, will be the first permanent crewed outpost beyond LEO.",
+  "comparison": "1,200× further than the ISS. A radio signal Earth → Moon → Earth takes ~2.6 seconds — long enough that mission controllers in Houston speak in slow, deliberate sentences.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 orbiter",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — Chang'e farside relay",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — first to reach lunar vicinity (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — first crewed lunar orbit (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Akatsuki",
+  "type": "ORBITADOR · ATIVO",
+  "first": "Recuperado de uma espera de 5 anos em órbita solar para alcançar a órbita de Vênus em uma tentativa de reserva; atualmente o único orbitador ativo de Vênus",
+  "description": "Akatsuki — \"amanhecer\" — foi a primeira missão de Vênus do Japão. Lançada em 20/05/2010 de Tanegashima em um H-IIA 202, pareada com o demonstrador de vela solar IKAROS. A inserção orbital planejada em Vênus em 07/12/2010 falhou quando o acúmulo de cristais de sal em uma válvula de retenção do oxidante desalinhhou o motor principal 152 segundos após o início da queima. A JAXA manteve a espaçonave viva em órbita solar por cinco anos, doze manobras de correção, até a próxima janela de encontro com Vênus. Em 07/12/2015, uma queima de 1228 segundos usando quatro propulsores de controle de atitude — nunca projetados para inserção orbital — colocou a Akatsuki em uma órbita altamente elíptica de 400 × 440.000 km, inclinação de 3°. Um dos salvamentos de missão mais dramáticos da história do voo espacial. Ainda ativo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "H-IIA 202 de Tanegashima, pareado com a vela solar IKAROS.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Primeira correção de meio de curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 201,
+      "label": "FALHA VOI-1",
+      "note": "07/12/2010. Anomalia de aceleração do OME 152s após o início da queima; espaçonave passa direto para órbita solar.",
+      "type": "warning"
+    },
+    {
+      "met": 1000,
+      "label": "ESPERA EM ÓRBITA SOLAR",
+      "note": "12 manobras ao longo de 5 anos para manter uma trajetória de reencontro com Vênus.",
+      "type": "info"
+    },
+    {
+      "met": 2027,
+      "label": "SUCESSO VOI-R2",
+      "note": "07/12/2015. Queima de 1228s com propulsores RCS para órbita de 400 × 440.000 km, 3°.",
+      "type": "info"
+    },
+    {
+      "met": 2200,
+      "label": "OPERAÇÕES CIENTÍFICAS",
+      "note": "Rastreamento de características de nuvens UV/IR; estudos de super-rotação; ondas de gravidade em forma de arco acima de Aphrodite Terra.",
+      "type": "info"
+    }
+  ]
+}

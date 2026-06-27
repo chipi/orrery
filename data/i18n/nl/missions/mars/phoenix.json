@@ -1,0 +1,50 @@
+{
+  "name": "Phoenix",
+  "type": "LANDER · FLOWN",
+  "first": "Eerste bevestiging van waterijs in het Martiaanse arctische regoliet; eerste zachte voortstuwingslanding op Mars sinds Viking 2",
+  "description": "Phoenix werd gered uit het geannuleerde Mars Surveyor 2001-programma — vluchthardware die zes jaar in opslag was geweest, opnieuw gemonteerd en gericht op de noordelijke poolvlakten van Mars. De naam werd letterlijk gekozen. Landde op 25-05-2008 op 68,22°N, 234,25°O op Vastitas Borealis, verder naar het noorden dan enige eerdere oppervlaktemissie. Binnen enkele dagen schraapte de robotarm door de toplaag en legde helder wit ijs bloot dat zichtbaar sublimeerde voor de camera gedurende vier sols — directe bevestiging van ondergronds waterijs in het Martiaanse poolgebied. Detecteerde perchloraten in het regoliet en observeerde sneeuw die uit wolken viel. Missie eindigde op 02-11-2008 toen de zonne-energie onder de operationele drempel viel bij het begin van de Marswinter; de lander werd nooit verwacht de poolnacht te overleven.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Delta II 7925-9.5 vanaf Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste middenbaan correctie.",
+      "type": "nominal"
+    },
+    {
+      "met": 294,
+      "label": "TCM-6",
+      "note": "Finale pre-EDL bijstelling 21 uur voor binnenkomst.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "EDL",
+      "note": "Aeroshell, supersonische parachute, twaalf hydrazine retro-raketten — Viking-stijl voortstuwingsdaling.",
+      "type": "info"
+    },
+    {
+      "met": 295.01,
+      "label": "LANDING",
+      "note": "Zachte landing op 68,22°N, 234,25°O — noordelijkste Mars oppervlaktemissie.",
+      "type": "info"
+    },
+    {
+      "met": 302,
+      "label": "IJS BLOOTGELEGD",
+      "note": "Arm schrapt door toplaag. Helder wit ijs sublimeert voor de camera gedurende 4 sols.",
+      "type": "info"
+    },
+    {
+      "met": 458,
+      "label": "MISSIE EINDE",
+      "note": "02-11-2008. Marswinter; zonne-energie onder operationele drempel.",
+      "type": "warning"
+    }
+  ]
+}

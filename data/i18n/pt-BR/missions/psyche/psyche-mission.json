@@ -1,0 +1,32 @@
+{
+  "name": "Psyche",
+  "type": "ORBITER · ACTIVE",
+  "first": "Primeira missão a um asteroide classe M rico em metal; primeiro uso de propulsores iônicos de efeito Hall como propulsão principal de cruzeiro",
+  "description": "Psyche alcança o núcleo exposto de níquel-ferro de um proto-planeta diferenciado — um corpo metálico de 226 km que pode ser o análogo mais próximo do próprio núcleo da Terra acessível em qualquer lugar. Lançada em 13-10-2023 em um Falcon Heavy do Kennedy LC-39A. Quatro propulsores iônicos de efeito Hall SPT-140 espiralam a trajetória para fora; uma assistência gravitacional de Marte em 05-2026 adiciona a energia que o impulso iônico sozinho não poderia fornecer a tempo. Chegada planejada para 08-2029, seguida por uma descida de 26 meses em quatro fases orbitais (A → B → C → D) mapeando a gravidade, magnetismo, topografia e composição do asteroide. Se a hipótese do núcleo metálico estiver correta, Psyche parecerá diferente de qualquer coisa que já visitamos — superfície de metal puro, depósitos de sulfeto de ferro, nenhum do caos de pilha de escombros dos asteroides típicos.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Falcon Heavy do Kennedy LC-39A.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "INÍCIO DO CRUZEIRO IÔNICO",
+      "note": "Quatro propulsores iônicos de efeito Hall assumem. Aceleração contínua de baixo impulso por mais de 4 anos.",
+      "type": "info"
+    },
+    {
+      "met": 945,
+      "label": "ASSISTÊNCIA GRAVITACIONAL DE MARTE",
+      "note": "15-05-2026, aproximação mais próxima de 3.000 km.",
+      "type": "info"
+    },
+    {
+      "met": 2118,
+      "label": "CHEGADA A PSYCHE",
+      "note": "Captura gravitacional por impulso iônico em órbita de 700 km. Missão de 26 meses, quatro fases orbitais.",
+      "type": "info"
+    }
+  ]
+}

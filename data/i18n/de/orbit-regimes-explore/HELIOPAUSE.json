@@ -1,0 +1,21 @@
+{
+  "name": "Heliopause + Interstellarer Raum",
+  "short": "HELIO",
+  "story": "Die Grenze, an der der Sonnenwind der Sonne seinen Kampf gegen das interstellare Medium verliert — etwa 120 AU entfernt. Im Inneren liegt die Heliosphäre, eine Blase aus geladenen Sonnenpartikeln, die mit Hunderten von km/s nach außen strömen. Jenseits davon: das kalte, dichte Gas und die kosmische Strahlung der Galaxie selbst. Die Voyager-Sonden sind die einzigen Artefakte, die die Menschheit jemals über diese Grenze hinaus platziert hat — Voyager 1 überquerte sie 2012, Voyager 2 im Jahr 2018. Beide senden noch immer schwache Daten aus dem interstellaren Raum.",
+  "comparison": "Etwa 4× weiter entfernt als Neptun. Ein Signal von Voyager 1 benötigt ~22 Stunden, um die Erde zu erreichen. Die Sonden werden für weitere 40.000+ Jahre keinen anderen Stern begegnen (Voyager 1 wird in ~40.000 Jahren innerhalb von 1,6 Lichtjahren an Gliese 445 vorbeifliegen).",
+  "residents": [],
+  "firsts": [
+    {
+      "year": 2012,
+      "label": "Voyager 1 überquert die Heliopause — erstes Artefakt im interstellaren Raum (USA)"
+    },
+    {
+      "year": 2018,
+      "label": "Voyager 2 überquert die Heliopause (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

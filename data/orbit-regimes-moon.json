@@ -1,0 +1,27 @@
+[
+  {
+    "id": "LLO",
+    "altitude_km": [50, 100],
+    "color": "#4ecdc4"
+  },
+  {
+    "id": "HLO",
+    "altitude_km": [100, 500],
+    "color": "#7fd9d2"
+  },
+  {
+    "id": "NRHO",
+    "altitude_km": [3000, 70000],
+    "color": "#9c6ee0"
+  },
+  {
+    "id": "L2",
+    "altitude_km": 64500,
+    "color": "#ffd700"
+  },
+  {
+    "id": "HILL",
+    "altitude_km": 60000,
+    "color": "#c0c0c0"
+  }
+]

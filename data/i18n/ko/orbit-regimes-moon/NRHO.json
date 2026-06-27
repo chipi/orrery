@@ -1,0 +1,29 @@
+{
+  "name": "근 직선 헤일로 궤도",
+  "short": "NRHO",
+  "story": "실제로 달 주위를 도는 궤도라기보다는, 지구-달 L1과 L2 라그랑주 점을 중심으로 긴 8자 모양으로 돌며, 근월점에서는 달의 남극 근처로 접근하고(~3,000 km), 원월점에서는 북극 위 멀리까지 뻗어 나갑니다(~70,000 km). 이 궤도의 두 가지 장점: 지구와의 지속적인 가시선 확보(통신 두절 없음)와 매우 낮은 궤도 유지 연료 소비 — 연간 수 m/s. NASA의 Lunar Gateway는 비행 시 NRHO에 위치할 예정입니다. CAPSTONE은 2022년에 선구자로서 이곳을 비행했습니다.",
+  "comparison": "NRHO는 약 7일마다 한 바퀴를 완료합니다 — 대략 달의 공전 주기의 4분의 1입니다. 우주선은 항상 남극 지역 근처에 있지만 그 바로 위에 있지는 않습니다.",
+  "residents": [
+    {
+      "id": "capstone",
+      "label": "CAPSTONE — NRHO 선구자 (2022)",
+      "agency": "NASA"
+    },
+    {
+      "id": "gateway",
+      "label": "Lunar Gateway — 계획된 유인 전초기지",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2022,
+      "label": "CAPSTONE — 최초의 NRHO 운영 비행 (USA)",
+      "mission_id": ""
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

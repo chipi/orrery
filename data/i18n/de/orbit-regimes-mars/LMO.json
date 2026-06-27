@@ -1,0 +1,58 @@
+{
+  "name": "Niedriger Mars-Orbit",
+  "short": "LMO",
+  "story": "Das Kartierungsband — typischerweise 150 bis 500 km über der Marsoberfläche. Die meisten Mars-Orbiter befinden sich hier: hoch genug, um dem atmosphärischen Widerstand der oberen Thermosphäre auszuweichen, aber niedrig genug für Bildaufnahmen im Meterbereich. Die dünne Atmosphäre ist ein Geschenk — Mars Reconnaissance Orbiter und Mars Odyssey haben Aerobraking (wiederholtes Eintauchen) genutzt, um ihre Umlaufbahnen kostenlos zu zirkularisieren und so Jahre an Treibstoff zu sparen. Sechs Nationen betreiben gerade jetzt Raumsonden hier.",
+  "comparison": "Etwa 1/9 der Entfernung vom Mars zu Phobos. Von LMO aus kann man einen Tennisplatz auf der Oberfläche auflösen (HiRISE auf MRO erreicht 25 cm/px).",
+  "residents": [
+    {
+      "id": "maven",
+      "label": "MAVEN — atmosphärische Studien",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars-express",
+      "label": "Mars Express — erste ESA-Mars-Mission",
+      "agency": "ESA"
+    },
+    {
+      "id": "mro",
+      "label": "MRO — HiRISE-Bildaufnahmen",
+      "agency": "NASA"
+    },
+    {
+      "id": "tianwen1-orbiter",
+      "label": "Tianwen-1 orbiter",
+      "agency": "CNSA"
+    },
+    {
+      "id": "mangalyaan",
+      "label": "Mangalyaan (MOM, 2014-2022)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "mars-odyssey",
+      "label": "Mars Odyssey (älteste aktive Mars-Raumsonde)",
+      "agency": "NASA"
+    },
+    {
+      "id": "tgo",
+      "label": "ExoMars TGO — Methan-Jäger",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — erster künstlicher Mars-Satellit (USA)",
+      "mission_id": "mariner9"
+    },
+    {
+      "year": 2003,
+      "label": "Mars Express — erste ESA-Mars-Mission"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

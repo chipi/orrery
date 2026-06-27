@@ -1,0 +1,44 @@
+{
+  "name": "Orbite Lunaire Basse",
+  "short": "LLO",
+  "story": "La bande la plus proche de la surface lunaire — typiquement entre 50 et 100 km d'altitude. Les sondes spatiales qui s'y trouvent peuvent photographier la surface avec une résolution submétrique, mais elles paient un prix élevé : la distribution de masse de la Lune est extrêmement inégale (mascons géants sous la surface des mers lunaires), si bien qu'une orbite basse subit des perturbations importantes. La plupart des missions en LLO nécessitent un maintien à poste actif ou une inclinaison « gelée » soigneusement choisie qui résiste à la dérive. LRO vole ici en continu depuis 2009 — c'est la mission lunaire la plus longue.",
+  "comparison": "Environ 1/3 800ᵉ du chemin de retour vers la Terre. Depuis la LLO, l'horizon lunaire est fortement courbé — on peut voir sur 30 à 40 km dans n'importe quelle direction avant que la surface ne disparaisse.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "lunar-prospector",
+      "label": "Lunar Prospector (1998-1999)",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan1",
+      "label": "Chandrayaan-1 (2008-2009)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "change2",
+      "label": "Chang'e 2 (2010-2011)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1966,
+      "label": "Luna 10 — premier orbiteur lunaire artificiel (URSS)",
+      "mission_id": "luna10"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — première orbite lunaire habitée (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "LMO",
+    "altitude_km": [150, 500],
+    "color": "#4ecdc4"
+  },
+  {
+    "id": "HMO",
+    "altitude_km": [1000, 2500],
+    "color": "#7fd9d2"
+  },
+  {
+    "id": "AREOSTATIONARY",
+    "altitude_km": 17031,
+    "color": "#ffc850"
+  },
+  {
+    "id": "DMO",
+    "altitude_km": [20000, 43000],
+    "color": "#ff8c3c"
+  },
+  {
+    "id": "HILL",
+    "altitude_km": 1080000,
+    "color": "#c0c0c0"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "title": "Ware Anomalie",
+  "intro_sentence": "De hoek die aangeeft waar een lichaam zich op dit moment in zijn baan bevindt, gemeten vanaf het perihelium.",
+  "narrative_101": [
+    "Stel je een planeet voor die zijn ellips doorloopt. We hebben hem al een grootte, een vorm en een kanteling gegeven. Het enige wat we nog nodig hebben is: waar bevindt hij zich op dit moment op de baan? Dat is de ware anomalie. Ga bij de zon staan, wijs naar het punt waar de planeet het dichtst passeert en meet de hoek tot waar de planeet zich werkelijk bevindt. Dat is alles.",
+    "Maar hier komt het addertje onder het gras — en hier sluipt de tweede wet van Kepler binnen. De planeet doorloopt deze hoek niet met een constant tempo. Bij het dichtste punt schiet hij er snel doorheen. Aan het verre einde sjokt hij voort. Dus als je vraagt 'hoeveel graden per dag?', verandert het antwoord voortdurend gedurende de omloop.",
+    "Astronomen werden daar moe van, dus bedachten ze twee andere hoeken — gemiddelde anomalie en excentrische anomalie — die WEL met een constant tempo tikken, en bouwden een klein laddertje van vergelijkingen die alle drie verbinden. Wanneer je de planeten vloeiend ziet bewegen in /explore, is dat laddertje wat er onder de motorkap draait, zestig keer per seconde."
+  ],
+  "body_paragraphs": [
+    "De Kepleriaanse elementen beschrijven de vorm en oriëntatie van een baan; de ware anomalie (`ν`) vertelt je waar het lichaam zich op een bepaald moment langs die baan bevindt. Ga bij het brandpunt staan (de zon, voor een planeet), wijs naar het perihelium en draai je vinger mee terwijl het lichaam rondgaat. De hoek die je doorloopt is de ware anomalie.",
+    "Hij loopt van 0 bij het perihelium (dichtste nadering) via 90° (een kwart van de weg) naar 180° bij het aphelium (verst), en weer terug. In tegenstelling tot een klok tikt hij niet gelijkmatig — de tweede wet van Kepler vertelt je dat het lichaam raast bij het perihelium en kruipt bij het aphelium. Dus de ware anomalie per seconde verandert gedurende de omloop.",
+    "Zusterhoeken die je zult tegenkomen: gemiddelde anomalie (`M`), die wel gelijkmatig met de tijd tikt maar meetkundig zinloos is; en excentrische anomalie (`E`), de brug tussen beide. `M` neemt toe met een constante snelheid, je lost de vergelijking van Kepler `M = E - e·sin(E)` op om `E` te krijgen, en converteert dat dan naar `ν`. Deze keten is de hartslag van elke baansimulator, inclusief die van Orrery."
+  ],
+  "diagram_caption": "Ware anomalie ν gemeten bij het brandpunt, van perihelium tot de huidige positie van het lichaam."
+}

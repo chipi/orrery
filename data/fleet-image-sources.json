@@ -16,7 +16,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/S71-24537-A7L%20without%20outerlayer.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:03Z",
+    "fetched_at": "2026-06-22T11:18:23Z",
     "slice_a_iteration": 4,
     "slice_a_query": "a7l"
   },
@@ -26,7 +26,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/S71-24537-A7L%20without%20outerlayer.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:03Z",
+    "fetched_at": "2026-06-22T11:18:24Z",
     "slice_a_iteration": 4,
     "slice_a_query": "a7l"
   },
@@ -36,7 +36,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/S71-24537-A7L%20without%20outerlayer.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:03Z",
+    "fetched_at": "2026-06-22T11:18:24Z",
     "slice_a_iteration": 4,
     "slice_a_query": "a7l"
   },
@@ -82,7 +82,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2025e015676/jsc2025e015676~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:04Z",
+    "fetched_at": "2026-06-22T11:18:24Z",
     "slice_a_iteration": 4,
     "slice_a_query": "aces"
   },
@@ -92,7 +92,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2025e015676/jsc2025e015676~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:05Z",
+    "fetched_at": "2026-06-22T11:18:25Z",
     "slice_a_iteration": 4,
     "slice_a_query": "aces"
   },
@@ -102,7 +102,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2025e015676/jsc2025e015676~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:05Z",
+    "fetched_at": "2026-06-22T11:18:25Z",
     "slice_a_iteration": 4,
     "slice_a_query": "aces"
   },
@@ -112,7 +112,7 @@
     "image_url": "http://images-assets.nasa.gov/image/jsc2025e015676/jsc2025e015676~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:06Z",
+    "fetched_at": "2026-06-22T11:18:26Z",
     "slice_a_iteration": 4,
     "slice_a_query": "aces"
   },
@@ -122,7 +122,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/spacecraft/images/akatsuki_img.jpg",
     "credit": "JAXA / Akihiro Ikeshita",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-19T08:51:53Z",
+    "fetched_at": "2026-06-22T11:18:59Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -136,7 +136,7 @@
     "image_url": "https://akatsuki.isas.jaxa.jp/en/gallery/data/assets_c/2018/08/uvi_20180330_120112_283_365_l2b_v20180601_mod-thumb-1024x1024-3103.png",
     "credit": "JAXA / ISAS / DARTS",
     "license": "pd-jaxa",
-    "fetched_at": "2026-06-19T08:51:56Z",
+    "fetched_at": "2026-06-22T11:19:02Z",
     "slice_a_iteration": 4,
     "slice_a_query": "akatsuki",
     "vision": {
@@ -312,12 +312,30 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Plato%E2%80%99s_launch_on_Ariane_6_ESA519047.webm/960px--Plato%E2%80%99s_launch_on_Ariane_6_ESA519047.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
   },
   "ariane-6/01.jpg": {
-    "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Arianespace_TV_-_VS21_Succesful_Mission.webm/960px--Arianespace_TV_-_VS21_Succesful_Mission.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20Rollout%20with%20James%20Webb%20Space%20Telescope%20(NHQ202112230023).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20Rollout%20with%20James%20Webb%20Space%20Telescope%20(NHQ202112230023).jpg?width=1600",
+    "credit": "https://www.flickr.com/photos/nasahqphoto/51778544646/in/photostream/",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:11:03Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "ariane-6/02.jpg": {
-    "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_future_of_human_space_exploration-_toward_cooperation_or_competition%3F_%28IA_thefutureofhumsp1094537577%29.pdf/page1-960px-The_future_of_human_space_exploration-_toward_cooperation_or_competition%3F_%28IA_thefutureofhumsp1094537577%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg?width=1600",
+    "credit": "Ariane 5 with James Webb Space Telescope Prelaunch",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:39:50Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "ariane-6/03.jpg": {
     "agency": "ESA",
@@ -418,8 +436,17 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20180216-PH-GEB01_0120/KSC-20180216-PH-GEB01_0120~medium.jpg"
   },
   "atv/01.jpg": {
-    "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/ATV-Whipple_Shield.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg?width=1600",
+    "credit": "http://spaceflight.nasa.gov/gallery/images/station/crew-26/html/iss026e037172.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:12Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "atv/02.jpg": {
     "agency": "ESA",
@@ -470,8 +497,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "baikonur-200/01.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Proton_with_Granat.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg?width=1600",
+    "credit": "JSC Gateway to Astronaut Photography of Earth",
+    "license": "public domain",
+    "fetched_at": "2026-06-22T11:28:02Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.85
+    }
   },
   "baikonur-200/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -809,8 +845,17 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shuttle%20profiles.jpg"
   },
   "chandra/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/99e10025/99e10025~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png?width=1600",
+    "credit": "http://chandra.harvard.edu/resources/chandraMission.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:00Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "chandra/02.jpg": {
     "agency": "NASA",
@@ -857,8 +902,13 @@
     "fetched_at": "2026-06-08T20:43:50Z"
   },
   "change-2/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Chang%27e_3_landing_site.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:LADEE%20fires%20small%20engines.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/LADEE%20fires%20small%20engines.jpg?width=1600",
+    "credit": "LADEE Fires Thrusters Artist's Concept",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:39:34Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23"
   },
   "change-2/02.jpg": {
     "agency": "CMSA",
@@ -877,8 +927,17 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/First_Look-_Chang%27e_6_%28LROC1374%29.png/960px-First_Look-_Chang%27e_6_%28LROC1374%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "change-3/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Chang%27e_3_landing_site.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20lander.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang'e%204%20lander.jpg?width=1600",
+    "credit": "Liu, J., Ren, X., Yan, W. et al. Descent trajectory reconstruction and landing site positioning of Chang’E-4 on the lunar farside. Nat Commun 10, 4229 (2019). https://doi.org/10.1038/s41467-019-12278-",
+    "license": "cc by-sa 4.0",
+    "fetched_at": "2026-06-22T11:54:40Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "change-3/02.jpg": {
     "agency": "CMSA",
@@ -897,8 +956,17 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Chang%27e_4_Rover_on_the_Move_%28LROC1096%29.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   },
   "change-4/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Statio_Tianhe_M1316588439RC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg?width=1600",
+    "credit": "This image has been extracted from another file",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-23T13:36:56Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "change-4/02.jpg": {
     "agency": "CMSA",
@@ -935,13 +1003,6 @@
   "change-5/05.jpg": {
     "agency": "CMSA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf/page1-960px-Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "change1/01": {
-    "commons_file": "Chang e 1.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang%20e%201.jpg",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:44:03Z"
   },
   "change1/02": {
     "commons_file": "Chang'e-1 mockup at BASM.jpg",
@@ -1106,7 +1167,7 @@
     "image_url": "http://images-assets.nasa.gov/image/KSC-20240927-PH-SPX01_0001/KSC-20240927-PH-SPX01_0001~orig.jpg",
     "credit": "NASA / KSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:52:06Z",
+    "fetched_at": "2026-06-22T11:19:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "crew dragon",
     "vision": {
@@ -1180,7 +1241,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:52:00Z",
+    "fetched_at": "2026-06-22T11:19:04Z",
     "slice_a_iteration": 4,
     "slice_a_query": "cygnus standard",
     "vision": {
@@ -1194,7 +1255,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:52:01Z",
+    "fetched_at": "2026-06-22T11:19:04Z",
     "slice_a_iteration": 4,
     "slice_a_query": "cygnus standard",
     "vision": {
@@ -1215,7 +1276,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss073e0704080/iss073e0704080~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:52:03Z",
+    "fetched_at": "2026-06-22T11:19:05Z",
     "slice_a_iteration": 4,
     "slice_a_query": "cygnus standard",
     "vision": {
@@ -1313,7 +1374,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss043e087403/iss043e087403~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:11Z",
+    "fetched_at": "2026-06-22T11:18:28Z",
     "slice_a_iteration": 4,
     "slice_a_query": "emu"
   },
@@ -1323,7 +1384,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss043e087403/iss043e087403~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:11Z",
+    "fetched_at": "2026-06-22T11:18:29Z",
     "slice_a_iteration": 4,
     "slice_a_query": "emu"
   },
@@ -1333,7 +1394,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss043e087403/iss043e087403~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:12Z",
+    "fetched_at": "2026-06-22T11:18:29Z",
     "slice_a_iteration": 4,
     "slice_a_query": "emu"
   },
@@ -1343,7 +1404,7 @@
     "image_url": "http://images-assets.nasa.gov/image/iss043e087403/iss043e087403~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:12Z",
+    "fetched_at": "2026-06-22T11:18:30Z",
     "slice_a_iteration": 4,
     "slice_a_query": "emu"
   },
@@ -1609,7 +1670,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gaia%20Spacecraft%20(eso1908d).jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:47Z",
+    "fetched_at": "2026-06-22T11:18:54Z",
     "slice_a_iteration": 4,
     "slice_a_query": "gaia observatory",
     "vision": {
@@ -1763,8 +1824,14 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "goes-noaa/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GOES-R%20Spacecraft%20With%20Earth%20Reflection%20(14213141670).png"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NOAA%20GOES-13%20officially%20became%20NOAA%20GOES%20East%20on%20April%2014%2C%202010%20(2268-530).jpg?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NOAA%20GOES-13%20officially%20became%20NOAA%20GOES%20East%20on%20April%2014%2C%202010%20(2268-530).jpg?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-22T11:18:30Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "goes noaa"
   },
   "goes-noaa/02.jpg": {
     "commons_file": "NOAA GOES-13 officially became NOAA GOES East on April 14, 2010 (2268-530).jpg",
@@ -1836,7 +1903,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubble%202009%20close-up.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:57Z",
+    "fetched_at": "2026-06-22T11:19:02Z",
     "slice_a_iteration": 4,
     "slice_a_query": "h iia",
     "vision": {
@@ -1998,7 +2065,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20HTV-X1%20cargo%20spacecraft%20from%20JAXA%20attached%20to%20the%20Harmony%20module%20(iss073e1193852).jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:57Z",
+    "fetched_at": "2026-06-22T11:19:03Z",
     "slice_a_iteration": 4,
     "slice_a_query": "htv cargo spacecraft",
     "vision": {
@@ -2074,8 +2141,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "insight/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA25680/PIA25680~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:PIA23177-Mars-InSightLander-Seismometer-20190423.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23177-Mars-InSightLander-Seismometer-20190423.jpg?width=1600",
+    "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA23177.jpg",
+    "license": "attribution",
+    "fetched_at": "2026-06-23T13:36:54Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "insight/02.jpg": {
     "agency": "NASA",
@@ -2109,8 +2185,13 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ISS_Aug2005.jpg/960px-ISS_Aug2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "iss/02.jpg": {
-    "agency": "MULTI",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/STS071-744-011_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_9281e3654020a34db513fe28606e1b86.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "flickr-roscosmos",
+    "source_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+    "image_url": "https://live.staticflickr.com/1953/43799013270_3d0753849a_b.jpg",
+    "credit": "Roscosmos / Flickr",
+    "license": "cc-by-2.0",
+    "fetched_at": "2026-06-22T11:20:13Z",
+    "manual_fetch": "Flickr 429 on bot-UA — manual curl + sharp 2026-06-22"
   },
   "iss/03.jpg": {
     "agency": "MULTI",
@@ -2152,8 +2233,17 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juice_waves_Earth_goodbye_once_again_ESA500747.png"
   },
   "juno/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA20704/PIA20704~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:JUNO%20-%20PIA13746.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/JUNO%20-%20PIA13746.jpg?width=1600",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA13746",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:38Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "juno/02.jpg": {
     "agency": "NASA",
@@ -2172,24 +2262,69 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/PIA24308/PIA24308~orig.jpg"
   },
   "jwst/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/NHQ202112250021/NHQ202112250021~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:James%20Webb%20Space%20Telescope%20Mirrors%20Will%20Piece%20Together%20Cosmic%20Puzzles%20(30108124923).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20Webb%20Space%20Telescope%20Mirrors%20Will%20Piece%20Together%20Cosmic%20Puzzles%20(30108124923).jpg?width=1600",
+    "credit": "https://www.flickr.com/photos/gsfc/30108124923/",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:39:45Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "jwst/02.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/NHQ202201080018/NHQ202201080018~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s%20Webb%20Telescope%20Completes%20Goddard%20Testing%20(34238146222).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%E2%80%99s%20Webb%20Telescope%20Completes%20Goddard%20Testing%20(34238146222).jpg?width=1600",
+    "credit": "NASA’s Webb Telescope Completes Goddard Testing",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:39:39Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "jwst/03.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/NHQ202201080023/NHQ202201080023~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:James%20Webb%20Space%20Telescope%20on%20Launcher%20(51756638171).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20Webb%20Space%20Telescope%20on%20Launcher%20(51756638171).jpg?width=1600",
+    "credit": "James Webb Space Telescope on Launcher",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:10:55Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "jwst/04.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/NHQ202201080024/NHQ202201080024~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23938941370).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23938941370).jpg?width=1600",
+    "credit": "By the Dozen: NASA's James Webb Space Telescope Mirrors",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:25Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "jwst/05.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/NHQ202201080021/NHQ202201080021~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:JWST%20spacecraft%20model%202.png",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/JWST%20spacecraft%20model%202.png?width=1600",
+    "credit": "https://science.nasa.gov/multimedia/spacecraft-icons/ (image link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:23Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "kepler/01.jpg": {
     "agency": "NASA",
@@ -2424,7 +2559,7 @@
     "image_url": "http://images-assets.nasa.gov/image/S66-50969/S66-50969~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:14Z",
+    "fetched_at": "2026-06-22T11:18:31Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lc 34"
   },
@@ -2618,7 +2753,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%209%20proposed%202026%20landing%20site.png?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:52:03Z",
+    "fetched_at": "2026-06-22T11:19:06Z",
     "slice_a_iteration": 4,
     "slice_a_query": "luna 9",
     "vision": {
@@ -2732,7 +2867,7 @@
     "image_url": "http://images-assets.nasa.gov/image/Intuitive Machines IM-1 LN-1/Intuitive Machines IM-1 LN-1~orig.JPG",
     "credit": "Intuitive Machines",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:18Z",
+    "fetched_at": "2026-06-22T11:18:32Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lunar orbiter 1"
   },
@@ -2896,7 +3031,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA18162/PIA18162~orig.jpg",
     "credit": "NASA/Ames",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:19Z",
+    "fetched_at": "2026-06-22T11:18:33Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lunar prospector"
   },
@@ -2920,7 +3055,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA18162/PIA18162~orig.jpg",
     "credit": "NASA/Ames",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:19Z",
+    "fetched_at": "2026-06-22T11:18:33Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lunar prospector"
   },
@@ -3123,7 +3258,7 @@
     "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/06/dust_devils_galore_mars_express_visits_mamers_valles_on_mars/27330596-1-eng-GB/Dust_devils_galore_Mars_Express_visits_Mamers_Valles_on_Mars.jpg",
     "credit": "ESA",
     "license": "cc-by-4.0",
-    "fetched_at": "2026-06-19T08:51:50Z",
+    "fetched_at": "2026-06-22T11:18:56Z",
     "slice_a_iteration": 4,
     "slice_a_query": "mars express",
     "vision": {
@@ -3183,8 +3318,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mars-polar-lander/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA04016/PIA04016~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Polar%20Lander%20in%20aeroshell.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Polar%20Lander%20in%20aeroshell.jpg?width=1600",
+    "credit": "http://science.ksc.nasa.gov/gallery/photos/1998/captions/KSC-98PC-1884.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:07Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.85
+    }
   },
   "mars-polar-lander/02.jpg": {
     "agency": "NASA",
@@ -3337,7 +3481,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA14761/PIA14761~orig.jpg",
     "credit": "NASA",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:21Z",
+    "fetched_at": "2026-06-22T11:18:33Z",
     "slice_a_iteration": 4,
     "slice_a_query": "maven"
   },
@@ -3537,8 +3681,17 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/New_Shepard_spacecraft.jpg/960px-New_Shepard_spacecraft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "new-shepard/02.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Mike_Pence_touring_Blue_Origin_05.jpg/960px-Mike_Pence_touring_Blue_Origin_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blue%20Origin%20M7.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Blue%20Origin%20M7.jpg?width=1600",
+    "credit": "https://www.flickr.com/photos/nasafo/albums/72157664385358297",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:20Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "new-shepard/03.jpg": {
     "agency": "BLUE_ORIGIN",
@@ -3617,8 +3770,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "opportunity/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA05251/PIA05251~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NASA%20Mars%20Rover.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%20Mars%20Rover.jpg?width=1600",
+    "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA04413 (image link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:05Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "opportunity/02.jpg": {
     "agency": "NASA",
@@ -3722,8 +3884,17 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/PIA23963/PIA23963~medium.jpg"
   },
   "phobos-2/01.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Phobos_Marte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mmxspacecraft%200.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mmxspacecraft%200.jpg?width=1600",
+    "credit": "https://www.nasa.gov/press-release/nasa-selects-instrument-for-future-international-mission-to-martian-moons",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:10Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "phobos-2/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -3807,7 +3978,7 @@
     "image_url": "https://ids.si.edu/ids/download?id=NASM-NASM2016-00096.jpg",
     "credit": "Smithsonian National Air and Space Museum",
     "license": "cc0",
-    "fetched_at": "2026-06-19T08:51:24Z",
+    "fetched_at": "2026-06-22T11:18:40Z",
     "slice_a_iteration": 4,
     "slice_a_query": "pioneer 11"
   },
@@ -3944,8 +4115,13 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Mir_from_STS-81.jpg/960px-Mir_from_STS-81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "progress-m/02.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Progress-M_drawing.svg/960px-Progress-M_drawing.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "source_type": "flickr-roscosmos",
+    "source_url": "https://live.staticflickr.com/2683/32203375674_69af0c56e1_b.jpg",
+    "image_url": "https://live.staticflickr.com/2683/32203375674_69af0c56e1_b.jpg",
+    "credit": "Roscosmos / Flickr",
+    "license": "cc-by-2.0",
+    "fetched_at": "2026-06-22T11:20:13Z",
+    "manual_fetch": "Flickr 429 on bot-UA — manual curl + sharp 2026-06-22"
   },
   "progress-m/03.jpg": {
     "agency": "ROSCOSMOS",
@@ -4147,11 +4323,18 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "salyut-3/01.jpg": {
-    "commons_file": "Mir-39.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mir-39.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salyut%203%20paper%20model.JPG?width=1600",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salyut%203%20paper%20model.JPG?width=1600",
+    "credit": "agency original via Wikimedia Commons mirror",
+    "license": "cc-by-sa-or-pd",
+    "fetched_at": "2026-06-22T11:19:06Z",
+    "slice_a_iteration": 4,
+    "slice_a_query": "salyut 3",
+    "vision": {
+      "verdict": "unsure",
+      "confidence": 0
+    }
   },
   "salyut-3/02": {
     "commons_file": "RP1357_p68_Salyut_3.svg",
@@ -4283,7 +4466,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Model%20of%20Salyut-7%20with%20two%20Soyuz%20spacecrafts.JPEG?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:52:04Z",
+    "fetched_at": "2026-06-22T11:19:07Z",
     "slice_a_iteration": 4,
     "slice_a_query": "salyut 7",
     "vision": {
@@ -4353,7 +4536,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS-GEO.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:52:07Z",
+    "fetched_at": "2026-06-22T11:19:08Z",
     "slice_a_iteration": 4,
     "slice_a_query": "sbirs heo",
     "vision": {
@@ -4550,34 +4733,6 @@
     "license": "CC BY-SA 3.0 IGO",
     "fetched_at": "2026-06-20T15:32:53Z",
     "manual_source": "Marko 2026-06-20 — SMART-1 gallery full re-source from Commons Category:SMART-1"
-  },
-  "smart-1/02": {
-    "commons_file": "ESA's_SMART-1-_testing_solar_electric_propulsion_and_studying_the_Moon_ESA194476.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:ESA's_SMART-1-_testing_solar_electric_propulsion_and_studying_the_Moon_ESA194476.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:33Z"
-  },
-  "smart-1/03": {
-    "commons_file": "SMART-1_is_packed_as_it_will_be_for_launch_ESA228534.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:SMART-1_is_packed_as_it_will_be_for_launch_ESA228534.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:36Z"
-  },
-  "smart-1/04": {
-    "commons_file": "Hadley_Rille_on_the_Moon,_seen_by_SMART-1_ESA214754.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Hadley_Rille_on_the_Moon%2C_seen_by_SMART-1_ESA214754.jpg",
-    "credit": "ESA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:38Z"
-  },
-  "smart-1/05": {
-    "commons_file": "SMART-1_Impact_flash.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:SMART-1_Impact_flash.jpg",
-    "credit": "CFHT",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-08T20:43:40Z"
   },
   "sojourner/01.jpg": {
     "agency": "NASA",
@@ -4984,8 +5139,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "starliner/01.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0002/KSC-20210723-PH-BOE01_0002~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CST-100.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100.jpg?width=1600",
+    "credit": "https://images.nasa.gov/details/KSC-2011-8114 http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=57309 on the Wayback Machine at the Wayback Machine",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:03Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "starliner/02.jpg": {
     "agency": "BOEING",
@@ -5022,24 +5186,69 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "starship/01.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211220-PH-KLS01_0006/KSC-20211220-PH-KLS01_0006~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20ignition%20during%20IFT-5.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20ignition%20during%20IFT-5.jpg?width=1600",
+    "credit": "Flickr",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:37:33Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "starship/02.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211220-PH-KLS01_0002/KSC-20211220-PH-KLS01_0002~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Starship%20%26%20Moonset.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Starship%20%26%20Moonset.jpg?width=1600",
+    "credit": "https://www.flickr.com/photos/195131646@N04/51913039252/in/album-72177720297068210/",
+    "license": "cc by-sa 2.0",
+    "fetched_at": "2026-06-23T13:11:00Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "starship/03.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0867/KSC-20211228-PH-MTD01_0867~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20during%20IFT-5.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20during%20IFT-5.jpg?width=1600",
+    "credit": "Flickr",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:37:30Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.85
+    }
   },
   "starship/04.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0862/KSC-20211228-PH-MTD01_0862~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20landing%20burn%20sonic%20boom%20IFT-5.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20landing%20burn%20sonic%20boom%20IFT-5.jpg?width=1600",
+    "credit": "Flickr",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:37:28Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "starship/05.jpg": {
-    "agency": "SPACEX",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0874/KSC-20211228-PH-MTD01_0874~medium.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20landing%20IFT-5%2001.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20landing%20IFT-5%2001.jpg?width=1600",
+    "credit": "Flickr",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:06:02Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "surveyor-3/01.jpg": {
     "agency": "NASA",
@@ -5120,7 +5329,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%203%20space%20laboratory%20model.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:45Z",
+    "fetched_at": "2026-06-22T11:18:53Z",
     "slice_a_iteration": 4,
     "slice_a_query": "tiangong 1",
     "vision": {
@@ -5174,8 +5383,17 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "tiangong/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Tianhe_solar_array_deployment.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg?width=1600",
+    "credit": "Own work",
+    "license": "cc by-sa 4.0",
+    "fetched_at": "2026-06-23T13:37:14Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "tiangong/02.jpg": {
     "agency": "CMSA",
@@ -5234,7 +5452,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1%20and%20Tiangong-2%20rendering.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:46Z",
+    "fetched_at": "2026-06-22T11:18:53Z",
     "slice_a_iteration": 4,
     "slice_a_query": "tianzhou",
     "vision": {
@@ -5413,8 +5631,17 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf/page1-960px-Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "viking-1/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA02000/PIA02000~small.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lander%2C%20Mars%2C%20Viking%2C%20Proof%20Test%20Article%20-%20DPLA%20-%200e40e7ad805e7f7a7b655246c87c2827%20(page%201).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lander%2C%20Mars%2C%20Viking%2C%20Proof%20Test%20Article%20-%20DPLA%20-%200e40e7ad805e7f7a7b655246c87c2827%20(page%201).jpg?width=1600",
+    "credit": "File URL Catalog record",
+    "license": "cc0",
+    "fetched_at": "2026-06-23T12:59:51Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "viking-1/02.jpg": {
     "agency": "NASA",
@@ -5616,7 +5843,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok%20spacecraft.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:52:05Z",
+    "fetched_at": "2026-06-22T11:19:07Z",
     "slice_a_iteration": 4,
     "slice_a_query": "vostok",
     "vision": {
@@ -5687,39 +5914,61 @@
     "sourceUrl": "https://images-assets.nasa.gov/image/GRC-1979-C-02339/GRC-1979-C-02339~medium.jpg"
   },
   "vulcan/01.jpg": {
-    "commons_file": "Vulcan Works relief.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20Works%20relief.jpg",
-    "credit": "United Launch Alliance",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519131).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519131).jpg?width=1600",
+    "credit": "This image was released by the United States Space Force with the ID 260212-X-KX339-1008 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:39:56Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "vulcan/02.jpg": {
-    "commons_file": "Vulcan by Bertel Thorvaldsen.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20by%20Bertel%20Thorvaldsen.jpg",
-    "credit": "United Launch Alliance",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:USSF-106%20Launch%20(9254083).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-106%20Launch%20(9254083).jpg?width=1600",
+    "credit": "This image was released by the United States Space Force with the ID 250812-X-NY190-1001 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:36Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "vulcan/03.jpg": {
-    "commons_file": "Planet-Vulcan 1846 003790.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Planet-Vulcan%201846%20003790.jpg",
-    "credit": "United Launch Alliance",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192711).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192711).jpg?width=1600",
+    "credit": "This image was released by the United States Space Force with the ID 240108-X-NM958-1017 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:40:01Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.95
+    }
   },
   "vulcan/04.jpg": {
-    "commons_file": "Vulcan, Colorado, Thomas Tonge, 1896.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vulcan%2C%20Colorado%2C%20Thomas%20Tonge%2C%201896.jpg",
-    "credit": "United Launch Alliance",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped%202).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped%202).jpg?width=1600",
+    "credit": "https://www.flickr.com/photos/nasakennedy/53444731128/in/photostream/",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:41:04Z",
+    "slice_a_iteration": "safari-final-2026-06-23"
   },
   "vulcan/05.jpg": {
-    "commons_file": "Manchester Row, Vulcan Village 2.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Manchester%20Row%2C%20Vulcan%20Village%202.jpg",
-    "credit": "United Launch Alliance",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519121).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519121).jpg?width=1600",
+    "credit": "This image was released by the United States Space Force with the ID 260212-X-KX339-1001 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:41:34Z",
+    "slice_a_iteration": "safari-final-2026-06-23"
   },
   "x37b/01.jpg": {
     "agency": "MULTI",
@@ -5762,12 +6011,30 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/28May2008.pdf/page1-960px-28May2008.pdf.jpg"
   },
   "xichang-lc-3/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/LEOonthecheap.pdf/page1-960px-LEOonthecheap.pdf.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The%20Launch%20of%20Long%20March%203B%20Rocket.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Launch%20of%20Long%20March%203B%20Rocket.jpg?width=1600",
+    "credit": "Own work",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:43Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "xichang-lc-3/02.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/10June2008.pdf/page1-960px-10June2008.pdf.jpg"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%20zheng%203b%20and%20intelsat708%20failure.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang%20zheng%203b%20and%20intelsat708%20failure.jpg?width=1600",
+    "credit": "",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:40:33Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "xichang-lc-3/03.jpg": {
     "agency": "CMSA",
@@ -5877,13 +6144,17 @@
     "fetched_at": "2026-06-15T14:25:35Z"
   },
   "solar-orbiter/01.jpg": {
-    "agency": "ESA",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
-    "commons_file": "Solar Orbiter’s widest high-res view of the Sun ESA508430.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%E2%80%99s%20widest%20high-res%20view%20of%20the%20Sun%20ESA508430.jpg",
-    "credit": "ESA / NASA — Solar Orbiter mission",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-15T14:25:38Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20spacecraft.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20spacecraft.jpg?width=1600",
+    "credit": "",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:40:17Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "parker-solar-probe/01.jpg": {
     "agency": "NASA / JHU APL",
@@ -5918,7 +6189,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA25236/PIA25236~orig.jpg",
     "credit": "NASA/JPL-Caltech/Johns Hopkins APL/Ed Whitman",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:13Z",
+    "fetched_at": "2026-06-22T11:18:30Z",
     "slice_a_iteration": 4,
     "slice_a_query": "europa clipper"
   },
@@ -6068,24 +6339,30 @@
     "commons_file": "Hayabusa Re-Entery.jpg"
   },
   "solar-orbiter/02.jpg": {
-    "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-20200131-PH-JBS01_0039",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-20200131-PH-JBS01_0039/KSC-20200131-PH-JBS01_0039~orig.jpg",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:59:20Z",
-    "nasa_id": "KSC-20200131-PH-JBS01_0039",
-    "nasa_title": "Solar Orbiter Spacecraft Lift and Mate"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20-%20artist%20rendering%20-%20b02.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20-%20artist%20rendering%20-%20b02.jpg?width=1600",
+    "credit": "http://ulysses.jpl.nasa.gov/imagespage/index.html",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:37:41Z",
+    "slice_a_iteration": "handsource-2026-06-22",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "solar-orbiter/03.jpg": {
-    "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/KSC-20200131-PH-JBS01_0119",
-    "image_url": "http://images-assets.nasa.gov/image/KSC-20200131-PH-JBS01_0119/KSC-20200131-PH-JBS01_0119~orig.jpg",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:59:33Z",
-    "nasa_id": "KSC-20200131-PH-JBS01_0119",
-    "nasa_title": "Solar Orbiter Spacecraft Lift and Mate"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20spacecraft%20model.png",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20spacecraft%20model.png?width=1600",
+    "credit": "https://science.nasa.gov/toolkits/spacecraft-icons (image link)",
+    "license": "public domain",
+    "fetched_at": "2026-06-23T13:40:22Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   },
   "hayabusa/05.jpg": {
     "source_type": "smithsonian-openaccess",
@@ -6105,7 +6382,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:25Z",
+    "fetched_at": "2026-06-22T11:18:41Z",
     "slice_a_iteration": 4,
     "slice_a_query": "viking2 lander"
   },
@@ -6115,7 +6392,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto%20Whipple%20shield%20ESA239195.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:47Z",
+    "fetched_at": "2026-06-22T11:18:54Z",
     "slice_a_iteration": 4,
     "slice_a_query": "giotto",
     "vision": {
@@ -6129,7 +6406,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euclid%20spacecraft%20ESA24912474.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:46Z",
+    "fetched_at": "2026-06-22T11:18:54Z",
     "slice_a_iteration": 4,
     "slice_a_query": "euclid",
     "vision": {
@@ -6143,7 +6420,7 @@
     "image_url": "https://ids.si.edu/ids/download?id=NASM-A19740798000-NASM2018-10165.jpg",
     "credit": "Smithsonian National Air and Space Museum",
     "license": "cc0",
-    "fetched_at": "2026-06-19T08:51:09Z",
+    "fetched_at": "2026-06-22T11:18:28Z",
     "slice_a_iteration": 4,
     "slice_a_query": "apollo csm block i"
   },
@@ -6153,7 +6430,7 @@
     "image_url": "http://images-assets.nasa.gov/image/S66-50969/S66-50969~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:15Z",
+    "fetched_at": "2026-06-22T11:18:31Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lc 34"
   },
@@ -6163,7 +6440,7 @@
     "image_url": "http://images-assets.nasa.gov/image/S66-50969/S66-50969~orig.jpg",
     "credit": "NASA / JSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:15Z",
+    "fetched_at": "2026-06-22T11:18:31Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lc 34"
   },
@@ -6173,7 +6450,7 @@
     "image_url": "http://images-assets.nasa.gov/image/KSC-20211027-PH-SPX03_0001/KSC-20211027-PH-SPX03_0001~orig.jpg",
     "credit": "NASA / KSC",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:16Z",
+    "fetched_at": "2026-06-22T11:18:32Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lc 39a"
   },
@@ -6183,7 +6460,7 @@
     "image_url": "http://images-assets.nasa.gov/image/PIA12086/PIA12086~orig.jpg",
     "credit": "NASA/JPL",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-19T08:51:17Z",
+    "fetched_at": "2026-06-22T11:18:32Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lro"
   },
@@ -6193,7 +6470,7 @@
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandrayaan-1-01.jpg?width=1600",
     "credit": "agency original via Wikimedia Commons mirror",
     "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-19T08:51:51Z",
+    "fetched_at": "2026-06-22T11:18:56Z",
     "slice_a_iteration": 4,
     "slice_a_query": "Chandrayaan-1",
     "vision": {
@@ -6222,22 +6499,22 @@
     "fetched_at": "2026-06-19T08:58:28Z"
   },
   "vostok-5/01.jpg": {
-    "commons_file": "Valery Bykovsky.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Valery%20Bykovsky.png",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-19T09:08:35Z",
-    "promoted_from": "slot 02",
-    "cross_surface_mirror_from": "missions"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2034%20reentry%20capsule%2003.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2034%20reentry%20capsule%2003.jpg?width=1600",
+    "credit": "Own work",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-22T11:48:03Z",
+    "slice_a_iteration": "handsource-2026-06-22"
   },
   "vostok-6/01.jpg": {
-    "commons_file": "Tereshkova Space Suit.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Tereshkova%20Space%20Suit.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-19T09:08:35Z",
-    "promoted_from": "slot 02",
-    "cross_surface_mirror_from": "missions"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Space%20craft%20Vostok-6.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Space%20craft%20Vostok-6.jpg?width=1600",
+    "credit": "Own work",
+    "license": "cc by 4.0",
+    "fetched_at": "2026-06-22T11:54:38Z",
+    "slice_a_iteration": "handsource-2026-06-22"
   },
   "smart-1/02.jpg": {
     "source_type": "wikimedia-commons",
@@ -6283,5 +6560,18 @@
     "license": "CC BY-SA",
     "fetched_at": "2026-06-20T15:33:22Z",
     "manual_source": "Marko 2026-06-20 — accepted mockup as hero (no flight imagery available)"
+  },
+  "solar-orbiter/05.jpg": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%20STM%20(16738668300).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%20STM%20(16738668300).jpg?width=1600",
+    "credit": "Solar Orbiter STM",
+    "license": "cc by 2.0",
+    "fetched_at": "2026-06-23T13:40:28Z",
+    "slice_a_iteration": "safari-ua-retry-2026-06-23",
+    "vision": {
+      "verdict": "related",
+      "confidence": 0.92
+    }
   }
 }

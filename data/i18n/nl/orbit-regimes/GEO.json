@@ -1,0 +1,42 @@
+{
+  "name": "Geostationaire Baan",
+  "short": "GEO",
+  "story": "Precies 35.786 km hoogte — de hoogte waar een omloop exact 24 uur duurt, zodat de satelliet bewegingsloos boven een vaste lengtegraad op de evenaar hangt. Weersatellieten staren voor altijd naar hetzelfde continent; communicatiesatellieten schilderen een schotelgrote voetafdruk en bewegen nooit. Er zijn geen parkeerplaatsen, alleen parkeervakken — elke operator krijgt een lengtegradband toegewezen door de ITU.",
+  "comparison": "Ongeveer 1/11e van de afstand naar de Maan. Een retour-tv-signaal via GEO-communicatiesatelliet duurt ~240 ms — lang genoeg om te horen tijdens een telefoongesprek (\"satellietvertraging\").",
+  "residents": [
+    {
+      "id": "goes",
+      "label": "GOES — NOAA geostationaire weer",
+      "agency": "NASA"
+    },
+    {
+      "id": "inmarsat",
+      "label": "Inmarsat — wereldwijde communicatiesatellieten",
+      "agency": "ESA"
+    },
+    {
+      "id": "meteosat",
+      "label": "Meteosat — ESA weer",
+      "agency": "ESA"
+    },
+    {
+      "id": "fengyun",
+      "label": "Fengyun — Chinees weer",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1963,
+      "label": "Syncom 2 — eerste geosynchrone satelliet (USA)"
+    },
+    {
+      "year": 1964,
+      "label": "Syncom 3 — eerste echte geostationaire satelliet (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

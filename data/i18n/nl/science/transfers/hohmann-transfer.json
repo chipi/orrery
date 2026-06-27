@@ -1,0 +1,15 @@
+{
+  "title": "Hohmann-transfer",
+  "intro_sentence": "De goedkoopste reis met twee brandingen tussen twee coplanaire cirkelbanen — en de referentie waar missieplanner alles tegen afmeten.",
+  "narrative_101": [
+    "Je bevindt je in de baan om de aarde. Je wilt in de baan om Mars zijn. Beide banen zijn grofweg cirkels rond de zon. Hoe kom je van de ene naar de andere met zo min mogelijk brandstof?",
+    "Het antwoord, uitgewerkt door Walter Hohmann in 1925, is verrassend elegant. Vind een ellips die net de baan van de aarde aan de ene kant raakt en net de baan van Mars aan de andere kant. Laat je motor kort branden om de aarde te verlaten en deze ellips te volgen. Zweef acht maanden zonder de motor überhaupt aan te zetten — de zwaartekracht doet het werk. Wanneer je aan het andere uiteinde aankomt, brand je opnieuw om in de baan van Mars te komen. Twee brandingen, totaal. Klaar.",
+    "Het is de goedkoopst mogelijke reis — maar ook de langzaamste. De acht maanden wachttijd is niet onderhandelbaar; de fysica zet de timer. Wil je sneller gaan? Dat kan, maar je betaalt ervoor: een steilere ellips, een snellere overtocht, een veel grotere rembranding aan de andere kant. Dit is de afweging die je in elk porkchop-diagram in /plan zult zien."
+  ],
+  "body_paragraphs": [
+    "Stel je voor dat je in een cirkelbaan rond de zon bent en je een hogere wilt bereiken — bijvoorbeeld van de aarde naar Mars. De goedkoopste manier is een Hohmann-transfer: een ellips waarvan het perihelium je beginbaan raakt en waarvan het aphelium de bestemming raakt. Twee motorbrandingen brengen je er. Eén bij het perihelium om de baan van de aarde te verlaten en de ellips in te gaan. Eén bij het aphelium om te circulariseren in de bestemmingsbaan.",
+    "Het is het goedkoopste pad met vaste impulsen, maar ook het langzaamste. Van de aarde naar Mars duurt ongeveer 259 dagen op een Hohmann. Wil je sneller gaan? Brand harder, vlieg een uitgerekte ellips met hogere periheliumsnelheid. De aankomst-V∞ neemt toe, de binnenkomstbranding bij de bestemming is groter, je totale ∆v-kosten stijgen steil.",
+    "Op Orrery's `/plan` porkchop zie je dit direct: er is een rustig bassin van koele groenblauwige cellen rond het natuurlijke Hohmann-venster, om de 26 maanden voor Mars, en steeds kostbaardere contouren naarmate je richting kortere reistijden duwt."
+  ],
+  "diagram_caption": "Aardbaan (binnen) · Marsbaan (buiten) · Hohmann-transferellips met perihelium bij de aarde, aphelium bij Mars."
+}

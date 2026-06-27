@@ -1,0 +1,142 @@
+{
+  "intro_heading": "तो आप Mars पर रॉकेट उड़ाना चाहते हैं।",
+  "intro_paragraphs": [
+    "स्वागत है। यह Orrery का वह हिस्सा है जहाँ बटन जादू नहीं रह जाते। HUD में हर लेबल, porkchop में हर रंगीन contour, trajectory पर हर burn marker — यह खंड समझाता है कि वे कहाँ से आते हैं। इसे comic book की तरह पढ़ें: diagrams ज़्यादातर काम करते हैं, और हर italicised शब्द एक link है जिसे आप जितना चाहें उतना गहराई से खोज सकते हैं।",
+    "हम साथ मिलकर एक रॉकेट बनाने जा रहे हैं। शाब्दिक नहीं — Orrery एक simulator है — लेकिन वही निर्णयों की श्रृंखला जो एक असली flight team लेती है, उसी क्रम में जिस क्रम में वे लेते। अंत तक आप जान जाएंगे कि Mars के लिए हर 26 महीने में launch windows क्यों होती हैं और Moon के लिए हर महीने क्यों, free-return trajectory क्यों मौजूद है, और thrust एक मिशन का सबसे सस्ता हिस्सा क्यों है और fuel पूरी लड़ाई क्यों है।"
+  ],
+  "chapters": [
+    {
+      "heading": "1 — Gravity ही एकमात्र भौतिकी है जो मायने रखती है।",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "एक दीर्घवृत्त जिसमें सूर्य एक नाभि पर है।",
+      "diagram_caption": "एक पिंड, एक नाभि, एक दीर्घवृत्त। यही पूरा सौर मंडल है।",
+      "paragraphs": [
+        "रॉकेट को एक पल के लिए भूल जाइए। पृथ्वी पर खड़े हों, जितनी ज़ोर से हो सके एक baseball फेंकें। यह वापस नीचे आ जाती है। इसे और ज़ोर से फेंकें, यह और दूर गिरती है। इसे इतनी ज़ोर से फेंकें कि ज़मीन गेंद के गिरने से तेज़ी से मुड़ जाए, और गेंद ग्रह को चूक जाए — हमेशा के लिए। यह एक [orbit](orbits/keplerian-orbit) है। हर अंतरिक्ष यान, हर ग्रह, asteroid belt में हर पत्थर किसी भारी चीज़ के चारों ओर यही चाल चल रहा है।",
+        "एक orbit एक दीर्घवृत्त है। इसका एक [size](orbits/semi-major-axis), एक [shape](orbits/eccentricity) (गोल बनाम खिंचा हुआ), एक [tilt](orbits/inclination), और एक phase होता है जो आपको बताता है कि अंतरिक्ष यान अभी दीर्घवृत्त पर कहाँ है ([true anomaly](orbits/true-anomaly))। पाँच संख्याएँ और आप सौर मंडल में किसी भी वस्तु की स्थिति की भविष्यवाणी कर सकते हैं, हमेशा के लिए, बिना किसी अन्य डेटा के। यह [Kepler's three laws](orbits/keplers-laws) है, जो 1609 में लिखे गए — वे अभी भी काम करते हैं।",
+        "यहाँ आपको मिलने वाला सबसे उपयोगी समीकरण [vis-viva](orbits/vis-viva) है। अपनी त्रिज्या, अपने orbit का size डालें, और आपकी गति बाहर आ जाती है। बस इतना ही। Earth perihelion पर: 30.3 km/s। Earth aphelion पर: 29.3 km/s। समान orbit, समान ऊर्जा, अलग गति।"
+      ]
+    },
+    {
+      "heading": "2 — Rocket equation boss fight है।",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Mass-ratio curve: ∆v आपके कितना fuel जलाने के साथ logarithmically बढ़ता है।",
+      "diagram_caption": "क्रूर सच: अपने ∆v को दोगुना करने का मतलब है 2× से बहुत अधिक fuel जलाना।",
+      "paragraphs": [
+        "अब: आप orbits कैसे बदलते हैं? आप fuel जलाते हैं। [∆v](propulsion/dv-budget) (\"delta-v\") spaceflight की सार्वभौमिक मुद्रा है — एक मिशन को कुल velocity परिवर्तन की आवश्यकता होती है। trajectory पर आपकी हर चाल की km/s में एक कीमत होती है।",
+        "और वह कीमत क्रूर है। [Tsiolkovsky rocket equation](propulsion/tsiolkovsky) कहता है कि ∆v आपके रॉकेट का कितना हिस्सा fuel है इसके logarithm के साथ scale करता है। दोगुना ∆v चाहिए? आप दोगुना fuel नहीं ले जाते — आप exponentially अधिक ले जाते हैं। यही कारण है कि Saturn V 90% propellant था। रॉकेट का अधिकांश हिस्सा वह fuel है जो fuel उठाता है जो fuel उठाता है जो अंतरिक्ष यान उठाता है।",
+        "दो संख्याएँ इस gravity tax से लड़ती हैं। Thrust आपको बताता है कि engine कितनी मज़बूती से धक्का देता है — यह वह संख्या है जिसकी launch के बाद वास्तव में किसी को परवाह नहीं होती। [Specific impulse](propulsion/specific-impulse) आपको बताता है कि engine कितनी कुशलता से धक्का देता है — और यही वह है जो मायने रखता है। एक chemical rocket ~450 seconds देता है। एक ion thruster 4,000+ देता है — महीनों fuel की चुस्की लेता है और deep-space cruises के लिए किसी भी chemical से बेहतर प्रदर्शन करता है।",
+        "सबसे बढ़िया जादू की चाल: [Oberth effect](propulsion/oberth-effect)। जब आप पहले से तेज़ी से चल रहे हों (किसी ग्रह के नीचे और पास) तब अपना engine जलाने से आपको समान fuel के लिए बहुत अधिक धमाका मिलता है। यही कारण है कि हर interplanetary मिशन अपना बड़ा departure burn perigee पर करता है, पृथ्वी को गले लगाते हुए, जितनी तेज़ी से भौतिकी अनुमति देती है। geometry से मुफ्त ऊर्जा।"
+      ]
+    },
+    {
+      "heading": "3 — एक बार जब आप orbit में हों, तो आप कहीं भी आधे रास्ते हैं।",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "एक दीर्घवृत्त जो Earth की orbit और Mars की orbit को स्पर्श करता है।",
+      "diagram_caption": "दो burns, एक दीर्घवृत्त। orbits बदलने का सबसे सस्ता तरीका।",
+      "paragraphs": [
+        "Robert Heinlein ने लिखा: \"एक बार जब आप orbit में हों, तो आप सौर मंडल में कहीं भी आधे रास्ते हैं।\" वह मज़ाक नहीं कर रहे थे। Low Earth orbit तक पहुँचने में ~9.4 km/s का ∆v लगता है। वहाँ से Mars तक जाने में और ~3.6 km/s लगता है। सबसे कठिन हिस्सा पहले से ही आपके पीछे है।",
+        "सबसे सस्ता interplanetary route एक [Hohmann transfer](transfers/hohmann-transfer) है: एक दीर्घवृत्त जो एक छोर पर Earth की orbit को और दूसरे छोर पर गंतव्य की orbit को बस मुश्किल से चूमता है। दो burns, कोई बर्बाद fuel नहीं। Mars तक इसमें ~8.5 महीने लगते हैं। धीमा, लेकिन optimal।",
+        "तेज़ी से जाना चाहते हैं? एक [Lambert's problem](transfers/lambert-problem) हल करें — अपनी departure date और अपना transit time चुनें, और Lambert आपको वह unique [transfer ellipse](transfers/transfer-ellipse) बताता है जो उन्हें जोड़ता है। Orrery की [/plan](app:/plan) screen बिल्कुल यही करती है, parallel में दस हज़ार बार, एक porkchop plot बनाने के लिए।",
+        "और भी दूर जाने की ज़रूरत है? किसी ग्रह से गति चुराएँ। एक [gravity assist](transfers/gravity-assist) आपकी trajectory को zero fuel cost पर बदलने के लिए एक flyby का उपयोग करता है — Voyager 2 ने Neptune तक पहुँचने के लिए उनमें से चार का उपयोग किया। पूरा सौर मंडल [patched conics](transfers/patched-conics) के रूप में जुड़ता है: [conic-section](transfers/conic-sections) arcs की एक श्रृंखला जो gravitational neighbourhoods के बीच relay race में batons की तरह सौंपी जाती है।"
+      ]
+    },
+    {
+      "heading": "4 — एक launch window चुनें, या दो साल प्रतीक्षा करें।",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "क्लासिक porkchop contour plot — x पर departure date, y पर time of flight।",
+      "diagram_caption": "एक porkchop। प्रत्येक contour constant ∆v है; lobe तब होता है जब प्रकृति Mars को सस्ता बनाती है।",
+      "paragraphs": [
+        "Earth और Mars स्थिर नहीं बैठते। Earth सूर्य के चारों ओर हर 365 दिनों में दौड़ती है, Mars हर 687। उनकी सापेक्ष geometry केवल हर ~26 महीने में दोहराती है — और उन महीनों में से अधिकांश में, ग्रह बहुत दूर हैं, सूर्य के गलत पक्षों पर, सस्ते में पहुँचने के लिए। Mission design एक calendar से शुरू होता है, रॉकेट से नहीं।",
+        "[Porkchop plot](porkchop/what-is-a-porkchop) इस तरह engineers इसे देखते हैं। [एक अक्ष](porkchop/departure-axis) के साथ departure date, दूसरे के साथ [flight time](porkchop/tof-axis), ∆v एक [colour heatmap](porkchop/dv-heatmap) के रूप में। सस्ते क्षेत्र oval lobes के रूप में दिखाई देते हैं — launch windows। Lobe के बाहर: लाल, महंगा, वर्तमान-रॉकेटों-से-असंभव। [Contours पढ़ना](porkchop/contour-reading) flight dynamicist के काम का आधा हिस्सा है।",
+        "दो तकनीकी शब्द जो आप हर जगह देखेंगे: [C3](propulsion/c3) वह launch energy है जो आपके रॉकेट को Earth के gravity well से निकलने के लिए चाहिए। [V∞](propulsion/v-infinity) (\"v-infinity\") गंतव्य के सापेक्ष आपकी गति है जिस क्षण आप पहुँचते हैं। दोनों सीधे porkchop math से निकलते हैं।"
+      ]
+    },
+    {
+      "heading": "5 — Flight बस पाँच phases हैं जो दोहराते हैं।",
+      "diagram": "edl.svg",
+      "diagram_alt": "Atmospheric entry, parachute deploy, retropropulsion, landing।",
+      "diagram_caption": "Entry, descent, landing। छह मिनट का शुद्ध आतंक।",
+      "paragraphs": [
+        "लगभग हर interplanetary मिशन, Voyager से Perseverance तक, वही script चलाता है:",
+        "[Launch](mission-phases/launch) — वायुमंडल से बाहर निकलें और low Earth orbit में जाएँ। [Trans-X Injection](mission-phases/trans-x-injection) — perigee पर एक single hard burn जो आपको Moon (TLI), Mars (TMI), Venus (TVI), या Jupiter (TJI) के transfer ellipse पर फेंक देता है। [Trajectory Correction Maneuvers](mission-phases/tcm) — cruise के दौरान dispersion errors को ठीक करने के लिए छोटे burns। आमतौर पर उनमें से 1–3। [Orbit Insertion](mission-phases/orbit-insertion) — गंतव्य पर एक braking burn जो आपको एक captured orbit में मोड़ देता है। [EDL](mission-phases/edl) — Entry, Descent, Landing — lander के लिए। supersonic atmospheric अराजकता के छह मिनट।",
+        "Lunar मिशन कभी-कभी एक [Near-Rectilinear Halo Orbit](mission-phases/nrho) से होकर जाते हैं (Gateway एक में रहेगा), और crewed Apollo flights ने [free-return trajectories](transfers/free-return) उड़ाईं — figure-8 paths जो आपको स्वचालित रूप से Earth पर वापस गिरा देती हैं यदि अंतरिक्ष यान पर हर engine मर जाता है। Apollo 13 अपना जीवन इस geometry को देता है।"
+      ]
+    },
+    {
+      "heading": "6 — दूरियाँ और समय, क्योंकि इनमें से कुछ भी Earth-sized नहीं है।",
+      "diagram": "au.svg",
+      "diagram_alt": "Astronomical unit, Earth की orbital त्रिज्या के साथ चिह्नित।",
+      "diagram_caption": "एक AU = एक Earth-Sun दूरी। Mars ~1.5 AU है। Jupiter ~5.2 है।",
+      "paragraphs": [
+        "तीन units हर जगह दिखाई देती हैं। [Astronomical unit](scales-time/au) (AU) औसत Earth-Sun दूरी है — 150 मिलियन km। हम सौर मंडल को AU में मापते हैं क्योंकि kilometres तेज़ी से बेकाबू हो जाते हैं। [Light-minute](scales-time/light-minute) आपको बताता है कि एक radio signal को अंतरिक्ष यान तक पहुँचने में कितना समय लगता है। Mars: 4 से 24 मिनट एक-तरफा। आप Earth से एक rover को joystick नहीं कर सकते। हर महत्वपूर्ण चीज़ स्वायत्त है।",
+        "[J2000 epoch](scales-time/j2000) वह calendar शून्य है जिसका हर astrodynamicist उपयोग करता है। [Sidereal vs. synodic periods](scales-time/sidereal-synodic) समझाते हैं कि Mars windows हर 26 महीने में क्यों दोहराती हैं बजाय हर 23 के। [Ecliptic plane](scales-time/ecliptic-plane) वह सपाट disc है जिस पर सभी ग्रह (ज़्यादातर) स्थित हैं। [Reference frames](scales-time/frames) वे coordinate systems हैं जो mission control Earth-centred, Sun-centred, और body-centred views के बीच juggle करता है।"
+      ]
+    },
+    {
+      "heading": "7 — मनुष्य इसके लिए नहीं बने हैं।",
+      "diagram": "_cover-life-in-space.svg",
+      "diagram_alt": "एक stylised अंतरिक्ष यात्री microgravity में तैर रहा है जिसमें bone/muscle/countermeasure indicator bars हैं।",
+      "diagram_caption": "हड्डी, मांसपेशी, दृष्टि, vestibular, प्रतिरक्षा — microgravity में सब कुछ फिर से wire हो जाता है, और Earth की ओर नहीं।",
+      "paragraphs": [
+        "छह महीने orbit में बिताएँ और आप छोटे, हल्के, और छोटे होकर वापस आते हैं जब आप गए थे। [Microgravity](life-in-space/microgravity-physiology) मूल कारण है: fluids सिर की ओर पुनर्वितरित होते हैं, postural muscles unload होती हैं, [bones](life-in-space/bone-density-loss) प्रति महीने अपने खनिज का 1–2% खो देती हैं, [vestibular system](life-in-space/vestibular-adaptation) \"down\" खोजने की कोशिश करना छोड़ देता है। [Counter-measures](life-in-space/muscle-atrophy) — ARED + treadmill पर प्रतिदिन दो घंटे का resistive और aerobic व्यायाम — इसे हल किए बिना धीमा करते हैं।",
+        "[Radiation](life-in-space/radiation-exposure) कठिन समस्या है। ISS को ~200 mSv/year मिलता है (Earth पर 3 mSv background बनाम); magnetosphere के बाहर deep space 600+ mSv/year है, अभी तक कोई अच्छी shielding strategy नहीं है। एक Mars-class यात्रा एक crew member को एक single round trip में career-limit कैंसर जोखिम के पास रखेगी।",
+        "फिर [EVA](life-in-space/eva-physiology) है (4.3 psi pure-oxygen suit में 6-घंटे का endurance event) और [long-duration effects](life-in-space/long-duration-effects) जैसे SANS — Space-Associated Neuro-ocular Syndrome — जहाँ long-flight crew के 60% में measurable आँख में परिवर्तन विकसित होते हैं जो पूरी तरह से reverse नहीं होते। ये अनसुलझी समस्याएँ हैं जो मानवता और Mars के बीच खड़ी हैं।"
+      ]
+    },
+    {
+      "heading": "8 — ब्रह्मांड के बारे में हम जो कुछ भी जानते हैं वह एक photon के रूप में आया।",
+      "diagram": "_cover-observation.svg",
+      "diagram_alt": "एक space telescope एक दूर की galaxy की ओर लक्षित है जिसके नीचे एक representative emission spectrum है।",
+      "diagram_caption": "Telescope + filter + spectrograph + maths। ब्रह्मांड के बारे में लगभग हर तथ्य प्रकाश से पुनर्निर्मित किया गया था।",
+      "paragraphs": [
+        "[Space photography](observation/space-photography) वह नहीं है जो लोग सोचते हैं। कोई shutter clicking नहीं है; हर observatory image जो आपने देखा है वह narrow-band filters के माध्यम से long exposures का एक stack है, calibrated, registered, false-colour assigned। Hardware एक CCD या CMOS sensor है — photon-counters का एक grid — और data count है, picture नहीं। Picture वह है जो मनुष्य count से बनाते हैं।",
+        "[Adaptive optics](observation/adaptive-optics) वायुमंडल को real time में इसकी विकृति को मापकर और इसे cancel करने के लिए mirror को मोड़कर हराता है। [Coronagraphs](observation/coronagraphs) central star को block करते हैं ताकि इसकी orbit में planets को देखा जा सके। [Spectroscopy](observation/spectroscopy) एक तारे के प्रकाश में absorption lines से उसकी रासायनिक संरचना पढ़ती है। [Interferometry](observation/interferometry) अलग telescopes को एक virtual aperture में जोड़ती है जो उनमें से किसी से भी बड़ा है।",
+        "और उन methods ने जो सबसे अजीब वस्तुएँ पाई हैं: [black holes](observation/black-holes) (असली, mapped, दो galaxies के केंद्र में shadow-imaged) और [wormholes](observation/wormholes) (शुद्ध गणित, शामिल किए गए ताकि आप जान सकें कि जब आप एक फिल्म में देखें तो उनके साथ क्या करना है)। /fleet ↦ Observatory category में actual machines हैं — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — प्रत्येक के साथ उसकी अपनी gallery है जो उसने देखा।"
+      ]
+    }
+  ],
+  "tools_heading": "अब खेलने जाएँ।",
+  "tools_intro": "यह पूरा loop है। अब आप app के बाकी हिस्सों में हर label, contour, और HUD readout पढ़ने के लिए पर्याप्त जानते हैं। इसे काम में लगाने के लिए यहाँ जाएँ:",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "सौर मंडल को घुमाएँ। Kepler के नियमों को live देखें। किसी भी ग्रह को उसके orbital elements के लिए click करें।"
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "एक गंतव्य चुनें, एक launch year चुनें, porkchop देखें। Lobe वहाँ है जहाँ Hohmann transfers छुपते हैं।"
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "एक असली mission arc उड़ाएँ। HUD ∆v, V∞, MET, Earth से दूरी दिखाता है। हर संख्या कुछ ऐसी है जो आपने अभी सीखी।"
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 असली अंतरिक्ष यान, Luna 9 से Artemis II तक। प्रत्येक का FLIGHT tab ऊपर के phases में इसके वास्तविक ∆v budget को decompose करता है।"
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Ground truth। हर Apollo, हर rover, हर active satellite वास्तव में कहाँ बैठा है।"
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "दो आबाद orbital outposts, module दर module।"
+    }
+  ],
+  "closing": "इस story के नीचे, उचित encyclopedia: छह tabs, चालीस entries, हर formula और हर diagram एक जगह। Bookmark करें। जब आपको ज़रूरत होगी हम यहाँ होंगे।"
+}

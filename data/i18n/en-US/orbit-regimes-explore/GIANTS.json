@@ -1,0 +1,51 @@
+{
+  "name": "Gas + Ice Giants",
+  "short": "GIANTS",
+  "story": "The outer planetary realm — 5 to 30 AU. Two gas giants (Jupiter, Saturn) with hydrogen-helium envelopes thousands of kilometres deep above small rocky cores; two ice giants (Uranus, Neptune) with water/ammonia/methane mantles under thinner gas. Together they hold 99% of all planetary mass in the solar system. Each has its own moon system that reads as a miniature solar system in itself — Jupiter alone has 95 known moons, including four bigger than Pluto.",
+  "comparison": "Jupiter is 318× more massive than Earth. The four giants together would form a system 25× the diameter of the inner planets combined.",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5.20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9.58 AU, ring system",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19.18 AU, tilted 97°",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30.07 AU, fastest winds in system",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — first Jupiter flyby (USA)"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — only Uranus flyby ever (USA)"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — only Neptune flyby ever (USA)"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — first Jupiter orbiter (USA)",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Erde-Mond L2",
+  "short": "L2",
+  "story": "Der Lagrange-Punkt 64.500 km hinter dem Mond, von der Erde aus gesehen — der gravitative Sattelpunkt, an dem sich Erd-, Mond- und Zentrifugalkräfte die Waage halten. Der Mond befindet sich immer zwischen dem Raumfahrzeug und der Erde, sodass eine direkte Kommunikation unmöglich ist — aber ein Satellit, der hier in einer Halo-Umlaufbahn UM L2 geparkt ist, hat Sichtverbindung SOWOHL zur Mondrückseite ALS AUCH zur Erde. So landete China Chang'e 4 im Jahr 2019 auf der Rückseite: Der Relaissatellit Queqiao, geparkt in einem Halo um Erde-Mond L2, überbrückt jeden Befehl und jedes Bild.",
+  "comparison": "Etwa 1/6 der Entfernung von der Erde zum Mond. Ohne ein Relais bei L2 ist die gesamte Mondrückseite ein Kommunikations-Blackout — jedes Raumfahrzeug, das jemals dort gelandet ist, brauchte eines.",
+  "residents": [
+    {
+      "id": "queqiao",
+      "label": "Queqiao — Relais für Chang'e 4 Rückseite (2018)",
+      "agency": "CNSA"
+    },
+    {
+      "id": "queqiao-2",
+      "label": "Queqiao-2 — Relais für Chang'e 6 Rückseite (2024)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2018,
+      "label": "Queqiao — erstes operatives Erde-Mond-L2-Relais (China)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

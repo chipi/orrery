@@ -1,0 +1,37 @@
+{
+  "name": "Sonne–Erde L2",
+  "short": "L2",
+  "story": "Der zweite Lagrange-Punkt — 1,5 Millionen km von der Erde entfernt, auf der Linie von der Sonne durch die Erde hindurch und weiter hinaus. Die Schwerkraft von Sonne + Erde wirken zusammen, um eine Raumsonde mit minimalem Treibstoff stationär zu halten. Stets nächtlicher Himmel, stets warme erdgewandte Seite, derselbe Sonnenwinkel für immer — der perfekte Parkplatz für Infrarotteleskope, die kalt bleiben und von der Sonne weg ausgerichtet sein müssen. JWST ist hier geparkt, in einem Halo-Orbit von ~800.000 km Breite.",
+  "comparison": "Viermal weiter entfernt als der Mond. Die Sonne, die Erde und der Mond befinden sich alle auf einer Seite der Raumsonde, was die Geometrie des Sonnenschilds vereinfacht.",
+  "residents": [
+    {
+      "id": "jwst",
+      "label": "JWST — James Webb-Weltraumteleskop",
+      "agency": "NASA"
+    },
+    {
+      "id": "gaia",
+      "label": "Gaia — Milliarden-Sterne-Vermesser",
+      "agency": "ESA"
+    },
+    {
+      "id": "euclid",
+      "label": "Euclid — Dunkle-Energie-Mission",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2001,
+      "label": "WMAP — erste L2-Mission (USA)"
+    },
+    {
+      "year": 2009,
+      "label": "Herschel + Planck — erste ESA-L2-Missionen"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

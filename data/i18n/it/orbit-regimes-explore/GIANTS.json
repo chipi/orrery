@@ -1,0 +1,51 @@
+{
+  "name": "Giganti Gassosi e Ghiacciati",
+  "short": "GIANTS",
+  "story": "Il regno planetario esterno — da 5 a 30 AU. Due giganti gassosi (Giove, Saturno) con involucri di idrogeno-elio profondi migliaia di chilometri sopra piccoli nuclei rocciosi; due giganti ghiacciati (Urano, Nettuno) con mantelli di acqua/ammoniaca/metano sotto gas più sottili. Insieme detengono il 99% di tutta la massa planetaria nel sistema solare. Ciascuno ha il proprio sistema di lune che si presenta come un sistema solare in miniatura — solo Giove ha 95 lune conosciute, di cui quattro più grandi di Plutone.",
+  "comparison": "Giove è 318× più massiccio della Terra. I quattro giganti insieme formerebbero un sistema 25× il diametro dei pianeti interni combinati.",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5,20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9,58 AU, sistema di anelli",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19,18 AU, inclinato 97°",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30,07 AU, i venti più veloci del sistema",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — primo sorvolo di Giove (USA)"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — unico sorvolo di Urano mai effettuato (USA)"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — unico sorvolo di Nettuno mai effettuato (USA)"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — primo orbitatore di Giove (USA)",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

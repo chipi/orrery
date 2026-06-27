@@ -1,0 +1,11 @@
+{
+  "name": "Marsianische Hill-Sphäre",
+  "short": "HILL",
+  "story": "Die äußere Grenze der gravitativen Einflusssphäre des Mars — etwa 1,08 Millionen Kilometer vom Planetenzentrum entfernt. Innerhalb dieser Sphäre dominiert die Schwerkraft des Mars über die der Sonne; außerhalb erobert die Sonne alles zurück, was man dort zurücklässt. Die Hill-Sphäre des Mars ist kleiner als die der Erde (1,5 M km), weil Mars weniger Masse besitzt, obwohl Mars weiter von der Sonne entfernt ist. Beide marsianischen Monde kreisen tief im Inneren (Deimos bei 2% des Hill-Radius). Bisher wurde keine Raumsonde nahe der Grenze platziert.",
+  "comparison": "Ungefähr die Entfernung von der Erde zum Erde-Mond-Lagrange-Punkt L2. Alles, was auf eine Mars-gebundene Flugbahn eingefangen wird, muss genug Energie abbauen, um innerhalb dieser Grenze zu bleiben, sonst zieht die Sonne es zurück in eine solare Umlaufbahn.",
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

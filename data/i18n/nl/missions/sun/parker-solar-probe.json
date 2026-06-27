@@ -1,0 +1,44 @@
+{
+  "name": "Parker Solar Probe",
+  "type": "SOLAR-ORBITER · ACTIVE",
+  "first": "Dichtstbijzijnde ruimtevaartuig bij de zon ooit gevlogen (6,1 M km, 9,86 R☉); eerste ruimtevaartuig dat de zonnekorona is binnengevlogen (2021-04-28); snelste door mensen gemaakte object (192 km/s)",
+  "description": "Parker Solar Probe voerde de meest energetische lancering ooit voor een wetenschappelijke missie uit — C3 van 154 km²/s², wat een aangepaste Star 48BV vaste-brandstof derde trap bovenop een Delta IV Heavy vereiste om alleen maar aan de aarde te ontsnappen in een naar-de-zon-vallende baan. Zeven Venus-zwaartekrachtassists over zes jaar verlaagden geleidelijk het perihelium van 0,16 AU (P1, 2018-11-05) naar 0,046 AU (P22, 2024-12-24 — 9,86 zonneradii, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritische Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekorona binnenging. Bij P22 bereikte het 192 km/s en werd daarmee het snelste door mensen gemaakte object ooit. Het 11,43-cm dikke koolstof-koolstof hitteschild doorstond 1.377 °C terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Delta IV Heavy + Star 48BV — hoogste C3 ooit voor een wetenschappelijke missie (154 km²/s²).",
+      "type": "nominal"
+    },
+    {
+      "met": 52,
+      "label": "VGA-1",
+      "note": "Eerste Venus-zwaartekrachtassist 2018-10-03.",
+      "type": "info"
+    },
+    {
+      "met": 85,
+      "label": "P1 — EERSTE PERIHELIUM",
+      "note": "2018-11-05, 0,16 AU. Dichtstbij-de-zon ooit, verslaat Helios 2.",
+      "type": "info"
+    },
+    {
+      "met": 989,
+      "label": "P8 — CORONA-INTREDE",
+      "note": "2021-04-28. Eerste ruimtevaartuig dat onder het kritische Alfvén-oppervlak dook.",
+      "type": "info"
+    },
+    {
+      "met": 1830,
+      "label": "VGA-6",
+      "note": "Zesde Venus-assist 2023-08-21.",
+      "type": "info"
+    },
+    {
+      "met": 2326,
+      "label": "P22 — ONTWERPMIJLPAAL",
+      "note": "2024-12-24. 9,86 R☉ (6,1 M km van de zon). 192 km/s. Hitteschild 1.377 °C.",
+      "type": "info"
+    }
+  ]
+}

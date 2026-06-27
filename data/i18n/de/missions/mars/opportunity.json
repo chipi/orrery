@@ -1,0 +1,50 @@
+{
+  "name": "Opportunity",
+  "type": "ROVER · GEFLOGEN",
+  "first": "Mars-Rover mit der längsten Fahrstrecke (45,16 km); 14-jährige Lebensdauer auf der Oberfläche gegenüber einem 90-Sol-Design",
+  "description": "Opportunity (MER-B) gewann den planetaren Jackpot — sein in Airbags eingehüllter Lander prallte 26 Mal über Meridiani Planum und rollte durch pures Glück in einen 22-m-Krater (Eagle), umgeben von freiliegendem Grundgestein, das ein Rover ohne Fahrt ablesen konnte. Erste Bilder zeigten Jarosit + „Blaubeeren\"-Hämatit-Konkretionen, den bis dahin stärksten mineralischen Beweis für stehendes flüssiges Wasser auf dem frühen Mars. Über 14 Jahre 47 Tage legte Opportunity 45,16 km zurück — der Mars-Rover-Marathonrekord — und besuchte die Krater Endurance, Victoria und Endeavour. Ein planetenweiter Staubsturm im Juni 2018 blockierte das Sonnenlicht von seinen Solarpanelen; die letzte Übertragung erfolgte am 10.06.2018, und die NASA erklärte das Missionsende am 13.02.2019.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Delta II 7925H Heavy von Cape Canaveral LC-17B.",
+      "type": "nominal"
+    },
+    {
+      "met": 12,
+      "label": "TCM-1",
+      "note": "Erste Bahnkorrektur.",
+      "type": "nominal"
+    },
+    {
+      "met": 195,
+      "label": "TCM-4",
+      "note": "Letzte Feinabstimmung vor EDL.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "EDL",
+      "note": "Hitzeschild, Fallschirm, Bremsraketen, Airbags.",
+      "type": "info"
+    },
+    {
+      "met": 202.01,
+      "label": "LANDUNG — IM EAGLE-KRATER",
+      "note": "26 Mal aufgeprallt. Zufällig in einen 22-m-Krater gerollt, umgeben von freiliegendem Grundgestein.",
+      "type": "info"
+    },
+    {
+      "met": 5300,
+      "label": "LETZTE ÜBERTRAGUNG",
+      "note": "10.06.2018. Planetenweiter Staubsturm unterbricht Solarstromversorgung.",
+      "type": "warning"
+    },
+    {
+      "met": 5543,
+      "label": "MISSIONSENDE",
+      "note": "NASA erklärt Missionsende am 13.02.2019. 45,16 km zurückgelegt.",
+      "type": "warning"
+    }
+  ]
+}

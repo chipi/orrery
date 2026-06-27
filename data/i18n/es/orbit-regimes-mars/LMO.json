@@ -1,0 +1,58 @@
+{
+  "name": "Órbita Baja de Marte",
+  "short": "LMO",
+  "story": "La banda de cartografía — típicamente entre 150 y 500 km sobre la superficie marciana. La mayoría de los orbitadores de Marte viven aquí: es lo suficientemente alta para esquivar el arrastre atmosférico de la termosfera superior, pero lo bastante baja para obtener imágenes a escala métrica. La delgada atmósfera es un regalo — Mars Reconnaissance Orbiter y Mars Odyssey han usado aerofrenado (sumergiéndose repetidamente en ella) para circularizar sus órbitas de forma gratuita, ahorrando años de propelente. Seis naciones están volando naves espaciales aquí ahora mismo.",
+  "comparison": "Aproximadamente 1/9 de la distancia de Marte a Fobos. Desde LMO puedes distinguir una pista de tenis en la superficie (HiRISE en MRO alcanza 25 cm/px).",
+  "residents": [
+    {
+      "id": "maven",
+      "label": "MAVEN — estudios atmosféricos",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars-express",
+      "label": "Mars Express — primera misión de la ESA a Marte",
+      "agency": "ESA"
+    },
+    {
+      "id": "mro",
+      "label": "MRO — imágenes HiRISE",
+      "agency": "NASA"
+    },
+    {
+      "id": "tianwen1-orbiter",
+      "label": "Tianwen-1 orbiter",
+      "agency": "CNSA"
+    },
+    {
+      "id": "mangalyaan",
+      "label": "Mangalyaan (MOM, 2014-2022)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "mars-odyssey",
+      "label": "Mars Odyssey (nave espacial activa más antigua en Marte)",
+      "agency": "NASA"
+    },
+    {
+      "id": "tgo",
+      "label": "ExoMars TGO — cazador de metano",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — primer satélite artificial de Marte (EE. UU.)",
+      "mission_id": "mariner9"
+    },
+    {
+      "year": 2003,
+      "label": "Mars Express — primera misión de la ESA a Marte"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

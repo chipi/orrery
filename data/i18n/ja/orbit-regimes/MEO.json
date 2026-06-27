@@ -1,0 +1,42 @@
+{
+  "name": "中軌道",
+  "short": "MEO",
+  "story": "測位帯域――高度約20,000 kmに位置し、24機以上の衛星群が地球上のあらゆる地点を少なくとも4機の同時可視衛星でカバーできる領域(3次元測位に必要な最小数)。4つの主要な全地球測位システムすべてがここに存在し、運用機関によって意図的に4つの独立した軌道に分散配置されている。内側ヴァン・アレン帯の上、外側の下――穏やかで高い軌道。",
+  "comparison": "月までの距離の約1/19。GPSからの信号は携帯電話に到達するまで約67 ms――LEO往復の約10倍。",
+  "residents": [
+    {
+      "id": "gps",
+      "label": "GPS — 全地球測位システム",
+      "agency": "NASA"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo — 欧州GNSS",
+      "agency": "ESA"
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS — ロシアGNSS",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "beidou",
+      "label": "BeiDou — 中国GNSS",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1978,
+      "label": "Navstar 1 — 初のGPS衛星 (USA)"
+    },
+    {
+      "year": 1982,
+      "label": "GLONASS Block I — 初のソ連GNSS衛星"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

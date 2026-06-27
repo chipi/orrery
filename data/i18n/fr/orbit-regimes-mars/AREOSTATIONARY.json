@@ -1,0 +1,12 @@
+{
+  "name": "Orbite aréostationnaire",
+  "short": "AREO",
+  "story": "L'équivalent martien de l'orbite géostationnaire — à 17 031 km d'altitude, où une orbite dure exactement un jour sidéral martien (24 h 37 min 22 s), de sorte qu'un vaisseau spatial resterait immobile au-dessus d'une longitude martienne fixe. Aucun vaisseau spatial n'a jamais utilisé cette orbite. C'est l'objectif de conception pour les futures constellations de relais martiens : à mesure que les missions habitées et les bases de surface se développent, placer des satellites de communication dans des positions aréostationnaires reproduirait le réseau de satellites de communication GEO terrestre, éliminant les interruptions de communication quotidiennes qu'imposent aujourd'hui les relais en orbite basse à chaque mission de surface.",
+  "comparison": "Juste en dessous de Deimos, la lune extérieure de Mars (23 460 km). Trois satellites aréostationnaires espacés de 120° couvriraient l'ensemble du disque martien — la même astuce que les satellites de communication GEO utilisent pour la télévision terrestre par satellite.",
+  "residents": [],
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

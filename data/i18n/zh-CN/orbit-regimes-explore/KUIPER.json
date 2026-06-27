@@ -1,0 +1,56 @@
+{
+  "name": "柯伊伯带",
+  "short": "KUIPER",
+  "story": "海王星以外的冰冻天体环带——距太阳30至50 AU。小行星带的冰冻类似物：数十万个天体中只有最大的几个被解析。由甲烷、氨、水冰和岩石组成。Pluto是1930年首个被确认的成员，但直到1990年代Jewitt和Luu发现第二个成员(1992 QB1)时，这个带才被认定为一个群体。New Horizons让人类首次近距离观察了两个柯伊伯天体——2015年的Pluto和2019年的Arrokoth。",
+  "comparison": "如果说小行星带是围绕内太阳系的一个薄环，那么柯伊伯带的宽度是其1,000倍，质量约为其25倍。在Pluto处的阳光强度仅为地球处的1/1,600。",
+  "residents": [
+    {
+      "id": "pluto",
+      "label": "Pluto——39.5 AU，已知最大",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "eris",
+      "label": "Eris——96.4 AU（离散盘）",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "makemake",
+      "label": "Makemake——45.8 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "haumea",
+      "label": "Haumea——43.3 AU，快速自转体",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "quaoar",
+      "label": "Quaoar——43.4 AU，有环",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "arrokoth",
+      "label": "Arrokoth——44.6 AU，接触双星",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1930,
+      "label": "发现Pluto——首个确认的柯伊伯带天体 (Tombaugh, USA)"
+    },
+    {
+      "year": 2015,
+      "label": "New Horizons——首次飞掠Pluto (USA)"
+    },
+    {
+      "year": 2019,
+      "label": "New Horizons抵达Arrokoth——人类探访过的最遥远天体 (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

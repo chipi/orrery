@@ -1,0 +1,39 @@
+{
+  "name": "Órbita Lunar Alta",
+  "short": "HLO",
+  "story": "Órbitas elípticas de cartografía y trayectorias de estacionamiento por encima de 100 km. La Luna 10 de 1966 fue colocada aquí — el primer artefacto en entrar en órbita alrededor de cualquier cuerpo que no fuera la Tierra. SMART-1 permaneció en órbitas muy elípticas para probar la resistencia de la propulsión iónica. La mayoría de las misiones lunares modernas transitan por HLO antes de descender a LLO; algunas terminan su vida siendo elevadas aquí para liberar el 'espacio de trabajo' de LLO antes del impacto de eliminación.",
+  "comparison": "Aproximadamente la altitud de GEO sobre la Tierra, pero alrededor de un cuerpo con un 27% del diámetro. El horizonte lunar retrocede; la nave espacial ve un disco lunar completo en lugar de la superficie de cerca.",
+  "residents": [
+    {
+      "id": "luna10",
+      "label": "Luna 10 — primer orbitador lunar de la historia",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "clementine",
+      "label": "Clementine (1994)",
+      "agency": "NASA"
+    },
+    {
+      "id": "smart-1",
+      "label": "SMART-1 — demostración de propulsión iónica",
+      "agency": "ESA"
+    },
+    {
+      "id": "change1",
+      "label": "Chang'e 1 (2007-2009)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1966,
+      "label": "Luna 10 — primer orbitador lunar artificial (URSS)",
+      "mission_id": "luna10"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

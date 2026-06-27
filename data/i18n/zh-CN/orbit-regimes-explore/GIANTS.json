@@ -1,0 +1,51 @@
+{
+  "name": "气态与冰巨星",
+  "short": "GIANTS",
+  "story": "外行星区域——距太阳5至30 AU。两颗气态巨行星（Jupiter、Saturn）拥有数千公里深的氢氦包层，包裹着小型岩石核心；两颗冰巨星（Uranus、Neptune）在较薄的气体层下拥有水/氨/甲烷地幔。它们共同占据了太阳系所有行星质量的99%。每颗行星都有自己的卫星系统，本身就像一个微型太阳系——仅Jupiter就有95颗已知卫星，其中四颗比Pluto还大。",
+  "comparison": "Jupiter的质量是地球的318倍。四颗巨行星合在一起形成的系统直径是内行星总和的25倍。",
+  "residents": [
+    {
+      "id": "jupiter",
+      "label": "Jupiter — 5.20 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "saturn",
+      "label": "Saturn — 9.58 AU，环系统",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "uranus",
+      "label": "Uranus — 19.18 AU，倾斜97°",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "neptune",
+      "label": "Neptune — 30.07 AU，系统中最快风速",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1973,
+      "label": "Pioneer 10 — 首次飞掠Jupiter（USA）"
+    },
+    {
+      "year": 1986,
+      "label": "Voyager 2 — 唯一一次飞掠Uranus（USA）"
+    },
+    {
+      "year": 1989,
+      "label": "Voyager 2 — 唯一一次飞掠Neptune（USA）"
+    },
+    {
+      "year": 1995,
+      "label": "Galileo — 首个Jupiter轨道器（USA）",
+      "mission_id": "galileo"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

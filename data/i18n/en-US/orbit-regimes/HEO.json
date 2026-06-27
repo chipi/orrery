@@ -1,0 +1,33 @@
+{
+  "name": "Highly Elliptical Orbit",
+  "short": "HEO",
+  "story": "Not an altitude, a shape. A long ellipse with a low perigee (close to Earth) and a very high apogee (sometimes higher than GEO). The orbiter spends most of its time near apogee, hanging slowly over high latitudes — the trick Soviet engineers used to get continuous comms over Russia's polar regions where a GEO satellite over the equator is too low on the horizon to see. Used today for missile-warning, deep-space tracking, and high-latitude broadband.",
+  "comparison": "Apogee can reach 1/8th of the way to the Moon; perigee can graze the top of LEO. The orbiter sprints near Earth and crawls at the top.",
+  "residents": [
+    {
+      "id": "molniya",
+      "label": "Molniya — Russian comms HEO",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "tundra",
+      "label": "Tundra — SiriusXM constellation",
+      "agency": "NASA"
+    },
+    {
+      "id": "ibex",
+      "label": "IBEX — heliosphere mapper",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1965,
+      "label": "Molniya 1-01 — first highly elliptical comsat (USSR)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

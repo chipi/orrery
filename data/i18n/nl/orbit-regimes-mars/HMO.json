@@ -1,0 +1,34 @@
+{
+  "name": "Hoge Mars Baan",
+  "short": "HMO",
+  "story": "Zeer elliptische banen in het bereik van 1.000-2.500 km, voornamelijk historisch. Mariner 9 kwam hier aan in 1971 — het eerste ruimtevaartuig dat in een baan om een andere planeet kwam, enkele weken voor Mars 2. De Sovjet Mars 3 en de Amerikaanse Viking 1 orbiters volgden, allemaal geparkeerd in lange ellipsen die het brandstof voor stationsbehoud minimaliseerden tijdens het Mariner-tijdperk van beperkte delta-v budgetten. Phobos passeert door deze zone op 9.376 km — Viking en Mars Express gebruikten beide de geometrie om de maan van dichtbij te bestuderen.",
+  "comparison": "Ruwweg de hoogte waar de GPS-satellieten van de aarde draaien — maar rond een planeet die iets meer dan de helft van de grootte van de aarde is. Het zicht van de orbiter op Mars bij apoapsis is de klassieke 'hele-schijf' omlijsting in vroege jaren '70 missiefoto's.",
+  "residents": [
+    {
+      "id": "mariner9",
+      "label": "Mariner 9 (1971-1972 — eerste Mars orbiter)",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars3-orbiter",
+      "label": "Mars 3 orbiter (1971-1972)",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "viking1-orbiter",
+      "label": "Viking 1 orbiter (1976-1980)",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — eerste kunstmatige satelliet van een andere planeet dan de aarde (USA)",
+      "mission_id": "mariner9"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

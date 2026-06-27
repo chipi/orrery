@@ -1,0 +1,58 @@
+{
+  "name": "火星低轨道",
+  "short": "LMO",
+  "story": "测绘带——通常位于火星表面上方150至500公里处。大多数火星轨道器都在这里运行:这个高度足以避开上层热层的大气阻力,同时又足够低,可以进行米级成像。稀薄的大气是一份馈赠——Mars Reconnaissance Orbiter和Mars Odyssey利用气动制动(反复穿越大气层)免费实现了轨道圆化,节省了数年的推进剂。目前有六个国家的航天器正在这里飞行。",
+  "comparison": "约为火星到火卫一(Phobos)距离的1/9。从LMO你可以分辨出地表上的一个网球场(MRO上的HiRISE能达到25厘米/像素)。",
+  "residents": [
+    {
+      "id": "maven",
+      "label": "MAVEN — 大气研究",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars-express",
+      "label": "Mars Express — ESA首个火星任务",
+      "agency": "ESA"
+    },
+    {
+      "id": "mro",
+      "label": "MRO — HiRISE成像",
+      "agency": "NASA"
+    },
+    {
+      "id": "tianwen1-orbiter",
+      "label": "Tianwen-1 orbiter",
+      "agency": "CNSA"
+    },
+    {
+      "id": "mangalyaan",
+      "label": "Mangalyaan (MOM, 2014-2022)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "mars-odyssey",
+      "label": "Mars Odyssey (最古老的在役火星航天器)",
+      "agency": "NASA"
+    },
+    {
+      "id": "tgo",
+      "label": "ExoMars TGO — 甲烷探测器",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — 首个火星人造卫星(美国)",
+      "mission_id": "mariner9"
+    },
+    {
+      "year": 2003,
+      "label": "Mars Express — ESA首个火星任务"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

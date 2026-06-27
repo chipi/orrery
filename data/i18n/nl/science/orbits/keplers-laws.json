@@ -1,0 +1,16 @@
+{
+  "title": "De Drie Wetten van Kepler",
+  "intro_sentence": "Drie waarnemingsregels die planetaire beweging omvormden tot een exacte wetenschap, een eeuw voordat Newton uitlegde waarom.",
+  "narrative_101": [
+    "Kepler had geen calculus. Hij had Newtons zwaartekracht niet. Hij had geen computer. Hij had twintig jaar aan zorgvuldig met-een-kwadrant-geobserveerde waarnemingen van Mars van zijn baas Tycho Brahe, en hij had geduld. Daaruit schreef hij drie regels die vandaag de dag, vierhonderd jaar later, nog steeds precies kloppen.",
+    "Wet één: banen zijn ellipsen, geen cirkels. Ketters in die tijd. Wet twee: de lijn van een planeet naar de Zon strijkt gelijke oppervlakten in gelijke tijden — wat een slimme manier is om te zeggen dat planeten sneller gaan wanneer ze dicht bij de Zon zijn en vertragen wanneer ze ver zijn. Wet drie: hoe groter de baan, hoe langer het jaar, op een precieze manier (T² schaalt als a³).",
+    "Newton kwam zeventig jaar later langs en bewees dat alle drie de wetten voortvloeien uit één simpele zwaartekrachtvergelijking. Maar Kepler was er als eerste, zonder theorie — alleen door naar getallen te staren tot ze bekentenissen aflegden. Dat is het soort zet dat je nog steeds kunt uithalen in de moderne wetenschap als je er het geduld voor hebt."
+  ],
+  "body_paragraphs": [
+    "Eerste wet: planeten bewegen in ellipsen met de Zon in één brandpunt. Voor Kepler gebruikte elk model cirkels — soms genest, soms verschoven, maar altijd cirkelvormig. Kepler gebruikte Tycho Brahes twintig jaar aan waarnemingen van Mars en gaf het op: de data pasten niet bij cirkels, en niets wat hij kon doen maakte ze passend. Ellipsen pasten bij de eerste poging.",
+    "Tweede wet: de lijn van Zon naar planeet strijkt gelijke oppervlakten in gelijke tijden. Dit is impulsmomentbehoud in vermomming. Nabij perihelium is de planeet dicht bij de Zon, de lijn is kort — dus moet hij snel zwaaien om dezelfde oppervlakte te strijken als een lange, langzame lijn nabij aphelium. Daarom is de baansnelheid niet constant.",
+    "Derde wet: `T² ∝ a³`. Het kwadraat van de omlooptijd is evenredig met de derde macht van de halve lange as. Met de Aarde ingesteld op T = 1 jaar en a = 1 AU, kun je de periode van elke planeet aflezen uit zijn afstand — of zijn afstand uit zijn periode. Newton zou dit later afleiden uit zwaartekracht; Kepler kwam er via pure patroonherkenning op Brahes data."
+  ],
+  "formula_caption": "Keplers derde wet in moderne vorm: T² hangt alleen af van a (en de μ van het centrale lichaam).",
+  "diagram_caption": "Gelijke oppervlakten in gelijke tijden: kortere boog nabij perihelium strijkt dezelfde oppervlakte als de langere boog nabij aphelium."
+}

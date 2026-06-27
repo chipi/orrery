@@ -126,6 +126,18 @@
         "fetched_at": {
           "type": "string",
           "format": "date-time"
+        },
+        "spacecraft_id": {
+          "type": "string",
+          "description": "Capturing spacecraft id (#360) — resolves to a /mars or /moon surface-orbiter, e.g. 'mro'. Links the image to the satellite that took it on /credits."
+        },
+        "spacecraft_name": {
+          "type": "string",
+          "description": "Capturing spacecraft display name, e.g. 'Mars Reconnaissance Orbiter'."
+        },
+        "instrument": {
+          "type": "string",
+          "description": "Capturing instrument, e.g. 'HiRISE' or 'CTX'. Used to group orbital surface imagery into per-instrument credit sections."
         }
       }
     }

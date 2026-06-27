@@ -1,0 +1,23 @@
+{
+  "name": "Disco Disperso + Sednoides",
+  "short": "SCATTERED",
+  "story": "Cuerpos en órbitas muy elípticas más allá del Cinturón de Kuiper — de 50 a 1.000 UA. Probablemente fueron dispersados hacia aquí por interacciones gravitacionales con Neptuno hace mucho tiempo. Sedna es el sednoide prototípico: 76 UA en el perihelio, 937 UA en el afelio, una órbita de 11.400 años. Sus órbitas están demasiado lejos como para que Neptuno las haya colocado actualmente, lo que sugiere influencias de estrellas de paso, un hipotético Planeta Nueve, o los hermanos perdidos del Sol de su cúmulo de nacimiento. Ninguna nave espacial los ha visitado nunca.",
+  "comparison": "Sedna en el afelio se encuentra a 1/53 del camino hacia la estrella vecina más cercana al Sol, Proxima Centauri. La luz que llega a Sedna desde el Sol es 1/350.000 de la que alcanza la Tierra.",
+  "residents": [
+    {
+      "id": "sedna",
+      "label": "Sedna — órbita de 76-937 UA, 11.400 años",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2003,
+      "label": "Descubrimiento de Sedna — primer sednoide (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

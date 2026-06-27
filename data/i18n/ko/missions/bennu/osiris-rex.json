@@ -1,0 +1,44 @@
+{
+  "name": "OSIRIS-REx",
+  "type": "시료 회수 · 비행 완료",
+  "first": "역대 최대 소행성 시료 회수 (Bennu에서 121.6 g, 2023-09-24 지구 도착)",
+  "description": "OSIRIS-REx는 역사상 가장 정밀한 소행성 랑데부 임무를 수행했습니다. 2016-09-08 Cape Canaveral에서 Atlas V 411 로켓으로 발사되었으며, 2017년 지구 중력 도움을 이용해 궤도면을 Bennu의 6° 경사각에 맞추고, 2018-12-03 직경 492 m의 탄소질 지구 근접 소행성과 랑데부했습니다. 1.4 km 거리에서 정지 유지 — 천체 주위를 도는 우주선 궤도 중 가장 가까운 거리입니다. 2년간 바위로 뒤덮인 Bennu의 표면을 매핑하고 활발한 입자 분출을 발견했습니다. 2020-10-20 Touch-and-Go 샘플 채취 암이 Nightingale 지점으로 하강하여 표면에 N₂ 가스를 분사하고 분출물을 포획했으며 — '자갈더미 유체' 표면에 50 cm 침투했습니다. 시료 회수 캡슐이 2023-09-24 Utah에 121.6 g의 Bennu 물질을 전달했습니다. 우주선 본체는 즉시 OSIRIS-APEX로 재명명되어 2029년 Apophis 랑데부를 향해 비행 중입니다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "Cape Canaveral SLC-41에서 Atlas V 411로 발사.",
+      "type": "nominal"
+    },
+    {
+      "met": 380,
+      "label": "지구 중력 도움",
+      "note": "2017-09-22, 남극 상공 17,237 km — 궤도면을 Bennu의 6° 경사각에 맞춤.",
+      "type": "info"
+    },
+    {
+      "met": 816,
+      "label": "BENNU 랑데부",
+      "note": "1.4 km에서 정지 유지 — 천체 주위를 도는 우주선 궤도 중 가장 가까운 거리.",
+      "type": "info"
+    },
+    {
+      "met": 1503,
+      "label": "TAG 시료 채취",
+      "note": "2020-10-20. Touch-and-Go 암이 자갈더미 표면에 50 cm 침투; 121.6 g 포획.",
+      "type": "info"
+    },
+    {
+      "met": 1705,
+      "label": "BENNU 출발",
+      "note": "2021-05-10. 지구로 2.5년 순항.",
+      "type": "nominal"
+    },
+    {
+      "met": 2572,
+      "label": "시료 회수",
+      "note": "2023-09-24. SRC가 Utah Test and Training Range에 낙하산 착륙; 우주선은 OSIRIS-APEX가 됨.",
+      "type": "info"
+    }
+  ]
+}

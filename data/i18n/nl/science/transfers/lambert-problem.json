@@ -1,0 +1,15 @@
+{
+  "title": "Lambert's Probleem",
+  "intro_sentence": "Gegeven twee posities en een reistijd, vind de baan die ze verbindt — het centrale probleem van elk interplanetair traject.",
+  "narrative_101": [
+    "De Hohmann-overgang is het goedkoopste pad van de ene baan naar de andere, maar de meeste missies vliegen niet echt Hohmanns. Ze willen vertrekken op een specifieke datum — bijvoorbeeld wanneer een bepaalde raket klaar is, of wanneer een bepaald lanceerplatform beschikbaar is — en ze willen aankomen op een specifieke datum — bijvoorbeeld voordat een stofstorm op Mars gaat liggen. Hohmann laat je niet kiezen. Lambert wel.",
+    "Lamberts vraag klinkt eenvoudiger dan de wiskunde erachter: ik ben bij punt A, ik wil bij punt B zijn, en ik wil er precies zoveel dagen over doen. Welke baan moet ik vliegen? Lambert schreef het antwoord op in 1761 — er is precies één ellips (of soms twee, afhankelijk van welke kant je opgaat) die twee punten in een gegeven tijd verbindt.",
+    "Dit is de kern van elke porkchop plot die je zult zien. Elke pixel op de porkchop in /plan is één Lambert-probleem: 'vertrek van de Aarde op datum X, bereik Mars op datum Y — wat kost het?' De kleur is het antwoord. Los het tienduizend keer parallel op en je krijgt de hele kaart in één keer. Orrery doet dit in een Web Worker zodat de UI niet vastloopt terwijl het aan het denken is."
+  ],
+  "body_paragraphs": [
+    "Lamberts probleem vraagt: ik ben hier, ik wil daar zijn, en ik heb zoveel tijd. Welke ellips moet ik vliegen? Twee positievectoren en een vluchttijd, en de vergelijking produceert de unieke overgangsbaan (of twee — er is een lange weg en een korte weg rond het centrale hemellichaam).",
+    "De Hohmann-overgang is één specifieke Lambert-oplossing: posities bij tegenovergestelde apsiden, vluchttijd gelijk aan de helft van de periode van de overgangsellips. Draai aan een van beide knoppen — andere posities, andere tijd — en je krijgt een andere ellips. Kortere tijd, meer excentrische ellips, hogere vertrekenergie. De wiskunde verandert niet; alleen de randvoorwaarden.",
+    "Orrery lost Lamberts probleem op in een Web Worker elke keer dat je met de muis over een porkchop-cel zweeft op `/plan`. Elke cel vraagt: 'vertrek van de Aarde op datum X, arriveer bij Mars op datum Y — wat zijn de ∆v-kosten?' De kleur die je ziet is het antwoord op die vraag, één keer berekend per pixel."
+  ],
+  "diagram_caption": "Twee positievectoren r₁ en r₂; de Lambert-oplosser vindt de unieke overgangsellips die ze verbindt in de vluchttijd."
+}

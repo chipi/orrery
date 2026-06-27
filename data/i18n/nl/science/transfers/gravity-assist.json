@@ -1,0 +1,15 @@
+{
+  "title": "Gravity Assist",
+  "intro_sentence": "Steel het orbitale momentum van een planeet tijdens een voorbijvlucht — het dichtst bij een gratis lunch dat je in de ruimte kunt krijgen.",
+  "narrative_101": [
+    "Gooi een tennisbal naar een rijdende trein. De bal kaatst af op de voorkant en komt sneller terug dan je hem gooide — omdat de trein erop af bewoog en de snelheid van de trein bij de terugkaats werd opgeteld. Dat is in wezen een gravity assist. Het ruimtevaartuig is de tennisbal, de planeet is de trein, en \"terugkaatsen\" wordt vervangen door \"langs vallen in een hyperbool.\"",
+    "Vanuit het gezichtspunt van de planeet komt het ruimtevaartuig binnen en vertrekt het met precies dezelfde snelheid — zwaartekracht is conservatief, geen energie gewonnen of verloren. Maar vanuit het gezichtspunt van de Zon erft het ruimtevaartuig onderweg naar buiten een deel van de orbitale beweging van de planeet en komt het ergens nieuw aan met extra (of minder) snelheid. Het is geen schending van de natuurkunde; de planeet betaalt ervoor door te vertragen — met een hoeveelheid die veel te klein is om te detecteren.",
+    "Dit is de truc die de Voyager grand tour mogelijk maakte. Zonder gravity assists kun je Saturnus niet bereiken, laat staan Uranus of Neptunus, met chemische raketten — de brandstofkosten zijn astronomisch. Voyager 2 schakelde vier assists achter elkaar: Jupiter, Saturnus, Uranus, Neptunus, allemaal in één reis. Cassini kaatste twee keer af op Venus en één keer op de Aarde op weg naar Saturnus. Het buitenste zonnestelsel is alleen toegankelijk dankzij deze truc."
+  ],
+  "body_paragraphs": [
+    "Nader een bewegende planeet van achteren op een hyperbolisch traject. De zwaartekracht van de planeet buigt je pad, je zwaait erlangs en je vertrekt met dezelfde snelheid ten opzichte van de planeet — maar de planeet bewoog de hele tijd, en je draagt die beweging met je mee. Netto resultaat: je verlaat met meer snelheid ten opzichte van de Zon dan waarmee je aankwam. De planeet vertraagt in ruil daarvoor met een onmeetbaar kleine hoeveelheid.",
+    "Keer de geometrie om — nader van voren — en je vertraagt. Pioneer 11 gebruikte Jupiter om richting Saturnus te duwen. Voyager 2 schakelde Jupiter, Saturnus, Uranus, Neptunus achter elkaar in een van de meest uitmuntende gravity-assist-tours die ooit gevlogen zijn. Cassini kaatste twee keer af op Venus en één keer op de Aarde voordat het Saturnus bereikte. New Horizons raakte Jupiter om drie jaar van de reis naar Pluto af te halen.",
+    "Zonder gravity assists had de helft van de missies in de catalogus van Orrery niet kunnen vliegen. De buitenplaneten zijn simpelweg te ver voor directe trajecten met chemische raketten — hun kosten in `∆v` zouden overschrijden wat elke raket kan leveren. Gravity assists veranderen die rekenkunde van onmogelijk in moeilijk maar haalbaar."
+  ],
+  "diagram_caption": "Ruimtevaartuig komt binnen en verlaat het referentiekader van de planeet met dezelfde snelheid; de beweging van de planeet voegt heliocentrische snelheid toe."
+}

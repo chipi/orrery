@@ -1,0 +1,23 @@
+{
+  "name": "Orbita Marziana Profonda",
+  "short": "DMO",
+  "story": "Oltre l'orbita areostazionaria, nella fascia ellittica tra 20.000 e 43.000 km. L'orbiter Hope degli Emirati Arabi Uniti è l'unico veicolo spaziale presente qui — la sua orbita di 55 ore percorre un'ampia traiettoria ellittica progettata per la scienza atmosferica globale: rimanere in sospensione vicino all'apoasse gli consente di osservare interi sistemi meteorologici svilupparsi e decadere attraverso l'intero terminatore giorno-notte del pianeta. Deimos, la luna marziana esterna, orbita anch'essa all'interno di questa fascia a 23.460 km.",
+  "comparison": "L'apoasse di Hope a 43.000 km è circa 1/9 della distanza di Phobos dalla Luna terrestre. L'orbita è stata deliberatamente scelta per essere UNICA nella flotta marziana — nessun altro veicolo spaziale vede il pianeta da questa angolazione.",
+  "residents": [
+    {
+      "id": "hope",
+      "label": "Hope — Missione Marziana degli Emirati",
+      "agency": "UAESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2021,
+      "label": "Hope — prima missione degli Emirati Arabi Uniti verso un altro pianeta"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

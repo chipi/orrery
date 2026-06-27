@@ -1,0 +1,14 @@
+{
+  "title": "Specifieke Impuls (Isp)",
+  "intro_sentence": "Hoe efficiënt een motor is — hoeveel seconden een kilogram stuwstof een kilogram stuwkracht produceert.",
+  "narrative_101": [
+    "Als je ooit hebt gegeven om het brandstofverbruik per kilometer van een auto, dan is specifieke impuls hetzelfde idee voor raketten. Het vertelt je hoe efficiënt de motor brandstof omzet in voortstuwing. Hogere Isp = beter verbruik = meer ∆v uit dezelfde hoeveelheid stuwstof.",
+    "De eenheid is vreemd — het wordt gemeten in seconden, wat in eerste instantie geen intuïtieve zin heeft. De reden is historisch: Isp = stuwkracht ÷ (verbrande-brandstof-per-seconde × zwaartekracht van de Aarde). De seconden heffen bijna alles op. Hoe groter het getal, hoe efficiënter de motor, en je kunt motoren over decennia en continenten vergelijken met hetzelfde getal.",
+    "Het bereik is enorm. Vaste-brandstofraketten (de boosters op de Space Shuttle): ~250 seconden. Vloeibare waterstof-zuurstof (beste chemische optie): ~450 seconden. Hypergolische opslagbare brandstoffen (goedkoop, betrouwbaar, waar de meeste ruimtevaartuigen aan nippen voor koerscorrecties): ~310 seconden. Ionenmotoren (superefficiënt maar zeer lage stuwkracht): 3.000-9.000 seconden. De praktische regel: om van planeten af te komen, heb je hoge stuwkracht nodig; voor cruisen in de diepe ruimte wil je hoge Isp. Echte missies faseren hun keuzes — chemisch om aan de Aarde te ontsnappen, ionen om te cruisen."
+  ],
+  "body_paragraphs": [
+    "Isp is het brandstofeconomiegetal voor raketten. Hoger is beter. Definitie: deel stuwkracht door de massastroom van stuwstof, deel door `g₀` (standaardzwaartekracht), krijg een getal in seconden. Verbrand één kilogram stuwstof per seconde, krijg `Isp × g₀` newton aan stuwkracht.",
+    "Het getal beslaat vier ordes van grootte. Vaste-brandstofraketten: 250s. Waterstof/zuurstof vloeistoffen (Space Shuttle Main Engine): 452s. Hypergolische opslagbare brandstoffen (Apollo Service Module): 314s. Ionenaandrijvingen (Dawn, BepiColombo): 3000-9000s. Nucleair thermisch (NERVA, nooit gevlogen): 800-1000s in theorie.",
+    "Overal afwegingen. Hoge Isp betekent meestal lage stuwkracht — ionenmotoren leveren ongeveer tien newton, nuttig voor jarenlange diepteruimtecruises maar nutteloos om van de Aarde af te komen. Chemische motoren leveren meganewtons aan stuwkracht maar verbranden stuwstof in enkele minuten. Echte missies faseren de keuze: chemisch voor opstijgen, ionen voor cruisen."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Innere Terrestrische Planeten",
+  "short": "TERRA",
+  "story": "Das felsige innere Sonnensystem — 0,4 bis 1,5 AU von der Sonne entfernt. Vier kleine Welten mit metallischen Kernen, Silikatmänteln und dünnen oder fehlenden Atmosphären. Sie entstanden innerhalb der Frostgrenze, wo es zu heiß war, damit flüchtige Eise kondensieren konnten, sodass nur feuerfeste Materialien (Silikate, Eisen, Nickel) fest blieben. Drei der vier waren Ziele bemannter Erkundung (Erde, Mond, Mars-gebunden).",
+  "comparison": "Alle vier terrestrischen Planeten würden in Jupiters Großen Roten Fleck passen. Die vier zusammen besitzen weniger als 0,5 % der planetaren Masse des Systems.",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0,39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0,72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1,00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1,52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — erster Vorbeiflug an Venus (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — erster Vorbeiflug an Mars (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — erster Vorbeiflug an Mercury (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

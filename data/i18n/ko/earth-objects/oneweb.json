@@ -1,0 +1,6 @@
+{
+  "name": "OneWeb",
+  "short": "OneWeb",
+  "description": "1,200 km 고도에 12개의 극궤도면으로 배치된 648개의 위성 — 1세대 LEO 광대역 통신. 2023년 합병 이후 Eutelsat OneWeb이 운영. 극궤도는 중간 경사각 Starlink 궤도층이 도달할 수 없는 극지방 간 전 지구 커버리지를 제공.",
+  "scale_fact": "OneWeb은 신호 경로가 길어지면서 발생하는 지연 시간 손실을 줄이기 위해 Starlink 고도의 두 배인 1,200 km를 선택. 단점: 수명 종료 시 궤도 이탈이 더 어려움."
+}

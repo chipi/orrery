@@ -1,0 +1,15 @@
+{
+  "title": "Transferência de Hohmann",
+  "intro_sentence": "A viagem de duas queimas mais barata entre duas órbitas circulares coplanares — e a linha de base contra a qual os planejadores de missão medem tudo o mais.",
+  "narrative_101": [
+    "Você está na órbita da Terra. Você quer estar na órbita de Marte. Ambas as órbitas são aproximadamente círculos ao redor do Sol. Como você vai de uma para a outra com o mínimo de combustível possível?",
+    "A resposta, elaborada por Walter Hohmann em 1925, é surpreendentemente elegante. Encontre uma elipse que apenas toca a órbita da Terra de um lado e apenas toca a órbita de Marte do outro. Queime seu motor brevemente para deixar a Terra e entrar nessa elipse. Voe inercialmente por oito meses sem acionar o motor — a gravidade faz o trabalho. Quando você chega na extremidade distante, queime novamente para se estabelecer na órbita de Marte. Duas queimas, no total. Pronto.",
+    "É a viagem mais barata possível — mas também é a mais lenta. A espera de oito meses é inegociável; a física define o cronômetro. Quer ir mais rápido? Você pode, mas paga por isso: uma elipse mais íngreme, uma travessia mais rápida, uma queima de frenagem muito maior na outra extremidade. Este é o trade-off que você verá se desenrolando em cada gráfico porkchop em /plan."
+  ],
+  "body_paragraphs": [
+    "Imagine que você está em uma órbita circular ao redor do Sol e quer alcançar uma mais alta — digamos, Terra para Marte. A maneira mais barata é uma transferência de Hohmann: uma elipse cujo periélio tangencia sua órbita inicial e cujo afélio tangencia o destino. Duas queimas do motor te levam lá. Uma no periélio para deixar a órbita da Terra e entrar na elipse. Uma no afélio para circularizar na órbita de destino.",
+    "É o caminho de impulso fixo mais barato, mas também é o mais lento. Terra para Marte leva cerca de 259 dias em uma Hohmann. Quer ir mais rápido? Queime mais intensamente, voe uma elipse esticada com velocidade de periélio mais alta. A V∞ de chegada sobe, a queima de entrada no destino é maior, seu custo total de ∆v sobe acentuadamente.",
+    "No porkchop `/plan` do Orrery você verá isso diretamente: há uma bacia tranquila de células azul-esverdeadas ao redor da janela natural de Hohmann, a cada 26 meses para Marte, e contornos cada vez mais custosos conforme você empurra para tempos de trânsito mais curtos."
+  ],
+  "diagram_caption": "Órbita da Terra (interna) · Órbita de Marte (externa) · Elipse de transferência de Hohmann com periélio na Terra, afélio em Marte."
+}

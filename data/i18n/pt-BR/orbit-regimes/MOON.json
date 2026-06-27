@@ -1,0 +1,38 @@
+{
+  "name": "Órbita Lunar",
+  "short": "MOON",
+  "story": "A Lua é o único satélite natural da Terra — a 384.400 km de distância, travada por forças de maré para sempre mostrar a mesma face, e orbitando uma vez a cada 27,3 dias. Espaçonaves a visitam no caminho para pousos lunares (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) ou para mapear a superfície para retornos futuros. O Lunar Gateway, quando voar, será o primeiro posto avançado tripulado permanente além da LEO.",
+  "comparison": "1.200× mais distante que a ISS. Um sinal de rádio Terra → Lua → Terra leva ~2,6 segundos — tempo suficiente para que os controladores de missão em Houston falem em frases lentas e deliberadas.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Orbitador de Reconhecimento Lunar",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 orbitador",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — retransmissor do lado oculto Chang'e",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — primeira a alcançar a vizinhança lunar (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — primeira órbita lunar tripulada (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Magellan",
+  "type": "ORBITER · FLOWN",
+  "first": "Meest complete radarkaart van Venus — 98% van het oppervlak met 100-m resolutie; eerste planetaire ruimtevaartuig gelanceerd vanaf de Space Shuttle",
+  "description": "Magellan transformeerde Venus van een kenmerkloze, met wolken bedekte schijf tot een in kaart gebrachte planeet. Gelanceerd vanuit de laadruimte van Shuttle Atlantis op 1989-05-04 — het eerste planetaire ruimtevaartuig dat met een Shuttle meeging — en arriveerde bij Venus op 1990-08-10 via een lange Type-IV-traject (1,5 zonnerevoluties). Gedurende vier karteerrondes bracht de synthetische-apertuurradar 98% van het oppervlak van Venus in beeld met een resolutie van 100 meter, waarbij tessera-hooglanden, coronae, pannenkoekkoepels en een jong, vulkanisch herbedekt oppervlak werden onthuld. De missie eindigde op 1994-10-13 met het Termination Experiment — de eerste geplande gecontroleerde atmosferische entry van een planetair ruimtevaartuig.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "STS-30 / Atlantis vanaf Kennedy LC-39B; IUS ingezet vanuit Shuttle-laadruimte.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Eerste correctie halverwege de koers.",
+      "type": "nominal"
+    },
+    {
+      "met": 455,
+      "label": "TCM-4",
+      "note": "Laatste bijstelling vóór VOI.",
+      "type": "nominal"
+    },
+    {
+      "met": 463,
+      "label": "VOI",
+      "note": "Vaste-motorbrand in een 295 × 8543 km, 85,5° bijna-polaire baan.",
+      "type": "info"
+    },
+    {
+      "met": 950,
+      "label": "KARTEERRONDE 1 VOLTOOID",
+      "note": "Eerste volledige passage — 84% oppervlaktedekking met 100 m resolutie.",
+      "type": "info"
+    },
+    {
+      "met": 1988,
+      "label": "TERMINATION EXPERIMENT",
+      "note": "1994-10-13. Periapsis verlaagd in atmosfeer — eerste geplande planetaire ruimtevaartuig-entry.",
+      "type": "warning"
+    }
+  ]
+}

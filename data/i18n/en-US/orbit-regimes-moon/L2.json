@@ -1,0 +1,17 @@
+{
+  "name": "Earth-Moon L2",
+  "short": "L2",
+  "story": "The Lagrange point 64,500 km behind the Moon as seen from Earth — the gravitational saddle where Earth, Moon, and centrifugal forces balance. The Moon always sits between the spacecraft and Earth, so direct comms are impossible — but a satellite parked here in a halo orbit AROUND L2 has line-of-sight to BOTH the lunar farside AND Earth. That's how China landed Chang'e 4 on the farside in 2019: the Queqiao relay satellite, parked in a halo around Earth-Moon L2, bridges every command and image.",
+  "comparison": "About 1/6th the distance from Earth to the Moon. Without a relay at L2, the entire lunar farside is a comms blackout — every spacecraft that ever landed there has needed one.",
+  "residents": [
+    { "id": "queqiao", "label": "Queqiao — Chang'e 4 farside relay (2018)", "agency": "CNSA" },
+    { "id": "queqiao-2", "label": "Queqiao-2 — Chang'e 6 farside relay (2024)", "agency": "CNSA" }
+  ],
+  "firsts": [
+    { "year": 2018, "label": "Queqiao — first operational Earth-Moon L2 relay (China)" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

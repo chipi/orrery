@@ -1,0 +1,14 @@
+{
+  "title": "Heliocentrische · Geocentrische · Lichaamgerichte Referentiekaders",
+  "intro_sentence": "Drie referentiekaders voor drie verschillende vragen: waar bevindt het zich ten opzichte van de Zon, de Aarde, of het hemellichaam dat je bestudeert?",
+  "narrative_101": [
+    "Waar bevindt de Maan zich? Het eerlijke antwoord is \"hangt af van waar JIJ bent.\" Vanaf het aardoppervlak staat hij vannacht om 01:00 uur boven je hoofd. Vanaf de Zon is het een minuscuul stipje op 1 AU afstand bij de Aarde. Vanaf Mars is het een irrelevant vlekje. Geen van deze antwoorden is fout — ze zijn gewoon gemeten vanaf verschillende oorsprongen. Die keuze van oorsprong is wat \"referentiekader\" betekent.",
+    "Ruimtevaart jongleert constant met drie van deze kaders. Heliocentrisch (oorsprong bij de Zon) is het natuurlijke kader voor kruisvluchten — alles van Aarde-naar-Mars gebeurt hier. Geocentrisch (oorsprong bij de Aarde) is het natuurlijke kader voor satellieten en de Maan. Lichaamgericht (oorsprong bij welk hemellichaam je ook voorbijvliegt of omcirkelt) is het natuurlijke kader voor aankomstmanoeuvres en oppervlakte-operaties.",
+    "Wisselen tussen deze kaders is voornamelijk rekenen — verplaats de oorsprong, draai misschien de assen. Maar het is belangrijk waar je je conceptueel bevindt: een transferellips is heliocentrisch. Een scheervlucht langs Mars is lichaamgericht. De overgang tussen beide is precies de patched-conics-truc. Elk scherm in deze app kiest een kader en houdt zich daaraan: /explore is heliocentrisch, /earth is geocentrisch, /moon en /mars zijn lichaamgericht."
+  ],
+  "body_paragraphs": [
+    "Heliocentrisch: oorsprong bij de Zon, assen uitgelijnd met de ecliptica. Het natuurlijke kader voor beweging binnen het zonnestelsel. Planetaire posities, transferbanen, missiekruisvluchten — allemaal het meest natuurlijk hier beschreven. Orrery's `/explore` is fundamenteel heliocentrisch.",
+    "Geocentrisch: oorsprong bij de Aarde. Nuttig voor satellieten, de Maan, en elk ruimtevaartuig binnen de invloedssfeer van de Aarde. De `/earth`-route van Aarde werkt in dit kader. Geocentrische coördinaten verhouden zich tot heliocentrische via een translatie (de heliocentrische positie van de Aarde) en mogelijk een rotatie (de ashelling van de Aarde).",
+    "Lichaamgericht (Mars-centrisch, Saturnus-centrisch, Maan-centrisch, enz.): oorsprong bij het lichaam dat je omcirkelt of voorbijvliegt. Gebruikt voor baaninsertie, oppervlakte-operaties, scheervluchtgeometrie — alles waarbij de zwaartekracht van het lichaam domineert. Patched-conic missieontwerp wisselt van kader bij grenzen van invloedssferen: je beschrijft een boog in welk kader de berekening ook lokaal houdt."
+  ]
+}

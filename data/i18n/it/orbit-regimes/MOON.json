@@ -1,0 +1,38 @@
+{
+  "name": "Orbita Lunare",
+  "short": "MOON",
+  "story": "La Luna è l'unico satellite naturale della Terra — a 384.400 km di distanza, bloccata dalla rotazione sincrona in modo da mostrare sempre la stessa faccia, e orbita una volta ogni 27,3 giorni. Le sonde spaziali la visitano durante le missioni di allunaggio (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) o per mappare la superficie in vista di futuri ritorni. Il Lunar Gateway, quando sarà operativo, sarà il primo avamposto permanente con equipaggio oltre la LEO.",
+  "comparison": "1.200× più lontano della ISS. Un segnale radio Terra → Luna → Terra impiega ~2,6 secondi — abbastanza perché i controllori di volo a Houston parlino con frasi lente e deliberate.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 orbiter",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — relay Chang'e lato lontano",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — prima a raggiungere le vicinanze lunari (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — prima orbita lunare con equipaggio (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

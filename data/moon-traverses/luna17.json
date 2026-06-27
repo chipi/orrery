@@ -1,0 +1,73 @@
+{
+  "rover_id": "luna17",
+  "agency": "Roscosmos",
+  "status": "ENDED",
+  "snapshot_date": "1971-09-14",
+  "credit": "© Roscosmos / Lavochkin — Lunokhod 1 traverse (Luna 17, Mare Imbrium, Nov 1970–Sep 1971; ~9.9 km). V1 simplified polyline anchored at the LRO-located rover position; documented per-sol track is a high-fidelity follow-up.",
+  "points": [
+    [
+      38.2378,
+      -34.9983
+    ],
+    [
+      38.24077,
+      -35.00334
+    ],
+    [
+      38.23912,
+      -35.00922
+    ],
+    [
+      38.24374,
+      -35.01216
+    ],
+    [
+      38.24769,
+      -35.0067
+    ],
+    [
+      38.24538,
+      -34.99998
+    ],
+    [
+      38.24967,
+      -34.99494
+    ],
+    [
+      38.24769,
+      -34.98822
+    ],
+    [
+      38.24176,
+      -34.99074
+    ],
+    [
+      38.23648,
+      -34.99662
+    ],
+    [
+      38.23384,
+      -35.00208
+    ],
+    [
+      38.23582,
+      -35.00922
+    ],
+    [
+      38.24044,
+      -35.01341
+    ],
+    [
+      38.24571,
+      -35.00754
+    ],
+    [
+      38.24374,
+      -34.99956
+    ],
+    [
+      38.23978,
+      -34.99326
+    ]
+  ]
+}

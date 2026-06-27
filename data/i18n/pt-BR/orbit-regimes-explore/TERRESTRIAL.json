@@ -1,0 +1,46 @@
+{
+  "name": "Planetas Terrestres Internos",
+  "short": "TERRA",
+  "story": "O sistema solar interno rochoso — 0,4 a 1,5 AU do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte).",
+  "comparison": "Os quatro planetas terrestres caberiam dentro da Grande Mancha Vermelha de Júpiter. Juntos, os quatro detêm menos de 0,5% da massa planetária do sistema.",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0,39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0,72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1,00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1,52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — primeira passagem por Venus (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — primeira passagem por Mars (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — primeira passagem por Mercury (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

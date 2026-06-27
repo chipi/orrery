@@ -1,0 +1,50 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · VOLADO",
+  "first": "Primero de los rovers gemelos Mars Exploration Rover; rover de mayor longevidad hasta ser superado por Curiosity",
+  "description": "Spirit (MER-A) rebotó 28 veces en el suelo del cráter Gusev el 2004-01-04 y rodó hasta detenerse a 250 m de su primer impacto. Diseñado para una misión principal de 90 soles, sobreviviría 2.210 soles. Recorrió 7,7 km por las llanuras de Gusev, escaló las Columbia Hills y descubrió rocas con hematita que indicaban la presencia persistente de agua antigua. En 2009-04 una rueda atravesó una costra de sulfato en «Troy» y Spirit se detuvo en suelo blando; el equipo lo convirtió en una plataforma estacionaria. Última transmisión el 2010-03-22; misión declarada finalizada el 2011-05-25. Gemelo de Opportunity, que aterrizó tres semanas después en el lado opuesto de Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Delta II 7925 desde Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 15,
+      "label": "TCM-1",
+      "note": "Primera corrección de trayectoria.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4",
+      "note": "Ajuste final previo a EDL.",
+      "type": "nominal"
+    },
+    {
+      "met": 208,
+      "label": "EDL",
+      "note": "Escudo térmico, paracaídas, retrocohetes, airbags — 6 minutos de infierno hacia el cráter Gusev.",
+      "type": "info"
+    },
+    {
+      "met": 208.01,
+      "label": "ATERRIZAJE",
+      "note": "Rebotó 28 veces. Quedó en reposo en 14,57°S, 175,47°E.",
+      "type": "info"
+    },
+    {
+      "met": 1990,
+      "label": "ATASCADO EN TROY",
+      "note": "La rueda atraviesa la costra de sulfato; el rover se atasca en suelo blando. 2009-04.",
+      "type": "warning"
+    },
+    {
+      "met": 2271,
+      "label": "ÚLTIMA TRANSMISIÓN",
+      "note": "2010-03-22. Misión declarada finalizada el 2011-05-25.",
+      "type": "warning"
+    }
+  ]
+}

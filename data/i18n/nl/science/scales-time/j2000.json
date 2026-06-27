@@ -1,0 +1,14 @@
+{
+  "title": "J2000 Epoche",
+  "intro_sentence": "12:00 uur 's middags UTC op 1 januari 2000 — het universele referentiemoment dat astronomen gebruiken om baanelementen te dateren.",
+  "narrative_101": [
+    "Banen drijven af. Langzaam — over eeuwen — maar genoeg dat je niet zomaar kunt zeggen \"de baan van Mars heeft een excentriciteit van 0,0934\" zonder te zeggen \"per wanneer.\" Astronomen hadden een afgesproken nulpunt in de tijd nodig, net zoals cartografen een afgesproken nulmeridiaan nodig hadden (daarom bestaat Greenwich). Ze kozen de middag UTC op 1 januari 2000. Dat is J2000.",
+    "Waarom de middag, en niet middernacht? Omdat de Julian Day-telling — de lopende telling van astronomen van dagen sinds 4713 v.Chr. — altijd is overgegaan op de middag, niet om middernacht, zodat waarnemers geen datumwissel hoeven te verwerken midden in het nachtelijke werk. J2000 komt exact overeen met Julian Day 2.451.545,0 — een nette gehele referentie.",
+    "Elke baan die je in deze simulator ziet is verankerd aan J2000. De gemiddelde lengte van de Aarde op J2000. Het argument van het periapsis van Mars op J2000. De planetenposities die je ziet animeren in /explore worden vooruit (of achteruit) geëxtrapoleerd vanaf J2000 met behulp van eenvoudige lineaire wiskunde: \"begin hier, ga vooruit met deze snelheid, hier ben je nu.\" Kies een willekeurige datum in de geschiedenis en de orrery kan je vertellen waar de planeten waren."
+  ],
+  "body_paragraphs": [
+    "Baanelementen drijven af in de loop van de tijd — verstoringen van andere planeten duwen de excentriciteit, lengtes precesseren, inclinaties wiebelen. Om de elementen van een planeet betekenisvol te maken, moet je zeggen 'per wanneer.' Het standaardantwoord is J2000: middag UTC op 1 januari 2000. Banen worden op dat moment geciteerd; propagatie vooruit of achteruit gebruikt analytische of numerieke modellen.",
+    "Waarom de middag? Omdat Julian Date (JD) — de doorlopende dagtelling van astronomen die begint op de middag UTC op 1 januari 4713 v.Chr. — toeneemt op de middag, niet om middernacht. J2000 komt exact overeen met JD 2.451.545,0, een net referentiepunt zonder fractionele dagen.",
+    "De planetendata van Orrery gebruikt overal J2000-elementen. Het gemiddelde lengtegraad `L₀`-veld in `/explore`-panelen is de heliocentrische positiehoek van de planeet op J2000. Vanaf daar laat de gemiddelde beweging `n = 2π / T` `L` lineair vooruitgaan naar elke andere epoche — modulo kleine verstoringen die de simulator negeert."
+  ]
+}

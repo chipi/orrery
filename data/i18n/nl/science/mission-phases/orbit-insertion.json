@@ -1,0 +1,14 @@
+{
+  "title": "Baaninsertie — LOI / MOI",
+  "intro_sentence": "De remmanoeuvre die je ruimtevaartuig in een baan om het hemellichaam vangt in plaats van het voor altijd voorbij te laten vliegen.",
+  "narrative_101": [
+    "Je hebt acht maanden gevlogen. Je ziet Mars groter worden uit het raam. Als je niets doet, vlieg je langs Mars en vervolg je je weg het zonnestelsel in, om nooit meer terug te keren. Om daadwerkelijk in een baan te komen, moet je afremmen. Die remmanoeuvre — Lunar Orbit Insertion of Mars Orbit Insertion of wat voor planeet je ook bezoekt — is het allesbepalende moment van elke baanmissie.",
+    "De wiskunde is meedogenloos. Je arriveert bij een planeet met een overgebleven snelheid (V∞) van meerdere kilometers per seconde. Om te blijven moet je onder de lokale ontsnappingssnelheid van de planeet zien te komen. Dat betekent een lange, harde, nauwkeurig getimede motorverbranding op precies het dichtste punt bij de planeet, waar Oberth je de meest efficiënte remming geeft. Mars Reconnaissance Orbiter verbrandde 27 minuten. Cassini's Saturnus-insertie duurde 95 minuten — de langste verbranding die het ruimtevaartuig ooit deed.",
+    "Als de verbranding mislukt of onderpresteert, ontsnapt je, en er is geen tweede kans. Mars Climate Orbiter had in 1999 een fout in eenheidsconversie — pounds-of-force verward met newtons — zijn insertieverbranding was te zwak, het passeerde te dicht bij Mars, en atmosferische weerstand vernietigde het. De missie ging verloren in enkele seconden. Daarom is het ontwerp van baaninsertie een van de meest paranoïde ingenieursactiviteiten die mensen doen."
+  ],
+  "body_paragraphs": [
+    "Wanneer je ruimtevaartuig op de bestemming aankomt, beweegt het snel — snel genoeg om te ontsnappen als je niets doet. Om in een baan gevangen te worden, moet je genoeg snelheid afremmen om onder de lokale ontsnappingssnelheid te komen. Die remmanoeuvre is de baaninsertie. LOI voor lunar (Apollo, LRO), MOI voor Mars (MAVEN, MRO, Tianwen-1), enzovoort.",
+    "De verbranding vindt plaats op het periapsis van de aankomsthyperbool, waar Oberth de verbranding het goedkoopst maakt. De grootte hangt af van V∞ — de overgebleven snelheid op oneindig — en de gewenste baanhoogte. Mars MRO arriveerde met V∞ ≈ 2,6 km/s en gebruikte ~1 km/s aan `∆v` voor de vangst. Cassini's Saturnus-baaninsertie was een verbranding van 95 minuten, de langste in het leven van het ruimtevaartuig.",
+    "Als de verbranding mislukt of onderpresteert, ontsnapt het ruimtevaartuig. Er is geen tweede kans. Mars Climate Orbiter is het waarschuwende verhaal: een fout in eenheidsconversie betekende dat zijn MOI-verbranding te laag was, het ruimtevaartuig passeerde te dicht, en atmosferische weerstand scheurde het uiteen."
+  ]
+}

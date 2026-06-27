@@ -1,0 +1,42 @@
+{
+  "name": "Orbita Geostazionaria",
+  "short": "GEO",
+  "story": "Esattamente 35.786 km di altitudine — l'altezza in cui un'orbita impiega esattamente 24 ore, così il satellite rimane immobile sopra una longitudine fissa sull'equatore. I satelliti meteorologici osservano lo stesso continente per sempre; i satelliti per comunicazioni proiettano un'impronta delle dimensioni di un'antenna parabolica e non si muovono mai. Non ci sono parcheggi, solo slot di parcheggio — ogni operatore ottiene una banda di longitudine assegnata dall'ITU.",
+  "comparison": "Circa 1/11 della distanza fino alla Luna. Un segnale TV di andata e ritorno tramite comsat GEO richiede ~240 ms — abbastanza lungo da sentire in una telefonata («ritardo satellitare»).",
+  "residents": [
+    {
+      "id": "goes",
+      "label": "GOES — meteorologia geostazionaria NOAA",
+      "agency": "NASA"
+    },
+    {
+      "id": "inmarsat",
+      "label": "Inmarsat — comsat globali",
+      "agency": "ESA"
+    },
+    {
+      "id": "meteosat",
+      "label": "Meteosat — meteorologia ESA",
+      "agency": "ESA"
+    },
+    {
+      "id": "fengyun",
+      "label": "Fengyun — meteorologia cinese",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1963,
+      "label": "Syncom 2 — primo satellite geosincronico (USA)"
+    },
+    {
+      "year": 1964,
+      "label": "Syncom 3 — primo vero satellite geostazionario (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "中地球轨道",
+  "short": "MEO",
+  "story": "导航频段——大约在2万公里高度,由24颗以上卫星组成的星座可以覆盖地球上的每一个点,使其同时可见至少四颗航天器(这是3D定位的最低要求)。四大全球定位系统都位于此,由各自的运营机构有意分布在四个独立的轨道域中。在内范艾伦辐射带之上,外辐射带之下——一个平静的高轨道。",
+  "comparison": "大约是到月球距离的1/19。GPS信号到达你的手机需要约67毫秒——大约是LEO反射时间的10倍。",
+  "residents": [
+    {
+      "id": "gps",
+      "label": "GPS — 全球定位系统",
+      "agency": "NASA"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo — 欧洲GNSS",
+      "agency": "ESA"
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS — 俄罗斯GNSS",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "beidou",
+      "label": "BeiDou — 中国GNSS",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1978,
+      "label": "Navstar 1 — 首颗GPS卫星 (USA)"
+    },
+    {
+      "year": 1982,
+      "label": "GLONASS Block I — 首颗苏联GNSS卫星"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "inclination"
+  }
+}

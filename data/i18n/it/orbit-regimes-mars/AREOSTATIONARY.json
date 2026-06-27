@@ -1,0 +1,12 @@
+{
+  "name": "Orbita Areostazionaria",
+  "short": "AREO",
+  "story": "L'equivalente marziano dell'orbita geostazionaria — 17.031 km di altezza, dove un'orbita impiega esattamente un giorno siderale marziano (24 h 37 min 22 s), così che una sonda resterebbe immobile sopra una longitudine marziana fissa. Nessuna sonda ha mai utilizzato quest'orbita. È l'obiettivo progettuale per le future costellazioni di ripetitori marziani: man mano che crescono le missioni con equipaggio e le basi di superficie, posizionare satelliti per le comunicazioni in slot areostazionari replicherà la rete di satelliti per comunicazioni GEO della Terra, eliminando le interruzioni quotidiane delle comunicazioni che i ripetitori in orbita bassa odierni impongono a ogni missione di superficie.",
+  "comparison": "Appena sotto Deimos, la luna esterna di Marte (23.460 km). Tre satelliti areostazionari distanziati di 120° coprirebbero l'intero disco marziano — lo stesso trucco utilizzato dai satelliti per comunicazioni GEO per la TV satellitare terrestre.",
+  "residents": [],
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

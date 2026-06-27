@@ -1,0 +1,33 @@
+{
+  "name": "Hochelliptische Umlaufbahn",
+  "short": "HEO",
+  "story": "Keine Höhe, sondern eine Form. Eine lange Ellipse mit einem niedrigen Perigäum (nahe der Erde) und einem sehr hohen Apogäum (manchmal höher als GEO). Der Satellit verbringt die meiste Zeit in Apogäumsnähe und schwebt langsam über hohen Breitengraden — der Trick, den sowjetische Ingenieure nutzten, um kontinuierliche Kommunikation über Russlands Polarregionen zu ermöglichen, wo ein GEO-Satellit über dem Äquator zu niedrig am Horizont steht. Heute verwendet für Raketenwarnung, Deep-Space-Tracking und Breitband in hohen Breiten.",
+  "comparison": "Das Apogäum kann ein Achtel des Weges zum Mond erreichen; das Perigäum kann die Obergrenze von LEO streifen. Der Satellit rast in Erdnähe und kriecht an der Spitze.",
+  "residents": [
+    {
+      "id": "molniya",
+      "label": "Molniya — russischer Kommunikations-HEO",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "tundra",
+      "label": "Tundra — SiriusXM-Konstellation",
+      "agency": "NASA"
+    },
+    {
+      "id": "ibex",
+      "label": "IBEX — Heliosphären-Kartograph",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1965,
+      "label": "Molniya 1-01 — erster hochelliptischer Kommunikationssatellit (USSR)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

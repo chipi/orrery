@@ -1,0 +1,18 @@
+{
+  "name": "High Mars Orbit",
+  "short": "HMO",
+  "story": "Highly elliptical orbits in the 1,000-2,500 km range, mostly historic. Mariner 9 made it here in 1971 — the first spacecraft to orbit another planet, beating Mars 2 by a few weeks. The Soviet Mars 3 and the American Viking 1 orbiters followed, all parked in long ellipses that minimised station-keeping fuel during the Mariner-era of limited delta-v budgets. Phobos passes through this band at 9,376 km — Viking and Mars Express both used the geometry to study the moon up close.",
+  "comparison": "Roughly the altitude where Earth's GPS satellites orbit — but around a planet just over half Earth's size. The orbiter's view of Mars at apoapsis is the classic 'whole-disc' framing in early 1970s mission photographs.",
+  "residents": [
+    { "id": "mariner9", "label": "Mariner 9 (1971-1972 — first Mars orbiter)", "agency": "NASA" },
+    { "id": "mars3-orbiter", "label": "Mars 3 orbiter (1971-1972)", "agency": "ROSCOSMOS" },
+    { "id": "viking1-orbiter", "label": "Viking 1 orbiter (1976-1980)", "agency": "NASA" }
+  ],
+  "firsts": [
+    { "year": 1971, "label": "Mariner 9 — first artificial satellite of any planet other than Earth (USA)", "mission_id": "mariner9" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

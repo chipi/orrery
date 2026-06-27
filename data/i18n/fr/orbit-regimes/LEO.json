@@ -1,0 +1,44 @@
+{
+  "name": "Orbite terrestre basse",
+  "short": "LEO",
+  "story": "La bande d'espace la plus proche — de 160 à 2 000 km d'altitude. Latence de communication courte (~7 ms aller simple), la traînée atmosphérique tire encore sur le bord inférieur, et les ceintures de radiations ne se sont pas encore manifestées. Les vols habités vivent ici pour les mêmes raisons : secourable, accessible, et le corps humain tolère un trajet de quelques centaines de kilomètres. Toutes les stations spatiales ayant jamais volé se sont garées en LEO.",
+  "comparison": "Environ 1/600ᵉ du chemin vers la Lune. L'ISS à 408 km orbite à la même altitude que la distance entre Londres et Genève — posée de côté.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — Station spatiale internationale",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — Station chinoise",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble Space Telescope",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink constellation",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — premier satellite artificiel terrestre (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, premier vol orbital habité (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

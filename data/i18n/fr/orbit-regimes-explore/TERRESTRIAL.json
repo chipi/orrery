@@ -1,0 +1,46 @@
+{
+  "name": "Planètes telluriques internes",
+  "short": "TERRA",
+  "story": "Le système solaire interne rocheux — de 0,4 à 1,5 UA du Soleil. Quatre petits mondes avec des noyaux métalliques, des manteaux de silicate et des atmosphères minces ou inexistantes. Ils se sont formés à l'intérieur de la ligne de gel, là où il faisait trop chaud pour que les glaces volatiles se condensent, de sorte que seuls les matériaux réfractaires (silicates, fer, nickel) sont restés solides. Trois des quatre ont été des cibles d'exploration habitée (Terre, Lune, en direction de Mars).",
+  "comparison": "Les quatre planètes telluriques tiendraient toutes à l'intérieur de la Grande Tache Rouge de Jupiter. Les quatre ensemble représentent moins de 0,5 % de la masse planétaire du système.",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0,39 UA",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0,72 UA",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1,00 UA",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1,52 UA",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — premier survol de Vénus (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — premier survol de Mars (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — premier survol de Mercure (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

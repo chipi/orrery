@@ -560,6 +560,13 @@
     "haystack": "sub-solar point and terminator where it's noon on a planet at this instant, and the line dividing day from night. the sub-solar point's instantaneous location is calculated from three angles: the planet's rotation phase (which longitude faces the sun right now), its axial tilt (which seasonal latitude the sun illuminates), and its orbital position (which hemisphere is angled sunward). on earth, the sub-solar latitude oscillates between +23.4° and −23.4° in the cycle we call seasons. on mars, the cycle is similar (25.19° tilt) but slower (687-day year) and more eccentric (mars's orbit is more elliptical, so its seasons have unequal durations)."
   },
   {
+    "tab": "planets",
+    "section": "tides",
+    "title": "Tides",
+    "intro": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
+    "haystack": "tides the moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day. a tide is not the moon lifting the water straight up — it is the difference in the moon's pull across the width of the earth. the near side is pulled toward the moon more strongly than the planet's centre, and the far side less, so the water envelope is stretched into a prolate, two-bulge shape aligned with the earth–moon line."
+  },
+  {
     "tab": "porkchop",
     "section": "contour-reading",
     "title": "Reading the Contours",

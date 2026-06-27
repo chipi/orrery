@@ -1,1 +1,0 @@
-const e=Object.freeze({type:"loading"});function n(){return e}function s(r){return{type:"error",error:r}}function t(r){return{type:"success",data:r}}function o(r){return r.type==="loading"}function c(r){return r.type==="error"}function u(r){return r.type==="success"}export{o as a,c as b,s as e,u as i,n as l,t as s};

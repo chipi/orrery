@@ -1,0 +1,49 @@
+{
+  "rover_id": "zhurong",
+  "agency": "CNSA",
+  "status": "ENDED",
+  "snapshot_date": "2022-05-18",
+  "credit": "© CNSA/PEC — Zhurong rover traverse, simplified hand-vendored polyline approximating the documented ~1.92 km due-south path across southern Utopia Planitia from the landing site (15 May 2021) to winter dormancy (18 May 2022). China's first Mars rover, and the first non-NASA rover to drive on Mars. V1 stub for visual continuity; refine from CNSA localization data for high-fidelity per-sol coordinates.",
+  "points": [
+    [25.066, 109.925],
+    [25.0635, 109.9252],
+    [25.061, 109.9248],
+    [25.0586, 109.9255],
+    [25.056, 109.9251],
+    [25.0535, 109.9246],
+    [25.051, 109.9253],
+    [25.0486, 109.9249],
+    [25.0461, 109.9244],
+    [25.0436, 109.9251],
+    [25.0411, 109.9247],
+    [25.0386, 109.9243],
+    [25.0361, 109.9248],
+    [25.0336, 109.9245]
+  ],
+  "stops": [
+    {
+      "sol": 60,
+      "lat": 25.0584,
+      "lon": 109.9253,
+      "label": "450 m due south",
+      "kind": "feature",
+      "id": "sol-60"
+    },
+    {
+      "sol": 103,
+      "lat": 25.0525,
+      "lon": 109.9249,
+      "label": "Sedimentary rocks survey",
+      "kind": "panorama",
+      "id": "sol-103"
+    },
+    {
+      "sol": 347,
+      "lat": 25.0336,
+      "lon": 109.9245,
+      "label": "Final position · winter dormancy",
+      "kind": "feature",
+      "id": "sol-347"
+    }
+  ]
+}

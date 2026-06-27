@@ -1,0 +1,15 @@
+{
+  "title": "Problema de Lambert",
+  "intro_sentence": "Dadas duas posições e um tempo de trânsito, encontre a órbita que as conecta — o problema central de toda trajetória interplanetária.",
+  "narrative_101": [
+    "A transferência de Hohmann é o caminho mais econômico de uma órbita para outra, mas a maioria das missões não voa realmente em Hohmann. Elas querem partir em uma data específica — digamos, quando um foguete específico estiver pronto, ou quando uma plataforma de lançamento específica estiver disponível — e querem chegar em uma data específica — digamos, a tempo de uma tempestade de poeira em Marte diminuir. Hohmann não permite escolher. Lambert permite.",
+    "A questão de Lambert soa mais simples do que sua matemática: estou no ponto A, quero estar no ponto B e quero levar exatamente tantos dias para chegar lá. Que órbita devo voar? Lambert escreveu a resposta em 1761 — existe exatamente uma elipse (ou às vezes duas, dependendo de qual caminho você escolhe) que conecta dois pontos em um tempo determinado.",
+    "Este é o coração de todo gráfico porkchop que você verá. Cada pixel no porkchop em /plan é um problema de Lambert: 'sair da Terra na data X, chegar a Marte na data Y — quanto custa?' A cor é a resposta. Resolva dez mil vezes em paralelo e você obtém o mapa inteiro de uma vez. Orrery faz isso em um Web Worker para que a interface não congele enquanto está processando."
+  ],
+  "body_paragraphs": [
+    "O problema de Lambert pergunta: estou aqui, quero estar lá e tenho este tempo. Que elipse devo voar? Dois vetores de posição e um tempo de voo, e a equação produz a órbita de transferência única (ou duas — há um caminho longo e um caminho curto ao redor do corpo central).",
+    "A transferência de Hohmann é uma solução específica de Lambert: posições em apsides opostas, tempo de voo igual à metade do período da elipse de transferência. Mude qualquer parâmetro — posições diferentes, tempo diferente — e você obtém uma elipse diferente. Tempo mais apertado, elipse mais excêntrica, energia de partida mais alta. A matemática não muda; apenas as condições de contorno.",
+    "Orrery resolve o problema de Lambert em um Web Worker toda vez que você passa o mouse sobre uma célula do porkchop em `/plan`. Cada célula pergunta: 'sair da Terra na data X, chegar a Marte na data Y — qual é o custo em ∆v?' A cor que você vê é a resposta a essa pergunta, calculada uma vez por pixel."
+  ],
+  "diagram_caption": "Dois vetores de posição r₁ e r₂; o solucionador de Lambert encontra a elipse de transferência única que os une no tempo de voo."
+}

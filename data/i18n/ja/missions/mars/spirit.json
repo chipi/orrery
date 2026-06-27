@@ -1,0 +1,50 @@
+{
+  "name": "Spirit",
+  "type": "ROVER · FLOWN",
+  "first": "Mars Exploration Rover双子機の1号機。Curiosityに抜かれるまで最長寿命のローバー",
+  "description": "Spirit（MER-A）は2004年1月4日にGusevクレーターの底を28回バウンドし、最初の衝突地点から250 m離れた場所で停止した。90ソルの主要ミッション用に設計されたが、2,210ソル生き延びた。Gusevの平原を7.7 km走行し、Columbia Hillsに登り、古代の水が長期間存在したことを示す赤鉄鉱を含む岩石を発見した。2009年4月、「Troy」で車輪が硫酸塩の地殻を突き破り、Spiritは柔らかい土壌に行き詰まった。チームはこれを静止プラットフォームに転換した。最終送信は2010年3月22日。ミッションは2011年5月25日に終了宣言された。火星の反対側に3週間後に着陸したOpportunityと双子機である。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "Cape Canaveral LC-17AからDelta II 7925で打ち上げ。",
+      "type": "nominal"
+    },
+    {
+      "met": 15,
+      "label": "TCM-1",
+      "note": "第1回軌道修正。",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "TCM-4",
+      "note": "EDL前の最終微調整。",
+      "type": "nominal"
+    },
+    {
+      "met": 208,
+      "label": "EDL",
+      "note": "ヒートシールド、パラシュート、逆噴射ロケット、エアバッグ — Gusevクレーターへの6分間の地獄。",
+      "type": "info"
+    },
+    {
+      "met": 208.01,
+      "label": "着陸",
+      "note": "28回バウンド。南緯14.57度、東経175.47度で静止。",
+      "type": "info"
+    },
+    {
+      "met": 1990,
+      "label": "TROYで動けず",
+      "note": "車輪が硫酸塩の地殻を突き破り、ローバーが柔らかい土壌にはまり込む。2009年4月。",
+      "type": "warning"
+    },
+    {
+      "met": 2271,
+      "label": "最終送信",
+      "note": "2010年3月22日。ミッションは2011年5月25日に終了宣言。",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "내행성 지역",
+  "short": "TERRA",
+  "story": "암석으로 이루어진 태양계 내부 — 태양으로부터 0.4~1.5 AU 거리. 금속 핵, 규산염 맨틀, 그리고 얇거나 존재하지 않는 대기를 가진 네 개의 작은 세계들. 이들은 휘발성 얼음이 응결하기에 너무 뜨거웠던 프로스트 라인(frost line) 안쪽에서 형성되었기 때문에, 난용성 물질(규산염, 철, 니켈)만이 고체 상태로 남을 수 있었다. 네 행성 중 세 곳이 유인 탐사의 목표였다(지구, 달, 화성 방향).",
+  "comparison": "네 개의 지구형 행성 모두를 목성의 대적점 안에 넣을 수 있다. 이 네 행성을 합쳐도 태양계 행성 질량의 0.5% 미만이다.",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0.39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0.72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1.00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1.52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — 최초의 금성 근접통과 (USA)"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — 최초의 화성 근접통과 (USA)"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — 최초의 수성 근접통과 (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Lichtminuut en lichtjaar",
+  "intro_sentence": "Afstand gemeten in hoe lang licht erover doet om deze te overbruggen — de meest bruikbare eenheid om na te denken over communicatievertragingen en afstanden tot sterren.",
+  "narrative_101": [
+    "Een lichtminuut is hoe ver licht in een minuut reist. Licht gaat 300.000 km per seconde, wat neerkomt op 18 miljoen km in een minuut. Het is een afstand, geen tijd — verwarrend maar nuttig. De zon bevindt zich op 8,3 lichtminuten afstand. Mars ligt ergens tussen 4 en 22 lichtminuten, afhankelijk van de baangeometrie.",
+    "Waarom is dit belangrijk? Omdat radiogolven met de lichtsnelheid reizen, en dat is ook hoe lang jouw commando's erover doen om een ruimtevaartuig te bereiken. Wanneer Curiosity over Mars rijdt, stuurt het roverteam een commando en wacht vervolgens — 8 tot 22 minuten — voordat de rover begint te bewegen. Daarna nog eens 8 tot 22 om erachter te komen of het werkte. Het is NIET mogelijk om een Marsrover vanaf de aarde met een joystick te besturen. Alles wat belangrijk is moet autonoom gebeuren.",
+    "Op de afstand van Voyager-1 (nu ongeveer 165 AU) bedraagt de lichtvertraging in één richting ongeveer 22,5 uur. Stuur vandaag een commando, morgen in de middag kom je erachter of het werkte. Lichtjaren bestaan voor de volgende schaal — afstand tot andere sterren. De dichtstbijzijnde, Proxima Centauri, ligt op 4,2 lichtjaar. Met de snelheid van Voyager zou het 70.000 jaar duren om daar te komen. Het universum is groot en traag."
+  ],
+  "body_paragraphs": [
+    "Licht beweegt met ongeveer 300.000 km/s. Een lichtseconde is 300.000 km. Een lichtminuut is 18 miljoen km. Een lichtjaar is 9,46 biljoen km. Het zijn afstanden, geen tijden — verwarrend genoemd, maar nuttig: 1 AU ≈ 8,3 lichtminuten, dus 'Mars ligt op 4–22 lichtminuten afstand afhankelijk van de baan' vertelt je de retourlatentie van commando's op elk moment.",
+    "Wanneer Curiosity over Mars rijdt, stuurt het roverteam een commando en wacht vervolgens 8-22 minuten voordat de rover de manoeuvre begint — en nog eens 8-22 om erachter te komen of het werkte. Realtime besturing is onmogelijk op planetaire afstanden. Ver genoeg (Voyager 1 op 22,5 lichtuur) stuur je eenrichtingscorrecties die bijna een dag later aankomen.",
+    "Lichtjaren zijn voor sterren. Proxima Centauri ligt op 4,2 lichtjaar afstand. Voyager 1 beweegt met ~17 km/s, wat snel is voor een ruimtevaartuig maar langzaam vergeleken met licht: bij die snelheid zou Proxima ~70.000 jaar duren."
+  ]
+}

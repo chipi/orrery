@@ -1,0 +1,44 @@
+{
+  "name": "Magellan",
+  "type": "ORBITEUR · MISSION ACCOMPLIE",
+  "first": "Carte radar la plus complète de Vénus — 98 % de la surface à une résolution de 100 m ; premier engin spatial planétaire lancé depuis la navette spatiale",
+  "description": "Magellan a transformé Vénus d'un disque sans relief voilé de nuages en une planète cartographiée. Lancée depuis la soute de la navette Atlantis le 4 mai 1989 — le premier engin spatial planétaire à voyager sur une navette — et arrivée à Vénus le 10 août 1990 via une longue trajectoire de type IV (1,5 révolution solaire). Au cours de quatre cycles de cartographie, le radar à synthèse d'ouverture a imagé 98 % de la surface de Vénus à une résolution de 100 m, révélant les hautes terres de tessera, les couronnes, les dômes en crêpe, et une surface jeune remodelée par l'activité volcanique. La mission s'est terminée le 13 octobre 1994 lors de l'Expérience de Terminaison — la première entrée atmosphérique contrôlée et planifiée d'un engin spatial planétaire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "STS-30 / Atlantis depuis Kennedy LC-39B ; IUS déployé depuis la soute de la navette.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Première correction de trajectoire en cours de route.",
+      "type": "nominal"
+    },
+    {
+      "met": 455,
+      "label": "TCM-4",
+      "note": "Ajustement final avant VOI.",
+      "type": "nominal"
+    },
+    {
+      "met": 463,
+      "label": "VOI",
+      "note": "Allumage du moteur à propergol solide pour insertion en orbite quasi polaire de 295 × 8543 km à 85,5°.",
+      "type": "info"
+    },
+    {
+      "met": 950,
+      "label": "CYCLE DE CARTOGRAPHIE 1 TERMINÉ",
+      "note": "Premier passage complet — couverture de 84 % de la surface à une résolution de 100 m.",
+      "type": "info"
+    },
+    {
+      "met": 1988,
+      "label": "EXPÉRIENCE DE TERMINAISON",
+      "note": "13 octobre 1994. Périapside abaissé dans l'atmosphère — première entrée planifiée d'un engin spatial planétaire.",
+      "type": "warning"
+    }
+  ]
+}

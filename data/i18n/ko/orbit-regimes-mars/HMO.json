@@ -1,0 +1,34 @@
+{
+  "name": "고(高)화성 궤도",
+  "short": "HMO",
+  "story": "1,000~2,500 km 범위의 고도 타원 궤도로, 대부분 역사적 임무들이 사용했다. Mariner 9이 1971년 이곳에 도달했는데 — 다른 행성을 공전한 최초의 우주선으로, Mars 2를 몇 주 차이로 앞질렀다. 소련의 Mars 3와 미국의 Viking 1 궤도선이 뒤를 이었으며, 모두 Mariner 시대의 제한된 델타-v 예산 동안 궤도 유지 연료를 최소화하는 긴 타원 궤도에 배치되었다. Phobos는 9,376 km에서 이 구역을 통과한다 — Viking과 Mars Express 모두 이 기하학적 배치를 활용해 달을 가까이서 연구했다.",
+  "comparison": "대략 지구의 GPS 위성들이 공전하는 고도이지만 — 지구 크기의 절반을 조금 넘는 행성 주위를 도는 것이다. 원일점에서 궤도선이 보는 화성의 모습은 1970년대 초 임무 사진들에 나타난 고전적인 '전체 원반' 구도다.",
+  "residents": [
+    {
+      "id": "mariner9",
+      "label": "Mariner 9 (1971-1972 — 최초의 화성 궤도선)",
+      "agency": "NASA"
+    },
+    {
+      "id": "mars3-orbiter",
+      "label": "Mars 3 궤도선 (1971-1972)",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "viking1-orbiter",
+      "label": "Viking 1 궤도선 (1976-1980)",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1971,
+      "label": "Mariner 9 — 지구 이외의 행성을 도는 최초의 인공위성 (USA)",
+      "mission_id": "mariner9"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

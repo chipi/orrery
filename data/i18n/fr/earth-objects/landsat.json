@@ -1,0 +1,6 @@
+{
+  "name": "Landsat",
+  "short": "Landsat",
+  "description": "Le plus long enregistrement continu d'imagerie terrestre de l'histoire — Landsat 1 à 9 couvrant plus de 50 ans (depuis 1972). Actuellement Landsat 8 + 9 à 705 km héliosynchrone, inclinaison 98,2°, nœud descendant local 10:00. Multispectral 30 m ; le jeu de données de référence pour le changement climatique.",
+  "scale_fact": "Les archives de Landsat sont si longues que vous pouvez comparer Manhattan en 1972 à Manhattan en 2025 dans le même référentiel d'instrument."
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Niedriger Mondorbit",
+  "short": "LLO",
+  "story": "Die erdnächste Zone zur Mondoberfläche — typischerweise 50 bis 100 km Höhe. Raumsonden können hier die Oberfläche mit einer Auflösung unter einem Meter abbilden, zahlen aber einen hohen Preis: Die Massenverteilung des Mondes ist extrem ungleichmäßig (riesige unterirdische Mascons unter den Maria), sodass ein niedriger Orbit aggressiv gestört wird. Die meisten LLO-Missionen benötigen aktive Bahnerhaltung oder eine sorgfältig gewählte „eingefrorene\" Inklination, die der Drift widersteht. LRO fliegt hier seit 2009 ununterbrochen — die langlebigste Mondmission.",
+  "comparison": "Etwa 1/3.800 des Weges zurück zur Erde. Von LLO aus ist der Mondhorizont scharf gekrümmt — man kann 30–40 km in jede Richtung sehen, bevor die Oberfläche abfällt.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
+      "agency": "NASA"
+    },
+    {
+      "id": "lunar-prospector",
+      "label": "Lunar Prospector (1998–1999)",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan1",
+      "label": "Chandrayaan-1 (2008–2009)",
+      "agency": "ISRO"
+    },
+    {
+      "id": "change2",
+      "label": "Chang'e 2 (2010–2011)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1966,
+      "label": "Luna 10 — erster künstlicher Mondorbiter (USSR)",
+      "mission_id": "luna10"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — erster bemannter Mondorbit (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

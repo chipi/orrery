@@ -1,0 +1,42 @@
+[
+  {
+    "id": "OORT",
+    "distance_au": 50000,
+    "color": "#1e3a8a"
+  },
+  {
+    "id": "HELIOPAUSE",
+    "distance_au": 120,
+    "color": "#c0c0c0"
+  },
+  {
+    "id": "SCATTERED",
+    "distance_au": [50, 1000],
+    "color": "#9c6ee0"
+  },
+  {
+    "id": "KUIPER",
+    "distance_au": [30, 50],
+    "color": "#7fd9d2"
+  },
+  {
+    "id": "GIANTS",
+    "distance_au": [5, 30],
+    "color": "#ff8c3c"
+  },
+  {
+    "id": "BELT",
+    "distance_au": [2.2, 3.2],
+    "color": "#8b6f47"
+  },
+  {
+    "id": "TERRESTRIAL",
+    "distance_au": [0.4, 1.5],
+    "color": "#4ecdc4"
+  },
+  {
+    "id": "SUN",
+    "distance_au": 0,
+    "color": "#ffd700"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "rover_id": "change4",
+  "agency": "CNSA",
+  "status": "ENDED",
+  "snapshot_date": "2024-01-01",
+  "credit": "© CNSA — Yutu-2 rover traverse (Chang'e 4, Von Kármán crater, lunar far side, Jan 2019 onward; >1.6 km, the longest-lived lunar rover). V1 simplified polyline; the far side has no NASA equivalent.",
+  "points": [
+    [
+      -45.4561,
+      177.5992
+    ],
+    [
+      -45.45544,
+      177.59732
+    ],
+    [
+      -45.45643,
+      177.59403
+    ],
+    [
+      -45.45478,
+      177.59074
+    ],
+    [
+      -45.45544,
+      177.58604
+    ],
+    [
+      -45.45379,
+      177.58228
+    ],
+    [
+      -45.45445,
+      177.5771
+    ],
+    [
+      -45.45247,
+      177.57287
+    ],
+    [
+      -45.45313,
+      177.56723
+    ],
+    [
+      -45.45115,
+      177.56206
+    ],
+    [
+      -45.45214,
+      177.55689
+    ],
+    [
+      -45.45016,
+      177.55172
+    ]
+  ]
+}

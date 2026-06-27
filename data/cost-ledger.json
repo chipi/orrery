@@ -76,6 +76,15 @@
       "cost_usd": 2.515754999999999,
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-06-23T20:32:23.129Z",
+      "scope": "segment=hotspots",
+      "images_processed": 74,
+      "images_cached": 21,
+      "cost_usd": 0.56643,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

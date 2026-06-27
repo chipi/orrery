@@ -1,0 +1,14 @@
+{
+  "title": "MET — Mission Elapsed Time",
+  "intro_sentence": "Een simpele stopwatch die bij de lancering start en nooit meer stopt — het universele tijdstempel voor elke gebeurtenis in de missietijdlijn.",
+  "narrative_101": [
+    "MET staat voor Mission Elapsed Time. Het is een stopwatch. Dag nul, uur nul, minuut nul, seconde nul is het moment waarop de raket het lanceerplatform verlaat. Alles wat daarna gebeurt krijgt een MET-tijdstempel. De eerste stap van Apollo 11 op de Maan? MET 109 uur 24 minuten. Voyager 1 die de interstellaire ruimte binnenkomt? MET 35 jaar.",
+    "Waarom een stopwatch in plaats van een normale kalender? Twee redenen. Ten eerste hebben kalenders op Aarde niets te maken met wat het ruimtevaartuig doet — Voyager geeft niks om dinsdagen. Ten tweede: hoe verder je gaat, hoe meer klokken uit elkaar lopen. Mars is lichtminuten ver weg; signalen hebben vertraging. Ruimtevaartuigen met relativistische snelheden (sommige ervan) meten tijd iets anders dan wij. MET omzeilt dit alles — het is de eigen persoonlijke tijdlijn van het ruimtevaartuig.",
+    "Open het /fly-scherm en zie MET in dagen oplopen terwijl een gesimuleerde reis vordert. De HUD toont MET 173d wanneer het ruimtevaartuig langs Mars zweeft. Vertaling: het is 173 dagen geleden sinds de lancering vanuit het perspectief van het ruimtevaartuig. Welke datum is het op Aarde? Maakt niet uit. Missiecontrole spreekt MET."
+  ],
+  "body_paragraphs": [
+    "MET is de tijd sinds de lancering. Dag nul is het moment van lancering. Elke gebeurtenis — staging, trans-X-injectie, mid-course correctie, baaninsertie, oppervlakteoperaties — krijgt een MET-tijdstempel. Apollo 11 maanlanding: MET 4 dagen, 6 uur, 45 minuten. Voyager 1 die de heliopauze verlaat: MET 35 jaar.",
+    "Waarom MET in plaats van UTC? Omdat de klok op Aarde niet helemaal gelijk loopt met de klok op het ruimtevaartuig wanneer het ruimtevaartuig snel of ver weg beweegt. Lichtlooptijdvertragingen nemen toe (Mars is 4-22 lichtminuten verwijderd, afhankelijk van de baangeometrie). Relativistische tijddilatatie sluipt erin bij snelle sondes. MET is de eigen verstreken tijd van het ruimtevaartuig, het natuurlijke ankerpunt voor het sequencen van gebeurtenissen aan boord.",
+    "Op de HUD van `/fly` zie je MET in dagen oplopen terwijl de simulatie vordert. Het is het perspectief van het ruimtevaartuig op hoe lang de reis heeft geduurd — onafhankelijk van welke datum het op Aarde is."
+  ]
+}

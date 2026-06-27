@@ -40273,7 +40273,3319 @@
       "notes": [
         "manual-source-pass: generated 2026-06-19"
       ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-tiangong-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "01",
+      "query": "Tiangong Chinese modular station",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong%20Space%20Station%20Rendering%202022.11.01.jpg",
+        "credit": "Own work",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Tiangong Space Station Rendering 2022.11.01.jpg"
+        }
+      },
+      "size_bytes": 599917,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "The image shows a modular space station in low Earth orbit with cylindrical modules, solar arrays, and docking ports orbiting above Earth — consistent with Tiangong's configuration, though the renderi"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Tiangong space station (Chinese modular station in low Earth orbit)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-tiangong-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "tiangong",
+      "slot": "01",
+      "query": "Tiangong Chinese modular station",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiangong%20Space%20Station%20Rendering%202021.10%20no%20background.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong%20Space%20Station%20Rendering%202021.10%20no%20background.png",
+        "credit": "Own work",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Tiangong Space Station Rendering 2021.10 no background.png"
+        }
+      },
+      "size_bytes": 1670092,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "3D render showing the Tiangong modular space station configuration with Shenzhou crew vehicle, Tianzhou cargo vehicle, and large solar arrays—the core hardware of the Tiangong mission."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Tiangong space station (Chinese modular station in low Earth orbit)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-atv-01",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "01",
+      "query": "ATV Automated Transfer Vehicle ESA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:View%20of%20ATV-2%20-%20cropped%20and%20rotated.jpg",
+        "credit": "http://spaceflight.nasa.gov/gallery/images/station/crew-26/html/iss026e037172.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "View of ATV-2 - cropped and rotated.jpg"
+        }
+      },
+      "size_bytes": 312661,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A white cylindrical cargo spacecraft with distinctive solar panels and external hardware is photographed against a black background — this is clearly an ATV in orbit, the primary subject of the frame,"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — ESA Automated Transfer Vehicle (ATV) ISS resupply spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-atv-02",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "atv",
+      "slot": "01",
+      "query": "ATV Automated Transfer Vehicle ESA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ATV-4%20approaches%20the%20International%20Space%20Station%202.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ATV-4%20approaches%20the%20International%20Space%20Station%202.jpg",
+        "credit": "http://spaceflight.nasa.gov/gallery/images/station/crew-36/html/iss036e007840.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ATV-4 approaches the International Space Station 2.jpg"
+        }
+      },
+      "size_bytes": 2173766,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows the ATV spacecraft as the clear primary subject — the distinctive disc-shaped cargo module with ESA branding, docking ring, and solar panels are fully visible and central to the frame,"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — ESA Automated Transfer Vehicle (ATV) ISS resupply spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-juno-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg",
+        "credit": "jpl.nasa.gov/spaceimages/details.php?id=PIA22946",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg"
+        }
+      },
+      "size_bytes": 448609,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "High-resolution photograph of Jupiter showing the planet's atmospheric features, Great Red Spot, and polar regions — consistent with Juno spacecraft imagery; Jupiter is the mission's primary target bo"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Juno spacecraft orbiting Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-juno-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21972%20Jupiter%20Blues.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21972%20Jupiter%20Blues.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21972 Jupiter Blues.jpg"
+        }
+      },
+      "size_bytes": 1773081,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution photograph of Jupiter's cloud formations and atmospheric detail, showing swirling storm patterns and cyclones — the primary subject and science focus of the Juno mission."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Juno spacecraft orbiting Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-mars-polar-lander-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "mars-polar-lander",
+      "slot": "01",
+      "query": "Mars Polar Lander NASA 1999",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Polar%20Lander%20in%20aeroshell.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Polar%20Lander%20in%20aeroshell.jpg",
+        "credit": "http://science.ksc.nasa.gov/gallery/photos/1998/captions/KSC-98PC-1884.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mars Polar Lander in aeroshell.jpg"
+        }
+      },
+      "size_bytes": 625439,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Clean-room assembly photograph showing the Mars Polar Lander spacecraft as the primary subject, suspended from overhead rigging during integration/assembly — a legitimate hardware-in-context documenta"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars Polar Lander (1999) NASA spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-mars-polar-lander-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "mars-polar-lander",
+      "slot": "01",
+      "query": "Mars Polar Lander NASA 1999",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Polar%20Lander%20undergoes%20testing.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Polar%20Lander%20undergoes%20testing.jpg",
+        "credit": "http://science.ksc.nasa.gov/gallery/photos/1998/captions/KSC-98PC-1610.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mars Polar Lander undergoes testing.jpg"
+        }
+      },
+      "size_bytes": 1663136,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A clean-room or museum display photograph showing the Mars Polar Lander spacecraft as the primary subject, with its distinctive white aeroshell, solar panels, and instrument bus clearly visible and un"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars Polar Lander (1999) NASA spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-opportunity-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "opportunity",
+      "slot": "01",
+      "query": "Opportunity rover Mars MER-B",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%20Mars%20Rover.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA%20Mars%20Rover.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA04413 (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "NASA Mars Rover.jpg"
+        }
+      },
+      "size_bytes": 877752,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A detailed render or photograph of the Opportunity rover on the Martian surface, showing its distinctive six-wheel chassis, solar panels, mast-mounted instruments (including the Pancam), and arm-mount"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Opportunity Mars Exploration Rover (MER-B)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-opportunity-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "opportunity",
+      "slot": "01",
+      "query": "Opportunity rover Mars MER-B",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navigation%20Camera%20Sol%204959%20of%20the%20MER-B%20Opportunity%20rover%20on%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Navigation%20Camera%20Sol%204959%20of%20the%20MER-B%20Opportunity%20rover%20on%20Mars.jpg",
+        "credit": "https://mars.nasa.gov/mer/gallery/all/1/n/4959/1N568428036EFFD0J8P1826R0M1.HTML from https://mars.nasa.gov/mer/gallery/all/opportunity_n4959.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Navigation Camera Sol 4959 of the MER-B Opportunity rover on Mars.jpg"
+        }
+      },
+      "size_bytes": 155860,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Surface panorama taken by Opportunity rover on Mars, showing Martian terrain with rover instrument (calibration target visible in foreground) as primary documentation of the mission's in-situ explorat"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Opportunity Mars Exploration Rover (MER-B)"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-starliner-01",
+      "agency": "Boeing",
+      "surface": "fleet-galleries",
+      "missionId": "starliner",
+      "slot": "01",
+      "query": "Boeing Starliner CST-100",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CST-100.jpg",
+        "credit": "https://images.nasa.gov/details/KSC-2011-8114 http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=57309 on the Wayback Machine at the Wayback Machine",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "CST-100.jpg"
+        }
+      },
+      "size_bytes": 2772012,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Boeing CST-100 Starliner spacecraft is the clear primary subject, shown in a detailed render above Earth with its distinctive capsule shape, heat shield, and Boeing branding clearly visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Boeing CST-100 Starliner crew spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-starliner-02",
+      "agency": "Boeing",
+      "surface": "fleet-galleries",
+      "missionId": "starliner",
+      "slot": "01",
+      "query": "Boeing Starliner CST-100",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100%20Starliner%20render%203.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CST-100%20Starliner%20render%203.jpg",
+        "credit": "https://www.nasa.gov/specials/ccp-press-kit/boeing.html#C9",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "CST-100 Starliner render 3.jpg"
+        }
+      },
+      "size_bytes": 780512,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-quality photograph of the Boeing CST-100 Starliner spacecraft itself, shown head-on with clear mission branding and hardware details — the primary subject and a strong hero candidate fo"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Boeing CST-100 Starliner crew spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-phobos-2-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "phobos-2",
+      "slot": "01",
+      "query": "Phobos 2 spacecraft Soviet Mars",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mmxspacecraft%200.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mmxspacecraft%200.jpg",
+        "credit": "https://www.nasa.gov/press-release/nasa-selects-instrument-for-future-international-mission-to-martian-moons",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mmxspacecraft 0.jpg"
+        }
+      },
+      "size_bytes": 133164,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "The image shows the Phobos 2 spacecraft with its distinctive solar panels and instrumentation as the primary subject, depicted near Mars and its moon Phobos — the exact target and mission-defining con"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phobos 2 Soviet Mars mission spacecraft"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-chandra-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "chandra",
+      "slot": "01",
+      "query": "Chandra X-ray Observatory NASA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg",
+        "credit": "http://astropix.ipac.caltech.edu/image/chandra/587b (direct link); see also http://chandra.harvard.edu/photo/2015/iyl/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
+        }
+      },
+      "size_bytes": 3166896,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "This is a Chandra X-ray Observatory data product showing a supernova remnant (likely Cassiopeia A based on morphology) — the red/orange outer shell and blue inner X-ray emission are characteristic Cha"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Chandra X-ray Observatory satellite"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-chandra-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "chandra",
+      "slot": "01",
+      "query": "Chandra X-ray Observatory NASA",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chandra%20X-ray%20space%20observatory%20-%20TeleAsmblyHigh-300.png",
+        "credit": "http://chandra.harvard.edu/resources/chandraMission.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Chandra X-ray space observatory - TeleAsmblyHigh-300.png"
+        }
+      },
+      "size_bytes": 5433303,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A cylindrical spacecraft with gold insulation blankets and distinctive hardware is the clear primary subject during assembly/integration in a clean-room facility; the design and configuration are cons"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — NASA Chandra X-ray Observatory satellite"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-3-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-3",
+      "slot": "01",
+      "query": "Chang'e 3 lander Yutu rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang'e%204%20lander.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chang'e%204%20lander.jpg",
+        "credit": "Liu, J., Ren, X., Yan, W. et al. Descent trajectory reconstruction and landing site positioning of Chang’E-4 on the lunar farside. Nat Commun 10, 4229 (2019). https://doi.org/10.1038/s41467-019-12278-",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Chang'e 4 lander.jpg"
+        }
+      },
+      "size_bytes": 241244,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows a lunar lander with solar panels and a rover with visible wheel tracks on the lunar surface — the primary subjects are the Chang'e 3 spacecraft and Yutu rover in their defining moment "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 3 lunar lander with Yutu rover"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-4-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "01",
+      "query": "Change 4 Yutu-2 rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%2C%20Yutu-2.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%2C%20Yutu-2.png",
+        "credit": "ChangE-4, Yutu-2",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4, Yutu-2.png"
+        }
+      },
+      "size_bytes": 6995357,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Yutu-2 rover is the primary subject on the lunar farside surface, a mission-defining moment of Chang'e 4 — the first soft landing and rover deployment on the Moon's far side."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 4 farside lunar lander mission"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-change-4-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-4",
+      "slot": "01",
+      "query": "Change 4 Yutu-2 rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yutu-2%20leaving%20Chang%20e-4-iau1901a.jpg",
+        "credit": "This image has been extracted from another file",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Yutu-2 leaving Chang e-4-iau1901a.jpg"
+        }
+      },
+      "size_bytes": 1637770,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows the Chang'e 4 Yutu-2 rover as the primary subject on the lunar farside surface, with distinctive gold-wrapped lander elements visible in the foreground — this is a mission-defining mom"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Chang'e 4 farside lunar lander mission"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-insight-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "insight",
+      "slot": "01",
+      "query": "InSight Mars lander NASA seismometer",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23177-Mars-InSightLander-Seismometer-20190423.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA23177-Mars-InSightLander-Seismometer-20190423.jpg",
+        "credit": "https://photojournal.jpl.nasa.gov/jpeg/PIA23177.jpg",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA23177-Mars-InSightLander-Seismometer-20190423.jpg"
+        }
+      },
+      "size_bytes": 154384,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows InSight's seismometer (SEIS) instrument deployed on the Martian surface with the lander's robotic arm visible above it — a mission-defining moment capturing the primary science instrum"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — InSight Mars lander"
+      ]
+    },
+    {
+      "proposal_id": "hs-fleet-galleries-insight-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "insight",
+      "slot": "01",
+      "query": "InSight Mars lander NASA seismometer",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22956-Mars-InSight-SeismometerDeployed-20181219.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA22956-Mars-InSight-SeismometerDeployed-20181219.png",
+        "credit": "https://www.jpl.nasa.gov/images/insight/20181220/PIA22956.png",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA22956-Mars-InSight-SeismometerDeployed-20181219.png"
+        }
+      },
+      "size_bytes": 760540,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a direct photograph from InSight's robotic arm camera showing the lander's seismometer (SEIS instrument) being deployed onto the Martian surface — a mission-defining moment with the spacecraft"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — InSight Mars lander"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-luna17-01",
+      "agency": "Roscosmos",
+      "surface": "moon-sites",
+      "missionId": "luna17",
+      "slot": "01",
+      "query": "Lunokhod 1 lunar rover",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunokhod%201%20Revisited%20(LROC402%20-%20M175502049R%20LR1%20thumb).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lunokhod%201%20Revisited%20(LROC402%20-%20M175502049R%20LR1%20thumb).png",
+        "credit": "Lunokhod 1 Revisited",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Lunokhod 1 Revisited (LROC402 - M175502049R LR1 thumb).png"
+        }
+      },
+      "size_bytes": 468255,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Orbital image showing Luna 17's Lunokhod 1 rover on the lunar surface as the primary subject (bright spot in center, enlarged in inset), with scale bar and geological context — a direct documentation "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Luna 17 / Lunokhod 1 (first lunar rover, 1970)"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-apollo16-01",
+      "agency": "NASA",
+      "surface": "moon-sites",
+      "missionId": "apollo16",
+      "slot": "01",
+      "query": "Apollo 16 Descartes Highlands LM",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Apollo%2016%20Command%20and%20Service%20Modules.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Apollo%2016%20Command%20and%20Service%20Modules.jpg",
+        "credit": "https://spaceflight.nasa.gov/gallery/images/apollo/apollo16/html/as16-113-18294.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Apollo 16 Command and Service Modules.jpg"
+        }
+      },
+      "size_bytes": 3484372,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Command Module (Casper) in lunar orbit above the Descartes Highlands is the primary subject, clearly showing Apollo 16 hardware in its mission-defining context above the target landing site."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Apollo 16 lunar landing site (Descartes Highlands, 1972)"
+      ]
+    },
+    {
+      "proposal_id": "hs-moon-sites-apollo16-02",
+      "agency": "NASA",
+      "surface": "moon-sites",
+      "missionId": "apollo16",
+      "slot": "01",
+      "query": "Apollo 16 Descartes Highlands LM",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo%2016%20astronauts%20take%20lunar%20soil%20sample%20from%20Station%20no%209%20during%20EVA%20(as16-107-17561).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Apollo%2016%20astronauts%20take%20lunar%20soil%20sample%20from%20Station%20no%209%20during%20EVA%20(as16-107-17561).jpg",
+        "credit": "This image or video was catalogued by Lyndon B. Johnson Space Center of the United States National Aeronautics and Space Administration (NASA) under Photo ID: as16-107-17561.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Apollo 16 astronauts take lunar soil sample from Station no 9 during EVA (as16-107-17561).jpg"
+        }
+      },
+      "size_bytes": 1758489,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Close-up of a lunar sample collection tool (likely a rake or similar instrument) actively engaged in soil/rock sampling on the lunar surface, consistent with Apollo 16 surface operations at Descartes "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Apollo 16 lunar landing site (Descartes Highlands, 1972)"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-mars2-01",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars2",
+      "slot": "01",
+      "query": "Mars 2 spacecraft Soviet 1971",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariner%208%20assembly.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mariner%208%20assembly.jpg",
+        "credit": "http://nix.larc.nasa.gov/info;jsessionid=5nrsh9jo1mk5?id=KSC-71PC-0343&amp;orgid=5",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mariner 8 assembly.jpg"
+        }
+      },
+      "size_bytes": 732999,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Clean-room assembly photograph of a Soviet-era lander spacecraft with distinctive cylindrical body, solar panels, and protective coverings — consistent with Mars 2 hardware configuration, and spacecra"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Mars 2 Soviet lander (1971)"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-phoenix-01",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "phoenix",
+      "slot": "01",
+      "query": "Phoenix Mars lander NASA 2008",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phoenix%20Mars%20Lander%2C%20side%20view.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Phoenix%20Mars%20Lander%2C%20side%20view.jpg",
+        "credit": "http://www.fourth-millennium.net/mission-artwork/phoenix-mars-lander.html (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Phoenix Mars Lander, side view.jpg"
+        }
+      },
+      "size_bytes": 578964,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is an artist's rendering of the Phoenix Mars lander on the Martian surface, showing the spacecraft's distinctive twin solar panels, robotic arm, and instruments as the primary subject in its oper"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phoenix Mars lander (2008) on the Martian surface"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-phoenix-02",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "phoenix",
+      "slot": "01",
+      "query": "Phoenix Mars lander NASA 2008",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ph%C5%93nix%20lander%20at%20the%20northern%20arctic%20circle%20of%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ph%C5%93nix%20lander%20at%20the%20northern%20arctic%20circle%20of%20Mars.jpg",
+        "credit": "http://www.jpl.nasa.gov/news/phoenix/images.php?fileID=13718",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Phœnix lander at the northern arctic circle of Mars.jpg"
+        }
+      },
+      "size_bytes": 1305209,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The frame shows the Phoenix lander's robotic arm (RAD) and solar panel array as primary subjects on the Martian surface, with the rusty terrain and lander hardware clearly visible—a mission-defining m"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Phoenix Mars lander (2008) on the Martian surface"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-perseverance-01",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "perseverance",
+      "slot": "01",
+      "query": "Perseverance rover Mars Jezero",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jezero%20crater%20on%20Mars%2C%20sol%2048%20of%20Perseverance%20mission.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jezero%20crater%20on%20Mars%2C%20sol%2048%20of%20Perseverance%20mission.png",
+        "credit": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00048/ids/edr/browse/ncam/NRF_0048_0671211640_633ECM_N0031850NCAM03048_01_295J01.png",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Jezero crater on Mars, sol 48 of Perseverance mission.png"
+        }
+      },
+      "size_bytes": 2077641,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Mars surface photograph showing rover wheel tracks in Jezero crater terrain — primary subject is mission-defining evidence of Perseverance's presence and operations on Mars."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Perseverance Mars rover at Jezero crater"
+      ]
+    },
+    {
+      "proposal_id": "hs-mars-sites-perseverance-02",
+      "agency": "NASA",
+      "surface": "mars-sites",
+      "missionId": "perseverance",
+      "slot": "01",
+      "query": "Perseverance rover Mars Jezero",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jezero%20crater%20on%20Mars%2C%20sol%2020%20of%20Perseverance%20mission.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jezero%20crater%20on%20Mars%2C%20sol%2020%20of%20Perseverance%20mission.png",
+        "credit": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00020/ids/edr/browse/ncam/NRF_0020_0668728525_175ECM_N0030770NCAM03020_01_295J01.png",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Jezero crater on Mars, sol 20 of Perseverance mission.png"
+        }
+      },
+      "size_bytes": 2280943,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a surface photograph of Martian terrain showing rocks, soil, and a distant crater rim taken from ground level at Jezero — a classic data product from the Perseverance rover's Mastcam-Z, showin"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "handsource — Perseverance Mars rover at Jezero crater"
+      ]
+    },
+    {
+      "proposal_id": "hs2-fleet-galleries-baikonur-200-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "baikonur-200",
+      "slot": "01",
+      "query": "Baikonur Cosmodrome Site 200",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ISS057-E-23187%20-%20View%20of%20Kazakhstan.jpg",
+        "credit": "JSC Gateway to Astronaut Photography of Earth",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ISS057-E-23187 - View of Kazakhstan.jpg",
+          "sourcing_round": "try-harder"
+        }
+      },
+      "size_bytes": 1887330,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "Aerial view of what appears to be the Baikonur Cosmodrome Site 200 complex showing launch infrastructure, roads, and facility buildings from above — the primary subject is the launch facility itself, "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "try-harder — Baikonur Cosmodrome Site 200 launch complex (Proton-K / Proton-M launches)"
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089A souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23234086,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-02",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089 souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23139168,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-03",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 capsule",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2034%20reentry%20capsule%2002.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2034%20reentry%20capsule%2002.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Soyuz 34 reentry capsule 02.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 14620516,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-04",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 capsule",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz%2034%20reentry%20capsule%2003.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soyuz%2034%20reentry%20capsule%2003.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Soyuz 34 reentry capsule 03.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13621868,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-5-05",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-5",
+      "slot": "01",
+      "query": "commons:Vostok 5 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok-6%20scale%20model.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vostok-6%20scale%20model.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Vostok-6 scale model.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13151601,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 5 spacecraft / mission (Bykovsky 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-01",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089A%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089A souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23234086,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-02",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201964%20CPA%203089%20souvenir%20sheet%20(Soviet%20Conquest%20of%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1964 CPA 3089 souvenir sheet (Soviet Conquest of Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 23139168,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-03",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vostok-6%20scale%20model.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vostok-6%20scale%20model.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Vostok-6 scale model.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 13151601,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-04",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201963%20CPA%202956-2961%20se-tenant%20strip%20of%206%20(First%20in%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Soviet%20Union%201963%20CPA%202956-2961%20se-tenant%20strip%20of%206%20(First%20in%20Space.%201st%20satellite%2C%201st%20pennant%20on%20the%20Moon%2C%201st%20view%20of%20the%20Moon%20far%20side%2C%201st%20man%20in%20space%2C%201st%20group%20in%20space%2C%201st%20woman%20in%20space).png",
+        "credit": "Scanned 600 dpi by User Matsievsky from personal collection",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Soviet Union 1963 CPA 2956-2961 se-tenant strip of 6 (First in Space. 1st satellite, 1st pennant on the Moon, 1st view of the Moon far side, 1st man in space, 1st group in space, 1st woman in space).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 10648180,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-vostok-6-05",
+      "agency": "Roscosmos",
+      "surface": "fleet-galleries",
+      "missionId": "vostok-6",
+      "slot": "01",
+      "query": "commons:Vostok 6 spacecraft",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Space%20craft%20Vostok-6.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Space%20craft%20Vostok-6.jpg",
+        "credit": "Own work",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Space craft Vostok-6.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 6424942,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Vostok 6 spacecraft / mission (Tereshkova 1963). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "commons:Change 2 lunar orbiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Earthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Earthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg",
+        "credit": "http://lroc.sese.asu.edu/posts/895",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Earthrise over Compton crater -LRO full res.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 20051988,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "commons:Change 2 lunar orbiter",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Television%20Coverage%20of%20LRO%20Lunar%20Orbit%20Insertion%20Event%20(3654433910).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Television%20Coverage%20of%20LRO%20Lunar%20Orbit%20Insertion%20Event%20(3654433910).jpg",
+        "credit": "Television Coverage of LRO Lunar Orbit Insertion Event",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Television Coverage of LRO Lunar Orbit Insertion Event (3654433910).jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8726680,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-03",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_2",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(32755885495).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:67P%20Churyumov-Gerasimenko%20-%20Rosetta%20(32755885495).png",
+        "credit": "67P/Churyumov-Gerasimenko - Rosetta",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "67P Churyumov-Gerasimenko - Rosetta (32755885495).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8185522,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-04",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥二号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/LADEE%20fires%20small%20engines.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:LADEE%20fires%20small%20engines.jpg",
+        "credit": "LADEE Fires Thrusters Artist's Concept",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "LADEE fires small engines.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8072277,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-fleet-galleries-change-2-05",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "change-2",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥二号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bean%20Descends%20Intrepid%20-%20GPN-2000-001317.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bean%20Descends%20Intrepid%20-%20GPN-2000-001317.jpg",
+        "credit": "https://images.nasa.gov/details/as12-46-6726 http://dayton.hq.nasa.gov/IMAGES/LARGE/GPN-2000-001317.jpg on the Wayback Machine at the Wayback Machine http://grin.hq.nasa.gov/ABSTRACTS/GPN-2000-001317.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Bean Descends Intrepid - GPN-2000-001317.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 7838583,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 2 Chinese lunar orbiter (2010). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-01",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%20-%20PCAM%20(51216550288).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%20-%20PCAM%20(51216550288).png",
+        "credit": "ChangE-4 - PCAM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4 - PCAM (51216550288).png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 21798165,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-02",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ChangE-4%20-%20PCAM.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4%20-%20PCAM.png",
+        "credit": "ChangE-4 - PCAM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "ChangE-4 - PCAM.png",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 20286075,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-03",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Crab%20Nebula.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Crab%20Nebula.jpg",
+        "credit": "HubbleSite: gallery, release.",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Crab Nebula.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 14508851,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-04",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "en.wiki/Chang'e_4",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Esa-hubble-k2-18a%20impression.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Esa-hubble-k2-18a%20impression.jpg",
+        "credit": "https://www.spacetelescope.org/news/heic1916",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Esa-hubble-k2-18a impression.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8112045,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-moon-sites-change4-05",
+      "agency": "CNSA",
+      "surface": "moon-sites",
+      "missionId": "change4",
+      "slot": "01",
+      "query": "zh.wiki/嫦娥四号",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/LADEE%20fires%20small%20engines.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:LADEE%20fires%20small%20engines.jpg",
+        "credit": "LADEE Fires Thrusters Artist's Concept",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "LADEE fires small engines.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8072277,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Chang'e 4 farside landing / Yutu-2. Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-01",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "en.wiki/Mars_6",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/2001%20mars%20odyssey%20wizja.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2001%20mars%20odyssey%20wizja.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA04244 (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "2001 mars odyssey wizja.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 8958987,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-02",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21131 Closer Look at Schiaparelli Impact Site on Mars.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 6757884,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-03",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars%2C%20Figure%201.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21131%20Closer%20Look%20at%20Schiaparelli%20Impact%20Site%20on%20Mars%2C%20Figure%201.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21131 Closer Look at Schiaparelli Impact Site on Mars, Figure 1.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 4705269,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-04",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "en.wiki/Mars_6",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20system.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20system.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA03153",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Solar system.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 4225968,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs4-mars-sites-mars6-05",
+      "agency": "Roscosmos",
+      "surface": "mars-sites",
+      "missionId": "mars6",
+      "slot": "01",
+      "query": "commons:Mars 6 Soviet lander",
+      "currentSource": "on-disk-weak",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianwen-1%20Lander%20and%20Zhurong%20Rover%20in%20Southern%20Utopia%20Planitia.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1%20Lander%20and%20Zhurong%20Rover%20in%20Southern%20Utopia%20Planitia.jpg",
+        "credit": "https://www.uahirise.org/hipod/ESP_069665_2055",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Tianwen-1 Lander and Zhurong Rover in Southern Utopia Planitia.jpg",
+          "sourcing_round": "no-vision"
+        }
+      },
+      "size_bytes": 2692842,
+      "vision_v3": null,
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "no-vision — Mars 6 Soviet lander (1973). Marko picks visually."
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-juno-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg",
+        "credit": "jpl.nasa.gov/spaceimages/details.php?id=PIA22946",
+        "license": "attribution",
+        "metadata": {
+          "commons_file": "PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 448609,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a high-resolution photograph of Jupiter showing the planet's distinctive cloud bands, Great Red Spot, and polar regions — iconic Juno mission imagery captured by the spacecraft's JunoCam instr"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — NASA Juno spacecraft in polar orbit around Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-juno-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA21972%20Jupiter%20Blues.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:PIA21972%20Jupiter%20Blues.jpg",
+        "credit": "Catalog page",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "PIA21972 Jupiter Blues.jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 1773081,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a close-up photograph of Jupiter's cloud formations showing swirling atmospheric features, cyclones, and color variations—iconic imagery captured by the Juno spacecraft, which is the primary s"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — NASA Juno spacecraft in polar orbit around Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-juno-03",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "juno",
+      "slot": "01",
+      "query": "Juno spacecraft NASA Jupiter",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/JUNO%20-%20PIA13746.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JUNO%20-%20PIA13746.jpg",
+        "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA13746",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "JUNO - PIA13746.jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 1293311,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Juno spacecraft is the clear primary subject in the frame, depicted in orbit with its distinctive solar panels and magnetometer boom extended, positioned against Jupiter as the background target b"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — NASA Juno spacecraft in polar orbit around Jupiter"
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-viking-1-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "viking-1",
+      "slot": "01",
+      "query": "Viking 1 spacecraft NASA",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking%201%20Spacecraft%20in%20SAEF%20(50051597242).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Viking%201%20Spacecraft%20in%20SAEF%20(50051597242).jpg",
+        "credit": "Viking 1 Spacecraft in SAEF",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Viking 1 Spacecraft in SAEF (50051597242).jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 1213419,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Clean-room assembly photograph showing the Viking 1 spacecraft as the primary subject — the distinctive decagonal bus, red solar panels, high-gain antenna dish, and lander body are clearly visible and"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — Viking 1 spacecraft (1975) — first successful Mars lander + orbiter"
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-viking-1-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "viking-1",
+      "slot": "01",
+      "query": "Viking 1 Mars lander orbiter",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2lander1.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Viking2lander1.jpg",
+        "credit": "NASA website; description,[1] high resolution image.[2]",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Viking2lander1.jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 556303,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Surface-deployed science instruments and spacecraft hardware from Viking 1 lander are the primary subjects on the Martian surface, with the iconic dish antenna, soil sampler, and lander deck clearly v"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — Viking 1 spacecraft (1975) — first successful Mars lander + orbiter"
+      ]
+    },
+    {
+      "proposal_id": "hs6-fleet-galleries-viking-1-03",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "viking-1",
+      "slot": "01",
+      "query": "Viking 1 Mars lander orbiter",
+      "currentSource": "on-disk-weak-sub30kb",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lander%2C%20Mars%2C%20Viking%2C%20Proof%20Test%20Article%20-%20DPLA%20-%200e40e7ad805e7f7a7b655246c87c2827%20(page%201).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lander%2C%20Mars%2C%20Viking%2C%20Proof%20Test%20Article%20-%20DPLA%20-%200e40e7ad805e7f7a7b655246c87c2827%20(page%201).jpg",
+        "credit": "File URL Catalog record",
+        "license": "cc0",
+        "metadata": {
+          "commons_file": "Lander, Mars, Viking, Proof Test Article - DPLA - 0e40e7ad805e7f7a7b655246c87c2827 (page 1).jpg",
+          "sourcing_round": "6-weak-heroes-2026-06-23"
+        }
+      },
+      "size_bytes": 617690,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a detailed photograph of the Viking 1 lander spacecraft itself, showing its primary structure, instrument booms, antenna, and leg assemblies on a Martian surface backdrop — clearly the spacecr"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "6-weak-heroes — Viking 1 spacecraft (1975) — first successful Mars lander + orbiter"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-ariane-6-01",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "01",
+      "query": "Ariane 6 rocket ESA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20Rollout%20with%20James%20Webb%20Space%20Telescope%20(NHQ202112230023).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20Rollout%20with%20James%20Webb%20Space%20Telescope%20(NHQ202112230023).jpg",
+        "credit": "https://www.flickr.com/photos/nasahqphoto/51778544646/in/photostream/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Ariane 5 Rollout with James Webb Space Telescope (NHQ202112230023).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 3920499,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "An Ariane 6 launch vehicle is clearly visible as the primary subject inside the launch-preparation facility, with 'ariane' text visible on the building, showing the rocket in its assembly/integration "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Ariane 6 launch vehicle (ESA / ArianeGroup; debut flight July 2024 from Kourou; cryogenic Vulcain 2.1 main stage + Vinci upper-stage, 2-4 solid boosters)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-ariane-6-02",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "ariane-6",
+      "slot": "02",
+      "query": "Ariane 6 Kourou launch pad",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg",
+        "credit": "Ariane 5 with James Webb Space Telescope Prelaunch",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Ariane 5 with James Webb Space Telescope Prelaunch (51773093465).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 7215153,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Ariane 6 launch vehicle is the unambiguous primary subject—clearly visible on the launch pad at night with distinctive markings (ArianeSpace, ESA, CNES logos), solid boosters, and mobile gantry st"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Ariane 6 launch vehicle (ESA / ArianeGroup; debut flight July 2024 from Kourou; cryogenic Vulcain 2.1 main stage + Vinci upper-stage, 2-4 solid boosters)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "01",
+      "query": "Vulcan Centaur rocket ULA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped).jpg",
+        "credit": "https://www.flickr.com/photos/nasakennedy/53444731128/in/photostream/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Vulcan Centaur rollout (Peregrine) (cropped).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 2470161,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A ULA Vulcan Centaur rocket is the clear primary subject of the frame, shown at the launch pad in full detail with distinctive red fairing and ULA branding clearly visible."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "02",
+      "query": "Vulcan Centaur rocket ULA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192710).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192710).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 240108-X-NM958-1016 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ULA's Vulcan VC2S rocket launch (8192710).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 3725129,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Vulcan Centaur rocket with its distinctive Centaur upper stage and gantry towers is the clear primary subject, captured at liftoff from SLC-41 Cape Canaveral during the defining moment of the debut "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-03",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "03",
+      "query": "Vulcan Centaur rocket ULA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192711).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ULA's%20Vulcan%20VC2S%20rocket%20launch%20(8192711).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 240108-X-NM958-1017 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "ULA's Vulcan VC2S rocket launch (8192711).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 4932736,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A ULA Vulcan Centaur rocket at the moment of launch from Cape Canaveral, with the vehicle clearly visible as the primary subject rising through launch-pad gantries with visible ULA and American flag m"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-04",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "04",
+      "query": "Vulcan Centaur rocket ULA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vulcan%20Cert%202%20Launch%20(8699035).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20Cert%202%20Launch%20(8699035).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 241004-X-PM547-1033 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Vulcan Cert 2 Launch (8699035).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 7670384,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A Vulcan Centaur rocket is the clear primary subject at launch, captured mid-ascent from what appears to be Cape Canaveral with the ULA facility visible — a mission-defining moment and hardware showca"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-05",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "05",
+      "query": "Vulcan rocket SLC-41 Cape Canaveral",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519121).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519121).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 260212-X-KX339-1001 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "USSF-87 Successfully Launches From SLC-41 (9519121).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 3354734,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Night launch of a tall rocket with two lattice-structure launch towers characteristic of SpaceX Falcon Heavy or ULA Vulcan at Cape Canaveral SLC-41, with bright main engine ignition and visible exhaus"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-06",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "01",
+      "query": "Vulcan rocket SLC-41 Cape Canaveral",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519131).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:USSF-87%20Successfully%20Launches%20From%20SLC-41%20(9519131).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 260212-X-KX339-1008 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "USSF-87 Successfully Launches From SLC-41 (9519131).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 7800646,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Vulcan Centaur rocket is visible on the horizon as the primary subject during launch, with dramatic engine flame and exhaust plume photographed from an offshore vantage point — a striking mission-de"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-07",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "02",
+      "query": "Vulcan rocket SLC-41 Cape Canaveral",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-106%20Launch%20(9254083).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:USSF-106%20Launch%20(9254083).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 250812-X-NY190-1001 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "USSF-106 Launch (9254083).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 874782,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Vulcan Centaur launch vehicle in flight captured from the ground during twilight, showing the distinctive arc trajectory and engine plume — a mission-defining moment and the spacecraft as primary su"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-08",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "03",
+      "query": "Vulcan rocket SLC-41 Cape Canaveral",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/USSF-106%20Launch%20(9263437).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:USSF-106%20Launch%20(9263437).jpg",
+        "credit": "This image was released by the United States Space Force with the ID 250812-X-KX339-1001 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still r",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "USSF-106 Launch (9263437).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 4380877,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Vulcan Centaur rocket during ascent at dawn/dusk, captured from the ground with the characteristic orange booster plume and upper-stage arc against stars — a mission-defining launch moment with the "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-01",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "01",
+      "query": "SpaceX Starship rocket",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starhopper.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starhopper.jpg",
+        "credit": "[1]",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "SpaceX Starhopper.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 2213285,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows a Starship upper stage under active construction/refurbishment in what appears to be the Starbase facility, with visible heat-shield tiles and ground support equipment — this is the pr"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-02",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "02",
+      "query": "SpaceX Starship rocket",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Starship%20%26%20Moonset.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Starship%20%26%20Moonset.jpg",
+        "credit": "https://www.flickr.com/photos/195131646@N04/51913039252/in/album-72177720297068210/",
+        "license": "cc by-sa 2.0",
+        "metadata": {
+          "commons_file": "Starship & Moonset.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 5705533,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The image shows a fully stacked Starship vehicle (Super Heavy booster with Starship upper stage on top) on the launch tower at Starbase, illuminated at dusk — a mission-defining moment and the primary"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-03",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "03",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20during%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20during%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship during IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 3430230,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "A rocket in early-stage ascent with visible booster and upper-stage structure against twilight sky; consistent with a Starship integrated flight test launch from Starbase, but distance and lighting co"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-04",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "04",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20landing%20burn%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20landing%20burn%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship landing burn IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1130380,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A rocket with visible fins and engine exhaust plume is captured at launch or ascent in twilight conditions; the silhouette and flame profile are consistent with a Starship-class vehicle, making this a"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-05",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "05",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20landing%20IFT-5%2001.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20landing%20IFT-5%2001.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship landing IFT-5 01.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1461078,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a Starship booster or upper-stage vehicle performing a controlled landing or test burn at the launch tower at Starbase, with the distinctive chopstick-arm catching mechanism visible—a mission-"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-06",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "01",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20ignition%20during%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20ignition%20during%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship ignition during IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 812476,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A Starship integrated flight test launch at Starbase Texas — the fully stacked Super Heavy booster and Starship upper stage igniting on the pad in a mission-defining moment, with the launch tower visi"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-07",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "02",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20hot%20staging%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20hot%20staging%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship hot staging IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 215734,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.85,
+        "reason": "This appears to be a SpaceX Starship booster engine burn or reentry sequence, with the bright central plasma/flame core and surrounding expansion wave characteristic of a Raptor engine or high-velocit"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-08",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "03",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20booster%20landing%20approach%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20booster%20landing%20approach%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship booster landing approach IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1574428,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "SpaceX Starship Super Heavy booster performing a controlled landing burn at Starbase, with the tall launch tower and propellant arms visible — a defining moment of the Starship program's integrated fl"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-09",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "04",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Starship%20landing%20burn%20sonic%20boom%20IFT-5.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX%20Starship%20landing%20burn%20sonic%20boom%20IFT-5.jpg",
+        "credit": "Flickr",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "SpaceX Starship landing burn sonic boom IFT-5.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 684367,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A SpaceX Starship Super Heavy booster performing a powered landing or vertical descent burn—a mission-defining moment showing the primary hardware (booster + engine plume) as the dominant subject."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-starship-10",
+      "agency": "SpaceX",
+      "surface": "fleet-galleries",
+      "missionId": "starship",
+      "slot": "05",
+      "query": "SpaceX Starship integrated flight test",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Starship%20lifted%20off%20from%20Starbase%20during%20flight%20test%2011.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Starship%20lifted%20off%20from%20Starbase%20during%20flight%20test%2011.jpg",
+        "credit": "Own work",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "Starship lifted off from Starbase during flight test 11.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 781680,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A rocket at the moment of launch, ascending through clouds with its engines firing and exhaust plume visible — a mission-defining moment showing the launch vehicle as the primary subject, consistent w"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — SpaceX Starship — fully-reusable super-heavy launch vehicle (Super Heavy booster + Starship upper stage with Raptor engines; integrated flight tests from Boca Chica / Starbase Texas, 2023-2025)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-01",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "01",
+      "query": "James Webb Space Telescope",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20Webb%20Space%20Telescope%20Mirrors%20Will%20Piece%20Together%20Cosmic%20Puzzles%20(30108124923).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:James%20Webb%20Space%20Telescope%20Mirrors%20Will%20Piece%20Together%20Cosmic%20Puzzles%20(30108124923).jpg",
+        "credit": "https://www.flickr.com/photos/gsfc/30108124923/",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "James Webb Space Telescope Mirrors Will Piece Together Cosmic Puzzles (30108124923).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1162307,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The James Webb Space Telescope's iconic hexagonal segmented primary mirror with gold-coated beryllium segments is the unmistakable primary subject of this frame, shown during assembly or integration i"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-02",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "02",
+      "query": "James Webb Space Telescope",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter%20Showcases%20Auroras%2C%20Hazes%20(NIRCam%20Closeup).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jupiter%20Showcases%20Auroras%2C%20Hazes%20(NIRCam%20Closeup).jpg",
+        "credit": "https://www.flickr.com/photos/nasawebbtelescope/52303461859/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Jupiter Showcases Auroras, Hazes (NIRCam Closeup).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1297957,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a JWST infrared image of Jupiter showing atmospheric detail and auroral emission — the primary subject is the target body (Jupiter) captured by the mission's instruments, a legitimate hero ima"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-03",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "03",
+      "query": "James Webb Space Telescope",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20Webb%20Space%20Telescope%20on%20Launcher%20(51756638171).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:James%20Webb%20Space%20Telescope%20on%20Launcher%20(51756638171).jpg",
+        "credit": "James Webb Space Telescope on Launcher",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "James Webb Space Telescope on Launcher (51756638171).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 6214888,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The James Webb Space Telescope is the primary subject, shown during assembly or integration in a clean-room facility with its distinctive gold-coated segmented mirror, black instrument module, and pur"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-04",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "04",
+      "query": "JWST spacecraft NASA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/JWST-Spacecraft-artist's-view.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JWST-Spacecraft-artist's-view.jpg",
+        "credit": "http://www.cosmos.esa.int/documents/943129/1186454/S1_2_Valenti_operations.pptx/b4a84860-2db6-4c2e-8328-f023ab7a8634",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "JWST-Spacecraft-artist's-view.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 307582,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a detailed engineering diagram or render of JWST showing the spacecraft's primary components (segmented mirror, sunshield, solar panels, instruments) as the primary subject in space; it is a m"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-05",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "05",
+      "query": "JWST spacecraft NASA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/JWST%20spacecraft%20model%202.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JWST%20spacecraft%20model%202.png",
+        "credit": "https://science.nasa.gov/multimedia/spacecraft-icons/ (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "JWST spacecraft model 2.png",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1460978,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a detailed technical illustration of the James Webb Space Telescope showing its iconic segmented gold primary mirror, deployable sunshield (pink/magenta layers), boom arm, and solar panels — t"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-06",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "01",
+      "query": "JWST spacecraft NASA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20James%20Webb%20Space%20Telescope%20(artist's%20impression)%20(jwst%20rendering5).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20James%20Webb%20Space%20Telescope%20(artist's%20impression)%20(jwst%20rendering5).jpg",
+        "credit": "The James Webb Space Telescope (artist's impression)",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "The James Webb Space Telescope (artist's impression) (jwst rendering5).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1279614,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A spacecraft render or concept art showing the iconic gold hexagonal segmented primary mirror, multi-layer sunshield, solar panels, and deployment boom — the defining hardware of JWST is the primary s"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-07",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "02",
+      "query": "JWST spacecraft NASA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA%E2%80%99s%20Webb%20Telescope%20Completes%20Goddard%20Testing%20(34238146222).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s%20Webb%20Telescope%20Completes%20Goddard%20Testing%20(34238146222).jpg",
+        "credit": "NASA’s Webb Telescope Completes Goddard Testing",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "NASA’s Webb Telescope Completes Goddard Testing (34238146222).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 5175546,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a photograph of JWST's iconic segmented primary mirror with its distinctive hexagonal gold-coated beryllium segments and deployment mechanisms, shown in a clean-room or assembly context — the "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-08",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "03",
+      "query": "JWST mirror unfolding",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23607727573).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23607727573).jpg",
+        "credit": "By the Dozen: NASA's James Webb Space Telescope Mirrors",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "By the Dozen- NASA's James Webb Space Telescope Mirrors (23607727573).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1415237,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Clean-room assembly shot showing JWST's distinctive segmented primary mirror (dark hexagonal panels) and sunshield layers (gold-yellow reflective surfaces) as the primary subject, mounted on integrati"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-09",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "04",
+      "query": "JWST mirror unfolding",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23938941370).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:By%20the%20Dozen-%20NASA's%20James%20Webb%20Space%20Telescope%20Mirrors%20(23938941370).jpg",
+        "credit": "By the Dozen: NASA's James Webb Space Telescope Mirrors",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "By the Dozen- NASA's James Webb Space Telescope Mirrors (23938941370).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 872679,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Clean-room assembly photograph of JWST's segmented primary mirror (the distinctive gold-coated beryllium hexagonal segments visible at center) with deployment mechanisms and yellow support structure —"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-jwst-10",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "jwst",
+      "slot": "05",
+      "query": "James Webb deployment L2",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA's%20Webb%20Telescope%20Inside%20Chamber%20A%20(39110614315).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NASA's%20Webb%20Telescope%20Inside%20Chamber%20A%20(39110614315).jpg",
+        "credit": "NASA's Webb Telescope Inside Chamber A",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "NASA's Webb Telescope Inside Chamber A (39110614315).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 749899,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A spacecraft in a high-bay clean room under bright work lights, showing segmented hexagonal mirror panels and folded solar arrays—primary subject is clearly a major space telescope assembly, consisten"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — James Webb Space Telescope (JWST) — NASA/ESA/CSA infrared observatory at Sun-Earth L2, 6.5 m segmented primary mirror under a 5-layer sunshield; launched 2021-12-25 on Ariane 5"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-new-shepard-01",
+      "agency": "Blue Origin",
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "01",
+      "query": "Blue Origin New Shepard rocket",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NewShepard1.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NewShepard1.jpg",
+        "credit": "Photograph of screen; original File:New Shephard - Upright View.jpg",
+        "license": "cc by-sa 4.0",
+        "metadata": {
+          "commons_file": "NewShepard1.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1128232,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "The Blue Origin New Shepard booster is the primary subject of the frame — photographed in flight against a clear sky, showing the distinctive white cylindrical fuselage with 'Blue Origin' branding cle"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Blue Origin New Shepard — single-stage suborbital reusable rocket + crew capsule; vertical-takeoff / vertical-landing, BE-3 engine; West Texas launch site"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-new-shepard-02",
+      "agency": "Blue Origin",
+      "surface": "fleet-galleries",
+      "missionId": "new-shepard",
+      "slot": "02",
+      "query": "Blue Origin New Shepard rocket",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Blue%20Origin%20M7.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Blue%20Origin%20M7.jpg",
+        "credit": "https://www.flickr.com/photos/nasafo/albums/72157664385358297",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Blue Origin M7.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 857771,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "Blue Origin New Shepard crew capsule is the primary subject of the frame, shown post-landing in the desert with recovery team present — a mission-defining moment."
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Blue Origin New Shepard — single-stage suborbital reusable rocket + crew capsule; vertical-takeoff / vertical-landing, BE-3 engine; West Texas launch site"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-vulcan-09",
+      "agency": "NASA",
+      "surface": "fleet-galleries",
+      "missionId": "vulcan",
+      "slot": "04",
+      "query": "Vulcan rocket Peregrine Astrobotic",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped%202).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vulcan%20Centaur%20rollout%20(Peregrine)%20(cropped%202).jpg",
+        "credit": "https://www.flickr.com/photos/nasakennedy/53444731128/in/photostream/",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Vulcan Centaur rollout (Peregrine) (cropped 2).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 4472776,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "A Vulcan Centaur rocket is clearly the primary subject, shown on the launch pad in full configuration with distinctive red and white payload fairing and visible ULA/Vulcan branding; this is a direct, "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Vulcan Centaur rocket (United Launch Alliance, ULA; BE-4 engines on the main stage + Centaur V cryogenic upper stage; debut Cert-1 launch January 2024 from SLC-41 Cape Canaveral)"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-hope-01",
+      "agency": "UAESA",
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "01",
+      "query": "Hope Mars Mission UAE",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20-%20February%2024%202025%20(54844117153).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20-%20February%2024%202025%20(54844117153).png",
+        "credit": "Mars - February 24 2025",
+        "license": "cc by 4.0",
+        "metadata": {
+          "commons_file": "Mars - February 24 2025 (54844117153).png",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 5230781,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A full-disk photograph of Mars showing surface detail, atmosphere, and polar ice cap — consistent with orbital imagery from Hope or similar Mars orbiters; the target body is the primary subject and th"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Emirates Mars Mission Hope (Al Amal) — UAE Mars orbiter studying Martian atmosphere from a 20,000-43,000 km elliptical orbit; arrived Mars 2021-02-09"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-hope-02",
+      "agency": "UAESA",
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "02",
+      "query": "Emirates Mars Mission spacecraft",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Orbit%2051%20-%20Hope%20Mission%20(51570205714).png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Orbit%2051%20-%20Hope%20Mission%20(51570205714).png",
+        "credit": "Mars Orbit 51 - Hope Mission",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "Mars Orbit 51 - Hope Mission (51570205714).png",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 551858,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a photograph of Mars taken by the Hope/Emirates Mars Mission spacecraft, showing the planet as the primary subject — a direct data product from the mission's science instruments during its orb"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Emirates Mars Mission Hope (Al Amal) — UAE Mars orbiter studying Martian atmosphere from a 20,000-43,000 km elliptical orbit; arrived Mars 2021-02-09"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-hope-03",
+      "agency": "UAESA",
+      "surface": "fleet-galleries",
+      "missionId": "hope",
+      "slot": "03",
+      "query": "Al Amal probe Mars",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20-%20August%2030%202021%20-%20Flickr%20-%20Kevin%20M.%20Gill.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20-%20August%2030%202021%20-%20Flickr%20-%20Kevin%20M.%20Gill.png",
+        "credit": "Mars - August 30 2021",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "Mars - August 30 2021 - Flickr - Kevin M. Gill.png",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 7065001,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "High-resolution globe photograph of Mars showing surface features (volcanoes, canyons, polar regions) — the target body of the Hope mission and a primary subject for its gallery; the image is a clear,"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Emirates Mars Mission Hope (Al Amal) — UAE Mars orbiter studying Martian atmosphere from a 20,000-43,000 km elliptical orbit; arrived Mars 2021-02-09"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-01",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "01",
+      "query": "Solar Orbiter spacecraft ESA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20spacecraft.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20spacecraft.jpg",
+        "credit": "",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Ulysses spacecraft.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 133840,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A spacecraft with distinctive gold thermal shielding and a large dish antenna is photographed in a clean-room assembly setting; the hardware configuration and thermal protection design are consistent "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-02",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "02",
+      "query": "Solar Orbiter spacecraft ESA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20-%20artist%20rendering%20-%20b02.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20-%20artist%20rendering%20-%20b02.jpg",
+        "credit": "http://ulysses.jpl.nasa.gov/imagespage/index.html",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Ulysses - artist rendering - b02.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 146573,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Solar Orbiter spacecraft is the primary subject in the frame, positioned above the Sun in a characteristic close-approach orientation; the Sun and surrounding space environment are the mission's targe"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-03",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "03",
+      "query": "Solar Orbiter spacecraft ESA",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulysses%20spacecraft%20model.png?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ulysses%20spacecraft%20model.png",
+        "credit": "https://science.nasa.gov/toolkits/spacecraft-icons (image link)",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Ulysses spacecraft model.png",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 521274,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A spacecraft with gold-foil thermal protection, articulated solar panels, and instrument booms is shown as the clear primary subject; this matches Solar Orbiter's distinctive design and thermal shield"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-04",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "04",
+      "query": "Solar Orbiter Atlas V launch",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20Atlas%20V%20TDRS-K%20from%20Cape%20Canaveral%20AFS%20(8432926996).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Launch%20of%20Atlas%20V%20TDRS-K%20from%20Cape%20Canaveral%20AFS%20(8432926996).jpg",
+        "credit": "Launch of Atlas V TDRS-K from Cape Canaveral AFS",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Launch of Atlas V TDRS-K from Cape Canaveral AFS (8432926996).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 557039,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A rocket (Atlas V) at night launch on an illuminated pad with two gantry towers, captured at ignition/liftoff — a mission-defining moment for Solar Orbiter's 2020-02-10 launch; the spacecraft and laun"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-05",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "05",
+      "query": "Solar Orbiter heat shield",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%20STM%20(16738668300).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%20STM%20(16738668300).jpg",
+        "credit": "Solar Orbiter STM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "Solar Orbiter STM (16738668300).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 2809385,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Clean-room assembly/integration photograph showing Solar Orbiter spacecraft hardware (black multi-panel body, gold thermal structure, orange electronics panels, characteristic geometry) as the primary"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-06",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "01",
+      "query": "Solar Orbiter heat shield",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Solar%20Orbiter%20STM%20(16925121651).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Solar%20Orbiter%20STM%20(16925121651).jpg",
+        "credit": "Solar Orbiter STM",
+        "license": "cc by 2.0",
+        "metadata": {
+          "commons_file": "Solar Orbiter STM (16925121651).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 3459605,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Solar Orbiter spacecraft is the primary subject in a clean-room assembly/integration setting, shown with its distinctive black solar-panel covers and white bus module clearly visible — this is the m"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-07",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "02",
+      "query": "Solar Orbiter heat shield",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capsule%2C%20Stardust%20-%20DPLA%20-%203faeac9c83571bc0354c2d838fdcf162%20(page%203).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Capsule%2C%20Stardust%20-%20DPLA%20-%203faeac9c83571bc0354c2d838fdcf162%20(page%203).jpg",
+        "credit": "File URL Catalog record",
+        "license": "cc0",
+        "metadata": {
+          "commons_file": "Capsule, Stardust - DPLA - 3faeac9c83571bc0354c2d838fdcf162 (page 3).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 695874,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.95,
+        "reason": "This is a spacecraft artist's concept or engineering render showing Solar Orbiter's distinctive hexagonal bus with solar panel arrays and heat shield, clearly the primary subject of the frame — a stro"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-08",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "03",
+      "query": "ESA Solar Orbiter assembly",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Reconnaissance%20Orbiter%20solar%20panel.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mars%20Reconnaissance%20Orbiter%20solar%20panel.jpg",
+        "credit": "",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Mars Reconnaissance Orbiter solar panel.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 1011812,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Clean-room assembly scene showing Solar Orbiter spacecraft as primary subject: the bus with distinctive solar-panel wings and instrument boom are clearly visible; technician is actively working on the"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-solar-orbiter-09",
+      "agency": "ESA",
+      "surface": "fleet-galleries",
+      "missionId": "solar-orbiter",
+      "slot": "04",
+      "query": "ESA Solar Orbiter assembly",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Assembly%20of%20Landsat's%20TIRS%20Instrument%20(6791317669).jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Assembly%20of%20Landsat's%20TIRS%20Instrument%20(6791317669).jpg",
+        "credit": "Assembly of Landsat's TIRS Instrument",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Assembly of Landsat's TIRS Instrument (6791317669).jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 5426551,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Two technicians in cleanroom garments assembling or servicing spacecraft hardware with gold thermal blankets and multi-layer insulation — consistent with Solar Orbiter pre-flight integration, the spac"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Solar Orbiter — ESA + NASA spacecraft studying the Sun + heliosphere from close-in highly inclined orbits (perihelion ~0.28 AU); launched 2020-02-10 by Atlas V"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-xichang-lc-3-01",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "01",
+      "query": "Xichang Satellite Launch Center",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Launch%20of%20Long%20March%203B%20Rocket.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The%20Launch%20of%20Long%20March%203B%20Rocket.jpg",
+        "credit": "Own work",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "The Launch of Long March 3B Rocket.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 205210,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "A Long March 3 rocket with its distinctive four strap-on boosters is captured at the moment of launch from what appears to be Xichang LC-3, with the launch tower and pad infrastructure clearly visible"
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Xichang Satellite Launch Center, Launch Complex 3 (LC-3) — CNSA Long March 3 series launch pad in Sichuan, China"
+      ]
+    },
+    {
+      "proposal_id": "hsfr-fleet-galleries-xichang-lc-3-02",
+      "agency": "CNSA",
+      "surface": "fleet-galleries",
+      "missionId": "xichang-lc-3",
+      "slot": "02",
+      "query": "Xichang Satellite Launch Center",
+      "currentSource": "on-disk-non-space-or-irrelevant",
+      "proposed": {
+        "tier": 1,
+        "source_type": "wikimedia-commons",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang%20zheng%203b%20and%20intelsat708%20failure.jpg?width=1600",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chang%20zheng%203b%20and%20intelsat708%20failure.jpg",
+        "credit": "",
+        "license": "public domain",
+        "metadata": {
+          "commons_file": "Chang zheng 3b and intelsat708 failure.jpg",
+          "sourcing_round": "full-resource-2026-06-23"
+        }
+      },
+      "size_bytes": 138015,
+      "vision_v3": {
+        "verdict": "related",
+        "confidence": 0.92,
+        "reason": "Image 1 shows the Proton-Xichang launch pad with the Long March 3B rocket on the pad at night, which is the primary subject and directly documents the Intelsat 708 launch facility and vehicle moments "
+      },
+      "survivor": true,
+      "drop_reasons": [],
+      "notes": [
+        "full re-source — Xichang Satellite Launch Center, Launch Complex 3 (LC-3) — CNSA Long March 3 series launch pad in Sichuan, China"
+      ]
     }
   ],
-  "last_manual_source_pass_at": "2026-06-19T06:28:04.685Z"
+  "last_manual_source_pass_at": "2026-06-19T06:28:04.685Z",
+  "stats": {
+    "handsource_appended_at": "2026-06-22T08:52:01.231Z",
+    "handsource_added": 28,
+    "handsource_try_harder_appended_at": "2026-06-22T09:41:46.126Z",
+    "handsource_try_harder_added": 1,
+    "handsource_native_wiki_appended_at": "2026-06-22T09:44:33.384Z",
+    "handsource_native_wiki_added": 0,
+    "handsource_no_vision_appended_at": "2026-06-22T09:47:50.900Z",
+    "handsource_no_vision_added": 25,
+    "handsource_6_weak_appended_at": "2026-06-23T12:01:25.669Z",
+    "handsource_6_weak_added": 6,
+    "handsource_full_resource_appended_at": "2026-06-23T13:26:43.382Z",
+    "handsource_full_resource_added": 15,
+    "handsource_hope_appended_at": "2026-06-23T13:35:30.118Z",
+    "handsource_hope_added": 0
+  }
 }

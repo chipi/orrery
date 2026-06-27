@@ -1,0 +1,14 @@
+{
+  "title": "Eixo da Janela de Partida",
+  "intro_sentence": "Quando você lança — percorrendo o eixo X, tipicamente um período de quatro anos amostrado diariamente.",
+  "narrative_101": [
+    "Leia o porkchop como um calendário. O eixo horizontal — da esquerda para a direita — é a data em que você deixa a Terra. Cada coluna de pixel é um dia de lançamento diferente. Orrery amostra com resolução de um dia ao longo de aproximadamente quatro anos; isso é suficiente para capturar dois ciclos sinódicos completos, o que é suficiente para ver o padrão da janela de lançamento se repetir.",
+    "Olhe ao longo da linha de células de baixo custo (o lobo azul-turquesa) e você pode ler, no calendário, exatamente quando são as janelas de lançamento. Para Marte, elas ocorrem aproximadamente a cada 26 meses. Para Vênus, a cada 19. Para Júpiter, a cada 13. Cada zona de baixo custo é uma janela — fora dessas zonas, o calendário está trabalhando contra você.",
+    "Quando você ajusta o seletor de ano de lançamento em /plan, você está deslizando o eixo X. Ano diferente, posicionamento de janela diferente, mas a física subjacente é a mesma. É por isso que o planejamento de missões é orientado por calendário: as zonas de baixo custo não se movem só porque temos um prazo."
+  ],
+  "body_paragraphs": [
+    "O eixo X indica quando você deixa a Terra. Cada coluna de pixel é uma data de lançamento diferente — para os gráficos do Orrery, amostrados com resolução de um dia ao longo de aproximadamente quatro anos. Por que um período de quatro anos? Porque o período sinódico Terra-Marte é de 26 meses; você precisa de pelo menos dois ciclos sinódicos para capturar o padrão recorrente da janela de lançamento.",
+    "Leia o eixo X como um calendário. Os lobos de baixo custo (a 'carne' do porkchop) ficam em intervalos previsíveis. Para Marte: a cada ~26 meses. Para Vênus: a cada ~19 meses. Para Júpiter: a cada ~13 meses (Júpiter se move lentamente o suficiente para que o período sinódico seja próximo ao ano terrestre).",
+    "Em `/plan` o rótulo do eixo X é `DEPARTURE WINDOW · 2026 — 2030`. As datas literais do calendário aparecem na dica de ferramenta quando você passa o mouse."
+  ]
+}

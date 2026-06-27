@@ -10,6 +10,30 @@
       "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105)."
     },
     {
+      "id": "nasa-hirise",
+      "name": "NASA · HiRISE (MRO)",
+      "kind": "research-institute",
+      "url": "https://www.uahirise.org/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "HiRISE camera on Mars Reconnaissance Orbiter — NASA / JPL-Caltech / University of Arizona. Public domain (17 U.S.C. § 105); attribute the source."
+    },
+    {
+      "id": "nasa-ctx",
+      "name": "NASA · CTX — Murray Lab Mosaic (MRO)",
+      "kind": "research-institute",
+      "url": "https://murray-lab.caltech.edu/CTX/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "CTX camera on Mars Reconnaissance Orbiter (NASA / JPL-Caltech / MSSS), blended into the Global CTX Mosaic by Caltech Murray Lab (Dickson et al. 2024, doi:10.1029/2024EA003555). Cite the mosaic paper."
+    },
+    {
+      "id": "jaxa-kaguya-tc",
+      "name": "JAXA · Kaguya TC (SELENE)",
+      "kind": "research-institute",
+      "url": "https://www.kaguya.jaxa.jp/",
+      "logo_path": "/logos/jaxa.svg",
+      "license_summary": "Terrain Camera on JAXA's SELENE (Kaguya) lunar orbiter — ~6 m/px regional context for /moon landing zones (the CTX-equivalent layer). JAXA open-data policy; redistributed as USGS Astrogeology Analysis Ready Data. Attribute JAXA / SELENE (Kaguya) Terrain Camera."
+    },
+    {
       "id": "esa",
       "name": "European Space Agency",
       "kind": "space-agency",

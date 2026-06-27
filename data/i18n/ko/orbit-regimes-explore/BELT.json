@@ -1,0 +1,42 @@
+{
+  "name": "소행성 메인 벨트",
+  "short": "BELT",
+  "story": "화성과 목성 사이의 암석 잔해 고리 — 2.2~3.2 AU. 수십만 개의 천체가 목록화되어 있으며, 총 추정 질량은 달의 4% 미만입니다. 공상과학 소설에 나오는 빽빽하게 채워진 소행성대가 아닙니다: 천체 간 일반적인 간격은 약 100만 킬로미터입니다. 이 벨트가 행성으로 합쳐지지 못한 이유는 목성의 중력이 궤도를 계속 교란하여 충돌이 결합되는 것을 막았기 때문입니다. 세 개의 커크우드 간격은 소행성이 제거되는 목성과의 공명 지점을 표시합니다.",
+  "comparison": "Ceres(가장 큰 천체)에 서 있다면 망원경 없이는 다른 소행성을 보기 어려울 것입니다. 벨트의 총 질량은 대략 Pluto의 질량과 비슷합니다.",
+  "residents": [
+    {
+      "id": "ceres",
+      "label": "Ceres — 가장 큰 천체, 왜행성",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "vesta",
+      "label": "Vesta — 두 번째로 큰, 가장 밝은",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "pallas",
+      "label": "Pallas — 세 번째로 큰",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "hygiea",
+      "label": "Hygiea — 네 번째로 큰, 왜행성 가능성",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1801,
+      "label": "Ceres — 최초로 발견된 소행성 (Piazzi, Italy)"
+    },
+    {
+      "year": 2011,
+      "label": "Dawn — 최초의 전용 소행성 궤도선 (Vesta, USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

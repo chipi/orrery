@@ -1,0 +1,44 @@
+{
+  "name": "OSIRIS-REx",
+  "type": "RETORNO DE AMOSTRA · REALIZADO",
+  "first": "Maior amostra de asteroide já retornada (121,6 g de Bennu, entregue à Terra em 24/09/2023)",
+  "description": "OSIRIS-REx executou a mais precisa missão de encontro com asteroide já realizada. Lançada em 08/09/2016 de Cape Canaveral em um Atlas V 411, utilizou uma assistência gravitacional da Terra em 2017 para rotacionar seu plano orbital para a inclinação de 6° de Bennu, e encontrou o asteroide carbonáceo próximo à Terra de 492 m em 03/12/2018. Manteve estação a 1,4 km — a órbita de nave espacial mais próxima já realizada ao redor de qualquer corpo celeste. Passou dois anos mapeando a superfície repleta de rochas de Bennu e descobrindo ejeções ativas de partículas. Em 20/10/2020 o braço amostrador Touch-and-Go desceu ao sítio Nightingale, disparou gás N₂ na superfície e capturou uma pluma — afundando 50 cm em uma superfície 'fluida de pilha de escombros'. A Cápsula de Retorno de Amostra entregou 121,6 g de material de Bennu em Utah em 24/09/2023. A própria nave foi imediatamente redesignada OSIRIS-APEX, a caminho de um encontro com Apophis em 2029.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlas V 411 de Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 380,
+      "label": "ASSISTÊNCIA GRAVITACIONAL DA TERRA",
+      "note": "22/09/2017, 17.237 km sobre a Antártida — rotaciona o plano orbital para a inclinação de 6° de Bennu.",
+      "type": "info"
+    },
+    {
+      "met": 816,
+      "label": "ENCONTRO COM BENNU",
+      "note": "Mantém estação a 1,4 km — órbita de nave espacial mais próxima já realizada ao redor de qualquer corpo celeste.",
+      "type": "info"
+    },
+    {
+      "met": 1503,
+      "label": "COLETA DE AMOSTRA TAG",
+      "note": "20/10/2020. Braço Touch-and-Go afunda 50 cm na superfície de pilha de escombros; captura 121,6 g.",
+      "type": "info"
+    },
+    {
+      "met": 1705,
+      "label": "PARTIDA DE BENNU",
+      "note": "10/05/2021. Cruzeiro de 2,5 anos de volta à Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 2572,
+      "label": "RETORNO DE AMOSTRA",
+      "note": "24/09/2023. SRC cai de paraquedas no Utah Test and Training Range; nave se torna OSIRIS-APEX.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "L2 Terre-Lune",
+  "short": "L2",
+  "story": "Le point de Lagrange situé à 64 500 km derrière la Lune vu depuis la Terre — la selle gravitationnelle où les forces terrestres, lunaires et centrifuges s'équilibrent. La Lune se trouve toujours entre le vaisseau spatial et la Terre, rendant les communications directes impossibles — mais un satellite stationné ici en orbite de halo AUTOUR de L2 a une ligne de visée vers la face cachée lunaire ET la Terre. C'est ainsi que la Chine a posé Chang'e 4 sur la face cachée en 2019 : le satellite relais Queqiao, stationné en halo autour de L2 Terre-Lune, transmet chaque commande et chaque image.",
+  "comparison": "Environ 1/6 de la distance entre la Terre et la Lune. Sans relais en L2, toute la face cachée lunaire est en coupure de communication — chaque vaisseau spatial qui s'y est posé en a eu besoin.",
+  "residents": [
+    {
+      "id": "queqiao",
+      "label": "Queqiao — relais face cachée de Chang'e 4 (2018)",
+      "agency": "CNSA"
+    },
+    {
+      "id": "queqiao-2",
+      "label": "Queqiao-2 — relais face cachée de Chang'e 6 (2024)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2018,
+      "label": "Queqiao — premier relais opérationnel en L2 Terre-Lune (Chine)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

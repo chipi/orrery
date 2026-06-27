@@ -1,0 +1,29 @@
+{
+  "name": "Órbita de Halo Casi Rectilínea",
+  "short": "NRHO",
+  "story": "No es realmente una órbita alrededor de la Luna, sino más bien un largo trazado en forma de ocho alrededor de los puntos de Lagrange L1 y L2 del sistema Tierra-Luna, acercándose al polo sur lunar en el perilunar (~3.000 km) y extendiéndose muy por encima del polo norte en el apolunar (~70.000 km). La geometría ofrece dos ventajas: línea de visión continua hacia la Tierra (sin interrupción de comunicaciones) y un consumo de combustible para mantenimiento de estación muy bajo, unos pocos m/s al año. La Lunar Gateway de la NASA, cuando vuele, estará en NRHO. CAPSTONE voló allí en 2022 como precursor.",
+  "comparison": "Una NRHO completa un ciclo cada ~7 días, aproximadamente un cuarto del período orbital de la propia Luna. La nave espacial está siempre cerca de la región del polo sur, pero nunca directamente encima de él.",
+  "residents": [
+    {
+      "id": "capstone",
+      "label": "CAPSTONE — precursor de NRHO",
+      "agency": "NASA"
+    },
+    {
+      "id": "gateway",
+      "label": "Lunar Gateway — puesto tripulado planificado",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2022,
+      "label": "CAPSTONE — primer vuelo operacional en NRHO (EE. UU.)",
+      "mission_id": ""
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "rover_id": "perseverance",
+  "patches": [
+    {
+      "id": "sol-38",
+      "lat": 18.44532,
+      "lon": 77.4421,
+      "kind": "helicopter",
+      "label": "Ingenuity Flight 1",
+      "image": "/images/hotspots/mars/perseverance/traverse/sol-38.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-200",
+      "lat": 18.44638,
+      "lon": 77.4402,
+      "kind": "sample",
+      "label": "Sample 1 — Rochette",
+      "image": "/images/hotspots/mars/perseverance/traverse/sol-200.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-421",
+      "lat": 18.45313,
+      "lon": 77.42592,
+      "kind": "sample",
+      "label": "Three Forks sample depot",
+      "image": "/images/hotspots/mars/perseverance/traverse/sol-421.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-750",
+      "lat": 18.46316,
+      "lon": 77.41162,
+      "kind": "feature",
+      "label": "Hawksbill Gap",
+      "image": "/images/hotspots/mars/perseverance/traverse/sol-750.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "sol-1000",
+      "lat": 18.47746,
+      "lon": 77.39321,
+      "kind": "feature",
+      "label": "Margin unit traverse",
+      "image": "/images/hotspots/mars/perseverance/traverse/sol-1000.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-01",
+      "lat": 18.4447,
+      "lon": 77.4508,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-01.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-02",
+      "lat": 18.44798536712991,
+      "lon": 77.43325995576356,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-02.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-03",
+      "lat": 18.453645387516605,
+      "lon": 77.4338218492485,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-03.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-04",
+      "lat": 18.457959741545928,
+      "lon": 77.4320173280626,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-04.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-05",
+      "lat": 18.459580583171775,
+      "lon": 77.42604426429504,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-05.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-06",
+      "lat": 18.46276960402253,
+      "lon": 77.4181263691215,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-06.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-07",
+      "lat": 18.46831144439516,
+      "lon": 77.4066311427203,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-07.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-08",
+      "lat": 18.469413477904787,
+      "lon": 77.39841245272525,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-08.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-09",
+      "lat": 18.473211665887025,
+      "lon": 77.39451624456133,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-09.jpg",
+      "product_id": "ESP_046060_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-10",
+      "lat": 18.481321538665267,
+      "lon": 77.38608435683366,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-10.jpg",
+      "product_id": "ESP_055290_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-11",
+      "lat": 18.484746768958658,
+      "lon": 77.37807467416887,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-11.jpg",
+      "product_id": "ESP_055290_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    },
+    {
+      "id": "km-12",
+      "lat": 18.487450907669682,
+      "lon": 77.37047376230815,
+      "kind": "route",
+      "image": "/images/hotspots/mars/perseverance/traverse/km-12.jpg",
+      "product_id": "ESP_055290_1985",
+      "resolution_m_per_px": 0.25,
+      "ground_m": 512
+    }
+  ]
+}

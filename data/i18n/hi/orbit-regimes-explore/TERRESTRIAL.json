@@ -1,0 +1,49 @@
+{
+  "name": "आंतरिक स्थलीय ग्रह",
+  "short": "TERRA",
+  "story": "चट्टानी आंतरिक सौर मंडल — सूर्य से 0.4 से 1.5 AU की दूरी पर। धात्विक कोर, सिलिकेट मेंटल और पतले या कोई वायुमंडल नहीं वाले चार छोटे विश्व। ये हिमांक रेखा के अंदर बने, जहाँ अस्थिर बर्फों के संघनित होने के लिए बहुत गर्म था, इसलिए केवल दुर्दम्य पदार्थ (सिलिकेट, लोहा, निकल) ठोस रहे। चारों में से तीन मानवयुक्त अन्वेषण के लक्ष्य रहे हैं (पृथ्वी, चंद्रमा, मंगल-अभिमुख)।",
+  "comparison": "चारों स्थलीय ग्रह Jupiter के Great Red Spot के अंदर समा जाएंगे। चारों मिलकर सौर मंडल के ग्रहीय द्रव्यमान का 0.5% से भी कम रखते हैं।",
+  "residents": [
+    {
+      "id": "mercury",
+      "label": "Mercury — 0.39 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "venus",
+      "label": "Venus — 0.72 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "earth",
+      "label": "Earth — 1.00 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "mars",
+      "label": "Mars — 1.52 AU",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1962,
+      "label": "Mariner 2 — पहला Venus फ्लाईबाई (USA)",
+      "mission_id": "mariner-2"
+    },
+    {
+      "year": 1965,
+      "label": "Mariner 4 — पहला Mars फ्लाईबाई (USA)",
+      "mission_id": "mariner-4"
+    },
+    {
+      "year": 1974,
+      "label": "Mariner 10 — पहला Mercury फ्लाईबाई (USA)",
+      "mission_id": "mariner-10"
+    }
+  ],
+  "science_link": {
+    "tab": "planets",
+    "section": "planetary-stats"
+  }
+}

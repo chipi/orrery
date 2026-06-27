@@ -1,0 +1,33 @@
+{
+  "name": "Órbita Altamente Elíptica",
+  "short": "HEO",
+  "story": "Não é uma altitude, é uma forma. Uma elipse alongada com um perigeu baixo (perto da Terra) e um apogeu muito alto (às vezes mais alto que GEO). O orbitador passa a maior parte do tempo perto do apogeu, pairando lentamente sobre latitudes altas — o truque que engenheiros soviéticos usaram para obter comunicações contínuas sobre as regiões polares da Rússia, onde um satélite GEO sobre o equador fica baixo demais no horizonte para ser visto. Usado hoje para alerta de mísseis, rastreamento do espaço profundo e banda larga em altas latitudes.",
+  "comparison": "O apogeu pode alcançar 1/8 do caminho até a Lua; o perigeu pode roçar o topo de LEO. O orbitador dispara perto da Terra e rasteja no topo.",
+  "residents": [
+    {
+      "id": "molniya",
+      "label": "Molniya — HEO russo de comunicações",
+      "agency": "ROSCOSMOS"
+    },
+    {
+      "id": "tundra",
+      "label": "Tundra — constelação SiriusXM",
+      "agency": "NASA"
+    },
+    {
+      "id": "ibex",
+      "label": "IBEX — mapeador da heliosfera",
+      "agency": "NASA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1965,
+      "label": "Molniya 1-01 — primeiro satélite de comunicações altamente elíptico (USSR)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

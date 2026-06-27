@@ -1,0 +1,11 @@
+{
+  "name": "Sphère de Hill martienne",
+  "short": "HILL",
+  "story": "La limite extérieure de l'autorité gravitationnelle de Mars — environ 1,08 million de kilomètres du centre de la planète. À l'intérieur de cette sphère, la gravité de Mars l'emporte sur celle du Soleil ; à l'extérieur, le Soleil récupère tout ce que vous laissez derrière vous. La sphère de Hill de Mars est plus petite que celle de la Terre (1,5 M km) car Mars a moins de masse, même si Mars se trouve plus loin du Soleil. Les deux lunes martiennes orbitent profondément à l'intérieur (Deimos à 2 % du rayon de Hill). Aucun vaisseau spatial n'a été placé près de la frontière.",
+  "comparison": "Approximativement la distance entre la Terre et le point de Lagrange L2 Terre-Lune. Tout ce qui est capturé dans une trajectoire vers Mars doit dissiper assez d'énergie pour rester à l'intérieur de cette limite, sinon le Soleil le ramènera en orbite solaire.",
+  "firsts": [],
+  "science_link": {
+    "tab": "orbits",
+    "section": "hill-sphere"
+  }
+}

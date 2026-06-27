@@ -1,0 +1,142 @@
+{
+  "intro_heading": "Dus je wilt een raket naar Mars vliegen.",
+  "intro_paragraphs": [
+    "Welkom. Dit is het deel van Orrery waar de knoppen ophouden met magie zijn. Elk label in de HUD, elke gekleurde contourlijn in de porkchop, elke brandmarkering op de baan — dit onderdeel legt uit waar het vandaan komt. Lees het als een stripverhaal: de diagrammen doen het meeste werk, en elke term in cursief is een link die je zo diep kunt volgen als je wilt.",
+    "We gaan samen een raket bouwen. Geen letterlijke — Orrery is een simulator — maar dezelfde keten van beslissingen die een echt vluchtteam neemt, in de volgorde waarin ze ze zouden nemen. Aan het eind weet je waarom lanceervensters voor Mars om de 26 maanden voorkomen en elke maand voor de Maan, waarom een free-return-baan bestaat, en waarom stuwkracht het goedkoopste onderdeel van een missie is en brandstof de hele strijd."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — Zwaartekracht is de enige fysica die ertoe doet.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Een ellips met de Zon in één brandpunt.",
+      "diagram_caption": "Eén lichaam, één brandpunt, één ellips. Dat is het hele zonnestelsel.",
+      "paragraphs": [
+        "Vergeet raketten even. Sta op de Aarde, gooi een honkbal zo hard als je kunt. Hij komt terug naar beneden. Gooi harder, hij landt verder. Gooi zo hard dat de grond sneller wegkromt dan de bal valt, en de bal mist de planeet — voor altijd. Dat is een [baan](orbits/keplerian-orbit). Elk ruimtevaartuig, elke planeet, elke rots in de asteroïdengordel doet deze truc rond iets zwaardere.",
+        "Een baan is een ellips. Hij heeft een [grootte](orbits/semi-major-axis), een [vorm](orbits/eccentricity) (rond versus uitgerekt), een [helling](orbits/inclination), en een fase die je vertelt waar op de ellips het ruimtevaartuig zich nu bevindt ([ware anomalie](orbits/true-anomaly)). Vijf getallen en je kunt de positie van elk object in het zonnestelsel voorspellen, voor altijd, zonder andere gegevens. Dat zijn [Keplers drie wetten](orbits/keplers-laws), opgeschreven in 1609 — ze werken nog steeds.",
+        "De meest nuttige vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij aphelium: 29,3 km/s. Dezelfde baan, dezelfde energie, verschillende snelheid."
+      ]
+    },
+    {
+      "heading": "2 — De raketvergelijking is de eindbaas.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Massaverhouding-curve: ∆v stijgt logaritmisch met hoeveel brandstof je verbrandt.",
+      "diagram_caption": "De wrede waarheid: je ∆v verdubbelen betekent veel meer dan 2× de brandstof verbranden.",
+      "paragraphs": [
+        "Nu: hoe verander je van baan? Je verbrandt brandstof. [∆v](propulsion/dv-budget) (\"delta-v\") is de universele munteenheid van ruimtevaart — de totale snelheidsverandering die een missie nodig heeft. Elke beweging die je maakt op een baan heeft een prijskaartje in km/s.",
+        "En die prijs is brutaal. De [Tsiolkovsky-raketvergelijking](propulsion/tsiolkovsky) zegt dat ∆v schaalt met de logaritme van hoeveel van je raket brandstof is. Wil je twee keer de ∆v? Je draagt niet twee keer de brandstof — je draagt exponentieel meer. Daarom was een Saturn V voor 90% stuwstof. Het grootste deel van de raket is de brandstof die de brandstof tilt die de brandstof tilt die het ruimtevaartuig tilt.",
+        "Twee getallen bestrijden deze zwaartekrachtbelasting. Stuwkracht vertelt je hoe hard de motor duwt — dat is het getal waar niemand echt om geeft na de lancering. [Specifieke impuls](propulsion/specific-impulse) vertelt je hoe efficiënt de motor duwt — en dat is degene die ertoe doet. Een chemische raket haalt ~450 seconden. Een ionenmotor haalt 4.000+ — nipt maandenlang aan brandstof en presteert beter dan alles chemisch voor ruimtereizen naar de diepe ruimte.",
+        "Beste goocheltruc van allemaal: het [Oberth-effect](propulsion/oberth-effect). Je motor aansteken wanneer je al snel beweegt (laag en dicht bij een planeet) geeft je veel meer resultaat voor dezelfde brandstof. Daarom doet elke interplanetaire missie zijn grote vertrekbrand bij perigeum, dicht tegen de Aarde, zo snel als de fysica toestaat. Gratis energie uit geometrie."
+      ]
+    },
+    {
+      "heading": "3 — Zodra je in een baan bent, ben je halverwege naar overal.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Een ellips die raakt aan de baan van de Aarde en de baan van Mars.",
+      "diagram_caption": "Twee branden, één ellips. De goedkoopste manier om van baan te veranderen.",
+      "paragraphs": [
+        "Robert Heinlein schreef het: \"Zodra je in een baan bent, ben je halverwege naar overal in het zonnestelsel.\" Hij grapte niet. Het bereiken van een lage Aardbaan kost ~9,4 km/s aan ∆v. Van daaruit naar Mars gaan kost nog eens ~3,6 km/s. Het moeilijkste deel ligt al achter je.",
+        "De goedkoopste interplanetaire route is een [Hohmann-transfer](transfers/hohmann-transfer): een ellips die net de baan van de Aarde aan het ene eind kust en de baan van de bestemming aan de andere kant. Twee branden, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
+        "Wil je sneller gaan? Los een [Lambert-probleem](transfers/lambert-problem) op — kies je vertrekdatum en je reistijd, en Lambert vertelt je de unieke [transferellips](transfers/transfer-ellipse) die ze verbindt. Dat is precies wat Orrery's [/plan](app:/plan)-scherm doet, tienduizend keer parallel, om een porkchop-grafiek te tekenen.",
+        "Moet je nog verder? Steel snelheid van een planeet. Een [zwaartekrachtassistentie](transfers/gravity-assist) gebruikt een scheervlucht om je baan te veranderen zonder brandstofkosten — Voyager 2 gebruikte er vier om Neptunus te bereiken. Het hele zonnestelsel is aan elkaar genaaid als [patched conics](transfers/patched-conics): een reeks [kegelsnede](transfers/conic-sections)-bogen doorgegeven tussen zwaartekrachtbuurten zoals stokjes in een estafetterace."
+      ]
+    },
+    {
+      "heading": "4 — Kies een lanceervenster, of wacht twee jaar.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "De klassieke porkchop-contourplot — vertrekdatum op x, vliegtijd op y.",
+      "diagram_caption": "Een porkchop. Elke contour is constante ∆v; de lob is wanneer de natuur Mars goedkoop maakt.",
+      "paragraphs": [
+        "De Aarde en Mars blijven niet stilstaan. De Aarde racet elke 365 dagen rond de Zon, Mars elke 687. Hun relatieve geometrie herhaalt zich alleen om de ~26 maanden — en de meeste van die maanden staan de planeten te ver uit elkaar, aan de verkeerde kanten van de Zon, om goedkoop te bereiken. Missieontwerp begint met een kalender, niet met een raket.",
+        "De [porkchop-plot](porkchop/what-is-a-porkchop) is hoe ingenieurs dit zien. Vertrekdatum langs [één as](porkchop/departure-axis), [vliegtijd](porkchop/tof-axis) langs de andere, ∆v als een [kleurenwarmtekaart](porkchop/dv-heatmap). Goedkope zones verschijnen als ovale lobben — de lanceervensters. Buiten de lob: rood, duur, onmogelijk-met-huidige-raketten. [De contouren lezen](porkchop/contour-reading) is de helft van het werk van een vluchtdynamicus.",
+        "Twee technische termen die je overal ziet: [C3](propulsion/c3) is de lanceerenergie die je raket nodig heeft om de zwaartekrachtkuil van de Aarde te verlaten. [V∞](propulsion/v-infinity) (\"v-oneindig\") is je snelheid relatief aan de bestemming op het moment dat je aankomt. Beide komen rechtstreeks uit de porkchop-wiskunde."
+      ]
+    },
+    {
+      "heading": "5 — De vlucht is slechts vijf fasen die zich herhalen.",
+      "diagram": "edl.svg",
+      "diagram_alt": "Atmosferische intrede, parachute-ontplooiing, retropropulsie, landing.",
+      "diagram_caption": "Intrede, afdaling, landing. Zes minuten pure terreur.",
+      "paragraphs": [
+        "Vrijwel elke interplanetaire missie, van Voyager tot Perseverance, voert hetzelfde script uit:",
+        "[Lancering](mission-phases/launch) — uit de atmosfeer en in een lage Aardbaan. [Trans-X Injectie](mission-phases/trans-x-injection) — een enkele harde brand bij perigeum die je op de transferellips naar de Maan (TLI), Mars (TMI), Venus (TVI), of Jupiter (TJI) slingert. [Baancorrectiemanoeuvers](mission-phases/tcm) — kleine branden tijdens de reis om dispersiefouten te corrigeren. Meestal 1–3 ervan. [Baaninvoering](mission-phases/orbit-insertion) — een remburn bij de bestemming om je in een gevangen baan te buigen. [EDL](mission-phases/edl) — Entry, Descent, Landing — voor de lander. Zes minuten supersonische atmosferische chaos.",
+        "Maanmissies maken soms een omweg door een [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway zal in één wonen), en bemande Apollo-vluchten vlogen [free-return-banen](transfers/free-return) — achtvormige paden die je automatisch terug naar de Aarde laten vallen als elke motor op het ruimtevaartuig sterft. Apollo 13 dankt zijn leven aan deze geometrie."
+      ]
+    },
+    {
+      "heading": "6 — Afstanden en tijd, want niets hiervan is Aarde-formaat.",
+      "diagram": "au.svg",
+      "diagram_alt": "De astronomische eenheid, gemarkeerd langs de baan-straal van de Aarde.",
+      "diagram_caption": "Eén AU = één Aarde-Zon-afstand. Mars is ~1,5 AU. Jupiter is ~5,2.",
+      "paragraphs": [
+        "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AU) is de gemiddelde Aarde-Zon-afstand — 150 miljoen km. We meten het zonnestelsel in AU omdat kilometers snel onhandelbaar worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang het duurt voordat een radiosignaal een ruimtevaartuig bereikt. Mars: 4 tot 24 minuten enkel. Je kunt een rover niet vanaf de Aarde besturen met een joystick. Alles belangrijke is autonoom.",
+        "Het [J2000-tijdperk](scales-time/j2000) is de kalendernul die elke astrodynamus gebruikt. [Siderische versus synodische perioden](scales-time/sidereal-synodic) verklaren waarom Mars-vensters elke 26 maanden terugkomen in plaats van elke 23. Het [eclipticavlak](scales-time/ecliptic-plane) is de platte schijf waarop alle planeten (meestal) liggen. [Referentiekaders](scales-time/frames) zijn de coördinatensystemen die missiecontrole jongleert tussen Aarde-gecentreerde, Zon-gecentreerde en lichaam-gecentreerde weergaven."
+      ]
+    },
+    {
+      "heading": "7 — Mensen zijn hier niet voor gebouwd.",
+      "diagram": "_cover-life-in-space.svg",
+      "diagram_alt": "Een gestileerde astronaut zwevend in microzwaartekracht met bot/spier/tegenmaatregel-indicatorbalken.",
+      "diagram_caption": "Bot, spier, zicht, vestibulaire systeem, immuunsysteem — alles bedraden opnieuw in microzwaartekracht, en niet richting de Aarde.",
+      "paragraphs": [
+        "Breng zes maanden door in een baan en je komt terug kleiner, lichter en korter dan toen je vertrok. [Microzwaartekracht](life-in-space/microgravity-physiology) is de hoofdoorzaak: vloeistoffen herverdelen zich naar het hoofd, de houdingsspieren worden ontlast, de [botten](life-in-space/bone-density-loss) verliezen 1–2% van hun mineralen per maand, het [vestibulaire systeem](life-in-space/vestibular-adaptation) geeft het op om \"beneden\" te vinden. De [tegenmaatregelen](life-in-space/muscle-atrophy) — twee uur weerstandstraining en aerobe oefening per dag op ARED + de loopband — vertragen het zonder het op te lossen.",
+        "[Straling](life-in-space/radiation-exposure) is het moeilijkere probleem. Het ISS krijgt ~200 mSv/jaar (versus 3 mSv achtergrond op Aarde); diepe ruimte buiten de magnetosfeer is 600+ mSv/jaar, zonder goede afschermingsstrategie tot nu toe. Een Mars-reis zou een bemanningslid bij de carrièrelimiet voor kankerrisico brengen in één enkele rondreis.",
+        "Dan is er nog [EVA](life-in-space/eva-physiology) (een 6-uur durende uithoudingsevenement in een 4,3 psi zuurstofreinpak) en [langdurige effecten](life-in-space/long-duration-effects) zoals SANS — Space-Associated Neuro-ocular Syndrome — waarbij 60% van langvliegende bemanning meetbare oogveranderingen ontwikkelt die niet volledig omkeren. Dit zijn de onopgeloste problemen die tussen de mensheid en Mars staan."
+      ]
+    },
+    {
+      "heading": "8 — Alles wat we over het heelal weten is als een foton aangekomen.",
+      "diagram": "_cover-observation.svg",
+      "diagram_alt": "Een ruimtetelescoop gericht op een verre melkweg met een representatief emissiespectrum eronder.",
+      "diagram_caption": "Telescoop + filter + spectrograaf + wiskunde. Bijna elk feit over de kosmos werd gereconstrueerd uit licht.",
+      "paragraphs": [
+        "[Ruimtefotografie](observation/space-photography) is niet wat mensen denken dat het is. Er is geen sluiter die klikt; elke waarnemingsafbeelding die je hebt gezien is een stapel lange belichtingen door smalbandfilters, gekalibreerd, geregistreerd, valse kleur toegewezen. De hardware is een CCD- of CMOS-sensor — een raster van foton-tellers — en de gegevens zijn het aantal, niet de afbeelding. De afbeelding is wat mensen van het aantal maken.",
+        "[Adaptieve optica](observation/adaptive-optics) verslaat de atmosfeer door de vervorming ervan in realtime te meten en de spiegel te buigen om het te annuleren. [Coronagrafen](observation/coronagraphs) blokkeren de centrale ster om de planeten te zien die eromheen draaien. [Spectroscopie](observation/spectroscopy) leest de chemische samenstelling van een ster uit de absorptielijnen in zijn licht. [Interferometrie](observation/interferometry) naait afzonderlijke telescopen aan elkaar tot één virtuele opening groter dan elk van hen.",
+        "En de vreemdste objecten die deze methoden hebben gevonden: [zwarte gaten](observation/black-holes) (echt, in kaart gebracht, schaduw-afgebeeld in het centrum van twee sterrenstelsels) en [wormgaten](observation/wormholes) (pure wiskunde, opgenomen zodat je weet wat je ermee moet doen wanneer je er een in een film ziet). De /fleet ↦ Observatory-categorie heeft de echte machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — elk met zijn eigen galerij van wat het zag."
+      ]
+    }
+  ],
+  "tools_heading": "Ga nu spelen.",
+  "tools_intro": "Dat is de hele lus. Je weet nu genoeg om elk label, contour en HUD-uitlezing in de rest van de app te lezen. Hier kun je het toepassen:",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Draai het zonnestelsel. Kijk live naar Keplers wetten. Klik op elke planeet voor zijn baanelementen."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Kies een bestemming, kies een lanceerjaar, zie de porkchop. De lob is waar Hohmann-transfers zich verbergen."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Vlieg een echte missieboog. De HUD toont ∆v, V∞, MET, afstand tot de Aarde. Elk getal is iets wat je net hebt geleerd."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 echte ruimtevaartuigen, van Luna 9 tot Artemis II. Het FLIGHT-tabblad van elk ervan ontleedt zijn werkelijke ∆v-budget over de bovenstaande fasen."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Grondwaarheid. Waar elke Apollo, elke rover, elke actieve satelliet daadwerkelijk staat."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "De twee bewoonde orbitale buitenposten, module voor module."
+    }
+  ],
+  "closing": "Onder dit verhaal, de eigenlijke encyclopedie: zes tabbladen, veertig items, elke formule en elk diagram op één plek. Bookmark het. We zijn hier wanneer je het nodig hebt."
+}

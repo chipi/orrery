@@ -1,0 +1,36 @@
+{
+  "id": "tides",
+  "tab": "planets",
+  "order": 3,
+  "see_in_app": [
+    {
+      "route": "/earth",
+      "context_key": "Toggle the Tides lens to see the twin water bulges stretched along the Earth–Moon line"
+    },
+    {
+      "route": "/moon",
+      "context_key": "The Moon shows one face because the same tidal pull locked its rotation to its orbit"
+    },
+    {
+      "route": "/earth",
+      "context_key": "The near bulge sits under the Moon; the far bulge is thrown outward — two high tides a day"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · What causes tides?",
+      "u": "https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Tidal force",
+      "u": "https://en.wikipedia.org/wiki/Tidal_force",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Tidal locking",
+      "u": "https://en.wikipedia.org/wiki/Tidal_locking",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "L2 Sol–Tierra",
+  "short": "L2",
+  "story": "El segundo punto de Lagrange — a 1,5 millones de km de la Tierra, en la línea que va del Sol a través de la Tierra y sale por detrás. La gravedad del Sol + Tierra se combinan para mantener una nave espacial en posición con un consumo mínimo de combustible. Cielo siempre nocturno, lado orientado a la Tierra siempre cálido, el mismo ángulo solar para siempre — el lugar de estacionamiento perfecto para telescopios infrarrojos que necesitan mantenerse fríos y apuntando hacia el lado opuesto del Sol. JWST está estacionado aquí, en una órbita de halo de ~800 000 km de ancho.",
+  "comparison": "Cuatro veces más lejos que la Luna. El Sol, la Tierra y la Luna se sitúan todos en un mismo lado de la nave espacial, simplificando la geometría del escudo solar.",
+  "residents": [
+    {
+      "id": "jwst",
+      "label": "JWST — Telescopio Espacial James Webb",
+      "agency": "NASA"
+    },
+    {
+      "id": "gaia",
+      "label": "Gaia — cartógrafo de mil millones de estrellas",
+      "agency": "ESA"
+    },
+    {
+      "id": "euclid",
+      "label": "Euclid — misión de energía oscura",
+      "agency": "ESA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2001,
+      "label": "WMAP — primera misión L2 (USA)"
+    },
+    {
+      "year": 2009,
+      "label": "Herschel + Planck — primeras misiones L2 de ESA"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Phoenix",
+  "type": "LANDER · FLOWN",
+  "first": "Prima conferma di ghiaccio d'acqua nella regolite artica marziana; primo atterraggio morbido propulsivo su Marte dai tempi di Viking 2",
+  "description": "Phoenix fu recuperata dal programma cancellato Mars Surveyor 2001 — hardware di volo conservato per sei anni, riassemblato e ridiretto verso le pianure polari nord di Marte. Il nome fu scelto letteralmente. Atterrò il 25-05-2008 a 68.22°N, 234.25°E su Vastitas Borealis, più a nord di qualsiasi missione di superficie precedente. Nel giro di pochi giorni il braccio robotico raschiò attraverso il suolo superficiale ed espose ghiaccio bianco brillante che visibilmente sublimò davanti alla telecamera nell'arco di quattro sol — conferma diretta di ghiaccio d'acqua subsuperficiale nell'artico marziano. Rilevò perclorati nella regolite e osservò neve che cadeva dalle nuvole. La missione terminò il 02-11-2008 quando l'energia solare scese sotto la soglia operativa all'inizio dell'inverno marziano; non ci si aspettava che il lander sopravvivesse alla notte polare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Delta II 7925-9.5 da Cape Canaveral LC-17A.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 294,
+      "label": "TCM-6",
+      "note": "Ultimo aggiustamento pre-EDL 21 ore prima dell'ingresso.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "EDL",
+      "note": "Aeroshell, paracadute supersonico, dodici retrorazzi a idrazina — discesa propulsiva stile Viking.",
+      "type": "info"
+    },
+    {
+      "met": 295.01,
+      "label": "ATTERRAGGIO",
+      "note": "Atterraggio morbido a 68.22°N, 234.25°E — missione di superficie più a nord su Marte.",
+      "type": "info"
+    },
+    {
+      "met": 302,
+      "label": "GHIACCIO ESPOSTO",
+      "note": "Il braccio raschia attraverso il suolo superficiale. Ghiaccio bianco brillante sublima davanti alla telecamera nell'arco di 4 sol.",
+      "type": "info"
+    },
+    {
+      "met": 458,
+      "label": "FINE MISSIONE",
+      "note": "02-11-2008. Inverno marziano; energia solare sotto la soglia operativa.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "달 궤도",
+  "short": "MOON",
+  "story": "달은 지구의 유일한 자연 위성으로, 384,400 km 떨어져 있으며 조석 고정되어 항상 같은 면을 보여주고 27.3일마다 한 번씩 공전합니다. 우주선들은 달 착륙을 향해 가는 도중(NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) 또는 미래의 귀환을 위해 표면을 지도화하기 위해 방문합니다. Lunar Gateway는 발사되면 LEO를 넘어선 최초의 영구 유인 전초기지가 될 것입니다.",
+  "comparison": "ISS보다 1,200배 더 멀리 있습니다. 지구 → 달 → 지구로 가는 무선 신호는 약 2.6초가 걸립니다 — Houston의 관제사들이 느리고 신중한 문장으로 말할 만큼 충분히 긴 시간입니다.",
+  "residents": [
+    {
+      "id": "lro",
+      "label": "LRO — 달 정찰 궤도선",
+      "agency": "NASA"
+    },
+    {
+      "id": "chandrayaan-2",
+      "label": "Chandrayaan-2 궤도선",
+      "agency": "ISRO"
+    },
+    {
+      "id": "queqiao",
+      "label": "Queqiao — Chang'e 뒷면 중계선",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1959,
+      "label": "Luna 1 — 최초로 달 근처에 도달 (USSR)"
+    },
+    {
+      "year": 1968,
+      "label": "Apollo 8 — 최초의 유인 달 궤도 (USA)",
+      "mission_id": "apollo8"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "cislunar-orbits"
+  }
+}

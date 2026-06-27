@@ -1,0 +1,16 @@
+{
+  "name": "Deep Mars Orbit",
+  "short": "DMO",
+  "story": "Above areostationary, in the 20,000-43,000 km elliptical band. The UAE's Hope orbiter is the only spacecraft here — its 55-hour orbit takes a wide elliptical path designed for global atmospheric science: hovering near apoapsis lets it watch entire weather systems develop and decay across the planet's full day-night terminator. Deimos, the outer Martian moon, also orbits within this band at 23,460 km.",
+  "comparison": "Hope's apoapsis at 43,000 km is about 1/9th the way to Phobos's distance from Earth's Moon. The orbit was deliberately chosen to be UNIQUE in the Mars fleet — no other spacecraft sees the planet from this angle.",
+  "residents": [
+    { "id": "hope", "label": "Hope — Emirates Mars Mission", "agency": "UAESA" }
+  ],
+  "firsts": [
+    { "year": 2021, "label": "Hope — first UAE mission to another planet" }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "apsides"
+  }
+}

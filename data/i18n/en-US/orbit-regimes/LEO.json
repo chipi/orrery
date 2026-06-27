@@ -1,0 +1,44 @@
+{
+  "name": "Low Earth Orbit",
+  "short": "LEO",
+  "story": "The closest band of space — 160 to 2,000 km up. Short comms latency (~7 ms one-way), atmospheric drag still tugs at the lower edge, and the radiation belts haven't kicked in yet. Crewed spaceflight lives here for the same reasons: rescuable, reachable, and the human body tolerates a few-hundred-kilometre commute. Every space station that has ever flown has parked in LEO.",
+  "comparison": "About 1/600th of the way to the Moon. The ISS at 408 km orbits at the same altitude as the distance from London to Geneva — laid sideways.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — International Space Station",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — Chinese station",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble Space Telescope",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink constellation",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — first artificial Earth satellite (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, first crewed orbital flight (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

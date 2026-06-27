@@ -1,0 +1,28 @@
+{
+  "name": "Tierra-Luna L2",
+  "short": "L2",
+  "story": "El punto de Lagrange situado 64.500 km detrás de la Luna visto desde la Tierra — la silla de montar gravitacional donde las fuerzas de la Tierra, la Luna y la centrífuga se equilibran. La Luna siempre se interpone entre la nave espacial y la Tierra, por lo que las comunicaciones directas son imposibles — pero un satélite estacionado aquí en una órbita de halo ALREDEDOR de L2 tiene línea de visión TANTO hacia la cara oculta lunar COMO hacia la Tierra. Así es como China alunizó Chang'e 4 en la cara oculta en 2019: el satélite repetidor Queqiao, estacionado en un halo alrededor de Tierra-Luna L2, transmite cada comando e imagen.",
+  "comparison": "Aproximadamente 1/6 de la distancia de la Tierra a la Luna. Sin un repetidor en L2, toda la cara oculta lunar es un apagón de comunicaciones — cada nave espacial que ha alunizado allí ha necesitado uno.",
+  "residents": [
+    {
+      "id": "queqiao",
+      "label": "Queqiao — repetidor de cara oculta de Chang'e 4 (2018)",
+      "agency": "CNSA"
+    },
+    {
+      "id": "queqiao-2",
+      "label": "Queqiao-2 — repetidor de cara oculta de Chang'e 6 (2024)",
+      "agency": "CNSA"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 2018,
+      "label": "Queqiao — primer repetidor operativo en Tierra-Luna L2 (China)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "lagrange-points"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Impulso Específico (Isp)",
+  "intro_sentence": "Quão eficiente um motor é — quantos segundos um quilograma de propelente produz um quilograma de empuxo.",
+  "narrative_101": [
+    "Se você já se preocupou com quilômetros-por-litro em um carro, impulso específico é a mesma ideia para foguetes. Ele indica quão eficientemente o motor converte combustível em impulso. Maior Isp = melhor rendimento = mais ∆v com a mesma carga de propelente.",
+    "A unidade é estranha — é medida em segundos, o que não faz sentido intuitivo à primeira vista. A razão é histórica: Isp = empuxo ÷ (combustível-queimado-por-segundo × gravidade da Terra). Os segundos cancelam quase tudo o mais. Quanto maior o número, mais eficiente o motor, e você pode comparar motores de décadas e continentes diferentes usando o mesmo número.",
+    "A variação é enorme. Foguetes sólidos (os aceleradores do Space Shuttle): ~250 segundos. Hidrogênio-oxigênio líquido (o melhor químico possível): ~450 segundos. Hipergólicos armazenáveis (baratos, confiáveis, o que a maioria das espaçonaves usa aos poucos para correções de curso): ~310 segundos. Motores iônicos (super eficientes mas empuxo muito baixo): 3.000-9.000 segundos. A regra prática: para sair de planetas, você precisa de alto empuxo; para navegar no espaço profundo, você quer alto Isp. Missões reais escalonam suas escolhas — químico para escapar da Terra, iônico para navegar."
+  ],
+  "body_paragraphs": [
+    "Isp é o número de economia de combustível para foguetes. Maior é melhor. Definição: divida o empuxo pela taxa de fluxo de massa de propelente, divida por `g₀` (gravidade padrão), obtenha um número em segundos. Queime um quilograma de propelente por segundo, obtenha `Isp × g₀` newtons de empuxo.",
+    "O número varia em quatro ordens de magnitude. Foguetes sólidos: 250s. Líquidos hidrogênio/oxigênio (Space Shuttle Main Engine): 452s. Hipergólicos armazenáveis (Apollo Service Module): 314s. Propulsores iônicos (Dawn, BepiColombo): 3000-9000s. Térmico nuclear (NERVA, nunca voou): 800-1000s em teoria.",
+    "Compensações por toda parte. Alto Isp geralmente significa baixo empuxo — motores iônicos empurram cerca de dez newtons, úteis para cruzeiros de anos no espaço profundo mas inúteis para sair da Terra. Motores químicos entregam meganewtons de empuxo mas queimam o propelente em minutos. Missões reais escalonam a escolha: químico para subida, iônico para cruzeiro."
+  ]
+}

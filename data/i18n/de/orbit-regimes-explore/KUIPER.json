@@ -1,0 +1,56 @@
+{
+  "name": "Kuipergürtel",
+  "short": "KUIPER",
+  "story": "Ein Ring aus eisigen Körpern jenseits von Neptun — 30 bis 50 AU. Das gefrorene Gegenstück zum Asteroidengürtel: Hunderttausende von Körpern, von denen nur die wenigen größten aufgelöst wurden. Bestehend aus Methan, Ammoniak, Wassereis und Gestein. Pluto war das erste identifizierte Mitglied im Jahr 1930, obwohl der Gürtel erst in den 1990er Jahren als Population erkannt wurde, als Jewitt und Luu das zweite Mitglied fanden (1992 QB1). New Horizons gewährte der Menschheit ihre ersten Nahaufnahmen von ZWEI Kuiperobjekten — Pluto im Jahr 2015 und Arrokoth im Jahr 2019.",
+  "comparison": "Wenn der Asteroidengürtel ein dünner Ring um das innere Sonnensystem ist, ist der Kuipergürtel 1.000× breiter und enthält ~25× mehr Masse. Das Sonnenlicht bei Pluto ist 1/1.600 seiner Stärke auf der Erde.",
+  "residents": [
+    {
+      "id": "pluto",
+      "label": "Pluto — 39,5 AU, größter bekannter",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "eris",
+      "label": "Eris — 96,4 AU (Scattered Disc)",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "makemake",
+      "label": "Makemake — 45,8 AU",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "haumea",
+      "label": "Haumea — 43,3 AU, schneller Rotator",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "quaoar",
+      "label": "Quaoar — 43,4 AU, hat Ringe",
+      "agency": "NATURAL"
+    },
+    {
+      "id": "arrokoth",
+      "label": "Arrokoth — 44,6 AU, Kontaktbinär",
+      "agency": "NATURAL"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1930,
+      "label": "Pluto entdeckt — erstes KBO identifiziert (Tombaugh, USA)"
+    },
+    {
+      "year": 2015,
+      "label": "New Horizons — erster Pluto-Vorbeiflug (USA)"
+    },
+    {
+      "year": 2019,
+      "label": "New Horizons bei Arrokoth — am weitesten entfernt besuchter Körper (USA)"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplers-laws"
+  }
+}

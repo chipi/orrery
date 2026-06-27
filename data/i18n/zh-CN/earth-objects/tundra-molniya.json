@@ -1,0 +1,6 @@
+{
+  "name": "Molniya + Tundra (HEO 63.4°)",
+  "short": "Molniya/Tundra",
+  "description": "63.4° 临界倾角的高偏心率轨道。Molniya(12小时,600 × 40,000 km)— 自1965年起用于俄罗斯高纬度通信 + Oko/Meridian 预警系统。Tundra(24小时,25,000 × 35,786 km)— Sirius XM Satellite Radio + 美国 SBIRS-HEO 传感器。",
+  "scale_fact": "63.4° 倾角并非偶然 — 这是\"临界倾角\",地球 J2 摄动会将远地点锁定在所选半球上空。"
+}

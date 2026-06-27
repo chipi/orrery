@@ -1,0 +1,14 @@
+{
+  "title": "Referenciais Heliocêntrico · Geocêntrico · Centrado no Corpo",
+  "intro_sentence": "Três referenciais para três perguntas diferentes: onde ele está em relação ao Sol, à Terra ou ao planeta que você está estudando?",
+  "narrative_101": [
+    "Onde está a Lua? A resposta honesta é \"depende de onde VOCÊ está.\" Da superfície da Terra, ela está acima da cabeça à 1h da manhã. Do Sol, ela é um ponto minúsculo a 1 AU de distância, perto da Terra. De Marte, ela é um pontinho irrelevante. Nenhuma dessas respostas está errada — elas são apenas medidas a partir de origens diferentes. Essa escolha de origem é o que significa \"referencial\".",
+    "Voo espacial faz malabarismo com três deles constantemente. Heliocêntrico (origem no Sol) é o referencial natural para cruzeiro — tudo de Terra-a-Marte acontece aqui. Geocêntrico (origem na Terra) é o referencial natural para satélites e a Lua. Centrado no corpo (origem em qualquer planeta pelo qual você esteja passando ou orbitando) é o referencial natural para queimas de chegada e operações de superfície.",
+    "Alternar entre eles é basicamente aritmética — transladar a origem, talvez rotacionar os eixos. Mas importa onde você está conceitualmente: uma elipse de transferência é heliocêntrica. Um sobrevoo por Marte é centrado no corpo. A transição entre eles é exatamente o truque das cônicas emendadas. Cada tela neste app escolhe um referencial e mantém nele: /explore é heliocêntrico, /earth é geocêntrico, /moon e /mars são centrados no corpo."
+  ],
+  "body_paragraphs": [
+    "Heliocêntrico: origem no Sol, eixos alinhados com a eclíptica. O referencial natural para movimento no sistema solar. Posições dos planetas, órbitas de transferência, cruzeiros de missões — tudo mais naturalmente descrito aqui. O `/explore` do Orrery é fundamentalmente heliocêntrico.",
+    "Geocêntrico: origem na Terra. Útil para satélites, a Lua e qualquer espaçonave dentro da esfera de influência da Terra. A rota `/earth` da Terra funciona neste referencial. Coordenadas geocêntricas se relacionam com as heliocêntricas por uma translação (posição heliocêntrica da Terra) e possivelmente uma rotação (inclinação axial da Terra).",
+    "Centrado no corpo (Marte-cêntrico, Saturno-cêntrico, Lua-cêntrico, etc.): origem no corpo que você está orbitando ou sobrevoando. Usado para inserção orbital, operações de superfície, geometria de sobrevoo — qualquer coisa em que a gravidade do corpo domine. Projeto de missão de cônicas emendadas alterna referenciais nos limites da esfera de influência: você descreve um arco em qualquer referencial que mantenha a matemática local."
+  ]
+}

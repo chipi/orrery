@@ -1,0 +1,62 @@
+{
+  "name": "Lucy",
+  "type": "MULTI-FLYBY · ACTIVE",
+  "first": "Première mission vers les Troyens de Jupiter ; visite 8 astéroïdes sur une seule trajectoire de 12 ans — plus de corps en une seule mission que toute campagne antérieure de sciences planétaires",
+  "description": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — des populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver des matériaux du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) façonnent une trajectoire unique qui visite sept astéroïdes troyens plus un corps supplémentaire de la ceinture principale. Rencontre bonus : Donaldjohanson 2025-04. Essaim L4 : Eurybates + lune Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Après EGA-3 (2030-12), l'essaim L5 suiveur : le binaire Patroclus-Menoetius (2033-03) — le plus grand binaire troyen connu, un point culminant approprié pour la mission portant le nom de Lucy (le fossile d'hominidé ; Patroclus-Menoetius, les deux personnages tombés ensemble dans l'Iliade).",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas V 401 depuis Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 365,
+      "label": "EGA-1",
+      "note": "Première assistance gravitationnelle terrestre 2022-10-16.",
+      "type": "info"
+    },
+    {
+      "met": 1290,
+      "label": "DONALDJOHANSON",
+      "note": "Survol bonus de la ceinture principale 2025-04. Astéroïde de type C de 4 km.",
+      "type": "info"
+    },
+    {
+      "met": 2127,
+      "label": "EURYBATES + QUETA",
+      "note": "2027-08. Première rencontre troyenne. Type C de 64 km + lune de 1 km.",
+      "type": "info"
+    },
+    {
+      "met": 2280,
+      "label": "POLYMELE",
+      "note": "Troyen de type P de 21 km avec satellite sans nom.",
+      "type": "info"
+    },
+    {
+      "met": 2660,
+      "label": "LEUCUS",
+      "note": "Troyen de type D de 35 km, rotateur lent (446 h).",
+      "type": "info"
+    },
+    {
+      "met": 2820,
+      "label": "ORUS",
+      "note": "Troyen de type D de 51 km.",
+      "type": "info"
+    },
+    {
+      "met": 3445,
+      "label": "EGA-3",
+      "note": "Dernière assistance terrestre 2030-12. Se dirige vers le nuage L5.",
+      "type": "info"
+    },
+    {
+      "met": 4170,
+      "label": "PATROCLUS-MENOETIUS",
+      "note": "2033-03. Point culminant de la mission : binaire troyen de 113 km + 104 km.",
+      "type": "info"
+    }
+  ]
+}

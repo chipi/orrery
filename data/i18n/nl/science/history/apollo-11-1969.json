@@ -1,0 +1,16 @@
+{
+  "title": "Apollo 11 · 20 juli 1969",
+  "intro_sentence": "Drie astronauten, een Saturn V, en een maan-deadline die JFK in 1961 stelde. Tranquillity Base, acht jaar later, op schema.",
+  "narrative_101": [
+    "Op 25 mei 1961 vertelde John F. Kennedy het Congres \"deze natie moet zich ertoe verbinden om het doel te bereiken, voor het einde van dit decennium, om een mens op de maan te laten landen en hem veilig terug te brengen naar de aarde.\" Acht jaar later, bijna op de maand af, zette Neil Armstrong voet op Mare Tranquillitatis. Op het hoogtepunt werkten 400.000 mensen aan Apollo; het programma kostte ~$25 miljard (1969-dollars), ongeveer 4% van het federale budget op het hoogtepunt.",
+    "Apollo 11: Commandant Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V-lancering 16 juli; maanbaan 19 juli; landing 20 juli om 20:17 UTC; eerste stap om 02:56 UTC 21 juli (UTC; 22:56 EDT 20 juli in de VS). Splashdown 24 juli. 8 dagen, 3 uur, 18 minuten totaal.",
+    "De maanlanding werd live bekeken door naar schatting 600 miljoen mensen — ongeveer een vijfde van de mensheid op dat moment. De \"one small step\"-zin was van Armstrong; het was niet gescript (hij zei later dat hij bedoelde te zeggen \"one small step for a man\" maar het onbepaalde lidwoord ging verloren in de transmissie)."
+  ],
+  "body_paragraphs": [
+    "Saturn V was een 110-meter, drietraps vloeibare-brandstof monster ontworpen onder Wernher von Braun (de Duitse V-2-ontwerper, naar de VS gebracht onder Operation Paperclip in 1945). Eerste trap: 5× F-1-motoren, 7,6 miljoen lbf stuwkracht. Nog steeds de krachtigste raket die succesvol vloog (totdat SLS Block 1 / Starship het 50+ jaar later evenaarde of overtrof).",
+    "Traject: free-return loop, de \"figuur-8\" aarde-maan-aarde. Als de maanbaan-insertie burn mislukte, zou Apollo 11 rond de maan zijn geloopt en via dezelfde boog naar de aarde zijn teruggekeerd — ingebouwde abort. Apollo 13 gebruikte precies deze eigenschap toen zijn servicemodule faalde, achter de maan loopte en thuiskwam.",
+    "Belangrijke personeelsleden naast de bemanning: George Mueller (NASA Apollo-programmadirecteur), Christopher Kraft (oprichter van Mission Control), Margaret Hamilton (softwareleider van de Apollo Guidance Computer — zij leidde het team dat de AGC-code schreef die tijdens de afdaling op de LM draaide), Glynn Lunney + Gene Kranz + Cliff Charlesworth (vluchtleiders).",
+    "Dingen-die-hen-hadden-kunnen-doden: AGC-alarmen 1201 en 1202 tijdens de afdaling (executive overflow — Hamiltons robuuste software-ontwerp herstelde automatisch); handmatige landing omdat het auto-doelwit een rotsveld was (Armstrong landde met ~25 seconden brandstof over); de LM-stijgmotor had ÉÉN kans om af te vuren en was niet getest op volledige duur in vlucht.",
+    "Apollo vloog zes succesvolle landingen: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 miste de maan (LOI geannuleerd), loopte erachter, keerde veilig terug. 12 mensen liepen op de maan; de laatste (Gene Cernan, Apollo 17) vertrok op 14 december 1972."
+  ]
+}

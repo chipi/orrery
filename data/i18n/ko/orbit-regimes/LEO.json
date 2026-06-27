@@ -1,0 +1,44 @@
+{
+  "name": "저궤도",
+  "short": "LEO",
+  "story": "가장 가까운 우주 영역 — 고도 160~2,000 km. 짧은 통신 지연(편도 약 7 ms), 낮은 쪽 가장자리에는 여전히 대기 저항이 작용하며, 복사선대는 아직 시작되지 않습니다. 유인 우주비행이 이곳에 머무는 이유도 같습니다: 구조 가능하고, 도달 가능하며, 인체가 수백 킬로미터의 통근을 견딜 수 있기 때문입니다. 지금까지 비행한 모든 우주 정거장은 LEO에 머물렀습니다.",
+  "comparison": "달까지 거리의 약 1/600. 408 km 궤도의 ISS는 런던에서 제네바까지의 거리와 같은 고도를 돕니다 — 옆으로 눕혀 놓은 것처럼.",
+  "residents": [
+    {
+      "id": "iss",
+      "label": "ISS — 국제우주정거장",
+      "agency": "NASA"
+    },
+    {
+      "id": "tiangong",
+      "label": "Tiangong — 중국 우주정거장",
+      "agency": "CNSA"
+    },
+    {
+      "id": "hubble",
+      "label": "Hubble 우주망원경",
+      "agency": "NASA"
+    },
+    {
+      "id": "starlink",
+      "label": "Starlink 위성군",
+      "agency": "SpaceX"
+    }
+  ],
+  "firsts": [
+    {
+      "year": 1957,
+      "label": "Sputnik 1 — 최초의 인공 지구 위성 (USSR)",
+      "mission_id": "sputnik1"
+    },
+    {
+      "year": 1961,
+      "label": "Vostok 1 — Yuri Gagarin, 최초의 유인 궤도 비행 (USSR)",
+      "mission_id": "vostok-1"
+    }
+  ],
+  "science_link": {
+    "tab": "orbits",
+    "section": "keplerian-orbit"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Opportunity",
+  "type": "ROVER · FLOWN",
+  "first": "최장 거리 주행 화성 탐사 로버 (45.16 km); 90솔 설계 대비 14년 표면 수명",
+  "description": "Opportunity (MER-B)는 행성 탐사의 대박을 터뜨렸다 — 에어백으로 감싼 착륙선은 Meridiani Planum을 가로질러 26번 튕겨나갔고 순전히 운으로 22m 크레이터(Eagle)로 굴러 들어갔으며, 주행 없이도 로버가 읽을 수 있는 노출된 암반으로 둘러싸여 있었다. 첫 이미지에서는 남철광(jarosite)과 \"블루베리\" 형태의 적철석 응결체가 나타났으며, 이는 초기 화성에 고인 액체 물이 존재했다는 가장 강력한 광물학적 증거였다. 14년 47일 동안 Opportunity는 45.16 km를 주행했으며 — 이는 화성 로버 마라톤 기록이다 — Endurance, Victoria, Endeavour 크레이터를 방문했다. 2018년 6월 행성 전체를 뒤덮은 먼지 폭풍이 태양 전지판의 햇빛을 차단했으며, 최종 전송은 2018-06-10이었고 NASA는 2019-02-13에 임무 종료를 선언했다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "Cape Canaveral LC-17B에서 Delta II 7925H Heavy로 발사.",
+      "type": "nominal"
+    },
+    {
+      "met": 12,
+      "label": "TCM-1",
+      "note": "첫 번째 중간 궤도 수정.",
+      "type": "nominal"
+    },
+    {
+      "met": 195,
+      "label": "TCM-4",
+      "note": "EDL 전 최종 보정.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "EDL",
+      "note": "열 차폐막, 낙하산, 역추진 로켓, 에어백.",
+      "type": "info"
+    },
+    {
+      "met": 202.01,
+      "label": "착륙 — EAGLE 크레이터 진입",
+      "note": "26번 튕겨나갔음. 우연히 22m 크레이터로 굴러 들어갔고, 노출된 암반으로 둘러싸여 있었음.",
+      "type": "info"
+    },
+    {
+      "met": 5300,
+      "label": "최종 전송",
+      "note": "2018-06-10. 행성 전체의 먼지 폭풍으로 태양광 전력 차단.",
+      "type": "warning"
+    },
+    {
+      "met": 5543,
+      "label": "임무 종료",
+      "note": "NASA, 2019-02-13에 임무 종료 선언. 45.16 km 주행 완료.",
+      "type": "warning"
+    }
+  ]
+}

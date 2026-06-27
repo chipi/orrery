@@ -1,0 +1,6 @@
+{
+  "name": "GOES (NOAA気象衛星)",
+  "short": "GOES",
+  "description": "米国の静止気象衛星ペア — GOES-Eastが西経75.2°、GOES-Westが西経137.0°に位置し、南北アメリカ大陸を継続的に観測。GOES-16以降はAdvanced Baseline Imagerを搭載し、ハリケーンの中心部を30秒間隔のメソスケール走査で捉える。",
+  "scale_fact": "米国のハリケーンを映したテレビの気象マップは、すべて35,786 km上空のGOESが数分前に撮影した画像である。"
+}

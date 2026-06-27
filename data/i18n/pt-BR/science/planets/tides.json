@@ -1,0 +1,15 @@
+{
+  "title": "Marés",
+  "intro_sentence": "A gravidade da Lua puxa os oceanos formando duas protuberâncias — uma abaixo dela, outra no lado oposto — então a maioria das costas tem duas marés altas por dia.",
+  "narrative_101": [
+    "A gravidade enfraquece com a distância, então a Lua puxa o lado próximo da Terra com mais força do que o centro, e o centro com mais força do que o lado distante.",
+    "Esticados entre esses puxões desiguais, os oceanos se elevam formando uma protuberância voltada para a Lua e uma protuberância correspondente no lado oposto — e a Terra gira através de ambas todos os dias."
+  ],
+  "body_paragraphs": [
+    "Uma maré não é a Lua levantando a água diretamente para cima — é a diferença no puxão da Lua através da largura da Terra. O lado próximo é puxado em direção à Lua com mais força do que o centro do planeta, e o lado distante com menos força, então o envelope de água é esticado numa forma prolata, com duas protuberâncias alinhadas com a linha Terra–Lua.",
+    "Como há duas protuberâncias e a Terra completa uma rotação por dia, uma determinada linha costeira geralmente passa por duas marés altas e duas marés baixas a cada ~24 h 50 min (os 50 minutos extras são devidos ao movimento da Lua em sua órbita). Quando o Sol se alinha com a Lua na lua nova e na lua cheia, seus puxões se somam — as grandes marés de sizígia; nos quartos, eles parcialmente se cancelam formando as marés de quadratura, menores.",
+    "As marés são uma via de mão dupla. A protuberância que a Terra levanta fica ligeiramente à frente da Lua porque a Terra gira mais rápido do que a Lua orbita; sua gravidade puxa a Lua para frente, empurrando-a para uma órbita mais alta (~3,8 cm/ano), enquanto a Lua arrasta a protuberância para trás e lentamente alonga o dia da Terra.",
+    "O mesmo efeito já completou o trabalho na Lua: o atrito de maré freou sua rotação até que sua rotação correspondesse à sua órbita, mantendo assim uma face voltada para a Terra — travamento de maré. A lente Marés em /earth desenha as protuberâncias gêmeas; a lente Ponto Sub-Terrestre em /moon mostra o lado próximo travado que elas produziram."
+  ],
+  "diagram_caption": "Protuberâncias de maré gêmeas esticadas ao longo da linha Terra–Lua — a protuberância próxima sob a Lua, a protuberância distante lançada para fora."
+}

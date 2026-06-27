@@ -63,21 +63,15 @@ const GALLERY_MANIFESTS: Record<string, string> = {
  * Bookkeeping manifests that list EVERY path (so scanning them would mark
  * everything "referenced" and defeat the audit). Skipped in the reference scan.
  */
-const BOOKKEEPING = /image-(vision|provenance|curation|phashes|approved)\.json$|image-alt-text|cost-ledger\.json$|-image-sources\.json$|slice-a-.*dryrun\.json$|bodies-salvage|route-patches\.json$/;
+const BOOKKEEPING =
+  /image-(vision|provenance|curation|phashes|approved)\.json$|image-alt-text|cost-ledger\.json$|-image-sources\.json$|slice-a-.*dryrun\.json$|bodies-salvage|route-patches\.json$/;
 
 /** Intentionally-retained images with no display path. Keep this list tiny. */
 const ALLOWED_ORPHANS = new Set<string>([
   // (empty — the RFC-029 migration staged out the 7 true surface overflows)
 ]);
 
-type Reason =
-  | 'referenced'
-  | 'gallery'
-  | 'hero-override'
-  | 'hero-01'
-  | 'body'
-  | 'card'
-  | 'hotspot';
+type Reason = 'referenced' | 'gallery' | 'hero-override' | 'hero-01' | 'body' | 'card' | 'hotspot';
 
 function readJSON(p: string): any {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -91,7 +85,11 @@ function harvestRefs(text: string, into: Set<string>): void {
 }
 
 /** Walk a tree, feeding files matched by `accept` into `onFile`. */
-function walk(dir: string, accept: (path: string, name: string) => boolean, onFile: (path: string) => void): void {
+function walk(
+  dir: string,
+  accept: (path: string, name: string) => boolean,
+  onFile: (path: string) => void,
+): void {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = posix.join(dir, e.name);
     if (e.isDirectory()) {
@@ -106,11 +104,15 @@ function walk(dir: string, accept: (path: string, name: string) => boolean, onFi
 function main(): number {
   // 1. Build the reference set from display manifests + source code.
   const refs = new Set<string>();
-  walk(DATA_DIR, (p, n) => n.endsWith('.json') && !BOOKKEEPING.test(p), (p) =>
-    harvestRefs(fs.readFileSync(p, 'utf8'), refs),
+  walk(
+    DATA_DIR,
+    (p, n) => n.endsWith('.json') && !BOOKKEEPING.test(p),
+    (p) => harvestRefs(fs.readFileSync(p, 'utf8'), refs),
   );
-  walk(`${ROOT}/src`, (_p, n) => /\.(svelte|ts|js)$/.test(n), (p) =>
-    harvestRefs(fs.readFileSync(p, 'utf8'), refs),
+  walk(
+    `${ROOT}/src`,
+    (_p, n) => /\.(svelte|ts|js)$/.test(n),
+    (p) => harvestRefs(fs.readFileSync(p, 'utf8'), refs),
   );
 
   // 2. Gallery count caps + hero-override slots.
@@ -130,8 +132,10 @@ function main(): number {
 
   // 3. Enumerate the shipped corpus (on-disk, excludes _staging) as web paths.
   const onDisk: string[] = [];
-  walk(IMAGES_DIR, (_p, n) => /\.(jpe?g|png|webp)$/i.test(n), (p) =>
-    onDisk.push(p.replace(IMAGES_DIR, '/images')),
+  walk(
+    IMAGES_DIR,
+    (_p, n) => /\.(jpe?g|png|webp)$/i.test(n),
+    (p) => onDisk.push(p.replace(IMAGES_DIR, '/images')),
   );
 
   // 4. Classify each distinct BASE image (variants inherit their base's verdict).
@@ -184,11 +188,14 @@ function main(): number {
 
   // 5. Report.
   console.log(`shipped corpus      : ${onDisk.length} files`);
-  console.log(`distinct base images: ${bases.length} (${onDisk.length - bases.length} variant crops inherit)`);
+  console.log(
+    `distinct base images: ${bases.length} (${onDisk.length - bases.length} variant crops inherit)`,
+  );
   for (const [k, v] of Object.entries(tally).sort((a, b) => b[1] - a[1])) {
     console.log(`  ${String(v).padStart(5)}  ${k}`);
   }
-  if (ALLOWED_ORPHANS.size) console.log(`  ${String(ALLOWED_ORPHANS.size).padStart(5)}  allowed-orphan (exempt)`);
+  if (ALLOWED_ORPHANS.size)
+    console.log(`  ${String(ALLOWED_ORPHANS.size).padStart(5)}  allowed-orphan (exempt)`);
 
   if (orphans.length === 0) {
     console.log('\n✓ every shipped image is used.');

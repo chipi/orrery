@@ -4,9 +4,18 @@ const data = JSON.parse(fs.readFileSync(P, 'utf8'));
 
 // Regional GSD (m/px) per Kaguya site from the last fetch run × 2560px crop.
 const KAGUYA_GSD = {
-  luna9: 10.8, luna16: 11.3, luna17: 5.6, luna21: 6.3, luna24: 6.7,
-  change3: 10.1, change4: 7.6, change5: 9.9, change6: 10.8,
-  chandrayaan3: 9.6, slim: 6.0, beresheet: 10.7,
+  luna9: 10.8,
+  luna16: 11.3,
+  luna17: 5.6,
+  luna21: 6.3,
+  luna24: 6.7,
+  change3: 10.1,
+  change4: 7.6,
+  change5: 9.9,
+  change6: 10.8,
+  chandrayaan3: 9.6,
+  slim: 6.0,
+  beresheet: 10.7,
 };
 const KAGUYA_CROP_PX = 2560;
 
@@ -38,7 +47,9 @@ for (const [id, e] of Object.entries(data.entries)) {
     n++;
   }
   if (e.hotspot_tier2_ground_m) {
-    console.log(`  ${id.padEnd(13)} detail=${e.hotspot_tier2_ground_m}m regional=${e.hotspot_tier2_regional_ground_m}m  (ratio 1/${Math.round(e.hotspot_tier2_regional_ground_m / e.hotspot_tier2_ground_m)})`);
+    console.log(
+      `  ${id.padEnd(13)} detail=${e.hotspot_tier2_ground_m}m regional=${e.hotspot_tier2_regional_ground_m}m  (ratio 1/${Math.round(e.hotspot_tier2_regional_ground_m / e.hotspot_tier2_ground_m)})`,
+    );
   }
 }
 fs.writeFileSync(P, JSON.stringify(data, null, 2) + '\n');

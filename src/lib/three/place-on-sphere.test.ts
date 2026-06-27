@@ -47,7 +47,11 @@ describe('northTangent', () => {
     for (const [lat, lon] of SITES) {
       const here = latLonToUnitSphere(lat, lon);
       const north = latLonToUnitSphere(lat + 0.01, lon);
-      const fdDir = new THREE.Vector3(north.x - here.x, north.y - here.y, north.z - here.z).normalize();
+      const fdDir = new THREE.Vector3(
+        north.x - here.x,
+        north.y - here.y,
+        north.z - here.z,
+      ).normalize();
       const n = northTangent(lat, lon);
       // finite-difference north and the analytic tangent should align.
       expect(n.dot(fdDir)).toBeGreaterThan(0.999);

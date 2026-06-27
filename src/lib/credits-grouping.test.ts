@@ -169,7 +169,9 @@ describe('provenanceSourceId', () => {
     // dedicated NASA · HiRISE / NASA · CTX sections, not the general NASA
     // bucket. The instrument field wins over the agency mapping.
     expect(
-      provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'NASA', instrument: 'HiRISE' })),
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'NASA', instrument: 'HiRISE' }),
+      ),
     ).toBe('nasa-hirise');
     expect(
       provenanceSourceId(

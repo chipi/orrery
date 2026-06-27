@@ -25,6 +25,7 @@ const ROUTES = [
   // Disclosure / gallery pages — covered by smoke for first-load gate
   // even though they're not in the primary nav (per ADR-047 / ADR-051).
   { path: '/credits', titleHint: 'Credits' },
+  { path: '/colophon', titleHint: 'Colophon' },
   { path: '/library', titleHint: 'Library' },
   { path: '/posters', titleHint: 'Gallery' },
 ];

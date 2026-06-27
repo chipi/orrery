@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * Surface Hotspots e2e (PRD-014 / RFC-017 §S8, sub-issue #116).
@@ -41,7 +42,10 @@ const V1_MARS_SITES = [
 function attachConsoleAndError(page: Page): string[] {
   const errors: string[] = [];
   page.on('console', (msg) => {
-    if (msg.type() === 'error') errors.push(`console.error: ${msg.text()}`);
+    // Filter at collection via the shared helper — known i18n/trajectory/
+    // gallery probe 404s only; any other 404 is a real failure.
+    if (msg.type() === 'error' && !isExpectedNoise(msg))
+      errors.push(`console.error: ${msg.text()}`);
   });
   page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
   return errors;
@@ -85,7 +89,7 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
       await expect(chip).toBeVisible();
       // No console errors during the load + first-frame lifecycle.
       expect(
-        errors.filter((e) => !e.includes('Failed to load resource')),
+        errors,
         errors.join('\n'),
       ).toEqual([]);
     });
@@ -110,7 +114,7 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
       const chip = page.locator('[data-testid="layer-surface"]');
       await expect(chip).toBeVisible();
       expect(
-        errors.filter((e) => !e.includes('Failed to load resource')),
+        errors,
         errors.join('\n'),
       ).toEqual([]);
     });
@@ -138,7 +142,7 @@ test.describe('Surface Hotspots — SURFACE chip cycles AUTO / HIGH / LOW / OFF'
     const secondLabel = (await chip.textContent())?.trim();
     expect(secondLabel).not.toBe(initialLabel);
 
-    expect(errors.filter((e) => !e.includes('Failed to load resource'))).toEqual([]);
+    expect(errors).toEqual([]);
   });
 
   test('?hotspots=low URL param surfaces a valid canvas tier', async ({ page }) => {

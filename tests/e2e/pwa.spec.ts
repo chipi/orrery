@@ -16,7 +16,7 @@ test.describe('PWA — manifest + service worker (v0.1.12)', () => {
     const json = JSON.parse(body!);
     expect(json.name).toMatch(/Orrery/);
     expect(json.display).toBe('standalone');
-    expect(json.theme_color).toBeTruthy();
+    expect(json.theme_color).toMatch(/^#[0-9a-fA-F]{3,8}$/);
   });
 
   test('service worker file is served', async ({ page }) => {

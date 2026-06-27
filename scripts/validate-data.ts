@@ -1261,6 +1261,10 @@ if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
 // ──────────────────────────────────────────────────────────────────────
 
 const WORKBOX_CACHE_LIMIT_BYTES = 8 * 1024 * 1024;
+// Soft warn band: images 5–8 MiB are heavy for mobile delivery (even when
+// lazy-loaded on detail pages) and creep toward the hard cap. Warn (don't
+// fail) so the worst offenders stay visible and can be re-encoded.
+const IMAGE_WARN_BYTES = 5 * 1024 * 1024;
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg']);
 const IMAGE_ROOT = 'static/images';
 
@@ -1281,11 +1285,25 @@ function* walkImages(dir: string): Generator<string> {
 let assetSizeFailed = 0;
 console.log('\nValidating image asset sizes (workbox precache cap)...');
 const oversized: { path: string; bytes: number }[] = [];
+const heavy: { path: string; bytes: number }[] = [];
 for (const file of walkImages(IMAGE_ROOT)) {
   const sz = statSync(file).size;
   if (sz > WORKBOX_CACHE_LIMIT_BYTES) {
     oversized.push({ path: file, bytes: sz });
+  } else if (sz > IMAGE_WARN_BYTES) {
+    heavy.push({ path: file, bytes: sz });
   }
+}
+// Non-failing warn band — surface 5–8 MiB images without blocking the build.
+if (heavy.length > 0) {
+  heavy.sort((a, b) => b.bytes - a.bytes);
+  console.warn(
+    `  ⚠ ${heavy.length} image(s) in the 5–8 MiB warn band (heavy for mobile; consider re-encoding):`,
+  );
+  for (const { path, bytes } of heavy.slice(0, 10)) {
+    console.warn(`      ${(bytes / 1024 / 1024).toFixed(2)} MB  ${path}`);
+  }
+  if (heavy.length > 10) console.warn(`      … and ${heavy.length - 10} more`);
 }
 if (oversized.length === 0) {
   console.log(`  ✓ all images under ${WORKBOX_CACHE_LIMIT_BYTES / 1024 / 1024} MiB cap`);

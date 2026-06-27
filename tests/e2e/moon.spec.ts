@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * /moon — Moon Map (3D textured sphere + 2D equirectangular map).
@@ -122,7 +123,9 @@ test.describe('/moon', () => {
 
   test('no console errors on load', async ({ page }) => {
     const errors: string[] = [];
-    page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text()));
+    page.on('console', (msg) => {
+      if (msg.type() === 'error' && !isExpectedNoise(msg)) errors.push(msg.text());
+    });
     page.on('pageerror', (err) => errors.push(err.message));
     await page.goto('/moon');
     // Mobile takes meaningfully longer to hydrate the sites array — on
@@ -132,14 +135,10 @@ test.describe('/moon', () => {
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
       timeout: 30_000,
     });
-    // Filter "Failed to load resource" — the i18n overlay loader
-    // probes optional per-locale overlay files (e.g.
-    // /data/i18n/en-US/hotspot-metadata/luna9.json) that don't
-    // exist for every site, and falls back gracefully via
-    // `.catch(() => null)` in src/lib/data.ts. The 404 itself is
-    // an intentional probe-then-fallback signal, not a real error.
-    const real = errors.filter((e) => !e.includes('Failed to load resource'));
-    expect(real, real.join('\n')).toEqual([]);
+    // Console errors filtered at collection via the shared isExpectedNoise
+    // helper — known i18n/trajectory/gallery probe 404s only; any other 404
+    // (a real broken asset) still fails. See _helpers/console-errors.ts.
+    expect(errors, errors.join('\n')).toEqual([]);
   });
 
   /* ── v0.1.10 — GALLERY + LEARN tabs on the site detail panel ── */

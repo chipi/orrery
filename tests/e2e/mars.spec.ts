@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * /mars — Mars Surface Map (3D textured sphere + 2D equirectangular map +
@@ -117,7 +118,9 @@ test.describe('/mars', () => {
   test('no console errors on load', async ({ page, isMobile }) => {
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
-    page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+    page.on('console', (m) => {
+      if (m.type() === 'error' && !isExpectedNoise(m)) errors.push(m.text());
+    });
     await page.goto('/mars');
     await expect(page.locator('.layer:not(canvas) canvas').first()).toBeVisible({
       timeout: isMobile ? 15_000 : 5_000,
@@ -129,9 +132,9 @@ test.describe('/mars', () => {
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
       timeout: isMobile ? 30_000 : 10_000,
     });
-    // Filter "Failed to load resource" — i18n overlay loader probes
-    // optional per-locale files and catches 404s in src/lib/data.ts.
-    const real = errors.filter((e) => !e.includes('Failed to load resource'));
-    expect(real, real.join('\n')).toEqual([]);
+    // Console errors are filtered at collection via the shared
+    // isExpectedNoise helper (known i18n/trajectory/gallery probe 404s
+    // only — any other 404 still fails). See _helpers/console-errors.ts.
+    expect(errors, errors.join('\n')).toEqual([]);
   });
 });

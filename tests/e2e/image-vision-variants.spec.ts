@@ -35,11 +35,12 @@ test.describe('Image Pipeline v2 — variant serving smoke', () => {
     const res = await request.get('/data/image-vision.json');
     expect(res.status()).toBe(200);
     const m = (await res.json()) as {
-      version?: string;
+      version?: number;
       entries?: Record<string, { score: number; category: string }>;
     };
-    expect(m.version).toBeTruthy();
-    expect(m.entries).toBeTruthy();
+    expect(m.version).toBeDefined();
+    expect(typeof m.entries).toBe('object');
+    expect(m.entries).not.toBeNull();
     const entryCount = Object.keys(m.entries ?? {}).length;
     expect(entryCount).toBeGreaterThan(500);
   });

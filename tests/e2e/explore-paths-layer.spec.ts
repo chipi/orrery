@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { expandExploreHud } from './_helpers/hud-expand';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * /explore PATHS layer — iconic spacecraft trajectories (#306).
@@ -36,12 +37,11 @@ async function collectErrors(page: Page): Promise<string[]> {
   const errors: string[] = [];
   page.on('pageerror', (err) => errors.push(err.message));
   page.on('console', (m) => {
-    if (m.type() !== 'error') return;
-    const text = m.text();
-    // Filter expected SvelteKit dev-only noise on first paint. Real
-    // errors from our code surface as pageerror or as unique strings.
-    if (/Failed to load resource/i.test(text)) return;
-    errors.push(text);
+    // Precise allowlist via the shared helper — known i18n/trajectory/
+    // gallery probe 404s only; any other 404 is a real failure. Replaces
+    // the prior blanket `Failed to load resource` filter (the blindspot
+    // per feedback_e2e_console_filter_blindspot).
+    if (m.type() === 'error' && !isExpectedNoise(m)) errors.push(m.text());
   });
   return errors;
 }

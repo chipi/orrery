@@ -233,7 +233,9 @@
     "audio_eyebrow": "AUDIO",
     "tour_eyebrow": "TOUR",
     "audio_credits_link": "Créditos de audio",
-    "audio_read_transcripts": "Leer transcripciones"
+    "audio_read_transcripts": "Leer transcripciones",
+    "epoch_all": "Todas las épocas",
+    "assembly_waiting_first_launch": "Esperando el primer lanzamiento…"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -469,7 +471,9 @@
     "audio_eyebrow": "AUDIO",
     "tour_eyebrow": "VISITE",
     "audio_credits_link": "Crédits audio",
-    "audio_read_transcripts": "Lire les transcriptions"
+    "audio_read_transcripts": "Lire les transcriptions",
+    "epoch_all": "Toutes les époques",
+    "assembly_waiting_first_launch": "En attente du premier lancement…"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -705,7 +709,9 @@
     "audio_eyebrow": "AUDIO",
     "tour_eyebrow": "TOUR",
     "audio_credits_link": "Audio-Credits",
-    "audio_read_transcripts": "Transkripte lesen"
+    "audio_read_transcripts": "Transkripte lesen",
+    "epoch_all": "Alle Epochen",
+    "assembly_waiting_first_launch": "Warte auf den ersten Start…"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -941,7 +947,9 @@
     "audio_eyebrow": "ÁUDIO",
     "tour_eyebrow": "TOUR",
     "audio_credits_link": "Créditos de áudio",
-    "audio_read_transcripts": "Ler transcrições"
+    "audio_read_transcripts": "Ler transcrições",
+    "epoch_all": "Todas as épocas",
+    "assembly_waiting_first_launch": "Aguardando o primeiro lançamento…"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -1177,7 +1185,9 @@
     "audio_eyebrow": "AUDIO",
     "tour_eyebrow": "TOUR",
     "audio_credits_link": "Crediti audio",
-    "audio_read_transcripts": "Leggi le trascrizioni"
+    "audio_read_transcripts": "Leggi le trascrizioni",
+    "epoch_all": "Tutte le epoche",
+    "assembly_waiting_first_launch": "In attesa del primo lancio…"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -1413,7 +1423,9 @@
     "audio_eyebrow": "АУДИО",
     "tour_eyebrow": "ОБИЛАЗАК",
     "audio_credits_link": "Аудио заслуге",
-    "audio_read_transcripts": "Прочитајте транскрипте"
+    "audio_read_transcripts": "Прочитајте транскрипте",
+    "epoch_all": "Све епохе",
+    "assembly_waiting_first_launch": "Чекање првог лансирања…"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -1649,7 +1661,9 @@
     "audio_eyebrow": "音频",
     "tour_eyebrow": "导览",
     "audio_credits_link": "音频版权信息",
-    "audio_read_transcripts": "阅读文字稿"
+    "audio_read_transcripts": "阅读文字稿",
+    "epoch_all": "所有时期",
+    "assembly_waiting_first_launch": "等待首次发射…"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -1885,7 +1899,9 @@
     "audio_eyebrow": "音声",
     "tour_eyebrow": "ツアー",
     "audio_credits_link": "音声クレジット",
-    "audio_read_transcripts": "トランスクリプトを読む"
+    "audio_read_transcripts": "トランスクリプトを読む",
+    "epoch_all": "すべての時期",
+    "assembly_waiting_first_launch": "最初の打ち上げを待機中…"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -2121,7 +2137,9 @@
     "audio_eyebrow": "오디오",
     "tour_eyebrow": "투어",
     "audio_credits_link": "오디오 크레딧",
-    "audio_read_transcripts": "스크립트 읽기"
+    "audio_read_transcripts": "스크립트 읽기",
+    "epoch_all": "모든 시기",
+    "assembly_waiting_first_launch": "첫 발사 대기 중…"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -2357,7 +2375,9 @@
     "audio_eyebrow": "ऑडियो",
     "tour_eyebrow": "टूर",
     "audio_credits_link": "ऑडियो श्रेय",
-    "audio_read_transcripts": "प्रतिलेख पढ़ें"
+    "audio_read_transcripts": "प्रतिलेख पढ़ें",
+    "epoch_all": "सभी युग",
+    "assembly_waiting_first_launch": "पहले प्रक्षेपण की प्रतीक्षा में…"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -2593,7 +2613,9 @@
     "audio_eyebrow": "الصوت",
     "tour_eyebrow": "الجولة",
     "audio_credits_link": "أرصدة الصوت",
-    "audio_read_transcripts": "قراءة النصوص المكتوبة"
+    "audio_read_transcripts": "قراءة النصوص المكتوبة",
+    "epoch_all": "جميع الحقب",
+    "assembly_waiting_first_launch": "في انتظار الإطلاق الأول…"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -2829,7 +2851,9 @@
     "audio_eyebrow": "АУДИО",
     "tour_eyebrow": "ТУР",
     "audio_credits_link": "Авторы аудио",
-    "audio_read_transcripts": "Читать расшифровки"
+    "audio_read_transcripts": "Читать расшифровки",
+    "epoch_all": "Все эпохи",
+    "assembly_waiting_first_launch": "Ожидание первого запуска…"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -3047,6 +3071,8 @@
     "audio_eyebrow": "AUDIO",
     "tour_eyebrow": "RONDLEIDING",
     "audio_credits_link": "Audionaamsvermelding",
-    "audio_read_transcripts": "Transcripties lezen"
+    "audio_read_transcripts": "Transcripties lezen",
+    "epoch_all": "Alle tijdperken",
+    "assembly_waiting_first_launch": "Wachten op de eerste lancering…"
   }
 }

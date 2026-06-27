@@ -55,21 +55,9 @@ const NAMES = {
 // re-runs only translate the keys listed here (overrides for prior batches
 // already persisted in paraglide-key-overrides.json).
 const KEYS = [
-  // batch 7g — remaining visible text (settings / observatory / audio)
-  'settings_title',
-  'settings_graphics_quality',
-  'settings_active_label',
-  'settings_auto_detect',
-  'settings_reload_required',
-  'settings_reload_now',
-  'observatory_heading',
-  'observatory_caption',
-  'observatory_loading',
-  'observatory_empty',
-  'audio_eyebrow',
-  'tour_eyebrow',
-  'audio_credits_link',
-  'audio_read_transcripts',
+  // batch 7h — final visible-text stragglers
+  'epoch_all',
+  'assembly_waiting_first_launch',
 ];
 
 const SYSTEM = `Translate Orrery UI strings (a space-exploration web app).

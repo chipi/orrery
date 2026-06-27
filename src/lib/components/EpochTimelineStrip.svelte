@@ -100,7 +100,7 @@
         class:active={selected === 'ALL'}
         role="radio"
         aria-checked={selected === 'ALL'}
-        onclick={() => onSelect('ALL')}>All epochs</button
+        onclick={() => onSelect('ALL')}>{m.epoch_all()}</button
       >
     </li>
     {#each EPOCH_BANDS as ep (ep.id)}

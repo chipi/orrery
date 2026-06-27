@@ -143,7 +143,7 @@
   {:else}
     <p class="chip empty" data-testid="assembly-chip">
       <span aria-hidden="true">·</span>
-      <span>Waiting for the first launch…</span>
+      <span>{m.assembly_waiting_first_launch()}</span>
     </p>
   {/if}
 

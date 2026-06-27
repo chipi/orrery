@@ -354,6 +354,9 @@
     }
     cards = [];
     renderer?.dispose();
+    // Release the WebGL context immediately (matches the app-wide #363
+    // contract); dispose() alone leaves the context resident until lazy GC.
+    renderer?.forceContextLoss();
     sharedCanvas?.remove();
     sharedCanvas = null;
     renderer = null;

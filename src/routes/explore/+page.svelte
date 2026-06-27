@@ -1653,15 +1653,29 @@
       0.5,
       8000,
     );
-    const renderer = createSceneRenderer(container);
     // Quality tier (URL ?quality=… > user choice > cached detect-gpu >
     // medium fallback). Sync resolver so the scene builds without
     // awaiting the GPU benchmark; the background detect updates the
     // cache for the next visit. See lib/quality/quality-tier.ts.
+    // Resolved BEFORE createSceneRenderer so the pixel-ratio cap is
+    // threaded in at construction (single set, no post-hoc override).
     const url = new URL(window.location.href);
     const quality = resolveQualitySync(url);
     void kickOffBackgroundDetect();
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
+    // Gate the per-planet 4K texture LOD on tier — on minimal/low (mobile,
+    // weak GPU) the 4K fetch + GPU upload cost outweighs the visual win, so
+    // those tiers stay at 2K throughout. Mirrors SurfaceScene's tex4kAllowed.
+    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low';
+    const renderer = createSceneRenderer(container, {
+      pixelRatioCap: quality.pixelRatioCap,
+    });
+
+    // Per-frame scratch vectors for the velocity-arrow overlay — reused
+    // each frame instead of allocating `new THREE.Vector3()` per visible
+    // planet (the animate loop runs these every frame). Safe to share:
+    // each is written then consumed within a single loop iteration.
+    const _orbitUp = new THREE.Vector3(0, 1, 0);
+    const _velTangent = new THREE.Vector3();
     // ACES filmic tone mapping — HDR Sun → SDR roll-off so bright
     // highlights (bloomed Sun + lit planet sides) don't clip to flat
     // white. Matches the /fly helio scene's stack (#322).
@@ -2605,7 +2619,7 @@
         // 4K texture swap (#287). Skip when the planet has no 4K
         // variant (Uranus, Neptune today).
         const lod = obj.lod;
-        if (lod && obj.planet.texture4k) {
+        if (lod && obj.planet.texture4k && tex4kAllowed) {
           if (ratio <= PLANET_LOD_IN_RATIO) {
             if (!lod.loadStarted) {
               lod.loadStarted = true;
@@ -4664,9 +4678,7 @@
                   // (worldToSun, orbital plane normal) gives the prograde
                   // direction; for the small inclinations used here, we
                   // approximate the plane normal as world-Y.
-                  const tangent = new THREE.Vector3()
-                    .crossVectors(new THREE.Vector3(0, 1, 0), worldToSun)
-                    .normalize();
+                  const tangent = _velTangent.crossVectors(_orbitUp, worldToSun).normalize();
                   // Speed in km/s via vis-viva at r = a (circular).
                   const aAU = Math.pow(planet.period, 2 / 3);
                   const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
@@ -4706,11 +4718,14 @@
                 const tx = px + ux * tailLen;
                 const ty = py + uy * tailLen;
                 const tz = pz + uz * tailLen;
-                tail.geometry.dispose();
-                tail.geometry = new THREE.BufferGeometry().setFromPoints([
-                  new THREE.Vector3(px, py, pz),
-                  new THREE.Vector3(tx, ty, tz),
-                ]);
+                // Mutate the 2-vertex position attribute in place instead of
+                // dispose()+new BufferGeometry() every frame (a per-frame GPU
+                // re-upload + 3 allocations per comet). The tail geometry is
+                // built once with 2 points at creation (see smallBodyObjs).
+                const pos = tail.geometry.attributes.position as THREE.BufferAttribute;
+                pos.setXYZ(0, px, py, pz);
+                pos.setXYZ(1, tx, ty, tz);
+                pos.needsUpdate = true;
               }
             }
           });

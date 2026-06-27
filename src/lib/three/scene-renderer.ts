@@ -13,10 +13,18 @@ import * as THREE from 'three';
 
 export function createSceneRenderer(
   container: HTMLElement,
-  { clearColor = 0x04040c }: { clearColor?: number } = {},
+  {
+    clearColor = 0x04040c,
+    pixelRatioCap = 2,
+  }: { clearColor?: number; pixelRatioCap?: number } = {},
 ): THREE.WebGLRenderer {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // Pixel-ratio cap is the single biggest fill-rate lever on Retina/mobile.
+  // Callers pass `quality.pixelRatioCap` (minimal 0.75 / low 1.0 / … / 2.0)
+  // so weak GPUs don't render at full DPR; defaults to 2 (the historical cap)
+  // when no tier is threaded. Surface routes (#363 follow-up) previously
+  // skipped this entirely and paid 2×+ fill on mobile.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, pixelRatioCap));
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setClearColor(clearColor, 1);
   container.appendChild(renderer.domElement);

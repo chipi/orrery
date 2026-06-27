@@ -930,15 +930,18 @@
       0.05,
       400,
     );
-    const renderer = createSceneRenderer(container);
-
     // Phase 23 (#342) — SurfaceScene was the last 3D route ignoring
     // quality-tier. Resolve the user's tier on mount so the postpro
-    // stack (EffectComposer + OutlinePass) AND the 4 K texture LOD
-    // both have a degrade path on weak GPUs / mobile. Without this,
-    // mobile users paid full outline + 4 K cost on every /earth /moon
-    // /mars visit. Mirrors /fly's resolveQualitySync wiring.
+    // stack (EffectComposer + OutlinePass), the 4 K texture LOD, AND
+    // the renderer pixel-ratio cap all have a degrade path on weak GPUs
+    // / mobile. Without this, mobile users paid full outline + 4 K +
+    // 2× DPR fill cost on every /earth /moon /mars visit. Mirrors /fly's
+    // resolveQualitySync wiring. Resolved BEFORE createSceneRenderer so
+    // the pixel-ratio cap is threaded in at construction (single set).
     const quality: QualityConfig = resolveQualitySync($page.url);
+    const renderer = createSceneRenderer(container, {
+      pixelRatioCap: quality.pixelRatioCap,
+    });
 
     // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
     // Skipped on `minimal` / `low` tiers — those render directly via

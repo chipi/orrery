@@ -157,16 +157,18 @@ describe('provenanceSourceId', () => {
       provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'SpaceIL' })),
     ).toBe('spaceil');
     // USAF (legacy military space) → US military space section.
-    expect(provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'USAF' }))).toBe(
-      'us-space-force',
-    );
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'USAF' })),
+    ).toBe('us-space-force');
     // CSA as the primary (first) token → Canadian Space Agency section.
     expect(
       provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'CSA / NASA' })),
     ).toBe('csa');
     // But NASA-first joint missions still bucket to NASA (CSA not first).
     expect(
-      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'NASA / ESA / CSA' })),
+      provenanceSourceId(
+        makePhoto({ source_type: 'wikimedia-commons', agency: 'NASA / ESA / CSA' }),
+      ),
     ).toBe('nasa');
     // Guard: CMSA folding must not break the distinct CNSA mapping.
     expect(

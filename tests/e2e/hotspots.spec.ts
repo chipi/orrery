@@ -88,10 +88,7 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
       const chip = page.locator('[data-testid="layer-surface"]');
       await expect(chip).toBeVisible();
       // No console errors during the load + first-frame lifecycle.
-      expect(
-        errors,
-        errors.join('\n'),
-      ).toEqual([]);
+      expect(errors, errors.join('\n')).toEqual([]);
     });
   }
 });
@@ -113,10 +110,7 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
       // Moon describe block above for context.
       const chip = page.locator('[data-testid="layer-surface"]');
       await expect(chip).toBeVisible();
-      expect(
-        errors,
-        errors.join('\n'),
-      ).toEqual([]);
+      expect(errors, errors.join('\n')).toEqual([]);
     });
   }
 });

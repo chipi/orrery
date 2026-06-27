@@ -42,7 +42,10 @@ test('/fly?mission= — deep-linked mission arc builds within budget', async ({ 
   // both the hook + the mission id to settle.
   await page.waitForFunction(
     () => {
-      const w = window as { __flyArcHash?: () => string | null; __flyMissionId?: () => string | null };
+      const w = window as {
+        __flyArcHash?: () => string | null;
+        __flyMissionId?: () => string | null;
+      };
       return (
         typeof w.__flyArcHash === 'function' &&
         w.__flyArcHash() !== null &&

@@ -166,13 +166,13 @@
   {:else}
     <div class="grid">
       {#each filtered as item (item.mainPath)}
-        <figure
+        <div
           class="card"
           class:promote={marks[item.mainPath] === 'promote'}
           class:prune={marks[item.mainPath] === 'prune'}
         >
           <img src="{base}{item.stagingWebPath}" alt="" loading="lazy" />
-          <figcaption>
+          <div class="caption">
             <span class="path">{item.mainPath.replace('/images/', '')}</span>
             <span class="meta">
               {item.category} · {item.sizeKb} KB ·
@@ -180,7 +180,7 @@
               {#if item.rejectedBy}· <span class="rej">rejected: {item.rejectedBy}</span>{/if}
             </span>
             {#if item.subject}<span class="subj" title={item.subject}>{item.subject}</span>{/if}
-          </figcaption>
+          </div>
           <div class="actions">
             <button
               class:on={marks[item.mainPath] === 'promote'}
@@ -191,7 +191,7 @@
               onclick={() => mark(item.mainPath, 'prune')}>Prune</button
             >
           </div>
-        </figure>
+        </div>
       {/each}
     </div>
   {/if}
@@ -288,7 +288,7 @@
     object-fit: cover;
     background: #000;
   }
-  figcaption {
+  .caption {
     padding: 5px 7px;
     font-size: 11px;
     display: flex;

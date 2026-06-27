@@ -73,8 +73,8 @@ const ALLOWED_ORPHANS = new Set<string>([
 
 type Reason = 'referenced' | 'gallery' | 'hero-override' | 'hero-01' | 'body' | 'card' | 'hotspot';
 
-function readJSON(p: string): any {
-  return JSON.parse(fs.readFileSync(p, 'utf8'));
+function readJSON<T = unknown>(p: string): T {
+  return JSON.parse(fs.readFileSync(p, 'utf8')) as T;
 }
 
 /** Collect every `/images/…` path literal that appears in a text blob. */
@@ -119,14 +119,14 @@ function main(): number {
   const counts: Record<string, Record<string, number>> = {};
   for (const [cat, file] of Object.entries(GALLERY_MANIFESTS)) {
     const p = `${DATA_DIR}/${file}`;
-    if (fs.existsSync(p)) counts[cat] = readJSON(p);
+    if (fs.existsSync(p)) counts[cat] = readJSON<Record<string, number>>(p);
   }
   const heroSlots = new Set<string>();
   for (const f of fs.readdirSync(DATA_DIR)) {
     if (!/-hero-overrides\.json$/.test(f)) continue;
-    const o = readJSON(`${DATA_DIR}/${f}`);
+    const o = readJSON<Record<string, { slot?: string }>>(`${DATA_DIR}/${f}`);
     for (const [id, v] of Object.entries(o)) {
-      if (v && (v as any).slot) heroSlots.add(`${id}::${(v as any).slot}`);
+      if (v && v.slot) heroSlots.add(`${id}::${v.slot}`);
     }
   }
 

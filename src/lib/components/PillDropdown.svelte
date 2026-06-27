@@ -12,6 +12,7 @@
    * affordance the per-pill version used to provide on /missions
    * and /fleet.
    */
+  import * as m from '$lib/paraglide/messages';
 
   let {
     value,
@@ -135,7 +136,7 @@
             class="search"
             bind:this={searchEl}
             bind:value={query}
-            placeholder="Type to filter…"
+            placeholder={m.dropdown_filter_placeholder()}
             aria-label="Filter {label}"
           />
         </div>

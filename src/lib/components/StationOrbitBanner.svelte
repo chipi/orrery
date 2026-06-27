@@ -86,7 +86,7 @@
     class="banner"
     class:collapsed={!expanded}
     data-testid="station-orbit-banner"
-    aria-label="Orbital regime"
+    aria-label={m.orbital_regime_aria()}
   >
     <button
       type="button"

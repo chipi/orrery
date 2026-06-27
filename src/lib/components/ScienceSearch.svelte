@@ -17,6 +17,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { goto } from '$app/navigation';
+  import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
   import { track } from '$lib/analytics';
 
@@ -133,8 +134,8 @@
 </script>
 
 {#if open}
-  <div class="overlay" role="dialog" aria-modal="true" aria-label="Search /science">
-    <button type="button" class="backdrop" aria-label="Close search" tabindex="-1" onclick={close}
+  <div class="overlay" role="dialog" aria-modal="true" aria-label={m.science_search_dialog_aria()}>
+    <button type="button" class="backdrop" aria-label={m.search_close_aria()} tabindex="-1" onclick={close}
     ></button>
     <div class="panel" role="document">
       <input
@@ -142,10 +143,10 @@
         bind:value={query}
         type="search"
         class="input"
-        placeholder="Search the encyclopedia… (e.g. perihelion, ∆v, porkchop)"
+        placeholder={m.science_search_placeholder()}
         autocomplete="off"
         spellcheck="false"
-        aria-label="Search query"
+        aria-label={m.search_query_aria()}
       />
       <ul class="results" role="listbox">
         {#each results as r, i (`${r.tab}/${r.section}`)}

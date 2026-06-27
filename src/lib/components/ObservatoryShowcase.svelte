@@ -14,6 +14,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
   import { getFleetByCategory, getFleetGallery } from '$lib/data';
   import type { FleetEntry } from '$types/fleet';
 
@@ -46,7 +47,7 @@
 
 <section
   class="observatory-showcase"
-  aria-label="Observatory showcase — one hero image per orbital observatory"
+  aria-label={m.observatory_showcase_aria()}
 >
   <header>
     <h2>The actual telescopes</h2>

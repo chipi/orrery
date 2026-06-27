@@ -9,6 +9,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { isSaveDataActive } from '$lib/hotspot-tier3-skybox';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     panoramaUrl: string | null | undefined;
@@ -28,7 +29,7 @@
       data-testid="exit-panorama"
       data-audio-stage="surface-exit-panorama"
       onclick={onExit}
-      title="Exit panorama view (Esc)"
+      title={m.panorama_exit_title()}
     >
       Exit panorama view
     </button>

@@ -276,7 +276,7 @@
       <div
         class="now-marker"
         style:left="{yearToFrac(new Date().getFullYear()) * 100}%"
-        aria-label="Current year"
+        aria-label={m.timeline_current_year_aria()}
         title="Now · {new Date().getFullYear()}"
       >
         <span class="now-label">NOW</span>

@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import type { TierContext } from '$lib/surface-map/tier-context';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     tierContext: TierContext;
@@ -46,7 +47,7 @@
             href={layer.sourceUrl}
             target="_blank"
             rel="noopener noreferrer external"
-            title="Open the source page in a new tab">source ↗</a
+            title={m.source_open_new_tab_title()}>source ↗</a
           >
         {/if}
       </div>

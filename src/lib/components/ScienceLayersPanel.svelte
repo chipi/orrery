@@ -311,7 +311,7 @@
     class="panel"
     class:collapsed={!expanded}
     data-testid="science-lens-panel"
-    aria-label="Science Lens"
+    aria-label={m.science_lens_aria()}
   >
     <button
       type="button"
@@ -337,7 +337,7 @@
           {#if hasLensStory}
             <div class="lens-divider" aria-hidden="true"></div>
           {/if}
-          <ul class="rows" aria-label="Science layers">
+          <ul class="rows" aria-label={m.science_layers_aria()}>
             {#each visibleLayers as key (key)}
               {@const meta = metaFor(key)}
               <li class="row">

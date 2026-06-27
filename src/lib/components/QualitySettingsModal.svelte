@@ -25,6 +25,7 @@
 -->
 <script lang="ts">
   import { onDestroy } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
   import {
     type QualityChoice,
     type QualityTier,
@@ -75,14 +76,14 @@
 </script>
 
 {#if settingsState.open}
-  <div class="settings-panel" role="dialog" aria-label="Settings">
+  <div class="settings-panel" role="dialog" aria-label={m.settings_aria()}>
     <div class="settings-header">
       <span class="settings-title">SETTINGS</span>
       <button
         type="button"
         class="settings-close"
         onclick={closeSettings}
-        aria-label="Close settings">×</button
+        aria-label={m.settings_close_aria()}>×</button
       >
     </div>
     <div class="settings-section">

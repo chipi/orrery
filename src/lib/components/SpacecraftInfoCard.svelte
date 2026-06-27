@@ -44,7 +44,7 @@
 </script>
 
 {#if layerOn}
-  <aside class="card" data-testid="spacecraft-info-card" aria-label="Live spacecraft state">
+  <aside class="card" data-testid="spacecraft-info-card" aria-label={m.spacecraft_state_aria()}>
     <dl class="rows">
       <div class="row">
         <dt>

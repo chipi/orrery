@@ -14,6 +14,7 @@
    */
   import type { FleetEpoch } from '$types/fleet';
   import { EPOCH_BANDS, AXIS_MIN, AXIS_MAX } from '$lib/epoch-bands';
+  import * as m from '$lib/paraglide/messages';
 
   const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
 
@@ -52,7 +53,7 @@
   const todayPct = Math.max(0, Math.min(100, pctLeft(todayYear)));
 </script>
 
-<section class="strip" aria-label="Spaceflight epochs timeline">
+<section class="strip" aria-label={m.epoch_timeline_aria()}>
   <!-- Desktop: full timeline with bands positioned along the axis -->
   <div class="axis-wrap" aria-hidden="true">
     <div class="axis">
@@ -91,7 +92,7 @@
   </div>
 
   <!-- Mobile: simple chip carousel -->
-  <ul class="chips" role="radiogroup" aria-label="Filter by epoch">
+  <ul class="chips" role="radiogroup" aria-label={m.epoch_filter_aria()}>
     <li>
       <button
         type="button"

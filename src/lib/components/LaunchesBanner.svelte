@@ -34,7 +34,7 @@
 </script>
 
 {#if loaded && entries.length > 0}
-  <aside class="banner" aria-label="Next featured launches">
+  <aside class="banner" aria-label={m.launches_banner_aria()}>
     <header class="banner-header">
       <h2 class="eyebrow">{m.launches_banner_eyebrow()}</h2>
       <a class="all-link" href="{base}/missions/launches">{m.launches_banner_all()}</a>

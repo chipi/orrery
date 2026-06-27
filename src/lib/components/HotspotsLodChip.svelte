@@ -7,6 +7,7 @@
 -->
 <script lang="ts">
   import type { HotspotMode } from '$lib/hotspot-lod-dispatcher';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     mode: HotspotMode;
@@ -20,7 +21,7 @@
   class="chip chip-hotspots"
   class:active={mode !== 'low'}
   onclick={onCycle}
-  title="Surface Hotspots LOD · click to cycle AUTO ↔ LOW ↔ HIGH"
+  title={m.hotspots_lod_title()}
   aria-label="Hotspots tier: {mode}"
   data-testid="layer-hotspots"
   data-hotspots-mode={mode}

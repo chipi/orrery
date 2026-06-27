@@ -19,6 +19,7 @@
    *   - latestChip (derived in the parent from currentChip())
    */
   import { fmtDate } from '$lib/station-assembly-anim';
+  import * as m from '$lib/paraglide/messages';
 
   type Props = {
     playing: boolean;
@@ -82,8 +83,8 @@
       type="button"
       class="ctrl"
       data-testid="assembly-reset"
-      aria-label="Reset assembly to the first launch"
-      title="Reset to start"
+      aria-label={m.assembly_reset_aria()}
+      title={m.assembly_reset_title()}
       onclick={onReset}
     >
       ⟲
@@ -97,7 +98,7 @@
       step="0.001"
       value={progress}
       data-testid="assembly-scrub"
-      aria-label="Assembly date scrubber"
+      aria-label={m.assembly_scrubber_aria()}
       oninput={(e) => onScrub(Number((e.target as HTMLInputElement).value))}
     />
 
@@ -106,8 +107,8 @@
     <button
       type="button"
       class="assembly-close"
-      aria-label="Close assembly playback"
-      title="Close assembly playback"
+      aria-label={m.assembly_close()}
+      title={m.assembly_close()}
       onclick={onClose}
     >
       ×
@@ -122,7 +123,7 @@
           type="button"
           class="chip-name"
           data-testid="assembly-chip-name"
-          title="Open this module's panel (pauses playback)"
+          title={m.assembly_open_module_title()}
           onclick={() => onChipClick(latestChip!.pickableId!)}
         >
           {latestChip.name}

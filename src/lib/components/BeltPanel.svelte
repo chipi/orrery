@@ -316,7 +316,7 @@
       <button
         type="button"
         class="lightbox"
-        aria-label="Close"
+        aria-label={m.ui_close()}
         onclick={() => (lightboxSrc = null)}
       >
         <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />

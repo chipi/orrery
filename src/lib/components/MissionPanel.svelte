@@ -411,7 +411,7 @@
                 class="spec-cta spec-cta--payload"
                 href="{base}/fleet?id={spacecraftRef}"
                 data-testid="mission-payload-fleet-link"
-                title="Open spacecraft in /fleet"
+                title={m.mission_open_in_fleet_title()}
               >
                 <span class="spec-icon" aria-hidden="true">
                   <SpacecraftIcon />

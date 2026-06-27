@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "Fechar detalhes da fase",
   "fly_phase_panel_eyebrow": "FASE DA MISSÃO",
   "fly_phase_pill_open_aria": "Saiba mais sobre a fase {phase}",
-  "earth_regime_chip_aria": "Ver regime orbital {regime}"
+  "earth_regime_chip_aria": "Ver regime orbital {regime}",
+  "panel_belt_gallery_empty": "Galeria ainda está sendo montada.",
+  "panel_belt_no_spacecraft": "Nenhuma sonda visitou este cinturão ainda.",
+  "panel_sun_no_observatory": "Nenhuma missão de observatório solar registrada.",
+  "panel_smallbody_no_spacecraft": "Nenhuma sonda visitou este corpo.",
+  "panel_planet_no_missions": "Nenhuma missão registrada.",
+  "science_card_read_full": "Ler seção completa →",
+  "science_card_loading": "Carregando ciência…",
+  "fleet_first_flight": "Primeiro voo",
+  "fleet_last_flight": "Último voo",
+  "fleet_anatomy_caption": "Ilustração anatômica original feita para o Orrery."
 }

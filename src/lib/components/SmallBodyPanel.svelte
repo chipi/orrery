@@ -347,7 +347,7 @@
         {/if}
       {:else if tab === 'missions'}
         {#if missionEntries.length === 0}
-          <p class="empty-tab">No spacecraft have visited this body.</p>
+          <p class="empty-tab">{m.panel_smallbody_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
             {#each missionEntries as entry (entry)}

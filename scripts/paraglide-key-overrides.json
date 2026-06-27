@@ -98,7 +98,17 @@
     "explore_speed_tip_1": "1 día por segundo",
     "explore_speed_tip_10": "10 días por segundo",
     "explore_speed_tip_100": "100 días por segundo",
-    "explore_time_today": "Volver a hoy"
+    "explore_time_today": "Volver a hoy",
+    "panel_belt_gallery_empty": "La galería aún se está montando.",
+    "panel_belt_no_spacecraft": "Ninguna nave espacial ha visitado este cinturón todavía.",
+    "panel_sun_no_observatory": "No hay misiones de observatorio solar registradas.",
+    "panel_smallbody_no_spacecraft": "Ninguna nave espacial ha visitado este cuerpo.",
+    "panel_planet_no_missions": "No hay misiones registradas.",
+    "science_card_read_full": "Leer sección completa →",
+    "science_card_loading": "Cargando ciencia…",
+    "fleet_first_flight": "Primer vuelo",
+    "fleet_last_flight": "Último vuelo",
+    "fleet_anatomy_caption": "Ilustración anatómica original creada para Orrery."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -199,7 +209,17 @@
     "explore_speed_tip_1": "1 jour par seconde",
     "explore_speed_tip_10": "10 jours par seconde",
     "explore_speed_tip_100": "100 jours par seconde",
-    "explore_time_today": "Revenir à aujourd'hui"
+    "explore_time_today": "Revenir à aujourd'hui",
+    "panel_belt_gallery_empty": "La galerie est en cours d'assemblage.",
+    "panel_belt_no_spacecraft": "Aucune sonde n'a encore visité cette ceinture.",
+    "panel_sun_no_observatory": "Aucune mission d'observatoire solaire enregistrée.",
+    "panel_smallbody_no_spacecraft": "Aucune sonde n'a visité ce corps.",
+    "panel_planet_no_missions": "Aucune mission enregistrée.",
+    "science_card_read_full": "Lire la section complète →",
+    "science_card_loading": "Chargement des données scientifiques…",
+    "fleet_first_flight": "Premier vol",
+    "fleet_last_flight": "Dernier vol",
+    "fleet_anatomy_caption": "Illustration anatomique originale réalisée pour Orrery."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -300,7 +320,17 @@
     "explore_speed_tip_1": "1 Tag pro Sekunde",
     "explore_speed_tip_10": "10 Tage pro Sekunde",
     "explore_speed_tip_100": "100 Tage pro Sekunde",
-    "explore_time_today": "Zurück zu heute"
+    "explore_time_today": "Zurück zu heute",
+    "panel_belt_gallery_empty": "Galerie wird noch zusammengestellt.",
+    "panel_belt_no_spacecraft": "Noch keine Raumsonden haben diesen Gürtel besucht.",
+    "panel_sun_no_observatory": "Keine Sonnenobservatorium-Missionen verzeichnet.",
+    "panel_smallbody_no_spacecraft": "Keine Raumsonden haben diesen Körper besucht.",
+    "panel_planet_no_missions": "Keine Missionen verzeichnet.",
+    "science_card_read_full": "Vollständigen Abschnitt lesen →",
+    "science_card_loading": "Lade Wissenschaft…",
+    "fleet_first_flight": "Erster Flug",
+    "fleet_last_flight": "Letzter Flug",
+    "fleet_anatomy_caption": "Original-Anatomieillustration erstellt für Orrery."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -401,7 +431,17 @@
     "explore_speed_tip_1": "1 dia por segundo",
     "explore_speed_tip_10": "10 dias por segundo",
     "explore_speed_tip_100": "100 dias por segundo",
-    "explore_time_today": "Voltar para hoje"
+    "explore_time_today": "Voltar para hoje",
+    "panel_belt_gallery_empty": "Galeria ainda está sendo montada.",
+    "panel_belt_no_spacecraft": "Nenhuma sonda visitou este cinturão ainda.",
+    "panel_sun_no_observatory": "Nenhuma missão de observatório solar registrada.",
+    "panel_smallbody_no_spacecraft": "Nenhuma sonda visitou este corpo.",
+    "panel_planet_no_missions": "Nenhuma missão registrada.",
+    "science_card_read_full": "Ler seção completa →",
+    "science_card_loading": "Carregando ciência…",
+    "fleet_first_flight": "Primeiro voo",
+    "fleet_last_flight": "Último voo",
+    "fleet_anatomy_caption": "Ilustração anatômica original feita para o Orrery."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -502,7 +542,17 @@
     "explore_speed_tip_1": "1 giorno al secondo",
     "explore_speed_tip_10": "10 giorni al secondo",
     "explore_speed_tip_100": "100 giorni al secondo",
-    "explore_time_today": "Torna a oggi"
+    "explore_time_today": "Torna a oggi",
+    "panel_belt_gallery_empty": "La galleria è ancora in allestimento.",
+    "panel_belt_no_spacecraft": "Nessuna sonda ha ancora visitato questa fascia.",
+    "panel_sun_no_observatory": "Nessuna missione di osservatorio solare registrata.",
+    "panel_smallbody_no_spacecraft": "Nessuna sonda ha visitato questo corpo.",
+    "panel_planet_no_missions": "Nessuna missione registrata.",
+    "science_card_read_full": "Leggi la sezione completa →",
+    "science_card_loading": "Caricamento informazioni…",
+    "fleet_first_flight": "Primo volo",
+    "fleet_last_flight": "Ultimo volo",
+    "fleet_anatomy_caption": "Illustrazione anatomica originale realizzata per Orrery."
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -603,7 +653,17 @@
     "explore_speed_tip_1": "1 дан у секунди",
     "explore_speed_tip_10": "10 дана у секунди",
     "explore_speed_tip_100": "100 дана у секунди",
-    "explore_time_today": "Назад на данас"
+    "explore_time_today": "Назад на данас",
+    "panel_belt_gallery_empty": "Галерија се још увек склапа.",
+    "panel_belt_no_spacecraft": "Ниједна летелица још није посетила овај појас.",
+    "panel_sun_no_observatory": "Нема евидентираних мисија соларних опсерваторија.",
+    "panel_smallbody_no_spacecraft": "Ниједна летелица није посетила ово тело.",
+    "panel_planet_no_missions": "Нема евидентираних мисија.",
+    "science_card_read_full": "Прочитај цео одељак →",
+    "science_card_loading": "Учитавање научних података…",
+    "fleet_first_flight": "Први лет",
+    "fleet_last_flight": "Последњи лет",
+    "fleet_anatomy_caption": "Оригинална анатомска илустрација направљена за Orrery."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -704,7 +764,17 @@
     "explore_speed_tip_1": "每秒 1 天",
     "explore_speed_tip_10": "每秒 10 天",
     "explore_speed_tip_100": "每秒 100 天",
-    "explore_time_today": "回到今天"
+    "explore_time_today": "回到今天",
+    "panel_belt_gallery_empty": "图库仍在组装中。",
+    "panel_belt_no_spacecraft": "尚无航天器访问过此带。",
+    "panel_sun_no_observatory": "无太阳观测任务记录。",
+    "panel_smallbody_no_spacecraft": "尚无航天器访问过此天体。",
+    "panel_planet_no_missions": "无任务记录。",
+    "science_card_read_full": "阅读完整章节 →",
+    "science_card_loading": "正在加载科学数据…",
+    "fleet_first_flight": "首次飞行",
+    "fleet_last_flight": "末次飞行",
+    "fleet_anatomy_caption": "为 Orrery 原创绘制的结构图。"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -805,7 +875,17 @@
     "explore_speed_tip_1": "1秒あたり1日",
     "explore_speed_tip_10": "1秒あたり10日",
     "explore_speed_tip_100": "1秒あたり100日",
-    "explore_time_today": "今日に戻す"
+    "explore_time_today": "今日に戻す",
+    "panel_belt_gallery_empty": "ギャラリーは現在準備中です。",
+    "panel_belt_no_spacecraft": "この帯を訪れた探査機はまだありません。",
+    "panel_sun_no_observatory": "太陽観測ミッションの記録はありません。",
+    "panel_smallbody_no_spacecraft": "この天体を訪れた探査機はありません。",
+    "panel_planet_no_missions": "ミッションの記録はありません。",
+    "science_card_read_full": "全文を読む →",
+    "science_card_loading": "科学情報を読み込み中…",
+    "fleet_first_flight": "初飛行",
+    "fleet_last_flight": "最終飛行",
+    "fleet_anatomy_caption": "Orreryのために制作されたオリジナル構造図。"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -906,7 +986,17 @@
     "explore_speed_tip_1": "초당 1일",
     "explore_speed_tip_10": "초당 10일",
     "explore_speed_tip_100": "초당 100일",
-    "explore_time_today": "오늘로 재설정"
+    "explore_time_today": "오늘로 재설정",
+    "panel_belt_gallery_empty": "갤러리를 아직 준비 중입니다.",
+    "panel_belt_no_spacecraft": "아직 이 벨트를 방문한 탐사선이 없습니다.",
+    "panel_sun_no_observatory": "기록된 태양 관측 임무가 없습니다.",
+    "panel_smallbody_no_spacecraft": "이 천체를 방문한 탐사선이 없습니다.",
+    "panel_planet_no_missions": "기록된 임무가 없습니다.",
+    "science_card_read_full": "전체 보기 →",
+    "science_card_loading": "과학 정보 로딩 중…",
+    "fleet_first_flight": "첫 비행",
+    "fleet_last_flight": "마지막 비행",
+    "fleet_anatomy_caption": "Orrery를 위해 제작된 원본 구조 일러스트."
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -1007,7 +1097,17 @@
     "explore_speed_tip_1": "1 दिन प्रति सेकंड",
     "explore_speed_tip_10": "10 दिन प्रति सेकंड",
     "explore_speed_tip_100": "100 दिन प्रति सेकंड",
-    "explore_time_today": "आज पर लौटें"
+    "explore_time_today": "आज पर लौटें",
+    "panel_belt_gallery_empty": "गैलरी अभी तैयार हो रही है।",
+    "panel_belt_no_spacecraft": "इस बेल्ट पर अभी तक कोई अंतरिक्ष यान नहीं गया है।",
+    "panel_sun_no_observatory": "कोई सौर वेधशाला मिशन दर्ज नहीं है।",
+    "panel_smallbody_no_spacecraft": "इस पिंड पर अभी तक कोई अंतरिक्ष यान नहीं गया है।",
+    "panel_planet_no_missions": "कोई मिशन दर्ज नहीं है।",
+    "science_card_read_full": "पूरा खंड पढ़ें →",
+    "science_card_loading": "विज्ञान लोड हो रहा है…",
+    "fleet_first_flight": "पहली उड़ान",
+    "fleet_last_flight": "अंतिम उड़ान",
+    "fleet_anatomy_caption": "Orrery के लिए बनाया गया मूल शारीरिक चित्र।"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -1108,7 +1208,17 @@
     "explore_speed_tip_1": "يوم واحد في الثانية",
     "explore_speed_tip_10": "10 أيام في الثانية",
     "explore_speed_tip_100": "100 يوم في الثانية",
-    "explore_time_today": "العودة إلى اليوم"
+    "explore_time_today": "العودة إلى اليوم",
+    "panel_belt_gallery_empty": "المعرض لا يزال قيد الإعداد.",
+    "panel_belt_no_spacecraft": "لم تزر أي مركبة فضائية هذا الحزام بعد.",
+    "panel_sun_no_observatory": "لا توجد مهام رصد شمسي مسجلة.",
+    "panel_smallbody_no_spacecraft": "لم تزر أي مركبة فضائية هذا الجرم.",
+    "panel_planet_no_missions": "لا توجد مهام مسجلة.",
+    "science_card_read_full": "اقرأ القسم كاملاً →",
+    "science_card_loading": "جارٍ تحميل المحتوى العلمي…",
+    "fleet_first_flight": "أول رحلة",
+    "fleet_last_flight": "آخر رحلة",
+    "fleet_anatomy_caption": "رسم توضيحي أصلي للتشريح أُعدّ لتطبيق Orrery."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -1209,7 +1319,17 @@
     "explore_speed_tip_1": "1 день в секунду",
     "explore_speed_tip_10": "10 дней в секунду",
     "explore_speed_tip_100": "100 дней в секунду",
-    "explore_time_today": "Вернуться к сегодня"
+    "explore_time_today": "Вернуться к сегодня",
+    "panel_belt_gallery_empty": "Галерея всё ещё формируется.",
+    "panel_belt_no_spacecraft": "Этот пояс пока не посещали космические аппараты.",
+    "panel_sun_no_observatory": "Миссий по наблюдению Солнца не зафиксировано.",
+    "panel_smallbody_no_spacecraft": "Это тело пока не посещали космические аппараты.",
+    "panel_planet_no_missions": "Миссий не зафиксировано.",
+    "science_card_read_full": "Читать полностью →",
+    "science_card_loading": "Загрузка данных…",
+    "fleet_first_flight": "Первый полёт",
+    "fleet_last_flight": "Последний полёт",
+    "fleet_anatomy_caption": "Оригинальная иллюстрация устройства создана для Orrery."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -1292,6 +1412,16 @@
     "explore_speed_tip_1": "1 dag per seconde",
     "explore_speed_tip_10": "10 dagen per seconde",
     "explore_speed_tip_100": "100 dagen per seconde",
-    "explore_time_today": "Terug naar vandaag"
+    "explore_time_today": "Terug naar vandaag",
+    "panel_belt_gallery_empty": "Galerij wordt nog samengesteld.",
+    "panel_belt_no_spacecraft": "Nog geen ruimtevaartuigen hebben deze gordel bezocht.",
+    "panel_sun_no_observatory": "Geen zonneobservatorium-missies geregistreerd.",
+    "panel_smallbody_no_spacecraft": "Geen ruimtevaartuigen hebben dit hemellichaam bezocht.",
+    "panel_planet_no_missions": "Geen missies geregistreerd.",
+    "science_card_read_full": "Lees volledige sectie →",
+    "science_card_loading": "Wetenschap laden…",
+    "fleet_first_flight": "Eerste vlucht",
+    "fleet_last_flight": "Laatste vlucht",
+    "fleet_anatomy_caption": "Originele anatomie-illustratie gemaakt voor Orrery."
   }
 }

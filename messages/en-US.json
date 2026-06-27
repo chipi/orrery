@@ -1205,5 +1205,15 @@
   "explore_iconic_tagline_hayabusa2": "Returned samples from asteroid Ryugu.",
   "explore_iconic_tagline_bepicolombo": "Composite Mercury orbiter (MPO + Mio) en route since 2018.",
   "explore_iconic_tagline_juice": "Three Galilean moon flybys + Ganymede orbit insertion ahead.",
-  "explore_iconic_tagline_placeholder": "Hover any spacecraft to read why it's iconic."
+  "explore_iconic_tagline_placeholder": "Hover any spacecraft to read why it's iconic.",
+  "panel_belt_gallery_empty": "Gallery is still being assembled.",
+  "panel_belt_no_spacecraft": "No spacecraft have visited this belt yet.",
+  "panel_sun_no_observatory": "No solar observatory missions recorded.",
+  "panel_smallbody_no_spacecraft": "No spacecraft have visited this body.",
+  "panel_planet_no_missions": "No missions recorded.",
+  "science_card_read_full": "Read full section →",
+  "science_card_loading": "Loading science…",
+  "fleet_first_flight": "First flight",
+  "fleet_last_flight": "Last flight",
+  "fleet_anatomy_caption": "Original anatomy illustration made for Orrery."
 }

@@ -259,7 +259,7 @@
         {/if}
       {:else if tab === 'missions'}
         {#if (sun.mission_visits ?? []).length === 0}
-          <p class="empty-tab">No solar observatory missions recorded.</p>
+          <p class="empty-tab">{m.panel_sun_no_observatory()}</p>
         {:else}
           <ul class="mission-list">
             {#each sun.mission_visits ?? [] as visit (visit)}

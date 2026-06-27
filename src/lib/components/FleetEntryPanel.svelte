@@ -328,12 +328,12 @@
             <dd>{entry.country}</dd>
           </div>
           <div class="spec">
-            <dt>First flight</dt>
+            <dt>{m.fleet_first_flight()}</dt>
             <dd>{entry.first_flight === 'planned' ? 'Planned' : entry.first_flight}</dd>
           </div>
           {#if entry.last_flight}
             <div class="spec">
-              <dt>Last flight</dt>
+              <dt>{m.fleet_last_flight()}</dt>
               <dd>{entry.last_flight}</dd>
             </div>
           {/if}
@@ -406,7 +406,7 @@
                 decoding="async"
               />
             </button>
-            <p class="anatomy-caption">Original anatomy illustration made for Orrery.</p>
+            <p class="anatomy-caption">{m.fleet_anatomy_caption()}</p>
           </div>
         {/if}
         {#if hasLinks}

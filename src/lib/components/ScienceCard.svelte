@@ -18,6 +18,7 @@
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { page } from '$app/stores';
+  import * as m from '$lib/paraglide/messages';
   import { getScienceSection } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import type { ScienceSection, ScienceTabId } from '$types/science';
@@ -63,11 +64,11 @@
     {/if}
     <p class="meta">
       <span class="tab-tag">{tab.replace(/-/g, ' ')}</span>
-      <span class="more">Read full section →</span>
+      <span class="more">{m.science_card_read_full()}</span>
     </p>
   {:else}
     <p class="title">{heading ?? `${tab}/${section}`}</p>
-    <p class="intro placeholder">Loading science…</p>
+    <p class="intro placeholder">{m.science_card_loading()}</p>
   {/if}
 </a>
 

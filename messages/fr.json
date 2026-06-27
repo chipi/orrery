@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "Fermer les détails de phase",
   "fly_phase_panel_eyebrow": "PHASE DE MISSION",
   "fly_phase_pill_open_aria": "En savoir plus sur la phase {phase}",
-  "earth_regime_chip_aria": "Voir le régime orbital {regime}"
+  "earth_regime_chip_aria": "Voir le régime orbital {regime}",
+  "panel_belt_gallery_empty": "La galerie est en cours d'assemblage.",
+  "panel_belt_no_spacecraft": "Aucune sonde n'a encore visité cette ceinture.",
+  "panel_sun_no_observatory": "Aucune mission d'observatoire solaire enregistrée.",
+  "panel_smallbody_no_spacecraft": "Aucune sonde n'a visité ce corps.",
+  "panel_planet_no_missions": "Aucune mission enregistrée.",
+  "science_card_read_full": "Lire la section complète →",
+  "science_card_loading": "Chargement des données scientifiques…",
+  "fleet_first_flight": "Premier vol",
+  "fleet_last_flight": "Dernier vol",
+  "fleet_anatomy_caption": "Illustration anatomique originale réalisée pour Orrery."
 }

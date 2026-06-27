@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "フェーズ詳細を閉じる",
   "fly_phase_panel_eyebrow": "ミッションフェーズ",
   "fly_phase_pill_open_aria": "{phase}フェーズについて詳しく見る",
-  "earth_regime_chip_aria": "{regime}軌道領域を表示"
+  "earth_regime_chip_aria": "{regime}軌道領域を表示",
+  "panel_belt_gallery_empty": "ギャラリーは現在準備中です。",
+  "panel_belt_no_spacecraft": "この帯を訪れた探査機はまだありません。",
+  "panel_sun_no_observatory": "太陽観測ミッションの記録はありません。",
+  "panel_smallbody_no_spacecraft": "この天体を訪れた探査機はありません。",
+  "panel_planet_no_missions": "ミッションの記録はありません。",
+  "science_card_read_full": "全文を読む →",
+  "science_card_loading": "科学情報を読み込み中…",
+  "fleet_first_flight": "初飛行",
+  "fleet_last_flight": "最終飛行",
+  "fleet_anatomy_caption": "Orreryのために制作されたオリジナル構造図。"
 }

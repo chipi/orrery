@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "Закрыть детали фазы",
   "fly_phase_panel_eyebrow": "ФАЗА МИССИИ",
   "fly_phase_pill_open_aria": "Узнать о фазе {phase}",
-  "earth_regime_chip_aria": "Просмотр орбитального режима {regime}"
+  "earth_regime_chip_aria": "Просмотр орбитального режима {regime}",
+  "panel_belt_gallery_empty": "Галерея всё ещё формируется.",
+  "panel_belt_no_spacecraft": "Этот пояс пока не посещали космические аппараты.",
+  "panel_sun_no_observatory": "Миссий по наблюдению Солнца не зафиксировано.",
+  "panel_smallbody_no_spacecraft": "Это тело пока не посещали космические аппараты.",
+  "panel_planet_no_missions": "Миссий не зафиксировано.",
+  "science_card_read_full": "Читать полностью →",
+  "science_card_loading": "Загрузка данных…",
+  "fleet_first_flight": "Первый полёт",
+  "fleet_last_flight": "Последний полёт",
+  "fleet_anatomy_caption": "Оригинальная иллюстрация устройства создана для Orrery."
 }

@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "단계 세부정보 닫기",
   "fly_phase_panel_eyebrow": "임무 단계",
   "fly_phase_pill_open_aria": "{phase} 단계에 대해 알아보기",
-  "earth_regime_chip_aria": "{regime} 궤도 영역 보기"
+  "earth_regime_chip_aria": "{regime} 궤도 영역 보기",
+  "panel_belt_gallery_empty": "갤러리를 아직 준비 중입니다.",
+  "panel_belt_no_spacecraft": "아직 이 벨트를 방문한 탐사선이 없습니다.",
+  "panel_sun_no_observatory": "기록된 태양 관측 임무가 없습니다.",
+  "panel_smallbody_no_spacecraft": "이 천체를 방문한 탐사선이 없습니다.",
+  "panel_planet_no_missions": "기록된 임무가 없습니다.",
+  "science_card_read_full": "전체 보기 →",
+  "science_card_loading": "과학 정보 로딩 중…",
+  "fleet_first_flight": "첫 비행",
+  "fleet_last_flight": "마지막 비행",
+  "fleet_anatomy_caption": "Orrery를 위해 제작된 원본 구조 일러스트."
 }

@@ -17,6 +17,7 @@
   import Panel from './Panel.svelte';
   import ImageCredit from './ImageCredit.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import * as m from '$lib/paraglide/messages';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
@@ -259,7 +260,7 @@
         {/if}
       {:else if tab === 'gallery'}
         {#if galleryGrid.length === 0}
-          <p class="empty-tab">Gallery is still being assembled.</p>
+          <p class="empty-tab">{m.panel_belt_gallery_empty()}</p>
         {:else}
           <div class="gallery-grid" aria-label="{entry.name} gallery">
             {#each galleryGrid as src (src)}
@@ -293,7 +294,7 @@
         </ul>
       {:else if tab === 'missions'}
         {#if entry.mission_visits.length === 0}
-          <p class="editorial empty">No spacecraft have visited this belt yet.</p>
+          <p class="editorial empty">{m.panel_belt_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
             {#each entry.mission_visits as mission (mission)}

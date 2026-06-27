@@ -1205,5 +1205,15 @@
   "fly_phase_panel_close": "Затвори детаље фазе",
   "fly_phase_panel_eyebrow": "ФАЗА МИСИЈЕ",
   "fly_phase_pill_open_aria": "Сазнајте више о фази {phase}",
-  "earth_regime_chip_aria": "Прикажи {regime} орбитални режим"
+  "earth_regime_chip_aria": "Прикажи {regime} орбитални режим",
+  "panel_belt_gallery_empty": "Галерија се још увек склапа.",
+  "panel_belt_no_spacecraft": "Ниједна летелица још није посетила овај појас.",
+  "panel_sun_no_observatory": "Нема евидентираних мисија соларних опсерваторија.",
+  "panel_smallbody_no_spacecraft": "Ниједна летелица није посетила ово тело.",
+  "panel_planet_no_missions": "Нема евидентираних мисија.",
+  "science_card_read_full": "Прочитај цео одељак →",
+  "science_card_loading": "Учитавање научних података…",
+  "fleet_first_flight": "Први лет",
+  "fleet_last_flight": "Последњи лет",
+  "fleet_anatomy_caption": "Оригинална анатомска илустрација направљена за Orrery."
 }

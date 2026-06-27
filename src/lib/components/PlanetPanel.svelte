@@ -352,7 +352,7 @@
         {/if}
       {:else if tab === 'missions'}
         {#if (planet.mission_visits ?? []).length === 0}
-          <p class="empty-tab">No missions recorded.</p>
+          <p class="empty-tab">{m.panel_planet_no_missions()}</p>
         {:else}
           <ul class="mission-list">
             {#each planet.mission_visits ?? [] as entry (entry)}

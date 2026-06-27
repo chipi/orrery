@@ -130,10 +130,10 @@
           onclick={() => searchEl?.open_()}
         >
           <span class="search-icon" aria-hidden="true">⌕</span>
-          <span class="search-label">Search</span>
+          <span class="search-label">{m.science_rail_search()}</span>
           <kbd class="search-hint">⌘K</kbd>
         </button>
-        <h2 class="rail-heading">Sections</h2>
+        <h2 class="rail-heading">{m.science_rail_sections()}</h2>
         <ul class="tab-list" data-audio-stage="science-tabs">
           {#each SCIENCE_TABS as tab (tab)}
             <li>

@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
 
   type Book = {
     title: string;
@@ -185,7 +186,7 @@
 </script>
 
 <svelte:head>
-  <title>Reading list · Orrery Science</title>
+  <title>{m.reading_list_title()} · Orrery Science</title>
   <meta
     name="description"
     content="Curated beginner-to-intermediate space books + blogs to accompany the Orrery science encyclopedia."
@@ -194,16 +195,12 @@
 
 <article class="resources">
   <header class="head">
-    <h1>Reading list</h1>
-    <p class="lede">
-      Books, articles, and blogs to read alongside the encyclopedia. Curated for clarity and respect
-      for the reader's time — the entries here are short, focused, and from authors who explain
-      rather than perform.
-    </p>
+    <h1>{m.reading_list_title()}</h1>
+    <p class="lede">{m.reading_list_lede()}</p>
   </header>
 
   <section class="block">
-    <h2>Books</h2>
+    <h2>{m.reading_list_section_books()}</h2>
     <ul class="entries">
       {#each books as book (book.title)}
         <li class="entry">
@@ -242,7 +239,7 @@
   </section>
 
   <section class="block">
-    <h2>Blogs & long-form</h2>
+    <h2>{m.reading_list_section_blogs()}</h2>
     <ul class="entries">
       {#each blogs as blog (blog.title)}
         <li class="entry">

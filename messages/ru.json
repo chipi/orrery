@@ -1215,5 +1215,17 @@
   "science_card_loading": "Загрузка данных…",
   "fleet_first_flight": "Первый полёт",
   "fleet_last_flight": "Последний полёт",
-  "fleet_anatomy_caption": "Оригинальная иллюстрация устройства создана для Orrery."
+  "fleet_anatomy_caption": "Оригинальная иллюстрация устройства создана для Orrery.",
+  "reading_list_title": "Список для чтения",
+  "reading_list_lede": "Книги, статьи и блоги для чтения вместе с энциклопедией. Отобраны за ясность изложения и уважение ко времени читателя — материалы здесь краткие, сфокусированные, от авторов, которые объясняют, а не выступают.",
+  "reading_list_section_books": "Книги",
+  "reading_list_section_blogs": "Блоги и длинные тексты",
+  "watch_list_title": "Список для просмотра",
+  "watch_list_lede": "Фильмы, документалистика, подкасты и YouTube-каналы — для тех случаев, когда хочется космического контента, который не нужно читать. Отобраны за точность (или за намеренную красивую неточность), а не за популярность.",
+  "watch_list_section_scifi": "Научная фантастика",
+  "watch_list_section_documentaries": "Документальные фильмы",
+  "watch_list_section_podcasts": "Подкасты",
+  "watch_list_section_youtube": "YouTube-каналы",
+  "science_rail_search": "Поиск",
+  "science_rail_sections": "Разделы"
 }

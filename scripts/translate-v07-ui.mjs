@@ -51,18 +51,23 @@ const NAMES = {
   'zh-CN': 'Simplified Chinese',
 };
 
-// The v0.7-added keys to translate. Extend as more extraction batches land.
+// The v0.7-added keys to translate. Extend as more extraction batches land;
+// re-runs only translate the keys listed here (overrides for prior batches
+// already persisted in paraglide-key-overrides.json).
 const KEYS = [
-  'panel_belt_gallery_empty',
-  'panel_belt_no_spacecraft',
-  'panel_sun_no_observatory',
-  'panel_smallbody_no_spacecraft',
-  'panel_planet_no_missions',
-  'science_card_read_full',
-  'science_card_loading',
-  'fleet_first_flight',
-  'fleet_last_flight',
-  'fleet_anatomy_caption',
+  // batch 7b — science sub-pages + science rail
+  'reading_list_title',
+  'reading_list_lede',
+  'reading_list_section_books',
+  'reading_list_section_blogs',
+  'watch_list_title',
+  'watch_list_lede',
+  'watch_list_section_scifi',
+  'watch_list_section_documentaries',
+  'watch_list_section_podcasts',
+  'watch_list_section_youtube',
+  'science_rail_search',
+  'science_rail_sections',
 ];
 
 const SYSTEM = `Translate Orrery UI strings (a space-exploration web app).

@@ -1215,5 +1215,17 @@
   "science_card_loading": "科学情報を読み込み中…",
   "fleet_first_flight": "初飛行",
   "fleet_last_flight": "最終飛行",
-  "fleet_anatomy_caption": "Orreryのために制作されたオリジナル構造図。"
+  "fleet_anatomy_caption": "Orreryのために制作されたオリジナル構造図。",
+  "reading_list_title": "読書リスト",
+  "reading_list_lede": "百科事典と併せて読む書籍、記事、ブログ。明快さと読者の時間への配慮を基準に厳選 — ここに掲載されているものは、パフォーマンスではなく説明を重視する著者による、短く焦点の絞られた内容です。",
+  "reading_list_section_books": "書籍",
+  "reading_list_section_blogs": "ブログ・長文記事",
+  "watch_list_title": "視聴リスト",
+  "watch_list_lede": "読まずに宇宙コンテンツを楽しみたいときのための映画、ドキュメンタリー、ポッドキャスト、YouTubeチャンネル。人気度ではなく、実際に正確なもの(または意図的に美しく間違っているもの)を基準に厳選。",
+  "watch_list_section_scifi": "SF映画",
+  "watch_list_section_documentaries": "ドキュメンタリー",
+  "watch_list_section_podcasts": "ポッドキャスト",
+  "watch_list_section_youtube": "YouTubeチャンネル",
+  "science_rail_search": "検索",
+  "science_rail_sections": "セクション"
 }

@@ -1215,5 +1215,17 @@
   "science_card_loading": "과학 정보 로딩 중…",
   "fleet_first_flight": "첫 비행",
   "fleet_last_flight": "마지막 비행",
-  "fleet_anatomy_caption": "Orrery를 위해 제작된 원본 구조 일러스트."
+  "fleet_anatomy_caption": "Orrery를 위해 제작된 원본 구조 일러스트.",
+  "reading_list_title": "읽을 목록",
+  "reading_list_lede": "백과사전과 함께 읽을 책, 논문, 블로그입니다. 명확성과 독자의 시간 존중을 기준으로 선별했습니다 — 여기 수록된 항목들은 짧고 집중적이며, 과시보다는 설명에 충실한 저자들의 글입니다.",
+  "reading_list_section_books": "책",
+  "reading_list_section_blogs": "블로그 & 장문",
+  "watch_list_title": "시청 목록",
+  "watch_list_lede": "읽지 않아도 되는 우주 콘텐츠를 원할 때를 위한 영화, 다큐멘터리, 팟캐스트, 유튜브 채널입니다. 인기도가 아닌 실제 정확성(또는 의도적으로 아름답게 틀린 것)을 기준으로 선별했습니다.",
+  "watch_list_section_scifi": "SF 영화",
+  "watch_list_section_documentaries": "다큐멘터리",
+  "watch_list_section_podcasts": "팟캐스트",
+  "watch_list_section_youtube": "유튜브 채널",
+  "science_rail_search": "검색",
+  "science_rail_sections": "섹션"
 }

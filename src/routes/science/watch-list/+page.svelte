@@ -9,6 +9,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
 
   type Entry = {
     title: string;
@@ -212,7 +213,7 @@
 </script>
 
 <svelte:head>
-  <title>Watch list · Orrery Science</title>
+  <title>{m.watch_list_title()} · Orrery Science</title>
   <meta
     name="description"
     content="Curated sci-fi films, space documentaries, podcasts, and YouTube channels to accompany the Orrery science encyclopedia."
@@ -221,16 +222,12 @@
 
 <article class="resources">
   <header class="head">
-    <h1>Watch list</h1>
-    <p class="lede">
-      Films, documentaries, podcasts, and YouTube channels for when you want space content you
-      didn't have to read. Curated for what's actually accurate (or beautifully wrong on purpose),
-      not for what's popular.
-    </p>
+    <h1>{m.watch_list_title()}</h1>
+    <p class="lede">{m.watch_list_lede()}</p>
   </header>
 
   <section class="block">
-    <h2>Sci-fi films</h2>
+    <h2>{m.watch_list_section_scifi()}</h2>
     <ul class="entries">
       {#each films as f (f.title)}
         <li class="entry">
@@ -260,7 +257,7 @@
   </section>
 
   <section class="block">
-    <h2>Documentaries</h2>
+    <h2>{m.watch_list_section_documentaries()}</h2>
     <ul class="entries">
       {#each docs as d (d.title)}
         <li class="entry">
@@ -294,7 +291,7 @@
   </section>
 
   <section class="block">
-    <h2>Podcasts</h2>
+    <h2>{m.watch_list_section_podcasts()}</h2>
     <ul class="entries">
       {#each podcasts as p (p.title)}
         <li class="entry">
@@ -326,7 +323,7 @@
   </section>
 
   <section class="block">
-    <h2>YouTube channels</h2>
+    <h2>{m.watch_list_section_youtube()}</h2>
     <ul class="entries">
       {#each channels as c (c.title)}
         <li class="entry">

@@ -1215,5 +1215,17 @@
   "science_card_loading": "正在加载科学数据…",
   "fleet_first_flight": "首次飞行",
   "fleet_last_flight": "末次飞行",
-  "fleet_anatomy_caption": "为 Orrery 原创绘制的结构图。"
+  "fleet_anatomy_caption": "为 Orrery 原创绘制的结构图。",
+  "reading_list_title": "阅读清单",
+  "reading_list_lede": "与百科全书并行阅读的书籍、文章和博客。精选标准是清晰易懂且尊重读者时间——这里的条目简短、专注,出自善于解释而非卖弄的作者之手。",
+  "reading_list_section_books": "书籍",
+  "reading_list_section_blogs": "博客与长文",
+  "watch_list_title": "观看清单",
+  "watch_list_lede": "当你想要无需阅读的太空内容时,这里有电影、纪录片、播客和YouTube频道。精选标准是真正准确的内容(或刻意营造的美妙错误),而非流行度。",
+  "watch_list_section_scifi": "科幻电影",
+  "watch_list_section_documentaries": "纪录片",
+  "watch_list_section_podcasts": "播客",
+  "watch_list_section_youtube": "YouTube频道",
+  "science_rail_search": "搜索",
+  "science_rail_sections": "分类"
 }

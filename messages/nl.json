@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "Joeri Gagarin poster — SK-1 helmvizier met de Aarde weerspiegeld in het goudgetinte glas",
   "poster_sputnik_aria": "Spoetnik 1 poster — Sovjet pop-art met piep-piep-piep tekstballonnen",
   "poster_voyager_aria": "Voyager indie-comic / pop-art poster",
-  "poster_sojourner_aria": "Sojourner rover poster — indie-comic stijl, eerste wielen op Mars"
+  "poster_sojourner_aria": "Sojourner rover poster — indie-comic stijl, eerste wielen op Mars",
+  "settings_title": "INSTELLINGEN",
+  "settings_graphics_quality": "Grafische kwaliteit",
+  "settings_active_label": "Actief:",
+  "settings_auto_detect": "Automatisch (detecteer GPU)",
+  "settings_reload_required": "Herladen vereist om toe te passen.",
+  "settings_reload_now": "Nu herladen",
+  "observatory_heading": "De echte telescopen",
+  "observatory_caption": "Eén kenmerkende afbeelding per observatorium in de Orrery-vloot — klik op een afbeelding om door te gaan naar de volledige galerij en het technische paneel van dat observatorium. Gerangschikt op datum van eerste vlucht, zodat de strip fungeert als een tijdlijn van hoe ons kosmisch gezichtsveld zich heeft uitgebreid.",
+  "observatory_loading": "Observatoriumbeelden laden…",
+  "observatory_empty": "Nog geen observatoriumbeelden beschikbaar.",
+  "audio_eyebrow": "AUDIO",
+  "tour_eyebrow": "RONDLEIDING",
+  "audio_credits_link": "Audionaamsvermelding",
+  "audio_read_transcripts": "Transcripties lezen"
 }

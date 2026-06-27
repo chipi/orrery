@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "ملصق يوري غاغارين — واقي خوذة SK-1 مع انعكاس الأرض في الزجاج المموّه بالذهبي",
   "poster_sputnik_aria": "ملصق سبوتنيك 1 — فن سوفييتي شعبي مع فقاعات كلام بيب-بيب-بيب",
   "poster_voyager_aria": "ملصق فوياجر بأسلوب الكوميكس المستقل / الفن الشعبي",
-  "poster_sojourner_aria": "ملصق مركبة سوجورنر — أسلوب كوميكس مستقل، أول عجلات على المريخ"
+  "poster_sojourner_aria": "ملصق مركبة سوجورنر — أسلوب كوميكس مستقل، أول عجلات على المريخ",
+  "settings_title": "الإعدادات",
+  "settings_graphics_quality": "جودة الرسوميات",
+  "settings_active_label": "نشط:",
+  "settings_auto_detect": "تلقائي (كشف وحدة معالجة الرسوميات)",
+  "settings_reload_required": "يلزم إعادة التحميل للتطبيق.",
+  "settings_reload_now": "إعادة التحميل الآن",
+  "observatory_heading": "المراصد الفعلية",
+  "observatory_caption": "صورة مميزة واحدة لكل مرصد في أسطول Orrery — انقر على أي منها للانتقال إلى المعرض الكامل واللوحة التقنية لذلك المرصد. مرتبة حسب تاريخ الإطلاق الأول، لذا يُقرأ الشريط كخط زمني لكيفية توسع رؤيتنا الكونية.",
+  "observatory_loading": "جارٍ تحميل صور المرصد…",
+  "observatory_empty": "لا توجد صور متاحة للمرصد بعد.",
+  "audio_eyebrow": "الصوت",
+  "tour_eyebrow": "الجولة",
+  "audio_credits_link": "أرصدة الصوت",
+  "audio_read_transcripts": "قراءة النصوص المكتوبة"
 }

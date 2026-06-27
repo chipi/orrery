@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "ユーリイ・ガガーリンポスター — SK-1ヘルメットのバイザーに金色のガラスに反射する地球",
   "poster_sputnik_aria": "スプートニク1号ポスター — ビープ・ビープ・ビープの吹き出し付きソビエトポップアート",
   "poster_voyager_aria": "ボイジャー インディーコミック/ポップアートポスター",
-  "poster_sojourner_aria": "ソジャーナー探査車ポスター — インディーコミックスタイル、火星で初めての車輪"
+  "poster_sojourner_aria": "ソジャーナー探査車ポスター — インディーコミックスタイル、火星で初めての車輪",
+  "settings_title": "設定",
+  "settings_graphics_quality": "グラフィック品質",
+  "settings_active_label": "現在:",
+  "settings_auto_detect": "自動(GPU検出)",
+  "settings_reload_required": "適用には再読み込みが必要です。",
+  "settings_reload_now": "今すぐ再読み込み",
+  "observatory_heading": "実際の望遠鏡",
+  "observatory_caption": "Orreryに搭載された各天文台の代表的な画像 — クリックすると、その天文台のフルギャラリーと技術パネルが開きます。初飛行日順に並んでいるため、このストリップは私たちの宇宙観がどのように広がってきたかを示すタイムラインとなっています。",
+  "observatory_loading": "天文台画像を読み込み中…",
+  "observatory_empty": "天文台画像はまだありません。",
+  "audio_eyebrow": "音声",
+  "tour_eyebrow": "ツアー",
+  "audio_credits_link": "音声クレジット",
+  "audio_read_transcripts": "トランスクリプトを読む"
 }

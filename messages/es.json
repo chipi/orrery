@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "Póster de Yuri Gagarin — visor del casco SK-1 con la Tierra reflejada en el cristal dorado",
   "poster_sputnik_aria": "Póster del Sputnik 1 — pop-art soviético con bocadillos bip-bip-bip",
   "poster_voyager_aria": "Póster de las Voyager estilo cómic independiente / pop-art",
-  "poster_sojourner_aria": "Póster del rover Sojourner — estilo cómic independiente, primeras ruedas en Marte"
+  "poster_sojourner_aria": "Póster del rover Sojourner — estilo cómic independiente, primeras ruedas en Marte",
+  "settings_title": "AJUSTES",
+  "settings_graphics_quality": "Calidad de Gráficos",
+  "settings_active_label": "Activo:",
+  "settings_auto_detect": "Auto (detectar GPU)",
+  "settings_reload_required": "Recarga necesaria para aplicar.",
+  "settings_reload_now": "Recargar ahora",
+  "observatory_heading": "Los telescopios reales",
+  "observatory_caption": "Una imagen representativa por observatorio en la flota de Orrery — haz clic en cualquiera para acceder a la galería completa y al panel técnico de ese observatorio. Ordenados por fecha de primer vuelo, la franja se lee como una línea temporal de cómo ha evolucionado nuestra visión cósmica.",
+  "observatory_loading": "Cargando imágenes de observatorios…",
+  "observatory_empty": "Aún no hay imágenes de observatorios disponibles.",
+  "audio_eyebrow": "AUDIO",
+  "tour_eyebrow": "TOUR",
+  "audio_credits_link": "Créditos de audio",
+  "audio_read_transcripts": "Leer transcripciones"
 }

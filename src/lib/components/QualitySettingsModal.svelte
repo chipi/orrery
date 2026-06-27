@@ -78,7 +78,7 @@
 {#if settingsState.open}
   <div class="settings-panel" role="dialog" aria-label={m.settings_aria()}>
     <div class="settings-header">
-      <span class="settings-title">SETTINGS</span>
+      <span class="settings-title">{m.settings_title()}</span>
       <button
         type="button"
         class="settings-close"
@@ -87,9 +87,9 @@
       >
     </div>
     <div class="settings-section">
-      <div class="settings-section-title">Graphics Quality</div>
+      <div class="settings-section-title">{m.settings_graphics_quality()}</div>
       <div class="settings-section-hint">
-        Active: <span class="settings-active-tier">{activeQualityTier}</span>
+        {m.settings_active_label()} <span class="settings-active-tier">{activeQualityTier}</span>
       </div>
       <label class="settings-radio">
         <input
@@ -99,7 +99,7 @@
           checked={qualityChoice === 'auto'}
           onchange={() => onQualityChange('auto')}
         />
-        <span>Auto (detect GPU)</span>
+        <span>{m.settings_auto_detect()}</span>
       </label>
       {#each ALL_TIERS as tier (tier)}
         <label class="settings-radio">
@@ -115,9 +115,9 @@
       {/each}
       {#if qualityDirty}
         <div class="settings-reload-hint">
-          Reload required to apply.
+          {m.settings_reload_required()}
           <button type="button" class="settings-reload-btn" onclick={reloadForQuality}
-            >Reload now</button
+            >{m.settings_reload_now()}</button
           >
         </div>
       {/if}

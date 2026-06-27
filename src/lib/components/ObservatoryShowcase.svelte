@@ -45,23 +45,16 @@
   });
 </script>
 
-<section
-  class="observatory-showcase"
-  aria-label={m.observatory_showcase_aria()}
->
+<section class="observatory-showcase" aria-label={m.observatory_showcase_aria()}>
   <header>
-    <h2>The actual telescopes</h2>
-    <p class="caption">
-      One signature image per observatory in Orrery's fleet — click any to drop into that
-      observatory's full gallery + technical panel. Listed by first-flight date, so the strip reads
-      as a timeline of how our cosmic vision has expanded.
-    </p>
+    <h2>{m.observatory_heading()}</h2>
+    <p class="caption">{m.observatory_caption()}</p>
   </header>
 
   {#if loading}
-    <p class="status">Loading observatory imagery…</p>
+    <p class="status">{m.observatory_loading()}</p>
   {:else if items.length === 0}
-    <p class="status">No observatory imagery available yet.</p>
+    <p class="status">{m.observatory_empty()}</p>
   {:else}
     <ul class="strip">
       {#each items as item (item.entry.id)}

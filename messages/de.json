@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "Juri-Gagarin-Poster — SK-1-Helmvisier mit Erde, die sich im goldgetönten Glas spiegelt",
   "poster_sputnik_aria": "Sputnik-1-Poster — sowjetische Pop-Art mit Piep-Piep-Piep-Sprechblasen",
   "poster_voyager_aria": "Voyager-Indie-Comic-/Pop-Art-Poster",
-  "poster_sojourner_aria": "Sojourner-Rover-Poster — Indie-Comic-Stil, erste Räder auf dem Mars"
+  "poster_sojourner_aria": "Sojourner-Rover-Poster — Indie-Comic-Stil, erste Räder auf dem Mars",
+  "settings_title": "EINSTELLUNGEN",
+  "settings_graphics_quality": "Grafikqualität",
+  "settings_active_label": "Aktiv:",
+  "settings_auto_detect": "Auto (GPU erkennen)",
+  "settings_reload_required": "Neuladen erforderlich.",
+  "settings_reload_now": "Jetzt neuladen",
+  "observatory_heading": "Die echten Teleskope",
+  "observatory_caption": "Ein charakteristisches Bild pro Observatorium in Orrerys Flotte – klicken Sie auf eines, um zur vollständigen Galerie und zum technischen Panel dieses Observatoriums zu gelangen. Sortiert nach Erstflugdatum, sodass die Reihe eine Zeitleiste darstellt, wie sich unser kosmischer Blick erweitert hat.",
+  "observatory_loading": "Lade Observatoriumsbilder…",
+  "observatory_empty": "Noch keine Observatoriumsbilder verfügbar.",
+  "audio_eyebrow": "AUDIO",
+  "tour_eyebrow": "TOUR",
+  "audio_credits_link": "Audio-Credits",
+  "audio_read_transcripts": "Transkripte lesen"
 }

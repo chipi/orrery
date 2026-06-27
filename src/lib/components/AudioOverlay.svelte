@@ -827,7 +827,7 @@
   >
     <header class="overlay-header">
       <div class="header-top">
-        <span class="overlay-eyebrow">AUDIO</span>
+        <span class="overlay-eyebrow">{m.audio_eyebrow()}</span>
         <div class="header-actions">
           <button
             type="button"
@@ -934,7 +934,7 @@
 
     <section class="tour-bar" aria-label={m.audio_tour_bar_aria()}>
       {#if audio.tourActive}
-        <span class="tour-eyebrow">TOUR</span>
+        <span class="tour-eyebrow">{m.tour_eyebrow()}</span>
         <span class="tour-position">{audio.tourIndex + 1}/{audio.tourSequence.length}</span>
         <span
           class="tour-clock"
@@ -1172,8 +1172,8 @@
          popup keeps just the per-episode links. -->
     <footer class="origin-disclosure" aria-label={m.audio_origin_disclosure_aria()}>
       <span class="origin-detail"
-        ><a href="{base}/credits">Audio credits</a> ·
-        <a href="{base}/library/episodes">Read transcripts</a></span
+        ><a href="{base}/credits">{m.audio_credits_link()}</a> ·
+        <a href="{base}/library/episodes">{m.audio_read_transcripts()}</a></span
       >
     </footer>
   </div>

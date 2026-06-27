@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "尤里·加加林海报——SK-1头盔面罩，金色玻璃中映出地球倒影",
   "poster_sputnik_aria": "斯普特尼克1号海报——苏联波普艺术风格，带有嘀嘀嘀对话气泡",
   "poster_voyager_aria": "旅行者号独立漫画/波普艺术海报",
-  "poster_sojourner_aria": "旅居者号火星车海报——独立漫画风格，火星上的第一对车轮"
+  "poster_sojourner_aria": "旅居者号火星车海报——独立漫画风格，火星上的第一对车轮",
+  "settings_title": "设置",
+  "settings_graphics_quality": "图形质量",
+  "settings_active_label": "当前：",
+  "settings_auto_detect": "自动（检测GPU）",
+  "settings_reload_required": "需要重新加载才能应用。",
+  "settings_reload_now": "立即重新加载",
+  "observatory_heading": "真实的望远镜",
+  "observatory_caption": "Orrery 舰队中每台天文台的代表性图像——点击任意图像可进入该天文台的完整图库和技术面板。按首飞日期排列，这条时间轴展示了人类宇宙视野的扩展历程。",
+  "observatory_loading": "正在加载天文台图像…",
+  "observatory_empty": "暂无天文台图像。",
+  "audio_eyebrow": "音频",
+  "tour_eyebrow": "导览",
+  "audio_credits_link": "音频版权信息",
+  "audio_read_transcripts": "阅读文字稿"
 }

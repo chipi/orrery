@@ -55,18 +55,21 @@ const NAMES = {
 // re-runs only translate the keys listed here (overrides for prior batches
 // already persisted in paraglide-key-overrides.json).
 const KEYS = [
-  // batch 7f — posters art-description aria-labels
-  'poster_solar_system_aria',
-  'poster_earth_aria',
-  'poster_moon_aria',
-  'poster_mars_aria',
-  'poster_iss_aria',
-  'poster_tiangong_aria',
-  'poster_apollo11_aria',
-  'poster_gagarin_aria',
-  'poster_sputnik_aria',
-  'poster_voyager_aria',
-  'poster_sojourner_aria',
+  // batch 7g — remaining visible text (settings / observatory / audio)
+  'settings_title',
+  'settings_graphics_quality',
+  'settings_active_label',
+  'settings_auto_detect',
+  'settings_reload_required',
+  'settings_reload_now',
+  'observatory_heading',
+  'observatory_caption',
+  'observatory_loading',
+  'observatory_empty',
+  'audio_eyebrow',
+  'tour_eyebrow',
+  'audio_credits_link',
+  'audio_read_transcripts',
 ];
 
 const SYSTEM = `Translate Orrery UI strings (a space-exploration web app).

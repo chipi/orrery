@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "유리 가가린 포스터 — 금빛 유리에 반사된 지구가 비친 SK-1 헬멧 바이저",
   "poster_sputnik_aria": "스푸트니크 1호 포스터 — 삑삑삑 말풍선이 있는 소련 팝아트",
   "poster_voyager_aria": "보이저 인디 코믹 / 팝아트 포스터",
-  "poster_sojourner_aria": "소저너 탐사로봇 포스터 — 인디 코믹 스타일, 화성의 첫 바퀴"
+  "poster_sojourner_aria": "소저너 탐사로봇 포스터 — 인디 코믹 스타일, 화성의 첫 바퀴",
+  "settings_title": "설정",
+  "settings_graphics_quality": "그래픽 품질",
+  "settings_active_label": "활성:",
+  "settings_auto_detect": "자동 (GPU 감지)",
+  "settings_reload_required": "적용하려면 새로고침이 필요합니다.",
+  "settings_reload_now": "지금 새로고침",
+  "observatory_heading": "실제 망원경",
+  "observatory_caption": "Orrery의 관측소별 대표 이미지 — 클릭하면 해당 관측소의 전체 갤러리 및 기술 패널로 이동합니다. 최초 발사일 순으로 나열되어 우리의 우주 관측 능력이 어떻게 확장되어 왔는지 타임라인으로 확인할 수 있습니다.",
+  "observatory_loading": "관측소 이미지 로딩 중…",
+  "observatory_empty": "아직 사용 가능한 관측소 이미지가 없습니다.",
+  "audio_eyebrow": "오디오",
+  "tour_eyebrow": "투어",
+  "audio_credits_link": "오디오 크레딧",
+  "audio_read_transcripts": "스크립트 읽기"
 }

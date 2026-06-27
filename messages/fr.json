@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "Affiche Youri Gagarine — visière de casque SK-1 avec la Terre reflétée dans le verre teinté d'or",
   "poster_sputnik_aria": "Affiche Spoutnik 1 — pop-art soviétique avec bulles bip-bip-bip",
   "poster_voyager_aria": "Affiche Voyager style bande-dessinée indépendante / pop-art",
-  "poster_sojourner_aria": "Affiche rover Sojourner — style bande-dessinée indépendante, premières roues sur Mars"
+  "poster_sojourner_aria": "Affiche rover Sojourner — style bande-dessinée indépendante, premières roues sur Mars",
+  "settings_title": "PARAMÈTRES",
+  "settings_graphics_quality": "Qualité graphique",
+  "settings_active_label": "Actif :",
+  "settings_auto_detect": "Auto (détection GPU)",
+  "settings_reload_required": "Rechargement requis pour appliquer.",
+  "settings_reload_now": "Recharger maintenant",
+  "observatory_heading": "Les véritables télescopes",
+  "observatory_caption": "Une image emblématique par observatoire de la flotte d'Orrery — cliquez pour accéder à la galerie complète et aux données techniques de l'observatoire. Classés par date de lancement, la bande se lit comme une chronologie de l'expansion de notre vision cosmique.",
+  "observatory_loading": "Chargement des images d'observatoires…",
+  "observatory_empty": "Aucune image d'observatoire disponible pour le moment.",
+  "audio_eyebrow": "AUDIO",
+  "tour_eyebrow": "VISITE",
+  "audio_credits_link": "Crédits audio",
+  "audio_read_transcripts": "Lire les transcriptions"
 }

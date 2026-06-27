@@ -1326,5 +1326,19 @@
   "poster_gagarin_aria": "Yuri Gagarin poster — SK-1 helmet visor with Earth reflected in the gold-tinted glass",
   "poster_sputnik_aria": "Sputnik 1 poster — Soviet pop-art with beep-beep-beep speech bubbles",
   "poster_voyager_aria": "Voyager indie-comic / pop-art poster",
-  "poster_sojourner_aria": "Sojourner rover poster — indie-comic style, first wheels on Mars"
+  "poster_sojourner_aria": "Sojourner rover poster — indie-comic style, first wheels on Mars",
+  "settings_title": "SETTINGS",
+  "settings_graphics_quality": "Graphics Quality",
+  "settings_active_label": "Active:",
+  "settings_auto_detect": "Auto (detect GPU)",
+  "settings_reload_required": "Reload required to apply.",
+  "settings_reload_now": "Reload now",
+  "observatory_heading": "The actual telescopes",
+  "observatory_caption": "One signature image per observatory in Orrery's fleet — click any to drop into that observatory's full gallery + technical panel. Listed by first-flight date, so the strip reads as a timeline of how our cosmic vision has expanded.",
+  "observatory_loading": "Loading observatory imagery…",
+  "observatory_empty": "No observatory imagery available yet.",
+  "audio_eyebrow": "AUDIO",
+  "tour_eyebrow": "TOUR",
+  "audio_credits_link": "Audio credits",
+  "audio_read_transcripts": "Read transcripts"
 }

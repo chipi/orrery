@@ -146,6 +146,33 @@ describe('provenanceSourceId', () => {
       provenanceSourceId(makePhoto({ source_type: 'nasa-images-api', agency: 'NASA / ESA' })),
     ).toBe('nasa');
   });
+  it('maps CMSA / SpaceIL / CSA / USAF to their sections, not Wikimedia-Commons (v0.7 sweep)', () => {
+    // CMSA (China Manned Space Agency — Tiangong/Shenzhou) folds into the
+    // CNSA China section rather than miscrediting to Commons.
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'CMSA' })),
+    ).toBe('cnsa');
+    // SpaceIL gets its own section (Israeli Beresheet program).
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'SpaceIL' })),
+    ).toBe('spaceil');
+    // USAF (legacy military space) → US military space section.
+    expect(provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'USAF' }))).toBe(
+      'us-space-force',
+    );
+    // CSA as the primary (first) token → Canadian Space Agency section.
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'CSA / NASA' })),
+    ).toBe('csa');
+    // But NASA-first joint missions still bucket to NASA (CSA not first).
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'NASA / ESA / CSA' })),
+    ).toBe('nasa');
+    // Guard: CMSA folding must not break the distinct CNSA mapping.
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'CNSA' })),
+    ).toBe('cnsa');
+  });
   it('maps NASA Images API entries to nasa even without an explicit agency hint', () => {
     expect(provenanceSourceId(makePhoto({ source_type: 'nasa-images-api', agency: '' }))).toBe(
       'nasa',

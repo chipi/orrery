@@ -179,9 +179,17 @@ function agencyToSourceId(agency: string): string | null {
   if (a.includes('mbrsc') || a.includes('uae space agency')) return 'uaesa';
   if (a.includes('roscosmos') || a === 'soviet') return 'roscosmos';
   if (a.includes('cnsa')) return 'cnsa';
+  // CMSA (China Manned Space Agency — Tiangong / Shenzhou) operates under
+  // China's national program; fold into the CNSA section (which has a logo
+  // + is the canonical China bucket) rather than miscrediting 135 images to
+  // Wikimedia-Commons. #v0.7 sweep.
+  if (a.includes('cmsa')) return 'cnsa';
   if (a.includes('isro')) return 'isro';
   if (a.includes('jaxa')) return 'jaxa';
   if (a.includes('spacex')) return 'spacex';
+  // SpaceIL — Israeli non-profit lunar program (Beresheet). Own section so
+  // its imagery isn't bucketed under Wikimedia-Commons (global-programs bar).
+  if (a.includes('spaceil') || a.includes('space il')) return 'spaceil';
   if (a.includes('blue origin')) return 'blue-origin';
   // Phase 3 + Tier 1 additions — new source-logos entries that match
   // operator names appearing in image-provenance.agency.
@@ -197,8 +205,21 @@ function agencyToSourceId(agency: string): string | null {
   if (a.includes('noaa')) return 'noaa';
   if (a.includes('smithsonian')) return 'smithsonian';
   if (a.includes('national archives') || a.includes('nara')) return 'nara';
-  if (a.includes('ussf') || a.includes('us space force') || a.includes('united states space force'))
+  if (
+    a.includes('ussf') ||
+    a.includes('usaf') ||
+    a.includes('us space force') ||
+    a.includes('united states space force') ||
+    a.includes('air force')
+  )
+    // USAF imagery (legacy military space, pre-USSF) → the US military space
+    // section; closest existing bucket, far better than Commons miscredit.
     return 'us-space-force';
+  // CSA (Canadian Space Agency) — logo exists. Matched only when CSA is the
+  // primary token (e.g. "CSA / NASA"); NASA-first joint missions still bucket
+  // to NASA. 'csa' is not a substring of 'cnsa'/'cmsa' (non-contiguous).
+  if (a === 'csa' || a.startsWith('csa ') || a.startsWith('csa/') || a.includes(' csa'))
+    return 'csa';
   if (a.includes('eutelsat') || a.includes('oneweb')) return 'eutelsat-oneweb';
   if (a.includes('iridium')) return 'iridium';
   if (a.includes('planet labs')) return 'planet-labs';

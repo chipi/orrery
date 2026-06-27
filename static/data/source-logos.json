@@ -127,6 +127,13 @@
       "license_summary": "Government of Canada works (CSA-NCO non-commercial reuse policy); editorial reuse with credit is permitted."
     },
     {
+      "id": "spaceil",
+      "name": "SpaceIL",
+      "kind": "space-agency",
+      "url": "https://www.spaceil.com/",
+      "license_summary": "Israeli non-profit lunar program (Beresheet). Per-image license is recorded in each entry's TASL row below; reuse with credit."
+    },
+    {
       "id": "noaa",
       "name": "NOAA",
       "kind": "space-agency",

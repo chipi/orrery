@@ -2174,12 +2174,12 @@
             const traverse = data[siteId];
             const stop = traverse?.stops?.find((s) => s.id === stopId);
             const site = sites.find((s) => s.id === siteId);
-            if (stop && faceCameraAtSite) {
-              faceCameraAtSite({
-                ...(site ?? ({ id: siteId } as unknown as SurfaceSite)),
-                lat: stop.lat,
-                lon: stop.lon,
-              } as SurfaceSite);
+            if (stop && site && faceCameraAtSite) {
+              // Face the stop's coords using the real site record (traverses
+              // are keyed by site id, so `site` is always present here). No
+              // fabricated/cast placeholder — if the site is somehow missing
+              // we fall through rather than face a fake SurfaceSite.
+              faceCameraAtSite({ ...site, lat: stop.lat, lon: stop.lon });
             } else if (site && faceCameraAtSite) {
               // Stop not found — graceful fallback to facing the site.
               faceCameraAtSite(site);

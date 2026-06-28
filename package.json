@@ -42,6 +42,7 @@
     "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint-cache .",
     "format": "prettier --write .",
     "typecheck": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "typecheck:scripts": "npm run i18n:compile && svelte-kit sync && tsc -p tsconfig.scripts.json",
     "test": "npm run i18n:compile && vitest run --passWithNoTests",
     "test:coverage": "npm run i18n:compile && vitest run --coverage --passWithNoTests",
     "test:e2e": "npm run build && playwright test",
@@ -91,7 +92,7 @@
     "docker:build-link-provenance": "docker compose run --rm pipeline-runner scripts/build-link-provenance.ts",
     "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts",
     "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts",
-    "preflight:full:body": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
+    "preflight:full:body": "npm run typecheck && npm run typecheck:scripts && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
     "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body"
   },
   "devDependencies": {

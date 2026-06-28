@@ -1031,7 +1031,16 @@ async function buildIssEntries(): Promise<ProvenanceEntry[]> {
 // to keep working: the legacy 851 entries cannot be re-fetched without
 // re-running fetch-assets, and the post-2026-06 fetcher won't switch
 // back. Normalise inside the loop.
-type LegacyFleetSource = { agency: string; sourceUrl: string };
+// `sourceUrl` is the legacy field; post-#58 agency-first sidecars use
+// snake_case `source_url` / `image_url`. The walker reads whichever is
+// present (see the `src.sourceUrl ?? src.source_url ?? src.image_url`
+// fallback), so the type must declare all three shapes.
+type LegacyFleetSource = {
+  agency: string;
+  sourceUrl?: string;
+  source_url?: string;
+  image_url?: string;
+};
 type CommonsFleetSource = {
   commons_file: string;
   commons_url: string;

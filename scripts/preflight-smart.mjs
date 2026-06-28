@@ -227,6 +227,7 @@ function planSteps(mode) {
     case 'code':
       return [
         ['typecheck', 'npm', ['run', 'typecheck']],
+        ['typecheck:scripts', 'npm', ['run', 'typecheck:scripts']],
         ['lint', 'npm', ['run', 'lint']],
         ['tests (--changed)', 'sh', ['vitest run --passWithNoTests --changed=origin/main']],
         ['validate-data', 'npm', ['run', 'validate-data']],

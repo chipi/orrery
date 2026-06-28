@@ -242,7 +242,12 @@ async function writeReport(drops: DropEntry[]): Promise<void> {
   lines.push('');
   for (const [surface, entries] of [...bySurface.entries()].sort()) {
     const dashCount = entries.filter((e) => e.reason === 'dash-legacy').length;
-    const deadCount = entries.filter((e) => e.reason === 'dead-variant').length;
+    // "dead-variant" is the report bucket for both dead reasons; the
+    // literal 'dead-variant' was never a DropReason, so this count was
+    // always 0 (the report silently under-reported dead drops).
+    const deadCount = entries.filter(
+      (e) => e.reason === 'dead-code-aspect' || e.reason === 'dead-base-variant',
+    ).length;
     lines.push(
       `- **${surface}**: ${entries.length} files (${dashCount} dash-legacy, ${deadCount} dead-variant)`,
     );

@@ -45,7 +45,7 @@ import {
   type CislunarProfile,
   type CislunarPhase,
   type Vec3Km,
-} from '../../src/lib/cislunar-geometry.ts';
+} from '../../src/lib/orbital/cislunar/cislunar-geometry.ts';
 
 const TARGET_WAYPOINTS = 100;
 

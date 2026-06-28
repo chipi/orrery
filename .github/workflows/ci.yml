@@ -86,6 +86,11 @@ jobs:
           print('audit gate: clean (or only allowlisted)')
           "
       - run: npm run typecheck
+      # Type-check the build-time tools in scripts/ (tsconfig.scripts.json).
+      # The main typecheck's include is src-focused, so scripts went
+      # unchecked — tsx ran them without tsc. This gate closes that hole.
+      - name: Typecheck — scripts/
+        run: npm run typecheck:scripts
       # Split prettier + eslint into discrete steps with `if: always()` on
       # the second so a Prettier failure doesn't short-circuit ESLint —
       # both diagnostics surface in a single CI run, matching the

@@ -37,7 +37,7 @@ export interface ProvenanceEntry {
   modifications: string[];
   revid: number | null;
   pageid: number | null;
-  nasa_id: string;
+  nasa_id: string | null;
   fetched_at: string;
   // Capturing spacecraft + instrument (#360 / credits) — links the image to
   // the actual satellite on /credits. HiRISE + CTX → Mars Reconnaissance
@@ -252,7 +252,14 @@ export function buildPanoramaProvenanceEntry(input: {
   sourceLabel: string;
   sourceUrl: string;
   attribution: string;
-  license: 'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0';
+  license:
+    | 'PD-NASA'
+    | 'CNSA-EDU'
+    | 'CC-BY-4.0'
+    | 'ISRO-EDU'
+    | 'JAXA-OPEN'
+    | 'PD-Russia'
+    | 'SpaceIL-EDU';
   caption: string;
   /** Output equirectangular dimensions (PRD-022 / ADR-074, #286 Phase
    *  1A). Defaults to 4096×2048 — marquee showcase sites pass 8192×4096

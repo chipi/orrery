@@ -126,7 +126,7 @@ async function main() {
       targetLon: s.lon,
       searchRadiusKm: 100,
     });
-    const ids = [
+    const ids: string[] = [
       ...(lastProduct ? [lastProduct] : []),
       ...ranked.slice(0, MAX_CANDIDATES).map((c) => c.productId),
     ].filter((v, idx, a) => a.indexOf(v) === idx);

@@ -12,6 +12,7 @@ import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
 import { createAnthropicVisionProvider } from './vision/anthropic.ts';
+import type { VisionProvider } from './vision/provider.ts';
 import {
   resolveScoreFromCacheOrProvider,
   readCachedScore,
@@ -123,10 +124,22 @@ async function main(): Promise<void> {
   // re-crop pass (`--skip-scoring`, all entries cache-hit) doesn't fail with
   // "ANTHROPIC_API_KEY missing" when the key isn't set. Variant generation
   // and manifest construction don't talk to the vision API.
-  let providerCache: ReturnType<typeof createAnthropicVisionProvider> | null = null;
-  const getProvider = (): ReturnType<typeof createAnthropicVisionProvider> => {
+  // Annotated with the named VisionProvider type (not `ReturnType<typeof
+  // createAnthropicVisionProvider>`): the provider is assigned only inside
+  // the getProvider closure, and the conditional-return-type form made
+  // later top-level reads resolve to `never` under control-flow analysis.
+  let providerCache: VisionProvider | null = null;
+  // Capture name/model into plain strings at creation time. providerCache
+  // is assigned only inside this closure, so top-level reads of it later
+  // (the manifest + ledger writes) resolve to `never` under TS control-flow
+  // analysis — reading these flat strings sidesteps that entirely.
+  let providerName: string | null = null;
+  let providerModel: string | null = null;
+  const getProvider = (): VisionProvider => {
     if (!providerCache) {
       providerCache = createAnthropicVisionProvider();
+      providerName = providerCache.name;
+      providerModel = providerCache.model;
       console.log(`Provider: ${providerCache.name} · model: ${providerCache.model}`);
     }
     return providerCache;
@@ -168,8 +181,8 @@ async function main(): Promise<void> {
     // Cached provider name/model — falls back to the existing manifest's
     // values when no provider was actually instantiated this run (re-crop
     // only, all cache hits).
-    vision_provider: providerCache?.name ?? 'cached',
-    vision_model: providerCache?.model ?? 'cached',
+    vision_provider: providerName ?? 'cached',
+    vision_model: providerModel ?? 'cached',
     preserveExistingEntries: !isFullCorpus,
   });
   console.log(
@@ -187,8 +200,8 @@ async function main(): Promise<void> {
       images_processed: perImage.length,
       images_cached: perImage.length - freshCount,
       cost_usd: totalCost,
-      provider: providerCache?.name ?? 'unknown',
-      model: providerCache?.model ?? 'unknown',
+      provider: providerName ?? 'unknown',
+      model: providerModel ?? 'unknown',
     });
     const check = checkThresholds(ledger, 0);
     console.log(`Cost ledger updated · ${check.message}`);

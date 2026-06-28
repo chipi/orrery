@@ -109,10 +109,11 @@ async function scoreOnce(
           },
         ],
       });
-      const textBlock = response.content.find(
-        (b): b is { type: 'text'; text: string } => b.type === 'text',
-      );
-      if (!textBlock) {
+      // Narrow via the SDK's own discriminant rather than a custom type
+      // predicate (a hand-rolled `{type:'text';text:string}` predicate
+      // isn't assignable to the SDK's ContentBlock union).
+      const textBlock = response.content.find((b) => b.type === 'text');
+      if (!textBlock || textBlock.type !== 'text') {
         throw new Error('Vision response had no text block');
       }
       const parsed = parseVisionResponse(textBlock.text);

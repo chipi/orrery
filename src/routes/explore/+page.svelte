@@ -955,6 +955,26 @@
     // the chip, or the Curator Tour toggles it on at the relevant beat.
     paths: false,
   });
+
+  // Iconic-mission legend (#306) — sized in JS so it never overflows the
+  // viewport. It hangs off the bottom of the fixed .hud-controls column
+  // (position:absolute; top:100%), so its real distance from the viewport
+  // top = nav + the dynamic chip-stack height; a static CSS calc can't
+  // know that. Measure the legend's actual top and cap its height to the
+  // remaining space (16px tail), letting the roster scroll internally.
+  let pathsLegendEl: HTMLDivElement | undefined = $state();
+  function sizePathsLegend(): void {
+    const el = pathsLegendEl;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top;
+    el.style.maxHeight = Math.max(140, window.innerHeight - top - 16) + 'px';
+  }
+  $effect(() => {
+    // Re-measure whenever the legend is shown — after the DOM commits so
+    // getBoundingClientRect().top reflects the rendered chip stack.
+    if (layers.paths) requestAnimationFrame(sizePathsLegend);
+  });
+
   // Time playback (#351 Layer 1) — user control over the live `simT`
   // clock that propagates planets, moons, and small bodies. The pills
   // are days-per-second (matching the guide-explore narration: "one day
@@ -4342,6 +4362,8 @@
       // push the new resolution so the 1.2px stroke stays exact after
       // a viewport resize / device-rotation.
       selRingMat.resolution.set(container.clientWidth, container.clientHeight);
+      // Re-fit the iconic-mission legend to the new viewport height.
+      sizePathsLegend();
     };
     lifecycle.on(window, 'resize', onResize);
 
@@ -5236,7 +5258,12 @@
       </button>
     </div>
     {#if layers.paths}
-      <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
+      <div
+        class="paths-legend"
+        bind:this={pathsLegendEl}
+        role="group"
+        aria-label={m.explore_trajectory_legend_aria()}
+      >
         <a
           class="paths-legend-why"
           href="{base}/science/transfers/coplanar-trajectories"
@@ -5266,6 +5293,7 @@
             class="paths-legend-row"
             bind:this={legendRowEls[i]}
             class:is-selected={iconic.state.selectedId === entry.mission_id}
+            class:is-hovered={iconic.state.hoveredId === entry.mission_id}
             aria-pressed={iconic.state.selectedId === entry.mission_id}
             onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
             onkeydown={(e) => onLegendKeydown(e, i)}
@@ -5762,7 +5790,10 @@
        viewport. Relaxed at @min-width: 501. */
     top: calc(var(--nav-height) + 8px);
     left: 8px;
-    z-index: 35;
+    /* Above .time-controls (z-index 40) so the iconic-mission legend that
+       hangs off this cluster sits over the time scrubber, not under it.
+       Stays below the sizes modal / backdrop (60/61). */
+    z-index: 45;
     display: flex;
     flex-direction: column;
     /* Mobile: flex-start so each row takes its natural width (the chip
@@ -6073,7 +6104,11 @@
     border-radius: 3px;
   }
   .paths-legend-row:hover,
-  .paths-legend-row:focus-visible {
+  .paths-legend-row:focus-visible,
+  /* is-hovered mirrors :hover but is driven by iconic.state.hoveredId, so
+     hovering a trajectory in the 3D scene highlights its legend row too
+     (reverse of row-hover → arc highlight). #306 follow-up. */
+  .paths-legend-row.is-hovered {
     background: rgba(68, 102, 255, 0.15);
     color: #fff;
     outline: none;
@@ -6133,7 +6168,8 @@
     object-fit: contain;
   }
   .paths-legend-row:hover .logos img,
-  .paths-legend-row:focus-visible .logos img {
+  .paths-legend-row:focus-visible .logos img,
+  .paths-legend-row.is-hovered .logos img {
     opacity: 1;
     filter: none;
   }
@@ -6144,7 +6180,8 @@
     margin-left: 8px;
   }
   .paths-legend-row:hover .year,
-  .paths-legend-row:focus-visible .year {
+  .paths-legend-row:focus-visible .year,
+  .paths-legend-row.is-hovered .year {
     color: rgba(255, 255, 255, 0.85);
   }
 
@@ -6177,14 +6214,14 @@
       width: 32px;
       height: 32px;
     }
-    /* Desktop: unstack — sit side-by-side, right of the (now larger)
-       PLANET SCALES card, sharing its bottom:16 baseline. The 204 px
-       offset is the card width (188) + a 16 px gap so the two boxes
-       don't kiss edges (2026-06-22 user direction "move time controls
-       also a bit to the right not to overlap"). */
+    /* Desktop: unstack — sit side-by-side, right of the reference card
+       (left:16 + width:188 → right edge 204). Add a 5px gap (matching the
+       scrubber's internal button `gap`) so the two boxes don't kiss edges
+       (2026-06-28 user direction "put some minimal spacing in between, like
+       spacing between buttons inside time scrubber"). */
     .time-controls {
       bottom: 16px;
-      left: 204px;
+      left: 209px;
     }
     .tactical-scan {
       display: block;

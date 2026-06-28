@@ -472,7 +472,11 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
   },
   {
     match: /(^|\.)californiasciencecenter\.org$/i,
-    rule: { source_id: 'california-science-center', defaultKind: 'educational', defaultLanguage: 'en' },
+    rule: {
+      source_id: 'california-science-center',
+      defaultKind: 'educational',
+      defaultLanguage: 'en',
+    },
   },
   {
     match: /(^|\.)technik-museum\.de$/i,

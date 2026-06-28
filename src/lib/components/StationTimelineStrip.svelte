@@ -232,9 +232,9 @@
               />
             {/if}
             <span class="marker-text">
-            <span class="marker-name">{shortName(item)}</span>
-            <span class="marker-year">{item.year} · {item.agency.split(/[/+&]/)[0].trim()}</span>
-          </span>
+              <span class="marker-name">{shortName(item)}</span>
+              <span class="marker-year">{item.year} · {item.agency.split(/[/+&]/)[0].trim()}</span>
+            </span>
           </button>
         {/each}
       </div>

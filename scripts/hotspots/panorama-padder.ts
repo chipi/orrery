@@ -244,7 +244,14 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     const gapWidth = outWidth - srcOutWidth;
     for (let row = 0; row < srcOutHeight; row++) {
       const outRow = topRow + row;
-      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, bottomRow, outHeight, palette);
+      const [fillR, fillG, fillB] = paletteAtRow(
+        outRow,
+        halfH,
+        topRow,
+        bottomRow,
+        outHeight,
+        palette,
+      );
       const gapOutStart = outRow * outWidth * 3 + srcOutWidth * 3;
       for (let col = 0; col < gapWidth; col++) {
         const oIdx = gapOutStart + col * 3;
@@ -264,7 +271,14 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
   for (let row = 0; row < srcOutHeight; row++) {
     const outRow = topRow + row;
     if (recolourThreshold > 0) {
-      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, bottomRow, outHeight, palette);
+      const [fillR, fillG, fillB] = paletteAtRow(
+        outRow,
+        halfH,
+        topRow,
+        bottomRow,
+        outHeight,
+        palette,
+      );
       const srcRowStart = row * srcOutWidth * 3;
       const outRowStart = outRow * outWidth * 3;
       for (let col = 0; col < srcOutWidth; col++) {

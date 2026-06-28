@@ -112,7 +112,11 @@
   }
 </script>
 
-<aside class="ruler" style:--ruler-bottom="{anchorBottomPx}px" aria-label={m.earth_orbit_ruler_aria()}>
+<aside
+  class="ruler"
+  style:--ruler-bottom="{anchorBottomPx}px"
+  aria-label={m.earth_orbit_ruler_aria()}
+>
   <h3 class="ruler-title">{m.earth_orbit_ruler_title()}</h3>
   <ul class="ruler-bands">
     {#each ordered as r (r.id)}

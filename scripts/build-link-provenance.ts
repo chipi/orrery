@@ -304,6 +304,212 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)planetary\.org$/i,
     rule: { source_id: 'planetary-society', defaultKind: 'educational', defaultLanguage: 'en' },
   },
+
+  // ── 2026-06 link-registry refresh: hosts accrued since May (#library) ──
+  {
+    match: /(^|\.)aboutamazon\.com$/i,
+    rule: { source_id: 'amazon', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /^airandspace\.si\.edu$/i,
+    rule: { source_id: 'smithsonian', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)arianespace\.com$/i,
+    rule: { source_id: 'arianespace', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)axiomspace\.com$/i,
+    rule: { source_id: 'axiom-space', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /^earth-planets-space\.springeropen\.com$/i,
+    rule: { source_id: 'springer', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)iridium\.com$/i,
+    rule: { source_id: 'iridium', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)northropgrumman\.com$/i,
+    rule: { source_id: 'northrop-grumman', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)oneweb\.net$/i,
+    rule: { source_id: 'eutelsat-oneweb', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)planet\.com$/i,
+    rule: { source_id: 'planet-labs', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)planet4589\.org$/i,
+    rule: { source_id: 'gcat-mcdowell', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)ses\.com$/i,
+    rule: { source_id: 'ses', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)spaceforce\.mil$/i,
+    rule: { source_id: 'us-space-force', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)spaceil\.com$/i,
+    rule: { source_id: 'spaceil', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)starlink\.com$/i,
+    rule: { source_id: 'spacex', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)uahirise\.org$/i,
+    rule: { source_id: 'nasa-hirise', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)usgs\.gov$/i,
+    rule: { source_id: 'usgs', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)inmarsat\.com$/i,
+    rule: { source_id: 'viasat', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)aanda\.org$/i,
+    rule: { source_id: 'aanda', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /^agupubs\.onlinelibrary\.wiley\.com$/i,
+    rule: { source_id: 'agu', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)cambridge\.org$/i,
+    rule: { source_id: 'cambridge-up', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)doi\.org$/i,
+    rule: { source_id: 'doi', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)copernicus\.eu$/i,
+    rule: { source_id: 'copernicus', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)cnes(-csg)?\.fr$/i,
+    rule: { source_id: 'cnes', defaultKind: 'agency-official', defaultLanguage: 'fr' },
+  },
+  {
+    match: /(^|\.)euspa\.europa\.eu$/i,
+    rule: { source_id: 'euspa', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)cas\.cn$/i,
+    rule: { source_id: 'cas', defaultKind: 'agency-official', defaultLanguage: 'zh' },
+  },
+  {
+    match: /(^|\.)spacechina\.com$/i,
+    rule: { source_id: 'casc', defaultKind: 'agency-official', defaultLanguage: 'zh' },
+  },
+  {
+    match: /^english\.news\.cn$/i,
+    rule: { source_id: 'xinhua', defaultKind: 'community', defaultLanguage: 'zh' },
+  },
+  {
+    match: /^missilethreat\.csis\.org$/i,
+    rule: { source_id: 'csis', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)collinsaerospace\.com$/i,
+    rule: { source_id: 'collins-aerospace', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)davidclark\.com$/i,
+    rule: { source_id: 'david-clark', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)zvezda-npp\.ru$/i,
+    rule: { source_id: 'zvezda', defaultKind: 'vendor-official', defaultLanguage: 'ru' },
+  },
+  {
+    match: /(^|\.)fireflyspace\.com$/i,
+    rule: { source_id: 'firefly', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)iai\.co\.il$/i,
+    rule: { source_id: 'iai', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)jhuapl\.edu$/i,
+    rule: { source_id: 'jhuapl', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /^missionjuno\.swri\.edu$/i,
+    rule: { source_id: 'swri', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /^lasp\.colorado\.edu$/i,
+    rule: { source_id: 'lasp', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /^pds-geosciences\.wustl\.edu$/i,
+    rule: { source_id: 'pds-geosciences', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)ciclops\.org$/i,
+    rule: { source_id: 'ciclops', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)intrepidmuseum\.org$/i,
+    rule: { source_id: 'intrepid-museum', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)kennedyspacecenter\.com$/i,
+    rule: { source_id: 'ksc-visitor-complex', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)cosmo\.org$/i,
+    rule: { source_id: 'cosmosphere', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)californiasciencecenter\.org$/i,
+    rule: { source_id: 'california-science-center', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)technik-museum\.de$/i,
+    rule: { source_id: 'technik-museum', defaultKind: 'educational', defaultLanguage: 'de' },
+  },
+  {
+    match: /^web\.archive\.org$/i,
+    rule: { source_id: 'internet-archive', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)astronautix\.com$/i,
+    rule: { source_id: 'astronautix', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)russianspaceweb\.com$/i,
+    rule: { source_id: 'russianspaceweb', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)mentallandscape\.com$/i,
+    rule: { source_id: 'mentallandscape', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /^space\.skyrocket\.de$/i,
+    rule: { source_id: 'gunters-space-page', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)spaceflightnow\.com$/i,
+    rule: { source_id: 'spaceflightnow', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)buran-energia\.com$/i,
+    rule: { source_id: 'buran-energia', defaultKind: 'encyclopedic', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)polarisprogram\.com$/i,
+    rule: { source_id: 'polaris-program', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
 ];
 
 function classifyHost(url: string): HostRule {

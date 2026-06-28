@@ -1,14 +1,169 @@
 # Last link-provenance build
 
-> Generated: 2026-05-13T22:18:31.401Z
+> Generated: 2026-06-28T22:03:32.231Z
 
-- Total entries: 678 (was 675)
-- Added: 3
-- Removed: 0
-- Changed: 0
+- Total entries: 1260 (was 678)
+- Added: 584
+- Removed: 2
+- Changed: 53
 
-## Added (3)
-- `apollo13` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_13>
-- `apollo13` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-13/>
-- `apollo13` · deep · nasa · en · <https://history.nasa.gov/SP-350/ch-13-1.html>
+## Added (584)
+- `a7l` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo/Skylab_A7L>
+- `a7l` · core · nasa · en · <https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf>
+- `a7l` · deep · smithsonian · en · <https://airandspace.si.edu/collection-objects/pressure-suit-a-7l-aldrin-apollo-11-flown/nasm_A19730040000>
+- `a7lb` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo/Skylab_A7L>
+- `a7lb` · core · nasa · en · <https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf>
+- `aces` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Advanced_Crew_Escape_Suit>
+- `aces` · core · nasa · en · <https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf>
+- `aces` · deep · david-clark · en · <https://www.davidclark.com/aerospace-products/launch-entry-pressure-suits/>
+- `akatsuki` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)>
+- `akatsuki` · intro · jaxa · en · <https://www.isas.jaxa.jp/en/missions/spacecraft/current/akatsuki.html>
+- `akatsuki` · deep · jaxa · en · <https://akatsuki.isas.jaxa.jp/en/>
+- `akatsuki` · deep · springer · en · <https://earth-planets-space.springeropen.com/articles/10.1186/s40623-016-0457-6>
+- `antares` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Antares_(rocket)>
+- `antares` · core · northrop-grumman · en · <https://www.northropgrumman.com/space/antares-rocket>
+- `antares` · deep · firefly · en · <https://www.fireflyspace.com/news/firefly-aerospace-and-northrop-grumman-team-up-on-medium-launch-vehicle/>
+- `apollo-1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_1>
+- `apollo-1` · core · nasa · en · <https://www.nasa.gov/history/apollo-1/>
+- `apollo-csm-block-i` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_command_and_service_module>
+- `apollo-csm-block-i` · deep · nasa · en · <https://history.nasa.gov/Apollo204/>
+- `apollo-soyuz` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo%E2%80%93Soyuz>
+- `apollo-soyuz` · core · nasa · en · <https://www.nasa.gov/mission/apollo-soyuz/>
+- `apollo-soyuz` · deep · california-science-center · en · <https://californiasciencecenter.org/exhibits/air-space/mission-26-the-big-endeavour>
+- `apollo10` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_10>
+- `apollo10` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-10/>
+- `apollo12` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-12/>
+- `apollo12` · deep · nasa · en · <https://www.hq.nasa.gov/alsj/a12/a12LightningStrike.html>
+- `apollo14` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-14/>
+- `apollo14` · deep · nasa · en · <https://www.hq.nasa.gov/alsj/a14/>
+- `apollo15` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-15/>
+- `apollo15` · core · smithsonian · en · <https://airandspace.si.edu/multimedia-gallery/9311hjpg>
+- `apollo15` · deep · nasa · en · <https://www.hq.nasa.gov/alsj/a15/>
+- `apollo16` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-16/>
+- `apollo16` · deep · nasa · en · <https://www.hq.nasa.gov/alsj/a16/>
+- `apollo7` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_7>
+- `apollo7` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-7/>
+- `apollo8` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_8>
+- `apollo8` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-8/>
+- `apollo8` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Earthrise>
+- `apollo9` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_9>
+- `apollo9` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-9/>
+- `ariane-1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Ariane_1>
+- `ariane-1` · core · arianespace · en · <https://www.arianespace.com/about-us/>
+- `ariane-1` · core · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane>
+- `ariane-1` · deep · gunters-space-page · en · <https://space.skyrocket.de/doc_lau/ariane-1.htm>
+- `arrokoth` · intro · nasa · en · <https://science.nasa.gov/mission/new-horizons/arrokoth-flyby/>
+- `arrokoth` · core · wikipedia · en · <https://en.wikipedia.org/wiki/486958_Arrokoth>
+- `arrokoth` · core · science-aaas · en · <https://www.science.org/doi/10.1126/science.aay3999>
+- `arrokoth` · deep · nasa · en · <https://www.nasa.gov/missions/new-horizons/far-far-away-in-the-sky-new-horizons-kuiper-belt-flyby-object-officially-named-arrokoth/>
+- `atlantis` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis>
+- `atlantis` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/STS-135>
+- `atlantis` · core · wikipedia · en · <https://en.wikipedia.org/wiki/STS-125>
+- `atlantis` · core · ksc-visitor-complex · en · <https://www.kennedyspacecenter.com/explore-attractions/shuttle-a-ship-like-no-other/space-shuttle-atlantis>
+- `atlas-slv-3d` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Atlas-Centaur>
+- `atlas-slv-3d` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Centaur_(rocket_stage)>
+- `atlas-slv-3d` · deep · gunters-space-page · en · <https://space.skyrocket.de/doc_lau/atlas-slv3d_centaur.htm>
+- `aurora-7` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mercury-Atlas_7>
+- `axemu` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/AxEMU>
+- `axemu` · core · nasa · en · <https://www.nasa.gov/humans-in-space/artemis/spacesuit/>
+- `axemu` · deep · axiom-space · en · <https://www.axiomspace.com/news/axemu>
+- `baikonur-1-5` · intro · roscosmos · ru · <https://en.roscosmos.ru/204/>
+- `baikonur-1-5` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Gagarin%27s_Start>
+- `baikonur-1-5` · deep · astronautix · en · <http://www.astronautix.com/b/baikonur.html>
+- `baikonur-200` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Baikonur_Cosmodrome_Site_200>
+- `baikonur-200` · deep · russianspaceweb · en · <http://www.russianspaceweb.com/baikonur_lc200.html>
+- `baikonur-31-6` · intro · roscosmos · ru · <https://en.roscosmos.ru/205/>
+- `baikonur-31-6` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Baikonur_Cosmodrome_Site_31>
+- `baikonur-31-6` · deep · nasa · en · <https://history.nasa.gov/SP-4225/>
+- `beagle2` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Beagle_2_lander_found_on_Mars>
+- `bennu` · core · wikipedia · en · <https://en.wikipedia.org/wiki/101955_Bennu>
+- `bepicolombo` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/BepiColombo>
+- `bepicolombo` · intro · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/BepiColombo>
+- `bepicolombo` · core · jaxa · en · <https://global.jaxa.jp/projects/sas/mio/>
+- `bepicolombo` · core · jaxa · en · <https://global.jaxa.jp/projects/sas/mmo/>
+- `bepicolombo` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-080A>
+- `bepicolombo` · core · planetary-society · en · <https://www.planetary.org/space-missions/bepicolombo>
+- `bepicolombo` · deep · doi · en · <https://doi.org/10.1016/j.pss.2009.09.020>
+- `bepicolombo` · deep · springer · en · <https://link.springer.com/article/10.1007/s11214-021-00861-4>
+- `beresheet` · intro · nasa · en · <https://www.nasa.gov/missions/lunar-reconnaissance-orbiter-lro-sees-beresheet-impact-site-on-moon/>
+- `beresheet` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=BRSHEET>
+- `beresheet` · core · nasa · en · <https://www.lroc.asu.edu/posts/1119>
+- `beresheet` · core · spaceil · en · <https://www.spaceil.com/mission/>
+- `beresheet` · deep · iai · en · <https://www.iai.co.il/p/beresheet-crash-analysis>
+- `blue-moon-mk1` · intro · blue-origin · en · <https://www.blueorigin.com/blue-moon/>
+- `blue-moon-mk1` · core · nasa · en · <https://www.nasa.gov/humans-in-space/artemis/human-landing-system/>
+- `blue-moon-mk1` · core · nasa · en · <https://www.nasa.gov/news-release/nasa-selects-second-blue-origin-led-team-for-artemis-lunar-lander/>
+- `buran-ok-gli` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/OK-GLI>
+- `buran-ok-gli` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Buran_programme>
+- `buran-ok-gli` · core · technik-museum · en · <https://sinsheim.technik-museum.de/en/buran-space-shuttle>
+- `buran-ok-gli` · deep · buran-energia · en · <http://www.buran-energia.com/bourane-buran/bourane-bts-002.php>
+- `cape-canaveral-lc-36b` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cape_Canaveral_Launch_Complex_36>
+- `cape-canaveral-lc-36b` · core · nasa · en · <https://www.nasa.gov/centers-and-facilities/kennedy/launch-complex-36/>
+- `cape-canaveral-slc-40` · intro · spacex · en · <https://www.spacex.com/vehicles/falcon-9/>
+- `cape-canaveral-slc-40` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Force_Station_Space_Launch_Complex_40>
+- `cape-canaveral-slc-40` · deep · spacex · en · <https://www.spacex.com/media/falcon-users-guide-2021-09.pdf>
+- `cape-canaveral-slc-41` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_41>
+- `cape-canaveral-slc-41` · core · ula · en · <https://www.ulalaunch.com/about/facilities>
+- `cape-canaveral-slc-41` · deep · us-space-force · en · <https://www.spaceforce.mil/About-Us/Fact-Sheets/>
+- `cassini` · core · nasa · en · <https://solarsystem.nasa.gov/missions/cassini/mission/grand-finale/overview/>
+- `cassini` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens>
+- `cassini` · core · planetary-society · en · <https://www.planetary.org/space-missions/cassini-huygens>
+- … 484 more
+
+## Removed (2)
+- `inspiration-mars` · intro · wikipedia · <https://en.wikipedia.org/wiki/Inspiration_Mars_Foundation>
+- `inspiration-mars` · deep · ieee · <https://ieeexplore.ieee.org/document/6497418>
+
+## Changed (53)
+- `apollo12` · 
+- `apollo14` · 
+- `apollo15` · 
+- `apollo16` · 
+- `beagle2` · 
+- `beidou` · label: "BeiDou — Wikipedia" → "BeiDou Navigation Satellite System — Wikipedia"
+- `beidou` · label: "中国北斗卫星导航系统 (BeiDou, official)" → "BeiDou official site"; tier: "intro" → "core"
+- `beresheet` · 
+- `cassini` · 
+- `cassini` · label: "Cassini — NASA Science" → "NASA Science — Cassini mission overview"; tier: "core" → "intro"
+- `change1` · 
+- `change3` · 
+- `dart` · label: "DART — Wikipedia" → "Double Asteroid Redirection Test — Wikipedia"
+- `dart` · label: "DART — NASA" → "DART (NASA)"; tier: "core" → "intro"
+- `exomars-rosalind-franklin` · label: "Rosalind Franklin rover — Wikipedia" → "Rosalind Franklin (rover) — Wikipedia"
+- `galileo` · label: "Galileo Mission — NASA" → "End-of-mission Jupiter disposal 2003-09-21"; tier: "core" → "deep"
+- `glonass` · 
+- `hope` · 
+- `juno` · label: "Juno (spacecraft) — Wikipedia" → "Juno — Wikipedia"
+- `juno` · label: "Juno mission — NASA" → "NASA Science — Juno mission overview"; tier: "core" → "intro"
+- `long-march-3b` · 
+- `luna10` · 
+- `lunar-prospector` · 
+- `lunar-prospector` · label: "Lunar Prospector (NASA)" → "Lunar Prospector — NASA Discovery program"; tier: "intro" → "core"
+- `magellan` · 
+- `magellan` · label: "Magellan — NASA" → "Magellan (NASA)"; tier: "core" → "intro"
+- `magellan` · label: "Magellan — NASA NSSDCA" → "Magellan (NASA NSSDCA)"; tier: "deep" → "core"
+- `mariner9` · 
+- `mariner9` · label: "Mariner 9 — NASA NSSDCA" → "Mariner 9 (NASA NSSDCA)"
+- `mars-odyssey` · label: "Mars Odyssey — Wikipedia" → "2001 Mars Odyssey — Wikipedia"
+- `mars3-orbiter` · label: "Mars 3 orbiter — Wikipedia" → "Mars 3 — Wikipedia"
+- `mars6` · 
+- `opportunity` · 
+- `opportunity` · label: "Opportunity end-of-mission — NASA" → "Mars Exploration Rovers (NASA)"; tier: "core" → "intro"
+- `osiris-rex` · 
+- `osiris-rex` · label: "OSIRIS-REx — NASA" → "OSIRIS-REx (NASA)"; tier: "core" → "intro"
+- `phoenix` · label: "Phoenix — Wikipedia" → "Phoenix (spacecraft) — Wikipedia"
+- `phoenix` · label: "Phoenix — NASA" → "Phoenix (NASA)"; tier: "core" → "intro"
+- `pioneer-10` · 
+- `pioneer-10` · label: "Pioneer 10 — NASA NSSDCA" → "NSSDCA — Pioneer 10 master catalog (full instrument list)"
+- `pslv-xl` · label: "PSLV — Wikipedia" → "PSLV-XL — Wikipedia"
+- `rosetta` · label: "Rosetta (spacecraft) — Wikipedia" → "Rosetta — Wikipedia"
+- `rosetta` · label: "Rosetta — ESA" → "ESA Science — Rosetta mission overview"; tier: "core" → "intro"
+- `schiaparelli` · 
+- `smart-1` · 
+- `smart-1` · label: "SMART-1 (ESA Science)" → "SMART-1 mission — ESA"; tier: "intro" → "core"
+- `spirit` · 
+- `spirit` · label: "MER — NASA" → "Mars Exploration Rovers (NASA)"; tier: "core" → "intro"
+- `starship` · tier: "intro" → "core"
+- `viking2-lander` · 
+- … 3 more
 

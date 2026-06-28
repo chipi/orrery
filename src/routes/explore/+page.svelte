@@ -5,7 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
-  import { trackItemClick, trackViewToggle } from '$lib/analytics';
+  import { trackItemClick, trackViewToggle, trackLayerToggle } from '$lib/analytics';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import {
     resolveQualitySync,
@@ -955,6 +955,18 @@
     // heliocentric view doesn't open visually busy; user opts in via
     // the chip, or the Curator Tour toggles it on at the relevant beat.
     paths: false,
+  });
+
+  // Analytics: which visibility layers people toggle on /explore. Diff
+  // against the prior state so we emit one layer-toggle per actual change.
+  const _prevLayers: Record<string, boolean> = { ...layers };
+  $effect(() => {
+    for (const k of Object.keys(layers) as (keyof typeof layers)[]) {
+      if (layers[k] !== _prevLayers[k]) {
+        trackLayerToggle('explore', k, layers[k]);
+        _prevLayers[k] = layers[k];
+      }
+    }
   });
 
   // Iconic-mission legend (#306) — sized in JS so it never overflows the

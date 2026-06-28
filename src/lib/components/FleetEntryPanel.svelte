@@ -3,7 +3,7 @@
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
-  import { track } from '$lib/analytics';
+  import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
@@ -195,7 +195,10 @@
         <button
           type="button"
           class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
+          onclick={() => {
+            lightboxSrc = gallery[0]!;
+            trackGalleryImageOpen('fleet', entry.id, 0);
+          }}
           aria-label={m.fleet_view_hero_aria({ name: entry.name })}
         >
           <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
@@ -382,7 +385,10 @@
               <button
                 type="button"
                 class="thumb"
-                onclick={() => (lightboxSrc = src)}
+                onclick={() => {
+                  lightboxSrc = src;
+                  trackGalleryImageOpen('fleet', entry.id);
+                }}
                 aria-label={m.fleet_view_photo_aria()}
               >
                 <img {src} alt="" loading="lazy" decoding="async" />

@@ -2,6 +2,7 @@
   import { browser } from '$app/environment';
   import { onMount, onDestroy } from 'svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import { trackItemClick } from '$lib/analytics';
   import { get } from 'svelte/store';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
@@ -504,7 +505,10 @@
 
   function blueprintModuleClick(id: string) {
     const mod = modules.find((m) => m.id === id) ?? visitors.find((v) => v.id === id);
-    if (mod) openModule(mod);
+    if (mod) {
+      openModule(mod);
+      trackItemClick('module', id, '/iss');
+    }
   }
 
   function deviceLowMemory(): boolean {

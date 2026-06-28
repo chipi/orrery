@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import { trackFilterChange } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -143,6 +144,22 @@
   let destinationId = $state<DestinationId>('mars');
   let missionType = $state<MissionType>('LANDING');
   let loadId = 0;
+
+  // Analytics: what people configure on /plan (destination + mission type).
+  // Seed with the same literal defaults the state above uses (reading the
+  // $state here would only capture its initial value — svelte lint).
+  let _prevPlanDest = 'mars';
+  let _prevPlanType = 'LANDING';
+  $effect(() => {
+    if (destinationId !== _prevPlanDest) {
+      trackFilterChange('plan', 'dest', destinationId);
+      _prevPlanDest = destinationId;
+    }
+    if (missionType !== _prevPlanType) {
+      trackFilterChange('plan', 'type', missionType);
+      _prevPlanType = missionType;
+    }
+  });
   let progress = $state(0);
 
   let canvas: HTMLCanvasElement | undefined = $state();

@@ -395,10 +395,47 @@ const writing = [
   },
 ];
 
+// Gallery posters (/posters) — 25 ORRERY-original art prints generated with
+// Recraft 4.1 and Google nano-banana via Higgsfield, then captioned and
+// wordmarked in-house. Not works of any space agency; no agency logos. Each
+// entry carries the full-res download file + a width-700 grid thumbnail.
+const posters = [
+  ['solar-system-orrery', 'Solar System'],
+  ['solar-system-procession', 'Solar System'],
+  ['earth', 'Earth'],
+  ['moon', 'Moon'],
+  ['mars', 'Mars'],
+  ['saturn-v', 'Saturn V'],
+  ['sputnik', 'Sputnik'],
+  ['voyager', 'Voyager'],
+  ['sojourner', 'Sojourner'],
+  ['footprints', 'Footprints'],
+  ['gagarin', 'Gagarin'],
+  ['rosetta', 'Rosetta'],
+  ['huygens', 'Huygens'],
+  ['hayabusa2', 'Hayabusa2'],
+  ['artemis-ii', 'Artemis II'],
+  ['iss', 'ISS'],
+  ['tiangong', 'Tiangong'],
+  ['perseverance', 'Perseverance'],
+  ['space-shuttle', 'Space Shuttle'],
+  ['solar-sail', 'Solar Sail'],
+  ['nuclear-drive', 'Nuclear Drive'],
+  ['jwst', 'James Webb'],
+  ['hubble', 'Hubble'],
+  ['cassini', 'Cassini'],
+  ['starship', 'Starship'],
+].map(([id, title]) => ({
+  title,
+  file: `/images/posters/${id}.jpg`,
+  thumb: `/images/posters/${id}.thumb.jpg`,
+}));
+
 const manifest = {
   generated_by: 'scripts/build-original-work.mjs',
   anatomy_art: anatomyArt,
   diagrams_science: science,
+  posters,
   models3d,
   canvas2d,
   ui,
@@ -406,6 +443,7 @@ const manifest = {
   totals: {
     anatomy_art: anatomyArt.length,
     diagrams_science: science.length,
+    posters: posters.length,
     models3d: models3d.length,
     canvas2d: canvas2d.length,
     ui: ui.length,

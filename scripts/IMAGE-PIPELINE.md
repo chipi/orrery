@@ -169,6 +169,25 @@ Run the whole chain with `npm run fetch` (alias for the per-step sequence). Per-
 | `prune-orphan-images.ts` | Removes disk files not referenced by any sidecar. | Cleanup |
 | `fill-gallery-gaps.ts` | Re-fetches into pruned slots. | After pruning |
 
+### 6. Surface hotspot + panorama imagery (`scripts/hotspots/`)
+
+A self-contained sub-pipeline for `/earth` `/moon` `/mars` Tier-2 (zoom) + Tier-3
+(panorama) + along-route detail. **Runs under Node 20** (`~/.nvm/versions/node/v20.20.2/bin/node --import tsx …`)
+— `gdal-async` ships a `node-v115` ABI binding; the shell's Node 25 (ABI 141) fails
+with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credits**
+(`upsertProvenanceEntries`) — no separate provenance pass needed for these.
+
+| Script | Purpose | Notes |
+|---|---|---|
+| `panorama-padder.ts` | Pads a partial-FOV strip → 4096×2048 equirectangular. | Library. Sky gradient above horizon; regolith **fading to shadow** below (`groundColourAtRow`). `srcElevationTop/BottomDeg` = isotropic vFOV `(srcH/srcW)×az`, split at the horizon. |
+| `fetch-{moon,mars}-panoramas.ts` | Per-site Tier-3 `tier3-pan.jpg` from cached sources. | Sources cached in `.image-cache/hotspots/panoramas/` → re-pad is **offline**. |
+| `fetch-{moon,mars}-traverse.ts` | Along-route detail patches → `<rover>.route-patches.json`. | Moon = Kaguya TC (~7-10 m/px); Mars = HiRISE. Samples the polyline, caps patch count by spacing. |
+| `fetch-moon-{featured-images,kaguya-regional,ctx,regional}.ts` | Tier-2 detail/regional LROC + Kaguya crops. | See AGENTS.md §"Image pipeline — gotchas". |
+
+**To regenerate panoramas after a `panorama-padder.ts` change:** `node20 --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
+
+**Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art (mission trajectory thumbnails, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
+
 ---
 
 ## Manifests — what each file owns

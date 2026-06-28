@@ -132,10 +132,20 @@ export function buildPolarCaps(opts: PolarCapsOpts): MarsLayerHandle {
 export interface MarsMoonsOpts {
   planetRadius: number;
   color: number;
+  /** Loader shared with the rest of the scene. */
+  textureLoader?: THREE.TextureLoader;
+  /** Equirectangular surface textures (2k_phobos.jpg / 2k_deimos.jpg). When
+   *  supplied each moon is textured (real lumpy regolith) instead of a flat
+   *  tan marker (2026-06-28 user direction). */
+  phobosTextureUrl?: string;
+  deimosTextureUrl?: string;
 }
 
 /** Phobos + Deimos as small markers on their orbit rings. Distances are
- *  compressed from the real 2.77 / 6.9 body-radii so both fit the frame. */
+ *  compressed from the real 2.77 / 6.9 body-radii so both fit the frame.
+ *  Textured (unlit MeshBasic + map) so the actual moon surface reads at
+ *  any sun angle — they're science-lens reference bodies, not lit scene
+ *  geometry; a flat-lit map guarantees the texture always shows. */
 export function buildMarsMoons(opts: MarsMoonsOpts): MarsLayerHandle {
   const R = opts.planetRadius;
   const disposables: Array<{ dispose: () => void }> = [];
@@ -146,12 +156,25 @@ export function buildMarsMoons(opts: MarsMoonsOpts): MarsLayerHandle {
     opacity: 0.45,
     depthWrite: false,
   });
-  const moonMat = new THREE.MeshBasicMaterial({ color: 0xb8a890 });
-  disposables.push(ringMat, moonMat);
+  disposables.push(ringMat);
+
+  const loader = opts.textureLoader ?? new THREE.TextureLoader();
+  function moonMaterial(url: string | undefined): THREE.MeshBasicMaterial {
+    if (url) {
+      const map = loader.load(url);
+      const mat = new THREE.MeshBasicMaterial({ map });
+      disposables.push({ dispose: () => map.dispose() });
+      disposables.push(mat);
+      return mat;
+    }
+    const mat = new THREE.MeshBasicMaterial({ color: 0xb8a890 });
+    disposables.push(mat);
+    return mat;
+  }
 
   const moons = [
-    { dist: 2.0 * R, size: R * 0.05, ang: 0.6 }, // Phobos (closer)
-    { dist: 3.1 * R, size: R * 0.035, ang: 3.4 }, // Deimos (farther)
+    { dist: 2.0 * R, size: R * 0.05, ang: 0.6, tex: opts.phobosTextureUrl }, // Phobos (closer)
+    { dist: 3.1 * R, size: R * 0.035, ang: 3.4, tex: opts.deimosTextureUrl }, // Deimos (farther)
   ];
   for (const mn of moons) {
     const pts: THREE.Vector3[] = [];
@@ -162,9 +185,9 @@ export function buildMarsMoons(opts: MarsMoonsOpts): MarsLayerHandle {
     const rg = new THREE.BufferGeometry().setFromPoints(pts);
     disposables.push(rg);
     group.add(new THREE.Line(rg, ringMat));
-    const sg = new THREE.SphereGeometry(mn.size, 12, 12);
+    const sg = new THREE.SphereGeometry(mn.size, 24, 24);
     disposables.push(sg);
-    const m = new THREE.Mesh(sg, moonMat);
+    const m = new THREE.Mesh(sg, moonMaterial(mn.tex));
     m.position.set(Math.cos(mn.ang) * mn.dist, 0, Math.sin(mn.ang) * mn.dist);
     group.add(m);
   }

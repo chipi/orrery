@@ -135,6 +135,10 @@ export interface EarthOrbitalLayersConfig {
     textureUrl: string;
     radiusUnits: number;
     distanceKm: number;
+    /** Scene-distance exaggeration vs the log-compressed orbit radius
+     *  (buildMoonGhost default 6 → ~132 units). Lower brings the moon
+     *  closer so the Earth–Moon tie (tides arrow, moon-orbiters) frames. */
+    distanceMultiplier?: number;
   };
 
   /**
@@ -252,7 +256,7 @@ export interface SurfaceSceneConfig {
     axialTilt?: { color: number };
     crustalField?: { color: number };
     polarCaps?: { color: number };
-    moons?: { color: number };
+    moons?: { color: number; phobosTextureUrl?: string; deimosTextureUrl?: string };
   };
 
   /**

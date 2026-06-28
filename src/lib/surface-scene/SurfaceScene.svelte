@@ -2,6 +2,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
+  import { trackItemClick, trackGalleryImageOpen } from '$lib/analytics';
   import { useUrlParam } from '$lib/routes/use-url-param.svelte';
   import { syncPanoramaUrl, readPanoramaUrlState } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
@@ -801,6 +802,7 @@
         selected = null;
         autoSpin = false;
         faceCameraAtObject?.(o);
+        trackItemClick('marker', id, $page.url.pathname);
       }
       return;
     }
@@ -808,6 +810,7 @@
       selected = s;
       selectedSat = null;
       panelOpen = true;
+      trackItemClick('marker', id, $page.url.pathname);
       // Build this rover's deferred route imagery NOW (before the fly-in
       // below reads its routeViewCenters framing). No-op for non-rover
       // sites and for rovers already built (#363 perf).
@@ -1152,8 +1155,29 @@
         scene.add(mn.group);
         earthLayerHandles.push(mn);
       }
+      // Moon ghost first — its scene-space distance feeds the tides arrow.
+      let earthMoonR = 0;
+      if (eol.moonGhost) {
+        const mg = buildMoonGhost({
+          textureUrl: eol.moonGhost.textureUrl,
+          radiusUnits: eol.moonGhost.radiusUnits,
+          distanceKm: eol.moonGhost.distanceKm,
+          distanceMultiplier: eol.moonGhost.distanceMultiplier,
+          textureLoader,
+          planetRadius,
+        });
+        scene.add(mg.mesh);
+        earthMoonR = mg.moonR;
+        earthLayerHandles.push(mg);
+      }
       if (eol.tides) {
-        const td = buildTides({ ...eol.tides, planetRadius });
+        const td = buildTides({
+          ...eol.tides,
+          planetRadius,
+          // Draw the Earth–Moon connector to the rendered moon ghost.
+          moonR: earthMoonR || undefined,
+          moonGhostRadius: eol.moonGhost?.radiusUnits,
+        });
         scene.add(td.group);
         earthLayerHandles.push(td);
       }
@@ -1161,19 +1185,6 @@
         const hy = buildHydrosphere({ ...eol.hydrosphere, planetRadius });
         scene.add(hy.group);
         earthLayerHandles.push(hy);
-      }
-      let earthMoonR = 0;
-      if (eol.moonGhost) {
-        const mg = buildMoonGhost({
-          textureUrl: eol.moonGhost.textureUrl,
-          radiusUnits: eol.moonGhost.radiusUnits,
-          distanceKm: eol.moonGhost.distanceKm,
-          textureLoader,
-          planetRadius,
-        });
-        scene.add(mg.mesh);
-        earthMoonR = mg.moonR;
-        earthLayerHandles.push(mg);
       }
 
       // Mission-index — populates the "FULL MISSION CARD →" cross-link
@@ -1481,7 +1492,7 @@
       lunarLayerHandles.push(pc);
     }
     if (config.marsLayers?.moons) {
-      const mm = buildMarsMoons({ ...config.marsLayers.moons, planetRadius });
+      const mm = buildMarsMoons({ ...config.marsLayers.moons, planetRadius, textureLoader });
       scene.add(mm.object);
       lunarLayerHandles.push(mm);
     }
@@ -3809,7 +3820,8 @@
           // dips beneath the orbits (orbitsInView false — same threshold that
           // drops the ruler) hide orbiters + rings for a clean single-body view.
           applyOrbiterLayerVisibility(om, {
-            showOrbiters: orbitsInView && layerOrbiters && nationEnabled(nationBySiteId.get(om.siteId)),
+            showOrbiters:
+              orbitsInView && layerOrbiters && nationEnabled(nationBySiteId.get(om.siteId)),
             showOrbits: orbitsInView && layerOrbits,
           });
           // No selection halo on orbiters — the outline-pass marks the
@@ -5412,7 +5424,10 @@ sample      ${debugInfo.projectedPxSample}`}
         <PanelHeroImage
           src={panelGallery[0]!}
           name={selected.name ?? selected.id}
-          onOpen={() => (panelLightbox = panelGallery[0]!)}
+          onOpen={() => {
+            panelLightbox = panelGallery[0]!;
+            if (selected) trackGalleryImageOpen('site', selected.id, 0);
+          }}
         />
       {/if}
 
@@ -5597,7 +5612,10 @@ sample      ${debugInfo.projectedPxSample}`}
               <button
                 type="button"
                 class="gallery-thumb"
-                onclick={() => (panelLightbox = src)}
+                onclick={() => {
+                  panelLightbox = src;
+                  if (selected) trackGalleryImageOpen('site', selected.id);
+                }}
                 aria-label={selected.name ?? selected.id}
               >
                 <img {src} alt="" loading="lazy" decoding="async" />
@@ -5607,7 +5625,13 @@ sample      ${debugInfo.projectedPxSample}`}
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
       {:else if panelTab === 'story' && panelStory}
-        <SiteStoryPanel story={panelStory} onLightbox={(src) => (panelLightbox = src)} />
+        <SiteStoryPanel
+          story={panelStory}
+          onLightbox={(src) => {
+            panelLightbox = src;
+            if (selected) trackGalleryImageOpen('site', selected.id);
+          }}
+        />
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>

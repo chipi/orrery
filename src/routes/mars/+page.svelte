@@ -107,7 +107,11 @@
       axialTilt: { color: 0xffb066 },
       crustalField: { color: 0xc46bd6 },
       polarCaps: { color: 0xeaf3ff },
-      moons: { color: 0xd88a5a },
+      moons: {
+        color: 0xd88a5a,
+        phobosTextureUrl: `${base}/textures/2k_phobos.jpg`,
+        deimosTextureUrl: `${base}/textures/2k_deimos.jpg`,
+      },
     },
     initialCamR: 150,
     landerModelBuilder: marsLanderBuilder,

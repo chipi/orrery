@@ -147,6 +147,12 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
         textureUrl: `${textureBaseUrl}/textures/2k_moon.jpg`,
         radiusUnits: 2.0,
         distanceKm: MOON_DISTANCE_KM,
+        // Pulled in from the default 6 (~132 u) to 3 (~81 u) so the Moon
+        // frames alongside Earth at the zoom-out cap — the Earth–Moon tide
+        // arrow + moon-orbiters now read without the Moon off-screen
+        // (2026-06-28 user direction). Still ~2.7× Earth's scene radius,
+        // distinctly the Moon, not a hugging satellite.
+        distanceMultiplier: 3,
       },
       // Per-regime orbit-ring overlay removed (#363) — the concentric
       // LEO/MEO/GEO/HEO/MOON/L2 bands read as unexplained "empty orbits"

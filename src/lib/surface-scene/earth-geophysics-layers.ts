@@ -186,6 +186,12 @@ export interface TidesOpts {
   color: number;
   /** Direction toward the Moon in scene space (moonGhost sits at +X). */
   moonDir?: [number, number, number];
+  /** Scene-space distance to the moon-ghost centre. When supplied, an
+   *  arrow is drawn from the sub-lunar bulge to the rendered Moon so the
+   *  cause of the bulge is visible (2026-06-28 user direction). */
+  moonR?: number;
+  /** Visible radius of the moon-ghost sphere — the arrow stops just short. */
+  moonGhostRadius?: number;
 }
 
 /** Twin tidal bulges: a prolate water envelope stretched along the
@@ -230,6 +236,39 @@ export function buildTides(opts: TidesOpts): GeoLayerHandle {
     group.add(new THREE.Line(rg, ringMat));
   }
 
+  // Connector arrow from the sub-lunar bulge (+X peak) to the rendered
+  // Moon — draws the Earth–Moon line so the bulge's cause is on screen.
+  // Built in local +X; the group quaternion below aims it at the Moon.
+  if (opts.moonR && opts.moonR > R * 1.4) {
+    const startX = R * 1.22;
+    const endX = opts.moonR - (opts.moonGhostRadius ?? 2) - 1;
+    const len = Math.max(1, endX - startX);
+    const head = Math.min(6, len * 0.06);
+    const arrow = new THREE.ArrowHelper(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(startX, 0, 0),
+      len,
+      opts.color,
+      head,
+      head * 0.55,
+    );
+    const lineMat = arrow.line.material as THREE.LineBasicMaterial;
+    lineMat.transparent = true;
+    lineMat.opacity = 0.55;
+    const coneMat = arrow.cone.material as THREE.MeshBasicMaterial;
+    coneMat.transparent = true;
+    coneMat.opacity = 0.85;
+    group.add(arrow);
+    disposables.push({
+      dispose: () => {
+        arrow.line.geometry.dispose();
+        lineMat.dispose();
+        arrow.cone.geometry.dispose();
+        coneMat.dispose();
+      },
+    });
+  }
+
   // Orient local +X to the Moon direction.
   const moon = new THREE.Vector3(...(opts.moonDir ?? [1, 0, 0])).normalize();
   group.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), moon);
@@ -242,22 +281,44 @@ export interface HydrosphereOpts {
   color: number;
 }
 
-/** A faint ocean-sheen shell just above the surface — the "water world"
- *  read. The 71%-water stat lives in the panel description. */
+/** The "water world" envelope — Earth wrapped in its oceans (71 % water,
+ *  stat in the panel). Was a single near-invisible 0.16 shell that read as
+ *  "blue over blue"; now a two-part read (2026-06-28 user direction):
+ *  a translucent water-cyan sheen over the surface PLUS an additive
+ *  back-side limb glow that concentrates at the planet's edge against
+ *  space — so the layer visibly "wraps" the globe like a water skin
+ *  instead of blending into the ocean texture. */
 export function buildHydrosphere(opts: HydrosphereOpts): GeoLayerHandle {
   const disposables: Array<{ dispose: () => void }> = [];
   const group = new THREE.Group();
 
-  const geo = new THREE.SphereGeometry(opts.planetRadius * 1.012, 48, 32);
-  const mat = new THREE.MeshBasicMaterial({
+  // Surface sheen — front-facing, brighter water-cyan so it reads against
+  // the daymap ocean instead of matching it.
+  const sheenGeo = new THREE.SphereGeometry(opts.planetRadius * 1.013, 48, 32);
+  const sheenMat = new THREE.MeshBasicMaterial({
     color: opts.color,
     transparent: true,
-    opacity: 0.16,
+    opacity: 0.24,
     side: THREE.FrontSide,
     depthWrite: false,
   });
-  disposables.push(geo, mat);
-  group.add(new THREE.Mesh(geo, mat));
+  disposables.push(sheenGeo, sheenMat);
+  group.add(new THREE.Mesh(sheenGeo, sheenMat));
+
+  // Limb glow — back-side shell, additive so it builds up at the tangent
+  // (the planet's edge), giving a bright water-skin halo that reads as a
+  // distinct envelope rather than a flat overlay.
+  const rimGeo = new THREE.SphereGeometry(opts.planetRadius * 1.03, 48, 32);
+  const rimMat = new THREE.MeshBasicMaterial({
+    color: 0x6fd3f0,
+    transparent: true,
+    opacity: 0.5,
+    side: THREE.BackSide,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  disposables.push(rimGeo, rimMat);
+  group.add(new THREE.Mesh(rimGeo, rimMat));
 
   return gate(group, 'hydrosphere', disposables);
 }

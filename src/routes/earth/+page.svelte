@@ -170,6 +170,7 @@
     {highlightRegime}
     onSelect={openRegime}
     order={['L2', 'MOON', 'GEO', 'MEO', 'HEO', 'LEO']}
+    anchorBottomPx={14}
   />
 {/if}
 

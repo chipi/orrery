@@ -45,8 +45,22 @@
      *  /explore omits it (set to null) since the Sun is itself the
      *  bottom band and there is no "surface" below it. */
     surfaceAnchor?: { label: string; value: string } | null;
+    /** Distance in px from the viewport bottom to pin the ruler. Defaults
+     *  to 80 (clears /explore's bottom-left PLANET SCALES card). /earth,
+     *  /moon, /mars pass a small value so the ruler sits flush with the
+     *  screen bottom instead of floating (2026-06-28 user direction:
+     *  "orbit ruler ... should be aligned with bottom of the screen and
+     *  not hover over it"). */
+    anchorBottomPx?: number;
   }
-  let { regimes, onSelect, highlightRegime = null, order, surfaceAnchor }: Props = $props();
+  let {
+    regimes,
+    onSelect,
+    highlightRegime = null,
+    order,
+    surfaceAnchor,
+    anchorBottomPx = 80,
+  }: Props = $props();
 
   // Render order top→bottom. SURFACE is synthetic (always at 0 km, no
   // panel) — included as a visual anchor so the ruler reads as "ground
@@ -98,7 +112,7 @@
   }
 </script>
 
-<aside class="ruler" aria-label={m.earth_orbit_ruler_aria()}>
+<aside class="ruler" style:--ruler-bottom="{anchorBottomPx}px" aria-label={m.earth_orbit_ruler_aria()}>
   <h3 class="ruler-title">{m.earth_orbit_ruler_title()}</h3>
   <ul class="ruler-bands">
     {#each ordered as r (r.id)}
@@ -145,11 +159,11 @@
   .ruler {
     position: absolute;
     left: 12px;
-    /* Lifted from 56 to 80 px so the ruler clears the bottom-left
-       reference panel (/explore's .earth-compare, /mars' altitude HUD
-       etc.) below it — 2026-06-22 user direction "pull it a bit up
-       not to overlap with bottom one". */
-    bottom: 80px;
+    /* Pin distance is route-supplied via --ruler-bottom (anchorBottomPx
+       prop). /explore keeps 80 px to clear its bottom-left PLANET SCALES
+       card; /earth /moon /mars pass a small inset so the ruler is flush
+       with the screen bottom (2026-06-28 user direction). */
+    bottom: var(--ruler-bottom, 80px);
     z-index: 1;
     pointer-events: none;
     color: rgba(255, 255, 255, 0.92);

@@ -22,6 +22,8 @@ import { buildSatelliteModel } from '$lib/earth-satellite-models';
 import { buildLabel } from '$lib/three-label';
 import type { EarthObject } from '$types/earth-object';
 
+const ORIGIN = new THREE.Vector3(0, 0, 0);
+
 export interface SatObj {
   group: THREE.Group;
   id: string;
@@ -39,8 +41,12 @@ export interface SatelliteLayerOpts {
   scene: THREE.Scene;
   /** EarthObjects to render. */
   objects: EarthObject[];
-  /** Scene-space radius of the moon ghost (for moon-orbiter positioning). */
+  /** Scene-space distance from Earth centre to the moon-ghost centre
+   *  (for moon-orbiter positioning — the moon ghost sits at +X moonR). */
   moonR: number;
+  /** Visible radius of the moon-ghost sphere (config radiusUnits, ~2.0).
+   *  Moon-orbiter orbits are sized as a readable band just outside it. */
+  moonGhostRadius: number;
   /** SurfaceScene planetRadius (always 30) — required to shift the
    *  log-compressed orbit math out of the planet sphere. The legacy
    *  `altToOrbitRadius` baseline placed ISS at radius 10.9 — inside
@@ -103,26 +109,42 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
     let orbitR: number;
     const inclRad = ((o.inclination ?? 0) * Math.PI) / 180;
     const nodeRad = hashIdToNodeAngle(o.id);
+    // Local orbit position on a phase/inclination/node-spread circle.
+    // Earth orbiters ride an Earth-centred ring; moon orbiters ride a
+    // small ring around the moon ghost at +X moonR.
+    let center = ORIGIN;
     if (category === 'moon-orbiter') {
-      group.position.set(opts.moonR + 2.5, 1, 0);
-      orbitR = opts.moonR;
+      // Compress the real low-lunar altitudes (LRO 50 km … SMART-1 470 km,
+      // all far below the Moon's radius) into a readable band just outside
+      // the moon-ghost sphere so the 8 orbiters fan out instead of stacking
+      // on one point. Higher altitude → slightly wider ring.
+      const altKm = Math.min(o.altitude_km ?? 100, 500);
+      orbitR = opts.moonGhostRadius + 0.8 + (altKm / 500) * 1.4;
+      center = new THREE.Vector3(opts.moonR, 0, 0);
     } else {
       const alt = o.altitude_km ?? o.earth_distance_km;
       orbitR = altToSurfaceScene(opts.planetRadius, alt);
-      const lx = Math.cos(phase) * orbitR;
-      const ly = Math.sin(phase) * orbitR * Math.sin(inclRad);
-      const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
-      const cn = Math.cos(nodeRad);
-      const sn = Math.sin(nodeRad);
-      group.position.set(lx * cn + lz * sn, ly, -lx * sn + lz * cn);
     }
+    const lx = Math.cos(phase) * orbitR;
+    const ly = Math.sin(phase) * orbitR * Math.sin(inclRad);
+    const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
+    const cn = Math.cos(nodeRad);
+    const sn = Math.sin(nodeRad);
+    group.position.set(
+      center.x + (lx * cn + lz * sn),
+      center.y + ly,
+      center.z + (-lx * sn + lz * cn),
+    );
     group.userData = { id: o.id };
 
     // Invisible hit sphere — gives clicks a 3u effective radius
     // (vs the visible model's ~0.5u) so the user can grab moving
     // spacecraft without millimetre-perfect pointer accuracy.
+    // Moon orbiters sit on a tight ~3-unit ring, so a 3u hit sphere would
+    // swallow its neighbours; shrink it there to keep clicks disambiguable.
+    const hitR = category === 'moon-orbiter' ? 1.1 : 3.0;
     const hitSphere = new THREE.Mesh(
-      new THREE.SphereGeometry(3.0, 8, 8),
+      new THREE.SphereGeometry(hitR, 8, 8),
       new THREE.MeshBasicMaterial({ visible: false }),
     );
     hitSphere.userData = { id: o.id };
@@ -145,11 +167,11 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
 
     opts.scene.add(group);
 
-    // Per-spacecraft orbit ring — skip constellations (count > 1)
-    // since their cluster already implies the surface; skip moon-
-    // orbiters (they ride at the Moon, not on an Earth-relative ring).
+    // Per-spacecraft orbit ring — skip constellations (count > 1) since
+    // their cluster already implies the surface. Moon orbiters now get a
+    // ring too, centred on the moon ghost rather than Earth.
     let ringMesh: THREE.Mesh | undefined;
-    if (o.count === 1 && category !== 'moon-orbiter') {
+    if (o.count === 1) {
       const ringGeo = new THREE.RingGeometry(orbitR - 0.03, orbitR + 0.03, 96);
       const ringMat = new THREE.MeshBasicMaterial({
         color: o.color,
@@ -166,6 +188,7 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
       // sat vertical and the dot floated off it (e.g. Hubble).
       ringMesh.rotation.x = Math.PI / 2 - inclRad;
       ringMesh.rotation.y = nodeRad;
+      if (category === 'moon-orbiter') ringMesh.position.set(opts.moonR, 0, 0);
       opts.scene.add(ringMesh);
     }
 

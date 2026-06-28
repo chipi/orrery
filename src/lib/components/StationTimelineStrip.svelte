@@ -104,7 +104,7 @@
   // fractional separation we want between two markers before treating them
   // as overlapping — sized so a labelled marker doesn't crowd its
   // neighbour on a typical desktop viewport.
-  const MIN_GAP = 0.085;
+  const MIN_GAP = 0.1;
 
   type PackedItem = StripItem & { row: number };
 
@@ -125,7 +125,7 @@
   const packedVisitors: PackedItem[] = $derived(packRows(visitorItems));
   const moduleRowCount = $derived(packedModules.reduce((max, m) => Math.max(max, m.row + 1), 1));
   const visitorRowCount = $derived(packedVisitors.reduce((max, v) => Math.max(max, v.row + 1), 1));
-  const ROW_HEIGHT = 32; // marker height + a touch of breathing room
+  const ROW_HEIGHT = 48; // marker height (40) + a touch of breathing room
 
   /** Canonical agency color for the launch vehicle. Falls back to the
    *  operating agency color, then a neutral grey. */
@@ -144,7 +144,7 @@
   }
 
   function shortName(item: StripItem): string {
-    return (item.name ?? item.id).slice(0, 14);
+    return (item.name ?? item.id).slice(0, 20);
   }
 </script>
 
@@ -193,7 +193,10 @@
               onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
             />
           {/if}
-          <span class="marker-name">{shortName(item)}</span>
+          <span class="marker-text">
+            <span class="marker-name">{shortName(item)}</span>
+            <span class="marker-year">{item.year} · {item.agency.split(/[/+&]/)[0].trim()}</span>
+          </span>
         </button>
       {/each}
     </div>
@@ -228,7 +231,10 @@
                 onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
               />
             {/if}
+            <span class="marker-text">
             <span class="marker-name">{shortName(item)}</span>
+            <span class="marker-year">{item.year} · {item.agency.split(/[/+&]/)[0].trim()}</span>
+          </span>
           </button>
         {/each}
       </div>
@@ -297,13 +303,13 @@
     /* top is set inline (style:top) by the component for vertical stacking. */
     transform: translateX(-50%);
     min-width: 9px;
-    height: 24px;
-    padding: 0 6px 0 0;
+    height: 40px;
+    padding: 0 8px 0 0;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 3px;
+    border-radius: 4px;
     color: rgba(255, 255, 255, 0.95);
     cursor: pointer;
-    font-size: 0.62rem;
+    font-size: 0.66rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -341,16 +347,37 @@
   .marker.marker-visitor {
     border-radius: 12px;
   }
+  /* Two-line text column to the right of the thumbnail: module name on
+     top, launch year + lead agency below (2026-06-28 user direction:
+     "bigger thumbs and a bit more info"). pointer-events:none so
+     overlapping markers don't intercept each other's clicks. */
+  .marker-text {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    margin-left: 7px;
+    min-width: 0;
+    pointer-events: none;
+  }
   .marker-name {
-    display: inline-block;
-    max-width: 80px;
+    display: block;
+    max-width: 104px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-left: 6px;
-    /* The span is purely visual; let pointer events fall through to the
-       parent button so overlapping markers (e.g. Tianhe + Chinarm
-       both launched 2021-04-29) don't intercept each other's clicks. */
-    pointer-events: none;
+    white-space: nowrap;
+  }
+  .marker-year {
+    display: block;
+    max-width: 104px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.56rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.62);
+    font-variant-numeric: tabular-nums;
   }
   /* Per-item thumbnail (heroDir prop). Tiny rounded rect at the start
      of each marker; pulls the actual module / visitor hero from the
@@ -360,10 +387,10 @@
      module to make it more interesting"). */
   .marker-thumb {
     flex: 0 0 auto;
-    width: 28px;
-    height: 22px;
+    width: 50px;
+    height: 38px;
     object-fit: cover;
-    border-radius: 2px 0 0 2px;
+    border-radius: 3px 0 0 3px;
     margin-left: -1px;
     display: block;
     pointer-events: none;
@@ -373,13 +400,21 @@
     .strip {
       padding: 0.6rem 0.5rem;
     }
-    .marker-name {
+    /* Mobile keeps the compact thumb-only marker — the text column would
+       crowd the narrow strip. Thumb shrinks but stays visible. */
+    .marker-text {
       display: none;
     }
     .marker {
-      min-width: 14px;
-      width: 14px;
+      min-width: 30px;
+      width: 30px;
+      height: 24px;
       padding: 0;
+    }
+    .marker-thumb {
+      width: 30px;
+      height: 22px;
+      border-radius: 3px;
     }
   }
 </style>

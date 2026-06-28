@@ -233,7 +233,7 @@
 {#if regimes.length > 0 && orbitsInView}
   <!-- Hidden once the camera dips below LMO — orbits then sit overhead
        and the ruler references nothing on screen (#363). -->
-  <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} />
+  <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
 {/if}
 
 <RegimePanel

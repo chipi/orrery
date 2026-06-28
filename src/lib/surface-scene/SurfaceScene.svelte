@@ -1053,7 +1053,12 @@
 
     // Body-specific atmosphere shell (Mars: thin CO₂; Moon: vacuum,
     // skip the block). Toggled via the Science Lens 'atmosphere' layer.
+    // Refs + layer-on flag hoisted so the animate loop can ALSO drop the
+    // shell on deep zoom (body-focus, #zoom) without forgetting the user's
+    // science-lens toggle when they pull back out.
     let _stopAtmosphereLayer: (() => void) | undefined;
+    let atmHandles: { shell: THREE.Mesh; ring: THREE.Mesh } | null = null;
+    let atmLayerOn = false;
     if (config.atmosphere) {
       const atm = config.atmosphere;
       // Scene scale: planetRadius=30 → real = config.radiusKm,
@@ -1087,9 +1092,14 @@
       atmRing.visible = false;
       scene.add(atmShell);
       scene.add(atmRing);
+      atmHandles = { shell: atmShell, ring: atmRing };
       _stopAtmosphereLayer = onLayerChange('atmosphere', (on) => {
-        atmShell.visible = on;
-        atmRing.visible = on;
+        atmLayerOn = on;
+        // Honour the zoom gate immediately too — if the user toggles the
+        // lens while already zoomed into body-focus, keep it suppressed.
+        const vis = on && orbitsInView;
+        atmShell.visible = vis;
+        atmRing.visible = vis;
       });
     }
 
@@ -1197,6 +1207,7 @@
               scene,
               objects,
               moonR: earthMoonR,
+              moonGhostRadius: eol.moonGhost?.radiusUnits ?? 2.0,
               planetRadius,
             });
             earthSats = satLayer.sats;
@@ -3786,9 +3797,12 @@
         }
         for (const om of orbitalMarkers) {
           // Nation filter (#363) folds into showOrbiters so dot + ring both hide.
+          // Body-focus (#zoom, 2026-06-28 user direction): once the camera
+          // dips beneath the orbits (orbitsInView false — same threshold that
+          // drops the ruler) hide orbiters + rings for a clean single-body view.
           applyOrbiterLayerVisibility(om, {
-            showOrbiters: layerOrbiters && nationEnabled(nationBySiteId.get(om.siteId)),
-            showOrbits: layerOrbits,
+            showOrbiters: orbitsInView && layerOrbiters && nationEnabled(nationBySiteId.get(om.siteId)),
+            showOrbits: orbitsInView && layerOrbits,
           });
           // No selection halo on orbiters — the outline-pass marks the
           // selected orbiter, so the extra ring around the dot is
@@ -3814,7 +3828,9 @@
                         ? layerMoonOrbiters
                         : true;
             // Nation filter (#363) — earth orbiters bucketed by primary agency.
-            const on = layerOrbiters && catVisible && nationEnabled(nationBySatId.get(s.id));
+            // Body-focus gate (#zoom) — drop sats + rings on deep zoom too.
+            const on =
+              orbitsInView && layerOrbiters && catVisible && nationEnabled(nationBySatId.get(s.id));
             s.group.visible = on;
             if (s.ringMesh) s.ringMesh.visible = on;
           }
@@ -3895,6 +3911,18 @@
           } else if (!orbitsInView && altitudeKm > orbitRulerHideKm * 1.12) {
             orbitsInView = true;
             onOrbitsInViewChange(true);
+          }
+        }
+
+        // Body-focus atmosphere gate (#zoom) — keep the science-lens shell
+        // only while the orbits are in view; drop it once zoomed into the
+        // body so the surface reads clean. Restores when the user pulls
+        // back out (atmLayerOn remembers their lens toggle).
+        if (atmHandles) {
+          const atmVis = atmLayerOn && orbitsInView;
+          if (atmHandles.shell.visible !== atmVis) {
+            atmHandles.shell.visible = atmVis;
+            atmHandles.ring.visible = atmVis;
           }
         }
 
@@ -5310,12 +5338,21 @@ sample      ${debugInfo.projectedPxSample}`}
                flies to an overhead-but-near orbit (R≈50) so the user
                re-frames on the site from the default exploration
                distance.
+             Coherent rule across Moon + Mars (2026-06-28 user
+             direction: "make coherent rules ... what we show on
+             details panel when we either zoom or enter pano"). Every
+             immersive mode offers EXIT-current + ENTER-the-other, so
+             the pair is symmetric:
+               · default → [Stand at site] [Zoom to detail]
+               · zoomed  → [Exit zoom view] [Stand at site]
+               · pano    → [Exit panorama view] [Zoom to detail]
              - STAND AT SITE: only when the site has a Tier-3 panorama
                (PanoramaToggleButton flips to "Exit panorama view"
                while panoramaActive).
-             - ZOOM TO DETAIL: only when the site has a Tier-2 source
-               AND we're not in panorama (flips to "Exit zoom view"
-               while flatPatchActive). -->
+             - ZOOM TO DETAIL: whenever the site has a Tier-2 source.
+               Flips to "Exit zoom view" while flatPatchActive. When
+               clicked from inside a panorama it first exits the pano
+               (which restores camR) then flies to the detail patch. -->
         <div class="site-cta-bar">
           <!-- Approach button removed (user direction): selecting a site now
                auto-frames it via faceCameraAtSite (the focus-on-select
@@ -5331,7 +5368,7 @@ sample      ${debugInfo.projectedPxSample}`}
             onEnter={enterPanorama}
             onExit={exitPanorama}
           />
-          {#if selected.hotspot_tier2_source && !panoramaActive}
+          {#if selected.hotspot_tier2_source}
             {#if flatPatchActive}
               <button
                 type="button"
@@ -5348,7 +5385,12 @@ sample      ${debugInfo.projectedPxSample}`}
                 type="button"
                 class="zoom-to-detail-button"
                 data-testid="zoom-to-detail"
-                onclick={() => selected && flyToDetail?.(selected)}
+                onclick={() => {
+                  // Switching pano → zoom: exit pano first so camR is
+                  // restored above flyToDetail's camR<32 guard.
+                  if (panoramaActive) exitPanorama();
+                  if (selected) flyToDetail?.(selected);
+                }}
               >
                 <span class="icon" aria-hidden="true">⤓</span>
                 <span>Zoom to detail</span>

@@ -10,7 +10,7 @@
     toggleScienceLens,
   } from '$lib/science-lens';
   import { settingsState, toggleSettingsOpen } from '$lib/quality/quality-settings-store.svelte';
-  import { track } from '$lib/analytics';
+  import { trackScienceLensToggle } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import { audio } from '$lib/audio-state.svelte';
@@ -93,9 +93,11 @@
   function onToggleLens() {
     toggleScienceLens();
     // Umami custom event: did the user discover the Science Lens?
-    // `scienceLens` here is the BEFORE state (the subscription
-    // hasn't fired yet), so we invert to report the new state.
-    track('lens-toggle', { on: !scienceLens, route: $page.url.pathname });
+    // `scienceLens` here is the BEFORE state (the subscription hasn't
+    // fired yet), so we invert to report the new state. Unified with the
+    // /science page toggle under one `science-lens-toggle` event (source
+    // distinguishes nav vs page).
+    trackScienceLensToggle(!scienceLens, 'nav');
   }
 
   // ─── Mobile nav drawer ─────────────────────────────────────────

@@ -3,6 +3,7 @@
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites } from '$lib/data';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
@@ -83,6 +84,9 @@
       lightboxSrc = null;
       gallery = [];
       crossSite = null;
+      // Popularity signal: a mission detail was opened. `open` gates it so
+      // a prefetched/derived mission that never shows isn't counted.
+      if (open) trackMissionView(mission.id, $page.url.pathname);
       void getMissionGallery(mission.id).then((urls) => {
         if (mission && mission.id === lastId) gallery = urls;
       });
@@ -253,7 +257,10 @@
         <button
           type="button"
           class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
+          onclick={() => {
+            lightboxSrc = gallery[0]!;
+            if (mission) trackGalleryImageOpen('mission', mission.id, 0);
+          }}
           aria-label={m.panel_hero_aria({ name: mission.name ?? mission.id })}
         >
           <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
@@ -785,7 +792,10 @@
               <button
                 type="button"
                 class="gallery-thumb"
-                onclick={() => (lightboxSrc = src)}
+                onclick={() => {
+                  lightboxSrc = src;
+                  if (mission) trackGalleryImageOpen('mission', mission.id);
+                }}
                 aria-label={mission.name ?? mission.id}
               >
                 <img {src} alt="" loading="lazy" decoding="async" />

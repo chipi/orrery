@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
+  import { trackItemClick, trackViewToggle } from '$lib/analytics';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import {
     resolveQualitySync,
@@ -1521,6 +1522,7 @@
     panelState.satellite = false;
     panelState.belt = false;
     flyToBodyFn?.(id);
+    trackItemClick('planet', id, '/explore');
   }
 
   function selectSun() {
@@ -1539,6 +1541,7 @@
     panelState.sun = false;
     panelState.satellite = false;
     panelState.belt = false;
+    trackItemClick('small-body', id, '/explore');
   }
 
   // Natural-satellite selection (#304 Slice 1). Compound key
@@ -1553,6 +1556,7 @@
     panelState.sun = false;
     panelState.smallBody = false;
     panelState.belt = false;
+    trackItemClick('satellite', selectedSatelliteKey, '/explore');
   }
 
   // Belt selection (v0.7.x). Same panel-mutex pattern.
@@ -1563,6 +1567,7 @@
     panelState.sun = false;
     panelState.smallBody = false;
     panelState.satellite = false;
+    trackItemClick('belt', id, '/explore');
   }
 
   // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
@@ -4889,6 +4894,7 @@
 
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
+    trackViewToggle('explore', view);
   }
 </script>
 

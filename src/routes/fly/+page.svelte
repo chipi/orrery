@@ -180,7 +180,7 @@
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import { isLayerOn, onLayerChange } from '$lib/science-layers';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
-  import { track } from '$lib/analytics';
+  import { track, trackMissionComplete } from '$lib/analytics';
 
   // ─── Default scenario (ORRERY-1 free-return per ADR-009) ─────────
   // Static-imported so the Three.js scene can initialise synchronously
@@ -640,6 +640,10 @@
   // OS-level toggle mid-session pauses the sim live (post-v1.0
   // audit — /explore + /moon already did this; /fly was init-only).
   let isPlaying = $state(!prefersReducedMotion());
+  // /fly funnel: which loaded mission we've already counted as "arrived",
+  // so mission-complete fires once per load. Abandonment = a mission-load
+  // with no matching mission-complete. Reset in applyMissionAsLoaded.
+  let completedForId: string | null = $state(null);
   // GH #107 — phase marker reveal animation gates on this; pulled
   // out as $state so the marker per-frame projection can pass it in.
   let reducedMotion = $state(prefersReducedMotion());
@@ -1063,6 +1067,15 @@
   let arcProgress = $derived((simDay - arcTimeline.dep_day) / arcTotalDays);
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
   let met = $derived(Math.max(0, arcProgress * totalDays));
+
+  // Fire mission-complete once when the trajectory reaches arrival (by
+  // playback or scrub). Completes the /fly load→complete funnel.
+  $effect(() => {
+    if (mission?.id && arcProgress >= 0.999 && completedForId !== mission.id) {
+      completedForId = mission.id;
+      trackMissionComplete(mission.id, activeDestination);
+    }
+  });
 
   // FD-stage tick positions for the time scrubber. Each FD_STAGES
   // entry's tickArc (0..1 along its leg) maps to a percent along the
@@ -1648,6 +1661,7 @@
       status: m.status ?? 'unknown',
       view: m.dest === 'MOON' || m.dest === 'EARTH' ? 'cislunar' : 'heliocentric',
     });
+    completedForId = null; // new mission loaded — re-arm the completion event
     // Math layer: derive every value from the Mission. See
     // $lib/fly-mission-apply for the timeline / arc / trajectory
     // derivations and the round-trip vs one-way semantics.

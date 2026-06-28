@@ -17,6 +17,7 @@
   import * as m from '$lib/paraglide/messages';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
+  import { trackFilterChange, trackSearch } from '$lib/analytics';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
     type RemoteData,
@@ -90,6 +91,32 @@
     filterState.epoch = 'ALL';
     filterState.q = '';
   }
+
+  // Analytics: which filters + searches people use on the mission catalog.
+  // Chip changes fire immediately; the free-text query is debounced and
+  // length-capped (privacy) so we learn what they look for, not a keylog.
+  const _prevMissionFilters = {
+    dest: 'ALL',
+    status: 'ALL',
+    agency: 'ALL',
+    crew: 'ALL',
+    epoch: 'ALL',
+  };
+  let _missionSearchTimer: ReturnType<typeof setTimeout> | null = null;
+  $effect(() => {
+    for (const k of ['dest', 'status', 'agency', 'crew', 'epoch'] as const) {
+      if (filterState[k] !== _prevMissionFilters[k]) {
+        trackFilterChange('missions', k, filterState[k]);
+        _prevMissionFilters[k] = filterState[k];
+      }
+    }
+    const q = filterState.q;
+    if (_missionSearchTimer) clearTimeout(_missionSearchTimer);
+    if (q.trim()) _missionSearchTimer = setTimeout(() => trackSearch('missions', q), 800);
+    return () => {
+      if (_missionSearchTimer) clearTimeout(_missionSearchTimer);
+    };
+  });
 
   // True when at least one filter is set away from its 'ALL' default —
   // drives the CLEAR-FILTERS chip in the expanded strip.

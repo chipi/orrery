@@ -16,6 +16,7 @@
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
   import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
+  import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import {
@@ -63,6 +64,28 @@
   let listView = $state(false);
   /** RFC-027 — free-text search across name + agency + category + tagline + country. */
   let query = $state('');
+
+  // Analytics: which category/sort filters + searches people use on the
+  // fleet catalog. Chips fire immediately; query is debounced + capped.
+  let _prevFleetCat: string = 'ALL';
+  let _prevFleetSort: string = 'chrono-desc';
+  let _fleetSearchTimer: ReturnType<typeof setTimeout> | null = null;
+  $effect(() => {
+    if (categoryFilter !== _prevFleetCat) {
+      trackFilterChange('fleet', 'category', categoryFilter);
+      _prevFleetCat = categoryFilter;
+    }
+    if (sortMode !== _prevFleetSort) {
+      trackFilterChange('fleet', 'sort', sortMode);
+      _prevFleetSort = sortMode;
+    }
+    const q = query;
+    if (_fleetSearchTimer) clearTimeout(_fleetSearchTimer);
+    if (q.trim()) _fleetSearchTimer = setTimeout(() => trackSearch('fleet', q), 800);
+    return () => {
+      if (_fleetSearchTimer) clearTimeout(_fleetSearchTimer);
+    };
+  });
   // Filters strip is collapsed by default; clicking the eyebrow expands.
   // Mirrors the /missions pattern (J.1) so users land on the clean
   // grid first and only opt into filtering when they need it.

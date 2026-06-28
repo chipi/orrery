@@ -25,7 +25,12 @@ export default defineConfig({
   // like `../../src/lib/foo.ts` — those resolve correctly on GitHub but
   // are not part of the vitepress route table. Allow them; the build
   // would otherwise fail on every doc that points readers at the code.
-  ignoreDeadLinks: [/(?:^|\/)\.\.\/\.\.\/(?:src|static|scripts|tests)\//],
+  ignoreDeadLinks: [
+    /(?:^|\/)\.\.\/\.\.\/(?:src|static|scripts|tests)\//,
+    // Repo-root files (AGENTS.md, CLAUDE.md, README, CHANGELOG) referenced
+    // from docs via `../../../NAME` — valid on GitHub, not vitepress routes.
+    /(?:^|\/)(?:\.\.\/)+(?:AGENTS|CLAUDE|README|CHANGELOG)\b/,
+  ],
 
   // Force dark mode — the app is dark-only, and the docs site should
   // feel like the same product. Removing the light option avoids a

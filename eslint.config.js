@@ -60,6 +60,11 @@ export default [
       // Playwright Docker image. Contains arch-specific binaries +
       // bundled/minified vendor JS that ESLint shouldn't lint.
       '.linux-node-modules/',
+      // Retired one-shot scripts (per-wave migrations, slice fetches,
+      // translation passes). Kept for historical reference only — never
+      // re-run, and their relative imports no longer resolve from the
+      // archive depth. Inventory: docs/reference/tooling/archive.md.
+      'scripts/_archive/',
     ],
   },
 ];

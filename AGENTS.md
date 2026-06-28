@@ -225,23 +225,25 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   └── rockets.json
 │   └── .nojekyll           ← required for GitHub Pages
 │
-├── scripts/                            ← build-time pipelines (TA.md §pipelines documents all 10)
-│   ├── fetch-assets.ts                  ← agency-first imagery fetch (ADR-046)
+├── scripts/                            ← standing build-time tools (full map: docs/reference/tooling/)
+│   │                                      one-shots live in scripts/_archive/ (see tooling/archive.md)
+│   ├── fetch-assets.ts                  ← agency-first imagery fetch, staging-by-default (ADR-046 / RFC-029)
+│   ├── score-images.ts                  ← vision scoring → image-vision.json (scripts/vision/)
 │   ├── build-image-provenance.ts        ← writes static/data/image-provenance.json + diff report (ADR-047)
 │   ├── build-link-provenance.ts         ← writes static/data/link-provenance.json (ADR-051)
 │   ├── check-learn-links.ts             ← outbound-link freshness gate (ADR-051 L-E)
-│   ├── build-fleet-index.ts             ← writes static/data/fleet/index.json from per-category files (ADR-052)
 │   ├── audit-fleet-heroes.ts            ← flags low-quality fleet heroes; output to docs/provenance/ (ADR-053)
 │   ├── fix-fleet-heroes.ts              ← Wikipedia-API filename substitution helper (ADR-053)
-│   ├── scaffold-fleet-entries.ts        ← one-time fleet entry scaffolder (archival)
-│   ├── migrate-fleet-*.ts               ← one-time fleet migrations (archival; do not re-run)
 │   ├── license-allowlist.ts             ← canonical license allowlist + normaliser (ADR-047)
 │   ├── precompute-porkchops.ts          ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
 │   ├── build-science-index.ts           ← Cmd-K search index + ?-chip vocabulary for /science
+│   ├── validate-data-runner.ts          ← orchestrates every validate-* gate (npm run validate-data)
 │   ├── validate-data.ts                 ← ajv validation + provenance + diagram integrity + symmetric fleet cross-refs
 │   ├── validate-diagrams.ts             ← SVG integrity gate (ADR-035)
 │   ├── build-tech-bom.ts                ← license audit of npm deps; writes docs/TECH-BOM.md
-│   └── capture-screenshots.ts           ← Playwright-driven README + user-guide screenshot regeneration
+│   ├── capture-screenshots.ts           ← Playwright-driven README + user-guide screenshot regeneration
+│   ├── audio/  vision/  hotspots/  lib/  cislunar/  wave23/   ← subdir pipelines (see tooling/)
+│   └── _archive/                        ← 135 retired one-shots (migrations, slice fetches, translation passes)
 │
 ├── tests/                  ← Playwright e2e tests
 ├── docs/                   ← all documentation
@@ -260,6 +262,14 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
     ├── regen-snapshots.yml    # manual — visual-baseline regen
     └── release.yml            # tag → GitHub Release
 ```
+
+---
+
+## Tooling index — what to run, and when
+
+**Before reaching for a script, check [`docs/reference/tooling/`](docs/reference/tooling/README.md)** — the canonical map of every *standing* tool (build/CI, data validation, image pipeline, content pipelines) with what/when/gotchas. It supersedes guessing from `scripts/` filenames: one-shot wave/slice/migration scripts now live in `scripts/_archive/` (don't re-run them — read for the recipe, then use the standing tool). Deep end-to-end references stay authoritative: [TA.md §pipelines](docs/adr/TA.md), [`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md), the `docs/guides/` runbooks.
+
+Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 20 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
 
 ---
 

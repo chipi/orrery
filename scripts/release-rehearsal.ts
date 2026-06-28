@@ -177,7 +177,8 @@ run(
 
 // ─── Step 4: extract the CHANGELOG body for this version ──────────
 log(`extracting CHANGELOG body for ${version}`);
-const changelogPath = resolve(repoRoot, 'CHANGELOG.md');
+// (changelogPath already resolved in Step 3 above — reuse it; a second
+// `const` here was a redeclaration that broke `npm run release:rehearsal`.)
 if (!existsSync(changelogPath)) {
   fail('CHANGELOG.md missing', 1);
 }

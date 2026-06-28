@@ -1,15 +1,18 @@
 import { expect, test } from '@playwright/test';
 
 /**
- * `/posters` — Orrery art-print gallery. 11 hand-authored SVG posters
- * in three style families (JPL travel-poster, era-matched, indie-pop).
- *
- * Route was missing from AGENTS.md / TA.md until v0.6.0 — S5 ships the
- * smoke spec and flags the docs gap as a follow-up.
+ * `/posters` — Orrery art-print gallery. 25 raster posters (ORRERY
+ * originals generated via Higgsfield) in three style families:
+ * vintage screen-print, modern comic, photoreal & future. Each card
+ * links to its full-resolution JPG for download.
  */
 
+const POSTER_COUNT = 25;
+
 test.describe('/posters — Orrery gallery', () => {
-  test('renders gallery title, 11 posters, footer; no console errors', async ({ page }) => {
+  test(`renders gallery title, ${POSTER_COUNT} posters, footer; no console errors`, async ({
+    page,
+  }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
       if (msg.type() === 'error') errors.push(msg.text());
@@ -21,15 +24,12 @@ test.describe('/posters — Orrery gallery', () => {
 
     await expect(page.locator('article.gallery h1')).toContainText('ORRERY GALLERY');
 
-    // 11 art-print posters per the inline doc comment in +page.svelte
     const posters = page.locator('article.gallery .grid > figure.poster');
-    await expect(posters).toHaveCount(11);
+    await expect(posters).toHaveCount(POSTER_COUNT);
 
-    // Each poster contains an inline <svg> (no broken-image risk;
-    // posters are SVG-only by design — right-click Save renders the
-    // scalable file).
-    const svgs = page.locator('article.gallery .grid > figure.poster svg');
-    await expect(svgs).toHaveCount(11);
+    // Each poster is a raster <img> wrapped in a download link.
+    const imgs = page.locator('article.gallery .grid > figure.poster a[download] img');
+    await expect(imgs).toHaveCount(POSTER_COUNT);
 
     await expect(page.locator('article.gallery footer.gallery-footer')).toBeVisible();
 

@@ -30172,7 +30172,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA26363",
-      "fetched_at": "2026-06-23T20:27:46.233Z"
+      "fetched_at": "2026-06-28T17:07:19.897Z"
     },
     {
       "id": "f51d62ae81092bbb",
@@ -30242,7 +30242,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA23136",
-      "fetched_at": "2026-06-24T07:31:09.118Z"
+      "fetched_at": "2026-06-28T17:07:48.621Z"
     },
     {
       "id": "7aa8775a371a1de8",
@@ -30312,7 +30312,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA01005",
-      "fetched_at": "2026-06-24T07:31:14.075Z"
+      "fetched_at": "2026-06-28T17:07:53.978Z"
     },
     {
       "id": "43f633c9b288e771",
@@ -30431,7 +30431,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA20749",
-      "fetched_at": "2026-06-24T07:31:20.841Z"
+      "fetched_at": "2026-06-28T17:07:37.945Z"
     },
     {
       "id": "e2f1e63c80039a93",
@@ -30501,7 +30501,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA2464",
-      "fetched_at": "2026-06-24T07:26:13.430Z"
+      "fetched_at": "2026-06-28T17:07:27.305Z"
     },
     {
       "id": "bbe5e392ad03f9b2",
@@ -30571,7 +30571,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA13804",
-      "fetched_at": "2026-06-24T07:31:25.268Z"
+      "fetched_at": "2026-06-28T17:07:43.256Z"
     },
     {
       "id": "7b5b93da97d7af71",
@@ -30690,7 +30690,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA16440",
-      "fetched_at": "2026-06-24T07:31:35.341Z"
+      "fetched_at": "2026-06-28T17:07:32.601Z"
     },
     {
       "id": "b58e83398db30b76",
@@ -30760,7 +30760,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "PIA03163",
-      "fetched_at": "2026-06-24T07:31:39.969Z"
+      "fetched_at": "2026-06-28T17:08:04.722Z"
     },
     {
       "id": "57e3c2b6e4a84993",
@@ -30830,7 +30830,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)",
-      "fetched_at": "2026-06-24T07:31:45.142Z"
+      "fetched_at": "2026-06-28T17:07:59.430Z"
     },
     {
       "id": "6f19fe2b3cfc4a27",
@@ -30900,7 +30900,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-24T07:31:49.721Z"
+      "fetched_at": "2026-06-28T17:08:09.945Z"
     },
     {
       "id": "4e18140b2402b7d4",
@@ -30947,23 +30947,23 @@
     {
       "id": "8792eed7b3518b9b",
       "path": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo11",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Tranquillity Base panoramic mosaic — Apollo 11 LM Eagle, deployed flag, EASEP instrument, lunar regolith and crater field. 32454×2554 px Hasselblad composite (NASA JSC, 2007).",
+      "author": "NASA / JSC / Apollo Lunar Surface Journal (mosaic by JSC, 2007)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Apollo_11_Tranquility_Base_panoramic_%28JSC2007-E-045375%29.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Apollo_11_Tranquility_Base_panoramic_%28JSC2007-E-045375%29.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "JSC2007-E-045375",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "40dbdd8d348cca1f",
@@ -31010,23 +31010,23 @@
     {
       "id": "6722694c6db47fea",
       "path": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo12",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Ocean of Storms ALSEP panorama. Intrepid LM + ALSEP central station + radioisotope thermoelectric generator. Surveyor 3 crater rim visible in the distance — the only Apollo site where astronauts walked to a previous robotic lander. Apollo 12, Nov 19 1969.",
+      "author": "NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via ALSJ",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Apollo 12 Pete's ALSEP Site Pan",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "dd52df60b20b4e05",
@@ -31073,23 +31073,23 @@
     {
       "id": "3fc54a1d390c99da",
       "path": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo14",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. Apollo 14, Feb 5–6 1971. NASA / Shepard / Mitchell via ALSJ.",
+      "author": "NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Apollo 14 LM 12 O'clock Pan Hi-Res",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "904f58236cd829f9",
@@ -31136,23 +31136,23 @@
     {
       "id": "25d8f4ce079a76f7",
       "path": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo15",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. NASA / Scott / Irwin via Apollo Lunar Surface Journal.",
+      "author": "NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Apollo 15 Jim's ALSEP Pan EVA-2",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "d0a8d11b632efa48",
@@ -31199,23 +31199,23 @@
     {
       "id": "b6983c06c0ce8b71",
       "path": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo16",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Descartes Highlands ALSEP panorama. Orion LM + ALSEP central station + LRV; Stone Mountain on the horizon. Apollo 16, April 21 1972. NASA / Young / Duke via Apollo Lunar Surface Journal (Eric Jones composite).",
+      "author": "NASA / John Young / Charlie Duke · assembled by Eric Jones · via ALSJ",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apollo_16_-_ALSEP_Pan_HR_2_panorama.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apollo_16_-_ALSEP_Pan_HR_2_panorama.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Apollo 16 ALSEP Pan HR 2",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "a8df03c5ead7abee",
@@ -31262,23 +31262,23 @@
     {
       "id": "6b534d68d29eed8d",
       "path": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/apollo17",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Taurus-Littrow Valley ALSEP panorama, EVA-1. Jack Schmitt assembled colour pan, Lunar Roving Vehicle and Lunar Module Challenger visible. Captured Dec 12 1972; USGS-prepared composite via NASA Apollo Lunar Surface Journal.",
+      "author": "NASA / Gene Cernan / Jack Schmitt / USGS · via Apollo Lunar Surface Journal",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Jack's Color ALSEP Pan (USGS)",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "80eb0edd5a42cca4",
@@ -31305,22 +31305,22 @@
       "id": "583e7255b1b2b296",
       "path": "/images/hotspots/moon/beresheet/tier3-pan.jpg",
       "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/beresheet",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "title": "Beresheet final descent frame — last image transmitted at ~22 km altitude over Mare Serenitatis (April 11 2019) before main-engine failure and loss of comms. Beresheet was the first privately-funded lunar lander and the first Israeli Moon mission; the descent camera transmitted continuous frames during the powered descent. No surface imagery exists. SpaceIL · Israel Aerospace Industries.",
+      "author": "SpaceIL · IAI · Beresheet descent camera (final transmission)",
+      "agency": "CNSA",
+      "source_url": "https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg",
+      "license_short": "SpaceIL-EDU",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "750f40c7d2147eea",
@@ -31346,23 +31346,23 @@
     {
       "id": "9a5f49f5c72a4e08",
       "path": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/chandrayaan3",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_type": "wikimedia-commons",
+      "title": "Chandrayaan-3 Vikram lander photographed by Pragyan rover NavCam from 15 m away — Shiv Shakti Point, 69.37°S 32.32°E (highest-latitude soft landing of any mission). Captured 11:04 IST Aug 30 2023, six days after touchdown. ISRO. No 360° panorama exists; Pragyan carried a stereo NavCam pair, not a panoramic camera.",
+      "author": "ISRO · Pragyan rover NavCam (LEOS/ISRO) · SAC/ISRO processing",
+      "agency": "CNSA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Chandrayaan-3_%E2%80%93_Image_of_Vikram_lander_on_lunar_surface_taken_by_Pragyan_rover_navcam_at_1104_IST%2C_30_August_2023_from_15_meters_away_%28with_text%29.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Chandrayaan-3_%E2%80%93_Image_of_Vikram_lander_on_lunar_surface_taken_by_Pragyan_rover_navcam_at_1104_IST%2C_30_August_2023_from_15_meters_away_%28with_text%29.webp",
+      "license_short": "ISRO-EDU",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "e1dc300cdb386e98",
@@ -31389,22 +31389,22 @@
       "id": "d2a870b57c5f9570",
       "path": "/images/hotspots/moon/change3/tier3-pan.jpg",
       "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/change3",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "title": "Chang'e 3 first colour panorama, Mare Imbrium / Bay of Rainbows. Yutu rover tracks cross the foreground; lander solar panels visible at edges. Captured Dec 15 2013, PCAM stereo pair stitched by Marco Di Lorenzo. CNSA / Chang’e 3 mission team.",
+      "author": "CNSA / Chinanews / Ken Kremer / Marco Di Lorenzo · Chang'e 3 lander PCAM",
+      "agency": "CNSA",
+      "source_url": "https://cdn.mos.cms.futurecdn.net/2UmRx9rkjZfauYdoQi8aAT.jpg",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/2UmRx9rkjZfauYdoQi8aAT.jpg",
+      "license_short": "CNSA-EDU",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "6c00365047f1315a",
@@ -31430,23 +31430,23 @@
     {
       "id": "a57e8ad227a8f74b",
       "path": "/images/hotspots/moon/change4/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/change4",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_type": "wikimedia-commons",
+      "title": "Chang'e 4 lander 360° panorama from Von Kármán crater, South Pole-Aitken basin — the first surface panorama from the lunar far side (Feb 2019). Yutu-2 rover visible at left with its tracks. CNSA released image, assembled from 80 Lander Topographic Camera frames.",
+      "author": "CNSA / Chinese Academy of Sciences · CC-BY-4.0",
+      "agency": "CNSA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_first_panorama_from_the_far_side_of_the_moon.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_first_panorama_from_the_far_side_of_the_moon.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Creative Commons Attribution 4.0 International. Source: academic publication / Wikimedia Commons. Permitted with attribution to the original authors.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:14:20.526Z"
     },
     {
       "id": "8f666e4e9da12291",
@@ -31473,22 +31473,22 @@
       "id": "bfc898ae32100456",
       "path": "/images/hotspots/moon/change5/tier3-pan.jpg",
       "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/change5",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "title": "Chang'e 5 lander forward panorama, Oceanus Procellarum / Mons Rümker. Lander solar-cell deck + sample-drill foreground; nearer terrain shows fresh-impact ejecta. Captured Dec 1 2020. CNSA / CLEP.",
+      "author": "CNSA / CLEP · Chang'e 5 lander panoramic camera",
+      "agency": "CNSA",
+      "source_url": "https://planetary.s3.amazonaws.com/web/assets/pictures/lunar-surface-pano-from-change-5.jpg",
+      "image_url": "https://planetary.s3.amazonaws.com/web/assets/pictures/lunar-surface-pano-from-change-5.jpg",
+      "license_short": "CNSA-EDU",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "e1c2364d89600a03",
@@ -31515,22 +31515,22 @@
       "id": "ad8e724fe8564b5a",
       "path": "/images/hotspots/moon/change6/tier3-pan.jpg",
       "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/change6",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "title": "Chang'e 6 first surface image — Apollo crater, lunar far side (the first surface panorama ever transmitted from the far side of any planetary body, via the Queqiao-2 relay satellite). Captured June 2 2024. CNSA / CLEP / China Lunar Exploration Program.",
+      "author": "CNSA / CLEP · Chang'e 6 lander panoramic camera · via CGTN",
+      "agency": "CNSA",
+      "source_url": "https://news.cgtn.com/news/2024-06-04/China-s-Chang-e-6-sends-back-images-from-the-far-side-of-the-moon-1u9v8l9xdUk/img/52549cd8b951460bb6fe186a2495c8fb/52549cd8b951460bb6fe186a2495c8fb.jpeg",
+      "image_url": "https://news.cgtn.com/news/2024-06-04/China-s-Chang-e-6-sends-back-images-from-the-far-side-of-the-moon-1u9v8l9xdUk/img/52549cd8b951460bb6fe186a2495c8fb/52549cd8b951460bb6fe186a2495c8fb.jpeg",
+      "license_short": "CNSA-EDU",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "a34764d76e6a9ad1",
@@ -31556,23 +31556,23 @@
     {
       "id": "51dd34888594d94a",
       "path": "/images/hotspots/moon/luna16/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/luna16",
-      "author": "NASA",
+      "source_type": "direct-agency",
+      "title": "Luna 16 landing site, Mare Fecunditatis (1970) — modern LRO NAC orbital view. Luna 16 was the first robotic sample-return mission and carried only a descent-stage telephotometer; no Earth-transmitted surface panorama exists. This LRO image (PIA12984, captured 2010) is the closest available landing-site view. NASA / GSFC / Arizona State.",
+      "author": "NASA / GSFC / Arizona State University · LRO Camera (NAC)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg",
+      "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Luna 16 landing site, LRO NAC orbital view (NASA, 2010)",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "9b1d11a1cc39fcab",
@@ -31598,23 +31598,23 @@
     {
       "id": "624f3e472b249fa6",
       "path": "/images/hotspots/moon/luna17/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/luna17",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "source_type": "wikimedia-commons",
+      "title": "Lunokhod 1 surface panorama — Mare Imbrium, Nov 1970. Rover deck + wheel tracks visible across the foreground. Lunokhod 1 returned 206 panoramas over its 322 Earth-day operation, all monochrome via the vidicon panoramic scanner. The first wheeled rover on another world. Soviet Academy of Sciences (PD-Russia).",
+      "author": "Soviet Academy of Sciences · Lunokhod 1 vidicon TV camera",
+      "agency": "CNSA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg",
+      "license_short": "PD-Russia",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "4b2a4593c865465a",
@@ -31661,44 +31661,44 @@
     {
       "id": "0ee4c596cadcc530",
       "path": "/images/hotspots/moon/luna24/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/luna24",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Luna 24 landing site, Mare Crisium (Aug 1976) — modern LRO NAC orbital view. Luna 24 was the last Soviet Moon mission and the final lunar sample return until Chang'e 5 in 2020. It carried only a fixed descent-stage TV camera, not a panoramic system; no Earth-transmitted surface panorama exists. NASA / GSFC / Arizona State.",
+      "author": "NASA / GSFC / Arizona State University · LRO Camera (NAC)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Luna 24 landing site, LRO NAC orbital view (NASA / NSSDC)",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "280e1b038ab8bd57",
       "path": "/images/hotspots/moon/luna9/tier3-pan.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/luna9",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "Luna 9 — the first photograph from the lunar surface, transmitted Feb 4 1966 from Oceanus Procellarum via Soviet radiofax. Intercepted + decoded by Jodrell Bank Observatory + Daily Express. The visible noise + low resolution are intrinsic to the 1966 transmission tech, not the rendering — this IS the best surviving copy of the historic first-ever photograph from another world. Soviet Academy of Sciences, PD.",
+      "author": "Soviet Academy of Sciences · public domain (Russian copyright law: no creative agency)",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/First_Photo_from_the_Surface_of_the_Moon.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/First_Photo_from_the_Surface_of_the_Moon.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "nasa_id": "Luna 9 first surface photo (1966)",
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "201b99bc3d3df986",
@@ -31725,22 +31725,22 @@
       "id": "656d8743728823b1",
       "path": "/images/hotspots/moon/slim/tier3-pan.jpg",
       "source_type": "direct-other",
-      "title": "Uncurated panel image — hotspots/moon/slim",
-      "author": "NASA",
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "title": "SLIM lander photographed by Sora-Q (LEV-2) micro-hopper after touchdown — Shioli crater. SLIM came down on its nose (engine fault during the final descent) but survived to operate for three days. Captured Jan 25 2024 by the 8 cm Sora-Q transformable hopper (TOMY / Sony / Doshisha co-development). No surface panorama system on SLIM; the Sora-Q stereo MBC frame is the canonical surface view. JAXA.",
+      "author": "JAXA / TOMY / Sony Group / Doshisha University · Sora-Q (LEV-2) MBC",
+      "agency": "CNSA",
+      "source_url": "https://global.jaxa.jp/press/2024/01/images/20240125-4_e_01.jpg",
+      "image_url": "https://global.jaxa.jp/press/2024/01/images/20240125-4_e_01.jpg",
+      "license_short": "JAXA-OPEN",
+      "license_url": "https://www.cnsa.gov.cn/english/",
+      "license_rationale": "China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.961Z"
+      "fetched_at": "2026-06-28T17:07:10.233Z"
     },
     {
       "id": "cd703ab2295232cf",

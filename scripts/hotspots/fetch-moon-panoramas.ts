@@ -110,10 +110,15 @@ const PANORAMAS: MoonPanoramaConfig[] = [
     sourceLabel: "Chang'e 4 first farside panorama (CNSA, Feb 2019)",
     attribution: 'CNSA / Chinese Academy of Sciences · CC-BY-4.0',
     license: 'CC-BY-4.0',
-    // 10000×1229 (8.1:1) — assembled from 80 frames by CNSA. ~360° wraparound, modest vertical.
+    // 10000×1229 (8.1:1) — assembled from 80 frames by CNSA. 360° wrap;
+    // isotropic vFOV = (1229/10000)*360 ≈ 44°. Horizon sits ~20% down the
+    // source (sky/regolith boundary), so 9° above + 36° below maps the
+    // frame 1:1 with no vertical squish and carries the real lander deck +
+    // foreground regolith down to −36° (was 11/11, which squished the
+    // source 2× and cropped the ground at the horizon). #C gap recovery.
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 11,
-    srcElevationBottomDeg: 11,
+    srcElevationTopDeg: 9,
+    srcElevationBottomDeg: 36,
     caption:
       "Chang'e 4 lander 360° panorama from Von Kármán crater, South Pole-Aitken basin — the first " +
       'surface panorama from the lunar far side (Feb 2019). Yutu-2 rover visible at left with its ' +

@@ -34,6 +34,38 @@
   let episodes = $state<Episode[]>([]);
   let lightbox = $state<{ src: string; title: string; route: string } | null>(null);
 
+  // Gallery posters (/posters) — 25 ORRERY originals generated with
+  // Recraft 4.1 and Google nano-banana via Higgsfield, captioned and
+  // wordmarked in-house. Listed here for provenance honesty: they are
+  // not works of any space agency and carry no agency logos.
+  const posterArt: { id: string; title: string }[] = [
+    { id: 'solar-system-orrery', title: 'Solar System' },
+    { id: 'solar-system-procession', title: 'Solar System' },
+    { id: 'earth', title: 'Earth' },
+    { id: 'moon', title: 'Moon' },
+    { id: 'mars', title: 'Mars' },
+    { id: 'saturn-v', title: 'Saturn V' },
+    { id: 'sputnik', title: 'Sputnik' },
+    { id: 'voyager', title: 'Voyager' },
+    { id: 'sojourner', title: 'Sojourner' },
+    { id: 'footprints', title: 'Footprints' },
+    { id: 'gagarin', title: 'Gagarin' },
+    { id: 'rosetta', title: 'Rosetta' },
+    { id: 'huygens', title: 'Huygens' },
+    { id: 'hayabusa2', title: 'Hayabusa2' },
+    { id: 'artemis-ii', title: 'Artemis II' },
+    { id: 'iss', title: 'ISS' },
+    { id: 'tiangong', title: 'Tiangong' },
+    { id: 'perseverance', title: 'Perseverance' },
+    { id: 'space-shuttle', title: 'Space Shuttle' },
+    { id: 'solar-sail', title: 'Solar Sail' },
+    { id: 'nuclear-drive', title: 'Nuclear Drive' },
+    { id: 'jwst', title: 'James Webb' },
+    { id: 'hubble', title: 'Hubble' },
+    { id: 'cassini', title: 'Cassini' },
+    { id: 'starship', title: 'Starship' },
+  ];
+
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
       .then((r) => r.json())
@@ -101,6 +133,40 @@
               <img src="{base}{d.file}" alt={d.title} loading="lazy" decoding="async" />
             </button>
             <span class="thumb-title">{d.title}</span>
+          </li>
+        {/each}
+      </ul>
+    </section>
+
+    <!-- Gallery posters: ORRERY originals generated via Higgsfield (/posters). -->
+    <section class="block" aria-labelledby="sec-posters">
+      <h2 id="sec-posters">Gallery posters<span class="count">{posterArt.length}</span></h2>
+      <p class="block-note">
+        The <a href="{base}/posters">/posters</a> gallery is 25 ORRERY-original art prints, generated
+        with Recraft 4.1 and Google nano-banana via Higgsfield, then captioned and wordmarked in-house.
+        They are not works of any space agency and carry no agency logos.
+      </p>
+      <ul class="thumb-grid">
+        {#each posterArt as p (p.id)}
+          <li class="thumb-card">
+            <button
+              type="button"
+              class="thumb-open"
+              onclick={() =>
+                (lightbox = {
+                  src: `${base}/images/posters/${p.id}.jpg`,
+                  title: p.title,
+                  route: '/posters',
+                })}
+            >
+              <img
+                src="{base}/images/posters/{p.id}.thumb.jpg"
+                alt={p.title}
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <span class="thumb-title">{p.title}</span>
           </li>
         {/each}
       </ul>
@@ -312,6 +378,21 @@
     font-size: 12px;
     letter-spacing: 0;
     color: rgba(255, 255, 255, 0.4);
+  }
+
+  .block-note {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+  .block-note a {
+    color: #4ecdc4;
+    text-decoration: none;
+  }
+  .block-note a:hover {
+    text-decoration: underline;
   }
 
   .thumb-grid {

@@ -2834,6 +2834,14 @@
         camT = (urlState.yawDeg * Math.PI) / 180;
         // pitch +90 = up, 0 = horizon → camP = π/2 - pitch_rad
         camP = Math.PI / 2 - (urlState.pitchDeg * Math.PI) / 180;
+      } else {
+        // Open centred on the panorama's forward direction (yaw 0 =
+        // panorama centre, pitch 0 = horizon) instead of inheriting the
+        // oblique orbital camera angle — otherwise the view lands tilted
+        // and the user has to drag to re-centre (2026-06-28 user
+        // direction: "camera was tilted ... recenter to be screen-centred").
+        camT = 0;
+        camP = Math.PI / 2;
       }
       updateCam();
       panoramaActive = true;

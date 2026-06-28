@@ -115,15 +115,28 @@ function buildSkyGradient(
   return buf;
 }
 
-/** Flat-colour fill of width × height pixels, raw RGB bytes. */
-function buildFlatFill(width: number, height: number, rgb: [number, number, number]): Buffer {
-  const buf = Buffer.alloc(width * height * 3);
-  for (let i = 0; i < width * height; i++) {
-    buf[i * 3 + 0] = rgb[0];
-    buf[i * 3 + 1] = rgb[1];
-    buf[i * 3 + 2] = rgb[2];
-  }
-  return buf;
+/**
+ * Ground (nadir) colour for a given output row. The real source data
+ * ends at `bottomRow`; everything below it is the unavoidable nadir gap
+ * (the camera never imaged straight down). Rather than a flat grey slab
+ * we fade the regolith into shadow: full `regolith` at `bottomRow`,
+ * darkening toward the nadir (bottom edge). Reads as ground falling into
+ * shadow below the imaged strip instead of a dead grey void
+ * (2026-06-28 user direction). Rows in the real-data band (above
+ * bottomRow) clamp to full regolith so partial-360 azimuth-gap fills +
+ * black-recolour there still match the surrounding ground.
+ */
+const NADIR_DARKEN = 0.84; // brightness drops to ~16% at the nadir
+function groundColourAtRow(
+  outRow: number,
+  bottomRow: number,
+  outHeight: number,
+  regolith: [number, number, number],
+): [number, number, number] {
+  const span = Math.max(1, outHeight - 1 - bottomRow);
+  const t = Math.min(1, Math.max(0, (outRow - bottomRow) / span)); // 0 at bottomRow → 1 at nadir
+  const k = 1 - NADIR_DARKEN * Math.pow(t, 0.85);
+  return [Math.round(regolith[0] * k), Math.round(regolith[1] * k), Math.round(regolith[2] * k)];
 }
 
 /**
@@ -138,6 +151,8 @@ function paletteAtRow(
   outRow: number,
   halfH: number,
   topRow: number,
+  bottomRow: number,
+  outHeight: number,
   palette: MarsColourPalette,
 ): [number, number, number] {
   if (outRow < halfH) {
@@ -147,7 +162,7 @@ function paletteAtRow(
     const b = Math.round(palette.skyZenith[2] + (palette.skyHorizon[2] - palette.skyZenith[2]) * t);
     return [r, g, b];
   }
-  return palette.regolith;
+  return groundColourAtRow(outRow, bottomRow, outHeight, palette.regolith);
 }
 
 /**
@@ -203,10 +218,19 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     sky.copy(canvas, 0, 0, sky.length);
   }
 
-  // 2. Fill ground region (rows bottomRow .. outHeight - 1) with regolith.
-  if (bottomRow < outHeight) {
-    const ground = buildFlatFill(outWidth, outHeight - bottomRow, palette.regolith);
-    ground.copy(canvas, bottomRow * outWidth * 3, 0, ground.length);
+  // 2. Fill ground region (rows bottomRow .. outHeight - 1) — regolith at
+  //    the source's lower edge fading into shadow toward the nadir, so the
+  //    unavoidable straight-down gap reads as shadowed ground, not a flat
+  //    grey slab.
+  for (let outRow = bottomRow; outRow < outHeight; outRow++) {
+    const [gr, gg, gb] = groundColourAtRow(outRow, bottomRow, outHeight, palette.regolith);
+    const rowStart = outRow * outWidth * 3;
+    for (let col = 0; col < outWidth; col++) {
+      const i = rowStart + col * 3;
+      canvas[i] = gr;
+      canvas[i + 1] = gg;
+      canvas[i + 2] = gb;
+    }
   }
 
   // 3. Fill azimuth gap on partial-360 sources. Use the SAME per-row
@@ -220,7 +244,7 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     const gapWidth = outWidth - srcOutWidth;
     for (let row = 0; row < srcOutHeight; row++) {
       const outRow = topRow + row;
-      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, palette);
+      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, bottomRow, outHeight, palette);
       const gapOutStart = outRow * outWidth * 3 + srcOutWidth * 3;
       for (let col = 0; col < gapWidth; col++) {
         const oIdx = gapOutStart + col * 3;
@@ -240,7 +264,7 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
   for (let row = 0; row < srcOutHeight; row++) {
     const outRow = topRow + row;
     if (recolourThreshold > 0) {
-      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, palette);
+      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, bottomRow, outHeight, palette);
       const srcRowStart = row * srcOutWidth * 3;
       const outRowStart = outRow * outWidth * 3;
       for (let col = 0; col < srcOutWidth; col++) {

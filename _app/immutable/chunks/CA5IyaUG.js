@@ -1,1 +1,0 @@
-import{j as a,k as i}from"./DssUUdQF.js";const o=Symbol("debug-panel-page-content");function c(e,t){const n={registration:e,rendering:t};return a(o,n),n}function r(){return i(o)??null}function g(e){const t=r();t&&(t.registration.label=e.label,t.registration.content=e.content)}function u(e){const t=r();t&&(t.rendering.value=e)}export{u as a,c,r as g,g as s};

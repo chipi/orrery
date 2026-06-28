@@ -1094,6 +1094,133 @@
       "cover": false
     }
   ],
+  "posters": [
+    {
+      "title": "Solar System",
+      "file": "/images/posters/solar-system-orrery.jpg",
+      "thumb": "/images/posters/solar-system-orrery.thumb.jpg"
+    },
+    {
+      "title": "Solar System",
+      "file": "/images/posters/solar-system-procession.jpg",
+      "thumb": "/images/posters/solar-system-procession.thumb.jpg"
+    },
+    {
+      "title": "Earth",
+      "file": "/images/posters/earth.jpg",
+      "thumb": "/images/posters/earth.thumb.jpg"
+    },
+    {
+      "title": "Moon",
+      "file": "/images/posters/moon.jpg",
+      "thumb": "/images/posters/moon.thumb.jpg"
+    },
+    {
+      "title": "Mars",
+      "file": "/images/posters/mars.jpg",
+      "thumb": "/images/posters/mars.thumb.jpg"
+    },
+    {
+      "title": "Saturn V",
+      "file": "/images/posters/saturn-v.jpg",
+      "thumb": "/images/posters/saturn-v.thumb.jpg"
+    },
+    {
+      "title": "Sputnik",
+      "file": "/images/posters/sputnik.jpg",
+      "thumb": "/images/posters/sputnik.thumb.jpg"
+    },
+    {
+      "title": "Voyager",
+      "file": "/images/posters/voyager.jpg",
+      "thumb": "/images/posters/voyager.thumb.jpg"
+    },
+    {
+      "title": "Sojourner",
+      "file": "/images/posters/sojourner.jpg",
+      "thumb": "/images/posters/sojourner.thumb.jpg"
+    },
+    {
+      "title": "Footprints",
+      "file": "/images/posters/footprints.jpg",
+      "thumb": "/images/posters/footprints.thumb.jpg"
+    },
+    {
+      "title": "Gagarin",
+      "file": "/images/posters/gagarin.jpg",
+      "thumb": "/images/posters/gagarin.thumb.jpg"
+    },
+    {
+      "title": "Rosetta",
+      "file": "/images/posters/rosetta.jpg",
+      "thumb": "/images/posters/rosetta.thumb.jpg"
+    },
+    {
+      "title": "Huygens",
+      "file": "/images/posters/huygens.jpg",
+      "thumb": "/images/posters/huygens.thumb.jpg"
+    },
+    {
+      "title": "Hayabusa2",
+      "file": "/images/posters/hayabusa2.jpg",
+      "thumb": "/images/posters/hayabusa2.thumb.jpg"
+    },
+    {
+      "title": "Artemis II",
+      "file": "/images/posters/artemis-ii.jpg",
+      "thumb": "/images/posters/artemis-ii.thumb.jpg"
+    },
+    {
+      "title": "ISS",
+      "file": "/images/posters/iss.jpg",
+      "thumb": "/images/posters/iss.thumb.jpg"
+    },
+    {
+      "title": "Tiangong",
+      "file": "/images/posters/tiangong.jpg",
+      "thumb": "/images/posters/tiangong.thumb.jpg"
+    },
+    {
+      "title": "Perseverance",
+      "file": "/images/posters/perseverance.jpg",
+      "thumb": "/images/posters/perseverance.thumb.jpg"
+    },
+    {
+      "title": "Space Shuttle",
+      "file": "/images/posters/space-shuttle.jpg",
+      "thumb": "/images/posters/space-shuttle.thumb.jpg"
+    },
+    {
+      "title": "Solar Sail",
+      "file": "/images/posters/solar-sail.jpg",
+      "thumb": "/images/posters/solar-sail.thumb.jpg"
+    },
+    {
+      "title": "Nuclear Drive",
+      "file": "/images/posters/nuclear-drive.jpg",
+      "thumb": "/images/posters/nuclear-drive.thumb.jpg"
+    },
+    {
+      "title": "James Webb",
+      "file": "/images/posters/jwst.jpg",
+      "thumb": "/images/posters/jwst.thumb.jpg"
+    },
+    {
+      "title": "Hubble",
+      "file": "/images/posters/hubble.jpg",
+      "thumb": "/images/posters/hubble.thumb.jpg"
+    },
+    {
+      "title": "Cassini",
+      "file": "/images/posters/cassini.jpg",
+      "thumb": "/images/posters/cassini.thumb.jpg"
+    },
+    {
+      "title": "Starship",
+      "file": "/images/posters/starship.jpg",
+      "thumb": "/images/posters/starship.thumb.jpg"
+    }
+  ],
   "models3d": [
     {
       "title": "Cassini–Huygens",
@@ -1562,6 +1689,7 @@
   "totals": {
     "anatomy_art": 144,
     "diagrams_science": 74,
+    "posters": 25,
     "models3d": 49,
     "canvas2d": 6,
     "ui": 4,

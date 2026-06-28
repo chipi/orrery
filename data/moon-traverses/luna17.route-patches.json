@@ -1,4 +1,71 @@
 {
   "rover_id": "luna17",
-  "patches": []
+  "patches": [
+    {
+      "id": "start",
+      "lat": 38.2378,
+      "lon": -34.9983,
+      "kind": "feature",
+      "label": "Landing / drive start",
+      "image": "/images/hotspots/moon/luna17/traverse/start.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    },
+    {
+      "id": "km-01",
+      "lat": 38.24548,
+      "lon": -35.00976,
+      "kind": "feature",
+      "label": "Along route",
+      "image": "/images/hotspots/moon/luna17/traverse/km-01.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    },
+    {
+      "id": "km-02",
+      "lat": 38.24871,
+      "lon": -34.9917,
+      "kind": "feature",
+      "label": "Along route",
+      "image": "/images/hotspots/moon/luna17/traverse/km-02.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    },
+    {
+      "id": "km-03",
+      "lat": 38.23575,
+      "lon": -34.99814,
+      "kind": "feature",
+      "label": "Along route",
+      "image": "/images/hotspots/moon/luna17/traverse/km-03.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    },
+    {
+      "id": "km-04",
+      "lat": 38.24219,
+      "lon": -35.01146,
+      "kind": "feature",
+      "label": "Along route",
+      "image": "/images/hotspots/moon/luna17/traverse/km-04.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    },
+    {
+      "id": "end",
+      "lat": 38.23978,
+      "lon": -34.99326,
+      "kind": "feature",
+      "label": "Final position",
+      "image": "/images/hotspots/moon/luna17/traverse/end.jpg",
+      "product_id": "TC2W2B0_01_07124N385E3250",
+      "resolution_m_per_px": 5.6363361410952,
+      "ground_m": 5772
+    }
+  ]
 }

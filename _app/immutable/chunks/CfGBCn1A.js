@@ -1,1 +1,0 @@
-import{aa as s,W as n}from"./DssUUdQF.js";function b(o,a,r,f,i){var d=()=>{f(r[o])};r.addEventListener(a,d),i?s(()=>{r[o]=i()}):d(),(r===document.body||r===window||r===document)&&n(()=>{r.removeEventListener(a,d)})}export{b};

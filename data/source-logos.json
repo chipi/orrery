@@ -2,272 +2,18 @@
   "schema_version": 1,
   "sources": [
     {
-      "id": "nasa",
-      "name": "NASA",
-      "kind": "space-agency",
-      "url": "https://www.nasa.gov/",
-      "logo_path": "/logos/nasa.svg",
-      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105)."
-    },
-    {
-      "id": "nasa-hirise",
-      "name": "NASA · HiRISE (MRO)",
-      "kind": "research-institute",
-      "url": "https://www.uahirise.org/",
-      "logo_path": "/logos/nasa.svg",
-      "license_summary": "HiRISE camera on Mars Reconnaissance Orbiter — NASA / JPL-Caltech / University of Arizona. Public domain (17 U.S.C. § 105); attribute the source."
-    },
-    {
-      "id": "nasa-ctx",
-      "name": "NASA · CTX — Murray Lab Mosaic (MRO)",
-      "kind": "research-institute",
-      "url": "https://murray-lab.caltech.edu/CTX/",
-      "logo_path": "/logos/nasa.svg",
-      "license_summary": "CTX camera on Mars Reconnaissance Orbiter (NASA / JPL-Caltech / MSSS), blended into the Global CTX Mosaic by Caltech Murray Lab (Dickson et al. 2024, doi:10.1029/2024EA003555). Cite the mosaic paper."
-    },
-    {
-      "id": "jaxa-kaguya-tc",
-      "name": "JAXA · Kaguya TC (SELENE)",
-      "kind": "research-institute",
-      "url": "https://www.kaguya.jaxa.jp/",
-      "logo_path": "/logos/jaxa.svg",
-      "license_summary": "Terrain Camera on JAXA's SELENE (Kaguya) lunar orbiter — ~6 m/px regional context for /moon landing zones (the CTX-equivalent layer). JAXA open-data policy; redistributed as USGS Astrogeology Analysis Ready Data. Attribute JAXA / SELENE (Kaguya) Terrain Camera."
-    },
-    {
-      "id": "esa",
-      "name": "European Space Agency",
-      "kind": "space-agency",
-      "url": "https://www.esa.int/",
-      "logo_path": "/logos/esa.svg",
-      "license_summary": "Creative Commons CC BY-SA 3.0 IGO for most imagery; some material under CC BY 4.0 IGO. Logos under permissive ESA emblem terms."
-    },
-    {
-      "id": "roscosmos",
-      "name": "Roscosmos",
-      "kind": "space-agency",
-      "url": "https://www.roscosmos.ru/",
-      "logo_path": "/logos/roscosmos.svg",
-      "license_summary": "Imagery and Soviet-era space photographs are in the public domain in Russia (Article 1259, Russian Civil Code)."
-    },
-    {
-      "id": "cnsa",
-      "name": "China National Space Administration",
-      "kind": "space-agency",
-      "url": "http://www.cnsa.gov.cn/",
-      "logo_path": "/logos/cnsa.svg",
-      "license_summary": "Imagery commonly redistributed via Creative Commons CC BY-SA 4.0 on Wikimedia Commons; PRC government works on the official site are released for editorial reuse."
-    },
-    {
-      "id": "isro",
-      "name": "Indian Space Research Organisation",
-      "kind": "space-agency",
-      "url": "https://www.isro.gov.in/",
-      "logo_path": "/logos/isro.svg",
-      "license_summary": "Government of India works (GODL-India) commonly redistributed under permissive terms; ISRO mission imagery is freely usable for editorial purposes with credit."
-    },
-    {
-      "id": "jaxa",
-      "name": "Japan Aerospace Exploration Agency",
-      "kind": "space-agency",
-      "url": "https://global.jaxa.jp/",
-      "logo_path": "/logos/jaxa.svg",
-      "license_summary": "Creative Commons CC BY 4.0 for most JAXA digital archive imagery; some assets under JAXA's editorial-reuse policy."
-    },
-    {
-      "id": "spacex",
-      "name": "SpaceX",
-      "kind": "private-operator",
-      "url": "https://www.spacex.com/",
-      "logo_path": "/logos/spacex.svg",
-      "license_summary": "SpaceX official launch and mission photos historically released as public domain (CC0); company logos under PD-trivial."
-    },
-    {
-      "id": "blue-origin",
-      "name": "Blue Origin",
-      "kind": "private-operator",
-      "url": "https://www.blueorigin.com/",
-      "logo_path": "/logos/blue-origin.svg",
-      "license_summary": "Mixed: official Blue Origin imagery used under CC BY-SA via Wikimedia Commons; partnership photographs taken by NASA staff are public domain (works of the U.S. Government)."
-    },
-    {
-      "id": "uaesa",
-      "name": "MBRSC / UAE Space Agency",
-      "kind": "space-agency",
-      "url": "https://space.gov.ae/",
-      "logo_path": "/logos/uaesa.svg",
-      "license_summary": "Creative Commons CC BY 4.0 for Mohammed bin Rashid Space Centre imagery (Hope Mars Mission, Rashid lunar rover)."
-    },
-    {
-      "id": "wikimedia-commons",
-      "name": "Wikimedia Commons contributors",
-      "kind": "media-platform",
-      "url": "https://commons.wikimedia.org/",
-      "license_summary": "Mixed: public domain, CC0, CC BY 2.0/2.5/3.0/4.0, CC BY-SA 2.0/2.5/3.0/4.0, CC BY 3.0/4.0 IGO, CC BY-SA 3.0 IGO. Each image entry below carries its specific license."
-    },
-    {
-      "id": "wikipedia",
-      "name": "Wikipedia contributors",
-      "kind": "encyclopedic",
-      "url": "https://www.wikipedia.org/",
-      "license_summary": "Creative Commons CC BY-SA 4.0. Editorial copy paraphrased from Wikipedia carries attribution and a link to the original article."
-    },
-    {
-      "id": "solar-system-scope",
-      "name": "Solar System Scope",
+      "id": "aanda",
+      "name": "Astronomy & Astrophysics (A&A)",
       "kind": "publisher",
-      "url": "https://www.solarsystemscope.com/textures/",
-      "license_summary": "Planet and small-body texture maps released under Creative Commons CC BY 4.0."
+      "url": "https://www.aanda.org/",
+      "license_summary": "Peer-reviewed astronomy journal (EDP Sciences / ESO). Article titles + metadata cited under fair use; papers may be open-access or subscription."
     },
     {
-      "id": "csa",
-      "name": "Canadian Space Agency",
-      "kind": "space-agency",
-      "url": "https://www.asc-csa.gc.ca/",
-      "logo_path": "/logos/csa.svg",
-      "license_summary": "Government of Canada works (CSA-NCO non-commercial reuse policy); editorial reuse with credit is permitted."
-    },
-    {
-      "id": "spaceil",
-      "name": "SpaceIL",
-      "kind": "space-agency",
-      "url": "https://www.spaceil.com/",
-      "license_summary": "Israeli non-profit lunar program (Beresheet). Per-image license is recorded in each entry's TASL row below; reuse with credit."
-    },
-    {
-      "id": "noaa",
-      "name": "NOAA",
-      "kind": "space-agency",
-      "url": "https://www.noaa.gov/",
-      "logo_path": "/logos/noaa.svg",
-      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). NOAA imagery is freely usable with credit."
-    },
-    {
-      "id": "us-space-force",
-      "name": "U.S. Space Force",
-      "kind": "space-agency",
-      "url": "https://www.spaceforce.mil/",
-      "logo_path": "/logos/ussf.svg",
-      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). Operates GPS (gps.gov), SBIRS-HEO, and the Cape Canaveral / Vandenberg launch ranges."
-    },
-    {
-      "id": "stsci",
-      "name": "Space Telescope Science Institute",
-      "kind": "research-institute",
-      "url": "https://www.stsci.edu/",
-      "license_summary": "Hubble (hubblesite.org) and Webb (webbtelescope.org) outreach material released for editorial reuse with credit; STScI operates under NASA contract."
-    },
-    {
-      "id": "smithsonian",
-      "name": "Smithsonian Institution",
-      "kind": "research-institute",
-      "url": "https://www.si.edu/",
-      "license_summary": "Smithsonian Open Access programme releases ~3M cultural-heritage objects under CC0 (no rights reserved) — National Air and Space Museum spaceflight artefact photography sourced via the OA API at api.si.edu."
-    },
-    {
-      "id": "nara",
-      "name": "U.S. National Archives",
-      "kind": "research-institute",
-      "url": "https://www.archives.gov/",
-      "license_summary": "Public domain — records of the U.S. Government (17 U.S.C. § 105). Record Group 255 (NASA Records) carries Mercury / Gemini / Apollo era photography."
-    },
-    {
-      "id": "nature",
-      "name": "Nature (Springer Nature)",
+      "id": "agu",
+      "name": "AGU (Wiley Online Library)",
       "kind": "publisher",
-      "url": "https://www.nature.com/",
-      "license_summary": "Outbound reference links only; no Nature copy is redistributed in-app."
-    },
-    {
-      "id": "science-aaas",
-      "name": "Science (AAAS)",
-      "kind": "publisher",
-      "url": "https://www.science.org/",
-      "license_summary": "Outbound reference links only; no AAAS copy is redistributed in-app."
-    },
-    {
-      "id": "elsevier",
-      "name": "Elsevier ScienceDirect",
-      "kind": "publisher",
-      "url": "https://www.sciencedirect.com/",
-      "license_summary": "Outbound reference links only; no Elsevier copy is redistributed in-app."
-    },
-    {
-      "id": "iop",
-      "name": "IOP Publishing",
-      "kind": "publisher",
-      "url": "https://iopscience.iop.org/",
-      "license_summary": "Outbound reference links only; no IOP copy is redistributed in-app."
-    },
-    {
-      "id": "annual-reviews",
-      "name": "Annual Reviews",
-      "kind": "publisher",
-      "url": "https://www.annualreviews.org/",
-      "license_summary": "Outbound reference links only; no Annual Reviews copy is redistributed in-app."
-    },
-    {
-      "id": "springer",
-      "name": "Springer",
-      "kind": "publisher",
-      "url": "https://link.springer.com/",
-      "license_summary": "Outbound reference links only; no Springer copy is redistributed in-app."
-    },
-    {
-      "id": "nap",
-      "name": "National Academies Press",
-      "kind": "publisher",
-      "url": "https://nap.nationalacademies.org/",
-      "license_summary": "Outbound reference links only; National Academies reports are public records of consensus committees."
-    },
-    {
-      "id": "ieee",
-      "name": "IEEE Xplore",
-      "kind": "publisher",
-      "url": "https://ieeexplore.ieee.org/",
-      "license_summary": "Outbound reference links only; no IEEE copy is redistributed in-app."
-    },
-    {
-      "id": "planetary-society",
-      "name": "The Planetary Society",
-      "kind": "publisher",
-      "url": "https://www.planetary.org/",
-      "license_summary": "Outbound reference links only; The Planetary Society is a non-profit science-advocacy publisher."
-    },
-    {
-      "id": "ipgp",
-      "name": "IPGP / SEIS Insight",
-      "kind": "research-institute",
-      "url": "https://www.seis-insight.eu/",
-      "license_summary": "Outbound reference links to the SEIS / Mars InSight science consortium hosted at IPGP."
-    },
-    {
-      "id": "boeing",
-      "name": "Boeing",
-      "kind": "private-operator",
-      "url": "https://www.boeing.com/",
-      "logo_path": "/logos/boeing.svg",
-      "license_summary": "Outbound reference links only; no Boeing copy or imagery is redistributed in-app."
-    },
-    {
-      "id": "ula",
-      "name": "United Launch Alliance",
-      "kind": "private-operator",
-      "url": "https://www.ulalaunch.com/",
-      "license_summary": "Outbound reference links only; no ULA copy or imagery is redistributed in-app."
-    },
-    {
-      "id": "gcat-mcdowell",
-      "name": "Jonathan's Space Report / GCAT",
-      "kind": "research-institute",
-      "url": "https://planet4589.org/space/gcat/",
-      "license_summary": "General Catalog of Artificial Space Objects — Creative Commons CC BY 4.0; citation mandatory."
-    },
-    {
-      "id": "ll2-thespacedevs",
-      "name": "Launch Library 2 — The Space Devs",
-      "kind": "encyclopedic",
-      "url": "https://thespacedevs.com/llapi",
-      "license_summary": "Permissive use with attribution encouraged; used as gap-fill aggregator only."
+      "url": "https://agupubs.onlinelibrary.wiley.com/",
+      "license_summary": "American Geophysical Union journals via Wiley. Article metadata cited under fair use."
     },
     {
       "id": "amazon",
@@ -276,6 +22,13 @@
       "url": "https://www.aboutamazon.com/news/innovation-at-amazon/what-is-amazon-project-kuiper",
       "logo_path": "/logos/amazon.svg",
       "license_summary": "Outbound reference links only; no Amazon copy or imagery is redistributed in-app. Project Kuiper operator."
+    },
+    {
+      "id": "annual-reviews",
+      "name": "Annual Reviews",
+      "kind": "publisher",
+      "url": "https://www.annualreviews.org/",
+      "license_summary": "Outbound reference links only; no Annual Reviews copy is redistributed in-app."
     },
     {
       "id": "arianespace",
@@ -294,12 +47,164 @@
       "license_summary": "Italian Space Agency works under Italian government attribution; outbound reference links only. ASI partner contributions on Cassini-Huygens (high-gain antenna + radar) and BepiColombo."
     },
     {
+      "id": "astronautix",
+      "name": "Encyclopedia Astronautica",
+      "kind": "encyclopedic",
+      "url": "http://www.astronautix.com/",
+      "license_summary": "Encyclopedia Astronautica (Mark Wade) — independent spaceflight reference. © Mark Wade; cited under fair use."
+    },
+    {
       "id": "axiom-space",
       "name": "Axiom Space",
       "kind": "private-operator",
       "url": "https://www.axiomspace.com/",
       "logo_path": "/logos/axiom-space.svg",
       "license_summary": "Outbound reference links only; commercial-LEO operator. AxEMU lunar EVA suit + private-astronaut Axiom Mission visits to the ISS."
+    },
+    {
+      "id": "blue-origin",
+      "name": "Blue Origin",
+      "kind": "private-operator",
+      "url": "https://www.blueorigin.com/",
+      "logo_path": "/logos/blue-origin.svg",
+      "license_summary": "Mixed: official Blue Origin imagery used under CC BY-SA via Wikimedia Commons; partnership photographs taken by NASA staff are public domain (works of the U.S. Government)."
+    },
+    {
+      "id": "boeing",
+      "name": "Boeing",
+      "kind": "private-operator",
+      "url": "https://www.boeing.com/",
+      "logo_path": "/logos/boeing.svg",
+      "license_summary": "Outbound reference links only; no Boeing copy or imagery is redistributed in-app."
+    },
+    {
+      "id": "buran-energia",
+      "name": "Buran-Energia.com",
+      "kind": "encyclopedic",
+      "url": "https://www.buran-energia.com/",
+      "license_summary": "Buran-Energia.com — independent reference on the Soviet Buran / Energia programme. Cited under fair use."
+    },
+    {
+      "id": "california-science-center",
+      "name": "California Science Center",
+      "kind": "research-institute",
+      "url": "https://californiasciencecenter.org/",
+      "license_summary": "California Science Center (Los Angeles) — home of Endeavour. © CSC; cited with attribution."
+    },
+    {
+      "id": "cambridge-up",
+      "name": "Cambridge University Press",
+      "kind": "publisher",
+      "url": "https://www.cambridge.org/",
+      "license_summary": "Academic publisher; titles + metadata cited under fair use."
+    },
+    {
+      "id": "cas",
+      "name": "Chinese Academy of Sciences (CAS)",
+      "kind": "research-institute",
+      "url": "https://english.cas.cn/",
+      "license_summary": "Chinese Academy of Sciences. Content © CAS; cited with attribution."
+    },
+    {
+      "id": "casc",
+      "name": "CASC (China Aerospace S&T)",
+      "kind": "space-agency",
+      "url": "http://english.spacechina.com/",
+      "license_summary": "China Aerospace Science and Technology Corporation — primary CNSA contractor. Content © CASC; cited with attribution."
+    },
+    {
+      "id": "ciclops",
+      "name": "CICLOPS — Cassini Imaging",
+      "kind": "research-institute",
+      "url": "http://www.ciclops.org/",
+      "license_summary": "Cassini Imaging Central Laboratory for Operations (Space Science Institute). Cassini images NASA/JPL/SSI; attribute the source."
+    },
+    {
+      "id": "cnes",
+      "name": "CNES",
+      "kind": "space-agency",
+      "url": "https://cnes.fr/",
+      "license_summary": "Centre National d'Études Spatiales — French space agency. Content © CNES; cited with attribution."
+    },
+    {
+      "id": "cnsa",
+      "name": "China National Space Administration",
+      "kind": "space-agency",
+      "url": "http://www.cnsa.gov.cn/",
+      "logo_path": "/logos/cnsa.svg",
+      "license_summary": "Imagery commonly redistributed via Creative Commons CC BY-SA 4.0 on Wikimedia Commons; PRC government works on the official site are released for editorial reuse."
+    },
+    {
+      "id": "collins-aerospace",
+      "name": "Collins Aerospace",
+      "kind": "private-operator",
+      "url": "https://www.collinsaerospace.com/",
+      "license_summary": "Collins Aerospace (RTX) — spacesuit + life-support manufacturer. © Collins Aerospace; cited with attribution."
+    },
+    {
+      "id": "copernicus",
+      "name": "Copernicus (EU / ESA)",
+      "kind": "space-agency",
+      "url": "https://www.copernicus.eu/",
+      "license_summary": "EU Copernicus Earth-observation programme (managed with ESA). Sentinel data under the free, full + open Copernicus data licence."
+    },
+    {
+      "id": "cosmosphere",
+      "name": "Cosmosphere",
+      "kind": "research-institute",
+      "url": "https://cosmo.org/",
+      "license_summary": "Cosmosphere (Hutchinson, Kansas) — space museum. © Cosmosphere; cited with attribution."
+    },
+    {
+      "id": "csa",
+      "name": "Canadian Space Agency",
+      "kind": "space-agency",
+      "url": "https://www.asc-csa.gc.ca/",
+      "logo_path": "/logos/csa.svg",
+      "license_summary": "Government of Canada works (CSA-NCO non-commercial reuse policy); editorial reuse with credit is permitted."
+    },
+    {
+      "id": "csis",
+      "name": "CSIS Missile Threat",
+      "kind": "research-institute",
+      "url": "https://missilethreat.csis.org/",
+      "license_summary": "Center for Strategic & International Studies — Missile Threat project. © CSIS; cited with attribution."
+    },
+    {
+      "id": "david-clark",
+      "name": "David Clark Company",
+      "kind": "private-operator",
+      "url": "https://www.davidclark.com/",
+      "license_summary": "David Clark Company — pressure-suit manufacturer. © David Clark; cited with attribution."
+    },
+    {
+      "id": "doi",
+      "name": "DOI (Crossref resolver)",
+      "kind": "publisher",
+      "url": "https://www.doi.org/",
+      "license_summary": "Digital Object Identifier resolver — a stable handle that redirects to the publisher of record; cited as a persistent reference."
+    },
+    {
+      "id": "elsevier",
+      "name": "Elsevier ScienceDirect",
+      "kind": "publisher",
+      "url": "https://www.sciencedirect.com/",
+      "license_summary": "Outbound reference links only; no Elsevier copy is redistributed in-app."
+    },
+    {
+      "id": "esa",
+      "name": "European Space Agency",
+      "kind": "space-agency",
+      "url": "https://www.esa.int/",
+      "logo_path": "/logos/esa.svg",
+      "license_summary": "Creative Commons CC BY-SA 3.0 IGO for most imagery; some material under CC BY 4.0 IGO. Logos under permissive ESA emblem terms."
+    },
+    {
+      "id": "euspa",
+      "name": "EUSPA",
+      "kind": "space-agency",
+      "url": "https://www.euspa.europa.eu/",
+      "license_summary": "EU Agency for the Space Programme (Galileo / EGNOS / Copernicus). © European Union; cited with attribution."
     },
     {
       "id": "eutelsat-oneweb",
@@ -310,12 +215,75 @@
       "license_summary": "Outbound reference links only; LEO broadband constellation operator (merger of UK OneWeb + French Eutelsat in 2023)."
     },
     {
+      "id": "firefly",
+      "name": "Firefly Aerospace",
+      "kind": "private-operator",
+      "url": "https://fireflyspace.com/",
+      "license_summary": "Firefly Aerospace — launch + lunar-lander company. © Firefly; cited with attribution."
+    },
+    {
+      "id": "gcat-mcdowell",
+      "name": "Jonathan's Space Report / GCAT",
+      "kind": "research-institute",
+      "url": "https://planet4589.org/space/gcat/",
+      "license_summary": "General Catalog of Artificial Space Objects — Creative Commons CC BY 4.0; citation mandatory."
+    },
+    {
+      "id": "gunters-space-page",
+      "name": "Gunter's Space Page",
+      "kind": "encyclopedic",
+      "url": "https://space.skyrocket.de/",
+      "license_summary": "Gunter's Space Page (Gunter Krebs) — independent satellite + launch catalog. © Gunter Krebs; cited under fair use."
+    },
+    {
+      "id": "iai",
+      "name": "Israel Aerospace Industries (IAI)",
+      "kind": "private-operator",
+      "url": "https://www.iai.co.il/",
+      "license_summary": "Israel Aerospace Industries — built the Beresheet lander. © IAI; cited with attribution."
+    },
+    {
+      "id": "ieee",
+      "name": "IEEE Xplore",
+      "kind": "publisher",
+      "url": "https://ieeexplore.ieee.org/",
+      "license_summary": "Outbound reference links only; no IEEE copy is redistributed in-app."
+    },
+    {
+      "id": "internet-archive",
+      "name": "Internet Archive (Wayback Machine)",
+      "kind": "encyclopedic",
+      "url": "https://web.archive.org/",
+      "license_summary": "Internet Archive Wayback Machine — archival snapshots of third-party pages; the snapshot preserves the original publisher’s content + rights."
+    },
+    {
+      "id": "intrepid-museum",
+      "name": "Intrepid Museum",
+      "kind": "research-institute",
+      "url": "https://www.intrepidmuseum.org/",
+      "license_summary": "Intrepid Sea, Air & Space Museum (New York). © Intrepid Museum; cited with attribution."
+    },
+    {
       "id": "intuitive-machines",
       "name": "Intuitive Machines",
       "kind": "private-operator",
       "url": "https://www.intuitivemachines.com/",
       "logo_path": "/logos/intuitive-machines.svg",
       "license_summary": "Outbound reference links only; NASA CLPS lunar-lander contractor (IM-1 Odysseus, IM-2 Athena, IM-3)."
+    },
+    {
+      "id": "iop",
+      "name": "IOP Publishing",
+      "kind": "publisher",
+      "url": "https://iopscience.iop.org/",
+      "license_summary": "Outbound reference links only; no IOP copy is redistributed in-app."
+    },
+    {
+      "id": "ipgp",
+      "name": "IPGP / SEIS Insight",
+      "kind": "research-institute",
+      "url": "https://www.seis-insight.eu/",
+      "license_summary": "Outbound reference links to the SEIS / Mars InSight science consortium hosted at IPGP."
     },
     {
       "id": "iridium",
@@ -334,6 +302,118 @@
       "license_summary": "Outbound reference links only; Japanese commercial lunar-lander operator (HAKUTO-R series)."
     },
     {
+      "id": "isro",
+      "name": "Indian Space Research Organisation",
+      "kind": "space-agency",
+      "url": "https://www.isro.gov.in/",
+      "logo_path": "/logos/isro.svg",
+      "license_summary": "Government of India works (GODL-India) commonly redistributed under permissive terms; ISRO mission imagery is freely usable for editorial purposes with credit."
+    },
+    {
+      "id": "jaxa",
+      "name": "Japan Aerospace Exploration Agency",
+      "kind": "space-agency",
+      "url": "https://global.jaxa.jp/",
+      "logo_path": "/logos/jaxa.svg",
+      "license_summary": "Creative Commons CC BY 4.0 for most JAXA digital archive imagery; some assets under JAXA's editorial-reuse policy."
+    },
+    {
+      "id": "jaxa-kaguya-tc",
+      "name": "JAXA · Kaguya TC (SELENE)",
+      "kind": "research-institute",
+      "url": "https://www.kaguya.jaxa.jp/",
+      "logo_path": "/logos/jaxa.svg",
+      "license_summary": "Terrain Camera on JAXA's SELENE (Kaguya) lunar orbiter — ~6 m/px regional context for /moon landing zones (the CTX-equivalent layer). JAXA open-data policy; redistributed as USGS Astrogeology Analysis Ready Data. Attribute JAXA / SELENE (Kaguya) Terrain Camera."
+    },
+    {
+      "id": "jhuapl",
+      "name": "Johns Hopkins APL",
+      "kind": "research-institute",
+      "url": "https://www.jhuapl.edu/",
+      "license_summary": "Johns Hopkins University Applied Physics Laboratory — MESSENGER, New Horizons, Parker Solar Probe. Mission imagery NASA/JHUAPL, public domain; attribute the source."
+    },
+    {
+      "id": "ksc-visitor-complex",
+      "name": "Kennedy Space Center Visitor Complex",
+      "kind": "research-institute",
+      "url": "https://www.kennedyspacecenter.com/",
+      "license_summary": "Kennedy Space Center Visitor Complex (Delaware North). © KSCVC; cited with attribution."
+    },
+    {
+      "id": "lasp",
+      "name": "LASP (CU Boulder)",
+      "kind": "research-institute",
+      "url": "https://lasp.colorado.edu/",
+      "license_summary": "Laboratory for Atmospheric and Space Physics, University of Colorado Boulder. © LASP; cited with attribution."
+    },
+    {
+      "id": "ll2-thespacedevs",
+      "name": "Launch Library 2 — The Space Devs",
+      "kind": "encyclopedic",
+      "url": "https://thespacedevs.com/llapi",
+      "license_summary": "Permissive use with attribution encouraged; used as gap-fill aggregator only."
+    },
+    {
+      "id": "mentallandscape",
+      "name": "mentallandscape.com (Don Mitchell)",
+      "kind": "encyclopedic",
+      "url": "https://mentallandscape.com/",
+      "license_summary": "Don P. Mitchell — Soviet planetary-imagery processing + reference. © Don Mitchell; cited under fair use."
+    },
+    {
+      "id": "nap",
+      "name": "National Academies Press",
+      "kind": "publisher",
+      "url": "https://nap.nationalacademies.org/",
+      "license_summary": "Outbound reference links only; National Academies reports are public records of consensus committees."
+    },
+    {
+      "id": "nara",
+      "name": "U.S. National Archives",
+      "kind": "research-institute",
+      "url": "https://www.archives.gov/",
+      "license_summary": "Public domain — records of the U.S. Government (17 U.S.C. § 105). Record Group 255 (NASA Records) carries Mercury / Gemini / Apollo era photography."
+    },
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "kind": "space-agency",
+      "url": "https://www.nasa.gov/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105)."
+    },
+    {
+      "id": "nasa-ctx",
+      "name": "NASA · CTX — Murray Lab Mosaic (MRO)",
+      "kind": "research-institute",
+      "url": "https://murray-lab.caltech.edu/CTX/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "CTX camera on Mars Reconnaissance Orbiter (NASA / JPL-Caltech / MSSS), blended into the Global CTX Mosaic by Caltech Murray Lab (Dickson et al. 2024, doi:10.1029/2024EA003555). Cite the mosaic paper."
+    },
+    {
+      "id": "nasa-hirise",
+      "name": "NASA · HiRISE (MRO)",
+      "kind": "research-institute",
+      "url": "https://www.uahirise.org/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "HiRISE camera on Mars Reconnaissance Orbiter — NASA / JPL-Caltech / University of Arizona. Public domain (17 U.S.C. § 105); attribute the source."
+    },
+    {
+      "id": "nature",
+      "name": "Nature (Springer Nature)",
+      "kind": "publisher",
+      "url": "https://www.nature.com/",
+      "license_summary": "Outbound reference links only; no Nature copy is redistributed in-app."
+    },
+    {
+      "id": "noaa",
+      "name": "NOAA",
+      "kind": "space-agency",
+      "url": "https://www.noaa.gov/",
+      "logo_path": "/logos/noaa.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). NOAA imagery is freely usable with credit."
+    },
+    {
       "id": "northrop-grumman",
       "name": "Northrop Grumman",
       "kind": "private-operator",
@@ -342,12 +422,55 @@
       "license_summary": "Outbound reference links only; Antares launcher + Cygnus cargo + SBIRS-HEO IR-sensor builder."
     },
     {
+      "id": "pds-geosciences",
+      "name": "NASA PDS Geosciences Node (WashU)",
+      "kind": "research-institute",
+      "url": "https://pds-geosciences.wustl.edu/",
+      "license_summary": "NASA Planetary Data System Geosciences Node, Washington University in St. Louis. PDS data public; attribute mission + node."
+    },
+    {
       "id": "planet-labs",
       "name": "Planet Labs PBC",
       "kind": "private-operator",
       "url": "https://www.planet.com/",
       "logo_path": "/logos/planet-labs.svg",
       "license_summary": "Outbound reference links only; PlanetScope + SkySat daily-Earth-imaging constellation operator (~150 + 21 satellites)."
+    },
+    {
+      "id": "planetary-society",
+      "name": "The Planetary Society",
+      "kind": "publisher",
+      "url": "https://www.planetary.org/",
+      "license_summary": "Outbound reference links only; The Planetary Society is a non-profit science-advocacy publisher."
+    },
+    {
+      "id": "polaris-program",
+      "name": "Polaris Program",
+      "kind": "private-operator",
+      "url": "https://polarisprogram.com/",
+      "license_summary": "Polaris Program (Jared Isaacman, flown by SpaceX). © Polaris Program; cited with attribution."
+    },
+    {
+      "id": "roscosmos",
+      "name": "Roscosmos",
+      "kind": "space-agency",
+      "url": "https://www.roscosmos.ru/",
+      "logo_path": "/logos/roscosmos.svg",
+      "license_summary": "Imagery and Soviet-era space photographs are in the public domain in Russia (Article 1259, Russian Civil Code)."
+    },
+    {
+      "id": "russianspaceweb",
+      "name": "RussianSpaceWeb (Anatoly Zak)",
+      "kind": "encyclopedic",
+      "url": "https://www.russianspaceweb.com/",
+      "license_summary": "RussianSpaceWeb by Anatoly Zak — independent Russian-spaceflight reference. © Anatoly Zak; cited under fair use."
+    },
+    {
+      "id": "science-aaas",
+      "name": "Science (AAAS)",
+      "kind": "publisher",
+      "url": "https://www.science.org/",
+      "license_summary": "Outbound reference links only; no AAAS copy is redistributed in-app."
     },
     {
       "id": "ses",
@@ -366,6 +489,93 @@
       "license_summary": "Outbound reference links only; US satellite-radio operator (Sirius FM Tundra-orbit + XM GEO fleet, merged 2008)."
     },
     {
+      "id": "smithsonian",
+      "name": "Smithsonian Institution",
+      "kind": "research-institute",
+      "url": "https://www.si.edu/",
+      "license_summary": "Smithsonian Open Access programme releases ~3M cultural-heritage objects under CC0 (no rights reserved) — National Air and Space Museum spaceflight artefact photography sourced via the OA API at api.si.edu."
+    },
+    {
+      "id": "solar-system-scope",
+      "name": "Solar System Scope",
+      "kind": "publisher",
+      "url": "https://www.solarsystemscope.com/textures/",
+      "license_summary": "Planet and small-body texture maps released under Creative Commons CC BY 4.0."
+    },
+    {
+      "id": "spaceflightnow",
+      "name": "Spaceflight Now",
+      "kind": "media-platform",
+      "url": "https://spaceflightnow.com/",
+      "license_summary": "Spaceflight Now — independent spaceflight news. © Spaceflight Now; headlines + quotes cited under fair use."
+    },
+    {
+      "id": "spaceil",
+      "name": "SpaceIL",
+      "kind": "space-agency",
+      "url": "https://www.spaceil.com/",
+      "license_summary": "Israeli non-profit lunar program (Beresheet). Per-image license is recorded in each entry's TASL row below; reuse with credit."
+    },
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "kind": "private-operator",
+      "url": "https://www.spacex.com/",
+      "logo_path": "/logos/spacex.svg",
+      "license_summary": "SpaceX official launch and mission photos historically released as public domain (CC0); company logos under PD-trivial."
+    },
+    {
+      "id": "springer",
+      "name": "Springer",
+      "kind": "publisher",
+      "url": "https://link.springer.com/",
+      "license_summary": "Outbound reference links only; no Springer copy is redistributed in-app."
+    },
+    {
+      "id": "stsci",
+      "name": "Space Telescope Science Institute",
+      "kind": "research-institute",
+      "url": "https://www.stsci.edu/",
+      "license_summary": "Hubble (hubblesite.org) and Webb (webbtelescope.org) outreach material released for editorial reuse with credit; STScI operates under NASA contract."
+    },
+    {
+      "id": "swri",
+      "name": "Southwest Research Institute (SwRI)",
+      "kind": "research-institute",
+      "url": "https://www.swri.org/",
+      "license_summary": "Southwest Research Institute — Juno mission. JunoCam imagery NASA/JPL-Caltech/SwRI, public domain; attribute the source."
+    },
+    {
+      "id": "technik-museum",
+      "name": "Technik Museum Sinsheim/Speyer",
+      "kind": "research-institute",
+      "url": "https://sinsheim.technik-museum.de/",
+      "license_summary": "Technik Museum Sinsheim/Speyer (Germany) — holds a Buran orbiter. © Technik Museum; cited with attribution."
+    },
+    {
+      "id": "uaesa",
+      "name": "MBRSC / UAE Space Agency",
+      "kind": "space-agency",
+      "url": "https://space.gov.ae/",
+      "logo_path": "/logos/uaesa.svg",
+      "license_summary": "Creative Commons CC BY 4.0 for Mohammed bin Rashid Space Centre imagery (Hope Mars Mission, Rashid lunar rover)."
+    },
+    {
+      "id": "ula",
+      "name": "United Launch Alliance",
+      "kind": "private-operator",
+      "url": "https://www.ulalaunch.com/",
+      "license_summary": "Outbound reference links only; no ULA copy or imagery is redistributed in-app."
+    },
+    {
+      "id": "us-space-force",
+      "name": "U.S. Space Force",
+      "kind": "space-agency",
+      "url": "https://www.spaceforce.mil/",
+      "logo_path": "/logos/ussf.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). Operates GPS (gps.gov), SBIRS-HEO, and the Cape Canaveral / Vandenberg launch ranges."
+    },
+    {
       "id": "usgs",
       "name": "United States Geological Survey",
       "kind": "space-agency",
@@ -380,6 +590,34 @@
       "url": "https://www.viasat.com/",
       "logo_path": "/logos/viasat.svg",
       "license_summary": "Outbound reference links only; satellite-broadband operator + owner of Inmarsat (acquired 2023). Operates the Inmarsat GEO L-band + Ka-band fleet."
+    },
+    {
+      "id": "wikimedia-commons",
+      "name": "Wikimedia Commons contributors",
+      "kind": "media-platform",
+      "url": "https://commons.wikimedia.org/",
+      "license_summary": "Mixed: public domain, CC0, CC BY 2.0/2.5/3.0/4.0, CC BY-SA 2.0/2.5/3.0/4.0, CC BY 3.0/4.0 IGO, CC BY-SA 3.0 IGO. Each image entry below carries its specific license."
+    },
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia contributors",
+      "kind": "encyclopedic",
+      "url": "https://www.wikipedia.org/",
+      "license_summary": "Creative Commons CC BY-SA 4.0. Editorial copy paraphrased from Wikipedia carries attribution and a link to the original article."
+    },
+    {
+      "id": "xinhua",
+      "name": "Xinhua News Agency",
+      "kind": "media-platform",
+      "url": "https://english.news.cn/",
+      "license_summary": "Chinese state news agency. Articles © Xinhua; headlines + quotes cited under fair use."
+    },
+    {
+      "id": "zvezda",
+      "name": "NPP Zvezda",
+      "kind": "private-operator",
+      "url": "https://zvezda-npp.ru/en/",
+      "license_summary": "NPP Zvezda — Russian spacesuit + life-support manufacturer. © Zvezda; cited with attribution."
     }
   ]
 }

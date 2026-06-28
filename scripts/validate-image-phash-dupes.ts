@@ -204,6 +204,16 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'f3332908bd343a33|f3332908bd343a33', // mariner-4 / mariner4
   'f40b9463691cd663|f40b9463693cd623', // voskhod / voskhod-2
 
+  // ALLOWLIST_AUTHORIZED (2026-06-28) — Tier-3 panorama gradient regen.
+  // Three sites have no distinct surface panorama, so the tier3-pan IS the
+  // gallery hero image (padded to equirectangular): beresheet = final
+  // descent frame, change3 = the CNSA colour panorama, luna16 = the LRO
+  // orbital landing-site view. The padded panorama is phash-identical to
+  // missions/<id>/01.jpg by design — both are the same editorial frame.
+  '81e01effe1001ef9|81e01effe1001ef9', // beresheet tier3-pan / missions/beresheet/01
+  '36dacc2533da8c25|36dacc2533da8c25', // change3 tier3-pan / missions/change3/01
+  'c1c03e3fc1c01e3f|c1c03e3fc1c01e3f', // luna16 tier3-pan / missions/luna16/01
+
   // ----- iss-ecosystem (2 pairs) -----
   // ISS modules + visiting vehicles + crewed flights share assembly-era
   // and dock-bay photos across surfaces.

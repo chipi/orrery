@@ -877,6 +877,9 @@
       <div class:bad={shotQuality.planetTooSmall}>
         planet-dominates: {shotQuality.planetTooSmall ? '✗ too small' : '✓ ok'}
       </div>
+      {#if shotQuality.planetTooTiny}
+        <div class="bad">body-visible: ✗ too tiny</div>
+      {/if}
       <div class:bad={shotQuality.shipTooTiny}>
         ship-visible: {shotQuality.shipTooTiny ? '✗ too tiny' : '✓ ok'}
       </div>

@@ -509,7 +509,14 @@ export function planFlybyShot(ctx: FlybyContext): IconicShotPlan | null {
   const iconicMet = resolveIconicMet(ctx, composition);
   const shipPos = ctx.shipPosAtMet(iconicMet);
   if (!shipPos) return null;
-  // Sample 1 day before for approach direction.
+  // Sample 1 day before for approach direction. A degenerate (zero) result
+  // means the sampler clamped both samples to the same point — the event
+  // sits at/beyond the outbound arc's end (event MET > transit_days, e.g.
+  // Viking 1 / Tianwen-1 MOI, Lucy's far Trojan encounters). The trajectory
+  // can't place the ship there, so we return null and let the caller fall
+  // back to cruise framing rather than compose a misleading frame at the
+  // clamped endpoint. (That's a mission timeline/trajectory data gap, not
+  // a camera-composition one — tracked separately.)
   const shipPrev = ctx.shipPosAtMet(Math.max(0, iconicMet - 1));
   if (!shipPrev) return null;
   const velX = shipPos.x - shipPrev.x;
@@ -557,14 +564,11 @@ export function planFlybyShot(ctx: FlybyContext): IconicShotPlan | null {
   //     · cos(side) toward "behind-the-ship-approach" (-approachUnit)
   //     · sin(side) along the perp axis (perpUnit)
   //   y component: sin(pitch) up
-  const camOffsetX = camDist * cosPitch * (-approachX * cosSide + perpX * sinSide);
-  const camOffsetZ = camDist * cosPitch * (-approachZ * cosSide + perpZ * sinSide);
-  const camOffsetY = camDist * sinPitch;
-  const cameraPos: Vec3 = {
-    x: ctx.planetPos.x + camOffsetX,
-    y: camOffsetY, // planet center sits at y=0 in scene space
-    z: ctx.planetPos.z + camOffsetZ,
-  };
+  const buildCamPos = (pX: number, pZ: number): Vec3 => ({
+    x: ctx.planetPos.x + camDist * cosPitch * (-approachX * cosSide + pX * sinSide),
+    y: camDist * sinPitch, // planet center sits at y=0 in scene space
+    z: ctx.planetPos.z + camDist * cosPitch * (-approachZ * cosSide + pZ * sinSide),
+  });
   // Camera target lerps from planet (bias=0) toward ship (bias=1).
   const bias = Math.max(0, Math.min(1, composition.targetBias));
   const cameraTarget: Vec3 = {
@@ -572,6 +576,39 @@ export function planFlybyShot(ctx: FlybyContext): IconicShotPlan | null {
     y: shipPos.y * bias, // planet's y is 0
     z: ctx.planetPos.z + (shipPos.z - ctx.planetPos.z) * bias,
   };
+  // Ship-occlusion guard — the hard rule: the spacecraft is in FRONT of
+  // the planet, never hidden behind it. The sunlit-flip above chooses the
+  // perp side for lighting; if that side puts the planet between the
+  // camera and the ship (gravity-assist geometries where the ship swings
+  // to the far hemisphere), flip to the other perp side. Ship visibility
+  // wins over the lit-hemisphere preference. Mirrors classifyShot's
+  // shipBehindPlanet test (planet nearer along the view axis AND on it).
+  const occludesShip = (cam: Vec3): boolean => {
+    const fx = cameraTarget.x - cam.x;
+    const fy = cameraTarget.y - cam.y;
+    const fz = cameraTarget.z - cam.z;
+    const fMag = Math.hypot(fx, fy, fz);
+    if (fMag < 1e-9) return false;
+    const ux = fx / fMag;
+    const uy = fy / fMag;
+    const uz = fz / fMag;
+    const planetDepth =
+      (ctx.planetPos.x - cam.x) * ux + -cam.y * uy + (ctx.planetPos.z - cam.z) * uz;
+    const shipDepth =
+      (shipPos.x - cam.x) * ux + (shipPos.y - cam.y) * uy + (shipPos.z - cam.z) * uz;
+    if (planetDepth >= shipDepth) return false; // planet not in front of ship
+    const px = ctx.planetPos.x - cam.x;
+    const py = -cam.y;
+    const pz = ctx.planetPos.z - cam.z;
+    const along = px * ux + py * uy + pz * uz;
+    const lat = Math.hypot(px - along * ux, py - along * uy, pz - along * uz);
+    return lat < ctx.planetRadius; // planet sits on the view axis → occludes
+  };
+  let cameraPos = buildCamPos(perpX, perpZ);
+  if (occludesShip(cameraPos)) {
+    const flipped = buildCamPos(-perpX, -perpZ);
+    if (!occludesShip(flipped)) cameraPos = flipped;
+  }
   return {
     iconicMet,
     shipPos,
@@ -681,6 +718,10 @@ export interface ShotQuality {
   shipOutOfFrame: boolean;
   planetOutOfFrame: boolean;
   planetTooSmall: boolean;
+  /** Small-body-only: the body itself projects to a speck (< 0.5% of
+   *  frame). For small bodies we drop planetTooSmall but still require
+   *  the body to be visible — this is that floor. */
+  planetTooTiny: boolean;
   shipTooTiny: boolean;
   /** Ship's projected center sits inside the planet's projected disk
    *  in the camera frame → composition collapses to "ship at planet's
@@ -755,10 +796,21 @@ export function classifyShot(
     !planetProj ||
     Math.abs(planetProj.x) - planetApparent > tanHalfFov ||
     Math.abs(planetProj.y) - planetApparent > tanHalfFov;
-  const planetTooSmall = planetApparent < shipApparent * 2;
+  // "Planet dominates" only makes sense for actual planets. For small
+  // bodies (sub-km asteroids / comet nuclei, render radius below
+  // ARRIVAL_SMALL_BODY_RADIUS) the spacecraft is genuinely comparable in
+  // size to the body — every real Hayabusa / OSIRIS-REx / DART hero shot
+  // has the craft and the rock at similar scale — so requiring the body
+  // to be 2× the ship is the wrong test and would falsely fail the shot.
+  // We still require the body to be visible (not a speck) via the same
+  // "too tiny" floor applied to the ship.
+  const isSmallBody = planetRadius < ARRIVAL_SMALL_BODY_RADIUS;
+  const planetTooSmall = !isSmallBody && planetApparent < shipApparent * 2;
   // "ship too tiny" — ship apparent angular radius < 0.5% of frame
   // (i.e. ≤ ~3 px in a 720-px frame). Below this it just disappears.
   const shipTooTiny = shipApparent < tanHalfFov * 0.005;
+  // For small bodies, also guard that the BODY itself isn't a speck.
+  const planetTooTiny = isSmallBody && planetApparent < tanHalfFov * 0.005;
 
   // Frame-space separation of ship and planet centers.
   let shipPlanetFrameSeparation = Infinity;
@@ -778,6 +830,7 @@ export function classifyShot(
     !shipOutOfFrame &&
     !planetOutOfFrame &&
     !planetTooSmall &&
+    !planetTooTiny &&
     !shipTooTiny &&
     !shipInsidePlanetDisk;
   return {
@@ -786,6 +839,7 @@ export function classifyShot(
     shipOutOfFrame,
     planetOutOfFrame,
     planetTooSmall,
+    planetTooTiny,
     shipTooTiny,
     shipInsidePlanetDisk,
     shipDepth,

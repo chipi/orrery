@@ -75,6 +75,7 @@ function failingReason(q: ReturnType<typeof classifyShot>): string {
   if (q.shipBehindPlanet) return 'ship-behind-planet';
   if (q.shipOutOfFrame) return 'ship-out-of-frame';
   if (q.planetTooSmall) return 'planet-too-small';
+  if (q.planetTooTiny) return 'body-too-tiny';
   if (q.shipTooTiny) return 'ship-too-tiny';
   return 'not-iconic';
 }

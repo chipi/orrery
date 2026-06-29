@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   planFlybyShot,
+  classifyShot,
   flybyCameraGuides,
   buildArrivalComposition,
   PLANET_COMPOSITION,
@@ -159,6 +160,32 @@ describe('planFlybyShot — adaptive spatial lead', () => {
     const lead = PLANET_COMPOSITION.venus.iconicLeadDays;
     expect(planFlybyShot(baseCtx)!.iconicMet).toBe(100 - lead);
     expect(planFlybyShot({ ...baseCtx, iconicSeparationRadii: 0 })!.iconicMet).toBe(100 - lead);
+  });
+});
+
+describe('planFlybyShot — ship-occlusion guard', () => {
+  // The guard flips to the other perp side when the sunlit-chosen side
+  // hides the ship behind the planet. It can't fix every geometry (some
+  // gravity-assists hide the ship on both sides — that's left to the
+  // audit), but for a well-separated ship the shot is never occluded
+  // regardless of approach direction.
+  it('keeps a well-separated ship in front of the planet across all approach directions', () => {
+    for (let ang = 0; ang < Math.PI * 2 - 1e-6; ang += Math.PI / 6) {
+      // Ship 4 units/day → ~4 units off the planet (radius 2.5) at the
+      // iconic moment: clearly separated, must never read as behind.
+      const sampler = (met: number) => {
+        const t = (met - 100) * 4;
+        return { x: 40 + Math.cos(ang) * t, y: 0, z: Math.sin(ang) * t };
+      };
+      const plan = planFlybyShot({
+        ...baseCtx,
+        planetPos: { x: 40, z: 0 }, // off the Sun so the sunlit-flip engages
+        shipPosAtMet: sampler,
+      });
+      if (!plan) continue;
+      const q = classifyShot(plan, { x: 40, y: 0, z: 0 }, baseCtx.planetRadius, 0.4);
+      expect(q.shipBehindPlanet, `approach angle ${ang.toFixed(2)}`).toBe(false);
+    }
   });
 });
 

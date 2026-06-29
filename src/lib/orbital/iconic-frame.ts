@@ -19,7 +19,7 @@
  * keeps the camera somewhere visible instead of jumping to a NaN.
  */
 
-import { planFlybyShot, type PlanetId } from './flyby-camera-plan';
+import { planFlybyShot, type PlanetId, type PlanetComposition } from './flyby-camera-plan';
 
 export interface ComputeIconicFrameInputs {
   /** Flyby planet identifier + scene-space render radius. */
@@ -39,6 +39,15 @@ export interface ComputeIconicFrameInputs {
   /** Fallback pitch when `camDist` is degenerate (≈ zero). Driven by
    *  /fly's HELIO_APPROACH_P constant. */
   fallbackPitchRad: number;
+  /** Adaptive spatial lead — forwarded to planFlybyShot. When set, the
+   *  iconic moment is chosen so the ship clears this many planet-radii
+   *  off the planet centre (orbiter-arrival fix). See planFlybyShot. */
+  iconicSeparationRadii?: number;
+  /** Composition override forwarded to planFlybyShot (the arrival
+   *  composition uses this to widen camR + lower the side angle + add
+   *  look-bias for orbit-insertion events). Omit for the per-planet
+   *  default flyby composition. */
+  composition?: PlanetComposition;
 }
 
 export interface IconicFrame {
@@ -78,6 +87,8 @@ export function computeIconicFrame(inputs: ComputeIconicFrameInputs): IconicFram
     planetRadius: inputs.flybyPlanetRadius,
     shipPosAtMet: inputs.sampleShipScene,
     peakMet: inputs.peakMet,
+    iconicSeparationRadii: inputs.iconicSeparationRadii,
+    composition: inputs.composition,
   });
 
   if (!plan) {

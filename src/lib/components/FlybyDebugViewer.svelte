@@ -36,6 +36,17 @@
     planetRadius: number;
     shipPosAtMet: (met: number) => { x: number; y: number; z: number } | null;
     peakMet: number;
+    /** Live mission-elapsed time from the running sim (simDay − dep_day).
+     *  Drives the LIVE ship marker so the 2D plot tracks the flight in
+     *  real time instead of freezing at the iconic-composition moment. */
+    liveMet?: number;
+    /** Live scene-camera world position (scene units) — the REAL camera
+     *  the user is looking through, mirrored from the animate loop. Drives
+     *  the moving LIVE CAM marker + trail so the plot shows how the camera
+     *  actually moves as the ship flies, not just the iconic target. */
+    liveCameraPos?: { x: number; y: number; z: number } | null;
+    /** Live scene-camera look-at target (scene units). */
+    liveCameraTarget?: { x: number; y: number; z: number } | null;
   }
 
   let {
@@ -44,10 +55,24 @@
     planetRadius = 2.5,
     shipPosAtMet,
     peakMet = 100,
+    liveMet = undefined,
+    liveCameraPos = null,
+    liveCameraTarget = null,
   }: Props = $props();
+
+  // Live ship position (current sim moment) for flight tracking. Distinct
+  // from plan.shipPos, which is the static iconic-composition sample.
+  let liveShip = $derived(liveMet != null ? shipPosAtMet(liveMet) : null);
+
+  // Ring buffer of recent live-camera positions (scene xz) → motion trail
+  // so the plot shows how the camera moves as the ship flies. Plain array,
+  // mutated during redraw (not reactive). Reset via the clear button.
+  let camTrail: Array<{ x: number; z: number }> = [];
+  const CAM_TRAIL_MAX = 200;
 
   let canvas = $state<HTMLCanvasElement | null>(null);
   let frameCanvas = $state<HTMLCanvasElement | null>(null);
+  let elevCanvas = $state<HTMLCanvasElement | null>(null);
   let scrubDayOffset = $state(-2);
   // Ship's visible 3D-model radius in scene units. The /fly Cassini
   // mesh + lander glyphs are ~0.3–0.6 units; 0.4 is a reasonable
@@ -63,6 +88,10 @@
   let sideAngleDegOverride = $state((PLANET_COMPOSITION.venus.sideAngleRad * 180) / Math.PI);
   let pitchDegOverride = $state((PLANET_COMPOSITION.venus.pitchRad * 180) / Math.PI);
   let targetBiasOverride = $state(PLANET_COMPOSITION.venus.targetBias);
+  // Adaptive spatial lead — 0 = off (use the time lead from the Lead-days
+  // slider); > 0 = pick the iconic moment so the ship clears this many
+  // planet-radii off the disc. The orbiter-arrival fix; preview it here.
+  let separationRadiiOverride = $state(0);
 
   $effect(() => {
     // When planet selection changes, reset overrides to that planet's defaults.
@@ -88,6 +117,7 @@
         iconicLeadDays: -scrubDayOffset, // scrub maps to lead-days for live preview
         targetBias: targetBiasOverride,
       },
+      iconicSeparationRadii: separationRadiiOverride > 0 ? separationRadiiOverride : undefined,
     };
   }
 
@@ -106,6 +136,89 @@
   let trajectory = $derived(sampleTrajectory());
   let canvasReady = $state(false);
 
+  // Auto-solve — grid-search the composition space for the current
+  // mission + planet, snap the sliders to the best ICONIC frame, and
+  // report the score. Quality favours iconic frames with good ship/planet
+  // separation and the planet filling ~30% of the half-FOV (dominant but
+  // not containment-killed). Synchronous (~720 combos) — fine on click.
+  let solveResult = $state('');
+  function autoSolve() {
+    const base = PLANET_COMPOSITION[selectedPlanet];
+    type Best = {
+      sep: number;
+      cf: number;
+      side: number;
+      bias: number;
+      lead: number;
+      iconic: boolean;
+      q: number;
+    };
+    let best: Best | null = null;
+    for (const sep of [0, 1.8, 2.0, 2.2, 2.5]) {
+      for (const cf of [1.0, 1.2, 1.4, 1.6]) {
+        for (const side of [55, 65, 75, 85]) {
+          for (const bias of [0, 0.2, 0.35]) {
+            for (const lead of sep > 0 ? [1] : [1, 2, 3]) {
+              const plan2 = planFlybyShot({
+                planetId: selectedPlanet,
+                planetPos,
+                planetRadius,
+                shipPosAtMet,
+                peakMet,
+                composition: {
+                  camRMultiplier: base.camRMultiplier * cf,
+                  sideAngleRad: (side * Math.PI) / 180,
+                  pitchRad: base.pitchRad,
+                  iconicLeadDays: lead,
+                  targetBias: bias,
+                },
+                iconicSeparationRadii: sep > 0 ? sep : undefined,
+              });
+              if (!plan2) continue;
+              const q = classifyShot(
+                plan2,
+                { x: planetPos.x, y: 0, z: planetPos.z },
+                planetRadius,
+                shipVisibleRadius,
+              );
+              const quality =
+                (q.isIconic ? 1000 : 0) +
+                Math.min(q.shipPlanetFrameSeparation, 0.6) * 100 -
+                Math.abs(q.planetApparent - 0.3) * 150;
+              if (!best || quality > best.q) {
+                best = { sep, cf, side, bias, lead, iconic: q.isIconic, q: quality };
+              }
+            }
+          }
+        }
+      }
+    }
+    if (!best) {
+      solveResult = 'no plan (degenerate trajectory)';
+      return;
+    }
+    camRMultOverride = base.camRMultiplier * best.cf;
+    sideAngleDegOverride = best.side;
+    targetBiasOverride = best.bias;
+    separationRadiiOverride = best.sep;
+    if (best.sep === 0) scrubDayOffset = -best.lead;
+    solveResult = `${best.iconic ? 'ICONIC' : 'best (not iconic)'} · sep ${best.sep || 'off'} · camR×${best.cf} · side ${best.side}° · bias ${best.bias}`;
+  }
+
+  function copyComposition() {
+    const sepNote =
+      separationRadiiOverride > 0 ? `\n  iconicSeparationRadii: ${separationRadiiOverride},` : '';
+    const snippet = `${selectedPlanet}: {
+  camRMultiplier: ${camRMultOverride.toFixed(2)},
+  sideAngleRad: (${sideAngleDegOverride.toFixed(0)} * Math.PI) / 180,
+  pitchRad: (${pitchDegOverride.toFixed(0)} * Math.PI) / 180,
+  iconicLeadDays: ${-scrubDayOffset},
+  targetBias: ${targetBiasOverride.toFixed(2)},${sepNote}
+},`;
+    navigator.clipboard?.writeText(snippet);
+    solveResult = 'copied composition to clipboard';
+  }
+
   // Shot quality classifier — requires plan + planet pos as Vec3
   // (planetPos prop is xz only; assume y=0 for the planet which is
   // the convention everywhere else in /fly).
@@ -117,6 +230,18 @@
       planetRadius,
       shipVisibleRadius,
     );
+  });
+
+  // Sunlit-flip status — mirrors the perp-vs-sun test inside planFlybyShot
+  // (cos α < −0.7 → the camera is biased onto the lit hemisphere).
+  let sunlitFlip = $derived.by(() => {
+    if (!plan) return null;
+    const sunDist = Math.hypot(planetPos.x, planetPos.z);
+    if (sunDist < 1e-6) return null;
+    const sx = -planetPos.x / sunDist;
+    const sz = -planetPos.z / sunDist;
+    const cosA = -plan.shipVelocityXZ.z * sx + plan.shipVelocityXZ.x * sz;
+    return { cosAlpha: cosA, armed: cosA < -0.7 };
   });
 
   onMount(() => {
@@ -133,6 +258,101 @@
     redrawFrame();
   });
 
+  $effect(() => {
+    if (!canvasReady || !elevCanvas) return;
+    redrawElevation();
+  });
+
+  // Side elevation profile — horizontal distance-from-planet (x) vs height
+  // above the orbital plane (y). Top-down hides the pitch; this shows it:
+  // how high the camera + ship sit above the ecliptic. Planet on the
+  // baseline (y = 0), ship + cameras plotted by their +y lift.
+  function redrawElevation() {
+    const ctx = elevCanvas?.getContext('2d');
+    if (!ctx || !elevCanvas) return;
+    const W = elevCanvas.width;
+    const H = elevCanvas.height;
+    ctx.fillStyle = '#04040c';
+    ctx.fillRect(0, 0, W, H);
+
+    type Pt = { horiz: number; y: number; color: string; label: string; r: number };
+    const horizOf = (x: number, z: number) => Math.hypot(x - planetPos.x, z - planetPos.z);
+    const pts: Pt[] = [
+      { horiz: 0, y: 0, color: 'rgba(255,200,80,0.9)', label: selectedPlanet, r: 7 },
+    ];
+    if (plan) {
+      pts.push({
+        horiz: horizOf(plan.shipPos.x, plan.shipPos.z),
+        y: plan.shipPos.y,
+        color: '#4ecdc4',
+        label: 'ship',
+        r: 4,
+      });
+      pts.push({
+        horiz: horizOf(plan.cameraPos.x, plan.cameraPos.z),
+        y: plan.cameraPos.y,
+        color: 'rgba(255,100,100,0.9)',
+        label: 'cam',
+        r: 4,
+      });
+    }
+    if (liveShip)
+      pts.push({
+        horiz: horizOf(liveShip.x, liveShip.z),
+        y: liveShip.y,
+        color: 'rgba(255,209,102,1)',
+        label: '',
+        r: 4,
+      });
+    if (liveCameraPos)
+      pts.push({
+        horiz: horizOf(liveCameraPos.x, liveCameraPos.z),
+        y: liveCameraPos.y,
+        color: 'rgba(150,215,255,1)',
+        label: '',
+        r: 4,
+      });
+
+    const margin = 14;
+    const maxH = Math.max(1, ...pts.map((p) => p.horiz));
+    const minY = Math.min(0, ...pts.map((p) => p.y));
+    const maxY = Math.max(1, ...pts.map((p) => p.y));
+    const spanY = Math.max(1, maxY - minY);
+    const sx = (W - margin * 2) / maxH;
+    const sy = (H - margin * 2) / spanY;
+    const proj = (horiz: number, y: number) => ({
+      px: margin + horiz * sx,
+      py: H - margin - (y - minY) * sy,
+    });
+
+    // Orbital-plane baseline (y = 0).
+    const base0 = proj(0, 0);
+    ctx.strokeStyle = 'rgba(94,234,212,0.25)';
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath();
+    ctx.moveTo(margin, base0.py);
+    ctx.lineTo(W - margin, base0.py);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(94,234,212,0.5)';
+    ctx.font = '8px monospace';
+    ctx.fillText('orbital plane (y=0)', margin, base0.py - 3);
+
+    for (const p of pts) {
+      const pp = proj(p.horiz, p.y);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(pp.px, pp.py, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (p.label) {
+        ctx.font = '8px monospace';
+        ctx.fillText(p.label, pp.px + p.r + 2, pp.py + 3);
+      }
+    }
+    ctx.strokeStyle = 'rgba(220,230,245,0.2)';
+    ctx.strokeRect(0, 0, W, H);
+  }
+
   function redraw() {
     const ctx = canvas?.getContext('2d');
     if (!ctx || !canvas) return;
@@ -141,6 +361,16 @@
     ctx.clearRect(0, 0, W, H);
 
     // Determine fit: include planet + trajectory + camera.
+    // Accumulate the live-camera motion trail (dedup by distance so we
+    // don't pack identical points while paused).
+    if (liveCameraPos) {
+      const last = camTrail[camTrail.length - 1];
+      if (!last || Math.hypot(last.x - liveCameraPos.x, last.z - liveCameraPos.z) > 0.4) {
+        camTrail.push({ x: liveCameraPos.x, z: liveCameraPos.z });
+        if (camTrail.length > CAM_TRAIL_MAX) camTrail.shift();
+      }
+    }
+
     const all: Array<{ x: number; z: number }> = [
       planetPos,
       ...trajectory.map((s) => ({ x: s.x, z: s.z })),
@@ -149,6 +379,8 @@
       all.push({ x: plan.shipPos.x, z: plan.shipPos.z });
       all.push({ x: plan.cameraPos.x, z: plan.cameraPos.z });
     }
+    if (liveShip) all.push({ x: liveShip.x, z: liveShip.z });
+    if (liveCameraPos) all.push({ x: liveCameraPos.x, z: liveCameraPos.z });
     const padding = planetRadius * 2;
     const xs = all.map((p) => p.x);
     const zs = all.map((p) => p.z);
@@ -213,6 +445,37 @@
       ctx.fillStyle = 'rgba(255, 200, 80, 0.95)';
       ctx.font = '9px monospace';
       ctx.fillText(selectedPlanet.toUpperCase(), p.px + r + 4, p.py - 4);
+
+      // Sun direction + lit hemisphere. The Sun sits at the scene origin,
+      // so the lit half of the planet faces −planetPos. Shading the lit
+      // half + the Sun arrow shows WHY the iconic composer's sunlit-flip
+      // fires (it biases the camera onto the lit limb when the perp axis
+      // points deep into the night side).
+      const sunDist = Math.hypot(planetPos.x, planetPos.z);
+      if (sunDist > 1e-6) {
+        const sx = -planetPos.x / sunDist;
+        const sz = -planetPos.z / sunDist;
+        // Screen-space sun direction (py flips z).
+        const ang = Math.atan2(-sz, sx);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(p.px, p.py, r, ang - Math.PI / 2, ang + Math.PI / 2);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(255, 244, 190, 0.22)';
+        ctx.fill();
+        ctx.restore();
+        const ax = p.px + sx * (r + 22);
+        const ay = p.py - sz * (r + 22);
+        ctx.strokeStyle = 'rgba(255, 224, 130, 0.85)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(p.px, p.py);
+        ctx.lineTo(ax, ay);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(255, 224, 130, 1)';
+        ctx.font = '11px monospace';
+        ctx.fillText('☀', ax - 4, ay + 4);
+      }
     }
 
     // Ship + velocity arrow.
@@ -249,7 +512,7 @@
       ctx.arc(cp.px, cp.py, 5, 0, Math.PI * 2);
       ctx.fill();
       ctx.font = '9px monospace';
-      ctx.fillText('CAM', cp.px + 7, cp.py - 4);
+      ctx.fillText('CAM (iconic)', cp.px + 7, cp.py - 4);
       // View line from camera to ship.
       ctx.strokeStyle = 'rgba(255, 100, 100, 0.4)';
       ctx.beginPath();
@@ -279,6 +542,66 @@
       ctx.fillStyle = 'rgba(255, 100, 100, 0.9)';
       ctx.font = '11px monospace';
       ctx.fillText('plan = null (check trajectory samples)', margin, margin + 12);
+    }
+
+    // LIVE ship marker — tracks the running sim so the plot follows the
+    // flight in real time (not a static iconic-moment image). Drawn last
+    // so it sits on top; pulsing gold ring + MET readout.
+    if (liveShip) {
+      const lp = project(liveShip.x, liveShip.z);
+      ctx.strokeStyle = 'rgba(255, 209, 102, 0.95)';
+      ctx.fillStyle = 'rgba(255, 209, 102, 0.95)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(lp.px, lp.py, 6, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(lp.px, lp.py, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = '9px monospace';
+      ctx.fillText(`LIVE MET${(liveMet ?? 0).toFixed(0)}`, lp.px + 9, lp.py + 3);
+    }
+
+    // LIVE camera motion trail — the real scene camera's path as the ship
+    // flies (fades from tail to head). Shows the cruise drift → approach
+    // arc → flyby parallax sweep the user actually sees.
+    if (camTrail.length >= 2) {
+      for (let i = 1; i < camTrail.length; i++) {
+        const a = project(camTrail[i - 1].x, camTrail[i - 1].z);
+        const b = project(camTrail[i].x, camTrail[i].z);
+        const alpha = (i / camTrail.length) * 0.6;
+        ctx.strokeStyle = `rgba(120, 200, 255, ${alpha.toFixed(3)})`;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(a.px, a.py);
+        ctx.lineTo(b.px, b.py);
+        ctx.stroke();
+      }
+    }
+    // LIVE camera marker + view line to its look-at target.
+    if (liveCameraPos) {
+      const cp = project(liveCameraPos.x, liveCameraPos.z);
+      if (liveCameraTarget) {
+        const tp = project(liveCameraTarget.x, liveCameraTarget.z);
+        ctx.strokeStyle = 'rgba(120, 200, 255, 0.45)';
+        ctx.setLineDash([4, 3]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(cp.px, cp.py);
+        ctx.lineTo(tp.px, tp.py);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      ctx.fillStyle = 'rgba(150, 215, 255, 1)';
+      ctx.strokeStyle = 'rgba(220, 240, 255, 1)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(cp.px, cp.py, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(150, 215, 255, 1)';
+      ctx.font = '9px monospace';
+      ctx.fillText('CAM (live)', cp.px + 7, cp.py + 10);
     }
 
     // Legend.
@@ -390,6 +713,21 @@
       }
     }
 
+    // LIVE ship in the composed frame — projects the current sim ship
+    // position through the iconic-composition camera, so you can watch
+    // the ship cross the frame as the flight plays.
+    if (liveShip) {
+      const lp = project(liveShip.x, liveShip.y, liveShip.z, shipVisibleRadius);
+      if (lp) {
+        const { px, py } = toPx(lp.x, lp.y);
+        ctx.strokeStyle = 'rgba(255, 209, 102, 0.95)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(px, py, Math.max(lp.r * pxPerTanH, 3), 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+
     // Frame border + center crosshair.
     ctx.strokeStyle = 'rgba(220, 230, 245, 0.2)';
     ctx.lineWidth = 1;
@@ -454,11 +792,37 @@
         <input type="range" min="0" max="1" step="0.05" bind:value={targetBiasOverride} />
       </label>
     </div>
+    <div class="control-row">
+      <label class="control-label">
+        <span>
+          Spatial lead ×r ({separationRadiiOverride === 0
+            ? 'off'
+            : separationRadiiOverride.toFixed(1)})
+          {separationRadiiOverride > 0 ? '· overrides Lead-days' : ''}
+        </span>
+        <input type="range" min="0" max="6" step="0.25" bind:value={separationRadiiOverride} />
+      </label>
+    </div>
+    <div class="control-row solve-row">
+      <button class="solve-btn" onclick={autoSolve}>⚡ auto-solve</button>
+      <button class="clear-btn" onclick={copyComposition}>copy composition</button>
+    </div>
+    {#if solveResult}
+      <div class="solve-result">{solveResult}</div>
+    {/if}
+    <div class="control-row legend-row">
+      <span class="key live-ship">● live ship</span>
+      <span class="key live-cam">● cam (live)</span>
+      <span class="key iconic-cam">● cam (iconic)</span>
+      <button class="clear-btn" onclick={() => (camTrail = [])}>clear trail</button>
+    </div>
   </div>
   <canvas bind:this={canvas} width="320" height="320" data-testid="flyby-debug-canvas"></canvas>
   <div class="frame-label">CAMERA FRAME (50° FOV, 16:9)</div>
   <canvas bind:this={frameCanvas} width="320" height="180" data-testid="flyby-frame-canvas"
   ></canvas>
+  <div class="frame-label">ELEVATION — height above orbital plane</div>
+  <canvas bind:this={elevCanvas} width="320" height="110" data-testid="flyby-elev-canvas"></canvas>
   {#if plan && shotQuality}
     <div class="readouts">
       <div>
@@ -516,6 +880,14 @@
       <div class:bad={shotQuality.shipTooTiny}>
         ship-visible: {shotQuality.shipTooTiny ? '✗ too tiny' : '✓ ok'}
       </div>
+      {#if sunlitFlip}
+        <div class="readout-divider"></div>
+        <div>
+          sunlit-flip: {sunlitFlip.armed ? '⟲ armed (lit-limb bias)' : 'off'} (cosα {sunlitFlip.cosAlpha.toFixed(
+            2,
+          )})
+        </div>
+      {/if}
     </div>
     <div class="control-row">
       <label class="control-label">
@@ -589,5 +961,59 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-top: 4px;
+  }
+  .legend-row {
+    gap: 10px;
+    align-items: center;
+    font-size: 9px;
+    flex-wrap: wrap;
+  }
+  .key {
+    letter-spacing: 0.5px;
+  }
+  .key.live-ship {
+    color: rgba(255, 209, 102, 1);
+  }
+  .key.live-cam {
+    color: rgba(150, 215, 255, 1);
+  }
+  .key.iconic-cam {
+    color: rgba(255, 100, 100, 1);
+  }
+  .clear-btn {
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(220, 230, 245, 0.8);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 9px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .solve-row {
+    gap: 6px;
+  }
+  .solve-btn {
+    background: rgba(94, 234, 212, 0.18);
+    border: 1px solid #5eead4;
+    color: #5eead4;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .solve-row .clear-btn {
+    margin-left: 0;
+  }
+  .solve-result {
+    font-size: 9px;
+    color: rgba(94, 234, 212, 0.85);
+    font-family: ui-monospace, monospace;
+    padding: 2px 0;
   }
 </style>

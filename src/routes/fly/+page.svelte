@@ -129,7 +129,7 @@
   import type { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
   import type { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
   import {
-    PLANET_COMPOSITION as FLYBY_PLANET_COMPOSITION,
+    buildArrivalComposition,
     type PlanetId as FlybyPlanetId,
   } from '$lib/orbital/flyby-camera-plan';
   import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
@@ -635,6 +635,13 @@
 
   // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
   let simSpeed = $state(7); // days/sec
+  // DEV-only live-camera mirror for the FlybyDebugViewer 2D plot — the
+  // real scene camera (camera.position + camTarget) is closure-local in
+  // the animate loop, so we mirror it into $state each frame (DEV builds
+  // only) so the debug plot can draw the camera MOVING with the flight
+  // instead of frozen at the iconic-shot position.
+  let debugCamWorld = $state<{ x: number; y: number; z: number } | null>(null);
+  let debugCamTargetWorld = $state<{ x: number; y: number; z: number } | null>(null);
   // ADR-025: reduced-motion users start paused. They can press play
   // to step forward manually. We also subscribe to changes so an
   // OS-level toggle mid-session pauses the sim live (post-v1.0
@@ -3716,6 +3723,18 @@
             if (!p) return null;
             return { x: p.x * SCALE_3D, y: p.y * SCALE_3D, z: p.z * SCALE_3D };
           };
+          // Orbit-insertion / arrival events (Mars Express MOI, Curiosity
+          // EDL, Cassini SOI, Dawn at Vesta…) use the arrival composition:
+          // at insertion the ship matches the planet's heliocentric
+          // velocity, so the legacy time lead barely separates it and the
+          // glyph sat ON the planet disc. buildArrivalComposition switches
+          // to a spatial lead (ship silhouetted off the limb) + wider camR
+          // + lower side + look-bias. Gravity-assist flybys keep the
+          // per-planet default. Shared with the audit:fly-cameras script.
+          const isArrivalEvent = activeEvt?.type === 'edl_or_oi' || activeEvt?.type === 'arrival';
+          const arrivalComp = isArrivalEvent
+            ? buildArrivalComposition(flyby.id as FlybyPlanetId, flyby.size)
+            : null;
           const iconicFrame = computeIconicFrame({
             flybyPlanetId: flyby.id as FlybyPlanetId,
             flybyPlanetRadius: flyby.size,
@@ -3724,6 +3743,8 @@
             sampleShipScene,
             fallbackShipPos: { x: scScene.x, z: scScene.z },
             fallbackPitchRad: HELIO_APPROACH_P,
+            composition: arrivalComp?.composition,
+            iconicSeparationRadii: arrivalComp?.iconicSeparationRadii,
           });
           centerX = iconicFrame.centerX;
           centerY = iconicFrame.centerY;
@@ -4932,6 +4953,14 @@
     lifecycle.on(window, 'resize', onResize);
 
     let lastTime = performance.now();
+    // Wall-clock seconds accumulator that drives decorative moon orbits.
+    // Advances at real dt (NOT dt × simSpeed) and only while the sim is
+    // actually playing — see the gated increment in onFrame. Decoupling
+    // moon motion from simSpeed stops the strobe at high speeds (Phobos's
+    // 0.32 d period at 7 d/s was ~22 rev/s); gating it on the same
+    // play/freeze predicate as simDay keeps the moons held still during
+    // the peak-hold hero beat so the composed frame stays composed.
+    let moonDriftSec = 0;
     // Latest heliocentric spacecraft world position — fed to the
     // cinematic-tier BokehPass focus uniform from the animate loop.
     // Null while the helio frame branch hasn't computed it yet (e.g.
@@ -4993,6 +5022,10 @@
         if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
           simDay += dt * simSpeed;
           if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
+          // Moon orbits advance in real wall-clock time, decoupled from
+          // simSpeed, so they read as a calm drift at any play speed
+          // instead of strobing. Frozen alongside simDay during holds.
+          moonDriftSec += dt;
         }
         // Cinematic cruise motion — three subtle, slow oscillations
         // layered on top of each other so the camera never feels static
@@ -5170,6 +5203,13 @@
         // has to run per-frame to converge. Moon-mode additionally needs
         // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
         updateCam();
+        // Mirror the live scene camera into $state for the debug plot
+        // (DEV only — see debugCamWorld). Lets the 2D viewer trace the
+        // camera's actual motion as the ship flies.
+        if (import.meta.env.DEV) {
+          debugCamWorld = { x: camera.position.x, y: camera.position.y, z: camera.position.z };
+          debugCamTargetWorld = { x: camTarget.x, y: camTarget.y, z: camTarget.z };
+        }
 
         // Moon-mode rendering: heliocentric, same framing as Mars.
         // Sun + Earth orbit visible in the background; Earth at its
@@ -5228,7 +5268,12 @@
           // Earth's Hill sphere + L1/L2 track Earth's per-frame position.
           helioHandles.updateHillSphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
           helioHandles.updateMagnetosphereForBody('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D);
-          helioHandles.updateMoonsForParent('earth', ePos.x * SCALE_3D, ePos.z * SCALE_3D, simDay);
+          helioHandles.updateMoonsForParent(
+            'earth',
+            ePos.x * SCALE_3D,
+            ePos.z * SCALE_3D,
+            moonDriftSec,
+          );
           // Context planets — per-frame position updates for any non-
           // active planet rendered for grand-tour context. Each mesh
           // tracks its heliocentric position at simDay so the user
@@ -5244,7 +5289,12 @@
             // unused (just position writes — no geometry rebuild).
             helioHandles.updateHillSphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
             helioHandles.updateMagnetosphereForBody(planetId, p.x * SCALE_3D, p.z * SCALE_3D);
-            helioHandles.updateMoonsForParent(planetId, p.x * SCALE_3D, p.z * SCALE_3D, simDay);
+            helioHandles.updateMoonsForParent(
+              planetId,
+              p.x * SCALE_3D,
+              p.z * SCALE_3D,
+              moonDriftSec,
+            );
           }
           // Active destination also gets moon updates so Jupiter/Saturn
           // missions (Cassini, Juno, Voyager) show their moons at the
@@ -5253,7 +5303,7 @@
             activeDestination,
             mPos.x * SCALE_3D,
             mPos.z * SCALE_3D,
-            simDay,
+            moonDriftSec,
           );
           // Active destination — its Hill sphere lives in the same
           // entries map, keyed by planet id.
@@ -6548,13 +6598,15 @@
         planetIdGuess === 'earth'
           ? earthPos(arcTimeline.dep_day + peakMet)
           : destinationPos(arcTimeline.dep_day + peakMet, planetIdGuess)}
-      {@const planetRadiusForDebug =
-        FLYBY_PLANET_COMPOSITION[planetIdGuess].camRMultiplier > 0 ? 2.5 : 2.5}
+      {@const planetRadiusForDebug = PLANET_SIZES[planetIdGuess] ?? 2.5}
       <FlybyDebugViewer
         planetId={planetIdGuess}
         planetPos={{ x: planetPosForDebug.x * SCALE_3D, z: planetPosForDebug.z * SCALE_3D }}
         planetRadius={planetRadiusForDebug}
         {peakMet}
+        liveMet={simDay - arcTimeline.dep_day}
+        liveCameraPos={debugCamWorld}
+        liveCameraTarget={debugCamTargetWorld}
         shipPosAtMet={(met: number) => {
           const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
           if (totalOutboundDays <= 0 || outPts.length < 2) return null;

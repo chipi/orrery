@@ -2,7 +2,11 @@ import { describe, it, expect } from 'vitest';
 import {
   planFlybyShot,
   flybyCameraGuides,
+  buildArrivalComposition,
   PLANET_COMPOSITION,
+  ARRIVAL_SEPARATION_RADII,
+  ARRIVAL_TARGET_BIAS,
+  ARRIVAL_CAMR_WIDEN,
   type FlybyContext,
 } from './flyby-camera-plan';
 
@@ -134,6 +138,44 @@ describe('planFlybyShot', () => {
     // Ship moves +1 unit/day in x, 0 in z, so velocity unit = (1, 0).
     expect(out.shipVelocityXZ.x).toBeCloseTo(1, 5);
     expect(Math.abs(out.shipVelocityXZ.z)).toBeLessThan(1e-3);
+  });
+});
+
+describe('planFlybyShot — adaptive spatial lead', () => {
+  // Synthetic ship: x = (met − 100) units, so planar distance from the
+  // planet at origin equals |met − 100|. planetRadius 2.5, separation 2.0
+  // → target distance 5.0 → the iconic moment must be 5 days before peak.
+  it('picks the iconic moment by SPATIAL distance, not the time lead', () => {
+    const out = planFlybyShot({ ...baseCtx, iconicSeparationRadii: 2.0 })!;
+    expect(out.iconicMet).toBe(95);
+    const dist = Math.hypot(
+      out.shipPos.x - baseCtx.planetPos.x,
+      out.shipPos.z - baseCtx.planetPos.z,
+    );
+    expect(dist).toBeGreaterThanOrEqual(2.0 * baseCtx.planetRadius - 1e-6);
+  });
+
+  it('falls back to the time lead when separation is unset or zero', () => {
+    const lead = PLANET_COMPOSITION.venus.iconicLeadDays;
+    expect(planFlybyShot(baseCtx)!.iconicMet).toBe(100 - lead);
+    expect(planFlybyShot({ ...baseCtx, iconicSeparationRadii: 0 })!.iconicMet).toBe(100 - lead);
+  });
+});
+
+describe('buildArrivalComposition', () => {
+  it('widens camR for sizeable planets and sets the arrival side/bias/sep', () => {
+    const base = PLANET_COMPOSITION.mars;
+    const { composition, iconicSeparationRadii } = buildArrivalComposition('mars', 1.9);
+    expect(composition.camRMultiplier).toBeCloseTo(base.camRMultiplier * ARRIVAL_CAMR_WIDEN, 5);
+    expect((composition.sideAngleRad * 180) / Math.PI).toBeCloseTo(75, 5);
+    expect(composition.targetBias).toBe(ARRIVAL_TARGET_BIAS);
+    expect(iconicSeparationRadii).toBe(ARRIVAL_SEPARATION_RADII);
+  });
+
+  it('does NOT widen camR for small bodies (asteroids/comets would vanish)', () => {
+    const base = PLANET_COMPOSITION.bennu;
+    const { composition } = buildArrivalComposition('bennu', 0.6);
+    expect(composition.camRMultiplier).toBe(base.camRMultiplier); // ×1.0
   });
 });
 

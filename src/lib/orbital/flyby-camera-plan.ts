@@ -340,6 +340,50 @@ export const PLANET_COMPOSITION: Record<PlanetId, PlanetComposition> = {
   },
 };
 
+/**
+ * Arrival composition (orbit-insertion / arrival events — Mars Express
+ * MOI, Curiosity EDL, Cassini SOI, Dawn at Vesta, etc.) — distinct from
+ * the gravity-assist flyby composition.
+ *
+ * At orbit insertion the spacecraft matches the planet's heliocentric
+ * velocity, so a fixed time lead barely separates it and the glyph ends
+ * up sitting ON the planet disc (the "I can't see it approaching" bug).
+ * This override fixes that:
+ *  - `iconicSeparationRadii` picks the iconic moment by SPATIAL distance,
+ *    guaranteeing the ship is off the limb against space;
+ *  - a wider camR keeps the now-separated ship inside the frame;
+ *  - a lower side angle + small look-bias keep the ship off the planet
+ *    centre (over-the-shoulder), not projected onto the disc.
+ *
+ * Single source of truth — consumed by /fly's live scene AND the
+ * `audit:fly-cameras` regression script so the two can't drift.
+ */
+export const ARRIVAL_SEPARATION_RADII = 2.0;
+export const ARRIVAL_SIDE_ANGLE_RAD = (75 * Math.PI) / 180;
+export const ARRIVAL_TARGET_BIAS = 0.25;
+export const ARRIVAL_CAMR_WIDEN = 1.3;
+/** Below this scene-render radius a body is "small" (asteroid/comet):
+ *  widening camR would make an already-tiny body vanish, so we keep the
+ *  planet's close framing. */
+export const ARRIVAL_SMALL_BODY_RADIUS = 1.5;
+
+export function buildArrivalComposition(
+  planetId: PlanetId,
+  planetRadius: number,
+): { composition: PlanetComposition; iconicSeparationRadii: number } {
+  const base = PLANET_COMPOSITION[planetId];
+  const widen = planetRadius >= ARRIVAL_SMALL_BODY_RADIUS ? ARRIVAL_CAMR_WIDEN : 1.0;
+  return {
+    composition: {
+      ...base,
+      camRMultiplier: base.camRMultiplier * widen,
+      sideAngleRad: ARRIVAL_SIDE_ANGLE_RAD,
+      targetBias: ARRIVAL_TARGET_BIAS,
+    },
+    iconicSeparationRadii: ARRIVAL_SEPARATION_RADII,
+  };
+}
+
 export interface FlybyContext {
   planetId: PlanetId;
   /** Planet's scene-space xz position at peak day. */
@@ -355,6 +399,56 @@ export interface FlybyContext {
   /** Optional override for the per-planet composition. Useful for
    *  testing tuning changes without editing PLANET_COMPOSITION. */
   composition?: PlanetComposition;
+  /** Adaptive spatial lead. When set (> 0), the iconic moment is chosen
+   *  by walking BACK from peak until the ship is at least this many
+   *  planet-radii from the planet centre — instead of the fixed
+   *  `composition.iconicLeadDays` time lead. This fixes orbiter
+   *  arrivals (Mars Express MOI, MRO, MAVEN, Cassini-OI): at orbit
+   *  insertion the ship matches the planet's heliocentric velocity, so
+   *  a 1-day time lead barely separates it and the glyph ends up sitting
+   *  ON the planet disc. A spatial target guarantees the ship is
+   *  silhouetted off the limb against space — the same off-the-limb
+   *  read a fast gravity-assist flyby gets for free. Falls back to the
+   *  time lead when the target is never reached within the lookback. */
+  iconicSeparationRadii?: number;
+}
+
+/** Step + lookback bounds for the adaptive spatial-lead walk-back. */
+const SPATIAL_LEAD_STEP_DAYS = 0.25;
+const SPATIAL_LEAD_MAX_LOOKBACK_DAYS = 120;
+
+/**
+ * Resolve the iconic moment (MET we freeze + sample the ship at).
+ *
+ * Spatial mode (ctx.iconicSeparationRadii > 0): walk back from peak in
+ * small steps until the ship clears `separationRadii × planetRadius`
+ * from the planet centre; return that MET. If the target is never met
+ * within the lookback (degenerate/slow data), return the MET of maximum
+ * separation found so the ship is still as far off the disc as possible.
+ *
+ * Time mode (default): peakMet − composition.iconicLeadDays.
+ */
+function resolveIconicMet(ctx: FlybyContext, composition: PlanetComposition): number {
+  const sep = ctx.iconicSeparationRadii;
+  if (!sep || sep <= 0) {
+    return Math.max(0, ctx.peakMet - composition.iconicLeadDays);
+  }
+  const targetDist = sep * ctx.planetRadius;
+  const maxLookback = Math.min(ctx.peakMet, SPATIAL_LEAD_MAX_LOOKBACK_DAYS);
+  let bestMet = ctx.peakMet;
+  let bestDist = -1;
+  for (let back = 0; back <= maxLookback; back += SPATIAL_LEAD_STEP_DAYS) {
+    const met = ctx.peakMet - back;
+    const s = ctx.shipPosAtMet(met);
+    if (!s) continue;
+    const d = Math.hypot(s.x - ctx.planetPos.x, s.z - ctx.planetPos.z);
+    if (d > bestDist) {
+      bestDist = d;
+      bestMet = met;
+    }
+    if (d >= targetDist) return met;
+  }
+  return bestMet;
 }
 
 export interface IconicShotPlan {
@@ -412,7 +506,7 @@ export interface IconicShotPlan {
  */
 export function planFlybyShot(ctx: FlybyContext): IconicShotPlan | null {
   const composition = ctx.composition ?? PLANET_COMPOSITION[ctx.planetId];
-  const iconicMet = Math.max(0, ctx.peakMet - composition.iconicLeadDays);
+  const iconicMet = resolveIconicMet(ctx, composition);
   const shipPos = ctx.shipPosAtMet(iconicMet);
   if (!shipPos) return null;
   // Sample 1 day before for approach direction.

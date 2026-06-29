@@ -614,10 +614,16 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // /explore satellites pattern (PRD-026, GH #287 Slice D) compressed
   // to /fly's smaller per-planet body radii. Each moon is a small
   // textureless coloured sphere; each orbit is a thin line loop
-  // centred on the parent planet. Positions update per frame from
-  // simDay via an orbit-angle phase. Hidden by default; toggled on
-  // by setMoonsVisible (gated via the science-lens "moons" layer in
-  // the calling component).
+  // centred on the parent planet. Positions update per frame from a
+  // wall-clock drift phase (see updateMoonsForParent). Hidden by
+  // default; toggled on by setMoonsVisible (gated via the science-lens
+  // "moons" layer in the calling component).
+  //
+  // Wall-clock seconds that map to one real orbital day of moon drift.
+  // Picked so the fastest moon (Phobos, 0.32 d) takes ~10 s per scene
+  // revolution — a calm, readable drift rather than the old simSpeed-
+  // coupled strobe. Relative speeds are preserved linearly.
+  const MOON_SCENE_SECONDS_PER_DAY = 31.25;
   type MoonSpec = {
     parent: DestinationId | 'earth';
     name: string;
@@ -770,15 +776,18 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     }
   }
   /** Update every moon's position + orbit-ring centre for the given
-   *  parent-planet world position + a simDay phase. Component calls
-   *  this once per frame for each parent (Earth + every context
-   *  planet). Phase = (simDay × 2π / periodDays) + an arbitrary
-   *  offset per moon so they don't all align at MET 0. */
+   *  parent-planet world position + a wall-clock drift phase. Component
+   *  calls this once per frame for each parent (Earth + every context
+   *  planet). Phase is driven by `driftSec` — real wall-clock seconds
+   *  the caller accumulates ONLY while the sim plays (decoupled from
+   *  simSpeed) — so the moons read as a calm drift at any play speed
+   *  instead of strobing, and hold still during cinematic freezes.
+   *  Per-moon offset keeps them from all aligning at drift 0. */
   function updateMoonsForParent(
     parent: DestinationId | 'earth',
     parentX: number,
     parentZ: number,
-    simDay: number,
+    driftSec: number,
   ): void {
     if (!moonsVisible) return;
     for (const m of moonEntries) {
@@ -787,9 +796,14 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       // Inclination-tilt the orbit ring around the X axis so it
       // visibly diverges from the ecliptic.
       m.orbit.rotation.x = (m.spec.inclDeg * Math.PI) / 180;
-      // Moon mesh: ride the orbit at the current phase angle.
+      // Moon mesh: ride the orbit at the current phase angle. One scene
+      // revolution = periodDays × MOON_SCENE_SECONDS_PER_DAY wall-clock
+      // seconds, so real relative speeds are preserved (Io still laps
+      // Callisto) but compressed into a calm range: Phobos ~10 s/rev,
+      // Iapetus barely drifts. Nothing strobes, nothing is dead-static.
+      const sceneSecondsPerRev = m.spec.periodDays * MOON_SCENE_SECONDS_PER_DAY;
       const phase =
-        (simDay / m.spec.periodDays) * Math.PI * 2 +
+        (driftSec / sceneSecondsPerRev) * Math.PI * 2 +
         // Deterministic per-moon offset so a fresh load doesn't
         // line every moon up at phase 0.
         m.spec.name.charCodeAt(0) * 0.37;

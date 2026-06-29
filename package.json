@@ -66,6 +66,7 @@
     "fetch:launches": "tsx scripts/fetch-launches.ts",
     "audit:images": "tsx scripts/audit-image-usage.ts",
     "audit:launches": "tsx scripts/audit-report-launches.ts",
+    "audit:fly-cameras": "tsx scripts/audit-fly-cameras.ts",
     "audio:translate": "tsx scripts/audio/translate.ts",
     "audio:generate": "tsx scripts/audio/generate.ts",
     "audio:build": "tsx scripts/audio/build.ts",

@@ -402,6 +402,16 @@
       "slot": "01.jpg",
       "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: curated ISS-docking photos; hero = Starliner docked to Harmony over Earth)",
       "approved_at": "2026-06-29"
+    },
+    "luna-9": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Luna 9 spacecraft + first-Moon-surface photo)",
+      "approved_at": "2026-06-29"
+    },
+    "venera-7": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Venera descent capsule + stamp)",
+      "approved_at": "2026-06-29"
     }
   }
 }

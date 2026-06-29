@@ -74,7 +74,9 @@ test.describe('/earth', () => {
     await expect(page.getByTestId('layer-observatories')).toBeVisible();
     await expect(page.getByTestId('layer-constellations')).toBeVisible();
     await expect(page.getByTestId('layer-comsats')).toBeVisible();
-    await expect(page.getByTestId('layer-moon-orbiters')).toBeVisible();
+    // MOON ORBITERS sub-chip was removed (644c6afd4) — the master ORBITERS
+    // chip already covers both Earth and Moon orbiters, so it was redundant.
+    await expect(page.getByTestId('layer-moon-orbiters')).toHaveCount(0);
     // ORBITS chip was removed on /earth (#363) — it only toggled the
     // regime-band overlay, which is gone; it stays on /moon + /mars where
     // it controls real per-orbiter rings.

@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test';
 
 /**
- * `/posters` — Orrery art-print gallery. 25 raster posters (ORRERY
+ * `/posters` — Orrery art-print gallery. 27 raster posters (ORRERY
  * originals generated via Higgsfield) in three style families:
  * vintage screen-print, modern comic, photoreal & future. Each card
  * links to its full-resolution JPG for download.
  */
 
-const POSTER_COUNT = 25;
+const POSTER_COUNT = 27;
 
 test.describe('/posters — Orrery gallery', () => {
   test(`renders gallery title, ${POSTER_COUNT} posters, footer; no console errors`, async ({

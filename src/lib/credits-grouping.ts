@@ -184,6 +184,10 @@ function agencyToSourceId(agency: string): string | null {
   // + is the canonical China bucket) rather than miscrediting 135 images to
   // Wikimedia-Commons. #v0.7 sweep.
   if (a.includes('cmsa')) return 'cnsa';
+  // CASC (China Aerospace Science and Technology Corp — builds Long March,
+  // operates Taiyuan/Xichang launches) is China's prime space contractor;
+  // fold into the CNSA section, the canonical China bucket. #v0.7 image sweep.
+  if (a.includes('casc')) return 'cnsa';
   if (a.includes('isro')) return 'isro';
   if (a.includes('jaxa')) return 'jaxa';
   if (a.includes('spacex')) return 'spacex';
@@ -208,8 +212,7 @@ function agencyToSourceId(agency: string): string | null {
   if (
     a.includes('ussf') ||
     a.includes('usaf') ||
-    a.includes('us space force') ||
-    a.includes('united states space force') ||
+    a.includes('space force') ||
     a.includes('air force')
   )
     // USAF imagery (legacy military space, pre-USSF) → the US military space

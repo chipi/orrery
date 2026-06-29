@@ -3081,8 +3081,14 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   },
   {
     id: 'new-glenn',
-    query: 'New Glenn Blue Origin LC-36 launch',
+    query: 'New Glenn rocket Blue Origin',
     agency: 'BLUE_ORIGIN',
+    extraQueries: [
+      'New Glenn NG-1 launch',
+      'New Glenn first flight',
+      'Blue Origin New Glenn vehicle',
+      'New Glenn booster landing',
+    ],
   },
   { id: 'energia', query: 'Energia rocket Buran Soviet', agency: 'ROSCOSMOS' },
   { id: 'n1', query: 'N1 Soviet moon rocket launch', agency: 'ROSCOSMOS' },

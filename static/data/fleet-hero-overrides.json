@@ -392,6 +392,16 @@
       "slot": "03.jpg",
       "reason": "manual hero override — Marko 2026-06-29 (fleet review: G2; old hero 01 was a broken half-grey LROC tile)",
       "approved_at": "2026-06-29"
+    },
+    "new-glenn": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: New Glenn maiden launch from pad, USSF PD)",
+      "approved_at": "2026-06-29"
+    },
+    "starliner": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: curated ISS-docking photos; hero = Starliner docked to Harmony over Earth)",
+      "approved_at": "2026-06-29"
     }
   }
 }

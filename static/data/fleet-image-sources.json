@@ -3653,26 +3653,6 @@
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/The_Spoken_Word_III-_Recollections_of_Dryden_History%2C_The_Shuttle_Years_-_NASA_Monographs_in_Aerospace_History%2C_No._52_%282013%29.pdf/page1-960px-The_Spoken_Word_III-_Recollections_of_Dryden_History%2C_The_Shuttle_Years_-_NASA_Monographs_in_Aerospace_History%2C_No._52_%282013%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
-  "new-glenn/01.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Launch_Complex_36_aerial.webp"
-  },
-  "new-glenn/02.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Launch_Complex_11_aerial.webp"
-  },
-  "new-glenn/03.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/NSF-2019-09-11-16-45-25-803.webp/960px-NSF-2019-09-11-16-45-25-803.webp.png"
-  },
-  "new-glenn/04.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg/960px-Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg"
-  },
-  "new-glenn/05.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg/960px-LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg"
-  },
   "new-shepard/01.jpg": {
     "agency": "BLUE_ORIGIN",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/New_Shepard_spacecraft.jpg/960px-New_Shepard_spacecraft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -5135,35 +5115,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "starliner/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:CST-100.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100.jpg?width=1600",
-    "credit": "https://images.nasa.gov/details/KSC-2011-8114 http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=57309 on the Wayback Machine at the Wayback Machine",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:37:03Z",
-    "slice_a_iteration": "handsource-2026-06-22",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "starliner/02.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0001/KSC-20210723-PH-BOE01_0001~small.jpg"
-  },
-  "starliner/03.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0004/KSC-20210723-PH-BOE01_0004~small.jpg"
-  },
-  "starliner/04.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0003/KSC-20210723-PH-BOE01_0003~small.jpg"
-  },
-  "starliner/05.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Boeing%27s_CST-100_Starliner_spacecraft_docking_to_the_ISS.jpg/960px-Boeing%27s_CST-100_Starliner_spacecraft_docking_to_the_ISS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
   "starlink/01.jpg": {
     "agency": "MULTI",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Starlink%20Satellites%20Imaged%20from%20CTIO.jpg"
@@ -6572,5 +6523,45 @@
     "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Viking%2022e169.png",
     "credit": "NASA",
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)"
+  },
+  "new-glenn/01.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Blue_Origin%E2%80%99s_New_Glenn_Rocket_Launch_From_Florida_%28CIRA_2025-01-16%29.png/960px-Blue_Origin%E2%80%99s_New_Glenn_Rocket_Launch_From_Florida_%28CIRA_2025-01-16%29.png"
+  },
+  "new-glenn/02.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387521%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387521%29.jpg"
+  },
+  "new-glenn/03.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387522%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387522%29.jpg"
+  },
+  "new-glenn/04.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387523%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387523%29.jpg"
+  },
+  "new-glenn/05.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387524%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387524%29.jpg"
+  },
+  "starliner/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS-67%20Boeing's%20Starliner%20crew%20ship%20docked%20to%20the%20Harmony%20module.jpg"
+  },
+  "starliner/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing's%20CST-100%20Starliner%20spacecraft%20docking%20to%20the%20ISS.jpg"
+  },
+  "starliner/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS-67%20Beoing's%20Starliner%20spacecraft%20departs%20the%20vicinity%20of%20the%20space%20station.jpg"
+  },
+  "starliner/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing's%20Starliner%20crew%20ship%20approaches%20the%20space%20station%20(iss067e066717).jpg"
+  },
+  "starliner/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Crew%20Dragon%20and%20Boeing%20CST-100%20Starliner.jpg"
   }
 }

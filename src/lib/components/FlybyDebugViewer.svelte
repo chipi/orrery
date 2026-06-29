@@ -29,6 +29,16 @@
     type FlybyContext,
     type PlanetId,
   } from '$lib/orbital/flyby-camera-plan';
+  import { composeShot, type ShotKind } from '$lib/orbital/flyby-shots';
+
+  // Representative MET offset (from peak) for each montage shot's camera
+  // marker — mid-window of the default schedule.
+  const MONTAGE_SHOTS: { kind: ShotKind; offset: number; color: string }[] = [
+    { kind: 'establish', offset: -40, color: 'rgba(150,150,255,0.9)' },
+    { kind: 'approach', offset: -11, color: 'rgba(120,220,160,0.9)' },
+    { kind: 'hero', offset: 0, color: 'rgba(255,180,80,0.95)' },
+    { kind: 'depart', offset: 6, color: 'rgba(255,120,200,0.9)' },
+  ];
 
   interface Props {
     planetId: PlanetId;
@@ -47,6 +57,8 @@
     liveCameraPos?: { x: number; y: number; z: number } | null;
     /** Live scene-camera look-at target (scene units). */
     liveCameraTarget?: { x: number; y: number; z: number } | null;
+    /** The montage shot currently active in the live scene (#371). */
+    activeShot?: ShotKind | null;
   }
 
   let {
@@ -58,6 +70,7 @@
     liveMet = undefined,
     liveCameraPos = null,
     liveCameraTarget = null,
+    activeShot = null,
   }: Props = $props();
 
   // Live ship position (current sim moment) for flight tracking. Distinct
@@ -80,6 +93,24 @@
   let shipVisibleRadius = $state(0.4);
   // svelte-ignore state_referenced_locally
   let selectedPlanet = $state<PlanetId>(planetId);
+
+  // The four montage shot cameras, composed from the current geometry, so
+  // the plot shows the whole rig layout (where each shot sits) + which is
+  // live (activeShot).
+  let montageFrames = $derived(
+    MONTAGE_SHOTS.map((s) => ({
+      kind: s.kind,
+      color: s.color,
+      frame: composeShot(s.kind, {
+        planetId: selectedPlanet,
+        planetPos,
+        planetRadius,
+        shipPosAtMet,
+        peakMet,
+        met: peakMet + s.offset,
+      }),
+    })),
+  );
 
   // Reactive composition — defaults seeded from venus to satisfy the
   // Svelte 5 "initial-value-only" lint; the $effect below reseeds on
@@ -604,11 +635,34 @@
       ctx.fillText('CAM (live)', cp.px + 7, cp.py + 10);
     }
 
+    // MONTAGE shot cameras (#371) — where each of the four rig shots sits.
+    // The shot matching the live `activeShot` is drawn bright + ringed.
+    for (const m of montageFrames) {
+      if (!m.frame) continue;
+      const cp = project(m.frame.position.x, m.frame.position.z);
+      const isActive = m.kind === activeShot;
+      ctx.fillStyle = m.color;
+      ctx.globalAlpha = isActive ? 1 : 0.5;
+      ctx.beginPath();
+      ctx.arc(cp.px, cp.py, isActive ? 5 : 3, 0, Math.PI * 2);
+      ctx.fill();
+      if (isActive) {
+        ctx.strokeStyle = m.color;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cp.px, cp.py, 8, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      ctx.font = '8px monospace';
+      ctx.fillText(m.kind, cp.px + 6, cp.py + 3);
+    }
+
     // Legend.
     ctx.fillStyle = 'rgba(220, 230, 245, 0.7)';
     ctx.font = '9px monospace';
     ctx.fillText(
-      `iconic MET ${(peakMet + scrubDayOffset).toFixed(0)} · peak ${peakMet.toFixed(0)} · planet r ${planetRadius}`,
+      `iconic MET ${(peakMet + scrubDayOffset).toFixed(0)} · peak ${peakMet.toFixed(0)} · live shot: ${activeShot ?? '—'}`,
       margin,
       H - 6,
     );

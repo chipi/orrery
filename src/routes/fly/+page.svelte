@@ -6737,6 +6737,7 @@
         liveMet={simDay - arcTimeline.dep_day}
         liveCameraPos={debugCamWorld}
         liveCameraTarget={debugCamTargetWorld}
+        activeShot={debugMontageShot}
         shipPosAtMet={(met: number) => {
           const totalOutboundDays = arcTimeline.arr_day - arcTimeline.dep_day;
           if (totalOutboundDays <= 0 || outPts.length < 2) return null;

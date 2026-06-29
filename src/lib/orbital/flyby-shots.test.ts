@@ -24,10 +24,10 @@ function ctx(overrides?: Partial<FlybyShotContext>): FlybyShotContext {
   };
 }
 
-function depthOf(frame: { position: typeof p0; lookAt: typeof p0 }, pt: typeof p0, r = 0.4) {
+type V3 = { x: number; y: number; z: number };
+function depthOf(frame: { position: V3; lookAt: V3 }, pt: V3, r = 0.4) {
   return projectToCameraFrame(pt, r, frame.position, frame.lookAt);
 }
-const p0 = { x: 0, y: 0, z: 0 };
 
 describe('flyby-shots — null guards', () => {
   it('every shot returns null when the ship cannot be sampled', () => {

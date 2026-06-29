@@ -1,8 +1,10 @@
 <!--
-  /fly iconic-camera regression dashboard — dev-only.
-  Visit localhost:5173/dev/fly-cameras. Runs EVERY heliocentric
-  flyby/arrival mission through the camera math (planFlybyShot +
-  classifyShot) at each event and shows current-vs-proposed verdict.
+  /fly montage camera audit — dev-only.
+  Visit localhost:5373/dev/fly-cameras. Runs EVERY heliocentric
+  flyby/arrival mission through the montage shot rigs (establish /
+  approach / hero / depart) at each event and shows a per-shot verdict:
+  is each shot's frame composed correctly (hero = iconic; the wide/moving
+  shots = both actors framed, ship un-occluded)?
 
   Data source: static/data/fly-camera-audit.json (regenerate with
   `npm run audit:fly-cameras`). Read-only — no API; the script is the
@@ -10,11 +12,13 @@
 
   Reason legend: ship-on-disc (buried), ship-behind-planet (occluded),
   ship-out-of-frame, planet-too-small (inherent for sub-km bodies),
-  ship-too-tiny, no-plan (degenerate trajectory sample).
+  body-too-tiny, no-plan (event past the modeled arc), n/a (depart on an
+  arrival — the ship doesn't leave).
 -->
 <script lang="ts">
   import type { PageData } from './$types';
 
+  const SHOTS = ['establish', 'approach', 'hero', 'depart'] as const;
   type Row = {
     id: string;
     dest: string;
@@ -22,32 +26,23 @@
     label: string;
     metDays: number;
     planetId: string;
-    currentReason: string;
-    currentIconic: boolean;
-    proposedReason: string;
-    proposedIconic: boolean;
-    fixed: boolean;
-    regressed: boolean;
+    shots: Record<string, string>;
+    heroOk: boolean;
+    montageClean: boolean;
     error?: string;
   };
 
   let { data }: { data: PageData } = $props();
   const audit = $derived(
     data.audit as {
-      totals: {
-        events: number;
-        currentIconic: number;
-        proposedIconic: number;
-        fixed: number;
-        regressed: number;
-      };
+      totals: { events: number; heroIconic: number; montageClean: number };
       results: Row[];
       generatedNote?: string;
     },
   );
 
   // Filters
-  let filter = $state<'all' | 'not-iconic' | 'fixed' | 'regressed' | 'arrivals' | 'flybys'>('all');
+  let filter = $state<'all' | 'issues' | 'arrivals' | 'flybys'>('all');
   let query = $state('');
 
   const filtered = $derived(
@@ -55,12 +50,8 @@
       if (query && !`${r.id} ${r.planetId} ${r.label}`.toLowerCase().includes(query.toLowerCase()))
         return false;
       switch (filter) {
-        case 'not-iconic':
-          return !r.proposedIconic;
-        case 'fixed':
-          return r.fixed;
-        case 'regressed':
-          return r.regressed;
+        case 'issues':
+          return !r.montageClean;
         case 'arrivals':
           return r.eventType === 'edl_or_oi' || r.eventType === 'arrival';
         case 'flybys':
@@ -71,8 +62,10 @@
     }),
   );
 
-  function verdictClass(iconic: boolean) {
-    return iconic ? 'ok' : 'bad';
+  function shotClass(reason: string) {
+    if (reason === 'ok') return 'ok';
+    if (reason === 'n/a') return 'na';
+    return 'bad';
   }
 </script>
 
@@ -86,23 +79,23 @@
 
   {#if audit.totals}
     <div class="totals">
-      <div class="stat"><span>{audit.totals.events}</span>events</div>
-      <div class="stat"><span>{audit.totals.currentIconic}</span>iconic now</div>
-      <div class="stat good"><span>{audit.totals.proposedIconic}</span>iconic proposed</div>
-      <div class="stat good"><span>{audit.totals.fixed}</span>fixed</div>
-      <div class="stat" class:alarm={audit.totals.regressed > 0}>
-        <span>{audit.totals.regressed}</span>regressed
-      </div>
+      <div class="stat"><span>{audit.totals.events}</span>flyby/arrival events</div>
+      <div class="stat good"><span>{audit.totals.heroIconic}</span>hero iconic</div>
+      <div class="stat good"><span>{audit.totals.montageClean}</span>montage clean (all shots)</div>
     </div>
   {/if}
 
   <div class="controls">
-    {#each ['all', 'not-iconic', 'fixed', 'regressed', 'arrivals', 'flybys'] as f}
+    {#each ['all', 'issues', 'arrivals', 'flybys'] as f}
       <button class:active={filter === f} onclick={() => (filter = f as typeof filter)}>{f}</button>
     {/each}
     <input type="search" placeholder="filter by mission / planet / label" bind:value={query} />
     <span class="count">{filtered.length} shown</span>
   </div>
+  <p class="legend">
+    Per-shot montage verdict. <b>establish · approach · hero · depart</b> — green = framed (hero =
+    iconic), red = reason, grey = n/a. <code>no-plan</code> = event past the modeled arc.
+  </p>
 
   <table>
     <thead>
@@ -111,27 +104,27 @@
         <th>event</th>
         <th>body</th>
         <th>MET</th>
-        <th>current</th>
-        <th>proposed</th>
+        <th>establish</th>
+        <th>approach</th>
+        <th>hero</th>
+        <th>depart</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       {#each filtered as r}
-        <tr class:row-fixed={r.fixed} class:row-regressed={r.regressed}>
+        <tr class:row-clean={r.montageClean}>
           <td class="mono">{r.id}</td>
           <td class="dim">{r.eventType}</td>
           <td class="mono">{r.planetId}</td>
-          <td class="dim">{r.metDays?.toFixed?.(1)}</td>
-          <td class={verdictClass(r.currentIconic)}>
-            {r.currentIconic ? '✓' : `✗ ${r.currentReason}`}
-          </td>
-          <td class={verdictClass(r.proposedIconic)}>
-            {r.proposedIconic ? '✓' : `✗ ${r.proposedReason}`}
-          </td>
+          <td class="dim">{r.metDays?.toFixed?.(0)}</td>
+          {#each SHOTS as s}
+            <td class={shotClass(r.shots?.[s] ?? '?')}>
+              {r.shots?.[s] === 'ok' ? '✓' : (r.shots?.[s] ?? '?')}
+            </td>
+          {/each}
           <td class="tag">
-            {#if r.fixed}<span class="badge fix">FIXED</span>{/if}
-            {#if r.regressed}<span class="badge reg">REGRESSED</span>{/if}
+            {#if r.montageClean}<span class="badge fix">CLEAN</span>{/if}
           </td>
         </tr>
       {/each}
@@ -189,9 +182,6 @@
   }
   .stat.good span {
     color: #4ecdc4;
-  }
-  .stat.alarm span {
-    color: #ff7878;
   }
   .controls {
     display: flex;
@@ -262,11 +252,21 @@
     font-family: ui-monospace, monospace;
     font-size: 11px;
   }
-  .row-fixed {
-    background: rgba(78, 205, 196, 0.06);
+  .na {
+    color: #5b6680;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
   }
-  .row-regressed {
-    background: rgba(255, 120, 120, 0.1);
+  .legend {
+    font-size: 11px;
+    color: #9fb0cc;
+    margin: 0 0 12px;
+  }
+  .legend code {
+    font-size: 11px;
+  }
+  .row-clean {
+    background: rgba(78, 205, 196, 0.05);
   }
   .badge {
     font-size: 9px;
@@ -278,9 +278,5 @@
   .badge.fix {
     background: rgba(78, 205, 196, 0.2);
     color: #4ecdc4;
-  }
-  .badge.reg {
-    background: rgba(255, 120, 120, 0.2);
-    color: #ff7878;
   }
 </style>

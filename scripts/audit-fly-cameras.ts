@@ -32,8 +32,11 @@ import {
   planFlybyShot,
   classifyShot,
   buildArrivalComposition,
+  PLANET_COMPOSITION,
   type PlanetId,
+  type IconicShotPlan,
 } from '../src/lib/orbital/flyby-camera-plan';
+import { composeShot, type ShotKind, type FlybyShotContext } from '../src/lib/orbital/flyby-shots';
 import {
   missionDestToDataFolder,
   missionDestToHeliocentricDestinationId,
@@ -64,12 +67,7 @@ interface FlightEvent {
 
 const CINEMA_TYPES: ReadonlySet<string> = new Set(['flyby', 'edl_or_oi', 'arrival']);
 
-interface EventVerdict {
-  reason: string;
-  iconic: boolean;
-}
-
-function failingReason(q: ReturnType<typeof classifyShot>): string {
+function heroFailReason(q: ReturnType<typeof classifyShot>): string {
   if (q.isIconic) return 'ok';
   if (q.shipInsidePlanetDisk) return 'ship-on-disc';
   if (q.shipBehindPlanet) return 'ship-behind-planet';
@@ -80,15 +78,75 @@ function failingReason(q: ReturnType<typeof classifyShot>): string {
   return 'not-iconic';
 }
 
-function evaluate(
+interface ShotVerdict {
+  ok: boolean;
+  reason: string;
+}
+
+// Representative MET offset from peak at which to evaluate each shot
+// (mid-window of DEFAULT_FLYBY_SCHEDULE).
+const SHOT_EVAL_OFFSET: Record<ShotKind, number> = {
+  establish: -40,
+  approach: -11,
+  hero: 0,
+  depart: 6,
+};
+
+/**
+ * Classify a single montage shot. HERO uses the full iconic criteria
+ * (planet-dominant composed frame). The wide/moving shots (establish /
+ * approach / depart) only need their two actors FRAMED and the ship
+ * un-occluded — "planet dominates" / "off the disc" are hero-specific and
+ * would false-fail them.
+ */
+function evalShot(
+  kind: ShotKind,
+  ctx: FlybyShotContext,
+  planetPos: { x: number; z: number },
+  planetRadius: number,
+): ShotVerdict {
+  const frame = composeShot(kind, ctx);
+  if (!frame) return { ok: false, reason: 'no-plan' };
+  // Ship being framed: the iconic-moment ship for hero, else the live met.
+  const shipMet = kind === 'hero' ? ctx.peakMet : ctx.met;
+  const shipPos = ctx.shipPosAtMet(shipMet) ?? { x: 0, y: 0, z: 0 };
+  const plan: IconicShotPlan = {
+    iconicMet: shipMet,
+    shipPos,
+    shipVelocityXZ: { x: 0, z: 0 },
+    cameraPos: frame.position,
+    cameraTarget: frame.lookAt,
+    composition: PLANET_COMPOSITION[ctx.planetId],
+  };
+  const q = classifyShot(
+    plan,
+    { x: planetPos.x, y: 0, z: planetPos.z },
+    planetRadius,
+    SHIP_VISIBLE_RADIUS,
+    frame.fovDeg,
+  );
+  const framed = !q.shipBehindPlanet && !q.shipOutOfFrame && !q.planetOutOfFrame;
+  const reason = framed
+    ? 'ok'
+    : q.shipBehindPlanet
+      ? 'ship-behind-planet'
+      : q.shipOutOfFrame
+        ? 'ship-out-of-frame'
+        : 'planet-out-of-frame';
+  return { ok: framed, reason };
+}
+
+/** HERO verdict — the accurate iconic check via planFlybyShot (which owns
+ *  the iconic-moment ship position + occlusion guard + arrival comp), not
+ *  composeShot (whose frame alone loses the iconic shipPos). */
+function heroVerdict(
   planetId: PlanetId,
   planetPos: { x: number; z: number },
   planetRadius: number,
   sampleShipScene: (met: number) => { x: number; y: number; z: number } | null,
   peakMet: number,
-  arrival: boolean,
-): EventVerdict {
-  const arr = arrival ? buildArrivalComposition(planetId, planetRadius) : null;
+  arr: ReturnType<typeof buildArrivalComposition> | null,
+): ShotVerdict {
   const plan = planFlybyShot({
     planetId,
     planetPos,
@@ -98,22 +156,23 @@ function evaluate(
     composition: arr?.composition,
     iconicSeparationRadii: arr?.iconicSeparationRadii,
   });
-  if (!plan) return { reason: 'no-plan', iconic: false };
+  if (!plan) return { ok: false, reason: 'no-plan' };
   const q = classifyShot(
     plan,
     { x: planetPos.x, y: 0, z: planetPos.z },
     planetRadius,
     SHIP_VISIBLE_RADIUS,
   );
-  return { reason: failingReason(q), iconic: q.isIconic };
+  return { ok: q.isIconic, reason: heroFailReason(q) };
 }
 
 function main() {
   const index = JSON.parse(readFileSync(join(MISSIONS_DIR, 'index.json'), 'utf-8')) as IndexEntry[];
 
   const results: Array<Record<string, unknown>> = [];
-  let currentIconic = 0;
-  let proposedIconic = 0;
+  const SHOT_KINDS: ShotKind[] = ['establish', 'approach', 'hero', 'depart'];
+  let heroIconic = 0;
+  let montageClean = 0; // events where all 4 shots are OK
   let totalEvents = 0;
 
   for (const entry of index) {
@@ -162,18 +221,41 @@ function main() {
         planetId === 'earth' ? earthPos(dep + peakMet) : destinationPos(dep + peakMet, planetId);
       const planetPos = { x: bodyPos.x * SCALE_3D, z: bodyPos.z * SCALE_3D };
       const isArrival = e.type === 'edl_or_oi' || e.type === 'arrival';
+      // Arrival/OI events compose the HERO shot with the arrival composition
+      // (spatial lead) — the same as the live scene. Flybys use the default.
+      const arr = isArrival ? buildArrivalComposition(planetId, planetRadius) : null;
 
-      const current = evaluate(planetId, planetPos, planetRadius, sampleShipScene, peakMet, false);
-      const proposed = evaluate(
-        planetId,
-        planetPos,
-        planetRadius,
-        sampleShipScene,
-        peakMet,
-        isArrival,
-      );
-      if (current.iconic) currentIconic++;
-      if (proposed.iconic) proposedIconic++;
+      const shots: Record<string, string> = {};
+      let allOk = true;
+      for (const kind of SHOT_KINDS) {
+        // Depart is N/A for arrivals/orbit-insertions — the ship doesn't
+        // leave, so there's no post-event trajectory to frame.
+        if (kind === 'depart' && isArrival) {
+          shots.depart = 'n/a';
+          continue;
+        }
+        let v: ShotVerdict;
+        if (kind === 'hero') {
+          v = heroVerdict(planetId, planetPos, planetRadius, sampleShipScene, peakMet, arr);
+        } else {
+          const ctx: FlybyShotContext = {
+            planetId,
+            planetPos,
+            planetRadius,
+            shipPosAtMet: sampleShipScene,
+            peakMet,
+            met: peakMet + SHOT_EVAL_OFFSET[kind],
+            heroComposition: arr?.composition,
+            heroSeparationRadii: arr?.iconicSeparationRadii,
+          };
+          v = evalShot(kind, ctx, planetPos, planetRadius);
+        }
+        shots[kind] = v.reason;
+        if (!v.ok) allOk = false;
+      }
+      const heroOk = shots.hero === 'ok';
+      if (heroOk) heroIconic++;
+      if (allOk) montageClean++;
 
       results.push({
         id: entry.id,
@@ -182,39 +264,34 @@ function main() {
         label: e.label ?? '',
         metDays: peakMet,
         planetId,
-        currentReason: current.reason,
-        currentIconic: current.iconic,
-        proposedReason: proposed.reason,
-        proposedIconic: proposed.iconic,
-        fixed: !current.iconic && proposed.iconic,
-        regressed: current.iconic && !proposed.iconic,
+        shots,
+        heroOk,
+        montageClean: allOk,
       });
     }
   }
 
   results.sort((a, b) => {
-    // Surface the not-yet-iconic (under proposed) first.
-    const ai = a.proposedIconic ? 1 : 0;
-    const bi = b.proposedIconic ? 1 : 0;
+    // Surface the events with issues (montage not clean) first.
+    const ai = a.montageClean ? 1 : 0;
+    const bi = b.montageClean ? 1 : 0;
     if (ai !== bi) return ai - bi;
     return String(a.id).localeCompare(String(b.id));
   });
 
   const payload = {
-    generatedNote: 'Run `npm run audit:fly-cameras` to refresh.',
+    generatedNote: 'Per-shot montage audit. Run `npm run audit:fly-cameras` to refresh.',
     totals: {
       events: totalEvents,
-      currentIconic,
-      proposedIconic,
-      fixed: results.filter((r) => r.fixed).length,
-      regressed: results.filter((r) => r.regressed).length,
+      heroIconic,
+      montageClean,
     },
     results,
   };
   const outPath = join('static', 'data', 'fly-camera-audit.json');
   writeFileSync(outPath, JSON.stringify(payload, null, 2) + '\n');
   console.log(
-    `[audit-fly-cameras] ${totalEvents} events · current iconic ${currentIconic} → proposed ${proposedIconic} · fixed ${payload.totals.fixed} · regressed ${payload.totals.regressed}`,
+    `[audit-fly-cameras] ${totalEvents} events · hero iconic ${heroIconic} · montage-clean (all 4 shots) ${montageClean}`,
   );
   console.log(`[audit-fly-cameras] wrote ${outPath}`);
 }

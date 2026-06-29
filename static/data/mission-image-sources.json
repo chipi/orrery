@@ -335,32 +335,36 @@
     "fetched_at": "2026-06-14T13:26:18.186Z"
   },
   "change3/02": {
-    "commons_file": "The Chang'e 3 Landing Site in 3D (LROC811 - content change3 rainbow overlay).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Chang'e%203%20Landing%20Site%20in%203D%20(LROC811%20-%20content%20change3%20rainbow%20overlay).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e_3_-_rocks_near_Ziwei_crater.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Chang%27e_3_-_rocks_near_Ziwei_crater.jpg",
+    "credit": "Chunyu Ding, Zhiyong Xiao, Yan Su",
+    "license": "cc-by-4.0",
+    "commons_file": "Chang'e 3 - rocks near Ziwei crater.jpg"
   },
   "change3/03": {
-    "commons_file": "The Chang'e 3 Landing Site in 3D (LROC811 - content change3 slope overlay).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:The%20Chang'e%203%20Landing%20Site%20in%203D%20(LROC811%20-%20content%20change3%20slope%20overlay).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e-3_lunar_landing_site.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Chang%27e-3_lunar_landing_site.jpg",
+    "credit": "NASA Public domainPublic domainfalsefalse This file is in the public domain in the United States because it was solely created by NASA. NASA copyright policy states that \"NASA material is not protected by copyright unless noted\". (See Template:PD-USGov, NASA copyright policy page or JPL Image Use Policy.) Warnings: Use of NASA logos, insignia and emblems is restricted per U.S. law 14 CFR 1221. The NASA website hosts a large number of images from the Soviet/Russian space agency, and other non-American space agencies. These are not necessarily in the public domain. Materials based on Hubble Space Telescope data may be copyrighted if they are not explicitly produced by the STScI.[1] See also {{PD-Hubble}} and {{Cc-Hubble}}. The SOHO (ESA &amp; NASA) joint project implies that all materials created by its probe are copyrighted and require permission for commercial non-educational use. [2] Images featured on the Astronomy Picture of the Day (APOD) web site may be copyrighted. [3] The National Space Science Data Center (NSSDC) site has been known to host copyrighted content. Its photo gallery FAQ states that all of the images in the photo gallery are in the public domain \"Unless otherwise noted.\"",
+    "license": "pd-nasa",
+    "commons_file": "Chang'e-3 lunar landing site.jpg"
   },
   "change3/04": {
-    "commons_file": "What a Blast! – Revisiting the Chang'e 3 Landing Site (LROC929 - content change3 m1147290066r).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:What%20a%20Blast!%20%E2%80%93%20Revisiting%20the%20Chang'e%203%20Landing%20Site%20(LROC929%20-%20content%20change3%20m1147290066r).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e_3_Lander_and_Rover_From_Above_(LROC637_-_landerview_lroc_crop).png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Chang%27e_3_Lander_and_Rover_From_Above_%28LROC637_-_landerview_lroc_crop%29.png",
+    "credit": "NASA/GSFC/Arizona State University",
+    "license": "pd-nasa",
+    "commons_file": "Chang'e 3 Lander and Rover From Above (LROC637 - landerview lroc crop).png"
   },
   "change3/05": {
-    "commons_file": "Chang'e 3 Lander and Rover From Above (LROC637 - change3 wac morph and noslew 1000p 1000p).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Chang'e%203%20Lander%20and%20Rover%20From%20Above%20(LROC637%20-%20change3%20wac%20morph%20and%20noslew%201000p%201000p).png",
-    "credit": "CNSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sinus_Iridum,_Chang%27e_3_%26_Lunokhod_1_landing_sites.png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Sinus_Iridum%2C_Chang%27e_3_%26_Lunokhod_1_landing_sites.png",
+    "credit": "NASA",
+    "license": "pd-nasa",
+    "commons_file": "Sinus Iridum, Chang'e 3 & Lunokhod 1 landing sites.png"
   },
   "change4/01": {
     "commons_file": "Chang'e 4 lander.jpg",
@@ -2568,5 +2572,21 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-19T08:58:28Z",
     "promoted_from": "slot 05"
+  },
+  "change3/01": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yutu_rover.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Yutu_rover.jpg",
+    "credit": "Institute of High Energy Physics, Chinese Academy of Sciences",
+    "license": "cc-by-4.0",
+    "commons_file": "Yutu rover.jpg"
+  },
+  "change4/06": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ChangE-4,_Yutu-2_(cropped).png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/ChangE-4%2C_Yutu-2_%28cropped%29.png",
+    "credit": "CSNA/Siyu Zhang/Kevin M. Gill",
+    "license": "cc-by-2.0",
+    "commons_file": "ChangE-4, Yutu-2 (cropped).png"
   }
 }

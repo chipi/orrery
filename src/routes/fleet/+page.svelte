@@ -240,8 +240,12 @@
     else params.set('sort', sortMode);
     if (!listView) params.delete('view');
     else params.set('view', 'list');
+    // Write the raw query (not trimmed): the URL→state effect re-reads `q`
+    // on every goto, so a trimmed write would strip the trailing space the
+    // instant it's typed — making " " un-typeable in the search box (e.g.
+    // "luna 16"). matchesQuery trims internally for matching. (2026-06-29)
     if (query.trim() === '') params.delete('q');
-    else params.set('q', query.trim());
+    else params.set('q', query);
     goto(url.pathname + (params.toString() ? `?${params}` : ''), {
       replaceState: true,
       keepFocus: true,

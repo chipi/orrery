@@ -199,9 +199,9 @@
       "approved_at": "2026-06-20"
     },
     "viking-1": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than viking-1",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "Viking lander model (distinct from orbiter card) — Marko 2026-06-29 (dedup/junk cleanup)",
+      "approved_at": "2026-06-29"
     },
     "voyager-2": {
       "slot": "01.jpg",
@@ -426,6 +426,11 @@
     "xichang-lc-3": {
       "slot": "01.jpg",
       "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Xichang pad aerial; distinct hero)",
+      "approved_at": "2026-06-29"
+    },
+    "viking1-orbiter": {
+      "slot": "01.jpg",
+      "reason": "Viking orbiter+lander spacecraft — Marko 2026-06-29 (dedup/junk cleanup)",
       "approved_at": "2026-06-29"
     }
   }

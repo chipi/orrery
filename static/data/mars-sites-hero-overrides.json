@@ -34,8 +34,13 @@
       "approved_at": "2026-06-12"
     },
     "mars3": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (mars-site review: G1)",
+      "slot": "01.jpg",
+      "reason": "Mars-3 spacecraft museum model (off the stamp) — Marko 2026-06-29 (dedup/junk cleanup)",
+      "approved_at": "2026-06-29"
+    },
+    "mars2": {
+      "slot": "01.jpg",
+      "reason": "Mars-2 spacecraft in cleanroom (distinct from Mars-3) — Marko 2026-06-29 (dedup/junk cleanup)",
       "approved_at": "2026-06-29"
     }
   }

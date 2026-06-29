@@ -770,11 +770,10 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "mars-sites/mars2/05": {
-    "commons_file": "Mars2.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars2.jpg",
-    "credit": "Roscosmos",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
+    "commons_file": "PrOP-M.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:PrOP-M.jpg",
+    "credit": "Joris Wegner",
+    "license": "CC-BY-SA-4.0"
   },
   "mars-sites/mars3-orbiter/01": {
     "commons_file": "Viking 2 Landing Site B NASA Image 807A32.jpg",
@@ -2633,5 +2632,11 @@
       "verdict": "related",
       "confidence": 0.95
     }
+  },
+  "mars-sites/mars3/01": {
+    "commons_file": "Mars 3 Space Probe 1.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars_3_Space_Probe_1.jpg",
+    "credit": "Stolbovsky",
+    "license": "CC-BY-4.0"
   }
 }

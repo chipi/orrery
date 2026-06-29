@@ -7,6 +7,11 @@
       "slot": "03.jpg",
       "reason": "subject names a different entity than chandrayaan3",
       "approved_at": "2026-06-12"
+    },
+    "luna16": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (moon-site review: G2)",
+      "approved_at": "2026-06-29"
     }
   }
 }

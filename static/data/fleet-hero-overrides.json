@@ -89,9 +89,9 @@
       "approved_at": "2026-06-12"
     },
     "galileo": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "approved_at": "2026-06-29"
     },
     "gemini": {
       "slot": "03.jpg",
@@ -144,9 +144,9 @@
       "approved_at": "2026-06-12"
     },
     "phobos-2": {
-      "slot": "02.jpg",
-      "reason": "not-scored",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "approved_at": "2026-06-29"
     },
     "pioneer-10": {
       "slot": "05.jpg",
@@ -169,9 +169,9 @@
       "approved_at": "2026-06-12"
     },
     "rosetta": {
-      "slot": "03.jpg",
-      "reason": "vision-rejected: score-below-threshold; subject names a different entity than rosetta",
-      "approved_at": "2026-06-12"
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+      "approved_at": "2026-06-29"
     },
     "saturn-ib": {
       "slot": "02.jpg",
@@ -372,6 +372,26 @@
       "slot": "05.jpg",
       "reason": "G5 hero — Marko 2026-06-23 (G N = 0N.jpg convention)",
       "approved_at": "2026-06-23"
+    },
+    "kourou-ela-3": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "approved_at": "2026-06-29"
+    },
+    "lunar-orbiter-3": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G4)",
+      "approved_at": "2026-06-29"
+    },
+    "gagarins-start": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+      "approved_at": "2026-06-29"
+    },
+    "luna-16": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G2; old hero 01 was a broken half-grey LROC tile)",
+      "approved_at": "2026-06-29"
     }
   }
 }

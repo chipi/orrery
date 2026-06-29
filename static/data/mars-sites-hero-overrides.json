@@ -32,6 +32,11 @@
       "slot": "03.jpg",
       "reason": "category: diagram — not a hero candidate; score: 4 < threshold 6; vision-rejected: category-diagram; subject names a different entity than tgo",
       "approved_at": "2026-06-12"
+    },
+    "mars3": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (mars-site review: G1)",
+      "approved_at": "2026-06-29"
     }
   }
 }

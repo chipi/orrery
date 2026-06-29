@@ -132,6 +132,8 @@
     buildArrivalComposition,
     type PlanetId as FlybyPlanetId,
   } from '$lib/orbital/flyby-camera-plan';
+  import { composeShot, type ShotFrame, type ShotKind } from '$lib/orbital/flyby-shots';
+  import { selectShot, flybySlowmoSpeed } from '$lib/orbital/flyby-shot-schedule';
   import { biasJumpToIconicMoment } from '$lib/orbital/jump-to-met-bias';
   import {
     findFlybyPlanetFromLabel,
@@ -642,6 +644,8 @@
   // instead of frozen at the iconic-shot position.
   let debugCamWorld = $state<{ x: number; y: number; z: number } | null>(null);
   let debugCamTargetWorld = $state<{ x: number; y: number; z: number } | null>(null);
+  // Active montage shot kind, surfaced to the FLY debug panel (#371).
+  let debugMontageShot = $state<ShotKind | null>(null);
   // ADR-025: reduced-motion users start paused. They can press play
   // to step forward manually. We also subscribe to changes so an
   // OS-level toggle mid-session pauses the sim live (post-v1.0
@@ -2084,6 +2088,9 @@
     });
     const scene = helioHandles.scene;
     const camera = helioHandles.camera;
+    // Base FOV to restore when a montage shot (which may set its own FOV)
+    // is not active. Captured from the scene's camera at setup. (#371)
+    const baseFov = camera.fov;
     const renderer = helioHandles.renderer;
     // Expose to the DebugPanel "Rendering" tab (#334) — the template-
     // mounted <RenderingDebugRegistrar> picks these up reactively.
@@ -3402,6 +3409,23 @@
     // the flyby branch of updateHelioAutoZoomTargets; cleared to null
     // when we leave flyby cinema. See computeFlybyDesiredCamT below.
     let helioFlybyDesiredCamT: number | null = null;
+    // Flyby montage (#371) — the active shot frame for this render, set in
+    // updateHelioAutoZoomTargets' flyby branch and APPLIED after updateCam()
+    // (Marko's "override final transform" integration). null = not in a
+    // montage window → the normal cruise/lerp camera drives. `montageEnabled`
+    // is the master toggle: off via `?montage=0` (reload A/B), or live via
+    // `window.__flyMontage(false)` in DEV.
+    let montageEnabled = new URLSearchParams(window.location.search).get('montage') !== '0';
+    if (import.meta.env.DEV) {
+      (window as unknown as { __flyMontage?: (on: boolean) => void }).__flyMontage = (on) => {
+        montageEnabled = on;
+      };
+    }
+    let montageShotFrame: ShotFrame | null = null;
+    let montageShotKind: ShotKind | null = null;
+    // Previous frame's shot kind — a change is a CUT (snap); same kind
+    // smooths within the shot so the chase/depart don't jitter.
+    let lastMontageShotKind: ShotKind | null = null;
     /** Reusable flyby choreography: a slow panoramic sweep timed so the
      *  camera arrives at the iconic "perpendicular to ship→planet"
      *  composition exactly at peak (closest approach), having swept
@@ -3546,6 +3570,10 @@
     // closest-planet-detection lives in that module's docstring.
     function updateHelioAutoZoomTargets(): void {
       if (isMoonMission) return; // cislunar handles its own auto-zoom
+      // Reset the montage shot each frame; the flyby branch re-arms it when
+      // the current MET falls inside a montage window. (#371)
+      montageShotFrame = null;
+      montageShotKind = null;
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
       const ePos = earthPos(simDay);
       const earthScene = new THREE.Vector3(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
@@ -3752,6 +3780,29 @@
           targetR = iconicFrame.targetR;
           targetP = iconicFrame.targetP;
           helioFlybyDesiredCamT = iconicFrame.helioFlybyDesiredCamT;
+          // Montage (#371): pick the active shot for the current MET offset
+          // from the flyby peak and compose its frame. Applied after
+          // updateCam() as an override. The HERO shot reuses this same
+          // composition; establish/approach/depart are distinct rigs. The
+          // iconicFrame above still feeds the lerp targets so leaving the
+          // montage window hands back to cruise framing smoothly.
+          if (montageEnabled) {
+            const metOffset = simDay - (arcTimeline.dep_day + activeFlybyMet);
+            const shotKind = selectShot(metOffset);
+            if (shotKind) {
+              montageShotFrame = composeShot(shotKind, {
+                planetId: flyby.id as FlybyPlanetId,
+                planetPos: { x: bodyScene.x, z: bodyScene.z },
+                planetRadius: flyby.size,
+                shipPosAtMet: sampleShipScene,
+                peakMet: activeFlybyMet,
+                met: simDay - arcTimeline.dep_day,
+                heroComposition: arrivalComp?.composition,
+                heroSeparationRadii: arrivalComp?.iconicSeparationRadii,
+              });
+              montageShotKind = shotKind;
+            }
+          }
         } else {
           sub = `flyby-${activeFlybyMet}`;
           centerX = scScene.x;
@@ -5019,8 +5070,30 @@
         finaleBlackOpacity = cineOut.finaleBlackOpacity;
         const isCinematicFreeze = cineOut.isCinematicFreeze;
 
-        if (isPlaying && now >= launchDwellUntil && !isCinematicFreeze) {
-          simDay += dt * simSpeed;
+        // No freeze-frames in the montage (#371): the classic camera
+        // freezes the iconic peak-hold AND the afterglow zoom-out. The
+        // montage's slow-mo swing + cuts + moving catapult carry the beat
+        // entirely, so a freeze-frame just broke the flow (Marko 2026-06).
+        // Drop BOTH flyby freezes — sim keeps moving (slow-mo) through the
+        // whole encounter. (Finale / cruise-hold / launch-dwell are not
+        // active during a flyby window, so this only affects the flyby.)
+        let cinematicFreeze = isCinematicFreeze;
+        if (montageEnabled && currentFrameFlybyMet != null) {
+          cinematicFreeze = false;
+        }
+        if (isPlaying && now >= launchDwellUntil && !cinematicFreeze) {
+          // Flyby slow-motion (#371): around closest approach, ease the
+          // effective sim rate down so the gravity-assist swing is
+          // watchable instead of a buzz. Only when the montage is on and a
+          // flyby is active; the peak-hold freeze still punctuates the peak.
+          let effectiveSpeed = simSpeed;
+          if (montageEnabled && currentFrameFlybyMet != null) {
+            effectiveSpeed = flybySlowmoSpeed(
+              simDay - (arcTimeline.dep_day + currentFrameFlybyMet),
+              simSpeed,
+            );
+          }
+          simDay += dt * effectiveSpeed;
           if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
           // Moon orbits advance in real wall-clock time, decoupled from
           // simSpeed, so they read as a calm drift at any play speed
@@ -5203,12 +5276,60 @@
         // has to run per-frame to converge. Moon-mode additionally needs
         // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
         updateCam();
+        // Montage override (#371) — when a flyby shot is active, snap the
+        // real camera onto it AFTER the normal pipeline ran (Marko's
+        // "override final transform"). Cuts between shots are the frame
+        // discontinuity at window boundaries — no transition needed. We
+        // also sync the spherical state (camR/camP/camT/camTarget) to the
+        // shot so leaving the montage hands back to the cruise lerp without
+        // a jump, and restore the base FOV when no shot is active.
+        if (!isMoonMission && montageShotFrame) {
+          const f = montageShotFrame;
+          // CUT vs glide: a shot-kind change snaps (hard cut); within a
+          // shot we ease toward the frame so the chase/depart track the
+          // ship smoothly instead of jittering at trajectory waypoints.
+          const isCut = montageShotKind !== lastMontageShotKind;
+          lastMontageShotKind = montageShotKind;
+          const ease = isCut ? 1 : 0.22;
+          camTarget.x += (f.lookAt.x - camTarget.x) * ease;
+          camTarget.y += (f.lookAt.y - camTarget.y) * ease;
+          camTarget.z += (f.lookAt.z - camTarget.z) * ease;
+          const npx = camera.position.x + (f.position.x - camera.position.x) * ease;
+          const npy = camera.position.y + (f.position.y - camera.position.y) * ease;
+          const npz = camera.position.z + (f.position.z - camera.position.z) * ease;
+          camera.position.set(npx, npy, npz);
+          // Sync spherical state from the (eased) transform so leaving the
+          // montage hands back to the cruise lerp without a jump.
+          const ox = npx - camTarget.x;
+          const oy = npy - camTarget.y;
+          const oz = npz - camTarget.z;
+          const rr = Math.hypot(ox, oy, oz);
+          if (rr > 1e-6) {
+            camR = rr;
+            camP = Math.acos(Math.max(-1, Math.min(1, oy / rr)));
+            camT = Math.atan2(ox, oz);
+          }
+          if (f.rollRad) {
+            camera.up.set(Math.sin(f.rollRad), Math.cos(f.rollRad), 0);
+          } else {
+            camera.up.set(0, 1, 0);
+          }
+          camera.lookAt(camTarget.x, camTarget.y, camTarget.z);
+          if (Math.abs(camera.fov - f.fovDeg) > 0.01) {
+            camera.fov = f.fovDeg;
+            camera.updateProjectionMatrix();
+          }
+        } else if (Math.abs(camera.fov - baseFov) > 0.01) {
+          camera.fov = baseFov;
+          camera.updateProjectionMatrix();
+        }
         // Mirror the live scene camera into $state for the debug plot
         // (DEV only — see debugCamWorld). Lets the 2D viewer trace the
         // camera's actual motion as the ship flies.
         if (import.meta.env.DEV) {
           debugCamWorld = { x: camera.position.x, y: camera.position.y, z: camera.position.z };
           debugCamTargetWorld = { x: camTarget.x, y: camTarget.y, z: camTarget.z };
+          if (debugMontageShot !== montageShotKind) debugMontageShot = montageShotKind;
         }
 
         // Moon-mode rendering: heliocentric, same framing as Mars.
@@ -5354,9 +5475,18 @@
           const flybyDbg = window.__flyDebug;
           const bodyR = flybyDbg?.flybySize ?? 2.5;
           const overrideCamR = FLYBY_OVERRIDES[flybyDbg?.flybyId ?? '']?.toCameraR ?? 1.4;
+          // The toward-camera offset is ONLY for the tight HERO composition
+          // (where the planet's opaque mesh would otherwise occlude the
+          // ship). In the montage's moving/wide shots (approach=chase,
+          // depart=catapult) the ship is un-occluded by construction, and
+          // the far, orbiting camera makes the offset DIRECTION swing frame
+          // to frame → the ship wobbles. Skip it there; the ship rides its
+          // true trajectory position. (#371)
+          const montageNonHero =
+            montageEnabled && montageShotKind != null && montageShotKind !== 'hero';
           const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
           const dist = camToShip.length();
-          if (dist > 0.01) {
+          if (dist > 0.01 && !montageNonHero) {
             camToShip.multiplyScalar((bodyR * overrideCamR) / dist);
             scSprite.position.add(camToShip);
             if (scModel) scModel.position.copy(scSprite.position);

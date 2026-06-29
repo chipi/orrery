@@ -29,12 +29,12 @@
 
 /** Durations + thresholds — all in milliseconds unless suffixed `_DAYS`. */
 export const CINEMATIC_TIMINGS = {
-  /** W3.1 peak-hold sim-time freeze duration. Per the creative-direction
-   *  guide §5 flyby-peak: "hero hold for 6-10 seconds minimum." 2500 ms
-   *  felt right at the testing pass — long enough to read as a deliberate
-   *  shutter-click, short enough that auto-play through a grand-tour
-   *  doesn't drag. */
-  PEAK_HOLD_DURATION_MS: 2500,
+  /** W3.1 peak-hold sim-time freeze duration. A brief "shutter-click"
+   *  pause at closest approach — Marko's direction (2026-06): keep it a
+   *  SMALL beat, not a long hold (the old 2500 ms dragged in both the
+   *  montage and classic camera). Short enough to read as a deliberate
+   *  catch-of-breath, not a stop. */
+  PEAK_HOLD_DURATION_MS: 500,
   /** Half-window in sim-days around a flyby's MET where the peak hold
    *  arms. Tighter than FLYBY_PEAK_DAYS (4) on purpose — the parallax
    *  arc is allowed within ±4 d, but the full freeze only fires within

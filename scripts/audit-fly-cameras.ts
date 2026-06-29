@@ -36,7 +36,12 @@ import {
   type PlanetId,
   type IconicShotPlan,
 } from '../src/lib/orbital/flyby-camera-plan';
-import { composeShot, type ShotKind, type FlybyShotContext } from '../src/lib/orbital/flyby-shots';
+import {
+  composeShot,
+  approachShot,
+  type ShotKind,
+  type FlybyShotContext,
+} from '../src/lib/orbital/flyby-shots';
 import {
   missionDestToDataFolder,
   missionDestToHeliocentricDestinationId,
@@ -125,7 +130,11 @@ function evalShot(
     SHIP_VISIBLE_RADIUS,
     frame.fovDeg,
   );
-  const framed = !q.shipBehindPlanet && !q.shipOutOfFrame && !q.planetOutOfFrame;
+  // APPROACH is a chase: its subject is the SHIP. The planet legitimately
+  // isn't in frame during the far part of the approach (it swings in as
+  // the ship nears), so we don't require it. establish/depart frame BOTH.
+  const requirePlanet = kind !== 'approach';
+  const framed = !q.shipBehindPlanet && !q.shipOutOfFrame && !(requirePlanet && q.planetOutOfFrame);
   const reason = framed
     ? 'ok'
     : q.shipBehindPlanet
@@ -163,7 +172,36 @@ function heroVerdict(
     planetRadius,
     SHIP_VISIBLE_RADIUS,
   );
-  return { ok: q.isIconic, reason: heroFailReason(q) };
+  if (q.isIconic) return { ok: true, reason: 'ok' };
+  // Mirror heroShot's fallback: when the planet-dominant hero loses the
+  // ship, it becomes a SHIP-HERO (chase held at the iconic moment). The
+  // verdict then only needs the ship framed + un-occluded.
+  const frame = approachShot({
+    planetId,
+    planetPos,
+    planetRadius,
+    shipPosAtMet: sampleShipScene,
+    peakMet,
+    met: plan.iconicMet,
+  });
+  if (!frame) return { ok: false, reason: heroFailReason(q) };
+  const shipPos = sampleShipScene(plan.iconicMet) ?? { x: 0, y: 0, z: 0 };
+  const fq = classifyShot(
+    {
+      iconicMet: plan.iconicMet,
+      shipPos,
+      shipVelocityXZ: { x: 0, z: 0 },
+      cameraPos: frame.position,
+      cameraTarget: frame.lookAt,
+      composition: PLANET_COMPOSITION[planetId],
+    },
+    { x: planetPos.x, y: 0, z: planetPos.z },
+    planetRadius,
+    SHIP_VISIBLE_RADIUS,
+    frame.fovDeg,
+  );
+  const ok = !fq.shipBehindPlanet && !fq.shipOutOfFrame;
+  return { ok, reason: ok ? 'ship-hero' : heroFailReason(q) };
 }
 
 function main() {
@@ -253,7 +291,7 @@ function main() {
         shots[kind] = v.reason;
         if (!v.ok) allOk = false;
       }
-      const heroOk = shots.hero === 'ok';
+      const heroOk = shots.hero === 'ok' || shots.hero === 'ship-hero';
       if (heroOk) heroIconic++;
       if (allOk) montageClean++;
 

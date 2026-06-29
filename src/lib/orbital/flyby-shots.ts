@@ -23,10 +23,14 @@
 
 import {
   planFlybyShot,
+  classifyShot,
   type PlanetComposition,
   type PlanetId,
   type Vec3,
 } from './flyby-camera-plan';
+
+/** Ship glyph radius (scene units) used for the hero shot's self-check. */
+const HERO_SHIP_VIS_RADIUS = 0.4;
 
 export type ShotKind = 'establish' | 'approach' | 'hero' | 'depart';
 
@@ -66,11 +70,20 @@ export interface FlybyShotContext {
 // Per-shot camera distance (× planet radius) + pitch above the orbital
 // plane. Establishing is wide + high; approach/depart are mid + low for
 // the over-the-shoulder read; hero distance is owned by PLANET_COMPOSITION.
-const ESTABLISH_DIST_MULT = 14;
+// Establish is a wide overhead that frames BOTH actors (distance scales
+// with their separation), viewed from behind the ship's heading so the
+// trajectory arc reads as it sweeps toward the planet.
+const ESTABLISH_MIN_DIST_MULT = 10;
 const ESTABLISH_PITCH = 0.6;
 const ESTABLISH_FOV = 55;
+const ESTABLISH_FRAME_MARGIN = 1.5;
 const APPROACH_DIST_MULT = 5;
 const APPROACH_PITCH = 0.32;
+// Approach (chase) looks just AHEAD of the ship toward the planet — a
+// FIXED lead distance (capped), not a fraction of the ship→planet gap, so
+// the ship stays centred even when the planet is very far (fast inner
+// flybys). The planet enters frame as the approach aligns.
+const APPROACH_LOOK_LEAD_RADII = 1.5;
 // Depart is a pulled-back CATAPULT shot: it frames the planet AND the
 // departing ship together (distance scales with their separation) and
 // views the encounter off the trajectory plane so the gravity-assist
@@ -130,6 +143,22 @@ export function heroShot(ctx: FlybyShotContext): ShotFrame | null {
     iconicSeparationRadii: ctx.heroSeparationRadii,
   });
   if (!plan) return null;
+  // Self-check: if the planet-dominant composition loses the ship (the
+  // hard gravity-assist geometries where it's occluded or off-frame —
+  // both perp sides hide it), fall back to a SHIP-HERO: the chase
+  // composition held at the iconic moment. Ship prominent, planet behind,
+  // never occluded. The montage's approach shot uses the same rig, so the
+  // climax stays coherent. Most flybys keep the planet-dominant hero.
+  const q = classifyShot(
+    plan,
+    { x: ctx.planetPos.x, y: 0, z: ctx.planetPos.z },
+    ctx.planetRadius,
+    HERO_SHIP_VIS_RADIUS,
+  );
+  if (q.shipBehindPlanet || q.shipInsidePlanetDisk || q.shipOutOfFrame) {
+    const shipHero = approachShot({ ...ctx, met: plan.iconicMet });
+    if (shipHero) return shipHero;
+  }
   const rollRad = ctx.planetId === 'saturn' ? (17 * Math.PI) / 180 : 0;
   return { position: plan.cameraPos, lookAt: plan.cameraTarget, fovDeg: DEFAULT_FOV, rollRad };
 }
@@ -143,39 +172,57 @@ export function approachShot(ctx: FlybyShotContext): ShotFrame | null {
   const dist = ctx.planetRadius * APPROACH_DIST_MULT;
   const cp = Math.cos(APPROACH_PITCH);
   const sp = Math.sin(APPROACH_PITCH);
+  // Fixed, capped lead toward the planet so the look-point hugs the ship.
+  const pdx = ctx.planetPos.x - k.pos.x;
+  const pdz = ctx.planetPos.z - k.pos.z;
+  const pd = Math.hypot(pdx, pdz);
+  const lead = Math.min(ctx.planetRadius * APPROACH_LOOK_LEAD_RADII, pd);
+  const ux = pd > 1e-6 ? pdx / pd : 0;
+  const uz = pd > 1e-6 ? pdz / pd : 0;
   return {
     position: {
       x: k.pos.x - k.approachX * dist * cp,
       y: k.pos.y + dist * sp,
       z: k.pos.z - k.approachZ * dist * cp,
     },
-    // Look ahead — weighted 60% toward the planet so it's the destination
-    // of the gaze while the ship stays a foreground anchor.
     lookAt: {
-      x: k.pos.x + (ctx.planetPos.x - k.pos.x) * 0.6,
-      y: k.pos.y * 0.4,
-      z: k.pos.z + (ctx.planetPos.z - k.pos.z) * 0.6,
+      x: k.pos.x + ux * lead,
+      y: k.pos.y, // ship's own height — no vertical tilt off the ship
+      z: k.pos.z + uz * lead,
     },
     fovDeg: DEFAULT_FOV,
     rollRad: 0,
   };
 }
 
-/** ESTABLISH — wide + high, far back along the approach, looking at the
- *  planet so the trajectory arc sweeping in reads as geography. */
+/** ESTABLISH — wide overhead that frames BOTH the planet and the incoming
+ *  ship together (distance scales with their separation, like depart),
+ *  viewed from behind the ship's heading + elevated so the trajectory arc
+ *  reads as it sweeps toward the planet. Previously a fixed 14×r behind the
+ *  ship looking only at the planet, which dropped the ship out of frame on
+ *  fast inner flybys where the ship is far out at the establish beat. */
 export function establishShot(ctx: FlybyShotContext): ShotFrame | null {
   const k = shipKinematics(ctx, ctx.met);
   if (!k) return null;
-  const dist = ctx.planetRadius * ESTABLISH_DIST_MULT;
+  const sx = k.pos.x - ctx.planetPos.x;
+  const sz = k.pos.z - ctx.planetPos.z;
+  const sep = Math.hypot(sx, sz);
+  const halfExtent = sep / 2 + ctx.planetRadius * 1.5;
+  const fitDist = (halfExtent / Math.tan((ESTABLISH_FOV * Math.PI) / 360)) * ESTABLISH_FRAME_MARGIN;
+  const camDist = Math.max(ctx.planetRadius * ESTABLISH_MIN_DIST_MULT, fitDist);
   const cp = Math.cos(ESTABLISH_PITCH);
   const sp = Math.sin(ESTABLISH_PITCH);
+  const cx = (k.pos.x + ctx.planetPos.x) / 2;
+  const cy = k.pos.y / 2;
+  const cz = (k.pos.z + ctx.planetPos.z) / 2;
   return {
+    // Behind the ship's heading (−approach) + elevated, looking at the pair.
     position: {
-      x: k.pos.x - k.approachX * dist * cp,
-      y: k.pos.y + dist * sp,
-      z: k.pos.z - k.approachZ * dist * cp,
+      x: cx - k.approachX * camDist * cp,
+      y: cy + camDist * sp,
+      z: cz - k.approachZ * camDist * cp,
     },
-    lookAt: { x: ctx.planetPos.x, y: 0, z: ctx.planetPos.z },
+    lookAt: { x: cx, y: cy, z: cz },
     fovDeg: ESTABLISH_FOV,
     rollRad: 0,
   };

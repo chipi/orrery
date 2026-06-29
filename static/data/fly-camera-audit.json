@@ -2,474 +2,10 @@
   "generatedNote": "Per-shot montage audit. Run `npm run audit:fly-cameras` to refresh.",
   "totals": {
     "events": 122,
-    "heroIconic": 76,
-    "montageClean": 61
+    "heroIconic": 112,
+    "montageClean": 102
   },
   "results": [
-    {
-      "id": "akatsuki",
-      "dest": "VENUS",
-      "eventType": "arrival",
-      "label": "Venus approach (first attempt)",
-      "metDays": 201,
-      "planetId": "venus",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "planet-too-small",
-        "depart": "n/a"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "bepicolombo",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #1 — gravity assist",
-      "metDays": 1133,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "bepicolombo",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #3 — gravity assist",
-      "metDays": 1819,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "bepicolombo",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #4 — gravity assist",
-      "metDays": 2055,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "bepicolombo",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #5 — gravity assist",
-      "metDays": 2294,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "bepicolombo",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #6 — gravity assist",
-      "metDays": 2421,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "dart",
-      "dest": "DIMORPHOS",
-      "eventType": "arrival",
-      "label": "Didymos system approach",
-      "metDays": 306,
-      "planetId": "didymos",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "dart",
-      "dest": "DIMORPHOS",
-      "eventType": "edl_or_oi",
-      "label": "Dimorphos kinetic impact",
-      "metDays": 306.001,
-      "planetId": "dimorphos",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ship-out-of-frame",
-        "depart": "n/a"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "dawn",
-      "dest": "CERES",
-      "eventType": "flyby",
-      "label": "Mars — gravity assist",
-      "metDays": 508,
-      "planetId": "mars",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ship-on-disc",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "dawn",
-      "dest": "CERES",
-      "eventType": "arrival",
-      "label": "Vesta orbit insertion",
-      "metDays": 1389,
-      "planetId": "vesta",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "dawn",
-      "dest": "CERES",
-      "eventType": "arrival",
-      "label": "Ceres approach",
-      "metDays": 2717,
-      "planetId": "ceres",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "dawn",
-      "dest": "CERES",
-      "eventType": "edl_or_oi",
-      "label": "Ceres orbit insertion",
-      "metDays": 2718,
-      "planetId": "ceres",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "europa-clipper",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Mars gravity assist",
-      "metDays": 504,
-      "planetId": "mars",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "europa-clipper",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Earth gravity assist",
-      "metDays": 1530,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "galileo",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Venus — gravity assist",
-      "metDays": 115,
-      "planetId": "venus",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ship-on-disc",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "galileo",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Gaspra — first asteroid encounter",
-      "metDays": 741,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "galileo",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Ida + Dactyl — second asteroid encounter",
-      "metDays": 1410,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "galileo",
-      "dest": "JUPITER",
-      "eventType": "arrival",
-      "label": "Probe release",
-      "metDays": 2242,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "galileo",
-      "dest": "JUPITER",
-      "eventType": "edl_or_oi",
-      "label": "Jupiter orbit insertion + probe descent",
-      "metDays": 2243,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "hayabusa1",
-      "dest": "ITOKAWA",
-      "eventType": "flyby",
-      "label": "Earth gravity assist",
-      "metDays": 366,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "hayabusa1",
-      "dest": "ITOKAWA",
-      "eventType": "arrival",
-      "label": "Itokawa station-keeping",
-      "metDays": 857,
-      "planetId": "itokawa",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "hayabusa1",
-      "dest": "ITOKAWA",
-      "eventType": "edl_or_oi",
-      "label": "Itokawa surface operations — sample attempts",
-      "metDays": 857.005,
-      "planetId": "itokawa",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "juice",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Earth #3 — gravity assist",
-      "metDays": 2103,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ok",
-        "approach": "ok",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "juno",
-      "dest": "JUPITER",
-      "eventType": "flyby",
-      "label": "Earth — gravity assist",
-      "metDays": 749,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "juno",
-      "dest": "JUPITER",
-      "eventType": "edl_or_oi",
-      "label": "Jupiter orbit insertion",
-      "metDays": 1796,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "lucy",
-      "dest": "EURYBATES",
-      "eventType": "flyby",
-      "label": "Earth gravity assist 1",
-      "metDays": 365,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "lucy",
-      "dest": "EURYBATES",
-      "eventType": "flyby",
-      "label": "Donaldjohanson (main-belt bonus)",
-      "metDays": 1290,
-      "planetId": "donaldjohanson",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "lucy",
-      "dest": "EURYBATES",
-      "eventType": "flyby",
-      "label": "Earth gravity assist 2",
-      "metDays": 1330,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ok",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "lucy",
-      "dest": "EURYBATES",
-      "eventType": "arrival",
-      "label": "Eurybates approach (L4 Trojan)",
-      "metDays": 2127,
-      "planetId": "eurybates",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
     {
       "id": "lucy",
       "dest": "EURYBATES",
@@ -478,12 +14,12 @@
       "metDays": 2127.001,
       "planetId": "eurybates",
       "shots": {
-        "establish": "ship-out-of-frame",
+        "establish": "ok",
         "approach": "ok",
-        "hero": "ship-out-of-frame",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -576,138 +112,10 @@
       "shots": {
         "establish": "ok",
         "approach": "ok",
-        "hero": "ship-on-disc",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Earth — gravity assist",
-      "metDays": 365,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Venus #1 — gravity assist",
-      "metDays": 760,
-      "planetId": "venus",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Venus #2 — gravity assist",
-      "metDays": 998,
-      "planetId": "venus",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #1 — gravity assist",
-      "metDays": 1474,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #2 — gravity assist",
-      "metDays": 1858,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "messenger",
-      "dest": "MERCURY",
-      "eventType": "flyby",
-      "label": "Mercury #3 — gravity assist",
-      "metDays": 2214,
-      "planetId": "mercury",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "new-horizons",
-      "dest": "PLUTO",
-      "eventType": "flyby",
-      "label": "Jupiter — gravity assist",
-      "metDays": 405,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "new-horizons",
-      "dest": "PLUTO",
-      "eventType": "flyby",
-      "label": "Pluto — first close encounter",
-      "metDays": 3463,
-      "planetId": "pluto",
-      "shots": {
-        "establish": "ok",
-        "approach": "ok",
-        "hero": "ship-out-of-frame",
-        "depart": "ok"
-      },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -719,27 +127,11 @@
       "planetId": "arrokoth",
       "shots": {
         "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
+        "approach": "ok",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "osiris-rex",
-      "dest": "BENNU",
-      "eventType": "flyby",
-      "label": "Earth gravity assist",
-      "metDays": 380,
-      "planetId": "earth",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -768,10 +160,10 @@
       "shots": {
         "establish": "ok",
         "approach": "ok",
-        "hero": "ship-out-of-frame",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -784,26 +176,10 @@
       "shots": {
         "establish": "ok",
         "approach": "ok",
-        "hero": "ship-out-of-frame",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
-      "montageClean": false
-    },
-    {
-      "id": "psyche-mission",
-      "dest": "PSYCHE",
-      "eventType": "flyby",
-      "label": "Mars gravity assist",
-      "metDays": 945,
-      "planetId": "mars",
-      "shots": {
-        "establish": "ship-behind-planet",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
-        "depart": "ok"
-      },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -887,22 +263,6 @@
       "montageClean": false
     },
     {
-      "id": "venera-13",
-      "dest": "VENUS",
-      "eventType": "edl_or_oi",
-      "label": "Venus landing + surface operations",
-      "metDays": 122,
-      "planetId": "venus",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "n/a"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
       "id": "viking1",
       "dest": "MARS",
       "eventType": "edl_or_oi",
@@ -922,32 +282,16 @@
       "id": "voyager-1",
       "dest": "SATURN",
       "eventType": "flyby",
-      "label": "Jupiter — gravity assist",
-      "metDays": 546,
-      "planetId": "jupiter",
-      "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ok",
-        "hero": "ok",
-        "depart": "ok"
-      },
-      "heroOk": true,
-      "montageClean": false
-    },
-    {
-      "id": "voyager-1",
-      "dest": "SATURN",
-      "eventType": "flyby",
       "label": "Saturn — flyby + Titan probe",
       "metDays": 1164,
       "planetId": "saturn",
       "shots": {
-        "establish": "ship-out-of-frame",
+        "establish": "ok",
         "approach": "ok",
-        "hero": "ship-out-of-frame",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
     },
     {
@@ -958,7 +302,7 @@
       "metDays": 3079,
       "planetId": "uranus",
       "shots": {
-        "establish": "ship-out-of-frame",
+        "establish": "ok",
         "approach": "ok",
         "hero": "ok",
         "depart": "ship-behind-planet"
@@ -974,13 +318,29 @@
       "metDays": 4388,
       "planetId": "neptune",
       "shots": {
-        "establish": "ship-out-of-frame",
-        "approach": "ship-out-of-frame",
-        "hero": "ship-behind-planet",
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
         "depart": "no-plan"
       },
-      "heroOk": false,
+      "heroOk": true,
       "montageClean": false
+    },
+    {
+      "id": "akatsuki",
+      "dest": "VENUS",
+      "eventType": "arrival",
+      "label": "Venus approach (first attempt)",
+      "metDays": 201,
+      "planetId": "venus",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
     },
     {
       "id": "akatsuki",
@@ -1066,6 +426,22 @@
       "id": "bepicolombo",
       "dest": "MERCURY",
       "eventType": "flyby",
+      "label": "Mercury #1 — gravity assist",
+      "metDays": 1133,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "bepicolombo",
+      "dest": "MERCURY",
+      "eventType": "flyby",
       "label": "Mercury #2 — gravity assist",
       "metDays": 1432,
       "planetId": "mercury",
@@ -1073,6 +449,70 @@
         "establish": "ok",
         "approach": "ok",
         "hero": "ok",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "bepicolombo",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #3 — gravity assist",
+      "metDays": 1819,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "bepicolombo",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #4 — gravity assist",
+      "metDays": 2055,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "bepicolombo",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #5 — gravity assist",
+      "metDays": 2294,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "bepicolombo",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #6 — gravity assist",
+      "metDays": 2421,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
         "depart": "ok"
       },
       "heroOk": true,
@@ -1207,6 +647,134 @@
       "montageClean": true
     },
     {
+      "id": "dart",
+      "dest": "DIMORPHOS",
+      "eventType": "arrival",
+      "label": "Didymos system approach",
+      "metDays": 306,
+      "planetId": "didymos",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "dart",
+      "dest": "DIMORPHOS",
+      "eventType": "edl_or_oi",
+      "label": "Dimorphos kinetic impact",
+      "metDays": 306.001,
+      "planetId": "dimorphos",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "dawn",
+      "dest": "CERES",
+      "eventType": "flyby",
+      "label": "Mars — gravity assist",
+      "metDays": 508,
+      "planetId": "mars",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "dawn",
+      "dest": "CERES",
+      "eventType": "arrival",
+      "label": "Vesta orbit insertion",
+      "metDays": 1389,
+      "planetId": "vesta",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "dawn",
+      "dest": "CERES",
+      "eventType": "arrival",
+      "label": "Ceres approach",
+      "metDays": 2717,
+      "planetId": "ceres",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "dawn",
+      "dest": "CERES",
+      "eventType": "edl_or_oi",
+      "label": "Ceres orbit insertion",
+      "metDays": 2718,
+      "planetId": "ceres",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "europa-clipper",
+      "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Mars gravity assist",
+      "metDays": 504,
+      "planetId": "mars",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "europa-clipper",
+      "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Earth gravity assist",
+      "metDays": 1530,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
       "id": "europa-clipper",
       "dest": "JUPITER",
       "eventType": "arrival",
@@ -1242,6 +810,22 @@
       "id": "galileo",
       "dest": "JUPITER",
       "eventType": "flyby",
+      "label": "Venus — gravity assist",
+      "metDays": 115,
+      "planetId": "venus",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "galileo",
+      "dest": "JUPITER",
+      "eventType": "flyby",
       "label": "Earth #1 — gravity assist",
       "metDays": 416,
       "planetId": "earth",
@@ -1249,6 +833,22 @@
         "establish": "ok",
         "approach": "ok",
         "hero": "ok",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "galileo",
+      "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Gaspra — first asteroid encounter",
+      "metDays": 741,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
         "depart": "ok"
       },
       "heroOk": true,
@@ -1266,6 +866,102 @@
         "approach": "ok",
         "hero": "ok",
         "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "galileo",
+      "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Ida + Dactyl — second asteroid encounter",
+      "metDays": 1410,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "galileo",
+      "dest": "JUPITER",
+      "eventType": "arrival",
+      "label": "Probe release",
+      "metDays": 2242,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "galileo",
+      "dest": "JUPITER",
+      "eventType": "edl_or_oi",
+      "label": "Jupiter orbit insertion + probe descent",
+      "metDays": 2243,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "hayabusa1",
+      "dest": "ITOKAWA",
+      "eventType": "flyby",
+      "label": "Earth gravity assist",
+      "metDays": 366,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "hayabusa1",
+      "dest": "ITOKAWA",
+      "eventType": "arrival",
+      "label": "Itokawa station-keeping",
+      "metDays": 857,
+      "planetId": "itokawa",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "hayabusa1",
+      "dest": "ITOKAWA",
+      "eventType": "edl_or_oi",
+      "label": "Itokawa surface operations — sample attempts",
+      "metDays": 857.005,
+      "planetId": "itokawa",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
       },
       "heroOk": true,
       "montageClean": true
@@ -1385,10 +1081,122 @@
     {
       "id": "juice",
       "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Earth #3 — gravity assist",
+      "metDays": 2103,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "juice",
+      "dest": "JUPITER",
       "eventType": "edl_or_oi",
       "label": "Jupiter orbit insertion",
       "metDays": 3020,
       "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "juno",
+      "dest": "JUPITER",
+      "eventType": "flyby",
+      "label": "Earth — gravity assist",
+      "metDays": 749,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "juno",
+      "dest": "JUPITER",
+      "eventType": "edl_or_oi",
+      "label": "Jupiter orbit insertion",
+      "metDays": 1796,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "lucy",
+      "dest": "EURYBATES",
+      "eventType": "flyby",
+      "label": "Earth gravity assist 1",
+      "metDays": 365,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "lucy",
+      "dest": "EURYBATES",
+      "eventType": "flyby",
+      "label": "Donaldjohanson (main-belt bonus)",
+      "metDays": 1290,
+      "planetId": "donaldjohanson",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "lucy",
+      "dest": "EURYBATES",
+      "eventType": "flyby",
+      "label": "Earth gravity assist 2",
+      "metDays": 1330,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "lucy",
+      "dest": "EURYBATES",
+      "eventType": "arrival",
+      "label": "Eurybates approach (L4 Trojan)",
+      "metDays": 2127,
+      "planetId": "eurybates",
       "shots": {
         "establish": "ok",
         "approach": "ok",
@@ -1625,6 +1433,102 @@
     {
       "id": "messenger",
       "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Earth — gravity assist",
+      "metDays": 365,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Venus #1 — gravity assist",
+      "metDays": 760,
+      "planetId": "venus",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Venus #2 — gravity assist",
+      "metDays": 998,
+      "planetId": "venus",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #1 — gravity assist",
+      "metDays": 1474,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #2 — gravity assist",
+      "metDays": 1858,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
+      "eventType": "flyby",
+      "label": "Mercury #3 — gravity assist",
+      "metDays": 2214,
+      "planetId": "mercury",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "messenger",
+      "dest": "MERCURY",
       "eventType": "edl_or_oi",
       "label": "Mercury orbit insertion",
       "metDays": 2419,
@@ -1671,6 +1575,38 @@
       "montageClean": true
     },
     {
+      "id": "new-horizons",
+      "dest": "PLUTO",
+      "eventType": "flyby",
+      "label": "Jupiter — gravity assist",
+      "metDays": 405,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "new-horizons",
+      "dest": "PLUTO",
+      "eventType": "flyby",
+      "label": "Pluto — first close encounter",
+      "metDays": 3463,
+      "planetId": "pluto",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
       "id": "opportunity",
       "dest": "MARS",
       "eventType": "arrival",
@@ -1698,6 +1634,22 @@
         "approach": "ok",
         "hero": "ok",
         "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "osiris-rex",
+      "dest": "BENNU",
+      "eventType": "flyby",
+      "label": "Earth gravity assist",
+      "metDays": 380,
+      "planetId": "earth",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
       },
       "heroOk": true,
       "montageClean": true
@@ -1817,6 +1769,22 @@
     {
       "id": "psyche-mission",
       "dest": "PSYCHE",
+      "eventType": "flyby",
+      "label": "Mars gravity assist",
+      "metDays": 945,
+      "planetId": "mars",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ship-hero",
+        "depart": "ok"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "psyche-mission",
+      "dest": "PSYCHE",
       "eventType": "arrival",
       "label": "Psyche approach",
       "metDays": 2118,
@@ -1911,6 +1879,22 @@
       "montageClean": true
     },
     {
+      "id": "venera-13",
+      "dest": "VENUS",
+      "eventType": "edl_or_oi",
+      "label": "Venus landing + surface operations",
+      "metDays": 122,
+      "planetId": "venus",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
       "id": "viking1",
       "dest": "MARS",
       "eventType": "arrival",
@@ -1922,6 +1906,22 @@
         "approach": "ok",
         "hero": "ok",
         "depart": "n/a"
+      },
+      "heroOk": true,
+      "montageClean": true
+    },
+    {
+      "id": "voyager-1",
+      "dest": "SATURN",
+      "eventType": "flyby",
+      "label": "Jupiter — gravity assist",
+      "metDays": 546,
+      "planetId": "jupiter",
+      "shots": {
+        "establish": "ok",
+        "approach": "ok",
+        "hero": "ok",
+        "depart": "ok"
       },
       "heroOk": true,
       "montageClean": true

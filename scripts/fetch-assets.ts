@@ -3409,7 +3409,17 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
     maxImages: 8,
   },
   // Launch-site cross-correlation gap fills (#306 follow-up).
-  { id: 'cape-canaveral-slc-41', query: 'Cape Canaveral SLC-41 Atlas V launch', agency: 'ULA' },
+  {
+    id: 'cape-canaveral-slc-41',
+    query: 'Atlas V rocket launch pad SLC-41',
+    agency: 'ULA',
+    extraQueries: [
+      'Atlas V vertical on launch pad',
+      'Atlas V Perseverance launch',
+      'Atlas V Lucy launch',
+      'Atlas V rollout SLC-41',
+    ],
+  },
   { id: 'plesetsk-41-1', query: 'Plesetsk Tsiklon-3 Kosmos-3M launch', agency: 'ROSCOSMOS' },
   { id: 'kourou-ela-2', query: 'Kourou ELA-2 Ariane 4 launch', agency: 'ESA' },
   { id: 'baikonur-200', query: 'Baikonur Site 200 Proton launch', agency: 'ROSCOSMOS' },

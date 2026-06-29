@@ -744,26 +744,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "cape-canaveral-slc-41/01.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0265/KSC-20210621-PH-KLS01_0265~medium.jpg"
-  },
-  "cape-canaveral-slc-41/02.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0243/KSC-20210621-PH-KLS01_0243~medium.jpg"
-  },
-  "cape-canaveral-slc-41/03.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0248/KSC-20210621-PH-KLS01_0248~medium.jpg"
-  },
-  "cape-canaveral-slc-41/04.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0233/KSC-20210621-PH-KLS01_0233~medium.jpg"
-  },
-  "cape-canaveral-slc-41/05.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0095/KSC-20210621-PH-KLS01_0095~medium.jpg"
-  },
   "cargo-dragon-2/01.jpg": {
     "agency": "SPACEX",
     "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20221126-PH-KMO06_0019/KSC-20221126-PH-KMO06_0019~medium.jpg"
@@ -6519,5 +6499,21 @@
   "venera-7/02.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1972%20CPA%204166.jpg"
+  },
+  "cape-canaveral-slc-41/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0244/KSC-20220228-PH-KLS01_0244~medium.jpg"
+  },
+  "cape-canaveral-slc-41/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0228/KSC-20220228-PH-KLS01_0228~medium.jpg"
+  },
+  "cape-canaveral-slc-41/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0282/KSC-20220228-PH-KLS01_0282~medium.jpg"
+  },
+  "cape-canaveral-slc-41/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0275/KSC-20220228-PH-KLS01_0275~medium.jpg"
   }
 }

@@ -349,9 +349,9 @@
       "approved_at": "2026-06-23"
     },
     "xichang-lc-2": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Yaogan-36 launch from Xichang; distinct from LM-3B card)",
+      "approved_at": "2026-06-29"
     },
     "space-shuttle-orbiter": {
       "slot": "05.jpg",
@@ -421,6 +421,11 @@
     "lc-14": {
       "slot": "01.jpg",
       "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: historical LC-14 aerial (hero) + Mercury-Atlas launches (MA-6/8/9))",
+      "approved_at": "2026-06-29"
+    },
+    "xichang-lc-3": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Xichang pad aerial; distinct hero)",
       "approved_at": "2026-06-29"
     }
   }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  // ORRERY GALLERY — 25 art-print posters in three style families.
+  // ORRERY GALLERY — 27 art-print posters in three style families.
   // Posters are ORRERY originals generated with Recraft 4.1 / Google
   // nano-banana via Higgsfield (provenance on /colophon). Each is a
   // 2:3 raster print; the on-page card uses a width-700 thumbnail and
@@ -16,9 +16,11 @@
     { id: 'moon', title: 'Moon', sub: 'Twelve footprints · one giant leap' },
     { id: 'mars', title: 'Mars', sub: 'Two years away · always waiting' },
     { id: 'saturn-v', title: 'Saturn V', sub: 'The mightiest rocket' },
+    { id: 'mir', title: 'Mir', sub: "Humanity's first great outpost" },
   ];
   const comic: Poster[] = [
     { id: 'sputnik', title: 'Sputnik', sub: 'The world looked up' },
+    { id: 'soyuz', title: 'Soyuz', sub: 'Since 1967 · still flying' },
     { id: 'voyager', title: 'Voyager', sub: 'Launched 1977 · still talking' },
     { id: 'sojourner', title: 'Sojourner', sub: 'First wheels' },
     { id: 'footprints', title: 'Footprints', sub: 'For a million years' },
@@ -51,7 +53,7 @@
   <header>
     <h1>ORRERY GALLERY</h1>
     <p class="lede">
-      Twenty-five original space posters — every era and agency, from Sputnik to Starship. Free to
+      Twenty-seven original space posters — every era and agency, from Sputnik to Starship. Free to
       download: click any poster for the full-resolution file to set as wallpaper, print, or use as
       a Zoom background. ORRERY wordmark on every piece.
     </p>
@@ -85,9 +87,9 @@
     </p>
     <p>
       <strong>Three style families.</strong> Vintage screen-print (Solar System, Earth, Moon, Mars, Saturn
-      V) · modern comic (Sputnik, Voyager, Sojourner, Footprints, Gagarin, Rosetta, Huygens, Hayabusa2,
-      Artemis II) · photoreal &amp; future (ISS, Tiangong, Perseverance, Space Shuttle, Solar Sail, Nuclear
-      Drive, James Webb, Hubble, Cassini, Starship).
+      V, Mir) · modern comic (Sputnik, Soyuz, Voyager, Sojourner, Footprints, Gagarin, Rosetta, Huygens,
+      Hayabusa2, Artemis II) · photoreal &amp; future (ISS, Tiangong, Perseverance, Space Shuttle, Solar
+      Sail, Nuclear Drive, James Webb, Hubble, Cassini, Starship).
     </p>
     <p>
       <strong>ORRERY originals.</strong> Generated with Recraft 4.1 and Google nano-banana via

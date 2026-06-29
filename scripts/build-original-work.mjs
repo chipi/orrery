@@ -395,7 +395,7 @@ const writing = [
   },
 ];
 
-// Gallery posters (/posters) — 25 ORRERY-original art prints generated with
+// Gallery posters (/posters) — 27 ORRERY-original art prints generated with
 // Recraft 4.1 and Google nano-banana via Higgsfield, then captioned and
 // wordmarked in-house. Not works of any space agency; no agency logos. Each
 // entry carries the full-res download file + a width-700 grid thumbnail.
@@ -406,7 +406,9 @@ const posters = [
   ['moon', 'Moon'],
   ['mars', 'Mars'],
   ['saturn-v', 'Saturn V'],
+  ['mir', 'Mir'],
   ['sputnik', 'Sputnik'],
+  ['soyuz', 'Soyuz'],
   ['voyager', 'Voyager'],
   ['sojourner', 'Sojourner'],
   ['footprints', 'Footprints'],

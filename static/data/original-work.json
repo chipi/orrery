@@ -1126,9 +1126,19 @@
       "thumb": "/images/posters/saturn-v.thumb.jpg"
     },
     {
+      "title": "Mir",
+      "file": "/images/posters/mir.jpg",
+      "thumb": "/images/posters/mir.thumb.jpg"
+    },
+    {
       "title": "Sputnik",
       "file": "/images/posters/sputnik.jpg",
       "thumb": "/images/posters/sputnik.thumb.jpg"
+    },
+    {
+      "title": "Soyuz",
+      "file": "/images/posters/soyuz.jpg",
+      "thumb": "/images/posters/soyuz.thumb.jpg"
     },
     {
       "title": "Voyager",
@@ -1689,7 +1699,7 @@
   "totals": {
     "anatomy_art": 144,
     "diagrams_science": 74,
-    "posters": 25,
+    "posters": 27,
     "models3d": 49,
     "canvas2d": 6,
     "ui": 4,

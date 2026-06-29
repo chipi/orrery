@@ -189,9 +189,9 @@
       "approved_at": "2026-06-12"
     },
     "taiyuan-lc-9": {
-      "slot": "04.jpg",
-      "reason": "url: text/logo/PDF/infographic in source URL; score: 1 < threshold 6; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source via zh-Commons: real LM-4C launch; replaces text/logo set)",
+      "approved_at": "2026-06-29"
     },
     "vega-2": {
       "slot": "03.jpg",

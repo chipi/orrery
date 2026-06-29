@@ -5218,32 +5218,6 @@
     "agency": "NASA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pinpoint_Landing_on_the_Ocean_of_Storms_%28LROC401_-_M175428601RE_25cm_AP12_area%29.png/960px-Pinpoint_Landing_on_the_Ocean_of_Storms_%28LROC401_-_M175428601RE_25cm_AP12_area%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
-  "taiyuan-lc-9/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/30MAR2023_Launch_of_Hongtu-1_Satellites.png/960px-30MAR2023_Launch_of_Hongtu-1_Satellites.png"
-  },
-  "taiyuan-lc-9/02.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/223460_China_Naval_Modernization_Implications_for_U.S._Navy_Capabilities_-_Background_and_Issues_for_Congress_%28IA_223460ChinaNavalModernizationImplicationsforUSNavyCapabilities-BackgroundandIssuesforCongress-crs%29.pdf/page1-960px-thumbnail.pdf.jpg"
-  },
-  "taiyuan-lc-9/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/28May2008.pdf/page1-960px-28May2008.pdf.jpg"
-  },
-  "taiyuan-lc-9/04.jpg": {
-    "commons_file": "Taiyuan Satellite Launch Center in SAR - 2023-06-20 (53264414596).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Taiyuan%20Satellite%20Launch%20Center%20in%20SAR%20-%202023-06-20%20(53264414596).jpg",
-    "credit": "CMSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:42:48.527Z"
-  },
-  "taiyuan-lc-9/05.jpg": {
-    "commons_file": "Taiyuan 112.55998E 37.86930N.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Taiyuan%20112.55998E%2037.86930N.jpg",
-    "credit": "CMSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:59:16.165Z"
-  },
   "tanegashima-yoshinobu/03.jpg": {
     "commons_file": "JAXA TNSC Yoshinobu LP1.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:JAXA%20TNSC%20Yoshinobu%20LP1.jpg",
@@ -6563,5 +6537,13 @@
   "starliner/05.jpg": {
     "agency": "NASA",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Crew%20Dragon%20and%20Boeing%20CST-100%20Starliner.jpg"
+  },
+  "taiyuan-lc-9/01.jpg": {
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Long%20March%204C%20launch%2020240511.png"
+  },
+  "taiyuan-lc-9/02.jpg": {
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%AD%E5%9B%BD%E6%88%90%E5%8A%9F%E5%8F%91%E5%B0%84%E8%AF%95%E9%AA%8C%E5%8D%81%E5%85%AD%E5%8F%B7A%20B%E6%98%9F%E5%92%8C%E8%AF%95%E9%AA%8C%E5%8D%81%E4%B8%83%E5%8F%B7%E5%8D%AB%E6%98%9F1.png"
   }
 }

@@ -292,7 +292,15 @@
     "audio_compact_stop_aria": "Detener recorrido",
     "audio_tour_note_stop": "detener",
     "plan_destination_itokawa": "Itokawa",
-    "plan_destination_donaldjohanson": "Donaldjohanson"
+    "plan_destination_donaldjohanson": "Donaldjohanson",
+    "fly_event_launch": "LANZAMIENTO",
+    "fly_event_descent_start": "DESCENSO",
+    "fly_event_ascent": "ASCENSO",
+    "fly_event_arrival": "LLEGADA",
+    "fly_event_anomaly": "ANOMALÍA",
+    "fly_event_flyby": "SOBREVUELO",
+    "earth_orbit_ruler_chip": "ÓRBITAS",
+    "earth_orbit_ruler_surface": "SUPERFICIE"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -620,7 +628,15 @@
     "plan_destination_dimorphos": "Dimorphos",
     "plan_destination_donaldjohanson": "Donaldjohanson",
     "plan_destination_leucus": "Leucus",
-    "plan_destination_orus": "Orus"
+    "plan_destination_orus": "Orus",
+    "fly_event_launch": "LANCEMENT",
+    "fly_event_descent_start": "DESCENTE",
+    "fly_event_ascent": "ASCENSION",
+    "fly_event_arrival": "ARRIVÉE",
+    "fly_event_anomaly": "ANOMALIE",
+    "fly_event_flyby": "SURVOL",
+    "earth_orbit_ruler_chip": "ORBITES",
+    "earth_orbit_ruler_surface": "SURFACE"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -942,7 +958,15 @@
     "plan_destination_leucus": "Leucus",
     "plan_destination_orus": "Orus",
     "plan_destination_patroclus": "Patroclus",
-    "plan_destination_menoetius": "Menoetius"
+    "plan_destination_menoetius": "Menoetius",
+    "fly_event_launch": "START",
+    "fly_event_descent_start": "ABSTIEG",
+    "fly_event_ascent": "AUFSTIEG",
+    "fly_event_arrival": "ANKUNFT",
+    "fly_event_anomaly": "ANOMALIE",
+    "fly_event_flyby": "VORBEIFLUG",
+    "earth_orbit_ruler_chip": "ORBITS",
+    "earth_orbit_ruler_surface": "OBERFLÄCHE"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1244,7 +1268,15 @@
     "library_episodes_tour_chip": "Tour {pos}/{total}",
     "audio_overlay_title_default": "Tour",
     "plan_destination_itokawa": "Itokawa",
-    "plan_destination_donaldjohanson": "Donaldjohanson"
+    "plan_destination_donaldjohanson": "Donaldjohanson",
+    "fly_event_launch": "LANÇAMENTO",
+    "fly_event_descent_start": "DESCIDA",
+    "fly_event_ascent": "SUBIDA",
+    "fly_event_arrival": "CHEGADA",
+    "fly_event_anomaly": "ANOMALIA",
+    "fly_event_flyby": "SOBREVOO",
+    "earth_orbit_ruler_chip": "ÓRBITAS",
+    "earth_orbit_ruler_surface": "SUPERFÍCIE"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -1540,7 +1572,15 @@
     "plan_destination_itokawa": "Itokawa",
     "plan_destination_didymos": "Didymos",
     "plan_destination_dimorphos": "Dimorphos",
-    "plan_destination_donaldjohanson": "Donaldjohanson"
+    "plan_destination_donaldjohanson": "Donaldjohanson",
+    "fly_event_launch": "LANCIO",
+    "fly_event_descent_start": "DISCESA",
+    "fly_event_ascent": "ASCESA",
+    "fly_event_arrival": "ARRIVO",
+    "fly_event_anomaly": "ANOMALIA",
+    "fly_event_flyby": "FLYBY",
+    "earth_orbit_ruler_chip": "ORBITE",
+    "earth_orbit_ruler_surface": "SUPERFICIE"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -1807,7 +1847,15 @@
     "audio_compact_clock_aria": "Протекло",
     "audio_compact_expand_title": "Прошири",
     "audio_compact_stop_aria": "Заустави туру",
-    "audio_tour_note_stop": "заустави"
+    "audio_tour_note_stop": "заустави",
+    "fly_event_launch": "ЛАНСИРАЊЕ",
+    "fly_event_descent_start": "СИЛАЗАК",
+    "fly_event_ascent": "УСПОН",
+    "fly_event_arrival": "ДОЛАЗАК",
+    "fly_event_anomaly": "АНОМАЛИЈА",
+    "fly_event_flyby": "ПРОЛЕТ",
+    "earth_orbit_ruler_chip": "ОРБИТЕ",
+    "earth_orbit_ruler_surface": "ПОВРШИНА"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -2122,7 +2170,15 @@
     "plan_link_opens_new_tab": "{label}（在新标签页中打开）",
     "launches_t0_in_minutes": "T-0 倒计时 {m} 分钟",
     "launches_citation_release_suffix": "Release {release}",
-    "launches_provenance_chip_via": "来源：{source}"
+    "launches_provenance_chip_via": "来源：{source}",
+    "fly_event_launch": "发射",
+    "fly_event_descent_start": "下降",
+    "fly_event_ascent": "上升",
+    "fly_event_arrival": "抵达",
+    "fly_event_anomaly": "异常",
+    "fly_event_flyby": "飞掠",
+    "earth_orbit_ruler_chip": "轨道",
+    "earth_orbit_ruler_surface": "表面"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -2454,7 +2510,15 @@
     "launches_t0_in_minutes": "T-0まで{m}分",
     "launches_citation_release_suffix": "リリース {release}",
     "launches_provenance_chip_via": "{source}経由",
-    "launches_agency_no_match": "「{query}」に一致する結果がありません。"
+    "launches_agency_no_match": "「{query}」に一致する結果がありません。",
+    "fly_event_launch": "打上げ",
+    "fly_event_descent_start": "降下",
+    "fly_event_ascent": "上昇",
+    "fly_event_arrival": "到着",
+    "fly_event_anomaly": "異常",
+    "fly_event_flyby": "フライバイ",
+    "earth_orbit_ruler_chip": "軌道",
+    "earth_orbit_ruler_surface": "地表"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -2789,7 +2853,15 @@
     "launches_t0_in_minutes": "T-0 {m}분",
     "launches_citation_release_suffix": "릴리스 {release}",
     "launches_provenance_chip_via": "{source} 제공",
-    "launches_agency_no_match": "\"{query}\"에 대한 결과 없음."
+    "launches_agency_no_match": "\"{query}\"에 대한 결과 없음.",
+    "fly_event_launch": "발사",
+    "fly_event_descent_start": "하강",
+    "fly_event_ascent": "상승",
+    "fly_event_arrival": "도착",
+    "fly_event_anomaly": "이상",
+    "fly_event_flyby": "근접통과",
+    "earth_orbit_ruler_chip": "궤도",
+    "earth_orbit_ruler_surface": "표면"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -3262,7 +3334,15 @@
     "launches_t0_in_minutes": "T-0 में {m}मि",
     "launches_citation_release_suffix": "रिलीज़ {release}",
     "launches_provenance_chip_via": "{source} के माध्यम से",
-    "launches_agency_no_match": "\"{query}\" के लिए कोई मिलान नहीं।"
+    "launches_agency_no_match": "\"{query}\" के लिए कोई मिलान नहीं।",
+    "fly_event_launch": "प्रक्षेपण",
+    "fly_event_descent_start": "अवतरण",
+    "fly_event_ascent": "उत्थान",
+    "fly_event_arrival": "आगमन",
+    "fly_event_anomaly": "विसंगति",
+    "fly_event_flyby": "उड़ान-पास",
+    "earth_orbit_ruler_chip": "कक्षाएँ",
+    "earth_orbit_ruler_surface": "सतह"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -3778,7 +3858,15 @@
     "launches_t0_in_minutes": "T-0 خلال {m}د",
     "launches_citation_release_suffix": "الإصدار {release}",
     "launches_provenance_chip_via": "عبر {source}",
-    "launches_agency_no_match": "لا توجد نتيجة لـ \"{query}\"."
+    "launches_agency_no_match": "لا توجد نتيجة لـ \"{query}\".",
+    "fly_event_launch": "إطلاق",
+    "fly_event_descent_start": "هبوط",
+    "fly_event_ascent": "صعود",
+    "fly_event_arrival": "وصول",
+    "fly_event_anomaly": "شذوذ",
+    "fly_event_flyby": "تحليق",
+    "earth_orbit_ruler_chip": "مدارات",
+    "earth_orbit_ruler_surface": "سطح"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -4113,7 +4201,15 @@
     "launches_t0_in_minutes": "T-0 через {m} мин",
     "launches_citation_release_suffix": "Релиз {release}",
     "launches_provenance_chip_via": "через {source}",
-    "launches_agency_no_match": "Нет совпадений для \"{query}\"."
+    "launches_agency_no_match": "Нет совпадений для \"{query}\".",
+    "fly_event_launch": "ЗАПУСК",
+    "fly_event_descent_start": "СПУСК",
+    "fly_event_ascent": "ПОДЪЁМ",
+    "fly_event_arrival": "ПРИБЫТИЕ",
+    "fly_event_anomaly": "АНОМАЛИЯ",
+    "fly_event_flyby": "ПРОЛЁТ",
+    "earth_orbit_ruler_chip": "ОРБИТЫ",
+    "earth_orbit_ruler_surface": "ПОВЕРХНОСТЬ"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -4414,6 +4510,14 @@
     "plan_destination_leucus": "Leucus",
     "plan_destination_orus": "Orus",
     "plan_destination_patroclus": "Patroclus",
-    "plan_destination_menoetius": "Menoetius"
+    "plan_destination_menoetius": "Menoetius",
+    "fly_event_launch": "LANCERING",
+    "fly_event_descent_start": "AFDALING",
+    "fly_event_ascent": "OPSTIJGING",
+    "fly_event_arrival": "AANKOMST",
+    "fly_event_anomaly": "ANOMALIE",
+    "fly_event_flyby": "SCHEERVLUCHT",
+    "earth_orbit_ruler_chip": "BANEN",
+    "earth_orbit_ruler_surface": "OPPERVLAK"
   }
 }

@@ -2117,7 +2117,9 @@
     "fly_phase_panel_aria": "任务阶段详情",
     "fly_phase_panel_close": "关闭阶段详情",
     "fly_phase_panel_eyebrow": "任务阶段",
-    "fly_phase_pill_open_aria": "了解{phase}阶段"
+    "fly_phase_pill_open_aria": "了解{phase}阶段",
+    "why_eccentricity_body": "椭圆的扁平程度。e=0 是正圆;e→1 是极扁椭圆。高离心率意味着近日点(近距离、高速)和远日点(远距离、低速)之间距离和速度变化剧烈——轨道呈现明显的不对称。",
+    "why_perihelion_body": "轨道上距太阳(或所绕中心天体)最近的点。也是速度最快的点——活力方程:r 小则 v 大。对彗星而言,近日点是活跃期;对航天器而言,这里是进行奥伯特机动的最佳位置。"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",

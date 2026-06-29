@@ -259,9 +259,9 @@
       "approved_at": "2026-06-12"
     },
     "lc-5": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than lc-5",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: Freedom 7 launch from LC-5 (hero) + Mercury-Redstone launches + preserved pad)",
+      "approved_at": "2026-06-29"
     },
     "apollo-csm-block-i": {
       "slot": "02.jpg",
@@ -416,6 +416,11 @@
     "cape-canaveral-slc-41": {
       "slot": "04.jpg",
       "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: full SLC-41 complex aerial w/ Atlas V on pad; dropped banner shot)",
+      "approved_at": "2026-06-29"
+    },
+    "lc-14": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: historical LC-14 aerial (hero) + Mercury-Atlas launches (MA-6/8/9))",
       "approved_at": "2026-06-29"
     }
   }

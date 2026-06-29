@@ -2481,41 +2481,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "lc-14/01.jpg": {
-    "commons_file": "Launch Complex 14.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch%20Complex%2014.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/02.jpg": {
-    "commons_file": "Launch-complex-14.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch-complex-14.png",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/03": {
-    "commons_file": "Glenn_at_the_Cape_-_GPN-2000-001028.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Glenn_at_the_Cape_-_GPN-2000-001028.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:38:02Z"
-  },
-  "lc-14/04.jpg": {
-    "commons_file": "LC-14 sign.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-14%20sign.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/05": {
-    "commons_file": "O'Malley's_Shining_Light.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:O'Malley's_Shining_Light.jpg",
-    "credit": "Bubba73 (Jud McCranie)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:39:02Z"
-  },
   "lc-34/01": {
     "commons_file": "Saturn IB at launch complex 34.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn%20IB%20at%20launch%20complex%2034.jpg",
@@ -2539,41 +2504,6 @@
     "fetched_at": "2026-06-22T11:18:31Z",
     "slice_a_iteration": 4,
     "slice_a_query": "lc 34"
-  },
-  "lc-5/01": {
-    "commons_file": "Cape_Canaveral_LC5&6_blockhouse.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_LC5%266_blockhouse.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:38:59Z"
-  },
-  "lc-5/02.jpg": {
-    "commons_file": "LC-5 blockhouse.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20blockhouse.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/03.jpg": {
-    "commons_file": "LC-5 firing button.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20firing%20button.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/04.jpg": {
-    "commons_file": "LC-5 pad in 2010.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20pad%20in%202010.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/05": {
-    "commons_file": "Launch_Complex_5,_May_5,_2001.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch_Complex_5%2C_May_5%2C_2001.jpg",
-    "credit": "Don Senda",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:37:51Z"
   },
   "long-march-2f/01.jpg": {
     "agency": "CMSA",
@@ -6515,5 +6445,45 @@
   "cape-canaveral-slc-41/04.jpg": {
     "agency": "NASA",
     "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0275/KSC-20220228-PH-KLS01_0275~medium.jpg"
+  },
+  "lc-14/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20View%20of%20Launch%20Complex%2014%20-%20GPN-2000-000609.jpg"
+  },
+  "lc-14/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Atlas%20Rocket%20on%20the%20Launch%20Pad%20(9460620664).jpg"
+  },
+  "lc-14/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20the%20Mercury-Atlas%206%20mission%20(S62-00954).jpg"
+  },
+  "lc-14/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Atlas%208%20launch.jpg"
+  },
+  "lc-14/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20Mercury-Atlas%209%20(MA-9)%20on%20May%2015%2C%201963.jpg"
+  },
+  "lc-5/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20Freedom%207%20-%20GPN-2000-000859.jpg"
+  },
+  "lc-5/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LC-5%20pad%20in%202010.jpg"
+  },
+  "lc-5/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Redstone%203%20Launch%20MSFC-6100884.jpg"
+  },
+  "lc-5/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Redstone%204%20July%2019%20launch%20attempt%2061-MR4-65.jpg"
+  },
+  "lc-5/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20Complex%205%2C%20May%205%2C%202001.jpg"
   }
 }

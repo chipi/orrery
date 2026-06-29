@@ -3426,6 +3426,26 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   { id: 'xichang-lc-2', query: 'Xichang Long March 3B launch', agency: 'CMSA' },
   { id: 'xichang-lc-3', query: 'Xichang Long March 3 first launch', agency: 'CMSA' },
   { id: 'taiyuan-lc-9', query: 'Taiyuan Long March 4 launch satellite', agency: 'CMSA' },
+  {
+    id: 'lc-14',
+    query: 'Launch Complex 14 Cape Canaveral Mercury Atlas',
+    agency: 'NASA',
+    extraQueries: [
+      'Mercury Atlas 6 Friendship 7 launch',
+      'John Glenn Mercury Atlas launch pad',
+      'Atlas LV-3B Mercury launch Cape Canaveral',
+    ],
+  },
+  {
+    id: 'lc-5',
+    query: 'Mercury Redstone launch Cape Canaveral Complex 5',
+    agency: 'NASA',
+    extraQueries: [
+      'Freedom 7 Mercury Redstone 3 launch',
+      'Alan Shepard Mercury Redstone launch 1961',
+      'Mercury Redstone 4 Liberty Bell 7 launch',
+    ],
+  },
 ];
 
 /**

@@ -38,6 +38,10 @@ const args = Object.fromEntries(process.argv.slice(2).map((a) => {
 }));
 const locales = !args.locales || args.locales === 'all' ? ALL : String(args.locales).split(',');
 const explicitKeys = args.keys ? String(args.keys).split(',') : null;
+const fixPlaceholders = !!args['fix-placeholders']; // re-translate keys whose {placeholders} got dropped
+
+const phset = (s) => new Set(String(s).match(/\{[^}]+\}/g) || []);
+const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
 
 // Values we never machine-translate: too-short, aerospace acronyms, and
 // template/symbol-only strings (the LLM would mangle them).
@@ -80,8 +84,12 @@ for (const loc of locales) {
   const messages = JSON.parse(fs.readFileSync(mpath, 'utf8'));
   const keys = explicitKeys
     ? explicitKeys.filter((k) => k in en)
-    : Object.keys(en).filter((k) => !k.startsWith('$') && typeof en[k] === 'string'
-        && !trivial(en[k]) && typeof messages[k] === 'string' && messages[k].trim() === en[k].trim());
+    : fixPlaceholders
+      ? Object.keys(en).filter((k) => !k.startsWith('$') && typeof en[k] === 'string'
+          && phset(en[k]).size > 0 && typeof messages[k] === 'string'
+          && !sameSet(phset(en[k]), phset(messages[k])))
+      : Object.keys(en).filter((k) => !k.startsWith('$') && typeof en[k] === 'string'
+          && !trivial(en[k]) && typeof messages[k] === 'string' && messages[k].trim() === en[k].trim());
   if (keys.length === 0) { console.log(`${loc}: nothing to do`); continue; }
   process.stdout.write(`${loc}: ${keys.length} keys `);
   overrides[loc] = overrides[loc] ?? {};

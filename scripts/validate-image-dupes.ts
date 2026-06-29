@@ -376,6 +376,19 @@ export const ALLOWLIST: ReadonlySet<string> = new Set<string>([
   'f2b5ec5e', // magellan/02
   'fded2d7a', // voyager-2/05
   'fe7c9320', // hope/03 + hope-probe/03
+  // ALLOWLIST_AUTHORIZED (2026-06-29) — fleet review: galileo fleet card
+  // re-uses the mission's gorgeous Galileo imagery (gold spacecraft +
+  // Jupiter/Io artist renders). Marko-approved best-of-both composition.
+  'b36d1d73', // fleet-galleries/galileo/01 ← missions/galileo/01 (gold spacecraft)
+  '0b925bf0', // fleet-galleries/galileo/02 ← missions/galileo/04 (Jupiter+Io render, hero)
+  '8bcc4018', // fleet-galleries/galileo/03 ← missions/galileo/03 (Io render)
+  // ALLOWLIST_AUTHORIZED (2026-06-29) — fleet review: MRO fleet card hero
+  // re-uses the mars-site MRO spacecraft render ("actual look as spaceship").
+  'a9f5a668', // fleet-galleries/mro/01 ← mars-sites/mro/01 (MRO spacecraft render)
+  // ALLOWLIST_AUTHORIZED (2026-06-29) — fleet review: Viking 2 fleet card
+  // re-uses the mars-site's actual-lander deck + arm self-portraits.
+  'af8050bd', // fleet-galleries/viking2-lander/01 ← mars-sites/viking2-lander/01 (lander deck, hero)
+  '48b90245', // fleet-galleries/viking2-lander/02 ← mars-sites/viking2-lander/03 (lander arm)
 ]);
 
 /** Surface roots under static/images/. Top-level subdir of a base

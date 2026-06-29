@@ -90,7 +90,7 @@
     },
     "galileo": {
       "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mission imagery; hero = Jupiter+Io artist render at slot 02)",
       "approved_at": "2026-06-29"
     },
     "gemini": {
@@ -129,9 +129,9 @@
       "approved_at": "2026-06-12"
     },
     "mro": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than mro",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mars-site MRO spacecraft render as hero; keep HiRISE science terrain in gallery)",
+      "approved_at": "2026-06-29"
     },
     "new-shepard": {
       "slot": "02.jpg",

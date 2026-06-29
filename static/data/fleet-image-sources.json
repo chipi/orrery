@@ -1733,24 +1733,21 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "galileo/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/S89-44173/S89-44173~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/02.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/89PC-0698/89PC-0698~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/03.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/S89-42091/S89-42091~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/04.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA00604/PIA00604~small.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/89PC-0698/89PC-0698~medium.jpg"
   },
   "galileo/05.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA01200/PIA01200~thumb.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/S89-42091/S89-42091~medium.jpg"
   },
   "gemini/01.jpg": {
     "agency": "NASA",
@@ -3618,7 +3615,7 @@
   },
   "mro/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA19917/PIA19917~small.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Reconnaissance%20Orbiter.jpg"
   },
   "mro/02.jpg": {
     "agency": "NASA",
@@ -6377,14 +6374,10 @@
     "smithsonian_unit": "NASM"
   },
   "viking2-lander/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
-    "credit": "agency original via Wikimedia Commons mirror",
-    "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-22T11:18:41Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "viking2 lander"
+    "commons_file": "Viking2lander1.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Viking2lander1.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)"
   },
   "giotto/01.jpg": {
     "source_type": "wikimedia-commons",
@@ -6573,5 +6566,11 @@
       "verdict": "related",
       "confidence": 0.92
     }
+  },
+  "viking2-lander/02.jpg": {
+    "commons_file": "Mars Viking 22e169.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Viking%2022e169.png",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)"
   }
 }

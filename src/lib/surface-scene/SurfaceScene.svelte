@@ -303,7 +303,6 @@
   let layerObservatories = $state(true);
   let layerConstellations = $state(true);
   let layerComsats = $state(true);
-  let layerMoonOrbiters = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
@@ -1212,7 +1211,6 @@
             layerObservatories = defaults.observatory;
             layerConstellations = defaults.constellation;
             layerComsats = defaults.comsat;
-            layerMoonOrbiters = defaults.moonOrbiter;
 
             const satLayer = buildSatelliteLayer({
               scene,
@@ -3844,9 +3842,7 @@
                     ? layerConstellations
                     : s.category === 'comsat'
                       ? layerComsats
-                      : s.category === 'moon-orbiter'
-                        ? layerMoonOrbiters
-                        : true;
+                      : true; // moon-orbiters (+ uncategorised) ride the master ORBITERS toggle
             // Nation filter (#363) — earth orbiters bucketed by primary agency.
             // Body-focus gate (#zoom) — drop sats + rings on deep zoom too.
             const on =
@@ -4993,14 +4989,10 @@
                     toggle: () => (layerComsats = !layerComsats),
                     disabled: () => !layerOrbiters,
                   },
-                  {
-                    testid: 'layer-moon-orbiters',
-                    label: m.ui_layer_moon_orbiters(),
-                    title: m.earth_layer_tip_lunar(),
-                    active: () => layerMoonOrbiters,
-                    toggle: () => (layerMoonOrbiters = !layerMoonOrbiters),
-                    disabled: () => !layerOrbiters,
-                  },
+                  // MOON ORBITERS chip removed (2026-06-29 user direction):
+                  // the master ORBITERS toggle already covers lunar orbiters,
+                  // so a separate sub-chip was redundant. Moon-orbiters now
+                  // ride the ORBITERS master like any other orbiter.
                 ]
               : []),
           ]}

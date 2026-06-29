@@ -395,9 +395,9 @@ const writing = [
   },
 ];
 
-// Gallery posters (/posters) — 27 ORRERY-original art prints generated with
-// Recraft 4.1 and Google nano-banana via Higgsfield, then captioned and
-// wordmarked in-house. Not works of any space agency; no agency logos. Each
+// Gallery posters (/posters) — 27 ORRERY-original art prints, AI-generated,
+// then captioned and wordmarked in-house. Not works of any space agency; no
+// agency logos. Each
 // entry carries the full-res download file + a width-700 grid thumbnail.
 const posters = [
   ['solar-system-orrery', 'Solar System'],

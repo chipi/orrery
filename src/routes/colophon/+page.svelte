@@ -108,13 +108,13 @@
       </ul>
     </section>
 
-    <!-- Gallery posters: ORRERY originals generated via Higgsfield (/posters). -->
+    <!-- Gallery posters: ORRERY originals, AI-generated (/posters). -->
     <section class="block" aria-labelledby="sec-posters">
       <h2 id="sec-posters">Gallery posters<span class="count">{data.posters.length}</span></h2>
       <p class="block-note">
         The <a href="{base}/posters">/posters</a> gallery is {data.posters.length} ORRERY-original art
-        prints, generated with Recraft 4.1 and Google nano-banana via Higgsfield, then captioned and
-        wordmarked in-house. They are not works of any space agency and carry no agency logos.
+        prints, AI-generated, then captioned and wordmarked in-house. They are not works of any space
+        agency and carry no agency logos.
       </p>
       <ul class="thumb-grid">
         {#each data.posters as p (p.file)}

@@ -1,7 +1,7 @@
 <script lang="ts">
   // ORRERY GALLERY — 27 art-print posters in three style families.
-  // Posters are ORRERY originals generated with Recraft 4.1 / Google
-  // nano-banana via Higgsfield (provenance on /colophon). Each is a
+  // Posters are ORRERY originals, AI-generated (provenance on /colophon).
+  // Each is a
   // 2:3 raster print; the on-page card uses a width-700 thumbnail and
   // links to the full-resolution JPG for download. Subjects + taglines
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
@@ -92,8 +92,8 @@
       Sail, Nuclear Drive, James Webb, Hubble, Cassini, Starship).
     </p>
     <p>
-      <strong>ORRERY originals.</strong> Generated with Recraft 4.1 and Google nano-banana via
-      Higgsfield — not works of any space agency. Full provenance on
+      <strong>ORRERY originals.</strong> AI-generated — not works of any space agency. Full
+      provenance on
       <a href="{base}/colophon">/colophon</a>.
     </p>
   </footer>

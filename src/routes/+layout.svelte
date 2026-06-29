@@ -138,10 +138,33 @@
     // The SvelteKit + vite-pwa pipeline always emits the SW at `/sw.js`
     // regardless of the current page, so register absolute + scope root.
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
-      // Hourly check for new builds. autoUpdate strategy installs any
-      // new bundle the check finds, no user prompt required.
+      // Silent rollover: when a freshly-installed SW (skipWaiting +
+      // clientsClaim, see vite.config) takes control, reload once so the
+      // open page swaps to the new build with no manual refresh. Guard on
+      // an existing controller so a first-ever install doesn't reload.
+      let reloading = false;
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (reloading) return;
+          reloading = true;
+          window.location.reload();
+        });
+      }
+      // Register under the deploy's BASE path: `/sw.js` on the root-served
+      // prod VPS (base ''), `/orrery/sw.js` on GitHub Pages (base
+      // '/orrery'). The prior hardcoded '/sw.js' 404'd on GH Pages — the
+      // SW actually lives at `${base}/sw.js` — so updates never propagated
+      // and visitors got stranded on a stale precache. (2026-06-29)
+      const registration = await navigator.serviceWorker.register(`${base}/sw.js`, {
+        scope: `${base}/`,
+      });
+      // Check for new builds hourly AND whenever the tab regains focus —
+      // mobile users return to a backgrounded PWA far more often than they
+      // hard-reload, so this is what actually applies a deploy for them.
       setInterval(() => void registration.update(), 60 * 60 * 1000);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') void registration.update();
+      });
     } catch {
       // SW registration failed; carry on. Manifest-only install still
       // works on Android.

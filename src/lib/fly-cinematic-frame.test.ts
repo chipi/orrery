@@ -99,11 +99,13 @@ describe('runCinematicFrame — peak-hold arm step (W3.1 + W3.2 window)', () => 
       1_000,
     );
     expect(out.peakHoldArmedThisFrame).toBe(true);
-    expect(cine.peakHoldUntil).toBe(1_000 + CINEMATIC_TIMINGS.PEAK_HOLD_DURATION_MS);
+    // Hold duration is the dynamic `defaultHoldMs` (default 2500 ms) from the
+    // peak-hold arm step — the legacy static PEAK_HOLD_DURATION_MS path was
+    // intentionally removed in the montage rework (2026-06).
+    const HOLD_MS = 2_500;
+    expect(cine.peakHoldUntil).toBe(1_000 + HOLD_MS);
     expect(cine.peakHoldArmedForFlybyMet).toBe(193);
-    expect(cine.afterglowUntil).toBe(
-      1_000 + CINEMATIC_TIMINGS.PEAK_HOLD_DURATION_MS + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS,
-    );
+    expect(cine.afterglowUntil).toBe(1_000 + HOLD_MS + CINEMATIC_TIMINGS.AFTERGLOW_DURATION_MS);
     expect(cine.afterglowStartCamR).toBe(0); // cleared on arm
     expect(out.isCinematicFreeze).toBe(true);
   });

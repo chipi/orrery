@@ -89,9 +89,9 @@
       "approved_at": "2026-06-12"
     },
     "galileo": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mission imagery; hero = Jupiter+Io artist render at slot 02)",
+      "approved_at": "2026-06-29"
     },
     "gemini": {
       "slot": "03.jpg",
@@ -129,9 +129,9 @@
       "approved_at": "2026-06-12"
     },
     "mro": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than mro",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mars-site MRO spacecraft render as hero; keep HiRISE science terrain in gallery)",
+      "approved_at": "2026-06-29"
     },
     "new-shepard": {
       "slot": "02.jpg",
@@ -144,9 +144,9 @@
       "approved_at": "2026-06-12"
     },
     "phobos-2": {
-      "slot": "02.jpg",
-      "reason": "not-scored",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "approved_at": "2026-06-29"
     },
     "pioneer-10": {
       "slot": "05.jpg",
@@ -169,9 +169,9 @@
       "approved_at": "2026-06-12"
     },
     "rosetta": {
-      "slot": "03.jpg",
-      "reason": "vision-rejected: score-below-threshold; subject names a different entity than rosetta",
-      "approved_at": "2026-06-12"
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+      "approved_at": "2026-06-29"
     },
     "saturn-ib": {
       "slot": "02.jpg",
@@ -189,9 +189,9 @@
       "approved_at": "2026-06-12"
     },
     "taiyuan-lc-9": {
-      "slot": "04.jpg",
-      "reason": "url: text/logo/PDF/infographic in source URL; score: 1 < threshold 6; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source via zh-Commons: real LM-4C launch; replaces text/logo set)",
+      "approved_at": "2026-06-29"
     },
     "vega-2": {
       "slot": "03.jpg",
@@ -199,9 +199,9 @@
       "approved_at": "2026-06-20"
     },
     "viking-1": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than viking-1",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "Viking lander model (distinct from orbiter card) — Marko 2026-06-29 (dedup/junk cleanup)",
+      "approved_at": "2026-06-29"
     },
     "voyager-2": {
       "slot": "01.jpg",
@@ -259,9 +259,9 @@
       "approved_at": "2026-06-12"
     },
     "lc-5": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than lc-5",
-      "approved_at": "2026-06-12"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: Freedom 7 launch from LC-5 (hero) + Mercury-Redstone launches + preserved pad)",
+      "approved_at": "2026-06-29"
     },
     "apollo-csm-block-i": {
       "slot": "02.jpg",
@@ -349,9 +349,9 @@
       "approved_at": "2026-06-23"
     },
     "xichang-lc-2": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Yaogan-36 launch from Xichang; distinct from LM-3B card)",
+      "approved_at": "2026-06-29"
     },
     "space-shuttle-orbiter": {
       "slot": "05.jpg",
@@ -372,6 +372,66 @@
       "slot": "05.jpg",
       "reason": "G5 hero — Marko 2026-06-23 (G N = 0N.jpg convention)",
       "approved_at": "2026-06-23"
+    },
+    "kourou-ela-3": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+      "approved_at": "2026-06-29"
+    },
+    "lunar-orbiter-3": {
+      "slot": "05.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G4)",
+      "approved_at": "2026-06-29"
+    },
+    "gagarins-start": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+      "approved_at": "2026-06-29"
+    },
+    "luna-16": {
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G2; old hero 01 was a broken half-grey LROC tile)",
+      "approved_at": "2026-06-29"
+    },
+    "new-glenn": {
+      "slot": "02.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: New Glenn maiden launch from pad, USSF PD)",
+      "approved_at": "2026-06-29"
+    },
+    "starliner": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: curated ISS-docking photos; hero = Starliner docked to Harmony over Earth)",
+      "approved_at": "2026-06-29"
+    },
+    "luna-9": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Luna 9 spacecraft + first-Moon-surface photo)",
+      "approved_at": "2026-06-29"
+    },
+    "venera-7": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Venera descent capsule + stamp)",
+      "approved_at": "2026-06-29"
+    },
+    "cape-canaveral-slc-41": {
+      "slot": "04.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: full SLC-41 complex aerial w/ Atlas V on pad; dropped banner shot)",
+      "approved_at": "2026-06-29"
+    },
+    "lc-14": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: historical LC-14 aerial (hero) + Mercury-Atlas launches (MA-6/8/9))",
+      "approved_at": "2026-06-29"
+    },
+    "xichang-lc-3": {
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Xichang pad aerial; distinct hero)",
+      "approved_at": "2026-06-29"
+    },
+    "viking1-orbiter": {
+      "slot": "01.jpg",
+      "reason": "Viking orbiter+lander spacecraft — Marko 2026-06-29 (dedup/junk cleanup)",
+      "approved_at": "2026-06-29"
     }
   }
 }

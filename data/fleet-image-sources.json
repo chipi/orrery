@@ -325,29 +325,20 @@
     }
   },
   "ariane-6/02.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg?width=1600",
-    "credit": "Ariane 5 with James Webb Space Telescope Prelaunch",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:39:50Z",
-    "slice_a_iteration": "safari-ua-retry-2026-06-23",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_ESA-CC.jpg"
   },
   "ariane-6/03.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/AERONAUTICS_AND_ASTRONAUTICS_A_CHRONOLOGY_2008.pdf/page1-960px-AERONAUTICS_AND_ASTRONAUTICS_A_CHRONOLOGY_2008.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_upper_stage_on_DLR_P5.2_test_stand_01.jpg"
   },
   "ariane-6/04.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SP-4012v5.pdf/page1-500px-SP-4012v5.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_upper_stage_unpacked_at_DLR_Lampoldshausen_01.jpg"
   },
   "ariane-6/05.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Taming_Liquid_Hydrogen_The_Centaur_Upper_Stage_Rocket.pdf/page1-960px-Taming_Liquid_Hydrogen_The_Centaur_Upper_Stage_Rocket.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centre_Spatial_Guyanais_-_Ariane_6_Launchpad_(Under_construction).jpg"
   },
   "atlantis/01.jpg": {
     "agency": "NASA",
@@ -744,26 +735,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "cape-canaveral-slc-41/01.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0265/KSC-20210621-PH-KLS01_0265~medium.jpg"
-  },
-  "cape-canaveral-slc-41/02.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0243/KSC-20210621-PH-KLS01_0243~medium.jpg"
-  },
-  "cape-canaveral-slc-41/03.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0248/KSC-20210621-PH-KLS01_0248~medium.jpg"
-  },
-  "cape-canaveral-slc-41/04.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0233/KSC-20210621-PH-KLS01_0233~medium.jpg"
-  },
-  "cape-canaveral-slc-41/05.jpg": {
-    "agency": "ULA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210621-PH-KLS01_0095/KSC-20210621-PH-KLS01_0095~medium.jpg"
-  },
   "cargo-dragon-2/01.jpg": {
     "agency": "SPACEX",
     "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20221126-PH-KMO06_0019/KSC-20221126-PH-KMO06_0019~medium.jpg"
@@ -989,12 +960,12 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang-e-5-assembly-CG-1-Cropped.jpg"
   },
   "change-5/02.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Assessing_accuracy_in_varying_Lidar_data_point_densities_in_Digital_Elevation_Maps_%28IA_assessingccuracy109453928%29.pdf/page1-960px-Assessing_accuracy_in_varying_Lidar_data_point_densities_in_Digital_Elevation_Maps_%28IA_assessingccuracy109453928%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "agency": "CNSA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Launch_of_Chang%27e_5.png"
   },
   "change-5/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/S41550-021-01550-6.pdf/page1-960px-S41550-021-01550-6.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "agency": "CNSA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Returner_and_Main_Parachute_of_Chang%27e_5.jpg"
   },
   "change-5/04.jpg": {
     "agency": "CMSA",
@@ -1733,24 +1704,21 @@
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
   "galileo/01.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/S89-44173/S89-44173~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/02.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/89PC-0698/89PC-0698~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/03.jpg": {
-    "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/S89-42091/S89-42091~medium.jpg"
+    "agency": "NASA"
   },
   "galileo/04.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA00604/PIA00604~small.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/89PC-0698/89PC-0698~medium.jpg"
   },
   "galileo/05.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA01200/PIA01200~thumb.jpg"
+    "sourceUrl": "https://images-assets.nasa.gov/image/S89-42091/S89-42091~medium.jpg"
   },
   "gemini/01.jpg": {
     "agency": "NASA",
@@ -2198,8 +2166,8 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/STS071-744-010_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_7c6e2300799444220d7b4f58a49b226e.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   },
   "iss/04.jpg": {
-    "agency": "MULTI",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/NASA%27s_Management_of_the_International_Space_Station_-_2021-11-30_%28IG-22-005%2C_redacted_images%29.pdf/page1-960px-NASA%27s_Management_of_the_International_Space_Station_-_2021-11-30_%28IG-22-005%2C_redacted_images%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_station_pictured_from_the_SpaceX_Crew_Dragon_5_(cropped).jpg"
   },
   "iss/05.jpg": {
     "agency": "MULTI",
@@ -2504,41 +2472,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "lc-14/01.jpg": {
-    "commons_file": "Launch Complex 14.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch%20Complex%2014.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/02.jpg": {
-    "commons_file": "Launch-complex-14.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch-complex-14.png",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/03": {
-    "commons_file": "Glenn_at_the_Cape_-_GPN-2000-001028.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Glenn_at_the_Cape_-_GPN-2000-001028.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:38:02Z"
-  },
-  "lc-14/04.jpg": {
-    "commons_file": "LC-14 sign.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-14%20sign.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-14/05": {
-    "commons_file": "O'Malley's_Shining_Light.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:O'Malley's_Shining_Light.jpg",
-    "credit": "Bubba73 (Jud McCranie)",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:39:02Z"
-  },
   "lc-34/01": {
     "commons_file": "Saturn IB at launch complex 34.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Saturn%20IB%20at%20launch%20complex%2034.jpg",
@@ -2563,41 +2496,6 @@
     "slice_a_iteration": 4,
     "slice_a_query": "lc 34"
   },
-  "lc-5/01": {
-    "commons_file": "Cape_Canaveral_LC5&6_blockhouse.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_LC5%266_blockhouse.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:38:59Z"
-  },
-  "lc-5/02.jpg": {
-    "commons_file": "LC-5 blockhouse.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20blockhouse.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/03.jpg": {
-    "commons_file": "LC-5 firing button.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20firing%20button.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/04.jpg": {
-    "commons_file": "LC-5 pad in 2010.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:LC-5%20pad%20in%202010.jpg",
-    "credit": "NASA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T18:08:22.718Z"
-  },
-  "lc-5/05": {
-    "commons_file": "Launch_Complex_5,_May_5,_2001.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Launch_Complex_5%2C_May_5%2C_2001.jpg",
-    "credit": "Don Senda",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-09T12:37:51Z"
-  },
   "long-march-2f/01.jpg": {
     "agency": "CMSA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Launch_of_Shenzhou_13.jpg/960px-Launch_of_Shenzhou_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -2619,32 +2517,20 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Shenzhou_18_rollout_23.png/960px-Shenzhou_18_rollout_23.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   },
   "long-march-3b/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Chang_zheng_3b_and_intelsat708_failure.jpg"
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CZ-3B_rendering.jpg"
   },
   "long-march-3b/02.jpg": {
     "agency": "CMSA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/The_Launch_of_Long_March_3B_Rocket.jpg/960px-The_Launch_of_Long_March_3B_Rocket.jpg"
-  },
-  "long-march-3b/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/LEOonthecheap.pdf/page1-960px-LEOonthecheap.pdf.jpg"
-  },
-  "long-march-3b/04.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Yaogan-36_satellite_launch.png/960px-Yaogan-36_satellite_launch.png"
-  },
-  "long-march-3b/05.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yaogan-36_satellite_launch_%28cropped%29.png/960px-Yaogan-36_satellite_launch_%28cropped%29.png"
   },
   "long-march-5/01.jpg": {
     "agency": "CMSA",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launching_Tianhe_Core_Module.jpg"
   },
   "long-march-5/02.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_bat%E2%80%93bird%E2%80%93bug_battle_-_daily_flight_activity_of_insects_and_their_predators_over_a_rice_field_revealed_by_high-resolution_Scheimpflug_Lidar.pdf/page1-960px-The_bat%E2%80%93bird%E2%80%93bug_battle_-_daily_flight_activity_of_insects_and_their_predators_over_a_rice_field_revealed_by_high-resolution_Scheimpflug_Lidar.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mengtian_launch.jpg"
   },
   "long-march-5/03.jpg": {
     "agency": "CMSA",
@@ -2729,7 +2615,7 @@
   },
   "luna-16/01.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/US_and_USSR_Exchange_Lunar_Samples_%2818614896961%29.jpg/960px-US_and_USSR_Exchange_Lunar_Samples_%2818614896961%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9%20%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8%20%22%D0%9B%D1%83%D0%BD%D0%B0-16%22.jpg"
   },
   "luna-16/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -2745,37 +2631,7 @@
   },
   "luna-16/05.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf/page1-960px-Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "luna-9/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%209%20proposed%202026%20landing%20site.png?width=1600",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%209%20proposed%202026%20landing%20site.png?width=1600",
-    "credit": "agency original via Wikimedia Commons mirror",
-    "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-22T11:19:06Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "luna 9",
-    "vision": {
-      "verdict": "unsure",
-      "confidence": 0
-    }
-  },
-  "luna-9/02.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/In_the_land_of_flowers%2C_a_series_of_revised_sketches_which_first_appeared_in_%22The_Mayflower%22_.._%28IA_inlandofflowerss00pike%29.pdf/page1-500px-In_the_land_of_flowers%2C_a_series_of_revised_sketches_which_first_appeared_in_%22The_Mayflower%22_.._%28IA_inlandofflowerss00pike%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "luna-9/03.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Moon.pdf/page1-960px-Moon.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "luna-9/04.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Unconventional%2C_Contrary%2C_and_Ugly-_The_Lunar_Landing_Research_Vehicle_-_NASA_Monographs_in_Aerospace_History%2C_No._35_%282006%29.pdf/page1-960px-Unconventional%2C_Contrary%2C_and_Ugly-_The_Lunar_Landing_Research_Vehicle_-_NASA_Monographs_in_Aerospace_History%2C_No._35_%282006%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "luna-9/05.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Updates_in_Lunar_and_Planetary_Mission_Cartography.pdf/page1-960px-Updates_in_Lunar_and_Planetary_Mission_Cartography.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Soviet%20Union%201970%20CPA%203953%20stamp%20(Capsule%20with%20Moon%20Rock%20Landing%20on%20Earth%20(1970.09.24)).jpg"
   },
   "luna10/01": {
     "commons_file": "Luna_10_Space_Probe.jpg",
@@ -3618,7 +3474,7 @@
   },
   "mro/01.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://images-assets.nasa.gov/image/PIA19917/PIA19917~small.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mars%20Reconnaissance%20Orbiter.jpg"
   },
   "mro/02.jpg": {
     "agency": "NASA",
@@ -3642,39 +3498,19 @@
   },
   "n1/02.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Venture_Into_Space-_Early_Years_of_Goddard_Space_Flight_Center_%28NASA_SP-4301%29.pdf/page1-960px-Venture_Into_Space-_Early_Years_of_Goddard_Space_Flight_Center_%28NASA_SP-4301%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:N1_1M1_mockup_on_the_launch_pad_at_the_Baikonur_Cosmodrome_in_late_1967.jpg"
   },
   "n1/03.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deep_Space_Chronicle-_A_Chronology_of_Deep_Space_and_Planetary_Probes_1958-2000_-_NASA_Monographs_in_Aerospace_History%2C_No._24_%282002%29.pdf/page1-960px-Deep_Space_Chronicle-_A_Chronology_of_Deep_Space_and_Planetary_Probes_1958-2000_-_NASA_Monographs_in_Aerospace_History%2C_No._24_%282002%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:3F9A5745_(37179410351).jpg"
   },
   "n1/04.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Beyond_Earth_by_Asif_Siddiqi_%282018%29.pdf/page1-960px-Beyond_Earth_by_Asif_Siddiqi_%282018%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:N1_rocket_drawing.png"
   },
   "n1/05.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/The_Spoken_Word_III-_Recollections_of_Dryden_History%2C_The_Shuttle_Years_-_NASA_Monographs_in_Aerospace_History%2C_No._52_%282013%29.pdf/page1-960px-The_Spoken_Word_III-_Recollections_of_Dryden_History%2C_The_Shuttle_Years_-_NASA_Monographs_in_Aerospace_History%2C_No._52_%282013%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "new-glenn/01.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Launch_Complex_36_aerial.webp"
-  },
-  "new-glenn/02.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Launch_Complex_11_aerial.webp"
-  },
-  "new-glenn/03.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/NSF-2019-09-11-16-45-25-803.webp/960px-NSF-2019-09-11-16-45-25-803.webp.png"
-  },
-  "new-glenn/04.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg/960px-Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg"
-  },
-  "new-glenn/05.jpg": {
-    "agency": "BLUE_ORIGIN",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg/960px-LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Development_of_the_Soviet_N1_Rocket.jpg"
   },
   "new-shepard/01.jpg": {
     "agency": "BLUE_ORIGIN",
@@ -4247,7 +4083,7 @@
   },
   "rosetta/02.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Rosetta_orbiter_philae_lander_67P_comet_in_scale.svg/960px-Rosetta_orbiter_philae_lander_67P_comet_in_scale.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Comet%2067P%20True%20color.jpg"
   },
   "rosetta/03.jpg": {
     "agency": "ESA",
@@ -4476,19 +4312,19 @@
   },
   "salyut-7/02.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Walking_to_Olympus-_An_EVA_Chronology%2C_1997%E2%80%932011%2C_Volume_2_-_NASA_Monographs_in_Aerospace_History%2C_No._50_%282016%29.pdf/page1-960px-Walking_to_Olympus-_An_EVA_Chronology%2C_1997%E2%80%932011%2C_Volume_2_-_NASA_Monographs_in_Aerospace_History%2C_No._50_%282016%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Model_of_Salyut-7_with_two_Soyuz_spacecrafts.JPEG"
   },
   "salyut-7/03.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf/page1-960px-Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salyut_7_paper_model.JPG"
   },
   "salyut-7/04.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Scientific_and_Technical_Information_Office_Astronautics_and_aeronautics_1971.pdf/page1-960px-Scientific_and_Technical_Information_Office_Astronautics_and_aeronautics_1971.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salyut_7_drawing.png"
   },
   "salyut-7/05.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Scientific_and_Technical_Information_Office_Astronautics_and_aeronautics_1991-1995.pdf/page1-960px-Scientific_and_Technical_Information_Office_Astronautics_and_aeronautics_1991-1995.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salyut_7_and_Cosmos_1686_drawing.png"
   },
   "saturn-ib/01.jpg": {
     "agency": "NASA",
@@ -5138,35 +4974,6 @@
     "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
     "fetched_at": "2026-06-14T18:08:22.718Z"
   },
-  "starliner/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:CST-100.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/CST-100.jpg?width=1600",
-    "credit": "https://images.nasa.gov/details/KSC-2011-8114 http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=57309 on the Wayback Machine at the Wayback Machine",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:37:03Z",
-    "slice_a_iteration": "handsource-2026-06-22",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "starliner/02.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0001/KSC-20210723-PH-BOE01_0001~small.jpg"
-  },
-  "starliner/03.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0004/KSC-20210723-PH-BOE01_0004~small.jpg"
-  },
-  "starliner/04.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20210723-PH-BOE01_0003/KSC-20210723-PH-BOE01_0003~small.jpg"
-  },
-  "starliner/05.jpg": {
-    "agency": "BOEING",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Boeing%27s_CST-100_Starliner_spacecraft_docking_to_the_ISS.jpg/960px-Boeing%27s_CST-100_Starliner_spacecraft_docking_to_the_ISS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
   "starlink/01.jpg": {
     "agency": "MULTI",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Starlink%20Satellites%20Imaged%20from%20CTIO.jpg"
@@ -5260,41 +5067,15 @@
   },
   "surveyor-3/03.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/A_visit_to_the_cabinet_of_the_United_States_Mint%2C_at_Philadelphia_%28IA_visittocabinetof00johniala%29.pdf/page1-500px-A_visit_to_the_cabinet_of_the_United_States_Mint%2C_at_Philadelphia_%28IA_visittocabinetof00johniala%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surveyor_3_on_Moon.jpg"
   },
   "surveyor-3/04.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Project_Apollo-_The_Tough_Decisions_-_NASA_Monographs_in_Aerospace_History%2C_No._37_%282007%29.pdf/page1-960px-Project_Apollo-_The_Tough_Decisions_-_NASA_Monographs_in_Aerospace_History%2C_No._37_%282007%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_12_and_Surveyor_7135.jpg"
   },
   "surveyor-3/05.jpg": {
     "agency": "NASA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pinpoint_Landing_on_the_Ocean_of_Storms_%28LROC401_-_M175428601RE_25cm_AP12_area%29.png/960px-Pinpoint_Landing_on_the_Ocean_of_Storms_%28LROC401_-_M175428601RE_25cm_AP12_area%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "taiyuan-lc-9/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/30MAR2023_Launch_of_Hongtu-1_Satellites.png/960px-30MAR2023_Launch_of_Hongtu-1_Satellites.png"
-  },
-  "taiyuan-lc-9/02.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/223460_China_Naval_Modernization_Implications_for_U.S._Navy_Capabilities_-_Background_and_Issues_for_Congress_%28IA_223460ChinaNavalModernizationImplicationsforUSNavyCapabilities-BackgroundandIssuesforCongress-crs%29.pdf/page1-960px-thumbnail.pdf.jpg"
-  },
-  "taiyuan-lc-9/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/28May2008.pdf/page1-960px-28May2008.pdf.jpg"
-  },
-  "taiyuan-lc-9/04.jpg": {
-    "commons_file": "Taiyuan Satellite Launch Center in SAR - 2023-06-20 (53264414596).jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Taiyuan%20Satellite%20Launch%20Center%20in%20SAR%20-%202023-06-20%20(53264414596).jpg",
-    "credit": "CMSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:42:48.527Z"
-  },
-  "taiyuan-lc-9/05.jpg": {
-    "commons_file": "Taiyuan 112.55998E 37.86930N.jpg",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Taiyuan%20112.55998E%2037.86930N.jpg",
-    "credit": "CMSA",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:59:16.165Z"
   },
   "tanegashima-yoshinobu/03.jpg": {
     "commons_file": "JAXA TNSC Yoshinobu LP1.jpg",
@@ -5610,26 +5391,6 @@
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mapa_de_sondas_sobre_Venus.png"
   },
-  "venera-7/01.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Magellan_-_Venera_10_landing_site_mgn_c115n283_1.gif/960px-Magellan_-_Venera_10_landing_site_mgn_c115n283_1.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "venera-7/02.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/HAVOC_Mission_Paper.pdf/page1-960px-HAVOC_Mission_Paper.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "venera-7/03.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Proposed_NASA_HAVOC_Missions_to_Venus.pdf/page1-960px-Proposed_NASA_HAVOC_Missions_to_Venus.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "venera-7/04.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/NASA_Science_2018_Commemorative_Calendar.pdf/page1-960px-NASA_Science_2018_Commemorative_Calendar.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
-  "venera-7/05.jpg": {
-    "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf/page1-960px-Updates_on_Soviet_Lunar_Mission_Cartography_-_Collated_Mastodon_Postings_of_Phil_Stooke_%28%40PhilStooke%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  },
   "viking-1/01.jpg": {
     "source_type": "wikimedia-commons",
     "source_url": "https://commons.wikimedia.org/wiki/File:Lander%2C%20Mars%2C%20Viking%2C%20Proof%20Test%20Article%20-%20DPLA%20-%200e40e7ad805e7f7a7b655246c87c2827%20(page%201).jpg",
@@ -5741,11 +5502,8 @@
     "fetched_at": "2026-06-14T13:42:48.527Z"
   },
   "vikram-cy3/05.jpg": {
-    "commons_file": "Vikram-S rocket's Mission Prarambh.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vikram-S%20rocket's%20Mission%20Prarambh.png",
-    "credit": "ISRO",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:59:16.165Z"
+    "agency": "ISRO",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chandrayaan-3_lander_in_clean-room_01.webp"
   },
   "voskhod-11a57/01": {
     "commons_file": "Voskhod-11A57 grey.svg",
@@ -5991,62 +5749,24 @@
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/X-37B%20orbital%20test%20vehicle%20landing-2.jpg"
   },
   "xichang-lc-2/01.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Chang_zheng_3b_and_intelsat708_failure.jpg"
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yaogan-36_satellite_launch.png"
   },
   "xichang-lc-2/02.jpg": {
     "agency": "CMSA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/The_Launch_of_Long_March_3B_Rocket.jpg/960px-The_Launch_of_Long_March_3B_Rocket.jpg"
   },
-  "xichang-lc-2/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/10June2008.pdf/page1-960px-10June2008.pdf.jpg"
-  },
-  "xichang-lc-2/04.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/26April2008.pdf/page1-960px-26April2008.pdf.jpg"
-  },
-  "xichang-lc-2/05.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/28May2008.pdf/page1-960px-28May2008.pdf.jpg"
-  },
   "xichang-lc-3/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:The%20Launch%20of%20Long%20March%203B%20Rocket.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Launch%20of%20Long%20March%203B%20Rocket.jpg?width=1600",
-    "credit": "Own work",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:37:43Z",
-    "slice_a_iteration": "handsource-2026-06-22",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.92
-    }
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xichang_launch_center_4.jpg"
   },
   "xichang-lc-3/02.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%20zheng%203b%20and%20intelsat708%20failure.jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chang%20zheng%203b%20and%20intelsat708%20failure.jpg?width=1600",
-    "credit": "",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:40:33Z",
-    "slice_a_iteration": "safari-ua-retry-2026-06-23",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.92
-    }
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xichang_launch_center_1.jpg"
   },
   "xichang-lc-3/03.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/25October2007.pdf/page1-960px-25October2007.pdf.jpg"
-  },
-  "xichang-lc-3/04.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/26April2008.pdf/page1-960px-26April2008.pdf.jpg"
-  },
-  "xichang-lc-3/05.jpg": {
-    "agency": "CMSA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/28May2008.pdf/page1-960px-28May2008.pdf.jpg"
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xichang_launch_center_3.jpg"
   },
   "xmm-newton/01.jpg": {
     "agency": "ESA",
@@ -6377,14 +6097,10 @@
     "smithsonian_unit": "NASM"
   },
   "viking2-lander/01.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viking2%20frost%20enhance.jpg?width=1600",
-    "credit": "agency original via Wikimedia Commons mirror",
-    "license": "cc-by-sa-or-pd",
-    "fetched_at": "2026-06-22T11:18:41Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "viking2 lander"
+    "commons_file": "Viking2lander1.jpg",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Viking2lander1.jpg",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)"
   },
   "giotto/01.jpg": {
     "source_type": "wikimedia-commons",
@@ -6573,5 +6289,147 @@
       "verdict": "related",
       "confidence": 0.92
     }
+  },
+  "viking2-lander/02.jpg": {
+    "commons_file": "Mars Viking 22e169.png",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mars%20Viking%2022e169.png",
+    "credit": "NASA",
+    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)"
+  },
+  "new-glenn/01.jpg": {
+    "agency": "NOAA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Blue_Origin%E2%80%99s_New_Glenn_Rocket_Launch_From_Florida_%28CIRA_2025-01-16%29.png/960px-Blue_Origin%E2%80%99s_New_Glenn_Rocket_Launch_From_Florida_%28CIRA_2025-01-16%29.png"
+  },
+  "new-glenn/02.jpg": {
+    "agency": "U.S. Space Force",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387521%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387521%29.jpg"
+  },
+  "new-glenn/03.jpg": {
+    "agency": "U.S. Space Force",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387522%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387522%29.jpg"
+  },
+  "new-glenn/04.jpg": {
+    "agency": "U.S. Space Force",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387523%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387523%29.jpg"
+  },
+  "new-glenn/05.jpg": {
+    "agency": "U.S. Space Force",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387524%29.jpg/960px-Blue_Origin_New_Glenn_Rocket_Successful_Launch_%289387524%29.jpg"
+  },
+  "starliner/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS-67%20Boeing's%20Starliner%20crew%20ship%20docked%20to%20the%20Harmony%20module.jpg"
+  },
+  "starliner/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing's%20CST-100%20Starliner%20spacecraft%20docking%20to%20the%20ISS.jpg"
+  },
+  "starliner/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS-67%20Beoing's%20Starliner%20spacecraft%20departs%20the%20vicinity%20of%20the%20space%20station.jpg"
+  },
+  "starliner/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boeing's%20Starliner%20crew%20ship%20approaches%20the%20space%20station%20(iss067e066717).jpg"
+  },
+  "starliner/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX%20Crew%20Dragon%20and%20Boeing%20CST-100%20Starliner.jpg"
+  },
+  "taiyuan-lc-9/01.jpg": {
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Long%20March%204C%20launch%2020240511.png"
+  },
+  "taiyuan-lc-9/02.jpg": {
+    "agency": "CASC",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%AD%E5%9B%BD%E6%88%90%E5%8A%9F%E5%8F%91%E5%B0%84%E8%AF%95%E9%AA%8C%E5%8D%81%E5%85%AD%E5%8F%B7A%20B%E6%98%9F%E5%92%8C%E8%AF%95%E9%AA%8C%E5%8D%81%E4%B8%83%E5%8F%B7%E5%8D%AB%E6%98%9F1.png"
+  },
+  "luna-9/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna%209%20Space%20Probe.jpg"
+  },
+  "luna-9/02.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Luna-9%20model.jpg"
+  },
+  "luna-9/03.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/First%20Photo%20from%20the%20Surface%20of%20the%20Moon.jpg"
+  },
+  "luna-9/04.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stamp-USSR%201966-Luna%209.png"
+  },
+  "venera-7/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Venera-7.jpg"
+  },
+  "venera-7/02.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1972%20CPA%204166.jpg"
+  },
+  "cape-canaveral-slc-41/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0244/KSC-20220228-PH-KLS01_0244~medium.jpg"
+  },
+  "cape-canaveral-slc-41/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0228/KSC-20220228-PH-KLS01_0228~medium.jpg"
+  },
+  "cape-canaveral-slc-41/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0282/KSC-20220228-PH-KLS01_0282~medium.jpg"
+  },
+  "cape-canaveral-slc-41/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20220228-PH-KLS01_0275/KSC-20220228-PH-KLS01_0275~medium.jpg"
+  },
+  "lc-14/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20View%20of%20Launch%20Complex%2014%20-%20GPN-2000-000609.jpg"
+  },
+  "lc-14/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Atlas%20Rocket%20on%20the%20Launch%20Pad%20(9460620664).jpg"
+  },
+  "lc-14/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20the%20Mercury-Atlas%206%20mission%20(S62-00954).jpg"
+  },
+  "lc-14/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Atlas%208%20launch.jpg"
+  },
+  "lc-14/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20Mercury-Atlas%209%20(MA-9)%20on%20May%2015%2C%201963.jpg"
+  },
+  "lc-5/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20of%20Freedom%207%20-%20GPN-2000-000859.jpg"
+  },
+  "lc-5/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LC-5%20pad%20in%202010.jpg"
+  },
+  "lc-5/03.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Redstone%203%20Launch%20MSFC-6100884.jpg"
+  },
+  "lc-5/04.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury-Redstone%204%20July%2019%20launch%20attempt%2061-MR4-65.jpg"
+  },
+  "lc-5/05.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launch%20Complex%205%2C%20May%205%2C%202001.jpg"
+  },
+  "long-march-3b/03.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Yaogan-36_satellite_launch.png/960px-Yaogan-36_satellite_launch.png"
+  },
+  "long-march-3b/04.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yaogan-36_satellite_launch_%28cropped%29.png/960px-Yaogan-36_satellite_launch_%28cropped%29.png"
   }
 }

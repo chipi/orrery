@@ -1,0 +1,1 @@
+import{ak as s,k as n}from"./dkIymS7m.js";function b(o,i,r,f,a){var d=()=>{f(r[o])};r.addEventListener(i,d),a?s(()=>{r[o]=a()}):d(),(r===document.body||r===window||r===document)&&n(()=>{r.removeEventListener(i,d)})}export{b};

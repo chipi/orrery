@@ -19,9 +19,9 @@
       "approved_at": "2026-06-20"
     },
     "mars-express": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20",
-      "approved_at": "2026-06-20"
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-29: Mars Express at Mars w/ Phobos (G2); revised from G1",
+      "approved_at": "2026-06-29"
     },
     "new-horizons": {
       "slot": "01.jpg",
@@ -124,14 +124,14 @@
       "approved_at": "2026-06-20"
     },
     "osiris-rex": {
-      "slot": "02.jpg",
-      "reason": "Bennu full-disk view — Bennu is the mission's reason for being; slot 01 was Atlas V launch",
-      "approved_at": "2026-06-17"
+      "slot": "03.jpg",
+      "reason": "manual hero override — Marko 2026-06-29: TAGSAM arm touching Bennu (the sampling moment); was Bennu full-disk (02)",
+      "approved_at": "2026-06-29"
     },
     "dart": {
-      "slot": "02.jpg",
-      "reason": "Final image of Dimorphos before impact — the most iconic moment in planetary defence history; slot 01 was Falcon 9 launch",
-      "approved_at": "2026-06-17"
+      "slot": "01.jpg",
+      "reason": "manual hero override — Marko 2026-06-29: gold DART spacecraft render; Dimorphos impact (02) stays in gallery",
+      "approved_at": "2026-06-29"
     },
     "voyager-1": {
       "slot": "01.jpg",
@@ -244,9 +244,9 @@
       "approved_at": "2026-06-20"
     },
     "mars3": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20",
-      "approved_at": "2026-06-20"
+      "slot": "01.jpg",
+      "reason": "Mars-3 spacecraft museum model (off the stamp) — Marko 2026-06-29 (dedup/junk cleanup)",
+      "approved_at": "2026-06-29"
     },
     "luna21": {
       "slot": "05.jpg",
@@ -282,6 +282,11 @@
       "slot": "02.jpg",
       "reason": "manual hero override — Marko 2026-06-20",
       "approved_at": "2026-06-20"
+    },
+    "change4": {
+      "slot": "06.jpg",
+      "reason": "manual hero override — Marko 2026-06-29 (prominent Yutu-2 rover; distant-lander shot kept in gallery)",
+      "approved_at": "2026-06-29"
     }
   }
 }

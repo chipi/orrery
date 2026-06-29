@@ -2407,24 +2407,20 @@
     "commons_file": "All dimorphos dart 0401930040 12262 01 iof imagedisplay-final.png"
   },
   "dart/03": {
-    "source_type": "nasa-image-library",
-    "source_url": "https://images.nasa.gov/details/PIA25329",
-    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
-    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:13:41Z",
-    "nasa_id": "PIA25329",
-    "nasa_title": "NASA's DART at the Didymos System"
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Last_image_showing_all_of_Dimorphos_by_DART_full_frame.png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Last_image_showing_all_of_Dimorphos_by_DART_full_frame.png",
+    "credit": "NASA/Johns Hopkins APL",
+    "license": "pd-nasa",
+    "commons_file": "Last image showing all of Dimorphos by DART full frame.png"
   },
   "dart/05": {
-    "source_type": "nasa-image-library",
-    "source_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
-    "image_url": "http://images-assets.nasa.gov/image/PIA25329/PIA25329~orig.jpg",
-    "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hubble_view_of_Dimorphos_ejecta_(October_8).png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Hubble_view_of_Dimorphos_ejecta_%28October_8%29.png",
+    "credit": "NASA/ESA/STScI/Hubble",
     "license": "pd-nasa",
-    "fetched_at": "2026-06-22T11:18:43Z",
-    "slice_a_iteration": 4,
-    "slice_a_query": "dart"
+    "commons_file": "Hubble view of Dimorphos ejecta (October 8).png"
   },
   "akatsuki/04": {
     "source_type": "jaxa",
@@ -2475,12 +2471,11 @@
   },
   "dart/04": {
     "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:DART%20Spacecraft%20Arrival%20(KSC-20211002-PH-DNQ01%200011).jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/DART%20Spacecraft%20Arrival%20(KSC-20211002-PH-DNQ01%200011).jpg?width=1600",
-    "credit": "NASA / KSC",
-    "license": "Public Domain (NASA — Media Usage Guidelines)",
-    "fetched_at": "2026-06-17T09:17:13Z",
-    "commons_file": "DART Spacecraft Arrival (KSC-20211002-PH-DNQ01 0011).jpg"
+    "source_url": "https://commons.wikimedia.org/wiki/File:DART_impact_ejecta_captured_by_LICIACube_(53216470589).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/DART_impact_ejecta_captured_by_LICIACube_%2853216470589%29.jpg",
+    "credit": "semeion.photo",
+    "license": "cc-by-2.0",
+    "commons_file": "DART impact ejecta captured by LICIACube (53216470589).jpg"
   },
   "psyche-mission/02": {
     "source_type": "nasa-image-library",

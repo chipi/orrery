@@ -325,29 +325,20 @@
     }
   },
   "ariane-6/02.jpg": {
-    "source_type": "wikimedia-commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariane%205%20with%20James%20Webb%20Space%20Telescope%20Prelaunch%20(51773093465).jpg?width=1600",
-    "credit": "Ariane 5 with James Webb Space Telescope Prelaunch",
-    "license": "public domain",
-    "fetched_at": "2026-06-23T13:39:50Z",
-    "slice_a_iteration": "safari-ua-retry-2026-06-23",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_ESA-CC.jpg"
   },
   "ariane-6/03.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/AERONAUTICS_AND_ASTRONAUTICS_A_CHRONOLOGY_2008.pdf/page1-960px-AERONAUTICS_AND_ASTRONAUTICS_A_CHRONOLOGY_2008.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_upper_stage_on_DLR_P5.2_test_stand_01.jpg"
   },
   "ariane-6/04.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SP-4012v5.pdf/page1-500px-SP-4012v5.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariane_6_upper_stage_unpacked_at_DLR_Lampoldshausen_01.jpg"
   },
   "ariane-6/05.jpg": {
     "agency": "ESA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Taming_Liquid_Hydrogen_The_Centaur_Upper_Stage_Rocket.pdf/page1-960px-Taming_Liquid_Hydrogen_The_Centaur_Upper_Stage_Rocket.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centre_Spatial_Guyanais_-_Ariane_6_Launchpad_(Under_construction).jpg"
   },
   "atlantis/01.jpg": {
     "agency": "NASA",
@@ -2175,8 +2166,8 @@
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/STS071-744-010_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_7c6e2300799444220d7b4f58a49b226e.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   },
   "iss/04.jpg": {
-    "agency": "MULTI",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/NASA%27s_Management_of_the_International_Space_Station_-_2021-11-30_%28IG-22-005%2C_redacted_images%29.pdf/page1-960px-NASA%27s_Management_of_the_International_Space_Station_-_2021-11-30_%28IG-22-005%2C_redacted_images%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_station_pictured_from_the_SpaceX_Crew_Dragon_5_(cropped).jpg"
   },
   "iss/05.jpg": {
     "agency": "MULTI",
@@ -5088,11 +5079,11 @@
   },
   "surveyor-3/03.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/A_visit_to_the_cabinet_of_the_United_States_Mint%2C_at_Philadelphia_%28IA_visittocabinetof00johniala%29.pdf/page1-500px-A_visit_to_the_cabinet_of_the_United_States_Mint%2C_at_Philadelphia_%28IA_visittocabinetof00johniala%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surveyor_3_on_Moon.jpg"
   },
   "surveyor-3/04.jpg": {
     "agency": "NASA",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Project_Apollo-_The_Tough_Decisions_-_NASA_Monographs_in_Aerospace_History%2C_No._37_%282007%29.pdf/page1-960px-Project_Apollo-_The_Tough_Decisions_-_NASA_Monographs_in_Aerospace_History%2C_No._37_%282007%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_12_and_Surveyor_7135.jpg"
   },
   "surveyor-3/05.jpg": {
     "agency": "NASA",
@@ -5523,11 +5514,8 @@
     "fetched_at": "2026-06-14T13:42:48.527Z"
   },
   "vikram-cy3/05.jpg": {
-    "commons_file": "Vikram-S rocket's Mission Prarambh.png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Vikram-S%20rocket's%20Mission%20Prarambh.png",
-    "credit": "ISRO",
-    "license": "Public Domain / CC-BY-SA (Wikimedia Commons)",
-    "fetched_at": "2026-06-14T13:59:16.165Z"
+    "agency": "ISRO",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chandrayaan-3_lander_in_clean-room_01.webp"
   },
   "voskhod-11a57/01": {
     "commons_file": "Voskhod-11A57 grey.svg",

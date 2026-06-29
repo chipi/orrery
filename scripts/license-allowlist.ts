@@ -87,6 +87,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'GODL-India',
+    display: 'Government Open Data License – India',
+    url: 'https://data.gov.in/Godl',
+    rationale:
+      'India Government Open Data License — free reuse with attribution; ISRO/Department of Space release imagery under it (the only license under which Chandrayaan-3 imagery is published). Accepted on Wikimedia Commons.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'CC-BY-1.0',
     display: 'Creative Commons Attribution 1.0',
     url: 'https://creativecommons.org/licenses/by/1.0/',

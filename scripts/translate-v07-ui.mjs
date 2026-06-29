@@ -25,17 +25,43 @@ const MESSAGES_DIR = path.join(ROOT, 'messages');
 const OVERRIDES_PATH = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 const en = JSON.parse(fs.readFileSync(path.join(MESSAGES_DIR, 'en-US.json'), 'utf8'));
 
-const ALL = ['ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN'];
+const ALL = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish', fr: 'French',
-  hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
-  'pt-BR': 'Brazilian Portuguese', ru: 'Russian', 'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
-const args = Object.fromEntries(process.argv.slice(2).map((a) => {
-  const [k, v] = a.replace(/^--/, '').split('=');
-  return [k, v ?? true];
-}));
+const args = Object.fromEntries(
+  process.argv.slice(2).map((a) => {
+    const [k, v] = a.replace(/^--/, '').split('=');
+    return [k, v ?? true];
+  }),
+);
 const locales = !args.locales || args.locales === 'all' ? ALL : String(args.locales).split(',');
 const explicitKeys = args.keys ? String(args.keys).split(',') : null;
 const fixPlaceholders = !!args['fix-placeholders']; // re-translate keys whose {placeholders} got dropped
@@ -48,7 +74,7 @@ const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
 function trivial(v) {
   const s = String(v).trim();
   if (s.length <= 2) return true;
-  if (/^[A-Z0-9/.\-]{2,7}$/.test(s)) return true;
+  if (/^[A-Z0-9/.-]{2,7}$/.test(s)) return true;
   if (s.includes('{') && !/[a-z]{4}/.test(s)) return true;
   if (!/[a-zA-Z]/.test(s)) return true;
   return false;
@@ -68,13 +94,30 @@ async function tx(client, locale, payload) {
     model: 'claude-sonnet-4-5',
     max_tokens: 4000,
     system: SYSTEM,
-    messages: [{ role: 'user', content: `Translate into ${NAMES[locale]}:\n\n${JSON.stringify(payload, null, 2)}` }],
+    messages: [
+      {
+        role: 'user',
+        content: `Translate into ${NAMES[locale]}:\n\n${JSON.stringify(payload, null, 2)}`,
+      },
+    ],
   });
-  const text = r.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
-  return JSON.parse(text.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim());
+  const text = r.content
+    .filter((b) => b.type === 'text')
+    .map((b) => b.text)
+    .join('');
+  return JSON.parse(
+    text
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/\s*```$/i, '')
+      .trim(),
+  );
 }
 
-const chunk = (arr, n) => { const o = []; for (let i = 0; i < arr.length; i += n) o.push(arr.slice(i, i + n)); return o; };
+const chunk = (arr, n) => {
+  const o = [];
+  for (let i = 0; i < arr.length; i += n) o.push(arr.slice(i, i + n));
+  return o;
+};
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const overrides = JSON.parse(fs.readFileSync(OVERRIDES_PATH, 'utf8'));
@@ -85,22 +128,44 @@ for (const loc of locales) {
   const keys = explicitKeys
     ? explicitKeys.filter((k) => k in en)
     : fixPlaceholders
-      ? Object.keys(en).filter((k) => !k.startsWith('$') && typeof en[k] === 'string'
-          && phset(en[k]).size > 0 && typeof messages[k] === 'string'
-          && !sameSet(phset(en[k]), phset(messages[k])))
-      : Object.keys(en).filter((k) => !k.startsWith('$') && typeof en[k] === 'string'
-          && !trivial(en[k]) && typeof messages[k] === 'string' && messages[k].trim() === en[k].trim());
-  if (keys.length === 0) { console.log(`${loc}: nothing to do`); continue; }
+      ? Object.keys(en).filter(
+          (k) =>
+            !k.startsWith('$') &&
+            typeof en[k] === 'string' &&
+            phset(en[k]).size > 0 &&
+            typeof messages[k] === 'string' &&
+            !sameSet(phset(en[k]), phset(messages[k])),
+        )
+      : Object.keys(en).filter(
+          (k) =>
+            !k.startsWith('$') &&
+            typeof en[k] === 'string' &&
+            !trivial(en[k]) &&
+            typeof messages[k] === 'string' &&
+            messages[k].trim() === en[k].trim(),
+        );
+  if (keys.length === 0) {
+    console.log(`${loc}: nothing to do`);
+    continue;
+  }
   process.stdout.write(`${loc}: ${keys.length} keys `);
   overrides[loc] = overrides[loc] ?? {};
   let done = 0;
   for (const batch of chunk(keys, 20)) {
-    const payload = {}; for (const k of batch) payload[k] = en[k];
+    const payload = {};
+    for (const k of batch) payload[k] = en[k];
     try {
       const tr = await tx(client, loc, payload);
-      for (const k of batch) if (typeof tr[k] === 'string' && tr[k].trim()) { messages[k] = tr[k]; overrides[loc][k] = tr[k]; done++; }
+      for (const k of batch)
+        if (typeof tr[k] === 'string' && tr[k].trim()) {
+          messages[k] = tr[k];
+          overrides[loc][k] = tr[k];
+          done++;
+        }
       process.stdout.write('.');
-    } catch (err) { process.stdout.write(`!(${err.message.slice(0, 40)})`); }
+    } catch (err) {
+      process.stdout.write(`!(${err.message.slice(0, 40)})`);
+    }
   }
   fs.writeFileSync(mpath, JSON.stringify(messages, null, 2) + '\n', 'utf8');
   console.log(` → ${done} written`);

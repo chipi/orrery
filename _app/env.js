@@ -1,1 +1,1 @@
-export const env={"PUBLIC_SENTRY_ENVIRONMENT":"production","PUBLIC_SENTRY_DSN":"","PUBLIC_SENTRY_RELEASE":"gha-78a0ad9b94076b9d49f70e24a44d7f73cde63989"}
+export const env={"PUBLIC_SENTRY_ENVIRONMENT":"production","PUBLIC_SENTRY_DSN":"","PUBLIC_SENTRY_RELEASE":"gha-8e7c9ad7acc0edad073bc5edcb4b8ba73d6e4f5b"}

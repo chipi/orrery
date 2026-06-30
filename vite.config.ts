@@ -126,12 +126,21 @@ export default defineConfig(({ mode }) => {
         manifest: false,
         injectRegister: false,
         workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,png,jpg,webp,woff2,ico}', 'manifest.webmanifest'],
+          // App-shell ONLY — NO raster imagery (png/jpg/webp). Precaching
+          // every gallery image meant a ~1.7 GB precache (5.7k images); the
+          // precache install is all-or-nothing, and iOS Safari's hard
+          // CacheStorage quota is far below that, so on iOS the new SW's
+          // install FAILED (quota exceeded) → it never activated → devices
+          // froze on whatever version was current when the precache crossed
+          // the iOS limit (the 0.6.3-stuck-on-mobile bug, 2026-06-30).
+          // Desktop has GBs of quota so it kept updating — hence the
+          // desktop-fine / mobile-frozen split. Images are now runtime-cached
+          // on demand (bounded) below instead of precached.
+          globPatterns: ['**/*.{js,css,html,svg,woff2,ico}', 'manifest.webmanifest'],
           // Don't precache the porkchop grid JSONs — large + per-route.
           globIgnores: ['**/porkchop/*.json'],
-          // Default cap is 2 MiB; some agency mission photos (e.g. Hope Probe
-          // hi-res) sit at 3–4 MB. Bump the precache ceiling to 8 MiB so the
-          // PWA build doesn't reject them.
+          // App-shell assets are small; keep a generous per-file ceiling for
+          // the odd large svg/font but nothing approaches it now.
           maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
           // ─── Lifecycle: never strand a user on an old SW ──────────────
           // 2026-06-15 user report: had to manually unregister the SW
@@ -157,6 +166,25 @@ export default defineConfig(({ mode }) => {
           clientsClaim: true,
           cleanupOutdatedCaches: true,
           runtimeCaching: [
+            {
+              // Imagery — runtime-cached on demand, NOT precached (precaching
+              // all of it = ~1.7 GB → exceeds the iOS CacheStorage quota and
+              // breaks SW install on iOS; see globPatterns note). Bounded by
+              // maxEntries + purgeOnQuotaError so it can never wedge install/
+              // activation again. StaleWhileRevalidate: a re-sourced image
+              // (stable URL, new bytes) serves instantly from cache and
+              // refreshes in the background for the next view.
+              urlPattern: ({ request }) => request.destination === 'image',
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'orrery-images',
+                expiration: {
+                  maxEntries: 400,
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
+                  purgeOnQuotaError: true,
+                },
+              },
+            },
             {
               // Mission base files + per-locale overlays.
               urlPattern: ({ url }) => /\/data\/(missions|i18n)\/.*\.json$/.test(url.pathname),

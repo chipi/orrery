@@ -74,6 +74,15 @@ export const EVENT_NAMES = [
   'mission-complete',
   'locale-switch',
   'external-link-click',
+  // PWA freshness observability (2026-06-30). `app-load` stamps every
+  // session with the running build version → the live version distribution
+  // is visible in the dashboard, so a cohort stuck on an old build (e.g.
+  // the iOS-precache-quota freeze) shows up immediately instead of via a
+  // user complaint weeks later. `sw-activated` / `sw-install-failed` track
+  // whether SW updates are actually landing in the wild.
+  'app-load',
+  'sw-activated',
+  'sw-install-failed',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

@@ -165,6 +165,23 @@
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') void registration.update();
       });
+      // Freshness telemetry: follow each newly-found SW through install so a
+      // failed install (iOS CacheStorage quota, fetch error) is VISIBLE in
+      // analytics — that's the silent signal a device is about to freeze on
+      // the old build. `redundant` before ever reaching `activated` = failure.
+      registration.addEventListener('updatefound', () => {
+        const next = registration.installing;
+        if (!next) return;
+        let activated = false;
+        next.addEventListener('statechange', () => {
+          if (next.state === 'activated') {
+            activated = true;
+            track('sw-activated', { version: __APP_VERSION__ });
+          } else if (next.state === 'redundant' && !activated) {
+            track('sw-install-failed', { version: __APP_VERSION__ });
+          }
+        });
+      });
     } catch {
       // SW registration failed; carry on. Manifest-only install still
       // works on Android.
@@ -188,6 +205,10 @@
     // (chipi.github.io); localhost / vite preview / CI runs are
     // silent. See src/lib/analytics.ts for the host gate + event API.
     initAnalytics();
+    // Stamp the session with the running build so the live version
+    // distribution is visible in the dashboard — a cohort stuck on an old
+    // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
+    track('app-load', { version: __APP_VERSION__ });
     // Suppress both Chrome's native install banner and any in-app
     // prompt. preventDefault stops the browser from auto-showing.
     const onPromptable = (e: Event) => e.preventDefault();

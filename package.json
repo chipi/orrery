@@ -1,6 +1,6 @@
 {
   "name": "orrery",
-  "version": "0.7.0-wip",
+  "version": "0.7.0",
   "description": "Browser-based solar system explorer + Mars / lunar mission simulator. Real Keplerian orbital mechanics, real missions from Luna 9 to Artemis II, fully static SPA.",
   "homepage": "https://chipi.github.io/orrery/",
   "repository": {
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "dev": "npm run i18n:compile && exec vite dev",
-    "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && vite build && node scripts/check-precache-budget.mjs && node scripts/prune-build-staging.mjs && node scripts/check-prerender-completeness.mjs",
+    "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && npm run build-i18n-bundles && vite build && node scripts/check-precache-budget.mjs && node scripts/prune-build-staging.mjs && node scripts/check-prerender-completeness.mjs",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -94,7 +94,8 @@
     "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts",
     "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts",
     "preflight:full:body": "npm run typecheck && npm run typecheck:scripts && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
-    "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body"
+    "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body",
+    "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

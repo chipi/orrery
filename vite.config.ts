@@ -126,17 +126,29 @@ export default defineConfig(({ mode }) => {
         manifest: false,
         injectRegister: false,
         workbox: {
-          // App-shell ONLY — NO raster imagery (png/jpg/webp). Precaching
-          // every gallery image meant a ~1.7 GB precache (5.7k images); the
-          // precache install is all-or-nothing, and iOS Safari's hard
-          // CacheStorage quota is far below that, so on iOS the new SW's
-          // install FAILED (quota exceeded) → it never activated → devices
-          // froze on whatever version was current when the precache crossed
-          // the iOS limit (the 0.6.3-stuck-on-mobile bug, 2026-06-30).
-          // Desktop has GBs of quota so it kept updating — hence the
-          // desktop-fine / mobile-frozen split. Images are now runtime-cached
-          // on demand (bounded) below instead of precached.
-          globPatterns: ['**/*.{js,css,html,svg,woff2,ico}', 'manifest.webmanifest'],
+          // Precache a SMALL, bounded shell only. The prior "shell-only"
+          // glob still shipped ~4,456 entries: @vite-pwa/sveltekit's
+          // buildGlobPatterns force-adds prerendered/**/*.{html,json} + all
+          // client imagery UNLESS a pattern is client/- or prerendered/-
+          // prefixed — so every page, ~1,800 data JSON and imagery were
+          // precached anyway. That install did not complete on mobile WebKit
+          // and the new SW never activated, stranding clients on the old
+          // version. (Measured on-device: NOT a quota issue — 39 GB free,
+          // 0.9% used; the install simply never finished. Exact WebKit
+          // mechanism unconfirmed; desktop has the headroom to grind through
+          // it, hence the desktop-fine / mobile-stuck split.)
+          //
+          // Fix: prefix with BOTH client/ and prerendered/ to disable the
+          // force-add, and precache only the JS/CSS/font/icon shell + the 14
+          // per-locale i18n overlay bundles (scripts/build-i18n-bundles.mjs;
+          // collapses ~10,360 tiny files) + one prerendered page as the SPA
+          // offline shell. Pages render client-side (navigateFallback below);
+          // data JSON, imagery and audio load at runtime via the rules below.
+          globPatterns: [
+            'client/**/*.{js,css,woff2,svg,ico}',
+            'client/data/i18n/*.json',
+            'prerendered/pages/index.html',
+          ],
           // Don't precache the porkchop grid JSONs — large + per-route.
           globIgnores: ['**/porkchop/*.json'],
           // App-shell assets are small; keep a generous per-file ceiling for
@@ -250,10 +262,24 @@ export default defineConfig(({ mode }) => {
                 expiration: { maxEntries: 2, maxAgeSeconds: 60 * 60 * 24 * 30 },
               },
             },
+            {
+              // Catch-all for data JSON no longer precached (science,
+              // provenance, etc.) — cache-on-first-use so offline + repeat
+              // visits resolve. More specific /data rules above win by order.
+              urlPattern: ({ url }) => /\/data\/.*\.json$/.test(url.pathname),
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'orrery-data-json',
+                expiration: { maxEntries: 2500, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              },
+            },
           ],
           // SPA fallback so deep links work offline. SvelteKit's static
           // adapter writes 404.html as fallback (svelte.config.js:13).
-          navigateFallback: '404.html',
+          // SPA fallback for offline deep-links: route to the precached home
+          // page (client routing renders the rest). Base-aware so it matches
+          // the precache key on GitHub Pages (/orrery/) and root (/) builds.
+          navigateFallback: `${(process.env.VITE_BASE ?? '').replace(/\/$/, '')}/`,
         },
         devOptions: {
           // Don't run the SW in `vite dev` — only in `vite preview` /

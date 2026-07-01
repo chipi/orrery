@@ -79,3 +79,6 @@ node_modules/.cache/
 /moon-*.png
 /plan-*.png
 static/images/_staging/
+
+# Generated i18n overlay bundles (scripts/build-i18n-bundles.mjs)
+static/data/i18n/*.json

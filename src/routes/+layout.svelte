@@ -266,7 +266,7 @@
 
 <svelte:head>
   <link rel="manifest" href="{base}/manifest.webmanifest" />
-  <link rel="icon" href="{base}/logos/nasa.svg" type="image/svg+xml" />
+  <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
 {#key activeLocale}

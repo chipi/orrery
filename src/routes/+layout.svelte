@@ -327,8 +327,8 @@
         href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
         target="_blank"
         rel="noopener noreferrer external"
-        title={m.version_info_title()}
-        hreflang="en">v{displayVersion} · {__BUILD_DATE__}</a
+        title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
+        hreflang="en">v{displayVersion}</a
       >
     </nav>
   </footer>
@@ -378,6 +378,16 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+  }
+  /* Keep the footer strip to ONE line on phones. With the build date now
+     in the version tooltip (not rendered), the strip is short enough that a
+     slightly tighter gap/padding fits narrow viewports without wrapping to
+     multiple lines (was 74px tall at 375px) or clipping the leading link. */
+  @media (max-width: 420px) {
+    .footer-menu {
+      gap: 5px;
+      padding: 4px 6px;
+    }
   }
   .footer-link {
     pointer-events: auto;

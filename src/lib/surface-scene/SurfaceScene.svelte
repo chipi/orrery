@@ -4898,34 +4898,7 @@
        chips control the planet sphere view and don't apply to the
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
-  {#snippet surfaceControls()}
-    <div class="ctrl-row">
-      {#if !config.disable2D}
-        <ViewToggleButton
-          is2d={view === '2d'}
-          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-          onToggle={toggleView}
-        />
-      {/if}
-      {#if view === '3d'}
-        <View3dControls
-          onReset={() => resetCamera()}
-          {autoSpin}
-          onToggleSpin={() => (autoSpin = !autoSpin)}
-        />
-      {/if}
-      <!-- Hidden tour hook — lets the audio tour pull the camera back to
-           the overview (e.g. after a deep zoom) without a visible button.
-           data-audio-stage scanned by audio-tour.test.ts. -->
-      <button
-        type="button"
-        class="tour-reset-anchor"
-        data-audio-stage="surface-reset-view"
-        onclick={() => resetCamera()}
-        tabindex="-1"
-        aria-hidden="true">reset view</button
-      >
-    </div>
+  {#snippet layerChips()}
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <LayerChipRow
         chips={[
@@ -5036,6 +5009,37 @@
     </div>
   {/snippet}
 
+  {#snippet surfaceControls()}
+    <div class="ctrl-row">
+      {#if !config.disable2D}
+        <ViewToggleButton
+          is2d={view === '2d'}
+          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+          onToggle={toggleView}
+        />
+      {/if}
+      {#if view === '3d'}
+        <View3dControls
+          onReset={() => resetCamera()}
+          {autoSpin}
+          onToggleSpin={() => (autoSpin = !autoSpin)}
+        />
+      {/if}
+      <!-- Hidden tour hook — lets the audio tour pull the camera back to
+           the overview (e.g. after a deep zoom) without a visible button.
+           data-audio-stage scanned by audio-tour.test.ts. -->
+      <button
+        type="button"
+        class="tour-reset-anchor"
+        data-audio-stage="surface-reset-view"
+        onclick={() => resetCamera()}
+        tabindex="-1"
+        aria-hidden="true">reset view</button
+      >
+    </div>
+    {@render layerChips()}
+  {/snippet}
+
   {#snippet mobileRulerContent(close: () => void)}
     {#if regimes && regimes.length > 0}
       <OrbitRuler
@@ -5051,7 +5055,20 @@
   {/snippet}
 
   {#snippet mobileLayersContent(close: () => void)}
-    {@render surfaceControls()}
+    {#if view === '3d'}
+      <div class="ctrl-row">
+        <button
+          type="button"
+          class="toggle"
+          data-testid="spin-toggle-drawer"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+        >
+          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+        </button>
+      </div>
+    {/if}
+    {@render layerChips()}
   {/snippet}
 
   {#snippet mobileNationsContent(close: () => void)}
@@ -5083,6 +5100,28 @@
       aria-label={m.ui_view_controls()}
     >
       {@render surfaceControls()}
+    </div>
+    <!-- Mobile-only: view toggle + Reset View fixed top-left below nav.
+         Spin stays in the LAYERS drawer; these two controls move up top
+         so they're always accessible without opening the drawer. -->
+    <div class="hud-top-mobile" role="group" aria-label={m.ui_view_controls()}>
+      {#if !config.disable2D}
+        <ViewToggleButton
+          is2d={view === '2d'}
+          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+          onToggle={toggleView}
+        />
+      {/if}
+      {#if view === '3d'}
+        <button
+          type="button"
+          class="toggle"
+          data-testid="surface-reset-view-mobile"
+          onclick={() => resetCamera()}
+        >
+          {m.ui_reset_view()}
+        </button>
+      {/if}
     </div>
     {#if !flatPatchActive}
       <!-- Hide the orbital controls in flat-patch detail (same as panorama);
@@ -6240,6 +6279,24 @@ sample      ${debugInfo.projectedPxSample}`}
       align-items: stretch;
     }
   }
+
+  /* Mobile-only top-left cluster: view toggle + Reset View.
+     Mirrors the /explore hud-top-mobile pattern; z-index 45 sits
+     above the mobile drawer (z-index 40). */
+  .hud-top-mobile {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .hud-top-mobile {
+      display: flex;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 8px;
+      gap: 6px;
+      z-index: 45;
+    }
+  }
+
   .load-banner {
     position: fixed;
     top: calc(var(--nav-height) + 12px);

@@ -24,7 +24,11 @@
     label: string;
     /** Distinct per-content glyph (falls back to the generic tile). */
     icon?: string;
-    content: Snippet<[close: () => void]>;
+    content?: Snippet<[close: () => void]>;
+    /** If set: onclick fires action() without opening a panel (direct toggle). */
+    action?: () => void;
+    /** Drives active styling + aria-pressed for action tabs. */
+    active?: boolean;
   };
 
   type Props = {
@@ -87,7 +91,10 @@
 {/if}
 
 <div class="mdg" style:transform={deltaY > 0 && openId ? `translateY(${deltaY}px)` : ''}>
-  {#if openTab}
+  {#if openTab && openTab.content}
+    <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
+         accessible closes, so the body needs no interactive role. -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
       class="mdg-body"
       ontouchstart={onTouchStart}
@@ -102,10 +109,11 @@
       <button
         type="button"
         class="mdg-tab"
-        class:active={openId === tab.id}
-        role="tab"
-        aria-selected={openId === tab.id}
-        onclick={() => toggleTab(tab.id)}
+        class:active={tab.action ? (tab.active ?? false) : openId === tab.id}
+        role={tab.action ? undefined : 'tab'}
+        aria-selected={tab.action ? undefined : openId === tab.id}
+        aria-pressed={tab.action ? (tab.active ?? false) : undefined}
+        onclick={() => (tab.action ? tab.action() : toggleTab(tab.id))}
       >
         <span class="mdg-icon" aria-hidden="true">{tab.icon ?? '◫'}</span>
         <span class="mdg-label">{tab.label.toUpperCase()}</span>

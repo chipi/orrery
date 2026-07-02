@@ -6666,9 +6666,6 @@
     border-right: none;
     border-radius: 3px;
   }
-  .speed-desktop-pill {
-    /* visible on desktop — no additional styles needed */
-  }
   @media (max-width: 767px) {
     .speed-slot {
       display: block;

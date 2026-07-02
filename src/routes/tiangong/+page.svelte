@@ -45,7 +45,7 @@
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
-  import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
+  import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import {
     type AssemblyState,
     ANIM_WINDOW_MS,
@@ -1457,6 +1457,48 @@
       </button>
     {/if}
 
+    <!-- Mobile-only: view toggle + Reset View + Spin pinned top-left,
+         below nav. Edge handles are hidden on mobile by CSS, so this
+         cluster + the MobileDrawerGroup tabs below replace them. -->
+    <div class="hud-top-mobile" role="group" aria-label={m.tiangong_hud_aria()}>
+      <button
+        type="button"
+        class="toggle"
+        data-testid="tiangong-blueprint-toggle-mobile"
+        onclick={cycleBlueprintView}
+        title={m.tiangong_btn_blueprint_title()}
+      >
+        {viewMode === '2d-top'
+          ? m.tiangong_blueprint_label_top()
+          : viewMode === '2d-side'
+            ? m.tiangong_blueprint_label_side()
+            : viewMode === '2d-front'
+              ? m.tiangong_blueprint_label_front()
+              : m.tiangong_blueprint_label_3d()}
+      </button>
+      {#if viewMode !== 'list'}
+        <button
+          type="button"
+          class="toggle"
+          data-testid="tiangong-reset-camera-mobile"
+          onclick={() => resetCamera()}
+          disabled={viewMode !== '3d'}
+        >
+          {m.ui_reset_view()}
+        </button>
+        <button
+          type="button"
+          class="toggle"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+          disabled={viewMode !== '3d'}
+          title={m.tiangong_btn_spin_title()}
+        >
+          {m.tiangong_btn_spin()}
+        </button>
+      {/if}
+    </div>
+
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
     {#snippet tiangongControls()}
@@ -1561,11 +1603,99 @@
     <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
       {@render tiangongControls()}
     </div>
-    <MobileControlsDrawer
-      --mcd-bottom="calc(30px + env(safe-area-inset-bottom, 0px))"
-      label="Controls"
-      children={tiangongControls}
-    />
+
+    {#snippet mobileModulesContent(close: () => void)}
+      <StationTimelineStrip
+        modules={sortedModules}
+        visitors={sortedVisitors}
+        selectedId={selection.state.selectedId}
+        hoveredId={selection.state.hoveredId}
+        heading="Tiangong assembly timeline — modules above, visiting spacecraft below"
+        heroDir="tiangong-modules"
+        onSelect={(item) => {
+          const mod = [...sortedModules, ...sortedVisitors].find((x) => x.id === item.id);
+          if (mod) {
+            openModule(mod);
+            close();
+          }
+        }}
+        onHover={(id) => {
+          visualRef.hoveredId = id;
+          requestMaterialRefresh();
+        }}
+      />
+      <h2 class="list-heading">{m.tiangong_list_heading()}</h2>
+      <ul class="module-list">
+        {#each sortedModules as mod (mod.id)}
+          <li>
+            <button
+              type="button"
+              class="module-row"
+              onclick={() => {
+                openModule(mod);
+                close();
+              }}
+              aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
+            >
+              <span class="mod-name-row">
+                <span class="mod-name">{mod.name}</span>
+                <AgencyBadge agency={mod.agency} />
+              </span>
+              <span class="mod-meta">{mod.agency}</span>
+            </button>
+          </li>
+        {/each}
+      </ul>
+      {#if sortedVisitors.length > 0}
+        <h2 class="list-heading list-heading-visitors">{m.tiangong_visitors_heading()}</h2>
+        <ul class="module-list">
+          {#each sortedVisitors as ship (ship.id)}
+            <li>
+              <button
+                type="button"
+                class="module-row"
+                onclick={() => {
+                  openModule(ship);
+                  close();
+                }}
+                aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
+              >
+                <span class="mod-name-row">
+                  <span class="mod-name">{ship.name}</span>
+                  <AgencyBadge agency={ship.agency} />
+                </span>
+                <span class="mod-meta">{ship.agency}</span>
+              </button>
+            </li>
+          {/each}
+        </ul>
+      {/if}
+    {/snippet}
+
+    {#if viewMode !== 'list'}
+      <MobileDrawerGroup
+        tabs={[
+          { id: 'list', label: 'List', icon: '▤', action: toggleViewMode },
+          {
+            id: 'assembly',
+            label: 'Assembly',
+            icon: '◫',
+            action: () => {
+              assemblyOpen = !assemblyOpen;
+              if (assemblyOpen) {
+                assemblyProgress = 0;
+                assemblyPlaying = true;
+              } else {
+                assemblyPlaying = false;
+              }
+            },
+            active: assemblyOpen,
+          },
+          { id: 'modules', label: 'Modules', icon: '⚑', content: mobileModulesContent },
+        ]}
+        --mcd-bottom="calc(40px + env(safe-area-inset-bottom, 0px))"
+      />
+    {/if}
   {/if}
 
   <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
@@ -2023,9 +2153,27 @@
     font-family: 'Space Mono', monospace;
     color: #ff8c8c;
   }
+  /* Mobile-only top cluster: view toggle + Reset View, mirroring the
+     desktop .hud-controls corner (.hud-controls itself is hidden on mobile). */
+  .hud-top-mobile {
+    display: none;
+  }
   @media (max-width: 767px) {
     .hud-controls {
       display: none;
+    }
+    /* Edge handles replaced by the MODULES tab in MobileDrawerGroup. */
+    .edge-handle {
+      display: none;
+    }
+    .hud-top-mobile {
+      display: flex;
+      flex-wrap: wrap;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 8px;
+      gap: 6px;
+      z-index: 45;
     }
   }
   @media (max-width: 500px) {

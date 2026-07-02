@@ -234,11 +234,15 @@
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 
-{#if regimes.length > 0 && orbitsInView}
-  <!-- Hidden once the camera dips below LMO — orbits then sit overhead
-       and the ruler references nothing on screen (#363). -->
-  <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
-{/if}
+<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
+     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
+<div class="ruler-desktop-only">
+  {#if regimes.length > 0 && orbitsInView}
+    <!-- Hidden once the camera dips below LMO — orbits then sit overhead
+         and the ruler references nothing on screen (#363). -->
+    <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
+  {/if}
+</div>
 
 <RegimePanel
   regime={selectedRegime}
@@ -247,3 +251,14 @@
   {selectableIds}
   {onResidentClick}
 />
+
+<style>
+  .ruler-desktop-only {
+    display: contents;
+  }
+  @media (max-width: 767px) {
+    .ruler-desktop-only {
+      display: none;
+    }
+  }
+</style>

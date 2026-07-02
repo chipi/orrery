@@ -83,7 +83,8 @@
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
-  import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
+  import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
+  import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   // HotspotsLodChip import dropped — its LOD-cycle UX is now folded
   // into the unified SURFACE chip (see surfaceChipLabel /
   // cycleSurfaceMode below).
@@ -647,6 +648,9 @@
    * composition (regional + detail) stacks both attribution rows.
    */
   let tierContext = $state<TierContext | null>(null);
+  // Mobile: true while any accordion tab is open — hides the altitude pill so
+  // the open drawer has room (2026-07 user direction).
+  let mobileDrawerOpen = $state(false);
 
   /**
    * Hover-tooltip for the traverse-stop balloon pins. When the pointer
@@ -4815,7 +4819,7 @@
 <div
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
-  style:--mcd-bottom="calc(78px + env(safe-area-inset-bottom, 0px))"
+  style:--mcd-bottom="calc(40px + env(safe-area-inset-bottom, 0px))"
 >
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
@@ -5003,6 +5007,45 @@
     </div>
   {/snippet}
 
+  {#snippet mobileRulerContent(close: () => void)}
+    {#if regimes && regimes.length > 0}
+      <OrbitRuler
+        {regimes}
+        highlightRegime={null}
+        onSelect={(id) => {
+          onRegimeOpen?.(id);
+          close();
+        }}
+        surfaceAnchor={null}
+      />
+    {/if}
+  {/snippet}
+
+  {#snippet mobileLayersContent(close: () => void)}
+    {@render surfaceControls()}
+  {/snippet}
+
+  {#snippet mobileNationsContent(close: () => void)}
+    <div class="nations-drawer" role="group" aria-label={m.moon_legend_nation_aria()}>
+      {#each Object.entries(legendPalette) as [nation, color] (nation)}
+        <button
+          type="button"
+          class="legend-item"
+          class:legend-item--off={!nationEnabled(nation)}
+          aria-pressed={nationEnabled(nation)}
+          data-testid="legend-nation-{nation}"
+          onclick={() => {
+            toggleNation(nation);
+            close();
+          }}
+        >
+          <span class="legend-dot" style:background={color}></span>
+          {nation}
+        </button>
+      {/each}
+    </div>
+  {/snippet}
+
   {#if !panoramaActive}
     <div
       class="hud-controls"
@@ -5012,7 +5055,14 @@
     >
       {@render surfaceControls()}
     </div>
-    <MobileControlsDrawer label="Controls" children={surfaceControls} />
+    <MobileDrawerGroup
+      tabs={[
+        { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
+        { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
+        { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
+      ]}
+      onOpen={(id) => (mobileDrawerOpen = id !== null)}
+    />
   {/if}
 
   {#if loadFailed}
@@ -5055,7 +5105,7 @@ sample      ${debugInfo.projectedPxSample}`}
        note: "when we go to panorama mode we still see altitude
        with Mm there, it should not be there in panorama mode on
        any planet"). -->
-  {#if view === '3d' && !flatPatchActive && !panoramaActive}
+  {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen}
     <div class="altitude-indicator" aria-hidden="true">
       {altitudeKm >= 1000
         ? `${(altitudeKm / 1000).toFixed(1)} Mm`
@@ -5761,6 +5811,12 @@ sample      ${debugInfo.projectedPxSample}`}
     text-transform: uppercase;
     backdrop-filter: blur(4px);
   }
+  /* Mobile: sit just above the accordion tab bar (which now hugs the footer). */
+  @media (max-width: 767px) {
+    .altitude-indicator {
+      bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    }
+  }
   /* Persistent landing-site crosshair. Mirrors the gold-disc +
      extending-arms shape of the SurfaceFlatPatch canvas marker so the
      handoff from sphere → flat-patch reads as one continuous symbol
@@ -5841,7 +5897,7 @@ sample      ${debugInfo.projectedPxSample}`}
     /* Mobile: z-index 25 so the bottom-sheet detail panel sits above
        these controls. Desktop bumps to 35 at @min-width: 768. */
     z-index: 25;
-    /* Hidden on mobile — controls move to MobileControlsDrawer. */
+    /* Hidden on mobile — controls move to the MobileDrawerGroup accordion. */
     display: none;
     flex-direction: column;
     gap: 6px;
@@ -6170,8 +6226,8 @@ sample      ${debugInfo.projectedPxSample}`}
   .legend-3d {
     position: absolute;
     /* Compact colour-key strip spanning the full width just above the
-       footer. Always visible on the scene; MobileControlsDrawer sits
-       above it via --mcd-bottom on the surface-scene root. */
+       footer. On desktop always visible; on mobile replaced by the
+       Nations tab in the MobileDrawerGroup accordion. */
     bottom: 48px;
     left: 0;
     right: 0;
@@ -6536,5 +6592,43 @@ sample      ${debugInfo.projectedPxSample}`}
   .surface-floating-exit .x {
     color: rgba(255, 255, 255, 0.65);
     font-size: 11px;
+  }
+
+  /* Mobile accordion: nations tab content layout. */
+  .nations-drawer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  @media (max-width: 767px) {
+    /* Desktop .legend-3d moved into the Nations accordion tab on mobile. */
+    .legend-3d {
+      display: none;
+    }
+
+    /* OrbitRuler inside the left accordion tab: static flow, full width.
+       Overrides OrbitRuler's own position:absolute which is only
+       meaningful when rendered standalone on desktop. */
+    :global(.mdg-body .ruler) {
+      position: static;
+      width: 100%;
+      max-height: 32vh;
+      left: auto;
+      bottom: auto;
+      box-sizing: border-box;
+      /* Flush inside the drawer: no box-in-a-box card chrome. */
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      padding: 0;
+    }
+    /* The accordion tab already reads RULER; drop the inner title. */
+    :global(.mdg-body .ruler-title) {
+      display: none;
+    }
   }
 </style>

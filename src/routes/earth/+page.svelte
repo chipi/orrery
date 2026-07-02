@@ -159,20 +159,24 @@
 
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
 
-{#if regimes.length > 0 && orbitsInView}
-  <!-- Curated order: HEO sits between LEO and MEO since its perigee/
-       apogee span straddles both; pure altitude-sort would place HEO
-       below LEO (perigee 1,000 km) which buries its teaching value.
-       Hidden once the camera dips below LEO — orbits then sit overhead
-       and the ruler references nothing on screen (#363). -->
-  <OrbitRuler
-    {regimes}
-    {highlightRegime}
-    onSelect={openRegime}
-    order={['L2', 'MOON', 'GEO', 'MEO', 'HEO', 'LEO']}
-    anchorBottomPx={14}
-  />
-{/if}
+<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
+     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
+<div class="ruler-desktop-only">
+  {#if regimes.length > 0 && orbitsInView}
+    <!-- Curated order: HEO sits between LEO and MEO since its perigee/
+         apogee span straddles both; pure altitude-sort would place HEO
+         below LEO (perigee 1,000 km) which buries its teaching value.
+         Hidden once the camera dips below LEO — orbits then sit overhead
+         and the ruler references nothing on screen (#363). -->
+    <OrbitRuler
+      {regimes}
+      {highlightRegime}
+      onSelect={openRegime}
+      order={['L2', 'MOON', 'GEO', 'MEO', 'HEO', 'LEO']}
+      anchorBottomPx={14}
+    />
+  {/if}
+</div>
 
 <RegimePanel
   regime={selectedRegime}
@@ -181,3 +185,14 @@
   {selectableIds}
   {onResidentClick}
 />
+
+<style>
+  .ruler-desktop-only {
+    display: contents;
+  }
+  @media (max-width: 767px) {
+    .ruler-desktop-only {
+      display: none;
+    }
+  }
+</style>

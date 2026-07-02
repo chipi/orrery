@@ -84,6 +84,7 @@
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
+  import { immersiveMode } from '$lib/immersive-mode.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   // HotspotsLodChip import dropped — its LOD-cycle UX is now folded
   // into the unified SURFACE chip (see surfaceChipLabel /
@@ -525,6 +526,34 @@
    * lazily on first activation and disposed when the user exits.
    */
   let panoramaActive = $state(false);
+
+  // Mobile: the detail panel is full-screen, so entering panorama / flat-patch
+  // from it would hide the very view you just asked for. Auto-dismiss the panel
+  // the first frame the mode goes active (mobile only). Desktop keeps its
+  // side-drawer panel alongside the mode (2026-07 user direction).
+  let isMobileSurface = $state(false);
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const mq = window.matchMedia('(max-width: 767px)');
+    isMobileSurface = mq.matches;
+    const onChange = (e: MediaQueryListEvent) => (isMobileSurface = e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  });
+  let prevImmersive = false;
+  $effect(() => {
+    const immersive = panoramaActive || flatPatchActive;
+    if (immersive && !prevImmersive && isMobileSurface) panelOpen = false;
+    prevImmersive = immersive;
+  });
+  // Share immersive state so the global layout can hide its footer on mobile
+  // (the panorama / flat-patch bottom controls otherwise collide with it).
+  $effect(() => {
+    immersiveMode.active = panoramaActive || flatPatchActive;
+  });
+  $effect(() => () => {
+    immersiveMode.active = false;
+  });
   let panoramaSkybox: SkyboxHandle | null = null;
   // Reactive function pointers — assigned inside onMount once the
   // scene + camera closures exist. $state ensures Svelte re-renders
@@ -5055,14 +5084,18 @@
     >
       {@render surfaceControls()}
     </div>
-    <MobileDrawerGroup
-      tabs={[
-        { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
-        { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
-        { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
-      ]}
-      onOpen={(id) => (mobileDrawerOpen = id !== null)}
-    />
+    {#if !flatPatchActive}
+      <!-- Hide the orbital controls in flat-patch detail (same as panorama);
+           they otherwise overlap the true-scale provenance card. -->
+      <MobileDrawerGroup
+        tabs={[
+          { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
+          { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
+          { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
+        ]}
+        onOpen={(id) => (mobileDrawerOpen = id !== null)}
+      />
+    {/if}
   {/if}
 
   {#if loadFailed}

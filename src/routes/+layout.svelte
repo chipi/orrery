@@ -6,6 +6,7 @@
   import { browser } from '$app/environment';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
+  import { immersiveMode } from '$lib/immersive-mode.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
   import {
@@ -276,7 +277,11 @@
   <main>
     {@render children?.()}
   </main>
-  <footer class="site-footer" aria-label={m.footer_aria()}>
+  <footer
+    class="site-footer"
+    class:immersive-hidden={immersiveMode.active}
+    aria-label={m.footer_aria()}
+  >
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
       <a class="footer-link" href="{base}/posters">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
@@ -367,6 +372,14 @@
     inset-inline-end: 10px;
     z-index: 35;
     pointer-events: none;
+  }
+  /* Mobile: hide the footer while a route is in an immersive full-screen mode
+     (surface panorama / flat-patch) so the mode's own bottom controls don't
+     collide with it (2026-07 user direction). */
+  @media (max-width: 767px) {
+    .site-footer.immersive-hidden {
+      display: none;
+    }
   }
   .footer-menu {
     display: inline-flex;

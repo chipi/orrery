@@ -70,6 +70,7 @@
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
+  import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
 
   // ──────────────────────────────────────────────────────────────────
   // Planet visual config — compressed orbital radii & display sizes,
@@ -718,30 +719,6 @@
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let view: '3d' | '2d' = $state('3d');
-  // Phase 31 (#342) — "throne of glory" default on touch devices.
-  // Mirror of /fly Phase 25: on (hover: none) devices the cinematic
-  // canvas lands chrome-free; a floating ◐ button top-left expands
-  // the hud-controls cluster back. Desktop / mouse devices default
-  // to visible chrome (no behavioural change). One-shot at module
-  // init — user's toggle wins thereafter.
-  let hudCollapsed = $state(false);
-  function toggleHud() {
-    hudCollapsed = !hudCollapsed;
-  }
-  if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
-    hudCollapsed = true;
-  }
-  // Phase 33 + 34 (#342) — mobile info toggle. Phase 27 hid the
-  // informational overlays (.tactical-scan + .paths-legend) on
-  // narrow viewports to give the canvas breathing room. This toggle
-  // surfaces them on demand so the data isn't actually lost —
-  // mobile users tap "i" to read the planet stats / trajectory roster
-  // and tap again to dismiss. Desktop is unaffected (the toggle
-  // button + CSS gate both honour (hover: none)).
-  let mobileInfoOpen = $state(false);
-  function toggleMobileInfo() {
-    mobileInfoOpen = !mobileInfoOpen;
-  }
   let localizedPlanets: LocalizedPlanet[] = $state([]);
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
@@ -999,6 +976,8 @@
   const DAYS_PER_YEAR = 365.25; // simT is in years; pills are days/sec
   let simSpeed = $state(10);
   let simPaused = $state(false);
+  // Mobile speed popover state — collapses 3 pills into one tap-to-reveal slot.
+  let speedPopoverOpen = $state(false);
   // #351 Layer 2-B — give the clock a real calendar meaning WITHOUT
   // touching the (artistic) a0 start angles. Convention: simT=0 ≡ the
   // page-load day. The chip shows the running simulated date; clicking it
@@ -4922,7 +4901,7 @@
 {/if}
 <QualitySettingsModal {activeQualityTier} />
 
-<div class="explore" class:mobile-info-open={mobileInfoOpen} data-audio-stage="explore-scene">
+<div class="explore" data-audio-stage="explore-scene">
   <div
     class="layer"
     bind:this={container}
@@ -4974,6 +4953,30 @@
        button (user direction 2026-06-21). Pills mirror the guide-explore
        narration ("one day per second, ten days, a hundred"). -->
   <div class="time-controls" data-audio-stage="explore-time">
+    <!-- Mobile-only compact REFERENCES button — the standalone .earth-compare
+         is hidden on mobile (z-20 behind footer); this keeps the affordance
+         accessible in the scrubber row (z-40). -->
+    <button
+      type="button"
+      class="earth-compact"
+      onclick={() => (panelState.sizes = !panelState.sizes)}
+      aria-label={m.explore_sizes_toggle()}
+      title={m.explore_sizes_toggle()}
+      data-testid="sizes-toggle-compact"
+    >
+      <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
+      <span class="earth-compact-label">
+        {#if cameraState.focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
+          {focusedStats.diameterRatioEarth.toFixed(2)}×
+        {:else if focusedSatelliteStats}
+          {focusedSatelliteStats.diameterRatioEarth < 0.01
+            ? focusedSatelliteStats.diameterRatioEarth.toFixed(4)
+            : focusedSatelliteStats.diameterRatioEarth.toFixed(2)}×
+        {:else}
+          SCALE
+        {/if}
+      </span>
+    </button>
     <button
       type="button"
       class="toggle play-btn"
@@ -4987,6 +4990,47 @@
       {simPaused ? '▶' : '⏸'}
     </button>
     <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+      <!-- Mobile: single active-speed slot; tap to reveal all 3 above. -->
+      <div class="speed-slot">
+        <button
+          type="button"
+          class="speed-pill"
+          class:active={!simPaused}
+          aria-expanded={speedPopoverOpen}
+          aria-haspopup="listbox"
+          aria-label="{simSpeed}× — {m.fly_speed_label()}"
+          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{simSpeed}×</button
+        >
+        {#if speedPopoverOpen}
+          <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
+            {#each SIM_SPEEDS as sp}
+              {@const speedTip =
+                sp === 1
+                  ? m.explore_speed_tip_1()
+                  : sp === 100
+                    ? m.explore_speed_tip_100()
+                    : m.explore_speed_tip_10()}
+              <button
+                type="button"
+                class="speed-pill"
+                class:active={!simPaused && simSpeed === sp}
+                role="option"
+                aria-selected={!simPaused && simSpeed === sp}
+                aria-label={speedTip}
+                title={speedTip}
+                onclick={() => {
+                  simSpeed = sp;
+                  simPaused = false;
+                  speedPopoverOpen = false;
+                }}
+                data-testid="explore-speed-{sp}"
+                data-audio-stage="explore-speed-{sp}">{sp}×</button
+              >
+            {/each}
+          </div>
+        {/if}
+      </div>
+      <!-- Desktop: all 3 pills visible. -->
       {#each SIM_SPEEDS as sp}
         {@const speedTip =
           sp === 1
@@ -4996,7 +5040,7 @@
               : m.explore_speed_tip_10()}
         <button
           type="button"
-          class="speed-pill"
+          class="speed-pill speed-desktop-pill"
           class:active={!simPaused && simSpeed === sp}
           aria-pressed={!simPaused && simSpeed === sp}
           aria-label={speedTip}
@@ -5138,56 +5182,10 @@
     </div>
   {/if}
 
-  <!-- Phase 31 (#342) — mobile HUD-collapse toggle. The expand button
-       appears when the cluster is hidden; the collapse button is the
-       first child of the cluster itself so it's reachable when the
-       cluster is shown. Two-button pattern keeps the top-left zone
-       single-claimant at every state. -->
-  {#if hudCollapsed}
-    <button
-      type="button"
-      class="hud-restore"
-      onclick={toggleHud}
-      aria-label={m.explore_show_controls_aria()}
-      title={m.explore_show_controls_title()}
-    >
-      ◐
-    </button>
-  {/if}
-  <!-- Phase 33 + 34 (#342) — mobile info toggle. Top-right; hidden
-       on hoverable (desktop) devices via CSS. Toggles .tactical-scan
-       (planet stats) and .paths-legend (iconic trajectory roster)
-       which Phase 27 hid for canvas breathing room. -->
-  <button
-    type="button"
-    class="mobile-info-toggle"
-    class:active={mobileInfoOpen}
-    onclick={toggleMobileInfo}
-    aria-label={mobileInfoOpen ? 'Hide overlays' : 'Show overlays'}
-    aria-pressed={mobileInfoOpen}
-    title={mobileInfoOpen ? 'Hide stats + paths' : 'Show stats + paths'}
-  >
-    {mobileInfoOpen ? '✕' : 'ⓘ'}
-  </button>
-  <!-- HUD controls cluster (top-left). Two rows: mode toggles
-       (2D/3D + SIZES) and visibility-layer chips. Sits on the
-       opposite side of the detail panel so they never collide. -->
-  <div
-    class="hud-controls"
-    class:hidden-on-mobile={hudCollapsed}
-    data-audio-stage="explore-hud"
-    role="group"
-    aria-label={m.ui_view_controls()}
-  >
-    <!-- Inline collapse button — visible on mobile only, hides the
-         cluster + reveals the floating ◐ above. -->
-    <button
-      type="button"
-      class="hud-mobile-collapse"
-      onclick={toggleHud}
-      aria-label={m.explore_hide_controls_aria()}
-      title={m.explore_hide_controls_title()}>◑</button
-    >
+  <!-- Secondary HUD controls: 2D/3D toggle + layer chips + paths-legend.
+       Defined once as a snippet; rendered inline on desktop, inside
+       MobileDrawerGroup accordion on mobile (≤767 px). -->
+  {#snippet exploreControls()}
     <div class="ctrl-row">
       <button
         class="toggle"
@@ -5217,6 +5215,8 @@
         </button>
       {/if}
     </div>
+    <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
+         data-audio-stage which LayerChipRow's interface doesn't expose. -->
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button
         type="button"
@@ -5289,13 +5289,9 @@
         >
           ⓘ Why are they all in one plane?
         </a>
-        <!-- Hovered-mission tagline strip. Lives at the top of the
-             legend so the iconic-mission "why it matters" copy is
-             reachable without expanding any row (2026-06-17 user note:
-             "we need to move new text to hover-only so that width
-             stays the same and no jumps in width of chips"). The
-             strip wraps inside the existing legend column width — it
-             never pushes the chip cluster wider. -->
+        <!-- Hover brightens the arc + swaps the tagline but does NOT open
+             the panel — click commits. Intentional after the 2026-06-19
+             render-storm from async getMission() on every mouseenter. -->
         <div class="paths-legend-tagline" aria-live="polite">
           {#if iconic.state.hoveredId}
             {iconicTagline(iconic.state.hoveredId)}
@@ -5316,17 +5312,9 @@
             onclick={() => iconic.selectMission(entry.mission_id, localeFromPage($page))}
             onkeydown={(e) => onLegendKeydown(e, i)}
             onmouseenter={() => {
-              // Lightweight preview — brightens the arc + swaps the
-              // tagline. Does NOT open the panel; the panel only
-              // opens on click (or programmatic-tour click). This is
-              // intentional after the 2026-06-19 render-storm caused
-              // by re-issuing the async getMission() fetch on every
-              // mouseenter / mouseleave.
               iconic.state.hoveredId = entry.mission_id;
             }}
             onfocus={() => {
-              // Keyboard equivalent of the hover preview — arrowing onto
-              // a row brightens its arc + tagline without committing.
               iconic.state.hoveredId = entry.mission_id;
             }}
             onblur={() => {
@@ -5352,7 +5340,207 @@
         {/each}
       </div>
     {/if}
+  {/snippet}
+  <!-- Desktop cluster — hidden on mobile (≤767 px) via CSS. -->
+  <div
+    class="hud-controls"
+    data-audio-stage="explore-hud"
+    role="group"
+    aria-label={m.ui_view_controls()}
+  >
+    {@render exploreControls()}
   </div>
+  <!-- Mobile-only: 2D/3D toggle + Reset View fixed at top-left (mirrors
+       desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
+  <div class="hud-top-mobile" role="group" aria-label={m.ui_view_controls()}>
+    <button
+      class="toggle"
+      type="button"
+      onclick={toggleView}
+      aria-pressed={view === '2d'}
+      data-testid="explore-view-toggle-mobile"
+    >
+      {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
+    </button>
+    {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId || panelState.sun}
+      <button
+        class="toggle"
+        type="button"
+        onclick={() => {
+          selectedId = null;
+          selectedSmallBodyId = null;
+          selectedSatelliteKey = null;
+          selectedBeltId = null;
+          resetExplorePanelState();
+          flyToBodyFn?.(null);
+        }}
+        data-testid="explore-reset-view-mobile"
+        data-audio-stage="explore-reset-view"
+      >
+        {m.ui_reset_view()}
+      </button>
+    {/if}
+  </div>
+  <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
+       Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->
+  {#snippet mobileRulerContent(close: () => void)}
+    {#if exploreRegimes.length > 0}
+      <OrbitRuler
+        regimes={exploreRegimes}
+        highlightRegime={null}
+        onSelect={(id) => {
+          openExploreRegime(id);
+          close();
+        }}
+        surfaceAnchor={null}
+      />
+    {/if}
+  {/snippet}
+  {#snippet mobileControlsContent(close: () => void)}
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.planets}
+        aria-pressed={layers.planets}
+        onclick={() => {
+          layers.planets = !layers.planets;
+          close();
+        }}
+        data-testid="layer-planets"
+        title={m.explore_layer_tip_planets()}
+      >
+        {m.ui_layer_planets()}
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.dwarfs}
+        aria-pressed={layers.dwarfs}
+        onclick={() => {
+          layers.dwarfs = !layers.dwarfs;
+          close();
+        }}
+        data-testid="layer-dwarfs"
+        title={m.explore_layer_tip_dwarfs()}
+      >
+        {m.ui_layer_dwarfs()}
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.comets}
+        aria-pressed={layers.comets}
+        onclick={() => {
+          layers.comets = !layers.comets;
+          close();
+        }}
+        data-testid="layer-comets"
+        title={m.explore_layer_tip_comets()}
+      >
+        {m.ui_layer_comets()}
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.interstellar}
+        aria-pressed={layers.interstellar}
+        onclick={() => {
+          layers.interstellar = !layers.interstellar;
+          close();
+        }}
+        data-testid="layer-interstellar"
+        title={m.explore_layer_tip_interstellar()}
+      >
+        {m.ui_layer_interstellar_short()}
+      </button>
+    </div>
+  {/snippet}
+  {#snippet mobileIconicContent(close: () => void)}
+    <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
+         chip. onOpen enables the layer when the drawer opens; this toggle lets
+         you switch the arcs off without closing the drawer. -->
+    <button
+      type="button"
+      class="iconic-toggle"
+      class:active={layers.paths}
+      aria-pressed={layers.paths}
+      onclick={() => (layers.paths = !layers.paths)}
+      data-testid="layer-paths"
+      title={m.explore_layer_tip_paths()}
+    >
+      <span class="iconic-toggle-dot" class:on={layers.paths} aria-hidden="true"></span>
+      {m.ui_layer_paths()}
+    </button>
+    <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
+      <a
+        class="paths-legend-why"
+        href="{base}/science/transfers/coplanar-trajectories"
+        data-testid="paths-legend-why"
+      >
+        ⓘ Why are they all in one plane?
+      </a>
+      <div class="paths-legend-tagline" aria-live="polite">
+        {#if iconic.state.hoveredId}
+          {iconicTagline(iconic.state.hoveredId)}
+        {:else if iconic.state.selectedId}
+          {iconicTagline(iconic.state.selectedId)}
+        {:else}
+          {m.explore_iconic_tagline_placeholder()}
+        {/if}
+      </div>
+      {#each PATHS_LEGEND as entry, i (entry.mission_id)}
+        <button
+          type="button"
+          class="paths-legend-row"
+          class:is-selected={iconic.state.selectedId === entry.mission_id}
+          class:is-hovered={iconic.state.hoveredId === entry.mission_id}
+          aria-pressed={iconic.state.selectedId === entry.mission_id}
+          onclick={() => {
+            iconic.selectMission(entry.mission_id, localeFromPage($page));
+            close();
+          }}
+          onkeydown={(e) => onLegendKeydown(e, i)}
+          onmouseenter={() => {
+            iconic.state.hoveredId = entry.mission_id;
+          }}
+          onfocus={() => {
+            iconic.state.hoveredId = entry.mission_id;
+          }}
+          onblur={() => {
+            if (iconic.state.hoveredId === entry.mission_id) {
+              iconic.state.hoveredId = null;
+            }
+          }}
+          onmouseleave={() => {
+            iconic.state.hoveredId = null;
+          }}
+          data-testid="paths-legend-row-{entry.mission_id}"
+          data-audio-stage="iconic-mission-{entry.mission_id}"
+        >
+          <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
+          <span class="name">{entry.name}</span>
+          <span class="logos" aria-hidden="true">
+            {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+              <img src={logoPath} alt="" loading="lazy" />
+            {/each}
+          </span>
+          <span class="year">{entry.launch_year}</span>
+        </button>
+      {/each}
+    </div>
+  {/snippet}
+  <MobileDrawerGroup
+    tabs={[
+      { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
+      { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
+      { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
+    ]}
+    onOpen={(id) => {
+      if (id === 'missions') layers.paths = true;
+    }}
+    --mcd-bottom="100px"
+  />
 
   {#if panelState.sizes}
     <!-- Size comparison overlay — modal-style, mirrors selected planet
@@ -5471,12 +5659,14 @@
      up). RegimePanel sits at zIndex=28 so any body panel that opens
      stacks on top — closing the body panel reveals the zone panel. -->
 {#if exploreRegimes.length > 0}
-  <OrbitRuler
-    regimes={exploreRegimes}
-    highlightRegime={null}
-    onSelect={openExploreRegime}
-    surfaceAnchor={null}
-  />
+  <div class="ruler-desktop-only">
+    <OrbitRuler
+      regimes={exploreRegimes}
+      highlightRegime={null}
+      onSelect={openExploreRegime}
+      surfaceAnchor={null}
+    />
+  </div>
 {/if}
 
 <RegimePanel
@@ -5617,9 +5807,7 @@
   }
   /* PRD-023 Slice E.4 — Tactical scan overlay. Bottom-center, between
      the layer chips and the detail panel on desktop.
-     #342 Phase 30 — mobile-first: hidden on phone unless the user
-     opens the mobile info toggle (.mobile-info-open scope below).
-     Re-visible at @min-width: 601 (the desktop range). */
+     Mobile-first: hidden on phones; visible at @min-width: 601. */
   .tactical-scan {
     position: fixed;
     bottom: 16px;
@@ -5635,13 +5823,7 @@
     backdrop-filter: blur(4px);
     pointer-events: none;
     font-family: 'Space Mono', monospace;
-    /* Phase 27 (#342) — informational overlays are hidden by default
-       at narrow widths so the canvas breathes. Phase 33 + 34 (#342)
-       reverses the cut on demand via .mobile-info-toggle. */
     display: none;
-  }
-  .explore.mobile-info-open .tactical-scan {
-    display: block;
   }
   .scan-value-wrap {
     /* Atmosphere composition string can be long; allow wrap without
@@ -5693,115 +5875,13 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  /* Phase 33 + 34 (#342) — mobile info toggle. 44×44 button top-right
-     of the canvas, mirrors hud-restore's style (.fly-style chrome bar).
-     Display:none on hoverable devices so desktop never sees it; flips
-     to inline-flex via @media (hover: none). */
-  .mobile-info-toggle {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    right: 16px;
-    z-index: 36;
-    width: 44px;
-    height: 44px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .mobile-info-toggle:hover,
-  .mobile-info-toggle:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-  .mobile-info-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
-    color: #4ecdc4;
-  }
-  @media (hover: none) {
-    .mobile-info-toggle {
-      display: inline-flex;
-    }
-  }
-  /* Phase 31 (#342) — mobile HUD collapse pair.
-     - .hud-restore: floating ◐ button that appears at top-left when
-       the cluster is collapsed. Reachable, single-claimant of the zone.
-     - .hud-mobile-collapse: ◑ button inside the cluster, visible only
-       on touch devices, used to fold the cluster away.
-     Desktop / hoverable devices never see either button — chrome
-     stays in its default visible state with no extra UI. */
-  .hud-restore {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    left: 16px;
-    z-index: 36;
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .hud-restore:hover,
-  .hud-restore:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-  .hud-mobile-collapse {
-    display: none;
-    pointer-events: auto;
-    align-self: flex-start;
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(220, 230, 245, 0.85);
-    font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 4px;
-  }
-  .hud-mobile-collapse:hover,
-  .hud-mobile-collapse:focus-visible {
-    border-color: #4ecdc4;
-    outline: none;
-  }
-  @media (hover: none) {
-    .hud-mobile-collapse {
-      display: inline-flex;
-    }
-    .hud-controls.hidden-on-mobile {
-      display: none;
-    }
-  }
-
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never
      collides with the right-drawer detail panel on desktop.
-     #342 Phase 30 — mobile-first: phone-tight values are the
-     defaults; @min-width: 501 + @min-width: 769 layer desktop
-     spacing + the chip stretch column back. */
+     Phone (≤767 px): hidden — MobileDrawerGroup replaces it.
+     @min-width: 501 + @min-width: 769 layer desktop spacing + chip
+     stretch column back. */
   .hud-controls {
     position: fixed;
     /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
@@ -5812,7 +5892,7 @@
        hangs off this cluster sits over the time scrubber, not under it.
        Stays below the sizes modal / backdrop (60/61). */
     z-index: 45;
-    display: flex;
+    display: none;
     flex-direction: column;
     /* Mobile: flex-start so each row takes its natural width (the chip
        row wraps; the toggle row hugs left). align-items: stretch is
@@ -6037,13 +6117,41 @@
     color: #4ecdc4;
   }
 
+  /* Compact trajectory on/off inside the Iconic Missions drawer (mobile). */
+  .iconic-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(207, 224, 255, 0.6);
+    background: rgba(15, 18, 35, 0.55);
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .iconic-toggle.active {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.5);
+  }
+  .iconic-toggle-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(207, 224, 255, 0.25);
+    flex-shrink: 0;
+  }
+  .iconic-toggle-dot.on {
+    background: #4ecdc4;
+    box-shadow: 0 0 6px rgba(78, 205, 196, 0.7);
+  }
   .paths-legend {
     pointer-events: auto;
-    /* Mobile-first: hidden by default on phones / tablets. Phase 27
-       (#342) hides the iconic-trajectory legend so the canvas
-       breathes; Phase 34 (#342) re-surfaces it on demand via the
-       .mobile-info-toggle button (.mobile-info-open scope below).
-       At @min-width: 769 (desktop) the legend is always-on. */
+    /* Hidden by default on phones; shown at @min-width: 769 (desktop
+       always-on) and inside the MobileDrawerGroup via :global below. */
     display: none;
     flex-direction: column;
     gap: 2px;
@@ -6061,14 +6169,10 @@
     overflow-y: auto;
     overscroll-behavior: contain;
   }
-  .explore.mobile-info-open .paths-legend {
+  /* Inside the mobile drawer the legend flows naturally; no fixed
+     positioning needed — the drawer handles its own scroll. */
+  :global(.mdg-body) .paths-legend {
     display: flex;
-    position: fixed;
-    bottom: 76px; /* above the detail-panel handle if open */
-    left: 16px;
-    right: 16px;
-    max-height: 40vh;
-    z-index: 35;
   }
   .paths-legend::-webkit-scrollbar {
     width: 6px;
@@ -6282,6 +6386,7 @@
       max-width: none;
     }
     .hud-controls {
+      display: flex;
       align-items: stretch;
     }
     .chip {
@@ -6426,5 +6531,155 @@
   }
   .tour-anchors button {
     pointer-events: auto;
+  }
+  /* FB5 — controls drawer: chips wrap two-per-row inside the full-width
+     accordion panel. flex-grow lets a lone chip (the Iconic-Missions PATHS
+     toggle, which lives in its own drawer) stretch to full width, while the
+     four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
+  @media (max-width: 767px) {
+    :global(.mdg-body) .ctrl-row.chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    :global(.mdg-body) .ctrl-row.chips .chip {
+      flex: 1 1 calc(50% - 3px);
+      text-align: center;
+    }
+  }
+
+  /* Desktop ruler wrapper — hidden on mobile (drawer replaces it). */
+  .ruler-desktop-only {
+    display: contents;
+  }
+  @media (max-width: 767px) {
+    .ruler-desktop-only {
+      display: none;
+    }
+    /* OrbitRuler inside the left drawer: static flow, full width.
+       Overrides OrbitRuler's own position:absolute which is only
+       meaningful when rendered standalone on desktop. */
+    :global(.mdg-body .ruler) {
+      position: static;
+      width: 100%;
+      max-height: 32vh;
+      left: auto;
+      bottom: auto;
+      box-sizing: border-box;
+      /* FB4 — flush inside the drawer: no box-in-a-box card chrome. */
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      padding: 0;
+    }
+    /* FB4 — the drawer tab already reads ORBIT RULER; drop the inner title. */
+    :global(.mdg-body .ruler-title) {
+      display: none;
+    }
+  }
+
+  /* FB2 — mobile-only top cluster: 2D/3D toggle + Reset View, mirroring the
+     desktop .hud-controls top-left corner (.hud-controls itself is desktop-only). */
+  .hud-top-mobile {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .hud-top-mobile {
+      display: flex;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 8px;
+      gap: 6px;
+      z-index: 45;
+    }
+  }
+
+  /* Compact REFERENCES button inside .time-controls — mobile only. */
+  .earth-compact {
+    display: none;
+    height: 32px;
+    padding: 2px 9px 2px 2px;
+    background: rgba(15, 18, 35, 0.55);
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 16px;
+    cursor: pointer;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    color: inherit;
+  }
+  .earth-compact-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.82);
+    white-space: nowrap;
+  }
+  .earth-compact img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: block;
+  }
+  .earth-compact:hover,
+  .earth-compact:focus-visible {
+    border-color: rgba(75, 156, 211, 0.7);
+    outline: none;
+  }
+  @media (max-width: 767px) {
+    .earth-compact {
+      display: flex;
+    }
+    /* Hide standalone .earth-compare on mobile — affordance lives inside
+       .time-controls as .earth-compact. */
+    .earth-compare {
+      display: none;
+    }
+  }
+
+  /* Mobile speed slot — single pill showing current speed, reveals a
+     stacked popover above on tap. */
+  .speed-slot {
+    display: none;
+    position: relative;
+  }
+  .speed-popover {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(8, 10, 22, 0.95);
+    border: 1px solid rgba(75, 156, 211, 0.35);
+    border-radius: 5px;
+    padding: 3px;
+    min-width: 48px;
+    z-index: 50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  .speed-popover .speed-pill {
+    border-right: none;
+    border-radius: 3px;
+  }
+  .speed-desktop-pill {
+    /* visible on desktop — no additional styles needed */
+  }
+  @media (max-width: 767px) {
+    .speed-slot {
+      display: block;
+    }
+    .speed-desktop-pill {
+      display: none;
+    }
+    /* Let the tap-to-reveal popover escape the desktop pill-group's
+       overflow:hidden clip (that clip only exists for the segmented look). */
+    .speed-group {
+      overflow: visible;
+    }
   }
 </style>

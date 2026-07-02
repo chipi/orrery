@@ -74,27 +74,17 @@ test.describe(`mobile invariants — ${VIEWPORT_HINT}`, () => {
     }
   });
 
-  // ─── Phase 31 — /explore default-collapsed on touch ─────────────
-  test('/explore hud-restore button is visible, hud-controls is hidden by default', async ({
+  // ─── Phase 31 — /explore mobile drawer controls ─────────────────
+  test('/explore MobileControlsDrawer is visible, collapsed by default on mobile', async ({
     page,
   }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    const hudRestore = page.locator('.hud-restore');
-    await expect(hudRestore).toBeVisible({ timeout: 10_000 });
-    // .hud-controls has the .hidden-on-mobile class applied; CSS
-    // @media (hover: none) hides it via display: none.
+    const handle = page.locator('.mcd-handle');
+    await expect(handle).toBeVisible({ timeout: 10_000 });
+    // Drawer starts collapsed (peek state). aria-expanded should be false.
     await page.waitForTimeout(200);
-    const hudControlsHidden = await page
-      .locator('.hud-controls')
-      .evaluate((el) => getComputedStyle(el).display === 'none');
-    expect(hudControlsHidden).toBe(true);
-  });
-
-  // ─── Phase 33 + 34 — /explore mobile info toggle visible ────────
-  test('/explore mobile-info-toggle is visible on touch devices', async ({ page }) => {
-    await page.goto('/explore', { waitUntil: 'networkidle' });
-    const infoToggle = page.locator('.mobile-info-toggle');
-    await expect(infoToggle).toBeVisible({ timeout: 10_000 });
+    const expanded = await handle.getAttribute('aria-expanded');
+    expect(expanded).toBe('false');
   });
 
   // ─── Phase 24 — /science mobile search button is 44×44 ──────────

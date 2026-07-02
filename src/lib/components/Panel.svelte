@@ -158,17 +158,17 @@
     }
   }
 
-  /* Mobile: bottom sheet — lifted above the route HUD chrome (≤ z45) so
-     the × is never occluded; +50 keeps it below the lightbox / nav (z100). */
+  /* Mobile: full-height sheet anchored just below the nav — fills the
+     screen so the scene doesn’t bleed through above the panel. No
+     max-height cap. Tour-space dock is zeroed on mobile; a dedicated
+     tour/mobile pass will revisit if needed. */
   @media (max-width: 767px) {
     .panel {
+      top: var(--nav-height);
       bottom: 0;
       left: 0;
       right: 0;
-      max-height: 80vh;
       border-top: 1px solid var(--color-border);
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
       z-index: calc(var(--panel-z, 30) + 50);
     }
   }
@@ -215,7 +215,7 @@
   }
   @media (max-width: 767px) {
     .panel-dock {
-      height: 56px;
+      height: 0;
     }
   }
 
@@ -245,7 +245,7 @@
   }
   @media (max-width: 767px) {
     .panel-close {
-      top: calc(56px + 14px);
+      top: 14px;
     }
   }
 

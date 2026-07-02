@@ -32,9 +32,21 @@
     children?: Snippet;
     /** Start expanded instead of peek. Default false (peek). */
     startExpanded?: boolean;
+    /**
+     * Half-width placement: 'left' pins to the left ~50%, 'right' to the
+     * right ~50%. Default 'full' = full-width (existing behavior).
+     */
+    side?: 'left' | 'right' | 'full';
   };
-  let { label = 'Controls', peek, children, startExpanded = false }: Props = $props();
+  let {
+    label = 'Controls',
+    peek,
+    children,
+    startExpanded = false,
+    side = 'full',
+  }: Props = $props();
 
+  // eslint-disable-next-line svelte/valid-compile -- write-once initial value from the prop
   let expanded = $state(startExpanded);
 
   // Swipe-down on the drawer collapses it.
@@ -78,6 +90,8 @@
 <section
   class="mcd"
   class:expanded
+  class:mcd-left={side === 'left'}
+  class:mcd-right={side === 'right'}
   aria-label={label}
   style:transform={deltaY > 0 ? `translateY(${deltaY}px)` : ''}
   ontouchstart={onTouchStart}
@@ -131,6 +145,16 @@
       color: var(--color-text);
       overflow: hidden;
       transition: max-height 160ms ease;
+    }
+    /* Half-width variants -- each drawer takes ~50% of the viewport with
+       an 8px gap between them (each side inset 8px + 4px). */
+    .mcd.mcd-left {
+      left: 8px;
+      right: calc(50% + 4px);
+    }
+    .mcd.mcd-right {
+      left: calc(50% + 4px);
+      right: 8px;
     }
     .mcd.expanded {
       overflow-y: auto;

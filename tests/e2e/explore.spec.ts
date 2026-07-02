@@ -31,7 +31,11 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // from "2D" to "3D" on click — under CI load, getByRole('button', /2d/)
   // can resolve after the flip has already happened, which is the same
   // class of race the /fly fix (#222) addressed.
-  const toggle = page.locator('[data-testid="explore-view-toggle"]');
+  // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
+  const selector = isMobile
+    ? '.mcd-body [data-testid="explore-view-toggle"]'
+    : '[data-testid="explore-view-toggle"]';
+  const toggle = page.locator(selector);
   if (isMobile) {
     await toggle.tap();
   } else {
@@ -41,9 +45,25 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // rAFs under shared preview-server load. 10 s ceiling gives margin
   // over the observed 5 s flake without masking a binding failure
   // (which would never resolve, regardless of timeout).
-  await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible({
+  // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
+  const threeD = isMobile
+    ? page.locator('.mcd-body button:has-text("3D")')
+    : page.getByRole('button', { name: /^3d$/i });
+  await expect(threeD).toBeVisible({
     timeout: isMobile ? 10_000 : 5_000,
   });
+  // On mobile, close the drawer after switching to 2D so it doesn't intercept
+  // canvas clicks (the drawer's close button sits above the canvas).
+  if (isMobile) {
+    const handle = page.locator('.mcd-handle');
+    if (await handle.count()) {
+      await handle
+        .first()
+        .click({ timeout: 5_000 })
+        .catch(() => {});
+      await page.waitForTimeout(150);
+    }
+  }
   const canvas2d = page.locator('canvas.layer');
   await expect(canvas2d).toBeVisible({ timeout: 5_000 });
   await page.waitForFunction(
@@ -146,7 +166,7 @@ test.describe('/explore — load and toggle', () => {
     ).toBeGreaterThan(0);
   });
 
-  test('toggle round-trips 3D ⇄ 2D without errors', async ({ page }) => {
+  test('toggle round-trips 3D ⇄ 2D without errors', async ({ page, isMobile }) => {
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
@@ -159,8 +179,12 @@ test.describe('/explore — load and toggle', () => {
     // class is shared (SIZES overlay, layers, and the #351 time-control
     // play button all wear it), so a class selector resolves to multiple
     // elements — strict-mode violation. The testid is unique and stable
-    // across the "2D"⇄"3D" label flip.
-    const toggle = page.getByTestId('explore-view-toggle');
+    // across the "2D"⇄"3D" label flip. On mobile, scope to .mcd-body to
+    // avoid dual-render strict mode violation.
+    const selector = isMobile
+      ? '.mcd-body [data-testid="explore-view-toggle"]'
+      : '[data-testid="explore-view-toggle"]';
+    const toggle = page.locator(selector);
     await expect(toggle).toBeVisible();
     // Wait one rAF between clicks so Svelte commits the reactive
     // update (3D ⇄ 2D toggle changes the canvas layer's hidden class +
@@ -248,6 +272,8 @@ test.describe('/explore — selection and panel', () => {
     // #342 Phase 31 — expand the default-collapsed hud-controls cluster
     // on mobile so the sizes-toggle is in the layout.
     await expandExploreHud(page);
+    // The sizes-toggle sits on the canvas (not in the drawer),
+    // so use the unscoped selector.
     const toggle = page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
     if (isMobile) {
@@ -288,10 +314,18 @@ test.describe('/explore — selection and panel', () => {
     // Open the Sun panel (centre of canvas).
     await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
     await expect(page.locator('aside.panel')).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
+    // Close the panel so it doesn't block interaction with the toggle
+    // (panel backdrop intercepts clicks on mobile).
+    if (isMobile) {
+      const closeButton = page.locator('aside.panel').locator('button[aria-label="Close panel"]');
+      await closeButton.click().catch(() => {});
+      await page.waitForTimeout(100);
+    }
     // Toggle button must still be visible AND clickable. On desktop the
     // .panel-shifted class moves it left by --panel-width; on mobile the
     // panel is a bottom sheet so the toggle stays put.
-    const toggle = page.getByRole('button', { name: /^3d$/i });
+    // On mobile, the drawer might be closed, so filter to the visible element.
+    const toggle = page.locator('[data-testid="explore-view-toggle"]').filter({ visible: true });
     await expect(toggle).toBeVisible();
     if (isMobile) {
       await toggle.tap();

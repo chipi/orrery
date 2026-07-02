@@ -83,6 +83,7 @@
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
+  import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   // HotspotsLodChip import dropped — its LOD-cycle UX is now folded
   // into the unified SURFACE chip (see surfaceChipLabel /
   // cycleSurfaceMode below).
@@ -4811,7 +4812,11 @@
   });
 </script>
 
-<div class="surface-scene" style:--body-tint={config.bodyTintCss}>
+<div
+  class="surface-scene"
+  style:--body-tint={config.bodyTintCss}
+  style:--mcd-bottom="calc(78px + env(safe-area-inset-bottom, 0px))"
+>
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
        button fires the same selectSite handler that a canvas click
@@ -4860,6 +4865,144 @@
        chips control the planet sphere view and don't apply to the
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
+  {#snippet surfaceControls()}
+    <div class="ctrl-row">
+      {#if !config.disable2D}
+        <ViewToggleButton
+          is2d={view === '2d'}
+          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+          onToggle={toggleView}
+        />
+      {/if}
+      {#if view === '3d'}
+        <View3dControls
+          onReset={() => resetCamera()}
+          {autoSpin}
+          onToggleSpin={() => (autoSpin = !autoSpin)}
+        />
+      {/if}
+      <!-- Hidden tour hook — lets the audio tour pull the camera back to
+           the overview (e.g. after a deep zoom) without a visible button.
+           data-audio-stage scanned by audio-tour.test.ts. -->
+      <button
+        type="button"
+        class="tour-reset-anchor"
+        data-audio-stage="surface-reset-view"
+        onclick={() => resetCamera()}
+        tabindex="-1"
+        aria-hidden="true">reset view</button
+      >
+    </div>
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
+      <LayerChipRow
+        chips={[
+          {
+            testid: 'layer-surface',
+            // Cycling label reflects the SURFACE+HOTSPOTS unified
+            // state: SURFACE · AUTO / HIGH / LOW / OFF.
+            label: surfaceChipLabel,
+            title: m.moon_layer_tip_surface(),
+            active: () => !surfaceOff,
+            toggle: cycleSurfaceMode,
+          },
+          {
+            testid: 'layer-orbiters',
+            label: m.ui_layer_orbiters(),
+            title: m.moon_layer_tip_orbiters(),
+            active: () => layerOrbiters,
+            toggle: () => (layerOrbiters = !layerOrbiters),
+          },
+          {
+            testid: 'layer-orbits',
+            label: m.ui_layer_orbits(),
+            title: m.moon_layer_tip_orbit_rings(),
+            active: () => layerOrbits,
+            toggle: () => (layerOrbits = !layerOrbits),
+            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
+            // /earth had no such rings under this chip — it only drove the
+            // regime bands, now removed (#363) — so the chip is hidden there.
+            visible: config.earthOrbitalLayers == null,
+          },
+          // TRAVERSES chip shows only when this body has vendored
+          // rover paths (Mars today; Moon EVA / Lunokhod future).
+          ...(loadTraverses != null
+            ? [
+                {
+                  testid: 'layer-traverses',
+                  label: m.ui_layer_traverses(),
+                  title: m.mars_layer_tip_traverses(),
+                  active: () => layerTraverses,
+                  toggle: () => (layerTraverses = !layerTraverses),
+                },
+              ]
+            : []),
+          // Earth-only satellite-category chips (#290 Slice 6). Sub-
+          // gating on top of the master ORBITERS chip — visible only
+          // when earthOrbitalLayers.satellites is configured. Labels
+          // mirror EarthOrbitalScene's existing strings (STATIONS /
+          // OBSERVATORIES are intentional untranslated literals; the
+          // others use the shared ui_layer_* bundle).
+          ...(config.earthOrbitalLayers?.satellites != null
+            ? [
+                // The 5 Earth-only sub-chips are gated on the master
+                // ORBITERS toggle (per-frame visibility = layerOrbiters
+                // && catVisible). When the master is off, clicking a
+                // sub-chip silently flips state but the scene doesn't
+                // change — the user reads this as "chip is broken"
+                // (2026-06-15 user note: "tuned off orbiters [and the
+                // sub-chips appeared dead] -- grayed out solution
+                // please and disable in UI"). Each sub-chip now reads
+                // disabled when ORBITERS is off, which dims it via
+                // .chip:disabled CSS in LayerChipRow + blocks clicks
+                // natively. Turning ORBITERS back on makes the chips
+                // live again at whatever individual state they held.
+                {
+                  testid: 'layer-stations',
+                  label: 'STATIONS',
+                  title: m.earth_layer_tip_habitats(),
+                  active: () => layerStations,
+                  toggle: () => (layerStations = !layerStations),
+                  disabled: () => !layerOrbiters,
+                },
+                {
+                  testid: 'layer-observatories',
+                  label: 'OBSERVATORIES',
+                  title: m.earth_layer_tip_telescopes(),
+                  active: () => layerObservatories,
+                  toggle: () => (layerObservatories = !layerObservatories),
+                  disabled: () => !layerOrbiters,
+                },
+                {
+                  testid: 'layer-constellations',
+                  label: m.ui_layer_constellations(),
+                  title: m.earth_layer_tip_nav(),
+                  active: () => layerConstellations,
+                  toggle: () => (layerConstellations = !layerConstellations),
+                  disabled: () => !layerOrbiters,
+                },
+                {
+                  testid: 'layer-comsats',
+                  label: m.ui_layer_comsats(),
+                  title: m.earth_layer_tip_geo(),
+                  active: () => layerComsats,
+                  toggle: () => (layerComsats = !layerComsats),
+                  disabled: () => !layerOrbiters,
+                },
+                // MOON ORBITERS chip removed (2026-06-29 user direction):
+                // the master ORBITERS toggle already covers lunar orbiters,
+                // so a separate sub-chip was redundant. Moon-orbiters now
+                // ride the ORBITERS master like any other orbiter.
+              ]
+            : []),
+        ]}
+      />
+      <!-- HOTSPOTS LOD chip merged into SURFACE — see surfaceChipLabel
+           / cycleSurfaceMode above. Component import preserved in case
+           future routes want the standalone variant; can be deleted
+           once the cycle UX has soaked. -->
+    </div>
+  {/snippet}
+
   {#if !panoramaActive}
     <div
       class="hud-controls"
@@ -4867,142 +5010,9 @@
       role="group"
       aria-label={m.ui_view_controls()}
     >
-      <div class="ctrl-row">
-        {#if !config.disable2D}
-          <ViewToggleButton
-            is2d={view === '2d'}
-            label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-            onToggle={toggleView}
-          />
-        {/if}
-        {#if view === '3d'}
-          <View3dControls
-            onReset={() => resetCamera()}
-            {autoSpin}
-            onToggleSpin={() => (autoSpin = !autoSpin)}
-          />
-        {/if}
-        <!-- Hidden tour hook — lets the audio tour pull the camera back to
-             the overview (e.g. after a deep zoom) without a visible button.
-             data-audio-stage scanned by audio-tour.test.ts. -->
-        <button
-          type="button"
-          class="tour-reset-anchor"
-          data-audio-stage="surface-reset-view"
-          onclick={() => resetCamera()}
-          tabindex="-1"
-          aria-hidden="true">reset view</button
-        >
-      </div>
-      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-        <LayerChipRow
-          chips={[
-            {
-              testid: 'layer-surface',
-              // Cycling label reflects the SURFACE+HOTSPOTS unified
-              // state: SURFACE · AUTO / HIGH / LOW / OFF.
-              label: surfaceChipLabel,
-              title: m.moon_layer_tip_surface(),
-              active: () => !surfaceOff,
-              toggle: cycleSurfaceMode,
-            },
-            {
-              testid: 'layer-orbiters',
-              label: m.ui_layer_orbiters(),
-              title: m.moon_layer_tip_orbiters(),
-              active: () => layerOrbiters,
-              toggle: () => (layerOrbiters = !layerOrbiters),
-            },
-            {
-              testid: 'layer-orbits',
-              label: m.ui_layer_orbits(),
-              title: m.moon_layer_tip_orbit_rings(),
-              active: () => layerOrbits,
-              toggle: () => (layerOrbits = !layerOrbits),
-              // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
-              // /earth had no such rings under this chip — it only drove the
-              // regime bands, now removed (#363) — so the chip is hidden there.
-              visible: config.earthOrbitalLayers == null,
-            },
-            // TRAVERSES chip shows only when this body has vendored
-            // rover paths (Mars today; Moon EVA / Lunokhod future).
-            ...(loadTraverses != null
-              ? [
-                  {
-                    testid: 'layer-traverses',
-                    label: m.ui_layer_traverses(),
-                    title: m.mars_layer_tip_traverses(),
-                    active: () => layerTraverses,
-                    toggle: () => (layerTraverses = !layerTraverses),
-                  },
-                ]
-              : []),
-            // Earth-only satellite-category chips (#290 Slice 6). Sub-
-            // gating on top of the master ORBITERS chip — visible only
-            // when earthOrbitalLayers.satellites is configured. Labels
-            // mirror EarthOrbitalScene's existing strings (STATIONS /
-            // OBSERVATORIES are intentional untranslated literals; the
-            // others use the shared ui_layer_* bundle).
-            ...(config.earthOrbitalLayers?.satellites != null
-              ? [
-                  // The 5 Earth-only sub-chips are gated on the master
-                  // ORBITERS toggle (per-frame visibility = layerOrbiters
-                  // && catVisible). When the master is off, clicking a
-                  // sub-chip silently flips state but the scene doesn't
-                  // change — the user reads this as "chip is broken"
-                  // (2026-06-15 user note: "tuned off orbiters [and the
-                  // sub-chips appeared dead] -- grayed out solution
-                  // please and disable in UI"). Each sub-chip now reads
-                  // disabled when ORBITERS is off, which dims it via
-                  // .chip:disabled CSS in LayerChipRow + blocks clicks
-                  // natively. Turning ORBITERS back on makes the chips
-                  // live again at whatever individual state they held.
-                  {
-                    testid: 'layer-stations',
-                    label: 'STATIONS',
-                    title: m.earth_layer_tip_habitats(),
-                    active: () => layerStations,
-                    toggle: () => (layerStations = !layerStations),
-                    disabled: () => !layerOrbiters,
-                  },
-                  {
-                    testid: 'layer-observatories',
-                    label: 'OBSERVATORIES',
-                    title: m.earth_layer_tip_telescopes(),
-                    active: () => layerObservatories,
-                    toggle: () => (layerObservatories = !layerObservatories),
-                    disabled: () => !layerOrbiters,
-                  },
-                  {
-                    testid: 'layer-constellations',
-                    label: m.ui_layer_constellations(),
-                    title: m.earth_layer_tip_nav(),
-                    active: () => layerConstellations,
-                    toggle: () => (layerConstellations = !layerConstellations),
-                    disabled: () => !layerOrbiters,
-                  },
-                  {
-                    testid: 'layer-comsats',
-                    label: m.ui_layer_comsats(),
-                    title: m.earth_layer_tip_geo(),
-                    active: () => layerComsats,
-                    toggle: () => (layerComsats = !layerComsats),
-                    disabled: () => !layerOrbiters,
-                  },
-                  // MOON ORBITERS chip removed (2026-06-29 user direction):
-                  // the master ORBITERS toggle already covers lunar orbiters,
-                  // so a separate sub-chip was redundant. Moon-orbiters now
-                  // ride the ORBITERS master like any other orbiter.
-                ]
-              : []),
-          ]}
-        />
-        <!-- HOTSPOTS LOD chip merged into SURFACE — see surfaceChipLabel
-             / cycleSurfaceMode above. Component import preserved in case
-             future routes want the standalone variant; can be deleted
-             once the cycle UX has soaked. -->
-      </div>
+      {@render surfaceControls()}
     </div>
+    <MobileControlsDrawer label="Controls" children={surfaceControls} />
   {/if}
 
   {#if loadFailed}
@@ -5831,7 +5841,8 @@ sample      ${debugInfo.projectedPxSample}`}
     /* Mobile: z-index 25 so the bottom-sheet detail panel sits above
        these controls. Desktop bumps to 35 at @min-width: 768. */
     z-index: 25;
-    display: flex;
+    /* Hidden on mobile — controls move to MobileControlsDrawer. */
+    display: none;
     flex-direction: column;
     gap: 6px;
     pointer-events: none;
@@ -6128,6 +6139,7 @@ sample      ${debugInfo.projectedPxSample}`}
   /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
   @media (min-width: 768px) {
     .hud-controls {
+      display: flex;
       z-index: 35;
     }
     .ctrl-row.chips {
@@ -6157,24 +6169,25 @@ sample      ${debugInfo.projectedPxSample}`}
 
   .legend-3d {
     position: absolute;
-    /* Raised above the global footer bar (Gallery / Credits /
-       Library / etc.) so the two strips don't overlap. */
+    /* Compact colour-key strip spanning the full width just above the
+       footer. Always visible on the scene; MobileControlsDrawer sits
+       above it via --mcd-bottom on the surface-scene root. */
     bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 6px 14px;
-    background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
+    gap: 2px 10px;
+    padding: 3px 10px;
+    background: rgba(4, 5, 14, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: 'Space Mono', monospace;
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1.2px;
+    color: rgba(255, 255, 255, 0.65);
     /* Container ignores pointer events so its gaps don't block the canvas;
        the buttons re-enable them (#363). */
     pointer-events: none;
@@ -6215,10 +6228,11 @@ sample      ${debugInfo.projectedPxSample}`}
     text-decoration: line-through;
   }
   .legend-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
     border-radius: 50%;
-    box-shadow: 0 0 4px currentColor;
+    box-shadow: 0 0 3px currentColor;
   }
 
   .head {

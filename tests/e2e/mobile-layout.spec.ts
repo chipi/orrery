@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { openControlsDrawer } from './_helpers/hud-expand';
 
 /**
  * Mobile-only layout assertions (ADR-018 mobile-first contract).
@@ -71,22 +72,11 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
     }) => {
       test.skip(!isMobile, 'mobile-only');
       await page.goto(route, { waitUntil: 'networkidle' });
-      // #342 Phase 31 — on /explore the hud-controls cluster default-
-      // collapses on touch devices behind a .hud-restore button. The
-      // chip row is the second row of the cluster, so it's not in the
-      // layout until the user expands the cluster. Click the restore
-      // button first if present so the chip flow can actually be
-      // measured. /earth, /moon, /mars use SurfaceScene and don't
-      // default-collapse — the button is absent there, which is fine.
-      const hudRestore = page.locator('.hud-restore');
-      if (await hudRestore.count()) {
-        await hudRestore
-          .first()
-          .click({ timeout: 5_000 })
-          .catch(() => {});
-        await page.waitForTimeout(200);
-      }
-      const chips = page.locator('.ctrl-row.chips .chip');
+      // The hud-controls (chips, view toggles) now live in the
+      // MobileControlsDrawer on touch devices. Expand the drawer via
+      // .mcd-handle so the chip flow is visible and measurable.
+      await openControlsDrawer(page);
+      const chips = page.locator('.mcd-body .ctrl-row.chips .chip');
       const count = await chips.count();
       expect(count).toBeGreaterThanOrEqual(2);
       const first = await chips.first().boundingBox();

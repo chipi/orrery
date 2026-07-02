@@ -45,6 +45,7 @@
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
+  import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   import {
     type AssemblyState,
     ANIM_WINDOW_MS,
@@ -1458,7 +1459,7 @@
 
     <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
-    <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
+    {#snippet tiangongControls()}
       {#if perfBanner}
         <p class="banner perf">{m.tiangong_fallback_perf()}</p>
       {/if}
@@ -1556,7 +1557,15 @@
           </button>
         </div>
       {/if}
+    {/snippet}
+    <div class="hud-controls" role="group" aria-label={m.tiangong_hud_aria()}>
+      {@render tiangongControls()}
     </div>
+    <MobileControlsDrawer
+      --mcd-bottom="calc(30px + env(safe-area-inset-bottom, 0px))"
+      label="Controls"
+      children={tiangongControls}
+    />
   {/if}
 
   <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
@@ -2013,6 +2022,11 @@
     padding: 24px;
     font-family: 'Space Mono', monospace;
     color: #ff8c8c;
+  }
+  @media (max-width: 767px) {
+    .hud-controls {
+      display: none;
+    }
   }
   @media (max-width: 500px) {
     .hud-controls {

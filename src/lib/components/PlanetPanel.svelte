@@ -50,6 +50,10 @@
   let gallery: string[] = $state([]);
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
+  // Timestamp when the active planet last changed, used to suppress
+  // ghost-clicks that land on the hero button in the same tap gesture
+  // that opened/changed the panel (FB8).
+  let panelOpenedAt = $state(0);
 
   // Reset to overview + reload gallery each time a different planet is selected.
   let lastId = $state<string | null>(null);
@@ -57,6 +61,7 @@
     if (planet && planet.id !== lastId) {
       tab = 'overview';
       lastId = planet.id;
+      panelOpenedAt = Date.now();
       lightboxSrc = null;
       gallery = [];
       void getPlanetGallery(planet.id).then((urls) => {
@@ -142,7 +147,10 @@
         <button
           type="button"
           class="panel-hero-btn"
-          onclick={() => (lightboxSrc = gallery[0]!)}
+          onclick={() => {
+            if (Date.now() - panelOpenedAt < 400) return;
+            lightboxSrc = gallery[0]!;
+          }}
           aria-label={m.panel_hero_aria({ name: planet.name })}
         >
           <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />

@@ -180,6 +180,7 @@
     classifyConic,
   } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
+  import MobileControlsDrawer from '$lib/components/MobileControlsDrawer.svelte';
   import { isLayerOn, onLayerChange } from '$lib/science-layers';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track, trackMissionComplete } from '$lib/analytics';
@@ -7558,84 +7559,98 @@
     </div>
   </div>
 
-  <!-- Left cluster — lens-gated, gold theme. Only appears when the
-       Science Lens is on; the three toggles control panels that
-       themselves only render under the lens, so the cluster's
-       visibility tracks the lens state. Keeps casual-mode chrome
-       minimal. -->
-  {#if lensOnState}
-    <div
-      class="fly-toggle-row fly-toggle-row-left lens"
-      role="group"
-      aria-label={m.fly_science_lens_toggles_aria()}
-    >
-      <button
-        type="button"
-        class="toggle toggle-lens"
-        aria-pressed={showFlightDirector}
-        title={m.fly_toggle_flight_director_title()}
-        onclick={() => (showFlightDirector = !showFlightDirector)}
+  <!-- Toggle controls shared between desktop inline and mobile drawer.
+       Single snippet avoids double-rendering (S6 mobile de-clutter). -->
+  {#snippet flyToggles()}
+    <!-- Left cluster — lens-gated, gold theme. Only appears when the
+         Science Lens is on; the three toggles control panels that
+         themselves only render under the lens, so the cluster's
+         visibility tracks the lens state. Keeps casual-mode chrome
+         minimal. -->
+    {#if lensOnState}
+      <div
+        class="fly-toggle-row fly-toggle-row-left lens"
+        role="group"
+        aria-label={m.fly_science_lens_toggles_aria()}
       >
-        FD
-      </button>
-      <button
-        type="button"
-        class="toggle toggle-lens"
-        aria-pressed={showLayersPanel}
-        title={m.fly_toggle_science_layers_title()}
-        onclick={() => (showLayersPanel = !showLayersPanel)}
-      >
-        LYR
-      </button>
-      {#if conicsLayerOnState}
         <button
           type="button"
           class="toggle toggle-lens"
-          aria-pressed={showConicPanel}
-          title={m.fly_toggle_conic_title()}
-          onclick={() => (showConicPanel = !showConicPanel)}
+          aria-pressed={showFlightDirector}
+          title={m.fly_toggle_flight_director_title()}
+          onclick={() => (showFlightDirector = !showFlightDirector)}
         >
-          CON
+          FD
         </button>
-      {/if}
-    </div>
-  {/if}
+        <button
+          type="button"
+          class="toggle toggle-lens"
+          aria-pressed={showLayersPanel}
+          title={m.fly_toggle_science_layers_title()}
+          onclick={() => (showLayersPanel = !showLayersPanel)}
+        >
+          LYR
+        </button>
+        {#if conicsLayerOnState}
+          <button
+            type="button"
+            class="toggle toggle-lens"
+            aria-pressed={showConicPanel}
+            title={m.fly_toggle_conic_title()}
+            onclick={() => (showConicPanel = !showConicPanel)}
+          >
+            CON
+          </button>
+        {/if}
+      </div>
+    {/if}
 
-  <!-- Right cluster — always visible, blue theme. HUD, CAPCOM, 2D/3D.
-       2D sits furthest right so the canonical view switch stays at the
-       conventional top-right corner. -->
-  <div
-    class="fly-toggle-row fly-toggle-row-right"
-    role="group"
-    aria-label={m.fly_view_toggles_aria()}
-  >
-    <button
-      type="button"
-      class="toggle"
-      aria-pressed={showHud}
-      title={m.fly_toggle_hud_title()}
-      onclick={() => (showHud = !showHud)}
+    <!-- Right cluster — always visible, blue theme. HUD, CAPCOM, 2D/3D.
+         2D sits furthest right so the canonical view switch stays at the
+         conventional top-right corner. -->
+    <div
+      class="fly-toggle-row fly-toggle-row-right"
+      role="group"
+      aria-label={m.fly_view_toggles_aria()}
     >
-      HUD
-    </button>
-    <button
-      type="button"
-      class="toggle"
-      aria-pressed={showCapcom}
-      title={m.fly_toggle_capcom_title()}
-      onclick={() => (showCapcom = !showCapcom)}
-    >
-      CAP
-    </button>
-    <button
-      class="toggle"
-      type="button"
-      data-testid="fly-view-toggle"
-      onclick={toggleView}
-      aria-pressed={view === '2d'}
-    >
-      {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-    </button>
+      <button
+        type="button"
+        class="toggle"
+        aria-pressed={showHud}
+        title={m.fly_toggle_hud_title()}
+        onclick={() => (showHud = !showHud)}
+      >
+        HUD
+      </button>
+      <button
+        type="button"
+        class="toggle"
+        aria-pressed={showCapcom}
+        title={m.fly_toggle_capcom_title()}
+        onclick={() => (showCapcom = !showCapcom)}
+      >
+        CAP
+      </button>
+      <button
+        class="toggle"
+        type="button"
+        data-testid="fly-view-toggle"
+        onclick={toggleView}
+        aria-pressed={view === '2d'}
+      >
+        {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
+      </button>
+    </div>
+  {/snippet}
+
+  <!-- Desktop (≥768 px): inline fixed clusters, hidden on mobile via CSS. -->
+  <div class="fly-toggle-rows-desktop">
+    {@render flyToggles()}
+  </div>
+
+  <!-- Mobile (≤767 px): drawer above the scrubber. CSS var sets clearance. -->
+  <div style="--mcd-bottom:88px">
+    <MobileControlsDrawer label="View" children={flyToggles} />
   </div>
 
   <!-- CAPCOM panel: shown when a mission is loaded AND the user hasn't
@@ -9338,6 +9353,12 @@
       right: 218px;
       top: calc(var(--nav-height) + 12px);
       max-width: calc(50vw - 12px);
+    }
+  }
+  /* ─── ≤ 767 px — toggle rows move into the mobile drawer ────────── */
+  @media (max-width: 767px) {
+    .fly-toggle-rows-desktop {
+      display: none;
     }
   }
   .toggle {

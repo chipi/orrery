@@ -42,12 +42,10 @@ test.describe.configure({ retries: 0 });
 test.describe('/explore iconic-mission perf', () => {
   test('50 clicks @ 500ms — capture main-thread metrics', async ({ page }, testInfo) => {
     // Desktop-only perf benchmark. On mobile-chromium the .paths-legend
-    // is gated behind `.mobile-info-open` and the test fixture's
-    // expandExploreHud() doesn't toggle that — `waitForSelector
-    // ('[data-testid^="paths-legend-row-"]')` fails at the visibility
-    // check (rows in DOM but display:none). The benchmark itself is
-    // valid only on hover-capable viewports anyway (mobile clicks are
-    // synthetic and don't measure the user's real interaction pattern).
+    // is inside the MobileControlsDrawer and while expandExploreHud()
+    // opens it, the synthetic clicks still don't measure the user's real
+    // interaction pattern. The benchmark itself is valid only on hover-
+    // capable viewports anyway (mobile clicks are synthetic).
     // 2026-06-23 release-prep — skipped on mobile pending v0.8 perf-
     // investigation follow-up (which also re-evaluates the desktop
     // threshold of 300).

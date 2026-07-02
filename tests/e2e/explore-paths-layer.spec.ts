@@ -57,7 +57,11 @@ test.describe('/explore — PATHS layer', () => {
     // #342 Phase 31 — the layer-paths chip lives inside the hud-controls
     // cluster that default-collapses on touch. Expand it first.
     await expandExploreHud(page);
-    const chip = page.locator('[data-testid="layer-paths"]');
+    // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
+    const selector = isMobile
+      ? '.mcd-body [data-testid="layer-paths"]'
+      : '[data-testid="layer-paths"]';
+    const chip = page.locator(selector);
     await expect(chip).toBeVisible();
     // Default OFF per #306 — the layer ships hidden so wide-zoom view
     // stays uncluttered for new users.
@@ -113,7 +117,7 @@ test.describe('/explore — PATHS layer', () => {
     expect(href).toContain('focus=saturn');
   });
 
-  test('/explore?paths=1 deep-link auto-activates the PATHS layer', async ({ page }) => {
+  test('/explore?paths=1 deep-link auto-activates the PATHS layer', async ({ page, isMobile }) => {
     // Direct URL navigation exercises the same plumbing the panel
     // backlink uses, without depending on mobile-chromium synthetic-tap
     // hit-testing under tight panel layouts (the descriptive paragraph
@@ -125,7 +129,11 @@ test.describe('/explore — PATHS layer', () => {
     // Toggle state (aria-pressed) is independent of the cluster
     // collapse — we check aria regardless of expansion.
     await expandExploreHud(page);
-    const chip = page.locator('[data-testid="layer-paths"]');
+    // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
+    const selector = isMobile
+      ? '.mcd-body [data-testid="layer-paths"]'
+      : '[data-testid="layer-paths"]';
+    const chip = page.locator(selector);
     await expect(chip).toBeVisible();
     await expect(chip).toHaveAttribute('aria-pressed', 'true', { timeout: 5_000 });
   });

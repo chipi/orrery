@@ -82,13 +82,28 @@
 </script>
 
 {#if open}
+  <!-- Tap-outside scrim (mobile bottom-sheet only). Fixes the "can't close"
+       trap: the sheet had no backdrop, so tapping the visible scene did
+       nothing and the × could be occluded by higher-z HUD chrome. The scrim
+       dismisses on tap; the z-bump below also lifts the sheet (and its ×)
+       above the route HUD on phones. --panel-z carries the caller's zIndex so
+       relative panel ordering (Regime 28 < detail 30 < PhasePanel 40) is kept
+       while all sit above the HUD on mobile. -->
+  <button
+    type="button"
+    class="panel-backdrop"
+    onclick={onClose}
+    aria-label={m.panel_close()}
+    tabindex="-1"
+    style:--panel-z={zIndex}
+  ></button>
   <aside
     class="panel"
     bind:this={panelEl}
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
     style:transform={touchDeltaY > 0 ? `translateY(${touchDeltaY}px)` : ''}
-    style:z-index={zIndex}
+    style:--panel-z={zIndex}
     ontouchstart={onTouchStart}
     ontouchmove={onTouchMove}
     ontouchend={onTouchEnd}
@@ -126,7 +141,7 @@
     background: var(--color-panel-bg);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    z-index: 30;
+    z-index: var(--panel-z, 30);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -143,7 +158,8 @@
     }
   }
 
-  /* Mobile: bottom sheet */
+  /* Mobile: bottom sheet — lifted above the route HUD chrome (≤ z45) so
+     the × is never occluded; +50 keeps it below the lightbox / nav (z100). */
   @media (max-width: 767px) {
     .panel {
       bottom: 0;
@@ -153,6 +169,35 @@
       border-top: 1px solid var(--color-border);
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
+      z-index: calc(var(--panel-z, 30) + 50);
+    }
+  }
+
+  /* Tap-outside scrim — mobile bottom-sheet only (desktop is a non-modal
+     right drawer, left unscrimmed so the scene stays interactive). */
+  .panel-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: rgba(2, 2, 8, 0.5);
+    cursor: pointer;
+    animation: panel-scrim-in 0.18s ease;
+  }
+  @keyframes panel-scrim-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 767px) {
+    .panel-backdrop {
+      display: block;
+      z-index: calc(var(--panel-z, 30) + 49);
     }
   }
 

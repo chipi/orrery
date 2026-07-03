@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/stores';
+  import { afterNavigate, replaceState } from '$app/navigation';
+  import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import { trackItemClick, trackGalleryImageOpen } from '$lib/analytics';
   import { useUrlParam } from '$lib/routes/use-url-param.svelte';
@@ -866,6 +868,41 @@
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
+
+  // #30 back-chain — mirror the open site / object card into ?site= / ?object=
+  // so mission cross-links can chain back here (the deep-link resolvers reopen
+  // it on back-nav). Shallow replaceState keeps canvas picks a fresh selection
+  // (no history entry / no chain step); the back-chain is told the current
+  // card via setCurrentCard since the shallow URL doesn't reach nav.from.
+  let openSurfaceCard = $derived.by(() => {
+    if (panelOpen && selected) return { param: 'site' as const, id: selected.id };
+    if (selectedSat) return { param: 'object' as const, id: selectedSat.id };
+    return null;
+  });
+  let everOpenedSurfaceCard = false;
+  $effect(() => {
+    const card = openSurfaceCard;
+    if (card) everOpenedSurfaceCard = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const wantSite = card?.param === 'site' ? card.id : null;
+      const wantObj = card?.param === 'object' ? card.id : null;
+      const changed =
+        (url.searchParams.get('site') ?? null) !== wantSite ||
+        (url.searchParams.get('object') ?? null) !== wantObj;
+      if (changed && (card || everOpenedSurfaceCard)) {
+        if (wantSite) url.searchParams.set('site', wantSite);
+        else url.searchParams.delete('site');
+        if (wantObj) url.searchParams.set('object', wantObj);
+        else url.searchParams.delete('object');
+        replaceState(url, $page.state);
+      }
+      if (everOpenedSurfaceCard) setCurrentCard(card ? url : null);
+    });
+  });
+  afterNavigate((nav) => {
+    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
+  });
 
   // ─── Traverse helpers (Mars today; Moon EVA/Lunokhod future) ──────
   // Body-agnostic great-circle distance via config.radiusKm. Used to

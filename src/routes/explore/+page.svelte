@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { afterNavigate, goto, replaceState } from '$app/navigation';
+  import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
@@ -1600,6 +1601,47 @@
       if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
     }
     // Unknown id → no-op; do not crash.
+  });
+
+  // #29 back-chain — mirror the open body panel into ?id= so mission
+  // cross-links can chain back here (the resolver above reopens it on
+  // back-nav). Shallow replaceState keeps canvas picks a fresh grid-style
+  // selection (no history entry / no chain step); only real navigations to
+  // other cards get chained by trackCardNavigation.
+  let openBodyUrlId = $derived.by(() => {
+    if (panelState.planet && selectedId) return selectedId;
+    if (panelState.sun) return 'sun';
+    if (panelState.smallBody && selectedSmallBodyId) return selectedSmallBodyId;
+    if (panelState.satellite && selectedSatelliteKey) return selectedSatelliteKey;
+    if (panelState.belt && selectedBeltId)
+      return selectedBeltId === 'asteroid'
+        ? 'asteroid-belt'
+        : selectedBeltId === 'kuiper'
+          ? 'kuiper-belt'
+          : selectedBeltId;
+    return null;
+  });
+  let everOpenedBody = false;
+  $effect(() => {
+    const id = openBodyUrlId;
+    if (id) everOpenedBody = true;
+    untrack(() => {
+      const url = new URL($page.url);
+      const cur = url.searchParams.get('id') ?? null;
+      if (cur !== id && (id || everOpenedBody)) {
+        // Never clobber a fresh ?id= deep-link before the resolver opens it —
+        // only clear once a body has actually been open (a real user close).
+        if (id) url.searchParams.set('id', id);
+        else url.searchParams.delete('id');
+        replaceState(url, $page.state);
+      }
+      // Record which card is on screen for the back-chain (the shallow
+      // replaceState above doesn't reach SvelteKit's nav.from).
+      if (everOpenedBody) setCurrentCard(id ? url : null);
+    });
+  });
+  afterNavigate((nav) => {
+    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
   });
 
   // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`

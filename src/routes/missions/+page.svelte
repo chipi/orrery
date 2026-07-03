@@ -313,7 +313,7 @@
 
   // Detail-card back chain (#29) — track ?id= navigations into / out of cards.
   afterNavigate((nav) => {
-    if (nav.to?.url) trackCardNavigation(nav.from?.url ?? null, nav.to.url, nav.type);
+    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
   });
 
   // ─── Load ────────────────────────────────────────────────────────

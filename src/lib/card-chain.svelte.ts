@@ -1,62 +1,90 @@
 /**
- * Detail-card navigation chain (#29).
+ * Detail-card navigation chain (#29 + extension #30).
  *
  * Tracks the stack of detail cards you've opened by following in-card links,
- * so a "back" affordance can return to the exact previous card. A card is any
- * URL that opens a modal detail view via `?id=` (missions, fleet). The stack is
- * fed by each card-host page's afterNavigate (see /missions, /fleet) and read
- * by the shared Panel.svelte, which shows the back button only while the chain
- * is non-empty AND the current view is itself a card.
+ * so a "back" affordance returns to the exact previous card. A card is any URL
+ * that opens a modal detail view via ?id= (missions / fleet / explore bodies),
+ * ?site= (surface sites), or ?object= (surface satellites).
  *
- * Deliberately scoped to ?id= cards: opening a mission from a grid, a page, or
- * a non-URL overlay (planet / site panel) starts a fresh chain, matching the
- * user rule "no back when I click from a grid or page, only card → card".
+ * Two kinds of card transitions feed the chain:
+ *   - Real navigations (missions <-> fleet <-> explore <-> surfaces) via each
+ *     host page's afterNavigate -> trackCardNavigation().
+ *   - Overlay opens whose URL only changes via shallow replaceState (explore
+ *     bodies, surface sites): those DON'T fire afterNavigate, and their URL
+ *     doesn't reach SvelteKit's nav.from — so the host calls setCurrentCard()
+ *     directly to record which card is on screen.
+ *
+ * The chain pushes the PREVIOUS on-screen card (tracked in `current`) rather
+ * than nav.from, which keeps it correct for both kinds. Picking a body / site
+ * off the map is a fresh selection (setCurrentCard, no push); only following a
+ * link to a DIFFERENT card chains.
  */
 import { goto } from '$app/navigation';
 
 export const cardChain = $state<{ stack: string[] }>({ stack: [] });
 
-// Set just before a programmatic back-navigation so the destination page's
+// The card URL currently on screen (null = not on a card).
+let current: string | null = null;
+// Set just before a programmatic back-navigation so the destination's
 // afterNavigate doesn't re-push the card we're leaving.
 let suppressPush = false;
 
-function isCardUrl(url: URL): boolean {
-  return url.searchParams.has('id');
+const CARD_PARAMS = ['id', 'site', 'object'] as const;
+
+export function isCardUrl(url: URL): boolean {
+  return CARD_PARAMS.some((p) => url.searchParams.has(p));
+}
+
+function isCardHref(href: string): boolean {
+  try {
+    return isCardUrl(new URL(href));
+  } catch {
+    return false;
+  }
 }
 
 /**
- * Feed one navigation into the chain. Call from a card-host page's
- * afterNavigate with the SvelteKit navigation's from/to URLs + type.
+ * Record the card currently on screen. Called by overlay hosts (explore
+ * bodies, surface sites) whose card URL changes shallowly via replaceState.
+ * Does NOT push — a canvas pick is a fresh selection, not a chain step.
  */
-export function trackCardNavigation(from: URL | null, to: URL, type: string): void {
+export function setCurrentCard(url: URL | null): void {
+  current = url ? url.href : null;
+}
+
+/**
+ * Feed a real navigation. Pushes the previous on-screen card when moving to a
+ * DIFFERENT card. Call from a host page's afterNavigate.
+ */
+export function trackCardNavigation(to: URL, type: string): void {
+  const toHref = to.href;
+  const toIsCard = isCardUrl(to);
   if (suppressPush) {
     suppressPush = false;
-    return;
-  }
-  if (!isCardUrl(to)) {
-    // Left the card flow entirely — reset.
-    cardChain.stack = [];
+    current = toIsCard ? toHref : null;
     return;
   }
   if (type === 'popstate') {
-    // Browser back/forward — keep the stack in sync by truncating to the
-    // target when it's already somewhere in the chain.
-    const idx = cardChain.stack.lastIndexOf(to.href);
+    // Browser back/forward — truncate the stack to the target if present.
+    const idx = cardChain.stack.lastIndexOf(toHref);
     if (idx >= 0) cardChain.stack = cardChain.stack.slice(0, idx);
+    current = toIsCard ? toHref : null;
     return;
   }
-  if (from && isCardUrl(from) && from.href !== to.href) {
-    // Card → card via a link: remember the card we came from.
-    cardChain.stack = [...cardChain.stack, from.href];
-  } else if (!from || !isCardUrl(from)) {
-    // Fresh card open from a grid / page: start a new chain.
+  if (toIsCard) {
+    if (current && isCardHref(current) && current !== toHref) {
+      // Card -> different card via a link: remember where we came from.
+      cardChain.stack = [...cardChain.stack, current];
+    } else if (!current || !isCardHref(current)) {
+      // Fresh card open from a grid / page: start a new chain.
+      cardChain.stack = [];
+    }
+    current = toHref;
+  } else {
+    // Left the card flow entirely — reset.
     cardChain.stack = [];
+    current = null;
   }
-}
-
-/** True when there's a previous card to return to. */
-export function canGoBackCard(): boolean {
-  return cardChain.stack.length > 0;
 }
 
 /** Pop the chain and navigate to the previous card. */

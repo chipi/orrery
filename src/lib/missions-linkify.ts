@@ -84,9 +84,22 @@ function normaliseCandidates(name: string): string[] {
   const flat = lower.replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
   // 3. Drop trailing version number ("voyager 1" → "voyager")
   const noTrailingNum = kebab.replace(/-\d+$/, '');
-  // 4. First word only ("ExoMars TGO" → "exomars")
-  const firstWord = lower.split(/[\s/+&]/)[0].replace(/[^a-z0-9-]/g, '');
+  // 4. First word only ("ExoMars TGO" → "exomars"; "Cassini-Huygens" → "cassini")
+  const firstWord = lower.split(/[\s/+&-]/)[0].replace(/[^a-z0-9]/g, '');
   return [...new Set([kebab, flat, noTrailingNum, firstWord].filter(Boolean))];
+}
+
+/** Resolve a single mission name to an href, or null if neither /missions
+ *  nor /fleet has a matching id. */
+function resolveHref(name: string): string | null {
+  if (!missionIdCache || !fleetIdCache) return null;
+  for (const id of normaliseCandidates(name)) {
+    // Detail views open as a modal on the index page via ?id= (there is no
+    // /missions/[id] or /fleet/[id] route) — matches every other deep-link.
+    if (missionIdCache.has(id)) return `${base}/missions?id=${id}`;
+    if (fleetIdCache.has(id)) return `${base}/fleet?id=${id}`;
+  }
+  return null;
 }
 
 /** Resolve a mission name to a link target. Returns null if neither
@@ -94,16 +107,58 @@ function normaliseCandidates(name: string): string[] {
 export function linkifyMission(
   entry: string,
 ): { href: string; label: string; rest: string } | null {
-  if (!missionIdCache || !fleetIdCache) return null;
   const label = leadingMissionName(entry);
-  const candidates = normaliseCandidates(label);
-  for (const id of candidates) {
-    if (missionIdCache.has(id)) {
-      return { href: `${base}/missions/${id}`, label, rest: entry.slice(label.length) };
+  const href = resolveHref(label);
+  return href ? { href, label, rest: entry.slice(label.length) } : null;
+}
+
+export interface MissionSegment {
+  text: string;
+  href?: string;
+}
+
+/**
+ * Compound-aware linkifier. Splits the leading mission-name part of a
+ * body-panel entry on " + " / " / " / ", " and linkifies each token that
+ * resolves to a /missions or /fleet record, so compound entries like
+ * "Mars Express + ExoMars TGO" or "Voyager 1 + 2" each get per-mission
+ * links. Bare number tokens ("Mariner 5 / 10") inherit the base name of the
+ * first token. Tokens with no matching record stay plain text. Returns
+ * text + separator + link segments the panel renders in order.
+ */
+export function linkifyMissionEntry(entry: string): MissionSegment[] {
+  if (!missionIdCache || !fleetIdCache) return [{ text: entry }];
+  const dashIdx = entry.indexOf('—');
+  const parenIdx = entry.indexOf('(');
+  const leadEnd = dashIdx > 0 ? dashIdx : parenIdx > 0 ? parenIdx : entry.length;
+  const lead = entry.slice(0, leadEnd);
+  const rest = entry.slice(leadEnd);
+
+  // split() with a capturing group keeps the separators as odd elements.
+  const parts = lead.split(/(\s*[+/,]\s*)/);
+  let basePrefix = '';
+  const segs: MissionSegment[] = [];
+  for (const part of parts) {
+    if (part.trim() === '' || /^\s*[+/,]\s*$/.test(part)) {
+      segs.push({ text: part });
+      continue;
     }
-    if (fleetIdCache.has(id)) {
-      return { href: `${base}/fleet/${id}`, label, rest: entry.slice(label.length) };
+    const token = part.trim();
+    let resolveName = token;
+    if (/^\d/.test(token) && basePrefix) {
+      // Bare number/range ("10" in "Mariner 5 / 10") → prefix with base.
+      resolveName = `${basePrefix} ${token}`;
+    } else {
+      const m = token.match(/^([A-Za-z][A-Za-z .'-]*?)(?:\s+\d.*)?$/);
+      basePrefix = (m ? m[1] : token).trim();
     }
+    const href = resolveHref(resolveName);
+    const leadWs = part.match(/^\s*/)?.[0] ?? '';
+    const trailWs = part.match(/\s*$/)?.[0] ?? '';
+    if (leadWs) segs.push({ text: leadWs });
+    segs.push(href ? { text: token, href } : { text: token });
+    if (trailWs) segs.push({ text: trailWs });
   }
-  return null;
+  segs.push({ text: rest });
+  return segs;
 }

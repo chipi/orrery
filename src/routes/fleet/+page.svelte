@@ -2,7 +2,8 @@
   import { onMount, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
-  import { goto } from '$app/navigation';
+  import { afterNavigate, goto } from '$app/navigation';
+  import { trackCardNavigation } from '$lib/card-chain.svelte';
   import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
   import type {
     FleetCategory,
@@ -322,6 +323,11 @@
       noScroll: true,
     });
   }
+
+  // Detail-card back chain (#29) — track ?id= navigations into / out of cards.
+  afterNavigate((nav) => {
+    if (nav.to?.url) trackCardNavigation(nav.from?.url ?? null, nav.to.url, nav.type);
+  });
 
   onMount(async () => {
     applyUrl($page.url);

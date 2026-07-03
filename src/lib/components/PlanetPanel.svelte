@@ -2,7 +2,7 @@
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { getPlanetGallery } from '$lib/data';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
@@ -364,13 +364,11 @@
         {:else}
           <ul class="mission-list">
             {#each planet.mission_visits ?? [] as entry (entry)}
-              {@const link = linkifyMission(entry)}
               <li>
-                {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
-                {:else}
-                  {entry}
-                {/if}
+                {#each linkifyMissionEntry(entry) as seg, i (i)}{#if seg.href}<a
+                      href={seg.href}
+                      class="mission-link">{seg.text}</a
+                    >{:else}{seg.text}{/if}{/each}
               </li>
             {/each}
           </ul>

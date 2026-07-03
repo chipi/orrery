@@ -2,6 +2,8 @@
   import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { page } from '$app/stores';
+  import { cardChain, goBackCard } from '$lib/card-chain.svelte';
 
   type Props = {
     open: boolean;
@@ -31,6 +33,10 @@
   let { open, onClose, title, grabFocus = true, zIndex = 30, children }: Props = $props();
 
   let panelEl: HTMLElement | undefined = $state();
+
+  // Back affordance (#29): only when we arrived here by following an in-card
+  // link (chain non-empty) AND this view is itself a ?id= detail card.
+  let canGoBack = $derived(cardChain.stack.length > 0 && $page.url.searchParams.has('id'));
 
   $effect(() => {
     if (!open) return;
@@ -122,6 +128,15 @@
          the same control without re-implementing it. Floats on top of
          the content's first row so consumers don't need to leave room
          for it in their layout. -->
+    {#if canGoBack}
+      <button
+        type="button"
+        class="panel-back"
+        onclick={goBackCard}
+        aria-label={m.panel_back()}
+        data-audio-stage="panel-back">←</button
+      >
+    {/if}
     <button
       type="button"
       class="panel-close"
@@ -129,7 +144,7 @@
       aria-label={m.panel_close()}
       data-audio-stage="panel-close">×</button
     >
-    <div class="content">
+    <div class="content" class:has-back={canGoBack}>
       {@render children?.()}
     </div>
   </aside>
@@ -247,6 +262,42 @@
     .panel-close {
       top: 14px;
     }
+  }
+
+  /* Back affordance (#29) — mirrors .panel-close on the top-LEFT. */
+  .panel-back {
+    position: absolute;
+    top: calc(64px + 14px);
+    left: 14px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .panel-back:hover,
+  .panel-back:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text);
+    outline: none;
+  }
+  @media (max-width: 767px) {
+    .panel-back {
+      top: 14px;
+    }
+  }
+  /* When the back button is present it shares the top-left with the content's
+     first row (agency badges); push the content down so nothing overlaps. */
+  .content.has-back {
+    padding-top: 58px;
   }
 
   .content {

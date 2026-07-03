@@ -1821,15 +1821,15 @@
   /* Bottom-sheet on narrow viewports (PRD-016 M1 / RFC-019 §7.1). */
   @media (max-width: 799px) {
     .audio-overlay {
-      top: auto;
-      bottom: 0;
+      top: var(--nav-height);
+      bottom: auto;
       right: 0;
       left: 0;
       width: 100vw;
-      max-height: 70vh;
+      max-height: calc(100vh - var(--nav-height));
       border-left: none;
-      border-top: 1px solid var(--color-border);
-      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
     }
   }
 

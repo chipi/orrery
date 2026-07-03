@@ -223,9 +223,10 @@
   }
   .rail-left {
     display: flex;
+    /* Mobile: one row -- search chip at the start, then the scrollable tab strip. */
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     gap: 6px;
   }
   .rail-heading {
@@ -241,10 +242,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .search-button {
-    /* Mobile: 44×44 icon-only chip (Phase 24). Square tap target, no
-       label, slots into the rail-left flex row alongside the tab
-       chips. Phase 30 base — expanded to full-width labelled button
-       at @min-width: 769. */
+    /* Mobile: 44x44 icon-only chip pinned at the start of the tab-strip row.
+       Phase 30 base -- expanded to a full-width labelled button at @min-width: 769. */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,7 +254,7 @@
     min-width: 44px;
     min-height: 44px;
     padding: 0;
-    margin: 0 6px 0 0;
+    margin: 0;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
@@ -301,28 +300,57 @@
     font-family: 'Space Mono', monospace;
   }
   .tab-list {
-    /* Mobile: wrapped chip strip, sits in the rail-left flex row.
-       Switches to a vertical stack at @min-width: 769. */
+    /* Mobile: single-row horizontal scroll strip -- no wrap, swipe to
+       see all 13 tabs. Switches to a vertical stack at @min-width: 769. */
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 4px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 6px;
-    flex: 1 1 auto;
-    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 205, 196, 0.3) transparent;
+  }
+  .tab-list::-webkit-scrollbar {
+    height: 2px;
+  }
+  .tab-list::-webkit-scrollbar-thumb {
+    background: rgba(78, 205, 196, 0.3);
+    border-radius: 1px;
+  }
+  .tab-list::-webkit-scrollbar-track {
+    background: transparent;
   }
   .section-list {
-    /* Mobile: compact 2-col grid for the right-rail section list (so
-       the article still gets > 50 % of viewport height). Switches to
-       a vertical stack at @min-width: 769. */
+    /* Mobile: single-row horizontal scroll strip -- renders above the
+       article via order:1 on .content. Switches to a vertical stack
+       at @min-width: 769. */
     list-style: none;
-    margin: 0 0 16px;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin: 0 0 8px;
+    padding: 0 0 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 205, 196, 0.3) transparent;
+  }
+  .section-list::-webkit-scrollbar {
+    height: 2px;
+  }
+  .section-list::-webkit-scrollbar-thumb {
+    background: rgba(78, 205, 196, 0.3);
+    border-radius: 1px;
+  }
+  .section-list::-webkit-scrollbar-track {
+    background: transparent;
   }
   .tab-card,
   .section-row {
@@ -374,21 +402,22 @@
   }
   .section-name {
     font-family: 'Crimson Pro', serif;
-    /* Mobile: 12 px / 1.2. Desktop bumps to 14/1.3. */
+    /* Mobile: 12 px / 1.2 -- single-line pill in the horizontal scroll
+       strip. Multi-line clamp is restored at @min-width: 769 for the
+       vertical right rail. Phase 37 (#342). */
     font-size: 12px;
     line-height: 1.2;
-    /* Phase 37 (#342) — section names are author-written so most are
-       short, but a few (Tsiolkovsky-equation-1903) push 30+ chars.
-       Allow up to 2 lines then ellipsis so the right-rail card height
-       stays predictable. */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    overflow: visible;
   }
   .content {
     min-width: 0;
+    /* Mobile: push article after both rail strips. rail-right renders after
+       .content in the DOM but both use the default order:0, so DOM order
+       (rail-left then rail-right) is preserved while content moves last.
+       Reset to order:0 at @min-width: 769. */
+    order: 1;
   }
 
   /* ─── ≥ 641 px — compact tablet ───────────────────────────────────
@@ -397,7 +426,6 @@
      to 14/1.3. Tab strip + search chip stay in mobile mode. */
   @media (min-width: 641px) {
     .has-right-rail .section-list {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 8px;
     }
     .section-row {
@@ -446,6 +474,9 @@
       margin: 0 0 16px;
       width: auto;
       flex: initial;
+      overflow-x: visible;
+      scrollbar-width: auto;
+      padding: 0;
     }
     .tab-card,
     .section-row {
@@ -456,6 +487,18 @@
     .tab-name {
       font-size: 13px;
       letter-spacing: 2px;
+    }
+    /* Phase 37 (#342) -- restore 2-line clamp for the vertical right rail. */
+    .section-name {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .content {
+      order: 0;
     }
     .search-button {
       width: 100%;

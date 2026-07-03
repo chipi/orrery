@@ -5055,19 +5055,6 @@
   {/snippet}
 
   {#snippet mobileLayersContent(close: () => void)}
-    {#if view === '3d'}
-      <div class="ctrl-row">
-        <button
-          type="button"
-          class="toggle"
-          data-testid="spin-toggle-drawer"
-          aria-pressed={!autoSpin}
-          onclick={() => (autoSpin = !autoSpin)}
-        >
-          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
-        </button>
-      </div>
-    {/if}
     {@render layerChips()}
   {/snippet}
 
@@ -5120,6 +5107,15 @@
           onclick={() => resetCamera()}
         >
           {m.ui_reset_view()}
+        </button>
+        <button
+          type="button"
+          class="toggle"
+          data-testid="surface-spin-toggle-mobile"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+        >
+          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
         </button>
       {/if}
     </div>

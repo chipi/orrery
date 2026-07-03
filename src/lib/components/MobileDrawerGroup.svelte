@@ -15,6 +15,7 @@
 -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
 
   // content receives a `close` callback so a selection inside a drawer
   // (pick a mission / orbit zone / toggle) can auto-collapse the drawer,
@@ -92,6 +93,14 @@
 
 <div class="mdg" style:transform={deltaY > 0 && openId ? `translateY(${deltaY}px)` : ''}>
   {#if openTab && openTab.content}
+    <button
+      type="button"
+      class="mdg-close"
+      aria-label={m.panel_close()}
+      onclick={() => (openId = null)}
+    >
+      ×
+    </button>
     <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
          accessible closes, so the body needs no interactive role. -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -138,6 +147,27 @@
       right: 8px;
       bottom: var(--mcd-bottom, calc(52px + env(safe-area-inset-bottom, 0px)));
       z-index: 38;
+    }
+    /* Discoverable close on the expanded panel (tap-away + Esc still work). */
+    .mdg-close {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 18, 35, 0.85);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
     }
 
     .mdg-body {

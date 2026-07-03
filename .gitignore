@@ -85,3 +85,6 @@ static/data/i18n/*.json
 
 # Lavish review artifacts (generated, ephemeral)
 .lavish/
+
+# treehouse worktree tool config (local tooling, not app code)
+treehouse.toml

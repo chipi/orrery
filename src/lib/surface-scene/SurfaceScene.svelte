@@ -5054,7 +5054,7 @@
     {/if}
   {/snippet}
 
-  {#snippet mobileLayersContent(close: () => void)}
+  {#snippet mobileLayersContent(_close: () => void)}
     {@render layerChips()}
   {/snippet}
 
@@ -6172,7 +6172,8 @@ sample      ${debugInfo.projectedPxSample}`}
     max-width: calc(100vw - 24px);
     align-items: center;
   }
-  .hud-controls :global(.chip) {
+  .hud-controls :global(.chip),
+  .ctrl-row.chips :global(.chip) {
     min-height: 44px;
     /* Mobile (≤ 500): tight 6 px horizontal padding, 8.5 px font,
        78 px min-width — fits two chips per row on a 375 px viewport.
@@ -6201,12 +6202,15 @@ sample      ${debugInfo.projectedPxSample}`}
      details panel should be red tinted. on moon grey (moon rock)
      tinted. and on earth blue tinted".) */
   .hud-controls :global(.chip:hover),
-  .hud-controls :global(.chip:focus-visible) {
+  .hud-controls :global(.chip:focus-visible),
+  .ctrl-row.chips :global(.chip:hover),
+  .ctrl-row.chips :global(.chip:focus-visible) {
     color: #fff;
     border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
     outline: none;
   }
-  .hud-controls :global(.chip.active) {
+  .hud-controls :global(.chip.active),
+  .ctrl-row.chips :global(.chip.active) {
     background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 18%, transparent);
     border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 70%, transparent);
     color: var(--body-tint, #c8cdda);
@@ -6248,7 +6252,8 @@ sample      ${debugInfo.projectedPxSample}`}
       left: 16px;
       gap: 8px;
     }
-    .hud-controls :global(.chip) {
+    .hud-controls :global(.chip),
+    .ctrl-row.chips :global(.chip) {
       padding: 0 10px;
       font-size: 10px;
       min-width: 110px;
@@ -6291,6 +6296,33 @@ sample      ${debugInfo.projectedPxSample}`}
       gap: 6px;
       z-index: 45;
     }
+  }
+
+  /* The top-cluster controls (view / reset / spin) sit OUTSIDE .hud-controls,
+     so they missed the scoped .toggle chrome above and fell back to the UA
+     default white button. Re-apply the standard surface toggle look here;
+     white-space:nowrap keeps the wider RESET VIEW / PAUSE SPIN labels on one
+     line, and :global crosses into ViewToggleButton. */
+  .hud-top-mobile :global(.toggle) {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 8px;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(190, 195, 210, 0.4);
+    color: #d6d9e2;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+  }
+  .hud-top-mobile :global(.toggle:hover),
+  .hud-top-mobile :global(.toggle:focus-visible) {
+    border-color: rgba(220, 225, 240, 0.7);
+    background: rgba(34, 38, 56, 0.95);
+    outline: none;
   }
 
   .load-banner {

@@ -104,6 +104,34 @@
 
   let stops: Array<() => void> = [];
 
+  // The panel's root element + a ResizeObserver that publishes its rendered
+  // height to `--science-lens-height`. Secondary lens panels (e.g. the station
+  // orbit banner) read this so they stack directly BELOW the lens on mobile —
+  // the science lens always sits on top, everything else under it.
+  let panelEl: HTMLElement | null = $state(null);
+  let panelResizeObs: ResizeObserver | null = null;
+
+  $effect(() => {
+    panelResizeObs?.disconnect();
+    panelResizeObs = null;
+    if (typeof document === 'undefined') return;
+    if (!panelEl) {
+      document.documentElement.style.removeProperty('--science-lens-height');
+      return;
+    }
+    const publish = () => {
+      if (panelEl) {
+        document.documentElement.style.setProperty(
+          '--science-lens-height',
+          `${panelEl.offsetHeight}px`,
+        );
+      }
+    };
+    publish();
+    panelResizeObs = new ResizeObserver(publish);
+    panelResizeObs.observe(panelEl);
+  });
+
   onMount(() => {
     ensureLayerDefaults();
     // Advertise to <html data-science-lens-available> so the nav
@@ -125,6 +153,11 @@
   onDestroy(() => {
     for (const s of stops) s();
     stops = [];
+    panelResizeObs?.disconnect();
+    panelResizeObs = null;
+    if (typeof document !== 'undefined') {
+      document.documentElement.style.removeProperty('--science-lens-height');
+    }
   });
 
   function toggle(key: LayerKey) {
@@ -308,6 +341,7 @@
 
 {#if lensOn && (hasLensStory || hasLayers)}
   <aside
+    bind:this={panelEl}
     class="panel"
     class:collapsed={!expanded}
     data-testid="science-lens-panel"
@@ -615,22 +649,21 @@
      + many layers are present. */
   @media (max-width: 600px) {
     .panel {
-      top: auto;
-      bottom: 84px;
+      /* Top-anchored on mobile too (matches desktop) so the lens sticks to the
+       * top and stays clear of the bottom controls — accordion / scrubber /
+       * station tabs (2026-07 user direction). */
+      /* The science lens always sits on top on mobile (2026-07 user rule):
+       * pinned just below the top-left control cluster (2D toggle / view +
+       * reset). Any secondary lens panel — e.g. the station orbit banner —
+       * reads --science-lens-height and stacks BELOW this one. */
+      top: calc(var(--nav-height) + 56px);
+      bottom: auto;
       left: 8px;
       right: 8px;
       transform: none;
       width: auto;
-      /* Was 50vh — overlapped /fly's CAPCOM ticker (bottom 70 px, max
-       * 50vh) when expanded. 40vh leaves the upper third of the
-       * viewport clear so the user can still see arc + scene context
-       * while picking layers (issue #126). */
       max-height: 40vh;
       overflow-y: auto;
-      /* Z-index 37 (was 32) sits above the /fly CAPCOM panel (35) +
-       * the hud-collapse button (36), so when both lens + CAPCOM are
-       * open the lens — the user's active interaction — is on top.
-       * Still below load-banner (40). */
       z-index: 37;
     }
     .rows {

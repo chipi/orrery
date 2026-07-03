@@ -51,6 +51,12 @@
   }
 
   onMount(() => {
+    // Collapse the banner by default on mobile so the science-lens panel can
+    // sit near the top; the altitude / inclination / period detail is one tap
+    // away via the chevron. Desktop keeps it expanded (top-center, room to spare).
+    if (typeof window !== 'undefined' && window.matchMedia?.('(max-width: 600px)').matches) {
+      expanded = false;
+    }
     stop = onScienceLensChange((v) => {
       lensOn = v;
       if (!v) clearHeight();
@@ -286,6 +292,11 @@
   }
   @media (max-width: 600px) {
     .banner {
+      /* Stack BELOW the science-lens panel, which is pinned to the top on
+         mobile. --science-lens-height is published by ScienceLayersPanel via
+         ResizeObserver, so this follows the lens as it expands / collapses.
+         The +56 matches the lens's own clearance of the top control cluster. */
+      top: calc(var(--nav-height) + 56px + var(--science-lens-height, 48px) + 8px);
       left: 8px;
       right: 8px;
       transform: none;

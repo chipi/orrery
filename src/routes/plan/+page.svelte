@@ -1320,6 +1320,17 @@
     flex: 1 1 auto;
     min-height: 0;
   }
+  /* When the science lens is on, its top-anchored strip (mobile) overlays the
+     top of the porkchop canvas — which draws its "PORKCHOP · EARTH → MARS"
+     title there. Push the canvas below the collapsed strip so the title clears
+     it. Fixed offset (not the dynamic --science-lens-height) so expanding the
+     lens overlays the plot rather than resizing / redrawing the canvas.
+     Desktop lens is centered + narrow and doesn't sit on the plot. */
+  @media (max-width: 600px) {
+    :global([data-science-lens='on']) .porkchop {
+      margin-top: 60px;
+    }
+  }
   .load-banner {
     position: absolute;
     top: 50%;

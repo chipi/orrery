@@ -386,6 +386,16 @@
   let showConicPanel = $state(true);
   let lensOnState = $state(isScienceLensOn());
   let conicsLayerOnState = $state(isLayerOn('conics'));
+
+  // Mobile: which HUD panel the bottom tab accordion currently shows
+  // (null = none, the 3D scene is the hero). Ties into hudHidden so the
+  // existing touch scene-hero default cooperates — opening a tab reveals
+  // its panel, closing returns to the clean canvas.
+  let mobilePanel: 'mission' | 'events' | 'phase' | null = $state(null);
+  function setMobilePanel(p: 'mission' | 'events' | 'phase') {
+    mobilePanel = mobilePanel === p ? null : p;
+    hudHidden = mobilePanel === null;
+  }
   $effect(() => {
     // svelte-check flow-analysis misses the template reads at the
     // `{#if lensOnState}` / CON-button gate sites; nudge it with
@@ -6824,6 +6834,19 @@
   >
     {hudHidden ? '◐' : '◑'}
   </button>
+  <!-- Mobile top-left: 2D/3D view toggle. The remaining toggles fold into
+       the bottom tab accordion, so the canonical view switch lives here. -->
+  <div class="fly-top-mobile">
+    <button
+      type="button"
+      class="toggle"
+      data-testid="fly-view-toggle-mobile"
+      onclick={toggleView}
+      aria-pressed={view === '2d'}
+    >
+      {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
+    </button>
+  </div>
   <!-- Settings — wave 2/3 punch #3. Gear icon top-right; click opens
        the shared QualitySettingsModal (#339) with quality-tier radios.
        Choice persists to localStorage globally and applies on reload. -->
@@ -7232,6 +7255,7 @@
     data-audio-stage="fly-hud"
     class:hidden={!showHud}
     class:cinematic-hidden={inCinematicHeldBeat}
+    class:m-open={mobilePanel === 'mission'}
   >
     <aside
       class="hud hud-identity"
@@ -7648,9 +7672,45 @@
     {@render flyToggles()}
   </div>
 
-  <!-- Mobile (≤767 px): drawer above the scrubber. CSS var sets clearance. -->
-  <div style="--mcd-bottom:88px">
+  <!-- Mobile (≤767 px): the toggle drawer is replaced by the bottom tab
+       accordion below (hidden on phones via CSS). -->
+  <div class="fly-mobile-view-drawer" style="--mcd-bottom:88px">
     <MobileControlsDrawer label="View" children={flyToggles} />
+  </div>
+
+  <!-- Mobile (≤767 px): bottom tab accordion — one HUD panel open at a time
+       so the 3D scene stays the hero. MISSION / EVENTS / PHASE fold in the
+       free-floating panels; PHASE is lens-gated. -->
+  <div class="fly-mtabs" role="group" aria-label={m.fly_view_toggles_aria()}>
+    <button
+      type="button"
+      class="fly-mtab"
+      class:active={mobilePanel === 'mission'}
+      aria-pressed={mobilePanel === 'mission'}
+      onclick={() => setMobilePanel('mission')}
+    >
+      MISSION
+    </button>
+    <button
+      type="button"
+      class="fly-mtab"
+      class:active={mobilePanel === 'events'}
+      aria-pressed={mobilePanel === 'events'}
+      onclick={() => setMobilePanel('events')}
+    >
+      EVENTS
+    </button>
+    {#if lensOnState}
+      <button
+        type="button"
+        class="fly-mtab"
+        class:active={mobilePanel === 'phase'}
+        aria-pressed={mobilePanel === 'phase'}
+        onclick={() => setMobilePanel('phase')}
+      >
+        PHASE
+      </button>
+    {/if}
   </div>
 
   <!-- CAPCOM panel: shown when a mission is loaded AND the user hasn't
@@ -7659,6 +7719,7 @@
     <aside
       class="capcom-panel"
       class:cinematic-hidden={inCinematicHeldBeat}
+      class:m-open={mobilePanel === 'events'}
       aria-label={m.fly_capcom_panel_label()}
     >
       <!-- Static header: anomaly + comms always visible. The events
@@ -7757,7 +7818,11 @@
        above the timeline scrubber, side-by-side at equal height so the
        two science overlays read as a unified pair (was bottom-left + bottom-right
        with no alignment + the conic panel disappearing behind CAPCOM). -->
-  <div class="fly-bottom-strips" class:cinematic-hidden={inCinematicHeldBeat}>
+  <div
+    class="fly-bottom-strips"
+    class:cinematic-hidden={inCinematicHeldBeat}
+    class:m-open={mobilePanel === 'phase'}
+  >
     <div class="fly-fd-anchor">
       <FlightDirectorBanner
         scPhase={scState.phase}
@@ -7780,7 +7845,7 @@
   <!-- Conic-section panel alone (FD hidden / not lens-gated). Re-uses the
        same centered strip container so the panel stays in the same
        horizontal band whether or not FD is present. -->
-  <div class="fly-bottom-strips">
+  <div class="fly-bottom-strips" class:m-open={mobilePanel === 'phase'}>
     <div class="fly-conic-anchor">
       <ConicSectionPanel
         shape={conicState.shape}
@@ -9355,10 +9420,105 @@
       max-width: calc(50vw - 12px);
     }
   }
-  /* ─── ≤ 767 px — toggle rows move into the mobile drawer ────────── */
+  /* New mobile-only chrome (tab accordion + top-left view toggle) — hidden
+     on desktop; revealed at ≤767 below. */
+  .fly-top-mobile,
+  .fly-mtabs {
+    display: none;
+  }
+
+  /* ─── ≤ 767 px — HUD folds into the bottom tab accordion ────────── */
   @media (max-width: 767px) {
     .fly-toggle-rows-desktop {
       display: none;
+    }
+    /* The single "Show HUD" pile-reveal + the toggle drawer are replaced by
+       the bottom tab accordion (MISSION / EVENTS / PHASE). */
+    .hud-collapse,
+    .fly-mobile-view-drawer {
+      display: none;
+    }
+    /* Top-left: 2D/3D view toggle (rest of the toggles fold into the tabs). */
+    .fly-top-mobile {
+      display: flex;
+      position: fixed;
+      top: calc(var(--nav-height) + 8px);
+      left: 8px;
+      gap: 6px;
+      z-index: 45;
+    }
+    /* Bottom tab bar — mirrors the MobileDrawerGroup look used on the other
+       routes. Sits just above the scrubber. */
+    .fly-mtabs {
+      display: flex;
+      position: fixed;
+      bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+      left: 8px;
+      right: 8px;
+      gap: 5px;
+      z-index: 41;
+    }
+    .fly-mtab {
+      flex: 1 1 0;
+      min-width: 0;
+      min-height: 40px;
+      background: rgba(8, 10, 22, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      border-radius: 6px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .fly-mtab.active {
+      background: rgba(68, 102, 255, 0.18);
+      border-color: rgba(68, 102, 255, 0.7);
+      color: #dde4ff;
+    }
+    /* HUD panels hidden by default (scene = hero); the active tab reveals ONE
+       as a bottom sheet above the tab bar + scrubber. */
+    .hud-stack:not(.m-open),
+    .capcom-panel:not(.m-open),
+    .fly-bottom-strips:not(.m-open) {
+      display: none;
+    }
+    .hud-stack.m-open,
+    .capcom-panel.m-open,
+    .fly-bottom-strips.m-open {
+      position: fixed;
+      top: auto;
+      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-width: none;
+      max-height: 44vh;
+      overflow-y: auto;
+      z-index: 39;
+    }
+    .hud-stack.m-open {
+      gap: 8px;
+      pointer-events: auto;
+    }
+    /* MISSION tab: surface the panels hidden on mobile by default + let each
+       fill the sheet width instead of the fixed 220px rail width. */
+    .hud-stack.m-open .hud {
+      width: auto;
+      min-width: 0;
+    }
+    .hud-stack.m-open .hud-navigation,
+    .hud-stack.m-open .hud-systems,
+    .hud-stack.m-open .hud-flight-params {
+      display: flex;
+    }
+    /* PHASE tab: the FD + conic strips are centered rows on desktop; let them
+       stack full-width in the sheet. */
+    .fly-bottom-strips.m-open {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
     }
   }
   .toggle {

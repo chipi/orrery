@@ -648,6 +648,9 @@
 
   // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
   let simSpeed = $state(7); // days/sec
+  // Mobile: collapse the speed pills into a single tap-to-reveal slot so the
+  // scrubber track can reclaim the freed horizontal space (matches /explore).
+  let speedPopoverOpen = $state(false);
   // DEV-only live-camera mirror for the FlybyDebugViewer 2D plot — the
   // real scene camera (camera.position + camTarget) is closure-local in
   // the animate loop, so we mirror it into $state each frame (DEV builds
@@ -7570,10 +7573,41 @@
       {/if}
     </div>
     <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
-      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
+      <!-- Mobile: single active-speed slot; tap to reveal all speeds stacked
+           above so the scrubber track reclaims the horizontal space. -->
+      <div class="speed-slot">
         <button
           type="button"
           class="speed-pill"
+          class:active={isPlaying}
+          aria-expanded={speedPopoverOpen}
+          aria-haspopup="listbox"
+          aria-label="{simSpeed}× — {m.fly_speed_label()}"
+          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{simSpeed}×</button
+        >
+        {#if speedPopoverOpen}
+          <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
+            {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
+              <button
+                type="button"
+                class="speed-pill"
+                class:active={simSpeed === sp}
+                role="option"
+                aria-selected={simSpeed === sp}
+                onclick={() => {
+                  setSpeed(sp);
+                  speedPopoverOpen = false;
+                }}>{sp}×</button
+              >
+            {/each}
+          </div>
+        {/if}
+      </div>
+      <!-- Desktop: all speed pills visible inline. -->
+      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
+        <button
+          type="button"
+          class="speed-pill speed-desktop-pill"
           class:active={simSpeed === sp}
           onclick={() => setSpeed(sp)}
         >
@@ -9376,6 +9410,35 @@
     background: rgba(68, 102, 255, 0.2);
     border-color: rgba(68, 102, 255, 0.5);
     color: #fff;
+  }
+  /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
+     /explore) so the scrubber track reclaims the horizontal space. */
+  .speed-slot {
+    display: none;
+    position: relative;
+  }
+  .speed-popover {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(8, 10, 22, 0.95);
+    border: 1px solid rgba(68, 102, 255, 0.4);
+    border-radius: 5px;
+    padding: 3px;
+    min-width: 48px;
+    z-index: 50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  @media (max-width: 767px) {
+    .speed-slot {
+      display: block;
+    }
+    .speed-desktop-pill {
+      display: none;
+    }
   }
 
   /* Top-right toggle clusters. Both rows live in the top-right corner

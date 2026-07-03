@@ -1314,7 +1314,17 @@
       aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.iss_list_heading()}
     >
-      {#if viewMode !== 'list'}
+      {#if viewMode === 'list'}
+        <button
+          type="button"
+          class="index-close"
+          onclick={toggleViewMode}
+          aria-label={m.iss_index_close()}
+          data-testid="iss-list-close"
+        >
+          ×
+        </button>
+      {:else}
         <button
           type="button"
           class="index-close"

@@ -1261,7 +1261,17 @@
       aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.tiangong_list_heading()}
     >
-      {#if viewMode !== 'list'}
+      {#if viewMode === 'list'}
+        <button
+          type="button"
+          class="index-close"
+          onclick={toggleViewMode}
+          aria-label={m.tiangong_index_close()}
+          data-testid="tiangong-list-close"
+        >
+          ×
+        </button>
+      {:else}
         <button
           type="button"
           class="index-close"

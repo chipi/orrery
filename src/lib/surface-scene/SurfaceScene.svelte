@@ -5091,7 +5091,12 @@
     <!-- Mobile-only: view toggle + Reset View fixed top-left below nav.
          Spin stays in the LAYERS drawer; these two controls move up top
          so they're always accessible without opening the drawer. -->
-    <div class="hud-top-mobile" role="group" aria-label={m.ui_view_controls()}>
+    <div
+      class="hud-top-mobile"
+      class:flat-hidden={flatPatchActive}
+      role="group"
+      aria-label={m.ui_view_controls()}
+    >
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -6297,6 +6302,12 @@ sample      ${debugInfo.projectedPxSample}`}
       z-index: 45;
     }
   }
+  /* The sphere controls (2D / reset / spin) are inert in the flat-patch
+     detail view — hide them so they stop overlapping the flat-patch's own
+     top-center context banner. */
+  .hud-top-mobile.flat-hidden {
+    display: none;
+  }
 
   /* The top-cluster controls (view / reset / spin) sit OUTSIDE .hud-controls,
      so they missed the scoped .toggle chrome above and fell back to the UA
@@ -6723,6 +6734,14 @@ sample      ${debugInfo.projectedPxSample}`}
     /* Desktop .legend-3d moved into the Nations accordion tab on mobile. */
     .legend-3d {
       display: none;
+    }
+    /* In flat-patch / panorama the sphere-control cluster is hidden, so the
+       top-left is free — move the immersive-exit button there and leave the
+       top-right clear for the flat-patch layer chips. */
+    .surface-floating-exit {
+      top: calc(var(--nav-height, 64px) + 8px);
+      left: 8px;
+      right: auto;
     }
 
     /* OrbitRuler inside the left accordion tab: static flow, full width.

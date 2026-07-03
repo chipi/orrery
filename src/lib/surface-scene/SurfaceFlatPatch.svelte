@@ -44,6 +44,17 @@
 
   let canvas: HTMLCanvasElement | undefined = $state();
 
+  // Mobile: the bottom tier-context card overlays roughly the lower third of
+  // the screen, so centre the imagery in the visible slot above it rather than
+  // on the full canvas (otherwise the detail patch hides behind the card and
+  // leaves dead space up top). Desktop keeps true-centre.
+  let flatCenterFrac = $state(0.5);
+  onMount(() => {
+    if (typeof window !== 'undefined' && window.matchMedia?.('(max-width: 767px)').matches) {
+      flatCenterFrac = 0.34;
+    }
+  });
+
   // ─── Imagery loading ───────────────────────────────────────────────
   // Resolve regional + detail texture URLs from the selected site's
   // hotspot_tier2_source / hotspot_tier2_regional_source paths through
@@ -230,7 +241,7 @@
     const dyKm = (lat - centroidLat) * kmPerDegLat;
     return {
       x: W / 2 + dxKm / kmPerPx,
-      y: H / 2 - dyKm / kmPerPx, // +lat = up on screen
+      y: H * flatCenterFrac - dyKm / kmPerPx, // +lat = up on screen
     };
   }
 
@@ -1012,5 +1023,17 @@
     backdrop-filter: blur(4px);
     pointer-events: none;
     text-transform: uppercase;
+  }
+  @media (max-width: 767px) {
+    /* SurfaceScene already renders a prominent "Exit zoom" affordance on
+       mobile, so the in-component back button is redundant here — drop it. */
+    .hud-back {
+      display: none;
+    }
+    /* Clear the top-center context banner past the mobile top controls
+       (Exit zoom + layer chips) so it isn't tucked behind them. */
+    .hud-context-banner {
+      top: 56px;
+    }
   }
 </style>

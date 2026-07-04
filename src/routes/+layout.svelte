@@ -379,10 +379,12 @@
     z-index: 35;
     pointer-events: none;
   }
-  /* Touch: hide the footer while a route is in an immersive full-screen mode
-     (surface panorama / flat-patch) so the mode's own bottom controls don't
-     collide with it — on any touch device, not just narrow ones. */
-  :global(html[data-touch]) .site-footer.immersive-hidden {
+  /* Touch: the floating footer is hidden entirely — its links move into the
+     nav hamburger drawer as a bottom section (see Nav.svelte). This frees the
+     whole bottom edge for each route's drawer buttons instead of the strip
+     competing for the bottom-right corner (2026-07 user direction). Desktop
+     keeps the floating strip. (Supersedes the older immersive-only hide.) */
+  :global(html[data-touch]) .site-footer {
     display: none;
   }
   .footer-menu {

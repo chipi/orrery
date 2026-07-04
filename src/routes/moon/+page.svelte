@@ -231,7 +231,10 @@
   .ruler-desktop-only {
     display: contents;
   }
-  @media (max-width: 767px) {
+  /* Hide the persistent desktop ruler on touch — the RULER drawer replaces it.
+     Keyed on capability, not width, so a landscape phone (wide but touch)
+     doesn't show BOTH the default ruler and the drawer one. */
+  @media (hover: none), (pointer: coarse) {
     .ruler-desktop-only {
       display: none;
     }

@@ -3174,8 +3174,13 @@
       // — image 19 feedback). Power 1.8 makes it 8× slower at
       // camR=30 vs the wide-zoom feel (was ~3× with linear).
       const dragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
-      const dT = -dx * dragK;
+      let dT = -dx * dragK;
       const dP = dy * dragK;
+      // Panorama looks toward the skybox centre (the far wall), so a horizontal
+      // drag pans the view OPPOSITE to orbit mode's near-side. Invert it so the
+      // swipe direction matches the view direction — grab-the-world (2026-07
+      // user report: "swipe one way, screen moves the other" in panorama).
+      if (panoramaActive) dT = -dT;
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
@@ -3299,8 +3304,12 @@
       // Mirror the mouse drag's zoom-relative curve so touch users
       // get the same close-zoom calm-down.
       const touchDragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
-      const dT = -(e.touches[0].clientX - lmx) * touchDragK;
+      let dT = -(e.touches[0].clientX - lmx) * touchDragK;
       const dP = (e.touches[0].clientY - lmy) * touchDragK;
+      // Panorama looks toward the skybox centre — a horizontal drag pans the
+      // view opposite to orbit mode; invert so the swipe matches the view
+      // direction (2026-07 user report, matches the mouse path above).
+      if (panoramaActive) dT = -dT;
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
@@ -4878,7 +4887,7 @@
 <div
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
-  style:--mcd-bottom="calc(40px + env(safe-area-inset-bottom, 0px))"
+  style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
 >
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
@@ -5914,10 +5923,13 @@ sample      ${debugInfo.projectedPxSample}`}
     text-transform: uppercase;
     backdrop-filter: blur(4px);
   }
-  /* Mobile: sit just above the accordion tab bar (which now hugs the footer). */
+  /* Mobile: sit just above the accordion tab bar, which now hugs the bottom
+     edge (--mcd-bottom dropped 40px → 8px when the footer moved into the nav).
+     The pill hides while a drawer is open (mobileDrawerOpen), so it only ever
+     shares the screen with the closed ~40px tab row below it. */
   @media (hover: none), (pointer: coarse) {
     .altitude-indicator {
-      bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     }
   }
   /* Persistent landing-site crosshair. Mirrors the gold-disc +

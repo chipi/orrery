@@ -443,8 +443,14 @@
      right-rail variant (`.has-right-rail`) still collapses its third
      column at this width — it only expands at @min-width: 1025.
      Reset the rail-left flex row + tab chips to vertical stacks;
-     resurface the rail heading + search label/hint. */
-  @media (min-width: 769px) {
+     resurface the rail heading + search label/hint.
+
+     Gated on min-height too: the sticky 200px rail + the full-width
+     grid-column:1/-1 right rail need a tall viewport. A landscape phone is
+     wide (>769) but SHORT, so the grid collapsed and the 2nd-level (sections)
+     rail overlapped the 1st (tabs). Below 600px tall we keep the stacked
+     mobile layout, which has no sticky/grid to break. */
+  @media (min-width: 769px) and (min-height: 600px) {
     .layout {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -524,8 +530,9 @@
      (auto-fit grid only made sense when the rail was inline on
      tablet-sized viewports). Issue #226 motivated the 220–320 px
      range so the rail can claim some of the extra space we freed
-     by raising .page max-width to 1440. */
-  @media (min-width: 1025px) {
+     by raising .page max-width to 1440. Same min-height gate as the 769
+     breakpoint so a short landscape phone never enters the 3-col grid. */
+  @media (min-width: 1025px) and (min-height: 600px) {
     .has-right-rail .layout {
       grid-template-columns: 200px 1fr minmax(220px, 320px);
     }

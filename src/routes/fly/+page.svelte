@@ -9540,6 +9540,26 @@
       border-color: rgba(68, 102, 255, 0.7);
       color: #dde4ff;
     }
+    /* Landscape inline row — parity with explore's bottomInline drawer: the
+       view-switch pills drop to the scrubber's line and right-align to
+       content-width; the scrubber yields room on the right so both share ONE
+       bottom row instead of stacking. Same chosen side everywhere (strip left,
+       buttons right). */
+    :global(html[data-touch][data-orientation='landscape']) .fly-mtabs {
+      bottom: 14px;
+      left: auto;
+      right: 16px;
+      gap: 5px;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .fly-mtab {
+      flex: 0 0 auto;
+      min-width: 0;
+      min-height: 34px;
+      padding: 6px 14px;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .scrubber {
+      right: 280px;
+    }
     /* HUD panels hidden by default (scene = hero); the active tab reveals ONE
        as a bottom sheet above the tab bar + scrubber. */
     .hud-stack:not(.m-open),

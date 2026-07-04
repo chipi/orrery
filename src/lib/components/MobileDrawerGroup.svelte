@@ -16,6 +16,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { viewport } from '$lib/viewport.svelte';
 
   // content receives a `close` callback so a selection inside a drawer
   // (pick a mission / orbit zone / toggle) can auto-collapse the drawer,
@@ -37,9 +38,14 @@
     /** Fires when the open tab changes (id, or null when all closed).
         /explore uses it to enable the iconic-missions layer on open. */
     onOpen?: (id: string | null) => void;
+    /** Landscape-only: right-align the tab row to content-width pills so it
+        shares ONE bottom row with a route's left-anchored strip (scale bar /
+        scrubber). Opt-in — routes without a bottom strip (surface, iss,
+        tiangong) keep the full-width single row. */
+    bottomInline?: boolean;
   };
 
-  let { tabs, onOpen }: Props = $props();
+  let { tabs, onOpen, bottomInline = false }: Props = $props();
 
   let openId = $state<string | null>(null);
 
@@ -53,6 +59,58 @@
   }
 
   const openTab = $derived(tabs.find((t) => t.id === openId) ?? null);
+
+  // ─── Panel placement (touch-landscape) ──────────────────────────────
+  // In landscape the panel is a constrained-width floating card (not the
+  // full-width portrait sheet), so centre it above the tab that opened it,
+  // clamped to the viewport — a left tab reads left, centre centres, right
+  // reads right. `--panel-left` is measured relative to the .mdg left edge.
+  // Portrait leaves panelLeft null → the panel stays a full-width flex child.
+  let mdgEl = $state<HTMLDivElement | null>(null);
+  let tabRowEl = $state<HTMLDivElement | null>(null);
+  let panelLeft = $state<number | null>(null);
+
+  function positionPanel() {
+    if (
+      typeof window === 'undefined' ||
+      !openId ||
+      !viewport.isTouch ||
+      !viewport.isLandscape ||
+      !mdgEl ||
+      !tabRowEl
+    ) {
+      panelLeft = null;
+      return;
+    }
+    const btn = tabRowEl.querySelector(`[data-tab-id="${openId}"]`);
+    if (!btn) {
+      panelLeft = null;
+      return;
+    }
+    const b = btn.getBoundingClientRect();
+    const container = mdgEl.getBoundingClientRect();
+    const panelW = Math.min(400, window.innerWidth * 0.92);
+    const centre = b.left + b.width / 2;
+    const leftVp = Math.max(8, Math.min(centre - panelW / 2, window.innerWidth - panelW - 8));
+    panelLeft = Math.round(leftVp - container.left);
+  }
+
+  // Re-measure when the open tab changes or the viewport flips (positionPanel
+  // reads viewport.isLandscape / isTouch, so those are tracked here too).
+  $effect(() => {
+    void openId;
+    void viewport.isLandscape;
+    void viewport.isTouch;
+    positionPanel();
+  });
+
+  // Re-measure on resize (width feeds the clamp + the container origin).
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const h = () => positionPanel();
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  });
 
   // Swipe-down on the panel body collapses it.
   let startY = $state(0);
@@ -91,26 +149,35 @@
   ></button>
 {/if}
 
-<div class="mdg" style:transform={deltaY > 0 && openId ? `translateY(${deltaY}px)` : ''}>
+<div
+  class="mdg"
+  class:bottom-inline={bottomInline}
+  bind:this={mdgEl}
+  style:transform={deltaY > 0 && openId ? `translateY(${deltaY}px)` : ''}
+>
   {#if openTab && openTab.content}
-    <button
-      type="button"
-      class="mdg-close"
-      aria-label={m.panel_close()}
-      onclick={() => (openId = null)}
-    >
-      ×
-    </button>
-    <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
-         accessible closes, so the body needs no interactive role. -->
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div
-      class="mdg-body"
-      ontouchstart={onTouchStart}
-      ontouchmove={onTouchMove}
-      ontouchend={onTouchEnd}
-    >
-      {@render openTab.content(() => (openId = null))}
+    <!-- --panel-left (landscape only) centres this above the open tab; portrait
+         leaves it unset and the panel stays a full-width flex child. -->
+    <div class="mdg-panel" style:--panel-left={panelLeft != null ? `${panelLeft}px` : null}>
+      <button
+        type="button"
+        class="mdg-close"
+        aria-label={m.panel_close()}
+        onclick={() => (openId = null)}
+      >
+        ×
+      </button>
+      <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
+           accessible closes, so the body needs no interactive role. -->
+      <!-- svelte-ignore a11y_no_static_element_interactions -->
+      <div
+        class="mdg-body"
+        ontouchstart={onTouchStart}
+        ontouchmove={onTouchMove}
+        ontouchend={onTouchEnd}
+      >
+        {@render openTab.content(() => (openId = null))}
+      </div>
     </div>
   {/if}
   <!-- This is a disclosure/accordion (one panel opens ABOVE the row, all-closed
@@ -118,11 +185,12 @@
        buttons, action tabs are aria-pressed toggles. A role="tablist" here
        tripped axe aria-required-children on routes that pass action tabs
        (/iss, /tiangong) because the action buttons aren't role="tab". -->
-  <div class="mdg-tabs">
+  <div class="mdg-tabs" bind:this={tabRowEl}>
     {#each tabs as tab (tab.id)}
       <button
         type="button"
         class="mdg-tab"
+        data-tab-id={tab.id}
         class:active={tab.action ? (tab.active ?? false) : openId === tab.id}
         aria-expanded={tab.action ? undefined : openId === tab.id}
         aria-pressed={tab.action ? (tab.active ?? false) : undefined}
@@ -151,6 +219,13 @@
       right: 8px;
       bottom: var(--mcd-bottom, calc(52px + env(safe-area-inset-bottom, 0px)));
       z-index: 38;
+    }
+    /* Wraps the × + body so both move together when the panel is offset
+       above its tab in landscape; the × anchors to this box (portrait: static
+       full-width; landscape: absolute, positioned via --panel-left). */
+    .mdg-panel {
+      position: relative;
+      width: 100%;
     }
     /* Discoverable close on the expanded panel (tap-away + Esc still work). */
     .mdg-close {
@@ -254,5 +329,45 @@
       cursor: pointer;
       z-index: 37;
     }
+  }
+
+  /* ── Landscape inline mode (opt-in via bottomInline) ────────────────
+     A landscape phone is short; with the footer gone, the tab row shares the
+     bottom line with the route's left-anchored strip (scale bar / scrubber)
+     instead of stacking above it. The row drops to the strip's level and its
+     pills right-align to content-width, leaving the left free for the strip.
+     The row + empty area are click-transparent (pointer-events:none) so the
+     strip stays tappable underneath; only the pills / open panel hit-test.
+     The panel still opens full-width above the row. */
+  :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline {
+    bottom: max(8px, env(safe-area-inset-bottom, 0px));
+    pointer-events: none;
+  }
+  :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tabs {
+    justify-content: flex-end;
+    pointer-events: none;
+  }
+  :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tab {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 6px 12px;
+    pointer-events: auto;
+  }
+  :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-panel {
+    pointer-events: auto;
+  }
+  /* All landscape drawers (inline or not): the opened panel is a constrained
+     floating card CENTRED ABOVE the tab that opened it, not a full-width sheet.
+     --panel-left is measured + clamped in JS so a left tab reads left, centre
+     centres, right reads right. `bottom: 100% + gap` floats it just above the
+     (out-of-flow) tab row. Fallback left before the first measure = 8px. */
+  :global(html[data-touch][data-orientation='landscape']) .mdg-panel {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: var(--panel-left, 8px);
+    width: min(400px, 92vw);
+  }
+  :global(html[data-touch][data-orientation='landscape']) .mdg-body {
+    max-height: min(46vh, 240px);
   }
 </style>

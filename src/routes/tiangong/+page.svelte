@@ -1705,7 +1705,7 @@
           },
           { id: 'modules', label: 'Modules', icon: '⚑', content: mobileModulesContent },
         ]}
-        --mcd-bottom="calc(40px + env(safe-area-inset-bottom, 0px))"
+        --mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
       />
     {/if}
   {/if}

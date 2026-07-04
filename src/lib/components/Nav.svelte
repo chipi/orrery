@@ -271,6 +271,39 @@
         ⌕ {m.nav_search()}
       </button>
     {/if}
+    <!-- Footer links live here on touch — the floating .site-footer is hidden
+         on touch (see +layout.svelte), so its bill-of-materials links move into
+         the nav drawer as a bottom section. Desktop keeps the bottom-right
+         strip unchanged (2026-07 user direction: "in mobile view move footer
+         to main nav as section at bottom; desktop stays as is"). -->
+    <div class="drawer-footer" aria-label={m.footer_links_aria()}>
+      <a class="drawer-link drawer-link-sm" href="{base}/posters" onclick={closeMobileMenu}
+        >{m.layout_footer_gallery()}</a
+      >
+      <a class="drawer-link drawer-link-sm" href="{base}/credits" onclick={closeMobileMenu}
+        >{m.layout_footer_credits()}</a
+      >
+      <a class="drawer-link drawer-link-sm" href="{base}/colophon" onclick={closeMobileMenu}
+        >{m.layout_footer_colophon()}</a
+      >
+      <a class="drawer-link drawer-link-sm" href="{base}/library" onclick={closeMobileMenu}
+        >{m.layout_footer_library()}</a
+      >
+      <a
+        class="drawer-link drawer-link-sm"
+        href="https://github.com/chipi/orrery/blob/main/LICENSE"
+        target="_blank"
+        rel="noopener noreferrer external"
+        hreflang="en">{m.layout_footer_license()}</a
+      >
+      <a
+        class="drawer-link drawer-link-sm"
+        href="https://github.com/chipi/orrery#readme"
+        target="_blank"
+        rel="noopener noreferrer external"
+        hreflang="en">{m.layout_footer_readme()}</a
+      >
+    </div>
   </div>
   <button
     type="button"
@@ -695,15 +728,37 @@
     }
   }
 
-  /* On narrow viewports the inline link strip can't fit 12 items.
-     Hide it and surface the full menu via the hamburger drawer. */
-  @media (max-width: 640px) {
+  /* Surface the full menu via the hamburger drawer instead of the inline
+     strip when it can't fit / doesn't belong: narrow desktop windows (< 640)
+     OR any touch device (a landscape phone is wide but still wants the touch
+     menu, and its inline strip was a cramped horizontal scroller). Keyed on
+     capability, not width, so the footer-in-drawer section reaches every
+     touch size (0.7.2 model). */
+  @media (max-width: 640px), (pointer: coarse) {
     .center {
       display: none;
     }
     .menu-toggle {
       display: inline-flex;
     }
+  }
+
+  /* Footer links relocated into the drawer bottom on touch (the floating
+     .site-footer is display:none on touch). Set off from the route links
+     with a divider + a lighter, mono treatment matching the desktop strip. */
+  .drawer-footer {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--color-border);
+  }
+  .drawer-link-sm {
+    padding: 9px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    border-left-color: transparent;
   }
 
   @media (max-width: 500px) {

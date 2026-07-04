@@ -5581,7 +5581,8 @@
     onOpen={(id) => {
       if (id === 'missions') layers.paths = true;
     }}
-    --mcd-bottom="100px"
+    bottomInline
+    --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
   />
 
   {#if panelState.sizes}
@@ -6059,6 +6060,13 @@
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: auto;
+  }
+  /* Touch: the two things this 50px clears — the footer and .earth-compare —
+     are both hidden on touch, so the scale strip drops to the bottom edge and
+     the drawer (--mcd-bottom) sits just above it, closing the gap the removed
+     footer used to fill. Desktop keeps the 50px stack. */
+  :global(html[data-touch]) .time-controls {
+    bottom: max(8px, env(safe-area-inset-bottom, 0px));
   }
   /* Play toggle — overrides .toggle's 44px floor to match the panel's
      footprint (consistent with .earth-compare, which also runs a sub-44

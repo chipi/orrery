@@ -62,9 +62,17 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     }
   });
 
-  test('linked from the persistent site footer', async ({ page }) => {
+  test('linked from the site footer', async ({ page, isMobile }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    const libraryLink = page.locator('.site-footer a[href*="/library"]').first();
+    // Desktop: the floating bottom-right footer strip. Touch: the strip is
+    // hidden and its links live in the nav hamburger drawer (0.7.2).
+    let libraryLink;
+    if (isMobile) {
+      await page.locator('button.menu-toggle').click();
+      libraryLink = page.locator('#mobile-nav-drawer .drawer-footer a[href*="/library"]').first();
+    } else {
+      libraryLink = page.locator('.site-footer a[href*="/library"]').first();
+    }
     await expect(libraryLink).toBeVisible();
     await libraryLink.click();
     await page.waitForLoadState('networkidle');

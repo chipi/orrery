@@ -90,9 +90,17 @@ test.describe('/credits — image provenance disclosure', () => {
     expect(codeCount).toBeGreaterThanOrEqual(2);
   });
 
-  test('linked from the persistent site footer', async ({ page }) => {
+  test('linked from the site footer', async ({ page, isMobile }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    const creditsLink = page.locator('.site-footer a[href*="/credits"]').first();
+    // Desktop: the floating bottom-right footer strip. Touch: the strip is
+    // hidden and its links live in the nav hamburger drawer (0.7.2).
+    let creditsLink;
+    if (isMobile) {
+      await page.locator('button.menu-toggle').click();
+      creditsLink = page.locator('#mobile-nav-drawer .drawer-footer a[href*="/credits"]').first();
+    } else {
+      creditsLink = page.locator('.site-footer a[href*="/credits"]').first();
+    }
     await expect(creditsLink).toBeVisible();
     await creditsLink.click();
     await page.waitForLoadState('networkidle');

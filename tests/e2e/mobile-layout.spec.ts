@@ -94,16 +94,20 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
 });
 
 test.describe('mobile footer / CTA clearance', () => {
-  test('footer does not overlap the landing CTA stack on /', async ({ page, isMobile }) => {
+  test('floating footer is hidden on touch; its links move into the nav drawer', async ({
+    page,
+    isMobile,
+  }) => {
     test.skip(!isMobile, 'mobile-only');
     await page.goto('/', { waitUntil: 'networkidle' });
-    // Locate the primary CTA + the footer; the CTA's bottom edge must
-    // sit ABOVE the footer's top edge (i.e., no vertical overlap).
-    const ctaBox = await page.locator('[data-testid="landing-cta-primary"]').boundingBox();
-    const footerBox = await page.locator('.site-footer').boundingBox();
-    expect(ctaBox).not.toBeNull();
-    expect(footerBox).not.toBeNull();
-    expect(ctaBox!.y + ctaBox!.height).toBeLessThanOrEqual(footerBox!.y + 1);
+    // 0.7.2: on touch the bottom-right footer strip is display:none — its
+    // bill-of-materials links relocate into the hamburger drawer as a bottom
+    // section, so it can no longer overlap the landing CTA / route chrome.
+    await expect(page.locator('.site-footer')).toBeHidden();
+    await page.locator('button.menu-toggle').click();
+    await expect(
+      page.locator('#mobile-nav-drawer .drawer-footer a[href*="/colophon"]'),
+    ).toBeVisible();
   });
 
   test('viewport has no horizontal scroll on /', async ({ page, isMobile }) => {

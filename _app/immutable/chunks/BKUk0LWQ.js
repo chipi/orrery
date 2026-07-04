@@ -1,0 +1,1 @@
+import"./CWj6FrbW.js";import{c as n,u as a,d as l}from"./C5NNeHs9.js";import{s as t}from"./DKbyhuL2.js";function c(o,e){n(e,!0),a(()=>(t({label:e.label,content:e.content??null}),()=>t({label:"",content:null}))),l()}export{c as D};

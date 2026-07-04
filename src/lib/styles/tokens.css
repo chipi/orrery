@@ -42,9 +42,9 @@
   --nav-height: 60px;
   /* Panel width — bumped from 314 → 360 in v0.4, then → 400 in v0.7
      so the four-tab strip (OVERVIEW · GALLERY · TECHNICAL · SCIENCE)
-     fits without the last tab being clipped on the right edge. Mobile
-     (<768px) stays full-width via Panel.svelte media query; this token
-     only governs the desktop right-drawer width. */
+     fits without the last tab being clipped. Touch-portrait uses a
+     full-width bottom sheet (Panel.svelte); touch-landscape + desktop
+     use this right-drawer width. */
   --panel-width: 400px;
   --bottom-bar-h: 68px;
   --border-radius: 4px;

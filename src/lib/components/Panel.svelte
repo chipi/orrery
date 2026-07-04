@@ -162,30 +162,28 @@
     overflow: hidden;
   }
 
-  /* Desktop: right drawer */
-  @media (min-width: 768px) {
-    .panel {
-      top: var(--nav-height);
-      right: 0;
-      bottom: 0;
-      width: var(--panel-width);
-      border-left: 1px solid var(--color-border);
-    }
+  /* Right side drawer — pointer/desktop AND touch-landscape. A wide landscape
+     viewport is drawer-friendly (keeps the scene visible beside the panel);
+     landscape's short height makes a full-bleed sheet far worse. */
+  :global(html[data-form='desktop']) .panel,
+  :global(html[data-touch][data-orientation='landscape']) .panel {
+    top: var(--nav-height);
+    right: 0;
+    bottom: 0;
+    width: var(--panel-width);
+    border-left: 1px solid var(--color-border);
   }
 
-  /* Mobile: full-height sheet anchored just below the nav — fills the
-     screen so the scene doesn’t bleed through above the panel. No
-     max-height cap. Tour-space dock is zeroed on mobile; a dedicated
-     tour/mobile pass will revisit if needed. */
-  @media (max-width: 767px) {
-    .panel {
-      top: var(--nav-height);
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-top: 1px solid var(--color-border);
-      z-index: calc(var(--panel-z, 30) + 50);
-    }
+  /* Touch-portrait: full-height bottom sheet anchored below the nav — fills the
+     screen so the scene doesn’t bleed through above the panel. (Touch-landscape
+     uses the side drawer above; the tour-space dock is zeroed here too.) */
+  :global(html[data-touch][data-orientation='portrait']) .panel {
+    top: var(--nav-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--color-border);
+    z-index: calc(var(--panel-z, 30) + 50);
   }
 
   /* Tap-outside scrim — mobile bottom-sheet only (desktop is a non-modal
@@ -209,11 +207,9 @@
       opacity: 1;
     }
   }
-  @media (max-width: 767px) {
-    .panel-backdrop {
-      display: block;
-      z-index: calc(var(--panel-z, 30) + 49);
-    }
+  :global(html[data-touch][data-orientation='portrait']) .panel-backdrop {
+    display: block;
+    z-index: calc(var(--panel-z, 30) + 49);
   }
 
   .panel:focus {
@@ -228,10 +224,8 @@
     height: 64px;
     flex-shrink: 0;
   }
-  @media (max-width: 767px) {
-    .panel-dock {
-      height: 0;
-    }
+  :global(html[data-touch][data-orientation='portrait']) .panel-dock {
+    height: 0;
   }
 
   .panel-close {
@@ -258,10 +252,8 @@
     color: var(--color-text);
     outline: none;
   }
-  @media (max-width: 767px) {
-    .panel-close {
-      top: 14px;
-    }
+  :global(html[data-touch][data-orientation='portrait']) .panel-close {
+    top: 14px;
   }
 
   /* Back affordance (#29) — mirrors .panel-close on the top-LEFT. */
@@ -289,10 +281,8 @@
     color: var(--color-text);
     outline: none;
   }
-  @media (max-width: 767px) {
-    .panel-back {
-      top: 14px;
-    }
+  :global(html[data-touch][data-orientation='portrait']) .panel-back {
+    top: 14px;
   }
   /* When the back button is present it shares the top-left with the content's
      first row (agency badges); push the content down so nothing overlaps. */

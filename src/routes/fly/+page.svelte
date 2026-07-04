@@ -2,6 +2,7 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { viewport } from '$lib/viewport.svelte';
   import { agencyToLogoEntries } from '$lib/agency-logo';
   import type { FleetIndexEntry } from '$types/fleet';
   import * as THREE from 'three';
@@ -255,11 +256,10 @@
   function toggleHud() {
     hudHidden = !hudHidden;
   }
-  // Default-collapse on touch-only devices. Uses `(hover: none)` rather
-  // than viewport width: touchscreens with mice (Surface laptops, iPad
-  // with trackpad) keep the desktop default. Runs once at script-init
-  // (svelte 5 module-scope: it fires on mount before first render).
-  if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
+  // Default-collapse on touch devices (viewport.isTouch = coarse pointer / no
+  // hover, so touch-laptops + iPad-with-trackpad keep the desktop default). The
+  // store is seeded at module load, so this is valid here at script-init.
+  if (viewport.isTouch) {
     hudHidden = true;
   }
 
@@ -8958,7 +8958,7 @@
   }
 
   /* ─── ≥ 768 px — restore the desktop HUD layout ────────────────── */
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .hud-navigation,
     .hud-systems,
     .hud-flight-params {
@@ -9092,7 +9092,7 @@
   .accent-dv {
     color: #ffc850;
   }
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     /* Scrubber spans full width below the stack on desktop, since the
        right side no longer carries a fixed-position systems HUD. */
     .scrubber {
@@ -9432,7 +9432,7 @@
     z-index: 50;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .speed-slot {
       display: block;
     }
@@ -9491,7 +9491,7 @@
   }
 
   /* ─── ≤ 767 px — HUD folds into the bottom tab accordion ────────── */
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .fly-toggle-rows-desktop {
       display: none;
     }
@@ -9668,7 +9668,7 @@
   /* ─── ≥ 768 px — capcom-panel becomes right-pinned 320 px column ─
      Mobile-first inversion: phone bottom-sheet is the base; desktop
      restores the historical "tall right column" layout. */
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .capcom-panel {
       top: calc(var(--nav-height) + 64px);
       bottom: 86px;

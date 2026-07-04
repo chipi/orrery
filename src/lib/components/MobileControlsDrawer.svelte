@@ -124,7 +124,7 @@
     display: none;
   }
 
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .mcd {
       display: flex;
       flex-direction: column;

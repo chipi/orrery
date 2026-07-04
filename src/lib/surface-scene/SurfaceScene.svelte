@@ -87,6 +87,7 @@
   import View3dControls from '$lib/components/View3dControls.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
+  import { viewport } from '$lib/viewport.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   // HotspotsLodChip import dropped — its LOD-cycle UX is now folded
   // into the unified SURFACE chip (see surfaceChipLabel /
@@ -533,19 +534,11 @@
   // from it would hide the very view you just asked for. Auto-dismiss the panel
   // the first frame the mode goes active (mobile only). Desktop keeps its
   // side-drawer panel alongside the mode (2026-07 user direction).
-  let isMobileSurface = $state(false);
-  $effect(() => {
-    if (typeof window === 'undefined') return;
-    const mq = window.matchMedia('(max-width: 767px)');
-    isMobileSurface = mq.matches;
-    const onChange = (e: MediaQueryListEvent) => (isMobileSurface = e.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  });
   let prevImmersive = false;
   $effect(() => {
     const immersive = panoramaActive || flatPatchActive;
-    if (immersive && !prevImmersive && isMobileSurface) panelOpen = false;
+    // Auto-dismiss on TOUCH (was width ≤767) — desktop keeps its side-drawer.
+    if (immersive && !prevImmersive && viewport.isTouch) panelOpen = false;
     prevImmersive = immersive;
   });
   // Share immersive state so the global layout can hide its footer on mobile
@@ -5922,7 +5915,7 @@ sample      ${debugInfo.projectedPxSample}`}
     backdrop-filter: blur(4px);
   }
   /* Mobile: sit just above the accordion tab bar (which now hugs the footer). */
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .altitude-indicator {
       bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     }
@@ -6308,7 +6301,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
 
   /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .hud-controls {
       display: flex;
       z-index: 35;
@@ -6329,7 +6322,7 @@ sample      ${debugInfo.projectedPxSample}`}
   .hud-top-mobile {
     display: none;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .hud-top-mobile {
       display: flex;
       position: fixed;
@@ -6692,7 +6685,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.92);
   }
   /* ─── ≥ 768 px — distance scale lifts back to bottom: 90 ───────── */
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .distance-scale {
       bottom: 90px;
     }
@@ -6767,7 +6760,7 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px 12px;
   }
 
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     /* Desktop .legend-3d moved into the Nations accordion tab on mobile. */
     .legend-3d {
       display: none;

@@ -685,8 +685,9 @@
     cursor: pointer;
   }
 
-  /* Mobile: 44px touch targets per ADR-018, hide subtitle on narrow screens */
-  @media (max-width: 768px) {
+  /* Touch: 44px touch targets per ADR-018 — keyed on input capability, not
+     width, so a wide landscape phone still gets big targets. */
+  @media (pointer: coarse) {
     .link {
       min-height: 44px;
       display: inline-flex;

@@ -46,6 +46,7 @@
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
+  import { viewport } from '$lib/viewport.svelte';
   import {
     type AssemblyState,
     ANIM_WINDOW_MS,
@@ -1224,10 +1225,10 @@
   onMount(() => {
     if (!browser) return;
     const u = get(page).url;
-    // Default the index drawer open on desktop (room for both canvas +
-    // sidebar). Closed on mobile to keep the canvas unobstructed; user
-    // can hit INDEX to peek.
-    if (window.matchMedia('(min-width: 768px)').matches) {
+    // Default the index drawer open on pointer/desktop (room for both canvas +
+    // sidebar). Closed on touch to keep the canvas unobstructed; user can hit
+    // INDEX to peek.
+    if (!viewport.isTouch) {
       indexOpen = true;
     }
     if (urlWantsList(u)) {
@@ -1853,7 +1854,7 @@
   /* When the modules drawer is open in 2D mode, shrink the blueprint
      so the drawer's not covering the diagram. Drawer is at left:12px
      width 300px on desktop, so the blueprint starts at left ~324px. */
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .blueprint-layer.drawer-open {
       left: 324px;
       width: calc(100% - 324px);
@@ -1898,7 +1899,7 @@
     z-index: 5;
     padding: 16px 16px 16px 16px;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .list-layer.drawer-mode {
       top: auto;
       bottom: 0;
@@ -2212,7 +2213,7 @@
   .hud-top-mobile {
     display: none;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .hud-controls {
       display: none;
     }

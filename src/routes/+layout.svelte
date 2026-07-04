@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
+  import { initViewport } from '$lib/viewport.svelte';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
@@ -202,6 +203,10 @@
 
   onMount(() => {
     if (typeof window === 'undefined') return;
+    // Watch device capability / orientation / viewport height and reflect it
+    // onto <html> as data-* attributes for the responsive CSS. The inline
+    // app.html script seeds these pre-paint; this keeps them live on change.
+    const stopViewport = initViewport();
     // Privacy-respecting analytics. Loads only on the production host
     // (chipi.github.io); localhost / vite preview / CI runs are
     // silent. See src/lib/analytics.ts for the host gate + event API.
@@ -259,6 +264,7 @@
     document.addEventListener('click', onAnyClick, true);
 
     return () => {
+      stopViewport();
       window.removeEventListener('beforeinstallprompt', onPromptable);
       document.removeEventListener('click', onAnyClick, true);
     };
@@ -373,13 +379,11 @@
     z-index: 35;
     pointer-events: none;
   }
-  /* Mobile: hide the footer while a route is in an immersive full-screen mode
+  /* Touch: hide the footer while a route is in an immersive full-screen mode
      (surface panorama / flat-patch) so the mode's own bottom controls don't
-     collide with it (2026-07 user direction). */
-  @media (max-width: 767px) {
-    .site-footer.immersive-hidden {
-      display: none;
-    }
+     collide with it — on any touch device, not just narrow ones. */
+  :global(html[data-touch]) .site-footer.immersive-hidden {
+    display: none;
   }
   .footer-menu {
     display: inline-flex;

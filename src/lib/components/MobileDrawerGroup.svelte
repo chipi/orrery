@@ -142,7 +142,7 @@
     display: none;
   }
 
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .mdg {
       display: flex;
       flex-direction: column;

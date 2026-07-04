@@ -6393,7 +6393,7 @@
   }
 
   /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
-  @media (min-width: 769px) {
+  @media (hover: hover) and (pointer: fine) {
     .paths-legend {
       display: flex;
       /* position: absolute, anchored to the fixed-positioned
@@ -6578,7 +6578,7 @@
      accordion panel. flex-grow lets a lone chip (the Iconic-Missions PATHS
      toggle, which lives in its own drawer) stretch to full width, while the
      four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     :global(.mdg-body) .ctrl-row.chips {
       display: flex;
       flex-wrap: wrap;
@@ -6594,7 +6594,7 @@
   .ruler-desktop-only {
     display: contents;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .ruler-desktop-only {
       display: none;
     }
@@ -6628,7 +6628,7 @@
   .hud-top-mobile {
     display: none;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .hud-top-mobile {
       display: flex;
       position: fixed;
@@ -6672,7 +6672,7 @@
     border-color: rgba(75, 156, 211, 0.7);
     outline: none;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .earth-compact {
       display: flex;
     }
@@ -6708,7 +6708,7 @@
     border-right: none;
     border-radius: 3px;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     .speed-slot {
       display: block;
     }

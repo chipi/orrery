@@ -61,6 +61,15 @@ export default defineConfig({
       // would fail all three attempts.
       retries: process.env.CI ? 3 : 1,
     },
+    {
+      name: 'mobile-landscape-chromium',
+      // Landscape phone (Pixel 5 rotated ≈ 851×393): wide but short + touch.
+      // Guards the 0.7.2 responsive redesign — landscape must use the TOUCH
+      // chrome (drawers / side-drawer Panel), not the desktop HUD columns that
+      // a width-only breakpoint used to hand it.
+      use: { ...devices['Pixel 5 landscape'] },
+      retries: process.env.CI ? 3 : 1,
+    },
   ],
 
   // Skip starting our own preview server when an external base URL is

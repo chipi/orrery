@@ -18,6 +18,7 @@
    * and we lose nothing visually (the flat view is inherently 2D).
    */
   import { onMount } from 'svelte';
+  import { viewport } from '$lib/viewport.svelte';
   import * as m from '$lib/paraglide/messages';
   import { colorFor } from '$lib/surface-map/nation-palette';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
@@ -44,16 +45,12 @@
 
   let canvas: HTMLCanvasElement | undefined = $state();
 
-  // Mobile: the bottom tier-context card overlays roughly the lower third of
-  // the screen, so centre the imagery in the visible slot above it rather than
-  // on the full canvas (otherwise the detail patch hides behind the card and
-  // leaves dead space up top). Desktop keeps true-centre.
-  let flatCenterFrac = $state(0.5);
-  onMount(() => {
-    if (typeof window !== 'undefined' && window.matchMedia?.('(max-width: 767px)').matches) {
-      flatCenterFrac = 0.34;
-    }
-  });
+  // Touch-portrait: the bottom tier-context card overlays roughly the lower
+  // third of the screen, so centre the imagery in the visible slot above it
+  // rather than on the full canvas (otherwise the detail patch hides behind the
+  // card + leaves dead space up top). Desktop + touch-landscape (the card is
+  // capped/short there) keep true-centre. Reactive so rotation re-centres.
+  const flatCenterFrac = $derived(viewport.isTouch && !viewport.isLandscape ? 0.34 : 0.5);
 
   // ─── Imagery loading ───────────────────────────────────────────────
   // Resolve regional + detail texture URLs from the selected site's
@@ -1024,7 +1021,7 @@
     pointer-events: none;
     text-transform: uppercase;
   }
-  @media (max-width: 767px) {
+  @media (hover: none), (pointer: coarse) {
     /* SurfaceScene already renders a prominent "Exit zoom" affordance on
        mobile, so the in-component back button is redundant here — drop it. */
     .hud-back {

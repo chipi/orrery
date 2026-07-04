@@ -33,7 +33,7 @@
   },
   "scripts": {
     "dev": "npm run i18n:compile && exec vite dev",
-    "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && npm run build-i18n-bundles && vite build && node scripts/check-precache-budget.mjs && node scripts/prune-build-staging.mjs && node scripts/check-prerender-completeness.mjs",
+    "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && npm run build-i18n-bundles && vite build && node scripts/check-precache-budget.mjs && node scripts/prune-build-staging.mjs && node scripts/check-prerender-completeness.mjs && node scripts/check-internal-links.mjs",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

@@ -407,7 +407,10 @@
     // Used to demo URL-bound search/filter affordances (e.g. /missions?q=apollo).
     if (stage.action === 'navigate') {
       const replaceState = stage.params?.replaceState === 1;
-      void goto(stage.target, { replaceState, keepFocus: true });
+      // Prepend the deploy base — targets are route-relative (`/science/transfers`),
+      // so a bare goto 404s on GitHub Pages (base `/orrery/`). Mirrors the
+      // episode-nav path above (`${base}${ep.route}`).
+      void goto(`${base}${stage.target}`, { replaceState, keepFocus: true });
       return;
     }
     const el = document.querySelector(stage.target) as HTMLElement | null;

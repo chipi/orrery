@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   CURATOR_FULL_TOUR,
@@ -7,6 +7,7 @@ import {
   EPISODE_STAGES,
   stagesForEpisode,
 } from './audio-tour';
+import { SCIENCE_TABS } from './data';
 
 interface MinimalProvenanceEntry {
   episode_id: string;
@@ -350,5 +351,37 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       }
     }
     expect(missing).toEqual([]);
+  });
+});
+
+describe('navigate targets resolve to real routes (404 guard)', () => {
+  // A tour `navigate` stage 404s if its target route doesn't exist (e.g. a
+  // renamed science tab). The base prefix is added by the consumer
+  // (AudioOverlay); here we assert the *route* is real. The build-time
+  // check-internal-links crawl covers <a href> links but can't see JS goto
+  // targets, so this closes that gap. Regression for the /science/transfers
+  // report (2026-07).
+  function isValidRoute(target: string): boolean {
+    const path = target.split('#')[0].split('?')[0].replace(/\/+$/, '') || '/';
+    if (path === '/') return true;
+    const segs = path.replace(/^\//, '').split('/');
+    // /science/<tab> — <tab> must be a real science tab.
+    if (segs[0] === 'science' && segs[1]) {
+      return (SCIENCE_TABS as readonly string[]).includes(segs[1]);
+    }
+    // Otherwise a static route — its +page.svelte must exist.
+    return existsSync(join(process.cwd(), 'src/routes', ...segs, '+page.svelte'));
+  }
+
+  it('every navigate target points at an existing route', () => {
+    const bad: string[] = [];
+    for (const [id, stages] of Object.entries(EPISODE_STAGES)) {
+      for (const s of stages) {
+        if (s.action === 'navigate' && !isValidRoute(s.target)) {
+          bad.push(`${id}: ${s.target}`);
+        }
+      }
+    }
+    expect(bad, `navigate targets with no matching route:\n${bad.join('\n')}`).toEqual([]);
   });
 });

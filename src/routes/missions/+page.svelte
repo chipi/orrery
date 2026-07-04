@@ -3,7 +3,7 @@
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
-  import { trackCardNavigation } from '$lib/card-chain.svelte';
+  import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
   import { getMissionsForLibrary } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
@@ -303,9 +303,18 @@
   function selectMission(id: string) {
     selectedId = id;
     panelOpen = true;
+    // Grid-click opens the panel via state only (no ?id= in the URL), so
+    // afterNavigate never fires — the detail-card chain would miss this card
+    // and an in-card link out (e.g. the launcher → /fleet?id=) would start a
+    // fresh chain with no back button. Register it directly, same as the
+    // explore / surface shallow-overlay hosts do.
+    const cardUrl = new URL($page.url);
+    cardUrl.searchParams.set('id', id);
+    setCurrentCard(cardUrl);
   }
   function closePanel() {
     panelOpen = false;
+    setCurrentCard(null);
   }
   function flyMission(id: string) {
     goto(`${base}/fly?mission=${id}`);

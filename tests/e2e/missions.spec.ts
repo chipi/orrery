@@ -279,3 +279,44 @@ test.describe('/missions — flight-data quality badge (v0.1.13)', () => {
     await expect(card.locator('.card-quality.quality-unknown')).toBeVisible({ timeout: 5_000 });
   });
 });
+
+test.describe('/missions — detail-card back chain (#29/#30)', () => {
+  // Regression: a grid-opened mission panel has no ?id= in the URL, so its
+  // afterNavigate never fires. Before the fix the card-chain never recorded
+  // the mission as `current`, so following the launcher link out to /fleet
+  // started a fresh chain and the fleet card showed NO back button. The page
+  // now calls setCurrentCard() on grid-open (like the explore/surface hosts),
+  // so the launcher hop chains and back returns to the mission.
+  test('mission → launcher (/fleet) shows a back button that returns to the mission', async ({
+    page,
+  }) => {
+    await page.goto('/missions');
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(113, {
+      timeout: 10_000,
+    });
+
+    // Open Apollo 11 from the grid (it has a launcher fleet_ref: saturn-v).
+    await page.locator('[data-testid="mission-card-apollo11"]').click();
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible();
+    await expect(panel).toContainText(/Apollo 11/i);
+    // Root card, no ?id= in the URL → no back affordance yet.
+    await expect(panel.locator('.panel-back')).toHaveCount(0);
+
+    // Follow the launcher link out to /fleet.
+    await page.locator('[data-testid="mission-vehicle-fleet-link"]').click();
+    await expect(page).toHaveURL(/\/fleet\?id=saturn-v/);
+    await expect(panel).toBeVisible();
+    await expect(panel).toContainText(/Saturn V/i);
+
+    // The chain recorded the mission → the fleet card offers a back button.
+    const back = panel.locator('.panel-back');
+    await expect(back).toBeVisible();
+
+    // Back returns to the Apollo 11 mission card.
+    await back.click();
+    await expect(page).toHaveURL(/\/missions\?id=apollo11/);
+    await expect(panel).toBeVisible();
+    await expect(panel).toContainText(/Apollo 11/i);
+  });
+});

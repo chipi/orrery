@@ -33,7 +33,7 @@ import { join } from 'node:path';
 
 const POLL_MS = 2_000;
 const STALE_MS = 30 * 60 * 1000; // 30 min — long enough for a slow CI-equivalent local run
-const MAX_WAIT_MS = 60 * 60 * 1000; // 1 h — never block longer than that
+const MAX_WAIT_MS = 5 * 60 * 1000; // 5 min — fail fast + visible instead of appearing to hang
 
 const dashIdx = process.argv.indexOf('--');
 if (dashIdx === -1 || dashIdx < 3) {
@@ -65,6 +65,21 @@ function isStale() {
   return Date.now() - meta.ts > STALE_MS;
 }
 
+// Liveness probe for the lock holder. SIGKILL / OOM / a hard crash can't run
+// the release hook, so a dead-pid lock would otherwise block everyone until it
+// ages out (STALE_MS). `kill(pid, 0)` sends no signal — it only tests
+// existence: no throw = alive, EPERM = alive but owned by another user, ESRCH
+// = gone.
+function pidAlive(pid) {
+  if (typeof pid !== 'number' || pid <= 0) return false;
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e) {
+    return e.code === 'EPERM';
+  }
+}
+
 function releaseLock() {
   try {
     rmSync(LOCK_DIR, { recursive: true, force: true });
@@ -90,13 +105,19 @@ async function acquire() {
       return;
     } catch (e) {
       if (e.code !== 'EEXIST') throw e;
-      if (isStale()) {
-        console.warn(`[with-lock:${name}] stale lock at ${LOCK_DIR} — clearing`);
+      const meta = readLockMeta();
+      // Clear a lock whose holder process has died (SIGKILL/OOM/crash)
+      // immediately, instead of waiting for it to age out — the common orphan
+      // case that made pushes appear to hang.
+      const holderGone = !meta?.pid || !pidAlive(meta.pid);
+      if (isStale() || holderGone) {
+        console.warn(
+          `[with-lock:${name}] clearing ${holderGone ? 'dead-holder' : 'stale'} lock at ${LOCK_DIR} — retrying`,
+        );
         releaseLock();
         continue;
       }
       if (!notified) {
-        const meta = readLockMeta();
         const heldBy = meta?.pid ? `pid ${meta.pid}` : 'unknown';
         const heldFor = meta?.ts ? `${Math.round((Date.now() - meta.ts) / 1000)}s` : 'unknown';
         console.log(

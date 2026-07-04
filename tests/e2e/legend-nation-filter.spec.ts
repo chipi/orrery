@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { openDrawerTab } from './_helpers/hud-expand';
 
 /**
  * Nation legend → interactive filter (#363).
@@ -34,21 +35,35 @@ async function waitForSceneReady(page: import('@playwright/test').Page) {
 }
 
 test.describe('nation legend filter', () => {
-  test('/earth — toggles a nation off then back on', async ({ page }) => {
+  test('/earth — toggles a nation off then back on', async ({ page, isMobile }) => {
     await page.goto('/earth');
     await waitForSceneReady(page);
+    // The nation button is dual-rendered on mobile (hidden desktop mirror +
+    // the drawer's Nations tab). Tapping the drawer chip auto-collapses the
+    // drawer ("pick → reveal the scene"), so open the drawer only to tap and
+    // always assert state on the mirror — getByTestId resolves to that single
+    // instance whenever the drawer is closed.
     const usa = page.getByTestId('legend-nation-USA');
-    await expect(usa).toBeVisible({ timeout: 15_000 });
+    async function toggleUsa() {
+      if (isMobile) {
+        await openDrawerTab(page, /nations/i);
+        await page.locator('.mdg-body [data-testid="legend-nation-USA"]').first().tap();
+        await page.waitForTimeout(200); // drawer auto-collapses on selection
+      } else {
+        await usa.click();
+      }
+    }
+
     // Default: every nation button is pressed (shown).
-    await expect(usa).toHaveAttribute('aria-pressed', 'true');
+    await expect(usa).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
 
     // Toggle off → un-pressed + dimmed.
-    await usa.click();
+    await toggleUsa();
     await expect(usa).toHaveAttribute('aria-pressed', 'false');
     await expect(usa).toHaveClass(/legend-item--off/);
 
     // Toggle back on → restored.
-    await usa.click();
+    await toggleUsa();
     await expect(usa).toHaveAttribute('aria-pressed', 'true');
     await expect(usa).not.toHaveClass(/legend-item--off/);
   });
@@ -61,16 +76,31 @@ test.describe('nation legend filter', () => {
     await page.goto('/mars');
     await waitForSceneReady(page);
     const usa = page.getByTestId('legend-nation-USA');
-    await expect(usa).toBeVisible({ timeout: 15_000 });
+    await expect(usa).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
 
-    await usa.click();
+    // Toggle USA off. On mobile, tap the drawer chip (it auto-collapses);
+    // state reflects on the mirror.
+    if (isMobile) {
+      await openDrawerTab(page, /nations/i);
+      await page.locator('.mdg-body [data-testid="legend-nation-USA"]').first().tap();
+      await page.waitForTimeout(200);
+    } else {
+      await usa.click();
+    }
     await expect(usa).toHaveAttribute('aria-pressed', 'false');
 
     // Flip to the 2D flat view — the same interactive legend renders there
-    // (the canvas-painted legend was dropped) and keeps its state.
-    await page.getByTestId('mode-toggle').click();
-    const usa2d = page.getByTestId('legend-nation-USA');
-    await expect(usa2d).toBeVisible();
-    await expect(usa2d).toHaveAttribute('aria-pressed', 'false');
+    // (the canvas-painted legend was dropped) and keeps its state. mode-toggle
+    // is dual-rendered (desktop hud-controls + the always-present mobile
+    // `.hud-top-mobile` cluster) → scope to the visible one on both viewports.
+    const modeToggle = page.getByTestId('mode-toggle').filter({ visible: true }).first();
+    if (isMobile) await modeToggle.tap();
+    else await modeToggle.click();
+
+    // State persists across the switch — assert on the legend button.
+    await expect(page.getByTestId('legend-nation-USA').first()).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
   });
 });

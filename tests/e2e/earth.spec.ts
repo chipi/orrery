@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { openDrawerTab } from './_helpers/hud-expand';
 
 /**
  * /earth — unified surface + orbital scene (#290 Slice 7).
@@ -68,12 +69,17 @@ test.describe('/earth', () => {
   });
 
   /* ── v0.4 — category filter chips (replaced year scrubber) ───────── */
-  test('category filter chips render with correct testids', async ({ page }) => {
+  test('category filter chips render with correct testids', async ({ page, isMobile }) => {
     await page.goto('/earth');
-    await expect(page.getByTestId('layer-stations')).toBeVisible();
-    await expect(page.getByTestId('layer-observatories')).toBeVisible();
-    await expect(page.getByTestId('layer-constellations')).toBeVisible();
-    await expect(page.getByTestId('layer-comsats')).toBeVisible();
+    // On mobile the layer chips live in the MobileDrawerGroup Layers tab
+    // (dual-rendered with the hidden desktop hud-controls) — open it and
+    // scope to `.mdg-body` so the visible chip resolves uniquely.
+    if (isMobile) await openDrawerTab(page, /layers/i);
+    const root = isMobile ? page.locator('.mdg-body') : page;
+    await expect(root.getByTestId('layer-stations')).toBeVisible();
+    await expect(root.getByTestId('layer-observatories')).toBeVisible();
+    await expect(root.getByTestId('layer-constellations')).toBeVisible();
+    await expect(root.getByTestId('layer-comsats')).toBeVisible();
     // MOON ORBITERS sub-chip was removed (644c6afd4) — the master ORBITERS
     // chip already covers both Earth and Moon orbiters, so it was redundant.
     await expect(page.getByTestId('layer-moon-orbiters')).toHaveCount(0);
@@ -90,7 +96,10 @@ test.describe('/earth', () => {
     // sends the synthetic event (GH #253). networkidle is a cheap proxy
     // for "page is done initialising" without spec-specific waits.
     await page.waitForLoadState('networkidle');
-    const stations = page.getByTestId('layer-stations');
+    // Mobile: the chip is in the Layers tab of the MobileDrawerGroup.
+    if (isMobile) await openDrawerTab(page, /layers/i);
+    const root = isMobile ? page.locator('.mdg-body') : page;
+    const stations = root.getByTestId('layer-stations');
     await expect(stations).toBeVisible();
     await expect(stations).toHaveAttribute('aria-pressed', 'true');
     // On mobile-chromium, prefer tap() (touch event) over click() (mouse)

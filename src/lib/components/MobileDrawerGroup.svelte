@@ -113,14 +113,18 @@
       {@render openTab.content(() => (openId = null))}
     </div>
   {/if}
-  <div class="mdg-tabs" role="tablist">
+  <!-- This is a disclosure/accordion (one panel opens ABOVE the row, all-closed
+       is valid), NOT an ARIA tablist: content tabs are aria-expanded disclosure
+       buttons, action tabs are aria-pressed toggles. A role="tablist" here
+       tripped axe aria-required-children on routes that pass action tabs
+       (/iss, /tiangong) because the action buttons aren't role="tab". -->
+  <div class="mdg-tabs">
     {#each tabs as tab (tab.id)}
       <button
         type="button"
         class="mdg-tab"
         class:active={tab.action ? (tab.active ?? false) : openId === tab.id}
-        role={tab.action ? undefined : 'tab'}
-        aria-selected={tab.action ? undefined : openId === tab.id}
+        aria-expanded={tab.action ? undefined : openId === tab.id}
         aria-pressed={tab.action ? (tab.active ?? false) : undefined}
         onclick={() => (tab.action ? tab.action() : toggleTab(tab.id))}
       >

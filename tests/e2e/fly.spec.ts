@@ -43,11 +43,11 @@ test.describe('/fly — default mission', () => {
     // flips between '2D' and '3D' on Svelte's microtask flush, but
     // Playwright's locator-resolution can land mid-flush and miss the
     // new name. Was flaky retry-pass in v0.6.2 rehearsal (issue #222).
-    // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
-    const selector = isMobile
-      ? '.mcd-body [data-testid="fly-view-toggle"]'
-      : '[data-testid="fly-view-toggle"]';
-    const toggle = page.locator(selector);
+    // On mobile the view toggle is the dedicated always-visible top-cluster
+    // button (fly-view-toggle-mobile); desktop uses the inline fly-view-toggle.
+    const toggle = isMobile
+      ? page.getByTestId('fly-view-toggle-mobile')
+      : page.getByTestId('fly-view-toggle');
     await expect(toggle).toBeVisible({ timeout: 10_000 });
     // Capture initial label, click, assert it flipped.
     const initialLabel = (await toggle.textContent())?.trim() ?? '';
@@ -102,12 +102,27 @@ test.describe('/fly — default mission', () => {
     await expect(id).toContainText(/DAY \d{2,}/);
   });
 
-  test('speed pills change active selection', async ({ page }) => {
+  test('speed pills change active selection', async ({ page, isMobile }) => {
     await gotoFly(page);
-    const speed30 = page.getByRole('button', { name: /^30×$/ });
-    await expect(speed30).toBeVisible();
-    await speed30.click();
-    await expect(speed30).toHaveClass(/active/);
+    if (isMobile) {
+      // Mobile: speeds collapse into a popover behind the .speed-slot trigger
+      // (which shows the current N×). Selecting a pill closes it and updates the
+      // trigger label to the chosen speed.
+      const trigger = page.locator('.speed-slot button[aria-expanded]').first();
+      await expect(trigger).toBeVisible();
+      await trigger.click();
+      await page
+        .locator('.speed-popover button.speed-pill')
+        .filter({ hasText: /^30×$/ })
+        .first()
+        .click();
+      await expect(trigger).toHaveText(/^30×$/);
+    } else {
+      const speed30 = page.getByRole('button', { name: /^30×$/ });
+      await expect(speed30).toBeVisible();
+      await speed30.click();
+      await expect(speed30).toHaveClass(/active/);
+    }
   });
 });
 
@@ -135,11 +150,21 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
 });
 
 test.describe('/fly — CAPCOM mode', () => {
-  test('CAPCOM panel is always visible when a mission is loaded (v0.1.7)', async ({ page }) => {
+  test('CAPCOM panel is always visible when a mission is loaded (v0.1.7)', async ({
+    page,
+    isMobile,
+  }) => {
     await gotoFly(page);
-    // No toggle button — CAPCOM panel renders directly per ADR-026
-    // batch (v0.1.7 audit feedback). Panel sits below the 2D/3D
-    // toggle on desktop so it can never overlap.
+    // Desktop: CAPCOM panel renders directly below the 2D/3D toggle (ADR-026,
+    // no toggle button). Mobile: it folds into the EVENTS tab of the bottom bar.
+    if (isMobile) {
+      await page
+        .locator('.fly-mtab')
+        .filter({ hasText: /events/i })
+        .first()
+        .click();
+      await page.waitForTimeout(250);
+    }
     const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
     await expect(panel).toBeVisible();
     await expect(panel).toContainText(/MISSION EVENTS/i);
@@ -147,15 +172,36 @@ test.describe('/fly — CAPCOM mode', () => {
     await expect(panel).toContainText(/ANOMALY MONITOR/i);
   });
 
-  test('CAPCOM panel surfaces ORRERY DEMO events for the default mission', async ({ page }) => {
+  test('CAPCOM panel surfaces ORRERY DEMO events for the default mission', async ({
+    page,
+    isMobile,
+  }) => {
     await gotoFly(page);
-    const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
-    await expect(panel).toBeVisible();
-    // Skip ahead so events have fired.
-    await page.getByRole('button', { name: /pause/i }).click();
-    await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.3');
-    await expect(panel).toContainText(/LAUNCH/i, { timeout: 5_000 });
-    await expect(panel).toContainText(/TMI BURN/i);
+    if (isMobile) {
+      // The MISSION scrubber and the EVENTS (CAPCOM) panel are mutually
+      // exclusive on mobile, so advance the clock via the MISSION scrubber
+      // first (events fire), then switch to EVENTS to read the CAPCOM log.
+      await page.getByRole('button', { name: /pause/i }).click();
+      await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.3');
+      await page
+        .locator('.fly-mtab')
+        .filter({ hasText: /events/i })
+        .first()
+        .click();
+      await page.waitForTimeout(250);
+      const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
+      await expect(panel).toBeVisible();
+      await expect(panel).toContainText(/LAUNCH/i, { timeout: 5_000 });
+      await expect(panel).toContainText(/TMI BURN/i);
+    } else {
+      const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
+      await expect(panel).toBeVisible();
+      // Skip ahead so events have fired.
+      await page.getByRole('button', { name: /pause/i }).click();
+      await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.3');
+      await expect(panel).toContainText(/LAUNCH/i, { timeout: 5_000 });
+      await expect(panel).toContainText(/TMI BURN/i);
+    }
   });
 });
 

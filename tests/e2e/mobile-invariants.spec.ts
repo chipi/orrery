@@ -39,52 +39,45 @@ test.beforeEach(async ({}, testInfo) => {
 const VIEWPORT_HINT = '375 px (Pixel 5)';
 
 test.describe(`mobile invariants — ${VIEWPORT_HINT}`, () => {
-  // ─── Phase 25 — /fly default-collapsed on touch ─────────────────
-  test('/fly hud-collapse button is rendered, hud-stack is hidden by default', async ({ page }) => {
+  // ─── /fly default-collapsed on touch ────────────────────────────
+  test('/fly mobile control bar is rendered, hud-stack is hidden by default', async ({ page }) => {
     await page.goto('/fly', { waitUntil: 'networkidle' });
-    // The @media (max-width: 767px) rule sets .hud-collapse to
-    // display:inline-flex on the mobile viewport. Use computed-style
-    // checks rather than toBeVisible because the button is fixed-
-    // positioned + may not match Playwright's heuristic for "visible"
-    // even though the user sees it.
-    await page.waitForSelector('.hud-collapse', { timeout: 10_000 });
+    // The touch UX declutters /fly: the identity hud-stack is collapsed by
+    // default and the controls live in the bottom `.fly-mtabs` bar (the old
+    // `.hud-collapse` chrome is display:none at every width now). Use
+    // computed-style checks — these are fixed-positioned and may not match
+    // Playwright's "visible" heuristic even though the user sees them.
+    await page.waitForSelector('.fly-mtabs', { timeout: 10_000 });
     await page.waitForTimeout(200);
     const state = await page.evaluate(() => {
-      const collapse = document.querySelector('.hud-collapse');
+      const mtabs = document.querySelector('.fly-mtabs');
       const stack = document.querySelector('.hud-stack');
       return {
-        collapseDisplay: collapse ? getComputedStyle(collapse).display : 'missing',
+        mtabsDisplay: mtabs ? getComputedStyle(mtabs).display : 'missing',
         stackDisplay: stack ? getComputedStyle(stack).display : 'missing',
         hoverNone: window.matchMedia('(hover: none)').matches,
       };
     });
-    // Button rendered as a flex container on mobile. We declared
-    // `display: inline-flex` in CSS, but `position: fixed` strips the
-    // inline distinction (CSS spec — out-of-flow elements are block-
-    // level), so the computed value is `flex`. Either flex variant
-    // satisfies the invariant (button is rendered, not display:none).
-    expect(['flex', 'inline-flex']).toContain(state.collapseDisplay);
-    // Phase 25 default-collapsed: hud-stack display:none on touch
-    // devices. If matchMedia doesn't report (hover: none) — Playwright
-    // emulation quirk — the default state stays false and stack is
-    // visible. Assert conditional on the actual matchMedia result so
-    // the test is self-consistent in either emulation mode.
+    // Mobile control bar is laid out (a flex container, not display:none).
+    expect(['flex', 'inline-flex']).toContain(state.mtabsDisplay);
+    // Default-collapsed: hud-stack display:none on touch devices. If
+    // matchMedia doesn't report (hover: none) — a Playwright emulation quirk —
+    // the default state stays open, so assert conditionally.
     if (state.hoverNone) {
       expect(state.stackDisplay).toBe('none');
     }
   });
 
-  // ─── Phase 31 — /explore mobile drawer controls ─────────────────
-  test('/explore MobileControlsDrawer is visible, collapsed by default on mobile', async ({
+  // ─── /explore mobile drawer controls ────────────────────────────
+  test('/explore MobileDrawerGroup is visible, collapsed by default on mobile', async ({
     page,
   }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    const handle = page.locator('.mcd-handle');
-    await expect(handle).toBeVisible({ timeout: 10_000 });
-    // Drawer starts collapsed (peek state). aria-expanded should be false.
+    await expect(page.locator('.mdg-tab').first()).toBeVisible({ timeout: 10_000 });
+    // Drawer starts collapsed — no content tab expanded, no body rendered.
     await page.waitForTimeout(200);
-    const expanded = await handle.getAttribute('aria-expanded');
-    expect(expanded).toBe('false');
+    await expect(page.locator('.mdg-tab[aria-expanded="true"]')).toHaveCount(0);
+    await expect(page.locator('.mdg-body')).toHaveCount(0);
   });
 
   // ─── Phase 24 — /science mobile search button is 44×44 ──────────
@@ -143,13 +136,12 @@ test.describe(`mobile invariants — ${VIEWPORT_HINT}`, () => {
   for (const path of ['/iss', '/tiangong'] as const) {
     test(`${path} index-close button is ≥ 44×44 px`, async ({ page }) => {
       await page.goto(path, { waitUntil: 'networkidle' });
-      // Open the module index so .index-close mounts.
-      const indexToggle = page
-        .locator('button[aria-label*="module list" i], button[data-testid*="module" i]')
-        .first();
-      if (await indexToggle.isVisible()) {
-        await indexToggle.click();
-        await page.waitForTimeout(150);
+      // Open the module index so .index-close mounts. On mobile the LIST tab
+      // in the MobileDrawerGroup toggles list view (mounts .index-close).
+      const listTab = page.locator('.mdg-tab').filter({ hasText: /list/i }).first();
+      if (await listTab.isVisible().catch(() => false)) {
+        await listTab.click();
+        await page.waitForTimeout(200);
       }
       const close = page.locator('.index-close');
       if ((await close.count()) === 0) {

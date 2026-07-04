@@ -73,10 +73,10 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
       test.skip(!isMobile, 'mobile-only');
       await page.goto(route, { waitUntil: 'networkidle' });
       // The hud-controls (chips, view toggles) now live in the
-      // MobileControlsDrawer on touch devices. Expand the drawer via
-      // .mcd-handle so the chip flow is visible and measurable.
+      // MobileDrawerGroup Controls/Layers tab on touch devices. Open that
+      // tab so the chip flow is visible and measurable.
       await openControlsDrawer(page);
-      const chips = page.locator('.mcd-body .ctrl-row.chips .chip');
+      const chips = page.locator('.mdg-body .chip');
       const count = await chips.count();
       expect(count).toBeGreaterThanOrEqual(2);
       const first = await chips.first().boundingBox();

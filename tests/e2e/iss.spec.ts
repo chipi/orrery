@@ -1,5 +1,6 @@
-import { test, expect, type ConsoleMessage, type Page } from '@playwright/test';
+import { test, expect, type ConsoleMessage, type Locator, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { openDrawerTab } from './_helpers/hud-expand';
 
 function attachConsoleAndError(page: Page) {
   const errors: string[] = [];
@@ -20,13 +21,21 @@ function attachConsoleAndError(page: Page) {
 }
 
 test.describe('/iss', () => {
-  test('default load has no console errors and shows 3D canvas or HUD toggle', async ({ page }) => {
+  test('default load has no console errors and shows 3D canvas or HUD toggle', async ({
+    page,
+    isMobile,
+  }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss', { waitUntil: 'networkidle' });
     await expect(page).toHaveTitle(/ISS Explorer/i);
     expect(errors).toEqual([]);
-    const toggle = page.getByTestId('iss-view-toggle');
-    await expect(toggle).toBeVisible({ timeout: 8_000 });
+    if (isMobile) {
+      // Mobile: view controls live in the MobileDrawerGroup (LIST / ASSEMBLY /
+      // MODULES); the desktop iss-view-toggle edge-handle is display:none.
+      await expect(page.locator('.mdg-tab').first()).toBeVisible({ timeout: 8_000 });
+    } else {
+      await expect(page.getByTestId('iss-view-toggle')).toBeVisible({ timeout: 8_000 });
+    }
   });
 
   test('list mode shows module list', async ({ page }) => {
@@ -57,30 +66,36 @@ test.describe('/iss', () => {
     expect(errors).toEqual([]);
   });
 
-  test('TIMELINE toggle reveals strip + click marker opens panel', async ({ page }) => {
+  test('TIMELINE toggle reveals strip + click marker opens panel', async ({ page, isMobile }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss', { waitUntil: 'networkidle' });
-    const toggle = page.getByTestId('iss-timeline-toggle');
-    await expect(toggle).toBeVisible({ timeout: 8_000 });
-    // The toggle pins to the bottom edge of the ISS canvas — on the
-    // mobile viewport the site footer's "Library" link overlaps it
-    // and intercepts pointer events. `click({ force: true })` reached
-    // the button but the click also bubbled to the footer link and
-    // navigated away. Dispatch the click via DOM evaluate so only the
-    // button's onclick handler fires, skipping the pointer chain.
-    await toggle.evaluate((el) => (el as HTMLButtonElement).click());
-    const strip = page.getByTestId('iss-timeline');
-    await expect(strip).toBeVisible({ timeout: 3_000 });
+    let markers: Locator;
+    if (isMobile) {
+      // On mobile the timeline strip folds into the MODULES drawer content
+      // (StationTimelineStrip, no dedicated testid there).
+      await openDrawerTab(page, /modules/i);
+      markers = page.locator('.mdg-body button.marker');
+    } else {
+      const toggle = page.getByTestId('iss-timeline-toggle');
+      await expect(toggle).toBeVisible({ timeout: 8_000 });
+      // The desktop toggle pins to the bottom edge of the ISS canvas. Dispatch
+      // the click via DOM evaluate so only the button's onclick handler fires,
+      // skipping any overlapping footer link in the pointer chain.
+      await toggle.evaluate((el) => (el as HTMLButtonElement).click());
+      const strip = page.getByTestId('iss-timeline');
+      await expect(strip).toBeVisible({ timeout: 3_000 });
+      markers = strip.locator('button.marker');
+    }
     // At least one marker rendered (one per module + visitor; 25 total today)
-    const markers = strip.locator('button.marker');
-    await expect(markers.first()).toBeVisible();
+    await expect(markers.first()).toBeVisible({ timeout: 5_000 });
     expect(await markers.count()).toBeGreaterThanOrEqual(20);
     // Click the last marker chronologically (HTV-X visitor at 2025-10-26).
     // The first marker (Zarya 1998) overlaps with Unity (1998-12-06 only
     // 16 days later); using last() avoids cluster collisions in DOM
     // z-order regardless of CSS hover-promotion.
     const lastMarker = markers.last();
-    await lastMarker.click();
+    if (isMobile) await lastMarker.evaluate((el) => (el as HTMLButtonElement).click());
+    else await lastMarker.click();
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     expect(errors).toEqual([]);
@@ -88,15 +103,25 @@ test.describe('/iss', () => {
 
   test('ASSEMBLY toggle opens the overlay and scrubbing the slider updates the date readout', async ({
     page,
+    isMobile,
   }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss', { waitUntil: 'networkidle' });
-    const toggle = page.getByTestId('iss-assembly-toggle');
-    await expect(toggle).toBeVisible({ timeout: 8_000 });
-    // Same DOM-evaluate trick as the TIMELINE toggle — on the mobile
-    // viewport the site footer's Library link overlaps the bottom-pinned
-    // controls and intercepts pointer events.
-    await toggle.evaluate((el) => (el as HTMLButtonElement).click());
+    if (isMobile) {
+      // Mobile: ASSEMBLY is an action tab in the MobileDrawerGroup.
+      const assemblyTab = page
+        .locator('.mdg-tab')
+        .filter({ hasText: /assembly/i })
+        .first();
+      await expect(assemblyTab).toBeVisible({ timeout: 8_000 });
+      await assemblyTab.click();
+    } else {
+      const toggle = page.getByTestId('iss-assembly-toggle');
+      await expect(toggle).toBeVisible({ timeout: 8_000 });
+      // DOM-evaluate click so only the button's onclick fires, skipping any
+      // overlapping footer link in the pointer chain.
+      await toggle.evaluate((el) => (el as HTMLButtonElement).click());
+    }
     const overlay = page.getByTestId('station-assembly');
     await expect(overlay).toBeVisible({ timeout: 5_000 });
     const dateReadout = page.getByTestId('assembly-date');

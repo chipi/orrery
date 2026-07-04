@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { openDrawerTab } from './_helpers/hud-expand';
 
 /**
  * Surface Hotspots e2e (PRD-014 / RFC-017 §S8, sub-issue #116).
@@ -85,8 +86,13 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
       // OFF). Verify the SURFACE chip is present; the canvas-side
       // data-hotspot-tier check above is the authoritative dispatcher
       // contract.
-      const chip = page.locator('[data-testid="layer-surface"]');
-      await expect(chip).toBeVisible();
+      // With a site panel open, the drawer tab row is covered on mobile, so
+      // just confirm the SURFACE chip is present in the DOM — the canvas
+      // data-hotspot-tier assertion above is the authoritative dispatcher
+      // contract. On desktop the chip is inline and visible.
+      const chip = page.locator('[data-testid="layer-surface"]').first();
+      if (isMobile) await expect(chip).toBeAttached();
+      else await expect(chip).toBeVisible();
       // No console errors during the load + first-frame lifecycle.
       expect(errors, errors.join('\n')).toEqual([]);
     });
@@ -108,8 +114,13 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
       });
       // SURFACE chip merger (commit 0bf1fc96a, 2026-06-15) — see the
       // Moon describe block above for context.
-      const chip = page.locator('[data-testid="layer-surface"]');
-      await expect(chip).toBeVisible();
+      // With a site panel open, the drawer tab row is covered on mobile, so
+      // just confirm the SURFACE chip is present in the DOM — the canvas
+      // data-hotspot-tier assertion above is the authoritative dispatcher
+      // contract. On desktop the chip is inline and visible.
+      const chip = page.locator('[data-testid="layer-surface"]').first();
+      if (isMobile) await expect(chip).toBeAttached();
+      else await expect(chip).toBeVisible();
       expect(errors, errors.join('\n')).toEqual([]);
     });
   }
@@ -123,15 +134,20 @@ test.describe('Surface Hotspots — SURFACE chip cycles AUTO / HIGH / LOW / OFF'
   // data-hotspots-mode attribute, and the canvas-side
   // data-hotspot-tier attribute is the authoritative dispatcher
   // signal these tests verify.
-  test('chip click cycles surface label without console errors', async ({ page }) => {
+  test('chip click cycles surface label without console errors', async ({ page, isMobile }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/moon');
-    const chip = page.locator('[data-testid="layer-surface"]');
+    // On mobile the SURFACE chip lives in the MobileDrawerGroup Layers tab.
+    if (isMobile) await openDrawerTab(page, /layers/i);
+    const chip = isMobile
+      ? page.locator('.mdg-body [data-testid="layer-surface"]')
+      : page.locator('[data-testid="layer-surface"]');
     await expect(chip).toBeVisible({ timeout: 10_000 });
     const initialLabel = (await chip.textContent())?.trim();
     expect(initialLabel).toMatch(/SURFACE/i);
 
-    await chip.click();
+    if (isMobile) await chip.tap();
+    else await chip.click();
     await page.waitForTimeout(150);
     const secondLabel = (await chip.textContent())?.trim();
     expect(secondLabel).not.toBe(initialLabel);

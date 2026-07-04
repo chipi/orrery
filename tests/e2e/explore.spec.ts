@@ -17,53 +17,22 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // networkidle inside the helper (not at each caller) makes every
   // entry path defensive.
   await page.waitForLoadState('networkidle');
-  // #342 Phase 31 — on touch viewports the hud-controls cluster
-  // (including this toggle) is default-collapsed. Expand first.
-  await expandExploreHud(page);
-  // On mobile-chromium, the synthetic mouse `click()` races Svelte's
-  // reactivity binding on the toggle — the click lands before the onclick
-  // handler is wired, so the 3D→2D mode flip never fires and the
-  // canvas.layer stays hidden. tap() issues a touch event which matches
-  // how a real user interacts with the chip on a phone (same fix as
-  // earth.spec.ts chip toggle). #253 / GH e2e run 26485179917.
-  //
-  // We target the test-id rather than the label, because the label flips
-  // from "2D" to "3D" on click — under CI load, getByRole('button', /2d/)
-  // can resolve after the flip has already happened, which is the same
-  // class of race the /fly fix (#222) addressed.
-  // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
-  const selector = isMobile
-    ? '.mcd-body [data-testid="explore-view-toggle"]'
-    : '[data-testid="explore-view-toggle"]';
-  const toggle = page.locator(selector);
+  // The 2D/3D toggle: desktop lives in the hud-controls; mobile has a
+  // dedicated always-visible top-cluster button (explore-view-toggle-mobile),
+  // so nothing in the drawer needs opening. tap() (touch) matches the phone
+  // UX and avoids the synthetic-mouse-click-before-onclick-bound race (#253).
+  const toggle = isMobile
+    ? page.getByTestId('explore-view-toggle-mobile')
+    : page.getByTestId('explore-view-toggle');
+  await expect(toggle).toBeVisible({ timeout: isMobile ? 10_000 : 5_000 });
   if (isMobile) {
     await toggle.tap();
   } else {
     await toggle.click();
   }
-  // Mobile-chromium: Svelte's label flip from '2D' → '3D' can lag a few
-  // rAFs under shared preview-server load. 10 s ceiling gives margin
-  // over the observed 5 s flake without masking a binding failure
-  // (which would never resolve, regardless of timeout).
-  // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
-  const threeD = isMobile
-    ? page.locator('.mcd-body button:has-text("3D")')
-    : page.getByRole('button', { name: /^3d$/i });
-  await expect(threeD).toBeVisible({
-    timeout: isMobile ? 10_000 : 5_000,
-  });
-  // On mobile, close the drawer after switching to 2D so it doesn't intercept
-  // canvas clicks (the drawer's close button sits above the canvas).
-  if (isMobile) {
-    const handle = page.locator('.mcd-handle');
-    if (await handle.count()) {
-      await handle
-        .first()
-        .click({ timeout: 5_000 })
-        .catch(() => {});
-      await page.waitForTimeout(150);
-    }
-  }
+  // The button label flips to "3D" once the mode change commits — wait on it
+  // as the "flip landed" signal (can lag a few rAFs under shared preview load).
+  await expect(toggle).toHaveText(/3D/i, { timeout: isMobile ? 10_000 : 5_000 });
   const canvas2d = page.locator('canvas.layer');
   await expect(canvas2d).toBeVisible({ timeout: 5_000 });
   await page.waitForFunction(
@@ -179,12 +148,11 @@ test.describe('/explore — load and toggle', () => {
     // class is shared (SIZES overlay, layers, and the #351 time-control
     // play button all wear it), so a class selector resolves to multiple
     // elements — strict-mode violation. The testid is unique and stable
-    // across the "2D"⇄"3D" label flip. On mobile, scope to .mcd-body to
-    // avoid dual-render strict mode violation.
-    const selector = isMobile
-      ? '.mcd-body [data-testid="explore-view-toggle"]'
-      : '[data-testid="explore-view-toggle"]';
-    const toggle = page.locator(selector);
+    // across the "2D"⇄"3D" label flip. On mobile the toggle is the dedicated
+    // always-visible top-cluster button (explore-view-toggle-mobile).
+    const toggle = isMobile
+      ? page.getByTestId('explore-view-toggle-mobile')
+      : page.getByTestId('explore-view-toggle');
     await expect(toggle).toBeVisible();
     // Wait one rAF between clicks so Svelte commits the reactive
     // update (3D ⇄ 2D toggle changes the canvas layer's hidden class +
@@ -269,12 +237,14 @@ test.describe('/explore — selection and panel', () => {
     // highlights whichever planet panel is open, if any.
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');
-    // #342 Phase 31 — expand the default-collapsed hud-controls cluster
-    // on mobile so the sizes-toggle is in the layout.
-    await expandExploreHud(page);
-    // The sizes-toggle sits on the canvas (not in the drawer),
-    // so use the unscoped selector.
-    const toggle = page.getByTestId('sizes-toggle');
+    // The sizes toggle sits on the canvas (bottom-left), not in the drawer.
+    // Mobile shows a compact variant — scope to whichever is visible.
+    const toggle = isMobile
+      ? page
+          .locator('[data-testid="sizes-toggle-compact"], [data-testid="sizes-toggle"]')
+          .filter({ visible: true })
+          .first()
+      : page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
     if (isMobile) {
       // The sizes-toggle (REFERENCES button, .earth-compare) sits at
@@ -323,9 +293,10 @@ test.describe('/explore — selection and panel', () => {
     }
     // Toggle button must still be visible AND clickable. On desktop the
     // .panel-shifted class moves it left by --panel-width; on mobile the
-    // panel is a bottom sheet so the toggle stays put.
-    // On mobile, the drawer might be closed, so filter to the visible element.
-    const toggle = page.locator('[data-testid="explore-view-toggle"]').filter({ visible: true });
+    // toggle is the dedicated always-visible top-cluster button.
+    const toggle = isMobile
+      ? page.getByTestId('explore-view-toggle-mobile')
+      : page.locator('[data-testid="explore-view-toggle"]').filter({ visible: true });
     await expect(toggle).toBeVisible();
     if (isMobile) {
       await toggle.tap();

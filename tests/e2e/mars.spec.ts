@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { openDrawerTab } from './_helpers/hud-expand';
 
 /**
  * /mars — Mars Surface Map (3D textured sphere + 2D equirectangular map +
@@ -26,7 +27,10 @@ test.describe('/mars', () => {
   test('2D toggle reveals the equirectangular Mars map', async ({ page, isMobile }) => {
     await page.goto('/mars');
     await page.waitForLoadState('networkidle');
-    const toggle = page.getByTestId('mode-toggle');
+    // mode-toggle is dual-rendered (desktop hud-controls + the always-present
+    // mobile `.hud-top-mobile` cluster, display:none on desktop but still in the
+    // DOM) — scope to the visible one on both viewports.
+    const toggle = page.getByTestId('mode-toggle').filter({ visible: true }).first();
     await expect(toggle).toBeVisible();
     if (isMobile) {
       await toggle.tap();
@@ -46,19 +50,25 @@ test.describe('/mars', () => {
     expect(dim.h).toBeGreaterThan(0);
   });
 
-  test('layer chips render and toggle', async ({ page }) => {
+  test('layer chips render and toggle', async ({ page, isMobile }) => {
     await page.goto('/mars');
-    const surface = page.getByTestId('layer-surface');
-    const orbiters = page.getByTestId('layer-orbiters');
-    const traverses = page.getByTestId('layer-traverses');
+    // Mobile: chips live in the MobileDrawerGroup Layers tab (dual-rendered
+    // with the hidden desktop hud-controls) — open it and scope to `.mdg-body`.
+    if (isMobile) await openDrawerTab(page, /layers/i);
+    const root = isMobile ? page.locator('.mdg-body') : page;
+    const surface = root.getByTestId('layer-surface');
+    const orbiters = root.getByTestId('layer-orbiters');
+    const traverses = root.getByTestId('layer-traverses');
     await expect(surface).toBeVisible();
     await expect(orbiters).toBeVisible();
     await expect(traverses).toBeVisible();
     await expect(surface).toHaveAttribute('aria-pressed', 'true');
     await expect(traverses).toHaveAttribute('aria-pressed', 'true');
-    await orbiters.click();
+    if (isMobile) await orbiters.tap();
+    else await orbiters.click();
     await expect(orbiters).toHaveAttribute('aria-pressed', 'false');
-    await traverses.click();
+    if (isMobile) await traverses.tap();
+    else await traverses.click();
     await expect(traverses).toHaveAttribute('aria-pressed', 'false');
   });
 

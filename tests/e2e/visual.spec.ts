@@ -70,15 +70,13 @@ const STABLE_ELEMENTS = [
     label: 'fleet-filters',
     selector: '.filters, [data-audio-stage="fleet-filters"]',
   },
-  // /fly hud-collapse button — covers Phase 25 (default-collapsed on
-  // touch) + Phase 26 (font floor). The button itself is rendered on
-  // every visit (display:none on hover devices via CSS); on mobile-
-  // chromium the snapshot captures the visible ◐ toggle, on desktop
-  // the empty box (display:none). Stable selector — no canvas.
+  // /fly mobile control bar — the touch declutter surface (MISSION /
+  // EVENTS / … tabs) that replaced the old hud-collapse chrome. Mobile-
+  // only (display:none on hover devices). Stable selector — no canvas.
   {
     path: '/fly',
-    label: 'fly-hud-collapse',
-    selector: '.hud-collapse',
+    label: 'fly-mobile-tabs',
+    selector: '.fly-mtabs',
   },
 ];
 
@@ -99,14 +97,14 @@ test.describe('visual regression baselines (S8 — element-scoped, stable surfac
 
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {
-      // fly-hud-collapse is a mobile-only affordance — the .hud-collapse
-      // button is display:none on hover-capable devices. The desktop
-      // snapshot would capture an empty hidden node, which Playwright's
-      // toBeVisible() correctly rejects. Skip the desktop baseline; the
-      // mobile-chromium baseline is what this snapshot is for.
+      // fly-mobile-tabs is a mobile-only affordance — the .fly-mtabs bar is
+      // display:none on hover-capable devices. The desktop snapshot would
+      // capture a hidden node, which Playwright's toBeVisible() correctly
+      // rejects. Skip the desktop baseline; the mobile-chromium baseline is
+      // what this snapshot is for.
       test.skip(
-        label === 'fly-hud-collapse' && testInfo.project.name === 'desktop-chromium',
-        'fly-hud-collapse only renders on touch viewports (display:none on hover)',
+        label === 'fly-mobile-tabs' && testInfo.project.name === 'desktop-chromium',
+        'fly-mobile-tabs only renders on touch viewports (display:none on hover)',
       );
       await page.goto(path, { waitUntil: 'networkidle' });
       // #342 Phase 29 — /missions and /fleet collapse the filter

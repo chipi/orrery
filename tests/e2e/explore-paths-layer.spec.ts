@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { expandExploreHud } from './_helpers/hud-expand';
+import { openDrawerTab } from './_helpers/hud-expand';
 import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
@@ -56,28 +56,26 @@ test.describe('/explore — PATHS layer', () => {
     await page.waitForLoadState('networkidle');
     // #342 Phase 31 — the layer-paths chip lives inside the hud-controls
     // cluster that default-collapses on touch. Expand it first.
-    await expandExploreHud(page);
-    // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
-    const selector = isMobile
-      ? '.mcd-body [data-testid="layer-paths"]'
-      : '[data-testid="layer-paths"]';
-    const chip = page.locator(selector);
-    await expect(chip).toBeVisible();
-    // Default OFF per #306 — the layer ships hidden so wide-zoom view
-    // stays uncluttered for new users.
-    await expect(chip).toHaveAttribute('aria-pressed', 'false');
     if (isMobile) {
-      await chip.tap();
+      // On touch the paths chip lives in the Missions drawer tab — and opening
+      // that tab auto-enables the paths layer (drawer onOpen). Assert the chip
+      // reflects the enabled state; the no-console-errors check below covers
+      // that activating the layer logged nothing.
+      await openDrawerTab(page, /missions/i);
+      const chip = page.locator('.mdg-body [data-testid="layer-paths"]').first();
+      await expect(chip).toBeVisible();
+      await expect(chip).toHaveAttribute('aria-pressed', 'true');
     } else {
+      const chip = page.locator('[data-testid="layer-paths"]');
+      await expect(chip).toBeVisible();
+      // Default OFF per #306 — the layer ships hidden so the wide-zoom view
+      // stays uncluttered for new users.
+      await expect(chip).toHaveAttribute('aria-pressed', 'false');
       await chip.click();
-    }
-    await expect(chip).toHaveAttribute('aria-pressed', 'true');
-    if (isMobile) {
-      await chip.tap();
-    } else {
+      await expect(chip).toHaveAttribute('aria-pressed', 'true');
       await chip.click();
+      await expect(chip).toHaveAttribute('aria-pressed', 'false');
     }
-    await expect(chip).toHaveAttribute('aria-pressed', 'false');
     expect(errors, `console errors during PATHS toggle: ${errors.join(' | ')}`).toEqual([]);
   });
 
@@ -128,10 +126,11 @@ test.describe('/explore — PATHS layer', () => {
     // hud-controls cluster on touch. Expand it so .toBeVisible passes.
     // Toggle state (aria-pressed) is independent of the cluster
     // collapse — we check aria regardless of expansion.
-    await expandExploreHud(page);
-    // On mobile, scope to .mcd-body to avoid dual-render strict mode violation.
+    // The paths chip lives in the MobileDrawerGroup Missions tab on touch.
+    await openDrawerTab(page, /missions/i);
+    // On mobile, scope to .mdg-body to avoid dual-render strict mode violation.
     const selector = isMobile
-      ? '.mcd-body [data-testid="layer-paths"]'
+      ? '.mdg-body [data-testid="layer-paths"]'
       : '[data-testid="layer-paths"]';
     const chip = page.locator(selector);
     await expect(chip).toBeVisible();

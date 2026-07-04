@@ -223,6 +223,7 @@
 
 <SurfaceScene
   config={MARS_CONFIG}
+  body="mars"
   loadSites={getMarsSites}
   loadGallery={getMarsSiteGallery}
   loadTraverses={loadMarsTraverses}

@@ -198,6 +198,7 @@
 
 <SurfaceScene
   config={MOON_CONFIG}
+  body="moon"
   loadSites={getMoonSites}
   loadGallery={getMoonSiteGallery}
   loadTraverses={loadMoonTraverses}

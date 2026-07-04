@@ -86,6 +86,8 @@
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
+  import SurfaceIndexPanel from '$lib/surface-scene/SurfaceIndexPanel.svelte';
+  import { toIndexItems, type IndexBody } from '$lib/surface-map/surface-index';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
   import { viewport } from '$lib/viewport.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
@@ -164,6 +166,9 @@
   // src/lib/surface-scene/README.md for the contract.
   interface Props {
     config: SurfaceSceneConfig;
+    /** Which surface body this scene renders — drives the object-index adapter
+        (category helper + earth vs surface data shape). */
+    body: IndexBody;
     loadSites: (locale: string) => Promise<SurfaceSite[]>;
     loadGallery: (siteId: string, missionIdFallback?: string) => Promise<string[]>;
     /** Vendored rover-traverse data, keyed by rover_id. When provided,
@@ -208,6 +213,7 @@
   }
   let {
     config,
+    body,
     loadSites,
     loadGallery,
     loadTraverses,
@@ -395,6 +401,18 @@
   // surface site instead (mutual selection — site OR sat, not both).
   let earthObjectsCache: import('$types/earth-object').EarthObject[] = [];
   let selectedSat = $state<import('$types/earth-object').EarthObject | null>(null);
+
+  // ─── Object index (searchable orbit/land list) ───────────────────
+  // `indexEarthObjects` is a reactive mirror of the non-reactive
+  // earthObjectsCache so the index updates when /earth's satellites load
+  // (empty on /moon + /mars). `indexItems` is the unified adapter output.
+  let indexEarthObjects = $state<import('$types/earth-object').EarthObject[]>([]);
+  let indexOpen = $state(false);
+  const indexItems = $derived(toIndexItems(sites, indexEarthObjects, body));
+  // Cast works around a svelte-check narrowing quirk: `selected` (annotated
+  // $state, not the $state<T>() form) collapses to `never` under `!= null`
+  // inside a $derived. The runtime value is a SurfaceSite | null as declared.
+  const indexSelectedId = $derived((selected as SurfaceSite | null)?.id ?? selectedSat?.id ?? null);
   let earthMissionIds = $state<Set<string>>(new Set());
 
   // Notify the parent route on every selectedSat change so /earth's
@@ -1285,6 +1303,7 @@
             });
             earthSats = satLayer.sats;
             earthObjectsCache = objects;
+            indexEarthObjects = objects;
             // Nation map for the legend filter — bucket each orbiter by its
             // primary agency's nation (#363). Unattributed objects are simply
             // absent (treated as always-visible by nationEnabled).
@@ -1298,6 +1317,7 @@
                 satLayer.dispose();
                 earthSats = [];
                 earthObjectsCache = [];
+                indexEarthObjects = [];
                 nationBySatId = new Map();
               },
             });
@@ -5118,6 +5138,17 @@
     </div>
   {/snippet}
 
+  {#snippet mobileIndexContent(close: () => void)}
+    <SurfaceIndexPanel
+      items={indexItems}
+      selectedId={indexSelectedId}
+      onSelect={(id) => {
+        selectSite(id, { face: true });
+        close();
+      }}
+    />
+  {/snippet}
+
   {#if !panoramaActive}
     <div
       class="hud-controls"
@@ -5171,9 +5202,35 @@
           { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
           { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
           { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
+          { id: 'index', label: m.surface_index_tab(), icon: '⌕', content: mobileIndexContent },
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />
+      <!-- Desktop object index: an edge-handle toggles a left side panel.
+           Mobile uses the Index drawer tab above; both are gated by CSS so
+           only one shows per device. Selecting keeps the list open on desktop
+           (master → detail on the right) but closes the drawer on mobile. -->
+      <button
+        type="button"
+        class="surface-index-handle"
+        data-testid="surface-index-toggle"
+        aria-pressed={indexOpen}
+        aria-label={m.surface_index_open()}
+        title={m.surface_index_open()}
+        onclick={() => (indexOpen = !indexOpen)}
+      >
+        <span class="sih-label">{m.surface_index_open()}</span>
+      </button>
+      {#if indexOpen}
+        <aside class="surface-index-desktop" aria-label={m.surface_index_aria()}>
+          <SurfaceIndexPanel
+            items={indexItems}
+            selectedId={indexSelectedId}
+            onSelect={(id) => selectSite(id, { face: true })}
+            onClose={() => (indexOpen = false)}
+          />
+        </aside>
+      {/if}
     {/if}
   {/if}
 
@@ -6003,6 +6060,61 @@ sample      ${debugInfo.projectedPxSample}`}
      toggle, distance-scale) have phone-tight base values; the two
      @min-width blocks at the end of this stylesheet layer back the
      desktop sizing. */
+  /* ── Desktop object-index edge-handle + side panel ──────────────────
+     Mirrors the ISS modules handle. Hidden on touch (mobile uses the Index
+     drawer tab); shown only for a fine pointer. The open panel is a left
+     side-drawer — master list, with the detail panel opening on the right. */
+  .surface-index-handle,
+  .surface-index-desktop {
+    display: none;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .surface-index-handle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: calc(var(--nav-height) + 132px);
+      z-index: 44;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      padding: 12px 6px;
+      background: rgba(8, 10, 22, 0.85);
+      border: 1px solid var(--color-border);
+      border-left: none;
+      border-radius: 0 6px 6px 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .surface-index-handle:hover,
+    .surface-index-handle[aria-pressed='true'] {
+      color: #4ecdc4;
+      border-color: rgba(78, 205, 196, 0.5);
+    }
+    .surface-index-desktop {
+      display: block;
+      position: fixed;
+      left: 12px;
+      /* Start below the top-left view controls (matches the ISS modules drawer
+         top:152) so the panel sits UNDER the buttons rather than over them. */
+      top: 152px;
+      bottom: 12px;
+      width: min(320px, calc(100vw - 24px));
+      z-index: 45;
+      padding: 12px;
+      background: var(--color-panel-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+    }
+  }
   .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);

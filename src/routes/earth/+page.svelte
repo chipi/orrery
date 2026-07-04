@@ -148,6 +148,7 @@
 
 <SurfaceScene
   config={earthSurfaceConfig}
+  body="earth"
   loadSites={getEarthLaunchSites}
   loadGallery={getEarthLaunchSiteGallery}
   {initialView}

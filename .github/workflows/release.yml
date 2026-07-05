@@ -23,6 +23,19 @@ on:
   push:
     tags:
       - 'v*'
+  # Retroactive / re-publish path. Dispatch runs against the default branch,
+  # so a tag whose historical tree predates its CHANGELOG section still
+  # resolves its notes from the current CHANGELOG.md. `target` creates the
+  # tag at that commit if it doesn't exist yet (e.g. backfilling v0.7.1).
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish a Release for (e.g. v0.7.1)'
+        required: true
+      target:
+        description: "Commit-ish to create the tag at if it doesn't exist yet (e.g. 4b82dd113); blank = use existing tag"
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -43,7 +56,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          TAG="${GITHUB_REF#refs/tags/}"           # e.g. v0.6.2
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            TAG="${{ github.event.inputs.tag }}"   # reads CHANGELOG from the default branch
+          else
+            TAG="${GITHUB_REF#refs/tags/}"         # e.g. v0.6.2
+          fi
           VERSION="${TAG#v}"                       # e.g. 0.6.2
           echo "tag=$TAG"        >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
@@ -99,9 +116,14 @@ jobs:
             PRERELEASE_FLAG="--prerelease"
           fi
 
-          echo "▶ Creating Release $TAG (prerelease=$PRERELEASE)."
+          TARGET="${{ github.event.inputs.target }}"
+          TARGET_FLAG=""
+          if [[ -n "$TARGET" ]]; then TARGET_FLAG="--target $TARGET"; fi
+
+          echo "▶ Creating Release $TAG (prerelease=$PRERELEASE, target=${TARGET:-existing tag})."
           gh release create "$TAG" \
             --title "$TAG" \
             --notes-file "$BODY_FILE" \
+            $TARGET_FLAG \
             $LATEST_FLAG \
             $PRERELEASE_FLAG

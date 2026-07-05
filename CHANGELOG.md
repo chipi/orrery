@@ -10,6 +10,46 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.7.2] — 2026-07-05
+
+### Added
+
+- **Capability + orientation responsive layout** — the mobile / landscape UI now keys off `data-touch` + `data-orientation` attributes rather than viewport width. On touch the site footer moves into the nav drawer as a bottom section; in landscape the bottom drawer controls collapse into one row beside the scale / scrubber; drawer panels are width-constrained to the portrait-stack size and centre above the tab that opens them.
+- **Searchable orbit / land object index for `/mars`, `/moon`, `/earth`** (modelled on the ISS module list). Desktop edge-handle toggle + mobile drawer tab; free-text search; per-item agency logo; click-to-focus that flies the camera and opens the detail panel; filters for domain (in orbit / on land), agency, era (year), and status. Earth combines launch sites (land) with orbiters (orbit).
+- **Global internal-link checker** (`scripts/check-internal-links.mjs`) wired into `npm run build` + preflight. Crawls every prerendered HTML page and fails on base-less (`/foo` under a based deploy) or unresolved internal links — the class of 404 that base-less client navigations produce on the `/orrery/` GitHub Pages base.
+
+### Fixed
+
+- **Tour navigation is base-aware** — audio-tour `navigate` stages route through `${base}${target}`, fixing the `/science/transfers` (and every other stage) hard-404 when served under the GitHub Pages base path.
+- **Back button across the mission → launcher → fleet card chain** — every detail→detail path now records the card chain, so the back button appears on the destination card.
+- **Panorama touch-swipe direction** on surface routes — dragging now moves the view the same way the finger travels.
+
+### Testing
+
+- The i18n route-sweep (`tests/e2e/i18n-all-routes.spec.ts`) counts locale-script characters across visible text **and** accessible names (aria-label / title / placeholder / alt), so canvas-heavy routes (`/explore`, `/fleet`, `/fly`) stay green after the footer moved into the nav drawer.
+
+## [0.7.1] — 2026-07-05
+
+### Changed
+
+- **PWA install + update reliability** — bundle the i18n overlays and shrink the service-worker precache from 4,456 to 355 entries; stop precaching ~1.7 GB of imagery (was blocking SW install on iOS); register the SW under the `BASE` path with silent update rollover; add guardrails so silent update-stall regressions can't recur.
+
+### Added
+
+- **`MobileControlsDrawer`** — a unified, non-blocking partial drawer. `/explore` and the surface routes (`/earth`, `/mars`, `/moon`) gain a 3-tab drawer accordion, a top control cluster across all five canvas routes, and a station accordion on `/iss` + `/tiangong`.
+- **Card back-chain extended** to `/explore` bodies and surface sites; planet missions link to their real mission records with a detail-card back button.
+
+### Fixed
+
+- Mobile: flat-patch layout, stations-list close, `/fly` speed popover, lens stacking, surface chips, `/fly` accordion, `/plan` lens offset, and surface immersive-mode collisions; keep the mobile footer to one line (build date → tooltip); bottom-sheet scrim + z-order so detail panels always close.
+- Preflight: clear dead-holder locks instantly + fail-fast on lock contention.
+
+### Testing
+
+- Migrate the mobile e2e specs to `MobileDrawerGroup`; fix a11y / hang regressions; regenerate visual snapshot baselines.
+
+## [0.7.0] — 2026-07-03
+
 ### Added
 
 - **`/fly` catalog backfill — 14 notable missions across 5 batches** (GH #341). Closes the post-throne-of-glory gap surfaced in the Batch 5 sweep — every mission now ships with mission JSON + flight.events + interplanetary_profile + i18n overlay + fleet refs + index entry.

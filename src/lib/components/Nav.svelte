@@ -25,6 +25,11 @@
   type Props = { right?: Snippet };
   let { right }: Props = $props();
 
+  // Footer version chip (mirrors +layout.svelte). The floating .site-footer is
+  // hidden on touch, so the version is restored at the bottom of the mobile
+  // drawer. major.minor.patch, dropping any -wip / -rc suffix.
+  const displayVersion = __APP_VERSION__.split('-')[0].split('.').slice(0, 3).join('.');
+
   const linkDefs = [
     { path: '/', label: m.nav_home },
     { path: '/explore', label: m.nav_explore },
@@ -304,6 +309,17 @@
         hreflang="en">{m.layout_footer_readme()}</a
       >
     </div>
+    <!-- Version chip — restored at the drawer bottom on touch (the floating
+         .site-footer version link is hidden on touch). External CHANGELOG
+         link, so no closeMobileMenu (matches the License/README links). -->
+    <a
+      class="drawer-version"
+      href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
+      target="_blank"
+      rel="noopener noreferrer external"
+      title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
+      hreflang="en">v{displayVersion}</a
+    >
   </div>
   <button
     type="button"
@@ -759,6 +775,20 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
     border-left-color: transparent;
+  }
+  /* Version chip pinned at the drawer bottom, dimmer than the about links. */
+  .drawer-version {
+    display: block;
+    padding: 10px 18px 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+  }
+  .drawer-version:hover,
+  .drawer-version:focus-visible {
+    color: rgba(255, 255, 255, 0.7);
   }
 
   @media (max-width: 500px) {

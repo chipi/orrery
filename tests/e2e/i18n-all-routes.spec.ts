@@ -55,10 +55,26 @@ for (const { code, rtl, script } of LOCALES) {
         await expect(page.locator('nav').first()).toBeVisible();
         await expect(page.locator('h1, main, [role="main"]').first()).toBeVisible();
 
-        // Content-language check: the visible text must contain enough
-        // characters from the locale's script that it cannot be English.
+        // Content-language check: the page must carry enough characters from
+        // the locale's script that it cannot be English. We count BOTH visible
+        // text and accessible names (aria-label/title/placeholder/alt).
+        // Canvas-heavy routes (/explore, /fly, /fleet) are icon-driven — their
+        // visible text is sparse, and the footer's translated links are hidden
+        // on touch (they move into the nav drawer per the 0.7.2 mobile layout).
+        // Every control still carries a translated accessible name, so counting
+        // a11y text makes this a stable "is the page in-locale?" assertion
+        // instead of one that swings with how much chrome a route happens to
+        // paint. A genuine en-US fallback still fails: its labels are English.
         if (script) {
-          const text = await page.locator('body').innerText();
+          const text = await page.evaluate(() => {
+            const body = document.body;
+            const labelled = ['aria-label', 'title', 'placeholder', 'alt']
+              .flatMap((a) =>
+                Array.from(body.querySelectorAll(`[${a}]`)).map((el) => el.getAttribute(a) ?? ''),
+              )
+              .join(' ');
+            return `${body.innerText} ${labelled}`;
+          });
           const hits = (text.match(script) ?? []).length;
           expect(
             hits,

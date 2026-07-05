@@ -172,7 +172,8 @@ function parseVisionResponse(text: string): Omit<VisionScoreResult, 'cost_usd'> 
   const reject = obj.reject_reason;
   const reject_reason: string | null =
     typeof reject === 'string' && reject.length > 0 ? reject : null;
-  return { score, subject, category, focal_point, reject_reason };
+  const subject_match = obj.subject_match === false ? false : true;
+  return { score, subject, category, focal_point, reject_reason, subject_match };
 }
 
 function clampInt(v: unknown, lo: number, hi: number): number {

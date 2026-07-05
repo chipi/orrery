@@ -42,6 +42,7 @@ import type { VisionCategory } from './provider.ts';
 
 export type RejectedBy =
   | null
+  | 'off-subject'
   | 'score-below-threshold'
   | 'category-people'
   | 'category-diagram'
@@ -52,6 +53,8 @@ export interface ImageVisionEntry {
   subject: string;
   category: VisionCategory;
   focal_point: { x: number; y: number };
+  /** Did the frame actually depict the intended subject? Absent = legacy/unknown → treated as a match. */
+  subject_match?: boolean;
   variants: Record<VariantRatio, string>;
   rejected_by: RejectedBy;
   fallback: boolean;
@@ -81,9 +84,13 @@ export function computeRejectedBy(input: {
   score: number;
   category: VisionCategory;
   rejectedByHuman?: boolean;
+  subjectMatch?: boolean;
   missionStatus?: 'PLANNED' | 'FLOWN' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST' | string;
 }): RejectedBy {
   if (input.rejectedByHuman) return 'human';
+  // Off-subject beats every quality signal — a pristine photo of the wrong
+  // thing is worse than a mediocre photo of the right thing.
+  if (input.subjectMatch === false) return 'off-subject';
   if (input.category === 'people') return 'category-people';
   if (input.category === 'diagram') return 'category-diagram';
   if (input.category === 'render' && input.missionStatus !== 'PLANNED') {
@@ -127,6 +134,7 @@ export async function buildAndWriteManifest(
       score: item.cached.score,
       category: item.cached.category,
       rejectedByHuman: item.rejectedByHuman,
+      subjectMatch: item.cached.subject_match,
       missionStatus: item.missionStatus,
     });
     const variantsMap = item.variants.reduce(
@@ -138,6 +146,7 @@ export async function buildAndWriteManifest(
       subject: item.cached.subject,
       category: item.cached.category,
       focal_point: item.cached.focal_point,
+      subject_match: item.cached.subject_match ?? true,
       // 1x1 only — 4x3/16x9 retired 2026-06-26 (no consumer). See
       // crop-variants.ts VARIANT_RATIOS.
       variants: {

@@ -40,6 +40,7 @@ export type VisionCategory =
 
 export type RejectedBy =
   | null
+  | 'off-subject'
   | 'score-below-threshold'
   | 'category-people'
   | 'category-diagram'
@@ -50,6 +51,8 @@ export interface ImageVisionEntry {
   subject: string;
   category: VisionCategory;
   focal_point: { x: number; y: number };
+  /** Did the frame actually depict the intended subject? Absent = legacy/unknown → treated as a match. */
+  subject_match?: boolean;
   variants: Record<VariantRatio, string>;
   rejected_by: RejectedBy;
   fallback: boolean;

@@ -20,6 +20,7 @@ import {
 } from './vision/cache.ts';
 import { generateVariants } from './vision/crop-variants.ts';
 import { buildAndWriteManifest, MANIFEST_PATH } from './vision/build-manifest.ts';
+import { resolveSubject } from './vision/subject.ts';
 import type { ImageVisionManifest } from './vision/build-manifest.ts';
 import { appendLedgerEntry, checkThresholds } from '../src/lib/cost-ledger.ts';
 
@@ -292,8 +293,13 @@ async function applyScopeFilters(
   // subsequent run, producing .1x1.1x1.jpg etc). Always exclude the
   // variant-suffix shapes — only score the unsuffixed source files.
   const VARIANT_SUFFIX = /\.(1x1|4x3|16x9)\.jpg$/i;
+  // Thumbnails (/thumbnails/*) are UI route-icons (stylised orbit diagrams),
+  // not gallery content — never score them as gallery imagery (0.7.3).
   let filtered = entries.filter(
-    (e) => !e.path.toLowerCase().endsWith('.svg') && !VARIANT_SUFFIX.test(e.path),
+    (e) =>
+      !e.path.toLowerCase().endsWith('.svg') &&
+      !VARIANT_SUFFIX.test(e.path) &&
+      !e.path.includes('/thumbnails/'),
   );
   if (args.mission) {
     const id = args.mission;
@@ -426,6 +432,7 @@ async function processOneImage(input: {
       cached = await resolveScoreFromCacheOrProvider({
         imageBytes: bytes,
         imagePath: input.provenance.path,
+        contextHint: resolveSubject(input.provenance.path, input.provenance),
         provider: input.getProvider(),
         denyListExamples: input.denyListExamples,
       });
@@ -439,6 +446,7 @@ async function processOneImage(input: {
       cached = await resolveScoreFromCacheOrProvider({
         imageBytes: bytes,
         imagePath: input.provenance.path,
+        contextHint: resolveSubject(input.provenance.path, input.provenance),
         provider: input.getProvider(),
         denyListExamples: input.denyListExamples,
         forceRefresh: input.args.forceScore,

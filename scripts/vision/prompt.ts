@@ -13,7 +13,7 @@
  *     injected at call time by the provider adapter).
  */
 
-export const SCORING_PROMPT_VERSION = 'v1.0.0';
+export const SCORING_PROMPT_VERSION = 'v1.3.0';
 
 /**
  * The static rubric. Sent to every provider as the system message.
@@ -35,6 +35,7 @@ Required shape:
   "subject": "<one sentence describing what's in the frame, suitable as alt text>",
   "category": "<one of: spacecraft | surface | launch | orbital | hardware | people | diagram | render | other>",
   "focal_point": { "x": <number 0.0-1.0>, "y": <number 0.0-1.0> },
+  "subject_match": <true|false — does the frame ACTUALLY depict the CONTEXT subject? true if no CONTEXT is given>,
   "reject_reason": null OR "<short reason string>"
 }
 
@@ -50,6 +51,24 @@ CATEGORY RULES:
   - "diagram":  reject for general use (we have hand-authored diagrams; raw infographics are noise).
   - "render":   ACCEPT for PLANNED missions (artist concepts); REJECT for FLOWN/ACTIVE missions.
   - all others: accept by score.
+
+SUBJECT MATCH — is the image ABOUT the CONTEXT subject? (TOPIC, not quality)
+  subject_match answers ONE question: is this image ABOUT the subject the CONTEXT
+  names? It is NOT a quality judgement — quality lives in the "score" field.
+  subject_match = TRUE for ANY genuine depiction OR representation of that subject:
+  a photograph, launch shot, artist render, 3D/engineering model, cutaway diagram,
+  mission patch, or even a commemorative stamp or postage cover OF that mission /
+  craft / world. These are often SUBOPTIMAL — score them LOW, they are fallbacks —
+  but they are ON subject, so subject_match stays TRUE.
+  subject_match = FALSE ("off-subject") ONLY when the frame shows something ELSE
+  entirely: an unrelated object, scene, food or drink, product, logo, or a DIFFERENT
+  mission / craft / world than the CONTEXT names. Then set reject_reason "off-subject"
+  and score 1-2.
+  CREW: for a crewed mission, its own astronauts / cosmonauts (the flight crew) are
+  ON subject — a crew portrait or in-suit photo of the mission's crew is
+  subject_match=true. But generic crowds, spectators, parades, press conferences,
+  officials, and unrelated bystanders are off-subject (subject_match=false).
+  If no CONTEXT is supplied: subject_match = true; score on quality alone.
 
 FOCAL POINT:
   Locate the visual center of the subject (rover, rocket, planet, instrument).
@@ -71,7 +90,10 @@ export function buildUserMessage(input: {
 }): string {
   const lines: string[] = [];
   if (input.contextHint && input.contextHint.trim().length > 0) {
-    lines.push(`CONTEXT (mission / asset / agency): ${input.contextHint}`);
+    lines.push(`CONTEXT — the frame MUST depict: ${input.contextHint}`);
+    lines.push(
+      'If the image does not actually show this subject, set subject_match=false and reject_reason="off-subject" (score 1-2), however good the photo looks.',
+    );
   }
   if (input.denyListExamples.length > 0) {
     lines.push('');

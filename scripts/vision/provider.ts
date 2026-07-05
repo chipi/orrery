@@ -37,6 +37,8 @@ export interface VisionScoreResult {
   focal_point: { x: number; y: number };
   /** Non-null when the model refuses the image (low resolution, NSFW, etc.). */
   reject_reason: string | null;
+  /** Did the frame actually depict the CONTEXT subject? Absent/undefined = treated as a match (backwards-compat with pre-v1.1.0 cache). */
+  subject_match?: boolean;
   /**
    * USD cost of this single API call (input + output tokens × model
    * pricing). Recorded by the cost ledger (PRD-018 M12 + S4).

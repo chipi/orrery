@@ -1,0 +1,222 @@
+{
+  "name": "off-subject-eval-v2",
+  "description": "Anchors are Marko-approved override heroes (gold positives) + JUICE drinks (negatives) + Soviet stamps labelled positive (on-subject fallback, tests subject-vs-quality separation). v1.2.0 prompt.",
+  "cases": [
+    {
+      "path": "/images/missions/akatsuki/01.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "JAXA",
+      "entity": "akatsuki",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/cassini/01.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "cassini",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/clementine/01.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "clementine",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/hayabusa2/04.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "hayabusa2",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/luna16/02.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "Roscosmos",
+      "entity": "luna16",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/magellan/04.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA/JPL",
+      "entity": "magellan",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/mariner9/03.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA/JPL/Arizona State University",
+      "entity": "mariner9",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/new-horizons/01.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "new-horizons",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/otv-3/05.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "USAF",
+      "entity": "otv-3",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/pioneer-10/05.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "pioneer-10",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/schiaparelli/02.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "ESA",
+      "entity": "schiaparelli",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/spirit/03.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA/JPL-Caltech/Cornell Univ.",
+      "entity": "spirit",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/vega-2/03.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "NASA",
+      "entity": "vega-2",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/vostok-3/04.jpg",
+      "label": "positive",
+      "stratum": "hero-missions",
+      "agency": "Roscosmos",
+      "entity": "vostok-3",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/akatsuki/02.jpg",
+      "label": "negative",
+      "stratum": "misplaced-fleet",
+      "agency": "NASA",
+      "entity": "akatsuki",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/chandrayaan1/02.jpg",
+      "label": "positive",
+      "stratum": "hero-fleet-galleries",
+      "agency": "ISRO",
+      "entity": "chandrayaan1",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/h3/02.jpg",
+      "label": "positive",
+      "stratum": "hero-fleet-galleries",
+      "agency": "JAXA",
+      "entity": "h3",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/magellan/05.jpg",
+      "label": "negative",
+      "stratum": "misplaced-fleet",
+      "agency": "NASA",
+      "entity": "magellan",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/progress-ms/02.jpg",
+      "label": "positive",
+      "stratum": "hero-fleet-galleries",
+      "agency": "Roscosmos",
+      "entity": "progress-ms",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/fleet-galleries/ulysses/02.jpg",
+      "label": "positive",
+      "stratum": "hero-fleet-galleries",
+      "agency": "ESA",
+      "entity": "ulysses",
+      "note": "override hero (Marko-approved)"
+    },
+    {
+      "path": "/images/missions/juice/02.jpg",
+      "label": "negative",
+      "stratum": "off-subject-stock",
+      "agency": "NASA",
+      "entity": "juice",
+      "note": "juice-drink stock"
+    },
+    {
+      "path": "/images/missions/juice/03.jpg",
+      "label": "negative",
+      "stratum": "off-subject-stock",
+      "agency": "NASA",
+      "entity": "juice",
+      "note": "juice-drink stock"
+    },
+    {
+      "path": "/images/missions/juice/04.jpg",
+      "label": "negative",
+      "stratum": "off-subject-stock",
+      "agency": "NASA",
+      "entity": "juice",
+      "note": "juice-drink stock"
+    },
+    {
+      "path": "/images/missions/juice/05.jpg",
+      "label": "negative",
+      "stratum": "off-subject-stock",
+      "agency": "NASA",
+      "entity": "juice",
+      "note": "juice-drink stock"
+    },
+    {
+      "path": "/images/missions/mars2/02.jpg",
+      "label": "positive",
+      "stratum": "stamp-fallback",
+      "agency": "Roscosmos",
+      "entity": "mars2",
+      "note": "commemorative stamp \u2014 on-subject, suboptimal"
+    },
+    {
+      "path": "/images/missions/mars3/02.jpg",
+      "label": "positive",
+      "stratum": "stamp-fallback",
+      "agency": "Roscosmos",
+      "entity": "mars3",
+      "note": "commemorative stamp \u2014 on-subject, suboptimal"
+    },
+    {
+      "path": "/images/missions/mars6/02.jpg",
+      "label": "positive",
+      "stratum": "stamp-fallback",
+      "agency": "Roscosmos",
+      "entity": "mars6",
+      "note": "commemorative stamp \u2014 on-subject, suboptimal"
+    }
+  ]
+}

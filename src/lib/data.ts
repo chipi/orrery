@@ -1488,11 +1488,7 @@ export async function getMarsSiteGallery(
 // ──────────────────────────────────────────────────────────────────────
 
 export type ImageProvenanceSourceType =
-  | 'wikimedia-commons'
-  | 'nasa-images-api'
-  | 'direct-agency'
-  | 'direct-other'
-  | 'derived-mosaic';
+  'wikimedia-commons' | 'nasa-images-api' | 'direct-agency' | 'direct-other' | 'derived-mosaic';
 
 export interface ImageProvenanceEntry {
   id: string;
@@ -1613,11 +1609,7 @@ export interface TextSourceEntry {
     | 'ui'
     | 'credits';
   relationship:
-    | 'original'
-    | 'paraphrased-from'
-    | 'quoted-from'
-    | 'translated-from'
-    | 'adapted-from';
+    'original' | 'paraphrased-from' | 'quoted-from' | 'translated-from' | 'adapted-from';
   snippet?: string;
   source_url?: string;
   source_publisher?: string;

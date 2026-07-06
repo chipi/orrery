@@ -186,8 +186,7 @@ async function fetchSite(siteId: string, lat: number, lon: number): Promise<bool
 async function main(): Promise<void> {
   const only = process.argv[2];
   const moon = JSON.parse(await fs.readFile(MOON_SITES_PATH, 'utf-8')) as
-    | MoonSite[]
-    | { sites: MoonSite[] };
+    MoonSite[] | { sites: MoonSite[] };
   const arr = Array.isArray(moon) ? moon : moon.sites;
   const byId = new Map(arr.map((s) => [s.id, s]));
 

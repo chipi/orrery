@@ -26,16 +26,7 @@ export type SurfaceAgency =
   | 'SpaceX'
   | 'Arianespace';
 export type SurfaceNation =
-  | 'USA'
-  | 'USSR'
-  | 'Russia'
-  | 'China'
-  | 'India'
-  | 'Japan'
-  | 'Europe'
-  | 'UAE'
-  | 'Israel'
-  | 'UK';
+  'USA' | 'USSR' | 'Russia' | 'China' | 'India' | 'Japan' | 'Europe' | 'UAE' | 'Israel' | 'UK';
 export type SurfaceStatus = 'completed' | 'ongoing' | 'planned';
 export type SiteKind = 'surface' | 'orbiter';
 export type SiteStatus = 'FLOWN' | 'PLANNED' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST';

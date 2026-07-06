@@ -117,13 +117,7 @@ export const MOON_COMPOSITION_IMPACT: MoonComposition = {
  *  edl_or_oi. SLIM + Chandrayaan-1 use the generic arrival type for
  *  their LOI moment — same composition as the original loi. */
 export type CislunarHeroEventType =
-  | 'loi'
-  | 'tei'
-  | 'descent_start'
-  | 'ascent'
-  | 'flyby'
-  | 'edl_or_oi'
-  | 'arrival';
+  'loi' | 'tei' | 'descent_start' | 'ascent' | 'flyby' | 'edl_or_oi' | 'arrival';
 
 /** How many sim-days BEFORE the peak MET to compose the iconic
  *  frame. Mirrors PlanetComposition.iconicLeadDays. Per-event so

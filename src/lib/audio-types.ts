@@ -15,7 +15,4 @@ export type Persona = 'curator' | 'guide' | 'enthusiast';
 export type ProviderName = 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
 
 export type TextAuthorship =
-  | 'claude-drafted'
-  | 'claude-translated'
-  | 'human-authored'
-  | 'human-edited-claude-draft';
+  'claude-drafted' | 'claude-translated' | 'human-authored' | 'human-edited-claude-draft';

@@ -17,10 +17,7 @@
 // ─── PRD-020 / RFC-023 launches manifest integrity ────────────────────
 
 export type LaunchProvenanceRole =
-  | 'primary'
-  | 'confirmed-via'
-  | 'augmented-with'
-  | 'fallback-primary';
+  'primary' | 'confirmed-via' | 'augmented-with' | 'fallback-primary';
 
 export type LaunchProvenanceLink = {
   source: string;

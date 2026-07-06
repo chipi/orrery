@@ -27,11 +27,7 @@ import { LROC_CURATED_PRODUCTS, lrocProductIdToImgUrl } from './lroc-products.ts
 export class LrocFetchError extends Error {
   constructor(
     public code:
-      | 'NO_CURATED_PRODUCT'
-      | 'URL_BUILD_FAILED'
-      | 'HEAD_404'
-      | 'HEAD_FAILED'
-      | 'CROP_FAILED',
+      'NO_CURATED_PRODUCT' | 'URL_BUILD_FAILED' | 'HEAD_404' | 'HEAD_FAILED' | 'CROP_FAILED',
     message: string,
   ) {
     super(message);

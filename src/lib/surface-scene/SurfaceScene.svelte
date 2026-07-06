@@ -2711,8 +2711,7 @@
     }
     const onTourDragSurface = (e: Event): void => {
       const d = (e as CustomEvent).detail as
-        | { durationMs?: number; rotateRad?: number }
-        | undefined;
+        { durationMs?: number; rotateRad?: number } | undefined;
       const rotate = d?.rotateRad ?? Math.PI / 3;
       animateCamTour(
         () => camT,
@@ -4777,8 +4776,7 @@
                   }
                 }
                 const rp = best?.userData?.routePatch as
-                  | { lat: number; lon: number; image: string; id: string }
-                  | undefined;
+                  { lat: number; lon: number; image: string; id: string } | undefined;
                 if (rp) {
                   target = {
                     ...selected,

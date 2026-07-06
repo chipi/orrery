@@ -36,14 +36,7 @@
 //                 demonstrate search/filter affordances by pushing URL-bound
 //                 state. Optional `params.replaceState` (1 = replace history).
 export type AudioStageAction =
-  | 'flash'
-  | 'scroll-to'
-  | 'click'
-  | 'open-tab'
-  | 'cue'
-  | 'drag'
-  | 'zoom'
-  | 'navigate';
+  'flash' | 'scroll-to' | 'click' | 'open-tab' | 'cue' | 'drag' | 'zoom' | 'navigate';
 
 export interface AudioStage {
   /** Seconds into the episode when this stage fires. */

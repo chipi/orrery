@@ -253,13 +253,7 @@ export function buildPanoramaProvenanceEntry(input: {
   sourceUrl: string;
   attribution: string;
   license:
-    | 'PD-NASA'
-    | 'CNSA-EDU'
-    | 'CC-BY-4.0'
-    | 'ISRO-EDU'
-    | 'JAXA-OPEN'
-    | 'PD-Russia'
-    | 'SpaceIL-EDU';
+    'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0' | 'ISRO-EDU' | 'JAXA-OPEN' | 'PD-Russia' | 'SpaceIL-EDU';
   caption: string;
   /** Output equirectangular dimensions (PRD-022 / ADR-074, #286 Phase
    *  1A). Defaults to 4096×2048 — marquee showcase sites pass 8192×4096

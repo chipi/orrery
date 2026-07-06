@@ -8,13 +8,7 @@
  */
 
 export type LaunchStatusCode =
-  | 'GO'
-  | 'TBD'
-  | 'SUCCESS'
-  | 'FAILURE'
-  | 'PARTIAL'
-  | 'HOLD'
-  | 'IN_FLIGHT';
+  'GO' | 'TBD' | 'SUCCESS' | 'FAILURE' | 'PARTIAL' | 'HOLD' | 'IN_FLIGHT';
 
 export type LaunchStatus = {
   code: LaunchStatusCode;
@@ -24,10 +18,7 @@ export type LaunchStatus = {
 export type LaunchNetPrecision = 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year';
 
 export type LaunchProvenanceRole =
-  | 'primary'
-  | 'confirmed-via'
-  | 'augmented-with'
-  | 'fallback-primary';
+  'primary' | 'confirmed-via' | 'augmented-with' | 'fallback-primary';
 
 /**
  * Provenance chain entry recorded per (source, launch) contribution.

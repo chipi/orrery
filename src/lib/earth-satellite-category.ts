@@ -15,11 +15,7 @@
  *                  Earth (LRO). Rendered near Moon position.
  */
 export type EarthSatelliteCategory =
-  | 'station'
-  | 'constellation'
-  | 'telescope'
-  | 'comsat'
-  | 'moon-orbiter';
+  'station' | 'constellation' | 'telescope' | 'comsat' | 'moon-orbiter';
 
 export function categoriseEarthSatellite(id: string): EarthSatelliteCategory {
   switch (id) {

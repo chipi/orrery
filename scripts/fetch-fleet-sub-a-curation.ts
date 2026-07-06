@@ -26,13 +26,7 @@ interface CurationEntry {
   id: string;
   agency: string;
   license:
-    | 'PD-NASA'
-    | 'PD-Russia'
-    | 'CC-BY-4.0'
-    | 'CC-BY-SA-4.0'
-    | 'CC-BY-2.0'
-    | 'CNSA-EDU'
-    | 'JAXA-OPEN';
+    'PD-NASA' | 'PD-Russia' | 'CC-BY-4.0' | 'CC-BY-SA-4.0' | 'CC-BY-2.0' | 'CNSA-EDU' | 'JAXA-OPEN';
   url: string;
   title: string;
   author: string;

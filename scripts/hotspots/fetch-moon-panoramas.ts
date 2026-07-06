@@ -48,13 +48,7 @@ interface MoonPanoramaConfig {
   sourceLabel: string;
   attribution: string;
   license:
-    | 'PD-NASA'
-    | 'CNSA-EDU'
-    | 'CC-BY-4.0'
-    | 'ISRO-EDU'
-    | 'JAXA-OPEN'
-    | 'PD-Russia'
-    | 'SpaceIL-EDU';
+    'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0' | 'ISRO-EDU' | 'JAXA-OPEN' | 'PD-Russia' | 'SpaceIL-EDU';
   srcAzimuthDeg: number;
   srcElevationTopDeg: number;
   srcElevationBottomDeg: number;

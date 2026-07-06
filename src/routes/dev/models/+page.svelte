@@ -370,8 +370,8 @@
     <h1>Original 3D model showcase</h1>
     <p>
       All {ENTRIES.length} distinct original meshes — interplanetary craft, lunar + Martian landers/rovers,
-      Earth satellites, launch facility, and the two station proxies. One shared WebGL canvas paints
-      each card; per-card camera auto-fits the model's bounding sphere.
+      Earth satellites, launch facility, and the two station proxies. One shared WebGL canvas paints each
+      card; per-card camera auto-fits the model's bounding sphere.
     </p>
   </header>
   <div class="grid">

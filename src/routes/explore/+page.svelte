@@ -3241,8 +3241,7 @@
     }
     const onTourDrag = (e: Event): void => {
       const d = (e as CustomEvent).detail as
-        | { durationMs?: number; rotateRad?: number }
-        | undefined;
+        { durationMs?: number; rotateRad?: number } | undefined;
       const rotate = d?.rotateRad ?? Math.PI / 3; // default ~60° azimuth swing
       animateCamera(
         () => camT,

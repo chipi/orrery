@@ -81,9 +81,7 @@ async function main() {
   for (const [fleetId, missions] of reverseMap.entries()) {
     const category = fleetCategoryById.get(fleetId);
     if (!category) {
-      console.warn(
-        `  ⚠ unknown fleet id ${fleetId} referenced by missions ${missions.join(', ')}`,
-      );
+      console.warn(`  ⚠ unknown fleet id ${fleetId} referenced by missions ${missions.join(', ')}`);
       continue;
     }
     const path = join(FLEET_DIR, category, `${fleetId}.json`);

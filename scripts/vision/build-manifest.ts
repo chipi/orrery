@@ -41,12 +41,7 @@ import type { VisionCategory } from './provider.ts';
  */
 
 export type RejectedBy =
-  | null
-  | 'off-subject'
-  | 'score-below-threshold'
-  | 'category-people'
-  | 'category-diagram'
-  | 'human';
+  null | 'off-subject' | 'score-below-threshold' | 'category-people' | 'category-diagram' | 'human';
 
 export interface ImageVisionEntry {
   score: number;

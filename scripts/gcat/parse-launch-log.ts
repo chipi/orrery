@@ -69,8 +69,7 @@ const MONTH_MAP: Record<string, number> = {
 };
 
 export type GcatHeaderAssertionResult =
-  | { ok: true }
-  | { ok: false; reason: 'no-header' | 'column-mismatch'; details: string };
+  { ok: true } | { ok: false; reason: 'no-header' | 'column-mismatch'; details: string };
 
 /**
  * Asserts the GCAT TSV starts with the expected 28-column header. Call

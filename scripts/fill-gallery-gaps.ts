@@ -63,6 +63,14 @@ function argValue(flag: string): string | undefined {
   return eq ? eq.slice(flag.length + 1) : undefined;
 }
 const onlyId = argValue('--id') ?? argValue('--mission');
+// --exclude a,b,c : skip these gallery ids (e.g. galleries already handled
+// individually, so a global run doesn't re-touch them).
+const excludeIds = new Set(
+  (argValue('--exclude') ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean),
+);
 
 // Quality gate: fetched candidates are scored (subject-aware) and dropped if
 // they're infographics/diagrams, people, off-subject, or low quality — so the
@@ -395,6 +403,7 @@ async function main(): Promise<void> {
     summaries[surface].totalEntities = entities.length;
     for (const id of entities.sort()) {
       if (onlyId && id !== onlyId) continue;
+      if (excludeIds.has(id)) continue;
       const r = await processEntity(surface, id);
       if (r.currentSlots >= TARGET_SLOTS) continue;
       summaries[surface].underTarget++;

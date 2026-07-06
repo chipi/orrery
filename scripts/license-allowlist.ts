@@ -87,6 +87,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'Unsplash-License',
+    display: 'Unsplash License',
+    url: 'https://unsplash.com/license',
+    rationale:
+      'Unsplash grants an irrevocable, worldwide, non-exclusive licence to use photos for free — commercial and non-commercial — without permission or attribution. (Photos may not be sold unmodified, nor compiled to replicate a competing service.) Orrery uses individual mission-relevant photos and retains voluntary photographer/agency credit in provenance.',
+    requires_attribution: false,
+    share_alike: false,
+  },
+  {
     short: 'GODL-India',
     display: 'Government Open Data License – India',
     url: 'https://data.gov.in/Godl',

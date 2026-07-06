@@ -83,11 +83,20 @@ function argValue(flag: string): string | undefined {
   return eq ? eq.slice(flag.length + 1) : undefined;
 }
 const onlyId = argValue('--id') ?? argValue('--mission');
+// --exclude a,b,c : skip these gallery ids. Use to protect galleries whose
+// review paths have gone stale after an earlier prune/fill renumber (a
+// --from-review run keyed on old slot paths would drop the wrong slots).
+const excludeIds = new Set(
+  (argValue('--exclude') ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean),
+);
 const REVIEW_PATH = 'static/data/off-subject-review.json';
 // --from-review: drop the EXACT slots the human review marked 'remove'
 // (off-subject-review.json) instead of the top-5-by-score cap. Reuses the
 // same renumber + manifest-update machinery. Scope with --id <galleryId>.
-let removeSet = new Set<string>();
+const removeSet = new Set<string>();
 
 async function main(): Promise<void> {
   console.log(`prune-image-slots — ${dryRun ? 'DRY RUN' : 'APPLY'} mode`);
@@ -130,6 +139,7 @@ async function main(): Promise<void> {
     }
     for (const id of ids) {
       if (onlyId && id !== onlyId) continue;
+      if (excludeIds.has(id)) continue;
       const plan = await buildPlanForId(surface, id, vision.entries);
       if (!plan) continue;
       const include = fromReview ? plan.drop.length > 0 : plan.slotsBefore > MAX_SLOTS_PER_ID;

@@ -7,7 +7,7 @@
  */
 import { fetchUnsplash } from './unsplash.ts';
 import { fetchSpacexFlickr } from './flickr-spacex.ts';
-import { fetchNasaGallery } from './nasa-gallery.ts';
+import { fetchNasaGallery, hasNasaGallerySlug } from './nasa-gallery.ts';
 import { fetchEsaPortal } from './esa-portal.ts';
 
 export interface SourceCandidate {
@@ -31,8 +31,8 @@ type FetchFn = (opts: {
 interface Adapter {
   name: string;
   fetch: FetchFn;
-  /** Does this source cover the given agency? */
-  covers: (agency?: string) => boolean;
+  /** Does this source cover the given agency / mission? */
+  covers: (agency?: string, missionId?: string) => boolean;
 }
 
 const has = (agency: string | undefined, needle: string) =>
@@ -46,13 +46,19 @@ const ADAPTERS: Adapter[] = [
     covers: (a) => has(a, 'esa') || has(a, 'european space'),
   },
   { name: 'flickr-spacex', fetch: fetchSpacexFlickr, covers: (a) => has(a, 'spacex') },
-  { name: 'nasa-gallery', fetch: fetchNasaGallery, covers: (a) => has(a, 'nasa') },
+  {
+    name: 'nasa-gallery',
+    fetch: fetchNasaGallery,
+    // NASA hosts galleries for missions it flies even when the operating
+    // agency isn't NASA (Blue Origin CLPS lander) — cover those by known slug.
+    covers: (a, id) => has(a, 'nasa') || (id ? hasNasaGallerySlug(id) : false),
+  },
   { name: 'unsplash', fetch: fetchUnsplash, covers: (a) => has(a, 'nasa') || has(a, 'spacex') },
 ];
 
-/** Adapters that cover this agency, in preference order. */
-export function sourcesFor(agency?: string): Adapter[] {
-  return ADAPTERS.filter((a) => a.covers(agency));
+/** Adapters that cover this agency/mission, in preference order. */
+export function sourcesFor(agency?: string, missionId?: string): Adapter[] {
+  return ADAPTERS.filter((a) => a.covers(agency, missionId));
 }
 
 /**
@@ -67,7 +73,7 @@ export async function gatherFromSources(opts: {
   name?: string;
   limit: number;
 }): Promise<SourceCandidate[]> {
-  const adapters = sourcesFor(opts.agency);
+  const adapters = sourcesFor(opts.agency, opts.missionId);
   const out: SourceCandidate[] = [];
   const seen = new Set<string>();
   for (const a of adapters) {

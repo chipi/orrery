@@ -26,6 +26,12 @@ const SEED_SLUGS: Record<string, string> = {
   artemis3: 'artemis-iii',
 };
 
+/** True when NASA hosts a known gallery for this mission id — including
+ *  non-NASA-agency missions NASA flies (e.g. the Blue Origin CLPS lander). */
+export function hasNasaGallerySlug(id: string): boolean {
+  return id in SEED_SLUGS;
+}
+
 const slugify = (s: string) =>
   s
     .toLowerCase()

@@ -85,19 +85,45 @@ function reliableImageId(p: ImageProvenanceEntry): string | null {
   return null;
 }
 
+/** Normalise a title so same-source-family entries collapse into one credit
+ *  line: strip the File: prefix + extension, and trailing frame / serial /
+ *  "slot N" discriminators ("Kuiper 3 Launches (9339805)" and "(9339806)", or
+ *  "Curated panel image — beidou slot 4/6" → one family). Distinct titles
+ *  ("Apollo 11 flag" vs "Apollo 11 lander") stay apart. */
+function normalizeTitle(title: string | null | undefined): string {
+  return (title ?? '')
+    .replace(/^File:/i, '')
+    .replace(/\.(jpe?g|png|tiff?|svg|webm|pdf|ogv)$/i, '')
+    .replace(/\s+slot\s+\d+\s*$/i, '')
+    .replace(/\s*\(\d{3,}\)\s*$/, '')
+    .replace(/[\s_(-]+[a-z]*\d{4,}[)\s]*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
 /**
- * Collapse photo entries into bundles. See `PhotoBundle` for the
- * two-tier keying strategy: reliable per-image id when available
- * (catches cross-route + hero/panel reuse), `(stem, source_url, title,
- * author)` fallback otherwise (catches aspect-ratio crops while
- * keeping distinct images apart when only the conduit URL is shared).
+ * Collapse photo entries into bundles. Reliable per-image id when available
+ * (catches cross-route + hero/panel reuse + keeps genuinely-distinct sourced
+ * images apart). Otherwise — the generic NASA-search / curated-panel rows whose
+ * per-image source wasn't recorded — collapse by `(source_url, normalized
+ * title, author)` so N distinct images sharing one generic credit render as a
+ * single line instead of N identical repeats.
  */
 export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
   const groups = new Map<string, ImageProvenanceEntry[]>();
   const order: string[] = [];
   for (const p of photos) {
-    const id = reliableImageId(p);
-    const key = id ?? `fallback§${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
+    // A substantial, descriptive title collapses a same-source FAMILY into one
+    // credit line (sequential launch frames, "curated panel slot N", a NASA
+    // search repeated per slot) — the credit is the source, not each frame.
+    // Empty / very short / generic titles fall back to the per-image id so
+    // genuinely-distinct images with no shared descriptive title stay apart.
+    const nt = normalizeTitle(p.title);
+    const key =
+      nt.length > 8
+        ? `title§${nt}§${(p.author ?? '').toLowerCase()}`
+        : (reliableImageId(p) ?? `fallback§${p.source_url}§${nt}§${p.author ?? ''}`);
     const existing = groups.get(key);
     if (existing) {
       existing.push(p);

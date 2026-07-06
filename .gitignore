@@ -88,3 +88,4 @@ static/data/i18n/*.json
 
 # treehouse worktree tool config (local tooling, not app code)
 treehouse.toml
+/_quarantine/

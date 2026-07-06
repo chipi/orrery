@@ -313,6 +313,31 @@ async function buildWikimediaEntry(opts: {
   fallbackTitle?: string;
   modifications: string[];
 }): Promise<ProvenanceEntry> {
+  // Source-type gate: a gallery slot must never be credited to a document or
+  // vector (a rendered PDF page / SVG line-drawing is not a photo). If the
+  // curated map or sidecar points a slot at one, emit a generic agency credit
+  // instead of the bogus File:*.pdf/.svg title. (Raster .tif and video .webm
+  // frames are real images and are left alone.)
+  if (/\.(pdf|svg|djvu)$/i.test(opts.filename)) {
+    return {
+      id: entryId(staticToServed(opts.localPath)),
+      path: staticToServed(opts.localPath),
+      source_type: 'direct-other',
+      title: opts.fallbackTitle ?? `${opts.fallbackAgency} imagery`,
+      author: opts.fallbackAuthor,
+      agency: opts.fallbackAgency,
+      source_url: 'https://commons.wikimedia.org/',
+      image_url: null,
+      license_short: opts.fallbackLicense,
+      license_url: opts.fallbackLicenseUrl ?? getAllowlistEntry(opts.fallbackLicense)?.url ?? null,
+      license_rationale: opts.fallbackLicenseRationale,
+      modifications: [...opts.modifications, 'non-image-source-skipped'],
+      revid: null,
+      pageid: null,
+      nasa_id: null,
+      fetched_at: new Date().toISOString(),
+    };
+  }
   const info = await fetchCommonsImageInfo(opts.filename);
   const title = info?.title ?? opts.fallbackTitle ?? `File:${opts.filename}`;
   const author = info?.artist ?? info?.credit ?? opts.fallbackAuthor;

@@ -29,7 +29,12 @@ const BASELINE_PATH = resolve(ROOT, 'static/data/phash-baseline-allowlist.json')
 
 /** Hamming distance below which two images are flagged as near-dupes.
  *  Tuned for the current corpus — see header. */
-const THRESHOLD = 6;
+const THRESHOLD = 14; // scan ceiling; a stricter per-pair limit is applied below
+// A gallery-card surface holds only DISTINCT images. Within ONE card, be strict
+// — a card must not repeat a near-similar image (d ≤ 14). Across two different
+// cards on the same surface, only a near-identical share is a dupe (d ≤ 6).
+const WITHIN_CARD_MAX = 14;
+const CROSS_CARD_MAX = 6;
 
 // Rule (operator, 2026-07): two DIFFERENT gallery cards on the SAME surface
 // must not share an image; sharing ACROSS surfaces (a mission card + its fleet
@@ -52,6 +57,7 @@ const CARD_SURFACES: ReadonlySet<string> = new Set([
   'belts',
 ]);
 const surfaceOf = (urlPath: string): string => urlPath.split('/')[2] ?? '';
+const galleryOf = (urlPath: string): string => urlPath.split('/')[3] ?? '';
 const isThumb = (urlPath: string): boolean => /\.thumb\.(jpe?g|png)$/i.test(urlPath);
 /** Violation candidate: two near-dupe images on the same card SURFACE — whether
  *  two different cards OR the same card's own slots. Rule (operator): a gallery
@@ -466,9 +472,12 @@ function main(): void {
       const [pb, hb] = entries[j];
       const d = hammingDistance(ha, hb);
       if (d > THRESHOLD) continue;
-      // Rule: only two cards on the SAME gallery-card surface is a violation.
-      // Cross-surface reuse + non-card surfaces + thumbnail variants are fine.
+      // Rule: a gallery-card surface holds only DISTINCT images. Cross-surface
+      // reuse + non-card surfaces + thumbnail variants are fine.
       if (!sameCardSurfacePair(pa, pb)) continue;
+      // Strict within a single card (d ≤ 14); near-identical only across two
+      // different cards on the same surface (d ≤ 6).
+      if (d > (galleryOf(pa) === galleryOf(pb) ? WITHIN_CARD_MAX : CROSS_CARD_MAX)) continue;
       const key = ha < hb ? `${ha}|${hb}` : `${hb}|${ha}`;
       if (ALLOWLIST.has(key)) continue;
       // Auto-skip pairs whose on-disk bytes are identical AND already

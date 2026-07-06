@@ -421,23 +421,33 @@ describe('bundlePhotos', () => {
     expect(bundles).toHaveLength(1);
     expect(bundles[0].stems).toHaveLength(2);
   });
-  it('does NOT collapse NASA-search rows that share only a generic source_url', () => {
-    // These rows share a search-query source_url but represent
-    // DISTINCT NASA images (different search results). Without a
-    // reliable per-image id, they MUST stay separate to preserve
-    // honest attribution.
+  it('collapses generic same-source-family rows into one credit line', () => {
+    // Rows sharing a generic title + search-query source_url with no reliable
+    // per-image id would otherwise render as N identical credit lines. They
+    // collapse into ONE bundle that credits the shared source and lists both
+    // images (the credit is the source, not each frame).
+    const url = 'https://images.nasa.gov/search?q=apollo11';
+    const bundles = bundlePhotos([
+      makePhoto({ path: '/images/missions/apollo11/02.jpg', source_url: url, title: 'apollo11' }),
+      makePhoto({ path: '/images/missions/apollo11/03.jpg', source_url: url, title: 'apollo11' }),
+    ]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].stems).toHaveLength(2);
+  });
+  it('keeps genuinely distinct-title images apart', () => {
+    // Descriptive, different titles are NOT a family — they stay separate so
+    // real per-image attribution is preserved.
     const url = 'https://images.nasa.gov/search?q=apollo11';
     const bundles = bundlePhotos([
       makePhoto({
         path: '/images/missions/apollo11/02.jpg',
         source_url: url,
-        title: 'apollo11',
-        // no image_url / nasa_id / pageid / revid
+        title: 'Apollo 11 lunar module ascent',
       }),
       makePhoto({
         path: '/images/missions/apollo11/03.jpg',
         source_url: url,
-        title: 'apollo11',
+        title: 'Apollo 11 crew portrait',
       }),
     ]);
     expect(bundles).toHaveLength(2);
@@ -453,15 +463,16 @@ describe('bundlePhotos', () => {
     expect(bundles).toHaveLength(1);
     expect(bundles[0].variants).toEqual(['4:3', '1:1', 'original']);
   });
-  it('does NOT collapse different slots that share a source url', () => {
-    // LRO/02 and LRO/03 both come from the same NASA search URL but
-    // are different result images — different slot numbers ⇒
-    // different stems ⇒ different bundles.
+  it('collapses same generic-title slots from one source into one bundle', () => {
+    // LRO/02 and LRO/03 share the same generic title + NASA search URL. Rather
+    // than two identical "lro" credit lines, they collapse into one bundle
+    // covering both stems.
     const url = 'https://images.nasa.gov/search?q=lro';
     const bundles = bundlePhotos([
       makePhoto({ path: '/images/missions/lro/02.jpg', source_url: url, title: 'lro' }),
       makePhoto({ path: '/images/missions/lro/03.jpg', source_url: url, title: 'lro' }),
     ]);
-    expect(bundles).toHaveLength(2);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].stems).toHaveLength(2);
   });
 });

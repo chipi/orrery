@@ -46,7 +46,7 @@ export async function fetchNasaGallery(opts: {
         SEED_SLUGS[opts.missionId],
         opts.name ? slugify(opts.name) : undefined,
         opts.query ? slugify(opts.query) : undefined,
-        'ksc-history', // last-resort generic gallery
+        // no generic fallback — precise-or-nothing (avoid wrong-mission imagery)
       ].filter((s): s is string => !!s),
     ),
   );

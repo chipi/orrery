@@ -56,7 +56,9 @@ export async function fetchSpacexFlickr(opts: {
       : items;
     // SpaceX titles are terse — if the query matched nothing, fall back to the
     // newest N so the caller still gets real candidates.
-    const chosen = (matched.length ? matched : items).slice(0, opts.limit);
+    // Precise-or-nothing: if the query matched no titles, return none (the
+    // recent-feed's newest-N would be wrong-mission imagery).
+    const chosen = matched.slice(0, opts.limit);
 
     return chosen
       .map((it): SourceCandidate | null => {

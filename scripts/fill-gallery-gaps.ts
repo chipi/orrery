@@ -27,6 +27,14 @@ import { computePhash, hammingDistance } from './lib/phash.ts';
 
 const TARGET_SLOTS = 5;
 import { resolveIdentity, resolveSubject } from './vision/subject.ts';
+import { gatherFromSources, type SourceCandidate } from './lib/sources/index.ts';
+
+// First-party landed images carry real credit/license inline (unlike Commons,
+// whose attribution build-image-provenance re-fetches). We collect them here +
+// write static/data/source-fetch-provenance.json, which build-image-provenance's
+// buildSourceFetchEntries() overlays by path (fail-closed on non-allowlisted
+// licenses) so /credits stays honest for ESA/SpaceX/NASA/Unsplash imagery.
+const landedProvenance: Record<string, unknown>[] = [];
 import { createAnthropicVisionProvider } from './vision/anthropic.ts';
 import { resolveScoreFromCacheOrProvider } from './vision/cache.ts';
 
@@ -161,8 +169,7 @@ async function searchCommons(query: string, limit: number): Promise<string[]> {
   }
 }
 
-async function fetchCommons(title: string): Promise<Buffer | null> {
-  const url = `${COMMONS_FILEPATH}/${encodeURIComponent(title)}?width=1600`;
+async function fetchImageBytes(url: string): Promise<Buffer | null> {
   try {
     const res = await fetch(url, { headers: { 'User-Agent': UA } });
     if (!res.ok) return null;
@@ -205,8 +212,28 @@ async function processEntity(surface: string, id: string): Promise<CandidateResu
     if (cache.phashes[urlPath]) localCache[urlPath] = cache.phashes[urlPath];
   }
 
-  const hits = await searchCommons(result.query, Math.min(20, 5 + need * 3));
-  result.searchHits = hits.length;
+  // First-party official sources for this entity's agency, tried BEFORE the
+  // Commons keyword-search failover; each carries real credit + license.
+  const agency = resolveIdentity(id)?.agency;
+  const primary = await gatherFromSources({
+    query: result.query,
+    missionId: id,
+    agency,
+    name: id,
+    limit: Math.max(need + 2, 4),
+  });
+  const commonsTitles = await searchCommons(result.query, Math.min(20, 5 + need * 3));
+  result.searchHits = primary.length + commonsTitles.length;
+
+  type Cand = { imageUrl: string; title: string; meta: SourceCandidate | null };
+  const candidates: Cand[] = [
+    ...primary.map((c) => ({ imageUrl: c.imageUrl, title: c.title, meta: c })),
+    ...commonsTitles.map((t) => ({
+      imageUrl: `${COMMONS_FILEPATH}/${encodeURIComponent(t)}?width=1600`,
+      title: t,
+      meta: null as SourceCandidate | null,
+    })),
+  ];
 
   // Pick the next available slot number (highest existing + 1).
   let nextSlot = 1;
@@ -216,13 +243,13 @@ async function processEntity(surface: string, id: string): Promise<CandidateResu
   }
 
   let accepted = 0;
-  for (const title of hits) {
+  for (const item of candidates) {
     if (accepted >= need) break;
-    const cand: CandidateResult['candidates'][number] = { title, fetched: false };
+    const cand: CandidateResult['candidates'][number] = { title: item.title, fetched: false };
     result.candidates.push(cand);
 
-    const buf = await fetchCommons(title);
-    await sleep(COMMONS_DELAY_MS);
+    const buf = await fetchImageBytes(item.imageUrl);
+    await sleep(item.meta ? 250 : COMMONS_DELAY_MS);
     if (!buf) continue;
     cand.fetched = true;
     let baseJpg: Buffer;
@@ -297,6 +324,18 @@ async function processEntity(surface: string, id: string): Promise<CandidateResu
         await writeFile(one, oneXone);
         const urlPath = `/images/${surface}/${id}/${slotName}`;
         cache.phashes[urlPath] = hash;
+        if (item.meta) {
+          landedProvenance.push({
+            path: urlPath,
+            source_url: item.meta.sourceUrl,
+            image_url: item.meta.imageUrl,
+            title: item.meta.title,
+            author: item.meta.author,
+            license_short: item.meta.license_short,
+            license_url: item.meta.license_url,
+            source: item.meta.source,
+          });
+        }
         localCache[urlPath] = hash;
         accepted++;
         nextSlot++;
@@ -399,6 +438,25 @@ async function main(): Promise<void> {
     );
     writeFileSync(PHASH_CACHE_PATH, JSON.stringify(cache, null, 2) + '\n');
     console.log(`pHash cache updated: ${Object.keys(cache.phashes).length} entries`);
+
+    // First-party provenance sidecar (real credit/license for landed non-Commons
+    // images — build-image-provenance merges this so /credits stays honest).
+    if (landedProvenance.length) {
+      const SIDECAR = 'static/data/source-fetch-provenance.json';
+      let existing: Record<string, unknown>[] = [];
+      try {
+        existing = JSON.parse(readFileSync(SIDECAR, 'utf-8')) as Record<string, unknown>[];
+      } catch {
+        /* new file */
+      }
+      const byPath = new Map(existing.map((e) => [e.path as string, e]));
+      for (const e of landedProvenance) byPath.set(e.path as string, e);
+      const merged = [...byPath.values()].sort((a, b) =>
+        String(a.path).localeCompare(String(b.path)),
+      );
+      writeFileSync(SIDECAR, JSON.stringify(merged, null, 2) + '\n');
+      console.log(`source-fetch provenance: +${landedProvenance.length} (${merged.length} total)`);
+    }
   }
 
   // Write the report markdown

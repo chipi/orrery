@@ -2271,6 +2271,86 @@ async function buildRecommendationEntries(): Promise<ProvenanceEntry[]> {
   return out;
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// First-party source-adapter sidecar (fill-gallery-gaps → scripts/lib/sources/*)
+//
+// `static/data/source-fetch-provenance.json` is an ARRAY of entries, each
+// already carrying real upstream credit + license (ESA portal, SpaceX
+// Flickr, NASA galleries, Unsplash). Unlike Commons imagery — attributed
+// here by re-fetching imageinfo — these images have no Commons page, and
+// the slot-index heuristic would MIS-credit them by gallery position. So
+// these entries are overlaid LAST in buildAllEntries (they win by path).
+// Fails closed: an image whose license isn't allowlisted is skipped +
+// warned, so it can never ship credited (e.g. Unsplash-License until it's
+// added to scripts/license-allowlist.ts).
+// ──────────────────────────────────────────────────────────────────────
+
+function sourceFetchSourceType(source: string): SourceType {
+  if (source.startsWith('nasa')) return 'nasa-images-api';
+  return 'direct-agency';
+}
+
+function sourceFetchAgency(source: string, author: string): string {
+  switch (source) {
+    case 'esa-portal':
+      return 'ESA';
+    case 'flickr-spacex':
+      return 'SpaceX';
+    case 'nasa-gallery':
+      return 'NASA';
+    default:
+      // Unsplash + anything else: the sidecar author carries the credit.
+      return author;
+  }
+}
+
+async function sourceFetchRowToEntry(r: Record<string, unknown>): Promise<ProvenanceEntry | null> {
+  const path = typeof r.path === 'string' ? r.path : null;
+  if (!path) return null;
+  // Sidecar can outlive a pruned image — only credit files still on disk.
+  if (!(await pathExists('static' + path))) return null;
+  const licenseShort = normaliseLicenseShortName(String(r.license_short ?? ''));
+  if (!isAllowedLicense(licenseShort)) {
+    console.warn(
+      `[provenance source-fetch] skipping ${path}: license "${String(r.license_short)}" not allowlisted`,
+    );
+    return null;
+  }
+  const source = String(r.source ?? '');
+  const author = (typeof r.author === 'string' && r.author) || source || 'Unknown';
+  const allow = getAllowlistEntry(licenseShort);
+  return {
+    id: entryId(path),
+    path,
+    source_type: sourceFetchSourceType(source),
+    title: (typeof r.title === 'string' && r.title) || basename(path),
+    author,
+    agency: sourceFetchAgency(source, author),
+    source_url: String(r.source_url ?? r.image_url ?? ''),
+    image_url: typeof r.image_url === 'string' ? r.image_url : null,
+    license_short: licenseShort,
+    license_url: (typeof r.license_url === 'string' && r.license_url) || allow?.url || null,
+    license_rationale: allow?.rationale ?? 'See source page.',
+    modifications: ['downloaded-via-source-adapter', 'reencoded-jpeg'],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+  };
+}
+
+async function buildSourceFetchEntries(): Promise<ProvenanceEntry[]> {
+  const sidecarPath = 'static/data/source-fetch-provenance.json';
+  let rows: Array<Record<string, unknown>> = [];
+  try {
+    rows = JSON.parse(await readFile(sidecarPath, 'utf8')) as typeof rows;
+  } catch {
+    return []; // no sidecar yet
+  }
+  const entries = await Promise.all(rows.map((r) => sourceFetchRowToEntry(r)));
+  return entries.filter((e): e is ProvenanceEntry => e !== null);
+}
+
 async function buildAllEntries(): Promise<ProvenanceEntry[]> {
   const out: ProvenanceEntry[] = [];
 
@@ -2482,7 +2562,23 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
   console.log('Walker fallback (uncovered on-disk files)…');
   out.push(...(await buildWalkerFallbackEntries(out)));
 
-  return out;
+  // First-party source-adapter images (ESA/SpaceX/NASA/Unsplash) overlay
+  // LAST — their sidecar carries real upstream credit + license, so they
+  // replace any slot-index-heuristic or walker-fallback guess for the same
+  // path. (built after the fallback so a brand-new first-party slot that no
+  // walker covered still gets its precise entry, not a direct-other guess.)
+  console.log('First-party source-adapter overlay…');
+  const firstParty = await buildSourceFetchEntries();
+  if (firstParty.length) console.log(`  → overlaid ${firstParty.length} first-party entries`);
+  return overlayByPath(out, firstParty);
+}
+
+/** Replace base entries with overlay entries sharing the same served path. */
+function overlayByPath(base: ProvenanceEntry[], overlay: ProvenanceEntry[]): ProvenanceEntry[] {
+  if (!overlay.length) return base;
+  const byPath = new Map(base.map((e) => [e.path, e]));
+  for (const e of overlay) byPath.set(e.path, e);
+  return [...byPath.values()];
 }
 
 /**

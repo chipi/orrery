@@ -1,4 +1,495 @@
 {
   "version": "1.0",
-  "entries": []
+  "entries": [
+    {
+      "path": "/images/missions/apollo-1/04.jpg",
+      "reason": "off-subject (human review): Engineering diagram showing spacecraft hatch assembly with labeled components in",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/apollo13/05.jpg",
+      "reason": "off-subject (human review): Annotated geological map of a lunar surface area showing crater classifications,",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/apollo17/03.jpg",
+      "reason": "off-subject (human review): A speaker at a podium addresses a crowd at an Astronaut Scholarship Foundation e",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/apollo17/04.jpg",
+      "reason": "off-subject (human review): A speaker at a podium during an Astronaut Scholarship Foundation event, with an ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/apollo17/05.jpg",
+      "reason": "off-subject (human review): Split-screen composite showing a Mars rover render on the left and an Apollo Lun",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/artemis2/03.jpg",
+      "reason": "off-subject (human review): Earth's curved horizon photographed from orbit showing cloud formations and the ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/artemis2/05.jpg",
+      "reason": "off-subject (human review): An astronaut works with exercise or research equipment inside the International ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/artemis3/01.jpg",
+      "reason": "off-subject (human review): An astronaut in a white spacesuit kneels in a simulated lunar regolith sandbox d",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/artemis3/05.jpg",
+      "reason": "off-subject (human review): Two astronauts in EVA suits training underwater at NASA's Neutral Buoyancy Labor",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/aurora-7/02.jpg",
+      "reason": "off-subject (human review): A dramatic 19th-century oil painting depicting a sailing ship in an arctic lands",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/bepicolombo/02.jpg",
+      "reason": "off-subject (human review): A simplistic cartoon-style illustration of a generic satellite with solar panels",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/blue-moon-mk1/01.jpg",
+      "reason": "off-subject (human review): A gold-foil-wrapped spacecraft or satellite undergoing thermal vacuum chamber te",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/blue-moon-mk1/03.jpg",
+      "reason": "off-subject (human review): A blue-tinted full Moon photographed against a black sky, showing surface maria ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/blue-moon-mk1/04.jpg",
+      "reason": "off-subject (human review): A diagram showing seasons as phases of the Sun with sinusoidal waves representin",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/blue-moon-mk1/05.jpg",
+      "reason": "off-subject (human review): A labeled diagram showing the four planets of the Wasa star system, including ro",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change1/02.jpg",
+      "reason": "off-subject (human review): A group of people working at computers in a conference or training room with a p",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change1/03.jpg",
+      "reason": "off-subject (human review): A Soviet-era Russian-language declassified government document dated 1945 discus",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change1/04.jpg",
+      "reason": "off-subject (human review): A US Marine Corps officer in camouflage uniform speaking into a microphone outdo",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change3/04.jpg",
+      "reason": "off-subject (human review): Annotated composite diagram showing Chang'e 3 lander and Yutu rover positions on",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change3/05.jpg",
+      "reason": "off-subject (human review): Annotated lunar map showing Sinus Iridum, Mare Imbrium, and Chang'e 3 and Lunokh",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/change6/05.jpg",
+      "reason": "off-subject (human review): Colorful hand-painted tiles or cards attached to a dark wooden structure outdoor",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/clementine/05.jpg",
+      "reason": "off-subject (human review): Two mandarin oranges, one whole and one peeled, reflected on a dark blue surface",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/dart/04.jpg",
+      "reason": "off-subject (human review): A bright rocket exhaust or engine plume illuminating clouds against a dark sky, ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/giotto/05.jpg",
+      "reason": "off-subject (human review): Aerial view of Florence, Italy, featuring Giotto's Campanile bell tower and the ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/hayabusa2/02.jpg",
+      "reason": "off-subject (human review): Asteroid Ryugu photographed from orbit, showing its diamond-shaped rocky surface",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/hope-probe/05.jpg",
+      "reason": "off-subject (human review): A UAE official in traditional dress presents in front of a large screen displayi",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/juice/02.jpg",
+      "reason": "off-subject (human review): Orange juice being poured into a condensation-covered glass against a blue backg",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/juice/03.jpg",
+      "reason": "off-subject (human review): A brightly lit fruit and juice bar stall in an indoor shopping mall or food cour",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/juice/04.jpg",
+      "reason": "off-subject (human review): Fresh pomegranates cut open with seeds visible alongside a glass of pomegranate ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/juice/05.jpg",
+      "reason": "off-subject (human review): Multiple glass pitchers filled with orange juice, apple juice, and other beverag",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/juno/05.jpg",
+      "reason": "off-subject (human review): A vintage black-and-white photograph of a steamship named Juno sailing on calm w",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna10/02.jpg",
+      "reason": "off-subject (human review): A sandy earthen mound or archaeological site with industrial structures on top, ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna10/03.jpg",
+      "reason": "off-subject (human review): Ancient mud-brick ruins at an archaeological site under a protective shelter str",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna10/05.jpg",
+      "reason": "off-subject (human review): A nearly full Moon visible above dramatic cumulus clouds at dusk with a dark hil",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna16/01.jpg",
+      "reason": "off-subject (human review): A small, poorly framed orbital image of a cratered lunar or planetary surface wi",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna16/05.jpg",
+      "reason": "off-subject (human review): Close-up photograph of green grapes growing on a vine in sunlight.",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna21/02.jpg",
+      "reason": "off-subject (human review): The Moon partially obscured by clouds photographed from Earth at night.",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna24/01.jpg",
+      "reason": "off-subject (human review): Grayscale orbital image of a cratered lunar or planetary surface with a scale ba",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/luna24/04.jpg",
+      "reason": "off-subject (human review): A overexposed full moon partially obscured by dark clouds against a night sky, s",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/lunar-prospector/03.jpg",
+      "reason": "off-subject (human review): False-color global map projection of a planetary or lunar surface showing topogr",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/lunar-prospector/04.jpg",
+      "reason": "off-subject (human review): False-color global map projection of a planetary or asteroid surface showing var",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mariner10/03.jpg",
+      "reason": "off-subject (human review): A globe-like mosaic image of Mercury with a warm golden-brown tone showing crate",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mariner4/01.jpg",
+      "reason": "off-subject (human review): A NASA Lewis Research Center black-and-white test or calibration image with fidu",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mariner4/03.jpg",
+      "reason": "off-subject (human review): A technician in a suit inspects a blue aerodynamic rocket model or nose cone in ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mariner4/04.jpg",
+      "reason": "off-subject (human review): Aerial or orbital grayscale image showing a snowy or icy landscape with scattere",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars-express/02.jpg",
+      "reason": "off-subject (human review): High-resolution color image of Phobos, the irregularly shaped cratered moon of M",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars-pathfinder/03.jpg",
+      "reason": "off-subject (human review): Three Mars rover models of different sizes displayed on a plaza in front of a JP",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars2/04.jpg",
+      "reason": "off-subject (human review): Close-up orbital view of the Martian surface showing rocky terrain with dark bas",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars2/05.jpg",
+      "reason": "off-subject (human review): A red and white seaplane taxiing on a lake surrounded by forested shoreline.",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars3/04.jpg",
+      "reason": "off-subject (human review): HiRISE false-color orbital image of the Martian surface showing rocky terrain wi",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars3/05.jpg",
+      "reason": "off-subject (human review): A red and white flying boat aircraft (likely a Martin Mars or similar) flying lo",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars6/03.jpg",
+      "reason": "off-subject (human review): Street art mural on a concrete wall depicting a cartoon alien astronaut riding a",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars6/04.jpg",
+      "reason": "off-subject (human review): A traditional half-timbered building at a road junction with directional signs p",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mars6/05.jpg",
+      "reason": "off-subject (human review): A blue-tinted sunset photographed from the Martian surface showing the Sun near ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/maven/02.jpg",
+      "reason": "off-subject (human review): Composite collage showing Mars globe alongside artist renders of multiple Mars s",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/maven/05.jpg",
+      "reason": "off-subject (human review): Scientific graph showing proton flux measurements at 15-100 MeV and 80-220 MeV e",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mercury-atlas-9/04.jpg",
+      "reason": "off-subject (human review): Three men conversing in a room, one seated at a table, in a black-and-white phot",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mercury-redstone-3/02.jpg",
+      "reason": "off-subject (human review): A large crowd of people, likely sailors or military personnel, pointing and look",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/mmx/05.jpg",
+      "reason": "off-subject (human review): ESA Solar System Explorers infographic showing active, in-development, and legac",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/otv-7/04.jpg",
+      "reason": "off-subject (human review): Earth seen from orbit with spacecraft hardware and a solar panel visible in the ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/polaris-dawn/01.jpg",
+      "reason": "off-subject (human review): A collage of four individuals including a man in casual attire, a man in an Air ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/polaris-dawn/05.jpg",
+      "reason": "off-subject (human review): A group of people in skydiving gear posing indoors in front of a wall sign readi",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/rosetta/02.jpg",
+      "reason": "off-subject (human review): Side-by-side grayscale images of a comet surface with white circles annotating a",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/rosetta/05.jpg",
+      "reason": "off-subject (human review): A plain grey silhouette of the country of Iraq on a black background.",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/schiaparelli/03.jpg",
+      "reason": "off-subject (human review): A high-resolution orbital photograph of a large lunar impact crater with dramati",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/shenzhou-2/03.jpg",
+      "reason": "off-subject (human review): A sandy beach with people near the shoreline, an island in the distance, and an ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/shenzhou-2/05.jpg",
+      "reason": "off-subject (human review): A museum display case showing space food packets, a red bag, and projected photo",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/shenzhou-3/01.jpg",
+      "reason": "off-subject (human review): A sandy beach promenade with a trash bin in the foreground, people walking, and ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/shenzhou-3/05.jpg",
+      "reason": "off-subject (human review): Six Chinese taikonauts in blue flight suits shaking hands and exchanging documen",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/skylab-4/01.jpg",
+      "reason": "off-subject (human review): Three NASA astronauts in yellow flight suits posing beside a NASA T-38 trainer j",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/slim/03.jpg",
+      "reason": "off-subject (human review): A faint bright spot on a gray featureless surface, likely a planetary or small b",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/starship-demo/01.jpg",
+      "reason": "off-subject (human review): Close-up black and white photograph of a polished metal rocket fin and cylindric",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/starship-mars-crew/04.jpg",
+      "reason": "off-subject (human review): Comparison diagram of heavy-lift rockets including flown and planned vehicles fr",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/ulysses/05.jpg",
+      "reason": "off-subject (human review): Black and white portrait photograph of a bearded man in 19th-century formal atti",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vega-1/02.jpg",
+      "reason": "off-subject (human review): Soviet commemorative postage stamp block depicting international cooperation in ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vega-1/05.jpg",
+      "reason": "off-subject (human review): Close-up view of Soviet or Russian rocket engine components and hardware in an a",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vega-2/05.jpg",
+      "reason": "off-subject (human review): A woman wearing a GA Inspector badge assembles or inspects braided wiring harnes",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voskhod-1/01.jpg",
+      "reason": "off-subject (human review): Three men in Soviet military and civilian dress with medals, photographed in por",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voskhod-1/03.jpg",
+      "reason": "off-subject (human review): A Soviet-era military officer in uniform decorated with medals and wings insigni",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voskhod-1/04.jpg",
+      "reason": "off-subject (human review): A man in a dark suit with medals, likely a Soviet or Russian cosmonaut or offici",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voskhod-2/02.jpg",
+      "reason": "off-subject (human review): Two men in portrait photographs, one in Soviet military uniform holding flowers ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voskhod-2/03.jpg",
+      "reason": "off-subject (human review): A sepia-toned historical photograph showing a large crowd lining a street to wat",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-2/01.jpg",
+      "reason": "off-subject (human review): A man in a suit and tie photographed from the shoulders up against a light backg",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-2/05.jpg",
+      "reason": "off-subject (human review): Three smiling men in Soviet military uniforms and civilian dress posing together",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-3/01.jpg",
+      "reason": "off-subject (human review): A man in military uniform photographed in a black-and-white portrait.",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-3/02.jpg",
+      "reason": "off-subject (human review): Handwritten note in Russian cursive script signed by A. Nikolaev, expressing pri",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-3/03.jpg",
+      "reason": "off-subject (human review): Two Soviet military officers in uniform waving alongside a young child, likely a",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-4/02.jpg",
+      "reason": "off-subject (human review): Handwritten letter in Russian signed by Soviet cosmonaut Pavel Popovich dated 19",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-4/03.jpg",
+      "reason": "off-subject (human review): A crowd of Soviet citizens celebrating in Red Square holding portraits of cosmon",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-4/04.jpg",
+      "reason": "off-subject (human review): A crowd in Moscow's Red Square celebrating Soviet cosmonauts, holding portraits ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-5/04.jpg",
+      "reason": "off-subject (human review): Group of six Soviet cosmonauts and officials in military uniforms posing togethe",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-5/05.jpg",
+      "reason": "off-subject (human review): A group of Soviet cosmonauts and one woman in military uniforms posing outdoors ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-6/03.jpg",
+      "reason": "off-subject (human review): Handwritten note in Russian signed by a Soviet pilot-cosmonaut, expressing grati",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-6/04.jpg",
+      "reason": "off-subject (human review): A jubilant Soviet crowd in Red Square celebrating a space achievement, with a ba",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/vostok-6/05.jpg",
+      "reason": "off-subject (human review): An embroidered Soviet USSR patch featuring a white dove carrying an olive branch",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voyager-1/03.jpg",
+      "reason": "off-subject (human review): A woman holds up a replica of the Voyager Golden Record at what appears to be a ",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voyager-1/04.jpg",
+      "reason": "off-subject (human review): A woman speaking at a press conference or panel event with a space-related image",
+      "flaggedAt": "2026-07-06"
+    },
+    {
+      "path": "/images/missions/voyager-1/05.jpg",
+      "reason": "off-subject (human review): A woman speaking at what appears to be a NASA or space industry event, gesturing",
+      "flaggedAt": "2026-07-06"
+    }
+  ]
 }

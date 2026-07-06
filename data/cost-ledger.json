@@ -85,6 +85,51 @@
       "cost_usd": 0.56643,
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-07-05T19:07:34.013Z",
+      "scope": "mission=juice skip-crops",
+      "images_processed": 5,
+      "images_cached": 0,
+      "cost_usd": 0.039377999999999996,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-07-05T19:08:52.998Z",
+      "scope": "mission=juice force-score skip-crops",
+      "images_processed": 5,
+      "images_cached": 0,
+      "cost_usd": 0.040653,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-07-05T20:44:09.748Z",
+      "scope": "segment=missions skip-crops",
+      "images_processed": 623,
+      "images_cached": 53,
+      "cost_usd": 4.597503000000009,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-07-05T21:24:54.888Z",
+      "scope": "segment=missions skip-crops",
+      "images_processed": 565,
+      "images_cached": 30,
+      "cost_usd": 4.4809619999999954,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-07-06T07:04:20.118Z",
+      "scope": "mission=juice force-score skip-crops",
+      "images_processed": 1,
+      "images_cached": 0,
+      "cost_usd": 0.007482000000000001,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

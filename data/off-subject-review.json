@@ -1,0 +1,522 @@
+{
+  "version": "1.0",
+  "decisions": {
+    "/images/missions/apollo17/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/aurora-7/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/blue-moon-mk1/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/blue-moon-mk1/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/change1/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/change6/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/change1/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/change1/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/clementine/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/giotto/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/juice/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/juice/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/luna10/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/juno/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/juice/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/juice/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/luna10/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/luna16/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/mars2/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/mars3/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/polaris-dawn/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/mmx/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/mars6/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/mars6/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/polaris-dawn/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/rosetta/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/shenzhou-2/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/shenzhou-3/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/vostok-6/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/voskhod-2/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/ulysses/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:26:20.508Z"
+    },
+    "/images/missions/apollo17/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/hayabusa2/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/blue-moon-mk1/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/hayabusa2/05.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/hayabusa2/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/hope-probe/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/luna10/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/luna16/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/luna21/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/luna24/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/maven/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/otv-7/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mercury-redstone-3/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/shenzhou-2/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/sigma-7/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/starship-mars-crew/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis3/03.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis3/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/smart-1/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/venera-13/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mars-pathfinder/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis3/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/skylab-4/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mariner4/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mariner4/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/lunar-prospector/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/lunar-prospector/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mariner10/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis3/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/dawn/03.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis2/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-2/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/venera-13/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/hayabusa2/02.jpg": {
+      "decision": "remove",
+      "note": "duplicate",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-1/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/shenzhou-2/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mars6/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/change1/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/juice/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis2/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/artemis3/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/apollo17/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voyager-1/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voyager-1/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voyager-1/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-6/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-6/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-4/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-4/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-5/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-5/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-4/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-3/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-3/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-3/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-2/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-2/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-2/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vostok-2/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-1/05.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-1/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-1/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/voskhod-1/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-2/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-2/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-2/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-1/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-1/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/vega-1/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/shenzhou-3/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/shenzhou-3/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/shenzhou-2/02.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/mercury-atlas-9/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:23:23.832Z"
+    },
+    "/images/missions/apollo-1/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/apollo13/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/bepicolombo/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/change3/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/change3/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/dart/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mariner4/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mars-express/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mars2/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mars3/04.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mars6/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/schiaparelli/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/shenzhou-3/05.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/slim/03.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/bepicolombo/03.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/luna24/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/maven/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/rosetta/02.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/rosetta/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/venera-13/05.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/mars-express/04.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/blue-moon-mk1/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/starship-demo/01.jpg": {
+      "decision": "remove",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/rosetta/03.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    },
+    "/images/missions/rosetta/01.jpg": {
+      "decision": "keep",
+      "at": "2026-07-06T05:25:38.023Z"
+    }
+  }
+}

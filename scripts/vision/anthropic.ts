@@ -1,5 +1,6 @@
 import '../lib/load-env.ts'; // load .env before ANTHROPIC_API_KEY is read
 import Anthropic from '@anthropic-ai/sdk';
+import sharp from 'sharp';
 import { SYSTEM_PROMPT, buildUserMessage } from './prompt.ts';
 import type {
   VisionProvider,
@@ -73,6 +74,43 @@ export function createAnthropicVisionProvider(
   };
 }
 
+type ApiMediaType = ReturnType<typeof detectMediaType>;
+
+// Anthropic rejects any image whose longest side exceeds 8000px with a 400
+// (which, uncaught, crashes the whole batch), and it downsamples everything
+// to ~1568px server-side for scoring anyway. So downscale oversized source
+// images client-side before upload: fixes the crash + cuts upload/tokens.
+// Only shrinks — small images pass through untouched. Re-encodes to JPEG
+// when it resizes, so the declared media type is updated to match.
+const API_MAX_EDGE = 1568;
+
+async function prepareImageForApi(
+  bytes: Buffer,
+  mediaType: ApiMediaType,
+): Promise<{ data: string; mediaType: ApiMediaType }> {
+  try {
+    const img = sharp(bytes, { failOn: 'none' });
+    const meta = await img.metadata();
+    const longest = Math.max(meta.width ?? 0, meta.height ?? 0);
+    if (!longest || longest <= API_MAX_EDGE) {
+      return { data: bytes.toString('base64'), mediaType };
+    }
+    const resized = await img
+      .resize({
+        width: API_MAX_EDGE,
+        height: API_MAX_EDGE,
+        fit: 'inside',
+        withoutEnlargement: true,
+      })
+      .jpeg({ quality: 90 })
+      .toBuffer();
+    return { data: resized.toString('base64'), mediaType: 'image/jpeg' };
+  } catch {
+    // sharp couldn't read it — let the API decide on the original bytes.
+    return { data: bytes.toString('base64'), mediaType };
+  }
+}
+
 async function scoreOnce(
   client: Anthropic,
   model: string,
@@ -82,7 +120,7 @@ async function scoreOnce(
     contextHint: input.contextHint,
     denyListExamples: input.denyListExamples,
   });
-  const mediaType = detectMediaType(input.imagePath);
+  const prepared = await prepareImageForApi(input.imageBytes, detectMediaType(input.imagePath));
   let lastError: unknown = null;
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -98,8 +136,8 @@ async function scoreOnce(
                 type: 'image',
                 source: {
                   type: 'base64',
-                  media_type: mediaType,
-                  data: input.imageBytes.toString('base64'),
+                  media_type: prepared.mediaType,
+                  data: prepared.data,
                 },
               },
               {

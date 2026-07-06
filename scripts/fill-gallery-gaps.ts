@@ -26,6 +26,10 @@ import sharp from 'sharp';
 import { computePhash, hammingDistance } from './lib/phash.ts';
 
 const TARGET_SLOTS = 5;
+import { resolveIdentity, resolveSubject } from './vision/subject.ts';
+import { createAnthropicVisionProvider } from './vision/anthropic.ts';
+import { resolveScoreFromCacheOrProvider } from './vision/cache.ts';
+
 const SURFACES: Record<string, string> = {
   missions: 'static/images/missions',
   'fleet-galleries': 'static/images/fleet-galleries',
@@ -44,6 +48,31 @@ const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 const COMMONS_DELAY_MS = 1100;
 
 const dryRun = process.argv.includes('--dry');
+function argValue(flag: string): string | undefined {
+  const i = process.argv.indexOf(flag);
+  if (i >= 0 && process.argv[i + 1]) return process.argv[i + 1];
+  const eq = process.argv.find((a) => a.startsWith(flag + '='));
+  return eq ? eq.slice(flag.length + 1) : undefined;
+}
+const onlyId = argValue('--id') ?? argValue('--mission');
+
+// Quality gate: fetched candidates are scored (subject-aware) and dropped if
+// they're infographics/diagrams, people, off-subject, or low quality — so the
+// re-fetch never re-introduces junk. Falls back to pHash-only if no API key.
+const QUALITY_MIN = 5;
+let _provider: ReturnType<typeof createAnthropicVisionProvider> | null = null;
+let _providerFailed = false;
+function visionProvider(): ReturnType<typeof createAnthropicVisionProvider> | null {
+  if (!_provider && !_providerFailed) {
+    try {
+      _provider = createAnthropicVisionProvider();
+    } catch {
+      _providerFailed = true;
+      console.warn('\u26a0 no ANTHROPIC_API_KEY \u2014 fetch quality-gate disabled (pHash only)');
+    }
+  }
+  return _provider;
+}
 
 interface PhashCache {
   computed_at: string;
@@ -63,6 +92,7 @@ interface CandidateResult {
     title: string;
     fetched: boolean;
     nearDupeOf?: string;
+    rejectedByScore?: string;
     accepted?: number; // slot it would land at
   }>;
 }
@@ -95,6 +125,12 @@ function queryFor(surface: string, id: string): string {
   if (surface === 'earth-objects') return `${base} satellite`;
   if (surface === 'moon-sites') return `${base} lunar`;
   if (surface === 'mars-sites') return `${base} mars`;
+  if (surface === 'missions') {
+    // Enrich with agency + target so a bare, keyword-poisoned id like "juice"
+    // becomes "juice ESA jupiter spacecraft" — real imagery, not orange juice.
+    const ident = resolveIdentity(id);
+    return [base, ident?.agency, ident?.target, 'spacecraft'].filter(Boolean).join(' ');
+  }
   return base;
 }
 
@@ -208,6 +244,40 @@ async function processEntity(surface: string, id: string): Promise<CandidateResu
       continue;
     }
 
+    // Quality gate — score-and-reject infographics/diagrams, people,
+    // off-subject, and low-quality BEFORE landing (0.7.3).
+    const provider = visionProvider();
+    if (provider) {
+      const slotPath = `/images/${surface}/${id}/${String(nextSlot).padStart(2, '0')}.jpg`;
+      const scored = await resolveScoreFromCacheOrProvider({
+        imageBytes: baseJpg,
+        imagePath: slotPath,
+        contextHint: resolveSubject(slotPath, { id }),
+        provider,
+        denyListExamples: [],
+      });
+      // Fleet (hardware) galleries reject bare target / off-subject imagery;
+      // MISSION galleries KEEP the mission's own science + flyby imagery (the
+      // Moon, Earth, planets it photographed). mission = broad, fleet = craft only.
+      const reject =
+        scored.category === 'diagram'
+          ? 'diagram/infographic'
+          : scored.category === 'people'
+            ? 'people'
+            : scored.score < QUALITY_MIN
+              ? `low-score-${scored.score}`
+              : surface !== 'missions' && scored.subject_match === false
+                ? 'off-subject'
+                : null;
+      if (reject) {
+        cand.rejectedByScore = reject;
+        console.log(
+          `      \u2717 reject ${slotPath} \u2014 ${reject} (${scored.subject.slice(0, 40)})`,
+        );
+        continue;
+      }
+    }
+
     cand.accepted = nextSlot;
 
     if (!dryRun) {
@@ -285,6 +355,7 @@ async function main(): Promise<void> {
     });
     summaries[surface].totalEntities = entities.length;
     for (const id of entities.sort()) {
+      if (onlyId && id !== onlyId) continue;
       const r = await processEntity(surface, id);
       if (r.currentSlots >= TARGET_SLOTS) continue;
       summaries[surface].underTarget++;

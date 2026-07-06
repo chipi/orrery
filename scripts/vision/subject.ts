@@ -75,6 +75,15 @@ const BODY_SURFACES = new Set([
   'pluto',
 ]);
 
+/**
+ * Public identity lookup — mission id -> { agency, target }. Reused by
+ * fetch-query construction (fill-gallery-gaps) so re-fetches aren't poisoned
+ * by bare ids (e.g. "juice" -> orange juice).
+ */
+export function resolveIdentity(id: string): Identity | undefined {
+  return identityMap()[id];
+}
+
 export function resolveSubject(imagePath: string, source: SubjectSource = {}): string | undefined {
   const surface = surfaceOf(imagePath);
   if (!surface) return undefined;

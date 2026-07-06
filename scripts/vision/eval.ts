@@ -46,9 +46,39 @@ const pct = (x: number) => (Number.isNaN(x) ? ' n/a' : (x * 100).toFixed(0).padS
 
 async function main() {
   const fixture = JSON.parse(await fs.readFile(FIXTURE, 'utf-8')) as { cases: EvalCase[] };
+
+  // Merge human review decisions (static/data/off-subject-review.json) as
+  // AUTHORITATIVE labels — the compounding loop: every keep/remove made in
+  // /dev/off-subject becomes eval ground truth. remove -> negative (confirmed
+  // off-subject), keep -> positive (detector was wrong, on-subject). Review
+  // labels override the curated fixture on the same path.
+  const cases: EvalCase[] = [...fixture.cases];
+  try {
+    const review = JSON.parse(
+      await fs.readFile('static/data/off-subject-review.json', 'utf-8'),
+    ) as {
+      decisions?: Record<string, { decision: 'keep' | 'remove' }>;
+    };
+    const idx = new Map(cases.map((c, i) => [c.path, i]));
+    for (const [path, d] of Object.entries(review.decisions ?? {})) {
+      const label = d.decision === 'remove' ? 'negative' : 'positive';
+      const entity = path.match(/\/images\/[^/]+\/([^/]+)\//)?.[1] ?? '';
+      const rc: EvalCase = {
+        path,
+        label,
+        stratum: 'review-' + d.decision,
+        entity,
+        note: 'human review',
+      };
+      if (idx.has(path)) cases[idx.get(path)!] = rc;
+      else cases.push(rc);
+    }
+  } catch {
+    /* no review file yet */
+  }
   const provider = createAnthropicVisionProvider();
   const rows: Row[] = [];
-  for (const c of fixture.cases) {
+  for (const c of cases) {
     const bytes = await fs.readFile(path.join('static', c.path));
     const res = await resolveScoreFromCacheOrProvider({
       imageBytes: bytes,

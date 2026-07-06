@@ -75,6 +75,19 @@ interface IdPlan {
 }
 
 const dryRun = process.argv.includes('--dry');
+const fromReview = process.argv.includes('--from-review');
+function argValue(flag: string): string | undefined {
+  const i = process.argv.indexOf(flag);
+  if (i >= 0 && process.argv[i + 1]) return process.argv[i + 1];
+  const eq = process.argv.find((a) => a.startsWith(flag + '='));
+  return eq ? eq.slice(flag.length + 1) : undefined;
+}
+const onlyId = argValue('--id') ?? argValue('--mission');
+const REVIEW_PATH = 'static/data/off-subject-review.json';
+// --from-review: drop the EXACT slots the human review marked 'remove'
+// (off-subject-review.json) instead of the top-5-by-score cap. Reuses the
+// same renumber + manifest-update machinery. Scope with --id <galleryId>.
+let removeSet = new Set<string>();
 
 async function main(): Promise<void> {
   console.log(`prune-image-slots — ${dryRun ? 'DRY RUN' : 'APPLY'} mode`);
@@ -84,6 +97,21 @@ async function main(): Promise<void> {
     entries: Record<string, { score?: number; variants?: Record<string, string> }>;
     [k: string]: unknown;
   };
+
+  if (fromReview) {
+    try {
+      const review = JSON.parse(await readFile(REVIEW_PATH, 'utf8')) as {
+        decisions?: Record<string, { decision: string }>;
+      };
+      for (const [path, d] of Object.entries(review.decisions ?? {})) {
+        if (d.decision === 'remove') removeSet.add(path);
+      }
+    } catch {
+      console.error(`--from-review: cannot read ${REVIEW_PATH}`);
+      process.exit(1);
+    }
+    console.log(`--from-review: ${removeSet.size} slots marked remove`);
+  }
 
   // Walk every static/images/<surface>/<id>/ dir; build plans.
   const plans: IdPlan[] = [];
@@ -101,8 +129,11 @@ async function main(): Promise<void> {
       continue;
     }
     for (const id of ids) {
+      if (onlyId && id !== onlyId) continue;
       const plan = await buildPlanForId(surface, id, vision.entries);
-      if (plan && plan.slotsBefore > MAX_SLOTS_PER_ID) plans.push(plan);
+      if (!plan) continue;
+      const include = fromReview ? plan.drop.length > 0 : plan.slotsBefore > MAX_SLOTS_PER_ID;
+      if (include) plans.push(plan);
     }
   }
 
@@ -112,9 +143,11 @@ async function main(): Promise<void> {
     return;
   }
 
-  console.log(`Found ${plans.length} IDs with > ${MAX_SLOTS_PER_ID} base slots:`);
+  console.log(`Found ${plans.length} galleries to prune:`);
   for (const p of plans) {
-    console.log(`  ${p.surface}/${p.id}  ${p.slotsBefore} → 5`);
+    console.log(
+      `  ${p.surface}/${p.id}  ${p.slotsBefore} → ${p.keep.length} (drop ${p.drop.length})`,
+    );
   }
 
   if (dryRun) {
@@ -182,11 +215,14 @@ async function buildPlanForId(
     return a.slot - b.slot; // ties → keep lower slot first
   });
   const keepCount = Math.min(MAX_SLOTS_PER_ID, ranking.length);
-  const keep = ranking.slice(0, keepCount).map((source, i) => ({
-    source,
-    newSlot: i + 1,
-  }));
-  const drop = ranking.slice(keepCount);
+  const keepSlots = fromReview
+    ? ranking.filter((sl) => !removeSet.has(sl.servedBase))
+    : ranking.slice(0, keepCount);
+  const dropSlots = fromReview
+    ? ranking.filter((sl) => removeSet.has(sl.servedBase))
+    : ranking.slice(keepCount);
+  const keep = keepSlots.map((source, i) => ({ source, newSlot: i + 1 }));
+  const drop = dropSlots;
   // If kept slots already line up with their new slot numbers and no
   // drops needed, this plan is a no-op.
   const renameNeeded = keep.some((k) => k.source.slot !== k.newSlot);
@@ -398,7 +434,7 @@ async function writeReport(plans: IdPlan[]): Promise<void> {
   lines.push(`Found ${plans.length} IDs over cap. Action plan:`);
   lines.push('');
   for (const plan of plans) {
-    lines.push(`## ${plan.surface}/${plan.id}  — ${plan.slotsBefore} → 5`);
+    lines.push(`## ${plan.surface}/${plan.id}  — ${plan.slotsBefore} → ${plan.keep.length}`);
     lines.push('');
     lines.push('| Action | Old slot | Score | New slot | Path |');
     lines.push('|---|---|---|---|---|');

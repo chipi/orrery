@@ -1,261 +1,68 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-06-23T17:59:14.072Z
+Generated: 2026-07-06T14:35:05.745Z
 Script: build-image-provenance@1.0.0
-Commit: c4feb7f2c6c8838e44e56a9983efc1f16ff0fff2
-Total entries: 3712
+Commit: f29c72371bf89f3b2159f37a75a3588fd4acb58e
+Total entries: 3730
 
-## ⚠ Validation failures
+## Added (2)
 
-- `/images/fleet-galleries/change1/01.jpg` — duplicate manifest entry (2 entries)
-- `/images/fleet-galleries/smart-1/02.jpg` — duplicate manifest entry (2 entries)
-- `/images/fleet-galleries/smart-1/03.jpg` — duplicate manifest entry (2 entries)
-- `/images/fleet-galleries/smart-1/04.jpg` — duplicate manifest entry (2 entries)
-- `/images/fleet-galleries/smart-1/05.jpg` — duplicate manifest entry (2 entries)
+- `/images/missions/vega-1/04.1x1.jpg` — PD-NASA via nasa-images-api
+- `/images/missions/vega-1/04.jpg` — CC-BY-SA-3.0-IGO via direct-agency
 
-## Added (278)
+## Removed (52)
 
-- `/images/anatomy/akatsuki.webp` — PD-NASA via direct-other
-- `/images/anatomy/antares.webp` — PD-NASA via direct-other
-- `/images/anatomy/apollo-csm-block-ii.webp` — PD-NASA via direct-other
-- `/images/anatomy/apollo-lm.webp` — PD-NASA via direct-other
-- `/images/anatomy/ariane-1.webp` — PD-NASA via direct-other
-- `/images/anatomy/ariane-5.webp` — PD-NASA via direct-other
-- `/images/anatomy/ariane-6.webp` — PD-NASA via direct-other
-- `/images/anatomy/atlas-v.webp` — PD-NASA via direct-other
-- `/images/anatomy/atv.webp` — PD-NASA via direct-other
-- `/images/anatomy/bepicolombo.webp` — PD-NASA via direct-other
-- `/images/anatomy/beresheet.webp` — PD-NASA via direct-other
-- `/images/anatomy/blue-moon-mk1.webp` — PD-NASA via direct-other
-- `/images/anatomy/buran.webp` — PD-NASA via direct-other
-- `/images/anatomy/cargo-dragon-2.webp` — PD-NASA via direct-other
-- `/images/anatomy/cargo-dragon-v1.webp` — PD-NASA via direct-other
-- `/images/anatomy/cassini.webp` — PD-NASA via direct-other
-- `/images/anatomy/chandra.webp` — PD-NASA via direct-other
-- `/images/anatomy/chandrayaan1.webp` — PD-NASA via direct-other
-- `/images/anatomy/change-3.webp` — PD-NASA via direct-other
-- `/images/anatomy/change-4.webp` — PD-NASA via direct-other
-- `/images/anatomy/change-5.webp` — PD-NASA via direct-other
-- `/images/anatomy/compton-gro.webp` — PD-NASA via direct-other
-- `/images/anatomy/crew-dragon.webp` — PD-NASA via direct-other
-- `/images/anatomy/curiosity.webp` — PD-NASA via direct-other
-- `/images/anatomy/cygnus-enhanced.webp` — PD-NASA via direct-other
-- `/images/anatomy/dart.webp` — PD-NASA via direct-other
-- `/images/anatomy/dawn.webp` — PD-NASA via direct-other
-- `/images/anatomy/delta-ii.webp` — PD-NASA via direct-other
-- `/images/anatomy/energia.webp` — PD-NASA via direct-other
-- `/images/anatomy/euclid.webp` — PD-NASA via direct-other
-- `/images/anatomy/europa-clipper.webp` — PD-NASA via direct-other
-- `/images/anatomy/exomars-rosalind-franklin.webp` — PD-NASA via direct-other
-- `/images/anatomy/exomars-tgo.webp` — PD-NASA via direct-other
-- `/images/anatomy/falcon-9.webp` — PD-NASA via direct-other
-- `/images/anatomy/falcon-heavy.webp` — PD-NASA via direct-other
-- `/images/anatomy/gaganyaan.webp` — PD-NASA via direct-other
-- `/images/anatomy/gaia.webp` — PD-NASA via direct-other
-- `/images/anatomy/galileo.webp` — PD-NASA via direct-other
-- `/images/anatomy/gemini.webp` — PD-NASA via direct-other
-- `/images/anatomy/h-iia.webp` — PD-NASA via direct-other
-- `/images/anatomy/h3.webp` — PD-NASA via direct-other
-- `/images/anatomy/hakuto-r.webp` — PD-NASA via direct-other
-- `/images/anatomy/hayabusa-2.webp` — PD-NASA via direct-other
-- `/images/anatomy/hayabusa.webp` — PD-NASA via direct-other
-- `/images/anatomy/hitomi.webp` — PD-NASA via direct-other
-- `/images/anatomy/hope.webp` — PD-NASA via direct-other
-- `/images/anatomy/htv-x.webp` — PD-NASA via direct-other
-- `/images/anatomy/htv.webp` — PD-NASA via direct-other
-- `/images/anatomy/hubble.webp` — PD-NASA via direct-other
-- `/images/anatomy/im-1-odysseus.webp` — PD-NASA via direct-other
-- … 228 more
+- `/images/fleet-galleries/a7l/03.jpg` — was PD-NASA via wikimedia-commons
+- `/images/fleet-galleries/a7l/04.jpg` — was PD-NASA via wikimedia-commons
+- `/images/fleet-galleries/a7l/05.jpg` — was PD-NASA via wikimedia-commons
+- `/images/fleet-galleries/change1/05.jpg` — was CC-BY-SA-4.0 via direct-other
+- `/images/fleet-galleries/dart/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/dart/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/goes-noaa/05.jpg` — was PD-Old via direct-other
+- `/images/fleet-galleries/juno/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/kourou-ela-4/04.jpg` — was PD-NASA via direct-other
+- `/images/fleet-galleries/kourou-ela-4/05.jpg` — was PD-NASA via direct-other
+- `/images/fleet-galleries/lc-34/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/lc-34/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/lc-34/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/long-march-3b/05.jpg` — was PD-Old via direct-other
+- `/images/fleet-galleries/n1/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/psyche-spacecraft/05.jpg` — was PD-NASA via direct-other
+- `/images/fleet-galleries/salyut-3/05.jpg` — was PD-Old via direct-other
+- `/images/fleet-galleries/salyut-7/02.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/salyut-7/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/salyut-7/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/salyut-7/05.jpg` — was PD-NASA via nasa-images-api
+- `/images/fleet-galleries/sbirs-heo/05.jpg` — was PD-Old via direct-other
+- `/images/fleet-galleries/soyuz-tma/05.jpg` — was PD-Russia via wikimedia-commons
+- `/images/fleet-galleries/tianzhou/04.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/tianzhou/05.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
+- `/images/fleet-galleries/ulysses/04.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/ulysses/05.jpg` — was CC-BY-SA-3.0-IGO via wikimedia-commons
+- `/images/fleet-galleries/venera-7/04.jpg` — was PD-Russia via direct-other
+- `/images/fleet-galleries/vostok/05.jpg` — was PD-Old via direct-other
+- `/images/fleet-galleries/wenchang-lc-101/05.jpg` — was PD-NASA via direct-other
+- `/images/fleet-galleries/xichang-lc-2/02.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
+- `/images/missions/apollo8/05.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/aurora-7/05.jpg` — was PD-NASA via direct-other
+- `/images/missions/europa-clipper/05.jpg` — was PD-NASA via direct-other
+- `/images/missions/luna21/04.jpg` — was PD-Russia via wikimedia-commons
+- `/images/missions/mercury-atlas-9/03.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/mercury-atlas-9/04.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/rosetta/03.1x1.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/rosetta/03.jpg` — was PD-NASA via wikimedia-commons
+- `/images/missions/solar-orbiter/05.jpg` — was PD-NASA via direct-other
+- `/images/missions/starship-mars-crew/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/starship-mars-crew/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/vega-1/05.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/vega-1/05.jpg` — was CC-BY-SA-3.0-IGO via direct-agency
+- `/images/missions/vega-2/04.1x1.jpg` — was PD-NASA via nasa-images-api
+- `/images/missions/vega-2/04.jpg` — was PD-NASA via nasa-images-api
+- `/images/satellites/charon/05.jpg` — was PD-NASA via wikimedia-commons
+- `/images/satellites/enceladus/05.jpg` — was PD-Old via wikimedia-commons
+- `/images/satellites/europa/05.jpg` — was PD-NASA via wikimedia-commons
+- `/images/satellites/io/05.jpg` — was PD-NASA via wikimedia-commons
+- … 2 more
 
-## Removed (36)
+## Changed (0)
 
-- `/images/fleet-galleries/ariane-6/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/ariane-6/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/atv/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/chandra/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/change-2/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/change-4/01.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/insight/01.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/juno/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/jwst/01.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/jwst/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/jwst/03.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/jwst/04.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/jwst/05.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/mars-polar-lander/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/new-shepard/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/opportunity/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/phobos-2/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/starliner/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/starship/01.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/starship/02.1x1.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
-- `/images/fleet-galleries/starship/03.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/starship/04.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/starship/05.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-- `/images/fleet-galleries/tiangong/01.1x1.jpg` — was CC-BY-SA-4.0 via wikimedia-commons
-- `/images/fleet-galleries/viking-1/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/vulcan/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/vulcan/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/vulcan/03.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/vulcan/04.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/vulcan/05.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/xichang-lc-3/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/xichang-lc-3/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/solar-orbiter/01.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/solar-orbiter/02.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/solar-orbiter/03.1x1.jpg` — was PD via wikimedia-commons
-- `/images/fleet-galleries/solar-orbiter/05.1x1.jpg` — was CC-BY-4.0 via wikimedia-commons
-
-## Changed (1427)
-
-- `/images/earth-objects/beidou/01.1x1.jpg`
-  - before — author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou-3%20Satellite%20Mockup.jpg"
-  - after — author: "AKAMGO yalms", source_url: "https://commons.wikimedia.org/wiki/File:Beidou-3_Satellite_Mockup.jpg"
-- `/images/earth-objects/beidou/01.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou%20satellite%20mockup%20at%20FING%20UNLP%2003.jpg"
-  - after — license_short: "CC-BY-4.0", author: "BugWarp", source_url: "https://commons.wikimedia.org/wiki/File:Beidou_satellite_mockup_at_FING_UNLP_03.jpg"
-- `/images/earth-objects/beidou/02.1x1.jpg`
-  - before — author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3A%E5%8C%97%E6%96%97%E4%B8%89%E5%8F%B7%E5%8D%AB%E6%98%9F%EF%BC%881%EF%BC%9A3%EF%BC%89.jpg"
-  - after — author: "Sprt98", source_url: "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%96%97%E4%B8%89%E5%8F%B7%E5%8D%AB%E6%98%9F%EF%BC%881%EF%BC%9A3%EF%BC%89.jpg"
-- `/images/earth-objects/chandra/01.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ANASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
-  - after — license_short: "PD-Old", author: "X-ray: NASA/CXC/Rutgers/J.Hughes; Optical: NASA/STScI", source_url: "https://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
-- `/images/earth-objects/change2/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ABirth%20of%20change2.jpg"
-  - after — license_short: "CC-BY-SA-4.0", author: "Ceescamel", source_url: "https://commons.wikimedia.org/wiki/File:Birth_of_change2.jpg"
-- `/images/earth-objects/change2/02.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3AChang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20M1298916428LR%201100p%20arrows).png"
-  - after — license_short: "PD-Old", author: "NASA/GSFC/Arizona State University", source_url: "https://commons.wikimedia.org/wiki/File:Chang%27e_4_Lander_Coordinates_(LROC1087_-_content_M1298916428LR_1100p_arrows).png"
-- `/images/earth-objects/change2/03.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3AChang'e%204%20Lander%20Coordinates%20(LROC1087%20-%20content%20CE4%20Locator%20Figure).png"
-  - after — license_short: "PD-Old", author: "NASA/GSFC/Arizona State University", source_url: "https://commons.wikimedia.org/wiki/File:Chang%27e_4_Lander_Coordinates_(LROC1087_-_content_CE4_Locator_Figure).png"
-- `/images/earth-objects/change2/04.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3AMandel%20zoom%2011%20satellite%20double%20spiral.jpg"
-  - after — license_short: "CC-BY-SA-3.0", author: "Created by Wolfgang Beyer with the program Ultra Fractal 3.", source_url: "https://commons.wikimedia.org/wiki/File:Mandel_zoom_11_satellite_double_spiral.jpg"
-- `/images/earth-objects/change2/05.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3AHitching%20a%20lift%20on%20a%20satellite%202.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "ESA/Alexander Gerst", source_url: "https://commons.wikimedia.org/wiki/File:Hitching_a_lift_on_a_satellite_2.jpg"
-- `/images/earth-objects/gaia/01.1x1.jpg`
-  - before — author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft.jpeg"
-  - after — author: "European Space Agency", source_url: "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft.jpeg"
-- `/images/earth-objects/gaia/01.jpg`
-  - before — author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft%20360%20Gaia%20Sky.jpg"
-  - after — author: "Langurmonkey", source_url: "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft_360_Gaia_Sky.jpg"
-- `/images/earth-objects/galileo/01.1x1.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGalileoSatModel.jpg"
-  - after — license_short: "CC-BY-SA-3.0", author: "Pouyana", source_url: "https://commons.wikimedia.org/wiki/File:GalileoSatModel.jpg"
-- `/images/earth-objects/galileo/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGalileo%20satellite%20model.jpg"
-  - after — license_short: "CC-BY-4.0", author: "This file comes from Science Museum Collections, a website operated by Science Museum Group, a non-departmental public body in the UK. This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.", source_url: "https://commons.wikimedia.org/wiki/File:Galileo_satellite_model.jpg"
-- `/images/earth-objects/geo/01.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20on%20Night%20Sky%20(14398636554).jpg"
-  - after — license_short: "PD-Old", author: "NOAASatellites", source_url: "https://commons.wikimedia.org/wiki/File:GOES-R_Spacecraft_on_Night_Sky_(14398636554).jpg"
-- `/images/earth-objects/geo/01.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20Art%20Front%20Left%20(14213118418).jpg"
-  - after — license_short: "PD-Old", author: "NOAASatellites", source_url: "https://commons.wikimedia.org/wiki/File:GOES-R_Spacecraft_Art_Front_Left_(14213118418).jpg"
-- `/images/earth-objects/geo/02.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AINTELSAT%20I%20(Early%20Bird).jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:INTELSAT_I_(Early_Bird).jpg"
-- `/images/earth-objects/glonass/01.1x1.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3ARussian%20Navigation%20Spacecraft%20Glonass%20K1%20at%20CeBIT.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "Jürgen Treutler", source_url: "https://commons.wikimedia.org/wiki/File:Russian_Navigation_Spacecraft_Glonass_K1_at_CeBIT.jpg"
-- `/images/earth-objects/glonass/01.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AGlonass%20K%20model%20at%20Cebit%202011%20Satellite%2C%20sideview%201.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "MKonair", source_url: "https://commons.wikimedia.org/wiki/File:Glonass_K_model_at_Cebit_2011_Satellite,_sideview_1.jpg"
-- `/images/earth-objects/glonass/02.1x1.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3ASoyuz%202.1b%20GLONASS-K2%2013L%20launch%2004.jpg"
-  - after — license_short: "CC-BY-4.0", author: "Ministry of Defence of the Russian Federation", source_url: "https://commons.wikimedia.org/wiki/File:Soyuz_2.1b_GLONASS-K2_13L_launch_04.jpg"
-- `/images/earth-objects/goes/01.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA/NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AMonument%20Bento%20de%20G%C3%B3is%20Vila%20Franca.jpg"
-  - after — license_short: "CC-BY-SA-4.0", author: "Ymblanter", source_url: "https://commons.wikimedia.org/wiki/File:Monument_Bento_de_G%C3%B3is_Vila_Franca.jpg"
-- `/images/earth-objects/goes/02.jpg`
-  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20showing%20Geostationary%20Operational%20Environmental%20Satellite%20(GOES)%20Total%20System%20(2297-23).jpg"
-  - after — source_url: "https://commons.wikimedia.org/wiki/File:Graphic_showing_Geostationary_Operational_Environmental_Satellite_(GOES)_Total_System_(2297-23).jpg"
-- `/images/earth-objects/goes/03.jpg`
-  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGOES%20satellite%20antenna%20at%20the%20National%20Environmental%20Satellite%20Service%20building%20(2268-197).jpg"
-  - after — source_url: "https://commons.wikimedia.org/wiki/File:GOES_satellite_antenna_at_the_National_Environmental_Satellite_Service_building_(2268-197).jpg"
-- `/images/earth-objects/goes/04.jpg`
-  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20of%20GOES%20satellite%20operation%20(2297-20).jpg"
-  - after — source_url: "https://commons.wikimedia.org/wiki/File:Graphic_of_GOES_satellite_operation_(2297-20).jpg"
-- `/images/earth-objects/goes/05.jpg`
-  - before — source_url: "https://commons.wikimedia.org/wiki/File%3AGraphic%20of%20GOES%20satellite%20data%20collection%20and%20distribution%20(2297-1).jpg"
-  - after — source_url: "https://commons.wikimedia.org/wiki/File:Graphic_of_GOES_satellite_data_collection_and_distribution_(2297-1).jpg"
-- `/images/earth-objects/gps/01.1x1.jpg`
-  - before — author: "USSF", source_url: "https://commons.wikimedia.org/wiki/File%3ANavstar-2F.jpg"
-  - after — author: "USAF", source_url: "https://commons.wikimedia.org/wiki/File:Navstar-2F.jpg"
-- `/images/earth-objects/hubble/01.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AHST-SM4.jpeg"
-  - after — license_short: "PD-Old", author: "Ruffnax (Crew of STS-125)", source_url: "https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg"
-- `/images/earth-objects/inmarsat/01.jpg`
-  - before — license_short: "PD-Old", author: "Inmarsat", source_url: "https://commons.wikimedia.org/wiki/File%3AInmarsat%20glass%20building%2C%20City%20Road%2C%20London%20-%20geograph.org.uk%20-%20138862.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "Rodney Burton", source_url: "https://commons.wikimedia.org/wiki/File:Inmarsat_glass_building,_City_Road,_London_-_geograph.org.uk_-_138862.jpg"
-- `/images/earth-objects/inmarsat/02.jpg`
-  - before — author: "Viasat", source_url: "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20050406-N-8629M-016%20Information%20Systems%20Technician%201st%20Class%20John%20Opsteegh%20performs%20a%20communications%20check%20with%20an%20Inmarsat%20satellite%20phone%20system%20to%20establish%20communications.jpg"
-  - after — author: "U.S. Navy photo by Photographer's Mate 3rd Class Rebecca J. Moat", source_url: "https://commons.wikimedia.org/wiki/File:US_Navy_050406-N-8629M-016_Information_Systems_Technician_1st_Class_John_Opsteegh_performs_a_communications_check_with_an_Inmarsat_satellite_phone_system_to_establish_communications.jpg"
-- `/images/earth-objects/inmarsat/03.jpg`
-  - before — license_short: "PD-Old", author: "Viasat", source_url: "https://commons.wikimedia.org/wiki/File%3ABoules%20Inmarsat%20dans%20la%20m%C3%A2ture%20du%20Suro%C3%AEt%20(Ifremer%2000521-63323).jpg"
-  - after — license_short: "CC-BY-4.0", author: "Stephane Lesbats", source_url: "https://commons.wikimedia.org/wiki/File:Boules_Inmarsat_dans_la_m%C3%A2ture_du_Suro%C3%AEt_(Ifremer_00521-63323).jpg"
-- `/images/earth-objects/inmarsat/04.jpg`
-  - before — author: "Viasat", source_url: "https://commons.wikimedia.org/wiki/File%3ASatellite%20phone.jpg"
-  - after — author: "Jeffrey Russell", source_url: "https://commons.wikimedia.org/wiki/File:Satellite_phone.jpg"
-- `/images/earth-objects/inmarsat/05.jpg`
-  - before — license_short: "PD-Old", author: "Viasat", source_url: "https://commons.wikimedia.org/wiki/File%3ABoules%20Inmarsat%20dans%20la%20m%C3%A2ture%20du%20Suro%C3%AEt%20(Ifremer%2000520-63197).jpg"
-  - after — license_short: "CC-BY-4.0", author: "Stephane Lesbats", source_url: "https://commons.wikimedia.org/wiki/File:Boules_Inmarsat_dans_la_m%C3%A2ture_du_Suro%C3%AEt_(Ifremer_00520-63197).jpg"
-- `/images/earth-objects/iridium-next/01.jpg`
-  - before — license_short: "PD-Old", author: "Iridium", source_url: "https://commons.wikimedia.org/wiki/File%3AIridium-1%20Launch%20(32312419215).jpg"
-  - after — license_short: "CC0", author: "SpaceX", source_url: "https://commons.wikimedia.org/wiki/File:Iridium-1_Launch_(32312419215).jpg"
-- `/images/earth-objects/iridium-next/02.jpg`
-  - before — author: "Iridium Communications", source_url: "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20060219-N-5067K-086%20Satellite%20phone%20operations%20during%20disaster%20relief%20efforts%20in%20Saint%20Bernard%2C%20Republic%20of%20the%20Philippines.jpg"
-  - after — author: "U.S. Navy Photo by Photographer's Mate 1st Class Michael D. Kennedy", source_url: "https://commons.wikimedia.org/wiki/File:US_Navy_060219-N-5067K-086_Satellite_phone_operations_during_disaster_relief_efforts_in_Saint_Bernard,_Republic_of_the_Philippines.jpg"
-- `/images/earth-objects/iridium-next/03.jpg`
-  - before — license_short: "PD-Old", author: "Iridium Communications", source_url: "https://commons.wikimedia.org/wiki/File%3ASpace%20sustainability%20overview.png"
-  - after — license_short: "CC-BY-4.0", author: "Pablo Carlos Budassi", source_url: "https://commons.wikimedia.org/wiki/File:Space_sustainability_overview.png"
-- `/images/earth-objects/iridium-next/04.jpg`
-  - before — license_short: "PD-Old", author: "Iridium Communications", source_url: "https://commons.wikimedia.org/wiki/File%3ASpace%20sustainability%20overview%20black.png"
-  - after — license_short: "CC-BY-4.0", author: "Pablo Carlos Budassi", source_url: "https://commons.wikimedia.org/wiki/File:Space_sustainability_overview_black.png"
-- `/images/earth-objects/iridium-next/05.jpg`
-  - before — license_short: "PD-Old", author: "Iridium Communications", source_url: "https://commons.wikimedia.org/wiki/File%3AIridium-2%20Mission%20(35499710806).jpg"
-  - after — license_short: "CC0", author: "SpaceX", source_url: "https://commons.wikimedia.org/wiki/File:Iridium-2_Mission_(35499710806).jpg"
-- `/images/earth-objects/iss/01.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA / JAXA / Roscosmos / CSA", source_url: "https://commons.wikimedia.org/wiki/File%3AInternational%20Space%20Station%20after%20undocking%20of%20STS-132.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Crew of STS-132", source_url: "https://commons.wikimedia.org/wiki/File:International_Space_Station_after_undocking_of_STS-132.jpg"
-- `/images/earth-objects/jwst/01.1x1.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA / CSA", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20James%20Webb%20Space%20Telescope%2C%20Partially%20Stowed.jpg"
-  - after — license_short: "PD-Old", author: "Chris Gunn", source_url: "https://commons.wikimedia.org/wiki/File:The_James_Webb_Space_Telescope,_Partially_Stowed.jpg"
-- `/images/earth-objects/kuiper/01.jpg`
-  - before — author: "Amazon", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%20crater%20AS16-P-5441.jpg"
-  - after — author: "James Stuby based on NASA image", source_url: "https://commons.wikimedia.org/wiki/File:Kuiper_crater_AS16-P-5441.jpg"
-- `/images/earth-objects/kuiper/02.jpg`
-  - before — author: "Amazon", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339805).jpg"
-  - after — author: "U.S. Space Force photo by Gwendolyn Kurzen", source_url: "https://commons.wikimedia.org/wiki/File:Kuiper_3_Launches_from_Cape_Canaveral_Space_Force_Station_(9339805).jpg"
-- `/images/earth-objects/kuiper/03.jpg`
-  - before — author: "Amazon", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339806).jpg"
-  - after — author: "U.S. Space Force photo by Gwendolyn Kurzen", source_url: "https://commons.wikimedia.org/wiki/File:Kuiper_3_Launches_from_Cape_Canaveral_Space_Force_Station_(9339806).jpg"
-- `/images/earth-objects/kuiper/04.jpg`
-  - before — author: "Amazon", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339804).jpg"
-  - after — author: "U.S. Space Force photo by Gwendolyn Kurzen", source_url: "https://commons.wikimedia.org/wiki/File:Kuiper_3_Launches_from_Cape_Canaveral_Space_Force_Station_(9339804).jpg"
-- `/images/earth-objects/kuiper/05.jpg`
-  - before — author: "Amazon", source_url: "https://commons.wikimedia.org/wiki/File%3AKuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339803).jpg"
-  - after — author: "U.S. Space Force photo by Gwendolyn Kurzen", source_url: "https://commons.wikimedia.org/wiki/File:Kuiper_3_Launches_from_Cape_Canaveral_Space_Force_Station_(9339803).jpg"
-- `/images/earth-objects/landsat/01.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA/NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ALena%20River%20Delta%20-%20Landsat%202000.jpg"
-  - after — license_short: "PD-Old", author: "none (Landsat)", source_url: "https://commons.wikimedia.org/wiki/File:Lena_River_Delta_-_Landsat_2000.jpg"
-- `/images/earth-objects/landsat/02.jpg`
-  - before — license_short: "PD-NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AFlorida%20Keys%2C%20Florida%2C%20satellite%20image%20map%2C%20NASA%20LANDSAT-1%20(1977).jpg"
-  - after — license_short: "PD-Old", source_url: "https://commons.wikimedia.org/wiki/File:Florida_Keys,_Florida,_satellite_image_map,_NASA_LANDSAT-1_(1977).jpg"
-- `/images/earth-objects/landsat/03.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ALandsat%20satellite%20image%20of%20the%20Middle%20Atlantic%20States%2C%20eastern%20part%20(1977).jpg"
-  - after — license_short: "PD-Old", author: "Library of Congress", source_url: "https://commons.wikimedia.org/wiki/File:Landsat_satellite_image_of_the_Middle_Atlantic_States,_eastern_part_(1977).jpg"
-- `/images/earth-objects/landsat/04.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ASatellite%20image%20of%20Singapore%20(Landsat%207)%20-%2020000428.jpg"
-  - after — license_short: "PD-Old", author: "Data: National Aeronautics and Space Administration (NASA). Image: Dave Pape.", source_url: "https://commons.wikimedia.org/wiki/File:Satellite_image_of_Singapore_(Landsat_7)_-_20000428.jpg"
-- `/images/earth-objects/landsat/05.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AToba%20Landsat%20satellite%20image.jpg"
-  - after — license_short: "PD-Old", author: "NASA Landsat7 image (worldwind.arc.nasa.gov)", source_url: "https://commons.wikimedia.org/wiki/File:Toba_Landsat_satellite_image.jpg"
-- `/images/earth-objects/o3b/01.jpg`
-  - before — license_short: "PD-Old", author: "SES", source_url: "https://commons.wikimedia.org/wiki/File%3AO3b%20satellite%20constellation.png"
-  - after — license_short: "CC-BY-SA-4.0", author: "Lloyd Wood", source_url: "https://commons.wikimedia.org/wiki/File:O3b_satellite_constellation.png"
-- `/images/earth-objects/o3b/02.jpg`
-  - before — license_short: "PD-Old", author: "SES", source_url: "https://commons.wikimedia.org/wiki/File%3ABourgery%20%26%20Jacob-o3b.jpg"
-  - after — license_short: "CC-BY-SA-3.0", author: "This illustration was made by (User:Royonx) and released under the license(s) stated above. You are free to use it for any purpose as long as you credit me and follow the terms of the license. Example : © Michel Royon / Wikimedia Commons If you use this image outside of the Wikimedia projects, I would be happy to hear from you par courriel ( royonx gmail.com). Thanks ! Ce message en français", source_url: "https://commons.wikimedia.org/wiki/File:Bourgery_%26_Jacob-o3b.jpg"
-- … 1377 more

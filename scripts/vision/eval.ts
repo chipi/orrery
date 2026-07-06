@@ -34,8 +34,13 @@ function metrics(set: Row[]) {
     tn = 0;
   for (const r of set) {
     const off = r.subject_match === false;
-    if (r.label === 'negative') off ? tp++ : fn++;
-    else if (r.label === 'positive') off ? fp++ : tn++;
+    if (r.label === 'negative') {
+      if (off) tp++;
+      else fn++;
+    } else if (r.label === 'positive') {
+      if (off) fp++;
+      else tn++;
+    }
   }
   const prec = tp + fp ? tp / (tp + fp) : NaN;
   const rec = tp + fn ? tp / (tp + fn) : NaN;

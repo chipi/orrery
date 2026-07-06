@@ -401,6 +401,35 @@ function surfaceOf(path: string): string {
   return slash === -1 ? rel : rel.slice(0, slash);
 }
 
+// Gallery-card surfaces. Rule (operator, 2026-07): a card surface holds only
+// DISTINCT images — a byte-dupe is a violation only when two files share the
+// SAME card surface (two different cards, or one card repeating). Sharing
+// ACROSS surfaces (a craft's mission card + its fleet card) is allowed, as is
+// any dupe touching a non-card surface (posters thumbnails, rockets, hotspots).
+const CARD_SURFACES: ReadonlySet<string> = new Set([
+  'missions',
+  'fleet-galleries',
+  'moon-sites',
+  'mars-sites',
+  'earth-objects',
+  'planets',
+  'small-bodies',
+  'satellites',
+  'iss-modules',
+  'tiangong-modules',
+  'belts',
+]);
+
+/** True when the dupe group has 2+ files on the SAME card surface. */
+function isWithinCardSurface(paths: string[]): boolean {
+  const perSurface = new Map<string, number>();
+  for (const p of paths) {
+    const s = surfaceOf(p);
+    if (CARD_SURFACES.has(s)) perSurface.set(s, (perSurface.get(s) ?? 0) + 1);
+  }
+  return [...perSurface.values()].some((c) => c >= 2);
+}
+
 function* walkJpgs(dir: string): Iterable<string> {
   for (const ent of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, ent.name);
@@ -440,6 +469,9 @@ function findDupes(): DupeGroup[] {
   for (const [h, paths] of byHash) {
     if (paths.length < 2) continue;
     if (ALLOWLIST.has(h)) continue;
+    // Rule: only a within-card-surface byte-dupe is a violation. Cross-surface
+    // reuse + non-card surfaces are allowed by rule (no per-pair override).
+    if (!isWithinCardSurface(paths)) continue;
     const surfaces = new Set(paths.map(surfaceOf));
     groups.push({ hashPrefix: h, paths, surfaces });
   }

@@ -1,6 +1,6 @@
 # fill-gallery-gaps — report
 
-Generated: 2026-07-06T07:44:07.592Z
+Generated: 2026-07-06T13:31:17.685Z
 Mode: apply
 Target: 5 slots per gallery
 
@@ -18,4 +18,4 @@ Target: 5 slots per gallery
 
 | surface/id | before | after | query | search-hits | accepted | rejected-dupe |
 |---|---|---|---|---|---|---|
-| missions/juice | 3 | 3 | juice ESA jupiter spacecraft | 11 | 0 | 7 |
+| missions/juice | 4 | 4 | juice ESA jupiter spacecraft | 9 | 0 | 7 |

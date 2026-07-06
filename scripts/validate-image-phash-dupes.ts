@@ -31,6 +31,38 @@ const BASELINE_PATH = resolve(ROOT, 'static/data/phash-baseline-allowlist.json')
  *  Tuned for the current corpus — see header. */
 const THRESHOLD = 6;
 
+// Rule (operator, 2026-07): two DIFFERENT gallery cards on the SAME surface
+// must not share an image; sharing ACROSS surfaces (a mission card + its fleet
+// card, an encyclopedia illustration, a poster + its thumbnail) is fine. So a
+// near-dupe pair is a violation only when both images live on the same
+// gallery-CARD surface. Non-card surfaces (posters/hotspots/science/rockets/…)
+// and thumbnail variants aren't cards. This encodes the rule directly instead
+// of curating a per-pair override list.
+const CARD_SURFACES: ReadonlySet<string> = new Set([
+  'missions',
+  'fleet-galleries',
+  'moon-sites',
+  'mars-sites',
+  'earth-objects',
+  'planets',
+  'small-bodies',
+  'satellites',
+  'iss-modules',
+  'tiangong-modules',
+  'belts',
+]);
+const surfaceOf = (urlPath: string): string => urlPath.split('/')[2] ?? '';
+const isThumb = (urlPath: string): boolean => /\.thumb\.(jpe?g|png)$/i.test(urlPath);
+/** Violation candidate: two near-dupe images on the same card SURFACE — whether
+ *  two different cards OR the same card's own slots. Rule (operator): a gallery
+ *  surface holds only DISTINCT images; the only allowed sharing is cross-surface
+ *  (a craft's mission card + its fleet card). Non-card surfaces (posters /
+ *  hotspots / …) and thumbnail variants aren't gallery cards. */
+const sameCardSurfacePair = (pa: string, pb: string): boolean => {
+  const sa = surfaceOf(pa);
+  return sa === surfaceOf(pb) && CARD_SURFACES.has(sa) && !isThumb(pa) && !isThumb(pb);
+};
+
 /** Allowlist keyed by `<hashA>|<hashB>` (sorted lexically) — pairs
  *  that the curator has signed off on as legitimate visually-near-
  *  identical content. Two sources:
@@ -434,6 +466,9 @@ function main(): void {
       const [pb, hb] = entries[j];
       const d = hammingDistance(ha, hb);
       if (d > THRESHOLD) continue;
+      // Rule: only two cards on the SAME gallery-card surface is a violation.
+      // Cross-surface reuse + non-card surfaces + thumbnail variants are fine.
+      if (!sameCardSurfacePair(pa, pb)) continue;
       const key = ha < hb ? `${ha}|${hb}` : `${hb}|${ha}`;
       if (ALLOWLIST.has(key)) continue;
       // Auto-skip pairs whose on-disk bytes are identical AND already

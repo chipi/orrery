@@ -42,9 +42,19 @@
     );
   });
 
+  // Our OWN assets are not third-party imagery and must not appear in the
+  // third-party credits: self-made anatomy diagrams, everything on the colophon
+  // page (including its 3D spaceship-model screenshots, /colophon/model-*.webp),
+  // section covers, the app landing hero, and curated reference cards.
+  const OWN_ASSET_SURFACES = new Set(['anatomy', 'colophon', 'science-covers-v2', 'rockets']);
+  const isThirdParty = (e: { path: string }): boolean => {
+    const surface = e.path?.split('/')[2] ?? '';
+    return !OWN_ASSET_SURFACES.has(surface) && !e.path?.startsWith('/images/app-landing-hero');
+  };
+
   let groups = $derived<CreditsGroup[]>(
     logos && provenance && textSources
-      ? groupBySource(logos.sources, provenance.entries, textSources.entries)
+      ? groupBySource(logos.sources, provenance.entries.filter(isThirdParty), textSources.entries)
       : [],
   );
 

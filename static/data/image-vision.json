@@ -39,7 +39,7 @@
     },
     "/images/earth-objects/beidou/03.jpg": {
       "score": 5,
-      "subject": "A full-scale museum display model of a BeiDou-3 (北斗三号) navigation satellite with gold body and large blue solar panels on exhibit in a Chinese space museum.",
+      "subject": "A full-scale museum display model of a BeiDou-3 (\u5317\u6597\u4e09\u53f7) navigation satellite with gold body and large blue solar panels on exhibit in a Chinese space museum.",
       "category": "hardware",
       "focal_point": {
         "x": 0.45,
@@ -135,7 +135,7 @@
     },
     "/images/earth-objects/gaia/01.jpg": {
       "score": 7,
-      "subject": "ESA Gaia space observatory spacecraft with its distinctive spinning top shape and thermal shield, shown against a dark background — appears to be a high-quality render or studio model photograph.",
+      "subject": "ESA Gaia space observatory spacecraft with its distinctive spinning top shape and thermal shield, shown against a dark background \u2014 appears to be a high-quality render or studio model photograph.",
       "category": "spacecraft",
       "focal_point": {
         "x": 0.52,
@@ -727,7 +727,7 @@
     },
     "/images/earth-objects/tiangong/03.jpg": {
       "score": 7,
-      "subject": "Chinese space station experiment rack labeled '航天基础试验机柜' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
+      "subject": "Chinese space station experiment rack labeled '\u822a\u5929\u57fa\u7840\u8bd5\u9a8c\u673a\u67dc' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -1159,7 +1159,7 @@
     },
     "/images/fleet-galleries/ariane-6/04.jpg": {
       "score": 2,
-      "subject": "Cover of NASA SP-4024, a printed chronology document titled Astronautics and Aeronautics 1979–1984 published by NASA.",
+      "subject": "Cover of NASA SP-4024, a printed chronology document titled Astronautics and Aeronautics 1979\u20131984 published by NASA.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -1175,7 +1175,7 @@
     },
     "/images/fleet-galleries/ariane-6/05.jpg": {
       "score": 2,
-      "subject": "Book cover for 'Taming Liquid Hydrogen: The Centaur Upper Stage Rocket 1958–2002' featuring a launch photograph inset on a dark background.",
+      "subject": "Book cover for 'Taming Liquid Hydrogen: The Centaur Upper Stage Rocket 1958\u20132002' featuring a launch photograph inset on a dark background.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -1191,7 +1191,7 @@
     },
     "/images/fleet-galleries/atlas-lv-3b/01.jpg": {
       "score": 6,
-      "subject": "Composite panel of all six Mercury-Atlas and Mercury-Redstone launch vehicles — Freedom 7 through Faith 7 — showing each rocket on the pad or at liftoff with mission name labels.",
+      "subject": "Composite panel of all six Mercury-Atlas and Mercury-Redstone launch vehicles \u2014 Freedom 7 through Faith 7 \u2014 showing each rocket on the pad or at liftoff with mission name labels.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -1207,7 +1207,7 @@
     },
     "/images/fleet-galleries/atlas-lv-3b/02.jpg": {
       "score": 2,
-      "subject": "Declassified SECRET-stamped diagram showing launch-vehicle flight-test history and plans for U.S. manned space-flight programs, 1957–1970.",
+      "subject": "Declassified SECRET-stamped diagram showing launch-vehicle flight-test history and plans for U.S. manned space-flight programs, 1957\u20131970.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -2519,7 +2519,7 @@
     },
     "/images/fleet-galleries/galileo/02.jpg": {
       "score": 7,
-      "subject": "Technicians in white cleanroom suits perform pre-launch assembly work on a large spacecraft — likely Cassini or Galileo — featuring a prominent high-gain dish antenna and gold multilayer insulation blankets, inside a NASA cleanroom facility.",
+      "subject": "Technicians in white cleanroom suits perform pre-launch assembly work on a large spacecraft \u2014 likely Cassini or Galileo \u2014 featuring a prominent high-gain dish antenna and gold multilayer insulation blankets, inside a NASA cleanroom facility.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -4600,7 +4600,7 @@
     },
     "/images/fleet-galleries/n1/03.jpg": {
       "score": 2,
-      "subject": "Book cover of 'Deep Space Chronicle: A Chronology of Deep Space and Planetary Probes 1958–2000' by Asif A. Siddiqi, featuring a composite illustration of solar system planets.",
+      "subject": "Book cover of 'Deep Space Chronicle: A Chronology of Deep Space and Planetary Probes 1958\u20132000' by Asif A. Siddiqi, featuring a composite illustration of solar system planets.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -4616,7 +4616,7 @@
     },
     "/images/fleet-galleries/n1/04.jpg": {
       "score": 2,
-      "subject": "Book cover for 'Beyond Earth: A Chronicle of Deep Space Exploration, 1958–2016' by Asif A. Siddiqi, featuring stylized silhouette icons of various space probes and rovers.",
+      "subject": "Book cover for 'Beyond Earth: A Chronicle of Deep Space Exploration, 1958\u20132016' by Asif A. Siddiqi, featuring stylized silhouette icons of various space probes and rovers.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -5624,7 +5624,7 @@
     },
     "/images/fleet-galleries/rosetta/01.jpg": {
       "score": 7,
-      "subject": "Artist's render of the Philae lander sitting on the rocky, grey surface of comet 67P/Churyumov–Gerasimenko with its tripod legs extended and solar panels visible.",
+      "subject": "Artist's render of the Philae lander sitting on the rocky, grey surface of comet 67P/Churyumov\u2013Gerasimenko with its tripod legs extended and solar panels visible.",
       "category": "render",
       "focal_point": {
         "x": 0.55,
@@ -5640,7 +5640,7 @@
     },
     "/images/fleet-galleries/rosetta/03.jpg": {
       "score": 9,
-      "subject": "Close-up black-and-white image of comet 67P/Churyumov–Gerasimenko's bilobed nucleus captured by ESA's Rosetta spacecraft, showing dramatic rocky cliffs and shadowed terrain against the void of space.",
+      "subject": "Close-up black-and-white image of comet 67P/Churyumov\u2013Gerasimenko's bilobed nucleus captured by ESA's Rosetta spacecraft, showing dramatic rocky cliffs and shadowed terrain against the void of space.",
       "category": "surface",
       "focal_point": {
         "x": 0.55,
@@ -5672,7 +5672,7 @@
     },
     "/images/fleet-galleries/rosetta/05.jpg": {
       "score": 4,
-      "subject": "Artist's render of the ESA Rosetta spacecraft deploying the Philae lander toward comet 67P/Churyumov–Gerasimenko.",
+      "subject": "Artist's render of the ESA Rosetta spacecraft deploying the Philae lander toward comet 67P/Churyumov\u2013Gerasimenko.",
       "category": "render",
       "focal_point": {
         "x": 0.55,
@@ -5704,7 +5704,7 @@
     },
     "/images/fleet-galleries/salyut-1/02.jpg": {
       "score": 4,
-      "subject": "A paper craft or scale model of a Soviet Zarya (ЗАРЯ) / Salyut space station module displayed against a plain tan background.",
+      "subject": "A paper craft or scale model of a Soviet Zarya (\u0417\u0410\u0420\u042f) / Salyut space station module displayed against a plain tan background.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -7898,7 +7898,7 @@
     },
     "/images/fleet-galleries/voskhod/05.jpg": {
       "score": 8,
-      "subject": "Voskhod spacecraft life support unit (РПК-52) displayed on a museum stand, showing Cyrillic-labeled controls and oxygen regulation hardware.",
+      "subject": "Voskhod spacecraft life support unit (\u0420\u041f\u041a-52) displayed on a museum stand, showing Cyrillic-labeled controls and oxygen regulation hardware.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -11709,7 +11709,7 @@
     },
     "/images/moon-sites/luna17/04.jpg": {
       "score": 3,
-      "subject": "East German postage stamp commemorating the Lunokhod 1 lunar rover, labeled '1. Mobiles Mondlabor – Lunochod 1'",
+      "subject": "East German postage stamp commemorating the Lunokhod 1 lunar rover, labeled '1. Mobiles Mondlabor \u2013 Lunochod 1'",
       "category": "diagram",
       "focal_point": {
         "x": 0.45,
@@ -13229,7 +13229,7 @@
     },
     "/images/rockets/proton-m.jpg": {
       "score": 9,
-      "subject": "A Proton rocket lifts off amid billowing exhaust clouds, with Cyrillic 'ПРОТОН' lettering and NASA markings visible on the white upper stage against a clear blue sky.",
+      "subject": "A Proton rocket lifts off amid billowing exhaust clouds, with Cyrillic '\u041f\u0420\u041e\u0422\u041e\u041d' lettering and NASA markings visible on the white upper stage against a clear blue sky.",
       "category": "launch",
       "focal_point": {
         "x": 0.45,
@@ -14235,7 +14235,7 @@
     },
     "/images/small-bodies/67p/01.jpg": {
       "score": 9,
-      "subject": "Comet 67P/Churyumov–Gerasimenko's distinctive bi-lobed nucleus photographed by ESA's Rosetta spacecraft, showing dramatic rocky terrain and active jets against black space.",
+      "subject": "Comet 67P/Churyumov\u2013Gerasimenko's distinctive bi-lobed nucleus photographed by ESA's Rosetta spacecraft, showing dramatic rocky terrain and active jets against black space.",
       "category": "surface",
       "focal_point": {
         "x": 0.45,
@@ -14267,7 +14267,7 @@
     },
     "/images/small-bodies/67p/03.jpg": {
       "score": 7,
-      "subject": "Artist's rendering of ESA's Philae lander descending toward the icy surface of comet 67P/Churyumov–Gerasimenko with landing legs deployed.",
+      "subject": "Artist's rendering of ESA's Philae lander descending toward the icy surface of comet 67P/Churyumov\u2013Gerasimenko with landing legs deployed.",
       "category": "render",
       "focal_point": {
         "x": 0.5,
@@ -14475,7 +14475,7 @@
     },
     "/images/small-bodies/haumea/03.jpg": {
       "score": 6,
-      "subject": "Artist's render of dwarf planet Haumea and its two moons Hiʻiaka and Namaka against a black space background.",
+      "subject": "Artist's render of dwarf planet Haumea and its two moons Hi\u02bbiaka and Namaka against a black space background.",
       "category": "render",
       "focal_point": {
         "x": 0.5,
@@ -14651,7 +14651,7 @@
     },
     "/images/sun/01.jpg": {
       "score": 4,
-      "subject": "SDO/AIA 193 Å extreme ultraviolet image of the Sun on 2016-09-18, showing a large coronal hole with annotation arrows pointing to solar features along the limb.",
+      "subject": "SDO/AIA 193 \u00c5 extreme ultraviolet image of the Sun on 2016-09-18, showing a large coronal hole with annotation arrows pointing to solar features along the limb.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -14779,7 +14779,7 @@
     },
     "/images/tiangong-modules/wentian/04.jpg": {
       "score": 7,
-      "subject": "Chinese space station experiment rack labeled '航天基础试验机柜' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
+      "subject": "Chinese space station experiment rack labeled '\u822a\u5929\u57fa\u7840\u8bd5\u9a8c\u673a\u67dc' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -15179,7 +15179,7 @@
     },
     "/images/fleet-galleries/long-march-2f/05.jpg": {
       "score": 8,
-      "subject": "A Chinese Long March rocket bearing the Shenzhou (神箭) designation and Chinese national flag stands vertical on the launch pad at Jiuquan Satellite Launch Center, with desert landscape and facility grounds visible in the background.",
+      "subject": "A Chinese Long March rocket bearing the Shenzhou (\u795e\u7bad) designation and Chinese national flag stands vertical on the launch pad at Jiuquan Satellite Launch Center, with desert landscape and facility grounds visible in the background.",
       "category": "launch",
       "focal_point": {
         "x": 0.62,
@@ -17626,7 +17626,7 @@
     },
     "/images/mars-sites/maven/01.jpg": {
       "score": 7,
-      "subject": "A cleanroom technician in white bunny suit inspects a large dome-shaped spacecraft hardware assembly—likely a crew module or pressure vessel—mounted on a stand in a high-bay facility.",
+      "subject": "A cleanroom technician in white bunny suit inspects a large dome-shaped spacecraft hardware assembly\u2014likely a crew module or pressure vessel\u2014mounted on a stand in a high-bay facility.",
       "category": "hardware",
       "focal_point": {
         "x": 0.55,
@@ -19023,7 +19023,7 @@
     },
     "/images/missions/rosetta.jpg": {
       "score": 9,
-      "subject": "Comet 67P/Churyumov–Gerasimenko's distinctive bi-lobed nucleus photographed by ESA's Rosetta spacecraft, showing dramatic rocky terrain and active jets against black space.",
+      "subject": "Comet 67P/Churyumov\u2013Gerasimenko's distinctive bi-lobed nucleus photographed by ESA's Rosetta spacecraft, showing dramatic rocky terrain and active jets against black space.",
       "category": "surface",
       "focal_point": {
         "x": 0.45,
@@ -20516,7 +20516,7 @@
     },
     "/images/fleet-galleries/hubble/04.jpg": {
       "score": 8,
-      "subject": "Aerial overhead view of a Space Shuttle stack — orbiter, orange external tank, and two solid rocket boosters — mounted on the Mobile Launcher Platform during rollout at Kennedy Space Center.",
+      "subject": "Aerial overhead view of a Space Shuttle stack \u2014 orbiter, orange external tank, and two solid rocket boosters \u2014 mounted on the Mobile Launcher Platform during rollout at Kennedy Space Center.",
       "category": "spacecraft",
       "focal_point": {
         "x": 0.48,
@@ -20820,7 +20820,7 @@
     },
     "/images/fleet-galleries/salyut-6/03.jpg": {
       "score": 3,
-      "subject": "Soviet 1978 postage stamp (32 kopeks) commemorating the Interkosmos USSR–East Germany spaceflight, depicting a Soyuz spacecraft in orbit.",
+      "subject": "Soviet 1978 postage stamp (32 kopeks) commemorating the Interkosmos USSR\u2013East Germany spaceflight, depicting a Soyuz spacecraft in orbit.",
       "category": "other",
       "focal_point": {
         "x": 0.5,
@@ -20868,7 +20868,7 @@
     },
     "/images/fleet-galleries/salyut-6/04.jpg": {
       "score": 3,
-      "subject": "Soviet postal stamp from 1978 commemorating the Interkosmos USSR–East Germany joint spaceflight, depicting a Soyuz spacecraft in orbit.",
+      "subject": "Soviet postal stamp from 1978 commemorating the Interkosmos USSR\u2013East Germany joint spaceflight, depicting a Soyuz spacecraft in orbit.",
       "category": "other",
       "focal_point": {
         "x": 0.5,
@@ -20900,7 +20900,7 @@
     },
     "/images/fleet-galleries/salyut-7/02.jpg": {
       "score": 2,
-      "subject": "Book cover of 'Walking to Olympus: An EVA Chronology 1997–2011 Volume 2' showing astronauts performing a spacewalk with Earth in the background.",
+      "subject": "Book cover of 'Walking to Olympus: An EVA Chronology 1997\u20132011 Volume 2' showing astronauts performing a spacewalk with Earth in the background.",
       "category": "diagram",
       "focal_point": {
         "x": 0.45,
@@ -23636,7 +23636,7 @@
     },
     "/images/tiangong-modules/mengtian/01.jpg": {
       "score": 7,
-      "subject": "Chinese space station experiment rack labeled '航天基础试验机柜' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
+      "subject": "Chinese space station experiment rack labeled '\u822a\u5929\u57fa\u7840\u8bd5\u9a8c\u673a\u67dc' (Space Fundamental Experiment Cabinet) containing multiple scientific experiment modules including microbial, thermal, and Stirling thermoelectric conversion units.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -23652,7 +23652,7 @@
     },
     "/images/tiangong-modules/mengtian/04.jpg": {
       "score": 6,
-      "subject": "Two Chinese space science instruments on museum display — a medium-resolution imaging spectrometer and a space materials growth furnace from the Tiangong program — shown in a glass exhibition case.",
+      "subject": "Two Chinese space science instruments on museum display \u2014 a medium-resolution imaging spectrometer and a space materials growth furnace from the Tiangong program \u2014 shown in a glass exhibition case.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -23668,7 +23668,7 @@
     },
     "/images/tiangong-modules/mengtian/05.jpg": {
       "score": 6,
-      "subject": "A cold atomic microwave clock (空间冷原子微波钟) space instrument displayed in a glass museum case, likely associated with the Chinese Space Station program.",
+      "subject": "A cold atomic microwave clock (\u7a7a\u95f4\u51b7\u539f\u5b50\u5fae\u6ce2\u949f) space instrument displayed in a glass museum case, likely associated with the Chinese Space Station program.",
       "category": "hardware",
       "focal_point": {
         "x": 0.5,
@@ -24532,7 +24532,7 @@
     },
     "/images/fleet-galleries/challenger/05.jpg": {
       "score": 3,
-      "subject": "Composite comparison image showing five Space Shuttle orbiters — Columbia, Challenger, Discovery, Atlantis, and Endeavour — each photographed during launch or on the pad with their external tanks and solid rocket boosters.",
+      "subject": "Composite comparison image showing five Space Shuttle orbiters \u2014 Columbia, Challenger, Discovery, Atlantis, and Endeavour \u2014 each photographed during launch or on the pad with their external tanks and solid rocket boosters.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -25636,7 +25636,7 @@
     },
     "/images/fleet-galleries/lc-14/01.jpg": {
       "score": 4,
-      "subject": "Historic commemorative sign at Launch Complex 14 listing Mercury program manned orbital flights by Glenn, Carpenter, Schirra, and Cooper (1962–1963).",
+      "subject": "Historic commemorative sign at Launch Complex 14 listing Mercury program manned orbital flights by Glenn, Carpenter, Schirra, and Cooper (1962\u20131963).",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -27092,7 +27092,7 @@
     },
     "/images/fleet-galleries/proton-k/01.jpg": {
       "score": 9,
-      "subject": "A Proton rocket (labeled 'ПРОТОН' in Cyrillic with a NASA logo and US flag) lifts off against a clear blue sky amid billowing exhaust clouds.",
+      "subject": "A Proton rocket (labeled '\u041f\u0420\u041e\u0422\u041e\u041d' in Cyrillic with a NASA logo and US flag) lifts off against a clear blue sky amid billowing exhaust clouds.",
       "category": "launch",
       "focal_point": {
         "x": 0.45,
@@ -27156,7 +27156,7 @@
     },
     "/images/fleet-galleries/proton-k/05.jpg": {
       "score": 6,
-      "subject": "A Proton rocket (labeled 'ПРОТОН' in Cyrillic) standing on its launch pad at Baikonur Cosmodrome, flanked by support structures and a floodlight tower.",
+      "subject": "A Proton rocket (labeled '\u041f\u0420\u041e\u0422\u041e\u041d' in Cyrillic) standing on its launch pad at Baikonur Cosmodrome, flanked by support structures and a floodlight tower.",
       "category": "launch",
       "focal_point": {
         "x": 0.42,
@@ -27428,7 +27428,7 @@
     },
     "/images/fleet-galleries/salyut-5/05.jpg": {
       "score": 6,
-      "subject": "Soviet space station optical visor (визир) instrument, likely the ВД-5 used on Salyut stations, displayed behind glass in a museum exhibit.",
+      "subject": "Soviet space station optical visor (\u0432\u0438\u0437\u0438\u0440) instrument, likely the \u0412\u0414-5 used on Salyut stations, displayed behind glass in a museum exhibit.",
       "category": "hardware",
       "focal_point": {
         "x": 0.38,
@@ -27860,7 +27860,7 @@
     },
     "/images/fleet-galleries/venera-13/05.jpg": {
       "score": 4,
-      "subject": "Color-coded topographic map of Venus surface showing landing sites of Venera 8–14 and Vega 1–2 probes, produced by NASA Ames Research Center in November 1981.",
+      "subject": "Color-coded topographic map of Venus surface showing landing sites of Venera 8\u201314 and Vega 1\u20132 probes, produced by NASA Ames Research Center in November 1981.",
       "category": "diagram",
       "focal_point": {
         "x": 0.5,
@@ -28036,7 +28036,7 @@
     },
     "/images/fleet-galleries/vostok-k/01.jpg": {
       "score": 7,
-      "subject": "A full-scale replica of the Soviet Vostok rocket on a display launch stand at an outdoor exhibition, with Cyrillic lettering reading 'ВОСТОК' and 'СССР' visible on the white rocket body.",
+      "subject": "A full-scale replica of the Soviet Vostok rocket on a display launch stand at an outdoor exhibition, with Cyrillic lettering reading '\u0412\u041e\u0421\u0422\u041e\u041a' and '\u0421\u0421\u0421\u0420' visible on the white rocket body.",
       "category": "hardware",
       "focal_point": {
         "x": 0.72,
@@ -30254,7 +30254,7 @@
     },
     "/images/missions/apollo-soyuz/02.jpg": {
       "score": 6,
-      "subject": "Official crew portrait of the Apollo-Soyuz Test Project joint crew — astronauts Slayton, Stafford, and Brand in NASA flight suits alongside Soviet cosmonauts in green suits, posed with spacecraft docking models between US and USSR flags.",
+      "subject": "Official crew portrait of the Apollo-Soyuz Test Project joint crew \u2014 astronauts Slayton, Stafford, and Brand in NASA flight suits alongside Soviet cosmonauts in green suits, posed with spacecraft docking models between US and USSR flags.",
       "category": "people",
       "focal_point": {
         "x": 0.5,
@@ -30441,7 +30441,7 @@
     },
     "/images/missions/apollo7/02.jpg": {
       "score": 7,
-      "subject": "The three-man crew of Apollo 7 — Donn Eisele, Wally Schirra, and Walter Cunningham — posed in their white NASA spacesuits bearing mission patches and American flags.",
+      "subject": "The three-man crew of Apollo 7 \u2014 Donn Eisele, Wally Schirra, and Walter Cunningham \u2014 posed in their white NASA spacesuits bearing mission patches and American flags.",
       "category": "people",
       "focal_point": {
         "x": 0.5,
@@ -32566,7 +32566,7 @@
     },
     "/images/missions/change3/03.jpg": {
       "score": 3,
-      "subject": "A grayscale lunar globe with coordinate grid overlay and an orange crosshair marker indicating the Chang'e 3 landing site at 44.12°N 19.51°W near Mare Imbrium.",
+      "subject": "A grayscale lunar globe with coordinate grid overlay and an orange crosshair marker indicating the Chang'e 3 landing site at 44.12\u00b0N 19.51\u00b0W near Mare Imbrium.",
       "category": "diagram",
       "focal_point": {
         "x": 0.35,
@@ -34062,7 +34062,7 @@
     },
     "/images/missions/rosetta/01.jpg": {
       "score": 8,
-      "subject": "Comet 67P/Churyumov–Gerasimenko photographed by the Rosetta spacecraft, showing its distinctive bilobed nucleus against black space with visible outgassing jets.",
+      "subject": "Comet 67P/Churyumov\u2013Gerasimenko photographed by the Rosetta spacecraft, showing its distinctive bilobed nucleus against black space with visible outgassing jets.",
       "category": "surface",
       "focal_point": {
         "x": 0.48,
@@ -34079,7 +34079,7 @@
     },
     "/images/missions/rosetta/02.jpg": {
       "score": 7,
-      "subject": "Close-up view of the bilobed nucleus of Comet 67P/Churyumov–Gerasimenko showing rugged, rocky terrain against black space, imaged by the Rosetta spacecraft.",
+      "subject": "Close-up view of the bilobed nucleus of Comet 67P/Churyumov\u2013Gerasimenko showing rugged, rocky terrain against black space, imaged by the Rosetta spacecraft.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -34096,7 +34096,7 @@
     },
     "/images/missions/rosetta/03.jpg": {
       "score": 3,
-      "subject": "A bilobed comet nucleus, likely 67P/Churyumov–Gerasimenko, imaged against black space showing rugged rocky terrain and shadowed regions.",
+      "subject": "A bilobed comet nucleus, likely 67P/Churyumov\u2013Gerasimenko, imaged against black space showing rugged rocky terrain and shadowed regions.",
       "category": "other",
       "focal_point": {
         "x": 0.5,
@@ -34980,7 +34980,7 @@
     },
     "/images/missions/vostok-5/03.jpg": {
       "score": 3,
-      "subject": "A bronze star plaque embedded in concrete bearing the handprint and name of Soviet cosmonaut Valery Bykovsky with Cyrillic text referencing Vostok 5 (callsign Hawk/Ястреб) dated June 14, 1963.",
+      "subject": "A bronze star plaque embedded in concrete bearing the handprint and name of Soviet cosmonaut Valery Bykovsky with Cyrillic text referencing Vostok 5 (callsign Hawk/\u042f\u0441\u0442\u0440\u0435\u0431) dated June 14, 1963.",
       "category": "other",
       "focal_point": {
         "x": 0.5,
@@ -35283,19 +35283,6 @@
       "rejected_by": null,
       "scored_at": "2026-07-06T13:44:04.529Z",
       "scoring_cost_usd": 0.008991
-    },
-    "/images/missions/artemis2/05.jpg": {
-      "score": 5,
-      "subject": "NASA Space Launch System rocket on the launch pad at Kennedy Space Center, viewed through palm trees from a parking lot.",
-      "category": "launch",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.72
-      },
-      "subject_match": true,
-      "rejected_by": null,
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.009126
     },
     "/images/missions/artemis3/04.jpg": {
       "score": 8,

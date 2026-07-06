@@ -1,3 +1,4 @@
+import '../lib/load-env.ts'; // load .env before ANTHROPIC_API_KEY is read
 import Anthropic from '@anthropic-ai/sdk';
 import { SYSTEM_PROMPT, buildUserMessage } from './prompt.ts';
 import type {

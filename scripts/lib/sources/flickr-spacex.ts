@@ -50,14 +50,36 @@ export async function fetchSpacexFlickr(opts: {
       return [];
     }
 
-    const term = opts.query?.trim().toLowerCase() ?? '';
-    const matched = term
-      ? items.filter((it) => (it.title ?? '').toLowerCase().includes(term))
+    // SpaceX feed titles are terse ("Starship Test Flight Mission"), so a full
+    // enriched query ("starship demo SpaceX mars spacecraft") never substring-
+    // matches. Match instead on any DISTINCTIVE token of the mission name/query
+    // (drop generic craft/agency words). Precise-or-nothing: no token hit → [].
+    const STOP = new Set([
+      'spacex',
+      'spacecraft',
+      'mission',
+      'rocket',
+      'launch',
+      'mars',
+      'moon',
+      'earth',
+      'orbit',
+      'orbiter',
+      'lander',
+      'rover',
+      'crewed',
+      'nasa',
+    ]);
+    const tokens = `${opts.name ?? ''} ${opts.query ?? ''}`
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((t) => t.length >= 4 && !STOP.has(t));
+    const matched = tokens.length
+      ? items.filter((it) => {
+          const title = (it.title ?? '').toLowerCase();
+          return tokens.some((t) => title.includes(t));
+        })
       : items;
-    // SpaceX titles are terse — if the query matched nothing, fall back to the
-    // newest N so the caller still gets real candidates.
-    // Precise-or-nothing: if the query matched no titles, return none (the
-    // recent-feed's newest-N would be wrong-mission imagery).
     const chosen = matched.slice(0, opts.limit);
 
     return chosen

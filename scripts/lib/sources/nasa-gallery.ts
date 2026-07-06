@@ -20,6 +20,10 @@ const UA =
 const SEED_SLUGS: Record<string, string> = {
   'blue-moon-mk1': 'blue-origin-blue-moon-mark-1',
   'ksc-history': 'ksc-history',
+  // Mission ids don't map to NASA's gallery slugs by slugify alone
+  // (artemis2 → "artemis-ii", not "artemis2"). Pin the known ones.
+  artemis2: 'artemis-ii',
+  artemis3: 'artemis-iii',
 };
 
 const slugify = (s: string) =>

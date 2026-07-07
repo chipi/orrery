@@ -882,6 +882,7 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | ADR-072 | Accepted | Surface routes (`/moon`, `/mars`) share `SurfaceScene.svelte`; 8 body-justified knobs, 22 drifts consolidated — Slice 2 of #283 (closes the deferral in ADR-037) |
 | ADR-077 | Accepted (v0.7.x; v0.8+ extension point for #341) | /fly throne-of-glory iconic-shot architecture — body wiring + cislunar hold detector + per-event compositions |
 | ADR-078 | Accepted (amends PRD-015 / RFC-018) | v0.8 mobile wrapper reshaped — **iOS-first** + **stream-heavy bundle** (galleries + audio stream from `chipi.github.io`, §8.1 SW); reverses the 2026-05-16 Android-first + §8.2 locks after `main` grew to a ~2 GB naive build |
+| ADR-079 | Accepted (closes #373 root cause; delivers #191) | Asset-origin `assetUrl()` spine (local/CDN configurable) + source/derived separation (i18n source + image masters out of `static/`) + WebP-only delivery, encoded locally + committed. Slices #377/#378/#379 |
 
 ---
 

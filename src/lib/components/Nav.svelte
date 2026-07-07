@@ -340,7 +340,11 @@
     position: sticky;
     top: 0;
     z-index: 40;
+    /* --nav-height already includes the iOS safe area (tokens.css); the
+       padding-top pushes the bar's own content below the status bar /
+       Dynamic Island. No-op off-device (env() = 0). */
     height: var(--nav-height);
+    padding-top: var(--safe-area-inset-top, env(safe-area-inset-top));
     background: var(--color-nav-bg);
     border-bottom: 1px solid var(--color-border);
     backdrop-filter: blur(14px);
@@ -348,7 +352,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .left {
@@ -822,7 +827,9 @@
 
   @media (max-width: 500px) {
     nav {
-      padding: 0 6px;
+      /* Keep the top safe-area inset (this shorthand previously zeroed it,
+         hiding the nav under the iOS status bar). */
+      padding: var(--safe-area-inset-top, env(safe-area-inset-top)) 6px 0;
     }
     /* Cluster of 5 right-side buttons (menu / audio / locale / lens /
        contrast) overflowed the 375 px viewport at the default 14 px gap

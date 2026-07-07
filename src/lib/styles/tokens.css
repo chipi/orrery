@@ -39,7 +39,15 @@
   --size-link: 12px;
 
   /* Spacing */
-  --nav-height: 60px;
+  /* Total nav footprint. Includes the iOS status-bar / Dynamic Island safe
+     area under Capacitor (viewport-fit=cover) so the sticky nav AND every
+     canvas control positioned at `calc(var(--nav-height) + Npx)` move down
+     together. env() is 0 in every browser + non-notched context — no-op off
+     device. Base bar height is --nav-bar-height. */
+  --nav-bar-height: 60px;
+  /* The native shim (SafeAreaViewController) sets --safe-area-inset-top under
+     Capacitor iOS where env() is broken; env() is the browser fallback. */
+  --nav-height: calc(60px + var(--safe-area-inset-top, env(safe-area-inset-top)));
   /* Panel width — bumped from 314 → 360 in v0.4, then → 400 in v0.7
      so the four-tab strip (OVERVIEW · GALLERY · TECHNICAL · SCIENCE)
      fits without the last tab being clipped. Touch-portrait uses a

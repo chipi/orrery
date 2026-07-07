@@ -14,7 +14,10 @@ html,
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-mono);
+  /* Emoji fallback appended so flag/emoji glyphs (locale picker) resolve to
+     the system emoji font instead of tofu/"?" in iOS WKWebView, where the
+     custom mono face has no emoji coverage. Only affects emoji codepoints. */
+  font-family: var(--font-mono), 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
   min-height: 100vh;
 }
 

@@ -19,7 +19,10 @@ const config: CapacitorConfig = {
   ios: {
     contentInset: 'always',
     backgroundColor: '#04040c',
-    scrollEnabled: false, // Three.js pointer events own orbit/pan/zoom
+    // scrollEnabled must stay true — false killed scrolling on ALL content
+    // pages (landing, science, missions…), not just the 3D routes. The 3D
+    // canvases prevent native scroll themselves via CSS touch-action:none.
+    scrollEnabled: true,
     limitsNavigationsToAppBoundDomains: true, // App Store requirement; external links go via @capacitor/browser
     allowsLinkPreview: false
   },

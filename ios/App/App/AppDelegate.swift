@@ -1,5 +1,53 @@
 import UIKit
 import Capacitor
+import WebKit
+
+// Safe-area shim (ADR-079 follow-up / #192). Capacitor's iOS WKWebView does not
+// surface the device safe-area insets to CSS env(...) (measured env()=0), so the
+// nav/footer render under the status bar / Dynamic Island / home indicator. This
+// subclass reads the native UIView.safeAreaInsets and injects them as CSS custom
+// properties (--safe-area-inset-*), which the app CSS reads via
+// var(--safe-area-inset-top, env(safe-area-inset-top)) — real inset under
+// Capacitor, env() fallback in the browser. Wired via Main.storyboard.
+class SafeAreaViewController: CAPBridgeViewController {
+    private var lastInsets = UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)
+
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        applySafeAreaInsets()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Force user scrolling on. The `ios.scrollEnabled` config isn't
+        // reliably applied to the scrollView (programmatic scroll worked but
+        // touch/drag didn't — the classic isScrollEnabled=false signature).
+        // Content pages must scroll; 3D routes block it via CSS touch-action.
+        webView?.scrollView.isScrollEnabled = true
+        webView?.scrollView.bounces = true
+        applySafeAreaInsets()
+        // viewDidAppear can fire before the SPA's document is ready, so a single
+        // inject is lost. Re-apply across the web-content load window.
+        for delay in [0.1, 0.3, 0.6, 1.0, 2.0, 3.0] {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+                self?.applySafeAreaInsets()
+            }
+        }
+    }
+
+    private func applySafeAreaInsets(force: Bool = false) {
+        let insets = view.safeAreaInsets
+        lastInsets = insets
+        let js = """
+        (function(){var s=document.documentElement.style;\
+        s.setProperty('--safe-area-inset-top','\(insets.top)px');\
+        s.setProperty('--safe-area-inset-right','\(insets.right)px');\
+        s.setProperty('--safe-area-inset-bottom','\(insets.bottom)px');\
+        s.setProperty('--safe-area-inset-left','\(insets.left)px');})();
+        """
+        webView?.evaluateJavaScript(js, completionHandler: nil)
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

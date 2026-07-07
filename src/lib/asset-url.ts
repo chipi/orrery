@@ -31,9 +31,7 @@ export function resolveAssetOrigin(mobile: boolean, localBase: string): string {
 /** Prefix a root-relative streamed-bucket URL with the stream origin (mobile only). */
 export function resolveStreamedUrl(url: string, mobile: boolean): string {
   if (!mobile) return url;
-  return url.startsWith('/images/') || url.startsWith('/audio/')
-    ? `${STREAM_ORIGIN}${url}`
-    : url;
+  return url.startsWith('/images/') || url.startsWith('/audio/') ? `${STREAM_ORIGIN}${url}` : url;
 }
 
 /** Per-locale bundle origin: default locale stays local; others stream under mobile. */

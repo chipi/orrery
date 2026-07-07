@@ -4,6 +4,7 @@ build/
 dist/
 package-lock.json
 data/
+i18n-src/
 docs/
 .github/
 *.md
@@ -16,6 +17,12 @@ test-results/
 scripts/_archive/
 .lean-ctx/
 .claude/
+
+# Capacitor native project dirs — platform-generated + the synced web bundle
+# copy (cap sync populates ios/App/App/public + android/.../assets/public with
+# build/). Gitignored where generated; prettier must not style-check them.
+ios/
+android/
 
 .lavish/
 .moon-shots/

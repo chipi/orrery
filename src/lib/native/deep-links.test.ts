@@ -10,9 +10,7 @@ describe('deepLinkTarget', () => {
     expect(deepLinkTarget('orrery://explore')).toBe('/explore');
   });
   it('carries a deeper path (host + pathname)', () => {
-    expect(deepLinkTarget('orrery://science/transfers/hohmann')).toBe(
-      '/science/transfers/hohmann',
-    );
+    expect(deepLinkTarget('orrery://science/transfers/hohmann')).toBe('/science/transfers/hohmann');
   });
   it('carries a hash', () => {
     expect(deepLinkTarget('orrery://fly#capcom')).toBe('/fly#capcom');

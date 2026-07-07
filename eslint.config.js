@@ -18,6 +18,7 @@ export default [
         // Vite-injected build-time constants — see vite.config.ts `define`.
         __APP_VERSION__: 'readonly',
         __BUILD_DATE__: 'readonly',
+        __MOBILE__: 'readonly',
       },
     },
     rules: {
@@ -42,6 +43,12 @@ export default [
       '.svelte-kit/',
       'dist/',
       'node_modules/',
+      // Capacitor native project dirs — platform-generated + the synced web
+      // bundle copy (cap sync populates ios/App/App/public +
+      // android/.../assets/public with build/; Xcode writes ios/DerivedData).
+      // All gitignored where generated; never hand-authored source to lint.
+      'ios/',
+      'android/',
       'src/lib/paraglide/',
       'docs/.vitepress/dist/',
       'docs/.vitepress/cache/',

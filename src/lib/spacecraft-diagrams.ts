@@ -31,6 +31,7 @@ const ANATOMY_ALIAS: Record<string, string> = {
 export function spacecraftDiagramPath(id: string): string | null {
   if (SPACECRAFT_ANATOMY_IMG.has(id)) return `${assetOrigin}/images/anatomy/${id}.webp`;
   const alias = ANATOMY_ALIAS[id];
-  if (alias && SPACECRAFT_ANATOMY_IMG.has(alias)) return `${assetOrigin}/images/anatomy/${alias}.webp`;
+  if (alias && SPACECRAFT_ANATOMY_IMG.has(alias))
+    return `${assetOrigin}/images/anatomy/${alias}.webp`;
   return null;
 }

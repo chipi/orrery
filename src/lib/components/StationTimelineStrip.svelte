@@ -9,7 +9,6 @@
    * One reusable component, mounted on both /iss and /tiangong.
    */
   import { resolveAgency } from '$lib/agencies';
-  import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
 
   type StationItem = {

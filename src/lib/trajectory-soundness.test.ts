@@ -70,9 +70,7 @@ function loadAllMissions(): MissionFile[] {
       // "CREWED — SAMPLE RETURN") which /fly uses to detect round-trip.
       let overlay: { type?: string } = {};
       try {
-        overlay = JSON.parse(
-          readFileSync(`i18n-src/en-US/missions/${destDir}/${file}`, 'utf8'),
-        );
+        overlay = JSON.parse(readFileSync(`i18n-src/en-US/missions/${destDir}/${file}`, 'utf8'));
       } catch {
         // Some missions may not have an overlay yet — treat as one-way.
       }

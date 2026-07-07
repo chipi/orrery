@@ -14,6 +14,23 @@ import { base } from '$app/paths';
  * (need apple-app-site-association + Digital Asset Links on the GH Pages
  * domain). No-op in the browser build.
  */
+/**
+ * Map an `orrery://` deep-link URL to an app route (without the deploy `base`).
+ * The scheme host becomes the first path segment; query + hash carry through.
+ * Duplicate slashes are collapsed in the PATH only — never the query/hash,
+ * whose values may legitimately contain `//` (e.g. a URL-valued param).
+ * Returns null on a malformed URL. Pure — unit-tested.
+ */
+export function deepLinkTarget(url: string): string | null {
+  try {
+    const u = new URL(url);
+    const path = `/${u.host}${u.pathname}`.replace(/\/{2,}/g, '/');
+    return `${path}${u.search}${u.hash}`;
+  } catch {
+    return null;
+  }
+}
+
 export function initDeepLinks(): () => void {
   if (!Capacitor.isNativePlatform()) return () => {};
 
@@ -23,16 +40,8 @@ export function initDeepLinks(): () => void {
   void import('@capacitor/app').then(({ App }) => {
     if (disposed) return;
     void App.addListener('appUrlOpen', ({ url }) => {
-      try {
-        const u = new URL(url);
-        // orrery://<host><path>?<query>#<hash>  →  /<host><path>?<query>#<hash>
-        // Collapse duplicate slashes in the PATH only — never the query/hash,
-        // whose values may legitimately contain `//` (e.g. a URL param).
-        const path = `/${u.host}${u.pathname}`.replace(/\/{2,}/g, '/');
-        void goto(`${base}${path}${u.search}${u.hash}`);
-      } catch {
-        /* malformed deep link — ignore */
-      }
+      const target = deepLinkTarget(url);
+      if (target) void goto(`${base}${target}`);
     }).then((handle) => {
       removeListener = () => void handle.remove();
     });

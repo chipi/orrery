@@ -2,6 +2,19 @@ import { Capacitor } from '@capacitor/core';
 import { STREAM_ORIGIN } from './asset-url';
 
 /**
+ * The URL to share. On Capacitor `location.href` is the internal
+ * `capacitor://localhost` (Android: `https://localhost`) origin — useless to a
+ * recipient — so rebuild a public URL against the deployed origin. Pure —
+ * unit-tested. `loc` is a `Location`-shaped object.
+ */
+export function publicShareUrl(
+  loc: Pick<Location, 'href' | 'pathname' | 'search' | 'hash'>,
+  mobile: boolean,
+): string {
+  return mobile ? `${STREAM_ORIGIN}${loc.pathname}${loc.search}${loc.hash}` : loc.href;
+}
+
+/**
  * Share the current view (S4 / PRD-015 S1 — "Share this mission arc"). Shares
  * the current URL, which deep-links back to the exact route + query (e.g.
  * `/fly?mission=curiosity`). Three tiers:
@@ -12,13 +25,7 @@ import { STREAM_ORIGIN } from './asset-url';
  * Returns 'shared' | 'copied' | 'cancelled' so the caller can surface feedback.
  */
 export async function shareCurrent(): Promise<'shared' | 'copied' | 'cancelled'> {
-  // On Capacitor, window.location.href is the internal capacitor://localhost
-  // (Android: https://localhost) origin — useless to a recipient. Rebuild a
-  // public URL against the deployed origin so the shared link opens the same
-  // route in any browser (and deep-links back into the app if installed).
-  const url = Capacitor.isNativePlatform()
-    ? `${STREAM_ORIGIN}${window.location.pathname}${window.location.search}${window.location.hash}`
-    : window.location.href;
+  const url = publicShareUrl(window.location, Capacitor.isNativePlatform());
   const title = document.title || 'Orrery';
 
   if (Capacitor.isNativePlatform()) {

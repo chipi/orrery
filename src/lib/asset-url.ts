@@ -18,11 +18,41 @@ import { DEFAULT_LOCALE } from './locale';
 /** GitHub Pages origin the mobile build streams pruned buckets from. */
 export const STREAM_ORIGIN = 'https://chipi.github.io/orrery';
 
+// ─── Pure resolvers ──────────────────────────────────────────────────────
+// The logic, parameterised on `mobile` + `base` so both the browser and the
+// Capacitor path are unit-testable (the public API below binds them to the
+// build's compile-time `__MOBILE__` and the runtime `base`).
+
+/** Origin for images + audio: the stream origin under mobile, else `base`. */
+export function resolveAssetOrigin(mobile: boolean, localBase: string): string {
+  return mobile ? STREAM_ORIGIN : localBase;
+}
+
+/** Prefix a root-relative streamed-bucket URL with the stream origin (mobile only). */
+export function resolveStreamedUrl(url: string, mobile: boolean): string {
+  if (!mobile) return url;
+  return url.startsWith('/images/') || url.startsWith('/audio/')
+    ? `${STREAM_ORIGIN}${url}`
+    : url;
+}
+
+/** Per-locale bundle origin: default locale stays local; others stream under mobile. */
+export function resolveLocaleBundleOrigin(
+  locale: string,
+  mobile: boolean,
+  localBase: string,
+  defaultLocale: string = DEFAULT_LOCALE,
+): string {
+  return mobile && locale !== defaultLocale ? STREAM_ORIGIN : localBase;
+}
+
+// ─── Public API (bound to the build) ─────────────────────────────────────
+
 /**
  * Origin for images + audio. Streamed from `STREAM_ORIGIN` under the
  * Capacitor stream-heavy build; the local `base` in every browser build.
  */
-export const assetOrigin: string = __MOBILE__ ? STREAM_ORIGIN : base;
+export const assetOrigin: string = resolveAssetOrigin(__MOBILE__, base);
 
 /**
  * Build a URL for a streamed asset. `path` is root-relative with a leading
@@ -40,10 +70,7 @@ export function assetUrl(path: string): string {
  * browser build and for non-streamed buckets (e.g. bundled `/textures/…`).
  */
 export function streamedUrl(url: string): string {
-  if (!__MOBILE__) return url;
-  return url.startsWith('/images/') || url.startsWith('/audio/')
-    ? `${STREAM_ORIGIN}${url}`
-    : url;
+  return resolveStreamedUrl(url, __MOBILE__);
 }
 
 /**
@@ -52,5 +79,5 @@ export function streamedUrl(url: string): string {
  * install; the other 13 locales are pruned and streamed under mobile.
  */
 export function localeBundleOrigin(locale: string): string {
-  return __MOBILE__ && locale !== DEFAULT_LOCALE ? STREAM_ORIGIN : base;
+  return resolveLocaleBundleOrigin(locale, __MOBILE__, base);
 }

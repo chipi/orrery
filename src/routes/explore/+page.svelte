@@ -1590,7 +1590,9 @@
     // Gate the per-planet 4K texture LOD on tier — on minimal/low (mobile,
     // weak GPU) the 4K fetch + GPU upload cost outweighs the visual win, so
     // those tiers stay at 2K throughout. Mirrors SurfaceScene's tex4kAllowed.
-    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low';
+    // __MOBILE__: the Capacitor build ships 2K only (4K planet textures are
+    // pruned off-device, ADR-079 D3) — force 2K regardless of resolved tier.
+    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low' && !__MOBILE__;
     const renderer = createSceneRenderer(container, {
       pixelRatioCap: quality.pixelRatioCap,
     });
@@ -1679,7 +1681,8 @@
     sunMesh.userData = { planetId: '__sun__' };
     scene.add(sunMesh);
     function ensureSun4kLoaded(): void {
-      if (sun4kLoadStarted) return;
+      // __MOBILE__: 4k_sun.jpg is pruned off-device (ADR-079 D3) — stay at 2K.
+      if (sun4kLoadStarted || __MOBILE__) return;
       sun4kLoadStarted = true;
       textureLoader.load(
         `${base}/textures/4k_sun.jpg`,

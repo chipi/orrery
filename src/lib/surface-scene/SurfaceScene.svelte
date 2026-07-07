@@ -1172,7 +1172,9 @@
     // minimal / low (mobile, weak GPU) the 4 K download + GPU upload
     // cost is greater than the visual win — we stay at 2 K throughout.
     // Medium and above keep the existing approach-distance LOD swap.
-    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low';
+    // __MOBILE__: the Capacitor build ships 2K only (4K surface textures are
+    // pruned off-device, ADR-079 D3) — force 2K regardless of resolved tier.
+    const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low' && !__MOBILE__;
     function updatePlanetTextureLod(camR: number): void {
       if (!config.textureUrl4k) return; // body has no 4K source
       if (!tex4kAllowed) return; // mobile / low GPU — stay at 2 K

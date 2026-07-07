@@ -2138,9 +2138,11 @@
     const cislunarHandles = buildCislunarScene({
       aspect: container.clientWidth / container.clientHeight,
       earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
-      earthTextureUrl4k: `${base}/textures/4k_earth_daymap.jpg`,
+      // __MOBILE__: 4K earth/moon are pruned off-device (ADR-079 D3). Passing
+      // undefined makes fly-cislunar-scene skip the LOD upgrade and stay at 2K.
+      earthTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_earth_daymap.jpg`,
       moonTextureUrl: `${base}/textures/2k_moon.jpg`,
-      moonTextureUrl4k: `${base}/textures/4k_moon.jpg`,
+      moonTextureUrl4k: __MOBILE__ ? undefined : `${base}/textures/4k_moon.jpg`,
     });
     const cislunarScene = cislunarHandles.scene;
     const cislunarCamera = cislunarHandles.camera;

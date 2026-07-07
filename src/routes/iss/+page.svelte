@@ -816,6 +816,9 @@
     earthBackdrop.rotation.y = -gmstRadians();
     scene.add(earthBackdrop);
     function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
+      // __MOBILE__: 4k_earth_daymap.jpg is pruned off-device (ADR-079 D3) —
+      // stay at 2K.
+      if (__MOBILE__) return;
       // Backdrop sphere has radius 42u. Trigger at ~3× radius (≤ 126u)
       // → swap to 4K; revert at ~4× (≥ 168u). Hysteresis prevents
       // boundary thrash.

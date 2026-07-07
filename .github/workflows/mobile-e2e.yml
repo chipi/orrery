@@ -1,0 +1,84 @@
+name: mobile-e2e
+
+# Layer 1 of the mobile test strategy (docs/guides/mobile-testing.md).
+#
+# Builds the Capacitor stream-heavy bundle (`build:mobile` — prune + downscale
+# + size-budget gate) and runs the mobile Playwright suite against the PRUNED
+# build/ served statically (scripts/mobile/serve-build.mjs). Device-free: it
+# proves the `__MOBILE__` streaming contract (CDN-routed assets, on-device
+# prune, en-US-only SW precache, 4K textures gated) that previously could only
+# be checked by eyeballing a simulator. The native surface (safe-area, plugins,
+# WebGL context-loss) is Layer 2/3 and not covered here.
+#
+# Triggers mirror docker-e2e.yml (ADR-071): after CI passes on main, plus
+# manual dispatch. No cron — unlike docker-e2e this run stubs the CDN, so there
+# is no external state to drift. Fast (~3-4 min: npm ci + build:mobile +
+# chromium + 5 specs), so it can gate every green main push cheaply.
+on:
+  workflow_run:
+    workflows: ['CI']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: mobile-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mobile-e2e:
+    runs-on: ubuntu-latest
+    # Same gate as docker-e2e: only run when the upstream CI actually passed,
+    # and skip the bot-pushed data-refresh commits that don't touch code.
+    if: >-
+      ${{
+        github.event_name != 'workflow_run' ||
+        (
+          github.event.workflow_run.conclusion == 'success' &&
+          !startsWith(github.event.workflow_run.head_commit.message, 'chore(launches): refresh') &&
+          !startsWith(github.event.workflow_run.head_commit.message, 'chore(visual): regenerate snapshot')
+        )
+      }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          # On workflow_run, pin to the exact SHA that passed CI (main may have
+          # moved on). Manual dispatch falls through to the ref default.
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Produces the pruned build/: MOBILE=1 build → prune-streamed-assets →
+      # downscale-base-textures → check-mobile-size-budget (fails if a pruned
+      # bucket leaked back). This step alone is the size-regression gate.
+      - name: Build mobile bundle (prune + downscale + size budget)
+        run: npm run build:mobile
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run mobile Playwright suite against the pruned build/
+        run: npx playwright test --config=playwright.mobile.config.ts
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: mobile-e2e-playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Upload raw test-results on failure
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: mobile-e2e-test-results
+          path: test-results/
+          retention-days: 14
+          if-no-files-found: ignore

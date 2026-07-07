@@ -11,6 +11,11 @@ re-discover them.
 > in a WKWebView (iOS) / Chromium WebView (Android). There is no native UI. The
 > `android/` and `ios/` directories are committed (Capacitor convention).
 
+> **Validating your changes:** see **[Mobile testing strategy](/guides/mobile-testing)**.
+> `npm run test:e2e:mobile` (device-free, in CI) asserts the streaming contract +
+> size budget on the pruned bundle; the guide's Layer 3 checklist covers the
+> on-device bits before a mobile release.
+
 ---
 
 ## 1 · Prerequisites

@@ -34,7 +34,7 @@
   "scripts": {
     "dev": "npm run i18n:compile && exec vite dev",
     "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && npm run build-i18n-bundles && vite build && node scripts/check-precache-budget.mjs && node scripts/prune-build-staging.mjs && node scripts/check-prerender-completeness.mjs && node scripts/check-internal-links.mjs",
-    "build:mobile": "MOBILE=1 npm run build && MOBILE=1 node scripts/mobile/prune-streamed-assets.mjs",
+    "build:mobile": "MOBILE=1 npm run build && MOBILE=1 node scripts/mobile/prune-streamed-assets.mjs && MOBILE=1 node scripts/mobile/downscale-base-textures.mjs && MOBILE=1 node scripts/mobile/check-mobile-size-budget.mjs",
     "sync:mobile": "npm run build:mobile && npx cap sync",
     "open:ios": "npx cap open ios",
     "open:android": "npx cap open android",
@@ -51,6 +51,8 @@
     "test:coverage": "npm run i18n:compile && vitest run --coverage --passWithNoTests",
     "test:e2e": "npm run build && playwright test",
     "test:e2e:ui": "npm run build && playwright test --ui",
+    "test:e2e:mobile": "npm run build:mobile && playwright test --config=playwright.mobile.config.ts",
+    "test:e2e:mobile:preview": "playwright test --config=playwright.mobile.config.ts",
     "regen-visual-baselines-linux": "bash scripts/regenerate-visual-baselines-linux.sh",
     "release:rehearsal": "tsx scripts/release-rehearsal.ts",
     "screenshots": "npm run build && tsx scripts/capture-screenshots.ts",

@@ -19,6 +19,19 @@
  *                                    source only; runtime loads the collapsed
  *                                    <locale>.json (src/lib/data.ts), never the
  *                                    raw tree, so all of it is dead weight.
+ *   - build/<non-en-locale>/         prerendered per-locale HTML trees + the
+ *   - build/<non-en-locale>.html     locale-root page (~70 MB across 13
+ *                                    locales). On-device the app is a SPA: in-
+ *                                    app navigation is client-side (SvelteKit
+ *                                    router / goto), and a hard nav to a pruned
+ *                                    /de/… falls back to the precached 404.html
+ *                                    shell (adapter fallback + SW
+ *                                    navigateFallback), which reroute-strips the
+ *                                    locale prefix and renders client-side. The
+ *                                    prerendered HTML is a first-paint/SEO
+ *                                    nicety irrelevant to a single-user local
+ *                                    bundle. en-US (baseLocale) stays at the
+ *                                    root so cold start has a real entry page.
  *   - build/**\/*.{br,gz}            precompressed siblings (vite-plugin-
  *                                    compression2) — served by nginx on the web
  *                                    deploy, but a Capacitor WKWebView loads
@@ -31,9 +44,26 @@
 import { rm, stat, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
+import { locales, baseLocale } from '../../src/lib/paraglide/runtime.js';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const DEFAULT_LOCALE = 'en-US';
+const DEFAULT_LOCALE = baseLocale;
+
+// 4K planet/surface textures whose 2K sibling ships on-device. The 4K LOD
+// upgrade is gated off under __MOBILE__ at every load site (explore, fly, iss,
+// tiangong, SurfaceScene — ADR-079 D3), so these are never requested on mobile.
+// The four base-4K bodies with NO 2K sibling (io, titan, enceladus, pluto) are
+// NOT listed here — they're downscaled in place by downscale-base-textures.mjs.
+const PRUNED_4K_TEXTURES = [
+  'textures/4k_earth_daymap.jpg',
+  'textures/4k_moon.jpg',
+  'textures/4k_mars.jpg',
+  'textures/4k_mercury.jpg',
+  'textures/4k_venus_atmosphere.jpg',
+  'textures/4k_jupiter.jpg',
+  'textures/4k_saturn.jpg',
+  'textures/4k_sun.jpg',
+];
 
 if (process.env.MOBILE !== '1') {
   console.log('[prune-mobile] MOBILE != 1 — skipping (browser build untouched).');
@@ -93,6 +123,17 @@ async function targets() {
       }
     }
   }
+
+  // Non-default-locale prerendered HTML: the /<locale>/ tree + the /<locale>.html
+  // root page. Rendered client-side on-device (see header). Keep baseLocale.
+  for (const locale of locales) {
+    if (locale === baseLocale) continue;
+    list.push(path.join(BUILD, locale));
+    list.push(path.join(BUILD, `${locale}.html`));
+  }
+
+  // 4K LOD textures with a 2K on-device sibling (gated off under __MOBILE__).
+  for (const rel of PRUNED_4K_TEXTURES) list.push(path.join(BUILD, rel));
 
   // Precompressed siblings are collected last so the summary logs them as
   // one group rather than 1,600+ lines.

@@ -680,6 +680,8 @@ npx playwright test --workers=1 --project=mobile-chromium tests/e2e/i18n-de.spec
 
 **Why `--workers=1`:** the vite preview server is shared across workers. With the default 2 local workers, concurrent rAF + canvas tests destabilise the preview server enough that it sometimes crashes mid-run (`net::ERR_CONNECTION_REFUSED` on subsequent tests). Single worker is slower (~3 min for the full suite) but deterministic. CI already uses one worker; matching it locally also matches CI failure modes.
 
+**Mobile (Capacitor) e2e is separate:** `npm run test:e2e:mobile` builds the `MOBILE=1` stream-heavy bundle and runs `playwright.mobile.config.ts` against the **pruned `build/`** (via `scripts/mobile/serve-build.mjs` — NOT `vite preview`, which serves the unpruned `.svelte-kit/output/`). It's device-free, asserts the streaming contract + the size budget, and runs in its own `mobile-e2e.yml` CI workflow. Full strategy + the on-device manual checklist: **[docs/guides/mobile-testing.md](docs/guides/mobile-testing.md)**.
+
 **Why BOTH projects:** desktop-chromium and mobile-chromium hit different viewport breakpoints (≤640 px collapses the nav into the hamburger drawer, the science rail loses its Search button, /fly HUD collapses, etc.). The mobile project catches the layout regressions desktop can't see. Skipping mobile is how the v0.6.0 → v0.6.1 release cycle ended up with 60+ mobile failures discovered post-tag.
 
 **Visual regression baselines (`tests/e2e/visual.spec.ts`):** baselines are committed as `*-darwin.png` (maintainer's local machine) AND `*-linux.png` (CI runner). Each platform pair must stay in lockstep. Local darwin runs use the darwin baselines; CI runs use the linux baselines.

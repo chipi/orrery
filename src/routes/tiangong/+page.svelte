@@ -764,6 +764,9 @@
     earthBackdrop.rotation.y = -gmstRadians();
     scene.add(earthBackdrop);
     function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
+      // __MOBILE__: 4k_earth_daymap.jpg is pruned off-device (ADR-079 D3) —
+      // stay at 2K.
+      if (__MOBILE__) return;
       if (cameraToBackdropUnits <= 126) {
         if (!earthBackdrop4kLoadStarted) {
           earthBackdrop4kLoadStarted = true;

@@ -26,8 +26,10 @@ export function initDeepLinks(): () => void {
       try {
         const u = new URL(url);
         // orrery://<host><path>?<query>#<hash>  →  /<host><path>?<query>#<hash>
-        const target = `/${u.host}${u.pathname}${u.search}${u.hash}`.replace(/\/+/g, '/');
-        void goto(`${base}${target}`);
+        // Collapse duplicate slashes in the PATH only — never the query/hash,
+        // whose values may legitimately contain `//` (e.g. a URL param).
+        const path = `/${u.host}${u.pathname}`.replace(/\/{2,}/g, '/');
+        void goto(`${base}${path}${u.search}${u.hash}`);
       } catch {
         /* malformed deep link — ignore */
       }

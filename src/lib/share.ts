@@ -1,4 +1,5 @@
 import { Capacitor } from '@capacitor/core';
+import { STREAM_ORIGIN } from './asset-url';
 
 /**
  * Share the current view (S4 / PRD-015 S1 — "Share this mission arc"). Shares
@@ -11,7 +12,13 @@ import { Capacitor } from '@capacitor/core';
  * Returns 'shared' | 'copied' | 'cancelled' so the caller can surface feedback.
  */
 export async function shareCurrent(): Promise<'shared' | 'copied' | 'cancelled'> {
-  const url = window.location.href;
+  // On Capacitor, window.location.href is the internal capacitor://localhost
+  // (Android: https://localhost) origin — useless to a recipient. Rebuild a
+  // public URL against the deployed origin so the shared link opens the same
+  // route in any browser (and deep-links back into the app if installed).
+  const url = Capacitor.isNativePlatform()
+    ? `${STREAM_ORIGIN}${window.location.pathname}${window.location.search}${window.location.hash}`
+    : window.location.href;
   const title = document.title || 'Orrery';
 
   if (Capacitor.isNativePlatform()) {

@@ -2994,7 +2994,7 @@
           panoramaSkybox.mountAnnotations(annotations, colorFor(site));
         }
         if (entry && `${base}${entry.url}` !== textureUrl) {
-          void panoramaSkybox.swapTexture(`${base}${entry.url}`);
+          void panoramaSkybox.swapTexture(streamedUrl(`${base}${entry.url}`));
         }
       }
       planetMesh.visible = false;
@@ -5667,7 +5667,7 @@ sample      ${debugInfo.projectedPxSample}`}
         if (!panoramaSkybox || !selected) return;
         panoramaCurrentEntryId = entry.id;
         panoramaActiveAnnotation = null;
-        void panoramaSkybox.swapTexture(`${base}${entry.url}`).then(() => {
+        void panoramaSkybox.swapTexture(streamedUrl(`${base}${entry.url}`)).then(() => {
           if (!panoramaSkybox || !selected) return;
           panoramaSkybox.mountAnnotations(entry.annotations ?? [], colorFor(selected));
         });

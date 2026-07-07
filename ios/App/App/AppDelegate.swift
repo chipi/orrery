@@ -10,8 +10,6 @@ import WebKit
 // var(--safe-area-inset-top, env(safe-area-inset-top)) — real inset under
 // Capacitor, env() fallback in the browser. Wired via Main.storyboard.
 class SafeAreaViewController: CAPBridgeViewController {
-    private var lastInsets = UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)
-
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         applySafeAreaInsets()
@@ -35,9 +33,8 @@ class SafeAreaViewController: CAPBridgeViewController {
         }
     }
 
-    private func applySafeAreaInsets(force: Bool = false) {
+    private func applySafeAreaInsets() {
         let insets = view.safeAreaInsets
-        lastInsets = insets
         let js = """
         (function(){var s=document.documentElement.style;\
         s.setProperty('--safe-area-inset-top','\(insets.top)px');\

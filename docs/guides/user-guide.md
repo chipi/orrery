@@ -6,9 +6,20 @@ _Orrery — read-this-first guide for the live app · v0.6.x · May 2026_
 
 ---
 
+## On your phone
+
+Orrery is **mobile-first** — every route adapts to a phone: a hamburger nav, bottom-sheet panels, and touch gestures on the 3D scenes (one-finger drag to orbit, **pinch to zoom**, tap to select).
+
+- **Native apps (iOS + Android)** are in progress (v0.8) — a Capacitor wrapper of this same web app, headed for the App Store + Google Play. Same experience, installed from a store, with a native share sheet and offline core.
+- **Right now** you can install the web app as a PWA: open the site in your phone browser and use "Add to Home Screen" (Android Chrome offers an install prompt; iOS Safari → Share → Add to Home Screen).
+
+The rest of this guide describes the app screen-by-screen — it reads the same on desktop and phone.
+
+---
+
 ## Switching language
 
-A locale picker sits in the top-right of the navigation bar. The chip shows your country flag + the locale's short tag (e.g. 🇩🇪 DE). Click it to open the dropdown, pick your language, and the URL updates to `?lang=<code>`. Bookmark the URL to lock your locale; share it and your reader gets the same.
+A locale picker sits in the top-right of the navigation bar. The chip shows the locale's short tag (e.g. `DE`). Click it to open the dropdown, pick your language, and the URL updates to the locale-prefixed path (e.g. `/de/…`). Bookmark the URL to lock your locale; share it and your reader gets the same. (Flag emoji were dropped — they render inconsistently across platforms; the short tag is unambiguous everywhere.)
 
 There is no `localStorage` and no cookie — the URL is the only place your locale lives. On a fresh visit the browser language is sniffed (`navigator.language`) and applied automatically; if it doesn't match a supported locale, English is the default.
 

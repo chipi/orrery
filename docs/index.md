@@ -57,7 +57,8 @@ This is the architecture and design documentation, not the user-facing help. Rea
 ### Start here
 
 - **[User guide](/guides/user-guide)** — read-this-first walk-through of the live app, screen by screen, with screenshots for all 11 primary nav routes plus the read-only provenance pages.
-- **[Architecture (TA.md)](/adr/TA)** — single-page architecture map. Every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it.
+- **[Architecture (TA.md)](/adr/TA)** — single-page architecture map. Every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it. See **§mobile** for the Capacitor wrapper.
+- **[Mobile build & deploy](/guides/mobile-build-and-deploy)** — contributor runbook for the iOS/Android app: toolchain, `build:mobile` + stream-heavy prune, `cap sync`/run, TestFlight, and the safe-area / scroll / lockfile sharp edges.
 - **[Translator guide](/guides/i18n-style-guide)** — binding glossary for translators, per ADR-033.
 
 ### Decision history

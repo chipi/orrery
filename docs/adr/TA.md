@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v2.5 · July 2026*
+*Orrery · Reference document · v2.6 · July 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update `§stack` and `§map` when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs), [`../prd/index.md`](../prd/index.md) (PRDs).
 
@@ -522,6 +522,8 @@ The Lambert worker stays in the bundle for any future custom-range computation (
 
 ### Pipeline 10 — i18n + translation (`scripts/wave23/`)
 
+> **Source relocated (ADR-079 D2 / #377, 2026-07-07):** the raw per-entity overlay tree moved from `static/data/i18n/<locale>/` to **`i18n-src/<locale>/`** — it is build-time *source*, never a servable asset (~10,360 files, ~60% of the old `static/` file count, that were flaking GH Pages, #373). `build-i18n-bundles.mjs` reads `i18n-src/` and writes the 14 collapsed runtime bundles into `static/data/i18n/{locale}.json` (still served). Consumers repointed via the `$i18nSrc` alias (`svelte.config.js`). References below to `static/data/i18n/<locale>/…` describe the *logical* overlay path; the physical source is `i18n-src/`.
+
 Three-stage pipeline per ADR-033 + ADR-054:
 
 1. **catalog.ts** — read every en-US overlay (missions, fleet, science, surface sites, ISS modules, Tiangong modules) and write a flat key → en-US-string map.
@@ -773,6 +775,28 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 ---
 
+## §mobile — Mobile wrapper (Capacitor · v0.8)
+
+Locked by **ADR-078** (iOS-first + stream-heavy bundle) + **ADR-079** (assetUrl origin spine). Contributor runbook: **[docs/guides/mobile-build-and-deploy.md](../guides/mobile-build-and-deploy.md)**. Integration spec: **[RFC-018](../rfc/RFC-018.md)** (read the v0.5 correction notes — several original sections drifted from shipped code).
+
+**Shape.** Capacitor 8.4.1 wraps the SvelteKit static `build/` in a WKWebView (iOS 15+) / Chromium WebView (Android, JDK 21). No native UI; the web app is the product. `ios/` + `android/` are committed. CI never builds the binaries (no Xcode/Android SDK in runners) — mobile builds are local.
+
+**Stream-heavy bundle (ADR-078 D2).** The naive build is ~2 GB (10× the iOS 200 MB OTA cap). `MOBILE=1 npm run build` + `scripts/mobile/prune-streamed-assets.mjs` strip `build/images` (1.6 GB), `build/audio` (97 MB), the 13 non-default locale bundles + raw i18n trees, and dead `.br/.gz` → **~160 MB on-device**. Pruned buckets stream from `chipi.github.io/orrery` at runtime, SW-cached on first view. Cost: galleries + audio need one online view (PRD-015 M5 relaxed).
+
+**assetUrl origin spine (ADR-079 D1).** `src/lib/asset-url.ts` is the single seam that resolves streamed-bucket URLs to the CDN origin under the `__MOBILE__` Vite define (`MOBILE=1`) and to `base` in every browser build (byte-identical off-device):
+- `assetOrigin` — images/audio origin.
+- `assetUrl(path)` / `streamedUrl(url)` — the latter for load points that build `/images//audio/` URLs without going through `assetOrigin` (surface/hotspot textures, panorama skyboxes).
+- `localeBundleOrigin(locale)` — en-US stays on-device (offline default), others stream.
+Threaded through ~9 chokepoints (`pickHero`, `data.ts` gallery builders + `loadI18nBundle`, `spacecraft-diagrams`, `image-vision` `pickVariant` → hotspots, `SurfaceScene`/`SurfaceFlatPatch`, `hotspot-surface-patch`, `audio-registry`). **Any new `/images//audio/` consumer must route through it** or it 404s on mobile.
+
+**iOS safe-area — native shim (RFC-018 §11.4 corrected).** Capacitor's WKWebView returns `env(safe-area-inset-*)` = **0**. `SafeAreaViewController` (`ios/App/App/AppDelegate.swift`, wired via `Main.storyboard`) reads native `view.safeAreaInsets` and injects them as CSS vars; CSS reads `var(--safe-area-inset-top, env(...))`. `--nav-height` (tokens.css) folds the top inset in so the nav + `calc(var(--nav-height)+N)` canvas controls move together. The same shim forces `scrollView.isScrollEnabled = true` (the config flag wasn't reliably applied).
+
+**WebGL context-loss recovery (S8, #195).** WKWebView drops the WebGL context on background. `src/lib/native/webgl-recovery.ts` (in `+layout`) detects a lost context (`webglcontextlost`/`restored` + `@capacitor/app` `appStateChange`) and **reloads the route** — reliable, no blank scene. Per-scene `reinit()` (RFC-018 §11.2) deferred pending real-device verification.
+
+**Plugins:** `@capacitor/{app,browser,share,haptics,splash-screen}` + `@capacitor-community/safe-area` (Android edge-to-edge). Deep links `orrery://<route>` (`src/lib/native/deep-links.ts` + Info.plist/Manifest). Share → native sheet / `navigator.share` / copy-link, on a public URL (`src/lib/share.ts`). External links → in-app Safari via `@capacitor/browser` (`src/lib/external-link.ts`, routed from the `+layout` click delegation).
+
+**Icons/splash:** `@capacitor/assets` generates from `assets/icon.png` (1024, from `static/favicon.svg`) + `assets/splash.png` (2732, Higgsfield-reimagined orrery + wordmark).
+
 ## §stack
 
 Locked technical choices. Each entry points to its ADR.
@@ -786,6 +810,7 @@ Locked technical choices. Each entry points to its ADR.
 | 3D rendering | Three.js r128, local bundle | ADR-001 |
 | Math rendering | KaTeX, server-rendered at build | ADR-034 |
 | Service worker / PWA | @vite-pwa/sveltekit | ADR-029 |
+| Mobile wrapper (iOS + Android) | Capacitor 8 · stream-heavy bundle · assetUrl origin spine · native safe-area shim | ADR-078, ADR-079 (see §mobile) |
 | Documentation site | VitePress + vitepress-sidebar at `/docs/` | ADR-021 |
 | CI + preview hosting | GitHub Actions + GitHub Pages | ADR-014 |
 | Unit / integration tests | Vitest (+ jsdom + canvas polyfill) | ADR-015 |
@@ -904,3 +929,4 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | **v2.1** | **May 2026** | **v0.7.0 catch-up.** Named `disposeScene` helper in §rendering teardown (centralised in `src/lib/three/dispose-object3d.ts` after audit found 5 routes inlining partial traversals that missed `Line` / `Points` + texture slots). Added §rendering "Long-list rendering perf" subsection for CSS `content-visibility` on `/fleet` / `/library` / `/credits` (W4). Added §pipelines Pipeline 11 for build-time compression — `vite-plugin-compression2` emits `.br` + `.gz` siblings, nginx serves them via `brotli_static` + `gzip_static` (W3). Added §components Test infrastructure note for sharded docker-stack e2e workflow (W7). Added §stack row for build-time compression. Header updated to v0.7.0 reality. (Audio narration system — PRD-016 / RFC-019 — and surface hotspots ship — RFC-017 — referenced in header but not yet fully cross-sectioned; pending §components / §pipelines deepening in follow-up.) |
 | **v2.2** | **June 2026** | **Foundational refactors (#332).** §components i18n machinery rewritten for Paraglide 2.x URL-segment routing (`/de/iss` replaces `?lang=de`) + `experimentalMiddlewareLocaleSplitting` — every per-locale route prerenders locale-correct HTML on first byte; client JS ships ~0 KB of message strings instead of all 14 locales' 1.5 MB. §components Data layer extended with `RemoteData<E,T>` (`src/lib/types/remote-data.ts`, #330 C.2) and `useUrlParam<T>` (`src/lib/routes/use-url-param.svelte.ts`, #331) rune. §rendering Animation loop now points at `createAnimateLoop` (`src/lib/three/animate-loop.ts`, #329) which finally enforces the `document.hidden` pause contract across all 7 3D routes — the contract that v2.0 referenced was unimplemented until #329. Companion `createRouteLifecycle` (route-lifecycle.ts) holds the listener + disposable LIFO drain. README at `src/lib/three/README.md` is the discoverability matrix for future contributors. /fly effect-ladder consolidation (#330 C.3) deferred — needs deeper cinematic-timing analysis than fit in #332's scope. |
 | **v2.5** | **July 2026** | **v0.8 mobile-plan reshape (ADR-078).** Registered ADR-077 (/fly iconic-shot, was missing) + ADR-078 in the §map ADR table. ADR-078 reshapes the v0.8 Capacitor wrapper: **iOS-first** (reverses the 2026-05-16 Android-first lock) + **stream-heavy bundle** (galleries + `static/audio/` stream from `chipi.github.io` via RFC-018 §8.1 network-aware SW, superseding the §8.2 disable-SW plan) after a re-assessment measured the naive build at ~2 GB (`static/images/` 1.6 GB + audio 97 MB) vs the 355 MB modelled in May. PRD-015 + RFC-018 amended to v0.4. No code changes yet — plan + docs only. (Pre-existing changelog gap v2.3–v2.4 vs header not backfilled — out of scope.) |
+| **v2.6** | **July 2026** | **v0.8 mobile subsystem + drift correction (deep review).** Added **§mobile** — the Capacitor wrapper architecture (stream-heavy bundle, `assetUrl` origin spine, iOS safe-area native shim, WebGL context-loss recovery, plugins, deep-links/share) — locked by ADR-078/079. Added a Mobile-wrapper §stack row. Noted the i18n source relocation (`static/data/i18n/<locale>/` → `i18n-src/`, ADR-079 D2) in Pipeline 10. Companion contributor guide `docs/guides/mobile-build-and-deploy.md`. Fixes the doc-authority gap where mobile existed in code + RFC-018/ADR-078/079 but not in TA.md. |

@@ -207,6 +207,13 @@ describe('provenanceSourceId', () => {
         makePhoto({ source_type: 'derived-mosaic', agency: 'NASA', instrument: 'CTX' }),
       ),
     ).toBe('nasa-ctx');
+    // Moon detail imagery (#361) — LROC NAC gets its own NASA · LROC NAC
+    // section (HiRISE-equivalent), not the general NASA bucket.
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'NASA', instrument: 'LROC NAC' }),
+      ),
+    ).toBe('nasa-lroc-nac');
     // Moon regional context (#361) — JAXA Kaguya Terrain Camera gets its own
     // section, surfacing JAXA rather than collapsing into the NASA bucket.
     expect(

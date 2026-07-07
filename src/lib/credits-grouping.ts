@@ -267,6 +267,9 @@ export function provenanceSourceId(p: ImageProvenanceEntry): string {
   // NASA gallery photos, so they shouldn't be mixed into the NASA bucket.
   if (p.instrument === 'HiRISE') return 'nasa-hirise';
   if (p.instrument === 'CTX') return 'nasa-ctx';
+  // Moon detail layer (#361) — LROC NAC (~0.5-2 m/px), the /moon HiRISE-
+  // equivalent. Its own section, surfaces NASA/GSFC/ASU.
+  if (p.instrument === 'LROC NAC') return 'nasa-lroc-nac';
   // Moon regional context layer (#361) — JAXA SELENE/Kaguya Terrain Camera,
   // the /moon CTX-equivalent. Its own section, surfaces JAXA.
   if (p.instrument === 'Kaguya TC') return 'jaxa-kaguya-tc';

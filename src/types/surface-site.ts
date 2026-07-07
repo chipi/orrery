@@ -316,8 +316,14 @@ export interface RouteHirisePatch {
   kind: string;
   /** Provenance-style image path (/images/hotspots/mars/<rover>/traverse/<id>.jpg). */
   image: string;
-  /** Source HiRISE product the crop came from. */
+  /** Source product the crop came from (HiRISE / LROC NAC / Kaguya TC id). */
   product_id: string;
+  /**
+   * Instrument the crop came from — drives the honest per-patch source credit
+   * on the /moon traverse (#361: LROC NAC where it exists, Kaguya TC fallback).
+   * Absent on older Mars manifests (implicitly HiRISE).
+   */
+  instrument?: 'LROC NAC' | 'Kaguya TC' | 'HiRISE';
   resolution_m_per_px: number;
   /** True ground width (m) of the crop — drives literal co-scale. */
   ground_m: number;

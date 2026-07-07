@@ -172,11 +172,21 @@
     }
   });
 
-  // Moon rover traverses (#361 follow-on) — Lunokhod 1/2, Yutu, Yutu-2,
-  // Pragyan. Same optional loadTraverses path Mars uses; missing JSON
-  // degrades to "no rendered track" rather than a failure.
+  // Moon rover traverses (#361) — Lunokhod 1/2, Yutu, Yutu-2, Pragyan, and
+  // the Apollo 15/16/17 LRV crewed traverses. Same optional loadTraverses
+  // path Mars uses; missing JSON degrades to "no rendered track" rather
+  // than a failure.
   async function loadMoonTraverses(): Promise<Record<string, Traverse>> {
-    const ids = ['luna17', 'luna21', 'change3', 'change4', 'chandrayaan3'];
+    const ids = [
+      'luna17',
+      'luna21',
+      'change3',
+      'change4',
+      'chandrayaan3',
+      'apollo15',
+      'apollo16',
+      'apollo17',
+    ];
     const entries = await Promise.all(
       ids.map(async (id) => {
         const t = await getMoonTraverse(id);

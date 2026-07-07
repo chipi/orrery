@@ -225,11 +225,21 @@ export function buildLrocProvenanceEntry(input: {
     license_url: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',
     license_rationale:
       'LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.',
-    modifications: ['cropped-2048x2048-around-site-coords', 'reencoded-jpeg-q88'],
+    modifications: [
+      'cropped-around-site-coords',
+      'band1-reflectance-contrast-stretch-to-8bit',
+      'downsampled-768x768',
+      'reencoded-jpeg-q85',
+    ],
     revid: null,
     pageid: null,
     nasa_id: input.productId,
     fetched_at: new Date().toISOString(),
+    // No spacecraft_id (mirrors the Kaguya TC entry): there is no LRO orbiter
+    // site to deep-link the 📡 chip to, so the credits page groups by
+    // instrument via the field below but the per-row satellite chip stays off.
+    spacecraft_name: 'Lunar Reconnaissance Orbiter',
+    instrument: 'LROC NAC',
   };
 }
 
@@ -335,4 +345,30 @@ export async function upsertProvenanceEntries(entries: ProvenanceEntry[]): Promi
     }
   }
   await fs.writeFile(PROVENANCE_PATH, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+}
+
+/**
+ * Remove provenance entries whose `path` starts with `prefix` and is NOT in
+ * `keep`. Prunes deduped-away / no-longer-produced crops so the manifest never
+ * points at a deleted file (ADR-046 orphan guard) after a re-fetch drops or
+ * reduces a site's patch set.
+ */
+export async function pruneProvenanceUnder(prefix: string, keep: string[]): Promise<void> {
+  const raw = await fs.readFile(PROVENANCE_PATH, 'utf-8');
+  const data = JSON.parse(raw) as ProvenanceFile;
+  const keepSet = new Set(keep);
+  let changed = false;
+  if (Array.isArray(data.entries)) {
+    const before = data.entries.length;
+    data.entries = data.entries.filter((e) => !e.path.startsWith(prefix) || keepSet.has(e.path));
+    changed = data.entries.length !== before;
+  } else {
+    for (const p of Object.keys(data.entries)) {
+      if (p.startsWith(prefix) && !keepSet.has(p)) {
+        delete data.entries[p];
+        changed = true;
+      }
+    }
+  }
+  if (changed) await fs.writeFile(PROVENANCE_PATH, JSON.stringify(data, null, 2) + '\n', 'utf-8');
 }

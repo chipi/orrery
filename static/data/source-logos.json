@@ -399,6 +399,14 @@
       "license_summary": "HiRISE camera on Mars Reconnaissance Orbiter — NASA / JPL-Caltech / University of Arizona. Public domain (17 U.S.C. § 105); attribute the source."
     },
     {
+      "id": "nasa-lroc-nac",
+      "name": "NASA · LROC NAC (LRO)",
+      "kind": "research-institute",
+      "url": "https://www.lroc.asu.edu/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "Narrow Angle Camera on the Lunar Reconnaissance Orbiter — NASA / GSFC / Arizona State University. ~0.5-2 m/px detail imagery for /moon landing zones (the HiRISE-equivalent layer); per-site orthomosaics and map-projected photometric (SDPPHO) products via USGS Astrogeology and the ODE. Public domain (17 U.S.C. § 105); attribute NASA / GSFC / Arizona State University."
+    },
+    {
       "id": "nature",
       "name": "Nature (Springer Nature)",
       "kind": "publisher",

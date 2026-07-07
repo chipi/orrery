@@ -46,6 +46,13 @@ export interface CropInput {
   cropSize?: number;
   /** JPEG quality. Default 88 per RFC-017 §ADR-060. */
   jpegQuality?: number;
+  /** When set, read only this 1-based band and emit a single-band
+   *  greyscale JPEG. Used for multi-band products where only one band is
+   *  the image — e.g. LROC NAC SDPPHO photometric products carry four
+   *  Float32 bands [reflectance, incidence, emission, phase] and only
+   *  band 1 is the picture; reading all four renders as false colour.
+   *  Omit for normal all-band crops. */
+  bandIndex?: number;
 }
 
 export interface CropResult {
@@ -187,23 +194,22 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // and lifts the typical HiRISE 10-12 bit dynamic range into the
     // 8-bit JPEG output. UInt8 inputs (e.g. some LROC products) pass
     // through unchanged.
-    const bands = ds.bands.count();
-    const bandData: Uint8Array[] = [];
-    for (let i = 1; i <= bands; i++) {
-      const band = ds.bands.get(i);
-      const data = await band.pixels.readAsync(left, top, actualW, actualH);
-      bandData.push(stretchToUint8(data));
-    }
+    const bandIndices =
+      input.bandIndex != null
+        ? [input.bandIndex]
+        : Array.from({ length: ds.bands.count() }, (_, i) => i + 1);
+    const bandData = await readStretchedBands(ds, bandIndices, left, top, actualW, actualH);
+    const outBands = bandData.length;
 
     // Create the output JPEG in memory via GDAL's MEM driver, then
     // export through the JPEG driver. JPEG driver doesn't support
     // CreateCopy on /vsicurl/ for input.
     const memDriver = gdal.drivers.get('MEM');
     if (!memDriver) throw new Error('MEM driver not available');
-    const memDs = memDriver.create('', actualW, actualH, bands, gdal.GDT_Byte);
-    for (let i = 1; i <= bands; i++) {
-      const band = memDs.bands.get(i);
-      band.pixels.write(0, 0, actualW, actualH, bandData[i - 1]);
+    const memDs = memDriver.create('', actualW, actualH, outBands, gdal.GDT_Byte);
+    for (let i = 0; i < outBands; i++) {
+      const band = memDs.bands.get(i + 1);
+      band.pixels.write(0, 0, actualW, actualH, bandData[i]);
     }
 
     // Post-crop sanity: the pre-crop sample is small and can miss a
@@ -241,6 +247,27 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
   } finally {
     ds.close();
   }
+}
+
+/**
+ * Read `bandIndices` from the dataset over the given window and stretch
+ * each to Uint8 (Float32 reflectance / UInt16 DN → 8-bit via P2/P98).
+ */
+async function readStretchedBands(
+  ds: gdal.Dataset,
+  bandIndices: number[],
+  left: number,
+  top: number,
+  w: number,
+  h: number,
+): Promise<Uint8Array[]> {
+  const out: Uint8Array[] = [];
+  for (const bi of bandIndices) {
+    const band = ds.bands.get(bi);
+    const data = await band.pixels.readAsync(left, top, w, h);
+    out.push(stretchToUint8(data));
+  }
+  return out;
 }
 
 /**

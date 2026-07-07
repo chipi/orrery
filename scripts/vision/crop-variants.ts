@@ -23,9 +23,9 @@ import sharp from 'sharp';
  * minimum needed amount).
  *
  * Cache key per variant: SHA-256 over (source bytes + focal point +
- * target aspect + sharp major version). Time-based invalidation
- * explicitly NOT a thing per RFC-022 §5.4. Cache file = the cropped
- * output, ready to copy to its destination next to the source image.
+ * target aspect + sharp major version + thumbnail cap + quality). Time-based
+ * invalidation explicitly NOT a thing per RFC-022 §5.4. Cache file = the
+ * cropped output, ready to copy to its destination next to the source image.
  */
 
 // 1x1 is the only variant we generate. The 4x3 (card) and 16x9 (hero)
@@ -37,6 +37,13 @@ import sharp from 'sharp';
 export const VARIANT_RATIOS = [{ id: '1x1', w: 1, h: 1 } as const];
 
 export type VariantRatio = (typeof VARIANT_RATIOS)[number]['id'];
+
+// Cap the variant's longest side. The 1x1 is a card/preview thumbnail —
+// rendered at ≤140 px (gallery grids use minmax(96–140px)), so ~512 px covers
+// retina (DPR 3). Before this cap the crop was written at SOURCE resolution
+// (a 3000 px master → 3000 px "thumbnail", up to 7 MB), ~5× oversized on every
+// deploy + the mobile CDN. `withoutEnlargement` never upscales a small source.
+const MAX_VARIANT_PX = 512;
 
 const SHARP_MAJOR_VERSION = sharp.versions.vips.split('.')[0] ?? '8';
 const CACHE_ROOT = '.image-cache';
@@ -61,7 +68,8 @@ export interface VariantInput {
    * `tier2-lroc.1x1.jpg`, `tier2-lroc.4x3.jpg`, `tier2-lroc.16x9.jpg`.
    */
   outputBase: string;
-  /** JPEG output quality (1-100). Default 85 — matches RFC-017 §ADR-060. */
+  /** JPEG output quality (1-100). Default 80 — thumbnail-appropriate; the crop
+   *  renders at ≤140 px so q80 is visually lossless and lands ~50 KB. */
   jpegQuality?: number;
   /** Force re-generate even if cache hit. */
   forceRefresh?: boolean;
@@ -73,7 +81,7 @@ export interface VariantInput {
  * invalidate the 3 existing ones. Returns one VariantResult per ratio.
  */
 export async function generateVariants(input: VariantInput): Promise<VariantResult[]> {
-  const quality = input.jpegQuality ?? 85;
+  const quality = input.jpegQuality ?? 80;
   const meta = await sharp(input.sourceBytes).metadata();
   if (!meta.width || !meta.height) {
     throw new Error(`sharp could not read dimensions for ${input.sourcePath}`);
@@ -111,6 +119,7 @@ async function generateOneVariant(input: {
     sourceBytes: input.sourceBytes,
     focalPoint: input.focalPoint,
     ratioId: input.ratio.id,
+    quality: input.jpegQuality,
   });
   const cachePath = path.join(VARIANT_CACHE_DIR, `${cacheKey.slice(0, 16)}.${input.ratio.id}.jpg`);
   let cached = false;
@@ -138,6 +147,13 @@ async function generateOneVariant(input: {
         top: window.top,
         width: window.width,
         height: window.height,
+      })
+      // Downsize to a thumbnail — the crop was extracted at source resolution.
+      .resize({
+        width: MAX_VARIANT_PX,
+        height: MAX_VARIANT_PX,
+        fit: 'inside',
+        withoutEnlargement: true,
       })
       .jpeg({ quality: input.jpegQuality, mozjpeg: true })
       .toBuffer();
@@ -198,6 +214,7 @@ function computeVariantCacheKey(input: {
   sourceBytes: Buffer;
   focalPoint: { x: number; y: number };
   ratioId: string;
+  quality: number;
 }): string {
   const h = createHash('sha256');
   h.update(input.sourceBytes);
@@ -206,6 +223,8 @@ function computeVariantCacheKey(input: {
   h.update(' ');
   h.update(input.ratioId);
   h.update(' ');
-  h.update(`sharp${SHARP_MAJOR_VERSION}`);
+  // Cap + quality are part of the key so changing the thumbnail policy
+  // invalidates stale (source-resolution) crops on the next pipeline run.
+  h.update(`sharp${SHARP_MAJOR_VERSION}-px${MAX_VARIANT_PX}q${input.quality}`);
   return h.digest('hex');
 }

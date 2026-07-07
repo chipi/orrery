@@ -123,6 +123,15 @@ function parseArgs(argv: string[]): CliOptions {
 // HTTP probe
 // ──────────────────────────────────────────────────────────────────────
 
+// Map a non-exceptional HTTP response to a health status. Shared by the
+// HEAD and GET probes so the classification ladder lives in one place.
+function classifyResponse(res: Response): CheckResult['status'] {
+  if (res.ok) return 'ok';
+  if (res.status >= 300 && res.status < 400) return 'redirect';
+  if (res.status === 401 || res.status === 403) return 'forbidden';
+  return 'dead';
+}
+
 async function probeOnce(
   url: string,
   method: 'HEAD' | 'GET',
@@ -138,11 +147,8 @@ async function probeOnce(
       headers: { 'user-agent': USER_AGENT, accept: '*/*' },
       signal: ctrl.signal,
     });
-    if (res.ok) return 'ok';
-    if (res.status === 405 && method === 'HEAD') return null; // try GET
-    if (res.status >= 300 && res.status < 400) return 'redirect';
-    if (res.status === 401 || res.status === 403) return 'forbidden';
-    return 'dead';
+    if (res.status === 405 && method === 'HEAD') return null; // caller retries GET
+    return classifyResponse(res);
   } catch (err) {
     const e = err as Error;
     if (e.name === 'AbortError') return 'timeout';
@@ -163,20 +169,19 @@ async function probe(entry: ManifestEntry): Promise<CheckResult> {
       headers: { 'user-agent': USER_AGENT, accept: '*/*' },
       signal: ctrl.signal,
     });
-    // Some hosts (notably operator portals on commercial CDNs) reject
-    // HEAD with 405; retry as GET. We never download the body — bail
-    // as soon as headers come back.
-    if (res.status === 405) {
+    // HEAD-hostile hosts: some reject HEAD with 405 (method not allowed),
+    // but others (Wikipedia ~12, Gunter's Space Page ~11) answer 403/404 to
+    // HEAD yet 200 to GET — over-reporting them as dead. Retry as GET before
+    // concluding; GET is authoritative when HEAD is unreliable. Only accept a
+    // conclusive GET verdict (ok/redirect/forbidden/dead) — on a transient
+    // GET error/timeout, fall through to HEAD's status below. (#369)
+    if (res.status === 405 || res.status === 404 || res.status === 403) {
       const fallback = await probeOnce(url, 'GET');
-      return resultFromStatus(entry, url, fallback ?? 'error', null, null);
+      if (fallback && fallback !== 'error' && fallback !== 'timeout')
+        return resultFromStatus(entry, url, fallback, null, res.url || url);
     }
     const finalUrl = res.url || url;
-    if (res.ok) return resultFromStatus(entry, url, 'ok', res.status, finalUrl);
-    if (res.status >= 300 && res.status < 400)
-      return resultFromStatus(entry, url, 'redirect', res.status, finalUrl);
-    if (res.status === 401 || res.status === 403)
-      return resultFromStatus(entry, url, 'forbidden', res.status, finalUrl);
-    return resultFromStatus(entry, url, 'dead', res.status, finalUrl);
+    return resultFromStatus(entry, url, classifyResponse(res), res.status, finalUrl);
   } catch (err) {
     const e = err as Error;
     if (e.name === 'AbortError') return resultFromStatus(entry, url, 'timeout', null, null);

@@ -1,0 +1,37 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+// See RFC-018 §5 + ADR-078. Web app is the product; this is the shell only.
+const config: CapacitorConfig = {
+  appId: 'io.github.chipi.orrery',
+  appName: 'Orrery',
+  webDir: 'build',
+  server: {
+    // No live server in production — app serves from the local bundle.
+    // For local dev against Vite: set url: 'http://<lan-ip>:5173' + cleartext:true
+    // and run `npx cap run <platform> --live-reload --external`.
+    androidScheme: 'https' // stable WebView origin for SW + History API routing
+  },
+  android: {
+    backgroundColor: '#04040c', // matches --bg-base; no white flash at mount
+    captureInput: true, // keyboard focus stays in the WebView
+    webContentsDebuggingEnabled: false // enable only in debug builds
+  },
+  ios: {
+    contentInset: 'always',
+    backgroundColor: '#04040c',
+    scrollEnabled: false, // Three.js pointer events own orbit/pan/zoom
+    limitsNavigationsToAppBoundDomains: true, // App Store requirement; external links go via @capacitor/browser
+    allowsLinkPreview: false
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 600,
+      launchAutoHide: true,
+      backgroundColor: '#04040c',
+      androidSplashResourceName: 'splash',
+      showSpinner: false
+    }
+  }
+};
+
+export default config;

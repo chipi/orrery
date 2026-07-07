@@ -19,6 +19,7 @@ import VehicleIcon from './VehicleIcon.svelte';
 import SpacecraftIcon from './SpacecraftIcon.svelte';
 import TrajectoryArrowIcon from './TrajectoryArrowIcon.svelte';
 import MissionOrbitIcon from './MissionOrbitIcon.svelte';
+import ShareIcon from './ShareIcon.svelte';
 
 export {
   MenuIcon,
@@ -32,6 +33,7 @@ export {
   SpacecraftIcon,
   TrajectoryArrowIcon,
   MissionOrbitIcon,
+  ShareIcon,
 };
 
 /** One entry per icon for the style guide + colophon grid. `variants`
@@ -159,5 +161,14 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     route: '/fleet',
     component: MissionOrbitIcon as Component<Record<string, unknown>>,
     variants: [{ props: { size: 26 } }],
+  },
+  {
+    id: 'share',
+    label: 'Share',
+    what: 'Square + up-arrow — shares the current view (native sheet / copy link).',
+    where: 'Nav',
+    route: '/',
+    component: ShareIcon as Component<Record<string, unknown>>,
+    variants: [{ props: { size: 24 } }],
   },
 ];

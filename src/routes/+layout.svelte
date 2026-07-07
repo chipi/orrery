@@ -8,6 +8,7 @@
   import { Capacitor } from '@capacitor/core';
   import { openExternal } from '$lib/external-link';
   import { initWebglRecovery } from '$lib/native/webgl-recovery';
+  import { initDeepLinks } from '$lib/native/deep-links';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
@@ -213,6 +214,8 @@
     // S8 / #195: recover 3D scenes after the iOS WebView drops the WebGL
     // context on background. No-op off-device.
     const stopWebglRecovery = initWebglRecovery();
+    // S6 / #221: orrery:// deep links → route navigation. No-op off-device.
+    const stopDeepLinks = initDeepLinks();
     // Privacy-respecting analytics. Loads only on the production host
     // (chipi.github.io); localhost / vite preview / CI runs are
     // silent. See src/lib/analytics.ts for the host gate + event API.
@@ -278,6 +281,7 @@
     return () => {
       stopViewport();
       stopWebglRecovery();
+      stopDeepLinks();
       window.removeEventListener('beforeinstallprompt', onPromptable);
       document.removeEventListener('click', onAnyClick, true);
     };

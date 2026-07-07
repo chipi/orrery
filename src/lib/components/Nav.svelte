@@ -19,7 +19,9 @@
     AudioWaveIcon,
     ScienceLensIcon,
     SettingsGearIcon,
+    ShareIcon,
   } from '$lib/components/icons';
+  import { shareCurrent } from '$lib/share';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
@@ -242,6 +244,15 @@
       <!-- 8-spoke gear glyph as inline SVG (matches the lens-toggle
            pattern). Sized to fit the 16 × 16 toggle box. -->
       <SettingsGearIcon />
+    </button>
+    <button
+      type="button"
+      class="share-toggle"
+      aria-label="Share this view"
+      title="Share this view"
+      onclick={() => void shareCurrent()}
+    >
+      <ShareIcon />
     </button>
     {@render right?.()}
   </div>
@@ -562,7 +573,8 @@
      (2026-06-17 user direction: "have it disabled when page does not
      need it, and when it needs it add hover and glow as for other
      buttons".) */
-  .settings-toggle {
+  .settings-toggle,
+  .share-toggle {
     width: 32px;
     height: 32px;
     min-width: 44px;
@@ -581,8 +593,15 @@
       border-color 120ms,
       color 120ms;
   }
-  .settings-toggle :global(svg) {
+  .settings-toggle :global(svg),
+  .share-toggle :global(svg) {
     display: block;
+  }
+  .share-toggle:hover,
+  .share-toggle:focus-visible {
+    border-color: rgba(78, 205, 196, 0.55);
+    color: rgba(78, 205, 196, 0.95);
+    outline: none;
   }
   /* Hover + focus glow only when the route surfaces settings (i.e. the
      button isn't [disabled]). Teal accent — matches the popup panel's

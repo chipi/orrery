@@ -32,6 +32,15 @@ export default defineConfig(({ mode }) => {
   // catch .env.local).
   const env = loadEnv(mode, process.cwd(), '');
   const devPort = parseInt(env.VITE_DEV_PORT || '5273', 10);
+  // MOBILE=1 selects the Capacitor stream-heavy profile (RFC-018 §4 /
+  // ADR-078): heavy asset buckets (images, audio, non-default-locale
+  // overlays) are pruned from build/ after the build and streamed from
+  // chipi.github.io at runtime instead. This flag only trims the SW
+  // precache manifest so it doesn't reference the pruned locale bundles;
+  // the physical prune + the streaming SW rules live in
+  // scripts/mobile/prune-streamed-assets.mjs (S2) and the runtimeCaching
+  // block (S3). The browser build (MOBILE unset) is byte-unaffected.
+  const MOBILE = env.MOBILE === '1';
   return {
     // Expose package.json version + build timestamp as globals at build
     // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
@@ -42,6 +51,9 @@ export default defineConfig(({ mode }) => {
     define: {
       __APP_VERSION__: JSON.stringify(pkg.version),
       __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+      // True only in the Capacitor stream-heavy build. App + SW code branch
+      // on this to route pruned buckets at chipi.github.io (S3).
+      __MOBILE__: JSON.stringify(MOBILE),
     },
     // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
     // which is gitignored). Falls back to 5273 if unset. Useful when
@@ -146,7 +158,10 @@ export default defineConfig(({ mode }) => {
           // data JSON, imagery and audio load at runtime via the rules below.
           globPatterns: [
             'client/**/*.{js,css,woff2,svg,ico}',
-            'client/data/i18n/*.json',
+            // MOBILE prunes the 13 non-default locale bundles off-device
+            // (streamed via S3), so the precache manifest must reference
+            // only en-US — otherwise SW install 404s on the pruned files.
+            MOBILE ? 'client/data/i18n/en-US.json' : 'client/data/i18n/*.json',
             'prerendered/pages/index.html',
           ],
           // Don't precache the porkchop grid JSONs — large + per-route.

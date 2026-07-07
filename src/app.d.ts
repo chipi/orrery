@@ -16,6 +16,13 @@ declare global {
    * so visitors can see when the live deploy was last refreshed.
    */
   const __BUILD_DATE__: string;
+  /**
+   * True only in the Capacitor stream-heavy build (MOBILE=1, ADR-078).
+   * App + SW code branch on this to fetch pruned asset buckets (images,
+   * audio, non-default-locale overlays) from chipi.github.io. `false` in
+   * every browser build.
+   */
+  const __MOBILE__: boolean;
 
   /**
    * Live-state windows used by /fly for chrome-devtools-mcp verification

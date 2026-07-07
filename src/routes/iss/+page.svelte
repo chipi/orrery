@@ -12,6 +12,7 @@
   import { createLayeredStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { attachFrameMonitor, type FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { createStationSelectionService } from '$lib/station-selection.svelte';
@@ -75,6 +76,7 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  let liveFrameMonitor: FrameMonitorHandle | null = $state(null);
   // QualitySettingsModal bridge (#339).
   let activeQualityTier: QualityTier = $state('medium');
   // RemoteData migration (#8 / #5 Phase F follow-up). Internal state holds
@@ -733,6 +735,11 @@
     liveQuality = quality;
     liveQualitySource = resolveQualitySource(url);
     liveBloomPass = bloomPass;
+    // Drive the DebugPanel Rendering tab's frame-monitor readout uniformly
+    // with the other 3D routes (#89). Observability only — onStruggle no-op.
+    const frameMonitor = attachFrameMonitor({ onStruggle: () => {} });
+    liveFrameMonitor = frameMonitor;
+    lifecycle.add(() => frameMonitor.stop());
     activeQualityTier = quality.tier;
 
     // HemisphereLight gives a proper sky/ground contrast for the
@@ -1132,6 +1139,7 @@
     // when the tab backgrounded.
     const loop = createAnimateLoop({
       onFrame: () => {
+        frameMonitor.tick();
         if (perfCheckPending) {
           perfFrames++;
           const elapsed = performance.now() - perfStart;
@@ -1260,6 +1268,7 @@
     quality={liveQuality}
     qualitySource={liveQualitySource}
     bloomPass={liveBloomPass}
+    frameMonitor={liveFrameMonitor}
   />
 {/if}
 <QualitySettingsModal {activeQualityTier} />

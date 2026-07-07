@@ -21,6 +21,7 @@
     type QualityConfig,
   } from '$lib/quality/quality-tier';
   import { setRenderingDebugRegistration } from '$lib/components/debug-panel-context';
+  import { attachFrameMonitor, type FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d, disposeScene } from '$lib/three/dispose-object3d';
@@ -256,6 +257,11 @@
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let sites: SurfaceSite[] = $state([]);
+  // #364 P4: partition orbiters once per data change, not three times per raf
+  // frame. $derived recomputes only when `sites` is reassigned (data load),
+  // so the animate loop reads memoized values instead of re-filtering.
+  const orbiterSites = $derived(sites.filter((s) => s.kind === 'orbiter'));
+  const surfaceSiteCount = $derived(sites.length - orbiterSites.length);
   let loadFailed = $state(false);
   let selected: SurfaceSite | null = $state(null);
   let panelOpen = $state(false);
@@ -1049,12 +1055,21 @@
     // GPU memory counts (textures / geometries) + draw stats are visible
     // on /earth /moon /mars — the instrument for watching the surface
     // memory footprint (#363). Cleared on teardown.
+    // The frame monitor drives the Rendering tab's rolling avg-frame-time +
+    // last-struggle readout, uniform with the other 3D routes (#89). No
+    // auto-tier-downgrade here (that UX is /fly-only) — this is the
+    // observability signal only, so onStruggle is a no-op.
+    const frameMonitor: FrameMonitorHandle = attachFrameMonitor({ onStruggle: () => {} });
     setRenderingDebugRegistration({
       renderer,
       quality,
       qualitySource: resolveQualitySource($page.url),
+      frameMonitor,
     });
-    lifecycle.add(() => setRenderingDebugRegistration(null));
+    lifecycle.add(() => {
+      setRenderingDebugRegistration(null);
+      frameMonitor.stop();
+    });
 
     // Ambient tint hints at body palette (slight blue for Moon, slight
     // red for Mars). Intensity consolidated to 0.8 per ADR-072 §Drift 5.
@@ -3689,7 +3704,7 @@
         ctx2.textAlign = 'left';
         ctx2.fillText('IN ORBIT', x, strip);
         x += 60;
-        for (const o of sites.filter((s) => s.kind === 'orbiter')) {
+        for (const o of orbiterSites) {
           ctx2.fillStyle = colorFor(o);
           ctx2.beginPath();
           ctx2.arc(x, strip - 3, 4, 0, Math.PI * 2);
@@ -3752,6 +3767,7 @@
     // scene + 2D overlay still paints).
     const loop = createAnimateLoop({
       onFrame: () => {
+        frameMonitor.tick();
         // SurfaceScene predates createAnimateLoop and its onFrame body
         // assumed a raf-timestamp `now`. The same DOMHighResTimeStamp
         // value is available via performance.now() inside the loop,
@@ -3850,24 +3866,12 @@
         // Rebuild markers if the site list changed (cheap — happens once
         // when the data loads). Same trigger covers the orbital ring
         // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
-        const surfaceCount = sites.filter((s) => s.kind !== 'orbiter').length;
-        const orbitalCount = sites.filter((s) => s.kind === 'orbiter').length;
-        if (surfaceCount !== markers.length) rebuildMarkers();
-        if (orbitalCount !== orbitalMarkers.length) rebuildOrbitalMarkers();
+        if (surfaceSiteCount !== markers.length) rebuildMarkers();
+        if (orbiterSites.length !== orbitalMarkers.length) rebuildOrbitalMarkers();
 
         // Apply layer visibility every frame so chip toggles take effect
         // immediately (cheap — small static arrays).
         const selId = selected?.id ?? null;
-        // Selection-ring hide at Tier 2+ (port of /mars). The halo ring
-        // visually fights the LROC disc once the camera is in close —
-        // hide it when the site's currently-displayed tier ≥ 2 (or
-        // mid-transition with targetTier ≥ 2). Build a quick lookup so
-        // the halo loop stays a single pass.
-        const tierBySiteId = new Map<string, number>();
-        for (const h of hotspots) {
-          const t = Math.max(h.currentTier, h.targetTier);
-          tierBySiteId.set(h.siteId, t);
-        }
         for (const mk of markers) {
           // Nation filter (#363) — hide markers whose nation is toggled off.
           const nv = nationEnabled(nationBySiteId.get(mk.siteId));

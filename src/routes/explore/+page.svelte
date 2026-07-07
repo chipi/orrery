@@ -26,6 +26,7 @@
   import type { QualitySource } from '$lib/components/debug-panel-context';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import { createAnimateLoop } from '$lib/three/animate-loop';
+  import { attachFrameMonitor, type FrameMonitorHandle } from '$lib/quality/frame-monitor';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import {
     buildIconicTrajectory,
@@ -1259,6 +1260,7 @@
   let liveQuality: QualityConfig | null = $state(null);
   let liveQualitySource: QualitySource = $state('fallback');
   let liveBloomPass: UnrealBloomPass | null = $state(null);
+  let liveFrameMonitor: FrameMonitorHandle | null = $state(null);
   // QualitySettingsModal bridge (#339). Shown from first paint with a
   // 'medium' default; onMount updates it to the actually-resolved tier.
   let activeQualityTier: QualityTier = $state('medium');
@@ -1910,6 +1912,11 @@
     liveQualitySource = resolveQualitySource(url);
     liveBloomPass = bloomPass;
     activeQualityTier = quality.tier;
+    // Drive the DebugPanel Rendering tab's frame-monitor readout uniformly
+    // with the other 3D routes (#89). Observability only — onStruggle no-op.
+    const frameMonitor = attachFrameMonitor({ onStruggle: () => {} });
+    liveFrameMonitor = frameMonitor;
+    lifecycle.add(() => frameMonitor.stop());
 
     // Belt geometry helper — fills a Float32 position buffer with `count`
     // particles uniformly distributed across an annulus between `inner`
@@ -4473,6 +4480,7 @@
     let frameThrottleCount = 0;
     const loop = createAnimateLoop({
       onFrame: () => {
+        frameMonitor.tick();
         const now = performance.now();
         const dt = Math.min((now - lastTime) / 1000, 0.05);
         lastTime = now;
@@ -4938,6 +4946,7 @@
     quality={liveQuality}
     qualitySource={liveQualitySource}
     bloomPass={liveBloomPass}
+    frameMonitor={liveFrameMonitor}
   />
 {/if}
 <QualitySettingsModal {activeQualityTier} />

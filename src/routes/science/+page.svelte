@@ -10,6 +10,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -52,7 +53,7 @@
   <p class="lede">{m.science_intro()}</p>
   <img
     class="hero-banner"
-    src="{base}/images/science-covers-v2/_science-landing-hero.webp"
+    src="{assetOrigin}/images/science-covers-v2/_science-landing-hero.webp"
     alt=""
     loading="eager"
     decoding="async"

@@ -3,6 +3,7 @@
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites } from '$lib/data';
   import type { SurfaceSite } from '$types/surface-site';
@@ -479,7 +480,7 @@
              one place. -->
         <figure class="flight-thumbnail">
           <img
-            src="{base}/images/missions/thumbnails/{mission.id}.png"
+            src="{assetOrigin}/images/missions/thumbnails/{mission.id}.png"
             alt=""
             loading="lazy"
             onerror={(e) => {

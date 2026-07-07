@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import type { HotspotAnnotation, RegionBounds } from '$types/surface-site';
+import { streamedUrl } from './asset-url';
 
 /**
  * Surface-patch quad component (PRD-014 / RFC-017 §ADR-060).
@@ -488,8 +489,10 @@ function createPatchMaterial(
     disposed = true;
     baseDispose();
   };
+  // Surface imagery (/images/hotspots/…) is pruned from the mobile bundle
+  // and streamed (ADR-079 D1); no-op in every browser build.
   loader.load(
-    textureUrl,
+    streamedUrl(textureUrl),
     (tex) => {
       // Material already torn down while this load was in flight — free
       // the just-decoded texture instead of binding it to a dead material.

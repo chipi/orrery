@@ -25,6 +25,7 @@
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
+  import { streamedUrl } from '$lib/asset-url';
 
   interface Props {
     selected: SurfaceSite;
@@ -88,7 +89,7 @@
       img.onerror = () => {
         // Soft-fail — keep the translucent-box placeholder visible.
       };
-      img.src = url;
+      img.src = streamedUrl(url);
     }
 
     const regionalSource = selected.hotspot_tier2_regional_source;
@@ -103,7 +104,7 @@
       rImg.onerror = () => {
         // Soft-fail.
       };
-      rImg.src = rUrl;
+      rImg.src = streamedUrl(rUrl);
     }
   });
 

@@ -8,7 +8,7 @@
  * The ANATOMY/DETAIL tab on /fleet + the station-module panels render the
  * image via a plain <img>; /colophon shows the same set as thumbnails.
  */
-import { base } from '$app/paths';
+import { assetOrigin } from './asset-url';
 import anatomyIds from './anatomy-ids.json';
 
 export const SPACECRAFT_ANATOMY_IMG = new Set<string>(anatomyIds);
@@ -29,8 +29,8 @@ const ANATOMY_ALIAS: Record<string, string> = {
 };
 
 export function spacecraftDiagramPath(id: string): string | null {
-  if (SPACECRAFT_ANATOMY_IMG.has(id)) return `${base}/images/anatomy/${id}.webp`;
+  if (SPACECRAFT_ANATOMY_IMG.has(id)) return `${assetOrigin}/images/anatomy/${id}.webp`;
   const alias = ANATOMY_ALIAS[id];
-  if (alias && SPACECRAFT_ANATOMY_IMG.has(alias)) return `${base}/images/anatomy/${alias}.webp`;
+  if (alias && SPACECRAFT_ANATOMY_IMG.has(alias)) return `${assetOrigin}/images/anatomy/${alias}.webp`;
   return null;
 }

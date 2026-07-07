@@ -8,6 +8,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -35,7 +36,7 @@
   ]);
   function coverSrc(tab: string): string {
     return COVER_V2.has(tab)
-      ? `${base}/images/science-covers-v2/_cover-${tab}.webp`
+      ? `${assetOrigin}/images/science-covers-v2/_cover-${tab}.webp`
       : `${base}/diagrams/science/_cover-${tab}.svg`;
   }
 </script>

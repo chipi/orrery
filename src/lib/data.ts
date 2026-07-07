@@ -7,6 +7,7 @@
  */
 
 import { base } from '$app/paths';
+import { assetOrigin, localeBundleOrigin } from './asset-url';
 import { loadHeroOverrides, applyHeroOverride } from '$lib/image-hero';
 import type { Destination, Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
@@ -57,7 +58,7 @@ const i18nBundles = new Map<string, Promise<Record<string, unknown>>>();
 function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
   let p = i18nBundles.get(locale);
   if (!p) {
-    const url = `${base}/data/i18n/${locale}.json`;
+    const url = `${localeBundleOrigin(locale)}/data/i18n/${locale}.json`;
     p = (async () => {
       const res = await fetchFn(url);
       if (!res.ok) throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
@@ -866,7 +867,7 @@ export async function getFleetGallery(id: string): Promise<string[]> {
     if (count === 0) return [];
     const gallery = Array.from(
       { length: count },
-      (_, i) => `${base}/images/fleet-galleries/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/fleet-galleries/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
     );
     // Honour the fleet hero-override JSON so the panel hero (gallery[0])
     // matches the card cover served via pickHero('fleet', id). Without
@@ -909,7 +910,7 @@ export async function getMissionGallery(missionId: string): Promise<string[]> {
     if (count === 0) return [];
     const gallery = Array.from(
       { length: count },
-      (_, i) => `${base}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.jpg`,
     );
     // Honour the mission hero-override JSON so the panel hero (gallery[0])
     // matches the card cover served via pickHero('missions', id). Without
@@ -946,7 +947,7 @@ async function getCategoryGallery(
     if (count === 0) return [];
     return Array.from(
       { length: count },
-      (_, i) => `${base}/images/${category}/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/${category}/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
     );
   } catch {
     return [];
@@ -972,7 +973,7 @@ export async function getSunGallery(): Promise<string[]> {
     if (count === 0) return [];
     return Array.from(
       { length: count },
-      (_, i) => `${base}/images/sun/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/sun/${String(i + 1).padStart(2, '0')}.jpg`,
     );
   } catch {
     return [];

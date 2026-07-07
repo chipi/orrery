@@ -10,6 +10,7 @@
     the relative fetch never runs during prerender.
   */
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { getAudioProvenanceManifest } from '$lib/data';
@@ -245,7 +246,7 @@
                 {#if ep.mp3}
                   <a
                     class="ep-action audio"
-                    href="{base}{ep.mp3}"
+                    href="{assetOrigin}{ep.mp3}"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

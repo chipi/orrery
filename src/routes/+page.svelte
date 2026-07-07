@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import { audio } from '$lib/audio-state.svelte';
@@ -83,7 +84,7 @@
     <img
       class="hero-illustration"
       data-audio-stage="hero-illustration"
-      src="{base}/images/app-landing-hero.webp"
+      src="{assetOrigin}/images/app-landing-hero.webp"
       alt=""
       aria-label={m.landing_hero_aria()}
     />

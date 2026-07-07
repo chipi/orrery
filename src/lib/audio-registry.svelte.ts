@@ -9,6 +9,7 @@
 
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
+import { assetOrigin } from './asset-url';
 import type { Episode, EpisodeVariant, Persona, ProviderName } from './audio-state.svelte';
 
 export interface ProvenanceEntry {
@@ -140,9 +141,11 @@ export function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
       provider: e.provider,
       voice_id: e.voice_id,
       tts_model: e.tts_model,
-      mp3: `${base}${e.path_mp3}`,
-      vtt: `${base}${e.path_vtt}`,
-      txt: `${base}${e.path_txt}`,
+      // Audio is pruned from the mobile bundle and streamed (ADR-079 D1);
+      // assetOrigin === base in every browser build.
+      mp3: `${assetOrigin}${e.path_mp3}`,
+      vtt: `${assetOrigin}${e.path_vtt}`,
+      txt: `${assetOrigin}${e.path_txt}`,
     };
     const existing = byKey.get(key);
     if (existing) {

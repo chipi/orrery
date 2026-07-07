@@ -10,6 +10,7 @@
    */
   import { resolveAgency } from '$lib/agencies';
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
 
   type StationItem = {
     id: string;
@@ -186,7 +187,7 @@
           {#if heroDir}
             <img
               class="marker-thumb"
-              src="{base}/images/{heroDir}/{item.id}/01.jpg"
+              src="{assetOrigin}/images/{heroDir}/{item.id}/01.jpg"
               alt=""
               loading="lazy"
               decoding="async"
@@ -224,7 +225,7 @@
             {#if heroDir}
               <img
                 class="marker-thumb"
-                src="{base}/images/{heroDir}/{item.id}/01.jpg"
+                src="{assetOrigin}/images/{heroDir}/{item.id}/01.jpg"
                 alt=""
                 loading="lazy"
                 decoding="async"

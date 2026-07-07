@@ -148,6 +148,7 @@
     type SkyboxHandle,
   } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
+  import { streamedUrl } from '$lib/asset-url';
   import { buildLabel } from '$lib/three-label';
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -2980,7 +2981,7 @@
       panoramaCurrentEntryId = urlState?.entryId ?? null;
       // saveData users get a heads-up affordance handled outside; if
       // we reach here, the user explicitly opted in.
-      panoramaSkybox = createSkybox({ textureUrl, siteId });
+      panoramaSkybox = createSkybox({ textureUrl: streamedUrl(textureUrl), siteId });
       scene.add(panoramaSkybox.group);
       panoramaSkybox.activate();
       // Mount panorama annotations (PRD-022 / ADR-074 Phase 2E/2F).

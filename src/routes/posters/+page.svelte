@@ -6,6 +6,7 @@
   // links to the full-resolution JPG for download. Subjects + taglines
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
   import { base } from '$app/paths';
+  import { assetOrigin } from '$lib/asset-url';
 
   type Poster = { id: string; title: string; sub: string };
 
@@ -63,12 +64,12 @@
     {#each posters as p (p.id)}
       <figure class="poster">
         <a
-          href="{base}/images/posters/{p.id}.jpg"
+          href="{assetOrigin}/images/posters/{p.id}.jpg"
           download="orrery-{p.id}.jpg"
           aria-label="Download the {p.title} poster — {p.sub}"
         >
           <img
-            src="{base}/images/posters/{p.id}.thumb.jpg"
+            src="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
             alt="{p.title} — {p.sub}. Orrery art poster."
             width="700"
             height="1050"

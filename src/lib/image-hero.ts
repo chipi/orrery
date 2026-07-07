@@ -34,6 +34,7 @@
  */
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
+import { assetOrigin } from './asset-url';
 
 export type HeroSurface =
   | 'missions'
@@ -125,7 +126,7 @@ export function loadHeroOverrides(surface: HeroSurface): Promise<HeroOverrideFil
 export function pickHero(surface: HeroSurface, id: string): string {
   const cached = overrideCache.get(surface);
   const slot = cached?.overrides?.[id]?.slot ?? DEFAULT_SLOT;
-  return `${base}/images/${SURFACE_TO_DIR[surface]}/${id}/${slot}`;
+  return `${assetOrigin}/images/${SURFACE_TO_DIR[surface]}/${id}/${slot}`;
 }
 
 /**

@@ -65,6 +65,8 @@ export default [
       // re-run, and their relative imports no longer resolve from the
       // archive depth. Inventory: docs/reference/tooling/archive.md.
       'scripts/_archive/',
+      // Scratch: POC scripts + validation composites/screenshots (gitignored).
+      '.moon-shots/',
     ],
   },
 ];

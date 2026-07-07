@@ -86,6 +86,9 @@ static/data/i18n/*.json
 # Lavish review artifacts (generated, ephemeral)
 .lavish/
 
+# Scratch: POC scripts, validation composites + screenshots (not source)
+.moon-shots/
+
 # treehouse worktree tool config (local tooling, not app code)
 treehouse.toml
 /_quarantine/

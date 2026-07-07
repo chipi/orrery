@@ -34,7 +34,9 @@ for (const { route, hook } of SCENES) {
     );
     const ms = Date.now() - t0;
     // eslint-disable-next-line no-console
-    console.log(`[perf] ${route} time-to-interactive = ${ms} ms (${isMobile ? 'mobile' : 'desktop'})`);
+    console.log(
+      `[perf] ${route} time-to-interactive = ${ms} ms (${isMobile ? 'mobile' : 'desktop'})`,
+    );
     // Measured ~85-160ms locally (hardware WebGL) across desktop + both
     // mobile projects; budget keeps ~50x headroom for CI's software WebGL
     // while still catching a multi-second stall (the context-leak class of

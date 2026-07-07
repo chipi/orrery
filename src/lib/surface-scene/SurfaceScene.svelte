@@ -553,6 +553,10 @@
    * lazily on first activation and disposed when the user exits.
    */
   let panoramaActive = $state(false);
+  // #380: route-view frames the whole rover traverse (route line + along-route
+  // detail tiles + regional context) pulled back past the normal detail-reveal
+  // band. Toggled from the panel; mutually exclusive with panorama/flat-patch.
+  let routeViewActive = $state(false);
 
   // Mobile: the detail panel is full-screen, so entering panorama / flat-patch
   // from it would hide the very view you just asked for. Auto-dismiss the panel
@@ -560,7 +564,7 @@
   // side-drawer panel alongside the mode (2026-07 user direction).
   let prevImmersive = false;
   $effect(() => {
-    const immersive = panoramaActive || flatPatchActive;
+    const immersive = panoramaActive || flatPatchActive || routeViewActive;
     // Auto-dismiss on TOUCH (was width ≤767) — desktop keeps its side-drawer.
     if (immersive && !prevImmersive && viewport.isTouch) panelOpen = false;
     prevImmersive = immersive;
@@ -579,6 +583,9 @@
   // the template handlers when the pointers are updated.
   let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
   let exitPanorama: () => void = $state(() => {});
+  // #380 — route-view enter/exit, assigned in onMount once the camera closures exist.
+  let enterRouteView: (site: SurfaceSite) => void = $state(() => {});
+  let exitRouteView: () => void = $state(() => {});
 
   // Panorama v2 HUD state (PRD-022 / ADR-074, #286 Phase 2).
   // panoramaYawDeg / panoramaPitchDeg are updated per-frame from
@@ -862,6 +869,9 @@
       selected = s;
       selectedSat = null;
       panelOpen = true;
+      // #380 — leave route-view when switching sites; the new selection's
+      // fly-in below takes over the camera.
+      routeViewActive = false;
       trackItemClick('marker', id, $page.url.pathname);
       // Build this rover's deferred route imagery NOW (before the fly-in
       // below reads its routeViewCenters framing). No-op for non-rover
@@ -971,6 +981,17 @@
       (
         window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
       ).__surfaceSceneSelectSite = (id: string) => selectSite(id, { face: true });
+      // #380 — frame/exit the whole route, for Playwright + chrome-devtools.
+      (
+        window as Window & { __surfaceSceneFrameRoute?: (id: string) => void }
+      ).__surfaceSceneFrameRoute = (id: string) => {
+        selectSite(id, { face: false });
+        const s = sites.find((x) => x.id === id);
+        if (s) enterRouteView(s);
+      };
+      (
+        window as Window & { __surfaceSceneExitRouteView?: () => void }
+      ).__surfaceSceneExitRouteView = () => exitRouteView();
     }
 
     loadSites(localeFromPage($page))
@@ -1367,6 +1388,8 @@
     // #360: per-rover camera target = the magnified traverse midpoint, so
     // selecting a rover frames the whole route. Populated by rebuildTraverses.
     const routeViewCenters = new Map<string, { lat: number; lon: number }>();
+    // #380 — cached camR that frames each rover's whole route (see frameCamRForRoute).
+    const routeFrameCamR = new Map<string, number>();
     // Per-rover deferred route-imagery builders (#363 perf) — populated by
     // rebuildTraverses, drained on first selection of that rover.
     const routePatchBuilders = new Map<string, () => void>();
@@ -1888,6 +1911,7 @@
       routeRegionalMaterials.length = 0;
       routeSelectionHalos.length = 0;
       routeViewCenters.clear();
+      routeFrameCamR.clear();
       routePatchBuilders.clear();
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
@@ -2981,6 +3005,98 @@
       onExit: () => exitPanorama(),
     });
 
+    // #380 — the camR that frames a rover's WHOLE route (fit its detail-tile
+    // bounding sphere to 75% of the FOV). Cached per rover (route geometry is
+    // fixed). Used to fly there (enterRouteView) AND to reverse-engineer the
+    // regional-context fade in the render loop: the midpoint regional is gone
+    // at/above this frame — where it would read as a small square in a wide view
+    // (Opportunity's 45 km drive) — and ramps in only as you zoom into the
+    // traverse. Returns null for regional-only rovers (no detail tiles).
+    const frameCamRForRoute = (roverId: string): number | null => {
+      const cached = routeFrameCamR.get(roverId);
+      if (cached != null) return cached;
+      planetMesh.updateMatrixWorld(true);
+      const box = new THREE.Box3();
+      let has = false;
+      for (const g of routeDetailGroups) {
+        if (g.userData?.roverId === roverId) {
+          box.expandByObject(g);
+          has = true;
+        }
+      }
+      if (!has || box.isEmpty()) return null;
+      const sphere = box.getBoundingSphere(new THREE.Sphere());
+      const halfFov = (camera.fov * Math.PI) / 180 / 2;
+      const r = Math.max(
+        31,
+        Math.min(70, sphere.center.length() + sphere.radius / Math.tan(0.75 * halfFov)),
+      );
+      routeFrameCamR.set(roverId, r);
+      return r;
+    };
+
+    // #380 — frame the ENTIRE rover route (line + tiles + regional). Pulls the
+    // camera back to fit the magnified route's world bounding sphere; the render
+    // loop's route-reveal override keeps the imagery visible at that distance.
+    enterRouteView = (site: SurfaceSite) => {
+      if (site.lat == null || site.lon == null) return;
+      if (panoramaActive) exitPanorama();
+      if (flatPatchActive) closeFlatPatch();
+      // Build this rover's deferred route imagery if not already (#363 perf).
+      buildRoutePatchesForSelected?.(site.id);
+      planetMesh.updateMatrixWorld(true);
+      // Bounding box over the focused rover's along-route detail tiles — they
+      // span the whole drive, so their extent IS the route extent.
+      const box = new THREE.Box3();
+      let has = false;
+      for (const g of routeDetailGroups) {
+        if (g.userData?.roverId === site.id) {
+          box.expandByObject(g);
+          has = true;
+        }
+      }
+      routeViewActive = true;
+      autoSpin = false;
+      if (!has || box.isEmpty()) {
+        // Regional-only site (no detail tiles) — modest pull-back on the route
+        // midpoint so the polyline + single regional patch read.
+        faceCameraAtSite?.(site, 34);
+        return;
+      }
+      const sphere = box.getBoundingSphere(new THREE.Sphere());
+      const dir = sphere.center.clone().normalize();
+      const halfFov = (camera.fov * Math.PI) / 180 / 2;
+      // camR is measured from the body origin; the route centre sits ~|Cw| along
+      // the view axis (camera looks at origin), so camera→route ≈ camR - |Cw|.
+      // Fit the route radius into 75% of the half-FOV, then add |Cw| back.
+      const fit = sphere.center.length() + sphere.radius / Math.tan(0.75 * halfFov);
+      const targetR = Math.max(31, Math.min(70, fit));
+      routeFrameCamR.set(site.id, targetR);
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      let to = Math.atan2(dir.x, dir.z);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      flyToR = targetR;
+      camRTarget = targetR;
+      flyFromOffset.copy(focusOffset);
+      flyToOffset.set(0, 0, 0);
+      flyStart = performance.now();
+      flyActive = true;
+    };
+    exitRouteView = () => {
+      if (!routeViewActive) return;
+      routeViewActive = false;
+      // Return to the normal landing framing so the standard LOD ramp resumes.
+      if (selected) faceCameraAtSite?.(selected, 37);
+    };
+    const stopRouteViewEscape = bindPanoramaEscape({
+      isActive: () => routeViewActive,
+      onExit: () => exitRouteView(),
+    });
     const el3d = renderer.domElement;
     let isDrag = false;
     let lmx = 0;
@@ -4269,6 +4385,30 @@
               : camR <= regionalFadeEnd
                 ? 1
                 : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
+          // #380 — route-view force-reveals the FOCUSED rover's route line +
+          // DETAIL tiles even when pulled back past the reveal band. Landing-site
+          // tier2 patches keep the global ramp (untouched). Once the user zooms in
+          // past the flat-patch trigger, drop the override so the normal flat-patch
+          // path takes over cleanly.
+          if (routeViewActive && camR < 30.4) routeViewActive = false;
+          const routeDetailOpacity = routeViewActive ? 1 : detailOpacity;
+          // Midpoint regional-context fade, reverse-engineered from THIS route's
+          // framing (#380). All traverse rovers carry the same fixed-size regional
+          // CTX; on a long route it reads as a jarring square once you're zoomed
+          // out far enough to see the whole drive. So: force it off in route-view
+          // (the criterion — detail tiles are the content), and otherwise fade it
+          // from the route's own framing camR — gone at/above the frame, ramping
+          // in over the last ~5 units as you zoom into the traverse. Regional-only
+          // rovers (no detail tiles → no midpoint regional) fall back to the global
+          // ramp, unchanged.
+          let routeRegionalOpacity: number;
+          if (routeViewActive) {
+            routeRegionalOpacity = 0;
+          } else {
+            const frameR = selected?.id ? frameCamRForRoute(selected.id) : null;
+            routeRegionalOpacity =
+              frameR != null ? Math.max(0, Math.min(1, (frameR - camR) / 5)) : regionalOpacity;
+          }
           for (const h of hotspots) {
             if (!h.tier2Group) continue;
             // Visible when either ramp has anything to show — regional
@@ -4347,7 +4487,7 @@
           // themselves into tier2DelayedReveal). Combines with the
           // TRAVERSES layer toggle: invisible if layer off OR camR
           // too far for detail. End-dots pulse (sine wave) when active.
-          const travVisible = loadTraverses != null && layerTraverses && detailOpacity > 0.01;
+          const travVisible = loadTraverses != null && layerTraverses && routeDetailOpacity > 0.01;
           // #360: only the FOCUSED (selected) rover's traverse is shown.
           // Previously every gate here was global-zoom-only, so reaching
           // Tier-2 on ANY site faded in EVERY rover's trail + route patches.
@@ -4365,7 +4505,7 @@
               obj.visible = travVisible && obj.userData?.roverId === focusedSiteId;
               const mat = (obj as THREE.Line).material as THREE.Material & { opacity: number };
               if (mat) {
-                mat.opacity = detailOpacity * 0.95;
+                mat.opacity = routeDetailOpacity * 0.95;
                 mat.transparent = true;
               }
             }
@@ -4377,8 +4517,8 @@
           // The midpoint regional fades on the EARLIER regional curve; the
           // detail HiRISE on the later detail curve (progressive detail).
           const routeOn = loadTraverses != null && layerTraverses;
-          const detailVisible = routeOn && detailOpacity > 0.01;
-          const regionalVisible = routeOn && regionalOpacity > 0.01;
+          const detailVisible = routeOn && routeDetailOpacity > 0.01;
+          const regionalVisible = routeOn && routeRegionalOpacity > 0.01;
           // Per-site gate (#360): a route patch only shows for the focused
           // rover — otherwise every rover's HiRISE/CTX patches reveal at once.
           for (const g of routeDetailGroups)
@@ -4386,11 +4526,11 @@
           for (const g of routeRegionalGroups)
             g.visible = regionalVisible && g.userData?.roverId === focusedSiteId;
           for (const m of routePatchMaterials) {
-            m.opacity = detailOpacity;
+            m.opacity = routeDetailOpacity;
             m.transparent = true;
           }
           for (const m of routeRegionalMaterials) {
-            m.opacity = regionalOpacity;
+            m.opacity = routeRegionalOpacity;
             m.transparent = true;
           }
           if (loadTraverses != null) {
@@ -4885,6 +5025,7 @@
       for (const h of lunarLayerHandles) h.dispose();
     });
     lifecycle.add(stopPanoramaEscape);
+    lifecycle.add(stopRouteViewEscape);
     lifecycle.add(() => panoramaSkybox?.dispose());
     lifecycle.add(stopCanvasInputs);
     lifecycle.add(() => disposeScene(scene));
@@ -5496,6 +5637,21 @@ sample      ${debugInfo.projectedPxSample}`}
       <span>Exit zoom</span>
     </button>
   {/if}
+  <!-- #380 — route-view auto-closes the panel on mobile (so the whole route is
+       visible), so surface an exit control outside the panel too. Esc works on
+       desktop; the in-panel toggle covers the panel-open case. -->
+  {#if routeViewActive && !panoramaActive && !flatPatchActive && !panelOpen}
+    <button
+      type="button"
+      class="surface-floating-exit"
+      onclick={() => exitRouteView()}
+      data-testid="route-floating-exit"
+      title="Exit route view (Esc)"
+    >
+      <span class="x mono" aria-hidden="true">✕</span>
+      <span>Exit route view</span>
+    </button>
+  {/if}
 
   <!-- Auto-tour guided mode (PRD-022 / ADR-074, #286 Phase 3C).
        'Play tour' pans through panorama annotations one-by-one,
@@ -5608,9 +5764,37 @@ sample      ${debugInfo.projectedPxSample}`}
             panoramaUrl={selected.hotspot_tier3_panorama}
             siteId={selected.id}
             {panoramaActive}
-            onEnter={enterPanorama}
+            onEnter={(url, id) => {
+              routeViewActive = false; // switching route-view → panorama
+              enterPanorama(url, id);
+            }}
             onExit={exitPanorama}
           />
+          <!-- #380 — frame the whole rover route (line + tiles + regional). -->
+          {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
+            {#if routeViewActive}
+              <button
+                type="button"
+                class="zoom-to-detail-button zoom-to-detail-button--exit"
+                data-testid="exit-route-view"
+                onclick={() => exitRouteView()}
+                title="Exit route view (Esc)"
+              >
+                <span class="icon" aria-hidden="true">✕</span>
+                <span>Exit route view</span>
+              </button>
+            {:else}
+              <button
+                type="button"
+                class="zoom-to-detail-button"
+                data-testid="view-route"
+                onclick={() => selected && enterRouteView(selected)}
+              >
+                <span class="icon" aria-hidden="true">🛰</span>
+                <span>View entire route</span>
+              </button>
+            {/if}
+          {/if}
           {#if selected.hotspot_tier2_source}
             {#if flatPatchActive}
               <button
@@ -5632,6 +5816,7 @@ sample      ${debugInfo.projectedPxSample}`}
                   // Switching pano → zoom: exit pano first so camR is
                   // restored above flyToDetail's camR<32 guard.
                   if (panoramaActive) exitPanorama();
+                  routeViewActive = false; // switching route-view → zoom
                   if (selected) flyToDetail?.(selected);
                 }}
               >

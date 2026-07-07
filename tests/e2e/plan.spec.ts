@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type ConsoleMessage } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * /plan — Mission Configurator.
@@ -143,15 +144,11 @@ test.describe('/plan — porkchop computes and renders', () => {
   });
 });
 
-test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
-  // v0.7 (ADR-076) reduced /plan to Mars-only — every multi-destination
-  // test here is skipped until v0.8 restores the full destination set
-  // (RFC-026 / GH #312). Re-enable each test as the porkchop solver
-  // gains real grids for the destination it covers.
-  test.skip(
-    true,
-    'v0.7 ADR-076: /plan is Mars-only; multi-destination restoration is v0.8 (RFC-026 / GH #312)',
-  );
+test.describe('/plan — multi-destination (v0.1.6 / ADR-026; re-expanded v0.8 per #312)', () => {
+  // v0.8 (ADR-076 / RFC-026 / GH #312) restored the full twelve-destination
+  // set — every destination now ships a real committed porkchop grid at
+  // static/data/porkchop/earth-to-<dest>.json. These were skipped under the
+  // v0.7 Mars-only cut and are re-enabled here.
   test('Jupiter porkchop renders when ?dest=jupiter is set', async ({ page }) => {
     await page.goto('/plan?dest=jupiter');
     // Loading spinner clears once the pre-computed grid loads.
@@ -232,6 +229,66 @@ test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
     const landingPill = page.getByRole('radio', { name: /LANDING/ });
     await expect(landingPill).not.toBeDisabled();
   });
+
+  // #312 acceptance: every one of the twelve destinations plots a real
+  // porkchop (painted heatmap, no empty region) via its ?dest deep-link,
+  // with no unexpected console errors.
+  const ALL_DESTINATIONS = [
+    'mercury',
+    'venus',
+    'mars',
+    'vesta',
+    'ceres',
+    'psyche',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+    'bennu',
+  ] as const;
+  for (const dest of ALL_DESTINATIONS) {
+    test(`${dest} — deep-link plots a real porkchop with no console errors`, async ({ page }) => {
+      const errors: string[] = [];
+      page.on('console', (msg: ConsoleMessage) => {
+        if (msg.type() === 'error' && !isExpectedNoise(msg)) {
+          errors.push(`console.error: ${msg.text()}`);
+        }
+      });
+      page.on('pageerror', (err: Error) => errors.push(`pageerror: ${err.message}`));
+
+      await page.goto(`/plan?dest=${dest}`);
+      await expect(page.getByRole('status')).toBeHidden({ timeout: 15_000 });
+      await expect(page.locator('.dest-select')).toHaveValue(dest);
+
+      // Heatmap actually painted (non-background pixel at the plot centre) —
+      // guards against the v0.7 "promised twelve, delivered an empty grid"
+      // regression that the Mars-only cut existed to prevent.
+      await page.waitForFunction(
+        () => {
+          const c = document.querySelector('canvas.porkchop') as HTMLCanvasElement | null;
+          if (!c || c.width === 0) return false;
+          const ctx = c.getContext('2d');
+          if (!ctx) return false;
+          const d = ctx.getImageData(
+            Math.floor(c.width * 0.5),
+            Math.floor(c.height * 0.5),
+            5,
+            5,
+          ).data;
+          for (let i = 0; i < d.length; i += 4) {
+            const isBg =
+              Math.abs(d[i] - 4) < 6 && Math.abs(d[i + 1] - 4) < 6 && Math.abs(d[i + 2] - 12) < 8;
+            if (!isBg) return true;
+          }
+          return false;
+        },
+        { timeout: 10_000 },
+      );
+
+      expect(errors, `console errors on /plan?dest=${dest}:\n${errors.join('\n')}`).toEqual([]);
+    });
+  }
 });
 
 test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {

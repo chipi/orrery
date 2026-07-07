@@ -27,15 +27,27 @@
     isLoading,
   } from '$lib/types/remote-data';
 
-  // v0.7: /plan only ships Mars. The Lambert-grid porkchop solver
-  // works for Mars only — every other destination renders an empty /
-  // misleading porkchop. Reducing the dropdown to Mars matches what
-  // we can honestly serve.
-  // v0.8 milestone: multi-destination porkchop (landing + flyby) per
-  // ADR-076 + RFC-026 + GH issue #312. Until then, FLYBY_ONLY /
-  // GRAVITY_ASSIST_CAVEAT_DESTINATIONS are dead code kept so the diff
-  // for the v0.8 re-expansion is mechanical.
-  const DESTINATION_IDS: DestinationId[] = ['mars'];
+  // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
+  // set. Every destination now has a committed porkchop grid at
+  // static/data/porkchop/earth-to-<dest>.json — Lambert (landing) shape for the
+  // inner planets + main-belt asteroids, V∞-vs-ToF (flyby) shape for the giants
+  // + Pluto. FLYBY_ONLY marks destinations with no LANDING at this fidelity (no
+  // LOI ∆v term); GRAVITY_ASSIST_CAVEAT_DESTINATIONS flags those whose realistic
+  // trajectory needs a gravity assist.
+  const DESTINATION_IDS: DestinationId[] = [
+    'mercury',
+    'venus',
+    'mars',
+    'vesta',
+    'ceres',
+    'psyche',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+    'bennu',
+  ];
   /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
   const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
   const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
@@ -318,7 +330,20 @@
 
   function pushFiltersToUrl() {
     const params = new URLSearchParams();
-    if (destinationId !== 'mars') params.set('dest', destinationId);
+    if (destinationId !== 'mars') {
+      params.set('dest', destinationId);
+    } else {
+      // Preserve an incoming ?dest deep-link that applyUrlFilters hasn't
+      // applied yet: the initial-render push (via the `selected` effect)
+      // fires before the URL effect, while destinationId is still the
+      // default 'mars'. Without this, loading /plan?dest=jupiter would
+      // strip ?dest before it takes effect. Same three-tier guard as the
+      // dep/tof preservation below. (#312 — dormant under the Mars-only cut.)
+      const urlDest = ($page.url.searchParams.get('dest') ?? '').toLowerCase();
+      if ((DESTINATION_IDS as string[]).includes(urlDest) && urlDest !== 'mars') {
+        params.set('dest', urlDest);
+      }
+    }
     if (missionType !== (FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
       params.set('type', missionType.toLowerCase());
     }

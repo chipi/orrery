@@ -32,6 +32,12 @@ export function isExpectedNoise(msg: ConsoleMessage): boolean {
     return (
       /\/data\/i18n\//.test(url) ||
       /\/data\/trajectories\//.test(url) ||
+      // /data/(moon|mars)-traverses/<rover>.route-patches.json — the along-route
+      // detail-tile sidecar (#361). Optional, exactly like the trajectory sidecar
+      // above: regional-only rovers (no map-projected LROC NAC — Hadley + the
+      // robotic landers) ship no manifest; getMoonTraverse/getMarsTraverse swallow
+      // the miss via .catch(() => null) and the traverse renders regional-only.
+      /\/data\/(?:moon|mars)-traverses\/[^/]+\.route-patches\.json$/.test(url) ||
       // /images/missions/thumbnails/<id>.png (trajectory thumbnail) —
       // rendered at the top of MissionPanel's FLIGHT tab. Allowlisted
       // because trajectory diagrams ship for only a subset of missions;

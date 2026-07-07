@@ -147,6 +147,7 @@
     "@capacitor/android": "^8.0.0",
     "@capacitor/core": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
+    "@capacitor/splash-screen": "^8.0.1",
     "@sentry/sveltekit": "^10.53.1",
     "detect-gpu": "^5.0.70",
     "katex": "^0.16.45",

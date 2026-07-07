@@ -95,6 +95,11 @@ const config = {
       '$types/*': './src/types/*',
       $data: './static/data',
       '$data/*': './static/data/*',
+      // i18n overlay SOURCE lives outside the served tree (ADR-079 D2 / #377).
+      // Build-time overlay imports (e.g. /fly's default scenario overlay) use
+      // this alias; the collapsed runtime bundles still ship from static/data.
+      $i18nSrc: './i18n-src',
+      '$i18nSrc/*': './i18n-src/*',
     },
     prerender: {
       entries: localizedRoots,

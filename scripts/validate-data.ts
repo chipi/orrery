@@ -36,6 +36,8 @@ import {
 } from './validate-data-helpers.js';
 
 const DATA_ROOT = 'static/data';
+// i18n overlay SOURCE lives outside the served tree (ADR-079 D2 / #377).
+const I18N_SRC = 'i18n-src';
 // strictRequired:false allows the surface-site schema's if/then conditional
 // required (lat/lon for surface; altitude_km/inclination_deg for orbiter)
 // to reference properties declared on the parent rather than re-declaring
@@ -652,7 +654,7 @@ for (const err of siteDrift) {
 }
 
 // 3. Locale overlays
-const i18nDir = join(DATA_ROOT, 'i18n');
+const i18nDir = I18N_SRC;
 if (existsSync(i18nDir)) {
   for (const locale of readdirSync(i18nDir)) {
     // Mission overlays
@@ -1511,7 +1513,7 @@ let surfaceHotspotVariantFailed = 0;
 console.log('\nValidating overlay-completeness (AGENTS.md non-negotiable)...');
 let overlayFailed = 0;
 {
-  const I18N_EN = join(DATA_ROOT, 'i18n', 'en-US');
+  const I18N_EN = join(I18N_SRC, 'en-US');
   const problems: string[] = [];
 
   // (a) earth-objects.json (flat array, id field) → i18n/en-US/earth-objects/{id}.json

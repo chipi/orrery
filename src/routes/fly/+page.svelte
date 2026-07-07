@@ -193,7 +193,7 @@
   // has — when other locales ship, the overlay swap is a one-line
   // change without restructuring the scene.
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
-  import defaultScenarioOverlay from '$data/i18n/en-US/scenarios/orrery-1.json';
+  import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in

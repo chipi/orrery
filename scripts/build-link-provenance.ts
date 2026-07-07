@@ -38,6 +38,8 @@ const DIFF_REPORT_OUT = 'docs/provenance/last-link-provenance-diff.md';
 const SOURCE_LOGOS_PATH = 'static/data/source-logos.json';
 
 const DATA_ROOT = 'static/data';
+// i18n overlay SOURCE moved out of the served tree (ADR-079 D2 / #377).
+const I18N_SRC_ROOT = 'i18n-src';
 
 // ──────────────────────────────────────────────────────────────────────
 // Types — mirror static/data/schemas/link-provenance.schema.json
@@ -711,7 +713,7 @@ function collectFromFleetDir(): RawLink[] {
 
 function collectFromI18nMissions(): RawLink[] {
   const out: RawLink[] = [];
-  const root = join(DATA_ROOT, 'i18n', 'en-US', 'missions');
+  const root = join(I18N_SRC_ROOT, 'en-US', 'missions');
   if (!existsSync(root)) return out;
   for (const dest of listDir(root)) {
     const dir = join(root, dest);
@@ -796,7 +798,7 @@ function collectFromTopLevelArrayFile(
  */
 function collectFromI18nPerIdDir(subdir: string, category: Category, route: string): RawLink[] {
   const out: RawLink[] = [];
-  const dir = join(DATA_ROOT, 'i18n', 'en-US', subdir);
+  const dir = join(I18N_SRC_ROOT, 'en-US', subdir);
   if (!existsSync(dir)) return out;
   for (const f of listDir(dir)) {
     if (!f.endsWith('.json')) continue;
@@ -822,7 +824,7 @@ function collectFromI18nPerIdDir(subdir: string, category: Category, route: stri
 
 function collectFromI18nPlanets(): RawLink[] {
   const out: RawLink[] = [];
-  const dir = join(DATA_ROOT, 'i18n', 'en-US', 'planets');
+  const dir = join(I18N_SRC_ROOT, 'en-US', 'planets');
   if (!existsSync(dir)) return out;
   for (const f of listDir(dir)) {
     if (!f.endsWith('.json')) continue;
@@ -849,7 +851,7 @@ function collectFromI18nPlanets(): RawLink[] {
 function collectFromSun(): RawLink[] {
   const out: RawLink[] = [];
   const baseFile = join(DATA_ROOT, 'sun.json');
-  const overlay = join(DATA_ROOT, 'i18n', 'en-US', 'sun.json');
+  const overlay = join(I18N_SRC_ROOT, 'en-US', 'sun.json');
   for (const file of [baseFile, overlay]) {
     if (!existsSync(file)) continue;
     const j = JSON.parse(readFileSync(file, 'utf8')) as Record<string, unknown>;

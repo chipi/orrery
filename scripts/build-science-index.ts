@@ -29,7 +29,8 @@ type IndexEntry = {
   haystack: string;
 };
 
-const SCIENCE_ROOT = 'static/data/i18n/en-US/science';
+// i18n overlay source moved out of static/ (ADR-079 D2 / #377).
+const SCIENCE_ROOT = 'i18n-src/en-US/science';
 const OUT_PATH = 'static/data/science-index.json';
 
 function listJsonFiles(dir: string): string[] {

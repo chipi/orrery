@@ -2,16 +2,20 @@
 /**
  * Bundle the per-topic i18n overlay files into one JSON per locale.
  *
- * WHY: the overlay system ships ~740 tiny JSON files PER locale
- * (static/data/i18n/{locale}/**), i.e. ~10,360 files across 14 locales.
+ * WHY: the overlay system has ~740 tiny JSON files PER locale
+ * (i18n-src/{locale}/**), i.e. ~10,360 files across 14 locales.
  * Precaching that many individual files never finishes installing the
  * service worker on mobile WebKit (the 0.6.3-stuck bug). Bundling to one
  * file per locale turns ~10,360 precache entries into 14, so the SW
  * install completes. See docs/wip/pwa-upgrade-path-handover.md.
  *
- * The source per-file tree is left UNTOUCHED — translator scripts, the
- * `$data` build-time imports, and the filesystem drift tests all keep
- * working. This step is purely additive and runs before `vite build`.
+ * The source tree lives OUTSIDE static/ (ADR-079 D2 / #377) — it is
+ * build-time input, never a servable asset, so it no longer bloats the
+ * deployed build/ (that was ~60% of the file count flaking GH Pages, #373).
+ * Consumers repointed to i18n-src/: translator scripts, /fly's build-time
+ * overlay import (via the $i18nSrc alias), and the drift tests. This step
+ * reads i18n-src/ and writes the bundles into static/data/i18n/ before
+ * `vite build`.
  *
  * Output: static/data/i18n/{locale}.json = { "<relpath>": <content>, ... }
  * keyed by the file's path relative to the locale dir (forward-slashed),
@@ -22,7 +26,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const I18N = path.join(process.cwd(), 'static/data/i18n');
+// Source overlays live OUTSIDE the served tree (ADR-079 D2 / #377): they are
+// build-time input, not servable assets. Only the collapsed per-locale bundles
+// (the OUT dir) ship. Keeping the raw ~10,360-file tree out of static/ cut ~60%
+// of the deployed file count that was flaking GH Pages (#373).
+const I18N_SRC = path.join(process.cwd(), 'i18n-src');
+const I18N_OUT = path.join(process.cwd(), 'static/data/i18n');
 
 function walkJson(dir, base, out) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -34,12 +43,13 @@ function walkJson(dir, base, out) {
 }
 
 function main() {
-  if (!fs.existsSync(I18N)) {
-    console.error(`[i18n-bundles] no ${I18N}`);
+  if (!fs.existsSync(I18N_SRC)) {
+    console.error(`[i18n-bundles] no ${I18N_SRC}`);
     process.exit(1);
   }
+  fs.mkdirSync(I18N_OUT, { recursive: true });
   const locales = fs
-    .readdirSync(I18N, { withFileTypes: true })
+    .readdirSync(I18N_SRC, { withFileTypes: true })
     .filter((e) => e.isDirectory())
     .map((e) => e.name)
     .sort();
@@ -47,7 +57,7 @@ function main() {
   let totalIn = 0;
   const summary = [];
   for (const loc of locales) {
-    const dir = path.join(I18N, loc);
+    const dir = path.join(I18N_SRC, loc);
     const files = walkJson(dir, dir, []);
     const bundle = {};
     for (const f of files) {
@@ -59,7 +69,7 @@ function main() {
         process.exit(1);
       }
     }
-    const outPath = path.join(I18N, `${loc}.json`);
+    const outPath = path.join(I18N_OUT, `${loc}.json`);
     const json = JSON.stringify(bundle);
     fs.writeFileSync(outPath, json, 'utf8');
     totalIn += files.length;

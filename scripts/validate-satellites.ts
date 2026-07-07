@@ -5,8 +5,8 @@
  * Catches drift between:
  *   - static/data/satellites.json (canonical English content)
  *   - static/data/satellite-galleries.json (per-id image counts)
- *   - static/data/i18n/<locale>/satellites/<id>.json (per-locale
- *     overlay files)
+ *   - i18n-src/<locale>/satellites/<id>.json (per-locale overlay files;
+ *     source lives outside static/ per ADR-079 D2 / #377)
  *
  * Exits non-zero on any error so the preflight runner flags broken
  * data before a PR can merge.
@@ -18,7 +18,8 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SATS_JSON = join(ROOT, 'static', 'data', 'satellites.json');
 const GALLERIES_JSON = join(ROOT, 'static', 'data', 'satellite-galleries.json');
-const I18N_ROOT = join(ROOT, 'static', 'data', 'i18n');
+// i18n overlay source moved out of static/ (ADR-079 D2 / #377).
+const I18N_ROOT = join(ROOT, 'i18n-src');
 
 type Library = { id: string; label: string; url: string; tier: string; kind: string };
 type Sat = {

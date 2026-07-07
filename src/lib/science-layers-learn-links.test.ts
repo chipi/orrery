@@ -36,7 +36,7 @@ describe('Science Lens deeplinks → /science articles', () => {
     });
 
     it(`${layer} → /science/${tab}/${section} (en-US overlay exists)`, () => {
-      const overlayPath = join('static/data/i18n/en-US/science', tab, `${section}.json`);
+      const overlayPath = join('i18n-src/en-US/science', tab, `${section}.json`);
       expect(
         existsSync(overlayPath),
         `lens layer "${layer}" → /science/${tab}/${section} but en-US overlay ${overlayPath} doesn't exist`,

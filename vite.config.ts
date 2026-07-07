@@ -71,7 +71,7 @@ export default defineConfig(({ mode }) => {
       // JSON imports (planets, small-bodies, scenarios). Without this,
       // Vite's default fs.allow excludes static/ and dev-only 404s flood
       // the console.
-      fs: { allow: ['static'] },
+      fs: { allow: ['static', 'i18n-src'] },
     },
     preview: { port: devPort, strictPort: true },
     plugins: [

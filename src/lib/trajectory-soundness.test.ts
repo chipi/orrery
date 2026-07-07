@@ -71,7 +71,7 @@ function loadAllMissions(): MissionFile[] {
       let overlay: { type?: string } = {};
       try {
         overlay = JSON.parse(
-          readFileSync(`static/data/i18n/en-US/missions/${destDir}/${file}`, 'utf8'),
+          readFileSync(`i18n-src/en-US/missions/${destDir}/${file}`, 'utf8'),
         );
       } catch {
         // Some missions may not have an overlay yet — treat as one-way.

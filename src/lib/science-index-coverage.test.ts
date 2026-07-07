@@ -17,7 +17,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const SCIENCE_ROOT = 'static/data/science';
-const EN_US_ROOT = 'static/data/i18n/en-US/science';
+const EN_US_ROOT = 'i18n-src/en-US/science';
 
 interface TabIndex {
   ids: string[];

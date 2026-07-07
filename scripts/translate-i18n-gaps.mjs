@@ -2,7 +2,7 @@
  * Universal gap-fill translator (#354 — Marko: "if you see anything
  * else not translated, translate them as well").
  *
- * Walks the i18n overlay tree under static/data/i18n/en-US/ and for
+ * Walks the i18n overlay tree under i18n-src/en-US/ and for
  * every JSON file missing from any of the 13 non-en-US locales, runs
  * a translation via the Anthropic Sonnet API and writes the locale
  * overlay.
@@ -22,7 +22,8 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const I18N = path.join(ROOT, 'static/data/i18n');
+// i18n overlay source moved out of static/ (ADR-079 D2 / #377).
+const I18N = path.join(ROOT, 'i18n-src');
 
 const LOCALES = [
   'ar',

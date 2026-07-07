@@ -5,6 +5,9 @@
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
   import { initViewport } from '$lib/viewport.svelte';
+  import { Capacitor } from '@capacitor/core';
+  import { openExternal } from '$lib/external-link';
+  import { initWebglRecovery } from '$lib/native/webgl-recovery';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
@@ -207,6 +210,9 @@
     // onto <html> as data-* attributes for the responsive CSS. The inline
     // app.html script seeds these pre-paint; this keeps them live on change.
     const stopViewport = initViewport();
+    // S8 / #195: recover 3D scenes after the iOS WebView drops the WebGL
+    // context on background. No-op off-device.
+    const stopWebglRecovery = initWebglRecovery();
     // Privacy-respecting analytics. Loads only on the production host
     // (chipi.github.io); localhost / vite preview / CI runs are
     // silent. See src/lib/analytics.ts for the host gate + event API.
@@ -257,6 +263,12 @@
           href,
           from: window.location.pathname,
         });
+        // S5 / RFC-018 §7: under Capacitor the WebView is app-bound, so open
+        // external links in the in-app browser instead of a dead navigation.
+        if (Capacitor.isNativePlatform()) {
+          e.preventDefault();
+          void openExternal(href);
+        }
       } catch {
         // Malformed href — ignore.
       }
@@ -265,6 +277,7 @@
 
     return () => {
       stopViewport();
+      stopWebglRecovery();
       window.removeEventListener('beforeinstallprompt', onPromptable);
       document.removeEventListener('click', onAnyClick, true);
     };

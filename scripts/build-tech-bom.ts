@@ -103,6 +103,13 @@ const PACKAGE_LICENSE_OVERRIDES: Record<string, string> = {
   // in package.json. Dev-only — used at compile time by the paraglide
   // CLI, never bundled into the production client.
   'sqlite-wasm-kysely': 'MIT',
+  // @trapezedev/project + @trapezedev/gradle-parse — transitive dev deps of
+  // @capacitor/assets (mobile icon/splash generation, S10 #197). Both ship a
+  // LICENSE file declaring MIT (Copyright Drifty Co. / Ionic) but set the
+  // package.json `license` field to the non-SPDX "SEE LICENSE". Dev-only —
+  // build-time asset tooling, never bundled into the app.
+  '@trapezedev/project': 'MIT',
+  '@trapezedev/gradle-parse': 'MIT',
 };
 
 // Some legacy npm packages declare licenses as compound expressions or

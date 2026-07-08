@@ -1,0 +1,20 @@
+{
+  "rover_id": "apollo15",
+  "agency": "NASA",
+  "status": "ENDED",
+  "snapshot_date": "1971-08-02",
+  "credit": "© NASA — Apollo 15 LRV traverse (Hadley–Apennine, Jul–Aug 1971; ~28 km over three EVAs). The route connects published traverse-station coordinates at the base of the Apennine Front / Hadley Delta — St. George crater (Station 2), Elbow crater (Station 1), the LM 'Falcon', Dune crater (Station 4) and Spur crater (Station 7) — from Wikipedia and the-moon.us crater positions. Station-waypoint approximation fanning from the LM to the front; the fully surveyed LROC track is a future upgrade (Apollo 17 uses the complete USGS mapped traverse).",
+  "points": [
+    [25.96, 3.54],
+    [26.0, 3.6],
+    [26.13222, 3.63386],
+    [26.0, 3.7],
+    [25.974, 3.657]
+  ],
+  "stops": [
+    { "id": "station-2", "lat": 25.96, "lon": 3.54, "kind": "sample", "label": "Station 2 · St. George" },
+    { "id": "station-1", "lat": 26.0, "lon": 3.6, "kind": "sample", "label": "Station 1 · Elbow" },
+    { "id": "station-4", "lat": 26.0, "lon": 3.7, "kind": "sample", "label": "Station 4 · Dune" },
+    { "id": "station-7", "lat": 25.974, "lon": 3.657, "kind": "sample", "label": "Station 7 · Spur" }
+  ]
+}

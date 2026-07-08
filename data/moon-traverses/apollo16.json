@@ -1,0 +1,18 @@
+{
+  "rover_id": "apollo16",
+  "agency": "NASA",
+  "status": "ENDED",
+  "snapshot_date": "1972-04-23",
+  "credit": "© NASA — Apollo 16 LRV traverse (Descartes Highlands, Apr 1972; ~27 km over three EVAs). The route connects published traverse-station coordinates — North Ray crater (Station 11, ~4.4 km north), the LM 'Orion', Plum/Flag crater (Station 1) and the Cinco craters on Stone Mountain (Station 4, ~4 km south) — from Wikipedia and the-moon.us crater positions. Station-waypoint approximation of the north–south traverse; the fully surveyed LROC track is a future upgrade (Apollo 17 uses the complete USGS mapped traverse).",
+  "points": [
+    [-8.82, 15.48],
+    [-8.97301, 15.50019],
+    [-9.0, 15.5],
+    [-9.1, 15.5]
+  ],
+  "stops": [
+    { "id": "station-11", "lat": -8.82, "lon": 15.48, "kind": "sample", "label": "Station 11 · North Ray" },
+    { "id": "station-1", "lat": -9.0, "lon": 15.5, "kind": "sample", "label": "Station 1 · Plum" },
+    { "id": "station-4", "lat": -9.1, "lon": 15.5, "kind": "sample", "label": "Station 4 · Stone Mountain" }
+  ]
+}

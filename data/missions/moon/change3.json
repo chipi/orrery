@@ -23,18 +23,13 @@
     },
     {
       "l": "嫦娥三号 — 中文维基百科",
-      "u": "https://zh.wikipedia.org/wiki/%E5%AC%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",
+      "u": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",
       "t": "core"
     },
     {
       "l": "Chang'e 3 (NASA NSSDCA)",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A",
       "t": "core"
-    },
-    {
-      "l": "Chinese Academy of Sciences — Chang'e program archive",
-      "u": "https://www.cas.cn/syky/201312/t20131214_4001075.shtml",
-      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",

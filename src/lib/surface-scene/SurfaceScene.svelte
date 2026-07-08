@@ -1641,6 +1641,9 @@
         planetRadius,
         sunDirection: sun.position,
         color: 0xfff2b0,
+        // PROTOTYPE seasonal sun-march (#386 F): sway ±obliquity over a
+        // compressed year. Moon's ~0° obliquity → no sway (no seasons).
+        seasonal: { obliquityDeg: config.axialTiltDeg, periodSec: 14 },
       });
       scene.add(subSolar.object);
       lunarLayerHandles.push(subSolar);

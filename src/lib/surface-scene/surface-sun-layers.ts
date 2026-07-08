@@ -22,6 +22,8 @@
 import * as THREE from 'three';
 import { onLayerChange, type LayerKey } from '$lib/science-layers';
 
+const DEG = Math.PI / 180;
+
 export interface SunLayerHandle {
   object: THREE.Object3D;
   dispose: () => void;
@@ -54,6 +56,10 @@ export interface SubSolarOpts {
   /** Angular radius of the noon-halo ring around the sub-solar point,
    *  degrees. Default 12°. */
   haloDeg?: number;
+  /** PROTOTYPE seasonal sun-march (#386 diagram F). When set, the marker
+   *  sways ±obliquity north/south over `periodSec` to animate the
+   *  mechanism of seasons. Obliquity ≈ 0 (Moon) → no sway. */
+  seasonal?: { obliquityDeg: number; periodSec?: number };
 }
 
 /**
@@ -129,6 +135,35 @@ export function buildSubSolarPoint(opts: SubSolarOpts): SunLayerHandle {
   const termGeo = new THREE.BufferGeometry().setFromPoints(termPts);
   disposables.push(termGeo);
   group.add(new THREE.LineLoop(termGeo, termMat));
+
+  // PROTOTYPE seasonal sun-march (#386 diagram F). Sway the whole marker
+  // ±obliquity by rotating about the east axis (⊥ to the Sun direction
+  // and up), which preserves longitude while migrating the sub-solar
+  // latitude — the mechanism of seasons. Moon (obliquity ~0) holds
+  // still: no seasons, honestly. Honours prefers-reduced-motion.
+  if (opts.seasonal && opts.seasonal.obliquityDeg > 0.5) {
+    const eps = opts.seasonal.obliquityDeg * DEG;
+    const axis = new THREE.Vector3().crossVectors(n, new THREE.Vector3(0, 1, 0)).normalize();
+    const reduce =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      group.quaternion.setFromAxisAngle(axis, eps); // static solstice tilt
+    } else {
+      const periodMs = (opts.seasonal.periodSec ?? 14) * 1000;
+      const q = new THREE.Quaternion();
+      let raf = 0;
+      const start = performance.now();
+      const tick = () => {
+        const t = (performance.now() - start) / periodMs;
+        q.setFromAxisAngle(axis, eps * Math.sin(t * Math.PI * 2));
+        group.quaternion.copy(q);
+        raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+      disposables.push({ dispose: () => cancelAnimationFrame(raf) });
+    }
+  }
 
   return gate(group, 'sub-solar', disposables);
 }

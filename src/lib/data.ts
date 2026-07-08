@@ -1562,6 +1562,53 @@ export async function getImageProvenance(imagePath: string): Promise<ImageProven
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// External audio-source provenance (#385) — third-party recordings under
+// static/audio/atmosphere/ (the "atmosphere's voice" tiles). Parallel to
+// image-provenance; distinct from the first-party TTS audio-provenance.
+// ──────────────────────────────────────────────────────────────────────
+export interface AudioSourceProvenanceEntry {
+  id: string;
+  path: string;
+  body: 'moon' | 'mars' | 'earth';
+  source_type: 'wikimedia-commons' | 'nasa-images-api' | 'direct-agency' | 'direct-other';
+  title: string;
+  author: string | null;
+  agency: string;
+  instrument: string | null;
+  date_recorded: string | null;
+  source_url: string;
+  download_url: string | null;
+  license_short: string;
+  license_url: string | null;
+  license_rationale: string;
+  modifications: string[];
+  duration_sec?: number;
+  sha256: string;
+  fetched_at: string;
+}
+
+export interface AudioSourceProvenanceManifest {
+  schema_version: number;
+  generated_at: string;
+  script_version?: string;
+  commit_sha?: string | null;
+  entries: AudioSourceProvenanceEntry[];
+}
+
+let audioSourceProvenanceManifest: AudioSourceProvenanceManifest | null = null;
+
+export async function getAudioSourceProvenanceManifest(): Promise<AudioSourceProvenanceManifest | null> {
+  if (audioSourceProvenanceManifest) return audioSourceProvenanceManifest;
+  try {
+    const m = await get<AudioSourceProvenanceManifest>('audio-source-provenance.json');
+    audioSourceProvenanceManifest = m;
+    return m;
+  } catch {
+    return null;
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // Source logos + text sources (ADR-046 Milestone D)
 //
 // Both manifests power /credits. Source logos render the masthead

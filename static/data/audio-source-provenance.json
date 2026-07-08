@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-08T00:00:00Z",
+  "script_version": "hand-authored@0.1.0",
+  "commit_sha": null,
+  "entries": [
+    {
+      "id": "mars-wind",
+      "path": "/audio/atmosphere/mars-wind.mp3",
+      "body": "mars",
+      "source_type": "wikimedia-commons",
+      "title": "Perseverance rover microphone captures sounds from Mars (wind, rover noise filtered)",
+      "author": "NASA/JPL-Caltech",
+      "agency": "NASA",
+      "instrument": "Perseverance SuperCam microphone",
+      "date_recorded": "2021-02-20",
+      "source_url": "https://commons.wikimedia.org/wiki/File:NASA%27s_Perseverance_Rover_Microphone_Captures_Sounds_from_Mars_without_rover_noise.ogg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/NASA%27s_Perseverance_Rover_Microphone_Captures_Sounds_from_Mars_without_rover_noise.ogg",
+      "license_short": "Public domain",
+      "license_url": null,
+      "license_rationale": "U.S. Government work — NASA/JPL-Caltech, public domain",
+      "modifications": ["transcoded-ogg-to-mp3", "downmixed-mono"],
+      "duration_sec": 18.018,
+      "sha256": "a0af4b66d36b694cafeccae00d735ac95fe3559641b9560968e46dc029642d8d",
+      "fetched_at": "2026-07-08T00:00:00Z"
+    },
+    {
+      "id": "earth-wind",
+      "path": "/audio/atmosphere/earth-wind.mp3",
+      "body": "earth",
+      "source_type": "wikimedia-commons",
+      "title": "Wind in a Swedish pine forest at 25 m/s",
+      "author": "W.carter",
+      "agency": "Wikimedia Commons",
+      "instrument": null,
+      "date_recorded": "2024-11-01",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wind_in_Swedish_pine_forest_at_25_mps.ogg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Wind_in_Swedish_pine_forest_at_25_mps.ogg",
+      "license_short": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Creative Commons Attribution-ShareAlike 4.0 International — attribution: W.carter",
+      "modifications": ["transcoded-ogg-to-mp3", "downmixed-mono", "trimmed-12s-32s"],
+      "duration_sec": 20.0,
+      "sha256": "33b92d9a47bf56f29f080b4834c7d9e8983a326dac9c01f121ed41744a424608",
+      "fetched_at": "2026-07-08T00:00:00Z"
+    }
+  ]
+}

@@ -17,6 +17,7 @@
   import { onMount } from 'svelte';
   import { onLayerChange } from '$lib/science-layers';
   import type { PlanetStats, LightTime } from '$lib/planet-stats';
+  import AtmosphereWaveform from '$lib/components/AtmosphereWaveform.svelte';
   import * as m from '$lib/paraglide/messages';
 
   let {
@@ -58,6 +59,8 @@
     aria-hidden="true"
   >
     <div class="scan-eyebrow">{m.explore_scan_eyebrow({ planet: bodyLabel })}</div>
+    <!-- PROTOTYPE hero tile (#385 diagram A) — the atmosphere's voice. -->
+    <AtmosphereWaveform bodyKey={bodyLabel.toLowerCase()} />
     <div class="scan-row">
       <span class="scan-label">{m.explore_scan_label_gravity()}</span>
       <span class="scan-value">{stats.surfaceGravityG.toFixed(2)} g</span>

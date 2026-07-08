@@ -17,9 +17,11 @@
     getSourceLogos,
     getImageProvenanceManifest,
     getTextSources,
+    getAudioSourceProvenanceManifest,
     type ImageProvenanceManifest,
     type SourceLogosManifest,
     type TextSourcesManifest,
+    type AudioSourceProvenanceManifest,
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
   import * as m from '$lib/paraglide/messages';
@@ -27,19 +29,24 @@
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
   let textSources = $state<TextSourcesManifest | null>(null);
+  let audioProv = $state<AudioSourceProvenanceManifest | null>(null);
   let loaded = $state(false);
 
   // Audio narration / tour-script attribution moved to /colophon (it's our
   // ORIGINAL content). /credits keeps only reused third-party material.
   $effect(() => {
-    void Promise.all([getSourceLogos(), getImageProvenanceManifest(), getTextSources()]).then(
-      ([s, p, t]) => {
-        logos = s;
-        provenance = p;
-        textSources = t;
-        loaded = true;
-      },
-    );
+    void Promise.all([
+      getSourceLogos(),
+      getImageProvenanceManifest(),
+      getTextSources(),
+      getAudioSourceProvenanceManifest(),
+    ]).then(([s, p, t, a]) => {
+      logos = s;
+      provenance = p;
+      textSources = t;
+      audioProv = a;
+      loaded = true;
+    });
   });
 
   // Our OWN assets are not third-party imagery and must not appear in the
@@ -381,6 +388,39 @@
     {/each}
   {/if}
 
+  <!-- Atmosphere audio (#385) — real recordings played by the surface
+       "atmosphere's voice" tiles. English chrome for now; i18n keys
+       tracked in #385 (en-US-first, like PRD-023 Slice E). -->
+  {#if audioProv && audioProv.entries.length > 0}
+    <article class="source-block" id="src-atmosphere-audio">
+      <header class="head-row">
+        <h2>Atmosphere audio</h2>
+      </header>
+      <p class="storage-blurb">
+        The “atmosphere’s voice” tiles on the surface Science Lens play real recordings — driven
+        live by the audio’s own spectrum.
+      </p>
+      <ul class="audio-list">
+        {#each audioProv.entries as a (a.id)}
+          <li class="audio-row">
+            <span class="audio-body">{a.body}</span>
+            <span class="audio-text">
+              <span class="audio-title">{a.title}</span>
+              <span class="audio-meta">
+                {a.author ?? a.agency}{a.instrument ? ` · ${a.instrument}` : ''} ·
+                <a href={a.license_url ?? a.source_url} target="_blank" rel="noopener noreferrer"
+                  >{a.license_short}</a
+                >
+                ·
+                <a href={a.source_url} target="_blank" rel="noopener noreferrer">source</a>
+              </span>
+            </span>
+          </li>
+        {/each}
+      </ul>
+    </article>
+  {/if}
+
   <article class="storage-card" aria-labelledby="storage-title">
     <header class="head-row">
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
@@ -414,6 +454,45 @@
 </section>
 
 <style>
+  .audio-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .audio-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .audio-body {
+    flex: 0 0 auto;
+    min-width: 46px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .audio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .audio-title {
+    font-size: 13px;
+  }
+  .audio-meta {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .audio-meta a {
+    color: inherit;
+    text-decoration: underline;
+  }
   .storage-card {
     margin-top: 32px;
     padding: 18px 20px;

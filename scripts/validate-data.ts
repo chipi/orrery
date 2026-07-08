@@ -98,6 +98,7 @@ const launchesRocketMappingSchema = loadSchema('launches-rocket-mapping.schema.j
 const voicesSchema = loadSchema('voices.schema.json');
 const costLedgerSchema = loadSchema('cost-ledger.schema.json');
 const audioProvenanceSchema = loadSchema('audio-provenance.schema.json');
+const audioSourceProvenanceSchema = loadSchema('audio-source-provenance.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -139,6 +140,7 @@ const validateLaunchesRocketMapping = ajv.compile(launchesRocketMappingSchema);
 const validateVoices = ajv.compile(voicesSchema);
 const validateCostLedger = ajv.compile(costLedgerSchema);
 const validateAudioProvenance = ajv.compile(audioProvenanceSchema);
+const validateAudioSourceProvenance = ajv.compile(audioSourceProvenanceSchema);
 
 let failed = 0;
 let passed = 0;
@@ -390,6 +392,26 @@ validateFile(join(DATA_ROOT, 'launches-rocket-mapping.json'), validateLaunchesRo
 validateFile(join(DATA_ROOT, 'audio', 'voices.json'), validateVoices);
 validateFile(join(DATA_ROOT, 'audio', 'cost-ledger.json'), validateCostLedger);
 validateFile(join(DATA_ROOT, 'audio', 'audio-provenance.json'), validateAudioProvenance);
+// #385: external audio-source provenance (the "atmosphere's voice" clips)
+// — schema check + a fail-closed on-disk check that every referenced mp3
+// actually ships (parallel to the image-provenance integrity pass).
+validateFile(join(DATA_ROOT, 'audio-source-provenance.json'), validateAudioSourceProvenance);
+{
+  const audioSrcPath = join(DATA_ROOT, 'audio-source-provenance.json');
+  if (existsSync(audioSrcPath)) {
+    const manifest = readJson(audioSrcPath) as { entries: Array<{ id: string; path: string }> };
+    const staticRoot = join(DATA_ROOT, '..');
+    for (const e of manifest.entries) {
+      if (existsSync(join(staticRoot, e.path))) {
+        passed++;
+      } else {
+        failed++;
+        console.error('\n  ✗ audio-source-provenance.json');
+        console.error(`      audio asset missing on disk for '${e.id}': ${e.path}`);
+      }
+    }
+  }
+}
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {

@@ -16,17 +16,35 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
+  import { loadLadder, ladderSources } from '$lib/image-srcset';
 
   interface Props {
     src: string | null;
     onClose: () => void;
   }
   let { src, onClose }: Props = $props();
+
+  // Responsive WebP ladder for the full-screen view; plain jpg until the
+  // manifest loads / for images with no ladder. RFC-030 Slice 3.
+  let ladderReady = $state(false);
+  loadLadder().then(() => (ladderReady = true));
+  const ladder = $derived(ladderReady && src ? ladderSources(src) : null);
 </script>
 
 {#if src}
   <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
-    <img {src} alt="" loading="lazy" decoding="async" />
+    {#if ladder}
+      <img
+        src={ladder.src}
+        srcset={ladder.srcset}
+        sizes="90vw"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    {:else}
+      <img {src} alt="" loading="lazy" decoding="async" />
+    {/if}
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
   <div class="lightbox-meta">

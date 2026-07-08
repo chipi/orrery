@@ -8,6 +8,7 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
+  import { loadLadder, ladderSources } from '$lib/image-srcset';
 
   interface Props {
     src: string;
@@ -15,6 +16,12 @@
     onOpen: () => void;
   }
   let { src, name, onOpen }: Props = $props();
+
+  // Upgrade to the responsive WebP ladder once the manifest loads; render the
+  // plain jpg until then (and for images with no ladder). RFC-030 Slice 3.
+  let ladderReady = $state(false);
+  loadLadder().then(() => (ladderReady = true));
+  const ladder = $derived(ladderReady ? ladderSources(src) : null);
 </script>
 
 <div class="panel-hero">
@@ -24,6 +31,17 @@
     onclick={onOpen}
     aria-label={m.panel_hero_aria({ name })}
   >
-    <img {src} alt="" fetchpriority="high" decoding="async" />
+    {#if ladder}
+      <img
+        src={ladder.src}
+        srcset={ladder.srcset}
+        sizes="100vw"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+      />
+    {:else}
+      <img {src} alt="" fetchpriority="high" decoding="async" />
+    {/if}
   </button>
 </div>

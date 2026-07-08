@@ -38,7 +38,14 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const IMAGES_DIR = join(ROOT, 'static/images');
+// Dedup authorizes the SOURCE images, not the churning derived tree — a bulk
+// re-encode (RFC-030 cap / WebP) changes every derived SHA and would invalidate
+// the whole allowlist. Masters preserve the ORIGINAL bytes, so the existing
+// SHA-keyed allowlist matches them unchanged. Masters are git-LFS
+// `fetchexclude`d (absent as pointer stubs on CI), so this check runs only
+// where they're smudged — locally, after `git lfs pull -I 'masters/**'`
+// (RFC-030 open-Q0). See mastersSmudged().
+const IMAGES_DIR = join(ROOT, 'masters');
 
 /** SHA-256 8-char prefixes of byte-dupes the curator has signed off
  *  on. Each entry needs a short comment naming the editorial intent.
@@ -451,6 +458,24 @@ function sha256Prefix(path: string): string {
   return createHash('sha256').update(readFileSync(path)).digest('hex').slice(0, 8);
 }
 
+/** Masters are git-LFS `fetchexclude`d, so on CI + fresh clones they are
+ *  ~130-byte pointer stubs, not real images. SHA-256 of a pointer is
+ *  meaningless, so skip entirely unless masters are smudged (real bytes). */
+function mastersSmudged(): boolean {
+  let sample: string | undefined;
+  try {
+    for (const p of walkJpgs(IMAGES_DIR)) {
+      sample = p;
+      break;
+    }
+  } catch {
+    return false; // masters/ absent
+  }
+  if (!sample) return false;
+  const head = readFileSync(sample).subarray(0, 40).toString('utf8');
+  return !head.startsWith('version https://git-lfs');
+}
+
 interface DupeGroup {
   hashPrefix: string;
   paths: string[];
@@ -484,6 +509,12 @@ function rel(p: string): string {
 
 function main(): void {
   console.log('Image byte-dupe check (cross + same-surface)…');
+  if (!mastersSmudged()) {
+    console.log(
+      '⏭ masters/ not smudged (git-LFS fetchexclude) — dedup is a local check; skipping.',
+    );
+    return;
+  }
   const groups = findDupes();
   if (groups.length === 0) {
     const n = execSync(

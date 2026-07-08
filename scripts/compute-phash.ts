@@ -30,7 +30,11 @@ import { fileURLToPath } from 'node:url';
 import { computePhash } from './lib/phash.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const IMAGES_DIR = join(ROOT, 'static/images');
+// Phash the SOURCE images (masters), so the cache is stable across derived
+// re-encodes (RFC-030). masters are byte-identical to the original static/images
+// base jpgs, so the cache keys (`/images/...`) + phashes are unchanged. Masters
+// are git-LFS `fetchexclude`d — run `git lfs pull -I 'masters/**'` before regen.
+const IMAGES_DIR = join(ROOT, 'masters');
 const CACHE_PATH = join(ROOT, 'static/data/image-phashes.json');
 
 interface PhashCache {
@@ -68,7 +72,8 @@ function loadCache(): PhashCache {
 }
 
 function urlPathOf(diskPath: string): string {
-  return diskPath.slice(IMAGES_DIR.length - '/images'.length);
+  // `/images/<rel>` regardless of whether IMAGES_DIR is static/images or masters.
+  return '/images' + diskPath.slice(IMAGES_DIR.length);
 }
 
 async function main(): Promise<void> {

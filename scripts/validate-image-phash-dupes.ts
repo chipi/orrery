@@ -24,7 +24,12 @@ import { ALLOWLIST as BYTE_ALLOWLIST } from './validate-image-dupes.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE_PATH = resolve(ROOT, 'static/data/image-phashes.json');
-const IMAGES_DIR = resolve(ROOT, 'static/images');
+// Byte-hash resolution reads the SOURCE images (masters), not the churning
+// derived tree — a re-encode changes derived bytes but the phash cache +
+// byte-allowlist key on the originals, which masters preserve. Masters are
+// git-LFS `fetchexclude`d (pointer stubs on CI), so this is a local check
+// (RFC-030 open-Q0 / matches validate-image-dupes.ts).
+const IMAGES_DIR = resolve(ROOT, 'masters');
 const BASELINE_PATH = resolve(ROOT, 'static/data/phash-baseline-allowlist.json');
 
 /** Hamming distance below which two images are flagged as near-dupes.
@@ -440,10 +445,31 @@ function shaPrefixOf(urlPath: string): string | null {
   }
 }
 
+/** Masters are git-LFS `fetchexclude`d → pointer stubs on CI/fresh clones.
+ *  The byte-hash cross-reference needs real source bytes, so skip unless a
+ *  sample resolves to a smudged image. Run `git lfs pull -I 'masters/**'`. */
+function mastersSmudged(sampleUrl: string | undefined): boolean {
+  const disk = join(IMAGES_DIR, (sampleUrl ?? '').replace(/^\/images\//, ''));
+  try {
+    return !readFileSync(disk)
+      .subarray(0, 40)
+      .toString('utf8')
+      .startsWith('version https://git-lfs');
+  } catch {
+    return false;
+  }
+}
+
 function main(): void {
   const cache = JSON.parse(readFileSync(CACHE_PATH, 'utf-8')) as Cache;
   const entries = Object.entries(cache.phashes);
   const n = entries.length;
+  if (!mastersSmudged(entries[0]?.[0])) {
+    console.log(
+      '⏭ masters/ not smudged (git-LFS fetchexclude) — dedup is a local check; skipping.',
+    );
+    return;
+  }
   console.log(`pHash near-dupe scan — ${n} images, threshold=${THRESHOLD}…`);
 
   // Pre-compute SHA-256 prefix per path so the inner loop can defer

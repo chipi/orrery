@@ -201,9 +201,11 @@ export async function POST({ request }) {
     let n = 0;
     while (true) {
       try {
-        await stat(
-          safeImagesPath(join(IMAGES_DIR, cat, id, `${String(n + 1).padStart(2, '0')}.jpg`)),
-        );
+        // Display images ship as .webp (RFC-030); a just-fetched slot may still
+        // be .jpg pre-conversion — count the slot if either exists.
+        const nn = `${String(n + 1).padStart(2, '0')}`;
+        const webp = stat(safeImagesPath(join(IMAGES_DIR, cat, id, `${nn}.webp`)));
+        await webp.catch(() => stat(safeImagesPath(join(IMAGES_DIR, cat, id, `${nn}.jpg`))));
         n++;
       } catch {
         break;

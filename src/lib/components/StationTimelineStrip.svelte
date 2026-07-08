@@ -186,7 +186,7 @@
           {#if heroDir}
             <img
               class="marker-thumb"
-              src="{assetOrigin}/images/{heroDir}/{item.id}/01.jpg"
+              src="{assetOrigin}/images/{heroDir}/{item.id}/01.webp"
               alt=""
               loading="lazy"
               decoding="async"
@@ -224,7 +224,7 @@
             {#if heroDir}
               <img
                 class="marker-thumb"
-                src="{assetOrigin}/images/{heroDir}/{item.id}/01.jpg"
+                src="{assetOrigin}/images/{heroDir}/{item.id}/01.webp"
                 alt=""
                 loading="lazy"
                 decoding="async"

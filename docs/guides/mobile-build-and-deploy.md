@@ -33,7 +33,7 @@ Verify: `xcodebuild -version && pod --version` (iOS) · `java -version && adb --
 ## 2 · The build → sync → run loop
 
 ```bash
-npm run build:mobile   # MOBILE=1 build + prune (stream-heavy, ~160 MB on-device)
+npm run build:mobile   # MOBILE=1 build + prune + downscale + budget gate (~47 MB on-device)
 npx cap sync           # copy build/ into ios/ + android/, install pods/plugins
 npx cap run ios --target "<simulator-udid>"       # build + deploy + launch (iOS)
 npx cap run android --target "<emulator-name>"    # (Android)
@@ -42,13 +42,13 @@ npm run open:ios       # npx cap open ios
 npm run open:android
 ```
 
-- **`build:mobile`** = `MOBILE=1 npm run build && MOBILE=1 node scripts/mobile/prune-streamed-assets.mjs`. The `MOBILE=1` prefix must repeat before the prune (env doesn't cross `&&`). The prune strips `build/images` (1.6 GB), `build/audio` (97 MB), the 13 non-default locale bundles + raw i18n trees, and dead `.br/.gz` siblings — taking a ~2 GB naive build down to ~160 MB.
+- **`build:mobile`** is a 4-step chain (each `MOBILE=1`, since env doesn't cross `&&`): `build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, and the 4K LOD textures) → `downscale-base-textures.mjs` (io/titan/enceladus/pluto in place) → `check-mobile-size-budget.mjs` (fails over 65 MB). Takes a ~2 GB naive build down to **~47 MB**.
 - **Simulator UDIDs:** `xcrun simctl list devices available | grep iPhone`. Boot one: `xcrun simctl boot <udid>`.
 - **Screenshot (headless):** `xcrun simctl io <udid> screenshot /tmp/x.png` (iOS) · `adb exec-out screencap -p > /tmp/x.png` (Android).
 
 ---
 
-## 3 · How streaming works (why the bundle is 160 MB, not 2 GB)
+## 3 · How streaming works (why the bundle is ~47 MB, not 2 GB)
 
 The naive build is ~2 GB — 10× the iOS 200 MB OTA cap. So (ADR-078 / ADR-079):
 

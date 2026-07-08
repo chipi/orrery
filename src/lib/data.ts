@@ -1552,16 +1552,27 @@ export async function getImageProvenanceManifest(): Promise<ImageProvenanceManif
  * <img>. Returns null when the manifest is absent or the path is not
  * recorded — caller renders the fallback gallery footer.
  */
+/**
+ * Normalise an image URL to its provenance-index key. Strips the stream origin
+ * (mobile `assetOrigin` is the full CDN URL, e.g.
+ * `https://chipi.github.io/orrery/images/...`), then the `${base}` prefix, then
+ * query/hash, and treats a missing leading slash as relative — so a served
+ * `<img src>` resolves to the same key on web and mobile (RFC-030). Pure +
+ * unit-tested; `basePath` is injectable for tests.
+ */
+export function normalizeImageKey(imagePath: string, basePath: string = base): string {
+  let p = imagePath;
+  p = p.replace(/^https?:\/\/[^/]+/, '');
+  if (basePath && p.startsWith(basePath)) p = p.slice(basePath.length);
+  p = p.replace(/[?#].*$/, '');
+  if (!p.startsWith('/')) p = '/' + p;
+  return p;
+}
+
 export async function getImageProvenance(imagePath: string): Promise<ImageProvenanceEntry | null> {
   const manifest = await getImageProvenanceManifest();
   if (!manifest || !provenanceIndex) return null;
-  // Normalise: strip `${base}` prefix, strip query / hash, treat
-  // missing leading slash as relative.
-  let p = imagePath;
-  if (base && p.startsWith(base)) p = p.slice(base.length);
-  p = p.replace(/[?#].*$/, '');
-  if (!p.startsWith('/')) p = '/' + p;
-  return provenanceIndex.get(p) ?? null;
+  return provenanceIndex.get(normalizeImageKey(imagePath)) ?? null;
 }
 
 // ──────────────────────────────────────────────────────────────────────

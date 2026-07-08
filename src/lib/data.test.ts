@@ -39,6 +39,7 @@ import {
   getFleetGallery,
   getImageProvenanceManifest,
   getImageProvenance,
+  normalizeImageKey,
   getSourceLogos,
   getTextSources,
   getScienceLanding,
@@ -950,6 +951,51 @@ describe('getImageProvenance (per-image lookup)', () => {
     const entry = await getImageProvenance(`${knownPath}?v=2#foo`);
     expect(entry).not.toBeNull();
     expect(entry!.path).toBe(knownPath);
+  });
+
+  it('resolves a mobile stream-origin CDN URL to the same manifest entry as the web path', async () => {
+    const m = await getImageProvenanceManifest();
+    if (!m || m.entries.length === 0) throw new Error('manifest empty');
+    const knownPath = m.entries[0].path; // e.g. /images/missions/curiosity/01.webp
+    // On mobile `assetOrigin` is the full CDN URL, so the served <img src> is
+    // `https://<host>${base}${knownPath}`. Under test `base` is empty, so exercise
+    // the origin (scheme + host) strip; base-prefix stripping is covered by the
+    // pure normalizeImageKey tests below.
+    const entry = await getImageProvenance(`https://chipi.github.io${knownPath}`);
+    expect(entry).not.toBeNull();
+    expect(entry!.path).toBe(knownPath);
+  });
+});
+
+describe('normalizeImageKey (provenance-key normalisation — RFC-030)', () => {
+  it('returns an already-normalised /images path unchanged', () => {
+    expect(normalizeImageKey('/images/missions/curiosity/01.webp')).toBe(
+      '/images/missions/curiosity/01.webp',
+    );
+  });
+
+  it('strips a mobile stream origin (scheme + host), keeping the path', () => {
+    expect(normalizeImageKey('https://chipi.github.io/images/missions/curiosity/01.webp')).toBe(
+      '/images/missions/curiosity/01.webp',
+    );
+    // http origin + a port are stripped too.
+    expect(normalizeImageKey('http://localhost:4173/images/fleet/aces/02.webp')).toBe(
+      '/images/fleet/aces/02.webp',
+    );
+  });
+
+  it('strips a configured base-path prefix after the origin', () => {
+    // Mobile: origin then `${base}` — both must come off.
+    expect(normalizeImageKey('https://chipi.github.io/orrery/images/x/01.webp', '/orrery')).toBe(
+      '/images/x/01.webp',
+    );
+    // Web with a base path.
+    expect(normalizeImageKey('/orrery/images/x/01.webp', '/orrery')).toBe('/images/x/01.webp');
+  });
+
+  it('strips query + hash and repairs a missing leading slash', () => {
+    expect(normalizeImageKey('/images/x/01.webp?v=2#frag')).toBe('/images/x/01.webp');
+    expect(normalizeImageKey('images/x/01.webp')).toBe('/images/x/01.webp');
   });
 });
 

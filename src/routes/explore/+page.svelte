@@ -260,8 +260,10 @@
         {
           id: 'moon',
           name: 'Moon',
-          // 4k_moon.jpg already shipped — Solar System Scope, CC BY 4.0.
-          texture: '4k_moon.jpg',
+          // 2k base (Solar System Scope, CC BY 4.0). The satellite path has no
+          // 4K LOD swap, and 4k_moon.jpg is pruned off-device (ADR-079 D3), so
+          // the base MUST be the 2K texture or it 404s on mobile.
+          texture: '2k_moon.jpg',
           // 2026-06-03 user direction: "Small enough to be well
           // visible, where Ceres size is good reference." Ceres in
           // this scene renders at 1.8 units; Moon at 0.9 = half

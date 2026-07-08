@@ -95,4 +95,32 @@ test.describe('mobile stream-heavy contract', () => {
     expect(shell.status()).toBe(200);
     expect(await shell.text()).toContain('_app/immutable');
   });
+
+  // Regression guard for the __MOBILE__ 4K-texture gates (ADR-079 D3). The
+  // pruned-bucket 404 checks above pass whether or not the gates exist — this
+  // one loads a 3D scene and asserts no pruned 4K texture is actually REQUESTED.
+  // Catches an un-gated load site (e.g. a satellite base wired to 4k_moon.jpg).
+  test('3D scene requests no pruned 4K texture on mobile (gate regression guard)', async ({
+    page,
+  }) => {
+    const PRUNED_4K =
+      /\/textures\/4k_(moon|sun|mars|mercury|venus_atmosphere|jupiter|saturn|earth_daymap)\.jpg$/;
+    const bad: string[] = [];
+    const loadedTextures: string[] = [];
+    await page.route(`${CDN}/**`, (route) => route.fulfill({ status: 200, body: Buffer.from([]) }));
+    page.on('request', (req) => {
+      const p = new URL(req.url()).pathname;
+      if (PRUNED_4K.test(p)) bad.push(p);
+      if (p.startsWith('/textures/')) loadedTextures.push(p);
+    });
+    await page.goto('/explore');
+    // Let the WebGL scene initialise + kick off its texture loads.
+    await page.waitForTimeout(6000);
+    // Sanity: the scene actually loaded on-device (2K) textures — otherwise a
+    // silent no-load would make the negative assertion below vacuously pass.
+    expect(loadedTextures.length, 'scene should have requested on-device textures').toBeGreaterThan(
+      0,
+    );
+    expect(bad, `un-gated pruned-4K texture requests:\n${bad.join('\n')}`).toEqual([]);
+  });
 });

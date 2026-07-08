@@ -136,9 +136,9 @@ Run the whole chain with `npm run fetch` (alias for the per-step sequence). Per-
 
 | Script | Purpose | When |
 |---|---|---|
-| `compute-phash.ts` | Perceptual hashes per file. `--force` to invalidate after slot rename. | After every fetch |
-| `validate-image-phash-dupes.ts` | Cross-entity dupe check; INLINE_ALLOWLIST for justified pairs. | Preflight |
-| `validate-image-dupes.ts` | Byte-level dupe check (exact md5 collisions). | Preflight |
+| `compute-phash.ts` | Perceptual hashes per file, over `masters/`. `--force` to invalidate after slot rename. | After every fetch (local) |
+| `validate-image-phash-dupes.ts` | Cross-entity dupe check over `masters/`; INLINE_ALLOWLIST for justified pairs. | **Local preflight only** — keys on `masters/` (git-LFS `fetchexclude`d), so it **skips on CI / any clone where masters aren't smudged** (`git lfs pull -I 'masters/**'` first). Not a CI gate (RFC-030 Q0). |
+| `validate-image-dupes.ts` | Byte-level dupe check over `masters/` (SHA-256). | **Local preflight only** — same masters/-smudged requirement as above; skips on CI. |
 | `snapshot-phash-baseline.ts` | Snapshots residual near-dupes to `phash-baseline-allowlist.json`. Reads INLINE_ALLOWLIST. | Manual, after dedup categorisation |
 | `audit-image-mime.ts` | Verifies every disk file is JPEG (catches PNG-as-jpg bait-and-switch). | Preflight |
 | `check-no-secrets-in-image.sh` | EXIF + steganography sanity check. | Pre-commit |

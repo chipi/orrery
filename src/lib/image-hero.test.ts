@@ -18,7 +18,7 @@ beforeEach(() => {
 });
 
 describe('pickHero — default path', () => {
-  it('returns the universal <surface>/<id>/01.jpg path when no override loaded', () => {
+  it('returns the universal <surface>/<id>/01.webp path when no override loaded', () => {
     expect(pickHero('missions', 'curiosity')).toBe('/images/missions/curiosity/01.webp');
     expect(pickHero('fleet', 'falcon9-block5')).toBe(
       '/images/fleet-galleries/falcon9-block5/01.webp',
@@ -112,7 +112,7 @@ describe('pickHero — override resolution', () => {
     expect(pickHero('missions', 'perseverance')).toBe('/images/missions/perseverance/04.webp');
   });
 
-  it('still falls back to 01.jpg for ids NOT in the override file', async () => {
+  it('still falls back to 01.webp for ids NOT in the override file', async () => {
     const file: HeroOverrideFile = {
       version: '1.0',
       overrides: { dawn: { slot: '03.jpg' } },

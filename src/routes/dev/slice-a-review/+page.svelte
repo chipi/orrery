@@ -340,7 +340,8 @@
   // CORS made every OLD render as a black void. Local file works for every
   // case since the OLD bytes are exactly what's on disk pre-apply.
   function oldPathOf(p: Proposal): string {
-    return `/images/${p.surface}/${p.missionId}/${p.slot}.jpg`;
+    // Display images ship as .webp (RFC-030 / ADR-080).
+    return `/images/${p.surface}/${p.missionId}/${p.slot}.webp`;
   }
   function statusOf(id: string): 'approved' | 'rejected' | 'needs-manual' | 'pending' {
     return decisions[id]?.status ?? 'pending';

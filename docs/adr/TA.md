@@ -781,7 +781,7 @@ Locked by **ADR-078** (iOS-first + stream-heavy bundle) + **ADR-079** (assetUrl 
 
 **Shape.** Capacitor 8.4.1 wraps the SvelteKit static `build/` in a WKWebView (iOS 15+) / Chromium WebView (Android, JDK 21). No native UI; the web app is the product. `ios/` + `android/` are committed. CI never builds the binaries (no Xcode/Android SDK in runners) — mobile builds are local.
 
-**Stream-heavy bundle (ADR-078 D2).** The naive build is ~2 GB (10× the iOS 200 MB OTA cap). `MOBILE=1 npm run build` + `scripts/mobile/prune-streamed-assets.mjs` strip `build/images` (1.6 GB), `build/audio` (97 MB), the 13 non-default locale bundles + raw i18n trees, and dead `.br/.gz` → **~160 MB on-device**. Pruned buckets stream from `chipi.github.io/orrery` at runtime, SW-cached on first view. Cost: galleries + audio need one online view (PRD-015 M5 relaxed).
+**Stream-heavy bundle (ADR-078 D2).** The naive build is ~2 GB (10× the iOS 200 MB OTA cap). `npm run build:mobile` = `MOBILE=1 build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, and the 4K LOD textures gated off under `__MOBILE__`) → `downscale-base-textures.mjs` (io/titan/enceladus/pluto in place) → `check-mobile-size-budget.mjs` (fails the build over **65 MB**). Result: **~47 MB on-device**. Pruned buckets stream from `chipi.github.io/orrery` at runtime, SW-cached on first view. Cost: galleries + audio need one online view (PRD-015 M5 relaxed).
 
 **assetUrl origin spine (ADR-079 D1).** `src/lib/asset-url.ts` is the single seam that resolves streamed-bucket URLs to the CDN origin under the `__MOBILE__` Vite define (`MOBILE=1`) and to `base` in every browser build (byte-identical off-device):
 - `assetOrigin` — images/audio origin.
@@ -908,7 +908,7 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | ADR-077 | Accepted (v0.7.x; v0.8+ extension point for #341) | /fly throne-of-glory iconic-shot architecture — body wiring + cislunar hold detector + per-event compositions |
 | ADR-078 | Accepted (amends PRD-015 / RFC-018) | v0.8 mobile wrapper reshaped — **iOS-first** + **stream-heavy bundle** (galleries + audio stream from `chipi.github.io`, §8.1 SW); reverses the 2026-05-16 Android-first + §8.2 locks after `main` grew to a ~2 GB naive build |
 | ADR-079 | Accepted (closes #373 root cause; delivers #191) | Asset-origin `assetUrl()` spine (local/CDN configurable) + source/derived separation (i18n source + image masters out of `static/`) + WebP-only delivery, encoded locally + committed. Slices #377/#378/#379 |
-| ADR-080 | Accepted (design RFC-030; executes ADR-079 Slice C; #379) | Responsive image **size ladder + `srcset`** delivery for mobile/web/**Google TV** — served rungs cap at 3840 px/q85, full-res **masters kept permanently in git-LFS** (regenerate any derivative losslessly), auto-derived on ingest with a `validate-data` invariant; 3D textures pick by quality-tier; `hotspots/` excluded |
+| ADR-080 | Accepted (design RFC-030; executes ADR-079 Slice C; #383) | **WebP-only** responsive image **size ladder + `srcset`** for mobile/web/**Google TV** — base `NN.webp` (≤3072 px q80) + smaller `NN-<w>.webp` rungs; full-res **masters kept permanently in git-LFS** (regenerate any derivative losslessly); 3D textures pick by quality-tier; `hotspots/` (zoom) + `posters/` (downloadable art) stay JPEG. Shipped ~1.9 GB→897 MB. Auto-derive `validate-data` invariant is Slice 4 (pending) |
 
 ---
 

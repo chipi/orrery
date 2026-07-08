@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "في انتظار الإطلاق الأول…",
   "credits_audio_heading": "صوت الغلاف الجوي",
   "credits_audio_intro": "تسجيلات جوية حقيقية، تُشغَّل في مشاهد السطح.",
-  "credits_audio_source_label": "المصدر"
+  "credits_audio_source_label": "المصدر",
+  "climate_sun_line": "{flux} واط/م² · {ratio}× ضوء شمس الأرض",
+  "climate_retain_kept": "الغلاف الجوي يحفظ الحرارة.",
+  "climate_retain_thin": "هواء رقيق — تُحفظ حرارة ضئيلة.",
+  "climate_retain_none": "لا هواء — الحرارة تتسرب."
 }

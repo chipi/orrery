@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "最初の打ち上げを待機中…",
   "credits_audio_heading": "大気の音",
   "credits_audio_intro": "地表ビューで再生される、本物の大気の録音。",
-  "credits_audio_source_label": "出典"
+  "credits_audio_source_label": "出典",
+  "climate_sun_line": "{flux} W/m² · 地球の日射の{ratio}倍",
+  "climate_retain_kept": "大気が熱を保つ。",
+  "climate_retain_thin": "薄い大気——ほとんど熱を保てない。",
+  "climate_retain_none": "大気なし——熱は逃げていく。"
 }

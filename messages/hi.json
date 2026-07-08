@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "पहले प्रक्षेपण की प्रतीक्षा में…",
   "credits_audio_heading": "वायुमंडल की ध्वनि",
   "credits_audio_intro": "सतह दृश्यों में चलाई जाने वाली वास्तविक वायुमंडलीय रिकॉर्डिंग।",
-  "credits_audio_source_label": "स्रोत"
+  "credits_audio_source_label": "स्रोत",
+  "climate_sun_line": "{flux} W/m² · पृथ्वी की {ratio}× धूप",
+  "climate_retain_kept": "वायुमंडल गर्मी को बनाए रखता है।",
+  "climate_retain_thin": "पतली हवा — बहुत कम गर्मी बचती है।",
+  "climate_retain_none": "कोई हवा नहीं — गर्मी निकल जाती है।"
 }

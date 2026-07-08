@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "等待首次发射…",
   "credits_audio_heading": "大气之声",
   "credits_audio_intro": "在地表视图中播放的真实大气录音。",
-  "credits_audio_source_label": "来源"
+  "credits_audio_source_label": "来源",
+  "climate_sun_line": "{flux} W/m² · 地球日照的 {ratio} 倍",
+  "climate_retain_kept": "大气留住了热量。",
+  "climate_retain_thin": "空气稀薄——几乎留不住热量。",
+  "climate_retain_none": "没有空气——热量逃逸。"
 }

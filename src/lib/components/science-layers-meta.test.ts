@@ -53,6 +53,8 @@ const HARDCODED_IN_COMPONENT = new Set([
   'dead-dynamo',
   'polar-caps',
   'mars-moons',
+  // #386 — climate & sunlight ("Sun is life"); hardcoded copy in metaFor().
+  'climate',
 ]);
 
 function paraglideKey(layer: string): string {

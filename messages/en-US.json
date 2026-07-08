@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Waiting for the first launch…",
   "credits_audio_heading": "Atmosphere audio",
   "credits_audio_intro": "Real atmospheric recordings, played on the surface routes.",
-  "credits_audio_source_label": "source"
+  "credits_audio_source_label": "source",
+  "climate_sun_line": "{flux} W/m² · {ratio}× Earth’s sunlight",
+  "climate_retain_kept": "The atmosphere keeps the heat.",
+  "climate_retain_thin": "Thin air — little heat is kept.",
+  "climate_retain_none": "No air — the heat escapes."
 }

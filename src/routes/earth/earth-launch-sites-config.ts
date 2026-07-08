@@ -86,6 +86,7 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       available: [
         'planet-stats',
         'sub-solar',
+        'climate',
         'atmosphere',
         'ozone',
         'magnetosphere',

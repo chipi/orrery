@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "In attesa del primo lancio…",
   "credits_audio_heading": "Audio dell’atmosfera",
   "credits_audio_intro": "Registrazioni atmosferiche reali, riprodotte nelle viste di superficie.",
-  "credits_audio_source_label": "fonte"
+  "credits_audio_source_label": "fonte",
+  "climate_sun_line": "{flux} W/m² · {ratio}× la luce solare della Terra",
+  "climate_retain_kept": "L’atmosfera trattiene il calore.",
+  "climate_retain_thin": "Aria rarefatta — trattiene poco calore.",
+  "climate_retain_none": "Niente aria — il calore si disperde."
 }

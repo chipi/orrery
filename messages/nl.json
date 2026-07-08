@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Wachten op de eerste lancering…",
   "credits_audio_heading": "Atmosfeergeluid",
   "credits_audio_intro": "Echte atmosferische opnames, afgespeeld op de oppervlakteweergaven.",
-  "credits_audio_source_label": "bron"
+  "credits_audio_source_label": "bron",
+  "climate_sun_line": "{flux} W/m² · {ratio}× het zonlicht van de aarde",
+  "climate_retain_kept": "De atmosfeer houdt de warmte vast.",
+  "climate_retain_thin": "IJle lucht — weinig warmte blijft.",
+  "climate_retain_none": "Geen lucht — de warmte ontsnapt."
 }

@@ -86,7 +86,7 @@
       body: "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path.",
       tab: 'transfers',
       section: 'free-return',
-      available: ['planet-stats', 'sub-solar', 'tidal-lock', 'sub-earth', 'far-side'],
+      available: ['planet-stats', 'sub-solar', 'climate', 'tidal-lock', 'sub-earth', 'far-side'],
     },
   };
 

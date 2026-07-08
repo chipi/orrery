@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "En attente du premier lancement…",
   "credits_audio_heading": "Audio de l’atmosphère",
   "credits_audio_intro": "Enregistrements atmosphériques réels, lus sur les vues de surface.",
-  "credits_audio_source_label": "source"
+  "credits_audio_source_label": "source",
+  "climate_sun_line": "{flux} W/m² · {ratio}× la lumière solaire de la Terre",
+  "climate_retain_kept": "L’atmosphère retient la chaleur.",
+  "climate_retain_thin": "Air ténu — peu de chaleur retenue.",
+  "climate_retain_none": "Pas d’air — la chaleur s’échappe."
 }

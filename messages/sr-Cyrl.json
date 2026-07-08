@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Чекање првог лансирања…",
   "credits_audio_heading": "Звук атмосфере",
   "credits_audio_intro": "Прави снимци атмосфере, пуштени у приказима површине.",
-  "credits_audio_source_label": "извор"
+  "credits_audio_source_label": "извор",
+  "climate_sun_line": "{flux} W/m² · {ratio}× Земљине сунчеве светлости",
+  "climate_retain_kept": "Атмосфера задржава топлоту.",
+  "climate_retain_thin": "Разређен ваздух — мало топлоте остаје.",
+  "climate_retain_none": "Нема ваздуха — топлота одлази."
 }

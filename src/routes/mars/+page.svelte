@@ -136,6 +136,7 @@
       available: [
         'planet-stats',
         'sub-solar',
+        'climate',
         'atmosphere',
         'axial-tilt',
         'dead-dynamo',

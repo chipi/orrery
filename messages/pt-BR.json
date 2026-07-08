@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Aguardando o primeiro lançamento…",
   "credits_audio_heading": "Áudio da atmosfera",
   "credits_audio_intro": "Gravações atmosféricas reais, reproduzidas nas vistas de superfície.",
-  "credits_audio_source_label": "fonte"
+  "credits_audio_source_label": "fonte",
+  "climate_sun_line": "{flux} W/m² · {ratio}× a luz solar da Terra",
+  "climate_retain_kept": "A atmosfera retém o calor.",
+  "climate_retain_thin": "Ar rarefeito — pouco calor é retido.",
+  "climate_retain_none": "Sem ar — o calor escapa."
 }

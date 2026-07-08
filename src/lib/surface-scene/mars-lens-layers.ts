@@ -108,25 +108,59 @@ export interface PolarCapsOpts {
   color: number;
   /** Cap half-angle from each pole, degrees. */
   capDeg?: number;
+  /** #386 H — breathe the two caps ANTI-PHASE over a compressed Mars
+   *  year (north waxes as south wanes) via opacity, so one pole's winter
+   *  cap brightens while the other's summer cap recedes. Opacity-only:
+   *  scaling a pole cap would float it off the surface. Stylised — the
+   *  angular extent is constant; the brightness cycle carries the season.
+   *  Honours prefers-reduced-motion (static). */
+  seasonal?: boolean;
+  seasonalPeriodSec?: number;
 }
 
 export function buildPolarCaps(opts: PolarCapsOpts): MarsLayerHandle {
   const R = opts.planetRadius;
   const cap = (opts.capDeg ?? 26) * DEG;
-  const mat = new THREE.MeshBasicMaterial({
-    color: opts.color,
-    transparent: true,
-    opacity: 0.6,
-    side: THREE.DoubleSide,
-    depthWrite: false,
-  });
+  const disposables: Array<{ dispose: () => void }> = [];
+  const mkMat = () => {
+    const m = new THREE.MeshBasicMaterial({
+      color: opts.color,
+      transparent: true,
+      opacity: 0.6,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    });
+    disposables.push(m);
+    return m;
+  };
   const group = new THREE.Group();
   // North cap: phi 0…cap. South cap: phi (π−cap)…π.
-  const north = new THREE.SphereGeometry(R * 1.004, 48, 20, 0, Math.PI * 2, 0, cap);
-  const south = new THREE.SphereGeometry(R * 1.004, 48, 20, 0, Math.PI * 2, Math.PI - cap, cap);
-  group.add(new THREE.Mesh(north, mat));
-  group.add(new THREE.Mesh(south, mat));
-  return gate(group, 'polar-caps', [north, south, mat]);
+  const northGeo = new THREE.SphereGeometry(R * 1.004, 48, 20, 0, Math.PI * 2, 0, cap);
+  const southGeo = new THREE.SphereGeometry(R * 1.004, 48, 20, 0, Math.PI * 2, Math.PI - cap, cap);
+  disposables.push(northGeo, southGeo);
+  const northMat = mkMat();
+  const southMat = mkMat();
+  group.add(new THREE.Mesh(northGeo, northMat));
+  group.add(new THREE.Mesh(southGeo, southMat));
+
+  const reduce =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (opts.seasonal && !reduce) {
+    const periodMs = (opts.seasonalPeriodSec ?? 16) * 1000;
+    const start = performance.now();
+    let raf = 0;
+    const tick = () => {
+      const p = Math.sin(((performance.now() - start) / periodMs) * Math.PI * 2); // -1..1
+      northMat.opacity = 0.22 + 0.55 * (0.5 + 0.5 * p);
+      southMat.opacity = 0.22 + 0.55 * (0.5 - 0.5 * p);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    disposables.push({ dispose: () => cancelAnimationFrame(raf) });
+  }
+
+  return gate(group, 'polar-caps', disposables);
 }
 
 export interface MarsMoonsOpts {

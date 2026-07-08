@@ -47,7 +47,8 @@ export type LayerKey =
   | 'far-side' // N2 — far-side hemisphere tint (/moon)
   | 'dead-dynamo' // O1 — Mars crustal-magnetism patches (dead global field)
   | 'polar-caps' // O2 — Mars seasonal CO₂/H₂O ice caps
-  | 'mars-moons'; // O3 — Phobos + Deimos orbit rings + markers (/mars)
+  | 'mars-moons' // O3 — Phobos + Deimos orbit rings + markers (/mars)
+  | 'climate'; // P1 — climate bands + insolation ("Sun is life", #386, surface scenes)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -68,6 +69,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'lagrange-points',
   'magnetosphere',
   'sub-solar',
+  'climate',
   'planet-stats',
   'moons',
   'axial-tilt',
@@ -102,6 +104,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'lagrange-points': false,
   magnetosphere: false,
   'sub-solar': false,
+  climate: false,
   'planet-stats': false,
   moons: false,
   'axial-tilt': false,

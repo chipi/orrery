@@ -60,6 +60,7 @@
     buildMarsMoons,
   } from '$lib/surface-scene/mars-lens-layers';
   import { buildSubSolarPoint } from '$lib/surface-scene/surface-sun-layers';
+  import { buildClimateBands } from '$lib/surface-scene/surface-climate-layers';
   import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
@@ -155,6 +156,7 @@
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
+  import ClimateReadout from '$lib/components/ClimateReadout.svelte';
   import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/planet-stats';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
@@ -1622,7 +1624,8 @@
       lunarLayerHandles.push(cf);
     }
     if (config.marsLayers?.polarCaps) {
-      const pc = buildPolarCaps({ ...config.marsLayers.polarCaps, planetRadius });
+      // #386 H — caps breathe anti-phase over a compressed Mars year.
+      const pc = buildPolarCaps({ ...config.marsLayers.polarCaps, planetRadius, seasonal: true });
       planetMesh.add(pc.object);
       lunarLayerHandles.push(pc);
     }
@@ -1647,6 +1650,16 @@
       });
       scene.add(subSolar.object);
       lunarLayerHandles.push(subSolar);
+    }
+
+    // Climate bands (#386 E) — latitude climate zones, attached to the
+    // surface so they rotate with the body. Airless bodies render nothing
+    // (no climate — the insolation readout carries that story); the
+    // toggle still works. Unconditional across the 3 surface bodies.
+    {
+      const climate = buildClimateBands({ planetRadius, bodyKey: config.planet });
+      planetMesh.add(climate.object);
+      lunarLayerHandles.push(climate);
     }
 
     // Hover-halo factory — bolder + glowing variant of the selection
@@ -6154,6 +6167,9 @@ sample      ${debugInfo.projectedPxSample}`}
     placement="above-altitude"
   />
 {/if}
+
+<!-- Insolation / Goldilocks readout (#386 G) — self-gates on 'climate'. -->
+<ClimateReadout bodyKey={config.planet} />
 
 <ScienceLayersPanel
   title={config.lensPanel?.title ?? 'The Moon · 384 000 km out, three days each way'}

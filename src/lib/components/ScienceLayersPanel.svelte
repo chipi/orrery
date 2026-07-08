@@ -89,6 +89,7 @@
     'lagrange-points': false,
     magnetosphere: false,
     'sub-solar': false,
+    climate: false,
     'planet-stats': false,
     moons: false,
     'axial-tilt': false,
@@ -257,6 +258,13 @@
           description:
             'Marker at the longitude where it’s currently noon — the point directly under the Sun.',
           learn: { tab: 'planets', section: 'sub-solar-and-terminator' },
+        };
+      case 'climate':
+        return {
+          label: 'Climate & Sunlight',
+          description:
+            'Latitude climate bands (tropical → polar) + how much sunlight this world gets vs Earth and whether its air keeps the heat. Sun is life.',
+          learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
         };
       case 'planet-stats':
         return {

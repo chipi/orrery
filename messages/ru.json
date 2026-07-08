@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Ожидание первого запуска…",
   "credits_audio_heading": "Звук атмосферы",
   "credits_audio_intro": "Настоящие записи атмосферы, воспроизводимые в видах поверхности.",
-  "credits_audio_source_label": "источник"
+  "credits_audio_source_label": "источник",
+  "climate_sun_line": "{flux} Вт/м² · {ratio}× солнечного света Земли",
+  "climate_retain_kept": "Атмосфера удерживает тепло.",
+  "climate_retain_thin": "Разреженный воздух — тепло почти не удерживается.",
+  "climate_retain_none": "Воздуха нет — тепло уходит."
 }

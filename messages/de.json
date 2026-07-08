@@ -1358,5 +1358,9 @@
   "assembly_waiting_first_launch": "Warte auf den ersten Start…",
   "credits_audio_heading": "Atmosphären-Audio",
   "credits_audio_intro": "Echte Atmosphären-Aufnahmen, abgespielt auf den Oberflächen-Ansichten.",
-  "credits_audio_source_label": "Quelle"
+  "credits_audio_source_label": "Quelle",
+  "climate_sun_line": "{flux} W/m² · {ratio}× des Sonnenlichts der Erde",
+  "climate_retain_kept": "Die Atmosphäre hält die Wärme.",
+  "climate_retain_thin": "Dünne Luft – kaum Wärme bleibt.",
+  "climate_retain_none": "Keine Luft – die Wärme entweicht."
 }

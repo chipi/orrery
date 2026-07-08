@@ -25,7 +25,8 @@ import sharp from 'sharp';
 const ROOT = 'static/images';
 const MAX_PX = 3840;
 const QUALITY = 85;
-const EXCLUDE_TOP = new Set(['hotspots']); // zoom-critical — keep full res
+// zoom-critical 3D tiers + downloadable art posters — keep full-res jpg.
+const EXCLUDE_TOP = new Set(['hotspots', 'posters']);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 

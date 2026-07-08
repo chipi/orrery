@@ -21,7 +21,8 @@ const isBaseDisplay = (p) =>
   p.startsWith('/images/') &&
   /\.jpe?g$/i.test(p) &&
   !/\.(1x1|4x3|16x9)\./i.test(p) &&
-  !p.includes('/hotspots/');
+  !p.includes('/hotspots/') &&
+  !p.includes('/posters/'); // downloadable art stays jpg
 
 let n = 0;
 for (const e of data.entries) {

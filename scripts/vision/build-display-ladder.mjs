@@ -27,7 +27,9 @@ const SERVED = 'static/images';
 const MANIFEST_PATH = 'static/data/image-ladder.json';
 const RUNGS = [1280, 2048, 3072];
 const QUALITY = 80;
-const EXCLUDE_TOP = new Set(['hotspots']);
+// hotspots = zoom-critical 3D tiers; posters = downloadable art (stay full-res
+// JPEG so the download is universally openable + print-quality).
+const EXCLUDE_TOP = new Set(['hotspots', 'posters']);
 const IS_THUMB = /\.(1x1|4x3|16x9)\./;
 const IS_IMG = /\.(jpe?g|png|webp)$/i;
 const FORCE = process.argv.includes('--force');

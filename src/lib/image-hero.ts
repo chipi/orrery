@@ -59,6 +59,13 @@ const SURFACE_TO_DIR: Record<HeroSurface, string> = {
 
 const DEFAULT_SLOT = '01.jpg';
 
+/** Convert a logical slot filename (`04.jpg`) to the served WebP name
+ *  (`04.webp`). Display images ship as WebP only (RFC-030 / ADR-080); the
+ *  overrides + gallery data still speak `.jpg` slots, so we translate here. */
+function slotToWebp(slot: string): string {
+  return slot.replace(/\.[^.]+$/, '.webp');
+}
+
 export interface HeroOverride {
   slot: string;
   reason?: string;
@@ -126,7 +133,7 @@ export function loadHeroOverrides(surface: HeroSurface): Promise<HeroOverrideFil
 export function pickHero(surface: HeroSurface, id: string): string {
   const cached = overrideCache.get(surface);
   const slot = cached?.overrides?.[id]?.slot ?? DEFAULT_SLOT;
-  return `${assetOrigin}/images/${SURFACE_TO_DIR[surface]}/${id}/${slot}`;
+  return `${assetOrigin}/images/${SURFACE_TO_DIR[surface]}/${id}/${slotToWebp(slot)}`;
 }
 
 /**
@@ -148,7 +155,13 @@ export function applyHeroOverride(surface: HeroSurface, id: string, gallery: str
   const cached = overrideCache.get(surface);
   const slot = cached?.overrides?.[id]?.slot;
   if (!slot) return gallery;
-  const idx = gallery.findIndex((p) => p.endsWith(`/${slot}`) || p.endsWith(slot));
+  // Extension-agnostic match: gallery URLs are now `.webp`, override slots
+  // are still `.jpg` — compare stems (RFC-030 / ADR-080).
+  const stem = slot.replace(/\.[^.]+$/, '');
+  const idx = gallery.findIndex((p) => {
+    const ps = p.replace(/\.[^.]+$/, '');
+    return ps.endsWith(`/${stem}`) || ps.endsWith(stem);
+  });
   if (idx <= 0) return gallery; // not present, or already first
   return [gallery[idx], ...gallery.slice(0, idx), ...gallery.slice(idx + 1)];
 }

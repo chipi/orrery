@@ -54,7 +54,7 @@ export const assetOrigin: string = resolveAssetOrigin(__MOBILE__, base);
 
 /**
  * Build a URL for a streamed asset. `path` is root-relative with a leading
- * slash, e.g. `/images/fleet-galleries/dawn/01.jpg`.
+ * slash, e.g. `/images/fleet-galleries/dawn/01.webp`.
  */
 export function assetUrl(path: string): string {
   return `${assetOrigin}${path}`;

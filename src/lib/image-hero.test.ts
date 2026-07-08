@@ -19,19 +19,19 @@ beforeEach(() => {
 
 describe('pickHero — default path', () => {
   it('returns the universal <surface>/<id>/01.jpg path when no override loaded', () => {
-    expect(pickHero('missions', 'curiosity')).toBe('/images/missions/curiosity/01.jpg');
+    expect(pickHero('missions', 'curiosity')).toBe('/images/missions/curiosity/01.webp');
     expect(pickHero('fleet', 'falcon9-block5')).toBe(
-      '/images/fleet-galleries/falcon9-block5/01.jpg',
+      '/images/fleet-galleries/falcon9-block5/01.webp',
     );
-    expect(pickHero('moon-sites', 'apollo11')).toBe('/images/moon-sites/apollo11/01.jpg');
-    expect(pickHero('mars-sites', 'jezero')).toBe('/images/mars-sites/jezero/01.jpg');
-    expect(pickHero('earth-objects', 'iss')).toBe('/images/earth-objects/iss/01.jpg');
+    expect(pickHero('moon-sites', 'apollo11')).toBe('/images/moon-sites/apollo11/01.webp');
+    expect(pickHero('mars-sites', 'jezero')).toBe('/images/mars-sites/jezero/01.webp');
+    expect(pickHero('earth-objects', 'iss')).toBe('/images/earth-objects/iss/01.webp');
   });
 
   it('maps the fleet surface to fleet-galleries dir', () => {
     // The one path-convention divergence — fleet uses fleet-galleries/<id>/
     // not fleet/<id>/. Sanity-pin so a future rename catches the divergence.
-    expect(pickHero('fleet', 'atv')).toBe('/images/fleet-galleries/atv/01.jpg');
+    expect(pickHero('fleet', 'atv')).toBe('/images/fleet-galleries/atv/01.webp');
   });
 });
 
@@ -109,7 +109,7 @@ describe('pickHero — override resolution', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    expect(pickHero('missions', 'perseverance')).toBe('/images/missions/perseverance/04.jpg');
+    expect(pickHero('missions', 'perseverance')).toBe('/images/missions/perseverance/04.webp');
   });
 
   it('still falls back to 01.jpg for ids NOT in the override file', async () => {
@@ -124,8 +124,8 @@ describe('pickHero — override resolution', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    expect(pickHero('missions', 'dawn')).toBe('/images/missions/dawn/03.jpg');
-    expect(pickHero('missions', 'curiosity')).toBe('/images/missions/curiosity/01.jpg');
+    expect(pickHero('missions', 'dawn')).toBe('/images/missions/dawn/03.webp');
+    expect(pickHero('missions', 'curiosity')).toBe('/images/missions/curiosity/01.webp');
   });
 
   it('per-surface overrides do not bleed across surfaces', async () => {
@@ -144,9 +144,9 @@ describe('pickHero — override resolution', () => {
     await loadHeroOverrides('missions');
     await loadHeroOverrides('fleet');
     // Mission override applied.
-    expect(pickHero('missions', 'dawn')).toBe('/images/missions/dawn/03.jpg');
+    expect(pickHero('missions', 'dawn')).toBe('/images/missions/dawn/03.webp');
     // Fleet has no override file → default everywhere.
-    expect(pickHero('fleet', 'dawn')).toBe('/images/fleet-galleries/dawn/01.jpg');
+    expect(pickHero('fleet', 'dawn')).toBe('/images/fleet-galleries/dawn/01.webp');
   });
 });
 
@@ -164,25 +164,25 @@ describe('applyHeroOverride — gallery reordering', () => {
     );
     await loadHeroOverrides('moon-sites');
     const gallery = [
-      '/images/moon-sites/apollo15/01.jpg',
-      '/images/moon-sites/apollo15/02.jpg',
-      '/images/moon-sites/apollo15/03.jpg',
-      '/images/moon-sites/apollo15/04.jpg',
-      '/images/moon-sites/apollo15/05.jpg',
+      '/images/moon-sites/apollo15/01.webp',
+      '/images/moon-sites/apollo15/02.webp',
+      '/images/moon-sites/apollo15/03.webp',
+      '/images/moon-sites/apollo15/04.webp',
+      '/images/moon-sites/apollo15/05.webp',
     ];
     const out = applyHeroOverride('moon-sites', 'apollo15', gallery);
-    expect(out[0]).toBe('/images/moon-sites/apollo15/04.jpg');
+    expect(out[0]).toBe('/images/moon-sites/apollo15/04.webp');
     // 01..03 + 05 preserve relative order after the moved-to-front element
     expect(out.slice(1)).toEqual([
-      '/images/moon-sites/apollo15/01.jpg',
-      '/images/moon-sites/apollo15/02.jpg',
-      '/images/moon-sites/apollo15/03.jpg',
-      '/images/moon-sites/apollo15/05.jpg',
+      '/images/moon-sites/apollo15/01.webp',
+      '/images/moon-sites/apollo15/02.webp',
+      '/images/moon-sites/apollo15/03.webp',
+      '/images/moon-sites/apollo15/05.webp',
     ]);
   });
 
   it('returns the gallery unchanged when no override file is loaded', () => {
-    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    const gallery = ['/images/missions/x/01.webp', '/images/missions/x/02.webp'];
     expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
   });
 
@@ -198,7 +198,7 @@ describe('applyHeroOverride — gallery reordering', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    const gallery = ['/images/missions/x/01.webp', '/images/missions/x/02.webp'];
     expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
   });
 
@@ -214,7 +214,7 @@ describe('applyHeroOverride — gallery reordering', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    const gallery = ['/images/missions/x/01.webp', '/images/missions/x/02.webp'];
     expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
   });
 
@@ -230,7 +230,7 @@ describe('applyHeroOverride — gallery reordering', () => {
       ) as unknown as typeof fetch,
     );
     await loadHeroOverrides('missions');
-    const gallery = ['/images/missions/x/01.jpg', '/images/missions/x/02.jpg'];
+    const gallery = ['/images/missions/x/01.webp', '/images/missions/x/02.webp'];
     expect(applyHeroOverride('missions', 'x', gallery)).toEqual(gallery);
   });
 

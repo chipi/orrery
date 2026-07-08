@@ -64,12 +64,12 @@
     {#each posters as p (p.id)}
       <figure class="poster">
         <a
-          href="{assetOrigin}/images/posters/{p.id}.jpg"
-          download="orrery-{p.id}.jpg"
+          href="{assetOrigin}/images/posters/{p.id}.webp"
+          download="orrery-{p.id}.webp"
           aria-label="Download the {p.title} poster — {p.sub}"
         >
           <img
-            src="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
+            src="{assetOrigin}/images/posters/{p.id}.thumb.webp"
             alt="{p.title} — {p.sub}. Orrery art poster."
             width="700"
             height="1050"

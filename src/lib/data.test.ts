@@ -596,7 +596,7 @@ describe('ISS modules (PRD-010)', () => {
   it('getIssModuleGallery returns manifest-backed URLs for ISS modules', async () => {
     const urls = await getIssModuleGallery('cupola');
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/iss-modules\/cupola\/01\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/iss-modules\/cupola\/01\.webp$/);
   });
 });
 
@@ -604,9 +604,9 @@ describe('panel gallery loaders (v0.1.10)', () => {
   it('getPlanetGallery returns count-many URLs for Mars', async () => {
     const urls = await getPlanetGallery('mars');
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/planets\/mars\/01\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/planets\/mars\/01\.webp$/);
     // Filenames are zero-padded to two digits.
-    if (urls.length >= 2) expect(urls[1]).toMatch(/02\.jpg$/);
+    if (urls.length >= 2) expect(urls[1]).toMatch(/02\.webp$/);
   });
 
   it('getPlanetGallery returns [] for an unknown id', async () => {
@@ -617,13 +617,13 @@ describe('panel gallery loaders (v0.1.10)', () => {
   it('getSunGallery returns count-many URLs', async () => {
     const urls = await getSunGallery();
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/sun\/01\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/sun\/01\.webp$/);
   });
 
   it('getEarthObjectGallery returns URLs for a populated entity (iss)', async () => {
     const urls = await getEarthObjectGallery('iss');
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/earth-objects\/iss\/01\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/earth-objects\/iss\/01\.webp$/);
   });
 
   it('getEarthObjectGallery returns 3+ URLs for tiangong (post v0.3 top-up)', async () => {
@@ -643,7 +643,7 @@ describe('panel gallery loaders (v0.1.10)', () => {
     // without a second on-disk copy.
     const urls = await getMoonSiteGallery('apollo11');
     expect(urls.length).toBeGreaterThan(0);
-    expect(urls[0]).toMatch(/\/images\/missions\/apollo11\/0[0-9]\.jpg$/);
+    expect(urls[0]).toMatch(/\/images\/missions\/apollo11\/0[0-9]\.webp$/);
   });
 });
 
@@ -939,7 +939,7 @@ describe('getImageProvenance (per-image lookup)', () => {
   });
 
   it('returns null for a path not in the manifest', async () => {
-    const entry = await getImageProvenance('/images/missions/ghost-mission/01.jpg');
+    const entry = await getImageProvenance('/images/missions/ghost-mission/01.webp');
     expect(entry).toBeNull();
   });
 

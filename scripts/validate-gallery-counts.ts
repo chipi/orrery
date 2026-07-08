@@ -38,7 +38,9 @@ const TARGETS = [
 
 function countBaseSlots(dir: string): number {
   if (!existsSync(dir)) return 0;
-  return readdirSync(dir).filter((f) => /^\d{2}\.jpg$/.test(f)).length;
+  // Display slots ship as WebP only now (RFC-030 / ADR-080): NN.webp base
+  // (excludes the NN-<width>.webp responsive rungs).
+  return readdirSync(dir).filter((f) => /^\d{2}\.webp$/.test(f)).length;
 }
 
 function main(): void {

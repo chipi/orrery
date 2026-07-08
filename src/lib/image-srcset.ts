@@ -30,9 +30,13 @@ export function srcsetFor(
   const [, origin, imagePath] = m;
   const widths = manifest[imagePath];
   if (!widths?.length) return null;
-  const srcset = widths.map((w) => `${origin}${imagePath}-${w}.webp ${w}w`).join(', ');
-  // Largest rung as the plain-src fallback (browsers that ignore srcset).
-  const src = `${origin}${imagePath}-${widths[widths.length - 1]}.webp`;
+  // The largest width is the unsuffixed base `NN.webp` (the canonical); smaller
+  // rungs are width-suffixed `NN-<w>.webp`. Base is also the plain-src fallback.
+  const maxW = widths[widths.length - 1];
+  const srcset = widths
+    .map((w) => `${origin}${imagePath}${w === maxW ? '' : `-${w}`}.webp ${w}w`)
+    .join(', ');
+  const src = `${origin}${imagePath}.webp`;
   return { src, srcset };
 }
 

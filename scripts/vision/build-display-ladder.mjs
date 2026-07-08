@@ -89,15 +89,20 @@ for await (const master of walk(MASTERS)) {
   const targets = new Set(RUNGS.filter((r) => r < srcLong));
   targets.add(Math.min(srcLong, MAX_TOP));
 
+  const sorted = [...targets].sort((a, b) => a - b);
   const widths = [];
-  for (const t of [...targets].sort((a, b) => a - b)) {
+  for (let i = 0; i < sorted.length; i++) {
+    const t = sorted[i];
+    const isBase = i === sorted.length - 1; // largest rung = the unsuffixed canonical
     const data = await sharp(buf)
       .resize({ width: t, height: t, fit: 'inside', withoutEnlargement: true })
       .webp({ quality: QUALITY })
       .toBuffer();
     const w = (await sharp(data).metadata()).width ?? t; // actual px width = srcset descriptor
     widths.push(w);
-    const out = path.join(SERVED, `${stem}-${w}.webp`);
+    // Base `NN.webp` (the WebP-only canonical: provenance/credit/src fallback);
+    // smaller rungs are width-suffixed `NN-<w>.webp`.
+    const out = path.join(SERVED, isBase ? `${stem}.webp` : `${stem}-${w}.webp`);
     if (!FORCE && (await exists(out))) {
       skipped += 1;
       continue;
@@ -107,7 +112,7 @@ for await (const master of walk(MASTERS)) {
     rungs += 1;
     bytes += data.length;
   }
-  manifest[`/images/${stem}`] = widths;
+  manifest[`/images/${stem}`] = widths; // ascending; the last (largest) is NN.webp
 }
 
 await writeFile(MANIFEST_PATH, JSON.stringify(manifest) + '\n');

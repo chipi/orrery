@@ -67,7 +67,7 @@
         'The book of the TV series. Sagan walks you from the Library of Alexandria to the edge of the observable universe and back, and explains why each detour matters. The introduction every space reader should start with.',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/Cosmos/_19E9HlMTUgC',
-      cover: '/images/recommendations/books/cosmos.jpg',
+      cover: '/images/recommendations/books/cosmos.webp',
     },
     {
       title: 'Pale Blue Dot',
@@ -77,7 +77,7 @@
         'The follow-up to Cosmos: less astronomy, more "what does it mean that we\'re here, and what do we do next?" The title essay is the single best paragraph about Voyager 1 ever written.',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/Pale_Blue_Dot/zpQv1OZN0wAC',
-      cover: '/images/recommendations/books/pale-blue-dot.jpg',
+      cover: '/images/recommendations/books/pale-blue-dot.webp',
     },
     {
       title: 'A Brief History of Time',
@@ -87,7 +87,7 @@
         'Cosmology for the rest of us. Black holes, the Big Bang, the arrow of time — Hawking refuses to use math in the prose (one equation in the whole book; he was warned every formula halves the sales).',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/A_Brief_History_Of_Time/4-Tx3LM4taoC',
-      cover: '/images/recommendations/books/a-brief-history-of-time.jpg',
+      cover: '/images/recommendations/books/a-brief-history-of-time.webp',
     },
     {
       title: 'The Right Stuff',
@@ -97,7 +97,7 @@
         'The early-Mercury astronauts and the test-pilot culture that made them. Reads like a novel; explains why the U.S. crewed-spaceflight program took the shape it did better than any history book.',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/The_Right_Stuff/_kfqV4Z4q7gC',
-      cover: '/images/recommendations/books/the-right-stuff.jpg',
+      cover: '/images/recommendations/books/the-right-stuff.webp',
     },
     {
       title: 'Packing for Mars',
@@ -107,7 +107,7 @@
         'Funny, ground-level look at the bizarre engineering problems of putting humans in space — how do you wash hair in microgravity, what happens to the inner ear, why is the food the way it is. Pairs well with the /science Life-in-Space tab.',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/Packing_for_Mars/zgGgg9C2P8AC',
-      cover: '/images/recommendations/books/packing-for-mars.jpg',
+      cover: '/images/recommendations/books/packing-for-mars.webp',
     },
     {
       title: 'Rocket Propulsion Elements',
@@ -117,7 +117,7 @@
         'The propulsion textbook. Goes from Tsiolkovsky to specific impulse to actual nozzle design without skipping steps. Heavy math but the prose is approachable; the figures alone are worth the cover price.',
       audience: 'intermediate',
       link: 'https://www.google.com/books/edition/Rocket_Propulsion_Elements/wMBjAwAAQBAJ',
-      cover: '/images/recommendations/books/rocket-propulsion-elements.jpg',
+      cover: '/images/recommendations/books/rocket-propulsion-elements.webp',
     },
     {
       title: 'Fundamentals of Astrodynamics',
@@ -127,7 +127,7 @@
         "The orbital-mechanics primer used at the US Air Force Academy. Cheap paperback, no nonsense, derives Kepler's equation and Hohmann transfers from scratch. The book that'll make /science/transfers click.",
       audience: 'intermediate',
       link: 'https://www.google.com/books/edition/Fundamentals_of_Astrodynamics/UtJK8cetqGkC',
-      cover: '/images/recommendations/books/fundamentals-of-astrodynamics.jpg',
+      cover: '/images/recommendations/books/fundamentals-of-astrodynamics.webp',
     },
     {
       title: 'How to Read the Solar System',
@@ -137,7 +137,7 @@
         "A pop-science guide to every planet, moon, and significant body, organised by what's interesting about each. The companion read while you click through /explore.",
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/How_to_Read_the_Solar_System/g7KvAwAAQBAJ',
-      cover: '/images/recommendations/books/how-to-read-the-solar-system.jpg',
+      cover: '/images/recommendations/books/how-to-read-the-solar-system.webp',
     },
   ];
 
@@ -148,7 +148,7 @@
       blurb:
         'Carl Sagan-founded membership org. The best plain-language explainers when a mission makes the news. Their blog covers active missions in roughly real time.',
       href: 'https://www.planetary.org/articles',
-      cover: '/images/recommendations/blogs/the-planetary-society.jpg',
+      cover: '/images/recommendations/blogs/the-planetary-society.webp',
     },
     {
       title: 'Casey Handmer',
@@ -156,7 +156,7 @@
       blurb:
         'Ex-JPL engineer, sharp essays on aerospace economics + propulsion + Mars architecture. Numbers-driven; cuts through the marketing.',
       href: 'https://caseyhandmer.wordpress.com/',
-      cover: '/images/recommendations/blogs/casey-handmer.jpg',
+      cover: '/images/recommendations/blogs/casey-handmer.webp',
     },
     {
       title: 'Eric Berger — Ars Technica space coverage',
@@ -164,7 +164,7 @@
       blurb:
         'Best beat reporter on the U.S. launch industry. SpaceX/NASA/Blue Origin coverage with sources at all three.',
       href: 'https://arstechnica.com/author/ericberger/',
-      cover: '/images/recommendations/blogs/ars-technica.jpg',
+      cover: '/images/recommendations/blogs/ars-technica.webp',
     },
     {
       title: 'NASA Spaceflight Forum',
@@ -172,7 +172,7 @@
       blurb:
         'Long-running enthusiast forum with rocket-engineer regulars. Best place to find primary-source documents on active mission planning.',
       href: 'https://forum.nasaspaceflight.com/',
-      cover: '/images/recommendations/blogs/nasaspaceflight.jpg',
+      cover: '/images/recommendations/blogs/nasaspaceflight.webp',
     },
     {
       title: 'Damn Interesting — Cosmos archive',
@@ -180,7 +180,7 @@
       blurb:
         'Long-form essays on lesser-known space history (Vela satellites, the Phobos missions, etc.). Reliable narrative-first writing.',
       href: 'https://www.damninteresting.com/category/cosmos/',
-      cover: '/images/recommendations/blogs/damn-interesting.jpg',
+      cover: '/images/recommendations/blogs/damn-interesting.webp',
     },
   ];
 </script>

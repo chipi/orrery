@@ -164,11 +164,11 @@ const FALLBACK_LADDER: Record<string, string[]> = {
 };
 
 function heroExistsOnAnyFallback(imageDir: string, id: string): boolean {
-  const direct = `static/images/${imageDir}/${id}/01.jpg`;
+  const direct = `static/images/${imageDir}/${id}/01.webp`;
   if (existsSync(resolve(ROOT, direct))) return true;
   const ladder = FALLBACK_LADDER[imageDir] ?? [];
   for (const fb of ladder) {
-    if (existsSync(resolve(ROOT, `static/images/${fb}/${id}/01.jpg`))) return true;
+    if (existsSync(resolve(ROOT, `static/images/${fb}/${id}/01.webp`))) return true;
   }
   return false;
 }
@@ -185,7 +185,7 @@ function validateSurface(spec: SurfaceSpec): Gap[] {
   for (const id of ids) {
     if (spec.knownGaps.has(id)) continue;
     if (!heroExistsOnAnyFallback(spec.imageDir, id)) {
-      const expectedPath = `static/images/${spec.imageDir}/${id}/01.jpg`;
+      const expectedPath = `static/images/${spec.imageDir}/${id}/01.webp`;
       gaps.push({ surface: spec.label, id, expectedPath: `/${expectedPath}` });
     }
   }

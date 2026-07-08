@@ -18,7 +18,7 @@ import type { ImageProvenanceEntry, SourceLogo, TextSourceEntry } from '$lib/dat
  *      per-image identifier that can't collide across distinct images
  *      (`image_url` / `nasa_id` / `pageid` / `revid`), every path
  *      sharing that id collapses into one bundle. Catches aspect-ratio
- *      variants of the same slot (`/images/missions/apollo11/01.jpg`
+ *      variants of the same slot (`/images/missions/apollo11/01.webp`
  *      + `/images/missions/apollo11/01.16x9.jpg`) AND cross-route reuse
  *      (e.g. same Aldrin photo on `/missions/apollo11` and
  *      `/moon-sites/apollo11`). Since the unified-path migration, the
@@ -67,7 +67,7 @@ function variantSuffix(path: string): '16x9' | '1x1' | '4x3' | null {
 
 /** Strip the aspect-ratio crop suffix + extension to get a stable
  *  per-source-image stem. `/images/missions/lro/02.16x9.jpg` and
- *  `/images/missions/lro/02.jpg` both stem to `…/lro/02`;
+ *  `/images/missions/lro/02.webp` both stem to `…/lro/02`;
  *  `/logos/nasa.svg` stems to `/logos/nasa`. */
 function pathStem(path: string): string {
   return path.replace(ASPECT_OR_EXT_RE, '');

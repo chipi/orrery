@@ -1632,10 +1632,11 @@ let overlayFailed = 0;
         continue;
       }
       if (count >= 1) {
-        const heroPath = join(DATA_ROOT, '..', 'images', 'fleet-galleries', f.id, '01.jpg');
+        // Display images ship as WebP only (RFC-030 / ADR-080).
+        const heroPath = join(DATA_ROOT, '..', 'images', 'fleet-galleries', f.id, '01.webp');
         if (!existsSync(heroPath)) {
           problems.push(
-            `fleet "${f.id}" declares count ${count} but /images/fleet-galleries/${f.id}/01.jpg missing on disk`,
+            `fleet "${f.id}" declares count ${count} but /images/fleet-galleries/${f.id}/01.webp missing on disk`,
           );
         }
       }

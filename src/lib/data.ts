@@ -867,7 +867,8 @@ export async function getFleetGallery(id: string): Promise<string[]> {
     if (count === 0) return [];
     const gallery = Array.from(
       { length: count },
-      (_, i) => `${assetOrigin}/images/fleet-galleries/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) =>
+        `${assetOrigin}/images/fleet-galleries/${id}/${String(i + 1).padStart(2, '0')}.webp`,
     );
     // Honour the fleet hero-override JSON so the panel hero (gallery[0])
     // matches the card cover served via pickHero('fleet', id). Without
@@ -910,7 +911,8 @@ export async function getMissionGallery(missionId: string): Promise<string[]> {
     if (count === 0) return [];
     const gallery = Array.from(
       { length: count },
-      (_, i) => `${assetOrigin}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) =>
+        `${assetOrigin}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.webp`,
     );
     // Honour the mission hero-override JSON so the panel hero (gallery[0])
     // matches the card cover served via pickHero('missions', id). Without
@@ -947,7 +949,7 @@ async function getCategoryGallery(
     if (count === 0) return [];
     return Array.from(
       { length: count },
-      (_, i) => `${assetOrigin}/images/${category}/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/${category}/${id}/${String(i + 1).padStart(2, '0')}.webp`,
     );
   } catch {
     return [];
@@ -973,7 +975,7 @@ export async function getSunGallery(): Promise<string[]> {
     if (count === 0) return [];
     return Array.from(
       { length: count },
-      (_, i) => `${assetOrigin}/images/sun/${String(i + 1).padStart(2, '0')}.jpg`,
+      (_, i) => `${assetOrigin}/images/sun/${String(i + 1).padStart(2, '0')}.webp`,
     );
   } catch {
     return [];
@@ -1545,7 +1547,7 @@ export async function getImageProvenanceManifest(): Promise<ImageProvenanceManif
 
 /**
  * Returns the provenance entry for an image referenced by served path
- * (e.g. "/images/missions/curiosity/01.jpg"). Strips the SvelteKit
+ * (e.g. "/images/missions/curiosity/01.webp"). Strips the SvelteKit
  * `base` prefix so panel callers can pass the same `src` they bind to
  * <img>. Returns null when the manifest is absent or the path is not
  * recorded — caller renders the fallback gallery footer.

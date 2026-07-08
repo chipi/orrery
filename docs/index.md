@@ -65,7 +65,7 @@ This is the architecture and design documentation, not the user-facing help. Rea
 ### Decision history
 
 - **[ADRs](/adr/)** — 58 Architecture Decision Records, the load-bearing decisions of the project. Three of these (ADR-052/053/054) document the Spaceflight Fleet schema retrospectively.
-- **[RFCs](/rfc/)** — 17 RFCs, the open architectural questions before they became ADRs. RFC-017 (Surface Hotspots) is currently open and gates v0.7.
+- **[RFCs](/rfc/)** — 18 RFCs, the open architectural questions before they became ADRs. RFC-030 (responsive image delivery — size ladder + `srcset` for mobile/web/Google TV, ADR-080) is the current open image-weight design.
 - **[PRDs](/prd/)** — 14 Product Requirements Documents, the user-value arguments for every shipped feature.
 
 ### Concept package

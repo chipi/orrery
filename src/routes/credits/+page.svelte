@@ -394,12 +394,9 @@
   {#if audioProv && audioProv.entries.length > 0}
     <article class="source-block" id="src-atmosphere-audio">
       <header class="head-row">
-        <h2>Atmosphere audio</h2>
+        <h2>{m.credits_audio_heading()}</h2>
       </header>
-      <p class="storage-blurb">
-        The “atmosphere’s voice” tiles on the surface Science Lens play real recordings — driven
-        live by the audio’s own spectrum.
-      </p>
+      <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
         {#each audioProv.entries as a (a.id)}
           <li class="audio-row">
@@ -412,7 +409,9 @@
                   >{a.license_short}</a
                 >
                 ·
-                <a href={a.source_url} target="_blank" rel="noopener noreferrer">source</a>
+                <a href={a.source_url} target="_blank" rel="noopener noreferrer"
+                  >{m.credits_audio_source_label()}</a
+                >
               </span>
             </span>
           </li>

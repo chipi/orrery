@@ -23,6 +23,7 @@
    */
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import { BODY_PALETTE } from '$lib/planet-stats';
 
   let { bodyKey }: { bodyKey: string } = $props();
 
@@ -50,37 +51,6 @@
     },
     moon: { amp: 0, rolloff: 1, noise: 0, caption: 'VACUUM · no signal', src: null },
   };
-  interface Palette {
-    core: string;
-    bright: string;
-    mid: string;
-    deep: string;
-    glowRGB: string;
-  }
-  const PALETTE: Record<string, Palette> = {
-    mars: {
-      core: '#fff1e6',
-      bright: '#ff9a4d',
-      mid: '#ff6a2e',
-      deep: '#c8371a',
-      glowRGB: '255,122,60',
-    },
-    earth: {
-      core: '#ecffff',
-      bright: '#7fe0ff',
-      mid: '#3aa0ff',
-      deep: '#2b6cff',
-      glowRGB: '90,190,255',
-    },
-    moon: {
-      core: '#ffffff',
-      bright: '#e6ebf5',
-      mid: '#c1c6d4',
-      deep: '#9298aa',
-      glowRGB: '205,213,233',
-    },
-  };
-
   const profile = $derived(ACOUSTIC[bodyKey] ?? null);
   let canvas = $state<HTMLCanvasElement | null>(null);
   let playing = $state(false);
@@ -95,7 +65,7 @@
     if (!ctx) return;
 
     const p = profile;
-    const pal = PALETTE[bodyKey] ?? PALETTE.earth;
+    const pal = BODY_PALETTE[bodyKey] ?? BODY_PALETTE.earth;
     const reduce =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;

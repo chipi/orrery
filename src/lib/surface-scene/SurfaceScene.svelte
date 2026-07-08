@@ -6148,6 +6148,7 @@ sample      ${debugInfo.projectedPxSample}`}
     bodyLabel={config.planet.toUpperCase()}
     rotationHours={bodyKinematics.rotationHours}
     lightTime={bodyKinematics.lightTime}
+    placement="above-altitude"
   />
 {/if}
 

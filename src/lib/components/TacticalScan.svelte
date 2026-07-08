@@ -25,6 +25,7 @@
     rotationHours = null,
     lightTime = null,
     focusGate = true,
+    placement = 'bottom-center',
   }: {
     stats: PlanetStats | null;
     /** Upper-cased body name for the eyebrow, e.g. "MARS". */
@@ -34,6 +35,10 @@
     lightTime?: LightTime | null;
     /** Extra caller-side gate ANDed with the layer + data. */
     focusGate?: boolean;
+    /** Where the panel anchors. `bottom-center` for /explore; the
+     *  surface routes use `above-altitude` — pinned to the right edge,
+     *  stacked above the altitude chip so it sits beside the body. */
+    placement?: 'bottom-center' | 'above-altitude';
   } = $props();
 
   let layerOn = $state(false);
@@ -47,7 +52,11 @@
 </script>
 
 {#if layerOn && focusGate && stats}
-  <div class="tactical-scan" aria-hidden="true">
+  <div
+    class="tactical-scan"
+    class:above-altitude={placement === 'above-altitude'}
+    aria-hidden="true"
+  >
     <div class="scan-eyebrow">{m.explore_scan_eyebrow({ planet: bodyLabel })}</div>
     <div class="scan-row">
       <span class="scan-label">{m.explore_scan_label_gravity()}</span>
@@ -210,6 +219,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  /* Surface routes (#382): pin to the right edge, stacked above the
+     altitude chip (which sits at right:12px / bottom:56px in
+     SurfaceScene) so the scan reads beside the body instead of over
+     the bottom-center chrome. */
+  .tactical-scan.above-altitude {
+    left: auto;
+    right: 12px;
+    bottom: 84px;
+    transform: none;
+    min-width: 260px;
+    max-width: 340px;
   }
   @media (min-width: 601px) {
     .tactical-scan {

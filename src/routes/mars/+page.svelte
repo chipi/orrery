@@ -133,7 +133,15 @@
       body: "Mars' atmospheric pressure sits at 0.6 % of Earth's — enough for parachute aerobraking but not aerocapture. The global magnetic dynamo died ~4 Gyr ago; the residual crustal magnetism in the southern highlands is the only fossil record of when it was alive.",
       tab: 'planets',
       section: 'magnetic-fields',
-      available: ['atmosphere', 'axial-tilt', 'dead-dynamo', 'polar-caps', 'mars-moons'],
+      available: [
+        'planet-stats',
+        'sub-solar',
+        'atmosphere',
+        'axial-tilt',
+        'dead-dynamo',
+        'polar-caps',
+        'mars-moons',
+      ],
     },
   };
 

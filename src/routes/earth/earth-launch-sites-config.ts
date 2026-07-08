@@ -84,6 +84,8 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       tab: 'orbits',
       section: 'orbit-regimes',
       available: [
+        'planet-stats',
+        'sub-solar',
         'atmosphere',
         'ozone',
         'magnetosphere',

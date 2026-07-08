@@ -59,6 +59,7 @@
     buildPolarCaps,
     buildMarsMoons,
   } from '$lib/surface-scene/mars-lens-layers';
+  import { buildSubSolarPoint } from '$lib/surface-scene/surface-sun-layers';
   import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
   import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
@@ -153,6 +154,8 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import TacticalScan from '$lib/components/TacticalScan.svelte';
+  import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/planet-stats';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
@@ -225,6 +228,14 @@
     onRegimeOpen,
     onOrbitsInViewChange,
   }: Props = $props();
+
+  // Tactical Scan (PRD-023 amendment / #382) — the body-level scan
+  // /explore shows at planet focus, brought to the surface routes. Data
+  // comes from the shared $lib/planet-stats source of truth; the body is
+  // always "in focus" on a surface route, so no extra focus gate is
+  // needed (the component still self-gates on the 'planet-stats' lens).
+  const bodyStats = $derived(PLANET_STATS[config.planet] ?? null);
+  const bodyKinematics = $derived(SURFACE_BODY_KINEMATICS[config.planet]);
 
   // Orbit-ruler auto-hide threshold (#363). The literal "below the lowest
   // orbit band" test hid far too late — at LEO (160 km) you're already
@@ -1094,7 +1105,11 @@
 
     // Ambient tint hints at body palette (slight blue for Moon, slight
     // red for Mars). Intensity consolidated to 0.8 per ADR-072 §Drift 5.
-    addSurfaceLights({ scene, ambientColor: config.ambientColor, ambientIntensity: 0.8 });
+    const { sun } = addSurfaceLights({
+      scene,
+      ambientColor: config.ambientColor,
+      ambientIntensity: 0.8,
+    });
 
     scene.add(createStarField());
 
@@ -1615,6 +1630,20 @@
       const mm = buildMarsMoons({ ...config.marsLayers.moons, planetRadius, textureLoader });
       scene.add(mm.object);
       lunarLayerHandles.push(mm);
+    }
+
+    // Sub-solar point + terminator (PRD-023 amendment / #382). Every
+    // surface body has a Sun, so this is unconditional. Inertial
+    // (scene-parented) so the noon marker stays at the Sun while the
+    // body spins beneath it; direction is the scene's real Sun light.
+    {
+      const subSolar = buildSubSolarPoint({
+        planetRadius,
+        sunDirection: sun.position,
+        color: 0xfff2b0,
+      });
+      scene.add(subSolar.object);
+      lunarLayerHandles.push(subSolar);
     }
 
     // Hover-halo factory — bolder + glowing variant of the selection
@@ -6111,6 +6140,17 @@ sample      ${debugInfo.projectedPxSample}`}
      `tidal-lock` chip). config.lensPanel now drives per-route content;
      /moon kept its prior values as the explicit fallback so any caller
      that forgets to set lensPanel still gets the original behaviour. -->
+<!-- Tactical Scan (PRD-023 amendment / #382) — the body-level scan
+     shared with /explore. Self-gates on the 'planet-stats' lens layer. -->
+{#if bodyStats}
+  <TacticalScan
+    stats={bodyStats}
+    bodyLabel={config.planet.toUpperCase()}
+    rotationHours={bodyKinematics.rotationHours}
+    lightTime={bodyKinematics.lightTime}
+  />
+{/if}
+
 <ScienceLayersPanel
   title={config.lensPanel?.title ?? 'The Moon · 384 000 km out, three days each way'}
   body={config.lensPanel?.body ??

@@ -38,6 +38,8 @@
   import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
+  import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
+  import TacticalScan from '$lib/components/TacticalScan.svelte';
   import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';
   import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
@@ -835,7 +837,6 @@
   let layerState = $state({
     lens: false,
     hover: false,
-    statsOverlay: false,
   });
 
   /** `focusedOnPlanet` flips true when the camera transition into a
@@ -1307,142 +1308,11 @@
   // the tactical stats overlay (E.4, lens-gated). See `cameraState`
   // declaration near the top of the script.
 
-  // Per-planet stats for the tactical overlay. Values are real
-  // (surface gravity in g, atmospheric pressure in bar, sidereal
-  // rotation period in hours, mean diameter in km). Earth-diameter
-  // ratio drives the comparison ghost label.
-  type PlanetStats = {
-    diameterKm: number;
-    diameterRatioEarth: number;
-    surfaceGravityG: number;
-    /** Surface atmospheric pressure in bar. 0 for airless bodies;
-     *  gas giants use the 1-bar pressure level by convention. */
-    atmoBar: number;
-    /** Atmospheric composition shorthand — chemistry symbols are
-     *  universal so this string can stay English (matches the rest of
-     *  the tactical-scan label convention). */
-    atmoComposition: string;
-    /** Mean surface temperature in kelvin (1-bar level for gas giants). */
-    surfaceTempK: number;
-    /** Maximum sustained surface wind in m/s. 0 for airless bodies. */
-    maxWindMs: number;
-    /** Escape velocity at the equator in km/s. */
-    escapeKms: number;
-    /** Surface kind — informs the tactical scan's SURFACE row. */
-    surfaceKind: 'rocky' | 'rocky-liquid' | 'rocky-ice' | 'gas-giant' | 'ice-giant';
-    /** Radiation category — informs spaceship approach decisions. */
-    radiation: 'shielded' | 'moderate' | 'high' | 'extreme';
-  };
-  const PLANET_STATS: Record<string, PlanetStats> = {
-    mercury: {
-      diameterKm: 4880,
-      diameterRatioEarth: 0.38,
-      surfaceGravityG: 0.38,
-      atmoBar: 0,
-      atmoComposition: 'Na · K · O · H exosphere (trace)',
-      surfaceTempK: 440,
-      maxWindMs: 0,
-      escapeKms: 4.3,
-      surfaceKind: 'rocky',
-      radiation: 'extreme',
-    },
-    venus: {
-      diameterKm: 12104,
-      diameterRatioEarth: 0.95,
-      surfaceGravityG: 0.91,
-      atmoBar: 92,
-      atmoComposition: 'CO₂ 96.5% · N₂ 3.5% · H₂SO₄ cloud deck',
-      surfaceTempK: 737,
-      maxWindMs: 1,
-      escapeKms: 10.4,
-      surfaceKind: 'rocky',
-      radiation: 'shielded',
-    },
-    earth: {
-      diameterKm: 12742,
-      diameterRatioEarth: 1.0,
-      surfaceGravityG: 1.0,
-      atmoBar: 1.0,
-      atmoComposition: 'N₂ 78% · O₂ 21% · Ar 0.9%',
-      surfaceTempK: 288,
-      maxWindMs: 50,
-      escapeKms: 11.2,
-      surfaceKind: 'rocky-liquid',
-      radiation: 'shielded',
-    },
-    mars: {
-      diameterKm: 6779,
-      diameterRatioEarth: 0.53,
-      surfaceGravityG: 0.38,
-      atmoBar: 0.006,
-      atmoComposition: 'CO₂ 95% · N₂ 2.8% · Ar 2%',
-      surfaceTempK: 210,
-      maxWindMs: 30,
-      escapeKms: 5.0,
-      surfaceKind: 'rocky',
-      radiation: 'high',
-    },
-    jupiter: {
-      diameterKm: 139820,
-      diameterRatioEarth: 10.97,
-      surfaceGravityG: 2.53,
-      atmoBar: 1,
-      atmoComposition: 'H₂ 90% · He 10% · NH₃/H₂O/CH₄ clouds',
-      surfaceTempK: 165,
-      maxWindMs: 100,
-      escapeKms: 59.5,
-      surfaceKind: 'gas-giant',
-      radiation: 'extreme',
-    },
-    saturn: {
-      diameterKm: 116460,
-      diameterRatioEarth: 9.14,
-      surfaceGravityG: 1.07,
-      atmoBar: 1,
-      atmoComposition: 'H₂ 96% · He 3% · CH₄/NH₃ clouds',
-      surfaceTempK: 134,
-      maxWindMs: 500,
-      escapeKms: 35.5,
-      surfaceKind: 'gas-giant',
-      radiation: 'high',
-    },
-    uranus: {
-      diameterKm: 50724,
-      diameterRatioEarth: 3.98,
-      surfaceGravityG: 0.89,
-      atmoBar: 1,
-      atmoComposition: 'H₂ 83% · He 15% · CH₄ 2.3%',
-      surfaceTempK: 76,
-      maxWindMs: 250,
-      escapeKms: 21.3,
-      surfaceKind: 'ice-giant',
-      radiation: 'moderate',
-    },
-    neptune: {
-      diameterKm: 49244,
-      diameterRatioEarth: 3.86,
-      surfaceGravityG: 1.14,
-      atmoBar: 1,
-      atmoComposition: 'H₂ 80% · He 19% · CH₄ 1.5%',
-      surfaceTempK: 72,
-      maxWindMs: 580,
-      escapeKms: 23.5,
-      surfaceKind: 'ice-giant',
-      radiation: 'moderate',
-    },
-    pluto: {
-      diameterKm: 2376,
-      diameterRatioEarth: 0.19,
-      surfaceGravityG: 0.06,
-      atmoBar: 1e-6,
-      atmoComposition: 'N₂ + CH₄ + CO (~10 μbar, sublimates)',
-      surfaceTempK: 44,
-      maxWindMs: 0,
-      escapeKms: 1.2,
-      surfaceKind: 'rocky-ice',
-      radiation: 'shielded',
-    },
-  };
+  // Per-planet stats + the PlanetStats type now live in
+  // `$lib/planet-stats` (single source of truth, shared with the
+  // surface Tactical Scan — PRD-023 amendment / #382). Imported above.
+  // SATELLITE_STATS below stays local: it feeds the Earth-comparison
+  // ghost (E.2), which is /explore-only.
   let focusedStats = $derived(selectedId ? (PLANET_STATS[selectedId] ?? null) : null);
 
   // Satellite stats for the Earth-for-scale widget when a moon is
@@ -1476,21 +1346,16 @@
   let focusedRotationHours = $derived(
     selectedId ? (PLANETS.find((p) => p.id === selectedId)?.rotationHours ?? null) : null,
   );
-  // PRD-023 Slice E.1 — light-time from Sun + current Earth distance.
-  // Uses semi-major axes from `planetById` (the localised planet
-  // catalogue) — same source the velocity tooltip uses. 8.317 min =
-  // light-time of 1 AU (IAU 2012).
+  // PRD-023 Slice E.1 — light-time from Sun + coarse Earth distance,
+  // via the shared helper (single source of truth with the surface
+  // Tactical Scan, #382). Semi-major axes come from `planetById` (the
+  // localised catalogue) — same source the velocity tooltip uses.
   let focusedLightTime = $derived.by(() => {
     if (!selectedId) return null;
     const planet = planetById.get(selectedId);
     if (!planet) return null;
     const earth = planetById.get('earth');
-    const lminSun = planet.a * 8.317;
-    // Earth-distance: |a_planet − a_earth| as a coarse mean. Real
-    // Earth distance varies wildly through synodic period but this
-    // matches /explore's constant-r-orbit visualisation.
-    const lminEarth = earth ? Math.abs(planet.a - earth.a) * 8.317 : null;
-    return { fromSunMin: lminSun, fromEarthMin: lminEarth };
+    return auLightTime(planet.a, earth?.a ?? 1);
   });
 
   // Plumbed into the 3D scene's RAF tween from inside onMount once
@@ -2980,13 +2845,6 @@
         o.subSolar.visible = on;
       });
     });
-    // PRD-023 Slice E.4 — tactical-scan overlay. DOM-driven (HUD
-    // element below); just track the layer's on/off state in a
-    // script-level $state so the template's {#if} reads it directly.
-    const stopExplorePlanetStatsLayer = onLayerChange('planet-stats', (on) => {
-      layerState.statsOverlay = on;
-    });
-
     // ── Small bodies (3D) ─────────────────────────────────────────
     // Mirrors the 2D treatment: eccentric ellipse + foci offset + L0
     // rotation, plus a small sphere mesh per body. Comets get a faint
@@ -4897,7 +4755,6 @@
     if (stopExploreLagrangeLayer) lifecycle.add(stopExploreLagrangeLayer);
     if (stopExploreMagnetosphereLayer) lifecycle.add(stopExploreMagnetosphereLayer);
     if (stopExploreSubSolarLayer) lifecycle.add(stopExploreSubSolarLayer);
-    if (stopExplorePlanetStatsLayer) lifecycle.add(stopExplorePlanetStatsLayer);
     lifecycle.add(() => localGroup.dispose());
     lifecycle.add(() => disposeScene(scene));
     // #287 — dispose lazy-loaded 4K textures that are held in
@@ -5124,113 +4981,16 @@
     </button>
   </div>
 
-  <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
-       atmospheric pressure, rotation period. Lens-gated by the
-       'planet-stats' layer. Only when also focused on a planet. -->
-  {#if cameraState.focusedOnPlanet && layerState.statsOverlay && selectedId && focusedStats}
-    <div class="tactical-scan" aria-hidden="true">
-      <div class="scan-eyebrow">{m.explore_scan_eyebrow({ planet: selectedId.toUpperCase() })}</div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_gravity()}</span>
-        <span class="scan-value">{focusedStats.surfaceGravityG.toFixed(2)} g</span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_pressure()}</span>
-        <span class="scan-value">
-          {focusedStats.atmoBar === 0
-            ? m.explore_scan_value_pressure_none()
-            : focusedStats.atmoBar < 0.01
-              ? `${(focusedStats.atmoBar * 1000).toFixed(2)} mbar`
-              : focusedStats.atmoBar < 10
-                ? `${focusedStats.atmoBar.toFixed(2)} bar`
-                : `${focusedStats.atmoBar.toFixed(0)} bar`}
-        </span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_atmosphere()}</span>
-        <span class="scan-value scan-value-wrap">{focusedStats.atmoComposition}</span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_temp()}</span>
-        <span class="scan-value">
-          {m.explore_scan_value_temp_format({
-            k: focusedStats.surfaceTempK.toString(),
-            c: (focusedStats.surfaceTempK - 273).toFixed(0),
-          })}
-        </span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_wind()}</span>
-        <span class="scan-value">
-          {focusedStats.maxWindMs === 0
-            ? m.explore_scan_value_wind_none()
-            : m.explore_scan_value_wind_up_to({ ms: focusedStats.maxWindMs.toString() })}
-        </span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_rotation()}</span>
-        <span class="scan-value">
-          {#if focusedRotationHours !== null}
-            {Math.abs(focusedRotationHours) < 48
-              ? `${Math.abs(focusedRotationHours).toFixed(2)} h`
-              : `${(Math.abs(focusedRotationHours) / 24).toFixed(1)} d`}
-            {focusedRotationHours < 0 ? `· ${m.explore_scan_value_rotation_retrograde()}` : ''}
-          {/if}
-        </span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_diameter()}</span>
-        <span class="scan-value">{focusedStats.diameterKm.toLocaleString()} km</span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_escape_v()}</span>
-        <span class="scan-value">{focusedStats.escapeKms.toFixed(1)} km/s</span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_surface()}</span>
-        <span class="scan-value">
-          {#if focusedStats.surfaceKind === 'rocky'}{m.explore_scan_value_surface_rocky()}
-          {:else if focusedStats.surfaceKind === 'rocky-liquid'}{m.explore_scan_value_surface_rocky_liquid()}
-          {:else if focusedStats.surfaceKind === 'rocky-ice'}{m.explore_scan_value_surface_rocky_ice()}
-          {:else if focusedStats.surfaceKind === 'gas-giant'}{m.explore_scan_value_surface_gas_giant()}
-          {:else}{m.explore_scan_value_surface_ice_giant()}{/if}
-        </span>
-      </div>
-      <div class="scan-row">
-        <span class="scan-label">{m.explore_scan_label_radiation()}</span>
-        <span class="scan-value">
-          {#if focusedStats.radiation === 'shielded'}{m.explore_scan_value_radiation_shielded()}
-          {:else if focusedStats.radiation === 'moderate'}{m.explore_scan_value_radiation_moderate()}
-          {:else if focusedStats.radiation === 'high'}{m.explore_scan_value_radiation_high()}
-          {:else}{m.explore_scan_value_radiation_extreme()}
-          {/if}
-        </span>
-      </div>
-      {#if focusedLightTime}
-        <div class="scan-row">
-          <span class="scan-label">{m.explore_scan_label_light_time()}</span>
-          <span class="scan-value">
-            {focusedLightTime.fromSunMin < 60
-              ? m.explore_scan_value_light_time_sun_min({
-                  value: focusedLightTime.fromSunMin.toFixed(1),
-                })
-              : m.explore_scan_value_light_time_sun_hr({
-                  value: (focusedLightTime.fromSunMin / 60).toFixed(2),
-                })}
-            {#if focusedLightTime.fromEarthMin !== null && selectedId !== 'earth'}
-              · {focusedLightTime.fromEarthMin < 60
-                ? m.explore_scan_value_light_time_earth_min({
-                    value: focusedLightTime.fromEarthMin.toFixed(1),
-                  })
-                : m.explore_scan_value_light_time_earth_hr({
-                    value: (focusedLightTime.fromEarthMin / 60).toFixed(2),
-                  })}
-            {/if}
-          </span>
-        </div>
-      {/if}
-    </div>
-  {/if}
+  <!-- PRD-023 Slice E.4 — Tactical Scan overlay (shared component,
+       #382). Self-gates on the 'planet-stats' lens layer; `focusGate`
+       additionally requires the camera to have settled on a planet. -->
+  <TacticalScan
+    stats={focusedStats}
+    bodyLabel={selectedId?.toUpperCase() ?? ''}
+    rotationHours={focusedRotationHours}
+    lightTime={focusedLightTime}
+    focusGate={cameraState.focusedOnPlanet}
+  />
 
   <!-- Secondary HUD controls: 2D/3D toggle + layer chips + paths-legend.
        Defined once as a snippet; rendered inline on desktop, inside
@@ -5856,76 +5616,8 @@
     font-size: 10px;
     letter-spacing: 1.2px;
   }
-  /* PRD-023 Slice E.4 — Tactical scan overlay. Bottom-center, between
-     the layer chips and the detail panel on desktop.
-     Mobile-first: hidden on phones; visible at @min-width: 601. */
-  .tactical-scan {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    min-width: 320px;
-    max-width: 420px;
-    padding: 8px 14px;
-    background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.35);
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-    pointer-events: none;
-    font-family: 'Space Mono', monospace;
-    display: none;
-  }
-  .scan-value-wrap {
-    /* Atmosphere composition string can be long; allow wrap without
-       collapsing the row layout (the label stays pinned-left). */
-    text-align: right;
-    max-width: 60%;
-    word-break: break-word;
-  }
-  .scan-eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
-    margin-bottom: 6px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.15);
-  }
-  .scan-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    padding: 2px 0;
-    font-size: 11px;
-    /* Phase 37 (#342) — long-locale guard. Labels like "Atmospheric
-       pressure" + values like "0.006 atm" sit together in a row whose
-       width is the tactical-scan envelope (~220 px on mobile). DE
-       "Atmosphärischer Druck" is ~30 % wider; without min-width: 0
-       the label flexbox-default-min-content overflows the parent
-       envelope rather than truncating. */
-    min-width: 0;
-  }
-  .scan-label {
-    color: rgba(255, 255, 255, 0.45);
-    letter-spacing: 1.3px;
-    font-size: 9px;
-    /* Truncate at the label's natural box; the value column stays
-       right-aligned and full-text. */
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .scan-value {
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 700;
-    /* Values are usually numeric + short unit; rare overflows
-       (e.g. multi-word "no atmosphere") truncate cleanly. */
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  /* Tactical Scan overlay styles now live in TacticalScan.svelte
+     (shared with the surface routes, #382). */
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never
@@ -6402,9 +6094,6 @@
     .time-controls {
       bottom: 16px;
       left: 209px;
-    }
-    .tactical-scan {
-      display: block;
     }
   }
 

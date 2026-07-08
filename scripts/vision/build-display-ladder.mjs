@@ -24,6 +24,7 @@ import sharp from 'sharp';
 
 const MASTERS = 'masters';
 const SERVED = 'static/images';
+const MANIFEST_PATH = 'static/data/image-ladder.json';
 const RUNGS = [1280, 2048, 3072];
 const QUALITY = 80;
 const EXCLUDE_TOP = new Set(['hotspots']);
@@ -71,6 +72,11 @@ const first = readFileSync;
   }
 }
 
+const MAX_TOP = RUNGS[RUNGS.length - 1]; // 3072 — never serve above the TV rung
+// Manifest: `/images/<stem>` → sorted list of actual rung WIDTHS (px). Files are
+// named by actual width, so the srcset descriptor is exact + never 404s.
+const manifest = {};
+
 for await (const master of walk(MASTERS)) {
   const rel = path.relative(MASTERS, master); // e.g. missions/curiosity/01.jpg
   const stem = rel.replace(/\.[^.]+$/, ''); // missions/curiosity/01
@@ -78,30 +84,36 @@ for await (const master of walk(MASTERS)) {
   const buf = readFileSync(master);
   const meta = await sharp(buf).metadata();
   const srcLong = Math.max(meta.width ?? 0, meta.height ?? 0);
-  for (const w of RUNGS) {
-    // Skip a rung that would just upscale (source already ≤ this rung and a
-    // smaller rung already covers it) — but always emit at least the rung
-    // nearest the source so every image has a top rung.
+  // Target long-sides: each ladder rung below the source (real downscale) plus
+  // the source's own size capped at MAX_TOP (its native top rung). No upscale.
+  const targets = new Set(RUNGS.filter((r) => r < srcLong));
+  targets.add(Math.min(srcLong, MAX_TOP));
+
+  const widths = [];
+  for (const t of [...targets].sort((a, b) => a - b)) {
+    const data = await sharp(buf)
+      .resize({ width: t, height: t, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: QUALITY })
+      .toBuffer();
+    const w = (await sharp(data).metadata()).width ?? t; // actual px width = srcset descriptor
+    widths.push(w);
     const out = path.join(SERVED, `${stem}-${w}.webp`);
     if (!FORCE && (await exists(out))) {
       skipped += 1;
       continue;
     }
-    // Don't emit rungs far above the source (no upscale); keep the one that
-    // matches the source's own resolution as the top.
-    if (w > srcLong && RUNGS.some((r) => r < w && r >= srcLong)) continue;
     await mkdir(path.dirname(out), { recursive: true });
-    const data = await sharp(buf)
-      .resize({ width: w, height: w, fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: QUALITY })
-      .toBuffer();
     await writeFile(out, data);
     rungs += 1;
     bytes += data.length;
   }
+  manifest[`/images/${stem}`] = widths;
 }
+
+await writeFile(MANIFEST_PATH, JSON.stringify(manifest) + '\n');
 
 const mb = (b) => (b / 1024 / 1024).toFixed(1);
 console.log(
-  `[ladder] ${sources} sources → ${rungs} WebP rungs written (${mb(bytes)} MB) · ${skipped} skipped · hotspots excluded`,
+  `[ladder] ${sources} sources → ${rungs} WebP rungs written (${mb(bytes)} MB) · ${skipped} existing · ` +
+    `manifest ${MANIFEST_PATH} · hotspots excluded`,
 );

@@ -2754,7 +2754,19 @@
     // 45° Mars; Mars's angled view is more inviting). /earth overrides
     // via config.initialCamR so the lens-gated layers (Karman shell,
     // ozone caps, satellite belt) sit on screen at toggle-on.
-    let camR = config.initialCamR ?? 85;
+    // Fit the globe to the frame on portrait / mobile viewports. The 45°
+    // fov is vertical, so a tall-narrow aspect shrinks the horizontal fov
+    // and the globe (radius 30) would overflow the sides — pull the camera
+    // back so it fits the width with ~28% margin. Wide (landscape /
+    // desktop) aspects keep the route's initialCamR unchanged.
+    const fitCamR = (aspect: number): number => {
+      const base = config.initialCamR ?? 85;
+      if (!isFinite(aspect) || aspect >= 1) return base;
+      const tanHalf = Math.tan((45 * Math.PI) / 360); // tan(fov/2), fov 45°
+      return Math.max(base, 30 / (tanHalf * aspect * 0.72));
+    };
+    let autoCamR = fitCamR(container.clientWidth / container.clientHeight);
+    let camR = autoCamR;
     let camP = Math.PI / 4;
     let camT = 0;
     // Apply initialView (lat/lon → spherical θ/φ) before camR0 is
@@ -3908,6 +3920,14 @@
         for (const tl of traverseLines) {
           tl.lineMaterial.resolution.set(w, h);
         }
+        // Re-fit the globe to the new aspect (e.g. orientation change)
+        // unless the user has zoomed away from the default framing.
+        const fit = fitCamR(w / h);
+        if (Math.abs(camR - autoCamR) < 0.5) {
+          camR = fit;
+          camRTarget = fit;
+        }
+        autoCamR = fit;
       },
     });
     lifecycle.on(window, 'resize', onResize);

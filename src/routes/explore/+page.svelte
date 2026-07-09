@@ -51,6 +51,7 @@
   import type { Mission } from '$types/mission';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
+  import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
@@ -728,6 +729,17 @@
   let localizedPlanets: LocalizedPlanet[] = $state([]);
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
+
+  // Keyboard / screen-reader / TV body index (RFC-031 S2): the accessible way
+  // to reach every selectable body without the pointer-only canvas.
+  let bodyIndexOpen = $state(false);
+  let bodyIndexList = $derived.by(() => {
+    const list: { kind: 'sun' | 'planet' | 'small'; id: string; name: string }[] = [];
+    if (localizedSun) list.push({ kind: 'sun', id: 'sun', name: localizedSun.name });
+    for (const p of localizedPlanets) list.push({ kind: 'planet', id: p.id, name: p.name });
+    for (const b of SMALL_BODIES) list.push({ kind: 'small', id: b.id, name: b.name });
+    return list;
+  });
 
   // ─── Consolidated panel / layer / camera state (Action 7, #326) ──
   // Replaced 11 standalone $state bools previously scattered between
@@ -5498,6 +5510,30 @@
      can demonstrate planet-selection on a canvas-driven scene where
      there's no clickable DOM element for a planet. These buttons are
      visually offscreen but click()-able. -->
+<!-- Body index (RFC-031 S2): keyboard/SR/TV access to every selectable body,
+     the accessible counterpart to canvas picking. Skips 3D/camera entirely. -->
+<button
+  type="button"
+  class="body-index-toggle"
+  aria-label={m.explore_body_index_aria()}
+  aria-expanded={bodyIndexOpen}
+  onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
+>
+  {m.explore_body_index_toggle()}
+</button>
+<ExploreBodyIndex
+  bodies={bodyIndexList}
+  {selectedId}
+  open={bodyIndexOpen}
+  onClose={() => (bodyIndexOpen = false)}
+  onSelect={(b) => {
+    if (b.kind === 'sun') selectSun();
+    else if (b.kind === 'planet') selectPlanet(b.id);
+    else selectSmallBody(b.id);
+    bodyIndexOpen = false;
+  }}
+/>
+
 <div class="tour-anchors" aria-hidden="true">
   {#each ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as planetId (planetId)}
     <button
@@ -6271,6 +6307,27 @@
   /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
      offscreen but click()-able so the audio executor can drive planet
      selection without a DOM hit on the 3D canvas. */
+  .body-index-toggle {
+    position: fixed;
+    top: 72px;
+    left: 12px;
+    z-index: 25;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--text-base, #e8e8ed);
+    background: color-mix(in srgb, var(--bg-base, #04040c) 88%, transparent);
+    border: 1px solid var(--border-subtle, #23232e);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+  }
+  .body-index-toggle:hover,
+  .body-index-toggle:focus-visible {
+    border-color: var(--brand, #4a7dff);
+  }
+
   .tour-anchors {
     position: absolute;
     width: 1px;

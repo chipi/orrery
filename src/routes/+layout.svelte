@@ -11,6 +11,7 @@
   import { initDeepLinks } from '$lib/native/deep-links';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
+  import CommandPalette from '$lib/components/CommandPalette.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
@@ -27,6 +28,40 @@
   import { afterNavigate } from '$app/navigation';
 
   let { children } = $props();
+
+  // Global command palette (RFC-031 S5) — Cmd/Ctrl-K jump-to-anything. Route
+  // destinations; labels reuse the nav strings so they stay localised. The
+  // TV/keyboard escape hatch that beats D-pad-ing across long lists.
+  let commandOpen = $state(false);
+  let commandItems = $derived([
+    { id: 'home', label: m.nav_home(), href: '/', keywords: 'landing start' },
+    {
+      id: 'explore',
+      label: m.nav_explore(),
+      href: '/explore',
+      keywords: 'solar system planets sun bodies',
+    },
+    {
+      id: 'missions',
+      label: m.nav_missions(),
+      href: '/missions',
+      keywords: 'spacecraft catalog launches',
+    },
+    { id: 'fleet', label: m.nav_fleet(), href: '/fleet', keywords: 'rockets vehicles capsules' },
+    { id: 'plan', label: m.nav_plan(), href: '/plan', keywords: 'porkchop transfer window' },
+    { id: 'fly', label: m.nav_fly(), href: '/fly', keywords: 'mission arc trajectory' },
+    { id: 'earth', label: m.nav_earth(), href: '/earth', keywords: 'surface' },
+    { id: 'moon', label: m.nav_moon(), href: '/moon', keywords: 'surface lunar sites' },
+    { id: 'mars', label: m.nav_mars(), href: '/mars', keywords: 'surface rover sites' },
+    { id: 'iss', label: m.nav_iss(), href: '/iss', keywords: 'space station modules' },
+    {
+      id: 'tiangong',
+      label: m.nav_tiangong(),
+      href: '/tiangong',
+      keywords: 'space station modules china',
+    },
+    { id: 'science', label: m.nav_science(), href: '/science', keywords: 'encyclopedia physics' },
+  ]);
 
   // Footer version display — show major.minor.patch, dropping any
   // `-wip` / `-rc.N` / etc. pre-release suffix. The raw `__APP_VERSION__`
@@ -284,12 +319,27 @@
     };
     document.addEventListener('click', onAnyClick, true);
 
+    // Cmd/Ctrl-K opens the command palette (RFC-031 S5). Ignore when the user
+    // is mid-typing in a field, so it never hijacks a real keystroke.
+    const onCmdK = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        const el = document.activeElement as HTMLElement | null;
+        const typing =
+          el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable);
+        if (typing) return;
+        e.preventDefault();
+        commandOpen = true;
+      }
+    };
+    document.addEventListener('keydown', onCmdK);
+
     return () => {
       stopViewport();
       stopWebglRecovery();
       stopDeepLinks();
       window.removeEventListener('beforeinstallprompt', onPromptable);
       document.removeEventListener('click', onAnyClick, true);
+      document.removeEventListener('keydown', onCmdK);
     };
   });
 </script>
@@ -301,6 +351,7 @@
 
 {#key activeLocale}
   <Nav />
+  <CommandPalette items={commandItems} open={commandOpen} onClose={() => (commandOpen = false)} />
   <AudioOverlay />
   <DebugPanel />
   <main>

@@ -32,7 +32,6 @@ We target **WCAG 2.1 Level AA**. The app is built to be operated with **keyboard
 
 - **3D scenes are pointer-driven for *manipulation*** (orbit / pan / pinch-zoom). We do **not** claim keyboard camera control yet — instead, every *object* those scenes contain is selectable from the DOM indexes above, and every fact is available in the panels. So the content is fully reachable; free-flying the camera by keyboard is future work (RFC-031 S4).
 - **Screen-reader narration of the live 3D view** is limited to the honest canvas label + the object indexes; we don't read every object's changing position aloud (it floods). Focusing an index row announces that object.
-- **A few newly-added UI strings** (the `/explore` body-index labels) currently fall back to English in the 13 non-English locales until the translation pass runs.
 - We have **not** completed a full third-party audit; conformance is self-assessed against automated (axe-core) + manual keyboard / screen-reader / contrast testing.
 
 ## Assistive technologies tested

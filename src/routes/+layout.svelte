@@ -266,11 +266,17 @@
           href,
           from: window.location.pathname,
         });
-        // S5 / RFC-018 §7: under Capacitor the WebView is app-bound, so open
-        // external links in the in-app browser instead of a dead navigation.
+        // External links open away from the app, always: the system browser
+        // under Capacitor (S5 / RFC-018 §7 — the WebView is app-bound, so an
+        // in-WebView navigation would be a dead end), a new browser tab on web
+        // (even when the anchor forgot target="_blank", so a click never
+        // navigates the SPA away from the current view).
         if (Capacitor.isNativePlatform()) {
           e.preventDefault();
           void openExternal(href);
+        } else if (link.target !== '_blank') {
+          e.preventDefault();
+          window.open(href, '_blank', 'noopener,noreferrer');
         }
       } catch {
         // Malformed href — ignore.

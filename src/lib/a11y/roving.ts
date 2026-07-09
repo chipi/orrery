@@ -113,13 +113,24 @@ export function roving(node: HTMLElement, options: RovingActionOptions = {}) {
     if (els().includes(t)) setRoving(t);
   };
 
-  // Re-init roving when the list changes (dynamic {#each}).
+  // Re-normalise roving tabindex when the group changes: dynamic {#each} items
+  // (childList) AND items that flip focusability after mount via attribute —
+  // e.g. a button whose availability resolves async and drops `aria-disabled`,
+  // which would otherwise keep its native tabindex=0 and leave two Tab stops.
+  // `tabindex` is intentionally NOT in the filter (setRoving writes it → loop).
   const observer = new MutationObserver(() => setRoving(currentEl()));
-  observer.observe(node, { childList: true, subtree: true });
+  observer.observe(node, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['disabled', 'aria-disabled', 'hidden'],
+  });
 
   node.addEventListener('keydown', onKeydown);
   node.addEventListener('focusin', onFocusin);
   setRoving(null);
+  // Catch children that render a tick after the action mounts.
+  queueMicrotask(() => setRoving(currentEl()));
 
   return {
     update(next: RovingActionOptions) {

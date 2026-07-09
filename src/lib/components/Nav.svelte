@@ -10,6 +10,7 @@
     toggleScienceLens,
   } from '$lib/science-lens';
   import { settingsState, toggleSettingsOpen } from '$lib/quality/quality-settings-store.svelte';
+  import { roving } from '$lib/a11y/roving';
   import { trackScienceLensToggle } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
@@ -136,7 +137,10 @@
   }
 </script>
 
-<nav aria-label={m.nav_aria_label()}>
+<!-- Roving toolbar (RFC-031 S1): the whole top bar is one Tab stop; ← → (and a
+     TV D-pad) sweep across brand · links · toggles, wrapping. Tab then jumps
+     past the nav straight to page content. -->
+<nav aria-label={m.nav_aria_label()} use:roving={{ orientation: 'horizontal', wrap: true }}>
   <div class="left">
     <a
       href={`${base}${localizeHref('/')}`}

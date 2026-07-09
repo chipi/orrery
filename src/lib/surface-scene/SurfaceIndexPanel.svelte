@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import { roving } from '$lib/a11y/roving';
   import {
     filterIndexItems,
     indexAgencies,
@@ -168,7 +169,14 @@
 
   <div class="sidx-count">{filtered.length} / {items.length}</div>
 
-  <ul class="sidx-list" data-testid="surface-index-list">
+  <!-- Roving (RFC-031 S3): the surface site index (moon/mars/earth) is one Tab
+       stop; ↑↓ / TV D-pad move between sites, Enter selects. Gives the canvas
+       scenes a keyboard path to every site without touching the 3D pick code. -->
+  <ul
+    class="sidx-list"
+    data-testid="surface-index-list"
+    use:roving={{ orientation: 'vertical', wrap: true }}
+  >
     {#each filtered as item (item.id)}
       <li>
         <button

@@ -33,29 +33,12 @@ import { LAYER_ORDER } from '$lib/science-layers';
 // either coverage, the test fails.
 import * as m from '$lib/paraglide/messages';
 
-const HARDCODED_IN_COMPONENT = new Set([
-  'hill-sphere',
-  'lagrange-points',
-  'magnetosphere',
-  'sub-solar',
-  'planet-stats',
-  'moons',
-  // Geophysics-lens batch (commit 19be18e4b — Earth/Moon/Mars body
-  // overlays). Hardcoded copy currently lives inline in
-  // ScienceLayersPanel.svelte metaFor(); paraglide-migration tracked
-  // under the same PRD-024 Slice 2 follow-up as the PRD-023 set above.
-  'axial-tilt',
-  'mag-north',
-  'tides',
-  'hydrosphere',
-  'sub-earth',
-  'far-side',
-  'dead-dynamo',
-  'polar-caps',
-  'mars-moons',
-  // #386 — climate & sunlight ("Sun is life"); hardcoded copy in metaFor().
-  'climate',
-]);
+// Empty as of #386 follow-up (2026-07-09): the PRD-023 + geophysics +
+// climate layers were migrated from inline strings to
+// `science_layer_<key>_label/_desc` paraglide keys, closing the
+// PRD-024 Slice 2 i18n debt. Every LayerKey now has a message key; if a
+// new one lands hardcoded, add it here (or, preferably, add the key).
+const HARDCODED_IN_COMPONENT = new Set<string>([]);
 
 function paraglideKey(layer: string): string {
   return `science_layer_${layer.replace(/-/g, '_')}_label`;

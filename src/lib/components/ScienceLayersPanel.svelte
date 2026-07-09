@@ -233,111 +233,95 @@
         };
       case 'hill-sphere':
         return {
-          label: 'Hill Sphere',
-          description:
-            'The boundary where this planet’s gravity dominates over the Sun’s. Stylised radius (real Hill spheres can exceed the planet’s orbit).',
+          label: m.science_layer_hill_sphere_label(),
+          description: m.science_layer_hill_sphere_desc(),
           learn: { tab: 'orbits', section: 'hill-sphere' },
         };
       case 'lagrange-points':
         return {
-          label: 'Lagrange Points',
-          description:
-            'L1 + L2 markers along the planet→Sun line. JWST orbits Earth’s L2; SOHO sits at Earth’s L1.',
+          label: m.science_layer_lagrange_points_label(),
+          description: m.science_layer_lagrange_points_desc(),
           learn: { tab: 'orbits', section: 'lagrange-points' },
         };
       case 'magnetosphere':
         return {
-          label: 'Magnetosphere',
-          description:
-            'Stylised magnetic-field shell + dipole axis. Jupiter’s mag-tail extends past Saturn’s orbit in reality.',
+          label: m.science_layer_magnetosphere_label(),
+          description: m.science_layer_magnetosphere_desc(),
           learn: { tab: 'planets', section: 'magnetic-fields' },
         };
       case 'sub-solar':
         return {
-          label: 'Sub-solar Point',
-          description:
-            'Marker at the longitude where it’s currently noon — the point directly under the Sun.',
+          label: m.science_layer_sub_solar_label(),
+          description: m.science_layer_sub_solar_desc(),
           learn: { tab: 'planets', section: 'sub-solar-and-terminator' },
         };
       case 'climate':
         return {
-          label: 'Climate & Sunlight',
-          description:
-            'Latitude climate bands (tropical → polar) + how much sunlight this world gets vs Earth and whether its air keeps the heat. Sun is life.',
+          label: m.science_layer_climate_label(),
+          description: m.science_layer_climate_desc(),
           learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
         };
       case 'planet-stats':
         return {
-          label: 'Tactical Scan',
-          description:
-            'Floating overlay with surface gravity, atmospheric pressure, and rotation period. Visible only at planet focus.',
+          label: m.science_layer_planet_stats_label(),
+          description: m.science_layer_planet_stats_desc(),
           learn: { tab: 'planets', section: 'planetary-stats' },
         };
       case 'moons':
         return {
-          label: 'Moons',
-          description:
-            'Major moons + orbit rings around each planet (Galilean at Jupiter, Titan/Enceladus/Iapetus at Saturn, the Moon at Earth, Phobos/Deimos at Mars, Triton at Neptune).',
+          label: m.science_layer_moons_label(),
+          description: m.science_layer_moons_desc(),
         };
       case 'axial-tilt':
         return {
-          label: 'Axial Tilt & Seasons',
-          description:
-            'Spin axis + obliquity arc against the orbital plane — the tilt that drives the seasons.',
+          label: m.science_layer_axial_tilt_label(),
+          description: m.science_layer_axial_tilt_desc(),
           learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
         };
       case 'mag-north':
         return {
-          label: 'True vs Magnetic North',
-          description:
-            'Geographic pole (spin axis) vs magnetic pole — the offset a compass reads as declination.',
+          label: m.science_layer_mag_north_label(),
+          description: m.science_layer_mag_north_desc(),
           learn: { tab: 'planets', section: 'magnetic-fields' },
         };
       case 'tides':
         return {
-          label: 'Tides (Earth–Moon)',
-          description:
-            'Twin tidal bulges raised by the Moon — one beneath it, one on the far side. Two high tides a day.',
+          label: m.science_layer_tides_label(),
+          description: m.science_layer_tides_desc(),
           learn: { tab: 'planets', section: 'tides' },
         };
       case 'hydrosphere':
         return {
-          label: 'Hydrosphere',
-          description:
-            '71% of the surface is ocean — Earth is the only known world with stable surface liquid water.',
+          label: m.science_layer_hydrosphere_label(),
+          description: m.science_layer_hydrosphere_desc(),
         };
       case 'sub-earth':
         return {
-          label: 'Sub-Earth Point',
-          description:
-            'Earth hangs fixed over this spot — the Moon is tidally locked. Libration lets us see 59% of the surface over a month.',
+          label: m.science_layer_sub_earth_label(),
+          description: m.science_layer_sub_earth_desc(),
           learn: { tab: 'transfers', section: 'free-return' },
         };
       case 'far-side':
         return {
-          label: 'Far Side',
-          description:
-            'The hemisphere that never faces Earth — unseen until Luna 3 photographed it in 1959. Heavily cratered, almost no maria.',
+          label: m.science_layer_far_side_label(),
+          description: m.science_layer_far_side_desc(),
         };
       case 'dead-dynamo':
         return {
-          label: 'Dead Dynamo',
-          description:
-            'No global field — only fossil crustal magnetism in the southern highlands. With the shield gone, the solar wind stripped most of the air.',
+          label: m.science_layer_dead_dynamo_label(),
+          description: m.science_layer_dead_dynamo_desc(),
           learn: { tab: 'planets', section: 'magnetic-fields' },
         };
       case 'polar-caps':
         return {
-          label: 'Polar Ice Caps',
-          description:
-            'Seasonal CO₂ frost over perennial water ice. They grow and shrink as each hemisphere tips toward and away from the Sun.',
+          label: m.science_layer_polar_caps_label(),
+          description: m.science_layer_polar_caps_desc(),
           learn: { tab: 'planets', section: 'axial-tilt-and-seasons' },
         };
       case 'mars-moons':
         return {
-          label: 'Phobos & Deimos',
-          description:
-            'Two captured-asteroid moons. Phobos skims so low it sets in the west; it will break up into a ring in ~50 Myr.',
+          label: m.science_layer_mars_moons_label(),
+          description: m.science_layer_mars_moons_desc(),
         };
     }
   }

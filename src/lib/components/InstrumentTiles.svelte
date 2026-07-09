@@ -13,6 +13,7 @@
   import { onMount } from 'svelte';
   import { BODY_PALETTE } from '$lib/planet-stats';
   import type { PlanetStats } from '$lib/planet-stats';
+  import * as m from '$lib/paraglide/messages';
 
   let {
     bodyKey,
@@ -48,7 +49,7 @@
     const pBar = s.atmoBar <= 0 ? 0 : Math.min(1, Math.max(0, (Math.log10(s.atmoBar) + 3) / 3));
     const pLabel =
       s.atmoBar === 0
-        ? 'vacuum'
+        ? m.tile_pressure_vacuum()
         : s.atmoBar < 0.01
           ? `${(s.atmoBar * 1000).toFixed(0)} mbar`
           : s.atmoBar < 10

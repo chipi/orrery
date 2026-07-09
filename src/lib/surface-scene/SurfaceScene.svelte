@@ -157,6 +157,7 @@
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import ClimateReadout from '$lib/components/ClimateReadout.svelte';
+  import LensLegend from '$lib/components/LensLegend.svelte';
   import { PLANET_STATS, SURFACE_BODY_KINEMATICS } from '$lib/planet-stats';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
@@ -6171,10 +6172,12 @@ sample      ${debugInfo.projectedPxSample}`}
 <!-- Insolation / Goldilocks readout (#386 G) — self-gates on 'climate'. -->
 <ClimateReadout bodyKey={config.planet} />
 
+<!-- Contextual visual key for the active lens layers (#386 follow-up). -->
+<LensLegend bodyKey={config.planet} />
+
 <ScienceLayersPanel
-  title={config.lensPanel?.title ?? 'The Moon · 384 000 km out, three days each way'}
-  body={config.lensPanel?.body ??
-    "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path."}
+  title={config.lensPanel?.title ?? m.science_panel_moon_title()}
+  body={config.lensPanel?.body ?? m.science_panel_moon_body()}
   tab={config.lensPanel?.tab ?? 'transfers'}
   section={config.lensPanel?.section ?? 'free-return'}
   available={config.lensPanel?.available ?? ['tidal-lock']}

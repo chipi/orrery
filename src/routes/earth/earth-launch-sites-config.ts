@@ -21,6 +21,7 @@ import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/
 import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
 import { registerEarthHotspotBuilders } from '$lib/surface-scene/register-earth-hotspot-builders';
 import { getEarthObjects } from '$lib/data';
+import * as m from '$lib/paraglide/messages';
 
 const MOON_DISTANCE_KM = 384400;
 
@@ -79,8 +80,8 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // are fully wired internally. Earth-specific copy + the two LayerKeys
     // whose visualisations actually live in this scene.
     lensPanel: {
-      title: 'Earth · 6371 km radius, our orbital perch',
-      body: 'A 100 km Kármán-line shell separates atmosphere from space; LEO begins another 100 km up. The ozone column at ~30 km blocks the UV-C that would otherwise sterilise the surface — its polar depletion is one of the few global atmospheric measurements visible from orbit.',
+      title: m.science_panel_earth_title(),
+      body: m.science_panel_earth_body(),
       tab: 'orbits',
       section: 'orbit-regimes',
       available: [

@@ -472,6 +472,8 @@ The `/earth /moon /mars /iss /tiangong /explore /fly` scenes are GPU- and main-t
 
 Every route surfaces a built-in DebugPanel when you append `?debug=1` to the URL (e.g. `/fly?debug=1`, `/mars?debug=1`, `/?debug=1`). Mounted from the root layout (`src/routes/+layout.svelte`) via Svelte context, so it's available on every page. Use it instead of bolting on ad-hoc `console.log` calls or one-off panels.
 
+**Saving screenshots.** The `chrome-devtools` MCP screenshot tool can only write inside the repo workspace root, so capture to a repo-local temp path (e.g. `.shots-tmp/`) and then **copy any keepers to `~/Desktop/`** — Marko's convention for screenshots he wants to hold onto. Delete the repo-temp copies afterwards so nothing untracked is left in the working tree.
+
 Tabs:
 
 - **Page** — page-specific instrumentation. Only shown when the route registered content (today: `/fly` exposes the 2D `FlybyDebugViewer` for camera-math iteration). Add this tab to a page when you're solving a hard visual / spatial / interaction problem that's faster to debug against a derived 2D / numeric view than in the live 3D scene.

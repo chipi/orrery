@@ -24,6 +24,7 @@
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { BODY_PALETTE } from '$lib/planet-stats';
+  import * as m from '$lib/paraglide/messages';
 
   let { bodyKey }: { bodyKey: string } = $props();
 
@@ -31,7 +32,7 @@
     amp: number;
     rolloff: number;
     noise: number;
-    caption: string;
+    caption: () => string;
     src: string | null;
   }
   const ACOUSTIC: Record<string, Acoustic> = {
@@ -39,17 +40,17 @@
       amp: 1.0,
       rolloff: 0.15,
       noise: 0.2,
-      caption: 'AIR · 343 m/s',
+      caption: () => m.wave_caption_earth(),
       src: 'audio/atmosphere/earth-wind.mp3',
     },
     mars: {
       amp: 0.55,
       rolloff: 0.78,
       noise: 0.14,
-      caption: 'THIN CO₂ · 240 m/s',
+      caption: () => m.wave_caption_mars(),
       src: 'audio/atmosphere/mars-wind.mp3',
     },
-    moon: { amp: 0, rolloff: 1, noise: 0, caption: 'VACUUM · no signal', src: null },
+    moon: { amp: 0, rolloff: 1, noise: 0, caption: () => m.wave_caption_moon(), src: null },
   };
   const profile = $derived(ACOUSTIC[bodyKey] ?? null);
   let canvas = $state<HTMLCanvasElement | null>(null);
@@ -251,9 +252,7 @@
     class:silent={!profile.src}
     role="button"
     tabindex="0"
-    aria-label={profile.src
-      ? `Play the sound of the ${bodyKey} atmosphere`
-      : `${bodyKey}: vacuum, no sound`}
+    aria-label={profile.src ? m.wave_aria_play() : m.wave_aria_silent()}
     onclick={() => toggle()}
     onkeydown={(e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -267,8 +266,10 @@
       <span class="wave-cue" aria-hidden="true">
         {#if !profile.src}◎{:else if loading}···{:else if playing}⏸{:else}▶{/if}
       </span>
-      {profile.caption}
-      {#if profile.src}<span class="wave-hint">· {playing ? 'playing' : 'tap to listen'}</span>{/if}
+      {profile.caption()}
+      {#if profile.src}<span class="wave-hint"
+          >· {playing ? m.wave_hint_playing() : m.wave_hint_tap()}</span
+        >{/if}
     </div>
   </div>
 {/if}

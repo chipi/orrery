@@ -129,8 +129,8 @@
     // tidal-lock copy + a dead chip. Mars's atmosphere is the lensable
     // overlay on the surface scene.
     lensPanel: {
-      title: 'Mars · thin CO₂ shell + a dynamo gone quiet',
-      body: "Mars' atmospheric pressure sits at 0.6 % of Earth's — enough for parachute aerobraking but not aerocapture. The global magnetic dynamo died ~4 Gyr ago; the residual crustal magnetism in the southern highlands is the only fossil record of when it was alive.",
+      title: m.science_panel_mars_title(),
+      body: m.science_panel_mars_body(),
       tab: 'planets',
       section: 'magnetic-fields',
       available: [

@@ -82,8 +82,8 @@
     // makes sense). Mirrors the prior hardcoded SurfaceScene fallback
     // so /moon behaviour is unchanged by the #303 plumbing refactor.
     lensPanel: {
-      title: 'The Moon · 384 000 km out, three days each way',
-      body: "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path.",
+      title: m.science_panel_moon_title(),
+      body: m.science_panel_moon_body(),
       tab: 'transfers',
       section: 'free-return',
       available: ['planet-stats', 'sub-solar', 'climate', 'tidal-lock', 'sub-earth', 'far-side'],

@@ -628,6 +628,13 @@
     // station renders at ~50% apparent size by default — gives more
     // breathing room around the T-silhouette before user zoom.
     camera.position.set(4.2, 5.2, 14.4);
+    // Mobile / portrait: pull the camera back proportional to how narrow the
+    // frame is so the full T-silhouette clears the edges on load — mirrors the
+    // planet globe-fit on /moon + /mars and the /iss station framing.
+    {
+      const aspect0 = container.clientWidth / Math.max(1, container.clientHeight);
+      if (aspect0 < 1) camera.position.multiplyScalar(Math.min(1.5, 1 / Math.max(0.55, aspect0)));
+    }
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
     renderer.setSize(container.clientWidth, container.clientHeight);

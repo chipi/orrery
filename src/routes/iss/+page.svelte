@@ -661,6 +661,14 @@
       500,
     );
     camera.position.set(2.0, -3.0, 13.0);
+    // Mobile / portrait: the station spans much wider than it is tall, so a
+    // portrait viewport (aspect < 1) clips the solar arrays on load. Pull the
+    // camera straight back in proportion to how narrow the frame is so the
+    // whole station fits — mirrors the planet globe-fit on /moon + /mars.
+    {
+      const aspect0 = container.clientWidth / Math.max(1, container.clientHeight);
+      if (aspect0 < 1) camera.position.multiplyScalar(Math.min(1.7, 1 / Math.max(0.5, aspect0)));
+    }
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, quality.pixelRatioCap));
     renderer.setSize(container.clientWidth, container.clientHeight);

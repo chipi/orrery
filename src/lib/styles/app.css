@@ -22,6 +22,16 @@ a {
   color: var(--color-accent);
 }
 
+/* Native <select> option lists render in the OS picker, which on Android
+ * (and light-mode desktop) paints a white background — our default white
+ * option text then vanishes, so the menu looks empty ("just a hyphen").
+ * Force an opaque dark background + light text so options stay legible in
+ * the native picker on every platform. */
+select option {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 /* Document & inner-container scrollbars.
  *
  * Default to a 12px touch-friendly track so the page-level scrollbar

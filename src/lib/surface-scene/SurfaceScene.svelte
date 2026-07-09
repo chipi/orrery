@@ -6270,13 +6270,15 @@ sample      ${debugInfo.projectedPxSample}`}
     text-transform: uppercase;
     backdrop-filter: blur(4px);
   }
-  /* Mobile: sit just above the accordion tab bar, which now hugs the bottom
-     edge (--mcd-bottom dropped 40px → 8px when the footer moved into the nav).
-     The pill hides while a drawer is open (mobileDrawerOpen), so it only ever
-     shares the screen with the closed ~40px tab row below it. */
+  /* Mobile: sit CLEARLY above the accordion tab bar (--mcd-bottom = 8px +
+     safe-area, ~40px tall → its top is ~48px up). The old 52px left only a
+     4px gap, so the pill visually collided with the Index/Nations tabs on
+     phones with a bottom safe-area. 64px gives ~16px of clearance so the tab
+     row reads as cleanly as it does on /iss + /tiangong (which have no pill).
+     The pill also hides while a drawer is open (mobileDrawerOpen). */
   @media (hover: none), (pointer: coarse) {
     .altitude-indicator {
-      bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(64px + env(safe-area-inset-bottom, 0px));
     }
   }
   /* Persistent landing-site crosshair. Mirrors the gold-disc +

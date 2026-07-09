@@ -1378,7 +1378,11 @@
   .touch-hint {
     display: none;
     position: absolute;
-    top: 12px;
+    /* Anchor to the bottom-right of the plot, not the top: the selector bar
+       (destination dropdown + mission-type pills) occupies the top of
+       .plot-area, and a top-anchored hint overlapped those buttons on
+       mobile. Bottom-right sits cleanly over the canvas. */
+    bottom: 12px;
     right: 12px;
     z-index: 4;
     margin: 0;

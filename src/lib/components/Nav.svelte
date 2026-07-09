@@ -294,20 +294,26 @@
       <a class="drawer-link drawer-link-sm" href="{base}/library" onclick={closeMobileMenu}
         >{m.layout_footer_library()}</a
       >
-      <a
-        class="drawer-link drawer-link-sm"
-        href="https://github.com/chipi/orrery/blob/main/LICENSE"
-        target="_blank"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_license()}</a
-      >
-      <a
-        class="drawer-link drawer-link-sm"
-        href="https://github.com/chipi/orrery#readme"
-        target="_blank"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_readme()}</a
-      >
+      <!-- License + README fold under an "About" sub-heading, mirroring the
+           desktop footer's ABOUT hover-group (+layout.svelte). Designed to
+           grow (imprint, privacy, …) alongside the desktop menu. -->
+      <div class="drawer-about" role="group" aria-label={m.footer_about_aria()}>
+        <span class="drawer-about-label">{m.layout_footer_about()}</span>
+        <a
+          class="drawer-link drawer-link-sm drawer-about-item"
+          href="https://github.com/chipi/orrery/blob/main/LICENSE"
+          target="_blank"
+          rel="noopener noreferrer external"
+          hreflang="en">{m.layout_footer_license()}</a
+        >
+        <a
+          class="drawer-link drawer-link-sm drawer-about-item"
+          href="https://github.com/chipi/orrery#readme"
+          target="_blank"
+          rel="noopener noreferrer external"
+          hreflang="en">{m.layout_footer_readme()}</a
+        >
+      </div>
     </div>
     <!-- Version chip — restored at the drawer bottom on touch (the floating
          .site-footer version link is hidden on touch). External CHANGELOG
@@ -691,7 +697,11 @@
     width: min(280px, 80vw);
     max-height: calc(100vh - var(--nav-height));
     overflow-y: auto;
-    z-index: 45;
+    /* Top-level site chrome: must clear the route HUD band (surface chips,
+       altitude, panorama overlays all reach z-index ~45-70) so the open
+       menu isn't painted over. Stays below full-screen panels/lightboxes
+       (100+). */
+    z-index: 89;
     background: var(--color-nav-bg);
     border-left: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
@@ -728,7 +738,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 44;
+    /* Sit directly under the drawer (89) but above the route HUD so the
+       backdrop actually dims the surface chips instead of them showing
+       through. */
+    z-index: 88;
     background: rgba(0, 0, 0, 0.35);
     border: none;
     cursor: pointer;
@@ -775,6 +788,22 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
     border-left-color: transparent;
+  }
+  /* "About" sub-group in the drawer footer — a muted first-cap sub-heading
+     with License / README nested (indented) beneath it. */
+  .drawer-about {
+    margin-top: 2px;
+  }
+  .drawer-about-label {
+    display: block;
+    padding: 9px 18px 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.38);
+  }
+  .drawer-about-item {
+    padding-left: 32px;
   }
   /* Version chip pinned at the drawer bottom, dimmer than the about links. */
   .drawer-version {

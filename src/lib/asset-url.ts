@@ -6,17 +6,25 @@ import { DEFAULT_LOCALE } from './locale';
  *
  * Heavy asset buckets — gallery/hero imagery, narration audio, and
  * non-default-locale overlay bundles — are pruned from the Capacitor
- * on-device bundle (ADR-078) and streamed from GitHub Pages. This module is
- * the single seam that decides local-vs-streamed origin, so no caller
- * hard-codes it.
+ * on-device bundle (ADR-078) and streamed from a configured origin. This
+ * module is the single seam that decides local-vs-streamed origin, so no
+ * caller hard-codes it.
  *
  * In every browser build `__MOBILE__` is `false`, so `assetOrigin === base`
- * and every URL is byte-identical to before this module existed. The same
- * seam is where an optional prod CDN plugs in later.
+ * and the app streams origin-relative from whatever host serves it (byte-
+ * identical to before this module existed). Only the Capacitor build — which
+ * is served from `capacitor://localhost` and has no host to infer — needs an
+ * explicit origin.
  */
 
-/** GitHub Pages origin the mobile build streams pruned buckets from. */
-export const STREAM_ORIGIN = 'https://chipi.github.io/orrery';
+/**
+ * Origin the mobile build streams pruned buckets from. Injected at build time
+ * from the `STREAM_ORIGIN` env var (vite `define`) — NOT hardcoded, so a dev
+ * build points at a local server and a release build points at the current
+ * host (GitHub Pages → VPS IP → domain), changed by one env var per build.
+ * Defaults to the current prod origin when the env var is unset.
+ */
+export const STREAM_ORIGIN = __STREAM_ORIGIN__;
 
 // ─── Pure resolvers ──────────────────────────────────────────────────────
 // The logic, parameterised on `mobile` + `base` so both the browser and the

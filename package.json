@@ -38,6 +38,8 @@
     "sync:mobile": "npm run build:mobile && npx cap sync",
     "open:ios": "npx cap open ios",
     "open:android": "npx cap open android",
+    "dev:android": "adb reverse tcp:${VITE_DEV_PORT:-5273} tcp:${VITE_DEV_PORT:-5273} && CAP_DEV_SERVER=http://localhost:${VITE_DEV_PORT:-5273} npx cap run android",
+    "dev:ios": "CAP_DEV_SERVER=http://localhost:${VITE_DEV_PORT:-5273} npx cap run ios",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

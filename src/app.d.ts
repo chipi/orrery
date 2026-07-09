@@ -25,6 +25,15 @@ declare global {
   const __MOBILE__: boolean;
 
   /**
+   * Origin the Capacitor stream-heavy build fetches pruned buckets from
+   * (images / audio / non-default-locale bundles). Injected at build time from
+   * the `STREAM_ORIGIN` env var (vite define), defaulting to the current prod
+   * origin. Set per build: local dev server for on-device testing, the VPS
+   * IP/domain for release. Empty-string `base` in browser builds ignore it.
+   */
+  const __STREAM_ORIGIN__: string;
+
+  /**
    * Live-state windows used by /fly for chrome-devtools-mcp verification
    * + (in __flyDebug's case) for the foreground-ship offset math. Typed
    * here so component code can read `window.__flyDebug?.flybyId` etc.

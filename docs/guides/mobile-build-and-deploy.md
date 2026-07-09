@@ -46,6 +46,43 @@ npm run open:android
 - **Simulator UDIDs:** `xcrun simctl list devices available | grep iPhone`. Boot one: `xcrun simctl boot <udid>`.
 - **Screenshot (headless):** `xcrun simctl io <udid> screenshot /tmp/x.png` (iOS) · `adb exec-out screencap -p > /tmp/x.png` (Android).
 
+### Local dev — live-reload from a local server (100% offline)
+
+The build → sync → run loop above installs a **release-shaped bundle** that streams
+heavy assets (images/audio/other-locale bundles) from `STREAM_ORIGIN` — i.e. the
+*deployed* host. On a fresh machine, or before that host has the current assets,
+galleries render blank (the app asks for `…/01.webp`, the CDN only has `…/01.jpg` →
+404). That's deploy skew, not a bug. For day-to-day dev you don't want to stream from
+anywhere — you want everything from your own machine:
+
+```bash
+# terminal 1 — local dev server (serves the whole app incl. webp images)
+npm run dev                          # honours VITE_DEV_PORT (default 5273)
+
+# terminal 2 — pick your platform
+npm run dev:android                  # sets adb reverse + CAP_DEV_SERVER, runs on the emulator
+npm run dev:ios                      # runs on the booted simulator
+```
+
+- **`CAP_DEV_SERVER`** (read by `capacitor.config.ts`) points the WebView at the local
+  dev server instead of the bundle. Set → live-reload; unset → release bundle. Both
+  `dev:*` scripts set it to `http://localhost:${VITE_DEV_PORT:-5273}`.
+- **`localhost` works for both platforms with zero internet:** the iOS simulator shares
+  the Mac's `localhost` natively (and iOS ATS exempts `localhost`, so plain http is
+  fine); the Android emulator can't reach the host's loopback directly, so `dev:android`
+  runs `adb reverse tcp:<port> tcp:<port>` first. No LAN IP, no CDN, no `10.0.2.2`.
+- In dev the app runs as a **browser build** (`__MOBILE__` false), so images are
+  origin-relative → served by the dev server. Nothing is pruned or streamed.
+- **Prod origin is configurable, not hardcoded** (`STREAM_ORIGIN` env → vite define): a
+  release build points at whatever host it'll be served from — GitHub Pages today, a VPS
+  IP next, a domain later — via one env var, e.g. `STREAM_ORIGIN=https://<host> npm run
+  build:mobile`. Web builds ignore it entirely (they stream origin-relative from their
+  own host). See `src/lib/asset-url.ts`.
+
+> The dev server ignores `android/` + `ios/` in its file watcher (`vite.config.ts`
+> `server.watch.ignored`) — otherwise `cap sync` writing into those dirs triggers Vite
+> dep re-optimization mid-session, which breaks route-chunk loading in the WebView.
+
 ---
 
 ## 3 · How streaming works (why the bundle is ~47 MB, not 2 GB)

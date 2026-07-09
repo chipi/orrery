@@ -41,6 +41,15 @@ export default defineConfig(({ mode }) => {
   // scripts/mobile/prune-streamed-assets.mjs (S2) and the runtimeCaching
   // block (S3). The browser build (MOBILE unset) is byte-unaffected.
   const MOBILE = env.MOBILE === '1';
+  // Origin the Capacitor build streams pruned buckets (images / audio /
+  // non-default-locale bundles) from. NOT hardcoded — set per build so a dev
+  // build points at a local server and a release build points at the current
+  // host (GitHub Pages today, a VPS IP next, a domain later), changed by one
+  // env var, never a code edit. Web builds ignore it entirely: `assetOrigin`
+  // stays `base`, so the browser app streams origin-relative from whatever
+  // host serves it. Defaults to the current prod origin when unset so release
+  // builds and CI are unaffected.
+  const STREAM_ORIGIN = env.STREAM_ORIGIN || 'https://chipi.github.io/orrery';
   return {
     // Expose package.json version + build timestamp as globals at build
     // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
@@ -54,6 +63,9 @@ export default defineConfig(({ mode }) => {
       // True only in the Capacitor stream-heavy build. App + SW code branch
       // on this to route pruned buckets at chipi.github.io (S3).
       __MOBILE__: JSON.stringify(MOBILE),
+      // Per-build stream origin for the Capacitor bundle (see STREAM_ORIGIN
+      // above). Injected here so asset-url.ts carries no hardcoded host.
+      __STREAM_ORIGIN__: JSON.stringify(STREAM_ORIGIN),
     },
     // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
     // which is gitignored). Falls back to 5273 if unset. Useful when
@@ -72,6 +84,12 @@ export default defineConfig(({ mode }) => {
       // Vite's default fs.allow excludes static/ and dev-only 404s flood
       // the console.
       fs: { allow: ['static', 'i18n-src'] },
+      // Don't watch the Capacitor native build dirs. `cap sync` copies the
+      // web build into android/ + ios/, and if the dev server watches those it
+      // fires spurious reloads + dep re-optimization mid-session — which breaks
+      // live-reload against the emulator/simulator ("Failed to fetch
+      // dynamically imported module" as route chunks get invalidated).
+      watch: { ignored: ['**/android/**', '**/ios/**'] },
     },
     preview: { port: devPort, strictPort: true },
     plugins: [

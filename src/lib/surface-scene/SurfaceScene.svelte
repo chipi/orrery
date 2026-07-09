@@ -5306,6 +5306,25 @@
     {@render layerChips()}
   {/snippet}
 
+  <!-- Mobile "Scan" tab (#386 follow-up) — the surface HUD folded into the
+       drawer: the Tactical Scan (facts + atmosphere-voice + instrument
+       tiles), the insolation readout, and the lens legend, all inline. -->
+  {#snippet mobileScanContent(_close: () => void)}
+    <div class="mobile-scan">
+      {#if bodyStats}
+        <TacticalScan
+          stats={bodyStats}
+          bodyLabel={config.planet.toUpperCase()}
+          rotationHours={bodyKinematics.rotationHours}
+          lightTime={bodyKinematics.lightTime}
+          inline
+        />
+      {/if}
+      <ClimateReadout bodyKey={config.planet} inline />
+      <LensLegend bodyKey={config.planet} inline />
+    </div>
+  {/snippet}
+
   {#snippet mobileNationsContent(close: () => void)}
     <div class="nations-drawer" role="group" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
@@ -5390,6 +5409,7 @@
         tabs={[
           { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
           { id: 'layers', label: 'Layers', icon: '▤', content: mobileLayersContent },
+          { id: 'scan', label: 'Scan', icon: '◈', content: mobileScanContent },
           { id: 'nations', label: 'Nations', icon: '⚑', content: mobileNationsContent },
           { id: 'index', label: m.surface_index_tab(), icon: '⌕', content: mobileIndexContent },
         ]}
@@ -7171,5 +7191,11 @@ sample      ${debugInfo.projectedPxSample}`}
     :global(.mdg-body .ruler-title) {
       display: none;
     }
+  }
+  /* Mobile "Scan" drawer tab — stack the inline HUD panels (#386 follow-up). */
+  .mobile-scan {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 </style>

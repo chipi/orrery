@@ -28,6 +28,7 @@
     lightTime = null,
     focusGate = true,
     placement = 'bottom-center',
+    inline = false,
   }: {
     stats: PlanetStats | null;
     /** Upper-cased body name for the eyebrow, e.g. "MARS". */
@@ -41,6 +42,9 @@
      *  surface routes use `above-altitude` — pinned to the right edge,
      *  stacked above the altitude chip so it sits beside the body. */
     placement?: 'bottom-center' | 'above-altitude';
+    /** Inline mode (mobile drawer): render as static, always-visible
+     *  content with no fixed positioning and no layer/focus gate. */
+    inline?: boolean;
   } = $props();
 
   let layerOn = $state(false);
@@ -53,8 +57,12 @@
   });
 </script>
 
-{#if layerOn && focusGate && stats}
-  <div class="tactical-scan" class:above-altitude={placement === 'above-altitude'}>
+{#if stats && (inline || (layerOn && focusGate))}
+  <div
+    class="tactical-scan"
+    class:above-altitude={placement === 'above-altitude' && !inline}
+    class:inline
+  >
     <div class="scan-eyebrow" aria-hidden="true">
       {m.explore_scan_eyebrow({ planet: bodyLabel })}
     </div>
@@ -244,5 +252,23 @@
     .tactical-scan {
       display: block;
     }
+  }
+  /* Inline mode (mobile drawer): static, always shown, no floating chrome —
+     the drawer body provides the surface. */
+  .tactical-scan.inline {
+    display: block;
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    backdrop-filter: none;
   }
 </style>

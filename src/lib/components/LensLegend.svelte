@@ -16,7 +16,7 @@
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
 
-  let { bodyKey }: { bodyKey: string } = $props();
+  let { bodyKey, inline = false }: { bodyKey: string; inline?: boolean } = $props();
 
   type Shape = 'swatch' | 'ring' | 'dot' | 'cap' | 'note';
   interface Item {
@@ -89,7 +89,7 @@
 </script>
 
 {#if entries.length > 0}
-  <div class="lens-legend" aria-hidden="true">
+  <div class="lens-legend" class:inline aria-hidden="true">
     <div class="ll-head">{m.lens_legend_head()}</div>
     {#each entries as e (e.title)}
       <div class="ll-group">
@@ -192,5 +192,18 @@
     .lens-legend {
       display: block;
     }
+  }
+  /* Inline mode (mobile drawer): static, no floating chrome. */
+  .lens-legend.inline {
+    display: block;
+    position: static;
+    top: auto;
+    right: auto;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    backdrop-filter: none;
   }
 </style>

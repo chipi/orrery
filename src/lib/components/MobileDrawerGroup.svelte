@@ -214,6 +214,10 @@
     .mdg {
       display: flex;
       flex-direction: column;
+      /* Gap so an open panel — especially a tall, scroll-clipped one like
+         the surface Scan tab — separates cleanly from the tab-row buttons
+         instead of butting against them. */
+      gap: 8px;
       position: fixed;
       left: 8px;
       right: 8px;

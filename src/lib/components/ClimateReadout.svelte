@@ -18,7 +18,7 @@
   } from '$lib/planet-stats';
   import * as m from '$lib/paraglide/messages';
 
-  let { bodyKey }: { bodyKey: string } = $props();
+  let { bodyKey, inline = false }: { bodyKey: string; inline?: boolean } = $props();
 
   let on = $state(false);
   onMount(() => {
@@ -44,8 +44,8 @@
   const accent = $derived(BODY_PALETTE[bodyKey]?.bright ?? '#7fe0ff');
 </script>
 
-{#if on && stats && kin}
-  <div class="climate-readout" aria-hidden="true" style="--accent:{accent}">
+{#if (inline || on) && stats && kin}
+  <div class="climate-readout" class:inline aria-hidden="true" style="--accent:{accent}">
     <div class="cr-flux">
       <span class="cr-sun">☀</span>
       {m.climate_sun_line({ flux: flux.toLocaleString(), ratio })}
@@ -91,5 +91,19 @@
     .climate-readout {
       display: block;
     }
+  }
+  /* Inline mode (mobile drawer): static, always shown, no floating chrome. */
+  .climate-readout.inline {
+    display: block;
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    backdrop-filter: none;
+    text-align: left;
   }
 </style>

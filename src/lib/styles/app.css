@@ -122,3 +122,27 @@ html {
 .tour-anchors button {
   pointer-events: auto;
 }
+
+/* ── TV / 10-foot layer (RFC-031 S6) ─────────────────────────────────────────
+   Gated to a large, no-hover, coarse-pointer screen — i.e. a TV driven by a
+   D-pad remote — so desktop + phone/tablet-portrait are completely untouched
+   (presentation only; the interaction model is the same shared roving focus).
+   Two safe, high-value adjustments; the rest is fine-tuned live on the
+   Orrery_TV emulator:
+     1. Overscan-safe insets via the same --safe-area-inset-* vars the native
+        safe-area shim drives, so the nav + panels (which already respect them)
+        pull in from the ~5% TVs clip at the edges.
+     2. Heavier focus rings for 10-foot legibility — !important so the boost
+        wins over the per-component :focus-visible rules, TV-context only. */
+@media (hover: none) and (pointer: coarse) and (min-width: 1100px) {
+  :root {
+    --safe-area-inset-top: 32px;
+    --safe-area-inset-right: 48px;
+    --safe-area-inset-bottom: 32px;
+    --safe-area-inset-left: 48px;
+  }
+  :focus-visible {
+    outline: 3px solid var(--brand, #4a7dff) !important;
+    outline-offset: 3px !important;
+  }
+}

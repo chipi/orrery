@@ -29,17 +29,24 @@
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
 
-  let lastId = $state<string | null>(null);
+  // Re-load the gallery whenever the selected module changes. Depends only on
+  // `mod.id` (read synchronously at the top) — no `$state` guard variable, which
+  // is what broke the close→re-open flow on mobile: the read+write `lastId`
+  // signal left the effect not re-running for the 2nd module. An effect cleanup
+  // cancels a stale in-flight fetch so a fast switch can't clobber the new one.
   $effect(() => {
-    if (mod && mod.id !== lastId) {
-      tab = 'overview';
-      lastId = mod.id;
-      lightboxSrc = null;
-      gallery = [];
-      void galleryFetcher(mod.id).then((urls) => {
-        if (mod && mod.id === lastId) gallery = urls;
-      });
-    }
+    const id = mod?.id ?? null;
+    tab = 'overview';
+    lightboxSrc = null;
+    gallery = [];
+    if (!id) return;
+    let active = true;
+    void galleryFetcher(id).then((urls) => {
+      if (active) gallery = urls;
+    });
+    return () => {
+      active = false;
+    };
   });
 
   let diagramPath = $derived(mod ? spacecraftDiagramPath(mod.id) : null);

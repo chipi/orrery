@@ -56,14 +56,17 @@
       previousActiveElement = (
         typeof document !== 'undefined' ? document.activeElement : null
       ) as HTMLElement | null;
-      queueMicrotask(() => panelEl?.focus());
+      queueMicrotask(() => panelEl?.focus({ preventScroll: true }));
     }
 
     return () => {
       window.removeEventListener('keydown', handler);
       // Restore focus to whatever was active before the panel opened
       // (typically the canvas or the planet that triggered the open).
-      previousActiveElement?.focus?.();
+      // preventScroll: `.focus()` otherwise scrolls the element into view — in
+      // iOS WKWebView that happens even for already-visible elements, so closing
+      // a panel slid the whole app down by ~the safe-area/scroll delta.
+      previousActiveElement?.focus?.({ preventScroll: true });
       previousActiveElement = null;
     };
   });

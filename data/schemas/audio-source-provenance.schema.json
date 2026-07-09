@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "audio-source-provenance.schema.json",
+  "title": "External audio-source provenance manifest (#385)",
+  "description": "Per-clip attribution + license for THIRD-PARTY recordings under static/audio/atmosphere/ (the 'atmosphere's voice' tiles on the surface Tactical Scan). Parallel to image-provenance.schema.json (ADR-047). Distinct from audio-provenance.schema.json, which covers FIRST-PARTY TTS narration. Consumed by validate-data + /credits.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "script_version": { "type": "string" },
+    "commit_sha": { "type": ["string", "null"] },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "path",
+        "body",
+        "source_type",
+        "title",
+        "agency",
+        "source_url",
+        "license_short",
+        "license_rationale",
+        "modifications",
+        "sha256",
+        "fetched_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 3 },
+        "path": {
+          "type": "string",
+          "pattern": "^/audio/.+\\.mp3$",
+          "description": "SvelteKit-served path (relative to /, not repo root)."
+        },
+        "body": { "type": "string", "enum": ["moon", "mars", "earth"] },
+        "source_type": {
+          "type": "string",
+          "enum": ["wikimedia-commons", "nasa-images-api", "direct-agency", "direct-other"]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "author": { "type": ["string", "null"] },
+        "agency": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Operating agency or publisher (NASA, ESA, ...) or the Commons contributor's origin."
+        },
+        "instrument": {
+          "type": ["string", "null"],
+          "description": "Capturing instrument, e.g. 'Perseverance SuperCam microphone'."
+        },
+        "date_recorded": { "type": ["string", "null"] },
+        "source_url": { "type": "string", "format": "uri" },
+        "download_url": { "type": ["string", "null"], "format": "uri" },
+        "license_short": { "type": "string", "minLength": 2 },
+        "license_url": { "type": ["string", "null"], "format": "uri" },
+        "license_rationale": { "type": "string", "minLength": 1 },
+        "modifications": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "duration_sec": { "type": "number", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "fetched_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

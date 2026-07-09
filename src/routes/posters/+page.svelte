@@ -7,6 +7,7 @@
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
+  import { roving } from '$lib/a11y/roving';
 
   type Poster = { id: string; title: string; sub: string };
 
@@ -60,7 +61,9 @@
     </p>
   </header>
 
-  <div class="grid">
+  <!-- Spatial roving (RFC-031 S1): one Tab stop; arrows / TV D-pad move between
+       posters by 2D geometry instead of 27 separate Tab stops. -->
+  <div class="grid" use:roving={{ mode: 'spatial' }}>
     {#each posters as p (p.id)}
       <figure class="poster">
         <a

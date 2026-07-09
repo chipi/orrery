@@ -396,6 +396,13 @@
       <header class="head-row">
         <h2>{m.credits_audio_heading()}</h2>
       </header>
+      <!-- Block-level license summary per ADR-047 §B (honesty surface): the
+           recordings carry mixed licenses, so summarise the distinct set —
+           each row below still links its own license. -->
+      <p class="src-license">
+        <span class="lbl">{m.credits_license_summary_label()}:</span>
+        {[...new Set(audioProv.entries.map((e) => e.license_short))].join(' · ')}
+      </p>
       <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
         {#each audioProv.entries as a (a.id)}

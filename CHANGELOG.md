@@ -10,6 +10,22 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.7.3] — 2026-07-09
+
+### Added
+
+- **Tactical Scan + Science Lens on the surface routes** (`/moon`, `/mars`, `/earth`) — brings the `/explore` Tactical Scan readout and the sub-solar point / terminator + light-time HUD down to planet level. Tactical Scan is pinned to the right edge above the altitude chip. (#382)
+- **Atmosphere voice** — tap-to-play real ambient audio (Mars wind, Earth wind) driving a Siri-style filled waveform, alongside a seasonal sun-march diagram and SPIN / GRAV / AIR instrument tiles. Audio provenance is surfaced in `/credits`. (#385)
+- **"Sun is life" climate & seasons layer** — per-body climate bands (tropical / temperate / polar), an insolation / Goldilocks readout (solar flux vs Earth + atmosphere retention), and seasonal polar-cap breathing on Mars. (#386)
+- **Science-Lens legend** — a contextual visual key showing the on-globe swatches / glyphs for whatever layers are on, plus a full Science-Lens i18n sweep across all 14 locales. (#386)
+- **Mobile science-lens HUD** — the surface HUD (Tactical Scan, climate readout, legend) folds into the mobile bottom drawer via a SCAN tab. (#386)
+
+### Fixed
+
+- **Surface globe fit on portrait / mobile** — the planet globe is pulled back to fit the frame on narrow viewports; `/iss` + `/tiangong` stations get the same portrait framing so the solar arrays aren't clipped on load. (#386)
+- **Station module gallery on mobile close→re-open** — opening a module, closing it, then opening a different one no longer leaves a blank or wrong hero image (a gallery fetch-race the effect now cancels on switch).
+- **Mobile polish (Pixel 8 pass)** — the nav drawer sits above the surface HUD chips; native `<select>` options are readable in the OS picker (was white-on-white); the `/plan` "touch & hold" hint moved off the mission-type buttons; License / README fold under an "About" sub-heading in the mobile drawer; the "About" label is first-capped; the surface altitude chip clears the bottom tab row.
+
 ## [0.7.2] — 2026-07-05
 
 ### Added

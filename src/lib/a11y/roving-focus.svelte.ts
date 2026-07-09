@@ -87,12 +87,23 @@ export function nearestInDirection(
     if (it.id === currentId || !it.pos) continue;
     const dx = it.pos.x - cur.pos.x;
     const dy = it.pos.y - cur.pos.y;
-    // Primary-axis progress must be positive in the chosen direction.
-    let along: number, cross: number;
-    if (dir === 'right') (along = dx), (cross = dy);
-    else if (dir === 'left') (along = -dx), (cross = dy);
-    else if (dir === 'down') (along = dy), (cross = dx);
-    else (along = -dy), (cross = dx); // up
+    // Primary-axis progress (`along`) must be positive in the chosen
+    // direction; `cross` is the perpendicular drift.
+    let along: number;
+    let cross: number;
+    if (dir === 'right') {
+      along = dx;
+      cross = dy;
+    } else if (dir === 'left') {
+      along = -dx;
+      cross = dy;
+    } else if (dir === 'down') {
+      along = dy;
+      cross = dx;
+    } else {
+      along = -dy; // up
+      cross = dx;
+    }
     if (along <= 0) continue;
     const score = along + Math.abs(cross) * CROSS_PENALTY;
     if (!best || score < best.score) best = { id: it.id, score };

@@ -16,7 +16,15 @@
     </style>
 
 
+    <!-- Android 12+ splash. The OS ignores a full-bleed @drawable/splash and
+         uses its own API (centred icon on a solid colour); without these attrs
+         it fell back to the system default light-grey background, so the dark
+         icon sat on white. Set the brand-dark background + the launcher
+         foreground as the splash icon so it matches the app + the iOS launch
+         screen. postSplashScreenTheme hands off to the real app theme. -->
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
-        <item name="android:background">@drawable/splash</item>
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
     </style>
 </resources>

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Google TV / Android TV: declare TV support without excluding phones.
+         `leanback` not required so the same APK still installs on handsets;
+         `touchscreen` not required so it installs on TVs (which have none). The
+         LEANBACK_LAUNCHER intent-filter + banner (below) make it show on the TV
+         home screen. RFC-030: the TV build streams assets like mobile. -->
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:banner="@drawable/tv_banner"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -17,6 +27,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Show on the Android-TV / Google-TV home screen too. -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
             <!-- Deep links: orrery://fly?mission=curiosity (S6 / #221) -->
             <intent-filter android:autoVerify="false">

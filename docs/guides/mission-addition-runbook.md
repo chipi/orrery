@@ -50,6 +50,11 @@ npx tsx scripts/cislunar/generate-helio-hybrid-waypoints.ts static/data/missions
 
 **Flight-internal consistency (validate-data fails-closed).** The flight block must be self-consistent — most notably **`cruise.tcm_count` must equal the number of `events[]` with `type: "tcm"`** (caught in the Hera dogfood: `✗ tcm_count=2 but events.tcm.length=0`). Add the matching `tcm` events, or set the count to match. Event `met_days` must be ordered + within the transit; `events[].type` must be in the schema enum. Re-run the waypoint generator after editing events (it re-pins event anchors). The generator does a **parametric Lambert transfer** — a mission with a real gravity assist (Hera's 2025 Mars flyby) is approximated, hence `flight_data_quality: sparse` + `source_tier: tier_1_5_hybrid`.
 
+**Optional `/fly` polish (not gated — silent if skipped, surfaced by the Hera dogfood):**
+
+- **Trajectory thumbnail** `static/images/missions/thumbnails/<id>.{png,webp}` — a 240×120 node-canvas render of the flight path, shown in the mission panel. Rendered by the thumbnail step in `scripts/fetch-assets.ts` (NOT part of `npm run build`), so it won't appear until that runs. Optional: 40/115 missions have none, and `MissionPanel` hides the figure on a 404 (no broken image) — but a mission with flight data looks better with one.
+- **`/fly` camera** `static/data/fly-camera-audit.json` — a per-mission camera-framing entry. Absent → `/fly` uses a sensible default (not broken, just untuned). Add one only if the default framing is poor.
+
 ### 7 · Images — missions carry ZERO hero gaps
 
 `validate-hero-coverage` fails-closed if `static/images/missions/<id>/01.webp` is absent (`MISSIONS_KNOWN_GAPS` is intentionally empty since #342). Source the hero + gallery through the **[image pipeline runbook](../../scripts/IMAGE-PIPELINE.md#adding-a-new-gallery-image)**: source (agency-first) → `masters/` (git-LFS) → WebP ladder + 1x1 → provenance → gallery counts. For a **future mission** with no photos (Artemis 4), the hero is agency **concept art** — same pipeline, and **image changes need per-image approval** (see AGENTS.md).

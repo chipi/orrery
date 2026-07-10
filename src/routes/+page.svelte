@@ -145,7 +145,7 @@
 
   <hr class="divider" />
 
-  <section aria-labelledby="cards-heading">
+  <section class="route-cards" aria-labelledby="cards-heading">
     <h2 id="cards-heading">{m.landing_section_cards_heading()}</h2>
 
     <!-- Shared gradient + filter defs for the per-card icons.
@@ -996,6 +996,67 @@
     }
     .card-grid {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* ─── TV / 10-foot landscape (RFC-031 S6) — two-panel, fit one viewport ───
+     A TV is wide-but-short + D-pad driven; the desktop column (max-width 880px)
+     forces a long vertical scroll to reach the route grid. Here the hero + CTAs
+     sit left and the route grid sits right, both centred in a single 100svh
+     screen — prose + about flow full-width below (optional scroll). Detector
+     mirrors the overscan layer in app.css (coarse pointer + no hover + large +
+     low-DPR), so it hits TV but excludes desktop and high-DPR tablets. */
+  @media (hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx) {
+    .landing {
+      max-width: none;
+      width: 100%;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100svh;
+      align-items: center;
+      column-gap: 5vw;
+      padding: 0 var(--safe-area-inset-right, 48px) 0 var(--safe-area-inset-left, 48px);
+    }
+    /* Above the fold: hero left, route grid right. */
+    .hero {
+      grid-column: 1;
+      grid-row: 1;
+      padding-bottom: 0;
+    }
+    .route-cards {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    /* Hero present but not dominant. */
+    .hero-illustration {
+      width: min(400px, 26vw);
+      margin-bottom: 20px;
+    }
+    .wordmark {
+      font-size: 64px;
+    }
+    .subhead {
+      margin-bottom: 20px;
+    }
+    .cta-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    /* Route grid = the actual navigation, kept compact + all in view. */
+    .route-cards > h2 {
+      margin-top: 0;
+    }
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    /* Everything else drops full-width below the fold. */
+    .divider,
+    .prose,
+    .footer-block {
+      grid-column: 1 / -1;
     }
   }
 

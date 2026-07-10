@@ -148,4 +148,25 @@ html {
     outline: 3px solid var(--brand, #4a7dff) !important;
     outline-offset: 3px !important;
   }
+  /* Let each route's wide page container use the 10-foot width instead of a
+     centred desktop column — trims the side gutters. Global (not scoped) so it
+     reaches each route's own root class; `!important` clears the scoped
+     max-width only inside this TV query. Grids/galleries go wide; the resource
+     lists widen modestly to keep a comfortable row measure. (/, /science and
+     the canvas routes are handled in-component.) */
+  .credits,
+  .colophon,
+  .library,
+  .ep-index,
+  .fleet,
+  .gallery {
+    max-width: min(1760px, 100vw) !important;
+    padding-left: var(--safe-area-inset-left, 48px) !important;
+    padding-right: var(--safe-area-inset-right, 48px) !important;
+  }
+  .resources {
+    max-width: min(1120px, 100vw) !important;
+    padding-left: var(--safe-area-inset-left, 48px) !important;
+    padding-right: var(--safe-area-inset-right, 48px) !important;
+  }
 }

@@ -206,6 +206,16 @@
     margin: 0 auto;
     padding: 32px 16px 48px;
   }
+  /* TV / 10-foot (RFC-031 S6): trim the centred gutters on a wide screen. The
+     article column is capped by its own grid track (#226), so the extra width
+     goes to the rails + margins — prose stays readable. */
+  @media (hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx) {
+    .page {
+      max-width: min(1760px, 100vw);
+      padding-left: var(--safe-area-inset-left, 48px);
+      padding-right: var(--safe-area-inset-right, 48px);
+    }
+  }
   /* #342 Phase 30 — /science is authored mobile-first: defaults below
      hold for the smallest viewport, then each @min-width block layers
      desktop enhancements on top. Reading order tracks viewport order

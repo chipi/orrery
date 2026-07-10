@@ -10,6 +10,14 @@ vi.mock('@capacitor/core', () => ({
   },
 }));
 
+// Mock @capacitor/app — the native path dynamically imports it for the
+// appStateChange listener. Without this the real plugin would call
+// registerPlugin() on the mocked core (which omits it) and reject the
+// fire-and-forget import as an unhandled rejection under CI timing.
+vi.mock('@capacitor/app', () => ({
+  App: { addListener: vi.fn().mockResolvedValue({ remove: vi.fn() }) },
+}));
+
 describe('initWebglRecovery', () => {
   beforeEach(() => {
     vi.clearAllMocks();

@@ -37,19 +37,23 @@ export function initDeepLinks(): () => void {
   let removeListener: (() => void) | undefined;
   let disposed = false;
 
-  void import('@capacitor/app').then(({ App }) => {
-    if (disposed) return;
-    void App.addListener('appUrlOpen', ({ url }) => {
-      // Only handle the custom scheme. When Universal/App Links (https://…)
-      // land, appUrlOpen fires for them too — without this gate deepLinkTarget
-      // would map the full https host into an internal path and 404.
-      if (!url.startsWith('orrery://')) return;
-      const target = deepLinkTarget(url);
-      if (target) void goto(`${base}${target}`);
-    }).then((handle) => {
-      removeListener = () => void handle.remove();
-    });
-  });
+  void import('@capacitor/app')
+    .then(({ App }) => {
+      if (disposed) return;
+      void App.addListener('appUrlOpen', ({ url }) => {
+        // Only handle the custom scheme. When Universal/App Links (https://…)
+        // land, appUrlOpen fires for them too — without this gate deepLinkTarget
+        // would map the full https host into an internal path and 404.
+        if (!url.startsWith('orrery://')) return;
+        const target = deepLinkTarget(url);
+        if (target) void goto(`${base}${target}`);
+      }).then((handle) => {
+        removeListener = () => void handle.remove();
+      });
+    })
+    // Optional native plugin — a load failure (web build, missing bridge)
+    // must degrade silently, never surface as an unhandled rejection.
+    .catch(() => {});
 
   return () => {
     disposed = true;

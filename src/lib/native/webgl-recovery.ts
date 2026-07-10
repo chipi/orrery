@@ -40,14 +40,18 @@ export function initWebglRecovery(): () => void {
   document.addEventListener('webglcontextrestored', reload, true);
 
   let removeAppListener: (() => void) | undefined;
-  void import('@capacitor/app').then(({ App }) => {
-    if (disposed) return;
-    void App.addListener('appStateChange', ({ isActive }) => {
-      if (isActive && anyContextLost()) reload();
-    }).then((handle) => {
-      removeAppListener = () => void handle.remove();
-    });
-  });
+  void import('@capacitor/app')
+    .then(({ App }) => {
+      if (disposed) return;
+      void App.addListener('appStateChange', ({ isActive }) => {
+        if (isActive && anyContextLost()) reload();
+      }).then((handle) => {
+        removeAppListener = () => void handle.remove();
+      });
+    })
+    // Optional native plugin — a load failure (web build, missing bridge)
+    // must degrade silently, never surface as an unhandled rejection.
+    .catch(() => {});
 
   return () => {
     disposed = true;

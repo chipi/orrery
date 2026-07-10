@@ -106,6 +106,32 @@ disk paths + the validate-data lockstep is in
 
 ---
 
+## Display ladder (WebP) — RFC-030 / ADR-080
+
+Served display images are WebP, derived from the git-LFS `masters/` store — smudge first: `git lfs pull -I 'masters/**'`. Never hand-place a display `.jpg` under `static/images/`; a source `.jpg` goes to `masters/<rel>/`, the served tree gets `.webp`. Full detail: [`scripts/vision/README.md`](../../../scripts/vision/README.md).
+
+### `build-display-ladder.mjs` — WebP responsive ladder **(STANDING)**
+
+- **Command** `node scripts/vision/build-display-ladder.mjs [--force]`
+- **What** Walks `masters/**`, emits per image `static/images/<stem>.webp` (base ≤3072/q80) + `NN-<w>.webp` rungs (1280/2048/3072) + rewrites `static/data/image-ladder.json`. Excludes `hotspots/` + `posters/`.
+- **When** After adding/replacing a master, or a bulk re-encode.
+- **Gotchas** Refuses to run against unsmudged LFS stubs. Rewrites the WHOLE `image-ladder.json` from a full masters walk — all masters must be smudged, or do a targeted regen that merges into the existing manifest.
+- **State** STANDING.
+
+### `cap-display-images.mjs` — cap served originals **(STANDING)**
+
+- **Command** `node scripts/vision/cap-display-images.mjs`
+- **What** Caps served display images at 3840 px / q85 (idempotent). Run before the ladder builder.
+- **State** STANDING.
+
+### `rekey-provenance-webp.mjs` — `.jpg`→`.webp` provenance rekey **(STANDING)**
+
+- **Command** `node scripts/vision/rekey-provenance-webp.mjs`
+- **What** Mechanically rewrites `image-provenance.json` display-base paths `.jpg → .webp` (attribution unchanged; skips hotspots/posters/thumbnails). Run after the ladder builder, or after merging pre-WebP provenance rows from another branch.
+- **State** STANDING.
+
+---
+
 ## Review surface
 
 ### `/dev/staging` — RFC-029 promote/prune **(STANDING, dev route)**
@@ -178,9 +204,9 @@ disk paths + the validate-data lockstep is in
 ### `rebuild-gallery-manifests.ts` — count manifests **(STANDING)**
 
 - **Command** `npx tsx scripts/rebuild-gallery-manifests.ts [--check]`
-- **What** Walks each surface's image dir, counts non-variant base JPEGs, writes the `<id, count>` map (`mission-galleries.json`, `fleet-galleries.json`, `planet-/small-body-/satellite-/earth-object-galleries.json`). The source of "does this entity have a gallery tab".
+- **What** Walks each surface's image dir, counts **`NN.webp` base slots** (excludes `NN-<w>.webp` rungs + `.1x1` thumbnails), writes the `<id, count>` map (`mission-galleries.json`, `fleet-galleries.json`, `planet-/small-body-/satellite-/earth-object-galleries.json`). The source of "does this entity have a gallery tab".
 - **When** After any sourcing/prune/promote pass that changed disk slot counts.
-- **Gotchas** **Count drift = silent 404s** (manifest > disk) or hidden images (manifest < disk). `validate-gallery-counts` gates this in preflight. Sync the manifest in the same commit as any slot delete/rename.
+- **Gotchas** Counts `NN.webp`, **not** `NN.jpg` — it was still counting `.jpg` after the #383 WebP migration and wrote `0` for every gallery (fixed 2026-07-10); keep it matched to `validate-gallery-counts` (the webp-aware oracle). **Count drift = silent 404s** (manifest > disk) or hidden images (manifest < disk); `validate-gallery-counts` gates this in preflight. Sync the manifest in the same commit as any slot delete/rename.
 - **State** STANDING.
 
 ### `prune-image-slots.ts` — top-5 cap + renumber **(STANDING)**

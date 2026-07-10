@@ -117,9 +117,82 @@ Run the whole chain with `npm run fetch` (alias for the per-step sequence). Per-
 
 ---
 
+## Display images are WebP, derived from `masters/` (RFC-030 · ADR-080)
+
+**The single most important thing to know before adding or touching an image.** Since #383, served display images are **WebP-only**, generated from a git-LFS **`masters/` store** — never hand-placed as `.jpg` under `static/images/`.
+
+```
+masters/<rel>/NN.jpg   ← full-res ORIGINAL · git-LFS · source of truth (never mutated)
+   │
+   ├─ build-display-ladder.mjs ─→ static/images/<rel>/NN.webp          (base ≤3072/q80 · srcset top rung + <img src>)
+   │                              static/images/<rel>/NN-<width>.webp  (rungs · 1280 / 2048 / 3072)
+   │
+   └─ crop-variants (via vision) ─→ static/images/<rel>/NN.1x1.jpg     (thumbnail · the ONLY jpg derivative · ≤512 px)
+```
+
+- **Path mapping:** served `static/images/<rel>` ⇄ master `masters/<rel>` (drop `static/images/`, prepend `masters/`).
+- **Masters are git-LFS + `fetchexclude`d** (`.lfsconfig`) — a fresh clone / CI gets pointer stubs, not bytes. Smudge before running the ladder builder locally: `git lfs pull -I 'masters/**'`. `build-display-ladder.mjs` refuses to run against stubs.
+- **`hotspots/` and `posters/` are EXCLUDED** from the ladder — they stay full-res `.jpg` (zoom-critical / downloadable).
+- **No stray display `.jpg`.** `NN.jpg` under a gallery dir (outside posters/hotspots) fails the ladder-contract test — a source `.jpg` belongs in `masters/`; the served tree gets `.webp`.
+
+See `scripts/vision/README.md` (ladder + vision) and `scripts/hotspots/README.md` (surface deep-zoom) for the per-script detail.
+
+### Adding a new gallery image — the runbook
+
+Every step, in order. Skipping one fails `validate-data`.
+
+```bash
+# 0. Masters smudged (needed for the ladder + dedup gates).
+git lfs pull -I 'masters/**'
+
+# 1. SOURCE — agency-first (ADR-046). The fetched original is a MASTER: it lands in
+#    masters/<rel>/NN.jpg, NOT directly in static/images/. If you bring an image in
+#    by hand (e.g. merged from another branch), MOVE it to masters/ yourself first
+#    — see the rebase gotcha below.
+
+# 2. DERIVE every size from the master — TWO families, both regenerable losslessly
+#    from masters/ at any time (change quality / add a rung / re-crop → just re-run):
+#
+#    a) WebP display ladder — the served display (WebP-only):
+node scripts/vision/build-display-ladder.mjs    # masters/ → NN.webp base (≤3072/q80)
+#                                                  + NN-<w>.webp rungs (1280/2048/3072)
+#                                                  + rewrites image-ladder.json
+#    b) 1x1 JPG thumbnail — the ONLY jpg derivative (focal-point crop, ≤512 px):
+npx tsx scripts/score-images.ts --mission <id>  # vision focal point → crop-variants.ts
+#                                                  writes NN.1x1.jpg  (hotspots: use
+#                                                  scripts/hotspots/regenerate-tier3-variants.mjs)
+#
+#    NOTE: cap-display-images.mjs is a ONE-TIME bulk migration (it capped the OLD
+#    served .jpg at 3840px pre-WebP) — NOT part of the per-image flow. build-display-
+#    ladder caps at 3072 itself, straight from the master.
+
+# 3. PROVENANCE — TASL row per served image, keyed on the .webp path.
+npx tsx scripts/build-image-provenance.ts       # broad pass; OR merge + rekey for a few:
+node scripts/vision/rekey-provenance-webp.mjs    # .jpg → .webp path rekey (mechanical)
+
+# 4. GALLERY COUNTS — rebuilt from disk (counts NN.webp bases, NOT NN.jpg).
+npx tsx scripts/rebuild-gallery-manifests.ts
+
+# 5. VALIDATE — all image gates.
+npm run validate-data
+
+# 6. Browser-verify (hero, gallery, lightbox, credits, alt-text), then commit the
+#    masters/ addition + the static/images webp + every touched static/data JSON.
+```
+
+### Gotchas learned the hard way (the 2026-07 main→mobile rebase)
+
+- **Images that enter outside the pipeline need the full treatment.** When 0.7.3 added gallery `.jpg`s that a rebase pulled onto the WebP branch, they had **no masters, no WebP tiers, no provenance**. Fix = move each `.jpg` → `masters/`, re-run `build-display-ladder.mjs`, merge + rekey its provenance, rebuild counts. **Treat any hand-added image as a master candidate.**
+- **`rebuild-gallery-manifests.ts` counts `NN.webp`, not `NN.jpg`.** It was still counting `.jpg` post-#383 and wrote `0` for every gallery (fixed 2026-07-10). `validate-gallery-counts.ts` is the webp-aware oracle; the rebuilder now matches it.
+- **`build-display-ladder.mjs` rewrites the WHOLE `image-ladder.json`** from a full `masters/` walk — masters must be fully smudged, or you need a targeted regen that merges into the existing manifest.
+- **Provenance is keyed on the served `.webp` path.** A `.jpg`-keyed row (from an older branch) won't match the served file — rekey it (`rekey-provenance-webp.mjs`), attribution unchanged.
+- **A rebase resolves binary image conflicts to the image-overhaul branch (`--theirs`)** — but can silently drop mobile-only files (`.1x1` thumbnails, hotspot tiers) that survive only on that branch. After a big rebase, diff `git diff --diff-filter=D backup HEAD -- static/images` and restore.
+
+---
+
 ## Scripts — what runs when
 
-37 image-related scripts split by role. Run them in the order shown for a clean add.
+Image-related scripts split by role. The WebP-ladder + vision scripts live in `scripts/vision/` (see its README); the surface deep-zoom scripts in `scripts/hotspots/` (see its README). Run them in the order shown for a clean add.
 
 ### 1. Discovery + sourcing (writes sidecars + disk)
 
@@ -213,6 +286,8 @@ with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credit
 
 Anchor for "how to source a never-imaged mission". The 8 historic-gap missions (opportunity, spirit, mariner9, phoenix, magellan, akatsuki, osiris-rex, dart) all follow this shape.
 
+> **This example is sourcing-focused and pre-WebP.** For the current end-to-end flow — masters → cap → WebP ladder → rekey → counts — follow the **"Adding a new gallery image — the runbook"** section above; the sourcing steps here still apply as its step 1.
+
 ```bash
 # 1. Source from Wikimedia Commons (agency-first per ADR-046).
 #    Add an entry block to scripts/fetch-zero-image-entities.mjs or
@@ -264,7 +339,7 @@ Per ADR-047, every disk image must have a TASL row in `image-provenance.json`:
 ```jsonc
 {
   "id": "opportunity/01",
-  "path": "/images/missions/opportunity/01.jpg",
+  "path": "/images/missions/opportunity/01.webp",
   "source_type": "wikimedia-commons",
   "title": "NASA Mars Exploration Rover Opportunity panorama at Endurance Crater",
   "author": "NASA / JPL-Caltech / Cornell University",

@@ -24,6 +24,7 @@
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
+  import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
   import { afterNavigate } from '$app/navigation';
@@ -95,6 +96,9 @@
   $effect(() => {
     if (!browser) return;
     syncDocumentLocaleAttributes(activeLocale);
+    // Load the locale's image alt-text overlay so panels opened afterwards
+    // render localized alt-text (falls back to en-US; #257).
+    void loadLocaleAltText(activeLocale, base);
   });
 
   // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.

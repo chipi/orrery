@@ -51,6 +51,23 @@ export function registerLocaleAltText(locale: string, map: AltTextMap): void {
   LOADED_LOCALES.set(locale, map);
 }
 
+/**
+ * Load + register the alt-text overlay for a locale (client-side, idempotent,
+ * best-effort). Fetches the served `static/data/image-alt-text/<locale>.json`
+ * (partial — only real captions; filenames stay en-US). A missing file or en-US
+ * is a no-op — `getImageAlt` falls back to en-US. Called from the root layout on
+ * mount + locale change, so a panel opened afterwards renders localized alt-text.
+ */
+export async function loadLocaleAltText(locale: string, base = ''): Promise<void> {
+  if (locale === 'en-US' || LOADED_LOCALES.has(locale)) return;
+  try {
+    const res = await fetch(`${base}/data/image-alt-text/${locale}.json`);
+    if (res.ok) registerLocaleAltText(locale, (await res.json()) as AltTextMap);
+  } catch {
+    /* no locale file yet — en-US fallback stands */
+  }
+}
+
 /** Currently loaded locales — useful for debug + tests. */
 export function loadedLocales(): string[] {
   return [...LOADED_LOCALES.keys()];

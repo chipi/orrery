@@ -7,11 +7,12 @@
  * a translation via the Anthropic Sonnet API and writes the locale
  * overlay.
  *
- * Three surfaces are covered with bespoke tool schemas so the LLM
- * preserves shape exactly:
+ * Surfaces are covered with bespoke tool schemas so the LLM preserves shape:
  *   - earth-objects (name, short, description, scale_fact)
  *   - planets       (name, type, fact, bio)
  *   - science/**    (title, intro_sentence, narrative_101, body_paragraphs, diagram_caption, plus optional `formula_caption`, `references`, `see_also`)
+ *   - missions/**   (name, type, first, description, optional events[])
+ *   - fleet/**      (name, tagline, description, best_known_for)
  *
  * Re-runs are safe — existing non-empty overlay files are skipped.
  *
@@ -136,6 +137,67 @@ const TOOLS = {
             formula_caption: { type: 'string' },
           },
           required: ['title', 'intro_sentence'],
+        },
+      },
+    },
+  },
+  missions: {
+    system:
+      SYSTEM_BASE +
+      `
+- "type" — a short status/kind label (e.g. "CREWED LANDER · PLANNED"): translate the words, keep the · separators and any ALL-CAPS status convention.
+- "first" — a one-line summary; translate.
+- "events" (optional array) — translate each event's "label" + "note"; pass "met" (number) + "type" (enum) through verbatim; preserve count + order.`,
+    schema: {
+      name: {
+        name: 'submit_translation',
+        description: 'Submit translated mission overlay.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            type: { type: 'string' },
+            first: { type: 'string' },
+            description: { type: 'string' },
+            events: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  met: { type: 'number' },
+                  label: { type: 'string' },
+                  note: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['met', 'label', 'note', 'type'],
+              },
+            },
+          },
+          required: ['name', 'type', 'first', 'description'],
+        },
+      },
+    },
+  },
+  fleet: {
+    system:
+      SYSTEM_BASE +
+      `
+- "name" — vehicle/spacecraft proper name; keep verbatim unless commonly localised.
+- "tagline" + "best_known_for" — short descriptors; translate.
+- "description" — translate.`,
+    schema: {
+      name: {
+        name: 'submit_translation',
+        description: 'Submit translated fleet overlay.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            tagline: { type: 'string' },
+            description: { type: 'string' },
+            best_known_for: { type: 'string' },
+          },
+          required: ['description'],
         },
       },
     },

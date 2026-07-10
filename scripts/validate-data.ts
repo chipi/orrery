@@ -36,6 +36,53 @@ import {
 } from './validate-data-helpers.js';
 
 const DATA_ROOT = 'static/data';
+
+// i18n is core content (2026-07): every en-US overlay under i18n-src/ must have
+// a non-empty sibling in all 13 other locales. Returns one problem string per
+// missing/empty locale file. Parity with the hero-image zero-gap policy.
+const I18N_LOCALES_13 = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
+function overlayFileLocaleGaps(rel: string): string[] {
+  const gaps: string[] = [];
+  for (const loc of I18N_LOCALES_13) {
+    const dst = join('i18n-src', loc, rel);
+    const raw = existsSync(dst) ? readFileSync(dst, 'utf-8').trim() : '';
+    if (raw.length <= 2) {
+      gaps.push(
+        `i18n overlay ${rel} missing/empty for locale ${loc} — localization is core content; run scripts/translate-i18n-gaps.mjs`,
+      );
+    }
+  }
+  return gaps;
+}
+function allLocaleOverlayGaps(): string[] {
+  const gaps: string[] = [];
+  const enRoot = join('i18n-src', 'en-US');
+  const walk = (relDir: string): void => {
+    const abs = relDir ? join(enRoot, relDir) : enRoot;
+    if (!existsSync(abs)) return;
+    for (const entry of readdirSync(abs, { withFileTypes: true })) {
+      const rel = relDir ? `${relDir}/${entry.name}` : entry.name;
+      if (entry.isDirectory()) walk(rel);
+      else if (entry.name.endsWith('.json')) gaps.push(...overlayFileLocaleGaps(rel));
+    }
+  };
+  walk('');
+  return gaps;
+}
 // i18n overlay SOURCE lives outside the served tree (ADR-079 D2 / #377).
 const I18N_SRC = 'i18n-src';
 // strictRequired:false allows the surface-site schema's if/then conditional
@@ -1645,8 +1692,13 @@ let overlayFailed = 0;
     problems.push(`fleet-galleries cross-check error: ${(err as Error).message}`);
   }
 
+  // (g) All-locale overlay completeness — i18n is CORE content, not a quality
+  // step (parity with the hero-image zero-gap policy, 2026-07). Every en-US
+  // overlay under i18n-src/ must have a non-empty sibling in all 13 locales.
+  problems.push(...allLocaleOverlayGaps());
+
   if (problems.length === 0) {
-    console.log('  ✓ every registry ID has its required en-US overlay');
+    console.log('  ✓ every registry ID has its overlay in all 14 locales');
   } else {
     for (const p of problems) console.log(`  ✗ ${p}`);
     overlayFailed = problems.length;

@@ -292,6 +292,23 @@
         ⌕ {m.nav_search()}
       </button>
     {/if}
+    <!-- Locale + high-contrast live in the drawer on phones (they don't fit
+         the 375px top bar beside the 44px touch targets). The lens toggle
+         stays in the bar as a primary feature. -->
+    <div class="drawer-controls">
+      <LocalePicker />
+      <button
+        type="button"
+        class="contrast-toggle"
+        class:active={hiContrast}
+        aria-label={m.nav_high_contrast_aria()}
+        aria-pressed={hiContrast}
+        title={m.nav_high_contrast_aria()}
+        onclick={onToggleHiContrast}
+      >
+        Aa
+      </button>
+    </div>
     <!-- Footer links live here on touch — the floating .site-footer is hidden
          on touch (see +layout.svelte), so its bill-of-materials links move into
          the nav drawer as a bottom section. Desktop keeps the bottom-right
@@ -750,6 +767,58 @@
     border-left: 3px solid transparent;
     transition: all 0.12s;
   }
+  /* Locale + high-contrast, moved out of the top bar on phones — the same
+     buttons, just relocated. Only the row that positions them. */
+  .drawer-controls {
+    /* Hidden by default — only narrow phones (≤500px) move the locale +
+       contrast controls in here; wider touch screens keep them in the bar. */
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--color-border);
+    margin-top: 4px;
+  }
+  /* The locale chip (its own component) uses a different font + left-aligns
+     its label; align it to the contrast toggle beside it so the two read as
+     one matched pair. Scoped to the drawer — the desktop bar chip is
+     unchanged. */
+  .drawer-controls :global(.chip) {
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  /* The picker's dropdown opens downward by default; from this bottom-of-drawer
+     position that gets clipped by the drawer's own scroll (overflow-y:auto).
+     Open it upward instead, and cap its height with its own scroll so every
+     locale stays reachable within the drawer. */
+  /* In the drawer the dropdown opens upward as a narrow vertical slice the
+     width of the chip (short tags only — no room for native names), scrolls
+     rather than clipping, and sits above the drawer backdrop (z-index 88) so
+     the options are actually tappable, not just visible. */
+  .drawer-controls :global(.locale-picker .menu) {
+    top: auto;
+    bottom: calc(100% + 6px);
+    left: 0;
+    right: auto;
+    min-width: 0;
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+    z-index: 90;
+  }
+  .drawer-controls :global(.locale-picker .option) {
+    justify-content: center;
+    gap: 0;
+    padding: 8px 4px;
+  }
+  .drawer-controls :global(.locale-picker .option .native) {
+    display: none;
+  }
   .drawer-link:hover,
   .drawer-link:focus-visible {
     background: rgba(255, 255, 255, 0.04);
@@ -855,27 +924,24 @@
          hiding the nav under the iOS status bar). */
       padding: var(--safe-area-inset-top, env(safe-area-inset-top)) 6px 0;
     }
-    /* The right cluster (menu / audio / locale / lens / contrast / share)
-       overflowed the 375 px viewport once RFC-031 added the 6th button
-       (high-contrast Aa) — landing.spec.ts + fleet.spec.ts flag the
-       horizontal scroll. Fit all controls (none can be dropped: the Aa
-       toggle is validated on mobile by pwa.spec, and the hamburger drawer
-       doesn't surface lens/contrast) by trimming the gap and the icon
-       min-width. 40 px stays a comfortable target and WCAG 2.1 AA sets no
-       target-size floor (2.5.5 is AAA); graphics-settings ⚙ stays
-       desktop-only since auto-detection handles the mobile tier. */
+    /* Once RFC-031 added the 6th button (high-contrast Aa), six 44 px touch
+       targets + the locale chip overflowed the 375 px bar. Keep every target
+       at 44 px by moving the locale picker + high-contrast into the hamburger
+       drawer on phones (see .drawer-controls); the lens toggle stays in the
+       bar as a primary feature, and graphics-settings ⚙ stays desktop-only. */
     .right {
-      gap: 1px;
+      gap: 2px;
     }
-    .menu-toggle,
-    .audio-toggle,
-    .lens-toggle,
-    .contrast-toggle,
-    .share-toggle {
-      min-width: 40px;
-    }
+    .right :global(.locale-picker),
+    .right .contrast-toggle,
     .settings-toggle {
       display: none;
+    }
+    /* ...and surface them in the drawer instead. On wider touch screens
+       (landscape) the bar has room, so the cluster stays inline there and the
+       drawer row is hidden (base rule) — no duplication. */
+    .drawer-controls {
+      display: flex;
     }
   }
 </style>

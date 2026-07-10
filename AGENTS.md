@@ -611,6 +611,28 @@ it('Earth at 1 AU ≈ 29.78 km/s', () =>
 
 ---
 
+### Iterating on UI / layout / visual changes — browser first, Docker is the LAST gate
+
+**Rule: for anything you can *see* (nav layout, button size, spacing, a panel, how a route looks), iterate in a browser with a screenshot — NOT the e2e suite, and NEVER a Docker rebuild per change.** The loop is:
+
+1. **Keep a dev server running** — `npm run dev` (hot-reload, no build). Edits appear instantly; do not rebuild.
+2. **Screenshot at the viewport that matters and look at it yourself.** A ~20-line `chromium.launch()` script is enough — set `viewport: { width: 375, … }` (375 = the iPhone-SE / mobile-chromium reference), `page.goto`, open the thing you changed, `.screenshot()`, then *read the image*. `?debug=1` + a real browser works too.
+3. Judge → adjust → repeat. Each turn is **seconds**.
+4. Only once it *looks* right do you run the e2e specs it touches; and only at the very end the Docker gate (or just let CI run it).
+
+**Docker (`docker compose up web` + `PLAYWRIGHT_BASE_URL=http://localhost:8080`) is the FINAL validation gate, not an iteration tool.** It exists to catch the amd64/nginx-specific things a browser can't — and note **`npm run build` must run with Docker DOWN** (the `web` service bind-mounts `build/` read-only → adapter-static's `rmSync` fails `ENOTEMPTY`). You do NOT need it to answer "does this button look right".
+
+**The pitfall — if you catch yourself doing ANY of these, STOP and go back to step 1:**
+- running `docker down → npm run build → docker up` to check a *visual* tweak;
+- each turn taking 5–10 minutes for a one-line CSS change;
+- screenshotting off the Docker container instead of a dev server.
+
+That is the bad loop. It cost **~6 hours on 2026-07-10** (the mobile-nav overflow → drawer-move work): every one-line CSS tweak went through a full Docker rebuild when a dev-server screenshot would have answered it in seconds. The trigger was tunnel-vision — the *original* failure was `docker-e2e`, so Docker got carried into visual iteration where it never belonged. **Re-evaluate your tool the moment the task shifts from "reproduce the CI failure" to "does this look right".** Match the verification cost to the change: a one-line CSS edit does not deserve a 10-minute container cycle.
+
+Only genuinely amd64-specific work (visual snapshot **baselines**) actually needs the Linux/Docker environment — and even those regenerate via the `Regenerate visual snapshots` GH workflow (amd64 runner), never a local loop. Everything else you can see: browser.
+
+---
+
 ## Design system — do not change without UXS update
 
 ```

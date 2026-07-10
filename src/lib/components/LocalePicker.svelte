@@ -133,6 +133,10 @@
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
     z-index: 30;
     min-width: 160px;
+    /* Cap + scroll so all 14 locales stay reachable on short viewports
+       (e.g. a landscape phone at ~293px tall) instead of running off-screen. */
+    max-height: 70vh;
+    overflow-y: auto;
   }
   .option {
     width: 100%;

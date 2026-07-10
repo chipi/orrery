@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { localeChip } from './_helpers/nav';
+import { localeChip, openLocaleMenu } from './_helpers/nav';
 
 /**
  * Interactive "swap the language from every page" guard. locale-picker.spec
@@ -26,7 +26,7 @@ const ROUTES = [
 ];
 
 async function pick(page: import('@playwright/test').Page, native: RegExp) {
-  await localeChip(page).first().click();
+  await openLocaleMenu(page);
   const menu = page.locator('[data-locale-picker] ul.menu');
   await expect(menu).toBeVisible();
   await menu.locator('button.option', { hasText: native }).click();

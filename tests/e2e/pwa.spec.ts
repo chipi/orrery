@@ -35,8 +35,11 @@ test.describe('PWA — manifest + service worker (v0.1.12)', () => {
 });
 
 test.describe('High-contrast toggle (v0.1.12 / Theme C.C2)', () => {
-  test('toggle button toggles data-high-contrast on <html>', async ({ page }) => {
+  test('toggle button toggles data-high-contrast on <html>', async ({ page, isMobile }) => {
     await page.goto('/');
+    // On phones the high-contrast control lives in the hamburger drawer (the
+    // top bar keeps its 44px touch targets within 375px); open it first.
+    if (isMobile) await page.locator('button.menu-toggle').click();
     const toggle = page.getByRole('button', { name: /high-contrast/i });
     await expect(toggle).toBeVisible();
     await expect(toggle).toHaveAttribute('aria-pressed', 'false');

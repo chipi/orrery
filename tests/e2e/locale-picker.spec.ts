@@ -18,7 +18,7 @@
  * desktop-chromium runner where the chip is fully visible.
  */
 import { expect, test } from '@playwright/test';
-import { localeChip } from './_helpers/nav';
+import { localeChip, openLocaleMenu } from './_helpers/nav';
 
 test.describe('locale picker — switching', () => {
   test('clicking a non-active locale navigates to the localized URL', async ({ page }) => {
@@ -29,7 +29,7 @@ test.describe('locale picker — switching', () => {
     await expect(localeChip(page).first()).toContainText('EN');
 
     // Open the picker.
-    await localeChip(page).first().click();
+    await openLocaleMenu(page);
     const menu = page.locator('[data-locale-picker] ul.menu');
     await expect(menu).toBeVisible();
 
@@ -46,7 +46,7 @@ test.describe('locale picker — switching', () => {
     await page.goto('/de/missions', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('DE');
 
-    await localeChip(page).first().click();
+    await openLocaleMenu(page);
     const menu = page.locator('[data-locale-picker] ul.menu');
     await expect(menu).toBeVisible();
 
@@ -63,7 +63,7 @@ test.describe('locale picker — switching', () => {
     await page.goto('/de/missions', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('DE');
 
-    await localeChip(page).first().click();
+    await openLocaleMenu(page);
     const menu = page.locator('[data-locale-picker] ul.menu');
     await expect(menu).toBeVisible();
 

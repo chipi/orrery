@@ -36,3 +36,25 @@ export async function clickNavLink(page: Page, hrefSubstring: string): Promise<v
 export function localeChip(page: Page): Locator {
   return page.locator('[data-locale-picker] button.chip');
 }
+
+/**
+ * Open the locale-picker menu, viewport-aware. On mobile (≤640 px) the picker
+ * was moved out of the top bar into the hamburger drawer (2026-07-10 — keeps
+ * the 44 px nav-bar touch targets within the 375 px SE viewport), so the
+ * drawer has to be opened first. On desktop the bar chip is clicked directly.
+ * Mirrors `clickNavLink`. The bar chip's textContent stays correct even when
+ * `display:none` on mobile, so `localeChip(...).toContainText(...)` assertions
+ * still pass without opening the drawer — only the click needs this helper.
+ */
+export async function openLocaleMenu(page: Page): Promise<void> {
+  const barChip = page.locator('[data-locale-picker] button.chip').first();
+  if (await barChip.isVisible().catch(() => false)) {
+    await barChip.click();
+    return;
+  }
+  // Mobile: the picker lives in the drawer.
+  await page.locator('button.menu-toggle').click();
+  const drawerChip = page.locator('.mobile-drawer [data-locale-picker] button.chip');
+  await drawerChip.waitFor({ state: 'visible', timeout: 3_000 });
+  await drawerChip.click();
+}

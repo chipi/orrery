@@ -35,6 +35,10 @@ This caveat lives here (not in AGENTS.md) because it's a Claude Code environment
 
 > **Preflight ≠ release readiness.** Preflight does NOT run e2e. Routine pushes can pass preflight and still break e2e on CI. **Before tagging or cutting a GitHub Release, you MUST run the full Playwright suite locally on BOTH `desktop-chromium` AND `mobile-chromium` projects** — see AGENTS.md §"Before tagging or releasing — full local e2e on BOTH projects". The v0.6.0 → v0.6.1 release cycle ended up in a four-round CI ping-pong because mobile e2e wasn't validated locally first.
 
+### Visual/layout changes: browser + screenshot, NOT Docker per tweak
+
+**Before reaching for e2e or Docker, ask: can I just *look* at this?** For anything visible — nav layout, button size, spacing, a panel, how a route renders — keep `npm run dev` running, edit, screenshot at the target viewport (a ~20-line `chromium.launch()` with `viewport:{width:375,…}` → `.screenshot()`), and read the image. Seconds per turn. Docker/e2e is the FINAL gate, never the iteration loop. If you find yourself doing `docker down → build → docker up` to check a CSS tweak, STOP — that's the ~6h-wasting loop from 2026-07-10. Full rule + the pitfall in **AGENTS.md §"Iterating on UI / layout / visual changes"**.
+
 ### Run e2e locally with `Bash run_in_background` + `Monitor`
 
 The Playwright suite takes 3–16 minutes depending on subset. Don't block a Bash tool call on it.

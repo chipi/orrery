@@ -518,6 +518,7 @@ Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you 
 Before the specific checklists below (flyby body, mission, science overlay, fleet row), every new card / entity / catalog entry **must** clear these five gates. They exist because we've shipped — repeatedly — entries that lived as bare stubs for months: empty galleries, English-only labels, no learn-link, no cross-reference to the parent body. The 2026-06-17 mission-image inventory surfaced 8 missions (opportunity, spirit, mariner9, phoenix, magellan, akatsuki, osiris-rex, dart) in exactly this state. Don't add the ninth.
 
 > **Adding a mission specifically:** follow the [mission-addition runbook](docs/guides/mission-addition-runbook.md) — the ordered touchpoint checklist (base record · index · en-US overlay · LEARN links · fleet-refs + symmetry · optional flight/waypoints · mandatory hero image · translations), with `npm run validate-data` as the interactive done-signal. Worked example: Artemis 4.
+> **Adding a fleet asset** (launcher / spacecraft / station / lander / …): follow the [fleet-addition runbook](docs/guides/fleet-addition-runbook.md). A mission that references a not-yet-existing fleet id must author it here first — **never stub it** (an agent can fan out one fleet sub-agent per missing asset). Worked example: SLS Block 1B.
 
 For every new card, in the same PR, you ship:
 

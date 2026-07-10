@@ -37,7 +37,7 @@ Base record required fields (`mission.schema.json`): `id, agency, agency_full, s
 
 ### 5 · Fleet refs — author new fleet entries FIRST
 
-`fleet_refs[]` must point at **existing** fleet entries; a new launcher/spacecraft (Artemis 4 really wants `sls-block-1b`, `gateway`, `i-hab`, `starship-hls` — none exist yet) needs its own `static/data/fleet/<category>/<id>.json` **before** you can reference it. Then run `migrate-fleet-linked-missions.ts` to populate the reverse pointers (symmetry is fail-closed). *In the Artemis 4 dogfood we reused `sls-block-1` + `orion` + `lc-39b`; the Block 1B / Gateway / I-HAB fleet entries are a follow-up.*
+`fleet_refs[]` must point at **existing** fleet entries; a new launcher/spacecraft (Artemis 4 really wants `sls-block-1b`, `gateway`, `i-hab`, `starship-hls` — none exist yet) must be authored via the [fleet-addition runbook](fleet-addition-runbook.md) **before** you can reference it (an agent can fan out one sub-agent per missing asset). Never stub them. Then run `migrate-fleet-linked-missions.ts` to populate the reverse pointers (symmetry is fail-closed). *In the Artemis 4 dogfood we reused `sls-block-1` + `orion` + `lc-39b`; the Block 1B / Gateway / I-HAB fleet entries are a follow-up.*
 
 ### 6 · Flight data is OPTIONAL — but nothing warns you `/fly` is empty
 

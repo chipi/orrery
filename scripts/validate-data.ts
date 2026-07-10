@@ -927,6 +927,38 @@ if (missionDriftFailed === 0) {
   console.log('  ✓ All flight-data tcm-counts consistent');
 }
 
+// ─── Mission trajectory-thumbnail coverage (#390) ─────────────────
+// "Trajectory thumbnail should not be optional." Every mission with a
+// flight block is now renderable by scripts/fetch-assets.ts (MOON →
+// cislunar; waypoints → Sun-centric path; planetary porkchop body →
+// transfer arc; SUN/COMET/ASTEROID → per-mission analytic distance), so
+// each must ship its thumbnail PNG. Fail-closed, parity with the hero
+// zero-gap + i18n gates. Fix: `npx tsx scripts/fetch-assets.ts --thumbnails-only`.
+let missionThumbFailed = 0;
+console.log('\nValidating mission trajectory-thumbnail coverage (#390)...');
+for (const dest of missionDataDirs) {
+  const dir = join(DATA_ROOT, 'missions', dest);
+  if (!existsSync(dir)) continue;
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as {
+      id: string;
+      flight?: unknown;
+    };
+    if (!m.flight) continue;
+    const png = join('static/images/missions/thumbnails', `${m.id}.png`);
+    if (!existsSync(png)) {
+      console.error(
+        `  ✗ ${dest}/${file}: has flight data but no trajectory thumbnail ` +
+          `(images/missions/thumbnails/${m.id}.png) — run fetch-assets --thumbnails-only`,
+      );
+      missionThumbFailed++;
+    }
+  }
+}
+if (missionThumbFailed === 0) {
+  console.log('  ✓ Every flight-block mission has a trajectory thumbnail');
+}
+
 // ──────────────────────────────────────────────────────────────────────
 // ADR-046 Milestone C — image provenance integrity
 //
@@ -1856,6 +1888,7 @@ if (
   failed +
     docFailed +
     missionDriftFailed +
+    missionThumbFailed +
     provenanceFailed +
     credBomFailed +
     linkProvenanceFailed +

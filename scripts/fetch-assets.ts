@@ -60,7 +60,7 @@ import type { Destination } from '../src/types/mission.ts';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
 import { earthPos, outboundArc } from '../src/lib/orbital/mission-arc.ts';
-import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.ts';
+import { DESTINATIONS, R_EARTH_AU } from '../src/lib/lambert-grid.constants.ts';
 import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.ts';
 import { dateToSimDay } from '../src/lib/sim-day.ts';
 import {
@@ -658,6 +658,15 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     id: 'artemis3',
     query: 'artemis iii lunar spacesuit axiom',
     commonsCoverFirst: 'Artemis III Lunar Spacesuit Testing (jsc2026e002578).jpg',
+  },
+  {
+    id: 'artemis4',
+    query: 'SLS Block 1B Orion Gateway Artemis',
+  },
+  {
+    id: 'hera',
+    query: 'Hera spacecraft asteroid',
+    commonsCoverFirst: 'Hera in orbit.jpg',
   },
   {
     id: 'curiosity',
@@ -2682,6 +2691,7 @@ interface MissionThumbnailRecord {
   flight?: {
     arrival?: { v_infinity_km_s?: number };
     cislunar_profile?: CislunarProfile;
+    interplanetary_profile?: { waypoints_helio_au?: number[][] };
   };
 }
 
@@ -2703,14 +2713,13 @@ const CISLUNAR_PHASE_COLORS: Record<string, string> = {
 
 function paintHeliocentricThumbnail(
   ctx: import('canvas').CanvasRenderingContext2D,
-  destinationId: DestinationId,
+  destA: number,
   depDay: number,
   arrivalVInf: number | undefined,
   missionColor: string,
 ): void {
   const cx = THUMBNAIL_W / 2;
   const cy = THUMBNAIL_H / 2;
-  const destA = DESTINATIONS[destinationId].a;
 
   // Background
   ctx.fillStyle = '#04040c';
@@ -2768,6 +2777,88 @@ function paintHeliocentricThumbnail(
   ctx.fillStyle = '#ffc850';
   ctx.beginPath();
   ctx.arc(cx + arr.x * scale, cy + arr.z * scale, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+// Representative heliocentric encounter distance (AU) for missions whose
+// `dest` is a generic category (SUN / COMET / ASTEROID) with no fixed
+// porkchop body AND no generated waypoints. Each figure is a real
+// astronomical fact about the mission's heliocentric reach, so the arc is
+// a truthful schematic rather than a fabricated shape:
+//   parker-solar-probe — Venus-assist cruise ring (perihelion later dives to 0.046 AU)
+//   ulysses            — Jupiter gravity assist (~5.2 AU) en route to a polar solar orbit
+//   giotto             — 1P/Halley encounter, March 1986 (~0.89 AU from the Sun)
+//   rosetta            — 67P/Churyumov–Gerasimenko rendezvous, 2014 (~4 AU)
+//   hayabusa2          — 162173 Ryugu semi-major axis (1.19 AU)
+const ANALYTIC_HELIO_AU: Record<string, number> = {
+  'parker-solar-probe': 0.72,
+  ulysses: 5.2,
+  giotto: 0.89,
+  rosetta: 4.0,
+  hayabusa2: 1.19,
+};
+
+// Sun-centric thumbnail drawn directly from generated interplanetary
+// waypoints (`[t_days, x_au, y_au, z_au]`, top-down ecliptic → x/z). Used
+// for destinations with no fixed porkchop body (SUN/COMET/ASTEROID) that
+// nonetheless carry a real transfer path, e.g. solar-orbiter.
+function paintWaypointHeliocentricThumbnail(
+  ctx: import('canvas').CanvasRenderingContext2D,
+  waypoints: number[][],
+  missionColor: string,
+): void {
+  const cx = THUMBNAIL_W / 2;
+  const cy = THUMBNAIL_H / 2;
+
+  ctx.fillStyle = '#04040c';
+  ctx.fillRect(0, 0, THUMBNAIL_W, THUMBNAIL_H);
+
+  // Auto-scale so the whole path (and Earth's 1 AU ring) fits with margin.
+  let maxR = R_EARTH_AU;
+  for (const w of waypoints) {
+    const r = Math.hypot(w[1], w[3]);
+    if (r > maxR) maxR = r;
+  }
+  const scale = (Math.min(cx, cy) - 8) / maxR;
+
+  // Earth orbit ring.
+  ctx.beginPath();
+  ctx.arc(cx, cy, R_EARTH_AU * scale, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(75,156,211,0.35)';
+  ctx.lineWidth = 0.6;
+  ctx.stroke();
+
+  // Sun.
+  ctx.fillStyle = '#fff8c0';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Transfer path.
+  ctx.beginPath();
+  waypoints.forEach((w, i) => {
+    const x = cx + w[1] * scale;
+    const y = cy + w[3] * scale;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = missionColor;
+  ctx.lineWidth = 1.4;
+  ctx.shadowColor = missionColor;
+  ctx.shadowBlur = 4;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // Departure (teal) + arrival (gold) nodes.
+  const dep = waypoints[0];
+  const arr = waypoints[waypoints.length - 1];
+  ctx.fillStyle = '#4ecdc4';
+  ctx.beginPath();
+  ctx.arc(cx + dep[1] * scale, cy + dep[3] * scale, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#ffc850';
+  ctx.beginPath();
+  ctx.arc(cx + arr[1] * scale, cy + arr[3] * scale, 2.5, 0, Math.PI * 2);
   ctx.fill();
 }
 
@@ -2863,6 +2954,37 @@ function paintCislunarThumbnail(
   }
 }
 
+// Paint the correct trajectory thumbnail for a mission onto `ctx`. Returns
+// false when there is no honest geometry to draw (unknown analytic dest) so
+// the caller skips writing a PNG. #390: MOON → cislunar; real waypoints →
+// Sun-centric path; planetary porkchop body → transfer arc; SUN/COMET/
+// ASTEROID → per-mission analytic heliocentric distance.
+function paintMissionThumbnail(
+  ctx: import('canvas').CanvasRenderingContext2D,
+  m: MissionThumbnailRecord,
+  depDay: number,
+  color: string,
+): boolean {
+  if (m.dest === 'MOON') {
+    paintCislunarThumbnail(ctx, m);
+    return true;
+  }
+  const wp = m.flight?.interplanetary_profile?.waypoints_helio_au;
+  if (wp && wp.length >= 2) {
+    paintWaypointHeliocentricThumbnail(ctx, wp, color);
+    return true;
+  }
+  const hid = missionDestToHeliocentricDestinationId(m.dest);
+  const destA = hid ? DESTINATIONS[hid].a : ANALYTIC_HELIO_AU[m.id];
+  if (destA == null) {
+    // Unknown analytic destination — the validate-data thumbnail gate
+    // names any such mission rather than shipping a blank card.
+    return false;
+  }
+  paintHeliocentricThumbnail(ctx, destA, depDay, m.flight?.arrival?.v_infinity_km_s, color);
+  return true;
+}
+
 async function fetchMissionThumbnails(): Promise<number> {
   await mkdir(THUMBNAILS_DIR, { recursive: true });
   let saved = 0;
@@ -2881,22 +3003,7 @@ async function fetchMissionThumbnails(): Promise<number> {
       const depDay = dateToSimDay(m.departure_date) ?? 0;
       const color = m.color || '#4ecdc4';
 
-      if (m.dest === 'MOON') {
-        paintCislunarThumbnail(ctx, m);
-      } else {
-        const hid = missionDestToHeliocentricDestinationId(m.dest);
-        if (!hid) {
-          // #306 expansion (2026-06-07) — non-planetary destinations
-          // (COMET / ASTEROID / SUN) don't have a fixed heliocentric
-          // porkchop body, so we skip thumbnail rendering for them.
-          // Their visual story lives on the /explore PATHS layer; the
-          // /missions card falls back to the gallery hero we fetch
-          // separately above.
-          continue;
-        }
-        const vInf = m.flight?.arrival?.v_infinity_km_s;
-        paintHeliocentricThumbnail(ctx, hid, depDay, vInf, color);
-      }
+      if (!paintMissionThumbnail(ctx, m, depDay, color)) continue;
 
       const buffer = canvas.toBuffer('image/png');
       await writeFile(join(THUMBNAILS_DIR, `${m.id}.png`), buffer);

@@ -148,7 +148,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (20 Mars + 31 Moon + 32 Earth + 11 outer + 8 inner)`, () => {
+  it(`fixture loads expected counts (20 Mars + 32 Moon + 32 Earth + 11 outer + 8 inner)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -160,15 +160,16 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // Phoenix), 1 outer (Europa Clipper Jupiter-bound), 2 inner (Venus
     // pair Magellan + Akatsuki).
     // 2026-06-17 — added Sputnik 1 (Earth). 31 → 32.
+    // 2026-07-10 — added Artemis 4 (Moon dogfood). 31 → 32 Moon.
     if (
       mars.length !== 20 ||
-      moon.length !== 31 ||
+      moon.length !== 32 ||
       earth.length !== 32 ||
       outer.length !== 11 ||
       inner.length !== 8
     ) {
       throw new Error(
-        `Expected 20 Mars + 31 Moon + 32 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 20 Mars + 32 Moon + 32 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

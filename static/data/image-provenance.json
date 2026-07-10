@@ -76698,6 +76698,258 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-07-06T17:33:35.661Z"
+    },
+    {
+      "id": "d0d5a3d3f46fa3c7",
+      "path": "/images/missions/artemis4/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "NASA's Evolved SLS Block 1B Crew Rocket In Flight",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Artemis_1B_Crew_InFLight",
+      "image_url": "https://images-assets.nasa.gov/image/Artemis_1B_Crew_InFLight/Artemis_1B_Crew_InFLight~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Artemis_1B_Crew_InFLight",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "629e108d760743e4",
+      "path": "/images/missions/artemis4/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "NASA's Evolved SLS Block 1B Crew Rocket In Flight",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Artemis_1B_Crew_InFLight",
+      "image_url": "https://images-assets.nasa.gov/image/Artemis_1B_Crew_InFLight/Artemis_1B_Crew_InFLight~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Artemis_1B_Crew_InFLight",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "cc83645ddecd612e",
+      "path": "/images/missions/artemis4/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "NASA's Exploration Upper Stage with Orion en route to the Moon",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Block1B_Orion_InSpace",
+      "image_url": "https://images-assets.nasa.gov/image/Block1B_Orion_InSpace/Block1B_Orion_InSpace~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Block1B_Orion_InSpace",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "b88bbf868914e04b",
+      "path": "/images/missions/artemis4/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "NASA's Exploration Upper Stage with Orion en route to the Moon",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Block1B_Orion_InSpace",
+      "image_url": "https://images-assets.nasa.gov/image/Block1B_Orion_InSpace/Block1B_Orion_InSpace~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Block1B_Orion_InSpace",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "01249c0c3b76f2d9",
+      "path": "/images/missions/artemis4/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "SLS Block 1B Crew variant on Pad 39B at night",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/B1B_Cargo_NightFall_Left",
+      "image_url": "https://images-assets.nasa.gov/image/B1B_Cargo_NightFall_Left/B1B_Cargo_NightFall_Left~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "B1B_Cargo_NightFall_Left",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "236f839c13fab7ac",
+      "path": "/images/missions/artemis4/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "SLS Block 1B Crew variant on Pad 39B at night",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/B1B_Cargo_NightFall_Left",
+      "image_url": "https://images-assets.nasa.gov/image/B1B_Cargo_NightFall_Left/B1B_Cargo_NightFall_Left~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "B1B_Cargo_NightFall_Left",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "364ebe9792cb9fb8",
+      "path": "/images/missions/artemis4/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion docked to the Lunar Gateway — Artemis IV",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape",
+      "image_url": "https://images-assets.nasa.gov/image/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Artemis - Gateway - Artemis IV - Gateway Landscape",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "35bda3db26bf5d59",
+      "path": "/images/missions/artemis4/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion docked to the Lunar Gateway — Artemis IV",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape",
+      "image_url": "https://images-assets.nasa.gov/image/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape/Artemis%20-%20Gateway%20-%20Artemis%20IV%20-%20Gateway%20Landscape~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Artemis - Gateway - Artemis IV - Gateway Landscape",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "6fa51be36643958a",
+      "path": "/images/missions/artemis4/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "Lunar Gateway full configuration over the Moon",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123",
+      "image_url": "https://images-assets.nasa.gov/image/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Gateway - Full Configuration Hero Image - 121123",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "2f5001297178c13d",
+      "path": "/images/missions/artemis4/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Lunar Gateway full configuration over the Moon",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123",
+      "image_url": "https://images-assets.nasa.gov/image/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123/Gateway%20-%20Full%20Configuration%20Hero%20Image%20-%20121123~orig.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "downloaded-via-nasa-images-api",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Gateway - Full Configuration Hero Image - 121123",
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "d18323780971989d",
+      "path": "/images/missions/hera/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Hera in orbit.jpg",
+      "author": "ESA – Science Office",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hera_in_orbit.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hera_in_orbit.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "ESA imagery released under CC BY-SA 3.0 IGO; attribution to ESA – Science Office.",
+      "modifications": [
+        "downloaded-via-commons",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-10T13:07:12.951Z"
+    },
+    {
+      "id": "0b3292ab3044efd3",
+      "path": "/images/missions/hera/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Hera in orbit.jpg",
+      "author": "ESA – Science Office",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hera_in_orbit.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hera_in_orbit.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "ESA imagery released under CC BY-SA 3.0 IGO; attribution to ESA – Science Office.",
+      "modifications": [
+        "downloaded-via-commons",
+        "reencoded-webp"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-07-10T13:07:12.951Z"
     }
   ]
 }

@@ -1,0 +1,713 @@
+{
+  "id": "hera",
+  "agency": "ESA",
+  "agency_full": "European Space Agency",
+  "sector": "gov",
+  "dest": "DIDYMOS",
+  "color": "#003247",
+  "year": 2024,
+  "status": "ACTIVE",
+  "departure_date": "2024-10-07",
+  "arrival_date": "2026-12-28",
+  "transit_days": 812,
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "Hera orbiter + Juventas & Milani CubeSats",
+  "delta_v": "~1.1 km/s (deep-space maneuvers; Mars gravity assist)",
+  "data_quality": "partial",
+  "credit": "© ESA — Hera. ESA's half of the international Asteroid Impact & Deflection Assessment (AIDA): a detailed post-impact survey of the Didymos binary asteroid, measuring the crater and momentum transfer left by NASA's DART kinetic impactor (2022). Launched on a Falcon 9 (2024-10-07) with a 2025 Mars gravity assist; arrives at Didymos late 2026. Carries the Juventas + Milani CubeSats.",
+  "links": [
+    {
+      "l": "Hera — ESA",
+      "u": "https://www.esa.int/Space_Safety/Hera",
+      "t": "intro"
+    },
+    {
+      "l": "Hera (space mission) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hera_(space_mission)",
+      "t": "intro"
+    },
+    {
+      "l": "Planetary defence — ESA",
+      "u": "https://www.esa.int/Space_Safety/Planetary_Defence",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 second stage",
+      "mass_at_tli_kg": 1128,
+      "source": "ESA Hera mission profile (launch mass ~1128 kg incl. CubeSats)"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "ESA Hera cruise plan (deep-space maneuvers + 2025 Mars gravity assist)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 1,
+      "periapsis_km": 30,
+      "inclination_deg": 0,
+      "orbit_insertion_dv_km_s": 0.1,
+      "source": "ESA Hera Didymos rendezvous (approximate low-velocity approach + proximity ops)"
+    },
+    "totals": {
+      "total_dv_km_s": 1.1,
+      "tli_or_tmi_dv_km_s": 0,
+      "source": "ESA Hera (approximate ledger; launcher provides escape, spacecraft does DSMs)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon 9 Block 5",
+        "description": "Cape Canaveral SLC-40, 2024-10-07. Hera departs on an Earth-escape trajectory toward the Didymos binary system."
+      },
+      {
+        "met_days": 0.01,
+        "type": "tli_or_tmi",
+        "label": "Trans-asteroid injection",
+        "description": "The Falcon 9 upper stage places Hera on an interplanetary transfer toward Didymos, routed via a 2025 Mars gravity assist."
+      },
+      {
+        "met_days": 20,
+        "type": "tcm",
+        "label": "DSM-1",
+        "description": "First deep-space maneuver refines the interplanetary transfer toward the 2025 Mars gravity assist."
+      },
+      {
+        "met_days": 150,
+        "type": "flyby",
+        "label": "Mars gravity assist",
+        "description": "A March-2025 Mars flyby bends Hera's path toward Didymos and yields a bonus flyby of the Martian moon Deimos."
+      },
+      {
+        "met_days": 300,
+        "type": "tcm",
+        "label": "DSM-2",
+        "description": "Post-Mars-flyby trajectory correction targeting the Didymos rendezvous."
+      },
+      {
+        "met_days": 812,
+        "type": "arrival",
+        "label": "Didymos rendezvous",
+        "description": "Hera arrives at the Didymos binary and begins its detailed survey of Dimorphos and the DART impact crater."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "didymos",
+      "transfer_type": "type1_lambert",
+      "tcm_count": 2,
+      "waypoints_helio_au": [
+        [
+          0,
+          0.961491,
+          0,
+          0.274836
+        ],
+        [
+          8.6121,
+          0.94117,
+          0,
+          0.318521
+        ],
+        [
+          20,
+          0.911941,
+          0,
+          0.374958
+        ],
+        [
+          25.8364,
+          0.896229,
+          0,
+          0.403466
+        ],
+        [
+          34.4485,
+          0.870588,
+          0,
+          0.443999
+        ],
+        [
+          43.0606,
+          0.843513,
+          0,
+          0.483542
+        ],
+        [
+          51.6727,
+          0.815153,
+          0,
+          0.522179
+        ],
+        [
+          60.2848,
+          0.784702,
+          0,
+          0.559224
+        ],
+        [
+          68.897,
+          0.752849,
+          0,
+          0.595089
+        ],
+        [
+          77.5091,
+          0.719851,
+          0,
+          0.629963
+        ],
+        [
+          86.1212,
+          0.685103,
+          0,
+          0.663216
+        ],
+        [
+          94.7333,
+          0.649009,
+          0,
+          0.695092
+        ],
+        [
+          103.3455,
+          0.611912,
+          0,
+          0.725899
+        ],
+        [
+          111.9576,
+          0.573377,
+          0,
+          0.755078
+        ],
+        [
+          120.5697,
+          0.533581,
+          0,
+          0.782671
+        ],
+        [
+          129.1818,
+          0.492923,
+          0,
+          0.809118
+        ],
+        [
+          137.7939,
+          0.451114,
+          0,
+          0.83395
+        ],
+        [
+          150,
+          0.379414,
+          0,
+          0.871556
+        ],
+        [
+          155.0182,
+          0.364483,
+          0,
+          0.878775
+        ],
+        [
+          163.6303,
+          0.319918,
+          0,
+          0.898987
+        ],
+        [
+          172.2424,
+          0.274352,
+          0,
+          0.917153
+        ],
+        [
+          180.8545,
+          0.228215,
+          0,
+          0.934021
+        ],
+        [
+          189.4667,
+          0.181425,
+          0,
+          0.949339
+        ],
+        [
+          198.0788,
+          0.133815,
+          0,
+          0.962355
+        ],
+        [
+          206.6909,
+          0.085787,
+          0,
+          0.973997
+        ],
+        [
+          215.303,
+          0.037321,
+          0,
+          0.98414
+        ],
+        [
+          223.9152,
+          -0.011743,
+          0,
+          0.991711
+        ],
+        [
+          232.5273,
+          -0.061065,
+          0,
+          0.997828
+        ],
+        [
+          241.1394,
+          -0.110636,
+          0,
+          1.002489
+        ],
+        [
+          249.7515,
+          -0.160531,
+          0,
+          1.004341
+        ],
+        [
+          258.3636,
+          -0.210515,
+          0,
+          1.004637
+        ],
+        [
+          266.9758,
+          -0.260578,
+          0,
+          1.0034
+        ],
+        [
+          275.5879,
+          -0.310645,
+          0,
+          0.999376
+        ],
+        [
+          284.2,
+          -0.360617,
+          0,
+          0.993563
+        ],
+        [
+          292.8121,
+          -0.410481,
+          0,
+          0.986143
+        ],
+        [
+          300,
+          -0.451848,
+          0,
+          0.977664
+        ],
+        [
+          310.0364,
+          -0.509273,
+          0,
+          0.963796
+        ],
+        [
+          318.6485,
+          -0.558193,
+          0,
+          0.949936
+        ],
+        [
+          327.2606,
+          -0.60652,
+          0,
+          0.933414
+        ],
+        [
+          335.8727,
+          -0.654209,
+          0,
+          0.914627
+        ],
+        [
+          344.4848,
+          -0.701371,
+          0,
+          0.894119
+        ],
+        [
+          353.097,
+          -0.747659,
+          0,
+          0.871058
+        ],
+        [
+          361.7091,
+          -0.792942,
+          0,
+          0.845514
+        ],
+        [
+          370.3212,
+          -0.837455,
+          0,
+          0.818223
+        ],
+        [
+          378.9333,
+          -0.880834,
+          0,
+          0.788529
+        ],
+        [
+          387.5455,
+          -0.922763,
+          0,
+          0.756168
+        ],
+        [
+          396.1576,
+          -0.963661,
+          0,
+          0.722066
+        ],
+        [
+          404.7697,
+          -1.003185,
+          0,
+          0.685756
+        ],
+        [
+          413.3818,
+          -1.040736,
+          0,
+          0.646656
+        ],
+        [
+          421.9939,
+          -1.076974,
+          0,
+          0.605864
+        ],
+        [
+          430.6061,
+          -1.111632,
+          0,
+          0.563106
+        ],
+        [
+          439.2182,
+          -1.143713,
+          0,
+          0.517523
+        ],
+        [
+          447.8303,
+          -1.174185,
+          0,
+          0.470356
+        ],
+        [
+          456.4424,
+          -1.202913,
+          0,
+          0.421509
+        ],
+        [
+          465.0545,
+          -1.22839,
+          0,
+          0.369926
+        ],
+        [
+          473.6667,
+          -1.251958,
+          0,
+          0.316938
+        ],
+        [
+          482.2788,
+          -1.273602,
+          0,
+          0.262554
+        ],
+        [
+          490.8909,
+          -1.291407,
+          0,
+          0.205773
+        ],
+        [
+          499.503,
+          -1.306943,
+          0,
+          0.147802
+        ],
+        [
+          508.1152,
+          -1.320268,
+          0,
+          0.0887
+        ],
+        [
+          516.7273,
+          -1.329499,
+          0,
+          0.027839
+        ],
+        [
+          525.3394,
+          -1.335957,
+          0,
+          -0.033958
+        ],
+        [
+          533.9515,
+          -1.339949,
+          0,
+          -0.096532
+        ],
+        [
+          542.5636,
+          -1.33971,
+          0,
+          -0.16015
+        ],
+        [
+          551.1758,
+          -1.336208,
+          0,
+          -0.224281
+        ],
+        [
+          559.7879,
+          -1.330046,
+          0,
+          -0.288748
+        ],
+        [
+          568.4,
+          -1.31966,
+          0,
+          -0.353498
+        ],
+        [
+          577.0121,
+          -1.305583,
+          0,
+          -0.418156
+        ],
+        [
+          585.6242,
+          -1.288738,
+          0,
+          -0.482631
+        ],
+        [
+          594.2364,
+          -1.26784,
+          0,
+          -0.546622
+        ],
+        [
+          602.8485,
+          -1.242943,
+          0,
+          -0.609739
+        ],
+        [
+          611.4606,
+          -1.215289,
+          0,
+          -0.672097
+        ],
+        [
+          620.0727,
+          -1.183917,
+          0,
+          -0.733251
+        ],
+        [
+          628.6848,
+          -1.14842,
+          0,
+          -0.792596
+        ],
+        [
+          637.297,
+          -1.110313,
+          0,
+          -0.850586
+        ],
+        [
+          645.9091,
+          -1.068976,
+          0,
+          -0.906751
+        ],
+        [
+          654.5212,
+          -1.023626,
+          0,
+          -0.96007
+        ],
+        [
+          663.1333,
+          -0.975959,
+          0,
+          -1.011462
+        ],
+        [
+          671.7455,
+          -0.925671,
+          0,
+          -1.060555
+        ],
+        [
+          680.3576,
+          -0.871756,
+          0,
+          -1.10574
+        ],
+        [
+          688.9697,
+          -0.815956,
+          0,
+          -1.148495
+        ],
+        [
+          697.5818,
+          -0.758211,
+          0,
+          -1.188663
+        ],
+        [
+          706.1939,
+          -0.697513,
+          0,
+          -1.223921
+        ],
+        [
+          714.8061,
+          -0.635476,
+          0,
+          -1.256365
+        ],
+        [
+          723.4182,
+          -0.572127,
+          0,
+          -1.28598
+        ],
+        [
+          732.0303,
+          -0.506866,
+          0,
+          -1.31014
+        ],
+        [
+          740.6424,
+          -0.440832,
+          0,
+          -1.331098
+        ],
+        [
+          749.2545,
+          -0.374111,
+          0,
+          -1.349001
+        ],
+        [
+          757.8667,
+          -0.306642,
+          0,
+          -1.361487
+        ],
+        [
+          766.4788,
+          -0.239032,
+          0,
+          -1.370375
+        ],
+        [
+          775.0909,
+          -0.171378,
+          0,
+          -1.376147
+        ],
+        [
+          783.703,
+          -0.104019,
+          0,
+          -1.376817
+        ],
+        [
+          792.3152,
+          -0.037249,
+          0,
+          -1.373662
+        ],
+        [
+          800.9273,
+          0.028952,
+          0,
+          -1.367488
+        ],
+        [
+          812,
+          0.114116,
+          0,
+          -1.352956
+        ],
+        [
+          818.1515,
+          0.117932,
+          0,
+          -1.35116
+        ],
+        [
+          826.7636,
+          0.117932,
+          0,
+          -1.35116
+        ],
+        [
+          835.3758,
+          0.117932,
+          0,
+          -1.35116
+        ],
+        [
+          843.9879,
+          0.117932,
+          0,
+          -1.35116
+        ],
+        [
+          852.6,
+          0.117932,
+          0,
+          -1.35116
+        ]
+      ]
+    }
+  }
+}

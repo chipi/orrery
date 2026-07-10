@@ -1110,6 +1110,16 @@
     "crewed": false
   },
   {
+    "id": "hera",
+    "agency": "ESA",
+    "dest": "DIDYMOS",
+    "status": "ACTIVE",
+    "year": 2024,
+    "sector": "gov",
+    "color": "#003247",
+    "crewed": false
+  },
+  {
     "id": "lucy",
     "agency": "NASA",
     "dest": "EURYBATES",

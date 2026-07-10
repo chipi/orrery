@@ -48,6 +48,8 @@ npx tsx scripts/cislunar/generate-hybrid-waypoints.ts static/data/missions/moon/
 npx tsx scripts/cislunar/generate-helio-hybrid-waypoints.ts static/data/missions/<dest>/<id>.json  # Mars / outer
 ```
 
+**Flight-internal consistency (validate-data fails-closed).** The flight block must be self-consistent — most notably **`cruise.tcm_count` must equal the number of `events[]` with `type: "tcm"`** (caught in the Hera dogfood: `✗ tcm_count=2 but events.tcm.length=0`). Add the matching `tcm` events, or set the count to match. Event `met_days` must be ordered + within the transit; `events[].type` must be in the schema enum. Re-run the waypoint generator after editing events (it re-pins event anchors). The generator does a **parametric Lambert transfer** — a mission with a real gravity assist (Hera's 2025 Mars flyby) is approximated, hence `flight_data_quality: sparse` + `source_tier: tier_1_5_hybrid`.
+
 ### 7 · Images — missions carry ZERO hero gaps
 
 `validate-hero-coverage` fails-closed if `static/images/missions/<id>/01.webp` is absent (`MISSIONS_KNOWN_GAPS` is intentionally empty since #342). Source the hero + gallery through the **[image pipeline runbook](../../scripts/IMAGE-PIPELINE.md#adding-a-new-gallery-image)**: source (agency-first) → `masters/` (git-LFS) → WebP ladder + 1x1 → provenance → gallery counts. For a **future mission** with no photos (Artemis 4), the hero is agency **concept art** — same pipeline, and **image changes need per-image approval** (see AGENTS.md).

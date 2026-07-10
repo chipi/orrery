@@ -864,13 +864,17 @@
     .right {
       gap: 2px;
     }
-    /* Graphics-settings ⚙ — added 2026-06-17 as a 6th right-rail
-       button, which overflowed the 375 px viewport again. Hidden on
-       phones: it controls graphics-quality tier, a desktop-3D
-       affordance (the auto-detection picks an appropriate tier on
-       mobile and most phone users don't tweak it). Visible on tablet
-       + desktop. */
-    .settings-toggle {
+    /* Two desktop-affordance toggles are hidden on phones so the 44 px
+       touch-target cluster fits the 375 px viewport without shrinking
+       any target (RFC-031 keeps WCAG target sizes intact):
+         • Graphics-settings ⚙ — auto-detection picks the tier on mobile.
+         • High-contrast Aa — mobile high-contrast is driven by the OS
+           `@media (prefers-contrast: more)` (tokens.css), which this app
+           honours automatically; the manual override is a desktop
+           convenience where the OS setting is less commonly enabled.
+       Both stay visible on tablet + desktop. */
+    .settings-toggle,
+    .contrast-toggle {
       display: none;
     }
   }

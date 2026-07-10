@@ -15,6 +15,11 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests/e2e',
+  // tests/e2e/mobile/ holds the mobile-build streaming contract, which only
+  // makes sense against the pruned build served by playwright.mobile.config.ts
+  // (the mobile-e2e job). This config serves the full build, where those
+  // "asset is pruned → 404" assertions would see 200s — so exclude it here.
+  testIgnore: ['**/mobile/**'],
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 1,

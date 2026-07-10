@@ -25,7 +25,9 @@ test.describe('keyboard a11y (RFC-031)', () => {
 
   test('nav is a roving toolbar — arrows move focus, one Tab stop', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    const nav = page.locator('nav[aria-label]');
+    // The footer link-list is also a labelled <nav>; the roving toolbar is
+    // the primary header nav, so exclude the footer menu.
+    const nav = page.locator('nav[aria-label]:not(.footer-menu)');
     await nav.locator('a[href], button').first().focus();
     const before = await page.evaluate(() => document.activeElement?.textContent);
     await page.keyboard.press('ArrowRight');

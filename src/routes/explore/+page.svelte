@@ -6310,8 +6310,12 @@
   .body-index-toggle {
     position: fixed;
     top: 72px;
-    left: 12px;
-    z-index: 25;
+    /* Top-right, clear of the left-column .hud-controls (z-index 45, spans the
+       left rail): as a top-left fixed button it was buried under that cluster
+       and became invisible + unclickable on desktop. Sit above the HUD z-band
+       so it stays reachable everywhere (keyboard, pointer, TV). */
+    right: 12px;
+    z-index: 46;
     padding: 6px 12px;
     font-size: 0.72rem;
     letter-spacing: 0.1em;

@@ -1,9 +1,22 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import {
+  readUserChoice,
+  writeUserChoice,
+  configFor,
+  ALL_TIERS,
+  resolveQualitySync,
+  resolveQualitySource,
+  detectAutoTier,
+  resolveQuality,
+  kickOffBackgroundDetect,
+  __resetAutoTierCacheForTests,
+} from './quality-tier';
 
 // detect-gpu is dynamically imported inside detectAutoTier. A hoisted
-// mutable lets each test steer the mocked GPU result (or make it throw)
-// while vi.resetModules() below gives every test a fresh module — which
-// also clears the module-level `cachedAutoTier` memo.
+// mutable lets each test steer the mocked GPU result (or make it throw);
+// __resetAutoTierCacheForTests() clears the module-level memo between
+// tests so we can exercise each mapping without reloading the module
+// (which would leak dynamic-import rejections on slower CI runners).
 const gpu = vi.hoisted(() => ({
   result: { tier: 3, isMobile: false } as { tier: number; isMobile?: boolean },
   throws: false,
@@ -29,15 +42,10 @@ function fakeLocalStorage(): Storage {
   };
 }
 
-// Fresh module per test → cachedAutoTier reset. Import inside each test.
-async function load() {
-  return import('./quality-tier');
-}
-
 beforeEach(() => {
-  vi.resetModules();
   gpu.result = { tier: 3, isMobile: false };
   gpu.throws = false;
+  __resetAutoTierCacheForTests();
   vi.stubGlobal('localStorage', fakeLocalStorage());
 });
 
@@ -46,54 +54,46 @@ afterEach(() => {
 });
 
 describe('readUserChoice / writeUserChoice', () => {
-  it("defaults to 'auto' when nothing stored", async () => {
-    const { readUserChoice } = await load();
+  it("defaults to 'auto' when nothing stored", () => {
     expect(readUserChoice()).toBe('auto');
   });
 
-  it('round-trips a valid tier through localStorage', async () => {
-    const { readUserChoice, writeUserChoice } = await load();
+  it('round-trips a valid tier through localStorage', () => {
     writeUserChoice('high');
     expect(readUserChoice()).toBe('high');
   });
 
-  it("writing 'auto' clears the stored choice", async () => {
-    const { readUserChoice, writeUserChoice } = await load();
+  it("writing 'auto' clears the stored choice", () => {
     writeUserChoice('cinematic');
     writeUserChoice('auto');
     expect(readUserChoice()).toBe('auto');
     expect(localStorage.getItem('orrery.qualityTier')).toBeNull();
   });
 
-  it("falls back to 'auto' for a garbage stored value", async () => {
-    const { readUserChoice } = await load();
+  it("falls back to 'auto' for a garbage stored value", () => {
     localStorage.setItem('orrery.qualityTier', 'ultra-mega');
     expect(readUserChoice()).toBe('auto');
   });
 
-  it('is a no-op without localStorage', async () => {
+  it('is a no-op without localStorage', () => {
     vi.stubGlobal('localStorage', undefined);
-    const { readUserChoice, writeUserChoice } = await load();
     expect(() => writeUserChoice('high')).not.toThrow();
     expect(readUserChoice()).toBe('auto');
   });
 });
 
 describe('configFor / ALL_TIERS', () => {
-  it('exposes the five tiers in order', async () => {
-    const { ALL_TIERS } = await load();
+  it('exposes the five tiers in order', () => {
     expect(ALL_TIERS).toEqual(['minimal', 'low', 'medium', 'high', 'cinematic']);
   });
 
-  it('returns the matching config for each tier', async () => {
-    const { configFor, ALL_TIERS } = await load();
+  it('returns the matching config for each tier', () => {
     for (const t of ALL_TIERS) {
       expect(configFor(t).tier).toBe(t);
     }
   });
 
-  it('degrades post/bloom on the low tiers and enables the full stack on cinematic', async () => {
-    const { configFor } = await load();
+  it('degrades post/bloom on the low tiers and enables the full stack on cinematic', () => {
     expect(configFor('minimal').postEnabled).toBe(false);
     expect(configFor('low').postEnabled).toBe(false);
     expect(configFor('medium').postEnabled).toBe(true);
@@ -103,57 +103,48 @@ describe('configFor / ALL_TIERS', () => {
 });
 
 describe('resolveQualitySync', () => {
-  it('honours a valid ?quality= URL override above everything', async () => {
-    const { resolveQualitySync } = await load();
+  it('honours a valid ?quality= URL override above everything', () => {
     localStorage.setItem('orrery.qualityTier', 'low');
     const url = new URL('https://x/fly?quality=cinematic');
     expect(resolveQualitySync(url).tier).toBe('cinematic');
   });
 
-  it('ignores an invalid URL override', async () => {
-    const { resolveQualitySync } = await load();
+  it('ignores an invalid URL override', () => {
     const url = new URL('https://x/fly?quality=bogus');
     expect(resolveQualitySync(url).tier).toBe('medium'); // falls through to fallback
   });
 
-  it('uses the saved user choice when no URL override', async () => {
-    const { resolveQualitySync } = await load();
+  it('uses the saved user choice when no URL override', () => {
     localStorage.setItem('orrery.qualityTier', 'high');
     expect(resolveQualitySync().tier).toBe('high');
   });
 
-  it('uses a previously cached detected tier over the fallback', async () => {
-    const { resolveQualitySync } = await load();
+  it('uses a previously cached detected tier over the fallback', () => {
     localStorage.setItem('orrery.qualityDetected', 'low');
     expect(resolveQualitySync().tier).toBe('low');
   });
 
-  it('falls back to medium for a first-time visitor', async () => {
-    const { resolveQualitySync } = await load();
+  it('falls back to medium for a first-time visitor', () => {
     expect(resolveQualitySync().tier).toBe('medium');
   });
 });
 
 describe('resolveQualitySource', () => {
-  it("reports 'url' for a valid override", async () => {
-    const { resolveQualitySource } = await load();
+  it("reports 'url' for a valid override", () => {
     expect(resolveQualitySource(new URL('https://x/?quality=high'))).toBe('url');
   });
 
-  it("reports 'user-choice' for a saved tier", async () => {
-    const { resolveQualitySource } = await load();
+  it("reports 'user-choice' for a saved tier", () => {
     localStorage.setItem('orrery.qualityTier', 'low');
     expect(resolveQualitySource()).toBe('user-choice');
   });
 
-  it("reports 'detect-gpu' when a detected tier is cached", async () => {
-    const { resolveQualitySource } = await load();
+  it("reports 'detect-gpu' when a detected tier is cached", () => {
     localStorage.setItem('orrery.qualityDetected', 'high');
     expect(resolveQualitySource()).toBe('detect-gpu');
   });
 
-  it("reports 'fallback' when nothing else applies", async () => {
-    const { resolveQualitySource } = await load();
+  it("reports 'fallback' when nothing else applies", () => {
     expect(resolveQualitySource()).toBe('fallback');
   });
 });
@@ -169,12 +160,10 @@ describe('detectAutoTier (detect-gpu mapping)', () => {
     [{ tier: 3, isMobile: true }, 'high'],
   ] as const)('maps detect-gpu %o → %s', async (result, expected) => {
     gpu.result = { ...result };
-    const { detectAutoTier } = await load();
     expect(await detectAutoTier()).toBe(expected);
   });
 
   it('caches the result across calls', async () => {
-    const { detectAutoTier } = await load();
     gpu.result = { tier: 0, isMobile: false };
     const first = await detectAutoTier();
     gpu.result = { tier: 3, isMobile: false }; // changed, but cache should win
@@ -183,32 +172,27 @@ describe('detectAutoTier (detect-gpu mapping)', () => {
 
   it('falls back to medium when detect-gpu throws', async () => {
     gpu.throws = true;
-    const { detectAutoTier } = await load();
     expect(await detectAutoTier()).toBe('medium');
   });
 
   it('treats a missing isMobile as non-mobile', async () => {
     gpu.result = { tier: 1 };
-    const { detectAutoTier } = await load();
     expect(await detectAutoTier()).toBe('low');
   });
 });
 
 describe('resolveQuality (async)', () => {
   it('honours the URL override', async () => {
-    const { resolveQuality } = await load();
     expect((await resolveQuality(new URL('https://x/?quality=low'))).tier).toBe('low');
   });
 
   it('honours the saved user choice', async () => {
-    const { resolveQuality } = await load();
     localStorage.setItem('orrery.qualityTier', 'high');
     expect((await resolveQuality()).tier).toBe('high');
   });
 
   it('detects via detect-gpu when set to auto', async () => {
     gpu.result = { tier: 2, isMobile: false };
-    const { resolveQuality } = await load();
     expect((await resolveQuality()).tier).toBe('medium');
   });
 });
@@ -216,14 +200,12 @@ describe('resolveQuality (async)', () => {
 describe('kickOffBackgroundDetect', () => {
   it('persists the detected tier for the next session', async () => {
     gpu.result = { tier: 3, isMobile: false };
-    const { kickOffBackgroundDetect } = await load();
     await kickOffBackgroundDetect();
     expect(localStorage.getItem('orrery.qualityDetected')).toBe('high');
   });
 
   it('does not throw without localStorage', async () => {
     vi.stubGlobal('localStorage', undefined);
-    const { kickOffBackgroundDetect } = await load();
     await expect(kickOffBackgroundDetect()).resolves.toBeUndefined();
   });
 });

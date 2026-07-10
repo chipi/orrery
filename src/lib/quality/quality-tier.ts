@@ -331,4 +331,13 @@ export function configFor(tier: QualityTier): QualityConfig {
   return CONFIGS[tier];
 }
 
+/**
+ * Test-only: clear the memoised auto-detected tier so a unit test can
+ * exercise `detectAutoTier` against a fresh mocked `detect-gpu` result.
+ * Not used by application code.
+ */
+export function __resetAutoTierCacheForTests(): void {
+  cachedAutoTier = null;
+}
+
 export const ALL_TIERS: QualityTier[] = ['minimal', 'low', 'medium', 'high', 'cinematic'];

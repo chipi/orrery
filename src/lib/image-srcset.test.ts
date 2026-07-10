@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { srcsetFor } from './image-srcset';
+import { srcsetFor, loadLadder, ladderSources } from './image-srcset';
 
 describe('srcsetFor', () => {
   const manifest = {
@@ -41,5 +41,22 @@ describe('srcsetFor', () => {
 
   it('returns null for a non-image URL', () => {
     expect(srcsetFor('/data/foo.json', manifest)).toBeNull();
+  });
+});
+
+describe('loadLadder (SSR / node)', () => {
+  it('resolves to an empty manifest without fetching under SSR (browser=false)', async () => {
+    // In the test (node) environment `browser` is false, so loadLadder
+    // short-circuits to {} rather than hitting the network — this is the
+    // guard that keeps an empty manifest from poisoning the module cache.
+    await expect(loadLadder()).resolves.toEqual({});
+  });
+});
+
+describe('ladderSources', () => {
+  it('returns null when the manifest cache is not populated', () => {
+    // No successful browser-side loadLadder has run, so the cache is null
+    // and callers fall back to the plain <img src>.
+    expect(ladderSources('https://x/images/missions/curiosity/01.jpg')).toBeNull();
   });
 });

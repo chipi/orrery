@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { auToPx, altToOrbitRadius } from './scale';
+import { auToPx, altToOrbitRadius, altToSurfaceScene } from './scale';
 
 describe('auToPx', () => {
   it('returns exact lookup value at Earth (1 AU)', () => {
@@ -79,5 +79,27 @@ describe('altToOrbitRadius', () => {
       altToOrbitRadius(1500000), // L2
     ];
     for (let i = 1; i < r.length; i++) expect(r[i]).toBeGreaterThan(r[i - 1]);
+  });
+});
+
+describe('altToSurfaceScene', () => {
+  it('lands altitude 0 km exactly at the planet surface radius', () => {
+    expect(altToSurfaceScene(30, 0)).toBeCloseTo(30, 6);
+    expect(altToSurfaceScene(8, 0)).toBeCloseTo(8, 6);
+  });
+
+  it('shifts the altToOrbitRadius log curve so it rides above the surface', () => {
+    // Definitionally: planetRadius + (altToOrbitRadius(alt) - altToOrbitRadius(0)).
+    const expected = 30 + (altToOrbitRadius(35786) - altToOrbitRadius(0));
+    expect(altToSurfaceScene(30, 35786)).toBeCloseTo(expected, 6);
+  });
+
+  it('is monotonically increasing in altitude for a fixed planet radius', () => {
+    let prev = altToSurfaceScene(30, 0);
+    for (const a of [100, 408, 35786, 384400]) {
+      const next = altToSurfaceScene(30, a);
+      expect(next).toBeGreaterThan(prev);
+      prev = next;
+    }
   });
 });

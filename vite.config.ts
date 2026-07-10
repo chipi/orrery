@@ -49,7 +49,9 @@ export default defineConfig(({ mode }) => {
   // stays `base`, so the browser app streams origin-relative from whatever
   // host serves it. Defaults to the current prod origin when unset so release
   // builds and CI are unaffected.
-  const STREAM_ORIGIN = env.STREAM_ORIGIN || 'https://chipi.github.io/orrery';
+  // Trailing slash stripped so `${STREAM_ORIGIN}${'/images/…'}` never yields a
+  // `//` path (GitHub Pages 404s those with no redirect).
+  const STREAM_ORIGIN = (env.STREAM_ORIGIN || 'https://chipi.github.io/orrery').replace(/\/+$/, '');
   return {
     // Expose package.json version + build timestamp as globals at build
     // time so the footer can render `v0.3.0 · 2026-05-15` without runtime

@@ -8,7 +8,14 @@ import { Capacitor } from '@capacitor/core';
  * stays in the app and can return. In the browser build this is a normal
  * new-tab `window.open`, unchanged.
  */
+// Only ever hand a navigable web/contact scheme to the opener. Blocks
+// `javascript:`, `data:`, `file:`, `vbscript:` etc. from reaching window.open /
+// the in-app browser — defence-in-depth even though today's callers pass only
+// curated hrefs.
+const SAFE_SCHEME = /^(https?|mailto|tel):/i;
+
 export async function openExternal(url: string): Promise<void> {
+  if (!SAFE_SCHEME.test(url)) return;
   if (!Capacitor.isNativePlatform()) {
     window.open(url, '_blank', 'noopener,noreferrer');
     return;

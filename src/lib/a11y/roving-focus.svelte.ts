@@ -160,7 +160,10 @@ export function createRovingFocus(opts: RovingFocusOptions = {}) {
     },
     unregister(id: string) {
       items = items.filter((x) => x.id !== id);
-      if (currentId === id) setCurrent(items[0]?.id ?? null);
+      // Fall back to the first *enabled* item in DOM order — items[0] is raw
+      // registration order and may be disabled, which would strand the sole
+      // tab stop on an inert control.
+      if (currentId === id) setCurrent(ordered(items)[0]?.id ?? null);
     },
     setCurrent,
     /** Move focus in a direction; returns the new current id (or unchanged). */

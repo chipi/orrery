@@ -24,7 +24,9 @@ import { DEFAULT_LOCALE } from './locale';
  * host (GitHub Pages → VPS IP → domain), changed by one env var per build.
  * Defaults to the current prod origin when the env var is unset.
  */
-export const STREAM_ORIGIN = __STREAM_ORIGIN__;
+// Normalised at the single consumption chokepoint: any trailing slash on the
+// injected origin would produce `//images/…` 404s (see vite.config define).
+export const STREAM_ORIGIN = __STREAM_ORIGIN__.replace(/\/+$/, '');
 
 // ─── Pure resolvers ──────────────────────────────────────────────────────
 // The logic, parameterised on `mobile` + `base` so both the browser and the

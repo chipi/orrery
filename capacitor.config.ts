@@ -21,7 +21,11 @@ const config: CapacitorConfig = {
     androidScheme: 'https', // stable WebView origin for SW + History API routing
     // Live-reload against a local dev server only when CAP_DEV_SERVER is set
     // (see above). Release builds leave both unset and serve the bundle.
-    ...(devServer ? { url: devServer, cleartext: true } : {}),
+    // Belt-and-braces: even if CAP_DEV_SERVER leaks into a release invocation,
+    // never allow cleartext HTTP in a production build.
+    ...(devServer && process.env.NODE_ENV !== 'production'
+      ? { url: devServer, cleartext: true }
+      : {}),
   },
   android: {
     backgroundColor: '#04040c', // matches --bg-base; no white flash at mount

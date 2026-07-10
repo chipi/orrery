@@ -12,6 +12,17 @@ import { expect, test } from '@playwright/test';
  * file is purely the *interaction* guard those static scans can't express.
  */
 test.describe('keyboard a11y (RFC-031)', () => {
+  // Keyboard/D-pad navigation is a desktop + TV interaction. On the mobile
+  // projects the inline nav strip is display:none (hamburger drawer instead),
+  // so these desktop-nav assertions don't apply — matches the convention in
+  // the other *-keyboard-nav specs.
+  test.beforeEach(() => {
+    test.skip(
+      test.info().project.name !== 'desktop-chromium',
+      'keyboard navigation is a desktop interaction',
+    );
+  });
+
   test('nav is a roving toolbar — arrows move focus, one Tab stop', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
     const nav = page.locator('nav[aria-label]');

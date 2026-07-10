@@ -8,7 +8,7 @@ This is the **canonical** instruction file. `CLAUDE.md` and `.cursor/rules/orrer
 
 ## Where to start — read these before touching code
 
-**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** v2.2 is current as of v0.7.0; it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
+**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** v2.7 is current as of v0.8; it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
 
 Then drill into the matching doc by question type:
 

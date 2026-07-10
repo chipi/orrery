@@ -121,7 +121,7 @@ export function loadHeroOverrides(surface: HeroSurface): Promise<HeroOverrideFil
  * overrides for this surface have been pre-loaded via
  * `loadHeroOverrides(surface)` AND include an entry for this id;
  * otherwise returns the universal default
- * (`<base>/images/<surface>/<id>/01.jpg`).
+ * (`<assetOrigin>/images/<surface>/<id>/<slot>.webp`).
  *
  * Callers that want override resolution to apply on first paint
  * should `await loadHeroOverrides(surface)` in their +page.ts /

@@ -8,6 +8,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
+  import { untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
 
   export type CommandItem = {
@@ -25,6 +26,9 @@
   let query = $state('');
   let highlighted = $state(0);
   let inputEl = $state<HTMLInputElement | null>(null);
+  let previousActive: HTMLElement | null = null;
+
+  const optId = (id: string) => `cmdk-opt-${id}`;
 
   const norm = (s: string) => s.toLowerCase();
   let results = $derived.by(() => {
@@ -39,16 +43,27 @@
       .slice(0, 20);
   });
 
-  // Reset + focus on open; clamp the highlight as results change.
+  // ARIA active-descendant: the combobox input "owns" the highlighted option so
+  // screen readers announce it on arrow-nav (DOM focus never leaves the input).
+  let activeDescendant = $derived(
+    results.length && results[highlighted] ? optId(results[highlighted].id) : undefined,
+  );
+
+  // Reset query + focus on open; restore focus to the opener on close.
   $effect(() => {
     if (open) {
+      previousActive = document.activeElement as HTMLElement | null;
       query = '';
       highlighted = 0;
       queueMicrotask(() => inputEl?.focus());
+      return () => previousActive?.focus?.({ preventScroll: true });
     }
   });
+  // Clamp the highlight as results shrink. untrack the write (it re-reads
+  // `highlighted`) to avoid a self-referential effect re-run.
   $effect(() => {
-    if (highlighted >= results.length) highlighted = Math.max(0, results.length - 1);
+    const len = results.length;
+    if (highlighted >= len) untrack(() => (highlighted = Math.max(0, len - 1)));
   });
 
   function go(item: CommandItem) {
@@ -57,6 +72,12 @@
   }
 
   function onKeydown(ev: KeyboardEvent) {
+    if (ev.key === 'Tab') {
+      // Modal focus trap: options are exposed via aria-activedescendant, not as
+      // tab stops, so focus simply stays on the input.
+      ev.preventDefault();
+      return;
+    }
     if (ev.key === 'Escape') {
       ev.preventDefault();
       onClose();
@@ -76,7 +97,12 @@
 
 {#if open}
   <div class="cmdk-overlay" role="dialog" aria-modal="true" aria-label={m.command_palette_aria()}>
-    <button type="button" class="cmdk-scrim" aria-label={m.panel_close()} onclick={onClose}
+    <button
+      type="button"
+      class="cmdk-scrim"
+      tabindex="-1"
+      aria-label={m.panel_close()}
+      onclick={onClose}
     ></button>
     <div class="cmdk-panel" role="document">
       <input
@@ -88,6 +114,7 @@
         aria-expanded="true"
         aria-controls="cmdk-results"
         aria-autocomplete="list"
+        aria-activedescendant={activeDescendant}
         placeholder={m.command_palette_placeholder()}
         onkeydown={onKeydown}
       />
@@ -98,7 +125,9 @@
               type="button"
               class="cmdk-row"
               class:highlighted={i === highlighted}
+              id={optId(r.id)}
               role="option"
+              tabindex="-1"
               aria-selected={i === highlighted}
               onmouseenter={() => (highlighted = i)}
               onclick={() => go(r)}

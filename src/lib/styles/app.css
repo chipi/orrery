@@ -134,7 +134,10 @@ html {
         pull in from the ~5% TVs clip at the edges.
      2. Heavier focus rings for 10-foot legibility — !important so the boost
         wins over the per-component :focus-visible rules, TV-context only. */
-@media (hover: none) and (pointer: coarse) and (min-width: 1100px) {
+/* max-resolution 1.5dppx keeps 10-foot TVs (≈1dppx) in scope while excluding
+   high-DPR tablets (iPad Pro landscape is coarse + hover:none + ~1366px but
+   2–3dppx), which would otherwise inherit TV overscan they don't need. */
+@media (hover: none) and (pointer: coarse) and (min-width: 1100px) and (max-resolution: 1.5dppx) {
   :root {
     --safe-area-inset-top: 32px;
     --safe-area-inset-right: 48px;

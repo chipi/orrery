@@ -1,4 +1,5 @@
 import { base } from '$app/paths';
+import { browser } from '$app/environment';
 
 /**
  * Responsive WebP ladder consumption (RFC-030 D1/D3, ADR-080, #383 Slice 3).
@@ -45,6 +46,9 @@ let inflight: Promise<LadderManifest> | null = null;
 
 /** Load + cache the ladder manifest once. Safe to call from many components. */
 export async function loadLadder(): Promise<LadderManifest> {
+  // No manifest fetch during SSR — the relative URL has no base origin in Node
+  // and would poison the module cache with an empty manifest for later requests.
+  if (!browser) return {};
   if (cache) return cache;
   if (!inflight) {
     inflight = fetch(`${base}/data/image-ladder.json`)

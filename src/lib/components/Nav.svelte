@@ -252,8 +252,8 @@
     <button
       type="button"
       class="share-toggle"
-      aria-label="Share this view"
-      title="Share this view"
+      aria-label={m.nav_share()}
+      title={m.nav_share()}
       onclick={() => void shareCurrent()}
     >
       <ShareIcon />

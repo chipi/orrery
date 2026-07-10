@@ -855,26 +855,26 @@
          hiding the nav under the iOS status bar). */
       padding: var(--safe-area-inset-top, env(safe-area-inset-top)) 6px 0;
     }
-    /* Cluster of 5 right-side buttons (menu / audio / locale / lens /
-       contrast) overflowed the 375 px viewport at the default 14 px gap
-       — landing.spec.ts:95 + fleet.spec.ts:173 both flagged ~48 px of
-       horizontal scroll. Tighten the gap so the cluster fits without
-       hiding any controls (each one is reachable here only — the
-       hamburger drawer doesn't surface lens / contrast). */
+    /* The right cluster (menu / audio / locale / lens / contrast / share)
+       overflowed the 375 px viewport once RFC-031 added the 6th button
+       (high-contrast Aa) — landing.spec.ts + fleet.spec.ts flag the
+       horizontal scroll. Fit all controls (none can be dropped: the Aa
+       toggle is validated on mobile by pwa.spec, and the hamburger drawer
+       doesn't surface lens/contrast) by trimming the gap and the icon
+       min-width. 40 px stays a comfortable target and WCAG 2.1 AA sets no
+       target-size floor (2.5.5 is AAA); graphics-settings ⚙ stays
+       desktop-only since auto-detection handles the mobile tier. */
     .right {
-      gap: 2px;
+      gap: 1px;
     }
-    /* Two desktop-affordance toggles are hidden on phones so the 44 px
-       touch-target cluster fits the 375 px viewport without shrinking
-       any target (RFC-031 keeps WCAG target sizes intact):
-         • Graphics-settings ⚙ — auto-detection picks the tier on mobile.
-         • High-contrast Aa — mobile high-contrast is driven by the OS
-           `@media (prefers-contrast: more)` (tokens.css), which this app
-           honours automatically; the manual override is a desktop
-           convenience where the OS setting is less commonly enabled.
-       Both stay visible on tablet + desktop. */
-    .settings-toggle,
-    .contrast-toggle {
+    .menu-toggle,
+    .audio-toggle,
+    .lens-toggle,
+    .contrast-toggle,
+    .share-toggle {
+      min-width: 40px;
+    }
+    .settings-toggle {
       display: none;
     }
   }

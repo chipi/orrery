@@ -517,6 +517,8 @@ Generic pages (no `DebugPanelRegistrar`) still show Perf / i18n / Route — you 
 
 Before the specific checklists below (flyby body, mission, science overlay, fleet row), every new card / entity / catalog entry **must** clear these five gates. They exist because we've shipped — repeatedly — entries that lived as bare stubs for months: empty galleries, English-only labels, no learn-link, no cross-reference to the parent body. The 2026-06-17 mission-image inventory surfaced 8 missions (opportunity, spirit, mariner9, phoenix, magellan, akatsuki, osiris-rex, dart) in exactly this state. Don't add the ninth.
 
+> **Adding a mission specifically:** follow the [mission-addition runbook](docs/guides/mission-addition-runbook.md) — the ordered touchpoint checklist (base record · index · en-US overlay · LEARN links · fleet-refs + symmetry · optional flight/waypoints · mandatory hero image · translations), with `npm run validate-data` as the interactive done-signal. Worked example: Artemis 4.
+
 For every new card, in the same PR, you ship:
 
 1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `static/data/i18n/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).

@@ -29,15 +29,15 @@
     }
   ],
   "linked_missions": [
-    "apollo10",
     "apollo11",
+    "apollo9",
+    "apollo10",
     "apollo12",
     "apollo13",
     "apollo14",
     "apollo15",
-    "apollo16",
     "apollo17",
-    "apollo9"
+    "apollo16"
   ],
   "linked_sites": [
     {

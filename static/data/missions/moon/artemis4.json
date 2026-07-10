@@ -1,0 +1,41 @@
+{
+  "id": "artemis4",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2028,
+  "status": "PLANNED",
+  "departure_date": "2028-09-01",
+  "arrival_date": "2028-09-05",
+  "transit_days": 4,
+  "vehicle": "SLS Block 1B (first crewed flight, Exploration Upper Stage) + Starship HLS (lunar lander)",
+  "payload": "Orion + 4-person crew; I-HAB (International Habitation module) delivered to the Lunar Gateway",
+  "delta_v": "~7 km/s (round trip)",
+  "data_quality": "partial",
+  "credit": "© NASA — Artemis IV. First crewed mission to the Lunar Gateway: SLS Block 1B debuts the Exploration Upper Stage (EUS), launching Orion + crew and co-manifesting the ESA/JAXA-built I-HAB (International Habitation) module for delivery to Gateway. The mission conducts the second crewed lunar landing via a Starship HLS. Planned ~2028; crew and landing site TBD.",
+  "links": [
+    {
+      "l": "Artemis IV — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_4",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis program (NASA)",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/",
+      "t": "intro"
+    },
+    {
+      "l": "Gateway — NASA's lunar space station",
+      "u": "https://www.nasa.gov/mission/gateway/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    { "id": "sls-block-1", "role": "launcher" },
+    { "id": "orion", "role": "spacecraft" },
+    { "id": "lc-39b", "role": "launch-site" }
+  ]
+}

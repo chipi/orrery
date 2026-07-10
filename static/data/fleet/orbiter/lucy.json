@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["lucy"]
+  "linked_missions": [
+    "lucy"
+  ]
 }

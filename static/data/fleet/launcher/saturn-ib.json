@@ -25,10 +25,10 @@
   ],
   "linked_missions": [
     "apollo-1",
-    "apollo-soyuz",
     "apollo7",
     "skylab-2",
     "skylab-3",
-    "skylab-4"
+    "skylab-4",
+    "apollo-soyuz"
   ]
 }

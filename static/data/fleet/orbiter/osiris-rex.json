@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["osiris-rex"]
+  "linked_missions": [
+    "osiris-rex"
+  ]
 }

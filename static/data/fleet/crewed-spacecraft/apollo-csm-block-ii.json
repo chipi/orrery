@@ -29,21 +29,21 @@
     }
   ],
   "linked_missions": [
-    "apollo-soyuz",
-    "apollo10",
+    "apollo7",
+    "apollo8",
     "apollo11",
+    "apollo9",
+    "apollo10",
     "apollo12",
     "apollo13",
     "apollo14",
     "apollo15",
-    "apollo16",
     "apollo17",
-    "apollo7",
-    "apollo8",
-    "apollo9",
+    "apollo16",
     "skylab-2",
     "skylab-3",
-    "skylab-4"
+    "skylab-4",
+    "apollo-soyuz"
   ],
   "linked_sites": [
     {

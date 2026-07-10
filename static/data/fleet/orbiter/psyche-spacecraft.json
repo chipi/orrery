@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["psyche-mission"]
+  "linked_missions": [
+    "psyche-mission"
+  ]
 }

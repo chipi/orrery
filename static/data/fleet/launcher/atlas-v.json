@@ -29,18 +29,18 @@
     }
   ],
   "linked_missions": [
-    "curiosity",
-    "insight",
-    "lro",
-    "lucy",
-    "maven",
     "new-horizons",
-    "osiris-rex",
+    "lro",
     "otv-1",
+    "curiosity",
     "otv-2",
     "otv-3",
+    "maven",
     "otv-4",
+    "osiris-rex",
+    "insight",
+    "perseverance",
     "otv-6",
-    "perseverance"
+    "lucy"
   ]
 }

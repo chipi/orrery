@@ -7,6 +7,7 @@
   import { initViewport } from '$lib/viewport.svelte';
   import { Capacitor } from '@capacitor/core';
   import { openExternal } from '$lib/external-link';
+  import { formatDisplayVersion } from '$lib/version';
   import { initWebglRecovery } from '$lib/native/webgl-recovery';
   import { initDeepLinks } from '$lib/native/deep-links';
   import '$lib/styles/app.css';
@@ -63,12 +64,10 @@
     { id: 'science', label: m.nav_science(), href: '/science', keywords: 'encyclopedia physics' },
   ]);
 
-  // Footer version display — show major.minor.patch, dropping any
-  // `-wip` / `-rc.N` / etc. pre-release suffix. The raw `__APP_VERSION__`
-  // (full `0.7.1-wip` shape) stays available for Sentry releases +
-  // analytics elsewhere — this is purely the human-facing label in the
-  // footer strip.
-  const displayVersion = __APP_VERSION__.split('-')[0].split('.').slice(0, 3).join('.');
+  // Footer version label — keeps the pre-release suffix and collapses a `.0`
+  // patch (`0.8.0-wip` → `0.8-wip`). Shared helper so the Nav mirror can't
+  // drift. Raw `__APP_VERSION__` stays for Sentry releases + analytics.
+  const displayVersion = formatDisplayVersion(__APP_VERSION__);
   let activeLocale = $derived(localeFromPage($page));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,

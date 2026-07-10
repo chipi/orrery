@@ -23,15 +23,16 @@
     ShareIcon,
   } from '$lib/components/icons';
   import { shareCurrent } from '$lib/share';
+  import { formatDisplayVersion } from '$lib/version';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
   let { right }: Props = $props();
 
-  // Footer version chip (mirrors +layout.svelte). The floating .site-footer is
-  // hidden on touch, so the version is restored at the bottom of the mobile
-  // drawer. major.minor.patch, dropping any -wip / -rc suffix.
-  const displayVersion = __APP_VERSION__.split('-')[0].split('.').slice(0, 3).join('.');
+  // Footer version chip (mirrors +layout.svelte via the shared helper). The
+  // floating .site-footer is hidden on touch, so the version is restored at the
+  // bottom of the mobile drawer. Keeps the -wip suffix, collapses a .0 patch.
+  const displayVersion = formatDisplayVersion(__APP_VERSION__);
 
   const linkDefs = [
     { path: '/', label: m.nav_home },

@@ -29,7 +29,7 @@ Net: `validate-data` flagging a missing fleet asset is correct — but the *fix*
 | 5 | **Fleet cross-refs** | `fleet_refs[]` in base record | optional | **`npx tsx scripts/migrate-fleet-linked-missions.ts`** (derives the reverse `linked_missions[]` — symmetry is fail-closed) |
 | 6 | **Flight + trajectory** | `flight.*` + generated `waypoints_km` / `waypoints_helio_au` | optional (needed for `/fly`) | Moon: `generate-hybrid-waypoints.ts`; Mars/outer: `generate-helio-hybrid-waypoints.ts` |
 | 7 | **Hero + gallery images** | `static/images/missions/<id>/…` | ✅ hero (zero-gap policy) | the image pipeline — see below |
-| 8 | **Translations (13 locales)** | `i18n-src/<locale>/missions/<dest>/<id>.json` | quality (not a hard gate) | `scripts/translate-i18n-gaps.mjs` |
+| 8 | **Translations (all 14 locales)** | `i18n-src/<locale>/missions/<dest>/<id>.json` | ✅ **required** (core content) | `scripts/translate-i18n-gaps.mjs` |
 
 ### 1–3 · Core data
 
@@ -52,9 +52,17 @@ npx tsx scripts/cislunar/generate-helio-hybrid-waypoints.ts static/data/missions
 
 `validate-hero-coverage` fails-closed if `static/images/missions/<id>/01.webp` is absent (`MISSIONS_KNOWN_GAPS` is intentionally empty since #342). Source the hero + gallery through the **[image pipeline runbook](../../scripts/IMAGE-PIPELINE.md#adding-a-new-gallery-image)**: source (agency-first) → `masters/` (git-LFS) → WebP ladder + 1x1 → provenance → gallery counts. For a **future mission** with no photos (Artemis 4), the hero is agency **concept art** — same pipeline, and **image changes need per-image approval** (see AGENTS.md).
 
-### 8 · Translations — en-US is the gate; the other 13 are quality
+### 8 · Translations — CORE content, not optional
 
-`validate-data` only requires the **en-US** overlay (non-English falls back to en-US at runtime, so the mission renders everywhere in English immediately). Ship the 13 translations as a quality pass: `set -a; source .env; set +a; node scripts/translate-i18n-gaps.mjs` (Claude API, per ADR-033), then `npm run i18n:compile`.
+**Localization is content work — the same tier as sourcing the hero image, and it cannot be skipped.** All 14 locales must be authored before the mission is done. `validate-data` currently only *enforces* the en-US overlay (the other 13 fall back to English at runtime so nothing hard-breaks), but a mission that renders English into 13 locales is **not shipped — it's half-authored**. Fill them in the same PR:
+
+```bash
+set -a; source .env; set +a
+node scripts/translate-i18n-gaps.mjs   # scans for missing locale overlays + fills them (Claude API, ADR-033)
+npm run i18n:compile
+```
+
+> The en-US-only floor in `validate-data` is a fallback safety net, **not** the done-bar. A green `validate-data` with missing translations is as unfinished as a missing hero image.
 
 ## Validation = the done-signal
 
@@ -72,4 +80,4 @@ Each `validate-data` failure names the touchpoint and usually the fix command �
 - **`fleet_refs` are one-directional until you run the migrate script** — symmetry is fail-closed; the error even prints the command.
 - **`flight` optional + no `/fly` warning** — a mission can ship looking complete while `/fly?mission=<id>` is empty because waypoints were never generated.
 - **Hero image is mandatory** (zero-gap policy) — you cannot ship a mission without one; for future missions that means sourcing concept art through the approval-gated image pipeline.
-- **en-US suffices to pass CI**; don't mistake a green `validate-data` for "fully localized."
+- **en-US passing CI is a floor, not done.** Localization is core content (same tier as the hero image) — a mission rendering English into 13 locales is unfinished; run `translate-i18n-gaps.mjs` in the same PR.

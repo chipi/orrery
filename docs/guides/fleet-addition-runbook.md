@@ -27,7 +27,7 @@ The `category` field + the directory `static/data/fleet/<category>/` must agree.
 | 4 | **LEARN links** | `links[]` in the base entry | ✅ (≥1) | agency page > Wikipedia (ADR-051) |
 | 5 | **`linked_missions[]`** | base entry | auto | **Do NOT hand-author** — it's the reverse of missions' `fleet_refs`; `npx tsx scripts/migrate-fleet-linked-missions.ts` derives it |
 | 6 | **Hero + gallery images** | `static/images/fleet-galleries/<id>/…` | ✅ hero (zero-gap policy) | the [image pipeline](../../scripts/IMAGE-PIPELINE.md#adding-a-new-gallery-image) |
-| 7 | **Translations (13 locales)** | `i18n-src/<locale>/fleet/<category>/<id>.json` | quality | `scripts/translate-i18n-gaps.mjs` |
+| 7 | **Translations (all 14 locales)** | `i18n-src/<locale>/fleet/<category>/<id>.json` | ✅ **required** (core content) | `scripts/translate-i18n-gaps.mjs` |
 | 8 | **3D surface model** | `src/lib/{moon,mars}-lander-models.ts` | only landers/rovers | reuse an existing builder if the shape fits (ADR-072); don't add ad-hoc |
 
 ### 1–3 · Core data
@@ -56,4 +56,5 @@ npm run preview           # eyeball /fleet row + detail panel at localhost
 - **`category` ↔ directory must match**, and both must be one of the 12.
 - **Don't hand-author `linked_missions`** — derive it; hand-editing drifts.
 - **Hero image is mandatory** (zero-gap policy) — source real imagery (or agency render), approval-gated.
+- **Localization is core content, not optional** — all 14 locales (`translate-i18n-gaps.mjs`), same tier as the hero image. en-US passing `validate-data` is a fallback floor, not done; ship the translations in the same PR.
 - **Reuse 3D builders** — a new lander/rover shares an existing builder unless genuinely novel (ADR-072); adding one ad-hoc is blocked by AGENTS.md.

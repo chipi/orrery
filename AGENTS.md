@@ -519,6 +519,8 @@ Before the specific checklists below (flyby body, mission, science overlay, flee
 
 > **Adding a mission specifically:** follow the [mission-addition runbook](docs/guides/mission-addition-runbook.md) — the ordered touchpoint checklist (base record · index · en-US overlay · LEARN links · fleet-refs + symmetry · optional flight/waypoints · mandatory hero image · translations), with `npm run validate-data` as the interactive done-signal. Worked example: Artemis 4.
 > **Adding a fleet asset** (launcher / spacecraft / station / lander / …): follow the [fleet-addition runbook](docs/guides/fleet-addition-runbook.md). A mission that references a not-yet-existing fleet id must author it here first — **never stub it** (an agent can fan out one fleet sub-agent per missing asset). Worked example: SLS Block 1B.
+> **Adding a destination / flyby body** (a mission to a body that isn't in the catalog yet — the dest-body cascade): follow the [flyby-body-addition runbook](docs/guides/flyby-body-addition-runbook.md). Worked example: Arrokoth.
+> **Adding a site story** (a mission/site narrative sidecar): follow the [site-story-addition runbook](docs/guides/site-story-addition-runbook.md).
 
 For every new card, in the same PR, you ship:
 

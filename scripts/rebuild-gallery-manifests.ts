@@ -11,9 +11,11 @@
  * 0-image while `ls static/images/fleet-galleries/<id>/*.jpg` shows
  * three files.
  *
- * This script walks every gallery directory + counts non-variant JPEGs
- * (excludes the .1x1 / .4x3 / .16x9 vision-pipeline crops). Writes
- * the truthful integer-count map back to disk.
+ * This script walks every gallery directory + counts WebP base slots
+ * (NN.webp, excluding the NN-<width>.webp responsive rungs and the .1x1
+ * thumbnail crops). Mirrors validate-gallery-counts.ts's disk logic —
+ * display slots ship WebP-only since RFC-030 / ADR-080. Writes the
+ * truthful integer-count map back to disk.
  *
  * Usage:
  *   npx tsx scripts/rebuild-gallery-manifests.ts            # both
@@ -51,11 +53,11 @@ const SURFACES: Array<{ label: string; imageDir: string; manifest: string }> = [
   { label: 'belt-galleries', imageDir: 'belts', manifest: 'belt-galleries.json' },
 ];
 
-const VARIANT_SUFFIX = /\.(1x1|4x3|16x9)\.jpg$/i;
-
-async function countJpegsInDir(dir: string): Promise<number> {
+// Display slots ship as WebP only (RFC-030 / ADR-080): NN.webp base,
+// excluding NN-<width>.webp responsive rungs. Mirrors validate-gallery-counts.
+async function countBaseSlots(dir: string): Promise<number> {
   const entries = await fs.readdir(dir).catch(() => []);
-  return entries.filter((f) => f.endsWith('.jpg') && !VARIANT_SUFFIX.test(f)).length;
+  return entries.filter((f) => /^\d{2}\.webp$/.test(f)).length;
 }
 
 async function walkSegment(root: string): Promise<Record<string, number>> {
@@ -63,7 +65,7 @@ async function walkSegment(root: string): Promise<Record<string, number>> {
   const map: Record<string, number> = {};
   for (const e of entries) {
     if (!e.isDirectory()) continue;
-    const count = await countJpegsInDir(path.join(root, e.name));
+    const count = await countBaseSlots(path.join(root, e.name));
     if (count > 0) map[e.name] = count;
   }
   return map;

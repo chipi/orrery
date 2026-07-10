@@ -19,14 +19,14 @@
     }
   ],
   "linked_missions": [
-    "voskhod-1",
-    "voskhod-2",
     "vostok-1",
     "vostok-2",
     "vostok-3",
     "vostok-4",
     "vostok-5",
-    "vostok-6"
+    "vostok-6",
+    "voskhod-1",
+    "voskhod-2"
   ],
   "linked_sites": [],
   "lat": 45.9203,

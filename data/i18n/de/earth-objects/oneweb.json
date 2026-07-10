@@ -1,6 +1,0 @@
-{
-  "name": "OneWeb",
-  "short": "OneWeb",
-  "description": "648 Satelliten in 1.200 km Höhe auf 12 polaren Bahnebenen — Breitband-LEO der ersten Generation. Betrieben von Eutelsat OneWeb seit der Fusion 2023. Polare Umlaufbahnen ermöglichen eine Pol-zu-Pol-Abdeckung, die von Starlink-Schalen mit mittlerer Bahnneigung nicht erreicht werden kann.",
-  "scale_fact": "OneWeb wählte 1.200 km — doppelt so hoch wie Starlink — um Latenzeinbußen durch längere Signalwege zu reduzieren. Nachteil: schwieriger aus der Umlaufbahn zu bringen am Ende der Lebensdauer."
-}

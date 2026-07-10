@@ -1,8 +1,0 @@
-{
-  "title": "Arquitetura humana de Marte — o que Marte tripulado realmente exige",
-  "intro_sentence": "Apollo foi à Lua e voltou em 8 dias. Marte tripulado é uma missão de 2–3 anos com 6–9 meses de trânsito em cada direção, apagões de conjunção e estadia de superfície autossuficiente. Nenhuma tecnologia está totalmente pronta.",
-  "body_paragraphs": [
-    "O problema do trânsito domina a arquitetura. Janelas de transferência Terra-Marte abrem a cada 26 meses; transferências Hohmann mais baratas tomam ~7–9 meses por direção, com estadia forçada de 18–20 meses até a próxima janela. DRA 5.0 NASA assume trânsito de 6 meses com propulsão térmica nuclear (NTP, ainda não em escala de voo). A arquitetura Starship da SpaceX se baseia em aerocaptura + pouso propulsivo com metano/oxigênio ISRU. Radiação é o problema fisiológico não resolvido: ~0,5 mSv/dia de raios cósmicos durante trânsito. 6 meses trânsito + 18 meses superfície ≈ 1 Sv total — ~5% aumento do risco de câncer ao longo da vida. Contramedidas: blindagem passiva água/polietileno, blindagem ativa eletromagnética (pesquisada, não comprovada em voo), aterros de regolito marciano. ISRU é o habilitador: MOXIE em Perseverance demonstrou eletrólise do CO₂ atmosférico em O₂. EDL é o gargalo: pousadores Marte atuais ~1 t; pousador tripulado Marte ~20–30 t."
-  ],
-  "diagram_caption": "Cinco problemas não resolvidos em voo: duração trânsito vs ΔV (NTP / Starship), radiação (blindagem passiva + ativa), fisiologia 1/3 g de longo prazo (não medida), ISRU (metano + O₂ de CO₂ + gelo), EDL Marte escala humana (retropropulsão supersônica a 20 t)."
-}

@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["dart"]
+  "linked_missions": [
+    "dart"
+  ]
 }

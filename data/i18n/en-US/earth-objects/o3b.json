@@ -1,6 +1,0 @@
-{
-  "name": "O3b / O3b mPOWER (MEO comms)",
-  "short": "O3b",
-  "description": "20 satellites at 8,063 km equatorial MEO — only operational MEO commercial broadband. O3b mPOWER successors launching since 2022 with software-defined beam allocation. Lower latency than GEO, more coverage than LEO; aimed at the 'other 3 billion' (origin of the name).",
-  "scale_fact": "MEO orbits are an underused middle ground — fast enough for low-latency calls, fewer satellites needed than LEO. O3b is the only operator using it commercially."
-}

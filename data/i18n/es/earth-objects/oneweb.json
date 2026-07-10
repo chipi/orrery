@@ -1,6 +1,0 @@
-{
-  "name": "OneWeb",
-  "short": "OneWeb",
-  "description": "648 satélites a 1200 km en 12 planos orbitales polares — banda ancha LEO de primera generación. Operado por Eutelsat OneWeb desde la fusión de 2023. Las órbitas polares proporcionan cobertura de polo a polo que las constelaciones de inclinación media de Starlink no pueden alcanzar.",
-  "scale_fact": "OneWeb eligió 1200 km — el doble de la altitud de Starlink — para reducir las penalizaciones de latencia derivadas de trayectorias de señal más largas. Contrapartida: más difícil de desorbitar al final de su vida útil."
-}

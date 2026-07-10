@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["solar-orbiter"]
+  "linked_missions": [
+    "solar-orbiter"
+  ]
 }

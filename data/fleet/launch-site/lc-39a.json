@@ -31,17 +31,17 @@
     }
   ],
   "linked_missions": [
+    "apollo8",
     "apollo11",
+    "apollo9",
     "apollo12",
     "apollo13",
     "apollo14",
     "apollo15",
-    "apollo16",
     "apollo17",
-    "apollo8",
-    "apollo9",
-    "inspiration4",
+    "apollo16",
     "otv-5",
+    "inspiration4",
     "otv-7",
     "polaris-dawn"
   ]

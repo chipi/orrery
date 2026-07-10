@@ -470,6 +470,16 @@
     "crewed": true
   },
   {
+    "id": "artemis4",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "PLANNED",
+    "year": 2028,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
     "id": "starship-mars-crew",
     "agency": "SpaceX",
     "dest": "MARS",
@@ -1097,6 +1107,16 @@
     "year": 2021,
     "sector": "gov",
     "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "id": "hera",
+    "agency": "ESA",
+    "dest": "DIDYMOS",
+    "status": "ACTIVE",
+    "year": 2024,
+    "sector": "gov",
+    "color": "#003247",
     "crewed": false
   },
   {

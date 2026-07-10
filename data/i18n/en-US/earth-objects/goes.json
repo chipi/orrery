@@ -1,6 +1,0 @@
-{
-  "name": "GOES (NOAA Weather)",
-  "short": "GOES",
-  "description": "US geostationary weather pair — GOES-East at 75.2°W + GOES-West at 137.0°W give continuous coverage of the Americas. GOES-16 onward use the Advanced Baseline Imager for 30-second mesoscale scans of hurricane cores.",
-  "scale_fact": "Every TV weather map you've ever seen of a US hurricane was a GOES image taken minutes earlier from 35,786 km up."
-}

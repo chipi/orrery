@@ -1,6 +1,0 @@
-{
-  "name": "GOES (NOAA 기상위성)",
-  "short": "GOES",
-  "description": "미국의 정지궤도 기상위성 쌍 — GOES-East는 75.2°W, GOES-West는 137.0°W에 위치하여 아메리카 대륙을 연속적으로 관측합니다. GOES-16 이후 위성들은 Advanced Baseline Imager를 사용하여 허리케인 중심부를 30초 간격으로 중규모 스캔합니다.",
-  "scale_fact": "미국 허리케인을 다룬 TV 기상 지도는 모두 35,786 km 상공에서 불과 몇 분 전에 촬영한 GOES 이미지입니다."
-}

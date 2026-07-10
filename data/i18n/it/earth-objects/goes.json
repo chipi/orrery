@@ -1,6 +1,0 @@
-{
-  "name": "GOES (Meteo NOAA)",
-  "short": "GOES",
-  "description": "Coppia di satelliti meteorologici geostazionari USA — GOES-East a 75,2°W + GOES-West a 137,0°W forniscono copertura continua delle Americhe. Da GOES-16 in poi utilizzano l'Advanced Baseline Imager per scansioni mesoscala di 30 secondi dei nuclei degli uragani.",
-  "scale_fact": "Ogni mappa meteorologica televisiva di un uragano USA che hai mai visto è un'immagine GOES scattata pochi minuti prima da 35.786 km di altezza."
-}

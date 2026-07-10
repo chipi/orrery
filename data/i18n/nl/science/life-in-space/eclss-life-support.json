@@ -1,8 +1,0 @@
-{
-  "title": "Levensondersteuning — ECLSS, de lucht- en watercyclus",
-  "intro_sentence": "Zes mensen ademen 6 kg zuurstof per dag, drinken 18 L water en ademen 7 kg CO₂ uit. Niets daarvan wordt vanaf de aarde gelanceerd als het station het kan vermijden — elke gram moet worden teruggewonnen.",
-  "body_paragraphs": [
-    "ECLSS is het deel van het station dat niemand ziet en waarvan iedereen afhankelijk is. Taak: vier waarden in het groen houden — O₂-partiële druk (~21 kPa), CO₂ (<0,7 kPa nominaal), cabinetemperatuur (~22 °C), vochtigheid (40–60%). Zuurstof komt van elektrolyse: het OGS-systeem in de Tranquility-knoop splitst gerecycled water in O₂ + H₂. Elektron-VM Russisch doet hetzelfde op Russisch segment. CO₂-verwijdering evolueerde meer dan elke andere ECLSS-functie: Apollo/Shuttle gebruikten lithium-hydroxide-cartridges (de 'vierkante pin in rond gat' improvisatie van Apollo 13 was een LiOH-adapter). Moderne ISS gebruikt twee regenereerbare systemen: CDRA US-zijde (zeoliet moleculaire zeven) en Vozdukh Russisch (amine swing-bedden). De Sabatier-reactor (ESA, 2010) sluit de cyclus door CO₂ + H₂ om te zetten in methaan + water. Waterherwinning (WRS, Tranquility): ~93% efficiëntie; Mars-doel >98%. Thermisch beheer: 75 kW gedissipeerd via externe ammoniaklussen naar 14 radiatoren."
-  ],
-  "diagram_caption": "Lucht: O₂ uit elektrolyse → cabine → CO₂ ingevangen (zeoliet US / amine RU) → Sabatier zet CO₂ + H₂ om in methaan + water. Water: urine + condens → destillatie + filtratie → drinkbaar. Warmte: interne waterlus → externe ammoniaklus → 14 radiatoren."
-}

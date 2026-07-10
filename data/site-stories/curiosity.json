@@ -8,12 +8,12 @@
       "subtitle": "Building a rover for Gale Crater",
       "images": [
         {
-          "src": "/images/missions/curiosity/01.jpg",
+          "src": "/images/missions/curiosity/01.webp",
           "caption": "Mars Science Laboratory assembled at JPL — Curiosity, descent stage, backshell + heat shield stacked for shipment to Florida.",
           "chapter": "hardware"
         },
         {
-          "src": "/images/missions/curiosity/02.jpg",
+          "src": "/images/missions/curiosity/02.webp",
           "caption": "The MMRTG nuclear power source (orange disk, lower right) provides ~110 W continuously for ≥14 years — no solar panels, no winter shutdowns.",
           "chapter": "hardware"
         }
@@ -25,7 +25,7 @@
       "subtitle": "November 26, 2011 — Atlas V from Cape Canaveral",
       "images": [
         {
-          "src": "/images/missions/curiosity/03.jpg",
+          "src": "/images/missions/curiosity/03.webp",
           "caption": "Atlas V 541 lifts off from SLC-41 carrying Mars Science Laboratory + Curiosity. 10:02 EST, November 26 2011.",
           "chapter": "launch"
         }
@@ -47,7 +47,7 @@
           "chapter": "surface"
         },
         {
-          "src": "/images/fleet-galleries/curiosity/01.jpg",
+          "src": "/images/fleet-galleries/curiosity/01.webp",
           "caption": "Self-portrait at \"Big Sky\" drill site, sol 1126 — composite of dozens of MAHLI close-ups stitched into a single image.",
           "chapter": "surface"
         }
@@ -59,12 +59,12 @@
       "subtitle": "Evidence of an ancient habitable Mars",
       "images": [
         {
-          "src": "/images/fleet-galleries/curiosity/02.jpg",
+          "src": "/images/fleet-galleries/curiosity/02.webp",
           "caption": "Drill hole at Yellowknife Bay — the first sample from Mars's past lake-bed environment, January 2013.",
           "chapter": "science"
         },
         {
-          "src": "/images/fleet-galleries/curiosity/03.jpg",
+          "src": "/images/fleet-galleries/curiosity/03.webp",
           "caption": "Sedimentary rocks at Vera Rubin Ridge — banded iron formations + clay minerals indicate ancient liquid water and a habitable chemical environment.",
           "chapter": "science"
         }
@@ -76,7 +76,7 @@
       "subtitle": "Engineers + scientists behind Curiosity",
       "images": [
         {
-          "src": "/images/fleet-galleries/curiosity/04.jpg",
+          "src": "/images/fleet-galleries/curiosity/04.webp",
           "caption": "JPL mission control celebrates the seven-minutes-of-terror sky-crane landing, August 5/6 2012 — Adam Steltzner and team after the first signals from Gale Crater.",
           "chapter": "people"
         }

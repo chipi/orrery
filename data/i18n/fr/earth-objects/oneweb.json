@@ -1,6 +1,0 @@
-{
-  "name": "OneWeb",
-  "short": "OneWeb",
-  "description": "648 satellites à 1 200 km dans 12 plans orbitaux polaires — internet haut débit LEO de première génération. Exploité par Eutelsat OneWeb depuis la fusion de 2023. Les orbites polaires offrent une couverture pôle à pôle que les constellations Starlink à inclinaison moyenne ne peuvent atteindre.",
-  "scale_fact": "OneWeb a choisi 1 200 km — le double de l'altitude de Starlink — pour réduire les pénalités de latence dues aux trajets de signal plus longs. Compromis : plus difficile à désorbiter en fin de vie."
-}

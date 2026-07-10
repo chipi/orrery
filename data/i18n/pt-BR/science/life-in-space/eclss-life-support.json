@@ -1,8 +1,0 @@
-{
-  "title": "Suporte à vida — ECLSS, o circuito de ar e água",
-  "intro_sentence": "Seis pessoas respiram 6 kg de oxigênio por dia, bebem 18 L de água e exalam 7 kg de CO₂. Nada disso é lançado da Terra se a estação pode evitar — cada grama deve ser recuperado.",
-  "body_paragraphs": [
-    "ECLSS é a parte da estação que ninguém vê e da qual todos dependem. Trabalho: manter quatro valores no verde — pressão parcial de O₂ (~21 kPa), CO₂ (<0,7 kPa nominal), temperatura cabine (~22 °C), umidade (40–60%). Oxigênio vem de eletrólise: sistema OGS no nó Tranquility eletrolisa água reciclada em O₂ + H₂. Elektron-VM russo faz o mesmo no segmento russo. A remoção de CO₂ evoluiu mais do que qualquer outra função: Apollo/Shuttle usavam cartuchos de hidróxido de lítio (a improvisação 'pino quadrado em furo redondo' da Apollo 13 foi um adaptador LiOH). ISS moderna usa dois sistemas regeneráveis: CDRA lado US (peneiras moleculares de zeolita) e Vozdukh russo (leitos de amina oscilantes). O reator Sabatier (ESA, 2010) fecha o ciclo transformando CO₂ + H₂ em metano + água. Recuperação de água (WRS, Tranquility): ~93% de eficiência; meta Marte >98%. Controle térmico: 75 kW dissipados via loops externos de amônia para 14 radiadores."
-  ],
-  "diagram_caption": "Ar: O₂ por eletrólise → cabine → CO₂ capturado (zeolita EUA / amina Rússia) → Sabatier converte CO₂ + H₂ em metano + água. Água: urina + condensado → destilação + filtragem → potável. Calor: loop água interno → loop amônia externo → 14 radiadores."
-}

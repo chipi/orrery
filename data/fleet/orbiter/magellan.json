@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["magellan"]
+  "linked_missions": [
+    "magellan"
+  ]
 }

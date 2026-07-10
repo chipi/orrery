@@ -1,8 +1,0 @@
-{
-  "title": "Progettazione stazioni con equipaggio — da Saljut all'ISS a Tiangong",
-  "intro_sentence": "Sei decenni di stazioni con equipaggio, sei generazioni di architettura — la risposta a 'come tenere umani vivi in orbita per mesi' si è raffinata ogni volta che la precedente si è rotta.",
-  "body_paragraphs": [
-    "Una stazione spaziale sono quattro problemi impilati: uno scafo pressurizzato che tenga 1 atm contro il vuoto, un sistema di attracco per arrivi di equipaggio e carico, una pila di supporto vitale (aria/acqua/calore), e quartieri che non spingano gli occupanti all'ammutinamento. Saljut 1 (URSS, 1971) era essenzialmente una scatola di latta; il suo primo equipaggio a lunga durata (Sojuz 11, 1971) morì al rientro perché il problema della tuta IVA non era ancora risolto. La costruzione modulare fu la svolta: Mir (URSS→Russia, 1986–2001) primo multi-modulo, dimostrò che si potevano mantenere umani *continuamente* a bordo. La ISS (1998–) ne ereditò la logica modulare e la scalò a 16 elementi pressurizzati di NASA, Roscosmos, ESA, JAXA, CSA. Tiangong (CMSA, 2021–) è il contro-design deliberato: più piccola, più stretta, più veloce da costruire. Invariante: acqua, fuoco e dinamica di equipaggio hanno causato più problemi del vuoto o delle radiazioni."
-  ],
-  "diagram_caption": "Sei decenni, sei architetture: Saljut 1 (lattina singola) → Skylab (lattina grande) → Mir (nucleo + moduli) → ISS (segmenti US + russo + traliccio internazionale) → Tiangong (tri-modulo compatto) → prossima generazione (commerciale / precursore Marte)."
-}

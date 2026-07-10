@@ -1,6 +1,0 @@
-{
-  "name": "GOES (Meteorologia NOAA)",
-  "short": "GOES",
-  "description": "Par geoestacionário de meteorologia dos EUA — GOES-East a 75,2°W + GOES-West a 137,0°W fornecem cobertura contínua das Américas. A partir do GOES-16, utilizam o Advanced Baseline Imager para varreduras de mesoescala de 30 segundos dos núcleos de furacões.",
-  "scale_fact": "Cada mapa meteorológico de TV que você já viu de um furacão nos EUA foi uma imagem GOES capturada minutos antes a 35.786 km de altitude."
-}

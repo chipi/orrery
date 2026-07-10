@@ -28,5 +28,7 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["parker-solar-probe"]
+  "linked_missions": [
+    "parker-solar-probe"
+  ]
 }

@@ -28,7 +28,9 @@
       "t": "deep"
     }
   ],
-  "linked_missions": ["mariner9"],
+  "linked_missions": [
+    "mariner9"
+  ],
   "linked_sites": [
     {
       "type": "mars",

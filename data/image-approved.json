@@ -2,7 +2,7 @@
   "version": 1,
   "generated_by": "audit-image-usage.ts --write-approved",
   "note": "Sticky allowlist — source of truth for /credits + provenance, independent of vision scores. RFC-029 decision 4. Re-derive after fetches land; the list only grows (used images are never auto-dropped).",
-  "count": 5590,
+  "count": 5602,
   "approved": [
     "/images/anatomy/akatsuki.webp",
     "/images/anatomy/antares.webp",
@@ -5593,6 +5593,18 @@
     "/images/tiangong-modules/wentian/03.1x1.jpg",
     "/images/tiangong-modules/wentian/03.jpg",
     "/images/tiangong-modules/wentian/04.1x1.jpg",
-    "/images/tiangong-modules/wentian/04.jpg"
+    "/images/tiangong-modules/wentian/04.jpg",
+    "/images/missions/artemis4/01.webp",
+    "/images/missions/artemis4/01.1x1.jpg",
+    "/images/missions/artemis4/02.webp",
+    "/images/missions/artemis4/02.1x1.jpg",
+    "/images/missions/artemis4/03.webp",
+    "/images/missions/artemis4/03.1x1.jpg",
+    "/images/missions/artemis4/04.webp",
+    "/images/missions/artemis4/04.1x1.jpg",
+    "/images/missions/artemis4/05.webp",
+    "/images/missions/artemis4/05.1x1.jpg",
+    "/images/missions/hera/01.webp",
+    "/images/missions/hera/01.1x1.jpg"
   ]
 }

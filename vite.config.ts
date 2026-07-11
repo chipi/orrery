@@ -419,6 +419,12 @@ export default defineConfig(({ mode }) => {
           'src/lib/launches/sources/',
           'scripts/fetch-launches.ts',
           'scripts/audit-report-launches.ts',
+          // AR runtime (RFC-021 / #150 — WebXR/ARKit sessions, XR render loops,
+          // device audio/haptic paths) can't run in jsdom/CI (no AR device, no
+          // WebGL-XR, no native bridge). Verified on-device; the pure helpers keep
+          // their *.test.ts (which still run) — same policy as scripts/hotspots.
+          'src/lib/ar.ts',
+          'src/lib/ar/',
           '*.config.{js,ts}',
           '.svelte-kit/',
         ],

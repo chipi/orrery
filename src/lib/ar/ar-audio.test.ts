@@ -1,6 +1,12 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { orientationVectors, createSpatialSource, updateArListener } from './ar-audio';
+import {
+  orientationVectors,
+  createSpatialSource,
+  updateArListener,
+  detectAudioOutput,
+  configureSpatialAudio,
+} from './ar-audio';
 
 describe('orientationVectors', () => {
   it('identity quaternion → forward −Z, up +Y', () => {
@@ -69,5 +75,46 @@ describe('spatial audio', () => {
 
   it('updateArListener moves the listener without throwing', () => {
     expect(() => updateArListener({ position: [0, 1.5, 0], rotation: [0, 0, 0, 1] })).not.toThrow();
+  });
+});
+
+describe('headphone-aware rendering (#210)', () => {
+  it('detectAudioOutput → speakers when mediaDevices is unavailable', async () => {
+    vi.stubGlobal('navigator', {});
+    expect(await detectAudioOutput()).toBe('speakers');
+    vi.unstubAllGlobals();
+  });
+
+  it('detectAudioOutput → headphones when a non-default output exists', async () => {
+    vi.stubGlobal('navigator', {
+      mediaDevices: {
+        enumerateDevices: async () => [{ kind: 'audiooutput', deviceId: 'abc123' }],
+      },
+    });
+    expect(await detectAudioOutput()).toBe('headphones');
+    vi.unstubAllGlobals();
+  });
+
+  it('detectAudioOutput → speakers when only the default output exists', async () => {
+    vi.stubGlobal('navigator', {
+      mediaDevices: {
+        enumerateDevices: async () => [{ kind: 'audiooutput', deviceId: 'default' }],
+      },
+    });
+    expect(await detectAudioOutput()).toBe('speakers');
+    vi.unstubAllGlobals();
+  });
+
+  it('configureSpatialAudio swaps live panners between HRTF and equalpower', () => {
+    const src = createSpatialSource([0, 0, 0]);
+    expect(src).not.toBeNull();
+    configureSpatialAudio('speakers');
+    const src2 = createSpatialSource([1, 0, 0]); // new sources inherit the mode
+    expect(src2).not.toBeNull();
+    configureSpatialAudio('headphones');
+    expect(() => {
+      src!.disconnect();
+      src2!.disconnect();
+    }).not.toThrow();
   });
 });

@@ -67,6 +67,56 @@ export interface ArSpatialSource {
   disconnect(): void;
 }
 
+// ── Headphone-aware rendering (#210 / RFC-021 §7) ────────────────────────────
+// HRTF gives accurate 3D on headphones but sounds bizarre on speakers — swap to
+// equal-power stereo there. All live panners share the current mode.
+
+export type AudioOutput = 'headphones' | 'speakers';
+const livePanners = new Set<PannerNode>();
+let outputMode: AudioOutput = 'headphones';
+
+function pannerModel(mode: AudioOutput): PanningModelType {
+  return mode === 'headphones' ? 'HRTF' : 'equalpower';
+}
+
+/** Heuristic: a non-default audio output suggests headphones/external. Imperfect
+ *  (Bluetooth speakers register too) but better than always-HRTF-or-always-stereo. */
+export async function detectAudioOutput(): Promise<AudioOutput> {
+  if (typeof navigator === 'undefined' || !navigator.mediaDevices?.enumerateDevices) {
+    return 'speakers';
+  }
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const external = devices.find(
+      (d) => d.kind === 'audiooutput' && d.deviceId !== 'default' && d.deviceId !== '',
+    );
+    return external ? 'headphones' : 'speakers';
+  } catch {
+    return 'speakers';
+  }
+}
+
+/** Apply an output mode to every live spatial source. */
+export function configureSpatialAudio(mode: AudioOutput): void {
+  outputMode = mode;
+  const model = pannerModel(mode);
+  for (const p of livePanners) p.panningModel = model;
+}
+
+/** Detect + apply on start, then re-detect on plug/unplug. Returns a disposer. */
+export function initHeadphoneDetection(): () => void {
+  let disposed = false;
+  const apply = () => {
+    if (!disposed) void detectAudioOutput().then(configureSpatialAudio);
+  };
+  apply();
+  navigator.mediaDevices?.addEventListener?.('devicechange', apply);
+  return () => {
+    disposed = true;
+    navigator.mediaDevices?.removeEventListener?.('devicechange', apply);
+  };
+}
+
 /**
  * A world-positioned HRTF panner on the shared master bus — an object's
  * sonification pans from its real-world position. Returns null when Web Audio
@@ -78,14 +128,18 @@ export function createSpatialSource(
   const bus = audioEngine.bus();
   if (!bus) return null;
   const panner = bus.ctx.createPanner();
-  panner.panningModel = 'HRTF';
+  panner.panningModel = pannerModel(outputMode); // headphone-aware (#210)
   panner.distanceModel = 'inverse';
   panner.refDistance = 0.1; // tabletop scale
   panner.setPosition(worldPosition[0], worldPosition[1], worldPosition[2]);
   panner.connect(bus.master);
+  livePanners.add(panner);
   return {
     connect: (node) => node.connect(panner),
     setPosition: (x, y, z) => panner.setPosition(x, y, z),
-    disconnect: () => panner.disconnect(),
+    disconnect: () => {
+      livePanners.delete(panner);
+      panner.disconnect();
+    },
   };
 }

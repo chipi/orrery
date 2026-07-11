@@ -1,0 +1,86 @@
+{
+  "name": "Soviet Lunar Programme",
+  "tagline": "The one race the Soviet Union ran and lost — a secret, starved, divided bid for the Moon whose giant rocket exploded four times and was erased from the record for twenty years.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "There is a persistent myth that only the Americans raced to the Moon — that the Soviet Union, having lost, always claimed it had never been trying. The second half is true; the first is not. The USSR ran a full crewed lunar programme, in parallel with Apollo and in total secrecy, and it lost. Then it spent two decades denying the programme had ever existed, which is why so few people know it did. The hardware was real, the cosmonauts were assigned, and the intent was the same as America's: put a Soviet citizen on the Moon first."
+    },
+    {
+      "type": "prose",
+      "md": "What the Soviet effort lacked was everything that made Apollo work. Where the United States concentrated its entire national effort behind one design bureau and one rocket, the Soviet programme was split between rival chief designers who despised each other, funded a fraction of what NASA received, and hidden so completely that failure carried no political cost — and therefore generated no political urgency. Sergei Korolev, the one man who might have unified it, spent his authority fighting for resources and then died on an operating table in 1966, at fifty-nine, with the programme still years from flight. It never recovered."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/n1/05" },
+      "caption": "The N1 super-heavy rocket — the Soviet answer to the Saturn V. Its first stage clustered thirty engines because no single Soviet engine was powerful enough, and no test stand existed big enough to fire them together.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The programme had two goals, pursued by two separate projects. The first, L1/Zond, was to loop a single cosmonaut around the Moon and back — a circumlunar flight, no landing — to score the propaganda coup of the first humans to reach the Moon's vicinity. The second, L3, was the real prize: land a cosmonaut on the surface. Both depended on rockets the Soviet Union did not yet have, and the L3 landing depended on the largest of all: the N1, a 105-metre monster whose first stage packed thirty engines around its base because no single Soviet engine came close to the power of the American F-1."
+    },
+    {
+      "type": "prose",
+      "md": "That thirty-engine cluster was the programme's defining gamble and its fatal flaw. Thirty engines meant thousands of ways to fail, all of which had to work in concert for the rocket to fly — and there was no facility in the Soviet Union large enough to test-fire the assembled first stage on the ground. So the N1 was flown the way you are never supposed to fly a rocket: assembled whole and launched, with the first full test of the propulsion system being the launch itself. NASA had rejected exactly this approach for the Saturn V, insisting on exhaustive ground firing first. The Soviets could not afford to, and it killed the programme."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/n1/04" },
+      "caption": "The N1's first stage clustered thirty NK-15 engines in two rings. With no way to ground-test them together, every flight was the first integrated test — and all four ended in failure, one destroying the launch pad.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The circumlunar half came agonisingly close. In September 1968, three months before Apollo 8, Zond 5 flew a spacecraft around the Moon and brought it safely back to Earth — carrying two tortoises, the first living creatures to travel to the Moon's vicinity and return. It was a genuine first, and it should have been followed within weeks by a cosmonaut on the same trajectory. But the flight had been rougher than admitted, Apollo 8 then carried a crew all the way to lunar orbit and back, and Soviet managers judged a crewed Zond too risky for a prize the Americans had just claimed more completely. The cosmonaut loop was never flown."
+    },
+    {
+      "type": "prose",
+      "md": "The landing half simply failed. The N1 launched four times between 1969 and 1972, and every launch ended in destruction. The second attempt, in July 1969 — days before Apollo 11 — lost thrust seconds after liftoff, fell back onto its pad, and detonated in one of the largest non-nuclear explosions ever recorded, flattening the launch complex. By the time the engineers had begun to understand the failures, Apollo had already landed six crews. The programme was quietly cancelled in 1974, its rockets scrapped, its pads rebuilt for other uses, and its very existence denied until the Soviet Union itself began to end."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The through-line of the Soviet lunar programme is that secrecy, which the Soviet system treated as a strength, was in this case a fatal weakness. Because the effort was hidden, its failures embarrassed no one publicly, cost no minister his job, and produced none of the external pressure that forced NASA to be honest about risk. Apollo's disasters — the Apollo 1 fire above all — happened in the open and forced brutal, accountable reform. The N1's failures happened in the dark, were blamed internally, and changed nothing fast enough. A programme no one is allowed to watch is a programme no one is forced to fix."
+    },
+    {
+      "type": "prose",
+      "md": "The second thread is division. The United States built Apollo as a single national effort under one agency. The Soviet programme was a feud: Korolev's bureau against Vladimir Chelomei's, both against the engine designer Valentin Glushko, who refused to build the engines Korolev wanted and whose eventual takeover of the programme was the act that finally killed the N1. Three brilliant men, three competing rockets, one starved budget split between them. Concentrated force lands on the Moon; divided force builds three half-finished rockets and flies none of them successfully."
+    },
+    {
+      "type": "prose",
+      "md": "There is a strange coda. The N1's NK-15 engines, refined into the NK-33, turned out to be superb — some of the best rocket engines ever built. When the programme was cancelled, Glushko ordered them destroyed; instead the engineers hid roughly a hundred of them in a warehouse for twenty years. In the 1990s they were rediscovered, sold to American companies, and flew — Soviet Moon-rocket engines, decades later, lifting American rockets. The rocket failed; its engines were a triumph nobody was allowed to use until the country that built them was gone."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/n1/02" },
+      "caption": "A US reconnaissance image of an N1 mockup at Baikonur, late 1967. For two decades the Soviet Union insisted the Moon rocket did not exist; to the outside world it was known mainly through American spy photographs like this one.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "The Soviet lunar programme's legacy is mostly absence — the landing that never happened, the rocket that never worked, the twenty-year silence. But the absence itself is instructive. It is the clearest counterexample to Apollo in the whole space age: the same goal, the same decade, comparable engineering talent, and a completely different outcome, driven not by a lack of ability but by secrecy, division, and starved resources. If Apollo shows what a concentrated, accountable, openly-funded programme can do, the Soviet lunar effort shows what happens when each of those conditions is missing."
+    },
+    {
+      "type": "prose",
+      "md": "Its hardware did feed forward. The Soyuz 7K-LOK lunar variant informed the Soyuz that still flies; the LK lander's compact, single-crew design influenced later thinking; the NK-33 engines eventually flew. And the programme's honest reckoning, once the secrecy lifted, became part of how the space age is now told — not as a one-horse race the Americans won by default, but as a real contest the Soviet Union entered, ran hard, and lost for reasons that had little to do with rocketry and everything to do with how the effort was organised and hidden."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "The programme's hardest lesson is that you cannot skip the ground test. The N1 was flown assembled-and-launched because the Soviet Union lacked a stand to fire thirty engines together — and so every flight was the first integrated test of the most complex part of the rocket, with no chance to find the failures anywhere but in the air. NASA's insistence on exhaustive ground firing of the Saturn V looked slow and expensive; it was the reason the Saturn V never failed in flight. When you cannot afford to test properly, you have not made the rocket cheaper — you have moved the cost onto the flights, and it comes due there."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is that secrecy and accountability are opposites, and that a programme needs the second more than it fears the loss of the first. Hiding the Soviet effort protected it from public embarrassment and, in doing so, stripped away every external force that might have made it confront its problems in time. Apollo was forced to be honest because the whole world was watching; the N1 was allowed to fail quietly, four times, because no one was. Visibility is not just a risk to be managed. For a hard, unforgiving endeavour, it is one of the things that makes success possible at all."
+    }
+  ]
+}

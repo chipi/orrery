@@ -75,5 +75,18 @@
     "start_year": 1961,
     "end_year": 1972,
     "hero": "missions/apollo11/01"
+  },
+  {
+    "id": "soviet-lunar",
+    "name": "Soviet Lunar Programme",
+    "tagline": "The one race the Soviet Union ran and lost — a secret, starved, divided bid for the Moon whose giant rocket exploded four times and was erased from the record for twenty years.",
+    "kind": "crewed-campaign",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "epoch": "lunar-era",
+    "status": "CANCELLED",
+    "start_year": 1964,
+    "end_year": 1974,
+    "hero": "fleet/n1/01"
   }
 ]

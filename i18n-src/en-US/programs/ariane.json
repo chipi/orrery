@@ -1,0 +1,86 @@
+{
+  "name": "Ariane",
+  "tagline": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In the early 1970s Europe did not control its own access to space, and it found out what that meant. When Europe wanted to launch the Franco-German Symphonie communications satellites, the only ride available was American — and the United States would only provide it on the condition that the satellites not be used for commercial telecommunications that might compete with the US-led Intelsat. It was a quiet, decisive humiliation: to fly on someone else's rocket is to let them decide what your spacecraft is allowed to do. Europe drew the obvious conclusion and resolved never to be in that position again."
+    },
+    {
+      "type": "prose",
+      "md": "The answer was Ariane — a European launcher, led by France and built under the newly-formed European Space Agency, flying from Kourou in French Guiana, close to the equator where the Earth's spin gives a rocket a free boost. Its first flight, in 1979, was the moment Europe secured guaranteed, independent access to orbit. Unlike almost every other program in this atlas, Ariane carried no crew and chased no records. It is infrastructure — the road, not the journey — and it turned out to be one of the most consequential roads of the space age."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/ariane-1/01" },
+      "caption": "Ariane 1, Europe's first independent orbital launcher, first flown in 1979. It existed to guarantee that Europe would never again need another power's permission to put its own spacecraft into space.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Ariane's first goal was strategic and simple: autonomy. Europe would build a launcher it fully controlled, so that its satellites, its science, and eventually its astronauts could reach orbit on European terms, answerable to no one. That goal alone would have justified the program. But a second goal emerged almost immediately and became just as important — to sell that capacity on the open market."
+    },
+    {
+      "type": "prose",
+      "md": "In 1980 Europe created Arianespace, the world's first commercial launch company, and turned a strategic asset into a business. The idea was that if Ariane launched not only European payloads but satellites for anyone willing to pay, the commercial revenue would help sustain the launcher and drive down its cost. It was a genuinely new model — treating access to space as a service to be sold rather than a capability each nation built only for itself — and for two decades it worked spectacularly well."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/ariane-5/03" },
+      "caption": "Ariane 5 on its launch pad at Kourou. After a famous maiden-flight failure, it became one of the most reliable heavy-lift rockets ever flown — launching Rosetta, Galileo, the ATV freighters to the ISS, and the James Webb Space Telescope.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The outcome exceeded the ambition. Ariane 4, the reliable workhorse of the 1980s and 90s, captured roughly half of the entire global market for commercial satellite launches, making Arianespace the dominant launch provider on Earth and Europe a first-rank spacefaring power. Its successor, Ariane 5, had a notorious start — its 1996 maiden flight destroyed itself thirty-seven seconds after launch when guidance software carried over from Ariane 4 overflowed at the new rocket's higher speed, a failure now taught in every software-engineering course — but recovered to become one of the most dependable heavy launchers ever built."
+    },
+    {
+      "type": "prose",
+      "md": "Ariane 5's manifest is a roll-call of the era's science and infrastructure: the Rosetta comet mission, the Galileo navigation constellation, BepiColombo to Mercury, the ATV cargo freighters that resupplied the International Space Station, and — as its final crowning payload — the James Webb Space Telescope, launched so precisely that it saved years of the telescope's fuel. Then the ground shifted. SpaceX's reusable rockets undercut Ariane's prices and ended its commercial dominance, and Ariane 6, flying from 2024, is Europe's answer: a cheaper, more flexible launcher built to keep the continent's independent access alive in a transformed market."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Ariane's through-line is that access to space is not a convenience but a form of sovereignty. The whole program grew from the recognition that depending on another power's rockets means depending on that power's permission — and everything Europe did afterwards, from building Ariane to sustaining it commercially to replacing it under pressure, followed from the decision that this dependence was unacceptable. In a domain usually told through crews and destinations, Ariane is the reminder that someone has to build and own the road, and that who owns it matters enormously."
+    },
+    {
+      "type": "prose",
+      "md": "The commercial pivot is the program's cleverest move and its central lesson. By founding Arianespace and selling launches worldwide, Europe made its strategic launcher pay for much of its own upkeep and honed it against real competition, rather than letting it become a subsidised national project that flew only occasionally. For twenty years this made Ariane both independent and dominant. It also made the program vulnerable in a way a purely strategic launcher would not have been: when a cheaper competitor appeared, Ariane lost the commercial market that had sustained it, and had to reinvent itself to survive."
+    },
+    {
+      "type": "prose",
+      "md": "That competitor, of course, was reusability done right — the thing the Space Shuttle had promised and not delivered, and that a new generation achieved. Ariane, long built on the logic of the reliable expendable rocket, found that logic overturned almost overnight, and Ariane 6 is the response of an established power to a disruptive one. The outcome is still being written, but the stake is exactly what it was in 1979: whether Europe keeps its own guaranteed way to space."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/ariane-6/02" },
+      "caption": "Ariane 6, flying from 2024 — Europe's answer to a market transformed by reusable rockets, and the continuation of the same mandate Ariane 1 was built for: independent European access to space.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Ariane's legacy is that Europe has never again had to ask permission to reach space. For over four decades an unbroken line of European rockets has launched the continent's satellites, science missions, and contributions to the International Space Station — and for much of that time launched the world's, too. The commercial launch industry that is now so central to spaceflight was, in large part, invented by Arianespace; the model of selling access to orbit as a service began at Kourou."
+    },
+    {
+      "type": "prose",
+      "md": "It also stands as the clearest case study in the value — and the cost — of strategic autonomy. Ariane was more expensive than simply buying launches from whoever was cheapest, and in the reusable era that gap has grown. But the program's founders understood that the cheapest launch is worthless if the seller can dictate its terms, and Europe has spent four decades and considerable money to keep that from ever happening again. Whether to keep paying that premium, as reusable competitors reshape the market, is the live question Ariane 6 now embodies."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Ariane's first lesson is that independent access to critical infrastructure is worth paying for. Europe built its own launcher not because it was cheaper but because the alternative — depending on a rival or partner for something as fundamental as reaching orbit — meant surrendering control over its own space program, as the Symphonie affair had shown. The premium Europe has paid for Ariane is the price of never again being told what its satellites are allowed to do. For anything genuinely strategic, autonomy is a capability, not an extravagance."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets."
+    }
+  ]
+}

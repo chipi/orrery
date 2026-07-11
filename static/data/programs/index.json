@@ -153,5 +153,17 @@
     "start_year": 1976,
     "end_year": 1993,
     "hero": "fleet/buran/03"
+  },
+  {
+    "id": "ariane",
+    "name": "Ariane",
+    "tagline": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
+    "kind": "infrastructure",
+    "agency": "ESA",
+    "country": "Multi (Europe)",
+    "epoch": "shuttle-and-mir",
+    "status": "ACTIVE",
+    "start_year": 1979,
+    "hero": "fleet/ariane-5/01"
   }
 ]

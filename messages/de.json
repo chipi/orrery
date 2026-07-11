@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Ausstellungs-/Kioskmodus",
   "audio_kiosk_mode_meta": "ohne Chrome · Schleife · für Displayschirm · Esc zum Beenden",
   "exhibit_exit_aria": "Ausstellungsmodus verlassen",
-  "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden"
+  "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden",
+  "ar_enter": "In AR ansehen",
+  "ar_enter_aria": "Diese Szene in erweiterter Realität ansehen",
+  "ar_ios_fallback": "AR erfordert die Orrery iOS-App — im App Store erhältlich",
+  "ar_camera_permission_rationale": "Um die Planeten in Ihrem Raum zu platzieren, benötigt Orrery die Kamera. Nichts wird aufgezeichnet oder hochgeladen."
 }

@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Modo exposição / quiosque",
   "audio_kiosk_mode_meta": "sem chrome · em loop · para tela de exibição · Esc para sair",
   "exhibit_exit_aria": "Sair do modo exposição",
-  "exhibit_qr_caption": "Escaneie para explorar no seu celular"
+  "exhibit_qr_caption": "Escaneie para explorar no seu celular",
+  "ar_enter": "Ver em RA",
+  "ar_enter_aria": "Ver esta cena em realidade aumentada",
+  "ar_ios_fallback": "RA requer o app Orrery para iOS — baixe na App Store",
+  "ar_camera_permission_rationale": "Para posicionar os planetas no seu ambiente, o Orrery precisa da câmera. Nada é gravado ou enviado."
 }

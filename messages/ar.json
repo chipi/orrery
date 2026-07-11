@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ وضع العرض / الكشك",
   "audio_kiosk_mode_meta": "بلا واجهة · تكرار · للشاشات العامة · Esc للخروج",
   "exhibit_exit_aria": "الخروج من وضع العرض",
-  "exhibit_qr_caption": "امسح للاستكشاف على هاتفك"
+  "exhibit_qr_caption": "امسح للاستكشاف على هاتفك",
+  "ar_enter": "عرض بالواقع المعزز",
+  "ar_enter_aria": "عرض هذا المشهد بتقنية الواقع المعزز",
+  "ar_ios_fallback": "يتطلب الواقع المعزز تطبيق Orrery لنظام iOS — احصل عليه من App Store",
+  "ar_camera_permission_rationale": "لوضع الكواكب في غرفتك، يحتاج Orrery إلى الكاميرا. لا يتم تسجيل أو رفع أي شيء."
 }

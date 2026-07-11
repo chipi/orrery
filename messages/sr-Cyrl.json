@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Режим изложбе / киоска",
   "audio_kiosk_mode_meta": "без контрола · петља · за екран · Esc за излаз",
   "exhibit_exit_aria": "Изађи из режима изложбе",
-  "exhibit_qr_caption": "Скенирај да истражујеш на телефону"
+  "exhibit_qr_caption": "Скенирај да истражујеш на телефону",
+  "ar_enter": "Погледај у AR",
+  "ar_enter_aria": "Погледај ову сцену у проширеној стварности",
+  "ar_ios_fallback": "AR захтева Orrery iOS апликацију — преузмите је на App Store",
+  "ar_camera_permission_rationale": "Да би поставио планете у вашој соби, Orrery захтева камеру. Ништа се не снима нити отпрема."
 }

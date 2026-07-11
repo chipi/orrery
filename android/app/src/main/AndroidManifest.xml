@@ -9,6 +9,12 @@
     <uses-feature android:name="android.software.leanback" android:required="false" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
+    <!-- Immersive Mode (#214 / RFC-021): WebXR AR uses the camera. Neither is
+         `required`, so the app still installs on non-ARCore devices (AR just
+         reports unsupported there and the flat-screen experience is unaffected). -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.ar" android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

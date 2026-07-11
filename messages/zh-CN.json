@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ 展览/演示模式",
   "audio_kiosk_mode_meta": "无边框 · 循环播放 · 用于展示屏幕 · 按Esc退出",
   "exhibit_exit_aria": "退出展览模式",
-  "exhibit_qr_caption": "扫码在手机上探索"
+  "exhibit_qr_caption": "扫码在手机上探索",
+  "ar_enter": "AR 查看",
+  "ar_enter_aria": "在增强现实中查看此场景",
+  "ar_ios_fallback": "AR 需要 Orrery iOS 应用 — 前往 App Store 获取",
+  "ar_camera_permission_rationale": "为了在您的房间中放置行星,Orrery 需要使用相机。不会记录或上传任何内容。"
 }

@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Modalità exhibit / chiosco",
   "audio_kiosk_mode_meta": "senza interfaccia · in loop · per schermi espositivi · Esc per uscire",
   "exhibit_exit_aria": "Esci dalla modalità exhibit",
-  "exhibit_qr_caption": "Scansiona per esplorare sul tuo telefono"
+  "exhibit_qr_caption": "Scansiona per esplorare sul tuo telefono",
+  "ar_enter": "Visualizza in AR",
+  "ar_enter_aria": "Visualizza questa scena in realtà aumentata",
+  "ar_ios_fallback": "AR richiede l'app Orrery per iOS — scaricala dall'App Store",
+  "ar_camera_permission_rationale": "Per posizionare i pianeti nella tua stanza, Orrery necessita della fotocamera. Nulla viene registrato o caricato."
 }

@@ -380,7 +380,11 @@
     "audio_kiosk_mode": "▶ Modo exposición / quiosco",
     "audio_kiosk_mode_meta": "sin chrome · en bucle · para pantalla de exhibición · Esc para salir",
     "exhibit_exit_aria": "Salir del modo exposición",
-    "exhibit_qr_caption": "Escanea para explorar en tu móvil"
+    "exhibit_qr_caption": "Escanea para explorar en tu móvil",
+    "ar_enter": "Ver en RA",
+    "ar_enter_aria": "Ver esta escena en realidad aumentada",
+    "ar_ios_fallback": "La RA requiere la aplicación Orrery para iOS — consíguela en el App Store",
+    "ar_camera_permission_rationale": "Para colocar los planetas en tu habitación, Orrery necesita la cámara. No se graba ni se sube nada."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -796,7 +800,11 @@
     "audio_kiosk_mode": "▶ Mode exposition / kiosque",
     "audio_kiosk_mode_meta": "sans chrome · en boucle · pour écran d'affichage · Échap pour quitter",
     "exhibit_exit_aria": "Quitter le mode exposition",
-    "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone"
+    "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone",
+    "ar_enter": "Voir en RA",
+    "ar_enter_aria": "Voir cette scène en réalité augmentée",
+    "ar_ios_fallback": "La RA nécessite l'application iOS Orrery — téléchargez-la sur l'App Store",
+    "ar_camera_permission_rationale": "Pour placer les planètes dans votre pièce, Orrery a besoin de la caméra. Rien n'est enregistré ni téléversé."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1206,7 +1214,11 @@
     "audio_kiosk_mode": "▶ Ausstellungs-/Kioskmodus",
     "audio_kiosk_mode_meta": "ohne Chrome · Schleife · für Displayschirm · Esc zum Beenden",
     "exhibit_exit_aria": "Ausstellungsmodus verlassen",
-    "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden"
+    "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden",
+    "ar_enter": "In AR ansehen",
+    "ar_enter_aria": "Diese Szene in erweiterter Realität ansehen",
+    "ar_ios_fallback": "AR erfordert die Orrery iOS-App — im App Store erhältlich",
+    "ar_camera_permission_rationale": "Um die Planeten in Ihrem Raum zu platzieren, benötigt Orrery die Kamera. Nichts wird aufgezeichnet oder hochgeladen."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1596,7 +1608,11 @@
     "audio_kiosk_mode": "▶ Modo exposição / quiosque",
     "audio_kiosk_mode_meta": "sem chrome · em loop · para tela de exibição · Esc para sair",
     "exhibit_exit_aria": "Sair do modo exposição",
-    "exhibit_qr_caption": "Escaneie para explorar no seu celular"
+    "exhibit_qr_caption": "Escaneie para explorar no seu celular",
+    "ar_enter": "Ver em RA",
+    "ar_enter_aria": "Ver esta cena em realidade aumentada",
+    "ar_ios_fallback": "RA requer o app Orrery para iOS — baixe na App Store",
+    "ar_camera_permission_rationale": "Para posicionar os planetas no seu ambiente, o Orrery precisa da câmera. Nada é gravado ou enviado."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -1980,7 +1996,11 @@
     "audio_kiosk_mode": "▶ Modalità exhibit / chiosco",
     "audio_kiosk_mode_meta": "senza interfaccia · in loop · per schermi espositivi · Esc per uscire",
     "exhibit_exit_aria": "Esci dalla modalità exhibit",
-    "exhibit_qr_caption": "Scansiona per esplorare sul tuo telefono"
+    "exhibit_qr_caption": "Scansiona per esplorare sul tuo telefono",
+    "ar_enter": "Visualizza in AR",
+    "ar_enter_aria": "Visualizza questa scena in realtà aumentata",
+    "ar_ios_fallback": "AR richiede l'app Orrery per iOS — scaricala dall'App Store",
+    "ar_camera_permission_rationale": "Per posizionare i pianeti nella tua stanza, Orrery necessita della fotocamera. Nulla viene registrato o caricato."
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2335,7 +2355,11 @@
     "audio_kiosk_mode": "▶ Режим изложбе / киоска",
     "audio_kiosk_mode_meta": "без контрола · петља · за екран · Esc за излаз",
     "exhibit_exit_aria": "Изађи из режима изложбе",
-    "exhibit_qr_caption": "Скенирај да истражујеш на телефону"
+    "exhibit_qr_caption": "Скенирај да истражујеш на телефону",
+    "ar_enter": "Погледај у AR",
+    "ar_enter_aria": "Погледај ову сцену у проширеној стварности",
+    "ar_ios_fallback": "AR захтева Orrery iOS апликацију — преузмите је на App Store",
+    "ar_camera_permission_rationale": "Да би поставио планете у вашој соби, Orrery захтева камеру. Ништа се не снима нити отпрема."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -2756,7 +2780,11 @@
     "audio_kiosk_mode": "▶ 展览/演示模式",
     "audio_kiosk_mode_meta": "无边框 · 循环播放 · 用于展示屏幕 · 按Esc退出",
     "exhibit_exit_aria": "退出展览模式",
-    "exhibit_qr_caption": "扫码在手机上探索"
+    "exhibit_qr_caption": "扫码在手机上探索",
+    "ar_enter": "AR 查看",
+    "ar_enter_aria": "在增强现实中查看此场景",
+    "ar_ios_fallback": "AR 需要 Orrery iOS 应用 — 前往 App Store 获取",
+    "ar_camera_permission_rationale": "为了在您的房间中放置行星,Orrery 需要使用相机。不会记录或上传任何内容。"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3192,7 +3220,11 @@
     "audio_kiosk_mode": "▶ 展示/キオスクモード",
     "audio_kiosk_mode_meta": "UI非表示 · ループ再生 · ディスプレイ画面用 · Escで終了",
     "exhibit_exit_aria": "展示モードを終了",
-    "exhibit_qr_caption": "スキャンしてスマホで探索"
+    "exhibit_qr_caption": "スキャンしてスマホで探索",
+    "ar_enter": "ARで見る",
+    "ar_enter_aria": "このシーンを拡張現実で表示",
+    "ar_ios_fallback": "ARにはOrrery iOSアプリが必要です — App Storeで入手",
+    "ar_camera_permission_rationale": "部屋に惑星を配置するには、Orreryにカメラへのアクセスが必要です。何も記録またはアップロードされません。"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3631,7 +3663,11 @@
     "audio_kiosk_mode": "▶ 전시 / 키오스크 모드",
     "audio_kiosk_mode_meta": "chrome-free · 반복 재생 · 디스플레이 화면용 · Esc로 종료",
     "exhibit_exit_aria": "전시 모드 종료",
-    "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기"
+    "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기",
+    "ar_enter": "AR로 보기",
+    "ar_enter_aria": "이 장면을 증강 현실로 보기",
+    "ar_ios_fallback": "AR 기능은 Orrery iOS 앱이 필요합니다 — App Store에서 다운로드하세요",
+    "ar_camera_permission_rationale": "행성을 공간에 배치하려면 Orrery가 카메라에 접근해야 합니다. 어떤 것도 녹화되거나 업로드되지 않습니다."
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -4206,7 +4242,11 @@
     "audio_kiosk_mode": "▶ प्रदर्शनी / कियोस्क मोड",
     "audio_kiosk_mode_meta": "क्रोम-मुक्त · लूप · डिस्प्ले स्क्रीन के लिए · बाहर निकलने के लिए Esc",
     "exhibit_exit_aria": "प्रदर्शनी मोड से बाहर निकलें",
-    "exhibit_qr_caption": "अपने फ़ोन पर एक्सप्लोर करने के लिए स्कैन करें"
+    "exhibit_qr_caption": "अपने फ़ोन पर एक्सप्लोर करने के लिए स्कैन करें",
+    "ar_enter": "AR में देखें",
+    "ar_enter_aria": "इस दृश्य को संवर्धित वास्तविकता में देखें",
+    "ar_ios_fallback": "AR के लिए Orrery iOS ऐप चाहिए — App Store से प्राप्त करें",
+    "ar_camera_permission_rationale": "अपने कमरे में ग्रहों को रखने के लिए, Orrery को कैमरा चाहिए। कुछ भी रिकॉर्ड या अपलोड नहीं किया जाता।"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -4823,7 +4863,11 @@
     "audio_kiosk_mode": "▶ وضع العرض / الكشك",
     "audio_kiosk_mode_meta": "بلا واجهة · تكرار · للشاشات العامة · Esc للخروج",
     "exhibit_exit_aria": "الخروج من وضع العرض",
-    "exhibit_qr_caption": "امسح للاستكشاف على هاتفك"
+    "exhibit_qr_caption": "امسح للاستكشاف على هاتفك",
+    "ar_enter": "عرض بالواقع المعزز",
+    "ar_enter_aria": "عرض هذا المشهد بتقنية الواقع المعزز",
+    "ar_ios_fallback": "يتطلب الواقع المعزز تطبيق Orrery لنظام iOS — احصل عليه من App Store",
+    "ar_camera_permission_rationale": "لوضع الكواكب في غرفتك، يحتاج Orrery إلى الكاميرا. لا يتم تسجيل أو رفع أي شيء."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -5262,7 +5306,11 @@
     "audio_kiosk_mode": "▶ Режим выставки/киоска",
     "audio_kiosk_mode_meta": "без элементов управления · циклично · для дисплея · Esc для выхода",
     "exhibit_exit_aria": "Выйти из режима выставки",
-    "exhibit_qr_caption": "Отсканируйте для изучения на телефоне"
+    "exhibit_qr_caption": "Отсканируйте для изучения на телефоне",
+    "ar_enter": "Просмотр в AR",
+    "ar_enter_aria": "Просмотреть эту сцену в дополненной реальности",
+    "ar_ios_fallback": "Для AR требуется приложение Orrery для iOS — загрузите его в App Store",
+    "ar_camera_permission_rationale": "Чтобы разместить планеты в вашей комнате, Orrery требуется доступ к камере. Ничего не записывается и не загружается."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -5651,6 +5699,10 @@
     "audio_kiosk_mode": "▶ Expositie-/kioskmodus",
     "audio_kiosk_mode_meta": "geen chrome · loops · voor een beeldscherm · Esc om te verlaten",
     "exhibit_exit_aria": "Verlaat expositiemodus",
-    "exhibit_qr_caption": "Scan om te verkennen op je telefoon"
+    "exhibit_qr_caption": "Scan om te verkennen op je telefoon",
+    "ar_enter": "Bekijk in AR",
+    "ar_enter_aria": "Bekijk deze scène in augmented reality",
+    "ar_ios_fallback": "AR vereist de Orrery iOS-app — download deze in de App Store",
+    "ar_camera_permission_rationale": "Om de planeten in je ruimte te plaatsen heeft Orrery de camera nodig. Er wordt niets opgenomen of geüpload."
   }
 }

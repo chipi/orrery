@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ 展示/キオスクモード",
   "audio_kiosk_mode_meta": "UI非表示 · ループ再生 · ディスプレイ画面用 · Escで終了",
   "exhibit_exit_aria": "展示モードを終了",
-  "exhibit_qr_caption": "スキャンしてスマホで探索"
+  "exhibit_qr_caption": "スキャンしてスマホで探索",
+  "ar_enter": "ARで見る",
+  "ar_enter_aria": "このシーンを拡張現実で表示",
+  "ar_ios_fallback": "ARにはOrrery iOSアプリが必要です — App Storeで入手",
+  "ar_camera_permission_rationale": "部屋に惑星を配置するには、Orreryにカメラへのアクセスが必要です。何も記録またはアップロードされません。"
 }

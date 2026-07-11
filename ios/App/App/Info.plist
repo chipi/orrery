@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- Immersive Mode (#214 / RFC-021): ARKit refuses to start without this.
+	     Honest copy — why (place the scene in your room) + reassurance (no
+	     recording/upload). -->
+	<key>NSCameraUsageDescription</key>
+	<string>Orrery uses the camera to place the solar system and planets in your room in augmented reality. Nothing is recorded or uploaded.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

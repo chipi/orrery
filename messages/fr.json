@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Mode exposition / kiosque",
   "audio_kiosk_mode_meta": "sans chrome · en boucle · pour écran d'affichage · Échap pour quitter",
   "exhibit_exit_aria": "Quitter le mode exposition",
-  "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone"
+  "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone",
+  "ar_enter": "Voir en RA",
+  "ar_enter_aria": "Voir cette scène en réalité augmentée",
+  "ar_ios_fallback": "La RA nécessite l'application iOS Orrery — téléchargez-la sur l'App Store",
+  "ar_camera_permission_rationale": "Pour placer les planètes dans votre pièce, Orrery a besoin de la caméra. Rien n'est enregistré ni téléversé."
 }

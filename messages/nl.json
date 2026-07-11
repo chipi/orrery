@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ Expositie-/kioskmodus",
   "audio_kiosk_mode_meta": "geen chrome · loops · voor een beeldscherm · Esc om te verlaten",
   "exhibit_exit_aria": "Verlaat expositiemodus",
-  "exhibit_qr_caption": "Scan om te verkennen op je telefoon"
+  "exhibit_qr_caption": "Scan om te verkennen op je telefoon",
+  "ar_enter": "Bekijk in AR",
+  "ar_enter_aria": "Bekijk deze scène in augmented reality",
+  "ar_ios_fallback": "AR vereist de Orrery iOS-app — download deze in de App Store",
+  "ar_camera_permission_rationale": "Om de planeten in je ruimte te plaatsen heeft Orrery de camera nodig. Er wordt niets opgenomen of geüpload."
 }

@@ -1451,5 +1451,9 @@
   "audio_kiosk_mode": "▶ 전시 / 키오스크 모드",
   "audio_kiosk_mode_meta": "chrome-free · 반복 재생 · 디스플레이 화면용 · Esc로 종료",
   "exhibit_exit_aria": "전시 모드 종료",
-  "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기"
+  "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기",
+  "ar_enter": "AR로 보기",
+  "ar_enter_aria": "이 장면을 증강 현실로 보기",
+  "ar_ios_fallback": "AR 기능은 Orrery iOS 앱이 필요합니다 — App Store에서 다운로드하세요",
+  "ar_camera_permission_rationale": "행성을 공간에 배치하려면 Orrery가 카메라에 접근해야 합니다. 어떤 것도 녹화되거나 업로드되지 않습니다."
 }

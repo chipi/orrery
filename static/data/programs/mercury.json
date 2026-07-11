@@ -1,0 +1,38 @@
+{
+  "id": "mercury",
+  "kind": "crewed-campaign",
+  "agency": "NASA",
+  "agencies": ["NASA"],
+  "country": "USA",
+  "start_year": 1958,
+  "end_year": 1963,
+  "status": "COMPLETED",
+  "epoch": "first-steps",
+  "hero": "missions/freedom-7/01",
+  "roster": [
+    { "name": "Mercury-Redstone 2 (Ham)", "year": 1961, "note": "chimpanzee suborbital test — cleared the Redstone for a crewed flight" },
+    { "linked_id": "freedom-7", "ref": "mission", "year": 1961 },
+    { "linked_id": "liberty-bell-7", "ref": "mission", "year": 1961 },
+    { "name": "Mercury-Atlas 5 (Enos)", "year": 1961, "note": "chimpanzee two-orbit test — cleared the Atlas before Glenn flew" },
+    { "linked_id": "friendship-7", "ref": "mission", "year": 1962 },
+    { "linked_id": "aurora-7", "ref": "mission", "year": 1962 },
+    { "linked_id": "sigma-7", "ref": "mission", "year": 1962 },
+    { "linked_id": "faith-7", "ref": "mission", "year": 1963 },
+    { "linked_id": "mercury-capsule", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "mercury-redstone", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "atlas-lv-3b", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "lc-5", "ref": "fleet", "role": "launch-site" },
+    { "linked_id": "lc-14", "ref": "fleet", "role": "launch-site" }
+  ],
+  "related_programs": ["gemini", "apollo"],
+  "see_also": [
+    { "label": "Earth — orbits, reentry & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Entry, descent & landing", "href": "/science/mission-phases/edl", "kind": "science" },
+    { "label": "The rocket equation — why Redstone couldn't orbit", "href": "/science/propulsion/tsiolkovsky", "kind": "science" }
+  ],
+  "links": [
+    { "l": "NASA — Project Mercury", "u": "https://www.nasa.gov/history/project-mercury/", "t": "intro" },
+    { "l": "Project Mercury (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Project_Mercury", "t": "core" },
+    { "l": "Smithsonian NASM — The Mercury Program", "u": "https://airandspace.si.edu/explore/topics/spaceflight/mercury-program", "t": "deep" }
+  ]
+}

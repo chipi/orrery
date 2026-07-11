@@ -1,0 +1,94 @@
+{
+  "name": "Mercury",
+  "tagline": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In the autumn of 1957 the Soviet Union put Sputnik into orbit, and the United States discovered it was losing a race it hadn't quite understood it was in. Washington's answer was institutional: in 1958 it stood up a new civilian space agency, NASA, and handed it a blunt first assignment — put an American into space, and do it fast. The program was named Mercury, and from the first day it was a scramble. The Soviets were ahead and still moving, and every month of delay was another month of headlines about the free world falling behind."
+    },
+    {
+      "type": "prose",
+      "md": "In 1959 NASA chose seven military test pilots to fly it. Introduced at a single press conference, the Mercury Seven became national figures instantly — before any of them had gone anywhere — because the country needed them to be. They were signing on to ride an experimental capsule on top of a converted ballistic missile: a machine designed to deliver a warhead, now asked to deliver a man and bring him home. Nobody yet knew for certain that a human could survive the trip at all."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/mercury-capsule/01" },
+      "caption": "The Mercury capsule — barely larger than the person inside it. One seat, no room to move, and no way to change orbit; the astronaut could point the spacecraft, and little else.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Mercury's goal was deliberately, almost brutally narrow: prove that a human being could survive the whole sequence — the crush of launch, minutes or hours of weightlessness, the fire of reentry — and be pulled from the ocean alive. Not explore, not maneuver, not build. Just live through it, and be seen to. Everything about the spacecraft followed from that: a cone scarcely bigger than its occupant, a single seat, no means of changing its path once it was up there."
+    },
+    {
+      "type": "prose",
+      "md": "The program had two rockets, and they split it in half. The Redstone — a direct descendant of the wartime V-2 — could only lob a capsule up and back down on a suborbital arc; the more powerful Atlas could actually reach orbital speed. So Mercury climbed in steps: first the short suborbital hops to prove the system worked with a person aboard, then the harder orbital flights once the Atlas had earned that trust."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/friendship-7/01" },
+      "caption": "John Glenn's Friendship 7, February 1962 — the first American to orbit the Earth, and the flight that finally let a nervous country exhale.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Six Americans flew Mercury between 1961 and 1963. Alan Shepard went first, a fifteen-minute suborbital hop three weeks after Gagarin had already orbited — shorter and lower than the Soviet flight, but enough. Gus Grissom repeated it and nearly drowned when his hatch blew open on splashdown. Then, in February 1962, John Glenn rode an Atlas into orbit and came home after three laps of the planet, and the United States at last had an answer to Gagarin. Scott Carpenter, Wally Schirra, and Gordon Cooper stretched the flights from three orbits to a full day — Cooper's Faith 7 circled the Earth twenty-two times in May 1963 and closed the program."
+    },
+    {
+      "type": "prose",
+      "md": "Measured against the Soviets, Mercury was a program playing catch-up that never quite caught up: by the time Glenn orbited, the USSR had already flown a full day in space, and it would soon fly a woman and walk in the void while Mercury was still counting single orbits. What Mercury won was a different thing. It flew six people to the edge of space and back — in the open, on live television — and lost none of them. It proved exactly what it set out to prove: a person can go, and return."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The story of Mercury is a country improvising in a hurry, in public. Almost everything was being invented at once — how to keep a person alive in vacuum, how to talk to a capsule racing around the planet, how to find a small craft in a very large ocean — and all of it against a deadline set by an opponent who kept moving the goalposts by getting there first."
+    },
+    {
+      "type": "prose",
+      "md": "There was a quieter fight inside the program, too. The early plans treated the astronaut as cargo, a passenger the automatic systems would fly. The test pilots refused that. They pushed for a window, for manual control, for a hand on the stick — and they got it, and more than once it mattered, when a person in the loop worked a problem the automation couldn't. That insistence on the astronaut as a pilot rather than a payload set the tone for everything American human spaceflight would become."
+    },
+    {
+      "type": "prose",
+      "md": "Mercury closed in 1963 having answered its one question. It handed everything it had learned — the hardware suppliers, the flight controllers, the astronaut corps, the hard-won confidence — straight to Gemini, which would learn to maneuver and rendezvous, and then to Apollo, which used all of it to reach the Moon."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/faith-7/01" },
+      "caption": "Gordon Cooper's Faith 7, May 1963 — twenty-two orbits and a full day aloft, the last and longest Mercury flight.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Mercury's most valuable product wasn't any single flight; it was the machine that flew them. A worldwide tracking network, a room full of controllers learning to run a mission in real time, a recovery fleet, an astronaut corps, and a web of contractors who now knew how to build things rated to carry people — all of it stood up from almost nothing in a few years, and all of it passed directly to Gemini and Apollo. NASA learned to fly people on Mercury."
+    },
+    {
+      "type": "prose",
+      "md": "It was also a Cold War argument made in the open. Where the Soviet program flew in secrecy and announced its successes after the fact, Mercury flew on live television — failures included — a deliberate bet that an open society could do hard things in full view. The Mercury Seven became the human face of that bet, famous out of all proportion to the modest distances they actually travelled, because of what they were taken to represent."
+    },
+    {
+      "type": "prose",
+      "md": "The material return came the way it usually does with a first program — not from the flights themselves but from the capability they forced into being: the tracking, the aerospace medicine, the manufacturing discipline, the plain proof that it could be done. The far larger programs that followed drew on all of it without having to build it again."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Mercury's most transferable lesson is the power of a narrow goal met in steps. It did not try to reach the Moon, or even to out-do the Soviets outright. It set out to prove exactly one thing — a person can survive spaceflight and come home — and it built toward that in deliberate increments: an uncrewed test, then a chimpanzee, then a suborbital hop, then orbit. When the destination is genuinely unknown, proving one link of the chain at a time beats lunging for the whole thing at once."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is that being first is not the same as building the foundation. Mercury lost nearly every race it entered — the Soviets reached space, orbit, and a day aloft ahead of it. And yet the program that landed on the Moon eight years later was built almost entirely on what Mercury started, not on what its rivals did first. A team that keeps showing up and compounding what it learns can lose the early sprints and still win the thing that ends up mattering."
+    },
+    {
+      "type": "prose",
+      "md": "And the human note worth keeping: the astronauts' refusal to be cargo. Handed a design that treated them as passengers, they insisted on being pilots — a window, a stick, a say in the flight — and that insistence, more than any single mission, is what made the program theirs and set the character of everything that came after."
+    }
+  ]
+}

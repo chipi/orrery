@@ -1,5 +1,18 @@
 [
   {
+    "id": "mercury",
+    "name": "Mercury",
+    "tagline": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",
+    "kind": "crewed-campaign",
+    "agency": "NASA",
+    "country": "USA",
+    "epoch": "first-steps",
+    "status": "COMPLETED",
+    "start_year": 1958,
+    "end_year": 1963,
+    "hero": "missions/freedom-7/01"
+  },
+  {
     "id": "apollo",
     "name": "Apollo",
     "tagline": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",

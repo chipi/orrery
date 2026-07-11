@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getProgram, getMissionIndex, getMission } from '$lib/data';
+import { getProgram, getMissionIndex, getMission, getBadges } from '$lib/data';
 import { getLocale } from '$lib/paraglide/runtime';
 import type { PageLoad, EntryGenerator } from './$types';
 
@@ -8,7 +8,7 @@ export const prerender = true;
 // Hardcoded program ids for the prerender (universal module — no node:fs).
 // Add a program's id here + its programs/{id}.json + overlay simultaneously;
 // validate-data.ts fails if a declared program's files are missing.
-const PROGRAM_IDS = ['apollo'];
+const PROGRAM_IDS = ['apollo', 'mercury'];
 
 export const entries: EntryGenerator = () => PROGRAM_IDS.map((id) => ({ id }));
 
@@ -49,5 +49,10 @@ export const load: PageLoad = async ({ params, fetch }) => {
     };
   }
 
-  return { program, missionDetails };
+  // Insignia map (PRD-029) — gate badge <img> so entries without a sourced
+  // badge render nothing (no 404). Mercury flights predate mission patches, so
+  // its roster carries none; only the program insignia resolves.
+  const badges = await getBadges(fetch);
+
+  return { program, missionDetails, badges };
 };

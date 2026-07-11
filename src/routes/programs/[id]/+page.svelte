@@ -12,6 +12,9 @@
 
   let { data }: { data: PageData } = $props();
   let p = $derived(data.program);
+  // Insignia map — gate badges so unbadged entries (e.g. Mercury's
+  // pre-patch-era flights) render nothing rather than firing a 404.
+  let badges = $derived(data.badges ?? {});
 
   const KIND_LABEL: Record<string, string> = {
     'crewed-campaign': 'Crewed campaign',
@@ -105,12 +108,9 @@
       <p class="meta">{p.agency} · {p.country} · {p.start_year}–{p.end_year ?? 'now'}</p>
       <div class="title-row">
         <h1>{p.name}</h1>
-        <img
-          class="prog-badge"
-          src="{base}/images/badges/programs/{p.id}.webp"
-          alt=""
-          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-        />
+        {#if badges[`program:${p.id}`]}
+          <img class="prog-badge" src="{base}{badges[`program:${p.id}`]}" alt="" />
+        {/if}
       </div>
       <p class="tagline">{p.tagline}</p>
       <p class="chips">
@@ -149,12 +149,9 @@
             <span class="t-dot"></span>
             <span class="t-body">
               {#if r.linked_id}
-                <img
-                  class="t-patch"
-                  src="{base}/images/badges/missions/{r.linked_id}.webp"
-                  alt=""
-                  onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                />
+                {#if badges[`mission:${r.linked_id}`]}
+                  <img class="t-patch" src="{base}{badges[`mission:${r.linked_id}`]}" alt="" />
+                {/if}
                 <button type="button" class="t-name" onclick={() => (selected = r.linked_id ?? null)}
                   >{pretty(r.linked_id)}</button
                 >

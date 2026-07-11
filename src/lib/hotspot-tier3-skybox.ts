@@ -133,7 +133,7 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
           return;
         }
         // Three.js r128 colour-space (PRD-019 §S1 will upgrade).
-        tex.encoding = THREE.sRGBEncoding;
+        tex.colorSpace = THREE.SRGBColorSpace;
         tex.wrapS = THREE.ClampToEdgeWrapping;
         tex.wrapT = THREE.ClampToEdgeWrapping;
         material.map = tex;
@@ -249,7 +249,7 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
               tex.dispose();
               return;
             }
-            tex.encoding = THREE.sRGBEncoding;
+            tex.colorSpace = THREE.SRGBColorSpace;
             tex.wrapS = THREE.ClampToEdgeWrapping;
             tex.wrapT = THREE.ClampToEdgeWrapping;
             const old = material.map;

@@ -119,7 +119,7 @@
     "@sveltejs/vite-plugin-svelte": "4.0.4",
     "@types/katex": "^0.16.8",
     "@types/node": "^26.1.0",
-    "@types/three": "0.128.0",
+    "@types/three": "0.185.1",
     "@vite-pwa/sveltekit": "^1.1.0",
     "@vitest/coverage-v8": "^4.1.6",
     "ajv": "^8.20.0",
@@ -159,6 +159,6 @@
     "@sentry/sveltekit": "^10.53.1",
     "detect-gpu": "^5.0.70",
     "katex": "^0.16.45",
-    "three": "0.128.0"
+    "three": "0.185.1"
   }
 }

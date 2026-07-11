@@ -1684,7 +1684,7 @@
       // r128 API — colorSpace property was added in r152. The earlier
       // `tex.colorSpace = THREE.SRGBColorSpace` lines were silent no-ops
       // here (typeof THREE.SRGBColorSpace === 'undefined' in r128).
-      tex.encoding = THREE.sRGBEncoding;
+      tex.colorSpace = THREE.SRGBColorSpace;
       return tex;
     };
 
@@ -1722,7 +1722,7 @@
           // Sun map is rendered via MeshBasicMaterial (unlit) but
           // still benefits from sRGB tagging so the texture's
           // mid-tones don't shift when output gamma is applied.
-          tex.encoding = THREE.sRGBEncoding;
+          tex.colorSpace = THREE.SRGBColorSpace;
           sunMap4k = tex;
         },
         undefined,
@@ -2595,7 +2595,7 @@
                   // PBR — tag as sRGB (matches the 2K load above) so
                   // the 4K swap doesn't shift hue/saturation when LOD
                   // crosses the in-threshold.
-                  tex.encoding = THREE.sRGBEncoding;
+                  tex.colorSpace = THREE.SRGBColorSpace;
                   lod.tex4k = tex;
                 },
                 undefined,

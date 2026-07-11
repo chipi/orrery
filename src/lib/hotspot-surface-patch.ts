@@ -502,7 +502,7 @@ function createPatchMaterial(
       }
       // Three.js r128 colour space API (PRD-019 §S1 will upgrade to
       // r140+ where this becomes tex.colorSpace = SRGBColorSpace).
-      tex.encoding = THREE.sRGBEncoding;
+      tex.colorSpace = THREE.SRGBColorSpace;
       // Patch textures are 1:1 already (per RFC-022 §6.1 variant set);
       // disable wrapping so an undersize source doesn't tile.
       tex.wrapS = THREE.ClampToEdgeWrapping;

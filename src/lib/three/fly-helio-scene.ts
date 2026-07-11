@@ -386,7 +386,9 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // (0.18) — celluloid grain, not VHS static.
   let filmPass: FilmPass | null = null;
   if (opts.quality.filmGrainEnabled) {
-    filmPass = new FilmPass(0.18, 0, 0, 0);
+    // r152+ FilmPass signature = (intensity, grayscale); the old
+    // scanline args were removed. 0.18 = subtle celluloid grain.
+    filmPass = new FilmPass(0.18);
     composer.addPass(filmPass);
   }
   // Vignette — wave 2/3 punch #8. Cheapest of the polish passes:

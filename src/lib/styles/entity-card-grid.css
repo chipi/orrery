@@ -243,6 +243,24 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
+.entity-card-grid .card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.entity-card-grid .card-name-row .card-name {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+/* Insignia beside the card title (PRD-029). Only rendered for entries that
+   have a sourced badge — gated on the badges map, so no 404 flood on the
+   ~250-card fleet grid. */
+.entity-card-grid .card-badge {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
 .entity-card-grid .card-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 22px;

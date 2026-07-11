@@ -68,8 +68,16 @@ function overlayFileLocaleGaps(rel: string): string[] {
   }
   return gaps;
 }
+// English-first editorial subtrees (PRD-029): these ship en-US first and are
+// translated when their locale tier ships (see program-addition-runbook.md §11).
+// Skipped by the all-locale gap check until translation lands — logged, never
+// silent, so the exemption stays visible. Remove a prefix once its subtree is
+// translated to re-enable the zero-gap enforcement for it.
+const I18N_ENGLISH_FIRST_PREFIXES = ['programs/'];
+
 function allLocaleOverlayGaps(): string[] {
   const gaps: string[] = [];
+  let exemptFiles = 0;
   const enRoot = join('i18n-src', 'en-US');
   const walk = (relDir: string): void => {
     const abs = relDir ? join(enRoot, relDir) : enRoot;
@@ -77,10 +85,22 @@ function allLocaleOverlayGaps(): string[] {
     for (const entry of readdirSync(abs, { withFileTypes: true })) {
       const rel = relDir ? `${relDir}/${entry.name}` : entry.name;
       if (entry.isDirectory()) walk(rel);
-      else if (entry.name.endsWith('.json')) gaps.push(...overlayFileLocaleGaps(rel));
+      else if (entry.name.endsWith('.json')) {
+        if (I18N_ENGLISH_FIRST_PREFIXES.some((p) => rel.startsWith(p))) {
+          exemptFiles++;
+          continue;
+        }
+        gaps.push(...overlayFileLocaleGaps(rel));
+      }
     }
   };
   walk('');
+  if (exemptFiles > 0) {
+    console.log(
+      `  ⏭ ${exemptFiles} English-first overlay(s) exempt from all-locale check ` +
+        `(${I18N_ENGLISH_FIRST_PREFIXES.join(', ')} — translate at tier, see program-addition-runbook.md)`,
+    );
+  }
   return gaps;
 }
 // i18n overlay SOURCE lives outside the served tree (ADR-079 D2 / #377).

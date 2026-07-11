@@ -2,6 +2,7 @@
   "name": "Apollo 11",
   "type": "CREWED LANDER · FLOWN",
   "first": "First humans on another celestial body",
+  "dispatch": "Apollo 11 was the flight the whole program was built to make — the one that had to work. For eight years and $25 billion, everything NASA did came down, in the end, to getting two people onto this particular patch of grey dust and back off it alive. When Armstrong called \"the Eagle has landed,\" the Cold-War race that opened with a beeping sphere over American cities was effectively over. What's easy to forget now is how little margin there was: the crew came down with seconds of fuel to spare, past a boulder field the maps hadn't shown, riding a guidance computer that was throwing alarms the whole way. It worked anyway — and for one night, a fifth of the species watched the same thing at the same time.",
   "description": "The mission that fulfilled Kennedy's 1961 commitment to put a man on the Moon by the end of the decade. Armstrong and Aldrin spent 21 hours 36 minutes on the lunar surface — 2.5 hours of EVA, 21.55 kg of samples, and a single commemorative plaque. The laser retroreflector they installed at Mare Tranquillitatis still receives pulses today, measuring the Earth-Moon distance to millimetre precision. The mission was watched live by ~600 million people, one fifth of humanity at the time.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Saturn V (AS-506) from Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.", "type": "nominal" },

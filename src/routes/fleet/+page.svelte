@@ -4,7 +4,8 @@
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation } from '$lib/card-chain.svelte';
-  import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
+  import { base } from '$app/paths';
+  import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
     FleetCategory,
     FleetEntry,
@@ -37,6 +38,9 @@
   // each have to guard against the loading / error variants.
   let entriesRequest = $state<RemoteData<Error, FleetIndexEntry[]>>(rdLoading());
   let entries = $derived(isSuccess(entriesRequest) ? entriesRequest.data : []);
+
+  // Insignia map (PRD-029) — gate card badges so unbadged vehicles fire no 404.
+  let badges = $state<Record<string, string>>({});
 
   let selectedEntry: FleetEntry | null = $state(null);
   let panelOpen = $state(false);
@@ -336,6 +340,7 @@
     // Pre-warm hero override cache so card covers pick up override
     // slots on first paint; safe to fire-and-forget.
     void loadHeroOverrides('fleet');
+    void getBadges().then((b) => (badges = b));
     try {
       entriesRequest = rdSuccess(await getFleetIndex());
     } catch (err) {
@@ -612,7 +617,18 @@
                     {entry.status}
                   </span>
                 </header>
-                <h2 class="card-name">{entry.name}</h2>
+                <div class="card-name-row">
+                  <h2 class="card-name">{entry.name}</h2>
+                  {#if badges[`fleet:${entry.id}`]}
+                    <img
+                      class="card-badge"
+                      src="{base}{badges[`fleet:${entry.id}`]}"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  {/if}
+                </div>
                 <p class="card-type">{CATEGORY_LABEL[entry.category]}</p>
                 <div class="card-meta">
                   <span class="card-year">{entry.first_flight.slice(0, 4)}</span>

@@ -1,0 +1,49 @@
+{
+  "id": "apollo",
+  "kind": "crewed-campaign",
+  "agency": "NASA",
+  "agencies": ["NASA"],
+  "country": "USA",
+  "start_year": 1961,
+  "end_year": 1972,
+  "status": "COMPLETED",
+  "epoch": "lunar-era",
+  "hero": "missions/apollo11/01",
+  "roster": [
+    { "name": "Apollo 1", "year": 1967, "note": "cabin fire — crew lost in a ground test" },
+    { "name": "Apollo 7", "year": 1968, "note": "first crewed flight" },
+    { "linked_id": "apollo8", "ref": "mission", "year": 1968 },
+    { "name": "Apollo 9", "year": 1969, "note": "Lunar Module crewed test in Earth orbit" },
+    { "linked_id": "apollo10", "ref": "mission", "year": 1969 },
+    { "linked_id": "apollo11", "ref": "mission", "year": 1969 },
+    { "linked_id": "apollo12", "ref": "mission", "year": 1969 },
+    { "linked_id": "apollo13", "ref": "mission", "year": 1970 },
+    { "linked_id": "apollo14", "ref": "mission", "year": 1971 },
+    { "linked_id": "apollo15", "ref": "mission", "year": 1971 },
+    { "linked_id": "apollo16", "ref": "mission", "year": 1972 },
+    { "linked_id": "apollo17", "ref": "mission", "year": 1972 },
+    { "linked_id": "saturn-v", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "saturn-ib", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "apollo-csm-block-ii", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "apollo-csm-block-i", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "apollo-lm", "ref": "fleet", "role": "lander" },
+    { "linked_id": "a7l", "ref": "fleet", "role": "suit" },
+    { "linked_id": "a7lb", "ref": "fleet", "role": "suit" },
+    { "linked_id": "lrv-apollo", "ref": "fleet", "role": "rover" },
+    { "linked_id": "lc-39a", "ref": "fleet", "role": "launch-site" },
+    { "linked_id": "lc-34", "ref": "fleet", "role": "launch-site" }
+  ],
+  "related_programs": ["gemini", "skylab", "artemis"],
+  "see_also": [
+    { "label": "The Moon — surface map & Apollo landing sites", "href": "/moon", "kind": "body" },
+    { "label": "Free-return trajectory", "href": "/science/transfers/free-return", "kind": "science" },
+    { "label": "Trans-lunar injection", "href": "/science/mission-phases/trans-x-injection", "kind": "science" },
+    { "label": "Entry, descent & landing", "href": "/science/mission-phases/edl", "kind": "science" },
+    { "label": "The rocket equation", "href": "/science/propulsion/tsiolkovsky", "kind": "science" }
+  ],
+  "links": [
+    { "l": "NASA — The Apollo Program", "u": "https://www.nasa.gov/the-apollo-program/", "t": "intro" },
+    { "l": "Apollo program (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Apollo_program", "t": "core" },
+    { "l": "Smithsonian NASM — Apollo to the Moon", "u": "https://airandspace.si.edu/explore/topics/apollo", "t": "deep" }
+  ]
+}

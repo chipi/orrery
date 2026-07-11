@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "program.schema.json",
+  "title": "Program",
+  "description": "Editorial program record grouping missions + fleet under a campaign narrative. Per PRD-029. Base file at static/data/programs/{id}.json; editorial prose lives in the i18n overlay (program-overlay.schema.json). The roster is program-authored (it can name missions orrery does not individually model); entry back-refs (mission.program / fleet.programs) are DERIVED from the roster's linked entries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "agency", "country", "status", "epoch", "roster", "links"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "minLength": 2
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "crewed-campaign",
+        "robotic-campaign",
+        "station",
+        "infrastructure",
+        "funding-line"
+      ]
+    },
+    "agency": { "type": "string", "minLength": 1 },
+    "agencies": {
+      "type": "array",
+      "description": "All backing agencies/operators for multinational programs (ISS, ILRS). agency is the lead.",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "country": { "type": "string", "minLength": 1 },
+    "start_year": { "type": "integer", "minimum": 1955, "maximum": 2100 },
+    "end_year": {
+      "description": "null = ongoing / open-ended.",
+      "oneOf": [
+        { "type": "integer", "minimum": 1955, "maximum": 2100 },
+        { "type": "null" }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PLANNED", "ACTIVE", "COMPLETED", "CANCELLED"]
+    },
+    "epoch": {
+      "type": "string",
+      "enum": [
+        "first-steps",
+        "space-race",
+        "lunar-era",
+        "first-stations",
+        "shuttle-and-mir",
+        "iss-assembly",
+        "commercial-era",
+        "lunar-return",
+        "mars-era"
+      ]
+    },
+    "hero": {
+      "type": "string",
+      "description": "Hero image: a reuse ref ('missions/apollo-11/01' | 'fleet/saturn-v/01') or a program-owned image id under static/images/programs/{id}/."
+    },
+    "roster": {
+      "type": "array",
+      "description": "The campaign's missions + hardware. Each item is EITHER linked (linked_id + ref → an existing orrery entry, clickable) OR context-only (name + year → named but not individually modeled). The curated flagship set is NOT expanded to satisfy a roster; context items exist precisely so a program can tell its whole arc.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "linked_id": { "type": "string", "minLength": 1 },
+          "ref": { "type": "string", "enum": ["mission", "fleet"] },
+          "role": {
+            "type": "string",
+            "description": "Optional label for fleet members (launcher, spacecraft, suit, rover, launch-site, …) or a mission descriptor.",
+            "minLength": 1
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "year": { "type": "integer", "minimum": 1955, "maximum": 2100 },
+          "note": { "type": "string", "description": "One-line context for a roster item (esp. context-only entries)." }
+        },
+        "oneOf": [
+          { "required": ["linked_id", "ref"] },
+          { "required": ["name"] }
+        ]
+      }
+    },
+    "related_programs": {
+      "type": "array",
+      "description": "Sibling / successor / precursor program ids (Apollo → Gemini, Skylab, Artemis).",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "badge": {
+      "type": "string",
+      "description": "Program insignia image (program-owned id under static/images/programs/{id}/badge, or a reuse ref). Sourced via the image pipeline. Optional until badges are sourced."
+    },
+    "see_also": {
+      "type": "array",
+      "description": "Deep links into orrery's own surfaces — the relevant body route (/moon, /mars, /explore) at surface/landing/science level, and program-specific /science articles.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "href", "kind"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "href": { "type": "string", "pattern": "^/[a-z]" },
+          "kind": { "type": "string", "enum": ["body", "science", "explore"] }
+        }
+      }
+    },
+    "links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["l", "u", "t"],
+        "properties": {
+          "l": { "type": "string", "minLength": 1 },
+          "u": { "type": "string", "format": "uri" },
+          "t": { "type": "string", "enum": ["intro", "core", "deep"] }
+        }
+      }
+    }
+  }
+}

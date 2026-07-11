@@ -1,0 +1,94 @@
+{
+  "name": "Apollo",
+  "tagline": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "For ninety minutes at a stretch, in the autumn of 1957, a polished metal sphere the size of a beach ball crossed the sky over the United States — and it was beeping. Sputnik 1 belonged to the Soviet Union, and there was nothing the most powerful country on Earth could do but listen. Less than four years later, on 12 April 1961, the Soviets put up a person too: Yuri Gagarin, the first human to leave the planet. Washington heard none of it as science. It heard a syllogism it couldn't unhear — a rocket that can lift a satellite into orbit can drop a warhead onto any city you care to name. Almost overnight, spaceflight stopped being exploration and became the leading edge of the Cold War."
+    },
+    {
+      "type": "prose",
+      "md": "On 25 May 1961 — six weeks after Gagarin, and twenty days after Alan Shepard's fifteen-minute suborbital hop made America a spacefaring nation on a technicality — John F. Kennedy stood before Congress and bet the country on the Moon. Land a man there and return him safely, he said, \"before this decade is out.\" Strip away the rhetoric and it was a contest for prestige: a bid to beat the Soviets in the one arena where they were plainly ahead. The science would be real, and it would outlast the politics — but it rode behind them. Apollo was born of that choice, and it's worth saying so without flinching."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/saturn-v/02" },
+      "caption": "The Saturn V — 111 metres tall, about 3,000 tonnes on the pad, and for half a century the most powerful rocket ever to fly. It existed for exactly one reason: to beat a deadline.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The goal was narrow and absolute: put American astronauts on the lunar surface and bring them home alive, ahead of the USSR, before 1970. Everything else was engineered backward from that one sentence — the Saturn rockets, a three-part spacecraft that had to fly in pieces a quarter-million miles from any help, pressure suits rated for hard vacuum, a worldwide tracking network, and a workforce that swelled to roughly 400,000 across NASA, its contractors, and the universities."
+    },
+    {
+      "type": "prose",
+      "md": "There were genuine scientific goals too — sampling the Moon's geology, planting instruments that would keep working long after the crews left, finding out whether people could actually do useful work on another world. But in the program's own priority order they sat behind the landing, and everyone involved knew it. The race set the schedule. The science fit into the gaps it left."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/apollo11/03" },
+      "caption": "Apollo 11 on the Sea of Tranquility, 20 July 1969 — the moment the race was decided.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "It worked. On 20 July 1969 Neil Armstrong and Buzz Aldrin walked on the Sea of Tranquility while Michael Collins flew the Command Module alone overhead, losing radio contact every time his orbit carried him behind the Moon. Five more landings followed through December 1972. Twelve people in all walked on the Moon and came home, carrying 382 kilograms of rock and soil that still anchors lunar science more than half a century later."
+    },
+    {
+      "type": "prose",
+      "md": "The bill came due in money and in lives. In January 1967 a cabin fire during a routine ground test killed Gus Grissom, Ed White, and Roger Chaffee in seconds, and grounded the program for twenty months. In April 1970 an oxygen tank ruptured on the way to the Moon and nearly killed the crew of Apollo 13, who came home cold and rationing water inside their own Lunar Module. And Apollo stopped at its technical peak: the last three planned landings, Apollo 18 through 20, were cancelled as budgets shrank and the public's attention drifted elsewhere. Did it succeed? It won the race it was built to win — and it was switched off while it was still getting better at the Moon. Pick your yardstick."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The arc is unusually clean for something this big. It opens on catastrophe: the 1967 fire forced a ground-up redesign of the spacecraft and of NASA's entire safety culture — the reckoning that made everything after it possible. Then the fixed hardware went to work. In 1968 Apollo 7 shook out the redesigned Command Module in Earth orbit; that December, Apollo 8 became the first crewed flight to leave Earth's gravity altogether and circle the Moon, its crew reading from Genesis on live television to the largest audience that had ever existed."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 11 answered Kennedy. And then the program did something a Cold-War instrument was under no obligation to do: it turned toward science. Apollos 12 through 17 grew steadily more ambitious — longer stays, the battery-powered Lunar Roving Vehicle, and finally, on Apollo 17, a trained field geologist named Harrison Schmitt walking the surface he had spent years studying. Apollo 13, the near-disaster in the middle of that run, did something strange to NASA's reputation: by surviving it, the agency came off looking more capable than it would have by never failing at all."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 17 lifted off the Moon on 14 December 1972. No human has been back since. But the program's hardware, its people, and its momentum ran straight into nearly everything American human spaceflight did next — Skylab, the Space Shuttle, and, fifty years on, Artemis, now reaching for the lunar south pole that Apollo never touched."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/apollo8/01" },
+      "caption": "Earthrise — Apollo 8, Christmas Eve 1968. An unplanned photograph that became one of the most reproduced images in history, and a founding picture of the environmental movement.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Apollo's return on investment is still argued over, but the shape of it is clear. The program cost about $25.8 billion in period dollars — comfortably north of $250 billion today — and at its peak it put some 400,000 people to work across NASA, its contractors, and the universities. That was a deliberate industrial and educational build-out, not just a rocket, and most of it outlived the Moon shots."
+    },
+    {
+      "type": "prose",
+      "md": "The technological pull was real, and it compounded. Apollo pulled early integrated circuits into volume production, drove the young discipline of software engineering, and all but invented modern systems management — the art of keeping a million interdependent parts on schedule at once. Those techniques seeded whole later industries. And the 382 kilograms of returned rock rewrote the age and origin story of the Solar System; researchers are still pulling new results from sealed samples today."
+    },
+    {
+      "type": "prose",
+      "md": "For the United States it was soft power at planetary scale — a demonstration, watched live around the world, of what an open society could organize and pull off. For everyone else, the most durable thing Apollo left behind may not be a technology at all but a photograph: the whole Earth, small and alone against the black, seen from another world for the first time. Whatever you make of the Cold-War motives that paid for it, that picture changed how people saw the ground under their own feet — worth holding onto as a louder, more crowded space age begins."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Apollo's most portable lesson has nothing to do with rocketry. It's about how you point a very large number of people at the same hard thing. Kennedy handed the program a goal that was specific, audacious, and time-boxed — land a crew on the Moon and return them safely, before the decade was out — and that single sentence did what no org chart could. It aligned 400,000 people who would never meet, and it made every decision legible: does this get us to the Moon by 1970, or not? A clear, dated, non-negotiable goal that anyone can check their own work against will out-coordinate any hierarchy."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson lives in Mission Control. Apollo institutionalized a particular kind of teamwork under pressure: controllers trained to stay ahead of the vehicle, to speak up regardless of rank, and to solve problems as a room rather than a chain of command. When Apollo 13 crippled itself 320,000 kilometres from home, no lone hero saved the crew — a room full of people worked the problem together, against the clock, and improvised a way back. \"Work the problem\" beat panic. Any team that ever hits a crisis can borrow the habit."
+    },
+    {
+      "type": "prose",
+      "md": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible."
+    }
+  ]
+}

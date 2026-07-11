@@ -184,7 +184,16 @@
         </span>
         <span class="category-chip">{entry.category}</span>
       </AgencyRow>
-      <h1 class="name">{entry.name}</h1>
+      <div class="name-row">
+        <h1 class="name">{entry.name}</h1>
+        <img
+          class="panel-badge"
+          src="{base}/images/badges/fleet/{entry.id}.webp"
+          alt=""
+          decoding="async"
+          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+        />
+      </div>
       {#if entry.tagline ?? entry.best_known_for}
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>
       {/if}
@@ -394,6 +403,25 @@
                 <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
+            {#key entry.id}
+              <button
+                type="button"
+                class="thumb badge-thumb"
+                onclick={() => (lightboxSrc = `${base}/images/badges/fleet/${entry.id}.webp`)}
+                aria-label="{entry.name} insignia"
+              >
+                <img
+                  src="{base}/images/badges/fleet/{entry.id}.webp"
+                  alt=""
+                  decoding="async"
+                  onerror={(e) => {
+                    const b = (e.currentTarget as HTMLElement).closest('button');
+                    if (b) b.remove();
+                  }}
+                />
+                <span class="badge-tag">Insignia</span>
+              </button>
+            {/key}
           </div>
         {/if}
       {:else if tab === 'anatomy' && (diagramPath || hasLinks)}

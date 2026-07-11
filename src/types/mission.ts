@@ -221,6 +221,13 @@ export interface Mission extends MissionIndex {
   type?: string;
   first?: string;
   description?: string;
+  /**
+   * Editorial lead paragraph (PRD-029 / programs-editorial-voice.md §6) — the
+   * *why-it-matters*, in the programs voice, shown above `first`/`description`
+   * on OVERVIEW. Authored when a program's roster links this mission. Distinct
+   * from `description` (the facts): the dispatch is framing, not a fact summary.
+   */
+  dispatch?: string;
   events?: MissionEvent[];
   /** Flight params (ADR-027). Optional; missing = unknown. */
   flight_data_quality?: FlightDataQuality;

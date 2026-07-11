@@ -171,6 +171,48 @@
   object-fit: cover;
   display: block;
 }
+
+/* Insignia badge (PRD-029) — a "special" tile at the end of the gallery +
+   a small badge in the panel header. Present only where a badge is sourced;
+   the tile self-removes on 404. */
+.badge-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-color: rgba(127, 176, 224, 0.45);
+  background: rgba(127, 176, 224, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge-thumb img {
+  object-fit: contain;
+  padding: 12px;
+}
+.badge-tag {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(127, 176, 224, 0.85);
+  pointer-events: none;
+}
+.panel-badge {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 .gallery-credit {
   margin: 4px 0 0;
   font-size: 7px;

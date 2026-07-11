@@ -31,7 +31,6 @@
  *
  * Both scopes use the same ALLOWLIST keyed by 8-char SHA-256 prefix.
  */
-import { execSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -42,9 +41,14 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // re-encode (RFC-030 cap / WebP) changes every derived SHA and would invalidate
 // the whole allowlist. Masters preserve the ORIGINAL bytes, so the existing
 // SHA-keyed allowlist matches them unchanged. Masters are git-LFS
-// `fetchexclude`d (absent as pointer stubs on CI), so this check runs only
-// where they're smudged — locally, after `git lfs pull -I 'masters/**'`
-// (RFC-030 open-Q0). See mastersSmudged().
+// `fetchexclude`d (.lfsconfig) — absent as ~130-byte pointer stubs on CI,
+// fresh clones, and for any master not locally pulled. A stub's SHA is
+// meaningless, and two stubs for the same LFS object are byte-identical, so
+// hashing them would manufacture phantom byte-dupes. findDupes() therefore
+// SKIPS stubs per file (see isLfsPointer): the check runs on whatever masters
+// are actually smudged, and a COMPLETE audit means `git lfs pull -I
+// 'masters/**'` first. This is why a normal fetchexclude state (all-pointer,
+// or mixed after a targeted local pipeline run) never produces false dupes.
 const IMAGES_DIR = join(ROOT, 'masters');
 
 /** SHA-256 8-char prefixes of byte-dupes the curator has signed off
@@ -454,26 +458,11 @@ function* walkJpgs(dir: string): Iterable<string> {
   }
 }
 
-function sha256Prefix(path: string): string {
-  return createHash('sha256').update(readFileSync(path)).digest('hex').slice(0, 8);
-}
-
-/** Masters are git-LFS `fetchexclude`d, so on CI + fresh clones they are
- *  ~130-byte pointer stubs, not real images. SHA-256 of a pointer is
- *  meaningless, so skip entirely unless masters are smudged (real bytes). */
-function mastersSmudged(): boolean {
-  let sample: string | undefined;
-  try {
-    for (const p of walkJpgs(IMAGES_DIR)) {
-      sample = p;
-      break;
-    }
-  } catch {
-    return false; // masters/ absent
-  }
-  if (!sample) return false;
-  const head = readFileSync(sample).subarray(0, 40).toString('utf8');
-  return !head.startsWith('version https://git-lfs');
+/** A git-LFS pointer stub starts with the spec header; its bytes are not the
+ *  real image. Skipped per-file so a fetchexclude / partial-pull state can't
+ *  manufacture phantom byte-dupes (identical-oid stubs are byte-identical). */
+function isLfsPointer(buf: Buffer): boolean {
+  return buf.subarray(0, 40).toString('utf8').startsWith('version https://git-lfs');
 }
 
 interface DupeGroup {
@@ -482,10 +471,24 @@ interface DupeGroup {
   surfaces: Set<string>;
 }
 
-function findDupes(): DupeGroup[] {
+interface DupeScan {
+  groups: DupeGroup[];
+  realFiles: number;
+  pointerFiles: number;
+}
+
+function findDupes(): DupeScan {
   const byHash = new Map<string, string[]>();
+  let realFiles = 0;
+  let pointerFiles = 0;
   for (const path of walkJpgs(IMAGES_DIR)) {
-    const h = sha256Prefix(path);
+    const buf = readFileSync(path);
+    if (isLfsPointer(buf)) {
+      pointerFiles++;
+      continue; // stub — hashing it would manufacture a phantom dupe
+    }
+    realFiles++;
+    const h = createHash('sha256').update(buf).digest('hex').slice(0, 8);
     const arr = byHash.get(h);
     if (arr) arr.push(path);
     else byHash.set(h, [path]);
@@ -500,7 +503,7 @@ function findDupes(): DupeGroup[] {
     const surfaces = new Set(paths.map(surfaceOf));
     groups.push({ hashPrefix: h, paths, surfaces });
   }
-  return groups;
+  return { groups, realFiles, pointerFiles };
 }
 
 function rel(p: string): string {
@@ -509,19 +512,22 @@ function rel(p: string): string {
 
 function main(): void {
   console.log('Image byte-dupe check (cross + same-surface)…');
-  if (!mastersSmudged()) {
+  const { groups, realFiles, pointerFiles } = findDupes();
+  if (realFiles === 0) {
     console.log(
-      '⏭ masters/ not smudged (git-LFS fetchexclude) — dedup is a local check; skipping.',
+      `⏭ masters/ not smudged (${pointerFiles} git-LFS pointer stub(s), fetchexcluded) — ` +
+        `dedup is a local check; run \`git lfs pull -I 'masters/**'\` for the full audit. Skipping.`,
     );
     return;
   }
-  const groups = findDupes();
+  if (pointerFiles > 0) {
+    console.log(
+      `  note: checked ${realFiles} smudged master(s), skipped ${pointerFiles} pointer stub(s) ` +
+        `not locally pulled — run \`git lfs pull -I 'masters/**'\` for a complete audit.`,
+    );
+  }
   if (groups.length === 0) {
-    const n = execSync(
-      `find ${IMAGES_DIR} -name '*.jpg' ! -name '*.1x1.jpg' ! -name '*.4x3.jpg' ! -name '*.16x9.jpg' | wc -l`,
-      { encoding: 'utf-8' },
-    ).trim();
-    console.log(`✓ no un-allowlisted byte-dupes across ${n} base jpgs`);
+    console.log(`✓ no un-allowlisted byte-dupes across ${realFiles} smudged master jpg(s)`);
     return;
   }
   console.error(`✘ ${groups.length} un-allowlisted byte-dupe group(s):`);

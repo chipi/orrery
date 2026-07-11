@@ -1,0 +1,15 @@
+[
+  {
+    "id": "apollo",
+    "name": "Apollo",
+    "tagline": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
+    "kind": "crewed-campaign",
+    "agency": "NASA",
+    "country": "USA",
+    "epoch": "lunar-era",
+    "status": "COMPLETED",
+    "start_year": 1961,
+    "end_year": 1972,
+    "hero": "missions/apollo11/01"
+  }
+]

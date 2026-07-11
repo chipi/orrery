@@ -42,6 +42,7 @@
     { path: '/explore', label: m.nav_explore },
     { path: '/missions', label: m.nav_missions },
     { path: '/fleet', label: m.nav_fleet },
+    { path: '/programs', label: m.nav_programs },
     { path: '/plan', label: m.nav_plan },
     { path: '/fly', label: m.nav_fly },
     { path: '/earth', label: m.nav_earth },

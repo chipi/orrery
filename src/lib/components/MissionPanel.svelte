@@ -247,7 +247,16 @@
           <span class="quality">{m.mp_data_quality_reconstructed()}</span>
         {/if}
       </AgencyRow>
-      <h1 class="name">{mission.name ?? mission.id}</h1>
+      <div class="name-row">
+        <h1 class="name">{mission.name ?? mission.id}</h1>
+        <img
+          class="panel-badge"
+          src="{base}/images/badges/missions/{mission.id}.webp"
+          alt=""
+          decoding="async"
+          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+        />
+      </div>
       {#if mission.type}
         <p class="type">{mission.type}</p>
       {/if}
@@ -335,6 +344,9 @@
             : 'mp-tab-science'}
     >
       {#if tab === 'overview'}
+        {#if mission.dispatch}
+          <p class="dispatch">{mission.dispatch}</p>
+        {/if}
         <div class="grid">
           <div class="cell">
             <div class="cell-label">{m.mp_label_departure()}</div>
@@ -802,6 +814,25 @@
                 <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
+            {#key mission.id}
+              <button
+                type="button"
+                class="gallery-thumb badge-thumb"
+                onclick={() => (lightboxSrc = `${base}/images/badges/missions/${mission.id}.webp`)}
+                aria-label="{mission.name ?? mission.id} insignia"
+              >
+                <img
+                  src="{base}/images/badges/missions/{mission.id}.webp"
+                  alt=""
+                  decoding="async"
+                  onerror={(e) => {
+                    const b = (e.currentTarget as HTMLElement).closest('button');
+                    if (b) b.remove();
+                  }}
+                />
+                <span class="badge-tag">Insignia</span>
+              </button>
+            {/key}
           </div>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
         {/if}
@@ -971,6 +1002,19 @@
     color: #5fb7ff;
     text-decoration-color: #5fb7ff;
     outline: none;
+  }
+
+  /* Editorial lead paragraph (PRD-029 dispatch). Reads as a magazine
+     standfirst — prominent roman serif, brighter than the italic
+     .editorial below, set apart by a hairline. */
+  .dispatch {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .first {

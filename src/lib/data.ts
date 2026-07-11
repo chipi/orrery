@@ -16,6 +16,7 @@ import type { LocalizedScenario, Scenario, ScenarioOverlay } from '$types/scenar
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { OrbitRegime } from '$types/orbit-regime';
+import type { Program, ProgramBase, ProgramOverlay, ProgramIndexEntry } from '$types/program';
 import type { MoonSite } from '$types/moon-site';
 import type { MarsSite, Traverse, RouteHirisePatch } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
@@ -101,20 +102,22 @@ async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<T> {
   return data;
 }
 
-export async function getMissionIndex(): Promise<MissionIndex[]> {
-  return get<MissionIndex[]>('missions/index.json');
+export async function getMissionIndex(fetchFn: FetchLike = fetch): Promise<MissionIndex[]> {
+  return get<MissionIndex[]>('missions/index.json', fetchFn);
 }
 
 export async function getMission(
   id: string,
   dest: string,
   locale = 'en-US',
+  fetchFn: FetchLike = fetch,
 ): Promise<Mission | null> {
   const destLower = dest.toLowerCase();
   try {
-    const baseRecord = await get<Mission>(`missions/${destLower}/${id}.json`);
+    const baseRecord = await get<Mission>(`missions/${destLower}/${id}.json`, fetchFn);
     const overlay = await get<Partial<Mission>>(
       `i18n/${locale}/missions/${destLower}/${id}.json`,
+      fetchFn,
     ).catch(() => ({}) as Partial<Mission>);
     const merged: Mission = { ...baseRecord, ...overlay };
 
@@ -1844,6 +1847,48 @@ export async function getScienceSection(
     return { ...baseRecord, ...fallback };
   } catch {
     return null;
+  }
+}
+
+/** Program (PRD-029) — base record + editorial overlay, merged like a science
+ * section. Overlay falls back to en-US per ADR-017. */
+export async function getProgram(
+  id: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<Program | null> {
+  try {
+    const baseRecord = await get<ProgramBase>(`programs/${id}.json`, fetchFn);
+    const overlay = await get<ProgramOverlay>(`i18n/${locale}/programs/${id}.json`, fetchFn).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<ProgramOverlay>(`i18n/en-US/programs/${id}.json`, fetchFn).catch(() => null));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+export async function getProgramIndex(fetchFn: FetchLike = fetch): Promise<ProgramIndexEntry[]> {
+  return get<ProgramIndexEntry[]>('programs/index.json', fetchFn);
+}
+
+/**
+ * Insignia/patch map (PRD-029) — `{ "mission:apollo11": "/images/badges/...webp" }`.
+ * Keyed `${kind}:${id}` for kind ∈ {program, mission, fleet}. Browse grids gate
+ * their badge <img> on this so a page with 250 fleet cards fires zero 404s for
+ * the ones we haven't sourced a badge for yet. Built by scripts/fetch-badges.ts.
+ */
+export async function getBadges(fetchFn: FetchLike = fetch): Promise<Record<string, string>> {
+  try {
+    return await get<Record<string, string>>('badges.json', fetchFn);
+  } catch {
+    return {};
   }
 }
 

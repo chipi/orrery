@@ -134,8 +134,26 @@ masters/<rel>/NN.jpg   ← full-res ORIGINAL · git-LFS · source of truth (neve
 - **Masters are git-LFS + `fetchexclude`d** (`.lfsconfig`) — a fresh clone / CI gets pointer stubs, not bytes. Smudge before running the ladder builder locally: `git lfs pull -I 'masters/**'`. `build-display-ladder.mjs` refuses to run against stubs.
 - **`hotspots/` and `posters/` are EXCLUDED** from the ladder — they stay full-res `.jpg` (zoom-critical / downloadable).
 - **No stray display `.jpg`.** `NN.jpg` under a gallery dir (outside posters/hotspots) fails the ladder-contract test — a source `.jpg` belongs in `masters/`; the served tree gets `.webp`.
+- **The dedup gate is pointer-aware.** `validate-image-dupes.ts` runs over `masters/`, which are fetchexcluded — so on CI, fresh clones, and any master you haven't pulled, the file is an LFS pointer *stub*. It hashes only **smudged** (real) files and skips stubs per file, so a normal state (all-pointer on CI, or *mixed* after a targeted local run like `fetch-badges`) never manufactures phantom byte-dupes; it `⏭`-skips when nothing is smudged. A *complete* cross-tree dedup audit still means `git lfs pull -I 'masters/**'` first. (Two identical-oid stubs are byte-identical — hashing them would fabricate dupes; hence the skip.)
 
 See `scripts/vision/README.md` (ladder + vision) and `scripts/hotspots/README.md` (surface deep-zoom) for the per-script detail.
+
+### Badges are a separate lane — insignia icons, not the display ladder
+
+Program insignia + mission/fleet patches (PRD-029) are a distinct artifact: the vision pass deliberately rejects patches from galleries, so they never ride the display ladder. They have their own sanctioned tool, `scripts/fetch-badges.ts`:
+
+```
+static/data/badge-sources.json   ← curated manifest (PD/CC only · web-sourced · per-badge)
+   │   npx tsx scripts/fetch-badges.ts
+   ├─ masters/badges/<programs|missions|fleet>/<id>.<ext>   ← original · git-LFS · never discarded
+   └─ static/images/badges/<...>/<id>.webp                  ← derived · single 256px icon (sharp)
+       + badge-provenance.json   + badges.json (id→path map the UI gates on)
+```
+
+- **Icon, not a ladder.** Badges render as ~30–46 px icons, so `fetch-badges` emits **one 256 px WebP** via `sharp` — it deliberately does NOT use `build-display-ladder.mjs` (no srcset rungs). This is the one intentional exception to the ladder rule.
+- **Same masters→derived model.** Originals go to `masters/badges/**` (git-LFS); only the derived `.webp` ships. Consistent with every other master.
+- **PD/CC bar.** Only Public-Domain / CC insignia — trademarked contractor or per-vehicle logos are excluded, so e.g. Apollo *hardware* carries no badge. Curator reviews the fetched set and prunes.
+- **No full pull needed to source one.** The dedup gate skips LFS stubs per file (above), so you can run `fetch-badges` without smudging all masters. A complete dedup audit still needs `git lfs pull -I 'masters/**'`.
 
 ### Adding a new gallery image — the runbook
 

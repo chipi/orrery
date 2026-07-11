@@ -2,6 +2,7 @@
   "name": "Apollo 17",
   "type": "CREWED LANDER · ROVER · FLOWN",
   "first": "Last crewed mission to the Moon (and the only Apollo with a trained geologist)",
+  "dispatch": "Apollo 17 was the end, though almost no one watching in December 1972 believed it would be. It was also, belatedly, the flight that put a real scientist on the Moon — the geologist Harrison Schmitt, whose eye caught the orange volcanic glass at Shorty Crater that rewrote what the Moon is made of. Cernan and Schmitt stayed three days, drove twenty-two miles, and then Cernan climbed the ladder for the last time anyone has, saying they left \"as we came, and God willing, we shall return.\" More than half a century later no one has — and every serious argument for going back still begins with the fact that we once could.",
   "description": "The last time humans visited another world — over half a century ago. Cernan and Schmitt spent 75 hours on the surface, drove the LRV 35.7 km, and brought back 110.5 kg of samples. Schmitt was the only trained scientist (geologist) ever to walk on the Moon, and his findings — particularly the orange volcanic glass at Shorty Crater — reshaped lunar geology. Cernan's last words before climbing the ladder for the final time: 'We leave as we came, and God willing, we shall return.' Artemis III is supposed to make good on that promise.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Saturn V (AS-512) from KSC LC-39A 1972-12-07 — only Apollo night launch.", "type": "nominal" },

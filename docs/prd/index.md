@@ -27,7 +27,8 @@
 | PRD-022 | Tier-3 panorama as spatial-context exhibit — honest source, captions, annotations, multi-pano | Draft | curious learner, educator, mission-history reader |
 | PRD-023 | /explore lens + always-on annotations — visual layer for Hill sphere, Lagrange, magnetosphere, axial tilt, planet stats (2026-07-08 amendment — Science Lens + Tactical Scan unified across surface routes, #382) | Draft | curious learner, STEM student, space enthusiast |
 | PRD-024 | /science 'planets' tab — pair every PRD-023 lens annotation with a real article | Draft | curious learner, STEM student, space enthusiast, educator |
-| PRD-025 | Forward-roadmap content update — 24 missions + ~37 fleet + ~6 updates for v0.8 (big future programs · novel approaches · newcomers) | Draft (prep for v0.8) | space enthusiast, educator/journalist, curious learner |
+| PRD-025 | Finalize the forward roadmap — comprehensive per-agency coverage through ~2035 (re-scoped 2026-07-11: everything, ~180+ entries; authored under PRD-029 programs) | Draft (prep for v0.8) | space enthusiast, educator/journalist, curious learner |
 | PRD-026 | Historical content completeness pass (v0.7) — Apollo + surface-page + agency-parity + i18n + fleet-galleries | Shipped (v0.7) | curious learner, space enthusiast, educator/journalist |
 | PRD-027 | /science visit-list — museums with restored space hardware ("what to visit") | Draft (prep for v0.8) | curious learner, space enthusiast, educator/journalist |
 | PRD-028 | Earth-based observatories — `ground-observatory` fleet category (radio telescopes + DSN) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast |
+| PRD-029 | Programs — a grouping layer for missions + fleet (`/programs`; retrofit historical + author forward under it; coverage-hole report) | Draft (prep for v0.8) | curious learner, STEM student, space enthusiast, educator/journalist |

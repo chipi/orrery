@@ -5,7 +5,7 @@
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
-  import { getMissionsForLibrary } from '$lib/data';
+  import { getMissionsForLibrary, getBadges } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import { isMissionDestination } from '$lib/mission-dest';
@@ -46,6 +46,9 @@
   // having to defend against the loading / error variants.
   let missionsRequest = $state<RemoteData<Error, Mission[]>>(rdLoading());
   let missions = $derived(isSuccess(missionsRequest) ? missionsRequest.data : []);
+
+  // Insignia map (PRD-029) — gate card badges so unbadged missions fire no 404.
+  let badges = $state<Record<string, string>>({});
 
   /**
    * Mission catalog filter state. Bagged into a single typed `$state`
@@ -335,6 +338,7 @@
     // `<id>/01.jpg` silently when no override file exists; safe to
     // fire-and-forget.
     void loadHeroOverrides('missions');
+    void getBadges().then((b) => (badges = b));
   });
   // Re-fetch when the URL `?lang=` changes so locale switches replace
   // the merged mission overlay set without a full page reload.
@@ -722,7 +726,18 @@
                   </span>
                 {/if}
               </header>
-              <h2 class="card-name">{mission.name ?? mission.id}</h2>
+              <div class="card-name-row">
+                <h2 class="card-name">{mission.name ?? mission.id}</h2>
+                {#if badges[`mission:${mission.id}`]}
+                  <img
+                    class="card-badge"
+                    src="{base}{badges[`mission:${mission.id}`]}"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                {/if}
+              </div>
               {#if mission.type}
                 <p class="card-type">{mission.type}</p>
               {/if}

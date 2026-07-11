@@ -1,0 +1,88 @@
+{
+  "name": "Soyuz",
+  "tagline": "La navicella che nacque nella tragedia, pagò il prezzo più alto nel volo spaziale — e divenne il mezzo più affidabile e longevo mai costruito per raggiungere l'orbita.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Verso la metà degli anni Sessanta l'era delle varianti di Vostok era finita, e le due superpotenze avevano bisogno di una vera navicella di seconda generazione — capace di manovrare, eseguire rendezvous e attraccare, le competenze che la Luna avrebbe richiesto. La risposta sovietica fu Soyuz: il progetto di Sergei Korolev per una nave modulare in tre parti — un modulo orbitale sferico in cui vivere, un modulo di discesa per rientrare, e un modulo di servizio per energia e propulsione. Fu un vero salto in avanti. Ma Korolev morì sul tavolo operatorio nel 1966, prima che volasse, e il programma perse l'unico uomo con l'autorità per dire che una macchina non era pronta."
+    },
+    {
+      "type": "prose",
+      "md": "Quello che seguì fu il capitolo più oscuro del programma sovietico. Sotto pressione per rispondere ad Apollo, Soyuz fu messa in servizio prima che fosse sicura, e il conto arrivò quasi subito — prima con la morte di un cosmonauta, poi, quattro anni dopo, con altri tre. Soyuz avrebbe poi sopravvissuto a ogni rivale e volato più a lungo di qualsiasi navicella con equipaggio nella storia, ma si guadagnò quella longevità a caro prezzo, e i due incidenti all'inizio sono inseparabili dalla storia di tutto ciò che divenne."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/01"
+      },
+      "caption": "La Soyuz di prima generazione — tre moduli: un modulo abitativo sferico, un modulo di discesa a forma di campana, e un modulo di servizio. L'architettura di base vola ancora, a oltre mezzo secolo di distanza.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz fu progettata per fare tutto ciò che Vostok e Voskhod non potevano: cambiare orbita, cercare e attraccare con un altro veicolo, sostenere un equipaggio per settimane, e — nel piano originale — portare cosmonauti verso la Luna. La struttura a tre moduli era l'idea chiave. Dividendo la navicella in un ampio modulo orbitale in cui l'equipaggio viveva e un piccolo modulo di discesa fortemente schermato in cui rientrava, Soyuz poteva essere spaziosa in orbita e leggera al rientro, scartando tutto ciò che non doveva riportare a terra. Era un progetto pulito e adattabile — ed è esattamente per questo che è durato."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/02"
+      },
+      "caption": "Soyuz in orbita. Lanciata in volo prima di essere pronta, ci vollero anni e due incidenti fatali per rendere il progetto sicuro — e poi non smise mai di volare.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il primo volo con equipaggio di Soyuz, nel 1967, uccise il suo pilota: Vladimir Komarov volò su una navicella piena di difetti noti e morì quando il suo paracadute fallì durante il rientro — la prima morte in volo nella storia del volo spaziale. Il programma si riprese, e nel 1969 Soyuz 4 e 5 realizzarono il primo attracco di due veicoli con equipaggio, con cosmonauti che passavano dall'uno all'altro tramite passeggiata spaziale. Poi, nel 1971, l'equipaggio di Soyuz 11 divenne il primo a vivere a bordo di una stazione spaziale — e morì durante il viaggio di ritorno quando una valvola fece fuoriuscire l'aria della cabina, le uniche morti umane mai avvenute nello spazio. E nel 1975, in un completo cambio di tono, una Soyuz si agganciò con un'Apollo in orbita, e un americano e un sovietico si strinsero la mano attraverso il portello — la fine simbolica della corsa allo spazio."
+    },
+    {
+      "type": "prose",
+      "md": "Quella avrebbe potuto essere l'intera storia: un progetto promettente che iniziò nella tragedia e chiuse la corsa con una stretta di mano. Invece fu solo l'inizio. Soyuz continuò a volare — verso Salyut, verso Mir, verso la Stazione Spaziale Internazionale — e continuò a essere perfezionata, finché la nave che uccise due equipaggi nei primi quattro anni divenne il modo più sicuro e affidabile di raggiungere l'orbita mai operato da chiunque."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Il filo conduttore di Soyuz è un'affidabilità acquistata a un prezzo terribile e poi consolidata per decenni. Ciascuno dei suoi primi disastri scrisse una regola permanente nel progetto: dopo Komarov, il paracadute e i sistemi di controllo furono rivisti; dopo Soyuz 11, i cosmonauti non volarono mai più al lancio o al rientro senza tute pressurizzate. Il programma imparò nel modo in cui si impara di solito la sicurezza — dagli incidenti — e poi, a differenza di tanti programmi, continuò a far volare lo stesso veicolo di base abbastanza a lungo perché quelle lezioni si accumulassero in qualcosa di quasi indistruttibile."
+    },
+    {
+      "type": "prose",
+      "md": "Cambiò anche completamente funzione. Concepita per gareggiare con gli americani verso la Luna, Soyuz perse quella gara e fu silenziosamente riconvertita — nel traghetto che portava gli equipaggi alle stazioni spaziali dell'Unione Sovietica, poi a Mir, poi alla Stazione Spaziale Internazionale costruita insieme a quegli stessi americani. Quando lo Space Shuttle americano si ritirò nel 2011, Soyuz divenne, per nove anni, l'*unico* modo in cui qualsiasi essere umano potesse raggiungere la Stazione Spaziale: l'intero programma internazionale dipendeva da un progetto sovietico degli anni Sessanta."
+    },
+    {
+      "type": "prose",
+      "md": "La stretta di mano di Apollo-Soyuz del 1975 è il punto di svolta. Concluse l'era in cui Soyuz esisteva per battere l'Occidente, e aprì quella in cui avrebbe trascorso il mezzo secolo successivo trasportando gli astronauti occidentali insieme ai cosmonauti russi — la stessa navicella, la stessa rampa di lancio, un mondo completamente diverso."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo-soyuz/02"
+      },
+      "caption": "Apollo-Soyuz, luglio 1975 — una navicella sovietica e una americana attraccate in orbita, e la corsa allo spazio finì non con un vincitore ma con una stretta di mano.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'eredità di Soyuz è semplicemente che non si è mai fermata. È la navicella con equipaggio più longeva e con più voli della storia — ben oltre centocinquanta voli con equipaggio in sei decenni — e il suo progetto di base a tre moduli, perfezionato ma mai sostituito, trasporta ancora equipaggi oggi. Nessun altro veicolo spaziale umano si è avvicinato a quel record. La nave che iniziò uccidendo il suo pilota divenne il veicolo più fidato del volo spaziale, quello su cui ogni altro programma fece affidamento quando aveva bisogno di un mezzo che semplicemente funzionasse."
+    },
+    {
+      "type": "prose",
+      "md": "La sua eredità più profonda è una lezione sul valore di una buona struttura di base e di un'iterazione paziente rispetto alla sostituzione appariscente. Dove gli Stati Uniti costruirono e ritirarono intere generazioni di navicelle — Mercury, Gemini, Apollo, Shuttle — i sovietici trovarono un progetto che valeva la pena mantenere e passarono cinquant'anni a migliorarlo. Entrambi gli approcci raggiunsero lo spazio. Solo uno produsse un veicolo ancora in volo, essenzialmente immutato nel concetto, nel suo settimo decennio."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione più dura di Soyuz è che l'affidabilità non si progetta all'inizio; si guadagna, di solito attraverso i fallimenti, e solo da un'organizzazione disposta a continuare a far volare la stessa cosa abbastanza a lungo da imparare. Soyuz non era sicura quando iniziò — era affrettata, e uccise persone. Ciò che la rese sicura furono decenni di voli, scoprendo ogni debolezza a sua volta, e correggendola, su un veicolo abbastanza stabile perché le lezioni restassero. La tentazione è sempre sostituire un progetto problematico; a volte il percorso più saggio è mantenerlo e correggerlo."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda lezione è il pericolo di lasciare che una scadenza prevalga su un avvertimento. Soyuz 1 volò con difetti che i suoi stessi ingegneri avevano segnalato, perché rispondere ad Apollo contava di più, quel mese, che ammettere che la nave non era pronta — e un cosmonauta morì per questo. È lo stesso fallimento che la cultura del segreto orientato al successo a tutti i costi di Vostok aveva provato, finalmente pagato con una vita. Quando le persone più vicine alla macchina dicono che non è pronta, è la tabella di marcia a dover cedere."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "首次航天器对接；紧急返回",
+  "dispatch": "Gemini 8 完成了首次两个航天器在轨对接——随后差点导致机组人员丧生。在 Neil Armstrong 将他的 Gemini 飞船稳稳对接到 Agena 目标飞行器后仅几分钟,连接在一起的组合体开始翻滚,越来越快,直到大约每秒翻滚一次,宇航员的视野开始发灰并接近昏厥。Armstrong 解除对接——这反而让情况更糟,因为故障出在他自己的航天器上——然后关闭主推进器,用再入控制系统停止了旋转,这个决定挽救了他们的生命,但按规定,迫使他们立即紧急返回。这是该计划中最危险的时刻,而这是 Armstrong 的首次太空飞行。在失控情况下冷静、快速的诊断,正是 NASA 在选择由谁登陆月球时所铭记的气质。",
+  "description": "Neil Armstrong 和 David Scott 于 1966 年 3 月 16 日完成了首次两个航天器对接——与 Agena 目标飞行器。一个卡住的姿态推进器随后引发剧烈翻滚;Armstrong 解除对接并使用再入控制系统恢复,在 10 小时 41 分后迫降。这是 Armstrong 的首次太空飞行。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "Titan II GLV (GT-8) 从 Cape Canaveral LC-19 发射,1966-03-16 16:41 UTC。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "首次对接",
+      "note": "首次两个航天器对接——Gemini 8 与 Agena 目标飞行器。",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "翻滚",
+      "note": "卡住的推进器导致组合体以约 1 转/秒翻滚;Armstrong 用再入控制系统恢复。",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "紧急溅落",
+      "note": "在 10 小时 41 分后于太平洋紧急溅落。",
+      "type": "nominal"
+    }
+  ]
+}

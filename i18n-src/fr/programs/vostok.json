@@ -1,0 +1,92 @@
+{
+  "name": "Vostok",
+  "tagline": "Le programme qui a placé le premier humain en orbite — et qui a continué d'engranger des premières pendant que l'Amérique se démenait pour rattraper son retard.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "En 1960, l'Union soviétique avait déjà stupéfié le monde avec Spoutnik et comptait bien conserver son avance. Derrière elle se trouvait un homme dont l'Occident ignorait l'existence : Sergueï Korolev, le « Concepteur en chef », dont le nom même était un secret d'État, dirigeant le programme qui avait transformé sa R-7 — le premier missile intercontinental au monde — en une fusée capable de transporter une personne. Les Américains construisaient Mercury et en parlaient ouvertement. Les Soviétiques ne disaient presque rien, et avançaient plus vite."
+    },
+    {
+      "type": "prose",
+      "md": "L'enjeu était le premier humain dans l'espace, et cela valait presque tous les risques, car dans la Guerre froide, un cosmonaute soviétique en orbite au-dessus des têtes était un argument qu'aucun discours ne pouvait égaler — la preuve, diffusée dans le monde entier, que le système pouvait surpasser l'Ouest aux limites du possible. Vostok a été construit pour gagner cet argument. Il n'avait pas besoin de faire grand-chose une fois en orbite ; il devait envoyer une personne en haut, faire le tour, et la ramener en toute sécurité, et être le premier."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/vostok/01"
+      },
+      "caption": "Le module de descente Vostok — une sphère simple, la seule forme qui survive à la rentrée atmosphérique depuis n'importe quel angle sans pilotage. Le cosmonaute la chevauchait jusqu'à quelques kilomètres, puis s'éjectait et descendait séparément en parachute.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif de Vostok était aussi étroit que celui de Mercury et poursuivi avec moins de prudence : prouver qu'un humain pouvait survivre au lancement, à l'orbite et à la rentrée — et le faire avant les Américains. Le vaisseau reflétait cette concentration. C'était une sphère, la forme qui rentre en toute sécurité depuis n'importe quelle orientation de sorte que les systèmes automatiques n'aient pas besoin de maintenir une attitude précise, avec un module d'équipement séparé qui se détachait avant le feu de la rentrée."
+    },
+    {
+      "type": "prose",
+      "md": "Un détail est resté secret pendant des années. La sphère heurtait le sol trop violemment pour qu'une personne survive à l'impact, alors le cosmonaute s'éjectait à environ sept kilomètres et descendait sous un parachute séparé. Selon les règles internationales de l'époque, un vol ne comptait que si le pilote atterrissait *avec* l'engin — alors les Soviétiques n'en ont tout simplement pas parlé, et ont revendiqué les records quand même. Un détail mineur, mais révélateur : le programme était construit pour gagner, et la vérité était gérée en conséquence."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/vostok-6/01"
+      },
+      "caption": "Valentina Terechkova avant Vostok 6, juin 1963 — la première femme dans l'espace, vingt ans avant que les États-Unis n'en envoient une.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "En un peu plus de deux ans, Vostok a accumulé une série de premières que les États-Unis ne pouvaient que regarder. Le 12 avril 1961, Youri Gagarine est devenu le premier humain dans l'espace — une seule orbite qui a fait de lui, du jour au lendemain, la personne la plus célèbre de la Terre. Guerman Titov a suivi avec la première journée complète en orbite. Vostok 3 et 4 ont volé ensemble, la première fois que deux engins habités partageaient le ciel. Valeri Bykovski a volé près de cinq jours, toujours le vol spatial en solitaire le plus long de l'histoire. Et Valentina Terechkova est devenue la première femme dans l'espace — une étape que les Américains n'égaleraient qu'en 1983."
+    },
+    {
+      "type": "prose",
+      "md": "Six vols, six succès, six premières. Selon le critère qui comptait le plus en 1963 — qui y est arrivé en premier — l'Union soviétique gagnait de manière décisive, et le faisait dans un vaisseau qui ne pouvait même pas changer sa propre orbite. Mais cette série marquait aussi un plafond : Vostok avait fait tout ce qu'une sphère monoplace pouvait faire, et les prochaines étapes — sorties extravéhiculaires, rendez-vous, amarrage, la Lune — exigeraient des machines qu'il n'avait pas."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Vostok est une histoire racontée sur deux registres simultanés — le triomphe public et la réalité cachée. En public, chaque vol était une démonstration impeccable de la supériorité soviétique, annoncée seulement une fois qu'il avait déjà réussi. Hors de vue se trouvaient les choses qui ne cadraient pas : le nom de Korolev, les atterrissages par éjection, les échecs de lancement qui ont tué des équipes au sol, les incidents évités de justesse. Le programme n'a jamais effectué une mission qu'il s'attendait à voir échouer, car un échec public était politiquement inabordable — et cela a façonné ce qu'il tentait, et quand."
+    },
+    {
+      "type": "prose",
+      "md": "Au centre se trouvait un homme transformé en symbole. Les 108 minutes de Gagarine ont fait de lui une icône mondiale du jour au lendemain — envoyé en tournées mondiales, mis sur des timbres et des statues, plus utile à l'État au sol que dans les airs, et plus jamais autorisé à voler dans l'espace. Il est mort dans un accident d'avion à réaction en 1968, à trente-quatre ans. Le premier humain à quitter la planète a passé le reste de sa courte vie comme le visage souriant d'un système qui ne voulait pas le risquer deux fois."
+    },
+    {
+      "type": "prose",
+      "md": "À la mi-1963, Vostok avait fait son temps. Son successeur, Voskhod, allait étirer le même matériel de base pour arracher deux premières de plus — un équipage de plusieurs personnes et la première sortie extravéhiculaire — avant que le programme soviétique ne passe à Soyouz et ne vise, en secret, la Lune."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/vostok-1/02"
+      },
+      "caption": "Youri Gagarine — le premier humain dans l'espace, et pour le reste de sa courte vie le visage du programme spatial soviétique.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'héritage de Vostok est en partie un ensemble de premières qui ne peuvent jamais être reprises, et en partie une machine qui n'a jamais vraiment pris sa retraite. La fusée R-7 qui a lancé Gagarine est, en descendance directe, la fusée Soyouz qui transporte encore des équipages en orbite aujourd'hui — plus de soixante ans et dix-huit cents lancements plus tard, le lanceur le plus utilisé de l'histoire. La configuration capsule-sphérique-plus-module-de-service est devenue le modèle pour Soyouz, qui vole toujours."
+    },
+    {
+      "type": "prose",
+      "md": "Stratégiquement, il a fait quelque chose de plus vaste que n'importe quel vol unique : il a convaincu les États-Unis qu'ils ne pouvaient pas gagner la course spatiale selon les termes fixés par les Soviétiques, et a poussé Kennedy à changer la donne vers la Lune — une cible suffisamment éloignée pour que la profondeur industrielle américaine puisse compter. En ce sens, Apollo est en partie l'œuvre de Vostok. Et pour le reste du monde, la vision d'un humain faisant le tour de la planète — quel que soit le drapeau sur la fusée — a changé de manière permanente le sens de ce que les gens pouvaient accomplir."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Vostok est le double tranchant d'une stratégie construite sur le fait d'être premier. Les Soviétiques ont remporté presque toutes les premières manches en poussant un vaisseau limité jusqu'à ses limites et en agissant avant que la concurrence ne puisse réagir — et cela a fonctionné, brillamment, pendant un temps. Mais une série de premières n'est pas la même chose qu'une capacité profonde, et la concentration de Vostok sur le prochain titre de gloire l'a laissé sans les manœuvres, l'amarrage et l'endurance que la vraie destination exigerait. Gagner le sprint peut silencieusement vous coûter la course, si le sprint brûle la piste dont vous aviez besoin pour le marathon."
+    },
+    {
+      "type": "prose",
+      "md": "La deuxième leçon est ce que le secret achète, et ce qu'il coûte. Cacher les échecs et gérer la vérité ont permis au programme de paraître invincible, ce qui avait une vraie valeur dans la Guerre froide. Mais cela signifiait aussi que le programme ne pouvait jamais être vu en train d'échouer — ce qui l'a rendu prudent aux mauvais endroits, incapable de prendre les risques visibles que l'apprentissage de choses difficiles exige. Une organisation qui ne peut pas se permettre d'échouer en public finit par ne plus pouvoir *apprendre* en public non plus."
+    }
+  ]
+}

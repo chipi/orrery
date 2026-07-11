@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "Erster bemannter Gemini-Flug; erstes Orbitalmanöver durch eine Besatzung",
+  "dispatch": "Gemini 3 war der Erprobungsflug — der erste Flug des neuen zweisitzigen Raumschiffs und das erste Mal, dass eine amerikanische Besatzung ihre eigene Umlaufbahn änderte, statt einfach nur auf der von der Rakete vorgegebenen zu bleiben. Gus Grissom kommandierte die Mission, vier Jahre nachdem seine Mercury-Kapsel beim Aufschlagen auf dem Wasser gesunken war, und nannte diese \"Molly Brown\" nach der unversenkbaren Heldin — ein Galgenhumor, den NASAs Öffentlichkeitsabteilung nicht liebte. Der Flug selbst war kurz und bewusst bescheiden, drei Umkreisungen, um zu beweisen, dass die Maschine wie geplant flog. Aber dieser kleine Akt, die Umlaufbahn mit den bordeigenen Triebwerken anzupassen, war der erste Schritt von allem, wofür Gemini existierte.",
+  "description": "Erster bemannter Gemini-Flug. Gus Grissom und John Young flogen am 23. März 1965 drei Umläufe, testeten das neue Zweipersonen-Raumschiff und führten das erste Orbitalmanöver durch ein bemanntes Fahrzeug durch — Zünden der Triebwerke zur Änderung der Umlaufbahn. Grissom gab der Kapsel den Spitznamen \"Molly Brown\". Dauer 4 h 52 m; Atlantik-Wasserung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II GLV (GT-3) von Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "ORBITALMANÖVER",
+      "note": "Erstes Orbitalmanöver durch eine Besatzung — Triebwerke ändern die Bahnform.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "WASSERUNG",
+      "note": "Atlantik-Wasserung nach 3 Umläufen / 4 h 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

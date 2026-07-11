@@ -1,0 +1,92 @@
+{
+  "name": "Gemini",
+  "tagline": "Le programme de transition — le milieu sans gloire où la NASA a tout appris ce dont Apollo aurait besoin, sauf comment voler jusqu'à la Lune.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mercury avait répondu à une question — un être humain peut survivre au vol spatial et rentrer chez lui — et laissé une liste bien plus difficile sans réponse. Atterrir sur la Lune signifiait voler pendant deux semaines d'affilée, trouver et rejoindre un autre vaisseau en orbite, arrimer les deux ensemble, travailler à l'extérieur en combinaison pressurisée, et revenir à un endroit précis sur Terre. En 1961, quand Kennedy a fixé l'échéance lunaire, la NASA ne savait rien faire de tout cela. Entre le premier Américain dans l'espace et le premier Américain sur la Lune se dressait un gouffre de compétences que personne sur Terre n'avait encore maîtrisées."
+    },
+    {
+      "type": "prose",
+      "md": "Gemini a été conçu pour franchir ce gouffre. Il n'a jamais été destiné à être le premier en quoi que ce soit ni à aller quelque part de nouveau ; c'était un programme d'entraînement avec une échéance, conçu pour inventer et répéter — en orbite terrestre, où une erreur pouvait encore être surmontable — chaque technique sur laquelle Apollo misera plus tard des vies. Un vaisseau spatial plus grand, biplace, que l'équipage pouvait réellement piloter et diriger allait passer vingt mois à enseigner à la NASA comment faire ce que la Lune exigeait."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gemini/02"
+      },
+      "caption": "Le vaisseau Gemini — plus grand que Mercury, et pour la première fois un engin que l'équipage pouvait vraiment piloter : il pouvait modifier sa propre orbite, poursuivre un autre engin, et s'arrimer.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Les objectifs de Gemini se lisaient comme une liste de contrôle arrachée du plan de vol Apollo. Endurance : prouver qu'un équipage pouvait tenir aussi longtemps qu'un voyage aller-retour vers la Lune — jusqu'à deux semaines. Rendez-vous : deux vaisseaux se trouvant mutuellement en orbite, ce qui est bien moins intuitif que cela n'en a l'air, car accélérer pour rattraper quelque chose devant vous vous fait en réalité descendre sur une orbite plus basse et plus rapide et vous laisse en arrière. Arrimage : joindre physiquement deux engins, la manœuvre dont Apollo dépendrait deux fois à chaque vol. Et EVA : ouvrir l'écoutille dans le vide et travailler à l'extérieur. Maîtriser ces quatre points, et la Lune devenait un problème d'ingénierie plutôt qu'une inconnue."
+    },
+    {
+      "type": "prose",
+      "md": "Pour faire quoi que ce soit, le vaisseau devait grandir. Gemini en transportait deux, leur donnait un véritable système de contrôle de vol et des propulseurs pour diriger, et se divisait en un module d'équipage et une section d'équipement tout comme Apollo le ferait. Là où l'astronaute de Mercury était surtout passager, les équipages de Gemini pilotaient véritablement — ce qui était tout l'intérêt, car les nouvelles compétences ne comptaient que si un humain pouvait les exécuter sur demande."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/titan-ii-glv/01"
+      },
+      "caption": "Le Titan II — un missile intercontinental reconverti, certifié pour lancer les dix vols habités de Gemini en seulement vingt mois.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "En vingt mois entre 1965 et 1966, dix Gemini habités ont coché toute la liste. Ed White a flotté à l'extérieur de Gemini 4 lors de la première sortie spatiale américaine. Gemini 7 est resté en orbite pendant quatorze jours tandis que Gemini 6A montait à sa rencontre, les deux vaisseaux se maintenant à moins d'un mètre l'un de l'autre — le premier rendez-vous. Gemini 8 a réalisé le premier arrimage, puis a survécu à la plus grande frayeur du programme lorsqu'un propulseur bloqué l'a fait tournoyer et que Neil Armstrong a dû le ramener sous contrôle et rentrer prématurément. Et après plusieurs tentatives épuisantes et presque ratées de sortie extravéhiculaire, Buzz Aldrin de Gemini 12 a finalement résolu le problème — avec une répétition sous l'eau et suffisamment de prises pour travailler — prouvant que les EVA pouvaient devenir routinières."
+    },
+    {
+      "type": "prose",
+      "md": "Au dernier vol, la NASA pouvait faire tout ce que la Lune exigeait sauf quitter l'orbite terrestre. Elle avait aussi, presque discrètement, pris de l'avance : pour la première fois les États-Unis avaient accumulé plus de temps et plus de capacités dans l'espace que l'Union soviétique, qui était restée silencieuse alors qu'elle se débattait avec son propre matériel de nouvelle génération. La course n'était pas gagnée, mais la tête avait changé de mains."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Le caractère même de Gemini était le rythme. Dix lancements habités en moins de deux ans — parfois à quelques semaines d'intervalle seulement — chacun une répétition pour une manœuvre Apollo spécifique, chacun transmettant ce qu'il avait appris directement au suivant. C'était moins un ensemble de missions séparées qu'un seul apprentissage soutenu, mené à un tempo que la NASA n'égalerait plus jamais vraiment."
+    },
+    {
+      "type": "prose",
+      "md": "Et il a appris à la dure. Les premières sorties spatiales se sont mal passées : les astronautes ont découvert que sans rien pour se tenir ou s'appuyer, chaque mouvement les faisait tournoyer et chaque petite tâche devenait un combat, et ils rentraient trempés et épuisés. Plutôt que de déclarer les EVA résolues et passer à autre chose, la NASA a traité les échecs comme des données — elle a construit des prises et des cale-pieds et a répété le tout sous l'eau jusqu'à ce que cela fonctionne. Gemini 12 en a été la récompense. Cette volonté d'admettre que la technique ne fonctionnait pas et de la reconstruire explique en grande partie pourquoi les sorties spatiales d'Apollo se sont bien passées."
+    },
+    {
+      "type": "prose",
+      "md": "En décembre 1966, le pont était terminé. Tout ce que Gemini avait prouvé — l'endurance, le rendez-vous, l'arrimage, les EVA — est passé directement dans Apollo, dont les équipages utiliseraient tout cela à un quart de million de miles de la Terre. Gemini avait rendu la Lune accessible, puis, son travail accompli, s'est arrêté."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gemini/03"
+      },
+      "caption": "Gemini en orbite — le programme qui a transformé la Lune d'une question ouverte en un ensemble de techniques maîtrisées, et celui dont presque personne ne se souvient.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Gemini est la raison pour laquelle Apollo a fonctionné, et c'est le programme dont presque personne ne se souvient. Pris entre la célébrité de Mercury comme le premier et la célébrité d'Apollo comme celui de la Lune, il a fait le travail essentiel du milieu : chaque capacité dont Apollo dépendait — voler pendant deux semaines, trouver et s'arrimer à un autre engin, travailler à l'extérieur du vaisseau — a été inventée et rendue fiable sur Gemini d'abord. Retirez Gemini de l'histoire et les atterrissages Apollo ne sont tout simplement pas possibles selon le calendrier de Kennedy."
+    },
+    {
+      "type": "prose",
+      "md": "Son héritage matériel est la capacité elle-même. Le rendez-vous et l'arrimage sont devenus des outils de routine dont chaque programme habité depuis — Apollo, Skylab, la Navette, la Station spatiale — s'est appuyé, et l'entraînement aux EVA sous l'eau que Gemini a mis au point est encore exactement la façon dont les astronautes se préparent aux sorties spatiales aujourd'hui. Ce fut aussi le moment où les États-Unis ont rattrapé puis dépassé l'Union soviétique en vol spatial habité — non pas avec une première spectaculaire, mais en construisant méthodiquement les compétences qui comptaient vraiment."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon transposable de Gemini est la valeur du pont délibéré. Face à un objectif énorme et une échéance serrée, la NASA ne s'est pas précipitée directement vers la Lune ; elle a identifié les capacités spécifiques non résolues entre les deux et a construit tout un programme pour les maîtriser une à la fois, dans un endroit où l'échec était encore surmontable. Le milieu sans gloire — la répétition dont personne ne se souvient — est très souvent ce qui rend le final possible. Quand un objectif se situe bien au-delà de la capacité actuelle, la question utile n'est pas « comment y arriver » mais « quelles sont les choses intermédiaires que nous ne savons pas encore faire »."
+    },
+    {
+      "type": "prose",
+      "md": "La deuxième leçon se trouve dans la façon dont Gemini a géré ses premiers désastres de sortie spatiale — non pas comme des embarras à enterrer, mais comme de l'information. La technique échouait, alors ils l'ont dit, ont compris pourquoi, et l'ont reconstruite : prises, attaches, pratique sous l'eau, jusqu'à ce que cela fonctionne. Une équipe qui peut admettre qu'une chose ne fonctionne pas, à temps pour la corriger avant que cela compte, vaut bien plus qu'une équipe qui ne semble jamais échouer."
+    }
+  ]
+}

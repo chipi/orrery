@@ -1,0 +1,100 @@
+{
+  "name": "Mercury",
+  "tagline": "Amerika's gehaaste poging om een mens in de ruimte te brengen — altijd een stap achter de Sovjets, en de basis voor alles wat daarna kwam.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In de herfst van 1957 bracht de Sovjet-Unie Sputnik in een baan om de aarde, en de Verenigde Staten ontdekten dat ze een race aan het verliezen waren waarvan ze niet helemaal hadden begrepen dat ze erin zaten. Het antwoord van Washington was institutioneel: in 1958 richtte het een nieuw burgerlijk ruimteagentschap op, NASA, en gaf het een niet mis te verstane eerste opdracht — breng een Amerikaan de ruimte in, en doe het snel. Het programma kreeg de naam Mercury, en vanaf de eerste dag was het een gehaaste onderneming. De Sovjets lagen voor en bewogen nog steeds, en elke maand vertraging betekende een nieuwe maand met krantenkoppen over de vrije wereld die achterop raakte."
+    },
+    {
+      "type": "prose",
+      "md": "In 1959 koos NASA zeven militaire testpiloten om het te vliegen. Voorgesteld tijdens een enkele persconferentie werden de Mercury Seven onmiddellijk nationale figuren — voordat een van hen ergens naartoe was gegaan — omdat het land dat nodig had. Ze tekenden ervoor om in een experimentele capsule te zitten bovenop een omgebouwde ballistische raket: een machine ontworpen om een kernkop af te leveren, nu gevraagd om een mens af te leveren en hem thuis te brengen. Niemand wist toen nog zeker of een mens de reis überhaupt zou overleven."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mercury-capsule/01"
+      },
+      "caption": "De Mercury-capsule — nauwelijks groter dan de persoon erin. Eén stoel, geen ruimte om te bewegen, en geen manier om van baan te veranderen; de astronaut kon het ruimtevaartuig richten, en weinig anders.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het doel van Mercury was opzettelijk, bijna brutaal smal: bewijzen dat een mens de hele opeenvolging kon overleven — de druk van de lancering, minuten of uren gewichtloosheid, het vuur van de terugkeer — en levend uit de oceaan getrokken worden. Niet verkennen, niet manoeuvreren, niet bouwen. Gewoon erdoorheen komen, en gezien worden terwijl je het deed. Alles aan het ruimtevaartuig volgde daaruit: een kegel nauwelijks groter dan zijn inzittende, een enkele stoel, geen middelen om zijn baan te veranderen zodra het daar boven was."
+    },
+    {
+      "type": "prose",
+      "md": "Het programma had twee raketten, en die verdeelden het in tweeën. De Redstone — een directe afstammeling van de oorlogse V-2 — kon een capsule alleen in een suborbitale boog omhoog en weer terug naar beneden gooien; de krachtigere Atlas kon werkelijk orbitale snelheid bereiken. Dus Mercury klom in stappen: eerst de korte suborbitale sprongen om te bewijzen dat het systeem werkte met een persoon aan boord, daarna de moeilijkere orbitale vluchten zodra de Atlas dat vertrouwen had verdiend."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/friendship-7/01"
+      },
+      "caption": "John Glenn's Friendship 7, februari 1962 — de eerste Amerikaan die de aarde omcirkelde, en de vlucht die een nerveus land eindelijk liet uitademen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Zes Amerikanen vlogen Mercury tussen 1961 en 1963. Alan Shepard ging als eerste, een suborbitale sprong van vijftien minuten drie weken nadat Gagarin al had gecirkeld — korter en lager dan de Sovjet-vlucht, maar voldoende. Gus Grissom herhaalde het en verdronk bijna toen zijn luik openbarstte bij het neerkomen. Daarna, in februari 1962, steeg John Glenn met een Atlas naar een baan en kwam thuis na drie rondjes om de planeet, en de Verenigde Staten hadden eindelijk een antwoord op Gagarin. Scott Carpenter, Wally Schirra en Gordon Cooper rekten de vluchten uit van drie banen naar een volledige dag — Cooper's Faith 7 cirkelde tweëntwintig keer om de aarde in mei 1963 en sloot het programma af."
+    },
+    {
+      "type": "prose",
+      "md": "Gemeten aan de Sovjets was Mercury een programma dat aan het inhalen was maar nooit helemaal inhaalde: tegen de tijd dat Glenn in een baan kwam, had de USSR al een volledige dag in de ruimte gevlogen, en het zou spoedig een vrouw vliegen en in de leegte lopen terwijl Mercury nog steeds afzonderlijke banen aan het tellen was. Wat Mercury won was iets anders. Het vloog zes mensen naar de rand van de ruimte en terug — in het openbaar, op live televisie — en verloor er geen een. Het bewees precies wat het zich had voorgenomen te bewijzen: een mens kan gaan, en terugkeren."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van Mercury is een land dat gehaast improviseert, in het openbaar. Bijna alles werd tegelijk uitgevonden — hoe een persoon in leven te houden in vacuüm, hoe te praten met een capsule die rond de planeet raast, hoe een klein vaartuig te vinden in een zeer grote oceaan — en dat alles tegen een deadline gesteld door een tegenstander die de doelpalen bleef verplaatsen door er eerst te komen."
+    },
+    {
+      "type": "prose",
+      "md": "Er was ook een stillere strijd binnen het programma. De vroege plannen behandelden de astronaut als vracht, een passagier die de automatische systemen zouden vliegen. De testpiloten weigerden dat. Ze drongen aan op een raam, op handmatige besturing, op een hand aan de stuurknuppel — en ze kregen het, en meer dan eens maakte het verschil, wanneer een persoon in de lus een probleem oploste dat de automatisering niet aankon. Die nadruk op de astronaut als piloot in plaats van lading bepaalde de toon voor alles wat Amerikaanse bemande ruimtevaart zou worden."
+    },
+    {
+      "type": "prose",
+      "md": "Mercury sloot in 1963 na het beantwoorden van zijn ene vraag. Het gaf alles wat het had geleerd — de hardwareleveranciers, de vluchtleiders, het astronautenkorps, het hard verdiende vertrouwen — rechtstreeks door aan Gemini, dat zou leren manoeuvreren en rendezvous te maken, en daarna aan Apollo, dat alles gebruikte om de maan te bereiken."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/faith-7/01"
+      },
+      "caption": "Gordon Cooper's Faith 7, mei 1963 — tweëntwintig banen en een volledige dag in de lucht, de laatste en langste Mercury-vlucht.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Het meest waardevolle product van Mercury was niet een enkele vlucht; het was de machine die ze vloog. Een wereldwijd volgnetwerk, een kamer vol controllers die leerden een missie in real time te leiden, een bergingsvloot, een astronautenkorps, en een web van contractanten die nu wisten hoe dingen te bouwen die geschikt waren om mensen te dragen — het werd allemaal vanuit bijna niets opgebouwd in een paar jaar, en het ging allemaal rechtstreeks door naar Gemini en Apollo. NASA leerde mensen te vliegen op Mercury."
+    },
+    {
+      "type": "prose",
+      "md": "Het was ook een Koude Oorlog-argument gemaakt in het openbaar. Waar het Sovjet-programma in het geheim vloog en zijn successen achteraf aankondigde, vloog Mercury op live televisie — mislukkingen inbegrepen — een opzettelijke gok dat een open samenleving moeilijke dingen in volle openbaarheid kon doen. De Mercury Seven werden het menselijke gezicht van die gok, beroemd ver buiten verhouding tot de bescheiden afstanden die ze werkelijk aflegden, vanwege wat ze geacht werden te vertegenwoordigen."
+    },
+    {
+      "type": "prose",
+      "md": "De materiële opbrengst kwam zoals gewoonlijk bij een eerste programma — niet van de vluchten zelf maar van de capaciteit die ze dwongen te ontstaan: de tracking, de ruimtevaartgeneeskunde, de fabricagediscipline, het simpele bewijs dat het gedaan kon worden. De veel grotere programma's die volgden putten uit dat alles zonder het opnieuw te moeten opbouwen."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De meest overdraagbare les van Mercury is de kracht van een nauw doel dat in stappen wordt bereikt. Het probeerde niet de maan te bereiken, of zelfs de Sovjets regelrecht te overtreffen. Het wilde precies één ding bewijzen — een mens kan ruimtevaart overleven en thuiskomen — en het bouwde daarnaartoe in opzettelijke stappen: een onbemande test, dan een chimpansee, dan een suborbitale sprong, dan een baan. Wanneer de bestemming werkelijk onbekend is, werkt het bewijzen van één schakel van de keten tegelijk beter dan grijpen naar het geheel in één keer."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is dat eerst zijn niet hetzelfde is als de basis leggen. Mercury verloor bijna elke race waarin het aantrad — de Sovjets bereikten de ruimte, een baan, en een dag in de lucht eerder. En toch was het programma dat acht jaar later op de maan landde bijna volledig gebouwd op wat Mercury begon, niet op wat zijn rivalen eerst deden. Een team dat blijft verschijnen en wat het leert blijft opstapelen kan de vroege sprints verliezen en toch winnen wat uiteindelijk ertoe doet."
+    },
+    {
+      "type": "prose",
+      "md": "En de menselijke noot die het waard is te bewaren: de weigering van de astronauten om vracht te zijn. Ze kregen een ontwerp dat hen als passagiers behandelde, maar eisten piloten te zijn — een raam, een stuurknuppel, een zeg in de vlucht — en die nadruk, meer dan welke afzonderlijke missie ook, is wat het programma van hen maakte en het karakter bepaalde van alles wat daarna kwam."
+    }
+  ]
+}

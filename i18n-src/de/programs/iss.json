@@ -1,0 +1,92 @@
+{
+  "name": "Internationale Raumstation",
+  "tagline": "Das größte Ding, das die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft — die Rivalität der einstigen Rivalen verwandelte sich nach vierzig Jahren in den längsten Akt der Zusammenarbeit in der Geschichte der Raumfahrt.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Alles in diesem Atlas führt hierher. Die Internationale Raumstation ist kein Neuanfang, sondern eine Konvergenz — der Punkt, an dem die beiden getrennten Geschichten der bemannten Raumfahrt, die amerikanische und die sowjetische, schließlich zu einer einzigen Struktur und einer einzigen Besatzung verschmolzen. Ihre russische Hälfte stammt direkt von Salyut und Mir ab; ihre amerikanische Hälfte von Skylab; sie wurde vom Space Shuttle zusammengebaut, wird von Soyuz bemannt, von den Nachfahren des Progress-Frachters versorgt und trägt Laboratorien, die von Europa und Japan gebaut wurden. Nahezu jedes Programm, das ihr vorausging, ist in ihr physisch präsent, als Erbe, das in den Orbit geschraubt wurde."
+    },
+    {
+      "type": "prose",
+      "md": "Sie ist auch das größte und komplexeste Objekt, das je im Weltraum gebaut wurde, und das teuerste — eine Struktur von der Größe eines Fußballfelds, über mehr als ein Jahrzehnt hinweg aus separat gestarteten und im Orbit verbundenen Modulen zusammengebaut, kontinuierlich durch eine Flotte von Raumfahrzeugen aus vielen Nationen versorgt. Aber das Tiefgründigste an ihr ist nicht ihre Größe. Es ist die Tatsache, dass die beiden Supermächte, die vier Jahrzehnte damit verbracht hatten, sich bei jedem Ersten im Weltraum zu überbieten, beschlossen, als das Wettrennen endlich vorbei war, das Großartigste, was beide je versucht hatten, gemeinsam zu bauen — und sie seit über zwanzig Jahren ohne einen einzigen Tag Unterbrechung bemannt halten."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "Die fertiggestellte Internationale Raumstation — eine Struktur von der Größe eines Fußballfelds, im Orbit aus Modulen zusammengebaut, die auf drei Kontinenten gebaut wurden, und seit November 2000 dauerhaft bemannt.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Die Ziele der Station waren drei, und sie waren miteinander verflochten. Das erste war wissenschaftlich: ein permanentes, kontinuierlich besetztes Labor in der Schwerelosigkeit, groß genug und dauerhaft genug, um Forschung zu betreiben, die Kurzflüge niemals leisten könnten — über den menschlichen Körper, über Materialien, über Biologie, über die Langzeitfragen, die jede Reise zum Mars beantworten muss. Das zweite war operativ: endlich und in großem Maßstab das zu beherrschen, worauf jedes Stationsprogramm hingearbeitet hatte — eine wirklich permanente menschliche Präsenz, unbegrenzt aufrechterhalten durch internationale Versorgung und Besatzungsrotation."
+    },
+    {
+      "type": "prose",
+      "md": "Das dritte Ziel war politisch, und in den 1990er Jahren war es wohl das dringendste. Als die Sowjetunion zusammenbrach, befürchtete der Westen, dass ihre Raketentechniker ihre Fähigkeiten an jedes Regime verkaufen könnten, das zahlen würde. Russland in ein gemeinsames, unverzichtbares, jahrzehntelanges Projekt einzubinden — eines, in dem seine unübertroffene Stations-Expertise gebraucht und geschätzt wurde — war ein bewusster Akt der Staatskunst ebenso wie der Technik. Die ISS wurde teilweise gebaut, um dem ehemaligen Feind einen Grund zur Zusammenarbeit zu geben, und es funktionierte: Die Station hat die amerikanische und russische Raumfahrt durch irdische Streitigkeiten hinweg verflochten gehalten, die fast alles andere zerstört haben."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "Die Internationale Raumstation während der Montage. Zwischen 1998 und 2011 über mehr als vierzig Flüge hinweg gebaut, Modul für Modul, war sie das ehrgeizigste Bauprojekt, das je außerhalb der Erde durchgeführt wurde.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Die Station wurde zwischen 1998 und 2011 zusammengebaut, Modul für Modul, über mehr als vierzig Starts durch das Space Shuttle und russische Raketen — ein Bauprojekt im Orbit von einem Ausmaß und einer Schwierigkeit, wie sie vorher oder danach nie versucht wurden. Seit Expedition 1 am 2. November 2000 eintraf, ist sie kontinuierlich bewohnt: Seit mehr als zwei Jahrzehnten gab es keinen einzigen Moment, in dem kein Mensch außerhalb der Erde lebte. Über 270 Menschen aus mehr als 20 Ländern haben an Bord gelebt und gearbeitet, und sie hat Zehntausende von Experimenten in allen wissenschaftlichen Bereichen beherbergt."
+    },
+    {
+      "type": "prose",
+      "md": "In ihrem Betrieb wird jede Lektion jedes früheren Programms auf einmal fällig. Ihr modularer Aufbau ist Mirs Idee, vergrößert und internationalisiert. Ihre Versorgungs- und Betankungslogistik ist die von Salyut, gereift. Ihre kontinuierliche Besetzung und ihre Langzeitwissenschaft erweitern Skylab und Mir. Soyuz befördert noch immer ihre Besatzungen, genau wie es sie vor fünfzig Jahren zu Salyut beförderte; Progress und seine westlichen Verwandten — Europas ATV, Japans HTV, Amerikas Cygnus und Dragon — halten sie versorgt. Die Station ist nicht bloß der Nachfolger der Stationsprogramme; sie ist ihre Summe, die alle ihre hart erkämpften Techniken gleichzeitig und zuverlässig ausführt."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Die zentrale Geschichte der ISS ist Konvergenz, und es lohnt sich, sie Strang für Strang nachzuverfolgen. Das russische Segment — die Module Zarya und Zvezda im Kern der Station — ist der direkte Nachfahre der DOS-Linie, die von Salyut 1 bis Mir reichte; Zvezda ist im Wesentlichen das nächste Mir-Kernmodul. Das amerikanische Segment erbt Skylab und das Shuttle, das es baute. Columbus ist Europas Beitrag, die Frucht des Weges, der durch Spacelab und das ATV führte; Kibo ist Japans. Die Besatzungen kommen mit Soyuz an, dem Raumfahrzeug, das seit 1967 Kosmonauten befördert, und zunehmend mit kommerziellen Dragons. Die ISS zu verstehen bedeutet, all diese Programme noch in Betrieb zu sehen, zu einem einzigen verschmolzen."
+    },
+    {
+      "type": "prose",
+      "md": "Das andere große Thema ist die Transformation von Rivalität in Zusammenarbeit. Das Wettrennen im All war ein Wettbewerb darum, der Erste zu sein; die ISS ist ein Projekt, das nur dadurch existieren kann, dass es geteilt wird. Keine einzelne Nation finanziert mehr allein eine permanente menschliche Präsenz im Orbit — die Kosten und Komplexität sind einfach zu groß — und so wird die Station durch eine ständige Vereinbarung zwischen Rivalen aufrechterhalten, weiter zusammenzuarbeiten, selbst wenn zwischen ihnen kaum etwas anderes überlebt. Das ist etwas wirklich Neues in der Geschichte der Raumfahrt: kein gewonnenes Rennen, sondern ein Gemeingut, das Jahrzehnt für Jahrzehnt von Nationen aufrechterhalten wird, die einander ansonsten nicht vertrauen."
+    },
+    {
+      "type": "prose",
+      "md": "Und die Station ist nun ein Scharnier zur Zukunft. Kommerzielle Raumfahrzeuge haben die Aufgabe übernommen, sie zu erreichen, womit die Ära endete, in der nur Regierungen Besatzungen fliegen konnten, und die Übergabe des erdnahen Orbits an private Betreiber begann. Ihr eigenes Ende ist in Sicht — ein kontrollierter Wiedereintritt ist für etwa 2030 geplant — wobei kommerzielle Stationen sie ablösen und das Gateway im Mondorbit das Modell der internationalen Partnerschaft zum Mond weiterführen soll. Die ISS ist sowohl der Höhepunkt des ersten Zeitalters der bemannten Raumfahrt als auch die Brücke zum nächsten."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/03"
+      },
+      "caption": "Die Station vor der Erde. Ihre tiefste Errungenschaft ist nicht ihre Größe oder ihre Wissenschaft, sondern ihre Kontinuität — eine ununterbrochene menschliche Präsenz im Weltraum, durch internationale Zusammenarbeit aufrechterhalten, seit über zwei Jahrzehnten.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Das Vermächtnis der ISS ist der Beweis, im größten Maßstab, zweier Ideen, zu denen dieser Atlas immer wieder zurückkehrt: dass eine permanente menschliche Präsenz im Weltraum erreichbar ist und dass die größten Dinge im Weltraum gemeinsam statt allein gebaut werden. Sie ist die längste kontinuierliche menschliche Besetzung irgendeines Ortes jenseits der Erde, die Grundlage von nahezu allem, was heute über das Leben und Arbeiten im Orbit auf lange Sicht bekannt ist, und die operative und wissenschaftliche Grundlage, auf der jede Reise zum Mond oder Mars aufbauen wird. Alles, was die Stationsprogramme fünfzig Jahre lang gelernt haben, wird hier bestätigt, läuft auf einmal und ohne Pause."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr diplomatisches Vermächtnis mag ebenso viel bedeuten wie ihr wissenschaftliches. Seit einem Vierteljahrhundert hat die Station die Raumfahrtnationen der Welt — vor allem die Vereinigten Staaten und Russland — im Orbit zusammenarbeiten lassen, durch Kriege, Sanktionen und Zusammenbrüche des Vertrauens auf der Erde hinweg. Sie steht als der klarste Beweis dafür, dass Zusammenarbeit erreichen kann, was Wettbewerb nicht kann, und dass ein gemeinsames Vorhaben, einmal gebaut, Rivalen lange zusammenhalten kann, nachdem die Gründe, aus denen sie es begonnen haben, verblasst sind. Wenn sie schließlich heruntergeholt wird, wird das, was sie bewiesen hat, sie überdauern: dass die nächsten Schritte — der Mond und schließlich der Mars — Dinge sind, die die Menschheit gemeinsam unternehmen wird."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die erste Lektion der Station ist, dass Zusammenarbeit erreicht, was Wettbewerb nicht kann. Keine Nation baut mehr allein eine permanente menschliche Präsenz im Weltraum, weil Ausmaß und Kosten das übersteigen, was ein einzelnes Budget tragen kann — und so existiert die größte Struktur, die je im Orbit gebaut wurde, nur, weil ehemalige Rivalen sich entschieden haben, sie zu teilen. Das Wettrennen im All produzierte brillante, kurze Triumphe; die ISS hat zwei ununterbrochene Jahrzehnte der Präsenz produziert. Für die härtesten und teuersten Vorhaben ist das Bündeln von Anstrengungen kein Kompromiss bei der Ambition. Es ist der einzige Weg, wie die größten Ambitionen überhaupt verwirklicht werden."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Lektion ist, dass in der Raumfahrt nichts bei Null anfängt. Die ISS ist die Summe jedes Programms vor ihr — Salyuts Versorgung, Mirs Modularität, Skylabs Wissenschaft, die Montage durch das Shuttle, Soyuz' Zuverlässigkeit, die Laboratorien Europas und Japans — nichts davon neu erfunden, alles geerbt und kombiniert. Die tiefste Wahrheit des Raumfahrtzeitalters ist, dass seine Errungenschaften kumulativ sind: Jedes Programm steht auf denen davor, und die Station steht auf ihnen allen. Fortschritt im Weltraum ist keine Reihe von Neuanfängen, sondern ein einziger, kontinuierlicher Akt des Bauens, von Hand zu Hand über Generationen und über Grenzen hinweg weitergetragen."
+    }
+  ]
+}

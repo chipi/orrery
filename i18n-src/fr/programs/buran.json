@@ -1,0 +1,88 @@
+{
+  "name": "Buran",
+  "tagline": "La navette spatiale soviétique qui ressemblait à celle des Américains, volait mieux à un égard — et vola exactement une fois, sans équipage et sans défaut, avant que le pays qui l'avait construite ne disparaisse sous ses pieds.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Au milieu des années 1970, l'Union soviétique observait les États-Unis construire la navette spatiale et en tirait une conclusion alarmante. Elle ne pouvait pas tout à fait croire que les Américains dépenseraient autant pour un avion spatial réutilisable uniquement pour les raisons déclarées, et craignait un objectif militaire caché — un véhicule qui pourrait plonger dans l'atmosphère, capturer un satellite soviétique et rentrer, ou larguer des armes depuis l'orbite. Refusant de rester sans réponse, le Politburo ordonna la construction du sien. Le résultat, Buran, fut le projet spatial le plus vaste et le plus coûteux de l'histoire soviétique, et il débuta comme une réponse à une menace qui n'avait peut-être jamais été réelle."
+    },
+    {
+      "type": "prose",
+      "md": "De l'extérieur, Buran ressemblait presque identiquement à l'orbiteur américain — la même aile delta, la même forme générale — parce que le même travail et la même physique de la rentrée hypersonique poussent une conception vers la même réponse. Mais en dessous, les ingénieurs soviétiques prirent deux décisions qui distinguèrent leur machine, et toutes deux, sans doute, améliorèrent l'original. Buran ne transportait aucun moteur principal propre, et Buran pouvait voler sans personne à bord."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/energia/01"
+      },
+      "caption": "Le lanceur super-lourd Energia, qui lança Buran. Contrairement à l'orbiteur américain, Buran n'avait aucun moteur principal : toute la poussée venait d'Energia, une véritable fusée lourde à part entière — la plus puissante que l'Union soviétique ait jamais fait voler avec succès.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "La première décision concernait les moteurs. La navette américaine montait ses trois gros moteurs principaux sur l'orbiteur lui-même, ce qui signifiait transporter cette machinerie lourde et coûteuse en orbite et retour à chaque vol et ne jeter que le réservoir externe. Les Soviétiques mirent plutôt toute la poussée dans la fusée : Buran montait sur Energia, un véritable lanceur super-lourd qui accomplissait tout le travail pour atteindre l'orbite, laissant l'orbiteur être une charge utile plutôt qu'une partie de la propulsion. Cela rendait Energia utile en soi — une fusée puissante qui pouvait lancer d'autres charges utiles lourdes sans orbiteur — et libérait Buran d'un fardeau que son rival porta pendant trente ans."
+    },
+    {
+      "type": "prose",
+      "md": "La seconde décision fut l'automatisation. La navette américaine nécessitait toujours un équipage pour atterrir ; elle ne pouvait pas rentrer seule. Buran fut construit pour voler la mission entière — lancement, orbite, rentrée et atterrissage — sans personne à bord, guidé par ses ordinateurs et le sol. À une époque où l'atterrissage automatique complet d'un engin spatial ailé se situait à la frontière du possible, c'était une véritable avancée, et cela prépara l'unique moment où Buran put prouver ce qu'il pouvait faire."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/buran/05"
+      },
+      "caption": "L'orbiteur Buran. Il vola une mission parfaite sans équipage en novembre 1988 puis ne vola plus jamais — cloué au sol par l'effondrement de l'économie soviétique et, finalement, de l'Union soviétique elle-même.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Le 15 novembre 1988, Buran vola. Il décolla sur Energia, fit deux fois le tour de la Terre, rentra dans l'atmosphère, et — dans un vent de travers en rafales qui aurait mis n'importe quel pilote à l'épreuve — se posa sur la piste de Baikonur entièrement automatiquement, touchant le sol à quelques mètres de sa cible sans aucun humain à bord à aucun moment. Ce fut un vol sans défaut et un véritable triomphe technique : aucun autre engin spatial ailé n'avait accompli une mission orbitale entière et atterri seul. Et ce fut la seule fois où Buran vola."
+    },
+    {
+      "type": "prose",
+      "md": "Le moment ne pouvait pas être pire. Buran atteignit son triomphe exactement alors que l'Union soviétique commençait à se désagréger. En trois ans, le pays avait disparu ; l'argent s'était évaporé ; et un avion spatial extrêmement coûteux construit pour contrer une menace américaine n'avait plus de menace à contrer, pas de budget pour voler, et aucune mission que quiconque puisse se permettre de lui confier. Le programme survécut sur le papier jusqu'en 1993 puis fut purement et simplement annulé. L'ultime indignité survint en 2002, lorsque le toit du hangar abritant le seul orbiteur ayant réellement volé s'effondra, écrasant l'engin spatial et tuant huit travailleurs. L'unique vol de Buran reste l'une des réalisations les plus impressionnantes — et les plus inutiles — de l'histoire du vol spatial."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Buran est l'histoire d'une réponse magnifique à une question qui cessa d'être posée. Techniquement, ce fut un succès et par certains aspects une amélioration du véhicule qu'il copiait — le lanceur séparé, l'atterrissage automatique, de véritables avancées d'ingénierie. Mais il fut construit pour des raisons stratégiques et politiques qui s'évaporèrent, à un coût que l'économie soviétique ne pouvait soutenir, et il arriva à son moment de triomphe juste au moment où le système qui l'avait commandé s'effondrait. Aucune excellence d'ingénierie ne pouvait survivre à la disparition de la raison d'être du programme et de l'argent pour le faire fonctionner."
+    },
+    {
+      "type": "prose",
+      "md": "Il y a une ironie à retenir. Dans les deux aspects où Buran différait de la navette américaine — placer les moteurs sur la fusée plutôt que sur l'orbiteur, et voler automatiquement sans équipage — il avait sans doute les meilleures idées, et les deux ont des échos dans le vol spatial ultérieur. Et pourtant la navette américaine vola 135 fois pendant trente ans et construisit une station spatiale, tandis que Buran vola une fois. La leçon n'est pas que l'ingénierie de Buran était moins bonne ; c'est que l'ingénierie n'est jamais toute l'histoire. Un programme a besoin d'un objectif et d'un budget qui survivent à son premier vol, et Buran n'avait ni l'un ni l'autre."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/buran-ok-gli/02"
+      },
+      "caption": "OK-GLI, l'orbiteur de test atmosphérique de Buran — équipé de moteurs à réaction pour pratiquer les approches de piste, et désormais une pièce de musée en Allemagne. Le matériel Buran survivant est dispersé dans des musées ; le seul orbiteur qui atteignit l'espace fut détruit en 2002.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'héritage direct de Buran est presque nul — un programme annulé, un seul vol, du matériel dans des musées, et un orbiteur perdu sous un toit effondré. Mais son héritage indirect est réel. Energia prouva que l'Union soviétique pouvait, enfin, construire une fusée super-lourde qui fonctionnait réellement, rachetant l'échec du N1 — même si elle aussi fut annulée faute de quoi que ce soit à lancer. Et le vol entièrement automatisé de Buran démontra une capacité qui ne deviendrait standard que des décennies plus tard, lorsque les engins spatiaux sans équipage et à atterrissage autonome devinrent courants."
+    },
+    {
+      "type": "prose",
+      "md": "Mais surtout, Buran perdure comme un monument d'avertissement — le cas le plus clair de l'ère spatiale d'un programme qui réussit l'ingénierie et échoua tout le reste. Il se tient aux côtés de la navette américaine comme la voie non prise, et aux côtés du N1 comme l'autre grand « et si » soviétique : la preuve que dans le vol spatial, une machine brillante sans objectif ni argent reste une machine qui ne vole pas."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La première leçon de Buran est qu'un programme a besoin d'une raison qui survive à ses origines. Il naquit d'une peur stratégique et d'un refus de laisser les Américains détenir une capacité que l'Union soviétique n'avait pas — et lorsque la peur s'estompa et que la Guerre froide prit fin, il ne resta rien pour justifier le coût énorme. Construire une capacité coûteuse pour égaler un rival, plutôt que pour accomplir un travail dont on a réellement besoin, vous laisse avec une machine magnifique et aucune raison de la faire voler dès que la rivalité s'apaise."
+    },
+    {
+      "type": "prose",
+      "md": "La seconde leçon est que l'excellence en ingénierie ne peut sauver un programme de la perte de son objectif et de son budget. Buran était, à bien des égards, une meilleure conception que le véhicule auquel il répondait — et il vola une fois. La navette américaine, malgré tous ses défauts, vola pendant trente ans parce qu'elle avait des missions à accomplir et de l'argent pour les accomplir. Un engin spatial n'est durable que dans la mesure de la volonté institutionnelle et du financement qui le soutiennent ; sans ceux-ci, même un vol sans défaut est une fin plutôt qu'un commencement."
+    }
+  ]
+}

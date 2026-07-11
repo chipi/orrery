@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Premier amarrage de deux vaisseaux spatiaux ; retour d'urgence",
+  "dispatch": "Gemini 8 a réalisé le premier amarrage de deux vaisseaux spatiaux en orbite — et a failli tuer son équipage. Quelques minutes après que Neil Armstrong eut manœuvré son Gemini en position d'amarrage avec une cible Agena, le duo assemblé a commencé à rouler, de plus en plus vite, jusqu'à ce qu'il tourne environ une fois par seconde et que la vision des astronautes commence à se voiler vers l'évanouissement. Armstrong s'est désamarré — ce qui n'a fait qu'empirer les choses, puisque la panne venait de son propre vaisseau — puis a coupé les propulseurs principaux et arrêté la rotation avec le système de contrôle de rentrée, une décision qui leur a sauvé la vie mais qui, selon les règles, a imposé un retour d'urgence immédiat. Ce fut le moment le plus dangereux du programme, et c'était le premier vol spatial d'Armstrong. Le diagnostic calme et rapide dans une situation critique est exactement le tempérament dont la NASA se souviendrait lorsqu'elle choisit qui poserait le pied sur la Lune.",
+  "description": "Neil Armstrong et David Scott ont réalisé le premier amarrage de deux vaisseaux spatiaux — avec une cible Agena — le 16 mars 1966. Un propulseur d'attitude bloqué a ensuite provoqué une rotation violente ; Armstrong s'est désamarré et a utilisé le système de contrôle de rentrée pour récupérer la situation, forçant un atterrissage d'urgence après 10 h 41 m. C'était le premier vol spatial d'Armstrong.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-8) depuis Cape Canaveral LC-19, 1966-03-16 16:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "PREMIER AMARRAGE",
+      "note": "Premier amarrage de deux vaisseaux spatiaux — Gemini 8 avec la cible Agena.",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "ROTATION INCONTRÔLÉE",
+      "note": "Un propulseur bloqué fait tourner l'ensemble à ~1 tour/s ; Armstrong récupère avec le système de contrôle de rentrée.",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "AMERRISSAGE D'URGENCE",
+      "note": "Amerrissage d'urgence dans le Pacifique après 10 h 41 m.",
+      "type": "nominal"
+    }
+  ]
+}

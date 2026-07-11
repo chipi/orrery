@@ -1,0 +1,88 @@
+{
+  "name": "ESA — Europa in de bemande ruimtevaart",
+  "tagline": "Europa heeft nooit een eigen bemand ruimtevaartuig gebouwd — en werd toch onmisbaar voor de bemande ruimtevaart, door te kiezen voor partnerschap boven onafhankelijkheid en door de onderdelen te beheersen die niemand anders wilde bouwen.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Europa maakte een bewuste, ongebruikelijke keuze over bemande ruimtevaart: het besloot geen eigen bemand ruimtevaartuig te bouwen. Waar de Verenigde Staten, de Sovjet-Unie en later China elk de volledige stack ontwikkelden — raketten, capsules, het vermogen om hun eigen burgers te lanceren — koos Europa, collectief handelend via de European Space Agency, ervoor om in plaats daarvan de best mogelijke partner te zijn. Het zou zijn astronauten laten vliegen in voertuigen van andere naties, en het zou de capaciteiten bijdragen die de gezamenlijke onderneming lieten werken. Het is een stillere route dan een nationale ruimtewedloop, en het bleek een opmerkelijk effectieve te zijn."
+    },
+    {
+      "type": "prose",
+      "md": "Dit begon met Spacelab in 1983 — een door Europa gebouwd laboratorium dat meereed in het laadruim van de Space Shuttle en de Shuttle veranderde in een wetenschapsplatform, met de eerste ESA-astronaut aan boord tijdens zijn eerste vlucht. Het vervolgde met Columbus, Europa's permanente laboratorium vastgebout aan het International Space Station, en met de Automated Transfer Vehicle, het grootste en meest geavanceerde vrachtschip van zijn tijd. Onderweg vlogen Europese astronauten op Shuttles en Soyuz, woonden aan boord van Mir en het ISS, en voerden het commando over het Station. Europa lanceerde nooit zijn eigen bemanning — en werd essentieel voor bijna iedereen die dat wel deed."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "Het International Space Station, waarvan Europa een volwaardige partner is. ESA's Columbus-laboratorium is er een permanent onderdeel van, en Europese astronauten hebben er gewoond en het commando gevoerd — de vrucht van de keuze om deel te nemen in plaats van het alleen te doen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Europa's doel was van betekenis te zijn in de bemande ruimtevaart zonder de volledige kosten en risico's van een onafhankelijk bemand programma te dragen. Dat betekende specialiseren — de laboratoria bouwen waar de wetenschap wordt bedreven, de vrachtschepen die stations bevoorraad houden, en de modules die ze uitbreiden, en astronauten trainen die konden vliegen in welk voertuig een partnerschap ook bood. In plaats van te dupliceren wat anderen al hadden, ging Europa leveren wat de gezamenlijke onderneming nodig had en niet gemakkelijk kon missen."
+    },
+    {
+      "type": "prose",
+      "md": "De strategie had een verborgen kracht: een essentieel onderdeel bijdragen koopt een permanente plaats aan tafel. Door Spacelab te bouwen, verdiende Europa een plaats aan boord van de Shuttle; door Columbus en de ATV te bouwen, werd het een volwaardige en gelijkwaardige partner in het International Space Station, met zijn eigen laboratorium en zijn eigen onmisbare bevoorradingsvaartuig. Een natie die alleen stoelen zou kopen zou een klant zijn; Europa werd, door capaciteiten te bouwen waar anderen op vertrouwden, een partner — met echt inspraak in de onderneming."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/atv/02"
+      },
+      "caption": "De Automated Transfer Vehicle — Europa's ISS-vrachtschip. Twintig ton volledig geladen, vloog het zichzelf naar een automatische koppeling met het Station, leverde vracht, water, lucht en stuwstof, en gebruikte zijn motoren om de baan van het ISS te verhogen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "De resultaten waren substantieel en duidelijk Europees. Spacelab vloog op 22 Shuttle-missies tussen 1983 en 1998, wat Europa twee decennia praktische bemande wetenschap gaf en een generatie ervaren astronauten. Columbus, geïnstalleerd in 2008, gaf Europa een permanent laboratorium in een baan om de aarde en maakte het een eersteklas partner in de grootste structuur die mensen ooit hebben gebouwd. En de Automated Transfer Vehicle — vijf enorme vrachtschepen gevlogen tussen 2008 en 2015, elk vernoemd naar een Europese denker van Jules Verne tot Georges Lemaître — deed iets werkelijk geavanceerds: een twintig ton wegende ruimtevaartuig dat zichzelf navigeerde naar een volledig automatische koppeling met het ISS, voorraden en brandstof leverde, en het hele Station opnieuw een boost gaf met zijn motoren."
+    },
+    {
+      "type": "prose",
+      "md": "Die ATV-expertise leverde vervolgens een onverwacht dividend op. De technologie die Europa ontwikkelde om een zelfvliegend, aan het ISS koppelend ruimtevaartuig te bouwen werd de basis van de European Service Module — het deel dat Europa nu bouwt voor NASA's Orion, het ruimtevaartuig dat astronauten terug naar de Maan brengt onder Artemis. De servicemodule levert Orion's stroom, voortstuwing, lucht en water: de sectie die de bemanning in leven houdt onderweg naar de maanbaan en terug. Een continent dat nooit zijn eigen bemande ruimteschip bouwde, bouwt nu de helft van een Amerikaans exemplaar zonder welke zijn astronauten niet kunnen overleven."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De rode draad van Europa's bemande ruimtevaart is dat partnerschap, goed gedaan, geen mindere route is dan onafhankelijkheid — het is een andere en soms sterkere. Door de middelen van vele naties te bundelen via ESA en te specialiseren in de capaciteiten die anderen nodig hadden, bereikte Europa een rol in de bemande ruimtevaart veel groter dan enig afzonderlijk Europees land zich alleen had kunnen veroorloven, en groter dan de omvang van zijn budget zou suggereren. Het had nooit de autonomie van een natie die zijn eigen bemanningen lanceert; het had in plaats daarvan de hefboomwerking van onmisbaar te zijn voor degenen die dat wel doen."
+    },
+    {
+      "type": "prose",
+      "md": "De ATV is de duidelijkste uitdrukking hiervan. Het was geen prestigeproject of een inzending voor een wedloop; het was een uiterst capabel stuk infrastructuur — een geautomatiseerd vrachtschip geavanceerder in zijn koppeling en zijn vrachtcapaciteit dan al het andere dat vloog — dat Europa centraal maakte in het in leven houden van het ISS. En omdat Europa die capaciteit had gebouwd, was het in positie om het volgende te bouwen: de Orion-servicemodule, en daarmee een plaats in de terugkeer van de mensheid naar de Maan. Het beheersen van een onglamoureuze niche leidde, stap voor stap, tot een aandeel in het meest ambitieuze bemande programma van de nieuwe eeuw."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "Het International Space Station — de onderneming die Europa hielp bouwen en in stand houden, en het bewijs dat een natie de bemande ruimtevaart diepgaand kan vormgeven zonder ooit een eigen bemanning te lanceren.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Europa's erfenis in de bemande ruimtevaart is evenzeer een model als een verzameling hardware: het bewijs dat een middelgrote ruimtevaartmacht enorm van betekenis kan zijn door te partneren in plaats van te concurreren, door de middelen van vele naties te bundelen, en door de essentiële onderdelen te bouwen waar anderen van afhankelijk zijn in plaats van te dupliceren wat al bestaat. Columbus is nog steeds in een baan; Europese astronauten vliegen nog steeds en voeren het commando; en de nakomelingen van de ATV brengen nu mensen naar de Maan. Niets hiervan vereiste een onafhankelijk Europees bemand ruimtevaartuig, en dat is precies het punt."
+    },
+    {
+      "type": "prose",
+      "md": "Het is ook het complement voor de bemande ruimtevaart bij Ariane. Waar Ariane Europa's onafhankelijke *toegang* tot de ruimte veiligstelde, stelde zijn bemande programma Europa's *plaats* in de ruimte veilig — een permanente, gerespecteerde zetel in de internationale onderneming, verdiend door bijdrage in plaats van geclaimd bij vlag. Samen definiëren ze een duidelijk Europese manier om een grote ruimtevaartmacht te zijn: autonoom waar het moet, samenwerkend waar dat sterker is, en hoe dan ook essentieel."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De eerste les is dat je niet alles zelf hoeft te bouwen om essentieel te zijn. Europa ontwikkelde nooit een onafhankelijk bemand ruimtevaartuig, maar door laboratoria, vracht en modules te beheersen werd het een partner zonder wie geen enkel groot bemand ruimtevaartprogramma gemakkelijk kon. Een onderscheidend, werkelijk nodig vermogen bijdragen koopt meer blijvende invloed dan proberen te repliceren, met lagere kwaliteit, wat anderen al goed doen. Specialisatie, niet duplicatie, was Europa's route naar relevantie."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is dat partnerschap een beperkt budget vermenigvuldigt. Door de middelen van vele naties te combineren via één agentschap en ze te investeren in capaciteiten die een permanente rol verdienden, bereikte Europa veel meer in de bemande ruimtevaart dan zijn uitgaven alleen zouden voorspellen — en veranderde het beheersen van één niche, geautomatiseerde vracht, in een aandeel in de terugkeer naar de Maan. Voor een macht die de reuzen niet kan overtreffen in uitgaven, is onmisbaar zijn een betere strategie dan onafhankelijk zijn, en Europa heeft het veertig jaar laten werken."
+    }
+  ]
+}

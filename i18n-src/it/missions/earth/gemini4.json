@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 4 / GT-4",
+  "type": "EQUIPAGGIO ORBITA TERRESTRE · VOLATO",
+  "first": "Prima passeggiata spaziale americana (Ed White)",
+  "dispatch": "Gemini 4 è ricordata per una fotografia: Ed White, legato alla navicella da un ombelicale dorato, fluttuante sopra una Terra blu con una pistola di manovra portatile — il primo americano a camminare nello spazio. Il momento fu così esaltante che quando il Controllo Missione gli ordinò di rientrare dopo venti minuti, White lo definì il momento più triste della sua vita. La passeggiata spaziale sembrava senza sforzo e per lo più lo era, perché White stava galleggiando liberamente piuttosto che lavorando — la dura verità che l'EVA è lavoro estenuante non sarebbe arrivata fino ai voli successivi. Ma per un paese che era rimasto indietro rispetto ai sovietici, che avevano effettuato la prima passeggiata spaziale dieci settimane prima, fu la prova che l'America poteva farlo anche lei, e l'immagine divenne una delle fotografie emblematiche dell'epoca.",
+  "description": "James McDivitt ed Edward White volarono una missione di quattro giorni e 62 orbite dal 3 giugno 1965. Durante la terza orbita White effettuò la prima passeggiata spaziale americana — circa 21 minuti all'esterno, legato, usando un'unità di manovra portatile. Il volo condusse anche il primo programma scientifico e medico esteso degli Stati Uniti.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan II GLV (GT-4) da Cape Canaveral LC-19, 1965-06-03 15:16 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "EVA",
+      "note": "Ed White — prima passeggiata spaziale americana, ~21 min, legato, con un'unità di manovra portatile.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "AMMARAGGIO",
+      "note": "Ammaraggio nell'Atlantico dopo 4 giorni / 62 orbite.",
+      "type": "nominal"
+    }
+  ]
+}

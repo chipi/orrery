@@ -1,0 +1,92 @@
+{
+  "name": "Gemini",
+  "tagline": "O programa-ponte — o meio sem glamour onde a NASA aprendeu tudo que a Apollo precisaria, exceto como voar até a Lua.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mercury havia respondido uma pergunta — uma pessoa pode sobreviver a um voo espacial e voltar para casa — e deixado uma lista muito mais difícil sem resposta. Pousar na Lua significava voar por duas semanas seguidas, encontrar e se juntar a outra espaçonave em órbita, acoplar as duas, trabalhar do lado de fora em um traje pressurizado e retornar a um ponto preciso na Terra. Em 1961, quando Kennedy estabeleceu o prazo lunar, a NASA não podia fazer nada disso. Entre o primeiro americano no espaço e o primeiro americano na Lua havia um abismo de habilidades que ninguém na Terra ainda havia dominado."
+    },
+    {
+      "type": "prose",
+      "md": "Gemini foi construída para cruzar esse abismo. Nunca teve a intenção de ser a primeira em nada ou de ir a qualquer lugar novo; era um programa de treinamento com prazo definido, projetado para inventar e ensaiar — em órbita da Terra, onde um erro ainda poderia ser sobrevivível — cada técnica na qual a Apollo posteriormente apostaria vidas. Uma espaçonave maior, de dois lugares, que a tripulação pudesse realmente pilotar e manobrar, passaria vinte meses ensinando a NASA a fazer as coisas que a Lua exigia."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gemini/02"
+      },
+      "caption": "A espaçonave Gemini — maior que a Mercury e, pela primeira vez, uma nave que a tripulação poderia realmente pilotar: ela podia mudar sua própria órbita, perseguir outra nave e acoplar.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Os objetivos da Gemini pareciam uma lista de verificação arrancada do plano de voo da Apollo. Resistência: provar que uma tripulação poderia durar tanto quanto uma viagem até a Lua e volta — até duas semanas. Encontro: duas espaçonaves se encontrando em órbita, o que é muito menos intuitivo do que parece, porque acelerar para alcançar algo à sua frente na verdade te coloca em uma órbita mais baixa e rápida e te deixa para trás. Acoplagem: unir fisicamente duas naves, a manobra da qual a Apollo dependeria duas vezes em cada voo. E EVA: abrir a escotilha no vácuo e trabalhar do lado de fora. Domine essas quatro, e a Lua se tornaria um problema de engenharia em vez de uma incógnita."
+    },
+    {
+      "type": "prose",
+      "md": "Para fazer qualquer uma dessas coisas, a espaçonave tinha que amadurecer. A Gemini levava dois, dava a eles um sistema real de controle de voo e propulsores para manobrar, e se dividia em um módulo de tripulação e uma seção de equipamentos muito como a Apollo faria. Onde o astronauta da Mercury principalmente viajava, as tripulações da Gemini realmente pilotavam — o que era exatamente o ponto, porque as novas habilidades só contavam se um humano pudesse executá-las sob demanda."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/titan-ii-glv/01"
+      },
+      "caption": "O Titan II — um míssil intercontinental reaproveitado, certificado para lançar todos os dez voos tripulados da Gemini em apenas vinte meses.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Em vinte meses ao longo de 1965 e 1966, dez Geminis tripuladas marcaram a lista inteira. Ed White flutuou do lado de fora da Gemini 4 na primeira caminhada espacial americana. A Gemini 7 permaneceu no espaço por quatorze dias enquanto a Gemini 6A subiu para encontrá-la, as duas naves mantendo posição a trinta centímetros de distância — o primeiro encontro. A Gemini 8 fez a primeira acoplagem, depois sobreviveu ao maior susto do programa quando um propulsor travado a fez girar e Neil Armstrong teve que domá-la de volta ao controle e voltar para casa mais cedo. E após várias tentativas exaustivas e quase fracassadas de caminhada espacial, Buzz Aldrin da Gemini 12 finalmente decifrou — com ensaio subaquático e apoios suficientes para trabalhar contra — provando que EVA poderia se tornar rotina."
+    },
+    {
+      "type": "prose",
+      "md": "No último voo, a NASA podia fazer tudo que a Lua exigia exceto deixar a órbita da Terra. Também, quase silenciosamente, havia assumido a liderança: pela primeira vez os Estados Unidos haviam acumulado mais tempo e mais capacidade no espaço do que a União Soviética, que havia ficado quieta enquanto lutava com seu próprio hardware de próxima geração. A corrida não estava ganha, mas a liderança havia mudado de mãos."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Todo o caráter da Gemini era ritmo. Dez lançamentos tripulados em menos de dois anos — às vezes com apenas semanas de intervalo — cada um um ensaio para uma manobra específica da Apollo, cada um alimentando o que aprendeu diretamente no próximo. Era menos um conjunto de missões separadas do que um único aprendizado sustentado, executado em um ritmo que a NASA nunca mais repetiria."
+    },
+    {
+      "type": "prose",
+      "md": "E aprendeu da maneira difícil. As primeiras caminhadas espaciais foram mal: os astronautas descobriram que sem nada para segurar ou se apoiar, cada movimento os fazia girar e cada pequena tarefa se tornava uma luta, e eles voltavam para dentro encharcados e exaustos. Em vez de declarar EVA resolvida e seguir em frente, a NASA tratou as falhas como dados — construiu apoios para as mãos e restrições para os pés e ensaiou tudo debaixo d'água até funcionar. A Gemini 12 foi a recompensa. Essa disposição de admitir que a técnica não estava funcionando e reconstruí-la é grande parte da razão pela qual as caminhadas espaciais da Apollo transcorreram suavemente."
+    },
+    {
+      "type": "prose",
+      "md": "Em dezembro de 1966 a ponte estava concluída. Tudo que a Gemini havia provado — a resistência, o encontro, a acoplagem, a EVA — foi direto para a Apollo, cujas tripulações usariam tudo isso a quatrocentos mil quilômetros de casa. A Gemini havia tornado a Lua alcançável e então, seu trabalho concluído, parou."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gemini/03"
+      },
+      "caption": "Gemini em órbita — o programa que transformou a Lua de uma pergunta aberta em um conjunto resolvido de técnicas, e aquele que quase ninguém lembra.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Gemini é a razão pela qual a Apollo funcionou, e é o programa que quase ninguém lembra. Presa entre a fama da Mercury como a primeira e a fama da Apollo como a da Lua, ela fez o trabalho essencial do meio: cada capacidade da qual a Apollo dependia — voar por duas semanas, encontrar e acoplar com outra nave, trabalhar fora da espaçonave — foi inventada e tornada confiável na Gemini primeiro. Tire a Gemini da história e os pousos da Apollo simplesmente não são possíveis no cronograma de Kennedy."
+    },
+    {
+      "type": "prose",
+      "md": "Seu legado material é a própria capacidade. Encontro e acoplagem se tornaram ferramentas rotineiras nas quais todo programa tripulado desde então — Apollo, Skylab, o Ônibus Espacial, a Estação Espacial — se apoiou, e o treinamento subaquático de EVA que a Gemini pioneirizou ainda é exatamente como os astronautas se preparam para caminhadas espaciais hoje. Foi também o momento em que os Estados Unidos igualaram e então ultrapassaram a União Soviética em voo espacial humano — não com um primeiro dramático, mas metodicamente construindo as habilidades que realmente importavam."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição transferível da Gemini é o valor da ponte deliberada. Diante de um objetivo enorme e um prazo difícil, a NASA não investiu direto para a Lua; identificou as capacidades específicas não resolvidas no meio do caminho e construiu um programa inteiro para dominá-las uma de cada vez, em um lugar onde a falha ainda era sobrevivível. O meio sem glamour — o ensaio que ninguém lembra — é muito frequentemente o que torna o final possível. Quando um objetivo está muito além da capacidade atual, a pergunta útil não é \"como chegamos lá\" mas \"quais são as coisas intermediárias que ainda não sabemos fazer.\""
+    },
+    {
+      "type": "prose",
+      "md": "A segunda lição está em como a Gemini lidou com seus primeiros desastres de caminhada espacial — não como constrangimentos a enterrar, mas como informação. A técnica estava falhando, então eles disseram isso, descobriram por quê e a reconstruíram: apoios para as mãos, restrições, prática subaquática, até funcionar. Uma equipe que pode admitir que algo não está funcionando, a tempo de consertar antes que importe, vale muito mais do que uma que nunca parece falhar."
+    }
+  ]
+}

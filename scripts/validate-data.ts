@@ -73,10 +73,11 @@ function overlayFileLocaleGaps(rel: string): string[] {
 // Skipped by the all-locale gap check until translation lands — logged, never
 // silent, so the exemption stays visible. Remove a prefix once its subtree is
 // translated to re-enable the zero-gap enforcement for it.
-//   - programs/            — the /programs editorial layer
-//   - missions/earth/gemini — the Gemini flagship flights added for the Gemini
-//                             program (curated en-US first; translate at tier)
-const I18N_ENGLISH_FIRST_PREFIXES = ['programs/', 'missions/earth/gemini', 'missions/earth/soyuz-'];
+//
+// Empty: the /programs editorial layer and its new flagship missions (Gemini,
+// Soyuz 1/11) are now fully translated to all 14 locales, so the English-first
+// phase is over and full zero-gap coverage is enforced everywhere again.
+const I18N_ENGLISH_FIRST_PREFIXES: string[] = [];
 
 function allLocaleOverlayGaps(): string[] {
   const gaps: string[] = [];

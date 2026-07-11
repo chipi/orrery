@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · VOLADA",
+  "first": "Primer acoplamiento de dos naves espaciales; regreso de emergencia",
+  "dispatch": "Gemini 8 realizó el primer acoplamiento de dos naves espaciales en órbita — y luego casi mató a su tripulación. Minutos después de que Neil Armstrong acoplara suavemente su Gemini en una unión cerrada con un objetivo Agena, el par enlazado comenzó a girar, cada vez más rápido, hasta que daba tumbos aproximadamente una vez por segundo y la visión de los astronautas empezaba a volverse gris hacia el desmayo. Armstrong desacopló — lo que solo empeoró las cosas, ya que el fallo estaba en su propia nave espacial — luego apagó los propulsores principales y detuvo el giro con el sistema de control de reentrada, una decisión que salvó sus vidas pero que, según las normas, forzó un regreso de emergencia inmediato. Fue el momento más peligroso del programa, y fue el primer vuelo espacial de Armstrong. El diagnóstico calmado y rápido bajo una situación crítica es exactamente el temperamento que la NASA recordaría cuando eligió quién aterrizaría en la Luna.",
+  "description": "Neil Armstrong y David Scott lograron el primer acoplamiento de dos naves espaciales — con un objetivo Agena — el 16 de marzo de 1966. Un propulsor de actitud atascado causó entonces un giro violento; Armstrong desacopló y usó el sistema de control de reentrada para recuperarse, forzando un aterrizaje de emergencia tras 10 h 41 m. Fue el primer vuelo espacial de Armstrong.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Titan II GLV (GT-8) desde Cape Canaveral LC-19, 1966-03-16 16:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "PRIMER ACOPLAMIENTO",
+      "note": "Primer acoplamiento de dos naves espaciales — Gemini 8 con el objetivo Agena.",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "GIRO DESCONTROLADO",
+      "note": "Un propulsor atascado hace que el conjunto gire ~1 rev/s; Armstrong recupera el control con el sistema de control de reentrada.",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "AMERIZAJE DE EMERGENCIA",
+      "note": "Amerizaje de emergencia en el Pacífico tras 10 h 41 m.",
+      "type": "nominal"
+    }
+  ]
+}

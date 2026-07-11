@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 4 / GT-4",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "Erster amerikanischer Weltraumausstieg (Ed White)",
+  "dispatch": "Gemini 4 wird für eine Fotografie in Erinnerung behalten: Ed White, durch eine goldene Nabelschnur mit dem Raumschiff verbunden, schwebend über einer blauen Erde mit einer handgehaltenen Manövriereinheit — der erste Amerikaner, der im All ausstieg. Der Moment war so beglückend, dass White es den traurigsten Moment seines Lebens nannte, als Mission Control ihn nach zwanzig Minuten zurück befahl. Der Weltraumausstieg sah mühelos aus und war es größtenteils auch, weil White frei schwebte statt zu arbeiten — die harte Wahrheit, dass EVA anstrengende Arbeit ist, sollte erst bei den nächsten Flügen offenbar werden. Aber für ein Land, das hinter den Sowjets zurückgelegen hatte, die zehn Wochen zuvor den ersten Weltraumausstieg unternommen hatten, war es der Beweis, dass Amerika dies ebenfalls konnte, und das Bild wurde zu einem der prägenden Bilder der Epoche.",
+  "description": "James McDivitt und Edward White flogen eine viertägige Mission mit 62 Erdumkreisungen ab dem 3. Juni 1965. Während der dritten Umkreisung unternahm White den ersten amerikanischen Weltraumausstieg — etwa 21 Minuten außerhalb, angeseilt, mit einer handgehaltenen Manövriereinheit. Der Flug führte auch das erste erweiterte US-Medizin- und Wissenschaftsprogramm durch.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II GLV (GT-4) von Cape Canaveral LC-19, 1965-06-03 15:16 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "EVA",
+      "note": "Ed White — erster amerikanischer Weltraumausstieg, ~21 min, angeseilt, mit einer handgehaltenen Manövriereinheit.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "WASSERLANDUNG",
+      "note": "Wasserlandung im Atlantik nach 4 Tagen / 62 Erdumkreisungen.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
+  "first": "Primeiro encontro espacial tripulado",
+  "dispatch": "Rendezvous — duas espaçonaves se encontrando e unindo em órbita — era a habilidade sem a qual a Apollo não poderia funcionar, e a Gemini 6A é onde isso foi feito pela primeira vez. Quase não voou: seu alvo original explodiu a caminho da órbita e, então, já presos para o lançamento reagendado, os motores da Titan acenderam e abruptamente morreram na plataforma — um momento em que as regras diziam ejetar, e Wally Schirra, não sentindo movimento, friamente escolheu não fazê-lo. Três dias depois ela voou e fez a coisa que nunca havia sido feita: alcançou a Gemini 7 e manteve estação a trinta centímetros de distância, as tripulações próximas o suficiente para ler os rostos uma da outra. Pareceu fácil e foi tudo menos isso — a mecânica orbital de alcançar outra espaçonave é profundamente contraintuitiva — e decifrá-la foi o momento em que o rendezvous em órbita lunar, e todo o plano Apollo, se tornou real.",
+  "description": "Wally Schirra e Tom Stafford realizaram o primeiro rendezvous espacial tripulado em 15 de dezembro de 1965, mantendo estação a ~30 cm da Gemini 7 por mais de cinco horas. Seguiu-se a um desligamento de motor na plataforma de lançamento três dias antes que Schirra escolheu não abortar. Duração ~1 d 1 h; 16 órbitas.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DESLIGAMENTO NA PLATAFORMA",
+      "note": "1965-12-12: motores acendem e então desligam na plataforma; Schirra não ejeta.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "LANÇAMENTO",
+      "note": "Titan II GLV (GT-6A) de Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "RENDEZVOUS",
+      "note": "Primeiro rendezvous tripulado — mantém estação a ~30 cm da Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "AMERISSAGEM",
+      "note": "Amerissagem no Atlântico após ~1 d 1 h / 16 órbitas.",
+      "type": "nominal"
+    }
+  ]
+}

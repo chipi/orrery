@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 1",
+  "type": "HABITÉ ORBITE TERRESTRE · PERDU",
+  "first": "Premier vol Soyuz — échec du parachute tuant Vladimir Komarov (premier décès en vol spatial)",
+  "dispatch": "Soyuz 1 est le vol qui a tué un cosmonaute, et il n'aurait jamais dû avoir lieu. Le nouveau vaisseau Soyuz fut précipité en service sous pression politique avec des centaines de défauts connus non résolus — les ingénieurs auraient supplié de reporter — et en orbite il commença à défaillir : un panneau solaire refusa de se déployer, le contrôle d'attitude combattait le pilote. Vladimir Komarov le ramena quand même, et à la rentrée les parachutes s'emmêlèrent et défaillirent. Il heurta le sol à pleine vitesse. Ce fut le premier décès de l'histoire du vol spatial habité, et sa cause fut moins la malchance qu'un programme qui ne pouvait se permettre d'admettre que sa machine n'était pas prête — l'échec exact vers lequel la culture des premières cachées et obligatoirement réussies s'était construite.",
+  "description": "Le premier vol habité du vaisseau Soyuz, lancé le 23 avril 1967 avec Vladimir Komarov à bord. Le véhicule précipité subit des défaillances en cascade en orbite — un panneau solaire non déployé, des problèmes de contrôle d'attitude — et la mission fut écourtée. À la rentrée le parachute stabilisateur se déploya mais le parachute principal ne s'ouvrit pas correctement ; le module de descente percuta le sol à une vitesse proche de la vitesse terminale et Komarov fut tué — la première victime en vol de l'histoire spatiale.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Soyuz 11A511 depuis Baikonur, 1967-04-23 00:35 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "DÉFAILLANCES SYSTÈMES",
+      "note": "Le panneau solaire ne se déploie pas ; le contrôle d'attitude se dégrade — mission écourtée.",
+      "type": "warning"
+    },
+    {
+      "met": 1.1,
+      "label": "ÉCHEC DU PARACHUTE",
+      "note": "Le parachute principal défaille à la rentrée ; le module de descente percute à haute vitesse. Komarov tué.",
+      "type": "warning"
+    }
+  ]
+}

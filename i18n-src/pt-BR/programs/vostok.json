@@ -1,0 +1,92 @@
+{
+  "name": "Vostok",
+  "tagline": "O programa que colocou o primeiro ser humano em órbita — e continuou marcando primeiros lugares enquanto os Estados Unidos corriam para alcançar.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Em 1960 a União Soviética já havia impressionado o mundo com o Sputnik e pretendia manter a liderança. Por trás estava um homem que o Ocidente nem sabia que existia: Sergei Korolev, o \"Projetista-Chefe\", seu próprio nome um segredo de Estado, comandando o programa que havia transformado seu R-7 — o primeiro míssil intercontinental do mundo — em um foguete capaz de transportar uma pessoa. Os americanos estavam construindo o Mercury e falando abertamente sobre ele. Os soviéticos não diziam quase nada, e se moviam mais rápido."
+    },
+    {
+      "type": "prose",
+      "md": "O prêmio era o primeiro ser humano no espaço, e valia quase qualquer risco, porque na Guerra Fria um cosmonauta soviético orbitando acima era um argumento que nenhum discurso poderia igualar — prova, transmitida mundialmente, de que o sistema podia superar o Ocidente na fronteira do possível. A Vostok foi construída para vencer esse argumento. Não precisava fazer muito uma vez em órbita; precisava colocar uma pessoa lá em cima, ao redor, e trazê-la de volta em segurança, e ser a primeira."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/vostok/01"
+      },
+      "caption": "O módulo de descida da Vostok — uma esfera simples, a única forma que sobrevive à reentrada de qualquer ângulo sem controle direcional. O cosmonauta a pilotava até alguns quilômetros, então ejetava e descia de paraquedas separadamente.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo da Vostok era tão estreito quanto o do Mercury e perseguido com menos cautela: provar que um ser humano podia sobreviver ao lançamento, à órbita e à reentrada — e fazê-lo antes dos americanos. A espaçonave refletia esse foco. Era uma esfera, a forma que reentra com segurança de qualquer orientação para que os sistemas automáticos não precisassem manter uma atitude precisa, com um módulo de equipamentos separado que se soltava antes do fogo da reentrada."
+    },
+    {
+      "type": "prose",
+      "md": "Um detalhe foi mantido em segredo por anos. A esfera atingia o solo com força demais para uma pessoa sobreviver ao impacto, então o cosmonauta ejetava a cerca de sete quilômetros e descia sob um paraquedas separado. Sob as regras internacionais da época um voo só contava se o piloto pousasse *com* a nave — então os soviéticos simplesmente não mencionavam isso, e reivindicavam os recordes mesmo assim. Uma coisa pequena, mas reveladora: o programa foi construído para vencer, e a verdade era gerenciada para se adequar."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/vostok-6/01"
+      },
+      "caption": "Valentina Tereshkova antes da Vostok 6, junho de 1963 — a primeira mulher no espaço, vinte anos antes de os Estados Unidos lançarem uma.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Em pouco mais de dois anos a Vostok marcou uma sequência de primeiros lugares que os Estados Unidos só podiam observar. Em 12 de abril de 1961 Yuri Gagarin se tornou o primeiro ser humano no espaço — uma única órbita que o tornou, da noite para o dia, a pessoa mais famosa da Terra. Gherman Titov seguiu com o primeiro dia completo em órbita. As Vostoks 3 e 4 voaram juntas, a primeira vez que duas naves tripuladas compartilharam o céu. Valery Bykovsky voou quase cinco dias, ainda o voo espacial solo mais longo de todos os tempos. E Valentina Tereshkova se tornou a primeira mulher no espaço — um marco que os americanos não alcançariam até 1983."
+    },
+    {
+      "type": "prose",
+      "md": "Seis voos, seis sucessos, seis primeiros lugares. Pela medida que mais importava em 1963 — quem chegou primeiro — a União Soviética estava vencendo decisivamente, e fazendo isso em uma espaçonave que nem sequer podia mudar sua própria órbita. Mas a sequência também marcou um teto: a Vostok havia feito tudo que uma esfera de um assento podia fazer, e as próximas rodadas — caminhadas espaciais, encontros, acoplagem, a Lua — exigiriam máquinas que ela não tinha."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Vostok é uma história contada em dois registros ao mesmo tempo — o triunfo público e a realidade oculta. Em público, cada voo era uma demonstração impecável da superioridade soviética, anunciada apenas depois de já ter sido bem-sucedida. Fora de vista estavam as coisas que não se encaixavam: o nome de Korolev, os pousos por ejeção, as falhas de lançamento que mataram equipes em solo, os quase-acidentes. O programa nunca voou uma missão que esperava falhar, porque uma falha pública era politicamente inviável — e isso moldou o que tentou, e quando."
+    },
+    {
+      "type": "prose",
+      "md": "Em seu centro estava um homem transformado em símbolo. Os 108 minutos de Gagarin o tornaram um ícone global da noite para o dia — enviado em turnês mundiais, colocado em selos e estátuas, mais útil ao Estado no chão do que no ar, e nunca mais autorizado a voar no espaço. Ele morreu em um acidente de jato em 1968, aos trinta e quatro anos. O primeiro ser humano a deixar o planeta passou o resto de sua curta vida como o rosto sorridente de um sistema que não arriscaria perdê-lo duas vezes."
+    },
+    {
+      "type": "prose",
+      "md": "Em meados de 1963 a Vostok havia completado seu ciclo. Sua sucessora, Voskhod, esticaria o mesmo hardware básico para extrair mais dois primeiros lugares — uma tripulação de várias pessoas e a primeira caminhada espacial — antes de o programa soviético passar para a Soyuz e mirar, em segredo, na Lua."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/vostok-1/02"
+      },
+      "caption": "Yuri Gagarin — o primeiro ser humano no espaço, e pelo resto de sua curta vida o rosto do programa espacial soviético.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "O legado da Vostok é em parte um conjunto de primeiros lugares que nunca podem ser retirados, e em parte uma máquina que nunca realmente se aposentou. O foguete R-7 que lançou Gagarin é, em descendência direta, o foguete Soyuz que ainda transporta tripulações à órbita hoje — mais de sessenta anos e mil e oitocentos lançamentos depois, o veículo de lançamento mais utilizado da história. O layout de cápsula esférica mais módulo de serviço se tornou o modelo para a Soyuz, que ainda está em operação."
+    },
+    {
+      "type": "prose",
+      "md": "Estrategicamente fez algo maior que qualquer voo isolado: convenceu os Estados Unidos de que não podia vencer a corrida espacial nos termos que os soviéticos estavam definindo, e empurrou Kennedy a mudar o jogo para a Lua — um alvo distante o suficiente para que a profundidade industrial americana pudesse contar. Nesse sentido a Apollo é em parte obra da Vostok. E para o mundo em geral, a visão de um ser humano circulando o planeta — não importa qual bandeira estava no foguete — mudou permanentemente a noção do que as pessoas podiam fazer."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição da Vostok é o duplo fio de uma estratégia construída em ser primeiro. Os soviéticos venceram quase todas as rodadas iniciais ao empurrar uma espaçonave limitada até seu limite e se mover antes que a competição pudesse reagir — e funcionou, brilhantemente, por um tempo. Mas uma sequência de primeiros lugares não é o mesmo que uma capacidade profunda, e o foco da Vostok na próxima manchete a deixou sem as manobras, acoplagem e resistência que o destino real exigiria. Vencer a corrida curta pode silenciosamente custar a corrida inteira, se a corrida curta queima a pista que você precisava para a maratona."
+    },
+    {
+      "type": "prose",
+      "md": "A segunda lição é o que o sigilo compra, e o que custa. Ocultar as falhas e gerenciar a verdade permitiu que o programa parecesse invencível, o que tinha valor real na Guerra Fria. Mas também significou que o programa nunca poderia ser visto falhando — o que o tornou cauteloso nos lugares errados, incapaz de correr os riscos visíveis que aprender coisas difíceis exige. Uma organização que não pode se dar ao luxo de falhar em público eventualmente não pode se dar ao luxo de *aprender* em público também."
+    }
+  ]
+}

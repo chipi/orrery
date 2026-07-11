@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "Erstes Andocken zweier Raumfahrzeuge; Notrückkehr",
+  "dispatch": "Gemini 8 führte das erste Andocken zweier Raumfahrzeuge im Orbit durch — und hätte seine Besatzung dabei fast getötet. Minuten nachdem Neil Armstrong seine Gemini-Kapsel in eine verriegelte Verbindung mit einem Agena-Ziel gebracht hatte, begann das verbundene Paar zu rollen, immer schneller, bis es sich etwa einmal pro Sekunde überschlug und die Sicht der Astronauten zu vergrauen begann, kurz vor dem Blackout. Armstrong dockte ab — was die Lage nur verschlimmerte, da der Fehler in seinem eigenen Raumfahrzeug lag — schaltete dann die Haupttriebwerke ab und stoppte die Rotation mit dem Wiedereintritts-Steuersystem, eine Entscheidung, die ihr Leben rettete, aber gemäß den Regeln eine sofortige Notrückkehr erzwang. Es war der gefährlichste Moment des Programms, und es war Armstrongs erster Raumflug. Die ruhige, schnelle Diagnose in einer sich verschlechternden Situation war genau das Temperament, an das sich die NASA erinnerte, als sie entschied, wer auf dem Mond landen würde.",
+  "description": "Neil Armstrong und David Scott erreichten am 16. März 1966 das erste Andocken zweier Raumfahrzeuge — mit einem Agena-Ziel. Ein festsitzendes Lagetriebwerk verursachte dann einen heftigen Taumelflug; Armstrong dockte ab und nutzte das Wiedereintritts-Steuersystem zur Stabilisierung, was eine Notlandung nach 10 h 41 m erzwang. Es war Armstrongs erster Raumflug.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II GLV (GT-8) von Cape Canaveral LC-19, 1966-03-16 16:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "ERSTES ANDOCKEN",
+      "note": "Erstes Andocken zweier Raumfahrzeuge — Gemini 8 mit dem Agena-Ziel.",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "TAUMELFLUG",
+      "note": "Festsitzendes Triebwerk versetzt den Verbund in einen Taumelflug von ~1 Umdrehung/s; Armstrong stabilisiert mit dem Wiedereintritts-Steuersystem.",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "NOT-WASSERLANDUNG",
+      "note": "Not-Wasserlandung im Pazifik nach 10 h 41 m.",
+      "type": "nominal"
+    }
+  ]
+}

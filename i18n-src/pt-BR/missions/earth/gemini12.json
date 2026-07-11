@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
+  "first": "EVA resolvida — caminhadas espaciais de Aldrin; último Gemini",
+  "dispatch": "No último Gemini, um problema ainda não estava resolvido: as caminhadas espaciais não funcionavam. Os voos entre Ed White e Gemini 12 haviam transformado EVA em uma série de quase-falhas exaustivas — astronautas lutando por cada movimento, superaquecendo, ficando sem tempo. Buzz Aldrin corrigiu isso, e a correção foi preparação: ele ensaiou tudo debaixo d'água até que se tornasse rotina, e a espaçonave foi equipada com apoios para as mãos, apoios para os pés e amarras para que ele tivesse algo contra o qual trabalhar. Ao longo de mais de cinco horas do lado de fora, ele realizou tarefas comuns com calma e voltou sem se esgotar — prova de que EVA podia se tornar confiável. Foi o item final da lista do Gemini, e com ele o programa se encerrou, tendo ensinado à NASA tudo que a Lua exigiria.",
+  "description": "James Lovell e Buzz Aldrin voaram no último Gemini, 11-15 novembro 1966. As três EVAs de Aldrin totalizando 5 h 30 m — apoiadas por treinamento subaquático, apoios para as mãos e restrições para os pés — finalmente mostraram que trabalho útil podia ser feito no espaço, resolvendo as dificuldades de EVA dos voos anteriores. 59 órbitas.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Titan II GLV (GT-12) do Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA DOMINADA",
+      "note": "EVAs de Aldrin (5 h 30 m total) com apoios para as mãos + treinamento subaquático provam que caminhada espacial pode ser rotina.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "AMERISSAGEM",
+      "note": "Amerissagem no Atlântico após 4 dias / 59 órbitas — o último Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

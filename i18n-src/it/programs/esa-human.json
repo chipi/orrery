@@ -1,0 +1,88 @@
+{
+  "name": "ESA — L'Europa nel volo spaziale umano",
+  "tagline": "L'Europa non ha mai costruito una navicella con equipaggio propria — ed è diventata comunque indispensabile al volo spaziale umano, scegliendo la partnership invece dell'indipendenza e padroneggiando i componenti che nessun altro voleva costruire.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "L'Europa ha fatto una scelta deliberata e insolita riguardo al volo spaziale umano: ha deciso di non costruire una navicella con equipaggio propria. Mentre gli Stati Uniti, l'Unione Sovietica e più tardi la Cina hanno sviluppato ciascuno l'intero sistema — razzi, capsule, la capacità di lanciare i propri cittadini — l'Europa, agendo collettivamente attraverso l'Agenzia Spaziale Europea, ha scelto invece di essere il miglior partner possibile. Avrebbe fatto volare i propri astronauti su veicoli di altre nazioni, e avrebbe contribuito le capacità che facevano funzionare l'impresa condivisa. È un percorso più discreto di una corsa spaziale nazionale, e si è rivelato straordinariamente efficace."
+    },
+    {
+      "type": "prose",
+      "md": "Questo è iniziato con Spacelab nel 1983 — un laboratorio costruito dagli europei che viaggiava nella stiva dello Space Shuttle e trasformava lo Shuttle in una piattaforma scientifica, portando il primo astronauta ESA nel suo primo volo. È continuato con Columbus, il laboratorio permanente europeo agganciato alla Stazione Spaziale Internazionale, e con l'Automated Transfer Vehicle, la nave cargo più grande e sofisticata della sua epoca. Nel corso del tempo gli astronauti europei hanno volato su Shuttle e Soyuz, hanno vissuto a bordo della Mir e della ISS, e hanno comandato la Stazione. L'Europa non ha mai lanciato un proprio equipaggio — ed è diventata essenziale per quasi tutti coloro che l'hanno fatto."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "La Stazione Spaziale Internazionale, di cui l'Europa è partner a pieno titolo. Il laboratorio Columbus dell'ESA ne è parte permanente, e gli astronauti europei vi hanno vissuto e l'hanno comandata — il frutto della scelta di unirsi piuttosto che procedere da soli.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'obiettivo dell'Europa era di contare nel volo spaziale umano senza sostenere il costo e il rischio completi di un programma con equipaggio indipendente. Ciò significava specializzarsi — costruire i laboratori dove si fa la scienza, le navi cargo che mantengono rifornite le stazioni, e i moduli che le espandono, e addestrare astronauti che potessero volare su qualsiasi veicolo fornito da una partnership. Invece di duplicare ciò che altri già avevano, l'Europa si è proposta di fornire ciò di cui l'impresa condivisa aveva bisogno e di cui non poteva facilmente fare a meno."
+    },
+    {
+      "type": "prose",
+      "md": "La strategia aveva un punto di forza nascosto: contribuire un pezzo essenziale assicura un posto permanente al tavolo. Costruendo Spacelab, l'Europa si è guadagnata un posto a bordo dello Shuttle; costruendo Columbus e l'ATV, è diventata partner pieno e paritario nella Stazione Spaziale Internazionale, con il proprio laboratorio e la propria indispensabile nave di rifornimento. Una nazione che si limitasse ad acquistare posti sarebbe un cliente; l'Europa, costruendo capacità su cui altri facevano affidamento, è diventata un partner — con voce in capitolo reale nell'impresa."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/atv/02"
+      },
+      "caption": "L'Automated Transfer Vehicle — il cargo europeo per la ISS. Venti tonnellate a pieno carico, volava autonomamente fino ad un aggancio automatico con la Stazione, consegnava carico, acqua, aria e propellente, e usava i suoi motori per alzare l'orbita della ISS.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "I risultati sono stati sostanziali e distintamente europei. Spacelab ha volato in 22 missioni Shuttle tra il 1983 e il 1998, dando all'Europa due decenni di scienza con equipaggio sul campo e una generazione di astronauti esperti. Columbus, installato nel 2008, ha dato all'Europa un laboratorio permanente in orbita e l'ha resa partner di primo rango nella più grande struttura mai costruita dagli esseri umani. E l'Automated Transfer Vehicle — cinque enormi cargo volati tra il 2008 e il 2015, ciascuno intitolato a un pensatore europeo da Jules Verne a Georges Lemaître — ha fatto qualcosa di genuinamente avanzato: una navicella di venti tonnellate che si orientava da sola fino a un aggancio completamente automatico con la ISS, consegnava rifornimenti e carburante, e riportava in quota l'intera Stazione con i suoi motori."
+    },
+    {
+      "type": "prose",
+      "md": "Quella competenza ATV ha poi fruttato un dividendo inatteso. La tecnologia che l'Europa ha sviluppato per costruire una navicella autonoma capace di agganciarsi alla ISS è diventata la base del European Service Module — la parte che l'Europa ora costruisce per Orion della NASA, la navicella che porta gli astronauti verso la Luna nell'ambito di Artemis. Il modulo di servizio fornisce ad Orion energia, propulsione, aria e acqua: la sezione che mantiene l'equipaggio in vita durante il viaggio verso l'orbita lunare e ritorno. Un continente che non ha mai costruito una propria navicella con equipaggio ora costruisce la metà di una americana senza la quale i suoi astronauti non potrebbero sopravvivere."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Il filo conduttore del volo spaziale umano europeo è che la partnership, fatta bene, non è un percorso inferiore all'indipendenza — è un percorso diverso e talvolta più forte. Mettendo insieme le risorse di molte nazioni attraverso l'ESA e specializzandosi nelle capacità di cui altri avevano bisogno, l'Europa ha raggiunto un ruolo nel volo spaziale umano molto più grande di quanto qualsiasi singolo paese europeo avrebbe potuto permettersi da solo, e più grande di quanto suggerisca la dimensione del suo budget. Non ha mai avuto l'autonomia di una nazione che lancia i propri equipaggi; ha avuto, invece, la leva di essere indispensabile a coloro che lo fanno."
+    },
+    {
+      "type": "prose",
+      "md": "L'ATV è l'espressione più chiara di questo. Non era un progetto di prestigio o una partecipazione a una gara; era un pezzo di infrastruttura estremamente capace — un cargo automatizzato più avanzato nel suo aggancio e nella sua capacità di carico di qualsiasi altro in volo — che ha reso l'Europa centrale per mantenere in vita la ISS. E poiché l'Europa aveva costruito quella capacità, era posizionata per costruire la cosa successiva: il modulo di servizio Orion, e con esso un posto nel ritorno dell'umanità sulla Luna. Padroneggiare una nicchia poco appariscente ha portato, passo dopo passo, a una quota nel programma con equipaggio più ambizioso del nuovo secolo."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "La Stazione Spaziale Internazionale — l'impresa che l'Europa ha contribuito a costruire e sostenere, e la prova che una nazione può plasmare profondamente il volo spaziale umano senza mai lanciare un equipaggio proprio.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'eredità dell'Europa nel volo spaziale umano è un modello tanto quanto un insieme di hardware: la prova che una potenza spaziale di medie dimensioni può contare enormemente collaborando invece che competendo, mettendo insieme le risorse di molte nazioni, e costruendo i pezzi essenziali da cui altri dipendono invece di duplicare ciò che già esiste. Columbus è ancora in orbita; gli astronauti europei volano e comandano ancora; e i discendenti dell'ATV ora portano esseri umani verso la Luna. Nulla di tutto questo ha richiesto una navicella europea con equipaggio indipendente, e questo è esattamente il punto."
+    },
+    {
+      "type": "prose",
+      "md": "È anche il complemento nel volo spaziale umano ad Ariane. Dove Ariane ha garantito all'Europa l'*accesso* indipendente allo spazio, il suo programma umano ha garantito il *posto* dell'Europa nello spazio — un seggio permanente e rispettato nell'impresa internazionale, guadagnato attraverso il contributo piuttosto che rivendicato per bandiera. Insieme definiscono un modo distintamente europeo di essere una grande potenza spaziale: autonoma dove deve esserlo, collaborativa dove questo è più forte, ed essenziale in entrambi i casi."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La prima lezione è che non è necessario costruire tutto da soli per essere essenziali. L'Europa non ha mai sviluppato una navicella con equipaggio indipendente, eppure padroneggiando laboratori, cargo e moduli è diventata un partner di cui nessun grande programma di volo spaziale umano potrebbe facilmente fare a meno. Contribuire una capacità distintiva e genuinamente necessaria acquista un'influenza più duratura del tentare di replicare, a qualità inferiore, ciò che altri già fanno bene. La specializzazione, non la duplicazione, è stata la strada dell'Europa verso la rilevanza."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda lezione è che la partnership moltiplica un budget limitato. Combinando le risorse di molte nazioni attraverso un'unica agenzia e investendole in capacità che hanno guadagnato un ruolo permanente, l'Europa ha ottenuto molto di più nel volo spaziale umano di quanto la sua spesa da sola lascerebbe prevedere — e ha trasformato la padronanza di una nicchia, il cargo automatizzato, in una quota del ritorno sulla Luna. Per una potenza che non può superare in spesa i giganti, essere indispensabili è una strategia migliore che essere indipendenti, e l'Europa l'ha fatta funzionare per quarant'anni."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Voskhod",
+  "tagline": "De overhaaste noodoplossing die nog twee primeurs — een bemanning en een ruimtewandeling — uit volbelast materiaal perste, en daarbij bijna mensen doodde.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tegen 1964 was het gemakkelijke deel voorbij. Vostok had zijn primeurs gescoord, maar de Amerikanen bouwden Gemini — een tweepersoons ruimtevaartuig dat werkelijk kon manoeuvreren, rendezvousen en koppelen — en zodra het vloog, zou de Sovjet-voorsprong verdampen. Nikita Chroesjtsjov wilde meer krantenkoppen voordat dat gebeurde, en hij zette Sergei Korolev onder druk om ze te produceren. Er was geen nieuw Sovjet-ruimtevaartuig klaar. Dus deed Korolevs team het enige wat het schema toeliet: ze namen de eenpersoons Vostok en pasten hem aan om dingen te doen waarvoor hij nooit ontworpen was."
+    },
+    {
+      "type": "prose",
+      "md": "Het resultaat was Voskhod, en het bestond voor een enkel doel — om nog even primeurs te blijven scoren, op geleend materiaal en geleende marge. Het was minder een programma dan een paar stunts uitgevoerd voordat de concurrent bij kon komen: een bemanning van meerdere personen, en een mens die naar buiten stapte in het vacuüm. Beide zouden echte mijlpalen zijn. Beide waren veel gevaarlijker dan de kalme Sovjet-aankondigingen lieten doorschemeren."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/voskhod/01"
+      },
+      "caption": "Voskhod — een Vostok ontdaan van zijn schietstoel en opnieuw ingepakt om meer bemanning te vervoeren. De ruimte voor drie kwam ten koste van het ontsnappingssysteem en, bij de eerste vlucht, van drukpakken.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhod had precies twee doelen, beide bepaald door wat Gemini voor zou zijn: meer dan één persoon tegelijk laten vliegen, en een mens buiten het ruimtevaartuig brengen. Om drie kosmonauten in een capsule voor één te passen, verwijderden de ingenieurs de schietstoel die elke Vostok-piloot had gered — wat betekende dat als er iets fout ging bij de lancering of landing, de bemanning geen uitweg had. Bij de eerste vlucht was er niet eens ruimte voor drukpakken. Het was een berekend risico dat er niets mis zou gaan, genomen om een voorsprong te behouden."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/voskhod-1/01"
+      },
+      "caption": "Voskhod 1's bemanning van drie — Komarov, Feoktistov, Jegorov — de eerste ruimtevlucht met meerdere personen, gevlogen in hemdsmouwen zonder pakken en zonder ontsnappingssysteem.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "De risico's liepen goed af, ternauwernood. In oktober 1964 vervoerde Voskhod 1 de eerste bemanning van drie personen — in hemdsmouwen, geen pakken, geen schietstoel — een dag rond de aarde en kwam veilig thuis. Vijf maanden later deed Voskhod 2 het moeilijkere: Alexei Leonov opende een luik en zweefde het vacuüm in bij de eerste ruimtewandeling in de geschiedenis. Toen ging het bijna op elke mogelijke manier mis. Leonovs pak zwol zo stijf op in het vacuüm dat hij niet terug door de luchtsluis kon, en hij moest zijn eigen luchtdruk laten ontsnappen — met het risico op caisson-ziekte — om naar binnen te persen. Het automatische terugkeersysteem faalde; de bemanning vloog hem handmatig naar beneden en kwam honderden kilometers naast het doelwit neer, in diep Siberisch bos, waar ze een barre nacht doorbrachten omringd door wolven voordat redders op ski's hen konden bereiken."
+    },
+    {
+      "type": "prose",
+      "md": "Twee vluchten, nog twee primeurs, en twee rakelingen met een ramp waarover de wereld decennialang niets verteld werd. Korolev keek naar hoe dicht Voskhod 2 was gekomen en annuleerde de rest van het programma. Het materiaal had geen marge meer, en er waren geen primeurs meer die het risico waard waren — de volgende echte capaciteit, zoals alles wat Apollo nodig zou hebben, zou moeten komen van een ruimtevaartuig dat nog niet bestond."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Voskhod is hoe een programma eruitziet wanneer de krantenkoppen het schema bepalen. Elke beslissing — geen pakken, geen schietstoel, een opblaasbare luchtsluis op een eenpersoons capsule gebout — was een afgeslagen hoek om een primeur te scoren voor Gemini, en elk ervan verschoof het risico van de tekentafel naar de bemanning. Het werkte twee keer, en dat is precies het probleem: succes op dunne marges leert de verkeerde les, namelijk dat de marges niet nodig waren."
+    },
+    {
+      "type": "prose",
+      "md": "De ruimtewandeling van Leonov is het hele programma in miniatuur — een oprechte, moedige primeur die het publiek als moeiteloos zag en die op een haar na de kosmonaut had gedood, stilletjes, buiten beeld. Die kloof tussen de triomfantelijke aankondiging en de bijna-catastrofe eronder is het waarachtigste van Voskhod, en van de manier waarop het vroege Sovjet-programma racete: briljant, publiekelijk, en met veel minder ruimte over dan iemand mocht weten."
+    },
+    {
+      "type": "prose",
+      "md": "Na Voskhod 2 stopte het Sovjet-programma met Vostok op te rekken en wendde zich tot Soyuz — een echt tweegeneratie ruimtevaartuig dat kon manoeuvreren en koppelen — en tot een geheime poging voor de maan. Het tijdperk van gemakkelijke primeurs was voorbij; vanaf hier zou de race gelopen worden op capaciteit, en dat was terrein dat de Amerikanen, met Gemini, op het punt stonden te veroveren."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/voskhod-2/02"
+      },
+      "caption": "Alexei Leonovs ruimtewandeling, maart 1965 — de eerste mens in de open ruimte, en een van de dichtste rakelingen met een ramp die het tijdperk voortbracht.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhods erfenis bestaat uit twee permanente primeurs — de eerste bemanning en de eerste ruimtewandeling — en een waarschuwend verhaal dat er direct naast zit. De primeurs zijn echt en kunnen niet worden afgenomen; elke bemanning van meerdere personen en elke ruimtewandeling sindsdien gaat terug naar deze twee vluchten. Maar Voskhod is ook het moment waarop de Sovjet-strategie van primeurs zijn limiet bereikte: hij had geen nieuwe dingen meer die een aangepaste Vostok kon doen, en had bijna mensen gedood bij het doen van de laatste ervan."
+    },
+    {
+      "type": "prose",
+      "md": "Historisch markeert het een overdracht. Voskhod 2 vloog in maart 1965; Gemini's eigen programma begon weken later en nam over de volgende twintig maanden methodisch de voorsprong over die de Sovjets sinds Spoetnik hadden gehad — rendezvous, koppeling, uithoudingsvermogen, EVA routinematig gemaakt. Voskhod is de laatste keer dat de Sovjet-Unie duidelijk voorlag. Wat daarna kwam, aan beide kanten, zou niet worden beslist door wie het eerst was, maar door wie de diepere capaciteit had opgebouwd."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Voskhods les is het gevaar van racen op geleende marge. Het verwijderen van de schietstoel en de drukpakken, het bouten van een luchtsluis op een capsule die er niet voor gebouwd was — elke afgeslagen hoek kocht een krantenkoppen en verschoof een echt risico naar echte mensen, en het programma kwam er twee keer mee weg. Maar ermee wegkomen is niet hetzelfde als veilig zijn, en succes op dunne marges is een val: het leert een organisatie stilletjes dat de veiligheid die ze afwees nooit nodig was, tot aan de vlucht waar dat wel zo is."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is waarvoor een noodoplossing bedoeld is, en waarvoor niet. Voskhod deed precies één ding goed — het kocht tijd en nog twee primeurs terwijl het echte tweegeneratie ruimtevaartuig werd gebouwd. Dat is een legitiem gebruik van geïmproviseerd materiaal. De fout zou zijn geweest om het te blijven vliegen, krantenkoppen achterna jagend voorbij het punt waar de marge opraakte — en Korolev moet worden nagegeven dat hij de bijna-ramp correct las en stopte. Weten wanneer een noodoplossing zijn werk heeft gedaan is even belangrijk als er een bouwen."
+    }
+  ]
+}

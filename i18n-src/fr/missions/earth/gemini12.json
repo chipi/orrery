@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "HABITÉ ORBITE TERRESTRE · EFFECTUÉ",
+  "first": "EVA résolue — sorties d'Aldrin ; dernier Gemini",
+  "dispatch": "Au moment du dernier Gemini, un problème demeurait non résolu : les sorties extravéhiculaires ne fonctionnaient pas. Les vols entre Ed White et Gemini 12 avaient transformé les EVA en une série d'échecs épuisants — les astronautes luttant pour chaque mouvement, en surchauffe, manquant de temps. Buzz Aldrin a résolu le problème, et la solution était la préparation : il a répété l'ensemble sous l'eau jusqu'à ce que cela devienne routine, et le vaisseau a été équipé de poignées, de cale-pieds et d'attaches pour qu'il ait quelque chose contre quoi travailler. Au cours de plus de cinq heures à l'extérieur, il a effectué des tâches ordinaires calmement et est revenu sans épuisement — preuve que les EVA pouvaient être rendues fiables. C'était le dernier point de la liste Gemini, et avec lui le programme s'est achevé, ayant appris à la NASA tout ce que la Lune exigerait.",
+  "description": "James Lovell et Buzz Aldrin ont effectué le dernier vol Gemini, 11-15 novembre 1966. Les trois EVA d'Aldrin totalisant 5 h 30 m — soutenues par un entraînement sous l'eau, des poignées et des cale-pieds — ont finalement démontré qu'un travail utile pouvait être accompli dans l'espace, résolvant les difficultés EVA des vols précédents. 59 orbites.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-12) depuis Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA MAÎTRISÉE",
+      "note": "Les EVA d'Aldrin (5 h 30 m au total) avec poignées + entraînement sous l'eau prouvent que les sorties peuvent être routinières.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "AMERRISSAGE",
+      "note": "Amerrissage dans l'Atlantique après 4 jours / 59 orbites — le dernier Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

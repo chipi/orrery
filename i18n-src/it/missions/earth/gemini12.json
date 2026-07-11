@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "EQUIPAGGIO ORBITA TERRESTRE · VOLATO",
+  "first": "Risolto l'EVA — le passeggiate spaziali di Aldrin; ultima Gemini",
+  "dispatch": "All'ultima Gemini, un problema rimaneva ancora irrisolto: le passeggiate spaziali non funzionavano. I voli tra Ed White e Gemini 12 avevano trasformato l'EVA in una serie di quasi-fallimenti estenuanti — astronauti che lottavano per ogni movimento, surriscaldamento, tempo che scadeva. Buzz Aldrin lo risolse, e la soluzione fu la preparazione: provò l'intera operazione sott'acqua finché non divenne routine, e la navicella fu dotata di maniglie, appoggi per i piedi e cavi di sicurezza così da avere qualcosa contro cui lavorare. In oltre cinque ore all'esterno, svolse compiti ordinari con calma e tornò senza essere esausto — la prova che l'EVA poteva diventare affidabile. Fu l'ultimo punto sulla lista Gemini, e con esso il programma si chiuse, avendo insegnato alla NASA tutto ciò che la Luna avrebbe richiesto.",
+  "description": "James Lovell e Buzz Aldrin volarono sull'ultima Gemini, 11-15 novembre 1966. Le tre EVA di Aldrin per un totale di 5 h 30 m — supportate da addestramento subacqueo, maniglie e vincoli per i piedi — dimostrarono finalmente che si poteva svolgere lavoro utile nello spazio, risolvendo le difficoltà EVA dei voli precedenti. 59 orbite.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan II GLV (GT-12) da Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA PADRONEGGIATO",
+      "note": "Le EVA di Aldrin (5 h 30 m totali) con maniglie + addestramento subacqueo dimostrano che le passeggiate spaziali possono essere routine.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "AMMARAGGIO",
+      "note": "Ammaraggio nell'Atlantico dopo 4 giorni / 59 orbite — l'ultima Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

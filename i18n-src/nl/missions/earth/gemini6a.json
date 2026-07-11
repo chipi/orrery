@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "BEMAND AARDBAAN · GEVLOGEN",
+  "first": "Eerste bemande ruimterendezvous",
+  "dispatch": "Rendezvous — twee ruimtevaartuigen die elkaar vinden en samenkomen in een baan — was de vaardigheid zonder welke Apollo niet kon, en Gemini 6A is waar het voor het eerst werd gedaan. Het vloog bijna niet: het oorspronkelijke doelwit explodeerde onderweg naar een baan, en vervolgens, vastgegespt voor de opnieuw geplande lancering, ontbranden de motoren van de Titan en stopten abrupt op het lanceerplatform — een moment waarop de regels zeiden uitwerpen, en Wally Schirra, die geen beweging voelde, er kalm voor koos dat niet te doen. Drie dagen later vloog het en deed het ding dat nooit eerder was gedaan: haalde Gemini 7 in en hield positie op een voet afstand, de bemanningen dicht genoeg om elkaars gezichten te lezen. Het zag er gemakkelijk uit maar was allesbehalve dat — de orbitale mechanica van het achterhalen van een ander vaartuig zijn diep contra-intuïtief — en het kraken ervan was het moment waarop lunar-orbit rendezvous, en het hele Apollo-plan, werkelijkheid werden.",
+  "description": "Wally Schirra en Tom Stafford bereikten de eerste bemande ruimterendezvous op 15 december 1965, positie houdend binnen ~30 cm van Gemini 7 gedurende meer dan vijf uur. Het volgde op een motorstilstand op het lanceerplatform drie dagen eerder die Schirra ervoor koos niet af te breken. Duur ~1 d 1 h; 16 banen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "PAD SHUTDOWN",
+      "note": "1965-12-12: motoren ontbranden en stoppen vervolgens op het platform; Schirra werpt niet uit.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "LANCERING",
+      "note": "Titan II GLV (GT-6A) vanaf Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "RENDEZVOUS",
+      "note": "Eerste bemande rendezvous — houdt positie binnen ~30 cm van Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "SPLASHDOWN",
+      "note": "Atlantische splashdown na ~1 d 1 h / 16 banen.",
+      "type": "nominal"
+    }
+  ]
+}

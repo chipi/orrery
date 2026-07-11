@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 11",
+  "type": "ESTACIÓN TRIPULADA · PERDIDA",
+  "first": "Primera tripulación a una estación espacial (Salyut 1); los 3 murieron por descompresión en la reentrada",
+  "dispatch": "La Soyuz 11 logró algo extraordinario y después perdió a su tripulación en los últimos minutos del vuelo. Georgy Dobrovolsky, Vladislav Volkov y Viktor Patsayev se convirtieron en las primeras personas en vivir a bordo de una estación espacial, pasando veintitrés días en la Salyut 1 — y después, durante la reentrada, una válvula se abrió bruscamente en el instante en que los módulos se separaron y dejó que el aire de su cabina escapara silbando hacia el espacio. No llevaban trajes de presión; no había habido espacio para trajes cuando los asientos fueron instalados para tres. En cuestión de segundos, en el borde del espacio, los tres estaban muertos. La cápsula aterrizó por sí misma, perfectamente en el objetivo; el equipo de recuperación la abrió y encontró a la tripulación todavía sujeta en sus asientos. Siguen siendo los únicos seres humanos que han muerto en el espacio — y el precio compró una regla que se ha mantenido desde entonces: las tripulaciones llevan trajes de presión durante el lanzamiento y la reentrada, siempre.",
+  "description": "La primera misión tripulada a una estación espacial — Salyut 1 — lanzada el 6 de junio de 1971 con Georgy Dobrovolsky, Vladislav Volkov y Viktor Patsayev. La tripulación pasó 23 días a bordo de la estación. Durante la reentrada el 30 de junio, una válvula de ecualización de presión se abrió prematuramente en la separación de módulos (~168 km); la cabina se despresurizó y los tres cosmonautas, sin traje, murieron en cuestión de segundos. La cápsula aterrizó normalmente. Siguen siendo los únicos humanos que han muerto por encima de la línea de Kármán.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Soyuz 11A511 desde Baikonur, 1971-06-06 04:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.03,
+      "label": "ACOPLAMIENTO — SALYUT 1",
+      "note": "Primera tripulación en abordar una estación espacial; 23 días a bordo.",
+      "type": "info"
+    },
+    {
+      "met": 24,
+      "label": "DESCOMPRESIÓN",
+      "note": "La válvula se abre en la separación de módulos; la cabina se despresuriza a ~168 km. Tripulación perdida.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 1",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · PERDIDA",
+  "first": "Primeiro voo Soyuz — falha do paraquedas matou Vladimir Komarov (primeira morte em voo espacial)",
+  "dispatch": "Soyuz 1 é o voo que matou um cosmonauta, e nunca deveria ter voado. A nova espaçonave Soyuz foi apressada para serviço sob pressão política com centenas de falhas conhecidas não resolvidas — engenheiros supostamente imploraram por adiamento — e em órbita começou a falhar: um painel solar não se abriu, o controle de atitude lutava contra o piloto. Vladimir Komarov a trouxe para baixo mesmo assim, e na reentrada os paraquedas se enroscaram e falharam. Ele atingiu o solo em velocidade máxima. Foi a primeira morte na história do voo espacial humano, e sua causa foi menos má sorte do que um programa que não podia admitir que sua máquina não estava pronta — a falha exata que a cultura de primeiros lugares secretos e obrigatoriamente bem-sucedidos vinha construindo.",
+  "description": "O primeiro voo tripulado da espaçonave Soyuz, lançado em 23 de abril de 1967 com Vladimir Komarov a bordo. O veículo apressado sofreu falhas em cascata em órbita — um painel solar não aberto, problemas de controle de atitude — e a missão foi encurtada. Na reentrada o paraquedas de frenagem foi acionado mas o paraquedas principal falhou em abrir adequadamente; o módulo de descida atingiu o solo em velocidade próxima à terminal e Komarov foi morto — a primeira fatalidade em voo na história do voo espacial.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Soyuz 11A511 de Baikonur, 1967-04-23 00:35 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "SISTEMAS FALHANDO",
+      "note": "Painel solar falha em se abrir; controle de atitude se degrada — missão encurtada.",
+      "type": "warning"
+    },
+    {
+      "met": 1.1,
+      "label": "FALHA DO PARAQUEDAS",
+      "note": "Paraquedas principal falha na reentrada; módulo de descida impacta em alta velocidade. Komarov morto.",
+      "type": "warning"
+    }
+  ]
+}

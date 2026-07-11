@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "14-tägiger Ausdauerflug; Rendezvous-Ziel für Gemini 6A",
+  "dispatch": "Gemini 7 beantwortete die am wenigsten glamouröse, aber grundlegendste Frage: Konnte eine Besatzung so lange überleben wie eine Reise zum Mond und zurück? Frank Borman und Jim Lovell verbrachten vierzehn Tage eingeschlossen in einer Kabine von der Größe des Vordersitzes eines Kleinwagens — kein Platz zum Stehen, Strecken oder um einander zu entkommen — um zu beweisen, dass der menschliche Körper und Geist das aushalten konnten. Es war langweilig und körperlich elend, und es funktionierte: Sie kamen gesund zurück und beseitigten die Befürchtung, dass langer Raumflug unmöglich sein könnte. Nebenbei dienten sie als Ziel für das Rendezvous von Gemini 6A, sodass der einzelne Flug stillschweigend zwei Voraussetzungen für Apollo gleichzeitig bewies — dass Menschen die Distanz überstehen konnten und dass sich zwei Raumschiffe treffen konnten.",
+  "description": "Frank Borman und Jim Lovell flogen vom 4. Dezember 1965 eine 14-tägige Ausdauermission über 206 Umläufe — der längste bemannte Raumflug bis zu diesem Zeitpunkt — und dienten als Rendezvous-Ziel für Gemini 6A. Die Mission zeigte, dass eine Besatzung einen Raumflug von voller Mondfluglänge aushalten konnte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II GLV (GT-7) von Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZVOUS-ZIEL",
+      "note": "Dient als Ziel für das erste bemannte Rendezvous von Gemini 6A.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "WASSERLANDUNG",
+      "note": "Wasserlandung im Atlantik nach 14 Tagen / 206 Umläufen.",
+      "type": "nominal"
+    }
+  ]
+}

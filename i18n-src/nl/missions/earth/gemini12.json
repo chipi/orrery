@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "BEMAND AARDBAAN · GEVLOGEN",
+  "first": "EVA opgelost — Aldrin's ruimtewandelingen; laatste Gemini",
+  "dispatch": "Tegen de laatste Gemini was er één probleem nog onopgelost: ruimtewandelen werkte niet. De vluchten tussen Ed White en Gemini 12 hadden EVA veranderd in een reeks uitputtende bijna-mislukkingen — astronauten die vochten voor elke beweging, oververhit raakten, zonder tijd kwamen. Buzz Aldrin loste het op, en de oplossing was voorbereiding: hij oefende het hele gebeuren onder water tot het routine was, en het ruimtevaartuig werd uitgerust met handvatten, voetsteun en kabels zodat hij iets had om tegen te werken. Gedurende meer dan vijf uur buiten deed hij gewone taken kalm en kwam terug onvermoeid — bewijs dat EVA betrouwbaar gemaakt kon worden. Het was het laatste punt op de Gemini-checklist, en daarmee sloot het programma af, na NASA alles geleerd te hebben wat de Maan zou vereisen.",
+  "description": "James Lovell en Buzz Aldrin vlogen de laatste Gemini, 11-15 november 1966. Aldrin's drie EVA's in totaal 5 h 30 m — ondersteund door onderwatertraining, handvatten en voetbeugels — toonden eindelijk aan dat nuttig werk in de ruimte gedaan kon worden, en losten de EVA-moeilijkheden van eerdere vluchten op. 59 omlopen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan II GLV (GT-12) vanaf Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA GEMEESTERD",
+      "note": "Aldrin's EVA's (5 h 30 m totaal) met handvatten + onderwatertraining bewijzen dat ruimtewandelen routine kan zijn.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "WATERLANDING",
+      "note": "Waterlanding in de Atlantische Oceaan na 4 dagen / 59 omlopen — de laatste Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

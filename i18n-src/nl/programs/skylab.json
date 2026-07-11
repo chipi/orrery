@@ -1,0 +1,92 @@
+{
+  "name": "Skylab",
+  "tagline": "Amerika's eerste ruimtestation — geïmproviseerd uit Apollo-hardware, bijna verloren bij de lancering, gered door de meest gedurfde reparatieklus van het tijdperk, en vervolgens iets te vroeg verlaten.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Toen Apollo ten einde liep, hield NASA iets ongebruikelijks over: een overschot. Saturn-raketten gebouwd en betaald, fabrieken die nog draaiden, een korps astronauten zonder bestemming nu de maanlandingen één voor één werden geannuleerd. De vraag verschoof van *kunnen we er komen* naar *wat doen we als het racen ophoudt* — en het meest interessante antwoord was geen nieuwe bestemming maar een verandering van werkwoord. Niet de ruimte bezoeken, maar erin blijven. Er wonen en werken, weken en maanden lang, om erachter te komen of mensen dat konden."
+    },
+    {
+      "type": "prose",
+      "md": "Skylab was de eerste Amerikaanse poging om dat te beantwoorden. In plaats van een station vanaf nul te ontwerpen, nam NASA de lege bovenste trap van een Saturn V — een waterstofreservoir ter grootte van een huis — en richtte het in als orbitale werkplaats: bemanningsverblijven, een laboratorium, een zonneobservatorium, een thuis. Het werd gelanceerd in mei 1973, en stierf bijna in de eerste tien minuten."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/skylab/04"
+      },
+      "caption": "De orbitale werkplaats van Skylab, gebouwd in een omgebouwde Saturn V-bovenste trap — laboratorium, zonneobservatorium en thuis voor drie bemanningen. Het eerste station groot genoeg dat de bewoners er daadwerkelijk konden leven, niet slechts overleven.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Skylab had drie verweven doelen, en ze gingen allemaal over tijd in plaats van afstand. Het eerste was medisch: uitvinden wat lange verblijven in gewichtloosheid doen met het menselijk lichaam, omdat elk toekomstplan — stations, Mars, alles langer dan een paar dagen — afhing van het antwoord. Het tweede was wetenschappelijk: Skylab droeg de Apollo Telescope Mount, een bemand zonneobservatorium dat de beste beelden van de zon tot dan toe opleverde, samen met aardobservatie- en materiaalexperimenten. Het derde was simpelweg bewijzen dat een grote, bewoonbare buitenpost überhaupt in een baan om de aarde kon worden beheerd."
+    },
+    {
+      "type": "prose",
+      "md": "Het ontwerp weerspiegelde die ambitie. Waar eerdere ruimtevaartuigen cockpits waren waarin je vastgeklikt zat, was Skylab een gebouw waar je doorheen bewoog — een werkplaats met een douche, een kombuis, slaapcompartimenten en genoeg volume dat astronauten erdoorheen konden tuimelen. Het was de eerste keer dat mensen ruimte hadden in de ruimte, en het veranderde hoe een missie aanvoelde: minder een vlucht die overleefd moest worden, meer een plek die bewoond werd."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/skylab-2/01"
+      },
+      "caption": "De Skylab 2-bemanning — Conrad, Kerwin, Weitz — voor de lancering. Ze vlogen naar een verminkt, oververhit station en redden het met een geïmproviseerd zonnescherm en een riskante ruimtewandeling, waarbij ze bewezen dat bemanningen een ruimtevaartuig in een baan om de aarde konden repareren.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Tijdens de lancering scheurde de luchtstroom Skylab's gecombineerde micrometeoroïde- en zonneschild weg. Het schild nam een van de twee belangrijkste zonnepanelen mee en blokkeerde het andere, zodat het station verminkt in een baan terechtkwam: nauwelijks stroom, en geen schaduw, terwijl het inwendige opliep naar temperaturen die de experimenten zouden ruïneren en het onbewoonbaar zouden maken. Een paar dagen lang leek het erop dat Amerika's eerste station een totaal verlies zou zijn voordat er één bemanning arriveerde."
+    },
+    {
+      "type": "prose",
+      "md": "In plaats daarvan werd Skylab de eerste grote demonstratie dat mensen in de ruimte niet alleen passagiers zijn maar reparatieteams. De eerste bemanning vloog omhoog, duwde een parasol-achtig zonnescherm naar buiten door een kleine wetenschappelijke luchtsluis om het station te koelen, en worstelde vervolgens — in een gespannen, geïmproviseerde ruimtewandeling — het vastgelopen zonnepaneel los, waardoor de stroom werd hersteld. Het station was gered en zou drie bemanningen huisvesten gedurende 28, 59 en uiteindelijk 84 dagen, wat een berg aan zonne- en biomedische gegevens opleverde en een duurrecord vestigde dat jarenlang standhield. Het einde was minder triomfantelijk: zonder bemanningsvoertuig dat het na 1974 kon bereiken en met een sneller dan verwacht afnemende baan, viel Skylab terug naar de aarde in 1979, waarbij puin neerkwam op de Indische Oceaan en West-Australië."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het bepalende moment van Skylab is de reparatie, en het is belangrijker dan het op het eerste gezicht lijkt. Tot 1973 waren ruimtevaartuigen in wezen wegwerpbaar en niet-onderhoudbaar: als er iets kapotging, werd de missie verminderd of verloren. Skylab bewees het tegenovergestelde — dat een bemanning met gereedschap, training en improvisatie een machine kon redden die catastrofaal had gefaald. Dat enkele idee, dat orbitale hardware *onderhoudbaar* is, loopt rechtstreeks door naar de Hubble-onderhoudsmissies en naar het voortdurende reparatie- en upgradewerk dat het International Space Station in leven houdt."
+    },
+    {
+      "type": "prose",
+      "md": "De wetenschap was ook echt, en gemakkelijk te onderschatten. De Apollo Telescope Mount observeerde de zon gedurende een hele periode van zonneactiviteit, waarbij zonnevlammen en coronastructuur werden vastgelegd die geen grondtelescoop kon zien, en herschreef de zonnefysica. Het biomedische programma leverde de eerste serieuze gegevens over hoe botten, spieren en het hart zich aanpassen aan maanden van gewichtloosheid — de basislijn waarop elke langdurige missie sindsdien is voortgebouwd. Skylab was waar bemande ruimtevaart stilletjes veranderde van stunt in laboratorium."
+    },
+    {
+      "type": "prose",
+      "md": "Er is ook een menselijk ijkpunt. De derde bemanning, uitgeput door een overvol schema dat vanaf de grond werd opgestuurd, kwam uiteindelijk in opstand — ze namen een ongeplande rustdag en dwongen mission control een redelijker werkdruk te onderhandelen. Het was een ongemakkelijke episode destijds en een oprecht belangrijke: de eerste duidelijke bewering dat de mensen in een baan om de aarde, niet alleen de planners op de grond, inspraak hebben in hoe een lange missie wordt uitgevoerd. Elk stationsprogramma sindsdien heeft bemanningsautonomie serieus moeten nemen."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/skylab-4/01"
+      },
+      "caption": "De Skylab 4-bemanning, wier vlucht van 84 dagen een menselijk duurrecord vestigde dat jarenlang standhield — en wier verzet halverwege de missie tegen een onmogelijke werkdruk een ijkpunt werd in bemanningsautonomie.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Skylab's erfenis is dat het het ruimtestation reëel maakte — niet als concept maar als een werkend ding, beheerd door mensen, repareerbaar, wetenschappelijk productief, maandenlang te overleven. Alles wat volgde in het stationtijdperk, zowel Sovjet als Amerikaans, bouwde voort op wat Skylab vestigde: dat mensen lange perioden in een baan om de aarde kunnen leven en werken, dat de hardware kan worden gerepareerd als het kapotgaat, en dat het doel van een station geduldig wetenschappelijk werk en menselijk uithoudingsvermogen is in plaats van één enkele dramatische primeur."
+    },
+    {
+      "type": "prose",
+      "md": "Het ongelukkige einde is ook leerzaam. Skylab ging niet verloren omdat het faalde maar omdat het werd verlaten — achtergelaten in een baan die afnam terwijl het voertuig dat het moest ophogen, de Space Shuttle, jarenlang vertraagd was. Een station is geen monument dat je bouwt en waar je van wegloopt; het is een verbintenis die voortdurend gefinancierd en voortdurend bereikt moet worden. De ongecontroleerde terugkeer boven Australië was een gênante zaak waar NASA van leerde, en de les — plan de hele levensduur van een station, inclusief hoe je het omhoog houdt en hoe je het naar beneden brengt — is ingeschreven in elk programma dat erna kwam."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Skylab's eerste les is dat repareerbaarheid een capaciteit is waar het de moeite waard is voor te ontwerpen. Het station overleefde een lanceringsfout die het had moeten vernietigen alleen omdat er een bemanning kon worden gestuurd om het te repareren — en omdat, hoe geïmproviseerd de reparaties ook waren, er genoeg toegang en genoeg marge was om ze te proberen. De programma's die dit ter harte namen, van Hubble-onderhoud tot het ISS, behandelden hun hardware als iets dat onderhouden moest worden, niet slechts bediend totdat het kapotging. Degenen die het vergaten, betaalden voor ruimtevaartuigen die ze alleen maar konden zien falen."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is dat een station alleen zo veilig is als zijn toevoerlijn. Skylab was gedoemd vanaf het moment dat de kloof tussen de laatste bemanning en het eerstvolgende mogelijke bezoek langer duurde dan de levensduur van zijn baan. Indrukwekkende hardware in de ruimte is waardeloos als je het niet betrouwbaar kunt bereiken; het voortdurende, saaie, dure werk om een transportsysteem draaiende te houden is geen voetnoot bij een stationsprogramma maar de voorwaarde ervoor. Skylab viel omdat die lijn werd laten vervallen."
+    }
+  ]
+}

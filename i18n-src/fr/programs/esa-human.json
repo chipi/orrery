@@ -1,0 +1,88 @@
+{
+  "name": "ESA — L'Europe dans le vol spatial habité",
+  "tagline": "L'Europe n'a jamais construit son propre vaisseau spatial habité — et elle est tout de même devenue indispensable au vol spatial habité, en choisissant le partenariat plutôt que l'indépendance et en maîtrisant les éléments que personne d'autre ne voulait construire.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "L'Europe a fait un choix délibéré et inhabituel concernant le vol spatial habité : elle a décidé de ne pas construire son propre vaisseau spatial habité. Là où les États-Unis, l'Union soviétique, puis la Chine ont chacun développé l'ensemble complet — fusées, capsules, capacité à lancer leurs propres citoyens — l'Europe, agissant collectivement par l'intermédiaire de l'Agence spatiale européenne, a choisi plutôt d'être le meilleur partenaire possible. Elle ferait voler ses astronautes à bord des véhicules d'autres nations, et elle apporterait les capacités qui feraient fonctionner l'entreprise commune. C'est une voie plus discrète qu'une course spatiale nationale, et elle s'est révélée remarquablement efficace."
+    },
+    {
+      "type": "prose",
+      "md": "Cela a commencé avec Spacelab en 1983 — un laboratoire construit par l'Europe qui prenait place dans la soute de la navette spatiale et transformait celle-ci en plateforme scientifique, embarquant le premier astronaute de l'ESA lors de son premier vol. Cela s'est poursuivi avec Columbus, le laboratoire permanent de l'Europe boulonné à la Station spatiale internationale, et avec l'Automated Transfer Vehicle, le cargo le plus grand et le plus sophistiqué de son époque. En cours de route, des astronautes européens ont volé à bord de navettes et de Soyuz, ont vécu à bord de Mir et de l'ISS, et ont commandé la Station. L'Europe n'a jamais lancé son propre équipage — et elle est devenue essentielle à presque tous ceux qui l'ont fait."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "La Station spatiale internationale, dont l'Europe est un partenaire à part entière. Le laboratoire Columbus de l'ESA en fait partie intégrante de manière permanente, et des astronautes européens y ont vécu et l'ont commandée — le fruit du choix de se joindre plutôt que de faire cavalier seul.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif de l'Europe était de compter dans le vol spatial habité sans supporter le coût et le risque complets d'un programme habité indépendant. Cela signifiait se spécialiser — construire les laboratoires où se fait la science, les cargos qui maintiennent l'approvisionnement des stations, et les modules qui les étendent, et former des astronautes qui pourraient voler à bord de n'importe quel véhicule fourni par un partenariat. Plutôt que de dupliquer ce que d'autres possédaient déjà, l'Europe s'est efforcée de fournir ce dont l'entreprise commune avait besoin et dont elle ne pouvait difficilement se passer."
+    },
+    {
+      "type": "prose",
+      "md": "La stratégie comportait une force cachée : apporter un élément essentiel garantit une place permanente à la table. En construisant Spacelab, l'Europe a gagné une place à bord de la navette ; en construisant Columbus et l'ATV, elle est devenue un partenaire plein et égal dans la Station spatiale internationale, avec son propre laboratoire et son propre vaisseau de ravitaillement indispensable. Une nation qui n'achèterait que des places serait un client ; l'Europe, en construisant des capacités sur lesquelles d'autres comptaient, est devenue un partenaire — avec un réel pouvoir de décision dans l'entreprise."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/atv/02"
+      },
+      "caption": "L'Automated Transfer Vehicle — le cargo européen pour l'ISS. Vingt tonnes à pleine charge, il volait de manière autonome jusqu'à un amarrage automatique avec la Station, livrait du fret, de l'eau, de l'air et du carburant, et utilisait ses moteurs pour rehausser l'orbite de l'ISS.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Les résultats ont été substantiels et distinctement européens. Spacelab a volé lors de 22 missions de navette entre 1983 et 1998, donnant à l'Europe deux décennies de science habitée pratique et une génération d'astronautes expérimentés. Columbus, installé en 2008, a donné à l'Europe un laboratoire permanent en orbite et en a fait un partenaire de premier rang dans la plus grande structure que les humains aient jamais construite. Et l'Automated Transfer Vehicle — cinq énormes cargos volés entre 2008 et 2015, chacun nommé d'après un penseur européen de Jules Verne à Georges Lemaître — a réalisé quelque chose de véritablement avancé : un vaisseau spatial de vingt tonnes qui se guidait lui-même jusqu'à un amarrage entièrement automatique avec l'ISS, livrait des fournitures et du carburant, et rehaussait la Station entière avec ses moteurs."
+    },
+    {
+      "type": "prose",
+      "md": "Cette expertise de l'ATV a ensuite rapporté un dividende inattendu. La technologie que l'Europe a développée pour construire un vaisseau spatial autonome capable de s'amarrer à l'ISS est devenue la base du module de service européen — la partie que l'Europe construit maintenant pour Orion de la NASA, le vaisseau spatial qui ramène des astronautes vers la Lune dans le cadre d'Artemis. Le module de service fournit à Orion sa puissance, sa propulsion, son air et son eau : la section qui maintient l'équipage en vie en route vers l'orbite lunaire et au retour. Un continent qui n'a jamais construit son propre vaisseau spatial habité construit maintenant la moitié d'un vaisseau américain sans laquelle ses astronautes ne peuvent survivre."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Le fil conducteur du vol spatial habité européen est que le partenariat, bien mené, n'est pas une voie inférieure à l'indépendance — c'est une voie différente et parfois plus forte. En mettant en commun les ressources de nombreuses nations par l'intermédiaire de l'ESA et en se spécialisant dans les capacités dont les autres avaient besoin, l'Europe a obtenu un rôle dans le vol spatial habité bien plus important que ce qu'un seul pays européen aurait pu se permettre seul, et plus important que ne le suggérerait la taille de son budget. Elle n'a jamais eu l'autonomie d'une nation qui lance ses propres équipages ; elle a eu, à la place, le levier d'être indispensable à ceux qui le font."
+    },
+    {
+      "type": "prose",
+      "md": "L'ATV est l'expression la plus claire de cela. Ce n'était pas un projet de prestige ou une participation à une course ; c'était un élément d'infrastructure suprêmement capable — un cargo automatisé plus avancé dans son amarrage et sa capacité de fret que tout autre en vol — qui a rendu l'Europe centrale pour maintenir l'ISS en vie. Et parce que l'Europe avait construit cette capacité, elle était positionnée pour construire la prochaine chose : le module de service d'Orion, et avec lui une place dans le retour de l'humanité vers la Lune. La maîtrise d'une niche sans éclat a conduit, pas à pas, à une part dans le programme habité le plus ambitieux du nouveau siècle."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "La Station spatiale internationale — l'entreprise que l'Europe a aidé à construire et à soutenir, et la preuve qu'une nation peut façonner profondément le vol spatial habité sans jamais lancer son propre équipage.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'héritage de l'Europe dans le vol spatial habité est autant un modèle qu'un ensemble de matériel : la preuve qu'une puissance spatiale de taille moyenne peut compter énormément en s'associant plutôt qu'en rivalisant, en mettant en commun les ressources de nombreuses nations, et en construisant les éléments essentiels dont les autres dépendent plutôt qu'en dupliquant ce qui existe déjà. Columbus est toujours en orbite ; les astronautes européens volent et commandent toujours ; et les descendants de l'ATV transportent maintenant des humains vers la Lune. Rien de tout cela n'a nécessité un vaisseau spatial habité européen indépendant, et c'est précisément le point."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi le complément dans le vol spatial habité à Ariane. Là où Ariane a assuré l'*accès* indépendant de l'Europe à l'espace, son programme habité a assuré la *place* de l'Europe dans l'espace — un siège permanent et respecté dans l'entreprise internationale, gagné par la contribution plutôt que revendiqué par le drapeau. Ensemble, ils définissent une manière distinctement européenne d'être une grande puissance spatiale : autonome là où elle doit l'être, collaborative là où c'est plus fort, et essentielle dans les deux cas."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La première leçon est qu'il n'est pas nécessaire de tout construire soi-même pour être essentiel. L'Europe n'a jamais développé de vaisseau spatial habité indépendant, pourtant en maîtrisant les laboratoires, le fret et les modules, elle est devenue un partenaire dont aucun programme majeur de vol spatial habité ne pouvait facilement se passer. Apporter une capacité distinctive et véritablement nécessaire achète une influence plus durable que d'essayer de reproduire, avec une qualité inférieure, ce que d'autres font déjà bien. La spécialisation, non la duplication, a été la voie de l'Europe vers la pertinence."
+    },
+    {
+      "type": "prose",
+      "md": "La deuxième leçon est que le partenariat multiplie un budget limité. En combinant les ressources de nombreuses nations par l'intermédiaire d'une agence unique et en les investissant dans des capacités qui ont gagné un rôle permanent, l'Europe a réalisé bien plus dans le vol spatial habité que ses dépenses seules ne le laisseraient prédire — et a transformé la maîtrise d'une niche, le fret automatisé, en une part du retour vers la Lune. Pour une puissance qui ne peut surpasser les géants en dépenses, être indispensable est une meilleure stratégie qu'être indépendant, et l'Europe l'a fait fonctionner pendant quarante ans."
+    }
+  ]
+}

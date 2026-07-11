@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "CON EQUIPAGGIO IN ORBITA TERRESTRE · VOLATO",
+  "first": "Volo di resistenza di 14 giorni; obiettivo di rendezvous per Gemini 6A",
+  "dispatch": "Gemini 7 rispose alla domanda meno affascinante ma più fondamentale: poteva un equipaggio sopravvivere per la durata di un viaggio verso la Luna e ritorno? Frank Borman e Jim Lovell trascorsero quattordici giorni sigillati in una cabina delle dimensioni del sedile anteriore di un'auto piccola — senza spazio per stare in piedi, allungarsi o sfuggire l'uno all'altro — per dimostrare che il corpo e la mente umani potevano sopportarlo. Fu noioso e fisicamente miserabile, e funzionò: tornarono in salute, archiviando il timore che i voli spaziali lunghi potessero essere impossibili. Durante il percorso fungevano anche da obiettivo per il rendezvous di Gemini 6A, così la singola missione dimostrò silenziosamente due dei prerequisiti di Apollo in una volta sola — che gli esseri umani potevano resistere per tutta la durata, e che due veicoli potevano incontrarsi.",
+  "description": "Frank Borman e Jim Lovell volarono una missione di resistenza di 14 giorni e 206 orbite dal 4 dicembre 1965 — il volo spaziale con equipaggio più lungo fino a quella data — e servirono da obiettivo di rendezvous per Gemini 6A. Dimostrò che un equipaggio poteva resistere a un volo spaziale della durata completa di una missione lunare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan II GLV (GT-7) da Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "OBIETTIVO DI RENDEZVOUS",
+      "note": "Funge da obiettivo per il primo rendezvous con equipaggio di Gemini 6A.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "AMMARAGGIO",
+      "note": "Ammaraggio nell'Atlantico dopo 14 giorni / 206 orbite.",
+      "type": "nominal"
+    }
+  ]
+}

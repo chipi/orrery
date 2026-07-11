@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 11",
+  "type": "EQUIPAGGIO STAZIONE · PERSO",
+  "first": "Primo equipaggio su una stazione spaziale (Salyut 1); tutti e 3 morti per decompressione durante il rientro",
+  "dispatch": "Soyuz 11 conseguì qualcosa di straordinario e poi perse il suo equipaggio negli ultimi minuti del volo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev divennero le prime persone a vivere a bordo di una stazione spaziale, trascorrendo ventitrè giorni sulla Salyut 1 — e poi, durante il rientro, una valvola si aprì di colpo nell'istante in cui i moduli si separarono e lasciò sfuggire l'aria della cabina nello spazio. Non indossavano tute pressurizzate; non c'era stato spazio per le tute quando i sedili erano stati montati per tre. In pochi secondi, al limite dello spazio, tutti e tre erano morti. La capsula atterrò da sola, perfettamente sul bersaglio; la squadra di recupero l'aprì e trovò l'equipaggio ancora allacciato ai sedili. Rimangono gli unici esseri umani ad essere morti nello spazio — e il prezzo pagato ha imposto una regola che vale da allora: gli equipaggi indossano tute pressurizzate durante il lancio e il rientro, sempre.",
+  "description": "La prima missione con equipaggio verso una stazione spaziale — Salyut 1 — fu lanciata il 6 giugno 1971 con Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. L'equipaggio trascorse 23 giorni a bordo della stazione. Durante il rientro il 30 giugno una valvola di equalizzazione della pressione si aprì prematuramente alla separazione dei moduli (~168 km); la cabina si depressurizzò e i tre cosmonauti, senza tuta, morirono in pochi secondi. La capsula atterrò normalmente. Rimangono gli unici esseri umani ad essere morti sopra la linea di Kármán.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Soyuz 11A511 da Baikonur, 1971-06-06 04:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.03,
+      "label": "AGGANCIO — SALYUT 1",
+      "note": "Primo equipaggio a salire a bordo di una stazione spaziale; 23 giorni a bordo.",
+      "type": "info"
+    },
+    {
+      "met": 24,
+      "label": "DECOMPRESSIONE",
+      "note": "La valvola si apre alla separazione dei moduli; la cabina si depressurizza a ~168 km. Equipaggio perso.",
+      "type": "warning"
+    }
+  ]
+}

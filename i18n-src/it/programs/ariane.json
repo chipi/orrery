@@ -1,0 +1,92 @@
+{
+  "name": "Ariane",
+  "tagline": "La garanzia europea di un proprio accesso allo spazio — nata da un rifiuto, cresciuta fino a diventare il lanciatore commerciale dominante al mondo, e ancora oggi a portare in orbita l'indipendenza del continente.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "All'inizio degli anni '70 l'Europa non controllava il proprio accesso allo spazio, e scoprì cosa significava. Quando l'Europa volle lanciare i satelliti di telecomunicazioni franco-tedeschi Symphonie, l'unico vettore disponibile era americano — e gli Stati Uniti si dissero disposti a fornirlo solo a condizione che i satelliti non fossero usati per telecomunicazioni commerciali che potessero competere con Intelsat sotto guida americana. Fu un'umiliazione silenziosa e decisiva: volare sul razzo di qualcun altro significa lasciargli decidere cosa il tuo veicolo spaziale può fare. L'Europa trasse la conclusione ovvia e decise di non trovarsi mai più in quella posizione."
+    },
+    {
+      "type": "prose",
+      "md": "La risposta fu Ariane — un lanciatore europeo, guidato dalla Francia e costruito sotto la neonata Agenzia Spaziale Europea, in volo da Kourou nella Guyana francese, vicino all'equatore dove la rotazione terrestre conferisce al razzo una spinta gratuita. Il suo primo volo, nel 1979, fu il momento in cui l'Europa assicurò un accesso garantito e indipendente all'orbita. A differenza di quasi ogni altro programma in questo atlante, Ariane non trasportava equipaggio e non inseguiva primati. È infrastruttura — la strada, non il viaggio — e si è rivelata una delle strade più consequenziali dell'era spaziale."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/ariane-1/01"
+      },
+      "caption": "Ariane 1, il primo lanciatore orbitale indipendente europeo, volato per la prima volta nel 1979. Esisteva per garantire che l'Europa non avrebbe mai più avuto bisogno del permesso di un'altra potenza per mettere in orbita i propri veicoli spaziali.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il primo obiettivo di Ariane era strategico e semplice: l'autonomia. L'Europa avrebbe costruito un lanciatore sotto il proprio pieno controllo, così che i suoi satelliti, la sua scienza e infine i suoi astronauti potessero raggiungere l'orbita secondo i termini europei, senza dover rendere conto a nessuno. Questo obiettivo da solo avrebbe giustificato il programma. Ma un secondo obiettivo emerse quasi immediatamente e divenne altrettanto importante — vendere quella capacità sul mercato aperto."
+    },
+    {
+      "type": "prose",
+      "md": "Nel 1980 l'Europa creò Arianespace, la prima compagnia di lancio commerciale al mondo, e trasformò un bene strategico in un'attività economica. L'idea era che se Ariane avesse lanciato non solo carichi utili europei ma satelliti per chiunque fosse disposto a pagare, i ricavi commerciali avrebbero contribuito a sostenere il lanciatore e a ridurne i costi. Era un modello genuinamente nuovo — trattare l'accesso allo spazio come un servizio da vendere anziché come una capacità che ogni nazione costruiva solo per sé — e per due decenni funzionò in modo spettacolare."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/ariane-5/03"
+      },
+      "caption": "Ariane 5 sulla sua rampa di lancio a Kourou. Dopo un celebre fallimento del volo inaugurale, divenne uno dei razzi pesanti più affidabili mai lanciati — portando in orbita Rosetta, Galileo, i cargo ATV verso la ISS e il James Webb Space Telescope.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il risultato superò l'ambizione. Ariane 4, il cavallo di battaglia affidabile degli anni '80 e '90, conquistò circa la metà dell'intero mercato globale dei lanci satellitari commerciali, rendendo Arianespace il fornitore di lanci dominante sulla Terra e l'Europa una potenza spaziale di primo rango. Il suo successore, Ariane 5, ebbe un inizio famigerato — il suo volo inaugurale nel 1996 si autodistrusse trentasette secondi dopo il lancio quando il software di guida ereditato da Ariane 4 andò in overflow alla velocità superiore del nuovo razzo, un fallimento oggi insegnato in ogni corso di ingegneria del software — ma si riprese per diventare uno dei lanciatori pesanti più affidabili mai costruiti."
+    },
+    {
+      "type": "prose",
+      "md": "Il manifesto di Ariane 5 è un elenco di scienza e infrastrutture dell'epoca: la missione cometaria Rosetta, la costellazione di navigazione Galileo, BepiColombo verso Mercurio, i cargo ATV che rifornivano la Stazione Spaziale Internazionale e — come ultimo carico utile coronante — il James Webb Space Telescope, lanciato con tale precisione da risparmiare anni di carburante del telescopio. Poi il terreno si spostò. I razzi riutilizzabili di SpaceX sottoquotarono i prezzi di Ariane e posero fine al suo dominio commerciale, e Ariane 6, in volo dal 2024, è la risposta europea: un lanciatore più economico e flessibile costruito per mantenere vivo l'accesso indipendente del continente in un mercato trasformato."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Il filo conduttore di Ariane è che l'accesso allo spazio non è una comodità ma una forma di sovranità. L'intero programma nacque dal riconoscimento che dipendere dai razzi di un'altra potenza significa dipendere dal permesso di quella potenza — e tutto ciò che l'Europa fece in seguito, dalla costruzione di Ariane al suo sostegno commerciale alla sua sostituzione sotto pressione, seguì dalla decisione che questa dipendenza era inaccettabile. In un ambito solitamente raccontato attraverso equipaggi e destinazioni, Ariane è il promemoria che qualcuno deve costruire e possedere la strada, e che chi la possiede conta enormemente."
+    },
+    {
+      "type": "prose",
+      "md": "Il pivot commerciale è la mossa più intelligente del programma e la sua lezione centrale. Fondando Arianespace e vendendo lanci in tutto il mondo, l'Europa fece sì che il suo lanciatore strategico pagasse gran parte del proprio mantenimento e lo affinò contro una concorrenza reale, anziché lasciarlo diventare un progetto nazionale sovvenzionato che volava solo occasionalmente. Per vent'anni questo rese Ariane sia indipendente che dominante. Rese anche il programma vulnerabile in un modo che un lanciatore puramente strategico non sarebbe stato: quando apparve un concorrente più economico, Ariane perse il mercato commerciale che l'aveva sostenuto e dovette reinventarsi per sopravvivere."
+    },
+    {
+      "type": "prose",
+      "md": "Quel concorrente, naturalmente, fu la riutilizzabilità fatta bene — la cosa che lo Space Shuttle aveva promesso e non mantenuto, e che una nuova generazione realizzò. Ariane, a lungo costruito sulla logica del razzo usa e getta affidabile, vide quella logica ribaltata quasi da un giorno all'altro, e Ariane 6 è la risposta di una potenza consolidata a una dirompente. L'esito è ancora in fase di scrittura, ma la posta in gioco è esattamente quella del 1979: se l'Europa manterrà il proprio accesso garantito allo spazio."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/ariane-6/02"
+      },
+      "caption": "Ariane 6, in volo dal 2024 — la risposta europea a un mercato trasformato dai razzi riutilizzabili, e la continuazione dello stesso mandato per cui fu costruito Ariane 1: accesso europeo indipendente allo spazio.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'eredità di Ariane è che l'Europa non ha mai più dovuto chiedere il permesso di raggiungere lo spazio. Per oltre quattro decenni una linea ininterrotta di razzi europei ha lanciato i satelliti del continente, le missioni scientifiche e i contributi alla Stazione Spaziale Internazionale — e per gran parte di quel tempo ha lanciato anche quelli del mondo. L'industria dei lanci commerciali che è ora così centrale per i voli spaziali fu, in larga misura, inventata da Arianespace; il modello di vendita dell'accesso all'orbita come servizio cominciò a Kourou."
+    },
+    {
+      "type": "prose",
+      "md": "Rappresenta anche il caso di studio più chiaro sul valore — e sul costo — dell'autonomia strategica. Ariane fu più costoso del semplice acquisto di lanci da chiunque fosse più economico, e nell'era del riutilizzabile quel divario è cresciuto. Ma i fondatori del programma compresero che il lancio più economico non vale nulla se il venditore può dettarne i termini, e l'Europa ha speso quattro decenni e denaro considerevole per impedire che ciò accadesse di nuovo. Se continuare a pagare questo premio, mentre i concorrenti riutilizzabili rimodellano il mercato, è la questione viva che Ariane 6 ora incarna."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La prima lezione di Ariane è che l'accesso indipendente a infrastrutture critiche vale la pena di essere pagato. L'Europa costruì il proprio lanciatore non perché fosse più economico ma perché l'alternativa — dipendere da un rivale o partner per qualcosa di così fondamentale come raggiungere l'orbita — significava rinunciare al controllo sul proprio programma spaziale, come aveva dimostrato l'affare Symphonie. Il premio che l'Europa ha pagato per Ariane è il prezzo per non essere mai più detto cosa i suoi satelliti possono fare. Per qualsiasi cosa genuinamente strategica, l'autonomia è una capacità, non uno sfarzo."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda lezione è scritta nel Volo 501: il software riutilizzato non è automaticamente software sicuro. Ariane 5 fu distrutto perché codice di guida provato su Ariane 4 fu trasferito senza test in un razzo che volava più veloce, dove un'assunzione incorporata nel vecchio codice non reggeva più. I componenti erano solidi; il fallimento fu nell'assumere che ciò che funzionava in un contesto avrebbe funzionato invariato in un altro. Ogni sistema riutilizzato deve essere rivalidato rispetto alle nuove condizioni che effettivamente affronterà — una lezione che va molto oltre i razzi."
+    }
+  ]
+}

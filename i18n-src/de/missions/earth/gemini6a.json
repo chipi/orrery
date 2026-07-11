@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "Erstes bemanntes Weltraum-Rendezvous",
+  "dispatch": "Rendezvous — zwei Raumschiffe finden und vereinen sich im Orbit — war die Fähigkeit, ohne die Apollo nicht auskommen konnte, und Gemini 6A ist der Ort, an dem es zum ersten Mal gelang. Es hätte beinahe nicht stattgefunden: Das ursprüngliche Ziel explodierte auf dem Weg in den Orbit, und dann, angeschnallt für den verschobenen Start, zündeten die Triebwerke der Titan und erloschen abrupt auf der Rampe — ein Moment, in dem die Regeln besagten auszulösen, und Wally Schirra, der keine Bewegung spürte, entschied sich kühl dagegen. Drei Tage später flog es und tat das, was nie zuvor getan worden war: holte Gemini 7 ein und hielt Station einen Fuß entfernt, die Besatzungen nahe genug, um die Gesichter des jeweils anderen zu lesen. Es sah einfach aus und war alles andere als das — die Orbitalmechanik, ein anderes Fahrzeug einzuholen, ist zutiefst kontraintuitiv — und es zu knacken war der Moment, in dem das Mond-Orbit-Rendezvous und der gesamte Apollo-Plan Wirklichkeit wurden.",
+  "description": "Wally Schirra und Tom Stafford erreichten das erste bemannte Weltraum-Rendezvous am 15. Dezember 1965 und hielten über fünf Stunden lang Station innerhalb von ~30 cm zu Gemini 7. Es folgte auf eine Triebwerksabschaltung auf der Startrampe drei Tage zuvor, die Schirra nicht abbrach. Dauer ~1 d 1 h; 16 Orbits.",
+  "events": [
+    {
+      "met": 0,
+      "label": "ABSCHALTUNG AUF DER RAMPE",
+      "note": "1965-12-12: Triebwerke zünden und schalten dann auf der Rampe ab; Schirra löst nicht aus.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "START",
+      "note": "Titan II GLV (GT-6A) von Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "RENDEZVOUS",
+      "note": "Erstes bemanntes Rendezvous — hält Station innerhalb von ~30 cm zu Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "WASSERLANDUNG",
+      "note": "Wasserlandung im Atlantik nach ~1 d 1 h / 16 Orbits.",
+      "type": "nominal"
+    }
+  ]
+}

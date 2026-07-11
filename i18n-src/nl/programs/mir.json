@@ -1,0 +1,92 @@
+{
+  "name": "Mir",
+  "tagline": "Het eerste modulaire ruimtestation — stuk voor stuk in een baan om de aarde gebouwd, vijftien jaar lang in leven gehouden ondanks de ineenstorting van het land dat het bouwde, en de plek waar rivalen uit de Koude Oorlog voor het eerst leerden samen te vliegen.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Elk station vóór Mir was een enkel object: als geheel gelanceerd, bewoond en uiteindelijk afgedankt. Mir was fundamenteel anders. Vanaf 1986 lanceerde de Sovjet-Unie een kernmodule en vervolgens, in de loop van het daaropvolgende decennium, vloog men module na module omhoog en boute die in een baan om de aarde vast — Kvant, Kvant-2, Kristall, Spektr, Priroda — waarbij het station groeide als een nederzetting in plaats van ingezet te worden als een ruimtevaartuig. Het was de eerste keer dat mensen een grote structuur in de ruimte assembleerden, en het veranderde het ruimtestation van een afgewerkt product in een permanente, uitbreidbare plek."
+    },
+    {
+      "type": "prose",
+      "md": "De naam betekent 'vrede' en ook 'wereld', en Mir werd beide — de meest continu bewoonde menselijke buitenpost die tot dan toe was gebouwd, en, tegen alle verwachting in, het toneel waarop de Koude Oorlog in de ruimte eindigde. Het was ontworpen als een Sovjet-uitstalraam; het overleefde de Sovjet-Unie met een decennium, werd vliegend gehouden door een Rusland dat het zich nauwelijks kon veroorloven, en herbergde in zijn laatste jaren de Amerikaanse astronauten wier voorgangers het had moeten overtreffen. Meer dan welk afzonderlijk ruimtevaartuig dan ook is Mir de plek waar het tijdperk van nationale ruimtewedlopen plaatsmaakte voor het tijdperk van internationale samenwerking."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/04"
+      },
+      "caption": "Mir tijdens assemblage, gefotografeerd vanuit een bezoekende Space Shuttle — de kernmodule met Kristall en de andere modules eraan bevestigd. Het bouwen van een groot station uit afzonderlijk gelanceerde onderdelen, in een baan om de aarde, was op zich al de prestatie.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het doel van Mir was permanentie op een schaal die niemand had geprobeerd: een permanent bemand onderzoekscomplex dat in de loop der tijd kon groeien en jaren, niet maanden, in de lucht kon blijven. Waar Salyut had bewezen dat een station bevoorraad en bewoond kon worden, wilde Mir bewijzen dat het kon worden *uitgebreid* — dat nieuwe laboratoria en capaciteiten konden worden toegevoegd aan een station dat al in een baan om de aarde was, voor onbepaalde tijd, zodat de buitenpost nooit af en nooit verouderd was. Het was de architectuur van een werkelijk permanente menselijke aanwezigheid, en het werkte."
+    },
+    {
+      "type": "prose",
+      "md": "Het andere doel was uithoudingsvermogen, tot het uiterste gedreven. Mir was waar mensen ontdekten hoe lang ze konden blijven — en het antwoord, daar vastgesteld, staat nog steeds: de arts-kosmonaut Valeri Polyakov bracht 437 aaneengesloten dagen door op Mir, langer dan een missie naar Mars zou duren, en kwam thuis in staat om te lopen. Dat ene resultaat verwijderde stilletjes een van de grote bezwaren tegen menselijke ruimtevluchten naar de diepte van de ruimte: het toonde aan dat het lichaam de reis kan doorstaan."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/02"
+      },
+      "caption": "Mir gezien vanaf de Space Shuttle Atlantis tijdens het Shuttle-Mir-programma. Amerikaanse Shuttles die aankoppelen bij een Russisch station — een decennium eerder ondenkbaar — was de generale repetitie voor het International Space Station.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Gedurende vijftien jaar herbergde Mir meer dan honderd mensen uit een dozijn landen, leverde een enorm corpus aan wetenschap op en vestigde de langeduurdosisrecords waarop elk later programma vertrouwt. Maar de latere jaren waren ook de zwaarste die welk station dan ook heeft doorstaan. Toen de Sovjet-Unie instortte, verdween de financiering van Mir bijna geheel, en werd het vliegend gehouden met een minimaal budget, terwijl de hardware verouderde ver voorbij zijn ontwerplevens­duur. In 1997 kwam dat tot uiting: eerst brak er aan boord brand uit door een defecte zuurstofpatroon, waardoor het station zich met rook vulde, en vervolgens raakte een Progress-vrachtschip, dat handmatig werd aangedokt, het station en doorboorde de Spektr-module — waardoor een deel van Mir depressureerde en de bemanning een module moest afsluiten terwijl de lucht eruit lekte."
+    },
+    {
+      "type": "prose",
+      "md": "Dat de bemanning beide overleefde — de breuk dichte, het station redde en doorvloog — was de ultieme test van het idee dat Skylab als eerste had bewezen: dat mensen in een baan om de aarde kunnen vechten voor een falende machine en kunnen winnen. Door diezelfde jaren liep het Shuttle-Mir-programma: vanaf 1995 dokten Amerikaanse Space Shuttles aan bij Mir en woonden NASA-astronauten maandenlang aan boord, waarbij ze langeduuropereraties leerden van de Russen die er twee decennia aan hadden besteed om die onder de knie te krijgen. Het was het eerste gezamenlijke werk van de voormalige rivalen, en het was, expliciet, de repetitie voor wat daarna kwam. Mir werd in een gecontroleerde terugkeer boven de Stille Oceaan uit zijn baan gehaald in 2001, zijn taak doorgegeven."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De centrale innovatie van Mir is modulariteit, en het veranderde alles wat volgde. Een station gebouwd uit uitwisselbare, afzonderlijk gelanceerde modules kan groeien, worden gerepareerd door modulevervanging, en worden geassembleerd door meer dan één natie — niets waarvan een enkel monolithisch blik kan doen. Het International Space Station is modulariteit tot zijn conclusie gebracht: tientallen modules van vele landen, gedurende een decennium geassembleerd. Die hele benadering werd eerst op Mir bewezen."
+    },
+    {
+      "type": "prose",
+      "md": "Het diepere verhaal is overleven en transformatie. Mir werd bedacht als een instrument van Sovjet-prestige en eindigde als het zaad van internationale samenwerking — in leven gehouden door een bankroet Rusland deels *omdat* de Verenigde Staten, die de ervaring en het partnerschap wilden, hielpen betalen om het vliegend te houden. De Shuttle-Mir-jaren bouwden de menselijke relaties, de gezamenlijke procedures en het politieke vertrouwen op zonder welke het ISS niet had kunnen worden geprobeerd. Het station gebouwd om de Koude Oorlog in de ruimte te winnen werd in plaats daarvan de plek waar de Koude Oorlog in de ruimte werd begraven."
+    },
+    {
+      "type": "prose",
+      "md": "En Mir beantwoordde de vraag die het belangrijkst is voor alles voorbij een lage baan om de aarde: kan een menselijk lichaam het aan? Polyakovs 437 dagen, en de vele maanden gelogd door bemanning na bemanning, veranderden langdurige ruimtevaart van een angstaanjagend onbekende in een gekarakteriseerde, overleefbare conditie. Elk serieus plan voor Mars rust op gegevens die eerst op Mir werden verzameld."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/05"
+      },
+      "caption": "Mir in een baan om de aarde — het eerste modulaire station, en het sjabloon, in architectuur en in internationale samenwerking, voor het International Space Station dat het verving.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "De erfenis van Mir is het International Space Station, in bijna elk opzicht. De modulaire architectuur, de mix van Soyuz-bemanningsveerboten en geautomatiseerde vrachtschepen, de expedities van meerdere maanden, de routines van langdurig leven en werken — het werd allemaal ontwikkeld of volwassen gemaakt op Mir en direct overgedragen. Dat gold ook voor het partnerschap: het ISS wordt gerund op een Amerikaans-Russische kern precies omdat Shuttle-Mir bewees dat de twee samen een station konden bedienen, en omdat Rusland de opgebouwde stationexpertise die Mir vertegenwoordigde, inbracht."
+    },
+    {
+      "type": "prose",
+      "md": "Het staat ook als een les in uithoudingsvermogen van een andere soort. Mir vloog vijftien jaar, vijf meer dan bedoeld, door de desintegratie van zijn eigen natie en een reeks noodsituaties die een minder veerkrachtig programma had beëindigd — en het bleef doorgaan omdat zijn modulaire ontwerp reparatie mogelijk maakte, omdat zijn bemanningen ervoor vochten, en omdat een nieuwe internationale wil ontstond om het te ondersteunen. Het werd, uiteindelijk, bij elkaar gehouden door vindingrijkheid en samenwerking evenzeer als door engineering. Dat is geen voetnoot bij zijn verhaal; het is de essentie ervan."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De eerste les van Mir is dat modulariteit is wat een groot station zowel mogelijk als overleefbaar maakt. Omdat Mir werd gebouwd uit afzonderlijke modules, kon het in de loop der tijd groeien, worden geassembleerd over vele lanceringen, en — cruciaal — worden gerepareerd door een beschadigd gedeelte af te sluiten of te vervangen, zoals de bemanning deed toen Spektr werd doorboord. Een monolithisch station biedt niets hiervan; wanneer het faalt, faalt het als geheel. Elk station bedoeld om lang mee te gaan is Mir gevolgd in modulariteit."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is dat internationaal partnerschap kan ondersteunen wat nationale trots zich niet kan veroorloven. Mir overleefde zijn zwaarste jaren omdat samenwerking competitie verving — omdat een voormalige tegenstander redenen had om te helpen het vliegend te houden. Dezelfde logica bouwde het ISS en houdt het in de lucht: geen enkele natie financiert nu alleen nog een permanente menselijke aanwezigheid. Mir is waar die verschuiving eerst door omstandigheden werd afgedwongen en vervolgens met opzet werd gekozen, en het is een van de meest consequente veranderingen in de geschiedenis van de ruimtevaart."
+    }
+  ]
+}

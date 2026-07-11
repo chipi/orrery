@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Vol d'endurance de 14 jours ; cible de rendez-vous pour Gemini 6A",
+  "dispatch": "Gemini 7 a répondu à la question la moins spectaculaire mais la plus fondamentale : un équipage pouvait-il survivre aussi longtemps qu'un voyage aller-retour vers la Lune ? Frank Borman et Jim Lovell ont passé quatorze jours enfermés dans une cabine de la taille du siège avant d'une petite voiture — sans espace pour se tenir debout, s'étirer ou s'échapper l'un de l'autre — afin de prouver que le corps et l'esprit humains pouvaient le supporter. C'était fastidieux et physiquement pénible, et cela a fonctionné : ils sont revenus en bonne santé, écartant la crainte qu'un vol spatial de longue durée puisse être impossible. En chemin, ils ont servi de cible pour le rendez-vous de Gemini 6A, si bien que ce vol unique a discrètement prouvé deux des prérequis d'Apollo à la fois — que les humains pouvaient tenir la distance, et que deux vaisseaux pouvaient se rencontrer.",
+  "description": "Frank Borman et Jim Lovell ont effectué une mission d'endurance de 14 jours et 206 orbites à partir du 4 décembre 1965 — le plus long vol spatial habité à cette date — et ont servi de cible de rendez-vous pour Gemini 6A. Elle a démontré qu'un équipage pouvait supporter un vol spatial de la durée complète d'une mission lunaire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-7) depuis Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "CIBLE DE RENDEZ-VOUS",
+      "note": "Sert de cible pour le premier rendez-vous habité de Gemini 6A.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "AMERRISSAGE",
+      "note": "Amerrissage dans l'Atlantique après 14 jours / 206 orbites.",
+      "type": "nominal"
+    }
+  ]
+}

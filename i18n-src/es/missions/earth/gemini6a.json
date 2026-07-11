@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · VOLADA",
+  "first": "Primera cita espacial tripulada",
+  "dispatch": "La cita —dos naves espaciales encontrándose y uniéndose en órbita— era la habilidad sin la cual Apollo no podría funcionar, y Gemini 6A es donde se realizó por primera vez. Casi no voló: su objetivo original explotó en el camino a órbita, y luego, ya abrochados para el lanzamiento reprogramado, los motores del Titan se encendieron y murieron abruptamente en la plataforma —un momento en que las reglas decían eyectar, y Wally Schirra, sin sentir movimiento, eligió fríamente no hacerlo. Tres días después voló e hizo lo que nunca se había hecho: alcanzó al Gemini 7 y mantuvo estación a treinta centímetros de distancia, las tripulaciones lo bastante cerca como para leer las expresiones en sus rostros. Parecía fácil y fue todo menos eso —la mecánica orbital de alcanzar otra nave es profundamente contraintuitiva— y resolverlo fue el momento en que la cita en órbita lunar, y todo el plan Apollo, se volvió real.",
+  "description": "Wally Schirra y Tom Stafford lograron la primera cita espacial tripulada el 15 de diciembre de 1965, manteniendo estación a ~30 cm del Gemini 7 durante más de cinco horas. Siguió a un apagado de motor en plataforma tres días antes que Schirra eligió no abortar. Duración ~1 d 1 h; 16 órbitas.",
+  "events": [
+    {
+      "met": 0,
+      "label": "APAGADO EN PLATAFORMA",
+      "note": "1965-12-12: los motores se encienden y luego se apagan en la plataforma; Schirra no eyecta.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "LANZAMIENTO",
+      "note": "Titan II GLV (GT-6A) desde Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "CITA",
+      "note": "Primera cita tripulada — mantiene estación a ~30 cm del Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "AMERIZAJE",
+      "note": "Amerizaje en el Atlántico después de ~1 d 1 h / 16 órbitas.",
+      "type": "nominal"
+    }
+  ]
+}

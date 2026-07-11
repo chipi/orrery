@@ -1,0 +1,88 @@
+{
+  "name": "Buran",
+  "tagline": "Die sowjetische Raumfähre, die der amerikanischen ähnlich sah, in einer Hinsicht besser flog – und genau einmal flog, unbemannt und makellos, bevor das Land, das sie baute, unter ihr verschwand.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Bis Mitte der 1970er Jahre beobachtete die Sowjetunion, wie die Vereinigten Staaten das Space Shuttle bauten, und zog einen alarmierenden Schluss. Man konnte nicht recht glauben, dass die Amerikaner so viel für ein wiederverwendbares Raumflugzeug ausgeben würden, allein aus den angegebenen Gründen, und befürchtete einen verborgenen militärischen Zweck – ein Fahrzeug, das in die Atmosphäre eintauchen, einen sowjetischen Satelliten greifen und nach Hause fliegen oder Waffen aus dem Orbit abwerfen könnte. Nicht bereit, ohne Antwort dazustehen, ordnete das Politbüro eine eigene an. Das Ergebnis, Buran, war das größte und teuerste Raumfahrtprojekt der sowjetischen Geschichte, und es begann als Antwort auf eine Bedrohung, die vielleicht nie real war."
+    },
+    {
+      "type": "prose",
+      "md": "Von außen sah Buran fast identisch zum amerikanischen Orbiter aus – derselbe Deltaflügel, dieselbe grobe Form – weil dieselbe Aufgabe und dieselbe Physik des hypersonischen Wiedereintritts ein Design zur selben Antwort treiben. Doch darunter trafen die sowjetischen Ingenieure zwei Entscheidungen, die ihre Maschine abhoben, und beide verbesserten wohl das Original. Buran trug keine eigenen Haupttriebwerke, und Buran konnte fliegen, ohne dass jemand an Bord war."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/energia/01"
+      },
+      "caption": "Die Energia-Schwerlastrakete, die Buran hob. Anders als der amerikanische Orbiter hatte Buran keine Haupttriebwerke: Der gesamte Schub kam von Energia, einer echten Schwerlastrakete an sich – der leistungsstärksten, die die Sowjetunion je erfolgreich flog.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Die erste Entscheidung betraf die Triebwerke. Das amerikanische Shuttle montierte seine drei großen Haupttriebwerke am Orbiter selbst, was bedeutete, diese schwere, teure Maschinerie bei jedem Flug in den Orbit und zurück zu schleppen und nur den externen Tank wegzuwerfen. Die Sowjets steckten stattdessen den gesamten Schub in die Rakete: Buran flog auf Energia, einer echten Schwerlastrakete, die die gesamte Arbeit des Orbitierens erledigte, sodass der Orbiter eher Nutzlast als Teil des Antriebs war. Das machte Energia eigenständig nützlich – eine leistungsstarke Rakete, die andere schwere Nutzlasten ohne Orbiter starten konnte – und befreite Buran von einer Last, die ihr Rivale dreißig Jahre lang trug."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Entscheidung war Automatisierung. Das amerikanische Shuttle brauchte immer eine Besatzung zum Landen; es konnte nicht allein nach Hause kommen. Buran wurde gebaut, um die gesamte Mission zu fliegen – Start, Orbit, Wiedereintritt und Landung – ohne jemanden an Bord, gesteuert von seinen Computern und vom Boden. In einer Ära, als die vollautomatische Landung eines geflügelten Raumfahrzeugs an der Grenze des Möglichen lag, war dies ein echter Fortschritt, und es schuf den einen Moment, in dem Buran beweisen konnte, was es vermochte."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/buran/05"
+      },
+      "caption": "Der Buran-Orbiter. Er flog eine perfekte unbemannte Mission im November 1988 und flog dann nie wieder – stillgelegt durch den Zusammenbruch der sowjetischen Wirtschaft und schließlich der Sowjetunion selbst.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Am 15. November 1988 flog Buran. Es startete auf Energia, umkreiste die Erde zweimal, trat wieder ein und – in böigem Seitenwind, der jeden Piloten gefordert hätte – brachte sich vollautomatisch auf die Landebahn in Baikonur herunter, landete innerhalb von Metern vom Ziel, ohne dass ein Mensch zu irgendeinem Zeitpunkt an Bord war. Es war ein makelloser Flug und ein echter technischer Triumph: Kein anderes geflügeltes Raumfahrzeug hatte eine vollständige Orbitalmission geflogen und sich selbst gelandet. Und es war das einzige Mal, dass Buran je flog."
+    },
+    {
+      "type": "prose",
+      "md": "Der Zeitpunkt hätte nicht schlechter sein können. Buran erreichte seinen Triumph genau in dem Moment, als die Sowjetunion zu zerfallen begann. Innerhalb von drei Jahren war das Land verschwunden; das Geld war weg; und ein enorm teures Raumflugzeug, gebaut zur Abwehr einer amerikanischen Bedrohung, hatte keine Bedrohung mehr abzuwehren, kein Budget zum Fliegen und keine Mission, die sich jemand leisten konnte. Das Programm schleppte sich auf dem Papier bis 1993 hin und wurde dann direkt gestrichen. Die letzte Demütigung kam 2002, als das Dach des Hangars, in dem der eine Orbiter, der tatsächlich geflogen war, untergebracht war, einstürzte, das Raumfahrzeug zerquetschte und acht Arbeiter tötete. Burans einziger Flug bleibt eine der beeindruckendsten – und sinnlosesten – Leistungen in der Geschichte der Raumfahrt."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Buran ist die Geschichte einer großartigen Antwort auf eine Frage, die aufhörte, gestellt zu werden. Technisch war es ein Erfolg und stellenweise eine Verbesserung gegenüber dem Fahrzeug, das es kopierte – die separate Trägerrakete, die automatische Landung, echte technische Fortschritte. Aber es wurde aus strategischen und politischen Gründen gebaut, die sich verflüchtigten, zu Kosten, die die sowjetische Wirtschaft nicht tragen konnte, und es erreichte seinen Triumph-Moment genau in dem Augenblick, als das System, das es befahl, zusammenbrach. Keine noch so große technische Exzellenz konnte das Verschwinden des Grundes für das Programm und des Geldes, es zu betreiben, überleben."
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt eine Ironie, die festzuhalten lohnt. In den zwei Punkten, in denen sich Buran vom amerikanischen Shuttle unterschied – die Triebwerke an der Rakete statt am Orbiter anzubringen und automatisch ohne Besatzung zu fliegen – hatte es wohl die besseren Ideen, und beide haben Echos in der späteren Raumfahrt. Und doch flog das amerikanische Shuttle 135 Mal über dreißig Jahre und baute eine Raumstation, während Buran einmal flog. Die Lehre ist nicht, dass Burans Technik schlechter war; sie ist, dass Technik nie die ganze Geschichte ist. Ein Programm braucht einen Zweck und ein Budget, die seinen ersten Flug überdauern, und Buran hatte beides nicht."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/buran-ok-gli/02"
+      },
+      "caption": "OK-GLI, Burans atmosphärischer Test-Orbiter – ausgestattet mit Düsentriebwerken, um Landeanflüge zu üben, und jetzt ein Museumsexponat in Deutschland. Die überlebende Buran-Hardware ist über Museen verstreut; der eine Orbiter, der den Weltraum erreichte, wurde 2002 zerstört.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Burans direktes Erbe ist fast nichts – ein gestrichenes Programm, ein einziger Flug, Hardware in Museen und ein Orbiter, verloren unter einem eingestürzten Dach. Aber sein indirektes Erbe ist real. Energia bewies, dass die Sowjetunion endlich eine Schwerlastrakete bauen konnte, die tatsächlich funktionierte, und das Scheitern der N1 wiedergutmachte – selbst wenn auch sie mangels etwas zu starten gestrichen wurde. Und Burans vollautomatischer Flug demonstrierte eine Fähigkeit, die erst Jahrzehnte später Standard werden würde, als unbemannte und autonom landende Raumfahrzeuge Routine wurden."
+    },
+    {
+      "type": "prose",
+      "md": "Vor allem aber besteht Buran als mahnendes Monument fort – der klarste Fall im Raumfahrtzeitalter eines Programms, das die Technik richtig und alles andere falsch machte. Es steht neben dem amerikanischen Shuttle als der nicht beschrittene Weg und neben der N1 als das andere große sowjetische Was-hätte-sein-können: der Beweis, dass in der Raumfahrt eine brillante Maschine ohne Zweck und ohne Geld immer noch eine Maschine ist, die nicht fliegt."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Burans erste Lehre ist, dass ein Programm einen Grund braucht, der seine Ursprünge überdauert. Es wurde aus einer strategischen Angst geboren und aus der Weigerung, die Amerikaner eine Fähigkeit halten zu lassen, die der Sowjetunion fehlte – und als die Angst verblasste und der Kalte Krieg endete, blieb nichts übrig, um die enormen Kosten zu rechtfertigen. Eine teure Fähigkeit zu bauen, um einem Rivalen gleichzukommen, anstatt um eine Aufgabe zu erledigen, die man tatsächlich braucht, lässt einen mit einer großartigen Maschine und keinem Grund, sie zu fliegen, in dem Moment, in dem die Rivalität abkühlt."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Lehre ist, dass technische Exzellenz ein Programm nicht vor dem Verlust seines Zwecks und seines Budgets retten kann. Buran war in realen Aspekten ein besseres Design als das Fahrzeug, auf das es antwortete – und es flog einmal. Das amerikanische Shuttle flog trotz all seiner Mängel dreißig Jahre lang, weil es Missionen zu fliegen hatte und Geld, um sie zu fliegen. Ein Raumfahrzeug ist nur so dauerhaft wie der institutionelle Wille und die Finanzierung dahinter; ohne diese ist selbst ein makelloser Flug eher ein Ende als ein Anfang."
+    }
+  ]
+}

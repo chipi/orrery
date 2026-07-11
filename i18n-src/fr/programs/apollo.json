@@ -1,0 +1,100 @@
+{
+  "name": "Apollo",
+  "tagline": "Le sprint de la Guerre froide qui a mis douze personnes sur la Lune — puis s'est arrêté.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Pendant quatre-vingt-dix minutes d'affilée, à l'automne 1957, une sphère de métal poli de la taille d'un ballon de plage traversait le ciel au-dessus des États-Unis — et elle émettait des bips. Spoutnik 1 appartenait à l'Union soviétique, et le pays le plus puissant de la planète ne pouvait rien faire d'autre qu'écouter. Moins de quatre ans plus tard, le 12 avril 1961, les Soviétiques envoyèrent aussi une personne : Youri Gagarine, le premier humain à quitter la planète. Washington n'y entendit rien de scientifique. Il entendit un syllogisme qu'il ne pouvait ignorer — une fusée capable de placer un satellite en orbite peut larguer une ogive sur n'importe quelle ville de votre choix. Presque du jour au lendemain, le vol spatial cessa d'être de l'exploration pour devenir le fer de lance de la Guerre froide."
+    },
+    {
+      "type": "prose",
+      "md": "Le 25 mai 1961 — six semaines après Gagarine, et vingt jours après que le saut suborbital de quinze minutes d'Alan Shepard eut fait de l'Amérique une nation spatiale sur un détail technique — John F. Kennedy se présenta devant le Congrès et engagea le pays sur la Lune. Y poser un homme et le ramener sain et sauf, dit-il, « avant la fin de cette décennie ». En écartant la rhétorique, c'était un concours de prestige : une tentative de battre les Soviétiques dans le seul domaine où ils étaient manifestement en avance. La science serait réelle, et elle survivrait à la politique — mais elle voyageait derrière. Apollo est né de ce choix, et il vaut la peine de le dire sans détour."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/saturn-v/02"
+      },
+      "caption": "La Saturn V — 111 mètres de haut, environ 3 000 tonnes sur le pas de tir, et pendant un demi-siècle la fusée la plus puissante à avoir jamais volé. Elle existait pour une seule raison : respecter une échéance.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif était étroit et absolu : poser des astronautes américains sur la surface lunaire et les ramener vivants, avant l'URSS, avant 1970. Tout le reste fut conçu à rebours à partir de cette seule phrase — les fusées Saturn, un vaisseau spatial en trois parties qui devait voler en morceaux à quatre cent mille kilomètres de toute aide, des combinaisons pressurisées conçues pour le vide absolu, un réseau de suivi mondial, et une main-d'œuvre qui atteignit environ 400 000 personnes à travers la NASA, ses contractants et les universités."
+    },
+    {
+      "type": "prose",
+      "md": "Il y avait aussi de véritables objectifs scientifiques — échantillonner la géologie de la Lune, installer des instruments qui continueraient à fonctionner longtemps après le départ des équipages, déterminer si les gens pouvaient réellement effectuer un travail utile sur un autre monde. Mais dans l'ordre de priorité du programme lui-même, ils venaient après l'atterrissage, et tous les participants le savaient. La course fixait le calendrier. La science s'insérait dans les interstices qu'elle laissait."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo11/03"
+      },
+      "caption": "Apollo 11 sur la Mer de la Tranquillité, 20 juillet 1969 — le moment où la course fut décidée.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Ça a marché. Le 20 juillet 1969, Neil Armstrong et Buzz Aldrin marchèrent sur la Mer de la Tranquillité pendant que Michael Collins pilotait seul le Module de Commande au-dessus, perdant le contact radio chaque fois que son orbite le portait derrière la Lune. Cinq autres atterrissages suivirent jusqu'en décembre 1972. Douze personnes au total marchèrent sur la Lune et rentrèrent, rapportant 382 kilogrammes de roche et de sol qui ancrent encore la science lunaire plus d'un demi-siècle plus tard."
+    },
+    {
+      "type": "prose",
+      "md": "La facture arriva en argent et en vies. En janvier 1967, un incendie dans la cabine lors d'un test au sol de routine tua Gus Grissom, Ed White et Roger Chaffee en quelques secondes, et cloua le programme au sol pendant vingt mois. En avril 1970, un réservoir d'oxygène explosa en route vers la Lune et faillit tuer l'équipage d'Apollo 13, qui rentra dans le froid et en rationnant l'eau à l'intérieur de son propre Module Lunaire. Et Apollo s'arrêta à son apogée technique : les trois derniers atterrissages prévus, Apollo 18 à 20, furent annulés alors que les budgets se réduisaient et que l'attention du public se portait ailleurs. Est-ce que ça a réussi ? Le programme a gagné la course pour laquelle il avait été conçu — et il a été arrêté alors qu'il s'améliorait encore à la Lune. Choisissez votre critère."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'arc est inhabituellement net pour quelque chose d'aussi grand. Il s'ouvre sur une catastrophe : l'incendie de 1967 força une refonte complète du vaisseau spatial et de toute la culture de sécurité de la NASA — le bilan qui rendit possible tout ce qui suivit. Puis le matériel corrigé se mit au travail. En 1968, Apollo 7 testa le Module de Commande redessiné en orbite terrestre ; en décembre de cette année-là, Apollo 8 devint le premier vol habité à quitter complètement la gravité terrestre et à faire le tour de la Lune, son équipage lisant la Genèse en direct à la télévision devant le plus large public qui ait jamais existé."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 11 répondit à Kennedy. Et puis le programme fit quelque chose qu'un instrument de Guerre froide n'était nullement obligé de faire : il se tourna vers la science. Apollo 12 à 17 devinrent progressivement plus ambitieux — séjours plus longs, le Lunar Roving Vehicle alimenté par batterie, et enfin, sur Apollo 17, un géologue de terrain qualifié nommé Harrison Schmitt marchant sur la surface qu'il avait passé des années à étudier. Apollo 13, le quasi-désastre au milieu de cette série, fit quelque chose d'étrange à la réputation de la NASA : en y survivant, l'agence parut plus compétente qu'elle ne l'aurait été en n'échouant jamais."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 17 décolla de la Lune le 14 décembre 1972. Aucun humain n'y est retourné depuis. Mais le matériel du programme, ses équipes et son élan débouchèrent directement sur presque tout ce que le vol spatial habité américain fit ensuite — Skylab, la navette spatiale Space Shuttle, et, cinquante ans plus tard, Artemis, qui vise maintenant le pôle sud lunaire qu'Apollo n'a jamais touché."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo8/01"
+      },
+      "caption": "Lever de Terre — Apollo 8, veille de Noël 1968. Une photographie imprévue devenue l'une des images les plus reproduites de l'histoire, et une image fondatrice du mouvement environnemental.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Le retour sur investissement d'Apollo est encore débattu, mais sa forme est claire. Le programme a coûté environ 25,8 milliards de dollars de l'époque — largement au-delà de 250 milliards de dollars aujourd'hui — et à son apogée il employait quelque 400 000 personnes à travers la NASA, ses contractants et les universités. C'était un déploiement industriel et éducatif délibéré, pas seulement une fusée, et la majeure partie survécut aux missions lunaires."
+    },
+    {
+      "type": "prose",
+      "md": "La traction technologique était réelle, et elle se multiplia. Apollo poussa les premiers circuits intégrés vers la production de masse, stimula la jeune discipline du génie logiciel, et inventa pratiquement la gestion moderne des systèmes — l'art de maintenir un million de pièces interdépendantes à l'heure simultanément. Ces techniques ensemencèrent des industries entières par la suite. Et les 382 kilogrammes de roche rapportés réécrivirent l'âge et l'histoire d'origine du Système solaire ; les chercheurs tirent encore de nouveaux résultats d'échantillons scellés aujourd'hui."
+    },
+    {
+      "type": "prose",
+      "md": "Pour les États-Unis, ce fut un pouvoir d'influence à l'échelle planétaire — une démonstration, regardée en direct dans le monde entier, de ce qu'une société ouverte pouvait organiser et accomplir. Pour tous les autres, la chose la plus durable qu'Apollo laissa derrière elle n'est peut-être pas une technologie mais une photographie : la Terre entière, petite et seule contre le noir, vue d'un autre monde pour la première fois. Quoi que l'on pense des motifs de Guerre froide qui l'ont financée, cette image a changé la façon dont les gens voyaient le sol sous leurs propres pieds — une chose à garder précieusement alors qu'une ère spatiale plus bruyante et plus peuplée commence."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon la plus transposable d'Apollo n'a rien à voir avec les fusées. Elle concerne la manière de diriger un très grand nombre de personnes vers la même difficulté. Kennedy donna au programme un objectif qui était précis, audacieux et limité dans le temps — poser un équipage sur la Lune et le ramener sain et sauf, avant la fin de la décennie — et cette seule phrase fit ce qu'aucun organigramme n'aurait pu faire. Elle aligna 400 000 personnes qui ne se rencontreraient jamais, et elle rendit chaque décision lisible : est-ce que cela nous amène sur la Lune d'ici 1970, ou non ? Un objectif clair, daté, non négociable, contre lequel chacun peut vérifier son propre travail, coordonnera mieux que n'importe quelle hiérarchie."
+    },
+    {
+      "type": "prose",
+      "md": "La deuxième leçon vit dans le Mission Control. Apollo institutionnalisa un type particulier de travail d'équipe sous pression : des contrôleurs formés à rester en avance sur le véhicule, à s'exprimer quel que soit leur rang, et à résoudre les problèmes en tant que salle plutôt qu'en tant que chaîne de commandement. Quand Apollo 13 s'estropiait à 320 000 kilomètres de la Terre, aucun héros solitaire ne sauva l'équipage — une salle pleine de gens travailla le problème ensemble, contre la montre, et improvisa un chemin de retour. « Travailler le problème » vainquit la panique. Toute équipe confrontée à une crise peut emprunter cette habitude."
+    },
+    {
+      "type": "prose",
+      "md": "Et la note humaine à retenir : ils l'ont fait en huit ans, sans jamais l'avoir fait auparavant, avec des ordinateurs de bord plus faibles qu'une sonnette moderne. Apollo est un argument permanent qu'une mission claire, les bonnes personnes et une échéance honnête peuvent encore dépasser les probabilités — une chose utile à se rappeler la prochaine fois qu'un objectif semble impossible."
+    }
+  ]
+}

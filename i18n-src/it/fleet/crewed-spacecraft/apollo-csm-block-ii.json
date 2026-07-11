@@ -1,6 +1,7 @@
 {
   "name": "Apollo CSM Blocco II",
   "tagline": "Modulo di comando + servizio in grado di lunare",
+  "dispatch": "Il Command Module era l'unico pezzo di Apollo che tornava a casa — tutto il resto veniva consumato e abbandonato lungo il percorso. Questo lo rendeva la parte che non poteva fallire durante il rientro, e il rientro dalla Luna era la versione più difficile del problema: la capsula incontrava l'atmosfera a quasi undici chilometri al secondo, una volta e mezzo più veloce di qualsiasi cosa tornasse dall'orbita terrestre, avvolta in una palla di fuoco abbastanza calda da far bollire l'acciaio. La sua soluzione era uno scudo termico ablativo progettato per carbonizzarsi e staccarsi in modo controllato, portando via il calore con sé. Il Block II era la versione che trasportava gli equipaggi — la riprogettazione completa imposta dall'incendio dell'Apollo 1 — e riportò vivi tutti gli astronauti che partirono per la Luna.",
   "description": "Il modulo di comando e di servizio che portava gli astronauti Apollo in orbita lunare tra il 1968 e il 1972. Undici voli — tra cui la configurazione improvvisata di Apollo 13 — più tre visite Skylab e l’Apollo-Soyuz Test Project.",
   "best_known_for": "Modulo di comando + servizio in grado di lunare"
 }

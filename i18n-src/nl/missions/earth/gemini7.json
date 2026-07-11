@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "BEMAND AARDBAAN · GEVLOGEN",
+  "first": "14-daagse uithoudingsvlucht; rendezvous-doelwit voor Gemini 6A",
+  "dispatch": "Gemini 7 beantwoordde de minst glamoureuze maar meest fundamentele vraag: kon een bemanning overleven gedurende een reis naar de Maan en terug? Frank Borman en Jim Lovell brachten veertien dagen door opgesloten in een cabine ter grootte van de voorbank van een kleine auto — geen ruimte om te staan, zich uit te rekken, of aan elkaar te ontsnappen — om te bewijzen dat het menselijk lichaam en de geest het aankonden. Het was saai en fysiek ellendig, en het werkte: ze kwamen gezond terug, waarmee de angst verdween dat lange ruimtevluchten onmogelijk zouden zijn. Onderweg dienden ze ook als doelwit voor de rendezvous van Gemini 6A, zodat de enkele vlucht stilletjes twee van Apollo's vereisten tegelijk bewees — dat mensen de afstand konden volhouden, en dat twee schepen elkaar konden ontmoeten.",
+  "description": "Frank Borman en Jim Lovell voerden een 14-daagse, 206-omwentelingen durende uithoudingsmissie uit vanaf 4 december 1965 — de langste bemande ruimtevlucht tot op dat moment — en dienden als rendezvous-doelwit voor Gemini 6A. Het toonde aan dat een bemanning een ruimtevlucht van volledige maanmissie-duur kon doorstaan.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan II GLV (GT-7) vanaf Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZVOUS-DOELWIT",
+      "note": "Dient als doelwit voor de eerste bemande rendezvous van Gemini 6A.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic splashdown na 14 dagen / 206 omwentelingen.",
+      "type": "nominal"
+    }
+  ]
+}

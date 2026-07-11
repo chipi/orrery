@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · VOLADA",
+  "first": "Primer Gemini tripulado; primera maniobra orbital por una tripulación",
+  "dispatch": "Gemini 3 fue la prueba inicial — el primer vuelo de la nueva nave espacial de dos plazas, y la primera vez que una tripulación estadounidense cambió su propia órbita en lugar de limitarse a mantener la que el cohete les había dado. Gus Grissom la comandó, cuatro años después de que su cápsula Mercury se hundiera en el amerizaje, y nombró a esta \"Molly Brown\" en honor a la heroína insumergible — una pieza de humor negro que la oficina de relaciones públicas de la NASA no apreció. El vuelo en sí fue corto y deliberadamente modesto, tres órbitas para demostrar que la máquina volaba según lo diseñado. Pero ese pequeño acto de ajustar la órbita con propulsores a bordo fue el primer paso de todo aquello para lo que Gemini existía.",
+  "description": "Primer vuelo tripulado Gemini. Gus Grissom y John Young volaron tres órbitas el 23 de marzo de 1965, probando la nueva nave espacial de dos personas y realizando la primera maniobra orbital por un vehículo tripulado — encendiendo propulsores para cambiar la órbita. Grissom apodó a la cápsula \"Molly Brown\". Duración 4 h 52 m; amerizaje en el Atlántico.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Titan II GLV (GT-3) desde Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "MANIOBRA ORBITAL",
+      "note": "Primera maniobra orbital por una tripulación — los propulsores cambian la forma de la órbita.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "AMERIZAJE",
+      "note": "Amerizaje en el Atlántico tras 3 órbitas / 4 h 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

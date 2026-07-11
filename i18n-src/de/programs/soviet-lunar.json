@@ -1,0 +1,92 @@
+{
+  "name": "Sowjetisches Mondprogramm",
+  "tagline": "Das eine Rennen, das die Sowjetunion führte und verlor — ein geheimes, unterfinanziertes, zersplittertes Unterfangen zum Mond, dessen Riesenrakete viermal explodierte und zwanzig Jahre lang aus den Akten getilgt wurde.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Es hält sich der hartnäckige Mythos, dass nur die Amerikaner zum Mond rasten — dass die Sowjetunion, nachdem sie verloren hatte, stets behauptete, es nie versucht zu haben. Die zweite Hälfte stimmt; die erste nicht. Die UdSSR führte ein vollständiges bemanntes Mondprogramm durch, parallel zu Apollo und in völliger Geheimhaltung, und sie verlor. Dann verbrachte sie zwei Jahrzehnte damit, die Existenz des Programms zu leugnen, weshalb so wenige Menschen wissen, dass es existierte. Die Hardware war real, die Kosmonauten waren eingeteilt, und die Absicht war dieselbe wie die Amerikas: einen sowjetischen Bürger als ersten auf den Mond zu bringen."
+    },
+    {
+      "type": "prose",
+      "md": "Was dem sowjetischen Unterfangen fehlte, war alles, was Apollo zum Erfolg machte. Während die Vereinigten Staaten ihre gesamte nationale Anstrengung hinter einem Konstruktionsbüro und einer Rakete konzentrierten, war das sowjetische Programm zwischen rivalisierenden Chefkonstrukteuren aufgeteilt, die einander verachteten, erhielt einen Bruchteil dessen, was die NASA bekam, und war so vollständig verborgen, dass Misserfolg keine politischen Kosten verursachte — und daher keine politische Dringlichkeit erzeugte. Sergei Korolev, der einzige Mann, der es hätte vereinen können, verbrauchte seine Autorität im Kampf um Ressourcen und starb dann 1966 auf einem Operationstisch, mit neunundfünfzig, während das Programm noch Jahre vom Flug entfernt war. Es erholte sich nie."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/05"
+      },
+      "caption": "Die N1-Schwerlastrakete — die sowjetische Antwort auf die Saturn V. Ihre erste Stufe bündelte dreißig Triebwerke, weil kein einzelnes sowjetisches Triebwerk leistungsstark genug war und kein Teststand existierte, der groß genug war, um sie zusammen zu zünden.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Das Programm hatte zwei Ziele, verfolgt durch zwei getrennte Projekte. Das erste, L1/Zond, sollte einen einzelnen Kosmonauten um den Mond herum und zurück schleusen — ein zirkumlunarer Flug, keine Landung —, um den Propagandacoup der ersten Menschen in Mondnähe zu erzielen. Das zweite, L3, war der eigentliche Preis: einen Kosmonauten auf der Oberfläche landen. Beide hingen von Raketen ab, die die Sowjetunion noch nicht hatte, und die L3-Landung hing von der größten von allen ab: der N1, einem 105-Meter-Monster, dessen erste Stufe dreißig Triebwerke um ihre Basis packte, weil kein einzelnes sowjetisches Triebwerk an die Leistung des amerikanischen F-1 herankam."
+    },
+    {
+      "type": "prose",
+      "md": "Dieses Bündel aus dreißig Triebwerken war das entscheidende Wagnis des Programms und sein fataler Fehler. Dreißig Triebwerke bedeuteten Tausende von Möglichkeiten zu versagen, die alle im Zusammenspiel funktionieren mussten, damit die Rakete flog — und es gab in der Sowjetunion keine Anlage, die groß genug war, um die montierte erste Stufe am Boden zu testen. Also wurde die N1 auf die Art geflogen, wie man eine Rakete niemals fliegen sollte: komplett montiert und gestartet, wobei der erste vollständige Test des Antriebssystems der Start selbst war. Die NASA hatte genau diesen Ansatz für die Saturn V abgelehnt und auf erschöpfenden Bodentests bestanden. Die Sowjets konnten es sich nicht leisten, und es tötete das Programm."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/04"
+      },
+      "caption": "Die erste Stufe der N1 bündelte dreißig NK-15-Triebwerke in zwei Ringen. Ohne Möglichkeit, sie zusammen am Boden zu testen, war jeder Flug der erste integrierte Test — und alle vier endeten im Scheitern, einer zerstörte die Startrampe.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Die zirkumlunare Hälfte kam qualvoll nahe. Im September 1968, drei Monate vor Apollo 8, flog Zond 5 ein Raumschiff um den Mond und brachte es sicher zur Erde zurück — mit zwei Schildkröten an Bord, den ersten Lebewesen, die in Mondnähe reisten und zurückkehrten. Es war eine echte Premiere, und ihr hätte innerhalb von Wochen ein Kosmonaut auf derselben Flugbahn folgen sollen. Doch der Flug war rauer gewesen als zugegeben, Apollo 8 beförderte dann eine Besatzung bis in die Mondumlaufbahn und zurück, und sowjetische Manager beurteilten einen bemannten Zond-Flug als zu riskant für einen Preis, den die Amerikaner gerade vollständiger errungen hatten. Die Kosmonauten-Schleife wurde nie geflogen."
+    },
+    {
+      "type": "prose",
+      "md": "Die Landungshälfte scheiterte schlicht. Die N1 startete viermal zwischen 1969 und 1972, und jeder Start endete in Zerstörung. Der zweite Versuch im Juli 1969 — Tage vor Apollo 11 — verlor Sekunden nach dem Abheben Schub, fiel auf die Rampe zurück und detonierte in einer der größten nichtnuklearen Explosionen, die je aufgezeichnet wurden, und ebnete den Startkomplex ein. Als die Ingenieure begannen, die Fehlschläge zu verstehen, hatte Apollo bereits sechs Besatzungen gelandet. Das Programm wurde 1974 stillschweigend eingestellt, seine Raketen verschrottet, seine Rampen für andere Zwecke umgebaut und seine bloße Existenz geleugnet, bis die Sowjetunion selbst zu enden begann."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Der rote Faden des sowjetischen Mondprogramms ist, dass Geheimhaltung, die das sowjetische System als Stärke behandelte, in diesem Fall eine tödliche Schwäche war. Weil das Unterfangen verborgen war, brachten seine Misserfolge niemanden öffentlich in Verlegenheit, kosteten keinen Minister seinen Posten und erzeugten keinen der äußeren Drücke, die die NASA zwangen, ehrlich über Risiken zu sein. Apollos Katastrophen — vor allem das Apollo-1-Feuer — geschahen in der Öffentlichkeit und erzwangen brutale, rechenschaftspflichtige Reformen. Die Fehlschläge der N1 geschahen im Dunkeln, wurden intern zugeschoben und änderten nichts schnell genug. Ein Programm, das niemand beobachten darf, ist ein Programm, das niemand gezwungen ist zu reparieren."
+    },
+    {
+      "type": "prose",
+      "md": "Der zweite Strang ist die Zersplitterung. Die Vereinigten Staaten bauten Apollo als einheitliche nationale Anstrengung unter einer Behörde. Das sowjetische Programm war eine Fehde: Korolevs Büro gegen das von Vladimir Chelomei, beide gegen den Triebwerkskonstrukteur Valentin Glushko, der sich weigerte, die Triebwerke zu bauen, die Korolev wollte, und dessen spätere Übernahme des Programms der Akt war, der die N1 endgültig tötete. Drei brillante Männer, drei konkurrierende Raketen, ein ausgehungertes Budget zwischen ihnen aufgeteilt. Konzentrierte Kraft landet auf dem Mond; geteilte Kraft baut drei halbfertige Raketen und fliegt keine von ihnen erfolgreich."
+    },
+    {
+      "type": "prose",
+      "md": "Es gibt eine merkwürdige Koda. Die NK-15-Triebwerke der N1, verfeinert zur NK-33, erwiesen sich als hervorragend — einige der besten Raketentriebwerke, die je gebaut wurden. Als das Programm eingestellt wurde, befahl Glushko ihre Zerstörung; stattdessen versteckten die Ingenieure rund hundert von ihnen zwanzig Jahre lang in einem Lager. In den 1990er Jahren wurden sie wiederentdeckt, an amerikanische Unternehmen verkauft und flogen — sowjetische Mondraketen-Triebwerke, Jahrzehnte später, die amerikanische Raketen hoben. Die Rakete scheiterte; ihre Triebwerke waren ein Triumph, den niemand verwenden durfte, bis das Land, das sie baute, verschwunden war."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/02"
+      },
+      "caption": "Ein US-Aufklärungsbild eines N1-Modells in Baikonur, Ende 1967. Zwei Jahrzehnte lang bestand die Sowjetunion darauf, dass die Mondrakete nicht existierte; für die Außenwelt war sie hauptsächlich durch amerikanische Spionagefotos wie dieses bekannt.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Das Erbe des sowjetischen Mondprogramms ist größtenteils Abwesenheit — die Landung, die nie stattfand, die Rakete, die nie funktionierte, die zwanzigjährige Stille. Doch die Abwesenheit selbst ist lehrreich. Sie ist das klarste Gegenbeispiel zu Apollo im gesamten Raumfahrtzeitalter: dasselbe Ziel, dasselbe Jahrzehnt, vergleichbares ingenieurstechnisches Talent und ein völlig anderes Ergebnis, getrieben nicht durch einen Mangel an Fähigkeit, sondern durch Geheimhaltung, Zersplitterung und ausgehungerte Ressourcen. Wenn Apollo zeigt, was ein konzentriertes, rechenschaftspflichtiges, offen finanziertes Programm leisten kann, zeigt das sowjetische Mondunterfangen, was geschieht, wenn jede dieser Bedingungen fehlt."
+    },
+    {
+      "type": "prose",
+      "md": "Seine Hardware wirkte vorwärts. Die Soyuz-7K-LOK-Mondvariante beeinflusste die Soyuz, die noch heute fliegt; das kompakte Einmann-Design des LK-Landers beeinflusste späteres Denken; die NK-33-Triebwerke flogen schließlich. Und die ehrliche Aufarbeitung des Programms, nachdem die Geheimhaltung aufgehoben wurde, wurde Teil dessen, wie das Raumfahrtzeitalter heute erzählt wird — nicht als Einpferderennen, das die Amerikaner standardmäßig gewannen, sondern als echter Wettbewerb, den die Sowjetunion aufnahm, hart führte und aus Gründen verlor, die wenig mit Raketentechnik und alles damit zu tun hatten, wie das Unterfangen organisiert und verborgen wurde."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die härteste Lektion des Programms ist, dass man den Bodentest nicht überspringen kann. Die N1 wurde montiert-und-gestartet geflogen, weil der Sowjetunion ein Teststand fehlte, um dreißig Triebwerke zusammen zu zünden — und so war jeder Flug der erste integrierte Test des komplexesten Teils der Rakete, ohne Chance, die Fehler irgendwo anders als in der Luft zu finden. NASAs Bestehen auf erschöpfenden Bodentests der Saturn V wirkte langsam und teuer; es war der Grund, warum die Saturn V im Flug nie versagte. Wenn man es sich nicht leisten kann, ordentlich zu testen, hat man die Rakete nicht billiger gemacht — man hat die Kosten auf die Flüge verlagert, und dort werden sie fällig."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Lektion ist, dass Geheimhaltung und Rechenschaftspflicht Gegensätze sind und dass ein Programm das zweite mehr braucht, als es den Verlust des ersten fürchtet. Die Verheimlichung des sowjetischen Unterfangens schützte es vor öffentlicher Blamage und entzog ihm damit jede äußere Kraft, die es hätte zwingen können, seine Probleme rechtzeitig anzugehen. Apollo war gezwungen, ehrlich zu sein, weil die ganze Welt zusah; die N1 durfte still scheitern, viermal, weil niemand zusah. Sichtbarkeit ist nicht nur ein zu steuerndes Risiko. Für ein hartes, unnachgiebiges Unterfangen ist sie eines der Dinge, die Erfolg überhaupt erst möglich machen."
+    }
+  ]
+}

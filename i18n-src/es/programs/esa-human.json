@@ -1,0 +1,88 @@
+{
+  "name": "ESA — Europa en los vuelos espaciales tripulados",
+  "tagline": "Europa nunca construyó una nave espacial tripulada propia — y aun así se volvió indispensable para los vuelos espaciales tripulados, al elegir la asociación en lugar de la independencia y dominar las piezas que nadie más quería construir.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Europa tomó una decisión deliberada e inusual sobre los vuelos espaciales tripulados: decidió no construir una nave espacial tripulada propia. Donde Estados Unidos, la Unión Soviética y posteriormente China desarrollaron cada uno el conjunto completo — cohetes, cápsulas, la capacidad de lanzar a sus propios ciudadanos — Europa, actuando colectivamente a través de la Agencia Espacial Europea, optó en cambio por ser el mejor socio posible. Transportaría a sus astronautas en vehículos de otras naciones, y contribuiría con las capacidades que hacían funcionar la empresa compartida. Es un camino más discreto que una carrera espacial nacional, y resultó ser extraordinariamente eficaz."
+    },
+    {
+      "type": "prose",
+      "md": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de la ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la Estación Espacial Internacional, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la ISS, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "La Estación Espacial Internacional, de la cual Europa es socio de pleno derecho. El laboratorio Columbus de la ESA es parte permanente de ella, y los astronautas europeos han vivido a bordo y la han comandado — el fruto de la decisión de unirse en lugar de actuar en solitario.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "El objetivo de Europa era tener relevancia en los vuelos espaciales tripulados sin asumir el costo y el riesgo completos de un programa tripulado independiente. Eso significaba especializarse — construir los laboratorios donde se hace la ciencia, las naves de carga que mantienen abastecidas las estaciones y los módulos que las amplían, y formar astronautas que pudieran volar en cualquier vehículo que proporcionara una asociación. En lugar de duplicar lo que otros ya tenían, Europa se propuso suministrar lo que la empresa compartida necesitaba y no podía prescindir fácilmente."
+    },
+    {
+      "type": "prose",
+      "md": "La estrategia tenía una fortaleza oculta: contribuir con una pieza esencial compra un asiento permanente en la mesa. Al construir Spacelab, Europa ganó un lugar a bordo del Shuttle; al construir Columbus y el ATV, se convirtió en socio pleno e igualitario de la Estación Espacial Internacional, con su propio laboratorio y su propia nave de reabastecimiento indispensable. Una nación que solo comprara asientos sería un cliente; Europa, al construir capacidades de las que otros dependían, se convirtió en socio — con voz real en la empresa."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/atv/02"
+      },
+      "caption": "El Automated Transfer Vehicle — el carguero de Europa para la ISS. Veinte toneladas completamente cargado, volaba solo hacia un acoplamiento automático con la Estación, entregaba carga, agua, aire y propelente, y usaba sus motores para elevar la órbita de la ISS.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Los resultados fueron sustanciales y distintivamente europeos. Spacelab voló en 22 misiones Shuttle entre 1983 y 1998, dando a Europa dos décadas de ciencia tripulada práctica y una generación de astronautas experimentados. Columbus, instalado en 2008, dio a Europa un laboratorio permanente en órbita y la convirtió en socio de primer rango en la estructura más grande que los humanos han construido jamás. Y el Automated Transfer Vehicle — cinco enormes cargueros volados entre 2008 y 2015, cada uno nombrado en honor a un pensador europeo desde Jules Verne hasta Georges Lemaître — hizo algo genuinamente avanzado: una nave espacial de veinte toneladas que navegaba por sí misma hacia un acoplamiento totalmente automático con la ISS, entregaba suministros y combustible, y reimpulsaba toda la Estación con sus motores."
+    },
+    {
+      "type": "prose",
+      "md": "Esa experiencia del ATV luego pagó un dividendo inesperado. La tecnología que Europa desarrolló para construir una nave espacial que volaba sola y se acoplaba a la ISS se convirtió en la base del European Service Module — la parte que Europa ahora construye para Orion de la NASA, la nave espacial que lleva astronautas de vuelta hacia la Luna bajo Artemis. El módulo de servicio suministra la energía, propulsión, aire y agua de Orion: la sección que mantiene viva a la tripulación camino a la órbita lunar y de regreso. Un continente que nunca construyó su propia nave espacial tripulada ahora construye la mitad de una estadounidense sin la cual sus astronautas no pueden sobrevivir."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "El hilo conductor de los vuelos espaciales tripulados de Europa es que la asociación, bien hecha, no es un camino menor que la independencia — es un camino diferente y a veces más fuerte. Al aunar los recursos de muchas naciones a través de la ESA y especializarse en las capacidades que otros necesitaban, Europa logró un papel en los vuelos espaciales tripulados mucho mayor de lo que cualquier país europeo individual podría haber costeado solo, y mayor de lo que el tamaño de su presupuesto sugeriría. Nunca tuvo la autonomía de una nación que lanza sus propias tripulaciones; tuvo, en cambio, el apalancamiento de ser indispensable para quienes sí lo hacen."
+    },
+    {
+      "type": "prose",
+      "md": "El ATV es la expresión más clara de esto. No fue un proyecto de prestigio ni una entrada en una carrera; fue una pieza de infraestructura supremamente capaz — un carguero automatizado más avanzado en su acoplamiento y su capacidad de carga que cualquier otra cosa volando — que hizo a Europa central para mantener viva a la ISS. Y porque Europa había construido esa capacidad, estaba posicionada para construir lo siguiente: el módulo de servicio Orion, y con él un lugar en el regreso de la humanidad a la Luna. Dominar un nicho poco glamuroso condujo, paso a paso, a una participación en el programa tripulado más ambicioso del nuevo siglo."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "La Estación Espacial Internacional — la empresa que Europa ayudó a construir y sostener, y la prueba de que una nación puede moldear los vuelos espaciales tripulados profundamente sin jamás lanzar una tripulación propia.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "El legado de Europa en los vuelos espaciales tripulados es tanto un modelo como un conjunto de hardware: prueba de que una potencia espacial de tamaño medio puede importar enormemente al asociarse en lugar de competir, al aunar los recursos de muchas naciones y al construir las piezas esenciales de las que otros dependen en lugar de duplicar lo que ya existe. Columbus sigue en órbita; los astronautas europeos siguen volando y comandando; y los descendientes del ATV ahora transportan humanos hacia la Luna. Nada de esto requirió una nave espacial tripulada europea independiente, y ese es precisamente el punto."
+    },
+    {
+      "type": "prose",
+      "md": "Es también el complemento en vuelos espaciales tripulados de Ariane. Donde Ariane aseguró el *acceso* independiente de Europa al espacio, su programa tripulado aseguró el *lugar* de Europa en el espacio — un asiento permanente y respetado en la empresa internacional, ganado por contribución en lugar de reclamado por bandera. Juntos definen una manera distintivamente europea de ser una gran potencia espacial: autónoma donde debe serlo, colaborativa donde eso es más fuerte, e indispensable de cualquier modo."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La primera lección es que no tienes que construir todo tú mismo para ser esencial. Europa nunca desarrolló una nave espacial tripulada independiente, pero al dominar laboratorios, carga y módulos se convirtió en un socio del que ningún programa importante de vuelos espaciales tripulados podía prescindir fácilmente. Contribuir con una capacidad distintiva y genuinamente necesaria compra más influencia duradera que intentar replicar, con menor calidad, lo que otros ya hacen bien. La especialización, no la duplicación, fue la ruta de Europa hacia la relevancia."
+    },
+    {
+      "type": "prose",
+      "md": "La segunda lección es que la asociación multiplica un presupuesto limitado. Al combinar los recursos de muchas naciones a través de una sola agencia e invertirlos en capacidades que ganaron un papel permanente, Europa logró mucho más en vuelos espaciales tripulados de lo que su gasto por sí solo predeciría — y convirtió el dominio de un nicho, la carga automatizada, en una participación en el regreso a la Luna. Para una potencia que no puede gastar más que los gigantes, ser indispensable es una mejor estrategia que ser independiente, y Europa lo ha hecho funcionar durante cuarenta años."
+    }
+  ]
+}

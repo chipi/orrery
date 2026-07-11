@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "BEMANNT ERDORBIT · GEFLOGEN",
+  "first": "EVA gelöst — Aldrins Weltraumausstiege; letztes Gemini",
+  "dispatch": "Beim letzten Gemini war ein Problem noch ungelöst: Weltraumausstiege funktionierten nicht. Die Flüge zwischen Ed White und Gemini 12 hatten EVA in eine Reihe erschöpfender Beinahe-Misserfolge verwandelt — Astronauten, die für jede Bewegung kämpften, überhitzten, die Zeit verloren. Buzz Aldrin löste es, und die Lösung war Vorbereitung: er probte das Ganze unter Wasser, bis es Routine war, und das Raumfahrzeug wurde mit Haltegriffen, Fußstützen und Halteleinen ausgestattet, damit er etwas hatte, wogegen er arbeiten konnte. Über mehr als fünf Stunden draußen erledigte er gewöhnliche Aufgaben ruhig und kam unverbraucht zurück — der Beweis, dass EVA zuverlässig gemacht werden konnte. Es war der letzte Punkt auf der Gemini-Checkliste, und damit schloss das Programm ab, nachdem es die NASA alles gelehrt hatte, was der Mond erfordern würde.",
+  "description": "James Lovell und Buzz Aldrin flogen das letzte Gemini, 11.–15. November 1966. Aldrins drei EVAs mit insgesamt 5 h 30 m — unterstützt durch Unterwassertraining, Haltegriffe und Fußstützen — zeigten endlich, dass nützliche Arbeit im Weltraum geleistet werden konnte, und lösten die EVA-Schwierigkeiten früherer Flüge. 59 Orbits.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II GLV (GT-12) von Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA GEMEISTERT",
+      "note": "Aldrins EVAs (5 h 30 m insgesamt) mit Haltegriffen + Unterwassertraining beweisen, dass Weltraumausstiege Routine werden können.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "WASSERLANDUNG",
+      "note": "Atlantik-Wasserlandung nach 4 Tagen / 59 Orbits — das letzte Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

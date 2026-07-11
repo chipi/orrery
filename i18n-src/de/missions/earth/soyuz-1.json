@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 1",
+  "type": "BEMANNT ERDORBIT · VERLOREN",
+  "first": "Erster Soyuz-Flug — Fallschirmversagen tötete Vladimir Komarov (erster Todesfall während eines Raumflugs)",
+  "dispatch": "Soyuz 1 ist der Flug, der einen Kosmonauten tötete, und er hätte nie stattfinden dürfen. Das neue Soyuz-Raumschiff wurde unter politischem Druck mit Hunderten bekannter ungelöster Mängel in Dienst gestellt — Ingenieure flehten Berichten zufolge um Verzögerung — und im Orbit begann es zu versagen: ein Solarpanel ließ sich nicht ausfahren, die Lageregelung kämpfte gegen den Piloten. Vladimir Komarov flog es trotzdem herunter, und beim Wiedereintritt verhedderten sich die Fallschirme und versagten. Er schlug mit voller Geschwindigkeit auf dem Boden auf. Es war der erste Todesfall in der Geschichte der bemannten Raumfahrt, und seine Ursache war weniger Pech als ein Programm, das es sich nicht leisten konnte zuzugeben, dass seine Maschine nicht bereit war — genau jenes Versagen, auf das die Kultur der geheimen, unbedingt erfolgreichen Premieren hingearbeitet hatte.",
+  "description": "Der erste bemannte Flug des Soyuz-Raumschiffs, gestartet am 23. April 1967 mit Vladimir Komarov an Bord. Das übereilte Fahrzeug erlitt kaskadierende Ausfälle im Orbit — ein nicht ausgefahrenes Solarpanel, Probleme mit der Lageregelung — und die Mission wurde vorzeitig abgebrochen. Beim Wiedereintritt öffnete sich der Bremsfallschirm, doch der Hauptfallschirm entfaltete sich nicht ordnungsgemäß; das Abstiegsmodul schlug nahezu mit Endgeschwindigkeit auf dem Boden auf und Komarov wurde getötet — der erste Todesfall während eines Fluges in der Geschichte der Raumfahrt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Soyuz 11A511 von Baikonur, 1967-04-23 00:35 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "SYSTEMAUSFÄLLE",
+      "note": "Solarpanel lässt sich nicht ausfahren; Lageregelung verschlechtert sich — Mission vorzeitig abgebrochen.",
+      "type": "warning"
+    },
+    {
+      "met": 1.1,
+      "label": "FALLSCHIRMVERSAGEN",
+      "note": "Hauptfallschirm versagt beim Wiedereintritt; Abstiegsmodul schlägt mit hoher Geschwindigkeit auf. Komarov getötet.",
+      "type": "warning"
+    }
+  ]
+}

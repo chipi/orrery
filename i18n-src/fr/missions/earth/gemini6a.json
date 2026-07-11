@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Premier rendez-vous spatial habité",
+  "dispatch": "Le rendez-vous — deux engins spatiaux se trouvant et se rejoignant en orbite — était la compétence dont Apollo ne pouvait se passer, et Gemini 6A est la mission où elle fut accomplie pour la première fois. Le vol a failli ne pas avoir lieu : sa cible initiale a explosé en route vers l'orbite, puis, sanglés pour le lancement reprogrammé, les moteurs du Titan se sont allumés et brusquement éteints sur l'aire — un moment où les règles disaient de s'éjecter, et Wally Schirra, ne ressentant aucun mouvement, choisit calmement de ne pas le faire. Trois jours plus tard, la mission décolla et accomplit ce qui n'avait jamais été fait : rattraper Gemini 7 et maintenir une station à trente centimètres de distance, les équipages assez proches pour lire les expressions de leurs visages. Cela semblait facile mais ne l'était absolument pas — la mécanique orbitale pour rattraper un autre engin est profondément contre-intuitive — et la résoudre fut le moment où le rendez-vous en orbite lunaire, et tout le plan Apollo, devinrent réels.",
+  "description": "Wally Schirra et Tom Stafford ont réalisé le premier rendez-vous spatial habité le 15 décembre 1965, maintenant une station à ~30 cm de Gemini 7 pendant plus de cinq heures. Il fit suite à un arrêt des moteurs sur l'aire de lancement trois jours plus tôt que Schirra choisit de ne pas interrompre. Durée ~1 j 1 h ; 16 orbites.",
+  "events": [
+    {
+      "met": 0,
+      "label": "ARRÊT SUR L'AIRE",
+      "note": "1965-12-12 : les moteurs s'allument puis s'arrêtent sur l'aire ; Schirra ne s'éjecte pas.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-6A) depuis Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "RENDEZ-VOUS",
+      "note": "Premier rendez-vous habité — maintient une station à ~30 cm de Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "AMERRISSAGE",
+      "note": "Amerrissage dans l'Atlantique après ~1 j 1 h / 16 orbites.",
+      "type": "nominal"
+    }
+  ]
+}

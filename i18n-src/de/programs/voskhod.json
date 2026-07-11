@@ -1,0 +1,88 @@
+{
+  "name": "Voskhod",
+  "tagline": "Die übereilte Notlösung, die zwei weitere Premieren — eine Besatzung und einen Weltraumausstieg — aus ausgereizte Hardware herauspresste und dabei beinahe Menschen tötete.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "1964 war der leichte Teil vorbei. Vostok hatte seine Premieren errungen, aber die Amerikaner bauten Gemini — ein zweisitziges Raumfahrzeug, das tatsächlich manövrieren, rendezvousen und andocken konnte — und sobald es flog, würde der sowjetische Vorsprung verdampfen. Nikita Chruschtschow wollte mehr Schlagzeilen, bevor das passierte, und er drängte Sergei Koroljow, sie zu liefern. Es war kein neues sowjetisches Raumfahrzeug fertig. Also tat Koroljows Team das Einzige, was der Zeitplan zuließ: Sie nahmen die einsitzige Vostok und modifizierten sie, um Dinge zu tun, für die sie nie konzipiert war."
+    },
+    {
+      "type": "prose",
+      "md": "Das Ergebnis war Voskhod, und es existierte zu einem einzigen Zweck — weiterhin Premieren zu erzielen, noch ein bisschen länger, mit geliehener Hardware und geliehenem Spielraum. Es war weniger ein Programm als ein Paar Kunststücke, die vollbracht wurden, bevor die Konkurrenz aufholen konnte: eine mehrköpfige Besatzung und ein Mensch, der nach draußen ins Vakuum trat. Beides waren echte Meilensteine. Beides war weitaus gefährlicher, als die ruhigen sowjetischen Verlautbarungen erkennen ließen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/voskhod/01"
+      },
+      "caption": "Voskhod — eine Vostok, ihrer Schleudersitzes beraubt und umgepackt, um mehr Besatzung zu befördern. Der Platz für drei kam auf Kosten des Rettungssystems und, beim ersten Flug, der Druckanzüge.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhod hatte genau zwei Ziele, beide definiert durch das, was Gemini zuvorkommen würde: mehr als eine Person auf einmal fliegen und einen Menschen außerhalb des Raumfahrzeugs platzieren. Um drei Kosmonauten in eine für einen gebaute Kapsel zu packen, rissen die Ingenieure den Schleudersitz heraus, der jeden Vostok-Piloten gerettet hatte — was bedeutete, dass die Besatzung keinen Ausweg hatte, falls beim Start oder bei der Landung etwas schiefging. Beim ersten Flug war nicht einmal Platz für Druckanzüge. Es war ein kalkuliertes Wagnis, dass nichts schiefgehen würde, eingegangen, um einen Vorsprung zu halten."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/voskhod-1/01"
+      },
+      "caption": "Voskhod 1s dreiköpfige Besatzung — Komarow, Feoktistow, Jegorow — der erste Raumflug mit mehreren Personen, in Hemdsärmeln geflogen, ohne Anzüge und ohne Rettungssystem.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Die Wagnisse zahlten sich aus, knapp. Im Oktober 1964 beförderte Voskhod 1 die erste dreiköpfige Besatzung — in Hemdsärmeln, keine Anzüge, keine Schleudersitze — einen Tag lang um die Erde und kehrte sicher zurück. Fünf Monate später tat Voskhod 2 das Schwierigere: Alexei Leonow öffnete eine Luke und schwebte beim ersten Weltraumausstieg der Geschichte ins Vakuum. Dann ging es auf jede erdenkliche Weise fast schief. Leonows Anzug blähte sich im Vakuum so starr auf, dass er nicht durch die Luftschleuse zurückkommen konnte, und er musste seinen eigenen Luftdruck ablassen — mit dem Risiko einer Dekompressionskrankheit —, um sich hineinzuzwängen. Das automatische Wiedereintrittsystem versagte; die Besatzung flog es manuell herunter und landete hunderte Kilometer vom Ziel entfernt in tiefen sibirischen Wäldern, wo sie eine eiskalte Nacht von Wölfen umgeben verbrachten, bevor Retter auf Skiern sie erreichen konnten."
+    },
+    {
+      "type": "prose",
+      "md": "Zwei Flüge, zwei weitere Premieren und zwei Beinahe-Katastrophen, über die der Welt jahrzehntelang nichts erzählt wurde. Koroljow sah, wie knapp Voskhod 2 davongekommen war, und strich den Rest des Programms. Die Hardware hatte keinen Spielraum mehr, und es gab keine Premieren mehr, die das Risiko wert waren — die nächste echte Fähigkeit, wie alles, was Apollo brauchen würde, musste von einem Raumfahrzeug kommen, das noch nicht existierte."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Voskhod ist das, wonach ein Programm aussieht, wenn die Schlagzeilen den Zeitplan bestimmen. Jede Entscheidung — keine Anzüge, keine Schleudersitze, eine aufblasbare Luftschleuse an eine einsitzige Kapsel geschraubt — war eine Abkürzung, um eine Premiere vor Gemini zu erzielen, und jede verlagerte das Risiko vom Reißbrett auf die Besatzung. Es funktionierte zweimal, und genau das ist das Problem: Erfolg mit knappen Spielräumen lehrt die falsche Lektion, dass die Spielräume nicht nötig waren."
+    },
+    {
+      "type": "prose",
+      "md": "Der Leonow-Weltraumausstieg ist das gesamte Programm im Kleinen — eine echte, mutige Premiere, die die Öffentlichkeit als mühelos sah und die ihren Kosmonauten um Haaresbreite getötet hätte, leise, außerhalb der Kamera. Diese Kluft zwischen der triumphalen Ankündigung und der Beinahe-Katastrophe darunter ist das Wahrste an Voskhod und an der Art, wie das frühe sowjetische Programm raste: brillant, öffentlich und mit weit weniger Spielraum, als irgendjemand wissen durfte."
+    },
+    {
+      "type": "prose",
+      "md": "Nach Voskhod 2 hörte das sowjetische Programm auf, Vostok zu strapazieren, und wandte sich Soyuz zu — einem echten Raumfahrzeug der zweiten Generation, das manövrieren und andocken konnte — und einem geheimen Versuch zum Mond. Die Ära der leichten Premieren war vorbei; von hier an würde das Rennen auf Fähigkeiten ausgetragen werden, und das war Terrain, das die Amerikaner mit Gemini im Begriff waren zu erobern."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/voskhod-2/02"
+      },
+      "caption": "Alexei Leonows Weltraumausstieg, März 1965 — der erste Mensch im offenen Weltraum und eine der knappsten Beinahe-Katastrophen, die die Ära hervorbrachte.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhods Vermächtnis sind zwei bleibende Premieren — die erste Besatzung und der erste Weltraumausstieg — und eine warnende Geschichte, die direkt neben ihnen steht. Die Premieren sind echt und können nicht weggenommen werden; jede mehrköpfige Besatzung und jeder Weltraumausstieg seither führt zurück zu diesen beiden Flügen. Aber Voskhod ist auch der Moment, in dem die sowjetische Strategie der Premieren ihre Grenze erreichte: Es hatte keine neuen Dinge mehr gegeben, die eine modifizierte Vostok tun konnte, und hatte beim letzten davon beinahe Menschen getötet."
+    },
+    {
+      "type": "prose",
+      "md": "Historisch markiert es eine Übergabe. Voskhod 2 flog im März 1965; Geminis eigenes Programm begann Wochen später und übernahm in den folgenden zwanzig Monaten methodisch den Vorsprung, den die Sowjets seit Sputnik gehalten hatten — Rendezvous, Andocken, Ausdauer, EVA zur Routine gemacht. Voskhod ist das letzte Mal, dass die Sowjetunion klar vorne lag. Was danach kam, auf beiden Seiten, würde nicht dadurch entschieden, wer zuerst war, sondern wer die tiefere Fähigkeit aufgebaut hatte."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Voskhods Lektion ist die Gefahr, mit geliehenem Spielraum zu rasen. Die Schleudersitze und die Druckanzüge wegzulassen, eine Luftschleuse an eine Kapsel zu schrauben, die nicht dafür gebaut war — jede Abkürzung erkaufte eine Schlagzeile und verlagerte ein echtes Risiko auf echte Menschen, und das Programm kam zweimal damit davon. Aber davonzukommen ist nicht dasselbe wie sicher zu sein, und Erfolg mit knappen Spielräumen ist eine Falle: Es lehrt eine Organisation leise, dass die Sicherheit, die sie verworfen hat, nie notwendig war, bis zu dem Flug, bei dem sie es ist."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Lektion ist, wofür eine Notlösung da ist und wofür nicht. Voskhod tat genau eine Sache gut — es kaufte Zeit und zwei weitere Premieren, während das echte Raumfahrzeug der nächsten Generation gebaut wurde. Das ist eine legitime Verwendung improvisierter Hardware. Der Fehler wäre gewesen, weiter damit zu fliegen, Schlagzeilen hinterherzujagen, über den Punkt hinaus, an dem der Spielraum aufgebraucht war — und zu Koroljows Verdienst las er die Beinahe-Katastrophe richtig und hörte auf. Zu wissen, wann eine Notlösung ihre Aufgabe erfüllt hat, ist genauso wichtig wie eine zu bauen."
+    }
+  ]
+}

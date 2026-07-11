@@ -1,0 +1,92 @@
+{
+  "name": "Sovjet Maanprogramma",
+  "tagline": "De ene race die de Sovjet-Unie liep en verloor — een geheime, uitgehongerde, verdeelde poging voor de Maan waarvan de gigantische raket vier keer ontplofte en twintig jaar lang uit de boeken werd gewist.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Er bestaat een hardnekkige mythe dat alleen de Amerikanen naar de Maan raceten — dat de Sovjet-Unie, na het verlies, altijd beweerde nooit geprobeerd te hebben. De tweede helft is waar; de eerste niet. De USSR voerde een volledig bemand maanprogramma uit, parallel aan Apollo en in volkomen geheimhouding, en verloor. Daarna ontkende het twee decennia lang dat het programma ooit bestaan had, waardoor zo weinig mensen weten dat het wel bestond. De hardware was echt, de kosmonauten waren toegewezen, en de bedoeling was dezelfde als die van Amerika: als eerste een Sovjet-burger op de Maan zetten."
+    },
+    {
+      "type": "prose",
+      "md": "Wat de Sovjet-inspanning miste was alles wat Apollo deed werken. Waar de Verenigde Staten hun hele nationale inspanning concentreerden achter één ontwerpbureau en één raket, was het Sovjet-programma verdeeld tussen rivaliserende hoofdontwerpers die elkaar verachtten, gefinancierd met een fractie van wat NASA ontving, en zo volledig verborgen dat falen geen politieke kosten met zich meebracht — en daardoor geen politieke urgentie genereerde. Sergej Korolev, de enige man die het had kunnen verenigen, besteedde zijn gezag aan het vechten voor middelen en stierf toen op een operatietafel in 1966, op negenenvijftigjarige leeftijd, terwijl het programma nog jaren van een vlucht verwijderd was. Het herstelde nooit."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/05"
+      },
+      "caption": "De N1 superzware raket — het Sovjet-antwoord op de Saturn V. De eerste trap clusterde dertig motoren omdat geen enkele Sovjet-motor krachtig genoeg was, en geen teststand groot genoeg bestond om ze samen te testen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het programma had twee doelen, nagestreefd door twee afzonderlijke projecten. De eerste, L1/Zond, was om een enkele kosmonaut rond de Maan en terug te laten vliegen — een circumlunaire vlucht, geen landing — om de propagandacoup te scoren van de eerste mensen die de omgeving van de Maan bereikten. De tweede, L3, was de echte prijs: een kosmonaut op het oppervlak laten landen. Beide waren afhankelijk van raketten die de Sovjet-Unie nog niet had, en de L3-landing was afhankelijk van de grootste van allemaal: de N1, een monster van 105 meter waarvan de eerste trap dertig motoren rond de basis had omdat geen enkele Sovjet-motor in de buurt kwam van de kracht van de Amerikaanse F-1."
+    },
+    {
+      "type": "prose",
+      "md": "Die cluster van dertig motoren was de bepalende gok van het programma en zijn fatale fout. Dertig motoren betekende duizenden manieren om te falen, die allemaal in harmonie moesten werken om de raket te laten vliegen — en er was geen faciliteit in de Sovjet-Unie groot genoeg om de geassembleerde eerste trap op de grond te testen. Dus werd de N1 gevlogen op de manier waarop je een raket nooit zou moeten vliegen: volledig geassembleerd en gelanceerd, waarbij de eerste volledige test van het voortstuwingssysteem de lancering zelf was. NASA had precies deze aanpak voor de Saturn V afgewezen en erop aangedrongen eerst uitgebreid op de grond te testen. De Sovjets konden het zich niet veroorloven, en het doodde het programma."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/04"
+      },
+      "caption": "De eerste trap van de N1 clusterde dertig NK-15-motoren in twee ringen. Zonder mogelijkheid om ze samen op de grond te testen, was elke vlucht de eerste geïntegreerde test — en alle vier eindigden in falen, waarbij één de lanceerbasis vernietigde.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "De circumlunaire helft kwam pijnlijk dichtbij. In september 1968, drie maanden voor Apollo 8, vloog Zond 5 een ruimtevaartuig rond de Maan en bracht het veilig terug naar de Aarde — met twee schildpadden aan boord, de eerste levende wezens die naar de omgeving van de Maan reisden en terugkeerden. Het was een oprechte primeur, en het had binnen weken gevolgd moeten worden door een kosmonaut op dezelfde baan. Maar de vlucht was ruiger geweest dan toegegeven, Apollo 8 bracht vervolgens een bemanning helemaal naar een maanbaan en terug, en Sovjet-managers beoordeelden een bemande Zond als te riskant voor een prijs die de Amerikanen net vollediger hadden opgeëist. De kosmonaut-loop werd nooit gevlogen."
+    },
+    {
+      "type": "prose",
+      "md": "De landingshelft faalde simpelweg. De N1 werd tussen 1969 en 1972 vier keer gelanceerd, en elke lancering eindigde in vernietiging. De tweede poging, in juli 1969 — dagen voor Apollo 11 — verloor stuwkracht seconden na de lancering, viel terug op zijn platform en ontplofte in een van de grootste niet-nucleaire explosies ooit geregistreerd, waarbij het lanceercomplex werd platgelegd. Tegen de tijd dat de ingenieurs de fouten begonnen te begrijpen, had Apollo al zes bemanningen geland. Het programma werd stilletjes geannuleerd in 1974, zijn raketten werden gesloopt, zijn platforms herbouwd voor ander gebruik, en zijn bestaan zelf werd ontkend totdat de Sovjet-Unie zelf begon te eindigen."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De rode draad van het Sovjet-maanprogramma is dat geheimhouding, die het Sovjet-systeem als een kracht beschouwde, in dit geval een fatale zwakte was. Omdat de inspanning verborgen was, brachten de mislukkingen publiekelijk niemand in verlegenheid, kostten ze geen minister zijn baan, en produceerden ze geen van de externe druk die NASA dwong eerlijk te zijn over risico. Apollo's rampen — vooral de Apollo 1-brand — gebeurden in het openbaar en dwongen brutale, verantwoordelijke hervorming af. De mislukkingen van de N1 gebeurden in het duister, werden intern de schuld gegeven, en veranderden niets snel genoeg. Een programma dat niemand mag bekijken is een programma dat niemand gedwongen wordt te repareren."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede draad is verdeeldheid. De Verenigde Staten bouwden Apollo als één nationale inspanning onder één agentschap. Het Sovjet-programma was een vete: het bureau van Korolev tegen dat van Vladimir Chelomei, beide tegen de motorontwerper Valentin Glushko, die weigerde de motoren te bouwen die Korolev wilde en wiens uiteindelijke overname van het programma de daad was die de N1 definitief doodde. Drie briljante mannen, drie concurrerende raketten, één uitgehongerd budget verdeeld tussen hen. Geconcentreerde kracht landt op de Maan; verdeelde kracht bouwt drie halfafgebouwde raketten en vliegt er geen succesvol."
+    },
+    {
+      "type": "prose",
+      "md": "Er is een vreemde coda. De NK-15-motoren van de N1, verfijnd tot de NK-33, bleken schitterend — enkele van de beste raketmotoren ooit gebouwd. Toen het programma werd geannuleerd, beval Glushko ze te vernietigen; in plaats daarvan verborgen de ingenieurs ongeveer honderd ervan twintig jaar lang in een magazijn. In de jaren negentig werden ze herontdekt, verkocht aan Amerikaanse bedrijven, en vlogen — Sovjet-maanraketmotoren, decennia later, die Amerikaanse raketten ophesen. De raket faalde; zijn motoren waren een triomf die niemand mocht gebruiken totdat het land dat ze bouwde verdwenen was."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/n1/02"
+      },
+      "caption": "Een Amerikaanse verkenningsfoto van een N1-mockup op Baikonur, eind 1967. Twee decennia lang volhield de Sovjet-Unie dat de Maanraket niet bestond; voor de buitenwereld was hij vooral bekend door Amerikaanse spionagefoto's zoals deze.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "De erfenis van het Sovjet-maanprogramma is vooral afwezigheid — de landing die nooit plaatsvond, de raket die nooit werkte, de twintigjarige stilte. Maar de afwezigheid zelf is leerzaam. Het is het duidelijkste tegenvoorbeeld van Apollo in het hele ruimtetijdperk: hetzelfde doel, hetzelfde decennium, vergelijkbaar technisch talent, en een volledig andere uitkomst, gedreven niet door gebrek aan vermogen maar door geheimhouding, verdeeldheid en uitgehongerde middelen. Als Apollo laat zien wat een geconcentreerd, verantwoordelijk, openlijk gefinancierd programma kan doen, laat de Sovjet-maaninspanning zien wat er gebeurt wanneer elk van die voorwaarden ontbreekt."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn hardware droeg wel bij aan latere ontwikkelingen. De Soyuz 7K-LOK-maanvariant informeerde de Soyuz die nog steeds vliegt; het compacte ontwerp van de LK-lander voor één bemanning beïnvloedde later denken; de NK-33-motoren vlogen uiteindelijk. En de eerlijke evaluatie van het programma, zodra de geheimhouding werd opgeheven, werd onderdeel van hoe het ruimtetijdperk nu wordt verteld — niet als een eenpaardrace die de Amerikanen standaard wonnen, maar als een echte wedstrijd die de Sovjet-Unie aanging, hard liep, en verloor om redenen die weinig te maken hadden met raketbouw en alles met hoe de inspanning werd georganiseerd en verborgen."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De hardste les van het programma is dat je de grondtest niet kunt overslaan. De N1 werd gevlogen als geassembleerd-en-gelanceerd omdat de Sovjet-Unie geen teststand had om dertig motoren samen te testen — en dus was elke vlucht de eerste geïntegreerde test van het meest complexe deel van de raket, zonder kans om de fouten ergens anders dan in de lucht te vinden. NASA's aandringen op uitgebreide grondtests van de Saturn V leek traag en duur; het was de reden dat de Saturn V nooit faalde tijdens een vlucht. Wanneer je je niet kunt veroorloven om naar behoren te testen, heb je de raket niet goedkoper gemaakt — je hebt de kosten verplaatst naar de vluchten, en daar komen ze te voorschijn."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is dat geheimhouding en verantwoordelijkheid tegenstellingen zijn, en dat een programma de tweede meer nodig heeft dan het het verlies van de eerste vreest. Het verbergen van de Sovjet-inspanning beschermde het tegen publieke verlegenheid en ontnam het daarmee elke externe kracht die het gedwongen zou kunnen hebben zijn problemen tijdig aan te pakken. Apollo werd gedwongen eerlijk te zijn omdat de hele wereld keek; de N1 mocht stilletjes falen, vier keer, omdat niemand keek. Zichtbaarheid is niet alleen een risico dat beheerd moet worden. Voor een harde, meedogenloze onderneming is het een van de dingen die succes überhaupt mogelijk maken."
+    }
+  ]
+}

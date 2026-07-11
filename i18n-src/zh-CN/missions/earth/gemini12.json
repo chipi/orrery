@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "载人地球轨道 · 已飞行",
+  "first": "解决EVA问题——Aldrin的太空行走;最后一次Gemini",
+  "dispatch": "到最后一次Gemini任务时,仍有一个问题未解决:太空行走无法正常进行。从Ed White到Gemini 12之间的各次飞行中,EVA演变成一系列令人精疲力竭的准失败——宇航员为每个动作而挣扎,过热,时间耗尽。Buzz Aldrin解决了这个问题,解决方法就是准备:他在水下反复演练整个过程直到成为常规操作,并且在航天器上安装了扶手、脚蹬和系绳,这样他就有了可以借力的支撑点。在超过五小时的舱外活动中,他冷静地完成了常规任务并返回时仍有余力——证明EVA可以做到可靠。这是Gemini清单上的最后一项,随之该计划结束,已经教会NASA登月所需的一切。",
+  "description": "James Lovell和Buzz Aldrin执行了最后一次Gemini任务,1966年11月11-15日。Aldrin的三次EVA总计5小时30分钟——在水下训练、扶手和脚部固定装置的支持下——最终表明可以在太空中完成有用的工作,解决了早期飞行的EVA困难。59圈轨道。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "Titan II GLV (GT-12) 从Cape Canaveral LC-19发射,1966-11-11 20:46 UTC。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA已掌握",
+      "note": "Aldrin的EVA(总计5小时30分钟)配合扶手和水下训练证明太空行走可以成为常规操作。",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "溅落",
+      "note": "4天/59圈轨道后在大西洋溅落——最后一次Gemini。",
+      "type": "nominal"
+    }
+  ]
+}

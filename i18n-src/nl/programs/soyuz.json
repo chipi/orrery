@@ -1,0 +1,88 @@
+{
+  "name": "Soyuz",
+  "tagline": "Het ruimtevaartuig dat begon in tragedie, de hoogste prijs in de ruimtevaart betaalde — en het meest betrouwbare, langstdienende vervoermiddel naar een baan om de aarde werd dat ooit is gebouwd.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tegen het midden van de jaren zestig was het tijdperk van het oprekken van Vostok voorbij, en beide grootmachten hadden een echt ruimtevaartuig van de tweede generatie nodig — één dat kon manoeuvreren, rendezvousen en koppelen, de vaardigheden die de Maan zou eisen. Het Sovjet-antwoord was Soyuz: Sergei Korolevs ontwerp voor een modulair schip in drie delen — een sferische orbitale module om in te leven, een afdaalmodule om in thuis te komen, en een servicemodule voor energie en voortstuwing. Het was een oprechte sprong voorwaarts. Maar Korolev overleed op de operatietafel in 1966, voordat het vloog, en het programma verloor de enige man met de autoriteit om te zeggen dat een machine niet klaar was."
+    },
+    {
+      "type": "prose",
+      "md": "Wat volgde was het donkerste hoofdstuk in het Sovjet-programma. Onder druk om Apollo te beantwoorden werd Soyuz in dienst gehaast voordat het veilig was, en de prijs werd bijna onmiddellijk betaald — eerst met de dood van één kosmonaut, daarna, vier jaar later, met drie meer. Soyuz zou alle rivalen overleven en langer vliegen dan welk bemand ruimtevaartuig dan ook in de geschiedenis, maar het verdiende die levensduur op de harde manier, en de twee ongevallen aan het begin zijn onlosmakelijk verbonden met het verhaal van alles wat het werd."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/01"
+      },
+      "caption": "De eerste generatie Soyuz — drie modules: een sferische bewonersmodule, een klokvormige afdaalmodule, en een servicemodule. De basisarchitectuur vliegt nog steeds, meer dan een halve eeuw later.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz was ontworpen om alles te doen wat Vostok en Voskhod niet konden: zijn baan veranderen, een ander vaartuig opzoeken en ermee koppelen, een bemanning wekenlang ondersteunen, en — in het oorspronkelijke plan — kosmonauten naar de Maan brengen. De indeling in drie modules was het kernidee. Door het ruimtevaartuig te splitsen in een ruime orbitale module waarin de bemanning leefde en een kleine, zwaar afgeschermde afdaalmodule waarin ze terugkeerden, kon Soyuz zowel ruim zijn in een baan als licht bij terugkeer, door alles af te werpen wat het niet naar huis hoefde te brengen. Het was een helder, aanpasbaar ontwerp — wat precies de reden is dat het standhield."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/02"
+      },
+      "caption": "Soyuz in een baan. In de vlucht gehaast voordat het klaar was, zou het ontwerp jaren en twee dodelijke ongevallen nodig hebben om veilig te maken — en daarna stopte het nooit meer met vliegen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz' eerste bemande vlucht, in 1967, doodde zijn piloot: Vladimir Komarov vloog een ruimtevaartuig vol met bekende gebreken en stierf toen zijn parachute faalde bij terugkeer — de eerste sterfgeval tijdens een vlucht in de geschiedenis van de ruimtevaart. Het programma herstelde, en in 1969 voerden Soyuz 4 en 5 de eerste koppeling van twee bemande vaartuigen uit, waarbij kosmonauten tussen hen overstapten via een ruimtewandeling. Toen, in 1971, werd de bemanning van Soyuz 11 de eerste die aan boord van een ruimtestation leefde — en stierf op weg naar huis toen een klep hun cabinelucht liet ontsnappen, de enige menselijke sterfgevallen ooit in de ruimte. En in 1975, in een complete toonsoortverandering, koppelde een Soyuz met een Apollo in een baan, en een Amerikaan en een Sovjet schudden elkaar de hand door het luik — het symbolische einde van de ruimtewedloop."
+    },
+    {
+      "type": "prose",
+      "md": "Dat had het hele verhaal kunnen zijn: een veelbelovend ontwerp dat begon in tragedie en de wedloop afsloot met een handdruk. In plaats daarvan was het slechts het begin. Soyuz bleef vliegen — naar Salyut, naar Mir, naar het International Space Station — en bleef verfijnd worden, totdat het schip dat twee bemanningen doodde in zijn eerste vier jaar de veiligste en meest betrouwbare manier werd om een baan te bereiken die iemand ooit heeft gebruikt."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De rode draad van Soyuz is betrouwbaarheid die voor een verschrikkelijke prijs gekocht werd en vervolgens decennialang versterkt. Elk van zijn vroege rampen schreef een permanente regel in het ontwerp: na Komarov werden de parachute- en besturingssystemen herzien; na Soyuz 11 vlogen kosmonauten nooit meer een lancering of terugkeer zonder drukpakken. Het programma leerde zoals veiligheid gewoonlijk geleerd wordt — van de ongevallen — en bleef vervolgens, in tegenstelling tot zoveel programma's, hetzelfde basisvoertuig lang genoeg vliegen om die lessen te laten ophopen tot iets wat bijna onbreekbaar is."
+    },
+    {
+      "type": "prose",
+      "md": "Het veranderde ook volledig van taak. Bedacht om met de Amerikanen naar de Maan te racen, verloor Soyuz die race en werd stilletjes herbestemd — tot de veerboot die bemanningen naar de ruimtestations van de Sovjet-Unie bracht, vervolgens naar Mir, vervolgens naar het International Space Station dat met diezelfde Amerikanen gebouwd werd. Toen de Amerikaanse Space Shuttle in 2011 met pensioen ging, werd Soyuz gedurende negen jaar de *enige* manier waarop een mens het Space Station kon bereiken: het hele internationale programma hing af van een Sovjet-ontwerp uit de jaren zestig."
+    },
+    {
+      "type": "prose",
+      "md": "De handdruk van Apollo-Soyuz in 1975 is het scharnierpunt. Het beëindigde het tijdperk waarin Soyuz bestond om het Westen te verslaan, en opende het tijdperk waarin het de volgende halve eeuw de astronauten van het Westen zou vervoeren naast Ruslands kosmonauten — hetzelfde ruimtevaartuig, hetzelfde lanceerplatform, een compleet andere wereld."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo-soyuz/02"
+      },
+      "caption": "Apollo-Soyuz, juli 1975 — een Sovjet en een Amerikaans ruimtevaartuig koppelden in een baan, en de ruimtewedloop eindigde niet met een winnaar maar met een handdruk.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz' nalatenschap is simpelweg dat het nooit stopte. Het is het langstdienende en meest gevlogen bemande ruimtevaartuig in de geschiedenis — ruim honderdvijftig bemande vluchten over zes decennia — en zijn basale ontwerp met drie modules, verfijnd maar nooit vervangen, vervoert vandaag nog steeds bemanningen. Geen enkel ander bemand ruimtevaartuig is ook maar in de buurt gekomen van dat record. Het schip dat begon met het doden van zijn piloot werd het meest vertrouwde voertuig in de ruimtevaart, het voertuig waar elk ander programma op leunde wanneer het een vervoermiddel nodig had dat simpelweg zou werken."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn diepere nalatenschap is een les in de waarde van goed basismateriaal en geduldig itereren boven de flitsende vervanging. Waar de Verenigde Staten hele generaties ruimtevaartuigen bouwden en met pensioen stuurden — Mercury, Gemini, Apollo, Shuttle — vonden de Sovjets een ontwerp dat het waard was om te houden en besteedden vijftig jaar aan het verbeteren ervan. Beide benaderingen bereikten de ruimte. Slechts één produceerde een voertuig dat nog steeds vliegt, in concept in wezen onveranderd, in zijn zevende decennium."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Soyuz' hardste les is dat betrouwbaarheid niet aan het begin wordt ingebouwd; het wordt verdiend, gewoonlijk door falen, en alleen door een organisatie die bereid is hetzelfde ding lang genoeg te blijven vliegen om te leren. Soyuz was niet veilig toen het begon — het werd gehaast, en het doodde mensen. Wat het veilig maakte waren decennia van vliegen, elke zwakheid op zijn beurt vinden, en die repareren, op een voertuig dat stabiel genoeg was dat de lessen bleven hangen. De verleiding is altijd om een problematisch ontwerp te vervangen; soms is het wijzere pad om het te houden en het goed te maken."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les is het gevaar van het laten prevaleren van een deadline boven een waarschuwing. Soyuz 1 vloog met gebreken die zijn eigen ingenieurs hadden gemarkeerd, omdat Apollo beantwoorden die maand meer betekende dan toegeven dat het schip niet klaar was — en een kosmonaut stierf ervoor. Het is dezelfde mislukking die Vostoks cultuur van moeten-slagen-geheimhouding had geoefend, uiteindelijk betaald met een leven. Wanneer de mensen die het dichtst bij de machine staan zeggen dat het niet klaar is, is het schema het ding dat moet wijken."
+    }
+  ]
+}

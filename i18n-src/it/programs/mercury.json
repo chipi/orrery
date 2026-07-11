@@ -1,0 +1,100 @@
+{
+  "name": "Mercury",
+  "tagline": "La corsa frenetica dell'America per mandare una persona nello spazio — sempre un passo dietro i sovietici, e le fondamenta di tutto ciò che seguì.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Nell'autunno del 1957 l'Unione Sovietica mise in orbita lo Sputnik, e gli Stati Uniti scoprirono di stare perdendo una gara di cui non avevano del tutto compreso di far parte. La risposta di Washington fu istituzionale: nel 1958 creò una nuova agenzia spaziale civile, la NASA, e le affidò un primo incarico brutalmente semplice — mandare un americano nello spazio, e farlo in fretta. Il programma fu chiamato Mercury, e dal primo giorno fu una corsa contro il tempo. I sovietici erano avanti e continuavano ad avanzare, e ogni mese di ritardo era un altro mese di titoli sul mondo libero che restava indietro."
+    },
+    {
+      "type": "prose",
+      "md": "Nel 1959 la NASA scelse sette piloti collaudatori militari per pilotarlo. Presentati in un'unica conferenza stampa, i Mercury Seven divennero figure nazionali all'istante — prima ancora che uno di loro fosse andato da qualche parte — perché il paese aveva bisogno che lo fossero. Si stavano impegnando a salire su una capsula sperimentale in cima a un missile balistico convertito: una macchina progettata per consegnare una testata, ora chiamata a consegnare un uomo e riportarlo a casa. Nessuno sapeva ancora con certezza se un essere umano potesse sopravvivere al viaggio."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mercury-capsule/01"
+      },
+      "caption": "La capsula Mercury — appena più grande della persona al suo interno. Un sedile, nessuno spazio per muoversi, e nessun modo di cambiare orbita; l'astronauta poteva orientare il veicolo spaziale, e poco altro.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'obiettivo di Mercury era deliberatamente, quasi brutalmente ristretto: dimostrare che un essere umano poteva sopravvivere all'intera sequenza — la pressione del lancio, minuti o ore di assenza di peso, il fuoco del rientro — ed essere ripescato dall'oceano vivo. Non esplorare, non manovrare, non costruire. Solo sopravviverci, ed essere visto farlo. Tutto del veicolo spaziale derivava da questo: un cono appena più grande del suo occupante, un solo sedile, nessun mezzo per cambiare la propria traiettoria una volta lassù."
+    },
+    {
+      "type": "prose",
+      "md": "Il programma aveva due razzi, e questi lo divisero a metà. Il Redstone — un discendente diretto del V-2 bellico — poteva solo lanciare una capsula su e giù su una traiettoria suborbitale; il più potente Atlas poteva effettivamente raggiungere la velocità orbitale. Così Mercury salì per gradi: prima i brevi salti suborbitali per dimostrare che il sistema funzionava con una persona a bordo, poi i più difficili voli orbitali una volta che l'Atlas si era guadagnato quella fiducia."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/friendship-7/01"
+      },
+      "caption": "Friendship 7 di John Glenn, febbraio 1962 — il primo americano a orbitare attorno alla Terra, e il volo che finalmente permise a un paese nervoso di tirare un respiro di sollievo.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Sei americani volarono su Mercury tra il 1961 e il 1963. Alan Shepard andò per primo, un salto suborbitale di quindici minuti tre settimane dopo che Gagarin aveva già orbitato — più breve e più basso del volo sovietico, ma sufficiente. Gus Grissom lo ripeté e rischiò di annegare quando il suo portello esplose all'ammaraggio. Poi, nel febbraio 1962, John Glenn salì su un Atlas in orbita e tornò a casa dopo tre giri del pianeta, e gli Stati Uniti finalmente ebbero una risposta a Gagarin. Scott Carpenter, Wally Schirra e Gordon Cooper estesero i voli da tre orbite a un'intera giornata — Faith 7 di Cooper girò attorno alla Terra ventidue volte nel maggio 1963 e chiuse il programma."
+    },
+    {
+      "type": "prose",
+      "md": "Misurato rispetto ai sovietici, Mercury fu un programma che inseguiva senza mai raggiungere davvero: quando Glenn orbitò, l'URSS aveva già volato un'intera giornata nello spazio, e presto avrebbe fatto volare una donna e camminare nel vuoto mentre Mercury stava ancora contando orbite singole. Ciò che Mercury vinse fu qualcosa di diverso. Portò sei persone al confine dello spazio e ritorno — apertamente, in televisione in diretta — e non ne perse nessuna. Dimostrò esattamente ciò che si era proposto di dimostrare: una persona può andare, e tornare."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Mercury è quella di un paese che improvvisa in fretta, in pubblico. Quasi tutto veniva inventato contemporaneamente — come mantenere in vita una persona nel vuoto, come comunicare con una capsula che corre attorno al pianeta, come trovare un piccolo veicolo in un oceano molto grande — e tutto questo contro una scadenza stabilita da un avversario che continuava a spostare i paletti arrivando per primo."
+    },
+    {
+      "type": "prose",
+      "md": "C'era anche una lotta più silenziosa dentro il programma. I primi piani trattavano l'astronauta come carico, un passeggero che i sistemi automatici avrebbero pilotato. I piloti collaudatori rifiutarono. Spinsero per un finestrino, per il controllo manuale, per una mano sulla cloche — e lo ottennero, e più di una volta fu determinante, quando una persona nel circuito risolse un problema che l'automazione non poteva. Quella insistenza sull'astronauta come pilota piuttosto che come carico definì il tono di tutto ciò che i voli spaziali umani americani sarebbero diventati."
+    },
+    {
+      "type": "prose",
+      "md": "Mercury si chiuse nel 1963 avendo risposto alla sua unica domanda. Consegnò tutto ciò che aveva imparato — i fornitori di hardware, i controllori di volo, il corpo astronauti, la fiducia conquistata a fatica — direttamente a Gemini, che avrebbe imparato a manovrare e ad effettuare rendezvous, e poi ad Apollo, che usò tutto questo per raggiungere la Luna."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/faith-7/01"
+      },
+      "caption": "Faith 7 di Gordon Cooper, maggio 1963 — ventidue orbite e un'intera giornata in volo, l'ultimo e più lungo volo Mercury.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Il prodotto più prezioso di Mercury non fu alcun singolo volo; fu la macchina che li volò. Una rete di tracciamento mondiale, una sala piena di controllori che imparavano a gestire una missione in tempo reale, una flotta di recupero, un corpo astronauti e una rete di appaltatori che ora sapevano come costruire cose certificate per trasportare persone — tutto questo fu creato quasi dal nulla in pochi anni, e tutto passò direttamente a Gemini e Apollo. La NASA imparò a far volare persone con Mercury."
+    },
+    {
+      "type": "prose",
+      "md": "Fu anche un argomento della Guerra Fredda condotto apertamente. Dove il programma sovietico volava in segreto e annunciava i suoi successi dopo il fatto, Mercury volava in televisione in diretta — fallimenti inclusi — una scommessa deliberata che una società aperta poteva fare cose difficili in piena vista. I Mercury Seven divennero il volto umano di quella scommessa, famosi in modo sproporzionato rispetto alle modeste distanze che effettivamente percorsero, per ciò che si riteneva rappresentassero."
+    },
+    {
+      "type": "prose",
+      "md": "Il ritorno materiale arrivò nel modo in cui arriva di solito con un primo programma — non dai voli stessi ma dalla capacità che questi imposero di creare: il tracciamento, la medicina aerospaziale, la disciplina produttiva, la semplice prova che poteva essere fatto. I programmi molto più grandi che seguirono attinsero a tutto questo senza doverlo costruire di nuovo."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione più trasferibile di Mercury è il potere di un obiettivo ristretto raggiunto per gradi. Non tentò di raggiungere la Luna, o nemmeno di superare i sovietici direttamente. Si propose di dimostrare esattamente una cosa — una persona può sopravvivere al volo spaziale e tornare a casa — e costruì verso questo in incrementi deliberati: un test senza equipaggio, poi uno scimpanzé, poi un salto suborbitale, poi l'orbita. Quando la destinazione è genuinamente sconosciuta, dimostrare un anello della catena alla volta batte lo slanciarsi verso l'intero obiettivo in una volta sola."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda lezione è che essere primi non è la stessa cosa che costruire le fondamenta. Mercury perse quasi ogni gara a cui partecipò — i sovietici raggiunsero lo spazio, l'orbita e un'intera giornata in quota prima di esso. Eppure il programma che atterrò sulla Luna otto anni dopo fu costruito quasi interamente su ciò che Mercury iniziò, non su ciò che i suoi rivali fecero per primi. Un gruppo che continua a presentarsi e ad accumulare ciò che impara può perdere gli sprint iniziali e comunque vincere la cosa che finisce per contare."
+    },
+    {
+      "type": "prose",
+      "md": "E la nota umana che vale la pena conservare: il rifiuto degli astronauti di essere carico. Di fronte a un progetto che li trattava come passeggeri, insistettero per essere piloti — un finestrino, una cloche, voce in capitolo nel volo — e quell'insistenza, più di ogni singola missione, è ciò che rese il programma loro e definì il carattere di tutto ciò che seguì."
+    }
+  ]
+}

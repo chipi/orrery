@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 4 / GT-4",
+  "type": "HABITÉ ORBITE TERRESTRE · EFFECTUÉ",
+  "first": "Première sortie extravéhiculaire américaine (Ed White)",
+  "dispatch": "Gemini 4 est resté dans les mémoires pour une photographie : Ed White, relié au vaisseau par un ombilical doré, flottant au-dessus d'une Terre bleue avec un pistolet de manœuvre portatif — le premier Américain à marcher dans l'espace. Le moment fut si exaltant que lorsque le contrôle de mission lui ordonna de rentrer après vingt minutes, White déclara que c'était le moment le plus triste de sa vie. La sortie extravéhiculaire semblait sans effort et l'était en grande partie, parce que White dérivait librement plutôt que de travailler — la dure réalité qu'une EVA est un travail épuisant n'arriverait que lors des vols suivants. Mais pour un pays qui avait été à la traîne des Soviétiques, qui avaient effectué la première sortie spatiale dix semaines plus tôt, c'était la preuve que l'Amérique pouvait le faire aussi, et l'image devint l'une des photographies emblématiques de l'époque.",
+  "description": "James McDivitt et Edward White ont effectué une mission de quatre jours et 62 orbites à partir du 3 juin 1965. Pendant la troisième orbite, White a réalisé la première sortie extravéhiculaire américaine — environ 21 minutes à l'extérieur, relié par un filin, utilisant une unité de manœuvre portative. Le vol a également mené le premier programme médical et scientifique prolongé américain.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-4) depuis Cape Canaveral LC-19, 1965-06-03 15:16 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "EVA",
+      "note": "Ed White — première sortie extravéhiculaire américaine, ~21 min, relié par un filin, avec une unité de manœuvre portative.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "AMERRISSAGE",
+      "note": "Amerrissage dans l'Atlantique après 4 jours / 62 orbites.",
+      "type": "nominal"
+    }
+  ]
+}

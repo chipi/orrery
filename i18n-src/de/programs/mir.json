@@ -1,0 +1,92 @@
+{
+  "name": "Mir",
+  "tagline": "Die erste modulare Raumstation — Stück für Stück im Orbit gebaut, fünfzehn Jahre lang am Leben gehalten durch den Zusammenbruch des Landes, das sie errichtete, und der Ort, an dem Rivalen des Kalten Krieges erstmals lernten, gemeinsam zu fliegen.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Jede Station vor Mir war ein einzelnes Objekt: als Ganzes gestartet, bewohnt und schließlich aufgegeben. Mir war grundsätzlich anders. Ab 1986 startete die Sowjetunion ein Kernmodul und flog dann über das nächste Jahrzehnt Modul um Modul hinauf und schraubte sie im Orbit fest — Kvant, Kvant-2, Kristall, Spektr, Priroda — und ließ die Station wie eine Siedlung wachsen, anstatt sie wie ein Raumfahrzeug einzusetzen. Es war das erste Mal, dass Menschen eine große Struktur im All zusammenbauten, und es verwandelte die Raumstation von einem fertigen Produkt in einen dauerhaften, erweiterbaren Ort."
+    },
+    {
+      "type": "prose",
+      "md": "Der Name bedeutet 'Frieden' und auch 'Welt', und Mir wurde beides — der am längsten durchgehend bewohnte menschliche Außenposten, der je gebaut wurde, und, unwahrscheinlicherweise, die Bühne, auf der der Kalte Krieg im All endete. Sie wurde als sowjetisches Aushängeschild konzipiert; sie überlebte die Sowjetunion um ein Jahrzehnt, wurde von einem Russland am Fliegen gehalten, das sie sich kaum leisten konnte, und beherbergte in ihren letzten Jahren die amerikanischen Astronauten, deren Vorgänger sie eigentlich hätte übertreffen sollen. Mehr als jedes einzelne Raumfahrzeug ist Mir der Ort, an dem die Ära der nationalen Wettläufe im All der Ära internationaler Partnerschaft wich."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/04"
+      },
+      "caption": "Mir während des Zusammenbaus, fotografiert von einem besuchenden Space Shuttle — das Kernmodul mit Kristall und den anderen angedockten Modulen. Eine große Station aus separat gestarteten Teilen im Orbit zu bauen, war bereits die Leistung.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Mirs Ziel war Dauerhaftigkeit in einem Maßstab, den niemand versucht hatte: ein kontinuierlich bemannter Forschungskomplex, der mit der Zeit wachsen und Jahre, nicht Monate, in der Umlaufbahn bleiben konnte. Wo Salyut bewiesen hatte, dass eine Station versorgt und bewohnt werden konnte, wollte Mir beweisen, dass sie *erweitert* werden konnte — dass neue Laboratorien und Fähigkeiten zu einer bereits im Orbit befindlichen Station hinzugefügt werden konnten, auf unbestimmte Zeit, sodass der Außenposten niemals fertig und niemals veraltet war. Es war die Architektur einer wirklich dauerhaften menschlichen Präsenz, und sie funktionierte."
+    },
+    {
+      "type": "prose",
+      "md": "Das andere Ziel war Ausdauer, bis an ihre Grenze getrieben. Mir war der Ort, an dem Menschen herausfanden, wie lange sie bleiben konnten — und die Antwort, an Bord aufgestellt, gilt noch immer: Der Arzt und Kosmonaut Valeri Polyakov verbrachte 437 durchgehende Tage auf Mir, länger als eine Mission zum Mars dauern würde, und kam gehfähig nach Hause. Dieses einzelne Ergebnis beseitigte stillschweigend einen der großen Einwände gegen bemannte Tiefraumflüge: Es zeigte, dass der Körper die Reise überstehen kann."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/02"
+      },
+      "caption": "Mir gesehen vom Space Shuttle Atlantis während des Shuttle-Mir-Programms. Amerikanische Shuttles, die an einer russischen Station andocken — ein Jahrzehnt zuvor undenkbar — war die Generalprobe für die Internationale Raumstation.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Über fünfzehn Jahre beherbergte Mir mehr als hundert Menschen aus einem Dutzend Ländern, lieferte eine enorme Menge an Wissenschaft zurück und stellte die Langzeitrekorde auf, auf die sich jedes spätere Programm stützt. Aber ihre späteren Jahre waren auch die härtesten, die je eine Station durchgemacht hat. Als die Sowjetunion zusammenbrach, verschwand Mirs Finanzierung fast völlig, und sie wurde mit knappen Mitteln am Fliegen gehalten, ihre Hardware alterte weit über ihre vorgesehene Lebensdauer hinaus. 1997 holte das sie ein: Zuerst brach an Bord ein Feuer durch eine defekte Sauerstoffkartusche aus, das die Station mit Rauch füllte, und dann traf ein Progress-Frachtschiff, das manuell angedockt wurde, die Station und durchschlug das Spektr-Modul — was einen Teil von Mir drucklos machte und die Besatzung zwang, ein Modul abzudichten, während die Luft entwich."
+    },
+    {
+      "type": "prose",
+      "md": "Dass die Besatzung beides überlebte — die Leckstelle abdichtete, die Station rettete und weiterflog — war der ultimative Test der Idee, die Skylab zuerst bewiesen hatte: dass Menschen im Orbit für eine versagende Maschine kämpfen und gewinnen können. Durch dieselben Jahre lief das Shuttle-Mir-Programm: Ab 1995 dockten amerikanische Space Shuttles an Mir an, und NASA-Astronauten lebten monatelang an Bord und lernten Langzeit-Operationen von den Russen, die zwei Jahrzehnte damit verbracht hatten, sie zu meistern. Es war die erste gemeinsame Arbeit der ehemaligen Rivalen, und es war ausdrücklich die Probe für das, was danach kam. Mir wurde 2001 in einem kontrollierten Wiedereintritt über dem Pazifik deorbitiert, ihre Aufgabe weitergegeben."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Mirs zentrale Innovation ist die Modularität, und sie veränderte alles, was folgte. Eine Station, die aus austauschbaren, separat gestarteten Modulen gebaut ist, kann wachsen, durch Modulersatz repariert werden und von mehr als einer Nation zusammengebaut werden — nichts davon kann eine einzelne monolithische Dose leisten. Die Internationale Raumstation ist Modularität zu ihrer Konsequenz gebracht: Dutzende Module von vielen Ländern, über ein Jahrzehnt zusammengebaut. Dieser gesamte Ansatz wurde zuerst auf Mir bewiesen."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Geschichte ist Überleben und Transformation. Mir wurde als Instrument sowjetischen Prestiges konzipiert und endete als Samen internationaler Kooperation — am Leben gehalten von einem bankrotten Russland teilweise *weil* die Vereinigten Staaten, die die Erfahrung und die Partnerschaft wollten, mithalfen, sie am Fliegen zu halten. Die Shuttle-Mir-Jahre bauten die menschlichen Beziehungen, die gemeinsamen Verfahren und das politische Vertrauen auf, ohne die die ISS nicht hätte versucht werden können. Die Station, die gebaut wurde, um den Kalten Krieg im All zu gewinnen, wurde stattdessen der Ort, an dem der Kalte Krieg im All begraben wurde."
+    },
+    {
+      "type": "prose",
+      "md": "Und Mir beantwortete die Frage, die am meisten zählt für alles jenseits des niedrigen Orbits: Kann ein menschlicher Körper es aushalten? Polyakovs 437 Tage und die vielen Monate, die Besatzung um Besatzung protokollierte, verwandelten Langzeit-Raumflug von einem beängstigenden Unbekannten in einen charakterisierten, überlebbaren Zustand. Jeder ernsthafte Plan für den Mars beruht auf Daten, die zuerst auf Mir gesammelt wurden."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/05"
+      },
+      "caption": "Mir im Orbit über der Erde — die erste modulare Station und die Vorlage, in Architektur und internationaler Partnerschaft, für die Internationale Raumstation, die sie ersetzte.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Mirs Erbe ist die Internationale Raumstation, in fast jeder Hinsicht. Die modulare Architektur, die Mischung aus Soyuz-Crew-Fähren und automatisierten Frachtern, die mehrmonatigen Expeditionen, die Routinen des Langzeitlebens und der Langzeitarbeit — all das wurde auf Mir entwickelt oder ausgereift und direkt übernommen. So war es auch mit der Partnerschaft: Die ISS wird auf einem amerikanisch-russischen Kern betrieben, genau weil Shuttle-Mir bewies, dass die beiden eine Station gemeinsam betreiben konnten, und weil Russland die gesammelte Stationsexpertise mitbrachte, die Mir repräsentierte."
+    },
+    {
+      "type": "prose",
+      "md": "Sie steht auch als Lehre für Ausdauer anderer Art. Mir flog fünfzehn Jahre, fünf mehr als beabsichtigt, durch die Auflösung ihrer eigenen Nation und eine Reihe von Notfällen, die ein weniger widerstandsfähiges Programm beendet hätten — und sie flog weiter, weil ihr modulares Design es erlaubte, sie zu reparieren, weil ihre Besatzungen für sie kämpften und weil ein neuer internationaler Wille entstand, sie zu erhalten. Sie wurde am Ende durch Einfallsreichtum und Kooperation ebenso zusammengehalten wie durch Ingenieurkunst. Das ist keine Fußnote ihrer Geschichte; es ist ihre Pointe."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Mirs erste Lehre ist, dass Modularität das ist, was eine große Station sowohl möglich als auch überlebensfähig macht. Weil Mir aus separaten Modulen gebaut wurde, konnte sie mit der Zeit wachsen, über viele Starts zusammengebaut werden und — entscheidend — durch Abdichtung oder Ersatz eines beschädigten Abschnitts repariert werden, wie die Besatzung es tat, als Spektr durchschlagen wurde. Eine monolithische Station bietet nichts davon; wenn sie versagt, versagt sie als Ganzes. Jede Station, die Bestand haben soll, ist Mir in die Modularität gefolgt."
+    },
+    {
+      "type": "prose",
+      "md": "Die zweite Lehre ist, dass internationale Partnerschaft das erhalten kann, was sich nationaler Stolz nicht leisten kann. Mir überlebte ihre härtesten Jahre, weil Kooperation den Wettbewerb ersetzte — weil ein ehemaliger Gegner Gründe hatte, zu helfen, sie am Fliegen zu halten. Dieselbe Logik baute die ISS und hält sie in der Umlaufbahn: Keine einzelne Nation finanziert heute allein eine dauerhafte menschliche Präsenz. Mir ist der Ort, an dem dieser Wandel zuerst durch die Umstände erzwungen und dann absichtlich gewählt wurde, und es ist eine der folgenreichsten Veränderungen in der Geschichte der Raumfahrt."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Apollo",
+  "tagline": "De Koude-Oorlog-sprint die twaalf mensen op de maan zette — en toen stopte.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Negentig minuten achter elkaar, in de herfst van 1957, doorkruiste een gepolijste metalen bol ter grootte van een strandbal de hemel boven de Verenigde Staten — en hij piepte. Sputnik 1 behoorde toe aan de Sovjet-Unie, en het machtigste land op aarde kon niets anders doen dan luisteren. Minder dan vier jaar later, op 12 april 1961, zetten de Sovjets ook een mens in een baan: Joeri Gagarin, de eerste mens die de planeet verliet. Washington hoorde het niet als wetenschap. Het hoorde een syllogisme dat niet meer te vergeten viel — een raket die een satelliet in een baan kan brengen, kan een kernkop op elke willekeurige stad laten vallen. Bijna van de ene dag op de andere hield ruimtevaart op verkenning te zijn en werd de voorhoede van de Koude Oorlog."
+    },
+    {
+      "type": "prose",
+      "md": "Op 25 mei 1961 — zes weken na Gagarin, en twintig dagen nadat Alan Shepards vijftien minuten durende suborbitale sprong Amerika op een technicaliteit tot ruimtevarend land maakte — stond John F. Kennedy voor het Congres en zette het land in op de maan. Breng er een man naartoe en breng hem veilig terug, zei hij, \"voor het einde van dit decennium.\" Ontdaan van de retoriek was het een prestigestrijd: een poging de Sovjets te verslaan op het enige terrein waar ze duidelijk voorlagen. De wetenschap zou echt zijn, en langer meegaan dan de politiek — maar reed erachteraan. Apollo werd geboren uit die keuze, en het is de moeite waard dat ronduit te zeggen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/saturn-v/02"
+      },
+      "caption": "De Saturn V — 111 meter hoog, zo'n 3.000 ton op het lanceerplatform, en een halve eeuw lang de krachtigste raket die ooit vloog. Hij bestond om precies één reden: een deadline halen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het doel was smal en absoluut: Amerikaanse astronauten op het maanoppervlak krijgen en levend thuisbrengen, vóór de USSR, voor 1970. Al het andere werd terugwaarts ontworpen vanuit die ene zin — de Saturn-raketten, een driedelig ruimtevaartuig dat in onderdelen een kwart miljoen mijl van elke hulp moest vliegen, drukkpakken berekend op hard vacuüm, een wereldwijd volgnetwerk, en een personeelsbestand dat uitgroeide tot zo'n 400.000 mensen bij NASA, haar aannemers en de universiteiten."
+    },
+    {
+      "type": "prose",
+      "md": "Er waren ook echte wetenschappelijke doelen — monsters nemen van de geologie van de maan, instrumenten plaatsen die lang na het vertrek van de bemanningen zouden blijven werken, uitzoeken of mensen daadwerkelijk nuttig werk konden verrichten op een andere wereld. Maar in de eigen prioriteitsvolgorde van het programma stonden ze achter de landing, en iedereen die erbij betrokken was wist het. De race bepaalde het schema. De wetenschap paste in de gaten die overbleven."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo11/03"
+      },
+      "caption": "Apollo 11 op de Zee van Rust, 20 juli 1969 — het moment waarop de race beslist werd.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het werkte. Op 20 juli 1969 liepen Neil Armstrong en Buzz Aldrin op de Zee van Rust terwijl Michael Collins de Command Module alleen daarboven vloog, waarbij hij telkens radiocontact verloor wanneer zijn baan hem achter de maan voerde. Vijf landingen volgden tot december 1972. In totaal liepen twaalf mensen op de maan en kwamen thuis, met 382 kilogram steen en bodem die meer dan een halve eeuw later nog steeds de maanwetenschap verankert."
+    },
+    {
+      "type": "prose",
+      "md": "De rekening viel te betalen in geld en in levens. In januari 1967 doodde een cabinebrand tijdens een routinematige grondtest Gus Grissom, Ed White en Roger Chaffee in seconden, en legde het programma twintig maanden stil. In april 1970 scheurde een zuurstoftank op weg naar de maan en kostte bijna de bemanning van Apollo 13 het leven, die koud en waterrantsoenerend in hun eigen Lunar Module thuiskwamen. En Apollo stopte op zijn technische hoogtepunt: de laatste drie geplande landingen, Apollo 18 tot en met 20, werden geannuleerd toen budgetten slonken en de publieke aandacht afdwaalde. Was het succesvol? Het won de race waarvoor het gebouwd was — en werd uitgeschakeld terwijl het steeds beter werd op de maan. Kies je maatstaf."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De boog is ongewoon helder voor iets van deze omvang. Het opent met een catastrofe: de brand van 1967 dwong een complete herontwerp van het ruimtevaartuig en van NASA's hele veiligheidscultuur — de afrekening die alles daarna mogelijk maakte. Toen ging de gerepareerde hardware aan het werk. In 1968 testte Apollo 7 de herontworpen Command Module in een aardbaan; die december werd Apollo 8 de eerste bemande vlucht die de zwaartekracht van de aarde helemaal verliet en de maan omcirkelde, waarbij de bemanning uit Genesis voorlas op live televisie voor het grootste publiek dat ooit had bestaan."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 11 beantwoordde Kennedy. En toen deed het programma iets wat een Koude-Oorlog-instrument niet verplicht was te doen: het wendde zich tot de wetenschap. Apollo 12 tot en met 17 werden geleidelijk ambitieuzer — langere verblijven, het op batterijen werkende Lunar Roving Vehicle, en ten slotte, op Apollo 17, een getrainde veldgeoloog genaamd Harrison Schmitt die over het oppervlak liep dat hij jarenlang had bestudeerd. Apollo 13, de bijna-ramp halverwege die reeks, deed iets vreemds met NASA's reputatie: door het te overleven kwam het agentschap er capabeler uit te zien dan het zou zijn geweest door nooit te falen."
+    },
+    {
+      "type": "prose",
+      "md": "Apollo 17 steeg op van de maan op 14 december 1972. Geen mens is sindsdien terug geweest. Maar de hardware van het programma, zijn mensen en zijn momentum liepen rechtstreeks door in bijna alles wat de Amerikaanse bemande ruimtevaart daarna deed — Skylab, de Space Shuttle, en, vijftig jaar later, Artemis, nu reikend naar de zuidpool van de maan die Apollo nooit raakte."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo8/01"
+      },
+      "caption": "Earthrise — Apollo 8, kerstavond 1968. Een ongeplande foto die een van de meest gereproduceerde beelden in de geschiedenis werd, en een grondleggende afbeelding van de milieubeweging.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Apollo's rendement op investering wordt nog steeds betwist, maar de vorm ervan is duidelijk. Het programma kostte zo'n $25,8 miljard in toenmalige dollars — ruim boven de $250 miljard vandaag — en op zijn hoogtepunt zette het zo'n 400.000 mensen aan het werk bij NASA, haar aannemers en de universiteiten. Dat was een bewuste industriële en onderwijskundige opbouw, niet alleen een raket, en het meeste overleefde de maanschoten."
+    },
+    {
+      "type": "prose",
+      "md": "De technologische aanzuigende werking was reëel, en ze versterkte zich. Apollo trok vroege geïntegreerde schakelingen in volumeproductie, stuwde de jonge discipline van software-engineering voort, en vond min of meer het moderne systeemmanagement uit — de kunst om een miljoen onderling afhankelijke onderdelen tegelijk op schema te houden. Die technieken zaaide hele latere industrieën. En de 382 kilogram teruggebracht gesteente herschreef de ouderdom en het ontstaan van het zonnestelsel; onderzoekers halen vandaag nog nieuwe resultaten uit verzegelde monsters."
+    },
+    {
+      "type": "prose",
+      "md": "Voor de Verenigde Staten was het zachte macht op planetaire schaal — een demonstratie, live bekeken over de hele wereld, van wat een open samenleving kon organiseren en voor elkaar krijgen. Voor alle anderen is het meest duurzame wat Apollo achterliet misschien helemaal geen technologie maar een foto: de hele aarde, klein en alleen tegen het zwart, voor het eerst gezien vanaf een andere wereld. Wat je ook vindt van de Koude-Oorlog-motieven die ervoor betaalden, die foto veranderde hoe mensen de grond onder hun eigen voeten zagen — iets om vast te houden nu een luidruchtiger, drukkere ruimtetijd begint."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Apollo's meest overdraagbare les heeft niets met rakettechniek te maken. Het gaat over hoe je een zeer groot aantal mensen op hetzelfde moeilijke ding richt. Kennedy gaf het programma een doel dat specifiek, gedurfd en tijdsgebonden was — breng een bemanning naar de maan en breng ze veilig terug, voor het einde van het decennium — en die ene zin deed wat geen organigram kon. Het bracht 400.000 mensen die elkaar nooit zouden ontmoeten op één lijn, en maakte elke beslissing leesbaar: brengt dit ons tegen 1970 op de maan, of niet? Een helder, gedateerd, niet-onderhandelbaar doel waaraan iedereen zijn eigen werk kan toetsen zal elke hiërarchie overtreffen in coördinatie."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede les leeft in Mission Control. Apollo institutionaliseerde een bepaald soort teamwerk onder druk: controllers getraind om voor te blijven op het voertuig, om zich uit te spreken ongeacht rang, en om problemen als een ruimte op te lossen in plaats van als commandoketen. Toen Apollo 13 zichzelf 320.000 kilometer van huis verminkte, redde geen eenzame held de bemanning — een ruimte vol mensen werkte samen het probleem, tegen de klok in, en improviseerde een weg terug. \"Werk het probleem\" versloeg paniek. Elk team dat ooit een crisis raakt kan de gewoonte lenen."
+    },
+    {
+      "type": "prose",
+      "md": "En de menselijke noot die het bewaren waard is: ze deden het in acht jaar, terwijl ze het nooit eerder hadden gedaan, met boordcomputers zwakker dan een moderne deurbel. Apollo is een staand argument dat een heldere missie, de juiste mensen en een eerlijke deadline de kansen nog steeds voor kunnen zijn — iets nuttigs om te onthouden de volgende keer dat een doel onmogelijk lijkt."
+    }
+  ]
+}

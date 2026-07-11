@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "ORBITALE CON EQUIPAGGIO · VOLATA",
+  "first": "Prima Gemini con equipaggio; prima manovra orbitale eseguita da un equipaggio",
+  "dispatch": "Gemini 3 fu il collaudo — il primo volo del nuovo veicolo spaziale biposto, e la prima volta che un equipaggio americano cambiò la propria orbita invece di limitarsi a seguire quella fornita dal razzo. Gus Grissom la comandò, quattro anni dopo che la sua capsula Mercury affondò all'ammaraggio, e chiamò questa \"Molly Brown\" in onore dell'insommergibile eroina — un pezzo di umorismo nero che l'ufficio stampa della NASA non gradì affatto. Il volo in sé fu breve e deliberatamente modesto, tre orbite per dimostrare che la macchina volava come progettato. Ma quel piccolo atto di modificare l'orbita con i propulsori di bordo fu il primo passo di tutto ciò per cui Gemini esisteva.",
+  "description": "Primo volo Gemini con equipaggio. Gus Grissom e John Young volarono tre orbite il 23 marzo 1965, collaudando il nuovo veicolo spaziale biposto ed eseguendo la prima manovra orbitale da parte di un veicolo con equipaggio — azionando i propulsori per modificare l'orbita. Grissom soprannominò la capsula \"Molly Brown\". Durata 4 h 52 m; ammaraggio nell'Atlantico.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan II GLV (GT-3) da Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "MANOVRA ORBITALE",
+      "note": "Prima manovra orbitale eseguita da un equipaggio — i propulsori modificano la forma dell'orbita.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "AMMARAGGIO",
+      "note": "Ammaraggio nell'Atlantico dopo 3 orbite / 4 h 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

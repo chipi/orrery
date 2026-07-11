@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
+  "first": "Primeiro acoplamento de duas espaçonaves; retorno de emergência",
+  "dispatch": "A Gemini 8 realizou o primeiro acoplamento de duas espaçonaves em órbita — e quase matou sua tripulação. Minutos depois que Neil Armstrong encaixou sua Gemini em uma junção travada com um alvo Agena, o par conectado começou a girar, cada vez mais rápido, até estar rolando aproximadamente uma vez por segundo e a visão dos astronautas começando a escurecer em direção ao desmaio. Armstrong desacoplou — o que só piorou, já que a falha estava em sua própria espaçonave — então desligou os propulsores principais e parou a rotação com o sistema de controle de reentrada, uma decisão que salvou suas vidas mas, pelas regras, forçou um retorno de emergência imediato. Foi o momento mais perigoso do programa, e foi o primeiro voo espacial de Armstrong. O diagnóstico calmo e rápido sob uma situação crítica é exatamente o temperamento que a NASA lembraria ao escolher quem pousaria na Lua.",
+  "description": "Neil Armstrong e David Scott realizaram o primeiro acoplamento de duas espaçonaves — com um alvo Agena — em 16 de março de 1966. Um propulsor de atitude travado então causou uma rotação violenta; Armstrong desacoplou e usou o sistema de controle de reentrada para recuperar, forçando um pouso de emergência após 10 h 41 m. Foi o primeiro voo espacial de Armstrong.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Titan II GLV (GT-8) de Cape Canaveral LC-19, 1966-03-16 16:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "PRIMEIRO ACOPLAMENTO",
+      "note": "Primeiro acoplamento de duas espaçonaves — Gemini 8 com o alvo Agena.",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "ROTAÇÃO",
+      "note": "Propulsor travado faz o conjunto girar ~1 rev/s; Armstrong recupera com o sistema de controle de reentrada.",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "AMERISSAGEM DE EMERGÊNCIA",
+      "note": "Amerissagem de emergência no Pacífico após 10 h 41 m.",
+      "type": "nominal"
+    }
+  ]
+}

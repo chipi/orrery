@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 1",
+  "type": "EQUIPAGGIO ORBITA TERRESTRE · PERSO",
+  "first": "Primo volo Soyuz — guasto del paracadute uccise Vladimir Komarov (prima morte in volo nella storia dei voli spaziali)",
+  "dispatch": "Soyuz 1 è il volo che uccise un cosmonauta, e non avrebbe mai dovuto volare. La nuova navicella Soyuz fu messa in servizio precipitosamente sotto pressione politica con centinaia di difetti noti irrisolti — gli ingegneri implorarono di ritardare — e in orbita iniziò a guastarsi: un pannello solare non si dispiegò, il controllo di assetto combatteva contro il pilota. Vladimir Komarov la riportò giù comunque, e al rientro i paracadute si aggrovigliarono e fallirono. Colpì il suolo a massima velocità. Fu la prima morte nella storia dei voli spaziali umani, e la sua causa fu meno la sfortuna che un programma che non poteva permettersi di ammettere che la sua macchina non era pronta — il guasto esatto verso cui la cultura dei primati nascosti e obbligatori al successo stava costruendo.",
+  "description": "Il primo volo con equipaggio della navicella Soyuz, lanciato il 23 aprile 1967 con Vladimir Komarov a bordo. Il veicolo affrettato subì guasti a cascata in orbita — un pannello solare non dispiegato, problemi di controllo di assetto — e la missione fu accorciata. Al rientro il paracadute frenante si dispiegò ma il paracadute principale non si aprì correttamente; il modulo di discesa colpì il suolo a velocità quasi terminale e Komarov fu ucciso — la prima vittima in volo nella storia dei voli spaziali.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Soyuz 11A511 da Baikonur, 1967-04-23 00:35 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "GUASTI AI SISTEMI",
+      "note": "Il pannello solare non si dispiega; il controllo di assetto si degrada — missione accorciata.",
+      "type": "warning"
+    },
+    {
+      "met": 1.1,
+      "label": "GUASTO DEL PARACADUTE",
+      "note": "Il paracadute principale fallisce al rientro; il modulo di discesa impatta ad alta velocità. Komarov ucciso.",
+      "type": "warning"
+    }
+  ]
+}

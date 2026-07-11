@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · REALIZADA",
+  "first": "Voo de resistência de 14 dias; alvo de encontro para Gemini 6A",
+  "dispatch": "Gemini 7 respondeu à questão menos glamorosa, mas mais fundamental: uma tripulação poderia sobreviver pelo tempo de uma viagem à Lua e volta? Frank Borman e Jim Lovell passaram quatorze dias selados em uma cabine do tamanho do banco dianteiro de um carro pequeno — sem espaço para ficar em pé, se esticar ou escapar um do outro — para provar que o corpo e a mente humanos podiam suportar. Foi tedioso e fisicamente miserável, e funcionou: eles voltaram saudáveis, eliminando o medo de que voos espaciais longos pudessem ser impossíveis. Pelo caminho, serviram como alvo para o encontro da Gemini 6A, então o único voo silenciosamente provou dois dos pré-requisitos da Apollo de uma vez — que pessoas podiam aguentar a distância, e que duas naves podiam se encontrar.",
+  "description": "Frank Borman e Jim Lovell realizaram uma missão de resistência de 14 dias e 206 órbitas a partir de 4 de dezembro de 1965 — o voo espacial tripulado mais longo até aquela data — e serviram como alvo de encontro para Gemini 6A. Demonstrou que uma tripulação podia suportar um voo espacial de duração equivalente a uma missão lunar completa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Titan II GLV (GT-7) de Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "ALVO DE ENCONTRO",
+      "note": "Serve como alvo para o primeiro encontro tripulado da Gemini 6A.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "AMERISSAGEM",
+      "note": "Amerissagem no Atlântico após 14 dias / 206 órbitas.",
+      "type": "nominal"
+    }
+  ]
+}

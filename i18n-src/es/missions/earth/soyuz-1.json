@@ -1,0 +1,27 @@
+{
+  "name": "Soyuz 1",
+  "type": "TRIPULADA ÓRBITA TERRESTRE · PERDIDA",
+  "first": "Primer vuelo Soyuz — fallo del paracaídas mató a Vladimir Komarov (primera muerte en vuelo espacial)",
+  "dispatch": "Soyuz 1 es el vuelo que mató a un cosmonauta, y nunca debería haber volado. La nueva nave Soyuz fue puesta en servicio precipitadamente bajo presión política con cientos de fallos conocidos sin resolver — según se informa, los ingenieros suplicaron retrasar el lanzamiento — y en órbita comenzó a fallar: un panel solar no se desplegó, el control de actitud luchaba contra el piloto. Vladimir Komarov la pilotó de vuelta de todas formas, y en la reentrada los paracaídas se enredaron y fallaron. Impactó contra el suelo a velocidad máxima. Fue la primera muerte en la historia del vuelo espacial humano, y su causa fue menos la mala suerte que un programa que no podía permitirse admitir que su máquina no estaba lista — exactamente el fallo hacia el que había estado construyéndose la cultura de primeros ocultos y obligados a tener éxito.",
+  "description": "El primer vuelo tripulado de la nave Soyuz, lanzada el 23 de abril de 1967 con Vladimir Komarov a bordo. El vehículo apresurado sufrió fallos en cascada en órbita — un panel solar sin desplegar, problemas de control de actitud — y la misión fue interrumpida. En la reentrada se desplegó el paracaídas de frenado pero el paracaídas principal no se abrió correctamente; el módulo de descenso golpeó el suelo a velocidad casi terminal y Komarov murió — la primera fatalidad en vuelo en la historia del vuelo espacial.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Soyuz 11A511 desde Baikonur, 1967-04-23 00:35 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "FALLOS DE SISTEMAS",
+      "note": "Fallo en el despliegue del panel solar; el control de actitud se degrada — misión interrumpida.",
+      "type": "warning"
+    },
+    {
+      "met": 1.1,
+      "label": "FALLO DEL PARACAÍDAS",
+      "note": "El paracaídas principal falla en la reentrada; el módulo de descenso impacta a alta velocidad. Komarov muerto.",
+      "type": "warning"
+    }
+  ]
+}

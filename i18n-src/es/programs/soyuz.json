@@ -1,0 +1,88 @@
+{
+  "name": "Soyuz",
+  "tagline": "La nave espacial que comenzó en tragedia, pagó el precio más alto de los vuelos espaciales — y se convirtió en el vehículo más fiable y duradero jamás construido para alcanzar la órbita.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "A mediados de los años sesenta la era de estirar Vostok había terminado, y ambas superpotencias necesitaban una verdadera nave espacial de segunda generación — una que pudiera maniobrar, encontrarse y acoplarse, las habilidades que exigiría la Luna. La respuesta soviética fue Soyuz: el diseño de Sergei Korolev para una nave modular en tres partes — un módulo orbital esférico para vivir, un módulo de descenso para regresar a casa, y un módulo de servicio para energía y propulsión. Era un auténtico salto adelante. Pero Korolev murió en la mesa de operaciones en 1966, antes de que volara, y el programa perdió al único hombre con la autoridad para decir que una máquina no estaba lista."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que siguió fue el capítulo más oscuro del programa soviético. Bajo presión para responder a Apollo, Soyuz entró en servicio precipitadamente antes de ser segura, y el precio llegó casi de inmediato — primero con la muerte de un cosmonauta, luego, cuatro años después, con tres más. Soyuz llegaría a sobrevivir a todos sus rivales y volar más tiempo que cualquier nave tripulada en la historia, pero ganó esa longevidad por la vía difícil, y los dos accidentes al inicio son inseparables de la historia de todo lo que llegó a ser."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/01"
+      },
+      "caption": "La Soyuz de primera generación — tres módulos: un módulo de habitación esférico, un módulo de descenso en forma de campana, y un módulo de servicio. La arquitectura básica sigue volando, más de medio siglo después.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz fue diseñada para hacer todo lo que Vostok y Voskhod no podían: cambiar su órbita, buscar y acoplarse con otra nave, sostener a una tripulación durante semanas, y — en el plan original — llevar cosmonautas hacia la Luna. La distribución de tres módulos era la idea clave. Al dividir la nave espacial en un módulo orbital espacioso donde vivía la tripulación y un módulo de descenso pequeño y fuertemente blindado en el que regresaban, Soyuz podía ser a la vez amplia en órbita y ligera en la reentrada, descartando todo lo que no necesitaba traer de vuelta. Era un diseño limpio y adaptable — que es exactamente por qué perduró."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/soyuz-7k-ok/02"
+      },
+      "caption": "Soyuz en órbita. Lanzada al vuelo antes de estar lista, el diseño tardaría años y dos accidentes mortales en hacerse seguro — y luego nunca dejó de volar.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "El primer vuelo tripulado de Soyuz, en 1967, mató a su piloto: Vladimir Komarov voló una nave plagada de fallos conocidos y murió cuando su paracaídas falló en la reentrada — la primera muerte en vuelo en la historia de los vuelos espaciales. El programa se recuperó, y en 1969 Soyuz 4 y 5 lograron el primer acoplamiento de dos naves tripuladas, con cosmonautas transfiriéndose entre ellas mediante paseo espacial. Luego, en 1971, la tripulación de Soyuz 11 se convirtió en la primera en vivir a bordo de una estación espacial — y murió de regreso a casa cuando una válvula dejó escapar el aire de su cabina, las únicas muertes humanas ocurridas jamás en el espacio. Y en 1975, en un cambio completo de tono, una Soyuz se acopló con un Apollo en órbita, y un estadounidense y un soviético se estrecharon la mano a través de la escotilla — el fin simbólico de la carrera espacial."
+    },
+    {
+      "type": "prose",
+      "md": "Eso podría haber sido toda la historia: un diseño prometedor que comenzó en tragedia y cerró la carrera con un apretón de manos. En cambio fue solo el comienzo. Soyuz siguió volando — a Salyut, a Mir, a la Estación Espacial Internacional — y siguió refinándose, hasta que la nave que mató a dos tripulaciones en sus primeros cuatro años se convirtió en la forma más segura y fiable de alcanzar la órbita que nadie haya operado jamás."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "El hilo conductor de Soyuz es la fiabilidad comprada a un precio terrible y luego acumulada durante décadas. Cada uno de sus primeros desastres escribió una regla permanente en el diseño: después de Komarov, los sistemas de paracaídas y control fueron rediseñados; después de Soyuz 11, los cosmonautas nunca más volaron el lanzamiento o la reentrada sin trajes de presión. El programa aprendió de la manera en que normalmente se aprende la seguridad — de los accidentes — y luego, a diferencia de tantos programas, siguió volando el mismo vehículo básico el tiempo suficiente para que esas lecciones se acumularan en algo casi irrompible."
+    },
+    {
+      "type": "prose",
+      "md": "También cambió completamente de función. Concebida para ganar a los estadounidenses en la carrera a la Luna, Soyuz perdió esa carrera y fue silenciosamente reconvertida — en el transbordador que llevaba tripulaciones a las estaciones espaciales de la Unión Soviética, luego a Mir, después a la Estación Espacial Internacional construida con esos mismos estadounidenses. Cuando el Space Shuttle estadounidense se retiró en 2011, Soyuz se convirtió, durante nueve años, en la *única* forma en que cualquier ser humano podía alcanzar la Estación Espacial: todo el programa internacional dependía de un diseño soviético de los años sesenta."
+    },
+    {
+      "type": "prose",
+      "md": "El apretón de manos de Apollo-Soyuz de 1975 es la bisagra. Terminó la era en la que Soyuz existía para vencer a Occidente, y abrió aquella en la que pasaría el siguiente medio siglo transportando a los astronautas de Occidente junto a los cosmonautas de Rusia — la misma nave espacial, la misma plataforma de lanzamiento, un mundo completamente diferente."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/apollo-soyuz/02"
+      },
+      "caption": "Apollo-Soyuz, julio de 1975 — una nave espacial soviética y una estadounidense acopladas en órbita, y la carrera espacial terminó no con un ganador sino con un apretón de manos.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "El legado de Soyuz es simplemente que nunca se detuvo. Es la nave tripulada de mayor trayectoria y más volada en la historia — bastante más de ciento cincuenta vuelos tripulados a lo largo de seis décadas — y su diseño básico de tres módulos, refinado pero nunca reemplazado, sigue transportando tripulaciones hoy. Ninguna otra nave espacial humana se ha acercado a ese récord. La nave que comenzó matando a su piloto se convirtió en el vehículo más confiable de los vuelos espaciales, aquel en el que todos los demás programas se apoyaron cuando necesitaban un transporte que simplemente funcionara."
+    },
+    {
+      "type": "prose",
+      "md": "Su legado más profundo es una lección sobre el valor de unos buenos cimientos y la iteración paciente por encima del reemplazo llamativo. Donde Estados Unidos construyó y retiró generaciones enteras de naves espaciales — Mercury, Gemini, Apollo, Shuttle — los soviéticos encontraron un diseño que valía la pena conservar y pasaron cincuenta años mejorándolo. Ambos enfoques alcanzaron el espacio. Solo uno produjo un vehículo que sigue volando, esencialmente sin cambios en concepto, en su séptima década."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección más dura de Soyuz es que la fiabilidad no se diseña al principio; se gana, normalmente a través del fracaso, y solo por una organización dispuesta a seguir volando lo mismo el tiempo suficiente para aprender. Soyuz no era segura cuando comenzó — fue precipitada, y mató gente. Lo que la hizo segura fueron décadas de volarla, encontrando cada debilidad sucesivamente, y arreglándola, en un vehículo lo bastante estable como para que las lecciones permanecieran. La tentación es siempre reemplazar un diseño problemático; a veces el camino más sabio es conservarlo y hacerlo bien."
+    },
+    {
+      "type": "prose",
+      "md": "La segunda lección es el peligro de dejar que una fecha límite anule una advertencia. Soyuz 1 voló con fallos que sus propios ingenieros habían señalado, porque responder a Apollo importaba más, ese mes, que admitir que la nave no estaba lista — y un cosmonauta murió por ello. Es el mismo fracaso que la cultura de secretismo debe-triunfar de Vostok había estado ensayando, finalmente pagado con una vida. Cuando las personas más cercanas a la máquina dicen que no está lista, es el calendario lo que debería ceder."
+    }
+  ]
+}

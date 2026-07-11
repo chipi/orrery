@@ -1,0 +1,92 @@
+{
+  "name": "Stazione Spaziale Internazionale",
+  "tagline": "La cosa più grande che l'umanità abbia mai costruito nello spazio, e il luogo dove convergono tutti i fili dell'era spaziale — la rivalità tra gli ex rivali trasformata, dopo quarant'anni, nel più lungo atto di cooperazione della storia del volo spaziale.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tutto in questo atlante conduce qui. La Stazione Spaziale Internazionale non è un nuovo inizio ma una convergenza — il punto in cui le due storie separate del volo spaziale umano, americana e sovietica, si sono finalmente fuse in un'unica struttura e un unico equipaggio. La sua metà russa discende direttamente da Salyut e Mir; la sua metà americana da Skylab; è stata assemblata dallo Space Shuttle, è servita dagli equipaggi della Soyuz, rifornita dai discendenti del cargo Progress, e ospita laboratori costruiti dall'Europa e dal Giappone. Quasi ogni programma che l'ha preceduta è presente in essa, fisicamente, come eredità imbullonata in orbita."
+    },
+    {
+      "type": "prose",
+      "md": "È anche l'oggetto più grande e complesso mai costruito nello spazio, e il più costoso — una struttura grande quanto un campo da football, assemblata in più di un decennio da moduli lanciati separatamente e uniti in orbita, sostenuta continuamente da una flotta di veicoli spaziali di molte nazioni. Ma la cosa più profonda non è la sua dimensione. È che le due superpotenze che hanno passato quattro decenni cercando di battersi l'una con l'altra per ogni primato nello spazio hanno deciso, quando la corsa era finalmente finita, di costruire insieme la cosa più grande che entrambe avessero mai tentato — e l'hanno mantenuta con equipaggio, senza un solo giorno di interruzione, per oltre vent'anni."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/04"
+      },
+      "caption": "La Stazione Spaziale Internazionale completata — una struttura grande quanto un campo da football, assemblata in orbita da moduli costruiti su tre continenti, e permanentemente abitata dal novembre 2000.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Gli obiettivi della Stazione erano tre, e si intrecciavano. Il primo era scientifico: un laboratorio permanente, costantemente presidiato in microgravità, abbastanza grande e duraturo da condurre ricerche che i voli brevi non avrebbero mai potuto fare — sul corpo umano, sui materiali, sulla biologia, sulle questioni di lunga durata a cui qualsiasi viaggio verso Marte deve rispondere. Il secondo era operativo: padroneggiare, finalmente e su larga scala, la cosa verso cui ogni programma di stazione aveva arrampicato — una presenza umana genuinamente permanente, sostenuta indefinitamente da rifornimenti internazionali e rotazione degli equipaggi."
+    },
+    {
+      "type": "prose",
+      "md": "Il terzo obiettivo era politico, e negli anni Novanta era probabilmente il più urgente. Con il crollo dell'Unione Sovietica, l'Occidente temeva che i suoi ingegneri missilistici potessero vendere le loro competenze a qualsiasi regime disposto a pagare. Legare la Russia in un progetto condiviso, indispensabile, lungo decenni — uno in cui la sua impareggiabile esperienza nelle stazioni era necessaria e valorizzata — fu un atto deliberato di diplomazia tanto quanto di ingegneria. La ISS fu costruita in parte per dare all'ex nemico un motivo per cooperare, e funzionò: la Stazione ha tenuto il volo spaziale americano e russo intrecciati attraverso controversie terrestri che hanno reciso quasi tutto il resto."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/01"
+      },
+      "caption": "La Stazione Spaziale Internazionale a metà assemblaggio. Costruita tra il 1998 e il 2011 attraverso più di quaranta voli, modulo dopo modulo, fu il progetto di costruzione più ambizioso mai realizzato oltre la Terra.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "La Stazione fu assemblata tra il 1998 e il 2011, modulo dopo modulo, attraverso più di quaranta lanci dello Space Shuttle e razzi russi — un progetto di costruzione in orbita di una scala e difficoltà mai tentata prima o dopo. Da quando Expedition 1 arrivò il 2 novembre 2000, è stata continuamente abitata: per più di due decenni non c'è stato un solo momento in cui nessun essere umano vivesse fuori dalla Terra. Oltre 270 persone da più di 20 paesi hanno vissuto e lavorato a bordo, e ha ospitato decine di migliaia di esperimenti in ogni campo della scienza."
+    },
+    {
+      "type": "prose",
+      "md": "Nella sua operazione, ogni lezione di ogni programma precedente si presenta tutta insieme. Il suo assemblaggio modulare è l'idea di Mir, ampliata e internazionalizzata. La sua logistica di rifornimento e rifornimento di carburante è quella di Salyut, maturata. La sua occupazione continua e la sua scienza a lungo termine estendono Skylab e Mir. Soyuz trasporta ancora i suoi equipaggi, esattamente come li trasportava a Salyut cinquant'anni fa; Progress e i suoi cugini occidentali — l'ATV europeo, l'HTV giapponese, il Cygnus e Dragon americani — la tengono rifornita. La Stazione non è semplicemente il successore dei programmi di stazione; è la loro somma, che esegue tutte le loro tecniche faticosamente acquisite simultaneamente e in modo affidabile."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia centrale della ISS è la convergenza, e vale la pena tracciare filo per filo. Il segmento russo — i moduli Zarya e Zvezda al centro della Stazione — è il discendente diretto della linea DOS che andava da Salyut 1 a Mir; Zvezda è essenzialmente il successivo modulo centrale Mir. Il segmento americano eredita Skylab e lo Shuttle che lo costruì. Columbus è europeo, il frutto del percorso che passava attraverso Spacelab e l'ATV; Kibo è giapponese. Gli equipaggi arrivano sulla Soyuz, il veicolo spaziale che trasporta cosmonauti dal 1967, e sempre più su Dragon commerciali. Capire la ISS significa vedere tutti questi programmi ancora operativi, fusi in uno."
+    },
+    {
+      "type": "prose",
+      "md": "L'altro grande tema è la trasformazione della rivalità in cooperazione. La corsa spaziale fu una gara per essere primi; la ISS è un progetto che può esistere solo essendo condiviso. Nessuna singola nazione finanzia ora da sola una presenza umana permanente in orbita — il costo e la complessità sono semplicemente troppo grandi — e così la Stazione è sostenuta da un accordo permanente tra rivali per continuare a cooperare anche quando poco altro sopravvive tra loro. Questa è una cosa genuinamente nuova nella storia del volo spaziale: non una corsa vinta, ma un bene comune mantenuto, decennio dopo decennio, da nazioni che altrimenti non si fidano l'una dell'altra."
+    },
+    {
+      "type": "prose",
+      "md": "E la Stazione è ora un cardine verso il futuro. I veicoli spaziali commerciali hanno preso il compito di raggiungerla, ponendo fine all'era in cui solo i governi potevano far volare equipaggi e iniziando il passaggio dell'orbita terrestre bassa agli operatori privati. La sua stessa fine è in vista — un deorbiting controllato pianificato per intorno al 2030 — con stazioni commerciali destinate a succederle e il Gateway lunare che porta avanti il modello di partnership internazionale verso la Luna. La ISS è sia il culmine della prima era del volo spaziale umano sia il ponte verso la prossima."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/iss/03"
+      },
+      "caption": "La Stazione contro la Terra. Il suo risultato più profondo non è la sua dimensione o la sua scienza ma la sua continuità — una presenza umana ininterrotta nello spazio, sostenuta dalla cooperazione internazionale, per oltre due decenni.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "L'eredità della ISS è la prova, alla scala più grande, di due idee a cui questo atlante ritorna più e più volte: che una presenza umana permanente nello spazio è realizzabile, e che le cose più grandi nello spazio si costruiscono insieme piuttosto che da soli. È la più lunga occupazione umana continua di qualsiasi luogo oltre la Terra, il fondamento di quasi tutto ciò che ora è noto sul vivere e lavorare in orbita a lungo termine, e la base operativa e scientifica su cui si costruirà qualsiasi viaggio verso la Luna o Marte. Tutto ciò che i programmi di stazione hanno passato cinquant'anni a imparare è validato qui, funzionante tutto insieme e senza pausa."
+    },
+    {
+      "type": "prose",
+      "md": "La sua eredità diplomatica può contare quanto quella scientifica. Per un quarto di secolo la Stazione ha tenuto le nazioni spaziali del mondo — soprattutto gli Stati Uniti e la Russia — a lavorare insieme in orbita attraverso guerre, sanzioni e crolli di fiducia sulla Terra. Sta come la prova più chiara che la cooperazione può ottenere ciò che la competizione non può, e che un'impresa condivisa, una volta costruita, può tenere insieme i rivali molto dopo che le ragioni per cui l'hanno iniziata sono svanite. Quando sarà finalmente abbattuta, ciò che ha dimostrato le sopravvivrà: che i prossimi passi — la Luna, e infine Marte — sono cose che l'umanità compirà insieme."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La prima lezione della Stazione è che la cooperazione ottiene ciò che la competizione non può. Nessuna nazione ora costruisce da sola una presenza umana permanente nello spazio, perché la scala e il costo superano ciò che qualsiasi singolo budget può sostenere — e così la struttura più grande mai costruita in orbita esiste solo perché ex rivali hanno scelto di condividerla. La corsa spaziale ha prodotto trionfi brillanti e brevi; la ISS ha prodotto due decenni ininterrotti di presenza. Per le imprese più difficili e costose, mettere insieme gli sforzi non è un compromesso sull'ambizione. È l'unico modo in cui le ambizioni più grandi vengono realizzate."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda lezione è che niente nel volo spaziale parte da zero. La ISS è la somma di ogni programma prima di essa — il rifornimento di Salyut, la modularità di Mir, la scienza di Skylab, l'assemblaggio dello Shuttle, l'affidabilità della Soyuz, i laboratori europei e giapponesi — niente inventato di nuovo, tutto ereditato e combinato. La verità più profonda dell'era spaziale è che i suoi risultati sono cumulativi: ogni programma si basa su quelli precedenti, e la Stazione si basa su tutti. Il progresso nello spazio non è una serie di nuovi inizi ma un singolo, continuo atto di costruzione, portato avanti di mano in mano attraverso le generazioni e attraverso i confini."
+    }
+  ]
+}

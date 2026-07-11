@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "BEMAND AARDBAAN · GEVLOGEN",
+  "first": "Eerste bemande Gemini; eerste baanmanoeuvre door een bemanning",
+  "dispatch": "Gemini 3 was de proefvlucht — de eerste vlucht van het nieuwe tweezitsruimtevaartuig, en de eerste keer dat een Amerikaanse bemanning hun eigen baan veranderde in plaats van alleen maar mee te rijden op de baan die de raket hen gaf. Gus Grissom voerde het bevel, vier jaar nadat zijn Mercury-capsule bij de landing in zee zonk, en hij noemde deze \"Molly Brown\" naar de onzinkbare heldin — een stukje galgenhumor waar NASA's voorlichtingsdienst niet van hield. De vlucht zelf was kort en bewust bescheiden, drie omwentelingen om te bewijzen dat de machine vloog zoals ontworpen. Maar die kleine daad van het bijsturen van de baan met de motoren aan boord was de eerste stap van alles waarvoor Gemini bestond.",
+  "description": "Eerste bemande Gemini-vlucht. Gus Grissom en John Young vlogen drie omwentelingen op 23 maart 1965, testten het nieuwe tweepersoons ruimtevaartuig en voerden de eerste baanmanoeuvre uit door een bemand voertuig — het afvuren van stuurraketten om de baan te veranderen. Grissom gaf de capsule de bijnaam \"Molly Brown.\" Duur 4 u 52 m; landing in de Atlantische Oceaan.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan II GLV (GT-3) vanaf Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "BAANMANOEUVRE",
+      "note": "Eerste baanmanoeuvre door een bemanning — stuurraketten veranderen de baanvorm.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "LANDING IN ZEE",
+      "note": "Landing in de Atlantische Oceaan na 3 omwentelingen / 4 u 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

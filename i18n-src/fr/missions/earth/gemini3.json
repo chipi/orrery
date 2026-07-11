@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "HABITÉ ORBITE TERRESTRE · RÉALISÉ",
+  "first": "Premier Gemini habité ; première manœuvre orbitale par un équipage",
+  "dispatch": "Gemini 3 était le rodage — le premier vol du nouveau vaisseau biplace, et la première fois qu'un équipage américain modifiait sa propre orbite au lieu de simplement suivre celle que la fusée lui avait donnée. Gus Grissom le commandait, quatre ans après que sa capsule Mercury ait coulé lors de l'amerrissage, et il nomma celle-ci « Molly Brown » d'après l'héroïne insubmersible — un trait d'humour noir que le bureau des affaires publiques de la NASA n'apprécia guère. Le vol lui-même fut court et délibérément modeste, trois orbites pour prouver que la machine volait comme prévu. Mais ce petit acte de nudger l'orbite avec les propulseurs embarqués fut le premier pas de tout ce que Gemini existait pour faire.",
+  "description": "Premier vol Gemini habité. Gus Grissom et John Young effectuèrent trois orbites le 23 mars 1965, testant le nouveau vaisseau biplace et réalisant la première manœuvre orbitale par un véhicule habité — allumage des propulseurs pour changer l'orbite. Grissom surnomma la capsule « Molly Brown ». Durée 4 h 52 m ; amerrissage Atlantique.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II GLV (GT-3) depuis Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "MANŒUVRE ORBITALE",
+      "note": "Première manœuvre orbitale par un équipage — les propulseurs modifient la forme de l'orbite.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "AMERRISSAGE",
+      "note": "Amerrissage Atlantique après 3 orbites / 4 h 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

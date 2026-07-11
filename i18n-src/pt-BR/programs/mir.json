@@ -1,0 +1,92 @@
+{
+  "name": "Mir",
+  "tagline": "A primeira estação espacial modular — construída peça por peça em órbita, mantida viva por quinze anos através do colapso do país que a construiu, e o lugar onde rivais da Guerra Fria primeiro aprenderam a voar juntos.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Toda estação antes da Mir era um objeto único: lançada inteira, ocupada e eventualmente descartada. A Mir era diferente em essência. A partir de 1986, a União Soviética lançou um módulo central e depois, ao longo da década seguinte, enviou módulo após módulo e os acoplou em órbita — Kvant, Kvant-2, Kristall, Spektr, Priroda — expandindo a estação como um assentamento em vez de implantá-la como uma espaçonave. Foi a primeira vez que humanos montaram uma grande estrutura no espaço, e isso transformou a estação espacial de um produto acabado em um lugar permanente e expansível."
+    },
+    {
+      "type": "prose",
+      "md": "O nome significa 'paz' e também 'mundo', e a Mir se tornou ambos — o posto avançado humano continuamente habitado mais longevo já construído e, improvavelmente, o palco onde a Guerra Fria no espaço terminou. Foi projetada como uma vitrine soviética; sobreviveu à União Soviética por uma década, foi mantida em funcionamento por uma Rússia que mal podia pagá-la, e em seus anos finais abrigou os astronautas americanos cujos predecessores ela havia sido construída para superar. Mais do que qualquer espaçonave individual, a Mir é onde a era das corridas espaciais nacionais deu lugar à era da parceria internacional."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/04"
+      },
+      "caption": "Mir durante a montagem, fotografada de um Space Shuttle em visita — o módulo central com Kristall e os outros módulos acoplados. Construir uma grande estação a partir de peças lançadas separadamente, em órbita, foi em si a conquista.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo da Mir era a permanência em uma escala que ninguém havia tentado: um complexo de pesquisa continuamente tripulado que pudesse crescer ao longo do tempo e permanecer no ar por anos, não meses. Onde a Salyut havia provado que uma estação podia ser reabastecida e habitada, a Mir se propôs a provar que podia ser *expandida* — que novos laboratórios e capacidades podiam ser adicionados a uma estação já em órbita, indefinidamente, de modo que o posto avançado nunca estivesse terminado e nunca obsoleto. Era a arquitetura de uma presença humana genuinamente permanente, e funcionou."
+    },
+    {
+      "type": "prose",
+      "md": "O outro objetivo era a resistência, levada ao seu limite. A Mir foi onde os humanos descobriram quanto tempo podiam ficar — e a resposta, estabelecida a bordo dela, ainda vale: o médico-cosmonauta Valeri Polyakov passou 437 dias contínuos na Mir, mais tempo do que uma missão a Marte levaria, e voltou para casa capaz de andar. Esse único resultado silenciosamente removeu uma das grandes objeções ao voo humano no espaço profundo: mostrou que o corpo pode suportar a viagem."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/02"
+      },
+      "caption": "Mir vista do Space Shuttle Atlantis durante o programa Shuttle-Mir. Space Shuttles americanos acoplando com uma estação russa — impensável uma década antes — foi o ensaio geral para a Estação Espacial Internacional.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Ao longo de quinze anos a Mir abrigou mais de cem pessoas de uma dúzia de países, retornou um enorme corpo de ciência e estabeleceu os recordes de longa duração nos quais todo programa posterior se baseia. Mas seus anos finais também foram os mais difíceis que qualquer estação já enfrentou. Quando a União Soviética entrou em colapso, o financiamento da Mir quase desapareceu, e ela foi mantida em funcionamento com recursos mínimos, seu equipamento envelhecendo muito além de sua vida útil projetada. Em 1997 isso a alcançou: primeiro um incêndio irrompeu a bordo devido a um canister de oxigênio defeituoso, enchendo a estação de fumaça, e depois uma nave de carga Progress, sendo acoplada manualmente, colidiu com a estação e perfurou o módulo Spektr — despressurizando parte da Mir e forçando a tripulação a isolar um módulo enquanto o ar vazava."
+    },
+    {
+      "type": "prose",
+      "md": "Que a tripulação tenha sobrevivido a ambos — vedando a brecha, salvando a estação e continuando a voar — foi o teste definitivo da ideia que a Skylab havia provado primeiro: que pessoas em órbita podem lutar por uma máquina falhando e vencer. Ocorrendo durante esses mesmos anos estava o programa Shuttle-Mir: a partir de 1995, Space Shuttles americanos acoplaram com a Mir e astronautas da NASA viveram a bordo por meses, aprendendo operações de longa duração com os russos que haviam passado duas décadas dominando-as. Foi o primeiro trabalho conjunto dos antigos rivais, e foi, explicitamente, o ensaio para o que veio depois. A Mir foi desorbitada em uma reentrada controlada sobre o Pacífico em 2001, seu trabalho passado adiante."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A inovação central da Mir é a modularidade, e ela mudou tudo que se seguiu. Uma estação construída a partir de módulos intercambiáveis e lançados separadamente pode crescer, ser reparada por substituição de módulos e ser montada por mais de uma nação — nada do qual uma lata monolítica única pode fazer. A Estação Espacial Internacional é a modularidade levada à sua conclusão: dezenas de módulos de muitos países, montados ao longo de uma década. Toda essa abordagem foi provada na Mir primeiro."
+    },
+    {
+      "type": "prose",
+      "md": "A história mais profunda é de sobrevivência e transformação. A Mir foi concebida como um instrumento de prestígio soviético e terminou como a semente da cooperação internacional — mantida viva por uma Rússia falida em parte *porque* os Estados Unidos, querendo a experiência e a parceria, ajudaram a pagar para mantê-la voando. Os anos Shuttle-Mir construíram os relacionamentos humanos, os procedimentos conjuntos e a confiança política sem os quais a ISS não poderia ter sido tentada. A estação construída para vencer a Guerra Fria no espaço em vez disso se tornou o lugar onde a Guerra Fria no espaço foi enterrada."
+    },
+    {
+      "type": "prose",
+      "md": "E a Mir respondeu à pergunta que mais importa para qualquer coisa além da órbita baixa: um corpo humano pode suportar isso? Os 437 dias de Polyakov, e os muitos meses registrados por tripulação após tripulação, transformaram o voo espacial de longa duração de um desconhecido assustador em uma condição caracterizada e sobrevivível. Todo plano sério para Marte se baseia em dados coletados primeiro na Mir."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mir/05"
+      },
+      "caption": "Mir em órbita sobre a Terra — a primeira estação modular, e o modelo, em arquitetura e em parceria internacional, para a Estação Espacial Internacional que a substituiu.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "O legado da Mir é a Estação Espacial Internacional, em quase todos os aspectos. A arquitetura modular, a combinação de naves tripuladas Soyuz e cargueiros automatizados, as expedições de vários meses, as rotinas de vida e trabalho de longa duração — tudo isso foi desenvolvido ou amadurecido na Mir e transportado diretamente. Assim como a parceria: a ISS é operada em um núcleo EUA-Rússia precisamente porque o Shuttle-Mir provou que os dois podiam operar uma estação juntos, e porque a Rússia trouxe para ela a expertise acumulada em estações que a Mir representava."
+    },
+    {
+      "type": "prose",
+      "md": "Ela também permanece como uma lição de resistência de um tipo diferente. A Mir voou por quinze anos, cinco a mais do que o pretendido, através da desintegração de sua própria nação e de uma série de emergências que teriam encerrado um programa menos resiliente — e continuou porque seu design modular permitiu que fosse reparada, porque suas tripulações lutaram por ela, e porque uma nova vontade internacional emergiu para sustentá-la. Foi, no final, mantida unida pela engenhosidade e cooperação tanto quanto pela engenharia. Isso não é uma nota de rodapé em sua história; é o ponto central dela."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A primeira lição da Mir é que a modularidade é o que torna uma grande estação tanto possível quanto sobrevivível. Porque a Mir foi construída a partir de módulos separados, ela pôde crescer ao longo do tempo, ser montada através de muitos lançamentos e — crucialmente — ser reparada isolando ou substituindo uma seção danificada, como a tripulação fez quando Spektr foi perfurada. Uma estação monolítica não oferece nada disso; quando falha, falha por inteiro. Toda estação destinada a durar seguiu a Mir rumo à modularidade."
+    },
+    {
+      "type": "prose",
+      "md": "A segunda lição é que a parceria internacional pode sustentar o que o orgulho nacional não pode custear. A Mir sobreviveu seus anos mais difíceis porque a cooperação substituiu a competição — porque um antigo adversário tinha razões para ajudar a mantê-la voando. A mesma lógica construiu a ISS e a mantém no ar: nenhuma nação sozinha agora financia uma presença humana permanente. A Mir é onde essa mudança foi primeiro forçada pelas circunstâncias e depois escolhida propositalmente, e é uma das mudanças mais consequentes na história do voo espacial."
+    }
+  ]
+}

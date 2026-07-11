@@ -53,4 +53,17 @@ describe('gyro delta math', () => {
     orient(0, 80); // arrives within the 200ms pause → drops home
     expect(gyro.consume()).toEqual({ dAz: 0, dEl: 0 });
   });
+
+  it('requestPermission resolves true when there is no iOS permission gate', async () => {
+    await expect(gyro.requestPermission()).resolves.toBe(true);
+  });
+
+  it('recalibrate() drops home so the next event re-anchors', () => {
+    orient(0, 0);
+    orient(0, 40);
+    gyro.recalibrate();
+    // First event after recalibrate re-captures home → no delta yet.
+    orient(0, 40);
+    expect(gyro.consume()).toEqual({ dAz: 0, dEl: 0 });
+  });
 });

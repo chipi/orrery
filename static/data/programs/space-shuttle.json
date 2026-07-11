@@ -1,0 +1,32 @@
+{
+  "id": "space-shuttle",
+  "kind": "crewed-campaign",
+  "agency": "NASA",
+  "agencies": ["NASA"],
+  "country": "USA",
+  "start_year": 1981,
+  "end_year": 2011,
+  "status": "COMPLETED",
+  "epoch": "shuttle-and-mir",
+  "hero": "fleet/columbia/03",
+  "roster": [
+    { "linked_id": "columbia", "ref": "fleet", "role": "orbiter", "year": 1981 },
+    { "linked_id": "challenger", "ref": "fleet", "role": "orbiter", "year": 1983 },
+    { "linked_id": "discovery", "ref": "fleet", "role": "orbiter", "year": 1984 },
+    { "linked_id": "atlantis", "ref": "fleet", "role": "orbiter", "year": 1985 },
+    { "linked_id": "endeavour", "ref": "fleet", "role": "orbiter", "year": 1992 },
+    { "name": "STS-1", "year": 1981, "note": "the first orbital flight — the first time a crewed spacecraft was flown to orbit on its maiden launch, and the first reusable one" },
+    { "name": "Challenger (STS-51-L)", "year": 1986, "note": "lost 73 seconds after launch when a cold-stiffened booster seal failed; seven crew died, and the disaster exposed a culture that had normalised known risk" },
+    { "name": "Columbia (STS-107)", "year": 2003, "note": "lost during reentry when foam debris had holed the wing at launch; seven crew died, and the same organisational failure was found to have recurred" }
+  ],
+  "related_programs": ["apollo", "mir", "iss", "buran", "esa-human"],
+  "see_also": [
+    { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Fleet — Space Shuttle orbiters", "href": "/fleet?focus=discovery", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Space Shuttle — Wikipedia", "u": "https://en.wikipedia.org/wiki/Space_Shuttle", "t": "intro" },
+    { "l": "Space Shuttle era — NASA", "u": "https://www.nasa.gov/space-shuttle/", "t": "core" },
+    { "l": "Columbia Accident Investigation Board report (NASA)", "u": "https://www.nasa.gov/history/columbia-accident-investigation-board-caib/", "t": "deep" }
+  ]
+}

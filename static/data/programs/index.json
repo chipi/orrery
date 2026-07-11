@@ -127,5 +127,18 @@
     "start_year": 1986,
     "end_year": 2001,
     "hero": "fleet/mir/01"
+  },
+  {
+    "id": "space-shuttle",
+    "name": "Space Shuttle",
+    "tagline": "The reusable spaceplane that promised routine, airline-like access to orbit — delivered thirty years of extraordinary capability, never delivered cheap or safe, and killed two crews learning the difference.",
+    "kind": "crewed-campaign",
+    "agency": "NASA",
+    "country": "USA",
+    "epoch": "shuttle-and-mir",
+    "status": "COMPLETED",
+    "start_year": 1981,
+    "end_year": 2011,
+    "hero": "fleet/columbia/03"
   }
 ]

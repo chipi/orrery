@@ -1,0 +1,86 @@
+{
+  "name": "Space Shuttle",
+  "tagline": "The reusable spaceplane that promised routine, airline-like access to orbit — delivered thirty years of extraordinary capability, never delivered cheap or safe, and killed two crews learning the difference.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "After Apollo, NASA wanted to make spaceflight ordinary. The Moon landings had been magnificent and unsustainable — enormous rockets thrown away after a single use, at a cost no nation would bear for long. The answer, NASA argued, was reusability: a winged spaceplane that flew to orbit, glided home, and launched again within weeks, turning access to space from a series of one-off expeditions into something closer to an airline. The Space Shuttle was sold to Congress on exactly that promise — cheap, routine, reusable flight."
+    },
+    {
+      "type": "prose",
+      "md": "The vehicle that emerged was a compromise between that vision and the budgets and military requirements imposed on it, and the compromise mattered. To be affordable it had to be reusable; to be reusable and carry heavy payloads it became large, complex, and — because the crew rode alongside its fuel tank and boosters rather than safely atop the stack — fundamentally less forgiving than the capsules it replaced. It was a magnificent machine built on a promise it could not keep, and the gap between the promise and the reality is the whole story."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/endeavour/03" },
+      "caption": "Endeavour docked to the International Space Station. The Shuttle's unique combination — a large crew, a cargo bay, a robotic arm, and the ability to bring things home — made it the vehicle that assembled and serviced the great structures of its era.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The Shuttle's goal was to be the workhorse of everything: a single vehicle that could launch satellites, retrieve and repair them, carry laboratories like Spacelab, ferry crews, and build and service space stations — all reusably, all routinely. No spacecraft before or since has combined so many capabilities in one airframe. A crew of up to seven, a payload bay the size of a bus, a fifteen-metre robotic arm, and the ability not just to deliver cargo to orbit but to bring cargo *back* — that combination was genuinely unique, and it made possible things nothing else could do."
+    },
+    {
+      "type": "prose",
+      "md": "Two of those things justify the entire program. The Shuttle deployed the Hubble Space Telescope and then, five times, sent crews to repair and upgrade it in orbit — turning a flawed telescope into the most productive observatory in history and keeping it current for decades. And it assembled the International Space Station, flying up the modules, trusses, and solar arrays and bolting them together with its arm and its spacewalkers. Neither was possible without a vehicle that could carry a large crew, a large payload, and the tools to work in space. That was the Shuttle's real purpose, and at it, it was unmatched."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/challenger/02" },
+      "caption": "The crew of Challenger's final flight, STS-51-L. Seventy-three seconds after launch on a cold January morning in 1986, a stiffened booster seal failed and the vehicle broke apart. All seven died — and the investigation found the risk had been known and normalised.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Over thirty years the Shuttle flew 135 missions, carried 355 people, and did work no other vehicle could. It also never came close to its founding promise. Reusability did not make it cheap: refurbishing an orbiter between flights was so labour-intensive that each launch cost far more than an expendable rocket, and the airline-like flight rate never materialised. And it was dangerous in a way capsules were not — an experimental vehicle flown as though it were operational, with the crew mounted beside the hazards rather than above them, and no practical escape from most failures."
+    },
+    {
+      "type": "prose",
+      "md": "That danger came due twice. In 1986, Challenger was destroyed 73 seconds after launch when a rubber seal in a booster, stiffened by unusually cold weather, failed — a risk engineers had flagged and management had flown past before. In 2003, Columbia broke apart during reentry because a piece of foam had punched a hole in its wing at launch — a debris strike that had also been seen before and treated as acceptable. Fourteen astronauts died in the two accidents, and both investigations reached the same, damning conclusion: the engineering failures were real, but the deeper cause was an organisation that had grown used to flying with known, un-fixed risk. The vehicle was unforgiving; the culture around it stopped being afraid of that."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The central tension of the Shuttle is that it was, at once, one of the most capable and one of the most flawed vehicles ever flown. Judge it against its promise — cheap, routine, safe — and it failed on all three. Judge it against what it actually did — Hubble, the ISS, three decades of crewed operations, satellite deployment and retrieval, a generation of astronauts and science — and it is one of the great machines of the space age. Both judgments are true, and the honest account holds them together rather than choosing one."
+    },
+    {
+      "type": "prose",
+      "md": "The two disasters are the hardest and most important part of that account, and their lesson is organisational, not merely technical. Both accidents happened because a known danger — the booster seals, the foam strikes — had been observed repeatedly without catastrophe, and each time it did not kill anyone it was quietly reclassified as an acceptable feature of flight rather than the warning it was. Sociologists gave this a name after Challenger: the normalisation of deviance, the slow slide by which an organisation comes to tolerate what it once knew to be dangerous. That Columbia was lost seventeen years later to the very same pattern is the most sobering fact in the program's history."
+    },
+    {
+      "type": "prose",
+      "md": "There is also the matter of what the Shuttle displaced. For thirty years it was the only crewed vehicle the United States flew, and its cost and cadence shaped everything around it — there was no cheaper capsule kept in reserve, no parallel path. So when it retired in 2011, safely and on schedule, it left the United States with no way to launch its own astronauts at all, dependent on Russian Soyuz seats for nine years until commercial capsules finally filled the gap. The Shuttle was so central that its absence was itself a crisis."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/atlantis/01" },
+      "caption": "Atlantis after STS-135, the final Shuttle flight, in July 2011 — the end of thirty years of reusable American spaceflight, and of the vehicle that built the Space Station it left behind.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "The Shuttle's most durable legacy is physical: the International Space Station, which it assembled and which could not have been built any other way, and the Hubble Space Telescope, which it deployed and repeatedly saved. Those two alone secure its place. But its legacy is also cautionary — the clearest demonstration in spaceflight that reusability is not the same as cheapness, that an experimental vehicle must not be sold or flown as a routine one, and that organisational culture, not just engineering, decides whether a dangerous machine kills people."
+    },
+    {
+      "type": "prose",
+      "md": "Those lessons shaped what followed. The vehicles that replaced it returned to the capsule-on-top architecture the Shuttle had abandoned, with real launch-escape systems; the drive for genuinely cheap access to space passed to a new generation that pursued reusability differently, insisting it actually lower cost. The Shuttle proved both that reusable spaceflight was possible and that this particular way of doing it was not the answer — and both halves of that lesson were essential to everything that came after."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "The Shuttle's first lesson is that reusable is not the same as cheap. The vehicle was reused, but refurbishing it between flights was so costly and slow that it never delivered the low price or high cadence that justified its design. Reusability only pays if it actually reduces the cost and turnaround of a flight; a reusable vehicle that is expensive to reuse has the drawbacks of complexity without the promised savings. The programs that later made reusability work treated cheapness, not reuse for its own sake, as the goal."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is written in the two accidents: an organisation is at its most dangerous when it grows comfortable with a risk it has survived before. Challenger and Columbia were both lost to hazards that had appeared repeatedly and been reclassified, each time, as acceptable — the normalisation of deviance. The technical fixes were the easy part; the hard, permanent lesson is that a recurring warning must be treated as a warning no matter how many times it has not yet killed anyone. Fourteen people died proving it twice."
+    }
+  ]
+}

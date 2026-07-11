@@ -114,5 +114,18 @@
     "start_year": 1971,
     "end_year": 1986,
     "hero": "fleet/salyut-1/01"
+  },
+  {
+    "id": "mir",
+    "name": "Mir",
+    "tagline": "The first modular space station — built piece by piece in orbit, kept alive for fifteen years through the collapse of the country that built it, and the place where Cold-War rivals first learned to fly together.",
+    "kind": "station",
+    "agency": "Roscosmos",
+    "country": "USSR / Russia",
+    "epoch": "shuttle-and-mir",
+    "status": "COMPLETED",
+    "start_year": 1986,
+    "end_year": 2001,
+    "hero": "fleet/mir/01"
   }
 ]

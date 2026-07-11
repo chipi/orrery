@@ -8,7 +8,7 @@ export const prerender = true;
 // Hardcoded program ids for the prerender (universal module — no node:fs).
 // Add a program's id here + its programs/{id}.json + overlay simultaneously;
 // validate-data.ts fails if a declared program's files are missing.
-const PROGRAM_IDS = ['apollo', 'mercury', 'gemini', 'vostok', 'voskhod', 'soyuz', 'soviet-lunar', 'skylab', 'salyut'];
+const PROGRAM_IDS = ['apollo', 'mercury', 'gemini', 'vostok', 'voskhod', 'soyuz', 'soviet-lunar', 'skylab', 'salyut', 'mir'];
 
 export const entries: EntryGenerator = () => PROGRAM_IDS.map((id) => ({ id }));
 

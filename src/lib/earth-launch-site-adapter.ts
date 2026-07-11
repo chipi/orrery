@@ -125,6 +125,10 @@ function adaptFleetToSurfaceSite(f: FleetEntry): SurfaceSite | null {
     credit: f.credit ?? '',
     links: f.links ?? [],
     name: f.name,
+    // Innovation+purpose dispatch (PRD-029) — carried through from the fleet
+    // overlay (already merged by getFleetByCategory) so the pad panel on
+    // /earth shows the same lead as /fleet + the program roster.
+    dispatch: f.dispatch,
     linked_missions: f.linked_missions,
   };
 }

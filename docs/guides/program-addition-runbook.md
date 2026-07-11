@@ -45,9 +45,13 @@ The spine, en-US prose first. Schema: `program-overlay.schema.json`. Required: `
 
 Add the program's insignia via the badge pipeline: an entry in `static/data/badge-sources.json` (`kind: "program"`), then `tsx scripts/fetch-badges.ts` → saves the original to `masters/badges/programs/{id}.<ext>` (git-LFS) and writes the derived `static/images/badges/programs/{id}.webp` (one 256 px icon) + `badges.json` + `badge-provenance.json`. It's a distinct lane from the display ladder — see [IMAGE-PIPELINE.md §"Badges are a separate lane"](../../scripts/IMAGE-PIPELINE.md). You do **not** need `git lfs pull` to source a badge; the dedup gate skips LFS stubs per file. **Licensing bar: Public Domain / CC only.** Mission patches and program insignia are usually available; **per-vehicle badges for older hardware are usually trademarked contractor logos and are excluded** (Apollo fleet correctly carries none). The UI gates every badge on `badges.json`, so an absent badge simply renders nothing — never a 404.
 
-### 6 · Mission dispatches — **MANDATORY follow-up**
+### 6 · Dispatches — **MANDATORY follow-up** (missions + hardware)
 
-For **every mission the roster links** (`ref: "mission"` + `linked_id`), author a **`dispatch`** in `i18n-src/en-US/missions/{dest}/{id}.json` per `programs-editorial-voice.md` §6 — one lead paragraph, the *why-it-matters* (not a second fact summary), rendered at the top of the mission OVERVIEW tab. Do this **while the program's context is loaded**, not later. Context-only roster entries (no `linked_id`) get none. This step is not optional — a program is not done until its linked missions carry their dispatch.
+For **every mission *and* fleet asset the roster links** (`ref: "mission" | "fleet"` + `linked_id`), author a **`dispatch`** per `programs-editorial-voice.md` §6 — one lead paragraph rendered at the top of the entry's OVERVIEW tab. The angle depends on the target:
+- **Missions** → the *why-it-matters* → `i18n-src/en-US/missions/{dest}/{id}.json`.
+- **Fleet/hardware** → the *innovation + purpose* of that unique asset (what made it a first, why it had to exist) → `i18n-src/en-US/fleet/{category}/{id}.json`.
+
+Neither is a spec/fact rehash. **Launch-site assets propagate automatically** — a `dispatch` on a `fleet/launch-site/*` entry is carried through by `earth-launch-site-adapter.ts` and shows on the `/earth` pad panel too (above the coordinate grid), with zero extra work. One dispatch, three surfaces: `/fleet`, the program roster, and `/earth`. Do this **while the program's context is loaded**, not later. Context-only roster entries (no `linked_id`) get none. This step is not optional — a program is not done until every linked mission and asset carries its dispatch.
 
 ### 7 · Deep-links — `see_also`
 

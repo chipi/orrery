@@ -268,6 +268,9 @@
 
     <div class="tab-body">
       {#if tab === 'overview'}
+        {#if entry.dispatch}
+          <p class="dispatch">{entry.dispatch}</p>
+        {/if}
         {#if entry.explorer_route}
           <a
             class="explorer-cta"
@@ -760,6 +763,19 @@
     border-style: solid;
     appearance: none;
     text-align: left;
+  }
+
+  /* Editorial lead paragraph (PRD-029 dispatch — innovation + purpose). Reads
+     as a magazine standfirst: prominent roman serif, brighter than the italic
+     .description below, set apart by a hairline. Matches MissionPanel. */
+  .dispatch {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .description {

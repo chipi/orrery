@@ -81,19 +81,26 @@ The voice is one; the assignment shifts.
 
 ---
 
-## 6. The mission dispatch
+## 6. The dispatch — missions + hardware
 
-Programs don't live in isolation — a program's roster **links** the missions that carried it out. When a program touches a mission, that mission earns a **dispatch**: one editorial paragraph, in this exact voice, at the top of its OVERVIEW tab. It's the bridge that makes the program↔mission handoff feel like one publication.
+Programs don't live in isolation — a program's roster **links** the missions that carried it out *and* the hardware that made it possible. When a program touches a mission or a fleet asset, that entry earns a **dispatch**: one editorial paragraph, in this exact voice, at the top of its OVERVIEW tab. It's the bridge that makes the program↔mission↔hardware handoff feel like one publication.
 
-**Its job — the *why*, not a second set of facts.** Every mission already carries a factual `description` (durations, masses, instruments, dates). The dispatch is *not* that. It's the mission's compressed version of a program's *Narrative* beat: the one thing to understand about why this flight mattered — the turning point it was, the risk it ran, the door it opened. Think the standfirst paragraph under a magazine headline. **If it reads like the `description` with better adjectives, it's wrong** — rewrite until it earns its place.
+**Its job — the *why*, not a second set of facts.** Every mission carries a factual `description` (durations, masses, instruments, dates); every fleet entry carries specs. The dispatch is *not* that. The angle depends on what it's attached to:
+- **Missions → why it mattered.** The mission's compressed version of a program's *Narrative* beat: the turning point it was, the risk it ran, the door it opened.
+- **Hardware → innovation + purpose.** What made this asset a *first*, why it *had to exist*, the problem it solved, the engineering choice that defined it. Not "how big is it" — "what did it do that nothing before it could, and why."
+
+Either way: think the standfirst paragraph under a magazine headline. **If it reads like the `description`/specs with better adjectives, it's wrong** — rewrite until it earns its place.
 
 **Shape.** One substantial paragraph, ~3–6 sentences: a hook, the stakes, why it still matters. Same seven principles, same banned words, same occasional-deliberate-"you". It adds *framing*, never new claims the mission page can't already source.
 
 **Where it lives + renders.**
-- **Source:** `i18n-src/en-US/missions/{dest}/{id}.json` → a new **`dispatch`** field, alongside `first` / `description`. (The base record stays in `static/data/missions/…`; the dispatch is translatable editorial, so it's an overlay field.)
-- **Render:** top of the mission OVERVIEW tab, *above* `first` / `description`, set apart typographically as a lead — heavier, wider measure — so it reads as editorial, not body copy.
+- **Source (missions):** `i18n-src/en-US/missions/{dest}/{id}.json` → a **`dispatch`** field, alongside `first` / `description`.
+- **Source (fleet):** `i18n-src/en-US/fleet/{category}/{id}.json` → a **`dispatch`** field, alongside `tagline` / `description`.
+- The base records stay in `static/data/…`; the dispatch is translatable editorial, so it's an overlay field.
+- **Render:** top of the OVERVIEW tab, *above* the specs/description, set apart typographically as a lead — heavier, wider measure — so it reads as editorial, not body copy (identical treatment in MissionPanel + FleetEntryPanel).
+- **`/earth` propagation (launch-sites only):** a `dispatch` on a `fleet/launch-site/*` entry is carried through by `earth-launch-site-adapter.ts` into the SurfaceScene pad panel and rendered as the same lead above the coordinate grid — automatic, no extra authoring. One dispatch shows on `/fleet`, the program roster, *and* `/earth`.
 
-**When it's mandatory.** Every mission a program's roster **links** (`ref: "mission"` + `linked_id`) gets a dispatch, authored *while that program is being built* — its context is already loaded. Context-only missions the roster merely *names* (no `linked_id`) don't get one: we don't model them, so there's no page to carry it. This is a **required step in the program-addition runbook**, not optional polish.
+**When it's mandatory.** Every mission **and** fleet asset a program's roster **links** (`ref: "mission" | "fleet"` + `linked_id`) gets a dispatch, authored *while that program is being built* — its context is already loaded. Context-only entries the roster merely *names* (no `linked_id`) don't get one: we don't model them, so there's no page to carry it. This is a **required step in the program-addition runbook**, not optional polish.
 
 **Reference — Apollo 11.** Its `description` is the facts (21 h 36 m on the surface, 21.55 kg of samples, the retroreflector still ranged today, ~600 million watching). Its dispatch is the *why*:
 

@@ -5970,6 +5970,9 @@ sample      ${debugInfo.projectedPxSample}`}
       />
 
       {#if panelTab === 'overview'}
+        {#if selected.dispatch}
+          <p class="site-dispatch">{selected.dispatch}</p>
+        {/if}
         <div class="grid">
           <div class="cell">
             <div class="cell-label">{m.moon_panel_year()}</div>
@@ -6984,6 +6987,20 @@ sample      ${debugInfo.projectedPxSample}`}
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     margin: 0;
+  }
+
+  /* Editorial lead paragraph (PRD-029 dispatch) — only Earth launch-sites
+     populate it (mapped from the fleet overlay). Prominent roman serif,
+     brighter than the italic .editorial, set apart by a hairline. Matches
+     Mission/FleetEntryPanel. */
+  .site-dispatch {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .editorial {

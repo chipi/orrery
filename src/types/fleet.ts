@@ -105,6 +105,14 @@ export interface FleetEntryOverlay {
   tagline: string;
   description: string;
   best_known_for?: string;
+  /**
+   * Editorial lead paragraph (PRD-029 / programs-editorial-voice.md §6) — for
+   * hardware, the *innovation + purpose* of this unique asset (what made it a
+   * first, why it had to exist), in the programs voice, shown at the top of
+   * OVERVIEW. Authored when a program's roster links this asset. Distinct from
+   * `description` (the specs): the dispatch is framing, not a spec rehash.
+   */
+  dispatch?: string;
 }
 
 export type FleetEntry = FleetEntryBase & Partial<FleetEntryOverlay>;

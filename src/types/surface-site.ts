@@ -94,6 +94,14 @@ export interface SurfaceSite {
   left?: string;
   fact?: string;
   capability?: string;
+  /**
+   * Editorial lead (PRD-029 / programs-editorial-voice.md §6). For Earth
+   * launch-sites, the innovation + purpose dispatch, mapped from the fleet
+   * overlay by earth-launch-site-adapter so the same paragraph that shows on
+   * /fleet + the program roster also pops on the /earth pad panel. Rendered as
+   * a lead above the other editorial. /moon + /mars sites don't populate it.
+   */
+  dispatch?: string;
   /** ── Surface Hotspots v0.7 (PRD-014 / RFC-017) ──
    * Optional progressive-disclosure metadata. Sites without these
    * fields render as Tier 0 silhouettes only (backward compatible).

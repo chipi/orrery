@@ -88,5 +88,18 @@
     "start_year": 1964,
     "end_year": 1974,
     "hero": "fleet/n1/01"
+  },
+  {
+    "id": "skylab",
+    "name": "Skylab",
+    "tagline": "America's first space station — improvised from Apollo hardware, nearly lost at launch, saved by the boldest repair job of the era, and then abandoned a little too soon.",
+    "kind": "station",
+    "agency": "NASA",
+    "country": "USA",
+    "epoch": "first-stations",
+    "status": "COMPLETED",
+    "start_year": 1973,
+    "end_year": 1974,
+    "hero": "fleet/skylab/01"
   }
 ]

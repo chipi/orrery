@@ -1,0 +1,86 @@
+{
+  "name": "Skylab",
+  "tagline": "America's first space station — improvised from Apollo hardware, nearly lost at launch, saved by the boldest repair job of the era, and then abandoned a little too soon.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "When Apollo wound down, NASA was left with something unusual: a surplus. Saturn rockets built and paid for, factories still running, a corps of astronauts with nowhere left to go now that the Moon landings were being cancelled one by one. The question shifted from *can we get there* to *what do we do once the racing stops* — and the most interesting answer was not another destination but a change of verb. Not visiting space, but staying in it. Living and working there, for weeks and months, to find out whether human beings could."
+    },
+    {
+      "type": "prose",
+      "md": "Skylab was the first American attempt to answer that. Rather than design a station from scratch, NASA took the empty upper stage of a Saturn V — a hydrogen tank the size of a house — and fitted it out as an orbital workshop: crew quarters, a laboratory, a solar observatory, a home. It was launched in May 1973, and it very nearly died in the first ten minutes."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/skylab/04" },
+      "caption": "The Skylab orbital workshop, built inside a converted Saturn V upper stage — laboratory, solar observatory, and home for three crews. The first station large enough that its occupants could actually live, not merely endure.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Skylab had three intertwined goals, and all of them were about time rather than distance. The first was medical: find out what long stays in weightlessness do to the human body, because every future plan — stations, Mars, anything beyond a few days — depended on the answer. The second was scientific: Skylab carried the Apollo Telescope Mount, a crewed solar observatory that returned the finest views of the Sun yet obtained, along with Earth-resources and materials experiments. The third was simply to prove that a large, habitable outpost could be run in orbit at all."
+    },
+    {
+      "type": "prose",
+      "md": "The design reflected that ambition. Where earlier spacecraft were cockpits you were strapped into, Skylab was a building you moved through — a workshop with a shower, a galley, sleep compartments, and enough volume that astronauts could tumble across it. It was the first time humans had room in space, and it changed what a mission felt like: less a flight to be survived, more a place to be inhabited."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/skylab-2/01" },
+      "caption": "The Skylab 2 crew — Conrad, Kerwin, Weitz — before launch. They flew to a crippled, overheating station and saved it with an improvised sunshade and a hazardous spacewalk, proving crews could repair a spacecraft in orbit.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "During launch, the airflow tore away Skylab's combined micrometeoroid and sun shield. The shield took one of the two main solar panels with it and jammed the other shut, so the station reached orbit crippled: barely any power, and no shade, its interior climbing toward temperatures that would ruin the experiments and make it uninhabitable. For a few days it looked like America's first station might be a total loss before a single crew arrived."
+    },
+    {
+      "type": "prose",
+      "md": "Instead, Skylab became the first great demonstration that people in space are not just passengers but repair crews. The first crew flew up, pushed a parasol-like sunshade out through a small scientific airlock to cool the station, and then — in a tense, improvised spacewalk — wrestled the jammed solar panel free, restoring power. The station was saved, and went on to host three crews for 28, 59, and finally 84 days, returning a mountain of solar and biomedical data and setting an endurance record that stood for years. Its end was less triumphant: with no crew vehicle able to reach it after 1974 and its orbit decaying faster than predicted, Skylab fell back to Earth in 1979, scattering debris across the Indian Ocean and Western Australia."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The defining moment of Skylab is the repair, and it matters more than it first appears. Until 1973, spacecraft were essentially disposable and un-serviceable: if something broke, the mission was degraded or lost. Skylab proved the opposite — that a crew with tools, training, and improvisation could save a machine that had failed catastrophically. That single idea, that orbital hardware is *maintainable*, runs directly forward to the Hubble servicing missions and to the constant repair-and-upgrade work that keeps the International Space Station alive."
+    },
+    {
+      "type": "prose",
+      "md": "The science was real too, and easy to underrate. The Apollo Telescope Mount watched the Sun through an entire period of solar activity, capturing flares and coronal structure no ground telescope could see, and rewriting solar physics. The biomedical program produced the first serious data on how bones, muscles, and the heart adapt to months of weightlessness — the baseline every long-duration mission since has built on. Skylab was where human spaceflight quietly turned from stunt into laboratory."
+    },
+    {
+      "type": "prose",
+      "md": "There is a human landmark as well. The third crew, worked to exhaustion by an over-packed schedule radioed up from the ground, eventually pushed back — taking an unscheduled day to rest and forcing mission control to negotiate a saner workload. It was an awkward episode at the time and a genuinely important one: the first clear assertion that the people in orbit, not just the planners on the ground, have a say in how a long mission is run. Every station program since has had to take crew autonomy seriously."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/skylab-4/01" },
+      "caption": "The Skylab 4 crew, whose 84-day flight set a human endurance record that stood for years — and whose mid-mission pushback against an impossible workload became a landmark in crew autonomy.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Skylab's legacy is that it made the space station real — not as a concept but as a working thing, run by people, repairable, scientifically productive, survivable for months. Everything that followed in the station era, Soviet and American alike, built on what Skylab established: that humans can live and work in orbit for long periods, that the hardware can be fixed when it breaks, and that the point of a station is patient science and human endurance rather than a single dramatic first."
+    },
+    {
+      "type": "prose",
+      "md": "Its unhappy ending is instructive too. Skylab was lost not because it failed but because it was abandoned — left in an orbit that decayed while the vehicle meant to reboost it, the Space Shuttle, ran years late. A station is not a monument you build and walk away from; it is a commitment that has to be continuously funded and continuously reached. The uncontrolled reentry over Australia was an embarrassment NASA learned from, and the lesson — plan the whole life of a station, including how you keep it up and how you bring it down — is written into every program that came after."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Skylab's first lesson is that repairability is a capability worth designing for. The station survived a launch failure that should have destroyed it only because a crew could be sent to fix it — and because, improvised as the fixes were, there was enough access and enough margin to attempt them. The programs that took this to heart, from Hubble servicing to the ISS, treated their hardware as something to be maintained, not merely operated until it broke. The ones that forgot it paid for spacecraft they could only watch fail."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is that a station is only as secure as its supply line. Skylab was doomed the moment the gap between its last crew and its next possible visit stretched past the life of its orbit. Impressive hardware in space is worthless if you cannot reliably reach it; the continuous, boring, expensive work of keeping a transport system running is not a footnote to a station program but its precondition. Skylab fell because that line was allowed to lapse."
+    }
+  ]
+}

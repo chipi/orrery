@@ -5,7 +5,12 @@ import * as THREE from 'three';
 // Drive the gyro service to emit a non-zero delta so applyGyroOrbit exercises
 // its spherical camera-rotation path (not just the early-out).
 vi.mock('./device-orientation', () => ({
-  gyro: { consume: vi.fn().mockReturnValueOnce({ dAz: 0.1, dEl: 0.05 }).mockReturnValue({ dAz: 0, dEl: 0 }) },
+  gyro: {
+    consume: vi
+      .fn()
+      .mockReturnValueOnce({ dAz: 0.1, dEl: 0.05 })
+      .mockReturnValue({ dAz: 0, dEl: 0 }),
+  },
 }));
 
 import { applyGyroOrbit } from './gyro-orbit';

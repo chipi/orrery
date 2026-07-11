@@ -47,7 +47,9 @@ describe('audioEngine', () => {
 
   it('plays a chord (frequency array) without throwing', async () => {
     const { audioEngine } = await import('./audio-engine');
-    expect(() => audioEngine.blip({ freq: [440, 660], type: 'triangle', dur: 0.2, gain: 0.1 })).not.toThrow();
+    expect(() =>
+      audioEngine.blip({ freq: [440, 660], type: 'triangle', dur: 0.2, gain: 0.1 }),
+    ).not.toThrow();
   });
 
   it('is a no-op when muted', async () => {

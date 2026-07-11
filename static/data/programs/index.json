@@ -101,5 +101,18 @@
     "start_year": 1973,
     "end_year": 1974,
     "hero": "fleet/skylab/01"
+  },
+  {
+    "id": "salyut",
+    "name": "Salyut",
+    "tagline": "The world's first space stations — two secret programmes hidden under one name, a hard and sometimes deadly decade of learning to live in orbit, and the direct ancestor of every station since.",
+    "kind": "station",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "epoch": "first-stations",
+    "status": "COMPLETED",
+    "start_year": 1971,
+    "end_year": 1986,
+    "hero": "fleet/salyut-1/01"
   }
 ]

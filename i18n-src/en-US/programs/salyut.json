@@ -1,0 +1,86 @@
+{
+  "name": "Salyut",
+  "tagline": "The world's first space stations — two secret programmes hidden under one name, a hard and sometimes deadly decade of learning to live in orbit, and the direct ancestor of every station since.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Having lost the race to the Moon, the Soviet Union changed the game. If it could not be first to land, it would be first to *stay* — to build the first outpost where humans lived and worked in orbit, and to turn its hard-won lead in endurance into a permanent presence. In April 1971, two years before America's Skylab, it succeeded: Salyut 1 became the first space station in history. It was the beginning of a fifteen-year campaign that, more than any other, invented the space station as we now understand it."
+    },
+    {
+      "type": "prose",
+      "md": "But 'Salyut' was a cover story. Behind the single civilian-sounding name ran two entirely separate programmes that the Soviet Union deliberately blurred together. One was genuinely civilian — the DOS stations, for science and long-duration spaceflight. The other was Almaz: secret military reconnaissance stations, built by a rival design bureau, carrying enormous cameras to photograph the West and, on at least one, a cannon. Both flew as 'Salyut' so the world could not tell which was which. Untangling the two is most of the story."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/salyut-6/01" },
+      "caption": "Salyut 6, with craft docked at both ends. Its second docking port was the breakthrough: a Progress freighter could refuel and resupply the station while a crewed Soyuz stayed attached — the innovation that turned a station from a place you visit into a place you can stay.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The civilian goal was to make orbit habitable — long stays, real science, and the prestige of permanence. The military goal, hidden inside the same programme, was crewed reconnaissance: cosmonauts operating telescopic cameras to image military targets below, in the years before automated spy satellites made human eyes redundant. For a decade these two purposes shared a name, a rocket, and a basic airframe, and the public saw only one of them."
+    },
+    {
+      "type": "prose",
+      "md": "The technical prize that both needed, and that took years to win, was resupply. A station you cannot refuel or restock is a station with an expiry date — as Skylab would prove. The Salyut programme's central engineering achievement was solving that: the two-port design of Salyut 6 and 7, which let an uncrewed Progress freighter dock at one end and pump propellant, air, water, food, and equipment into the station while a crew's Soyuz stayed docked at the other. That single capability is what turned the space station from an experiment into an institution."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/salyut-3/01" },
+      "caption": "Salyut 3 was, in truth, Almaz — a secret military reconnaissance station flown under the civilian 'Salyut' name to hide its purpose. The Almaz stations carried long-focus cameras to photograph the West, and one test-fired a cannon in orbit.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The road there was hard and, at the start, deadly. Salyut 1 was a triumph and then a catastrophe: its first resident crew, Soyuz 11, died during their return when a valve vented their cabin to vacuum, and the station was never occupied again. Salyut 2 — the first Almaz — failed on orbit and was never crewed. The middle stations were a mixed run of civilian and military flights, some cut short by breakdowns and emergencies, each one teaching the engineers a little more about keeping a machine and its crew alive for weeks at a time."
+    },
+    {
+      "type": "prose",
+      "md": "Then it came together. Salyut 6 (1977) and Salyut 7 (1982), with their two ports and Progress resupply, became the first stations that could be genuinely lived in — hosting crew after crew in continuous relay, setting endurance records that climbed past half a year, and carrying the first \"Interkosmos\" guest cosmonauts from across the Soviet bloc and beyond, the first people in space who were neither American nor Soviet. Salyut 7 also produced one of the great feats of the era: in 1985, after the abandoned station fell silent, frozen and tumbling, two cosmonauts flew up, manually docked with the dead hulk, and brought it back to life by hand — the hardest repair job ever attempted in orbit."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The through-line of Salyut is incremental mastery. There was no single breakthrough station; there were seven, each a little better than the last, and the programme's genius was in flying them in steady succession and learning from every failure. The first crew died; the programme fixed the suits and flew again. Stations failed on orbit; the next held. Docking was unreliable; then it was routine. Resupply was impossible; then it was the backbone. This is the opposite of the all-or-nothing gamble that sank the N1 — a patient, iterative climb that turned a deadly novelty into ordinary infrastructure."
+    },
+    {
+      "type": "prose",
+      "md": "The dual civilian-military identity is the programme's strangest feature and a very Soviet one. Two rival bureaus, two purposes, one shared disguise — the openness of a science station and the secrecy of a spy platform running under the same friendly name, 'Salute.' The Almaz military stations were quietly retired once automated reconnaissance satellites outperformed cosmonauts with cameras, and the civilian DOS line carried on, but for years the two were deliberately impossible to tell apart, and Western analysts spent enormous effort guessing which Salyut was which."
+    },
+    {
+      "type": "prose",
+      "md": "By Salyut 6 and 7 the programme had stopped being about firsts and started being about permanence — continuous occupation, international crews, resupply as routine. That shift, from visiting orbit to inhabiting it, is Salyut's real achievement, and it fed directly into what came next. Mir's core module was, in essence, the next Salyut; the operational patterns Salyut established — Soyuz crews, Progress freighters, long-duration expeditions — are exactly how the International Space Station is run today."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/salyut-7/01" },
+      "caption": "A full-scale Salyut with a Soyuz ferry docked. The station-plus-ferry-plus-freighter pattern that Salyut worked out over seven stations is, essentially unchanged, how Mir and then the International Space Station have been operated ever since.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Salyut's legacy is the space station itself — not as an idea but as a working system. Over seven stations and fifteen years the programme solved, one at a time, every practical problem of living in orbit: docking, resupply, refuelling, crew rotation, long-duration health, emergency repair. The architecture it arrived at — a core module, crews delivered and returned by Soyuz, cargo and propellant delivered by an automated freighter, occupation measured in months — was inherited whole by Mir and then by the ISS. It is still the template."
+    },
+    {
+      "type": "prose",
+      "md": "It also built the expertise that made post-Cold-War cooperation possible. By the time the International Space Station was conceived, the Soviet Union and then Russia had accumulated two decades of unmatched experience in long-duration station operations — experience the United States, after Skylab, simply did not have. That imbalance is a large part of why the ISS was built on a Russian core and Russian operational doctrine, and why Salyut, the programme born from losing the Moon, ended up shaping the most ambitious human structure ever built."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Salyut's central lesson is the power of patient iteration over the single grand gamble. Seven stations, each improved from the failures of the last, turned an endeavour that killed its first crew into dependable infrastructure — the same bet-small-and-learn discipline that made Soyuz reliable, and the mirror image of the all-up gamble that destroyed the N1. Hard problems yield to steady iteration on a stable design far more reliably than to a single heroic attempt, and the Soviet station programme is the clearest proof of it."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is that resupply is what makes a station real. Skylab, brilliant and short-lived, could not be restocked and died when it was left alone. Salyut's insistence on solving refuelling and resupply — the second docking port, the Progress freighter — is exactly what let its later stations be occupied for years instead of weeks. A permanent presence in space is not a matter of building a bigger spacecraft; it is a matter of building the unglamorous logistics chain that keeps a modest one continuously alive."
+    }
+  ]
+}

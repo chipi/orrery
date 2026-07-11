@@ -1,0 +1,29 @@
+{
+  "id": "buran",
+  "kind": "crewed-campaign",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR",
+  "start_year": 1976,
+  "end_year": 1993,
+  "status": "CANCELLED",
+  "epoch": "shuttle-and-mir",
+  "hero": "fleet/buran/03",
+  "roster": [
+    { "linked_id": "buran", "ref": "fleet", "role": "orbiter", "year": 1988 },
+    { "linked_id": "energia", "ref": "fleet", "role": "launcher", "year": 1987 },
+    { "linked_id": "buran-ok-gli", "ref": "fleet", "role": "test-article" },
+    { "name": "The single flight", "year": 1988, "note": "on 15 November 1988 Buran flew one uncrewed orbital mission — a fully automated launch, two orbits, reentry, and runway landing in a crosswind, with no pilot aboard at any point" },
+    { "name": "Cancellation", "year": 1993, "note": "with the Soviet Union gone and no budget or mission left, the program was cancelled after its one flight; the flown orbiter was destroyed in 2002 when its hangar roof collapsed at Baikonur" }
+  ],
+  "related_programs": ["space-shuttle", "soviet-lunar", "mir"],
+  "see_also": [
+    { "label": "Space Shuttle — the vehicle it answered", "href": "/programs/space-shuttle", "kind": "program" },
+    { "label": "Fleet — Buran orbiter & Energia", "href": "/fleet?focus=buran", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Buran (spacecraft) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Buran_(spacecraft)", "t": "intro" },
+    { "l": "Energia — Wikipedia", "u": "https://en.wikipedia.org/wiki/Energia", "t": "core" },
+    { "l": "RussianSpaceWeb — Buran", "u": "https://www.russianspaceweb.com/buran.html", "t": "deep" }
+  ]
+}

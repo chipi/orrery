@@ -140,5 +140,18 @@
     "start_year": 1981,
     "end_year": 2011,
     "hero": "fleet/columbia/03"
+  },
+  {
+    "id": "buran",
+    "name": "Buran",
+    "tagline": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
+    "kind": "crewed-campaign",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "epoch": "shuttle-and-mir",
+    "status": "CANCELLED",
+    "start_year": 1976,
+    "end_year": 1993,
+    "hero": "fleet/buran/03"
   }
 ]

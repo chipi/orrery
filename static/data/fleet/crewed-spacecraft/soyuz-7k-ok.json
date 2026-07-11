@@ -55,6 +55,8 @@
     }
   ],
   "linked_missions": [
-    "apollo-soyuz"
+    "apollo-soyuz",
+    "soyuz-1",
+    "soyuz-11"
   ]
 }

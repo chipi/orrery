@@ -1,0 +1,41 @@
+{
+  "id": "soyuz-11",
+  "agency": "Roscosmos",
+  "agency_full": "Soviet space program / OKB-1",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#CD1F2D",
+  "year": 1971,
+  "status": "FLOWN",
+  "departure_date": "1971-06-06",
+  "arrival_date": "1971-06-06",
+  "transit_days": 0,
+  "vehicle": "Soyuz (11A511)",
+  "payload": "Soyuz 7K-OKS; Dobrovolsky, Volkov, Patsayev",
+  "delta_v": "~7.8 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© Soviet space program — mission reports. Public domain / CC.",
+  "links": [
+    {
+      "l": "Soyuz 11 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_11",
+      "t": "intro"
+    },
+    {
+      "l": "RussianSpaceWeb",
+      "u": "https://www.russianspaceweb.com/soyuz.html",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "soyuz-7k-ok",
+      "role": "spacecraft"
+    },
+    {
+      "id": "gagarins-start",
+      "role": "launch-site"
+    }
+  ]
+}

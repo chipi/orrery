@@ -1208,5 +1208,25 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": true
+  },
+  {
+    "id": "soyuz-1",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1967,
+    "sector": "gov",
+    "color": "#CD1F2D",
+    "crewed": true
+  },
+  {
+    "id": "soyuz-11",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#CD1F2D",
+    "crewed": true
   }
 ]

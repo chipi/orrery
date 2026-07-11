@@ -1,0 +1,82 @@
+{
+  "name": "Soyuz",
+  "tagline": "The spacecraft that began in tragedy, paid the highest price in spaceflight — and became the most reliable, longest-serving ride to orbit ever built.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "By the mid-1960s the era of stretching Vostok was over, and both superpowers needed a real second-generation spacecraft — one that could maneuver, rendezvous, and dock, the skills the Moon would demand. The Soviet answer was Soyuz: Sergei Korolev's design for a modular ship in three parts — a spherical orbital module to live in, a descent module to come home in, and a service module for power and propulsion. It was a genuine leap. But Korolev died on the operating table in 1966, before it flew, and the program lost the one man with the authority to say a machine wasn't ready."
+    },
+    {
+      "type": "prose",
+      "md": "What followed was the darkest chapter in the Soviet program. Under pressure to answer Apollo, Soyuz was rushed into service before it was safe, and the cost came due almost immediately — first with the death of one cosmonaut, then, four years later, with three more. Soyuz would go on to outlive every rival and fly longer than any crewed spacecraft in history, but it earned that longevity the hard way, and the two accidents at its start are inseparable from the story of everything it became."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/soyuz-7k-ok/01" },
+      "caption": "The first-generation Soyuz — three modules: a spherical habitation module, a bell-shaped descent module, and a service module. The basic architecture is still flying, more than half a century on.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz was designed to do everything Vostok and Voskhod couldn't: change its orbit, seek out and dock with another craft, support a crew for weeks, and — in the original plan — carry cosmonauts toward the Moon. The three-module layout was the key idea. By splitting the spacecraft into a roomy orbital module the crew lived in and a small, heavily-shielded descent module they returned in, Soyuz could be both spacious in orbit and light on reentry, discarding everything it didn't need to bring home. It was a clean, adaptable design — which is exactly why it lasted."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/soyuz-7k-ok/02" },
+      "caption": "Soyuz in orbit. Rushed into flight before it was ready, the design would take years and two fatal accidents to make safe — and then it never stopped flying.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz's first crewed flight, in 1967, killed its pilot: Vladimir Komarov flew a spacecraft riddled with known faults and died when its parachute failed on reentry — the first in-flight death in spaceflight history. The program recovered, and in 1969 Soyuz 4 and 5 pulled off the first docking of two crewed craft, with cosmonauts transferring between them by spacewalk. Then, in 1971, Soyuz 11's crew became the first to live aboard a space station — and died on the way home when a valve let their cabin air escape, the only human deaths ever to occur in space. And in 1975, in a complete change of key, a Soyuz docked with an Apollo in orbit, and an American and a Soviet shook hands through the hatch — the symbolic end of the space race."
+    },
+    {
+      "type": "prose",
+      "md": "That could have been the whole story: a promising design that began in tragedy and closed the race with a handshake. Instead it was only the beginning. Soyuz kept flying — to Salyut, to Mir, to the International Space Station — and kept being refined, until the ship that killed two crews in its first four years became the safest and most dependable way to reach orbit anyone has ever operated."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The through-line of Soyuz is reliability bought at a terrible price and then compounded for decades. Each of its early disasters wrote a permanent rule into the design: after Komarov, the parachute and control systems were reworked; after Soyuz 11, cosmonauts never again flew launch or reentry without pressure suits. The program learned the way safety is usually learned — from the accidents — and then, unlike so many programs, it kept flying the same basic vehicle long enough for those lessons to accumulate into something close to unbreakable."
+    },
+    {
+      "type": "prose",
+      "md": "It also changed jobs completely. Conceived to race the Americans to the Moon, Soyuz lost that race and was quietly repurposed — into the ferry that carried crews to the Soviet Union's space stations, then to Mir, then to the International Space Station built with those same Americans. When the US Space Shuttle retired in 2011, Soyuz became, for nine years, the *only* way any human being could reach the Space Station: the entire international program depended on a Soviet design from the 1960s."
+    },
+    {
+      "type": "prose",
+      "md": "The 1975 handshake of Apollo-Soyuz is the hinge. It ended the era in which Soyuz existed to beat the West, and opened the one in which it would spend the next half-century carrying the West's astronauts alongside Russia's cosmonauts — the same spacecraft, the same launch pad, a completely different world."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/apollo-soyuz/02" },
+      "caption": "Apollo-Soyuz, July 1975 — a Soviet and an American spacecraft docked in orbit, and the space race ended not with a winner but with a handshake.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Soyuz's legacy is simply that it never stopped. It is the longest-serving and most-flown crewed spacecraft in history — well over a hundred and fifty crewed flights across six decades — and its basic three-module design, refined but never replaced, still carries crews today. No other human spacecraft has come close to that record. The ship that began by killing its pilot became the most trusted vehicle in spaceflight, the one every other program leaned on when it needed a ride that would simply work."
+    },
+    {
+      "type": "prose",
+      "md": "Its deeper legacy is a lesson in the value of a good bones and patient iteration over the flashy replacement. Where the United States built and retired whole spacecraft generations — Mercury, Gemini, Apollo, Shuttle — the Soviets found a design worth keeping and spent fifty years making it better. Both approaches reached space. Only one produced a vehicle still flying, essentially unchanged in concept, into its seventh decade."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Soyuz's hardest lesson is that reliability is not designed in at the start; it is earned, usually through failure, and only by an organization willing to keep flying the same thing long enough to learn. Soyuz was not safe when it began — it was rushed, and it killed people. What made it safe was decades of flying it, finding each weakness in turn, and fixing it, on a vehicle stable enough that the lessons stuck. The temptation is always to replace a troubled design; sometimes the wiser path is to keep it and make it right."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is the danger of letting a deadline override a warning. Soyuz 1 flew with faults its own engineers had flagged, because answering Apollo mattered more, that month, than admitting the ship wasn't ready — and a cosmonaut died for it. It is the same failure Vostok's culture of must-succeed secrecy had been rehearsing, finally paid in a life. When the people closest to the machine say it isn't ready, the schedule is the thing that should yield."
+    }
+  ]
+}

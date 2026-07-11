@@ -76,7 +76,7 @@ function overlayFileLocaleGaps(rel: string): string[] {
 //   - programs/            — the /programs editorial layer
 //   - missions/earth/gemini — the Gemini flagship flights added for the Gemini
 //                             program (curated en-US first; translate at tier)
-const I18N_ENGLISH_FIRST_PREFIXES = ['programs/', 'missions/earth/gemini'];
+const I18N_ENGLISH_FIRST_PREFIXES = ['programs/', 'missions/earth/gemini', 'missions/earth/soyuz-'];
 
 function allLocaleOverlayGaps(): string[] {
   const gaps: string[] = [];

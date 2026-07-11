@@ -1,0 +1,29 @@
+{
+  "id": "soyuz",
+  "kind": "crewed-campaign",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR / Russia",
+  "start_year": 1967,
+  "status": "ACTIVE",
+  "epoch": "space-race",
+  "hero": "missions/apollo-soyuz/01",
+  "roster": [
+    { "linked_id": "soyuz-1", "ref": "mission", "year": 1967 },
+    { "name": "Soyuz 4 & 5", "year": 1969, "note": "first docking of two crewed spacecraft + the first crew transfer, by spacewalk between the two ships" },
+    { "linked_id": "soyuz-11", "ref": "mission", "year": 1971 },
+    { "linked_id": "apollo-soyuz", "ref": "mission", "year": 1975 },
+    { "linked_id": "soyuz-7k-ok", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+  ],
+  "related_programs": ["voskhod", "salyut", "apollo"],
+  "see_also": [
+    { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Entry, descent & landing", "href": "/science/mission-phases/edl", "kind": "science" }
+  ],
+  "links": [
+    { "l": "Soyuz (spacecraft) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)", "t": "intro" },
+    { "l": "Apollo-Soyuz Test Project — NASA", "u": "https://www.nasa.gov/history/apollo-soyuz/", "t": "core" },
+    { "l": "RussianSpaceWeb — Soyuz", "u": "https://www.russianspaceweb.com/soyuz.html", "t": "deep" }
+  ]
+}

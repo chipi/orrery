@@ -26,6 +26,18 @@
     "hero": "missions/voskhod-2/01"
   },
   {
+    "id": "soyuz",
+    "name": "Soyuz",
+    "tagline": "The spacecraft that began in tragedy, paid the highest price in spaceflight — and became the most reliable, longest-serving ride to orbit ever built.",
+    "kind": "crewed-campaign",
+    "agency": "Roscosmos",
+    "country": "USSR / Russia",
+    "epoch": "space-race",
+    "status": "ACTIVE",
+    "start_year": 1967,
+    "hero": "missions/apollo-soyuz/01"
+  },
+  {
     "id": "mercury",
     "name": "Mercury",
     "tagline": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",

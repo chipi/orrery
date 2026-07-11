@@ -165,5 +165,17 @@
     "status": "ACTIVE",
     "start_year": 1979,
     "hero": "fleet/ariane-5/01"
+  },
+  {
+    "id": "esa-human",
+    "name": "ESA — Europe in human spaceflight",
+    "tagline": "Europe never built a crewed spaceship of its own — and became indispensable to human spaceflight anyway, by choosing partnership over independence and mastering the pieces no one else wanted to build.",
+    "kind": "crewed-campaign",
+    "agency": "ESA",
+    "country": "Multi (Europe)",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1983,
+    "hero": "fleet/atv/01"
   }
 ]

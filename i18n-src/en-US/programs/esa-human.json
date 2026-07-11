@@ -1,0 +1,82 @@
+{
+  "name": "ESA — Europe in human spaceflight",
+  "tagline": "Europe never built a crewed spaceship of its own — and became indispensable to human spaceflight anyway, by choosing partnership over independence and mastering the pieces no one else wanted to build.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Europe made a deliberate, unusual choice about human spaceflight: it decided not to build a crewed spacecraft of its own. Where the United States, the Soviet Union, and later China each developed the full stack — rockets, capsules, the ability to launch their own citizens — Europe, acting collectively through the European Space Agency, chose instead to be the best possible partner. It would fly its astronauts on other nations' vehicles, and it would contribute the capabilities that made the shared enterprise work. It is a quieter path than a national space race, and it turned out to be a remarkably effective one."
+    },
+    {
+      "type": "prose",
+      "md": "This began with Spacelab in 1983 — a European-built laboratory that rode in the Space Shuttle's cargo bay and turned the Shuttle into a science platform, carrying the first ESA astronaut on its first flight. It continued with Columbus, Europe's permanent laboratory bolted onto the International Space Station, and with the Automated Transfer Vehicle, the largest and most sophisticated cargo ship of its era. Along the way European astronauts flew on Shuttles and Soyuz, lived aboard Mir and the ISS, and commanded the Station. Europe never launched its own crew — and became essential to nearly everyone who did."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/iss/01" },
+      "caption": "The International Space Station, of which Europe is a full partner. ESA's Columbus laboratory is a permanent part of it, and European astronauts have lived aboard and commanded it — the fruit of the choice to join rather than to go it alone.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Europe's goal was to matter in human spaceflight without carrying the full cost and risk of an independent crewed program. That meant specialising — building the laboratories where the science is done, the cargo ships that keep stations supplied, and the modules that expand them, and training astronauts who could fly on whatever vehicle a partnership provided. Rather than duplicate what others already had, Europe set out to supply what the shared endeavour needed and could not easily do without."
+    },
+    {
+      "type": "prose",
+      "md": "The strategy had a hidden strength: contributing an essential piece buys a permanent seat at the table. By building Spacelab, Europe earned a place aboard the Shuttle; by building Columbus and the ATV, it became a full and equal partner in the International Space Station, with its own laboratory and its own indispensable resupply craft. A nation that only bought seats would be a customer; Europe, by building capabilities others relied on, became a partner — with a real say in the enterprise."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/atv/02" },
+      "caption": "The Automated Transfer Vehicle — Europe's ISS freighter. Twenty tonnes fully loaded, it flew itself to an automatic docking with the Station, delivered cargo, water, air and propellant, and used its engines to boost the ISS's orbit.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The results were substantial and distinctly European. Spacelab flew on 22 Shuttle missions between 1983 and 1998, giving Europe two decades of hands-on crewed science and a generation of experienced astronauts. Columbus, installed in 2008, gave Europe a permanent laboratory in orbit and made it a first-rank partner in the largest structure humans have ever built. And the Automated Transfer Vehicle — five enormous freighters flown between 2008 and 2015, each named for a European thinker from Jules Verne to Georges Lemaître — did something genuinely advanced: a twenty-tonne spacecraft that navigated itself to a fully automatic docking with the ISS, delivered supplies and fuel, and reboosted the entire Station with its engines."
+    },
+    {
+      "type": "prose",
+      "md": "That ATV expertise then paid an unexpected dividend. The technology Europe developed to build a self-flying, ISS-docking spacecraft became the basis of the European Service Module — the part Europe now builds for NASA's Orion, the spacecraft carrying astronauts back toward the Moon under Artemis. The service module supplies Orion's power, propulsion, air, and water: the section that keeps the crew alive on the way to lunar orbit and back. A continent that never built its own crewed spaceship now builds the half of an American one that its astronauts cannot survive without."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "The through-line of Europe's human spaceflight is that partnership, done well, is not a lesser path than independence — it is a different and sometimes stronger one. By pooling the resources of many nations through ESA and specialising in the capabilities others needed, Europe achieved a role in human spaceflight far larger than any single European country could have afforded alone, and larger than the size of its budget would suggest. It never had the autonomy of a nation that launches its own crews; it had, instead, the leverage of being indispensable to those who do."
+    },
+    {
+      "type": "prose",
+      "md": "The ATV is the clearest expression of this. It was not a prestige project or a race entry; it was a supremely capable piece of infrastructure — an automated freighter more advanced in its docking and its cargo capacity than anything else flying — that made Europe central to keeping the ISS alive. And because Europe had built that capability, it was positioned to build the next thing: the Orion service module, and with it a place in humanity's return to the Moon. Mastering an unglamorous niche led, step by step, to a share in the most ambitious crewed program of the new century."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/iss/04" },
+      "caption": "The International Space Station — the enterprise Europe helped build and sustain, and the proof that a nation can shape human spaceflight profoundly without ever launching a crew of its own.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Europe's legacy in human spaceflight is a model as much as a set of hardware: proof that a mid-sized space power can matter enormously by partnering rather than competing, by pooling many nations' resources, and by building the essential pieces others depend on rather than duplicating what already exists. Columbus is still in orbit; European astronauts still fly and command; and the ATV's descendants now carry humans toward the Moon. None of it required an independent European crewed spacecraft, and that is precisely the point."
+    },
+    {
+      "type": "prose",
+      "md": "It is also the human-spaceflight complement to Ariane. Where Ariane secured Europe's independent *access* to space, its human program secured Europe's *place* in space — a permanent, respected seat in the international enterprise, earned by contribution rather than claimed by flag. Together they define a distinctly European way of being a great space power: autonomous where it must be, collaborative where that is stronger, and essential either way."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "The first lesson is that you do not have to build everything yourself to be essential. Europe never developed an independent crewed spacecraft, yet by mastering laboratories, cargo, and modules it became a partner no major human-spaceflight program could easily do without. Contributing a distinctive, genuinely needed capability buys more lasting influence than trying to replicate, at lower quality, what others already do well. Specialisation, not duplication, was Europe's route to relevance."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is that partnership multiplies a limited budget. By combining the resources of many nations through a single agency and investing them in capabilities that earned a permanent role, Europe achieved far more in human spaceflight than its spending alone would predict — and turned mastery of one niche, automated cargo, into a share of the return to the Moon. For a power that cannot outspend the giants, being indispensable is a better strategy than being independent, and Europe has made it work for forty years."
+    }
+  ]
+}

@@ -26,8 +26,11 @@ export function addSurfaceLights({
   sunIntensity?: number;
   sunPosition?: [number, number, number];
 }): { sun: THREE.DirectionalLight } {
-  scene.add(new THREE.AmbientLight(ambientColor, ambientIntensity));
-  const sun = new THREE.DirectionalLight(sunColor, sunIntensity);
+  // × Math.PI restores the r128 look under three r155+'s physically-correct
+  // lighting default (#203 / RFC-021 §5) — applied here so all surface routes
+  // (earth / moon / mars) inherit it from the one shared helper.
+  scene.add(new THREE.AmbientLight(ambientColor, ambientIntensity * Math.PI));
+  const sun = new THREE.DirectionalLight(sunColor, sunIntensity * Math.PI);
   sun.position.set(sunPosition[0], sunPosition[1], sunPosition[2]);
   scene.add(sun);
   return { sun };

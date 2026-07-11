@@ -109,8 +109,9 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.01, 4000);
 
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7));
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6);
+  // × Math.PI restores the r128 look under three r155+ physical lights (#203).
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
   sun.position.set(1000, 200, 1000);
   scene.add(sun);
 

@@ -768,8 +768,10 @@
     // into deep blue rather than the flat ambient grey. Matches the
     // /fly helio scene's lighting model. Sky tinted faint blue-white;
     // ground is black (no albedo to bounce from in orbital vacuum).
-    scene.add(new THREE.HemisphereLight(0x303848, 0x000000, 0.55));
-    const key = new THREE.DirectionalLight(0xfff4e8, 1.15);
+    // Light intensities × Math.PI to restore the r128 look under three r155+'s
+    // physically-correct lighting default (#203 / RFC-021 §5).
+    scene.add(new THREE.HemisphereLight(0x303848, 0x000000, 0.55 * Math.PI));
+    const key = new THREE.DirectionalLight(0xfff4e8, 1.15 * Math.PI);
     key.position.set(40, 24, 18);
     key.castShadow = true;
     key.shadow.mapSize.set(1024, 1024);
@@ -781,7 +783,7 @@
     key.shadow.camera.bottom = -10;
     key.shadow.bias = -0.0008;
     scene.add(key);
-    const fill = new THREE.DirectionalLight(0x6688ff, 0.35);
+    const fill = new THREE.DirectionalLight(0x6688ff, 0.35 * Math.PI);
     fill.position.set(-30, -10, -40);
     scene.add(fill);
 

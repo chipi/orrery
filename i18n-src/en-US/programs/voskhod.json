@@ -1,0 +1,82 @@
+{
+  "name": "Voskhod",
+  "tagline": "The rushed stopgap that squeezed two more firsts — a crew and a spacewalk — out of maxed-out hardware, and nearly killed people doing it.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "By 1964 the easy part was over. Vostok had scored its firsts, but the Americans were building Gemini — a two-seat spacecraft that could actually maneuver, rendezvous, and dock — and once it flew, the Soviet lead would evaporate. Nikita Khrushchev wanted more headlines before that happened, and he leaned on Sergei Korolev to produce them. There was no new Soviet spacecraft ready. So Korolev's team did the only thing the schedule allowed: they took the one-seat Vostok and modified it to do things it was never designed for."
+    },
+    {
+      "type": "prose",
+      "md": "The result was Voskhod, and it existed for a single purpose — to keep scoring firsts a little longer, on borrowed hardware and borrowed margin. It was less a program than a pair of stunts pulled off before the competition could catch up: a multi-person crew, and a human stepping outside into vacuum. Both would be genuine milestones. Both were far more dangerous than the calm Soviet announcements let on."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/voskhod/01" },
+      "caption": "Voskhod — a Vostok stripped of its ejection seat and repacked to carry more crew. The room for three came at the cost of the escape system and, on the first flight, of pressure suits.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhod had exactly two goals, both defined by what would beat Gemini to the punch: fly more than one person at once, and put a human outside the spacecraft. To fit three cosmonauts into a capsule built for one, the engineers ripped out the ejection seat that had saved every Vostok pilot — which meant that if anything went wrong on launch or landing, the crew had no way out. On the first flight there wasn't even room for pressure suits. It was a calculated gamble that nothing would go wrong, taken to hold a lead."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/voskhod-1/01" },
+      "caption": "Voskhod 1's crew of three — Komarov, Feoktistov, Yegorov — the first multi-person spaceflight, flown in shirtsleeves with no suits and no escape system.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "The gambles paid off, barely. In October 1964 Voskhod 1 carried the first three-person crew — in shirtsleeves, no suits, no ejection seats — around the Earth for a day and came home safely. Five months later Voskhod 2 did the harder thing: Alexei Leonov opened a hatch and floated into vacuum on the first spacewalk in history. Then it nearly went wrong in every possible way. Leonov's suit ballooned so rigidly in vacuum that he couldn't get back through the airlock, and had to bleed his own air pressure — risking the bends — to squeeze in. The automatic reentry system failed; the crew flew it down by hand and came down hundreds of kilometres off target, in deep Siberian forest, where they spent a freezing night surrounded by wolves before rescuers on skis could reach them."
+    },
+    {
+      "type": "prose",
+      "md": "Two flights, two more firsts, and two brushes with disaster the world wasn't told about for decades. Korolev looked at how close Voskhod 2 had come and cancelled the rest of the program. The hardware was out of margin, and there were no more firsts worth the risk — the next real capability, like everything Apollo would need, would have to come from a spacecraft that didn't yet exist."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Voskhod is what a program looks like when the headlines are running the schedule. Every decision — no suits, no ejection seats, an inflatable airlock bolted onto a one-seat capsule — was a corner cut to score a first before Gemini, and each one moved risk from the drawing board onto the crew. It worked twice, which is exactly the problem: success on thin margins teaches the wrong lesson, that the margins weren't needed."
+    },
+    {
+      "type": "prose",
+      "md": "The Leonov spacewalk is the whole program in miniature — a genuine, courageous first that the public saw as effortless and that came within a hair of killing its cosmonaut, quietly, off camera. That gap between the triumphant announcement and the near-catastrophe underneath is the truest thing about Voskhod, and about the way the early Soviet program raced: brilliantly, publicly, and with far less room to spare than anyone was allowed to know."
+    },
+    {
+      "type": "prose",
+      "md": "After Voskhod 2 the Soviet program stopped stretching Vostok and turned to Soyuz — a real second-generation spacecraft that could maneuver and dock — and to a secret bid for the Moon. The era of easy firsts was over; from here the race would be run on capability, and that was ground the Americans, with Gemini, were about to seize."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/voskhod-2/02" },
+      "caption": "Alexei Leonov's spacewalk, March 1965 — the first human in open space, and one of the closest brushes with disaster the era produced.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Voskhod's legacy is two permanent firsts — the first crew and the first spacewalk — and a cautionary tale that sits right beside them. The firsts are real and can't be taken away; every multi-person crew and every spacewalk since traces back to these two flights. But Voskhod is also the moment the Soviet strategy of firsts hit its limit: it had run out of new things a modified Vostok could do, and had nearly killed people doing the last of them."
+    },
+    {
+      "type": "prose",
+      "md": "Historically it marks a handover. Voskhod 2 flew in March 1965; Gemini's own program began weeks later and, over the next twenty months, methodically took the lead the Soviets had held since Sputnik — rendezvous, docking, endurance, EVA made routine. Voskhod is the last time the Soviet Union was clearly ahead. What came after, on both sides, would be decided not by who was first, but by who had built the deeper capability."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Voskhod's lesson is the danger of racing on borrowed margin. Cutting the ejection seats and the pressure suits, bolting an airlock onto a capsule that wasn't built for one — each corner bought a headline and moved a real risk onto real people, and the program got away with it twice. But getting away with it is not the same as being safe, and success on thin margins is a trap: it quietly teaches an organization that the safety it discarded was never necessary, right up until the flight where it is."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is what a stopgap is for, and what it isn't. Voskhod did exactly one thing well — it bought time and two more firsts while the real next-generation spacecraft was being built. That's a legitimate use of improvised hardware. The mistake would have been to keep flying it, chasing headlines past the point where the margin ran out — and to Korolev's credit, he read the near-disaster correctly and stopped. Knowing when a stopgap has done its job is as important as building one."
+    }
+  ]
+}

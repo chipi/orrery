@@ -13,6 +13,19 @@
     "hero": "missions/vostok-1/01"
   },
   {
+    "id": "voskhod",
+    "name": "Voskhod",
+    "tagline": "The rushed stopgap that squeezed two more firsts — a crew and a spacewalk — out of maxed-out hardware, and nearly killed people doing it.",
+    "kind": "crewed-campaign",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "epoch": "space-race",
+    "status": "COMPLETED",
+    "start_year": 1964,
+    "end_year": 1965,
+    "hero": "missions/voskhod-2/01"
+  },
+  {
     "id": "mercury",
     "name": "Mercury",
     "tagline": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",

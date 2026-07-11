@@ -1,0 +1,29 @@
+{
+  "id": "voskhod",
+  "kind": "crewed-campaign",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR",
+  "start_year": 1964,
+  "end_year": 1965,
+  "status": "COMPLETED",
+  "epoch": "space-race",
+  "hero": "missions/voskhod-2/01",
+  "roster": [
+    { "linked_id": "voskhod-1", "ref": "mission", "year": 1964 },
+    { "linked_id": "voskhod-2", "ref": "mission", "year": 1965 },
+    { "linked_id": "voskhod", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "voskhod-11a57", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+  ],
+  "related_programs": ["vostok", "soyuz", "gemini"],
+  "see_also": [
+    { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Entry, descent & landing", "href": "/science/mission-phases/edl", "kind": "science" }
+  ],
+  "links": [
+    { "l": "Voskhod programme (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Voskhod_(spacecraft)", "t": "intro" },
+    { "l": "Voskhod 2 — Leonov's spacewalk (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Voskhod_2", "t": "core" },
+    { "l": "RussianSpaceWeb — Voskhod", "u": "https://www.russianspaceweb.com/voskhod.html", "t": "deep" }
+  ]
+}

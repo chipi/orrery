@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { classifyArPlatform, type ArEnv } from './ar';
+import { classifyArPlatform, arAvailability, type ArEnv } from './ar';
 
 const base: ArEnv = { capacitorPlatform: 'web', isNative: false, hasWebXR: false };
 
@@ -34,5 +34,18 @@ describe('classifyArPlatform (RFC-021 §3)', () => {
     expect(classifyArPlatform({ capacitorPlatform: 'web', isNative: false, hasWebXR: true })).toBe(
       'android-web',
     );
+  });
+});
+
+describe('arAvailability (#213)', () => {
+  it('enabled on any supported AR platform', () => {
+    expect(arAvailability('android-web', false)).toBe('enabled');
+    expect(arAvailability('iphone-wrapped', false)).toBe('enabled');
+  });
+  it('ios-fallback on iOS Safari (unsupported + iosWeb)', () => {
+    expect(arAvailability('unsupported', true)).toBe('ios-fallback');
+  });
+  it('hidden on desktop / unsupported non-iOS', () => {
+    expect(arAvailability('unsupported', false)).toBe('hidden');
   });
 });

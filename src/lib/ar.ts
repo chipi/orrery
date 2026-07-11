@@ -80,6 +80,25 @@ export function detectArPlatform(): ArPlatform {
   });
 }
 
+/** iOS web (Safari/WebKit, not the wrapped app) — where AR is impossible but an
+ *  App Store fallback makes sense. Capacitor reports 'web' for iOS Safari, so we
+ *  read the user agent. */
+export function isIosWeb(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return !Capacitor.isNativePlatform() && /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
+
+/** UI state for an "Enter AR" affordance (#213). */
+export type ArAvailability = 'enabled' | 'ios-fallback' | 'hidden';
+
+/** enabled where AR works; a greyed App-Store fallback on iOS Safari; hidden on
+ *  desktop / unsupported-non-iOS. Pure — testable. */
+export function arAvailability(platform: ArPlatform, iosWeb: boolean): ArAvailability {
+  if (platform !== 'unsupported') return 'enabled';
+  if (iosWeb) return 'ios-fallback';
+  return 'hidden';
+}
+
 /**
  * Lazily load the AR backend for the current platform. Returns null when AR is
  * unsupported. The backend chunk (WebXR or ARKit adapter) only loads here, so it

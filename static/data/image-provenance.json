@@ -13028,43 +13028,45 @@
       "id": "b1a48439f7856453",
       "path": "/images/fleet-galleries/iss/02.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:STS071-744-011_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_9281e3654020a34db513fe28606e1b86.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "Multi-agency",
-      "agency": "Multi-agency",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASTS071-744-011_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_9281e3654020a34db513fe28606e1b86.jpg%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/STS071-744-011_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_9281e3654020a34db513fe28606e1b86.jpg%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled",
-      "license_short": "PD-Old",
-      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
-      "license_rationale": "Copyright term expired worldwide.",
+      "title": "International Space Station — Expedition 56 fly-around",
+      "author": "NASA/Roscosmos — Expedition 56 crew",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AISS-56_International_Space_Station_fly-around_(13).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/ISS-56_International_Space_Station_fly-around_%2813%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
+        "downloaded-via-commons-filepath",
+        "reencoded-webp",
+        "corrected-mislabel-iss-gallery"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.884Z"
+      "fetched_at": "2026-07-11T22:07:14.160Z"
     },
     {
       "id": "034d3a9468e2a884",
       "path": "/images/fleet-galleries/iss/03.webp",
       "source_type": "wikimedia-commons",
-      "title": "File:STS071-744-010_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_7c6e2300799444220d7b4f58a49b226e.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "Multi-agency",
-      "agency": "Multi-agency",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ASTS071-744-010_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_7c6e2300799444220d7b4f58a49b226e.jpg%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/STS071-744-010_-_STS-071_-_Full_view_of_the_Mir_space_station_-_DPLA_-_7c6e2300799444220d7b4f58a49b226e.jpg%3Futm_source%3Dcommons.wikimedia.org%26utm_campaign%3Dimageinfo%26utm_content%3Dthumbnail_unscaled",
-      "license_short": "PD-Old",
-      "license_url": "https://en.wikipedia.org/wiki/Public_domain",
-      "license_rationale": "Copyright term expired worldwide.",
+      "title": "International Space Station after STS-132 undocking",
+      "author": "NASA — STS-132 crew (Space Shuttle Atlantis)",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AInternational_Space_Station_after_undocking_of_STS-132.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/International_Space_Station_after_undocking_of_STS-132.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-commons-search",
-        "reencoded-jpeg"
+        "downloaded-via-commons-filepath",
+        "reencoded-webp",
+        "corrected-mislabel-iss-gallery"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.884Z"
+      "fetched_at": "2026-07-11T22:07:14.160Z"
     },
     {
       "id": "32714bdc031a4b89",

@@ -1,0 +1,89 @@
+{
+  "id": "iss",
+  "kind": "station",
+  "agency": "Multi",
+  "agencies": [
+    "NASA",
+    "Roscosmos",
+    "ESA",
+    "JAXA",
+    "CSA"
+  ],
+  "country": "International",
+  "start_year": 1998,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/iss/02",
+  "roster": [
+    {
+      "linked_id": "iss",
+      "ref": "fleet",
+      "role": "station",
+      "year": 1998
+    },
+    {
+      "name": "Zarya + Zvezda",
+      "year": 1998,
+      "note": "the first two modules — a US-funded, Russian-built control module (1998) and the Russian service module (2000) that made the station habitable; the marriage of the two former rivals' station heritage"
+    },
+    {
+      "name": "Expedition 1",
+      "year": 2000,
+      "note": "the first resident crew arrived on 2 November 2000; humans have lived aboard continuously ever since — the longest unbroken human presence off Earth in history"
+    },
+    {
+      "name": "Columbus + Kibo",
+      "year": 2008,
+      "note": "the European and Japanese laboratories, which turned the station into a genuinely global facility with modules from five space agencies"
+    },
+    {
+      "name": "Commercial Crew",
+      "year": 2020,
+      "note": "SpaceX's Crew Dragon restored US crew launch after nine years of dependence on Soyuz, and began the handover of low-orbit access to commercial providers"
+    }
+  ],
+  "related_programs": [
+    "mir",
+    "salyut",
+    "skylab",
+    "space-shuttle",
+    "soyuz",
+    "esa-human",
+    "ariane",
+    "apollo"
+  ],
+  "see_also": [
+    {
+      "label": "Earth — orbits, rendezvous & launch sites",
+      "href": "/earth",
+      "kind": "body"
+    },
+    {
+      "label": "Fleet — the International Space Station",
+      "href": "/fleet?focus=iss",
+      "kind": "fleet"
+    },
+    {
+      "label": "Mir — the station the ISS inherited from",
+      "href": "/programs/mir",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "International Space Station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "t": "intro"
+    },
+    {
+      "l": "Space Station — NASA",
+      "u": "https://www.nasa.gov/international-space-station/",
+      "t": "core"
+    },
+    {
+      "l": "ISS — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station",
+      "t": "deep"
+    }
+  ]
+}

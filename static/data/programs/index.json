@@ -177,5 +177,17 @@
     "status": "ACTIVE",
     "start_year": 1983,
     "hero": "fleet/atv/01"
+  },
+  {
+    "id": "iss",
+    "name": "International Space Station",
+    "tagline": "The largest thing humanity has ever built in space, and the place every thread of the space age converges — the former rivals' rivalry turned, after forty years, into the longest act of cooperation in the history of spaceflight.",
+    "kind": "station",
+    "agency": "Multi",
+    "country": "International",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1998,
+    "hero": "fleet/iss/02"
   }
 ]

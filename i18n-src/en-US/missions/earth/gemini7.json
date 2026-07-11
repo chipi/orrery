@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 7 / GT-7",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "14-day endurance flight; rendezvous target for Gemini 6A",
+  "dispatch": "Gemini 7 answered the least glamorous but most fundamental question: could a crew survive as long as a trip to the Moon and back? Frank Borman and Jim Lovell spent fourteen days sealed in a cabin the size of the front seat of a small car — no room to stand, stretch, or escape each other — to prove the human body and mind could take it. It was tedious and physically miserable, and it worked: they came back healthy, retiring the fear that long spaceflight might be impossible. Along the way they doubled as the target for Gemini 6A's rendezvous, so the single flight quietly proved two of Apollo's prerequisites at once — that people could last the distance, and that two ships could meet.",
+  "description": "Frank Borman and Jim Lovell flew a 14-day, 206-orbit endurance mission from 4 December 1965 — the longest crewed spaceflight to that date — and served as the rendezvous target for Gemini 6A. It demonstrated that a crew could withstand spaceflight of full lunar-mission duration.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan II GLV (GT-7) from Cape Canaveral LC-19, 1965-12-04 19:30 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZVOUS TARGET",
+      "note": "Serves as the target for Gemini 6A’s first crewed rendezvous.",
+      "type": "info"
+    },
+    {
+      "met": 14,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic splashdown after 14 days / 206 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 3 / GT-3",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "First crewed Gemini; first orbital maneuver by a crew",
+  "dispatch": "Gemini 3 was the shakedown — the first flight of the new two-seat spacecraft, and the first time an American crew changed their own orbit rather than just riding the one the rocket gave them. Gus Grissom commanded it, four years after his Mercury capsule sank on splashdown, and named this one \"Molly Brown\" after the unsinkable heroine — a piece of gallows humor NASA's public-affairs office did not love. The flight itself was short and deliberately modest, three orbits to prove the machine flew as designed. But that small act of nudging the orbit with onboard thrusters was the first step of everything Gemini existed to do.",
+  "description": "First crewed Gemini flight. Gus Grissom and John Young flew three orbits on 23 March 1965, checking out the new two-person spacecraft and performing the first orbital maneuver by a crewed vehicle — firing thrusters to change the orbit. Grissom nicknamed the capsule \"Molly Brown.\" Duration 4 h 52 m; Atlantic splashdown.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan II GLV (GT-3) from Cape Canaveral LC-19, 1965-03-23 14:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.06,
+      "label": "ORBIT MANEUVER",
+      "note": "First orbital maneuver by a crew — thrusters change the orbit shape.",
+      "type": "info"
+    },
+    {
+      "met": 0.2,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic splashdown after 3 orbits / 4 h 52 m.",
+      "type": "nominal"
+    }
+  ]
+}

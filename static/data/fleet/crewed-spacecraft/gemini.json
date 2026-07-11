@@ -69,5 +69,13 @@
       "mission_id": "gemini-12",
       "flight_designation": "Gemini 12 (1966-11-11) · Lovell + Aldrin — last Gemini; 5+ hours EVA proved choreographed crew tasks were feasible; cleared Apollo EVAs"
     }
+  ],
+  "linked_missions": [
+    "gemini3",
+    "gemini4",
+    "gemini6a",
+    "gemini7",
+    "gemini8",
+    "gemini12"
   ]
 }

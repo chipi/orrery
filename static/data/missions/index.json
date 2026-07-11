@@ -1148,5 +1148,65 @@
     "sector": "gov",
     "color": "#003087",
     "crewed": false
+  },
+  {
+    "id": "gemini3",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini4",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini6a",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini7",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini8",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1966,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini12",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1966,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
   }
 ]

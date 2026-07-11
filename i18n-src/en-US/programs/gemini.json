@@ -1,0 +1,86 @@
+{
+  "name": "Gemini",
+  "tagline": "The bridge program — the unglamorous middle where NASA learned everything Apollo would need except how to fly to the Moon.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mercury had answered one question — a person can survive spaceflight and come home — and left a much harder list unanswered. Landing on the Moon meant flying for two weeks at a stretch, finding and joining up with another spacecraft in orbit, docking the two together, working outside in a pressure suit, and returning to a precise spot on Earth. In 1961, when Kennedy set the lunar deadline, NASA could do none of it. Between the first American in space and the first American on the Moon lay a canyon of skills nobody on Earth had yet worked out."
+    },
+    {
+      "type": "prose",
+      "md": "Gemini was built to cross that canyon. It was never meant to be first at anything or to go anywhere new; it was a training program with a deadline, designed to invent and rehearse — in Earth orbit, where a mistake might still be survivable — every technique Apollo would later bet lives on. A larger, two-seat spacecraft that the crew could actually fly and steer would spend twenty months teaching NASA how to do the things the Moon required."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/gemini/02" },
+      "caption": "The Gemini spacecraft — bigger than Mercury, and for the first time a ship the crew could truly fly: it could change its own orbit, chase down another craft, and dock.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Gemini's goals read like a checklist torn from the Apollo flight plan. Endurance: prove a crew could last as long as a trip to the Moon and back — up to two weeks. Rendezvous: two spacecraft finding each other in orbit, which is far less intuitive than it sounds, because speeding up to catch something ahead of you actually drops you into a lower, faster orbit and leaves you behind. Docking: physically joining two craft, the maneuver Apollo would depend on twice on every flight. And EVA: opening the hatch in vacuum and working outside. Master those four, and the Moon became an engineering problem rather than an unknown."
+    },
+    {
+      "type": "prose",
+      "md": "To do any of it, the spacecraft had to grow up. Gemini carried two, gave them a real flight-control system and thrusters to steer with, and split into a crew module and an equipment section much as Apollo would. Where Mercury's astronaut mostly rode, Gemini's crews genuinely flew — which was the entire point, because the new skills only counted if a human could perform them on demand."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/titan-ii-glv/01" },
+      "caption": "The Titan II — a repurposed intercontinental missile, man-rated to launch all ten crewed Gemini flights in just twenty months.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "In twenty months across 1965 and 1966, ten crewed Geminis checked off the entire list. Ed White floated outside Gemini 4 on the first American spacewalk. Gemini 7 stayed up for fourteen days while Gemini 6A flew up to meet it, the two ships holding station a foot apart — the first rendezvous. Gemini 8 made the first docking, then survived the program's worst scare when a stuck thruster set it tumbling and Neil Armstrong had to wrestle it back under control and come home early. And after several exhausting, near-failed attempts at spacewalking, Gemini 12's Buzz Aldrin finally cracked it — with underwater rehearsal and enough handholds to work against — proving EVA could be made routine."
+    },
+    {
+      "type": "prose",
+      "md": "By the last flight, NASA could do everything the Moon required except leave Earth orbit. It had also, almost quietly, pulled ahead: for the first time the United States had logged more time and more capability in space than the Soviet Union, which had gone quiet as it wrestled with its own next-generation hardware. The race wasn't won, but the lead had changed hands."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Gemini's whole character was pace. Ten crewed launches in less than two years — sometimes only weeks apart — each one a rehearsal for a specific Apollo maneuver, each feeding what it learned straight into the next. It was less a set of separate missions than a single sustained apprenticeship, run at a tempo NASA would never quite match again."
+    },
+    {
+      "type": "prose",
+      "md": "And it learned the hard way. The early spacewalks went badly: astronauts found that without anything to hold or brace against, every motion sent them tumbling and every small task became a wrestling match, and they came back inside soaked and spent. Rather than declare EVA solved and move on, NASA treated the failures as data — it built handholds and foot restraints and rehearsed the whole thing underwater until it worked. Gemini 12 was the payoff. That willingness to admit the technique wasn't working and rebuild it is a large part of why Apollo's spacewalks went smoothly."
+    },
+    {
+      "type": "prose",
+      "md": "By December 1966 the bridge was finished. Everything Gemini had proven — the endurance, the rendezvous, the docking, the EVA — went straight into Apollo, whose crews would use all of it a quarter-million miles from home. Gemini had made the Moon reachable, and then, its job done, it stopped."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/gemini/03" },
+      "caption": "Gemini in orbit — the program that turned the Moon from an open question into a solved set of techniques, and the one almost nobody remembers.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Gemini is the reason Apollo worked, and it is the program almost nobody remembers. Caught between Mercury's fame as the first and Apollo's fame as the Moon, it did the essential middle work: every capability Apollo depended on — flying for two weeks, finding and docking with another craft, working outside the spacecraft — was invented and made reliable on Gemini first. Take Gemini out of the story and the Apollo landings simply aren't possible on Kennedy's timeline."
+    },
+    {
+      "type": "prose",
+      "md": "Its material legacy is the capability itself. Rendezvous and docking became routine tools that every crewed program since — Apollo, Skylab, the Shuttle, the Space Station — has relied on, and the underwater EVA training Gemini pioneered is still exactly how astronauts prepare for spacewalks today. It was also the moment the United States drew level with and then passed the Soviet Union in human spaceflight — not with one dramatic first, but by methodically building the skills that actually mattered."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Gemini's transferable lesson is the value of the deliberate bridge. Faced with an enormous goal and a hard deadline, NASA didn't lunge straight for the Moon; it identified the specific unsolved capabilities in between and built a whole program to master them one at a time, in a place where failure was still survivable. The unglamorous middle — the rehearsal nobody remembers — is very often what makes the finale possible. When a goal sits far beyond current ability, the useful question isn't \"how do we get there\" but \"what are the intermediate things we don't yet know how to do.\""
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is in how Gemini handled its early spacewalking disasters — not as embarrassments to bury, but as information. The technique was failing, so they said so, worked out why, and rebuilt it: handholds, restraints, underwater practice, until it worked. A team that can admit a thing isn't working, in time to fix it before it matters, is worth far more than one that never appears to fail."
+    }
+  ]
+}

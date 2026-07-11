@@ -13,6 +13,19 @@
     "hero": "missions/freedom-7/01"
   },
   {
+    "id": "gemini",
+    "name": "Gemini",
+    "tagline": "The bridge program — the unglamorous middle where NASA learned everything Apollo would need except how to fly to the Moon.",
+    "kind": "crewed-campaign",
+    "agency": "NASA",
+    "country": "USA",
+    "epoch": "space-race",
+    "status": "COMPLETED",
+    "start_year": 1961,
+    "end_year": 1966,
+    "hero": "fleet/gemini/01"
+  },
+  {
     "id": "apollo",
     "name": "Apollo",
     "tagline": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",

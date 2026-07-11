@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 8 / GT-8",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "First docking of two spacecraft; emergency return",
+  "dispatch": "Gemini 8 made the first docking of two spacecraft in orbit — and then nearly killed its crew. Minutes after Neil Armstrong eased his Gemini into a locked joint with an Agena target, the linked pair began to roll, faster and faster, until it was tumbling roughly once a second and the astronauts' vision was starting to gray toward blackout. Armstrong undocked — which only made it worse, since the fault was in his own spacecraft — then shut down the main thrusters and stopped the spin with the reentry-control system, a decision that saved their lives but, by the rules, forced an immediate emergency return. It was the program's most dangerous moment, and it was Armstrong's first spaceflight. The calm, fast diagnosis under a failing situation is exactly the temperament NASA would remember when it chose who would land on the Moon.",
+  "description": "Neil Armstrong and David Scott achieved the first docking of two spacecraft — with an Agena target — on 16 March 1966. A stuck attitude thruster then caused a violent tumble; Armstrong undocked and used the reentry-control system to recover, forcing an emergency landing after 10 h 41 m. It was Armstrong's first spaceflight.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan II GLV (GT-8) from Cape Canaveral LC-19, 1966-03-16 16:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.28,
+      "label": "FIRST DOCKING",
+      "note": "First docking of two spacecraft — Gemini 8 with the Agena target.",
+      "type": "info"
+    },
+    {
+      "met": 0.3,
+      "label": "TUMBLE",
+      "note": "Stuck thruster sends the stack tumbling ~1 rev/s; Armstrong recovers with the reentry-control system.",
+      "type": "warning"
+    },
+    {
+      "met": 0.44,
+      "label": "EMERGENCY SPLASHDOWN",
+      "note": "Emergency Pacific splashdown after 10 h 41 m.",
+      "type": "nominal"
+    }
+  ]
+}

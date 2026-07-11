@@ -1,0 +1,27 @@
+{
+  "name": "Gemini 12 / GT-12",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "Solved EVA — Aldrin's spacewalks; final Gemini",
+  "dispatch": "By the last Gemini, one problem was still unsolved: spacewalking didn't work. The flights between Ed White and Gemini 12 had turned EVA into a series of exhausting near-failures — astronauts fighting for every motion, overheating, running out of time. Buzz Aldrin fixed it, and the fix was preparation: he rehearsed the whole thing underwater until it was routine, and the spacecraft was fitted with handholds, footholds, and tethers so he had something to work against. Across more than five hours outside, he did ordinary tasks calmly and came back unspent — proof that EVA could be made reliable. It was the final item on the Gemini checklist, and with it the program closed, having taught NASA everything the Moon would require.",
+  "description": "James Lovell and Buzz Aldrin flew the final Gemini, 11-15 November 1966. Aldrin's three EVAs totalling 5 h 30 m — supported by underwater training, handholds, and foot restraints — finally showed that useful work could be done in space, solving the EVA difficulties of earlier flights. 59 orbits.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan II GLV (GT-12) from Cape Canaveral LC-19, 1966-11-11 20:46 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.5,
+      "label": "EVA MASTERED",
+      "note": "Aldrin's EVAs (5 h 30 m total) with handholds + underwater training prove spacewalking can be routine.",
+      "type": "info"
+    },
+    {
+      "met": 4,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic splashdown after 4 days / 59 orbits — the last Gemini.",
+      "type": "nominal"
+    }
+  ]
+}

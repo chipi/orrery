@@ -27,5 +27,13 @@
       "u": "https://history.nasa.gov/SP-4203/toc.htm",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "gemini3",
+    "gemini4",
+    "gemini6a",
+    "gemini7",
+    "gemini8",
+    "gemini12"
   ]
 }

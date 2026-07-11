@@ -2,6 +2,7 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
+  import { getBadges } from '$lib/data';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
@@ -35,6 +36,7 @@
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
+  let badges = $state<Record<string, string>>({});
   let lastId = $state<string | null>(null);
   let lightboxSrc = $state<string | null>(null);
 
@@ -48,6 +50,7 @@
       // is a v0.6 launch route; this tells us which of the ~137 entries
       // pull engagement.
       track('fleet-entry-view', { id: entry.id, category: entry.category });
+      void getBadges().then((b) => (badges = b));
       void galleryFetcher(entry.id).then((urls) => {
         if (entry && entry.id === lastId) gallery = urls;
       });
@@ -186,13 +189,9 @@
       </AgencyRow>
       <div class="name-row">
         <h1 class="name">{entry.name}</h1>
-        <img
-          class="panel-badge"
-          src="{base}/images/badges/fleet/{entry.id}.webp"
-          alt=""
-          decoding="async"
-          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-        />
+        {#if badges[`fleet:${entry.id}`]}
+          <img class="panel-badge" src="{base}{badges[`fleet:${entry.id}`]}" alt="" decoding="async" />
+        {/if}
       </div>
       {#if entry.tagline ?? entry.best_known_for}
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>

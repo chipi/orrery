@@ -1,0 +1,41 @@
+{
+  "id": "gemini8",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1966,
+  "status": "FLOWN",
+  "departure_date": "1966-03-16",
+  "arrival_date": "1966-03-16",
+  "transit_days": 0,
+  "vehicle": "Titan II GLV (GT-8)",
+  "payload": "Gemini 8; Neil Armstrong & David Scott",
+  "delta_v": "~7.8 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Gemini mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Gemini 8 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gemini_8",
+      "t": "intro"
+    },
+    {
+      "l": "NASA — Project Gemini",
+      "u": "https://www.nasa.gov/history/project-gemini/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "gemini",
+      "role": "spacecraft"
+    },
+    {
+      "id": "titan-ii-glv",
+      "role": "launcher"
+    }
+  ]
+}

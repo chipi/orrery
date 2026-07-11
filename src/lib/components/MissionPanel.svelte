@@ -5,7 +5,7 @@
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
-  import { getMissionGallery, getMarsSites, getMoonSites } from '$lib/data';
+  import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
@@ -51,6 +51,7 @@
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
+  let badges = $state<Record<string, string>>({});
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
@@ -91,6 +92,9 @@
       void getMissionGallery(mission.id).then((urls) => {
         if (mission && mission.id === lastId) gallery = urls;
       });
+      // Insignia map (PRD-029) — gate the badge so patch-less missions
+      // (Mercury/Gemini flights predate mission patches) fire no 404.
+      void getBadges().then((b) => (badges = b));
       // Resolve cross-link to /mars or /moon surface-site catalogue.
       const findSite = (sites: SurfaceSite[]) =>
         sites.find((s) => s.mission_id === mission!.id) ??
@@ -249,13 +253,9 @@
       </AgencyRow>
       <div class="name-row">
         <h1 class="name">{mission.name ?? mission.id}</h1>
-        <img
-          class="panel-badge"
-          src="{base}/images/badges/missions/{mission.id}.webp"
-          alt=""
-          decoding="async"
-          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-        />
+        {#if badges[`mission:${mission.id}`]}
+          <img class="panel-badge" src="{base}{badges[`mission:${mission.id}`]}" alt="" decoding="async" />
+        {/if}
       </div>
       {#if mission.type}
         <p class="type">{mission.type}</p>
@@ -814,25 +814,17 @@
                 <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
-            {#key mission.id}
+            {#if badges[`mission:${mission.id}`]}
               <button
                 type="button"
                 class="gallery-thumb badge-thumb"
-                onclick={() => (lightboxSrc = `${base}/images/badges/missions/${mission.id}.webp`)}
+                onclick={() => (lightboxSrc = `${base}${badges[`mission:${mission.id}`]}`)}
                 aria-label="{mission.name ?? mission.id} insignia"
               >
-                <img
-                  src="{base}/images/badges/missions/{mission.id}.webp"
-                  alt=""
-                  decoding="async"
-                  onerror={(e) => {
-                    const b = (e.currentTarget as HTMLElement).closest('button');
-                    if (b) b.remove();
-                  }}
-                />
+                <img src="{base}{badges[`mission:${mission.id}`]}" alt="" decoding="async" />
                 <span class="badge-tag">Insignia</span>
               </button>
-            {/key}
+            {/if}
           </div>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
         {/if}

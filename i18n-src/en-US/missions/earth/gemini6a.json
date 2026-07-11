@@ -1,0 +1,33 @@
+{
+  "name": "Gemini 6A / GT-6A",
+  "type": "CREWED EARTH-ORBIT · FLOWN",
+  "first": "First crewed space rendezvous",
+  "dispatch": "Rendezvous — two spacecraft finding and joining each other in orbit — was the skill Apollo could not do without, and Gemini 6A is where it was first done. It nearly didn't fly: its original target blew up on the way to orbit, and then, strapped in for the rescheduled launch, the Titan's engines lit and abruptly died on the pad — a moment when the rules said eject, and Wally Schirra, feeling no motion, coolly chose not to. Three days later it flew and did the thing that had never been done: caught up with Gemini 7 and held station a foot away, the crews close enough to read each other's faces. It looked easy and was anything but — the orbital mechanics of catching another craft are deeply counter-intuitive — and cracking it was the moment lunar-orbit rendezvous, and the whole Apollo plan, became real.",
+  "description": "Wally Schirra and Tom Stafford achieved the first crewed space rendezvous on 15 December 1965, station-keeping within ~30 cm of Gemini 7 for over five hours. It followed a launch-pad engine shutdown three days earlier that Schirra chose not to abort. Duration ~1 d 1 h; 16 orbits.",
+  "events": [
+    {
+      "met": 0,
+      "label": "PAD SHUTDOWN",
+      "note": "1965-12-12: engines ignite then shut down on the pad; Schirra does not eject.",
+      "type": "warning"
+    },
+    {
+      "met": 0.001,
+      "label": "LAUNCH",
+      "note": "Titan II GLV (GT-6A) from Cape Canaveral LC-19, 1965-12-15 13:37 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.25,
+      "label": "RENDEZVOUS",
+      "note": "First crewed rendezvous — station-keeps within ~30 cm of Gemini 7.",
+      "type": "info"
+    },
+    {
+      "met": 1,
+      "label": "SPLASHDOWN",
+      "note": "Atlantic splashdown after ~1 d 1 h / 16 orbits.",
+      "type": "nominal"
+    }
+  ]
+}

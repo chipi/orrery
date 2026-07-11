@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "La Lune · 384 000 km, trois jours dans chaque sens",
   "science_panel_moon_body": "La gravité de surface lunaire est 1/6 g ; une exosphère ténue comme le vide n'offre aucun freinage aérodynamique, donc chaque mission doit emporter le ∆v complet pour la descente. La trajectoire de retour libre d'Apollo permit au huit terrestre Terre-Lune-Terre de servir de trajet d'abandon intégré.",
   "science_panel_earth_title": "Terre · 6371 km de rayon, notre perchoir orbital",
-  "science_panel_earth_body": "Une enveloppe de 100 km à la ligne de Kármán sépare l'atmosphère de l'espace ; l'orbite basse commence 100 km plus haut. La colonne d'ozone à ~30 km bloque les UV-C qui autrement stériliseraient la surface — son appauvrissement polaire est l'une des rares mesures atmosphériques globales visibles depuis l'orbite."
+  "science_panel_earth_body": "Une enveloppe de 100 km à la ligne de Kármán sépare l'atmosphère de l'espace ; l'orbite basse commence 100 km plus haut. La colonne d'ozone à ~30 km bloque les UV-C qui autrement stériliseraient la surface — son appauvrissement polaire est l'une des rares mesures atmosphériques globales visibles depuis l'orbite.",
+  "nav_sensory_aria": "Paramètres sensoriels",
+  "nav_sensory_title": "Son, vibration et inclinaison",
+  "sensory_sheet_title": "Couche sensorielle",
+  "sensory_sheet_close_aria": "Fermer les paramètres sensoriels",
+  "sensory_master_label": "Couche sensorielle",
+  "sensory_master_hint": "Indices sonores, vibrations et inclinaison répondant à la physique.",
+  "sensory_row_audio_label": "Son",
+  "sensory_row_audio_desc": "Entendez la physique — indices et tonalités ambiantes.",
+  "sensory_row_haptic_label": "Vibration",
+  "sensory_row_haptic_desc": "Ressentez les événements clés par une impulsion.",
+  "sensory_row_gyro_label": "Incliner pour regarder",
+  "sensory_row_gyro_desc": "Déplacez l'appareil pour orbiter la vue.",
+  "sensory_gyro_denied": "Accès au capteur de mouvement refusé — activez-le dans les paramètres de votre navigateur.",
+  "sensory_recalibrate_help": "Recalibrer l'inclinaison : triple-tapez sur la scène.",
+  "sensory_hint_toast": "Mode sensoriel activé — essayez le son, la vibration et l'inclinaison.",
+  "sensory_hint_toast_audio": "Mode sensoriel activé — le son est en cours de lecture."
 }

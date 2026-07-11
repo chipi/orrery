@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "Der Mond · 384 000 km entfernt, drei Tage pro Richtung",
   "science_panel_moon_body": "Die Oberflächenschwerkraft des Mondes beträgt 1/6 g; eine vakuumdünne Exosphäre bietet kein Aerobraking, daher muss jede Mission das volle ∆v für den Abstieg mitführen. Apollos Free-Return-Bahn ließ die Erde-Mond-Erde-Acht als eingebauten Abbruchpfad fungieren.",
   "science_panel_earth_title": "Erde · 6371 km Radius, unsere orbitale Warte",
-  "science_panel_earth_body": "Eine 100 km dicke Kármán-Linie trennt Atmosphäre vom All; LEO beginnt weitere 100 km höher. Die Ozonsäule bei ~30 km blockiert das UV-C, das andernfalls die Oberfläche sterilisieren würde – ihr polarer Abbau ist eine der wenigen globalen Atmosphärenmessungen, die vom Orbit sichtbar sind."
+  "science_panel_earth_body": "Eine 100 km dicke Kármán-Linie trennt Atmosphäre vom All; LEO beginnt weitere 100 km höher. Die Ozonsäule bei ~30 km blockiert das UV-C, das andernfalls die Oberfläche sterilisieren würde – ihr polarer Abbau ist eine der wenigen globalen Atmosphärenmessungen, die vom Orbit sichtbar sind.",
+  "nav_sensory_aria": "Sensorische Einstellungen",
+  "nav_sensory_title": "Ton, Vibration & Neigung",
+  "sensory_sheet_title": "Sensorische Ebene",
+  "sensory_sheet_close_aria": "Sensorische Einstellungen schließen",
+  "sensory_master_label": "Sensorische Ebene",
+  "sensory_master_hint": "Ton-, Vibrations- und Neigungssignale, die auf die Physik reagieren.",
+  "sensory_row_audio_label": "Ton",
+  "sensory_row_audio_desc": "Die Physik hören — Signale und Umgebungstöne.",
+  "sensory_row_haptic_label": "Vibration",
+  "sensory_row_haptic_desc": "Wichtige Ereignisse als Tippen spüren.",
+  "sensory_row_gyro_label": "Neigen zum Schauen",
+  "sensory_row_gyro_desc": "Gerät bewegen, um die Ansicht zu umkreisen.",
+  "sensory_gyro_denied": "Bewegungszugriff verweigert — in den Browsereinstellungen aktivieren.",
+  "sensory_recalibrate_help": "Neigung neu kalibrieren: Szene dreimal antippen.",
+  "sensory_hint_toast": "Sensorischer Modus aktiv — Ton, Vibration und Neigung ausprobieren.",
+  "sensory_hint_toast_audio": "Sensorischer Modus aktiv — Ton läuft."
 }

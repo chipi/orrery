@@ -20,6 +20,7 @@ import SpacecraftIcon from './SpacecraftIcon.svelte';
 import TrajectoryArrowIcon from './TrajectoryArrowIcon.svelte';
 import MissionOrbitIcon from './MissionOrbitIcon.svelte';
 import ShareIcon from './ShareIcon.svelte';
+import SensoryIcon from './SensoryIcon.svelte';
 
 export {
   MenuIcon,
@@ -34,6 +35,7 @@ export {
   TrajectoryArrowIcon,
   MissionOrbitIcon,
   ShareIcon,
+  SensoryIcon,
 };
 
 /** One entry per icon for the style guide + colophon grid. `variants`
@@ -169,6 +171,15 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     where: 'Nav',
     route: '/',
     component: ShareIcon as Component<Record<string, unknown>>,
+    variants: [{ props: { size: 24 } }],
+  },
+  {
+    id: 'sensory',
+    label: 'Sensory layer',
+    what: 'Compass needle crossed by a waveform — opens the sensory (sound / vibration / tilt) settings.',
+    where: 'Nav',
+    route: '/',
+    component: SensoryIcon as Component<Record<string, unknown>>,
     variants: [{ props: { size: 24 } }],
   },
 ];

@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "La Luna · 384 000 km de distancia, tres días en cada sentido",
   "science_panel_moon_body": "La gravedad superficial lunar es 1/6 g; una exosfera casi al vacío no ofrece aerofrenado, así que cada misión debe llevar todo el ∆v para el descenso. La trayectoria de retorno libre del Apolo permitía usar la figura-8 Tierra-Luna-Tierra como ruta de aborto integrada.",
   "science_panel_earth_title": "Tierra · 6371 km de radio, nuestra plataforma orbital",
-  "science_panel_earth_body": "Una capa de 100 km en la línea de Kármán separa la atmósfera del espacio; la LEO comienza otros 100 km más arriba. La columna de ozono a ~30 km bloquea la UV-C que de otro modo esterilizaría la superficie — su agotamiento polar es una de las pocas mediciones atmosféricas globales visibles desde órbita."
+  "science_panel_earth_body": "Una capa de 100 km en la línea de Kármán separa la atmósfera del espacio; la LEO comienza otros 100 km más arriba. La columna de ozono a ~30 km bloquea la UV-C que de otro modo esterilizaría la superficie — su agotamiento polar es una de las pocas mediciones atmosféricas globales visibles desde órbita.",
+  "nav_sensory_aria": "Configuración sensorial",
+  "nav_sensory_title": "Sonido, vibración e inclinación",
+  "sensory_sheet_title": "Capa sensorial",
+  "sensory_sheet_close_aria": "Cerrar configuración sensorial",
+  "sensory_master_label": "Capa sensorial",
+  "sensory_master_hint": "Señales de sonido, vibración e inclinación que responden a la física.",
+  "sensory_row_audio_label": "Sonido",
+  "sensory_row_audio_desc": "Escucha la física: señales y tonos ambientales.",
+  "sensory_row_haptic_label": "Vibración",
+  "sensory_row_haptic_desc": "Siente los eventos clave como una pulsación.",
+  "sensory_row_gyro_label": "Inclinar para mirar",
+  "sensory_row_gyro_desc": "Mueve el dispositivo para orbitar la vista.",
+  "sensory_gyro_denied": "Acceso al movimiento denegado: actívalo en la configuración del navegador.",
+  "sensory_recalibrate_help": "Recalibrar inclinación: toca tres veces la escena.",
+  "sensory_hint_toast": "Modo sensorial activado: prueba sonido, vibración e inclinación.",
+  "sensory_hint_toast_audio": "Modo sensorial activado: el sonido está reproduciéndose."
 }

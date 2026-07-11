@@ -10,6 +10,9 @@
   import { formatDisplayVersion } from '$lib/version';
   import { initWebglRecovery } from '$lib/native/webgl-recovery';
   import { initDeepLinks } from '$lib/native/deep-links';
+  import { initBackButton } from '$lib/native/back-gesture';
+  import { sensory } from '$lib/sensory/state.svelte';
+  import { gyro } from '$lib/sensory/device-orientation';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import CommandPalette from '$lib/components/CommandPalette.svelte';
@@ -243,6 +246,15 @@
     if (path) trackRouteEnter(path);
   });
 
+  // Start/stop the gyro listener as the user enables/disables the tilt channel
+  // (RFC-020 §6). Scenes read `gyro.consume()` per frame; this just controls the
+  // DeviceOrientation subscription. No-op off-device.
+  $effect(() => {
+    if (!browser) return;
+    if (sensory.active('gyro')) gyro.start();
+    else gyro.stop();
+  });
+
   onMount(() => {
     if (typeof window === 'undefined') return;
     // Watch device capability / orientation / viewport height and reflect it
@@ -254,6 +266,9 @@
     const stopWebglRecovery = initWebglRecovery();
     // S6 / #221: orrery:// deep links → route navigation. No-op off-device.
     const stopDeepLinks = initDeepLinks();
+    // S7 / #194: Android back gesture pops WebView history, exits when empty.
+    // Android-only event; no-op off-device. See RFC-018 §10.3.
+    const stopBackButton = initBackButton();
     // Privacy-respecting analytics. Loads only on the production host
     // (chipi.github.io); localhost / vite preview / CI runs are
     // silent. See src/lib/analytics.ts for the host gate + event API.
@@ -340,6 +355,7 @@
       stopViewport();
       stopWebglRecovery();
       stopDeepLinks();
+      stopBackButton();
       window.removeEventListener('beforeinstallprompt', onPromptable);
       document.removeEventListener('click', onAnyClick, true);
       document.removeEventListener('keydown', onCmdK);

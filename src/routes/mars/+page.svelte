@@ -8,6 +8,7 @@
   // + drag inertia + smooth zoom lerp, HUD, panel state, hotspot LOD,
   // input handlers, equirectangular 2D drawing — is owned by SurfaceScene.
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
+  import { cue } from '$lib/sensory/feedback';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
@@ -178,6 +179,7 @@
   let selectableIds = $derived(new Set(marsOrbiterSites.map((s) => s.id)));
 
   function openRegime(id: string) {
+    cue('select');
     selectedRegimeId = id;
     regimePanelOpen = true;
     const url = new URL(window.location.href);

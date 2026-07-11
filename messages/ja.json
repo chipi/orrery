@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "The Moon · 距離384,000 km、片道3日",
   "science_panel_moon_body": "月面重力は1/6 g;真空同然の外気圏では空力制動不可のため、全ミッションが降下用の全∆vを搭載必要。Apolloの自由帰還軌道は地球-月-地球8の字を組み込み中断経路として利用。",
   "science_panel_earth_title": "Earth · 半径6371 km、我々の軌道拠点",
-  "science_panel_earth_body": "厚さ100 kmのカルマン・ライン層が大気と宇宙を分離;LEOはさらに100 km上空から開始。高度約30 kmのオゾン層が表面を殺菌するUV-Cを遮断 — その極域減少は軌道上から可視の数少ない全球大気観測指標の一つ。"
+  "science_panel_earth_body": "厚さ100 kmのカルマン・ライン層が大気と宇宙を分離;LEOはさらに100 km上空から開始。高度約30 kmのオゾン層が表面を殺菌するUV-Cを遮断 — その極域減少は軌道上から可視の数少ない全球大気観測指標の一つ。",
+  "nav_sensory_aria": "感覚設定",
+  "nav_sensory_title": "サウンド・振動・傾き",
+  "sensory_sheet_title": "感覚レイヤー",
+  "sensory_sheet_close_aria": "感覚設定を閉じる",
+  "sensory_master_label": "感覚レイヤー",
+  "sensory_master_hint": "物理演算に応答するサウンド、振動、傾きのフィードバック。",
+  "sensory_row_audio_label": "サウンド",
+  "sensory_row_audio_desc": "物理演算を聴く — フィードバック音と環境音。",
+  "sensory_row_haptic_label": "振動",
+  "sensory_row_haptic_desc": "主要イベントをタップ振動で体感。",
+  "sensory_row_gyro_label": "傾けて視点移動",
+  "sensory_row_gyro_desc": "デバイスを動かして視点を周回。",
+  "sensory_gyro_denied": "モーションアクセスが拒否されました — ブラウザ設定で有効にしてください。",
+  "sensory_recalibrate_help": "傾き再較正: シーンを3回タップ。",
+  "sensory_hint_toast": "感覚モードがオン — サウンド、振動、傾きをお試しください。",
+  "sensory_hint_toast_audio": "感覚モードがオン — サウンドが再生中です。"
 }

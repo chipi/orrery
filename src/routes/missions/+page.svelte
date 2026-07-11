@@ -20,6 +20,7 @@
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
     loading as rdLoading,
@@ -301,6 +302,7 @@
   );
 
   function selectMission(id: string) {
+    cue('select');
     selectedId = id;
     panelOpen = true;
     // Grid-click opens the panel via state only (no ?id= in the URL), so

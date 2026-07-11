@@ -807,9 +807,21 @@ Threaded through ~9 chokepoints (`pickHero`, `data.ts` gallery builders + `loadI
 
 **WebGL context-loss recovery (S8, #195).** WKWebView drops the WebGL context on background. `src/lib/native/webgl-recovery.ts` (in `+layout`) detects a lost context (`webglcontextlost`/`restored` + `@capacitor/app` `appStateChange`) and **reloads the route** — reliable, no blank scene. Per-scene `reinit()` (RFC-018 §11.2) deferred pending real-device verification.
 
-**Plugins:** `@capacitor/{app,browser,share,haptics,splash-screen}` + `@capacitor-community/safe-area` (Android edge-to-edge). Deep links `orrery://<route>` (`src/lib/native/deep-links.ts` + Info.plist/Manifest). Share → native sheet / `navigator.share` / copy-link, on a public URL (`src/lib/share.ts`). External links → in-app Safari via `@capacitor/browser` (`src/lib/external-link.ts`, routed from the `+layout` click delegation).
+**Plugins:** `@capacitor/{app,browser,share,haptics,splash-screen}` + `@capacitor-community/safe-area` (Android edge-to-edge). Deep links `orrery://<route>` (`src/lib/native/deep-links.ts` + Info.plist/Manifest). Share → native sheet / `navigator.share` / copy-link, on a public URL (`src/lib/share.ts`). External links → in-app Safari via `@capacitor/browser` (`src/lib/external-link.ts`, routed from the `+layout` click delegation). Android hardware/gesture back (S7, #194) → `src/lib/native/back-gesture.ts` (`@capacitor/app` `backButton` → `window.history.back()` while WebView history remains, else `App.exitApp()`; iOS/web no-op), per RFC-018 §10.3.
 
 **Icons/splash:** `@capacitor/assets` generates from `assets/icon.png` (1024, from `static/favicon.svg`) + `assets/splash.png` (2732, Higgsfield-reimagined orrery + wordmark).
+
+## §sensory — Sensory layer (sound · vibration · tilt · v0.8)
+
+PRD-017 / RFC-020 (#147), **replanned 2026-07-11** ("good simple" reframe — see `docs/wip/sensory-cue-vocabulary.md`). Cross-platform: desktop gets sound; mobile adds vibration + tilt. All modules under `src/lib/sensory/`. Opt-in — master defaults OFF, in-memory only (ADR-057, resets on reload).
+
+**State + shell.** `state.svelte.ts` — `sensory` rune singleton: master `on`, per-channel `*Wanted` flags, `active(ch)` = master ∧ wanted ∧ capable. `capabilities.ts` (pure, unit-tested per RFC-020 §7.3): desktop → Sound only; iOS-web hides Vibration (no API); reduced-motion hides Vibration + Tilt. UI: one nav `sensory-toggle` opens `SensorySheet.svelte` (dropdown desktop / bottom-sheet mobile) with the master + capability-gated Sound/Vibration/Tilt switches; first-time hint toast in `Nav.svelte`.
+
+**Event cues (Phase 2).** `audio-engine.ts` — one lazy `AudioContext` + master gain; ducks under PRD-016 narration via `audio-bus.ts`; suspends on background. `haptics.ts` — Capacitor Haptics / `navigator.vibrate` / no-op. `feedback.ts` — `cue(kind)` fires a tone **+** haptic together (I-B), each gated by `active()`. Vocabulary: **`select`** is wired app-wide at user-click selection seams (explore bodies, surface sites/objects, earth/mars regime, missions/fleet/iss/tiangong, fly event-jump); `confirm`/`threshold`/`warning` are defined but unwired (no natural triggers in the current cinematic app — see the wip doc).
+
+**Gyroscope (Phase 3).** `device-orientation.ts` — one service, G-C home calibration, low-pass + dead-zone, T-B touch-pause (re-homes 200ms after drag), iOS permission on the toggle tap. `+layout` starts/stops it on `active('gyro')`. Injected per-frame into all 7 scenes: 5 spherical-orbit (`explore`, `fly` helio+cislunar, `SurfaceScene` earth/moon/mars) nudge `camT`/`camP`; 2 OrbitControls (`iss`/`tiangong`) via `gyro-orbit.ts` (three@0.128 keeps `rotateLeft` private, so we orbit the camera manually). Recalibrate-gesture (#173) is redundant here — the service auto-re-homes after every drag.
+
+**Hero sonification (Phase 4).** Two continuous voices on the shared bus (duck automatically): `sonify/kepler-chord.ts` (/explore — a soft pentatonic bed tuned by orbital order, consonant-by-design to dodge the phone-speaker-mud risk) and `sonify/fly-velocity.ts` (/fly — one voice whose pitch tracks live heliocentric km/s). The other 9 per-route sonifications from the original PRD are **dropped**. `audioEngine.muted` is the screen-reader mute hook (M10; auto-detection deferred — opt-in + ducking mitigate).
 
 ## §stack
 

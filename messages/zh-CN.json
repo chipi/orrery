@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "月球·距离38.4万公里，单程三天",
   "science_panel_moon_body": "月球表面重力为1/6 g；真空般稀薄的外逸层无法提供气动制动，因此每次任务都必须携带下降所需的全部∆v。阿波罗的自由返回轨道让地-月-地8字形路径成为内置的中止方案。",
   "science_panel_earth_title": "地球·半径6371公里，我们的轨道栖息地",
-  "science_panel_earth_body": "100公里的卡门线壳层分隔大气与太空；LEO起始于再向上100公里处。约30公里处的臭氧层阻挡了本会灭绝地表生命的UV-C——其极地损耗是少数可从轨道观测到的全球大气测量现象之一。"
+  "science_panel_earth_body": "100公里的卡门线壳层分隔大气与太空；LEO起始于再向上100公里处。约30公里处的臭氧层阻挡了本会灭绝地表生命的UV-C——其极地损耗是少数可从轨道观测到的全球大气测量现象之一。",
+  "nav_sensory_aria": "感官设置",
+  "nav_sensory_title": "声音、振动与倾斜",
+  "sensory_sheet_title": "感官层",
+  "sensory_sheet_close_aria": "关闭感官设置",
+  "sensory_master_label": "感官层",
+  "sensory_master_hint": "响应物理的声音、振动和倾斜提示。",
+  "sensory_row_audio_label": "声音",
+  "sensory_row_audio_desc": "听见物理——提示音和环境音调。",
+  "sensory_row_haptic_label": "振动",
+  "sensory_row_haptic_desc": "以触觉感受关键事件。",
+  "sensory_row_gyro_label": "倾斜观看",
+  "sensory_row_gyro_desc": "移动设备以环绕视图。",
+  "sensory_gyro_denied": "动作访问被拒绝——请在浏览器设置中启用。",
+  "sensory_recalibrate_help": "重新校准倾斜:三击场景。",
+  "sensory_hint_toast": "感官模式已开启——尝试声音、振动和倾斜。",
+  "sensory_hint_toast_audio": "感官模式已开启——声音正在播放。"
 }

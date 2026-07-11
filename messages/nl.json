@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "De Maan · 384 000 km ver, drie dagen heen en terug",
   "science_panel_moon_body": "De zwaartekracht aan het maanoppervlak is 1/6 g; een vacuümdunne exosfeer biedt geen aerobraking, dus elke missie moet volledige ∆v voor de afdaling meenemen. Apollo's free-return traject liet de Aarde-Maan-Aarde achtfiguur fungeren als ingebouwd afbreekpad.",
   "science_panel_earth_title": "Aarde · 6371 km straal, ons orbitale uitkijkpunt",
-  "science_panel_earth_body": "Een 100 km Kármán-lijn schil scheidt atmosfeer van ruimte; LEO begint weer 100 km hoger. De ozonkolom op ~30 km blokkeert de UV-C die anders het oppervlak zou steriliseren — de pooluitputting ervan is een van de weinige globale atmosferische metingen zichtbaar vanuit een baan."
+  "science_panel_earth_body": "Een 100 km Kármán-lijn schil scheidt atmosfeer van ruimte; LEO begint weer 100 km hoger. De ozonkolom op ~30 km blokkeert de UV-C die anders het oppervlak zou steriliseren — de pooluitputting ervan is een van de weinige globale atmosferische metingen zichtbaar vanuit een baan.",
+  "nav_sensory_aria": "Zintuiglijke instellingen",
+  "nav_sensory_title": "Geluid, trilling & kanteling",
+  "sensory_sheet_title": "Zintuiglijke laag",
+  "sensory_sheet_close_aria": "Zintuiglijke instellingen sluiten",
+  "sensory_master_label": "Zintuiglijke laag",
+  "sensory_master_hint": "Geluid-, trillings- en kantelsignalen die reageren op de fysica.",
+  "sensory_row_audio_label": "Geluid",
+  "sensory_row_audio_desc": "Hoor de fysica — signalen en omgevingstonen.",
+  "sensory_row_haptic_label": "Trilling",
+  "sensory_row_haptic_desc": "Voel belangrijke gebeurtenissen als een tik.",
+  "sensory_row_gyro_label": "Kantel om te kijken",
+  "sensory_row_gyro_desc": "Beweeg het apparaat om het beeld te draaien.",
+  "sensory_gyro_denied": "Bewegingstoegang geweigerd — schakel het in via je browserinstellingen.",
+  "sensory_recalibrate_help": "Kanteling opnieuw kalibreren: tik drie keer op het scherm.",
+  "sensory_hint_toast": "Zintuiglijke modus aan — probeer geluid, trilling en kanteling.",
+  "sensory_hint_toast_audio": "Zintuiglijke modus aan — geluid speelt af."
 }

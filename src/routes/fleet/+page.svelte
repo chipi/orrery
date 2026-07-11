@@ -20,6 +20,7 @@
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
   import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
     loading as rdLoading,
@@ -299,6 +300,7 @@
   }
 
   function openEntry(entry: FleetIndexEntry) {
+    cue('select');
     const url = new URL($page.url);
     url.searchParams.set('id', entry.id);
     goto(url.pathname + `?${url.searchParams}`, {

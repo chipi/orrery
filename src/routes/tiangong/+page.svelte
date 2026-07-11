@@ -59,6 +59,9 @@
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
+  import { cue } from '$lib/sensory/feedback';
+  import { gyro } from '$lib/sensory/device-orientation';
+  import { applyGyroOrbit } from '$lib/sensory/gyro-orbit';
   import {
     type RemoteData,
     loading,
@@ -488,6 +491,7 @@
     const all = [...modules, ...visitors];
     const mod = all.find((m) => m.id === id);
     if (mod) {
+      cue('select');
       openModule(mod);
       trackItemClick('module', id, '/tiangong');
     }
@@ -653,6 +657,15 @@
     controls.dampingFactor = 0.06;
     controls.target.set(0.6, 0.0, 0);
     controls.update();
+
+    // Gyro tilt-to-look (RFC-020 §6): pause while hand-orbiting, re-home 200ms
+    // after release (T-B) so a drag doesn't snap.
+    let gyroOrbiting = false;
+    controls.addEventListener('start', () => (gyroOrbiting = true));
+    controls.addEventListener('end', () => {
+      gyroOrbiting = false;
+      gyro.recordTouchEnd();
+    });
 
     // Shift+left-click → pan. OrbitControls handles this NATIVELY
     // when mouseButtons.LEFT === ROTATE (default) and shiftKey is set
@@ -983,7 +996,10 @@
           const mid = o.userData?.moduleId as string | undefined;
           if (o.userData?.stationPickable && mid) {
             const mod = moduleListRef.list.find((x) => x.id === mid);
-            if (mod) openModule(mod);
+            if (mod) {
+              cue('select');
+              openModule(mod);
+            }
             return;
           }
           o = o.parent;
@@ -1119,6 +1135,10 @@
         // array's SADA axis (one full revolution every ~4 minutes).
         tickSunTrackingArrays(station, t);
         refreshMeshMaterials(t);
+        // Gyro nudge before update: consume every frame; apply only when the
+        // user isn't hand-orbiting.
+        if (gyroOrbiting) gyro.consume();
+        else applyGyroOrbit(camera, controls.target);
         controls.update();
         // ADR-073 Layer B — distance from the orbit camera to the
         // backdrop sphere's centre. Drives the 2K → 4K swap.
@@ -1229,7 +1249,10 @@
         <li>
           <button
             type="button"
-            onclick={() => openModule(mod)}
+            onclick={() => {
+              cue('select');
+              openModule(mod);
+            }}
             aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: mod.name, agency: mod.agency })}
@@ -1240,7 +1263,10 @@
         <li>
           <button
             type="button"
-            onclick={() => openModule(ship)}
+            onclick={() => {
+              cue('select');
+              openModule(ship);
+            }}
             aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: ship.name, agency: ship.agency })}
@@ -1311,7 +1337,10 @@
               type="button"
               class="module-row"
               class:canvas-hovered={selection.state.hoveredId === mod.id}
-              onclick={() => openModule(mod)}
+              onclick={() => {
+                cue('select');
+                openModule(mod);
+              }}
               onkeydown={onRowKeydown}
               onmouseenter={() => {
                 visualRef.hoveredId = mod.id;
@@ -1353,7 +1382,10 @@
                 type="button"
                 class="module-row"
                 class:canvas-hovered={selection.state.hoveredId === ship.id}
-                onclick={() => openModule(ship)}
+                onclick={() => {
+                  cue('select');
+                  openModule(ship);
+                }}
                 onkeydown={onRowKeydown}
                 onmouseenter={() => {
                   visualRef.hoveredId = ship.id;

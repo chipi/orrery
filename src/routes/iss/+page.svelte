@@ -60,6 +60,9 @@
   import { ISS_DOCK_EVENTS, ISS_TRUSS_PHASES } from '$lib/iss-assembly-phases';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
+  import { cue } from '$lib/sensory/feedback';
+  import { gyro } from '$lib/sensory/device-orientation';
+  import { applyGyroOrbit } from '$lib/sensory/gyro-orbit';
   import {
     type RemoteData,
     loading,
@@ -510,6 +513,7 @@
   function blueprintModuleClick(id: string) {
     const mod = modules.find((m) => m.id === id) ?? visitors.find((v) => v.id === id);
     if (mod) {
+      cue('select');
       openModule(mod);
       trackItemClick('module', id, '/iss');
     }
@@ -690,6 +694,15 @@
     controls.dampingFactor = 0.06;
     controls.target.set(0, 0.1, 0);
     controls.update();
+
+    // Gyro tilt-to-look (RFC-020 §6): pause while the user is orbiting by hand
+    // and re-home for 200ms after (T-B), so a drag-release doesn't snap.
+    let gyroOrbiting = false;
+    controls.addEventListener('start', () => (gyroOrbiting = true));
+    controls.addEventListener('end', () => {
+      gyroOrbiting = false;
+      gyro.recordTouchEnd();
+    });
 
     // Shift+left-click → pan. OrbitControls handles this NATIVELY:
     // when mouseButtons.LEFT === MOUSE.ROTATE (the default) and the
@@ -1044,7 +1057,10 @@
           const mid = o.userData?.moduleId as string | undefined;
           if (o.userData?.stationPickable && mid) {
             const mod = moduleListRef.list.find((x) => x.id === mid);
-            if (mod) openModule(mod);
+            if (mod) {
+              cue('select');
+              openModule(mod);
+            }
             return;
           }
           o = o.parent;
@@ -1184,6 +1200,10 @@
         tickSunTrackingArrays(station, t);
         applyAssemblyToScene(t);
         refreshIssMeshMaterials(t);
+        // Gyro nudge before update: consume every frame (keeps the service
+        // synced); apply only when the user isn't hand-orbiting.
+        if (gyroOrbiting) gyro.consume();
+        else applyGyroOrbit(camera, controls.target);
         controls.update();
         // ADR-073 Layer B — distance from the orbit camera to the
         // backdrop sphere's centre. Drives the 2K → 4K swap.
@@ -1297,7 +1317,10 @@
         <li>
           <button
             type="button"
-            onclick={() => openModule(mod)}
+            onclick={() => {
+              cue('select');
+              openModule(mod);
+            }}
             aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
           >
             {m.a11y_select_module_template({ name: mod.name, agency: mod.agency })}
@@ -1364,7 +1387,10 @@
               type="button"
               class="module-row"
               class:canvas-hovered={selection.state.hoveredId === mod.id}
-              onclick={() => openModule(mod)}
+              onclick={() => {
+                cue('select');
+                openModule(mod);
+              }}
               onkeydown={onRowKeydown}
               onmouseenter={() => {
                 issVisualRef.hoveredId = mod.id;
@@ -1406,7 +1432,10 @@
                 type="button"
                 class="module-row"
                 class:canvas-hovered={selection.state.hoveredId === ship.id}
-                onclick={() => openModule(ship)}
+                onclick={() => {
+                  cue('select');
+                  openModule(ship);
+                }}
                 onkeydown={onRowKeydown}
                 onmouseenter={() => {
                   issVisualRef.hoveredId = ship.id;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy, onMount } from 'svelte';
+  import { onDestroy, onMount, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
@@ -15,12 +15,15 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import { sensory } from '$lib/sensory/state.svelte';
+  import SensorySheet from '$lib/components/SensorySheet.svelte';
   import {
     MenuIcon,
     AudioWaveIcon,
     ScienceLensIcon,
     SettingsGearIcon,
     ShareIcon,
+    SensoryIcon,
   } from '$lib/components/icons';
   import { shareCurrent } from '$lib/share';
   import { formatDisplayVersion } from '$lib/version';
@@ -136,6 +139,26 @@
       document.dispatchEvent(new CustomEvent('orrery-cmd-k-open'));
     }
   }
+
+  // ─── Sensory layer (PRD-017 / RFC-020) ──────────────────────────────
+  // One nav button opens the settings sheet (master + Sound/Vibration/Tilt
+  // sub-toggles). The first time the master is switched on this session, a
+  // non-modal hint toast surfaces (S2 / #174), auto-dismissing after 4s.
+  let sensoryHintVisible = $state(false);
+  let sensoryHintTimer: ReturnType<typeof setTimeout> | undefined;
+  $effect(() => {
+    if (sensory.on && !sensory.hintShown) {
+      // Writes must not re-trigger this effect — mark shown + arm the toast
+      // outside the reactive read (feedback_svelte5_effect_untrack).
+      untrack(() => {
+        sensory.markHintShown();
+        sensoryHintVisible = true;
+        clearTimeout(sensoryHintTimer);
+        sensoryHintTimer = setTimeout(() => (sensoryHintVisible = false), 4000);
+      });
+    }
+  });
+  onDestroy(() => clearTimeout(sensoryHintTimer));
 </script>
 
 <!-- Roving toolbar (RFC-031 S1): the whole top bar is one Tab stop; ← → (and a
@@ -191,6 +214,21 @@
            opacity oscillation, no transform churn (keeps the icon
            readable + respects prefers-reduced-motion via CSS). -->
       <AudioWaveIcon />
+    </button>
+    <button
+      type="button"
+      class="sensory-toggle"
+      class:active={sensory.anyActive}
+      aria-label={m.nav_sensory_aria()}
+      aria-haspopup="dialog"
+      aria-expanded={sensory.settingsOpen}
+      aria-controls={sensory.settingsOpen ? 'sensory-sheet' : undefined}
+      title={m.nav_sensory_title()}
+      onclick={() => (sensory.settingsOpen ? sensory.closeSettings() : sensory.openSettings())}
+    >
+      <!-- Compass-needle + waveform glyph (PRD-017 §7.1). Teal fill when any
+           sensory channel is active. -->
+      <SensoryIcon />
     </button>
     <LocalePicker />
     <button
@@ -262,6 +300,16 @@
     {@render right?.()}
   </div>
 </nav>
+
+<SensorySheet />
+
+{#if sensoryHintVisible}
+  <div class="sensory-hint" role="status" aria-live="polite">
+    {sensory.capabilities.gyro || sensory.capabilities.haptic
+      ? m.sensory_hint_toast()
+      : m.sensory_hint_toast_audio()}
+  </div>
+{/if}
 
 {#if mobileMenuOpen}
   <div
@@ -704,6 +752,63 @@
       animation: none;
       opacity: 1;
     }
+  }
+
+  /* Sensory-layer toggle — same chrome family as the other right-rail
+     buttons; teal accent echoes the settings-sheet switches. Opens the
+     sensory settings sheet (master + Sound/Vibration/Tilt). */
+  .sensory-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .sensory-toggle :global(svg) {
+    display: block;
+  }
+  .sensory-toggle:hover,
+  .sensory-toggle:focus-visible {
+    border-color: rgba(78, 205, 196, 0.55);
+    color: rgba(78, 205, 196, 0.95);
+    outline: none;
+  }
+  .sensory-toggle.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.7);
+    color: #4ecdc4;
+  }
+
+  /* First-time sensory hint — non-modal toast, bottom-centre, 4s auto-dismiss. */
+  .sensory-hint {
+    position: fixed;
+    left: 50%;
+    bottom: calc(20px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+    transform: translateX(-50%);
+    z-index: 95;
+    max-width: min(360px, calc(100vw - 24px));
+    padding: 10px 16px;
+    background: rgba(20, 22, 34, 0.95);
+    border: 1px solid rgba(78, 205, 196, 0.5);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: 13px;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   /* Hamburger menu toggle — hidden on desktop, shown on mobile. */

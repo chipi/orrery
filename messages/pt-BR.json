@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "A Lua · 384 000 km de distância, três dias em cada sentido",
   "science_panel_moon_body": "A gravidade na superfície lunar é 1/6 g; uma exosfera tênue como o vácuo não oferece aerofrenagem, então cada missão precisa carregar ∆v completo para a descida. A trajetória de retorno livre da Apollo permitiu que a figura-8 Terra-Lua-Terra servisse como rota de aborto integrada.",
   "science_panel_earth_title": "Terra · 6371 km de raio, nosso posto orbital",
-  "science_panel_earth_body": "Uma camada de 100 km na linha de Kármán separa atmosfera do espaço; LEO começa 100 km acima. A coluna de ozônio a ~30 km bloqueia o UV-C que de outra forma esterilizaria a superfície — sua depleção polar é uma das poucas medições atmosféricas globais visíveis da órbita."
+  "science_panel_earth_body": "Uma camada de 100 km na linha de Kármán separa atmosfera do espaço; LEO começa 100 km acima. A coluna de ozônio a ~30 km bloqueia o UV-C que de outra forma esterilizaria a superfície — sua depleção polar é uma das poucas medições atmosféricas globais visíveis da órbita.",
+  "nav_sensory_aria": "Configurações sensoriais",
+  "nav_sensory_title": "Som, vibração e inclinação",
+  "sensory_sheet_title": "Camada sensorial",
+  "sensory_sheet_close_aria": "Fechar configurações sensoriais",
+  "sensory_master_label": "Camada sensorial",
+  "sensory_master_hint": "Som, vibração e inclinação que respondem à física.",
+  "sensory_row_audio_label": "Som",
+  "sensory_row_audio_desc": "Ouça a física — sinais e tons ambiente.",
+  "sensory_row_haptic_label": "Vibração",
+  "sensory_row_haptic_desc": "Sinta eventos-chave como toque.",
+  "sensory_row_gyro_label": "Inclinar para olhar",
+  "sensory_row_gyro_desc": "Mova o dispositivo para orbitar a visualização.",
+  "sensory_gyro_denied": "Acesso ao movimento negado — ative nas configurações do navegador.",
+  "sensory_recalibrate_help": "Recalibrar inclinação: toque triplo na cena.",
+  "sensory_hint_toast": "Modo sensorial ativo — experimente som, vibração e inclinação.",
+  "sensory_hint_toast_audio": "Modo sensorial ativo — som está tocando."
 }

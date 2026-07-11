@@ -1431,5 +1431,21 @@
   "science_panel_moon_title": "달 · 384,000 km 거리, 편도 3일",
   "science_panel_moon_body": "달 표면 중력은 1/6 g — 진공 수준의 외기권은 공력제동을 제공하지 않으므로 모든 임무가 하강에 필요한 전체 ∆v를 확보해야 함. Apollo의 자유귀환 궤적은 지구-달-지구 8자 경로가 내장 중단 경로로 작동하도록 설계됨.",
   "science_panel_earth_title": "지구 · 반경 6371 km, 우리의 궤도 거점",
-  "science_panel_earth_body": "100 km 카르만 라인 껍질이 대기와 우주를 구분 — LEO는 그보다 100 km 위에서 시작. 약 30 km의 오존층이 표면을 살균할 UV-C를 차단 — 극지방 오존 결핍은 궤도에서 관측 가능한 몇 안 되는 전구 대기 측정 지표 중 하나."
+  "science_panel_earth_body": "100 km 카르만 라인 껍질이 대기와 우주를 구분 — LEO는 그보다 100 km 위에서 시작. 약 30 km의 오존층이 표면을 살균할 UV-C를 차단 — 극지방 오존 결핍은 궤도에서 관측 가능한 몇 안 되는 전구 대기 측정 지표 중 하나.",
+  "nav_sensory_aria": "감각 설정",
+  "nav_sensory_title": "사운드, 진동 및 기울임",
+  "sensory_sheet_title": "감각 레이어",
+  "sensory_sheet_close_aria": "감각 설정 닫기",
+  "sensory_master_label": "감각 레이어",
+  "sensory_master_hint": "물리 법칙에 반응하는 사운드, 진동 및 기울임 신호.",
+  "sensory_row_audio_label": "사운드",
+  "sensory_row_audio_desc": "물리 법칙을 들어보세요 — 신호음과 배경음.",
+  "sensory_row_haptic_label": "진동",
+  "sensory_row_haptic_desc": "주요 이벤트를 탭으로 느껴보세요.",
+  "sensory_row_gyro_label": "기울여서 보기",
+  "sensory_row_gyro_desc": "기기를 움직여 뷰를 회전합니다.",
+  "sensory_gyro_denied": "모션 액세스 거부됨 — 브라우저 설정에서 활성화하세요.",
+  "sensory_recalibrate_help": "기울임 재보정: 화면을 세 번 탭하세요.",
+  "sensory_hint_toast": "감각 모드 활성화 — 사운드, 진동, 기울임을 시도해보세요.",
+  "sensory_hint_toast_audio": "감각 모드 활성화 — 사운드가 재생 중입니다."
 }

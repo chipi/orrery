@@ -164,6 +164,10 @@
   import type { FlightTimelineEvent, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import { cue } from '$lib/sensory/feedback';
+  import { gyro } from '$lib/sensory/device-orientation';
+  import { sensory } from '$lib/sensory/state.svelte';
+  import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import PhasePanel from '$lib/components/PhasePanel.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
@@ -1595,8 +1599,17 @@
   }
   let openingFleetAssets = $state<OpeningFleetAsset[]>([]);
   let openingLoadId = 0; // race-guard for async loads vs mission swaps
+  // Hero sonification — the mission-arc velocity tone (PRD-017). Starts/stops with
+  // AUDIO; pitch is fed the live heliocentric speed each frame (see onFrame).
+  $effect(() => {
+    if (sensory.active('audio')) flyVelocitySon.start();
+    else flyVelocitySon.stop();
+    return () => flyVelocitySon.stop();
+  });
+
   function jumpToMet(metDays: number) {
     if (!Number.isFinite(metDays) || metDays < 0) return;
+    cue('select');
     const previousSimDay = simDay;
     // Bias the target onto the iconic-shot hold window when the jump
     // lands on a flyby / EDL event. See $lib/orbital/jump-to-met-bias
@@ -4500,6 +4513,8 @@
     const onTouchEnd = (e: TouchEvent) => {
       if (e.touches.length < 2) pinchPrev = 0;
       if (e.touches.length === 0) touchActive = false;
+      // T-B: pause + re-home gyro for 200ms after a drag (RFC-020 §6).
+      gyro.recordTouchEnd();
     };
 
     el3d.style.cursor = 'grab';
@@ -5291,6 +5306,22 @@
         // live spacecraft + planet positions and the lerp inside updateCam
         // has to run per-frame to converge. Moon-mode additionally needs
         // the per-frame Earth-Moon-midpoint re-aim baked into updateCam.
+        // Gyro tilt-to-look (RFC-020 §6) — a bounded offset layered on the
+        // cinematic camera; consumed every frame, applied when not dragging.
+        // On this director-driven route it reads as subtle parallax.
+        const gy = gyro.consume();
+        if (!isDrag && !touchActive) {
+          camT += gy.dAz;
+          camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + gy.dEl));
+        }
+        // Feed the velocity-tone sonification (RFC-020 §3). Finite-difference the
+        // planned arc 0.5d ahead → AU/day → km/s. Only when AUDIO is active.
+        if (sensory.active('audio')) {
+          const p0 = spacecraftPos(simDay, arcTimeline, outPts, retPts).pos;
+          const p1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+          const auPerDay = Math.hypot(p1.x - p0.x, p1.z - p0.z) / 0.5;
+          flyVelocitySon.update((auPerDay * 1.495978707e8) / 86400);
+        }
         updateCam();
         // Montage override (#371) — when a flyby shot is active, snap the
         // real camera onto it AFTER the normal pipeline ran (Marko's

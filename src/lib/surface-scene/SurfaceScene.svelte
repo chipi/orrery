@@ -165,6 +165,8 @@
   import { panelGalleryCredit } from '$lib/image-credits';
   import LearnLink from '$lib/components/LearnLink.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
+  import { cue } from '$lib/sensory/feedback';
+  import { gyro } from '$lib/sensory/device-orientation';
 
   // ─── Props (planet-specific config + data loaders) ────────────────
   // The component is generic over body; per-planet behaviour comes in
@@ -3220,6 +3222,7 @@
       if (satId) {
         const o = earthObjectsCache.find((x) => x.id === satId);
         if (o) {
+          cue('select');
           selectedSat = o;
           selected = null;
           // CORE-2 — clicking an orbital object zooms + centres it.
@@ -3229,6 +3232,7 @@
       }
       const id = pickSiteAt(clientX, clientY);
       if (id) {
+        cue('select');
         selectedSat = null;
         // CORE-2 — a plain site click zooms + centres on every surface
         // route (earth / moon / mars), matching the ?site= deep-link and
@@ -3541,6 +3545,8 @@
       const wasMoved = touchMoved;
       const wasActive = touchActive;
       if (e.touches.length === 0) touchActive = false;
+      // T-B: pause + re-home gyro for 200ms after a drag so release doesn't snap.
+      gyro.recordTouchEnd();
       if (
         wasActive &&
         !wasMoved &&
@@ -4033,6 +4039,15 @@
           // and apply to camT/camP until below threshold. Skips while
           // user is actively dragging.
           const dragging = isDrag || touchActive;
+          // Gyro tilt-to-look (RFC-020 §6). Always consume to keep the service's
+          // internal offset synced; only apply while not touch-dragging (touch
+          // wins, and the service re-homes for 200ms after release — T-B).
+          const gy = gyro.consume();
+          if (!dragging && (gy.dAz !== 0 || gy.dEl !== 0)) {
+            camT += gy.dAz;
+            camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + gy.dEl));
+            cameraChanged = true;
+          }
           if (!dragging && (Math.abs(camTVelocity) > 0.0001 || Math.abs(camPVelocity) > 0.0001)) {
             camT += camTVelocity;
             camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + camPVelocity));
@@ -5132,7 +5147,10 @@
       <li>
         <button
           type="button"
-          onclick={() => selectSite(site.id, { face: true })}
+          onclick={() => {
+            cue('select');
+            selectSite(site.id, { face: true });
+          }}
           aria-current={selected?.id === site.id ? 'true' : undefined}
         >
           {m.a11y_select_site_template({
@@ -5458,7 +5476,10 @@
           <SurfaceIndexPanel
             items={indexItems}
             selectedId={indexSelectedId}
-            onSelect={(id) => selectSite(id, { face: true })}
+            onSelect={(id) => {
+              cue('select');
+              selectSite(id, { face: true });
+            }}
             onClose={() => (indexOpen = false)}
           />
         </aside>

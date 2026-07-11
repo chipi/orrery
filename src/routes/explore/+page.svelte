@@ -37,6 +37,10 @@
   import { localeFromPage } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
   import { auToPx } from '$lib/scale';
+  import { cue } from '$lib/sensory/feedback';
+  import { gyro } from '$lib/sensory/device-orientation';
+  import { sensory } from '$lib/sensory/state.svelte';
+  import { keplerChord } from '$lib/sensory/sonify/kepler-chord';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
@@ -1388,6 +1392,7 @@
   // user can pick a body while the legend / sizes overlay stays up.
 
   function selectPlanet(id: string) {
+    cue('select');
     selectedId = id;
     panelState.planet = true;
     panelState.sun = false;
@@ -1398,7 +1403,17 @@
     trackItemClick('planet', id, '/explore');
   }
 
+  // Hero sonification — the Kepler chord (PRD-017). Plays a soft, consonant bed
+  // while AUDIO is on, tuned to the planets' orbital order. Ducks under narration
+  // via the shared master gain. Stops on leave / when AUDIO is turned off.
+  $effect(() => {
+    if (sensory.active('audio')) keplerChord.start(PLANETS.map((p) => p.period));
+    else keplerChord.stop();
+    return () => keplerChord.stop();
+  });
+
   function selectSun() {
+    cue('select');
     panelState.sun = true;
     panelState.planet = false;
     panelState.smallBody = false;
@@ -1408,6 +1423,7 @@
   }
 
   function selectSmallBody(id: string) {
+    cue('select');
     selectedSmallBodyId = id;
     panelState.smallBody = true;
     panelState.planet = false;
@@ -1423,6 +1439,7 @@
   // when looking up the parent body. Same panel-mutex pattern as
   // the other select* — only one detail panel is ever open.
   function selectSatellite(parentPlanetId: string, satelliteId: string) {
+    cue('select');
     selectedSatelliteKey = `${parentPlanetId}:${satelliteId}`;
     panelState.satellite = true;
     panelState.planet = false;
@@ -1434,6 +1451,7 @@
 
   // Belt selection (v0.7.x). Same panel-mutex pattern.
   function selectBelt(id: string) {
+    cue('select');
     selectedBeltId = id;
     panelState.belt = true;
     panelState.planet = false;
@@ -3654,6 +3672,8 @@
       const wasMoved = touchMoved3d;
       const wasActive = touchActive3d;
       if (e.touches.length === 0) touchActive3d = false;
+      // T-B: pause + re-home gyro for 200ms after a drag (RFC-020 §6).
+      gyro.recordTouchEnd();
       if (
         wasActive &&
         !wasMoved &&
@@ -4409,6 +4429,15 @@
           // planet's drifting world position so wheel-zoom and drag
           // stay planet-relative across orbital motion.
           focusedPlanetObj.mesh.getWorldPosition(focusOrigin);
+          updateCam();
+        }
+
+        // Gyro tilt-to-look (RFC-020 §6). Consume every frame to keep the
+        // service synced; apply only when idle (not fly-tweening, not dragging).
+        const gy = gyro.consume();
+        if (!flyActive && !isDrag3d && !touchActive3d && (gy.dAz !== 0 || gy.dEl !== 0)) {
+          camT += gy.dAz;
+          camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + gy.dEl));
           updateCam();
         }
 

@@ -17,6 +17,7 @@
    * always the unified scene.
    */
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
+  import { cue } from '$lib/sensory/feedback';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
@@ -73,6 +74,7 @@
   }
 
   function openRegime(id: string) {
+    cue('select');
     selectedRegimeId = id;
     regimePanelOpen = true;
     const url = new URL(window.location.href);

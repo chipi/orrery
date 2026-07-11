@@ -11,13 +11,27 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
-  import { detectArPlatform, isIosWeb, arAvailability, type ArAvailability } from '$lib/ar';
+  import {
+    detectArPlatform,
+    isIosWeb,
+    isArSessionSupported,
+    arAvailability,
+    type ArAvailability,
+  } from '$lib/ar';
 
   let { onEnter }: { onEnter?: () => void } = $props();
 
   let state = $state<ArAvailability>('hidden');
-  onMount(() => {
-    state = arAvailability(detectArPlatform(), isIosWeb());
+  onMount(async () => {
+    const base = arAvailability(detectArPlatform(), isIosWeb());
+    if (base !== 'enabled') {
+      state = base;
+      return;
+    }
+    // Real capability gate: the platform is AR-capable, but confirm the device
+    // can actually run an immersive-AR session (ARCore) before showing the
+    // button. Not supported → hide it; the flat scene is the graceful fallback.
+    state = (await isArSessionSupported()) ? 'enabled' : 'hidden';
   });
 
   // Placeholder until the app is published (store-ship is #217). Operators/CI can

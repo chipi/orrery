@@ -42,6 +42,8 @@
   import { sensory } from '$lib/sensory/state.svelte';
   import { keplerChord } from '$lib/sensory/sonify/kepler-chord';
   import { exhibit } from '$lib/exhibit.svelte';
+  import EnterArButton from '$lib/components/EnterArButton.svelte';
+  import { launchArScene } from '$lib/ar/launch-ar';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
@@ -5214,6 +5216,7 @@
     aria-label={m.ui_view_controls()}
   >
     {@render exploreControls()}
+    <EnterArButton onEnter={() => void launchArScene('explore')} />
   </div>
   <!-- Mobile-only: 2D/3D toggle + Reset View fixed at top-left (mirrors
        desktop .hud-controls corner; .hud-controls itself is desktop-only). -->

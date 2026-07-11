@@ -103,7 +103,17 @@ export interface ArSceneHandle {
  * root placed on the first tapped surface, and a render loop that reads the
  * backend camera pose. Needs an AR-capable device — verify on Android/iPhone.
  */
-export function createArScene(type: ArSceneType, canvas: HTMLCanvasElement): ArSceneHandle {
+export interface ArSceneOptions {
+  /** Called when the AR session ends (system exit / device unsupported), so the
+   *  caller can remove the AR canvas and return to the flat view. */
+  onExit?: () => void;
+}
+
+export function createArScene(
+  type: ArSceneType,
+  canvas: HTMLCanvasElement,
+  opts: ArSceneOptions = {},
+): ArSceneHandle {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.xr.enabled = true;
   const scene = new THREE.Scene();
@@ -137,6 +147,11 @@ export function createArScene(type: ArSceneType, canvas: HTMLCanvasElement): ArS
   async function start(): Promise<boolean> {
     backend = await getArBackend();
     if (!backend || !(await backend.isSupported())) return false;
+    // System "exit AR" / lost tracking → tear down + notify the caller.
+    backend.on('session-ended', () => {
+      stop();
+      opts.onExit?.();
+    });
     await backend.startSession();
     canvas.addEventListener('pointerdown', tapHandler);
     renderer.setAnimationLoop(() => {

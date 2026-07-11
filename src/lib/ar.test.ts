@@ -1,5 +1,6 @@
+// @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
-import { classifyArPlatform, arAvailability, type ArEnv } from './ar';
+import { classifyArPlatform, arAvailability, isArSessionSupported, type ArEnv } from './ar';
 
 const base: ArEnv = { capacitorPlatform: 'web', isNative: false, hasWebXR: false };
 
@@ -47,5 +48,11 @@ describe('arAvailability (#213)', () => {
   });
   it('hidden on desktop / unsupported non-iOS', () => {
     expect(arAvailability('unsupported', false)).toBe('hidden');
+  });
+});
+
+describe('isArSessionSupported (capability gate)', () => {
+  it('is false on an unsupported platform (jsdom desktop — no navigator.xr)', async () => {
+    expect(await isArSessionSupported()).toBe(false);
   });
 });

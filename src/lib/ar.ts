@@ -88,6 +88,23 @@ export function isIosWeb(): boolean {
   return !Capacitor.isNativePlatform() && /iPad|iPhone|iPod/.test(navigator.userAgent);
 }
 
+/**
+ * The REAL device capability check (not just API presence). A device can expose
+ * `navigator.xr` yet not support immersive-AR (a non-ARCore Android). This is the
+ * gate — analogous to a WebGL capability probe for the flat scenes. Doesn't load
+ * the backend chunk. ARKit-wrapped is assumed supported (it's the native app).
+ */
+export async function isArSessionSupported(): Promise<boolean> {
+  const platform = detectArPlatform();
+  if (platform === 'unsupported') return false;
+  if (platform === 'iphone-wrapped') return true;
+  try {
+    return (await navigator.xr?.isSessionSupported('immersive-ar')) ?? false;
+  } catch {
+    return false;
+  }
+}
+
 /** UI state for an "Enter AR" affordance (#213). */
 export type ArAvailability = 'enabled' | 'ios-fallback' | 'hidden';
 

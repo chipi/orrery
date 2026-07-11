@@ -167,6 +167,9 @@
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { cue } from '$lib/sensory/feedback';
   import { gyro } from '$lib/sensory/device-orientation';
+  import EnterArButton from '$lib/components/EnterArButton.svelte';
+  import { launchArScene } from '$lib/ar/launch-ar';
+  import type { ArSceneType } from '$lib/ar/ar-scene';
 
   // ─── Props (planet-specific config + data loaders) ────────────────
   // The component is generic over body; per-planet behaviour comes in
@@ -234,6 +237,11 @@
     onRegimeOpen,
     onOrbitsInViewChange,
   }: Props = $props();
+
+  // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
+  // ArSceneType for those three; null for any other body → no AR button.
+  const AR_BODIES: readonly string[] = ['earth', 'moon', 'mars'];
+  const arType = $derived(AR_BODIES.includes(body) ? (body as ArSceneType) : null);
 
   // Tactical Scan (PRD-023 amendment / #382) — the body-level scan
   // /explore shows at planet focus, brought to the surface routes. Data
@@ -5406,6 +5414,9 @@
       aria-label={m.ui_view_controls()}
     >
       {@render surfaceControls()}
+      {#if arType}
+        <EnterArButton onEnter={() => void launchArScene(arType)} />
+      {/if}
     </div>
     <!-- Mobile-only: view toggle + Reset View fixed top-left below nav.
          Spin stays in the LAYERS drawer; these two controls move up top

@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "Bewegingstoegang geweigerd — schakel het in via je browserinstellingen.",
   "sensory_recalibrate_help": "Kanteling opnieuw kalibreren: tik drie keer op het scherm.",
   "sensory_hint_toast": "Zintuiglijke modus aan — probeer geluid, trilling en kanteling.",
-  "sensory_hint_toast_audio": "Zintuiglijke modus aan — geluid speelt af."
+  "sensory_hint_toast_audio": "Zintuiglijke modus aan — geluid speelt af.",
+  "audio_kiosk_mode": "▶ Expositie-/kioskmodus",
+  "audio_kiosk_mode_meta": "geen chrome · loops · voor een beeldscherm · Esc om te verlaten",
+  "exhibit_exit_aria": "Verlaat expositiemodus",
+  "exhibit_qr_caption": "Scan om te verkennen op je telefoon"
 }

@@ -18,6 +18,8 @@
   import CommandPalette from '$lib/components/CommandPalette.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
+  import ExhibitOverlay from '$lib/components/ExhibitOverlay.svelte';
+  import { exhibit } from '$lib/exhibit.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
   import {
     createDebugPanelContext,
@@ -30,7 +32,7 @@
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
-  import { afterNavigate } from '$app/navigation';
+  import { afterNavigate, replaceState } from '$app/navigation';
 
   let { children } = $props();
 
@@ -244,6 +246,21 @@
   afterNavigate((nav) => {
     const path = nav.to?.url?.pathname;
     if (path) trackRouteEnter(path);
+    // Exhibit Mode (#215): `?mode=exhibit` → chrome-less kiosk. Sticky once
+    // entered — the Full Tour navigates route→route (dropping the param), so we
+    // never deactivate here (only Esc / corner long-press exits). While active,
+    // re-stamp the param so the URL stays kiosk-sticky + reload-resilient.
+    const url = nav.to?.url;
+    if (url) {
+      if (exhibit.urlWantsExhibit(url)) {
+        exhibit.activate();
+      } else if (exhibit.active) {
+        const u = new URL(window.location.href);
+        u.searchParams.set('mode', 'exhibit');
+        replaceState(u.pathname + u.search + u.hash, {});
+        exhibit.refreshQrTarget(); // QR follows the current scene
+      }
+    }
   });
 
   // Start/stop the gyro listener as the user enables/disables the tilt channel
@@ -372,6 +389,7 @@
   <Nav />
   <CommandPalette items={commandItems} open={commandOpen} onClose={() => (commandOpen = false)} />
   <AudioOverlay />
+  <ExhibitOverlay />
   <DebugPanel />
   <main>
     {@render children?.()}

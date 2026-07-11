@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "모션 액세스 거부됨 — 브라우저 설정에서 활성화하세요.",
   "sensory_recalibrate_help": "기울임 재보정: 화면을 세 번 탭하세요.",
   "sensory_hint_toast": "감각 모드 활성화 — 사운드, 진동, 기울임을 시도해보세요.",
-  "sensory_hint_toast_audio": "감각 모드 활성화 — 사운드가 재생 중입니다."
+  "sensory_hint_toast_audio": "감각 모드 활성화 — 사운드가 재생 중입니다.",
+  "audio_kiosk_mode": "▶ 전시 / 키오스크 모드",
+  "audio_kiosk_mode_meta": "chrome-free · 반복 재생 · 디스플레이 화면용 · Esc로 종료",
+  "exhibit_exit_aria": "전시 모드 종료",
+  "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기"
 }

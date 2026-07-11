@@ -376,7 +376,11 @@
     "sensory_gyro_denied": "Acceso al movimiento denegado: actívalo en la configuración del navegador.",
     "sensory_recalibrate_help": "Recalibrar inclinación: toca tres veces la escena.",
     "sensory_hint_toast": "Modo sensorial activado: prueba sonido, vibración e inclinación.",
-    "sensory_hint_toast_audio": "Modo sensorial activado: el sonido está reproduciéndose."
+    "sensory_hint_toast_audio": "Modo sensorial activado: el sonido está reproduciéndose.",
+    "audio_kiosk_mode": "▶ Modo exposición / quiosco",
+    "audio_kiosk_mode_meta": "sin chrome · en bucle · para pantalla de exhibición · Esc para salir",
+    "exhibit_exit_aria": "Salir del modo exposición",
+    "exhibit_qr_caption": "Escanea para explorar en tu móvil"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -788,7 +792,11 @@
     "sensory_gyro_denied": "Accès au capteur de mouvement refusé — activez-le dans les paramètres de votre navigateur.",
     "sensory_recalibrate_help": "Recalibrer l'inclinaison : triple-tapez sur la scène.",
     "sensory_hint_toast": "Mode sensoriel activé — essayez le son, la vibration et l'inclinaison.",
-    "sensory_hint_toast_audio": "Mode sensoriel activé — le son est en cours de lecture."
+    "sensory_hint_toast_audio": "Mode sensoriel activé — le son est en cours de lecture.",
+    "audio_kiosk_mode": "▶ Mode exposition / kiosque",
+    "audio_kiosk_mode_meta": "sans chrome · en boucle · pour écran d'affichage · Échap pour quitter",
+    "exhibit_exit_aria": "Quitter le mode exposition",
+    "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -1194,7 +1202,11 @@
     "sensory_gyro_denied": "Bewegungszugriff verweigert — in den Browsereinstellungen aktivieren.",
     "sensory_recalibrate_help": "Neigung neu kalibrieren: Szene dreimal antippen.",
     "sensory_hint_toast": "Sensorischer Modus aktiv — Ton, Vibration und Neigung ausprobieren.",
-    "sensory_hint_toast_audio": "Sensorischer Modus aktiv — Ton läuft."
+    "sensory_hint_toast_audio": "Sensorischer Modus aktiv — Ton läuft.",
+    "audio_kiosk_mode": "▶ Ausstellungs-/Kioskmodus",
+    "audio_kiosk_mode_meta": "ohne Chrome · Schleife · für Displayschirm · Esc zum Beenden",
+    "exhibit_exit_aria": "Ausstellungsmodus verlassen",
+    "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -1580,7 +1592,11 @@
     "sensory_gyro_denied": "Acesso ao movimento negado — ative nas configurações do navegador.",
     "sensory_recalibrate_help": "Recalibrar inclinação: toque triplo na cena.",
     "sensory_hint_toast": "Modo sensorial ativo — experimente som, vibração e inclinação.",
-    "sensory_hint_toast_audio": "Modo sensorial ativo — som está tocando."
+    "sensory_hint_toast_audio": "Modo sensorial ativo — som está tocando.",
+    "audio_kiosk_mode": "▶ Modo exposição / quiosque",
+    "audio_kiosk_mode_meta": "sem chrome · em loop · para tela de exibição · Esc para sair",
+    "exhibit_exit_aria": "Sair do modo exposição",
+    "exhibit_qr_caption": "Escaneie para explorar no seu celular"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -1960,7 +1976,11 @@
     "sensory_gyro_denied": "Accesso al movimento negato — abilitalo nelle impostazioni del browser.",
     "sensory_recalibrate_help": "Ricalibra inclinazione: triplo tocco sulla scena.",
     "sensory_hint_toast": "Modalità sensoriale attiva — prova suono, vibrazione e inclinazione.",
-    "sensory_hint_toast_audio": "Modalità sensoriale attiva — l'audio è in riproduzione."
+    "sensory_hint_toast_audio": "Modalità sensoriale attiva — l'audio è in riproduzione.",
+    "audio_kiosk_mode": "▶ Modalità exhibit / chiosco",
+    "audio_kiosk_mode_meta": "senza interfaccia · in loop · per schermi espositivi · Esc per uscire",
+    "exhibit_exit_aria": "Esci dalla modalità exhibit",
+    "exhibit_qr_caption": "Scansiona per esplorare sul tuo telefono"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -2311,7 +2331,11 @@
     "sensory_gyro_denied": "Приступ покрету одбијен — омогућите га у подешавањима прегледача.",
     "sensory_recalibrate_help": "Рекалибрација нагиба: тапните три пута сцену.",
     "sensory_hint_toast": "Сензорни режим укључен — пробајте звук, вибрацију и нагиб.",
-    "sensory_hint_toast_audio": "Сензорни режим укључен — звук се репродукује."
+    "sensory_hint_toast_audio": "Сензорни режим укључен — звук се репродукује.",
+    "audio_kiosk_mode": "▶ Режим изложбе / киоска",
+    "audio_kiosk_mode_meta": "без контрола · петља · за екран · Esc за излаз",
+    "exhibit_exit_aria": "Изађи из режима изложбе",
+    "exhibit_qr_caption": "Скенирај да истражујеш на телефону"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -2728,7 +2752,11 @@
     "sensory_gyro_denied": "动作访问被拒绝——请在浏览器设置中启用。",
     "sensory_recalibrate_help": "重新校准倾斜:三击场景。",
     "sensory_hint_toast": "感官模式已开启——尝试声音、振动和倾斜。",
-    "sensory_hint_toast_audio": "感官模式已开启——声音正在播放。"
+    "sensory_hint_toast_audio": "感官模式已开启——声音正在播放。",
+    "audio_kiosk_mode": "▶ 展览/演示模式",
+    "audio_kiosk_mode_meta": "无边框 · 循环播放 · 用于展示屏幕 · 按Esc退出",
+    "exhibit_exit_aria": "退出展览模式",
+    "exhibit_qr_caption": "扫码在手机上探索"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3160,7 +3188,11 @@
     "sensory_gyro_denied": "モーションアクセスが拒否されました — ブラウザ設定で有効にしてください。",
     "sensory_recalibrate_help": "傾き再較正: シーンを3回タップ。",
     "sensory_hint_toast": "感覚モードがオン — サウンド、振動、傾きをお試しください。",
-    "sensory_hint_toast_audio": "感覚モードがオン — サウンドが再生中です。"
+    "sensory_hint_toast_audio": "感覚モードがオン — サウンドが再生中です。",
+    "audio_kiosk_mode": "▶ 展示/キオスクモード",
+    "audio_kiosk_mode_meta": "UI非表示 · ループ再生 · ディスプレイ画面用 · Escで終了",
+    "exhibit_exit_aria": "展示モードを終了",
+    "exhibit_qr_caption": "スキャンしてスマホで探索"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -3595,7 +3627,11 @@
     "sensory_gyro_denied": "모션 액세스 거부됨 — 브라우저 설정에서 활성화하세요.",
     "sensory_recalibrate_help": "기울임 재보정: 화면을 세 번 탭하세요.",
     "sensory_hint_toast": "감각 모드 활성화 — 사운드, 진동, 기울임을 시도해보세요.",
-    "sensory_hint_toast_audio": "감각 모드 활성화 — 사운드가 재생 중입니다."
+    "sensory_hint_toast_audio": "감각 모드 활성화 — 사운드가 재생 중입니다.",
+    "audio_kiosk_mode": "▶ 전시 / 키오스크 모드",
+    "audio_kiosk_mode_meta": "chrome-free · 반복 재생 · 디스플레이 화면용 · Esc로 종료",
+    "exhibit_exit_aria": "전시 모드 종료",
+    "exhibit_qr_caption": "스캔하여 휴대폰에서 탐색하기"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -4166,7 +4202,11 @@
     "sensory_gyro_denied": "गति पहुँच अस्वीकृत — इसे अपनी ब्राउज़र सेटिंग्स में सक्षम करें।",
     "sensory_recalibrate_help": "झुकाव पुनः अंशांकित करें: दृश्य पर तीन बार टैप करें।",
     "sensory_hint_toast": "संवेदी मोड चालू — ध्वनि, कंपन और झुकाव आज़माएँ।",
-    "sensory_hint_toast_audio": "संवेदी मोड चालू — ध्वनि चल रही है।"
+    "sensory_hint_toast_audio": "संवेदी मोड चालू — ध्वनि चल रही है।",
+    "audio_kiosk_mode": "▶ प्रदर्शनी / कियोस्क मोड",
+    "audio_kiosk_mode_meta": "क्रोम-मुक्त · लूप · डिस्प्ले स्क्रीन के लिए · बाहर निकलने के लिए Esc",
+    "exhibit_exit_aria": "प्रदर्शनी मोड से बाहर निकलें",
+    "exhibit_qr_caption": "अपने फ़ोन पर एक्सप्लोर करने के लिए स्कैन करें"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -4779,7 +4819,11 @@
     "sensory_gyro_denied": "تم رفض الوصول للحركة — فعّله في إعدادات المتصفح.",
     "sensory_recalibrate_help": "إعادة معايرة الإمالة: انقر ثلاث مرات على المشهد.",
     "sensory_hint_toast": "الوضع الحسي مفعّل — جرّب الصوت والاهتزاز والإمالة.",
-    "sensory_hint_toast_audio": "الوضع الحسي مفعّل — الصوت قيد التشغيل."
+    "sensory_hint_toast_audio": "الوضع الحسي مفعّل — الصوت قيد التشغيل.",
+    "audio_kiosk_mode": "▶ وضع العرض / الكشك",
+    "audio_kiosk_mode_meta": "بلا واجهة · تكرار · للشاشات العامة · Esc للخروج",
+    "exhibit_exit_aria": "الخروج من وضع العرض",
+    "exhibit_qr_caption": "امسح للاستكشاف على هاتفك"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -5214,7 +5258,11 @@
     "sensory_gyro_denied": "Доступ к датчику движения запрещён — включите его в настройках браузера.",
     "sensory_recalibrate_help": "Калибровка наклона: трижды коснитесь сцены.",
     "sensory_hint_toast": "Сенсорный режим включён — попробуйте звук, вибрацию и наклон.",
-    "sensory_hint_toast_audio": "Сенсорный режим включён — звук воспроизводится."
+    "sensory_hint_toast_audio": "Сенсорный режим включён — звук воспроизводится.",
+    "audio_kiosk_mode": "▶ Режим выставки/киоска",
+    "audio_kiosk_mode_meta": "без элементов управления · циклично · для дисплея · Esc для выхода",
+    "exhibit_exit_aria": "Выйти из режима выставки",
+    "exhibit_qr_caption": "Отсканируйте для изучения на телефоне"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -5599,6 +5647,10 @@
     "sensory_gyro_denied": "Bewegingstoegang geweigerd — schakel het in via je browserinstellingen.",
     "sensory_recalibrate_help": "Kanteling opnieuw kalibreren: tik drie keer op het scherm.",
     "sensory_hint_toast": "Zintuiglijke modus aan — probeer geluid, trilling en kanteling.",
-    "sensory_hint_toast_audio": "Zintuiglijke modus aan — geluid speelt af."
+    "sensory_hint_toast_audio": "Zintuiglijke modus aan — geluid speelt af.",
+    "audio_kiosk_mode": "▶ Expositie-/kioskmodus",
+    "audio_kiosk_mode_meta": "geen chrome · loops · voor een beeldscherm · Esc om te verlaten",
+    "exhibit_exit_aria": "Verlaat expositiemodus",
+    "exhibit_qr_caption": "Scan om te verkennen op je telefoon"
   }
 }

@@ -20,6 +20,7 @@
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
   import { localeFromPage } from '$lib/locale';
+  import { exhibit } from '$lib/exhibit.svelte';
   import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
 
@@ -536,9 +537,27 @@
       if (nextId) {
         const ep = audioRegistry.byId(nextId);
         if (ep) void loadAndPlay(ep);
+      } else if (exhibit.active) {
+        // Exhibit Mode (#215): the kiosk loops its scene playlist indefinitely.
+        void startExhibitTour();
       }
     }
   }
+
+  // Exhibit Mode (#215): the registry only lazy-loads when the overlay is opened
+  // (audio.open) — but the kiosk never opens it, so trigger the load here, then
+  // auto-start the looping Full Tour once it's ready. The `!tourActive` guard +
+  // untrack keep startTour firing once per activation (it flips tourActive
+  // synchronously) — see feedback_svelte5_effect_untrack.
+  $effect(() => {
+    if (!exhibit.active) return;
+    if (!audioRegistry.loaded && !audioRegistry.loading) {
+      void audioRegistry.load();
+    }
+    if (audioRegistry.loaded && !audio.tourActive) {
+      untrack(() => void startExhibitTour());
+    }
+  });
 
   async function startTourFromSequence(sequence: string[]): Promise<void> {
     // Filter the canonical sequence down to episodes actually present in
@@ -554,6 +573,30 @@
   }
   async function startExtendedTour(): Promise<void> {
     await startTourFromSequence(CURATOR_EXTENDED_TOUR);
+  }
+
+  // Exhibit Mode (#215 / RFC-021 §9): the kiosk plays the Full Tour episodes
+  // anchored to the four globe scenes (in tour order), so it stays on the
+  // cinematic scenes instead of the landing-page intros. Falls back to the full
+  // tour if the registry has no scene-anchored episodes.
+  const EXHIBIT_SCENE_ROUTES = ['/explore', '/earth', '/moon', '/mars'];
+  function exhibitSequence(): string[] {
+    return CURATOR_FULL_TOUR.filter((id) => {
+      const ep = audioRegistry.byId(id);
+      return ep?.route && EXHIBIT_SCENE_ROUTES.includes(ep.route);
+    });
+  }
+  async function startExhibitTour(): Promise<void> {
+    const seq = exhibitSequence();
+    await startTourFromSequence(seq.length > 0 ? seq : CURATOR_FULL_TOUR);
+  }
+
+  // Exhibit Mode (#215): flip the current route into the chrome-less looping
+  // kiosk by adding ?mode=exhibit — afterNavigate (+layout) activates it.
+  function enterExhibit(): void {
+    const url = new URL(window.location.href);
+    url.searchParams.set('mode', 'exhibit');
+    void goto(url.pathname + url.search + url.hash);
   }
 
   async function tourNext(): Promise<void> {
@@ -1008,6 +1051,15 @@
             <span class="tour-meta">
               {m.audio_tour_meta_extended({ count: CURATOR_EXTENDED_TOUR.length })}
             </span>
+          </button>
+          <button
+            type="button"
+            class="tour-start tour-start-kiosk"
+            onclick={enterExhibit}
+            disabled={!audioRegistry.loaded}
+          >
+            {m.audio_kiosk_mode()}
+            <span class="tour-meta">{m.audio_kiosk_mode_meta()}</span>
           </button>
         </div>
       {/if}

@@ -170,3 +170,41 @@ html {
     padding-right: var(--safe-area-inset-right, 48px) !important;
   }
 }
+
+/* Exhibit Mode (#215 / RFC-021 §9) — chrome-less museum/classroom kiosk.
+   Hides the global chrome (nav, footer, audio-overlay UI); the 3D scene,
+   narration audio, and the ExhibitOverlay (QR + hidden exit) remain. Routes
+   layer on their own HUD hiding by tagging elements [data-exhibit-hide]. */
+body.exhibit-mode {
+  overflow: hidden;
+  cursor: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Full-bleed: with the nav hidden, collapse its reserved height so the scene
+     fills the whole screen (surface canvases position off --nav-height). */
+  --nav-height: 0px;
+}
+body.exhibit-mode nav,
+body.exhibit-mode .site-footer,
+body.exhibit-mode #audio-overlay,
+body.exhibit-mode [data-exhibit-hide] {
+  display: none !important;
+}
+/* Per-route control HUDs — hidden so the kiosk shows only the scene +
+   narrated detail panels. The interactive controls (layer chips, time
+   transport, orbit ruler, body index, landing CTAs) have no place on an
+   unattended display. Detail Panels stay visible — they're the narrated
+   content the Curator tour reveals. */
+body.exhibit-mode .hud-controls,
+body.exhibit-mode .hud-top-mobile,
+body.exhibit-mode .time-controls,
+body.exhibit-mode .ruler-desktop-only,
+body.exhibit-mode .ruler,
+body.exhibit-mode .body-index-toggle,
+body.exhibit-mode .surface-index-handle,
+body.exhibit-mode .surface-index-desktop,
+body.exhibit-mode .paths-legend,
+body.exhibit-mode .earth-compare,
+body.exhibit-mode .cta-row {
+  display: none !important;
+}

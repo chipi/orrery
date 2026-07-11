@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "Bewegungszugriff verweigert — in den Browsereinstellungen aktivieren.",
   "sensory_recalibrate_help": "Neigung neu kalibrieren: Szene dreimal antippen.",
   "sensory_hint_toast": "Sensorischer Modus aktiv — Ton, Vibration und Neigung ausprobieren.",
-  "sensory_hint_toast_audio": "Sensorischer Modus aktiv — Ton läuft."
+  "sensory_hint_toast_audio": "Sensorischer Modus aktiv — Ton läuft.",
+  "audio_kiosk_mode": "▶ Ausstellungs-/Kioskmodus",
+  "audio_kiosk_mode_meta": "ohne Chrome · Schleife · für Displayschirm · Esc zum Beenden",
+  "exhibit_exit_aria": "Ausstellungsmodus verlassen",
+  "exhibit_qr_caption": "Scannen, um auf Ihrem Smartphone zu erkunden"
 }

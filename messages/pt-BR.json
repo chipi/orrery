@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "Acesso ao movimento negado — ative nas configurações do navegador.",
   "sensory_recalibrate_help": "Recalibrar inclinação: toque triplo na cena.",
   "sensory_hint_toast": "Modo sensorial ativo — experimente som, vibração e inclinação.",
-  "sensory_hint_toast_audio": "Modo sensorial ativo — som está tocando."
+  "sensory_hint_toast_audio": "Modo sensorial ativo — som está tocando.",
+  "audio_kiosk_mode": "▶ Modo exposição / quiosque",
+  "audio_kiosk_mode_meta": "sem chrome · em loop · para tela de exibição · Esc para sair",
+  "exhibit_exit_aria": "Sair do modo exposição",
+  "exhibit_qr_caption": "Escaneie para explorar no seu celular"
 }

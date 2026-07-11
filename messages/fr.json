@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "Accès au capteur de mouvement refusé — activez-le dans les paramètres de votre navigateur.",
   "sensory_recalibrate_help": "Recalibrer l'inclinaison : triple-tapez sur la scène.",
   "sensory_hint_toast": "Mode sensoriel activé — essayez le son, la vibration et l'inclinaison.",
-  "sensory_hint_toast_audio": "Mode sensoriel activé — le son est en cours de lecture."
+  "sensory_hint_toast_audio": "Mode sensoriel activé — le son est en cours de lecture.",
+  "audio_kiosk_mode": "▶ Mode exposition / kiosque",
+  "audio_kiosk_mode_meta": "sans chrome · en boucle · pour écran d'affichage · Échap pour quitter",
+  "exhibit_exit_aria": "Quitter le mode exposition",
+  "exhibit_qr_caption": "Scannez pour explorer sur votre téléphone"
 }

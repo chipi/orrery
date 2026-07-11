@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "动作访问被拒绝——请在浏览器设置中启用。",
   "sensory_recalibrate_help": "重新校准倾斜:三击场景。",
   "sensory_hint_toast": "感官模式已开启——尝试声音、振动和倾斜。",
-  "sensory_hint_toast_audio": "感官模式已开启——声音正在播放。"
+  "sensory_hint_toast_audio": "感官模式已开启——声音正在播放。",
+  "audio_kiosk_mode": "▶ 展览/演示模式",
+  "audio_kiosk_mode_meta": "无边框 · 循环播放 · 用于展示屏幕 · 按Esc退出",
+  "exhibit_exit_aria": "退出展览模式",
+  "exhibit_qr_caption": "扫码在手机上探索"
 }

@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "モーションアクセスが拒否されました — ブラウザ設定で有効にしてください。",
   "sensory_recalibrate_help": "傾き再較正: シーンを3回タップ。",
   "sensory_hint_toast": "感覚モードがオン — サウンド、振動、傾きをお試しください。",
-  "sensory_hint_toast_audio": "感覚モードがオン — サウンドが再生中です。"
+  "sensory_hint_toast_audio": "感覚モードがオン — サウンドが再生中です。",
+  "audio_kiosk_mode": "▶ 展示/キオスクモード",
+  "audio_kiosk_mode_meta": "UI非表示 · ループ再生 · ディスプレイ画面用 · Escで終了",
+  "exhibit_exit_aria": "展示モードを終了",
+  "exhibit_qr_caption": "スキャンしてスマホで探索"
 }

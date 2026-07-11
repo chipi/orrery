@@ -1447,5 +1447,9 @@
   "sensory_gyro_denied": "تم رفض الوصول للحركة — فعّله في إعدادات المتصفح.",
   "sensory_recalibrate_help": "إعادة معايرة الإمالة: انقر ثلاث مرات على المشهد.",
   "sensory_hint_toast": "الوضع الحسي مفعّل — جرّب الصوت والاهتزاز والإمالة.",
-  "sensory_hint_toast_audio": "الوضع الحسي مفعّل — الصوت قيد التشغيل."
+  "sensory_hint_toast_audio": "الوضع الحسي مفعّل — الصوت قيد التشغيل.",
+  "audio_kiosk_mode": "▶ وضع العرض / الكشك",
+  "audio_kiosk_mode_meta": "بلا واجهة · تكرار · للشاشات العامة · Esc للخروج",
+  "exhibit_exit_aria": "الخروج من وضع العرض",
+  "exhibit_qr_caption": "امسح للاستكشاف على هاتفك"
 }

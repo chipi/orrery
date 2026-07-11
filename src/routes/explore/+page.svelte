@@ -41,6 +41,7 @@
   import { gyro } from '$lib/sensory/device-orientation';
   import { sensory } from '$lib/sensory/state.svelte';
   import { keplerChord } from '$lib/sensory/sonify/kepler-chord';
+  import { exhibit } from '$lib/exhibit.svelte';
   import { earthPos, outboundArc, type Vec2 } from '$lib/orbital/mission-arc';
   import { PLANET_STATS, auLightTime } from '$lib/planet-stats';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
@@ -4438,6 +4439,14 @@
         if (!flyActive && !isDrag3d && !touchActive3d && (gy.dAz !== 0 || gy.dEl !== 0)) {
           camT += gy.dAz;
           camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + gy.dEl));
+          updateCam();
+        }
+
+        // Exhibit Mode (#215): a slow cinematic auto-orbit for the unattended
+        // kiosk (no user drives the camera). Surface scenes auto-rotate the body
+        // and /iss + /tiangong spin; /explore's camera is otherwise static.
+        if (exhibit.active && !flyActive && !isDrag3d && !touchActive3d) {
+          camT += dt * 0.05;
           updateCam();
         }
 

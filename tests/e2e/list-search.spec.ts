@@ -34,7 +34,10 @@ test.describe('/missions search (RFC-027)', () => {
     await page.goto('/missions');
     const input = page.locator('[data-testid="missions-search"]');
     await input.fill('voyager');
-    await expect(page).toHaveURL(/q=voyager/);
+    // 10s (matches the sibling card-visibility waits): the search→URL sync is
+    // debounced, and mobile-chromium under docker hydrates the input binding
+    // slowly enough that the default 5s expect timeout can race the update.
+    await expect(page).toHaveURL(/q=voyager/, { timeout: 10_000 });
     const cards = page.locator('[data-testid^="mission-card-"]');
     // Voyager 1 + Voyager 2 plus any editorial mentions (Pioneer 11's
     // "first" field cites Voyager — "demonstrated the gravity-assist

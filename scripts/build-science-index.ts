@@ -1,6 +1,6 @@
 // Build-time generator for the /science search index (RFC-011 step 9).
 //
-// Walks every section overlay in static/data/i18n/en-US/science/ and emits
+// Walks every section overlay in i18n-src/en-US/science/ and emits
 // a single JSON file at static/data/science-index.json with one entry per
 // section. Each entry holds the canonical URL plus the searchable terms:
 // title, intro_sentence, and a few key terms extracted from the body.

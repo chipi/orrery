@@ -54,14 +54,14 @@ LEARN link points back to NASA or Wikipedia.
 |---|---:|
 | `static/data/missions/**` (32 missions × ~2.7) | 86 |
 | `static/data/mars-sites.json` (15 surface sites) | 50 |
-| `static/data/i18n/en-US/planets/*.json` (8 planets × 5) | 40 |
+| `i18n-src/en-US/planets/*.json` (8 planets × 5) | 40 |
 | `static/data/earth-objects.json` (17 satellites/observatories) | 40 |
 | `static/data/moon-sites.json` (24 surface sites) | 38 |
 | `static/data/iss-modules.json` (17 modules) | 34 |
 | `static/data/rockets.json` (10 launch vehicles) | 22 |
 | `static/data/iss-visitors.json` (7 visiting craft) | 17 |
 | `static/data/small-bodies.json` (`wiki` field × 8) | 8 |
-| `static/data/i18n/en-US/sun.json` | 5 |
+| `i18n-src/en-US/sun.json` | 5 |
 
 Per-mission links are the largest contributor (86 links across 32 missions,
 ~2.7 per mission). Editorial enrichment in Milestone L-C focuses on

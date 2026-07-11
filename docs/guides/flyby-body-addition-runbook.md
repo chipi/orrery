@@ -28,7 +28,7 @@ No new body is "done" until a mission can fly past it at iconic MET and the came
 | 10 | **`DESTINATION_LABEL_COLORS`** | `src/lib/fly-scene-constants.ts` | ✅ | Label color constant |
 | 11 | **`/plan` label switch** | `src/routes/plan/+page.svelte` | ✅ | Exhaustive case in `destinationLabel()` function (NOT added to `DESTINATION_IDS`/`FLYBY_ONLY` unless it has a porkchop grid) |
 | 12 | **14-locale messages** | `messages/en-US.json` + 13 others | ✅ | `plan_destination_<id>` key; use Arrokoth commit's Python pattern for non-English transliterations |
-| 13 | **i18n overlay** (optional) | `static/data/i18n/en-US/planets/{id}.json` | optional | `/explore` detail panel (name, type, fact, bio, source links) — mirrors the mission overlay pattern |
+| 13 | **i18n overlay** (optional) | `i18n-src/en-US/planets/{id}.json` | optional | `/explore` detail panel (name, type, fact, bio, source links) — mirrors the mission overlay pattern |
 | 14 | **Tests** | `src/lib/orbital/find-flyby-planet.test.ts` | ✅ | Move new body out of "returns null" bucket; add positive case |
 | 15 | **Browser-verify** | `/fly` with a real mission | ✅ | Load any mission that flies past the body at its iconic MET; confirm composition frames it |
 
@@ -215,7 +215,7 @@ Check the Arrokoth commit for the worked pattern; also see ADR-043 (Serbian Cyri
 
 ### 13 · i18n overlay (optional)
 
-If the body warrants `/explore` detail-panel documentation, create `static/data/i18n/en-US/planets/arrokoth.json`:
+If the body warrants `/explore` detail-panel documentation, create `i18n-src/en-US/planets/arrokoth.json`:
 
 ```json
 {

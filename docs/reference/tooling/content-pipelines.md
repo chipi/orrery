@@ -194,7 +194,7 @@ precision, builds stable ids.
 ### `npm run build-science-index`
 
 **Command** — `npm run build-science-index` (`scripts/build-science-index.ts`)
-**What** — RFC-011 step 9. Walks every section overlay in `static/data/i18n/en-US/science/` →
+**What** — RFC-011 step 9. Walks every section overlay in `i18n-src/en-US/science/` →
 `static/data/science-index.json` (one entry per section: URL + title + intro + key terms) for the
 `⌘K` fuzzy search in `ScienceSearch.svelte`.
 **When** — **Build prereq** (auto-chained into `npm run build`).

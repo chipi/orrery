@@ -7,7 +7,7 @@ Thanks for your interest. Three areas welcome contributions, in roughly increasi
 Add a mission, correct a date, fix a payload mass. Mission data lives as plain JSON files:
 
 - **Base file** (language-neutral facts): `static/data/missions/<dest>/<id>.json`
-- **English overlay** (editorial copy): `static/data/i18n/en-US/missions/<dest>/<id>.json`
+- **English overlay** (editorial copy): `i18n-src/en-US/missions/<dest>/<id>.json`
 - **Index entry**: append to `static/data/missions/index.json`
 - **Schema**: `static/data/schemas/mission.schema.json` — your file is validated by `npm run validate-data` and rejected if any required field is missing
 
@@ -22,7 +22,7 @@ Adding a new locale is content-only — the i18n architecture (Paraglide-js + lo
 What you'll add:
 
 - **`messages/<code>.json`** — UI strings (~786 keys as of v0.6.0). Copy `messages/en-US.json` as a starting point, translate keys preserving `{placeholder}` syntax.
-- **`static/data/i18n/<code>/`** — editorial overlays mirroring `static/data/i18n/en-US/`:
+- **`i18n-src/<code>/`** — editorial overlays mirroring `i18n-src/en-US/`:
   - `missions/{mars,moon}/<id>.json` — translate `name`, `description`, `first`, `type`, `events[].label`, `events[].note`. **Keep mission ID + agency proper nouns in original.**
   - `planets/<id>.json`, `rockets/<id>.json`, `sun.json`, `scenarios/<id>.json`, `earth-objects/<id>.json`, `moon-sites/<id>.json`, `mars-sites/<id>.json`, `iss-modules/<id>.json`, `tiangong-modules/<id>.json` — same overlay pattern.
   - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays. The `/science` overlay tree is currently shipped for en-US/es/fr/de/it; the other 9 locales (pt-BR/zh-CN/ja/ko/hi/ar/ru/sr-Cyrl/nl) fall back per ADR-017.

@@ -379,7 +379,7 @@ Three large work-streams shipped together. Tagged `v0.3.0`.
 
 **Phase B — foundation.** New `src/lib/locale.ts` (`SUPPORTED_LOCALES`, `resolveLocale(url, navigatorLanguage)`, `localeFromPage($page)` — SSR/prerender-safe per ADR-017). New `src/lib/components/LocalePicker.svelte` mounted in Nav (44×44 px, native names, URL `?lang=` only — **no localStorage** per CLAUDE.md / RFC-010 maintainer-decisions). New `src/lib/format.ts` with `Intl.NumberFormat` wrappers (`formatKm`, `formatKmPerSec`, …). Layout-stage `setLanguageTag` in `$effect.pre` so Paraglide picks up the URL locale BEFORE descendant components render their `m.foo()` calls.
 
-**Phase C — Spanish content.** All 277 UI strings translated in `messages/es.json`. 81 editorial overlays under `static/data/i18n/es/` (36 missions + 8 planets + 6 rockets + 1 sun + 1 scenario + 13 earth-objects + 16 moon-sites). Mission and agency proper nouns kept in original (Curiosity, Tianwen-1, Apollo, etc.). New `tests/e2e/i18n-es.spec.ts` smoke per screen.
+**Phase C — Spanish content.** All 277 UI strings translated in `messages/es.json`. 81 editorial overlays under `i18n-src/es/` (36 missions + 8 planets + 6 rockets + 1 sun + 1 scenario + 13 earth-objects + 16 moon-sites). Mission and agency proper nouns kept in original (Curiosity, Tianwen-1, Apollo, etc.). New `tests/e2e/i18n-es.spec.ts` smoke per screen.
 
 ### Other polish
 - Small bodies (5 dwarfs · 2 comets · 1 interstellar) in `/explore` are now clickable in 3D — added pickAid invisible spheres for click ergonomics, extended hover raycaster, layer-toggle wired to pickAid visibility.

@@ -1,7 +1,7 @@
 /**
  * ADR-051 Milestone L-B — outbound LEARN-link provenance manifest writer.
  *
- * Walks every JSON file under `static/data/` (and `static/data/i18n/en-US/`
+ * Walks every JSON file under `static/data/` (and `i18n-src/en-US/`
  * for overlay-side links), collects the structured `links: [{l,u,t}]`
  * arrays plus the single-string `wiki` field on small bodies, classifies
  * each URL by host and tier, then writes:
@@ -792,7 +792,7 @@ function collectFromTopLevelArrayFile(
 
 /**
  * Per-id overlay collector — i18n trees mostly use one file per entity:
- *   static/data/i18n/en-US/<subdir>/<id>.json
+ *   i18n-src/en-US/<subdir>/<id>.json
  * carrying overlay fields (description, name, links, …). The base id is
  * the filename stem.
  */

@@ -8,7 +8,7 @@ This file is the rolling backlog for **provenance, attribution, and credits** id
 
 ## Cadence
 
-- [ ] **Per-locale staleness check.** A linter that flags when `static/data/i18n/en-US/missions/<id>.json` has changed in the last N commits but the corresponding `es/`, `de/`, … overlay has not. Surface the result in `validate-data` so a translator can pick up the diff in the next sweep.
+- [ ] **Per-locale staleness check.** A linter that flags when `i18n-src/en-US/missions/<id>.json` has changed in the last N commits but the corresponding `es/`, `de/`, … overlay has not. Surface the result in `validate-data` so a translator can pick up the diff in the next sweep.
 - [ ] **Periodic Wikimedia category sweep.** A weekly job that hits Commons categories likely to contain new mission imagery (e.g. `Category:Photographs by Mars Express`, `Category:Chang'e_5_mission`, `Category:JWST images`) and writes candidate filenames into a "new since last sweep" digest under `docs/provenance/sweeps/YYYY-MM-DD.md`. Maintainers can promote candidates into `WIKIMEDIA_*_GALLERY` lists by hand.
 - [ ] **Weekly link-check GH Action.** HEAD-checks every `source_url` in `image-provenance.json` and `text-sources.json`. Failures open or update a tracking issue automatically; the run report is committed under `docs/provenance/link-checks/YYYY-MM-DD.md`. Keeps "the source URL still works" honest as upstream pages move.
 - [ ] **PR comment hook.** On every PR that touches `static/images/**`, `static/textures/**`, `static/logos/**`, or any provenance manifest, post the `last-fetch-diff.md` digest as a PR comment so reviewers see the attribution delta without opening files.

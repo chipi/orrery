@@ -132,7 +132,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 ### Science encyclopedia
 
-**Article rendering** (`src/routes/science/[tab]/[section]/+page.svelte`) — base file in `static/data/science/<tab>/<section>.json`, locale overlay in `static/data/i18n/<locale>/science/<tab>/<section>.json` (same ADR-017 pattern), rendered via `body_paragraphs[]` schema. Per-section diagram embedded from `static/diagrams/science/<section>.svg`.
+**Article rendering** (`src/routes/science/[tab]/[section]/+page.svelte`) — base file in `static/data/science/<tab>/<section>.json`, locale overlay in `i18n-src/<locale>/science/<tab>/<section>.json` (same ADR-017 pattern), rendered via `body_paragraphs[]` schema. Per-section diagram embedded from `static/diagrams/science/<section>.svg`.
 
 **Math rendering** (`src/lib/katex.ts`) — KaTeX server-rendered at build time. Every `formula_latex` field on a science section becomes HTML inline; zero KaTeX runtime cost. See ADR-034.
 
@@ -160,7 +160,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Locale detection** (`src/lib/locale.ts`) — thin wrapper over Paraglide 2.x's runtime since #328. URL/cookie/canonicalisation now owned by `$lib/paraglide/runtime` (URL strategy chain: `['url', 'cookie', 'preferredLanguage', 'baseLocale']`); `locale.ts` keeps `SUPPORTED_LOCALES` metadata (native name + short tag + flag), `LocaleCode` union, `isRtlLocale`, `syncDocumentLocaleAttributes`, a reactive `localeFromPage($page)` helper that tracks page-URL changes for `$derived` consumers, and the `assertLocalesInSync()` drift-check. The old `orrery_locale` cookie + ADR-057 cookie semantics are superseded by Paraglide's cookie strategy.
 
-**Content overlays** — per-locale JSON under `static/data/i18n/<locale>/<surface>/...`. Surfaces: missions, planets, sun, fleet, science, iss-modules, tiangong-modules, moon-sites, mars-sites, earth-objects, rocks, suit overlays. Shallow-merge per ADR-017.
+**Content overlays** — per-locale JSON under `i18n-src/<locale>/<surface>/...`. Surfaces: missions, planets, sun, fleet, science, iss-modules, tiangong-modules, moon-sites, mars-sites, earth-objects, rocks, suit overlays. Shallow-merge per ADR-017.
 
 **Translation pipeline** — LLM-first-pass plus `argos-translate` offline-NMT batch fallback per ADR-033. `scripts/wave23/{catalog,maps,apply-translations}.ts` is the toolchain. sr-Cyrl is manually authored per ADR-043 (no Cyrillic Serbian model in argos).
 
@@ -277,7 +277,7 @@ Per-body steps:
 10. **`DESTINATION_LABEL_COLORS`** — `src/lib/fly-scene-constants.ts`.
 11. **`/plan` label switch** — `src/routes/plan/+page.svelte`. Switch case for the exhaustive `destinationLabel` function.
 12. **14-locale messages** — `messages/en-US.json` + 13 other locales. Use the Python pattern from the Arrokoth commit (transliterate per locale where appropriate; comet 67P keeps Latin in all locales).
-13. **i18n overlay (optional)** — `static/data/i18n/en-US/planets/{id}.json` for /explore detail panel.
+13. **i18n overlay (optional)** — `i18n-src/en-US/planets/{id}.json` for /explore detail panel.
 14. **Test update** — `find-flyby-planet.test.ts` — move new body out of the "returns null" bucket; add a positive case.
 15. **Browser-verify** — load any mission that flies past the body at the iconic MET, confirm iconic composition.
 
@@ -524,7 +524,7 @@ Each entry: logo path (`/images/source-logos/<id>.svg`), display name, license s
 
 **Goal:** generate `static/data/science-index.json` — the search index for Cmd-K, the tab tree for navigation, and the `?-chip` vocabulary for cross-route chips.
 
-Walks `static/data/i18n/en-US/science/<tab>/*.json` for the canonical (en-US) section list, joins with `static/data/science/<tab>/<section>.json` base files for the diagram + LEARN tier metadata, and writes a single manifest. Auto-walks: adding a new section file in any tab makes it appear on `/science` + in search + as a chip target on the next build.
+Walks `i18n-src/en-US/science/<tab>/*.json` for the canonical (en-US) section list, joins with `static/data/science/<tab>/<section>.json` base files for the diagram + LEARN tier metadata, and writes a single manifest. Auto-walks: adding a new section file in any tab makes it appear on `/science` + in search + as a chip target on the next build.
 
 ### Pipeline 9 — Porkchop pre-computation (`scripts/precompute-porkchops.ts`)
 
@@ -536,7 +536,7 @@ The Lambert worker stays in the bundle for any future custom-range computation (
 
 ### Pipeline 10 — i18n + translation (`scripts/wave23/`)
 
-> **Source relocated (ADR-079 D2 / #377, 2026-07-07):** the raw per-entity overlay tree moved from `static/data/i18n/<locale>/` to **`i18n-src/<locale>/`** — it is build-time *source*, never a servable asset (~10,360 files, ~60% of the old `static/` file count, that were flaking GH Pages, #373). `build-i18n-bundles.mjs` reads `i18n-src/` and writes the 14 collapsed runtime bundles into `static/data/i18n/{locale}.json` (still served). Consumers repointed via the `$i18nSrc` alias (`svelte.config.js`). References below to `static/data/i18n/<locale>/…` describe the *logical* overlay path; the physical source is `i18n-src/`.
+> **Source relocated (ADR-079 D2 / #377, 2026-07-07):** the raw per-entity overlay tree moved from `i18n-src/<locale>/` to **`i18n-src/<locale>/`** — it is build-time *source*, never a servable asset (~10,360 files, ~60% of the old `static/` file count, that were flaking GH Pages, #373). `build-i18n-bundles.mjs` reads `i18n-src/` and writes the 14 collapsed runtime bundles into `static/data/i18n/{locale}.json` (still served). Consumers repointed via the `$i18nSrc` alias (`svelte.config.js`). References below to `i18n-src/<locale>/…` describe the *logical* overlay path; the physical source is `i18n-src/`.
 
 Three-stage pipeline per ADR-033 + ADR-054:
 
@@ -612,7 +612,7 @@ Language-neutral manifest for the catalog grid (no `name`, `type`, `first`).
 
 ### Full mission record (base + overlay)
 
-Base file: `static/data/missions/<dest_lower>/<id>.json`. Overlay: `static/data/i18n/<locale>/missions/<dest>/<id>.json`. Shapes locked by `mission.schema.json`.
+Base file: `static/data/missions/<dest_lower>/<id>.json`. Overlay: `i18n-src/<locale>/missions/<dest>/<id>.json`. Shapes locked by `mission.schema.json`.
 
 ```json
 {
@@ -646,7 +646,7 @@ Base file: `static/data/missions/<dest_lower>/<id>.json`. Overlay: `static/data/
 
 ### Fleet entry (from `static/data/fleet/<category>/<id>.json`)
 
-Locked by `fleet-entry.schema.json`. Language-neutral; editorial fields merge from `static/data/i18n/<locale>/fleet/<category>/<id>.json` per ADR-054.
+Locked by `fleet-entry.schema.json`. Language-neutral; editorial fields merge from `i18n-src/<locale>/fleet/<category>/<id>.json` per ADR-054.
 
 ```json
 {
@@ -971,6 +971,6 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | **v2.1** | **May 2026** | **v0.7.0 catch-up.** Named `disposeScene` helper in §rendering teardown (centralised in `src/lib/three/dispose-object3d.ts` after audit found 5 routes inlining partial traversals that missed `Line` / `Points` + texture slots). Added §rendering "Long-list rendering perf" subsection for CSS `content-visibility` on `/fleet` / `/library` / `/credits` (W4). Added §pipelines Pipeline 11 for build-time compression — `vite-plugin-compression2` emits `.br` + `.gz` siblings, nginx serves them via `brotli_static` + `gzip_static` (W3). Added §components Test infrastructure note for sharded docker-stack e2e workflow (W7). Added §stack row for build-time compression. Header updated to v0.7.0 reality. (Audio narration system — PRD-016 / RFC-019 — and surface hotspots ship — RFC-017 — referenced in header but not yet fully cross-sectioned; pending §components / §pipelines deepening in follow-up.) |
 | **v2.2** | **June 2026** | **Foundational refactors (#332).** §components i18n machinery rewritten for Paraglide 2.x URL-segment routing (`/de/iss` replaces `?lang=de`) + `experimentalMiddlewareLocaleSplitting` — every per-locale route prerenders locale-correct HTML on first byte; client JS ships ~0 KB of message strings instead of all 14 locales' 1.5 MB. §components Data layer extended with `RemoteData<E,T>` (`src/lib/types/remote-data.ts`, #330 C.2) and `useUrlParam<T>` (`src/lib/routes/use-url-param.svelte.ts`, #331) rune. §rendering Animation loop now points at `createAnimateLoop` (`src/lib/three/animate-loop.ts`, #329) which finally enforces the `document.hidden` pause contract across all 7 3D routes — the contract that v2.0 referenced was unimplemented until #329. Companion `createRouteLifecycle` (route-lifecycle.ts) holds the listener + disposable LIFO drain. README at `src/lib/three/README.md` is the discoverability matrix for future contributors. /fly effect-ladder consolidation (#330 C.3) deferred — needs deeper cinematic-timing analysis than fit in #332's scope. |
 | **v2.5** | **July 2026** | **v0.8 mobile-plan reshape (ADR-078).** Registered ADR-077 (/fly iconic-shot, was missing) + ADR-078 in the §map ADR table. ADR-078 reshapes the v0.8 Capacitor wrapper: **iOS-first** (reverses the 2026-05-16 Android-first lock) + **stream-heavy bundle** (galleries + `static/audio/` stream from `chipi.github.io` via RFC-018 §8.1 network-aware SW, superseding the §8.2 disable-SW plan) after a re-assessment measured the naive build at ~2 GB (`static/images/` 1.6 GB + audio 97 MB) vs the 355 MB modelled in May. PRD-015 + RFC-018 amended to v0.4. No code changes yet — plan + docs only. (Pre-existing changelog gap v2.3–v2.4 vs header not backfilled — out of scope.) |
-| **v2.6** | **July 2026** | **v0.8 mobile subsystem + drift correction (deep review).** Added **§mobile** — the Capacitor wrapper architecture (stream-heavy bundle, `assetUrl` origin spine, iOS safe-area native shim, WebGL context-loss recovery, plugins, deep-links/share) — locked by ADR-078/079. Added a Mobile-wrapper §stack row. Noted the i18n source relocation (`static/data/i18n/<locale>/` → `i18n-src/`, ADR-079 D2) in Pipeline 10. Companion contributor guide `docs/guides/mobile-build-and-deploy.md`. Fixes the doc-authority gap where mobile existed in code + RFC-018/ADR-078/079 but not in TA.md. |
+| **v2.6** | **July 2026** | **v0.8 mobile subsystem + drift correction (deep review).** Added **§mobile** — the Capacitor wrapper architecture (stream-heavy bundle, `assetUrl` origin spine, iOS safe-area native shim, WebGL context-loss recovery, plugins, deep-links/share) — locked by ADR-078/079. Added a Mobile-wrapper §stack row. Noted the i18n source relocation (`i18n-src/<locale>/` → `i18n-src/`, ADR-079 D2) in Pipeline 10. Companion contributor guide `docs/guides/mobile-build-and-deploy.md`. Fixes the doc-authority gap where mobile existed in code + RFC-018/ADR-078/079 but not in TA.md. |
 | **v2.7** | **July 2026** | **a11y + keyboard/TV subsystem (RFC-031, deep review).** Added §components "Accessibility & keyboard/TV navigation" — the roving focus engine (`roving-focus.svelte.ts` + `use:roving`), the canvas object indexes (`/explore` body index, surface site index, `/iss` `/tiangong` module lists) that execute ADR-025's deferred Tier 2, the Cmd/Ctrl-K command palette, and the TV 10-foot layer. Closes the doc-authority gap where RFC-031 shipped S1–S3/S5–S8 in code but was invisible in TA.md; S4 (camera keyboard control) is explicitly deferred. |
 | **v2.8** | **July 2026** | **Immersive Mode subsystem (PRD-019 / RFC-021 · #150, deep review).** Added **§immersive** — the `ArBackend` provider abstraction (`src/lib/ar.ts`, pure `classifyArPlatform` → WebXR / ARKit Capacitor), the `isArSessionSupported` capability gate + `EnterArButton`, the WebXR backend (transient-input hit-test + real `frame.createAnchor` anchors), the tap-to-place scene builders with three-sense (haptic + spatial-audio + narration) placement wiring, and Exhibit Mode kiosk. Added an Immersive-Mode §stack row. Closes the doc-authority gap where the whole AR + Exhibit epic shipped in code but was invisible in TA.md. AR runtime is coverage-excluded (device-only); `ar.ts` + `exhibit.svelte.ts` are covered. |

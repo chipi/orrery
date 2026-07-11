@@ -338,12 +338,12 @@ Fleet entries, surface sites, and other localised records follow the same base +
 
 | Base registry | Required en-US overlay |
 |---|---|
-| `static/data/earth-objects.json` (any new id) | `static/data/i18n/en-US/earth-objects/{id}.json` |
-| `static/data/fleet/index.json` (any new id) | `static/data/fleet/{category}/{id}.json` + `static/data/i18n/en-US/fleet/{category}/{id}.json` |
-| `static/data/moon-sites.json` (any new id) | `static/data/i18n/en-US/moon-sites/{id}.json` |
-| `static/data/mars-sites.json` (any new id) | `static/data/i18n/en-US/mars-sites/{id}.json` |
-| `static/data/science/{tab}/_index.json` (any new id) | `static/data/i18n/en-US/science/{tab}/{id}.json` + `static/data/science/{tab}/{id}.json` |
-| `static/data/iss-modules.json` / `static/data/tiangong-modules.json` (any new id) | `static/data/i18n/en-US/{file}/{id}.json` |
+| `static/data/earth-objects.json` (any new id) | `i18n-src/en-US/earth-objects/{id}.json` |
+| `static/data/fleet/index.json` (any new id) | `static/data/fleet/{category}/{id}.json` + `i18n-src/en-US/fleet/{category}/{id}.json` |
+| `static/data/moon-sites.json` (any new id) | `i18n-src/en-US/moon-sites/{id}.json` |
+| `static/data/mars-sites.json` (any new id) | `i18n-src/en-US/mars-sites/{id}.json` |
+| `static/data/science/{tab}/_index.json` (any new id) | `i18n-src/en-US/science/{tab}/{id}.json` + `static/data/science/{tab}/{id}.json` |
+| `static/data/iss-modules.json` / `static/data/tiangong-modules.json` (any new id) | `i18n-src/en-US/{file}/{id}.json` |
 | `static/data/launches.json` (any new id) | (no overlay required — schema is monolingual) |
 
 `validate-data` enforces this at preflight (and pre-push) — missing overlays will fail before push. Other locales fall back to en-US, so en-US alone is enough to ship; translations follow in a separate commit per the i18n pipeline. **History note:** GH #83 (May 2026) shipped 11 constellation entries without overlays, causing CI e2e failures + a follow-up fix commit. Layer 1 validator (added that same day) prevents recurrence.
@@ -524,7 +524,7 @@ Before the specific checklists below (flyby body, mission, science overlay, flee
 
 For every new card, in the same PR, you ship:
 
-1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `static/data/i18n/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
+1. **i18n translations across all 14 locales.** English-only is not "shipped". The catalog of locales lives in `messages/*.json` (the bundle) and `i18n-src/<locale>/<surface>/<id>.json` (per-entity overlay). Use the per-surface translation scripts (`scripts/translate-*.mjs`) or the `wave23/` toolchain pattern (catalog → maps → apply-translations) — never hand-translate. Validation: `npm run validate-data` fails closed on missing locale rows for tracked entities (per ADR-069 / [overlay-completeness](docs/adr/ADR-069.md)).
 
 2. **Image sourcing with provenance + credits — agency archives first, Commons last.** No card ships with a placeholder hero or zero-slot gallery. Source via the **agency-first** pipeline: NASA images-api → JPL Photojournal → JAXA → ESA → JHU APL → CNSA/Roscosmos/ISRO/SpaceIL → **Wikimedia Commons only as failover**. Full source-order table + rationale in [`scripts/IMAGE-PIPELINE.md` §"Source-resolution order"](scripts/IMAGE-PIPELINE.md#source-resolution-order--agency-archives-first-commons-last). Every disk file gets a TASL row in `image-provenance.json` (ADR-047), every sidecar entry gets `credit` / `license` / `fetched_at`, every count manifest gets bumped. If imagery genuinely doesn't exist for the entity, ship an honest caption (memory `feedback_ship_all_with_honest_captions` — single-frame / descent-frame with text beats graceful-absent button) — never a silent gap.
 
@@ -567,7 +567,7 @@ Per-body steps (numbered to match TA.md §body-wiring):
 10. **`DESTINATION_LABEL_COLORS`** → `src/lib/fly-scene-constants.ts`
 11. **`/plan` label switch case** → `src/routes/plan/+page.svelte`
 12. **14-locale messages** → `messages/en-US.json` + 13 other locales (use the Python pattern from the Arrokoth commit for the non-English transliterations)
-13. **i18n overlay** (optional) → `static/data/i18n/en-US/planets/{id}.json`
+13. **i18n overlay** (optional) → `i18n-src/en-US/planets/{id}.json`
 14. **Tests** → `find-flyby-planet.test.ts` — move new body out of "returns null" + add positive case
 15. **Browser-verify** → load a mission that flies past the body at its iconic MET, confirm composition
 

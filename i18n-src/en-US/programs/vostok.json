@@ -1,0 +1,86 @@
+{
+  "name": "Vostok",
+  "tagline": "The program that put the first human in orbit — and kept scoring firsts while America scrambled to catch up.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "By 1960 the Soviet Union had already stunned the world with Sputnik and meant to keep the lead. Behind it was a man the West didn't know existed: Sergei Korolev, the \"Chief Designer,\" his very name a state secret, running the program that had turned his R-7 — the world's first intercontinental missile — into a rocket that could carry a person. The Americans were building Mercury and talking about it openly. The Soviets said almost nothing, and moved faster."
+    },
+    {
+      "type": "prose",
+      "md": "The prize was the first human in space, and it was worth almost any risk, because in the Cold War a Soviet cosmonaut orbiting overhead was an argument no speech could match — proof, broadcast worldwide, that the system could out-build the West at the edge of the possible. Vostok was built to win that argument. It did not need to do much once in orbit; it needed to get a person up, around, and safely down, and to be first."
+    }
+  ],
+  "goals": [
+    {
+      "type": "figure",
+      "image": { "reuse": "fleet/vostok/01" },
+      "caption": "The Vostok descent module — a simple sphere, the one shape that survives reentry from any angle without steering. The cosmonaut rode it to a few kilometres, then ejected and parachuted down separately.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Vostok's goal was as narrow as Mercury's and pursued with less caution: prove a human could survive launch, orbit, and reentry — and do it before the Americans. The spacecraft reflected that focus. It was a sphere, the shape that reenters safely from any orientation so the automatic systems needn't hold a precise attitude, with a separate equipment module that fell away before the fire of reentry."
+    },
+    {
+      "type": "prose",
+      "md": "One detail was kept quiet for years. The sphere hit the ground too hard for a person to survive the impact, so the cosmonaut ejected at about seven kilometres and came down under a separate parachute. Under the international rules of the day a flight only counted if the pilot landed *with* the craft — so the Soviets simply didn't mention it, and claimed the records anyway. A small thing, but a telling one: the program was built to win, and the truth was managed to match."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/vostok-6/01" },
+      "caption": "Valentina Tereshkova before Vostok 6, June 1963 — the first woman in space, twenty years before the United States would fly one.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "In just over two years Vostok scored a run of firsts the United States could only watch. On 12 April 1961 Yuri Gagarin became the first human in space — a single orbit that made him, overnight, the most famous person on Earth. Gherman Titov followed with the first full day in orbit. Vostoks 3 and 4 flew together, the first time two crewed craft shared the sky. Valery Bykovsky flew nearly five days, still the longest solo spaceflight ever. And Valentina Tereshkova became the first woman in space — a milestone the Americans would not match until 1983."
+    },
+    {
+      "type": "prose",
+      "md": "Six flights, six successes, six firsts. By the measure that counted most in 1963 — who got there first — the Soviet Union was winning decisively, and doing it in a spacecraft that couldn't even change its own orbit. But the run also marked a ceiling: Vostok had done everything a one-seat sphere could do, and the next rounds — spacewalks, rendezvous, docking, the Moon — would demand machines it didn't have."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Vostok is a story told in two registers at once — the public triumph and the hidden reality. In public, each flight was a flawless demonstration of Soviet superiority, announced only once it had already succeeded. Out of sight were the things that didn't fit: Korolev's name, the ejection landings, the launch failures that killed ground crews, the near-misses. The program never flew a mission it expected to fail, because a public failure was politically unaffordable — and that shaped what it attempted, and when."
+    },
+    {
+      "type": "prose",
+      "md": "At its centre was one man turned into a symbol. Gagarin's 108 minutes made him a global icon overnight — sent on world tours, put on stamps and statues, more useful to the state on the ground than in the air, and never allowed to fly in space again. He died in a jet crash in 1968, at thirty-four. The first human to leave the planet spent the rest of his short life as the smiling face of a system that would not risk him twice."
+    },
+    {
+      "type": "prose",
+      "md": "By mid-1963 Vostok had run its course. Its successor, Voskhod, would stretch the same basic hardware to squeeze out two more firsts — a multi-person crew and the first spacewalk — before the Soviet program moved on to Soyuz and set its sights, in secret, on the Moon."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "figure",
+      "image": { "reuse": "missions/vostok-1/02" },
+      "caption": "Yuri Gagarin — the first human in space, and for the rest of his short life the face of the Soviet space program.",
+      "align": "left"
+    },
+    {
+      "type": "prose",
+      "md": "Vostok's legacy is partly a set of firsts that can never be taken back, and partly a machine that never really retired. The R-7 rocket that launched Gagarin is, in direct descent, the Soyuz rocket still carrying crews to orbit today — more than sixty years and eighteen hundred launches on, the most-used launch vehicle in history. The spherical-capsule-plus-service-module layout became the template for Soyuz, which is still flying."
+    },
+    {
+      "type": "prose",
+      "md": "Strategically it did something larger than any single flight: it convinced the United States it could not win the space race on the terms the Soviets were setting, and pushed Kennedy to change the game to the Moon — a target far enough away that American industrial depth could tell. In that sense Apollo is partly Vostok's doing. And for the wider world, the sight of a human circling the planet — whatever flag was on the rocket — permanently changed the sense of what people could do."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Vostok's lesson is the double edge of a strategy built on being first. The Soviets won nearly every early round by pushing a limited spacecraft to its edge and moving before the competition could react — and it worked, brilliantly, for a while. But a run of firsts is not the same as a deep capability, and Vostok's focus on the next headline left it without the maneuvering, docking, and endurance the real destination would require. Winning the sprint can quietly cost you the race, if the sprint burns the runway you needed for the marathon."
+    },
+    {
+      "type": "prose",
+      "md": "The second lesson is what secrecy buys, and what it costs. Hiding the failures and managing the truth let the program look invincible, which had real Cold War value. But it also meant the program could never be seen to fail — which made it cautious in the wrong places, unable to take the visible risks that learning hard things requires. An organization that can't afford to fail in public eventually can't afford to *learn* in public either."
+    }
+  ]
+}

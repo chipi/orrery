@@ -1,5 +1,18 @@
 [
   {
+    "id": "vostok",
+    "name": "Vostok",
+    "tagline": "The program that put the first human in orbit — and kept scoring firsts while America scrambled to catch up.",
+    "kind": "crewed-campaign",
+    "agency": "Roscosmos",
+    "country": "USSR",
+    "epoch": "first-steps",
+    "status": "COMPLETED",
+    "start_year": 1961,
+    "end_year": 1963,
+    "hero": "missions/vostok-1/01"
+  },
+  {
     "id": "mercury",
     "name": "Mercury",
     "tagline": "America's scramble to put a person in space — always a step behind the Soviets, and the foundation for everything that came after.",

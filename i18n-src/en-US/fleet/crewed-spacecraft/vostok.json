@@ -1,6 +1,7 @@
 {
   "name": "Vostok",
   "tagline": "First crewed spacecraft (Gagarin, 1961)",
+  "dispatch": "The Vostok spacecraft was the first machine to carry a human into space and bring one back, and its design is a study in doing the minimum that works. Reentry is the hardest part of coming home, so Vostok used the one shape that survives it from any angle — a sphere — which meant the automatic systems never had to point the craft precisely; it would tumble in and still come down heat-shield-heavy. The catch was that the sphere landed too hard for a person, so the cosmonaut ejected near the ground and parachuted separately, a fact hidden for years to protect the records. Crude, secretive, and completely effective, it flew six people to orbit and lost none — and its capsule-plus-service-module layout became the pattern for Soyuz, still flying today.",
   "description": "The spherical descent module that returned Yuri Gagarin from orbit on 1961-04-12 — the first human spaceflight. Six crewed flights between 1961 and 1963, including Valentina Tereshkova’s solo orbital mission as the first woman in space.",
   "best_known_for": "First crewed spacecraft (Gagarin, 1961)"
 }

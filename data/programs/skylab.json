@@ -1,0 +1,29 @@
+{
+  "id": "skylab",
+  "kind": "station",
+  "agency": "NASA",
+  "agencies": ["NASA"],
+  "country": "USA",
+  "start_year": 1973,
+  "end_year": 1974,
+  "status": "COMPLETED",
+  "epoch": "first-stations",
+  "hero": "fleet/skylab/01",
+  "roster": [
+    { "linked_id": "skylab", "ref": "fleet", "role": "station" },
+    { "linked_id": "skylab-2", "ref": "mission", "year": 1973 },
+    { "linked_id": "skylab-3", "ref": "mission", "year": 1973 },
+    { "linked_id": "skylab-4", "ref": "mission", "year": 1973 },
+    { "linked_id": "saturn-v", "ref": "fleet", "role": "launcher" }
+  ],
+  "related_programs": ["apollo", "salyut", "iss"],
+  "see_also": [
+    { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Fleet — Skylab orbital workshop", "href": "/fleet?focus=skylab", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Skylab — Wikipedia", "u": "https://en.wikipedia.org/wiki/Skylab", "t": "intro" },
+    { "l": "Skylab — NASA history", "u": "https://www.nasa.gov/history/skylab/", "t": "core" },
+    { "l": "Saving Skylab — the 1973 repair (NASA)", "u": "https://www.nasa.gov/history/50-years-ago-skylab-1-launches/", "t": "deep" }
+  ]
+}

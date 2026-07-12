@@ -1148,5 +1148,85 @@
     "sector": "gov",
     "color": "#003087",
     "crewed": false
+  },
+  {
+    "id": "gemini3",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini4",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini6a",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini7",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1965,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini8",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1966,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "gemini12",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1966,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "soyuz-1",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1967,
+    "sector": "gov",
+    "color": "#CD1F2D",
+    "crewed": true
+  },
+  {
+    "id": "soyuz-11",
+    "agency": "Roscosmos",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#CD1F2D",
+    "crewed": true
   }
 ]

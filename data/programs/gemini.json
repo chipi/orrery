@@ -1,0 +1,119 @@
+{
+  "id": "gemini",
+  "kind": "crewed-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1961,
+  "end_year": 1966,
+  "status": "COMPLETED",
+  "epoch": "space-race",
+  "hero": "fleet/gemini/01",
+  "roster": [
+    {
+      "name": "Gemini 1",
+      "year": 1964,
+      "note": "uncrewed structural + launch-vehicle test"
+    },
+    {
+      "name": "Gemini 2",
+      "year": 1965,
+      "note": "uncrewed suborbital heat-shield test"
+    },
+    {
+      "linked_id": "gemini3",
+      "ref": "mission",
+      "year": 1965
+    },
+    {
+      "linked_id": "gemini4",
+      "ref": "mission",
+      "year": 1965
+    },
+    {
+      "name": "Gemini 5",
+      "year": 1965,
+      "note": "eight days aloft — first week-plus flight, proving crews could last a lunar round-trip"
+    },
+    {
+      "linked_id": "gemini6a",
+      "ref": "mission",
+      "year": 1965
+    },
+    {
+      "linked_id": "gemini7",
+      "ref": "mission",
+      "year": 1965
+    },
+    {
+      "linked_id": "gemini8",
+      "ref": "mission",
+      "year": 1966
+    },
+    {
+      "name": "Gemini 9A",
+      "year": 1966,
+      "note": "the 'angry alligator' target that wouldn't open; EVA proved exhausting and near-disastrous"
+    },
+    {
+      "name": "Gemini 10",
+      "year": 1966,
+      "note": "docked, used the Agena's engine to change orbit, and rendezvoused with a second target"
+    },
+    {
+      "name": "Gemini 11",
+      "year": 1966,
+      "note": "direct-ascent rendezvous on the first orbit; reached a record 1,369 km apogee"
+    },
+    {
+      "linked_id": "gemini12",
+      "ref": "mission",
+      "year": 1966
+    },
+    {
+      "linked_id": "gemini",
+      "ref": "fleet",
+      "role": "spacecraft"
+    },
+    {
+      "linked_id": "titan-ii-glv",
+      "ref": "fleet",
+      "role": "launcher"
+    }
+  ],
+  "related_programs": [
+    "mercury",
+    "apollo"
+  ],
+  "see_also": [
+    {
+      "label": "Earth — orbits, rendezvous & launch sites",
+      "href": "/earth",
+      "kind": "body"
+    },
+    {
+      "label": "Entry, descent & landing",
+      "href": "/science/mission-phases/edl",
+      "kind": "science"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA — Project Gemini",
+      "u": "https://www.nasa.gov/history/project-gemini/",
+      "t": "intro"
+    },
+    {
+      "l": "Project Gemini (Wikipedia)",
+      "u": "https://en.wikipedia.org/wiki/Project_Gemini",
+      "t": "core"
+    },
+    {
+      "l": "Smithsonian NASM — Gemini",
+      "u": "https://airandspace.si.edu/explore/topics/spaceflight/gemini-program",
+      "t": "deep"
+    }
+  ]
+}

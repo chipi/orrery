@@ -4,7 +4,7 @@
     {
       "id": "missions.descriptions.baseline",
       "location": {
-        "file": "static/data/i18n/en-US/missions/"
+        "file": "i18n-src/en-US/missions/"
       },
       "category": "mission",
       "relationship": "paraphrased-from",
@@ -18,7 +18,7 @@
     {
       "id": "missions.apollo11.description",
       "location": {
-        "file": "static/data/i18n/en-US/missions/moon/apollo11.json",
+        "file": "i18n-src/en-US/missions/moon/apollo11.json",
         "json_path": "$.description"
       },
       "category": "mission",
@@ -33,7 +33,7 @@
     {
       "id": "missions.curiosity.description",
       "location": {
-        "file": "static/data/i18n/en-US/missions/mars/curiosity.json",
+        "file": "i18n-src/en-US/missions/mars/curiosity.json",
         "json_path": "$.description"
       },
       "category": "mission",
@@ -48,7 +48,7 @@
     {
       "id": "missions.mars-express.description",
       "location": {
-        "file": "static/data/i18n/en-US/missions/mars/mars-express.json",
+        "file": "i18n-src/en-US/missions/mars/mars-express.json",
         "json_path": "$.description"
       },
       "category": "mission",
@@ -63,7 +63,7 @@
     {
       "id": "missions.hope.description",
       "location": {
-        "file": "static/data/i18n/en-US/missions/mars/hope.json",
+        "file": "i18n-src/en-US/missions/mars/hope.json",
         "json_path": "$.description"
       },
       "category": "mission",
@@ -78,7 +78,7 @@
     {
       "id": "missions.chandrayaan3.description",
       "location": {
-        "file": "static/data/i18n/en-US/missions/moon/chandrayaan3.json",
+        "file": "i18n-src/en-US/missions/moon/chandrayaan3.json",
         "json_path": "$.description"
       },
       "category": "mission",
@@ -106,7 +106,7 @@
     {
       "id": "sun.descriptions.baseline",
       "location": {
-        "file": "static/data/i18n/en-US/sun.json"
+        "file": "i18n-src/en-US/sun.json"
       },
       "category": "sun",
       "relationship": "paraphrased-from",

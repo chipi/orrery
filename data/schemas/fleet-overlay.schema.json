@@ -27,6 +27,11 @@
       "type": "string",
       "minLength": 1,
       "description": "Editorial paragraph (2-4 sentences) rendered in the OVERVIEW tab below the spec grid. Required."
+    },
+    "dispatch": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Editorial lead (PRD-029 / programs-editorial-voice.md §6) — the innovation + purpose of this unique asset, in the programs voice, at the top of OVERVIEW. Authored when a program's roster links this asset. Optional; distinct from `description` (the specs)."
     }
   }
 }

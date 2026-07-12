@@ -1,0 +1,27 @@
+{
+  "id": "esa-human",
+  "kind": "crewed-campaign",
+  "agency": "ESA",
+  "agencies": ["ESA"],
+  "country": "Multi (Europe)",
+  "start_year": 1983,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/atv/01",
+  "roster": [
+    { "linked_id": "atv", "ref": "fleet", "role": "cargo", "year": 2008 },
+    { "name": "Spacelab", "year": 1983, "note": "Europe's first human-spaceflight contribution — a crewed laboratory that flew in the Space Shuttle's payload bay on 22 missions, and carried the first ESA astronaut, Ulf Merbold, in 1983" },
+    { "name": "Columbus", "year": 2008, "note": "ESA's permanent research laboratory on the International Space Station — the module that made Europe a full ISS partner with a facility of its own" },
+    { "name": "European Service Module", "year": 2022, "note": "ATV technology reborn: Europe now builds the service module that powers and propels NASA's Orion spacecraft on its flights to lunar orbit under Artemis" }
+  ],
+  "related_programs": ["space-shuttle", "iss", "ariane", "mir"],
+  "see_also": [
+    { "label": "ISS — the station Europe helped build", "href": "/programs/iss", "kind": "program" },
+    { "label": "Ariane — the launcher that carried ATV", "href": "/programs/ariane", "kind": "program" }
+  ],
+  "links": [
+    { "l": "European Space Agency human spaceflight — Wikipedia", "u": "https://en.wikipedia.org/wiki/European_Astronaut_Corps", "t": "intro" },
+    { "l": "Automated Transfer Vehicle — ESA", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV", "t": "core" },
+    { "l": "Columbus laboratory — ESA", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Columbus", "t": "deep" }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "gemini3",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1965,
+  "status": "FLOWN",
+  "departure_date": "1965-03-23",
+  "arrival_date": "1965-03-23",
+  "transit_days": 0,
+  "vehicle": "Titan II GLV (GT-3)",
+  "payload": "Gemini 3 'Molly Brown'; Gus Grissom & John Young",
+  "delta_v": "~7.8 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Gemini mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Gemini 3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gemini_3",
+      "t": "intro"
+    },
+    {
+      "l": "NASA — Project Gemini",
+      "u": "https://www.nasa.gov/history/project-gemini/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "gemini",
+      "role": "spacecraft"
+    },
+    {
+      "id": "titan-ii-glv",
+      "role": "launcher"
+    }
+  ]
+}

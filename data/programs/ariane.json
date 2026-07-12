@@ -1,0 +1,28 @@
+{
+  "id": "ariane",
+  "kind": "infrastructure",
+  "agency": "ESA",
+  "agencies": ["ESA"],
+  "country": "Multi (Europe)",
+  "start_year": 1979,
+  "status": "ACTIVE",
+  "epoch": "shuttle-and-mir",
+  "hero": "fleet/ariane-5/01",
+  "roster": [
+    { "linked_id": "ariane-1", "ref": "fleet", "role": "launcher", "year": 1979 },
+    { "name": "Ariane 4", "year": 1988, "note": "the reliable commercial workhorse that captured roughly half the world's commercial satellite launches through the 1990s and made Arianespace dominant" },
+    { "linked_id": "ariane-5", "ref": "fleet", "role": "launcher", "year": 1996 },
+    { "name": "Flight 501", "year": 1996, "note": "Ariane 5's maiden flight self-destructed 37 seconds in when reused Ariane 4 guidance software overflowed at the new rocket's higher speed — a landmark software-engineering cautionary tale" },
+    { "linked_id": "ariane-6", "ref": "fleet", "role": "launcher", "year": 2024 }
+  ],
+  "related_programs": ["esa-human", "iss", "space-shuttle"],
+  "see_also": [
+    { "label": "ESA in human spaceflight — Spacelab, Columbus, ATV", "href": "/programs/esa-human", "kind": "program" },
+    { "label": "Fleet — Ariane launchers", "href": "/fleet?focus=ariane-5", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Ariane (rocket family) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ariane_(rocket_family)", "t": "intro" },
+    { "l": "Ariane — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_overview", "t": "core" },
+    { "l": "Ariane 501 failure report (the Lions report)", "u": "https://web.archive.org/web/20000815230639/http://www.ima.umn.edu/~arnold/disasters/ariane5rep.html", "t": "deep" }
+  ]
+}

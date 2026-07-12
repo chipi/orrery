@@ -1,0 +1,41 @@
+{
+  "id": "gemini6a",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1965,
+  "status": "FLOWN",
+  "departure_date": "1965-12-15",
+  "arrival_date": "1965-12-15",
+  "transit_days": 0,
+  "vehicle": "Titan II GLV (GT-6A)",
+  "payload": "Gemini 6A; Wally Schirra & Tom Stafford",
+  "delta_v": "~7.8 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA — Gemini mission reports. Public domain.",
+  "links": [
+    {
+      "l": "Gemini 6A — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gemini_6A",
+      "t": "intro"
+    },
+    {
+      "l": "NASA — Project Gemini",
+      "u": "https://www.nasa.gov/history/project-gemini/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "gemini",
+      "role": "spacecraft"
+    },
+    {
+      "id": "titan-ii-glv",
+      "role": "launcher"
+    }
+  ]
+}

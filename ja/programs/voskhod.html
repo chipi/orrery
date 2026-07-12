@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.C5ORdgaR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CajywaaC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/hh4sZEJ5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CbHA1HUd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HYU1chmI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C2yVhUxl.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BdQUFc8e.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoGfru2D.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bv6SoQKO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dmn6gkmM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BVHyKRY2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CWj6FrbW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDf5Vmyw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dm0MUbO6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YVVEuel_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BgYdKsDn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/usJeXAPQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3ahi9__.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.CSZ3zIfB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQvqWRxt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlJAQhUq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/a6bYMi4h.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CxXrC2sv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CX8nZLf3.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DayBpKoh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF2cimMM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DfEdbH4i.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8t_-qoi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CfwR4gOY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BqNELRB0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1kddTW_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DODJ80ki.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CBA_ueP8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B54shOYO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C_KXKjha.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcMdW1Rq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/70HSufA5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0mIcHx9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bzswvde1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/nl4i2M-y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DUbQrKN4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/G54T5kQs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BI7Nu60V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B_5-ZLD0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/52ih_Gin.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPwLOqZt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CXpKqc2G.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BR6gBIuA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/uuybXyoY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/29.9CODc42Y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RNgElSY1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3ySPJMo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BshWvtd6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3ZagQ_e.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CiOr4HRX.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--1qiz0dm--><meta name="description" content="限界を迎えたハードウェアから2つのさらなる初——複数人搭乗と宇宙遊泳——を無理やり絞り出し、その過程で人命を危険にさらした間に合わせ計画。"/><!----><title>Voskhod · Programs · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.GLXyHeZc.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/AgencyBadge.BQUpc0Od.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/29.wvKAXzdt.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="メインナビゲーション" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="オリリー — ホーム"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><a href="/orrery/" class="link svelte-1h32yp1">ホーム ></a><a href="/orrery/explore" class="link svelte-1h32yp1">当社のソーラーシステム</a><a href="/orrery/missions" class="link svelte-1h32yp1">ミッション</a><a href="/orrery/fleet" class="link svelte-1h32yp1">フリート</a><a href="/orrery/programs" class="link svelte-1h32yp1">PROGRAMS</a><a href="/orrery/plan" class="link svelte-1h32yp1">プラン</a><a href="/orrery/fly" class="link svelte-1h32yp1">フリガナ</a><a href="/orrery/earth" class="link svelte-1h32yp1">リクルート</a><a href="/orrery/moon" class="link svelte-1h32yp1">ムーン</a><a href="/orrery/mars" class="link svelte-1h32yp1">マース</a><a href="/orrery/iss" class="link svelte-1h32yp1">ニッス</a><a href="/orrery/tiangong" class="link svelte-1h32yp1">ログイン</a><a href="/orrery/science" class="link svelte-1h32yp1">サイエンス</a><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="ナビゲーションメニューを開く" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="ツアーを始める" aria-pressed="false" title="ツアーを始める"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <button type="button" class="sensory-toggle svelte-1h32yp1" aria-label="感覚設定" aria-haspopup="dialog" aria-expanded="false" title="サウンド・振動・傾き"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5 L9.7 8 L8 14.5 L6.3 8 Z" fill="currentColor" opacity="0.55"></path><path d="M1 8 Q 3 5, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="日本語 English" aria-haspopup="listbox" aria-expanded="false" title="言語を選択">JA</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="科学レンズを切り替え (unavailable on this page)" aria-pressed="false" title="物理レイヤーを表示 (軌道力学オーバーレイ) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="高コントラストモードを切り替える" aria-pressed="false" title="高コントラストモードを切り替える">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" disabled="" aria-disabled="true" aria-label="Graphics settings (unavailable on this page)" aria-pressed="false" title="Graphics settings (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="このビューを共有" title="このビューを共有"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><article class="program svelte-1qiz0dm"><nav class="crumb svelte-1qiz0dm"><a href="/orrery/programs" class="svelte-1qiz0dm">Programs</a> <span class="sep svelte-1qiz0dm">›</span> <span>Voskhod</span></nav> <header class="hero svelte-1qiz0dm"><div class="hero-text"><p class="meta svelte-1qiz0dm"><!--[0--><span class="badges svelte-11wq40q" aria-hidden="true"><!--[--><img src="/orrery/logos/roscosmos.svg" alt="" title="Roscosmos" class="badge svelte-11wq40q" loading="lazy" decoding="async"/><!--]--></span><!--]--><!----> <span>Roscosmos · USSR · 1964–1965</span></p> <div class="title-row svelte-1qiz0dm"><h1 class="svelte-1qiz0dm">Voskhod</h1> <!--[-1--><!--]--></div> <p class="tagline svelte-1qiz0dm">限界を迎えたハードウェアから2つのさらなる初——複数人搭乗と宇宙遊泳——を無理やり絞り出し、その過程で人命を危険にさらした間に合わせ計画。</p> <p class="chips svelte-1qiz0dm"><span class="chip svelte-1qiz0dm">Crewed campaign</span> <span class="chip chip-status status-completed svelte-1qiz0dm">COMPLETED</span></p></div> <!--[0--><img class="hero-img svelte-1qiz0dm" src="/orrery/images/missions/voskhod-2/01.webp" alt="" fetchpriority="high" decoding="async"/><!--]--></header> <!--[--><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The land</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">1964年までに容易な段階は終わっていた。Vostokは数々の初を達成していたが、アメリカ人はGeminiを建造していた——実際に機動、ランデブー、ドッキングが可能な2人乗り宇宙船だ——そしてそれが飛べば、ソ連の優位は消滅する。ニキータ・フルシチョフはそうなる前にもっと見出しが欲しく、セルゲイ・コロリョフに圧力をかけた。新しいソ連の宇宙船は準備できていなかった。そこでコロリョフのチームはスケジュールが許す唯一のことをした——1人乗りのVostokを取り上げ、設計されていないことをさせるために改修したのだ。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">その結果がVoskhodであり、それはただ一つの目的のために存在した——借り物のハードウェアと借り物の余裕で、もう少しだけ初を獲得し続けること。それはプログラムというより、競争相手に追いつかれる前に実行された一対のスタントだった——複数人の搭乗員と、真空中に踏み出す人間。どちらも真の節目となるものだった。どちらも穏やかなソ連の発表が示すよりもはるかに危険だった。</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Goals</h2> <!--[--><!--[1--><figure class="fig fig-right svelte-1qiz0dm"><img src="/orrery/images/fleet-galleries/voskhod/01.webp" alt="Voskhod——射出座席を取り外し、より多くの搭乗員を運べるよう再梱包されたVostok。3人分のスペースは脱出システムの犠牲によって得られ、最初の飛行では与圧服も犠牲になった。" decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">Voskhod——射出座席を取り外し、より多くの搭乗員を運べるよう再梱包されたVostok。3人分のスペースは脱出システムの犠牲によって得られ、最初の飛行では与圧服も犠牲になった。</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">Voskhodには正確に2つの目標があり、どちらもGeminiを出し抜くために何が必要かで定義されていた——一度に複数人を飛ばすことと、人間を宇宙船の外に出すこと。1人用に造られたカプセルに3人の宇宙飛行士を詰め込むため、技術者たちは全てのVostokパイロットを救ってきた射出座席を取り外した——つまり、打ち上げや着陸で何か問題が起きても、搭乗員には逃げ道がないということだ。最初の飛行には与圧服のスペースさえなかった。それは何も問題が起きないという計算されたギャンブルであり、優位を保つために取られたものだった。</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Outcome</h2> <!--[--><!--[1--><figure class="fig fig-right svelte-1qiz0dm"><img src="/orrery/images/missions/voskhod-1/01.webp" alt="Voskhod 1の3人の搭乗員——コマロフ、フェオクチストフ、エゴロフ——史上初の複数人宇宙飛行、スーツも脱出システムもなく平服で飛行した。" decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">Voskhod 1の3人の搭乗員——コマロフ、フェオクチストフ、エゴロフ——史上初の複数人宇宙飛行、スーツも脱出システムもなく平服で飛行した。</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">ギャンブルはかろうじて成功した。1964年10月、Voskhod 1は史上初の3人搭乗員を——平服で、スーツなし、射出座席なしで——乗せて1日間地球を周回し、無事に帰還した。5か月後、Voskhod 2はより困難なことを成し遂げた——アレクセイ・レオーノフがハッチを開き、史上初の宇宙遊泳で真空中に浮かんだ。そしてそれはあらゆる方法で破綻寸前だった。レオーノフのスーツは真空中で硬く膨張し、エアロックを通って戻ることができず、減圧症のリスクを冒して自分の空気圧を抜き、押し込まなければならなかった。自動再突入システムは故障した。搭乗員は手動で飛行して降下し、目標から数百キロメートル離れたシベリアの深い森に着陸し、そこでスキーを履いた救助隊が到着するまで、オオカミに囲まれながら凍える夜を過ごした。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">2回の飛行、さらに2つの初、そして数十年間世界に知らされなかった2度の大惨事寸前。コロリョフはVoskhod 2がどれほど危機に近づいたかを見て、プログラムの残りをキャンセルした。ハードウェアは余裕を使い果たし、リスクに見合うさらなる初はもうなかった——ランデブー、ドッキング、そしてApolloが必要とする全てのような次の真の能力は、まだ存在しない宇宙船から来なければならなかった。</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The story</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">Voskhodは、見出しがスケジュールを動かしているときにプログラムがどのようになるかを示している。全ての決定——スーツなし、射出座席なし、1人乗りカプセルにボルトで固定された膨張式エアロック——はGeminiより先に初を獲得するために切り詰められた角であり、それぞれが設計段階から搭乗員へとリスクを移した。それは2回成功したが、それがまさに問題だ——薄い余裕での成功は間違った教訓を教える、その余裕は必要なかったという。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">レオーノフの宇宙遊泳はプログラム全体の縮図だ——一般大衆が楽々と見た真の勇敢な初であり、宇宙飛行士を殺す寸前まで行き、静かにカメラの外で起きた。勝利の発表とその下にある大惨事寸前との間のこのギャップこそがVoskhodについて最も真実であり、初期ソ連プログラムが競争した方法について——華々しく、公然と、そして誰にも知らせることが許されなかったよりもはるかに少ない余裕で。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">Voskhod 2の後、ソ連プログラムはVostokを引き延ばすのをやめ、Soyuzに転じた——機動とドッキングが可能な真の第2世代宇宙船だ——そして月への秘密の挑戦へ。容易な初の時代は終わった。ここから先、競争は能力で行われることになり、それはアメリカ人がGeminiで掴もうとしていた土俵だった。</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What it gave back</h2> <!--[--><!--[1--><figure class="fig fig-left svelte-1qiz0dm"><img src="/orrery/images/missions/voskhod-2/02.webp" alt="アレクセイ・レオーノフの宇宙遊泳、1965年3月——開放空間における最初の人間、そしてこの時代が生み出した最も危機に近づいた出来事の一つ。" decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">アレクセイ・レオーノフの宇宙遊泳、1965年3月——開放空間における最初の人間、そしてこの時代が生み出した最も危機に近づいた出来事の一つ。</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">Voskhodの遺産は2つの永続的な初——最初の複数人搭乗員と最初の宇宙遊泳——と、それらのすぐ隣にある警告の物語だ。初は真実であり、奪うことはできない。その後の全ての複数人搭乗員と全ての宇宙遊泳はこれら2回の飛行にさかのぼる。しかしVoskhodはまた、ソ連の初戦略が限界に達した瞬間でもある——改修されたVostokにできる新しいことは尽き、最後のそれを行う過程で人を殺しかけた。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">歴史的にはそれは引き継ぎを示している。Voskhod 2は1965年3月に飛行した。Gemini自身のプログラムは数週間後に始まり、その後20か月にわたって、ソ連がSputnik以来保持していた優位を組織的に奪った——ランデブー、ドッキング、耐久性、日常化されたEVA。Voskhodはソ連が明らかに先行していた最後の時だ。その後両陣営で起きたことは、誰が最初かではなく、誰がより深い能力を構築したかによって決まることになった。</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What we can learn</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">Voskhodの教訓は、借り物の余裕で競争する危険性だ。射出座席と与圧服を切り捨て、1つ用に造られていないカプセルにエアロックをボルトで固定する——それぞれの角が見出しを買い、真のリスクを真の人々に移し、プログラムは2回それをやり過ごした。しかしやり過ごすことは安全であることと同じではなく、薄い余裕での成功は罠だ——それは組織に、廃棄した安全性は決して必要なかったと静かに教える、それが必要となる飛行まで。</p><!--]--><!--[0--><p class="svelte-1qiz0dm">第2の教訓は、間に合わせが何のためにあり、何のためにないかだ。Voskhodは正確に1つのことをうまくやった——真の次世代宇宙船が建造されている間、時間とさらに2つの初を買った。それは即興ハードウェアの正当な使用だ。間違いは、それを飛ばし続け、余裕が尽きる地点を越えて見出しを追うことだっただろう——そしてコロリョフの功績として、彼は大惨事寸前を正しく読み取り、停止した。間に合わせがその仕事を終えたときを知ることは、それを構築することと同じくらい重要だ。</p><!--]--><!--]--></section><!--]--> <!--[-1--><!--]--> <section class="roster svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Missions</h2> <div class="roster-split svelte-1qiz0dm"><ol class="timeline svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm sel"><span class="t-year svelte-1qiz0dm">1964</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[0--><!--[-1--><!--]--> <button type="button" class="t-name svelte-1qiz0dm">Voskhod 1</button><!--]--> <!--[-1--><!--]--></span></li><li class="svelte-1qiz0dm"><span class="t-year svelte-1qiz0dm">1965</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[0--><!--[-1--><!--]--> <button type="button" class="t-name svelte-1qiz0dm">Voskhod 2</button><!--]--> <!--[-1--><!--]--></span></li><!--]--></ol> <aside class="detail svelte-1qiz0dm" aria-live="polite"><!--[0--><img class="d-hero svelte-1qiz0dm" src="/orrery/images/missions/voskhod-1/01.webp" alt="" decoding="async"/> <p class="d-meta svelte-1qiz0dm">1964 · Roscosmos · 有人地球周回 · 飛行済</p> <h3 class="d-name svelte-1qiz0dm">ボスホート 1</h3> <p class="d-blurb svelte-1qiz0dm">初の複数乗員宇宙飛行 — ボストーク派生カプセルに3名の宇宙飛行士</p> <a class="d-open svelte-1qiz0dm" href="/orrery/missions?id=voskhod-1">Open the full mission →</a><!--]--></aside></div> <h2 class="svelte-1qiz0dm">Hardware</h2> <ul class="hardware svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="/orrery/fleet?id=voskhod" class="svelte-1qiz0dm">Voskhod</a> <!--[0--><span class="role svelte-1qiz0dm">spacecraft</span><!--]--></li><li class="svelte-1qiz0dm"><a href="/orrery/fleet?id=voskhod-11a57" class="svelte-1qiz0dm">Voskhod 11a57</a> <!--[0--><span class="role svelte-1qiz0dm">launcher</span><!--]--></li><li class="svelte-1qiz0dm"><a href="/orrery/fleet?id=gagarins-start" class="svelte-1qiz0dm">Gagarins Start</a> <!--[0--><span class="role svelte-1qiz0dm">launch-site</span><!--]--></li><!--]--></ul></section> <!--[0--><section class="see-also svelte-1qiz0dm"><h2>Go deeper in Orrery</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="/orrery/earth" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">body</span>Earth — orbits &amp; launch sites →</a></li><li class="svelte-1qiz0dm"><a href="/orrery/science/mission-phases/edl" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">science</span>Entry, descent &amp; landing →</a></li><!--]--></ul></section><!--]--> <!--[0--><section class="related svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Related programs</h2> <p><!--[--><a class="rel svelte-1qiz0dm" href="/orrery/programs/vostok">Vostok</a><a class="rel svelte-1qiz0dm" href="/orrery/programs/soyuz">Soyuz</a><a class="rel svelte-1qiz0dm" href="/orrery/programs/gemini">Gemini</a><!--]--></p></section><!--]--> <section class="sources svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Sources</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="https://en.wikipedia.org/wiki/Voskhod_(spacecraft)" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Voskhod programme (Wikipedia) ↗</a></li><li class="svelte-1qiz0dm"><a href="https://en.wikipedia.org/wiki/Voskhod_2" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Voskhod 2 — Leonov's spacewalk (Wikipedia) ↗</a></li><li class="svelte-1qiz0dm"><a href="https://www.russianspaceweb.com/voskhod.html" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">RussianSpaceWeb — Voskhod ↗</a></li><!--]--></ul></section></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="サイトフッター"><nav class="footer-menu svelte-12qhfyh" aria-label="フッターリンク"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">ギャラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">クレジット</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">奥付</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">ライブラリー</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">概要</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="概要"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">ライセンス</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">フィードバック</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="ビルドバージョン+デプロイ日時（GitHubのCHANGELOGを開く）: v0.8-wip · 2026-07-12" hreflang="en">v0.8-wip</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1qh44u3 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1qh44u3.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.C5ORdgaR.js"),
+							import("/orrery/_app/immutable/entry/app.CoGfru2D.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 29],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

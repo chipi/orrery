@@ -1,0 +1,34 @@
+{
+  "id": "vostok",
+  "kind": "crewed-campaign",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR",
+  "start_year": 1961,
+  "end_year": 1963,
+  "status": "COMPLETED",
+  "epoch": "first-steps",
+  "hero": "missions/vostok-1/01",
+  "roster": [
+    { "name": "Korabl-Sputnik 2 (Belka & Strelka)", "year": 1960, "note": "the dogs Belka and Strelka — first animals to orbit and return alive, on the Vostok test spacecraft" },
+    { "linked_id": "vostok-1", "ref": "mission", "year": 1961 },
+    { "linked_id": "vostok-2", "ref": "mission", "year": 1961 },
+    { "linked_id": "vostok-3", "ref": "mission", "year": 1962 },
+    { "linked_id": "vostok-4", "ref": "mission", "year": 1962 },
+    { "linked_id": "vostok-5", "ref": "mission", "year": 1963 },
+    { "linked_id": "vostok-6", "ref": "mission", "year": 1963 },
+    { "linked_id": "vostok", "ref": "fleet", "role": "spacecraft" },
+    { "linked_id": "vostok-k", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "gagarins-start", "ref": "fleet", "role": "launch-site" }
+  ],
+  "related_programs": ["voskhod", "mercury"],
+  "see_also": [
+    { "label": "Earth — orbits & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Entry, descent & landing", "href": "/science/mission-phases/edl", "kind": "science" }
+  ],
+  "links": [
+    { "l": "Vostok programme (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)", "t": "intro" },
+    { "l": "Yuri Gagarin — first human in space (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Yuri_Gagarin", "t": "core" },
+    { "l": "RussianSpaceWeb — Vostok", "u": "https://www.russianspaceweb.com/vostok.html", "t": "deep" }
+  ]
+}

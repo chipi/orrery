@@ -1,0 +1,138 @@
+{
+  "id": "tiangong",
+  "kind": "station",
+  "agency": "CMSA",
+  "agencies": [
+    "CMSA",
+    "CNSA"
+  ],
+  "country": "China",
+  "start_year": 2011,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/tiangong/01",
+  "roster": [
+    {
+      "linked_id": "tiangong-1",
+      "ref": "fleet",
+      "role": "test station",
+      "year": 2011
+    },
+    {
+      "linked_id": "tiangong-2",
+      "ref": "fleet",
+      "role": "test station",
+      "year": 2016
+    },
+    {
+      "linked_id": "tiangong",
+      "ref": "fleet",
+      "role": "the assembled station",
+      "year": 2021
+    },
+    {
+      "linked_id": "shenzhou",
+      "ref": "fleet",
+      "role": "crew vehicle"
+    },
+    {
+      "linked_id": "tianzhou",
+      "ref": "fleet",
+      "role": "cargo freighter"
+    },
+    {
+      "linked_id": "long-march-2f",
+      "ref": "fleet",
+      "role": "crew launcher"
+    },
+    {
+      "linked_id": "tianhe",
+      "ref": "module",
+      "name": "Tianhe",
+      "year": 2021,
+      "note": "The core module — living quarters, life support, propulsion, and the station's control center. The first piece launched, and the heart of the station."
+    },
+    {
+      "linked_id": "chinarm",
+      "ref": "module",
+      "name": "Chinarm",
+      "year": 2021,
+      "note": "The station’s robotic arm, mounted on Tianhe, used to relocate modules and assist spacewalks."
+    },
+    {
+      "linked_id": "wentian",
+      "ref": "module",
+      "name": "Wentian",
+      "year": 2022,
+      "note": "The first laboratory module — with a backup control center and an airlock for spacewalks."
+    },
+    {
+      "linked_id": "mengtian",
+      "ref": "module",
+      "name": "Mengtian",
+      "year": 2022,
+      "note": "The second laboratory module, completing the T-shaped station; a facility for microgravity science."
+    },
+    {
+      "linked_id": "shenzhou-1",
+      "ref": "mission",
+      "year": 1999,
+      "note": "first uncrewed Shenzhou test flight — the proof that China could fly its own crew capsule"
+    },
+    {
+      "name": "Shenzhou 5",
+      "year": 2003,
+      "note": "Yang Liwei becomes the first Chinese astronaut in orbit — China joins the US and USSR as the third nation to launch a human on its own rocket"
+    },
+    {
+      "name": "Shenzhou 9 → Tiangong-1",
+      "year": 2012,
+      "note": "first crewed docking with a Chinese station; Liu Yang becomes China's first woman in space"
+    },
+    {
+      "name": "Continuous occupation",
+      "year": 2021,
+      "note": "the first crew of the permanent station arrives in June 2021; the CSS has been continuously crewed ever since"
+    }
+  ],
+  "related_programs": [
+    "shenzhou",
+    "iss",
+    "mir",
+    "salyut"
+  ],
+  "see_also": [
+    {
+      "label": "Tiangong — the station in 3D",
+      "href": "/tiangong",
+      "kind": "body"
+    },
+    {
+      "label": "Fleet — Shenzhou, Tianzhou & the Long March family",
+      "href": "/fleet?focus=tiangong",
+      "kind": "fleet"
+    },
+    {
+      "label": "ISS — the station Tiangong was locked out of",
+      "href": "/programs/iss",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "Tiangong space station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+      "t": "intro"
+    },
+    {
+      "l": "China Manned Space Agency",
+      "u": "http://en.cmse.gov.cn/",
+      "t": "core"
+    },
+    {
+      "l": "Chinese Space Station — ESA overview",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/China_s_space_station",
+      "t": "deep"
+    }
+  ]
+}

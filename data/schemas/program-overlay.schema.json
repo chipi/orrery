@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "program-overlay.schema.json",
+  "title": "ProgramOverlay",
+  "description": "Per-locale editorial prose for a program, at i18n-src/{locale}/programs/{id}.json. Per PRD-029. The editorial spine — the_land → goals → outcome → narrative — is authored en-US first; the 14-locale pass runs after the form locks. Each spine section is an ordered list of blocks so images embed INSIDE the editorial (magazine-style), not just a hero.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "tagline", "the_land", "goals", "outcome", "narrative", "legacy", "lessons"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "tagline": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line hook, shown on the index card + hero (the best_known_for)."
+    },
+    "the_land": { "$ref": "#/$defs/body", "description": "Where the world + technology stood; why the program existed. Neutral, honest." },
+    "goals": { "$ref": "#/$defs/body", "description": "What the agency set out to do — objectives + hoped-for outcomes." },
+    "outcome": { "$ref": "#/$defs/body", "description": "What came of it — met, missed, cancelled, open. Stated, not graded." },
+    "narrative": { "$ref": "#/$defs/body", "description": "The editorial story tying the roster together." },
+    "legacy": { "$ref": "#/$defs/body", "description": "What it gave back — impact on humanity + specific nations: economy, spinoffs, science, soft power, inspiration. Advocacy voice, still sourced + neutral." },
+    "lessons": { "$ref": "#/$defs/body", "description": "What we can learn — the leadership / team-playbook / human-inspiration takeaway. A transferable lesson on doing hard things (a good story, a piece of trivia, the 'how to be better' element), grounded in the program, not preachy." }
+  },
+  "$defs": {
+    "body": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Ordered blocks: prose paragraphs interleaved with embedded figures.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "md"],
+            "properties": {
+              "type": { "const": "prose" },
+              "md": { "type": "string", "minLength": 1, "description": "One paragraph. Light markdown (emphasis, links) allowed." }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "image", "caption"],
+            "properties": {
+              "type": { "const": "figure" },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Either reuse an existing gallery image (provenance inherited) or a program-owned editorial image sourced via the pipeline (PRD-018) + approved at /dev/staging.",
+                "properties": {
+                  "reuse": { "type": "string", "description": "Ref to an existing image, e.g. 'missions/apollo-11/03' or 'fleet/saturn-v/01'." },
+                  "id": { "type": "string", "description": "Program-owned image id under static/images/programs/{program}/{id}, e.g. 'the-land/sputnik'." }
+                },
+                "oneOf": [
+                  { "required": ["reuse"] },
+                  { "required": ["id"] }
+                ]
+              },
+              "caption": { "type": "string", "minLength": 1 },
+              "credit": { "type": "string", "description": "Attribution line; for reused images the provenance manifest is authoritative and this may be omitted." },
+              "align": { "type": "string", "enum": ["full", "left", "right"], "description": "Layout hint; default full-width." }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

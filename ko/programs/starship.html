@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <title>Orrery</title>
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.C5ORdgaR.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CajywaaC.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/hh4sZEJ5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CbHA1HUd.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HYU1chmI.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C2yVhUxl.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BdQUFc8e.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.CoGfru2D.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bv6SoQKO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dmn6gkmM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BVHyKRY2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CWj6FrbW.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BDf5Vmyw.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dm0MUbO6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/YVVEuel_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BgYdKsDn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/usJeXAPQ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B3ahi9__.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.CSZ3zIfB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BQvqWRxt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DlJAQhUq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/a6bYMi4h.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CxXrC2sv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CX8nZLf3.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DayBpKoh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BF2cimMM.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DfEdbH4i.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D8t_-qoi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CfwR4gOY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BqNELRB0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D1kddTW_.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DODJ80ki.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CBA_ueP8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B54shOYO.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C_KXKjha.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BcMdW1Rq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/70HSufA5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0mIcHx9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bzswvde1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/nl4i2M-y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DUbQrKN4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/G54T5kQs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BI7Nu60V.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B_5-ZLD0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/52ih_Gin.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CPwLOqZt.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CXpKqc2G.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BR6gBIuA.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/uuybXyoY.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/29.9CODc42Y.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/RNgElSY1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3ySPJMo.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BshWvtd6.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C3ZagQ_e.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CiOr4HRX.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--1qiz0dm--><meta name="description" content="역사상 가장 큰 로켓으로, 완전하고 신속한 재사용이 가능하도록 설계되었다 — SpaceX가 사람들을 화성으로 보내기 위한 운송 수단이다."/><!----><title>Starship · Programs · Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.GLXyHeZc.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/AgencyBadge.BQUpc0Od.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/29.wvKAXzdt.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="회사 소개" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery - 집"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><a href="/orrery/" class="link svelte-1h32yp1">(주)</a><a href="/orrery/explore" class="link svelte-1h32yp1">우리의 태양계</a><a href="/orrery/missions" class="link svelte-1h32yp1">주요연혁</a><a href="/orrery/fleet" class="link svelte-1h32yp1">팟캐스트</a><a href="/orrery/programs" class="link svelte-1h32yp1">PROGRAMS</a><a href="/orrery/plan" class="link svelte-1h32yp1">프로젝트</a><a href="/orrery/fly" class="link svelte-1h32yp1">사이트맵</a><a href="/orrery/earth" class="link svelte-1h32yp1">제품정보</a><a href="/orrery/moon" class="link svelte-1h32yp1">메인메뉴</a><a href="/orrery/mars" class="link svelte-1h32yp1">3 월</a><a href="/orrery/iss" class="link svelte-1h32yp1">사이트맵</a><a href="/orrery/tiangong" class="link svelte-1h32yp1">홍보센터</a><a href="/orrery/science" class="link svelte-1h32yp1">연구분야</a><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="내비게이션 메뉴 열기" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="투어 시작" aria-pressed="false" title="투어 시작"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <button type="button" class="sensory-toggle svelte-1h32yp1" aria-label="감각 설정" aria-haspopup="dialog" aria-expanded="false" title="사운드, 진동 및 기울임"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5 L9.7 8 L8 14.5 L6.3 8 Z" fill="currentColor" opacity="0.55"></path><path d="M1 8 Q 3 5, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="한국어" aria-haspopup="listbox" aria-expanded="false" title="언어 선택">KO</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="과학 렌즈 전환 (unavailable on this page)" aria-pressed="false" title="물리 레이어 표시 (궤도역학 오버레이) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="높은 콘트라스트 모드" aria-pressed="false" title="높은 콘트라스트 모드">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" disabled="" aria-disabled="true" aria-label="Graphics settings (unavailable on this page)" aria-pressed="false" title="Graphics settings (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="이 화면 공유" title="이 화면 공유"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <!----></div></nav> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><article class="program svelte-1qiz0dm"><nav class="crumb svelte-1qiz0dm"><a href="/orrery/programs" class="svelte-1qiz0dm">Programs</a> <span class="sep svelte-1qiz0dm">›</span> <span>Starship</span></nav> <header class="hero svelte-1qiz0dm"><div class="hero-text"><p class="meta svelte-1qiz0dm"><!--[0--><span class="badges svelte-11wq40q" aria-hidden="true"><!--[--><img src="/orrery/logos/spacex.svg" alt="" title="SpaceX" class="badge svelte-11wq40q" loading="lazy" decoding="async"/><!--]--></span><!--]--><!----> <span>SpaceX · USA · 2019–now</span></p> <div class="title-row svelte-1qiz0dm"><h1 class="svelte-1qiz0dm">Starship</h1> <!--[-1--><!--]--></div> <p class="tagline svelte-1qiz0dm">역사상 가장 큰 로켓으로, 완전하고 신속한 재사용이 가능하도록 설계되었다 — SpaceX가 사람들을 화성으로 보내기 위한 운송 수단이다.</p> <p class="chips svelte-1qiz0dm"><span class="chip svelte-1qiz0dm">Crewed campaign</span> <span class="chip chip-status status-active svelte-1qiz0dm">ACTIVE</span></p></div> <!--[0--><img class="hero-img svelte-1qiz0dm" src="/orrery/images/fleet-galleries/starship/01.webp" alt="" fetchpriority="high" decoding="async"/><!--]--></header> <!--[--><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The land</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">사람을 발사한 모든 로켓은 대부분을 버려왔다. 1단을 회수하는 Falcon 9조차 매 비행마다 상단을 폐기한다. Starship은 이를 완전히 끝내려는 시도이다 — 두 단계 모두 돌아와 착륙하고, 연료를 재보급받아 재비행하는 발사 시스템으로, 포탄이 아니라 항공기처럼 작동한다. 또한 단순히 거대하다: Saturn V보다 높고, 역사상 어떤 로켓보다 더 큰 추력을 가지며, 한두 번의 임무를 위해서가 아니라 수십 년 동안 지속적으로, 저렴하게 비행하도록 만들어졌다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">크기와 재사용의 이유는 단일 목적지에 있다. SpaceX는 창립 이래 인류를 다행성 종족으로 만드는 것을 명시된 목표로 삼아왔으며, 화성의 산술은 가혹하다: 그곳에 정착지를 건설하기 위해 충분한 사람과 화물을 보내려면 어떤 소모성 로켓도 감당할 수 없는 수준으로 더 많은 질량을, 더 자주, 그리고 훨씬 더 저렴하게 올려야 한다. Starship은 그 목표로부터 역산하여 나온 답이다 — 화성을 방문하는 것뿐만 아니라 그곳에서 살아가는 것을 진지하게 고려한다면 필요한 운송 수단이다.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Goals</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">당면 목표는 완전하고 신속한 재사용성이다: 부스터와 우주선 모두 귀환하고 착륙하며 최소한의 정비로 다시 비행하여, 궤도당 킬로그램당 비용을 Falcon 9이 달성한 것보다 또 한 차수 낮추는 것이다. 1단 재사용은 우주를 더 저렴하게 만들었고, 모든 것을 자주 재사용하는 것은 가능한 것을 바꿀 만큼 충분히 저렴하게 만들기 위한 것이다.</p><!--]--><!--[1--><figure class="fig fig-right svelte-1qiz0dm"><img src="/orrery/images/fleet-galleries/starship/01.webp" alt="Super Heavy 부스터 위의 Starship — 전체 스택. 두 단계 모두 귀환하여 착륙하도록 설계되었다. 부스터는 이제 발사탑 자체가 공중에서 포획하는데, 이전에는 아무도 시도하지 않았던 회수 방법이다." decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">Super Heavy 부스터 위의 Starship — 전체 스택. 두 단계 모두 귀환하여 착륙하도록 설계되었다. 부스터는 이제 발사탑 자체가 공중에서 포획하는데, 이전에는 아무도 시도하지 않았던 회수 방법이다.</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">보다 가까운 목표는 이를 필요로 하는 구체적인 임무들이다. NASA는 Artemis 우주비행사들을 달에 착륙시킬 유인 착륙 시스템으로 Starship의 한 버전을 선택했다 — Apollo 이후 최초의 유인 달 착륙선이다. Starship은 또한 더 큰 차세대 Starlink 위성을 발사하고, 궁극적으로는 화성으로 화물과 승무원을 운송하기 위한 것이다. 달은 시험장이고, 화성이 목적이다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">그리고 이 모든 것을 뒷받침하는 목표가 있다: 궤도상 재급유. 달이나 화성으로 향하는 Starship은 여정에 필요한 추진제를 거의 비운 채로 발사되며, 지구 궤도에서 랑데부하는 일련의 급유선 Starship들에 의해 채워진다. 이 궤도 재급유 아키텍처는 대규모로 입증되지 않았으며, 프로그램이 반드시 실증해야 할 가장 어려운 단일 과제이다 — 전체 심우주 계획이 의존하는 핵심이다.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Outcome</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">2020년대 중반 현재, Starship은 끝이 아니라 한창 진행 중인 프로그램이다. 비행 기록은 있다: 단일 엔진 시험 기체가 2019년에 호핑하고 착륙했으며, 상단이 2021년에 높이 비행하여 온전히 착륙했고, 전체 스택은 2023년부터 반복적으로 발사되었으며, 2024년에는 Super Heavy 부스터가 발사탑의 팔에 의해 공중에서 포획되었다 — 진정으로 새로운 성취였다. 그러나 아직 사람을 태워 비행하거나, 정기적으로 페이로드를 실어 궤도에 도달하거나, 궤도 재급유를 실증하지는 않았다. 가장 어려운 이정표들은 여전히 앞에 있다.</p><!--]--><!--[1--><figure class="fig fig-full svelte-1qiz0dm"><img src="/orrery/images/fleet-galleries/starship/02.webp" alt="Starship 시험 비행. 프로그램의 방법론은 대규모에서의 가시적 실패이다: 비행하고, 부서지는 것을 보고, 배우고, 다시 비행한다 — Falcon을 저렴하게 만든 것과 같은 반복을, 역사상 가장 큰 로켓에 적용한 것이다." decoding="async" class="svelte-1qiz0dm"/> <figcaption class="svelte-1qiz0dm">Starship 시험 비행. 프로그램의 방법론은 대규모에서의 가시적 실패이다: 비행하고, 부서지는 것을 보고, 배우고, 다시 비행한다 — Falcon을 저렴하게 만든 것과 같은 반복을, 역사상 가장 큰 로켓에 적용한 것이다.</figcaption></figure><!--]--><!--[0--><p class="svelte-1qiz0dm">개발 방식은 의도적으로, 극적으로 공개적이다. 전통적인 프로그램들이 단 한 번의 실패를 피하기 위해 수년간 지상에서 시험하는 반면, Starship은 초기 프로토타입들이 폭발할 것을 예상하며 비행하고, 각 손실을 저렴하게 구입한 데이터로 취급한다. 이 접근법은 극적인 영상과 빠른 진전을 만들어냈다 — 그리고 또한 실제적인 마찰도 낳았는데, 발사장 주변의 환경 영향, 잔해, 그리고 빠른 반복 방식이 궁극적으로 인간을 태울 운송 수단에 적절한지에 대한 것이다.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">The story</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">Starship은 Falcon 9의 방법론을 논리적 극한까지 확장한 것이다. 수십 번의 추락을 통해 부스터 착륙을 배운 회사가 이제 같은 방식으로 완전 재사용 가능한 초대형 로켓 비행을 배우고 있다 — 프로토타입을 빠르게 제작하고, 완벽하기 전에 비행시키며, 어떤 전통적인 프로그램도 시도하지 않는 주기로 개선한다. 이 틀에서 폭발은 좌절이 아니다. 정보의 대가이며, 그 대가를 공개적으로 지불하려는 의지가 전체 경쟁 우위이다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">또한 이것은 우주비행에서 가장 야심찬 단일 기계이자, 가장 불확실한 것이다. 어느 것도 보장되지 않는다: 궤도 재급유는 대규모로 수행된 적이 없고, 열차폐 상단의 신속한 재사용은 입증되지 않았으며, 시험 기체 착륙에서 승무원을 안전하게 다른 행성으로 비행시키는 것으로의 도약은 막대하다. Starship은 달과 화성으로의 일정을 극적으로 압축할 수도 있고, 예상보다 어렵다는 것을 입증하는 데 10년을 소비할 수도 있다. 두 결과 모두 가능하며, 프로그램은 가장 어려운 부분들이 여전히 입증되지 않았음을 솔직히 인정한다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">공학 아래에는 목적에 대한 내기가 있다. Apollo는 경주에서 이기기 위해 달에 갔다가 멈췄는데, 목표가 도착이었지 머무는 것이 아니었기 때문이다. Starship은 정반대의 전제 위에 만들어졌다 — 요점은 깃발을 꽂는 것이 아니라 지구 밖에 영구적인 무언가를 건설하기에 충분한 질량을, 충분히 자주 이동하는 것이라는 전제다. 성공 여부와 관계없이, 이것은 다른 이유를 대표한다: 국가의 우월성을 증명하기 위해서가 아니라, 우주에서 인류의 존재를 지속될 만큼 충분히 크게 만들기 위해서.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What it gave back</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">Starship의 유산은 여전히 쓰이고 있지만, 그 영향은 이미 현실이다. 완전 재사용성과 궤도 재급유를 미래의 당연한 아키텍처로 만듦으로써, 진지한 심우주 프로그램이 어떤 모습이어야 하는지에 대한 기대를 재설정했다 — 그리고 Artemis 달 착륙선으로의 선정은 미국의 달 귀환을 이 운송 수단의 작동 여부와 직접 연결시켰다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">성공한다면, 유산은 심우주 접근성의 단계적 변화이다: 수백 톤 단위로 측정되는 저렴하고 고빈도의 발사 능력, 달 기지와 화성 임무를 단지 상상 가능한 것이 아니라 물류적으로 가능하게 만들기에 충분한 것이다. 어려움을 겪는다면, 유산은 여전히 비행-실패-수정 방법론이 얼마나 멀리까지 밀어붙여질 수 있는지 — 그리고 어디서 한계를 만나는지에 대한 실증이다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">어느 쪽이든, Starship은 이미 대화를 바꿨다. 유인 우주비행에서의 질문은 더 이상 재사용성이 작동하는지가 아니다 — Falcon이 그것을 해결했다 — 그것이 얼마나 멀리 확장되는지, 그리고 지구 너머로 사람들을 운송할 수 있는지이다. Starship은 그 답이 '끝까지'라는 것에 누군가가 걸었던 가장 큰 내기이다.</p><!--]--><!--]--></section><section class="spine svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">What we can learn</h2> <!--[--><!--[0--><p class="svelte-1qiz0dm">Starship이 시험하고 있는 교훈은 작은 로켓을 저렴하게 만든 방법론이 거대한 로켓도 저렴하게 만들 수 있는지이다. 가시적 실패를 통한 반복은 Falcon에서 효과가 있었다. Starship은 그것이 역사상 가장 크고 복잡한 운송 수단으로 확장되는지 — 그리고 실패가 훨씬 덜 용인되는 유인 우주비행의 경계를 넘을 수 있는지에 대한 실험이다. 답은 아직 나오지 않았다.</p><!--]--><!--[0--><p class="svelte-1qiz0dm">더 깊은 교훈은 목표로부터 역설계하는 것에 관한 것이다. Starship은 기존 로켓의 점진적 개선으로는 이치에 맞지 않는다. 진정한 목표가 다른 행성에 정착하는 것이고, 모든 이상한 선택 — 크기, 완전 재사용, 궤도 재급유 — 이 그로부터 따라 나오는 경우에만 의미가 있다. 화성에 도달하든 그렇지 않든, 이 운송 수단은 업계 대부분이 환상으로 여기는 최종 상태를 위해 공학적으로 설계한다는 것이 어떤 모습인지에 대한 교훈이다.</p><!--]--><!--]--></section><!--]--> <!--[-1--><!--]--> <section class="roster svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Missions</h2> <div class="roster-split svelte-1qiz0dm"><ol class="timeline svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm sel"><span class="t-year svelte-1qiz0dm"></span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[0--><!--[-1--><!--]--> <button type="button" class="t-name svelte-1qiz0dm">Starship Demo</button><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">the uncrewed demonstration flights on the road to orbit, the Moon, and Mars</span><!--]--></span></li><li class="svelte-1qiz0dm"><span class="t-year svelte-1qiz0dm"></span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[0--><!--[-1--><!--]--> <button type="button" class="t-name svelte-1qiz0dm">Starship Mars Crew</button><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">the intended end state — crewed Starships carrying people to the surface of Mars</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2019</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">Starhopper</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">a single-engine test article hops 150 metres and lands — the first flight of the program, proving the basic control</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2021</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">SN15 lands</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">after a run of spectacular explosions, a Starship upper stage flies high and lands intact — the fly-fail-fix method applied to the biggest rocket ever built</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2023</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">First integrated flight</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">the full stack — Super Heavy booster and Starship — launches together for the first time; it clears the pad and is lost minutes later, and the data feeds the next attempt</span><!--]--></span></li><li class="svelte-1qiz0dm context"><span class="t-year svelte-1qiz0dm">2024</span> <span class="t-dot svelte-1qiz0dm"></span> <span class="t-body"><!--[-1--><span class="t-name t-ctx svelte-1qiz0dm">Booster catch</span><!--]--> <!--[0--><span class="t-note svelte-1qiz0dm">the Super Heavy booster flies back and is caught out of the air by the launch tower's arms — a landing method no one had ever attempted at this scale</span><!--]--></span></li><!--]--></ol> <aside class="detail svelte-1qiz0dm" aria-live="polite"><!--[0--><img class="d-hero svelte-1qiz0dm" src="/orrery/images/missions/starship-demo/01.webp" alt="" decoding="async"/> <p class="d-meta svelte-1qiz0dm">2026 · SpaceX · 무인 화성 실증 · 계획</p> <h3 class="d-name svelte-1qiz0dm">스타십 데모</h3> <p class="d-blurb svelte-1qiz0dm">화성 착륙을 시도하는 최초 완전 재사용 발사 시스템</p> <a class="d-open svelte-1qiz0dm" href="/orrery/missions?id=starship-demo">Open the full mission →</a><!--]--></aside></div> <h2 class="svelte-1qiz0dm">Hardware</h2> <ul class="hardware svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="/orrery/fleet?id=starship" class="svelte-1qiz0dm">Starship</a> <!--[0--><span class="role svelte-1qiz0dm">fully-reusable launch system</span><!--]--></li><!--]--></ul></section> <!--[0--><section class="see-also svelte-1qiz0dm"><h2>Go deeper in Orrery</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="/orrery/fleet?focus=starship" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">fleet</span>Fleet — the Starship launch system →</a></li><li class="svelte-1qiz0dm"><a href="/orrery/programs/spacex" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">program</span>SpaceX — the reusability Starship is built on →</a></li><li class="svelte-1qiz0dm"><a href="/orrery/mars" class="svelte-1qiz0dm"><span class="k svelte-1qiz0dm">body</span>Mars — the destination →</a></li><!--]--></ul></section><!--]--> <!--[0--><section class="related svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Related programs</h2> <p><!--[--><a class="rel svelte-1qiz0dm" href="/orrery/programs/spacex">Spacex</a><a class="rel svelte-1qiz0dm" href="/orrery/programs/artemis">Artemis</a><!--]--></p></section><!--]--> <section class="sources svelte-1qiz0dm"><h2 class="svelte-1qiz0dm">Sources</h2> <ul class="svelte-1qiz0dm"><!--[--><li class="svelte-1qiz0dm"><a href="https://en.wikipedia.org/wiki/SpaceX_Starship" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">SpaceX Starship — Wikipedia ↗</a></li><li class="svelte-1qiz0dm"><a href="https://www.spacex.com/vehicles/starship/" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Starship — SpaceX ↗</a></li><li class="svelte-1qiz0dm"><a href="https://www.nasa.gov/humans-in-space/human-landing-system/" target="_blank" rel="noopener noreferrer" class="svelte-1qiz0dm">Human Landing System — NASA ↗</a></li><!--]--></ul></section></article><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="사이트 바닥글"><nav class="footer-menu svelte-12qhfyh" aria-label="바닥글 링크"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">회사연혁</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">장바구니</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">판권</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">관련 기사</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">정보</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="정보"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">이름 *</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">읽기</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="빌드 버전 + 배포 날짜 (GitHub의 CHANGELOG 열기): v0.8-wip · 2026-07-12" hreflang="en">v0.8-wip</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1qh44u3 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1qh44u3.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.C5ORdgaR.js"),
+							import("/orrery/_app/immutable/entry/app.CoGfru2D.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 29],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "id": "mir",
+  "kind": "station",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos", "NASA"],
+  "country": "USSR / Russia",
+  "start_year": 1986,
+  "end_year": 2001,
+  "status": "COMPLETED",
+  "epoch": "shuttle-and-mir",
+  "hero": "fleet/mir/01",
+  "roster": [
+    { "linked_id": "mir", "ref": "fleet", "role": "station", "year": 1986 },
+    { "name": "Modular assembly", "year": 1986, "note": "built up in orbit over a decade — the Core module (1986), then Kvant, Kvant-2, Kristall, Spektr and Priroda — the first station assembled from separately-launched modules" },
+    { "name": "Polyakov — 437 days", "year": 1994, "note": "Valeri Polyakov's single stay of 437 days aboard Mir remains the longest continuous human spaceflight ever, proving a crew could survive a Mars-duration mission" },
+    { "name": "Shuttle-Mir", "year": 1995, "note": "US Space Shuttles docked with Mir and American astronauts lived aboard (1995-1998) — the Cold-War rivals' first joint station operations, and the direct rehearsal for the ISS" },
+    { "name": "The 1997 crises", "year": 1997, "note": "an onboard fire and then a Progress freighter collision that punctured the Spektr module and depressurised part of the station — the worst collision a crew has survived in orbit" }
+  ],
+  "related_programs": ["salyut", "soyuz", "space-shuttle", "iss"],
+  "see_also": [
+    { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Fleet — Mir space station", "href": "/fleet?focus=mir", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Mir — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mir", "t": "intro" },
+    { "l": "Shuttle-Mir Program — NASA", "u": "https://www.nasa.gov/history/shuttle-mir/", "t": "core" },
+    { "l": "RussianSpaceWeb — Mir", "u": "https://www.russianspaceweb.com/mir.html", "t": "deep" }
+  ]
+}

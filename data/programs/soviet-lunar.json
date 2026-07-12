@@ -1,0 +1,30 @@
+{
+  "id": "soviet-lunar",
+  "kind": "crewed-campaign",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR",
+  "start_year": 1964,
+  "end_year": 1974,
+  "status": "CANCELLED",
+  "epoch": "lunar-era",
+  "hero": "fleet/n1/01",
+  "roster": [
+    { "linked_id": "n1", "ref": "fleet", "role": "launcher" },
+    { "name": "Zond 5", "year": 1968, "note": "first spacecraft to circle the Moon and return safely to Earth — its two tortoises were the first living creatures to travel to the Moon's vicinity and back, three months before Apollo 8" },
+    { "name": "N1 — four launch failures", "year": 1969, "note": "every one of the four N1 test launches (1969-1972) failed; the second, in July 1969, fell back onto the pad in one of the largest non-nuclear explosions ever recorded" },
+    { "name": "LK lunar lander", "year": 1970, "note": "the single-cosmonaut lander — half the mass of Apollo's LM — flight-tested uncrewed in Earth orbit but never flown to the Moon" },
+    { "name": "L3 complex", "year": 1972, "note": "the full N1-L3 lunar stack: one N1 launch, a two-cosmonaut Soyuz 7K-LOK in lunar orbit, a single cosmonaut to the surface in the LK" }
+  ],
+  "related_programs": ["soyuz", "apollo", "voskhod"],
+  "see_also": [
+    { "label": "The Moon — surface, landing sites & exploration", "href": "/moon", "kind": "body" },
+    { "label": "Fleet — N1 super-heavy launcher", "href": "/fleet?focus=n1", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "N1 (rocket) — Wikipedia", "u": "https://en.wikipedia.org/wiki/N1_(rocket)", "t": "intro" },
+    { "l": "Soviet crewed lunar programs — Wikipedia", "u": "https://en.wikipedia.org/wiki/Soviet_crewed_lunar_programs", "t": "core" },
+    { "l": "Zond program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Zond_program", "t": "core" },
+    { "l": "RussianSpaceWeb — N1 Moon rocket", "u": "https://www.russianspaceweb.com/n1.html", "t": "deep" }
+  ]
+}

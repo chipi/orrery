@@ -1,0 +1,89 @@
+{
+  "id": "starship",
+  "kind": "crewed-campaign",
+  "agency": "SpaceX",
+  "agencies": [
+    "SpaceX"
+  ],
+  "country": "USA",
+  "start_year": 2019,
+  "status": "ACTIVE",
+  "epoch": "mars-era",
+  "hero": "fleet/starship/01",
+  "roster": [
+    {
+      "linked_id": "starship",
+      "ref": "fleet",
+      "role": "fully-reusable launch system",
+      "year": 2023
+    },
+    {
+      "name": "Starhopper",
+      "year": 2019,
+      "note": "a single-engine test article hops 150 metres and lands — the first flight of the program, proving the basic control"
+    },
+    {
+      "name": "SN15 lands",
+      "year": 2021,
+      "note": "after a run of spectacular explosions, a Starship upper stage flies high and lands intact — the fly-fail-fix method applied to the biggest rocket ever built"
+    },
+    {
+      "name": "First integrated flight",
+      "year": 2023,
+      "note": "the full stack — Super Heavy booster and Starship — launches together for the first time; it clears the pad and is lost minutes later, and the data feeds the next attempt"
+    },
+    {
+      "name": "Booster catch",
+      "year": 2024,
+      "note": "the Super Heavy booster flies back and is caught out of the air by the launch tower's arms — a landing method no one had ever attempted at this scale"
+    },
+    {
+      "linked_id": "starship-demo",
+      "ref": "mission",
+      "note": "the uncrewed demonstration flights on the road to orbit, the Moon, and Mars"
+    },
+    {
+      "linked_id": "starship-mars-crew",
+      "ref": "mission",
+      "note": "the intended end state — crewed Starships carrying people to the surface of Mars"
+    }
+  ],
+  "related_programs": [
+    "spacex",
+    "artemis"
+  ],
+  "see_also": [
+    {
+      "label": "Fleet — the Starship launch system",
+      "href": "/fleet?focus=starship",
+      "kind": "fleet"
+    },
+    {
+      "label": "SpaceX — the reusability Starship is built on",
+      "href": "/programs/spacex",
+      "kind": "program"
+    },
+    {
+      "label": "Mars — the destination",
+      "href": "/mars",
+      "kind": "body"
+    }
+  ],
+  "links": [
+    {
+      "l": "SpaceX Starship — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+      "t": "intro"
+    },
+    {
+      "l": "Starship — SpaceX",
+      "u": "https://www.spacex.com/vehicles/starship/",
+      "t": "core"
+    },
+    {
+      "l": "Human Landing System — NASA",
+      "u": "https://www.nasa.gov/humans-in-space/human-landing-system/",
+      "t": "deep"
+    }
+  ]
+}

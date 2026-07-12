@@ -1,0 +1,32 @@
+{
+  "id": "salyut",
+  "kind": "station",
+  "agency": "Roscosmos",
+  "agencies": ["Roscosmos"],
+  "country": "USSR",
+  "start_year": 1971,
+  "end_year": 1986,
+  "status": "COMPLETED",
+  "epoch": "first-stations",
+  "hero": "fleet/salyut-1/01",
+  "roster": [
+    { "linked_id": "salyut-1", "ref": "fleet", "role": "station", "year": 1971 },
+    { "linked_id": "soyuz-11", "ref": "mission", "year": 1971 },
+    { "linked_id": "salyut-2", "ref": "fleet", "role": "station", "year": 1973 },
+    { "linked_id": "salyut-3", "ref": "fleet", "role": "station", "year": 1974 },
+    { "linked_id": "salyut-4", "ref": "fleet", "role": "station", "year": 1974 },
+    { "linked_id": "salyut-5", "ref": "fleet", "role": "station", "year": 1976 },
+    { "linked_id": "salyut-6", "ref": "fleet", "role": "station", "year": 1977 },
+    { "linked_id": "salyut-7", "ref": "fleet", "role": "station", "year": 1982 }
+  ],
+  "related_programs": ["soyuz", "skylab", "mir"],
+  "see_also": [
+    { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" },
+    { "label": "Fleet — Salyut stations", "href": "/fleet?focus=salyut-6", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Salyut programme — Wikipedia", "u": "https://en.wikipedia.org/wiki/Salyut_programme", "t": "intro" },
+    { "l": "Almaz military stations — Wikipedia", "u": "https://en.wikipedia.org/wiki/Almaz", "t": "core" },
+    { "l": "RussianSpaceWeb — Salyut & DOS stations", "u": "https://www.russianspaceweb.com/salyut.html", "t": "deep" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "change",
+  "kind": "robotic-campaign",
+  "agency": "CNSA",
+  "agencies": ["CNSA"],
+  "country": "China",
+  "start_year": 2007,
+  "status": "ACTIVE",
+  "epoch": "lunar-return",
+  "hero": "missions/change4/01",
+  "roster": [
+    { "linked_id": "change1", "ref": "mission", "year": 2007, "note": "China's first Moon mission — an orbiter that mapped the lunar surface and announced China as a lunar power" },
+    { "linked_id": "change3", "ref": "mission", "year": 2013, "note": "China's first soft landing on the Moon, carrying the Yutu rover — the first spacecraft to land there since the 1970s" },
+    { "linked_id": "change4", "ref": "mission", "year": 2019, "note": "the first spacecraft ever to land on the far side of the Moon — a place that cannot see Earth, reached using the Queqiao relay satellite" },
+    { "linked_id": "change5", "ref": "mission", "year": 2020, "note": "China's first lunar sample return — the first fresh Moon rocks brought to Earth by anyone since 1976" },
+    { "linked_id": "change6", "ref": "mission", "year": 2024, "note": "the first sample return from the far side of the Moon — material no one had ever held before" },
+    { "linked_id": "yutu-2", "ref": "fleet", "role": "far-side rover" },
+    { "name": "Queqiao relay", "year": 2018, "note": "a satellite placed beyond the Moon to relay signals from the far side, which never faces Earth — the enabling trick behind Chang'e-4 and -6" },
+    { "name": "Crewed landing", "year": 2030, "note": "China's stated goal of landing astronauts on the Moon before 2030, using a new deep-space crew capsule and lander" },
+    { "name": "ILRS", "year": 2035, "note": "the International Lunar Research Station — China's planned robotic-then-crewed base at the lunar south pole, built with international partners as an alternative to Artemis" }
+  ],
+  "related_programs": ["shenzhou", "artemis"],
+  "see_also": [
+    { "label": "Moon — the Chang'e landing sites", "href": "/moon", "kind": "body" },
+    { "label": "Fleet — the Yutu rovers and Chang'e landers", "href": "/fleet?focus=yutu-2", "kind": "fleet" },
+    { "label": "Artemis — the parallel race back to the Moon", "href": "/programs/artemis", "kind": "program" }
+  ],
+  "links": [
+    { "l": "Chinese Lunar Exploration Program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chinese_Lunar_Exploration_Program", "t": "intro" },
+    { "l": "China National Space Administration", "u": "https://www.cnsa.gov.cn/english/", "t": "core" },
+    { "l": "Chang'e programme — ESA overview", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration", "t": "deep" }
+  ]
+}

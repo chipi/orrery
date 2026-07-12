@@ -1,0 +1,92 @@
+{
+  "name": "Artemis",
+  "tagline": "O retorno à Lua — desta vez para ficar, e desta vez com o mundo, não para vencê-lo.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Doze pessoas caminharam na Lua entre 1969 e 1972, e então ninguém mais o fez por mais de cinquenta anos. Apollo foi, fincou suas bandeiras, coletou suas rochas e parou — porque havia sido construído para vencer uma corrida, e uma vez vencida a corrida não havia razão para continuar pagando por ela. Artemis é a tentativa da NASA de voltar e, desta vez, não parar. Batizado em homenagem à irmã gêmea de Apollo, foi projetado em torno de uma premissa diferente: não uma corrida para chegar, mas a construção lenta de um ponto de apoio humano permanente na Lua."
+    },
+    {
+      "type": "prose",
+      "md": "A outra diferença é quem vai. Apollo foi um projeto nacional, uma demonstração da superioridade americana sobre a União Soviética, operado inteiramente por astronautas americanos em equipamentos americanos. Artemis é deliberadamente internacional e deliberadamente comercial — a Europa constrói o módulo de serviço que alimenta a Orion, Japão e Canadá contribuem para o Gateway lunar, SpaceX e outras constroem os módulos de pouso, e as tripulações incluirão astronautas de nações parceiras. Onde Apollo foi uma corrida, Artemis é uma coalizão."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo principal é um pouso tripulado perto do polo sul lunar — uma região que Apollo nunca visitou, escolhida porque crateras permanentemente sombreadas ali contêm gelo de água. A água é o prêmio: dividida em hidrogênio e oxigênio, torna-se propelente de foguete e ar respirável, e uma Lua que pode fornecer sua própria água é uma Lua na qual você pode permanecer, e operar a partir dela, em vez de meramente visitar."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/orion/01"
+      },
+      "caption": "Orion — a espaçonave tripulada, lançada no foguete gigante SLS. Seu módulo de serviço, que fornece energia e propulsão, é construído pela ESA na Europa: o veículo que leva astronautas americanos à Lua literalmente não pode voar sem sua metade internacional.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo mais profundo é permanência e um ponto de partida. Artemis visa construir o Gateway — uma pequena estação em órbita lunar — e eventualmente infraestrutura de superfície, transformando a Lua de um destino em uma base. E é explicitamente apresentado como um ensaio para Marte: o lugar para aprender como viver e trabalhar em outro mundo, perto o suficiente da Terra para que os erros sejam sobrevivíveis, antes de tentar a mesma coisa a meses de distância."
+    },
+    {
+      "type": "prose",
+      "md": "Há também um objetivo que ninguém declara mas todos entendem: chegar lá antes da China. A China tem seus próprios planos lunares tripulados para por volta de 2030, e Artemis é, entre outras coisas, uma corrida para estabelecer presença, parceiros e normas no polo sul lunar primeiro. O enquadramento de coalizão é genuíno — e também é como os Estados Unidos pretendem liderar o retorno em vez de segui-lo."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Artemis está em andamento mas ainda não na superfície da Lua. Artemis I voou em 2022 — uma Orion não tripulada fez um loop ao redor da Lua e retornou, provando o foguete SLS e a espaçonave em seu primeiro voo. O sobrevoo tripulado (Artemis II) e o pouso (Artemis III) seguem, embora ambos tenham sido adiados repetidamente enquanto o enorme programa de múltiplos contratados trabalha nas partes mais difíceis: o escudo térmico, o módulo de pouso Starship, os novos trajes espaciais e o reabastecimento orbital do qual o módulo de pouso depende."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/sls-block-1/01"
+      },
+      "caption": "O Space Launch System — o foguete mais poderoso que a NASA voou desde o Saturn V, e, ao contrário da máquina descartável do Apollo, o lançador para uma campanha destinada a continuar em vez de um punhado de voos.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "O programa também é um estudo sobre como os grandes projetos espaciais são feitos de forma diferente agora. Apollo era uma única agência dirigindo contratados em direção a um prazo; Artemis é uma rede de parceiros internacionais e provedores comerciais, com a NASA comprando um módulo de pouso lunar como um serviço da SpaceX em vez de possuí-lo. Essa estrutura distribui custo e risco e constrói uma coalizão durável — e também significa que o cronograma depende de muitas organizações, incluindo uma Starship que primeiro precisa provar a si mesma, então a linha do tempo é genuinamente incerta de uma forma que a corrida de força bruta do Apollo não era."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Artemis é a resposta a uma questão que Apollo deixou em aberto: para que serve a Lua, se não for para vencer uma corrida? Apollo provou que humanos poderiam ir e então revelou que ir, por si só, não era uma razão para continuar indo — o motor político que o financiou desligou no momento em que os soviéticos foram vencidos. Artemis é construído para sobreviver a esse problema tendo um propósito além da chegada: água, infraestrutura, uma base, um caminho para Marte, e uma coalizão de parceiros com suas próprias razões para sustentá-lo. Se esse propósito é durável o suficiente para sobreviver às mudanças de administração é a questão aberta que todo o programa está realmente testando."
+    },
+    {
+      "type": "prose",
+      "md": "É também uma inversão deliberada da política do Apollo. A força do Apollo era a vontade nacional singular; sua fraqueza era que a mesma vontade podia evaporar. Artemis troca parte desse foco por resiliência — espalhando o programa entre nações e empresas para que nenhuma decisão orçamentária única possa cancelá-lo completamente, e para que parceiros que investiram seu próprio hardware e astronautas tenham razões para mantê-lo vivo. A coalizão é mais lenta e mais complexa que uma corrida, e esse é o ponto: é construída para perdurar, não para correr."
+    },
+    {
+      "type": "prose",
+      "md": "E herda a linhagem de hardware do Apollo mesmo ao romper com sua política. O foguete SLS descende dos motores e aceleradores do Space Shuttle; Orion é o herdeiro espiritual do módulo de comando Apollo; todo o programa carrega o DNA dos programas neste atlas que vieram antes dele. Artemis não é um novo começo mas uma continuação — a capacidade acumulada de sessenta anos de voos espaciais apontada, mais uma vez, para a Lua."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O legado de Artemis ainda está à frente, mas sua estrutura já é um modelo. Ao construir o retorno à Lua como uma coalizão internacional com módulos de pouso comerciais em vez de uma corrida de nação única, definiu como grandes programas de exploração são agora montados — custo e risco compartilhados, capacidade comprada como um serviço, parceiros vinculados por suas próprias contribuições."
+    },
+    {
+      "type": "prose",
+      "md": "Se for bem-sucedido, o legado é uma presença humana permanente além da órbita baixa da Terra pela primeira vez — uma base no polo sul lunar, uma estação em órbita lunar, e a experiência operacional de viver de outro mundo que qualquer missão a Marte exigirá. A Lua torna-se um lugar onde as pessoas trabalham em vez de um lugar que doze pessoas uma vez visitaram."
+    },
+    {
+      "type": "prose",
+      "md": "E é o quadro para uma nova era de atividade lunar. Artemis, o programa paralelo da China, e uma frota de módulos de pouso robóticos de muitas nações estão convergindo para a mesma pequena região da Lua ao mesmo tempo — fazendo dos anos 2020 a década mais movimentada na Lua desde Apollo, e o polo sul o território mais disputado do sistema solar."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição sobre a qual Artemis é construído é aquela que Apollo ensinou da forma difícil: chegar não é um propósito. Um programa que existe apenas para alcançar um destino termina no momento em que chega, porque a razão para financiá-lo chega com ele. Todo o design de Artemis — água, infraestrutura, parceiros, um caminho para Marte — é uma tentativa de dar à Lua uma razão para continuar que sobreviva à empolgação de chegar lá."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é sobre resiliência versus foco. A vontade nacional singular do Apollo era seu poder e sua fragilidade; Artemis troca foco por uma coalizão que nenhum orçamento único pode facilmente matar. É mais lento, mais complexo e mais difícil de agendar — e está apostando que resistência, não velocidade, é o que um retorno 'para ficar' realmente requer. Se essa aposta compensa é a história que a próxima década contará."
+    }
+  ]
+}

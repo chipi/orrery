@@ -337,5 +337,25 @@
     "start_year": 2023,
     "end_year": null,
     "hero": "fleet/kuiper/01"
+  },
+  {
+    "id": "artemis",
+    "name": "Artemis",
+    "tagline": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
+    "kind": "crewed-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA",
+      "ESA",
+      "JAXA",
+      "CSA",
+      "SpaceX"
+    ],
+    "country": "USA + partners",
+    "epoch": "lunar-return",
+    "status": "ACTIVE",
+    "start_year": 2019,
+    "end_year": null,
+    "hero": "fleet/orion/01"
   }
 ]

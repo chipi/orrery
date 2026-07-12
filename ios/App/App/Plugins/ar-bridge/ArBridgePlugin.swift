@@ -10,7 +10,20 @@ import ARKit
 import Capacitor
 
 @objc(ArBridgePlugin)
-public class ArBridgePlugin: CAPPlugin, ArSessionManagerDelegate {
+public class ArBridgePlugin: CAPPlugin, CAPBridgedPlugin, ArSessionManagerDelegate {
+    // Capacitor 6+ registers plugins via this Swift conformance (the old ObjC
+    // CAP_PLUGIN macro is ignored), so without it the plugin is invisible and
+    // every JS→native call hangs forever.
+    public let identifier = "ArBridgePlugin"
+    public let jsName = "ArBridge"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "requestSession", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "endSession", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "hitTest", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "addAnchor", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "removeAnchor", returnType: CAPPluginReturnPromise),
+    ]
+
     private var manager: ArSessionManager?
     private let anchors = ArAnchorTracker()
 

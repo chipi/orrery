@@ -1639,6 +1639,9 @@
     const tex4kAllowed = quality.tier !== 'minimal' && quality.tier !== 'low' && !__MOBILE__;
     const renderer = createSceneRenderer(container, {
       pixelRatioCap: quality.pixelRatioCap,
+      // Pure black surrounding space (matches /earth /moon /mars) rather than the
+      // default dark-indigo clear (0x04040c).
+      clearColor: 0x000000,
     });
 
     // Per-frame scratch vectors for the velocity-arrow overlay — reused

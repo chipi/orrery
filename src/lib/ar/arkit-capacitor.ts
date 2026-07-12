@@ -42,16 +42,25 @@ export function createArkitBackend(): ArBackend {
   }
 
   async function startSession(): Promise<void> {
-    const frameSub = await ArBridge.addListener('frame', (data) => {
-      if (data.pose) lastPose = data.pose;
-      emit('frame', data.pose);
-    });
-    const startSub = await ArBridge.addListener('session-started', () => emit('session-started'));
-    const endSub = await ArBridge.addListener('session-ended', () => {
-      lastPose = IDENTITY_POSE;
-      emit('session-ended');
-    });
-    nativeRemovers.push(frameSub.remove, startSub.remove, endSub.remove);
+    // Register listeners WITHOUT awaiting: Capacitor adds the JS callback
+    // synchronously, but awaiting a custom plugin's addListener *handle* can
+    // never resolve (bridge quirk) and would deadlock start. Collect the remover
+    // when/if the handle promise settles.
+    const track = (p: Promise<{ remove: () => Promise<void> }>) =>
+      void p.then((sub) => nativeRemovers.push(sub.remove)).catch(() => {});
+    track(
+      ArBridge.addListener('frame', (data) => {
+        if (data.pose) lastPose = data.pose;
+        emit('frame', data.pose);
+      }),
+    );
+    track(ArBridge.addListener('session-started', () => emit('session-started')));
+    track(
+      ArBridge.addListener('session-ended', () => {
+        lastPose = IDENTITY_POSE;
+        emit('session-ended');
+      }),
+    );
     await ArBridge.requestSession();
   }
 

@@ -10,6 +10,14 @@ import WebKit
 // var(--safe-area-inset-top, env(safe-area-inset-top)) — real inset under
 // Capacitor, env() fallback in the browser. Wired via Main.storyboard.
 class SafeAreaViewController: CAPBridgeViewController {
+    // App-local plugins (files in the App target, not an npm package) are NOT
+    // auto-discovered in Capacitor 6+ — CAPBridgedPlugin conformance alone isn't
+    // enough. Register ArBridge explicitly here so its JS→native calls resolve
+    // instead of hanging forever (#206 / RFC-021 §4).
+    override open func capacitorDidLoad() {
+        bridge?.registerPluginInstance(ArBridgePlugin())
+    }
+
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         applySafeAreaInsets()

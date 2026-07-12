@@ -41,7 +41,7 @@
 
 {#if state === 'enabled'}
   <button type="button" class="enter-ar" aria-label={m.ar_enter_aria()} onclick={onEnter}>
-    {m.ar_enter()}
+    AR
   </button>
 {:else if state === 'ios-fallback'}
   <a
@@ -51,23 +51,23 @@
     rel="noopener noreferrer external"
     title={m.ar_ios_fallback()}
   >
-    {m.ar_enter()}
+    AR
   </a>
 {/if}
 
 <style>
-  /* Chip next to the 2D toggle — matches the .toggle sizing (44px, Space Mono
-     12px, radius 4) with a teal AR accent so it reads as the AR affordance. */
+  /* Matches the sibling 2D/3D .toggle exactly (44px, dark glass, Space Mono
+     12px, radius 4, blur) so it reads as one more button in the row — only the
+     border + label colour carry a teal AR accent. */
   .enter-ar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     min-width: 44px;
     min-height: 44px;
     padding: 0 10px;
-    background: rgba(78, 205, 196, 0.18);
-    border: 1px solid rgba(78, 205, 196, 0.6);
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.55);
     border-radius: 4px;
     color: #4ecdc4;
     font-family: 'Space Mono', monospace;
@@ -75,10 +75,14 @@
     letter-spacing: 0.06em;
     text-decoration: none;
     cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms;
   }
   .enter-ar:hover,
   .enter-ar:focus-visible {
-    background: rgba(78, 205, 196, 0.28);
+    background: rgba(78, 205, 196, 0.14);
     outline: none;
   }
   /* iOS Safari: greyed, reads as "not here — get the app". */

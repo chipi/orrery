@@ -116,6 +116,9 @@ export interface ArSceneOptions {
    *  player by launch-ar. Omitted (e.g. in tests) → narration simply doesn't
    *  auto-play; placement/spatial-audio/haptics are unaffected. */
   playNarration?: (episodeId: string) => void;
+  /** Called once the user taps a surface and the scene anchors — lets the caller
+   *  dismiss the "tap to place" instruction. */
+  onPlaced?: () => void;
 }
 
 // Soft, quiet per-body voices for AR spatial sonification (#209, RFC-021 §6).
@@ -131,19 +134,39 @@ export function createArScene(
 ): ArSceneHandle {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.xr.enabled = true;
+  // Fully transparent clear so the native ARKit camera (behind the WebView)
+  // shows through the empty space of the scene — not an opaque black backdrop.
+  renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(70, 1, 0.01, 20);
+
+  // Match the renderer + camera to the real (portrait) canvas. Without this the
+  // drawing buffer defaults to 300×150 and the camera keeps aspect 1, which
+  // horizontally compresses the scene on a phone — the planets pile up. Kept in
+  // sync on orientation change / resize.
+  function resize(): void {
+    const w = canvas.clientWidth || (typeof window !== 'undefined' ? window.innerWidth : 1);
+    const h = canvas.clientHeight || (typeof window !== 'undefined' ? window.innerHeight : 1);
+    if (typeof window !== 'undefined') {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
 
   // Star backdrop — 100 points, per the simplified budget.
   scene.add(starField(100));
 
   const root = new THREE.Group();
-  root.visible = false; // hidden until placed
+  root.visible = false; // shown as a floating preview on the first frame (below)
   root.add(buildArSceneContent(type));
   scene.add(root);
 
   let backend: ArBackend | null = null;
   let placed = false;
+  let previewShown = false;
   let disposed = false;
   let narrator: ArNarratorHandle | null = null;
   let disposeHeadphones: (() => void) | null = null;
@@ -190,6 +213,21 @@ export function createArScene(
     voices.length = 0;
   }
 
+  // Float the scene in front of the camera as a not-yet-anchored preview.
+  function showPreview(pose: { position: [number, number, number]; rotation: number[] }): void {
+    const q = new THREE.Quaternion(
+      pose.rotation[0],
+      pose.rotation[1],
+      pose.rotation[2],
+      pose.rotation[3],
+    );
+    const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(q);
+    root.position
+      .set(pose.position[0], pose.position[1], pose.position[2])
+      .addScaledVector(forward, 0.6);
+    root.visible = true;
+  }
+
   function place(hit: ArHit): void {
     root.position.set(...hit.worldPosition);
     root.visible = true;
@@ -201,6 +239,7 @@ export function createArScene(
     attachSpatialAudio();
     narrator = scheduleArNarration(type, (id) => opts.playNarration?.(id));
     offNarrationEnd = audioBus.on('ended', () => arHaptic('narrator-end'));
+    opts.onPlaced?.();
   }
 
   async function onTap(clientX: number, clientY: number): Promise<void> {
@@ -221,6 +260,7 @@ export function createArScene(
     await backend.startSession();
     disposeHeadphones = initHeadphoneDetection();
     canvas.addEventListener('pointerdown', tapHandler);
+    if (typeof window !== 'undefined') window.addEventListener('resize', resize);
     renderer.setAnimationLoop(() => {
       if (disposed || !backend) return;
       const pose = backend.getCameraPose();
@@ -229,6 +269,14 @@ export function createArScene(
       if (backend.name === 'arkit-capacitor') {
         camera.position.set(...pose.position);
         camera.quaternion.set(...pose.rotation);
+      }
+      // Immediately float the scene ~0.6 m in front of where the user is looking
+      // on the first frame, so entering AR shows the solar system straight away
+      // (like the flat view) instead of an empty camera feed. Tapping a surface
+      // then anchors it for real (place()). Runs once.
+      if (!placed && !previewShown) {
+        showPreview(pose);
+        previewShown = true;
       }
       // Move the Web Audio listener to the device once the scene is placed so
       // the spatial voices pan correctly as the user walks around.
@@ -243,6 +291,7 @@ export function createArScene(
     disposed = true;
     renderer.setAnimationLoop(null);
     canvas.removeEventListener('pointerdown', tapHandler);
+    if (typeof window !== 'undefined') window.removeEventListener('resize', resize);
     narrator?.cancel();
     narrator = null;
     offNarrationEnd?.();

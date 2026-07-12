@@ -5315,15 +5315,15 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if arType}
-        <EnterArButton onEnter={() => void launchArScene(arType)} />
-      {/if}
       {#if view === '3d'}
         <View3dControls
           onReset={() => resetCamera()}
           {autoSpin}
           onToggleSpin={() => (autoSpin = !autoSpin)}
         />
+      {/if}
+      {#if arType}
+        <EnterArButton onEnter={() => void launchArScene(arType)} />
       {/if}
       <!-- Hidden tour hook — lets the audio tour pull the camera back to
            the overview (e.g. after a deep zoom) without a visible button.
@@ -5434,9 +5434,6 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if arType}
-        <EnterArButton onEnter={() => void launchArScene(arType)} />
-      {/if}
       {#if view === '3d'}
         <button
           type="button"
@@ -5455,6 +5452,9 @@
         >
           {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
         </button>
+      {/if}
+      {#if arType}
+        <EnterArButton onEnter={() => void launchArScene(arType)} />
       {/if}
     </div>
     {#if !flatPatchActive}

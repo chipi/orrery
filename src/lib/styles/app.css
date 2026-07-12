@@ -175,6 +175,55 @@ html {
    Hides the global chrome (nav, footer, audio-overlay UI); the 3D scene,
    narration audio, and the ExhibitOverlay (QR + hidden exit) remain. Routes
    layer on their own HUD hiding by tagging elements [data-exhibit-hide]. */
+/* AR immersive mode (#150 / RFC-021). The native ARKit camera renders BEHIND the
+   transparent WebView; make the page + flat app content transparent so it shows
+   through, leaving only the .ar-canvas (3D over the camera) + the Exit-AR button. */
+html.ar-active,
+html.ar-active body {
+  background: transparent !important;
+}
+html.ar-active body > *:not(.ar-canvas):not(.ar-exit-btn) {
+  visibility: hidden !important;
+}
+.ar-exit-btn {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top, 12px));
+  right: 12px;
+  z-index: 9999;
+  min-height: 44px;
+  padding: 0 16px;
+  background: rgba(8, 10, 22, 0.75);
+  border: 1px solid rgba(78, 205, 196, 0.6);
+  border-radius: 8px;
+  color: #4ecdc4;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+/* Placement instruction — centred near the bottom, above the safe area. Removed
+   from the DOM once the scene is anchored (onPlaced). */
+.ar-hint {
+  position: fixed;
+  left: 50%;
+  bottom: max(28px, calc(env(safe-area-inset-bottom, 0px) + 28px));
+  transform: translateX(-50%);
+  z-index: 9999;
+  max-width: min(88vw, 360px);
+  padding: 10px 18px;
+  background: rgba(8, 10, 22, 0.75);
+  border: 1px solid rgba(78, 205, 196, 0.35);
+  border-radius: 22px;
+  color: #eaf6f5;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
 body.exhibit-mode {
   overflow: hidden;
   cursor: none;

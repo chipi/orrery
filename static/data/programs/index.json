@@ -256,5 +256,22 @@
     "start_year": 2011,
     "end_year": null,
     "hero": "fleet/tiangong/01"
+  },
+  {
+    "id": "shenzhou",
+    "name": "Shenzhou",
+    "tagline": "The capsule that made China the third nation to launch its own people — built slowly, tested exhaustively, and never once lost a crew.",
+    "kind": "crewed-campaign",
+    "agency": "CMSA",
+    "agencies": [
+      "CMSA",
+      "CNSA"
+    ],
+    "country": "China",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1999,
+    "end_year": null,
+    "hero": "fleet/shenzhou/01"
   }
 ]

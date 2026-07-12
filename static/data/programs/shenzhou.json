@@ -1,0 +1,33 @@
+{
+  "id": "shenzhou",
+  "kind": "crewed-campaign",
+  "agency": "CMSA",
+  "agencies": ["CMSA", "CNSA"],
+  "country": "China",
+  "start_year": 1999,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/shenzhou/01",
+  "roster": [
+    { "linked_id": "shenzhou", "ref": "fleet", "role": "crew spacecraft", "year": 2003 },
+    { "linked_id": "long-march-2f", "ref": "fleet", "role": "crew launcher" },
+    { "linked_id": "shenzhou-iva", "ref": "fleet", "role": "launch/entry suit" },
+    { "linked_id": "shenzhou-1", "ref": "mission", "year": 1999, "note": "first uncrewed test flight — the capsule flies and returns before anyone rides it" },
+    { "name": "Shenzhou 5", "year": 2003, "note": "Yang Liwei orbits Earth 14 times — the first Chinese astronaut in space, and China becomes the third nation to launch a human on its own rocket, 42 years after Gagarin" },
+    { "name": "Shenzhou 7", "year": 2008, "note": "Zhai Zhigang performs China's first spacewalk — the third country ever to conduct an EVA" },
+    { "name": "Shenzhou 9", "year": 2012, "note": "first crewed docking, with Tiangong-1; Liu Yang becomes the first Chinese woman in space" },
+    { "name": "Shenzhou 11", "year": 2016, "note": "a 33-day stay aboard Tiangong-2 — China's longest crewed mission to that point, proving month-scale habitation" },
+    { "name": "Shenzhou 12", "year": 2021, "note": "the first crew of the permanent Chinese Space Station; continuous occupation of the CSS begins" }
+  ],
+  "related_programs": ["tiangong", "soyuz", "iss"],
+  "see_also": [
+    { "label": "Fleet — the Shenzhou spacecraft", "href": "/fleet?focus=shenzhou", "kind": "fleet" },
+    { "label": "Tiangong — the station Shenzhou crews built and fly to", "href": "/programs/tiangong", "kind": "program" },
+    { "label": "Soyuz — the vehicle Shenzhou's layout descends from", "href": "/programs/soyuz", "kind": "program" }
+  ],
+  "links": [
+    { "l": "Shenzhou program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)", "t": "intro" },
+    { "l": "China Manned Space Agency", "u": "http://en.cmse.gov.cn/", "t": "core" },
+    { "l": "China's human spaceflight — ESA", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration", "t": "deep" }
+  ]
+}

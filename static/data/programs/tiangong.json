@@ -21,7 +21,7 @@
     { "name": "Tianhe core module", "year": 2021, "note": "the core of the permanent station reaches orbit; continuous crewed occupation of the Chinese Space Station begins that year" },
     { "name": "Station complete", "year": 2022, "note": "the Wentian and Mengtian laboratory modules join Tianhe — the T-shaped, three-module CSS is finished and permanently crewed" }
   ],
-  "related_programs": ["iss", "mir", "salyut"],
+  "related_programs": ["shenzhou", "iss", "mir", "salyut"],
   "see_also": [
     { "label": "Tiangong — the station in 3D", "href": "/tiangong", "kind": "body" },
     { "label": "Fleet — Shenzhou, Tianzhou & the Long March family", "href": "/fleet?focus=tiangong", "kind": "fleet" },

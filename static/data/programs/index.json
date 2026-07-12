@@ -421,5 +421,23 @@
     "start_year": 2013,
     "end_year": 2022,
     "hero": "fleet/mangalyaan/01"
+  },
+  {
+    "id": "great-observatories",
+    "name": "The Great Observatories",
+    "tagline": "NASA's plan to see the whole universe — four flagship telescopes, one for each kind of light, and the lineage of great space eyes that followed.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA",
+      "ESA",
+      "CSA"
+    ],
+    "country": "USA + partners",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1990,
+    "end_year": null,
+    "hero": "fleet/hubble/01"
   }
 ]

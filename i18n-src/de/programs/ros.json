@@ -1,0 +1,80 @@
+{
+  "name": "Russian Orbital Station",
+  "tagline": "Russlands geplante Rückkehr zu einer eigenen Station — das Verlassen der ISS-Partnerschaft, um wieder allein zu fliegen, wie einst mit Salyut und Mir.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Ein Vierteljahrhundert lang war Russlands bemannte Raumfahrt mit dem Westen verbunden. Seine Hälfte der International Space Station — direkt von Salyut und Mir abstammend — hielt den gesamten Außenposten am Leben, und neun Jahre lang waren russische Soyuz-Kapseln das einzige Transportmittel zur ISS für jedermann, ob Amerikaner oder Russe. Diese Partnerschaft, eines der dauerhaftesten Vermächtnisse des Endes des Kalten Krieges, geht nun zu Ende. Russland hat angekündigt, die ISS zu verlassen und eine eigene nationale Station zu bauen: die Russian Orbital Station."
+    },
+    {
+      "type": "prose",
+      "md": "Es ist, in gewisser Hinsicht, eine Rückkehr zum Ursprung. Vor der ISS flogen Russland und die Sowjetunion immer ihre eigenen Stationen — die Salyut-Serie und dann Mir, die erste modulare Station, ganz in eigener Regie. Die ROS ist ein Plan, zu dieser Unabhängigkeit zurückzukehren: eine russische Station, in einer russischen Umlaufbahn, besetzt mit russischen Kosmonauten, keinem Partner Rechenschaft schuldig. Der Schritt ist ebenso geopolitisch wie technisch, eine Folge des Zusammenbruchs der Kooperation zwischen Russland und dem Westen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Das vorrangige Ziel ist Unabhängigkeit — eine Station, die Russland vollständig kontrolliert und seine Abhängigkeit von einer Partnerschaft beendet, die politisch unhaltbar geworden ist. Die ROS ist für eine hochgeneigte, nahezu polare Umlaufbahn geplant, bewusst so gewählt, dass sie bei jeder Umkreisung über das gesamte russische Territorium verläuft, einschließlich der Arktis — eine Umlaufbahn, die die niedrigere Inklination der ISS nie erreicht, und eine, die zur Beobachtung der eigenen Landmasse Russlands geeignet ist."
+    },
+    {
+      "type": "prose",
+      "md": "Ein erklärtes Konstruktionsziel ist eine Station, die keine kontinuierliche Besatzung erfordert. Anstelle des permanent besetzten Modells von Mir und der ISS wird die ROS als periodisch besuchte Station konzipiert, wobei ein Großteil ihrer Arbeit zwischen den Besatzungen automatisiert abläuft — eine Antwort auf die Kosten dauerhafter Besetzung und die praktischen Gegebenheiten eines Programms mit weitaus geringerer Finanzierung, als sie das sowjetische Raumfahrtprogramm einst hatte."
+    },
+    {
+      "type": "prose",
+      "md": "Unter den technischen Zielen liegt ein strategisches: Russlands Status als unabhängige Macht in der bemannten Raumfahrt zu bewahren, wenn die ISS endet. Ohne eine eigene Station bliebe Russland mit einer Besatzungskapsel ohne Ziel — eine Raumfahrtnation ohne Ziel für ihre Menschen. Die ROS ist der Plan, Russland zu eigenen Bedingungen im Orbit zu halten, anstatt aus der bemannten Raumfahrt zu verschwinden, während sich seine Partnerschaft auflöst."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Das Ergebnis liegt vollständig in der Zukunft — die ROS ist vorerst eine Ankündigung und ein Satz von Plänen, keine Hardware im Orbit. Russland hat seine Absicht erklärt, sich später in diesem Jahrzehnt aus der ISS zurückzuziehen und gegen Ende der 2020er Jahre mit dem Start von ROS-Modulen zu beginnen, doch das Programm steht vor echten Fragen der Finanzierung, der Industriekapazität und des Zeitplans in einem Russland unter schweren Sanktionen und wirtschaftlicher Belastung. Ob die Station planmäßig gebaut wird, verspätet gebaut oder verkleinert wird, ist ernsthaft ungewiss."
+    },
+    {
+      "type": "prose",
+      "md": "Was sicher ist, ist die Richtung: Russland beabsichtigt, die ISS zu verlassen und allein zu fliegen. Die Partnerschaft, die den Kalten Krieg überdauerte, wird abgewickelt, und die ROS — in welcher Form auch immer sie letztlich Gestalt annimmt — ist das Vehikel für Russlands bemannte Raumfahrt nach der Partnerschaft. Sie steht für das Ende einer Ära der Zusammenarbeit und die Wiederbehauptung eines viel älteren russischen Modells der Eigenständigkeit im Orbit."
+    },
+    {
+      "type": "prose",
+      "md": "Das Risiko, das das Programm trägt, ist jenes, das jeder ambitionierte Stationsplan trägt, verschärft durch die Umstände: dass die Ankündigung dem Budget davonläuft. Russlands Raumfahrtprogramm hat sich seit sowjetischen Zeiten stark verkleinert, und der Bau einer neuen Station von Grund auf ist teuer und langsam. Die ROS mag fliegen, oder sie mag die Station werden, die Russland bauen wollte — ein Zeichen der Absicht, das die Realität nicht finanzieren konnte."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Die Geschichte der ROS ist die Abwicklung einer Partnerschaft, die einst Frieden symbolisierte. Die Vereinigung der amerikanischen und russischen Stationsprogramme zur ISS war eine der großen Gesten der postsowjetischen Welt — ehemalige Rivalen, die gemeinsam die größte Struktur im Orbit bauten und sie über zwanzig Jahre lang ununterbrochen besetzt hielten. Die ROS ist die Umkehrung dieser Geste: eine Entscheidung, getrieben durch einen Zusammenbruch der Beziehungen, sich wieder zu trennen und getrennte Wege zu fliegen."
+    },
+    {
+      "type": "prose",
+      "md": "Es ist auch eine Rückkehr zu einer tiefen russischen Tradition. Lange vor der ISS war Russland der Weltmeister der Raumstationen — Salyut bewies das Konzept, Mir perfektionierte das modulare Design, das die ISS selbst übernommen hat. Die ROS wird teilweise als Heimkehr zu diesem Erbe dargestellt: Russland fliegt wieder seine eigene Station, wie es immer tat, und stützt sich auf die längste und tiefste Erfahrung im Stationsbau aller Nationen."
+    },
+    {
+      "type": "prose",
+      "md": "Und sie steht unter dem Schatten von Einschränkungen. Das sowjetische Raumfahrtprogramm, das Mir baute, verfügte über Ressourcen, die das moderne russische Programm nicht hat, und die ROS muss unter Sanktionen gebaut werden, mit einer geschrumpften Industriebasis, mit einem Budget, das einen Bruchteil von NASAs ausmacht. Der Plan ist real und das Erbe ist echt — aber die Kluft zwischen Ambition und Mitteln ist die zentrale Spannung des Programms und die Sache, die darüber entscheiden wird, ob die ROS eine Station wird oder ein Plan bleibt."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Das Vermächtnis der ROS wird, wenn sie fliegt, die Fortsetzung Russlands als unabhängige Macht in der bemannten Raumfahrt in der Ära nach der ISS sein — eine Nation, die eine eigene Station behielt, anstatt aus der bemannten Raumfahrt zu verschwinden, als die Partnerschaft endete."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr symbolisches Vermächtnis ist bereits real: Sie markiert das formale Ende der ISS-Partnerschaft, einer der letzten großen Strukturen der Kooperation nach dem Kalten Krieg, und die Rückkehr der bemannten Raumfahrt zu einem stärker geteilten, stärker nationalen Muster — Russland, China und der Westen fliegen jeweils ihre eigenen Stationen, anstatt eine zu teilen."
+    },
+    {
+      "type": "prose",
+      "md": "Und sie ist ein Test, ob Russlands legendäres Stationserbe seine verminderten Mittel überleben kann. Die ROS wird zeigen, ob das Land, das Salyut und Mir baute, unter modernen Einschränkungen noch eine Station von Grund auf bauen kann — oder ob diese Fähigkeit, wie so vieles des sowjetischen Raumfahrterbes, den Ressourcen davongelaufen ist, sie aufrechtzuerhalten."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lehre der ROS ist, dass Partnerschaften im Weltraum so fragil sind wie die Politik, die sie untermauert. Die ISS-Kooperation überlebte zwei Jahrzehnte und sollte eine dauerhafte Brücke sein; sie endet, weil die Beziehung darunter zerbrach. Keine Menge an orbitaler Hardware kann den irdischen guten Willen überdauern, der sie möglich machte — ein ernüchternder Kontrapunkt zur Hoffnung, dass Raumfahrtkooperation über irdischen Konflikten schwebt."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lehre ist der Abstand zwischen der Ankündigung einer Station und dem Fliegen einer solchen. Die ROS hat Erbe, Absicht und eine klare strategische Begründung — und sie muss dennoch unter Sanktionen mit einem geschrumpften Budget gebaut werden. Ambition ist billig und Stationen sind teuer; das Programm ist eine Erinnerung daran, dass in der Raumfahrt der Plan der einfache Teil ist und der schwere Teil darin besteht, ihn zu bezahlen."
+    }
+  ]
+}

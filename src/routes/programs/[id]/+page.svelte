@@ -63,6 +63,7 @@
     if (!r.linked_id) return null;
     if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}`;
     if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}`;
+    if (r.ref === 'module') return `${base}/iss?module=${r.linked_id}`;
     return null;
   }
 
@@ -82,6 +83,12 @@
       .sort((a, b) => (a.year ?? 0) - (b.year ?? 0)),
   );
   let fleet = $derived(p.roster.filter((r) => r.ref === 'fleet'));
+  let modules = $derived(
+    p.roster
+      .filter((r) => r.ref === 'module')
+      .slice()
+      .sort((a, b) => (a.year ?? 0) - (b.year ?? 0)),
+  );
   let heroSrc = $derived(p.hero ? imgSrc({ reuse: p.hero }) : '');
 
   // Master-detail: selecting a timeline mission shows its summary in the
@@ -142,6 +149,31 @@
       {/each}
     </section>
   {/each}
+
+  {#if modules.length}
+    <section class="assembly">
+      <h2>Assembly — module by module</h2>
+      <ol class="timeline mod-timeline">
+        {#each modules as m, i (i)}
+          <li>
+            <span class="t-year">{m.year ?? ''}</span>
+            <span class="t-dot"></span>
+            <span class="t-body">
+              {#if href(m)}
+                <a class="t-name t-mod" href={href(m)}>{m.name ?? pretty(m.linked_id ?? '')}</a>
+              {:else}
+                <span class="t-name">{m.name ?? pretty(m.linked_id ?? '')}</span>
+              {/if}
+              {#if m.note}<span class="t-note">{m.note}</span>{/if}
+            </span>
+          </li>
+        {/each}
+      </ol>
+      <p class="assembly-foot">
+        <a href="{base}/iss">Explore the assembled station, module by module, in 3D →</a>
+      </p>
+    </section>
+  {/if}
 
   <section class="roster">
     <h2>Missions</h2>
@@ -315,6 +347,7 @@
   }
   .spine h2,
   .roster h2,
+  .assembly h2,
   .related h2,
   .sources h2 {
     font-family: 'Space Mono', monospace;
@@ -419,6 +452,27 @@
     font-size: 13px;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 2px;
+  }
+  .assembly {
+    margin: 0 0 34px;
+  }
+  .mod-timeline {
+    margin-bottom: 16px;
+  }
+  a.t-mod {
+    text-decoration: none;
+  }
+  a.t-mod:hover {
+    text-decoration: underline;
+  }
+  .assembly-foot {
+    margin: 0;
+    font-size: 14px;
+  }
+  .assembly-foot a {
+    color: #cfe3fb;
+    text-decoration: none;
+    font-weight: 600;
   }
   .roster-split {
     display: grid;

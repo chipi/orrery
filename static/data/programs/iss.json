@@ -18,28 +18,143 @@
     {
       "linked_id": "iss",
       "ref": "fleet",
-      "role": "station",
-      "year": 1998
+      "role": "the assembled station"
     },
     {
-      "name": "Zarya + Zvezda",
+      "linked_id": "zarya",
+      "ref": "module",
+      "name": "Zarya (FGB)",
       "year": 1998,
-      "note": "the first two modules — a US-funded, Russian-built control module (1998) and the Russian service module (2000) that made the station habitable; the marriage of the two former rivals' station heritage"
+      "note": "The first module — a US-funded, Russian-built control and power block: the seed of the entire station."
+    },
+    {
+      "linked_id": "unity",
+      "ref": "module",
+      "name": "Unity (Node 1)",
+      "year": 1998,
+      "note": "The first US module, a six-port connecting hub joined to Zarya two weeks later."
+    },
+    {
+      "linked_id": "zvezda",
+      "ref": "module",
+      "name": "Zvezda",
+      "year": 2000,
+      "note": "The Russian service module that made the station habitable: crew quarters, life support, and propulsion."
+    },
+    {
+      "linked_id": "destiny",
+      "ref": "module",
+      "name": "Destiny",
+      "year": 2001,
+      "note": "The US laboratory — the primary research module and the station's command center."
+    },
+    {
+      "linked_id": "canadarm2",
+      "ref": "module",
+      "name": "Canadarm2",
+      "year": 2001,
+      "note": "Canada's robotic arm, which assembled much of the station and catches arriving spacecraft."
+    },
+    {
+      "linked_id": "quest",
+      "ref": "module",
+      "name": "Quest",
+      "year": 2001,
+      "note": "The US airlock, enabling spacewalks in both American and Russian suits."
+    },
+    {
+      "linked_id": "pirs",
+      "ref": "module",
+      "name": "Pirs",
+      "year": 2001,
+      "note": "A Russian docking compartment and airlock — deorbited in 2021 to make room for Nauka."
+    },
+    {
+      "linked_id": "harmony",
+      "ref": "module",
+      "name": "Harmony (Node 2)",
+      "year": 2007,
+      "note": "The hub that opened the way for the international laboratories."
+    },
+    {
+      "linked_id": "columbus",
+      "ref": "module",
+      "name": "Columbus",
+      "year": 2008,
+      "note": "Europe's laboratory — ESA's cornerstone contribution to the station."
+    },
+    {
+      "linked_id": "kibo",
+      "ref": "module",
+      "name": "Kibo",
+      "year": 2008,
+      "note": "Japan's laboratory — the largest single module, with its own external platform."
+    },
+    {
+      "linked_id": "poisk",
+      "ref": "module",
+      "name": "Poisk",
+      "year": 2009,
+      "note": "A Russian docking and airlock module on Zvezda's zenith."
+    },
+    {
+      "linked_id": "tranquility",
+      "ref": "module",
+      "name": "Tranquility (Node 3)",
+      "year": 2010,
+      "note": "Life support and exercise equipment — and the mount for the Cupola."
+    },
+    {
+      "linked_id": "cupola",
+      "ref": "module",
+      "name": "Cupola",
+      "year": 2010,
+      "note": "The seven-windowed observation dome, source of the station's most famous views of Earth."
+    },
+    {
+      "linked_id": "rassvet",
+      "ref": "module",
+      "name": "Rassvet",
+      "year": 2010,
+      "note": "A Russian docking and storage module."
+    },
+    {
+      "linked_id": "leonardo",
+      "ref": "module",
+      "name": "Leonardo (PMM)",
+      "year": 2011,
+      "note": "A permanent storage module, converted from a reusable cargo carrier."
+    },
+    {
+      "linked_id": "beam",
+      "ref": "module",
+      "name": "BEAM",
+      "year": 2016,
+      "note": "An experimental inflatable module, testing expandable habitats in orbit."
+    },
+    {
+      "linked_id": "nauka",
+      "ref": "module",
+      "name": "Nauka",
+      "year": 2021,
+      "note": "The long-delayed Russian science module, added more than two decades after assembly began."
+    },
+    {
+      "linked_id": "prichal",
+      "ref": "module",
+      "name": "Prichal",
+      "year": 2021,
+      "note": "A Russian docking node — among the most recent additions."
     },
     {
       "name": "Expedition 1",
       "year": 2000,
-      "note": "the first resident crew arrived on 2 November 2000; humans have lived aboard continuously ever since — the longest unbroken human presence off Earth in history"
-    },
-    {
-      "name": "Columbus + Kibo",
-      "year": 2008,
-      "note": "the European and Japanese laboratories, which turned the station into a genuinely global facility with modules from five space agencies"
+      "note": "the first resident crew arrived 2 November 2000; humans have lived aboard continuously ever since — the longest unbroken human presence off Earth in history"
     },
     {
       "name": "Commercial Crew",
       "year": 2020,
-      "note": "SpaceX's Crew Dragon restored US crew launch after nine years of dependence on Soyuz, and began the handover of low-orbit access to commercial providers"
+      "note": "SpaceX's Crew Dragon restored US crew launch after nine years, beginning the handover of low-orbit access to commercial providers"
     }
   ],
   "related_programs": [

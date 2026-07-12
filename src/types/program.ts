@@ -14,7 +14,7 @@ export type ProgramStatus = 'PLANNED' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
 /** A roster item is either linked (to an existing orrery entry) or context-only. */
 export interface ProgramRosterItem {
   linked_id?: string;
-  ref?: 'mission' | 'fleet';
+  ref?: 'mission' | 'fleet' | 'module';
   role?: string;
   name?: string;
   year?: number;

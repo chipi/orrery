@@ -1,0 +1,88 @@
+{
+  "name": "JAXA — Maan en planeten",
+  "tagline": "Japans ingenieuze, zuinige verkenning van de Maan en planeten — beroemd om missies die halverwege mislukken en gered worden door slimheid.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Japan doet robotverkenning anders dan de grootmachten. Het vliegt minder missies, op kleinere budgetten, gericht op smalle en vaak gedurfde doelen — en heeft een duidelijke neiging om bijna-rampen door vindingrijkheid in triomfen om te zetten. Waar NASA vlaggenschepen bouwt met diepe redundantie en ESA grote internationale observatoria vliegt, stuurt JAXA's ISAS-instituut doorgaans één slim, licht gebouwd ruimtevaartuig om één moeilijke taak te doen, en improviseert vervolgens briljant wanneer iets kapot gaat. Meestal gaat er wel iets kapot; de missies staan erom bekend gered te worden."
+    },
+    {
+      "type": "prose",
+      "md": "Dit is de tegenhanger van Hayabusa's asteroïdewerk: JAXA's verkenning van de Maan en de planeten. Het omvat Kaguya, de meest gedetailleerde maansurvey sinds Apollo; Akatsuki, een Venus-orbiter die bij aankomst faalde en vijf jaar later werd hersteld; en SLIM, een kleine lander die de Maan met een precisie aanraakte die niemand had bereikt en vervolgens ondersteboven bleef werken. Samen definiëren ze een nationale stijl — zuinig, gefocust en onvermoeibaar vindingrijk."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "De wetenschappelijke doelen beslaan het binnenste zonnestelsel: de Maan in fijn detail in kaart brengen en haar oorsprong en grondstoffen begrijpen (Kaguya); het ontspoorde broeikaseffect en de bizarre super-roterende atmosfeer van Venus bestuderen (Akatsuki); en aantonen dat een ruimtevaartuig precies kan landen waar het bedoeld is, in plaats van slechts ergens veilig (SLIM). Elke missie richt zich op een specifieke, goed gekozen vraag in plaats van brede dekking na te streven."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/slim/01"
+      },
+      "caption": "SLIM — de 'Moon Sniper.' Het doel was niet verkennen maar een techniek bewijzen: puntige landing binnen 100 meter van een gekozen plek, de vaardigheid die elke toekomstige lander en bemande missie nodig zal hebben om een specifieke, waardevolle locatie te bereiken.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het technische doel dat door ze allemaal loopt is precisie en autonomie op een budget — op visie gebaseerde navigatie, zorgvuldig stuwstofbeheer, en ruimtevaartuigen slim genoeg om gered te worden wanneer een cruciaal systeem faalt. JAXA's programma's zijn in feite een lang betoog dat je geen vlaggenschipbudget nodig hebt om grenswetenschap te doen, als je bereid bent zuinig te vliegen en snel te denken."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "De staat van dienst is een reeks moeizaam bevochten successen. Kaguya (2007) leverde de meest complete maankaart en de eerste HD-beelden van een aardopkomst sinds Apollo. Akatsuki faalde bij zijn Venus-baaninsertie in 2010 toen zijn hoofdmotor scheurde — een totaal verlies volgens elke normale schatting — en toch, na vijf jaar in een baan om de Zon, gebruikte JAXA de kleine houdingsraketjes van de sonde om hem bij een tweede poging in een Venus-baan te laten glijden, waarmee de missie volledig gered werd. SLIM (2024) landde binnen meters van zijn doel, kantelde op zijn zij en leverde toch zijn wetenschap."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/akatsuki/01"
+      },
+      "caption": "Akatsuki bij Venus — de sonde die vijf jaar te laat aankwam. Toen zijn baaninsertie-motor faalde, leek de missie dood; een geduldige redding met behulp van de minuscule raketjes van het ruimtevaartuig bracht hem weer tot leven.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Wat deze uitkomsten gemeen hebben is een weigering om een mislukte missie als een verloren missie te accepteren. Akatsuki had opgegeven moeten worden; SLIM's gekantelde landing had zijn wetenschap moeten beëindigen; elk werd gered door teams die een kapot ruimtevaartuig als een puzzel behandelden in plaats van als afschrijving. De resultaten zijn echte planetaire wetenschap — Venus atmosferische dynamica, gedetailleerde maangeologie, aangetoonde puntige landing — geleverd door missies die herhaaldelijk niets hadden moeten leveren."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van JAXA's robotprogramma is redding als kerncompetentie. Het is niet dat deze missies vaker mislukken dan andere; het is dat JAXA's cultuur ongewoon goed is in niet opgeven wanneer ze dat doen — in maanden besteden aan het vinden van een manier om een verminkt ruimtevaartuig toch naar zijn doel te vliegen. Akatsuki's vijfjarige omweg en tweede baaninsertiepoging is het zuiverste voorbeeld: een missie die elk conventioneel programma dood verklaard zou hebben, geduldig teruggebracht naar volledige wetenschap."
+    },
+    {
+      "type": "prose",
+      "md": "Het is ook een filosofie van meer doen met minder. Japans ruimtevaartbudget is een fractie van dat van NASA, en zijn antwoord is niet minder ambitieuze dingen proberen maar ze goedkoper en slimmer proberen — zuinige ruimtevaartuigen, scherpe doelstellingen en een tolerantie voor het risico dat komt bij vliegen zonder diepe redundantie. SLIM is minuscuul; Akatsuki was bescheiden; Kaguya was efficiënt. De ambitie zit in de doelen, niet in de budgetten."
+    },
+    {
+      "type": "prose",
+      "md": "En het vult aan in plaats van te concurreren. JAXA probeert niet NASA of ESA over de hele linie te evenaren; het kiest specifieke grenzen — asteroïde-monsterterugkeer, Venus-dynamica, puntige landing — en leidt of draagt daar op unieke wijze bij, vaak in partnerschap. Het is het model van een middelgrote ruimtevaartmacht die buitensporige invloed verdient door uitstekend te zijn in gekozen, moeilijke dingen in plaats van voldoende in alles."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "De eerste erfenis is een geheel van gerichte planetaire wetenschap: de definitieve post-Apollo maansurvey, jaren van Venus-atmosferische data van een sonde die niet zou moeten bestaan, en een aangetoonde puntige landingsvaardigheid waarop elke toekomstige lander — robotisch of bemand, bij de Maan of daarbuiten — zal voortbouwen."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede is een bewezen verkenningsstijl: zuinig, precies en veerkrachtig, die aantoont dat grensrobotwetenschap geen vlaggenschipbudget vereist, alleen scherpe doelen en de vindingrijkheid om missies te redden wanneer ze wankelen. Het is een sjabloon waar veel kleinere en opkomende ruimtevaartorganisaties nu naar kijken."
+    },
+    {
+      "type": "prose",
+      "md": "En de derde is invloed door specialisatie. Door te leiden in specifieke moeilijke domeinen in plaats van zich dun te spreiden, heeft JAXA zichzelf een partner gemaakt die de grotere organisaties nodig hebben — zijn technieken en zijn geredde ruimtevaartuigen voeden direct de bredere verkenning van de Maan en binnenplaneten."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van JAXA's robotmissies is dat een mislukte aankomst niet altijd een mislukte missie is. Akatsuki en SLIM leden beide storingen die normaal een programma zouden beëindigen, en beide leverden toch hun wetenschap omdat hun teams het kapotte ruimtevaartuig behandelden als een op te lossen probleem in plaats van een te accepteren verlies. Vindingrijkheid toegepast op een verminkte missie kan het grootste deel van zijn waarde herstellen."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat ambitie en budget scheidbaar zijn. JAXA doet grenswetenschap op een fractie van de financiering van een grootmacht door smalle, moeilijke doelen te kiezen en zuinig te vliegen — bewijs dat leiderschap in verkenning beschikbaar is voor iedereen die bereid is zich diep te specialiseren en goed te improviseren, in plaats van alleen voor degenen die vlaggenschepen kunnen betalen."
+    }
+  ]
+}

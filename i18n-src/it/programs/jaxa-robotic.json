@@ -1,0 +1,88 @@
+{
+  "name": "JAXA — Luna e pianeti",
+  "tagline": "L'esplorazione ingegnosa e leggera di Luna e pianeti del Giappone — celebre per missioni che falliscono a metà e vengono salvate dall'inventiva.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Il Giappone conduce l'esplorazione robotica in modo diverso dalle superpotenze. Vola meno missioni, con budget più ridotti, mirate a obiettivi precisi e spesso audaci — e ha la netta abitudine di trasformare la quasi-catastrofe in trionfo attraverso l'ingegno. Dove la NASA costruisce ammiraglie con profonda ridondanza e l'ESA vola grandi osservatori internazionali, l'istituto ISAS di JAXA tende a inviare una singola sonda ingegnosa e costruita leggera per fare una cosa difficile, per poi improvvisare brillantemente quando qualcosa si rompe. Di solito si rompe; le missioni sono famose per essere state salvate."
+    },
+    {
+      "type": "prose",
+      "md": "Questo è il corrispettivo del lavoro di Hayabusa sugli asteroidi: l'esplorazione della Luna e dei pianeti di JAXA. Include Kaguya, la ricognizione lunare più dettagliata dall'epoca Apollo; Akatsuki, un orbiter venusiano che ha fallito all'arrivo ed è stato recuperato cinque anni dopo; e SLIM, un piccolo lander che ha toccato la Luna con una precisione mai raggiunta prima e ha poi continuato a funzionare capovolto. Insieme definiscono uno stile nazionale — essenziale, concentrato e implacabilmente ingegnoso."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Gli obiettivi scientifici spaziano nel sistema solare interno: mappare la Luna nei minimi dettagli e comprenderne origine e risorse (Kaguya); studiare l'effetto serra incontrollato e la bizzarra atmosfera super-rotante di Venere (Akatsuki); e dimostrare che una sonda può atterrare esattamente dove intende, piuttosto che semplicemente in un posto sicuro (SLIM). Ogni missione punta a una domanda specifica e ben scelta piuttosto che tentare una copertura ampia."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/slim/01"
+      },
+      "caption": "SLIM — il 'cecchino lunare'. Il suo obiettivo non era esplorare ma provare una tecnica: atterraggio di precisione entro 100 metri da un punto scelto, la capacità di cui ogni futuro lander e missione con equipaggio avrà bisogno per raggiungere un sito specifico e prezioso.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'obiettivo ingegneristico che attraversa tutte queste missioni è precisione e autonomia con un budget limitato — navigazione basata sulla visione, gestione attenta del propellente e sonde abbastanza intelligenti da essere salvate quando un sistema critico si guasta. I programmi di JAXA sono, in effetti, una lunga dimostrazione che non serve un budget da ammiraglia per fare scienza di frontiera, se sei disposto a volare leggero e pensare veloce."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Il bilancio è una serie di successi conquistati con fatica. Kaguya (2007) ha restituito la mappa lunare più completa e il primo filmato HD di un sorgere della Terra dall'epoca Apollo. Akatsuki ha fallito l'inserzione orbitale venusiana nel 2010 quando il suo motore principale si è rotto — una perdita totale per ogni valutazione normale — eppure, dopo cinque anni in orbita attorno al Sole, JAXA ha usato i piccoli propulsori d'assetto della sonda per farla scivolare nell'orbita di Venere al secondo tentativo, salvando completamente la missione. SLIM (2024) è atterrato a pochi metri dal suo obiettivo, si è ribaltato su un fianco e ha comunque completato la sua scienza."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/akatsuki/01"
+      },
+      "caption": "Akatsuki a Venere — la sonda arrivata con cinque anni di ritardo. Quando il motore d'inserzione orbitale si è guastato, la missione sembrava morta; un paziente salvataggio usando i minuscoli propulsori della sonda l'ha riportata in vita.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Ciò che accomuna questi risultati è il rifiuto di accettare una missione fallita come una missione persa. Akatsuki avrebbe dovuto essere abbandonata; l'atterraggio ribaltato di SLIM avrebbe dovuto porre fine alla sua scienza; ciascuna è stata salvata da team che trattavano una sonda danneggiata come un enigma piuttosto che come una perdita. I risultati sono scienza planetaria vera — dinamiche atmosferiche di Venere, geologia lunare dettagliata, atterraggio di precisione dimostrato — ottenuti da missioni che ripetutamente non avrebbero dovuto produrre nulla."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La narrazione del programma robotico di JAXA è il salvataggio come competenza fondamentale. Non è che queste missioni falliscano più delle altre; è che la cultura di JAXA è insolitamente brava a non arrendersi quando falliscono — a passare mesi a trovare un modo per far volare comunque una sonda danneggiata verso il suo obiettivo. La deviazione di cinque anni di Akatsuki e il secondo tentativo d'inserzione orbitale sono l'esempio più puro: una missione che qualsiasi programma convenzionale avrebbe dichiarato morta, pazientemente riportata alla piena attività scientifica."
+    },
+    {
+      "type": "prose",
+      "md": "È anche una filosofia di fare di più con meno. Il budget per la scienza spaziale del Giappone è una frazione di quello della NASA, e la sua risposta non è tentare cose meno ambiziose ma tentarle in modo più economico e intelligente — sonde essenziali, obiettivi precisi e una tolleranza per il rischio che deriva dal volare senza profonda ridondanza. SLIM è minuscolo; Akatsuki era modesto; Kaguya era efficiente. L'ambizione è negli obiettivi, non nei budget."
+    },
+    {
+      "type": "prose",
+      "md": "E completa piuttosto che competere. JAXA non cerca di eguagliare NASA o ESA su tutta la linea; sceglie frontiere specifiche — ritorno campioni da asteroidi, dinamiche di Venere, atterraggio di precisione — e lì guida o contribuisce in modo unico, spesso in collaborazione. È il modello di una potenza spaziale di media grandezza che ottiene un'influenza sproporzionata essendo eccellente in cose scelte e difficili piuttosto che adeguata in tutto."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "La prima eredità è un corpo di scienza planetaria mirata: la ricognizione lunare definitiva post-Apollo, anni di dati atmosferici di Venere da una sonda che non dovrebbe esistere, e una capacità di atterraggio di precisione dimostrata su cui ogni futuro lander — robotico o con equipaggio, sulla Luna o oltre — si baserà."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda è uno stile di esplorazione provato: essenziale, preciso e resiliente, che dimostra che la scienza robotica di frontiera non richiede un budget da ammiraglia, solo obiettivi precisi e l'ingegno per salvare le missioni quando vacillano. È un modello a cui molte agenzie spaziali più piccole ed emergenti ora guardano."
+    },
+    {
+      "type": "prose",
+      "md": "E la terza è l'influenza attraverso la specializzazione. Guidando in domini difficili specifici piuttosto che disperdendosi, JAXA si è resa un partner di cui le agenzie più grandi hanno bisogno — le sue tecniche e le sue sonde salvate alimentano direttamente l'esplorazione più ampia della Luna e dei pianeti interni."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione delle missioni robotiche di JAXA è che un arrivo fallito non è sempre una missione fallita. Sia Akatsuki che SLIM hanno subito guasti che normalmente avrebbero concluso un programma, ed entrambi hanno comunque prodotto la loro scienza perché i loro team hanno trattato la sonda danneggiata come un problema da risolvere piuttosto che come una perdita da accettare. L'ingegno applicato a una missione compromessa può recuperare gran parte del suo valore."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che ambizione e budget sono separabili. JAXA fa scienza di frontiera con una frazione del finanziamento di una superpotenza scegliendo obiettivi precisi e difficili e volando leggero — prova che la leadership nell'esplorazione è disponibile a chiunque sia disposto a specializzarsi profondamente e improvvisare bene, non solo a chi può permettersi ammiraglie."
+    }
+  ]
+}

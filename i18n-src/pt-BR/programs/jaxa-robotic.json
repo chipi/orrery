@@ -1,0 +1,88 @@
+{
+  "name": "JAXA — Lua e Planetas",
+  "tagline": "A exploração engenhosa e econômica do Japão da Lua e dos planetas — famosa por missões que falham na metade do caminho e são resgatadas pela criatividade.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "O Japão faz exploração robótica de forma diferente das superpotências. Voa menos missões, com orçamentos menores, voltadas para objetivos estreitos e frequentemente audaciosos — e tem o hábito distinto de transformar quase-catástrofe em triunfo através da engenhosidade. Onde a NASA constrói naves-capitânias com redundância profunda e a ESA voa grandes observatórios internacionais, o instituto ISAS da JAXA tende a enviar uma espaçonave inteligente e levemente construída para fazer uma coisa difícil, e então improvisar brilhantemente quando algo quebra. Geralmente quebra; as missões são famosas por serem salvas."
+    },
+    {
+      "type": "prose",
+      "md": "Este é o contraponto ao trabalho de asteroides da Hayabusa: a exploração da JAXA da Lua e dos planetas. Inclui a Kaguya, o levantamento lunar mais detalhado desde a Apollo; Akatsuki, uma sonda orbital de Vênus que falhou na chegada e foi recuperada cinco anos depois; e SLIM, um pequeno módulo de pouso que tocou a Lua com uma precisão que ninguém havia alcançado e depois continuou funcionando de cabeça para baixo. Juntas, elas definem um estilo nacional — enxuto, focado e incansavelmente engenhoso."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Os objetivos científicos abrangem o sistema solar interno: mapear a Lua em detalhes finos e entender sua origem e recursos (Kaguya); estudar o efeito estufa descontrolado e a bizarra atmosfera super-rotativa de Vênus (Akatsuki); e demonstrar que uma espaçonave pode pousar exatamente onde pretende, em vez de apenas em algum lugar seguro (SLIM). Cada missão visa uma pergunta específica e bem escolhida, em vez de tentar uma cobertura ampla."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/slim/01"
+      },
+      "caption": "SLIM — o 'Atirador de Elite Lunar'. Seu objetivo não era explorar, mas provar uma técnica: pouso de precisão dentro de 100 metros de um ponto escolhido, a capacidade que todo futuro módulo de pouso e missão tripulada precisará para alcançar um local específico e valioso.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo de engenharia que perpassa todas elas é precisão e autonomia com orçamento limitado — navegação baseada em visão, gestão cuidadosa de propelente e espaçonaves inteligentes o suficiente para serem resgatadas quando um sistema crítico falha. Os programas da JAXA são, em efeito, um longo argumento de que você não precisa de um orçamento de nave-capitânia para fazer ciência de fronteira, se estiver disposto a voar enxuto e pensar rápido."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "O histórico é uma sequência de sucessos arduamente conquistados. A Kaguya (2007) retornou o mapa lunar mais completo e a primeira filmagem em HD de um nascer da Terra desde a Apollo. A Akatsuki falhou sua inserção orbital em Vênus em 2010 quando seu motor principal se rompeu — uma perda total por qualquer cálculo normal — e ainda assim, após cinco anos orbitando o Sol, a JAXA usou os pequenos propulsores de atitude da sonda para colocá-la em órbita de Vênus em uma segunda tentativa, salvando a missão inteiramente. A SLIM (2024) pousou a metros de seu alvo, tombou de lado e ainda entregou sua ciência."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/akatsuki/01"
+      },
+      "caption": "Akatsuki em Vênus — a sonda que chegou cinco anos atrasada. Quando seu motor de inserção orbital falhou, a missão parecia morta; um resgate paciente usando os minúsculos propulsores da espaçonave a trouxe de volta à vida.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "O que esses resultados compartilham é uma recusa em aceitar uma missão fracassada como perdida. A Akatsuki deveria ter sido abandonada; o pouso tombado da SLIM deveria ter encerrado sua ciência; cada uma foi resgatada por equipes tratando uma espaçonave quebrada como um enigma em vez de uma baixa. Os resultados são ciência planetária real — dinâmica atmosférica de Vênus, geologia lunar detalhada, pouso de precisão demonstrado — entregues por missões que repetidamente não deveriam ter entregado nada."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A narrativa do programa robótico da JAXA é o resgate como uma competência central. Não é que essas missões falhem mais do que outras; é que a cultura da JAXA é excepcionalmente boa em não desistir quando falham — em passar meses encontrando uma maneira de voar uma espaçonave aleijada até seu objetivo de qualquer forma. O desvio de cinco anos da Akatsuki e a segunda tentativa de inserção orbital é o exemplo mais puro: uma missão que qualquer programa convencional teria declarado morta, pacientemente trazida de volta à ciência completa."
+    },
+    {
+      "type": "prose",
+      "md": "É também uma filosofia de fazer mais com menos. O orçamento de ciência espacial do Japão é uma fração do da NASA, e sua resposta não é tentar coisas menos ambiciosas, mas tentá-las de forma mais barata e inteligente — espaçonaves enxutas, objetivos afiados e uma tolerância ao risco que vem de voar sem redundância profunda. A SLIM é minúscula; a Akatsuki foi modesta; a Kaguya foi eficiente. A ambição está nos objetivos, não nos orçamentos."
+    },
+    {
+      "type": "prose",
+      "md": "E complementa em vez de competir. A JAXA não tenta igualar a NASA ou a ESA em toda a linha; ela escolhe fronteiras específicas — retorno de amostras de asteroides, dinâmica de Vênus, pouso de precisão — e lidera ou contribui de forma única ali, frequentemente em parceria. É o modelo de uma potência espacial de médio porte que conquista influência desproporcional ao ser excelente em coisas escolhidas e difíceis, em vez de adequada em tudo."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado é um corpo de ciência planetária focada: o levantamento lunar definitivo pós-Apollo, anos de dados atmosféricos de Vênus de uma sonda que não deveria existir, e uma capacidade demonstrada de pouso de precisão sobre a qual todo futuro módulo de pouso — robótico ou tripulado, na Lua ou além — irá se basear."
+    },
+    {
+      "type": "prose",
+      "md": "O segundo é um estilo comprovado de exploração: enxuto, preciso e resiliente, mostrando que a ciência robótica de fronteira não requer um orçamento de nave-capitânia, apenas objetivos afiados e a engenhosidade para resgatar missões quando vacilam. É um modelo para o qual muitas agências espaciais menores e emergentes agora olham."
+    },
+    {
+      "type": "prose",
+      "md": "E o terceiro é influência através da especialização. Ao liderar em domínios difíceis específicos em vez de se espalhar demais, a JAXA se tornou uma parceira de que as agências maiores precisam — suas técnicas e suas espaçonaves resgatadas alimentando diretamente a exploração mais ampla da Lua e dos planetas internos."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição das missões robóticas da JAXA é que uma chegada fracassada nem sempre é uma missão fracassada. Akatsuki e SLIM sofreram falhas que normalmente encerrariam um programa, e ambas entregaram sua ciência de qualquer forma porque suas equipes trataram a espaçonave quebrada como um problema a ser resolvido em vez de uma perda a ser aceita. A engenhosidade aplicada a uma missão aleijada pode recuperar a maior parte de seu valor."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é que ambição e orçamento são separáveis. A JAXA faz ciência de fronteira com uma fração do financiamento de uma superpotência ao escolher objetivos estreitos e difíceis e voar enxuto — prova de que a liderança na exploração está disponível para qualquer um disposto a se especializar profundamente e improvisar bem, em vez de apenas para aqueles que podem pagar por naves-capitânias."
+    }
+  ]
+}

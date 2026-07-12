@@ -1,0 +1,29 @@
+{
+  "id": "jaxa-robotic",
+  "kind": "robotic-campaign",
+  "agency": "JAXA",
+  "agencies": ["JAXA"],
+  "country": "Japan",
+  "start_year": 2007,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/slim/01",
+  "roster": [
+    { "linked_id": "akatsuki", "ref": "fleet", "role": "Venus orbiter", "year": 2010 },
+    { "linked_id": "slim", "ref": "fleet", "role": "Moon lander", "year": 2023 },
+    { "name": "Kaguya / SELENE", "year": 2007, "note": "the largest lunar mission since Apollo — a Moon orbiter that mapped the surface in unprecedented detail and shot the first high-definition video of Earth rising over the lunar limb" },
+    { "linked_id": "akatsuki", "ref": "mission", "year": 2015, "note": "after its orbit-insertion engine failed at Venus in 2010, the probe looped the Sun for five years and, on a second attempt, used its tiny attitude thrusters to slip into orbit — a mission saved from certain loss" },
+    { "linked_id": "slim", "ref": "mission", "year": 2024, "note": "the 'Moon Sniper' lands within 100 metres of its target — pinpoint precision no one had achieved — then survives a tipped-over touchdown to return science on solar power" }
+  ],
+  "related_programs": ["hayabusa"],
+  "see_also": [
+    { "label": "Moon — SLIM's landing site", "href": "/moon", "kind": "body" },
+    { "label": "Explore — Venus and the inner planets", "href": "/explore", "kind": "body" },
+    { "label": "Hayabusa — JAXA's asteroid sample-return campaign", "href": "/programs/hayabusa", "kind": "program" }
+  ],
+  "links": [
+    { "l": "JAXA — Wikipedia", "u": "https://en.wikipedia.org/wiki/JAXA", "t": "intro" },
+    { "l": "ISAS — JAXA Institute of Space and Astronautical Science", "u": "https://www.isas.jaxa.jp/en/", "t": "core" },
+    { "l": "SLIM — JAXA", "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/current/slim.html", "t": "deep" }
+  ]
+}

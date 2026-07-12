@@ -373,5 +373,21 @@
     "start_year": 2003,
     "end_year": null,
     "hero": "fleet/hayabusa/01"
+  },
+  {
+    "id": "jaxa-robotic",
+    "name": "JAXA — Moon and Planets",
+    "tagline": "Japan's ingenious, resource-light exploration of the Moon and planets — famous for missions that fail halfway and get rescued by cleverness.",
+    "kind": "robotic-campaign",
+    "agency": "JAXA",
+    "agencies": [
+      "JAXA"
+    ],
+    "country": "Japan",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2007,
+    "end_year": null,
+    "hero": "fleet/slim/01"
   }
 ]

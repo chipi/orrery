@@ -239,6 +239,7 @@ export function createArScene(
   }
 
   function stop(): void {
+    if (disposed) return;
     disposed = true;
     renderer.setAnimationLoop(null);
     canvas.removeEventListener('pointerdown', tapHandler);

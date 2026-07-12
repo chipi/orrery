@@ -3,8 +3,8 @@
   the QR handoff (bottom-right) + the two hidden exit affordances (Escape key +
   a corner long-press) so an operator can leave a chrome-less kiosk.
 
-  QR is a placeholder box for now — a real QR needs a small encoder lib (dep
-  decision pending). It still shows the scan target so the handoff is usable.
+  QR is rendered via the `qrcode` package (dynamic import — stays out of the
+  main bundle). Falls back to plain text if the import fails.
 -->
 <script lang="ts">
   import { goto } from '$app/navigation';
@@ -69,7 +69,7 @@
     onpointercancel={cancelHold}
   ></button>
 
-  <!-- QR handoff, bottom-right. Placeholder until a QR encoder lands. -->
+  <!-- QR handoff, bottom-right. -->
   <div class="exhibit-qr" aria-hidden="true">
     <div class="qr-box">
       {#if qrDataUrl}

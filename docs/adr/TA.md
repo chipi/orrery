@@ -757,7 +757,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **No user data, with two narrow carve-outs.** No accounts. No login. No `localStorage`. No `sessionStorage`. No tracking. **Two permitted cookies, each ADR-gated:** `orrery_locale` (ADR-057, explicit locale-override only) and `orrery_tour` (ADR-075, Curator Tour resume `{ep, pos, idx, cmp}` only). Auto-detected locale, Science Lens, mission filters, install counter, per-episode heard-state, and every other piece of state stay runtime-only. Each future cookie request needs its own ADR.
 
-- **Three.js r128.** Not r129, not r130. r128 is the pinned version. `THREE.CapsuleGeometry` does not exist in r128 — use `CylinderGeometry` or `SphereGeometry` instead. Production bundles locally.
+- **Three.js 0.185.1.** Pinned, local bundle (upgraded from r128 in #203 — ADR-001 amended). Lighting is physically-correct by default post-r155; the legacy r128 look is restored where it mattered via `× Math.PI` light-intensity scaling (`surface-lights.ts`, the /iss / /tiangong / `fly` cislunar scenes). Production bundles locally.
 
 - **AU units in 3D scenes.** All 3D coordinates in the `/explore` heliocentric scene are in astronomical units. Earth orbit = 1.0 AU. Sun sphere radius = 0.06 AU. Do not mix pixel-scale coordinates into 3D scenes. Per-scene local scales (km in `/earth`, world-units in `/moon`/`/mars`) are documented per route.
 
@@ -847,7 +847,7 @@ Locked technical choices. Each entry points to its ADR.
 | Framework | SvelteKit | ADR-012 |
 | Bundler | Vite (via SvelteKit) | ADR-012 |
 | Routing | History API via SvelteKit router | ADR-013 |
-| 3D rendering | Three.js r128, local bundle | ADR-001 |
+| 3D rendering | Three.js 0.185.1, local bundle | ADR-001 (amended #203) |
 | Math rendering | KaTeX, server-rendered at build | ADR-034 |
 | Service worker / PWA | @vite-pwa/sveltekit | ADR-029 |
 | Mobile wrapper (iOS + Android) | Capacitor 8 · stream-heavy bundle · assetUrl origin spine · native safe-area shim | ADR-078, ADR-079 (see §mobile) |

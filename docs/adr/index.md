@@ -3,7 +3,7 @@
 | Doc | Title | Status | Date |
 |---|---|---|---|
 | TA | Technical Authority | v2.2 | Jun 2026 |
-| ADR-001 | Three.js r128 as 3D renderer | Accepted | Apr 2026 |
+| ADR-001 | Three.js 0.185.1 as 3D renderer (upgraded from r128, #203) | Accepted (amended Jul 2026) | Apr 2026 |
 | ADR-002 | Vanilla JS, no framework | Superseded by ADR-011, ADR-012 | Apr 2026 |
 | ADR-003 | Vite as bundler | Superseded by ADR-012 | Apr 2026 |
 | ADR-004 | Hash-based client-side routing | Superseded by ADR-013 | Apr 2026 |

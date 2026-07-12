@@ -807,9 +807,8 @@ export function buildIssProxyStation(): THREE.Group {
     if (id === 'cupola') {
       geom = new THREE.SphereGeometry(radius * 1.15, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2);
     } else if (id === 'beam') {
-      // Inflatable BEAM module — rounded "balloon" silhouette rather than a
-      // straight cylinder. r128 has no CapsuleGeometry per CLAUDE.md, so use
-      // a near-spherical bulge.
+      // Inflatable BEAM module — a near-spherical bulge reads as the rounded
+      // "balloon" silhouette better than a straight cylinder or capsule.
       geom = new THREE.SphereGeometry(radius * 1.4, 14, 10);
     } else if (id === 'prichal') {
       // Prichal is a spherical 5-port hub, not a cylinder

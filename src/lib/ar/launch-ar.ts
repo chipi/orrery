@@ -61,7 +61,10 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
 
 /** Force-exit the active AR scene (e.g. a route change). */
 export function exitArScene(): void {
-  active?.stop();
-  active?.canvas.remove();
+  // Null `active` before the async stop() so a re-entrant launchArScene during
+  // teardown never sees a stale handle (stop()'s endSession resolves later).
+  const current = active;
   active = null;
+  current?.stop();
+  current?.canvas.remove();
 }

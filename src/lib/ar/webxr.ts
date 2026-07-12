@@ -218,8 +218,10 @@ export function createWebXrBackend(): ArBackend {
   };
 }
 
-/** Rotate the local +Y axis (0,1,0) by a quaternion → the hit surface normal. */
-function rotateY(x: number, y: number, z: number, w: number): [number, number, number] {
+/** Rotate the local +Y axis (0,1,0) by a quaternion → the hit surface normal.
+ *  Exported for a unit regression guard — the device-only call path (hit-test
+ *  rAF) can't validate the sign convention. */
+export function rotateY(x: number, y: number, z: number, w: number): [number, number, number] {
   // q * (0,1,0) * q⁻¹, expanded for the unit +Y vector.
-  return [2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 2 * (y * z - w * x)];
+  return [2 * (x * y - w * z), 1 - 2 * (x * x + z * z), 2 * (y * z + w * x)];
 }

@@ -1,0 +1,88 @@
+{
+  "name": "Chang'e — Le programme lunaire chinois",
+  "tagline": "La conquête méthodique de la Lune : orbiter, atterrir, rouler, revenir — incluant le tout premier atterrissage sur la face cachée, et les premiers échantillons qui en proviennent.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Alors que les États-Unis s'étaient absentés de la Lune pendant cinquante ans et que le programme lunaire russe restait en sommeil, la Chine a discrètement construit la campagne d'exploration lunaire robotique la plus soutenue et la plus réussie du vingt et unième siècle. Nommé d'après la déesse chinoise de la Lune, le programme Chang'e a, étape par étape délibérée, accompli tout ce qu'un programme robotique peut faire sur un autre monde — l'orbiter, y atterrir, le parcourir, en rapporter des fragments — puis accompli des choses que personne n'avait jamais faites."
+    },
+    {
+      "type": "prose",
+      "md": "La signature du programme est la même méthode patiente et incrémentale qui a construit les stations Tiangong : chaque mission est une répétition pour la suivante, chaque capacité prouvée avant que la suivante ne soit tentée. D'abord orbiter (Chang'e 1–2), puis atterrir en douceur et rouler (Chang'e 3), puis atteindre l'impossible face cachée (Chang'e 4), puis rapporter des échantillons (Chang'e 5), puis rapporter des échantillons de la face cachée (Chang'e 6). C'est une échelle gravie barreau par barreau, et la Chine n'a manqué aucun barreau."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Les objectifs à court terme sont scientifiques et méthodiques : cartographier la Lune, atterrir en douceur, déployer des rovers, et rapporter des échantillons — maîtriser chaque capacité à tour de rôle. La face cachée de la Lune, qui ne fait jamais face à la Terre et ne peut donc pas communiquer directement avec elle, était une cible spécifique et audacieuse : l'atteindre nécessitait d'abord de placer un satellite relais au-delà de la Lune, et aucune nation n'y avait jamais atterri avant que la Chine ne le fasse en 2019."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change4/01"
+      },
+      "caption": "Chang'e-4 sur la face cachée de la Lune — le tout premier engin spatial à atterrir sur l'hémisphère qui ne fait jamais face à la Terre, atteint seulement après que la Chine ait placé un satellite relais en position pour transmettre ses signaux.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Les objectifs à long terme sont bien plus vastes : faire atterrir des astronautes chinois sur la Lune avant 2030, et construire l'International Lunar Research Station — une base robotique puis habitée près du pôle sud lunaire, développée avec des partenaires internationaux comme alternative explicite à la coalition Artemis menée par les Américains. Les missions robotiques Chang'e sont la reconnaissance et la preuve de capacité ; la base habitée est la destination vers laquelle l'ensemble du programme s'élève."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Le bilan est une série presque ininterrompue de premières et de succès. Chang'e 1 et 2 ont cartographié la Lune. Chang'e 3 (2013) a réalisé le premier atterrissage en douceur depuis 1976, transportant le rover Yutu. Chang'e 4 (2019) a accompli le premier atterrissage de l'histoire sur la face cachée lunaire. Chang'e 5 (2020) a rapporté les premiers échantillons lunaires frais en 44 ans. Et Chang'e 6 (2024) a rapporté les tout premiers échantillons jamais collectés sur la face cachée — du matériel qui n'avait jamais été tenu entre des mains humaines. Aucun autre programme lunaire de l'époque n'approche cette série de réalisations."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change5/01"
+      },
+      "caption": "Le retour d'échantillons de Chang'e-5 — les premières nouvelles roches lunaires rapportées sur Terre depuis les missions soviétiques Luna des années 1970, et la preuve que la Chine avait maîtrisé l'aller-retour complet vers la surface lunaire.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Les échantillons seuls ont remodelé la science lunaire, révélant une activité volcanique bien plus récente que ne le prévoyaient les modèles et rapportant du matériel de la face cachée qui pourrait enfin expliquer pourquoi les deux hémisphères de la Lune sont si différents. Et le succès du programme a fait de la Chine la menace d'entraînement qui a ranimé le programme lunaire américain : Artemis existe, en partie, parce que la Chine a démontré qu'elle pouvait et voulait aller sur la Lune — et y rester."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire de Chang'e est celle d'un programme qui a traité la Lune comme une séquence de problèmes à résoudre dans l'ordre, et les a résolus. Il n'y avait pas de précipitation pour planter un drapeau, pas de sprint dramatique unique — juste une progression constante et publiée à travers l'orbite, l'atterrissage, le roulage et le retour, chaque mission s'appuyant précisément sur la précédente. L'atterrissage sur la face cachée est l'expression la plus pure de cette méthode : l'atteindre nécessitait d'abord de résoudre le problème de communication avec un satellite relais, alors la Chine a résolu cela d'abord, puis a atterri. L'audace est réelle, mais elle est toujours gagnée par la préparation."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi l'avant-garde robotique d'une ambition plus vaste. Les missions Chang'e ne sont pas une fin en soi ; elles sont la reconnaissance pour des atterrissages habités et une base permanente. Chaque atterrissage en douceur, chaque retour d'échantillons, chaque première sur la face cachée est une capacité dont la Chine aura besoin pour envoyer des personnes sur la Lune et les y maintenir — et le programme est explicitement structuré comme la première moitié robotique d'un plan dont la seconde moitié est humaine."
+    },
+    {
+      "type": "prose",
+      "md": "Et c'est une moitié d'une nouvelle course. Pour la première fois depuis Apollo, deux puissances foncent vers la Lune en même temps — le programme Chang'e-et-habité de la Chine et Artemis américain — visant tous deux le même pôle sud riche en ressources, construisant tous deux des coalitions, tous deux sur des calendriers qui convergent autour de 2030. Le succès discret et méthodique de Chang'e est la raison pour laquelle cette course existe, et la régularité de la Chine en fait un concurrent redoutable."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Chang'e est scientifique : des échantillons lunaires frais des faces proche et cachée après un demi-siècle d'écart, réécrivant déjà l'histoire volcanique de la Lune et offrant les premiers indices directs pour expliquer pourquoi ses deux hémisphères diffèrent si profondément. Ce sont parmi les échantillons planétaires les plus précieux rapportés en une génération."
+    },
+    {
+      "type": "prose",
+      "md": "Son deuxième héritage est le premier accès humain à la face cachée lunaire — un endroit qui avait été totalement inaccessible, ouvert par l'étape simple et ingénieuse d'un satellite relais. Chang'e a transformé la moitié cachée de la Lune d'une abstraction en terrain exploré."
+    },
+    {
+      "type": "prose",
+      "md": "Et son troisième est la réanimation de la course lunaire elle-même. Le succès méthodique de la Chine est une raison principale pour laquelle les États-Unis se sont engagés dans Artemis et à renvoyer des humains sur la Lune selon un calendrier précis. Chang'e n'a pas seulement exploré la Lune ; il a changé le calcul stratégique qui gouverne qui d'autre y va, et quand."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Chang'e est qu'une échelle patiente et publiée de capacités peut surpasser un sprint dramatique. La Chine n'a pas essayé de bondir vers les objectifs les plus difficiles ; elle y a grimpé, prouvant l'orbite avant l'atterrissage, l'atterrissage avant le roulage, le roulage avant le retour d'échantillons — et au moment où elle a tenté le véritablement sans précédent, l'atterrissage sur la face cachée et le retour d'échantillons, elle avait gagné chaque prérequis. La méthode, soutenue sur deux décennies, a produit une série de premières qu'aucun rival n'a égalée."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est que la compétence discrète refaçonne le terrain. Chang'e n'a fait aucune proclamation grandiose et n'a gagné aucune course aux gros titres, pourtant son succès constant a fait davantage pour relancer l'ambition lunaire humaine dans le monde que n'importe quel discours — parce qu'un programme qui continue simplement à réussir, mission après mission, devient un fait stratégique auquel tous les autres doivent répondre. La constance, au final, est son propre type de pouvoir."
+    }
+  ]
+}

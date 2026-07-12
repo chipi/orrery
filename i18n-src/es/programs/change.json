@@ -1,0 +1,88 @@
+{
+  "name": "Chang'e — El programa lunar de China",
+  "tagline": "La conquista metódica de la Luna: orbitar, aterrizar, rodar, retornar — incluido el primer aterrizaje jamás realizado en la cara oculta, y las primeras muestras extraídas de ella.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mientras Estados Unidos estuvo alejado de la Luna durante cincuenta años y el programa lunar ruso permaneció inactivo, China construyó discretamente la campaña de exploración lunar robótica más sostenida y exitosa del siglo XXI. Nombrado en honor a la diosa china de la Luna, el programa Chang'e ha realizado, paso a paso deliberado, todo lo que un programa robótico puede hacer en otro mundo — orbitarlo, aterrizar en él, recorrerlo y traer fragmentos a casa — y luego ha hecho cosas que nadie había hecho jamás."
+    },
+    {
+      "type": "prose",
+      "md": "La firma del programa es el mismo método paciente e incremental que construyó las estaciones Tiangong: cada misión es un ensayo para la siguiente, cada capacidad se prueba antes de intentar la próxima. Primero orbitar (Chang'e 1–2), luego aterrizar suavemente y rodar (Chang'e 3), luego alcanzar la imposible cara oculta (Chang'e 4), luego retornar muestras (Chang'e 5), luego retornar muestras desde la cara oculta (Chang'e 6). Es una escalera que se asciende peldaño a peldaño, y China no ha fallado ningún peldaño."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Los objetivos a corto plazo son científicos y metódicos: mapear la Luna, aterrizar suavemente, desplegar róvers y retornar muestras — dominando cada capacidad por turno. La cara oculta de la Luna, que nunca mira hacia la Tierra y por tanto no puede comunicarse directamente con ella, fue un objetivo específico y audaz: alcanzarla requirió primero colocar un satélite de retransmisión más allá de la Luna, y ninguna nación había aterrizado allí antes de que China lo hiciera en 2019."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change4/01"
+      },
+      "caption": "Chang'e-4 en la cara oculta de la Luna — la primera nave espacial que aterrizó en el hemisferio que nunca mira hacia la Tierra, alcanzado solo después de que China colocara un satélite de retransmisión en posición para transmitir sus señales a casa.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Los objetivos a largo plazo son mucho mayores: aterrizar astronautas chinos en la Luna antes de 2030, y construir la Estación Internacional de Investigación Lunar — una base robótica y luego tripulada cerca del polo sur lunar, desarrollada con socios internacionales como alternativa explícita a la coalición Artemis liderada por Estados Unidos. Las misiones robóticas Chang'e son el reconocimiento y la prueba de capacidad; la base tripulada es el destino hacia el que asciende todo el programa."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "El historial es una sucesión casi ininterrumpida de primicias y éxitos. Chang'e 1 y 2 mapearon la Luna. Chang'e 3 (2013) realizó el primer aterrizaje suave desde 1976, portando el róver Yutu. Chang'e 4 (2019) logró el primer aterrizaje de la historia en la cara oculta lunar. Chang'e 5 (2020) retornó las primeras muestras lunares frescas en 44 años. Y Chang'e 6 (2024) retornó las primeras muestras jamás recolectadas de la cara oculta — material que nunca había estado en manos humanas. Ningún otro programa lunar de la era se acerca a esta racha de logros."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change5/01"
+      },
+      "caption": "El retorno de muestras de Chang'e-5 — las primeras rocas lunares nuevas traídas a la Tierra desde las misiones soviéticas Luna de la década de 1970, y prueba de que China había dominado el viaje completo de ida y vuelta a la superficie lunar.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Las muestras por sí solas han redefinido la ciencia lunar, revelando actividad volcánica mucho más reciente de lo que predecían los modelos y retornando material de la cara oculta que puede finalmente explicar por qué los dos hemisferios de la Luna son tan diferentes. Y el éxito del programa ha convertido a China en la amenaza que marcó el ritmo y reanimó el programa lunar estadounidense: Artemis existe, en parte, porque China demostró que podía y quería ir a la Luna — y quedarse."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La historia de Chang'e es la de un programa que trató a la Luna como una secuencia de problemas a resolver en orden, y los resolvió. No hubo prisa por plantar una bandera, ni una sola carrera dramática — solo una progresión constante y documentada a través de orbitar, aterrizar, rodar y retornar, cada misión construyendo precisamente sobre la anterior. El aterrizaje en la cara oculta es la expresión más pura del método: alcanzarlo requería resolver primero el problema de comunicación con un satélite de retransmisión, así que China lo resolvió primero, y luego aterizó. La audacia es real, pero siempre está ganada mediante la preparación."
+    },
+    {
+      "type": "prose",
+      "md": "También es la vanguardia robótica de una ambición mayor. Las misiones Chang'e no son un fin en sí mismas; son el reconocimiento para aterrizajes tripulados y una base permanente. Cada aterrizaje suave, cada retorno de muestras, cada primicia en la cara oculta es una capacidad que China necesitará para poner personas en la Luna y mantenerlas allí — y el programa está explícitamente estructurado como la primera mitad robótica de un plan cuya segunda mitad es humana."
+    },
+    {
+      "type": "prose",
+      "md": "Y es una mitad de una nueva carrera. Por primera vez desde Apollo, dos potencias se dirigen con fuerza hacia la Luna simultáneamente — el programa Chang'e-y-tripulado de China y el Artemis de Estados Unidos — ambos apuntando al mismo polo sur rico en recursos, ambos construyendo coaliciones, ambos con cronogramas que convergen alrededor de 2030. El éxito discreto y metódico de Chang'e es la razón por la que esa carrera existe, y la constancia de China la convierte en un competidor formidable."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "El primer legado de Chang'e es científico: muestras lunares frescas tanto de la cara visible como de la oculta tras medio siglo de vacío, que ya están reescribiendo la historia volcánica de la Luna y ofreciendo las primeras pistas directas sobre por qué sus dos hemisferios difieren tan profundamente. Estas se encuentran entre las muestras planetarias más valiosas retornadas en una generación."
+    },
+    {
+      "type": "prose",
+      "md": "Su segundo legado es el primer acceso humano a la cara oculta lunar — un lugar que había sido completamente inalcanzable, abierto mediante el simple e ingenioso paso de un satélite de retransmisión. Chang'e convirtió la mitad oculta de la Luna de una abstracción a terreno explorado."
+    },
+    {
+      "type": "prose",
+      "md": "Y su tercer legado es la reanimación de la propia carrera lunar. El éxito metódico de China es una razón principal por la que Estados Unidos se comprometió con Artemis y con retornar humanos a la Luna con fecha límite. Chang'e no solo exploró la Luna; cambió el cálculo estratégico que gobierna quién más va, y cuándo."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección de Chang'e es que una escalera paciente y documentada de capacidades puede superar a una carrera dramática. China no intentó saltar a los objetivos más difíciles; ascendió hasta ellos, probando orbitar antes de aterrizar, aterrizar antes de rodar, rodar antes de retornar muestras — y cuando intentó lo verdaderamente sin precedentes, el aterrizaje y retorno de muestras de la cara oculta, había ganado todos los requisitos previos. El método, sostenido durante dos décadas, produjo una racha de primicias que ningún rival igualó."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda es que la competencia discreta reconfigura el campo. Chang'e no hizo grandes proclamaciones ni ganó ninguna carrera por titulares, pero su éxito constante hizo más por reiniciar la ambición lunar humana mundial que cualquier discurso — porque un programa que simplemente sigue teniendo éxito, misión tras misión, se convierte en un hecho estratégico que todos los demás deben responder. La constancia, al final, es su propia forma de poder."
+    }
+  ]
+}

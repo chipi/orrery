@@ -1,0 +1,88 @@
+{
+  "name": "Chang'e — Il programma lunare cinese",
+  "tagline": "La conquista metodica della Luna: orbitare, atterrare, esplorare, ritornare — compreso il primo allunaggio mai effettuato sul lato nascosto e i primi campioni prelevati da esso.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mentre gli Stati Uniti si sono assentati dalla Luna per cinquant'anni e il programma lunare russo giaceva dormiente, la Cina ha costruito in silenzio la campagna di esplorazione lunare robotica più sostenuta e riuscita del ventunesimo secolo. Battezzato in onore della dea cinese della Luna, il programma Chang'e ha, passo dopo passo deliberato, realizzato tutto ciò che un programma robotico può fare su un altro mondo — orbitarlo, atterrarci, percorrerlo e riportarne a casa dei frammenti — e poi ha fatto le cose che nessuno aveva mai fatto."
+    },
+    {
+      "type": "prose",
+      "md": "La firma del programma è lo stesso metodo paziente e incrementale che ha costruito le stazioni Tiangong: ogni missione è una prova per la successiva, ogni capacità viene dimostrata prima che venga tentata la prossima. Prima orbitare (Chang'e 1–2), poi atterraggio morbido ed esplorazione (Chang'e 3), poi raggiungere l'impossibile lato nascosto (Chang'e 4), poi riportare campioni (Chang'e 5), poi riportare campioni dal lato nascosto (Chang'e 6). È una scala percorsa piolo dopo piolo, e la Cina non ha mancato un piolo."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Gli obiettivi a breve termine sono scientifici e metodici: mappare la Luna, atterrare dolcemente, dispiegare rover e riportare campioni — padroneggiando ogni capacità a turno. Il lato nascosto della Luna, che non guarda mai la Terra e quindi non può comunicare direttamente con essa, è stato un obiettivo specifico e audace: raggiungerlo ha richiesto prima il posizionamento di un satellite relay oltre la Luna, e nessuna nazione vi aveva mai atterrato prima che la Cina lo facesse nel 2019."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change4/01"
+      },
+      "caption": "Chang'e-4 sul lato nascosto della Luna — il primo veicolo spaziale mai atterrato sull'emisfero che non guarda mai la Terra, raggiunto solo dopo che la Cina ha posizionato un satellite relay per trasmettere i suoi segnali a casa.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Gli obiettivi a lungo termine sono molto più ambiziosi: far atterrare astronauti cinesi sulla Luna prima del 2030 e costruire l'International Lunar Research Station — una base robotica e poi con equipaggio vicino al polo sud lunare, sviluppata con partner internazionali come alternativa esplicita alla coalizione Artemis guidata dagli americani. Le missioni robotiche Chang'e sono la ricognizione e la prova di capacità; la base con equipaggio è la destinazione verso cui l'intero programma sta salendo."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Il bilancio è una serie quasi ininterrotta di primati e successi. Chang'e 1 e 2 hanno mappato la Luna. Chang'e 3 (2013) ha realizzato il primo atterraggio morbido dal 1976, trasportando il rover Yutu. Chang'e 4 (2019) ha ottenuto il primo allunaggio della storia sul lato nascosto lunare. Chang'e 5 (2020) ha riportato i primi campioni lunari freschi in 44 anni. E Chang'e 6 (2024) ha riportato i primi campioni mai raccolti dal lato nascosto — materiale che non era mai stato tenuto in mani umane. Nessun altro programma lunare dell'era si avvicina a questa serie di risultati."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/moon/change5/01"
+      },
+      "caption": "Il ritorno dei campioni di Chang'e-5 — le prime nuove rocce lunari portate sulla Terra dalle missioni sovietiche Luna degli anni '70, e la prova che la Cina aveva padroneggiato l'intero viaggio di andata e ritorno verso la superficie lunare.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "I soli campioni hanno rimodellato la scienza lunare, rivelando un'attività vulcanica molto più recente di quanto previsto dai modelli e restituendo materiale del lato nascosto che potrebbe finalmente spiegare perché i due emisferi della Luna sono così diversi. E il successo del programma ha fatto della Cina la minaccia incalzante che ha rianimato il programma lunare americano: Artemis esiste, in parte, perché la Cina ha dimostrato che poteva e voleva andare sulla Luna — e restarci."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Chang'e è quella di un programma che ha trattato la Luna come una sequenza di problemi da risolvere in ordine, e li ha risolti. Non c'è stata fretta di piantare una bandiera, nessuna singola corsa drammatica — solo una progressione costante e pubblicata attraverso orbitare, atterrare, esplorare e ritornare, con ogni missione costruita precisamente sulla precedente. L'allunaggio sul lato nascosto è l'espressione più pura del metodo: raggiungerlo richiedeva prima di risolvere il problema della comunicazione con un satellite relay, quindi la Cina lo ha risolto prima, poi è atterrata. L'audacia è reale, ma è sempre guadagnata dalla preparazione."
+    },
+    {
+      "type": "prose",
+      "md": "È anche l'avanguardia robotica di un'ambizione più grande. Le missioni Chang'e non sono un fine in sé; sono la ricognizione per allunaggi con equipaggio e una base permanente. Ogni atterraggio morbido, ogni ritorno di campioni, ogni primato sul lato nascosto è una capacità di cui la Cina avrà bisogno per portare persone sulla Luna e tenerle lì — e il programma è esplicitamente strutturato come la prima metà robotica di un piano la cui seconda metà è umana."
+    },
+    {
+      "type": "prose",
+      "md": "Ed è una metà di una nuova corsa. Per la prima volta da Apollo, due potenze spingono contemporaneamente verso la Luna — il programma Chang'e-e-con-equipaggio della Cina e l'Artemis americana — entrambe puntano allo stesso polo sud ricco di risorse, entrambe costruiscono coalizioni, entrambe su tempistiche che convergono intorno al 2030. Il successo silenzioso e metodico di Chang'e è la ragione per cui quella corsa esiste, e la costanza della Cina la rende un concorrente formidabile."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Il primo lascito di Chang'e è scientifico: campioni lunari freschi da entrambi i lati, vicino e nascosto, dopo un divario di mezzo secolo, che stanno già riscrivendo la storia vulcanica della Luna e offrono i primi indizi diretti sul perché i suoi due emisferi differiscano così profondamente. Questi sono tra i campioni planetari più preziosi riportati in una generazione."
+    },
+    {
+      "type": "prose",
+      "md": "Il suo secondo lascito è il primo accesso umano al lato nascosto lunare — un luogo che era stato assolutamente irraggiungibile, aperto dal semplice e intelligente passo di un satellite relay. Chang'e ha trasformato la metà nascosta della Luna da un'astrazione in terreno esplorato."
+    },
+    {
+      "type": "prose",
+      "md": "E il suo terzo è la rianimazione della corsa lunare stessa. Il successo metodico della Cina è una ragione principale per cui gli Stati Uniti si sono impegnati con Artemis e a riportare gli esseri umani sulla Luna entro una scadenza. Chang'e non ha solo esplorato la Luna; ha cambiato il calcolo strategico che governa chi altro ci va, e quando."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di Chang'e è che una scala paziente e pubblicata di capacità può superare una corsa drammatica. La Cina non ha tentato di saltare agli obiettivi più difficili; ci è salita, dimostrando l'orbita prima dell'atterraggio, l'atterraggio prima dell'esplorazione, l'esplorazione prima del ritorno dei campioni — e quando ha tentato il veramente senza precedenti, l'allunaggio sul lato nascosto e il ritorno dei campioni, aveva guadagnato ogni prerequisito. Il metodo, sostenuto per due decenni, ha prodotto una serie di primati che nessun rivale ha eguagliato."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che la competenza silenziosa rimodella il campo. Chang'e non ha fatto grandi proclami e non ha vinto nessuna corsa per i titoli, eppure il suo successo costante ha fatto di più per riavviare l'ambizione lunare umana in tutto il mondo di qualsiasi discorso — perché un programma che continua semplicemente ad avere successo, missione dopo missione, diventa un fatto strategico a cui tutti gli altri devono rispondere. La costanza, alla fine, è un suo proprio tipo di potere."
+    }
+  ]
+}

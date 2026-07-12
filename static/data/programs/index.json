@@ -489,5 +489,54 @@
     "start_year": 2004,
     "end_year": null,
     "hero": "fleet/rosetta/01"
+  },
+  {
+    "id": "change",
+    "name": "Chang'e — China's Moon Program",
+    "tagline": "The methodical conquest of the Moon: orbit, land, rove, return — including the first landing ever on the far side, and the first samples from it.",
+    "kind": "robotic-campaign",
+    "agency": "CNSA",
+    "agencies": [
+      "CNSA"
+    ],
+    "country": "China",
+    "epoch": "lunar-return",
+    "status": "ACTIVE",
+    "start_year": 2007,
+    "end_year": null,
+    "hero": "missions/moon/change4/01"
+  },
+  {
+    "id": "commercial-stations",
+    "name": "Commercial Stations",
+    "tagline": "The private outposts meant to replace the ISS — a bet that low Earth orbit can become a business, not just a government program.",
+    "kind": "station",
+    "agency": "Commercial",
+    "agencies": [
+      "Axiom Space",
+      "Blue Origin"
+    ],
+    "country": "USA (commercial)",
+    "epoch": "commercial-era",
+    "status": "PLANNED",
+    "start_year": 2025,
+    "end_year": null,
+    "hero": "fleet/iss/03"
+  },
+  {
+    "id": "ros",
+    "name": "Russian Orbital Station",
+    "tagline": "Russia's planned return to a station of its own — leaving the ISS partnership to fly alone again, as it did with Salyut and Mir.",
+    "kind": "station",
+    "agency": "Roscosmos",
+    "agencies": [
+      "Roscosmos"
+    ],
+    "country": "Russia",
+    "epoch": "commercial-era",
+    "status": "PLANNED",
+    "start_year": 2027,
+    "end_year": null,
+    "hero": "fleet/mir/01"
   }
 ]

@@ -1,0 +1,88 @@
+{
+  "name": "SpaceX — Falcon & Dragon",
+  "tagline": "Une startup qui a failli faire faillite a rendu les fusées réutilisables, réduit le prix de l'orbite et redonné aux États-Unis leur propre moyen d'accès à l'espace.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Pendant un demi-siècle, le fait central du vol spatial était que les fusées étaient jetées. Chaque lancement consommait une machine dont la construction avait coûté des dizaines de millions, l'utilisait une fois et la laissait tomber dans l'océan — l'équivalent de mettre un avion de ligne à la ferraille après un seul vol. Tout le monde savait que c'était la raison pour laquelle l'espace coûtait cher ; presque personne ne croyait que cela pouvait être corrigé. La réutilisabilité avait été tentée, notamment par la navette spatiale, et avait fini par coûter plus cher, pas moins. La leçon que l'industrie en avait tirée était que les fusées jetables étaient tout simplement le prix à payer."
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX a été fondée en 2002 sur le pari inverse : qu'un premier étage de fusée pouvait voler, revenir, atterrir et voler à nouveau — et que cela réduirait considérablement le coût d'accès à l'orbite. Pendant des années, le pari a semblé insensé. La première fusée de l'entreprise, la petite Falcon 1, a échoué trois fois et s'est retrouvée à un échec de la faillite. Son quatrième vol, en 2008, a atteint l'orbite avec le dernier argent dont disposait l'entreprise. Tout ce que SpaceX est devenu par la suite s'est construit sur ce vol unique qu'elle ne pouvait pas se permettre de perdre."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif fondateur était audacieux et énoncé clairement dès le départ : faire de l'humanité une civilisation spatiale et, à terme, coloniser Mars. Mais l'objectif à court terme qui rendait tout cela plausible était plus restreint et plus difficile — réduire le coût d'accès à l'orbite d'un ordre de grandeur, et le seul levier connu pour y parvenir était la réutilisation. Falcon 9 a été conçu dès le départ pour que son premier étage puisse survivre à la rentrée atmosphérique, se diriger lui-même et atterrir sur ses jambes."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/falcon-9/01"
+      },
+      "caption": "Falcon 9 — le cheval de bataille. Son premier étage vole, se sépare, se rallume et atterrit verticalement pour voler à nouveau ; certains propulseurs ont désormais volé plus de vingt fois chacun. La réutilisabilité que tout le monde disait non rentable est devenue routinière.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il y avait un deuxième objectif, plus discret, fixé par la NASA plutôt que par SpaceX : confier l'accès routinier à l'orbite basse — fret, puis équipage — à des prestataires commerciaux, afin que l'agence puisse cesser d'exploiter des camions et revenir à l'exploration. SpaceX est devenu la preuve que cela pouvait fonctionner. Dragon a transporté du fret vers l'ISS à partir de 2012, et Crew Dragon a transporté des astronautes à partir de 2020, mettant fin à neuf années où le seul moyen d'accès à la Station que l'Amérique avait construite était russe."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cela a fonctionné et a redéfini l'industrie. Falcon 9 a fait atterrir son premier propulseur en décembre 2015, en a fait revoler un en 2017, et dans les années 2020, faisait atterrir et réutilisait les étages si régulièrement qu'un lancement sans récupération est devenu l'exception. Le prix du kilogramme en orbite a fortement chuté, la cadence de lancement a augmenté à un rythme que personne d'autre n'a pu égaler, et une capacité qui n'appartenait qu'aux États-nations — le lancement orbital habité — était désormais exploitée par une entreprise privée."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/crew-dragon/01"
+      },
+      "caption": "Crew Dragon — la capsule qui a rétabli le lancement d'équipage américain en 2020 après neuf ans de dépendance à Soyuz, et qui a ensuite transporté les premiers équipages entièrement privés en orbite.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Le volet humain est allé plus loin que la restauration d'une capacité ; il en a ouvert une nouvelle. Crew Dragon a transporté non seulement des astronautes de la NASA vers l'ISS, mais aussi le premier équipage orbital entièrement civil (Inspiration4, 2021) et la première sortie extravéhiculaire commerciale (Polaris Dawn, 2024). L'orbite, pour la première fois, est devenue quelque chose qu'une mission privée pouvait acheter et effectuer — non pas un coup d'éclat, mais le début d'un marché."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Le fil conducteur de Falcon et Dragon est une idée obstinée unique, poursuivie au-delà du point où tous les autres y avaient renoncé. La réutilisabilité n'était pas un concept nouveau ; c'était un concept discrédité, et la réussite de SpaceX tenait moins de l'invention que du refus — le refus d'accepter que l'échec de la navette spatiale à rendre la réutilisation bon marché prouvait que la réutilisation ne pouvait pas être bon marché. La différence était l'itération : l'entreprise a fait s'écraser des propulseurs dans l'océan et sur des barges, encore et encore, traitant chaque échec comme une donnée plutôt que comme une défaite, jusqu'à ce que les atterrissages deviennent banals."
+    },
+    {
+      "type": "prose",
+      "md": "Cette méthode — voler, échouer, corriger, revoler, vite — est le véritable produit. Elle a permis à une entreprise disposant d'une fraction du budget aérospatial traditionnel de surpasser des acteurs établis qui testaient moins et volaient plus prudemment. C'est aussi, appliquée au vol spatial habité, controversé : la même tolérance à l'échec visible qui a rendu Falcon bon marché est plus difficile à accepter quand il y a des personnes à bord. Le bilan irréprochable de Crew Dragon est la réponse que SpaceX apporte à cette préoccupation — l'endroit où la culture du « bouger vite » a rencontré le seul domaine qui la punit le plus durement, et a tenu bon."
+    },
+    {
+      "type": "prose",
+      "md": "Et cela a changé à qui le vol spatial est destiné. En faisant du lancement un service que l'on peut acheter plutôt qu'un programme qu'un gouvernement doit gérer, SpaceX s'est transformé en infrastructure — la route que Starlink emprunte vers l'orbite, que la NASA emprunte vers la Station, et que Starship est censé prolonger jusqu'à Mars. Falcon et Dragon sont les fondations sur lesquelles repose le reste de l'entreprise."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage est un prix de l'orbite durablement plus bas. Les premiers étages réutilisables ne sont plus une excentricité de SpaceX, mais la direction que toute l'industrie s'efforce maintenant de suivre — ce que chaque nouveau lanceur sérieux est conçu pour faire. La navette spatiale promettait de rendre l'espace bon marché et ne l'a pas fait ; Falcon 9 l'a fait, et ce faisant a changé quelles missions sont suffisamment abordables pour être effectuées."
+    },
+    {
+      "type": "prose",
+      "md": "Le deuxième est la commercialisation du vol spatial habité. Crew Dragon a prouvé qu'une entreprise privée pouvait être chargée de lancer des astronautes, restaurant la capacité américaine et amorçant le transfert de l'orbite basse à l'industrie — le modèle sur lequel les successeurs commerciaux de l'ISS sont planifiés."
+    },
+    {
+      "type": "prose",
+      "md": "Et le troisième est un modèle pour l'itération elle-même : construire vite, voler tôt, échouer visiblement et s'améliorer à une cadence que l'aérospatiale traditionnelle ne pouvait égaler. Cette méthode est maintenant dirigée vers une machine bien plus grande — Starship — et vers un objectif bien plus ambitieux."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Falcon et Dragon est qu'une idée discréditée n'est pas la même chose qu'une idée fausse. La réutilisabilité avait échoué une fois, et l'industrie a pris cela pour une preuve qu'elle ne pouvait pas fonctionner. L'avantage de SpaceX a été de refuser cette inférence — de traiter la navette spatiale comme une tentative imparfaite plutôt que comme un verdict, et d'itérer jusqu'à ce que ce que tout le monde disait impossible devienne routinier."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde concerne le prix d'un vol unique. L'entreprise a survécu au quatrième lancement de Falcon 1 et rien de plus ; s'il avait échoué, rien du reste n'existerait. Les grandes capacités dépendent souvent d'un moment fragile au début — et la différence entre les entreprises qui transforment une industrie et celles qui disparaissent tient parfois simplement au fait que ce vol unique a réussi ou non."
+    }
+  ]
+}

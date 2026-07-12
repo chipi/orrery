@@ -1,0 +1,88 @@
+{
+  "name": "SpaceX — Falcon & Dragon",
+  "tagline": "Een startup die bijna failliet ging maakte raketten herbruikbaar, verlaagde de prijs van een baan om de aarde en gaf de Verenigde Staten hun eigen verbinding naar de ruimte terug.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Een halve eeuw lang was het centrale feit van ruimtevaart dat raketten werden weggegooid. Elke lancering consumeerde een machine die tientallen miljoenen had gekost om te bouwen, gebruikte hem één keer en liet hem in de oceaan vallen — het equivalent van een vliegtuig slopen na een enkele vlucht. Iedereen wist dat dit de reden was waarom ruimtevaart duur was; bijna niemand geloofde dat het opgelost kon worden. Herbruikbaarheid was geprobeerd, met name door de Space Shuttle, en had uiteindelijk meer gekost, niet minder. De les die de industrie trok was dat wegwerpraketten simpelweg de prijs waren die bij het vak hoorde."
+    },
+    {
+      "type": "prose",
+      "md": "SpaceX werd opgericht in 2002 met de tegenovergestelde weddenschap: dat de eerste trap van een raket kon vliegen, thuiskomen, landen en opnieuw vliegen — en dat dit de kosten van het bereiken van een baan zou doen instorten. Jarenlang leek de weddenschap dwaas. De eerste raket van het bedrijf, de kleine Falcon 1, faalde drie keer en kwam binnen één extra mislukking van faillissement. De vierde vlucht, in 2008, bereikte een baan met het laatste geld dat het bedrijf had. Alles wat SpaceX later werd, was gebouwd op die ene vlucht die het zich niet kon veroorloven te verliezen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het oprichtingsdoel was gedurfd en vanaf het begin duidelijk gesteld: de mensheid een ruimtevarende beschaving maken, en uiteindelijk Mars koloniseren. Maar het nabije doel dat dit allemaal plausibel maakte was smaller en moeilijker — de kosten van toegang tot een baan verlagen met een orde van grootte, en de enige bekende hefboom daarvoor was hergebruik. Falcon 9 werd vanaf het begin ontworpen zodat zijn eerste trap de terugkeer kon overleven, zichzelf terug kon sturen en op zijn poten kon landen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/falcon-9/01"
+      },
+      "caption": "Falcon 9 — het werkezel. Zijn eerste trap vliegt, scheidt zich af, ontsteekt opnieuw en landt rechtop om opnieuw te vliegen; individuele boosters hebben nu elk meer dan twintig keer gevlogen. De herbruikbaarheid waarvan iedereen zei dat hij oneconomisch was, werd routine.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Er was een tweede, stillere doelstelling die door NASA werd gesteld in plaats van SpaceX: routinematige toegang tot een lage baan om de aarde — vracht, en dan bemanning — overdragen aan commerciële aanbieders, zodat het agentschap kon stoppen met het bedienen van vrachtwagens en terug kon gaan naar exploratie. SpaceX werd het bewijs dat dit kon werken. Dragon vervoerde vracht naar het ISS vanaf 2012, en Crew Dragon vervoerde astronauten vanaf 2020, waarmee een einde kwam aan negen jaar waarin de enige verbinding naar het Station dat Amerika had gebouwd een Russische was."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Het werkte, en het resette de industrie. Falcon 9 landde zijn eerste booster in december 2015, vloog er opnieuw een in 2017, en in de jaren 2020 landde en hergebruikte hij trappen zo routinematig dat een lancering zonder een terugwinning de uitzondering werd. De prijs van een kilogram naar een baan daalde scherp, de lanceercadans steeg tot een tempo dat niemand anders ook maar in de buurt kwam, en een capaciteit die alleen aan natiestaten had toebehoord — voor mensen gecertificeerde orbitale lancering — werd nu uitgevoerd door een particulier bedrijf."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/crew-dragon/01"
+      },
+      "caption": "Crew Dragon — de capsule die Amerikaanse bemanningstransport in 2020 terugbracht na negen jaar afhankelijkheid van Soyuz, en vervolgens de eerste volledig particuliere bemanningen naar een baan bracht.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "De menselijke kant ging verder dan het herstellen van een capaciteit; het opende een nieuwe. Crew Dragon vloog niet alleen NASA-astronauten naar het ISS maar ook de eerste volledig civiele orbitale bemanning (Inspiration4, 2021) en de eerste commerciële ruimtewandeling (Polaris Dawn, 2024). Een baan om de aarde werd voor het eerst iets dat een particuliere missie kon kopen en vliegen — geen stunt, maar het begin van een markt."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De rode draad van Falcon en Dragon is één koppig idee dat verder werd gedragen dan het punt waarop alle anderen het hadden opgegeven. Herbruikbaarheid was geen nieuw concept; het was een gediscrediteerd concept, en SpaceX's prestatie was minder uitvinding dan weigering — weigering om te accepteren dat het falen van de Shuttle om hergebruik goedkoop te maken bewees dat hergebruik niet goedkoop kon zijn. Het verschil was iteratie: het bedrijf liet boosters in de oceaan en op platforms crashen, keer op keer, waarbij elke mislukking als data werd behandeld in plaats van als nederlaag, totdat de landingen saai werden."
+    },
+    {
+      "type": "prose",
+      "md": "Die methode — vliegen, falen, repareren, opnieuw vliegen, snel — is het echte product. Het stelde een bedrijf met een fractie van een traditioneel ruimtevaartbudget in staat om gevestigde partijen te overtreffen die minder testten en voorzichtiger vlogen. Het is ook, toegepast op bemande ruimtevaart, controversieel: dezelfde tolerantie voor zichtbaar falen die Falcon goedkoop maakte is moeilijker te accepteren wanneer er mensen aan boord zijn. Het vlekkeloze trackrecord van Crew Dragon is het antwoord dat SpaceX op die zorg geeft — de plek waar de snel-bewegen-cultuur het ene domein ontmoette dat daar het hardst voor straft, en standhield."
+    },
+    {
+      "type": "prose",
+      "md": "En het veranderde voor wie ruimtevaart is. Door lancering een dienst te maken die je kunt kopen in plaats van een programma dat een overheid moet uitvoeren, transformeerde SpaceX zichzelf tot infrastructuur — de weg die Starlink naar een baan rijdt, die NASA naar het Station rijdt, en die Starship bedoeld is om helemaal tot Mars uit te breiden. Falcon en Dragon zijn het fundament waarop de rest van het bedrijf staat."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "De eerste erfenis is een permanent lagere prijs voor een baan om de aarde. Herbruikbare eerste trappen zijn niet langer een SpaceX-eigenaardigheid maar de richting die de hele industrie nu haastig probeert te volgen — het ding dat elk serieus nieuw lanceervoertuig is ontworpen om te doen. De Shuttle beloofde ruimtevaart goedkoop te maken en deed dat niet; Falcon 9 deed het wel, en veranderde daarmee welke missies betaalbaar genoeg zijn om überhaupt te vliegen."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede is de commercialisering van bemande ruimtevaart. Crew Dragon bewees dat een particulier bedrijf kon worden vertrouwd om astronauten te lanceren, waarmee de Amerikaanse capaciteit werd hersteld en de overdracht van een lage baan aan de industrie begon — het model waarop de commerciële opvolgers van het ISS worden gepland."
+    },
+    {
+      "type": "prose",
+      "md": "En de derde is een sjabloon voor iteratie zelf: snel bouwen, vroeg vliegen, zichtbaar falen en verbeteren met een cadans die traditionele ruimtevaart niet kon evenaren. Die methode wordt nu gericht op een veel grotere machine — Starship — en op een veel groter doel."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Falcon en Dragon is dat een gediscrediteerd idee niet hetzelfde is als een verkeerd idee. Herbruikbaarheid was één keer mislukt, en de industrie hield dat aan voor bewijs dat het niet kon werken. Het voordeel van SpaceX was het weigeren van die conclusie — de Shuttle behandelen als één gebrekkige poging in plaats van een vonnis, en itereren totdat het ding waarvan iedereen zei dat het onmogelijk was routine werd."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les gaat over de prijs van een enkele vlucht. Het bedrijf overleefde op de vierde Falcon 1-lancering en niets meer; was het mislukt, dan zou niets van de rest bestaan. Grote capaciteiten hangen vaak aan één fragiel moment vroeg in het proces — en het verschil tussen de bedrijven die een industrie hervormen en degenen die verdwijnen is soms gewoon of die ene vlucht omhoog ging."
+    }
+  ]
+}

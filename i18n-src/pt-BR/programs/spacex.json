@@ -1,0 +1,88 @@
+{
+  "name": "SpaceX — Falcon & Dragon",
+  "tagline": "Uma startup que quase faliu tornou os foguetes reutilizáveis, reduziu o preço da órbita e devolveu aos Estados Unidos seu próprio meio de transporte para o espaço.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Por meio século, o fato central dos voos espaciais era que os foguetes eram descartados. Cada lançamento consumia uma máquina que havia custado dezenas de milhões para construir, a usava uma vez e a jogava no oceano — o equivalente a sucatear um avião comercial após um único voo. Todos sabiam que era por isso que o espaço era caro; quase ninguém acreditava que isso pudesse ser resolvido. A reutilização havia sido tentada, mais notavelmente pelo Space Shuttle, e acabou custando mais, não menos. A lição que a indústria tirou foi que os foguetes descartáveis eram simplesmente o preço de fazer negócios."
+    },
+    {
+      "type": "prose",
+      "md": "A SpaceX foi fundada em 2002 na aposta oposta: que o primeiro estágio de um foguete poderia voar, voltar para casa, pousar e voar novamente — e que fazer isso reduziria drasticamente o custo de alcançar a órbita. Durante anos a aposta pareceu insensata. O primeiro foguete da empresa, o pequeno Falcon 1, falhou três vezes e chegou a uma falha de distância da falência. Seu quarto voo, em 2008, alcançou a órbita com o último dinheiro que a empresa tinha. Tudo o que a SpaceX se tornou depois foi construído sobre aquele único voo que ela não podia se dar ao luxo de perder."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo fundador era audacioso e declarado claramente desde o início: tornar a humanidade uma civilização espacial e, em última instância, colonizar Marte. Mas o objetivo de curto prazo que tornava qualquer coisa disso plausível era mais restrito e mais difícil — reduzir o custo de acesso à órbita em uma ordem de grandeza, e a única alavanca conhecida para isso era a reutilização. O Falcon 9 foi projetado desde o início para que seu primeiro estágio pudesse sobreviver à reentrada, guiar-se de volta e pousar sobre suas pernas."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/falcon-9/01"
+      },
+      "caption": "Falcon 9 — o cavalo de batalha. Seu primeiro estágio voa, se separa, reacende e pousa na vertical para voar novamente; propulsores individuais já voaram mais de vinte vezes cada. A reutilização que todos diziam ser antieconômica tornou-se rotina.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Havia um segundo objetivo, mais discreto, estabelecido pela NASA e não pela SpaceX: entregar o acesso rotineiro à órbita terrestre baixa — carga e depois tripulação — a fornecedores comerciais, para que a agência pudesse parar de operar caminhões e voltar à exploração. A SpaceX tornou-se a prova de que isso poderia funcionar. A Dragon transportou carga para a ISS a partir de 2012, e a Crew Dragon transportou astronautas a partir de 2020, encerrando nove anos em que o único meio de transporte para a Estação que a América havia construído era russo."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Funcionou e redefiniu a indústria. O Falcon 9 pousou seu primeiro propulsor em dezembro de 2015, revoou um em 2017 e, na década de 2020, estava pousando e reutilizando estágios de forma tão rotineira que um lançamento sem recuperação tornou-se a exceção. O preço de um quilograma para órbita caiu drasticamente, a cadência de lançamentos subiu a uma taxa que ninguém mais chegou perto de igualar, e uma capacidade que havia pertencido apenas a Estados-nação — lançamento orbital com certificação humana — agora era operada por uma empresa privada."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/crew-dragon/01"
+      },
+      "caption": "Crew Dragon — a cápsula que restaurou o lançamento de tripulação americana em 2020 após nove anos de dependência da Soyuz, e depois transportou as primeiras tripulações inteiramente privadas para órbita.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "O lado humano foi além de restaurar uma capacidade; abriu uma nova. A Crew Dragon voou não apenas com astronautas da NASA para a ISS, mas também com a primeira tripulação orbital totalmente civil (Inspiration4, 2021) e a primeira caminhada espacial comercial (Polaris Dawn, 2024). A órbita, pela primeira vez, tornou-se algo que uma missão privada poderia comprar e realizar — não um truque, mas o início de um mercado."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "O fio condutor do Falcon e da Dragon é uma única ideia obstinada levada além do ponto em que todos os outros haviam desistido dela. A reutilização não era um conceito novo; era um conceito desacreditado, e a conquista da SpaceX foi menos invenção do que recusa — recusa em aceitar que o fracasso do Shuttle em tornar a reutilização barata provasse que a reutilização não poderia ser barata. A diferença foi a iteração: a empresa despencou propulsores no oceano e em barcaças, repetidas vezes, tratando cada falha como dados em vez de derrota, até que os pousos se tornassem entediantes."
+    },
+    {
+      "type": "prose",
+      "md": "Esse método — voar, falhar, consertar, voar novamente, rápido — é o verdadeiro produto. Ele permitiu que uma empresa com uma fração do orçamento aeroespacial tradicional superasse no desenvolvimento os estabelecidos que testavam menos e voavam com mais cautela. É também, aplicado ao voo espacial humano, controverso: a mesma tolerância a falhas visíveis que tornou o Falcon barato é mais difícil de aceitar quando há pessoas a bordo. O histórico impecável da Crew Dragon é a resposta que a SpaceX dá a essa preocupação — o lugar onde a cultura de mover-se rápido encontrou o único domínio que a pune com mais severidade, e resistiu."
+    },
+    {
+      "type": "prose",
+      "md": "E mudou para quem é o voo espacial. Ao tornar o lançamento um serviço que você pode comprar em vez de um programa que um governo deve executar, a SpaceX transformou-se em infraestrutura — a estrada que a Starlink percorre até a órbita, que a NASA percorre até a Estação, e que a Starship pretende estender até Marte. O Falcon e a Dragon são a fundação sobre a qual o resto da empresa se apoia."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado é um preço permanentemente mais baixo da órbita. Os primeiros estágios reutilizáveis não são mais uma excentricidade da SpaceX, mas a direção que toda a indústria agora está correndo para seguir — a coisa que todo novo veículo de lançamento sério é projetado para fazer. O Shuttle prometeu tornar o espaço barato e não o fez; o Falcon 9 o fez e, ao fazê-lo, mudou quais missões são suficientemente acessíveis para voar."
+    },
+    {
+      "type": "prose",
+      "md": "O segundo é a comercialização do voo espacial humano. A Crew Dragon provou que uma empresa privada poderia ser confiável para lançar astronautas, restaurando a capacidade dos EUA e iniciando a transferência da órbita baixa para a indústria — o modelo sobre o qual os sucessores comerciais da ISS estão sendo planejados."
+    },
+    {
+      "type": "prose",
+      "md": "E o terceiro é um modelo para a própria iteração: construir rápido, voar cedo, falhar visivelmente e melhorar em uma cadência que a aeroespacial tradicional não conseguia igualar. Esse método agora está sendo apontado para uma máquina muito maior — a Starship — e para um objetivo muito maior."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição do Falcon e da Dragon é que uma ideia desacreditada não é o mesmo que uma ideia errada. A reutilização havia fracassado uma vez, e a indústria confundiu isso com a prova de que não poderia funcionar. A vantagem da SpaceX foi recusar essa inferência — tratar o Shuttle como uma tentativa falha em vez de um veredicto, e iterar até que a coisa que todos diziam ser impossível se tornasse rotina."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é sobre o preço de um único voo. A empresa sobreviveu no quarto lançamento do Falcon 1 e nada mais; se tivesse fracassado, nada do resto existiria. Grandes capacidades frequentemente dependem de um momento frágil no início — e a diferença entre as empresas que remodelam uma indústria e as que desaparecem às vezes é apenas se aquele único voo decolou."
+    }
+  ]
+}

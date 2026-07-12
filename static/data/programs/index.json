@@ -273,5 +273,21 @@
     "start_year": 1999,
     "end_year": null,
     "hero": "fleet/shenzhou/01"
+  },
+  {
+    "id": "spacex",
+    "name": "SpaceX — Falcon & Dragon",
+    "tagline": "A startup that nearly went broke made rockets reusable, cut the price of orbit, and gave the United States back its own ride to space.",
+    "kind": "crewed-campaign",
+    "agency": "SpaceX",
+    "agencies": [
+      "SpaceX"
+    ],
+    "country": "USA",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "start_year": 2002,
+    "end_year": null,
+    "hero": "fleet/falcon-9/01"
   }
 ]

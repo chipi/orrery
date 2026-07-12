@@ -1,0 +1,34 @@
+{
+  "id": "spacex",
+  "kind": "crewed-campaign",
+  "agency": "SpaceX",
+  "agencies": ["SpaceX"],
+  "country": "USA",
+  "start_year": 2002,
+  "status": "ACTIVE",
+  "epoch": "commercial-era",
+  "hero": "fleet/falcon-9/01",
+  "roster": [
+    { "linked_id": "falcon-9", "ref": "fleet", "role": "reusable launcher", "year": 2010 },
+    { "linked_id": "falcon-heavy", "ref": "fleet", "role": "heavy launcher" },
+    { "linked_id": "crew-dragon", "ref": "fleet", "role": "crew spacecraft" },
+    { "linked_id": "cargo-dragon-v1", "ref": "fleet", "role": "cargo spacecraft" },
+    { "linked_id": "cargo-dragon-2", "ref": "fleet", "role": "cargo spacecraft" },
+    { "name": "Falcon 1, flight 4", "year": 2008, "note": "the first privately-developed liquid-fuel rocket to reach orbit — flown weeks before the company ran out of money, on the last flight it could afford" },
+    { "name": "First Dragon to the ISS", "year": 2012, "note": "the first commercial spacecraft to berth with the Station — the private sector begins resupplying human spaceflight" },
+    { "name": "First booster landing", "year": 2015, "note": "a Falcon 9 first stage returns and lands upright — reusability, dismissed for decades as uneconomic, is demonstrated" },
+    { "linked_id": "inspiration4", "ref": "mission", "year": 2021, "note": "the first all-civilian crew to orbit — no professional astronauts aboard at all" },
+    { "linked_id": "polaris-dawn", "ref": "mission", "year": 2024, "note": "the first commercial spacewalk, from a Crew Dragon in a newly-designed SpaceX suit" }
+  ],
+  "related_programs": ["iss"],
+  "see_also": [
+    { "label": "Fleet — Falcon 9, Falcon Heavy & Dragon", "href": "/fleet?focus=falcon-9", "kind": "fleet" },
+    { "label": "ISS — the station Crew Dragon flies to", "href": "/programs/iss", "kind": "program" },
+    { "label": "Earth — orbits, rendezvous & launch sites", "href": "/earth", "kind": "body" }
+  ],
+  "links": [
+    { "l": "SpaceX — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX", "t": "intro" },
+    { "l": "Commercial Crew Program — NASA", "u": "https://www.nasa.gov/commercial-crew-program/", "t": "core" },
+    { "l": "Falcon 9 — SpaceX", "u": "https://www.spacex.com/vehicles/falcon-9/", "t": "deep" }
+  ]
+}

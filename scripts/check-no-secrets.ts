@@ -81,16 +81,24 @@ function isAllowlisted(path: string): boolean {
  * file header `+++ b/path`). When --all is passed, scans the whole
  * working tree instead.
  */
+// git output can be large: `git ls-files` over ~10k+ tracked files (i18n-src),
+// full-file `git show`, and the staged diff all blow past execSync's 1MB
+// default. Give them plenty of headroom so the scan never dies with ENOBUFS.
+const GIT_MAX_BUFFER = 256 * 1024 * 1024;
+
 function gatherCandidateContent(scanAll: boolean): Map<string, string> {
   if (scanAll) {
-    const files = execSync('git ls-files', { encoding: 'utf8' })
+    const files = execSync('git ls-files', { encoding: 'utf8', maxBuffer: GIT_MAX_BUFFER })
       .split('\n')
       .filter((f) => f.length > 0)
       .filter((f) => !isAllowlisted(f));
     const m = new Map<string, string>();
     for (const f of files) {
       try {
-        const content = execSync(`git show HEAD:${JSON.stringify(f)}`, { encoding: 'utf8' });
+        const content = execSync(`git show HEAD:${JSON.stringify(f)}`, {
+          encoding: 'utf8',
+          maxBuffer: GIT_MAX_BUFFER,
+        });
         m.set(f, content);
       } catch {
         // file may be newly added / untracked; skip
@@ -100,7 +108,10 @@ function gatherCandidateContent(scanAll: boolean): Map<string, string> {
   }
 
   // Staged diff mode (pre-commit / preflight).
-  const diff = execSync('git diff --cached --unified=0', { encoding: 'utf8' });
+  const diff = execSync('git diff --cached --unified=0', {
+    encoding: 'utf8',
+    maxBuffer: GIT_MAX_BUFFER,
+  });
   const m = new Map<string, string>();
   let currentPath: string | null = null;
   let buffer: string[] = [];

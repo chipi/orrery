@@ -288,7 +288,7 @@
     "status": "ACTIVE",
     "start_year": 2002,
     "end_year": null,
-    "hero": "fleet/falcon-9/01"
+    "hero": "fleet/falcon-heavy/01"
   },
   {
     "id": "starlink",
@@ -356,7 +356,7 @@
     "status": "ACTIVE",
     "start_year": 2019,
     "end_year": null,
-    "hero": "fleet/orion/01"
+    "hero": "fleet/sls-block-1/01"
   },
   {
     "id": "hayabusa",
@@ -420,7 +420,7 @@
     "status": "COMPLETED",
     "start_year": 2013,
     "end_year": 2022,
-    "hero": "fleet/mangalyaan/01"
+    "hero": "fleet/mangalyaan/03"
   },
   {
     "id": "great-observatories",
@@ -521,7 +521,7 @@
     "status": "PLANNED",
     "start_year": 2025,
     "end_year": null,
-    "hero": "fleet/iss/03"
+    "hero": "fleet/commercial-stations/01"
   },
   {
     "id": "ros",
@@ -537,6 +537,6 @@
     "status": "PLANNED",
     "start_year": 2027,
     "end_year": null,
-    "hero": "fleet/mir/01"
+    "hero": "fleet/ros/01"
   }
 ]

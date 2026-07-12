@@ -2,26 +2,69 @@
   "id": "ros",
   "kind": "station",
   "agency": "Roscosmos",
-  "agencies": ["Roscosmos"],
+  "agencies": [
+    "Roscosmos"
+  ],
   "country": "Russia",
   "start_year": 2027,
   "status": "PLANNED",
   "epoch": "commercial-era",
-  "hero": "fleet/mir/01",
+  "hero": "fleet/ros/01",
   "roster": [
-    { "name": "Announced", "year": 2022, "note": "Russia declares it will leave the ISS partnership and build its own national station — a return to the go-it-alone model of Salyut and Mir" },
-    { "name": "First module", "year": 2027, "note": "the planned launch of the core module of the Russian Orbital Station (ROS) into a high-inclination polar orbit, chosen to see all of Russian territory" },
-    { "name": "ISS withdrawal", "year": 2028, "note": "Russia's stated timeline for ending its participation in the ISS and shifting its cosmonauts to its own station" }
+    {
+      "name": "Announced",
+      "year": 2022,
+      "note": "Russia declares it will leave the ISS partnership and build its own national station — a return to the go-it-alone model of Salyut and Mir"
+    },
+    {
+      "name": "First module",
+      "year": 2027,
+      "note": "the planned launch of the core module of the Russian Orbital Station (ROS) into a high-inclination polar orbit, chosen to see all of Russian territory"
+    },
+    {
+      "name": "ISS withdrawal",
+      "year": 2028,
+      "note": "Russia's stated timeline for ending its participation in the ISS and shifting its cosmonauts to its own station"
+    }
   ],
-  "related_programs": ["mir", "salyut", "iss", "soyuz"],
+  "related_programs": [
+    "mir",
+    "salyut",
+    "iss",
+    "soyuz"
+  ],
   "see_also": [
-    { "label": "Mir — the modular station ROS descends from", "href": "/programs/mir", "kind": "program" },
-    { "label": "Salyut — Russia's original stations", "href": "/programs/salyut", "kind": "program" },
-    { "label": "ISS — the partnership Russia is leaving", "href": "/programs/iss", "kind": "program" }
+    {
+      "label": "Mir — the modular station ROS descends from",
+      "href": "/programs/mir",
+      "kind": "program"
+    },
+    {
+      "label": "Salyut — Russia's original stations",
+      "href": "/programs/salyut",
+      "kind": "program"
+    },
+    {
+      "label": "ISS — the partnership Russia is leaving",
+      "href": "/programs/iss",
+      "kind": "program"
+    }
   ],
   "links": [
-    { "l": "Russian Orbital Service Station — Wikipedia", "u": "https://en.wikipedia.org/wiki/Russian_Orbital_Service_Station", "t": "intro" },
-    { "l": "Roscosmos", "u": "https://www.roscosmos.ru/", "t": "core" },
-    { "l": "Russia's space station plans — ESA overview", "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration", "t": "deep" }
+    {
+      "l": "Russian Orbital Service Station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Russian_Orbital_Service_Station",
+      "t": "intro"
+    },
+    {
+      "l": "Roscosmos",
+      "u": "https://www.roscosmos.ru/",
+      "t": "core"
+    },
+    {
+      "l": "Russia's space station plans — ESA overview",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration",
+      "t": "deep"
+    }
   ]
 }

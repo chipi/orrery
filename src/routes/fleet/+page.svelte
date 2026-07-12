@@ -3,7 +3,7 @@
   import { page } from '$app/stores';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
-  import { trackCardNavigation } from '$lib/card-chain.svelte';
+  import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
   import { base } from '$app/paths';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
@@ -331,8 +331,17 @@
   }
 
   // Detail-card back chain (#29) — track ?id= navigations into / out of cards.
+  function seedProgramBack(url: URL): void {
+    const from = url.searchParams.get('from');
+    if (from?.startsWith('program:')) {
+      seedBackTarget(`${base}/programs/${from.slice('program:'.length)}`, url);
+    }
+  }
   afterNavigate((nav) => {
-    if (nav.to?.url) trackCardNavigation(nav.to.url, nav.type);
+    if (nav.to?.url) {
+      trackCardNavigation(nav.to.url, nav.type);
+      seedProgramBack(nav.to.url);
+    }
   });
 
   onMount(async () => {

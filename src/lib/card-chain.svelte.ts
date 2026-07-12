@@ -87,6 +87,19 @@ export function trackCardNavigation(to: URL, type: string): void {
   }
 }
 
+/**
+ * Seed a single back target (e.g. the program a mission/fleet card was opened
+ * from) so the in-card back button returns there. Call AFTER trackCardNavigation
+ * has run for the incoming card — the card is on screen, but its chain is empty
+ * because it was reached from a non-card page. Only seeds when the chain is
+ * empty so it never clobbers a real card→card chain.
+ */
+export function seedBackTarget(href: string, cardUrl: URL): void {
+  if (cardChain.stack.length > 0) return;
+  cardChain.stack = [href];
+  current = cardUrl.href;
+}
+
 /** Pop the chain and navigate to the previous card. */
 export function goBackCard(): void {
   if (cardChain.stack.length === 0) return;

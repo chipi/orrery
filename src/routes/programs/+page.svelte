@@ -82,7 +82,15 @@
       : [...by.keys()].sort((a, b) => a.localeCompare(b));
     const label = (k: string) =>
       mode === 'era' ? (ERA_LABEL[k]?.() ?? k) : mode === 'kind' ? (KIND_LABEL[k]?.() ?? k) : k;
-    return keys.map((k) => ({ key: k, heading: label(k), items: by.get(k)! }));
+    // Within every section, order chronologically by start date (then name).
+    return keys.map((k) => ({
+      key: k,
+      heading: label(k),
+      items: by
+        .get(k)!
+        .slice()
+        .sort((a, b) => (a.start_year ?? 0) - (b.start_year ?? 0) || a.name.localeCompare(b.name)),
+    }));
   });
 </script>
 

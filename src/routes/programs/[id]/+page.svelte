@@ -61,8 +61,8 @@
 
   function href(r: ProgramRosterItem): string | null {
     if (!r.linked_id) return null;
-    if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}`;
-    if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}`;
+    if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}&from=program:${p.id}`;
+    if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}&from=program:${p.id}`;
     if (r.ref === 'module') return `${base}/${p.id}?module=${r.linked_id}`;
     return null;
   }
@@ -80,8 +80,12 @@
     p.roster
       .filter((r) => r.ref === 'mission' || (!r.ref && !!r.name))
       .slice()
-      .sort((a, b) => (a.year ?? 0) - (b.year ?? 0)),
+      // Chronological; entries without a date (future/TBD) sort to the bottom.
+      .sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity)),
   );
+  // Whether any roster entry is actually a clickable mission — drives the
+  // master-detail pane. With none, we don't prompt the user to "select" one.
+  let hasClickable = $derived(missions.some((r) => !!r.linked_id));
   let fleet = $derived(p.roster.filter((r) => r.ref === 'fleet'));
   let modules = $derived(
     p.roster
@@ -177,7 +181,7 @@
 
   <section class="roster">
     <h2>Missions</h2>
-    <div class="roster-split">
+    <div class="roster-split" class:solo={!hasClickable}>
       <ol class="timeline">
         {#each missions as r, i (i)}
           <li class:context={!r.linked_id} class:sel={!!r.linked_id && r.linked_id === activeSel}>
@@ -201,26 +205,30 @@
           </li>
         {/each}
       </ol>
-      <aside class="detail" aria-live="polite">
-        {#if selectedDetail}
-          <img
-            class="d-hero"
-            src={imgSrc({ reuse: selectedDetail.hero })}
-            alt=""
-            decoding="async"
-          />
-          <p class="d-meta">
-            {selectedDetail.year} · {selectedDetail.agency}{selectedDetail.type
-              ? ` · ${selectedDetail.type}`
-              : ''}
-          </p>
-          <h3 class="d-name">{selectedDetail.name}</h3>
-          <p class="d-blurb">{selectedDetail.blurb}</p>
-          <a class="d-open" href="{base}{selectedDetail.href}">Open the full mission →</a>
-        {:else}
-          <p class="d-empty">Select a mission to see its details.</p>
-        {/if}
-      </aside>
+      {#if hasClickable}
+        <aside class="detail" aria-live="polite">
+          {#if selectedDetail}
+            <img
+              class="d-hero"
+              src={imgSrc({ reuse: selectedDetail.hero })}
+              alt=""
+              decoding="async"
+            />
+            <p class="d-meta">
+              {selectedDetail.year} · {selectedDetail.agency}{selectedDetail.type
+                ? ` · ${selectedDetail.type}`
+                : ''}
+            </p>
+            <h3 class="d-name">{selectedDetail.name}</h3>
+            <p class="d-blurb">{selectedDetail.blurb}</p>
+            <a class="d-open" href="{base}{selectedDetail.href}&from=program:{p.id}"
+              >Open the full mission →</a
+            >
+          {:else}
+            <p class="d-empty">Select a mission to see its details.</p>
+          {/if}
+        </aside>
+      {/if}
     </div>
 
     <h2>Hardware</h2>
@@ -355,6 +363,7 @@
   .spine h2,
   .roster h2,
   .assembly h2,
+  .see-also h2,
   .related h2,
   .sources h2 {
     font-family: 'Space Mono', monospace;
@@ -488,6 +497,10 @@
     align-items: start;
     margin-bottom: 30px;
   }
+  /* No clickable mission → no detail pane; the timeline runs full width. */
+  .roster-split.solo {
+    grid-template-columns: 1fr;
+  }
   .roster-split .timeline {
     margin: 0;
   }
@@ -585,7 +598,7 @@
     margin: 0;
   }
   .see-also li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .see-also a {
     color: #cfe3fb;

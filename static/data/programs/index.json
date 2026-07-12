@@ -389,5 +389,21 @@
     "start_year": 2007,
     "end_year": null,
     "hero": "fleet/slim/01"
+  },
+  {
+    "id": "chandrayaan",
+    "name": "Chandrayaan",
+    "tagline": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
+    "kind": "robotic-campaign",
+    "agency": "ISRO",
+    "agencies": [
+      "ISRO"
+    ],
+    "country": "India",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2008,
+    "end_year": null,
+    "hero": "fleet/chandrayaan1/01"
   }
 ]

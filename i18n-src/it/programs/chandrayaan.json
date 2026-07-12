@@ -1,0 +1,84 @@
+{
+  "name": "Chandrayaan",
+  "tagline": "Il programma lunare indiano — ha scoperto l'acqua che ha cambiato il nostro modo di vedere la Luna, diventando poi la prima nazione a atterrare vicino al polo sud.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Per gran parte dell'era spaziale, la Luna era considerata completamente arida — una roccia morta, priva di atmosfera, senza nulla di utile sulla sua superficie. Questa convinzione fu ribaltata nel 2008 da una sonda spaziale di un paese che non era mai stato sulla Luna prima. Chandrayaan-1, la prima missione lunare dell'India, trasportava strumenti che rilevarono molecole d'acqua legate al suolo lunare su vaste aree della superficie. Fu una delle scoperte più consequenziali nella scienza planetaria moderna, e proveniva dall'ISRO, un'agenzia che operava con una frazione del budget della NASA o dell'ESA."
+    },
+    {
+      "type": "prose",
+      "md": "Chandrayaan — sanscrito per \"veicolo lunare\" — è il programma che ha annunciato l'India come una potenza spaziale autentica nello spazio profondo, non regionale. È definito da due aspetti: condurre scienza di livello mondiale in modo economico, e il rifiuto di farsi fermare dai fallimenti. La sua seconda missione schiantò un lander sulla Luna davanti a una nazione che guardava; la terza tornò quattro anni dopo e riuscì, atterrando dove nessuno mai era arrivato — vicino al polo sud lunare, il territorio più ambito del sistema solare."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'obiettivo scientifico fin dall'inizio era la composizione della Luna e, soprattutto, la sua acqua. Chandrayaan-1 si propose di mappare la superficie e cercare acqua e minerali; il suo successo rese l'obiettivo successivo ovvio e urgente — raggiungere il polo sud, dove si ritiene che crateri permanentemente in ombra contengano ghiaccio d'acqua, la risorsa che un giorno potrebbe alimentare e sostenere una base lunare. L'India puntò il suo programma direttamente sulla questione più preziosa riguardo alla Luna."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/chandrayaan1/01"
+      },
+      "caption": "Chandrayaan-1 — la prima missione lunare dell'India, e la sonda spaziale i cui strumenti trovarono acqua legata al suolo lunare, ribaltando la vecchia convinzione che la Luna fosse arida.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'obiettivo ingegneristico crebbe missione dopo missione: prima orbitare attorno alla Luna e rilasciare un impattatore (Chandrayaan-1), poi atterrare dolcemente con un rover (Chandrayaan-2 e -3). L'atterraggio dolce sulla Luna è brutalmente difficile — la maggior parte dei tentativi della maggior parte delle nazioni è fallita — e farlo al polo sud accidentato e scarsamente illuminato è ancora più difficile. L'obiettivo dell'India era padroneggiare quell'atterraggio, e farlo con un budget ISRO che faceva contare ogni rupia."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "I risultati coprono l'intero arco del programma. Chandrayaan-1 (2008) trovò acqua lunare — un risultato genuinamente rivoluzionario per il campo. Chandrayaan-2 (2019) fu un dolore parziale: il suo orbitatore raggiunse la Luna e opera tuttora, restituendo dati eccellenti, ma il suo lander Vikram perse il controllo negli ultimi momenti e si schiantò, seguito in diretta da una nazione che aveva osato sperare. Poi Chandrayaan-3 (2023) tornò e atterrò dolcemente vicino al polo sud — la prima sonda spaziale a farlo mai, e il risultato che rese l'India il quarto paese ad atterrare sulla Luna, giorni dopo che un tentativo russo nella stessa regione era fallito."
+    },
+    {
+      "type": "prose",
+      "md": "Il contrasto con i budget coinvolti è la parte che ha stupito il mondo. L'India raggiunse la Luna, trovò la sua acqua, e atterrò al suo polo sud con costi che erano una piccola frazione di missioni occidentali comparabili — una dimostrazione che l'esplorazione lunare di frontiera non è la riserva esclusiva delle agenzie più ricche. L'ISRO trasformò il vincolo in una disciplina, e produsse primati che programmi molto più grandi non avevano ottenuto."
+    },
+    {
+      "type": "prose",
+      "md": "Il successo di Chandrayaan-3 portò anche un peso oltre la scienza. Atterrò in un momento in cui il polo sud era diventato un obiettivo conteso — la russa Luna-25 si era schiantata tentando la stessa cosa quello stesso mese — e l'atterraggio dolce dell'India fu un trionfo nazionale celebrato in tutto il paese, e un segnale che le potenze spaziali emergenti ora raggiungono luoghi verso cui quelle vecchie stanno ancora lottando."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Chandrayaan è quella di un paese che impara ad atterrare su un altro mondo in pubblico, e rifiuta di arrendersi quando va male. Lo schianto di Chandrayaan-2 non fu nascosto o minimizzato; accadde in diretta, e il capo dell'ISRO fu mostrato mentre ne soffriva in televisione nazionale. Quattro anni dopo lo stesso programma tornò e riuscì — gli stessi ingegneri, lo stesso obiettivo, le lezioni del fallimento incorporate nella soluzione. È l'esempio recente più chiaro di un'agenzia spaziale che trasforma una sconfitta molto visibile in una vittoria molto visibile."
+    },
+    {
+      "type": "prose",
+      "md": "È anche una storia sul costo. Il genio dell'ISRO è fare cose profonde in modo economico — raggiungere la Luna e Marte con budget che a malapena finanzierebbero uno studio altrove. Quella frugalità è in parte necessità e in parte filosofia: una cultura ingegneristica deliberata di semplicità, riutilizzo di hardware collaudato, e prioritizzazione spietata. Chandrayaan dimostra che il prezzo di ammissione allo spazio profondo è sceso abbastanza da permettere a una nazione determinata di mezzi modesti di detenere primati genuini."
+    },
+    {
+      "type": "prose",
+      "md": "Ed è una storia su chi appartiene ora la Luna. Per decenni l'esplorazione lunare fu un affare di due superpotenze, poi una questione scientifica tranquilla. Chandrayaan, insieme al programma cinese, allo SLIM giapponese, e un'ondata di altri, segna l'arrivo di una Luna genuinamente multipolare — dove il primo atterraggio dolce al polo sud fu fatto non dagli Stati Uniti, Russia, o Cina, ma dall'India."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "La prima eredità di Chandrayaan è scientifica e permanente: la scoperta dell'acqua sulla Luna, che ha riconcettualizzato la Luna da roccia morta a luogo che potrebbe sostenere una presenza umana — la scoperta che sottende ogni piano attuale di ritorno, inclusi Artemis e quello cinese."
+    },
+    {
+      "type": "prose",
+      "md": "La sua seconda eredità è il primo atterraggio dolce vicino al polo sud lunare, la regione verso cui ogni programma lunare futuro sta puntando. L'India ci è arrivata per prima, dandole un diritto genuino alla leadership alla destinazione più importante sulla Luna ed esperienza di atterraggio duramente conquistata su cui le missioni successive costruiranno."
+    },
+    {
+      "type": "prose",
+      "md": "E la sua terza è una dimostrazione, guardata in tutto il mondo, che lo spazio di frontiera è ora accessibile a più delle potenze tradizionali. I costi dell'ISRO hanno reimpostato le aspettative su quanto debba costare l'esplorazione lunare — un esempio che la prossima generazione di nazioni spaziali emergenti sta già seguendo."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di Chandrayaan è che un fallimento pubblico, pienamente riconosciuto e da cui si impara, può diventare il fondamento di un successo maggiore. Lo schianto di Chandrayaan-2 avrebbe potuto porre fine all'ambizione del programma; invece divenne i dati che resero possibile lo storico atterraggio di Chandrayaan-3. La volontà di riprovare, sotto lo stesso occhio pubblico che aveva guardato il fallimento, è tutta la storia."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che il costo è una forma di capacità. Facendo esplorazione profonda in modo economico, l'ISRO non ha semplicemente risparmiato denaro — ha reso possibile una classe di missioni per una nazione che non avrebbe mai potuto permettersele a prezzi occidentali, e ha reimpostato ciò che il resto del mondo crede debba costare l'esplorazione dello spazio profondo. La frugalità, perseguita come disciplina ingegneristica, è essa stessa una forma di potere."
+    }
+  ]
+}

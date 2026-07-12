@@ -1,0 +1,27 @@
+{
+  "id": "chandrayaan",
+  "kind": "robotic-campaign",
+  "agency": "ISRO",
+  "agencies": ["ISRO"],
+  "country": "India",
+  "start_year": 2008,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/chandrayaan1/01",
+  "roster": [
+    { "linked_id": "chandrayaan1", "ref": "fleet", "role": "lunar orbiter", "year": 2008 },
+    { "linked_id": "chandrayaan1", "ref": "mission", "year": 2008, "note": "India's first Moon mission — its impactor and instruments find clear evidence of water molecules across the lunar surface, a discovery that reshaped how we understand the Moon" },
+    { "name": "Chandrayaan-2", "year": 2019, "note": "the orbiter succeeded and still works, but the Vikram lander crashed on final descent — a public, painful near-miss at the south pole" },
+    { "linked_id": "chandrayaan3", "ref": "mission", "year": 2023, "note": "the return: Vikram lands softly near the lunar south pole — the first spacecraft ever to do so, making India the fourth nation to land on the Moon" }
+  ],
+  "related_programs": [],
+  "see_also": [
+    { "label": "Moon — the south-pole landing region", "href": "/moon", "kind": "body" },
+    { "label": "Fleet — the Chandrayaan spacecraft", "href": "/fleet?focus=chandrayaan1", "kind": "fleet" }
+  ],
+  "links": [
+    { "l": "Chandrayaan programme — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan_programme", "t": "intro" },
+    { "l": "ISRO — Indian Space Research Organisation", "u": "https://www.isro.gov.in/", "t": "core" },
+    { "l": "Chandrayaan-3 — ISRO", "u": "https://www.isro.gov.in/Chandrayaan3_Details.html", "t": "deep" }
+  ]
+}

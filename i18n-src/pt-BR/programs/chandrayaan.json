@@ -1,0 +1,84 @@
+{
+  "name": "Chandrayaan",
+  "tagline": "O programa lunar da Índia — encontrou a água que mudou como vemos a Lua, e então se tornou a primeira nação a pousar perto do polo sul.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Durante a maior parte da era espacial, acreditava-se que a Lua fosse completamente seca — uma rocha morta, sem ar, sem nada útil em sua superfície. Essa suposição foi derrubada em 2008 por uma espaçonave de um país que nunca havia ido à Lua antes. A Chandrayaan-1, a primeira missão lunar da Índia, carregava instrumentos que detectaram moléculas de água ligadas ao solo lunar em amplas áreas da superfície. Foi uma das descobertas mais consequentes da ciência planetária moderna, e veio da ISRO, uma agência trabalhando com uma fração do orçamento da NASA ou da ESA."
+    },
+    {
+      "type": "prose",
+      "md": "Chandrayaan — sânscrito para \"nave lunar\" — é o programa que anunciou a Índia como uma potência genuína no espaço profundo, não uma regional. É definido por duas coisas: fazer ciência de classe mundial a baixo custo, e uma recusa em ser detido pelo fracasso. Sua segunda missão acidentou um módulo de pouso na Lua diante de uma nação observando; a terceira voltou quatro anos depois e teve sucesso, pousando onde ninguém jamais havia pousado — perto do polo sul lunar, o imóvel mais cobiçado do sistema solar."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo científico desde o início era a composição da Lua e, acima de tudo, sua água. A Chandrayaan-1 partiu para mapear a superfície e buscar água e minerais; seu sucesso tornou o objetivo posterior óbvio e urgente — alcançar o polo sul, onde crateras permanentemente sombreadas acredita-se conterem gelo de água, o recurso que um dia poderia abastecer e sustentar uma base lunar. A Índia direcionou seu programa diretamente à questão mais valiosa sobre a Lua."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/chandrayaan1/01"
+      },
+      "caption": "Chandrayaan-1 — a primeira missão lunar da Índia, e a espaçonave cujos instrumentos encontraram água ligada ao solo lunar, derrubando a suposição antiga de que a Lua era seca.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo de engenharia cresceu missão após missão: primeiro orbitar a Lua e liberar um impactador (Chandrayaan-1), depois pousar suavemente um rover (Chandrayaan-2 e -3). O pouso suave na Lua é brutalmente difícil — a maioria das tentativas da maioria das nações falhou — e fazê-lo no polo sul acidentado e mal iluminado é ainda mais difícil. O objetivo da Índia era dominar esse pouso, e fazê-lo com um orçamento da ISRO que fazia cada rupia contar."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Os resultados abrangem todo o arco do programa. A Chandrayaan-1 (2008) encontrou água lunar — um resultado genuinamente transformador do campo. A Chandrayaan-2 (2019) foi uma decepção parcial: seu orbitador alcançou a Lua e ainda opera, retornando excelentes dados, mas seu módulo de pouso Vikram perdeu controle nos momentos finais e se acidentou, assistido ao vivo por uma nação que tinha ousado ter esperança. Então a Chandrayaan-3 (2023) retornou e pousou suavemente perto do polo sul — a primeira espaçonave a fazê-lo, e a conquista que fez da Índia o quarto país a pousar na Lua, dias depois que uma tentativa russa na mesma região falhou."
+    },
+    {
+      "type": "prose",
+      "md": "O contraste com os orçamentos envolvidos é a parte que impressionou o mundo. A Índia alcançou a Lua, encontrou sua água e pousou em seu polo sul por custos que eram uma pequena fração de missões ocidentais comparáveis — uma demonstração de que a exploração lunar de fronteira não é a prerrogativa exclusiva das agências mais ricas. A ISRO transformou restrição em disciplina, e entregou pioneirismos que programas muito maiores não haviam alcançado."
+    },
+    {
+      "type": "prose",
+      "md": "O sucesso da Chandrayaan-3 também carregou um peso além da ciência. Ela pousou em um momento em que o polo sul havia se tornado um objetivo disputado — a Luna-25 da Rússia havia se acidentado tentando a mesma coisa naquele mesmo mês — e o pouso suave da Índia foi um triunfo nacional celebrado em todo o país, e um sinal de que as potências espaciais emergentes agora alcançam lugares para os quais as antigas ainda estão lutando."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A história da Chandrayaan é a de um país ensinando-se a pousar em outro mundo em público, e recusando-se a desistir quando deu errado. O acidente da Chandrayaan-2 não foi escondido ou minimizado; aconteceu ao vivo, e o chefe da ISRO foi mostrado lamentando-o na televisão nacional. Quatro anos depois o mesmo programa voltou e teve sucesso — os mesmos engenheiros, o mesmo objetivo, as lições do fracasso incorporadas na solução. É o exemplo recente mais claro de uma agência espacial transformando uma derrota muito visível em uma vitória muito visível."
+    },
+    {
+      "type": "prose",
+      "md": "É também uma história sobre custo. O gênio da ISRO é fazer coisas profundas a baixo custo — alcançar a Lua e Marte com orçamentos que mal financiariam um estudo em outro lugar. Essa frugalidade é em parte necessidade e em parte filosofia: uma cultura de engenharia deliberada de simplicidade, reutilização de hardware comprovado e priorização implacável. Chandrayaan prova que o preço de admissão ao espaço profundo caiu o suficiente para que uma nação determinada de recursos modestos possa conquistar pioneirismos genuínos."
+    },
+    {
+      "type": "prose",
+      "md": "E é uma história sobre a quem a Lua pertence agora. Por décadas a exploração lunar foi um assunto de duas superpotências, depois um assunto científico silencioso. Chandrayaan, ao lado do programa da China, do SLIM do Japão e de uma onda de outros, marca a chegada de uma Lua genuinamente multipolar — onde o primeiro pouso suave no polo sul foi feito não pelos Estados Unidos, Rússia ou China, mas pela Índia."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado da Chandrayaan é científico e permanente: a descoberta de água na Lua, que reformulou a Lua de uma rocha morta em um lugar que poderia sustentar uma presença humana — a descoberta que fundamenta cada plano atual de retorno, incluindo Artemis e o da China."
+    },
+    {
+      "type": "prose",
+      "md": "Seu segundo legado é o primeiro pouso suave perto do polo sul lunar, a região para a qual cada programa lunar futuro está mirando. A Índia chegou lá primeiro, dando-lhe uma reivindicação genuína de liderança no destino mais importante da Lua e experiência de pouso conquistada com dificuldade na qual missões posteriores se basearão."
+    },
+    {
+      "type": "prose",
+      "md": "E seu terceiro é uma demonstração, assistida mundialmente, de que o espaço de fronteira agora é acessível a mais do que as potências tradicionais. Os custos da ISRO redefiniriam expectativas sobre quanto a exploração lunar precisa custar — um exemplo que a próxima geração de nações espaciais emergentes já está seguindo."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição da Chandrayaan é que um fracasso público, totalmente assumido e do qual se aprendeu, pode se tornar a fundação de um sucesso maior. O acidente da Chandrayaan-2 poderia ter terminado a ambição do programa; em vez disso tornou-se os dados que tornaram possível o pouso histórico da Chandrayaan-3. A disposição de tentar novamente, sob o mesmo olhar público que assistiu ao fracasso, é toda a história."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é que custo é uma forma de capacidade. Ao fazer exploração profunda a baixo custo, a ISRO não apenas economizou dinheiro — tornou uma classe de missões possível para uma nação que nunca poderia tê-las financiado a preços ocidentais, e redefiniu o que o resto do mundo acredita que a exploração do espaço profundo deve custar. Frugalidade, perseguida como disciplina de engenharia, é em si mesma um tipo de poder."
+    }
+  ]
+}

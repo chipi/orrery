@@ -1,0 +1,84 @@
+{
+  "name": "Mangalyaan",
+  "tagline": "L'Inde a atteint Mars à sa première tentative — ce qu'aucune nation n'avait jamais fait — pour un coût inférieur à celui d'un film hollywoodien sur l'espace.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Mars est le lieu où les programmes spatiaux vont échouer. Plus de missions ont été perdues en route vers Mars qu'il n'y en a eu qui y ont réussi ; les États-Unis, l'Union soviétique, l'Europe et le Japon se sont tous écrasés, ont raté leur cible ou sont restés muets lors de leurs premières tentatives. Atteindre l'orbite martienne au premier essai était quelque chose qu'aucun pays n'avait jamais réussi. En septembre 2014, l'Inde a fait exactement cela, avec un vaisseau spatial appelé Mangalyaan — sanskrit pour \"engin martien\" — construit par une agence qui n'avait jamais rien envoyé au-delà de la Lune."
+    },
+    {
+      "type": "prose",
+      "md": "La Mars Orbiter Mission était, sur le papier, un démonstrateur technologique modeste : un petit orbiteur avec une charge instrumentale légère, destiné principalement à prouver que l'ISRO pouvait naviguer vers Mars et entrer en orbite. Mais elle a réussi si complètement, si économiquement et de manière si improbable qu'elle est devenue quelque chose de bien plus grand — un symbole de ce qu'un programme spatial frugal et discipliné pouvait accomplir, et un moment de fierté nationale suivi en direct par des centaines de millions d'Indiens."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif principal était la capacité, pas la science : démontrer que l'Inde pouvait concevoir, lancer et naviguer un vaisseau spatial à travers le gouffre interplanétaire et l'insérer précisément en orbite martienne — les technologies spécifiques de communication en espace lointain, d'opération autonome loin de la Terre, et d'une unique manœuvre d'insertion orbitale à quitte ou double que la plupart des premières tentatives ratent. Si celles-ci fonctionnaient, tout le reste était un bonus."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mangalyaan/01"
+      },
+      "caption": "La Mars Orbiter Mission — petite, légère et construite rapidement sur du matériel éprouvé. Ses instruments étaient modestes ; sa véritable charge utile était la preuve que l'Inde pouvait atteindre une autre planète et entrer en orbite à la première tentative.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif non déclaré était de le faire assez économiquement pour que ce soit répétable. L'ISRO a construit et fait voler Mangalyaan pour environ 74 millions de dollars — un chiffre devenu mondialement célèbre pour être inférieur au budget du film Gravity, et une petite fraction de la mission martienne MAVEN contemporaine de la NASA. L'enjeu n'était pas seulement d'atteindre Mars mais de prouver qu'atteindre Mars n'avait pas besoin de coûter une fortune, ouvrant la science interplanétaire aux nations qui ne pourraient jamais se permettre le prix traditionnel."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cela a fonctionné à la première tentative — le résultat qui en a fait un événement historique. Mangalyaan a été lancé en novembre 2013, a voyagé pendant dix mois, et le 24 septembre 2014 a allumé son moteur et s'est glissé en orbite martienne exactement comme prévu. L'Inde est devenue la première nation à atteindre Mars lors de sa mission inaugurale, la première nation asiatique à atteindre Mars, et l'a fait pour un coût qui a redéfini les attentes mondiales sur ce que l'exploration interplanétaire doit coûter."
+    },
+    {
+      "type": "prose",
+      "md": "Et ensuite, il a continué. Conçu pour durer six mois, l'orbiteur a fonctionné pendant environ huit ans, renvoyant des images et des données atmosphériques sur Mars — une vue en couleur du disque entier, des tempêtes de poussière, la ténue atmosphère supérieure — longtemps après que ses objectifs de démonstration aient été atteints. Une mission construite pour prouver un point est devenue discrètement une plateforme scientifique durable, ne se taisant finalement qu'aux alentours de 2022 lorsque son carburant et son énergie se sont épuisés."
+    },
+    {
+      "type": "prose",
+      "md": "L'effet le plus important du résultat a été sur la perception. Mangalyaan a montré à un public mondial que le club des nations capables d'atteindre Mars n'était plus fermé à quelques privilégiés, et que l'ISRO — longtemps sous-estimée comme agence régionale — pouvait réaliser une première interplanétaire. Elle a transformé l'Inde, en une seule manœuvre, en une puissance reconnue de l'espace lointain."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Le récit de Mangalyaan est celui de la frugalité comme superpouvoir. Son coût faible et célèbre n'était pas de la chance ou des raccourcis mais une culture d'ingénierie délibérée : réutilisation de composants éprouvés, un vaisseau spatial petit et ciblé, une suite instrumentale modeste, des trajectoires efficaces qui échangeaient du temps contre du carburant, et des équipes réduites travaillant avec des budgets serrés. L'Inde n'a pas atteint Mars à bon marché en faisant moins bien ; elle a atteint Mars à bon marché par une discipline de simplicité que les programmes plus importants, avec plus d'argent à dépenser, s'imposent rarement."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi une histoire sur la signification d'une première. La science de Mangalyaan était réelle mais limitée ; son poids historique venait d'être première — succès du premier essai, première nation asiatique, première à un prix notoirement bas. Les premières de ce type sont en partie symboliques, et leur valeur relève en partie de la fierté nationale, mais elles ne sont pas vides : elles démontrent une capacité, établissent une place à la table, et inspirent une génération. L'arrivée de l'Inde sur Mars a fait les trois à la fois."
+    },
+    {
+      "type": "prose",
+      "md": "Et elle appartient au même changement que Chandrayaan — l'arrivée d'un espace lointain multipolaire. Pendant des décennies, l'exploration interplanétaire était la chasse gardée de deux superpuissances puis d'une poignée d'agences riches. Mangalyaan, atteignant Mars avec un budget dérisoire, était la preuve que la frontière s'était ouverte à des nouveaux venus déterminés — que la carte de qui explore le système solaire était redessinée, et que l'Inde s'y était fermement placée."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Mangalyaan est le record lui-même : la seule nation à avoir atteint l'orbite martienne à sa première tentative, et la première nation asiatique sur Mars. C'est une entrée permanente dans l'histoire de l'exploration, et un fondement de confiance nationale qui a nourri l'ambition ultérieure de l'ISRO, de Chandrayaan-3 au programme habité Gaganyaan."
+    },
+    {
+      "type": "prose",
+      "md": "Son deuxième héritage est le précédent du coût. En atteignant Mars pour des dizaines de millions plutôt que des centaines, l'ISRO a changé la conversation mondiale sur ce que les missions interplanétaires doivent coûter — un exemple qui abaisse la barrière à l'entrée perçue pour chaque nation spatiale émergente, et met la pression sur les nations établies pour justifier leurs prix."
+    },
+    {
+      "type": "prose",
+      "md": "Et son troisième est l'inspiration. Le succès de Mangalyaan, suivi en direct à travers l'Inde, a attiré une génération vers la science et l'ingénierie et a établi l'espace comme source de fierté nationale — un dividende de soft power qui survit au vaisseau spatial lui-même."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Mangalyaan est que la contrainte, embrassée comme discipline, peut produire des résultats que l'argent seul ne produit pas. L'Inde a atteint Mars au premier essai non pas malgré son petit budget mais en partie à cause de la simplicité que ce budget imposait — un vaisseau spatial ciblé, du matériel éprouvé, et un refus de trop compliquer. La frugalité a rendu la mission à la fois abordable et, dans sa maigreur même, robuste."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est qu'un succès du premier essai sur Mars relève autant de l'humilité que de l'ambition. Le cimetière des missions martiennes échouées est rempli de programmes bien financés qui sont allés trop loin ; l'ISRO est allée exactement aussi loin qu'elle pouvait gérer de manière fiable, l'a prouvé, et a laissé la mission dépasser ses propres objectifs modestes. Viser avec précision, plutôt que viser haut, est parfois la façon dont les premières les plus difficiles sont gagnées."
+    }
+  ]
+}

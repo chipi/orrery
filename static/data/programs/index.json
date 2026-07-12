@@ -405,5 +405,21 @@
     "start_year": 2008,
     "end_year": null,
     "hero": "fleet/chandrayaan1/01"
+  },
+  {
+    "id": "mangalyaan",
+    "name": "Mangalyaan",
+    "tagline": "India reached Mars on its first attempt — something no nation had ever done — for less than the cost of a Hollywood movie about space.",
+    "kind": "robotic-campaign",
+    "agency": "ISRO",
+    "agencies": [
+      "ISRO"
+    ],
+    "country": "India",
+    "epoch": "iss-assembly",
+    "status": "COMPLETED",
+    "start_year": 2013,
+    "end_year": 2022,
+    "hero": "fleet/mangalyaan/01"
   }
 ]

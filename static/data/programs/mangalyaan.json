@@ -1,0 +1,29 @@
+{
+  "id": "mangalyaan",
+  "kind": "robotic-campaign",
+  "agency": "ISRO",
+  "agencies": ["ISRO"],
+  "country": "India",
+  "start_year": 2013,
+  "end_year": 2022,
+  "status": "COMPLETED",
+  "epoch": "iss-assembly",
+  "hero": "fleet/mangalyaan/01",
+  "roster": [
+    { "linked_id": "mangalyaan", "ref": "fleet", "role": "Mars orbiter", "year": 2013 },
+    { "linked_id": "mangalyaan", "ref": "mission", "year": 2014, "note": "the Mars Orbiter Mission enters Mars orbit on its first attempt — India becomes the first nation ever to succeed at Mars on its debut try, and the first Asian nation to reach Mars at all" },
+    { "name": "The cost", "year": 2014, "note": "the whole mission cost about 74 million dollars — less than the Hollywood film Gravity, and a fraction of comparable Western Mars missions" },
+    { "name": "Eight years on station", "year": 2022, "note": "designed for six months, the orbiter worked for roughly eight years before contact was finally lost — a small technology demonstrator that became a long-lived science mission" }
+  ],
+  "related_programs": ["chandrayaan"],
+  "see_also": [
+    { "label": "Mars — the destination", "href": "/mars", "kind": "body" },
+    { "label": "Fleet — the Mars Orbiter Mission", "href": "/fleet?focus=mangalyaan", "kind": "fleet" },
+    { "label": "Chandrayaan — India's Moon program", "href": "/programs/chandrayaan", "kind": "program" }
+  ],
+  "links": [
+    { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
+    { "l": "Mars Orbiter Mission — ISRO", "u": "https://www.isro.gov.in/mars-orbiter-mission-spacecraft.html", "t": "core" },
+    { "l": "ISRO — Indian Space Research Organisation", "u": "https://www.isro.gov.in/", "t": "deep" }
+  ]
+}

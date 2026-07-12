@@ -13,6 +13,21 @@
   "hero": "missions/apollo11/01",
   "roster": [
     {
+      "name": "Ranger",
+      "year": 1964,
+      "note": "robotic prep — impactor probes that returned the first close-up images of the Moon, photographing the surface right up to the instant they crashed, revealing the terrain Apollo would face"
+    },
+    {
+      "name": "Lunar Orbiter",
+      "year": 1966,
+      "note": "robotic prep — five orbiters photographed almost the entire Moon to choose and certify the Apollo landing sites; the reconnaissance that made a safe landing possible"
+    },
+    {
+      "name": "Surveyor",
+      "year": 1966,
+      "note": "robotic prep — soft-landers proved the lunar surface would bear a spacecraft's weight rather than swallow it; Apollo 12 landed beside Surveyor 3 and brought pieces of it home"
+    },
+    {
       "name": "Apollo 1",
       "year": 1967,
       "note": "cabin fire — crew lost in a ground test"

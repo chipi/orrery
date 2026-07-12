@@ -364,7 +364,7 @@
          strip unchanged (2026-07 user direction: "in mobile view move footer
          to main nav as section at bottom; desktop stays as is"). -->
     <div class="drawer-footer" aria-label={m.footer_links_aria()}>
-      <a class="drawer-link drawer-link-sm" href="{base}/posters" onclick={closeMobileMenu}
+      <a class="drawer-link drawer-link-sm" href="{base}{localizeHref('/gallery')}" onclick={closeMobileMenu}
         >{m.layout_footer_gallery()}</a
       >
       <a class="drawer-link drawer-link-sm" href="{base}/credits" onclick={closeMobileMenu}

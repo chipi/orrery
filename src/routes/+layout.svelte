@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import { localizeHref } from '$lib/paraglide/runtime';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
@@ -400,7 +401,7 @@
     aria-label={m.footer_aria()}
   >
     <nav class="footer-menu" aria-label={m.footer_links_aria()}>
-      <a class="footer-link" href="{base}/posters">{m.layout_footer_gallery()}</a>
+      <a class="footer-link" href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>

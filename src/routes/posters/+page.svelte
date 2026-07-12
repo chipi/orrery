@@ -6,6 +6,7 @@
   // links to the full-resolution JPG for download. Subjects + taglines
   // are baked into the artwork; `sub` here mirrors them for a11y/SEO.
   import { base } from '$app/paths';
+  import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import { roving } from '$lib/a11y/roving';
 
@@ -48,12 +49,17 @@
 </script>
 
 <svelte:head>
-  <title>Gallery · Orrery</title>
+  <title>Posters · Gallery · Orrery</title>
 </svelte:head>
 
 <article class="gallery" data-route-ready="true">
   <header>
-    <h1>ORRERY GALLERY</h1>
+    <nav class="crumb">
+      <a href="{base}{localizeHref('/gallery')}">Gallery</a><span class="sep">›</span><span
+        >Posters</span
+      >
+    </nav>
+    <h1>POSTERS</h1>
     <p class="lede">
       Twenty-seven original space posters — every era and agency, from Sputnik to Starship. Free to
       download: click any poster for the full-resolution file to set as wallpaper, print, or use as
@@ -113,6 +119,20 @@
   header {
     text-align: center;
     margin-bottom: 36px;
+  }
+  .crumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 14px;
+  }
+  .crumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+  .crumb .sep {
+    margin: 0 8px;
   }
   h1 {
     font-family: var(--font-display);

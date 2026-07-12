@@ -41,6 +41,10 @@ const SEED_ROUTES = [
   '/science',
   '/credits',
   '/library',
+  '/gallery',
+  '/posters',
+  '/patches',
+  '/sourcing',
 ];
 
 // Every /science tab + section route, read from the section indexes. The

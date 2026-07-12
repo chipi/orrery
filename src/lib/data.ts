@@ -1892,6 +1892,59 @@ export async function getBadges(fetchFn: FetchLike = fetch): Promise<Record<stri
   }
 }
 
+/** Provenance rows for the sourced insignia (one per served badge webp).
+ * Consumed by the /patches gallery for per-badge credit + licence. */
+export interface BadgeProvenance {
+  path: string;
+  source_type: string;
+  title: string;
+  author: string;
+  agency: string;
+  source_url: string;
+  image_url: string;
+  license_short: string;
+  license_url: string | null;
+  artifact?: string;
+}
+export async function getBadgeProvenance(fetchFn: FetchLike = fetch): Promise<BadgeProvenance[]> {
+  try {
+    return await get<BadgeProvenance[]>('badge-provenance.json', fetchFn);
+  } catch {
+    return [];
+  }
+}
+
+/** The public sourcing-debt ledger — content we could not source under the
+ * licensing bar. Rendered on /sourcing; appended by hand as new walls appear. */
+export interface SourcingGap {
+  id: string;
+  area: string;
+  subjects: string[];
+  want: string;
+  wall: string;
+  checked: string[];
+  rejected?: string[];
+  resolution: string;
+  status: 'wall' | 'partial' | 'resolved';
+  date: string;
+}
+export interface SourcingGaps {
+  schema_version: number;
+  note: string;
+  gaps: SourcingGap[];
+}
+export async function getSourcingGaps(
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<SourcingGaps | null> {
+  const overlay = await get<SourcingGaps>(`i18n/${locale}/sourcing/gaps.json`, fetchFn).catch(
+    () => null,
+  );
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<SourcingGaps>('i18n/en-US/sourcing/gaps.json', fetchFn).catch(() => null);
+}
+
 /** Editorial Space-101 narrative shown on the /science landing. Falls back
  * to en-US per ADR-017; returns null only if both the locale and en-US files
  * are missing (which would indicate a broken build, not a runtime condition). */

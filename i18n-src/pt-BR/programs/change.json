@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "Chang'e-4 no lado oculto da Lua — a primeira espaçonave de todos os tempos a pousar no hemisfério que nunca enfrenta a Terra, alcançado apenas depois que a China posicionou um satélite repetidor para transmitir seus sinais de volta.",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "O retorno de amostras da Chang'e-5 — as primeiras rochas lunares novas trazidas à Terra desde as missões soviéticas Luna dos anos 1970, e prova de que a China havia dominado a viagem completa de ida e volta à superfície lunar.",
       "align": "full"

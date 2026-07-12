@@ -7,7 +7,7 @@
   "start_year": 2007,
   "status": "ACTIVE",
   "epoch": "lunar-return",
-  "hero": "missions/moon/change4/01",
+  "hero": "missions/change4/01",
   "roster": [
     { "linked_id": "change1", "ref": "mission", "year": 2007, "note": "China's first Moon mission — an orbiter that mapped the lunar surface and announced China as a lunar power" },
     { "linked_id": "change3", "ref": "mission", "year": 2013, "note": "China's first soft landing on the Moon, carrying the Yutu rover — the first spacecraft to land there since the 1970s" },

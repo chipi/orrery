@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "月の裏側のChang'e-4 — 地球に決して向かない半球に着陸した史上初の探査機。中国が信号を地球に送るための中継衛星を配置した後にのみ到達された。",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "Chang'e-5のサンプル回収 — 1970年代のソ連のLunaミッション以来、地球に持ち帰られた初の新しい月の岩石であり、中国が月面への完全な往復を習得した証明。",
       "align": "full"

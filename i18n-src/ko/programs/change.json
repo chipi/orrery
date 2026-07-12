@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "달 뒷면의 Chang'e-4 — 지구를 향하지 않는 반구에 착륙한 최초의 우주선으로, 중국이 신호를 지구로 전송할 중계위성을 배치한 후에야 도달할 수 있었다.",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "Chang'e-5의 샘플 회수 — 1970년대 소련 Luna 임무 이후 지구로 가져온 최초의 새로운 달 암석으로, 중국이 달 표면으로의 왕복 전체를 숙달했다는 증거다.",
       "align": "full"

@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "Chang'e-4 sur la face cachée de la Lune — le tout premier engin spatial à atterrir sur l'hémisphère qui ne fait jamais face à la Terre, atteint seulement après que la Chine ait placé un satellite relais en position pour transmettre ses signaux.",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "Le retour d'échantillons de Chang'e-5 — les premières nouvelles roches lunaires rapportées sur Terre depuis les missions soviétiques Luna des années 1970, et la preuve que la Chine avait maîtrisé l'aller-retour complet vers la surface lunaire.",
       "align": "full"

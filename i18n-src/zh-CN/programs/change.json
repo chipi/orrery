@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "嫦娥四号在月球背面——有史以来第一个着陆在永不面向地球的半球上的航天器,只有在中国将一颗中继卫星放置到位传送信号回家之后才得以到达。",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "嫦娥五号的样品返回——自1970年代苏联Luna任务以来首次带回地球的新月球岩石,证明中国已掌握了往返月球表面的完整旅程。",
       "align": "full"

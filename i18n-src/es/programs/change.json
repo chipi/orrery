@@ -19,7 +19,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change4/01"
+        "reuse": "missions/change4/01"
       },
       "caption": "Chang'e-4 en la cara oculta de la Luna — la primera nave espacial que aterrizó en el hemisferio que nunca mira hacia la Tierra, alcanzado solo después de que China colocara un satélite de retransmisión en posición para transmitir sus señales a casa.",
       "align": "right"
@@ -37,7 +37,7 @@
     {
       "type": "figure",
       "image": {
-        "reuse": "missions/moon/change5/01"
+        "reuse": "missions/change5/01"
       },
       "caption": "El retorno de muestras de Chang'e-5 — las primeras rocas lunares nuevas traídas a la Tierra desde las misiones soviéticas Luna de la década de 1970, y prueba de que China había dominado el viaje completo de ida y vuelta a la superficie lunar.",
       "align": "full"

@@ -116,8 +116,10 @@ describe('getMissionIndex', () => {
     // 2026-06-17 — added sputnik1 (Sputnik 1, 1957-10-04, USSR/OKB-1).
     // First artificial satellite; the missing mission #1. 112 → 113.
     // 2026-07-10 — dogfood missions artemis4 (Moon) + hera (Didymos). 113 → 115.
+    // 2026-07-12 — /programs Earth flights: Mercury (freedom-7…), Gemini
+    // (3/4/6a/7/8/12), Soyuz 1 & 11. 115 → 123.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(115);
+    expect(missions).toHaveLength(123);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -368,7 +370,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(115);
+    expect(list).toHaveLength(123);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -414,7 +416,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(115);
+    expect(list).toHaveLength(123);
   });
 
   it('count matches what filterMissions reports', async () => {

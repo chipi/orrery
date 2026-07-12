@@ -155,7 +155,12 @@ describe('image-ladder completeness (disk → manifest, bidirectional)', () => {
         !IS_RUNG.test(rel) &&
         !IS_VARIANT.test(rel) &&
         !rel.startsWith('images/posters/') &&
-        !rel.startsWith('images/hotspots/'),
+        !rel.startsWith('images/hotspots/') &&
+        // Badges (program/mission insignia) are a separate pipeline
+        // (scripts/fetch-badges.ts): fixed-size 256px icons with no responsive
+        // rungs and their own badge-provenance.json, so they never enter the
+        // display ladder — like posters and hotspots.
+        !rel.startsWith('images/badges/'),
     )
       .map((rel) => '/' + rel.replace(/\.webp$/, '')) // images/x/01.webp → /images/x/01
       .filter((key) => !(key in manifest));

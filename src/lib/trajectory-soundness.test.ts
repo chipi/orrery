@@ -161,15 +161,17 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // pair Magellan + Akatsuki).
     // 2026-06-17 — added Sputnik 1 (Earth). 31 → 32.
     // 2026-07-10 — added Artemis 4 (Moon dogfood). 31 → 32 Moon.
+    // 2026-07-12 — /programs Earth flights (Mercury freedom-7…, Gemini
+    // 3/4/6a/7/8/12, Soyuz 1 & 11). 32 → 40 Earth.
     if (
       mars.length !== 20 ||
       moon.length !== 32 ||
-      earth.length !== 32 ||
+      earth.length !== 40 ||
       outer.length !== 11 ||
       inner.length !== 8
     ) {
       throw new Error(
-        `Expected 20 Mars + 32 Moon + 32 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 20 Mars + 32 Moon + 40 Earth + 11 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

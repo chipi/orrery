@@ -9,7 +9,6 @@
     onScienceLensChange,
     toggleScienceLens,
   } from '$lib/science-lens';
-  import { settingsState, toggleSettingsOpen } from '$lib/quality/quality-settings-store.svelte';
   import { roving } from '$lib/a11y/roving';
   import { trackScienceLensToggle } from '$lib/analytics';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -23,7 +22,6 @@
     ScienceLensIcon,
     SettingsGearIcon,
     ShareIcon,
-    SensoryIcon,
   } from '$lib/components/icons';
   import { shareCurrent } from '$lib/share';
   import { formatDisplayVersion } from '$lib/version';
@@ -216,21 +214,6 @@
            readable + respects prefers-reduced-motion via CSS). -->
       <AudioWaveIcon />
     </button>
-    <button
-      type="button"
-      class="sensory-toggle"
-      class:active={sensory.anyActive}
-      aria-label={m.nav_sensory_aria()}
-      aria-haspopup="dialog"
-      aria-expanded={sensory.settingsOpen}
-      aria-controls={sensory.settingsOpen ? 'sensory-sheet' : undefined}
-      title={m.nav_sensory_title()}
-      onclick={() => (sensory.settingsOpen ? sensory.closeSettings() : sensory.openSettings())}
-    >
-      <!-- Compass-needle + waveform glyph (PRD-017 §7.1). Teal fill when any
-           sensory channel is active. -->
-      <SensoryIcon />
-    </button>
     <LocalePicker />
     <button
       type="button"
@@ -264,29 +247,22 @@
     >
       Aa
     </button>
-    <!-- Graphics-settings ⚙. Lives in the Nav permanently (2026-06-17
-         consolidation — previously fixed-positioned over the canvas of
-         each 3D-heavy route). Disabled when no settings-capable route
-         is mounted; hover + active glow when available, matching the
-         lens / contrast toggles. State + handlers in
-         $lib/quality/quality-settings-store.svelte. -->
+    <!-- Unified settings ⚙ (2026-07-13). One always-available button opens the
+         settings panel — Sound / Haptics / Tilt on every route, plus a Graphics
+         quality section on 3D routes (gated by settingsState.available inside
+         the panel). Merges the former sensory button + graphics gear. -->
     <button
       type="button"
       class="settings-toggle"
-      class:active={settingsState.open}
-      disabled={!settingsState.available}
-      aria-disabled={!settingsState.available}
-      aria-label={settingsState.available
-        ? 'Graphics settings'
-        : 'Graphics settings (unavailable on this page)'}
-      aria-pressed={settingsState.open}
-      title={settingsState.available
-        ? 'Graphics settings'
-        : 'Graphics settings (unavailable on this page)'}
-      onclick={toggleSettingsOpen}
+      class:active={sensory.settingsOpen || sensory.anyActive}
+      aria-label={m.settings_title()}
+      aria-haspopup="dialog"
+      aria-expanded={sensory.settingsOpen}
+      aria-controls={sensory.settingsOpen ? 'sensory-sheet' : undefined}
+      title={m.settings_title()}
+      onclick={() => (sensory.settingsOpen ? sensory.closeSettings() : sensory.openSettings())}
     >
-      <!-- 8-spoke gear glyph as inline SVG (matches the lens-toggle
-           pattern). Sized to fit the 16 × 16 toggle box. -->
+      <!-- 8-spoke gear glyph as inline SVG. -->
       <SettingsGearIcon />
     </button>
     <button
@@ -755,43 +731,6 @@
       animation: none;
       opacity: 1;
     }
-  }
-
-  /* Sensory-layer toggle — same chrome family as the other right-rail
-     buttons; teal accent echoes the settings-sheet switches. Opens the
-     sensory settings sheet (master + Sound/Vibration/Tilt). */
-  .sensory-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .sensory-toggle :global(svg) {
-    display: block;
-  }
-  .sensory-toggle:hover,
-  .sensory-toggle:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: rgba(78, 205, 196, 0.95);
-    outline: none;
-  }
-  .sensory-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
   }
 
   /* First-time sensory hint — non-modal toast, bottom-centre, 4s auto-dismiss. */

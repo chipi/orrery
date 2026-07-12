@@ -1,11 +1,12 @@
 <!--
-  Sensory settings sheet (PRD-017 / RFC-020 §7.2). Opened from the nav sensory
-  button. Bottom-sheet on mobile, dropdown on desktop. Holds the master switch
-  plus the capability-gated sub-toggles (Sound / Vibration / Tilt). Dismiss on
-  Escape, backdrop, or the close button — focus restored to the opener.
-
-  Phase 1 is inert: toggles flip `sensory` state; no channel produces output yet
-  (feedback engine = Phase 2, gyro = Phase 3, sonification = Phase 4).
+  Unified settings panel (2026-07-13 merge of the sensory sheet + graphics ⚙).
+  Opened from the single nav settings button. Bottom-sheet on mobile, dropdown on
+  desktop. Sections:
+    • Sound / Haptics / Tilt — the sensory channels (master switch + per-channel),
+      capability-gated (RFC-020 §7.3). Available on every route.
+    • Graphics quality — only when the current route surfaces it
+      (settingsState.available), read from the shared quality-settings store.
+  Dismiss on Escape, backdrop, or the close button — focus restored to the opener.
 -->
 <script lang="ts">
   import { tick } from 'svelte';
@@ -13,10 +14,36 @@
   import { sensory } from '$lib/sensory/state.svelte';
   import { gyro } from '$lib/sensory/device-orientation';
   import type { SensoryChannel } from '$lib/sensory/capabilities';
+  import { settingsState, closeSettings } from '$lib/quality/quality-settings-store.svelte';
+  import {
+    type QualityChoice,
+    readUserChoice,
+    writeUserChoice,
+    ALL_TIERS,
+  } from '$lib/quality/quality-tier';
 
   let dialogEl = $state<HTMLDivElement | null>(null);
   let opener: HTMLElement | null = null;
   let gyroDenied = $state(false);
+
+  // ── Graphics quality (moved from QualitySettingsModal) ─────────────────────
+  let qualityChoice = $state<QualityChoice>('auto');
+  let qualityDirty = $state(false);
+  let pristineLoaded = false;
+  $effect(() => {
+    if (sensory.settingsOpen && settingsState.available && !pristineLoaded) {
+      qualityChoice = readUserChoice();
+      pristineLoaded = true;
+    }
+  });
+  function onQualityChange(next: QualityChoice) {
+    qualityChoice = next;
+    writeUserChoice(next);
+    qualityDirty = true;
+  }
+  function reloadForQuality() {
+    if (typeof window !== 'undefined') window.location.reload();
+  }
 
   // Enabling GYRO must request the iOS motion permission from the tap gesture
   // (P-A). Denial leaves the row visible with a tooltip; the other channels are
@@ -30,7 +57,7 @@
     sensory.setChannel(ch, !wanted(ch));
   }
 
-  // Focus the sheet on open; restore focus to the opener on close.
+  // Focus the panel on open; restore focus to the opener on close.
   $effect(() => {
     if (sensory.settingsOpen) {
       opener = document.activeElement as HTMLElement | null;
@@ -41,16 +68,19 @@
     }
   });
 
+  function onClose(): void {
+    sensory.closeSettings();
+    closeSettings(); // keep the graphics store's open flag in sync
+  }
   function onKeydown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
       e.stopPropagation();
-      sensory.closeSettings();
+      onClose();
     }
   }
 
-  // Sub-toggle rows, in display order. Rendered only when the device can offer
-  // the channel (RFC-020 §7.3 — desktop shows Sound only; iOS-web hides Vibration).
-  const rows: Array<{
+  // Per-channel section metadata, in display order.
+  const channels: Array<{
     ch: SensoryChannel;
     label: () => string;
     desc: () => string;
@@ -74,7 +104,7 @@
     type="button"
     class="sensory-backdrop"
     aria-label={m.sensory_sheet_close_aria()}
-    onclick={() => sensory.closeSettings()}
+    onclick={onClose}
   ></button>
 
   <div
@@ -88,16 +118,16 @@
     onkeydown={onKeydown}
   >
     <header class="sheet-head">
-      <h2 id="sensory-sheet-title">{m.sensory_sheet_title()}</h2>
+      <h2 id="sensory-sheet-title">{m.settings_title()}</h2>
       <button
         type="button"
         class="sheet-close"
         aria-label={m.sensory_sheet_close_aria()}
-        onclick={() => sensory.closeSettings()}>×</button
+        onclick={onClose}>×</button
       >
     </header>
 
-    <!-- Master switch -->
+    <!-- Master switch — gates the three sensory channels below. -->
     <div class="row master">
       <div class="row-text">
         <span class="row-label">{m.sensory_master_label()}</span>
@@ -116,33 +146,75 @@
       </button>
     </div>
 
-    <!-- Sub-toggles — only the channels this device can offer -->
-    {#each rows as { ch, label, desc } (ch)}
+    <!-- One section per capable sensory channel (Sound / Haptics / Tilt). -->
+    {#each channels as { ch, label, desc } (ch)}
       {#if sensory.capabilities[ch]}
-        <div class="row sub" class:dimmed={!sensory.on}>
-          <div class="row-text">
-            <span class="row-label">{label()}</span>
-            <span class="row-desc">{desc()}</span>
+        <section class="section" class:dimmed={!sensory.on}>
+          <div class="section-title">{label()}</div>
+          <div class="row sub">
+            <div class="row-text">
+              <span class="row-desc">{desc()}</span>
+            </div>
+            <button
+              type="button"
+              class="switch"
+              role="switch"
+              aria-checked={wanted(ch)}
+              aria-label={label()}
+              onclick={() => void toggleChannel(ch)}
+            >
+              <span class="knob"></span>
+            </button>
           </div>
-          <button
-            type="button"
-            class="switch"
-            role="switch"
-            aria-checked={wanted(ch)}
-            aria-label={label()}
-            onclick={() => void toggleChannel(ch)}
-          >
-            <span class="knob"></span>
-          </button>
-        </div>
-        {#if ch === 'gyro' && gyroDenied}
-          <p class="sheet-note" role="alert">{m.sensory_gyro_denied()}</p>
-        {/if}
+          {#if ch === 'gyro' && gyroDenied}
+            <p class="sheet-note" role="alert">{m.sensory_gyro_denied()}</p>
+          {/if}
+          {#if ch === 'gyro'}
+            <p class="sheet-help">{m.sensory_recalibrate_help()}</p>
+          {/if}
+        </section>
       {/if}
     {/each}
 
-    {#if sensory.capabilities.gyro}
-      <p class="sheet-help">{m.sensory_recalibrate_help()}</p>
+    <!-- Graphics quality — only where the route surfaces it. -->
+    {#if settingsState.available}
+      <section class="section">
+        <div class="section-title">{m.settings_graphics_quality()}</div>
+        <div class="section-hint">
+          {m.settings_active_label()}
+          <span class="active-tier">{settingsState.activeTier}</span>
+        </div>
+        <label class="radio">
+          <input
+            type="radio"
+            name="quality"
+            value="auto"
+            checked={qualityChoice === 'auto'}
+            onchange={() => onQualityChange('auto')}
+          />
+          <span>{m.settings_auto_detect()}</span>
+        </label>
+        {#each ALL_TIERS as tier (tier)}
+          <label class="radio">
+            <input
+              type="radio"
+              name="quality"
+              value={tier}
+              checked={qualityChoice === tier}
+              onchange={() => onQualityChange(tier)}
+            />
+            <span>{tier}</span>
+          </label>
+        {/each}
+        {#if qualityDirty}
+          <div class="reload-hint">
+            {m.settings_reload_required()}
+            <button type="button" class="reload-btn" onclick={reloadForQuality}
+              >{m.settings_reload_now()}</button
+            >
+          </div>
+        {/if}
+      </section>
     {/if}
   </div>
 {/if}
@@ -163,6 +235,8 @@
     top: calc(var(--nav-height) + 6px);
     right: 8px;
     width: min(340px, calc(100vw - 16px));
+    max-height: calc(100vh - var(--nav-height) - 20px);
+    overflow-y: auto;
     z-index: 90;
     background: var(--color-nav-bg);
     border: 1px solid var(--color-border);
@@ -207,21 +281,45 @@
     outline: none;
   }
 
+  /* Section grouping — a labelled subsection (Sound / Haptics / Tilt / Graphics). */
+  .section {
+    padding: 8px 2px 6px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .section:last-child {
+    border-bottom: none;
+  }
+  .section.dimmed {
+    opacity: 0.5;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .section-hint {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+    padding: 2px 10px 4px;
+  }
+  .active-tier {
+    color: #4ecdc4;
+    text-transform: uppercase;
+  }
+
   .row {
     display: flex;
     align-items: center;
     gap: 12px;
     min-height: 44px;
-    padding: 10px;
+    padding: 6px 10px;
   }
   .row.master {
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 2px;
-  }
-  /* When master is OFF the sub-toggles still hold your preference (settable),
-     but the whole row dims to signal they're gated by the master switch. */
-  .row.sub.dimmed {
-    opacity: 0.5;
   }
   .row-text {
     display: flex;
@@ -278,19 +376,54 @@
     outline: 2px solid var(--color-accent, #4466ff);
     outline-offset: 2px;
   }
-  .switch:disabled {
-    cursor: not-allowed;
-    opacity: 0.4;
+
+  .radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 13px;
+    color: var(--color-text);
+  }
+  .radio input {
+    accent-color: #4ecdc4;
+    cursor: pointer;
+  }
+  .reload-hint {
+    margin: 8px 10px 2px;
+    padding: 8px;
+    background: rgba(255, 200, 80, 0.15);
+    border: 1px solid rgba(255, 200, 80, 0.5);
+    border-radius: 4px;
+    font-size: 11px;
+    color: #ffd870;
+  }
+  .reload-btn {
+    display: inline-block;
+    margin-top: 6px;
+    background: rgba(78, 205, 196, 0.2);
+    border: 1px solid #4ecdc4;
+    color: #4ecdc4;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+  }
+  .reload-btn:hover {
+    background: rgba(78, 205, 196, 0.35);
   }
 
   .sheet-note {
-    margin: -4px 10px 6px;
+    margin: -2px 10px 4px;
     font-size: 11px;
     color: #ffb454;
     line-height: 1.3;
   }
   .sheet-help {
-    margin: 4px 10px 8px;
+    margin: 2px 10px 4px;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.45);
     font-family: 'Space Mono', monospace;
@@ -312,6 +445,7 @@
       right: 8px;
       bottom: 8px;
       width: auto;
+      max-height: 70vh;
       border-radius: 14px;
     }
   }

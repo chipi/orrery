@@ -5315,6 +5315,9 @@
           onToggle={toggleView}
         />
       {/if}
+      {#if arType}
+        <EnterArButton onEnter={() => void launchArScene(arType)} />
+      {/if}
       {#if view === '3d'}
         <View3dControls
           onReset={() => resetCamera()}
@@ -5414,9 +5417,6 @@
       aria-label={m.ui_view_controls()}
     >
       {@render surfaceControls()}
-      {#if arType}
-        <EnterArButton onEnter={() => void launchArScene(arType)} />
-      {/if}
     </div>
     <!-- Mobile-only: view toggle + Reset View fixed top-left below nav.
          Spin stays in the LAYERS drawer; these two controls move up top
@@ -5433,6 +5433,9 @@
           label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
           onToggle={toggleView}
         />
+      {/if}
+      {#if arType}
+        <EnterArButton onEnter={() => void launchArScene(arType)} />
       {/if}
       {#if view === '3d'}
         <button

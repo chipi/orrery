@@ -56,19 +56,23 @@
 {/if}
 
 <style>
+  /* Chip next to the 2D toggle — matches the .toggle sizing (44px, Space Mono
+     12px, radius 4) with a teal AR accent so it reads as the AR affordance. */
   .enter-ar {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
+    min-width: 44px;
     min-height: 44px;
-    padding: 0 14px;
+    padding: 0 10px;
     background: rgba(78, 205, 196, 0.18);
     border: 1px solid rgba(78, 205, 196, 0.6);
-    border-radius: 6px;
+    border-radius: 4px;
     color: #4ecdc4;
-    font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
     text-decoration: none;
     cursor: pointer;
   }

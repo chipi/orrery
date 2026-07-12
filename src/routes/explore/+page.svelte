@@ -5090,6 +5090,7 @@
           {m.ui_reset_view()}
         </button>
       {/if}
+      <EnterArButton onEnter={() => void launchArScene('explore')} />
     </div>
     <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
          data-audio-stage which LayerChipRow's interface doesn't expose. -->
@@ -5225,7 +5226,6 @@
     aria-label={m.ui_view_controls()}
   >
     {@render exploreControls()}
-    <EnterArButton onEnter={() => void launchArScene('explore')} />
   </div>
   <!-- Mobile-only: 2D/3D toggle + Reset View fixed at top-left (mirrors
        desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
@@ -5257,6 +5257,7 @@
         {m.ui_reset_view()}
       </button>
     {/if}
+    <EnterArButton onEnter={() => void launchArScene('explore')} />
   </div>
   <!-- Mobile-only: 3-tab accordion — Orbit Ruler | Controls | Iconic Missions.
        Desktop uses .hud-controls (above) + .ruler-desktop-only (below). -->

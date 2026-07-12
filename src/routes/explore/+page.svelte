@@ -5398,11 +5398,27 @@
       {/each}
     </div>
   {/snippet}
+  {#snippet mobileIndexContent(close: () => void)}
+    <ExploreBodyIndex
+      inline
+      bodies={bodyIndexList}
+      {selectedId}
+      open
+      onClose={close}
+      onSelect={(b) => {
+        if (b.kind === 'sun') selectSun();
+        else if (b.kind === 'planet') selectPlanet(b.id);
+        else selectSmallBody(b.id);
+        close();
+      }}
+    />
+  {/snippet}
   <MobileDrawerGroup
     tabs={[
       { id: 'ruler', label: 'Ruler', icon: '◎', content: mobileRulerContent },
       { id: 'controls', label: 'Controls', icon: '▤', content: mobileControlsContent },
       { id: 'missions', label: 'Missions', icon: '➤', content: mobileIconicContent },
+      { id: 'index', label: 'Index', icon: '☰', content: mobileIndexContent },
     ]}
     onOpen={(id) => {
       if (id === 'missions') layers.paths = true;
@@ -5551,16 +5567,20 @@
      can demonstrate planet-selection on a canvas-driven scene where
      there's no clickable DOM element for a planet. These buttons are
      visually offscreen but click()-able. -->
-<!-- Body index (RFC-031 S2): keyboard/SR/TV access to every selectable body,
-     the accessible counterpart to canvas picking. Skips 3D/camera entirely. -->
+<!-- Body index (RFC-031 S2): the desktop edge-handle "little side tab" (mirrors
+     the surface index handle) toggles the searchable side panel — master → detail,
+     stays open on select. Mobile uses the Index drawer tab. The accessible
+     counterpart to canvas picking. -->
 <button
   type="button"
-  class="body-index-toggle"
+  class="body-index-handle body-index-toggle"
+  data-testid="explore-body-index-toggle"
+  aria-pressed={bodyIndexOpen}
   aria-label={m.explore_body_index_aria()}
-  aria-expanded={bodyIndexOpen}
+  title={m.explore_body_index_aria()}
   onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
 >
-  {m.explore_body_index_toggle()}
+  <span class="bih-label">{m.explore_body_index_toggle()}</span>
 </button>
 <ExploreBodyIndex
   bodies={bodyIndexList}
@@ -5571,7 +5591,7 @@
     if (b.kind === 'sun') selectSun();
     else if (b.kind === 'planet') selectPlanet(b.id);
     else selectSmallBody(b.id);
-    bodyIndexOpen = false;
+    // Desktop master → detail: keep the index open on select (matches surface).
   }}
 />
 
@@ -6348,29 +6368,40 @@
   /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
      offscreen but click()-able so the audio executor can drive planet
      selection without a DOM hit on the 3D canvas. */
-  .body-index-toggle {
-    position: fixed;
-    top: 72px;
-    /* Top-right, clear of the left-column .hud-controls (z-index 45, spans the
-       left rail): as a top-left fixed button it was buried under that cluster
-       and became invisible + unclickable on desktop. Sit above the HUD z-band
-       so it stays reachable everywhere (keyboard, pointer, TV). */
-    right: 12px;
-    z-index: 46;
-    padding: 6px 12px;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: var(--text-base, #e8e8ed);
-    background: color-mix(in srgb, var(--bg-base, #04040c) 88%, transparent);
-    border: 1px solid var(--border-subtle, #23232e);
-    border-radius: 8px;
-    backdrop-filter: blur(8px);
-    cursor: pointer;
+  /* Desktop object-index edge-handle "little side tab" — mirrors the surface
+     index handle. Hidden on touch (mobile uses the Index drawer tab); a fine
+     pointer gets the left-edge vertical handle that toggles the side panel. */
+  .body-index-handle {
+    display: none;
   }
-  .body-index-toggle:hover,
-  .body-index-toggle:focus-visible {
-    border-color: var(--brand, #4a7dff);
+  @media (hover: hover) and (pointer: fine) {
+    .body-index-handle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: calc(var(--nav-height) + 132px);
+      z-index: 44;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      padding: 12px 6px;
+      background: rgba(8, 10, 22, 0.85);
+      border: 1px solid var(--border-subtle, #23232e);
+      border-left: none;
+      border-radius: 0 6px 6px 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .body-index-handle:hover,
+    .body-index-handle[aria-pressed='true'] {
+      color: #4ecdc4;
+      border-color: rgba(78, 205, 196, 0.5);
+    }
   }
 
   .tour-anchors {

@@ -39,6 +39,23 @@
       "resolution": "The CNSA agency logo stands in as the honest mark on the Tiangong and Shenzhou cards and pages.",
       "status": "wall",
       "date": "2026-07-12"
+    },
+    {
+      "id": "jaxa-isro-patches",
+      "area": "Mission & program insignia",
+      "subjects": ["Hayabusa", "JAXA — Moon and Planets", "Chandrayaan", "Mangalyaan", "Gaganyaan"],
+      "want": "Programme and mission insignia for Japan's JAXA and India's ISRO, to sit beside the NASA patches on their programme pages.",
+      "wall": "Both agencies do produce mission logos and emblems — Hayabusa2, SLIM, Chandrayaan-3 and the rest all have them — but they are held under the agencies' own copyright and are not released under a free licence. Wikimedia Commons carries none of them; the only free-licensed results for these searches are unrelated NASA photographs.",
+      "checked": [
+        "Wikimedia Commons — English keyword search (JAXA / ISRO / Hayabusa / Chandrayaan / Mangalyaan emblem, patch, insignia, logo)"
+      ],
+      "rejected": [
+        "jaxa.jp / isro.gov.in imagery — copyrighted, no free licence",
+        "Third-party fan reproductions — not authentic and not free"
+      ],
+      "resolution": "The JAXA and ISRO agency logos stand in as the honest mark on the affected programme cards and pages.",
+      "status": "wall",
+      "date": "2026-07-12"
     }
   ]
 }

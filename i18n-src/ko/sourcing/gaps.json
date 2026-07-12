@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Orrery가 라이선스 기준(Creative Commons / 퍼블릭 도메인, 워터마크 없음, 진본 — 팬 복제품 제외)에 따라 확보할 수 없었던 콘텐츠의 공개 기록. 우리는 사용 권한이 없는 것을 제공하기보다 정직하게 공백으로 남겨두는 것을 택한다. 새로운 장벽에 부딪힐 때마다 여기에 추가한다.",
+  "note": "Orrery가 라이선스 기준(Creative Commons / 퍼블릭 도메인, 워터마크 없음, 진본 — 팬 복제품 불가) 하에서 소싱할 수 없었던 콘텐츠의 공개 기록. 우리는 사용 권한이 없는 것을 게재하기보다는 정직한 공백을 보여주는 편을 택한다. 이러한 벽에 부딪힐 때마다 여기에 추가한다.",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -15,8 +15,8 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "NASA 휘장과 함께 배치할 소련 초기 유인 프로그램의 진본 프로그램 및 임무 패치.",
-      "wall": "두 가지 장벽이 동시에 존재한다. 첫째, 대부분은 애초에 존재하지 않았다: 소련은 1975년 Apollo–Soyuz 때까지 임무 패치 관행을 채택하지 않았기 때문에 Vostok, Voskhod 그리고 초기 Soyuz 비행은 단순히 패치가 없었다. 둘째, 이후에 존재하는 것들 — Soyuz TM/TMA 원정 패치, Roscosmos 엠블럼 — 은 저작권이 있거나 공정 사용으로만 업로드되었으며, 자유 라이선스로 공개된 적이 없다.",
+      "want": "NASA 휘장과 나란히 배치할 초기 소련 유인 프로그램의 진본 프로그램 및 임무 패치.",
+      "wall": "두 가지 벽이 동시에 존재한다. 첫째, 대부분은 애초에 존재하지 않았다. 소련은 1975년 Apollo–Soyuz까지 임무 패치 전통을 채택하지 않았으므로 Vostok, Voskhod 및 초기 Soyuz 비행에는 패치가 아예 없었다. 둘째, 이후에 존재하는 것들 — Soyuz TM/TMA 원정 패치, Roscosmos 엠블럼 — 은 저작권이 있거나 공정 이용으로만 업로드되었으며, 자유 라이선스로 공개된 적이 없다.",
       "checked": [
         "Wikimedia Commons — 영어 키워드 검색",
         "Wikimedia Commons — 키릴 문자 검색 (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
@@ -24,10 +24,10 @@
         "ru.wikipedia — Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран 문서 이미지"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ru 및 유사 사이트 — 저작권 보호 대상이거나 라이선스 불명확; astronaut.ru는 개인 운영 백과사전으로 권리 보유자가 아님",
-        "현대 팬 복제품 (예: 게임 아티스트가 만든 CC-BY Buran 엠블럼) — 자유 라이선스이지만 진본 휘장이 아님"
+        "roscosmos.ru / astronaut.ru 및 유사 사이트 — 저작권 보호 또는 라이선스 불명확; astronaut.ru는 민간 운영 백과사전이며 권리 보유자가 아님",
+        "현대 팬 복제품 (예: 게임 아티스트가 만든 CC-BY Buran 엠블럼) — 자유 라이선스지만 진본 휘장이 아님"
       ],
-      "resolution": "Roscosmos 기관 로고가 영향받은 모든 프로그램 카드 및 페이지에 정직한 표시로 대신한다.",
+      "resolution": "Roscosmos 기관 로고가 영향을 받는 모든 프로그램 카드와 페이지에 정직한 표시로 사용된다.",
       "status": "wall",
       "date": "2026-07-12"
     },
@@ -39,17 +39,40 @@
         "Shenzhou",
         "China Manned Space"
       ],
-      "want": "Tiangong 및 Shenzhou 페이지에서 NASA 휘장과 함께 배치할 China Manned Space (CMS) 프로그램 엠블럼 및 Shenzhou 승무원 패치.",
-      "wall": "중국의 유인 프로그램은 임무 패치를 사용한다 — 모든 Shenzhou 승무원이 하나씩 가지고 있다 — 하지만 CMS 엠블럼과 Shenzhou 휘장은 China Manned Space Agency의 저작권 보호를 받으며, 자유 라이선스로 공개되지 않았다. Wikimedia Commons에는 이들 중 어느 것도 없다; 이러한 검색으로 반환되는 유일한 자유 라이선스 이미지는 무관한 NASA 사진들이다.",
+      "want": "Tiangong 및 Shenzhou 페이지에서 NASA 휘장과 나란히 배치할 중국 유인 우주(CMS) 프로그램 엠블럼 및 Shenzhou 승무원 패치.",
+      "wall": "중국의 유인 프로그램은 임무 패치를 사용하며 — 모든 Shenzhou 승무원이 하나씩 가지고 있다 — 그러나 CMS 엠블럼과 Shenzhou 휘장은 중국 유인 우주국의 저작권 하에 있으며, 자유 라이선스로 공개되지 않았다. Wikimedia Commons에는 이들 중 어느 것도 없으며, 이러한 검색에서 반환되는 유일한 자유 라이선스 이미지는 무관한 NASA 사진들이다.",
       "checked": [
         "Wikimedia Commons — 영어 키워드 검색 (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
-        "Wikimedia Commons — China Manned Space Agency 로고"
+        "Wikimedia Commons — China Manned Space Agency logo"
       ],
       "rejected": [
-        "cmse.gov.cn 및 중국 국영 언론 이미지 — 저작권 보호 대상, 자유 라이선스 없음",
-        "제3자 팬이 제작한 Shenzhou 패치 복제품 — 진본이 아니며 자유 라이선스도 아님"
+        "cmse.gov.cn 및 중국 국영 언론 이미지 — 저작권 보호, 자유 라이선스 없음",
+        "제3자 팬의 Shenzhou 패치 복제품 — 진본이 아니며 자유롭지도 않음"
       ],
-      "resolution": "CNSA 기관 로고가 Tiangong 및 Shenzhou 카드 및 페이지에 정직한 표시로 대신한다.",
+      "resolution": "CNSA 기관 로고가 Tiangong 및 Shenzhou 카드와 페이지에 정직한 표시로 사용된다.",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "jaxa-isro-patches",
+      "area": "임무 및 프로그램 휘장",
+      "subjects": [
+        "Hayabusa",
+        "JAXA — Moon and Planets",
+        "Chandrayaan",
+        "Mangalyaan",
+        "Gaganyaan"
+      ],
+      "want": "일본의 JAXA 및 인도의 ISRO 프로그램 및 임무 휘장으로, 프로그램 페이지에서 NASA 패치와 나란히 배치할 것.",
+      "wall": "두 기관 모두 임무 로고와 엠블럼을 제작한다 — Hayabusa2, SLIM, Chandrayaan-3 등 모두 가지고 있다 — 그러나 이들은 각 기관의 자체 저작권 하에 있으며 자유 라이선스로 공개되지 않았다. Wikimedia Commons에는 이들 중 어느 것도 없으며, 이러한 검색에 대한 유일한 자유 라이선스 결과는 무관한 NASA 사진들이다.",
+      "checked": [
+        "Wikimedia Commons — 영어 키워드 검색 (JAXA / ISRO / Hayabusa / Chandrayaan / Mangalyaan emblem, patch, insignia, logo)"
+      ],
+      "rejected": [
+        "jaxa.jp / isro.gov.in 이미지 — 저작권 보호, 자유 라이선스 없음",
+        "제3자 팬 복제품 — 진본이 아니며 자유롭지도 않음"
+      ],
+      "resolution": "JAXA 및 ISRO 기관 로고가 영향을 받는 프로그램 카드와 페이지에 정직한 표시로 사용된다.",
       "status": "wall",
       "date": "2026-07-12"
     }

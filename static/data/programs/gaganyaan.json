@@ -1,0 +1,28 @@
+{
+  "id": "gaganyaan",
+  "kind": "crewed-campaign",
+  "agency": "ISRO",
+  "agencies": ["ISRO"],
+  "country": "India",
+  "start_year": 2018,
+  "status": "PLANNED",
+  "epoch": "commercial-era",
+  "hero": "fleet/gaganyaan/01",
+  "roster": [
+    { "linked_id": "gaganyaan", "ref": "fleet", "role": "crew spacecraft", "year": 2025 },
+    { "name": "Announced", "year": 2018, "note": "India commits to flying its own astronauts on its own rocket — the goal that would make it the fourth nation with independent human spaceflight" },
+    { "name": "Test Vehicle abort", "year": 2023, "note": "the first flight test demonstrates the crew-escape system, which must pull the capsule clear of a failing rocket — the safety capability a crewed program is built around" },
+    { "name": "First crewed flight", "year": 2026, "note": "the planned debut of an Indian crew in an Indian spacecraft — targeted for the mid-2020s, joining Russia, the US and China as independent human spaceflight powers" }
+  ],
+  "related_programs": ["chandrayaan", "mangalyaan"],
+  "see_also": [
+    { "label": "Fleet — the Gaganyaan spacecraft", "href": "/fleet?focus=gaganyaan", "kind": "fleet" },
+    { "label": "Chandrayaan — India's Moon program", "href": "/programs/chandrayaan", "kind": "program" },
+    { "label": "Mangalyaan — India's first-try Mars mission", "href": "/programs/mangalyaan", "kind": "program" }
+  ],
+  "links": [
+    { "l": "Gaganyaan — Wikipedia", "u": "https://en.wikipedia.org/wiki/Gaganyaan", "t": "intro" },
+    { "l": "Gaganyaan — ISRO", "u": "https://www.isro.gov.in/Gaganyaan.html", "t": "core" },
+    { "l": "Human Spaceflight Centre — ISRO", "u": "https://www.isro.gov.in/", "t": "deep" }
+  ]
+}

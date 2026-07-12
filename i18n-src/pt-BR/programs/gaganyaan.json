@@ -1,0 +1,84 @@
+{
+  "name": "Gaganyaan",
+  "tagline": "A tentativa da Índia de lançar seu próprio povo — o programa tripulado que a tornaria a quarta nação com voo espacial humano independente.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "A Índia alcançou a Lua e Marte com robôs, com orçamentos notoriamente pequenos, e conquistou um lugar entre as potências espaciais sérias do mundo. Mas uma capacidade permaneceu fora de alcance: lançar seu próprio povo. Voo espacial humano é uma ordem de dificuldade diferente da exploração robótica — uma única falha custa vidas, não apenas uma missão — e apenas três nações já fizeram isso de forma independente. Gaganyaan — sânscrito para \"nave celestial\" — é o programa da Índia para se tornar a quarta."
+    },
+    {
+      "type": "prose",
+      "md": "É um passo deliberado na escada que a ISRO vem subindo há décadas. A agência que alcançou Marte na primeira tentativa e pousou no polo sul lunar agora está construindo a capacidade muito mais difícil de manter seres humanos vivos em órbita e trazê-los de volta com segurança — uma cápsula tripulada, um lançador certificado para humanos, um sistema de suporte de vida, um sistema de escape e um corpo de astronautas. Gaganyaan é o programa onde a confiança robótica da Índia encontra o padrão inflexível da segurança humana."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo central é direto e enorme: voar com uma pequena tripulação de astronautas indianos para órbita terrestre baixa em um foguete indiano, mantê-los vivos lá por alguns dias e trazê-los de volta com segurança. Fazer isso requer dominar as tecnologias específicas e críticas para a vida do voo espacial humano — uma cápsula tripulada pressurizada, um sistema de suporte de vida confiável, uma versão certificada para humanos do lançador pesado da Índia e, acima de tudo, um sistema de escape da tripulação que possa puxar a cápsula para longe de um foguete falhando na plataforma ou em voo."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gaganyaan/01"
+      },
+      "caption": "O módulo de tripulação Gaganyaan — a primeira espaçonave certificada para humanos da Índia. Tudo nela é mantido em um padrão mais alto do que as missões robóticas que vieram antes, porque pela primeira vez a carga útil são pessoas.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O objetivo de longo prazo é uma fundação, não um único voo. A Índia declarou ambições por sua própria estação espacial e, eventualmente, missões lunares tripuladas, e nada disso é possível sem primeiro dominar o voo espacial humano básico. Gaganyaan é o pré-requisito — o programa que transforma a Índia de uma nação que explora com robôs em uma que pode enviar seu próprio povo, a porta de entrada para tudo que é tripulado e que virá depois."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Gaganyaan ainda está antes de seu primeiro voo tripulado, trabalhando metodicamente através da mesma disciplina de prove-primeiro que definiu Chandrayaan e Mangalyaan. Realizou testes não tripulados, incluindo um voo de 2023 que demonstrou o sistema de escape da tripulação puxando a cápsula para longe de seu foguete — a capacidade de segurança mais importante de qualquer programa humano. Voos de teste orbitais não tripulados e um passageiro humanoide robótico precedem qualquer lançamento humano; a primeira tripulação está prevista para meados da década de 2020."
+    },
+    {
+      "type": "prose",
+      "md": "O resultado será medido não apenas por alcançar a órbita, mas por fazê-lo com segurança, com um orçamento da ISRO, sem os anos de acidentes fatais que marcaram os primeiros programas americano e soviético. A Índia está tentando ingressar no clube do voo espacial humano tendo observado todos os outros fazerem isso primeiro — e, como com seus primeiros feitos robóticos, está apostando que paciência e frugalidade podem entregar uma capacidade pela qual os pioneiros pagaram com vidas."
+    },
+    {
+      "type": "prose",
+      "md": "Como o programa ainda não está completo, sua história ainda está sendo escrita. Mas sua trajetória é clara: a Índia adquiriu metodicamente todas as outras capacidades de espaço profundo que se propôs a construir, e Gaganyaan é o degrau atual dessa escada — o mais difícil, e aquele que colocaria a Índia entre o grupo muito pequeno de nações que podem colocar um humano no espaço por conta própria."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A narrativa de Gaganyaan é uma nação passando deliberadamente de robôs para pessoas. Toda capacidade que a Índia construiu antes disso — alcançar órbita, navegar para outros mundos, pousar suavemente, retornar amostras de experiência — foi preparação para aquela que não podia atalhar: manter humanos vivos no espaço. Gaganyaan é a ISRO aplicando seu método característico, incremental e frugal e sem pressa, ao problema de mais alto risco no voo espacial, onde a tolerância usual para falhas não se aplica."
+    },
+    {
+      "type": "prose",
+      "md": "É também um programa moldado por observar outros. A Índia chega ao voo espacial humano seis décadas após Gagarin, com toda a história dos programas americano, soviético e chinês para aprender — seus triunfos e, mais valiosamente, seus desastres. Como a China antes dela, a Índia está otimizando não para ser pioneira, mas para chegar com segurança, eliminando por engenharia antecipadamente os modos de falha que mataram tripulações anteriores. Ser a última nessa capacidade é, no domínio específico da segurança humana, uma vantagem."
+    },
+    {
+      "type": "prose",
+      "md": "E carrega peso nacional além da engenharia. Um astronauta indiano em uma espaçonave indiana, lançado de solo indiano, é um marco de um tipo que ressoa muito além da comunidade espacial — um marcador de chegada tecnológica para a nação mais populosa do mundo. Gaganyaan é um programa de ciência e engenharia que é também, inequivocamente, uma declaração sobre o lugar da Índia entre as potências que podem alcançar o espaço por conta própria."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O legado de Gaganyaan, uma vez que voe, será a entrada da Índia no pequeno clube de nações com voo espacial humano independente — uma capacidade que não pode ser comprada ou emprestada, apenas construída, e que reformula a posição de um país no espaço da noite para o dia."
+    },
+    {
+      "type": "prose",
+      "md": "Seu legado mais profundo é como uma fundação. Toda ambição que a Índia expressou além disso — uma estação espacial nacional, missões lunares tripuladas, uma presença humana de longo prazo em órbita — depende da capacidade básica de voo espacial humano que Gaganyaan foi construído para estabelecer. É a porta pela qual todo o futuro tripulado da Índia deve passar."
+    },
+    {
+      "type": "prose",
+      "md": "E estende a mudança multipolar que Chandrayaan e Mangalyaan começaram. À medida que a Índia se junta à Rússia, aos EUA e à China no voo espacial humano independente, a capacidade de enviar pessoas ao espaço torna-se genuinamente distribuída — não mais a reserva das potências da Guerra Fria, mas compartilhada entre um círculo crescente de nações."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição que Gaganyaan está testando é se o método frugal e incremental que levou a Índia à Lua e a Marte pode ser estendido ao único domínio que pune atalhos com mais dureza: a segurança humana. Missões robóticas podem falhar e ensinar; uma tripulada que falha mata. Gaganyaan é o estudo de caso sobre se a disciplina da ISRO escala para um problema onde a margem de erro é zero."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é que, no voo espacial humano, chegar por último pode ser uma forma de sabedoria. A Índia chega ao voo tripulado com os acidentes de todos os predecessores para estudar, e a chance de eliminar por engenharia antecipadamente as falhas que outros descobriram fatalmente. Chegar décadas atrasada custa-lhe prestígio que ela não parece querer; o que isso compra, se o método se mantiver, são astronautas que voltam para casa."
+    }
+  ]
+}

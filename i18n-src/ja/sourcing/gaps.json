@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "note": "Orreryがライセンス基準（Creative Commons / パブリックドメイン、透かしなし、真正品 — ファン制作の複製物は不可）の下で入手できなかったコンテンツの公開記録。使用権のないものを掲載するよりも、正直に空白を示す方が望ましい。新たな壁に突き当たった際は、ここに追記する。",
+  "note": "Orreryがライセンス基準(Creative Commons / パブリックドメイン、ウォーターマークなし、本物 — ファン制作の複製不可)の下で入手できなかったコンテンツの公開台帳。権利のないものを提供するよりも、正直な欠落を示す方がよい。新たな壁にぶつかったら、ここに追記する。",
   "gaps": [
     {
       "id": "soviet-era-patches",
-      "area": "ミッションおよびプログラムのインシグニア",
+      "area": "ミッション・プログラムのエンブレム",
       "subjects": [
         "Vostok",
         "Voskhod",
@@ -15,41 +15,64 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "初期ソ連有人プログラムの真正なプログラムおよびミッションパッチ。NASAのインシグニアと並べて配置するため。",
-      "wall": "二つの壁が同時に存在する。第一に、ほとんどが存在しなかった：ソ連は1975年のApollo–Soyuzまでミッションパッチの伝統を採用しなかったため、Vostok、Voskhod、および初期のSoyuzフライトには単純にパッチが存在しない。第二に、後に存在するもの — Soyuz TM/TMAの遠征パッチ、Roscosmosのエンブレム — は著作権保護下にあるか、フェアユースの下でのみアップロードされており、自由ライセンスの下で公開されたことがない。",
+      "want": "初期ソ連有人プログラムの本物のプログラム・ミッションパッチ。NASAのエンブレムと並べて配置するため。",
+      "wall": "二つの壁が同時に存在する。第一に、ほとんどが存在しなかった。ソ連は1975年のApollo–Soyuzまでミッションパッチの伝統を採用しなかったため、Vostok、Voskhod、および初期のSoyuzフライトには単純にパッチが存在しなかった。第二に、後に存在するもの — Soyuz TM/TMA遠征パッチ、Roscosmosエンブレム — は著作権保護されているか、フェアユースの下でのみアップロードされており、自由ライセンスの下でリリースされたことがない。",
       "checked": [
         "Wikimedia Commons — 英語キーワード検索",
-        "Wikimedia Commons — キリル文字検索（Союз / Салют / Мир / Восход / Буран эмблема нашивка）",
-        "Wikimedia Commons — カテゴリツリー（ソ連宇宙プログラム、Buran、Roscosmos）",
+        "Wikimedia Commons — キリル文字検索(Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — カテゴリツリー(Soviet space program、Buran、Roscosmos)",
         "ru.wikipedia — Восток-1、Восход-2、Союз-1、Союз-11、Мир、Буранの記事画像"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ruおよび類似サイト — 著作権保護下またはライセンス不明；astronaut.ruは私的運営の百科事典であり、権利保有者ではない",
-        "現代のファン制作複製物（例：ゲームアーティストによるCC-BYのBuranエンブレム） — 自由にライセンスされているが真正なインシグニアではない"
+        "roscosmos.ru / astronaut.ruおよび類似サイト — 著作権保護またはライセンス不明。astronaut.ruは私的運営の百科事典であり、権利保有者ではない",
+        "現代のファン制作複製(例:ゲームアーティストによるCC-BY Buranエンブレム)— 自由にライセンスされているが本物のエンブレムではない"
       ],
-      "resolution": "Roscosmosのエージェンシーロゴが、影響を受けるすべてのプログラムカードおよびページにおける正直な印として立つ。",
+      "resolution": "Roscosmosエージェンシーのロゴが、影響を受けるすべてのプログラムカードとページ上の正直な印として使用されている。",
       "status": "wall",
       "date": "2026-07-12"
     },
     {
       "id": "chinese-mission-patches",
-      "area": "ミッションおよびプログラムのインシグニア",
+      "area": "ミッション・プログラムのエンブレム",
       "subjects": [
         "Tiangong",
         "Shenzhou",
         "China Manned Space"
       ],
-      "want": "中国有人宇宙（CMS）プログラムのエンブレムおよび神舟クルーパッチ。TiangongおよびShenzhou ページのNASAインシグニアと並べて配置するため。",
-      "wall": "中国の有人プログラムはミッションパッチを使用している — すべての神舟クルーが1つ持っている — しかし、CMSエンブレムおよびShenzhouのインシグニアは中国有人宇宙機関によって著作権保護下にあり、自由ライセンスの下で公開されていない。Wikimedia Commonsにはそれらが一切なく、これらの検索で返される唯一の自由ライセンス画像は無関係なNASAの写真である。",
+      "want": "中国有人宇宙(CMS)プログラムのエンブレムとShenzhou乗組員パッチ。TiangongおよびShenzhouページ上のNASAエンブレムと並べて配置するため。",
+      "wall": "中国の有人プログラムはミッションパッチを使用している — すべてのShenzhou乗組員が一つ持っている — しかしCMSエンブレムとShenzhouのエンブレムは中国有人宇宙機関によって著作権保護されており、自由ライセンスの下でリリースされていない。Wikimedia Commonsにはそれらが一切なく、これらの検索で返される唯一の自由ライセンス画像は無関係のNASA写真である。",
       "checked": [
-        "Wikimedia Commons — 英語キーワード検索（China Manned Space / Shenzhou / Tiangong emblem、patch、insignia）",
+        "Wikimedia Commons — 英語キーワード検索(China Manned Space / Shenzhou / Tiangong emblem、patch、insignia)",
         "Wikimedia Commons — China Manned Space Agencyロゴ"
       ],
       "rejected": [
-        "cmse.gov.cnおよび中国国営メディアの画像 — 著作権保護下、自由ライセンスなし",
-        "第三者によるShenzhouパッチのファン制作複製物 — 真正ではなく、自由でもない"
+        "cmse.gov.cnおよび中国国営メディアの画像 — 著作権保護、自由ライセンスなし",
+        "第三者によるShenzhouパッチのファン制作複製 — 本物でなく自由でもない"
       ],
-      "resolution": "CNSAのエージェンシーロゴが、TiangongおよびShenzhouカードおよびページにおける正直な印として立つ。",
+      "resolution": "CNSAエージェンシーのロゴが、TiangongおよびShenzhouカードとページ上の正直な印として使用されている。",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "jaxa-isro-patches",
+      "area": "ミッション・プログラムのエンブレム",
+      "subjects": [
+        "Hayabusa",
+        "JAXA — Moon and Planets",
+        "Chandrayaan",
+        "Mangalyaan",
+        "Gaganyaan"
+      ],
+      "want": "日本のJAXAとインドのISROのプログラム・ミッションのエンブレム。それぞれのプログラムページ上のNASAパッチと並べて配置するため。",
+      "wall": "両機関ともミッションロゴとエンブレムを制作している — Hayabusa2、SLIM、Chandrayaan-3など、すべてがそれを持っている — しかし、それらは各機関自身の著作権の下で保持されており、自由ライセンスの下でリリースされていない。Wikimedia Commonsにはそれらが一切なく、これらの検索で返される唯一の自由ライセンス結果は無関係のNASA写真である。",
+      "checked": [
+        "Wikimedia Commons — 英語キーワード検索(JAXA / ISRO / Hayabusa / Chandrayaan / Mangalyaan emblem、patch、insignia、logo)"
+      ],
+      "rejected": [
+        "jaxa.jp / isro.gov.in画像 — 著作権保護、自由ライセンスなし",
+        "第三者によるファン制作複製 — 本物でなく自由でもない"
+      ],
+      "resolution": "JAXAおよびISROエージェンシーのロゴが、影響を受けるプログラムカードとページ上の正直な印として使用されている。",
       "status": "wall",
       "date": "2026-07-12"
     }

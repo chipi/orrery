@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Das öffentliche Verzeichnis von Inhalten, die Orrery nicht gemäß seinen Lizenzkriterien beschaffen konnte (Creative Commons / Public Domain, kein Wasserzeichen, authentisch — keine Fanreproduktionen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu verwenden, für das wir keine Rechte haben. Neue Hürden werden hier hinzugefügt, sobald wir auf sie stoßen.",
+  "note": "Das öffentliche Verzeichnis von Inhalten, die Orrery nicht unter seiner Lizenzschranke beschaffen konnte (Creative Commons / Public Domain, kein Wasserzeichen, authentisch — keine Fan-Reproduktionen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu verwenden, für das wir keine Rechte haben. Neue Hindernisse werden hier angefügt, sobald wir auf sie stoßen.",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -15,19 +15,19 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "Authentische Programm- und Missionsabzeichen für die frühen sowjetischen bemannten Programme, um neben den NASA-Abzeichen zu stehen.",
-      "wall": "Zwei Hürden zugleich. Erstens haben die meisten nie existiert: Die UdSSR übernahm die Missionsabzeichen-Tradition erst mit Apollo–Soyuz 1975, sodass Vostok, Voskhod und die ersten Soyuz-Flüge schlicht kein Abzeichen hatten. Zweitens ist das, was später existiert — Soyuz TM/TMA-Expeditionsabzeichen, Roscosmos-Embleme — urheberrechtlich geschützt oder nur unter Fair-Use hochgeladen, nie unter freier Lizenz veröffentlicht.",
+      "want": "Authentische Programm- und Missionsabzeichen der frühen sowjetischen bemannten Programme, um neben den NASA-Abzeichen zu stehen.",
+      "wall": "Zwei Hindernisse auf einmal. Erstens existierten die meisten nie: Die UdSSR übernahm die Missionsabzeichen-Tradition erst mit Apollo–Soyuz 1975, sodass Vostok, Voskhod und die ersten Soyuz-Flüge einfach kein Abzeichen hatten. Zweitens ist das, was später existiert — Soyuz TM/TMA-Expeditionsabzeichen, Roscosmos-Embleme — urheberrechtlich geschützt oder nur unter Fair-Use hochgeladen, nie unter einer freien Lizenz veröffentlicht.",
       "checked": [
         "Wikimedia Commons — englische Stichwortsuche",
         "Wikimedia Commons — kyrillische Suche (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
-        "Wikimedia Commons — Kategoriebaum (sowjetisches Raumfahrtprogramm, Buran, Roscosmos)",
+        "Wikimedia Commons — Kategorienbaum (sowjetisches Raumfahrtprogramm, Buran, Roscosmos)",
         "ru.wikipedia — Bildmaterial für Artikel zu Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
       ],
       "rejected": [
         "roscosmos.ru / astronaut.ru und ähnliche — urheberrechtlich geschützt oder Lizenz unklar; astronaut.ru ist eine privat betriebene Enzyklopädie, kein Rechteinhaber",
-        "Moderne Fanreproduktionen (z. B. ein CC-BY Buran-Emblem von einem Spielekünstler) — frei lizenziert, aber keine authentischen Abzeichen"
+        "Moderne Fan-Reproduktionen (z. B. ein CC-BY Buran-Emblem von einem Spieleartisten) — frei lizenziert, aber keine authentischen Abzeichen"
       ],
-      "resolution": "Das Roscosmos-Agenturlogo dient als ehrliche Kennzeichnung auf jeder betroffenen Programmkarte und -seite.",
+      "resolution": "Das Roscosmos-Agenturlogo steht als ehrliche Kennzeichnung auf jeder betroffenen Programmkarte und -seite.",
       "status": "wall",
       "date": "2026-07-12"
     },
@@ -40,16 +40,39 @@
         "China Manned Space"
       ],
       "want": "Das Emblem des China Manned Space (CMS)-Programms und Shenzhou-Besatzungsabzeichen, um neben den NASA-Abzeichen auf den Tiangong- und Shenzhou-Seiten zu stehen.",
-      "wall": "Chinas bemanntes Programm verwendet Missionsabzeichen — jede Shenzhou-Besatzung hat eines — aber das CMS-Emblem und die Shenzhou-Abzeichen sind urheberrechtlich geschützt durch die China Manned Space Agency, nicht unter freier Lizenz veröffentlicht. Wikimedia Commons enthält keine davon; die einzigen frei lizenzierten Bilder, die bei diesen Suchen zurückgegeben werden, sind unzusammenhängende NASA-Fotografien.",
+      "wall": "Chinas bemanntes Programm verwendet tatsächlich Missionsabzeichen — jede Shenzhou-Besatzung hat eines — aber das CMS-Emblem und die Shenzhou-Abzeichen sind urheberrechtlich geschützt durch die China Manned Space Agency, nicht unter einer freien Lizenz veröffentlicht. Wikimedia Commons enthält keines davon; die einzigen frei lizenzierten Bilder, die bei diesen Suchen zurückgegeben werden, sind nicht verwandte NASA-Fotografien.",
       "checked": [
         "Wikimedia Commons — englische Stichwortsuche (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
-        "Wikimedia Commons — China Manned Space Agency-Logo"
+        "Wikimedia Commons — China Manned Space Agency Logo"
       ],
       "rejected": [
-        "cmse.gov.cn und Bildmaterial chinesischer Staatsmedien — urheberrechtlich geschützt, keine freie Lizenz",
-        "Fanreproduktionen von Shenzhou-Abzeichen durch Dritte — nicht authentisch und nicht frei"
+        "cmse.gov.cn und chinesische Staatsmedien-Bildmaterial — urheberrechtlich geschützt, keine freie Lizenz",
+        "Fan-Reproduktionen von Shenzhou-Abzeichen durch Dritte — nicht authentisch und nicht frei"
       ],
-      "resolution": "Das CNSA-Agenturlogo dient als ehrliche Kennzeichnung auf den Tiangong- und Shenzhou-Karten und -seiten.",
+      "resolution": "Das CNSA-Agenturlogo steht als ehrliche Kennzeichnung auf den Tiangong- und Shenzhou-Karten und -Seiten.",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "jaxa-isro-patches",
+      "area": "Missions- und Programmabzeichen",
+      "subjects": [
+        "Hayabusa",
+        "JAXA — Moon and Planets",
+        "Chandrayaan",
+        "Mangalyaan",
+        "Gaganyaan"
+      ],
+      "want": "Programm- und Missionsabzeichen für Japans JAXA und Indiens ISRO, um neben den NASA-Abzeichen auf ihren Programmseiten zu stehen.",
+      "wall": "Beide Agenturen produzieren tatsächlich Missionslogos und Embleme — Hayabusa2, SLIM, Chandrayaan-3 und alle anderen haben sie — aber sie sind unter dem eigenen Urheberrecht der Agenturen geschützt und werden nicht unter einer freien Lizenz veröffentlicht. Wikimedia Commons enthält keines davon; die einzigen frei lizenzierten Ergebnisse für diese Suchen sind nicht verwandte NASA-Fotografien.",
+      "checked": [
+        "Wikimedia Commons — englische Stichwortsuche (JAXA / ISRO / Hayabusa / Chandrayaan / Mangalyaan emblem, patch, insignia, logo)"
+      ],
+      "rejected": [
+        "jaxa.jp / isro.gov.in Bildmaterial — urheberrechtlich geschützt, keine freie Lizenz",
+        "Fan-Reproduktionen durch Dritte — nicht authentisch und nicht frei"
+      ],
+      "resolution": "Die JAXA- und ISRO-Agenturlogos stehen als ehrliche Kennzeichnung auf den betroffenen Programmkarten und -seiten.",
       "status": "wall",
       "date": "2026-07-12"
     }

@@ -1,0 +1,84 @@
+{
+  "name": "Gaganyaan",
+  "tagline": "L'ambition de l'Inde de lancer ses propres citoyens — le programme habité qui ferait d'elle la quatrième nation capable de vol spatial humain indépendant.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "L'Inde a atteint la Lune et Mars avec des robots, avec des budgets notoirement modestes, et s'est taillé une place parmi les puissances spatiales sérieuses du monde. Mais une capacité est restée hors de portée : lancer ses propres citoyens. Le vol spatial habité représente un ordre de difficulté différent de l'exploration robotique — un seul échec coûte des vies, pas seulement une mission — et seules trois nations l'ont jamais réalisé de manière indépendante. Gaganyaan — « engin céleste » en sanskrit — est le programme de l'Inde pour devenir la quatrième."
+    },
+    {
+      "type": "prose",
+      "md": "C'est une étape délibérée dans l'ascension que l'ISRO poursuit depuis des décennies. L'agence qui a atteint Mars à sa première tentative et s'est posée au pôle sud lunaire construit maintenant la capacité bien plus difficile de maintenir des êtres humains en vie en orbite et de les ramener sains et saufs — une capsule habitée, un lanceur qualifié pour l'humain, un système de support-vie, un système d'évacuation et un corps d'astronautes. Gaganyaan est le programme où la confiance robotique de l'Inde rencontre l'exigence implacable de la sécurité humaine."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif central est direct et immense : faire voler un petit équipage d'astronautes indiens en orbite terrestre basse sur une fusée indienne, les maintenir en vie là-haut pendant quelques jours et les ramener en sécurité. Y parvenir exige de maîtriser les technologies spécifiques et vitales du vol spatial habité — une capsule pressurisée pour équipage, un système de support-vie fiable, une version qualifiée pour l'humain du lanceur lourd indien et, par-dessus tout, un système d'évacuation d'équipage capable d'extraire la capsule d'une fusée en défaillance au sol ou en vol."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gaganyaan/01"
+      },
+      "caption": "Le module d'équipage Gaganyaan — le premier vaisseau spatial indien qualifié pour l'humain. Tout en lui est soumis à un standard plus élevé que les missions robotiques qui l'ont précédé, car pour la première fois la charge utile est constituée de personnes.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif à plus long terme est une fondation, pas un vol unique. L'Inde a exprimé des ambitions pour sa propre station spatiale et éventuellement des missions lunaires habitées, et rien de tout cela n'est possible sans d'abord maîtriser le vol spatial habité de base. Gaganyaan est le prérequis — le programme qui transforme l'Inde d'une nation qui explore avec des robots en une nation capable d'envoyer ses propres citoyens, la porte d'entrée vers tout ce qui est habité par la suite."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Gaganyaan précède encore son premier vol habité, progressant méthodiquement à travers la même discipline du prouver-d'abord qui a défini Chandrayaan et Mangalyaan. Il a effectué des tests non habités, dont un vol en 2023 qui a démontré le système d'évacuation d'équipage arrachant la capsule de sa fusée — la capacité de sécurité la plus importante de tout programme humain. Des vols d'essai orbitaux non habités et un passager humanoïde robotique précèdent tout lancement humain ; le premier équipage est prévu pour le milieu des années 2020."
+    },
+    {
+      "type": "prose",
+      "md": "Le résultat sera mesuré non seulement par l'atteinte de l'orbite mais par sa réalisation en sécurité, avec un budget ISRO, sans les années d'accidents mortels qui ont marqué les premiers programmes américains et soviétiques. L'Inde tente de rejoindre le club du vol spatial habité après avoir observé tous les autres le faire en premier — et, comme pour ses premières robotiques, elle parie que la patience et la frugalité peuvent délivrer une capacité que les pionniers ont payée de vies."
+    },
+    {
+      "type": "prose",
+      "md": "Parce que le programme n'est pas encore achevé, son histoire s'écrit encore. Mais sa trajectoire est claire : l'Inde a méthodiquement acquis toutes les autres capacités spatiales lointaines qu'elle s'est fixées, et Gaganyaan est l'échelon actuel de cette échelle — le plus difficile, et celui qui placerait l'Inde parmi le très petit groupe de nations capables de placer un humain dans l'espace par leurs propres moyens."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Le récit de Gaganyaan est celui d'une nation passant délibérément des robots aux personnes. Chaque capacité que l'Inde a construite avant lui — atteindre l'orbite, naviguer vers d'autres mondes, atterrir en douceur, ramener des échantillons d'expérience — était une préparation pour celle qu'elle ne pouvait contourner : maintenir des humains en vie dans l'espace. Gaganyaan est l'ISRO appliquant sa méthode signature, incrémentale et frugale et sans précipitation, au problème aux enjeux les plus élevés du vol spatial, où la tolérance habituelle à l'échec ne s'applique pas."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi un programme façonné par l'observation des autres. L'Inde arrive au vol spatial habité six décennies après Gagarine, avec toute l'histoire des programmes américains, soviétiques et chinois dont elle peut apprendre — leurs triomphes et, plus précieusement, leurs désastres. Comme la Chine avant elle, l'Inde optimise non pas pour arriver tôt mais pour arriver en sécurité, éliminant par anticipation les modes de défaillance qui ont tué des équipages antérieurs. Être dernier pour cette capacité constitue, dans le domaine spécifique de la sécurité humaine, un avantage."
+    },
+    {
+      "type": "prose",
+      "md": "Et cela porte un poids national au-delà de l'ingénierie. Un astronaute indien dans un vaisseau spatial indien, lancé depuis le sol indien, est une étape d'un genre qui résonne bien au-delà de la communauté spatiale — un marqueur d'arrivée technologique pour la nation la plus peuplée du monde. Gaganyaan est un programme scientifique et d'ingénierie qui est aussi, sans équivoque, une déclaration sur la place de l'Inde parmi les puissances capables d'atteindre l'espace par elles-mêmes."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "L'héritage de Gaganyaan, une fois qu'il volera, sera l'entrée de l'Inde dans le petit club des nations dotées de vol spatial humain indépendant — une capacité qui ne peut être achetée ou empruntée, seulement construite, et qui reconfigure du jour au lendemain la position d'un pays dans l'espace."
+    },
+    {
+      "type": "prose",
+      "md": "Son héritage plus profond est celui d'une fondation. Chaque ambition que l'Inde a exprimée au-delà — une station spatiale nationale, des missions lunaires habitées, une présence humaine à long terme en orbite — dépend de la capacité de vol spatial habité de base que Gaganyaan est construit pour établir. C'est la porte par laquelle tout l'avenir habité de l'Inde doit passer."
+    },
+    {
+      "type": "prose",
+      "md": "Et il prolonge le basculement multipolaire que Chandrayaan et Mangalyaan ont commencé. Alors que l'Inde rejoint la Russie, les États-Unis et la Chine dans le vol spatial humain indépendant, la capacité d'envoyer des personnes dans l'espace devient véritablement distribuée — non plus l'apanage des puissances de la Guerre froide, mais partagée parmi un cercle élargi de nations."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon que Gaganyaan teste est de savoir si la méthode frugale et incrémentale qui a porté l'Inde vers la Lune et Mars peut s'étendre au seul domaine qui punit le plus durement les raccourcis : la sécurité humaine. Les missions robotiques peuvent échouer et enseigner ; une mission habitée qui échoue tue. Gaganyaan est l'étude de cas pour savoir si la discipline de l'ISRO s'adapte à un problème où la marge d'erreur est nulle."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est que dans le vol spatial habité, arriver en dernier peut être une forme de sagesse. L'Inde arrive au vol habité avec les accidents de tous ses prédécesseurs à étudier, et la chance d'éliminer par anticipation les défaillances que d'autres ont découvertes fatalement. Arriver des décennies en retard lui coûte un prestige qu'elle ne semble pas rechercher ; ce que cela achète, si la méthode tient, ce sont des astronautes qui rentrent chez eux."
+    }
+  ]
+}

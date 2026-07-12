@@ -1,0 +1,27 @@
+{
+  "id": "hayabusa",
+  "kind": "robotic-campaign",
+  "agency": "JAXA",
+  "agencies": ["JAXA"],
+  "country": "Japan",
+  "start_year": 2003,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/hayabusa/01",
+  "roster": [
+    { "linked_id": "hayabusa", "ref": "fleet", "role": "sample-return probe", "year": 2003 },
+    { "linked_id": "hayabusa-2", "ref": "fleet", "role": "sample-return probe", "year": 2014 },
+    { "linked_id": "hayabusa1", "ref": "mission", "year": 2005, "note": "reaches asteroid Itokawa, touches down twice, and — despite crippling failures — brings home the first sample ever taken from an asteroid" },
+    { "linked_id": "hayabusa2", "ref": "mission", "year": 2018, "note": "reaches Ryugu, fires a projectile to make an artificial crater, collects subsurface material, and returns it to Earth in 2020 — a flawless run" }
+  ],
+  "related_programs": [],
+  "see_also": [
+    { "label": "Fleet — the Hayabusa probes", "href": "/fleet?focus=hayabusa-2", "kind": "fleet" },
+    { "label": "Explore — asteroids Itokawa and Ryugu", "href": "/explore", "kind": "body" }
+  ],
+  "links": [
+    { "l": "Hayabusa — Wikipedia", "u": "https://en.wikipedia.org/wiki/Hayabusa", "t": "intro" },
+    { "l": "Hayabusa2 — JAXA", "u": "https://www.hayabusa2.jaxa.jp/en/", "t": "core" },
+    { "l": "Asteroid sample return — JAXA ISAS", "u": "https://www.isas.jaxa.jp/en/", "t": "deep" }
+  ]
+}

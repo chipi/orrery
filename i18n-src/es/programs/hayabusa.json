@@ -1,0 +1,88 @@
+{
+  "name": "Hayabusa",
+  "tagline": "La campaña japonesa de retorno de muestras de asteroides: una sonda averiada que regresó a duras penas con los primeros granos jamás tomados de un asteroide, y una secuela que lo hizo de forma impecable.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Traer un pedazo de otro mundo de vuelta a la Tierra es una de las cosas más difíciles que puede hacer una misión robótica. Debes volar a un objetivo a millones de kilómetros de distancia, ajustarte a su órbita, descender a una superficie cuya gravedad es tan débil que el aterrizaje es realmente un toque controlado, recoger material sin anclarte, y luego volar todo el camino de regreso y sobrevivir a la reentrada. Dejando aparte la Luna, solo un puñado de misiones en la historia han retornado muestras de cualquier lugar, y la primera en hacerlo desde un asteroide no fue estadounidense ni rusa, sino japonesa."
+    },
+    {
+      "type": "prose",
+      "md": "Hayabusa —\"Halcón Peregrino\"— es el logro más emblemático de JAXA en el espacio profundo, y es tanto una historia de obstinación como de ingeniería. La primera misión fue un demostrador tecnológico que sufrió casi todos los fallos posibles y aun así regresó a casa. La segunda fue una clase magistral que ejecutó un plan mucho más ambicioso casi a la perfección. Juntas hicieron de Japón el líder mundial en retorno de muestras de asteroides, y convirtieron a las pequeñas sondas halcón en una saga nacional de persistencia."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "El objetivo científico es leer el sistema solar primitivo. Los asteroides son material de construcción sobrante de la formación de los planetas, prácticamente sin cambios durante 4500 millones de años; una muestra prístina de uno, analizada en laboratorios en la Tierra en lugar de por instrumentos en el espacio, es una ventana directa a de qué estaba hecho el sistema solar antes de que se ensamblaran los planetas, y, en el caso de asteroides ricos en carbono como Ryugu, a las moléculas orgánicas y el agua que pueden haber sembrado la vida en la Tierra."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/hayabusa-2/01"
+      },
+      "caption": "Hayabusa2 en el asteroide Ryugu. Motores iónicos para la larga travesía, un cuerno de muestreo para capturar material levantado al contacto, y un pequeño impactador para crear un cráter artificial y alcanzar roca del subsuelo protegida.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "El objetivo de ingeniería era demostrar toda una cadena de tecnologías difíciles: propulsión por motor iónico para la travesía de años, navegación autónoma hasta un cuerpo pequeño e irregular, un mecanismo de muestreo que funcione en gravedad casi cero, y una cápsula de reentrada para sobrevivir a la bola de fuego del regreso. El trabajo de la primera misión era demostrar la cadena aunque fuera de forma aproximada; el de la segunda era hacerlo lo suficientemente bien como para traer de vuelta una muestra sustancial y no contaminada."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "La primera Hayabusa, lanzada en 2003, alcanzó el asteroide Itokawa en 2005 y luego casi muere. Sus ruedas de reacción fallaron, una fuga de combustible la dejó lisiada, su mecanismo de muestreo funcionó mal, se perdió el contacto con la Tierra durante semanas, y tres de sus cuatro motores iónicos se rompieron; aun así, el equipo consiguió traer a casa la sonda herida, y en 2010 su cápsula descendió en paracaídas al interior de Australia transportando unos pocos miles de granos microscópicos: la primera muestra jamás retornada de un asteroide. No debería haber funcionado, y funcionó."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/hayabusa/01"
+      },
+      "caption": "La Hayabusa original: la sonda que sufrió casi todos los fallos que puede sufrir una nave espacial y aun así cumplió. Su calvario de siete años se convirtió en una historia nacional en Japón de no rendirse con una máquina que se negaba a rendirse.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Hayabusa2, habiendo aprendido todo del calvario de su predecesora, fue la experiencia opuesta: una misión casi impecable. Lanzada en 2014, alcanzó el asteroide rico en carbono Ryugu en 2018, desplegó rovers saltarines sobre la superficie, disparó un proyectil de cobre para crear un cráter artificial y recoger material del subsuelo protegido, y retornó su cápsula a la Tierra en 2020 con más de cinco gramos de asteroide prístino: una muestra que ya está reescribiendo la química del sistema solar primitivo. La propia sonda continuó hacia otro asteroide, con su misión extendida hasta la década de 2030."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "El arco de Hayabusa a Hayabusa2 es el ejemplo más claro en este atlas de un programa que convirtió un casi-desastre en maestría. El valor de la primera misión no fue un éxito limpio —apenas regresó cojeando— sino todo lo que su equipo aprendió sobreviviendo a su cascada de fallos. Ruedas de reacción, sistemas de combustible, aproximación autónoma, la cápsula de reentrada: cada problema casi fatal se convirtió en una lección eliminada por ingeniería de la secuela. La perfección de Hayabusa2 se construyó enteramente sobre el sufrimiento de Hayabusa."
+    },
+    {
+      "type": "prose",
+      "md": "También es un tipo de programa espacial distintivamente japonés: modesto en presupuesto comparado con los buques insignia de la NASA, estrecho en enfoque y extraordinariamente persistente. JAXA no intentó hacerlo todo; eligió una cosa muy difícil, el retorno de muestras de asteroides, y se convirtió en la mejor del mundo en ello. El resultado es una especialidad en la que incluso la NASA se apoya: las muestras de Ryugu se compartieron con laboratorios estadounidenses, y la propia misión de retorno de asteroides de la NASA, OSIRIS-REx, voló en diálogo con la experiencia duramente ganada del equipo Hayabusa."
+    },
+    {
+      "type": "prose",
+      "md": "Y convirtió a los robots en protagonistas. El regreso cojeante de la primera Hayabusa fue seguido por millones en Japón como un auténtico drama: una máquina antropomorfizada en un halcón que no se rendía, su acto final filmado mientras se quemaba en la atmósfera habiendo liberado la cápsula que había luchado siete años por entregar. Pocas misiones no tripuladas han portado ese tipo de sentimiento público; Hayabusa se lo ganó al negarse a fallar."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "El primer legado de Hayabusa es científico: muestras prístinas de asteroides en los laboratorios de la Tierra, tanto de un asteroide rocoso (Itokawa) como de uno rico en carbono (Ryugu), que informan directamente de cómo se formó el sistema solar y cómo el agua y los orgánicos pueden haber llegado a la Tierra primitiva. Estos se encuentran entre los pocos gramos de material más valiosos que posee la humanidad."
+    },
+    {
+      "type": "prose",
+      "md": "Su segundo legado es un manual de procedimientos probado para el retorno de muestras que ahora sigue el resto del mundo. Las tecnologías y lecciones difíciles de las misiones Hayabusa alimentaron directamente OSIRIS-REx de la NASA y la ola más amplia de misiones a cuerpos pequeños, haciendo de los pequeños halcones de JAXA los exploradores pioneros de toda una clase de exploración."
+    },
+    {
+      "type": "prose",
+      "md": "Y es una demostración de que un programa enfocado y comparativamente modesto puede liderar el mundo en un ámbito específico y difícil. Hayabusa es la prueba de que no se necesita el mayor presupuesto para lograr un auténtico primero, solo la disciplina para elegir un problema difícil y negarse a dejar que te venza."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección de Hayabusa es que una misión que apenas sobrevive puede valer más que una que transcurre sin problemas, si la supervivencia se instrumenta y se aprende de ella. La cascada de fallos de la primera sonda fue, al final, lo más valioso de ella: cada problema casi fatal se convirtió en conocimiento que hizo posible la secuela impecable. El fallo, completamente comprendido, es una forma de progreso."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda es el poder del enfoque. JAXA no podía gastar más que la NASA en todo, así que eligió una cosa extraordinariamente difícil y se convirtió en la mejor del mundo en ello. En un campo donde la tentación es siempre intentar más, Hayabusa es un caso a favor de hacer menos, más profundamente, y lograr un primero al que luego los programas más grandes tienen que acudir para aprender."
+    }
+  ]
+}

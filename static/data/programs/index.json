@@ -357,5 +357,21 @@
     "start_year": 2019,
     "end_year": null,
     "hero": "fleet/orion/01"
+  },
+  {
+    "id": "hayabusa",
+    "name": "Hayabusa",
+    "tagline": "Japan's asteroid sample-return campaign — a crippled probe that limped home with the first grains ever taken from an asteroid, and a sequel that did it flawlessly.",
+    "kind": "robotic-campaign",
+    "agency": "JAXA",
+    "agencies": [
+      "JAXA"
+    ],
+    "country": "Japan",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2003,
+    "end_year": null,
+    "hero": "fleet/hayabusa/01"
   }
 ]

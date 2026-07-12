@@ -1,0 +1,88 @@
+{
+  "name": "Hayabusa",
+  "tagline": "Japans Asteroiden-Probenrückführungskampagne — eine beschädigte Sonde, die mit den ersten jemals von einem Asteroiden entnommenen Körnern angeschlagen zur Erde zurückkehrte, und eine Nachfolgemission, die es einwandfrei schaffte.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Ein Stück einer anderen Welt zur Erde zurückzubringen, gehört zu den schwierigsten Aufgaben, die eine robotische Mission bewältigen kann. Man muss zu einem Ziel fliegen, das Millionen Kilometer entfernt ist, seine Umlaufbahn angleichen, auf einer Oberfläche landen, deren Schwerkraft so schwach ist, dass die Landung eigentlich eine kontrollierte Berührung ist, Material aufnehmen, ohne sich zu verankern, und dann den ganzen Weg zurückfliegen und den Wiedereintritt überstehen. Den Mond ausgenommen, haben in der Geschichte nur eine Handvoll Missionen Proben von irgendwoher zurückgebracht — und die erste Mission, die dies von einem Asteroiden schaffte, war weder amerikanisch noch russisch, sondern japanisch."
+    },
+    {
+      "type": "prose",
+      "md": "Hayabusa — „Wanderfalke\" — ist JAXAs herausragende Errungenschaft in der Tiefraumforschung, und es ist ebenso sehr eine Geschichte von Sturheit wie von Ingenieurskunst. Die erste Mission war ein Technologiedemonstrator, der nahezu jede erdenkliche Fehlfunktion erlitt und dennoch heimkehrte. Die zweite war eine Meisterklasse, die einen weitaus ambitionierteren Plan nahezu perfekt umsetzte. Gemeinsam machten sie Japan zum weltweiten Spitzenreiter bei der Rückführung von Asteroidenproben und verwandelten die kleinen Falkensonden in eine nationale Saga der Ausdauer."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Das wissenschaftliche Ziel besteht darin, das frühe Sonnensystem zu entziffern. Asteroiden sind übrig gebliebenes Baumaterial aus der Entstehung der Planeten, das seit 4,5 Milliarden Jahren weitgehend unverändert geblieben ist; eine unberührte Probe von einem solchen Asteroiden, analysiert in Laboren auf der Erde statt durch Instrumente im Weltraum, ist ein direktes Fenster in die Zusammensetzung des Sonnensystems, bevor sich die Planeten formten — und bei kohlenstoffreichen Asteroiden wie Ryugu ein Fenster in die organischen Moleküle und das Wasser, die möglicherweise das Leben auf der Erde angestoßen haben."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/hayabusa-2/01"
+      },
+      "caption": "Hayabusa2 am Asteroiden Ryugu. Ionentriebwerke für den langen Flug, ein Probenentnahmehorn zum Auffangen von Material, das bei Berührung aufgewirbelt wird, und ein kleiner Impaktor zum Sprengen eines künstlichen Kraters, um abgeschirmtes Gestein unter der Oberfläche zu erreichen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Das technische Ziel bestand darin, eine ganze Kette anspruchsvoller Technologien zu beweisen: Ionentriebwerk-Antrieb für den jahrelangen Flug, autonome Navigation zu einem winzigen, unregelmäßig geformten Körper, einen Probenahmemechanismus, der bei nahezu null Schwerkraft funktioniert, und eine Wiedereintrittskapsel, die den Feuerball der Heimkehr übersteht. Die Aufgabe der ersten Mission war, die Kette auch nur grob zu demonstrieren; die der zweiten, dies gut genug zu tun, um eine substanzielle, unkontaminierte Probe zurückzubringen."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Die erste Hayabusa, 2003 gestartet, erreichte 2005 den Asteroiden Itokawa und wäre dann beinahe verloren gewesen. Ihre Reaktionsräder fielen aus, ein Treibstoffleck lähmte sie, ihr Probenmechanismus versagte, der Kontakt zur Erde brach für Wochen ab, und drei ihrer vier Ionentriebwerke gingen kaputt — dennoch brachte das Team die beschädigte Sonde nach Hause, und 2010 landete ihre Kapsel per Fallschirm im australischen Outback mit einigen tausend mikroskopischen Körnern an Bord: die erste jemals von einem Asteroiden zurückgebrachte Probe. Es hätte nicht funktionieren dürfen, und es funktionierte doch."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/hayabusa/01"
+      },
+      "caption": "Die ursprüngliche Hayabusa — die Sonde, die nahezu jeden Ausfall erlitt, den ein Raumfahrzeug erleiden kann, und dennoch lieferte. Ihre siebenjährige Odyssee wurde in Japan zur nationalen Geschichte über das Nicht-Aufgeben einer Maschine, die sich weigerte aufzugeben.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Hayabusa2, die alles aus der Tortur ihrer Vorgängerin gelernt hatte, war das Gegenteil: eine nahezu makellose Mission. 2014 gestartet, erreichte sie den kohlenstoffreichen Asteroiden Ryugu im Jahr 2018, setzte hüpfende Rover auf der Oberfläche ab, feuerte ein Kupferprojektil ab, um einen künstlichen Krater zu sprengen und abgeschirmtes Material aus dem Untergrund zu sammeln, und brachte ihre Kapsel 2020 mit mehr als fünf Gramm unberührtem Asteroidenmaterial zur Erde zurück — eine Probe, die bereits die Chemie des frühen Sonnensystems neu schreibt. Die Sonde selbst flog weiter zu einem anderen Asteroiden, ihre Mission bis in die 2030er-Jahre verlängert."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Der Bogen von Hayabusa zu Hayabusa2 ist das klarste Beispiel in diesem Atlas für ein Programm, das eine Beinahe-Katastrophe in Meisterschaft verwandelte. Der Wert der ersten Mission lag nicht in einem sauberen Erfolg — sie kehrte kaum humpelnd zurück — sondern in allem, was ihr Team beim Überleben der Kaskade von Ausfällen lernte. Reaktionsräder, Treibstoffsysteme, autonomer Anflug, die Wiedereintrittskapsel: jedes beinahe tödliche Problem wurde zu einer Lektion, die aus der Nachfolgemission herauskonzipiert wurde. Hayabusa2s Perfektion wurde vollständig auf Hayabusas Leiden aufgebaut."
+    },
+    {
+      "type": "prose",
+      "md": "Es ist auch eine ausgeprägt japanische Art von Raumfahrtprogramm – bescheiden im Budget verglichen mit den Flaggschiffen der NASA, eng im Fokus und außerordentlich beharrlich. JAXA versuchte nicht, alles zu tun; die Agentur wählte eine sehr schwierige Sache, die Rückführung von Asteroidenproben, und wurde darin zur weltweiten Spitze. Das Ergebnis ist eine Spezialisierung, auf die selbst die NASA sich stützt: Proben von Ryugu wurden mit amerikanischen Laboren geteilt, und die eigene Asteroidenrückführungsmission der NASA, OSIRIS-REx, flog im Austausch mit der hart erkämpften Erfahrung des Hayabusa-Teams."
+    },
+    {
+      "type": "prose",
+      "md": "Und sie machte Roboter zu Protagonisten. Die mühsame Heimkehr der ersten Hayabusa wurde von Millionen Menschen in Japan als echtes Drama verfolgt — eine Maschine, anthropomorphisiert zu einem Falken, der nicht aufgeben wollte, ihr letzter Akt gefilmt, als sie in der Atmosphäre verglühte, nachdem sie die Kapsel freigegeben hatte, für deren Ablieferung sie sieben Jahre gekämpft hatte. Wenige unbemannte Missionen haben eine solche öffentliche Anteilnahme hervorgerufen; Hayabusa verdiente sie sich, indem sie sich weigerte zu scheitern."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Das erste Vermächtnis von Hayabusa ist wissenschaftlicher Natur: unberührte Asteroidenproben in irdischen Laboren, sowohl von einem steinigen Asteroiden (Itokawa) als auch von einem kohlenstoffreichen (Ryugu), die unmittelbar darüber Aufschluss geben, wie das Sonnensystem entstanden ist und wie Wasser und organische Verbindungen die frühe Erde erreicht haben könnten. Es handelt sich um einige der wertvollsten Gramm Material, die die Menschheit besitzt."
+    },
+    {
+      "type": "prose",
+      "md": "Das zweite Vermächtnis ist ein bewährtes Konzept für Probenrückführung, dem der Rest der Welt heute folgt. Die Technologien und harten Lektionen der Hayabusa-Missionen flossen direkt in NASAs OSIRIS-REx und die breitere Welle von Kleinköper-Missionen ein — womit JAXAs kleine Falken zu Wegbereitern für eine ganze Klasse von Erkundung wurden."
+    },
+    {
+      "type": "prose",
+      "md": "Und es ist ein Beweis dafür, dass ein fokussiertes, vergleichsweise bescheidenes Programm die Welt in einem spezifischen, schwierigen Bereich anführen kann. Hayabusa ist der Beweis, dass man nicht das größte Budget braucht, um eine echte Premiere zu erreichen — nur die Disziplin, sich ein hartes Problem auszusuchen und sich nicht davon besiegen zu lassen."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lehre aus Hayabusa ist, dass eine Mission, die kaum überlebt, wertvoller sein kann als eine, die reibungslos verläuft, sofern das Überleben dokumentiert und daraus gelernt wird. Die Kaskade von Fehlschlägen der ersten Sonde war letztlich das Wertvollste an ihr — jedes beinahe fatale Problem wurde zu Wissen, das den makellosen Nachfolger möglich machte. Versagen, vollständig verstanden, ist eine Form von Fortschritt."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lektion ist die Kraft der Konzentration. JAXA konnte NASA nicht in allem finanziell überbieten, also wählte die Agentur eine außerordentlich schwierige Sache und wurde darin die beste der Welt. In einem Feld, in dem die Versuchung immer darin besteht, mehr zu versuchen, ist Hayabusa ein Argument dafür, weniger zu tun, dafür gründlicher — und einen Vorsprung zu halten, für den größere Programme dann zu einem kommen müssen, um zu lernen."
+    }
+  ]
+}

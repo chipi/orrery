@@ -66,7 +66,25 @@ function scienceRoutes() {
   return routes;
 }
 
-const localizedRoots = expandLocalizedRoots([...SEED_ROUTES, ...scienceRoutes()]);
+// Every /programs route, read from the program index. Like the science
+// sections, the program cards link with base-relative hrefs the per-locale
+// crawl doesn't follow into /<locale>/, so enumerate them here — expandLocalizedRoots
+// then prerenders /programs and each /programs/<id> in all 14 locales, and the
+// load() resolves the right overlay via getLocale() (same as /science).
+function programsRoutes() {
+  const idxPath = 'static/data/programs/index.json';
+  if (!existsSync(idxPath)) return [];
+  const idx = JSON.parse(readFileSync(idxPath, 'utf8'));
+  const routes = ['/programs'];
+  for (const p of idx) routes.push(`/programs/${p.id}`);
+  return routes;
+}
+
+const localizedRoots = expandLocalizedRoots([
+  ...SEED_ROUTES,
+  ...scienceRoutes(),
+  ...programsRoutes(),
+]);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

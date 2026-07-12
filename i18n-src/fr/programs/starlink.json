@@ -1,0 +1,88 @@
+{
+  "name": "Starlink",
+  "tagline": "La première mégaconstellation — des milliers de satellites qui ont apporté Internet à la planète entière, et remodelé l'orbite terrestre basse au passage.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Pendant soixante ans, les satellites furent des objets rares et précieux — quelques centaines d'engins spatiaux coûteux, chacun sur sa propre orbite, la plupart volumineux et lointains. Starlink a complètement brisé ce modèle. Au lieu d'une poignée de gros satellites en orbite haute, elle fait voler des milliers de petits satellites près de la Terre, conditionnés à plat et lancés par groupes de soixante, formant un maillage qui couvre la planète. Au milieu des années 2020, plus de la moitié de tous les satellites actifs en orbite étaient des Starlinks — la constellation d'une seule entreprise surpassant en nombre tout ce que l'humanité avait jamais lancé auparavant, en cumulé."
+    },
+    {
+      "type": "prose",
+      "md": "La raison d'en faire voler autant, si bas, est physique. Internet depuis les satellites de communications traditionnels en orbite géostationnaire est lent, car le signal doit parcourir 36 000 kilomètres dans chaque sens. Les satellites Starlink orbitent à environ 550 kilomètres, assez près pour que le délai d'aller-retour ressemble à celui du haut débit terrestre — mais rester si bas signifie que chaque satellite ne couvre qu'une petite zone au sol pendant quelques minutes à la fois, il faut donc un essaim de satellites, vous transférant constamment de l'un à l'autre, pour couvrir le moindre endroit."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif affiché est le haut débit mondial : Internet rapide partout sur Terre, y compris dans les endroits où les câbles à fibre optique et les antennes-relais n'ont jamais atteint — fermes rurales, navires en mer, aéronefs, zones sinistrées et communautés isolées que l'économie des infrastructures terrestres avait abandonnées. Une antenne de la taille d'une boîte à pizza, pointée vers le ciel, se connecte aux satellites qui passent au-dessus."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starlink/01"
+      },
+      "caption": "Un satellite Starlink — plat, compact, et conçu pour être lancé par douzaines. Individuellement banal ; l'essentiel est l'essaim. Des milliers d'entre eux forment un maillage qu'aucun réseau terrestre ne pourrait égaler en portée.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "L'objectif non affiché est l'argent pour construire autre chose. Starlink est le moteur de revenus de SpaceX — un service grand public facturant des millions d'abonnés, finançant le travail bien plus coûteux et spéculatif de Starship et de Mars. La constellation est à la fois un produit en soi et la fondation financière de l'ambition plus profonde de l'entreprise ; l'activité Internet paie pour celle interplanétaire."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cela fonctionne, à une échelle que rien d'autre n'approche. Starlink est passé de son premier lancement opérationnel en 2019 à des millions d'abonnés dans des dizaines de pays en quelques années, fournissant un haut débit utilisable à des endroits qui n'en avaient aucun. Il a maintenu en ligne des navires, des compagnies aériennes et des villes isolées, et en 2022 il a maintenu tout un pays connecté pendant une guerre — démontrant, de manière alarmante pour certains, qu'une constellation privée unique était devenue une infrastructure critique et un facteur de sécurité nationale."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starlink/02"
+      },
+      "caption": "Un « train » de Starlinks fraîchement déployés traversant le ciel avant qu'ils ne s'élèvent vers leurs orbites opérationnelles. Magnifique pour certains, une intrusion pour les astronomes dont les longues poses sont traversées de traînées par les satellites lumineux.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Mais le résultat a un second visage. Les astronomes ont vu leurs images se remplir de traînées de satellites et leurs bandes radio s'encombrer de bruit de liaison descendante ; le nombre pur d'objets a aiguisé toutes les inquiétudes concernant les collisions et les débris orbitaux ; et la concentration de tant de capacités entre les mains d'une seule entreprise privée a troublé des gouvernements habitués à contrôler leurs propres communications. Starlink a résolu un problème réel et en a créé de nouveaux que le monde s'efforce encore de gérer."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Starlink est la raison d'être de la réutilisabilité. Les lancements bon marché, fréquents et récupérables de Falcon 9 sont la seule raison pour laquelle une constellation de cette taille est abordable à construire et à remplacer continuellement — et Starlink, en retour, est la charge utile qui maintient ces Falcons en vol à une cadence que nul autre ne peut égaler. Les deux forment une boucle fermée : la fusée rend la constellation possible, et la constellation donne à la fusée quelque chose à lancer, encore et encore, se payant à chaque fois."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi le moment où l'orbite terrestre basse a cessé d'être vide. Pendant toute l'ère spatiale, l'orbite était vaste et peu occupée ; quelques milliers de satellites avaient de la place à revendre. Starlink, avec des dizaines de milliers prévus et des rivaux se précipitant pour l'égaler, transforme l'espace proche de la Terre en un bien commun partagé, encombré et géré activement — un lieu où les satellites doivent constamment s'éviter, où une seule collision pourrait entraîner une cascade, et où les règles sur qui peut faire voler quoi, et combien, sont écrites après coup."
+    },
+    {
+      "type": "prose",
+      "md": "Et c'est une étude de cas sur un acteur privé allant plus vite que les institutions censées le gouverner. Starlink a déployé des milliers de satellites avant que les régulateurs, les astronomes ou les concurrents n'aient pleinement pris la mesure des conséquences — luminosité, débris, spectre, géopolitique. La constellation est à la fois un bien public authentique et une concentration de pouvoir sans reddition de comptes, et les deux choses sont vraies parce qu'elle a été construite par une seule entreprise à une vitesse que l'ancien système n'était pas conçu pour contrôler."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Starlink est la preuve qu'Internet par satellite, longtemps un cimetière de projets en faillite, peut réellement fonctionner à l'échelle planétaire — c'est pourquoi une foule de rivaux, du Kuiper d'Amazon aux constellations nationales et européennes, se précipite maintenant pour construire les leurs. La mégaconstellation n'est plus un pari ; c'est la nouvelle forme de l'industrie des communications en orbite."
+    },
+    {
+      "type": "prose",
+      "md": "Son second héritage est l'encombrement de l'orbite basse elle-même — un changement permanent de l'environnement de l'espace proche de la Terre. Les débats que Starlink a imposés, sur la luminosité, les débris, le spectre et qui gouverne une orbite partagée, définiront les prochaines décennies du vol spatial bien au-delà des satellites d'une seule entreprise."
+    },
+    {
+      "type": "prose",
+      "md": "Et son troisième est financier : un moteur de revenus opérationnel qui finance l'ambition spatiale lointaine. Starlink est le modèle de comment une entreprise de lancement paie pour les missions qui ne se paieront jamais d'elles-mêmes — l'activité Internet finançant la route vers Mars."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Starlink est que l'échelle change la nature d'une chose. Cent satellites, c'est un réseau de communications ; dix mille, c'est une altération du ciel et un nouveau bien commun à gouverner. La quantité, au-delà d'un seuil, devient un changement qualitatif — et la mégaconstellation a franchi ce seuil avant que quiconque n'ait convenu des règles pour ce qui se trouve de l'autre côté."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est qu'une infrastructure construite plus vite qu'elle ne peut être gouvernée apporte à la fois un bien réel et un risque réel. Starlink a véritablement connecté les non-connectés — et simultanément concentré des capacités critiques dans des mains privées, encombré une orbite partagée, et strié le ciel des astronomes. La tâche qu'elle laisse n'est pas de la défaire mais de la rattraper : de construire la gouvernance qu'une technologie aussi puissante aurait dû avoir avant de voler."
+    }
+  ]
+}

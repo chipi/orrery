@@ -1,0 +1,30 @@
+{
+  "id": "starlink",
+  "kind": "infrastructure",
+  "agency": "SpaceX",
+  "agencies": ["SpaceX"],
+  "country": "USA",
+  "start_year": 2019,
+  "status": "ACTIVE",
+  "epoch": "commercial-era",
+  "hero": "fleet/starlink/01",
+  "roster": [
+    { "linked_id": "starlink", "ref": "fleet", "role": "constellation", "year": 2019 },
+    { "linked_id": "falcon-9", "ref": "fleet", "role": "launcher" },
+    { "name": "First 60 satellites", "year": 2019, "note": "a single Falcon 9 deploys 60 flat-packed satellites at once — the operational constellation begins, and the night sky gets its first Starlink 'train'" },
+    { "name": "Service goes live", "year": 2021, "note": "public beta opens; a constellation becomes a consumer internet service reaching places fibre and cell towers never did" },
+    { "name": "Ukraine", "year": 2022, "note": "Starlink terminals keep a country online through a war — and make one company's constellation a factor in national security overnight" },
+    { "name": "Direct to cell", "year": 2024, "note": "satellites begin connecting ordinary phones directly, with no terminal — the constellation starts to become a global cell tower" }
+  ],
+  "related_programs": ["spacex"],
+  "see_also": [
+    { "label": "Fleet — the Starlink constellation", "href": "/fleet?focus=starlink", "kind": "fleet" },
+    { "label": "SpaceX — the Falcon that launches it", "href": "/programs/spacex", "kind": "program" },
+    { "label": "Earth — orbits and the crowding of low orbit", "href": "/earth", "kind": "body" }
+  ],
+  "links": [
+    { "l": "Starlink — Wikipedia", "u": "https://en.wikipedia.org/wiki/Starlink", "t": "intro" },
+    { "l": "Starlink", "u": "https://www.starlink.com/", "t": "core" },
+    { "l": "Satellite constellations and astronomy — IAU", "u": "https://www.iau.org/public/themes/satellite-constellations/", "t": "deep" }
+  ]
+}

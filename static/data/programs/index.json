@@ -289,5 +289,21 @@
     "start_year": 2002,
     "end_year": null,
     "hero": "fleet/falcon-9/01"
+  },
+  {
+    "id": "starlink",
+    "name": "Starlink",
+    "tagline": "The first megaconstellation — thousands of satellites that brought the internet to the whole planet, and remade low Earth orbit in the process.",
+    "kind": "infrastructure",
+    "agency": "SpaceX",
+    "agencies": [
+      "SpaceX"
+    ],
+    "country": "USA",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "start_year": 2019,
+    "end_year": null,
+    "hero": "fleet/starlink/01"
   }
 ]

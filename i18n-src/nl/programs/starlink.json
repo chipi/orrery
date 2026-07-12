@@ -1,0 +1,88 @@
+{
+  "name": "Starlink",
+  "tagline": "De eerste megaconstellatie — duizenden satellieten die internet naar de hele planeet brachten, en in het proces het lage aardbaan volledig herdefinieerden.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Zestig jaar lang waren satellieten zeldzame en kostbare dingen — enkele honderden dure ruimtevaartuigen, elk in zijn eigen baan, de meeste groot en ver weg. Starlink brak dat model volledig. In plaats van een handvol grote satellieten in een hoge baan, vliegt het duizenden kleine dicht bij de aarde, plat verpakt en gelanceerd met zestig tegelijk, die een netwerk vormen dat de planeet bedekt. Tegen het midden van de jaren 2020 was meer dan de helft van alle actieve satellieten in een baan rond de aarde Starlinks — de constellatie van één enkel bedrijf overtrof in aantal alles wat de mensheid daarvóór ooit had gelanceerd, samen."
+    },
+    {
+      "type": "prose",
+      "md": "De reden om er zoveel te laten vliegen, zo laag, is natuurkunde. Internet van de traditionele communicatiesatellieten in geostationaire baan is traag, omdat het signaal 36.000 kilometer per richting moet afleggen. Starlink's satellieten draaien in een baan op ongeveer 550 kilometer, dichtbij genoeg dat de retourvertraging aanvoelt als breedband op de grond — maar zo laag blijven betekent dat elke satelliet slechts een klein stukje grond voor een paar minuten per keer dekt, dus heb je er een zwerm van nodig, die je voortdurend van de ene naar de volgende doorgeeft, om waar dan ook dekking te bieden."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het verklaarde doel is wereldwijd breedband: snel internet overal op aarde, inclusief de plaatsen die glasvezelkabel en zendmasten nooit hebben bereikt — plattelandsboerderijen, schepen op zee, vliegtuigen, rampgebieden en afgelegen gemeenschappen die de economie van grondinfrastructuur had afgeschreven. Een schotel ter grootte van een pizzadoos, gericht op de lucht, maakt verbinding met welke satellieten er ook overvliegen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starlink/01"
+      },
+      "caption": "Een Starlink-satelliet — plat, compact en gebouwd om bij het dozijn gelanceerd te worden. Individueel onopvallend; het punt is de zwerm. Duizenden ervan vormen een netwerk dat geen enkel grondnetwerk kan evenaren qua bereik.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het onuitgesproken doel is geld om iets anders te bouwen. Starlink is SpaceX's inkomstenmotor — een consumentendienst die miljoenen abonnees factureert, en het veel duurdere en speculatievere werk van Starship en Mars financiert. De constellatie is zowel een product op zich als de financiële basis onder de diepere ambitie van het bedrijf; het internetbedrijf betaalt voor het interplanetaire."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Het werkt, op een schaal die niets anders benadert. Starlink ging van zijn eerste operationele lancering in 2019 naar miljoenen abonnees in tientallen landen binnen een paar jaar, en leverde bruikbaar breedband aan plaatsen die er geen hadden. Het heeft schepen, luchtvaartmaatschappijen en afgelegen steden online gehouden, en in 2022 hield het een heel land verbonden tijdens een oorlog — wat, verontrustend voor sommigen, aantoonde dat een enkele particuliere constellatie kritieke infrastructuur was geworden en een factor in nationale veiligheid."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starlink/02"
+      },
+      "caption": "Een 'trein' van pas ingezette Starlinks die de lucht doorkruisen voordat ze naar hun operationele banen stijgen. Mooi voor sommigen, een inbreuk voor astronomen wier lange belichtingen de heldere satellieten rechtdoor strepen.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Maar het resultaat heeft een tweede gezicht. Astronomen zagen hun afbeeldingen zich vullen met satellietstrepen en hun radiobanden vol raken met downlink-ruis; het pure aantal objecten verscherpte elke zorg over botsingen en orbitaal puin; en de concentratie van zoveel capaciteit in handen van één particulier bedrijf maakte regeringen ongemakkelijk die gewend waren hun eigen communicatie te controleren. Starlink loste een echt probleem op en creëerde nieuwe waar de wereld nog steeds uitwerkt hoe ze te beheren."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Starlink is waarvoor herbruikbaarheid was. Falcon 9's goedkope, frequente, terugwinbare lanceringen zijn de enige reden dat een constellatie van deze omvang betaalbaar is om te bouwen en voortdurend te vervangen — en Starlink is op zijn beurt de lading die die Falcons in een ritme laat vliegen dat niemand anders kan evenaren. De twee zijn een gesloten cirkel: de raket maakt de constellatie mogelijk, en de constellatie geeft de raket iets om te lanceren, keer op keer, waarbij het zichzelf elke keer terugbetaalt."
+    },
+    {
+      "type": "prose",
+      "md": "Het is ook het moment waarop het lage aardbaan ophield leeg te zijn. Gedurende het hele ruimtetijdperk was de baan uitgestrekt en schaars bezet; een paar duizend satellieten hadden ruimte te over. Starlink, met tienduizenden gepland en rivalen die racen om het te evenaren, verandert de ruimte nabij de aarde in een gedeelde, drukke, actief beheerde gemeenschap — een waar satellieten elkaar voortdurend moeten ontwijken, waar een enkele botsing kan escaleren, en waar de regels voor wie wat mag vliegen, en hoeveel, achteraf worden geschreven."
+    },
+    {
+      "type": "prose",
+      "md": "En het is een casestudy in een particuliere actor die sneller beweegt dan de instellingen die het zouden moeten besturen. Starlink zette duizenden satellieten in voordat regelgevers, astronomen of concurrenten de gevolgen volledig hadden ingeschat — helderheid, puin, spectrum, geopolitiek. De constellatie is een echt publiek goed en tegelijkertijd een niet-verantwoordelijke concentratie van macht, en beide dingen zijn waar omdat het gebouwd werd door één bedrijf met een snelheid die het oude systeem niet was ontworpen om te controleren."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Starlink's eerste erfenis is het bewijs dat satellietinternet, lange tijd een kerkhof van failliete ondernemingen, daadwerkelijk kan werken op planetaire schaal — wat de reden is waarom een menigte rivalen, van Amazon's Kuiper tot nationale en Europese constellaties, nu racet om hun eigen te bouwen. De megaconstellatie is niet langer een gok; het is de nieuwe vorm van de communicatie-industrie in een baan."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn tweede erfenis is de drukte van het lage aardbaan zelf — een permanente verandering in de omgeving van de ruimte nabij de aarde. De debatten die Starlink openforceerde, over helderheid, puin, spectrum, en wie een gedeelde baan bestuurt, zullen de komende decennia van ruimtevaart bepalen, ver voorbij de satellieten van enig afzonderlijk bedrijf."
+    },
+    {
+      "type": "prose",
+      "md": "En zijn derde is financieel: een werkende inkomstenmotor die deep-space ambitie financiert. Starlink is het model voor hoe een lanceerbedrijf betaalt voor de missies die zichzelf nooit zullen terugbetalen — het internetbedrijf dat de weg naar Mars financiert."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Starlink is dat schaal de aard van een ding verandert. Honderd satellieten is een communicatienetwerk; tienduizend is een verandering van de hemel en een nieuwe gemeenschap die bestuurd moet worden. Kwantiteit wordt, voorbij een drempel, een kwalitatieve verandering — en de megaconstellatie passeerde die drempel voordat iemand het eens was geworden over de regels voor wat aan de andere kant ligt."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat infrastructuur die sneller wordt gebouwd dan het kan worden bestuurd, tegelijkertijd echt goed en echt risico levert. Starlink verbond daadwerkelijk de niet-verbondenen — en concentreerde tegelijkertijd kritieke capaciteit in particuliere handen, maakte een gedeelde baan vol, en streepte de hemel van de astronomen. De taak die het achterlaat is niet om het ongedaan te maken maar om het bij te benen: om het bestuur te bouwen dat een technologie zo machtig had moeten hebben voordat het vloog."
+    }
+  ]
+}

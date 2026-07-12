@@ -63,7 +63,7 @@
     if (!r.linked_id) return null;
     if (r.ref === 'mission') return `${base}/missions?id=${r.linked_id}`;
     if (r.ref === 'fleet') return `${base}/fleet?id=${r.linked_id}`;
-    if (r.ref === 'module') return `${base}/iss?module=${r.linked_id}`;
+    if (r.ref === 'module') return `${base}/${p.id}?module=${r.linked_id}`;
     return null;
   }
 
@@ -170,7 +170,7 @@
         {/each}
       </ol>
       <p class="assembly-foot">
-        <a href="{base}/iss">Explore the assembled station, module by module, in 3D →</a>
+        <a href="{base}/{p.id}">Explore the assembled station, module by module, in 3D →</a>
       </p>
     </section>
   {/if}

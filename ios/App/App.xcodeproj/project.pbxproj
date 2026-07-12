@@ -15,6 +15,12 @@
 		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */; };
+		F8B0A72D3003B6760039589C /* ArHitTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A72B3003B6760039589C /* ArHitTester.swift */; };
+		F8B0A72E3003B6760039589C /* ArBridgePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A7283003B6760039589C /* ArBridgePlugin.m */; };
+		F8B0A72F3003B6760039589C /* ArAnchorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A7273003B6760039589C /* ArAnchorTracker.swift */; };
+		F8B0A7303003B6760039589C /* ArSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A72C3003B6760039589C /* ArSessionManager.swift */; };
+		F8B0A7313003B6760039589C /* ArCameraPoseEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A72A3003B6760039589C /* ArCameraPoseEmitter.swift */; };
+		F8B0A7323003B6760039589C /* ArBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0A7293003B6760039589C /* ArBridgePlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,13 @@
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF51FD2D460BCFE21FA515B2 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
+		F8B0A7263003B3250039589C /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8B0A7273003B6760039589C /* ArAnchorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArAnchorTracker.swift; path = "App/Plugins/ar-bridge/ArAnchorTracker.swift"; sourceTree = "<group>"; };
+		F8B0A7283003B6760039589C /* ArBridgePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArBridgePlugin.m; path = "App/Plugins/ar-bridge/ArBridgePlugin.m"; sourceTree = "<group>"; };
+		F8B0A7293003B6760039589C /* ArBridgePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArBridgePlugin.swift; path = "App/Plugins/ar-bridge/ArBridgePlugin.swift"; sourceTree = "<group>"; };
+		F8B0A72A3003B6760039589C /* ArCameraPoseEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArCameraPoseEmitter.swift; path = "App/Plugins/ar-bridge/ArCameraPoseEmitter.swift"; sourceTree = "<group>"; };
+		F8B0A72B3003B6760039589C /* ArHitTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArHitTester.swift; path = "App/Plugins/ar-bridge/ArHitTester.swift"; sourceTree = "<group>"; };
+		F8B0A72C3003B6760039589C /* ArSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArSessionManager.swift; path = "App/Plugins/ar-bridge/ArSessionManager.swift"; sourceTree = "<group>"; };
 		FC68EB0AF532CFC21C3344DD /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,10 +68,17 @@
 		504EC2FB1FED79650016851F = {
 			isa = PBXGroup;
 			children = (
+				F8B0A7273003B6760039589C /* ArAnchorTracker.swift */,
+				F8B0A7283003B6760039589C /* ArBridgePlugin.m */,
+				F8B0A7293003B6760039589C /* ArBridgePlugin.swift */,
+				F8B0A72A3003B6760039589C /* ArCameraPoseEmitter.swift */,
+				F8B0A72B3003B6760039589C /* ArHitTester.swift */,
+				F8B0A72C3003B6760039589C /* ArSessionManager.swift */,
 				504EC3061FED79650016851F /* App */,
 				504EC3051FED79650016851F /* Products */,
 				7F8756D8B27F46E3366F6CEA /* Pods */,
 				27E2DDA53C4D2A4D1A88CE4A /* Frameworks */,
+				F8B0A7263003B3250039589C /* App-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +147,7 @@
 				TargetAttributes = {
 					504EC3031FED79650016851F = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1100;
+						LastSwiftMigration = 2630;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -210,6 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
+				F8B0A72D3003B6760039589C /* ArHitTester.swift in Sources */,
+				F8B0A72E3003B6760039589C /* ArBridgePlugin.m in Sources */,
+				F8B0A72F3003B6760039589C /* ArAnchorTracker.swift in Sources */,
+				F8B0A7303003B6760039589C /* ArSessionManager.swift in Sources */,
+				F8B0A7313003B6760039589C /* ArCameraPoseEmitter.swift in Sources */,
+				F8B0A7323003B6760039589C /* ArBridgePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +373,12 @@
 			baseConfigurationReference = FC68EB0AF532CFC21C3344DD /* Pods-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P3PX275ZM;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.8.0;
@@ -357,6 +386,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chipi.orrery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,15 +398,19 @@
 			baseConfigurationReference = AF51FD2D460BCFE21FA515B2 /* Pods-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P3PX275ZM;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chipi.orrery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

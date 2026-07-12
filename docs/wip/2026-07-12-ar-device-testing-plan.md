@@ -138,3 +138,44 @@ step N" per route is enough to turn into fixes.
   narration: `ar-narrator.ts`
 - Button: `src/lib/components/EnterArButton.svelte`
 - Full architecture: **TA.md §immersive** · spec: **RFC-021** / **PRD-019**
+
+---
+
+## SESSION 1 log (2026-07-12, iPhone 15 Pro tethered) — where we stopped
+
+**Done + working:**
+- `build:mobile` (49.4 MB) → `cap sync ios` → app **builds + installs + launches on the
+  iPhone 15 Pro** (Developer Mode on). Flat scenes render fine.
+- **#206 wired**: added the 6 `ar-bridge` files to the App target (2nd time, WITHOUT
+  "Copy items" — the 1st add duplicated them to `ios/App/` and compiled the buggy copies;
+  now one clean set under `App/Plugins/ar-bridge/`). Xcode created `App-Bridging-Header.h`.
+- **Fixed 1 real Swift bug** (`ArHitTester.swift:28`): `frame.raycastQuery(...)` is
+  non-optional in current ARKit → dropped the `guard let`. Verified `xcodebuild … BUILD
+  SUCCEEDED` (simulator).
+- Signing set to Marko's team; app category Education; status-bar Light; display name Orrery.
+
+**Uncommitted working tree (do NOT commit until AR is verified on-device):**
+`ios/App/App-Bridging-Header.h` (new), `project.pbxproj` (target+signing), `Info.plist`,
+`Plugins/ar-bridge/ArHitTester.swift` (the fix). main is 0/0 vs origin, untouched.
+
+**BLOCKER A — "View in AR" button not showing on /explore.** The button component IS in
+the DOM (explore/+page.svelte:5219, ungated) but renders nothing → its internal state
+resolved to `hidden`. On a wrapped iPhone that only happens if `detectArPlatform()` falls
+to `unsupported`, i.e. Capacitor isn't reporting native-iOS.
+→ **FIRST STEP WHEN BACK:** Safari Web Inspector on the phone webview
+(iPhone Settings→Safari→Advanced→Web Inspector ON; Mac Safari→Develop→[iPhone]→
+`capacitor://localhost`), Console:
+```
+Capacitor.getPlatform()      // expect "ios"
+Capacitor.isNativePlatform() // expect true
+navigator.userAgent
+```
+If either is wrong → that's the gate bug (fix in src/lib/ar.ts detectArPlatform /
+classifyArPlatform). If both are right → the bug is elsewhere in EnterArButton's
+onMount gate; add a temp console.log of `detectArPlatform()` (logs surface in the Xcode
+console, e.g. the ⚡️ lines) and rebuild.
+
+**THREAD B (separate layout bug Marko spotted)** — the `ExploreBodyIndex` toggle
+(`.body-index-toggle`, explore/+page.svelte:5557) sits "up" instead of grouped with the
+other buttons. Check on the deployed **PWA** too, and on the surface routes where the
+same index pattern was added (**moon / mars / earth** via SurfaceScene). Not AR-related.

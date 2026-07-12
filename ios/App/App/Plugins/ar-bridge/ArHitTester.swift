@@ -24,15 +24,12 @@ enum ArHitTester {
             x: screenX / Double(viewportSize.width),
             y: screenY / Double(viewportSize.height)
         )
-        guard
-            let query = frame.raycastQuery(
-                from: normalized,
-                allowing: .estimatedPlane,
-                alignment: .any
-            )
-        else {
-            return nil
-        }
+        // raycastQuery(from:allowing:alignment:) returns a non-optional query.
+        let query = frame.raycastQuery(
+            from: normalized,
+            allowing: .estimatedPlane,
+            alignment: .any
+        )
         guard let result = session.raycast(query).first else { return nil }
 
         let t = result.worldTransform.columns.3

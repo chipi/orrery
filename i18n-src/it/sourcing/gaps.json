@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Il registro pubblico dei contenuti che Orrery non è riuscito a reperire secondo i propri criteri di licenza (Creative Commons / pubblico dominio, senza watermark, autentico — nessuna riproduzione amatoriale). Preferiamo mostrare un vuoto onesto piuttosto che pubblicare qualcosa di cui non abbiamo il diritto d'uso. Aggiungi qui nuovi ostacoli man mano che li incontriamo.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Insegne di missione e programma",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Patch autentiche di programma e missione per i primi programmi sovietici con equipaggio, da affiancare alle insegne NASA.",
+      "wall": "Due ostacoli contemporaneamente. Primo, la maggior parte non è mai esistita: l'URSS non adottò la tradizione delle patch di missione fino ad Apollo–Soyuz nel 1975, quindi Vostok, Voskhod e i primi voli Soyuz semplicemente non avevano patch. Secondo, ciò che esiste più tardi — le patch delle spedizioni Soyuz TM/TMA, gli emblemi Roscosmos — è protetto da copyright o caricato solo sotto fair-use, mai rilasciato con una licenza libera.",
+      "checked": [
+        "Wikimedia Commons — ricerca con parole chiave inglesi",
+        "Wikimedia Commons — ricerca in cirillico (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — albero delle categorie (Soviet space program, Buran, Roscosmos)",
+        "ru.wikipedia — immagini degli articoli per Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru e simili — protetti da copyright o con licenza non chiara; astronaut.ru è un'enciclopedia gestita privatamente, non un titolare di diritti",
+        "Riproduzioni moderne di appassionati (ad es. un emblema Buran CC-BY di un artista di videogiochi) — liberamente licenziate ma non insegne autentiche"
+      ],
+      "resolution": "Il logo dell'agenzia Roscosmos funge da contrassegno onesto su ogni scheda e pagina di programma interessata.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

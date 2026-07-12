@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Het openbare register van content die Orrery niet kon bronnen onder zijn licentiedrempel (Creative Commons / publiek domein, geen watermerk, authentiek — geen fanreproducties). We tonen liever een eerlijke leemte dan iets te verzenden waar we geen recht op hebben. Voeg hier nieuwe obstakels toe naarmate we ze tegenkomen.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Missie- & programma-insignes",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Authentieke programma- en missiepatches voor de vroege Sovjet-bemande programma's, naast de NASA-insignes.",
+      "wall": "Twee obstakels tegelijk. Ten eerste bestonden de meeste nooit: de USSR nam de missiepatch-traditie pas aan met Apollo–Soyuz in 1975, dus Vostok, Voskhod en de eerste Soyuz-vluchten hadden simpelweg geen patch. Ten tweede is wat later wel bestaat — Soyuz TM/TMA expeditiepatches, Roscosmos emblemen — auteursrechtelijk beschermd of alleen geüpload onder fair-use, nooit vrijgegeven onder een vrije licentie.",
+      "checked": [
+        "Wikimedia Commons — Engelse zoektermen",
+        "Wikimedia Commons — Cyrillisch zoeken (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — categorieboom (Soviet space program, Buran, Roscosmos)",
+        "ru.wikipedia — artikelbeeldmateriaal voor Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru en vergelijkbare — auteursrechtelijk beschermd of licentie onduidelijk; astronaut.ru is een privaat gerunde encyclopedie, geen rechthebbende",
+        "Moderne fanreproducties (bijv. een CC-BY Buran embleem door een game-artiest) — vrij gelicentieerd maar niet authentieke insignes"
+      ],
+      "resolution": "Het Roscosmos agentschapslogo staat als eerlijk kenmerk op elke getroffen programmakaart en pagina.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

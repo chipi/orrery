@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "note": "The public ledger of content Orrery could not source under its licensing bar (Creative Commons / public domain, no watermark, authentic — no fan reproductions). We would rather show an honest gap than ship something we don't have the right to use. Append new walls here as we hit them.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Mission & program insignia",
+      "subjects": ["Vostok", "Voskhod", "Soyuz 1", "Soyuz 11", "Salyut", "Mir", "Buran", "Soviet lunar (N1–L3)"],
+      "want": "Authentic program and mission patches for the early Soviet crewed programs, to sit beside the NASA insignia.",
+      "wall": "Two walls at once. First, most never existed: the USSR did not adopt the mission-patch tradition until Apollo–Soyuz in 1975, so Vostok, Voskhod and the first Soyuz flights simply had no patch. Second, what does exist later — Soyuz TM/TMA expedition patches, Roscosmos emblems — is copyrighted or uploaded only under fair-use, never released under a free licence.",
+      "checked": [
+        "Wikimedia Commons — English keyword search",
+        "Wikimedia Commons — Cyrillic search (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — category tree (Soviet space program, Buran, Roscosmos)",
+        "ru.wikipedia — article imagery for Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru and similar — copyrighted or license-unclear; astronaut.ru is a privately-run encyclopedia, not a rights holder",
+        "Modern fan reproductions (e.g. a CC-BY Buran emblem by a game artist) — freely licensed but not authentic insignia"
+      ],
+      "resolution": "The Roscosmos agency logo stands in as the honest mark on every affected program card and page.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

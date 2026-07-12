@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Le registre public du contenu qu'Orrery n'a pas pu trouver sous son seuil de licence (Creative Commons / domaine public, sans filigrane, authentique — pas de reproductions de fans). Nous préférons montrer un manque honnête plutôt que de diffuser quelque chose que nous n'avons pas le droit d'utiliser. Ajoutez de nouveaux obstacles ici au fur et à mesure que nous les rencontrons.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Insignes de mission et de programme",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Écussons authentiques de programme et de mission pour les premiers programmes soviétiques habités, à placer aux côtés des insignes NASA.",
+      "wall": "Deux obstacles à la fois. Premièrement, la plupart n'ont jamais existé : l'URSS n'a pas adopté la tradition de l'écusson de mission avant Apollo–Soyuz en 1975, donc Vostok, Voskhod et les premiers vols Soyuz n'avaient simplement pas d'écusson. Deuxièmement, ce qui existe plus tard — les écussons d'expédition Soyuz TM/TMA, les emblèmes Roscosmos — est protégé par le droit d'auteur ou téléchargé uniquement sous usage équitable, jamais publié sous licence libre.",
+      "checked": [
+        "Wikimedia Commons — recherche par mots-clés en anglais",
+        "Wikimedia Commons — recherche en cyrillique (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — arborescence de catégories (programme spatial soviétique, Buran, Roscosmos)",
+        "ru.wikipedia — images d'articles pour Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru et similaires — protégés par le droit d'auteur ou licence incertaine ; astronaut.ru est une encyclopédie gérée par des particuliers, pas un détenteur de droits",
+        "Reproductions modernes de fans (par exemple un emblème Buran CC-BY par un artiste de jeu) — sous licence libre mais pas des insignes authentiques"
+      ],
+      "resolution": "Le logo de l'agence Roscosmos sert de marque honnête sur chaque carte de programme et page concernés.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

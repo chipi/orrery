@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "El registro público de contenido que Orrery no pudo obtener bajo su umbral de licencia (Creative Commons / dominio público, sin marca de agua, auténtico — sin reproducciones de aficionados). Preferimos mostrar un hueco honesto a publicar algo que no tenemos derecho a usar. Agregue nuevos obstáculos aquí a medida que los encontremos.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Insignias de misiones y programas",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Parches auténticos de programas y misiones de los primeros programas tripulados soviéticos, para colocar junto a las insignias de la NASA.",
+      "wall": "Dos obstáculos a la vez. Primero, la mayoría nunca existió: la URSS no adoptó la tradición de los parches de misión hasta Apollo–Soyuz en 1975, así que Vostok, Voskhod y los primeros vuelos Soyuz simplemente no tuvieron parche. Segundo, lo que existe más tarde — parches de expedición Soyuz TM/TMA, emblemas de Roscosmos — está protegido por derechos de autor o subido solo bajo uso legítimo, nunca publicado bajo una licencia libre.",
+      "checked": [
+        "Wikimedia Commons — búsqueda por palabras clave en inglés",
+        "Wikimedia Commons — búsqueda en cirílico (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — árbol de categorías (programa espacial soviético, Buran, Roscosmos)",
+        "ru.wikipedia — imágenes de artículos para Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru y similares — con derechos de autor o licencia poco clara; astronaut.ru es una enciclopedia administrada de forma privada, no un titular de derechos",
+        "Reproducciones modernas de aficionados (p. ej., un emblema de Buran CC-BY de un artista de videojuegos) — con licencia libre pero no son insignias auténticas"
+      ],
+      "resolution": "El logotipo de la agencia Roscosmos actúa como la marca honesta en cada tarjeta de programa y página afectada.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

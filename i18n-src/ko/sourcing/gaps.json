@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Orrery가 라이선스 기준(Creative Commons / 퍼블릭 도메인, 워터마크 없음, 진본 — 팬 복제물 제외)에 따라 소싱할 수 없었던 콘텐츠의 공개 기록. 사용 권한이 없는 것을 제공하느니 정직한 공백을 보여주는 편을 택한다. 이러한 한계에 부딪힐 때마다 여기에 추가한다.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "미션 및 프로그램 휘장",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "초기 소련 유인 프로그램의 진본 프로그램 및 미션 패치, NASA 휘장과 나란히 배치하기 위함.",
+      "wall": "두 가지 장벽이 동시에 존재한다. 첫째, 대부분은 애초에 존재하지 않았다: 소련은 1975년 Apollo–Soyuz까지 미션 패치 전통을 채택하지 않았으므로, Vostok, Voskhod 및 초기 Soyuz 비행은 단순히 패치가 없었다. 둘째, 이후에 존재하는 것 — Soyuz TM/TMA 원정 패치, Roscosmos 엠블럼 — 은 저작권이 있거나 공정 사용으로만 업로드되었으며, 자유 라이선스로 공개된 적이 없다.",
+      "checked": [
+        "Wikimedia Commons — 영어 키워드 검색",
+        "Wikimedia Commons — 키릴 문자 검색 (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — 카테고리 트리 (Soviet space program, Buran, Roscosmos)",
+        "ru.wikipedia — Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран 문서 이미지"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru 등 — 저작권 보호 대상이거나 라이선스 불명확; astronaut.ru는 개인이 운영하는 백과사전이며 권리 보유자가 아님",
+        "현대 팬 복제물 (예: 게임 아티스트의 CC-BY Buran 엠블럼) — 자유 라이선스이나 진본 휘장이 아님"
+      ],
+      "resolution": "Roscosmos 기관 로고가 영향을 받는 모든 프로그램 카드와 페이지에 정직한 표시로 사용된다.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

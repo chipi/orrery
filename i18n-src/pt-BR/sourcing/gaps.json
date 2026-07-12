@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "O registro público de conteúdo que o Orrery não conseguiu obter dentro de sua barra de licenciamento (Creative Commons / domínio público, sem marca d'água, autêntico — sem reproduções de fãs). Preferimos mostrar uma lacuna honesta a entregar algo que não temos o direito de usar. Adicione novas barreiras aqui conforme as encontramos.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Insígnias de missão e programa",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Patches autênticos de programa e missão para os primeiros programas tripulados soviéticos, para figurar ao lado das insígnias da NASA.",
+      "wall": "Duas barreiras de uma vez. Primeiro, a maioria nunca existiu: a URSS não adotou a tradição de patches de missão até Apollo–Soyuz em 1975, então Vostok, Voskhod e os primeiros voos Soyuz simplesmente não tiveram patch. Segundo, o que existe depois — patches de expedição Soyuz TM/TMA, emblemas Roscosmos — está protegido por direitos autorais ou carregado apenas sob uso justo, nunca liberado sob uma licença livre.",
+      "checked": [
+        "Wikimedia Commons — busca por palavras-chave em inglês",
+        "Wikimedia Commons — busca em cirílico (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — árvore de categorias (programa espacial soviético, Buran, Roscosmos)",
+        "ru.wikipedia — imagens de artigos para Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru e similares — protegidos por direitos autorais ou licença incerta; astronaut.ru é uma enciclopédia administrada de forma privada, não um detentor de direitos",
+        "Reproduções modernas de fãs (por exemplo, um emblema Buran CC-BY por um artista de jogos) — livremente licenciado mas não insígnia autêntica"
+      ],
+      "resolution": "O logotipo da agência Roscosmos serve como a marca honesta em cada cartão de programa e página afetados.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

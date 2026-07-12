@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Das öffentliche Verzeichnis von Inhalten, die Orrery nicht unter seiner Lizenzgrenze beschaffen konnte (Creative Commons / Public Domain, kein Wasserzeichen, authentisch — keine Fan-Reproduktionen). Wir zeigen lieber eine ehrliche Lücke, als etwas zu veröffentlichen, für das wir keine Nutzungsrechte haben. Neue Hürden werden hier hinzugefügt, sobald wir auf sie stoßen.",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "Missions- und Programmabzeichen",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "Authentische Programm- und Missionsabzeichen der frühen sowjetischen bemannten Programme, die neben den NASA-Abzeichen stehen sollen.",
+      "wall": "Zwei Hürden zugleich. Erstens existierten die meisten nie: Die UdSSR übernahm die Tradition der Missionsabzeichen erst 1975 mit Apollo–Soyuz, sodass Vostok, Voskhod und die ersten Soyuz-Flüge einfach kein Abzeichen hatten. Zweitens ist das, was später existiert — Soyuz TM/TMA-Expeditionsabzeichen, Roscosmos-Embleme — urheberrechtlich geschützt oder nur unter Fair-Use hochgeladen, niemals unter einer freien Lizenz veröffentlicht.",
+      "checked": [
+        "Wikimedia Commons — Stichwortsuche auf Englisch",
+        "Wikimedia Commons — kyrillische Suche (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — Kategoriebaum (Soviet space program, Buran, Roscosmos)",
+        "ru.wikipedia — Artikelbilder für Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ru und ähnliche — urheberrechtlich geschützt oder lizenzrechtlich unklar; astronaut.ru ist eine privat betriebene Enzyklopädie, kein Rechteinhaber",
+        "Moderne Fan-Reproduktionen (z. B. ein CC-BY Buran-Emblem von einem Spielegrafiker) — frei lizenziert, aber keine authentischen Abzeichen"
+      ],
+      "resolution": "Das Roscosmos-Agenturlogo steht als ehrliches Kennzeichen auf jeder betroffenen Programmkarte und -seite.",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

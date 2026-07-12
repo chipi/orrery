@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "note": "Orreryがライセンス基準(Creative Commons / パブリックドメイン、ウォーターマークなし、本物 — ファン製作の複製は不可)の下で入手できなかったコンテンツの公開記録。適切な使用権がないものを掲載するよりも、正直に空白を示す方が良い。新たな障壁に遭遇したら、ここに追加する。",
+  "gaps": [
+    {
+      "id": "soviet-era-patches",
+      "area": "ミッションおよびプログラムのエンブレム",
+      "subjects": [
+        "Vostok",
+        "Voskhod",
+        "Soyuz 1",
+        "Soyuz 11",
+        "Salyut",
+        "Mir",
+        "Buran",
+        "Soviet lunar (N1–L3)"
+      ],
+      "want": "NASAのエンブレムと並べるための、ソ連初期有人プログラムの本物のプログラムおよびミッションパッチ。",
+      "wall": "同時に2つの障壁がある。第一に、そのほとんどは存在しなかった。ソ連は1975年のApollo–Soyuzまでミッションパッチの伝統を採用しなかったため、Vostok、Voskhod、初期のSoyuz飛行にはパッチが単に存在しない。第二に、後に存在するもの — Soyuz TM/TMAの遠征パッチ、Roscosmosのエンブレム — は著作権で保護されているか、フェアユースの下でのみアップロードされており、自由ライセンスの下でリリースされたことはない。",
+      "checked": [
+        "Wikimedia Commons — 英語キーワード検索",
+        "Wikimedia Commons — キリル文字検索(Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons — カテゴリツリー(Soviet space program、Buran、Roscosmos)",
+        "ru.wikipedia — Восток-1、Восход-2、Союз-1、Союз-11、Мир、Буранの記事画像"
+      ],
+      "rejected": [
+        "roscosmos.ru / astronaut.ruおよび類似サイト — 著作権保護されているかライセンス不明。astronaut.ruは個人運営の百科事典であり、権利保有者ではない",
+        "現代のファン製作の複製(例：ゲームアーティストによるCC-BY Buranエンブレム) — 自由ライセンスだが本物のエンブレムではない"
+      ],
+      "resolution": "Roscosmosエージェンシーのロゴが、影響を受けるすべてのプログラムカードおよびページにおける正直な印として使用されている。",
+      "status": "wall",
+      "date": "2026-07-12"
+    }
+  ]
+}

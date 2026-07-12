@@ -6,6 +6,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import * as m from '$lib/paraglide/messages';
   import type { ProgramIndexEntry } from '$types/program';
   import type { PageData } from './$types';
 
@@ -16,38 +17,41 @@
   let badges = $derived(data.badges ?? {});
   let mode = $state<'era' | 'kind' | 'agency'>('era');
 
-  const KIND_OF: Record<string, string> = {
-    'crewed-campaign': 'Crewed campaigns',
-    station: 'Space stations',
-    'robotic-campaign': 'Robotic exploration',
-    infrastructure: 'Infrastructure',
-    'funding-line': 'Funding lines',
+  // Group by a stable key; the heading label resolves per-locale via m.*().
+  const ERA_KEY: Record<string, string> = {
+    'first-steps': 'space-race',
+    'space-race': 'space-race',
+    'lunar-era': 'space-race',
+    'first-stations': 'shuttle',
+    'shuttle-and-mir': 'shuttle',
+    'iss-assembly': 'iss',
+    'commercial-era': 'newspace',
+    'lunar-return': 'newspace',
+    'mars-era': 'newspace',
   };
-  const KIND_ORDER = [
-    'Crewed campaigns',
-    'Space stations',
-    'Robotic exploration',
-    'Infrastructure',
-    'Funding lines',
-  ];
+  const ERA_ORDER = ['space-race', 'shuttle', 'iss', 'newspace'];
+  const ERA_LABEL: Record<string, () => string> = {
+    'space-race': m.programs_era_space_race,
+    shuttle: m.programs_era_shuttle,
+    iss: m.programs_era_iss,
+    newspace: m.programs_era_newspace,
+  };
 
-  const ERA_OF: Record<string, string> = {
-    'first-steps': 'The Space Race · 1957–1975',
-    'space-race': 'The Space Race · 1957–1975',
-    'lunar-era': 'The Space Race · 1957–1975',
-    'first-stations': 'Shuttle & Stations · 1971–2011',
-    'shuttle-and-mir': 'Shuttle & Stations · 1971–2011',
-    'iss-assembly': 'The ISS era · 1998–2030',
-    'commercial-era': 'New Space & the return to the Moon · 2020+',
-    'lunar-return': 'New Space & the return to the Moon · 2020+',
-    'mars-era': 'New Space & the return to the Moon · 2020+',
+  const KIND_KEY: Record<string, string> = {
+    'crewed-campaign': 'crewed',
+    station: 'station',
+    'robotic-campaign': 'robotic',
+    infrastructure: 'infrastructure',
+    'funding-line': 'funding',
   };
-  const ERA_ORDER = [
-    'The Space Race · 1957–1975',
-    'Shuttle & Stations · 1971–2011',
-    'The ISS era · 1998–2030',
-    'New Space & the return to the Moon · 2020+',
-  ];
+  const KIND_ORDER = ['crewed', 'station', 'robotic', 'infrastructure', 'funding'];
+  const KIND_LABEL: Record<string, () => string> = {
+    crewed: m.programs_kind_crewed,
+    station: m.programs_kind_station,
+    robotic: m.programs_kind_robotic,
+    infrastructure: m.programs_kind_infrastructure,
+    funding: m.programs_kind_funding,
+  };
 
   function heroSrc(hero?: string): string {
     if (!hero) return '';
@@ -65,9 +69,9 @@
     for (const p of programs) {
       const key =
         mode === 'era'
-          ? (ERA_OF[p.epoch] ?? 'Other')
+          ? (ERA_KEY[p.epoch] ?? 'other')
           : mode === 'kind'
-            ? (KIND_OF[p.kind] ?? 'Other')
+            ? (KIND_KEY[p.kind] ?? 'other')
             : p.agency;
       if (!by.has(key)) by.set(key, []);
       by.get(key)!.push(p);
@@ -76,7 +80,13 @@
     const keys = order
       ? order.filter((k) => by.has(k))
       : [...by.keys()].sort((a, b) => a.localeCompare(b));
-    return keys.map((k) => ({ heading: k, items: by.get(k)! }));
+    const label = (k: string) =>
+      mode === 'era'
+        ? (ERA_LABEL[k]?.() ?? k)
+        : mode === 'kind'
+          ? (KIND_LABEL[k]?.() ?? k)
+          : k;
+    return keys.map((k) => ({ key: k, heading: label(k), items: by.get(k)! }));
   });
 </script>
 
@@ -87,24 +97,23 @@
 
 <div class="programs-index">
   <header class="head">
-    <h1>Programs</h1>
+    <h1>{m.programs_index_title()}</h1>
     <p class="intro">
-      Spaceflight is usually remembered as a string of missions and machines. But nothing here
-      happened on its own — every rocket, every landing, every station was the work of a
-      <em>program</em>: a sustained campaign, backed by a nation or a company, reaching for something
-      specific. The programs are where the ambition lived and the rivalries played out. Read
-      together, they are the whole arc of getting off the ground — from the first firsts of the Space
-      Race to the stations, telescopes, and futures being built right now.
+      {@html m.programs_index_intro({
+        program: `<em>${m.programs_index_intro_program()}</em>`,
+      })}
     </p>
-    <p class="lede">Browse by era to follow the story in time, by kind to compare like with like, or by agency to see who did what.</p>
-    <div class="toggle" role="group" aria-label="Group programs by">
-      <button class:active={mode === 'era'} onclick={() => (mode = 'era')}>By era</button>
-      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}>By kind</button>
-      <button class:active={mode === 'agency'} onclick={() => (mode = 'agency')}>By agency</button>
+    <p class="lede">{m.programs_index_browse_hint()}</p>
+    <div class="toggle" role="group" aria-label={m.programs_group_aria()}>
+      <button class:active={mode === 'era'} onclick={() => (mode = 'era')}>{m.programs_by_era()}</button>
+      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}>{m.programs_by_kind()}</button>
+      <button class:active={mode === 'agency'} onclick={() => (mode = 'agency')}
+        >{m.programs_by_agency()}</button
+      >
     </div>
   </header>
 
-  {#each groups as g (g.heading)}
+  {#each groups as g (g.key)}
     <section class="group">
       <h2>{g.heading}</h2>
       <div class="cards">
@@ -116,7 +125,7 @@
             <div class="card-body">
               <p class="c-meta">
                 <AgencyBadge agency={agencyStr(p)} />
-                <span>{p.agency} · {p.start_year}–{p.end_year ?? 'now'}</span>
+                <span>{p.agency} · {p.start_year}–{p.end_year ?? m.programs_meta_now()}</span>
               </p>
               <div class="c-title-row">
                 <h3>{p.name}</h3>

@@ -1874,8 +1874,28 @@ export async function getProgram(
   }
 }
 
-export async function getProgramIndex(fetchFn: FetchLike = fetch): Promise<ProgramIndexEntry[]> {
-  return get<ProgramIndexEntry[]>('programs/index.json', fetchFn);
+export async function getProgramIndex(
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<ProgramIndexEntry[]> {
+  const base = await get<ProgramIndexEntry[]>('programs/index.json', fetchFn);
+  if (locale === 'en-US') return base;
+  // Card name + tagline come from the per-locale program overlays (same
+  // source the detail pages use), so the index localizes fully.
+  return Promise.all(
+    base.map(async (entry) => {
+      const overlay = await get<{ name?: string; tagline?: string }>(
+        `i18n/${locale}/programs/${entry.id}.json`,
+        fetchFn,
+      ).catch(() => null);
+      if (!overlay) return entry;
+      return {
+        ...entry,
+        name: overlay.name ?? entry.name,
+        tagline: overlay.tagline ?? entry.tagline,
+      };
+    }),
+  );
 }
 
 /**

@@ -1,0 +1,28 @@
+{
+  "id": "kuiper",
+  "kind": "infrastructure",
+  "agency": "Amazon",
+  "agencies": ["Amazon"],
+  "country": "USA",
+  "start_year": 2023,
+  "status": "ACTIVE",
+  "epoch": "commercial-era",
+  "hero": "fleet/kuiper/01",
+  "roster": [
+    { "linked_id": "kuiper", "ref": "fleet", "role": "constellation", "year": 2023 },
+    { "name": "KuiperSat prototypes", "year": 2023, "note": "two test satellites reach orbit to validate the design before mass production begins" },
+    { "name": "Production launches", "year": 2025, "note": "the operational constellation begins deploying — years behind Starlink, and racing a regulatory clock to keep its spectrum" },
+    { "name": "Multi-rocket by design", "year": 2025, "note": "Kuiper buys launches across many providers — Atlas V, Vulcan, Ariane 6, New Glenn — rather than depending on a rival's rocket the way it would on Falcon" }
+  ],
+  "related_programs": ["starlink"],
+  "see_also": [
+    { "label": "Fleet — the Kuiper constellation", "href": "/fleet?focus=kuiper", "kind": "fleet" },
+    { "label": "Starlink — the constellation it is chasing", "href": "/programs/starlink", "kind": "program" },
+    { "label": "Earth — orbits and the crowding of low orbit", "href": "/earth", "kind": "body" }
+  ],
+  "links": [
+    { "l": "Project Kuiper — Wikipedia", "u": "https://en.wikipedia.org/wiki/Project_Kuiper", "t": "intro" },
+    { "l": "Project Kuiper — Amazon", "u": "https://www.aboutamazon.com/what-we-do/devices-services/project-kuiper", "t": "core" },
+    { "l": "Satellite constellations and astronomy — IAU", "u": "https://www.iau.org/public/themes/satellite-constellations/", "t": "deep" }
+  ]
+}

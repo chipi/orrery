@@ -321,5 +321,21 @@
     "start_year": 2019,
     "end_year": null,
     "hero": "fleet/starship/01"
+  },
+  {
+    "id": "kuiper",
+    "name": "Project Kuiper",
+    "tagline": "Amazon's answer to Starlink — the second megaconstellation, backed by the deepest pockets in retail and a deliberate refusal to depend on a rival's rocket.",
+    "kind": "infrastructure",
+    "agency": "Amazon",
+    "agencies": [
+      "Amazon"
+    ],
+    "country": "USA",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "start_year": 2023,
+    "end_year": null,
+    "hero": "fleet/kuiper/01"
   }
 ]

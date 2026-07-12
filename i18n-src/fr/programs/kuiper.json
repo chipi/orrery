@@ -1,0 +1,84 @@
+{
+  "name": "Project Kuiper",
+  "tagline": "La réponse d'Amazon à Starlink — la deuxième mégaconstellation, soutenue par les poches les plus profondes du commerce de détail et un refus délibéré de dépendre de la fusée d'un rival.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Une fois que Starlink a prouvé qu'une mégaconstellation pouvait réellement fonctionner — que des milliers de petits satellites en orbite basse pouvaient fournir un internet réel à de vrais clients — la question n'était plus de savoir si quelqu'un en construirait une deuxième, mais qui. La réponse avec le plus d'argent derrière elle est Amazon. Project Kuiper est une constellation planifiée de milliers de satellites visant le même prix : l'internet haut débit mondial depuis l'orbite terrestre basse, vendu aux consommateurs, aux entreprises et aux gouvernements qui ne peuvent pas l'obtenir autrement."
+    },
+    {
+      "type": "prose",
+      "md": "Kuiper est le challenger, et il arrive tard intentionnellement et par circonstance. Starlink avait plusieurs années d'avance et un moyen de transport captif et bon marché vers l'orbite dans les fusées Falcon de sa société mère. Kuiper n'a ni l'un ni l'autre — mais il a Amazon : une entreprise avec un capital considérable, une activité mondiale de logistique et de cloud dans laquelle intégrer le service, et suffisamment de levier pour acheter des lancements en gros. La compétition entre eux est la première véritable concurrence de l'ère des mégaconstellations."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif est une constellation commerciale haut débit complète — des milliers de satellites fournissant un internet à faible latence dans le monde entier, intégrée au cloud Amazon Web Services pour que connectivité et informatique soient vendues ensemble. Le but stratégique n'est pas seulement de vendre de l'internet, mais d'étendre la portée d'Amazon à tous les coins de la planète non encore câblés, et d'empêcher un concurrent de posséder ce marché sans opposition."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/kuiper/01"
+      },
+      "caption": "Un satellite Project Kuiper. Le problème d'ingénierie est le même que celui résolu par Starlink ; le problème stratégique est différent — comment construire une constellation à grande échelle sans le lanceur de votre rival.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Un objectif déterminant est l'indépendance de lancement vis-à-vis de SpaceX. Parce que Kuiper concurrence directement Starlink, acheter des places sur Falcon 9 reviendrait à financer et dépendre de son rival — Amazon a donc délibérément réparti ses énormes contrats de lancement entre de nombreux fournisseurs : l'Atlas V et le Vulcan d'United Launch Alliance, l'Ariane 6 d'Arianespace, et le New Glenn de Blue Origin. C'est l'un des plus grands accords d'approvisionnement en lancements de l'histoire, structuré spécifiquement pour éviter la seule fusée qui aurait été la plus facile à acheter."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Kuiper en est au début de son déploiement. Deux satellites prototypes ont atteint l'orbite en 2023 et validé la conception ; les satellites de production ont commencé à être lancés au milieu des années 2020, avec des années de retard sur Starlink et face à une échéance réglementaire exigeant qu'Amazon déploie la moitié de la constellation avant une date fixée pour conserver ses droits spectraux. Le résultat — si Kuiper devient une véritable deuxième force ou un retardataire coûteux — se décide encore en orbite."
+    },
+    {
+      "type": "prose",
+      "md": "Ce qui est déjà clair, c'est que la mégaconstellation n'est plus un phénomène d'une seule entreprise. L'arrivée de Kuiper, aux côtés des constellations européennes et nationales, confirme que l'orbite terrestre basse est construite simultanément par plusieurs opérateurs en concurrence — multipliant les avantages de la connectivité et multipliant, dans la même proportion exacte, les problèmes d'une orbite encombrée : plus d'objets à suivre, plus de risques de collision, plus de traînées dans le ciel des astronomes, de plus de propriétaires répondant à plus de gouvernements."
+    },
+    {
+      "type": "prose",
+      "md": "Kuiper met également à l'épreuve le marché du lancement lui-même. Sa stratégie multi-fournisseurs est une bouée de sauvetage pour les fusées qui ont besoin de charges utiles — Vulcan, Ariane 6 et New Glenn bénéficient tous d'avoir un client de cette taille — et un pari qu'une constellation peut être construite sans intégration verticale, en achetant ses places plutôt qu'en volant elle-même. Savoir si cela est compétitif face à un rival qui se lance lui-même est l'une des questions ouvertes auxquelles le programme répondra."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire de Kuiper est l'histoire du suiveur rapide. Starlink a pris le risque technique et financier de prouver la mégaconstellation ; la tâche de Kuiper est de prouver qu'un second entrant bien capitalisé peut rattraper un premier entrant avec une avance et ses propres fusées. Les avantages d'Amazon sont réels — argent, infrastructure cloud, marque grand public, logistique — mais l'inconvénient de commencer la course après que le leader a déjà fait un tour complet du circuit l'est aussi."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi une étude du poids stratégique du lancement. La décision la plus distinctive de Kuiper — acheter des places partout sauf chez SpaceX — rappelle que dans l'ère des constellations, l'accès à l'orbite n'est pas un service neutre mais une arme concurrentielle. Quand votre rival possède la fusée la moins chère, refuser de l'utiliser coûte cher ; Amazon a jugé que la dépendance vis-à-vis d'un concurrent coûtait encore plus cher. Le manifeste de lancement fait, en effet, partie de la stratégie commerciale."
+    },
+    {
+      "type": "prose",
+      "md": "Et cela approfondit le problème de gouvernance ouvert par Starlink. Deux mégaconstellations rivales, puis plusieurs, remplissant les mêmes couches d'orbite basse, élèvent les enjeux sur chaque question non résolue — coordination entre opérateurs, évitement de collision entre entreprises qui ne partagent pas de données, partage du spectre, et la luminosité avec laquelle les astronomes doivent vivre. La concurrence est bonne pour les clients et difficile pour les biens communs ; Kuiper rend les deux plus vrais."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "L'héritage de Kuiper, encore en formation, est la confirmation que l'internet par satellite est un marché réel avec de la place pour plus d'un géant. Son existence même a transformé Starlink d'un monopole en devenir en un concurrent parmi plusieurs, et a validé la mégaconstellation comme l'avenir établi des communications orbitales plutôt que le pari d'une seule entreprise."
+    },
+    {
+      "type": "prose",
+      "md": "Son deuxième héritage concerne l'industrie du lancement. En répartissant le plus grand contrat de lancement commercial de l'histoire entre Atlas V, Vulcan, Ariane 6 et New Glenn, Amazon a financé le modèle économique de toute une génération de fusées — la preuve qu'une constellation peut être un client qui maintient plusieurs lanceurs en vie."
+    },
+    {
+      "type": "prose",
+      "md": "Et il ajoute un deuxième opérateur majeur à l'encombrement de l'orbite basse, faisant de la gouvernance d'un espace proche de la Terre partagé et congestionné non pas un problème Starlink mais un problème d'industrie — l'environnement à travers lequel chaque futur satellite, vaisseau habité et télescope devra voler."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Kuiper est que prouver que quelque chose est possible invite la concurrence à le construire mieux ou moins cher — et que le problème du second entrant est entièrement différent de celui du premier. Starlink devait prouver que la mégaconstellation pouvait fonctionner du tout ; Kuiper doit prouver qu'un retardataire peut rattraper un leader qui possède la route vers l'orbite. L'argent aide ; une avance et vos propres fusées peuvent aider davantage."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est que dans une capacité en réseau, le contrôle de la chaîne d'approvisionnement est stratégique. Les choix de lancement de Kuiper — délibérément détournés de son rival — montrent que lorsque l'accès à l'orbite est rare et partiellement détenu par un concurrent, celui à qui vous achetez vos places n'est pas un détail d'approvisionnement mais une décision concernant l'indépendance, et mérite de payer une prime pour bien faire."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "galileo",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1989,
+  "end_year": 2003,
+  "status": "COMPLETED",
+  "epoch": "shuttle-and-mir",
+  "hero": "fleet/galileo/01",
+  "roster": [
+    {
+      "linked_id": "galileo",
+      "ref": "mission",
+      "role": "Jupiter orbiter",
+      "year": 1995,
+      "note": "the first spacecraft to orbit Jupiter — eight years studying the giant planet and its major moons up close"
+    },
+    {
+      "name": "The atmospheric probe",
+      "year": 1995,
+      "note": "on arrival, Galileo released a probe that plunged into Jupiter's clouds — the first and only direct sample of a giant planet's atmosphere"
+    },
+    {
+      "name": "Europa's hidden ocean",
+      "year": 1996,
+      "note": "Galileo's magnetic and imaging data made the strongest case yet that an ocean of liquid water lies beneath the ice of Jupiter's moon Europa"
+    },
+    {
+      "name": "The stuck antenna",
+      "year": 1991,
+      "note": "the main antenna failed to open fully; the mission was rescued by new data-compression software beamed up to the spacecraft, salvaging most of the science over a trickle-speed link"
+    },
+    {
+      "name": "The deliberate end",
+      "year": 2003,
+      "note": "out of fuel, Galileo was flown into Jupiter on purpose, to be certain it could never crash onto Europa and contaminate its ocean"
+    }
+  ],
+  "related_programs": [
+    "voyager",
+    "cassini"
+  ],
+  "see_also": [
+    {
+      "label": "Jupiter in the 3D explorer",
+      "href": "/explore",
+      "kind": "explore"
+    },
+    {
+      "label": "Cassini — the same idea, at Saturn",
+      "href": "/programs/cassini",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "Galileo — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Galileo — NASA mission site",
+      "u": "https://science.nasa.gov/mission/galileo/",
+      "t": "core"
+    },
+    {
+      "l": "The ocean of Europa — Galileo's biggest legacy",
+      "u": "https://science.nasa.gov/jupiter/moons/europa/",
+      "t": "deep"
+    }
+  ]
+}

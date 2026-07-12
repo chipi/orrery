@@ -9,6 +9,15 @@ export const prerender = true;
 // Add a program's id here + its programs/{id}.json + overlay simultaneously;
 // validate-data.ts fails if a declared program's files are missing.
 const PROGRAM_IDS = [
+  'sputnik',
+  'mariner',
+  'pioneer',
+  'viking',
+  'voyager',
+  'galileo',
+  'cassini',
+  'new-horizons',
+  'mars-rovers',
   'apollo',
   'mercury',
   'gemini',

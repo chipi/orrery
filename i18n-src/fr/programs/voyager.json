@@ -1,0 +1,84 @@
+{
+  "name": "Voyager",
+  "tagline": "Deux sondes lancées en 1977 pour visiter les planètes extérieures — et qui ne sont jamais revenues. Un demi-siècle plus tard, elles volent toujours et continuent d'appeler depuis l'espace entre les étoiles.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tous les 176 ans, les quatre planètes géantes s'alignent du même côté du Soleil. Au milieu des années 1960, un jeune ingénieur du Jet Propulsion Laboratory de la NASA, Gary Flandro, a compris ce que cet alignement rendait possible : un seul vaisseau spatial pourrait passer près de Jupiter, utiliser la gravité de la planète pour se propulser vers Saturne, puis Uranus, puis Neptune — visitant les quatre en un seul vol qui nécessiterait autrement des décennies de missions séparées. Le hic était le calendrier. La fenêtre s'ouvrait à la fin des années 1970. La manquer, et la prochaine chance viendrait dans les années 2150."
+    },
+    {
+      "type": "prose",
+      "md": "Le système solaire extérieur était, à ce moment-là, presque entièrement inexploré. Les Pioneer ne faisaient qu'atteindre Jupiter ; Uranus et Neptune n'avaient jamais été que des points de lumière dans un télescope. La NASA a saisi l'alignement et construit deux robots quasi identiques pour effectuer le voyage — robustes, à propulsion nucléaire, et équipés des meilleures caméras et instruments de l'époque, visant des mondes que personne n'avait jamais vus de près."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif était une reconnaissance à une échelle jamais tentée : un premier regard rapproché sur Jupiter et Saturne, et — si les machines survivaient assez longtemps — le seul regard rapproché que quiconque obtiendrait probablement sur Uranus et Neptune pendant des générations. Deux vaisseaux spatiaux ont volé de sorte qu'une défaillance de l'un ne fasse pas perdre tout le voyage, et pour qu'ensemble ils puissent couvrir des trajectoires qu'aucune sonde seule ne pourrait parcourir."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/voyager-1/01"
+      },
+      "caption": "Chaque Voyager portait ses instruments sur une perche, une grande antenne parabolique toujours tournée vers une Terre qui rétrécissait, et un générateur nucléaire pour fonctionner là où la lumière solaire est trop faible pour les panneaux solaires. Elles ont été construites pour durer quelques années et atteindre Saturne. Elles fonctionnent toujours.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il y avait un second objectif, plus étrange, ajouté par un comité dirigé par l'astronome Carl Sagan : chaque engin transporterait un message. Fixé sur son flanc se trouvait un disque phonographique plaqué or contenant les sons de la Terre — musique, salutations en dizaines de langues, pleurs d'un bébé, chants d'oiseaux — scellé pour quiconque, ou quoi que ce soit, qui pourrait le trouver dans un futur lointain. C'était une mission scientifique qui, délibérément aussi, tendait vers l'éternité."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Le voyage a dépassé son mandat. À Jupiter en 1979, les Voyager ont découvert des volcans actifs sur la lune Io — les premiers jamais observés au-delà de la Terre — et la glace lisse d'Europe cachant ce qui ressemblait à un océan. À Saturne, elles ont résolu les anneaux en milliers de brins complexes et sont passées au plus près de la lune Titan enveloppée de brume. Ce survol de Titan a incliné la trajectoire de Voyager 1 vers le haut et hors du plan des planètes, l'envoyant grimper vers le bord du système solaire."
+    },
+    {
+      "type": "prose",
+      "md": "Voyager 2 a effectué le Grand Tour complet. Elle a atteint Uranus en 1986 et Neptune en 1989 — le seul vaisseau spatial à avoir jamais visité l'un ou l'autre de ces mondes — découvrant une planète inclinée sur le côté, un géant bleu profond avec les vents les plus rapides du système solaire, et une lune, Triton, avec des geysers d'azote jaillissant dans l'espace. À ce jour, tout ce que l'humanité connaît de près sur les géantes de glace a été recueilli lors de ces deux brefs survols."
+    },
+    {
+      "type": "prose",
+      "md": "Puis la mission a simplement continué. En 1990, depuis au-delà de Neptune, Voyager 1 a tourné sa caméra en arrière et a photographié la Terre comme un simple point de lumière. En 2012, elle a franchi l'héliopause — la frontière où le vent du Soleil cède la place au gaz entre les étoiles — et Voyager 2 a suivi en 2018. Près de cinquante ans après le lancement, toutes deux transmettent encore, leur énergie s'affaiblissant, leurs instruments éteints un par un pour prolonger le signal un peu plus longtemps."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire de Voyager est celle de machines qui ont survécu à toutes les attentes de leurs créateurs. Elles ont été conçues pour un vol de quatre ans vers Saturne avec de l'électronique des années 1970 — des ordinateurs avec moins de mémoire qu'une clé moderne — et elles ont fonctionné pendant près d'un demi-siècle, reprogrammées à travers des milliards de kilomètres par des ingénieurs envoyant du code à un vaisseau spatial si distant qu'une commande met presque un jour à arriver. La qualité déterminante de la mission est l'endurance : un pari sur la robustesse et la marge qui a porté ses fruits bien au-delà du plan de quiconque."
+    },
+    {
+      "type": "prose",
+      "md": "Son moment le plus mémorable ne portait aucune science. Alors que Voyager 1 laissait les planètes derrière elle, Carl Sagan a plaidé pour qu'elle se retourne et photographie la Terre une dernière fois — non pour les données, mais pour la perspective. L'image qu'elle a renvoyée montrait notre monde comme un point bleu pâle, un grain de poussière dans un rayon de soleil, et les mots de Sagan à ce sujet — que tous ceux qui ont jamais vécu l'ont fait sur ce grain — sont devenus l'un des passages les plus cités de la littérature spatiale. Une sonde de reconnaissance avait, presque par accident, pris le portrait définitif de la petitesse humaine."
+    },
+    {
+      "type": "prose",
+      "md": "Et il y a le disque. Chaque Voyager transporte un message sans espoir réaliste d'être jamais trouvé — les chances que l'un ou l'autre engin passe près d'une autre étoile dans un délai significatif sont infimes. Mais le but n'a jamais vraiment été les extraterrestres. Le Golden Record était un miroir : une tentative de dire qui nous sommes, adressée au futur et à nous-mêmes, envoyée sur les deux seuls objets que nous ayons jamais lancés sur une trajectoire qui quitte définitivement le système solaire."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Voyager est la carte elle-même. Ses survols ont transformé Jupiter, Saturne, Uranus et Neptune et leurs lunes de points de lumière en lieux, et les rencontres avec Uranus et Neptune demeurent — des décennies plus tard — les seules données rapprochées que l'humanité ait jamais recueillies sur les géantes de glace. Chaque proposition de retour vers ces mondes repose encore sur ce que deux vaisseaux spatiaux de 1977 ont vu en quelques heures."
+    },
+    {
+      "type": "prose",
+      "md": "Son deuxième héritage est la frontière qu'elle a atteinte. En franchissant l'espace interstellaire, les Voyager sont devenues les premiers instruments à mesurer la limite de l'influence du Soleil de l'extérieur — des données qu'aucune autre mission n'a jamais renvoyées, et aucune ne le fera pendant des décennies. Elles sont, en ce moment même, les objets fabriqués par l'homme les plus distants en existence, et continuent de transmettre."
+    },
+    {
+      "type": "prose",
+      "md": "Son troisième héritage est culturel. Le Pale Blue Dot et le Golden Record ont donné à l'ère spatiale deux de ses images les plus durables de ce qu'est la Terre et de ce qu'elle vaut — un recadrage de la planète comme une chose unique, petite et partagée qui a survécu à chaque découverte spécifique qu'a faite la mission."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Voyager est de saisir la fenêtre quand elle s'ouvre. L'alignement planétaire qui a rendu le Grand Tour possible n'attendrait pas, et ne reviendrait pas avant 176 ans ; le succès du programme a commencé par la décision d'être prêt à lancer en 1977, sur cette marée spécifique, plutôt qu'une décennie plus tard quand cela aurait été plus facile. Certaines opportunités sont fixées par le ciel, pas par le calendrier — et elles sont saisies ou perdues."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est de construire avec beaucoup plus de marge que le plan ne l'exige. Les Voyager ont été conçues pour une mission d'un dixième de la durée de celle qu'elles ont effectuée, et elles ont perduré parce que leurs créateurs les ont sur-construites — systèmes redondants, ordinateurs reprogrammables, énergie en réserve. L'ambition qui ne planifie que pour la mission attendue se termine avec la mission attendue ; celles qui continuent sont celles construites pour plus que ce qu'on leur a demandé de faire."
+    }
+  ]
+}

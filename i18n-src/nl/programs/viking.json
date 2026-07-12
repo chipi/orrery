@@ -1,0 +1,84 @@
+{
+  "name": "Viking",
+  "tagline": "In 1976 zetten twee Amerikaanse landers neer op Mars, stuurden de eerste foto's vanaf het oppervlak terug — en voerden een experiment uit om de oudste vraag over de planeet te beantwoorden: leeft er iets?",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tegen het midden van de jaren zeventig was Mars gezien maar nooit aangeraakt. Mariner-scheervluchten en één orbiter hadden de oude droom van kanalen en beschavingen vervangen door een killer beeld — een gekraterde, schijnbaar dode woestijn — maar het oppervlak zelf bleef onbekend, en de vraag die Mars een eeuw lang had achtervolgd stond nog steeds open. Was er leven? Een foto vanuit een baan kon dat niet beantwoorden. Iemand moest landen, kijken en de bodem testen."
+    },
+    {
+      "type": "prose",
+      "md": "Viking was de meest ambitieuze interplanetaire missie die de Verenigde Staten tot dan toe had ondernomen: twee identieke ruimtevaartuigen, elk een orbiter met een lander aan boord, gestuurd om Mars te bereiken, van bovenaf een veilige plek te kiezen, en een robot voorzichtig neer te zetten op een wereld waarvan niemand het oppervlak vanaf de grond had gezien. Niets was ooit op Mars geland en had gewerkt; de Sovjet-pogingen waren binnen seconden mislukt. Viking moest twee keer slagen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het doel bestond uit twee helften. De orbiters zouden Mars van bovenaf in kaart brengen met een detail dat geen scheervlucht kon evenaren — genoeg om landingsplaatsen te kiezen en de planeet als geheel te bestuderen. En de landers zouden doen wat niets eerder had gedaan: opereren op het Mars-oppervlak, het fotograferen, het weer en de bodem meten, en een reeks experimenten uitvoeren die gebouwd waren om de chemie van leven te detecteren."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/viking-1/01"
+      },
+      "caption": "Elke Viking was twee ruimtevaartuigen in één: een orbiter om te onderzoeken en te communiceren, en een lander die zich losmaakte, zijn motoren ontstak en op drie poten neerzette. De landers waren uitgerust met camera's, een weerstation, een bodenschep en een miniatuurbiolaboratorium.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "De levensvraag was degene waar het publiek om gaf, en Viking nam het serieus. Elke lander droeg drie afzonderlijke biologie-experimenten, ontworpen om de Mars-bodem te voeden en te kijken naar tekenen van metabolisme — de meest directe zoektocht naar buitenaards leven ooit ondernomen, toen of sindsdien."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Het werkte, twee keer. De Viking 1 lander raakte neer in Chryse Planitia op 20 juli 1976 en stuurde de eerste foto ooit genomen vanaf het oppervlak van Mars terug — een met rotsen bezaaide oranje vlakte onder een bleke lucht. Viking 2 zette zes weken later neer in Utopia Planitia. Samen opereerden de twee landers jarenlang, stuurden panorama's, seizoenen van weergegevens en de eerste gedetailleerde chemie van de Mars-bodem terug."
+    },
+    {
+      "type": "prose",
+      "md": "De biologie-resultaten waren de grote dubbelzinnigheid van de missie. Eén van de drie experimenten gaf een signaal dat op aarde op leven zou hebben gewezen; de andere niet, en het chemie-instrument van de lander vond helemaal geen organische moleculen in de bodem. De wetenschappelijke consensus kwam uit op een ongewone, leven-nabootsende chemie in het Mars-stof in plaats van biologie — maar het resultaat was dichtbij genoeg, en vreemd genoeg, dat er decennia later nog steeds over wordt gedebatteerd. Viking vond geen leven; maar sloot de zaak ook niet volledig af."
+    },
+    {
+      "type": "prose",
+      "md": "Wat Viking wel vaststelde was dat Mars kon worden bereikt, op geland en bewerkt — niet één keer maar twee keer, jarenlang. De orbiters brachten bijna de hele planeet in kaart, onthulden de grote vulkanen en canyons volledig, en de landers bewezen dat een robot kon overleven en functioneren op het Mars-oppervlak doorheen de seizoenen. Elke rover die sindsdien over Mars is gereden, rust op dat bewijs."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van Viking is een missie die elke vraag beantwoordde behalve degene waarvoor het het meest werd herinnerd. Het was een triomf van techniek — twee succesvolle Mars-landingen in een tijd dat niemand zelfs maar één had gerealiseerd — en een schat aan wetenschap, en toch is het onlosmakelijk verbonden met de biologie-experimenten en hun frustrerende, onopgeloste resultaat. Viking is het zeldzame geval waar het hoofddoel niet terugkwam als ja of nee maar als misschien, en het misschien heeft alles overleeft."
+    },
+    {
+      "type": "prose",
+      "md": "Die dubbelzinnigheid was, op zijn manier, eerlijk. Viking's ontwerpers hadden het zorgvuldigste levensdetectie-experiment gebouwd dat ze konden, en toen de gegevens contradictorisch terugkwamen rapporteerden ze het als contradictorisch in plaats van het in een helder antwoord te dwingen. De les die de gemeenschap trok — dat het detecteren van leven veel moeilijker is dan het lijkt, en dat een enkel slim experiment je kan misleiden — hervormde hoe de zoektocht naar leven sindsdien is gevoerd, richting bewoonbaarheid en bewijs dat langzaam wordt opgebouwd in plaats van één beslissende test."
+    },
+    {
+      "type": "prose",
+      "md": "En onder het biologie-drama deed Viking stilletjes het fundamentele werk. Het veranderde Mars van een plek gezien op afstand in een plek met grondwaarheid — echte bodemchemie, echt weer, echte foto's vanaf het oppervlak — en het bewees de hele moeilijke keten van Mars bereiken en intact landen. De rovers die nu over de planeet dwalen zijn Viking's directe nakomelingen; ze lopen op het bewijs dat het achterliet."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Viking's eerste erfenis is de landing zelf: de eerste succesvolle aankomst op het oppervlak van Mars, en het bewijs dat een ruimtevaartuig de planeet kon bereiken, veilig kon neerzetten en jarenlang kon opereren. Elke Mars-lander en rover sindsdien — Pathfinder, de tweeling-geologen, Curiosity, Perseverance — erft het pad dat Viking opende."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede is de grondwaarheid. Viking's bodemchemie, weergegevens en oppervlaktepanorama's gaven planetaire wetenschap zijn eerste echte gegevens van de Mars-grond, en zijn wereldwijde orbitale kaarten kadreerden de geologie die latere missies gingen onderzoeken. Het moderne beeld van Mars begint hier."
+    },
+    {
+      "type": "prose",
+      "md": "De derde is de levensvraag, op een productieve manier open gelaten. Viking's dubbelzinnige biologie-resultaat — en de bescheidenheid die het afdwong — hervormde de hele zoektocht naar leven buiten de aarde, stuurde het weg van enkele beslissende tests naar de geduldige accumulatie van bewijs dat vandaag de jacht op Mars, Enceladus en Europa stuurt."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Viking is dat de belangrijkste vragen zelden in één enkel experiment worden opgelost. Viking vroeg of Mars leven herbergde met het beste instrument dat zijn tijdperk kon bouwen, en kreeg een antwoord terug dat noch ja noch nee was — en de eerlijke reactie was om de dubbelzinnigheid te rapporteren, niet om zekerheid te fabriceren. Moeilijke vragen worden gewoonlijk beantwoord door het langzame gewicht van bewijs, niet één helder resultaat, en een slim experiment aanzien voor een definitief experiment is hoe je jezelf misleidt."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is de waarde van het bewijzen van de hele keten. Viking's blijvende gave was niet één enkele meting maar de demonstratie dat Mars bereiken en intact landen mogelijk en herhaalbaar was. Zodra iets moeilijks is gedaan — en twee keer is gedaan — houdt het op een gok te zijn en wordt het een fundament waar anderen op kunnen bouwen. Soms is het grootste resultaat dat een missie terugbrengt simpelweg dat het kan worden gedaan."
+    }
+  ]
+}

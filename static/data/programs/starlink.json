@@ -64,6 +64,13 @@
       "kind": "body"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "earth",
+      "site": "starlink",
+      "label": "The Starlink constellation"
+    }
+  ],
   "links": [
     {
       "l": "Starlink — Wikipedia",

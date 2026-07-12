@@ -64,6 +64,18 @@
       "kind": "body"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "earth",
+      "site": "hubble",
+      "label": "Hubble in low Earth orbit"
+    },
+    {
+      "surface": "earth",
+      "site": "chandra",
+      "label": "Chandra X-ray Observatory"
+    }
+  ],
   "links": [
     {
       "l": "Great Observatories program — Wikipedia",

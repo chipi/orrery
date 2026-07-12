@@ -2,14 +2,50 @@
   "name": "Perseverance",
   "type": "ROVER · ACTIVE",
   "first": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
+  "dispatch": "毅力号前往火星寻找死者。2021年降落在杰泽罗陨石坑——数十亿年前一条河流注入湖泊形成的三角洲,正是那种生命会留下痕迹的地方——它是第一辆专门为寻找古代生命迹象而建造的火星车,并且要做此前任何任务都未曾做过的事:将火星岩石密封在管中,放置一旁等待未来的航天器将其带回地球。它还运送了机智号,这架在另一颗行星上完成首次动力飞行的小型直升机。如果它正在储存的样本最终被送回,它们将成为从另一颗行星表面带回地球的第一批物质。",
   "description": "Perseverance is the most ambitious Mars surface mission ever flown. Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth. Ingenuity, the first helicopter on another planet, flew 72 missions before retiring with damaged rotors in January 2024 — proving controlled flight is possible in Mars's thin atmosphere. MOXIE, an oxygen-from-CO2 demonstrator, produced the first locally-made oxygen on another planet, a rehearsal for crewed Mars missions.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Atlas V 541 from Cape Canaveral SLC-41 — same vehicle class as Curiosity.", "type": "nominal" },
-    { "met": 1, "label": "TMI BURN", "note": "Trans-Mars injection.", "type": "nominal" },
-    { "met": 9, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
-    { "met": 203, "label": "EDL", "note": "Sky-crane delivers rover to Jezero Crater 2021-02-18 — site of an ancient river delta.", "type": "nominal" },
-    { "met": 203.01, "label": "TOUCHDOWN", "note": "Perseverance touches down at Jezero 20:55 UTC.", "type": "nominal" },
-    { "met": 271, "label": "INGENUITY FIRST FLIGHT", "note": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.", "type": "info" },
-    { "met": 1278, "label": "INGENUITY RETIRED", "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter remains operational as a comms relay.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 541 from Cape Canaveral SLC-41 — same vehicle class as Curiosity.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injection.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TCM-1",
+      "note": "First mid-course correction.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Sky-crane delivers rover to Jezero Crater 2021-02-18 — site of an ancient river delta.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "TOUCHDOWN",
+      "note": "Perseverance touches down at Jezero 20:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "INGENUITY FIRST FLIGHT",
+      "note": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "INGENUITY RETIRED",
+      "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter remains operational as a comms relay.",
+      "type": "info"
+    }
   ]
 }

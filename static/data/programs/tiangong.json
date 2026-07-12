@@ -118,6 +118,13 @@
       "kind": "program"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "earth",
+      "site": "tiangong",
+      "label": "Tiangong overhead"
+    }
+  ],
   "links": [
     {
       "l": "Tiangong space station — Wikipedia",

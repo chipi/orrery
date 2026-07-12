@@ -1,0 +1,84 @@
+{
+  "name": "Rovers de Marte",
+  "tagline": "Um quarto de século de robôs americanos atravessando Marte — de um carrinho do tamanho de um micro-ondas que conseguiu percorrer alguns metros a um astrobiólogo nuclear armazenando rochas para a viagem de volta.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "As sondas Viking de 1976 haviam provado que uma espaçonave podia alcançar a superfície de Marte e funcionar — mas elas ficavam presas onde pousavam, capazes de estudar apenas o que estivesse ao alcance de um único braço. Marte é um planeta inteiro, sua história escrita através de terrenos que se estendem por milhares de quilômetros, e uma sonda vê apenas um ponto dele. Para ler o registro — encontrar onde a água um dia fluiu, coletar amostras de rochas depositadas há bilhões de anos — um robô teria que se mover."
+    },
+    {
+      "type": "prose",
+      "md": "Os rovers de Marte são a resposta de vinte e cinco anos da NASA para esse problema: uma linhagem de robôs com rodas, cada um maior e mais capaz que o anterior, enviados para atravessar o planeta e fazer geologia de campo pessoalmente. Começam com uma prova de conceito do tamanho de um micro-ondas e chegam, um quarto de século depois, a um laboratório movido a energia nuclear caçando as assinaturas químicas de vida antiga."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo evoluiu a cada geração, mas o fio condutor foi constante: seguir a água, e depois seguir a questão da vida. Sojourner partiu apenas para provar que um rover podia dirigir em Marte. Spirit e Opportunity foram enviados para encontrar evidências geológicas de um passado mais quente e úmido. Curiosity foi para perguntar se Marte já havia sido habitável. Perseverance foi para procurar sinais de que algo realmente havia vivido — e para começar o trabalho de trazer rocha marciana de volta à Terra."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/curiosity/01"
+      },
+      "caption": "Cada rover era maior e mais inteligente que o anterior — de Sojourner, do tamanho de um micro-ondas, a Curiosity e Perseverance, do tamanho de carros pequenos, carregando brocas, laboratórios e câmeras pelo solo marciano em missões destinadas a durar meses e se estendendo por anos.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Subjacente a tudo isso estava a mobilidade como um instrumento científico. O verdadeiro poder de um rover é que ele pode ir e olhar — dirigir até a rocha interessante, escalar a borda da cratera, cruzar até o leito antigo do rio — transformando Marte de um único local de pouso em uma paisagem que um geólogo pode inspecionar, uma viagem de cada vez."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Os rovers sobreviveram vastamente aos seus planos, e cada um reescreveu o que Marte havia sido. Sojourner, em 1997, percorreu alguns metros e provou o conceito. Spirit e Opportunity, pousados em 2004 em missões de noventa dias, trabalharam por seis e quatorze anos respectivamente — Opportunity cruzando mais de quarenta e cinco quilômetros, a jornada mais longa em qualquer mundo — e encontraram evidências químicas claras de que água líquida um dia esteve na superfície."
+    },
+    {
+      "type": "prose",
+      "md": "Curiosity, baixado na Cratera Gale em 2012 por um guindaste aéreo movido a foguete após uma sequência de pouso tão audaciosa que seus planejadores a chamaram de sete minutos de terror, confirmou o caso: a cratera já havia abrigado um lago, com a química que uma coisa viva poderia ter usado. Perseverance seguiu em 2021, pousando no delta de um rio antigo para procurar diretamente por sinais de vida passada e para selar rocha marciana em tubos selados — o primeiro estágio de uma campanha para trazer amostras de outro planeta de volta à Terra."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance também carregou um passageiro que fez sua própria história: Ingenuity, um pequeno helicóptero que em 2021 realizou o primeiro voo motorizado e controlado em outro planeta, e depois voou dezenas de vezes mais — prova de que Marte podia ser explorado do ar assim como do solo. Curiosity e Perseverance ainda estão dirigindo."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A história dos rovers de Marte é um longo argumento, feito em rastros de rodas, de que Marte já foi um mundo onde a vida era possível. Cada rover avançou um passo: Sojourner provou o método, os gêmeos provaram a água, Curiosity provou a habitabilidade, Perseverance foi caçar a própria vida. Nenhuma missão isolada resolveu a questão, mas juntas transformaram Marte de um deserto vermelho e frio em um planeta com uma juventude quente e úmida — e tornaram a busca por vida marciana antiga uma ciência séria em vez de uma fantasia."
+    },
+    {
+      "type": "prose",
+      "md": "É também uma história sobre robôs que se recusaram a morrer. Spirit e Opportunity foram construídos para noventa dias e trabalharam por anos; Opportunity percorreu o comprimento de uma maratona através de um planeta, sobrevivendo a tempestades de poeira e uma roda presa e uma década de noites frias, até que uma tempestade global finalmente o silenciou em 2018. Os rovers conquistaram uma afeição pública genuína quase única entre máquinas — lamentados quando falhavam, aplaudidos quando acordavam — porque eram, inegavelmente, exploradores, fazendo em câmera lenta o que um geólogo humano faria a pé."
+    },
+    {
+      "type": "prose",
+      "md": "E a linhagem é um estudo em ambição incremental. Ninguém poderia ter pousado a complexidade do guindaste aéreo e armazenamento de amostras de Perseverance em 1997; foram necessários os poucos metros de Sojourner para justificar os gêmeos, os anos dos gêmeos para justificar Curiosity, e o lago de Curiosity para justificar enviar um rover para procurar vida e iniciar o longo caminho do retorno de amostras. Cada rover foi a plataforma que tornou o próximo pensável — um quarto de século construindo capacidade uma missão de cada vez."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado dos rovers é o Marte moderno: um planeta agora conhecido por ter tido água em superfície, química habitável e uma história inicial quente, estabelecido não por inferência mas por robôs que foram até as rochas e as leram. O argumento científico de que Marte poderia ter abrigado vida repousa quase inteiramente em seus rastros de rodas."
+    },
+    {
+      "type": "prose",
+      "md": "O segundo é a tecnologia de mobilidade na superfície — o guindaste aéreo, a navegação autônoma, a energia nuclear, o reconhecimento aéreo de Ingenuity — um conjunto de ferramentas construído rover por rover que agora torna possível explorar a superfície de um planeta como uma paisagem em vez de um ponto, e que qualquer futura missão de superfície, tripulada ou robótica, herda."
+    },
+    {
+      "type": "prose",
+      "md": "O terceiro ainda está em trânsito: os tubos selados de rocha marciana que Perseverance está armazenando, aguardando uma missão futura para levá-los para casa. Se essa campanha for bem-sucedida, os rovers terão entregue as primeiras amostras já retornadas da superfície de outro planeta — o resultado de uma jornada de vinte e cinco anos."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição dos rovers de Marte é que a mobilidade muda tudo. Uma sonda estuda onde cai; um rover estuda onde escolhe ir. Ao fazer o instrumento se mover, o programa transformou um único local de pouso em um planeta inteiro de geologia — um lembrete de que em qualquer fronteira, a capacidade de ir e olhar por si mesmo vale mais do que qualquer quantidade de observação fixa."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é que grande capacidade é construída em passos, não em saltos. A sofisticação de armazenamento de amostras de Perseverance era inimaginável nos dias de Sojourner; tornou-se possível apenas porque cada rover conquistou o próximo. Fins ambiciosos são geralmente alcançados não por uma única missão decisiva mas por uma linhagem paciente, cada membro provando o suficiente para justificar aquele que segue — progresso como um revezamento, não uma corrida."
+    }
+  ]
+}

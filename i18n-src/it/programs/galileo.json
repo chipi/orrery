@@ -1,0 +1,84 @@
+{
+  "name": "Galileo",
+  "tagline": "La prima sonda a orbitare attorno a Giove volò per otto anni con un'antenna danneggiata — e restituì comunque la prova più forte finora ottenuta che una luna di Giove nasconda un oceano.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Le Pioneer e le Voyager erano passate accanto a Giove, ciascuna in poche ore, e ciascuna aveva lasciato più domande che risposte: indizi di un oceano sotto il ghiaccio di Europa, vulcani su Io, un campo magnetico più vasto di qualsiasi altro nel sistema solare. I passaggi ravvicinati non potevano risolverle. Per comprendere Giove e le sue quattro grandi lune — mondi tanto vari e interessanti quanto pianeti a pieno titolo — una sonda avrebbe dovuto entrare in orbita e rimanere per anni."
+    },
+    {
+      "type": "prose",
+      "md": "Galileo fu costruita per essere quella presenza stabile, e affrontò un percorso difficile ancora prima del lancio. Ritardata per anni dal disastro del Challenger e da piani di lancio mutevoli, lasciò finalmente la Terra dallo Space Shuttle nel 1989 su una traiettoria lenta e tortuosa — passando vicino a Venere e due volte vicino alla Terra per accumulare velocità — che richiese sei anni per raggiungere un pianeta verso cui altre missioni erano volate direttamente."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'obiettivo era il primo studio prolungato del sistema gioviano: orbitare attorno al pianeta, visitare ripetutamente le sue quattro grandi lune e trasformare gli scorci allettanti delle Voyager in comprensione. C'era davvero un oceano sotto Europa? Come funzionavano i vulcani di Io? Cosa alimentava il campo magnetico più grande del sistema solare? Queste erano domande a cui solo un orbitatore, passando ripetutamente accanto a ogni luna per anni, poteva rispondere."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/galileo/01"
+      },
+      "caption": "Galileo portava una sonda da rilasciare nell'atmosfera di Giove e un orbitatore per visitare le lune. La sua grande antenna principale a forma di ombrello doveva dispiegarsi in volo per inviare dati a casa ad alta velocità — e non si aprì mai completamente.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Galileo portava anche una seconda sonda: una navicella progettata per separarsi all'arrivo e precipitare direttamente nelle nubi di Giove, misurando l'atmosfera del pianeta gigante dall'interno mentre cadeva — il primo e, finora, unico campionamento diretto dell'interno di un gigante gassoso."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Poi la missione quasi si ruppe. Nel 1991, durante il viaggio verso Giove, l'antenna principale di Galileo non riuscì ad aprirsi — rimase bloccata semi-chiusa, come un ombrello che non si apre, riducendo la velocità di trasmissione dati della sonda a una frazione minuscola di quanto pianificato. La missione avrebbe dovuto essere compromessa. Invece, gli ingegneri riscrissero il suo software dalla Terra, insegnando alla sonda distante a comprimere i dati in modo molto più aggressivo e farli arrivare a casa attraverso una piccola antenna di riserva. La maggior parte della scienza fu salvata attraverso un collegamento migliaia di volte più lento del previsto."
+    },
+    {
+      "type": "prose",
+      "md": "Arrivò a Giove nel dicembre 1995, rilasciò la sua sonda nelle nubi e si stabilì in orbita — la prima sonda a farlo mai. Nei successivi otto anni visitò le lune decine di volte, e la sua scoperta più importante emerse lentamente da quella persistenza: il modo in cui il campo magnetico di Giove si avvolgeva attorno a Europa poteva essere spiegato solo da un oceano salato e conduttivo di acqua liquida sotto il ghiaccio della luna. Mappò anche il vulcanismo incessante di Io e trovò segni di un campo magnetico generato all'interno della luna Ganimede."
+    },
+    {
+      "type": "prose",
+      "md": "Nel 2003, a corto di carburante, Galileo fu deliberatamente fatta precipitare su Giove e distrutta — la stessa scelta che Cassini avrebbe poi fatto su Saturno — per essere certi che la sonda non potesse mai un giorno schiantarsi su Europa e contaminare l'oceano che aveva fatto tanto per rivelare."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Galileo è una missione salvata dal disastro dall'ingegnosità. L'antenna bloccata avrebbe potuto porvi fine; la sonda era progettata attorno a un collegamento ad alta velocità che non esisteva più. Che Galileo abbia comunque restituito la maggior parte della sua scienza — attraverso un'antenna di riserva mai destinata a sopportare il carico, con software scritto e caricato dopo il lancio — è uno dei grandi lavori di salvataggio nella storia dei voli spaziali, e un promemoria che l'esito di una missione è determinato tanto dalle persone che la gestiscono quanto dall'hardware che è volato."
+    },
+    {
+      "type": "prose",
+      "md": "La sua scoperta più importante ha ridefinito una luna. Prima di Galileo, l'oceano di Europa era un'ipotesi tratta da poche immagini delle Voyager; dopo Galileo, era la spiegazione principale per dati magnetici concreti raccolti passaggio dopo passaggio. Una luna ghiacciata di Giove si unì a Encelado di Saturno come luogo dove acqua liquida — e la possibilità di vita — si nasconde sotto il ghiaccio. Galileo non vide l'oceano; rese il caso a suo favore innegabile, e indirizzò la prossima generazione di missioni verso Europa."
+    },
+    {
+      "type": "prose",
+      "md": "E, come Cassini dopo di lei, Galileo terminò distruggendosi per proteggere ciò che aveva trovato. Una sonda che aveva trascorso otto anni sostenendo che Europa potesse essere abitabile non poteva essere lasciata diventare la cosa che l'avrebbe seminata con vita terrestre. Il suo atto finale fu cadere su Giove — il pianeta gigante che inghiottiva il robot che aveva finalmente compreso le sue lune."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "La prima eredità di Galileo è Europa. I suoi dati hanno trasformato un oceano subsuperficiale da speculazione a modello principale, rendendo Europa uno dei due o tre luoghi più interessanti del sistema solare dove cercare vita — e la ragione diretta per cui una missione dedicata, Europa Clipper, fu in seguito costruita per proseguire."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda è il sistema gioviano nel suo insieme: il primo studio prolungato del pianeta gigante, la sua atmosfera campionata dall'interno, il suo campo magnetico mappato e le sue quattro grandi lune trasformate da scorci delle Voyager in mondi compresi attraverso otto anni in orbita."
+    },
+    {
+      "type": "prose",
+      "md": "La terza è una dimostrazione di resilienza — che una missione può perdere la sua capacità centrale e comunque avere successo se le persone che la gestiscono sono abbastanza ingegnose. Il salvataggio software di Galileo è un caso di studio permanente nel recuperare una sonda che, a rigor di logica, avrebbe dovuto essere persa."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di Galileo è che una missione non è finita quando il suo hardware si rompe. L'antenna bloccata rimosse la capacità attorno alla quale l'intera sonda era stata progettata — e la missione ebbe comunque successo, perché i suoi operatori riscrissero ciò che la macchina faceva invece di piangere ciò che non poteva più fare. Quando il piano si rompe, la domanda non è cosa è stato perso ma cosa si può ancora fare con ciò che resta; la differenza tra una missione morta e una grande è spesso la risposta a questo."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che la pazienza trasforma gli indizi in conoscenza. L'oceano di Europa era invisibile in qualsiasi singolo passaggio; emerse solo dal peso accumulato di molti, raccolti nel corso di anni in orbita. Le scoperte più importanti spesso non vengono viste ma costruite — assemblate misurazione dopo misurazione, finché un'ipotesi diventa l'unica cosa che corrisponde ai dati."
+    }
+  ]
+}

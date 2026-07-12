@@ -2,7 +2,7 @@
   "version": 1,
   "generated_by": "audit-image-usage.ts --write-approved",
   "note": "Sticky allowlist — source of truth for /credits + provenance, independent of vision scores. RFC-029 decision 4. Re-derive after fetches land; the list only grows (used images are never auto-dropped).",
-  "count": 5695,
+  "count": 5696,
   "approved": [
     "/images/anatomy/akatsuki.webp",
     "/images/anatomy/antares.webp",
@@ -5698,6 +5698,7 @@
     "/images/deep-sky/euclid-ic342.jpg",
     "/images/deep-sky/hst-v838.jpg",
     "/images/fleet-galleries/commercial-stations/01.webp",
-    "/images/fleet-galleries/ros/01.webp"
+    "/images/fleet-galleries/ros/01.webp",
+    "/images/fleet-galleries/sputnik/01.webp"
   ]
 }

@@ -1,0 +1,84 @@
+{
+  "name": "Pioneer",
+  "tagline": "Bevor Voyager die äußeren Planeten bereisen konnte, musste jemand beweisen, dass die Strecke überlebbar war. Zwei kleine Sonden gingen zuerst — durch den Asteroidengürtel, an Jupiter vorbei und hinaus.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In den frühen 1970er Jahren war das äußere Sonnensystem nicht nur unerforscht; es galt als gefährlich zu erreichen. Zwischen Mars und Jupiter lag der Asteroidengürtel, und niemand wusste, ob ein Raumfahrzeug ihn durchqueren könnte, ohne von Trümmern zerstört zu werden. Dahinter waren Jupiters Strahlungsgürtel bekanntermaßen tödlich für Elektronik. Die Riesenplaneten waren einen Besuch wert, aber der Weg zu ihnen führte durch zwei Gefahren, denen sich noch nie eine Maschine gestellt hatte."
+    },
+    {
+      "type": "prose",
+      "md": "Die Pioneers waren die Späher, die ausgesandt wurden, um es herauszufinden. Klein, rotationsstabilisiert und vergleichsweise einfach, wurden Pioneer 10 und 11 gebaut, um voranzugehen — um zu testen, ob der Gürtel durchquert werden konnte und ob eine Sonde einen nahen Vorbeiflug an Jupiter überleben konnte — damit die weit teureren Voyagers, die bereits geplant wurden, wissen würden, worauf sie sich einließen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Das Ziel war Aufklärung im buchstäblichsten Sinne: die Route beweisen. Den Asteroidengürtel durchqueren und messen, wie groß die Bedrohung wirklich war. Nah an Jupiter vorbeifliegen und sehen, ob ein Raumfahrzeug die Strahlung aushalten und brauchbare Daten zurücksenden konnte. Die Wissenschaft — erste Nahaufnahmen von Jupiter und dann, bei Pioneer 11, der erste Besuch bei Saturn — war real, aber der tiefere Zweck war, den Weg freizumachen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/pioneer-10/01"
+      },
+      "caption": "Die Pioneers wurden einfach gehalten und zur Stabilisierung rotiert, ihre Instrumente maßen Felder und Partikel ebenso wie sie Bilder aufnahmen. Ihre Aufgabe war es, den Gürtel und die Strahlung zu überleben und zurückzumelden, was die Voyagers erwarten würde.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Jede trug auch eine kleine goldene Plakette — entworfen von Carl Sagan und Frank Drake — eingraviert mit einem Mann, einer Frau und einer Karte zur Sonne. Es war ein bescheidener Nachgedanke im Vergleich zu Voyagers späterer Golden Record, aber es war die erste: das erste Objekt, das die Menschheit bewusst mit einer Botschaft versah und in Richtung der Sterne warf."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Beide Befürchtungen erwiesen sich als unbegründet, und genau das war der Punkt. Pioneer 10 durchquerte den Asteroidengürtel unbeschadet — der Gürtel, wie sich herausstellte, bestand größtenteils aus leerem Raum — und wurde im Dezember 1973 das erste Raumfahrzeug, das Jupiter erreichte, überlebte die Strahlung und lieferte die ersten Nahaufnahmen des Riesenplaneten und seiner Monde. Es wurde dann das erste von Menschen geschaffene Objekt auf einer Flugbahn, die das Sonnensystem vollständig verlassen würde."
+    },
+    {
+      "type": "prose",
+      "md": "Pioneer 11 ging weiter. Nach ihrem eigenen Jupiter-Vorbeiflug nutzte sie die Schwerkraft des Planeten, um das Sonnensystem zu durchqueren und Saturn 1979 zu erreichen — das erste Raumfahrzeug überhaupt, das dies tat — flog durch die Ringebene, um zu testen, ob die Region sicher war, und fand die Lücke, die die Voyagers ein Jahr später nutzen würden. Die Späher hatten die Gefahren kartiert; die Tour konnte beginnen."
+    },
+    {
+      "type": "prose",
+      "md": "Die Pioneers sendeten noch Jahrzehnte lang, während sie sich entfernten. Pioneer 10s letztes schwaches Signal wurde 2003 empfangen, aus mehr als zwölf Milliarden Kilometern Entfernung. Beide sind immer noch da draußen, jetzt stumm, auf dem Weg zu den Sternen — Pioneer 10 in Richtung des Sterns Aldebaran, eine Reise, für die es etwa zwei Millionen Jahre brauchen wird."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Die Geschichte von Pioneer ist die unspektakuläre, essentielle Arbeit des Vorangehens. Die Voyagers werden für die Grand Tour in Erinnerung behalten; die Pioneers sind der Grund, warum die Grand Tour überhaupt versucht werden konnte. Sie gingen die Risiken ein, die unbekannte Gefahren in messbare verwandelten — bewiesen, dass der Asteroidengürtel durchquerbar und Jupiters Strahlung überlebbar war — damit die Missionen hinter ihnen mit Zuversicht statt mit Furcht entworfen werden konnten. Jemand muss immer die Strecke testen, und es ist selten derjenige, der die Anerkennung bekommt."
+    },
+    {
+      "type": "prose",
+      "md": "Es ist auch eine Geschichte davon, mit wenig viel zu erreichen. Die Pioneers waren bescheidene Raumfahrzeuge, einfacher und billiger als die folgenden Voyagers, und sie erreichten dennoch eine Reihe echter Premieren — zuerst durch den Gürtel, zuerst zu Jupiter, zuerst zu Saturn, zuerst aus dem Sonnensystem hinaus. Sie sind der Beweis, dass eine gut ausgerichtete kleine Mission eine Grenze öffnen kann, durch die dann das Flaggschiff hindurchgeht."
+    },
+    {
+      "type": "prose",
+      "md": "Und sie trugen die erste Botschaft. Die Pioneer-Plakette war eine stillere Geste als die Golden Record — eine einzelne eingravierte Platte statt einer Bibliothek aus Klängen — aber sie kam zuerst, und sie formulierte die Idee, dass ein Raumfahrzeug, das für immer aufbricht, etwas darüber sagen sollte, wer es geschickt hat. Jede Botschaft, die die Menschheit seitdem in den tiefen Weltraum gerichtet hat, stammt von jener kleinen goldenen Platte ab, die an einem Späher befestigt war."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Pioneers erstes Vermächtnis ist die Straße, die sie eröffnete. Indem sie bewies, dass der Asteroidengürtel durchquerbar und Jupiters Strahlung überlebbar war, verwandelte sie das äußere Sonnensystem von einer theoretischen Gefahr in ein erreichbares Ziel — der direkte Wegbereiter für Voyager, Galileo, Cassini und jede Mission zu den Riesenplaneten seitdem."
+    },
+    {
+      "type": "prose",
+      "md": "Das zweite ist eine Reihe bleibender Premieren: zuerst durch den Gürtel, zuerst zu Jupiter, zuerst zu Saturn, erstes Objekt auf einer Fluchttrajektorie aus dem Sonnensystem. Diese Einträge in den Aufzeichnungen verfallen nicht, und sie gehören alle zu zwei kleinen, billigen Sonden."
+    },
+    {
+      "type": "prose",
+      "md": "Das dritte ist die Plakette — die erste bewusste Botschaft von der Erde an den Kosmos und die Vorlage für die Golden Records, die folgten. Pioneer etablierte, dass ein Raumfahrzeug, das für immer aufbricht, einen Bericht über seine Schöpfer tragen sollte, und diese Idee hat die Missionen selbst überlebt."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lektion von Pioneer ist der Wert des Spähers. Das Wichtigste, was die Pioneers taten, war, die Unsicherheit für die Missionen hinter ihnen zu verringern — Vermutungen über den Asteroidengürtel und Jupiters Strahlung in harte Zahlen zu verwandeln, gegen die ein Konstrukteur bauen konnte. An jeder echten Grenze ist eine billige Sonde, die ausgesandt wird, um die Gefahr zu messen, weit mehr wert als ihre Kosten, weil sie es erlaubt, dass die teure Folgemission für die Welt gebaut wird, wie sie ist, und nicht wie befürchtet wurde, dass sie sein könnte."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lektion ist, dass Vorangehen selten den Ruhm bringt und trotzdem wichtig ist. Die Pioneers sind weniger berühmt als die Voyagers, die sie ermöglichten, aber ohne sie wäre die Grand Tour ein Sprung ins Unbekannte gewesen statt eines kalkulierten Fluges. Ein Teil der wichtigsten Arbeit ist die Aufklärung, an die sich niemand erinnert — und es lohnt sich, sie gut zu machen, gerade weil alles danach davon abhängt."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Mariner",
+  "tagline": "Voordat enige andere planeet meer was dan een vlek in een telescoop, ging een reeks kleine Amerikaanse sondes erop af om ze te bekijken — en keerden terug met de eerste foto's ooit gemaakt van een andere wereld.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In het begin van de jaren zestig waren de planeten in wezen nog steeds lichtpunten. Venus werd voorgesteld als een warme, bewolkte tweeling van de aarde, misschien met oceanen; Mars vertoonde door de beste telescopen markeringen die sommigen nog steeds lazen als kanalen, en de eeuwenoude vraag naar Martiaans leven was onopgelost. Alles wat bekend was over de andere werelden kwam van het turen over tientallen miljoenen kilometers. Om te ontdekken wat ze werkelijk waren, moest iemand dichtbij vliegen en kijken."
+    },
+    {
+      "type": "prose",
+      "md": "Mariner was NASA's eerste poging om dat te doen — een familie van kleine, lichte interplanetaire sondes, snel gebouwd en vaak gevlogen, gericht op Venus, Mars, en uiteindelijk Mercurius. Verschillende faalden; het programma ging door. Tussen 1962 en 1973 voerden de Mariners de eerste verkenning van het binnenste zonnestelsel uit, en vervingen daarbij verbeelding door foto's."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het doel was eerste contact met de andere planeten: een ruimtevaartuig dicht genoeg langs Venus en Mars laten vliegen om te meten waaruit ze werkelijk waren opgebouwd en, bovenal, om ze te fotograferen. Een enkele passage van dichtbij die een handvol foto's en metingen opleverde, zou de mensheid meer over een planeet vertellen dan een eeuw telescoopwerk — het verschil tussen een vlek en een oppervlak."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/mariner-4/01"
+      },
+      "caption": "De Mariners waren klein en sober, gebouwd om eenmaal langs een planeet te vliegen en naar huis te sturen wat ze konden in de uren die ze hadden. Mariner 4 droeg een camera naar Mars; Mariner 9 droeg genoeg brandstof om te stoppen en te kunnen cirkelen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het latere doel werd ambitieuzer: niet alleen voorbijvliegen, maar blijven. Mariner 9 was gebouwd om genoeg brandstof mee te voeren om in een baan om Mars af te remmen en de hele planeet gedurende maanden te bestuderen — de stap van een glimp naar een inventarisatie — terwijl Mariner 10 Mercurius beoogde te bereiken via een route die niemand had gevlogen, snelheid stelend van de zwaartekracht van Venus onderweg."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "De Mariners herschreven het binnenste zonnestelsel één passage tegelijk. Mariner 2 bereikte Venus in 1962 — het eerste ruimtevaartuig ooit dat een andere planeet bereikte — en vond geen tropische tweeling maar een oven, met een oppervlak honderden graden heet onder verpletterende wolken. Drie jaar later vloog Mariner 4 langs Mars en stuurde de eerste foto's ooit gemaakt van een andere planeet van dichtbij terug: een gekraterde, maanachtige woestijn die stilletjes de oude dromen van kanalen en beschavingen doodde."
+    },
+    {
+      "type": "prose",
+      "md": "Mariner 9 ging verder en bleef. In 1971 werd het het eerste ruimtevaartuig dat om een andere planeet cirkelde, en arriveerde bij Mars midden in een wereldwijde stofstorm die het oppervlak wekenlang verborg. Toen het stof was neergedaald, bracht het de hele planeet in kaart — en onthulde een Mars veel groter dan de kraters van Mariner 4 hadden gesuggereerd: de grootste vulkaan in het zonnestelsel, een canyonsysteem dat zich uitstrekt over de breedte van een continent, en, het meest provocerend, de droge kanalen van wat ooit stromend water was geweest."
+    },
+    {
+      "type": "prose",
+      "md": "Mariner 10 sloot het programma af met twee primeurs. In 1974 werd het het eerste ruimtevaartuig dat Mercurius bereikte, en fotografeerde een verschroeide, gekraterde wereld — en het kwam daar door langs Venus te vliegen en de zwaartekracht van de planeet te gebruiken om zijn baan te buigen en te versnellen, het eerste gebruik van de zwaartekrachtkatapult waar elke ruimtemissie sindsdien van afhankelijk is geweest."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van Mariner is eerste contact — het moment waarop elke planeet ophield een idee te zijn en een plek werd. Elke wereld die het programma bereikte was tot dan toe alleen bij gevolgtrekking gekend; Mariner leverde de eerste harde gegevens en de eerste echte foto's, en in elk geval was de werkelijkheid anders dan de droom. Venus was geen tweeling maar een hel. Mars was niet doorsneden met kanalen maar gekraterd — en vervolgens, bij nader inzien, toch uitgehouwen door oud water. De gave van het programma was om eeuwen van gissen te vervangen door het gewone bewijs van een camera."
+    },
+    {
+      "type": "prose",
+      "md": "Het is ook het verhaal van hoe planetaire verkenning zijn basisbewegingen leerde. Mariner 4 bewees dat je door het zonnestelsel kon vliegen en een planeet kon fotograferen; Mariner 9 bewees dat je kon stoppen en er één kon inventariseren; Mariner 10 bewees dat je de zwaartekracht van een planeet kon gebruiken om gratis een andere te bereiken. Die drie mogelijkheden — de passage, de orbiter, en de zwaartekrachtondersteuning — zijn de grammatica van elke missie die volgde, en de Mariners zijn waar elk voor het eerst werd geschreven."
+    },
+    {
+      "type": "prose",
+      "md": "En het zette alles daarna op. De wereldwijde kaart van Mars van Mariner 9, met zijn aanwijzingen van verdwenen water, is wat Viking een paar jaar later daarheen stuurde om naar leven te zoeken. De ontwerpafstamming van Mariner, uitgebreid voor de buitenplaneten, werd de Voyagers. Het programma was de eerste schets van de Amerikaanse planetaire wetenschap — degene die zowel vaststelde wat de binnenplaneten waren als hoe ze vanaf dat moment zouden worden verkend."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "De eerste erfenis van Mariner is het binnenste zonnestelsel zoals wij het nu kennen: Venus onthuld als een oven, Mars in kaart gebracht van kraters tot canyons, Mercurius voor het eerst gefotografeerd. Het programma leverde de eerste grondwaarheid over de naburige planeten, en het moderne beeld van elk begint met een Mariner."
+    },
+    {
+      "type": "prose",
+      "md": "De tweede is de gereedschapskist. De passage, de planetaire orbiter, en de zwaartekrachtkatapult werden alle drie voor het eerst bereikt door Mariners, en alle drie blijven fundamenteel voor hoe ruimtevaartuigen verkennen. Latere missies vliegen verder en dragen meer, maar ze gebruiken nog steeds de bewegingen die Mariner uitvond."
+    },
+    {
+      "type": "prose",
+      "md": "De derde is alles wat het mogelijk maakte. De Mars van Mariner 9 zette het doel voor Viking; de Mariner-afstamming groeide uit tot Voyager; en het hele idee dat de planeten bezocht en begrepen konden worden, niet alleen geobserveerd, werd gevestigd door deze kleine sondes. Ze waren het eerste hoofdstuk, en de rest van de planetaire verkenning is geschreven in hun grammatica."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Mariner is dat een enkele blik van dichtbij een eeuw van aannames kan omverwerpen. Telescopen hadden Venus en Mars generaties lang bestudeerd en hadden de essentie mis — een warme tweeling, een met kanalen doorsneden wereld van leven. Een paar uur aan passagegegevens corrigeerden beide. Wanneer het echte bewijs uiteindelijk wordt verzameld, vertoont het vaak weinig gelijkenis met de zorgvuldige theorieën die in zijn afwezigheid werden gebouwd; de eerste directe meting is meer waard dan welke hoeveelheid gevolgtrekking dan ook."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat mogelijkheden zich opstapelen. Mariner wilde niet de zwaartekrachtondersteuning of de planetaire orbiter als doelen op zich uitvinden — het loste het probleem voor zich op, en elke oplossing werd een permanent gereedschap dat de volgende missie kon veronderstellen. Vooruitgang op moeilijke frontlijnen gaat vaak minder over afzonderlijke triomfen dan over het opbouwen van een grammatica van bewegingen die iedereen die daarna komt gratis mag gebruiken."
+    }
+  ]
+}

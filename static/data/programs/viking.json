@@ -1,0 +1,87 @@
+{
+  "id": "viking",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1975,
+  "end_year": 1982,
+  "status": "COMPLETED",
+  "epoch": "first-stations",
+  "hero": "fleet/viking-1/01",
+  "roster": [
+    {
+      "linked_id": "viking-1",
+      "ref": "fleet",
+      "role": "Mars orbiter + lander",
+      "year": 1975,
+      "note": "the first spacecraft to land successfully on Mars and operate — an orbiter to map from above and a lander to work on the surface"
+    },
+    {
+      "name": "Viking 1 lands",
+      "year": 1976,
+      "note": "on 20 July 1976 the Viking 1 lander touched down in Chryse Planitia and returned the first pictures ever taken from the surface of Mars"
+    },
+    {
+      "name": "Viking 2",
+      "year": 1976,
+      "note": "a second orbiter-and-lander pair, set down thousands of kilometres away in Utopia Planitia six weeks later"
+    },
+    {
+      "name": "The biology experiments",
+      "year": 1976,
+      "note": "each lander ran experiments designed to detect life in the Martian soil; the results were ambiguous, and remain argued over to this day"
+    }
+  ],
+  "related_programs": [
+    "mariner"
+  ],
+  "see_also": [
+    {
+      "label": "Mars — where Viking landed",
+      "href": "/mars",
+      "kind": "body"
+    },
+    {
+      "label": "Mariner — the flybys and orbiters that scouted Mars first",
+      "href": "/programs/mariner",
+      "kind": "program"
+    }
+  ],
+  "surface_sites": [
+    {
+      "surface": "mars",
+      "site": "viking1-lander",
+      "label": "Viking 1 — Chryse Planitia"
+    },
+    {
+      "surface": "mars",
+      "site": "viking2-lander",
+      "label": "Viking 2 — Utopia Planitia"
+    },
+    {
+      "surface": "mars",
+      "site": "viking1-orbiter",
+      "label": "Viking 1 orbiter"
+    }
+  ],
+  "links": [
+    {
+      "l": "Viking program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_program",
+      "t": "intro"
+    },
+    {
+      "l": "Viking 1 & 2 — NASA",
+      "u": "https://science.nasa.gov/mission/viking-1/",
+      "t": "core"
+    },
+    {
+      "l": "The Viking biology experiments — the case still open",
+      "u": "https://en.wikipedia.org/wiki/Viking_lander_biological_experiments",
+      "t": "deep"
+    }
+  ]
+}

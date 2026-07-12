@@ -1,0 +1,84 @@
+{
+  "name": "Sputnik",
+  "tagline": "El 4 de octubre de 1957 una esfera metálica pulida del tamaño de un balón de playa comenzó a emitir pitidos desde la órbita — y la era espacial, y la carrera espacial, comenzaron en el mismo instante.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "A mediados de la década de 1950 las dos superpotencias de la Guerra Fría estaban construyendo cohetes por la misma razón: para transportar bombas de hidrógeno a través del mundo. El diseñador jefe de la Unión Soviética, Sergei Korolev, estaba construyendo uno de los primeros — el R-7, un misil balístico intercontinental lo suficientemente potente para lanzar una ojiva pesada. También era, no por casualidad, lo suficientemente potente para impulsar un objeto pequeño más allá del borde de la atmósfera y ponerlo en órbita. Ambas naciones habían anunciado satélites para el Año Geofísico Internacional de 1957–58. La cuestión era solo quién sería el primero."
+    },
+    {
+      "type": "prose",
+      "md": "Los soviéticos habían planeado un elaborado satélite científico — un pesado laboratorio repleto de instrumentos llamado Object D. Iba con retraso. Temiendo que los estadounidenses lo adelantaran, Korolev dejó a un lado la nave complicada y propuso algo casi absurdamente simple en su lugar: una bola metálica brillante con un transmisor de radio, lo suficientemente ligera para lanzarla de inmediato. Se llamaba PS-1 — Prosteyshiy Sputnik, \"satélite más simple\". Su único trabajo era llegar a la órbita primero, y hacerse oír."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "El objetivo era ser el primero — y ser inequívoco al respecto. Un satélite en órbita era una prueba, visible para el mundo entero, de que los cohetes soviéticos podían alcanzar cualquier punto de la Tierra; el mismo lanzador que colocaba una esfera sobre Washington podía colocar allí una ojiva. Sputnik era un objeto científico, pero su propósito más profundo era una demostración de poder y una reivindicación del futuro, emitido en frecuencias que cualquier radioaficionado del planeta podía sintonizar y escuchar por sí mismo."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/sputnik/01"
+      },
+      "caption": "Sputnik 1 — una esfera de aluminio pulido de 58 centímetros con cuatro antenas traseras, presurizada con nitrógeno y que llevaba poco más que una batería y una baliza de radio. Su simplicidad era la estrategia: lo suficientemente ligera para lanzarla antes que nadie, lo suficientemente ruidosa para que el mundo entero pudiera oírla.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "El diseño derivaba del objetivo. Eliminar todo lo que pudiera retrasar el lanzamiento: sin cámaras, sin experimentos más allá de un sensor de temperatura y presión conectado al transmisor, solo una batería, una radio y una carcasa brillante como un espejo elegida para que la etapa gastada del cohete fuera visible desde tierra. Hacer lo mínimo que aún contara como satélite, y hacerlo antes de que los estadounidenses pudieran hacer más."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "El 4 de octubre de 1957 un R-7 despegó de la estepa kazaja y Sputnik 1 alcanzó la órbita. Durante veintiún días sus dos transmisores enviaron un pitido constante — pitido — pitido a través de las bandas de onda corta, un sonido difundido en los noticieros de la tarde y captado por radioaficionados de todo el mundo, hasta que las baterías se agotaron. La propia esfera siguió orbitando hasta principios de enero de 1958, cuando se desintegró al reentrar. El mundo entero había escuchado la primera luna artificial."
+    },
+    {
+      "type": "prose",
+      "md": "Los soviéticos aprovecharon la ventaja de inmediato. Un mes después, el 3 de noviembre, Sputnik 2 llevó a Laika — una perra callejera de Moscú — a la órbita, la primera criatura viva en abandonar el planeta. La misión demostró que un cuerpo vivo podía sobrevivir al lanzamiento y a la ingravidez, pero no había capacidad para traerla de vuelta, y murió de sobrecalentamiento en cuestión de horas. La primavera siguiente, Sputnik 3 finalmente puso en órbita el pesado laboratorio geofísico que el programa había pretendido lanzar primero."
+    },
+    {
+      "type": "prose",
+      "md": "En Estados Unidos la reacción fue menos de asombro que de conmoción. Que un rival pudiera colocar una máquina sobre los cielos estadounidenses — y tuviera el cohete para hacerlo — desencadenó lo que se conoció como la crisis del Sputnik: una ola de alarma que reconfiguró las prioridades del país casi de la noche a la mañana, desde la ciencia escolar hasta la defensa nacional."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La historia de Sputnik es que la simplicidad, dirigida con precisión, puede vencer a la sofisticación. Los soviéticos no ganaron la primera ronda de la era espacial con el mejor satélite; la ganaron con el más rápido. El instinto de Korolev — que ser el primero importaba más que ser elaborado, que una esfera que emitiera pitidos cambiaría el mundo más que un laboratorio lanzado un año después — fue exactamente correcto. El satélite elaborado, Object D, habría sido mejor ciencia. El simple hizo historia."
+    },
+    {
+      "type": "prose",
+      "md": "También es una historia sobre el poder de una señal. Sputnik apenas llevaba instrumentos; su carga útil era esencialmente el hecho de sí mismo, anunciado en un tono que cualquiera podía oír. Ese era el punto. Un satélite del que solo puedes leer es una abstracción; un pitido que sale de tu propia radio, de una máquina que pasa por encima cada noventa y seis minutos, es innegable. Los soviéticos comprendieron que el instrumento más importante del primer satélite era el que permitía a todo el planeta presenciarlo."
+    },
+    {
+      "type": "prose",
+      "md": "Y es la escena inicial de todo lo que sigue. Cada programa en este atlas — los vuelos tripulados, los alunizajes, las estaciones, los robots enviados a otros mundos — desciende del momento en que una bola metálica emitió pitidos sobre la Tierra y demostró que el espacio era alcanzable. La carrera que inició Sputnik duraría décadas y pondría a doce personas en la Luna. Comenzó con la máquina menos complicada que alguien pudo poner en órbita a toda prisa."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "El primer legado de Sputnik es el pistoletazo de salida. Abrió la era espacial e inició la carrera espacial, y cada hito posterior — Gagarin, Apollo, las estaciones, los robots interplanetarios — se remonta a la alarma y la ambición que desató. El objeto más trascendental de la primera era espacial también fue uno de los más simples."
+    },
+    {
+      "type": "prose",
+      "md": "Su segundo legado es estadounidense: la crisis del Sputnik impulsó a Estados Unidos a fundar la NASA en 1958, a invertir dinero en la educación en ciencias y matemáticas a través de la National Defense Education Act, y a tratar el vuelo espacial como una cuestión de supervivencia nacional. Un pitido soviético hizo tanto por construir el programa espacial estadounidense como cualquier decisión estadounidense."
+    },
+    {
+      "type": "prose",
+      "md": "Y su tercero es Laika. La primera criatura viva en órbita también fue la primera en morir allí, enviada sin camino de vuelta en la prisa por mantenerse adelante. Demostró que la vida podía sobrevivir al vuelo espacial y abrió el camino a la órbita humana — y sigue siendo el recordatorio perdurable del coste, y la prisa, de aquellos primeros pasos."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección de Sputnik es que los primeros puestos se ganan por quien está listo, no por quien es el mejor. Los soviéticos tenían el mejor satélite esperando en tierra; lanzaron el inferior porque podía ir ya, y resulta que ser el primero importó más que cualquier instrumento que Object D hubiera podido llevar. Cuando el premio es un primero, la preparación vence a la perfección."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda es que lo más poderoso que puede hacer una máquina es ser presenciada. Sputnik cambió el mundo no por lo que midió sino por lo que demostró — visiblemente, audiblemente, a todos a la vez. Algunos logros importan por los datos que devuelven; este importó porque el planeta entero pudo oír que estaba ahí."
+    }
+  ]
+}

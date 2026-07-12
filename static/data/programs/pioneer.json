@@ -1,0 +1,73 @@
+{
+  "id": "pioneer",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1972,
+  "end_year": 2003,
+  "status": "COMPLETED",
+  "epoch": "first-stations",
+  "hero": "fleet/pioneer-10/01",
+  "roster": [
+    {
+      "linked_id": "pioneer-10",
+      "ref": "mission",
+      "role": "first to Jupiter, first out of the solar system",
+      "year": 1972,
+      "note": "the first spacecraft to cross the asteroid belt and reach Jupiter, and the first put on a course to leave the solar system entirely"
+    },
+    {
+      "linked_id": "pioneer-11",
+      "ref": "mission",
+      "role": "first to Saturn",
+      "year": 1973,
+      "note": "flew Jupiter, then became the first spacecraft to reach Saturn — scouting the path and the ring hazards the Voyagers would follow"
+    },
+    {
+      "name": "The Pioneer plaque",
+      "year": 1972,
+      "note": "a small gold-anodised plaque on each craft showing a man, a woman, and the Earth's location — the first physical message from humanity aimed at the stars"
+    },
+    {
+      "name": "Pioneer Venus",
+      "year": 1978,
+      "note": "a separate pair of Pioneers reached Venus in 1978 — an orbiter that radar-mapped the planet through its clouds, and probes that plunged into its crushing atmosphere"
+    }
+  ],
+  "related_programs": [
+    "mariner",
+    "voyager"
+  ],
+  "see_also": [
+    {
+      "label": "Jupiter in the 3D explorer",
+      "href": "/explore",
+      "kind": "explore"
+    },
+    {
+      "label": "Voyager — the tour Pioneer scouted",
+      "href": "/programs/voyager",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "Pioneer program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Pioneer_program",
+      "t": "intro"
+    },
+    {
+      "l": "Pioneer 10 & 11 — NASA",
+      "u": "https://science.nasa.gov/mission/pioneer-10/",
+      "t": "core"
+    },
+    {
+      "l": "The Pioneer plaque — the message we sent first",
+      "u": "https://en.wikipedia.org/wiki/Pioneer_plaque",
+      "t": "deep"
+    }
+  ]
+}

@@ -538,5 +538,150 @@
     "start_year": 2027,
     "end_year": null,
     "hero": "fleet/ros/01"
+  },
+  {
+    "id": "sputnik",
+    "name": "Sputnik",
+    "tagline": "On 4 October 1957 a polished metal sphere the size of a beach ball began to beep from orbit — and the space age, and the space race, began in the same instant.",
+    "kind": "robotic-campaign",
+    "agency": "Roscosmos",
+    "agencies": [
+      "Roscosmos"
+    ],
+    "country": "USSR",
+    "epoch": "first-steps",
+    "status": "COMPLETED",
+    "start_year": 1957,
+    "end_year": 1958,
+    "hero": "fleet/sputnik/01"
+  },
+  {
+    "id": "voyager",
+    "name": "Voyager",
+    "tagline": "Two probes launched in 1977 to tour the outer planets — and never came back. Half a century on, they are still flying, and still calling home from between the stars.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "first-stations",
+    "status": "ACTIVE",
+    "start_year": 1977,
+    "end_year": null,
+    "hero": "fleet/voyager-1/01"
+  },
+  {
+    "id": "cassini",
+    "name": "Cassini",
+    "tagline": "A bus-sized robot spent thirteen years orbiting Saturn — and found, on a moon nobody was watching, an ocean that could hold life.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA",
+      "ESA"
+    ],
+    "country": "USA",
+    "epoch": "shuttle-and-mir",
+    "status": "COMPLETED",
+    "start_year": 1997,
+    "end_year": 2017,
+    "hero": "missions/cassini/01"
+  },
+  {
+    "id": "pioneer",
+    "name": "Pioneer",
+    "tagline": "Before Voyager could tour the outer planets, someone had to prove the road was survivable. Two small probes went first — through the asteroid belt, past Jupiter, and out.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "first-stations",
+    "status": "COMPLETED",
+    "start_year": 1972,
+    "end_year": 2003,
+    "hero": "fleet/pioneer-10/01"
+  },
+  {
+    "id": "viking",
+    "name": "Viking",
+    "tagline": "In 1976 two American landers set down on Mars, sent back the first photographs from its surface — and ran an experiment to answer the oldest question about the planet: is anything alive there?",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "first-stations",
+    "status": "COMPLETED",
+    "start_year": 1975,
+    "end_year": 1982,
+    "hero": "fleet/viking-1/01"
+  },
+  {
+    "id": "galileo",
+    "name": "Galileo",
+    "tagline": "The first spacecraft to orbit Jupiter flew for eight years with a crippled antenna — and still returned the strongest evidence yet that a moon of Jupiter hides an ocean.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "shuttle-and-mir",
+    "status": "COMPLETED",
+    "start_year": 1989,
+    "end_year": 2003,
+    "hero": "fleet/galileo/01"
+  },
+  {
+    "id": "new-horizons",
+    "name": "New Horizons",
+    "tagline": "It took nine and a half years and the fastest launch in history to reach Pluto — and the dead ball of ice everyone expected turned out to be a young, active world.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2006,
+    "end_year": null,
+    "hero": "missions/new-horizons/01"
+  },
+  {
+    "id": "mariner",
+    "name": "Mariner",
+    "tagline": "Before any other planet was more than a smudge in a telescope, a run of small American probes went out to see them — and returned the first photographs ever taken of another world.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "space-race",
+    "status": "COMPLETED",
+    "start_year": 1962,
+    "end_year": 1975,
+    "hero": "fleet/mariner-4/01"
+  },
+  {
+    "id": "mars-rovers",
+    "name": "Mars Rovers",
+    "tagline": "A quarter-century of American robots driving across Mars — from a microwave-sized cart that managed a few metres to a nuclear astrobiologist caching rock for the trip home.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA"
+    ],
+    "country": "USA",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1997,
+    "end_year": null,
+    "hero": "fleet/curiosity/04"
   }
 ]

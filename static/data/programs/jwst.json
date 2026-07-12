@@ -67,6 +67,13 @@
       "kind": "program"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "earth",
+      "site": "jwst",
+      "label": "James Webb Space Telescope"
+    }
+  ],
   "links": [
     {
       "l": "James Webb Space Telescope — Wikipedia",

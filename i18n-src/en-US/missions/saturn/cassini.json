@@ -1,8 +1,9 @@
 {
   "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "type": "ORBITER + LANDER · FLOWN",
+  "first": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
+  "dispatch": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",
+  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus’s south-polar plumes (active water-ice geysers), mapped Titan’s methane lakes via radar, and resolved Saturn’s hexagonal polar storm. The Grand Finale (April–September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
   "events": [
     {
       "met": 0,

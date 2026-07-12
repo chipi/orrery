@@ -1,0 +1,84 @@
+{
+  "name": "Pioneer",
+  "tagline": "Avant que Voyager ne puisse visiter les planètes extérieures, il fallait prouver que la route était praticable. Deux petites sondes sont parties en premier — à travers la ceinture d'astéroïdes, au-delà de Jupiter, et plus loin encore.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Au début des années 1970, le système solaire externe n'était pas seulement inexploré ; on le croyait dangereux à atteindre. Entre Mars et Jupiter s'étendait la ceinture d'astéroïdes, et personne ne savait si un vaisseau spatial pourrait la traverser sans être détruit par les débris. Au-delà, les ceintures de radiation de Jupiter étaient réputées mortelles pour l'électronique. Les planètes géantes méritaient d'être visitées, mais le chemin vers elles traversait deux dangers auxquels aucune machine n'avait jamais été confrontée."
+    },
+    {
+      "type": "prose",
+      "md": "Les Pioneer étaient les éclaireurs envoyés pour le découvrir. Petites, stabilisées par rotation et relativement simples, Pioneer 10 et 11 furent conçues pour partir en premier — tester si la ceinture pouvait être traversée et si une sonde pouvait survivre à un passage rapproché de Jupiter — afin que les Voyager, bien plus coûteuses et déjà en cours de planification, sachent à quoi elles allaient faire face."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif était la reconnaissance au sens le plus littéral : prouver la route. Traverser la ceinture d'astéroïdes et mesurer l'ampleur réelle de la menace. Voler près de Jupiter et voir si un vaisseau spatial pouvait supporter les radiations et renvoyer des données utiles. La science — premiers regards rapprochés sur Jupiter, puis, pour Pioneer 11, la première visite à Saturne — était réelle, mais le but plus profond était d'ouvrir la voie."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/pioneer-10/01"
+      },
+      "caption": "Les Pioneer furent maintenues simples et mises en rotation pour la stabilité, leurs instruments mesurant les champs et les particules autant que prenant des images. Leur mission était de survivre à la ceinture et aux radiations et de transmettre ce à quoi les Voyager devraient faire face.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Chacune emportait également une petite plaque en or — conçue par Carl Sagan et Frank Drake — gravée d'un homme, d'une femme et d'une carte vers le Soleil. C'était une modeste réflexion tardive comparée au Golden Record ultérieur de Voyager, mais c'était la première : le premier objet que l'humanité a délibérément inscrit avec un message et lancé vers les étoiles."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Les deux craintes se révélèrent infondées, ce qui était précisément le but. Pioneer 10 traversa la ceinture d'astéroïdes sans dommage — la ceinture, s'avéra-t-il, était principalement de l'espace vide — et en décembre 1973 devint le premier vaisseau spatial à atteindre Jupiter, survivant aux radiations et renvoyant les premières images rapprochées de la planète géante et de ses lunes. Elle devint ensuite le premier objet fabriqué par l'homme placé sur une trajectoire pour quitter entièrement le système solaire."
+    },
+    {
+      "type": "prose",
+      "md": "Pioneer 11 alla plus loin. Après son propre survol de Jupiter, elle utilisa la gravité de la planète pour traverser le système solaire et atteindre Saturne en 1979 — le premier vaisseau spatial à le faire — volant à travers le plan des anneaux pour tester si la région était sûre, et trouvant la brèche que les Voyager utiliseraient un an plus tard. Les éclaireurs avaient cartographié les dangers ; la visite pouvait commencer."
+    },
+    {
+      "type": "prose",
+      "md": "Les Pioneer continuèrent à émettre pendant des décennies tandis qu'elles s'éloignaient. Le dernier signal faible de Pioneer 10 fut reçu en 2003, depuis plus de douze milliards de kilomètres. Toutes deux sont encore là-bas, silencieuses maintenant, glissant vers les étoiles — Pioneer 10 en direction de l'étoile Aldebaran, un voyage qui lui prendra environ deux millions d'années à accomplir."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire de Pioneer est le travail ingrat et essentiel de partir en premier. Les Voyager sont mémorisées pour le Grand Tour ; les Pioneer sont la raison pour laquelle le Grand Tour a pu être tenté. Elles ont pris les risques qui ont transformé des dangers inconnus en dangers mesurés — prouvant que la ceinture d'astéroïdes était franchissable et les radiations de Jupiter supportables — afin que les missions qui les suivaient puissent être conçues avec confiance plutôt qu'avec crainte. Quelqu'un doit toujours tester la route, et c'est rarement celui qui en reçoit le mérite."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi l'histoire d'accomplir beaucoup avec peu. Les Pioneer étaient des engins modestes, plus simples et moins coûteux que les Voyager qui suivirent, et elles réussirent néanmoins une série de véritables premières — première à travers la ceinture, première à Jupiter, première à Saturne, première à sortir du système solaire. Elles sont la preuve qu'une petite mission bien dirigée peut ouvrir une frontière que la mission phare franchit ensuite."
+    },
+    {
+      "type": "prose",
+      "md": "Et elles portaient le premier message. La plaque Pioneer était un geste plus discret que le Golden Record — une seule feuille gravée plutôt qu'une bibliothèque de sons — mais elle vint en premier, et elle posa l'idée qu'un vaisseau spatial partant pour toujours devrait dire quelque chose sur qui l'a envoyé. Chaque message que l'humanité a depuis dirigé vers l'espace profond descend de cette petite plaque en or boulonnée à un éclaireur."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Pioneer est la route qu'elle a ouverte. En prouvant que la ceinture d'astéroïdes était franchissable et les radiations de Jupiter supportables, elle a converti le système solaire externe d'un danger théorique en une destination accessible — le catalyseur direct de Voyager, Galileo, Cassini et de toutes les missions vers les planètes géantes depuis."
+    },
+    {
+      "type": "prose",
+      "md": "Le deuxième est un ensemble de premières permanentes : première à travers la ceinture, première à Jupiter, première à Saturne, premier objet sur une trajectoire d'échappement hors du système solaire. Ces entrées au registre n'expirent pas, et elles appartiennent toutes à deux petites sondes bon marché."
+    },
+    {
+      "type": "prose",
+      "md": "Le troisième est la plaque — le premier message délibéré de la Terre au cosmos, et le modèle pour les Golden Records qui suivirent. Pioneer a établi qu'un engin partant pour toujours devrait porter un témoignage de ses créateurs, et cette idée a survécu aux missions elles-mêmes."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Pioneer est la valeur de l'éclaireur. La chose la plus importante que les Pioneer ont accomplie fut de réduire l'incertitude pour les missions qui les suivaient — transformant les hypothèses sur la ceinture d'astéroïdes et les radiations de Jupiter en chiffres concrets sur lesquels un concepteur pouvait s'appuyer. Sur toute véritable frontière, une sonde bon marché envoyée pour mesurer le danger vaut bien plus que son coût, car elle permet à la mission coûteuse qui suit d'être construite pour le monde tel qu'il est plutôt que tel qu'on craignait qu'il soit."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est que partir en premier apporte rarement la gloire, et compte quand même. Les Pioneer sont moins célèbres que les Voyager qu'elles ont rendues possibles, mais sans elles le Grand Tour aurait été un saut dans l'inconnu plutôt qu'un vol calculé. Une partie du travail le plus important est la reconnaissance dont personne ne se souvient — et il vaut la peine d'être bien fait précisément parce que tout ce qui suit en dépend."
+    }
+  ]
+}

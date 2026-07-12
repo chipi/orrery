@@ -1,0 +1,83 @@
+{
+  "id": "voyager",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1977,
+  "end_year": null,
+  "status": "ACTIVE",
+  "epoch": "first-stations",
+  "hero": "fleet/voyager-1/01",
+  "roster": [
+    {
+      "linked_id": "voyager-2",
+      "ref": "mission",
+      "role": "the Grand Tour — Jupiter, Saturn, Uranus, Neptune",
+      "year": 1977,
+      "note": "the only spacecraft to visit all four giant planets, and the only close look humanity has ever had at Uranus and Neptune"
+    },
+    {
+      "linked_id": "voyager-1",
+      "ref": "mission",
+      "role": "Jupiter, Saturn, and out",
+      "year": 1977,
+      "note": "flew Jupiter and Saturn, turned to photograph the whole solar system, and became the first human-made object to reach interstellar space"
+    },
+    {
+      "name": "The Golden Record",
+      "year": 1977,
+      "note": "a gold-plated phonograph record bolted to each craft — sounds, music, and greetings from Earth, aimed at whoever might find it in a billion years"
+    },
+    {
+      "name": "The Pale Blue Dot",
+      "year": 1990,
+      "note": "on 14 February 1990, from beyond Neptune, Voyager 1 turned back and photographed the Earth as a single pixel"
+    },
+    {
+      "name": "Interstellar space",
+      "year": 2012,
+      "note": "Voyager 1 crossed the heliopause in 2012, Voyager 2 in 2018 — the first machines to leave the Sun's bubble and enter the space between the stars, still calling home"
+    }
+  ],
+  "related_programs": [
+    "pioneer",
+    "mariner"
+  ],
+  "see_also": [
+    {
+      "label": "The outer planets in the 3D explorer",
+      "href": "/explore",
+      "kind": "explore"
+    },
+    {
+      "label": "The Pale Blue Dot, in the Deep-Sky gallery",
+      "href": "/gallery/deep-sky",
+      "kind": "explore"
+    },
+    {
+      "label": "Pioneer — the probes that went first",
+      "href": "/programs/pioneer",
+      "kind": "program"
+    }
+  ],
+  "links": [
+    {
+      "l": "Voyager program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voyager_program",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager — NASA/JPL mission site",
+      "u": "https://voyager.jpl.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "The Golden Record — what we sent",
+      "u": "https://voyager.jpl.nasa.gov/golden-record/",
+      "t": "deep"
+    }
+  ]
+}

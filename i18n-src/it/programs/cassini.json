@@ -1,0 +1,84 @@
+{
+  "name": "Cassini",
+  "tagline": "Un robot grande quanto un autobus ha trascorso tredici anni in orbita attorno a Saturno — e ha scoperto, su una luna che nessuno stava osservando, un oceano che potrebbe ospitare vita.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Negli anni '90 Saturno era stato visto tre volte, e solo di passaggio: Pioneer 11 e le due Voyager avevano attraversato il sistema in poche ore ciascuna, restituendo scorci affascinanti di un mondo ad anelli con dozzine di lune e una luna gigante avvolta nella foschia, Titan, la cui superficie nessuna fotocamera poteva penetrare. Un sorvolo può fotografare un luogo; non può viverci. Per comprendere Saturno — i suoi anelli, il suo clima, la sua improbabile famiglia di lune — una sonda avrebbe dovuto fermarsi e restare."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini fu costruita esattamente per questo scopo, e fu costruita da una coalizione: la NASA fornì l'orbiter, l'Agenzia Spaziale Europea fornì un lander chiamato Huygens da far scendere attraverso la foschia di Titan, e l'Italia costruì la sua antenna ad alto guadagno. Fu lanciata nel 1997 come una delle sonde interplanetarie più grandi e capaci mai inviate — con davanti un viaggio di sette anni e due miliardi di chilometri solo per raggiungere il pianeta che era stata progettata per studiare."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'obiettivo primario era diventare il primo residente di Saturno: entrare in orbita e restarci per anni, studiando l'atmosfera del pianeta, i suoi anelli, il suo campo magnetico e le sue lune attraverso il lento susseguirsi delle stagioni saturniane — la scienza paziente e sostenuta che nessun sorvolo può fare. Tra gli obiettivi principali c'era Titan, l'unica luna abbastanza grande da trattenere un'atmosfera densa, e il grande mistero del sistema solare esterno."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/cassini/01"
+      },
+      "caption": "Cassini trasportò la sonda europea Huygens per sette anni, poi la rilasciò per farla scendere con il paracadute su Titan. L'orbiter stesso avrebbe trascorso tredici anni girando attorno a Saturno, passando tra le lune e, alla fine, tra il pianeta e i suoi anelli.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il secondo obiettivo apparteneva a Huygens: scendere attraverso la foschia arancione di Titan e atterrare — o ammarare — su una superficie che nessuno aveva mai visto, e scoprire se la luna avesse davvero i laghi e i fiumi di metano liquido che la teoria prevedeva. Fu un singolo tentativo senza ritorno per l'atterraggio più distante mai provato."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cassini raggiunse Saturno nel 2004 e si stabilì in orbita. Mesi dopo rilasciò Huygens, che scese con il paracadute attraverso la foschia di Titan nel gennaio 2005 e restituì le prime immagini dalla superficie di una luna nel sistema solare esterno: una pianura arancione e scura disseminata di ciottoli arrotondati di ghiaccio d'acqua, modellata da fiumi di metano liquido. Rimane l'unico atterraggio che l'umanità abbia mai compiuto oltre la fascia degli asteroidi."
+    },
+    {
+      "type": "prose",
+      "md": "La grande scoperta dell'orbiter venne da una luna che quasi nessuno si aspettava avesse importanza. Passando vicino alla minuscola Encelado, Cassini trovò altissimi getti di ghiaccio d'acqua e vapore che eruttavano da fratture al suo polo sud — prova di un oceano globale di acqua liquida sotto il ghiaccio, caldo e salato e ricco di molecole organiche. Un granello ghiacciato largo cinquecento chilometri si rivelò uno dei luoghi più promettenti del sistema solare per cercare vita."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini funzionò per tredici anni, ben oltre la missione pianificata, finché non rimase a corto di carburante. Piuttosto che rischiare che si schiantasse eventualmente su Encelado o Titan contaminandoli con microbi terrestri, i pianificatori della missione scelsero una fine deliberata: ventidue tuffi attraverso la regione inesplorata tra Saturno e i suoi anelli, restituendo dati fino all'ultimo, e poi un'immersione finale nell'atmosfera del pianeta nel settembre 2017, trasmettendo fino a quando non si disintegrò."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Cassini è ciò che la pazienza produce. Le Voyager avevano mostrato Saturno in un giorno e proseguito; Cassini rimase per oltre un decennio, e quasi tutto ciò che trovò di importante venne dall'essere rimasta lì abbastanza a lungo da osservare — una tempesta avvolgere l'intero pianeta, una stagione cambiare, una luna passare abbastanza vicino alla quattrocentesima orbita da rivelare ciò che il primo sorvolo aveva mancato. Le sue scoperte non furono occhiate fortunate ma la ricompensa della perseveranza."
+    },
+    {
+      "type": "prose",
+      "md": "La sua scoperta più significativa riscrisse dove cerchiamo la vita. Prima di Cassini, la ricerca di luoghi abitabili si concentrava su Marte e sul caldo sistema solare interno. Encelado — piccola, ghiacciata, lontana dal Sole — avrebbe dovuto essere morta. Invece stava emettendo nello spazio gli ingredienti della vita, mantenuti liquidi dalla trazione flessiva della gravità di Saturno. Cassini trasformò il sistema solare esterno, a lungo ritenuto una landa desolata ghiacciata, in una plausibile casa per oceani, e per qualunque cosa gli oceani possano contenere."
+    },
+    {
+      "type": "prose",
+      "md": "E la sua fine fu una scelta morale tanto quanto ingegneristica. Una sonda che aveva scoperto due mondi oceanici possibilmente abitabili non poteva essere lasciata diventare la cosa che li contaminava. Così i suoi operatori la fecero volare deliberatamente su Saturno, sacrificando la macchina per proteggere i luoghi stessi che aveva trovato — l'esplorazione planetaria che si assume la responsabilità della propria portata."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "La prima eredità di Cassini è Saturno stesso, trasformato da un mondo visto di passaggio nel pianeta meglio compreso del sistema solare esterno — i suoi anelli, il suo clima, il suo campo magnetico e le sue dozzine di lune mappati attraverso tredici anni di osservazione continua che nessuna missione futura è programmata a ripetere."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda è Encelado e Titan: due mondi oceanici e un mondo di metano portati, dai dati di Cassini, in prima linea tra i luoghi che vale la pena rivisitare nella ricerca della vita. Ogni proposta di cercare biologia nel sistema solare esterno ora inizia con ciò che Cassini ha trovato."
+    },
+    {
+      "type": "prose",
+      "md": "La terza è il modello della missione stessa — un'ammiraglia genuinamente internazionale, NASA ed Europa a pilotare una sonda per due decenni, che ha dimostrato quanto di più restituisca un orbiter paziente rispetto a un sorvolo veloce, e ha stabilito il modello per le missioni di lunga durata che seguirono."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di Cassini è che restare batte passare attraverso. Lo stesso pianeta che le Voyager caratterizzarono in ore rivelò i suoi segreti più profondi — l'oceano di Encelado, il ciclo del metano di Titan — solo a una sonda disposta a trascorrere tredici anni in orbita. Per le domande più difficili, la presenza nel tempo vale più di qualsiasi singolo sguardo brillante."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che la portata comporta responsabilità. Cassini terminò facendosi volare su Saturno per proteggere le lune oceaniche che aveva scoperto — un riconoscimento che il potere di visitare un mondo possibilmente vivente viene con il dovere di non avvelenarlo. La capacità senza quella moderazione non è esplorazione; è trasgressione."
+    }
+  ]
+}

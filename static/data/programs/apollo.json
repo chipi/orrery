@@ -170,6 +170,18 @@
       "kind": "science"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "moon",
+      "site": "apollo15",
+      "label": "Apollo 15 — Hadley–Apennine"
+    },
+    {
+      "surface": "moon",
+      "site": "apollo16",
+      "label": "Apollo 16 — Descartes Highlands"
+    }
+  ],
   "links": [
     {
       "l": "NASA — The Apollo Program",

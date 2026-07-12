@@ -56,6 +56,13 @@
       "kind": "program"
     }
   ],
+  "surface_sites": [
+    {
+      "surface": "mars",
+      "site": "mangalyaan",
+      "label": "Mangalyaan in Mars orbit"
+    }
+  ],
   "links": [
     {
       "l": "Mars Orbiter Mission — Wikipedia",

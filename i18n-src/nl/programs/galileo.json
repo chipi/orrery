@@ -1,0 +1,84 @@
+{
+  "name": "Galileo",
+  "tagline": "Het eerste ruimtevaartuig dat Jupiter omcirkelde vloog acht jaar lang met een defecte antenne — en leverde toch het sterkste bewijs tot nu toe dat een maan van Jupiter een oceaan verbergt.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "De Pioneers en Voyagers waren langs Jupiter gevlogen, elk in een kwestie van uren, en elk had meer vragen dan antwoorden achtergelaten: aanwijzingen voor een oceaan onder het ijs van Europa, vulkanen op Io, een magnetisch veld groter dan al het andere in het zonnestelsel. Scheervluchten konden ze niet oplossen. Om Jupiter en zijn vier grote manen te begrijpen — werelden die even gevarieerd en interessant zijn als planeten op zich — zou een ruimtevaartuig een baan moeten innemen en jarenlang moeten blijven."
+    },
+    {
+      "type": "prose",
+      "md": "Galileo was gebouwd om die bewoner te zijn, en het had zelfs vóór de lancering een moeilijke weg. Jarenlang vertraagd door de Challenger-ramp en veranderende lanceerplannen, verliet het uiteindelijk de aarde vanuit de Space Shuttle in 1989 op een langzaam, kronkelend pad — langs Venus en tweemaal langs de aarde zwaaïend om snelheid op te bouwen — dat zes jaar kostte om een planeet te bereiken waar andere missies rechtstreeks naartoe waren gevlogen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het doel was de eerste langdurige studie van het Jupiter-systeem: de planeet omcirkelen, zijn vier grote manen herhaaldelijk bezoeken, en de verleidelijke glimpen van de Voyagers omzetten in begrip. Was er echt een oceaan onder Europa? Hoe werkten de vulkanen van Io? Wat dreef het grootste magnetisch veld in het zonnestelsel aan? Dit waren vragen die alleen een baan-ruimtevaartuig, dat elke maan keer op keer over jaren heen passeerde, kon beantwoorden."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/galileo/01"
+      },
+      "caption": "Galileo droeg een probe om in de atmosfeer van Jupiter te laten vallen en een baan-ruimtevaartuig om de manen te bezoeken. Zijn grote paraplu-achtige hoofdantenne zou tijdens de vlucht moeten ontplooien om gegevens op hoge snelheid naar huis te sturen — en dat deed het nooit volledig.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Galileo droeg ook een tweede ruimtevaartuig: een probe ontworpen om bij aankomst te scheiden en rechtstreeks in de wolken van Jupiter te duiken, waarbij het de atmosfeer van de reuzenplaneet van binnenuit mat terwijl het viel — het eerste en, tot nu toe, enige directe monster van het binnenste van een gasreus."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Toen brak de missie bijna. In 1991, onderweg naar Jupiter, slaagde Galileo's hoofdantenne er niet in te openen — het bleef half opgerold steken, als een paraplu die niet wilde uitklappen, waardoor de gegevenssnelheid van het ruimtevaartuig werd teruggebracht tot een minuscuul deel van wat was gepland. De missie had verlamd moeten zijn. In plaats daarvan herschreven ingenieurs de software vanaf de aarde, en leerden het verre ruimtevaartuig zijn gegevens veel agressiever te comprimeren en naar huis te druppelen via een kleine reserveantenne. Het grootste deel van de wetenschap werd gered over een verbinding duizenden keren langzamer dan bedoeld."
+    },
+    {
+      "type": "prose",
+      "md": "Het arriveerde bij Jupiter in december 1995, liet zijn probe los in de wolken, en vestigde zich in een baan — het eerste ruimtevaartuig dat dit ooit deed. Gedurende de volgende acht jaar bezocht het de manen tientallen keren, en zijn grootste ontdekking kwam langzaam uit die volharding voort: de manier waarop het magnetisch veld van Jupiter zich rond Europa drapeerde, kon alleen worden verklaard door een zoute, geleidende oceaan van vloeibaar water onder het ijs van de maan. Het bracht ook het meedogenloze vulkanisme van Io in kaart en vond aanwijzingen voor een magnetisch veld gegenereerd binnen de maan Ganymedes."
+    },
+    {
+      "type": "prose",
+      "md": "In 2003, met weinig brandstof over, werd Galileo opzettelijk Jupiter ingevlogen en vernietigd — dezelfde keuze die Cassini later bij Saturnus zou maken — om er zeker van te zijn dat het ruimtevaartuig nooit op een dag op Europa kon neerstorten en de oceaan kon besmetten die het zoveel had gedaan om te onthullen."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van Galileo is een missie gered van ramp door vindingrijkheid. De vastgelopen antenne had het kunnen beëindigen; het ruimtevaartuig was ontworpen rond een hogesnelheidsverbinding die niet langer bestond. Dat Galileo toch het grootste deel van zijn wetenschap terugbracht — via een reserveantenne die nooit bedoeld was om de last te dragen, over software geschreven en geüpload na de lancering — is een van de grote bergingsoperaties in de geschiedenis van de ruimtevaart, en een herinnering dat het resultaat van een missie evenveel wordt bepaald door de mensen die het besturen als door de hardware die vloog."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn belangrijkste ontdekking herkaderde een maan. Vóór Galileo was de oceaan van Europa een hypothese getrokken uit een paar Voyager-beelden; na Galileo was het de leidende verklaring voor harde magnetische gegevens verzameld tijdens passage na passage. Een bevroren maan van Jupiter sloot zich aan bij Enceladus van Saturnus als een plek waar vloeibaar water — en de mogelijkheid van leven — zich onder het ijs verbergt. Galileo zag de oceaan niet; het maakte de zaak ervoor onweerlegbaar, en wees de volgende generatie missies op Europa."
+    },
+    {
+      "type": "prose",
+      "md": "En, zoals Cassini na hem, eindigde Galileo door zichzelf te vernietigen om te beschermen wat het had gevonden. Een ruimtevaartuig dat acht jaar lang had betoogd dat Europa mogelijk bewoonbaar was, kon niet worden toegestaan om het ding te worden dat het met aards leven zou bezaaien. Zijn laatste daad was om in Jupiter te vallen — de reuzenplaneet die de robot verzwolg die eindelijk zijn manen had begrepen."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Galileo's eerste erfenis is Europa. Zijn gegevens veranderden een ondergrondse oceaan van speculatie in het leidende model, waardoor Europa een van de twee of drie meest overtuigende plaatsen in het zonnestelsel werd om naar leven te zoeken — en de directe reden dat een toegewijde missie, Europa Clipper, later werd gebouwd om het verder te onderzoeken."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn tweede is het Jupiter-systeem als geheel: de eerste langdurige studie van de reuzenplaneet, zijn atmosfeer bemonsterd van binnenuit, zijn magnetisch veld in kaart gebracht, en zijn vier grote manen getransformeerd van Voyager-glimpen in begrepen werelden gedurende acht jaar in een baan."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn derde is een demonstratie van veerkracht — dat een missie zijn centrale vermogen kan verliezen en toch kan slagen als de mensen die het besturen vindingrijk genoeg zijn. Galileo's software-redding is een permanente case study in het bergen van een ruimtevaartuig dat, naar alle redelijkheid, verloren had moeten zijn."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Galileo is dat een missie niet voorbij is wanneer zijn hardware faalt. De vastgelopen antenne verwijderde het vermogen waar het hele ruimtevaartuig omheen was ontworpen — en de missie slaagde toch, omdat zijn operators herschreven wat de machine deed in plaats van te rouwen om wat het niet langer kon doen. Wanneer het plan breekt, is de vraag niet wat verloren ging maar wat nog gedaan kan worden met wat overblijft; het verschil tussen een dode missie en een geweldige is vaak het antwoord daarop."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat geduld hints omzet in kennis. De oceaan van Europa was onzichtbaar in een enkele passage; het kwam alleen voort uit het opgebouwde gewicht van vele, verzameld gedurende jaren in een baan. De belangrijkste ontdekkingen worden vaak niet gezien maar gebouwd — samengesteld meting na meting, totdat een hypothese het enige wordt dat bij de gegevens past."
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "name": "Galileo",
   "type": "ORBITER · FLOWN",
   "first": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
+  "dispatch": "Galileo should have been crippled before it even arrived. Its main antenna stuck half-open on the way to Jupiter, cutting its data rate to a trickle — and the mission succeeded anyway, because engineers rewrote its software from Earth to squeeze the science through a tiny backup antenna. It became the first spacecraft to orbit Jupiter, dropped a probe into the giant planet’s clouds, and spent eight years touring the moons. Its greatest find emerged slowly from that persistence: the way Jupiter’s magnetic field wrapped around Europa could only be explained by a salty ocean beneath the ice — the strongest case yet that a moon of Jupiter might hold liquid water, and life. At the end it was flown into Jupiter on purpose, so it could never fall onto Europa and contaminate it.",
   "description": "Launched from Space Shuttle Atlantis after the long post-Challenger pause, Galileo braved the inner asteroid belt and conducted the first long-term study of Jupiter and its moons from orbit. It discovered Europa's induced magnetic field — strong evidence of a subsurface ocean — and watched Shoemaker-Levy 9 slam into Jupiter. The mission ended with a controlled plunge into Jupiter in 2003 to avoid contaminating icy moons that might harbour conditions for life.",
   "events": [
     {

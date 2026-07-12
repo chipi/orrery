@@ -1,0 +1,84 @@
+{
+  "name": "Viking",
+  "tagline": "Em 1976, dois módulos de pouso americanos pousaram em Marte, enviaram as primeiras fotografias de sua superfície — e realizaram um experimento para responder à pergunta mais antiga sobre o planeta: existe algo vivo lá?",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Em meados da década de 1970, Marte havia sido vislumbrado, mas nunca tocado. Os sobrevoos da Mariner e um orbitador haviam substituído o antigo sonho de canais e civilizações por uma imagem mais fria — um deserto cratejado, aparentemente morto — mas a própria superfície permanecia desconhecida, e a pergunta que assombrava Marte há um século ainda estava em aberto. Havia vida? Uma fotografia da órbita não podia responder. Alguém tinha que pousar, observar e testar o solo."
+    },
+    {
+      "type": "prose",
+      "md": "Viking foi a missão interplanetária mais ambiciosa que os Estados Unidos já haviam tentado: duas espaçonaves idênticas, cada uma um orbitador carregando um módulo de pouso, enviadas para alcançar Marte, escolher um local seguro de cima e pousar um robô suavemente em um mundo cuja superfície ninguém havia visto do chão. Nada jamais havia pousado em Marte e funcionado; as tentativas soviéticas haviam fracassado em segundos. A Viking tinha que ter sucesso duas vezes."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo tinha duas partes. Os orbitadores mapeariam Marte de cima com um detalhe que nenhum sobrevoo poderia — o suficiente para escolher locais de pouso e estudar o planeta como um todo. E os módulos de pouso fariam o que nada havia feito antes: operar na superfície marciana, fotografá-la, medir seu clima e solo, e executar um conjunto de experimentos construídos para detectar a química da vida."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/viking-1/01"
+      },
+      "caption": "Cada Viking era duas espaçonaves em uma: um orbitador para pesquisar e retransmitir, e um módulo de pouso que se separava, acionava seus motores e pousava sobre três pernas. Os módulos de pouso carregavam câmeras, uma estação meteorológica, uma pá de solo e um laboratório de biologia em miniatura.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "A questão da vida era aquela com a qual o público se importava, e a Viking a levou a sério. Cada módulo de pouso carregava três experimentos de biologia separados, projetados para alimentar o solo marciano e observar os sinais de metabolismo — a busca mais direta por vida extraterrestre já tentada, então ou desde então."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Funcionou, duas vezes. O módulo de pouso Viking 1 tocou o solo em Chryse Planitia em 20 de julho de 1976 e retornou a primeira fotografia já tirada da superfície de Marte — uma planície alaranjada salpicada de rochas sob um céu pálido. A Viking 2 pousou em Utopia Planitia seis semanas depois. Juntos, os dois módulos de pouso operaram por anos, enviando panoramas, temporadas de dados meteorológicos e a primeira química detalhada do solo marciano."
+    },
+    {
+      "type": "prose",
+      "md": "Os resultados da biologia foram a grande ambiguidade da missão. Um dos três experimentos retornou um sinal que, na Terra, teria sugerido vida; os outros não, e o instrumento de química do módulo de pouso não encontrou moléculas orgânicas no solo. O consenso científico se estabeleceu em uma química incomum, que imitava a vida, na sujeira marciana, em vez de biologia — mas o resultado foi próximo o suficiente, e estranho o suficiente, que ainda é debatido décadas depois. A Viking não encontrou vida; nem fechou completamente o caso."
+    },
+    {
+      "type": "prose",
+      "md": "O que a Viking estabeleceu foi que Marte poderia ser alcançado, pousado e trabalhado — não uma vez, mas duas, por anos. Os orbitadores mapearam quase todo o planeta, revelando os grandes vulcões e cânions por completo, e os módulos de pouso provaram que um robô poderia sobreviver e funcionar na superfície marciana através das estações. Cada rover que desde então cruzou Marte repousa sobre essa prova."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A história da Viking é uma missão que respondeu todas as perguntas, exceto aquela pela qual foi mais lembrada de perguntar. Foi um triunfo de engenharia — dois pousos bem-sucedidos em Marte em uma época em que ninguém havia conseguido nem um — e uma riqueza de ciência, e ainda assim é inseparável dos experimentos de biologia e seu resultado enlouquecedor e não resolvido. A Viking é o caso raro em que o objetivo principal não voltou como sim ou não, mas como talvez, e o talvez durou mais do que tudo o mais."
+    },
+    {
+      "type": "prose",
+      "md": "Essa ambiguidade foi, de certa forma, honesta. Os projetistas da Viking haviam construído o experimento de detecção de vida mais cuidadoso que podiam, e quando os dados voltaram contraditórios eles os relataram como contraditórios em vez de forçá-los em uma resposta limpa. A lição que a comunidade tirou — que detectar vida é muito mais difícil do que parece, e que um único experimento inteligente pode enganar você — reformulou como a busca por vida foi perseguida desde então, em direção à habitabilidade e evidência construída lentamente em vez de um teste decisivo."
+    },
+    {
+      "type": "prose",
+      "md": "E por baixo do drama da biologia, a Viking silenciosamente fez o trabalho fundamental. Ela transformou Marte de um lugar visto à distância em um lugar com verdade de campo — química do solo real, clima real, fotografias reais da superfície — e provou toda a difícil cadeia de alcançar Marte e pousar intacto. Os rovers que agora percorrem o planeta são descendentes diretos da Viking; eles caminham sobre a prova que ela deixou."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado da Viking é o pouso em si: a primeira chegada bem-sucedida à superfície de Marte, e a prova de que uma espaçonave poderia alcançar o planeta, pousar com segurança e operar por anos. Cada módulo de pouso e rover em Marte desde então — Pathfinder, os geólogos gêmeos, Curiosity, Perseverance — herda o caminho que a Viking abriu."
+    },
+    {
+      "type": "prose",
+      "md": "O segundo é a verdade de campo. A química do solo da Viking, registros meteorológicos e panoramas da superfície deram à ciência planetária seus primeiros dados reais do chão marciano, e seus mapas orbitais globais enquadraram a geologia que missões posteriores foram investigar. A imagem moderna de Marte começa aqui."
+    },
+    {
+      "type": "prose",
+      "md": "O terceiro é a questão da vida, deixada em aberto de uma forma produtiva. O resultado de biologia ambíguo da Viking — e a humildade que forçou — reformulou toda a busca por vida além da Terra, direcionando-a para longe de testes decisivos únicos em direção à acumulação paciente de evidências que guia a caçada em Marte, Enceladus e Europa hoje."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição da Viking é que as perguntas mais importantes raramente se resolvem em um único experimento. A Viking perguntou se Marte abrigava vida com o melhor instrumento que sua era podia construir, e recebeu de volta uma resposta que não era nem sim nem não — e a resposta honesta foi relatar a ambiguidade, não fabricar certeza. Perguntas difíceis geralmente são respondidas pelo peso lento das evidências, não por um resultado limpo, e confundir um teste inteligente com um final é como você engana a si mesmo."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é o valor de provar toda a cadeia. O presente duradouro da Viking não foi nenhuma medição única, mas a demonstração de que alcançar Marte e pousar intacto era possível e repetível. Uma vez que uma coisa difícil foi feita — e feita duas vezes — ela deixa de ser uma aposta e se torna uma fundação sobre a qual outros podem construir. Às vezes, o maior resultado que uma missão retorna é simplesmente que isso pode ser feito."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Galileo",
+  "tagline": "Le premier engin spatial à orbiter Jupiter a volé pendant huit ans avec une antenne endommagée — et a tout de même rapporté la preuve la plus solide à ce jour qu'une lune de Jupiter cache un océan.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Les Pioneer et Voyager avaient survolé Jupiter, chacun en quelques heures, et chacun avait laissé plus de questions que de réponses : des indices d'un océan sous la glace d'Europa, des volcans sur Io, un champ magnétique plus vaste que tout autre dans le système solaire. Les survols ne pouvaient les résoudre. Pour comprendre Jupiter et ses quatre grandes lunes — des mondes aussi variés et intéressants que des planètes à part entière — un engin spatial devait entrer en orbite et y rester pendant des années."
+    },
+    {
+      "type": "prose",
+      "md": "Galileo a été construit pour être ce résident, et il a connu un parcours difficile avant même son lancement. Retardé pendant des années par la catastrophe de Challenger et des plans de lancement changeants, il a finalement quitté la Terre depuis la navette spatiale en 1989 sur une trajectoire lente et sinueuse — passant par Vénus et deux fois par la Terre pour prendre de la vitesse — qui a pris six ans pour atteindre une planète que d'autres missions avaient rejointe directement."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif était la première étude prolongée du système de Jupiter : orbiter la planète, visiter ses quatre grandes lunes de manière répétée, et transformer les aperçus alléchants de Voyager en compréhension. Y avait-il réellement un océan sous Europa ? Comment fonctionnaient les volcans d'Io ? Qu'est-ce qui générait le plus grand champ magnétique du système solaire ? Ce n'étaient que des questions auxquelles seul un orbiteur, passant devant chaque lune encore et encore pendant des années, pouvait répondre."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/galileo/01"
+      },
+      "caption": "Galileo transportait une sonde à larguer dans l'atmosphère de Jupiter et un orbiteur pour visiter les lunes. Sa grande antenne principale en forme de parapluie devait se déployer en vol pour transmettre les données à grande vitesse — et elle ne l'a jamais fait complètement.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Galileo transportait également un second engin spatial : une sonde conçue pour se séparer à l'arrivée et plonger directement dans les nuages de Jupiter, mesurant l'atmosphère de la planète géante de l'intérieur pendant sa chute — le premier et, jusqu'à présent, le seul échantillon direct de l'intérieur d'une géante gazeuse."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Puis la mission a failli s'effondrer. En 1991, en route vers Jupiter, l'antenne principale de Galileo n'a pas réussi à s'ouvrir — elle est restée à moitié fermée, comme un parapluie qui ne se déploierait pas, réduisant le débit de données de l'engin spatial à une infime fraction de ce qui était prévu. La mission aurait dû être paralysée. Au lieu de cela, les ingénieurs ont réécrit son logiciel depuis la Terre, apprenant à l'engin spatial distant à compresser ses données beaucoup plus agressivement et à les transmettre goutte à goutte par une petite antenne de secours. La majeure partie de la science a été sauvée sur une liaison des milliers de fois plus lente que prévu."
+    },
+    {
+      "type": "prose",
+      "md": "Il est arrivé à Jupiter en décembre 1995, a largué sa sonde dans les nuages et s'est placé en orbite — le premier engin spatial à le faire. Au cours des huit années suivantes, il a visité les lunes des dizaines de fois, et sa plus grande découverte a émergé lentement de cette persistance : la façon dont le champ magnétique de Jupiter se drapait autour d'Europa ne pouvait s'expliquer que par un océan salé et conducteur d'eau liquide sous la glace de la lune. Il a également cartographié le volcanisme incessant d'Io et trouvé des signes d'un champ magnétique généré à l'intérieur de la lune Ganymède."
+    },
+    {
+      "type": "prose",
+      "md": "En 2003, à court de carburant, Galileo a été délibérément dirigé vers Jupiter et détruit — le même choix que Cassini ferait plus tard à Saturne — pour s'assurer que l'engin spatial ne pourrait jamais un jour s'écraser sur Europa et contaminer l'océan qu'il avait tant contribué à révéler."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire de Galileo est celle d'une mission sauvée du désastre par l'ingéniosité. L'antenne bloquée aurait pu y mettre fin ; l'engin spatial avait été conçu autour d'une liaison à grande vitesse qui n'existait plus. Que Galileo ait tout de même rapporté la majeure partie de sa science — par une antenne de secours jamais destinée à porter cette charge, sur un logiciel écrit et téléchargé après le lancement — est l'un des grands sauvetages de l'histoire du vol spatial, et un rappel que le résultat d'une mission est déterminé autant par les personnes qui la pilotent que par le matériel qui a volé."
+    },
+    {
+      "type": "prose",
+      "md": "Sa découverte la plus importante a recadré une lune. Avant Galileo, l'océan d'Europa était une hypothèse tirée de quelques images Voyager ; après Galileo, c'était l'explication principale des données magnétiques solides recueillies passage après passage. Une lune gelée de Jupiter a rejoint Encelade de Saturne comme un endroit où l'eau liquide — et la possibilité de vie — se cache sous la glace. Galileo n'a pas vu l'océan ; il a rendu son existence indéniable et a dirigé la prochaine génération de missions vers Europa."
+    },
+    {
+      "type": "prose",
+      "md": "Et, comme Cassini après lui, Galileo s'est terminé en se détruisant pour protéger ce qu'il avait trouvé. Un engin spatial qui avait passé huit ans à démontrer qu'Europa pouvait être habitable ne pouvait être autorisé à devenir ce qui l'ensemencerait de vie terrestre. Son acte final a été de tomber dans Jupiter — la planète géante engloutissant le robot qui avait finalement compris ses lunes."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage de Galileo est Europa. Ses données ont transformé un océan souterrain de spéculation en modèle principal, faisant d'Europa l'un des deux ou trois endroits les plus intéressants du système solaire pour rechercher la vie — et la raison directe pour laquelle une mission dédiée, Europa Clipper, a été construite plus tard pour poursuivre."
+    },
+    {
+      "type": "prose",
+      "md": "Le second est le système de Jupiter dans son ensemble : la première étude prolongée de la planète géante, son atmosphère échantillonnée de l'intérieur, son champ magnétique cartographié, et ses quatre grandes lunes transformées d'aperçus Voyager en mondes compris au cours de huit années en orbite."
+    },
+    {
+      "type": "prose",
+      "md": "Le troisième est une démonstration de résilience — qu'une mission peut perdre sa capacité centrale et tout de même réussir si les personnes qui la pilotent sont suffisamment inventives. Le sauvetage logiciel de Galileo est une étude de cas permanente dans le sauvetage d'un engin spatial qui aurait dû, en toute logique, être perdu."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon de Galileo est qu'une mission n'est pas terminée lorsque son matériel échoue. L'antenne bloquée a supprimé la capacité autour de laquelle tout l'engin spatial avait été conçu — et la mission a tout de même réussi, parce que ses opérateurs ont réécrit ce que la machine faisait plutôt que de pleurer ce qu'elle ne pouvait plus faire. Quand le plan se brise, la question n'est pas ce qui a été perdu mais ce qui peut encore être fait avec ce qui reste ; la différence entre une mission morte et une grande mission est souvent la réponse à cela."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est que la patience transforme les indices en connaissance. L'océan d'Europa était invisible lors d'un seul passage ; il n'a émergé que du poids accumulé de plusieurs, recueillis au cours d'années en orbite. Les découvertes les plus importantes ne sont souvent pas vues mais construites — assemblées mesure par mesure, jusqu'à ce qu'une hypothèse devienne la seule chose qui corresponde aux données."
+    }
+  ]
+}

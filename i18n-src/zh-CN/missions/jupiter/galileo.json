@@ -2,6 +2,7 @@
   "name": "Galileo",
   "type": "ORBITER · FLOWN",
   "first": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
+  "dispatch": "伽利略号本该在抵达之前就已残废。它的主天线在飞往木星途中卡在半开状态,数据传输速率降至涓涓细流——但任务还是成功了,因为工程师们从地球改写了它的软件,将科学数据挤压通过一个微小的备用天线。它成为第一个环绕木星的航天器,向这颗巨行星的云层投放了一个探测器,并用八年时间巡游各卫星。它最伟大的发现缓慢地从那份坚持中浮现:木星磁场环绕Europa的方式只能用冰层下存在咸水海洋来解释——这是迄今为止最有力的证据,表明木星的一颗卫星可能蕴藏液态水,以及生命。最终它被有意驾驶坠入木星,这样它就永远不会落到Europa上并污染那里。",
   "description": "Launched from Space Shuttle Atlantis after the long post-Challenger pause, Galileo braved the inner asteroid belt and conducted the first long-term study of Jupiter and its moons from orbit. It discovered Europa's induced magnetic field — strong evidence of a subsurface ocean — and watched Shoemaker-Levy 9 slam into Jupiter. The mission ended with a controlled plunge into Jupiter in 2003 to avoid contaminating icy moons that might harbour conditions for life.",
   "events": [
     {

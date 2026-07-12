@@ -242,6 +242,22 @@
     </ul>
   </section>
 
+  {#if p.surface_sites && p.surface_sites.length}
+    <section class="surface">
+      <h2>On the surface</h2>
+      <ul class="surface-list">
+        {#each p.surface_sites as s (s.surface + s.site)}
+          <li>
+            <a href="{base}/{s.surface}?site={s.site}">
+              <span class="s-body">{s.surface}</span><span class="s-label">{s.label}</span>
+              <span class="s-go">→</span>
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
   {#if p.see_also && p.see_also.length}
     <section class="see-also">
       <h2>Go deeper in Orrery</h2>
@@ -363,6 +379,7 @@
   .spine h2,
   .roster h2,
   .assembly h2,
+  .surface h2,
   .see-also h2,
   .related h2,
   .sources h2 {
@@ -599,6 +616,50 @@
   }
   .see-also li {
     margin-bottom: 12px;
+  }
+  .surface-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  .surface-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    transition:
+      border-color 0.15s,
+      background 0.15s;
+  }
+  .surface-list a:hover {
+    border-color: rgba(127, 176, 224, 0.55);
+    background: rgba(127, 176, 224, 0.06);
+  }
+  .surface-list .s-body {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 3px;
+    padding: 2px 6px;
+    flex: 0 0 auto;
+  }
+  .surface-list .s-label {
+    flex: 1 1 auto;
+    font-size: 14px;
+  }
+  .surface-list .s-go {
+    color: #7fb0e0;
+    flex: 0 0 auto;
   }
   .see-also a {
     color: #cfe3fb;

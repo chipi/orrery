@@ -1,0 +1,116 @@
+{
+  "id": "mars-rovers",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": [
+    "NASA"
+  ],
+  "country": "USA",
+  "start_year": 1997,
+  "end_year": null,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/curiosity/04",
+  "roster": [
+    {
+      "linked_id": "mars-pathfinder",
+      "ref": "mission",
+      "role": "the first wheels on Mars",
+      "year": 1997,
+      "note": "the low-cost mission that bounced onto Mars on airbags and let Sojourner, a microwave-sized rover, become the first wheels to turn on another planet"
+    },
+    {
+      "linked_id": "spirit",
+      "ref": "mission",
+      "role": "twin geologist",
+      "year": 2004,
+      "note": "landed in 2004 on a 90-day mission and worked for six years, finding chemical traces of Mars's warmer, wetter past"
+    },
+    {
+      "linked_id": "opportunity",
+      "ref": "mission",
+      "role": "the marathon rover",
+      "year": 2004,
+      "note": "Spirit's twin, which drove more than 45 kilometres over 14 years — the longest distance any vehicle has covered on another world"
+    },
+    {
+      "linked_id": "curiosity",
+      "ref": "mission",
+      "role": "nuclear-powered field lab",
+      "year": 2012,
+      "note": "a car-sized, nuclear-powered rover lowered onto Mars by a rocket-powered sky crane in 2012, which confirmed that Gale Crater once held a habitable lake"
+    },
+    {
+      "linked_id": "perseverance",
+      "ref": "mission",
+      "role": "sample-caching astrobiologist",
+      "year": 2021,
+      "note": "landed in the delta of an ancient lake in 2021 to search for signs of past life and seal samples in tubes for a future mission to bring home"
+    },
+    {
+      "name": "Ingenuity",
+      "year": 2021,
+      "note": "a small helicopter carried by Perseverance made the first powered flight on another planet in 2021, and went on to fly dozens more times"
+    }
+  ],
+  "related_programs": [
+    "viking",
+    "mariner"
+  ],
+  "see_also": [
+    {
+      "label": "Mars — the rovers' world",
+      "href": "/mars",
+      "kind": "body"
+    },
+    {
+      "label": "Viking — the landers that came before the wheels",
+      "href": "/programs/viking",
+      "kind": "program"
+    }
+  ],
+  "surface_sites": [
+    {
+      "surface": "mars",
+      "site": "mars-pathfinder",
+      "label": "Sojourner — Ares Vallis"
+    },
+    {
+      "surface": "mars",
+      "site": "spirit",
+      "label": "Spirit — Gusev Crater"
+    },
+    {
+      "surface": "mars",
+      "site": "opportunity",
+      "label": "Opportunity — Meridiani Planum"
+    },
+    {
+      "surface": "mars",
+      "site": "curiosity",
+      "label": "Curiosity — Gale Crater"
+    },
+    {
+      "surface": "mars",
+      "site": "perseverance",
+      "label": "Perseverance — Jezero Crater"
+    }
+  ],
+  "links": [
+    {
+      "l": "Mars rovers — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_rover",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Mars exploration — the rovers",
+      "u": "https://mars.nasa.gov/mars-exploration/missions/",
+      "t": "core"
+    },
+    {
+      "l": "Mars Sample Return — bringing Perseverance's tubes home",
+      "u": "https://science.nasa.gov/mission/mars-sample-return/",
+      "t": "deep"
+    }
+  ]
+}

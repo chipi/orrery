@@ -1,0 +1,84 @@
+{
+  "name": "Cassini",
+  "tagline": "Een busgrote robot bracht dertien jaar door in een baan rond Saturnus — en vond, op een maan waar niemand naar keek, een oceaan die leven zou kunnen bevatten.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Tegen de jaren negentig was Saturnus drie keer gezien, en alleen in het voorbijgaan: Pioneer 11 en de twee Voyagers waren elk binnen enkele uren door het systeem gevlogen en hadden verleidelijke glimpen achtergelaten van een wereld met ringen, tientallen manen en een gigantische, in nevel gehulde maan, Titan, waarvan geen camera het oppervlak kon doordringen. Een voorbijvlucht kan een plek fotograferen; er kan niet worden geleefd. Om Saturnus te begrijpen — zijn ringen, zijn weer, zijn onwaarschijnlijke familie van manen — zou een ruimtevaartuig moeten stoppen en blijven."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini was gebouwd om precies dat te doen, en werd gebouwd door een coalitie: NASA leverde de orbiter, de European Space Agency leverde een lander genaamd Huygens om door de nevel van Titan te dalen, en Italië bouwde zijn high-gain antenne. Het werd in 1997 gelanceerd als een van de grootste en meest capabele interplanetaire vaartuigen ooit gevlogen — met een reis van zeven jaar en twee miljard kilometer vóór het de planeet zou bereiken die het moest bestuderen."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Het primaire doel was om Saturnus' eerste bewoner te worden: in een baan te komen en jarenlang te blijven, de atmosfeer van de planeet, zijn ringen, zijn magnetisch veld en zijn manen te bestuderen gedurende de trage wisseling van de Saturnische seizoenen — de volgehouden, geduldige wetenschap die geen voorbijvlucht kan leveren. Voornaamste onder de doelen was Titan, de enige maan groot genoeg om een dikke atmosfeer vast te houden, en het grote mysterie van het buitenste zonnestelsel."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/cassini/01"
+      },
+      "caption": "Cassini droeg de Europese Huygens sonde zeven jaar lang mee, liet hem vervolgens los om met een parachute op Titan te landen. De orbiter zelf zou dertien jaar rond Saturnus cirkelen, tussen de manen door laverend en, aan het einde, tussen de planeet en zijn ringen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het tweede doel behoorde toe aan Huygens: afdalen door de oranje nevel van Titan en landen — of neerkomen — op een oppervlak dat niemand ooit had gezien, en uitzoeken of de maan werkelijk de meren en rivieren van vloeibaar methaan had die de theorie voorspelde. Het was een enkele poging in één richting voor de verste landing ooit geprobeerd."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cassini bereikte Saturnus in 2004 en vestigde zich in een baan. Maanden later liet het Huygens los, die in januari 2005 met een parachute door de nevel van Titan daalde en de eerste beelden terugstuurde van het oppervlak van een maan in het buitenste zonnestelsel: een schemerende, oranje vlakte bezaaid met afgeronde kiezelstenen van waterijs, gevormd door rivieren van vloeibaar methaan. Het blijft de enige landing die de mensheid ooit heeft gemaakt voorbij de asteroïdengordel."
+    },
+    {
+      "type": "prose",
+      "md": "De eigen grote ontdekking van de orbiter kwam van een maan waarvan bijna niemand had verwacht dat die ertoe zou doen. Voorbij de kleine Enceladus vliegend vond Cassini torenhoge stralen van waterijs en damp die uit scheuren aan zijn zuidpool spoten — bewijs van een mondiale oceaan van vloeibaar water onder het ijs, warm en zout en doordrenkt met organische moleculen. Een bevroren stip van vijfhonderd kilometer doorsnee bleek een van de meest veelbelovende plaatsen in het zonnestelsel om naar leven te zoeken."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini werkte dertien jaar lang, ver voorbij zijn geplande missie, totdat de brandstof opraakt. Om te voorkomen dat het uiteindelijk op Enceladus of Titan zou neerstorten en deze met aardse microben zou besmetten, kozen de missieplanners voor een opzettelijk einde: tweeëntwintig duiken door de onontgonnen opening tussen Saturnus en zijn ringen, gegevens terugsturen tot het laatste moment, en vervolgens een definitieve duik in de atmosfeer van de planeet in september 2017, zendend tot het opbrandde."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Het verhaal van Cassini is wat geduld oplevert. De Voyagers hadden Saturnus in een dag laten zien en waren verder gegaan; Cassini bleef meer dan een decennium, en bijna alles wat ertoe deed kwam voort uit lang genoeg aanwezig zijn om te kijken — een storm die de hele planeet omhulde, een seizoen dat draaide, een maan die dichtbij genoeg voorbijkwam in de vierhonderdste omloop om te onthullen wat de eerste voorbijvlucht had gemist. Zijn ontdekkingen waren geen gelukkige blikken maar de beloning van volharding."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn meest ingrijpende vondst herschreef waar we naar leven zoeken. Vóór Cassini richtte de zoektocht naar bewoonbare plaatsen zich op Mars en het warme binnenste zonnestelsel. Enceladus — klein, bevroren, ver van de zon — had dood moeten zijn. In plaats daarvan spoot het de ingrediënten van leven de ruimte in, vloeibaar gehouden door de buigende aantrekkingskracht van Saturnus' zwaartekracht. Cassini veranderde het buitenste zonnestelsel, lang beschouwd als een bevroren woestenij, in een aannemelijk tehuis voor oceanen, en voor wat oceanen zouden kunnen bevatten."
+    },
+    {
+      "type": "prose",
+      "md": "En zijn einde was een morele keuze net zoveel als een technische. Een ruimtevaartuig dat twee mogelijk bewoonbare oceaanwerelden had ontdekt kon niet worden toegestaan het ding te worden dat ze besmette. Dus vlogen zijn operators het opzettelijk Saturnus in, de machine opofferend om de plaatsen die het had gevonden te beschermen — planetaire exploratie die verantwoordelijkheid nam voor zijn eigen reikwijdte."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Cassini's eerste erfenis is Saturnus zelf, getransformeerd van een wereld in het voorbijgaan gezien tot de best begrepen planeet in het buitenste zonnestelsel — zijn ringen, zijn weer, zijn magnetisch veld en zijn tientallen manen in kaart gebracht gedurende dertien jaar van doorlopende observatie die geen toekomstige missie gepland staat te herhalen."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn tweede is Enceladus en Titan: twee oceaanwerelden en één methaanwereld verplaatst, door Cassini's gegevens, naar de voorste rang van plaatsen waar het de moeite waard is naartoe terug te keren in de zoektocht naar leven. Elk voorstel om naar biologie in het buitenste zonnestelsel te jagen begint nu met wat Cassini vond."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn derde is het model van de missie zelf — een werkelijk internationaal vlaggenschip, NASA en Europa die twintig jaar lang één ruimtevaartuig bestuurden, dat aantoonde hoeveel meer een geduldige orbiter oplevert dan een snelle voorbijvlucht, en de sjabloon zette voor de langdurige missies die volgden."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van Cassini is dat blijven beter is dan erdoor gaan. Dezelfde planeet die de Voyagers in uren karakteriseerden gaf zijn diepste geheimen — de oceaan van Enceladus, de methaancyclus van Titan — alleen prijs aan een ruimtevaartuig dat bereid was dertien jaar in een baan door te brengen. Voor de moeilijkste vragen is aanwezigheid in de tijd meer waard dan welke enkele briljante blik ook."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat reikwijdte verantwoordelijkheid met zich meebrengt. Cassini eindigde door zichzelf Saturnus in te vliegen om de oceaanmanen die het had ontdekt te beschermen — een erkenning dat de macht om een mogelijk levende wereld te bezoeken gepaard gaat met een plicht deze niet te vergiftigen. Vermogen zonder die terughoudendheid is geen exploratie; het is onrechtmatig binnentreden."
+    }
+  ]
+}

@@ -147,6 +147,7 @@ const TOOLS = {
       `
 - "type" — a short status/kind label (e.g. "CREWED LANDER · PLANNED"): translate the words, keep the · separators and any ALL-CAPS status convention.
 - "first" — a one-line summary; translate.
+- "dispatch" (optional) — a one-paragraph editorial lead in the field-historian voice; translate it fully, preserving the tone and any em-dashes.
 - "events" (optional array) — translate each event's "label" + "note"; pass "met" (number) + "type" (enum) through verbatim; preserve count + order.`,
     schema: {
       name: {
@@ -158,6 +159,7 @@ const TOOLS = {
             name: { type: 'string' },
             type: { type: 'string' },
             first: { type: 'string' },
+            dispatch: { type: 'string' },
             description: { type: 'string' },
             events: {
               type: 'array',
@@ -184,6 +186,7 @@ const TOOLS = {
       `
 - "name" — vehicle/spacecraft proper name; keep verbatim unless commonly localised.
 - "tagline" + "best_known_for" — short descriptors; translate.
+- "dispatch" (optional) — a one-paragraph editorial lead in the field-historian voice; translate it fully, preserving the tone and any em-dashes.
 - "description" — translate.`,
     schema: {
       name: {
@@ -194,6 +197,7 @@ const TOOLS = {
           properties: {
             name: { type: 'string' },
             tagline: { type: 'string' },
+            dispatch: { type: 'string' },
             description: { type: 'string' },
             best_known_for: { type: 'string' },
           },

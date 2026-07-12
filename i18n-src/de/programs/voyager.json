@@ -1,0 +1,84 @@
+{
+  "name": "Voyager",
+  "tagline": "Zwei 1977 gestartete Sonden zur Erkundung der äußeren Planeten — die nie zurückkehrten. Ein halbes Jahrhundert später fliegen sie immer noch und senden immer noch Signale aus dem Raum zwischen den Sternen nach Hause.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Alle 176 Jahre ordnen sich die vier Riesenplaneten auf derselben Seite der Sonne an. Mitte der 1960er-Jahre fand ein junger Ingenieur am Jet Propulsion Laboratory der NASA, Gary Flandro, heraus, was diese Konstellation ermöglichte: Eine einzelne Raumsonde könnte an Jupiter vorbeifliegen, die Schwerkraft des Planeten nutzen, um sich zu Saturn zu schleudern, dann zu Uranus, dann zu Neptun — alle vier in einem einzigen Flug besuchen, der sonst Jahrzehnte separater Missionen erfordern würde. Der Haken war der Kalender. Das Zeitfenster öffnete sich Ende der 1970er-Jahre. Wer es verpasste, musste bis zu den 2150er-Jahren auf die nächste Gelegenheit warten."
+    },
+    {
+      "type": "prose",
+      "md": "Das äußere Sonnensystem war zu diesem Zeitpunkt nahezu vollständig unerforscht. Die Pioneer-Sonden erreichten Jupiter gerade erst; Uranus und Neptun waren nie mehr als Lichtpunkte im Teleskop gewesen. Die NASA nutzte die Konstellation und baute zwei nahezu identische Roboter für die Tour — robust, mit Nuklearantrieb und ausgestattet mit den besten Kameras und Instrumenten der Zeit, ausgerichtet auf Welten, die niemand je aus der Nähe gesehen hatte."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Das Ziel war eine Erkundung in nie dagewesenem Maßstab: ein erster Nahblick auf Jupiter und Saturn und — falls die Maschinen lange genug überlebten — der einzige Nahblick, den irgendjemand für Generationen auf Uranus und Neptun bekommen würde. Zwei Raumsonden flogen, damit der Ausfall einer nicht die gesamte Tour zunichtemachen würde, und damit sie zwischen sich Flugbahnen abdecken konnten, die keine einzelne Sonde hätte fliegen können."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/voyager-1/01"
+      },
+      "caption": "Jede Voyager trug ihre Instrumente an einem Ausleger, eine große Schüssel stets zur schrumpfenden Erde gedreht, und einen Nukleargenerator, um dort weiterzulaufen, wo Sonnenlicht für Solarpaneele zu schwach ist. Sie wurden gebaut, um ein paar Jahre zu halten und Saturn zu erreichen. Sie arbeiten immer noch.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Es gab ein zweites, seltsameres Ziel, hinzugefügt von einem Komitee unter Leitung des Astronomen Carl Sagan: Jede Sonde sollte eine Botschaft tragen. An ihrer Seite befestigt war eine vergoldete Schallplatte mit den Klängen der Erde — Musik, Grüße in Dutzenden von Sprachen, das Weinen eines Babys, Vogelgesang — versiegelt für wen auch immer, oder was auch immer, sie in ferner Zukunft finden könnte. Es war eine wissenschaftliche Mission, die auch, bewusst, nach der Ewigkeit griff."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Die Tour übertraf ihren Auftrag. Bei Jupiter 1979 fanden die Voyager-Sonden aktive Vulkane auf dem Mond Io — die ersten, die je jenseits der Erde gesehen wurden — und das glatte Eis von Europa, das verbarg, was wie ein Ozean aussah. Bei Saturn lösten sie die Ringe in Tausende komplizierter Stränge auf und flogen dicht an dem in Dunst gehüllten Mond Titan vorbei. Dieser Titan-Vorbeiflug lenkte Voyager 1 nach oben und aus der Ebene der Planeten heraus und schickte sie zum Rand des Sonnensystems hinauf."
+    },
+    {
+      "type": "prose",
+      "md": "Voyager 2 flog die vollständige Grand Tour. Sie erreichte Uranus 1986 und Neptun 1989 — die einzige Raumsonde, die je eine der beiden Welten besucht hat — und fand einen auf die Seite gekippten Planeten, einen tiefblauen Riesen mit den schnellsten Winden im Sonnensystem und einen Mond, Triton, mit Geysiren aus Stickstoff, die in den Weltraum ausbrachen. Bis heute stammt alles, was die Menschheit aus der Nähe über die Eisriesen weiß, aus diesen beiden kurzen Vorbeiflügen."
+    },
+    {
+      "type": "prose",
+      "md": "Dann lief die Mission einfach weiter. 1990, von jenseits von Neptun, richtete Voyager 1 ihre Kamera zurück und fotografierte die Erde als einzelnen Lichtpunkt. 2012 überquerte sie die Heliopause — die Grenze, wo der Sonnenwind dem Gas zwischen den Sternen weicht — und Voyager 2 folgte 2018. Fast fünfzig Jahre nach dem Start senden beide immer noch, ihre Energie schwindet, ihre Instrumente werden eines nach dem anderen abgeschaltet, um das Signal etwas länger zu strecken."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Die Geschichte von Voyager ist die von Maschinen, die jede Erwartung ihrer Erbauer überlebten. Sie wurden für einen vierjährigen Flug zu Saturn mit 1970er-Jahre-Elektronik entworfen — Computer mit weniger Speicher als ein moderner Schlüsselanhänger — und sie sind fast ein halbes Jahrhundert gelaufen, umprogrammiert über Milliarden von Kilometern von Ingenieuren, die Code in eine Raumsonde patchen, die so weit entfernt ist, dass ein Befehl fast einen Tag braucht, um anzukommen. Die bestimmende Eigenschaft der Mission ist Ausdauer: eine Wette auf Robustheit und Reserve, die sich weit über jedermanns Plan hinaus ausgezahlt hat."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr am meisten erinnerter Moment trug überhaupt keine Wissenschaft. Als Voyager 1 die Planeten hinter sich ließ, argumentierte Carl Sagan, sie solle sich umdrehen und die Erde ein letztes Mal fotografieren — nicht für Daten, sondern für Perspektive. Das Bild, das sie zurückschickte, zeigte die Heimat als blassblauer Punkt, ein Staubkorn in einem Sonnenstrahl, und Sagans Worte darüber — dass jeder, der je gelebt hat, dies auf diesem Fleck getan hat — wurden zu einer der meistzitierten Passagen in der Literatur des Weltraums. Eine Erkundungssonde hatte, fast zufällig, das definitive Porträt menschlicher Kleinheit aufgenommen."
+    },
+    {
+      "type": "prose",
+      "md": "Und da ist die Schallplatte. Jede Voyager trägt eine Botschaft ohne realistische Hoffnung, jemals gefunden zu werden — die Chancen, dass eine der beiden Sonden in einem sinnvollen Zeitrahmen nahe an einem anderen Stern vorbeifliegt, sind verschwindend gering. Aber es ging nie wirklich um die Außerirdischen. Die Golden Record war ein Spiegel: ein Versuch zu sagen, wer wir sind, gerichtet an die Zukunft und an uns selbst, hinausgeschickt auf den einzigen zwei Objekten, die wir je auf einen Kurs gestartet haben, der das Sonnensystem endgültig verlässt."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Voyagers erstes Vermächtnis ist die Karte selbst. Ihre Vorbeiflüge verwandelten Jupiter, Saturn, Uranus und Neptun und ihre Monde von Lichtpunkten in Orte, und die Uranus- und Neptun-Begegnungen bleiben — Jahrzehnte später — die einzigen Nahdaten, die die Menschheit je über die Eisriesen gesammelt hat. Jeder Vorschlag, zu diesen Welten zurückzukehren, baut immer noch auf dem auf, was zwei Raumsonden von 1977 in ein paar Stunden sahen."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr zweites ist die Grenze, die sie erreichte. Durch den Übertritt in den interstellaren Raum wurden die Voyager-Sonden die ersten Instrumente, die die Grenze des Einflusses der Sonne von außen messen — Daten, die keine andere Mission je zurückgeschickt hat und keine für Jahrzehnte wird. Sie sind, gerade jetzt, die am weitesten entfernten von Menschen geschaffenen Objekte, die existieren, und senden immer noch."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr drittes Vermächtnis ist kulturell. Der Pale Blue Dot und die Golden Record gaben dem Weltraumzeitalter zwei seiner dauerhaftesten Bilder davon, was die Erde ist und was sie wert ist — eine Neuformulierung des Planeten als ein einzelnes, kleines, geteiltes Ding, das jede spezifische Entdeckung überlebt hat, die die Mission gemacht hat."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lektion von Voyager ist, das Zeitfenster zu nutzen, wenn es sich öffnet. Die planetare Konstellation, die die Grand Tour möglich machte, würde nicht warten und nicht für 176 Jahre wiederkommen; der Erfolg des Programms begann mit der Entscheidung, bereit zu sein, 1977 zu starten, auf genau dieser Welle, statt ein Jahrzehnt später, als es einfacher gewesen wäre. Manche Gelegenheiten werden vom Himmel gesetzt, nicht vom Zeitplan — und sie werden ergriffen oder verpasst."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lektion ist, mit weit mehr Reserve zu bauen, als der Plan erfordert. Die Voyager-Sonden wurden für eine Mission entworfen, die ein Zehntel so lang war wie die, die sie geflogen sind, und sie hielten durch, weil ihre Erbauer sie über-bauten — redundante Systeme, umprogrammierbare Computer, Energie im Überfluss. Ehrgeiz, der nur für die erwartete Mission plant, endet mit der erwarteten Mission; die, die weitermachen, sind die, die für mehr gebaut wurden, als man von ihnen verlangt hat."
+    }
+  ]
+}

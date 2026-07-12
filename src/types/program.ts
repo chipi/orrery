@@ -44,8 +44,15 @@ export interface ProgramBase {
   related_programs?: string[];
   badge?: string;
   see_also?: ProgramSeeAlso[];
+  surface_sites?: ProgramSurfaceSite[];
   links: ProgramLink[];
 }
+
+export type ProgramSurfaceSite = {
+  surface: 'moon' | 'mars' | 'earth';
+  site: string;
+  label: string;
+};
 
 export type ProgramProseBlock = { type: 'prose'; md: string };
 export type ProgramFigureBlock = {

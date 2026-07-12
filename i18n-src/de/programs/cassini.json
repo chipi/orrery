@@ -1,0 +1,84 @@
+{
+  "name": "Cassini",
+  "tagline": "Ein busgroßer Roboter verbrachte dreizehn Jahre in der Umlaufbahn um Saturn — und fand auf einem Mond, den niemand beachtete, einen Ozean, der Leben beherbergen könnte.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "In den 1990er Jahren war Saturn dreimal gesehen worden, und nur im Vorbeifliegen: Pioneer 11 und die beiden Voyager waren jeweils in wenigen Stunden durch das System gefegt und hatten faszinierende Blicke auf eine Welt mit Ringen, Dutzenden von Monden und einem riesigen, von Dunst verhüllten Mond namens Titan geliefert, dessen Oberfläche keine Kamera durchdringen konnte. Ein Vorbeiflug kann einen Ort fotografieren; er kann nicht dort leben. Um Saturn zu verstehen — seine Ringe, sein Wetter, seine unwahrscheinliche Familie von Monden — müsste eine Raumsonde anhalten und bleiben."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini wurde genau dafür gebaut, und sie wurde von einer Koalition gebaut: Die NASA lieferte den Orbiter, die European Space Agency lieferte eine Landesonde namens Huygens, um durch Titans Dunst zu fallen, und Italien baute die Hochgewinnantenne. Sie startete 1997 als eine der größten und leistungsfähigsten interplanetaren Sonden, die je geflogen sind — mit einem siebenjährigen, zwei Milliarden Kilometer langen Flug vor sich, nur um den Planeten zu erreichen, für dessen Erforschung sie konzipiert war."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Das Hauptziel bestand darin, Saturns erster ständiger Bewohner zu werden: in eine Umlaufbahn einzutreten und Jahre zu bleiben, um die Atmosphäre des Planeten, seine Ringe, sein Magnetfeld und seine Monde über den langsamen Wechsel der saturnischen Jahreszeiten hinweg zu studieren — die ausdauernde, geduldige Wissenschaft, die kein Vorbeiflug leisten kann. Hauptziel war Titan, der einzige Mond, der groß genug ist, um eine dichte Atmosphäre zu halten, und das große Geheimnis des äußeren Sonnensystems."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/cassini/01"
+      },
+      "caption": "Cassini trug die europäische Sonde Huygens sieben Jahre lang huckepack, dann setzte sie sie aus, um mit dem Fallschirm auf Titan zu landen. Der Orbiter selbst sollte dreizehn Jahre lang Saturn umkreisen, zwischen den Monden hindurchfliegen und am Ende zwischen dem Planeten und seinen Ringen.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Das zweite Ziel gehörte Huygens: durch Titans orangefarbenen Dunst hinabzusteigen und auf einer Oberfläche zu landen — oder aufzuschlagen —, die niemand je gesehen hatte, und herauszufinden, ob der Mond wirklich die Seen und Flüsse aus flüssigem Methan hatte, die die Theorie vorhersagte. Es war ein einziger Versuch ohne Rückkehr bei der fernsten Landung, die je versucht wurde."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Cassini erreichte Saturn 2004 und ging in eine Umlaufbahn. Monate später setzte sie Huygens aus, die im Januar 2005 mit dem Fallschirm durch Titans Dunst fiel und die ersten Bilder von der Oberfläche eines Mondes im äußeren Sonnensystem zurückschickte: eine düstere, orangefarbene Ebene, übersät mit abgerundeten Kieseln aus Wassereis, geformt von Flüssen aus flüssigem Methan. Sie bleibt die einzige Landung, die die Menschheit je jenseits des Asteroidengürtels vorgenommen hat."
+    },
+    {
+      "type": "prose",
+      "md": "Die eigene große Entdeckung des Orbiters kam von einem Mond, von dem fast niemand erwartet hatte, dass er von Bedeutung sein würde. Beim Vorbeifliegen am winzigen Enceladus fand Cassini gewaltige Fontänen aus Wassereis und Dampf, die aus Rissen an seinem Südpol ausbrachen — der Beweis für einen globalen Ozean aus flüssigem Wasser unter dem Eis, warm und salzig und durchsetzt mit organischen Molekülen. Ein gefrorener Fleck von fünfhundert Kilometern Durchmesser erwies sich als einer der vielversprechendsten Orte im Sonnensystem für die Suche nach Leben."
+    },
+    {
+      "type": "prose",
+      "md": "Cassini arbeitete dreizehn Jahre lang, weit über ihre geplante Mission hinaus, bis ihr der Treibstoff ausging. Anstatt zu riskieren, dass sie irgendwann auf Enceladus oder Titan abstürzt und diese mit irdischen Mikroben kontaminiert, wählten die Missionsplaner ein bewusstes Ende: zweiundzwanzig Tauchgänge durch die unerforschte Lücke zwischen Saturn und seinen Ringen, Datenübertragung bis zuletzt, und dann ein finaler Sturz in die Atmosphäre des Planeten im September 2017, sendend bis sie verglühte."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Die Geschichte von Cassini zeigt, was Geduld einbringt. Die Voyager hatten Saturn an einem Tag gezeigt und waren weitergezogen; Cassini blieb über ein Jahrzehnt, und fast alles, was sie Bedeutsames fand, kam davon, lange genug dort zu sein, um zuzusehen — wie ein Sturm den ganzen Planeten umhüllte, eine Jahreszeit sich wandelte, ein Mond beim vierhundertsten Orbit nahe genug vorbeikam, um zu offenbaren, was der erste Vorbeiflug übersehen hatte. Ihre Entdeckungen waren keine glücklichen Blicke, sondern der Lohn der Beharrlichkeit."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr folgenreichster Fund schrieb um, wo wir nach Leben suchen. Vor Cassini konzentrierte sich die Suche nach bewohnbaren Orten auf Mars und das warme innere Sonnensystem. Enceladus — klein, gefroren, weit von der Sonne entfernt — hätte tot sein müssen. Stattdessen schleuderte er die Zutaten des Lebens in den Weltraum, flüssig gehalten durch die biegende Anziehungskraft von Saturns Gravitation. Cassini verwandelte das äußere Sonnensystem, lange für eine gefrorene Einöde gehalten, in ein plausibles Zuhause für Ozeane und für alles, was Ozeane bergen könnten."
+    },
+    {
+      "type": "prose",
+      "md": "Und ihr Ende war ebenso sehr eine moralische Entscheidung wie eine technische. Eine Raumsonde, die zwei möglicherweise bewohnbare Ozeanwelten entdeckt hatte, konnte nicht zu dem werden, was sie kontaminiert. Also flogen ihre Betreiber sie absichtlich in Saturn, opferten die Maschine, um genau die Orte zu schützen, die sie gefunden hatte — planetare Erforschung übernahm Verantwortung für ihre eigene Reichweite."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Cassinis erstes Vermächtnis ist Saturn selbst, verwandelt von einer Welt, die im Vorbeifliegen gesehen wurde, in den am besten verstandenen Planeten des äußeren Sonnensystems — seine Ringe, sein Wetter, sein Magnetfeld und seine Dutzenden von Monden kartiert über dreizehn Jahre kontinuierlicher Beobachtung, die keine zukünftige Mission zu wiederholen plant."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr zweites sind Enceladus und Titan: zwei Ozeanwelten und eine Methanwelt, die durch Cassinis Daten in die vorderste Reihe der Orte gerückt wurden, zu denen sich eine Rückkehr auf der Suche nach Leben lohnt. Jeder Vorschlag, im äußeren Sonnensystem nach Biologie zu suchen, beginnt nun mit dem, was Cassini fand."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr drittes ist das Modell der Mission selbst — ein wirklich internationales Flaggschiff, NASA und Europa flogen zwei Jahrzehnte lang eine Raumsonde, das zeigte, wie viel mehr ein geduldiger Orbiter liefert als ein schneller Vorbeiflug, und die Vorlage für die Langzeitmissionen setzte, die folgten."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lehre aus Cassini ist, dass Bleiben besser ist als Durchreisen. Derselbe Planet, den die Voyager in Stunden charakterisierten, gab seine tiefsten Geheimnisse — den Ozean von Enceladus, den Methankreislauf von Titan — nur an eine Raumsonde preis, die bereit war, dreizehn Jahre in einer Umlaufbahn zu verbringen. Für die schwierigsten Fragen ist Präsenz über Zeit mehr wert als jeder einzelne brillante Blick."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lehre ist, dass Reichweite Verantwortung mit sich bringt. Cassini endete, indem sie sich selbst in Saturn flog, um die Ozeanmonde zu schützen, die sie entdeckt hatte — eine Anerkennung dessen, dass die Macht, eine möglicherweise lebendige Welt zu besuchen, mit der Pflicht einhergeht, sie nicht zu vergiften. Fähigkeit ohne diese Zurückhaltung ist keine Erforschung; es ist Hausfriedensbruch."
+    }
+  ]
+}

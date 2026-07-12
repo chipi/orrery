@@ -1,0 +1,84 @@
+{
+  "name": "Pioneer",
+  "tagline": "Prima che Voyager potesse percorrere i pianeti esterni, qualcuno doveva dimostrare che la strada era percorribile. Due piccole sonde andarono per prime — attraverso la fascia degli asteroidi, oltre Giove, e fuori.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "All'inizio degli anni '70 il sistema solare esterno non era solo inesplorato; si pensava fosse pericoloso da raggiungere. Tra Marte e Giove si estendeva la fascia degli asteroidi, e nessuno sapeva se una sonda spaziale potesse attraversarla senza essere distrutta dai detriti. Oltre ad essa, le fasce di radiazione di Giove erano ritenute letali per l'elettronica. I pianeti giganti meritavano una visita, ma il percorso verso di essi attraversava due pericoli che nessuna macchina aveva mai affrontato."
+    },
+    {
+      "type": "prose",
+      "md": "Le Pioneer furono le esploratrici inviate a scoprirlo. Piccole, stabilizzate per rotazione e relativamente semplici, Pioneer 10 e 11 furono costruite per andare per prime — per verificare se la fascia potesse essere attraversata e se una sonda potesse sopravvivere a un passaggio ravvicinato con Giove — in modo che le Voyager, molto più costose e già in fase di progettazione, sapessero in cosa stavano volando."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'obiettivo era la ricognizione nel senso più letterale: dimostrare la percorribilità del percorso. Attraversare la fascia degli asteroidi e misurare quanto fosse realmente una minaccia. Volare vicino a Giove e verificare se una sonda spaziale potesse resistere alle radiazioni e restituire dati utili. La scienza — i primi sguardi ravvicinati su Giove, e poi, per Pioneer 11, la prima visita a Saturno — era reale, ma lo scopo più profondo era aprire la strada."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/pioneer-10/01"
+      },
+      "caption": "Le Pioneer furono mantenute semplici e ruotate per stabilità, i loro strumenti leggevano campi e particelle tanto quanto scattavano fotografie. Il loro compito era sopravvivere alla fascia e alle radiazioni e riferire ciò che le Voyager avrebbero affrontato.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Ciascuna portava anche una piccola placca d'oro — progettata da Carl Sagan e Frank Drake — incisa con un uomo, una donna e una mappa verso il Sole. Fu un modesto ripensamento rispetto al successivo Golden Record di Voyager, ma fu il primo: il primo oggetto che l'umanità incise deliberatamente con un messaggio e lanciò verso le stelle."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Entrambe le paure si rivelarono infondate, ed era questo il punto. Pioneer 10 attraversò la fascia degli asteroidi senza danni — la fascia, si scoprì, era per lo più spazio vuoto — e nel dicembre 1973 divenne la prima sonda spaziale a raggiungere Giove, sopravvivendo alle radiazioni e restituendo le prime immagini ravvicinate del pianeta gigante e delle sue lune. Divenne poi il primo oggetto costruito dall'uomo posto su una traiettoria per lasciare completamente il sistema solare."
+    },
+    {
+      "type": "prose",
+      "md": "Pioneer 11 andò oltre. Dopo il proprio sorvolo di Giove utilizzò la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — la prima sonda spaziale a farlo — volando attraverso il piano degli anelli per verificare se la regione fosse sicura, e trovando il varco che le Voyager avrebbero usato un anno dopo. Le esploratrici avevano mappato i pericoli; il tour poteva procedere."
+    },
+    {
+      "type": "prose",
+      "md": "Le Pioneer continuarono a trasmettere per decenni mentre si allontanavano. L'ultimo debole segnale di Pioneer 10 fu ricevuto nel 2003, da oltre dodici miliardi di chilometri di distanza. Entrambe sono ancora là fuori, silenziose ora, planando verso le stelle — Pioneer 10 in direzione della stella Aldebaran, un viaggio che impiegherà circa due milioni di anni per completare."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di Pioneer è il lavoro non appariscente ed essenziale di andare per primi. Le Voyager sono ricordate per il Grand Tour; le Pioneer sono la ragione per cui il Grand Tour poté essere tentato. Assunsero i rischi che trasformarono pericoli sconosciuti in pericoli misurati — dimostrando che la fascia degli asteroidi era attraversabile e le radiazioni di Giove sopportabili — in modo che le missioni che le seguivano potessero essere progettate con fiducia invece che con paura. Qualcuno deve sempre testare la strada, ed è raramente quello che ottiene il riconoscimento."
+    },
+    {
+      "type": "prose",
+      "md": "È anche una storia di fare molto con poco. Le Pioneer erano veicoli modesti, più semplici ed economiche delle Voyager che seguirono, e tuttavia raggiunsero una serie di autentici primati — prime attraverso la fascia, prime a Giove, prime a Saturno, prime fuori dal sistema solare. Sono la prova che una piccola missione ben mirata può aprire una frontiera attraverso cui poi passa la missione di punta."
+    },
+    {
+      "type": "prose",
+      "md": "E portarono il primo messaggio. La placca Pioneer fu un gesto più discreto del Golden Record — un singolo foglio inciso piuttosto che una biblioteca di suoni — ma venne prima, e inquadrò l'idea che una sonda spaziale in partenza per sempre dovesse dire qualcosa su chi l'aveva inviata. Ogni messaggio che l'umanità ha da allora rivolto allo spazio profondo discende da quella piccola lastra d'oro imbullonata a un'esploratrice."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "La prima eredità di Pioneer è la strada che aprì. Dimostrando che la fascia degli asteroidi era attraversabile e le radiazioni di Giove sopportabili, convertì il sistema solare esterno da un pericolo teorico a una destinazione raggiungibile — l'abilitatore diretto di Voyager, Galileo, Cassini e di ogni missione verso i pianeti giganti da allora."
+    },
+    {
+      "type": "prose",
+      "md": "La seconda è un insieme di primati permanenti: prima attraverso la fascia, prima a Giove, prima a Saturno, primo oggetto su una traiettoria di fuga dal sistema solare. Quelle voci nel registro non scadono, e appartengono tutte a due piccole ed economiche sonde."
+    },
+    {
+      "type": "prose",
+      "md": "La terza è la placca — il primo messaggio deliberato dalla Terra al cosmo, e il modello per i Golden Record che seguirono. Pioneer stabilì che un veicolo in partenza per sempre dovesse portare qualche resoconto dei suoi creatori, e quell'idea è sopravvissuta alle missioni stesse."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di Pioneer è il valore dell'esploratrice. La cosa più importante che le Pioneer fecero fu ridurre l'incertezza per le missioni che le seguivano — trasformando supposizioni sulla fascia degli asteroidi e sulle radiazioni di Giove in numeri concreti su cui un progettista poteva costruire. Su qualsiasi frontiera reale, una sonda economica inviata per misurare il pericolo vale molto più del suo costo, perché permette alla missione successiva costosa di essere costruita per il mondo com'è piuttosto che come si temeva fosse."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda è che andare per primi raramente porta la gloria, e conta comunque. Le Pioneer sono meno famose delle Voyager che resero possibili, ma senza di esse il Grand Tour sarebbe stato un salto nell'ignoto piuttosto che un volo calcolato. Alcuni dei lavori più importanti sono la ricognizione che nessuno ricorda — e vale la pena farla bene proprio perché tutto ciò che viene dopo dipende da essa."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "sputnik",
+  "kind": "robotic-campaign",
+  "agency": "Roscosmos",
+  "agencies": [
+    "Roscosmos"
+  ],
+  "country": "USSR",
+  "start_year": 1957,
+  "end_year": 1958,
+  "status": "COMPLETED",
+  "epoch": "first-steps",
+  "hero": "fleet/sputnik/01",
+  "roster": [
+    {
+      "linked_id": "sputnik1",
+      "ref": "mission",
+      "year": 1957,
+      "note": "4 October 1957 — the first artificial satellite, a 58-centimetre polished sphere with four whip antennas that circled the Earth every 96 minutes and beeped on shortwave for three weeks"
+    },
+    {
+      "name": "Sputnik 2",
+      "year": 1957,
+      "note": "3 November 1957 — carried Laika, a Moscow street dog and the first living creature to orbit the Earth; the capsule had no way to bring her home"
+    },
+    {
+      "name": "Sputnik 3",
+      "year": 1958,
+      "note": "15 May 1958 — a 1.3-tonne geophysical laboratory, the elaborate science satellite the program had originally meant to launch first"
+    }
+  ],
+  "related_programs": [
+    "vostok",
+    "soviet-lunar"
+  ],
+  "see_also": [
+    {
+      "label": "Earth — the world it first circled",
+      "href": "/earth",
+      "kind": "body"
+    },
+    {
+      "label": "Vostok — the first humans follow",
+      "href": "/programs/vostok",
+      "kind": "program"
+    },
+    {
+      "label": "The Sputnik poster",
+      "href": "/posters",
+      "kind": "gallery"
+    }
+  ],
+  "links": [
+    {
+      "l": "Sputnik 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sputnik_1",
+      "t": "intro"
+    },
+    {
+      "l": "Sputnik 1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001B",
+      "t": "core"
+    },
+    {
+      "l": "The Sputnik crisis — how one beep changed the United States",
+      "u": "https://en.wikipedia.org/wiki/Sputnik_crisis",
+      "t": "deep"
+    }
+  ]
+}

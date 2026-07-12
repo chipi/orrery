@@ -1,0 +1,84 @@
+{
+  "name": "Mars Rovers",
+  "tagline": "Un quart de siècle de robots américains roulant sur Mars — d'un chariot de la taille d'un micro-ondes ayant parcouru quelques mètres à un astrobiologiste nucléaire mettant en cache de la roche pour le voyage de retour.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Les atterrisseurs Viking de 1976 avaient prouvé qu'un vaisseau spatial pouvait atteindre la surface de Mars et fonctionner — mais ils étaient coincés là où ils s'étaient posés, capables d'étudier uniquement ce qui se trouvait à portée d'un seul bras. Mars est une planète entière, son histoire inscrite dans un terrain qui s'étend sur des milliers de kilomètres, et un atterrisseur n'en voit qu'un point. Pour lire ce registre — pour trouver où l'eau a autrefois coulé, pour échantillonner des roches déposées il y a des milliards d'années — un robot devait pouvoir se déplacer."
+    },
+    {
+      "type": "prose",
+      "md": "Les Mars rovers sont la réponse de la NASA à ce problème sur vingt-cinq ans : une lignée de robots à roues, chacun plus grand et plus capable que le précédent, envoyés pour parcourir la planète et faire de la géologie de terrain en personne. Ils commencent avec une preuve de concept de la taille d'un micro-ondes et arrivent, un quart de siècle plus tard, à un laboratoire à propulsion nucléaire chassant les empreintes chimiques d'une vie ancienne."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'objectif a évolué à chaque génération, mais le fil conducteur est resté constant : suivre l'eau, puis suivre la question de la vie. Sojourner est parti uniquement pour prouver qu'un rover pouvait rouler sur Mars. Spirit et Opportunity ont été envoyés pour trouver des preuves géologiques d'un passé plus chaud et plus humide. Curiosity est allé demander si Mars avait jamais été habitable. Perseverance est allé chercher des signes que quelque chose avait réellement vécu — et commencer le travail de ramener de la roche martienne sur Terre."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/curiosity/01"
+      },
+      "caption": "Chaque rover était plus grand et plus intelligent que le précédent — de Sojourner, de la taille d'un micro-ondes, à Curiosity et Perseverance, de la taille de petites voitures, transportant des foreuses, des laboratoires et des caméras sur le sol martien lors de missions censées durer des mois et s'étirant sur des années.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Au fondement de tout cela se trouvait la mobilité comme instrument scientifique. Le véritable pouvoir d'un rover est qu'il peut aller voir — rouler jusqu'à la roche intéressante, grimper le rebord du cratère, traverser jusqu'à l'ancien lit de rivière — transformant Mars d'un simple site d'atterrissage en un paysage qu'un géologue peut arpenter, un trajet à la fois."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Les rovers ont largement survécu à leurs plans, et chacun a réécrit ce qu'avait été Mars. Sojourner, en 1997, a parcouru quelques mètres et prouvé le concept. Spirit et Opportunity, posés en 2004 pour des missions de quatre-vingt-dix jours, ont fonctionné respectivement pendant six et quatorze ans — Opportunity parcourant plus de quarante-cinq kilomètres, le plus long trajet sur un autre monde — et ont trouvé des preuves chimiques claires que de l'eau liquide s'était autrefois tenue à la surface."
+    },
+    {
+      "type": "prose",
+      "md": "Curiosity, déposé dans le cratère Gale en 2012 par une grue volante propulsée par fusée après une séquence d'atterrissage si audacieuse que ses concepteurs l'ont appelée sept minutes de terreur, a confirmé le cas : le cratère avait autrefois contenu un lac, avec la chimie qu'un être vivant aurait pu utiliser. Perseverance a suivi en 2021, atterrissant dans le delta d'une rivière ancienne pour chercher directement des signes de vie passée et sceller de la roche martienne dans des tubes scellés — la première étape d'une campagne visant à ramener des échantillons d'une autre planète sur Terre."
+    },
+    {
+      "type": "prose",
+      "md": "Perseverance transportait également un passager qui a fait sa propre histoire : Ingenuity, un petit hélicoptère qui en 2021 a effectué le premier vol motorisé et contrôlé sur une autre planète, puis a volé des dizaines de fois de plus — la preuve que Mars pouvait être explorée depuis les airs aussi bien que depuis le sol. Curiosity et Perseverance roulent toujours tous les deux."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "L'histoire des Mars rovers est un long argument, tracé en marques de roues, que Mars était autrefois un monde où la vie était possible. Chaque rover l'a fait avancer d'un pas : Sojourner a prouvé la méthode, les jumeaux ont prouvé l'eau, Curiosity a prouvé l'habitabilité, Perseverance est allé chasser la vie elle-même. Aucune mission isolée n'a réglé la question, mais ensemble ils ont transformé Mars d'un désert rouge et froid en une planète avec une jeunesse chaude et humide — et ont fait de la recherche de vie martienne ancienne une science sérieuse plutôt qu'une fantaisie."
+    },
+    {
+      "type": "prose",
+      "md": "C'est aussi une histoire de robots qui ont refusé de mourir. Spirit et Opportunity ont été construits pour quatre-vingt-dix jours et ont fonctionné pendant des années ; Opportunity a parcouru la longueur d'un marathon sur une planète, survivant aux tempêtes de poussière et à une roue coincée et à une décennie de nuits froides, jusqu'à ce qu'une tempête mondiale le réduise finalement au silence en 2018. Les rovers ont gagné une affection publique sincère presque unique parmi les machines — pleurés quand ils ont échoué, acclamés quand ils se sont réveillés — parce qu'ils étaient, indéniablement, des explorateurs, faisant au ralenti ce qu'un géologue humain ferait à pied."
+    },
+    {
+      "type": "prose",
+      "md": "Et la lignée est une étude d'ambition incrémentale. Personne n'aurait pu faire atterrir la complexité de grue volante et de mise en cache d'échantillons de Perseverance en 1997 ; il a fallu les quelques mètres de Sojourner pour justifier les jumeaux, les années des jumeaux pour justifier Curiosity, et le lac de Curiosity pour justifier l'envoi d'un rover pour chercher la vie et commencer le long chemin du retour d'échantillons. Chaque rover était la plateforme qui rendait le suivant concevable — un quart de siècle de construction de capacité une mission à la fois."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Le premier héritage des rovers est le Mars moderne : une planète désormais connue pour avoir eu de l'eau stagnante, une chimie habitable et une histoire chaude précoce, établie non par inférence mais par des robots qui ont roulé jusqu'aux roches et les ont lues. Le cas scientifique selon lequel Mars aurait pu autrefois héberger la vie repose presque entièrement sur leurs traces de roues."
+    },
+    {
+      "type": "prose",
+      "md": "Le deuxième est la technologie de mobilité de surface — la grue volante, la navigation autonome, l'énergie nucléaire, le repérage aérien d'Ingenuity — une boîte à outils construite rover par rover qui rend désormais possible d'explorer la surface d'une planète comme un paysage plutôt qu'un point, et dont toute future mission de surface, habitée ou robotique, hérite."
+    },
+    {
+      "type": "prose",
+      "md": "Le troisième est encore en transit : les tubes scellés de roche martienne que Perseverance met en cache, attendant qu'une future mission les ramène à la maison. Si cette campagne réussit, les rovers auront livré les premiers échantillons jamais ramenés de la surface d'une autre planète — le résultat d'un parcours de vingt-cinq ans."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La leçon des Mars rovers est que la mobilité change tout. Un atterrisseur étudie où il tombe ; un rover étudie où il choisit d'aller. En faisant bouger l'instrument, le programme a transformé un simple site d'atterrissage en la géologie d'une planète entière — un rappel que sur toute frontière, la capacité d'aller voir par soi-même vaut plus que n'importe quelle quantité d'observation fixe."
+    },
+    {
+      "type": "prose",
+      "md": "La leçon plus profonde est qu'une grande capacité se construit par étapes, pas par bonds. La sophistication de mise en cache d'échantillons de Perseverance était inimaginable à l'époque de Sojourner ; elle n'est devenue possible que parce que chaque rover a mérité le suivant. Les fins ambitieuses sont généralement atteintes non par une seule mission décisive mais par une lignée patiente, chaque membre prouvant suffisamment pour justifier celui qui suit — le progrès comme un relais, pas un sprint."
+    }
+  ]
+}

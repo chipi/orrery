@@ -1,0 +1,84 @@
+{
+  "name": "Voyager",
+  "tagline": "Dos sondas lanzadas en 1977 para recorrer los planetas exteriores, y nunca regresaron. Medio siglo después, siguen volando y siguen llamando a casa desde entre las estrellas.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Una vez cada 176 años, los cuatro planetas gigantes se alinean en el mismo lado del Sol. A mediados de la década de 1960, un joven ingeniero del Jet Propulsion Laboratory de la NASA, Gary Flandro, calculó lo que esa alineación hacía posible: una sola nave espacial podría pasar cerca de Júpiter, usar la gravedad del planeta para impulsarse hacia Saturno, luego Urano, luego Neptuno, visitando los cuatro en un solo vuelo que de otro modo requeriría décadas de misiones separadas. El problema era el calendario. La ventana se abría a finales de la década de 1970. Si se perdía, la siguiente oportunidad llegaría en la década de 2150."
+    },
+    {
+      "type": "prose",
+      "md": "El sistema solar exterior estaba, en aquel momento, casi completamente inexplorado. Las Pioneer apenas estaban llegando a Júpiter; Urano y Neptuno nunca habían sido más que puntos de luz en un telescopio. La NASA aprovechó la alineación y construyó dos robots casi idénticos para realizar el recorrido: robustos, de propulsión nuclear, y equipados con las mejores cámaras e instrumentos de la época, dirigidos a mundos que nadie había visto de cerca."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "El objetivo era un reconocimiento a una escala nunca intentada: una primera mirada cercana a Júpiter y Saturno, y —si las máquinas sobrevivían lo suficiente— la única mirada cercana que probablemente se obtendría de Urano y Neptuno durante generaciones. Dos naves espaciales volaron para que el fallo de una no perdiera todo el recorrido, y para que entre ambas pudieran cubrir trayectorias que ninguna sonda por sí sola podría volar."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/voyager-1/01"
+      },
+      "caption": "Cada Voyager llevaba sus instrumentos en un brazo, una gran antena parabólica siempre orientada hacia una Tierra que se empequeñecía, y un generador nuclear para funcionar donde la luz solar es demasiado débil para paneles solares. Fueron construidas para durar unos pocos años y alcanzar Saturno. Siguen funcionando.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Había un segundo objetivo, más extraño, añadido por un comité dirigido por el astrónomo Carl Sagan: cada nave llevaría un mensaje. Atornillado a su costado había un disco fonográfico chapado en oro que contenía los sonidos de la Tierra —música, saludos en decenas de idiomas, el llanto de un bebé, canto de pájaros— sellado para quien, o lo que sea, pudiera encontrarlo en el futuro profundo. Era una misión científica que también, deliberadamente, se extendía hacia la eternidad."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "El recorrido cumplió más allá de su cometido. En Júpiter en 1979, las Voyager encontraron volcanes activos en la luna Io —los primeros vistos más allá de la Tierra— y el hielo liso de Europa ocultando lo que parecía un océano. En Saturno resolvieron los anillos en miles de hebras intrincadas y pasaron cerca de la luna Titán envuelta en neblina. Ese sobrevuelo de Titán desvió la trayectoria de Voyager 1 hacia arriba y fuera del plano de los planetas, enviándola en ascenso hacia el borde del sistema solar."
+    },
+    {
+      "type": "prose",
+      "md": "Voyager 2 voló el Grand Tour completo. Alcanzó Urano en 1986 y Neptuno en 1989 —la única nave espacial que jamás haya visitado ninguno de esos mundos— encontrando un planeta volcado de costado, un gigante azul profundo con los vientos más rápidos del sistema solar, y una luna, Tritón, con géiseres de nitrógeno que erupcionaban hacia el espacio. Hasta el día de hoy, todo lo que la humanidad sabe de cerca sobre los gigantes de hielo fue recogido en esos dos breves sobrevuelos."
+    },
+    {
+      "type": "prose",
+      "md": "Entonces la misión simplemente continuó. En 1990, desde más allá de Neptuno, Voyager 1 giró su cámara hacia atrás y fotografió la Tierra como un solo punto de luz. En 2012 cruzó la heliopausa —la frontera donde el viento del Sol cede al gas entre las estrellas— y Voyager 2 la siguió en 2018. Casi cincuenta años después del lanzamiento, ambas siguen transmitiendo, su energía desvaneciéndose, sus instrumentos apagados uno por uno para prolongar la señal un poco más."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La historia de Voyager es la de máquinas que sobrevivieron a todas las expectativas de sus creadores. Fueron diseñadas para un vuelo de cuatro años a Saturno con electrónica de la década de 1970 —ordenadores con menos memoria que un llavero moderno— y han funcionado durante casi medio siglo, reprogramadas a través de miles de millones de kilómetros por ingenieros que parchean código en una nave espacial tan distante que una orden tarda casi un día en llegar. La cualidad definitoria de la misión es la resistencia: una apuesta por la robustez y el margen que dio resultado mucho más allá del plan de nadie."
+    },
+    {
+      "type": "prose",
+      "md": "Su momento más recordado no llevó ciencia alguna. Cuando Voyager 1 dejaba atrás los planetas, Carl Sagan argumentó que debía darse la vuelta y fotografiar la Tierra una última vez —no por datos, sino por perspectiva. La imagen que devolvió mostraba el hogar como un pálido punto azul, una mota de polvo en un rayo de sol, y las palabras de Sagan al respecto —que todos los que alguna vez vivieron lo hicieron en esa partícula— se convirtieron en uno de los pasajes más citados de la literatura espacial. Una sonda de reconocimiento había, casi por accidente, tomado el retrato definitivo de la pequeñez humana."
+    },
+    {
+      "type": "prose",
+      "md": "Y está el disco. Cada Voyager lleva un mensaje sin esperanza realista de ser encontrado jamás —las probabilidades de que cualquiera de las naves pase cerca de otra estrella en un plazo temporal significativo son infinitesimalmente pequeñas. Pero el objetivo nunca fueron realmente los alienígenas. El Golden Record era un espejo: un intento de decir quiénes somos, dirigido al futuro y a nosotros mismos, enviado en los únicos dos objetos que hemos lanzado en una trayectoria que abandona el sistema solar para siempre."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "El primer legado de Voyager es el mapa en sí. Sus sobrevuelos convirtieron Júpiter, Saturno, Urano y Neptuno y sus lunas de puntos de luz en lugares, y los encuentros con Urano y Neptuno siguen siendo —décadas después— los únicos datos cercanos que la humanidad ha recogido sobre los gigantes de hielo. Cada propuesta para regresar a esos mundos aún se basa en lo que dos naves espaciales de 1977 vieron en unas pocas horas."
+    },
+    {
+      "type": "prose",
+      "md": "Su segundo legado es la frontera que alcanzó. Al cruzar al espacio interestelar, las Voyager se convirtieron en los primeros instrumentos que midieron el límite de la influencia del Sol desde el exterior —datos que ninguna otra misión ha devuelto jamás, y ninguna lo hará durante décadas. Son, ahora mismo, los objetos fabricados por humanos más distantes que existen, y aún siguen enviando datos."
+    },
+    {
+      "type": "prose",
+      "md": "Su tercer legado es cultural. El Pale Blue Dot y el Golden Record dieron a la era espacial dos de sus imágenes más duraderas de lo que es la Tierra y lo que vale —un reencuadre del planeta como una cosa única, pequeña y compartida que ha sobrevivido a cada descubrimiento específico que hizo la misión."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección de Voyager es aprovechar la ventana cuando se abre. La alineación planetaria que hizo posible el Grand Tour no esperaría, y no volvería a ocurrir durante 176 años; el éxito del programa comenzó con la decisión de estar listos para lanzar en 1977, en esa marea específica, en lugar de una década después cuando habría sido más fácil. Algunas oportunidades las establece el cielo, no el calendario, y se aprovechan o se pierden."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda es construir con mucho más margen del que requiere el plan. Las Voyager fueron diseñadas para una misión de una décima parte de lo que han volado, y resistieron porque sus creadores las sobredimensionaron —sistemas redundantes, ordenadores reprogramables, energía de sobra. La ambición que planifica solo para la misión esperada termina con la misión esperada; las que continúan son las que se construyeron para más de lo que se les pidió hacer."
+    }
+  ]
+}

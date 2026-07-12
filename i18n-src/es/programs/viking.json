@@ -1,0 +1,84 @@
+{
+  "name": "Viking",
+  "tagline": "En 1976 dos módulos estadounidenses se posaron en Marte, enviaron las primeras fotografías desde su superficie y llevaron a cabo un experimento para responder a la pregunta más antigua sobre el planeta: ¿hay algo vivo allí?",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "A mediados de la década de 1970 Marte había sido vislumbrado pero nunca tocado. Los sobrevuelos de Mariner y un orbitador habían reemplazado el viejo sueño de canales y civilizaciones con una imagen más fría —un desierto craterizado, aparentemente muerto— pero la superficie en sí misma permanecía desconocida, y la pregunta que había obsesionado a Marte durante un siglo seguía abierta. ¿Había vida? Una fotografía desde órbita no podía responderla. Alguien tenía que aterrizar, mirar y analizar el suelo."
+    },
+    {
+      "type": "prose",
+      "md": "Viking fue la misión interplanetaria más ambiciosa que Estados Unidos había intentado hasta entonces: dos naves espaciales idénticas, cada una un orbitador que transportaba un módulo de aterrizaje, enviadas para alcanzar Marte, elegir un lugar seguro desde arriba y posar un robot suavemente en un mundo cuya superficie nadie había visto desde el suelo. Nada había aterrizado jamás en Marte y funcionado; los intentos soviéticos habían fallado en cuestión de segundos. Viking tenía que tener éxito dos veces."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "El objetivo tenía dos mitades. Los orbitadores cartografiarían Marte desde arriba con un detalle que ningún sobrevuelo podría lograr —suficiente para elegir lugares de aterrizaje y estudiar el planeta en su conjunto. Y los módulos de aterrizaje harían lo que nada había hecho antes: operar en la superficie marciana, fotografiarla, medir su clima y suelo, y ejecutar un conjunto de experimentos diseñados para detectar la química de la vida."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/viking-1/01"
+      },
+      "caption": "Cada Viking era dos naves espaciales en una: un orbitador para explorar y retransmitir, y un módulo de aterrizaje que se separaba, encendía sus motores y se posaba sobre tres patas. Los módulos de aterrizaje llevaban cámaras, una estación meteorológica, una pala para recoger suelo y un laboratorio biológico en miniatura.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "La cuestión de la vida era la que le importaba al público, y Viking se la tomó en serio. Cada módulo de aterrizaje llevaba tres experimentos biológicos separados, diseñados para alimentar el suelo marciano y observar los signos de metabolismo —la búsqueda más directa de vida extraterrestre jamás intentada, entonces o después."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Funcionó, dos veces. El módulo de aterrizaje Viking 1 se posó en Chryse Planitia el 20 de julio de 1976 y devolvió la primera fotografía jamás tomada desde la superficie de Marte —una llanura anaranjada cubierta de rocas bajo un cielo pálido. Viking 2 se posó en Utopia Planitia seis semanas después. Entre ambos, los dos módulos de aterrizaje operaron durante años, enviando panoramas, datos meteorológicos de temporadas y la primera química detallada del suelo marciano."
+    },
+    {
+      "type": "prose",
+      "md": "Los resultados biológicos fueron la gran ambigüedad de la misión. Uno de los tres experimentos devolvió una señal que, en la Tierra, habría sugerido vida; los otros no, y el instrumento de química del módulo de aterrizaje no encontró ninguna molécula orgánica en el suelo. El consenso científico se inclinó por una química inusual que imitaba la vida en el polvo marciano en lugar de biología —pero el resultado fue lo suficientemente cercano, y lo suficientemente extraño, como para que todavía se discuta décadas después. Viking no encontró vida; tampoco cerró completamente el caso."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que Viking sí estableció fue que Marte podía ser alcanzado, que se podía aterrizar en él y que se podía trabajar —no una sino dos veces, durante años. Los orbitadores cartografiaron casi todo el planeta, revelando los grandes volcanes y cañones en su totalidad, y los módulos de aterrizaje demostraron que un robot podía sobrevivir y funcionar en la superficie marciana a lo largo de las estaciones. Cada róver que desde entonces ha cruzado Marte se apoya en esa demostración."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La historia de Viking es la de una misión que respondió a todas las preguntas salvo a aquella por la que más se la recuerda. Fue un triunfo de la ingeniería —dos aterrizajes exitosos en Marte en un momento en que nadie había logrado ni siquiera uno— y un tesoro de ciencia, y sin embargo es inseparable de los experimentos biológicos y su resultado exasperante y sin resolver. Viking es el caso excepcional en el que el objetivo principal no regresó como un sí o un no sino como un quizás, y ese quizás ha sobrevivido a todo lo demás."
+    },
+    {
+      "type": "prose",
+      "md": "Esa ambigüedad fue, a su manera, honesta. Los diseñadores de Viking habían construido el experimento de detección de vida más cuidadoso que podían, y cuando los datos regresaron contradictorios los reportaron como contradictorios en lugar de forzarlos hacia una respuesta limpia. La lección que la comunidad extrajo —que detectar vida es mucho más difícil de lo que parece, y que un solo experimento ingenioso puede engañarte— reformó la manera en que se ha perseguido la búsqueda de vida desde entonces, hacia la habitabilidad y la evidencia acumulada lentamente en lugar de una sola prueba decisiva."
+    },
+    {
+      "type": "prose",
+      "md": "Y bajo el drama biológico, Viking realizó discretamente el trabajo fundamental. Convirtió a Marte de un lugar visto desde la distancia en un lugar con verdad sobre el terreno —química del suelo real, clima real, fotografías reales desde la superficie— y demostró toda la difícil cadena de alcanzar Marte y aterrizar intacto. Los róveres que ahora recorren el planeta son descendientes directos de Viking; caminan sobre la demostración que dejó."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "El primer legado de Viking es el aterrizaje en sí mismo: la primera llegada exitosa a la superficie de Marte, y la demostración de que una nave espacial podía alcanzar el planeta, posarse con seguridad y operar durante años. Cada módulo de aterrizaje y róver marciano desde entonces —Pathfinder, los gemelos geólogos, Curiosity, Perseverance— hereda el camino que Viking abrió."
+    },
+    {
+      "type": "prose",
+      "md": "El segundo es la verdad sobre el terreno. La química del suelo de Viking, los registros meteorológicos y los panoramas de superficie dieron a la ciencia planetaria sus primeros datos reales desde el suelo marciano, y sus mapas orbitales globales enmarcaron la geología que misiones posteriores fueron a investigar. La imagen moderna de Marte comienza aquí."
+    },
+    {
+      "type": "prose",
+      "md": "El tercero es la cuestión de la vida, dejada abierta de manera productiva. El resultado biológico ambiguo de Viking —y la humildad que forzó— reformó toda la búsqueda de vida más allá de la Tierra, alejándola de pruebas únicas decisivas hacia la acumulación paciente de evidencia que guía la búsqueda en Marte, Encélado y Europa hoy."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección de Viking es que las preguntas más importantes rara vez se resuelven en un solo experimento. Viking preguntó si Marte albergaba vida con el mejor instrumento que su era pudo construir, y obtuvo una respuesta que no fue ni sí ni no —y la respuesta honesta fue reportar la ambigüedad, no fabricar certeza. Las preguntas difíciles suelen responderse mediante el peso lento de la evidencia, no con un resultado limpio, y confundir una prueba ingeniosa con una definitiva es cómo uno se engaña a sí mismo."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda es el valor de demostrar toda la cadena. El don duradero de Viking no fue ninguna medición individual sino la demostración de que alcanzar Marte y aterrizar intacto era posible y repetible. Una vez que algo difícil se ha hecho —y se ha hecho dos veces— deja de ser una apuesta y se convierte en una base sobre la que otros pueden construir. A veces el resultado más grande que una misión devuelve es simplemente que puede hacerse."
+    }
+  ]
+}

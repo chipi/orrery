@@ -2,14 +2,50 @@
   "name": "Curiosity",
   "type": "ROVER · ACTIVE",
   "first": "First nuclear-powered Mars rover; first sky-crane landing",
+  "dispatch": "Curiosity is a nuclear-powered laboratory the size of a small car, and getting it down was the hard part. Too heavy for airbags, it was lowered onto Mars in 2012 by a rocket-powered sky crane in a sequence so risky its planners called it seven minutes of terror — and it worked on the first try. Since then it has drilled its way across Gale Crater and answered the question it was sent to ask: the crater once held a lake, with the chemistry a living thing could have used. Mars had been habitable. Curiosity is still driving, climbing a mountain of layered rock that reads like the planet’s own history book.",
   "description": "The flagship mission that defined modern Mars exploration. Curiosity is car-sized, plutonium-powered, and has driven 32+ km up Mount Sharp since landing in Gale Crater in 2012. Its instruments confirmed Mars once had habitable conditions — flowing water, complex organics, the chemistry life would need. The 'seven minutes of terror' EDL sequence, ending with a sky-crane lowering the rover on cables, is now NASA's standard for delivering large payloads to Mars surface.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Atlas V 541 lifts off from Cape Canaveral SLC-41.", "type": "nominal" },
-    { "met": 1, "label": "TMI BURN", "note": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.", "type": "nominal" },
-    { "met": 16, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
-    { "met": 119, "label": "TCM-3", "note": "Final pre-EDL correction; trajectory targets Gale Crater landing ellipse.", "type": "nominal" },
-    { "met": 254, "label": "EDL — SEVEN MINUTES OF TERROR", "note": "Atmospheric entry, supersonic parachute, sky-crane retro-rockets, rover lowered on cables.", "type": "nominal" },
-    { "met": 254.005, "label": "TOUCHDOWN", "note": "Curiosity arrives at Aeolis Palus, Gale Crater, 2012-08-06 05:17:57 UTC.", "type": "nominal" },
-    { "met": 254.01, "label": "FIRST IMAGES", "note": "Hazcam returns first low-resolution image of the surface.", "type": "info" }
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 541 lifts off from Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injection (3.61 km/s ∆v) sends MSL onto a heliocentric Mars-bound trajectory.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "TCM-1",
+      "note": "First mid-course correction.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "TCM-3",
+      "note": "Final pre-EDL correction; trajectory targets Gale Crater landing ellipse.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — SEVEN MINUTES OF TERROR",
+      "note": "Atmospheric entry, supersonic parachute, sky-crane retro-rockets, rover lowered on cables.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "TOUCHDOWN",
+      "note": "Curiosity arrives at Aeolis Palus, Gale Crater, 2012-08-06 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "FIRST IMAGES",
+      "note": "Hazcam returns first low-resolution image of the surface.",
+      "type": "info"
+    }
   ]
 }

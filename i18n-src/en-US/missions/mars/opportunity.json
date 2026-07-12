@@ -2,14 +2,50 @@
   "name": "Opportunity",
   "type": "ROVER · FLOWN",
   "first": "Longest-driving Mars rover (45.16 km); 14-year surface lifetime against a 90-sol design",
+  "dispatch": "Opportunity drove a marathon across another planet. Spirit’s twin, landed in 2004 for a ninety-day mission, it worked for fourteen years and crossed more than forty-five kilometres — the longest distance any vehicle has travelled on any world. It came down, by luck, in a small crater whose walls exposed exactly the water-laid rock it was sent to find, and then it just kept going, crater to crater, reading the ancient water story of Mars mile after mile. A planet-wide dust storm finally silenced it in 2018.",
   "description": "Opportunity (MER-B) hit a planetary jackpot — its airbag-cocooned lander bounced 26 times across Meridiani Planum and rolled into a 22-m crater (Eagle) by sheer luck, surrounded by exposed bedrock a rover could read without driving. First images showed jarosite + \"blueberry\" hematite concretions, the strongest mineral evidence to that point of standing liquid water on early Mars. Over 14 years 47 days Opportunity traversed 45.16 km — the Mars rover marathon record — visiting Endurance, Victoria, and Endeavour craters. A planet-wide dust storm in June 2018 blocked sunlight from its solar panels; final transmission was 2018-06-10, and NASA declared end-of-mission 2019-02-13.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Delta II 7925H Heavy from Cape Canaveral LC-17B.", "type": "nominal" },
-    { "met": 12, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
-    { "met": 195, "label": "TCM-4", "note": "Final pre-EDL trim.", "type": "nominal" },
-    { "met": 202, "label": "EDL", "note": "Heat shield, parachute, retro-rockets, airbags.", "type": "info" },
-    { "met": 202.01, "label": "TOUCHDOWN — INTO EAGLE CRATER", "note": "Bounced 26 times. Rolled into a 22-m crater by chance, surrounded by exposed bedrock.", "type": "info" },
-    { "met": 5300, "label": "FINAL TRANSMISSION", "note": "2018-06-10. Planet-wide dust storm cuts solar power.", "type": "warning" },
-    { "met": 5543, "label": "MISSION END", "note": "NASA declares end-of-mission 2019-02-13. 45.16 km traversed.", "type": "warning" }
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Delta II 7925H Heavy from Cape Canaveral LC-17B.",
+      "type": "nominal"
+    },
+    {
+      "met": 12,
+      "label": "TCM-1",
+      "note": "First mid-course correction.",
+      "type": "nominal"
+    },
+    {
+      "met": 195,
+      "label": "TCM-4",
+      "note": "Final pre-EDL trim.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "EDL",
+      "note": "Heat shield, parachute, retro-rockets, airbags.",
+      "type": "info"
+    },
+    {
+      "met": 202.01,
+      "label": "TOUCHDOWN — INTO EAGLE CRATER",
+      "note": "Bounced 26 times. Rolled into a 22-m crater by chance, surrounded by exposed bedrock.",
+      "type": "info"
+    },
+    {
+      "met": 5300,
+      "label": "FINAL TRANSMISSION",
+      "note": "2018-06-10. Planet-wide dust storm cuts solar power.",
+      "type": "warning"
+    },
+    {
+      "met": 5543,
+      "label": "MISSION END",
+      "note": "NASA declares end-of-mission 2019-02-13. 45.16 km traversed.",
+      "type": "warning"
+    }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "name": "New Horizons",
+  "tagline": "Levou nove anos e meio e o lançamento mais rápido da história para alcançar Plutão — e a bola morta de gelo que todos esperavam revelou-se um mundo jovem e ativo.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Na virada do milênio, todos os planetas do sistema solar haviam sido visitados por uma espaçonave, exceto um. Plutão — pequeno, frio e a três bilhões de quilômetros de distância — permanecia um borrão mesmo nos melhores telescópios, o último mundo inexplorado dos nove clássicos. Ele também estava se afastando: sua atmosfera fina deveria congelar e colapsar à medida que se movia para longe do Sol, e sua órbita logo o levaria para décadas de sombra. Se alguém ia ver Plutão ainda com ar, tinha que ir logo."
+    },
+    {
+      "type": "prose",
+      "md": "New Horizons foi a missão construída para vencer esse relógio, e foi projetada em torno de velocidade e economia. Pequena, compacta e comparativamente barata, foi lançada em 2006 no foguete mais potente disponível, recebeu um impulso gravitacional de Júpiter e foi enviada cruzando o sistema solar mais rápido que qualquer coisa antes dela — uma corrida de nove anos e meio para um único sobrevoo irrepetível."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo era o primeiro olhar próximo de Plutão e sua grande lua Charon: mapeá-los, medir a atmosfera fina de Plutão antes que pudesse congelar, e transformar o último planeta clássico inexplorado de um borrão em um lugar. Como a espaçonave passaria em enorme velocidade e não poderia parar, tudo tinha que funcionar em poucas horas, executado por uma máquina longe demais para ser ajudada em tempo real — um comando levava horas para alcançá-la."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "missions/new-horizons/01"
+      },
+      "caption": "New Horizons foi construída leve e rápida, com um único conjunto de instrumentos e sem combustível para desacelerar. Ela teve uma passagem por Plutão, a mais de 50.000 quilômetros por hora, com seus criadores esperando horas para cada sinal atravessar o sistema solar.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Um segundo objetivo foi incluído uma vez que o primeiro foi alcançado: se a espaçonave sobrevivesse a Plutão, ela voaria adiante no Cinturão de Kuiper — o vasto anel de corpos gelados além de Netuno — e, se o combustível permitisse, visitaria um deles, alcançando uma classe de objeto que nenhuma missão jamais tinha visto."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Em 14 de julho de 2015, após nove anos e meio, New Horizons passou por Plutão — e derrubou a expectativa de um mundo morto. Cientistas se prepararam para uma bola craterizada e geologicamente congelada; em vez disso, encontraram montanhas imponentes de gelo de água, uma vasta planície lisa de nitrogênio congelado em forma de coração e agitando-se com convecção lenta, névoas em camadas na atmosfera fina, e sinais de atividade geológica em um mundo tão pequeno e frio que deveria há muito ter ficado inerte. Plutão tinha aparência jovem, era complexo e vivo com processos."
+    },
+    {
+      "type": "prose",
+      "md": "Então ela continuou. Três anos e meio depois, em 1 de janeiro de 2019, New Horizons passou por um pequeno corpo de dois lobos a mais de um bilhão e meio de quilômetros além de Plutão — mais tarde nomeado Arrokoth — o objeto mais distante já explorado de perto. Provou ser uma relíquia pristina do nascimento do sistema solar, duas esferas que haviam derivado suavemente juntas e se grudado, congeladas desde o início. A espaçonave ainda está voando, ainda retornando dados da borda externa do sistema planetário."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A história da New Horizons é uma missão que teve exatamente uma chance e a aproveitou. Não houve órbita, nem segunda passagem, nem desaceleração — nove anos e meio de viagem convergiram em algumas horas em Plutão, e tudo tinha que funcionar a uma distância onde a espaçonave estava, na prática, por conta própria. Que ela tenha executado o sobrevoo perfeitamente, a mais de cinquenta mil quilômetros por hora, é um triunfo discreto de fazer algo uma vez e fazer certo."
+    },
+    {
+      "type": "prose",
+      "md": "Sua surpresa duradoura foi quão errada a expectativa havia sido. A suposição de que um mundo pequeno, antigo e privado de sol deveria estar geologicamente morto revelou-se exatamente o oposto: Plutão é uma das superfícies mais ativas do sistema solar, com suas geleiras de nitrogênio fluindo e seu terreno jovem. New Horizons é um lembrete permanente de que o sistema solar externo continua se recusando a ser o deserto congelado que se supunha ser — primeiro Enceladus, depois Europa, e então um planeta anão do qual ninguém achava que valia a pena esperar algo."
+    },
+    {
+      "type": "prose",
+      "md": "E ela completou algo. Com Plutão, uma espaçonave havia agora visitado cada planeta clássico, fechando um reconhecimento do sistema solar que começou com as Mariners e Pioneers meio século antes. Então ela passou da linha de chegada para o Cinturão de Kuiper, alcançando os blocos de construção intocados dos próprios planetas — a missão que encerrou uma era de exploração e abriu a próxima."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado da New Horizons é o próprio Plutão — transformado em uma única tarde do último planeta clássico inexplorado em um mundo mapeado e geologicamente ativo, e a resposta definitiva para um século de especulação sobre o nono ponto de luz."
+    },
+    {
+      "type": "prose",
+      "md": "O segundo é Arrokoth e o Cinturão de Kuiper: o primeiro olhar próximo de uma relíquia pristina da formação do sistema solar, um corpo intocado desde o início, e a extensão da exploração para a vasta região gelada além de Netuno que nunca havia sido visitada."
+    },
+    {
+      "type": "prose",
+      "md": "O terceiro é um reconhecimento completado. New Horizons marcou o ponto em que cada planeta clássico havia sido visitado por uma espaçonave — o fechamento de um primeiro levantamento de cinquenta anos do sistema solar — ao mesmo tempo apontando o caminho adiante para os incontáveis mundos pequenos ainda não vistos."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição da New Horizons é que algumas chances vêm uma vez, e prontidão é tudo. Não houve segunda chance em Plutão: um único sobrevoo, executado por uma máquina longe demais para ajudar, após quase uma década de viagem. Missões construídas em torno de um momento irreversível têm sucesso ou fracassam com base na disciplina de se preparar para ele — e New Horizons é a prova de que um esforço pequeno, focado e bem treinado pode acertar a única chance que tem."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é desconfiar da suposição de que distante e antigo significa morto. Tudo sobre Plutão deveria estar congelado e acabado; quase nada estava. Repetidas vezes o sistema solar externo puniu a intuição de que frio, pequeno e distante do Sol equivalem a sem vida — um lembrete de que a maneira mais certa de ser surpreendido é decidir antecipadamente que um lugar não tem nada a mostrar."
+    }
+  ]
+}

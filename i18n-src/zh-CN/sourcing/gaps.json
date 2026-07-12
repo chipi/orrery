@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Orrery 无法在其许可标准（知识共享 / 公有领域，无水印，真实 — 非粉丝复制品）下获取的内容公开记录。我们宁愿展示诚实的空缺，也不愿使用我们无权使用的内容。遇到新障碍时在此追加记录。",
+  "note": "Orrery 无法在其许可标准（Creative Commons / 公有领域、无水印、真实——非粉丝复制品）下获取的内容公开清单。我们宁愿展示诚实的空缺,也不发布我们无权使用的内容。遇到新的障碍时在此追加。",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -15,19 +15,41 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "苏联早期载人项目的真实项目与任务徽章，与 NASA 徽章并列。",
-      "wall": "两个障碍同时存在。首先，大多数从未存在过：苏联直到 1975 年 Apollo–Soyuz 之前都没有采用任务徽章传统，因此 Vostok、Voskhod 和最初的 Soyuz 飞行根本没有徽章。其次，后来确实存在的内容 — Soyuz TM/TMA 远征徽章、Roscosmos 标志 — 受版权保护或仅以合理使用上传，从未以自由许可证发布。",
+      "want": "苏联早期载人项目的真实项目和任务徽章,与 NASA 徽章并列。",
+      "wall": "同时遇到两堵墙。首先,大多数根本不存在:苏联直到 1975 年 Apollo–Soyuz 才采用任务徽章传统,因此 Vostok、Voskhod 和最早的 Soyuz 飞行根本没有徽章。其次,后来存在的——Soyuz TM/TMA 远征徽章、Roscosmos 标志——受版权保护或仅以合理使用上传,从未以自由许可发布。",
       "checked": [
-        "Wikimedia Commons — 英文关键词搜索",
-        "Wikimedia Commons — 西里尔文搜索（Союз / Салют / Мир / Восход / Буран эмблема нашивка）",
-        "Wikimedia Commons — 分类树（苏联太空计划、Buran、Roscosmos）",
-        "ru.wikipedia — Восток-1、Восход-2、Союз-1、Союз-11、Мир、Буран 的文章图像"
+        "Wikimedia Commons——英文关键词搜索",
+        "Wikimedia Commons——西里尔文搜索(Союз / Салют / Мір / Восход / Буран эмблема нашивка)",
+        "Wikimedia Commons——分类树(苏联太空项目、Buran、Roscosmos)",
+        "ru.wikipedia——Восток-1、Восход-2、Союз-1、Союз-11、Мір、Буран 的文章图像"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ru 及类似网站 — 受版权保护或许可不明；astronaut.ru 是私人运营的百科全书，而非权利持有者",
-        "现代粉丝复制品（例如游戏美术师制作的 CC-BY Buran 标志）— 自由许可但非真实徽章"
+        "roscosmos.ru / astronaut.ru 及类似网站——受版权保护或许可不明;astronaut.ru 是私人运营的百科全书,非版权持有者",
+        "现代粉丝复制品(例如游戏美工制作的 CC-BY Buran 徽章)——自由许可但非真实徽章"
       ],
-      "resolution": "Roscosmos 机构标志作为诚实标记显示在每个受影响的项目卡片和页面上。",
+      "resolution": "Roscosmos 机构标志作为诚实标记出现在每个受影响的项目卡片和页面上。",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "chinese-mission-patches",
+      "area": "任务与项目徽章",
+      "subjects": [
+        "Tiangong",
+        "Shenzhou",
+        "China Manned Space"
+      ],
+      "want": "中国载人航天(CMS)项目标志和 Shenzhou 乘组徽章,与 Tiangong 和 Shenzhou 页面上的 NASA 徽章并列。",
+      "wall": "中国载人项目确实使用任务徽章——每个 Shenzhou 乘组都有一个——但 CMS 标志和 Shenzhou 徽章由中国载人航天工程办公室持有版权,未以自由许可发布。Wikimedia Commons 上一个都没有;这些搜索返回的唯一自由许可图像是不相关的 NASA 照片。",
+      "checked": [
+        "Wikimedia Commons——英文关键词搜索(China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
+        "Wikimedia Commons——China Manned Space Agency logo"
+      ],
+      "rejected": [
+        "cmse.gov.cn 及中国官方媒体图像——受版权保护,无自由许可",
+        "第三方粉丝复制的 Shenzhou 徽章——非真实且非自由"
+      ],
+      "resolution": "CNSA 机构标志作为诚实标记出现在 Tiangong 和 Shenzhou 卡片和页面上。",
       "status": "wall",
       "date": "2026-07-12"
     }

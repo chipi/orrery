@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Le registre public du contenu qu'Orrery n'a pas pu trouver sous son seuil de licence (Creative Commons / domaine public, sans filigrane, authentique — pas de reproductions de fans). Nous préférons montrer un manque honnête plutôt que de diffuser quelque chose que nous n'avons pas le droit d'utiliser. Ajoutez de nouveaux obstacles ici au fur et à mesure que nous les rencontrons.",
+  "note": "Le registre public du contenu qu'Orrery n'a pas pu sourcer selon ses critères de licence (Creative Commons / domaine public, sans filigrane, authentique — pas de reproductions de fans). Nous préférons montrer un vide honnête plutôt que diffuser quelque chose pour lequel nous n'avons pas le droit d'utilisation. Ajouter de nouveaux obstacles ici au fur et à mesure que nous les rencontrons.",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -15,19 +15,41 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "Écussons authentiques de programme et de mission pour les premiers programmes soviétiques habités, à placer aux côtés des insignes NASA.",
-      "wall": "Deux obstacles à la fois. Premièrement, la plupart n'ont jamais existé : l'URSS n'a pas adopté la tradition de l'écusson de mission avant Apollo–Soyuz en 1975, donc Vostok, Voskhod et les premiers vols Soyuz n'avaient simplement pas d'écusson. Deuxièmement, ce qui existe plus tard — les écussons d'expédition Soyuz TM/TMA, les emblèmes Roscosmos — est protégé par le droit d'auteur ou téléchargé uniquement sous usage équitable, jamais publié sous licence libre.",
+      "want": "Patchs de programme et de mission authentiques pour les premiers programmes habités soviétiques, à placer aux côtés des insignes NASA.",
+      "wall": "Deux obstacles à la fois. Premièrement, la plupart n'ont jamais existé : l'URSS n'a adopté la tradition des patchs de mission qu'à partir d'Apollo–Soyuz en 1975, donc Vostok, Voskhod et les premiers vols Soyuz n'avaient tout simplement pas de patch. Deuxièmement, ce qui existe plus tard — patchs d'expédition Soyuz TM/TMA, emblèmes Roscosmos — est protégé par le droit d'auteur ou téléchargé uniquement sous usage équitable, jamais publié sous licence libre.",
       "checked": [
         "Wikimedia Commons — recherche par mots-clés en anglais",
         "Wikimedia Commons — recherche en cyrillique (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
-        "Wikimedia Commons — arborescence de catégories (programme spatial soviétique, Buran, Roscosmos)",
+        "Wikimedia Commons — arborescence des catégories (programme spatial soviétique, Buran, Roscosmos)",
         "ru.wikipedia — images d'articles pour Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ru et similaires — protégés par le droit d'auteur ou licence incertaine ; astronaut.ru est une encyclopédie gérée par des particuliers, pas un détenteur de droits",
-        "Reproductions modernes de fans (par exemple un emblème Buran CC-BY par un artiste de jeu) — sous licence libre mais pas des insignes authentiques"
+        "roscosmos.ru / astronaut.ru et similaires — protégés par droit d'auteur ou licence incertaine ; astronaut.ru est une encyclopédie gérée par des particuliers, pas un détenteur de droits",
+        "Reproductions modernes de fans (par ex. un emblème Buran en CC-BY par un artiste de jeux vidéo) — sous licence libre mais pas des insignes authentiques"
       ],
-      "resolution": "Le logo de l'agence Roscosmos sert de marque honnête sur chaque carte de programme et page concernés.",
+      "resolution": "Le logo de l'agence Roscosmos sert de marque honnête sur chaque fiche de programme et page concernés.",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "chinese-mission-patches",
+      "area": "Insignes de mission et de programme",
+      "subjects": [
+        "Tiangong",
+        "Shenzhou",
+        "China Manned Space"
+      ],
+      "want": "L'emblème du programme China Manned Space (CMS) et les patchs d'équipage Shenzhou, à placer aux côtés des insignes NASA sur les pages Tiangong et Shenzhou.",
+      "wall": "Le programme habité chinois utilise bien des patchs de mission — chaque équipage Shenzhou en a un — mais l'emblème CMS et les insignes Shenzhou sont protégés par le droit d'auteur par la China Manned Space Agency, non publiés sous licence libre. Wikimedia Commons n'en contient aucun ; les seules images sous licence libre renvoyées par ces recherches sont des photographies NASA sans rapport.",
+      "checked": [
+        "Wikimedia Commons — recherche par mots-clés en anglais (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
+        "Wikimedia Commons — logo China Manned Space Agency"
+      ],
+      "rejected": [
+        "cmse.gov.cn et images des médias d'État chinois — protégés par droit d'auteur, pas de licence libre",
+        "Reproductions par des fans tiers de patchs Shenzhou — ni authentiques ni libres"
+      ],
+      "resolution": "Le logo de l'agence CNSA sert de marque honnête sur les fiches et pages Tiangong et Shenzhou.",
       "status": "wall",
       "date": "2026-07-12"
     }

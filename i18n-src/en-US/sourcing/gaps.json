@@ -21,6 +21,24 @@
       "resolution": "The Roscosmos agency logo stands in as the honest mark on every affected program card and page.",
       "status": "wall",
       "date": "2026-07-12"
+    },
+    {
+      "id": "chinese-mission-patches",
+      "area": "Mission & program insignia",
+      "subjects": ["Tiangong", "Shenzhou", "China Manned Space"],
+      "want": "The China Manned Space (CMS) programme emblem and Shenzhou crew patches, to sit beside the NASA insignia on the Tiangong and Shenzhou pages.",
+      "wall": "China's crewed programme does use mission patches — every Shenzhou crew has one — but the CMS emblem and the Shenzhou insignia are held under copyright by the China Manned Space Agency, not released under a free licence. Wikimedia Commons carries none of them; the only free-licensed images returned for these searches are unrelated NASA photographs.",
+      "checked": [
+        "Wikimedia Commons — English keyword search (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
+        "Wikimedia Commons — China Manned Space Agency logo"
+      ],
+      "rejected": [
+        "cmse.gov.cn and Chinese state media imagery — copyrighted, no free licence",
+        "Third-party fan reproductions of Shenzhou patches — not authentic and not free"
+      ],
+      "resolution": "The CNSA agency logo stands in as the honest mark on the Tiangong and Shenzhou cards and pages.",
+      "status": "wall",
+      "date": "2026-07-12"
     }
   ]
 }

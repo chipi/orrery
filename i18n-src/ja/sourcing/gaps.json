@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "note": "Orreryがライセンス基準(Creative Commons / パブリックドメイン、ウォーターマークなし、本物 — ファン製作の複製は不可)の下で入手できなかったコンテンツの公開記録。適切な使用権がないものを掲載するよりも、正直に空白を示す方が良い。新たな障壁に遭遇したら、ここに追加する。",
+  "note": "Orreryがライセンス基準（Creative Commons / パブリックドメイン、透かしなし、真正品 — ファン制作の複製物は不可）の下で入手できなかったコンテンツの公開記録。使用権のないものを掲載するよりも、正直に空白を示す方が望ましい。新たな壁に突き当たった際は、ここに追記する。",
   "gaps": [
     {
       "id": "soviet-era-patches",
-      "area": "ミッションおよびプログラムのエンブレム",
+      "area": "ミッションおよびプログラムのインシグニア",
       "subjects": [
         "Vostok",
         "Voskhod",
@@ -15,19 +15,41 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "NASAのエンブレムと並べるための、ソ連初期有人プログラムの本物のプログラムおよびミッションパッチ。",
-      "wall": "同時に2つの障壁がある。第一に、そのほとんどは存在しなかった。ソ連は1975年のApollo–Soyuzまでミッションパッチの伝統を採用しなかったため、Vostok、Voskhod、初期のSoyuz飛行にはパッチが単に存在しない。第二に、後に存在するもの — Soyuz TM/TMAの遠征パッチ、Roscosmosのエンブレム — は著作権で保護されているか、フェアユースの下でのみアップロードされており、自由ライセンスの下でリリースされたことはない。",
+      "want": "初期ソ連有人プログラムの真正なプログラムおよびミッションパッチ。NASAのインシグニアと並べて配置するため。",
+      "wall": "二つの壁が同時に存在する。第一に、ほとんどが存在しなかった：ソ連は1975年のApollo–Soyuzまでミッションパッチの伝統を採用しなかったため、Vostok、Voskhod、および初期のSoyuzフライトには単純にパッチが存在しない。第二に、後に存在するもの — Soyuz TM/TMAの遠征パッチ、Roscosmosのエンブレム — は著作権保護下にあるか、フェアユースの下でのみアップロードされており、自由ライセンスの下で公開されたことがない。",
       "checked": [
         "Wikimedia Commons — 英語キーワード検索",
-        "Wikimedia Commons — キリル文字検索(Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
-        "Wikimedia Commons — カテゴリツリー(Soviet space program、Buran、Roscosmos)",
+        "Wikimedia Commons — キリル文字検索（Союз / Салют / Мир / Восход / Буран эмблема нашивка）",
+        "Wikimedia Commons — カテゴリツリー（ソ連宇宙プログラム、Buran、Roscosmos）",
         "ru.wikipedia — Восток-1、Восход-2、Союз-1、Союз-11、Мир、Буранの記事画像"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ruおよび類似サイト — 著作権保護されているかライセンス不明。astronaut.ruは個人運営の百科事典であり、権利保有者ではない",
-        "現代のファン製作の複製(例：ゲームアーティストによるCC-BY Buranエンブレム) — 自由ライセンスだが本物のエンブレムではない"
+        "roscosmos.ru / astronaut.ruおよび類似サイト — 著作権保護下またはライセンス不明；astronaut.ruは私的運営の百科事典であり、権利保有者ではない",
+        "現代のファン制作複製物（例：ゲームアーティストによるCC-BYのBuranエンブレム） — 自由にライセンスされているが真正なインシグニアではない"
       ],
-      "resolution": "Roscosmosエージェンシーのロゴが、影響を受けるすべてのプログラムカードおよびページにおける正直な印として使用されている。",
+      "resolution": "Roscosmosのエージェンシーロゴが、影響を受けるすべてのプログラムカードおよびページにおける正直な印として立つ。",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "chinese-mission-patches",
+      "area": "ミッションおよびプログラムのインシグニア",
+      "subjects": [
+        "Tiangong",
+        "Shenzhou",
+        "China Manned Space"
+      ],
+      "want": "中国有人宇宙（CMS）プログラムのエンブレムおよび神舟クルーパッチ。TiangongおよびShenzhou ページのNASAインシグニアと並べて配置するため。",
+      "wall": "中国の有人プログラムはミッションパッチを使用している — すべての神舟クルーが1つ持っている — しかし、CMSエンブレムおよびShenzhouのインシグニアは中国有人宇宙機関によって著作権保護下にあり、自由ライセンスの下で公開されていない。Wikimedia Commonsにはそれらが一切なく、これらの検索で返される唯一の自由ライセンス画像は無関係なNASAの写真である。",
+      "checked": [
+        "Wikimedia Commons — 英語キーワード検索（China Manned Space / Shenzhou / Tiangong emblem、patch、insignia）",
+        "Wikimedia Commons — China Manned Space Agencyロゴ"
+      ],
+      "rejected": [
+        "cmse.gov.cnおよび中国国営メディアの画像 — 著作権保護下、自由ライセンスなし",
+        "第三者によるShenzhouパッチのファン制作複製物 — 真正ではなく、自由でもない"
+      ],
+      "resolution": "CNSAのエージェンシーロゴが、TiangongおよびShenzhouカードおよびページにおける正直な印として立つ。",
       "status": "wall",
       "date": "2026-07-12"
     }

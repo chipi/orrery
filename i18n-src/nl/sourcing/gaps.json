@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Het openbare register van content die Orrery niet kon bronnen onder zijn licentiedrempel (Creative Commons / publiek domein, geen watermerk, authentiek — geen fanreproducties). We tonen liever een eerlijke leemte dan iets te verzenden waar we geen recht op hebben. Voeg hier nieuwe obstakels toe naarmate we ze tegenkomen.",
+  "note": "Het openbare register van inhoud die Orrery niet kon vinden binnen zijn licentiedrempel (Creative Commons / publiek domein, geen watermerk, authentiek — geen fanreproducties). We tonen liever een eerlijke leemte dan iets te leveren waarvoor we geen gebruiksrecht hebben. Voeg hier nieuwe obstakels toe naarmate we ze tegenkomen.",
   "gaps": [
     {
       "id": "soviet-era-patches",
@@ -15,19 +15,41 @@
         "Buran",
         "Soviet lunar (N1–L3)"
       ],
-      "want": "Authentieke programma- en missiepatches voor de vroege Sovjet-bemande programma's, naast de NASA-insignes.",
-      "wall": "Twee obstakels tegelijk. Ten eerste bestonden de meeste nooit: de USSR nam de missiepatch-traditie pas aan met Apollo–Soyuz in 1975, dus Vostok, Voskhod en de eerste Soyuz-vluchten hadden simpelweg geen patch. Ten tweede is wat later wel bestaat — Soyuz TM/TMA expeditiepatches, Roscosmos emblemen — auteursrechtelijk beschermd of alleen geüpload onder fair-use, nooit vrijgegeven onder een vrije licentie.",
+      "want": "Authentieke programma- en missiepatches voor de vroege Sovjet-bemande programma's, om naast de NASA-insignes te staan.",
+      "wall": "Twee obstakels tegelijk. Ten eerste bestonden de meeste nooit: de USSR nam de missiepatch-traditie pas in 1975 over met Apollo–Soyuz, dus Vostok, Voskhod en de eerste Soyuz-vluchten hadden simpelweg geen patch. Ten tweede is wat later wel bestaat — Soyuz TM/TMA-expeditiepatches, Roscosmos-emblemen — auteursrechtelijk beschermd of alleen geüpload onder fair-use, nooit vrijgegeven onder een vrije licentie.",
       "checked": [
-        "Wikimedia Commons — Engelse zoektermen",
+        "Wikimedia Commons — Engelse zoekwoorden",
         "Wikimedia Commons — Cyrillisch zoeken (Союз / Салют / Мир / Восход / Буран эмблема нашивка)",
         "Wikimedia Commons — categorieboom (Soviet space program, Buran, Roscosmos)",
-        "ru.wikipedia — artikelbeeldmateriaal voor Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
+        "ru.wikipedia — artikelbeelden voor Восток-1, Восход-2, Союз-1, Союз-11, Мир, Буран"
       ],
       "rejected": [
-        "roscosmos.ru / astronaut.ru en vergelijkbare — auteursrechtelijk beschermd of licentie onduidelijk; astronaut.ru is een privaat gerunde encyclopedie, geen rechthebbende",
-        "Moderne fanreproducties (bijv. een CC-BY Buran embleem door een game-artiest) — vrij gelicentieerd maar niet authentieke insignes"
+        "roscosmos.ru / astronaut.ru en vergelijkbare — auteursrechtelijk beschermd of licentie onduidelijk; astronaut.ru is een particuliere encyclopedie, geen rechthebbende",
+        "Moderne fanreproducties (bijv. een CC-BY Buran-embleem door een game-artiest) — vrij gelicenseerd maar geen authentieke insignes"
       ],
-      "resolution": "Het Roscosmos agentschapslogo staat als eerlijk kenmerk op elke getroffen programmakaart en pagina.",
+      "resolution": "Het Roscosmos-agentschapslogo dient als het eerlijke kenmerk op elke betroffen programmakaart en -pagina.",
+      "status": "wall",
+      "date": "2026-07-12"
+    },
+    {
+      "id": "chinese-mission-patches",
+      "area": "Missie- & programma-insignes",
+      "subjects": [
+        "Tiangong",
+        "Shenzhou",
+        "China Manned Space"
+      ],
+      "want": "Het China Manned Space (CMS)-programma-embleem en Shenzhou-bemanning-patches, om naast de NASA-insignes op de Tiangong- en Shenzhou-pagina's te staan.",
+      "wall": "China's bemande programma gebruikt wel missiepatches — elke Shenzhou-bemanning heeft er een — maar het CMS-embleem en de Shenzhou-insignes vallen onder copyright van de China Manned Space Agency, niet vrijgegeven onder een vrije licentie. Wikimedia Commons bevat geen enkele; de enige vrij gelicenseerde afbeeldingen die deze zoekopdrachten opleveren zijn ongerelateerde NASA-foto's.",
+      "checked": [
+        "Wikimedia Commons — Engelse zoekwoorden (China Manned Space / Shenzhou / Tiangong emblem, patch, insignia)",
+        "Wikimedia Commons — China Manned Space Agency logo"
+      ],
+      "rejected": [
+        "cmse.gov.cn en Chinese staatsmedia-beelden — auteursrechtelijk beschermd, geen vrije licentie",
+        "Fanreproducties van derden van Shenzhou-patches — niet authentiek en niet vrij"
+      ],
+      "resolution": "Het CNSA-agentschapslogo dient als het eerlijke kenmerk op de Tiangong- en Shenzhou-kaarten en -pagina's.",
       "status": "wall",
       "date": "2026-07-12"
     }

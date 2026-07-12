@@ -239,5 +239,22 @@
     "status": "ACTIVE",
     "start_year": 1998,
     "hero": "fleet/iss/02"
+  },
+  {
+    "id": "tiangong",
+    "name": "Tiangong",
+    "tagline": "Locked out of the world's space station, China built its own — on schedule, and now runs the only other permanently-crewed outpost in orbit.",
+    "kind": "station",
+    "agency": "CMSA",
+    "agencies": [
+      "CMSA",
+      "CNSA"
+    ],
+    "country": "China",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2011,
+    "end_year": null,
+    "hero": "fleet/tiangong/01"
   }
 ]

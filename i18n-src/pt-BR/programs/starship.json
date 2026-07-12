@@ -1,0 +1,92 @@
+{
+  "name": "Starship",
+  "tagline": "O maior foguete já construído, projetado para ser totalmente e rapidamente reutilizável — o veículo que a SpaceX pretende usar para levar pessoas a Marte.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Todo foguete que já lançou pessoas descartou a maior parte de si mesmo. Mesmo o Falcon 9, que recupera seu primeiro estágio, descarta o estágio superior em cada voo. A Starship é uma tentativa de acabar com isso por completo — um sistema de lançamento onde ambos os estágios retornam, pousam e são reabastecidos e relançados, como uma aeronave em vez de um projétil de artilharia. Também é simplesmente enorme: mais alta que o Saturn V, com mais empuxo que qualquer foguete da história, construída não para voar uma ou duas missões, mas para voar constantemente, de forma barata, por décadas."
+    },
+    {
+      "type": "prose",
+      "md": "A razão do tamanho e da reutilização é um único destino. O propósito declarado da SpaceX desde sua fundação tem sido tornar a humanidade multiplanetária, e a aritmética de Marte é brutal: enviar pessoas e carga suficientes para construir um assentamento lá requer erguer mais massa, com mais frequência e muito mais barato do que qualquer foguete descartável poderia jamais conseguir. A Starship é a resposta trabalhada de trás para frente a partir desse objetivo — o veículo que você precisaria se fosse sério sobre não apenas visitar Marte, mas viver lá."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo imediato é a reutilização completa e rápida: um propulsor e uma nave que ambos retornam, pousam e voam novamente com o mínimo de recondicionamento, reduzindo o custo por quilograma em órbita em mais uma ordem de grandeza além do que o Falcon 9 alcançou. A reutilização do primeiro estágio tornou o espaço mais barato; a reutilização de tudo, voado com frequência, pretende torná-lo barato o suficiente para mudar o que é possível."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starship/01"
+      },
+      "caption": "A Starship sobre seu propulsor Super Heavy — a pilha completa. Ambos os estágios são projetados para retornar e pousar; o propulsor agora é capturado do ar pela própria torre de lançamento, um método de recuperação que ninguém havia tentado antes.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Os objetivos de curto prazo são missões concretas que precisam dela. A NASA escolheu uma versão da Starship como o Sistema de Pouso Humano que colocará os astronautas da Artemis na Lua — o primeiro módulo lunar tripulado desde a Apollo. A Starship também se destina a lançar os maiores satélites Starlink de próxima geração e, eventualmente, a transportar carga e tripulações para Marte. A Lua é o campo de provas; Marte é o objetivo."
+    },
+    {
+      "type": "prose",
+      "md": "E há um objetivo que sustenta tudo isso: reabastecimento em órbita. Uma Starship com destino à Lua ou a Marte lança quase vazia do propelente necessário para a viagem, e é abastecida por uma série de Starships-tanque que fazem encontro com ela na órbita terrestre. Essa arquitetura de reabastecimento orbital não está comprovada em escala e é a coisa mais difícil que o programa deve demonstrar — o eixo central sobre o qual todo o plano de espaço profundo se apoia."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Em meados dos anos 2020, a Starship é um programa no meio de sua história, não no fim. Ela voou: um artigo de teste com um único motor saltou e pousou em 2019, um estágio superior voou alto e pousou intacto em 2021, a pilha completa foi lançada repetidamente desde 2023, e em 2024 o propulsor Super Heavy foi capturado do ar pelos braços da torre de lançamento — uma conquista genuinamente nova. Mas ainda não voou com pessoas, não alcançou órbita com carga de forma rotineira, nem demonstrou reabastecimento orbital. Os marcos mais difíceis ainda estão à frente."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/starship/02"
+      },
+      "caption": "Um voo de teste da Starship. O método do programa é a falha visível em escala: voar, observar quebrar, aprender, voar novamente — a mesma iteração que tornou o Falcon barato, aplicada ao maior foguete já construído.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "O estilo de desenvolvimento é deliberadamente, espetacularmente público. Onde programas tradicionais testam no solo por anos para evitar uma única falha, a Starship voa protótipos iniciais esperando que explodam, tratando cada perda como dados comprados de forma barata. Essa abordagem produziu imagens dramáticas e progresso rápido — e também atritos reais, sobre o impacto ambiental ao redor do local de lançamento, sobre detritos, e sobre se a iteração rápida é apropriada para um veículo destinado a eventualmente transportar humanos."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A Starship é o método do Falcon 9 escalado ao seu extremo lógico. A empresa que aprendeu a pousar um propulsor ao destruir dezenas agora está aprendendo a voar um foguete super-pesado totalmente reutilizável da mesma forma — construindo protótipos rapidamente, voando-os antes que estejam perfeitos e melhorando em uma cadência que nenhum programa tradicional tenta. As explosões não são contratempos nesse enquadramento; elas são o custo da informação, e a disposição de pagar esse custo em público é toda a vantagem competitiva."
+    },
+    {
+      "type": "prose",
+      "md": "É também a máquina isolada mais ambiciosa na astronáutica, e a mais incerta. Nada sobre ela é garantido: o reabastecimento orbital nunca foi feito em escala, a reutilização rápida de um estágio superior com escudo térmico não está comprovada, e o salto de pousar artigos de teste para voar tripulações com segurança para outro planeta é vasto. A Starship pode comprimir dramaticamente a linha do tempo para a Lua e Marte, ou pode passar uma década se revelando mais difícil do que o esperado. Ambos os resultados estão em aberto, e o programa é honesto ao reconhecer que as partes mais difíceis permanecem não comprovadas."
+    },
+    {
+      "type": "prose",
+      "md": "Por baixo da engenharia há uma aposta sobre propósito. A Apollo foi à Lua para vencer uma corrida e depois parou, porque o objetivo era a chegada, não a permanência. A Starship é construída sobre a premissa oposta — que o objetivo não é plantar uma bandeira, mas mover massa suficiente, com frequência suficiente, para construir algo permanente fora da Terra. Tenha sucesso ou não, ela representa uma razão diferente para ir: não para provar a superioridade de uma nação, mas para tornar a presença humana no espaço grande o suficiente para durar."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O legado da Starship ainda está sendo escrito, mas sua influência já é real. Ao tornar a reutilização completa e o reabastecimento orbital a arquitetura assumida do futuro, ela redefiniu a aparência esperada de um programa sério de espaço profundo — e sua seleção como módulo lunar da Artemis vincula diretamente o retorno da América à Lua ao funcionamento deste veículo."
+    },
+    {
+      "type": "prose",
+      "md": "Se tiver sucesso, o legado é uma mudança de patamar no acesso ao espaço profundo: elevação barata e de alta cadência medida em centenas de toneladas, o suficiente para tornar bases lunares e missões a Marte logisticamente possíveis em vez de meramente concebíveis. Se enfrentar dificuldades, o legado ainda é uma demonstração de até onde o método voar-falhar-consertar pode ser levado — e onde ele encontra seus limites."
+    },
+    {
+      "type": "prose",
+      "md": "De qualquer forma, a Starship já mudou a conversa. A questão no voo espacial humano não é mais se a reutilização funciona — o Falcon resolveu isso — mas até onde ela escala, e se pode transportar pessoas além da Terra. A Starship é a maior aposta que alguém já fez na resposta sendo 'até o fim'."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição que a Starship está testando é se o método que tornou foguetes pequenos baratos pode tornar os enormes baratos também. A iteração através de falha visível funcionou para o Falcon; a Starship é o experimento sobre se isso escala para o veículo mais complexo e maior já construído — e se pode cruzar a linha para o voo espacial humano, onde a falha é muito menos aceitável. A resposta ainda não chegou."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é sobre projetar de trás para frente a partir de um objetivo. A Starship não faz sentido como uma melhoria incremental dos foguetes existentes; ela só faz sentido se o objetivo real é colonizar outro planeta, e cada escolha estranha — o tamanho, a reutilização completa, o reabastecimento orbital — decorre disso. Marte sendo alcançado ou não, o veículo é uma lição sobre como é projetar para um estado final que a maior parte da indústria considera uma fantasia."
+    }
+  ]
+}

@@ -305,5 +305,21 @@
     "start_year": 2019,
     "end_year": null,
     "hero": "fleet/starlink/01"
+  },
+  {
+    "id": "starship",
+    "name": "Starship",
+    "tagline": "The biggest rocket ever built, designed to be fully and rapidly reusable — the vehicle SpaceX means to carry people to Mars.",
+    "kind": "crewed-campaign",
+    "agency": "SpaceX",
+    "agencies": [
+      "SpaceX"
+    ],
+    "country": "USA",
+    "epoch": "mars-era",
+    "status": "ACTIVE",
+    "start_year": 2019,
+    "end_year": null,
+    "hero": "fleet/starship/01"
   }
 ]

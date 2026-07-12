@@ -1,0 +1,80 @@
+{
+  "name": "Estaciones comerciales",
+  "tagline": "Los puestos de avanzada privados destinados a sustituir a la ISS: una apuesta por convertir la órbita terrestre baja en un negocio, no solo en un programa gubernamental.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "La International Space Station es lo más grande que la humanidad ha construido jamás en órbita, y va a ser destruida deliberadamente. Hacia 2030, tras más de tres décadas de operación tripulada continua, la ISS será guiada hacia abajo para quemarse sobre el Pacífico, porque está envejeciendo, es costosa de mantener y sus socios han decidido que el futuro de la órbita terrestre baja pertenece a empresas privadas en lugar de agencias gubernamentales. Las estaciones comerciales son lo que se supone debe ocupar su lugar."
+    },
+    {
+      "type": "prose",
+      "md": "Se trata de un cambio genuino de modelo, no solo de equipamiento. Durante sesenta años, las estaciones espaciales fueron construidas y operadas por naciones. El plan ahora es que la NASA y sus socios dejen de operar estaciones por completo y en su lugar compren tiempo a bordo de estaciones de propiedad privada, la misma transferencia que otorgó a empresas comerciales el trabajo de lanzar carga y tripulación, extendida ahora al destino mismo. Varias iniciativas compiten por construir los puestos de avanzada que la NASA y otros alquilarán: Axiom Station, Orbital Reef, Starlab y más."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "El objetivo inmediato es la continuidad: tener al menos una estación comercial operativa antes de que la ISS sea desorbitalizada, para que la presencia humana en órbita terrestre baja —ininterrumpida desde 2000— nunca se vea interrumpida. Perder esa continuidad significaría renunciar a una capacidad arduamente conseguida y, simbólicamente, ceder la posición estratégica en órbita baja justo en el momento en que la estación de China es la única otra en funcionamiento."
+    },
+    {
+      "type": "prose",
+      "md": "El objetivo más profundo es convertir la órbita terrestre baja en una economía autosostenible. La visión son estaciones que se paguen a sí mismas mediante clientes de pago —investigación para empresas y agencias, fabricación en el espacio de cosas que solo pueden hacerse en microgravedad, y astronautas privados y turistas— de modo que una presencia humana en órbita ya no dependa de presupuestos gubernamentales. La NASA se convierte en un inquilino entre muchos, y la estación se convierte en un negocio."
+    },
+    {
+      "type": "prose",
+      "md": "Existe también un objetivo estratégico envuelto dentro del comercial: mantener una presencia humana liderada por Estados Unidos en órbita baja mientras la ISS termina y la Tiangong de China continúa. Las estaciones comerciales están destinadas a garantizar que la retirada de la ISS sea una transferencia, no un abandono, que Occidente no simplemente abandone la órbita terrestre baja a China por defecto."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "El resultado aún está por escribir: son, por ahora, contratos, diseños y artículos de prueba más que estaciones en funcionamiento. Los planes son reales y están financiados: Axiom pretende acoplar sus primeros módulos a la ISS y luego desprenderlos en una estación de vuelo libre; Orbital Reef y Starlab están diseñando puestos de avanzada independientes. Pero ninguna estación comercial está todavía en órbita, y los plazos son ajustados frente al final previsto de la ISS, con el riesgo habitual de que una estación en papel se retrase mientras la fecha límite no lo hace."
+    },
+    {
+      "type": "prose",
+      "md": "La incertidumbre central no es ingenieril sino económica. No es obvio que exista demanda de pago suficiente —investigación, fabricación, turismo— para sostener ni siquiera una estación privada, y mucho menos varias, una vez que se retiren los bolsillos profundos de un inquilino ancla gubernamental. La era de las estaciones comerciales es una apuesta por que existe un mercado donde, hasta ahora, solo ha habido un programa gubernamental. Si esa apuesta da resultado es la pregunta que la próxima década responderá."
+    },
+    {
+      "type": "prose",
+      "md": "Lo que ya está claro es que el modelo tiene impulso y respaldo oficial. La NASA se ha comprometido a convertirse en cliente en lugar de operador, varias empresas bien financiadas compiten, y la fecha fija de retirada de la ISS da a todo el esfuerzo una fecha límite firme. Las estaciones comerciales pueden retrasarse, consolidarse o fallar parcialmente, pero la intención de entregar la órbita terrestre baja al sector privado es firme."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "El impulso de las estaciones comerciales es el último paso en una larga transferencia. Primero la NASA entregó el transporte de carga a SpaceX y otros; luego el transporte de tripulación; ahora el destino mismo. Cada paso transfirió una capacidad desde un gobierno que la desarrolló a empresas destinadas a operarla más económicamente y abrirla a más usuarios. Las estaciones son el punto final de esa lógica: el momento en que la órbita terrestre baja deja de ser algo que los gobiernos operan y se convierte en algo que compran."
+    },
+    {
+      "type": "prose",
+      "md": "Es también una apuesta sobre mercados que ha fallado antes. Intentos previos de construir una economía comercial en órbita baja descubrieron que, fuera de contratos gubernamentales, la demanda de pago era escasa. El esfuerzo actual está mejor financiado y mejor cronometrado —aprovechando lanzamientos más baratos y una fecha límite real— pero está intentando lo mismo de difícil: demostrar que la órbita puede ser un negocio. Nunca se esperó que la ISS generase beneficios; se supone que sus sucesoras sí, y esa es una exigencia genuinamente nueva y no probada."
+    },
+    {
+      "type": "prose",
+      "md": "Y se desarrolla contra un reloj y un rival. La retirada de la ISS está programada; la Tiangong de China está volando y no se retirará con ella. Las estaciones comerciales se están construyendo para asegurar que Occidente no abandone la órbita terrestre baja justo cuando un competidor se asienta, lo que carga una proposición comercial con peso estratégico, y plantea la pregunta de qué ocurre si el mercado resulta demasiado escaso pero la necesidad estratégica permanece."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Si las estaciones comerciales tienen éxito, su legado será la transformación de la órbita terrestre baja de un programa gubernamental en una economía: una presencia humana permanente sostenida por clientes de pago en lugar de presupuestos nacionales, y un modelo de cómo podría poseerse y operarse cada futuro destino orbital."
+    },
+    {
+      "type": "prose",
+      "md": "Si tienen dificultades, su legado será una dura lección sobre los límites de la comercialización: que algunas capacidades, por deseables que sean, puede que todavía no tengan un mercado que pueda sostenerlas sin un ancla gubernamental, y que la transferencia de la órbita baja puede necesitar ser más lenta, o subsidiada durante más tiempo, de lo que permite la fecha límite de la ISS."
+    },
+    {
+      "type": "prose",
+      "md": "En cualquier caso, marcan el fin de la era de la ISS y la prueba de un nuevo modelo. Las estaciones comerciales son donde el largo experimento de privatizar el acceso al espacio se encuentra con su pregunta más difícil: no si una empresa puede alcanzar la órbita, sino si puede vivir allí de forma rentable."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lección que están poniendo a prueba las estaciones comerciales es si una capacidad desarrollada por gobiernos puede entregarse a un mercado que todavía no existe de forma demostrable. El lanzamiento tenía clientes obvios; el caso de negocio de una estación permanentemente tripulada está mucho menos probado. El esfuerzo es un experimento en tiempo real sobre si la comercialización tiene límites, y dónde se encuentran."
+    },
+    {
+      "type": "prose",
+      "md": "La lección más profunda, todavía en formación, trata sobre el peligro de retirar una capacidad antes de que su reemplazo esté asegurado. La ISS tiene una fecha de fin fija; sus sucesoras comerciales todavía no vuelan. Apostar a que un mercado se materializará según el calendario, con una fecha límite firme y un rival ya en órbita, es una apuesta cuyas consecuencias no son menos que la presencia humana continua en la órbita terrestre baja misma."
+    }
+  ]
+}

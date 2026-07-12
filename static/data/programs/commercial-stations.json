@@ -1,0 +1,28 @@
+{
+  "id": "commercial-stations",
+  "kind": "station",
+  "agency": "Commercial",
+  "agencies": ["Axiom Space", "Blue Origin"],
+  "country": "USA (commercial)",
+  "start_year": 2025,
+  "status": "PLANNED",
+  "epoch": "commercial-era",
+  "hero": "fleet/iss/03",
+  "roster": [
+    { "name": "Commercial LEO Destinations", "year": 2021, "note": "NASA funds several companies to build private stations, planning to become a customer of orbital outposts rather than the operator of one" },
+    { "name": "Axiom Station", "year": 2026, "note": "Axiom Space's modules are to attach to the ISS first, then detach to fly free as an independent commercial station before the ISS is retired" },
+    { "name": "Orbital Reef", "year": 2027, "note": "a Blue Origin and Sierra Space venture pitched as a 'mixed-use business park' in orbit — research, manufacturing, and tourism" },
+    { "name": "Starlab", "year": 2028, "note": "a Voyager and Airbus station designed as a single large free-flyer, aimed at continuous science after the ISS" },
+    { "name": "ISS retirement", "year": 2030, "note": "the ISS is to be deorbited around 2030; the commercial stations are meant to be flying before it goes, so human presence in low orbit is never interrupted" }
+  ],
+  "related_programs": ["iss", "spacex"],
+  "see_also": [
+    { "label": "ISS — the station these are built to succeed", "href": "/programs/iss", "kind": "program" },
+    { "label": "SpaceX — the crew and cargo transport they will rely on", "href": "/programs/spacex", "kind": "program" }
+  ],
+  "links": [
+    { "l": "Commercial space station — Wikipedia", "u": "https://en.wikipedia.org/wiki/Commercial_space_station", "t": "intro" },
+    { "l": "Commercial LEO Destinations — NASA", "u": "https://www.nasa.gov/humans-in-space/commercial-space/", "t": "core" },
+    { "l": "Axiom Space", "u": "https://www.axiomspace.com/", "t": "deep" }
+  ]
+}

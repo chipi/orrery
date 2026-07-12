@@ -105,6 +105,7 @@ export function configureSpatialAudio(mode: AudioOutput): void {
 
 /** Detect + apply on start, then re-detect on plug/unplug. Returns a disposer. */
 export function initHeadphoneDetection(): () => void {
+  if (typeof navigator === 'undefined') return () => {};
   let disposed = false;
   const apply = () => {
     if (!disposed) void detectAudioOutput().then(configureSpatialAudio);

@@ -11,6 +11,11 @@
 
 import * as THREE from 'three';
 import { getArBackend, type ArBackend, type ArHit } from '../ar';
+import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
+import { arHaptic } from './ar-haptics';
+import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
+import { audioEngine } from '../sensory/audio-engine';
+import { audioBus } from '../audio-bus';
 
 export type ArSceneType = 'explore' | 'earth' | 'moon' | 'mars';
 
@@ -107,7 +112,17 @@ export interface ArSceneOptions {
   /** Called when the AR session ends (system exit / device unsupported), so the
    *  caller can remove the AR canvas and return to the flat view. */
   onExit?: () => void;
+  /** Play the scene's Guide narration episode by id — wired to the app's audio
+   *  player by launch-ar. Omitted (e.g. in tests) → narration simply doesn't
+   *  auto-play; placement/spatial-audio/haptics are unaffected. */
+  playNarration?: (episodeId: string) => void;
 }
+
+// Soft, quiet per-body voices for AR spatial sonification (#209, RFC-021 §6).
+// Pitches ascend a C-major scale so a multi-body scene reads as a consonant
+// chord; each voice pans from its body's real-world position via a PannerNode.
+const AR_VOICE_HZ = [261.63, 293.66, 329.63, 392.0, 440.0, 523.25, 587.33, 659.25];
+const AR_VOICE_GAIN = 0.04;
 
 export function createArScene(
   type: ArSceneType,
@@ -130,11 +145,62 @@ export function createArScene(
   let backend: ArBackend | null = null;
   let placed = false;
   let disposed = false;
+  let narrator: ArNarratorHandle | null = null;
+  let disposeHeadphones: (() => void) | null = null;
+  let offNarrationEnd: (() => void) | null = null;
+  const voices: Array<{ disconnect: () => void; osc: OscillatorNode }> = [];
+
+  // Give each body a world-positioned HRTF voice so the sonification pans from
+  // where the object actually sits on the table (RFC-021 §6). Reuses the shared
+  // sensory audio-engine bus — no separate graph.
+  function attachSpatialAudio(): void {
+    const bus = audioEngine.bus();
+    if (!bus) return;
+    root.updateMatrixWorld(true);
+    const wp = new THREE.Vector3();
+    let i = 0;
+    root.traverse((o) => {
+      if (!(o as THREE.Mesh).isMesh) return;
+      o.getWorldPosition(wp);
+      const source = createSpatialSource([wp.x, wp.y, wp.z]);
+      if (!source) return;
+      const osc = bus.ctx.createOscillator();
+      osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+      osc.frequency.value = AR_VOICE_HZ[i % AR_VOICE_HZ.length];
+      const voice = bus.ctx.createGain();
+      voice.gain.value = AR_VOICE_GAIN;
+      osc.connect(voice);
+      source.connect(voice);
+      osc.start();
+      voices.push({ disconnect: source.disconnect, osc });
+      i++;
+    });
+  }
+
+  function detachSpatialAudio(): void {
+    for (const { disconnect, osc } of voices) {
+      try {
+        osc.stop();
+        osc.disconnect();
+      } catch {
+        /* already stopped */
+      }
+      disconnect();
+    }
+    voices.length = 0;
+  }
 
   function place(hit: ArHit): void {
     root.position.set(...hit.worldPosition);
     root.visible = true;
     placed = true;
+    // Three senses confirm the placement: haptic pulse, a real anchor locking
+    // the origin, spatial voices, and the Guide narration 2s later (NE-B).
+    arHaptic('anchor-placed');
+    void backend?.addAnchor(hit.worldPosition);
+    attachSpatialAudio();
+    narrator = scheduleArNarration(type, (id) => opts.playNarration?.(id));
+    offNarrationEnd = audioBus.on('ended', () => arHaptic('narrator-end'));
   }
 
   async function onTap(clientX: number, clientY: number): Promise<void> {
@@ -153,16 +219,20 @@ export function createArScene(
       opts.onExit?.();
     });
     await backend.startSession();
+    disposeHeadphones = initHeadphoneDetection();
     canvas.addEventListener('pointerdown', tapHandler);
     renderer.setAnimationLoop(() => {
       if (disposed || !backend) return;
+      const pose = backend.getCameraPose();
       // Camera B follows the device: WebXR drives renderer.xr's camera; the
       // ARKit path applies the cached backend pose to our camera.
       if (backend.name === 'arkit-capacitor') {
-        const { position, rotation } = backend.getCameraPose();
-        camera.position.set(...position);
-        camera.quaternion.set(...rotation);
+        camera.position.set(...pose.position);
+        camera.quaternion.set(...pose.rotation);
       }
+      // Move the Web Audio listener to the device once the scene is placed so
+      // the spatial voices pan correctly as the user walks around.
+      if (placed) updateArListener(pose);
       renderer.render(scene, camera);
     });
     return true;
@@ -172,6 +242,13 @@ export function createArScene(
     disposed = true;
     renderer.setAnimationLoop(null);
     canvas.removeEventListener('pointerdown', tapHandler);
+    narrator?.cancel();
+    narrator = null;
+    offNarrationEnd?.();
+    offNarrationEnd = null;
+    detachSpatialAudio();
+    disposeHeadphones?.();
+    disposeHeadphones = null;
     void backend?.endSession();
     backend = null;
     renderer.dispose();

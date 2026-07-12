@@ -76,3 +76,6 @@
 | ADR-075 | Narrow exception #2 to no-client-storage — `orrery_tour` cookie for Curator Tour resume | Accepted | Jun 2026 |
 | ADR-076 | /plan ships Mars-only porkchop in v0.7; multi-destination deferred to v0.8 | Accepted | Jun 2026 |
 | ADR-077 | /fly throne-of-glory iconic-shot architecture (body wiring + cislunar hold detector + per-event compositions + race-free test hooks) | Accepted | Jun 2026 |
+| ADR-078 | Mobile wrapper reshaped: iOS-first + stream-heavy bundle (reverses RFC-018 Android-first + §8.2) | Accepted | Jul 2026 |
+| ADR-079 | Asset-origin spine + source/derived separation + WebP delivery | Accepted | Jul 2026 |
+| ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |

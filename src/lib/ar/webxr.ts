@@ -21,10 +21,12 @@ export function createWebXrBackend(): ArBackend {
   let localSpace: XRReferenceSpace | null = null;
   let viewerSpace: XRReferenceSpace | null = null;
   let hitTestSource: XRHitTestSource | null = null;
+  let transientHitTestSource: XRTransientInputHitTestSource | null = null;
   let rafId: number | null = null;
 
   let lastPose: ArCameraPose = IDENTITY_POSE;
   let lastHit: ArHit | null = null;
+  let lastTransientHit: ArHit | null = null;
 
   const listeners = new Map<ArEvent, Set<Handler>>();
   function emit(event: ArEvent, ...args: unknown[]): void {
@@ -38,8 +40,14 @@ export function createWebXrBackend(): ArBackend {
     localSpace = null;
     viewerSpace = null;
     hitTestSource = null;
+    transientHitTestSource = null;
     lastPose = IDENTITY_POSE;
     lastHit = null;
+    lastTransientHit = null;
+    // Session gone → resolve any in-flight anchor requests with their id so
+    // callers never hang (the anchor simply never materialised).
+    for (const req of pendingAnchors.splice(0)) req.resolve(req.id);
+    anchors.clear();
   }
 
   async function isSupported(): Promise<boolean> {
@@ -52,34 +60,72 @@ export function createWebXrBackend(): ArBackend {
     }
   }
 
+  /** Convert a hit-test pose into an ArHit (world point + surface normal). */
+  function hitFromPose(pose: XRPose): ArHit {
+    const p = pose.transform.position;
+    const o = pose.transform.orientation;
+    // Surface normal ≈ the hit pose's local +Y rotated by its orientation.
+    return { worldPosition: [p.x, p.y, p.z], worldNormal: rotateY(o.x, o.y, o.z, o.w) };
+  }
+
+  function updatePose(frame: XRFrame): void {
+    if (!localSpace) return;
+    const viewerPose = frame.getViewerPose(localSpace);
+    if (!viewerPose) return;
+    const { position: p, orientation: q } = viewerPose.transform;
+    lastPose = { position: [p.x, p.y, p.z], rotation: [q.x, q.y, q.z, q.w] };
+  }
+
+  function updateHits(frame: XRFrame): void {
+    if (!localSpace) return;
+    if (hitTestSource) {
+      const hitPose = frame.getHitTestResults(hitTestSource)[0]?.getPose(localSpace);
+      lastHit = hitPose ? hitFromPose(hitPose) : null;
+    }
+    // Per-tap precision: transient-input hit-test rays from the actual touch
+    // point. Results are only present during a live touch, so we cache the most
+    // recent one — hitTest() (fired on pointerdown) then returns the exact
+    // touched surface point rather than the centre-of-screen aim.
+    if (transientHitTestSource) {
+      const transient = frame.getHitTestResultsForTransientInput(transientHitTestSource);
+      const pose = transient.find((r) => r.results.length > 0)?.results[0]?.getPose(localSpace);
+      if (pose) lastTransientHit = hitFromPose(pose);
+    }
+  }
+
+  // Materialise any queued anchors — createAnchor() needs a live frame, but
+  // addAnchor() is called from a DOM tap outside the rAF loop.
+  function drainAnchors(frame: XRFrame): void {
+    if (!pendingAnchors.length || !localSpace) return;
+    const canAnchor = typeof frame.createAnchor === 'function';
+    for (const req of pendingAnchors.splice(0)) {
+      const transform = new XRRigidTransform({
+        x: req.position[0],
+        y: req.position[1],
+        z: req.position[2],
+      });
+      const promise = canAnchor ? frame.createAnchor?.(transform, localSpace) : undefined;
+      if (promise) {
+        promise.then(
+          (anchor) => {
+            anchors.set(req.id, anchor);
+            req.resolve(req.id);
+          },
+          () => req.resolve(req.id),
+        );
+      } else {
+        // Anchors unsupported on this device → synthetic id, graceful fallback.
+        req.resolve(req.id);
+      }
+    }
+  }
+
   const onFrame: XRFrameRequestCallback = (_t, frame) => {
     if (!session) return;
     rafId = session.requestAnimationFrame(onFrame);
-
-    if (localSpace) {
-      const viewerPose = frame.getViewerPose(localSpace);
-      if (viewerPose) {
-        const { position: p, orientation: q } = viewerPose.transform;
-        lastPose = { position: [p.x, p.y, p.z], rotation: [q.x, q.y, q.z, q.w] };
-      }
-    }
-
-    if (hitTestSource && localSpace) {
-      const results = frame.getHitTestResults(hitTestSource);
-      const hitPose = results[0]?.getPose(localSpace);
-      if (hitPose) {
-        const p = hitPose.transform.position;
-        const o = hitPose.transform.orientation;
-        // Surface normal ≈ the hit pose's local +Y rotated by its orientation.
-        lastHit = {
-          worldPosition: [p.x, p.y, p.z],
-          worldNormal: rotateY(o.x, o.y, o.z, o.w),
-        };
-      } else {
-        lastHit = null;
-      }
-    }
-
+    updatePose(frame);
+    updateHits(frame);
+    drainAnchors(frame);
     emit('frame', frame);
   };
 
@@ -94,6 +140,13 @@ export function createWebXrBackend(): ArBackend {
     viewerSpace = await session.requestReferenceSpace('viewer');
     if (session.requestHitTestSource) {
       hitTestSource = (await session.requestHitTestSource({ space: viewerSpace })) ?? null;
+    }
+    // Per-tap ray precision — the touched point, not the centre-of-screen aim.
+    if (session.requestHitTestSourceForTransientInput) {
+      transientHitTestSource =
+        (await session.requestHitTestSourceForTransientInput({
+          profile: 'generic-touchscreen',
+        })) ?? null;
     }
     session.addEventListener('end', () => {
       reset();
@@ -113,23 +166,31 @@ export function createWebXrBackend(): ArBackend {
   }
 
   async function hitTest(_screenX: number, _screenY: number): Promise<ArHit | null> {
-    // v1: the persistent viewer-space hit-test (centre-of-screen aim) — the
-    // common "point the device at a surface, tap to place" UX. Per-tap ray
-    // precision (transient-input hit-test) is a follow-up refinement.
-    return lastHit;
+    // Prefer the per-tap transient-input hit (the exact touched point); fall
+    // back to the persistent viewer-space centre aim where transient hit-test
+    // is unavailable on the device.
+    return lastTransientHit ?? lastHit;
   }
 
-  // Anchors: WebXR XRAnchors need a live frame (frame.createAnchor). Until the
-  // scene builder wires that, this records the request and returns an id so the
-  // interface is complete; anchor persistence is a #208-era refinement.
-  const anchors = new Map<string, [number, number, number]>();
+  // Real WebXR anchors: frame.createAnchor() needs a live frame, so addAnchor()
+  // queues the request and the rAF loop (drainAnchors) fulfils it against the
+  // current frame, then resolves the promise with the anchor id.
+  const anchors = new Map<string, XRAnchor>();
+  const pendingAnchors: Array<{
+    id: string;
+    position: [number, number, number];
+    resolve: (id: string) => void;
+  }> = [];
   let anchorSeq = 0;
   async function addAnchor(worldPosition: [number, number, number]): Promise<string> {
     const id = `anchor-${++anchorSeq}`;
-    anchors.set(id, worldPosition);
-    return id;
+    if (!session) return id; // no session → nothing to anchor to
+    return new Promise<string>((resolve) => {
+      pendingAnchors.push({ id, position: worldPosition, resolve });
+    });
   }
   async function removeAnchor(anchorId: string): Promise<void> {
+    anchors.get(anchorId)?.delete();
     anchors.delete(anchorId);
   }
 

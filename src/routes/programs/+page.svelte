@@ -81,18 +81,17 @@
       ? order.filter((k) => by.has(k))
       : [...by.keys()].sort((a, b) => a.localeCompare(b));
     const label = (k: string) =>
-      mode === 'era'
-        ? (ERA_LABEL[k]?.() ?? k)
-        : mode === 'kind'
-          ? (KIND_LABEL[k]?.() ?? k)
-          : k;
+      mode === 'era' ? (ERA_LABEL[k]?.() ?? k) : mode === 'kind' ? (KIND_LABEL[k]?.() ?? k) : k;
     return keys.map((k) => ({ key: k, heading: label(k), items: by.get(k)! }));
   });
 </script>
 
 <svelte:head>
   <title>Programs · Orrery</title>
-  <meta name="description" content="The campaigns that shaped spaceflight — Apollo, ISS, Artemis and more." />
+  <meta
+    name="description"
+    content="The campaigns that shaped spaceflight — Apollo, ISS, Artemis and more."
+  />
 </svelte:head>
 
 <div class="programs-index">
@@ -105,8 +104,12 @@
     </p>
     <p class="lede">{m.programs_index_browse_hint()}</p>
     <div class="toggle" role="group" aria-label={m.programs_group_aria()}>
-      <button class:active={mode === 'era'} onclick={() => (mode = 'era')}>{m.programs_by_era()}</button>
-      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}>{m.programs_by_kind()}</button>
+      <button class:active={mode === 'era'} onclick={() => (mode = 'era')}
+        >{m.programs_by_era()}</button
+      >
+      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}
+        >{m.programs_by_kind()}</button
+      >
       <button class:active={mode === 'agency'} onclick={() => (mode = 'agency')}
         >{m.programs_by_agency()}</button
       >
@@ -130,7 +133,12 @@
               <div class="c-title-row">
                 <h3>{p.name}</h3>
                 {#if badges[`program:${p.id}`]}
-                  <img class="c-badge" src="{base}{badges[`program:${p.id}`]}" alt="" loading="lazy" />
+                  <img
+                    class="c-badge"
+                    src="{base}{badges[`program:${p.id}`]}"
+                    alt=""
+                    loading="lazy"
+                  />
                 {/if}
               </div>
               <p class="c-hook">{p.tagline}</p>

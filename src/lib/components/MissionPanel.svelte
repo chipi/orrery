@@ -254,7 +254,12 @@
       <div class="name-row">
         <h1 class="name">{mission.name ?? mission.id}</h1>
         {#if badges[`mission:${mission.id}`]}
-          <img class="panel-badge" src="{base}{badges[`mission:${mission.id}`]}" alt="" decoding="async" />
+          <img
+            class="panel-badge"
+            src="{base}{badges[`mission:${mission.id}`]}"
+            alt=""
+            decoding="async"
+          />
         {/if}
       </div>
       {#if mission.type}

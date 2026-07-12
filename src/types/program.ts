@@ -3,11 +3,7 @@
 // (i18n-src/{locale}/programs/{id}.json), merged by getProgram().
 
 export type ProgramKind =
-  | 'crewed-campaign'
-  | 'robotic-campaign'
-  | 'station'
-  | 'infrastructure'
-  | 'funding-line';
+  'crewed-campaign' | 'robotic-campaign' | 'station' | 'infrastructure' | 'funding-line';
 
 export type ProgramStatus = 'PLANNED' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
 

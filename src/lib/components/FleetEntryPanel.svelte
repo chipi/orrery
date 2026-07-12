@@ -190,7 +190,12 @@
       <div class="name-row">
         <h1 class="name">{entry.name}</h1>
         {#if badges[`fleet:${entry.id}`]}
-          <img class="panel-badge" src="{base}{badges[`fleet:${entry.id}`]}" alt="" decoding="async" />
+          <img
+            class="panel-badge"
+            src="{base}{badges[`fleet:${entry.id}`]}"
+            alt=""
+            decoding="async"
+          />
         {/if}
       </div>
       {#if entry.tagline ?? entry.best_known_for}

@@ -79,7 +79,9 @@ async function main() {
       // Preserve the full-res original in masters/ (LFS) — same masters→derived
       // pattern as the rest of the image pipeline; the display webp is resized
       // from it, the master is never discarded.
-      const origExt = (s.image_url.match(/\.(png|svg|jpg|jpeg|webp)(?:\?|$)/i)?.[1] ?? 'png').toLowerCase();
+      const origExt = (
+        s.image_url.match(/\.(png|svg|jpg|jpeg|webp)(?:\?|$)/i)?.[1] ?? 'png'
+      ).toLowerCase();
       const masterPath = path.join(MASTERS_ROOT, dir, `${s.id}.${origExt}`);
       fs.mkdirSync(path.dirname(masterPath), { recursive: true });
       fs.writeFileSync(masterPath, raw);

@@ -188,8 +188,10 @@
                 {#if badges[`mission:${r.linked_id}`]}
                   <img class="t-patch" src="{base}{badges[`mission:${r.linked_id}`]}" alt="" />
                 {/if}
-                <button type="button" class="t-name" onclick={() => (selected = r.linked_id ?? null)}
-                  >{pretty(r.linked_id)}</button
+                <button
+                  type="button"
+                  class="t-name"
+                  onclick={() => (selected = r.linked_id ?? null)}>{pretty(r.linked_id)}</button
                 >
               {:else}
                 <span class="t-name t-ctx">{r.name}</span>
@@ -201,7 +203,12 @@
       </ol>
       <aside class="detail" aria-live="polite">
         {#if selectedDetail}
-          <img class="d-hero" src={imgSrc({ reuse: selectedDetail.hero })} alt="" decoding="async" />
+          <img
+            class="d-hero"
+            src={imgSrc({ reuse: selectedDetail.hero })}
+            alt=""
+            decoding="async"
+          />
           <p class="d-meta">
             {selectedDetail.year} · {selectedDetail.agency}{selectedDetail.type
               ? ` · ${selectedDetail.type}`

@@ -31,7 +31,9 @@
     </nav>
     <h1>{m.patches_h1()}</h1>
     <p class="lede">
-      {@html m.patches_lede({ link: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_link_sourcing()}</a>` })}
+      {@html m.patches_lede({
+        link: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_link_sourcing()}</a>`,
+      })}
     </p>
   </header>
 
@@ -41,13 +43,21 @@
       {#each data.programs as p (p.key)}
         <figure class="badge-card">
           <div class="badge-frame">
-            <img src="{assetOrigin}{p.img}" alt={m.patches_alt({ name: p.name })} loading="lazy" decoding="async" />
+            <img
+              src="{assetOrigin}{p.img}"
+              alt={m.patches_alt({ name: p.name })}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <figcaption>
             <span class="b-name">{p.name}</span>
             {#if p.credit}
-              <a class="b-credit" href={p.credit.source_url} target="_blank" rel="noopener noreferrer"
-                >{p.credit.author} · {p.credit.license_short}</a
+              <a
+                class="b-credit"
+                href={p.credit.source_url}
+                target="_blank"
+                rel="noopener noreferrer">{p.credit.author} · {p.credit.license_short}</a
               >
             {/if}
           </figcaption>
@@ -62,13 +72,21 @@
       {#each data.missions as mi (mi.key)}
         <figure class="badge-card">
           <div class="badge-frame">
-            <img src="{assetOrigin}{mi.img}" alt={m.patches_alt({ name: mi.name })} loading="lazy" decoding="async" />
+            <img
+              src="{assetOrigin}{mi.img}"
+              alt={m.patches_alt({ name: mi.name })}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <figcaption>
             <span class="b-name">{mi.name}</span>
             {#if mi.credit}
-              <a class="b-credit" href={mi.credit.source_url} target="_blank" rel="noopener noreferrer"
-                >{mi.credit.author} · {mi.credit.license_short}</a
+              <a
+                class="b-credit"
+                href={mi.credit.source_url}
+                target="_blank"
+                rel="noopener noreferrer">{mi.credit.author} · {mi.credit.license_short}</a
               >
             {/if}
           </figcaption>
@@ -148,7 +166,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 40%, rgba(127, 176, 224, 0.08), rgba(255, 255, 255, 0.02));
+    background: radial-gradient(
+      circle at 50% 40%,
+      rgba(127, 176, 224, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 14px;

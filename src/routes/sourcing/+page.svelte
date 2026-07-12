@@ -42,7 +42,9 @@
     {#each data.gaps as g (g.id)}
       <li class="gap">
         <div class="gap-head">
-          <span class="status status-{g.status}">{(STATUS_LABEL[g.status] ?? (() => g.status))()}</span>
+          <span class="status status-{g.status}"
+            >{(STATUS_LABEL[g.status] ?? (() => g.status))()}</span
+          >
           <span class="area">{g.area}</span>
           <span class="date">{g.date}</span>
         </div>
@@ -71,7 +73,9 @@
           {/if}
         </div>
 
-        <p class="field resolution"><span class="k">{m.sourcing_field_resolution()}</span>{g.resolution}</p>
+        <p class="field resolution">
+          <span class="k">{m.sourcing_field_resolution()}</span>{g.resolution}
+        </p>
       </li>
     {/each}
   </ol>

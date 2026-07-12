@@ -11,6 +11,8 @@
 
 import * as THREE from 'three';
 import { base } from '$app/paths';
+import { buildSolarSystem, type SolarSystem } from '../explore-scene';
+import { prefersReducedMotion } from '../reduced-motion';
 import { getArBackend, type ArBackend, type ArHit } from '../ar';
 import { updateArListener, createSpatialSource, initHeadphoneDetection } from './ar-audio';
 import { arHaptic } from './ar-haptics';
@@ -22,6 +24,18 @@ export type ArSceneType = 'explore' | 'earth' | 'moon' | 'mars';
 
 // Tabletop scale — the whole scene fits in ~40 cm so it sits on a table.
 const TABLE_RADIUS = 0.2;
+
+// Scale factor applied to the real /explore scene units so the whole solar
+// system fits on a tabletop (Neptune's orbitR 430 → ~0.18 m). Relative sizes +
+// distances stay identical to the flat scene.
+const EXPLORE_AR_SCALE = 0.0004;
+// Ambient orbital pace for AR (sim-years per real second) — inner planets sweep
+// visibly, outer ones drift, as on the flat scene at a gentle speed.
+const EXPLORE_SIM_RATE = 0.03;
+// Present the ecliptic tilted toward the viewer at the SAME elevation as the flat
+// /explore default view (camP 1.05 → ~30° above the plane), so you look down onto
+// the orbits instead of edge-on (planets otherwise collapse to a line of disks).
+const EXPLORE_VIEW_ELEV = (30 * Math.PI) / 180;
 
 // Real surface textures (same assets the flat /earth,/moon,/mars scenes use),
 // plus the fallback tint used when no loader is supplied (unit tests) and the
@@ -39,50 +53,17 @@ const BODY: Record<
  *  runtime (createArScene) so the pure builder stays testable without a DOM. */
 export type TextureFn = (file: string) => THREE.Texture;
 
-// /explore: the Sun + eight planets on rings, ordered outward. Radii are the
-// tabletop-scaled values; textures + tilts + Saturn's rings match the flat scene.
-const PLANETS: Array<{
-  orbit: number;
-  size: number;
-  color: number;
-  texture: string;
-  emissiveMap?: string;
-  tiltDeg: number;
-  ring?: boolean;
-}> = [
-  { orbit: 0.03, size: 0.006, color: 0xb5b5b5, texture: '2k_mercury.jpg', tiltDeg: 0.03 },
-  { orbit: 0.05, size: 0.009, color: 0xe0c080, texture: '2k_venus_atmosphere.jpg', tiltDeg: 177.4 },
-  {
-    orbit: 0.07,
-    size: 0.01,
-    color: 0x3a6ea5,
-    texture: '2k_earth_daymap.jpg',
-    emissiveMap: '2k_earth_nightmap.jpg',
-    tiltDeg: 23.4,
-  },
-  { orbit: 0.09, size: 0.008, color: 0xc1440e, texture: '2k_mars.jpg', tiltDeg: 25.2 },
-  { orbit: 0.12, size: 0.02, color: 0xd8a878, texture: '2k_jupiter.jpg', tiltDeg: 3.1 },
-  {
-    orbit: 0.15,
-    size: 0.018,
-    color: 0xd9c07a,
-    texture: '2k_saturn.jpg',
-    tiltDeg: 26.7,
-    ring: true,
-  },
-  { orbit: 0.17, size: 0.014, color: 0x9fd4e0, texture: '2k_uranus.jpg', tiltDeg: 97.8 },
-  { orbit: 0.19, size: 0.014, color: 0x5b7bd4, texture: '2k_neptune.jpg', tiltDeg: 28.3 },
-];
+/** The three single-globe AR scenes. /explore is built by buildSolarSystem. */
+export type SurfaceArType = Exclude<ArSceneType, 'explore'>;
 
 /**
- * Build the AR scene content (pure — no AR session). Returns a Group scaled to
- * sit on a tabletop, with lighting so the bodies read in a real room. When a
- * `loadTexture` is supplied (runtime), the bodies get the same surface textures,
- * Earth night-lights, and Saturn rings as the flat scenes; without one (tests)
- * they fall back to flat tints so the structure stays unit-testable.
+ * Build a single textured globe (earth/moon/mars) for AR. Pure — no session.
+ * With a `loadTexture` (runtime) the globe gets the same surface texture the
+ * flat scene uses; without one (tests) it falls back to a flat tint so the
+ * structure stays unit-testable.
  */
 export function buildArSceneContent(
-  type: ArSceneType,
+  type: SurfaceArType,
   opts: { loadTexture?: TextureFn } = {},
 ): THREE.Group {
   const load = opts.loadTexture;
@@ -95,116 +76,16 @@ export function buildArSceneContent(
   group.add(key);
   group.add(new THREE.HemisphereLight(0x334455, 0x111111, 0.4 * Math.PI));
 
-  if (type === 'explore') {
-    // Sun — self-luminous (unlit) textured sphere + additive glow halos.
-    const sun = new THREE.Mesh(
-      new THREE.SphereGeometry(0.02, 32, 32),
-      new THREE.MeshBasicMaterial({ color: load ? 0xffffff : 0xffcc55, map: load?.('2k_sun.jpg') }),
-    );
-    sun.name = 'sun';
-    group.add(sun);
-    if (load) sun.add(sunGlow(0.02));
-
-    for (let i = 0; i < PLANETS.length; i++) {
-      const p = PLANETS[i];
-      const mesh = new THREE.Mesh(
-        new THREE.SphereGeometry(p.size, 32, 32),
-        new THREE.MeshStandardMaterial({
-          map: load?.(p.texture),
-          color: load ? 0xb0b0b0 : p.color,
-          emissive: load && p.emissiveMap ? 0xffffff : 0x000000,
-          emissiveMap: load && p.emissiveMap ? load(p.emissiveMap) : null,
-          emissiveIntensity: p.emissiveMap ? 1 : 0,
-          roughness: 1,
-          metalness: 0,
-        }),
-      );
-      mesh.name = `planet-${i}`;
-      mesh.position.set(p.orbit, 0, 0);
-      mesh.rotation.z = (p.tiltDeg * Math.PI) / 180;
-      if (p.ring) mesh.add(saturnRings(p.size));
-      group.add(mesh);
-      group.add(orbitRing(p.orbit));
-    }
-  } else {
-    const b = BODY[type];
-    // Phong with shininess 4 mirrors the flat surface scene's globe material.
-    const material = load
-      ? new THREE.MeshPhongMaterial({ map: load(b.texture), color: 0xffffff, shininess: 4 })
-      : new THREE.MeshStandardMaterial({ color: b.color, roughness: 0.9 });
-    const body = new THREE.Mesh(new THREE.SphereGeometry(TABLE_RADIUS * 0.7, 64, 64), material);
-    body.name = type;
-    body.rotation.z = (b.tiltDeg * Math.PI) / 180;
-    group.add(body);
-  }
+  const b = BODY[type];
+  // Phong with shininess 4 mirrors the flat surface scene's globe material.
+  const material = load
+    ? new THREE.MeshPhongMaterial({ map: load(b.texture), color: 0xffffff, shininess: 4 })
+    : new THREE.MeshStandardMaterial({ color: b.color, roughness: 0.9 });
+  const body = new THREE.Mesh(new THREE.SphereGeometry(TABLE_RADIUS * 0.7, 64, 64), material);
+  body.name = type;
+  body.rotation.z = (b.tiltDeg * Math.PI) / 180;
+  group.add(body);
   return group;
-}
-
-// Additive glow shells around the Sun (tabletop-scaled analogue of the flat
-// scene's concentric halos).
-function sunGlow(radius: number): THREE.Group {
-  const g = new THREE.Group();
-  for (const h of [
-    { s: 1.3, op: 0.28 },
-    { s: 1.9, op: 0.13 },
-    { s: 2.7, op: 0.05 },
-  ]) {
-    g.add(
-      new THREE.Mesh(
-        new THREE.SphereGeometry(radius * h.s, 24, 24),
-        new THREE.MeshBasicMaterial({
-          color: 0xffcc66,
-          transparent: true,
-          opacity: h.op,
-          blending: THREE.AdditiveBlending,
-          depthWrite: false,
-        }),
-      ),
-    );
-  }
-  return g;
-}
-
-// Saturn's rings — concentric bands (C/B/Cassini/A/F) in the planet's equatorial
-// plane, so the parent's axial tilt carries them. Mirrors the flat scene's bands.
-function saturnRings(size: number): THREE.Group {
-  const g = new THREE.Group();
-  const r0 = size * 1.4;
-  const span = size * 2.6 - r0;
-  for (const b of [
-    { i: 0.0, o: 0.18, c: 0x8a7858, op: 0.35 },
-    { i: 0.18, o: 0.55, c: 0xf1d7a3, op: 0.62 },
-    { i: 0.55, o: 0.62, c: 0x6a5a44, op: 0.25 },
-    { i: 0.62, o: 0.92, c: 0xe8d3a0, op: 0.6 },
-    { i: 0.95, o: 1.0, c: 0xcbb488, op: 0.4 },
-  ]) {
-    const mesh = new THREE.Mesh(
-      new THREE.RingGeometry(r0 + b.i * span, r0 + b.o * span, 64),
-      new THREE.MeshBasicMaterial({
-        color: b.c,
-        transparent: true,
-        opacity: b.op,
-        side: THREE.DoubleSide,
-        depthWrite: false,
-      }),
-    );
-    g.add(mesh);
-  }
-  g.rotation.x = Math.PI / 2; // ring plane → equatorial (XZ) before parent tilt
-  return g;
-}
-
-function orbitRing(radius: number): THREE.Line {
-  const pts: THREE.Vector3[] = [];
-  for (let a = 0; a <= 64; a++) {
-    const t = (a / 64) * Math.PI * 2;
-    pts.push(new THREE.Vector3(Math.cos(t) * radius, 0, Math.sin(t) * radius));
-  }
-  const geo = new THREE.BufferGeometry().setFromPoints(pts);
-  return new THREE.Line(
-    geo,
-    new THREE.LineBasicMaterial({ color: 0x556677, transparent: true, opacity: 0.4 }),
-  );
 }
 
 export interface ArSceneHandle {
@@ -282,7 +163,22 @@ export function createArScene(
 
   const root = new THREE.Group();
   root.visible = false; // shown as a floating preview on the first frame (below)
-  root.add(buildArSceneContent(type, { loadTexture }));
+
+  // /explore renders the REAL shared solar system (buildSolarSystem) — one source
+  // of truth with the flat route, scaled + AR-quality to sit on a tabletop.
+  // earth/moon/mars use the single textured globe.
+  let solar: SolarSystem | null = null;
+  let simT = 0;
+  const animateOrbits = !prefersReducedMotion();
+  const orbitClock = new THREE.Clock();
+  if (type === 'explore') {
+    solar = buildSolarSystem({ loadTexture, scale: EXPLORE_AR_SCALE, quality: 'ar' });
+    solar.setInitialSimT(0); // anchor to today's real sky positions
+    solar.update(0, 0); // place planets at their real positions before first frame
+    root.add(solar.group);
+  } else {
+    root.add(buildArSceneContent(type, { loadTexture }));
+  }
   scene.add(root);
 
   let backend: ArBackend | null = null;
@@ -301,13 +197,19 @@ export function createArScene(
     const bus = audioEngine.bus();
     if (!bus) return;
     root.updateMatrixWorld(true);
+    // Only the main bodies get a voice (planets + the surface globe) — not every
+    // ring band / glow shell / satellite — capped so the chord stays consonant.
+    const bodies: THREE.Object3D[] = [];
+    root.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (m.isMesh && (m.userData?.planetId || m.name === type)) bodies.push(o);
+    });
     const wp = new THREE.Vector3();
     let i = 0;
-    root.traverse((o) => {
-      if (!(o as THREE.Mesh).isMesh) return;
+    for (const o of bodies.slice(0, AR_VOICE_HZ.length)) {
       o.getWorldPosition(wp);
       const source = createSpatialSource([wp.x, wp.y, wp.z]);
-      if (!source) return;
+      if (!source) continue;
       const osc = bus.ctx.createOscillator();
       osc.type = i % 2 === 0 ? 'sine' : 'triangle';
       osc.frequency.value = AR_VOICE_HZ[i % AR_VOICE_HZ.length];
@@ -318,7 +220,7 @@ export function createArScene(
       osc.start();
       voices.push({ disconnect: source.disconnect, osc });
       i++;
-    });
+    }
   }
 
   function detachSpatialAudio(): void {
@@ -334,6 +236,28 @@ export function createArScene(
     voices.length = 0;
   }
 
+  // Tilt the /explore ecliptic so the viewer looks down onto the orbits at the
+  // flat scene's default elevation, instead of edge-on. Orientation is set once
+  // (relative to where the user is looking) and preserved through place().
+  function orientEcliptic(pose: { position: [number, number, number] }): void {
+    const camPos = new THREE.Vector3(pose.position[0], pose.position[1], pose.position[2]);
+    const toCam = camPos.sub(root.position).normalize();
+    const up = new THREE.Vector3(0, 1, 0);
+    const right = new THREE.Vector3().crossVectors(up, toCam);
+    if (right.lengthSq() < 1e-6) right.set(1, 0, 0);
+    else right.normalize();
+    // Ecliptic normal at (90° − elev) from the line of sight, tilted toward up.
+    const angle = Math.PI / 2 - EXPLORE_VIEW_ELEV;
+    const nUp = toCam
+      .clone()
+      .applyQuaternion(new THREE.Quaternion().setFromAxisAngle(right, angle));
+    const nDown = toCam
+      .clone()
+      .applyQuaternion(new THREE.Quaternion().setFromAxisAngle(right, -angle));
+    const n = nUp.y >= nDown.y ? nUp : nDown;
+    root.quaternion.setFromUnitVectors(up, n);
+  }
+
   // Float the scene in front of the camera as a not-yet-anchored preview.
   function showPreview(pose: { position: [number, number, number]; rotation: number[] }): void {
     const q = new THREE.Quaternion(
@@ -346,6 +270,7 @@ export function createArScene(
     root.position
       .set(pose.position[0], pose.position[1], pose.position[2])
       .addScaledVector(forward, 0.6);
+    if (solar) orientEcliptic(pose);
     root.visible = true;
   }
 
@@ -399,6 +324,13 @@ export function createArScene(
         showPreview(pose);
         previewShown = true;
       }
+      // Advance the real orbital motion (planets revolve + spin), unless the OS
+      // reduced-motion preference is set — then they hold at their real positions.
+      if (solar && animateOrbits) {
+        const dt = orbitClock.getDelta();
+        simT += EXPLORE_SIM_RATE * dt;
+        solar.update(simT, dt);
+      }
       // Move the Web Audio listener to the device once the scene is placed so
       // the spatial voices pan correctly as the user walks around.
       if (placed) updateArListener(pose);
@@ -423,6 +355,8 @@ export function createArScene(
     void backend?.endSession();
     backend = null;
     // Free GPU memory so repeated AR entry/exit doesn't leak textures/geometry.
+    solar?.dispose();
+    solar = null;
     for (const t of textures) t.dispose();
     textures.length = 0;
     scene.traverse((o) => {

@@ -31,6 +31,7 @@
     </nav>
     <h1>{m.patches_h1()}</h1>
     <p class="lede">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_lede({
         link: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_link_sourcing()}</a>`,
       })}
@@ -97,6 +98,7 @@
 
   <footer class="patches-footer">
     <p>
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_footer({
         sourcing: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_footer_link_sourcing()}</a>`,
         colophon: `<a href="${base}${localizeHref('/colophon')}">${m.patches_footer_link_colophon()}</a>`,

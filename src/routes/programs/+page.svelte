@@ -98,6 +98,7 @@
   <header class="head">
     <h1>{m.programs_index_title()}</h1>
     <p class="intro">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output only, no user input -->
       {@html m.programs_index_intro({
         program: `<em>${m.programs_index_intro_program()}</em>`,
       })}

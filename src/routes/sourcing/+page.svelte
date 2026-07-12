@@ -82,6 +82,7 @@
 
   <footer class="sourcing-footer">
     <p>
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.sourcing_footer({
         colophon: `<a href="${base}${localizeHref('/colophon')}">${m.sourcing_footer_link_colophon()}</a>`,
         gallery: `<a href="${base}${localizeHref('/gallery')}">${m.sourcing_footer_link_gallery()}</a>`,

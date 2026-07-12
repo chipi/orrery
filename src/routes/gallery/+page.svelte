@@ -62,6 +62,7 @@
   </div>
 
   <p class="aside">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
     {@html m.gallery_aside({
       link: `<a href="${base}${localizeHref('/sourcing')}">${m.gallery_link_sourcing()}</a>`,
     })}

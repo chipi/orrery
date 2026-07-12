@@ -439,5 +439,23 @@
     "start_year": 1990,
     "end_year": null,
     "hero": "fleet/hubble/01"
+  },
+  {
+    "id": "jwst",
+    "name": "James Webb Space Telescope",
+    "tagline": "The successor to Hubble — a gold mirror the size of a house, folded into a rocket, unfurled a million miles away to see the first light in the universe.",
+    "kind": "robotic-campaign",
+    "agency": "NASA",
+    "agencies": [
+      "NASA",
+      "ESA",
+      "CSA"
+    ],
+    "country": "USA + partners",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 1996,
+    "end_year": null,
+    "hero": "fleet/jwst/01"
   }
 ]

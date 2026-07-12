@@ -1,0 +1,92 @@
+{
+  "name": "James Webb Space Telescope",
+  "tagline": "Il successore di Hubble — uno specchio dorato grande quanto una casa, ripiegato dentro un razzo, dispiegato a un milione di miglia di distanza per vedere la prima luce nell'universo.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Hubble ci ha mostrato l'universo nella luce visibile. Ma gli oggetti più distanti — le primissime galassie, formatesi poche centinaia di milioni di anni dopo il Big Bang — gli sono invisibili, perché l'espansione dell'universo ha stirato la loro luce completamente fuori dallo spettro visibile, nell'infrarosso. Per vedere l'alba del tempo cosmico, serve un telescopio a infrarossi, e grande, mantenuto estremamente freddo, parcheggiato lontano dal calore della Terra. Il James Webb Space Telescope è quella macchina, e costruirlo ha richiesto venticinque anni, dieci miliardi di dollari e una sequenza di audacia ingegneristica quasi priva di margine d'errore."
+    },
+    {
+      "type": "prose",
+      "md": "JWST è il telescopio più grande e complesso mai lanciato nello spazio, e a differenza di Hubble è genuinamente internazionale — una partnership tra NASA, l'Agenzia Spaziale Europea e l'Agenzia Spaziale Canadese, lanciato su un razzo europeo. È anche il più rischioso: troppo grande per entrare in qualsiasi razzo completamente assemblato, ha dovuto essere ripiegato come un origami, lanciato impacchettato, e poi dispiegarsi perfettamente nello spazio profondo, attraverso centinaia di passaggi che non potevano essere testati tutti insieme e non avrebbero mai potuto essere riparati. Il fatto che abbia funzionato è una delle grandi imprese ingegneristiche dell'epoca."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "L'obiettivo principale è vedere le prime galassie — luce dalle strutture più antiche dell'universo, spostata verso il rosso profondamente nell'infrarosso attraverso più di 13 miliardi di anni di espansione cosmica. Webb è stato costruito per guardare più indietro nel tempo di qualsiasi strumento prima di lui, all'epoca in cui le prime stelle e galassie si sono accese, e per osservare come l'universo si sia assemblato dall'oscurità che seguì il Big Bang."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/jwst/01"
+      },
+      "caption": "JWST — uno specchio segmentato da 6,5 metri rivestito d'oro sopra uno scudo solare a cinque strati grande quanto un campo da tennis. Lo scudo mantiene il telescopio più freddo di -220°C così che il suo stesso calore non possa accecare i suoi occhi infrarossi.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Il secondo obiettivo è leggere le atmosfere di altri mondi. Quando un esopianeta passa davanti alla sua stella, un po' di luce stellare filtra attraverso la sua atmosfera, e la sensibilità infrarossa di Webb può scomporre quella luce per rilevare i gas presenti — acqua, anidride carbonica, metano. È il primo strumento capace di caratterizzare genuinamente le atmosfere di pianeti piccoli e potenzialmente abitabili, trasformando la ricerca di vita dal contare mondi all'annusare la loro aria."
+    },
+    {
+      "type": "prose",
+      "md": "Sotto entrambi gli obiettivi c'è un insieme di requisiti ingegneristici brutali: uno specchio troppo grande per essere lanciato dispiegato, uno scudo solare per mantenere l'intero osservatorio più freddo di quasi qualsiasi altro luogo nel sistema solare, e una dimora a un milione di miglia dalla Terra nel punto L2 — abbastanza lontano da rimanere freddo e stabile, e troppo lontano perché qualsiasi astronauta possa mai visitarlo. Tutto doveva funzionare al primo tentativo, da solo, nel buio."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Dopo uno sviluppo così travagliato da essere quasi cancellato dal Congresso nel 2011, JWST è stato lanciato il giorno di Natale del 2021 su un Ariane 5 — e poi ha eseguito la parte più difficile in modo impeccabile. Nel corso di due settimane ha eseguito circa 344 'single-point failures': dispiegamenti, ognuno dei quali, se si fosse inceppato, avrebbe paralizzato la missione, senza possibilità di un equipaggio di riparazione a un milione di miglia di distanza. Lo scudo solare si è dispiegato, i segmenti dello specchio si sono bloccati in posizione, il telescopio si è raffreddato — e ogni singolo passaggio ha funzionato. Il lancio stesso è stato così preciso che il carburante risparmiato ha all'incirca raddoppiato la durata prevista del telescopio."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/jwst/02"
+      },
+      "caption": "L'osservatorio ripiegato per il lancio, e dispiegato in L2. Niente di così grande era mai stato dispiegato autonomamente nello spazio profondo; il dispiegamento di due settimane è stato osservato con il fiato sospeso da tutti coloro che avevano passato decenni a costruirlo.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "La scienza è iniziata quasi immediatamente e ha superato le aspettative. Le prime immagini di Webb, pubblicate nel luglio 2022, sono state le viste infrarosse più profonde dell'universo mai catturate — migliaia di galassie in una porzione di cielo grande quanto un granello di sabbia tenuto a braccio teso. Da allora ha trovato galassie molto più antiche e mature di quanto prevedesse la teoria, rilevato molecole nelle atmosfere di esopianeti, scrutato all'interno delle nubi polverose dove nascono le stelle, e forzato un genuino ripensamento di quanto rapidamente l'universo primordiale si sia assemblato. Sta facendo ciò che Hubble fece a una generazione precedente: riscrivere il manuale e ridisegnare l'immagine del cosmo."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "La storia di JWST è una scommessa che è arrivata a un solo voto dal collassare e ha ripagato completamente. Per un decennio è stato il gigante problematico della scienza spaziale — oltre budget, in ritardo sulla tabella di marcia, assorbendo denaro che altre missioni volevano, e quasi cancellato definitivamente nel 2011. Le persone che lo hanno difeso scommettevano che il risultato avrebbe giustificato la sofferenza: che un telescopio così ambizioso, se avesse funzionato, sarebbe valso il decennio di ritardo e la crescita decuplicata dei costi. Le prime immagini hanno chiuso la discussione. Quasi nessuno ora mette in dubbio che la scommessa fosse giusta."
+    },
+    {
+      "type": "prose",
+      "md": "È anche una storia sul fare l'impossibile da soli. Il fatto distintivo di JWST è che non poteva essere testato come avrebbe volato e non poteva essere riparato una volta volato — lo scudo solare e lo specchio dovevano dispiegarsi perfettamente, al primo tentativo, in un luogo che nessun astronauta poteva raggiungere. Lo specchio difettoso di Hubble fu famosamente riparato da un equipaggio dello shuttle; JWST non aveva tale rete di sicurezza. Ognuno delle sue centinaia di dispiegamenti critici doveva riuscire da solo, e il fatto che tutti lo abbiano fatto è una testimonianza di un livello di disciplina ingegneristica che rasenta l'irragionevole."
+    },
+    {
+      "type": "prose",
+      "md": "Ed è un risultato genuinamente globale in un modo che Apollo non fu mai. L'Europa ha costruito strumenti e fornito il lancio; il Canada ha contribuito con sensori chiave; la scienza è condivisa tra gli astronomi di tutto il mondo. JWST appartiene all'era dei grandi progetti internazionali — troppo costosi e troppo difficili per una singola nazione, costruiti da una coalizione, e che restituiscono una visione dell'universo che è, nel senso più pieno, dell'umanità piuttosto che di un singolo paese."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Il primo lascito di JWST è già visibile: una nuova visione dell'universo primordiale, con galassie trovate più antiche e luminose di quanto i modelli prevedessero, costringendo i cosmologi a rivedere come si siano formate le prime strutture. Come Hubble prima di lui, è lo strumento dietro le scoperte di una generazione, e ha decenni di vita operativa davanti a sé."
+    },
+    {
+      "type": "prose",
+      "md": "Il suo secondo lascito è la caratterizzazione delle atmosfere degli esopianeti — la prima vera capacità di analizzare l'aria di piccoli mondi attorno ad altre stelle, e quindi il primo strumento serio nella ricerca di segni di vita oltre la Terra. Qualunque cosa Webb trovi lì, ha aperto una linea di indagine che definirà l'astronomia per decenni."
+    },
+    {
+      "type": "prose",
+      "md": "E il suo terzo è una prova di metodo: che una coalizione internazionale può costruire qualcosa di troppo grande per essere lanciato assemblato, dispiegarlo autonomamente nello spazio profondo, e farlo funzionare al primo tentativo. Quella fiducia ingegneristica — che l'impossibile da riparare può essere reso abbastanza affidabile da meritare fiducia — è la fondazione su cui verrà costruita la prossima generazione di osservatori spaziali ancora più grandi."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "La lezione di JWST è che alcuni risultati valgono una quantità quasi irragionevole di pazienza e sofferenza. Per venticinque anni il telescopio è stato in ritardo, costoso, e quasi cancellato; l'argomentazione per continuare si basava interamente su una promessa che non poteva essere dimostrata finché non fosse volato. Le prime immagini hanno rivendicato la promessa — un promemoria che i progetti più trasformativi sono spesso quelli che sembrano, per anni, fallimenti in attesa di accadere."
+    },
+    {
+      "type": "prose",
+      "md": "La lezione più profonda riguarda l'ingegneria senza una seconda possibilità. JWST non poteva essere testato come avrebbe volato o riparato una volta volato, eppure ha avuto successo — perché ogni modalità di fallimento è stata individuata e progettata via in anticipo, a terra, nel corso di anni. È il caso ultimo per il rigore sopra l'iterazione: quando veramente non puoi ripararlo dopo, l'unica opzione è farlo bene al primo tentativo, e Webb ha dimostrato che è possibile, anche a una complessità sbalorditiva."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "name": "James Webb Space Telescope",
+  "tagline": "O sucessor do Hubble — um espelho dourado do tamanho de uma casa, dobrado dentro de um foguete, desdobrado a um milhão e meio de quilômetros de distância para ver a primeira luz no universo.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "O Hubble nos mostrou o universo em luz visível. Mas os objetos mais distantes — as primeiras galáxias, formadas algumas centenas de milhões de anos após o Big Bang — são invisíveis para ele, porque a expansão do universo esticou sua luz para fora do espectro visível inteiramente e para o infravermelho. Para ver o amanhecer do tempo cósmico, é preciso um telescópio infravermelho, e um grande, mantido extremamente frio, posicionado longe do calor da Terra. O James Webb Space Telescope é essa máquina, e construí-lo levou vinte e cinco anos, dez bilhões de dólares e uma sequência de audácia da engenharia com quase nenhuma margem para erro."
+    },
+    {
+      "type": "prose",
+      "md": "O JWST é o maior e mais complexo telescópio já lançado, e ao contrário do Hubble ele é genuinamente internacional — uma parceria da NASA, da European Space Agency e da Canadian Space Agency, lançado em um foguete europeu. É também o mais arriscado: grande demais para caber em qualquer foguete totalmente montado, teve que ser dobrado como origami, lançado compactado e então se desdobrar perfeitamente no espaço profundo, através de centenas de etapas que não podiam ser testadas todas juntas e nunca poderiam ser reparadas. Que tenha funcionado é um dos grandes feitos da engenharia da era."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "O objetivo principal é ver as primeiras galáxias — luz das primeiras estruturas no universo, desviada para o vermelho profundamente no infravermelho ao longo de mais de 13 bilhões de anos de expansão cósmica. O Webb foi construído para olhar mais longe no tempo do que qualquer instrumento antes dele, para a era em que as primeiras estrelas e galáxias se acenderam, e para observar como o universo se montou a partir da escuridão que se seguiu ao Big Bang."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/jwst/01"
+      },
+      "caption": "JWST — um espelho segmentado recoberto de ouro de 6,5 metros acima de um escudo solar de cinco camadas do tamanho de uma quadra de tênis. O escudo mantém o telescópio mais frio que -220°C para que seu próprio calor não cegue seus olhos infravermelhos.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "O segundo objetivo é ler as atmosferas de outros mundos. Quando um exoplaneta passa na frente de sua estrela, um pouco da luz estelar filtra através de sua atmosfera, e a sensibilidade infravermelha do Webb pode desembaraçar essa luz para detectar os gases presentes — água, dióxido de carbono, metano. É o primeiro instrumento capaz de genuinamente caracterizar as atmosferas de planetas pequenos e potencialmente habitáveis, transformando a busca por vida de contar mundos para cheirar seu ar."
+    },
+    {
+      "type": "prose",
+      "md": "Por trás de ambos os objetivos está um conjunto de requisitos brutais de engenharia: um espelho grande demais para ser lançado desdobrado, um escudo solar para manter todo o observatório mais frio do que quase qualquer lugar no sistema solar, e uma casa a um milhão e meio de quilômetros da Terra no ponto L2 — longe o suficiente para permanecer frio e estável, e longe demais para qualquer astronauta jamais visitar. Tudo tinha que funcionar na primeira vez, sozinho, no escuro."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Após um desenvolvimento tão contconturbado que quase foi cancelado pelo Congresso em 2011, o JWST foi lançado no dia de Natal de 2021 em um Ariane 5 — e então executou a parte mais difícil impecavelmente. Ao longo de duas semanas realizou aproximadamente 344 'falhas de ponto único': implantações, cada uma das quais, se travasse, teria aleijado a missão, sem possibilidade de uma equipe de reparo a um milhão e meio de quilômetros de distância. O escudo solar se desdobrou, os segmentos do espelho travaram no lugar, o telescópio esfriou — e cada etapa funcionou. O próprio lançamento foi tão preciso que o combustível economizado aproximadamente dobrou o tempo de vida esperado do telescópio."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/jwst/02"
+      },
+      "caption": "O observatório dobrado para o lançamento, e desdobrado em L2. Nada tão grande jamais havia sido implantado autonomamente no espaço profundo; o desdobramento de duas semanas foi acompanhado com a respiração suspensa por todos que haviam passado décadas construindo-o.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "A ciência começou quase imediatamente e superou as expectativas. As primeiras imagens do Webb, divulgadas em julho de 2022, foram as vistas infravermelhas mais profundas do universo já feitas — milhares de galáxias em um pedaço de céu do tamanho de um grão de areia segurado com o braço estendido. Desde então, encontrou galáxias muito mais antigas e maduras do que a teoria previa, detectou moléculas em atmosferas de exoplanetas, espiou dentro das nuvens empoeiradas onde estrelas nascem, e forçou uma genuína reconsideração de quão rapidamente o universo primitivo se montou. Está fazendo o que o Hubble fez para uma geração anterior: reescrevendo o livro-texto e redesenhando a imagem do cosmos."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "A história do JWST é uma aposta que chegou a um único voto de colapsar e valeu completamente a pena. Por uma década foi o gigante problemático da ciência espacial — acima do orçamento, atrasado, absorvendo dinheiro que outras missões queriam, e quase cancelado totalmente em 2011. As pessoas que o defenderam estavam apostando que o retorno justificaria a dor: que um telescópio tão ambicioso, se funcionasse, valeria a década de atraso e o crescimento de dez vezes no custo. As primeiras imagens resolveram a discussão. Quase ninguém agora questiona que a aposta estava certa."
+    },
+    {
+      "type": "prose",
+      "md": "É também uma história sobre fazer o impossível sozinho. O fato definidor do JWST é que não podia ser testado como voaria e não podia ser consertado uma vez lançado — o escudo solar e o espelho tinham que se desdobrar perfeitamente, na primeira vez, em um lugar que nenhum astronauta poderia alcançar. O espelho defeituoso do Hubble foi notoriamente reparado por uma tripulação de ônibus espacial; o JWST não tinha essa rede de segurança. Cada uma de suas centenas de implantações críticas tinha que ter sucesso por conta própria, e o fato de que todas tiveram é um testemunho de um nível de disciplina da engenharia que beira o irracional."
+    },
+    {
+      "type": "prose",
+      "md": "E é uma conquista genuinamente global de um modo que a Apollo nunca foi. A Europa construiu instrumentos e forneceu o lançamento; o Canadá contribuiu com sensores essenciais; a ciência é compartilhada entre os astrônomos do mundo. O JWST pertence à era dos projetos internacionais de grande porte — caros demais e difíceis demais para qualquer nação sozinha, construídos por uma coalizão, e retornando uma visão do universo que é, no sentido mais pleno, da humanidade em vez de qualquer país individual."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "O primeiro legado do JWST já é visível: uma nova visão do universo primitivo, com galáxias encontradas mais cedo e mais brilhantes do que os modelos previam, forçando cosmólogos a revisitar como as primeiras estruturas se formaram. Como o Hubble antes dele, é o instrumento por trás de uma geração de descobertas, e tem décadas de vida operacional à frente."
+    },
+    {
+      "type": "prose",
+      "md": "Seu segundo legado é a caracterização de atmosferas de exoplanetas — a primeira capacidade real de analisar o ar de mundos pequenos ao redor de outras estrelas, e portanto a primeira ferramenta séria na busca por sinais de vida além da Terra. O que quer que o Webb encontre lá, ele abriu uma linha de investigação que definirá a astronomia por décadas."
+    },
+    {
+      "type": "prose",
+      "md": "E seu terceiro é uma prova de método: que uma coalizão internacional pode construir algo grande demais para ser lançado montado, implantá-lo autonomamente no espaço profundo, e fazê-lo funcionar na primeira vez. Essa confiança da engenharia — que o impossível de reparar pode se tornar confiável o suficiente para confiar — é a fundação sobre a qual a próxima geração de observatórios espaciais ainda maiores será construída."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "A lição do JWST é que algumas recompensas valem uma quantidade quase irracional de paciência e dor. Por vinte e cinco anos o telescópio estava atrasado, caro e quase cancelado; o argumento para continuar repousava inteiramente em uma promessa que não podia ser provada até que voasse. As primeiras imagens vindicaram a promessa — um lembrete de que os projetos mais transformadores são frequentemente aqueles que parecem, por anos, fracassos esperando para acontecer."
+    },
+    {
+      "type": "prose",
+      "md": "A lição mais profunda é sobre engenharia sem uma segunda chance. O JWST não podia ser testado como voaria ou reparado uma vez lançado, e ainda assim teve sucesso — porque cada modo de falha foi caçado e eliminado do projeto com antecedência, no chão, ao longo de anos. É o caso definitivo do rigor sobre a iteração: quando você verdadeiramente não pode consertar depois, a única opção é acertar na primeira vez, e o Webb provou que isso é realizável, mesmo em complexidade estonteante."
+    }
+  ]
+}

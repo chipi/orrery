@@ -2,28 +2,82 @@
   "id": "great-observatories",
   "kind": "robotic-campaign",
   "agency": "NASA",
-  "agencies": ["NASA", "ESA", "CSA"],
+  "agencies": [
+    "NASA",
+    "ESA",
+    "CSA"
+  ],
   "country": "USA + partners",
   "start_year": 1990,
   "status": "ACTIVE",
   "epoch": "iss-assembly",
   "hero": "fleet/hubble/01",
   "roster": [
-    { "linked_id": "hubble", "ref": "fleet", "role": "visible / ultraviolet", "year": 1990 },
-    { "name": "Compton Gamma Ray Observatory", "year": 1991, "note": "the gamma-ray member of the original four — it mapped the most violent events in the universe until it was deliberately de-orbited in 2000" },
-    { "linked_id": "chandra", "ref": "fleet", "role": "X-ray", "year": 1999 },
-    { "linked_id": "spitzer", "ref": "fleet", "role": "infrared", "year": 2003 },
-    { "name": "Nancy Grace Roman", "year": 2027, "note": "the next in the NASA lineage — a wide-field infrared survey telescope with a field of view a hundred times Hubble's, built to map the universe rather than stare at one patch of it" }
+    {
+      "linked_id": "hubble",
+      "ref": "fleet",
+      "role": "visible / ultraviolet",
+      "year": 1990
+    },
+    {
+      "name": "Compton Gamma Ray Observatory",
+      "year": 1991,
+      "note": "the gamma-ray member of the original four — it mapped the most violent events in the universe until it was deliberately de-orbited in 2000"
+    },
+    {
+      "linked_id": "chandra",
+      "ref": "fleet",
+      "role": "X-ray",
+      "year": 1999
+    },
+    {
+      "linked_id": "spitzer",
+      "ref": "fleet",
+      "role": "infrared",
+      "year": 2003
+    },
+    {
+      "name": "Nancy Grace Roman",
+      "year": 2027,
+      "note": "the next in the NASA lineage — a wide-field infrared survey telescope with a field of view a hundred times Hubble's, built to map the universe rather than stare at one patch of it"
+    }
   ],
-  "related_programs": ["space-shuttle"],
+  "related_programs": [
+    "space-shuttle",
+    "jwst"
+  ],
   "see_also": [
-    { "label": "Fleet — Hubble, Chandra, Spitzer & JWST", "href": "/fleet?focus=hubble", "kind": "fleet" },
-    { "label": "Space Shuttle — the vehicle that launched and serviced Hubble", "href": "/programs/space-shuttle", "kind": "program" },
-    { "label": "Explore — the deep-sky objects these telescopes revealed", "href": "/explore", "kind": "body" }
+    {
+      "label": "Fleet — Hubble, Chandra, Spitzer & JWST",
+      "href": "/fleet?focus=hubble",
+      "kind": "fleet"
+    },
+    {
+      "label": "Space Shuttle — the vehicle that launched and serviced Hubble",
+      "href": "/programs/space-shuttle",
+      "kind": "program"
+    },
+    {
+      "label": "Explore — the deep-sky objects these telescopes revealed",
+      "href": "/explore",
+      "kind": "body"
+    }
   ],
   "links": [
-    { "l": "Great Observatories program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Great_Observatories_program", "t": "intro" },
-    { "l": "Hubble Space Telescope — NASA", "u": "https://science.nasa.gov/mission/hubble/", "t": "core" },
-    { "l": "Chandra X-ray Observatory — NASA", "u": "https://www.nasa.gov/mission/chandra-x-ray-observatory/", "t": "deep" }
+    {
+      "l": "Great Observatories program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Great_Observatories_program",
+      "t": "intro"
+    },
+    {
+      "l": "Hubble Space Telescope — NASA",
+      "u": "https://science.nasa.gov/mission/hubble/",
+      "t": "core"
+    },
+    {
+      "l": "Chandra X-ray Observatory — NASA",
+      "u": "https://www.nasa.gov/mission/chandra-x-ray-observatory/",
+      "t": "deep"
+    }
   ]
 }

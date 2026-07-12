@@ -1,0 +1,30 @@
+{
+  "id": "jwst",
+  "kind": "robotic-campaign",
+  "agency": "NASA",
+  "agencies": ["NASA", "ESA", "CSA"],
+  "country": "USA + partners",
+  "start_year": 1996,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/jwst/01",
+  "roster": [
+    { "linked_id": "jwst", "ref": "fleet", "role": "infrared observatory", "year": 2021 },
+    { "name": "Conceived", "year": 1996, "note": "planning begins on a 'Next Generation Space Telescope' to succeed Hubble — the start of a 25-year saga of redesigns, delays, and a budget that grew roughly tenfold" },
+    { "name": "Nearly cancelled", "year": 2011, "note": "years behind schedule and billions over budget, the program was targeted for cancellation by Congress before being saved — a survival as narrow as any in this atlas" },
+    { "name": "Launch", "year": 2021, "note": "on Christmas Day, an ESA-provided Ariane 5 launches JWST flawlessly — so precisely that the telescope saved enough fuel to roughly double its expected lifetime" },
+    { "name": "The unfolding", "year": 2022, "note": "over two weeks, 344 single-point-failure steps deploy the tennis-court sunshield and the segmented mirror a million miles from any hope of repair — every one of them worked" },
+    { "name": "First images", "year": 2022, "note": "the first full-colour images stun the world — the deepest infrared view of the universe ever taken, galaxies from the dawn of cosmic time" }
+  ],
+  "related_programs": ["great-observatories", "ariane"],
+  "see_also": [
+    { "label": "Fleet — the James Webb Space Telescope", "href": "/fleet?focus=jwst", "kind": "fleet" },
+    { "label": "The Great Observatories — the lineage JWST continues", "href": "/programs/great-observatories", "kind": "program" },
+    { "label": "Ariane — the rocket that launched it", "href": "/programs/ariane", "kind": "program" }
+  ],
+  "links": [
+    { "l": "James Webb Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope", "t": "intro" },
+    { "l": "Webb — NASA", "u": "https://science.nasa.gov/mission/webb/", "t": "core" },
+    { "l": "Webb — ESA", "u": "https://www.esa.int/Science_Exploration/Space_Science/Webb", "t": "deep" }
+  ]
+}

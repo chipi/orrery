@@ -742,9 +742,18 @@
   let bodyIndexOpen = $state(false);
   let bodyIndexList = $derived.by(() => {
     const list: { kind: 'sun' | 'planet' | 'small'; id: string; name: string }[] = [];
-    if (localizedSun) list.push({ kind: 'sun', id: 'sun', name: localizedSun.name });
-    for (const p of localizedPlanets) list.push({ kind: 'planet', id: p.id, name: p.name });
-    for (const b of SMALL_BODIES) list.push({ kind: 'small', id: b.id, name: b.name });
+    // Dedupe by id: Pluto was promoted SMALL_BODIES → PLANETS (#287) but lingers
+    // in both lists, so it would otherwise appear twice. Planets are pushed first,
+    // so Pluto keeps its (correct) planet kind + selectPlanet handler.
+    const seen = new Set<string>();
+    const add = (item: (typeof list)[number]) => {
+      if (seen.has(item.id)) return;
+      seen.add(item.id);
+      list.push(item);
+    };
+    if (localizedSun) add({ kind: 'sun', id: 'sun', name: localizedSun.name });
+    for (const p of localizedPlanets) add({ kind: 'planet', id: p.id, name: p.name });
+    for (const b of SMALL_BODIES) add({ kind: 'small', id: b.id, name: b.name });
     return list;
   });
 

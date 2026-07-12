@@ -14,7 +14,22 @@
   let { data }: { data: PageData } = $props();
   let programs = $derived(data.programs);
   let badges = $derived(data.badges ?? {});
-  let mode = $state<'era' | 'agency'>('era');
+  let mode = $state<'era' | 'kind' | 'agency'>('era');
+
+  const KIND_OF: Record<string, string> = {
+    'crewed-campaign': 'Crewed campaigns',
+    station: 'Space stations',
+    'robotic-campaign': 'Robotic exploration',
+    infrastructure: 'Infrastructure',
+    'funding-line': 'Funding lines',
+  };
+  const KIND_ORDER = [
+    'Crewed campaigns',
+    'Space stations',
+    'Robotic exploration',
+    'Infrastructure',
+    'Funding lines',
+  ];
 
   const ERA_OF: Record<string, string> = {
     'first-steps': 'The Space Race · 1957–1975',
@@ -48,14 +63,19 @@
   let groups = $derived.by(() => {
     const by = new Map<string, ProgramIndexEntry[]>();
     for (const p of programs) {
-      const key = mode === 'era' ? (ERA_OF[p.epoch] ?? 'Other') : p.agency;
+      const key =
+        mode === 'era'
+          ? (ERA_OF[p.epoch] ?? 'Other')
+          : mode === 'kind'
+            ? (KIND_OF[p.kind] ?? 'Other')
+            : p.agency;
       if (!by.has(key)) by.set(key, []);
       by.get(key)!.push(p);
     }
-    const keys =
-      mode === 'era'
-        ? ERA_ORDER.filter((k) => by.has(k))
-        : [...by.keys()].sort((a, b) => a.localeCompare(b));
+    const order = mode === 'era' ? ERA_ORDER : mode === 'kind' ? KIND_ORDER : null;
+    const keys = order
+      ? order.filter((k) => by.has(k))
+      : [...by.keys()].sort((a, b) => a.localeCompare(b));
     return keys.map((k) => ({ heading: k, items: by.get(k)! }));
   });
 </script>
@@ -68,9 +88,18 @@
 <div class="programs-index">
   <header class="head">
     <h1>Programs</h1>
-    <p class="lede">The campaigns that pulled the missions and the hardware together — why they happened, what they were reaching for, and how they turned out.</p>
+    <p class="intro">
+      Spaceflight is usually remembered as a string of missions and machines. But nothing here
+      happened on its own — every rocket, every landing, every station was the work of a
+      <em>program</em>: a sustained campaign, backed by a nation or a company, reaching for something
+      specific. The programs are where the ambition lived and the rivalries played out. Read
+      together, they are the whole arc of getting off the ground — from the first firsts of the Space
+      Race to the stations, telescopes, and futures being built right now.
+    </p>
+    <p class="lede">Browse by era to follow the story in time, by kind to compare like with like, or by agency to see who did what.</p>
     <div class="toggle" role="group" aria-label="Group programs by">
       <button class:active={mode === 'era'} onclick={() => (mode = 'era')}>By era</button>
+      <button class:active={mode === 'kind'} onclick={() => (mode = 'kind')}>By kind</button>
       <button class:active={mode === 'agency'} onclick={() => (mode = 'agency')}>By agency</button>
     </div>
   </header>
@@ -117,14 +146,26 @@
     letter-spacing: 1px;
     margin: 0 0 8px;
   }
+  .intro {
+    font-size: 18px;
+    line-height: 1.62;
+    color: rgba(255, 255, 255, 0.84);
+    max-width: 66ch;
+    margin: 0 0 14px;
+  }
+  .intro :global(em) {
+    font-style: italic;
+    color: #cfe3fb;
+  }
   .lede {
-    font-size: 17px;
+    font-size: 13px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.5);
     max-width: 60ch;
   }
   .toggle {
-    margin: 18px 0 8px;
+    margin: 16px 0 8px;
   }
   .toggle button {
     font-family: 'Space Mono', monospace;
@@ -135,6 +176,9 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
+  }
+  .toggle button:not(:first-child) {
+    border-left: none;
   }
   .toggle button:first-child {
     border-radius: 4px 0 0 4px;

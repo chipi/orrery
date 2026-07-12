@@ -80,10 +80,9 @@ test.describe('AudioOverlay smoke', () => {
     await page.goto('/', { waitUntil: 'networkidle' });
     await openOverlay(page);
 
-    // Curator button only (Extended Tour added a sibling .tour-start
-    // button in commit 4a0df36fb — strict mode rejects the ambiguous
-    // selector otherwise).
-    const tourBtn = page.locator(`${OVERLAY_SELECTOR} .tour-start:not(.tour-start-extended)`);
+    // Curator button only — target its positive class (siblings: extended +
+    // kiosk launchers also carry .tour-start, so a bare selector is ambiguous).
+    const tourBtn = page.locator(`${OVERLAY_SELECTOR} .tour-start-curator`);
     await expect(tourBtn).toBeVisible({ timeout: 10000 });
     await tourBtn.click();
 
@@ -197,7 +196,7 @@ test.describe('AudioOverlay smoke', () => {
     await openOverlay(page);
 
     // Curator button only (see test above for the strict-mode rationale).
-    const tourBtn = `${OVERLAY_SELECTOR} .tour-start:not(.tour-start-extended)`;
+    const tourBtn = `${OVERLAY_SELECTOR} .tour-start-curator`;
     await page.locator(tourBtn).click();
     await expect(page.locator(`${OVERLAY_SELECTOR} .tour-position`)).toBeVisible();
 

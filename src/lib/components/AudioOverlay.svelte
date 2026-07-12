@@ -1032,7 +1032,7 @@
         <div class="tour-launchers">
           <button
             type="button"
-            class="tour-start"
+            class="tour-start tour-start-curator"
             onclick={startTour}
             disabled={!audioRegistry.loaded}
           >

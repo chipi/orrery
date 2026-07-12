@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v2.7 · July 2026*
+*Orrery · Reference document · v2.8 · July 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update `§stack` and `§map` when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs), [`../prd/index.md`](../prd/index.md) (PRDs).
 
@@ -823,6 +823,20 @@ PRD-017 / RFC-020 (#147), **replanned 2026-07-11** ("good simple" reframe — se
 
 **Hero sonification (Phase 4).** Two continuous voices on the shared bus (duck automatically): `sonify/kepler-chord.ts` (/explore — a soft pentatonic bed tuned by orbital order, consonant-by-design to dodge the phone-speaker-mud risk) and `sonify/fly-velocity.ts` (/fly — one voice whose pitch tracks live heliocentric km/s). The other 9 per-route sonifications from the original PRD are **dropped**. `audioEngine.muted` is the screen-reader mute hook (M10; auto-detection deferred — opt-in + ducking mitigate).
 
+## §immersive — Immersive Mode (WebXR AR · ARKit · Exhibit · v0.8)
+
+PRD-019 / RFC-021 (#150). Two "step into it" modes share the epic: **AR** (place the scene on a real surface) and **Exhibit** (unattended kiosk loop). The AR runtime under `src/lib/ar/` is **excluded from coverage** (device-only — verified on hardware, same policy as `scripts/hotspots/`); the provider-selection seam `src/lib/ar.ts` and `src/lib/exhibit.svelte.ts` are ordinary covered code. Depends on the r128 → 0.185.1 Three.js upgrade (RFC-021 §5 / #203).
+
+**Backend abstraction (RFC-021 §3).** `src/lib/ar.ts` — one `ArBackend` interface (lifecycle · `getCameraPose` · `hitTest` · anchors · events), two implementations chosen by a pure `classifyArPlatform(env)`: iPhone-wrapped → ARKit (`ar/arkit-capacitor.ts`, the `@orrery/ar-bridge` Capacitor plugin); Android wrapped-or-web-with-WebXR → WebXR (`ar/webxr.ts`); everything else (desktop, iOS Safari, non-ARCore Android) → unsupported. `getArBackend()` lazily imports the chosen chunk so neither weighs on the flat bundle — same "abstract over provider, implement once per platform" template as PRD-016 TtsProvider / PRD-018 VisionProvider.
+
+**Capability gate (#213).** `isArSessionSupported()` is the REAL gate, not API-presence: `navigator.xr.isSessionSupported('immersive-ar')` (analogous to a WebGL probe; ARKit-wrapped is assumed supported). `EnterArButton.svelte` resolves `arAvailability()` on mount → **enabled** ("View in AR" on /explore + earth/moon/mars, wired to `launchArScene`), **ios-fallback** (greyed App-Store link on iOS Safari — the URL is a placeholder pending store-ship #217), or **hidden** (desktop/unsupported; the flat scene is the graceful fallback).
+
+**WebXR backend (RFC-021 §3).** `ar/webxr.ts` runs its own `XRSession` rAF loop caching the latest viewer pose + hit-test so the scene builder reads them synchronously each frame. Per-tap precision via transient-input hit-test (`generic-touchscreen` profile) with a viewer-space centre-aim fallback; real `frame.createAnchor()` anchors (queued from the DOM tap, drained on a live frame, synthetic-id fallback where unsupported). The ARKit plugin (`ios/App/App/Plugins/ar-bridge/*.swift`) needs Xcode → never built in CI, verified on-device.
+
+**Scene + sensory wiring (RFC-021 §1, §6-8).** `ar/ar-scene.ts` splits `buildArSceneContent(type)` (pure tabletop Three.js Group — unit-tested) from `createArScene(...)` (session + tap-to-place + render loop). On placement three senses confirm (NE-B): `arHaptic('anchor-placed')`, a real anchor, per-body HRTF **spatial voices** (`ar-audio.ts` reuses the §sensory audio-engine, pans by world position, `updateArListener` follows the device each frame, `initHeadphoneDetection` toggles HRTF↔equalpower), and the Guide **narration** 2 s later (`ar-narrator.ts` → `launch-ar` drives the app's real audio player, which ducks the voices via `audio-bus`); `arHaptic('narrator-end')` on `ended`.
+
+**Exhibit Mode (RFC-021 §9).** `src/lib/exhibit.svelte.ts` — `?mode=exhibit` (or the in-app Kiosk button) flips any flat route into an unattended chrome-less looping kiosk: an `exhibit-mode` body class hides chrome, `AudioOverlay` runs the Curator Full Tour on a loop with per-route auto-nav, a real QR (`qrcode` dep, dynamic-imported, `?qr=<base64>` override) hands off to the live scene, Escape / hidden-corner exits. In-memory only (ADR-057; reload → off).
+
 ## §stack
 
 Locked technical choices. Each entry points to its ADR.
@@ -837,6 +851,7 @@ Locked technical choices. Each entry points to its ADR.
 | Math rendering | KaTeX, server-rendered at build | ADR-034 |
 | Service worker / PWA | @vite-pwa/sveltekit | ADR-029 |
 | Mobile wrapper (iOS + Android) | Capacitor 8 · stream-heavy bundle · assetUrl origin spine · native safe-area shim | ADR-078, ADR-079 (see §mobile) |
+| Immersive Mode (AR + Exhibit) | `ArBackend` abstraction · WebXR (Android) + ARKit Capacitor (iPhone) · capability-gated · Exhibit kiosk loop | PRD-019 / RFC-021 (see §immersive) |
 | Documentation site | VitePress + vitepress-sidebar at `/docs/` | ADR-021 |
 | CI + preview hosting | GitHub Actions + GitHub Pages | ADR-014 |
 | Unit / integration tests | Vitest (+ jsdom + canvas polyfill) | ADR-015 |
@@ -958,3 +973,4 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | **v2.5** | **July 2026** | **v0.8 mobile-plan reshape (ADR-078).** Registered ADR-077 (/fly iconic-shot, was missing) + ADR-078 in the §map ADR table. ADR-078 reshapes the v0.8 Capacitor wrapper: **iOS-first** (reverses the 2026-05-16 Android-first lock) + **stream-heavy bundle** (galleries + `static/audio/` stream from `chipi.github.io` via RFC-018 §8.1 network-aware SW, superseding the §8.2 disable-SW plan) after a re-assessment measured the naive build at ~2 GB (`static/images/` 1.6 GB + audio 97 MB) vs the 355 MB modelled in May. PRD-015 + RFC-018 amended to v0.4. No code changes yet — plan + docs only. (Pre-existing changelog gap v2.3–v2.4 vs header not backfilled — out of scope.) |
 | **v2.6** | **July 2026** | **v0.8 mobile subsystem + drift correction (deep review).** Added **§mobile** — the Capacitor wrapper architecture (stream-heavy bundle, `assetUrl` origin spine, iOS safe-area native shim, WebGL context-loss recovery, plugins, deep-links/share) — locked by ADR-078/079. Added a Mobile-wrapper §stack row. Noted the i18n source relocation (`static/data/i18n/<locale>/` → `i18n-src/`, ADR-079 D2) in Pipeline 10. Companion contributor guide `docs/guides/mobile-build-and-deploy.md`. Fixes the doc-authority gap where mobile existed in code + RFC-018/ADR-078/079 but not in TA.md. |
 | **v2.7** | **July 2026** | **a11y + keyboard/TV subsystem (RFC-031, deep review).** Added §components "Accessibility & keyboard/TV navigation" — the roving focus engine (`roving-focus.svelte.ts` + `use:roving`), the canvas object indexes (`/explore` body index, surface site index, `/iss` `/tiangong` module lists) that execute ADR-025's deferred Tier 2, the Cmd/Ctrl-K command palette, and the TV 10-foot layer. Closes the doc-authority gap where RFC-031 shipped S1–S3/S5–S8 in code but was invisible in TA.md; S4 (camera keyboard control) is explicitly deferred. |
+| **v2.8** | **July 2026** | **Immersive Mode subsystem (PRD-019 / RFC-021 · #150, deep review).** Added **§immersive** — the `ArBackend` provider abstraction (`src/lib/ar.ts`, pure `classifyArPlatform` → WebXR / ARKit Capacitor), the `isArSessionSupported` capability gate + `EnterArButton`, the WebXR backend (transient-input hit-test + real `frame.createAnchor` anchors), the tap-to-place scene builders with three-sense (haptic + spatial-audio + narration) placement wiring, and Exhibit Mode kiosk. Added an Immersive-Mode §stack row. Closes the doc-authority gap where the whole AR + Exhibit epic shipped in code but was invisible in TA.md. AR runtime is coverage-excluded (device-only); `ar.ts` + `exhibit.svelte.ts` are covered. |

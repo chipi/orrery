@@ -1,8 +1,34 @@
 // @vitest-environment jsdom
-import { describe, it, expect } from 'vitest';
-import { classifyArPlatform, arAvailability, isArSessionSupported, type ArEnv } from './ar';
+import { describe, it, expect, afterEach } from 'vitest';
+import {
+  classifyArPlatform,
+  arAvailability,
+  isArSessionSupported,
+  detectArPlatform,
+  isIosWeb,
+  getArBackend,
+  type ArEnv,
+} from './ar';
 
 const base: ArEnv = { capacitorPlatform: 'web', isNative: false, hasWebXR: false };
+
+const origUserAgent = Object.getOwnPropertyDescriptor(navigator, 'userAgent');
+
+/** Stub `navigator.xr` (WebXR presence) — Capacitor reports 'web' in jsdom, so a
+ *  truthy xr makes detectArPlatform resolve to the android-web branch. */
+function stubWebXR(present: boolean): void {
+  if (present) Object.defineProperty(navigator, 'xr', { configurable: true, value: {} });
+  else delete (navigator as Navigator & { xr?: unknown }).xr;
+}
+
+function stubUserAgent(ua: string): void {
+  Object.defineProperty(navigator, 'userAgent', { configurable: true, value: ua });
+}
+
+afterEach(() => {
+  stubWebXR(false);
+  if (origUserAgent) Object.defineProperty(navigator, 'userAgent', origUserAgent);
+});
 
 describe('classifyArPlatform (RFC-021 §3)', () => {
   it('wrapped iPhone → ARKit', () => {
@@ -54,5 +80,41 @@ describe('arAvailability (#213)', () => {
 describe('isArSessionSupported (capability gate)', () => {
   it('is false on an unsupported platform (jsdom desktop — no navigator.xr)', async () => {
     expect(await isArSessionSupported()).toBe(false);
+  });
+});
+
+describe('detectArPlatform (live env)', () => {
+  it('unsupported on a jsdom desktop (web, no WebXR)', () => {
+    expect(detectArPlatform()).toBe('unsupported');
+  });
+
+  it('android-web once navigator.xr is present', () => {
+    stubWebXR(true);
+    expect(detectArPlatform()).toBe('android-web');
+  });
+});
+
+describe('isIosWeb', () => {
+  it('false on a non-iOS user agent', () => {
+    expect(isIosWeb()).toBe(false);
+  });
+
+  it('true on an iPhone Safari user agent (web, not wrapped)', () => {
+    stubUserAgent(
+      'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Safari/604.1',
+    );
+    expect(isIosWeb()).toBe(true);
+  });
+});
+
+describe('getArBackend (lazy backend load)', () => {
+  it('returns null when AR is unsupported (jsdom desktop)', async () => {
+    expect(await getArBackend()).toBeNull();
+  });
+
+  it('loads the WebXR backend when navigator.xr is present', async () => {
+    stubWebXR(true);
+    const backend = await getArBackend();
+    expect(backend?.name).toBe('webxr');
   });
 });

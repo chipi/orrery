@@ -1137,7 +1137,13 @@
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    const sunLight = new THREE.PointLight(0xfff4d0, 4.5, 2500, 1.2);
+    // Uniform sunlight from origin (distance=0 + decay=0). The r0.185 upgrade's
+    // physically-correct lighting made the prior (…, 2500, 1.2) point light fall
+    // off to near-zero across the planets' 50–430u orbits, so every planet
+    // rendered black ("lost textures"). Match /fly's helio fix: treat the Sun as
+    // a uniform source — still a point light at origin so Saturn's ring shadow
+    // casts correctly.
+    const sunLight = new THREE.PointLight(0xfff4d0, 3.5, 0, 0);
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 1024;
     sunLight.shadow.mapSize.height = 1024;

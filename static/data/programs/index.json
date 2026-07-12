@@ -473,5 +473,21 @@
     "start_year": 2018,
     "end_year": null,
     "hero": "fleet/gaganyaan/01"
+  },
+  {
+    "id": "esa-science",
+    "name": "ESA — Space Science",
+    "tagline": "Europe's robotic science fleet — the first spacecraft to land on a comet, the most precise map of the galaxy ever made, and a telescope hunting the dark universe.",
+    "kind": "robotic-campaign",
+    "agency": "ESA",
+    "agencies": [
+      "ESA"
+    ],
+    "country": "Multi (Europe)",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "start_year": 2004,
+    "end_year": null,
+    "hero": "fleet/rosetta/01"
   }
 ]

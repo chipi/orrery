@@ -1,0 +1,30 @@
+{
+  "id": "esa-science",
+  "kind": "robotic-campaign",
+  "agency": "ESA",
+  "agencies": ["ESA"],
+  "country": "Multi (Europe)",
+  "start_year": 2004,
+  "status": "ACTIVE",
+  "epoch": "iss-assembly",
+  "hero": "fleet/rosetta/01",
+  "roster": [
+    { "linked_id": "rosetta", "ref": "fleet", "role": "comet orbiter + lander", "year": 2004 },
+    { "linked_id": "gaia", "ref": "fleet", "role": "star-mapping observatory", "year": 2013 },
+    { "linked_id": "euclid", "ref": "fleet", "role": "dark-universe telescope", "year": 2023 },
+    { "linked_id": "rosetta", "ref": "mission", "year": 2014, "note": "after a ten-year chase, Rosetta orbits comet 67P and drops the Philae lander onto its surface — the first spacecraft ever to orbit and land on a comet" },
+    { "name": "Gaia's map", "year": 2016, "note": "Gaia begins releasing the most precise three-dimensional map of the Milky Way ever made — the positions, distances and motions of nearly two billion stars" },
+    { "name": "Euclid opens its eyes", "year": 2023, "note": "a telescope built to survey a third of the sky and map how dark matter and dark energy have shaped the universe" }
+  ],
+  "related_programs": ["ariane", "jwst", "great-observatories"],
+  "see_also": [
+    { "label": "Explore — comets, and the deep sky ESA charts", "href": "/explore", "kind": "body" },
+    { "label": "Fleet — Rosetta, Gaia & Euclid", "href": "/fleet?focus=rosetta", "kind": "fleet" },
+    { "label": "Ariane — the rocket that launches ESA's science", "href": "/programs/ariane", "kind": "program" }
+  ],
+  "links": [
+    { "l": "ESA Science — Wikipedia", "u": "https://en.wikipedia.org/wiki/European_Space_Agency#Science", "t": "intro" },
+    { "l": "ESA Science & Exploration", "u": "https://www.esa.int/Science_Exploration/Space_Science", "t": "core" },
+    { "l": "Rosetta — ESA", "u": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta", "t": "deep" }
+  ]
+}

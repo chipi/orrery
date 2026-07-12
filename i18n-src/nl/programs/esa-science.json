@@ -1,0 +1,88 @@
+{
+  "name": "ESA — Ruimtewetenschap",
+  "tagline": "Europa's robotische wetenschapsvloot — het eerste ruimtevaartuig dat landde op een komeet, de meest precieze kaart van de melkweg ooit gemaakt, en een telescoop die het donkere universum onderzoekt.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "De bemande ruimtevaart van het Europees Ruimteagentschap gebeurt in partnerschap — modules op het ISS, astronauten gelanceerd met andermans raketten, een aandeel in Artemis. Maar in robotische wetenschap neemt ESA zelf de leiding en voert het enkele van de meest ambitieuze deep-space missies uit die ooit zijn gevlogen. Waar NASA's wetenschap uitgestrekt en breed is, is die van ESA doorgaans precies en gedurfd: een klein aantal missies dat dingen probeert die niemand ooit had gedaan, uitgevoerd met een geduld dat in decennia wordt gemeten."
+    },
+    {
+      "type": "prose",
+      "md": "Drie missies vatten het karakter ervan samen. Rosetta achtervolgde tien jaar lang een komeet en deed daarna iets wat nooit eerder was geprobeerd — cirkelde eromheen en landde erop. Gaia heeft een decennium besteed aan het maken van de nauwkeurigste driedimensionale kaart van de Melkweg in de geschiedenis, waarbij de posities en bewegingen van bijna twee miljard sterren zijn vastgelegd. En Euclid onderzoekt een derde van de hele hemel om de onzichtbare structuur van donkere materie en de mysterieuze kracht die het universum uit elkaar trekt te traceren. Samen vormen ze Europa's argument dat het vooraan hoort in de ruimtewetenschap."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "De doelen zijn even gevarieerd als de missies, maar elk richt zich op een wetenschappelijke vraag van de hoogste orde. Rosetta wilde kometen begrijpen — ongerepte overblijfselen van de geboorte van het zonnestelsel — door er een te begeleiden tijdens zijn dichtstbijzijnde nadering tot de zon en het rechtstreeks te bemonsteren. Gaia's doel is de kaart zelf: een nauwkeurige telling van de sterren van de melkweg die bijna de hele moderne astronomie onderbouwt, want je kunt de Melkweg niet begrijpen totdat je weet waar zijn sterren zich werkelijk bevinden en hoe ze bewegen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/rosetta/01"
+      },
+      "caption": "Rosetta — het ruimtevaartuig dat komeet 67P tien jaar lang achtervolgde, eromheen cirkelde en de Philae-lander op het oppervlak neerzette: de eerste landing op een komeet in de geschiedenis.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Het doel van Euclid is het donkerste: in kaart brengen hoe de structuur van het universum zich in de loop van kosmische tijd heeft ontwikkeld, en daaruit afleiden wat donkere materie en donkere energie werkelijk zijn — de ruwweg 95% van het universum dat noch sterren noch atomen is en dat niemand begrijpt. Het is een missie die rechtstreeks is gericht op de grootste onbeantwoorde vraag in de natuurkunde, aangepakt met de geduldige, alles-onderzoekende methode die de Europese wetenschap tot haar kenmerk heeft gemaakt."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Rosetta's aankomst in 2014 bij komeet 67P, na een tien jaar durende, miljard kilometer lange achtervolging die langs de aarde en Mars slingerde om snelheid op te bouwen, was een van de grote momenten van de moderne ruimtevaart. Zijn Philae-lander stuiterde over het oppervlak met lage zwaartekracht en kwam tot rust in de schaduw, terwijl zijn batterijen binnen enkele dagen leegliepen — een gedeeltelijk, dramatisch succes — maar de Rosetta-orbiter zelf begeleidde de komeet twee jaar lang tijdens zijn vurige passage rond de zon en leverde een transformerend beeld van waaruit kometen bestaan en hoe ze zich gedragen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gaia/01"
+      },
+      "caption": "Gaia — een ruimtevaartuig dat niets anders deed dan nauwkeurig de posities en bewegingen van bijna twee miljard sterren meten. Zijn kaart is de fundering onder een decennium van galactische astronomie.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "De gegevensreleases van Gaia hebben de astronomie stilletjes hervormd: zijn sterrenkaart is nu het referentiekader waartegen bijna alle andere waarnemingen worden gekalibreerd, waarbij de structuur van de Melkweg, verborgen stromen van oude samengevoegde sterrenstelsels en de bewegingen die zich over miljoenen jaren zullen afspelen worden onthuld. Euclid, nieuwer, levert al hemelonderzoeken van verbluffende diepte en breedte. Samen heeft ESA's wetenschapsvloot primeurs geleverd — de komeerlanding, de galactische kaart — die behoren tot de belangrijkste robotische prestaties van het tijdperk."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "De rode draad door ESA's wetenschap is geduld op een schaal die weinig programma's proberen. Rosetta's missie duurde twee decennia van goedkeuring tot komeet, waarvan er tien werden besteed aan simpelweg naar het doel vliegen, inclusief bijna drie jaar in slaapstand om energie te besparen. Gaia's waarde kwam pas naar voren na jaren van accumulerende metingen. Dit is wetenschap als een lang spel — missies die een continuïteit van financiering en doelstelling over een decennium of meer vereisen, en de bereidheid om te wachten op een beloning die ineens komt, tegen het einde."
+    },
+    {
+      "type": "prose",
+      "md": "Het is ook wetenschap die wordt gedefinieerd door één moeilijk ding uitzonderlijk goed te doen. ESA probeert niet de breedte van NASA te evenaren; het kiest een klein aantal missies en maakt elk een echte primeur of een definitief instrument. Landen op een komeet was nog nooit gedaan; Gaia's precisie was nooit bereikt; Euclid's onderzoek is ongeëvenaard in omvang. De strategie is diepgang boven kwantiteit — een Europese specialiteit van het omzetten van een gerichte missie in een mijlpaal."
+    },
+    {
+      "type": "prose",
+      "md": "En het is diep collaboratief en internationaal, op de Europese manier — missies gebouwd door veel lidstaten, vaak gevlogen in partnerschap met NASA, gelanceerd met Europa's eigen Ariane-raketten, en voedend aan een wetenschappelijke gemeenschap die het hele continent omspant. ESA's wetenschap is een demonstratie dat een coalitie van naties, door middelen te bundelen, resultaten kan produceren die wedijveren met of overtreffen wat een van hen alleen zou kunnen bereiken."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "ESA's wetenschap laat een nalatenschap van primeurs en fundamenten achter: de eerste komeerlanding, die bewees dat zelfs de kleinste, meest onregelmatige lichamen kunnen worden bereikt en aangeraakt; en Gaia's galactische kaart, die het referentiekader is geworden dat de moderne astronomie onderbouwt, gebruikt door bijna elk observatorium op aarde en in de ruimte."
+    },
+    {
+      "type": "prose",
+      "md": "Zijn diepere nalatenschap is een model van ambitieuze, geduldige, gerichte wetenschap — een klein aantal missies, elk met een echte primeur, volgehouden over decennia. Dat model heeft Europa tot leider gemaakt in robotische verkenning ondanks budgetten die ver onder die van NASA liggen, en een partner die de grotere agentschappen actief opzoeken."
+    },
+    {
+      "type": "prose",
+      "md": "En door Euclid en het werk aan het donkere universum staat ESA aan de frontlinie van de grootste onbeantwoorde vraag in de natuurkunde — waaruit het universum werkelijk bestaat. Wat het antwoord ook is, Europa's onderzoekstelescopen zullen centraal staan bij het vinden ervan."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "De les van ESA's wetenschap is dat geduld een wetenschappelijk instrument is. Missies zoals Rosetta en Gaia leveren jarenlang niets en dan ineens alles, en ze zijn alleen mogelijk voor een organisatie die bereid is zich te committeren aan een beloning over een decennium. De bereidheid om te wachten — om een missie te financieren en te vliegen waarvan de resultaten tegen het einde komen — is op zich een vermogen, en een die Europa tot specialiteit heeft gemaakt."
+    },
+    {
+      "type": "prose",
+      "md": "De diepere les is dat focus breedte verslaat voor een middelgrote macht. ESA kan niet alles doen wat NASA doet, dus doet het een paar dingen die niemand anders heeft gedaan — landen op een komeet, de melkweg in kaart brengen, het donkere universum onderzoeken — en wordt het een leider door diepgang in plaats van schaal. Het juiste moeilijke probleem kiezen en het definitief oplossen is hoe een coalitie boven zijn budget uitstijgt."
+    }
+  ]
+}

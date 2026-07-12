@@ -1,0 +1,88 @@
+{
+  "name": "ESA — Weltraumwissenschaft",
+  "tagline": "Europas robotische Wissenschaftsflotte — das erste Raumfahrzeug, das auf einem Kometen landete, die präziseste Karte der Galaxie, die je erstellt wurde, und ein Teleskop auf der Jagd nach dem dunklen Universum.",
+  "the_land": [
+    {
+      "type": "prose",
+      "md": "Die bemannte Raumfahrt der European Space Agency erfolgt in Partnerschaft — Module auf der ISS, Astronauten, die mit Raketen anderer fliegen, ein Anteil an Artemis. Doch in der robotischen Wissenschaft führt die ESA aus eigenem Recht und betreibt einige der ambitioniertesten Tiefraummissionen, die je geflogen wurden. Während die Wissenschaft der NASA umfassend und breit angelegt ist, ist die der ESA tendenziell präzise und kühn: eine kleine Anzahl von Missionen, die Dinge versuchen, die niemand zuvor getan hatte, ausgeführt mit einer Geduld, die in Jahrzehnten gemessen wird."
+    },
+    {
+      "type": "prose",
+      "md": "Drei Missionen erfassen ihren Charakter. Rosetta verfolgte zehn Jahre lang einen Kometen und tat dann etwas, das nie zuvor versucht worden war — umkreiste ihn und landete auf ihm. Gaia hat ein Jahrzehnt damit verbracht, die genaueste dreidimensionale Karte der Milchstraße in der Geschichte zu erstellen und die Positionen und Bewegungen von fast zwei Milliarden Sternen festzulegen. Und Euclid kartiert ein Drittel des gesamten Himmels, um das unsichtbare Gerüst der dunklen Materie und die mysteriöse Kraft zu verfolgen, die das Universum auseinandertreibt. Zusammen sind sie Europas Argument dafür, dass es an die Spitze der Weltraumwissenschaft gehört."
+    }
+  ],
+  "goals": [
+    {
+      "type": "prose",
+      "md": "Die Ziele sind so vielfältig wie die Missionen, doch jede zielt auf eine wissenschaftliche Frage ersten Ranges. Rosetta machte sich auf den Weg, Kometen zu verstehen — unberührte Überbleibsel aus der Geburt des Sonnensystems — indem sie einen bei seiner engsten Annäherung an die Sonne begleitete und direkt Proben nahm. Gaias Ziel ist die Karte selbst: eine präzise Bestandsaufnahme der Sterne der Galaxie, die nahezu der gesamten modernen Astronomie zugrunde liegt, denn man kann die Milchstraße nicht verstehen, bis man weiß, wo ihre Sterne tatsächlich sind und wie sie sich bewegen."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/rosetta/01"
+      },
+      "caption": "Rosetta — das Raumfahrzeug, das zehn Jahre lang den Kometen 67P verfolgte, ihn umkreiste und die Landesonde Philae auf seiner Oberfläche absetzte: die erste Landung auf einem Kometen in der Geschichte.",
+      "align": "right"
+    },
+    {
+      "type": "prose",
+      "md": "Euclids Ziel ist das dunkelste: zu kartieren, wie die Struktur des Universums über kosmische Zeit hinweg gewachsen ist, und daraus einzugrenzen, was dunkle Materie und dunkle Energie tatsächlich sind — die etwa 95% des Universums, die weder Sterne noch Atome sind und die niemand versteht. Es ist eine Mission, die sich direkt auf die größte offene Frage der Physik richtet, angegangen mit der geduldigen Alles-kartieren-Methode, die die europäische Wissenschaft zu ihrer Signatur gemacht hat."
+    }
+  ],
+  "outcome": [
+    {
+      "type": "prose",
+      "md": "Rosettas Ankunft im Jahr 2014 beim Kometen 67P nach einer zehnjährigen, eine Milliarde Kilometer langen Verfolgungsjagd, die an Erde und Mars vorbei schwang, um Geschwindigkeit aufzubauen, war einer der großen Momente der modernen Raumfahrt. Ihre Landesonde Philae hüpfte über die Oberfläche mit niedriger Schwerkraft und kam im Schatten zur Ruhe, ihre Batterien innerhalb von Tagen erschöpft — ein teilweiser, dramatischer Erfolg — doch der Rosetta-Orbiter selbst begleitete den Kometen zwei Jahre lang durch seinen feurigen Durchgang um die Sonne und lieferte ein transformatives Bild davon, woraus Kometen bestehen und wie sie sich verhalten."
+    },
+    {
+      "type": "figure",
+      "image": {
+        "reuse": "fleet/gaia/01"
+      },
+      "caption": "Gaia — ein Raumfahrzeug, das nichts anderes tat als präzise die Positionen und Bewegungen von fast zwei Milliarden Sternen zu messen. Seine Karte ist das Fundament unter einem Jahrzehnt galaktischer Astronomie.",
+      "align": "full"
+    },
+    {
+      "type": "prose",
+      "md": "Gaias Datenveröffentlichungen haben die Astronomie stillschweigend umgestaltet: Seine Sternkarte ist heute der Referenzrahmen, gegen den fast jede andere Beobachtung kalibriert wird, und offenbart die Struktur der Milchstraße, verborgene Ströme antiker verschmolzener Galaxien und die Bewegungen, die sich über Millionen von Jahren abspielen werden. Euclid, neuer, liefert bereits Himmelsdurchmusterungen von verblüffender Tiefe und Breite. Zusammen hat die Wissenschaftsflotte der ESA Premieren geliefert — die Kometenlandung, die galaktische Karte — die zu den bedeutendsten robotischen Errungenschaften der Ära gehören."
+    }
+  ],
+  "narrative": [
+    {
+      "type": "prose",
+      "md": "Der rote Faden durch die ESA-Wissenschaft ist Geduld in einem Ausmaß, das wenige Programme wagen. Rosettas Mission dauerte zwei Jahrzehnte von der Genehmigung bis zum Kometen, zehn davon wurden einfach mit dem Flug zum Ziel verbracht, einschließlich fast drei Jahren im Ruhezustand, um Energie zu sparen. Gaias Wert zeigte sich erst nach Jahren des Ansammelns von Messungen. Dies ist Wissenschaft als langfristiges Spiel — Missionen, die eine Kontinuität von Finanzierung und Zweck über ein Jahrzehnt oder mehr erfordern und die Bereitschaft, auf eine Auszahlung zu warten, die auf einmal, gegen Ende, eintrifft."
+    },
+    {
+      "type": "prose",
+      "md": "Es ist auch Wissenschaft, die dadurch definiert ist, eine schwierige Sache außerordentlich gut zu machen. Die ESA versucht nicht, die Breite der NASA zu erreichen; sie wählt eine kleine Anzahl von Missionen aus und macht jede zu einer echten Premiere oder einem definitiven Instrument. Eine Landung auf einem Kometen war nie zuvor gemacht worden; Gaias Präzision war nie zuvor erreicht worden; Euclids Durchmusterung ist in ihrem Umfang unübertroffen. Die Strategie ist Tiefe statt Quantität — eine europäische Spezialität, eine fokussierte Mission in ein Wahrzeichen zu verwandeln."
+    },
+    {
+      "type": "prose",
+      "md": "Und es ist zutiefst kollaborativ und international, auf europäische Art — Missionen, die über viele Mitgliedstaaten hinweg gebaut werden, oft in Partnerschaft mit der NASA geflogen, mit Europas eigenen Ariane-Raketen gestartet und eine wissenschaftliche Gemeinschaft ernähren, die sich über den Kontinent erstreckt. Die ESA-Wissenschaft ist ein Beweis dafür, dass eine Koalition von Nationen, die Ressourcen bündelt, Ergebnisse erzielen kann, die mit dem mithalten oder es übertreffen, was jede einzelne von ihnen allein erreichen könnte."
+    }
+  ],
+  "legacy": [
+    {
+      "type": "prose",
+      "md": "Die ESA-Wissenschaft hinterlässt ein Erbe von Premieren und Fundamenten: die erste Kometenlandung, die bewies, dass selbst die kleinsten, irregulärsten Körper erreicht und berührt werden können; und Gaias galaktische Karte, die zum Referenzrahmen geworden ist, der die moderne Astronomie untermauert und von nahezu jedem Observatorium auf der Erde und im Weltraum verwendet wird."
+    },
+    {
+      "type": "prose",
+      "md": "Ihr tieferes Erbe ist ein Modell ambitionierter, geduldiger, fokussierter Wissenschaft — eine kleine Anzahl von Missionen, jede mit dem Versuch einer echten Premiere, über Jahrzehnte hinweg aufrechterhalten. Dieses Modell hat Europa zu einem Führer in der robotischen Erkundung gemacht, trotz Budgets weit unter denen der NASA, und zu einem Partner, den die größeren Agenturen aktiv suchen."
+    },
+    {
+      "type": "prose",
+      "md": "Und durch Euclid und die Arbeit am dunklen Universum ist die ESA an der Grenze der größten unbeantworteten Frage der Physik positioniert — woraus das Universum tatsächlich besteht. Was auch immer die Antwort ist, Europas Durchmusterungsteleskope werden zentral dafür sein, sie zu finden."
+    }
+  ],
+  "lessons": [
+    {
+      "type": "prose",
+      "md": "Die Lektion der ESA-Wissenschaft ist, dass Geduld ein wissenschaftliches Instrument ist. Missionen wie Rosetta und Gaia liefern jahrelang nichts und dann auf einmal alles, und sie sind nur für eine Organisation möglich, die bereit ist, sich auf eine jahrzehntelange Auszahlung einzulassen. Die Bereitschaft zu warten — eine Mission zu finanzieren und zu fliegen, deren Ergebnisse gegen Ende eintreffen — ist selbst eine Fähigkeit, und eine, die Europa zu einer Spezialität gemacht hat."
+    },
+    {
+      "type": "prose",
+      "md": "Die tiefere Lektion ist, dass Fokus Breite für eine mittlere Macht schlägt. Die ESA kann nicht alles tun, was die NASA tut, also tut sie ein paar Dinge, die niemand sonst getan hat — auf einem Kometen landen, die Galaxie kartieren, das dunkle Universum durchmustern — und wird durch Tiefe statt Größenordnung zum Führer. Das richtige schwierige Problem auszuwählen und es definitiv zu lösen, ist die Art, wie eine Koalition über ihr Budget hinaus zuschlägt."
+    }
+  ]
+}

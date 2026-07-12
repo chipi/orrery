@@ -33,7 +33,7 @@
     { "linked_id": "lc-39a", "ref": "fleet", "role": "launch-site" },
     { "linked_id": "lc-34", "ref": "fleet", "role": "launch-site" }
   ],
-  "related_programs": ["gemini", "skylab", "artemis"],
+  "related_programs": ["gemini", "skylab"],
   "see_also": [
     { "label": "The Moon — surface map & Apollo landing sites", "href": "/moon", "kind": "body" },
     { "label": "Free-return trajectory", "href": "/science/transfers/free-return", "kind": "science" },

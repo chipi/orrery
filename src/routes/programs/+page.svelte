@@ -5,11 +5,15 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import type { ProgramIndexEntry } from '$types/program';
   import type { PageData } from './$types';
 
+  const agencyStr = (p: ProgramIndexEntry) => p.agencies?.join(' / ') ?? p.agency;
+
   let { data }: { data: PageData } = $props();
   let programs = $derived(data.programs);
+  let badges = $derived(data.badges ?? {});
   let mode = $state<'era' | 'agency'>('era');
 
   const ERA_OF: Record<string, string> = {
@@ -81,16 +85,15 @@
               <img src={heroSrc(p.hero)} alt="" loading="lazy" decoding="async" />
             {/if}
             <div class="card-body">
-              <p class="c-meta">{p.agency} · {p.start_year}–{p.end_year ?? 'now'}</p>
+              <p class="c-meta">
+                <AgencyBadge agency={agencyStr(p)} />
+                <span>{p.agency} · {p.start_year}–{p.end_year ?? 'now'}</span>
+              </p>
               <div class="c-title-row">
                 <h3>{p.name}</h3>
-                <img
-                  class="c-badge"
-                  src="{base}/images/badges/programs/{p.id}.webp"
-                  alt=""
-                  loading="lazy"
-                  onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                />
+                {#if badges[`program:${p.id}`]}
+                  <img class="c-badge" src="{base}{badges[`program:${p.id}`]}" alt="" loading="lazy" />
+                {/if}
               </div>
               <p class="c-hook">{p.tagline}</p>
             </div>
@@ -173,7 +176,7 @@
   .card:hover {
     border-color: rgba(127, 176, 224, 0.5);
   }
-  .card img {
+  .card > img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -183,6 +186,9 @@
     padding: 14px 16px 18px;
   }
   .c-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 1.5px;

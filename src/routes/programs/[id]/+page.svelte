@@ -7,6 +7,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import type { ProgramRosterItem } from '$types/program';
   import type { PageData } from './$types';
 
@@ -105,7 +106,10 @@
 
   <header class="hero">
     <div class="hero-text">
-      <p class="meta">{p.agency} · {p.country} · {p.start_year}–{p.end_year ?? 'now'}</p>
+      <p class="meta">
+        <AgencyBadge agency={p.agencies?.join(' / ') ?? p.agency} />
+        <span>{p.agency} · {p.country} · {p.start_year}–{p.end_year ?? 'now'}</span>
+      </p>
       <div class="title-row">
         <h1>{p.name}</h1>
         {#if badges[`program:${p.id}`]}
@@ -258,6 +262,9 @@
     display: block;
   }
   .meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 2px;

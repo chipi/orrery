@@ -82,6 +82,7 @@ export interface ProgramIndexEntry {
   tagline: string;
   kind: ProgramKind;
   agency: string;
+  agencies?: string[];
   country: string;
   epoch: string;
   status: ProgramStatus;

@@ -22,7 +22,9 @@ test.describe('/posters — Orrery gallery', () => {
     await page.goto('/posters', { waitUntil: 'networkidle' });
     await expect(page.locator('article.gallery[data-route-ready="true"]')).toBeVisible();
 
-    await expect(page.locator('article.gallery h1')).toContainText('ORRERY GALLERY');
+    // /posters is now a child of the Gallery hub: breadcrumb "Gallery › Posters",
+    // h1 "POSTERS" (was "ORRERY GALLERY" before the hub restructure).
+    await expect(page.locator('article.gallery h1')).toContainText('POSTERS');
 
     const posters = page.locator('article.gallery .grid > figure.poster');
     await expect(posters).toHaveCount(POSTER_COUNT);

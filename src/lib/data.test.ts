@@ -46,6 +46,11 @@ import {
   getScienceSection,
   getScienceTab,
   getScienceTabIntro,
+  getProgramIndex,
+  getProgram,
+  getBadges,
+  getBadgeProvenance,
+  getSourcingGaps,
   rockets,
   earthObjects,
   moonSites,
@@ -1078,5 +1083,61 @@ describe('cache behaviour', () => {
     expect(calls).toBe(afterFirst);
 
     globalThis.fetch = fetchSpy;
+  });
+});
+
+describe('programs / badges / sourcing loaders (PRD-029)', () => {
+  it('getProgramIndex returns the full index (en-US base)', async () => {
+    const idx = await getProgramIndex();
+    expect(idx.length).toBeGreaterThanOrEqual(33);
+    const apollo = idx.find((p) => p.id === 'apollo');
+    expect(apollo).toBeDefined();
+    expect(apollo!.name).toBeTruthy();
+    expect(apollo!.agencies).toContain('NASA');
+  });
+
+  it('getProgramIndex localizes name + tagline for a non-en locale', async () => {
+    const de = await getProgramIndex('de');
+    const tiangong = de.find((p) => p.id === 'tiangong');
+    expect(tiangong).toBeDefined();
+    // name + tagline resolve to strings (from the de overlay, with en-US fallback)
+    expect(typeof tiangong!.name).toBe('string');
+    expect(typeof tiangong!.tagline).toBe('string');
+    expect(tiangong!.tagline.length).toBeGreaterThan(0);
+  });
+
+  it('getProgram merges base record + editorial overlay', async () => {
+    const p = await getProgram('apollo');
+    expect(p).not.toBeNull();
+    expect(p!.id).toBe('apollo');
+    expect(p!.name).toBeTruthy();
+    expect(Array.isArray(p!.the_land)).toBe(true);
+    expect(Array.isArray(p!.roster)).toBe(true);
+  });
+
+  it('getProgram falls back to en-US for a missing locale, and returns null for unknown ids', async () => {
+    const de = await getProgram('apollo', 'de');
+    expect(de).not.toBeNull();
+    expect(await getProgram('not-a-real-program')).toBeNull();
+  });
+
+  it('getBadges returns the insignia map', async () => {
+    const badges = await getBadges();
+    expect(badges['program:apollo']).toMatch(/badges\/programs\/apollo/);
+  });
+
+  it('getBadgeProvenance returns credited rows for the served badges', async () => {
+    const prov = await getBadgeProvenance();
+    expect(prov.length).toBeGreaterThan(0);
+    expect(prov[0]).toHaveProperty('license_short');
+    expect(prov[0]).toHaveProperty('path');
+  });
+
+  it('getSourcingGaps returns the ledger (en-US + locale fallback)', async () => {
+    const en = await getSourcingGaps();
+    expect(en?.gaps.length).toBeGreaterThan(0);
+    expect(en?.gaps[0]).toHaveProperty('status');
+    const de = await getSourcingGaps('de');
+    expect(de?.gaps.length).toBeGreaterThan(0);
   });
 });

@@ -33,5 +33,9 @@ export const load: PageLoad = async ({ fetch }) => {
     .filter((i) => i.kind === 'mission')
     .sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true }));
 
-  return { programs, missions };
+  const fleet = items
+    .filter((i) => i.kind === 'fleet')
+    .sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true }));
+
+  return { programs, missions, fleet };
 };

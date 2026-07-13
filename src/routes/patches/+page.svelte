@@ -96,6 +96,37 @@
     </div>
   </section>
 
+  {#if data.fleet.length}
+    <section class="group">
+      <h2>{m.credits_category_fleet()}</h2>
+      <div class="grid">
+        {#each data.fleet as fl (fl.key)}
+          <figure class="badge-card">
+            <div class="badge-frame">
+              <img
+                src="{assetOrigin}{fl.img}"
+                alt={m.patches_alt({ name: fl.name })}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              <span class="b-name">{fl.name}</span>
+              {#if fl.credit}
+                <a
+                  class="b-credit"
+                  href={fl.credit.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer">{fl.credit.author} · {fl.credit.license_short}</a
+                >
+              {/if}
+            </figcaption>
+          </figure>
+        {/each}
+      </div>
+    </section>
+  {/if}
+
   <footer class="patches-footer">
     <p>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->

@@ -44,6 +44,11 @@ interface BadgeSource {
   author: string;
   license_short: string;
   license_url: string | null;
+  // Optional — where the badge came from. Defaults keep older Commons-sourced
+  // entries unchanged; NASA / ESA / JAXA / ISRO entries set these so
+  // provenance + /credits attribute the real source, not "wikimedia".
+  source_type?: string;
+  agency?: string;
 }
 
 async function main() {
@@ -94,10 +99,10 @@ async function main() {
       map[`${s.kind}:${s.id}`] = `/images/${rel}`;
       prov.push({
         path: `/images/${rel}`,
-        source_type: 'wikimedia-commons',
+        source_type: s.source_type ?? 'wikimedia-commons',
         title: `${s.name} insignia`,
         author: s.author,
-        agency: 'NASA',
+        agency: s.agency ?? 'NASA',
         source_url: s.source_url,
         image_url: s.image_url,
         license_short: s.license_short,
